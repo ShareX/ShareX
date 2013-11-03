@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MegaApiClient</id>
+    <version>1.0.0</version>
+    <title>Mega.co.nz client library</title>
+    <authors>Grégoire Pailler</authors>
+    <owners>Grégoire Pailler</owners>
+    <licenseUrl>https://raw.github.com/gpailler/MegaApiClient/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/gpailler/MegaApiClient</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MegaApiClient library gives full access to Mega.co.nz API. You can manage filesystem and download/upload files</description>
+    <summary>C# library to access http://mega.co.nz API</summary>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <tags>mega mega.co.nz api</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="5.0.6" />
+    </dependencies>
+  </metadata>
+</package>

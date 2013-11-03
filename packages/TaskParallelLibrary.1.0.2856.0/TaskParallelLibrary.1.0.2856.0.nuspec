@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>TaskParallelLibrary</id>
+    <version>1.0.2856.0</version>
+    <title>Task Parallel Library for .NET 3.5</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=186234</licenseUrl>
+    <projectUrl>http://msdn.microsoft.com/en-us/library/dd460717.aspx</projectUrl>
+    <iconUrl>http://i.msdn.microsoft.com/ee402630.NET_lg.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The package includes:
+* Task&lt;T&gt; for executing asynchronous operations.
+* Concurrent Collections such as ConcurrentStack, ConcurentQueue ad ConcurrentDictionary.
+* PLINQ for writing parallel queries.
+* additional Threading operations such as Barrier,SpinLock and SpinWait.</description>
+    <summary>A complete and official Microsoft backport of the Task Parallel Library (TPL) for .NET 3.5.</summary>
+    <releaseNotes>This backport was shipped with the Reactive Extensions (Rx) library up until v1.0.2856.0. It can be downloaded from http://www.microsoft.com/download/en/details.aspx?id=24940 .</releaseNotes>
+    <tags>tpl plinq pfx task parallel extensions .net35 backport</tags>
+  </metadata>
+</package>

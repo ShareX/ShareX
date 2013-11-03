@@ -1,0 +1,1520 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AsyncBridge.Net35</name>
+    </assembly>
+    <members>
+        <member name="T:AsyncCompatLibExtensions">
+            <summary>
+            Provides extension methods for threading-related types.
+            </summary>
+            
+            <summary>
+            Asynchronous wrappers for .NET Framework operations.
+            </summary>
+            
+            <summary>
+            Provides extension methods for threading-related types.
+            </summary>
+            
+            <remarks>
+            AsyncCtpThreadingExtensions is a placeholder.
+            </remarks>
+        </member>
+        <member name="M:AsyncCompatLibExtensions.GetAwaiter(System.Threading.Tasks.Task)">
+            <summary>
+            Gets an awaiter used to await this <see cref="T:System.Threading.Tasks.Task"/>.
+            </summary>
+            <param name="task">The task to await.</param>
+            <returns>
+            An awaiter instance.
+            </returns>
+        </member>
+        <member name="M:AsyncCompatLibExtensions.GetAwaiter``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            Gets an awaiter used to await this <see cref="T:System.Threading.Tasks.Task"/>.
+            </summary>
+            <typeparam name="TResult">Specifies the type of data returned by the task.</typeparam>
+            <param name="task">The task to await.</param>
+            <returns>
+            An awaiter instance.
+            </returns>
+        </member>
+        <member name="M:AsyncCompatLibExtensions.ConfigureAwait``1(System.Threading.Tasks.Task{``0},System.Boolean)">
+            <summary>
+            Creates and configures an awaitable object for awaiting the specified task.
+            </summary>
+            <param name="task">The task to be awaited.</param>
+            <param name="continueOnCapturedContext">true to automatic marshal back to the original call site's current SynchronizationContext
+                        or TaskScheduler; otherwise, false.</param>
+            <returns>
+            The instance to be awaited.
+            </returns>
+        </member>
+        <member name="M:AsyncCompatLibExtensions.ConfigureAwait(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Creates and configures an awaitable object for awaiting the specified task.
+            </summary>
+            <param name="task">The task to be awaited.</param>
+            <param name="continueOnCapturedContext">true to automatic marshal back to the original call site's current SynchronizationContext
+                        or TaskScheduler; otherwise, false.</param>
+            <returns>
+            The instance to be awaited.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodBuilderCore">
+            <summary>
+            Holds state related to the builder's IAsyncStateMachine.
+            </summary>
+            
+            <remarks>
+            This is a mutable struct.  Be very delicate with it.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.m_stateMachine">
+            <summary>
+            A reference to the heap-allocated state machine object associated with this builder.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start``1(``0@)">
+            <summary>
+            Initiates the builder's execution with the associated state machine.
+            </summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="stateMachine">The state machine instance, passed by reference.</param><exception cref="T:System.ArgumentNullException">The <paramref name="stateMachine"/> argument is null (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>
+            Associates the builder with the state machine it represents.
+            </summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param><exception cref="T:System.ArgumentNullException">The <paramref name="stateMachine"/> argument was null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.GetCompletionAction``2(``0@,``1@)">
+            <summary>
+            Gets the Action to use with an awaiter's OnCompleted or UnsafeOnCompleted method.
+                        On first invocation, the supplied state machine will be boxed.
+            
+            </summary>
+            <typeparam name="TMethodBuilder">Specifies the type of the method builder used.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine used.</typeparam><param name="builder">The builder.</param><param name="stateMachine">The state machine.</param>
+            <returns>
+            An Action to provide to the awaiter.
+            </returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.ThrowAsync(System.Exception,System.Threading.SynchronizationContext)">
+            <summary>
+            Throws the exception on the ThreadPool.
+            </summary>
+            <param name="exception">The exception to propagate.</param><param name="targetContext">The target context on which to propagate the exception.  Null to use the ThreadPool.</param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner">
+            <summary>
+            Provides the ability to invoke a state machine's MoveNext method under a supplied ExecutionContext.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.m_context">
+            <summary>
+            The context with which to run MoveNext.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.m_stateMachine">
+            <summary>
+            The state machine whose MoveNext method should be invoked.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.s_invokeMoveNext">
+            <summary>
+            Cached delegate used with ExecutionContext.Run.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.#ctor(System.Threading.ExecutionContext)">
+            <summary>
+            Initializes the runner.
+            </summary>
+            <param name="context">The context with which to run MoveNext.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run">
+            <summary>
+            Invokes MoveNext under the provided context.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.InvokeMoveNext(System.Object)">
+            <summary>
+            Invokes the MoveNext method on the supplied IAsyncStateMachine.
+            </summary>
+            <param name="stateMachine">The IAsyncStateMachine machine instance.</param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodTaskCache`1">
+            <summary>
+            Provides a base class used to cache tasks of a specific return type.
+            </summary>
+            <typeparam name="TResult">Specifies the type of results the cached tasks return.</typeparam>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.Singleton">
+            <summary>
+            A singleton cache for this result type.
+                        This may be null if there are no cached tasks for this TResult.
+            
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.CreateCompleted(`0)">
+            <summary>
+            Creates a non-disposable task.
+            </summary>
+            <param name="result">The result for the task.</param>
+            <returns>
+            The cacheable task.
+            </returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.CreateCache">
+            <summary>
+            Creates a cache.
+            </summary>
+            
+            <returns>
+            A task cache for this result type.
+            </returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.FromResult(`0)">
+            <summary>
+            Gets a cached task if one exists.
+            </summary>
+            <param name="result">The result for which we want a cached task.</param>
+            <returns>
+            A cached task if one exists; otherwise, null.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache">
+            <summary>
+            Provides a cache for Boolean tasks.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache.m_true">
+            <summary>
+            A true task.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache.m_false">
+            <summary>
+            A false task.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache.FromResult(System.Boolean)">
+            <summary>
+            Gets a cached task for the Boolean result.
+            </summary>
+            <param name="result">true or false</param>
+            <returns>
+            A cached task for the Boolean result.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache">
+            <summary>
+            Provides a cache for zero Int32 tasks.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.INCLUSIVE_INT32_MIN">
+            <summary>
+            The minimum value, inclusive, for which we want a cached task.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.EXCLUSIVE_INT32_MAX">
+            <summary>
+            The maximum value, exclusive, for which we want a cached task.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.Int32Tasks">
+            <summary>
+            The cache of Task{Int32}.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.CreateInt32Tasks">
+            <summary>
+            Creates an array of cached tasks for the values in the range [INCLUSIVE_MIN,EXCLUSIVE_MAX).
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.FromResult(System.Int32)">
+            <summary>
+            Gets a cached task for the zero Int32 result.
+            </summary>
+            <param name="result">The integer value</param>
+            <returns>
+            A cached task for the Int32 result or null if not cached.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncStateMachineAttribute">
+            <summary>
+            Identities the async state machine type for this method.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.StateMachineAttribute">
+            <summary>
+            Identities the state machine type for this method.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.StateMachineAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes the attribute.
+            </summary>
+            <param name="stateMachineType">The type that implements the state machine.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.StateMachineAttribute.StateMachineType">
+            <summary>
+            Gets the type that implements the state machine.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncStateMachineAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes the attribute.
+            </summary>
+            <param name="stateMachineType">The type that implements the state machine.</param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder">
+            <summary>
+            Provides a builder for asynchronous methods that return <see cref="T:System.Threading.Tasks.Task"/>.
+                        This type is intended for compiler use only.
+            
+            </summary>
+            
+            <remarks>
+            AsyncTaskMethodBuilder is a value type, and thus it is copied by value.
+                        Prior to being copied, one of its Task, SetResult, or SetException members must be accessed,
+                        or else the copies may end up building distinct Task instances.
+            
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IAsyncMethodBuilder">
+            <summary>
+            Represents an asynchronous method builder.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.s_cachedCompleted">
+            <summary>
+            A cached VoidTaskResult task used for builders that complete synchronously.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.m_builder">
+            <summary>
+            The generic builder object to which this non-generic instance delegates.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Create">
+            <summary>
+            Initializes a new <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.
+            </summary>
+            
+            <returns>
+            The initialized <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.
+            </returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start``1(``0@)">
+            <summary>
+            Initiates the builder's execution with the associated state machine.
+            </summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="stateMachine">The state machine instance, passed by reference.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>
+            Associates the builder with the state machine it represents.
+            </summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param><exception cref="T:System.ArgumentNullException">The <paramref name="stateMachine"/> argument was null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="awaiter">The awaiter.</param><param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="awaiter">The awaiter.</param><param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task"/> in the
+                        <see cref="T:System.Threading.Tasks.TaskStatus">RanToCompletion</see> state.
+            
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception><exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException(System.Exception)">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task"/> in the
+                        <see cref="T:System.Threading.Tasks.TaskStatus">Faulted</see> state with the specified exception.
+            
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> to use to fault the task.</param><exception cref="T:System.ArgumentNullException">The <paramref name="exception"/> argument is null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception><exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetNotificationForWaitCompletion(System.Boolean)">
+            <summary>
+            Called by the debugger to request notification when the first wait operation
+                        (await, Wait, Result, etc.) on this builder's task completes.
+            
+            </summary>
+            <param name="enabled">true to enable notification; false to disable a previously set notification.
+                        </param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Task">
+            <summary>
+            Gets the <see cref="T:System.Threading.Tasks.Task"/> for this builder.
+            </summary>
+            
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> representing the builder's asynchronous operation.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.ObjectIdForDebugger">
+            <summary>
+            Gets an object that may be used to uniquely identify this builder to the debugger.
+            
+            </summary>
+            
+            <remarks>
+            This property lazily instantiates the ID in a non-thread-safe manner.
+                        It must only be used by the debugger, and only in a single-threaded manner
+                        when no other threads are in the middle of accessing this property or this.Task.
+            
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1">
+            <summary>
+            Provides a builder for asynchronous methods that return <see cref="T:System.Threading.Tasks.Task`1"/>.
+                        This type is intended for compiler use only.
+            
+            </summary>
+            
+            <remarks>
+            AsyncTaskMethodBuilder{TResult} is a value type, and thus it is copied by value.
+                        Prior to being copied, one of its Task, SetResult, or SetException members must be accessed,
+                        or else the copies may end up building distinct Task instances.
+            
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.s_defaultResultTask">
+            <summary>
+            A cached task for default(TResult).
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.m_coreState">
+            <summary>
+            State related to the IAsyncStateMachine.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.m_task">
+            <summary>
+            The lazily-initialized task completion source.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.#cctor">
+            <summary>
+            Temporary support for disabling crashing if tasks go unobserved.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Create">
+            <summary>
+            Initializes a new <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.
+            </summary>
+            
+            <returns>
+            The initialized <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.
+            </returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Start``1(``0@)">
+            <summary>
+            Initiates the builder's execution with the associated state machine.
+            </summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="stateMachine">The state machine instance, passed by reference.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>
+            Associates the builder with the state machine it represents.
+            </summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param><exception cref="T:System.ArgumentNullException">The <paramref name="stateMachine"/> argument was null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AwaitOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="awaiter">The awaiter.</param><param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AwaitUnsafeOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="awaiter">The awaiter.</param><param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(`0)">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task`1"/> in the
+                        <see cref="T:System.Threading.Tasks.TaskStatus">RanToCompletion</see> state with the specified result.
+            
+            </summary>
+            <param name="result">The result to use to complete the task.</param><exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(System.Threading.Tasks.TaskCompletionSource{`0})">
+            <summary>
+            Completes the builder by using either the supplied completed task, or by completing
+                        the builder's previously accessed task using default(TResult).
+            
+            </summary>
+            <param name="completedTask">A task already completed with the value default(TResult).</param><exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception)">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task`1"/> in the
+                        <see cref="T:System.Threading.Tasks.TaskStatus">Faulted</see> state with the specified exception.
+            
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> to use to fault the task.</param><exception cref="T:System.ArgumentNullException">The <paramref name="exception"/> argument is null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetNotificationForWaitCompletion(System.Boolean)">
+            <summary>
+            Called by the debugger to request notification when the first wait operation
+                        (await, Wait, Result, etc.) on this builder's task completes.
+            
+            </summary>
+            <param name="enabled">true to enable notification; false to disable a previously set notification.
+                        </param>
+            <remarks>
+            This should only be invoked from within an asynchronous method,
+                        and only by the debugger.
+            
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.GetTaskForResult(`0)">
+            <summary>
+            Gets a task for the specified result.  This will either
+                        be a cached or new task, never null.
+            
+            </summary>
+            <param name="result">The result for which we need a task.</param>
+            <returns>
+            The completed task containing the result.
+            </returns>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.CompletionSource">
+            <summary>
+            Gets the lazily-initialized TaskCompletionSource.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Task">
+            <summary>
+            Gets the <see cref="T:System.Threading.Tasks.Task`1"/> for this builder.
+            </summary>
+            
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task`1"/> representing the builder's asynchronous operation.
+            </returns>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.ObjectIdForDebugger">
+            <summary>
+            Gets an object that may be used to uniquely identify this builder to the debugger.
+            
+            </summary>
+            
+            <remarks>
+            This property lazily instantiates the ID in a non-thread-safe manner.
+                        It must only be used by the debugger, and only in a single-threaded manner
+                        when no other threads are in the middle of accessing this property or this.Task.
+            
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder">
+            <summary>
+            Provides a builder for asynchronous methods that return void.
+                        This type is intended for compiler use only.
+            
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.m_synchronizationContext">
+            <summary>
+            The synchronization context associated with this operation.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.m_coreState">
+            <summary>
+            State related to the IAsyncStateMachine.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.m_objectIdForDebugger">
+            <summary>
+            An object used by the debugger to uniquely identify this builder.  Lazily initialized.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.s_preventUnobservedTaskExceptionsInvoked">
+            <summary>
+            Non-zero if PreventUnobservedTaskExceptions has already been invoked.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.#cctor">
+            <summary>
+            Temporary support for disabling crashing if tasks go unobserved.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.#ctor(System.Threading.SynchronizationContext)">
+            <summary>
+            Initializes the <see cref="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder"/>.
+            </summary>
+            <param name="synchronizationContext">The synchronizationContext associated with this operation. This may be null.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.PreventUnobservedTaskExceptions">
+            <summary>
+            Registers with UnobservedTaskException to suppress exception crashing.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create">
+            <summary>
+            Initializes a new <see cref="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder"/>.
+            </summary>
+            
+            <returns>
+            The initialized <see cref="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder"/>.
+            </returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start``1(``0@)">
+            <summary>
+            Initiates the builder's execution with the associated state machine.
+            </summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="stateMachine">The state machine instance, passed by reference.</param><exception cref="T:System.ArgumentNullException">The <paramref name="stateMachine"/> argument was null (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>
+            Associates the builder with the state machine it represents.
+            </summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param><exception cref="T:System.ArgumentNullException">The <paramref name="stateMachine"/> argument was null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="awaiter">The awaiter.</param><param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam><typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam><param name="awaiter">The awaiter.</param><param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetResult">
+            <summary>
+            Completes the method builder successfully.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetException(System.Exception)">
+            <summary>
+            Faults the method builder with an exception.
+            </summary>
+            <param name="exception">The exception that is the cause of this fault.</param><exception cref="T:System.ArgumentNullException">The <paramref name="exception"/> argument is null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.NotifySynchronizationContextOfCompletion">
+            <summary>
+            Notifies the current synchronization context that the operation completed.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.ObjectIdForDebugger">
+            <summary>
+            Gets an object that may be used to uniquely identify this builder to the debugger.
+            
+            </summary>
+            
+            <remarks>
+            This property lazily instantiates the ID in a non-thread-safe manner.
+                        It must only be used by the debugger and only in a single-threaded manner.
+            
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerFilePathAttribute">
+            <summary>
+            Allows you to obtain the full path of the source file that contains the caller. This is the file path at the time of compile.
+            </summary>
+            <remarks>
+            You apply the <b>CallerFilePath</b> attribute to an optional parameter that has a default value. 
+            You must specify an explicit default value for the optional parameter.
+            You can't apply this attribute to parameters that aren't specified as optional.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerLineNumberAttribute">
+            <summary>
+            Allows you to obtain the line number in the source file at which the method is called.
+            </summary>
+            <remarks>
+            You apply the <b>CallerFilePath</b> attribute to an optional parameter that has a default value. 
+            You must specify an explicit default value for the optional parameter.
+            You can't apply this attribute to parameters that aren't specified as optional.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerMemberNameAttribute">
+            <summary>
+              Allows you to obtain the method or property name of the caller to the method.
+            </summary>
+            <remarks>
+              You apply the <b>CallerMemberName</b> attribute to an optional parameter that has a default value. 
+              You must specify an explicit default value for the optional parameter. 
+              You can't apply this attribute to parameters that aren't specified as optional.
+            <para/>
+              You can use the <b>CallerMemberName</b> attribute to avoid specifying the member name as a <b>String</b> argument to the called method. 
+              By using this technique, you avoid the problem that <b>Rename Refactoring</b> doesn't change the <b>String</b> values. 
+              This is especially useful for the following tasks:
+              <list type="bullet">
+                <item>
+                  Using tracing and diagnostic routines.
+                </item>
+                <item>
+                  Implementing the <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> interface when binding data. 
+                  This interface allows the property of an object to notify a bound control that the property has changed, 
+                  so that the control can display the updated information. 
+                  Without the CallerMemberName attribute, you must specify the property name as a literal.
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1">
+            <summary>
+            Provides an awaitable object that allows for configured awaits on <see cref="T:System.Threading.Tasks.Task`1"/>.
+            </summary>
+            
+            <remarks>
+            This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.m_configuredTaskAwaiter">
+            <summary>
+            The underlying awaitable on whose logic this awaitable relies.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.#ctor(System.Threading.Tasks.Task{`0},System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1"/>.
+            </summary>
+            <param name="task">The awaitable <see cref="T:System.Threading.Tasks.Task`1"/>.</param><param name="continueOnCapturedContext">true to attempt to marshal the continuation back to the original context captured; otherwise, false.
+                        </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.GetAwaiter">
+            <summary>
+            Gets an awaiter for this awaitable.
+            </summary>
+            
+            <returns>
+            The awaiter.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter">
+            <summary>
+            Provides an awaiter for a <see cref="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1"/>.
+            </summary>
+            
+            <remarks>
+            This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ICriticalNotifyCompletion">
+            <summary>
+            Represents an awaiter used to schedule continuations when an await operation completes.
+            
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.INotifyCompletion">
+            <summary>
+            Represents an operation that will schedule continuations when the operation completes.
+            
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)">
+            <summary>
+            Schedules the continuation action to be invoked when the instance completes.
+            </summary>
+            <param name="continuation">The action to invoke when the operation completes.</param><exception cref="T:System.ArgumentNullException">The <paramref name="continuation"/> argument is null (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)">
+            <summary>
+            Schedules the continuation action to be invoked when the instance completes.
+            </summary>
+            <param name="continuation">The action to invoke when the operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="continuation"/> argument is null (Nothing in Visual Basic).</exception>
+            <remarks>
+            Unlike OnCompleted, UnsafeOnCompleted need not propagate ExecutionContext information.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.m_task">
+            <summary>
+            The task being awaited.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.m_continueOnCapturedContext">
+            <summary>
+            Whether to attempt marshaling back to the original context.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.#ctor(System.Threading.Tasks.Task{`0},System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter"/>.
+            </summary>
+            <param name="task">The awaitable <see cref="T:System.Threading.Tasks.Task`1"/>.</param><param name="continueOnCapturedContext">true to attempt to marshal the continuation back to the original context captured; otherwise, false.
+                        </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.OnCompleted(System.Action)">
+            <summary>
+            Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/>.
+            </summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param><exception cref="T:System.ArgumentNullException">The <paramref name="continuation"/> argument is null (Nothing in Visual Basic).</exception><exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <remarks>
+            This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.UnsafeOnCompleted(System.Action)">
+            <summary>
+            Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/>.
+            </summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param><exception cref="T:System.ArgumentNullException">The <paramref name="continuation"/> argument is null (Nothing in Visual Basic).</exception><exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>
+            This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult">
+            <summary>
+            Ends the await on the completed <see cref="T:System.Threading.Tasks.Task`1"/>.
+            </summary>
+            
+            <returns>
+            The result of the completed <see cref="T:System.Threading.Tasks.Task`1"/>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception><exception cref="T:System.InvalidOperationException">The task was not yet completed.</exception><exception cref="T:System.Threading.Tasks.TaskCanceledException">The task was canceled.</exception><exception cref="T:System.Exception">The task completed in a Faulted state.</exception>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.IsCompleted">
+            <summary>
+            Gets whether the task being awaited is completed.
+            </summary>
+            
+            <remarks>
+            This property is intended for compiler user rather than use directly in code.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable">
+            <summary>
+            Provides an awaitable object that allows for configured awaits on <see cref="T:System.Threading.Tasks.Task"/>.
+            </summary>
+            
+            <remarks>
+            This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.m_configuredTaskAwaiter">
+            <summary>
+            The task being awaited.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.#ctor(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable"/>.
+            </summary>
+            <param name="task">The awaitable <see cref="T:System.Threading.Tasks.Task"/>.</param><param name="continueOnCapturedContext">true to attempt to marshal the continuation back to the original context captured; otherwise, false.
+                        </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.GetAwaiter">
+            <summary>
+            Gets an awaiter for this awaitable.
+            </summary>
+            
+            <returns>
+            The awaiter.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter">
+            <summary>
+            Provides an awaiter for a <see cref="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable"/>.
+            </summary>
+            
+            <remarks>
+            This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.m_task">
+            <summary>
+            The task being awaited.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.m_continueOnCapturedContext">
+            <summary>
+            Whether to attempt marshaling back to the original context.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.#ctor(System.Threading.Tasks.Task,System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter"/>.
+            </summary>
+            <param name="task">The <see cref="T:System.Threading.Tasks.Task"/> to await.</param><param name="continueOnCapturedContext">true to attempt to marshal the continuation back to the original context captured
+                        when BeginAwait is called; otherwise, false.
+                        </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.OnCompleted(System.Action)">
+            <summary>
+            Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/>.
+            </summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="continuation"/> argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <remarks>
+            This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.UnsafeOnCompleted(System.Action)">
+            <summary>
+            Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/>.
+            </summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="continuation"/> argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>
+            This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult">
+            <summary>
+            Ends the await on the completed <see cref="T:System.Threading.Tasks.Task"/>.
+            </summary>
+            
+            <returns>
+            The result of the completed <see cref="T:System.Threading.Tasks.Task`1"/>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception><exception cref="T:System.InvalidOperationException">The task was not yet completed.</exception><exception cref="T:System.Threading.Tasks.TaskCanceledException">The task was canceled.</exception><exception cref="T:System.Exception">The task completed in a Faulted state.</exception>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.IsCompleted">
+            <summary>
+            Gets whether the task being awaited is completed.
+            </summary>
+            
+            <remarks>
+            This property is intended for compiler user rather than use directly in code.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IAsyncStateMachine">
+            <summary>
+              Represents state machines generated for asynchronous methods. This type is intended for compiler use only.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext">
+            <summary>
+              Moves the state machine to its next state.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>
+              Configures the state machine with a heap-allocated replica.
+            </summary>
+            <param name="stateMachine"> The heap-allocated replica. </param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IteratorStateMachineAttribute">
+            <summary>
+            Identities the iterator state machine type for this method.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.IteratorStateMachineAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes the attribute.
+            </summary>
+            <param name="stateMachineType">The type that implements the state machine.</param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.TaskAwaiter">
+            <summary>
+              Provides an awaiter for awaiting a <see cref="T:System.Threading.Tasks.Task"/> .
+            </summary>
+            <remarks>
+              This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.TaskAwaiter.CONTINUE_ON_CAPTURED_CONTEXT_DEFAULT">
+            <summary>
+              The default value to use for continueOnCapturedContext.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.TaskAwaiter.InvalidOperationException_TaskNotCompleted">
+            <summary>
+              Error message for GetAwaiter.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.TaskAwaiter.s_prepForRemoting">
+            <summary>
+              A MethodInfo for the Exception.PrepForRemoting method.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.TaskAwaiter.s_emptyParams">
+            <summary>
+              An empty array to use with MethodInfo.Invoke.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.TaskAwaiter.m_task">
+            <summary>
+              The task being awaited.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.#ctor(System.Threading.Tasks.Task)">
+            <summary>
+              Initializes the <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/> .
+            </summary>
+            <param name="task"> The <see cref="T:System.Threading.Tasks.Task"/> to be awaited. </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.OnCompleted(System.Action)">
+            <summary>
+              Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/> .
+            </summary>
+            <param name="continuation"> The action to invoke when the await operation completes. </param>
+            <exception cref="T:System.ArgumentNullException">The
+              <paramref name="continuation"/>
+              argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>
+              This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.UnsafeOnCompleted(System.Action)">
+            <summary>
+              Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/> .
+            </summary>
+            <param name="continuation"> The action to invoke when the await operation completes. </param>
+            <exception cref="T:System.ArgumentNullException">The
+              <paramref name="continuation"/>
+              argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>
+              This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.GetResult">
+            <summary>
+              Ends the await on the completed <see cref="T:System.Threading.Tasks.Task"/> .
+            </summary>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <exception cref="T:System.InvalidOperationException">The task was not yet completed.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task was canceled.</exception>
+            <exception cref="T:System.Exception">The task completed in a Faulted state.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(System.Threading.Tasks.Task)">
+            <summary>
+              Fast checks for the end of an await operation to determine whether more needs to be done prior to completing the await.
+            </summary>
+            <param name="task"> The awaited task. </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccess(System.Threading.Tasks.Task)">
+            <summary>
+              Handles validations on tasks that aren't successfully completed.
+            </summary>
+            <param name="task"> The awaited task. </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(System.Threading.Tasks.Task)">
+            <summary>
+              Throws an exception to handle a task that completed in a state other than RanToCompletion.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.OnCompletedInternal(System.Threading.Tasks.Task,System.Action,System.Boolean)">
+            <summary>
+              Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/> .
+            </summary>
+            <param name="task"> The awaited task. </param>
+            <param name="continuation"> The action to invoke when the await operation completes. </param>
+            <param name="continueOnCapturedContext"> Whether to capture and marshal back to the current context. </param>
+            <exception cref="T:System.ArgumentNullException">The
+              <paramref name="continuation"/>
+              argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <remarks>
+              This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.RunNoException(System.Action)">
+            <summary>
+              Invokes the delegate in a try/catch that will propagate the exception asynchronously on the ThreadPool.
+            </summary>
+            <param name="continuation" />
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.PrepareExceptionForRethrow(System.Exception)">
+            <summary>
+              Copies the exception's stack trace so its stack trace isn't overwritten.
+            </summary>
+            <param name="exc"> The exception to prepare. </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter.GetPrepForRemotingMethodInfo">
+            <summary>
+              Gets the MethodInfo for the internal PrepForRemoting method on Exception.
+            </summary>
+            <returns> The MethodInfo if it could be retrieved, or else null. </returns>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.TaskAwaiter.IsCompleted">
+            <summary>
+              Gets whether the task being awaited is completed.
+            </summary>
+            <remarks>
+              This property is intended for compiler user rather than use directly in code.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.TaskAwaiter.IsValidLocationForInlining">
+            <summary>
+              Whether the current thread is appropriate for inlining the await continuation.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.TaskAwaiter`1">
+            <summary>
+              Provides an awaiter for awaiting a <see cref="T:System.Threading.Tasks.Task`1"/> .
+            </summary>
+            <remarks>
+              This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.TaskAwaiter`1.m_task">
+            <summary>
+              The task being awaited.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter`1.#ctor(System.Threading.Tasks.Task{`0})">
+            <summary>
+              Initializes the <see cref="T:System.Runtime.CompilerServices.TaskAwaiter`1"/> .
+            </summary>
+            <param name="task"> The <see cref="T:System.Threading.Tasks.Task`1"/> to be awaited. </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter`1.OnCompleted(System.Action)">
+            <summary>
+              Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/> .
+            </summary>
+            <param name="continuation"> The action to invoke when the await operation completes. </param>
+            <exception cref="T:System.ArgumentNullException">The
+              <paramref name="continuation"/>
+              argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <remarks>
+              This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter`1.UnsafeOnCompleted(System.Action)">
+            <summary>
+              Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task"/> associated with this <see cref="T:System.Runtime.CompilerServices.TaskAwaiter"/> .
+            </summary>
+            <param name="continuation"> The action to invoke when the await operation completes. </param>
+            <exception cref="T:System.ArgumentNullException">The
+              <paramref name="continuation"/>
+              argument is null (Nothing in Visual Basic).</exception>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>
+              This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.TaskAwaiter`1.GetResult">
+            <summary>
+              Ends the await on the completed <see cref="T:System.Threading.Tasks.Task`1"/> .
+            </summary>
+            <returns> The result of the completed <see cref="T:System.Threading.Tasks.Task`1"/> . </returns>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <exception cref="T:System.InvalidOperationException">The task was not yet completed.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task was canceled.</exception>
+            <exception cref="T:System.Exception">The task completed in a Faulted state.</exception>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.TaskAwaiter`1.IsCompleted">
+            <summary>
+              Gets whether the task being awaited is completed.
+            </summary>
+            <remarks>
+              This property is intended for compiler user rather than use directly in code.
+            </remarks>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.VoidTaskResult">
+            <summary>
+            Used with Task(of void)
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.YieldAwaitable">
+            <summary>
+              Provides an awaitable context for switching into a target environment.
+            </summary>
+            <remarks>
+              This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.YieldAwaitable.GetAwaiter">
+            <summary>
+              Gets an awaiter for this <see cref="T:System.Runtime.CompilerServices.YieldAwaitable"/> .
+            </summary>
+            <returns> An awaiter for this awaitable. </returns>
+            <remarks>
+              This method is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter">
+            <summary>
+              Provides an awaiter that switches into a target environment.
+            </summary>
+            <remarks>
+              This type is intended for compiler use only.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.s_completed">
+            <summary>
+              A completed task.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.OnCompleted(System.Action)">
+            <summary>
+              Posts the <paramref name="continuation"/> back to the current context.
+            </summary>
+            <param name="continuation"> The action to invoke asynchronously. </param>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.UnsafeOnCompleted(System.Action)">
+            <summary>
+              Posts the <paramref name="continuation"/> back to the current context.
+            </summary>
+            <param name="continuation"> The action to invoke asynchronously. </param>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.GetResult">
+            <summary>
+              Ends the await operation.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter.IsCompleted">
+            <summary>
+              Gets whether a yield is not required.
+            </summary>
+            <remarks>
+              This property is intended for compiler user rather than use directly in code.
+            </remarks>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskEx">
+            <summary>
+            Provides methods for creating and manipulating tasks.
+            </summary>
+            
+            <remarks>
+            TaskEx is a placeholder.
+            </remarks>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskEx.s_preCompletedTask">
+            <summary>
+            An already completed task.
+            </summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskEx.s_preCanceledTask">
+            <summary>
+            An already canceled task.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run(System.Action)">
+            <summary>
+            Creates a task that runs the specified action.
+            </summary>
+            <param name="action">The action to execute asynchronously.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="action"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run(System.Action,System.Threading.CancellationToken)">
+            <summary>
+            Creates a task that runs the specified action.
+            </summary>
+            <param name="action">The action to execute.</param><param name="cancellationToken">The CancellationToken to use to request cancellation of this task.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="action"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run``1(System.Func{``0})">
+            <summary>
+            Creates a task that runs the specified function.
+            </summary>
+            <param name="function">The function to execute asynchronously.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run``1(System.Func{``0},System.Threading.CancellationToken)">
+            <summary>
+            Creates a task that runs the specified function.
+            </summary>
+            <param name="function">The action to execute.</param><param name="cancellationToken">The CancellationToken to use to cancel the task.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Creates a task that runs the specified function.
+            </summary>
+            <param name="function">The action to execute asynchronously.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run(System.Func{System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+            <summary>
+            Creates a task that runs the specified function.
+            </summary>
+            <param name="function">The function to execute.</param><param name="cancellationToken">The CancellationToken to use to request cancellation of this task.</param>
+            <returns>
+            A task that represents the completion of the function.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a task that runs the specified function.
+            </summary>
+            <param name="function">The function to execute asynchronously.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Run``1(System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Creates a task that runs the specified function.
+            </summary>
+            <param name="function">The action to execute.</param><param name="cancellationToken">The CancellationToken to use to cancel the task.</param>
+            <returns>
+            A task that represents the completion of the action.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="function"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Delay(System.Int32)">
+            <summary>
+            Starts a Task that will complete after the specified due time.
+            </summary>
+            <param name="dueTime">The delay in milliseconds before the returned task completes.</param>
+            <returns>
+            The timed Task.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="dueTime"/> argument must be non-negative or -1 and less than or equal to Int32.MaxValue.
+                        </exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Delay(System.TimeSpan)">
+            <summary>
+            Starts a Task that will complete after the specified due time.
+            </summary>
+            <param name="dueTime">The delay before the returned task completes.</param>
+            <returns>
+            The timed Task.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="dueTime"/> argument must be non-negative or -1 and less than or equal to Int32.MaxValue.
+                        </exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Delay(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Starts a Task that will complete after the specified due time.
+            </summary>
+            <param name="dueTime">The delay before the returned task completes.</param><param name="cancellationToken">A CancellationToken that may be used to cancel the task before the due time occurs.</param>
+            <returns>
+            The timed Task.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="dueTime"/> argument must be non-negative or -1 and less than or equal to Int32.MaxValue.
+                        </exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Delay(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Starts a Task that will complete after the specified due time.
+            </summary>
+            <param name="dueTime">The delay in milliseconds before the returned task completes.</param><param name="cancellationToken">A CancellationToken that may be used to cancel the task before the due time occurs.</param>
+            <returns>
+            The timed Task.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="dueTime"/> argument must be non-negative or -1 and less than or equal to Int32.MaxValue.
+                        </exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAll(System.Threading.Tasks.Task[])">
+            <summary>
+            Creates a Task that will complete only when all of the provided collection of Tasks has completed.
+            </summary>
+            <param name="tasks">The Tasks to monitor for completion.</param>
+            <returns>
+            A Task that represents the completion of all of the provided tasks.
+            </returns>
+            
+            <remarks>
+            If any of the provided Tasks faults, the returned Task will also fault, and its Exception will contain information
+                        about all of the faulted tasks.  If no Tasks fault but one or more Tasks is canceled, the returned
+                        Task will also be canceled.
+            
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAll``1(System.Threading.Tasks.Task{``0}[])">
+            <summary>
+            Creates a Task that will complete only when all of the provided collection of Tasks has completed.
+            </summary>
+            <param name="tasks">The Tasks to monitor for completion.</param>
+            <returns>
+            A Task that represents the completion of all of the provided tasks.
+            </returns>
+            
+            <remarks>
+            If any of the provided Tasks faults, the returned Task will also fault, and its Exception will contain information
+                        about all of the faulted tasks.  If no Tasks fault but one or more Tasks is canceled, the returned
+                        Task will also be canceled.
+            
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAll(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})">
+            <summary>
+            Creates a Task that will complete only when all of the provided collection of Tasks has completed.
+            </summary>
+            <param name="tasks">The Tasks to monitor for completion.</param>
+            <returns>
+            A Task that represents the completion of all of the provided tasks.
+            </returns>
+            
+            <remarks>
+            If any of the provided Tasks faults, the returned Task will also fault, and its Exception will contain information
+                        about all of the faulted tasks.  If no Tasks fault but one or more Tasks is canceled, the returned
+                        Task will also be canceled.
+            
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAll``1(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a Task that will complete only when all of the provided collection of Tasks has completed.
+            </summary>
+            <param name="tasks">The Tasks to monitor for completion.</param>
+            <returns>
+            A Task that represents the completion of all of the provided tasks.
+            </returns>
+            
+            <remarks>
+            If any of the provided Tasks faults, the returned Task will also fault, and its Exception will contain information
+                        about all of the faulted tasks.  If no Tasks fault but one or more Tasks is canceled, the returned
+                        Task will also be canceled.
+            
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAllCore``1(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task},System.Action{System.Threading.Tasks.Task[],System.Threading.Tasks.TaskCompletionSource{``0}})">
+            <summary>
+            Creates a Task that will complete only when all of the provided collection of Tasks has completed.
+            </summary>
+            <param name="tasks">The Tasks to monitor for completion.</param><param name="setResultAction">A callback invoked when all of the tasks complete successfully in the RanToCompletion state.
+                        This callback is responsible for storing the results into the TaskCompletionSource.
+                        </param>
+            <returns>
+            A Task that represents the completion of all of the provided tasks.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAny(System.Threading.Tasks.Task[])">
+            <summary>
+            Creates a Task that will complete when any of the tasks in the provided collection completes.
+            </summary>
+            <param name="tasks">The Tasks to be monitored.</param>
+            <returns>
+            A Task that represents the completion of any of the provided Tasks.  The completed Task is this Task's result.
+            
+            </returns>
+            
+            <remarks>
+            Any Tasks that fault will need to have their exceptions observed elsewhere.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAny(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})">
+            <summary>
+            Creates a Task that will complete when any of the tasks in the provided collection completes.
+            </summary>
+            <param name="tasks">The Tasks to be monitored.</param>
+            <returns>
+            A Task that represents the completion of any of the provided Tasks.  The completed Task is this Task's result.
+            
+            </returns>
+            
+            <remarks>
+            Any Tasks that fault will need to have their exceptions observed elsewhere.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAny``1(System.Threading.Tasks.Task{``0}[])">
+            <summary>
+            Creates a Task that will complete when any of the tasks in the provided collection completes.
+            </summary>
+            <param name="tasks">The Tasks to be monitored.</param>
+            <returns>
+            A Task that represents the completion of any of the provided Tasks.  The completed Task is this Task's result.
+            
+            </returns>
+            
+            <remarks>
+            Any Tasks that fault will need to have their exceptions observed elsewhere.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.WhenAny``1(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Creates a Task that will complete when any of the tasks in the provided collection completes.
+            </summary>
+            <param name="tasks">The Tasks to be monitored.</param>
+            <returns>
+            A Task that represents the completion of any of the provided Tasks.  The completed Task is this Task's result.
+            
+            </returns>
+            
+            <remarks>
+            Any Tasks that fault will need to have their exceptions observed elsewhere.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="tasks"/> argument is null.</exception><exception cref="T:System.ArgumentException">The <paramref name="tasks"/> argument contains a null reference.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.FromResult``1(``0)">
+            <summary>
+            Creates an already completed <see cref="T:System.Threading.Tasks.Task`1"/> from the specified result.
+            </summary>
+            <param name="result">The result from which to create the completed task.</param>
+            <returns>
+            The completed task.
+            </returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.Yield">
+            <summary>
+            Creates an awaitable that asynchronously yields back to the current context when awaited.
+            </summary>
+            
+            <returns>
+            A context that, when awaited, will asynchronously transition back into the current context.
+                        If SynchronizationContext.Current is non-null, that is treated as the current context.
+                        Otherwise, TaskScheduler.Current is treated as the current context.
+            
+            </returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskEx.AddPotentiallyUnwrappedExceptions(System.Collections.Generic.List{System.Exception}@,System.Exception)">
+            <summary>
+            Adds the target exception to the list, initializing the list if it's null.
+            </summary>
+            <param name="targetList">The list to which to add the exception and initialize if the list is null.</param><param name="exception">The exception to add, and unwrap if it's an aggregate.</param>
+        </member>
+        <member name="T:System.Runtime.TargetedPatchingOptOutAttribute">
+            <summary>
+            Indicates that the .NET Framework class library method to which this attribute is applied is unlikely to be affected by servicing releases, 
+            and therefore is eligible to be inlined across Native Image Generator (NGen) images.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.TargetedPatchingOptOutAttribute.#ctor(System.String)">
+            <summary>
+            Infrastructure. Initializes a new instance of the <b>TargetedPatchingOptOutAttribute</b> class.
+            </summary>
+            <param name="reason">The reason why the method to which the <see cref="T:System.Runtime.TargetedPatchingOptOutAttribute"/> attribute is applied is 
+            considered to be eligible for inlining across Native Image Generator (NGen) images.</param>
+        </member>
+        <member name="P:System.Runtime.TargetedPatchingOptOutAttribute.Reason">
+            <summary>
+            Infrastructure. Gets the reason why the method to which this attribute is applied is considered to be eligible for inlining across 
+            Native Image Generator (NGen) images.
+            </summary>
+        </member>
+    </members>
+</doc>

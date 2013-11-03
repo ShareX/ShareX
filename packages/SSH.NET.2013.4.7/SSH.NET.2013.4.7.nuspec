@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>SSH.NET</id>
+    <version>2013.4.7</version>
+    <title>SSH.NET</title>
+    <authors>Renci</authors>
+    <owners>Renci</owners>
+    <licenseUrl>http://sshnet.codeplex.com/license</licenseUrl>
+    <projectUrl>http://sshnet.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This project was inspired by Sharp.SSH library which was ported from Java.  This library is a complete rewrite using .NET, without any third party dependencies and to utilize the parallelism as much as possible to allow best performance you can get.  SSH.NET supports .NET 3.5, 4.0, Silverlight 4.0, Silverlight 5.0, Windows Phone 7 and Windows Phone 8.</description>
+    <releaseNotes>New Features
+
+    Add IPAddress as parameter to ForwardedPortRemote
+
+
+Breaking changes
+
+    Remove not SCP feature of creating directory structure for uploaded files or directories
+
+
+Fixes
+
+    Fix the way SCP handling root path
+    Fix problem when huge files could be cut off in the middle
+    Fix exception handeling when multiple threads share one channel that can cause application hanging
+    Fix internal server window size management
+    Improve HTTP proxy error handling
+    Improve handling of multiple authentication methods
+    Fix threading in ShellStream by locking _incoming object when performing Enqueue
+    Fix SCP Upload issue.
+    Fix so Channel.Close() is not called during dispose phase
+    Fix and remove orphan threads when using port forwarding
+    Fix thread synchronization issue when uploading files using SCP
+    Fix SshAuthenticationException by handling PartialSuccess response and continue authentication process in that case
+    Improve thread-safe event handling
+    Replace Task.Factory.StartNew with ThreadPool.QueueUserWorkItem</releaseNotes>
+    <copyright>2013, RENCI</copyright>
+    <language>en-US</language>
+    <tags>ssh .net40 sftp .net35 wp7 wp71 wp8 silverlight windowsphone</tags>
+  </metadata>
+</package>

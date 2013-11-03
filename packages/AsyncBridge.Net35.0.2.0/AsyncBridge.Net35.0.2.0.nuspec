@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AsyncBridge.Net35</id>
+    <version>0.2.0</version>
+    <title>AsyncBridge - Async Support for .NET 3.5</title>
+    <authors>Daniel Grunwald, Omer Mor, Alex Davies</authors>
+    <owners>Daniel Grunwald, Omer Mor, Alex Davies</owners>
+    <projectUrl>http://omermor.github.com/AsyncBridge/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Adds the new C#5 async features for .NET 3.5 projects</description>
+    <releaseNotes />
+    <copyright>Copyright 2012</copyright>
+    <language />
+    <tags>async bridge C# C#5 .NET40</tags>
+    <dependencies>
+      <dependency id="TaskParallelLibrary" version="1.0.2856.0" />
+    </dependencies>
+  </metadata>
+</package>

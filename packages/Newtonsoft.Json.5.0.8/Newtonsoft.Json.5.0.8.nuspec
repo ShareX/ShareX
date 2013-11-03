@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Newtonsoft.Json</id>
+    <version>5.0.8</version>
+    <title>Json.NET</title>
+    <authors>James Newton-King</authors>
+    <owners>James Newton-King</owners>
+    <licenseUrl>https://raw.github.com/JamesNK/Newtonsoft.Json/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://james.newtonking.com/json</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Json.NET is a popular high-performance JSON framework for .NET</description>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <tags>json</tags>
+  </metadata>
+</package>
