@@ -52,8 +52,8 @@ namespace ShareX
             InitializeComponent();
             colorPicker.DrawCrosshair = true;
             colorTimer.Tick += colorTimer_Tick;
-            colorTimer.Start();
-            UpdateColorPickerButtonText();
+
+            UpdateControls(true);
 
             foreach (Control control in Controls)
             {
@@ -95,9 +95,11 @@ namespace ShareX
             colorPicker.ChangeColor(color);
         }
 
-        private void UpdateColorPickerButtonText()
+        private void UpdateControls(bool colorTimerEnable)
         {
-            if (colorTimer.Enabled)
+            colorTimer.Enabled = colorTimerEnable;
+
+            if (colorTimerEnable)
             {
                 btnColorPicker.Text = "Stop screen color picker";
             }
@@ -106,21 +108,21 @@ namespace ShareX
                 btnColorPicker.Text = "Start screen color picker";
             }
 
-            lblScreenColorPickerTip.Visible = colorTimer.Enabled;
+            lblScreenColorPickerTip.Visible = colorTimerEnable;
+
+            TopMost = colorTimerEnable;
         }
 
         private void btnColorPicker_Click(object sender, EventArgs e)
         {
-            colorTimer.Enabled = !colorTimer.Enabled;
-            UpdateColorPickerButtonText();
+            UpdateControls(!colorTimer.Enabled);
         }
 
         private void btnPipette_Click(object sender, EventArgs e)
         {
             try
             {
-                colorTimer.Enabled = false;
-                UpdateColorPickerButtonText();
+                UpdateControls(false);
 
                 Hide();
                 Thread.Sleep(100);
@@ -156,8 +158,7 @@ namespace ShareX
             if (e.KeyCode == Keys.ControlKey && !txtHex.Focused)
             {
                 btnColorPicker.Focus();
-                colorTimer.Enabled = !colorTimer.Enabled;
-                UpdateColorPickerButtonText();
+                UpdateControls(!colorTimer.Enabled);
                 e.SuppressKeyPress = true;
             }
         }

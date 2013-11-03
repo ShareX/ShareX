@@ -116,7 +116,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="History.ico" />
     <None Include="packages.config" />
     <None Include="Resources\ShareX_Icon.ico" />
   </ItemGroup>
