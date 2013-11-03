@@ -107,6 +107,34 @@ namespace HelpersLib
             }
         }
 
+        public new event MouseEventHandler MouseUp
+        {
+            add
+            {
+                pbMain.MouseUp += value;
+                lblStatus.MouseUp += value;
+            }
+            remove
+            {
+                pbMain.MouseUp -= value;
+                lblStatus.MouseUp -= value;
+            }
+        }
+
+        public new event MouseEventHandler MouseClick
+        {
+            add
+            {
+                pbMain.MouseClick += value;
+                lblStatus.MouseClick += value;
+            }
+            remove
+            {
+                pbMain.MouseClick -= value;
+                lblStatus.MouseClick -= value;
+            }
+        }
+
         private readonly object ImageLoadLock = new object();
 
         private bool isImageLoading;

@@ -521,7 +521,7 @@
             // pbColorPreview
             // 
             this.pbColorPreview.BackColor = System.Drawing.Color.White;
-            this.pbColorPreview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbColorPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbColorPreview.DrawCheckeredBackground = true;
             this.pbColorPreview.Location = new System.Drawing.Point(360, 208);
             this.pbColorPreview.Name = "pbColorPreview";
@@ -535,7 +535,7 @@
             this.colorPicker.DrawStyle = HelpersLib.DrawStyle.Hue;
             this.colorPicker.Location = new System.Drawing.Point(8, 8);
             this.colorPicker.Name = "colorPicker";
-            this.colorPicker.Size = new System.Drawing.Size(293, 263);
+            this.colorPicker.Size = new System.Drawing.Size(290, 261);
             this.colorPicker.TabIndex = 0;
             this.colorPicker.ColorChanged += new HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
             // 

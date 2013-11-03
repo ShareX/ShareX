@@ -114,8 +114,8 @@ namespace ImageEffectsLib
             {
                 if (dColor.ShowDialog() == DialogResult.OK)
                 {
-                    pb.BackColor = dColor.Color;
-                    color = dColor.Color;
+                    pb.BackColor = dColor.NewColor;
+                    color = (Color)dColor.NewColor;
                 }
             }
         }

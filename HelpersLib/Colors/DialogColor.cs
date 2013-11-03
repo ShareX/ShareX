@@ -33,10 +33,9 @@ namespace HelpersLib
 {
     public partial class DialogColor : Form
     {
-        public Color Color { get; private set; }
+        public MyColor NewColor { get; protected set; }
+        public MyColor OldColor { get; private set; }
 
-        private MyColor NewColor = Color.Red;
-        private MyColor OldColor;
         private bool oldColorExist;
         private bool controlChangingColor;
 
@@ -47,6 +46,7 @@ namespace HelpersLib
 
         public DialogColor(Color currentColor)
         {
+            NewColor = Color.Red;
             Initialize(currentColor);
         }
 
@@ -157,7 +157,6 @@ namespace HelpersLib
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Color = Color.FromArgb((int)nudAlpha.Value, (int)nudRed.Value, (int)nudGreen.Value, (int)nudBlue.Value);
             DialogResult = DialogResult.OK;
             Close();
         }

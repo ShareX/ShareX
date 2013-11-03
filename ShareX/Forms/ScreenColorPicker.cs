@@ -115,6 +115,7 @@ namespace ShareX
 
         private void btnColorPicker_Click(object sender, EventArgs e)
         {
+            if (!colorTimer.Enabled) SetCurrentColor(NewColor);
             UpdateControls(!colorTimer.Enabled);
         }
 
@@ -122,6 +123,7 @@ namespace ShareX
         {
             try
             {
+                SetCurrentColor(NewColor);
                 UpdateControls(false);
 
                 Hide();
@@ -158,6 +160,7 @@ namespace ShareX
             if (e.KeyCode == Keys.ControlKey && !txtHex.Focused)
             {
                 btnColorPicker.Focus();
+                if (!colorTimer.Enabled) SetCurrentColor(NewColor);
                 UpdateControls(!colorTimer.Enabled);
                 e.SuppressKeyPress = true;
             }

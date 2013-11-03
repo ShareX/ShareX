@@ -37,17 +37,19 @@ namespace HelpersLib
         protected override void Initialize()
         {
             Name = "ColorSlider";
-            Size = new Size(30, 260);
+            ClientSize = new Size(30, 256);
             base.Initialize();
         }
 
         protected override void DrawCrosshair(Graphics g)
         {
-            int rectOffset = 3;
-            int rectSize = 4;
+            DrawCrosshair(g, Pens.Black, 3, 11);
+            DrawCrosshair(g, Pens.White, 4, 9);
+        }
 
-            g.DrawRectangle(Pens.Black, new Rectangle(rectOffset, lastPos.Y - rectSize, width - rectOffset * 2, rectSize * 2 + 1));
-            g.DrawRectangle(Pens.White, new Rectangle(rectOffset + 1, lastPos.Y - rectSize + 1, width - rectOffset * 2 - 2, rectSize * 2 - 1));
+        private void DrawCrosshair(Graphics g, Pen pen, int offset, int height)
+        {
+            g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - height / 2, ClientWidth - offset * 2, height));
         }
 
         // Y = Hue 360 -> 0
@@ -57,13 +59,13 @@ namespace HelpersLib
             {
                 HSB color = new HSB(0.0, 1.0, 1.0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    color.Hue = 1.0 - (double)y / (height - 1);
+                    color.Hue = 1.0 - (double)y / (ClientHeight - 1);
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, width, y);
+                        g.DrawLine(pen, 0, y, ClientWidth, y);
                     }
                 }
             }
@@ -76,13 +78,13 @@ namespace HelpersLib
             {
                 HSB color = new HSB(SelectedColor.HSB.Hue, 0.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    color.Saturation = 1.0 - (double)y / (height - 1);
+                    color.Saturation = 1.0 - (double)y / (ClientHeight - 1);
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, width, y);
+                        g.DrawLine(pen, 0, y, ClientWidth, y);
                     }
                 }
             }
@@ -95,13 +97,13 @@ namespace HelpersLib
             {
                 HSB color = new HSB(SelectedColor.HSB.Hue, SelectedColor.HSB.Saturation, 0.0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    color.Brightness = 1.0 - (double)y / (height - 1);
+                    color.Brightness = 1.0 - (double)y / (ClientHeight - 1);
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, width, y);
+                        g.DrawLine(pen, 0, y, ClientWidth, y);
                     }
                 }
             }
@@ -114,13 +116,13 @@ namespace HelpersLib
             {
                 RGBA color = new RGBA(0, SelectedColor.RGBA.Green, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    color.Red = 255 - Round(255 * (double)y / (height - 1));
+                    color.Red = 255 - Round(255 * (double)y / (ClientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, width, y);
+                        g.DrawLine(pen, 0, y, ClientWidth, y);
                     }
                 }
             }
@@ -133,13 +135,13 @@ namespace HelpersLib
             {
                 RGBA color = new RGBA(SelectedColor.RGBA.Red, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    color.Green = 255 - Round(255 * (double)y / (height - 1));
+                    color.Green = 255 - Round(255 * (double)y / (ClientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, width, y);
+                        g.DrawLine(pen, 0, y, ClientWidth, y);
                     }
                 }
             }
@@ -152,13 +154,13 @@ namespace HelpersLib
             {
                 RGBA color = new RGBA(SelectedColor.RGBA.Red, SelectedColor.RGBA.Green, 0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    color.Blue = 255 - Round(255 * (double)y / (height - 1));
+                    color.Blue = 255 - Round(255 * (double)y / (ClientHeight - 1));
 
                     using (Pen pen = new Pen(color))
                     {
-                        g.DrawLine(pen, 0, y, width, y);
+                        g.DrawLine(pen, 0, y, ClientWidth, y);
                     }
                 }
             }

@@ -171,7 +171,7 @@ namespace ImageEffectsLib
 
                 if (colorPicker.ShowDialog() == DialogResult.OK)
                 {
-                    Color color = colorPicker.Color;
+                    Color color = colorPicker.NewColor;
                     txtColor.Text = string.Format("{0},{1},{2},{3}", color.A, color.R, color.G, color.B);
                 }
             }

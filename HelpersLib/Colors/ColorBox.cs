@@ -38,17 +38,17 @@ namespace HelpersLib
         protected override void Initialize()
         {
             Name = "ColorBox";
-            Size = new Size(260, 260);
+            ClientSize = new Size(256, 256);
             base.Initialize();
         }
 
         protected override void DrawCrosshair(Graphics g)
         {
-            DrawEllipse(g, Pens.Black, 6);
-            DrawEllipse(g, Pens.White, 5);
+            DrawCrosshair(g, Pens.Black, 6);
+            DrawCrosshair(g, Pens.White, 5);
         }
 
-        private void DrawEllipse(Graphics g, Pen pen, int size)
+        private void DrawCrosshair(Graphics g, Pen pen, int size)
         {
             g.DrawEllipse(pen, new Rectangle(new Point(lastPos.X - size, lastPos.Y - size), new Size(size * 2, size * 2)));
         }
@@ -62,13 +62,13 @@ namespace HelpersLib
                 HSB start = new HSB(SelectedColor.HSB.Hue, 0.0, 0.0, SelectedColor.RGBA.Alpha);
                 HSB end = new HSB(SelectedColor.HSB.Hue, 1.0, 0.0, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    start.Brightness = end.Brightness = 1.0 - (double)y / (height - 1);
+                    start.Brightness = end.Brightness = 1.0 - (double)y / (ClientHeight - 1);
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, width, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
                     }
                 }
             }
@@ -83,13 +83,13 @@ namespace HelpersLib
                 HSB start = new HSB(0.0, SelectedColor.HSB.Saturation, 1.0, SelectedColor.RGBA.Alpha);
                 HSB end = new HSB(0.0, SelectedColor.HSB.Saturation, 0.0, SelectedColor.RGBA.Alpha);
 
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < ClientWidth; x++)
                 {
-                    start.Hue = end.Hue = (double)x / (height - 1);
+                    start.Hue = end.Hue = (double)x / (ClientHeight - 1);
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, height), start, end, LinearGradientMode.Vertical))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, ClientHeight), start, end, LinearGradientMode.Vertical))
                     {
-                        g.FillRectangle(brush, new Rectangle(x, 0, 1, height));
+                        g.FillRectangle(brush, new Rectangle(x, 0, 1, ClientHeight));
                     }
                 }
             }
@@ -104,13 +104,13 @@ namespace HelpersLib
                 HSB start = new HSB(0.0, 1.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
                 HSB end = new HSB(0.0, 0.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
 
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < ClientWidth; x++)
                 {
-                    start.Hue = end.Hue = (double)x / (height - 1);
+                    start.Hue = end.Hue = (double)x / (ClientHeight - 1);
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, height), start, end, LinearGradientMode.Vertical))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, 1, ClientHeight), start, end, LinearGradientMode.Vertical))
                     {
-                        g.FillRectangle(brush, new Rectangle(x, 0, 1, height));
+                        g.FillRectangle(brush, new Rectangle(x, 0, 1, ClientHeight));
                     }
                 }
             }
@@ -125,13 +125,13 @@ namespace HelpersLib
                 RGBA start = new RGBA(SelectedColor.RGBA.Red, 0, 0, SelectedColor.RGBA.Alpha);
                 RGBA end = new RGBA(SelectedColor.RGBA.Red, 0, 255, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    start.Green = end.Green = Round(255 - (255 * (double)y / (height - 1)));
+                    start.Green = end.Green = Round(255 - (255 * (double)y / (ClientHeight - 1)));
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, width, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
                     }
                 }
             }
@@ -146,13 +146,13 @@ namespace HelpersLib
                 RGBA start = new RGBA(0, SelectedColor.RGBA.Green, 0, SelectedColor.RGBA.Alpha);
                 RGBA end = new RGBA(0, SelectedColor.RGBA.Green, 255, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    start.Red = end.Red = Round(255 - (255 * (double)y / (height - 1)));
+                    start.Red = end.Red = Round(255 - (255 * (double)y / (ClientHeight - 1)));
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, width, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
                     }
                 }
             }
@@ -167,13 +167,13 @@ namespace HelpersLib
                 RGBA start = new RGBA(0, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
                 RGBA end = new RGBA(255, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < ClientHeight; y++)
                 {
-                    start.Green = end.Green = Round(255 - (255 * (double)y / (height - 1)));
+                    start.Green = end.Green = Round(255 - (255 * (double)y / (ClientHeight - 1)));
 
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, 1), start, end, LinearGradientMode.Horizontal))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientWidth, 1), start, end, LinearGradientMode.Horizontal))
                     {
-                        g.FillRectangle(brush, new Rectangle(0, y, width, 1));
+                        g.FillRectangle(brush, new Rectangle(0, y, ClientWidth, 1));
                     }
                 }
             }
