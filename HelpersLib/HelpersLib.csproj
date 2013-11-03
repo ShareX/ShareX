@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelpersLib</RootNamespace>
+    <AssemblyName>HelpersLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AsyncBridge.Net35, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b3b1c0202c0d6a87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Threading, Version=1.0.2856.102, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\TaskParallelLibrary.1.0.2856.0\lib\Net35\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AviWriter.cs" />
+    <Compile Include="ClipboardFormat.cs" />
+    <Compile Include="ColorMatrixManager.cs" />
+    <Compile Include="Colors\CMYK.cs" />
+    <Compile Include="Colors\ColorEventHandler.cs" />
+    <Compile Include="Colors\HSB.cs" />
+    <Compile Include="Colors\MyColor.cs" />
+    <Compile Include="Colors\RGBA.cs" />
+    <Compile Include="Helpers\ClipboardHelpers.cs" />
+    <Compile Include="ColorBgra.cs" />
+    <Compile Include="Cryptographic\Crc32.cs" />
+    <Compile Include="FileNameEditors\CssFileNameEditor.cs" />
+    <Compile Include="CursorData.cs" />
+    <Compile Include="FileNameEditors\ExeFileNameEditor.cs" />
+    <Compile Include="Forms\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugTimer.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Forms\ClipboardFormatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClipboardFormatForm.Designer.cs">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HashCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HashCheckForm.Designer.cs">
+      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIF\AnimatedGif.cs" />
+    <Compile Include="Helpers\CaptureHelpers.cs" />
+    <Compile Include="CLI\CLICommand.cs" />
+    <Compile Include="CLI\CLICommandAction.cs" />
+    <Compile Include="CLI\CLIHelper.cs" />
+    <Compile Include="CLI\CLIManager.cs" />
+    <Compile Include="CLI\CLIManagerRegex.cs" />
+    <Compile Include="CLI\CLIParser.cs" />
+    <Compile Include="Colors\ColorBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helpers\ColorHelpers.cs" />
+    <Compile Include="Colors\ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Colors\ColorSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Colors\ColorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Colors\DialogColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colors\DialogColor.Designer.cs">
+      <DependentUpon>DialogColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\GraphicsExtensions.cs" />
+    <Compile Include="Extensions\GraphicsPathExtensions.cs" />
+    <Compile Include="ExternalProgram.cs" />
+    <Compile Include="FixedSizedQueue.cs" />
+    <Compile Include="Forms\ClipboardContentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClipboardContentViewer.Designer.cs">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIF\GifClass.cs" />
+    <Compile Include="GIF\GifCreator.cs" />
+    <Compile Include="GIF\GrayscaleQuantizer.cs" />
+    <Compile Include="GIF\OctreeQuantizer.cs" />
+    <Compile Include="GIF\PaletteQuantizer.cs" />
+    <Compile Include="GIF\Quantizer.cs" />
+    <Compile Include="Helpers\ImageHelpers.cs" />
+    <Compile Include="Native\FolderSelectDialog.cs" />
+    <Compile Include="SettingsBase.cs" />
+    <Compile Include="Helpers\ShortcutHelpers.cs" />
+    <Compile Include="StringLineReader.cs" />
+    <Compile Include="Native\TaskbarManager.cs" />
+    <Compile Include="ThreadWorker.cs" />
+    <Compile Include="Tokenizer\BetweenTagsResult.cs" />
+    <Compile Include="Tokenizer\Token.cs" />
+    <Compile Include="Tokenizer\Tokenizer.cs" />
+    <Compile Include="Cryptographic\HashCheck.cs" />
+    <Compile Include="Cryptographic\Translator.cs" />
+    <Compile Include="Cryptographic\TranslatorHelper.cs" />
+    <Compile Include="UnsafeBitmap.cs" />
+    <Compile Include="UpdateChecker\UpdaterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateChecker\UpdaterForm.Designer.cs">
+      <DependentUpon>UpdaterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileDownloader.cs" />
+    <Compile Include="UserControls\BlackStyle\MyButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\BlackStyle\MyCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\BlackStyle\MyLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\BlackStyle\MyProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Canvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoFocusBorderButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Native\NativeEnums.cs" />
+    <Compile Include="Native\NativeMethods.cs" />
+    <Compile Include="Native\NativeMethods_Helpers.cs" />
+    <Compile Include="Native\NativeStructs.cs" />
+    <Compile Include="Printer\PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\PrintForm.Designer.cs">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\PrintHelper.cs" />
+    <Compile Include="Printer\PrintSettings.cs" />
+    <Compile Include="Printer\PrintTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\PrintTextForm.Designer.cs">
+      <DependentUpon>PrintTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printer\PrintTextHelper.cs" />
+    <Compile Include="Helpers\RegistryHelpers.cs" />
+    <Compile Include="SettingsHelper.cs" />
+    <Compile Include="SingleInstanceApplication\ApplicationInstanceManager.cs" />
+    <Compile Include="SingleInstanceApplication\InstanceProxy.cs" />
+    <Compile Include="DebugHelper.cs" />
+    <Compile Include="UpdateChecker\UpdateCheckerLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateChecker\UpdateCheckerLabel.Designer.cs">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SplitContainerCustomSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ToolStripRadioButtonMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MyListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="FastDateTime.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="NameParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\XMLExtensions.cs" />
+    <Compile Include="UserControls\MyPictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MyPictureBox.Designer.cs">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateChecker\UpdateChecker.cs" />
+    <Compile Include="UpdateChecker\UpdateInfo.cs" />
+    <Compile Include="Links.cs" />
+    <Compile Include="WindowState.cs" />
+    <Compile Include="XmlColor.cs" />
+    <Compile Include="XmlFont.cs" />
+    <EmbeddedResource Include="Colors\DialogColor.resx">
+      <DependentUpon>DialogColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HashCheckForm.resx">
+      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdaterForm.resx">
+      <DependentUpon>UpdaterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintTextForm.resx">
+      <DependentUpon>PrintTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.resx">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MyPictureBox.resx">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crosshair.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreenshotImageEditor\GreenshotImageEditor.csproj">
+      <Project>{cd642bf4-d815-4d67-a0b5-c69f0b8231af}</Project>
+      <Name>GreenshotImageEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShareX_Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

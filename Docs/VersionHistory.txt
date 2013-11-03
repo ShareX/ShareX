@@ -1,0 +1,201 @@
+﻿ShareX 8.3 r700 - 2013-10-15
+
+Added new After Capture task "Add image effects" in favour of resize, border and shadow
+Added hotkey support for Tools (screen color picker, hash check and index folder) and to stop uploading
+Added mega.co.nz file uploader support
+
+ShareX 8.2 r655 – 2013-09-26
+
+Added folder indexer with support for text, HTML and XML
+Option to change clipboard content format for wider software compatibility 
+New after capture task: Image resize 
+Added support for indexing a folder during Clipboard Upload
+Ability to use Windows modifier for hotkeys using configuration file
+Rectangle Lite support in Advanced settings for slow computers
+
+
+ShareX 8.1 r573 - 2013-09-04
+
+Redesigned main configuration with simplified settings
+Improved hotkey system to support all possible hotkey specific tasks 
+Support custom formats for clipboard content 
+Improved screen recorder
+Automatic mode for proxy configuration
+
+ShareX 8.0 r463 - 2013-08-12
+
+Ability to create custom hotkeys with task settings
+Unlimited screen recorder support
+Commandline support for screen recorder
+Added auto capture support
+Capture selected monitor screen
+Windows 7 taskbar support
+Ability to change settings folder
+
+ShareX 7.0.0.350 - 2013-04-05
+
+Added modified version of Greenshot image editor (After capture -> Annotate Image)
+Imgur, Google URL Shortener and Picasa using OAuth 2.0 now (You need to re-authorize)
+Added Imgur album support
+Added Google Drive uploader
+Fixed Flickr upload issue
+Updated to use Twitter 1.1 API
+Fixed Possible crash with non existent program paths
+Simplified Proxy handling behavior. No need to manually enter proxy host as the program will automatically retrieve it from the system proxy.
+Added "Send URL with email" After upload task
+Issues with DST time fixed
+
+ShareX 6.7.0.311 - 2013-03-19
+
+Issues with arguments and custom uploaders fixed
+Fixed screen capture issues with Custom DPI settings
+POST file support for custom text uploader
+Shows cursor only if its visible
+Added Hash Check Tool
+Added localhostr.com support
+
+ShareX 6.6.2.293 - 2013-02-01
+
+Fixed errors with screen recording
+Added Name Formatting support for custom uploaders
+Fixed errors with updater
+Remembers file upload directory
+Goo.gl shortener fix
+Fixed issues with slow FTP uploads
+
+ShareX 6.6.1.283 - 2013-01-21
+
+Reverted minimum system requirements to .NET 3.5 to support Windows XP
+
+ShareX 6.6.0.280 - 2013-01-20
+
+Added Screenshot delay setting
+Added Clipboard upload settings tab
+Fixed bug related to clipboard copy
+Additional directory checks before saving screenshot
+Added custom uploader support for all data types (image, text, file, url shortener)
+Added Screen Recording with GIF/AVI output
+Minimum system requirements updated to .NET 4.5
+
+ShareX 6.5.0.248 - 2012-09-19
+
+Use Delete key to remove items from main window
+Added "Post capture tasks" window
+Long file name error while capturing Active Window fixed
+Updated Dropbox uploader
+Auto Generated file names feature updated
+Added Watermark support
+Image history will remember your view settings
+History & Image history will remember position, size and window state info
+Be able to see response for a failed upload
+Added "Add Border" Option to "After Capture Tasks" menu
+Imgur upload bug fixed
+
+ShareX 6.4.0.220 - 2012-08-10
+
+Shows Balloon Tip after capture
+Added Picasa image uploader
+Added option to Clear List in Main Window
+Minor UI changes to updater
+
+ShareX 6.3.0.212 - 2012-08-03
+
+Added new hotkeys to main window, history, image history: Enter = Open URL, Ctrl + Enter = Open file, Ctrl + C = Copy URL, F5 = Refresh
+Added separate name format for active window capture
+Moved magnifier out of text area
+Added the option of capturing Active Windows without borders
+FTP path issues fixed
+Added Auto Increment option for Naming Files
+Added paste.ee text uploader support
+Added Progress(in %) information to the main window title
+Added Shadow Offset setting
+Double Clicking on a file performs checks in this order to open it: Shortended url first, url then and then the local file.
+Added ge.tt file uploader
+
+ShareX 6.2.0.195 - 2012-07-15
+
+Added watch folder tab to settings for auto uploading newly created files in these folders
+Added screen color picker to tools section
+Added image history with a thumbnail view
+Updated naming pattern to include variables such as 'active window title' and 'image width/height'
+It is now possible to copy multiple uploaded item infos (html, bbcode etc.)
+In 'shape capture' mode spacebar will now perform a fullscreen capture
+
+ShareX 6.1.0.180 - 2012-06-23
+
+Added support for sharing via social networking services initially with Twitter
+After capture tasks and After upload tasks are configurable from the main window or tray menu
+Reconfigured main window to have the main menu strip vertically
+History storage optimizations
+Ability to retry upload via main window context menu
+Added printer support
+
+ShareX 6.0.0.161 - 2012-06-09
+
+Improved right click menu to include more open/copy options
+Added support to preview image in the main window
+Added support to run External Programs
+Added pastee.org Text Uploader support
+Ability to capture Last region
+Proportional resizing of shapes while holding shift key
+Added shortcut to "Send To" without using registry
+Cursor can be moved using arrow keys during a shapes capture
+Screen-wide crosshair support during shapes capture
+Magnifier support during shapes capture, resizeable with mouse wheel (hold shift to increase box size)
+Added imm.io Image Uploader
+Rebranded as ShareX
+
+ZUploader 5.5.0.3030 - 2012-03-07
+
+5.5.0 Added Email as file uploader
+5.4.1 Clipboard upload auto detects URL and shortens it
+5.4.0 Added optional shadow capture for transparent capture
+5.3.1 Settings are backed up for automatic recovery
+5.3.0 Added Twitpic, Twitsnaps and yFrog
+5.2.1 Improved tray menu
+5.2.0 New updater with automatic downloader
+5.1.0 Added image resize settings
+5.0.0 Added Window & Control capture support to shape captures
+4.9.0 Added new post-capture option: save screenshots to file
+4.8.0 Added Box file uploader support
+4.7.2 Supported image/text/file based FTP destinations
+4.7.1 Added camera sound when capture is made
+4.7.0 Added Transparent window capture
+4.6.0 Added Hotkeys support
+4.5.0 Added support to capture window from a list of windows
+4.4.0 Added support to capture shapes to Clipboard
+4.3.0 Added Minus uploader support
+4.2.0 Added Photobucket uploader support
+4.1.1 Added user account support for Goo.gl URL Shortener service
+4.1.0 Added tray icon support
+4.0.0 Added Capture menu to capture rectangle, rounded rectangle, ellipse, triangle, diamond, polygon and freehand shapes
+3.12.0 Plugin system to perform Crop Shot and Entire Screen capture
+3.11.0 New Uploaders Configuration window to setup user accounts
+3.10.0 Added Clipboard Content Viewer to confirm uploading using Clipboard
+3.9.0 Added URL Shortener support
+3.8.0 Added ClipboardUpload hotkey (Ctrl + Page up)
+3.7.0 Added upload queue system to limit simultaneous uploads
+3.6.0 Added buffer size setting to improve upload speed
+3.5.0 Added support to copy multiple URLs in history form
+3.4.0 Text file detection improved for detecting popular programming code files
+3.3.0 Image and text encoding operations moved to upload thread to prevent the main window from freezing
+3.2.0 Drag & drop bitmap / text support
+3.1.0 Startup time improved by using precompiled xml serialization dll (SGEN) and threads
+3.0.0 Improved uploading speed and memory allocation especially for big uploads, many bug fixes
+2.8.0 Added auto naming settings for clipboard upload
+2.6.0 Added debug tab to settings form which also saves debug messages automatically to "ZUploaderPersonalPath/Log_(Month)_(Year).txt"
+2.5.0 Added "Show response" button to right click menu to see upload response (Useful for debugging)
+2.4.0 Added new CLI command (-clipboardupload)
+2.3.0 Portable support
+2.2.0 Added image viewer to history form
+2.1.0 Added filters to history form
+2.0.0 History support using SQLite as database
+1.5.0 Image settings for changing image related settings such as image format, quality etc.
+1.4.0 Single instance support for better shell extension uploading (Useful for CLI uploads)
+1.3.0 Added "Stop upload" button to right click menu
+1.2.0 Added support for Shell Extension "Upload using ShareX"
+1.1.0 Reconfigured UI, Added proxy support
+
+ZUploader 1.0.0.0 - 27-03-2010
+
+1.0.0 Initial version of ZUploader

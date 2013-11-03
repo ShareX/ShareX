@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="SteveCadwallader.CodeMaid.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <userSettings>
+        <SteveCadwallader.CodeMaid.Properties.Settings>
+            <setting name="Cleaning_IncludeXAML" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeEvents" serializeAs="String">
+                <value>5</value>
+            </setting>
+            <setting name="Cleaning_UpdateAccessorsToBothBeSingleLineOrMultiLine"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeNamespaces"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnMethods"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeStructs" serializeAs="String">
+                <value>11</value>
+            </setting>
+            <setting name="Cleaning_UsingStatementsToReinsertWhenRemovedExpression"
+                serializeAs="String">
+                <value />
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeIndexers" serializeAs="String">
+                <value>9</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterInterfaces"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeProperties" serializeAs="String">
+                <value>8</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeFields" serializeAs="String">
+                <value>1</value>
+            </setting>
+            <setting name="General_Font" serializeAs="String">
+                <value>Segoe UI</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeEnumerations"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_CommentMinorTags" serializeAs="String">
+                <value>param||exception||returns||value||permissions</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeCaseStatements"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Collapsing_CollapseSolutionWhenOpened" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="General_UseUndoTransactions" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_CenterOnWhole" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesAfterAttributes" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_UpdateSingleLineMethods" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterMethods" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_SkipRemoveUnusedUsingStatementsDuringAutoCleanupOnSave"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeClasses" serializeAs="String">
+                <value>12</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterProperties"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="General_IconSet" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeClasses"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Progressing_ShowBuildProgressOnBuildStart" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_AutoCleanupOnFileSave" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_CommentWrapColumn" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnStructs"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeCPlusPlus" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_KeepMembersWithinRegions" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeFieldsMultiLine"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeSingleLineComments"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeProperties"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_IncludeJavaScript" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Collapsing_KeepSoloProjectExpanded" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeMethods" serializeAs="String">
+                <value>10</value>
+            </setting>
+            <setting name="Progressing_ShowProgressOnWindowsTaskbar" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_ExclusionExpression" serializeAs="String">
+                <value>.*\.Designer\.cs||.*\.Designer\.vb||.*\.resx</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeEndRegionTags"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterFieldsMultiLine"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_RemoveEndOfLineWhitespace" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeUsingStatementBlocks"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_PerformPartialCleanupOnExternal" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeEvents" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterStructs" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesAfterOpeningBrace" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeCSS" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RunVisualStudioRemoveUnusedUsingStatements"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_ComplexityWarningThreshold" serializeAs="String">
+                <value>10</value>
+            </setting>
+            <setting name="Digging_ShowItemMetadata" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_SynchronizeOutlining" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_ShowItemComplexity" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterUsingStatementBlocks"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeCSharp" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeTypeScript" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_AlphabetizeMembersOfTheSameGroup"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnProperties"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeDelegates" serializeAs="String">
+                <value>4</value>
+            </setting>
+            <setting name="Progressing_HideBuildProgressOnBuildStop" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="General_Theme" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesAtBottom" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_RunAtStartOfCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBetweenPropertiesMultiLineAccessors"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeConstructors" serializeAs="String">
+                <value>2</value>
+            </setting>
+            <setting name="Cleaning_IncludeXML" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RunVisualStudioFormatDocumentCommand"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RunVisualStudioSortUsingStatements" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="General_DiagnosticsMode" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Digging_ComplexityAlertThreshold" serializeAs="String">
+                <value>15</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnClasses"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterEvents" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterNamespaces"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_CommentMajorTags" serializeAs="String">
+                <value>summary||remarks||example</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnFields"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnEnumerations"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeHTML" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Switching_RelatedFileExtensionsExpression" serializeAs="String">
+                <value>.cpp .h||.xaml .xaml.cs||.xml .xsd||.ascx .ascx.cs||.aspx .aspx.cs||.master .master.cs</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterEnumerations"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_UpdateEndRegionDirectives" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeVB" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeDestructors" serializeAs="String">
+                <value>3</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterEndRegionTags"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RemoveMultipleConsecutiveBlankLines"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeInterfaces"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="General_ShowStartPageOnSolutionClose" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeStructs"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RemoveEndOfFileTrailingNewLine" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_CacheFiles" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeMethods"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeEnums" serializeAs="String">
+                <value>6</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterClasses" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_ShowMethodParameters" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_CommentRunDuringCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Digging_SecondarySortTypeByName" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankSpaceBeforeSelfClosingAngleBrackets"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_SortOrderTypeInterfaces" serializeAs="String">
+                <value>7</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnEvents"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeRegionTags"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Compatibility_UseReSharperSilentCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_AutoSaveAndCloseIfOpenedByCleanup" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterRegionTags"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnInterfaces"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingBeforeDelegates"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_SkipSortUsingStatementsDuringAutoCleanupOnSave"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesBeforeClosingTags" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_ExcludeT4GeneratedCode" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_InsertBlankLinePaddingAfterDelegates"
+                serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertExplicitAccessModifiersOnDelegates"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesBeforeClosingBrace" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankSpacesBeforeClosingAngleBrackets"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_IndentationMargin" serializeAs="String">
+                <value>17</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesAtTop" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeFSharp" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="General_SkipUndoTransactionsDuringAutoCleanupOnSave"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+        </SteveCadwallader.CodeMaid.Properties.Settings>
+    </userSettings>
+</configuration>

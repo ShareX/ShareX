@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1C94415-3424-4517-A2A1-B2FDD1F59C67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UploadersLib</RootNamespace>
+    <AssemblyName>UploadersLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AsyncBridge.Net35, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b3b1c0202c0d6a87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
+    </Reference>
+    <Reference Include="MegaApiClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MegaApiClient.1.0.0\lib\MegaApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SSH.NET.2013.4.7\lib\net35\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Starksoft.Net.Ftp">
+      <HintPath>..\Lib\Starksoft.Net.Ftp.dll</HintPath>
+    </Reference>
+    <Reference Include="Starksoft.Net.Proxy">
+      <HintPath>..\Lib\Starksoft.Net.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading, Version=1.0.2856.102, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\TaskParallelLibrary.1.0.2856.0\lib\Net35\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiKeys\ApiKeys.cs" />
+    <Compile Include="ApiKeys\ApiKeysConfig.cs" />
+    <Compile Include="ApiKeys\ApiKeysUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiKeys\ApiKeysUI.Designer.cs">
+      <DependentUpon>ApiKeysUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileUploaders\Box.cs" />
+    <Compile Include="FileUploaders\Email.cs" />
+    <Compile Include="FileUploaders\Ge_tt.cs" />
+    <Compile Include="FileUploaders\GoogleDrive.cs" />
+    <Compile Include="FileUploaders\Jira.cs" />
+    <Compile Include="FileUploaders\Hostr.cs" />
+    <Compile Include="FileUploaders\Mega.cs" />
+    <Compile Include="FileUploaders\SFTP.cs" />
+    <Compile Include="FileUploaders\Minus.cs" />
+    <Compile Include="FileUploaders\SharedFolderUploader.cs" />
+    <Compile Include="FTPClient\FTPClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTPClient\FTPClientForm.Designer.cs">
+      <DependentUpon>FTPClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTPClient\IconHelper.cs" />
+    <Compile Include="FTPClient\IconListManager.cs" />
+    <Compile Include="FTPClient\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FTPClient\LoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTPClient\LoginDialog.Designer.cs">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AccountTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AccountTypeControl.Designer.cs">
+      <DependentUpon>AccountTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmailForm.Designer.cs">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GoogleTranslateGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GoogleTranslateGUI.Designer.cs">
+      <DependentUpon>GoogleTranslateGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\JiraUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\JiraUpload.Designer.cs">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OAuth2Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OAuth2Control.Designer.cs">
+      <DependentUpon>OAuth2Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ResponseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ResponseForm.Designer.cs">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UploadersConfigFormGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UploadersConfigFormHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UploadersConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UploadersConfigForm.Designer.cs">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\UploadersConfig.cs" />
+    <Compile Include="GUI\UserPassBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserPassBox.Designer.cs">
+      <DependentUpon>UserPassBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AccountsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AccountsControl.Designer.cs">
+      <DependentUpon>AccountsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\GoogleTranslatorConfig.cs" />
+    <Compile Include="GUI\DropboxFilesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DropboxFilesForm.Designer.cs">
+      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GoogleTranslateGUIWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GoogleTranslateGUIHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperClasses\CertFileNameEditor.cs" />
+    <Compile Include="HelperClasses\CustomUploaderParse.cs" />
+    <Compile Include="HelperClasses\ImageListManager.cs" />
+    <Compile Include="FileUploader.cs" />
+    <Compile Include="FileUploaders\Dropbox.cs" />
+    <Compile Include="FileUploaders\DropIO.cs" />
+    <Compile Include="FileUploaders\FileBin.cs" />
+    <Compile Include="FileUploaders\FileSonic.cs" />
+    <Compile Include="FileUploaders\FTP\FTPAccount.cs" />
+    <Compile Include="FileUploaders\FTP\FTPAccountManager.cs" />
+    <Compile Include="FileUploaders\FTP\FTPAdapter.cs" />
+    <Compile Include="FileUploaders\FTP\FTPHelpers.cs" />
+    <Compile Include="FileUploaders\FTP.cs" />
+    <Compile Include="FileUploaders\RapidShare.cs" />
+    <Compile Include="FileUploaders\SendSpace.cs" />
+    <Compile Include="FileUploaders\SendSpaceManager.cs" />
+    <Compile Include="FileUploaders\ShareCX.cs" />
+    <Compile Include="HelperClasses\AccountInfo.cs" />
+    <Compile Include="HelperClasses\Argument.cs" />
+    <Compile Include="HelperClasses\KeyFileNameEditor.cs" />
+    <Compile Include="HelperClasses\JSONHelper.cs" />
+    <Compile Include="HelperClasses\OAuth\IOAuth.cs" />
+    <Compile Include="HelperClasses\OAuth\IOAuth2.cs" />
+    <Compile Include="HelperClasses\OAuth\OAuth2Info.cs" />
+    <Compile Include="HelperClasses\OAuth\OAuth2Token.cs" />
+    <Compile Include="HelperClasses\OAuth\OAuthManager.cs" />
+    <Compile Include="HelperClasses\OAuth\OAuthInfo.cs" />
+    <Compile Include="ImageUploaders\CustomImageUploader.cs" />
+    <Compile Include="ImageUploaders\Imgur_v3.cs" />
+    <Compile Include="ImageUploaders\Picasa.cs" />
+    <Compile Include="TextUploaders\CustomTextUploader.cs" />
+    <Compile Include="TextUploaders\Gist.cs" />
+    <Compile Include="TextUploaders\Paste_ee.cs" />
+    <Compile Include="UploadResult.cs" />
+    <Compile Include="GUI\TwitterMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TwitterMsg.Designer.cs">
+      <DependentUpon>TwitterMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="HelperClasses\CustomUploaderItem.cs" />
+    <Compile Include="ImageUploaders\ImmioUploader.cs" />
+    <Compile Include="ImageUploaders\Photobucket.cs" />
+    <Compile Include="SocialServices\Twitter.cs" />
+    <Compile Include="HelperClasses\ProgressManager.cs" />
+    <Compile Include="ProxyInfo.cs" />
+    <Compile Include="HelperClasses\TCPClient.cs" />
+    <Compile Include="ImageUploader.cs" />
+    <Compile Include="FileUploaders\CustomFileUploader.cs" />
+    <Compile Include="ImageUploaders\FlickrUploader.cs" />
+    <Compile Include="FileUploaders\FTPUploader.cs" />
+    <Compile Include="ImageUploaders\ImageBin.cs" />
+    <Compile Include="ImageUploaders\ImageShackUploader.cs" />
+    <Compile Include="ImageUploaders\Img1Uploader.cs" />
+    <Compile Include="ImageUploaders\Imgur_v2.cs" />
+    <Compile Include="ImageUploaders\TinyPicUploader.cs" />
+    <Compile Include="ImageUploaders\TwitPicUploader.cs" />
+    <Compile Include="ImageUploaders\TwitSnapsUploader.cs" />
+    <Compile Include="ImageUploaders\UploadScreenshot.cs" />
+    <Compile Include="ImageUploaders\YfrogUploader.cs" />
+    <Compile Include="FileUploaders\Localhost\LocalhostAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OtherServices\GoogleTranslate.cs" />
+    <Compile Include="OtherServices\Lyricsfly.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TextUploader.cs" />
+    <Compile Include="TextUploaders\Paste2.cs" />
+    <Compile Include="TextUploaders\Pastebin_ca.cs" />
+    <Compile Include="TextUploaders\Pastebin.cs" />
+    <Compile Include="TextUploaders\Pastee.cs" />
+    <Compile Include="TextUploaders\Slexy.cs" />
+    <Compile Include="Uploader.cs" />
+    <Compile Include="URLShortener.cs" />
+    <Compile Include="URLShorteners\BitlyURLShortener.cs" />
+    <Compile Include="URLShorteners\CustomURLShortener.cs" />
+    <Compile Include="URLShorteners\GoogleURLShortener.cs" />
+    <Compile Include="URLShorteners\IsgdURLShortener.cs" />
+    <Compile Include="URLShorteners\JmpURLShortener.cs" />
+    <Compile Include="URLShorteners\ThreelyURLShortener.cs" />
+    <Compile Include="URLShorteners\TinyURLShortener.cs" />
+    <Compile Include="URLShorteners\TurlURLShortener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ApiKeys\ApiKeysUI.resx">
+      <DependentUpon>ApiKeysUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTPClient\FTPClientForm.resx">
+      <DependentUpon>FTPClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTPClient\LoginDialog.resx">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AccountTypeControl.resx">
+      <DependentUpon>AccountTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmailForm.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GoogleTranslateGUI.resx">
+      <DependentUpon>GoogleTranslateGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\JiraUpload.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OAuth2Control.resx">
+      <DependentUpon>OAuth2Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ResponseForm.resx">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UploadersConfigForm.resx">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserPassBox.resx">
+      <DependentUpon>UserPassBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AccountsControl.resx">
+      <DependentUpon>AccountsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DropboxFilesForm.resx">
+      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TwitterMsg.resx">
+      <DependentUpon>TwitterMsg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\ShareX_Icon.ico" />
+    <None Include="Resources\ShareX_Logo.png" />
+    <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
+    <None Include="Favicons\Box.ico" />
+    <Content Include="Favicons\Dropbox.ico" />
+    <Content Include="Favicons\Flickr.ico" />
+    <None Include="Favicons\Gett.ico" />
+    <Content Include="Favicons\Google.ico" />
+    <Content Include="Favicons\GoogleDrive.ico" />
+    <Content Include="Favicons\ImageShack.ico" />
+    <Content Include="Favicons\Imgur.ico" />
+    <None Include="Favicons\Minus.ico" />
+    <None Include="Favicons\Localhostr.ico" />
+    <Content Include="Favicons\jira.png" />
+    <Content Include="Favicons\Pastebin.ico" />
+    <Content Include="Favicons\Photobucket.ico" />
+    <Content Include="Favicons\RapidShare.ico" />
+    <Content Include="Favicons\SendSpace.ico" />
+    <Content Include="Favicons\TinyPic.ico" />
+    <Content Include="Favicons\TwitPic.ico" />
+    <Content Include="Favicons\TwitSnaps.ico" />
+    <Content Include="Favicons\Twitter.ico" />
+    <Content Include="Favicons\YFrog.ico" />
+    <None Include="Resources\server-network.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\globe-network.png" />
+    <None Include="Resources\folder-network.png" />
+    <None Include="Resources\page_white_powerpoint.gif" />
+    <None Include="Resources\page_white_picture.gif" />
+    <None Include="Resources\page_white_php.gif" />
+    <None Include="Resources\page_white_paint.gif" />
+    <None Include="Resources\page_white_gear.gif" />
+    <None Include="Resources\page_white_flash.gif" />
+    <None Include="Resources\page_white_film.gif" />
+    <None Include="Resources\page_white_excel.gif" />
+    <None Include="Resources\page_white_dvd.gif" />
+    <None Include="Resources\page_white_cup.gif" />
+    <None Include="Resources\page_white_csharp.gif" />
+    <None Include="Resources\page_white_cplusplus.gif" />
+    <None Include="Resources\page_white_compressed.gif" />
+    <None Include="Resources\page_white_code.gif" />
+    <None Include="Resources\page_white_c.gif" />
+    <None Include="Resources\page_white_actionscript.gif" />
+    <None Include="Resources\page_white_acrobat.gif" />
+    <None Include="Resources\page_white.gif" />
+    <None Include="Resources\package.gif" />
+    <None Include="Resources\folder_user.gif" />
+    <None Include="Resources\folder_star.gif" />
+    <None Include="Resources\folder_public.gif" />
+    <None Include="Resources\folder_photos.gif" />
+    <None Include="Resources\folder_gray.gif" />
+    <None Include="Resources\folder.gif" />
+    <None Include="Resources\page_white_word.gif" />
+    <None Include="Resources\page_white_visualstudio.gif" />
+    <None Include="Resources\page_white_vector.gif" />
+    <None Include="Resources\page_white_tux.gif" />
+    <None Include="Resources\page_white_text.gif" />
+    <None Include="Resources\page_white_sound.gif" />
+    <None Include="Resources\page_white_ruby.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelpersLib\HelpersLib.csproj">
+      <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
+      <Name>HelpersLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

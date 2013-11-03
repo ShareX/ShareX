@@ -1,0 +1,1 @@
+.o *.lo *.la *.al .libs *.so *.so.[0-9] .a *.pyc *.pyo *.rej *~ ## .#* ..swp .DS_Store thumbs.db Thumbs.db *.bak *.class *.mine *.obj *.ncb *.lib *.log *.idb *.ilk *.msi *.res *.pch *.suo *.exp *.*~ *.~ ~. cvs CVS *.CVS *.cvs release Release debug Debug ignore Ignore bin Bin obj Obj *.csproj.user *.user

@@ -1,2 +1,1 @@
-ShareX
-======
+ShareX is an open source program that lets you take screenshots of any selected area with a single key, save them in your clipboard, hard disk or instantly upload them to over 25 different file hosting services. ShareX can capture screenshots with different shapes: rectangle, rounded rectangle, ellipse, triangle, diamond, polygon and also freehand. It can upload images, text files and all other different file types. It is able to capture screenshots with transparency and shadow. The program also supports clipboard upload and drag-and-drop.

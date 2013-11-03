@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F2F2F2;
+}
+
+img {
+    border-style: none;
+}
+
+a:link, a:visited {
+    color: #0066FF;
+}
+
+ul {
+    margin: 0px 0px 10px 0px;
+    padding-left: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    border: 1px solid #000000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 4px 0px 4px 10px;
+    margin: 0px 10px -10px 10px;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+h1 {
+    background-color: #336699;
+    padding: 4px 0px 4px 0px;
+    margin: 0px 0px -10px 0px;
+    text-align: center;
+    font-size: x-large;
+}
+
+h2 {
+    background-color: #3D7AAD;
+}
+
+h3 {
+    background-color: #478FC2;
+}
+
+h4 {
+    background-color: #52A3D6;
+}
+
+h5 {
+    background-color: #5CB8EB;
+}
+
+h6 {
+    background-color: #66CCFF;
+}
+
+div.MainFolderBorder, div.FolderBorder {
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 20px 0px 0px 0px;
+}
+
+div.MainFolderBorder {
+    margin: 0px 0px 10px 0px;
+}
+
+div.FolderBorder {
+    margin: 0px 10px 10px 10px;
+}
+
+.folderinfo {
+    color: #FFFFFF;
+    float: right;
+    margin-right: 10px;
+}
+
+.filesize {
+    color: #3D7AAD;
+}

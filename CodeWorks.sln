@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeWorks", "CodeWorks\CodeWorks.csproj", "{DE11B434-2D8D-4155-B150-72DF9F76FAB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersLib", "HelpersLib\HelpersLib.csproj", "{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE11B434-2D8D-4155-B150-72DF9F76FAB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE11B434-2D8D-4155-B150-72DF9F76FAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE11B434-2D8D-4155-B150-72DF9F76FAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE11B434-2D8D-4155-B150-72DF9F76FAB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
