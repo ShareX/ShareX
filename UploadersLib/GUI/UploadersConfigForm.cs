@@ -582,7 +582,7 @@ namespace UploadersLib
 
         private void btnFtpHelp_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_WIKI_FTPAccounts);
+            //Helpers.LoadBrowserAsync(Links.URL_WIKI_FTPAccounts);
         }
 
         private void btnFtpClient_Click(object sender, EventArgs e)

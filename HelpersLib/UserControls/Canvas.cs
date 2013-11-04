@@ -56,6 +56,12 @@ namespace HelpersLib
             timer.Start();
         }
 
+        public void Start(int interval)
+        {
+            Interval = interval;
+            Start();
+        }
+
         public void Stop()
         {
             if (timer != null)

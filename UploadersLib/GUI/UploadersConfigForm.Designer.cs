@@ -1678,7 +1678,7 @@
             // 
             // btnFtpClient
             // 
-            this.btnFtpClient.Location = new System.Drawing.Point(376, 8);
+            this.btnFtpClient.Location = new System.Drawing.Point(448, 7);
             this.btnFtpClient.Name = "btnFtpClient";
             this.btnFtpClient.Size = new System.Drawing.Size(64, 24);
             this.btnFtpClient.TabIndex = 2;
@@ -1706,7 +1706,7 @@
             this.btnFTPImport.AutoSize = true;
             this.btnFTPImport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnFTPImport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnFTPImport.Location = new System.Drawing.Point(514, 8);
+            this.btnFTPImport.Location = new System.Drawing.Point(518, 8);
             this.btnFTPImport.Name = "btnFTPImport";
             this.btnFTPImport.Size = new System.Drawing.Size(126, 23);
             this.btnFTPImport.TabIndex = 3;
@@ -1716,12 +1716,13 @@
             // 
             // btnFtpHelp
             // 
-            this.btnFtpHelp.Location = new System.Drawing.Point(304, 8);
+            this.btnFtpHelp.Location = new System.Drawing.Point(378, 7);
             this.btnFtpHelp.Name = "btnFtpHelp";
             this.btnFtpHelp.Size = new System.Drawing.Size(64, 24);
             this.btnFtpHelp.TabIndex = 1;
             this.btnFtpHelp.Text = "Help...";
             this.btnFtpHelp.UseVisualStyleBackColor = true;
+            this.btnFtpHelp.Visible = false;
             this.btnFtpHelp.Click += new System.EventHandler(this.btnFtpHelp_Click);
             // 
             // ucFTPAccounts

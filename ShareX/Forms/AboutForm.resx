@@ -119,6 +119,7 @@
   </resheader>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value>Logo &amp; Icon: Mopsy - http://mpql.net
+Greenshot Image Editor: http://sourceforge.net/projects/greenshot
 FTP Library: http://biko.codeplex.com
 Json.NET: http://json.codeplex.com
 SSH.NET: http://sshnet.codeplex.com
@@ -126,8 +127,7 @@ Icons: http://p.yusukekamiyamane.com
 ImageListView: http://code.google.com/p/imagelistview
 AviWriter: https://code.google.com/p/aforge
 AsyncBridge: http://omermor.github.com/AsyncBridge
-Greenshot Image Editor: http://sourceforge.net/projects/greenshot
 
-</value>
+Copyright © 2008 - 2013 ShareX Developers</value>
   </data>
 </root>

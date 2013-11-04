@@ -418,6 +418,7 @@
     <None Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ru.png" />
     <None Include="Resources\ShareX_Icon.ico" />
     <None Include="Resources\ShareX_Logo.png" />
     <None Include="Resources\keyboard--pencil.png" />

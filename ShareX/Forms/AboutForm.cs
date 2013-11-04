@@ -40,10 +40,9 @@ namespace ShareX
         public AboutForm()
         {
             InitializeComponent();
-            Text = Program.FullTitle;
             Icon = Resources.ShareX_Icon;
+            Text = Program.FullTitle;
             lblProductName.Text = Program.FullTitle;
-            rtbCredits.Text += Program.AssemblyCopyright;
 
             UpdateChecker updateChecker = new UpdateChecker(Links.URL_UPDATE, Application.ProductName, Program.AssemblyVersion,
                 ReleaseChannelType.Stable, Uploader.ProxyInfo.GetWebProxy());
@@ -55,23 +54,12 @@ namespace ShareX
             BringToFront();
             Activate();
 
-            cLogo.Interval = 50;
-            cLogo.Start();
+            cLogo.Start(50);
         }
 
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             cLogo.Stop();
-        }
-
-        private void lblProjectPage_Click(object sender, EventArgs e)
-        {
-            Helpers.LoadBrowserAsync(Links.URL_WEBSITE);
-        }
-
-        private void lblBugs_Click(object sender, EventArgs e)
-        {
-            Helpers.LoadBrowserAsync(Links.URL_ISSUES);
         }
 
         private void pbBerkURL_Click(object sender, EventArgs e)
@@ -94,7 +82,17 @@ namespace ShareX
             Helpers.LoadBrowserAsync(Links.URL_GREGOIRE);
         }
 
-        private void rtbCredits_LinkClicked(object sender, LinkClickedEventArgs e)
+        private void pbDana_Click(object sender, EventArgs e)
+        {
+            Helpers.LoadBrowserAsync(Links.URL_DANA);
+        }
+
+        private void pbDanaSteamURL_Click(object sender, EventArgs e)
+        {
+            Helpers.LoadBrowserAsync(Links.URL_DANA_STEAM);
+        }
+
+        private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             Process.Start(e.LinkText);
         }
@@ -110,7 +108,7 @@ namespace ShareX
         private const int speed = 1;
         private int step = 10;
         private int direction = speed;
-        private Color lineColor = Color.Black;
+        private Color lineColor = new HSB(0d, 1d, 0.9d);
         private bool isPaused;
 
         private void cLogo_Draw(Graphics g)
@@ -151,22 +149,25 @@ namespace ShareX
                 }
 
                 step += direction;
+
+                HSB hsb = lineColor;
+
+                if (hsb.Hue >= 1)
+                {
+                    hsb.Hue = 0;
+                }
+                else
+                {
+                    hsb.Hue += 0.01;
+                }
+
+                lineColor = hsb;
             }
         }
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
             isPaused = !isPaused;
-        }
-
-        private void cLogo_MouseMove(object sender, MouseEventArgs e)
-        {
-            lineColor = new HSB((double)e.X / (w - 1), 1, 1.0 - (double)e.Y / (h - 1));
-        }
-
-        private void cLogo_MouseLeave(object sender, EventArgs e)
-        {
-            lineColor = Color.Black;
         }
 
         #endregion Animation

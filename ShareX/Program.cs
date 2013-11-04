@@ -55,7 +55,7 @@ namespace ShareX
         {
             get
             {
-                string title = string.Format("{0} {1}.{2}.{3} r{4}", ApplicationName, AssemblyVersion.Major, AssemblyVersion.Minor, AssemblyVersion.Build, AssemblyVersion.Revision);
+                string title = string.Format("{0} {1}.{2}.{3}", ApplicationName, AssemblyVersion.Major, AssemblyVersion.Minor, AssemblyVersion.Build);
                 if (IsPortable) title += " Portable";
                 return title;
             }
