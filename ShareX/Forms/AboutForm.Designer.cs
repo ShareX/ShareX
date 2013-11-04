@@ -140,7 +140,7 @@
             this.lblMike.AutoSize = true;
             this.lblMike.BackColor = System.Drawing.Color.Transparent;
             this.lblMike.ForeColor = System.Drawing.Color.Black;
-            this.lblMike.Location = new System.Drawing.Point(64, 168);
+            this.lblMike.Location = new System.Drawing.Point(87, 168);
             this.lblMike.Name = "lblMike";
             this.lblMike.Size = new System.Drawing.Size(131, 13);
             this.lblMike.TabIndex = 6;
@@ -173,7 +173,7 @@
             // lblGregoire
             // 
             this.lblGregoire.AutoSize = true;
-            this.lblGregoire.Location = new System.Drawing.Point(64, 216);
+            this.lblGregoire.Location = new System.Drawing.Point(87, 216);
             this.lblGregoire.Name = "lblGregoire";
             this.lblGregoire.Size = new System.Drawing.Size(120, 13);
             this.lblGregoire.TabIndex = 23;
