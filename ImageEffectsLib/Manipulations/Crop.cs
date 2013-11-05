@@ -30,7 +30,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
-    internal class Canvas : ImageEffect
+    internal class Crop : ImageEffect
     {
         [DefaultValue(5)]
         public int Width { get; set; }
@@ -38,7 +38,7 @@ namespace ImageEffectsLib
         [DefaultValue(5)]
         public int Height { get; set; }
 
-        public Canvas()
+        public Crop()
         {
             this.ApplyDefaultPropertyValues();
         }
@@ -50,7 +50,7 @@ namespace ImageEffectsLib
             int width = Math.Max(Width, 0);
             int height = Math.Max(Height, 0);
 
-            return ImageHelpers.AddCanvas(img, width, height);
+            return ImageHelpers.CropImage(img, new Rectangle(width, height, img.Width - width * 2, img.Height - height * 2));
         }
     }
 }

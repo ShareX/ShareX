@@ -65,6 +65,7 @@ namespace ImageEffectsLib
                 typeof(Background),
                 typeof(BackgroundGradient),
                 typeof(Border),
+                typeof(Crop),
                 typeof(Canvas),
                 typeof(Flip),
                 typeof(Resize),
