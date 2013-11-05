@@ -23,21 +23,40 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using System.ComponentModel;
-using System.Drawing;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace ImageEffectsLib
+namespace HelpersLib
 {
-    internal class Sharpen : ImageEffect
+    public class ConvolutionMatrix
     {
-        public override Image Apply(Image img)
-        {
-            //return ImageHelpers.Sharpen(img, Strength);
+        public int Size { get; private set; }
+        public int[,] Matrix { get; set; }
+        public int Factor { get; set; }
+        public int Offset { get; set; }
 
-            using (img)
+        public ConvolutionMatrix()
+            : this(3)
+        {
+        }
+
+        public ConvolutionMatrix(int size)
+        {
+            Size = size;
+            Matrix = new int[Size, Size];
+            Factor = 1;
+        }
+
+        public void SetAll(int value)
+        {
+            for (int y = 0; y < Size; y++)
             {
-                return ConvolutionMatrixManager.Sharpen().Apply(img);
+                for (int x = 0; x < Size; x++)
+                {
+                    Matrix[x, y] = value;
+                }
             }
         }
     }

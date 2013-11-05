@@ -850,9 +850,7 @@ namespace HelpersLib
                     // Lock image bits for read/write.
                     if (sharpenImage != null)
                     {
-                        BitmapData pbits = sharpenImage.LockBits(new Rectangle(0, 0, width, height),
-                                                                    ImageLockMode.ReadWrite,
-                                                                    PixelFormat.Format24bppRgb);
+                        BitmapData pbits = sharpenImage.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
 
                         // Declare an array to hold the bytes of the bitmap.
                         int bytes = pbits.Stride * height;

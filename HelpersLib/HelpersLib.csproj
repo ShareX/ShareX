@@ -84,6 +84,8 @@
     <Compile Include="Colors\HSB.cs" />
     <Compile Include="Colors\MyColor.cs" />
     <Compile Include="Colors\RGBA.cs" />
+    <Compile Include="ConvolutionMatrix.cs" />
+    <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="Helpers\ClipboardHelpers.cs" />
     <Compile Include="ColorBgra.cs" />
     <Compile Include="Cryptographic\Crc32.cs" />
