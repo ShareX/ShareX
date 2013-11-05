@@ -41,10 +41,10 @@
             this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.pbResult = new HelpersLib.MyPictureBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
+            this.pbResult = new HelpersLib.MyPictureBox();
             this.SuspendLayout();
             // 
             // tvEffects
@@ -189,20 +189,6 @@
             this.lblStatus.TabIndex = 12;
             this.lblStatus.Text = "Status";
             // 
-            // pbResult
-            // 
-            this.pbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbResult.BackColor = System.Drawing.Color.White;
-            this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbResult.DrawCheckeredBackground = true;
-            this.pbResult.FullscreenOnClick = true;
-            this.pbResult.Location = new System.Drawing.Point(248, 280);
-            this.pbResult.Name = "pbResult";
-            this.pbResult.Size = new System.Drawing.Size(688, 448);
-            this.pbResult.TabIndex = 11;
-            // 
             // btnTest
             // 
             this.btnTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -223,7 +209,6 @@
             this.btnRefresh.TabIndex = 14;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Visible = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnLoadImage
@@ -234,7 +219,22 @@
             this.btnLoadImage.TabIndex = 15;
             this.btnLoadImage.Text = "Load image";
             this.btnLoadImage.UseVisualStyleBackColor = true;
+            this.btnLoadImage.Visible = false;
             this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
+            // 
+            // pbResult
+            // 
+            this.pbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbResult.BackColor = System.Drawing.Color.White;
+            this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbResult.DrawCheckeredBackground = true;
+            this.pbResult.FullscreenOnClick = true;
+            this.pbResult.Location = new System.Drawing.Point(248, 280);
+            this.pbResult.Name = "pbResult";
+            this.pbResult.Size = new System.Drawing.Size(688, 448);
+            this.pbResult.TabIndex = 11;
             // 
             // ImageEffectsForm
             // 

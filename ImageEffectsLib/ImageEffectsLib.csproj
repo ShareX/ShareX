@@ -75,8 +75,13 @@
     <Compile Include="Adjustments\Polaroid.cs" />
     <Compile Include="Adjustments\Sepia.cs" />
     <Compile Include="Adjustments\Matrix.cs" />
+    <Compile Include="Filters\EdgeDetect.cs" />
+    <Compile Include="Filters\Emboss.cs" />
+    <Compile Include="Filters\GaussianBlur.cs" />
+    <Compile Include="Filters\MeanRemoval.cs" />
     <Compile Include="Filters\Pixelate.cs" />
     <Compile Include="Filters\Sharpen.cs" />
+    <Compile Include="Filters\Smooth.cs" />
     <Compile Include="ImageEffectManager.cs" />
     <Compile Include="Manipulations\BackgroundGradient.cs" />
     <Compile Include="Adjustments\Brightness.cs" />

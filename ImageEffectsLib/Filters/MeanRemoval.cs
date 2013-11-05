@@ -29,23 +29,21 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
-    internal class Sharpen : ImageEffect
+    internal class MeanRemoval : ImageEffect
     {
-        [DefaultValue(11)]
+        [DefaultValue(9)]
         public int Weight { get; set; }
 
-        public Sharpen()
+        public MeanRemoval()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Image Apply(Image img)
         {
-            //return ImageHelpers.Sharpen(img, Strength);
-
             using (img)
             {
-                return ConvolutionMatrixManager.Sharpen(Weight).Apply(img);
+                return ConvolutionMatrixManager.MeanRemoval(Weight).Apply(img);
             }
         }
     }

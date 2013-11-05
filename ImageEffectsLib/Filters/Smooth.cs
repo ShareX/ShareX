@@ -29,23 +29,21 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
-    internal class Sharpen : ImageEffect
+    internal class Smooth : ImageEffect
     {
-        [DefaultValue(11)]
+        [DefaultValue(1)]
         public int Weight { get; set; }
 
-        public Sharpen()
+        public Smooth()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Image Apply(Image img)
         {
-            //return ImageHelpers.Sharpen(img, Strength);
-
             using (img)
             {
-                return ConvolutionMatrixManager.Sharpen(Weight).Apply(img);
+                return ConvolutionMatrixManager.Smooth(Weight).Apply(img);
             }
         }
     }

@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Filters: http://www.codeproject.com/Articles/2008/Image-Processing-for-Dummies-with-C-and-GDI-Part-2
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -36,6 +38,8 @@ namespace HelpersLib
     {
         public static Image Apply(this ConvolutionMatrix matrix, Image img)
         {
+            int factor = Math.Max(matrix.Factor, 1);
+
             Bitmap result = (Bitmap)img.Clone();
 
             using (UnsafeBitmap source = new UnsafeBitmap((Bitmap)img, true, ImageLockMode.ReadOnly))
@@ -68,7 +72,7 @@ namespace HelpersLib
                             (pixelColor[2, 1].Red * matrix.Matrix[2, 1]) +
                             (pixelColor[0, 2].Red * matrix.Matrix[0, 2]) +
                             (pixelColor[1, 2].Red * matrix.Matrix[1, 2]) +
-                            (pixelColor[2, 2].Red * matrix.Matrix[2, 2])) / matrix.Factor) + matrix.Offset).Between(0, 255));
+                            (pixelColor[2, 2].Red * matrix.Matrix[2, 2])) / factor) + matrix.Offset).Between(0, 255));
 
                         color.Green = (byte)(((((pixelColor[0, 0].Green * matrix.Matrix[0, 0]) +
                             (pixelColor[1, 0].Green * matrix.Matrix[1, 0]) +
@@ -78,7 +82,7 @@ namespace HelpersLib
                             (pixelColor[2, 1].Green * matrix.Matrix[2, 1]) +
                             (pixelColor[0, 2].Green * matrix.Matrix[0, 2]) +
                             (pixelColor[1, 2].Green * matrix.Matrix[1, 2]) +
-                            (pixelColor[2, 2].Green * matrix.Matrix[2, 2])) / matrix.Factor) + matrix.Offset).Between(0, 255));
+                            (pixelColor[2, 2].Green * matrix.Matrix[2, 2])) / factor) + matrix.Offset).Between(0, 255));
 
                         color.Blue = (byte)(((((pixelColor[0, 0].Blue * matrix.Matrix[0, 0]) +
                             (pixelColor[1, 0].Blue * matrix.Matrix[1, 0]) +
@@ -88,7 +92,7 @@ namespace HelpersLib
                             (pixelColor[2, 1].Blue * matrix.Matrix[2, 1]) +
                             (pixelColor[0, 2].Blue * matrix.Matrix[0, 2]) +
                             (pixelColor[1, 2].Blue * matrix.Matrix[1, 2]) +
-                            (pixelColor[2, 2].Blue * matrix.Matrix[2, 2])) / matrix.Factor) + matrix.Offset).Between(0, 255));
+                            (pixelColor[2, 2].Blue * matrix.Matrix[2, 2])) / factor) + matrix.Offset).Between(0, 255));
 
                         dest.SetPixel(x + 1, y + 1, color);
                     }
@@ -98,14 +102,62 @@ namespace HelpersLib
             return result;
         }
 
+        public static ConvolutionMatrix Smooth(int weight = 1)
+        {
+            ConvolutionMatrix cm = new ConvolutionMatrix();
+            cm.SetAll(1);
+            cm.Matrix[1, 1] = weight;
+            cm.Factor = weight + 8;
+            return cm;
+        }
+
+        public static ConvolutionMatrix GaussianBlur(int weight = 4)
+        {
+            ConvolutionMatrix cm = new ConvolutionMatrix();
+            cm.SetAll(1);
+            cm.Matrix[1, 1] = weight;
+            cm.Matrix[1, 0] = cm.Matrix[0, 1] = cm.Matrix[2, 1] = cm.Matrix[1, 2] = 2;
+            cm.Factor = weight + 12;
+            return cm;
+        }
+
+        public static ConvolutionMatrix MeanRemoval(int weight = 9)
+        {
+            ConvolutionMatrix cm = new ConvolutionMatrix();
+            cm.SetAll(-1);
+            cm.Matrix[1, 1] = weight;
+            cm.Factor = weight - 8;
+            return cm;
+        }
+
         public static ConvolutionMatrix Sharpen(int weight = 11)
         {
-            ConvolutionMatrix matrix = new ConvolutionMatrix();
-            matrix.SetAll(0);
-            matrix.Matrix[1, 1] = weight;
-            matrix.Matrix[1, 0] = matrix.Matrix[0, 1] = matrix.Matrix[2, 1] = matrix.Matrix[1, 2] = -2;
-            matrix.Factor = Math.Max(weight - 8, 1);
-            return matrix;
+            ConvolutionMatrix cm = new ConvolutionMatrix();
+            cm.SetAll(0);
+            cm.Matrix[1, 1] = weight;
+            cm.Matrix[1, 0] = cm.Matrix[0, 1] = cm.Matrix[2, 1] = cm.Matrix[1, 2] = -2;
+            cm.Factor = weight - 8;
+            return cm;
+        }
+
+        public static ConvolutionMatrix EmbossLaplacian()
+        {
+            ConvolutionMatrix cm = new ConvolutionMatrix();
+            cm.SetAll(-1);
+            cm.Matrix[1, 1] = 4;
+            cm.Matrix[1, 0] = cm.Matrix[0, 1] = cm.Matrix[2, 1] = cm.Matrix[1, 2] = 0;
+            cm.Offset = 127;
+            return cm;
+        }
+
+        public static ConvolutionMatrix EdgeDetectQuick()
+        {
+            ConvolutionMatrix cm = new ConvolutionMatrix();
+            cm.Matrix[0, 0] = cm.Matrix[1, 0] = cm.Matrix[2, 0] = -1;
+            cm.Matrix[0, 1] = cm.Matrix[1, 1] = cm.Matrix[2, 1] = 0;
+            cm.Matrix[0, 2] = cm.Matrix[1, 2] = cm.Matrix[2, 2] = 1;
+            cm.Offset = 127;
+            return cm;
         }
     }
 }

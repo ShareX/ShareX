@@ -254,7 +254,7 @@ namespace HelpersLib
 
         public static Bitmap AddSkew(Image img, int x, int y)
         {
-            Bitmap result = img.CreateEmptyBitmap(Math.Abs(x), Math.Abs(y));
+            Bitmap result = img.CreateEmptyBitmap(Math.Abs(x), Math.Abs(y), PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(result))
             using (img)
@@ -273,7 +273,7 @@ namespace HelpersLib
 
         public static Image AddCanvas(Image img, int width, int height)
         {
-            Bitmap bmp = img.CreateEmptyBitmap(width * 2, height * 2);
+            Bitmap bmp = img.CreateEmptyBitmap(width * 2, height * 2, PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (img)
@@ -633,7 +633,7 @@ namespace HelpersLib
 
             try
             {
-                shadowImage = sourceImage.CreateEmptyBitmap(size * 2, size * 2);
+                shadowImage = sourceImage.CreateEmptyBitmap(size * 2, size * 2, PixelFormat.Format32bppArgb);
 
                 ColorMatrix maskMatrix = new ColorMatrix();
                 maskMatrix.Matrix00 = 0;
@@ -745,7 +745,7 @@ namespace HelpersLib
 
         public static Image CreateTornEdge(Image sourceImage, int toothHeight, int horizontalToothRange, int verticalToothRange)
         {
-            Image result = sourceImage.CreateEmptyBitmap();
+            Image result = sourceImage.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
 
             using (GraphicsPath path = new GraphicsPath())
             {
@@ -796,6 +796,7 @@ namespace HelpersLib
                     path.AddLine(previousEndingPoint, newEndingPoint);
                     previousEndingPoint = newEndingPoint;
                 }
+
                 path.CloseFigure();
 
                 // Draw the created figure with the original image by using a TextureBrush so we have anti-aliasing

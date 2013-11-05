@@ -54,7 +54,7 @@ namespace ImageEffectsLib
             UpdatePreview();
 
 #if DEBUG
-            btnRefresh.Visible = true;
+            btnLoadImage.Visible = true;
             btnTest.Visible = true;
 #endif
         }
@@ -89,10 +89,15 @@ namespace ImageEffectsLib
 
             AddEffectToTreeView("Filters",
                 typeof(Blur),
+                typeof(EdgeDetect),
+                typeof(Emboss),
+                typeof(GaussianBlur),
+                typeof(MeanRemoval),
                 typeof(Pixelate),
                 typeof(Reflection),
                 typeof(Shadow),
                 typeof(Sharpen),
+                typeof(Smooth),
                 typeof(TornEdge));
 
             tvEffects.ExpandAll();
