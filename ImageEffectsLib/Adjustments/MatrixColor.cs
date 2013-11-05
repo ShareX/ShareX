@@ -30,69 +30,53 @@ using System.Drawing.Imaging;
 
 namespace ImageEffectsLib
 {
-    internal class Matrix : ImageEffect
+    internal class MatrixColor : ImageEffect
     {
         [DefaultValue(1f), Description("Red = (Red * Rr) + (Green * Rg) + (Blue * Rb) + (Alpha * Ra) + Ro")]
         public float Rr { get; set; }
-
         [DefaultValue(0f)]
         public float Rg { get; set; }
-
         [DefaultValue(0f)]
         public float Rb { get; set; }
-
         [DefaultValue(0f)]
         public float Ra { get; set; }
-
         [DefaultValue(0f)]
         public float Ro { get; set; }
 
         [DefaultValue(0f)]
         public float Gr { get; set; }
-
         [DefaultValue(1f)]
         public float Gg { get; set; }
-
         [DefaultValue(0f)]
         public float Gb { get; set; }
-
         [DefaultValue(0f)]
         public float Ga { get; set; }
-
         [DefaultValue(0f)]
         public float Go { get; set; }
 
         [DefaultValue(0f)]
         public float Br { get; set; }
-
         [DefaultValue(0f)]
         public float Bg { get; set; }
-
         [DefaultValue(1f)]
         public float Bb { get; set; }
-
         [DefaultValue(0f)]
         public float Ba { get; set; }
-
         [DefaultValue(0f)]
         public float Bo { get; set; }
 
         [DefaultValue(0f)]
         public float Ar { get; set; }
-
         [DefaultValue(0f)]
         public float Ag { get; set; }
-
         [DefaultValue(0f)]
         public float Ab { get; set; }
-
         [DefaultValue(1f)]
         public float Aa { get; set; }
-
         [DefaultValue(0f)]
         public float Ao { get; set; }
 
-        public Matrix()
+        public MatrixColor()
         {
             this.ApplyDefaultPropertyValues();
         }

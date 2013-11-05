@@ -82,7 +82,7 @@ namespace ImageEffectsLib
                 typeof(Grayscale),
                 typeof(Hue),
                 typeof(Inverse),
-                typeof(Matrix),
+                typeof(MatrixColor),
                 typeof(Polaroid),
                 typeof(Saturation),
                 typeof(Sepia));
@@ -92,6 +92,7 @@ namespace ImageEffectsLib
                 typeof(EdgeDetect),
                 typeof(Emboss),
                 typeof(GaussianBlur),
+                typeof(MatrixConvolution),
                 typeof(MeanRemoval),
                 typeof(Pixelate),
                 typeof(Reflection),
