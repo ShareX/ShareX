@@ -57,11 +57,6 @@ namespace ShareX
             cLogo.Start(50);
         }
 
-        private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            cLogo.Stop();
-        }
-
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
             Helpers.LoadBrowserAsync(Links.URL_BERK);

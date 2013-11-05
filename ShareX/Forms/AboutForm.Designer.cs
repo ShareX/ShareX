@@ -338,7 +338,6 @@
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - About";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AboutForm_FormClosing);
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).EndInit();

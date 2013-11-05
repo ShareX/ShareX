@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+            if (colorTimer != null) colorTimer.Dispose();
             base.Dispose(disposing);
         }
 
