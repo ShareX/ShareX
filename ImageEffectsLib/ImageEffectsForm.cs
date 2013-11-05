@@ -42,6 +42,7 @@ namespace ImageEffectsLib
         public ImageEffectsForm(Image img, List<ImageEffect> effects = null)
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
             DefaultImage = img;
             AddAllEffectsToTreeView();
 
@@ -60,13 +61,39 @@ namespace ImageEffectsLib
 
         private void AddAllEffectsToTreeView()
         {
-            AddEffectToTreeView("Manipulations", typeof(Background), typeof(BackgroundGradient), typeof(Border), typeof(Canvas), typeof(Flip),
-                typeof(Resize), typeof(Rotate), typeof(Scale), typeof(Skew));
+            AddEffectToTreeView("Manipulations",
+                typeof(Background),
+                typeof(BackgroundGradient),
+                typeof(Border),
+                typeof(Canvas),
+                typeof(Flip),
+                typeof(Resize),
+                typeof(Rotate),
+                typeof(Scale),
+                typeof(Skew));
 
-            AddEffectToTreeView("Adjustments", typeof(Alpha), typeof(Brightness), typeof(Colorize), typeof(Contrast), typeof(Gamma), typeof(Grayscale),
-                typeof(Hue), typeof(Inverse), typeof(Matrix), typeof(Saturation));
+            AddEffectToTreeView("Adjustments",
+                typeof(Alpha),
+                typeof(BlackWhite),
+                typeof(Brightness),
+                typeof(Colorize),
+                typeof(Contrast),
+                typeof(Gamma),
+                typeof(Grayscale),
+                typeof(Hue),
+                typeof(Inverse),
+                typeof(Matrix),
+                typeof(Polaroid),
+                typeof(Saturation),
+                typeof(Sepia));
 
-            AddEffectToTreeView("Filters", typeof(Blur), typeof(Pixelate), typeof(Reflection), typeof(Shadow), typeof(TornEdge));
+            AddEffectToTreeView("Filters",
+                typeof(Blur),
+                typeof(Pixelate),
+                typeof(Reflection),
+                typeof(Shadow),
+                typeof(Sharpen),
+                typeof(TornEdge));
 
             tvEffects.ExpandAll();
         }
@@ -269,6 +296,19 @@ namespace ImageEffectsLib
         private void pgSettings_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
             UpdatePreview();
+        }
+
+        private void btnLoadImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    if (DefaultImage != null) DefaultImage.Dispose();
+                    DefaultImage = Helpers.GetImageFromFile(ofd.FileName);
+                    UpdatePreview();
+                }
+            }
         }
 
         private void btnTest_Click(object sender, EventArgs e)

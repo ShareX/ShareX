@@ -39,7 +39,7 @@ namespace HelpersLib
         public DebugForm(Logger logger)
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
             this.logger = logger;
 
             txtDebugLog.Text = logger.ToString();

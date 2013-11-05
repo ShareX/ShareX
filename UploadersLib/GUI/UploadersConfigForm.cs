@@ -46,7 +46,7 @@ namespace UploadersLib
         public UploadersConfigForm(UploadersConfig uploadersConfig, UploadersAPIKeys uploadersAPIKeys)
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
             Config = uploadersConfig;
             ControlSettings();
             CreateUserControlEvents();

@@ -53,7 +53,7 @@ namespace HelpersLib
         private void Initialize(Color currentColor)
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
 
             if (currentColor.IsEmpty)
             {

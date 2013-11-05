@@ -138,7 +138,31 @@ namespace HelpersLib
             });
         }
 
-        /// <param name="value">1 = No change</param>
+        public static ColorMatrix BlackWhite()
+        {
+            return new ColorMatrix(new[]
+            {
+                new float[] { 1.5f, 1.5f, 1.5f, 0, 0 },
+                new float[] { 1.5f, 1.5f, 1.5f, 0, 0 },
+                new float[] { 1.5f, 1.5f, 1.5f, 0, 0 },
+                new float[] { 0, 0, 0, 1, 0 },
+                new float[] { -1, -1, -1, 0, 1 }
+            });
+        }
+
+        public static ColorMatrix Polaroid()
+        {
+            return new ColorMatrix(new[]
+            {
+                new float[] { 1.438f, -0.062f, -0.062f, 0, 0 },
+                new float[] { -0.122f, 1.378f, -0.122f, 0, 0 },
+                new float[] { -0.016f, -0.016f, 1.483f, 0, 0 },
+                new float[] { 0, 0, 0, 1, 0 },
+                new float[] { -0.03f, 0.05f, -0.02f, 0, 1 }
+            });
+        }
+
+        /// <param name="value">1 = Default</param>
         public static ColorMatrix Grayscale(float value = 1)
         {
             return new ColorMatrix(new[]
@@ -146,6 +170,19 @@ namespace HelpersLib
                 new float[] { rw * value, rw * value, rw * value, 0, 0 },
                 new float[] { gw * value, gw * value, gw * value, 0, 0 },
                 new float[] { bw * value, bw * value, bw * value, 0, 0 },
+                new float[] { 0, 0, 0, 1, 0 },
+                new float[] { 0, 0, 0, 0, 1 }
+            });
+        }
+
+        /// <param name="value">1 = Default</param>
+        public static ColorMatrix Sepia(float value = 1)
+        {
+            return new ColorMatrix(new[]
+            {
+                new float[] { 0.393f * value, 0.349f * value, 0.272f * value, 0, 0 },
+                new float[] { 0.769f * value, 0.686f * value, 0.534f * value, 0, 0 },
+                new float[] { 0.189f * value, 0.168f * value, 0.131f * value, 0, 0 },
                 new float[] { 0, 0, 0, 1, 0 },
                 new float[] { 0, 0, 0, 0, 1 }
             });

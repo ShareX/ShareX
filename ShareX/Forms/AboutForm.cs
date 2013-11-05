@@ -40,7 +40,7 @@ namespace ShareX
         public AboutForm()
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
             Text = Program.FullTitle;
             lblProductName.Text = Program.FullTitle;
 

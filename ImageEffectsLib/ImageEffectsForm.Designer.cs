@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectsForm));
             this.tvEffects = new System.Windows.Forms.TreeView();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.pbResult = new HelpersLib.MyPictureBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnLoadImage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tvEffects
@@ -117,7 +117,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(784, 736);
+            this.btnOK.Location = new System.Drawing.Point(786, 734);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(72, 24);
             this.btnOK.TabIndex = 9;
@@ -128,7 +128,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(864, 736);
+            this.btnCancel.Location = new System.Drawing.Point(864, 734);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(72, 24);
             this.btnCancel.TabIndex = 10;
@@ -206,7 +206,7 @@
             // btnTest
             // 
             this.btnTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTest.Location = new System.Drawing.Point(704, 736);
+            this.btnTest.Location = new System.Drawing.Point(708, 734);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(72, 24);
             this.btnTest.TabIndex = 13;
@@ -226,11 +226,22 @@
             this.btnRefresh.Visible = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnLoadImage
+            // 
+            this.btnLoadImage.Location = new System.Drawing.Point(618, 734);
+            this.btnLoadImage.Name = "btnLoadImage";
+            this.btnLoadImage.Size = new System.Drawing.Size(84, 24);
+            this.btnLoadImage.TabIndex = 15;
+            this.btnLoadImage.Text = "Load image";
+            this.btnLoadImage.UseVisualStyleBackColor = true;
+            this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
+            // 
             // ImageEffectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 766);
+            this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lblStatus);
@@ -246,7 +257,6 @@
             this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.tvEffects);
             this.Controls.Add(this.lvEffects);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -274,6 +284,7 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnLoadImage;
     }
 }
 

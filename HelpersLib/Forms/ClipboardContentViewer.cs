@@ -40,7 +40,7 @@ namespace HelpersLib
         public ClipboardContentViewer(bool showCheckBox = false)
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
             cbDontShowThisWindow.Visible = showCheckBox;
         }
 

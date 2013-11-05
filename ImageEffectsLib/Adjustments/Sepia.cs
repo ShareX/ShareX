@@ -24,38 +24,27 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using System;
-using System.Windows.Forms;
-using UploadersLib.Properties;
+using System.ComponentModel;
+using System.Drawing;
 
-namespace UploadersLib
+namespace ImageEffectsLib
 {
-    public partial class ResponseForm : Form
+    internal class Sepia : ImageEffect
     {
-        public string Response { get; private set; }
+        [DefaultValue(1f)]
+        public float Value { get; set; }
 
-        private bool isOpened;
-
-        public ResponseForm(string response)
+        public Sepia()
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
-            Response = response;
-            txtSource.Text = Response;
+            this.ApplyDefaultPropertyValues();
         }
 
-        private void tcResponse_Selecting(object sender, TabControlCancelEventArgs e)
+        public override Image Apply(Image img)
         {
-            if (e.TabPageIndex == 1 && !isOpened)
+            using (img)
             {
-                wbResponse.DocumentText = Response;
-                isOpened = true;
+                return ColorMatrixManager.Sepia(Value).Apply(img);
             }
-        }
-
-        private void ResponseForm_Resize(object sender, EventArgs e)
-        {
-            Refresh();
         }
     }
 }

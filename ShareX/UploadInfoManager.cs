@@ -277,7 +277,7 @@ namespace ShareX
             {
                 using (ResponseForm form = new ResponseForm(SelectedItem.Info.Result.Response))
                 {
-                    form.Icon = Resources.ShareX_Icon;
+                    form.Icon = ShareXResources.Icon;
                     form.ShowDialog();
                 }
             }

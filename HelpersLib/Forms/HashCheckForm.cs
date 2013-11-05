@@ -37,7 +37,7 @@ namespace HelpersLib
         public HashCheckForm()
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
 
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
             cbHashType.SelectedIndex = (int)HashType.SHA1;

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using ShareX.Properties;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace ShareX
         public HotkeySettingsForm()
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
 
             if (Program.HotkeyManager != null)
             {

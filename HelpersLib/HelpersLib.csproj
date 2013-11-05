@@ -173,6 +173,7 @@
     <Compile Include="Native\FolderSelectDialog.cs" />
     <Compile Include="SettingsBase.cs" />
     <Compile Include="Helpers\ShortcutHelpers.cs" />
+    <Compile Include="ShareXResources.cs" />
     <Compile Include="StringLineReader.cs" />
     <Compile Include="Native\TaskbarManager.cs" />
     <Compile Include="ThreadWorker.cs" />
@@ -352,6 +353,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ShareX_Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShareX_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

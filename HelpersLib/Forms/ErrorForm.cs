@@ -46,7 +46,7 @@ namespace HelpersLib
         public ErrorForm(string productName, string errorMessage, string errorString, Logger logger, string logPath, string bugReportPath)
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
 
             ApplicationName = productName;
             Logger = logger;

@@ -23,39 +23,31 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using HelpersLib.Properties;
 using System;
-using System.Windows.Forms;
-using UploadersLib.Properties;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
 
-namespace UploadersLib
+namespace HelpersLib
 {
-    public partial class ResponseForm : Form
+    public static class ShareXResources
     {
-        public string Response { get; private set; }
-
-        private bool isOpened;
-
-        public ResponseForm(string response)
+        public static Icon Icon
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
-            Response = response;
-            txtSource.Text = Response;
-        }
-
-        private void tcResponse_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            if (e.TabPageIndex == 1 && !isOpened)
+            get
             {
-                wbResponse.DocumentText = Response;
-                isOpened = true;
+                return Resources.ShareX_Icon;
             }
         }
 
-        private void ResponseForm_Resize(object sender, EventArgs e)
+        public static Image Logo
         {
-            Refresh();
+            get
+            {
+                return Resources.ShareX_Logo;
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ namespace ShareX
         public AfterCaptureForm(Image img, AfterCaptureTasks afterCaptureTasks)
         {
             InitializeComponent();
-            Icon = Resources.ShareX_Icon;
+            Icon = ShareXResources.Icon;
             AfterCaptureTasks = afterCaptureTasks;
             AddAfterCaptureItems(AfterCaptureTasks);
             Image = img;

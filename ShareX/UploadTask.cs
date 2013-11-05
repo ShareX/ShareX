@@ -497,7 +497,7 @@ namespace ShareX
                     using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
                         Program.UploadersConfig.EmailDefaultSubject, Info.Result.ToString()))
                     {
-                        emailForm.Icon = Resources.ShareX_Icon;
+                        emailForm.Icon = ShareXResources.Icon;
 
                         if (emailForm.ShowDialog() == DialogResult.OK)
                         {
@@ -782,7 +782,7 @@ namespace ShareX
                     using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
                         Program.UploadersConfig.EmailDefaultSubject, Program.UploadersConfig.EmailDefaultBody))
                     {
-                        emailForm.Icon = Resources.ShareX_Icon;
+                        emailForm.Icon = ShareXResources.Icon;
 
                         if (emailForm.ShowDialog() == DialogResult.OK)
                         {

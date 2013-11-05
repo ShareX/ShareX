@@ -397,7 +397,7 @@ namespace ShareX
                 }
                 else
                 {
-                    icon = Resources.ShareX_Icon;
+                    icon = ShareXResources.Icon;
                 }
 
                 using (Icon oldIcon = Program.MainForm.niTray.Icon)

@@ -375,8 +375,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\ShareX_Icon.ico" />
-    <None Include="Resources\ShareX_Logo.png" />
     <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />
     <Content Include="Favicons\Dropbox.ico" />
