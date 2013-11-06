@@ -209,6 +209,7 @@
             this.btnRefresh.TabIndex = 14;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Visible = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnLoadImage

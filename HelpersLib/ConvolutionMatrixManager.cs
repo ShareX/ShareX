@@ -45,12 +45,15 @@ namespace HelpersLib
             using (UnsafeBitmap source = new UnsafeBitmap((Bitmap)img, true, ImageLockMode.ReadOnly))
             using (UnsafeBitmap dest = new UnsafeBitmap(result, true, ImageLockMode.WriteOnly))
             {
+                int height = source.Height - 2;
+                int width = source.Width - 2;
                 ColorBgra[,] pixelColor = new ColorBgra[3, 3];
+                int pixel;
                 ColorBgra color = new ColorBgra();
 
-                for (int y = 0; y < source.Height - 2; y++)
+                for (int y = 0; y < height; y++)
                 {
-                    for (int x = 0; x < source.Width - 2; x++)
+                    for (int x = 0; x < width; x++)
                     {
                         pixelColor[0, 0] = source.GetPixel(x, y);
                         pixelColor[0, 1] = source.GetPixel(x, y + 1);
@@ -62,29 +65,7 @@ namespace HelpersLib
                         pixelColor[2, 1] = source.GetPixel(x + 2, y + 1);
                         pixelColor[2, 2] = source.GetPixel(x + 2, y + 2);
 
-                        color.Alpha = pixelColor[1, 1].Alpha;
-
-                        color.Red = (byte)(((((pixelColor[0, 0].Red * matrix.Matrix[0, 0]) +
-                            (pixelColor[1, 0].Red * matrix.Matrix[1, 0]) +
-                            (pixelColor[2, 0].Red * matrix.Matrix[2, 0]) +
-                            (pixelColor[0, 1].Red * matrix.Matrix[0, 1]) +
-                            (pixelColor[1, 1].Red * matrix.Matrix[1, 1]) +
-                            (pixelColor[2, 1].Red * matrix.Matrix[2, 1]) +
-                            (pixelColor[0, 2].Red * matrix.Matrix[0, 2]) +
-                            (pixelColor[1, 2].Red * matrix.Matrix[1, 2]) +
-                            (pixelColor[2, 2].Red * matrix.Matrix[2, 2])) / factor) + matrix.Offset).Between(0, 255));
-
-                        color.Green = (byte)(((((pixelColor[0, 0].Green * matrix.Matrix[0, 0]) +
-                            (pixelColor[1, 0].Green * matrix.Matrix[1, 0]) +
-                            (pixelColor[2, 0].Green * matrix.Matrix[2, 0]) +
-                            (pixelColor[0, 1].Green * matrix.Matrix[0, 1]) +
-                            (pixelColor[1, 1].Green * matrix.Matrix[1, 1]) +
-                            (pixelColor[2, 1].Green * matrix.Matrix[2, 1]) +
-                            (pixelColor[0, 2].Green * matrix.Matrix[0, 2]) +
-                            (pixelColor[1, 2].Green * matrix.Matrix[1, 2]) +
-                            (pixelColor[2, 2].Green * matrix.Matrix[2, 2])) / factor) + matrix.Offset).Between(0, 255));
-
-                        color.Blue = (byte)(((((pixelColor[0, 0].Blue * matrix.Matrix[0, 0]) +
+                        pixel = (((pixelColor[0, 0].Blue * matrix.Matrix[0, 0]) +
                             (pixelColor[1, 0].Blue * matrix.Matrix[1, 0]) +
                             (pixelColor[2, 0].Blue * matrix.Matrix[2, 0]) +
                             (pixelColor[0, 1].Blue * matrix.Matrix[0, 1]) +
@@ -92,7 +73,44 @@ namespace HelpersLib
                             (pixelColor[2, 1].Blue * matrix.Matrix[2, 1]) +
                             (pixelColor[0, 2].Blue * matrix.Matrix[0, 2]) +
                             (pixelColor[1, 2].Blue * matrix.Matrix[1, 2]) +
-                            (pixelColor[2, 2].Blue * matrix.Matrix[2, 2])) / factor) + matrix.Offset).Between(0, 255));
+                            (pixelColor[2, 2].Blue * matrix.Matrix[2, 2])) / factor) + matrix.Offset;
+
+                        if (pixel < 0) pixel = 0;
+                        else if (pixel > 255) pixel = 255;
+
+                        color.Blue = (byte)pixel;
+
+                        pixel = (((pixelColor[0, 0].Green * matrix.Matrix[0, 0]) +
+                            (pixelColor[1, 0].Green * matrix.Matrix[1, 0]) +
+                            (pixelColor[2, 0].Green * matrix.Matrix[2, 0]) +
+                            (pixelColor[0, 1].Green * matrix.Matrix[0, 1]) +
+                            (pixelColor[1, 1].Green * matrix.Matrix[1, 1]) +
+                            (pixelColor[2, 1].Green * matrix.Matrix[2, 1]) +
+                            (pixelColor[0, 2].Green * matrix.Matrix[0, 2]) +
+                            (pixelColor[1, 2].Green * matrix.Matrix[1, 2]) +
+                            (pixelColor[2, 2].Green * matrix.Matrix[2, 2])) / factor) + matrix.Offset;
+
+                        if (pixel < 0) pixel = 0;
+                        else if (pixel > 255) pixel = 255;
+
+                        color.Green = (byte)pixel;
+
+                        pixel = (((pixelColor[0, 0].Red * matrix.Matrix[0, 0]) +
+                            (pixelColor[1, 0].Red * matrix.Matrix[1, 0]) +
+                            (pixelColor[2, 0].Red * matrix.Matrix[2, 0]) +
+                            (pixelColor[0, 1].Red * matrix.Matrix[0, 1]) +
+                            (pixelColor[1, 1].Red * matrix.Matrix[1, 1]) +
+                            (pixelColor[2, 1].Red * matrix.Matrix[2, 1]) +
+                            (pixelColor[0, 2].Red * matrix.Matrix[0, 2]) +
+                            (pixelColor[1, 2].Red * matrix.Matrix[1, 2]) +
+                            (pixelColor[2, 2].Red * matrix.Matrix[2, 2])) / factor) + matrix.Offset;
+
+                        if (pixel < 0) pixel = 0;
+                        else if (pixel > 255) pixel = 255;
+
+                        color.Red = (byte)pixel;
+
+                        color.Alpha = pixelColor[1, 1].Alpha;
 
                         dest.SetPixel(x + 1, y + 1, color);
                     }
@@ -140,7 +158,7 @@ namespace HelpersLib
             return cm;
         }
 
-        public static ConvolutionMatrix EmbossLaplacian()
+        public static ConvolutionMatrix Emboss()
         {
             ConvolutionMatrix cm = new ConvolutionMatrix();
             cm.SetAll(-1);
@@ -150,7 +168,7 @@ namespace HelpersLib
             return cm;
         }
 
-        public static ConvolutionMatrix EdgeDetectQuick()
+        public static ConvolutionMatrix EdgeDetect()
         {
             ConvolutionMatrix cm = new ConvolutionMatrix();
             cm.Matrix[0, 0] = cm.Matrix[1, 0] = cm.Matrix[2, 0] = -1;

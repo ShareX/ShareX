@@ -35,7 +35,7 @@ namespace ImageEffectsLib
         {
             using (img)
             {
-                return ConvolutionMatrixManager.EmbossLaplacian().Apply(img);
+                return ConvolutionMatrixManager.Emboss().Apply(img);
             }
         }
     }

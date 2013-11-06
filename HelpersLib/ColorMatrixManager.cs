@@ -47,7 +47,7 @@ namespace HelpersLib
 
         public static Image Apply(this ColorMatrix matrix, Image img)
         {
-            Bitmap dest = img.CreateEmptyBitmap();
+            Bitmap dest = img.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
             Rectangle destRect = new Rectangle(0, 0, dest.Width, dest.Height);
             return Apply(matrix, img, dest, destRect);
         }

@@ -681,7 +681,9 @@ namespace ShareX
 
         private void tsmiTestImageEffects_Click(object sender, EventArgs e)
         {
-            new ImageEffectsForm(ShareXResources.Logo).Show();
+            ImageEffectsForm form = new ImageEffectsForm(ShareXResources.Logo);
+            form.Test();
+            form.Show();
         }
 
         private void tsmiScreenRecorderGIF_Click(object sender, EventArgs e)

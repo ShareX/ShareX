@@ -52,11 +52,13 @@ namespace ImageEffectsLib
             }
 
             UpdatePreview();
+        }
 
-#if DEBUG
+        public void Test()
+        {
+            btnRefresh.Visible = true;
             btnLoadImage.Visible = true;
             btnTest.Visible = true;
-#endif
         }
 
         private void AddAllEffectsToTreeView()
@@ -321,7 +323,7 @@ namespace ImageEffectsLib
         private void btnTest_Click(object sender, EventArgs e)
         {
             AddEffect(new Background { Color = Color.Black });
-            AddEffect(new Border());
+            AddEffect(new Border { Color = Color.Red });
             UpdatePreview();
         }
 

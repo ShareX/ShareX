@@ -35,7 +35,7 @@ namespace ImageEffectsLib
         {
             using (img)
             {
-                return ConvolutionMatrixManager.EdgeDetectQuick().Apply(img);
+                return ConvolutionMatrixManager.EdgeDetect().Apply(img);
             }
         }
     }
