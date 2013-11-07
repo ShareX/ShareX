@@ -12,8 +12,7 @@
     <AssemblyName>ShareX</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -421,6 +420,7 @@
     <None Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />
     <None Include="Resources\globe--pencil.png" />
