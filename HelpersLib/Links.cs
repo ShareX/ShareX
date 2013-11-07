@@ -34,7 +34,7 @@ namespace HelpersLib
         public const string URL_DONATE = "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=8DSJ2WNEHHDJJ&lc=US&item_name=ShareX&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted";
         public const string URL_BERK = "https://github.com/Jaex";
         public const string URL_BERK_STEAM = "http://steamcommunity.com/id/ww";
-        public const string URL_MIKE = "https://github.com/McoreD";
+        public const string URL_MIKE = "https://code.google.com/u/mcored";
         public const string URL_MIKE_STEAM = "http://steamcommunity.com/profiles/76561198018560325";
         public const string URL_GREGOIRE = "https://github.com/gpailler";
         public const string URL_DANA = "https://github.com/dmxt";

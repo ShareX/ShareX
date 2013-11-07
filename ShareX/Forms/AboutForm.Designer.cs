@@ -275,8 +275,8 @@
             this.rtbShareXInfo.Name = "rtbShareXInfo";
             this.rtbShareXInfo.Size = new System.Drawing.Size(247, 48);
             this.rtbShareXInfo.TabIndex = 32;
-            this.rtbShareXInfo.Text = "Web page: http://getsharex.com\nProject page: https://github.com/ShareX/ShareX\nIss" +
-    "ues: https://github.com/ShareX/ShareX/issues";
+            this.rtbShareXInfo.Text = "Website: http://getsharex.com\nProject page: https://github.com/ShareX/ShareX\nIssu" +
+    "es: https://github.com/ShareX/ShareX/issues";
             this.rtbShareXInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
             // 
             // cLogo
