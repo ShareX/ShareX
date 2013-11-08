@@ -28,6 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -54,11 +55,11 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
-        public void Test()
+        public void EditorMode()
         {
             btnRefresh.Visible = true;
             btnLoadImage.Visible = true;
-            btnTest.Visible = true;
+            btnSaveImage.Visible = true;
         }
 
         private void AddAllEffectsToTreeView()
@@ -320,11 +321,21 @@ namespace ImageEffectsLib
             }
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+        private void btnSaveImage_Click(object sender, EventArgs e)
         {
-            AddEffect(new Background { Color = Color.Black });
-            AddEffect(new Border { Color = Color.Red });
-            UpdatePreview();
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.DefaultExt = ".png";
+                sfd.Filter = "PNG image (*.png)|*.png";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (Image preview = ApplyEffects())
+                    {
+                        preview.Save(sfd.FileName, ImageFormat.Png);
+                    }
+                }
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

@@ -679,13 +679,6 @@ namespace ShareX
             new RegionCapturePreview(Program.DefaultTaskSettings.CaptureSettings.SurfaceOptions).Show();
         }
 
-        private void tsmiTestImageEffects_Click(object sender, EventArgs e)
-        {
-            ImageEffectsForm form = new ImageEffectsForm(ShareXResources.Logo);
-            form.Test();
-            form.Show();
-        }
-
         private void tsmiScreenRecorderGIF_Click(object sender, EventArgs e)
         {
             DoScreenRecorder();
@@ -760,6 +753,13 @@ namespace ShareX
         private void tsmiIndexFolder_Click(object sender, EventArgs e)
         {
             OpenIndexFolder();
+        }
+
+        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        {
+            ImageEffectsForm form = new ImageEffectsForm(ShareXResources.Logo);
+            form.EditorMode();
+            form.Show();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)

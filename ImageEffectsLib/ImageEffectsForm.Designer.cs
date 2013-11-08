@@ -41,10 +41,10 @@
             this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
             this.pbResult = new HelpersLib.MyPictureBox();
+            this.btnSaveImage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tvEffects
@@ -189,18 +189,6 @@
             this.lblStatus.TabIndex = 12;
             this.lblStatus.Text = "Status";
             // 
-            // btnTest
-            // 
-            this.btnTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTest.Location = new System.Drawing.Point(708, 734);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(72, 24);
-            this.btnTest.TabIndex = 13;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Visible = false;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(408, 8);
@@ -214,11 +202,12 @@
             // 
             // btnLoadImage
             // 
-            this.btnLoadImage.Location = new System.Drawing.Point(618, 734);
+            this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadImage.Location = new System.Drawing.Point(576, 734);
             this.btnLoadImage.Name = "btnLoadImage";
-            this.btnLoadImage.Size = new System.Drawing.Size(84, 24);
+            this.btnLoadImage.Size = new System.Drawing.Size(99, 24);
             this.btnLoadImage.TabIndex = 15;
-            this.btnLoadImage.Text = "Load image";
+            this.btnLoadImage.Text = "Load image...";
             this.btnLoadImage.UseVisualStyleBackColor = true;
             this.btnLoadImage.Visible = false;
             this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
@@ -237,14 +226,26 @@
             this.pbResult.Size = new System.Drawing.Size(688, 448);
             this.pbResult.TabIndex = 11;
             // 
+            // btnSaveImage
+            // 
+            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveImage.Location = new System.Drawing.Point(681, 734);
+            this.btnSaveImage.Name = "btnSaveImage";
+            this.btnSaveImage.Size = new System.Drawing.Size(99, 24);
+            this.btnSaveImage.TabIndex = 16;
+            this.btnSaveImage.Text = "Save image...";
+            this.btnSaveImage.UseVisualStyleBackColor = true;
+            this.btnSaveImage.Visible = false;
+            this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
+            // 
             // ImageEffectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 766);
+            this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.btnMoveDown);
@@ -283,9 +284,9 @@
         private System.Windows.Forms.Button btnMoveDown;
         private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
+        private System.Windows.Forms.Button btnSaveImage;
     }
 }
 
