@@ -52,7 +52,7 @@ namespace ShareX
         public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
         public SocialNetworkingService SocialNetworkingServiceDestination = SocialNetworkingService.Twitter;
         public bool OverrideFTP = false;
-        public int FTPindex = 0;
+        public int FTPIndex = 0;
 
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();

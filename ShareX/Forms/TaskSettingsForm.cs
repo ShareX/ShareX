@@ -93,12 +93,15 @@ namespace ShareX
             SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, cmsSocialNetworkingServices);
 
             // FTP
-            chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
-            cboFTPaccounts.Items.Clear();
-            if (Program.UploadersConfig.FTPAccountList.Count > 0)
+            if (Program.UploadersConfig != null)
             {
-                cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
-                cboFTPaccounts.SelectedIndex = TaskSettings.FTPindex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count);
+                chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
+                cboFTPaccounts.Items.Clear();
+                if (Program.UploadersConfig.FTPAccountList.Count > 0)
+                {
+                    cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
+                    cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count);
+                }
             }
 
             UpdateDestinationStates();
@@ -374,11 +377,12 @@ namespace ShareX
         private void chkOverrideFTP_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.OverrideFTP = chkOverrideFTP.Checked;
+            cboFTPaccounts.Enabled = TaskSettings.OverrideFTP;
         }
 
         private void cboFTPaccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.FTPindex = cboFTPaccounts.SelectedIndex;
+            TaskSettings.FTPIndex = cboFTPaccounts.SelectedIndex;
         }
 
         #endregion Task
