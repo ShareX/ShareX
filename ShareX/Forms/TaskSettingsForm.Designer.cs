@@ -44,6 +44,8 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcHotkeySettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
+            this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
             this.btnAfterCapture = new HelpersLib.MenuButton();
             this.btnAfterUpload = new HelpersLib.MenuButton();
             this.btnImageUploaders = new HelpersLib.MenuButton();
@@ -296,6 +298,8 @@
             // 
             // tpTask
             // 
+            this.tpTask.Controls.Add(this.chkOverrideFTP);
+            this.tpTask.Controls.Add(this.cboFTPaccounts);
             this.tpTask.Controls.Add(this.tbDescription);
             this.tpTask.Controls.Add(this.btnAfterCapture);
             this.tpTask.Controls.Add(this.btnAfterUpload);
@@ -316,6 +320,27 @@
             this.tpTask.TabIndex = 0;
             this.tpTask.Text = "Task";
             this.tpTask.UseVisualStyleBackColor = true;
+            // 
+            // chkOverrideFTP
+            // 
+            this.chkOverrideFTP.AutoSize = true;
+            this.chkOverrideFTP.Location = new System.Drawing.Point(8, 331);
+            this.chkOverrideFTP.Name = "chkOverrideFTP";
+            this.chkOverrideFTP.Size = new System.Drawing.Size(166, 17);
+            this.chkOverrideFTP.TabIndex = 14;
+            this.chkOverrideFTP.Text = "Override default FTP account";
+            this.chkOverrideFTP.UseVisualStyleBackColor = true;
+            this.chkOverrideFTP.CheckedChanged += new System.EventHandler(this.chkOverrideFTP_CheckedChanged);
+            // 
+            // cboFTPaccounts
+            // 
+            this.cboFTPaccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFTPaccounts.FormattingEnabled = true;
+            this.cboFTPaccounts.Location = new System.Drawing.Point(184, 328);
+            this.cboFTPaccounts.Name = "cboFTPaccounts";
+            this.cboFTPaccounts.Size = new System.Drawing.Size(328, 21);
+            this.cboFTPaccounts.TabIndex = 13;
+            this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
             // 
             // btnAfterCapture
             // 
@@ -1799,6 +1824,8 @@
         private System.Windows.Forms.CheckBox cbImageEffectOnlyRegionCapture;
         private System.Windows.Forms.GroupBox gbImageEffects;
         private System.Windows.Forms.CheckBox chkShowImageEffectsWindowAfterCapture;
+        private System.Windows.Forms.CheckBox chkOverrideFTP;
+        private System.Windows.Forms.ComboBox cboFTPaccounts;
 
 
 

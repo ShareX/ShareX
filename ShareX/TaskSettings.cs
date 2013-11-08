@@ -51,6 +51,8 @@ namespace ShareX
         public FileDestination FileDestination = FileDestination.Dropbox;
         public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
         public SocialNetworkingService SocialNetworkingServiceDestination = SocialNetworkingService.Twitter;
+        public bool OverrideFTP = false;
+        public int FTPindex = 0;
 
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();

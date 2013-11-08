@@ -92,6 +92,15 @@ namespace ShareX
             SetEnumChecked(TaskSettings.URLShortenerDestination, cmsURLShorteners);
             SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, cmsSocialNetworkingServices);
 
+            // FTP
+            chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
+            cboFTPaccounts.Items.Clear();
+            if (Program.UploadersConfig.FTPAccountList.Count > 0)
+            {
+                cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
+                cboFTPaccounts.SelectedIndex = TaskSettings.FTPindex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count);
+            }
+
             UpdateDestinationStates();
             UpdateUploaderMenuNames();
 
@@ -210,6 +219,7 @@ namespace ShareX
                 EnableDisableToolStripMenuItems<FileDestination>(cmsFileUploaders);
                 EnableDisableToolStripMenuItems<UrlShortenerType>(cmsURLShorteners);
                 EnableDisableToolStripMenuItems<SocialNetworkingService>(cmsSocialNetworkingServices);
+                chkOverrideFTP.Visible = cboFTPaccounts.Visible = Program.UploadersConfig.FTPAccountList.Count > 0;
             }
         }
 
@@ -359,6 +369,16 @@ namespace ShareX
             btnFileUploaders.Enabled = !TaskSettings.UseDefaultDestinations;
             btnURLShorteners.Enabled = !TaskSettings.UseDefaultDestinations;
             btnSocialNetworkingServices.Enabled = !TaskSettings.UseDefaultDestinations;
+        }
+
+        private void chkOverrideFTP_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.OverrideFTP = chkOverrideFTP.Checked;
+        }
+
+        private void cboFTPaccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.FTPindex = cboFTPaccounts.SelectedIndex;
         }
 
         #endregion Task
