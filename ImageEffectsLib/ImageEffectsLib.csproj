@@ -58,6 +58,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
@@ -75,6 +76,7 @@
     <Compile Include="Adjustments\Polaroid.cs" />
     <Compile Include="Adjustments\Sepia.cs" />
     <Compile Include="Adjustments\MatrixColor.cs" />
+    <Compile Include="Drawings\DrawImage.cs" />
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
@@ -98,7 +100,7 @@
     <Compile Include="Filters\Shadow.cs" />
     <Compile Include="Filters\TornEdge.cs" />
     <Compile Include="Manipulations\Canvas.cs" />
-    <Compile Include="Manipulations\Background.cs" />
+    <Compile Include="Drawings\DrawBackground.cs" />
     <Compile Include="Manipulations\Flip.cs" />
     <Compile Include="Manipulations\Scale.cs" />
     <Compile Include="ImageEffect.cs" />
@@ -108,7 +110,7 @@
     <Compile Include="ImageEffectsForm.Designer.cs">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manipulations\Border.cs" />
+    <Compile Include="Drawings\DrawBorder.cs" />
     <Compile Include="Filters\Reflection.cs" />
     <Compile Include="Manipulations\Resize.cs" />
     <Compile Include="Manipulations\Rotate.cs" />

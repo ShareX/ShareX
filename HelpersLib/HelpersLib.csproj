@@ -86,6 +86,7 @@
     <Compile Include="Colors\RGBA.cs" />
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
+    <Compile Include="FileNameEditors\ImageFileNameEditor.cs" />
     <Compile Include="Helpers\ClipboardHelpers.cs" />
     <Compile Include="ColorBgra.cs" />
     <Compile Include="Cryptographic\Crc32.cs" />

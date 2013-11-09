@@ -26,45 +26,45 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.IO;
 
 namespace ImageEffectsLib
 {
-    internal class Border : ImageEffect
+    [Description("Image")]
+    internal class DrawImage : ImageEffect
     {
-        [DefaultValue(BorderType.Outside)]
-        public BorderType Type { get; set; }
+        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
+        public string ImageLocation { get; set; }
 
-        [DefaultValue(1)]
-        public int Size { get; set; }
+        [DefaultValue(PositionType.Bottom_Right)]
+        public PositionType Position { get; set; }
 
-        [DefaultValue(typeof(Color), "DodgerBlue")]
-        public Color Color { get; set; }
+        [DefaultValue(5)]
+        public int Offset { get; set; }
 
-        [DefaultValue(false)]
-        public bool UseGradient { get; set; }
-
-        [DefaultValue(typeof(Color), "Black")]
-        public Color ToColor { get; set; }
-
-        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
-        public LinearGradientMode GradientType { get; set; }
-
-        public Border()
+        public DrawImage()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Image Apply(Image img)
         {
-            if (UseGradient)
+            if (!string.IsNullOrEmpty(ImageLocation) && File.Exists(ImageLocation))
             {
-                return ImageHelpers.DrawBorder(img, Color, ToColor, GradientType, Size, Type);
+                using (Image img2 = Helpers.GetImageFromFile(ImageLocation))
+                {
+                    Point pos = Helpers.GetPosition(Position, Offset, img.Size, img2.Size);
+
+                    using (Graphics g = Graphics.FromImage(img))
+                    {
+                        g.DrawImage(img2, pos.X, pos.Y, img2.Width, img2.Height);
+                    }
+                }
             }
-            else
-            {
-                return ImageHelpers.DrawBorder(img, Color, Size, Type);
-            }
+
+            return img;
         }
     }
 }

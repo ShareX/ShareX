@@ -440,5 +440,11 @@ namespace HelpersLib
         {
             return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
         }
+
+        public static string GetDescription(this Type type)
+        {
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])type.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return (attributes.Length > 0) ? attributes[0].Description : type.Name;
+        }
     }
 }

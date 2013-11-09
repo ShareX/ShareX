@@ -26,17 +26,45 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
-    [Description("Black & white")]
-    internal class BlackWhite : ImageEffect
+    [Description("Border")]
+    internal class DrawBorder : ImageEffect
     {
+        [DefaultValue(BorderType.Outside)]
+        public BorderType Type { get; set; }
+
+        [DefaultValue(1)]
+        public int Size { get; set; }
+
+        [DefaultValue(typeof(Color), "DodgerBlue")]
+        public Color Color { get; set; }
+
+        [DefaultValue(false)]
+        public bool UseGradient { get; set; }
+
+        [DefaultValue(typeof(Color), "Black")]
+        public Color ToColor { get; set; }
+
+        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
+        public LinearGradientMode GradientType { get; set; }
+
+        public DrawBorder()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Image Apply(Image img)
         {
-            using (img)
+            if (UseGradient)
             {
-                return ColorMatrixManager.BlackWhite().Apply(img);
+                return ImageHelpers.DrawBorder(img, Color, ToColor, GradientType, Size, Type);
+            }
+            else
+            {
+                return ImageHelpers.DrawBorder(img, Color, Size, Type);
             }
         }
     }

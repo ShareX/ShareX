@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
+    [Description("Gaussian blur")]
     internal class GaussianBlur : ImageEffect
     {
         public override Image Apply(Image img)

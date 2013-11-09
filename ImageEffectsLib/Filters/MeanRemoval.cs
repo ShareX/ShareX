@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
+    [Description("Mean removal")]
     internal class MeanRemoval : ImageEffect
     {
         public override Image Apply(Image img)

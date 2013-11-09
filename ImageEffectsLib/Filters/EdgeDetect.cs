@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
+    [Description("Edge detect")]
     internal class EdgeDetect : ImageEffect
     {
         public override Image Apply(Image img)

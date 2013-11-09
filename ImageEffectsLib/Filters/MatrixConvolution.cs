@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
+    [Description("Convolution matrix")]
     internal class MatrixConvolution : ImageEffect
     {
         [DefaultValue(0)]

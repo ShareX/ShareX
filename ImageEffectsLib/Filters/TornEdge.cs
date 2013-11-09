@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
+    [Description("Torn edge")]
     internal class TornEdge : ImageEffect
     {
         [DefaultValue(12)]

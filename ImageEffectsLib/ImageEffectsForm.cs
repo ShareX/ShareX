@@ -64,9 +64,12 @@ namespace ImageEffectsLib
 
         private void AddAllEffectsToTreeView()
         {
+            AddEffectToTreeView("Drawings",
+                typeof(DrawBackground),
+                typeof(DrawBorder),
+                typeof(DrawImage));
+
             AddEffectToTreeView("Manipulations",
-                typeof(Background),
-                typeof(Border),
                 typeof(Crop),
                 typeof(Canvas),
                 typeof(Flip),
@@ -113,7 +116,7 @@ namespace ImageEffectsLib
 
             foreach (Type imageEffect in imageEffects)
             {
-                TreeNode childNode = parentNode.Nodes.Add(imageEffect.Name);
+                TreeNode childNode = parentNode.Nodes.Add(imageEffect.GetDescription());
                 childNode.Tag = imageEffect;
             }
         }
@@ -178,7 +181,7 @@ namespace ImageEffectsLib
 
         private void AddEffect(ImageEffect imageEffect)
         {
-            ListViewItem lvi = new ListViewItem(imageEffect.GetType().Name);
+            ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
             lvi.Tag = imageEffect;
 
             if (lvEffects.SelectedIndices.Count > 0)

@@ -38,12 +38,14 @@ namespace UploadersLib.HelperClasses
             {
                 return base.EditValue(context, provider, value);
             }
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Title = "Browse for a certificate file...";
-            dlg.Filter = "Certification (*.cer)|*.cer";
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                value = dlg.FileName;
+                dlg.Title = "Browse for a certificate file...";
+                dlg.Filter = "Certification (*.cer)|*.cer";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    value = dlg.FileName;
+                }
             }
             return value;
         }

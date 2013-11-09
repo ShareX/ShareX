@@ -23,42 +23,31 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using System;
 using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
-namespace ImageEffectsLib
+namespace HelpersLib
 {
-    internal class Background : ImageEffect
+    public class ImageFileNameEditor : FileNameEditor
     {
-        [DefaultValue(typeof(Color), "White")]
-        public Color Color { get; set; }
-
-        [DefaultValue(false)]
-        public bool UseGradient { get; set; }
-
-        [DefaultValue(typeof(Color), "Black")]
-        public Color ToColor { get; set; }
-
-        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
-        public LinearGradientMode GradientType { get; set; }
-
-        public Background()
+        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Image Apply(Image img)
-        {
-            if (UseGradient)
+            if (context == null || provider == null)
             {
-                return ImageHelpers.FillBackground(img, Color, ToColor, GradientType);
+                return base.EditValue(context, provider, value);
             }
-            else
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                return ImageHelpers.FillBackground(img, Color);
+                dlg.Title = "Browse for images...";
+                dlg.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    value = dlg.FileName;
+                }
             }
+            return value;
         }
     }
 }

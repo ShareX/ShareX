@@ -26,17 +26,39 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
-    [Description("Black & white")]
-    internal class BlackWhite : ImageEffect
+    [Description("Background")]
+    internal class DrawBackground : ImageEffect
     {
+        [DefaultValue(typeof(Color), "White")]
+        public Color Color { get; set; }
+
+        [DefaultValue(false)]
+        public bool UseGradient { get; set; }
+
+        [DefaultValue(typeof(Color), "Black")]
+        public Color ToColor { get; set; }
+
+        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
+        public LinearGradientMode GradientType { get; set; }
+
+        public DrawBackground()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Image Apply(Image img)
         {
-            using (img)
+            if (UseGradient)
             {
-                return ColorMatrixManager.BlackWhite().Apply(img);
+                return ImageHelpers.FillBackground(img, Color, ToColor, GradientType);
+            }
+            else
+            {
+                return ImageHelpers.FillBackground(img, Color);
             }
         }
     }
