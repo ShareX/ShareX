@@ -32,7 +32,7 @@ namespace HelpersLib
     {
         public static void DrawRectangleProper(this Graphics g, Pen pen, Rectangle rect)
         {
-            if ((int)pen.Width == 1)
+            if (pen.Width == 1)
             {
                 rect = rect.SizeOffset(-1);
             }
@@ -41,6 +41,11 @@ namespace HelpersLib
             {
                 g.DrawRectangle(pen, rect);
             }
+        }
+
+        public static void DrawRectangleProper(this Graphics g, Pen pen, int x, int y, int width, int height)
+        {
+            DrawRectangleProper(g, pen, new Rectangle(x, y, width, height));
         }
 
         public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect, int crossSize)

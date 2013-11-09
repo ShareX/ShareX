@@ -349,18 +349,18 @@ namespace HelpersLib
 
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
-                    g.DrawRectangleProper(borderPen, new Rectangle(0, 0, img.Width, img.Height));
+                    g.DrawRectangleProper(borderPen, 0, 0, img.Width, img.Height);
                 }
             }
             else
             {
                 int borderSize = (int)borderPen.Width;
-                bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
+                bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2, PixelFormat.Format32bppArgb);
 
                 using (Graphics g = Graphics.FromImage(bmp))
                 using (img)
                 {
-                    g.DrawRectangleProper(borderPen, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                    g.DrawRectangleProper(borderPen, 0, 0, bmp.Width, bmp.Height);
                     g.SetHighQuality();
                     g.DrawImage(img, borderSize, borderSize, img.Width, img.Height);
                 }
@@ -387,7 +387,7 @@ namespace HelpersLib
 
         public static Bitmap FillBackground(Image img, Brush brush)
         {
-            Bitmap result = img.CreateEmptyBitmap();
+            Bitmap result = img.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(result))
             using (img)
