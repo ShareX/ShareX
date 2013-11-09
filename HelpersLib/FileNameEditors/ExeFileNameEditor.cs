@@ -38,12 +38,14 @@ namespace HelpersLib
             {
                 return base.EditValue(context, provider, value);
             }
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Title = "Browse for executable...";
-            dlg.Filter = "Applications (*.exe)|*.exe";
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                value = dlg.FileName;
+                dlg.Title = "Browse for executable...";
+                dlg.Filter = "Applications (*.exe)|*.exe";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    value = dlg.FileName;
+                }
             }
             return value;
         }

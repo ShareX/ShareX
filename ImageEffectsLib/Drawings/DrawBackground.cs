@@ -30,10 +30,14 @@ using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
-    internal class BackgroundGradient : ImageEffect
+    [Description("Background")]
+    internal class DrawBackground : ImageEffect
     {
         [DefaultValue(typeof(Color), "White")]
-        public Color FromColor { get; set; }
+        public Color Color { get; set; }
+
+        [DefaultValue(false)]
+        public bool UseGradient { get; set; }
 
         [DefaultValue(typeof(Color), "Black")]
         public Color ToColor { get; set; }
@@ -41,14 +45,21 @@ namespace ImageEffectsLib
         [DefaultValue(LinearGradientMode.ForwardDiagonal)]
         public LinearGradientMode GradientType { get; set; }
 
-        public BackgroundGradient()
+        public DrawBackground()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Image Apply(Image img)
         {
-            return ImageHelpers.FillImageBackground(img, FromColor, ToColor, GradientType);
+            if (UseGradient)
+            {
+                return ImageHelpers.FillBackground(img, Color, ToColor, GradientType);
+            }
+            else
+            {
+                return ImageHelpers.FillBackground(img, Color);
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ namespace UploadersLib.FileUploaders
 
         private static readonly X509Certificate2 _jiraCertificate;
 
-        private readonly Uri _jiraHost;
+        private readonly string _jiraBaseAddress;
         private readonly string _jiraIssuePrefix;
 
         private Uri _jiraRequestToken;
@@ -150,9 +150,9 @@ namespace UploadersLib.FileUploaders
 
         #endregion Keypair
 
-        public Jira(string jiraHost, OAuthInfo oauth, string jiraIssuePrefix = null)
+        public Jira(string jiraBaseAddress, OAuthInfo oauth, string jiraIssuePrefix = null)
         {
-            _jiraHost = new Uri(jiraHost);
+            _jiraBaseAddress = jiraBaseAddress;
             AuthInfo = oauth;
             _jiraIssuePrefix = jiraIssuePrefix;
 
@@ -200,7 +200,7 @@ namespace UploadersLib.FileUploaders
                     };
                 }
 
-                Uri uri = new Uri(_jiraHost, string.Format(PathIssueAttachments, up.IssueId));
+                Uri uri = this.Combine(_jiraBaseAddress, string.Format(PathIssueAttachments, up.IssueId));
                 string query = OAuthManager.GenerateQuery(uri.ToString(), null, HttpMethod.Post, AuthInfo);
 
                 NameValueCollection headers = new NameValueCollection();
@@ -217,7 +217,7 @@ namespace UploadersLib.FileUploaders
                     var anonType = new[] { new { thumbnail = "" } };
                     var anonObject = JsonConvert.DeserializeAnonymousType(res.Response, anonType);
                     res.ThumbnailURL = anonObject[0].thumbnail;
-                    res.URL = new Uri(_jiraHost, string.Format(PathBrowseIssue, up.IssueId)).ToString();
+                    res.URL = this.Combine(_jiraBaseAddress, string.Format(PathBrowseIssue, up.IssueId)).ToString();
                 }
 
                 return res;
@@ -248,10 +248,15 @@ namespace UploadersLib.FileUploaders
 
         private void InitUris()
         {
-            _jiraRequestToken = new Uri(_jiraHost, PathRequestToken);
-            _jiraAuthorize = new Uri(_jiraHost, PathAuthorize);
-            _jiraAccessToken = new Uri(_jiraHost, PathAccessToken);
-            _jiraPathSearch = new Uri(_jiraHost, PathSearch);
+            _jiraRequestToken = this.Combine(_jiraBaseAddress, PathRequestToken);
+            _jiraAuthorize = this.Combine(_jiraBaseAddress, PathAuthorize);
+            _jiraAccessToken = this.Combine(_jiraBaseAddress, PathAccessToken);
+            _jiraPathSearch = this.Combine(_jiraBaseAddress, PathSearch);
+        }
+
+        private Uri Combine(string path1, string path2)
+        {
+            return new Uri(path1.TrimEnd('/') + path2);
         }
     }
 }

@@ -30,6 +30,7 @@ using System.Drawing.Imaging;
 
 namespace ImageEffectsLib
 {
+    [Description("Color matrix")]
     internal class MatrixColor : ImageEffect
     {
         [DefaultValue(1f), Description("Red = (Red * Rr) + (Green * Rg) + (Blue * Rb) + (Alpha * Ra) + Ro")]

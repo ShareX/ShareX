@@ -31,19 +31,11 @@ namespace ImageEffectsLib
 {
     internal class Smooth : ImageEffect
     {
-        [DefaultValue(1)]
-        public int Weight { get; set; }
-
-        public Smooth()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
         public override Image Apply(Image img)
         {
             using (img)
             {
-                return ConvolutionMatrixManager.Smooth(Weight).Apply(img);
+                return ConvolutionMatrixManager.Smooth().Apply(img);
             }
         }
     }

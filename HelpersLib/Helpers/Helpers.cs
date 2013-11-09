@@ -724,5 +724,32 @@ namespace HelpersLib
 
             return result.ToString();
         }
+
+        public static Point GetPosition(PositionType positionType, int offset, Size img, Size img2, int add = 0)
+        {
+            switch (positionType)
+            {
+                case PositionType.Top_Left:
+                    return new Point(offset, offset);
+                case PositionType.Top:
+                    return new Point(img.Width / 2 - img2.Width / 2 - add, offset);
+                case PositionType.Top_Right:
+                    return new Point(img.Width - img2.Width - offset - add, offset);
+                case PositionType.Left:
+                    return new Point(offset, img.Height / 2 - img2.Height / 2 - add);
+                case PositionType.Center:
+                    return new Point(img.Width / 2 - img2.Width / 2 - add, img.Height / 2 - img2.Height / 2 - add);
+                case PositionType.Right:
+                    return new Point(img.Width - img2.Width - offset - add, img.Height / 2 - img2.Height / 2 - add);
+                case PositionType.Bottom_Left:
+                    return new Point(offset, img.Height - img2.Height - offset - add);
+                case PositionType.Bottom:
+                    return new Point(img.Width / 2 - img2.Width / 2 - add, img.Height - img2.Height - offset - add);
+                case PositionType.Bottom_Right:
+                    return new Point(img.Width - img2.Width - offset - add, img.Height - img2.Height - offset - add);
+                default:
+                    return Point.Empty;
+            }
+        }
     }
 }

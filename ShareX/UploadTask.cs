@@ -755,7 +755,7 @@ namespace ShareX
                     }
                     break;
                 case FileDestination.FTP:
-                    int index = Program.UploadersConfig.GetFTPIndex(Info.DataType);
+                    int index = Info.TaskSettings.OverrideFTP ? Info.TaskSettings.FTPIndex : Program.UploadersConfig.GetFTPIndex(Info.DataType);
 
                     FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
 

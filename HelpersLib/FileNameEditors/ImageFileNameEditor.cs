@@ -23,31 +23,31 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using System;
 using System.ComponentModel;
-using System.Drawing;
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
-namespace ImageEffectsLib
+namespace HelpersLib
 {
-    internal class Border : ImageEffect
+    public class ImageFileNameEditor : FileNameEditor
     {
-        [DefaultValue(BorderType.Outside)]
-        public BorderType Type { get; set; }
-
-        [DefaultValue(typeof(Color), "DodgerBlue")]
-        public Color Color { get; set; }
-
-        [DefaultValue(1)]
-        public int Size { get; set; }
-
-        public Border()
+        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Image Apply(Image img)
-        {
-            return ImageHelpers.DrawBorder(img, Type, Color, Size);
+            if (context == null || provider == null)
+            {
+                return base.EditValue(context, provider, value);
+            }
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Browse for images...";
+                dlg.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    value = dlg.FileName;
+                }
+            }
+            return value;
         }
     }
 }

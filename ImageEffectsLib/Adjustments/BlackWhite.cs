@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
+    [Description("Black & white")]
     internal class BlackWhite : ImageEffect
     {
         public override Image Apply(Image img)

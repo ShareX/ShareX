@@ -38,13 +38,15 @@ namespace HelpersLib
             {
                 return base.EditValue(context, provider, value);
             }
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.FileName = "Default.css";
-            dlg.Title = "Browse for a Cascading Style Sheet...";
-            dlg.Filter = "Cascading Style Sheets (*.css)|*.css";
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                value = dlg.FileName;
+                dlg.FileName = "Default.css";
+                dlg.Title = "Browse for a Cascading Style Sheet...";
+                dlg.Filter = "Cascading Style Sheets (*.css)|*.css";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    value = dlg.FileName;
+                }
             }
             return value;
         }

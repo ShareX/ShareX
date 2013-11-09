@@ -31,7 +31,7 @@ namespace ImageEffectsLib
 {
     internal class Contrast : ImageEffect
     {
-        [DefaultValue(1f)]
+        [DefaultValue(1f), Description("Pixel color = Pixel color * Value\r\nExample 1.5 will increase color of pixel 50%")]
         public float Value { get; set; }
 
         public Contrast()
