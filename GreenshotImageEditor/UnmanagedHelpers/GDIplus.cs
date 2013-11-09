@@ -182,18 +182,13 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// Returns if a GDIPlus blur can be made for the supplied radius.
         /// This accounts for the "bug" I reported here: http://social.technet.microsoft.com/Forums/en/w8itprogeneral/thread/99ddbe9d-556d-475a-8bab-84e25aa13a2c
         /// </summary>
-        /// <param name="radius"></param>
-        /// <returns></returns>
         public static bool IsBlurPossible(int radius)
         {
             if (Environment.OSVersion.Version.Major < 6)
             {
                 return false;
             }
-            else if ((Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 2) && radius < 20)
-            {
-                return false;
-            }
+
             return true;
         }
 

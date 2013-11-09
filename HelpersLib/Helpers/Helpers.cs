@@ -725,28 +725,28 @@ namespace HelpersLib
             return result.ToString();
         }
 
-        public static Point GetPosition(PositionType positionType, int offset, Size img, Size img2, int add = 0)
+        public static Point GetPosition(PositionType positionType, int offset, Size img, Size img2)
         {
             switch (positionType)
             {
                 case PositionType.Top_Left:
                     return new Point(offset, offset);
                 case PositionType.Top:
-                    return new Point(img.Width / 2 - img2.Width / 2 - add, offset);
+                    return new Point(img.Width / 2 - img2.Width / 2, offset);
                 case PositionType.Top_Right:
-                    return new Point(img.Width - img2.Width - offset - add, offset);
+                    return new Point(img.Width - img2.Width - offset, offset);
                 case PositionType.Left:
-                    return new Point(offset, img.Height / 2 - img2.Height / 2 - add);
+                    return new Point(offset, img.Height / 2 - img2.Height / 2);
                 case PositionType.Center:
-                    return new Point(img.Width / 2 - img2.Width / 2 - add, img.Height / 2 - img2.Height / 2 - add);
+                    return new Point(img.Width / 2 - img2.Width / 2, img.Height / 2 - img2.Height / 2);
                 case PositionType.Right:
-                    return new Point(img.Width - img2.Width - offset - add, img.Height / 2 - img2.Height / 2 - add);
+                    return new Point(img.Width - img2.Width - offset, img.Height / 2 - img2.Height / 2);
                 case PositionType.Bottom_Left:
-                    return new Point(offset, img.Height - img2.Height - offset - add);
+                    return new Point(offset, img.Height - img2.Height - offset);
                 case PositionType.Bottom:
-                    return new Point(img.Width / 2 - img2.Width / 2 - add, img.Height - img2.Height - offset - add);
+                    return new Point(img.Width / 2 - img2.Width / 2, img.Height - img2.Height - offset);
                 case PositionType.Bottom_Right:
-                    return new Point(img.Width - img2.Width - offset - add, img.Height - img2.Height - offset - add);
+                    return new Point(img.Width - img2.Width - offset, img.Height - img2.Height - offset);
                 default:
                     return Point.Empty;
             }
