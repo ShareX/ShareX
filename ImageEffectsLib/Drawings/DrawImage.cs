@@ -44,6 +44,9 @@ namespace ImageEffectsLib
         [DefaultValue(5)]
         public int Offset { get; set; }
 
+        [DefaultValue(false), Description("If image size bigger than source image then don't draw it.")]
+        public bool AutoHide { get; set; }
+
         public DrawImage()
         {
             this.ApplyDefaultPropertyValues();
@@ -55,10 +58,16 @@ namespace ImageEffectsLib
             {
                 using (Image img2 = Helpers.GetImageFromFile(ImageLocation))
                 {
+                    if (AutoHide && ((img2.Width + Offset > img.Width) || (img2.Height + Offset > img.Height)))
+                    {
+                        return img;
+                    }
+
                     Point pos = Helpers.GetPosition(Position, Offset, img.Size, img2.Size);
 
                     using (Graphics g = Graphics.FromImage(img))
                     {
+                        g.SetHighQuality();
                         g.DrawImage(img2, pos.X, pos.Y, img2.Width, img2.Height);
                     }
                 }
