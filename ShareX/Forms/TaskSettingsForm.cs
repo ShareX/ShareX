@@ -93,15 +93,12 @@ namespace ShareX
             SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, cmsSocialNetworkingServices);
 
             // FTP
-            if (Program.UploadersConfig != null)
+            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
             {
                 chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
                 cboFTPaccounts.Items.Clear();
-                if (Program.UploadersConfig.FTPAccountList.Count > 0)
-                {
-                    cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
-                    cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count);
-                }
+                cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
+                cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count);
             }
 
             UpdateDestinationStates();
@@ -222,7 +219,7 @@ namespace ShareX
                 EnableDisableToolStripMenuItems<FileDestination>(cmsFileUploaders);
                 EnableDisableToolStripMenuItems<UrlShortenerType>(cmsURLShorteners);
                 EnableDisableToolStripMenuItems<SocialNetworkingService>(cmsSocialNetworkingServices);
-                chkOverrideFTP.Visible = cboFTPaccounts.Visible = Program.UploadersConfig.FTPAccountList.Count > 0;
+                chkOverrideFTP.Visible = cboFTPaccounts.Visible = Program.UploadersConfig.FTPAccountList.Count > 1;
             }
         }
 
