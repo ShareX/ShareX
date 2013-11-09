@@ -31,7 +31,7 @@ namespace ImageEffectsLib
 {
     internal class Brightness : ImageEffect
     {
-        [DefaultValue(0f)]
+        [DefaultValue(0f), Description("Pixel color = Pixel color + Value\r\nExample 0.5 will increase color of pixel 127.5")]
         public float Value { get; set; }
 
         public Brightness()

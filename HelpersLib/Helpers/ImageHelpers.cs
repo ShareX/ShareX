@@ -201,38 +201,6 @@ namespace HelpersLib
             return null;
         }
 
-        public static Image DrawBorder(Image img, BorderType borderType, Color borderColor, int borderSize)
-        {
-            Bitmap bmp;
-
-            using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset })
-            {
-                if (borderType == BorderType.Inside)
-                {
-                    bmp = (Bitmap)img;
-
-                    using (Graphics g = Graphics.FromImage(bmp))
-                    {
-                        g.DrawRectangleProper(borderPen, new Rectangle(0, 0, img.Width, img.Height));
-                    }
-                }
-                else
-                {
-                    bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
-
-                    using (Graphics g = Graphics.FromImage(bmp))
-                    using (img)
-                    {
-                        g.SetHighQuality();
-                        g.DrawImage(img, borderSize, borderSize, img.Width, img.Height);
-                        g.DrawRectangleProper(borderPen, new Rectangle(0, 0, img.Width + borderSize * 2, img.Height + borderSize * 2));
-                    }
-                }
-            }
-
-            return bmp;
-        }
-
         public static Image DrawOutline(Image img, GraphicsPath gp)
         {
             if (img != null && gp != null)
@@ -345,27 +313,83 @@ namespace HelpersLib
             return reflection;
         }
 
-        public static Bitmap FillImageBackground(Image img, Color color)
+        public static Image DrawBorder(Image img, Color borderColor, int borderSize, BorderType borderType)
         {
-            Bitmap result = img.CreateEmptyBitmap();
-
-            using (Graphics g = Graphics.FromImage(result))
-            using (img)
+            using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset })
             {
-                g.Clear(color);
-                g.SetHighQuality();
-                g.DrawImage(img, 0, 0, result.Width, result.Height);
+                return DrawBorder(img, borderPen, borderType);
             }
-
-            return result;
         }
 
-        public static Bitmap FillImageBackground(Image img, Color fromColor, Color toColor, LinearGradientMode gradientType)
+        public static Image DrawBorder(Image img, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType)
+        {
+            int width = img.Width;
+            int height = img.Height;
+
+            if (borderType == BorderType.Outside)
+            {
+                width += borderSize * 2;
+                height += borderSize * 2;
+            }
+
+            using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, height), fromBorderColor, toBorderColor, gradientType))
+            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
+            {
+                return DrawBorder(img, borderPen, borderType);
+            }
+        }
+
+        public static Image DrawBorder(Image img, Pen borderPen, BorderType borderType)
+        {
+            Bitmap bmp;
+
+            if (borderType == BorderType.Inside)
+            {
+                bmp = (Bitmap)img;
+
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.DrawRectangleProper(borderPen, new Rectangle(0, 0, img.Width, img.Height));
+                }
+            }
+            else
+            {
+                int borderSize = (int)borderPen.Width;
+                bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
+
+                using (Graphics g = Graphics.FromImage(bmp))
+                using (img)
+                {
+                    g.DrawRectangleProper(borderPen, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                    g.SetHighQuality();
+                    g.DrawImage(img, borderSize, borderSize, img.Width, img.Height);
+                }
+            }
+
+            return bmp;
+        }
+
+        public static Bitmap FillBackground(Image img, Color color)
+        {
+            using (Brush brush = new SolidBrush(color))
+            {
+                return FillBackground(img, brush);
+            }
+        }
+
+        public static Bitmap FillBackground(Image img, Color fromColor, Color toColor, LinearGradientMode gradientType)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, img.Width, img.Height), fromColor, toColor, gradientType))
+            {
+                return FillBackground(img, brush);
+            }
+        }
+
+        public static Bitmap FillBackground(Image img, Brush brush)
         {
             Bitmap result = img.CreateEmptyBitmap();
 
             using (Graphics g = Graphics.FromImage(result))
-            using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, result.Width, result.Height), fromColor, toColor, gradientType))
             using (img)
             {
                 g.FillRectangle(brush, 0, 0, result.Width, result.Height);

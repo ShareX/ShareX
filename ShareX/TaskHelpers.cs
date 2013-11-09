@@ -48,7 +48,7 @@ namespace ShareX
 
             if (taskSettings.ImageSettings.ImageFormat == EImageFormat.JPEG)
             {
-                img = ImageHelpers.FillImageBackground(img, Color.White);
+                img = ImageHelpers.FillBackground(img, Color.White);
             }
 
             ImageHelpers.AddMetadata(img, PropertyTagSoftwareUsed, Program.ApplicationName);
@@ -61,7 +61,7 @@ namespace ShareX
             {
                 if (taskSettings.ImageSettings.ImageFormat2 == EImageFormat.JPEG)
                 {
-                    img = ImageHelpers.FillImageBackground(img, Color.White);
+                    img = ImageHelpers.FillBackground(img, Color.White);
                 }
 
                 imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat2, taskSettings);

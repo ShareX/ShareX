@@ -66,7 +66,6 @@ namespace ImageEffectsLib
         {
             AddEffectToTreeView("Manipulations",
                 typeof(Background),
-                typeof(BackgroundGradient),
                 typeof(Border),
                 typeof(Crop),
                 typeof(Canvas),

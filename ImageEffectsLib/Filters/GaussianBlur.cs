@@ -31,19 +31,11 @@ namespace ImageEffectsLib
 {
     internal class GaussianBlur : ImageEffect
     {
-        [DefaultValue(4)]
-        public int Weight { get; set; }
-
-        public GaussianBlur()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
         public override Image Apply(Image img)
         {
             using (img)
             {
-                return ConvolutionMatrixManager.GaussianBlur(Weight).Apply(img);
+                return ConvolutionMatrixManager.GaussianBlur().Apply(img);
             }
         }
     }

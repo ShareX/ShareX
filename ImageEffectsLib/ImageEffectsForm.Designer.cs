@@ -220,6 +220,7 @@
             this.pbResult.BackColor = System.Drawing.Color.White;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbResult.DrawCheckeredBackground = true;
+            this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
             this.pbResult.Location = new System.Drawing.Point(248, 280);
             this.pbResult.Name = "pbResult";

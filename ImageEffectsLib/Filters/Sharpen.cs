@@ -31,21 +31,13 @@ namespace ImageEffectsLib
 {
     internal class Sharpen : ImageEffect
     {
-        [DefaultValue(11)]
-        public int Weight { get; set; }
-
-        public Sharpen()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
         public override Image Apply(Image img)
         {
             //return ImageHelpers.Sharpen(img, Strength);
 
             using (img)
             {
-                return ConvolutionMatrixManager.Sharpen(Weight).Apply(img);
+                return ConvolutionMatrixManager.Sharpen().Apply(img);
             }
         }
     }

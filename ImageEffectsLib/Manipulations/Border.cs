@@ -26,6 +26,7 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
@@ -34,11 +35,20 @@ namespace ImageEffectsLib
         [DefaultValue(BorderType.Outside)]
         public BorderType Type { get; set; }
 
+        [DefaultValue(1)]
+        public int Size { get; set; }
+
         [DefaultValue(typeof(Color), "DodgerBlue")]
         public Color Color { get; set; }
 
-        [DefaultValue(1)]
-        public int Size { get; set; }
+        [DefaultValue(false)]
+        public bool UseGradient { get; set; }
+
+        [DefaultValue(typeof(Color), "Black")]
+        public Color ToColor { get; set; }
+
+        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
+        public LinearGradientMode GradientType { get; set; }
 
         public Border()
         {
@@ -47,7 +57,14 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            return ImageHelpers.DrawBorder(img, Type, Color, Size);
+            if (UseGradient)
+            {
+                return ImageHelpers.DrawBorder(img, Color, ToColor, GradientType, Size, Type);
+            }
+            else
+            {
+                return ImageHelpers.DrawBorder(img, Color, Size, Type);
+            }
         }
     }
 }

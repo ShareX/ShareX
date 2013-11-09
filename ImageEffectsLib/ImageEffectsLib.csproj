@@ -84,7 +84,6 @@
     <Compile Include="Filters\Sharpen.cs" />
     <Compile Include="Filters\Smooth.cs" />
     <Compile Include="ImageEffectManager.cs" />
-    <Compile Include="Manipulations\BackgroundGradient.cs" />
     <Compile Include="Adjustments\Brightness.cs" />
     <Compile Include="Adjustments\Colorize.cs" />
     <Compile Include="Adjustments\Contrast.cs" />

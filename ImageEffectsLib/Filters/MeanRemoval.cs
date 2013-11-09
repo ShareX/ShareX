@@ -31,19 +31,11 @@ namespace ImageEffectsLib
 {
     internal class MeanRemoval : ImageEffect
     {
-        [DefaultValue(9)]
-        public int Weight { get; set; }
-
-        public MeanRemoval()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
         public override Image Apply(Image img)
         {
             using (img)
             {
-                return ConvolutionMatrixManager.MeanRemoval(Weight).Apply(img);
+                return ConvolutionMatrixManager.MeanRemoval().Apply(img);
             }
         }
     }

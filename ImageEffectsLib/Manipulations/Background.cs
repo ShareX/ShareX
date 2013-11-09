@@ -26,6 +26,7 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
@@ -34,6 +35,15 @@ namespace ImageEffectsLib
         [DefaultValue(typeof(Color), "White")]
         public Color Color { get; set; }
 
+        [DefaultValue(false)]
+        public bool UseGradient { get; set; }
+
+        [DefaultValue(typeof(Color), "Black")]
+        public Color ToColor { get; set; }
+
+        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
+        public LinearGradientMode GradientType { get; set; }
+
         public Background()
         {
             this.ApplyDefaultPropertyValues();
@@ -41,7 +51,14 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            return ImageHelpers.FillImageBackground(img, Color);
+            if (UseGradient)
+            {
+                return ImageHelpers.FillBackground(img, Color, ToColor, GradientType);
+            }
+            else
+            {
+                return ImageHelpers.FillBackground(img, Color);
+            }
         }
     }
 }

@@ -31,10 +31,10 @@ namespace ImageEffectsLib
 {
     internal class Alpha : ImageEffect
     {
-        [DefaultValue(1f)]
+        [DefaultValue(1f), Description("Pixel alpha = Pixel alpha * Value\r\nExample 0.5 will decrease alpha of pixel 50%")]
         public float Value { get; set; }
 
-        [DefaultValue(0f)]
+        [DefaultValue(0f), Description("Pixel alpha = Pixel alpha + Addition\r\nExample 0.5 will increase alpha of pixel 127.5")]
         public float Addition { get; set; }
 
         public Alpha()

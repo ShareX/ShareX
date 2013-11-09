@@ -31,7 +31,7 @@ namespace ImageEffectsLib
 {
     internal class Hue : ImageEffect
     {
-        [DefaultValue(0f)]
+        [DefaultValue(0f), Description("From 0 to 360")]
         public float Angle { get; set; }
 
         public Hue()
