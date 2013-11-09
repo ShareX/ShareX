@@ -98,7 +98,7 @@ namespace ShareX
                 chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
                 cboFTPaccounts.Items.Clear();
                 cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
-                cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count);
+                cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
             }
 
             UpdateDestinationStates();
