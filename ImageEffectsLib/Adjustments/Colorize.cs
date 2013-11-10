@@ -31,8 +31,7 @@ namespace ImageEffectsLib
 {
     internal class Colorize : ImageEffect
     {
-        [DefaultValue(typeof(Color), "Red")]
-        public Color Color { get; set; }
+        public RGBA Color { get; set; }
 
         [DefaultValue(0f)]
         public float Value { get; set; }

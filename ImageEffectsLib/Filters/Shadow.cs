@@ -40,8 +40,7 @@ namespace ImageEffectsLib
         [DefaultValue(0.0f)]
         public float Darkness { get; set; }
 
-        [DefaultValue(typeof(Color), "Black")]
-        public Color Color { get; set; }
+        public RGBA Color { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }

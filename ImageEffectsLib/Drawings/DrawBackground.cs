@@ -33,14 +33,12 @@ namespace ImageEffectsLib
     [Description("Background")]
     internal class DrawBackground : ImageEffect
     {
-        [DefaultValue(typeof(Color), "White")]
-        public Color Color { get; set; }
+        public RGBA Color { get; set; }
 
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        [DefaultValue(typeof(Color), "Black")]
-        public Color ToColor { get; set; }
+        public RGBA ToColor { get; set; }
 
         [DefaultValue(LinearGradientMode.ForwardDiagonal)]
         public LinearGradientMode GradientType { get; set; }
