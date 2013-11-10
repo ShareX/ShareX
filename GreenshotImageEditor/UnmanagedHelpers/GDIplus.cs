@@ -188,6 +188,10 @@ namespace GreenshotPlugin.UnmanagedHelpers
             {
                 return false;
             }
+            else if ((Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 2) && radius < 20)
+            {
+                return false;
+            }
 
             return true;
         }
