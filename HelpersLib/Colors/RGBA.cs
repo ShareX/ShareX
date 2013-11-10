@@ -30,7 +30,6 @@ using System.Drawing.Design;
 
 namespace HelpersLib
 {
-    [Editor(typeof(MyColorEditor), typeof(UITypeEditor))]
     public struct RGBA
     {
         private int red, green, blue, alpha;

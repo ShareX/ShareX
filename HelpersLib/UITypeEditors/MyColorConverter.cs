@@ -23,32 +23,20 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
+using System.Linq;
+using System.Text;
 
-namespace ImageEffectsLib
+namespace HelpersLib
 {
-    internal class Colorize : ImageEffect
+    public class MyColorConverter : ColorConverter
     {
-        [DefaultValue(typeof(Color), "Red"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
-
-        [DefaultValue(0f)]
-        public float Value { get; set; }
-
-        public Colorize()
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
         {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Image Apply(Image img)
-        {
-            using (img)
-            {
-                return ColorMatrixManager.Colorize(Color, Value).Apply(img);
-            }
+            return false;
         }
     }
 }

@@ -26,6 +26,7 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
@@ -33,12 +34,14 @@ namespace ImageEffectsLib
     [Description("Background")]
     internal class DrawBackground : ImageEffect
     {
-        public RGBA Color { get; set; }
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color Color { get; set; }
 
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        public RGBA ToColor { get; set; }
+        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color ToColor { get; set; }
 
         [DefaultValue(LinearGradientMode.ForwardDiagonal)]
         public LinearGradientMode GradientType { get; set; }

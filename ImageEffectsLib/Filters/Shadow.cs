@@ -26,6 +26,7 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 
 namespace ImageEffectsLib
 {
@@ -40,7 +41,8 @@ namespace ImageEffectsLib
         [DefaultValue(0.0f)]
         public float Darkness { get; set; }
 
-        public RGBA Color { get; set; }
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color Color { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }

@@ -27,7 +27,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
@@ -42,7 +41,7 @@ namespace HelpersLib
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            if (value.GetType() != typeof(RGBA))
+            if (value.GetType() != typeof(Color))
             {
                 return value;
             }
@@ -51,13 +50,13 @@ namespace HelpersLib
 
             if (svc != null)
             {
-                RGBA color = (RGBA)value;
+                Color color = (Color)value;
 
                 using (DialogColor form = new DialogColor(color))
                 {
                     if (svc.ShowDialog(form) == DialogResult.OK)
                     {
-                        return form.NewColor.RGBA;
+                        return (Color)form.NewColor;
                     }
                 }
             }
@@ -73,9 +72,9 @@ namespace HelpersLib
         public override void PaintValue(PaintValueEventArgs e)
         {
             Graphics g = e.Graphics;
-            RGBA color = (RGBA)e.Value;
+            Color color = (Color)e.Value;
 
-            if (color.Alpha < 255)
+            if (color.A < 255)
             {
                 using (Image checker = ImageHelpers.CreateCheckers(e.Bounds.Width / 2, e.Bounds.Height / 2, Color.LightGray, Color.White))
                 {

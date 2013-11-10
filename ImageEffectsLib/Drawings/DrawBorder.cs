@@ -40,12 +40,14 @@ namespace ImageEffectsLib
         [DefaultValue(1)]
         public int Size { get; set; }
 
-        public RGBA Color { get; set; }
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color Color { get; set; }
 
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        public RGBA ToColor { get; set; }
+        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color ToColor { get; set; }
 
         [DefaultValue(LinearGradientMode.ForwardDiagonal)]
         public LinearGradientMode GradientType { get; set; }
