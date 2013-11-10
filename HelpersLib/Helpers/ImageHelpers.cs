@@ -434,16 +434,21 @@ namespace HelpersLib
 
         public static Image CreateCheckers(int size, Color color1, Color color2)
         {
-            Bitmap bmp = new Bitmap(size * 2, size * 2);
+            return CreateCheckers(size, size, color1, color2);
+        }
+
+        public static Image CreateCheckers(int width, int height, Color color1, Color color2)
+        {
+            Bitmap bmp = new Bitmap(width * 2, height * 2);
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (Brush brush1 = new SolidBrush(color1))
             using (Brush brush2 = new SolidBrush(color2))
             {
-                g.FillRectangle(brush1, 0, 0, size, size);
-                g.FillRectangle(brush1, size, size, size, size);
-                g.FillRectangle(brush2, size, 0, size, size);
-                g.FillRectangle(brush2, 0, size, size, size);
+                g.FillRectangle(brush1, 0, 0, width, height);
+                g.FillRectangle(brush1, width, height, width, height);
+                g.FillRectangle(brush2, width, 0, width, height);
+                g.FillRectangle(brush2, 0, height, width, height);
             }
 
             return bmp;

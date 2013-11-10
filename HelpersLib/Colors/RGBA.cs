@@ -24,10 +24,13 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 
 namespace HelpersLib
 {
+    [Editor(typeof(MyColorEditor), typeof(UITypeEditor))]
     public struct RGBA
     {
         private int red, green, blue, alpha;
@@ -126,7 +129,7 @@ namespace HelpersLib
 
         public override string ToString()
         {
-            return String.Format("Red: {0}, Green: {1}, Blue: {2}, Alpha: {3}", Red, Green, Blue, Alpha);
+            return String.Format("R: {0}, G: {1}, B: {2}, A: {3}", Red, Green, Blue, Alpha);
         }
 
         public Color ToColor()

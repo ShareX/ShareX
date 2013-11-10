@@ -26,6 +26,7 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
@@ -39,14 +40,12 @@ namespace ImageEffectsLib
         [DefaultValue(1)]
         public int Size { get; set; }
 
-        [DefaultValue(typeof(Color), "DodgerBlue")]
-        public Color Color { get; set; }
+        public RGBA Color { get; set; }
 
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        [DefaultValue(typeof(Color), "Black")]
-        public Color ToColor { get; set; }
+        public RGBA ToColor { get; set; }
 
         [DefaultValue(LinearGradientMode.ForwardDiagonal)]
         public LinearGradientMode GradientType { get; set; }

@@ -86,13 +86,14 @@
     <Compile Include="Colors\RGBA.cs" />
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
-    <Compile Include="FileNameEditors\ImageFileNameEditor.cs" />
+    <Compile Include="UITypeEditors\MyColorEditor.cs" />
+    <Compile Include="UITypeEditors\ImageFileNameEditor.cs" />
     <Compile Include="Helpers\ClipboardHelpers.cs" />
     <Compile Include="ColorBgra.cs" />
     <Compile Include="Cryptographic\Crc32.cs" />
-    <Compile Include="FileNameEditors\CssFileNameEditor.cs" />
+    <Compile Include="UITypeEditors\CssFileNameEditor.cs" />
     <Compile Include="CursorData.cs" />
-    <Compile Include="FileNameEditors\ExeFileNameEditor.cs" />
+    <Compile Include="UITypeEditors\ExeFileNameEditor.cs" />
     <Compile Include="Forms\DebugForm.cs">
       <SubType>Form</SubType>
     </Compile>
