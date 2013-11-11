@@ -35,7 +35,7 @@ namespace ImageEffectsLib
     [Description("Image")]
     internal class DrawImage : ImageEffect
     {
-        [DefaultValue(PositionType.Bottom_Right)]
+        [DefaultValue(PositionType.Bottom_Right), TypeConverter(typeof(EnumDescriptionConverter))]
         public PositionType Position { get; set; }
 
         [DefaultValue(5)]

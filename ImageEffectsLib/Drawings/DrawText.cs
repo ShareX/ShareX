@@ -37,7 +37,7 @@ namespace ImageEffectsLib
     [Description("Text")]
     internal class DrawText : ImageEffect
     {
-        [DefaultValue(PositionType.Bottom_Right)]
+        [DefaultValue(PositionType.Bottom_Right), TypeConverter(typeof(EnumDescriptionConverter))]
         public PositionType Position { get; set; }
 
         [DefaultValue(5)]
