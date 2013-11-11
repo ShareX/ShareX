@@ -1,4 +1,13 @@
-﻿ShareX 8.3 r700 - 2013-10-15
+﻿ShareX 8.4.0 - 2013-11-15
+
+Allow Jira address with subfolder
+Added more image adjustment effects: black & white, color matrix, polaroid, and sepia
+Added more image filter effects: edge detect, emboss, gaussian blur, convolution matrix, mean removal, sharpen and smooth
+Added new image manipulation effect: crop
+Added new Drawings category for adding background, border, image, and text
+Task settings can choose which FTP account to be used
+
+ShareX 8.3 r747 - 2013-11-02
 
 Added new After Capture task "Add image effects" in favour of resize, border and shadow
 Added hotkey support for Tools (screen color picker, hash check and index folder) and to stop uploading
