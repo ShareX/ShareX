@@ -33,24 +33,32 @@ namespace HelpersLib
 {
     public static class GraphicsPathExtensions
     {
-        public static void AddRectangleProper(this GraphicsPath graphicsPath, RectangleF rect)
+        public static void AddRectangleProper(this GraphicsPath graphicsPath, RectangleF rect, float penWidth = 1)
         {
-            rect = new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1);
+            if (penWidth == 1)
+            {
+                rect = new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1);
+            }
 
-            if (rect.Width > 1 && rect.Height > 1)
+            if (rect.Width > 0 && rect.Height > 0)
             {
                 graphicsPath.AddRectangle(rect);
             }
         }
 
-        public static void AddRoundedRectangle(this GraphicsPath graphicsPath, RectangleF rect, float radius)
+        public static void AddRoundedRectangle(this GraphicsPath graphicsPath, RectangleF rect, float radius, float penWidth = 1)
         {
-            if (radius <= 0.0f)
+            if (radius <= 0f)
             {
-                graphicsPath.AddRectangle(rect);
+                graphicsPath.AddRectangleProper(rect);
             }
             else
             {
+                if (penWidth == 1)
+                {
+                    rect = new RectangleF(rect.X, rect.Y, rect.Width - 1, rect.Height - 1);
+                }
+
                 // If the corner radius is greater than or equal to
                 // half the width, or height (whichever is shorter)
                 // then return a capsule instead of a lozenge

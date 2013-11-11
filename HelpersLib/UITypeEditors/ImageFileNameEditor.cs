@@ -38,15 +38,18 @@ namespace HelpersLib
             {
                 return base.EditValue(context, provider, value);
             }
+
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 dlg.Title = "Browse for images...";
                 dlg.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     value = dlg.FileName;
                 }
             }
+
             return value;
         }
     }

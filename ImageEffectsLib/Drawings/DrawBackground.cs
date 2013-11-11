@@ -41,9 +41,9 @@ namespace ImageEffectsLib
         public bool UseGradient { get; set; }
 
         [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color ToColor { get; set; }
+        public Color Color2 { get; set; }
 
-        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
+        [DefaultValue(LinearGradientMode.Vertical)]
         public LinearGradientMode GradientType { get; set; }
 
         public DrawBackground()
@@ -55,7 +55,7 @@ namespace ImageEffectsLib
         {
             if (UseGradient)
             {
-                return ImageHelpers.FillBackground(img, Color, ToColor, GradientType);
+                return ImageHelpers.FillBackground(img, Color, Color2, GradientType);
             }
             else
             {

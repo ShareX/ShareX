@@ -35,9 +35,6 @@ namespace ImageEffectsLib
     [Description("Image")]
     internal class DrawImage : ImageEffect
     {
-        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
-        public string ImageLocation { get; set; }
-
         [DefaultValue(PositionType.Bottom_Right)]
         public PositionType Position { get; set; }
 
@@ -46,6 +43,9 @@ namespace ImageEffectsLib
 
         [DefaultValue(false), Description("If image size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
+
+        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
+        public string ImageLocation { get; set; }
 
         public DrawImage()
         {

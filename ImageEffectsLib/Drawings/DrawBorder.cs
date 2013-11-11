@@ -47,9 +47,9 @@ namespace ImageEffectsLib
         public bool UseGradient { get; set; }
 
         [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color ToColor { get; set; }
+        public Color Color2 { get; set; }
 
-        [DefaultValue(LinearGradientMode.ForwardDiagonal)]
+        [DefaultValue(LinearGradientMode.Vertical)]
         public LinearGradientMode GradientType { get; set; }
 
         public DrawBorder()
@@ -61,7 +61,7 @@ namespace ImageEffectsLib
         {
             if (UseGradient)
             {
-                return ImageHelpers.DrawBorder(img, Color, ToColor, GradientType, Size, Type);
+                return ImageHelpers.DrawBorder(img, Color, Color2, GradientType, Size, Type);
             }
             else
             {
