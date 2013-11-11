@@ -312,7 +312,7 @@ namespace ShareX
                     g.DrawString(percentage.ToString(), new XmlFont("Arial", 7, FontStyle.Bold), Brushes.White, 8, 8, sf);
                 }
 
-                g.DrawRectangle(Pens.WhiteSmoke, 0, 0, 15, 15);
+                g.DrawRectangleProper(Pens.WhiteSmoke, 0, 0, 16, 16);
 
                 return Icon.FromHandle(bmp.GetHicon());
             }

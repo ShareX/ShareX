@@ -86,6 +86,11 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
+            if (string.IsNullOrEmpty(Text) || TextFont == null || TextFont.Size < 1)
+            {
+                return img;
+            }
+
             NameParser parser = new NameParser(NameParserType.Text) { Picture = img };
             string parsedText = parser.Parse(Text);
             Size textSize = TextRenderer.MeasureText(parsedText, TextFont);

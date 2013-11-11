@@ -42,47 +42,6 @@ namespace ImageEffectsLib
             Config = config;
         }
 
-        protected static Point FindPosition(WatermarkPositionType positionType, int offset, Size img, Size img2, int add)
-        {
-            Point position;
-
-            switch (positionType)
-            {
-                case WatermarkPositionType.TOP_LEFT:
-                    position = new Point(offset, offset);
-                    break;
-                case WatermarkPositionType.TOP_RIGHT:
-                    position = new Point(img.Width - img2.Width - offset - add, offset);
-                    break;
-                case WatermarkPositionType.BOTTOM_LEFT:
-                    position = new Point(offset, img.Height - img2.Height - offset - add);
-                    break;
-                case WatermarkPositionType.BOTTOM_RIGHT:
-                    position = new Point(img.Width - img2.Width - offset - add, img.Height - img2.Height - offset - add);
-                    break;
-                case WatermarkPositionType.CENTER:
-                    position = new Point(img.Width / 2 - img2.Width / 2 - add, img.Height / 2 - img2.Height / 2 - add);
-                    break;
-                case WatermarkPositionType.LEFT:
-                    position = new Point(offset, img.Height / 2 - img2.Height / 2 - add);
-                    break;
-                case WatermarkPositionType.TOP:
-                    position = new Point(img.Width / 2 - img2.Width / 2 - add, offset);
-                    break;
-                case WatermarkPositionType.RIGHT:
-                    position = new Point(img.Width - img2.Width - offset - add, img.Height / 2 - img2.Height / 2 - add);
-                    break;
-                case WatermarkPositionType.BOTTOM:
-                    position = new Point(img.Width / 2 - img2.Width / 2 - add, img.Height - img2.Height - offset - add);
-                    break;
-                default:
-                    position = Point.Empty;
-                    break;
-            }
-
-            return position;
-        }
-
         public static DialogResult ShowFontDialog(WatermarkConfig config)
         {
             DialogResult result = DialogResult.Cancel;
@@ -101,7 +60,7 @@ namespace ImageEffectsLib
                 }
                 catch (Exception err)
                 {
-                    DebugHelper.WriteException(err, "Error while initializing Font and Color");
+                    DebugHelper.WriteException(err, "Error while initializing font.");
                 }
 
                 result = fDialog.ShowDialog();
@@ -158,7 +117,7 @@ namespace ImageEffectsLib
                         img2 = ImageHelpers.ResizeImage(img2, width, height);
                     }
 
-                    Point imgPos = FindPosition(Config.WatermarkPositionMode, offset, img.Size, img2.Size, 0);
+                    Point imgPos = Helpers.GetPosition((PositionType)Config.WatermarkPositionMode, offset, img.Size, img2.Size);
 
                     using (Graphics g = Graphics.FromImage(img))
                     {
@@ -175,7 +134,7 @@ namespace ImageEffectsLib
 
                         if (Config.WatermarkUseBorder)
                         {
-                            g.DrawRectangle(Pens.Black, new Rectangle(imgPos.X, imgPos.Y, img2.Width - 1, img2.Height - 1));
+                            g.DrawRectangleProper(Pens.Black, imgPos.X, imgPos.Y, img2.Width, img2.Height);
                         }
                     }
                 }
@@ -194,81 +153,82 @@ namespace ImageEffectsLib
 
         private Image DrawWatermarkText(Image img, string drawText)
         {
-            if (!string.IsNullOrEmpty(drawText) && Config.WatermarkFont.Size > 0)
+            if (string.IsNullOrEmpty(drawText) || Config.WatermarkFont == null || Config.WatermarkFont.Size < 1)
             {
-                Font font = null;
-                Brush backgroundBrush = null;
+                return img;
+            }
 
-                try
+            Font font = null;
+            Brush backgroundBrush = null;
+
+            try
+            {
+                font = Config.WatermarkFont;
+                Size textSize = TextRenderer.MeasureText(drawText, font);
+                Size labelSize = new Size(textSize.Width + 10, textSize.Height + 10);
+
+                if (Config.WatermarkAutoHide && ((img.Width < labelSize.Width + Config.WatermarkOffset) || (img.Height < labelSize.Height + Config.WatermarkOffset)))
                 {
-                    int offset = Config.WatermarkOffset;
+                    return img;
+                }
 
-                    font = Config.WatermarkFont;
-                    Size textSize = TextRenderer.MeasureText(drawText, font);
-                    Size labelSize = new Size(textSize.Width + 10, textSize.Height + 10);
-                    Point labelPosition = FindPosition(Config.WatermarkPositionMode, offset, img.Size, new Size(textSize.Width + 10, textSize.Height + 10), 1);
+                Rectangle labelRectangle = new Rectangle(Point.Empty, labelSize);
+                Color fontColor = Config.WatermarkFontArgb;
 
-                    if (Config.WatermarkAutoHide && ((img.Width < labelSize.Width + offset) || (img.Height < labelSize.Height + offset)))
+                using (Bitmap bmp = new Bitmap(labelRectangle.Width, labelRectangle.Height))
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+
+                    if (Config.WatermarkUseCustomGradient)
                     {
-                        return img;
+                        backgroundBrush = GradientMaker.CreateGradientBrush(labelRectangle.Size, Config.WatermarkGradient);
+                    }
+                    else
+                    {
+                        backgroundBrush = new LinearGradientBrush(labelRectangle, Config.WatermarkGradient1Argb, Config.WatermarkGradient2Argb, Config.WatermarkGradientType);
                     }
 
-                    Rectangle labelRectangle = new Rectangle(Point.Empty, labelSize);
-                    Color fontColor = Config.WatermarkFontArgb;
-
-                    using (Bitmap bmp = new Bitmap(labelRectangle.Width + 1, labelRectangle.Height + 1))
-                    using (Graphics g = Graphics.FromImage(bmp))
+                    using (GraphicsPath gPath = new GraphicsPath())
+                    using (Pen borderPen = new Pen(Config.WatermarkBorderArgb))
                     {
-                        g.SmoothingMode = SmoothingMode.HighQuality;
-                        g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                        gPath.AddRoundedRectangle(labelRectangle, Config.WatermarkCornerRadius);
+                        g.FillPath(backgroundBrush, gPath);
+                        g.DrawPath(borderPen, gPath);
+                    }
 
-                        if (Config.WatermarkUseCustomGradient)
-                        {
-                            backgroundBrush = GradientMaker.CreateGradientBrush(labelRectangle.Size, Config.WatermarkGradient);
-                        }
-                        else
-                        {
-                            backgroundBrush = new LinearGradientBrush(labelRectangle, Config.WatermarkGradient1Argb, Config.WatermarkGradient2Argb, Config.WatermarkGradientType);
-                        }
+                    using (Brush textBrush = new SolidBrush(fontColor))
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString(drawText, font, textBrush, bmp.Width / 2f, bmp.Height / 2f, sf);
+                    }
 
-                        using (GraphicsPath gPath = new GraphicsPath())
-                        using (Pen borderPen = new Pen(Config.WatermarkBorderArgb))
-                        {
-                            gPath.AddRoundedRectangle(labelRectangle, Config.WatermarkCornerRadius);
-                            g.FillPath(backgroundBrush, gPath);
-                            g.DrawPath(borderPen, gPath);
-                        }
+                    using (Graphics gImg = Graphics.FromImage(img))
+                    {
+                        gImg.SmoothingMode = SmoothingMode.HighQuality;
 
-                        using (Brush textBrush = new SolidBrush(fontColor))
-                        using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                        {
-                            g.DrawString(drawText, font, textBrush, bmp.Width / 2f, bmp.Height / 2f, sf);
-                        }
+                        Point labelPosition = Helpers.GetPosition((PositionType)Config.WatermarkPositionMode, Config.WatermarkOffset, img.Size, labelSize);
+                        gImg.DrawImage(bmp, labelPosition.X, labelPosition.Y, bmp.Width, bmp.Height);
 
-                        using (Graphics gImg = Graphics.FromImage(img))
+                        if (Config.WatermarkAddReflection)
                         {
-                            gImg.SmoothingMode = SmoothingMode.HighQuality;
-                            gImg.DrawImage(bmp, labelPosition.X, labelPosition.Y, bmp.Width, bmp.Height);
-
-                            if (Config.WatermarkAddReflection)
+                            using (Bitmap bmp2 = ImageHelpers.AddReflection(bmp, 50, 150, 10))
                             {
-                                using (Bitmap bmp2 = ImageHelpers.AddReflection(bmp, 50, 150, 10))
-                                {
-                                    gImg.DrawImage(bmp2, new Rectangle(labelPosition.X, labelPosition.Y + bmp.Height - 1, bmp2.Width, bmp2.Height));
-                                }
+                                gImg.DrawImage(bmp2, new Rectangle(labelPosition.X, labelPosition.Y + bmp.Height - 1, bmp2.Width, bmp2.Height));
                             }
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex, "Error while drawing watermark");
-                }
-                finally
-                {
-                    if (font != null) font.Dispose();
-                    if (backgroundBrush != null) backgroundBrush.Dispose();
-                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex, "Error while drawing watermark");
+            }
+            finally
+            {
+                if (font != null) font.Dispose();
+                if (backgroundBrush != null) backgroundBrush.Dispose();
             }
 
             return img;
