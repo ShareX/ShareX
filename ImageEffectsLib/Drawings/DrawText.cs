@@ -49,8 +49,24 @@ namespace ImageEffectsLib
         [DefaultValue("%h:%mi")]
         public string Text { get; set; }
 
+        private FontSafe textFontSafe = new FontSafe();
+
+        // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
         [DefaultValue(typeof(Font), "Arial, 8pt")]
-        public Font TextFont { get; set; }
+        public Font TextFont
+        {
+            get
+            {
+                return textFontSafe.GetFont();
+            }
+            set
+            {
+                using (value)
+                {
+                    textFontSafe.SetFont(value);
+                }
+            }
+        }
 
         [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
@@ -86,74 +102,83 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (string.IsNullOrEmpty(Text) || TextFont == null || TextFont.Size < 1)
+            if (string.IsNullOrEmpty(Text))
             {
                 return img;
             }
 
-            NameParser parser = new NameParser(NameParserType.Text) { Picture = img };
-            string parsedText = parser.Parse(Text);
-            Size textSize = TextRenderer.MeasureText(parsedText, TextFont);
-            Size labelSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
-
-            if (AutoHide && ((labelSize.Width + Offset > img.Width) || (labelSize.Height + Offset > img.Height)))
+            using (Font textFont = TextFont)
             {
-                return img;
-            }
-
-            Rectangle labelRectangle = new Rectangle(Point.Empty, labelSize);
-
-            using (Bitmap bmp = new Bitmap(labelRectangle.Width, labelRectangle.Height))
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.SmoothingMode = SmoothingMode.HighQuality;
-                g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-
-                if (DrawBackground)
+                if (textFont == null || textFont.Size < 1)
                 {
-                    using (GraphicsPath gPath = new GraphicsPath())
+                    return img;
+                }
+
+                NameParser parser = new NameParser(NameParserType.Text) { Picture = img };
+                string parsedText = parser.Parse(Text);
+
+                Size textSize = TextRenderer.MeasureText(parsedText, textFont);
+                Size labelSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
+
+                if (AutoHide && ((labelSize.Width + Offset > img.Width) || (labelSize.Height + Offset > img.Height)))
+                {
+                    return img;
+                }
+
+                Rectangle labelRectangle = new Rectangle(Point.Empty, labelSize);
+
+                using (Bitmap bmp = new Bitmap(labelRectangle.Width, labelRectangle.Height))
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+
+                    if (DrawBackground)
                     {
-                        gPath.AddRoundedRectangle(labelRectangle, CornerRadius);
-
-                        Brush backgroundBrush = null;
-
-                        try
+                        using (GraphicsPath gPath = new GraphicsPath())
                         {
-                            if (UseGradient)
+                            gPath.AddRoundedRectangle(labelRectangle, CornerRadius);
+
+                            Brush backgroundBrush = null;
+
+                            try
                             {
-                                backgroundBrush = new LinearGradientBrush(labelRectangle, BackgroundColor, BackgroundColor2, GradientType);
+                                if (UseGradient)
+                                {
+                                    backgroundBrush = new LinearGradientBrush(labelRectangle, BackgroundColor, BackgroundColor2, GradientType);
+                                }
+                                else
+                                {
+                                    backgroundBrush = new SolidBrush(BackgroundColor);
+                                }
+
+                                g.FillPath(backgroundBrush, gPath);
                             }
-                            else
+                            finally
                             {
-                                backgroundBrush = new SolidBrush(BackgroundColor);
+                                if (backgroundBrush != null) backgroundBrush.Dispose();
                             }
 
-                            g.FillPath(backgroundBrush, gPath);
-                        }
-                        finally
-                        {
-                            if (backgroundBrush != null) backgroundBrush.Dispose();
-                        }
-
-                        using (Pen borderPen = new Pen(BorderColor))
-                        {
-                            g.DrawPath(borderPen, gPath);
+                            using (Pen borderPen = new Pen(BorderColor))
+                            {
+                                g.DrawPath(borderPen, gPath);
+                            }
                         }
                     }
-                }
 
-                using (Brush textBrush = new SolidBrush(TextColor))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                {
-                    g.DrawString(parsedText, TextFont, textBrush, bmp.Width / 2f, bmp.Height / 2f, sf);
-                }
+                    using (Brush textBrush = new SolidBrush(TextColor))
+                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    {
+                        g.DrawString(parsedText, textFont, textBrush, bmp.Width / 2f, bmp.Height / 2f, sf);
+                    }
 
-                using (Graphics gImg = Graphics.FromImage(img))
-                {
-                    gImg.SetHighQuality();
+                    using (Graphics gImg = Graphics.FromImage(img))
+                    {
+                        gImg.SetHighQuality();
 
-                    Point labelPosition = Helpers.GetPosition(Position, Offset, img.Size, labelSize);
-                    gImg.DrawImage(bmp, labelPosition.X, labelPosition.Y, bmp.Width, bmp.Height);
+                        Point labelPosition = Helpers.GetPosition(Position, Offset, img.Size, labelSize);
+                        gImg.DrawImage(bmp, labelPosition.X, labelPosition.Y, bmp.Width, bmp.Height);
+                    }
                 }
             }
 

@@ -57,7 +57,6 @@ namespace ImageEffectsLib
 
         public void EditorMode()
         {
-            btnRefresh.Visible = true;
             btnLoadImage.Visible = true;
             btnSaveImage.Visible = true;
         }
