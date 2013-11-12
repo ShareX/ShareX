@@ -249,6 +249,8 @@
             this.pbResult.Name = "pbResult";
             this.pbResult.Size = new System.Drawing.Size(688, 448);
             this.pbResult.TabIndex = 11;
+            this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
+            this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 
             // ImageEffectsForm
             // 

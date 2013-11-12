@@ -57,6 +57,7 @@ namespace ImageEffectsLib
 
         public void EditorMode()
         {
+            pbResult.AllowDrop = true;
             btnLoadImage.Visible = true;
             btnSaveImage.Visible = true;
         }
@@ -340,6 +341,9 @@ namespace ImageEffectsLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
+                ofd.Title = "Browse for images...";
+                ofd.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     if (DefaultImage != null) DefaultImage.Dispose();
@@ -362,6 +366,47 @@ namespace ImageEffectsLib
                     {
                         preview.Save(sfd.FileName, ImageFormat.Png);
                     }
+                }
+            }
+        }
+
+        private void pbResult_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) || e.Data.GetDataPresent(DataFormats.Bitmap, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void pbResult_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null && files.Length > 0)
+                {
+                    if (Helpers.IsImageFile(files[0]))
+                    {
+                        if (DefaultImage != null) DefaultImage.Dispose();
+                        DefaultImage = Helpers.GetImageFromFile(files[0]);
+                        UpdatePreview();
+                    }
+                }
+            }
+            else if (e.Data.GetDataPresent(DataFormats.Bitmap, false))
+            {
+                Image img = e.Data.GetData(DataFormats.Bitmap, false) as Image;
+
+                if (img != null)
+                {
+                    if (DefaultImage != null) DefaultImage.Dispose();
+                    DefaultImage = img;
+                    UpdatePreview();
                 }
             }
         }
