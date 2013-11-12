@@ -128,7 +128,7 @@ namespace ImageEffectsLib
             using (Image preview = ApplyEffects())
             {
                 pbResult.LoadImage(preview);
-                lblStatus.Text = string.Format("Width: {0}, Height: {1}, Render time: {2} ms", preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                Text = string.Format("ShareX - Image effects - Width: {0}, Height: {1}, Render time: {2} ms", preview.Width, preview.Height, timer.ElapsedMilliseconds);
             }
         }
 
@@ -313,23 +313,26 @@ namespace ImageEffectsLib
         private void btnSettingsExport_Click(object sender, EventArgs e)
         {
             List<ImageEffect> imageEffects = GetImageEffects();
-            if (imageEffects.Count > 0)
+
+            if (imageEffects != null && imageEffects.Count > 0)
             {
-                ClipboardContentViewer dlg = new ClipboardContentViewer();
-                dlg.txtClipboard.Text = ImageEffectManager.ExportEffects(imageEffects);
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    Clipboard.SetText(dlg.txtClipboard.Text);
-                }
+                string json = ImageEffectManager.ExportEffects(imageEffects);
+                ClipboardHelpers.CopyText(json);
             }
         }
 
         private void btnSettingsImport_Click(object sender, EventArgs e)
         {
-            ClipboardContentViewer dlg = new ClipboardContentViewer();
-            if (dlg.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(dlg.txtClipboard.Text))
+            if (Clipboard.ContainsText())
             {
-                AddEffects(ImageEffectManager.ImportEffects(dlg.txtClipboard.Text));
+                string json = Clipboard.GetText();
+                List<ImageEffect> imageEffects = ImageEffectManager.ImportEffects(json);
+                if (imageEffects != null && imageEffects.Count > 0)
+                {
+                    ClearEffects();
+                    AddEffects(imageEffects);
+                    UpdatePreview();
+                }
             }
         }
 

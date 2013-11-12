@@ -58,11 +58,6 @@ namespace HelpersLib
 
                 pbClipboard.Visible = true;
             }
-            else if (!string.IsNullOrEmpty(txtClipboard.Text))
-            {
-                lblQuestion.Text = string.Format("Content: Text (Length: {0})", txtClipboard.Text.Length);
-                txtClipboard.Visible = true;
-            }
             else if (Clipboard.ContainsText())
             {
                 string text = Clipboard.GetText();

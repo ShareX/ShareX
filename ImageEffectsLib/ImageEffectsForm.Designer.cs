@@ -40,7 +40,6 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
@@ -180,17 +179,6 @@
             this.btnDuplicate.UseVisualStyleBackColor = true;
             this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
             // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStatus.Location = new System.Drawing.Point(8, 740);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(45, 16);
-            this.lblStatus.TabIndex = 12;
-            this.lblStatus.Text = "Status";
-            // 
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(408, 8);
@@ -204,7 +192,7 @@
             // btnLoadImage
             // 
             this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadImage.Location = new System.Drawing.Point(576, 734);
+            this.btnLoadImage.Location = new System.Drawing.Point(218, 734);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(99, 24);
             this.btnLoadImage.TabIndex = 15;
@@ -216,7 +204,7 @@
             // btnSaveImage
             // 
             this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveImage.Location = new System.Drawing.Point(681, 734);
+            this.btnSaveImage.Location = new System.Drawing.Point(323, 734);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(99, 24);
             this.btnSaveImage.TabIndex = 16;
@@ -228,7 +216,7 @@
             // btnSettingsExport
             // 
             this.btnSettingsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSettingsExport.Location = new System.Drawing.Point(368, 734);
+            this.btnSettingsExport.Location = new System.Drawing.Point(8, 734);
             this.btnSettingsExport.Name = "btnSettingsExport";
             this.btnSettingsExport.Size = new System.Drawing.Size(99, 24);
             this.btnSettingsExport.TabIndex = 17;
@@ -239,7 +227,7 @@
             // btnSettingsImport
             // 
             this.btnSettingsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSettingsImport.Location = new System.Drawing.Point(472, 734);
+            this.btnSettingsImport.Location = new System.Drawing.Point(113, 734);
             this.btnSettingsImport.Name = "btnSettingsImport";
             this.btnSettingsImport.Size = new System.Drawing.Size(99, 24);
             this.btnSettingsImport.TabIndex = 18;
@@ -272,7 +260,6 @@
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.btnMoveDown);
             this.Controls.Add(this.btnMoveUp);
@@ -290,7 +277,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Image effects";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -309,7 +295,6 @@
         private System.Windows.Forms.Button btnMoveUp;
         private System.Windows.Forms.Button btnMoveDown;
         private System.Windows.Forms.Button btnDuplicate;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;

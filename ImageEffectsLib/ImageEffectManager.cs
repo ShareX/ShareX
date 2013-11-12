@@ -23,7 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -46,10 +48,24 @@ namespace ImageEffectsLib
 
         public static string ExportEffects(List<ImageEffect> imageEffects)
         {
-            if (imageEffects != null)
+            if (imageEffects != null && imageEffects.Count > 0)
             {
-                return JsonConvert.SerializeObject(imageEffects);
+                try
+                {
+                    JsonSerializerSettings settings = new JsonSerializerSettings
+                    {
+                        Formatting = Formatting.Indented,
+                        TypeNameHandling = TypeNameHandling.Auto
+                    };
+
+                    return JsonConvert.SerializeObject(imageEffects, settings);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
+
             return null;
         }
 
@@ -57,8 +73,21 @@ namespace ImageEffectsLib
         {
             if (!string.IsNullOrEmpty(json))
             {
-                return JsonConvert.DeserializeObject<List<ImageEffect>>(json);
+                try
+                {
+                    JsonSerializerSettings settings = new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.Auto
+                    };
+
+                    return JsonConvert.DeserializeObject<List<ImageEffect>>(json, settings);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
+
             return null;
         }
     }
