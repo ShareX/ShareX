@@ -27,16 +27,29 @@ using HelpersLib;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ImageEffectsLib
 {
     internal class Canvas : ImageEffect
     {
-        [DefaultValue(5)]
-        public int Width { get; set; }
+        private Padding margin;
 
-        [DefaultValue(5)]
-        public int Height { get; set; }
+        [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
+        public Padding Margin
+        {
+            get
+            {
+                return margin;
+            }
+            set
+            {
+                if (value.Top >= 0 && value.Right >= 0 && value.Bottom >= 0 && value.Left >= 0)
+                {
+                    margin = value;
+                }
+            }
+        }
 
         public Canvas()
         {
@@ -45,12 +58,9 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Width <= 0 && Height <= 0) return img;
+            if (Margin.All == 0) return img;
 
-            int width = Math.Max(Width, 0);
-            int height = Math.Max(Height, 0);
-
-            return ImageHelpers.AddCanvas(img, width, height);
+            return ImageHelpers.AddCanvas(img, Margin);
         }
     }
 }

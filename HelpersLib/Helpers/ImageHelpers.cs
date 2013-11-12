@@ -239,15 +239,15 @@ namespace HelpersLib
             return result;
         }
 
-        public static Image AddCanvas(Image img, int width, int height)
+        public static Image AddCanvas(Image img, Padding margin)
         {
-            Bitmap bmp = img.CreateEmptyBitmap(width * 2, height * 2, PixelFormat.Format32bppArgb);
+            Bitmap bmp = img.CreateEmptyBitmap(margin.Horizontal, margin.Vertical, PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (img)
             {
                 g.SetHighQuality();
-                g.DrawImage(img, width, height, img.Width, img.Height);
+                g.DrawImage(img, margin.Left, margin.Top, img.Width, img.Height);
             }
 
             return bmp;

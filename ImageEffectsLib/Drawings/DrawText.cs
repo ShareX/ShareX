@@ -52,7 +52,7 @@ namespace ImageEffectsLib
         private FontSafe textFontSafe = new FontSafe();
 
         // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
-        [DefaultValue(typeof(Font), "Arial, 8pt")]
+        [DefaultValue(typeof(Font), "Arial, 10pt")]
         public Font TextFont
         {
             get
@@ -83,7 +83,7 @@ namespace ImageEffectsLib
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor { get; set; }
 
-        [DefaultValue(typeof(Color), "85, 85, 85"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "100, 100, 100"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
 
         [DefaultValue(true)]
