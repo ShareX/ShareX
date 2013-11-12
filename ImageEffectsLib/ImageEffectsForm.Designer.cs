@@ -191,7 +191,7 @@
             // 
             // btnLoadImage
             // 
-            this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLoadImage.Location = new System.Drawing.Point(218, 734);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(99, 24);
@@ -203,7 +203,7 @@
             // 
             // btnSaveImage
             // 
-            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveImage.Location = new System.Drawing.Point(323, 734);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(99, 24);
@@ -215,7 +215,7 @@
             // 
             // btnSettingsExport
             // 
-            this.btnSettingsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettingsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSettingsExport.Location = new System.Drawing.Point(8, 734);
             this.btnSettingsExport.Name = "btnSettingsExport";
             this.btnSettingsExport.Size = new System.Drawing.Size(99, 24);
@@ -226,7 +226,7 @@
             // 
             // btnSettingsImport
             // 
-            this.btnSettingsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettingsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSettingsImport.Location = new System.Drawing.Point(113, 734);
             this.btnSettingsImport.Name = "btnSettingsImport";
             this.btnSettingsImport.Size = new System.Drawing.Size(99, 24);
