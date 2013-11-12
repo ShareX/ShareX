@@ -81,7 +81,6 @@
             this.txtClipboard.Location = new System.Drawing.Point(8, 32);
             this.txtClipboard.Multiline = true;
             this.txtClipboard.Name = "txtClipboard";
-            this.txtClipboard.ReadOnly = true;
             this.txtClipboard.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtClipboard.Size = new System.Drawing.Size(403, 288);
             this.txtClipboard.TabIndex = 1;

@@ -43,8 +43,10 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
-            this.pbResult = new HelpersLib.MyPictureBox();
             this.btnSaveImage = new System.Windows.Forms.Button();
+            this.btnSettingsExport = new System.Windows.Forms.Button();
+            this.btnSettingsImport = new System.Windows.Forms.Button();
+            this.pbResult = new HelpersLib.MyPictureBox();
             this.SuspendLayout();
             // 
             // tvEffects
@@ -211,6 +213,40 @@
             this.btnLoadImage.Visible = false;
             this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
             // 
+            // btnSaveImage
+            // 
+            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveImage.Location = new System.Drawing.Point(681, 734);
+            this.btnSaveImage.Name = "btnSaveImage";
+            this.btnSaveImage.Size = new System.Drawing.Size(99, 24);
+            this.btnSaveImage.TabIndex = 16;
+            this.btnSaveImage.Text = "Save image...";
+            this.btnSaveImage.UseVisualStyleBackColor = true;
+            this.btnSaveImage.Visible = false;
+            this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
+            // 
+            // btnSettingsExport
+            // 
+            this.btnSettingsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettingsExport.Location = new System.Drawing.Point(368, 734);
+            this.btnSettingsExport.Name = "btnSettingsExport";
+            this.btnSettingsExport.Size = new System.Drawing.Size(99, 24);
+            this.btnSettingsExport.TabIndex = 17;
+            this.btnSettingsExport.Text = "Export settings...";
+            this.btnSettingsExport.UseVisualStyleBackColor = true;
+            this.btnSettingsExport.Click += new System.EventHandler(this.btnSettingsExport_Click);
+            // 
+            // btnSettingsImport
+            // 
+            this.btnSettingsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettingsImport.Location = new System.Drawing.Point(472, 734);
+            this.btnSettingsImport.Name = "btnSettingsImport";
+            this.btnSettingsImport.Size = new System.Drawing.Size(99, 24);
+            this.btnSettingsImport.TabIndex = 18;
+            this.btnSettingsImport.Text = "Import settings...";
+            this.btnSettingsImport.UseVisualStyleBackColor = true;
+            this.btnSettingsImport.Click += new System.EventHandler(this.btnSettingsImport_Click);
+            // 
             // pbResult
             // 
             this.pbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -226,23 +262,13 @@
             this.pbResult.Size = new System.Drawing.Size(688, 448);
             this.pbResult.TabIndex = 11;
             // 
-            // btnSaveImage
-            // 
-            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveImage.Location = new System.Drawing.Point(681, 734);
-            this.btnSaveImage.Name = "btnSaveImage";
-            this.btnSaveImage.Size = new System.Drawing.Size(99, 24);
-            this.btnSaveImage.TabIndex = 16;
-            this.btnSaveImage.Text = "Save image...";
-            this.btnSaveImage.UseVisualStyleBackColor = true;
-            this.btnSaveImage.Visible = false;
-            this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
-            // 
             // ImageEffectsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 766);
+            this.Controls.Add(this.btnSettingsImport);
+            this.Controls.Add(this.btnSettingsExport);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
@@ -287,6 +313,8 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;
+        private System.Windows.Forms.Button btnSettingsExport;
+        private System.Windows.Forms.Button btnSettingsImport;
     }
 }
 

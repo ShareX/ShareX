@@ -310,6 +310,29 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
+        private void btnSettingsExport_Click(object sender, EventArgs e)
+        {
+            List<ImageEffect> imageEffects = GetImageEffects();
+            if (imageEffects.Count > 0)
+            {
+                ClipboardContentViewer dlg = new ClipboardContentViewer();
+                dlg.txtClipboard.Text = ImageEffectManager.ExportEffects(imageEffects);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Clipboard.SetText(dlg.txtClipboard.Text);
+                }
+            }
+        }
+
+        private void btnSettingsImport_Click(object sender, EventArgs e)
+        {
+            ClipboardContentViewer dlg = new ClipboardContentViewer();
+            if (dlg.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(dlg.txtClipboard.Text))
+            {
+                AddEffects(ImageEffectManager.ImportEffects(dlg.txtClipboard.Text));
+            }
+        }
+
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
