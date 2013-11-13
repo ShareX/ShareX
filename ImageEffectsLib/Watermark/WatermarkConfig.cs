@@ -45,7 +45,7 @@ namespace ImageEffectsLib
 
         public PositionType WatermarkPositionMode = PositionType.Bottom_Right;
         public int WatermarkOffset = 5;
-        public bool WatermarkAutoHide = false;
+        public bool WatermarkAutoHide = true;
 
         public string WatermarkText = "getsharex.com";
         public XmlFont WatermarkFont = new XmlFont("Arial", 10);
@@ -55,9 +55,9 @@ namespace ImageEffectsLib
         public int WatermarkBackgroundPadding = 5;
         public int WatermarkCornerRadius = 4;
         public XmlColor WatermarkBorderArgb = Color.Black;
-        public XmlColor WatermarkGradient1Argb = Color.FromArgb(100, 100, 100);
+        public XmlColor WatermarkGradient1Argb = Color.FromArgb(20, 85, 171);
         public bool WatermarkUseGradient = true;
-        public XmlColor WatermarkGradient2Argb = Color.Black;
+        public XmlColor WatermarkGradient2Argb = Color.FromArgb(0, 15, 30);
         public bool WatermarkUseCustomGradient = false;
         public List<GradientStop> WatermarkGradientList = new List<GradientStop>();
         public LinearGradientMode WatermarkGradientType = LinearGradientMode.Vertical;

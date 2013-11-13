@@ -76,8 +76,10 @@ namespace ImageEffectsLib
             cbWatermarkDrawBackground.Checked = Config.WatermarkDrawBackground;
             nudWatermarkCornerRadius.Value = Config.WatermarkCornerRadius;
             pbWatermarkGradient1.BackColor = Config.WatermarkGradient1Argb;
+            cbWatermarkBackColor2.Checked = Config.WatermarkUseGradient;
             pbWatermarkGradient2.BackColor = Config.WatermarkGradient2Argb;
             pbWatermarkBorderColor.BackColor = Config.WatermarkBorderArgb;
+
             if (cbWatermarkGradientType.Items.Count == 0)
             {
                 cbWatermarkGradientType.Items.AddRange(Enum.GetNames(typeof(LinearGradientMode)));
@@ -103,7 +105,7 @@ namespace ImageEffectsLib
 
         private string FontToString(Font font, Color color)
         {
-            return string.Format("{0} - {1} - {2} - {3},{4},{5},{6}", font.Name, font.Size, font.Style, color.R, color.G, color.B, color.A);
+            return string.Format("{0} - {1} - {2}", font.Name, font.Size, font.Style);
         }
 
         private void SelectColor(Control pb, ref XmlColor color)
@@ -187,12 +189,6 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
-        private void cbWatermarkGradientType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkGradientType = (LinearGradientMode)cbWatermarkGradientType.SelectedIndex;
-            UpdatePreview();
-        }
-
         private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.WatermarkPositionMode = (PositionType)chkWatermarkPosition.SelectedIndex;
@@ -236,9 +232,23 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
+        private void cbWatermarkBackColor2_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.WatermarkUseGradient = cbWatermarkBackColor2.Checked;
+            pbWatermarkGradient2.Enabled = Config.WatermarkUseGradient;
+            cbWatermarkGradientType.Enabled = Config.WatermarkUseGradient;
+            UpdatePreview();
+        }
+
         private void pbWatermarkGradient2_Click(object sender, EventArgs e)
         {
             SelectColor((PictureBox)sender, ref Config.WatermarkGradient2Argb);
+            UpdatePreview();
+        }
+
+        private void cbWatermarkGradientType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.WatermarkGradientType = (LinearGradientMode)cbWatermarkGradientType.SelectedIndex;
             UpdatePreview();
         }
 
