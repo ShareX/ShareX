@@ -62,12 +62,11 @@ namespace ImageEffectsLib
             cboWatermarkType.SelectedIndex = (int)Config.WatermarkMode;
             if (chkWatermarkPosition.Items.Count == 0)
             {
-                chkWatermarkPosition.Items.AddRange(Helpers.GetEnumDescriptions<WatermarkPositionType>());
+                chkWatermarkPosition.Items.AddRange(Helpers.GetEnumDescriptions<PositionType>());
             }
 
             chkWatermarkPosition.SelectedIndex = (int)Config.WatermarkPositionMode;
             nudWatermarkOffset.Value = Config.WatermarkOffset;
-            cbWatermarkAddReflection.Checked = Config.WatermarkAddReflection;
             cbWatermarkAutoHide.Checked = Config.WatermarkAutoHide;
 
             txtWatermarkText.Text = Config.WatermarkText;
@@ -83,11 +82,8 @@ namespace ImageEffectsLib
             }
 
             cbWatermarkGradientType.SelectedIndex = (int)Config.WatermarkGradientType;
-            cboUseCustomGradient.Checked = Config.WatermarkUseCustomGradient;
 
             txtWatermarkImageLocation.Text = Config.WatermarkImageLocation;
-            cbWatermarkUseBorder.Checked = Config.WatermarkUseBorder;
-            nudWatermarkImageScale.Value = Config.WatermarkImageScale;
 
             IsGuiReady = true;
             UpdatePreview();
@@ -126,33 +122,44 @@ namespace ImageEffectsLib
             {
                 using (Bitmap bmp = new Bitmap(pbPreview.ClientSize.Width, pbPreview.ClientSize.Height))
                 {
-                    new WatermarkManager(Config).ApplyWatermark(bmp);
+                    WatermarkManager.ApplyWatermark(bmp, Config);
                     pbPreview.LoadImage(bmp);
-                }
-            }
-        }
-
-        private void btnSelectGradient_Click(object sender, EventArgs e)
-        {
-            using (GradientMaker gradientForm = new GradientMaker(Config.WatermarkGradient) { Icon = Icon })
-            {
-                if (gradientForm.ShowDialog() == DialogResult.OK)
-                {
-                    Config.WatermarkGradient = gradientForm.GradientData;
-                    UpdatePreview();
                 }
             }
         }
 
         private void btnWatermarkFont_Click(object sender, EventArgs e)
         {
-            DialogResult result = WatermarkManager.ShowFontDialog(Config);
-
-            if (result == DialogResult.OK)
+            try
             {
-                pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
-                lblWatermarkFont.Text = FontToString();
-                UpdatePreview();
+                using (FontDialog fontDialog = new FontDialog())
+                {
+                    fontDialog.ShowColor = true;
+
+                    try
+                    {
+                        fontDialog.Color = Config.WatermarkFontArgb;
+                        fontDialog.Font = Config.WatermarkFont;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugHelper.WriteException(ex, "Error while initializing font.");
+                    }
+
+                    if (fontDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        Config.WatermarkFont = fontDialog.Font;
+                        Config.WatermarkFontArgb = fontDialog.Color;
+
+                        pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
+                        lblWatermarkFont.Text = FontToString();
+                        UpdatePreview();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex, "Error while setting watermark font.");
             }
         }
 
@@ -172,18 +179,6 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
-        private void cbUseCustomGradient_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkUseCustomGradient = cboUseCustomGradient.Checked;
-            UpdatePreview();
-        }
-
-        private void cbWatermarkAddReflection_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkAddReflection = cbWatermarkAddReflection.Checked;
-            UpdatePreview();
-        }
-
         private void cbWatermarkAutoHide_CheckedChanged(object sender, EventArgs e)
         {
             Config.WatermarkAutoHide = cbWatermarkAutoHide.Checked;
@@ -198,25 +193,13 @@ namespace ImageEffectsLib
 
         private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.WatermarkPositionMode = (WatermarkPositionType)chkWatermarkPosition.SelectedIndex;
-            UpdatePreview();
-        }
-
-        private void cbWatermarkUseBorder_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkUseBorder = cbWatermarkUseBorder.Checked;
+            Config.WatermarkPositionMode = (PositionType)chkWatermarkPosition.SelectedIndex;
             UpdatePreview();
         }
 
         private void nudWatermarkCornerRadius_ValueChanged(object sender, EventArgs e)
         {
             Config.WatermarkCornerRadius = (int)nudWatermarkCornerRadius.Value;
-            UpdatePreview();
-        }
-
-        private void nudWatermarkImageScale_ValueChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkImageScale = (int)nudWatermarkImageScale.Value;
             UpdatePreview();
         }
 

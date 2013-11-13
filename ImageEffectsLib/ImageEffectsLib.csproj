@@ -122,13 +122,6 @@
     <Compile Include="Manipulations\Resize.cs" />
     <Compile Include="Manipulations\Rotate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Watermark\GradientData.cs" />
-    <Compile Include="Watermark\GradientMaker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Watermark\GradientMaker.Designer.cs">
-      <DependentUpon>GradientMaker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Watermark\GradientStop.cs" />
     <Compile Include="Watermark\WatermarkConfig.cs" />
     <Compile Include="Watermark\WatermarkManager.cs" />
@@ -165,9 +158,6 @@
   <ItemGroup>
     <EmbeddedResource Include="ImageEffectsForm.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Watermark\GradientMaker.resx">
-      <DependentUpon>GradientMaker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Watermark\WatermarkForm.resx">
       <DependentUpon>WatermarkForm.cs</DependentUpon>

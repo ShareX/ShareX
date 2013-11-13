@@ -25,6 +25,7 @@
 
 using HelpersLib;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 
@@ -32,33 +33,36 @@ namespace ImageEffectsLib
 {
     public class GradientStop
     {
+        [DefaultValue(typeof(Color), "Black")]
         public Color Color { get; set; }
-        public float Offset { get; set; }
+
+        private float offset;
+
+        [DefaultValue(0f)]
+        public float Offset
+        {
+            get
+            {
+                return offset;
+            }
+            set
+            {
+                if (value >= 0 || value <= 1)
+                {
+                    offset = value;
+                }
+            }
+        }
+
+        public GradientStop()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
 
         public GradientStop(Color color, float offset)
         {
             Color = color;
             Offset = offset;
-        }
-
-        public GradientStop(string color, string offset)
-        {
-            Color = ColorHelpers.ParseColor(color);
-
-            if (Color == null)
-            {
-                throw new Exception("Color is unknown.");
-            }
-
-            float offset2;
-            if (float.TryParse(offset, NumberStyles.Any, CultureInfo.InvariantCulture, out offset2))
-            {
-                Offset = offset2;
-            }
-            else
-            {
-                Offset = 0;
-            }
         }
     }
 }

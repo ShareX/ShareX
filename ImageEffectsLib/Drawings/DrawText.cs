@@ -25,12 +25,15 @@
 
 using HelpersLib;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ImageEffectsLib
@@ -93,6 +96,12 @@ namespace ImageEffectsLib
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
+        [Browsable(false), DefaultValue(false)]
+        public bool UseCustomGradient { get; set; }
+
+        [Browsable(false)]
+        public List<GradientStop> CustomGradientList { get; set; }
+
         [DefaultValue(LinearGradientMode.Vertical)]
         public LinearGradientMode GradientType { get; set; }
 
@@ -145,6 +154,15 @@ namespace ImageEffectsLib
                                 if (UseGradient)
                                 {
                                     backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
+
+                                    if (UseCustomGradient && CustomGradientList != null && CustomGradientList.Count > 1)
+                                    {
+                                        ColorBlend colorBlend = new ColorBlend();
+                                        IEnumerable<GradientStop> gradient = CustomGradientList.OrderBy(x => x.Offset);
+                                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                        colorBlend.Positions = gradient.Select(x => x.Offset).ToArray();
+                                        ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                    }
                                 }
                                 else
                                 {

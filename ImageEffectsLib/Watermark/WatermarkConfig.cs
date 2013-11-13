@@ -24,34 +24,13 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
-    public enum WatermarkPositionType
-    {
-        [Description("Top - Left")]
-        TOP_LEFT,
-        [Description("Top - Center")]
-        TOP,
-        [Description("Top - Right")]
-        TOP_RIGHT,
-        [Description("Center - Left")]
-        LEFT,
-        [Description("Center")]
-        CENTER,
-        [Description("Center - Right")]
-        RIGHT,
-        [Description("Bottom - Left")]
-        BOTTOM_LEFT,
-        [Description("Bottom - Center")]
-        BOTTOM,
-        [Description("Bottom - Right")]
-        BOTTOM_RIGHT
-    }
-
     public enum WatermarkType
     {
         [Description("Text")]
@@ -63,9 +42,8 @@ namespace ImageEffectsLib
     public class WatermarkConfig
     {
         public WatermarkType WatermarkMode = WatermarkType.TEXT;
-        public WatermarkPositionType WatermarkPositionMode = WatermarkPositionType.BOTTOM_RIGHT;
+        public PositionType WatermarkPositionMode = PositionType.Bottom_Right;
         public int WatermarkOffset = 5;
-        public bool WatermarkAddReflection = false;
         public bool WatermarkAutoHide = true;
 
         public string WatermarkText = "%h:%mi";
@@ -78,10 +56,8 @@ namespace ImageEffectsLib
         public XmlColor WatermarkBorderArgb = Color.Black;
         public LinearGradientMode WatermarkGradientType = LinearGradientMode.Vertical;
         public bool WatermarkUseCustomGradient = false;
-        public GradientData WatermarkGradient = new GradientData();
+        public List<GradientStop> WatermarkGradientList = new List<GradientStop>();
 
         public string WatermarkImageLocation = "";
-        public bool WatermarkUseBorder = false;
-        public int WatermarkImageScale = 100;
     }
 }
