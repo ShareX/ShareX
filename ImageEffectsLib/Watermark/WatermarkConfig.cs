@@ -42,22 +42,67 @@ namespace ImageEffectsLib
     public class WatermarkConfig
     {
         public WatermarkType WatermarkMode = WatermarkType.TEXT;
+
         public PositionType WatermarkPositionMode = PositionType.Bottom_Right;
         public int WatermarkOffset = 5;
-        public bool WatermarkAutoHide = true;
+        public bool WatermarkAutoHide = false;
 
-        public string WatermarkText = "%h:%mi";
-        public XmlFont WatermarkFont = new XmlFont("Arial", 8);
+        public string WatermarkText = "getsharex.com";
+        public XmlFont WatermarkFont = new XmlFont("Arial", 10);
         public XmlColor WatermarkFontArgb = Color.White;
 
+        public bool WatermarkDrawBackground = true;
+        public int WatermarkBackgroundPadding = 5;
         public int WatermarkCornerRadius = 4;
-        public XmlColor WatermarkGradient1Argb = Color.FromArgb(85, 85, 85);
-        public XmlColor WatermarkGradient2Argb = Color.Black;
         public XmlColor WatermarkBorderArgb = Color.Black;
-        public LinearGradientMode WatermarkGradientType = LinearGradientMode.Vertical;
+        public XmlColor WatermarkGradient1Argb = Color.FromArgb(100, 100, 100);
+        public bool WatermarkUseGradient = true;
+        public XmlColor WatermarkGradient2Argb = Color.Black;
         public bool WatermarkUseCustomGradient = false;
         public List<GradientStop> WatermarkGradientList = new List<GradientStop>();
+        public LinearGradientMode WatermarkGradientType = LinearGradientMode.Vertical;
 
         public string WatermarkImageLocation = "";
+
+        public Image ApplyWatermark(Image img)
+        {
+            switch (WatermarkMode)
+            {
+                case WatermarkType.TEXT:
+                    DrawText drawText = new DrawText
+                    {
+                        Position = (PositionType)WatermarkPositionMode,
+                        Offset = WatermarkOffset,
+                        AutoHide = WatermarkAutoHide,
+                        Text = WatermarkText,
+                        TextFont = WatermarkFont,
+                        TextColor = WatermarkFontArgb,
+                        DrawBackground = WatermarkDrawBackground,
+                        BackgroundPadding = WatermarkBackgroundPadding,
+                        CornerRadius = WatermarkCornerRadius,
+                        BorderColor = WatermarkBorderArgb,
+                        BackgroundColor = WatermarkGradient1Argb,
+                        UseGradient = WatermarkUseGradient,
+                        BackgroundColor2 = WatermarkGradient2Argb,
+                        UseCustomGradient = WatermarkUseCustomGradient,
+                        CustomGradientList = WatermarkGradientList,
+                        GradientType = WatermarkGradientType
+                    };
+
+                    return drawText.Apply(img);
+                case WatermarkType.IMAGE:
+                    DrawImage drawImage = new DrawImage
+                    {
+                        Position = (PositionType)WatermarkPositionMode,
+                        Offset = WatermarkOffset,
+                        AutoHide = WatermarkAutoHide,
+                        ImageLocation = WatermarkImageLocation
+                    };
+
+                    return drawImage.Apply(img);
+            }
+
+            return img;
+        }
     }
 }

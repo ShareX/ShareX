@@ -35,45 +35,5 @@ namespace ImageEffectsLib
 {
     public static class WatermarkManager
     {
-        public static Image ApplyWatermark(Image img, WatermarkConfig config)
-        {
-            switch (config.WatermarkMode)
-            {
-                case WatermarkType.TEXT:
-                    DrawText drawText = new DrawText
-                    {
-                        Position = (PositionType)config.WatermarkPositionMode,
-                        Offset = config.WatermarkOffset,
-                        AutoHide = config.WatermarkAutoHide,
-                        Text = config.WatermarkText,
-                        TextFont = config.WatermarkFont,
-                        TextColor = config.WatermarkFontArgb,
-                        DrawBackground = true,
-                        BackgroundPadding = 5,
-                        CornerRadius = config.WatermarkCornerRadius,
-                        BorderColor = config.WatermarkBorderArgb,
-                        BackgroundColor = config.WatermarkGradient1Argb,
-                        UseGradient = true,
-                        BackgroundColor2 = config.WatermarkGradient2Argb,
-                        UseCustomGradient = false,
-                        CustomGradientList = null,
-                        GradientType = config.WatermarkGradientType
-                    };
-
-                    return drawText.Apply(img);
-                case WatermarkType.IMAGE:
-                    DrawImage drawImage = new DrawImage
-                    {
-                        Position = (PositionType)config.WatermarkPositionMode,
-                        Offset = config.WatermarkOffset,
-                        AutoHide = config.WatermarkAutoHide,
-                        ImageLocation = config.WatermarkImageLocation
-                    };
-
-                    return drawImage.Apply(img);
-            }
-
-            return img;
-        }
     }
 }

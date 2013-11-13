@@ -360,7 +360,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark) && Info.TaskSettings.ImageSettings.WatermarkConfig != null)
             {
-                WatermarkManager.ApplyWatermark(tempImage, Info.TaskSettings.ImageSettings.WatermarkConfig);
+                Info.TaskSettings.ImageSettings.WatermarkConfig.ApplyWatermark(tempImage);
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))

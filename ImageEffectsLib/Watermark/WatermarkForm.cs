@@ -72,6 +72,8 @@ namespace ImageEffectsLib
             txtWatermarkText.Text = Config.WatermarkText;
             pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
             lblWatermarkFont.Text = FontToString();
+
+            cbWatermarkDrawBackground.Checked = Config.WatermarkDrawBackground;
             nudWatermarkCornerRadius.Value = Config.WatermarkCornerRadius;
             pbWatermarkGradient1.BackColor = Config.WatermarkGradient1Argb;
             pbWatermarkGradient2.BackColor = Config.WatermarkGradient2Argb;
@@ -122,7 +124,7 @@ namespace ImageEffectsLib
             {
                 using (Bitmap bmp = new Bitmap(pbPreview.ClientSize.Width, pbPreview.ClientSize.Height))
                 {
-                    WatermarkManager.ApplyWatermark(bmp, Config);
+                    Config.ApplyWatermark(bmp);
                     pbPreview.LoadImage(bmp);
                 }
             }
@@ -194,6 +196,12 @@ namespace ImageEffectsLib
         private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.WatermarkPositionMode = (PositionType)chkWatermarkPosition.SelectedIndex;
+            UpdatePreview();
+        }
+
+        private void cbWatermarkDrawBackground_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.WatermarkDrawBackground = cbWatermarkDrawBackground.Checked;
             UpdatePreview();
         }
 
