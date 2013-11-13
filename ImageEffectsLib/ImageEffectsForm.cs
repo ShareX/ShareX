@@ -71,8 +71,8 @@ namespace ImageEffectsLib
                 typeof(DrawText));
 
             AddEffectToTreeView("Manipulations",
-                typeof(Crop),
                 typeof(Canvas),
+                typeof(Crop),
                 typeof(Flip),
                 typeof(Resize),
                 typeof(Rotate),

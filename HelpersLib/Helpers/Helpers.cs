@@ -751,5 +751,13 @@ namespace HelpersLib
                     return Point.Empty;
             }
         }
+
+        public static Size MeasureText(string text, Font font)
+        {
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                return g.MeasureString(text, font).ToSize();
+            }
+        }
     }
 }

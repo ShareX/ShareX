@@ -192,9 +192,10 @@
             // btnLoadImage
             // 
             this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLoadImage.Location = new System.Drawing.Point(218, 734);
+            this.btnLoadImage.AutoSize = true;
+            this.btnLoadImage.Location = new System.Drawing.Point(318, 734);
             this.btnLoadImage.Name = "btnLoadImage";
-            this.btnLoadImage.Size = new System.Drawing.Size(99, 24);
+            this.btnLoadImage.Size = new System.Drawing.Size(81, 24);
             this.btnLoadImage.TabIndex = 15;
             this.btnLoadImage.Text = "Load image...";
             this.btnLoadImage.UseVisualStyleBackColor = true;
@@ -204,9 +205,10 @@
             // btnSaveImage
             // 
             this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSaveImage.Location = new System.Drawing.Point(323, 734);
+            this.btnSaveImage.AutoSize = true;
+            this.btnSaveImage.Location = new System.Drawing.Point(405, 734);
             this.btnSaveImage.Name = "btnSaveImage";
-            this.btnSaveImage.Size = new System.Drawing.Size(99, 24);
+            this.btnSaveImage.Size = new System.Drawing.Size(82, 24);
             this.btnSaveImage.TabIndex = 16;
             this.btnSaveImage.Text = "Save image...";
             this.btnSaveImage.UseVisualStyleBackColor = true;
@@ -216,22 +218,24 @@
             // btnSettingsExport
             // 
             this.btnSettingsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSettingsExport.AutoSize = true;
             this.btnSettingsExport.Location = new System.Drawing.Point(8, 734);
             this.btnSettingsExport.Name = "btnSettingsExport";
-            this.btnSettingsExport.Size = new System.Drawing.Size(99, 24);
+            this.btnSettingsExport.Size = new System.Drawing.Size(144, 24);
             this.btnSettingsExport.TabIndex = 17;
-            this.btnSettingsExport.Text = "Export settings...";
+            this.btnSettingsExport.Text = "Export settings to clipboard";
             this.btnSettingsExport.UseVisualStyleBackColor = true;
             this.btnSettingsExport.Click += new System.EventHandler(this.btnSettingsExport_Click);
             // 
             // btnSettingsImport
             // 
             this.btnSettingsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSettingsImport.Location = new System.Drawing.Point(113, 734);
+            this.btnSettingsImport.AutoSize = true;
+            this.btnSettingsImport.Location = new System.Drawing.Point(158, 734);
             this.btnSettingsImport.Name = "btnSettingsImport";
-            this.btnSettingsImport.Size = new System.Drawing.Size(99, 24);
+            this.btnSettingsImport.Size = new System.Drawing.Size(154, 24);
             this.btnSettingsImport.TabIndex = 18;
-            this.btnSettingsImport.Text = "Import settings...";
+            this.btnSettingsImport.Text = "Import settings from clipboard";
             this.btnSettingsImport.UseVisualStyleBackColor = true;
             this.btnSettingsImport.Click += new System.EventHandler(this.btnSettingsImport_Click);
             // 
@@ -279,6 +283,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Image effects";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

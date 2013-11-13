@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -46,7 +47,7 @@ namespace ImageEffectsLib
         [DefaultValue(false), Description("If watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
-        [DefaultValue("%h:%mi")]
+        [DefaultValue("getsharex.com")]
         public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
@@ -117,27 +118,25 @@ namespace ImageEffectsLib
                 NameParser parser = new NameParser(NameParserType.Text) { Picture = img };
                 string parsedText = parser.Parse(Text);
 
-                Size textSize = TextRenderer.MeasureText(parsedText, textFont);
-                Size labelSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
+                Size textSize = Helpers.MeasureText(parsedText, textFont);
+                Size watermarkSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
 
-                if (AutoHide && ((labelSize.Width + Offset > img.Width) || (labelSize.Height + Offset > img.Height)))
+                if (AutoHide && ((watermarkSize.Width + Offset > img.Width) || (watermarkSize.Height + Offset > img.Height)))
                 {
                     return img;
                 }
 
-                Rectangle labelRectangle = new Rectangle(Point.Empty, labelSize);
-
-                using (Bitmap bmp = new Bitmap(labelRectangle.Width, labelRectangle.Height))
-                using (Graphics g = Graphics.FromImage(bmp))
+                using (Bitmap bmpWatermark = new Bitmap(watermarkSize.Width, watermarkSize.Height))
+                using (Graphics gWatermark = Graphics.FromImage(bmpWatermark))
                 {
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                    gWatermark.SetHighQuality();
 
                     if (DrawBackground)
                     {
-                        using (GraphicsPath gPath = new GraphicsPath())
+                        using (GraphicsPath backgroundPath = new GraphicsPath())
                         {
-                            gPath.AddRoundedRectangle(labelRectangle, CornerRadius);
+                            Rectangle backgroundRect = new Rectangle(0, 0, watermarkSize.Width, watermarkSize.Height);
+                            backgroundPath.AddRoundedRectangle(backgroundRect, CornerRadius);
 
                             Brush backgroundBrush = null;
 
@@ -145,14 +144,14 @@ namespace ImageEffectsLib
                             {
                                 if (UseGradient)
                                 {
-                                    backgroundBrush = new LinearGradientBrush(labelRectangle, BackgroundColor, BackgroundColor2, GradientType);
+                                    backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
                                 }
                                 else
                                 {
                                     backgroundBrush = new SolidBrush(BackgroundColor);
                                 }
 
-                                g.FillPath(backgroundBrush, gPath);
+                                gWatermark.FillPath(backgroundBrush, backgroundPath);
                             }
                             finally
                             {
@@ -161,23 +160,25 @@ namespace ImageEffectsLib
 
                             using (Pen borderPen = new Pen(BorderColor))
                             {
-                                g.DrawPath(borderPen, gPath);
+                                gWatermark.DrawPath(borderPen, backgroundPath);
                             }
                         }
                     }
 
+                    gWatermark.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+
                     using (Brush textBrush = new SolidBrush(TextColor))
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        g.DrawString(parsedText, textFont, textBrush, bmp.Width / 2f, bmp.Height / 2f, sf);
+                        gWatermark.DrawString(parsedText, textFont, textBrush, bmpWatermark.Width / 2f, bmpWatermark.Height / 2f, sf);
                     }
 
-                    using (Graphics gImg = Graphics.FromImage(img))
+                    using (Graphics gResult = Graphics.FromImage(img))
                     {
-                        gImg.SetHighQuality();
+                        gResult.SetHighQuality();
 
-                        Point labelPosition = Helpers.GetPosition(Position, Offset, img.Size, labelSize);
-                        gImg.DrawImage(bmp, labelPosition.X, labelPosition.Y, bmp.Width, bmp.Height);
+                        Point labelPosition = Helpers.GetPosition(Position, Offset, img.Size, watermarkSize);
+                        gResult.DrawImage(bmpWatermark, labelPosition.X, labelPosition.Y, bmpWatermark.Width, bmpWatermark.Height);
                     }
                 }
             }
