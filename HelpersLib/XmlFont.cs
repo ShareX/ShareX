@@ -53,10 +53,13 @@ namespace HelpersLib
 
         private void Init(Font font)
         {
-            FontFamily = font.FontFamily.Name;
-            GraphicsUnit = font.Unit;
-            Size = font.Size;
-            Style = font.Style;
+            using (font)
+            {
+                FontFamily = font.FontFamily.Name;
+                Size = font.Size;
+                Style = font.Style;
+                GraphicsUnit = font.Unit;
+            }
         }
 
         private Font CreateFont(string fontName, float fontSize, FontStyle fontStyle)
@@ -73,12 +76,29 @@ namespace HelpersLib
 
         public static implicit operator Font(XmlFont font)
         {
-            return new Font(font.FontFamily, font.Size, font.Style, font.GraphicsUnit);
+            return font.ToFont();
         }
 
         public static implicit operator XmlFont(Font font)
         {
             return new XmlFont(font);
+        }
+
+        public Font ToFont()
+        {
+            return new Font(FontFamily, Size, Style, GraphicsUnit);
+        }
+
+        public override string ToString()
+        {
+            string text = string.Format("{0}, {1}", FontFamily, Size);
+
+            if (Style != FontStyle.Regular)
+            {
+                text += ", " + Style;
+            }
+
+            return text;
         }
     }
 }

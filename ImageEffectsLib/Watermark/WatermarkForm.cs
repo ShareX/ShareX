@@ -71,7 +71,7 @@ namespace ImageEffectsLib
 
             txtWatermarkText.Text = Config.WatermarkText;
             pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
-            lblWatermarkFont.Text = FontToString();
+            lblWatermarkFont.Text = Config.WatermarkFont.ToString();
 
             cbWatermarkDrawBackground.Checked = Config.WatermarkDrawBackground;
             nudWatermarkCornerRadius.Value = Config.WatermarkCornerRadius;
@@ -96,16 +96,6 @@ namespace ImageEffectsLib
         private void WatermarkUI_Resize(object sender, EventArgs e)
         {
             Refresh();
-        }
-
-        private string FontToString()
-        {
-            return FontToString(Config.WatermarkFont, Config.WatermarkFontArgb);
-        }
-
-        private string FontToString(Font font, Color color)
-        {
-            return string.Format("{0} - {1} - {2}", font.Name, font.Size, font.Style);
         }
 
         private void SelectColor(Control pb, ref XmlColor color)
@@ -156,7 +146,7 @@ namespace ImageEffectsLib
                         Config.WatermarkFontArgb = fontDialog.Color;
 
                         pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
-                        lblWatermarkFont.Text = FontToString();
+                        lblWatermarkFont.Text = Config.WatermarkFont.ToString();
                         UpdatePreview();
                     }
                 }
@@ -222,7 +212,6 @@ namespace ImageEffectsLib
         private void pbWatermarkFontColor_Click(object sender, EventArgs e)
         {
             SelectColor((PictureBox)sender, ref Config.WatermarkFontArgb);
-            lblWatermarkFont.Text = FontToString();
             UpdatePreview();
         }
 
