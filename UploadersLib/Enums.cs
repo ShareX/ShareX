@@ -52,9 +52,9 @@ namespace UploadersLib
         yFrog,
         [Description("imm.io")]
         Immio,
-        [Description("Custom Image Uploader")]
+        [Description("Custom image uploader")]
         CustomImageUploader,
-        [Description("File Uploader")]
+        [Description("File uploader")]
         FileUploader
     }
 
@@ -75,9 +75,9 @@ namespace UploadersLib
         Paste_ee,
         [Description("gist.github.com")]
         Gist,
-        [Description("Custom Text Uploader")]
+        [Description("Custom text uploader")]
         CustomTextUploader,
-        [Description("File Uploader")]
+        [Description("File uploader")]
         FileUploader
     }
 
@@ -104,13 +104,13 @@ namespace UploadersLib
         Ge_tt,
         [Description("hostr.co")]
         Localhostr,
-        [Description("Shared Folder")]
+        [Description("Shared folder")]
         SharedFolder,
         [Description("Email")]
         Email,
         [Description("Jira")]
         Jira,
-        [Description("Custom File Uploader")]
+        [Description("Custom file uploader")]
         CustomFileUploader
     }
 
@@ -129,7 +129,7 @@ namespace UploadersLib
         TINYURL,
         [Description("turl.ca")]
         TURL,
-        [Description("Custom URL Shortener")]
+        [Description("Custom URL shortener")]
         CustomURLShortener
     }
 
