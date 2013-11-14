@@ -38,9 +38,11 @@ namespace HelpersLib
     {
         private const string APIURL = "https://api.github.com";
 
-        public IWebProxy Proxy { get; set; }
         public string Owner { get; set; }
         public string Repo { get; set; }
+        public Version CurrentVersion { get; set; }
+        public IWebProxy Proxy { get; set; }
+        public UpdateInfo UpdateInfo { get; private set; }
 
         public string ReleasesURL
         {
@@ -50,13 +52,14 @@ namespace HelpersLib
             }
         }
 
-        public GitHubUpdateChecker(string owner, string repo)
+        public GitHubUpdateChecker(string owner, string repo, Version currentVersion)
         {
             Owner = owner;
             Repo = repo;
+            CurrentVersion = currentVersion;
         }
 
-        public string CheckUpdate(Version currentVersion)
+        public string CheckUpdate()
         {
             try
             {
@@ -69,7 +72,7 @@ namespace HelpersLib
                     if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name[0] == 'v')
                     {
                         Version latestVersion = new Version(latestRelease.tag_name.Substring(1));
-                        bool isUpdateExist = Helpers.CheckVersion(latestVersion, currentVersion);
+                        bool isUpdateExist = Helpers.CheckVersion(latestVersion, CurrentVersion);
 
                         if (isUpdateExist)
                         {
@@ -150,6 +153,6 @@ namespace HelpersLib
         public int size { get; set; }
         public int download_count { get; set; }
         public string created_at { get; set; }
-        public string published_at { get; set; }
+        public string updated_at { get; set; }
     }
 }

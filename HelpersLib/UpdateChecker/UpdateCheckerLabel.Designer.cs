@@ -1,4 +1,4 @@
-﻿namespace UpdateCheckerLib
+﻿namespace HelpersLib
 {
     partial class UpdateCheckerLabel
     {

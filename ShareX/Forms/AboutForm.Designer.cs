@@ -49,7 +49,7 @@
             this.pbDanaSteamURL = new System.Windows.Forms.PictureBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
             this.cLogo = new HelpersLib.Canvas();
-            this.uclUpdate = new UpdateCheckerLib.UpdateCheckerLabel();
+            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
             this.lblOwners = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
@@ -363,7 +363,6 @@
         private System.Windows.Forms.PictureBox pbMikeURL;
         private System.Windows.Forms.PictureBox pbAU;
         private System.Windows.Forms.Label lblMike;
-        private UpdateCheckerLib.UpdateCheckerLabel uclUpdate;
         private HelpersLib.Canvas cLogo;
         private System.Windows.Forms.PictureBox pbBerkSteamURL;
         private System.Windows.Forms.RichTextBox rtbCredits;
@@ -378,5 +377,6 @@
         private System.Windows.Forms.PictureBox pbDanaSteamURL;
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private System.Windows.Forms.Label lblOwners;
+        private HelpersLib.UpdateCheckerLabel uclUpdate;
     }
 }

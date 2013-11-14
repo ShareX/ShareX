@@ -33,7 +33,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace UpdateCheckerLib
+namespace HelpersLib
 {
     public class UpdateChecker
     {

@@ -30,7 +30,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using UpdateCheckerLib;
 using UploadersLib;
 
 namespace ShareX
@@ -44,9 +43,10 @@ namespace ShareX
             Text = Program.FullTitle;
             lblProductName.Text = Program.FullTitle;
 
-            UpdateChecker updateChecker = new UpdateChecker("", Application.ProductName, Program.AssemblyVersion,
-                ReleaseChannelType.Stable, Uploader.ProxyInfo.GetWebProxy());
-            uclUpdate.CheckUpdate(updateChecker);
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX", Program.AssemblyVersion);
+            updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
+
+            //uclUpdate.CheckUpdate(updateChecker);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)

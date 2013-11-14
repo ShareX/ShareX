@@ -32,7 +32,6 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using UpdateCheckerLib;
 using UploadersLib;
 
 namespace ShareX
@@ -404,9 +403,9 @@ namespace ShareX
 
         private void CheckUpdate()
         {
-            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX", Program.AssemblyVersion);
             updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
-            string downloadURL = updateChecker.CheckUpdate(Program.AssemblyVersion);
+            string downloadURL = updateChecker.CheckUpdate();
 
             if (!string.IsNullOrEmpty(downloadURL) && MessageBox.Show("An update is available for ShareX.\r\nWould you like to download it?",
                 "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)

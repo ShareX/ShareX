@@ -27,11 +27,11 @@ using HelpersLib;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace UpdateCheckerLib
+namespace HelpersLib
 {
     public partial class UpdateCheckerLabel : UserControl
     {
-        private UpdateChecker updateChecker;
+        private GitHubUpdateChecker updateChecker;
         private bool isBusy;
 
         public UpdateCheckerLabel()
@@ -39,7 +39,7 @@ namespace UpdateCheckerLib
             InitializeComponent();
         }
 
-        public void CheckUpdate(UpdateChecker updateChecker)
+        public void CheckUpdate(GitHubUpdateChecker updateChecker)
         {
             this.updateChecker = updateChecker;
 
@@ -78,11 +78,11 @@ namespace UpdateCheckerLib
                         lblStatus.Visible = true;
                         break;
                     case UpdateStatus.UpdateRequired:
-                        llblUpdateAvailable.Text = "A newer version of " + updateChecker.ApplicationName + " is available";
+                        llblUpdateAvailable.Text = "A newer version of ShareX is available";
                         llblUpdateAvailable.Visible = true;
                         break;
                     case UpdateStatus.UpToDate:
-                        lblStatus.Text = updateChecker.ApplicationName + " is up to date";
+                        lblStatus.Text = "ShareX is up to date";
                         lblStatus.Visible = true;
                         break;
                 }

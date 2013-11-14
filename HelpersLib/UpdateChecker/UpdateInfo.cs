@@ -27,7 +27,7 @@ using HelpersLib;
 using System;
 using System.Text;
 
-namespace UpdateCheckerLib
+namespace HelpersLib
 {
     public class UpdateInfo
     {
