@@ -30,7 +30,6 @@ namespace HelpersLib
         public const string URL_WEBSITE = "http://getsharex.com";
         public const string URL_PROJECT = "https://github.com/ShareX/ShareX";
         public const string URL_ISSUES = "https://github.com/ShareX/ShareX/issues";
-        public const string URL_UPDATE = "http://sharex.googlecode.com/svn/trunk/Update.xml";
         public const string URL_DONATE = "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=8DSJ2WNEHHDJJ&lc=US&item_name=ShareX&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted";
         public const string URL_BERK = "https://github.com/Jaex";
         public const string URL_BERK_STEAM = "http://steamcommunity.com/id/ww";

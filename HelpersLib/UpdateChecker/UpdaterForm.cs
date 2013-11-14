@@ -70,7 +70,7 @@ namespace HelpersLib
             AutoStartInstall = true;
         }
 
-        public UpdaterForm(string url, IWebProxy proxy, string changelog)
+        public UpdaterForm(string url, IWebProxy proxy, string changelog = "")
             : this()
         {
             URL = url;

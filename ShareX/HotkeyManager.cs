@@ -45,7 +45,7 @@ namespace ShareX
         {
             hotkeyForm = form;
             hotkeyForm.HotkeyPress += hotkeyForm_HotkeyPress;
-            hotkeyForm.FormClosed += (sender, e) => UnregisterAllHotkeys(false);
+            hotkeyForm.FormClosed += (sender, e) => hotkeyForm.InvokeSafe(() => UnregisterAllHotkeys(false));
 
             Hotkeys = hotkeys;
 
