@@ -56,25 +56,34 @@ namespace HelpersLib
             Repo = repo;
         }
 
-        public void CheckUpdate(Version currentVersion)
+        public string CheckUpdate(Version currentVersion)
         {
-            List<GitHubRelease> releases = GetReleases();
-
-            if (releases != null && releases.Count > 0)
+            try
             {
-                GitHubRelease latestRelease = releases[0];
+                List<GitHubRelease> releases = GetReleases();
 
-                if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name[0] == 'v')
+                if (releases != null && releases.Count > 0)
                 {
-                    Version latestVersion = new Version(latestRelease.tag_name.Substring(1));
-                    bool isUpdateExist = Helpers.CheckVersion(latestVersion, currentVersion);
+                    GitHubRelease latestRelease = releases[0];
 
-                    if (isUpdateExist)
+                    if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name[0] == 'v')
                     {
-                        string downloadURL = GetDownloadURL(latestRelease);
+                        Version latestVersion = new Version(latestRelease.tag_name.Substring(1));
+                        bool isUpdateExist = Helpers.CheckVersion(latestVersion, currentVersion);
+
+                        if (isUpdateExist)
+                        {
+                            return GetDownloadURL(latestRelease);
+                        }
                     }
                 }
             }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Update check failed");
+            }
+
+            return null;
         }
 
         public string GetDownloadURL(GitHubRelease release)

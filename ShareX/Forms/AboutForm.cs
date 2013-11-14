@@ -44,7 +44,7 @@ namespace ShareX
             Text = Program.FullTitle;
             lblProductName.Text = Program.FullTitle;
 
-            UpdateChecker updateChecker = new UpdateChecker(Links.URL_UPDATE, Application.ProductName, Program.AssemblyVersion,
+            UpdateChecker updateChecker = new UpdateChecker("", Application.ProductName, Program.AssemblyVersion,
                 ReleaseChannelType.Stable, Uploader.ProxyInfo.GetWebProxy());
             uclUpdate.CheckUpdate(updateChecker);
         }
