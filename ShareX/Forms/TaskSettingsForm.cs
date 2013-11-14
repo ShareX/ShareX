@@ -208,6 +208,11 @@ namespace ShareX
             }
         }
 
+        private void TaskSettingsForm_Resize(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
         #region Task
 
         private void UpdateDestinationStates()

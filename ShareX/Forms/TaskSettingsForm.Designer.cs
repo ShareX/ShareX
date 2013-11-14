@@ -1647,6 +1647,7 @@
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Task settings";
+            this.Resize += new System.EventHandler(this.TaskSettingsForm_Resize);
             this.tcHotkeySettings.ResumeLayout(false);
             this.tpTask.ResumeLayout(false);
             this.tpTask.PerformLayout();

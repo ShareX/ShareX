@@ -91,11 +91,11 @@ namespace HelpersLib
 
         public override string ToString()
         {
-            string text = string.Format("{0}, {1}", FontFamily, Size);
+            string text = string.Format("{0}; {1}", FontFamily, Size);
 
             if (Style != FontStyle.Regular)
             {
-                text += ", " + Style;
+                text += "; " + Style;
             }
 
             return text;
