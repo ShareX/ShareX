@@ -34,11 +34,12 @@ namespace HelpersLib
         public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
         public Version LatestVersion { get; set; }
+        public string Filename { get; set; }
         public string DownloadURL { get; set; }
         public string UpdateNotes { get; set; }
         public ReleaseChannelType ReleaseChannel { get; set; }
 
-        private bool forceUpdate = false; // For testing purposes
+        private bool forceUpdate = true; // For testing purposes
 
         public UpdateInfo()
         {

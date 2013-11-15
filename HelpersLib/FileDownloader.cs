@@ -57,6 +57,7 @@ namespace HelpersLib
         public Exception LastException { get; private set; }
         public bool IsPaused { get; private set; }
         public IWebProxy Proxy { get; set; }
+        public string AcceptHeader { get; set; }
 
         public event EventHandler FileSizeReceived;
         public event EventHandler DownloadStarted;
@@ -68,11 +69,12 @@ namespace HelpersLib
         private Stream stream;
         private const int bufferSize = 4096;
 
-        public FileDownloader(string url, Stream stream, IWebProxy proxy = null)
+        public FileDownloader(string url, Stream stream, IWebProxy proxy = null, string acceptHeader = null)
         {
             URL = url;
             this.stream = stream;
             Proxy = proxy;
+            AcceptHeader = acceptHeader;
 
             worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
@@ -129,6 +131,12 @@ namespace HelpersLib
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
                 request.Proxy = Proxy;
+
+                if (!string.IsNullOrEmpty(AcceptHeader))
+                {
+                    request.Accept = AcceptHeader;
+                }
+
                 response = (HttpWebResponse)request.GetResponse();
                 FileSize = response.ContentLength;
                 ThrowEvent(FileSizeReceived);

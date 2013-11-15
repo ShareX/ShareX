@@ -93,7 +93,7 @@ namespace HelpersLib
         {
             if (updateChecker != null && updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable)
             {
-                UpdaterForm updaterForm = new UpdaterForm(updateChecker.UpdateInfo.DownloadURL, updateChecker.Proxy, updateChecker.UpdateInfo.UpdateNotes);
+                UpdaterForm updaterForm = UpdaterForm.GetGitHubUpdaterForm(updateChecker);
                 updaterForm.ShowDialog();
 
                 if (updaterForm.Status == DownloaderFormStatus.InstallStarted)

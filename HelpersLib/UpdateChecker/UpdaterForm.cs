@@ -40,10 +40,11 @@ namespace HelpersLib
     public partial class UpdaterForm : Form
     {
         public string URL { get; set; }
-        public string FileName { get; set; }
+        public string Filename { get; set; }
         public string SavePath { get; private set; }
         public IWebProxy Proxy { get; set; }
         public string Changelog { get; set; }
+        public string AcceptHeader { get; set; }
         public bool AutoStartDownload { get; set; }
         public InstallType InstallType { get; set; }
         public bool AutoStartInstall { get; set; }
@@ -53,7 +54,7 @@ namespace HelpersLib
         private FileStream fileStream;
         private Rectangle fillRect;
 
-        public UpdaterForm()
+        private UpdaterForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -70,21 +71,37 @@ namespace HelpersLib
             AutoStartInstall = true;
         }
 
-        public UpdaterForm(string url, IWebProxy proxy, string changelog = "")
+        public UpdaterForm(string url, IWebProxy proxy, string filename = "", string changelog = "")
             : this()
         {
             URL = url;
             Proxy = proxy;
-            Changelog = changelog;
+
+            if (string.IsNullOrEmpty(filename))
+            {
+                Filename = HttpUtility.UrlDecode(URL.Substring(URL.LastIndexOf('/') + 1));
+            }
+            else
+            {
+                Filename = filename;
+            }
+
+            lblFilename.Text = "Filename: " + Filename;
 
             if (!string.IsNullOrEmpty(changelog))
             {
-                txtChangelog.Text = changelog;
+                Changelog = changelog;
+                txtChangelog.Text = Changelog;
                 cbShowChangelog.Visible = true;
             }
+        }
 
-            FileName = HttpUtility.UrlDecode(URL.Substring(URL.LastIndexOf('/') + 1));
-            lblFilename.Text = "Filename: " + FileName;
+        public static UpdaterForm GetGitHubUpdaterForm(GitHubUpdateChecker updateChecker)
+        {
+            UpdaterForm updaterForm = new UpdaterForm(updateChecker.UpdateInfo.DownloadURL, updateChecker.Proxy,
+                updateChecker.UpdateInfo.Filename, updateChecker.UpdateInfo.UpdateNotes);
+            updaterForm.AcceptHeader = "application/octet-stream";
+            return updaterForm;
         }
 
         private void UpdaterForm_Paint(object sender, PaintEventArgs e)
@@ -192,9 +209,9 @@ namespace HelpersLib
                 Status = DownloaderFormStatus.DownloadStarted;
                 btnAction.Text = "Cancel";
 
-                SavePath = Path.Combine(Path.GetTempPath(), FileName);
+                SavePath = Path.Combine(Path.GetTempPath(), Filename);
                 fileStream = new FileStream(SavePath, FileMode.Create, FileAccess.Write, FileShare.Read);
-                fileDownloader = new FileDownloader(URL, fileStream, Proxy);
+                fileDownloader = new FileDownloader(URL, fileStream, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus("Download started.");
                 fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();

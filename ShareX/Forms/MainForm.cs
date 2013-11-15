@@ -411,7 +411,7 @@ namespace ShareX
                 MessageBox.Show("An update is available for ShareX.\r\nWould you like to download it?", "ShareX",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                UpdaterForm updaterForm = new UpdaterForm(updateChecker.UpdateInfo.DownloadURL, updateChecker.Proxy, updateChecker.UpdateInfo.UpdateNotes);
+                UpdaterForm updaterForm = UpdaterForm.GetGitHubUpdaterForm(updateChecker);
                 updaterForm.ShowDialog();
 
                 if (updaterForm.Status == DownloaderFormStatus.InstallStarted)

@@ -75,9 +75,19 @@ namespace HelpersLib
                         latestRelease.tag_name[0] == 'v')
                     {
                         UpdateInfo.LatestVersion = new Version(latestRelease.tag_name.Substring(1));
-                        UpdateInfo.DownloadURL = GetDownloadURL(latestRelease);
-                        UpdateInfo.RefreshStatus();
-                        return true;
+
+                        if (latestRelease.assets != null && latestRelease.assets.Count > 0)
+                        {
+                            GitHubAsset asset = latestRelease.assets[0];
+
+                            if (asset != null && !string.IsNullOrEmpty(asset.name))
+                            {
+                                UpdateInfo.Filename = asset.name;
+                                UpdateInfo.DownloadURL = asset.url;
+                                UpdateInfo.RefreshStatus();
+                                return true;
+                            }
+                        }
                     }
                 }
             }
