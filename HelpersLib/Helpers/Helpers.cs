@@ -338,12 +338,12 @@ namespace HelpersLib
             return null;
         }
 
-        public static bool CheckVersion(Version verRemote, Version verLocal)
+        public static bool CheckVersion(Version currentVersion, Version latestVersion)
         {
-            return ProperVersion(verRemote).CompareTo(ProperVersion(verLocal)) > 0;
+            return NormalizeVersion(latestVersion).CompareTo(NormalizeVersion(currentVersion)) > 0;
         }
 
-        private static Version ProperVersion(Version version)
+        private static Version NormalizeVersion(Version version)
         {
             return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
         }

@@ -56,7 +56,8 @@ namespace HelpersLib
 
         public bool CheckUpdate()
         {
-            UpdateInfo = new UpdateInfo(ReleaseChannel);
+            UpdateInfo = new UpdateInfo();
+            UpdateInfo.ReleaseChannel = ReleaseChannel;
             UpdateInfo.CurrentVersion = ApplicationVersion;
 
             try
@@ -93,40 +94,22 @@ namespace HelpersLib
                         if (xe != null)
                         {
                             UpdateInfo.LatestVersion = new Version(xe.GetValue("Version"));
-                            UpdateInfo.URL = xe.GetValue("URL");
+                            UpdateInfo.DownloadURL = xe.GetValue("URL");
+                            UpdateInfo.UpdateNotes = xe.GetValue("Summary");
+                            UpdateInfo.RefreshStatus();
 
-                            string date = xe.GetValue("Date");
-                            if (!string.IsNullOrEmpty(date))
+                            if (UpdateInfo.Status == UpdateStatus.UpdateAvailable && !string.IsNullOrEmpty(UpdateInfo.UpdateNotes) &&
+                                UpdateInfo.UpdateNotes.IsValidUrl())
                             {
-                                DateTime dateTime;
-                                if (DateTime.TryParse(date, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                                try
                                 {
-                                    UpdateInfo.Date = dateTime;
+                                    wc.Encoding = Encoding.UTF8;
+                                    UpdateInfo.UpdateNotes = wc.DownloadString(UpdateInfo.UpdateNotes.Trim());
                                 }
-                            }
-
-                            UpdateInfo.Summary = xe.GetValue("Summary");
-
-                            if (UpdateInfo.IsUpdateRequired)
-                            {
-                                UpdateInfo.Status = UpdateStatus.UpdateRequired;
-
-                                if (!string.IsNullOrEmpty(UpdateInfo.Summary) && UpdateInfo.Summary.IsValidUrl())
+                                catch (Exception ex)
                                 {
-                                    try
-                                    {
-                                        wc.Encoding = Encoding.UTF8;
-                                        UpdateInfo.Summary = wc.DownloadString(UpdateInfo.Summary.Trim());
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        DebugHelper.WriteException(ex);
-                                    }
+                                    DebugHelper.WriteException(ex);
                                 }
-                            }
-                            else
-                            {
-                                UpdateInfo.Status = UpdateStatus.UpToDate;
                             }
 
                             return true;

@@ -31,38 +31,31 @@ namespace HelpersLib
 {
     public class UpdateInfo
     {
+        public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
         public Version LatestVersion { get; set; }
-        public string URL { get; set; }
-        public DateTime Date { get; set; }
-        public string Summary { get; set; }
-
+        public string DownloadURL { get; set; }
+        public string UpdateNotes { get; set; }
         public ReleaseChannelType ReleaseChannel { get; set; }
-        public UpdateStatus Status { get; set; }
 
-        private bool ForceUpdate = false; // For testing purposes
+        private bool forceUpdate = false; // For testing purposes
 
-        public UpdateInfo(ReleaseChannelType releaseChannel = ReleaseChannelType.Stable)
+        public UpdateInfo()
         {
-            ReleaseChannel = releaseChannel;
+            ReleaseChannel = ReleaseChannelType.Stable;
         }
 
-        public bool IsUpdateRequired
+        public void RefreshStatus()
         {
-            get
+            if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null &&
+                !string.IsNullOrEmpty(DownloadURL) && (forceUpdate || Helpers.CheckVersion(CurrentVersion, LatestVersion)))
             {
-                return CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(URL) &&
-                       (ForceUpdate || Helpers.CheckVersion(LatestVersion, CurrentVersion));
+                Status = UpdateStatus.UpdateAvailable;
             }
-        }
-
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(string.Format("{0} is your current version", CurrentVersion));
-            sb.AppendLine(string.Format("{0} is the latest {1}", LatestVersion, ReleaseChannel.GetDescription()));
-            sb.AppendLine(string.Format("{1} was last updated on {0}", Date.ToLongDateString(), ReleaseChannel.GetDescription()));
-            return sb.ToString();
+            else
+            {
+                Status = UpdateStatus.UpToDate;
+            }
         }
     }
 }

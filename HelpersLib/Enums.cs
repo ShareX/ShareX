@@ -260,7 +260,7 @@ namespace HelpersLib
     {
         None,
         UpdateCheckFailed,
-        UpdateRequired,
+        UpdateAvailable,
         UpToDate
     }
 

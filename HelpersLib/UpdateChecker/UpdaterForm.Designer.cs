@@ -85,7 +85,7 @@
             this.cbShowChangelog.Size = new System.Drawing.Size(128, 16);
             this.cbShowChangelog.SpaceAfterCheckBox = 3;
             this.cbShowChangelog.TabIndex = 15;
-            this.cbShowChangelog.Text = "Show changelog?";
+            this.cbShowChangelog.Text = "Show update notes";
             this.cbShowChangelog.Visible = false;
             this.cbShowChangelog.CheckedChanged += new System.EventHandler(this.cbShowChangelog_CheckedChanged);
             // 
@@ -135,7 +135,7 @@
             this.pbProgress.TabIndex = 8;
             this.pbProgress.Value = 0;
             // 
-            // DownloaderForm
+            // UpdaterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,7 +152,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "DownloaderForm";
+            this.Name = "UpdaterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX updater";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdaterForm_FormClosing);

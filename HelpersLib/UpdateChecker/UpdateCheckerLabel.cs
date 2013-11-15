@@ -77,7 +77,7 @@ namespace HelpersLib
                         lblStatus.Text = "Update check failed";
                         lblStatus.Visible = true;
                         break;
-                    case UpdateStatus.UpdateRequired:
+                    case UpdateStatus.UpdateAvailable:
                         llblUpdateAvailable.Text = "A newer version of ShareX is available";
                         llblUpdateAvailable.Visible = true;
                         break;
@@ -91,11 +91,12 @@ namespace HelpersLib
 
         private void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (updateChecker != null && updateChecker.UpdateInfo != null && !string.IsNullOrEmpty(updateChecker.UpdateInfo.URL))
+            if (updateChecker != null && updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable)
             {
-                UpdaterForm downloader = new UpdaterForm(updateChecker.UpdateInfo.URL, updateChecker.Proxy, updateChecker.UpdateInfo.Summary);
-                downloader.ShowDialog();
-                if (downloader.Status == DownloaderFormStatus.InstallStarted)
+                UpdaterForm updaterForm = new UpdaterForm(updateChecker.UpdateInfo.DownloadURL, updateChecker.Proxy, updateChecker.UpdateInfo.UpdateNotes);
+                updaterForm.ShowDialog();
+
+                if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
                 {
                     Application.Exit();
                 }

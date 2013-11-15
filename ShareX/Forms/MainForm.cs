@@ -405,12 +405,13 @@ namespace ShareX
         {
             GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX", Program.AssemblyVersion);
             updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
-            string downloadURL = updateChecker.CheckUpdate();
+            updateChecker.CheckUpdate();
 
-            if (!string.IsNullOrEmpty(downloadURL) && MessageBox.Show("An update is available for ShareX.\r\nWould you like to download it?",
-                "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable &&
+                MessageBox.Show("An update is available for ShareX.\r\nWould you like to download it?", "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                UpdaterForm updaterForm = new UpdaterForm(downloadURL, updateChecker.Proxy);
+                UpdaterForm updaterForm = new UpdaterForm(updateChecker.UpdateInfo.DownloadURL, updateChecker.Proxy, updateChecker.UpdateInfo.UpdateNotes);
                 updaterForm.ShowDialog();
 
                 if (updaterForm.Status == DownloaderFormStatus.InstallStarted)

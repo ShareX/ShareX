@@ -165,10 +165,7 @@ namespace HelpersLib
                 psi.UseShellExecute = true;
                 Process.Start(psi);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
         }
 
         private void ChangeStatus(string status)

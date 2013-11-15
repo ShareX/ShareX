@@ -38,13 +38,13 @@ namespace HelpersLib
     {
         private const string APIURL = "https://api.github.com";
 
-        public string Owner { get; set; }
-        public string Repo { get; set; }
-        public Version CurrentVersion { get; set; }
+        public string Owner { get; private set; }
+        public string Repo { get; private set; }
+        public Version CurrentVersion { get; private set; }
         public IWebProxy Proxy { get; set; }
         public UpdateInfo UpdateInfo { get; private set; }
 
-        public string ReleasesURL
+        private string ReleasesURL
         {
             get
             {
@@ -59,8 +59,10 @@ namespace HelpersLib
             CurrentVersion = currentVersion;
         }
 
-        public string CheckUpdate()
+        public bool CheckUpdate()
         {
+            UpdateInfo = new UpdateInfo { CurrentVersion = this.CurrentVersion };
+
             try
             {
                 List<GitHubRelease> releases = GetReleases();
@@ -69,15 +71,13 @@ namespace HelpersLib
                 {
                     GitHubRelease latestRelease = releases[0];
 
-                    if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name[0] == 'v')
+                    if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name.Length > 1 &&
+                        latestRelease.tag_name[0] == 'v')
                     {
-                        Version latestVersion = new Version(latestRelease.tag_name.Substring(1));
-                        bool isUpdateExist = Helpers.CheckVersion(latestVersion, CurrentVersion);
-
-                        if (isUpdateExist)
-                        {
-                            return GetDownloadURL(latestRelease);
-                        }
+                        UpdateInfo.LatestVersion = new Version(latestRelease.tag_name.Substring(1));
+                        UpdateInfo.DownloadURL = GetDownloadURL(latestRelease);
+                        UpdateInfo.RefreshStatus();
+                        return true;
                     }
                 }
             }
@@ -86,10 +86,12 @@ namespace HelpersLib
                 DebugHelper.WriteException(e, "Update check failed");
             }
 
-            return null;
+            UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;
+
+            return false;
         }
 
-        public string GetDownloadURL(GitHubRelease release)
+        private string GetDownloadURL(GitHubRelease release)
         {
             if (release.assets != null && release.assets.Count > 0)
             {
@@ -104,7 +106,7 @@ namespace HelpersLib
             return null;
         }
 
-        public List<GitHubRelease> GetReleases()
+        private List<GitHubRelease> GetReleases()
         {
             RequestCachePolicy cachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
 

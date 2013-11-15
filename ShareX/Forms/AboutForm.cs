@@ -46,7 +46,7 @@ namespace ShareX
             GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX", Program.AssemblyVersion);
             updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
 
-            //uclUpdate.CheckUpdate(updateChecker);
+            uclUpdate.CheckUpdate(updateChecker);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)
