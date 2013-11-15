@@ -39,7 +39,7 @@ namespace HelpersLib
         public string UpdateNotes { get; set; }
         public ReleaseChannelType ReleaseChannel { get; set; }
 
-        private bool forceUpdate = true; // For testing purposes
+        private bool forceUpdate = false; // For testing purposes
 
         public UpdateInfo()
         {
