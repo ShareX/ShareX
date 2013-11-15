@@ -87,6 +87,7 @@
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="FontSafe.cs" />
+    <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
     <Compile Include="UITypeEditors\MyColorEditor.cs" />

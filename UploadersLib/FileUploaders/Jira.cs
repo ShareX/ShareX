@@ -40,6 +40,8 @@ using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {
+    using HelpersLib;
+
     public class Jira : FileUploader, IOAuth
     {
         private const string PathRequestToken = "/plugins/servlet/oauth/request-token";
@@ -163,87 +165,99 @@ namespace UploadersLib.FileUploaders
 
         public string GetAuthorizationURL()
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args[OAuthManager.ParameterCallback] = "oob"; // Request activation code to validate authentication
-
-            string url = OAuthManager.GenerateQuery(_jiraRequestToken.ToString(), args, HttpMethod.Post, AuthInfo);
-
-            string response = SendRequest(HttpMethod.Post, url);
-
-            if (!string.IsNullOrEmpty(response))
+            using (new SSLBypassHelper())
             {
-                return OAuthManager.GetAuthorizationURL(response, AuthInfo, _jiraAuthorize.ToString());
-            }
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args[OAuthManager.ParameterCallback] = "oob"; // Request activation code to validate authentication
 
-            return null;
+                string url = OAuthManager.GenerateQuery(_jiraRequestToken.ToString(), args, HttpMethod.Post, AuthInfo);
+
+                string response = SendRequest(HttpMethod.Post, url);
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    return OAuthManager.GetAuthorizationURL(response, AuthInfo, _jiraAuthorize.ToString());
+                }
+
+                return null;
+            }
         }
 
         public bool GetAccessToken(string verificationCode)
         {
-            AuthInfo.AuthVerifier = verificationCode;
+            using (new SSLBypassHelper())
+            {
+                AuthInfo.AuthVerifier = verificationCode;
 
-            NameValueCollection nv = GetAccessTokenEx(_jiraAccessToken.ToString(), AuthInfo, HttpMethod.Post);
+                NameValueCollection nv = GetAccessTokenEx(_jiraAccessToken.ToString(), AuthInfo, HttpMethod.Post);
 
-            return nv != null;
+                return nv != null;
+            }
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            using (JiraUpload up = new JiraUpload(_jiraIssuePrefix, GetSummary))
+            using (new SSLBypassHelper())
             {
-                if (up.ShowDialog() == DialogResult.Cancel)
+                using (JiraUpload up = new JiraUpload(_jiraIssuePrefix, GetSummary))
                 {
-                    return new UploadResult
+                    if (up.ShowDialog() == DialogResult.Cancel)
                     {
-                        IsSuccess = true,
-                        IsURLExpected = false
-                    };
+                        return new UploadResult
+                        {
+                            IsSuccess = true,
+                            IsURLExpected = false
+                        };
+                    }
+
+                    Uri uri = this.Combine(_jiraBaseAddress, string.Format(PathIssueAttachments, up.IssueId));
+                    string query = OAuthManager.GenerateQuery(uri.ToString(), null, HttpMethod.Post, AuthInfo);
+
+                    NameValueCollection headers = new NameValueCollection();
+                    headers.Set("X-Atlassian-Token", "nocheck");
+
+                    UploadResult res = UploadData(stream, query, fileName, "file", null, null, headers);
+                    if (res.Response.Contains("errorMessages"))
+                    {
+                        res.Errors.Add(res.Response);
+                    }
+                    else
+                    {
+                        res.IsURLExpected = true;
+                        var anonType = new[] { new { thumbnail = "" } };
+                        var anonObject = JsonConvert.DeserializeAnonymousType(res.Response, anonType);
+                        res.ThumbnailURL = anonObject[0].thumbnail;
+                        res.URL = this.Combine(_jiraBaseAddress, string.Format(PathBrowseIssue, up.IssueId)).ToString();
+                    }
+
+                    return res;
                 }
-
-                Uri uri = this.Combine(_jiraBaseAddress, string.Format(PathIssueAttachments, up.IssueId));
-                string query = OAuthManager.GenerateQuery(uri.ToString(), null, HttpMethod.Post, AuthInfo);
-
-                NameValueCollection headers = new NameValueCollection();
-                headers.Set("X-Atlassian-Token", "nocheck");
-
-                UploadResult res = UploadData(stream, query, fileName, "file", null, null, headers);
-                if (res.Response.Contains("errorMessages"))
-                {
-                    res.Errors.Add(res.Response);
-                }
-                else
-                {
-                    res.IsURLExpected = true;
-                    var anonType = new[] { new { thumbnail = "" } };
-                    var anonObject = JsonConvert.DeserializeAnonymousType(res.Response, anonType);
-                    res.ThumbnailURL = anonObject[0].thumbnail;
-                    res.URL = this.Combine(_jiraBaseAddress, string.Format(PathBrowseIssue, up.IssueId)).ToString();
-                }
-
-                return res;
             }
         }
 
         private string GetSummary(string issueId)
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args["jql"] = string.Format("issueKey='{0}'", issueId);
-            args["maxResults"] = "10";
-            args["fields"] = "summary";
-            string query = OAuthManager.GenerateQuery(_jiraPathSearch.ToString(), args, HttpMethod.Get, AuthInfo);
-
-            string response = SendGetRequest(query);
-            if (!string.IsNullOrEmpty(response))
+            using (new SSLBypassHelper())
             {
-                var anonType = new { issues = new[] { new { key = "", fields = new { summary = "" } } } };
-                var res = JsonConvert.DeserializeAnonymousType(response, anonType);
-                return res.issues[0].fields.summary;
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args["jql"] = string.Format("issueKey='{0}'", issueId);
+                args["maxResults"] = "10";
+                args["fields"] = "summary";
+                string query = OAuthManager.GenerateQuery(_jiraPathSearch.ToString(), args, HttpMethod.Get, AuthInfo);
+
+                string response = SendGetRequest(query);
+                if (!string.IsNullOrEmpty(response))
+                {
+                    var anonType = new { issues = new[] { new { key = "", fields = new { summary = "" } } } };
+                    var res = JsonConvert.DeserializeAnonymousType(response, anonType);
+                    return res.issues[0].fields.summary;
+                }
+
+                // This query can returns error so we have to remove last error from errors list
+                Errors.RemoveAt(Errors.Count - 1);
+
+                return null;
             }
-
-            // This query can returns error so we have to remove last error from errors list
-            Errors.RemoveAt(Errors.Count - 1);
-
-            return null;
         }
 
         private void InitUris()
