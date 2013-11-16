@@ -43,7 +43,7 @@ namespace ImageEffectsLib
     {
         public WatermarkType WatermarkMode = WatermarkType.TEXT;
 
-        public PositionType WatermarkPositionMode = PositionType.Bottom_Right;
+        public ContentAlignment WatermarkAlignment = ContentAlignment.BottomRight;
         public int WatermarkOffset = 5;
         public bool WatermarkAutoHide = true;
 
@@ -71,8 +71,8 @@ namespace ImageEffectsLib
                 case WatermarkType.TEXT:
                     DrawText drawText = new DrawText
                     {
-                        Position = (PositionType)WatermarkPositionMode,
-                        Offset = WatermarkOffset,
+                        Alignment = WatermarkAlignment,
+                        Position = new Point(WatermarkOffset, WatermarkOffset),
                         AutoHide = WatermarkAutoHide,
                         Text = WatermarkText,
                         TextFont = WatermarkFont,
@@ -93,8 +93,8 @@ namespace ImageEffectsLib
                 case WatermarkType.IMAGE:
                     DrawImage drawImage = new DrawImage
                     {
-                        Position = (PositionType)WatermarkPositionMode,
-                        Offset = WatermarkOffset,
+                        Alignment = WatermarkAlignment,
+                        Position = new Point(WatermarkOffset, WatermarkOffset),
                         AutoHide = WatermarkAutoHide,
                         ImageLocation = WatermarkImageLocation
                     };

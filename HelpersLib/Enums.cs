@@ -289,26 +289,4 @@ namespace HelpersLib
     {
         RGB, RGBA, ARGB
     }
-
-    public enum PositionType
-    {
-        [Description("Top - Left")]
-        Top_Left,
-        [Description("Top - Center")]
-        Top,
-        [Description("Top - Right")]
-        Top_Right,
-        [Description("Center - Left")]
-        Left,
-        [Description("Center")]
-        Center,
-        [Description("Center - Right")]
-        Right,
-        [Description("Bottom - Left")]
-        Bottom_Left,
-        [Description("Bottom - Center")]
-        Bottom,
-        [Description("Bottom - Right")]
-        Bottom_Right
-    }
 }

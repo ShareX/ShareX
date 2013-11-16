@@ -60,12 +60,13 @@ namespace ImageEffectsLib
             }
 
             cboWatermarkType.SelectedIndex = (int)Config.WatermarkMode;
+
             if (chkWatermarkPosition.Items.Count == 0)
             {
-                chkWatermarkPosition.Items.AddRange(Helpers.GetEnumDescriptions<PositionType>());
+                chkWatermarkPosition.Items.AddRange(Enum.GetNames(typeof(ContentAlignment)));
             }
 
-            chkWatermarkPosition.SelectedIndex = (int)Config.WatermarkPositionMode;
+            chkWatermarkPosition.SelectedIndex = Config.WatermarkAlignment.GetIndex();
             nudWatermarkOffset.Value = Config.WatermarkOffset;
             cbWatermarkAutoHide.Checked = Config.WatermarkAutoHide;
 
@@ -181,7 +182,7 @@ namespace ImageEffectsLib
 
         private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.WatermarkPositionMode = (PositionType)chkWatermarkPosition.SelectedIndex;
+            Config.WatermarkAlignment = Helpers.GetEnumFromIndex<ContentAlignment>(chkWatermarkPosition.SelectedIndex);
             UpdatePreview();
         }
 

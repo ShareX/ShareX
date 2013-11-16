@@ -269,6 +269,12 @@ namespace HelpersLib
             return Enum.GetValues(typeof(T)).Length;
         }
 
+        public static T GetEnumFromIndex<T>(int i)
+        {
+            Array values = Enum.GetValues(typeof(T));
+            return (T)values.GetValue(i);
+        }
+
         public static string Encode(string text, string unreservedCharacters)
         {
             StringBuilder result = new StringBuilder();
@@ -725,30 +731,34 @@ namespace HelpersLib
             return result.ToString();
         }
 
-        public static Point GetPosition(PositionType positionType, int offset, Size img, Size img2)
+        public static Point GetPosition(ContentAlignment alignment, Point offset, Size sourceImage, Size img)
         {
-            switch (positionType)
+            int midX = sourceImage.Width / 2 - img.Width / 2;
+            int midY = sourceImage.Height / 2 - img.Height / 2;
+            int right = sourceImage.Width - img.Width;
+            int bottom = sourceImage.Height - img.Height;
+
+            switch (alignment)
             {
-                case PositionType.Top_Left:
-                    return new Point(offset, offset);
-                case PositionType.Top:
-                    return new Point(img.Width / 2 - img2.Width / 2, offset);
-                case PositionType.Top_Right:
-                    return new Point(img.Width - img2.Width - offset, offset);
-                case PositionType.Left:
-                    return new Point(offset, img.Height / 2 - img2.Height / 2);
-                case PositionType.Center:
-                    return new Point(img.Width / 2 - img2.Width / 2, img.Height / 2 - img2.Height / 2);
-                case PositionType.Right:
-                    return new Point(img.Width - img2.Width - offset, img.Height / 2 - img2.Height / 2);
-                case PositionType.Bottom_Left:
-                    return new Point(offset, img.Height - img2.Height - offset);
-                case PositionType.Bottom:
-                    return new Point(img.Width / 2 - img2.Width / 2, img.Height - img2.Height - offset);
-                case PositionType.Bottom_Right:
-                    return new Point(img.Width - img2.Width - offset, img.Height - img2.Height - offset);
                 default:
-                    return Point.Empty;
+                case ContentAlignment.TopLeft:
+                    return new Point(offset.X, offset.Y);
+                case ContentAlignment.TopCenter:
+                    return new Point(midX, offset.Y);
+                case ContentAlignment.TopRight:
+                    return new Point(right - offset.X, offset.Y);
+                case ContentAlignment.MiddleLeft:
+                    return new Point(offset.X, midY);
+                case ContentAlignment.MiddleCenter:
+                    return new Point(midX, midY);
+                case ContentAlignment.MiddleRight:
+                    return new Point(right - offset.X, midY);
+                case ContentAlignment.BottomLeft:
+                    return new Point(offset.X, bottom - offset.Y);
+                case ContentAlignment.BottomCenter:
+                    return new Point(midX, bottom - offset.Y);
+                case ContentAlignment.BottomRight:
+                    return new Point(right - offset.X, bottom - offset.Y);
             }
         }
 

@@ -41,11 +41,11 @@ namespace ImageEffectsLib
     [Description("Text")]
     internal class DrawText : ImageEffect
     {
-        [DefaultValue(PositionType.Bottom_Right), TypeConverter(typeof(EnumDescriptionConverter))]
-        public PositionType Position { get; set; }
+        [DefaultValue(ContentAlignment.BottomRight)]
+        public ContentAlignment Alignment { get; set; }
 
-        [DefaultValue(5)]
-        public int Offset { get; set; }
+        [DefaultValue(typeof(Point), "5, 5")]
+        public Point Position { get; set; }
 
         [DefaultValue(false), Description("If watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
@@ -130,7 +130,7 @@ namespace ImageEffectsLib
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
                 Size watermarkSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
 
-                if (AutoHide && ((watermarkSize.Width + Offset > img.Width) || (watermarkSize.Height + Offset > img.Height)))
+                if (AutoHide && ((watermarkSize.Width + Position.X > img.Width) || (watermarkSize.Height + Position.Y > img.Height)))
                 {
                     return img;
                 }
@@ -195,7 +195,7 @@ namespace ImageEffectsLib
                     {
                         gResult.SetHighQuality();
 
-                        Point labelPosition = Helpers.GetPosition(Position, Offset, img.Size, watermarkSize);
+                        Point labelPosition = Helpers.GetPosition(Alignment, Position, img.Size, watermarkSize);
                         gResult.DrawImage(bmpWatermark, labelPosition.X, labelPosition.Y, bmpWatermark.Width, bmpWatermark.Height);
                     }
                 }

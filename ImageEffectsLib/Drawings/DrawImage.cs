@@ -35,11 +35,11 @@ namespace ImageEffectsLib
     [Description("Image")]
     internal class DrawImage : ImageEffect
     {
-        [DefaultValue(PositionType.Bottom_Right), TypeConverter(typeof(EnumDescriptionConverter))]
-        public PositionType Position { get; set; }
+        [DefaultValue(ContentAlignment.BottomRight)]
+        public ContentAlignment Alignment { get; set; }
 
-        [DefaultValue(5)]
-        public int Offset { get; set; }
+        [DefaultValue(typeof(Point), "5, 5")]
+        public Point Position { get; set; }
 
         [DefaultValue(false), Description("If image size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
@@ -58,12 +58,12 @@ namespace ImageEffectsLib
             {
                 using (Image img2 = Helpers.GetImageFromFile(ImageLocation))
                 {
-                    if (AutoHide && ((img2.Width + Offset > img.Width) || (img2.Height + Offset > img.Height)))
+                    if (AutoHide && ((img2.Width + Position.X > img.Width) || (img2.Height + Position.Y > img.Height)))
                     {
                         return img;
                     }
 
-                    Point pos = Helpers.GetPosition(Position, Offset, img.Size, img2.Size);
+                    Point pos = Helpers.GetPosition(Alignment, Position, img.Size, img2.Size);
 
                     using (Graphics g = Graphics.FromImage(img))
                     {
