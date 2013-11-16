@@ -26,7 +26,7 @@
 using HelpersLib;
 using HistoryLib;
 using ImageEffectsLib;
-using ScreenCapture;
+using ScreenCaptureLib;
 using ShareX.Properties;
 using System;
 using System.Linq;

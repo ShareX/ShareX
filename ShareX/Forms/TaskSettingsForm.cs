@@ -25,7 +25,7 @@
 
 using HelpersLib;
 using ImageEffectsLib;
-using ScreenCapture;
+using ScreenCaptureLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;

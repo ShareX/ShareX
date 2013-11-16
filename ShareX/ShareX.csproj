@@ -283,9 +283,9 @@
       <Project>{750c6f46-2c5a-4488-81d3-3b35ca50f3ee}</Project>
       <Name>IndexerLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScreenCapture\ScreenCapture.csproj">
+    <ProjectReference Include="..\ScreenCaptureLib\ScreenCaptureLib.csproj">
       <Project>{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}</Project>
-      <Name>ScreenCapture</Name>
+      <Name>ScreenCaptureLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\HelpersLib\HelpersLib.csproj">
       <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>

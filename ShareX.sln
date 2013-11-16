@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryLib", "HistoryLib\HistoryLib.csproj", "{E7DE6237-AEA2-498B-8F56-9B392472C490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenCapture", "ScreenCapture\ScreenCapture.csproj", "{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenCaptureLib", "ScreenCaptureLib\ScreenCaptureLib.csproj", "{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersLib", "HelpersLib\HelpersLib.csproj", "{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}"
 EndProject

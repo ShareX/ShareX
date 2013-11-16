@@ -27,7 +27,7 @@ using HelpersLib;
 using ImageEffectsLib;
 using IndexerLib;
 using Newtonsoft.Json;
-using ScreenCapture;
+using ScreenCaptureLib;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UploadersLib;
