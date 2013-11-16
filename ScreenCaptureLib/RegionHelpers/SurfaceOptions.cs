@@ -55,9 +55,6 @@ namespace ScreenCaptureLib
         [DefaultValue(false), Description("Result image will have border around the shape(s).")]
         public bool DrawBorder { get; set; }
 
-        [DefaultValue(false), Description("Result image will have checkerboard pattern in background. This will be visible in transparent areas.")]
-        public bool DrawChecker { get; set; }
-
         [DefaultValue(false), Description("You can use window capture mode in all rectangle type shapes.")]
         public bool ForceWindowCapture { get; set; }
 

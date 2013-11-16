@@ -99,6 +99,7 @@ namespace ImageEffectsLib
         [Browsable(false), DefaultValue(false)]
         public bool UseCustomGradient { get; set; }
 
+        // Need custom editor
         [Browsable(false)]
         public List<GradientStop> CustomGradientList { get; set; }
 

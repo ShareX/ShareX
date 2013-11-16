@@ -69,7 +69,7 @@
             this.pgSettings.Location = new System.Drawing.Point(488, 8);
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgSettings.Size = new System.Drawing.Size(448, 264);
+            this.pgSettings.Size = new System.Drawing.Size(408, 304);
             this.pgSettings.TabIndex = 8;
             this.pgSettings.ToolbarVisible = false;
             this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
@@ -94,7 +94,7 @@
             this.lvEffects.Location = new System.Drawing.Point(248, 40);
             this.lvEffects.MultiSelect = false;
             this.lvEffects.Name = "lvEffects";
-            this.lvEffects.Size = new System.Drawing.Size(232, 232);
+            this.lvEffects.Size = new System.Drawing.Size(232, 272);
             this.lvEffects.TabIndex = 7;
             this.lvEffects.UseCompatibleStateImageBehavior = false;
             this.lvEffects.View = System.Windows.Forms.View.Details;
@@ -118,7 +118,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(786, 734);
+            this.btnOK.Location = new System.Drawing.Point(744, 734);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(72, 24);
             this.btnOK.TabIndex = 9;
@@ -128,8 +128,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(864, 734);
+            this.btnCancel.Location = new System.Drawing.Point(824, 734);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(72, 24);
             this.btnCancel.TabIndex = 10;
@@ -249,9 +248,9 @@
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
-            this.pbResult.Location = new System.Drawing.Point(248, 280);
+            this.pbResult.Location = new System.Drawing.Point(248, 320);
             this.pbResult.Name = "pbResult";
-            this.pbResult.Size = new System.Drawing.Size(688, 448);
+            this.pbResult.Size = new System.Drawing.Size(648, 408);
             this.pbResult.TabIndex = 11;
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
@@ -260,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 766);
+            this.ClientSize = new System.Drawing.Size(906, 766);
             this.Controls.Add(this.btnSettingsImport);
             this.Controls.Add(this.btnSettingsExport);
             this.Controls.Add(this.btnSaveImage);

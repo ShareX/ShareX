@@ -178,7 +178,7 @@ namespace HelpersLib
                 if (SelectedColor.IsTransparent)
                 {
                     if (bmp != null) bmp.Dispose();
-                    bmp = (Bitmap)ImageHelpers.CreateCheckers(ClientWidth, ClientHeight);
+                    bmp = (Bitmap)ImageHelpers.DrawCheckers(ClientWidth, ClientHeight);
                 }
 
                 DrawColors();

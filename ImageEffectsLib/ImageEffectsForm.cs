@@ -67,6 +67,7 @@ namespace ImageEffectsLib
             AddEffectToTreeView("Drawings",
                 typeof(DrawBackground),
                 typeof(DrawBorder),
+                typeof(DrawCheckerboard),
                 typeof(DrawImage),
                 typeof(DrawText));
 

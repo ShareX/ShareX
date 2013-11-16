@@ -59,11 +59,6 @@ namespace ScreenCaptureLib
                     }
                 }
 
-                if (options.DrawChecker)
-                {
-                    img = ImageHelpers.DrawCheckers(img);
-                }
-
                 return img;
             }
 

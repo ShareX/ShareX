@@ -400,7 +400,29 @@ namespace HelpersLib
             return result;
         }
 
-        public static Image CreateCheckers(int width, int height)
+        public static Image DrawCheckers(Image img)
+        {
+            return DrawCheckers(img, 8, Color.LightGray, Color.White);
+        }
+
+        public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
+        {
+            Bitmap bmp = img.CreateEmptyBitmap();
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (Image checker = CreateCheckers(size, color1, color2))
+            using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
+            using (img)
+            {
+                g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                g.SetHighQuality();
+                g.DrawImage(img, 0, 0, img.Width, img.Height);
+            }
+
+            return bmp;
+        }
+
+        public static Image DrawCheckers(int width, int height)
         {
             Bitmap bmp = new Bitmap(width, height);
 
@@ -408,25 +430,7 @@ namespace HelpersLib
             using (Image checker = CreateCheckers(8, Color.LightGray, Color.White))
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
-                g.SetHighQuality();
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
-            }
-
-            return bmp;
-        }
-
-        public static Image DrawCheckers(Image img)
-        {
-            Bitmap bmp = img.CreateEmptyBitmap();
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            using (Image checker = CreateCheckers(8, Color.LightGray, Color.White))
-            using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
-            using (img)
-            {
-                g.SetHighQuality();
-                g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
-                g.DrawImage(img, 0, 0, img.Width, img.Height);
             }
 
             return bmp;

@@ -31,15 +31,12 @@ using System.Drawing.Drawing2D;
 
 namespace ImageEffectsLib
 {
-    [Description("Border")]
-    internal class DrawBorder : ImageEffect
+    [Description("Checkerboard")]
+    internal class DrawCheckerboard : ImageEffect
     {
-        [DefaultValue(BorderType.Outside)]
-        public BorderType Type { get; set; }
-
         private int size;
 
-        [DefaultValue(1)]
+        [DefaultValue(8)]
         public int Size
         {
             get
@@ -52,33 +49,20 @@ namespace ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "LightGray"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color { get; set; }
-
-        [DefaultValue(false)]
-        public bool UseGradient { get; set; }
 
         [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color2 { get; set; }
 
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        public DrawBorder()
+        public DrawCheckerboard()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Image Apply(Image img)
         {
-            if (UseGradient)
-            {
-                return ImageHelpers.DrawBorder(img, Color, Color2, GradientType, Size, Type);
-            }
-            else
-            {
-                return ImageHelpers.DrawBorder(img, Color, Size, Type);
-            }
+            return ImageHelpers.DrawCheckers(img, Size, Color, Color2);
         }
     }
 }
