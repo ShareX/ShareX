@@ -31,8 +31,20 @@ namespace ImageEffectsLib
 {
     internal class Blur : ImageEffect
     {
+        private int radius;
+
         [DefaultValue(10)]
-        public int Radius { get; set; }
+        public int Radius
+        {
+            get
+            {
+                return radius;
+            }
+            set
+            {
+                radius = value.Min(1);
+            }
+        }
 
         public Blur()
         {
@@ -41,11 +53,6 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Radius <= 0)
-            {
-                return img;
-            }
-
             ImageHelpers.Blur((Bitmap)img, Radius);
             return img;
         }

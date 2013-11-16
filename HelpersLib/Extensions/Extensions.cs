@@ -46,6 +46,18 @@ namespace HelpersLib
             return num;
         }
 
+        public static int Min(this int num, int min)
+        {
+            if (num < min) return min;
+            return num;
+        }
+
+        public static int Max(this int num, int max)
+        {
+            if (num > max) return max;
+            return num;
+        }
+
         public static int BetweenOrDefault(this int num, int min, int max, int defaultValue = 0)
         {
             if (num >= min && num <= max) return num;

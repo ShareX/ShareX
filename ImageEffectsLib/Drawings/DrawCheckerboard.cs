@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -45,7 +46,7 @@ namespace ImageEffectsLib
             }
             set
             {
-                if (value > 0) size = value;
+                size = value.Min(1);
             }
         }
 

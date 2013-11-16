@@ -81,8 +81,20 @@ namespace ImageEffectsLib
         [DefaultValue(5)]
         public int BackgroundPadding { get; set; }
 
+        public int cornerRadius;
+
         [DefaultValue(4)]
-        public int CornerRadius { get; set; }
+        public int CornerRadius
+        {
+            get
+            {
+                return cornerRadius;
+            }
+            set
+            {
+                cornerRadius = value.Min(0);
+            }
+        }
 
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor { get; set; }

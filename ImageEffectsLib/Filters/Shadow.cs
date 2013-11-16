@@ -32,13 +32,37 @@ namespace ImageEffectsLib
 {
     internal class Shadow : ImageEffect
     {
+        private float opacity;
+
         [DefaultValue(0.6f), Description("Choose a value between 0.1 and 1.0")]
-        public float Opacity { get; set; }
+        public float Opacity
+        {
+            get
+            {
+                return opacity;
+            }
+            set
+            {
+                opacity = value.Between(0.1f, 1.0f);
+            }
+        }
+
+        private int size;
 
         [DefaultValue(10)]
-        public int Size { get; set; }
+        public int Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value.Min(0);
+            }
+        }
 
-        [DefaultValue(0.0f)]
+        [DefaultValue(0f)]
         public float Darkness { get; set; }
 
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
@@ -54,11 +78,6 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Opacity <= 0f)
-            {
-                return img;
-            }
-
             return ImageHelpers.AddShadow(img, Opacity, Size, Darkness + 1, Color, Offset);
         }
     }

@@ -31,8 +31,20 @@ namespace ImageEffectsLib
 {
     internal class Pixelate : ImageEffect
     {
+        private int size;
+
         [DefaultValue(10)]
-        public int Size { get; set; }
+        public int Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value.Min(2);
+            }
+        }
 
         public Pixelate()
         {
@@ -41,11 +53,6 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Size <= 1)
-            {
-                return img;
-            }
-
             return ImageHelpers.Pixelate((Bitmap)img, Size);
         }
     }

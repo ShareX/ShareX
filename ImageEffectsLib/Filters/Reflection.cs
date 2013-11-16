@@ -31,14 +31,50 @@ namespace ImageEffectsLib
 {
     internal class Reflection : ImageEffect
     {
+        private int percentage;
+
         [DefaultValue(20), Description("Reflection height size relative to screenshot height.\nValue need to be between 1 to 100.")]
-        public int Percentage { get; set; }
+        public int Percentage
+        {
+            get
+            {
+                return percentage;
+            }
+            set
+            {
+                percentage = value.Between(1, 100);
+            }
+        }
+
+        private int maxAlpha;
 
         [DefaultValue(255), Description("Reflection transparency start from this value to MinAlpha.\nValue need to be between 0 to 255.")]
-        public int MaxAlpha { get; set; }
+        public int MaxAlpha
+        {
+            get
+            {
+                return maxAlpha;
+            }
+            set
+            {
+                maxAlpha = value.Between(0, 255);
+            }
+        }
+
+        private int minAlpha;
 
         [DefaultValue(0), Description("Reflection transparency start from MaxAlpha to this value.\nValue need to be between 0 to 255.")]
-        public int MinAlpha { get; set; }
+        public int MinAlpha
+        {
+            get
+            {
+                return minAlpha;
+            }
+            set
+            {
+                minAlpha = value.Between(0, 255);
+            }
+        }
 
         [DefaultValue(0), Description("Reflection start position will be: Screenshot height + Offset")]
         public int Offset { get; set; }
