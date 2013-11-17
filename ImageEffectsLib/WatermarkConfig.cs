@@ -34,11 +34,16 @@ namespace ImageEffectsLib
     public class WatermarkConfig
     {
         public WatermarkType Type = WatermarkType.Text;
+        public ContentAlignment Placement = ContentAlignment.BottomRight;
+        public int Offset = 5;
         public DrawText Text = new DrawText();
         public DrawImage Image = new DrawImage();
 
         public Image Apply(Image img)
         {
+            Text.Placement = Image.Placement = Placement;
+            Text.Offset = Image.Offset = new Point(Offset, Offset);
+
             switch (Type)
             {
                 default:

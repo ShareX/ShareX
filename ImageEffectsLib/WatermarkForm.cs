@@ -59,8 +59,8 @@ namespace ImageEffectsLib
                 chkWatermarkPosition.Items.AddRange(Enum.GetNames(typeof(ContentAlignment)));
             }
 
-            chkWatermarkPosition.SelectedIndex = config.Text.Placement.GetIndex();
-            nudWatermarkOffset.Value = config.Text.Offset.X;
+            chkWatermarkPosition.SelectedIndex = config.Placement.GetIndex();
+            nudWatermarkOffset.Value = config.Offset;
             cbWatermarkAutoHide.Checked = config.Text.AutoHide;
 
             txtWatermarkText.Text = config.Text.Text;
@@ -112,13 +112,13 @@ namespace ImageEffectsLib
 
         private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
-            config.Text.Placement = Helpers.GetEnumFromIndex<ContentAlignment>(chkWatermarkPosition.SelectedIndex);
+            config.Placement = Helpers.GetEnumFromIndex<ContentAlignment>(chkWatermarkPosition.SelectedIndex);
             UpdatePreview();
         }
 
         private void nudWatermarkOffset_ValueChanged(object sender, EventArgs e)
         {
-            config.Text.Offset = new Point((int)nudWatermarkOffset.Value, (int)nudWatermarkOffset.Value);
+            config.Offset = (int)nudWatermarkOffset.Value;
             UpdatePreview();
         }
 
