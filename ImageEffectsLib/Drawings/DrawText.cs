@@ -142,8 +142,10 @@ namespace ImageEffectsLib
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
                 Size watermarkSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
+                Point watermarkPosition = Helpers.GetPosition(Alignment, Position, img.Size, watermarkSize);
+                Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
 
-                if (AutoHide && ((watermarkSize.Width + Position.X > img.Width) || (watermarkSize.Height + Position.Y > img.Height)))
+                if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(watermarkRectangle))
                 {
                     return img;
                 }
@@ -207,9 +209,7 @@ namespace ImageEffectsLib
                     using (Graphics gResult = Graphics.FromImage(img))
                     {
                         gResult.SetHighQuality();
-
-                        Point labelPosition = Helpers.GetPosition(Alignment, Position, img.Size, watermarkSize);
-                        gResult.DrawImage(bmpWatermark, labelPosition.X, labelPosition.Y, bmpWatermark.Width, bmpWatermark.Height);
+                        gResult.DrawImage(bmpWatermark, watermarkRectangle);
                     }
                 }
             }

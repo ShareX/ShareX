@@ -58,17 +58,18 @@ namespace ImageEffectsLib
             {
                 using (Image img2 = Helpers.GetImageFromFile(ImageLocation))
                 {
-                    if (AutoHide && ((img2.Width + Position.X > img.Width) || (img2.Height + Position.Y > img.Height)))
+                    Point imagePosition = Helpers.GetPosition(Alignment, Position, img.Size, img2.Size);
+                    Rectangle imageRectangle = new Rectangle(imagePosition, img2.Size);
+
+                    if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(imageRectangle))
                     {
                         return img;
                     }
 
-                    Point pos = Helpers.GetPosition(Alignment, Position, img.Size, img2.Size);
-
                     using (Graphics g = Graphics.FromImage(img))
                     {
                         g.SetHighQuality();
-                        g.DrawImage(img2, pos.X, pos.Y, img2.Width, img2.Height);
+                        g.DrawImage(img2, imageRectangle);
                     }
                 }
             }

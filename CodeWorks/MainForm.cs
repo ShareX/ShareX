@@ -38,7 +38,7 @@ namespace CodeWorks
 {
     public partial class MainForm : Form
     {
-        private readonly string folderPath = Path.GetFullPath(@"..\..\..\..\trunk");
+        private readonly string folderPath = Path.GetFullPath(@"..\..\..");
         private readonly string[] ignoreFolders = new string[] { "bin", "obj", "Properties", "GreenshotImageEditor", "AviFile" };
         private readonly string[] ignoreFiles = new string[] { };
         private readonly string[] ignoreFilenamesEndsWith = new string[] { ".designer.cs" };
