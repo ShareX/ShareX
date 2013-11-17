@@ -85,6 +85,7 @@
     <Compile Include="Drawings\DrawCheckerboard.cs" />
     <Compile Include="Drawings\DrawImage.cs" />
     <Compile Include="Drawings\DrawText.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
@@ -123,12 +124,12 @@
     <Compile Include="Manipulations\Resize.cs" />
     <Compile Include="Manipulations\Rotate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Watermark\GradientStop.cs" />
-    <Compile Include="Watermark\WatermarkConfig.cs" />
-    <Compile Include="Watermark\WatermarkForm.cs">
+    <Compile Include="GradientStop.cs" />
+    <Compile Include="WatermarkConfig.cs" />
+    <Compile Include="WatermarkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Watermark\WatermarkForm.Designer.cs">
+    <Compile Include="WatermarkForm.Designer.cs">
       <DependentUpon>WatermarkForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -159,7 +160,7 @@
     <EmbeddedResource Include="ImageEffectsForm.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Watermark\WatermarkForm.resx">
+    <EmbeddedResource Include="WatermarkForm.resx">
       <DependentUpon>WatermarkForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

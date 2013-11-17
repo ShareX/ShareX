@@ -214,13 +214,13 @@ namespace ShareX
 
         #region Image / Effects
 
-        public WatermarkConfig WatermarkConfig = new WatermarkConfig();
-
         [JsonProperty(ItemTypeNameHandling = TypeNameHandling.All)]
         public List<ImageEffect> ImageEffects = new List<ImageEffect>();
 
         public bool ShowImageEffectsWindowAfterCapture = false;
         public bool ImageEffectOnlyRegionCapture = true;
+
+        public WatermarkConfig WatermarkConfig = new WatermarkConfig();
 
         #endregion Image / Effects
     }

@@ -23,47 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Drawing.Drawing2D;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace ImageEffectsLib
 {
-    [Description("Checkerboard")]
-    public class DrawCheckerboard : ImageEffect
+    public enum WatermarkType
     {
-        private int size;
-
-        [DefaultValue(8)]
-        public int Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value.Min(1);
-            }
-        }
-
-        [DefaultValue(typeof(Color), "LightGray"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
-
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color2 { get; set; }
-
-        public DrawCheckerboard()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Image Apply(Image img)
-        {
-            return ImageHelpers.DrawCheckers(img, Size, Color, Color2);
-        }
+        Text,
+        Image
     }
 }

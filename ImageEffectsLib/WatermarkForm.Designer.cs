@@ -92,7 +92,7 @@
             // cbWatermarkAutoHide
             // 
             this.cbWatermarkAutoHide.AutoSize = true;
-            this.cbWatermarkAutoHide.Location = new System.Drawing.Point(16, 112);
+            this.cbWatermarkAutoHide.Location = new System.Drawing.Point(17, 112);
             this.cbWatermarkAutoHide.Name = "cbWatermarkAutoHide";
             this.cbWatermarkAutoHide.Size = new System.Drawing.Size(260, 17);
             this.cbWatermarkAutoHide.TabIndex = 8;
@@ -170,14 +170,14 @@
             this.gbWatermarkBackground.Size = new System.Drawing.Size(448, 210);
             this.gbWatermarkBackground.TabIndex = 1;
             this.gbWatermarkBackground.TabStop = false;
-            this.gbWatermarkBackground.Text = "Background settings";
+            this.gbWatermarkBackground.Text = "Text background settings";
             // 
             // cbWatermarkBackColor2
             // 
             this.cbWatermarkBackColor2.AutoSize = true;
             this.cbWatermarkBackColor2.Checked = true;
             this.cbWatermarkBackColor2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbWatermarkBackColor2.Location = new System.Drawing.Point(16, 152);
+            this.cbWatermarkBackColor2.Location = new System.Drawing.Point(19, 152);
             this.cbWatermarkBackColor2.Name = "cbWatermarkBackColor2";
             this.cbWatermarkBackColor2.Size = new System.Drawing.Size(122, 17);
             this.cbWatermarkBackColor2.TabIndex = 18;
@@ -188,7 +188,7 @@
             // cbWatermarkDrawBackground
             // 
             this.cbWatermarkDrawBackground.AutoSize = true;
-            this.cbWatermarkDrawBackground.Location = new System.Drawing.Point(16, 24);
+            this.cbWatermarkDrawBackground.Location = new System.Drawing.Point(19, 24);
             this.cbWatermarkDrawBackground.Name = "cbWatermarkDrawBackground";
             this.cbWatermarkDrawBackground.Size = new System.Drawing.Size(111, 17);
             this.cbWatermarkDrawBackground.TabIndex = 17;
@@ -320,9 +320,9 @@
             this.lblWatermarkText.AutoSize = true;
             this.lblWatermarkText.Location = new System.Drawing.Point(16, 24);
             this.lblWatermarkText.Name = "lblWatermarkText";
-            this.lblWatermarkText.Size = new System.Drawing.Size(82, 13);
+            this.lblWatermarkText.Size = new System.Drawing.Size(31, 13);
             this.lblWatermarkText.TabIndex = 0;
-            this.lblWatermarkText.Text = "Watermark text:";
+            this.lblWatermarkText.Text = "Text:";
             // 
             // lblWatermarkFont
             // 
@@ -401,7 +401,7 @@
             this.gbImageWatermark.Size = new System.Drawing.Size(448, 55);
             this.gbImageWatermark.TabIndex = 5;
             this.gbImageWatermark.TabStop = false;
-            this.gbImageWatermark.Text = "Image watermark settings";
+            this.gbImageWatermark.Text = "Image settings";
             // 
             // WatermarkForm
             // 

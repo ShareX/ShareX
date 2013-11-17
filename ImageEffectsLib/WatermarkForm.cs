@@ -34,21 +34,14 @@ namespace ImageEffectsLib
 {
     public partial class WatermarkForm : Form
     {
-        public WatermarkConfig Config { get; set; }
+        private WatermarkConfig config;
         private bool IsGuiReady;
         private ContextMenuStrip codesMenu;
 
-        public WatermarkForm(WatermarkConfig config = null)
+        public WatermarkForm(WatermarkConfig watermarkConfig)
         {
             InitializeComponent();
-
-            if (config == null)
-            {
-                config = new WatermarkConfig();
-            }
-
-            Config = config;
-
+            config = watermarkConfig;
             codesMenu = NameParser.CreateCodesMenu(txtWatermarkText, ReplacementVariables.t);
         }
 
@@ -56,39 +49,39 @@ namespace ImageEffectsLib
         {
             if (cboWatermarkType.Items.Count == 0)
             {
-                cboWatermarkType.Items.AddRange(Helpers.GetEnumDescriptions<WatermarkType>());
+                cboWatermarkType.Items.AddRange(Enum.GetNames(typeof(WatermarkType)));
             }
 
-            cboWatermarkType.SelectedIndex = (int)Config.WatermarkMode;
+            cboWatermarkType.SelectedIndex = (int)config.Type;
 
             if (chkWatermarkPosition.Items.Count == 0)
             {
                 chkWatermarkPosition.Items.AddRange(Enum.GetNames(typeof(ContentAlignment)));
             }
 
-            chkWatermarkPosition.SelectedIndex = Config.WatermarkAlignment.GetIndex();
-            nudWatermarkOffset.Value = Config.WatermarkOffset;
-            cbWatermarkAutoHide.Checked = Config.WatermarkAutoHide;
+            chkWatermarkPosition.SelectedIndex = config.Text.Placement.GetIndex();
+            nudWatermarkOffset.Value = config.Text.Offset.X;
+            cbWatermarkAutoHide.Checked = config.Text.AutoHide;
 
-            txtWatermarkText.Text = Config.WatermarkText;
-            pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
-            lblWatermarkFont.Text = Config.WatermarkFont.ToString();
+            txtWatermarkText.Text = config.Text.Text;
+            pbWatermarkFontColor.BackColor = config.Text.TextColor;
+            lblWatermarkFont.Text = new FontConverter().ConvertToInvariantString(config.Text.TextFont);
 
-            cbWatermarkDrawBackground.Checked = Config.WatermarkDrawBackground;
-            nudWatermarkCornerRadius.Value = Config.WatermarkCornerRadius;
-            pbWatermarkGradient1.BackColor = Config.WatermarkGradient1Argb;
-            cbWatermarkBackColor2.Checked = Config.WatermarkUseGradient;
-            pbWatermarkGradient2.BackColor = Config.WatermarkGradient2Argb;
-            pbWatermarkBorderColor.BackColor = Config.WatermarkBorderArgb;
+            cbWatermarkDrawBackground.Checked = config.Text.DrawBackground;
+            nudWatermarkCornerRadius.Value = config.Text.CornerRadius;
+            pbWatermarkGradient1.BackColor = config.Text.BackgroundColor;
+            cbWatermarkBackColor2.Checked = config.Text.UseGradient;
+            pbWatermarkGradient2.BackColor = config.Text.BackgroundColor2;
+            pbWatermarkBorderColor.BackColor = config.Text.BorderColor;
 
             if (cbWatermarkGradientType.Items.Count == 0)
             {
                 cbWatermarkGradientType.Items.AddRange(Enum.GetNames(typeof(LinearGradientMode)));
             }
 
-            cbWatermarkGradientType.SelectedIndex = (int)Config.WatermarkGradientType;
+            cbWatermarkGradientType.SelectedIndex = (int)config.Text.GradientType;
 
-            txtWatermarkImageLocation.Text = Config.WatermarkImageLocation;
+            txtWatermarkImageLocation.Text = config.Image.ImageLocation;
 
             IsGuiReady = true;
             UpdatePreview();
@@ -99,15 +92,17 @@ namespace ImageEffectsLib
             Refresh();
         }
 
-        private void SelectColor(Control pb, ref XmlColor color)
+        private Color SelectColor(Control pb)
         {
             using (DialogColor dColor = new DialogColor(pb.BackColor))
             {
                 if (dColor.ShowDialog() == DialogResult.OK)
                 {
                     pb.BackColor = dColor.NewColor;
-                    color = (Color)dColor.NewColor;
+                    return (Color)dColor.NewColor;
                 }
+
+                return pb.BackColor;
             }
         }
 
@@ -117,10 +112,40 @@ namespace ImageEffectsLib
             {
                 using (Bitmap bmp = new Bitmap(pbPreview.ClientSize.Width, pbPreview.ClientSize.Height))
                 {
-                    Config.ApplyWatermark(bmp);
+                    config.Apply(bmp);
                     pbPreview.LoadImage(bmp);
                 }
             }
+        }
+
+        private void cboWatermarkType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            config.Type = (WatermarkType)cboWatermarkType.SelectedIndex;
+            UpdatePreview();
+        }
+
+        private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            config.Text.Placement = Helpers.GetEnumFromIndex<ContentAlignment>(chkWatermarkPosition.SelectedIndex);
+            UpdatePreview();
+        }
+
+        private void nudWatermarkOffset_ValueChanged(object sender, EventArgs e)
+        {
+            config.Text.Offset = new Point((int)nudWatermarkOffset.Value, (int)nudWatermarkOffset.Value);
+            UpdatePreview();
+        }
+
+        private void cbWatermarkAutoHide_CheckedChanged(object sender, EventArgs e)
+        {
+            config.Text.AutoHide = cbWatermarkAutoHide.Checked;
+            UpdatePreview();
+        }
+
+        private void txtWatermarkText_TextChanged(object sender, EventArgs e)
+        {
+            config.Text.Text = txtWatermarkText.Text;
+            UpdatePreview();
         }
 
         private void btnWatermarkFont_Click(object sender, EventArgs e)
@@ -133,8 +158,8 @@ namespace ImageEffectsLib
 
                     try
                     {
-                        fontDialog.Color = Config.WatermarkFontArgb;
-                        fontDialog.Font = Config.WatermarkFont;
+                        fontDialog.Font = config.Text.TextFont;
+                        fontDialog.Color = config.Text.TextColor;
                     }
                     catch (Exception ex)
                     {
@@ -143,11 +168,11 @@ namespace ImageEffectsLib
 
                     if (fontDialog.ShowDialog() == DialogResult.OK)
                     {
-                        Config.WatermarkFont = fontDialog.Font;
-                        Config.WatermarkFontArgb = fontDialog.Color;
+                        config.Text.TextFont = fontDialog.Font;
+                        config.Text.TextColor = fontDialog.Color;
 
-                        pbWatermarkFontColor.BackColor = Config.WatermarkFontArgb;
-                        lblWatermarkFont.Text = Config.WatermarkFont.ToString();
+                        pbWatermarkFontColor.BackColor = config.Text.TextColor;
+                        lblWatermarkFont.Text = new FontConverter().ConvertToInvariantString(config.Text.TextFont);
                         UpdatePreview();
                     }
                 }
@@ -158,87 +183,53 @@ namespace ImageEffectsLib
             }
         }
 
-        private void btwWatermarkBrowseImage_Click(object sender, EventArgs e)
+        private void pbWatermarkFontColor_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog { InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) };
-
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
-                txtWatermarkImageLocation.Text = fd.FileName;
-            }
-        }
-
-        private void cboWatermarkType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkMode = (WatermarkType)cboWatermarkType.SelectedIndex;
-            UpdatePreview();
-        }
-
-        private void cbWatermarkAutoHide_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkAutoHide = cbWatermarkAutoHide.Checked;
-            UpdatePreview();
-        }
-
-        private void cbWatermarkPosition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkAlignment = Helpers.GetEnumFromIndex<ContentAlignment>(chkWatermarkPosition.SelectedIndex);
+            config.Text.TextColor = SelectColor((PictureBox)sender);
             UpdatePreview();
         }
 
         private void cbWatermarkDrawBackground_CheckedChanged(object sender, EventArgs e)
         {
-            Config.WatermarkDrawBackground = cbWatermarkDrawBackground.Checked;
+            config.Text.DrawBackground = cbWatermarkDrawBackground.Checked;
             UpdatePreview();
         }
 
         private void nudWatermarkCornerRadius_ValueChanged(object sender, EventArgs e)
         {
-            Config.WatermarkCornerRadius = (int)nudWatermarkCornerRadius.Value;
-            UpdatePreview();
-        }
-
-        private void nudWatermarkOffset_ValueChanged(object sender, EventArgs e)
-        {
-            Config.WatermarkOffset = (int)nudWatermarkOffset.Value;
+            config.Text.CornerRadius = (int)nudWatermarkCornerRadius.Value;
             UpdatePreview();
         }
 
         private void pbWatermarkBorderColor_Click(object sender, EventArgs e)
         {
-            SelectColor((PictureBox)sender, ref Config.WatermarkBorderArgb);
-            UpdatePreview();
-        }
-
-        private void pbWatermarkFontColor_Click(object sender, EventArgs e)
-        {
-            SelectColor((PictureBox)sender, ref Config.WatermarkFontArgb);
+            config.Text.BorderColor = SelectColor((PictureBox)sender);
             UpdatePreview();
         }
 
         private void pbWatermarkGradient1_Click(object sender, EventArgs e)
         {
-            SelectColor((PictureBox)sender, ref Config.WatermarkGradient1Argb);
+            config.Text.BackgroundColor = SelectColor((PictureBox)sender);
             UpdatePreview();
         }
 
         private void cbWatermarkBackColor2_CheckedChanged(object sender, EventArgs e)
         {
-            Config.WatermarkUseGradient = cbWatermarkBackColor2.Checked;
-            pbWatermarkGradient2.Enabled = Config.WatermarkUseGradient;
-            cbWatermarkGradientType.Enabled = Config.WatermarkUseGradient;
+            config.Text.UseGradient = cbWatermarkBackColor2.Checked;
+            pbWatermarkGradient2.Enabled = config.Text.UseGradient;
+            cbWatermarkGradientType.Enabled = config.Text.UseGradient;
             UpdatePreview();
         }
 
         private void pbWatermarkGradient2_Click(object sender, EventArgs e)
         {
-            SelectColor((PictureBox)sender, ref Config.WatermarkGradient2Argb);
+            config.Text.BackgroundColor2 = SelectColor((PictureBox)sender);
             UpdatePreview();
         }
 
         private void cbWatermarkGradientType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.WatermarkGradientType = (LinearGradientMode)cbWatermarkGradientType.SelectedIndex;
+            config.Text.GradientType = (LinearGradientMode)cbWatermarkGradientType.SelectedIndex;
             UpdatePreview();
         }
 
@@ -246,15 +237,20 @@ namespace ImageEffectsLib
         {
             if (File.Exists(txtWatermarkImageLocation.Text))
             {
-                Config.WatermarkImageLocation = txtWatermarkImageLocation.Text;
+                config.Image.ImageLocation = txtWatermarkImageLocation.Text;
                 UpdatePreview();
             }
         }
 
-        private void txtWatermarkText_TextChanged(object sender, EventArgs e)
+        private void btwWatermarkBrowseImage_Click(object sender, EventArgs e)
         {
-            Config.WatermarkText = txtWatermarkText.Text;
-            UpdatePreview();
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    txtWatermarkImageLocation.Text = ofd.FileName;
+                }
+            }
         }
     }
 }

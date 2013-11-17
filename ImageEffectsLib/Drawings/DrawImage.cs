@@ -33,13 +33,25 @@ using System.IO;
 namespace ImageEffectsLib
 {
     [Description("Image")]
-    internal class DrawImage : ImageEffect
+    public class DrawImage : ImageEffect
     {
         [DefaultValue(ContentAlignment.BottomRight)]
-        public ContentAlignment Alignment { get; set; }
+        public ContentAlignment Placement { get; set; }
+
+        private Point offset;
 
         [DefaultValue(typeof(Point), "5, 5")]
-        public Point Position { get; set; }
+        public Point Offset
+        {
+            get
+            {
+                return offset;
+            }
+            set
+            {
+                offset = new Point(value.X.Min(0), value.Y.Min(0));
+            }
+        }
 
         [DefaultValue(false), Description("If image size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
@@ -58,7 +70,7 @@ namespace ImageEffectsLib
             {
                 using (Image img2 = Helpers.GetImageFromFile(ImageLocation))
                 {
-                    Point imagePosition = Helpers.GetPosition(Alignment, Position, img.Size, img2.Size);
+                    Point imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, img2.Size);
                     Rectangle imageRectangle = new Rectangle(imagePosition, img2.Size);
 
                     if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(imageRectangle))

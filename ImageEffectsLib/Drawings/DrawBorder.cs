@@ -33,7 +33,7 @@ using System.Drawing.Drawing2D;
 namespace ImageEffectsLib
 {
     [Description("Border")]
-    internal class DrawBorder : ImageEffect
+    public class DrawBorder : ImageEffect
     {
         [DefaultValue(BorderType.Outside)]
         public BorderType Type { get; set; }

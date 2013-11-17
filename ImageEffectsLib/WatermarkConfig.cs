@@ -23,43 +23,29 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using System.ComponentModel;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Design;
-using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
 
 namespace ImageEffectsLib
 {
-    [Description("Background")]
-    public class DrawBackground : ImageEffect
+    public class WatermarkConfig
     {
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
+        public WatermarkType Type = WatermarkType.Text;
+        public DrawText Text = new DrawText();
+        public DrawImage Image = new DrawImage();
 
-        [DefaultValue(false)]
-        public bool UseGradient { get; set; }
-
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color2 { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        public DrawBackground()
+        public Image Apply(Image img)
         {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Image Apply(Image img)
-        {
-            if (UseGradient)
+            switch (Type)
             {
-                return ImageHelpers.FillBackground(img, Color, Color2, GradientType);
-            }
-            else
-            {
-                return ImageHelpers.FillBackground(img, Color);
+                default:
+                case WatermarkType.Text:
+                    return Text.Apply(img);
+                case WatermarkType.Image:
+                    return Image.Apply(img);
             }
         }
     }

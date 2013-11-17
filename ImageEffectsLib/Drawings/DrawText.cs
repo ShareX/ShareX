@@ -39,13 +39,25 @@ using System.Windows.Forms;
 namespace ImageEffectsLib
 {
     [Description("Text")]
-    internal class DrawText : ImageEffect
+    public class DrawText : ImageEffect
     {
         [DefaultValue(ContentAlignment.BottomRight)]
-        public ContentAlignment Alignment { get; set; }
+        public ContentAlignment Placement { get; set; }
+
+        private Point offset;
 
         [DefaultValue(typeof(Point), "5, 5")]
-        public Point Position { get; set; }
+        public Point Offset
+        {
+            get
+            {
+                return offset;
+            }
+            set
+            {
+                offset = new Point(value.X.Min(0), value.Y.Min(0));
+            }
+        }
 
         [DefaultValue(false), Description("If watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
@@ -81,7 +93,7 @@ namespace ImageEffectsLib
         [DefaultValue(5)]
         public int BackgroundPadding { get; set; }
 
-        public int cornerRadius;
+        private int cornerRadius;
 
         [DefaultValue(4)]
         public int CornerRadius
@@ -99,13 +111,13 @@ namespace ImageEffectsLib
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor { get; set; }
 
-        [DefaultValue(typeof(Color), "100, 100, 100"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "10, 110, 230"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
 
         [DefaultValue(true)]
         public bool UseGradient { get; set; }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "0, 20, 40"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
         [Browsable(false), DefaultValue(false)]
@@ -142,7 +154,7 @@ namespace ImageEffectsLib
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
                 Size watermarkSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
-                Point watermarkPosition = Helpers.GetPosition(Alignment, Position, img.Size, watermarkSize);
+                Point watermarkPosition = Helpers.GetPosition(Placement, Offset, img.Size, watermarkSize);
                 Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
 
                 if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(watermarkRectangle))
