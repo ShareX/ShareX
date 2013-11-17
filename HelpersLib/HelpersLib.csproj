@@ -215,6 +215,9 @@
     <Compile Include="UserControls\Canvas.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\ColorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\MenuButton.cs">
       <SubType>Component</SubType>
     </Compile>

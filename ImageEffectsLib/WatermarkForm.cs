@@ -64,15 +64,15 @@ namespace ImageEffectsLib
             cbWatermarkAutoHide.Checked = config.Text.AutoHide;
 
             txtWatermarkText.Text = config.Text.Text;
-            pbWatermarkFontColor.BackColor = config.Text.TextColor;
             lblWatermarkFont.Text = new FontConverter().ConvertToInvariantString(config.Text.TextFont);
+            btnTextColor.Color = config.Text.TextColor;
 
             cbWatermarkDrawBackground.Checked = config.Text.DrawBackground;
+            btnBorderColor.Color = config.Text.BorderColor;
             nudWatermarkCornerRadius.Value = config.Text.CornerRadius;
-            pbWatermarkGradient1.BackColor = config.Text.BackgroundColor;
-            cbWatermarkBackColor2.Checked = config.Text.UseGradient;
-            pbWatermarkGradient2.BackColor = config.Text.BackgroundColor2;
-            pbWatermarkBorderColor.BackColor = config.Text.BorderColor;
+            btnBackgroundColor.Color = config.Text.BackgroundColor;
+            cbWatermarkUseGradient.Checked = config.Text.UseGradient;
+            btnBackgroundColor2.Color = config.Text.BackgroundColor2;
 
             if (cbWatermarkGradientType.Items.Count == 0)
             {
@@ -90,20 +90,6 @@ namespace ImageEffectsLib
         private void WatermarkUI_Resize(object sender, EventArgs e)
         {
             Refresh();
-        }
-
-        private Color SelectColor(Control pb)
-        {
-            using (DialogColor dColor = new DialogColor(pb.BackColor))
-            {
-                if (dColor.ShowDialog() == DialogResult.OK)
-                {
-                    pb.BackColor = dColor.NewColor;
-                    return (Color)dColor.NewColor;
-                }
-
-                return pb.BackColor;
-            }
         }
 
         private void UpdatePreview()
@@ -171,7 +157,7 @@ namespace ImageEffectsLib
                         config.Text.TextFont = fontDialog.Font;
                         config.Text.TextColor = fontDialog.Color;
 
-                        pbWatermarkFontColor.BackColor = config.Text.TextColor;
+                        btnTextColor.Color = config.Text.TextColor;
                         lblWatermarkFont.Text = new FontConverter().ConvertToInvariantString(config.Text.TextFont);
                         UpdatePreview();
                     }
@@ -183,9 +169,9 @@ namespace ImageEffectsLib
             }
         }
 
-        private void pbWatermarkFontColor_Click(object sender, EventArgs e)
+        private void btnTextColor_ColorChanged(Color color)
         {
-            config.Text.TextColor = SelectColor((PictureBox)sender);
+            config.Text.TextColor = color;
             UpdatePreview();
         }
 
@@ -195,41 +181,41 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
+        private void btnBorderColor_ColorChanged(Color color)
+        {
+            config.Text.BorderColor = color;
+            UpdatePreview();
+        }
+
         private void nudWatermarkCornerRadius_ValueChanged(object sender, EventArgs e)
         {
             config.Text.CornerRadius = (int)nudWatermarkCornerRadius.Value;
             UpdatePreview();
         }
 
-        private void pbWatermarkBorderColor_Click(object sender, EventArgs e)
+        private void btnBackgroundColor_ColorChanged(Color color)
         {
-            config.Text.BorderColor = SelectColor((PictureBox)sender);
-            UpdatePreview();
-        }
-
-        private void pbWatermarkGradient1_Click(object sender, EventArgs e)
-        {
-            config.Text.BackgroundColor = SelectColor((PictureBox)sender);
+            config.Text.BackgroundColor = color;
             UpdatePreview();
         }
 
         private void cbWatermarkBackColor2_CheckedChanged(object sender, EventArgs e)
         {
-            config.Text.UseGradient = cbWatermarkBackColor2.Checked;
-            pbWatermarkGradient2.Enabled = config.Text.UseGradient;
+            config.Text.UseGradient = cbWatermarkUseGradient.Checked;
+            btnBackgroundColor2.Enabled = config.Text.UseGradient;
             cbWatermarkGradientType.Enabled = config.Text.UseGradient;
-            UpdatePreview();
-        }
-
-        private void pbWatermarkGradient2_Click(object sender, EventArgs e)
-        {
-            config.Text.BackgroundColor2 = SelectColor((PictureBox)sender);
             UpdatePreview();
         }
 
         private void cbWatermarkGradientType_SelectedIndexChanged(object sender, EventArgs e)
         {
             config.Text.GradientType = (LinearGradientMode)cbWatermarkGradientType.SelectedIndex;
+            UpdatePreview();
+        }
+
+        private void btnBackgroundColor2_ColorChanged(Color color)
+        {
+            config.Text.BackgroundColor2 = color;
             UpdatePreview();
         }
 

@@ -37,36 +37,29 @@
             this.nudWatermarkOffset = new System.Windows.Forms.NumericUpDown();
             this.lblWatermarkOffset = new System.Windows.Forms.Label();
             this.gbWatermarkBackground = new System.Windows.Forms.GroupBox();
-            this.cbWatermarkBackColor2 = new System.Windows.Forms.CheckBox();
+            this.btnBackgroundColor2 = new HelpersLib.ColorButton();
+            this.btnBackgroundColor = new HelpersLib.ColorButton();
+            this.btnBorderColor = new HelpersLib.ColorButton();
+            this.cbWatermarkUseGradient = new System.Windows.Forms.CheckBox();
             this.cbWatermarkDrawBackground = new System.Windows.Forms.CheckBox();
-            this.lblWatermarkBorderColor = new System.Windows.Forms.Label();
             this.lblRectangleCornerRadius = new System.Windows.Forms.Label();
             this.nudWatermarkCornerRadius = new System.Windows.Forms.NumericUpDown();
-            this.lblWatermarkBackColor = new System.Windows.Forms.Label();
-            this.pbWatermarkGradient2 = new System.Windows.Forms.PictureBox();
             this.lblWatermarkCornerRadiusTip = new System.Windows.Forms.Label();
-            this.pbWatermarkGradient1 = new System.Windows.Forms.PictureBox();
-            this.pbWatermarkBorderColor = new System.Windows.Forms.PictureBox();
             this.cbWatermarkGradientType = new System.Windows.Forms.ComboBox();
-            this.lblWatermarkGradientType = new System.Windows.Forms.Label();
             this.gbWatermarkText = new System.Windows.Forms.GroupBox();
+            this.btnTextColor = new HelpersLib.ColorButton();
             this.lblWatermarkText = new System.Windows.Forms.Label();
             this.lblWatermarkFont = new System.Windows.Forms.Label();
             this.btnWatermarkFont = new System.Windows.Forms.Button();
             this.txtWatermarkText = new System.Windows.Forms.TextBox();
-            this.pbWatermarkFontColor = new System.Windows.Forms.PictureBox();
             this.btwWatermarkBrowseImage = new System.Windows.Forms.Button();
             this.txtWatermarkImageLocation = new System.Windows.Forms.TextBox();
-            this.pbPreview = new HelpersLib.MyPictureBox();
             this.gbImageWatermark = new System.Windows.Forms.GroupBox();
+            this.pbPreview = new HelpersLib.MyPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudWatermarkOffset)).BeginInit();
             this.gbWatermarkBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWatermarkCornerRadius)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkGradient2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkGradient1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkBorderColor)).BeginInit();
             this.gbWatermarkText.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkFontColor)).BeginInit();
             this.gbImageWatermark.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +79,7 @@
             this.cboWatermarkType.Location = new System.Drawing.Point(88, 12);
             this.cboWatermarkType.Name = "cboWatermarkType";
             this.cboWatermarkType.Size = new System.Drawing.Size(120, 21);
-            this.cboWatermarkType.TabIndex = 1;
+            this.cboWatermarkType.TabIndex = 0;
             this.cboWatermarkType.SelectedIndexChanged += new System.EventHandler(this.cboWatermarkType_SelectedIndexChanged);
             // 
             // cbWatermarkAutoHide
@@ -95,7 +88,7 @@
             this.cbWatermarkAutoHide.Location = new System.Drawing.Point(17, 112);
             this.cbWatermarkAutoHide.Name = "cbWatermarkAutoHide";
             this.cbWatermarkAutoHide.Size = new System.Drawing.Size(260, 17);
-            this.cbWatermarkAutoHide.TabIndex = 8;
+            this.cbWatermarkAutoHide.TabIndex = 3;
             this.cbWatermarkAutoHide.Text = "Hide watermark if image is smaller than watermark";
             this.cbWatermarkAutoHide.UseVisualStyleBackColor = true;
             this.cbWatermarkAutoHide.CheckedChanged += new System.EventHandler(this.cbWatermarkAutoHide_CheckedChanged);
@@ -116,7 +109,7 @@
             this.chkWatermarkPosition.Location = new System.Drawing.Point(88, 44);
             this.chkWatermarkPosition.Name = "chkWatermarkPosition";
             this.chkWatermarkPosition.Size = new System.Drawing.Size(121, 21);
-            this.chkWatermarkPosition.TabIndex = 3;
+            this.chkWatermarkPosition.TabIndex = 1;
             this.chkWatermarkPosition.SelectedIndexChanged += new System.EventHandler(this.cbWatermarkPosition_SelectedIndexChanged);
             // 
             // lblWatermarkPosition
@@ -138,7 +131,7 @@
             0});
             this.nudWatermarkOffset.Name = "nudWatermarkOffset";
             this.nudWatermarkOffset.Size = new System.Drawing.Size(56, 20);
-            this.nudWatermarkOffset.TabIndex = 5;
+            this.nudWatermarkOffset.TabIndex = 2;
             this.nudWatermarkOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudWatermarkOffset.ValueChanged += new System.EventHandler(this.nudWatermarkOffset_ValueChanged);
             // 
@@ -153,37 +146,70 @@
             // 
             // gbWatermarkBackground
             // 
-            this.gbWatermarkBackground.Controls.Add(this.cbWatermarkBackColor2);
+            this.gbWatermarkBackground.Controls.Add(this.btnBackgroundColor2);
+            this.gbWatermarkBackground.Controls.Add(this.btnBackgroundColor);
+            this.gbWatermarkBackground.Controls.Add(this.btnBorderColor);
+            this.gbWatermarkBackground.Controls.Add(this.cbWatermarkUseGradient);
             this.gbWatermarkBackground.Controls.Add(this.cbWatermarkDrawBackground);
-            this.gbWatermarkBackground.Controls.Add(this.lblWatermarkBorderColor);
             this.gbWatermarkBackground.Controls.Add(this.lblRectangleCornerRadius);
             this.gbWatermarkBackground.Controls.Add(this.nudWatermarkCornerRadius);
-            this.gbWatermarkBackground.Controls.Add(this.lblWatermarkBackColor);
-            this.gbWatermarkBackground.Controls.Add(this.pbWatermarkGradient2);
             this.gbWatermarkBackground.Controls.Add(this.lblWatermarkCornerRadiusTip);
-            this.gbWatermarkBackground.Controls.Add(this.pbWatermarkGradient1);
-            this.gbWatermarkBackground.Controls.Add(this.pbWatermarkBorderColor);
             this.gbWatermarkBackground.Controls.Add(this.cbWatermarkGradientType);
-            this.gbWatermarkBackground.Controls.Add(this.lblWatermarkGradientType);
-            this.gbWatermarkBackground.Location = new System.Drawing.Point(304, 94);
+            this.gbWatermarkBackground.Location = new System.Drawing.Point(304, 126);
             this.gbWatermarkBackground.Name = "gbWatermarkBackground";
             this.gbWatermarkBackground.Size = new System.Drawing.Size(448, 210);
             this.gbWatermarkBackground.TabIndex = 1;
             this.gbWatermarkBackground.TabStop = false;
             this.gbWatermarkBackground.Text = "Text background settings";
             // 
-            // cbWatermarkBackColor2
+            // btnBackgroundColor2
             // 
-            this.cbWatermarkBackColor2.AutoSize = true;
-            this.cbWatermarkBackColor2.Checked = true;
-            this.cbWatermarkBackColor2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbWatermarkBackColor2.Location = new System.Drawing.Point(19, 152);
-            this.cbWatermarkBackColor2.Name = "cbWatermarkBackColor2";
-            this.cbWatermarkBackColor2.Size = new System.Drawing.Size(122, 17);
-            this.cbWatermarkBackColor2.TabIndex = 18;
-            this.cbWatermarkBackColor2.Text = "Background color 2:";
-            this.cbWatermarkBackColor2.UseVisualStyleBackColor = true;
-            this.cbWatermarkBackColor2.CheckedChanged += new System.EventHandler(this.cbWatermarkBackColor2_CheckedChanged);
+            this.btnBackgroundColor2.Color = System.Drawing.Color.Empty;
+            this.btnBackgroundColor2.Location = new System.Drawing.Point(16, 176);
+            this.btnBackgroundColor2.Name = "btnBackgroundColor2";
+            this.btnBackgroundColor2.Size = new System.Drawing.Size(144, 23);
+            this.btnBackgroundColor2.TabIndex = 6;
+            this.btnBackgroundColor2.Text = "Background color 2...";
+            this.btnBackgroundColor2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackgroundColor2.UseVisualStyleBackColor = true;
+            this.btnBackgroundColor2.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBackgroundColor2_ColorChanged);
+            // 
+            // btnBackgroundColor
+            // 
+            this.btnBackgroundColor.Color = System.Drawing.Color.Empty;
+            this.btnBackgroundColor.Location = new System.Drawing.Point(16, 112);
+            this.btnBackgroundColor.Name = "btnBackgroundColor";
+            this.btnBackgroundColor.Size = new System.Drawing.Size(144, 23);
+            this.btnBackgroundColor.TabIndex = 3;
+            this.btnBackgroundColor.Text = "Background color...";
+            this.btnBackgroundColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackgroundColor.UseVisualStyleBackColor = true;
+            this.btnBackgroundColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBackgroundColor_ColorChanged);
+            // 
+            // btnBorderColor
+            // 
+            this.btnBorderColor.Color = System.Drawing.Color.Empty;
+            this.btnBorderColor.Location = new System.Drawing.Point(16, 50);
+            this.btnBorderColor.Name = "btnBorderColor";
+            this.btnBorderColor.Size = new System.Drawing.Size(144, 23);
+            this.btnBorderColor.TabIndex = 1;
+            this.btnBorderColor.Text = "Border color...";
+            this.btnBorderColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorderColor.UseVisualStyleBackColor = true;
+            this.btnBorderColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBorderColor_ColorChanged);
+            // 
+            // cbWatermarkUseGradient
+            // 
+            this.cbWatermarkUseGradient.AutoSize = true;
+            this.cbWatermarkUseGradient.Checked = true;
+            this.cbWatermarkUseGradient.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbWatermarkUseGradient.Location = new System.Drawing.Point(19, 149);
+            this.cbWatermarkUseGradient.Name = "cbWatermarkUseGradient";
+            this.cbWatermarkUseGradient.Size = new System.Drawing.Size(92, 17);
+            this.cbWatermarkUseGradient.TabIndex = 4;
+            this.cbWatermarkUseGradient.Text = "Gradient type:";
+            this.cbWatermarkUseGradient.UseVisualStyleBackColor = true;
+            this.cbWatermarkUseGradient.CheckedChanged += new System.EventHandler(this.cbWatermarkBackColor2_CheckedChanged);
             // 
             // cbWatermarkDrawBackground
             // 
@@ -191,19 +217,10 @@
             this.cbWatermarkDrawBackground.Location = new System.Drawing.Point(19, 24);
             this.cbWatermarkDrawBackground.Name = "cbWatermarkDrawBackground";
             this.cbWatermarkDrawBackground.Size = new System.Drawing.Size(111, 17);
-            this.cbWatermarkDrawBackground.TabIndex = 17;
+            this.cbWatermarkDrawBackground.TabIndex = 0;
             this.cbWatermarkDrawBackground.Text = "Draw background";
             this.cbWatermarkDrawBackground.UseVisualStyleBackColor = true;
             this.cbWatermarkDrawBackground.CheckedChanged += new System.EventHandler(this.cbWatermarkDrawBackground_CheckedChanged);
-            // 
-            // lblWatermarkBorderColor
-            // 
-            this.lblWatermarkBorderColor.AutoSize = true;
-            this.lblWatermarkBorderColor.Location = new System.Drawing.Point(16, 56);
-            this.lblWatermarkBorderColor.Name = "lblWatermarkBorderColor";
-            this.lblWatermarkBorderColor.Size = new System.Drawing.Size(67, 13);
-            this.lblWatermarkBorderColor.TabIndex = 16;
-            this.lblWatermarkBorderColor.Text = "Border color:";
             // 
             // lblRectangleCornerRadius
             // 
@@ -216,7 +233,7 @@
             // 
             // nudWatermarkCornerRadius
             // 
-            this.nudWatermarkCornerRadius.Location = new System.Drawing.Point(152, 84);
+            this.nudWatermarkCornerRadius.Location = new System.Drawing.Point(144, 84);
             this.nudWatermarkCornerRadius.Maximum = new decimal(new int[] {
             15,
             0,
@@ -224,96 +241,54 @@
             0});
             this.nudWatermarkCornerRadius.Name = "nudWatermarkCornerRadius";
             this.nudWatermarkCornerRadius.Size = new System.Drawing.Size(48, 20);
-            this.nudWatermarkCornerRadius.TabIndex = 1;
+            this.nudWatermarkCornerRadius.TabIndex = 2;
             this.nudWatermarkCornerRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudWatermarkCornerRadius.ValueChanged += new System.EventHandler(this.nudWatermarkCornerRadius_ValueChanged);
-            // 
-            // lblWatermarkBackColor
-            // 
-            this.lblWatermarkBackColor.AutoSize = true;
-            this.lblWatermarkBackColor.Location = new System.Drawing.Point(16, 120);
-            this.lblWatermarkBackColor.Name = "lblWatermarkBackColor";
-            this.lblWatermarkBackColor.Size = new System.Drawing.Size(94, 13);
-            this.lblWatermarkBackColor.TabIndex = 0;
-            this.lblWatermarkBackColor.Text = "Background color:";
-            // 
-            // pbWatermarkGradient2
-            // 
-            this.pbWatermarkGradient2.BackColor = System.Drawing.Color.Gray;
-            this.pbWatermarkGradient2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbWatermarkGradient2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbWatermarkGradient2.Location = new System.Drawing.Point(152, 148);
-            this.pbWatermarkGradient2.Name = "pbWatermarkGradient2";
-            this.pbWatermarkGradient2.Size = new System.Drawing.Size(24, 24);
-            this.pbWatermarkGradient2.TabIndex = 11;
-            this.pbWatermarkGradient2.TabStop = false;
-            this.pbWatermarkGradient2.Click += new System.EventHandler(this.pbWatermarkGradient2_Click);
             // 
             // lblWatermarkCornerRadiusTip
             // 
             this.lblWatermarkCornerRadiusTip.AutoSize = true;
-            this.lblWatermarkCornerRadiusTip.Location = new System.Drawing.Point(208, 88);
+            this.lblWatermarkCornerRadiusTip.Location = new System.Drawing.Point(200, 88);
             this.lblWatermarkCornerRadiusTip.Name = "lblWatermarkCornerRadiusTip";
             this.lblWatermarkCornerRadiusTip.Size = new System.Drawing.Size(105, 13);
             this.lblWatermarkCornerRadiusTip.TabIndex = 2;
             this.lblWatermarkCornerRadiusTip.Text = "0 = Normal rectangle";
             // 
-            // pbWatermarkGradient1
-            // 
-            this.pbWatermarkGradient1.BackColor = System.Drawing.Color.White;
-            this.pbWatermarkGradient1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbWatermarkGradient1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbWatermarkGradient1.Location = new System.Drawing.Point(152, 114);
-            this.pbWatermarkGradient1.Name = "pbWatermarkGradient1";
-            this.pbWatermarkGradient1.Size = new System.Drawing.Size(24, 24);
-            this.pbWatermarkGradient1.TabIndex = 10;
-            this.pbWatermarkGradient1.TabStop = false;
-            this.pbWatermarkGradient1.Click += new System.EventHandler(this.pbWatermarkGradient1_Click);
-            // 
-            // pbWatermarkBorderColor
-            // 
-            this.pbWatermarkBorderColor.BackColor = System.Drawing.Color.Black;
-            this.pbWatermarkBorderColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbWatermarkBorderColor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbWatermarkBorderColor.Location = new System.Drawing.Point(152, 50);
-            this.pbWatermarkBorderColor.Name = "pbWatermarkBorderColor";
-            this.pbWatermarkBorderColor.Size = new System.Drawing.Size(24, 24);
-            this.pbWatermarkBorderColor.TabIndex = 14;
-            this.pbWatermarkBorderColor.TabStop = false;
-            this.pbWatermarkBorderColor.Click += new System.EventHandler(this.pbWatermarkBorderColor_Click);
-            // 
             // cbWatermarkGradientType
             // 
             this.cbWatermarkGradientType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWatermarkGradientType.FormattingEnabled = true;
-            this.cbWatermarkGradientType.Location = new System.Drawing.Point(152, 180);
+            this.cbWatermarkGradientType.Location = new System.Drawing.Point(120, 147);
             this.cbWatermarkGradientType.Name = "cbWatermarkGradientType";
             this.cbWatermarkGradientType.Size = new System.Drawing.Size(121, 21);
-            this.cbWatermarkGradientType.TabIndex = 6;
+            this.cbWatermarkGradientType.TabIndex = 5;
             this.cbWatermarkGradientType.SelectedIndexChanged += new System.EventHandler(this.cbWatermarkGradientType_SelectedIndexChanged);
-            // 
-            // lblWatermarkGradientType
-            // 
-            this.lblWatermarkGradientType.AutoSize = true;
-            this.lblWatermarkGradientType.Location = new System.Drawing.Point(16, 184);
-            this.lblWatermarkGradientType.Name = "lblWatermarkGradientType";
-            this.lblWatermarkGradientType.Size = new System.Drawing.Size(73, 13);
-            this.lblWatermarkGradientType.TabIndex = 5;
-            this.lblWatermarkGradientType.Text = "Gradient type:";
             // 
             // gbWatermarkText
             // 
+            this.gbWatermarkText.Controls.Add(this.btnTextColor);
             this.gbWatermarkText.Controls.Add(this.lblWatermarkText);
             this.gbWatermarkText.Controls.Add(this.lblWatermarkFont);
             this.gbWatermarkText.Controls.Add(this.btnWatermarkFont);
             this.gbWatermarkText.Controls.Add(this.txtWatermarkText);
-            this.gbWatermarkText.Controls.Add(this.pbWatermarkFontColor);
             this.gbWatermarkText.Location = new System.Drawing.Point(304, 8);
             this.gbWatermarkText.Name = "gbWatermarkText";
-            this.gbWatermarkText.Size = new System.Drawing.Size(448, 80);
+            this.gbWatermarkText.Size = new System.Drawing.Size(448, 112);
             this.gbWatermarkText.TabIndex = 0;
             this.gbWatermarkText.TabStop = false;
             this.gbWatermarkText.Text = "Text settings";
+            // 
+            // btnTextColor
+            // 
+            this.btnTextColor.Color = System.Drawing.Color.Empty;
+            this.btnTextColor.Location = new System.Drawing.Point(16, 80);
+            this.btnTextColor.Name = "btnTextColor";
+            this.btnTextColor.Size = new System.Drawing.Size(144, 23);
+            this.btnTextColor.TabIndex = 2;
+            this.btnTextColor.Text = "Text color...";
+            this.btnTextColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTextColor.UseVisualStyleBackColor = true;
+            this.btnTextColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
             // 
             // lblWatermarkText
             // 
@@ -327,7 +302,7 @@
             // lblWatermarkFont
             // 
             this.lblWatermarkFont.AutoSize = true;
-            this.lblWatermarkFont.Location = new System.Drawing.Point(184, 54);
+            this.lblWatermarkFont.Location = new System.Drawing.Point(168, 54);
             this.lblWatermarkFont.Name = "lblWatermarkFont";
             this.lblWatermarkFont.Size = new System.Drawing.Size(83, 13);
             this.lblWatermarkFont.TabIndex = 3;
@@ -337,31 +312,20 @@
             // 
             this.btnWatermarkFont.Location = new System.Drawing.Point(16, 48);
             this.btnWatermarkFont.Name = "btnWatermarkFont";
-            this.btnWatermarkFont.Size = new System.Drawing.Size(128, 24);
-            this.btnWatermarkFont.TabIndex = 2;
-            this.btnWatermarkFont.Text = "Change font...";
+            this.btnWatermarkFont.Size = new System.Drawing.Size(144, 24);
+            this.btnWatermarkFont.TabIndex = 1;
+            this.btnWatermarkFont.Text = "Text font...";
+            this.btnWatermarkFont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWatermarkFont.UseVisualStyleBackColor = true;
             this.btnWatermarkFont.Click += new System.EventHandler(this.btnWatermarkFont_Click);
             // 
             // txtWatermarkText
             // 
-            this.txtWatermarkText.Location = new System.Drawing.Point(152, 20);
+            this.txtWatermarkText.Location = new System.Drawing.Point(56, 20);
             this.txtWatermarkText.Name = "txtWatermarkText";
-            this.txtWatermarkText.Size = new System.Drawing.Size(288, 20);
-            this.txtWatermarkText.TabIndex = 1;
+            this.txtWatermarkText.Size = new System.Drawing.Size(384, 20);
+            this.txtWatermarkText.TabIndex = 0;
             this.txtWatermarkText.TextChanged += new System.EventHandler(this.txtWatermarkText_TextChanged);
-            // 
-            // pbWatermarkFontColor
-            // 
-            this.pbWatermarkFontColor.BackColor = System.Drawing.Color.Black;
-            this.pbWatermarkFontColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbWatermarkFontColor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbWatermarkFontColor.Location = new System.Drawing.Point(152, 48);
-            this.pbWatermarkFontColor.Name = "pbWatermarkFontColor";
-            this.pbWatermarkFontColor.Size = new System.Drawing.Size(24, 24);
-            this.pbWatermarkFontColor.TabIndex = 17;
-            this.pbWatermarkFontColor.TabStop = false;
-            this.pbWatermarkFontColor.Click += new System.EventHandler(this.pbWatermarkFontColor_Click);
             // 
             // btwWatermarkBrowseImage
             // 
@@ -382,6 +346,17 @@
             this.txtWatermarkImageLocation.TabIndex = 0;
             this.txtWatermarkImageLocation.TextChanged += new System.EventHandler(this.txtWatermarkImageLocation_TextChanged);
             // 
+            // gbImageWatermark
+            // 
+            this.gbImageWatermark.Controls.Add(this.txtWatermarkImageLocation);
+            this.gbImageWatermark.Controls.Add(this.btwWatermarkBrowseImage);
+            this.gbImageWatermark.Location = new System.Drawing.Point(304, 344);
+            this.gbImageWatermark.Name = "gbImageWatermark";
+            this.gbImageWatermark.Size = new System.Drawing.Size(448, 55);
+            this.gbImageWatermark.TabIndex = 5;
+            this.gbImageWatermark.TabStop = false;
+            this.gbImageWatermark.Text = "Image settings";
+            // 
             // pbPreview
             // 
             this.pbPreview.BackColor = System.Drawing.Color.White;
@@ -389,26 +364,15 @@
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.Location = new System.Drawing.Point(8, 144);
             this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(288, 224);
+            this.pbPreview.Size = new System.Drawing.Size(288, 256);
             this.pbPreview.TabIndex = 2;
-            // 
-            // gbImageWatermark
-            // 
-            this.gbImageWatermark.Controls.Add(this.txtWatermarkImageLocation);
-            this.gbImageWatermark.Controls.Add(this.btwWatermarkBrowseImage);
-            this.gbImageWatermark.Location = new System.Drawing.Point(304, 312);
-            this.gbImageWatermark.Name = "gbImageWatermark";
-            this.gbImageWatermark.Size = new System.Drawing.Size(448, 55);
-            this.gbImageWatermark.TabIndex = 5;
-            this.gbImageWatermark.TabStop = false;
-            this.gbImageWatermark.Text = "Image settings";
             // 
             // WatermarkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(761, 376);
+            this.ClientSize = new System.Drawing.Size(761, 409);
             this.Controls.Add(this.lblWatermarkOffsetPixel);
             this.Controls.Add(this.gbImageWatermark);
             this.Controls.Add(this.cboWatermarkType);
@@ -432,12 +396,8 @@
             this.gbWatermarkBackground.ResumeLayout(false);
             this.gbWatermarkBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWatermarkCornerRadius)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkGradient2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkGradient1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkBorderColor)).EndInit();
             this.gbWatermarkText.ResumeLayout(false);
             this.gbWatermarkText.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWatermarkFontColor)).EndInit();
             this.gbImageWatermark.ResumeLayout(false);
             this.gbImageWatermark.PerformLayout();
             this.ResumeLayout(false);
@@ -457,12 +417,7 @@
         internal System.Windows.Forms.Label lblWatermarkOffset;
         internal System.Windows.Forms.GroupBox gbWatermarkBackground;
         internal System.Windows.Forms.Label lblRectangleCornerRadius;
-        internal System.Windows.Forms.Label lblWatermarkBackColor;
-        internal System.Windows.Forms.PictureBox pbWatermarkGradient2;
         internal System.Windows.Forms.ComboBox cbWatermarkGradientType;
-        internal System.Windows.Forms.PictureBox pbWatermarkBorderColor;
-        internal System.Windows.Forms.Label lblWatermarkGradientType;
-        internal System.Windows.Forms.PictureBox pbWatermarkGradient1;
         internal System.Windows.Forms.NumericUpDown nudWatermarkCornerRadius;
         internal System.Windows.Forms.Label lblWatermarkCornerRadiusTip;
         internal System.Windows.Forms.GroupBox gbWatermarkText;
@@ -470,13 +425,15 @@
         internal System.Windows.Forms.Label lblWatermarkFont;
         internal System.Windows.Forms.Button btnWatermarkFont;
         internal System.Windows.Forms.TextBox txtWatermarkText;
-        internal System.Windows.Forms.PictureBox pbWatermarkFontColor;
         internal System.Windows.Forms.Button btwWatermarkBrowseImage;
         internal System.Windows.Forms.TextBox txtWatermarkImageLocation;
-        internal System.Windows.Forms.Label lblWatermarkBorderColor;
         private HelpersLib.MyPictureBox pbPreview;
         private System.Windows.Forms.GroupBox gbImageWatermark;
         private System.Windows.Forms.CheckBox cbWatermarkDrawBackground;
-        private System.Windows.Forms.CheckBox cbWatermarkBackColor2;
+        private System.Windows.Forms.CheckBox cbWatermarkUseGradient;
+        private HelpersLib.ColorButton btnTextColor;
+        private HelpersLib.ColorButton btnBackgroundColor2;
+        private HelpersLib.ColorButton btnBackgroundColor;
+        private HelpersLib.ColorButton btnBorderColor;
     }
 }
