@@ -261,7 +261,4 @@ For example, if the argument name is 'pastebin_text' then a value of '%input' wi
 replaced with the text you're going to upload. Same thing applies for url shortener; '%input' 
 will be replaced with the url in the argument.</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
