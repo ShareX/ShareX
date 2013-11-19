@@ -56,7 +56,7 @@ namespace ImageEffectsLib
 
             if (chkWatermarkPosition.Items.Count == 0)
             {
-                chkWatermarkPosition.Items.AddRange(Enum.GetNames(typeof(ContentAlignment)));
+                chkWatermarkPosition.Items.AddRange(Helpers.GetEnumNamesProper<ContentAlignment>());
             }
 
             chkWatermarkPosition.SelectedIndex = config.Placement.GetIndex();
@@ -76,7 +76,7 @@ namespace ImageEffectsLib
 
             if (cbWatermarkGradientType.Items.Count == 0)
             {
-                cbWatermarkGradientType.Items.AddRange(Enum.GetNames(typeof(LinearGradientMode)));
+                cbWatermarkGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             }
 
             cbWatermarkGradientType.SelectedIndex = (int)config.Text.GradientType;
@@ -232,6 +232,8 @@ namespace ImageEffectsLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
+                ofd.Filter = "All image types (*.jpg, *.jpeg, *.png, *.gif, *.bmp, *.tif, *.tiff)|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tif;*.tiff";
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     txtWatermarkImageLocation.Text = ofd.FileName;

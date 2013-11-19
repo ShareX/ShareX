@@ -1,11 +1,16 @@
-﻿ShareX 8.4.0 - 2013-11-15
+﻿ShareX 8.4.0 - 2013-11-20
 
-Added more image adjustment effects: black & white, color matrix, polaroid and sepia
-Added more image filter effects: edge detect, emboss, gaussian blur, convolution matrix, mean removal, sharpen and smooth
+This update mainly about improving/adding features to image effects and watermark, because of this changes image effects and watermark settings gonna be reset.
+
+Added new drawings category to image effects for be able to add background, border, checkboard, image and text (Watermark)
+Added new image adjustment effects: black & white, polaroid and sepia
+Added new image filter effects: edge detect, emboss, gaussian blur, convolution matrix, mean removal, sharpen and smooth
 Added new image manipulation effect: crop
-Added new Drawings category for adding background, border, image and text
-Task settings can choose which FTP account to be used
+Image effects accessible from Tools menu for be able to load image file (or drag and drop image) and save changes
+Simplified watermark settings
+In task settings be able to choose which FTP account to be used
 Allow Jira address with subfolder
+Using GitHub API for check updates
 
 ShareX 8.3 r747 - 2013-11-02
 

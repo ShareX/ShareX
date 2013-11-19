@@ -275,6 +275,38 @@ namespace HelpersLib
             return (T)values.GetValue(i);
         }
 
+        // Example: "TopLeft" becomes "Top left"
+        public static string[] GetEnumNamesProper<T>()
+        {
+            string[] names = Enum.GetNames(typeof(T));
+            string[] newNames = new string[names.Length];
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                string name = names[i];
+                StringBuilder sb = new StringBuilder();
+
+                for (int i2 = 0; i2 < name.Length; i2++)
+                {
+                    char c = name[i2];
+
+                    if (i2 > 0 && char.IsUpper(c))
+                    {
+                        sb.Append(' ');
+                        sb.Append(char.ToLowerInvariant(c));
+                    }
+                    else
+                    {
+                        sb.Append(c);
+                    }
+                }
+
+                newNames[i] = sb.ToString();
+            }
+
+            return newNames;
+        }
+
         public static string Encode(string text, string unreservedCharacters)
         {
             StringBuilder result = new StringBuilder();

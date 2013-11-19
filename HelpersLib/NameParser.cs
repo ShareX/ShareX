@@ -229,7 +229,7 @@ namespace HelpersLib
             {
                 Font = new XmlFont("Lucida Console", 8),
                 AutoClose = false,
-                Opacity = 0.8,
+                Opacity = 0.9,
                 ShowImageMargin = false
             };
 
@@ -243,14 +243,20 @@ namespace HelpersLib
 
             foreach (var variable in variables)
             {
-                ToolStripMenuItem tsi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
-                tsi.Click += (sender, e) =>
+                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
+                tsmi.Click += (sender, e) =>
                 {
                     string text = ((ToolStripMenuItem)sender).Tag.ToString();
                     tb.AppendTextToSelection(text);
                 };
-                cms.Items.Add(tsi);
+                cms.Items.Add(tsmi);
             }
+
+            cms.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiClose = new ToolStripMenuItem("Close");
+            tsmiClose.Click += (sender, e) => cms.Close();
+            cms.Items.Add(tsmiClose);
 
             tb.MouseDown += (sender, e) =>
             {

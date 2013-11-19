@@ -39,14 +39,13 @@ namespace HelpersLib
                 return base.EditValue(context, provider, value);
             }
 
-            using (OpenFileDialog dlg = new OpenFileDialog())
+            using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                dlg.Title = "Browse for images...";
-                dlg.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                ofd.Filter = "All image types (*.jpg, *.jpeg, *.png, *.gif, *.bmp, *.tif, *.tiff)|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tif;*.tiff";
 
-                if (dlg.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    value = dlg.FileName;
+                    value = ofd.FileName;
                 }
             }
 
