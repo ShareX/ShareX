@@ -1,8 +1,8 @@
 ﻿ShareX 8.4.0 - 2013-11-20
 
-This update mainly about improving/adding features to image effects and watermark, because of this changes image effects and watermark settings gonna be reset.
+This update is focused on performance improvements and features additions to image effects and watermark. These changes break backward compatibility. Therefore image effects and watermark settings will be reset.
 
-Added new drawings category to image effects for be able to add background, border, checkboard, image and text (Watermark)
+Added new drawings category to image effects for be able to add background, border, checkerboard, image and text (watermark)
 Added new image adjustment effects: black & white, polaroid and sepia
 Added new image filter effects: edge detect, emboss, gaussian blur, convolution matrix, mean removal, sharpen and smooth
 Added new image manipulation effect: crop
