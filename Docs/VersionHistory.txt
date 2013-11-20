@@ -2,23 +2,24 @@
 
 This update is focused on performance improvements and features additions to image effects and watermark. These changes break backward compatibility. Therefore image effects and watermark settings will be reset.
 
-Added new drawings category to image effects for be able to add background, border, checkerboard, image and text (watermark)
-Added new image adjustment effects: black & white, polaroid and sepia
-Added new image filter effects: edge detect, emboss, gaussian blur, convolution matrix, mean removal, sharpen and smooth
-Added new image manipulation effect: crop
-Image effects accessible from Tools menu for be able to load image file (or drag and drop image) and save changes
-Simplified watermark settings
-In task settings be able to choose which FTP account to be used
-Allow Jira address with subfolder
-Using GitHub API for check updates
+* Added new drawings category to image effects for be able to add background, border, checkerboard, image and text (watermark)
+* Added new image adjustment effects: black & white, polaroid and sepia
+* Added new image filter effects: edge detect, emboss, gaussian blur, convolution matrix, mean removal, sharpen and smooth
+* Added new image manipulation effect: crop
+* Image effects accessible from Tools menu
+* Simplified watermark settings
+* In task settings be able to choose which FTP account to be used
+* Allow Jira address with subfolder
+* Using GitHub API for check updates
+* Added remember main window size setting
 
 ShareX 8.3 r747 - 2013-11-02
 
-Tray icon can now report progress percentage
-Color picker improvements
-Added new After Capture task "Add image effects" in favour of resize, border and shadow
-Added hotkey support for Tools (screen color picker, hash check and index folder) and to stop uploading
-Added mega.co.nz file uploader support
+* Tray icon can now report progress percentage
+* Color picker improvements
+* Added new After Capture task "Add image effects" in favour of resize, border and shadow
+* Added hotkey support for Tools (screen color picker, hash check and index folder) and to stop uploading
+* Added mega.co.nz file uploader support
 
 ShareX 8.2 r655 – 2013-09-26
 

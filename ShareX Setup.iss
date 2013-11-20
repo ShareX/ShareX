@@ -28,7 +28,7 @@ DirExistsWarning=no
 ;InfoBeforeFile=Docs\VersionHistory.txt
 InternalCompressLevel=ultra64
 LanguageDetectionMethod=uilanguage
-LicenseFile=Docs\license.txt
+LicenseFile=LICENSE.txt
 MinVersion=0,5.01.2600
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir=Output\
@@ -58,7 +58,7 @@ Name: "CreateStartupIcon"; Description: "Launch {#MyAppName} automatically at Wi
 Source: "ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
-Source: "Docs\license.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "LICENSE.txt"; DestDir: {app}; Flags: ignoreversion
 ;Source: "ShareX\bin\Release\*.pdb"; DestDir: {app}; Flags: ignoreversion
 
 [Icons]

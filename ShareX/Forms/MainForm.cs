@@ -767,9 +767,7 @@ namespace ShareX
 
         private void tsmiImageEffects_Click(object sender, EventArgs e)
         {
-            ImageEffectsForm form = new ImageEffectsForm(ShareXResources.Logo);
-            form.EditorMode();
-            form.Show();
+            OpenImageEffects();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
