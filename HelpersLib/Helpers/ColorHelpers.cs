@@ -295,8 +295,7 @@ namespace HelpersLib
 
         public static Color RandomColor()
         {
-            Random rand = Helpers.Random;
-            return Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            return Color.FromArgb(Helpers.Random(255), Helpers.Random(255), Helpers.Random(255));
         }
 
         public static Color ParseColor(string color)

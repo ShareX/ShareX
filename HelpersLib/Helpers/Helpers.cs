@@ -54,8 +54,23 @@ namespace HelpersLib
         public const string URLPathCharacters = URLCharacters + "/"; // 47
         public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;=";
 
-        public static readonly Random Random = new Random();
+        private static readonly object randomLock = new object();
+        private static readonly Random random = new Random();
+
         public static readonly Version OSVersion = Environment.OSVersion.Version;
+
+        public static int Random(int max)
+        {
+            return Random(0, max);
+        }
+
+        public static int Random(int min, int max)
+        {
+            lock (randomLock)
+            {
+                return random.Next(min, max + 1);
+            }
+        }
 
         public static string GetFilenameExtension(string filePath)
         {
@@ -131,7 +146,7 @@ namespace HelpersLib
 
         public static char GetRandomChar(string chars)
         {
-            return chars[Random.Next(chars.Length)];
+            return chars[Random(chars.Length - 1)];
         }
 
         public static string GetRandomString(string chars, int length)
