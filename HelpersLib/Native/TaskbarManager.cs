@@ -135,7 +135,7 @@ namespace HelpersLib
             }
         }
 
-        public static void SetProgressValue(IntPtr hwnd, int currentValue, int maximumValue = 100)
+        private static void SetProgressValue(IntPtr hwnd, int currentValue, int maximumValue = 100)
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
@@ -154,7 +154,7 @@ namespace HelpersLib
             form.InvokeSafe(() => SetProgressValue(form.Handle, currentValue, maximumValue));
         }
 
-        public static void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus state)
+        private static void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus state)
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {

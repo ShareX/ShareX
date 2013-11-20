@@ -94,8 +94,6 @@ namespace ShareX
             ListViewGroup urlShortenersGroup = new ListViewGroup("URL Shorteners", HorizontalAlignment.Left);
             lvUploaders.Groups.AddRange(new[] { imageUploadersGroup, textUploadersGroup, fileUploadersGroup, urlShortenersGroup });
 
-            TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
-
             foreach (ImageDestination uploader in Enum.GetValues(typeof(ImageDestination)))
             {
                 switch (uploader)
@@ -107,6 +105,7 @@ namespace ShareX
 
                 lvi = new ListViewItem(uploader.GetDescription());
 
+                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
                 UploadTask task = UploadTask.CreateImageUploaderTask((Image)TestImage.Clone(), defaultTaskSettings);
                 task.Info.TaskSettings.ImageDestination = uploader;
 
@@ -125,6 +124,7 @@ namespace ShareX
 
                 lvi = new ListViewItem(uploader.GetDescription());
 
+                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
                 UploadTask task = UploadTask.CreateTextUploaderTask(TestText, defaultTaskSettings);
                 task.Info.TaskSettings.TextDestination = uploader;
 
@@ -145,6 +145,7 @@ namespace ShareX
 
                 lvi = new ListViewItem(uploader.GetDescription());
 
+                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
                 UploadTask task = UploadTask.CreateImageUploaderTask((Image)TestImage.Clone(), defaultTaskSettings);
                 task.Info.TaskSettings.ImageDestination = ImageDestination.FileUploader;
                 task.Info.TaskSettings.FileDestination = uploader;
@@ -158,6 +159,7 @@ namespace ShareX
             {
                 lvi = new ListViewItem(uploader.GetDescription());
 
+                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
                 UploadTask task = UploadTask.CreateURLShortenerTask(TestURL, defaultTaskSettings);
                 task.Info.TaskSettings.URLShortenerDestination = uploader;
 
@@ -221,7 +223,11 @@ namespace ShareX
             bw.WorkerReportsProgress = true;
             bw.DoWork += bw_DoWork;
             bw.ProgressChanged += bw_ProgressChanged;
-            bw.RunWorkerCompleted += (x, x2) => Testing = false;
+            bw.RunWorkerCompleted += (x, x2) =>
+            {
+                TaskManager.UpdateProgressUI();
+                Testing = false;
+            };
             bw.RunWorkerAsync(uploaders);
         }
 

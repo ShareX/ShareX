@@ -331,7 +331,7 @@
             // 
             // btwWatermarkBrowseImage
             // 
-            this.btwWatermarkBrowseImage.Location = new System.Drawing.Point(376, 20);
+            this.btwWatermarkBrowseImage.Location = new System.Drawing.Point(376, 22);
             this.btwWatermarkBrowseImage.Name = "btwWatermarkBrowseImage";
             this.btwWatermarkBrowseImage.Size = new System.Drawing.Size(64, 24);
             this.btwWatermarkBrowseImage.TabIndex = 1;
@@ -342,7 +342,7 @@
             // 
             // txtWatermarkImageLocation
             // 
-            this.txtWatermarkImageLocation.Location = new System.Drawing.Point(64, 22);
+            this.txtWatermarkImageLocation.Location = new System.Drawing.Point(64, 24);
             this.txtWatermarkImageLocation.Name = "txtWatermarkImageLocation";
             this.txtWatermarkImageLocation.Size = new System.Drawing.Size(304, 20);
             this.txtWatermarkImageLocation.TabIndex = 0;
@@ -363,7 +363,7 @@
             // lblImageLocation
             // 
             this.lblImageLocation.AutoSize = true;
-            this.lblImageLocation.Location = new System.Drawing.Point(16, 26);
+            this.lblImageLocation.Location = new System.Drawing.Point(16, 28);
             this.lblImageLocation.Name = "lblImageLocation";
             this.lblImageLocation.Size = new System.Drawing.Size(39, 13);
             this.lblImageLocation.TabIndex = 2;
