@@ -24,13 +24,12 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 
 namespace HelpersLib
 {
-    using System.Net;
-    using System.Net.Security;
-    using System.Security.Cryptography.X509Certificates;
-
     public class SSLBypassHelper : IDisposable
     {
         public SSLBypassHelper()

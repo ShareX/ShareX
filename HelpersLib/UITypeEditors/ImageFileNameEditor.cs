@@ -39,14 +39,11 @@ namespace HelpersLib
                 return base.EditValue(context, provider, value);
             }
 
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "All image types (*.jpg, *.jpeg, *.png, *.gif, *.bmp, *.tif, *.tiff)|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tif;*.tiff";
+            string filePath = ImageHelpers.OpenImageFileDialog();
 
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    value = ofd.FileName;
-                }
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                value = filePath;
             }
 
             return value;

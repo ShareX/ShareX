@@ -230,14 +230,11 @@ namespace ImageEffectsLib
 
         private void btwWatermarkBrowseImage_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "All image types (*.jpg, *.jpeg, *.png, *.gif, *.bmp, *.tif, *.tiff)|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tif;*.tiff";
+            string filePath = ImageHelpers.OpenImageFileDialog();
 
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    txtWatermarkImageLocation.Text = ofd.FileName;
-                }
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                txtWatermarkImageLocation.Text = filePath;
             }
         }
     }

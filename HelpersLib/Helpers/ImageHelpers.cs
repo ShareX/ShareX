@@ -59,6 +59,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -949,6 +950,69 @@ namespace HelpersLib
                 }
             }
             return null;
+        }
+
+        public static string OpenImageFileDialog()
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|" +
+                    "All files (*.*)|*.*";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    return ofd.FileName;
+                }
+            }
+
+            return null;
+        }
+
+        public static void SaveImageFileDialog(Image img)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.DefaultExt = ".png";
+                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = sfd.FileName;
+                    string ext = Helpers.GetProperExtension(filePath);
+
+                    if (!string.IsNullOrEmpty(ext))
+                    {
+                        ImageFormat imageFormat;
+
+                        switch (ext)
+                        {
+                            default:
+                            case "png":
+                                imageFormat = ImageFormat.Png;
+                                break;
+                            case "jpg":
+                            case "jpeg":
+                            case "jpe":
+                            case "jfif":
+                                imageFormat = ImageFormat.Jpeg;
+                                break;
+                            case "gif":
+                                imageFormat = ImageFormat.Gif;
+                                break;
+                            case "bmp":
+                                imageFormat = ImageFormat.Bmp;
+                                break;
+                            case "tif":
+                            case "tiff":
+                                imageFormat = ImageFormat.Tiff;
+                                break;
+                        }
+
+                        img.Save(filePath, imageFormat);
+                    }
+                }
+            }
         }
     }
 }

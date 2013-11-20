@@ -340,34 +340,21 @@ namespace ImageEffectsLib
 
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Title = "Browse for images...";
-                ofd.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            string filePath = ImageHelpers.OpenImageFileDialog();
 
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    if (DefaultImage != null) DefaultImage.Dispose();
-                    DefaultImage = Helpers.GetImageFromFile(ofd.FileName);
-                    UpdatePreview();
-                }
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                if (DefaultImage != null) DefaultImage.Dispose();
+                DefaultImage = Helpers.GetImageFromFile(filePath);
+                UpdatePreview();
             }
         }
 
         private void btnSaveImage_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog())
+            using (Image img = ApplyEffects())
             {
-                sfd.DefaultExt = ".png";
-                sfd.Filter = "PNG image (*.png)|*.png";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    using (Image preview = ApplyEffects())
-                    {
-                        preview.Save(sfd.FileName, ImageFormat.Png);
-                    }
-                }
+                ImageHelpers.SaveImageFileDialog(img);
             }
         }
 

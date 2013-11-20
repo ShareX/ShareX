@@ -311,6 +311,22 @@ namespace HelpersLib
             return sb.ToString();
         }
 
+        public static string GetProperExtension(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                int dot = filePath.LastIndexOf('.');
+
+                if (dot >= 0)
+                {
+                    string ext = filePath.Substring(dot + 1);
+                    return ext.ToLowerInvariant();
+                }
+            }
+
+            return null;
+        }
+
         public static string Encode(string text, string unreservedCharacters)
         {
             StringBuilder result = new StringBuilder();
