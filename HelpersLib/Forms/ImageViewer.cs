@@ -56,7 +56,7 @@ namespace HelpersLib
         {
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
-                using (Image img = Helpers.GetImageFromFile(filepath))
+                using (Image img = ImageHelpers.LoadImage(filepath))
                 using (ImageViewer viewer = new ImageViewer(img))
                 {
                     viewer.ShowDialog();

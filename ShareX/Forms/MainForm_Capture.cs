@@ -134,6 +134,9 @@ namespace ShareX
                 case HotkeyType.IndexFolder:
                     OpenIndexFolder();
                     break;
+                case HotkeyType.ImageEffects:
+                    OpenImageEffects();
+                    break;
             }
         }
 

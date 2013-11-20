@@ -197,7 +197,7 @@ namespace HelpersLib
                 {
                     isImageLoading = true;
                     Reset();
-                    Image = Helpers.GetImageFromFile(filePath);
+                    Image = ImageHelpers.LoadImage(filePath);
                     AutoSetSizeMode();
                     isImageLoading = false;
                 }

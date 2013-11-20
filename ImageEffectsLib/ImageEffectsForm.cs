@@ -125,12 +125,15 @@ namespace ImageEffectsLib
 
         private void UpdatePreview()
         {
-            Stopwatch timer = Stopwatch.StartNew();
-
-            using (Image preview = ApplyEffects())
+            if (DefaultImage != null)
             {
-                pbResult.LoadImage(preview);
-                Text = string.Format("ShareX - Image effects - Width: {0}, Height: {1}, Render time: {2} ms", preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                Stopwatch timer = Stopwatch.StartNew();
+
+                using (Image preview = ApplyEffects())
+                {
+                    pbResult.LoadImage(preview);
+                    Text = string.Format("ShareX - Image effects - Width: {0}, Height: {1}, Render time: {2} ms", preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                }
             }
         }
 
@@ -345,7 +348,7 @@ namespace ImageEffectsLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 if (DefaultImage != null) DefaultImage.Dispose();
-                DefaultImage = Helpers.GetImageFromFile(filePath);
+                DefaultImage = ImageHelpers.LoadImage(filePath);
                 UpdatePreview();
             }
         }
@@ -381,7 +384,7 @@ namespace ImageEffectsLib
                     if (Helpers.IsImageFile(files[0]))
                     {
                         if (DefaultImage != null) DefaultImage.Dispose();
-                        DefaultImage = Helpers.GetImageFromFile(files[0]);
+                        DefaultImage = ImageHelpers.LoadImage(files[0]);
                         UpdatePreview();
                     }
                 }

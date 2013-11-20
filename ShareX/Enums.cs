@@ -163,7 +163,9 @@ namespace ShareX
         [Description("Hash check")]
         HashCheck,
         [Description("Index folder")]
-        IndexFolder
+        IndexFolder,
+        [Description("Image effects")]
+        ImageEffects
     }
 
     public enum HotkeyStatus

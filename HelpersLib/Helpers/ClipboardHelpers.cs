@@ -210,7 +210,7 @@ namespace HelpersLib
             {
                 try
                 {
-                    using (Image img = Helpers.GetImageFromFile(path))
+                    using (Image img = ImageHelpers.LoadImage(path))
                     {
                         return CopyImage(img);
                     }

@@ -68,7 +68,7 @@ namespace ImageEffectsLib
         {
             if (!string.IsNullOrEmpty(ImageLocation) && File.Exists(ImageLocation))
             {
-                using (Image img2 = Helpers.GetImageFromFile(ImageLocation))
+                using (Image img2 = ImageHelpers.LoadImage(ImageLocation))
                 {
                     Point imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, img2.Size);
                     Rectangle imageRectangle = new Rectangle(imagePosition, img2.Size);

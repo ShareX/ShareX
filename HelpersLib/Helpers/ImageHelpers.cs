@@ -1014,5 +1014,16 @@ namespace HelpersLib
                 }
             }
         }
+
+        // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
+        public static Image LoadImage(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+            }
+
+            return null;
+        }
     }
 }

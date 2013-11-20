@@ -564,6 +564,19 @@ namespace ShareX
             UploadManager.IndexFolder();
         }
 
+        private void OpenImageEffects()
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                Image img = ImageHelpers.LoadImage(filePath);
+                ImageEffectsForm form = new ImageEffectsForm(img);
+                form.EditorMode();
+                form.Show();
+            }
+        }
+
         #region Form events
 
         protected override void SetVisibleCore(bool value)

@@ -110,7 +110,7 @@ namespace ShareX
             if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && dataType == EDataType.Image)
             {
                 task.Info.Job = TaskJob.ImageJob;
-                task.tempImage = Helpers.GetImageFromFile(filePath);
+                task.tempImage = ImageHelpers.LoadImage(filePath);
             }
             else
             {

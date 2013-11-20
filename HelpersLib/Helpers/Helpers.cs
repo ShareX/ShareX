@@ -109,17 +109,6 @@ namespace HelpersLib
             return EDataType.File;
         }
 
-        // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
-        public static Image GetImageFromFile(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
-            }
-
-            return null;
-        }
-
         public static string AddZeroes(int number, int digits = 2)
         {
             return number.ToString().PadLeft(digits, '0');
