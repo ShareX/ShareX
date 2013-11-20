@@ -51,6 +51,7 @@
             this.cLogo = new HelpersLib.Canvas();
             this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
             this.lblOwners = new System.Windows.Forms.Label();
+            this.pbMikeSteamURL = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDanaSteamURL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -69,7 +71,7 @@
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductName.ForeColor = System.Drawing.Color.Black;
-            this.lblProductName.Location = new System.Drawing.Point(15, 9);
+            this.lblProductName.Location = new System.Drawing.Point(13, 9);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(134, 24);
             this.lblProductName.TabIndex = 0;
@@ -305,12 +307,26 @@
             this.lblOwners.TabIndex = 33;
             this.lblOwners.Text = "Owners:";
             // 
+            // pbMikeSteamURL
+            // 
+            this.pbMikeSteamURL.BackColor = System.Drawing.Color.Transparent;
+            this.pbMikeSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMikeSteamURL.Image = global::ShareX.Properties.Resources.steam;
+            this.pbMikeSteamURL.Location = new System.Drawing.Point(63, 166);
+            this.pbMikeSteamURL.Name = "pbMikeSteamURL";
+            this.pbMikeSteamURL.Size = new System.Drawing.Size(16, 16);
+            this.pbMikeSteamURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMikeSteamURL.TabIndex = 34;
+            this.pbMikeSteamURL.TabStop = false;
+            this.pbMikeSteamURL.Click += new System.EventHandler(this.pbMikeSteamURL_Click);
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(400, 451);
+            this.Controls.Add(this.pbMikeSteamURL);
             this.Controls.Add(this.lblOwners);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.pbDanaSteamURL);
@@ -349,6 +365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDana)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDanaSteamURL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +395,6 @@
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private System.Windows.Forms.Label lblOwners;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
+        private System.Windows.Forms.PictureBox pbMikeSteamURL;
     }
 }

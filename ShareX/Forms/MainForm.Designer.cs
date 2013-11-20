@@ -95,10 +95,7 @@ namespace ShareX
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbImageHistory = new System.Windows.Forms.ToolStripButton();
-            this.tsddbHelp = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDonate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDebug = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddbDebug = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiShowDebugLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestImageUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestTextUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,6 +197,7 @@ namespace ShareX
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -208,7 +206,8 @@ namespace ShareX
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
+            this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -240,13 +239,15 @@ namespace ShareX
             this.tsbScreenshotsFolder,
             this.tsbHistory,
             this.tsbImageHistory,
-            this.tsddbHelp});
+            this.tsddbDebug,
+            this.tsmiDonate,
+            this.tsmiAbout});
             this.tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
             this.tsMain.Padding = new System.Windows.Forms.Padding(6);
             this.tsMain.ShowItemToolTips = false;
-            this.tsMain.Size = new System.Drawing.Size(160, 392);
+            this.tsMain.Size = new System.Drawing.Size(160, 430);
             this.tsMain.TabIndex = 0;
             this.tsMain.Text = "toolStrip1";
             // 
@@ -602,42 +603,9 @@ namespace ShareX
             this.tsbImageHistory.Text = "Image history...";
             this.tsbImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
-            // tsddbHelp
+            // tsddbDebug
             // 
-            this.tsddbHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAbout,
-            this.tsmiDonate,
-            this.tsmiDebug});
-            this.tsddbHelp.Image = global::ShareX.Properties.Resources.question_button;
-            this.tsddbHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsddbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbHelp.Name = "tsddbHelp";
-            this.tsddbHelp.Size = new System.Drawing.Size(147, 20);
-            this.tsddbHelp.Text = "Help";
-            // 
-            // tsmiAbout
-            // 
-            this.tsmiAbout.Image = global::ShareX.Properties.Resources.application_browser;
-            this.tsmiAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(121, 22);
-            this.tsmiAbout.Text = "About...";
-            this.tsmiAbout.Click += new System.EventHandler(this.tsbAbout_Click);
-            // 
-            // tsmiDonate
-            // 
-            this.tsmiDonate.Image = global::ShareX.Properties.Resources.present;
-            this.tsmiDonate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiDonate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsmiDonate.Name = "tsmiDonate";
-            this.tsmiDonate.Size = new System.Drawing.Size(121, 22);
-            this.tsmiDonate.Text = "Donate...";
-            this.tsmiDonate.Click += new System.EventHandler(this.tsbDonate_Click);
-            // 
-            // tsmiDebug
-            // 
-            this.tsmiDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiShowDebugLog,
             this.tsmiTestImageUpload,
             this.tsmiTestTextUpload,
@@ -645,12 +613,12 @@ namespace ShareX
             this.tsmiTestURLShortener,
             this.tsmiTestUploaders,
             this.tsmiTestShapeCapture});
-            this.tsmiDebug.Image = global::ShareX.Properties.Resources.block;
-            this.tsmiDebug.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiDebug.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsmiDebug.Name = "tsmiDebug";
-            this.tsmiDebug.Size = new System.Drawing.Size(121, 22);
-            this.tsmiDebug.Text = "Debug";
+            this.tsddbDebug.Image = global::ShareX.Properties.Resources.block;
+            this.tsddbDebug.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsddbDebug.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbDebug.Name = "tsddbDebug";
+            this.tsddbDebug.Size = new System.Drawing.Size(147, 20);
+            this.tsddbDebug.Text = "Debug";
             // 
             // tsmiShowDebugLog
             // 
@@ -724,7 +692,7 @@ namespace ShareX
             // scMain.Panel2
             // 
             this.scMain.Panel2.Controls.Add(this.pbPreview);
-            this.scMain.Size = new System.Drawing.Size(784, 392);
+            this.scMain.Size = new System.Drawing.Size(784, 430);
             this.scMain.SplitterDistance = 400;
             this.scMain.SplitterWidth = 6;
             this.scMain.TabIndex = 1;
@@ -741,7 +709,7 @@ namespace ShareX
             this.lblDragAndDropTip.Location = new System.Drawing.Point(8, 92);
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
             this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(30, 20, 30, 30);
-            this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 208);
+            this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 246);
             this.lblDragAndDropTip.TabIndex = 2;
             this.lblDragAndDropTip.Text = "You can drag and drop files to this window";
             this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -753,7 +721,7 @@ namespace ShareX
             this.lblSplitter.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblSplitter.Location = new System.Drawing.Point(0, 0);
             this.lblSplitter.Name = "lblSplitter";
-            this.lblSplitter.Size = new System.Drawing.Size(1, 392);
+            this.lblSplitter.Size = new System.Drawing.Size(1, 430);
             this.lblSplitter.TabIndex = 0;
             // 
             // lvUploads
@@ -778,7 +746,7 @@ namespace ShareX
             this.lvUploads.Location = new System.Drawing.Point(0, 0);
             this.lvUploads.Name = "lvUploads";
             this.lvUploads.ShowItemToolTips = true;
-            this.lvUploads.Size = new System.Drawing.Size(400, 392);
+            this.lvUploads.Size = new System.Drawing.Size(400, 430);
             this.lvUploads.TabIndex = 1;
             this.lvUploads.UseCompatibleStateImageBehavior = false;
             this.lvUploads.View = System.Windows.Forms.View.Details;
@@ -840,7 +808,7 @@ namespace ShareX
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Location = new System.Drawing.Point(0, 0);
             this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(378, 392);
+            this.pbPreview.Size = new System.Drawing.Size(378, 430);
             this.pbPreview.TabIndex = 1;
             // 
             // cmsUploadInfo
@@ -1198,8 +1166,8 @@ namespace ShareX
             this.tsmiScreenshotsFolder,
             this.tsmiTrayHistory,
             this.tsmiTrayImageHistory,
-            this.tsmiTrayAbout,
             this.tsmiTrayDonate,
+            this.tsmiTrayAbout,
             this.tssTray3,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
@@ -1495,6 +1463,14 @@ namespace ShareX
             this.tsmiTrayIndexFolder.Text = "Index folder...";
             this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
+            // tsmiTrayImageEffects
+            // 
+            this.tsmiTrayImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
+            this.tsmiTrayImageEffects.Name = "tsmiTrayImageEffects";
+            this.tsmiTrayImageEffects.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayImageEffects.Text = "Image effects...";
+            this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
+            // 
             // tsmiScreenshotsFolder
             // 
             this.tsmiScreenshotsFolder.Image = global::ShareX.Properties.Resources.folder_open_image;
@@ -1554,20 +1530,32 @@ namespace ShareX
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiTrayImageEffects
+            // tsmiAbout
             // 
-            this.tsmiTrayImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
-            this.tsmiTrayImageEffects.Name = "tsmiTrayImageEffects";
-            this.tsmiTrayImageEffects.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayImageEffects.Text = "Image effects...";
-            this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
+            this.tsmiAbout.Image = global::ShareX.Properties.Resources.application_browser;
+            this.tsmiAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(147, 20);
+            this.tsmiAbout.Text = "About...";
+            this.tsmiAbout.Click += new System.EventHandler(this.tsbAbout_Click);
+            // 
+            // tsmiDonate
+            // 
+            this.tsmiDonate.Image = global::ShareX.Properties.Resources.present;
+            this.tsmiDonate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiDonate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsmiDonate.Name = "tsmiDonate";
+            this.tsmiDonate.Size = new System.Drawing.Size(147, 20);
+            this.tsmiDonate.Text = "Donate...";
+            this.tsmiDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 392);
+            this.ClientSize = new System.Drawing.Size(944, 430);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
@@ -1605,7 +1593,6 @@ namespace ShareX
         private System.Windows.Forms.ToolStrip tsMain;
         private System.Windows.Forms.ToolStripButton tsbClipboardUpload;
         private System.Windows.Forms.ToolStripButton tsbFileUpload;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
         private System.Windows.Forms.ToolStripSeparator tssMain1;
         private System.Windows.Forms.ColumnHeader chSpeed;
         private System.Windows.Forms.ColumnHeader chRemaining;
@@ -1722,10 +1709,8 @@ namespace ShareX
         private System.Windows.Forms.ToolStripMenuItem tsmiHideMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiAutoCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAutoCapture;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbHelp;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbDebug;
         private System.Windows.Forms.ToolStripMenuItem ssToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDonate;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDebug;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestImageUpload;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestTextUpload;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestFileUpload;
@@ -1749,5 +1734,7 @@ namespace ShareX
         public System.Windows.Forms.Label lblDragAndDropTip;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEffects;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEffects;
+        private System.Windows.Forms.ToolStripButton tsmiAbout;
+        private System.Windows.Forms.ToolStripButton tsmiDonate;
     }
 }
