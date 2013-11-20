@@ -432,13 +432,13 @@ namespace ShareX
             {
                 foreach (WindowInfo window in windows)
                 {
-                    string title = window.Text.Truncate(50);
-                    ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
-                    tsi.Tag = window;
-                    tsi.Click += handlerWindow;
-
                     try
                     {
+                        string title = window.Text.Truncate(50);
+                        ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
+                        tsi.Tag = window;
+                        tsi.Click += handlerWindow;
+
                         using (Icon icon = window.Icon)
                         {
                             if (icon != null && icon.Width > 0 && icon.Height > 0)
