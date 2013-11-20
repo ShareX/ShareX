@@ -103,6 +103,8 @@ namespace ShareX
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestShapeCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
             this.scMain = new HelpersLib.SplitContainerCustomSplitter();
             this.lblDragAndDropTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
@@ -201,13 +203,11 @@ namespace ShareX
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDonate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
-            this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -675,6 +675,26 @@ namespace ShareX
             this.tsmiTestShapeCapture.Size = new System.Drawing.Size(182, 22);
             this.tsmiTestShapeCapture.Text = "Test shape capture...";
             this.tsmiTestShapeCapture.Click += new System.EventHandler(this.tsmiTestShapeCapture_Click);
+            // 
+            // tsmiDonate
+            // 
+            this.tsmiDonate.Image = global::ShareX.Properties.Resources.present;
+            this.tsmiDonate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiDonate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsmiDonate.Name = "tsmiDonate";
+            this.tsmiDonate.Size = new System.Drawing.Size(147, 20);
+            this.tsmiDonate.Text = "Donate...";
+            this.tsmiDonate.Click += new System.EventHandler(this.tsbDonate_Click);
+            // 
+            // tsmiAbout
+            // 
+            this.tsmiAbout.Image = global::ShareX.Properties.Resources.application_browser;
+            this.tsmiAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(147, 20);
+            this.tsmiAbout.Text = "About...";
+            this.tsmiAbout.Click += new System.EventHandler(this.tsbAbout_Click);
             // 
             // scMain
             // 
@@ -1495,14 +1515,6 @@ namespace ShareX
             this.tsmiTrayImageHistory.Text = "Image history...";
             this.tsmiTrayImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
-            // tsmiTrayAbout
-            // 
-            this.tsmiTrayAbout.Image = global::ShareX.Properties.Resources.application_browser;
-            this.tsmiTrayAbout.Name = "tsmiTrayAbout";
-            this.tsmiTrayAbout.Size = new System.Drawing.Size(188, 22);
-            this.tsmiTrayAbout.Text = "About...";
-            this.tsmiTrayAbout.Click += new System.EventHandler(this.tsbAbout_Click);
-            // 
             // tsmiTrayDonate
             // 
             this.tsmiTrayDonate.Image = global::ShareX.Properties.Resources.present;
@@ -1510,6 +1522,14 @@ namespace ShareX
             this.tsmiTrayDonate.Size = new System.Drawing.Size(188, 22);
             this.tsmiTrayDonate.Text = "Donate...";
             this.tsmiTrayDonate.Click += new System.EventHandler(this.tsbDonate_Click);
+            // 
+            // tsmiTrayAbout
+            // 
+            this.tsmiTrayAbout.Image = global::ShareX.Properties.Resources.application_browser;
+            this.tsmiTrayAbout.Name = "tsmiTrayAbout";
+            this.tsmiTrayAbout.Size = new System.Drawing.Size(188, 22);
+            this.tsmiTrayAbout.Text = "About...";
+            this.tsmiTrayAbout.Click += new System.EventHandler(this.tsbAbout_Click);
             // 
             // tssTray3
             // 
@@ -1530,26 +1550,6 @@ namespace ShareX
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiAbout
-            // 
-            this.tsmiAbout.Image = global::ShareX.Properties.Resources.application_browser;
-            this.tsmiAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(147, 20);
-            this.tsmiAbout.Text = "About...";
-            this.tsmiAbout.Click += new System.EventHandler(this.tsbAbout_Click);
-            // 
-            // tsmiDonate
-            // 
-            this.tsmiDonate.Image = global::ShareX.Properties.Resources.present;
-            this.tsmiDonate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiDonate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsmiDonate.Name = "tsmiDonate";
-            this.tsmiDonate.Size = new System.Drawing.Size(147, 20);
-            this.tsmiDonate.Text = "Donate...";
-            this.tsmiDonate.Click += new System.EventHandler(this.tsbDonate_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1560,7 +1560,6 @@ namespace ShareX
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(430, 430);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX";

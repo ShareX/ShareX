@@ -30,6 +30,8 @@
         {
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
+            this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
             this.cbCheckUpdates = new System.Windows.Forms.CheckBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
@@ -75,17 +77,16 @@
             this.btnClipboardFormatEdit = new System.Windows.Forms.Button();
             this.btnClipboardFormatRemove = new System.Windows.Forms.Button();
             this.btnClipboardFormatAdd = new System.Windows.Forms.Button();
+            this.lvClipboardFormats = new HelpersLib.MyListView();
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.CheckBox();
             this.tpPrint = new System.Windows.Forms.TabPage();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
-            this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
-            this.lvClipboardFormats = new HelpersLib.MyListView();
-            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.cbRememberMainFormSize);
             this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbShellContextMenu);
@@ -130,6 +132,28 @@
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbTaskbarProgressEnabled
+            // 
+            this.cbTaskbarProgressEnabled.AutoSize = true;
+            this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 160);
+            this.cbTaskbarProgressEnabled.Name = "cbTaskbarProgressEnabled";
+            this.cbTaskbarProgressEnabled.Size = new System.Drawing.Size(178, 17);
+            this.cbTaskbarProgressEnabled.TabIndex = 6;
+            this.cbTaskbarProgressEnabled.Text = "Show progress in taskbar button";
+            this.cbTaskbarProgressEnabled.UseVisualStyleBackColor = true;
+            this.cbTaskbarProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTaskbarProgressEnabled_CheckedChanged);
+            // 
+            // cbTrayIconProgressEnabled
+            // 
+            this.cbTrayIconProgressEnabled.AutoSize = true;
+            this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 136);
+            this.cbTrayIconProgressEnabled.Name = "cbTrayIconProgressEnabled";
+            this.cbTrayIconProgressEnabled.Size = new System.Drawing.Size(150, 17);
+            this.cbTrayIconProgressEnabled.TabIndex = 5;
+            this.cbTrayIconProgressEnabled.Text = "Show progress in tray icon";
+            this.cbTrayIconProgressEnabled.UseVisualStyleBackColor = true;
+            this.cbTrayIconProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTrayIconProgressEnabled_CheckedChanged);
             // 
             // cbShellContextMenu
             // 
@@ -619,6 +643,30 @@
             this.btnClipboardFormatAdd.UseVisualStyleBackColor = true;
             this.btnClipboardFormatAdd.Click += new System.EventHandler(this.btnAddClipboardFormat_Click);
             // 
+            // lvClipboardFormats
+            // 
+            this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chDescription,
+            this.chFormat});
+            this.lvClipboardFormats.FullRowSelect = true;
+            this.lvClipboardFormats.Location = new System.Drawing.Point(8, 48);
+            this.lvClipboardFormats.Name = "lvClipboardFormats";
+            this.lvClipboardFormats.Size = new System.Drawing.Size(472, 104);
+            this.lvClipboardFormats.TabIndex = 3;
+            this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
+            this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
+            this.lvClipboardFormats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvClipboardFormats_MouseDoubleClick);
+            // 
+            // chDescription
+            // 
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 135;
+            // 
+            // chFormat
+            // 
+            this.chFormat.Text = "Format";
+            this.chFormat.Width = 320;
+            // 
             // cbIfUploadFailRetryOnce
             // 
             this.cbIfUploadFailRetryOnce.AutoSize = true;
@@ -682,51 +730,16 @@
             this.pgSettings.Size = new System.Drawing.Size(516, 302);
             this.pgSettings.TabIndex = 0;
             // 
-            // cbTrayIconProgressEnabled
+            // cbRememberMainFormSize
             // 
-            this.cbTrayIconProgressEnabled.AutoSize = true;
-            this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 136);
-            this.cbTrayIconProgressEnabled.Name = "cbTrayIconProgressEnabled";
-            this.cbTrayIconProgressEnabled.Size = new System.Drawing.Size(150, 17);
-            this.cbTrayIconProgressEnabled.TabIndex = 5;
-            this.cbTrayIconProgressEnabled.Text = "Show progress in tray icon";
-            this.cbTrayIconProgressEnabled.UseVisualStyleBackColor = true;
-            this.cbTrayIconProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTrayIconProgressEnabled_CheckedChanged);
-            // 
-            // cbTaskbarProgressEnabled
-            // 
-            this.cbTaskbarProgressEnabled.AutoSize = true;
-            this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 160);
-            this.cbTaskbarProgressEnabled.Name = "cbTaskbarProgressEnabled";
-            this.cbTaskbarProgressEnabled.Size = new System.Drawing.Size(178, 17);
-            this.cbTaskbarProgressEnabled.TabIndex = 6;
-            this.cbTaskbarProgressEnabled.Text = "Show progress in taskbar button";
-            this.cbTaskbarProgressEnabled.UseVisualStyleBackColor = true;
-            this.cbTaskbarProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTaskbarProgressEnabled_CheckedChanged);
-            // 
-            // lvClipboardFormats
-            // 
-            this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chDescription,
-            this.chFormat});
-            this.lvClipboardFormats.FullRowSelect = true;
-            this.lvClipboardFormats.Location = new System.Drawing.Point(8, 48);
-            this.lvClipboardFormats.Name = "lvClipboardFormats";
-            this.lvClipboardFormats.Size = new System.Drawing.Size(472, 104);
-            this.lvClipboardFormats.TabIndex = 3;
-            this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
-            this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
-            this.lvClipboardFormats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvClipboardFormats_MouseDoubleClick);
-            // 
-            // chDescription
-            // 
-            this.chDescription.Text = "Description";
-            this.chDescription.Width = 135;
-            // 
-            // chFormat
-            // 
-            this.chFormat.Text = "Format";
-            this.chFormat.Width = 320;
+            this.cbRememberMainFormSize.AutoSize = true;
+            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 184);
+            this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
+            this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
+            this.cbRememberMainFormSize.TabIndex = 7;
+            this.cbRememberMainFormSize.Text = "Remember main window size";
+            this.cbRememberMainFormSize.UseVisualStyleBackColor = true;
+            this.cbRememberMainFormSize.CheckedChanged += new System.EventHandler(this.cbRememberMainFormSize_CheckedChanged);
             // 
             // SettingsForm
             // 
@@ -825,5 +838,6 @@
         private System.Windows.Forms.PropertyGrid pgSettings;
         private System.Windows.Forms.CheckBox cbTaskbarProgressEnabled;
         private System.Windows.Forms.CheckBox cbTrayIconProgressEnabled;
+        private System.Windows.Forms.CheckBox cbRememberMainFormSize;
     }
 }

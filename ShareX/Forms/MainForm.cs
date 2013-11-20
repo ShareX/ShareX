@@ -29,6 +29,7 @@ using ImageEffectsLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -336,8 +337,15 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             niTray.Visible = Program.Settings.ShowTray;
 
-            UpdateMainFormSettings();
+            if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
+            {
+                StartPosition = FormStartPosition.Manual;
+                Size = Program.Settings.MainFormSize;
+                Screen currentScreen = Screen.FromPoint(Cursor.Position);
+                Location = new Point(currentScreen.Bounds.Width / 2 - Size.Width / 2, currentScreen.Bounds.Height / 2 - Size.Height / 2);
+            }
 
+            UpdateMainFormSettings();
             UpdateMenu();
             UpdateUploaderMenuNames();
             RegisterMenuClosing();
@@ -581,6 +589,8 @@ namespace ShareX
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Program.Settings.MainFormSize = Size;
+
             if (e.CloseReason == CloseReason.UserClosing && Program.Settings.ShowTray && !forceClose)
             {
                 e.Cancel = true;

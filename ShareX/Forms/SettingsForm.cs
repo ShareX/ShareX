@@ -63,6 +63,7 @@ namespace ShareX
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
+            cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
             // Paths
             cbUseCustomUploadersConfigPath.Checked = Program.Settings.UseCustomUploadersConfigPath;
@@ -192,6 +193,11 @@ namespace ShareX
             {
                 TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
             }
+        }
+
+        private void cbRememberMainFormSize_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RememberMainFormSize = cbRememberMainFormSize.Checked;
         }
 
         #endregion General

@@ -56,6 +56,8 @@ namespace ShareX
         public bool AutoCheckUpdate = true;
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
+        public bool RememberMainFormSize = false;
+        public Size MainFormSize = Size.Empty;
 
         #endregion General
 
