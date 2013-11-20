@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             this.ilvImages = new Manina.Windows.Forms.ImageListView();
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.tsMain = new System.Windows.Forms.ToolStrip();
@@ -108,9 +107,6 @@
             this.tsmiViewModeThumbnails,
             this.tsmiViewModeGallery,
             this.tsmiViewModePane});
-            this.tsddbViewMode.Image = ((System.Drawing.Image)(resources.GetObject("tsddbViewMode.Image")));
-            this.tsddbViewMode.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbViewMode.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.tsddbViewMode.Name = "tsddbViewMode";
             this.tsddbViewMode.Size = new System.Drawing.Size(79, 19);
             this.tsddbViewMode.Text = "View mode";
@@ -145,9 +141,6 @@
             this.tsmiThumbnailSize150,
             this.tsmiThumbnailSize200,
             this.tsmiThumbnailSize250});
-            this.tsddbThumbnailSize.Image = ((System.Drawing.Image)(resources.GetObject("tsddbThumbnailSize.Image")));
-            this.tsddbThumbnailSize.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbThumbnailSize.Margin = new System.Windows.Forms.Padding(0, 2, 2, 2);
             this.tsddbThumbnailSize.Name = "tsddbThumbnailSize";
             this.tsddbThumbnailSize.Size = new System.Drawing.Size(100, 19);
             this.tsddbThumbnailSize.Text = "Thumbnail size";
@@ -191,9 +184,6 @@
             // 
             this.tsbQuickList.CheckOnClick = true;
             this.tsbQuickList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbQuickList.Image = ((System.Drawing.Image)(resources.GetObject("tsbQuickList.Image")));
-            this.tsbQuickList.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbQuickList.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.tsbQuickList.Name = "tsbQuickList";
             this.tsbQuickList.Size = new System.Drawing.Size(174, 19);
             this.tsbQuickList.Text = "Only show last 100 screenshots";

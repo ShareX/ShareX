@@ -61,7 +61,10 @@ namespace HelpersLib
 
         public static int Random(int max)
         {
-            return Random(0, max);
+            lock (randomLock)
+            {
+                return random.Next(max + 1);
+            }
         }
 
         public static int Random(int min, int max)
