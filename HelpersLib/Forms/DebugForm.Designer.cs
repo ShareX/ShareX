@@ -38,9 +38,9 @@
             this.btnLoadedAssemblies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLoadedAssemblies.Location = new System.Drawing.Point(96, 511);
             this.btnLoadedAssemblies.Name = "btnLoadedAssemblies";
-            this.btnLoadedAssemblies.Size = new System.Drawing.Size(136, 23);
+            this.btnLoadedAssemblies.Size = new System.Drawing.Size(120, 23);
             this.btnLoadedAssemblies.TabIndex = 1;
-            this.btnLoadedAssemblies.Text = "Loaded assemblies...";
+            this.btnLoadedAssemblies.Text = "Loaded assemblies";
             this.btnLoadedAssemblies.UseVisualStyleBackColor = true;
             this.btnLoadedAssemblies.Click += new System.EventHandler(this.btnLoadedAssemblies_Click);
             // 
@@ -57,6 +57,9 @@
             // 
             // rtbDebug
             // 
+            this.rtbDebug.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbDebug.Location = new System.Drawing.Point(8, 8);
             this.rtbDebug.Name = "rtbDebug";

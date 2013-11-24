@@ -93,7 +93,7 @@ namespace HelpersLib
             }
             string assemblies = sb.ToString().Trim();
 
-            MessageBox.Show(assemblies, "ShareX - Loaded assemblies", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AppendMessage("Loaded assemblies:\r\n" + assemblies);
         }
 
         private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)
