@@ -115,6 +115,8 @@ namespace UploadersLib
             tpMega.ImageKey = "Mega";
 
             cmsCustomUploaderArgValue = NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
+
+            txtCustomUploaderLog.AddContextMenu();
         }
 
         public void LoadSettings(UploadersConfig uploadersConfig)

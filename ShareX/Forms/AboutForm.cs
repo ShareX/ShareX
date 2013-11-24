@@ -47,6 +47,9 @@ namespace ShareX
             updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
 
             uclUpdate.CheckUpdate(updateChecker);
+
+            rtbShareXInfo.AddContextMenu();
+            rtbCredits.AddContextMenu();
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)

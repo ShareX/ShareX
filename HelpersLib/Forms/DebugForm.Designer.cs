@@ -60,9 +60,11 @@
             this.rtbDebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbDebug.Location = new System.Drawing.Point(8, 8);
             this.rtbDebug.Name = "rtbDebug";
+            this.rtbDebug.ReadOnly = true;
             this.rtbDebug.Size = new System.Drawing.Size(744, 496);
             this.rtbDebug.TabIndex = 3;
             this.rtbDebug.Text = "";
+            this.rtbDebug.WordWrap = false;
             this.rtbDebug.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDebug_LinkClicked);
             // 
             // DebugForm

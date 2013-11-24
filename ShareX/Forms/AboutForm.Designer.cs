@@ -167,6 +167,7 @@
             this.rtbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbCredits.Location = new System.Drawing.Point(15, 295);
             this.rtbCredits.Name = "rtbCredits";
+            this.rtbCredits.ReadOnly = true;
             this.rtbCredits.Size = new System.Drawing.Size(367, 152);
             this.rtbCredits.TabIndex = 22;
             this.rtbCredits.Text = resources.GetString("rtbCredits.Text");
@@ -275,6 +276,7 @@
             this.rtbShareXInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbShareXInfo.Location = new System.Drawing.Point(15, 66);
             this.rtbShareXInfo.Name = "rtbShareXInfo";
+            this.rtbShareXInfo.ReadOnly = true;
             this.rtbShareXInfo.Size = new System.Drawing.Size(247, 48);
             this.rtbShareXInfo.TabIndex = 32;
             this.rtbShareXInfo.Text = "Website: http://getsharex.com\nProject page: https://github.com/ShareX/ShareX\nIssu" +

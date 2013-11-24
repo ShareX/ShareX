@@ -45,6 +45,7 @@ namespace HelpersLib
             rtbDebug.Text = logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
             rtbDebug.ScrollToCaret();
+            rtbDebug.AddContextMenu();
 
             logger.MessageAdded += logger_MessageAdded;
         }

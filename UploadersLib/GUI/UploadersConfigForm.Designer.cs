@@ -171,23 +171,6 @@
             this.tvBoxFolders = new System.Windows.Forms.TreeView();
             this.btnBoxCompleteAuth = new System.Windows.Forms.Button();
             this.btnBoxOpenAuthorize = new System.Windows.Forms.Button();
-            this.tpMinus = new System.Windows.Forms.TabPage();
-            this.gbMinusUserPass = new System.Windows.Forms.GroupBox();
-            this.btnAuthRefresh = new System.Windows.Forms.Button();
-            this.lblMinusPassword = new System.Windows.Forms.Label();
-            this.lblMinusUsername = new System.Windows.Forms.Label();
-            this.txtMinusPassword = new System.Windows.Forms.TextBox();
-            this.txtMinusUsername = new System.Windows.Forms.TextBox();
-            this.btnMinusAuth = new System.Windows.Forms.Button();
-            this.gbMinusUpload = new System.Windows.Forms.GroupBox();
-            this.lblMinusURLType = new System.Windows.Forms.Label();
-            this.cbMinusURLType = new System.Windows.Forms.ComboBox();
-            this.btnMinusReadFolderList = new System.Windows.Forms.Button();
-            this.chkMinusPublic = new System.Windows.Forms.CheckBox();
-            this.btnMinusFolderAdd = new System.Windows.Forms.Button();
-            this.btnMinusFolderRemove = new System.Windows.Forms.Button();
-            this.cboMinusFolders = new System.Windows.Forms.ComboBox();
-            this.lblMinusAuthStatus = new System.Windows.Forms.Label();
             this.tpRapidShare = new System.Windows.Forms.TabPage();
             this.txtRapidShareFolderID = new System.Windows.Forms.TextBox();
             this.lblRapidShareFolderID = new System.Windows.Forms.Label();
@@ -217,18 +200,33 @@
             this.lblLocalhostrEmail = new System.Windows.Forms.Label();
             this.txtLocalhostrPassword = new System.Windows.Forms.TextBox();
             this.txtLocalhostrEmail = new System.Windows.Forms.TextBox();
+            this.tpJira = new System.Windows.Forms.TabPage();
+            this.txtJiraIssuePrefix = new System.Windows.Forms.TextBox();
+            this.lblJiraIssuePrefix = new System.Windows.Forms.Label();
+            this.gpJiraServer = new System.Windows.Forms.GroupBox();
+            this.txtJiraConfigHelp = new System.Windows.Forms.TextBox();
+            this.txtJiraHost = new System.Windows.Forms.TextBox();
+            this.lblJiraHost = new System.Windows.Forms.Label();
+            this.oAuthJira = new UploadersLib.GUI.OAuth2Control();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.oauth2GoogleDrive = new UploadersLib.GUI.OAuth2Control();
-            this.tpSharedFolder = new System.Windows.Forms.TabPage();
-            this.tlpSharedFolders = new System.Windows.Forms.TableLayoutPanel();
-            this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
-            this.gbSharedFolder = new System.Windows.Forms.GroupBox();
-            this.lblSharedFolderFiles = new System.Windows.Forms.Label();
-            this.lblSharedFolderText = new System.Windows.Forms.Label();
-            this.lblSharedFolderImages = new System.Windows.Forms.Label();
-            this.cboSharedFolderFiles = new System.Windows.Forms.ComboBox();
-            this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
-            this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
+            this.tpMinus = new System.Windows.Forms.TabPage();
+            this.gbMinusUserPass = new System.Windows.Forms.GroupBox();
+            this.btnAuthRefresh = new System.Windows.Forms.Button();
+            this.lblMinusPassword = new System.Windows.Forms.Label();
+            this.lblMinusUsername = new System.Windows.Forms.Label();
+            this.txtMinusPassword = new System.Windows.Forms.TextBox();
+            this.txtMinusUsername = new System.Windows.Forms.TextBox();
+            this.btnMinusAuth = new System.Windows.Forms.Button();
+            this.gbMinusUpload = new System.Windows.Forms.GroupBox();
+            this.lblMinusURLType = new System.Windows.Forms.Label();
+            this.cbMinusURLType = new System.Windows.Forms.ComboBox();
+            this.btnMinusReadFolderList = new System.Windows.Forms.Button();
+            this.chkMinusPublic = new System.Windows.Forms.CheckBox();
+            this.btnMinusFolderAdd = new System.Windows.Forms.Button();
+            this.btnMinusFolderRemove = new System.Windows.Forms.Button();
+            this.cboMinusFolders = new System.Windows.Forms.ComboBox();
+            this.lblMinusAuthStatus = new System.Windows.Forms.Label();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.chkEmailConfirm = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
@@ -244,14 +242,16 @@
             this.nudEmailSmtpPort = new System.Windows.Forms.NumericUpDown();
             this.lblEmailSmtpPort = new System.Windows.Forms.Label();
             this.txtEmailDefaultSubject = new System.Windows.Forms.TextBox();
-            this.tpJira = new System.Windows.Forms.TabPage();
-            this.txtJiraIssuePrefix = new System.Windows.Forms.TextBox();
-            this.lblJiraIssuePrefix = new System.Windows.Forms.Label();
-            this.gpJiraServer = new System.Windows.Forms.GroupBox();
-            this.txtJiraConfigHelp = new System.Windows.Forms.TextBox();
-            this.txtJiraHost = new System.Windows.Forms.TextBox();
-            this.lblJiraHost = new System.Windows.Forms.Label();
-            this.oAuthJira = new UploadersLib.GUI.OAuth2Control();
+            this.tpSharedFolder = new System.Windows.Forms.TabPage();
+            this.tlpSharedFolders = new System.Windows.Forms.TableLayoutPanel();
+            this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
+            this.gbSharedFolder = new System.Windows.Forms.GroupBox();
+            this.lblSharedFolderFiles = new System.Windows.Forms.Label();
+            this.lblSharedFolderText = new System.Windows.Forms.Label();
+            this.lblSharedFolderImages = new System.Windows.Forms.Label();
+            this.cboSharedFolderFiles = new System.Windows.Forms.ComboBox();
+            this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
+            this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
             this.tpURLShorteners = new System.Windows.Forms.TabPage();
             this.tcURLShorteners = new System.Windows.Forms.TabControl();
             this.tpGoogleURLShortener = new System.Windows.Forms.TabPage();
@@ -350,21 +350,21 @@
             this.panelFtp.SuspendLayout();
             this.gbFtpSettings.SuspendLayout();
             this.tpBox.SuspendLayout();
-            this.tpMinus.SuspendLayout();
-            this.gbMinusUserPass.SuspendLayout();
-            this.gbMinusUpload.SuspendLayout();
             this.tpRapidShare.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
             this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
+            this.tpJira.SuspendLayout();
+            this.gpJiraServer.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
+            this.tpMinus.SuspendLayout();
+            this.gbMinusUserPass.SuspendLayout();
+            this.gbMinusUpload.SuspendLayout();
+            this.tpEmail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
             this.tlpSharedFolders.SuspendLayout();
             this.gbSharedFolder.SuspendLayout();
-            this.tpEmail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
-            this.tpJira.SuspendLayout();
-            this.gpJiraServer.SuspendLayout();
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
             this.tpGoogleURLShortener.SuspendLayout();
@@ -1879,185 +1879,6 @@
             this.btnBoxOpenAuthorize.UseVisualStyleBackColor = true;
             this.btnBoxOpenAuthorize.Click += new System.EventHandler(this.btnBoxOpenAuthorize_Click);
             // 
-            // tpMinus
-            // 
-            this.tpMinus.Controls.Add(this.gbMinusUserPass);
-            this.tpMinus.Controls.Add(this.gbMinusUpload);
-            this.tpMinus.Controls.Add(this.lblMinusAuthStatus);
-            this.tpMinus.Location = new System.Drawing.Point(4, 22);
-            this.tpMinus.Name = "tpMinus";
-            this.tpMinus.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMinus.Size = new System.Drawing.Size(804, 475);
-            this.tpMinus.TabIndex = 3;
-            this.tpMinus.Text = "Minus";
-            this.tpMinus.UseVisualStyleBackColor = true;
-            // 
-            // gbMinusUserPass
-            // 
-            this.gbMinusUserPass.Controls.Add(this.btnAuthRefresh);
-            this.gbMinusUserPass.Controls.Add(this.lblMinusPassword);
-            this.gbMinusUserPass.Controls.Add(this.lblMinusUsername);
-            this.gbMinusUserPass.Controls.Add(this.txtMinusPassword);
-            this.gbMinusUserPass.Controls.Add(this.txtMinusUsername);
-            this.gbMinusUserPass.Controls.Add(this.btnMinusAuth);
-            this.gbMinusUserPass.Location = new System.Drawing.Point(16, 16);
-            this.gbMinusUserPass.Name = "gbMinusUserPass";
-            this.gbMinusUserPass.Size = new System.Drawing.Size(712, 88);
-            this.gbMinusUserPass.TabIndex = 0;
-            this.gbMinusUserPass.TabStop = false;
-            this.gbMinusUserPass.Text = "Authentication";
-            // 
-            // btnAuthRefresh
-            // 
-            this.btnAuthRefresh.Location = new System.Drawing.Point(552, 16);
-            this.btnAuthRefresh.Name = "btnAuthRefresh";
-            this.btnAuthRefresh.Size = new System.Drawing.Size(144, 24);
-            this.btnAuthRefresh.TabIndex = 3;
-            this.btnAuthRefresh.Text = "Refresh Authorization";
-            this.btnAuthRefresh.UseVisualStyleBackColor = true;
-            this.btnAuthRefresh.Click += new System.EventHandler(this.btnAuthRefresh_Click);
-            // 
-            // lblMinusPassword
-            // 
-            this.lblMinusPassword.AutoSize = true;
-            this.lblMinusPassword.Location = new System.Drawing.Point(8, 56);
-            this.lblMinusPassword.Name = "lblMinusPassword";
-            this.lblMinusPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblMinusPassword.TabIndex = 4;
-            this.lblMinusPassword.Text = "Password:";
-            // 
-            // lblMinusUsername
-            // 
-            this.lblMinusUsername.AutoSize = true;
-            this.lblMinusUsername.Location = new System.Drawing.Point(8, 24);
-            this.lblMinusUsername.Name = "lblMinusUsername";
-            this.lblMinusUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblMinusUsername.TabIndex = 0;
-            this.lblMinusUsername.Text = "Username:";
-            // 
-            // txtMinusPassword
-            // 
-            this.txtMinusPassword.Location = new System.Drawing.Point(72, 52);
-            this.txtMinusPassword.Name = "txtMinusPassword";
-            this.txtMinusPassword.PasswordChar = '*';
-            this.txtMinusPassword.Size = new System.Drawing.Size(136, 20);
-            this.txtMinusPassword.TabIndex = 5;
-            // 
-            // txtMinusUsername
-            // 
-            this.txtMinusUsername.Location = new System.Drawing.Point(72, 20);
-            this.txtMinusUsername.Name = "txtMinusUsername";
-            this.txtMinusUsername.Size = new System.Drawing.Size(136, 20);
-            this.txtMinusUsername.TabIndex = 1;
-            // 
-            // btnMinusAuth
-            // 
-            this.btnMinusAuth.Location = new System.Drawing.Point(400, 16);
-            this.btnMinusAuth.Name = "btnMinusAuth";
-            this.btnMinusAuth.Size = new System.Drawing.Size(144, 24);
-            this.btnMinusAuth.TabIndex = 2;
-            this.btnMinusAuth.Text = "Authorize";
-            this.btnMinusAuth.UseVisualStyleBackColor = true;
-            this.btnMinusAuth.Click += new System.EventHandler(this.btnMinusAuth_Click);
-            // 
-            // gbMinusUpload
-            // 
-            this.gbMinusUpload.Controls.Add(this.lblMinusURLType);
-            this.gbMinusUpload.Controls.Add(this.cbMinusURLType);
-            this.gbMinusUpload.Controls.Add(this.btnMinusReadFolderList);
-            this.gbMinusUpload.Controls.Add(this.chkMinusPublic);
-            this.gbMinusUpload.Controls.Add(this.btnMinusFolderAdd);
-            this.gbMinusUpload.Controls.Add(this.btnMinusFolderRemove);
-            this.gbMinusUpload.Controls.Add(this.cboMinusFolders);
-            this.gbMinusUpload.Location = new System.Drawing.Point(16, 112);
-            this.gbMinusUpload.Name = "gbMinusUpload";
-            this.gbMinusUpload.Size = new System.Drawing.Size(712, 88);
-            this.gbMinusUpload.TabIndex = 1;
-            this.gbMinusUpload.TabStop = false;
-            this.gbMinusUpload.Text = "Upload images to";
-            // 
-            // lblMinusURLType
-            // 
-            this.lblMinusURLType.AutoSize = true;
-            this.lblMinusURLType.Location = new System.Drawing.Point(16, 56);
-            this.lblMinusURLType.Name = "lblMinusURLType";
-            this.lblMinusURLType.Size = new System.Drawing.Size(55, 13);
-            this.lblMinusURLType.TabIndex = 4;
-            this.lblMinusURLType.Text = "URL type:";
-            // 
-            // cbMinusURLType
-            // 
-            this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMinusURLType.FormattingEnabled = true;
-            this.cbMinusURLType.Location = new System.Drawing.Point(80, 52);
-            this.cbMinusURLType.Name = "cbMinusURLType";
-            this.cbMinusURLType.Size = new System.Drawing.Size(88, 21);
-            this.cbMinusURLType.TabIndex = 6;
-            this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
-            // 
-            // btnMinusReadFolderList
-            // 
-            this.btnMinusReadFolderList.AutoSize = true;
-            this.btnMinusReadFolderList.Location = new System.Drawing.Point(512, 48);
-            this.btnMinusReadFolderList.Name = "btnMinusReadFolderList";
-            this.btnMinusReadFolderList.Size = new System.Drawing.Size(184, 23);
-            this.btnMinusReadFolderList.TabIndex = 5;
-            this.btnMinusReadFolderList.Text = "Reload folder list";
-            this.btnMinusReadFolderList.UseVisualStyleBackColor = true;
-            this.btnMinusReadFolderList.Click += new System.EventHandler(this.btnMinusReadFolderList_Click);
-            // 
-            // chkMinusPublic
-            // 
-            this.chkMinusPublic.AutoSize = true;
-            this.chkMinusPublic.Location = new System.Drawing.Point(416, 26);
-            this.chkMinusPublic.Name = "chkMinusPublic";
-            this.chkMinusPublic.Size = new System.Drawing.Size(55, 17);
-            this.chkMinusPublic.TabIndex = 3;
-            this.chkMinusPublic.Text = "Public";
-            this.chkMinusPublic.UseVisualStyleBackColor = true;
-            // 
-            // btnMinusFolderAdd
-            // 
-            this.btnMinusFolderAdd.Location = new System.Drawing.Point(512, 16);
-            this.btnMinusFolderAdd.Name = "btnMinusFolderAdd";
-            this.btnMinusFolderAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnMinusFolderAdd.TabIndex = 0;
-            this.btnMinusFolderAdd.Text = "Add folder";
-            this.btnMinusFolderAdd.UseVisualStyleBackColor = true;
-            this.btnMinusFolderAdd.Click += new System.EventHandler(this.btnMinusFolderAdd_Click);
-            // 
-            // btnMinusFolderRemove
-            // 
-            this.btnMinusFolderRemove.AutoSize = true;
-            this.btnMinusFolderRemove.Location = new System.Drawing.Point(592, 16);
-            this.btnMinusFolderRemove.Name = "btnMinusFolderRemove";
-            this.btnMinusFolderRemove.Size = new System.Drawing.Size(104, 23);
-            this.btnMinusFolderRemove.TabIndex = 1;
-            this.btnMinusFolderRemove.Text = "Remove folder";
-            this.btnMinusFolderRemove.UseVisualStyleBackColor = true;
-            this.btnMinusFolderRemove.Click += new System.EventHandler(this.btnMinusFolderRemove_Click);
-            // 
-            // cboMinusFolders
-            // 
-            this.cboMinusFolders.FormattingEnabled = true;
-            this.cboMinusFolders.Location = new System.Drawing.Point(16, 24);
-            this.cboMinusFolders.Name = "cboMinusFolders";
-            this.cboMinusFolders.Size = new System.Drawing.Size(392, 21);
-            this.cboMinusFolders.TabIndex = 2;
-            this.cboMinusFolders.SelectedIndexChanged += new System.EventHandler(this.cboMinusFolders_SelectedIndexChanged);
-            // 
-            // lblMinusAuthStatus
-            // 
-            this.lblMinusAuthStatus.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMinusAuthStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMinusAuthStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblMinusAuthStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMinusAuthStatus.Location = new System.Drawing.Point(3, 453);
-            this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
-            this.lblMinusAuthStatus.Size = new System.Drawing.Size(798, 19);
-            this.lblMinusAuthStatus.TabIndex = 2;
-            this.lblMinusAuthStatus.Text = "Login status:";
-            // 
             // tpRapidShare
             // 
             this.tpRapidShare.Controls.Add(this.txtRapidShareFolderID);
@@ -2345,6 +2166,91 @@
             this.txtLocalhostrEmail.TabIndex = 1;
             this.txtLocalhostrEmail.TextChanged += new System.EventHandler(this.txtLocalhostrEmail_TextChanged);
             // 
+            // tpJira
+            // 
+            this.tpJira.Controls.Add(this.txtJiraIssuePrefix);
+            this.tpJira.Controls.Add(this.lblJiraIssuePrefix);
+            this.tpJira.Controls.Add(this.gpJiraServer);
+            this.tpJira.Controls.Add(this.oAuthJira);
+            this.tpJira.Location = new System.Drawing.Point(4, 22);
+            this.tpJira.Name = "tpJira";
+            this.tpJira.Size = new System.Drawing.Size(804, 475);
+            this.tpJira.TabIndex = 11;
+            this.tpJira.Text = "Atlassian Jira";
+            this.tpJira.UseVisualStyleBackColor = true;
+            // 
+            // txtJiraIssuePrefix
+            // 
+            this.txtJiraIssuePrefix.Location = new System.Drawing.Point(560, 226);
+            this.txtJiraIssuePrefix.Name = "txtJiraIssuePrefix";
+            this.txtJiraIssuePrefix.Size = new System.Drawing.Size(117, 20);
+            this.txtJiraIssuePrefix.TabIndex = 3;
+            this.txtJiraIssuePrefix.Text = "PROJECT-";
+            this.txtJiraIssuePrefix.TextChanged += new System.EventHandler(this.txtJiraIssuePrefix_TextChanged);
+            // 
+            // lblJiraIssuePrefix
+            // 
+            this.lblJiraIssuePrefix.AutoSize = true;
+            this.lblJiraIssuePrefix.Location = new System.Drawing.Point(473, 229);
+            this.lblJiraIssuePrefix.Name = "lblJiraIssuePrefix";
+            this.lblJiraIssuePrefix.Size = new System.Drawing.Size(81, 13);
+            this.lblJiraIssuePrefix.TabIndex = 2;
+            this.lblJiraIssuePrefix.Text = "Jira issue prefix:";
+            // 
+            // gpJiraServer
+            // 
+            this.gpJiraServer.Controls.Add(this.txtJiraConfigHelp);
+            this.gpJiraServer.Controls.Add(this.txtJiraHost);
+            this.gpJiraServer.Controls.Add(this.lblJiraHost);
+            this.gpJiraServer.Location = new System.Drawing.Point(13, 13);
+            this.gpJiraServer.Name = "gpJiraServer";
+            this.gpJiraServer.Size = new System.Drawing.Size(454, 358);
+            this.gpJiraServer.TabIndex = 0;
+            this.gpJiraServer.TabStop = false;
+            this.gpJiraServer.Text = "Jira server";
+            // 
+            // txtJiraConfigHelp
+            // 
+            this.txtJiraConfigHelp.BackColor = System.Drawing.SystemColors.Window;
+            this.txtJiraConfigHelp.Location = new System.Drawing.Point(8, 45);
+            this.txtJiraConfigHelp.Multiline = true;
+            this.txtJiraConfigHelp.Name = "txtJiraConfigHelp";
+            this.txtJiraConfigHelp.ReadOnly = true;
+            this.txtJiraConfigHelp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtJiraConfigHelp.Size = new System.Drawing.Size(440, 307);
+            this.txtJiraConfigHelp.TabIndex = 2;
+            this.txtJiraConfigHelp.Text = "Template";
+            // 
+            // txtJiraHost
+            // 
+            this.txtJiraHost.Location = new System.Drawing.Point(63, 19);
+            this.txtJiraHost.Name = "txtJiraHost";
+            this.txtJiraHost.Size = new System.Drawing.Size(385, 20);
+            this.txtJiraHost.TabIndex = 1;
+            this.txtJiraHost.Text = "http://";
+            this.txtJiraHost.TextChanged += new System.EventHandler(this.txtJiraHost_TextChanged);
+            // 
+            // lblJiraHost
+            // 
+            this.lblJiraHost.AutoSize = true;
+            this.lblJiraHost.Location = new System.Drawing.Point(5, 22);
+            this.lblJiraHost.Name = "lblJiraHost";
+            this.lblJiraHost.Size = new System.Drawing.Size(52, 13);
+            this.lblJiraHost.TabIndex = 0;
+            this.lblJiraHost.Text = "Jira host: ";
+            // 
+            // oAuthJira
+            // 
+            this.oAuthJira.Location = new System.Drawing.Point(473, 13);
+            this.oAuthJira.LoginStatus = false;
+            this.oAuthJira.Name = "oAuthJira";
+            this.oAuthJira.Size = new System.Drawing.Size(328, 207);
+            this.oAuthJira.Status = "Status: Login required.";
+            this.oAuthJira.TabIndex = 1;
+            this.oAuthJira.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
+            this.oAuthJira.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
+            this.oAuthJira.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oAuthJira_RefreshButtonClicked);
+            // 
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
@@ -2368,118 +2274,184 @@
             this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
             this.oauth2GoogleDrive.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
             // 
-            // tpSharedFolder
+            // tpMinus
             // 
-            this.tpSharedFolder.Controls.Add(this.tlpSharedFolders);
-            this.tpSharedFolder.Location = new System.Drawing.Point(4, 22);
-            this.tpSharedFolder.Name = "tpSharedFolder";
-            this.tpSharedFolder.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSharedFolder.Size = new System.Drawing.Size(804, 475);
-            this.tpSharedFolder.TabIndex = 9;
-            this.tpSharedFolder.Text = "Shared folder";
-            this.tpSharedFolder.UseVisualStyleBackColor = true;
+            this.tpMinus.Controls.Add(this.gbMinusUserPass);
+            this.tpMinus.Controls.Add(this.gbMinusUpload);
+            this.tpMinus.Controls.Add(this.lblMinusAuthStatus);
+            this.tpMinus.Location = new System.Drawing.Point(4, 22);
+            this.tpMinus.Name = "tpMinus";
+            this.tpMinus.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMinus.Size = new System.Drawing.Size(804, 475);
+            this.tpMinus.TabIndex = 3;
+            this.tpMinus.Text = "Minus";
+            this.tpMinus.UseVisualStyleBackColor = true;
             // 
-            // tlpSharedFolders
+            // gbMinusUserPass
             // 
-            this.tlpSharedFolders.ColumnCount = 1;
-            this.tlpSharedFolders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSharedFolders.Controls.Add(this.ucLocalhostAccounts, 0, 0);
-            this.tlpSharedFolders.Controls.Add(this.gbSharedFolder, 0, 1);
-            this.tlpSharedFolders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSharedFolders.Location = new System.Drawing.Point(3, 3);
-            this.tlpSharedFolders.Name = "tlpSharedFolders";
-            this.tlpSharedFolders.RowCount = 2;
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.Size = new System.Drawing.Size(798, 469);
-            this.tlpSharedFolders.TabIndex = 0;
+            this.gbMinusUserPass.Controls.Add(this.btnAuthRefresh);
+            this.gbMinusUserPass.Controls.Add(this.lblMinusPassword);
+            this.gbMinusUserPass.Controls.Add(this.lblMinusUsername);
+            this.gbMinusUserPass.Controls.Add(this.txtMinusPassword);
+            this.gbMinusUserPass.Controls.Add(this.txtMinusUsername);
+            this.gbMinusUserPass.Controls.Add(this.btnMinusAuth);
+            this.gbMinusUserPass.Location = new System.Drawing.Point(16, 16);
+            this.gbMinusUserPass.Name = "gbMinusUserPass";
+            this.gbMinusUserPass.Size = new System.Drawing.Size(712, 88);
+            this.gbMinusUserPass.TabIndex = 0;
+            this.gbMinusUserPass.TabStop = false;
+            this.gbMinusUserPass.Text = "Authentication";
             // 
-            // ucLocalhostAccounts
+            // btnAuthRefresh
             // 
-            this.ucLocalhostAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucLocalhostAccounts.Location = new System.Drawing.Point(4, 4);
-            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
-            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
-            this.ucLocalhostAccounts.Size = new System.Drawing.Size(790, 343);
-            this.ucLocalhostAccounts.TabIndex = 0;
+            this.btnAuthRefresh.Location = new System.Drawing.Point(552, 16);
+            this.btnAuthRefresh.Name = "btnAuthRefresh";
+            this.btnAuthRefresh.Size = new System.Drawing.Size(144, 24);
+            this.btnAuthRefresh.TabIndex = 3;
+            this.btnAuthRefresh.Text = "Refresh Authorization";
+            this.btnAuthRefresh.UseVisualStyleBackColor = true;
+            this.btnAuthRefresh.Click += new System.EventHandler(this.btnAuthRefresh_Click);
             // 
-            // gbSharedFolder
+            // lblMinusPassword
             // 
-            this.gbSharedFolder.Controls.Add(this.lblSharedFolderFiles);
-            this.gbSharedFolder.Controls.Add(this.lblSharedFolderText);
-            this.gbSharedFolder.Controls.Add(this.lblSharedFolderImages);
-            this.gbSharedFolder.Controls.Add(this.cboSharedFolderFiles);
-            this.gbSharedFolder.Controls.Add(this.cboSharedFolderText);
-            this.gbSharedFolder.Controls.Add(this.cboSharedFolderImages);
-            this.gbSharedFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSharedFolder.Location = new System.Drawing.Point(3, 354);
-            this.gbSharedFolder.Name = "gbSharedFolder";
-            this.gbSharedFolder.Size = new System.Drawing.Size(792, 112);
-            this.gbSharedFolder.TabIndex = 1;
-            this.gbSharedFolder.TabStop = false;
-            this.gbSharedFolder.Text = "Settings";
+            this.lblMinusPassword.AutoSize = true;
+            this.lblMinusPassword.Location = new System.Drawing.Point(8, 56);
+            this.lblMinusPassword.Name = "lblMinusPassword";
+            this.lblMinusPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblMinusPassword.TabIndex = 4;
+            this.lblMinusPassword.Text = "Password:";
             // 
-            // lblSharedFolderFiles
+            // lblMinusUsername
             // 
-            this.lblSharedFolderFiles.AutoSize = true;
-            this.lblSharedFolderFiles.Location = new System.Drawing.Point(24, 78);
-            this.lblSharedFolderFiles.Name = "lblSharedFolderFiles";
-            this.lblSharedFolderFiles.Size = new System.Drawing.Size(28, 13);
-            this.lblSharedFolderFiles.TabIndex = 4;
-            this.lblSharedFolderFiles.Text = "Files";
+            this.lblMinusUsername.AutoSize = true;
+            this.lblMinusUsername.Location = new System.Drawing.Point(8, 24);
+            this.lblMinusUsername.Name = "lblMinusUsername";
+            this.lblMinusUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblMinusUsername.TabIndex = 0;
+            this.lblMinusUsername.Text = "Username:";
             // 
-            // lblSharedFolderText
+            // txtMinusPassword
             // 
-            this.lblSharedFolderText.AutoSize = true;
-            this.lblSharedFolderText.Location = new System.Drawing.Point(24, 52);
-            this.lblSharedFolderText.Name = "lblSharedFolderText";
-            this.lblSharedFolderText.Size = new System.Drawing.Size(28, 13);
-            this.lblSharedFolderText.TabIndex = 2;
-            this.lblSharedFolderText.Text = "Text";
+            this.txtMinusPassword.Location = new System.Drawing.Point(72, 52);
+            this.txtMinusPassword.Name = "txtMinusPassword";
+            this.txtMinusPassword.PasswordChar = '*';
+            this.txtMinusPassword.Size = new System.Drawing.Size(136, 20);
+            this.txtMinusPassword.TabIndex = 5;
             // 
-            // lblSharedFolderImages
+            // txtMinusUsername
             // 
-            this.lblSharedFolderImages.AutoSize = true;
-            this.lblSharedFolderImages.Location = new System.Drawing.Point(11, 27);
-            this.lblSharedFolderImages.Name = "lblSharedFolderImages";
-            this.lblSharedFolderImages.Size = new System.Drawing.Size(41, 13);
-            this.lblSharedFolderImages.TabIndex = 0;
-            this.lblSharedFolderImages.Text = "Images";
+            this.txtMinusUsername.Location = new System.Drawing.Point(72, 20);
+            this.txtMinusUsername.Name = "txtMinusUsername";
+            this.txtMinusUsername.Size = new System.Drawing.Size(136, 20);
+            this.txtMinusUsername.TabIndex = 1;
             // 
-            // cboSharedFolderFiles
+            // btnMinusAuth
             // 
-            this.cboSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSharedFolderFiles.FormattingEnabled = true;
-            this.cboSharedFolderFiles.Location = new System.Drawing.Point(64, 72);
-            this.cboSharedFolderFiles.Name = "cboSharedFolderFiles";
-            this.cboSharedFolderFiles.Size = new System.Drawing.Size(472, 21);
-            this.cboSharedFolderFiles.TabIndex = 5;
-            this.cboSharedFolderFiles.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderFiles_SelectedIndexChanged);
+            this.btnMinusAuth.Location = new System.Drawing.Point(400, 16);
+            this.btnMinusAuth.Name = "btnMinusAuth";
+            this.btnMinusAuth.Size = new System.Drawing.Size(144, 24);
+            this.btnMinusAuth.TabIndex = 2;
+            this.btnMinusAuth.Text = "Authorize";
+            this.btnMinusAuth.UseVisualStyleBackColor = true;
+            this.btnMinusAuth.Click += new System.EventHandler(this.btnMinusAuth_Click);
             // 
-            // cboSharedFolderText
+            // gbMinusUpload
             // 
-            this.cboSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSharedFolderText.FormattingEnabled = true;
-            this.cboSharedFolderText.Location = new System.Drawing.Point(64, 48);
-            this.cboSharedFolderText.Name = "cboSharedFolderText";
-            this.cboSharedFolderText.Size = new System.Drawing.Size(472, 21);
-            this.cboSharedFolderText.TabIndex = 3;
-            this.cboSharedFolderText.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderText_SelectedIndexChanged);
+            this.gbMinusUpload.Controls.Add(this.lblMinusURLType);
+            this.gbMinusUpload.Controls.Add(this.cbMinusURLType);
+            this.gbMinusUpload.Controls.Add(this.btnMinusReadFolderList);
+            this.gbMinusUpload.Controls.Add(this.chkMinusPublic);
+            this.gbMinusUpload.Controls.Add(this.btnMinusFolderAdd);
+            this.gbMinusUpload.Controls.Add(this.btnMinusFolderRemove);
+            this.gbMinusUpload.Controls.Add(this.cboMinusFolders);
+            this.gbMinusUpload.Location = new System.Drawing.Point(16, 112);
+            this.gbMinusUpload.Name = "gbMinusUpload";
+            this.gbMinusUpload.Size = new System.Drawing.Size(712, 88);
+            this.gbMinusUpload.TabIndex = 1;
+            this.gbMinusUpload.TabStop = false;
+            this.gbMinusUpload.Text = "Upload images to";
             // 
-            // cboSharedFolderImages
+            // lblMinusURLType
             // 
-            this.cboSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSharedFolderImages.FormattingEnabled = true;
-            this.cboSharedFolderImages.Location = new System.Drawing.Point(64, 24);
-            this.cboSharedFolderImages.Name = "cboSharedFolderImages";
-            this.cboSharedFolderImages.Size = new System.Drawing.Size(472, 21);
-            this.cboSharedFolderImages.TabIndex = 1;
-            this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
+            this.lblMinusURLType.AutoSize = true;
+            this.lblMinusURLType.Location = new System.Drawing.Point(16, 56);
+            this.lblMinusURLType.Name = "lblMinusURLType";
+            this.lblMinusURLType.Size = new System.Drawing.Size(55, 13);
+            this.lblMinusURLType.TabIndex = 4;
+            this.lblMinusURLType.Text = "URL type:";
+            // 
+            // cbMinusURLType
+            // 
+            this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMinusURLType.FormattingEnabled = true;
+            this.cbMinusURLType.Location = new System.Drawing.Point(80, 52);
+            this.cbMinusURLType.Name = "cbMinusURLType";
+            this.cbMinusURLType.Size = new System.Drawing.Size(88, 21);
+            this.cbMinusURLType.TabIndex = 6;
+            this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
+            // 
+            // btnMinusReadFolderList
+            // 
+            this.btnMinusReadFolderList.AutoSize = true;
+            this.btnMinusReadFolderList.Location = new System.Drawing.Point(512, 48);
+            this.btnMinusReadFolderList.Name = "btnMinusReadFolderList";
+            this.btnMinusReadFolderList.Size = new System.Drawing.Size(184, 23);
+            this.btnMinusReadFolderList.TabIndex = 5;
+            this.btnMinusReadFolderList.Text = "Reload folder list";
+            this.btnMinusReadFolderList.UseVisualStyleBackColor = true;
+            this.btnMinusReadFolderList.Click += new System.EventHandler(this.btnMinusReadFolderList_Click);
+            // 
+            // chkMinusPublic
+            // 
+            this.chkMinusPublic.AutoSize = true;
+            this.chkMinusPublic.Location = new System.Drawing.Point(416, 26);
+            this.chkMinusPublic.Name = "chkMinusPublic";
+            this.chkMinusPublic.Size = new System.Drawing.Size(55, 17);
+            this.chkMinusPublic.TabIndex = 3;
+            this.chkMinusPublic.Text = "Public";
+            this.chkMinusPublic.UseVisualStyleBackColor = true;
+            // 
+            // btnMinusFolderAdd
+            // 
+            this.btnMinusFolderAdd.Location = new System.Drawing.Point(512, 16);
+            this.btnMinusFolderAdd.Name = "btnMinusFolderAdd";
+            this.btnMinusFolderAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnMinusFolderAdd.TabIndex = 0;
+            this.btnMinusFolderAdd.Text = "Add folder";
+            this.btnMinusFolderAdd.UseVisualStyleBackColor = true;
+            this.btnMinusFolderAdd.Click += new System.EventHandler(this.btnMinusFolderAdd_Click);
+            // 
+            // btnMinusFolderRemove
+            // 
+            this.btnMinusFolderRemove.AutoSize = true;
+            this.btnMinusFolderRemove.Location = new System.Drawing.Point(592, 16);
+            this.btnMinusFolderRemove.Name = "btnMinusFolderRemove";
+            this.btnMinusFolderRemove.Size = new System.Drawing.Size(104, 23);
+            this.btnMinusFolderRemove.TabIndex = 1;
+            this.btnMinusFolderRemove.Text = "Remove folder";
+            this.btnMinusFolderRemove.UseVisualStyleBackColor = true;
+            this.btnMinusFolderRemove.Click += new System.EventHandler(this.btnMinusFolderRemove_Click);
+            // 
+            // cboMinusFolders
+            // 
+            this.cboMinusFolders.FormattingEnabled = true;
+            this.cboMinusFolders.Location = new System.Drawing.Point(16, 24);
+            this.cboMinusFolders.Name = "cboMinusFolders";
+            this.cboMinusFolders.Size = new System.Drawing.Size(392, 21);
+            this.cboMinusFolders.TabIndex = 2;
+            this.cboMinusFolders.SelectedIndexChanged += new System.EventHandler(this.cboMinusFolders_SelectedIndexChanged);
+            // 
+            // lblMinusAuthStatus
+            // 
+            this.lblMinusAuthStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblMinusAuthStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMinusAuthStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblMinusAuthStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMinusAuthStatus.Location = new System.Drawing.Point(3, 453);
+            this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
+            this.lblMinusAuthStatus.Size = new System.Drawing.Size(798, 19);
+            this.lblMinusAuthStatus.TabIndex = 2;
+            this.lblMinusAuthStatus.Text = "Login status:";
             // 
             // tpEmail
             // 
@@ -2642,90 +2614,118 @@
             this.txtEmailDefaultSubject.TabIndex = 11;
             this.txtEmailDefaultSubject.TextChanged += new System.EventHandler(this.txtDefaultSubject_TextChanged);
             // 
-            // tpJira
+            // tpSharedFolder
             // 
-            this.tpJira.Controls.Add(this.txtJiraIssuePrefix);
-            this.tpJira.Controls.Add(this.lblJiraIssuePrefix);
-            this.tpJira.Controls.Add(this.gpJiraServer);
-            this.tpJira.Controls.Add(this.oAuthJira);
-            this.tpJira.Location = new System.Drawing.Point(4, 22);
-            this.tpJira.Name = "tpJira";
-            this.tpJira.Size = new System.Drawing.Size(804, 475);
-            this.tpJira.TabIndex = 11;
-            this.tpJira.Text = "Atlassian Jira";
-            this.tpJira.UseVisualStyleBackColor = true;
+            this.tpSharedFolder.Controls.Add(this.tlpSharedFolders);
+            this.tpSharedFolder.Location = new System.Drawing.Point(4, 22);
+            this.tpSharedFolder.Name = "tpSharedFolder";
+            this.tpSharedFolder.Padding = new System.Windows.Forms.Padding(3);
+            this.tpSharedFolder.Size = new System.Drawing.Size(804, 475);
+            this.tpSharedFolder.TabIndex = 9;
+            this.tpSharedFolder.Text = "Shared folder";
+            this.tpSharedFolder.UseVisualStyleBackColor = true;
             // 
-            // txtJiraIssuePrefix
+            // tlpSharedFolders
             // 
-            this.txtJiraIssuePrefix.Location = new System.Drawing.Point(560, 226);
-            this.txtJiraIssuePrefix.Name = "txtJiraIssuePrefix";
-            this.txtJiraIssuePrefix.Size = new System.Drawing.Size(117, 20);
-            this.txtJiraIssuePrefix.TabIndex = 3;
-            this.txtJiraIssuePrefix.Text = "PROJECT-";
-            this.txtJiraIssuePrefix.TextChanged += new System.EventHandler(this.txtJiraIssuePrefix_TextChanged);
+            this.tlpSharedFolders.ColumnCount = 1;
+            this.tlpSharedFolders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSharedFolders.Controls.Add(this.ucLocalhostAccounts, 0, 0);
+            this.tlpSharedFolders.Controls.Add(this.gbSharedFolder, 0, 1);
+            this.tlpSharedFolders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSharedFolders.Location = new System.Drawing.Point(3, 3);
+            this.tlpSharedFolders.Name = "tlpSharedFolders";
+            this.tlpSharedFolders.RowCount = 2;
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSharedFolders.Size = new System.Drawing.Size(798, 469);
+            this.tlpSharedFolders.TabIndex = 0;
             // 
-            // lblJiraIssuePrefix
+            // ucLocalhostAccounts
             // 
-            this.lblJiraIssuePrefix.AutoSize = true;
-            this.lblJiraIssuePrefix.Location = new System.Drawing.Point(473, 229);
-            this.lblJiraIssuePrefix.Name = "lblJiraIssuePrefix";
-            this.lblJiraIssuePrefix.Size = new System.Drawing.Size(81, 13);
-            this.lblJiraIssuePrefix.TabIndex = 2;
-            this.lblJiraIssuePrefix.Text = "Jira issue prefix:";
+            this.ucLocalhostAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucLocalhostAccounts.Location = new System.Drawing.Point(4, 4);
+            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
+            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
+            this.ucLocalhostAccounts.Size = new System.Drawing.Size(790, 343);
+            this.ucLocalhostAccounts.TabIndex = 0;
             // 
-            // gpJiraServer
+            // gbSharedFolder
             // 
-            this.gpJiraServer.Controls.Add(this.txtJiraConfigHelp);
-            this.gpJiraServer.Controls.Add(this.txtJiraHost);
-            this.gpJiraServer.Controls.Add(this.lblJiraHost);
-            this.gpJiraServer.Location = new System.Drawing.Point(13, 13);
-            this.gpJiraServer.Name = "gpJiraServer";
-            this.gpJiraServer.Size = new System.Drawing.Size(454, 358);
-            this.gpJiraServer.TabIndex = 0;
-            this.gpJiraServer.TabStop = false;
-            this.gpJiraServer.Text = "Jira server";
+            this.gbSharedFolder.Controls.Add(this.lblSharedFolderFiles);
+            this.gbSharedFolder.Controls.Add(this.lblSharedFolderText);
+            this.gbSharedFolder.Controls.Add(this.lblSharedFolderImages);
+            this.gbSharedFolder.Controls.Add(this.cboSharedFolderFiles);
+            this.gbSharedFolder.Controls.Add(this.cboSharedFolderText);
+            this.gbSharedFolder.Controls.Add(this.cboSharedFolderImages);
+            this.gbSharedFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSharedFolder.Location = new System.Drawing.Point(3, 354);
+            this.gbSharedFolder.Name = "gbSharedFolder";
+            this.gbSharedFolder.Size = new System.Drawing.Size(792, 112);
+            this.gbSharedFolder.TabIndex = 1;
+            this.gbSharedFolder.TabStop = false;
+            this.gbSharedFolder.Text = "Settings";
             // 
-            // txtJiraConfigHelp
+            // lblSharedFolderFiles
             // 
-            this.txtJiraConfigHelp.BackColor = System.Drawing.SystemColors.Window;
-            this.txtJiraConfigHelp.Location = new System.Drawing.Point(8, 45);
-            this.txtJiraConfigHelp.Multiline = true;
-            this.txtJiraConfigHelp.Name = "txtJiraConfigHelp";
-            this.txtJiraConfigHelp.ReadOnly = true;
-            this.txtJiraConfigHelp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtJiraConfigHelp.Size = new System.Drawing.Size(440, 307);
-            this.txtJiraConfigHelp.TabIndex = 2;
-            this.txtJiraConfigHelp.Text = "Template";
+            this.lblSharedFolderFiles.AutoSize = true;
+            this.lblSharedFolderFiles.Location = new System.Drawing.Point(24, 78);
+            this.lblSharedFolderFiles.Name = "lblSharedFolderFiles";
+            this.lblSharedFolderFiles.Size = new System.Drawing.Size(28, 13);
+            this.lblSharedFolderFiles.TabIndex = 4;
+            this.lblSharedFolderFiles.Text = "Files";
             // 
-            // txtJiraHost
+            // lblSharedFolderText
             // 
-            this.txtJiraHost.Location = new System.Drawing.Point(63, 19);
-            this.txtJiraHost.Name = "txtJiraHost";
-            this.txtJiraHost.Size = new System.Drawing.Size(385, 20);
-            this.txtJiraHost.TabIndex = 1;
-            this.txtJiraHost.Text = "http://";
-            this.txtJiraHost.TextChanged += new System.EventHandler(this.txtJiraHost_TextChanged);
+            this.lblSharedFolderText.AutoSize = true;
+            this.lblSharedFolderText.Location = new System.Drawing.Point(24, 52);
+            this.lblSharedFolderText.Name = "lblSharedFolderText";
+            this.lblSharedFolderText.Size = new System.Drawing.Size(28, 13);
+            this.lblSharedFolderText.TabIndex = 2;
+            this.lblSharedFolderText.Text = "Text";
             // 
-            // lblJiraHost
+            // lblSharedFolderImages
             // 
-            this.lblJiraHost.AutoSize = true;
-            this.lblJiraHost.Location = new System.Drawing.Point(5, 22);
-            this.lblJiraHost.Name = "lblJiraHost";
-            this.lblJiraHost.Size = new System.Drawing.Size(52, 13);
-            this.lblJiraHost.TabIndex = 0;
-            this.lblJiraHost.Text = "Jira host: ";
+            this.lblSharedFolderImages.AutoSize = true;
+            this.lblSharedFolderImages.Location = new System.Drawing.Point(11, 27);
+            this.lblSharedFolderImages.Name = "lblSharedFolderImages";
+            this.lblSharedFolderImages.Size = new System.Drawing.Size(41, 13);
+            this.lblSharedFolderImages.TabIndex = 0;
+            this.lblSharedFolderImages.Text = "Images";
             // 
-            // oAuthJira
+            // cboSharedFolderFiles
             // 
-            this.oAuthJira.Location = new System.Drawing.Point(473, 13);
-            this.oAuthJira.LoginStatus = false;
-            this.oAuthJira.Name = "oAuthJira";
-            this.oAuthJira.Size = new System.Drawing.Size(328, 207);
-            this.oAuthJira.Status = "Status: Login required.";
-            this.oAuthJira.TabIndex = 1;
-            this.oAuthJira.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
-            this.oAuthJira.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
-            this.oAuthJira.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oAuthJira_RefreshButtonClicked);
+            this.cboSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSharedFolderFiles.FormattingEnabled = true;
+            this.cboSharedFolderFiles.Location = new System.Drawing.Point(64, 72);
+            this.cboSharedFolderFiles.Name = "cboSharedFolderFiles";
+            this.cboSharedFolderFiles.Size = new System.Drawing.Size(472, 21);
+            this.cboSharedFolderFiles.TabIndex = 5;
+            this.cboSharedFolderFiles.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderFiles_SelectedIndexChanged);
+            // 
+            // cboSharedFolderText
+            // 
+            this.cboSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSharedFolderText.FormattingEnabled = true;
+            this.cboSharedFolderText.Location = new System.Drawing.Point(64, 48);
+            this.cboSharedFolderText.Name = "cboSharedFolderText";
+            this.cboSharedFolderText.Size = new System.Drawing.Size(472, 21);
+            this.cboSharedFolderText.TabIndex = 3;
+            this.cboSharedFolderText.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderText_SelectedIndexChanged);
+            // 
+            // cboSharedFolderImages
+            // 
+            this.cboSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSharedFolderImages.FormattingEnabled = true;
+            this.cboSharedFolderImages.Location = new System.Drawing.Point(64, 24);
+            this.cboSharedFolderImages.Name = "cboSharedFolderImages";
+            this.cboSharedFolderImages.Size = new System.Drawing.Size(472, 21);
+            this.cboSharedFolderImages.TabIndex = 1;
+            this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
             // 
             // tpURLShorteners
             // 
@@ -3251,7 +3251,7 @@
             // 
             this.txtCustomUploaderLog.Location = new System.Drawing.Point(328, 408);
             this.txtCustomUploaderLog.Name = "txtCustomUploaderLog";
-            this.txtCustomUploaderLog.Size = new System.Drawing.Size(456, 72);
+            this.txtCustomUploaderLog.Size = new System.Drawing.Size(456, 80);
             this.txtCustomUploaderLog.TabIndex = 31;
             this.txtCustomUploaderLog.Text = "";
             this.txtCustomUploaderLog.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
@@ -3482,11 +3482,6 @@
             this.gbFtpSettings.PerformLayout();
             this.tpBox.ResumeLayout(false);
             this.tpBox.PerformLayout();
-            this.tpMinus.ResumeLayout(false);
-            this.gbMinusUserPass.ResumeLayout(false);
-            this.gbMinusUserPass.PerformLayout();
-            this.gbMinusUpload.ResumeLayout(false);
-            this.gbMinusUpload.PerformLayout();
             this.tpRapidShare.ResumeLayout(false);
             this.tpRapidShare.PerformLayout();
             this.tpSendSpace.ResumeLayout(false);
@@ -3495,18 +3490,23 @@
             this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
             this.tpHostr.PerformLayout();
-            this.tpGoogleDrive.ResumeLayout(false);
-            this.tpSharedFolder.ResumeLayout(false);
-            this.tlpSharedFolders.ResumeLayout(false);
-            this.gbSharedFolder.ResumeLayout(false);
-            this.gbSharedFolder.PerformLayout();
-            this.tpEmail.ResumeLayout(false);
-            this.tpEmail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
             this.tpJira.ResumeLayout(false);
             this.tpJira.PerformLayout();
             this.gpJiraServer.ResumeLayout(false);
             this.gpJiraServer.PerformLayout();
+            this.tpGoogleDrive.ResumeLayout(false);
+            this.tpMinus.ResumeLayout(false);
+            this.gbMinusUserPass.ResumeLayout(false);
+            this.gbMinusUserPass.PerformLayout();
+            this.gbMinusUpload.ResumeLayout(false);
+            this.gbMinusUpload.PerformLayout();
+            this.tpEmail.ResumeLayout(false);
+            this.tpEmail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
+            this.tpSharedFolder.ResumeLayout(false);
+            this.tlpSharedFolders.ResumeLayout(false);
+            this.gbSharedFolder.ResumeLayout(false);
+            this.gbSharedFolder.PerformLayout();
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
             this.tpGoogleURLShortener.ResumeLayout(false);
