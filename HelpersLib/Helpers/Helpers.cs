@@ -465,7 +465,7 @@ namespace HelpersLib
                     }
                     catch (Exception e)
                     {
-                        DebugHelper.WriteException(e, "LoadBrowserAsync failed");
+                        DebugHelper.WriteException(e, "LoadBrowserAsync(" + url + ") failed");
                     }
                 });
             }

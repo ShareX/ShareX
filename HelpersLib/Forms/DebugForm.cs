@@ -42,9 +42,9 @@ namespace HelpersLib
             Icon = ShareXResources.Icon;
             this.logger = logger;
 
-            txtDebugLog.Text = logger.ToString();
-            txtDebugLog.SelectionStart = txtDebugLog.TextLength;
-            txtDebugLog.ScrollToCaret();
+            rtbDebug.Text = logger.ToString();
+            rtbDebug.SelectionStart = rtbDebug.TextLength;
+            rtbDebug.ScrollToCaret();
 
             logger.MessageAdded += logger_MessageAdded;
         }
@@ -63,19 +63,19 @@ namespace HelpersLib
         {
             if (!string.IsNullOrEmpty(message))
             {
-                int start = txtDebugLog.SelectionStart;
-                int len = txtDebugLog.SelectionLength;
-                txtDebugLog.AppendText(message + Environment.NewLine);
+                int start = rtbDebug.SelectionStart;
+                int len = rtbDebug.SelectionLength;
+                rtbDebug.AppendText(message + Environment.NewLine);
                 if (len > 0)
                 {
-                    txtDebugLog.Select(start, len);
+                    rtbDebug.Select(start, len);
                 }
             }
         }
 
         private void btnCopyAll_Click(object sender, EventArgs e)
         {
-            string text = txtDebugLog.Text.Trim();
+            string text = rtbDebug.Text.Trim();
             ClipboardHelpers.CopyText(text);
         }
 
@@ -93,6 +93,11 @@ namespace HelpersLib
             string assemblies = sb.ToString().Trim();
 
             MessageBox.Show(assemblies, "ShareX - Loaded assemblies", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Helpers.LoadBrowserAsync(e.LinkText);
         }
     }
 }
