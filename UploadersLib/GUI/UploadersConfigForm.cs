@@ -942,7 +942,7 @@ namespace UploadersLib
         {
             UpdateCustomUploader();
 
-            if (Config.CustomImageUploaderSelected > -1)
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
             {
                 btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
                     btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
@@ -955,7 +955,7 @@ namespace UploadersLib
         {
             UpdateCustomUploader();
 
-            if (Config.CustomTextUploaderSelected > -1)
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
             {
                 btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
                     btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
@@ -968,7 +968,7 @@ namespace UploadersLib
         {
             UpdateCustomUploader();
 
-            if (Config.CustomFileUploaderSelected > -1)
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
             {
                 btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
                     btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
@@ -981,7 +981,7 @@ namespace UploadersLib
         {
             UpdateCustomUploader();
 
-            if (Config.CustomURLShortenerSelected > -1)
+            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
             {
                 btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
                     btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
