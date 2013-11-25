@@ -88,6 +88,15 @@ namespace ImageEffectsLib
         public Color TextColor { get; set; }
 
         [DefaultValue(true)]
+        public bool DrawTextShadow { get; set; }
+
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color TextShadowColor { get; set; }
+
+        [DefaultValue(typeof(Point), "-1, -1")]
+        public Point TextShadowOffset { get; set; }
+
+        [DefaultValue(true)]
         public bool DrawBackground { get; set; }
 
         [DefaultValue(5)]
@@ -212,10 +221,24 @@ namespace ImageEffectsLib
 
                     gWatermark.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
 
-                    using (Brush textBrush = new SolidBrush(TextColor))
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        gWatermark.DrawString(parsedText, textFont, textBrush, bmpWatermark.Width / 2f, bmpWatermark.Height / 2f, sf);
+                        float centerX = bmpWatermark.Width / 2f;
+                        float centerY = bmpWatermark.Height / 2f;
+
+                        if (DrawTextShadow)
+                        {
+                            using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
+                            {
+                                gWatermark.DrawString(parsedText, textFont, textShadowBrush,
+                                    centerX + TextShadowOffset.X, centerY + TextShadowOffset.Y, sf);
+                            }
+                        }
+
+                        using (Brush textBrush = new SolidBrush(TextColor))
+                        {
+                            gWatermark.DrawString(parsedText, textFont, textBrush, centerX, centerY, sf);
+                        }
                     }
 
                     using (Graphics gResult = Graphics.FromImage(img))

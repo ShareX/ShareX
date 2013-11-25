@@ -36,7 +36,7 @@ namespace ImageEffectsLib
         public WatermarkType Type = WatermarkType.Text;
         public ContentAlignment Placement = ContentAlignment.BottomRight;
         public int Offset = 5;
-        public DrawText Text = new DrawText();
+        public DrawText Text = new DrawText { DrawTextShadow = false };
         public DrawImage Image = new DrawImage();
 
         public Image Apply(Image img)
