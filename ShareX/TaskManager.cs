@@ -315,7 +315,7 @@ namespace ShareX
                                         balloonTipText = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
-                                    if (task.Info.TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
+                                    if (!string.IsNullOrEmpty(balloonTipText) && task.Info.TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
                                     {
                                         Program.MainForm.niTray.Tag = result;
                                         Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", balloonTipText, ToolTipIcon.Info);
