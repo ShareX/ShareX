@@ -48,7 +48,7 @@ namespace ShareX
                 if (info.Result != null)
                 {
                     string result = string.IsNullOrEmpty(info.Result.ToString()) ? info.FilePath : info.Result.ToString();
-                    pattern = pattern.Replace("$result", result);
+                    pattern = pattern.Replace("$result", result ?? "");
                     pattern = pattern.Replace("$url", info.Result.URL ?? "");
                     pattern = pattern.Replace("$shorturl", info.Result.ShortenedURL ?? "");
                     pattern = pattern.Replace("$thumbnailurl", info.Result.ThumbnailURL ?? "");

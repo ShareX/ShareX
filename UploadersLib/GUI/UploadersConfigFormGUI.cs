@@ -141,12 +141,8 @@ namespace UploadersLib
             // Imgur
 
             atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
-
-            if (cbImgurThumbnailType.Items.Count == 0)
-            {
-                cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
-            }
-
+            cbImgurThumbnailType.Items.Clear();
+            cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
             txtImgurAlbumID.Text = Config.ImgurAlbumID;
 
@@ -168,18 +164,13 @@ namespace UploadersLib
 
             if (Config.PhotobucketAccountInfo != null)
             {
-                if (cboPhotobucketAlbumPaths.Items.Count == 0)
+                cboPhotobucketAlbumPaths.Items.Clear();
+
+                if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)
                 {
                     cboPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
-                    if (cboPhotobucketAlbumPaths.Items.Count > 0)
-                    {
-                        cboPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID;
-                    }
-                    else if (!string.IsNullOrEmpty(Config.PhotobucketAccountInfo.AlbumID))
-                    {
-                        cboPhotobucketAlbumPaths.Items.Add(Config.PhotobucketAccountInfo.AlbumID);
-                        cboPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID;
-                    }
+                    cboPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
+                        BetweenOrDefault(0, Config.PhotobucketAccountInfo.AlbumList.Count - 1);
                 }
             }
 
@@ -202,12 +193,8 @@ namespace UploadersLib
             // TwitPic
 
             chkTwitPicShowFull.Checked = Config.TwitPicShowFull;
-
-            if (cboTwitPicThumbnailMode.Items.Count == 0)
-            {
-                cboTwitPicThumbnailMode.Items.AddRange(Helpers.GetEnumDescriptions<TwitPicThumbnailType>());
-            }
-
+            cboTwitPicThumbnailMode.Items.Clear();
+            cboTwitPicThumbnailMode.Items.AddRange(Helpers.GetEnumDescriptions<TwitPicThumbnailType>());
             cboTwitPicThumbnailMode.SelectedIndex = (int)Config.TwitPicThumbnailMode;
 
             // YFrog
@@ -249,6 +236,7 @@ namespace UploadersLib
 
             // Minus
 
+            cbMinusURLType.Items.Clear();
             cbMinusURLType.Items.AddRange(Enum.GetNames(typeof(MinusLinkType)));
             MinusUpdateControls();
 
