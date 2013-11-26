@@ -772,7 +772,10 @@ namespace ShareX
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(Program.ScreenshotsPath);
+            if (!Helpers.OpenFolder(Program.ScreenshotsPath))
+            {
+                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
+            }
         }
 
         private void tsbHistory_Click(object sender, EventArgs e)
