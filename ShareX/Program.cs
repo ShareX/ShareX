@@ -178,7 +178,7 @@ namespace ShareX
             }
         }
 
-        private static string ScreenshotsParentFolder
+        public static string ScreenshotsParentFolder
         {
             get
             {
