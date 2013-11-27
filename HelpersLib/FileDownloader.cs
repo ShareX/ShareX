@@ -130,6 +130,7 @@ namespace HelpersLib
             try
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
+                request.UserAgent = "ShareX";
                 request.Proxy = Proxy;
 
                 if (!string.IsNullOrEmpty(AcceptHeader))
