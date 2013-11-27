@@ -43,10 +43,7 @@ namespace ShareX
             Text = Program.FullTitle;
             lblProductName.Text = Program.FullTitle;
 
-            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX", Program.AssemblyVersion);
-            updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
-
-            uclUpdate.CheckUpdate(updateChecker);
+            uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
 
             rtbShareXInfo.AddContextMenu();
             rtbCredits.AddContextMenu();

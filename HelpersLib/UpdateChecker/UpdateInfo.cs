@@ -26,6 +26,7 @@
 using HelpersLib;
 using System;
 using System.Text;
+using System.Web;
 
 namespace HelpersLib
 {
@@ -34,9 +35,27 @@ namespace HelpersLib
         public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
         public Version LatestVersion { get; set; }
-        public string Filename { get; set; }
+
+        private string filename;
+
+        public string Filename
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(filename))
+                {
+                    return HttpUtility.UrlDecode(DownloadURL.Substring(DownloadURL.LastIndexOf('/') + 1));
+                }
+
+                return filename;
+            }
+            set
+            {
+                filename = value;
+            }
+        }
+
         public string DownloadURL { get; set; }
-        public string UpdateNotes { get; set; }
         public ReleaseChannelType ReleaseChannel { get; set; }
 
         private bool forceUpdate = false; // For testing purposes

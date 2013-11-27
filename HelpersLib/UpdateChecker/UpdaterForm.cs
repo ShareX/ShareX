@@ -71,37 +71,18 @@ namespace HelpersLib
             AutoStartInstall = true;
         }
 
-        public UpdaterForm(string url, IWebProxy proxy, string filename = "", string changelog = "")
+        public UpdaterForm(UpdateChecker updateChecker)
             : this()
         {
-            URL = url;
-            Proxy = proxy;
-
-            if (string.IsNullOrEmpty(filename))
-            {
-                Filename = HttpUtility.UrlDecode(URL.Substring(URL.LastIndexOf('/') + 1));
-            }
-            else
-            {
-                Filename = filename;
-            }
-
+            URL = updateChecker.UpdateInfo.DownloadURL;
+            Proxy = updateChecker.Proxy;
+            Filename = updateChecker.UpdateInfo.Filename;
             lblFilename.Text = "Filename: " + Filename;
 
-            if (!string.IsNullOrEmpty(changelog))
+            if (updateChecker is GitHubUpdateChecker)
             {
-                Changelog = changelog;
-                txtChangelog.Text = Changelog;
-                cbShowChangelog.Visible = true;
+                AcceptHeader = "application/octet-stream";
             }
-        }
-
-        public static UpdaterForm GetGitHubUpdaterForm(GitHubUpdateChecker updateChecker)
-        {
-            UpdaterForm updaterForm = new UpdaterForm(updateChecker.UpdateInfo.DownloadURL, updateChecker.Proxy,
-                updateChecker.UpdateInfo.Filename, updateChecker.UpdateInfo.UpdateNotes);
-            updaterForm.AcceptHeader = "application/octet-stream";
-            return updaterForm;
         }
 
         private void UpdaterForm_Paint(object sender, PaintEventArgs e)

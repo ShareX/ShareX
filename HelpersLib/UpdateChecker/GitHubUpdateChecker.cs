@@ -34,15 +34,12 @@ using System.Text;
 
 namespace HelpersLib
 {
-    public class GitHubUpdateChecker
+    public class GitHubUpdateChecker : UpdateChecker
     {
-        private const string APIURL = "https://api.github.com";
-
         public string Owner { get; private set; }
         public string Repo { get; private set; }
-        public Version CurrentVersion { get; private set; }
-        public IWebProxy Proxy { get; set; }
-        public UpdateInfo UpdateInfo { get; private set; }
+
+        private const string APIURL = "https://api.github.com";
 
         private string ReleasesURL
         {
@@ -52,14 +49,13 @@ namespace HelpersLib
             }
         }
 
-        public GitHubUpdateChecker(string owner, string repo, Version currentVersion)
+        public GitHubUpdateChecker(string owner, string repo)
         {
             Owner = owner;
             Repo = repo;
-            CurrentVersion = currentVersion;
         }
 
-        public bool CheckUpdate()
+        public override void CheckUpdate()
         {
             UpdateInfo = new UpdateInfo { CurrentVersion = this.CurrentVersion };
 
@@ -85,7 +81,7 @@ namespace HelpersLib
                                 UpdateInfo.Filename = asset.name;
                                 UpdateInfo.DownloadURL = asset.url;
                                 UpdateInfo.RefreshStatus();
-                                return true;
+                                return;
                             }
                         }
                     }
@@ -97,8 +93,6 @@ namespace HelpersLib
             }
 
             UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;
-
-            return false;
         }
 
         private string GetDownloadURL(GitHubRelease release)

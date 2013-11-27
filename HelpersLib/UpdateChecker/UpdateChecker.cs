@@ -35,96 +35,18 @@ using System.Xml.Linq;
 
 namespace HelpersLib
 {
-    public class UpdateChecker
+    public abstract class UpdateChecker
     {
-        public string URL { get; private set; }
-        public string ApplicationName { get; private set; }
-        public Version ApplicationVersion { get; private set; }
-        public ReleaseChannelType ReleaseChannel { get; private set; }
-        public IWebProxy Proxy { get; private set; }
-        public UpdateInfo UpdateInfo { get; private set; }
+        public Version CurrentVersion { get; set; }
+        public ReleaseChannelType ReleaseType { get; set; }
+        public IWebProxy Proxy { get; set; }
+        public UpdateInfo UpdateInfo { get; protected set; }
 
-        public UpdateChecker(string url, string applicationName, Version applicationVersion,
-            ReleaseChannelType channel = ReleaseChannelType.Stable, IWebProxy proxy = null)
+        public UpdateChecker()
         {
-            URL = url;
-            ApplicationName = applicationName;
-            ApplicationVersion = applicationVersion;
-            ReleaseChannel = channel;
-            Proxy = proxy;
+            ReleaseType = ReleaseChannelType.Stable;
         }
 
-        public bool CheckUpdate()
-        {
-            UpdateInfo = new UpdateInfo();
-            UpdateInfo.ReleaseChannel = ReleaseChannel;
-            UpdateInfo.CurrentVersion = ApplicationVersion;
-
-            try
-            {
-                RequestCachePolicy cachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-
-                using (WebClient wc = new WebClient { Proxy = Proxy, CachePolicy = cachePolicy })
-                using (MemoryStream ms = new MemoryStream(wc.DownloadData(URL)))
-                using (XmlTextReader xml = new XmlTextReader(ms))
-                {
-                    XDocument xd = XDocument.Load(xml);
-
-                    if (xd != null)
-                    {
-                        string node;
-
-                        switch (ReleaseChannel)
-                        {
-                            default:
-                            case ReleaseChannelType.Stable:
-                                node = "Stable";
-                                break;
-                            case ReleaseChannelType.Beta:
-                                node = "Beta|Stable";
-                                break;
-                            case ReleaseChannelType.Dev:
-                                node = "Dev|Beta|Stable";
-                                break;
-                        }
-
-                        string path = string.Format("Update/{0}/{1}", ApplicationName, node);
-                        XElement xe = xd.GetNode(path);
-
-                        if (xe != null)
-                        {
-                            UpdateInfo.LatestVersion = new Version(xe.GetValue("Version"));
-                            UpdateInfo.DownloadURL = xe.GetValue("URL");
-                            UpdateInfo.UpdateNotes = xe.GetValue("Summary");
-                            UpdateInfo.RefreshStatus();
-
-                            if (UpdateInfo.Status == UpdateStatus.UpdateAvailable && !string.IsNullOrEmpty(UpdateInfo.UpdateNotes) &&
-                                UpdateInfo.UpdateNotes.IsValidUrl())
-                            {
-                                try
-                                {
-                                    wc.Encoding = Encoding.UTF8;
-                                    UpdateInfo.UpdateNotes = wc.DownloadString(UpdateInfo.UpdateNotes.Trim());
-                                }
-                                catch (Exception ex)
-                                {
-                                    DebugHelper.WriteException(ex);
-                                }
-                            }
-
-                            return true;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-            }
-
-            UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;
-
-            return false;
-        }
+        public abstract void CheckUpdate();
     }
 }

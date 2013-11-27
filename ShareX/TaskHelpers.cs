@@ -34,6 +34,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Media;
 using System.Windows.Forms;
+using UploadersLib;
 
 namespace ShareX
 {
@@ -316,6 +317,25 @@ namespace ShareX
 
                 return Icon.FromHandle(bmp.GetHicon());
             }
+        }
+
+        public static UpdateChecker CheckUpdate()
+        {
+            UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
+            updateChecker.CurrentVersion = Program.AssemblyVersion;
+            updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
+            updateChecker.CheckUpdate();
+
+            // Backup if GitHub API fails
+            if (updateChecker.UpdateInfo == null || updateChecker.UpdateInfo.Status == UpdateStatus.UpdateCheckFailed)
+            {
+                updateChecker = new XMLUpdateChecker("https://raw.github.com/ShareX/ShareX/master/Update.xml", "ShareX");
+                updateChecker.CurrentVersion = Program.AssemblyVersion;
+                updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
+                updateChecker.CheckUpdate();
+            }
+
+            return updateChecker;
         }
     }
 

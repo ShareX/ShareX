@@ -29,9 +29,11 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
+    public delegate UpdateChecker CheckUpdate();
+
     public partial class UpdateCheckerLabel : UserControl
     {
-        private GitHubUpdateChecker updateChecker;
+        private UpdateChecker updateChecker;
         private bool isBusy;
 
         public UpdateCheckerLabel()
@@ -39,10 +41,8 @@ namespace HelpersLib
             InitializeComponent();
         }
 
-        public void CheckUpdate(GitHubUpdateChecker updateChecker)
+        public void CheckUpdate(CheckUpdate checkUpdate)
         {
-            this.updateChecker = updateChecker;
-
             if (!isBusy)
             {
                 isBusy = true;
@@ -53,13 +53,13 @@ namespace HelpersLib
                 pbLoading.Visible = true;
                 lblCheckingUpdates.Visible = true;
 
-                new Thread(CheckingUpdate).Start();
+                new Thread(() => CheckingUpdate(checkUpdate)).Start();
             }
         }
 
-        private void CheckingUpdate()
+        private void CheckingUpdate(CheckUpdate checkUpdate)
         {
-            updateChecker.CheckUpdate();
+            updateChecker = checkUpdate();
             UpdateControls();
             isBusy = false;
         }
@@ -93,7 +93,7 @@ namespace HelpersLib
         {
             if (updateChecker != null && updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable)
             {
-                UpdaterForm updaterForm = UpdaterForm.GetGitHubUpdaterForm(updateChecker);
+                UpdaterForm updaterForm = new UpdaterForm(updateChecker);
                 updaterForm.ShowDialog();
 
                 if (updaterForm.Status == DownloaderFormStatus.InstallStarted)

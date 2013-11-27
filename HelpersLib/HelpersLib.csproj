@@ -193,6 +193,7 @@
     <Compile Include="Cryptographic\TranslatorHelper.cs" />
     <Compile Include="UnsafeBitmap.cs" />
     <Compile Include="UpdateChecker\GitHubUpdateChecker.cs" />
+    <Compile Include="UpdateChecker\UpdateChecker.cs" />
     <Compile Include="UpdateChecker\UpdaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,7 +283,7 @@
     <Compile Include="UserControls\MyPictureBox.Designer.cs">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateChecker\UpdateChecker.cs" />
+    <Compile Include="UpdateChecker\XMLUpdateChecker.cs" />
     <Compile Include="UpdateChecker\UpdateInfo.cs" />
     <Compile Include="Links.cs" />
     <Compile Include="WindowState.cs" />
