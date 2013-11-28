@@ -40,8 +40,8 @@ namespace ShareX
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            Text = Program.FullTitle;
-            lblProductName.Text = Program.FullTitle;
+            Text = Program.Title;
+            lblProductName.Text = Program.Title;
 
             uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
 

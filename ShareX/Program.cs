@@ -46,16 +46,7 @@ namespace ShareX
             get
             {
                 string title = string.Format("{0} {1}.{2}", ApplicationName, AssemblyVersion.Major, AssemblyVersion.Minor);
-                if (IsPortable) title += " Portable";
-                return title;
-            }
-        }
-
-        public static string FullTitle
-        {
-            get
-            {
-                string title = string.Format("{0} {1}.{2}.{3}", ApplicationName, AssemblyVersion.Major, AssemblyVersion.Minor, AssemblyVersion.Build);
+                if (AssemblyVersion.Build > 0) title += "." + AssemblyVersion.Build;
                 if (IsPortable) title += " Portable";
                 return title;
             }
@@ -286,7 +277,7 @@ namespace ShareX
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                DebugHelper.WriteLine("{0} started", FullTitle);
+                DebugHelper.WriteLine("{0} started", Title);
                 DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
                 DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
                 DebugHelper.WriteLine("Personal path: " + PersonalPath);
