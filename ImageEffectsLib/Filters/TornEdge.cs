@@ -26,6 +26,7 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ImageEffectsLib
 {
@@ -41,6 +42,9 @@ namespace ImageEffectsLib
         [DefaultValue(20)]
         public int VerticalToothRange { get; set; }
 
+        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
+        public AnchorStyles Sides { get; set; }
+
         public TornEdge()
         {
             this.ApplyDefaultPropertyValues();
@@ -48,10 +52,15 @@ namespace ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            using (img)
+            if (Sides != AnchorStyles.None)
             {
-                return ImageHelpers.CreateTornEdge(img, ToothHeight, HorizontalToothRange, VerticalToothRange);
+                using (img)
+                {
+                    return ImageHelpers.CreateTornEdge(img, ToothHeight, HorizontalToothRange, VerticalToothRange, Sides);
+                }
             }
+
+            return img;
         }
     }
 }
