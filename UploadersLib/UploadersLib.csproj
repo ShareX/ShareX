@@ -374,6 +374,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gist.ico" />
     <None Include="packages.config" />
     <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />

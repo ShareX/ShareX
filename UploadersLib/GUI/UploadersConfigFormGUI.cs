@@ -75,6 +75,7 @@ namespace UploadersLib
             ImageList textUploadersImageList = new ImageList();
             textUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
             textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
+            textUploadersImageList.Images.Add("Gist", Resources.Gist);
             tcTextUploaders.ImageList = textUploadersImageList;
 
             ImageList urlShortenersImageList = new ImageList();
@@ -113,6 +114,7 @@ namespace UploadersLib
             tpGoogleURLShortener.ImageKey = "Google";
             tpTwitter.ImageKey = "Twitter";
             tpMega.ImageKey = "Mega";
+            tpGist.ImageKey = "Gist";
 
             cmsCustomUploaderArgValue = NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
 
