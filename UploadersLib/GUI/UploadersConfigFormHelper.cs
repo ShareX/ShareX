@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -1183,15 +1184,67 @@ namespace UploadersLib
         {
             int index = lbCustomUploaderList.SelectedIndex;
 
-            if (index != -1)
+            if (index >= 0)
             {
                 CustomUploaderItem customUploader = GetCustomUploaderFromFields();
 
-                if (!string.IsNullOrEmpty(customUploader.Name))
+                if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
                 {
                     Config.CustomUploadersList[index] = customUploader;
                     lbCustomUploaderList.Items[index] = customUploader.Name;
                     PrepareCustomUploaderList();
+                }
+            }
+        }
+
+        private void ExportCustomUploader()
+        {
+            int index = lbCustomUploaderList.SelectedIndex;
+
+            if (index >= 0)
+            {
+                CustomUploaderItem customUploader = GetCustomUploaderFromFields();
+
+                if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
+                {
+                    try
+                    {
+                        string json = JsonConvert.SerializeObject(customUploader, Formatting.Indented);
+                        ClipboardHelpers.CopyText(json);
+                        MessageBox.Show("Selected custom uploader copied to your clipboard.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
+                }
+            }
+        }
+
+        private void ImportCustomUploader()
+        {
+            if (Clipboard.ContainsText())
+            {
+                string json = Clipboard.GetText();
+
+                if (!string.IsNullOrEmpty(json))
+                {
+                    try
+                    {
+                        CustomUploaderItem customUploader = JsonConvert.DeserializeObject<CustomUploaderItem>(json);
+
+                        if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
+                        {
+                            Config.CustomUploadersList.Add(customUploader);
+                            lbCustomUploaderList.Items.Add(customUploader.Name);
+                            lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+                            PrepareCustomUploaderList();
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
                 }
             }
         }
