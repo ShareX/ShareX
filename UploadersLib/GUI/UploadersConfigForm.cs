@@ -817,6 +817,16 @@ namespace UploadersLib
             }
         }
 
+        private void btnCustomUploaderExport_Click(object sender, EventArgs e)
+        {
+            ExportCustomUploader();
+        }
+
+        private void btnCustomUploaderImport_Click(object sender, EventArgs e)
+        {
+            ImportCustomUploader();
+        }
+
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCustomUploaderFileForm.Enabled = (CustomUploaderRequestType)cbCustomUploaderRequestType.SelectedIndex == CustomUploaderRequestType.POST;

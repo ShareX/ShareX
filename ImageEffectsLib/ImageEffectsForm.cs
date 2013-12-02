@@ -323,6 +323,7 @@ namespace ImageEffectsLib
             {
                 string json = ImageEffectManager.ExportEffects(imageEffects);
                 ClipboardHelpers.CopyText(json);
+                MessageBox.Show("Image effects copied to your clipboard.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

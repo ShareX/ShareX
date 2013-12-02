@@ -320,6 +320,8 @@
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.btnCustomUploaderExport = new System.Windows.Forms.Button();
+            this.btnCustomUploaderImport = new System.Windows.Forms.Button();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -3007,7 +3009,9 @@
             // 
             // gbCustomUploaders
             // 
+            this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderImport);
             this.gbCustomUploaders.Controls.Add(this.lbCustomUploaderList);
+            this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderExport);
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderRemove);
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderClear);
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderUpdate);
@@ -3046,7 +3050,7 @@
             this.btnCustomUploaderClear.Name = "btnCustomUploaderClear";
             this.btnCustomUploaderClear.Size = new System.Drawing.Size(88, 24);
             this.btnCustomUploaderClear.TabIndex = 5;
-            this.btnCustomUploaderClear.Text = "Clear fields ->";
+            this.btnCustomUploaderClear.Text = "Clear fields -->";
             this.btnCustomUploaderClear.UseVisualStyleBackColor = true;
             this.btnCustomUploaderClear.Click += new System.EventHandler(this.btnCustomUploaderClear_Click);
             // 
@@ -3420,6 +3424,26 @@
             this.actRapidShareAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
+            // 
+            // btnCustomUploaderExport
+            // 
+            this.btnCustomUploaderExport.Location = new System.Drawing.Point(8, 328);
+            this.btnCustomUploaderExport.Name = "btnCustomUploaderExport";
+            this.btnCustomUploaderExport.Size = new System.Drawing.Size(64, 23);
+            this.btnCustomUploaderExport.TabIndex = 34;
+            this.btnCustomUploaderExport.Text = "Export";
+            this.btnCustomUploaderExport.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderExport.Click += new System.EventHandler(this.btnCustomUploaderExport_Click);
+            // 
+            // btnCustomUploaderImport
+            // 
+            this.btnCustomUploaderImport.Location = new System.Drawing.Point(80, 328);
+            this.btnCustomUploaderImport.Name = "btnCustomUploaderImport";
+            this.btnCustomUploaderImport.Size = new System.Drawing.Size(64, 23);
+            this.btnCustomUploaderImport.TabIndex = 35;
+            this.btnCustomUploaderImport.Text = "Import";
+            this.btnCustomUploaderImport.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderImport.Click += new System.EventHandler(this.btnCustomUploaderImport_Click);
             // 
             // UploadersConfigForm
             // 
@@ -3817,5 +3841,7 @@
         private GUI.AccountTypeControl atcMegaAccountType;
         private System.Windows.Forms.Button btnMegaRegister;
         private System.Windows.Forms.Button btnMegaRefreshFolders;
+        private System.Windows.Forms.Button btnCustomUploaderImport;
+        private System.Windows.Forms.Button btnCustomUploaderExport;
     }
 }
