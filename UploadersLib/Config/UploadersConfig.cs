@@ -98,6 +98,11 @@ namespace UploadersLib
 
         public string Paste_eeUserAPIKey = "public";
 
+        // Gist
+
+        public bool GistAnonymousLogin = true;
+        public OAuth2Info GistOAuth2Info = null;
+
         #endregion Text uploaders
 
         #region File uploaders

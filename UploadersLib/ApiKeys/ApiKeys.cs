@@ -60,6 +60,8 @@ namespace UploadersLib
         // Text Uploaders
         public const string PastebinKey = "4b23be71ec78bbd4fb96735320aa09ef";
         public const string PastebinCaKey = "KxTofLKQThSBZ63Gpa7hYLlMdyQlMD6u";
+        public const string GistId = "60cd5843cab0522f8501";
+        public const string GistSecret = "fa6eec2009b7fee1037548a96886992acc39fee8";
 
         // URL Shorteners
         public const string BitlyLogin = "jaex";

@@ -23,17 +23,74 @@
 
 #endregion License Information (GPL v3)
 
-// gpailler
-
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {
+    using System;
+    using System.Collections.Specialized;
+    using System.Net;
+
     public sealed class Gist : TextUploader
     {
-        private const string GistUploadUrl = "https://api.github.com/gists";
+        private readonly Uri GistUri = new Uri("https://api.github.com/gists");
+        private readonly Uri GistAuthorizeUri = new Uri("https://github.com/login/oauth/authorize");
+        private readonly Uri GistCompleteUri = new Uri("https://github.com/login/oauth/access_token");
+        private readonly Uri GistRedirectUri = new Uri("http://ksr.pailler.fr/gist/gist.html");
+
+        private readonly OAuth2Info oAuthInfos;
+
+        public Gist()
+            : this(null)
+        {
+        }
+
+        public Gist(OAuth2Info oAuthInfos)
+        {
+            this.oAuthInfos = oAuthInfos;
+        }
+
+        public string GetAuthorizationURL()
+        {
+            NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
+            queryString["client_id"] = this.oAuthInfos.Client_ID;
+            queryString["redirect_uri"] = this.GistRedirectUri.ToString();
+            queryString["scope"] = "gist";
+
+            UriBuilder uri = new UriBuilder(this.GistAuthorizeUri);
+            uri.Query = queryString.ToString();
+
+            return uri.ToString();
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", this.oAuthInfos.Client_ID);
+            args.Add("client_secret", this.oAuthInfos.Client_Secret);
+            args.Add("code", code);
+
+            WebHeaderCollection headers = new WebHeaderCollection();
+            headers.Add("Accept", "application/json");
+            
+            string response = this.SendPostRequest(this.GistCompleteUri.ToString(), args, headers: headers);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+                if (token != null && !string.IsNullOrEmpty(token.access_token))
+                {
+                    this.oAuthInfos.Token = token;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 
         public override UploadResult UploadText(string text, string fileName)
         {
@@ -52,7 +109,13 @@ namespace UploadersLib.TextUploaders
 
                 string argsJson = JsonConvert.SerializeObject(gistUploadObject);
 
-                string response = SendPostRequestJSON(GistUploadUrl, argsJson);
+                string Uri = GistUri.ToString();
+                if (this.oAuthInfos != null)
+                {
+                    Uri += "?access_token=" + this.oAuthInfos.Token.access_token;
+                }
+
+                string response = SendPostRequestJSON(Uri, argsJson);
                 if (response != null)
                 {
                     var gistReturnType = new { html_url = "" };

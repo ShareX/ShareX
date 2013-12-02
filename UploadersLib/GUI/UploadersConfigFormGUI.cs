@@ -216,6 +216,10 @@ namespace UploadersLib
 
             txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserAPIKey;
 
+            // Gist
+
+            atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
+
             #endregion Text uploaders
 
             #region File uploaders

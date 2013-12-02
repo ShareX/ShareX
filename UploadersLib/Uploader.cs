@@ -108,9 +108,9 @@ namespace UploadersLib
         #region Post methods
 
         protected string SendPostRequest(string url, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
-            CookieCollection cookies = null)
+            CookieCollection cookies = null, NameValueCollection headers = null)
         {
-            using (HttpWebResponse response = PostResponseMultiPart(url, arguments, cookies))
+            using (HttpWebResponse response = PostResponseMultiPart(url, arguments, cookies, headers))
             {
                 return ResponseToString(response, responseType);
             }
@@ -145,7 +145,7 @@ namespace UploadersLib
             }
         }
 
-        private HttpWebResponse PostResponseMultiPart(string url, Dictionary<string, string> arguments, CookieCollection cookies = null)
+        private HttpWebResponse PostResponseMultiPart(string url, Dictionary<string, string> arguments, CookieCollection cookies = null, NameValueCollection headers = null)
         {
             string boundary = CreateBoundary();
             byte[] data = MakeInputContent(boundary, arguments);
@@ -153,7 +153,7 @@ namespace UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponseUsingPost(url, stream, boundary, "multipart/form-data", cookies);
+                return GetResponseUsingPost(url, stream, boundary, "multipart/form-data", cookies, headers);
             }
         }
 
@@ -347,6 +347,12 @@ namespace UploadersLib
             NameValueCollection headers = null)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            if (headers != null && headers["Accept"] != null)
+            {
+                request.Accept = headers["Accept"];
+                headers.Remove("Accept");
+            }
+
             request.AllowWriteStreamBuffering = ProxyInfo.IsValidProxy();
             request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
             request.ContentLength = length;

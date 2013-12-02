@@ -1419,5 +1419,56 @@ namespace UploadersLib
         }
 
         #endregion Jira
+
+        #region Gist
+        public void GistAuthOpen()
+        {
+            try
+            {
+                OAuth2Info oauth = new OAuth2Info(ApiKeys.GistId, ApiKeys.GistSecret);
+                string url = new Gist(oauth).GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    Config.GistOAuth2Info = oauth;
+                    Helpers.LoadBrowserAsync(url);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void GistAuthComplete(string code)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && Config.GistOAuth2Info != null)
+                {
+                    bool result = new Gist(Config.GistOAuth2Info).GetAccessToken(code);
+
+                    if (result)
+                    {
+                        oAuth2Gist.Status = "Login successful.";
+                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oAuth2Gist.Status = "Login failed.";
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        atcGistAccountType.SelectedAccountType = AccountType.Anonymous;
+                    }
+
+                    oAuth2Gist.LoginStatus = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion Gist
     }
 }

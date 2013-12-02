@@ -1167,6 +1167,31 @@ namespace UploadersLib
 
         #endregion Paste.ee
 
+        #region Gist
+
+        private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
+            oAuth2Gist.Enabled = !Config.GistAnonymousLogin;
+        }
+
+        private void oAuth2Gist_CompleteButtonClicked(string code)
+        {
+            this.GistAuthComplete(code);
+        }
+
+        private void oAuth2Gist_OpenButtonClicked()
+        {
+            this.GistAuthOpen();
+        }
+        
+        private void oAuth2Gist_RefreshButtonClicked()
+        {
+            MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
+
         #endregion Text Uploaders
 
         #region URL Shorteners
