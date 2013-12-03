@@ -23,32 +23,35 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using UploadersLib.HelperClasses;
-
 namespace UploadersLib.TextUploaders
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Net;
+
+    using Newtonsoft.Json;
+
+    using UploadersLib.HelperClasses;
 
     public sealed class Gist : TextUploader
     {
         private readonly Uri GistUri = new Uri("https://api.github.com/gists");
         private readonly Uri GistAuthorizeUri = new Uri("https://github.com/login/oauth/authorize");
         private readonly Uri GistCompleteUri = new Uri("https://github.com/login/oauth/access_token");
-        private readonly Uri GistRedirectUri = new Uri("http://ksr.pailler.fr/gist/gist.html");
+        private readonly Uri GistRedirectUri = new Uri("http://getsharex.com/github/");
 
         private readonly OAuth2Info oAuthInfos;
+        private readonly bool publishPublic;
 
-        public Gist()
-            : this(null)
+        public Gist(OAuth2Info oAuthInfos)
+            : this(false, oAuthInfos)
         {
         }
 
-        public Gist(OAuth2Info oAuthInfos)
+        public Gist(bool publishPublic, OAuth2Info oAuthInfos)
         {
+            this.publishPublic = publishPublic;
             this.oAuthInfos = oAuthInfos;
         }
 
@@ -90,8 +93,7 @@ namespace UploadersLib.TextUploaders
 
             return false;
         }
-
-
+        
         public override UploadResult UploadText(string text, string fileName)
         {
             UploadResult ur = new UploadResult();
@@ -100,7 +102,7 @@ namespace UploadersLib.TextUploaders
             {
                 var gistUploadObject = new
                 {
-                    @public = true,
+                    @public = this.publishPublic,
                     files = new Dictionary<string, object>
                     {
                         { fileName, new { content = text } }
@@ -118,7 +120,7 @@ namespace UploadersLib.TextUploaders
                 string response = SendPostRequestJSON(Uri, argsJson);
                 if (response != null)
                 {
-                    var gistReturnType = new { html_url = "" };
+                    var gistReturnType = new { html_url = string.Empty };
                     var gistReturnObject = JsonConvert.DeserializeAnonymousType(response, gistReturnType);
                     ur.URL = gistReturnObject.html_url;
                 }

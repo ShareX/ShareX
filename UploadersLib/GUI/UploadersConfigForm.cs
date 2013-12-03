@@ -1181,8 +1181,13 @@ namespace UploadersLib
 
         private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
         {
-            Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
-            oAuth2Gist.Enabled = !Config.GistAnonymousLogin;
+            this.Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
+            if (accountType == AccountType.Anonymous)
+            {
+                this.Config.GistOAuth2Info = null;
+            }
+
+            this.oAuth2Gist.Enabled = !this.Config.GistAnonymousLogin;
         }
 
         private void oAuth2Gist_CompleteButtonClicked(string code)
@@ -1198,6 +1203,11 @@ namespace UploadersLib
         private void oAuth2Gist_RefreshButtonClicked()
         {
             MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Config.GistPublishPublic = ((CheckBox)sender).Checked;
         }
 
         #endregion

@@ -102,6 +102,7 @@ namespace UploadersLib
 
         public bool GistAnonymousLogin = true;
         public OAuth2Info GistOAuth2Info = null;
+        public bool GistPublishPublic = false;
 
         #endregion Text uploaders
 

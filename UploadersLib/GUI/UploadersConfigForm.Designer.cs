@@ -122,6 +122,7 @@
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.tpGist = new System.Windows.Forms.TabPage();
+            this.chkGistPublishPublic = new System.Windows.Forms.CheckBox();
             this.oAuth2Gist = new UploadersLib.GUI.OAuth2Control();
             this.atcGistAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
@@ -280,7 +281,9 @@
             this.lblCustomUploaderResponseType = new System.Windows.Forms.Label();
             this.cbCustomUploaderURLShortener = new System.Windows.Forms.ComboBox();
             this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
+            this.btnCustomUploaderImport = new System.Windows.Forms.Button();
             this.lbCustomUploaderList = new System.Windows.Forms.ListBox();
+            this.btnCustomUploaderExport = new System.Windows.Forms.Button();
             this.btnCustomUploaderRemove = new System.Windows.Forms.Button();
             this.btnCustomUploaderClear = new System.Windows.Forms.Button();
             this.btnCustomUploaderUpdate = new System.Windows.Forms.Button();
@@ -323,8 +326,6 @@
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
-            this.btnCustomUploaderExport = new System.Windows.Forms.Button();
-            this.btnCustomUploaderImport = new System.Windows.Forms.Button();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -1342,6 +1343,7 @@
             // 
             // tpGist
             // 
+            this.tpGist.Controls.Add(this.chkGistPublishPublic);
             this.tpGist.Controls.Add(this.oAuth2Gist);
             this.tpGist.Controls.Add(this.atcGistAccountType);
             this.tpGist.Location = new System.Drawing.Point(4, 22);
@@ -1351,10 +1353,21 @@
             this.tpGist.Text = "Gist";
             this.tpGist.UseVisualStyleBackColor = true;
             // 
+            // chkGistPublishPublic
+            // 
+            this.chkGistPublishPublic.AutoSize = true;
+            this.chkGistPublishPublic.Location = new System.Drawing.Point(235, 23);
+            this.chkGistPublishPublic.Name = "chkGistPublishPublic";
+            this.chkGistPublishPublic.Size = new System.Drawing.Size(109, 17);
+            this.chkGistPublishPublic.TabIndex = 17;
+            this.chkGistPublishPublic.Text = "Create public Gist";
+            this.chkGistPublishPublic.UseVisualStyleBackColor = true;
+            this.chkGistPublishPublic.CheckedChanged += new System.EventHandler(this.chkGistPublishPublic_CheckedChanged);
+            // 
             // oAuth2Gist
             // 
             this.oAuth2Gist.Enabled = false;
-            this.oAuth2Gist.Location = new System.Drawing.Point(15, 51);
+            this.oAuth2Gist.Location = new System.Drawing.Point(16, 51);
             this.oAuth2Gist.LoginStatus = false;
             this.oAuth2Gist.Name = "oAuth2Gist";
             this.oAuth2Gist.Size = new System.Drawing.Size(328, 207);
@@ -3062,6 +3075,16 @@
             this.gbCustomUploaders.TabStop = false;
             this.gbCustomUploaders.Text = "Uploaders";
             // 
+            // btnCustomUploaderImport
+            // 
+            this.btnCustomUploaderImport.Location = new System.Drawing.Point(80, 328);
+            this.btnCustomUploaderImport.Name = "btnCustomUploaderImport";
+            this.btnCustomUploaderImport.Size = new System.Drawing.Size(64, 23);
+            this.btnCustomUploaderImport.TabIndex = 35;
+            this.btnCustomUploaderImport.Text = "Import";
+            this.btnCustomUploaderImport.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderImport.Click += new System.EventHandler(this.btnCustomUploaderImport_Click);
+            // 
             // lbCustomUploaderList
             // 
             this.lbCustomUploaderList.FormattingEnabled = true;
@@ -3071,6 +3094,16 @@
             this.lbCustomUploaderList.Size = new System.Drawing.Size(232, 248);
             this.lbCustomUploaderList.TabIndex = 4;
             this.lbCustomUploaderList.SelectedIndexChanged += new System.EventHandler(this.lbCustomUploaderList_SelectedIndexChanged);
+            // 
+            // btnCustomUploaderExport
+            // 
+            this.btnCustomUploaderExport.Location = new System.Drawing.Point(8, 328);
+            this.btnCustomUploaderExport.Name = "btnCustomUploaderExport";
+            this.btnCustomUploaderExport.Size = new System.Drawing.Size(64, 23);
+            this.btnCustomUploaderExport.TabIndex = 34;
+            this.btnCustomUploaderExport.Text = "Export";
+            this.btnCustomUploaderExport.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderExport.Click += new System.EventHandler(this.btnCustomUploaderExport_Click);
             // 
             // btnCustomUploaderRemove
             // 
@@ -3463,26 +3496,6 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // btnCustomUploaderExport
-            // 
-            this.btnCustomUploaderExport.Location = new System.Drawing.Point(8, 328);
-            this.btnCustomUploaderExport.Name = "btnCustomUploaderExport";
-            this.btnCustomUploaderExport.Size = new System.Drawing.Size(64, 23);
-            this.btnCustomUploaderExport.TabIndex = 34;
-            this.btnCustomUploaderExport.Text = "Export";
-            this.btnCustomUploaderExport.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderExport.Click += new System.EventHandler(this.btnCustomUploaderExport_Click);
-            // 
-            // btnCustomUploaderImport
-            // 
-            this.btnCustomUploaderImport.Location = new System.Drawing.Point(80, 328);
-            this.btnCustomUploaderImport.Name = "btnCustomUploaderImport";
-            this.btnCustomUploaderImport.Size = new System.Drawing.Size(64, 23);
-            this.btnCustomUploaderImport.TabIndex = 35;
-            this.btnCustomUploaderImport.Text = "Import";
-            this.btnCustomUploaderImport.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderImport.Click += new System.EventHandler(this.btnCustomUploaderImport_Click);
-            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3528,6 +3541,7 @@
             this.tpPaste_ee.ResumeLayout(false);
             this.tpPaste_ee.PerformLayout();
             this.tpGist.ResumeLayout(false);
+            this.tpGist.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpDropbox.ResumeLayout(false);
@@ -3885,5 +3899,6 @@
         private GUI.OAuth2Control oAuth2Gist;
         private System.Windows.Forms.Button btnCustomUploaderImport;
         private System.Windows.Forms.Button btnCustomUploaderExport;
+        private System.Windows.Forms.CheckBox chkGistPublishPublic;
     }
 }

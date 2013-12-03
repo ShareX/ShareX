@@ -219,6 +219,7 @@ namespace UploadersLib
             // Gist
 
             atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
+            chkGistPublishPublic.Checked = Config.GistPublishPublic;
 
             #endregion Text uploaders
 

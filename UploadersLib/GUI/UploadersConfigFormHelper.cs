@@ -1474,6 +1474,7 @@ namespace UploadersLib
         #endregion Jira
 
         #region Gist
+
         public void GistAuthOpen()
         {
             try
