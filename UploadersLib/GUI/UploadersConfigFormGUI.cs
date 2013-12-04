@@ -221,6 +221,12 @@ namespace UploadersLib
             atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
             chkGistPublishPublic.Checked = Config.GistPublishPublic;
 
+            if (OAuth2Info.CheckOAuth(Config.GistOAuth2Info))
+            {
+                oAuth2Gist.Status = "Login successful.";
+                oAuth2Gist.LoginStatus = true;
+            }
+
             #endregion Text uploaders
 
             #region File uploaders
