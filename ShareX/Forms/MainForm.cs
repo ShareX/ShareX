@@ -377,7 +377,7 @@ namespace ShareX
 
         private void AfterSettingsJobs()
         {
-            Uploader.ProxyInfo = Program.Settings.ProxySettings;
+            ProxyInfo.Current = Program.Settings.ProxySettings;
             ClipboardHelpers.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
         }
 
@@ -409,6 +409,16 @@ namespace ShareX
             tsmiSocialServices.Text = tsmiTraySocialServices.Text = "Social networking service: " + Program.DefaultTaskSettings.SocialNetworkingServiceDestination.GetDescription();
         }
 
+        private void AutoCheckUpdate()
+        {
+            if (Program.Settings.AutoCheckUpdate)
+            {
+                Thread updateThread = new Thread(CheckUpdate);
+                updateThread.IsBackground = true;
+                updateThread.Start();
+            }
+        }
+
         private void CheckUpdate()
         {
             UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
@@ -424,16 +434,6 @@ namespace ShareX
                 {
                     Application.Exit();
                 }
-            }
-        }
-
-        private void AutoCheckUpdate()
-        {
-            if (Program.Settings.AutoCheckUpdate)
-            {
-                Thread updateThread = new Thread(CheckUpdate);
-                updateThread.IsBackground = true;
-                updateThread.Start();
             }
         }
 

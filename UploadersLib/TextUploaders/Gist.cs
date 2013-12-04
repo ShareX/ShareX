@@ -23,17 +23,15 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Net;
+using UploadersLib.HelperClasses;
+
 namespace UploadersLib.TextUploaders
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.Specialized;
-    using System.Net;
-
-    using Newtonsoft.Json;
-
-    using UploadersLib.HelperClasses;
-
     public sealed class Gist : TextUploader
     {
         private readonly Uri GistUri = new Uri("https://api.github.com/gists");
@@ -82,7 +80,7 @@ namespace UploadersLib.TextUploaders
 
             WebHeaderCollection headers = new WebHeaderCollection();
             headers.Add("Accept", "application/json");
-            
+
             string response = this.SendPostRequest(this.GistCompleteUri.ToString(), args, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
@@ -98,7 +96,7 @@ namespace UploadersLib.TextUploaders
 
             return false;
         }
-        
+
         public override UploadResult UploadText(string text, string fileName)
         {
             UploadResult ur = new UploadResult();

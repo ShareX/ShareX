@@ -323,15 +323,15 @@ namespace ShareX
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
             updateChecker.CurrentVersion = Program.AssemblyVersion;
-            updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
+            updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
             updateChecker.CheckUpdate();
 
-            // Backup if GitHub API fails
+            // Fallback if GitHub API fails
             if (updateChecker.UpdateInfo == null || updateChecker.UpdateInfo.Status == UpdateStatus.UpdateCheckFailed)
             {
                 updateChecker = new XMLUpdateChecker("https://raw.github.com/ShareX/ShareX/master/Update.xml", "ShareX");
                 updateChecker.CurrentVersion = Program.AssemblyVersion;
-                updateChecker.Proxy = Uploader.ProxyInfo.GetWebProxy();
+                updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
                 updateChecker.CheckUpdate();
             }
 
