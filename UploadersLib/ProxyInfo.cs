@@ -25,7 +25,9 @@
 
 using HelpersLib;
 using Starksoft.Net.Proxy;
+using System;
 using System.Net;
+using System.Reflection;
 
 namespace UploadersLib
 {
@@ -51,25 +53,16 @@ namespace UploadersLib
         }
 
         public ProxyMethod ProxyMethod { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public ProxyType ProxyType { get; set; }
         public string Host { get; set; }
         public int Port { get; set; }
-        public ProxyType ProxyType { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public ProxyInfo()
         {
             ProxyMethod = ProxyMethod.Manual;
             ProxyType = ProxyType.HTTP;
-        }
-
-        public ProxyInfo(string username, string password, string host, int port)
-            : this()
-        {
-            Username = username;
-            Password = password;
-            Host = host;
-            Port = port;
         }
 
         public bool IsValidProxy()
@@ -81,7 +74,7 @@ namespace UploadersLib
 
             if (ProxyMethod == ProxyMethod.Automatic)
             {
-                WebProxy systemProxy = Helpers.GetDefaultWebProxy();
+                WebProxy systemProxy = GetDefaultWebProxy();
 
                 if (systemProxy != null && systemProxy.Address != null && !string.IsNullOrEmpty(systemProxy.Address.Host) && systemProxy.Address.Port > 0)
                 {
@@ -95,6 +88,7 @@ namespace UploadersLib
             return false;
         }
 
+        // Proxy for HTTP
         public IWebProxy GetWebProxy()
         {
             if (IsValidProxy())
@@ -107,6 +101,7 @@ namespace UploadersLib
             return null;
         }
 
+        // Proxy for FTP
         public IProxyClient GetProxyClient()
         {
             if (IsValidProxy())
@@ -139,9 +134,25 @@ namespace UploadersLib
             return null;
         }
 
+        private WebProxy GetDefaultWebProxy()
+        {
+            try
+            {
+                // TODO: Need better solution
+                return (WebProxy)typeof(WebProxy).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic,
+                    null, new Type[] { typeof(bool) }, null).Invoke(new object[] { true });
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Reflection failed");
+            }
+
+            return null;
+        }
+
         public override string ToString()
         {
-            return string.Format("{0} - {1}:{2} ({3})", Username, Host, Port, ProxyType.ToString());
+            return string.Format("{0} - {1}:{2} ({3})", Username, Host, Port, ProxyType);
         }
     }
 }

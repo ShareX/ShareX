@@ -167,13 +167,13 @@ namespace UploadersLib
 
     public enum ProxyType
     {
-        [Description("HTTP Proxy")]
+        [Description("HTTP proxy")]
         HTTP,
-        [Description("SOCKS v4 Proxy")]
+        [Description("SOCKS v4 proxy")]
         SOCKS4,
-        [Description("SOCKS v4a Proxy")]
+        [Description("SOCKS v4a proxy")]
         SOCKS4a,
-        [Description("SOCKS v5 Proxy")]
+        [Description("SOCKS v5 proxy")]
         SOCKS5
     }
 

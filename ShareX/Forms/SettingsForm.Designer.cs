@@ -30,6 +30,7 @@
         {
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
@@ -86,7 +87,6 @@
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -132,6 +132,17 @@
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbRememberMainFormSize
+            // 
+            this.cbRememberMainFormSize.AutoSize = true;
+            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 184);
+            this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
+            this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
+            this.cbRememberMainFormSize.TabIndex = 7;
+            this.cbRememberMainFormSize.Text = "Remember main window size";
+            this.cbRememberMainFormSize.UseVisualStyleBackColor = true;
+            this.cbRememberMainFormSize.CheckedChanged += new System.EventHandler(this.cbRememberMainFormSize_CheckedChanged);
             // 
             // cbTaskbarProgressEnabled
             // 
@@ -393,7 +404,7 @@
             // lblProxyNote
             // 
             this.lblProxyNote.AutoSize = true;
-            this.lblProxyNote.Location = new System.Drawing.Point(256, 144);
+            this.lblProxyNote.Location = new System.Drawing.Point(264, 48);
             this.lblProxyNote.Name = "lblProxyNote";
             this.lblProxyNote.Size = new System.Drawing.Size(196, 13);
             this.lblProxyNote.TabIndex = 12;
@@ -405,7 +416,7 @@
             this.cbProxyMethod.FormattingEnabled = true;
             this.cbProxyMethod.Location = new System.Drawing.Point(120, 12);
             this.cbProxyMethod.Name = "cbProxyMethod";
-            this.cbProxyMethod.Size = new System.Drawing.Size(128, 21);
+            this.cbProxyMethod.Size = new System.Drawing.Size(136, 21);
             this.cbProxyMethod.TabIndex = 1;
             this.cbProxyMethod.SelectedIndexChanged += new System.EventHandler(this.cbProxyMethod_SelectedIndexChanged);
             // 
@@ -422,16 +433,16 @@
             // 
             this.cbProxyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProxyType.FormattingEnabled = true;
-            this.cbProxyType.Location = new System.Drawing.Point(88, 140);
+            this.cbProxyType.Location = new System.Drawing.Point(120, 44);
             this.cbProxyType.Name = "cbProxyType";
-            this.cbProxyType.Size = new System.Drawing.Size(160, 21);
+            this.cbProxyType.Size = new System.Drawing.Size(136, 21);
             this.cbProxyType.TabIndex = 11;
             this.cbProxyType.SelectedIndexChanged += new System.EventHandler(this.cboProxyType_SelectedIndexChanged);
             // 
             // lblProxyType
             // 
             this.lblProxyType.AutoSize = true;
-            this.lblProxyType.Location = new System.Drawing.Point(16, 144);
+            this.lblProxyType.Location = new System.Drawing.Point(16, 48);
             this.lblProxyType.Name = "lblProxyType";
             this.lblProxyType.Size = new System.Drawing.Size(34, 13);
             this.lblProxyType.TabIndex = 10;
@@ -440,7 +451,7 @@
             // lblProxyHost
             // 
             this.lblProxyHost.AutoSize = true;
-            this.lblProxyHost.Location = new System.Drawing.Point(16, 112);
+            this.lblProxyHost.Location = new System.Drawing.Point(16, 80);
             this.lblProxyHost.Name = "lblProxyHost";
             this.lblProxyHost.Size = new System.Drawing.Size(32, 13);
             this.lblProxyHost.TabIndex = 6;
@@ -448,7 +459,7 @@
             // 
             // txtProxyHost
             // 
-            this.txtProxyHost.Location = new System.Drawing.Point(88, 108);
+            this.txtProxyHost.Location = new System.Drawing.Point(120, 76);
             this.txtProxyHost.Name = "txtProxyHost";
             this.txtProxyHost.Size = new System.Drawing.Size(232, 20);
             this.txtProxyHost.TabIndex = 7;
@@ -456,7 +467,7 @@
             // 
             // nudProxyPort
             // 
-            this.nudProxyPort.Location = new System.Drawing.Point(360, 108);
+            this.nudProxyPort.Location = new System.Drawing.Point(392, 76);
             this.nudProxyPort.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -465,17 +476,13 @@
             this.nudProxyPort.Name = "nudProxyPort";
             this.nudProxyPort.Size = new System.Drawing.Size(64, 20);
             this.nudProxyPort.TabIndex = 9;
-            this.nudProxyPort.Value = new decimal(new int[] {
-            21,
-            0,
-            0,
-            0});
+            this.nudProxyPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudProxyPort.ValueChanged += new System.EventHandler(this.nudProxyPort_ValueChanged);
             // 
             // lblProxyPort
             // 
             this.lblProxyPort.AutoSize = true;
-            this.lblProxyPort.Location = new System.Drawing.Point(328, 112);
+            this.lblProxyPort.Location = new System.Drawing.Point(360, 80);
             this.lblProxyPort.Name = "lblProxyPort";
             this.lblProxyPort.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblProxyPort.Size = new System.Drawing.Size(26, 13);
@@ -485,7 +492,7 @@
             // lblProxyPassword
             // 
             this.lblProxyPassword.AutoSize = true;
-            this.lblProxyPassword.Location = new System.Drawing.Point(16, 80);
+            this.lblProxyPassword.Location = new System.Drawing.Point(16, 144);
             this.lblProxyPassword.Name = "lblProxyPassword";
             this.lblProxyPassword.Size = new System.Drawing.Size(56, 13);
             this.lblProxyPassword.TabIndex = 4;
@@ -493,7 +500,7 @@
             // 
             // txtProxyPassword
             // 
-            this.txtProxyPassword.Location = new System.Drawing.Point(88, 76);
+            this.txtProxyPassword.Location = new System.Drawing.Point(120, 140);
             this.txtProxyPassword.Name = "txtProxyPassword";
             this.txtProxyPassword.PasswordChar = '●';
             this.txtProxyPassword.Size = new System.Drawing.Size(232, 20);
@@ -503,7 +510,7 @@
             // lblProxyUsername
             // 
             this.lblProxyUsername.AutoSize = true;
-            this.lblProxyUsername.Location = new System.Drawing.Point(16, 48);
+            this.lblProxyUsername.Location = new System.Drawing.Point(16, 112);
             this.lblProxyUsername.Name = "lblProxyUsername";
             this.lblProxyUsername.Size = new System.Drawing.Size(58, 13);
             this.lblProxyUsername.TabIndex = 2;
@@ -511,7 +518,7 @@
             // 
             // txtProxyUsername
             // 
-            this.txtProxyUsername.Location = new System.Drawing.Point(88, 44);
+            this.txtProxyUsername.Location = new System.Drawing.Point(120, 108);
             this.txtProxyUsername.Name = "txtProxyUsername";
             this.txtProxyUsername.Size = new System.Drawing.Size(232, 20);
             this.txtProxyUsername.TabIndex = 3;
@@ -729,17 +736,6 @@
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.Size = new System.Drawing.Size(516, 302);
             this.pgSettings.TabIndex = 0;
-            // 
-            // cbRememberMainFormSize
-            // 
-            this.cbRememberMainFormSize.AutoSize = true;
-            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 184);
-            this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
-            this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
-            this.cbRememberMainFormSize.TabIndex = 7;
-            this.cbRememberMainFormSize.Text = "Remember main window size";
-            this.cbRememberMainFormSize.UseVisualStyleBackColor = true;
-            this.cbRememberMainFormSize.CheckedChanged += new System.EventHandler(this.cbRememberMainFormSize_CheckedChanged);
             // 
             // SettingsForm
             // 

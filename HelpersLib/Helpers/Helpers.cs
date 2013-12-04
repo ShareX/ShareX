@@ -389,22 +389,6 @@ namespace HelpersLib
             }
         }
 
-        public static WebProxy GetDefaultWebProxy()
-        {
-            try
-            {
-                // TODO: Need better solution
-                return (WebProxy)typeof(WebProxy).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic,
-                    null, new Type[] { typeof(bool) }, null).Invoke(new object[] { true });
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Reflection fail");
-            }
-
-            return null;
-        }
-
         public static bool CheckVersion(Version currentVersion, Version latestVersion)
         {
             return NormalizeVersion(latestVersion).CompareTo(NormalizeVersion(currentVersion)) > 0;
