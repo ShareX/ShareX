@@ -49,6 +49,11 @@ namespace UploadersLib.TextUploaders
         {
         }
 
+        public Gist(bool publishPublic)
+            : this(publishPublic, null)
+        {
+        }
+
         public Gist(bool publishPublic, OAuth2Info oAuthInfos)
         {
             this.publishPublic = publishPublic;

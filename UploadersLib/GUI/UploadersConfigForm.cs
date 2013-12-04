@@ -1182,11 +1182,6 @@ namespace UploadersLib
         private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
         {
             this.Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
-            if (accountType == AccountType.Anonymous)
-            {
-                this.Config.GistOAuth2Info = null;
-            }
-
             this.oAuth2Gist.Enabled = !this.Config.GistAnonymousLogin;
         }
 
