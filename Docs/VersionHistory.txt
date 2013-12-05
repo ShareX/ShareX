@@ -1,7 +1,11 @@
 ﻿ShareX 8.4.1 - 2013-12-05
 
-* Added Gist text uploader support
-* Torn image effect now supports sides customization
+If you are using ShareX 8.4.0, please manually download and install this version. Auto-updater will not automatically update to this version from ShareX 8.4.0. All other previous versions of ShareX are unaffected. 
+
+* Ability to import/export custom file uploaders
+* Added user account support for Gist text uploader
+* Draw text image effect now supports shadow
+* Torn edge image effect now supports edge selection
 * Improved update checker with a fallback mechanism in case updater fails
 
 ShareX 8.4.0 - 2013-11-20
