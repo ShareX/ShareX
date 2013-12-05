@@ -127,7 +127,7 @@ namespace ShareX
                 UpdateControls(false);
 
                 Hide();
-                Thread.Sleep(100);
+                Thread.Sleep(250);
 
                 PointInfo pointInfo = TaskHelpers.SelectPointColor(surfaceOptions);
 
