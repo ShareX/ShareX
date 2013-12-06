@@ -159,7 +159,6 @@
             this.btnFtpClient = new System.Windows.Forms.Button();
             this.btnFTPExport = new System.Windows.Forms.Button();
             this.btnFTPImport = new System.Windows.Forms.Button();
-            this.btnFtpHelp = new System.Windows.Forms.Button();
             this.ucFTPAccounts = new UploadersLib.AccountsControl();
             this.gbFtpSettings = new System.Windows.Forms.GroupBox();
             this.lblFtpFiles = new System.Windows.Forms.Label();
@@ -270,9 +269,7 @@
             this.lblCustomUploaderImageUploader = new System.Windows.Forms.Label();
             this.btnCustomUploaderFileUploaderTest = new System.Windows.Forms.Button();
             this.lblCustomUploaderFileUploader = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCustomUploaderImageUploaderTest = new System.Windows.Forms.Button();
-            this.lblCustomUploaderRequestTypeHelp = new System.Windows.Forms.Label();
             this.lblCustomUploaderTestResult = new System.Windows.Forms.Label();
             this.txtCustomUploaderDeletionURL = new System.Windows.Forms.TextBox();
             this.cbCustomUploaderFileUploader = new System.Windows.Forms.ComboBox();
@@ -326,6 +323,7 @@
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -459,7 +457,6 @@
             // 
             // btnImageShackOpenPublicProfile
             // 
-            this.btnImageShackOpenPublicProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImageShackOpenPublicProfile.Location = new System.Drawing.Point(16, 232);
             this.btnImageShackOpenPublicProfile.Name = "btnImageShackOpenPublicProfile";
             this.btnImageShackOpenPublicProfile.Size = new System.Drawing.Size(200, 23);
@@ -481,7 +478,6 @@
             // 
             // btnImageShackOpenMyImages
             // 
-            this.btnImageShackOpenMyImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImageShackOpenMyImages.Location = new System.Drawing.Point(16, 264);
             this.btnImageShackOpenMyImages.Name = "btnImageShackOpenMyImages";
             this.btnImageShackOpenMyImages.Size = new System.Drawing.Size(200, 23);
@@ -501,7 +497,6 @@
             // 
             // btnImageShackOpenRegistrationCode
             // 
-            this.btnImageShackOpenRegistrationCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImageShackOpenRegistrationCode.Location = new System.Drawing.Point(16, 200);
             this.btnImageShackOpenRegistrationCode.Name = "btnImageShackOpenRegistrationCode";
             this.btnImageShackOpenRegistrationCode.Size = new System.Drawing.Size(200, 23);
@@ -514,14 +509,12 @@
             // 
             this.txtImageShackUsername.Location = new System.Drawing.Point(16, 136);
             this.txtImageShackUsername.Name = "txtImageShackUsername";
-            this.txtImageShackUsername.Size = new System.Drawing.Size(360, 20);
+            this.txtImageShackUsername.Size = new System.Drawing.Size(392, 20);
             this.txtImageShackUsername.TabIndex = 4;
             this.txtImageShackUsername.TextChanged += new System.EventHandler(this.txtImageShackUsername_TextChanged);
             // 
             // txtImageShackRegistrationCode
             // 
-            this.txtImageShackRegistrationCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtImageShackRegistrationCode.Location = new System.Drawing.Point(16, 80);
             this.txtImageShackRegistrationCode.Name = "txtImageShackRegistrationCode";
             this.txtImageShackRegistrationCode.Size = new System.Drawing.Size(392, 20);
@@ -581,7 +574,7 @@
             this.txtTinyPicPassword.Location = new System.Drawing.Point(16, 136);
             this.txtTinyPicPassword.Name = "txtTinyPicPassword";
             this.txtTinyPicPassword.PasswordChar = '*';
-            this.txtTinyPicPassword.Size = new System.Drawing.Size(360, 20);
+            this.txtTinyPicPassword.Size = new System.Drawing.Size(392, 20);
             this.txtTinyPicPassword.TabIndex = 4;
             this.txtTinyPicPassword.TextChanged += new System.EventHandler(this.txtTinyPicPassword_TextChanged);
             // 
@@ -598,7 +591,7 @@
             // 
             this.txtTinyPicUsername.Location = new System.Drawing.Point(16, 80);
             this.txtTinyPicUsername.Name = "txtTinyPicUsername";
-            this.txtTinyPicUsername.Size = new System.Drawing.Size(360, 20);
+            this.txtTinyPicUsername.Size = new System.Drawing.Size(392, 20);
             this.txtTinyPicUsername.TabIndex = 2;
             this.txtTinyPicUsername.TextChanged += new System.EventHandler(this.txtTinyPicUsername_TextChanged);
             // 
@@ -613,7 +606,6 @@
             // 
             // btnTinyPicOpenMyImages
             // 
-            this.btnTinyPicOpenMyImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTinyPicOpenMyImages.Location = new System.Drawing.Point(16, 264);
             this.btnTinyPicOpenMyImages.Name = "btnTinyPicOpenMyImages";
             this.btnTinyPicOpenMyImages.Size = new System.Drawing.Size(200, 23);
@@ -644,8 +636,6 @@
             // 
             // txtTinyPicRegistrationCode
             // 
-            this.txtTinyPicRegistrationCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTinyPicRegistrationCode.BackColor = System.Drawing.Color.White;
             this.txtTinyPicRegistrationCode.Location = new System.Drawing.Point(16, 232);
             this.txtTinyPicRegistrationCode.Name = "txtTinyPicRegistrationCode";
@@ -1721,7 +1711,6 @@
             this.panelFtp.Controls.Add(this.btnFtpClient);
             this.panelFtp.Controls.Add(this.btnFTPExport);
             this.panelFtp.Controls.Add(this.btnFTPImport);
-            this.panelFtp.Controls.Add(this.btnFtpHelp);
             this.panelFtp.Controls.Add(this.ucFTPAccounts);
             this.panelFtp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFtp.Location = new System.Drawing.Point(3, 3);
@@ -1766,17 +1755,6 @@
             this.btnFTPImport.Text = "Import FTP Accounts...";
             this.btnFTPImport.UseVisualStyleBackColor = true;
             this.btnFTPImport.Click += new System.EventHandler(this.btnFTPImport_Click);
-            // 
-            // btnFtpHelp
-            // 
-            this.btnFtpHelp.Location = new System.Drawing.Point(378, 7);
-            this.btnFtpHelp.Name = "btnFtpHelp";
-            this.btnFtpHelp.Size = new System.Drawing.Size(64, 24);
-            this.btnFtpHelp.TabIndex = 1;
-            this.btnFtpHelp.Text = "Help...";
-            this.btnFtpHelp.UseVisualStyleBackColor = true;
-            this.btnFtpHelp.Visible = false;
-            this.btnFtpHelp.Click += new System.EventHandler(this.btnFtpHelp_Click);
             // 
             // ucFTPAccounts
             // 
@@ -2887,12 +2865,11 @@
             // 
             // tpCustomUploaders
             // 
+            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderHelp);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderImageUploader);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderFileUploaderTest);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderFileUploader);
-            this.tpCustomUploaders.Controls.Add(this.label1);
             this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderImageUploaderTest);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderRequestTypeHelp);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderTestResult);
             this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderDeletionURL);
             this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderFileUploader);
@@ -2957,19 +2934,6 @@
             this.lblCustomUploaderFileUploader.TabIndex = 27;
             this.lblCustomUploaderFileUploader.Text = "File uploader:";
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(688, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "?";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ttHelpTip.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
-            // 
             // btnCustomUploaderImageUploaderTest
             // 
             this.btnCustomUploaderImageUploaderTest.Location = new System.Drawing.Point(264, 388);
@@ -2979,19 +2943,6 @@
             this.btnCustomUploaderImageUploaderTest.Text = "Test";
             this.btnCustomUploaderImageUploaderTest.UseVisualStyleBackColor = true;
             this.btnCustomUploaderImageUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderImageUploaderTest_Click);
-            // 
-            // lblCustomUploaderRequestTypeHelp
-            // 
-            this.lblCustomUploaderRequestTypeHelp.BackColor = System.Drawing.Color.White;
-            this.lblCustomUploaderRequestTypeHelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCustomUploaderRequestTypeHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCustomUploaderRequestTypeHelp.Location = new System.Drawing.Point(424, 22);
-            this.lblCustomUploaderRequestTypeHelp.Name = "lblCustomUploaderRequestTypeHelp";
-            this.lblCustomUploaderRequestTypeHelp.Size = new System.Drawing.Size(24, 24);
-            this.lblCustomUploaderRequestTypeHelp.TabIndex = 4;
-            this.lblCustomUploaderRequestTypeHelp.Text = "?";
-            this.lblCustomUploaderRequestTypeHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ttHelpTip.SetToolTip(this.lblCustomUploaderRequestTypeHelp, resources.GetString("lblCustomUploaderRequestTypeHelp.ToolTip"));
             // 
             // lblCustomUploaderTestResult
             // 
@@ -3324,9 +3275,12 @@
             // 
             // txtCustomUploaderLog
             // 
+            this.txtCustomUploaderLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCustomUploaderLog.Location = new System.Drawing.Point(328, 408);
             this.txtCustomUploaderLog.Name = "txtCustomUploaderLog";
-            this.txtCustomUploaderLog.Size = new System.Drawing.Size(456, 80);
+            this.txtCustomUploaderLog.Size = new System.Drawing.Size(456, 74);
             this.txtCustomUploaderLog.TabIndex = 31;
             this.txtCustomUploaderLog.Text = "";
             this.txtCustomUploaderLog.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
@@ -3496,6 +3450,16 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
+            // btnCustomUploaderHelp
+            // 
+            this.btnCustomUploaderHelp.Location = new System.Drawing.Point(576, 376);
+            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
+            this.btnCustomUploaderHelp.Size = new System.Drawing.Size(64, 24);
+            this.btnCustomUploaderHelp.TabIndex = 34;
+            this.btnCustomUploaderHelp.Text = "Help...";
+            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
+            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3506,6 +3470,7 @@
             this.MinimumSize = new System.Drawing.Size(840, 572);
             this.Name = "UploadersConfigForm";
             this.Padding = new System.Windows.Forms.Padding(3);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Outputs Configuration";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UploadersConfigForm_FormClosed);
@@ -3660,7 +3625,6 @@
         private System.Windows.Forms.ComboBox cboFtpImages;
         private System.Windows.Forms.Panel panelFtp;
         private AccountsControl ucFTPAccounts;
-        private System.Windows.Forms.Button btnFtpHelp;
         internal System.Windows.Forms.Button btnFTPExport;
         internal System.Windows.Forms.Button btnFTPImport;
         private System.Windows.Forms.Label lblRapidSharePassword;
@@ -3844,8 +3808,6 @@
         private System.Windows.Forms.Label lblCustomUploaderTestResult;
         private System.Windows.Forms.Button btnCustomUploaderShowLastResponse;
         private System.Windows.Forms.ToolTip ttHelpTip;
-        private System.Windows.Forms.Label lblCustomUploaderRequestTypeHelp;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tpHostr;
         private System.Windows.Forms.Label lblLocalhostrPassword;
         private System.Windows.Forms.Label lblLocalhostrEmail;
@@ -3900,5 +3862,6 @@
         private System.Windows.Forms.Button btnCustomUploaderImport;
         private System.Windows.Forms.Button btnCustomUploaderExport;
         private System.Windows.Forms.CheckBox chkGistPublishPublic;
+        private System.Windows.Forms.Button btnCustomUploaderHelp;
     }
 }

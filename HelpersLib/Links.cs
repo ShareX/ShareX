@@ -38,5 +38,6 @@ namespace HelpersLib
         public const string URL_GREGOIRE = "https://github.com/gpailler";
         public const string URL_DANA = "https://github.com/dmxt";
         public const string URL_DANA_STEAM = "http://steamcommunity.com/profiles/76561198021718265";
+        public const string URL_DOCS_CUSTOM_UPLOADER = "http://getsharex.com/docs/#CustomUploader";
     }
 }
