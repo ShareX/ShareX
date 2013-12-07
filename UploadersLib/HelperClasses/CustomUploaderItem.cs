@@ -24,33 +24,25 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace UploadersLib.HelperClasses
+namespace UploadersLib
 {
     public class CustomUploaderItem
     {
         public string Name { get; set; }
-
         public CustomUploaderRequestType RequestType { get; set; }
         public string RequestURL { get; set; }
         public string FileFormName { get; set; }
         public Dictionary<string, string> Arguments { get; set; }
-
         public ResponseType ResponseType { get; set; }
         public List<string> RegexList { get; set; }
         public string URL { get; set; }
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
-        public bool AutoUseResponse { get; set; }
-
-        public string Input { get; set; }
-
-        public string ResultURL { get; private set; }
-        public string ResultThumbnailURL { get; private set; }
-        public string ResultDeletionURL { get; private set; }
 
         private List<Match> regexResult;
 
@@ -58,7 +50,6 @@ namespace UploadersLib.HelperClasses
         {
             Arguments = new Dictionary<string, string>();
             RegexList = new List<string>();
-            AutoUseResponse = true;
         }
 
         public CustomUploaderItem(string name)
@@ -72,7 +63,7 @@ namespace UploadersLib.HelperClasses
             return Name;
         }
 
-        public Dictionary<string, string> ParseArguments()
+        public Dictionary<string, string> ParseArguments(string input = null)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
 
@@ -80,10 +71,10 @@ namespace UploadersLib.HelperClasses
             {
                 string value = arg.Value;
 
-                if (!string.IsNullOrEmpty(Input))
+                if (!string.IsNullOrEmpty(input))
                 {
-                    value = value.Replace("%input", Input);
-                    value = value.Replace("$input$", Input);
+                    value = value.Replace("%input", input);
+                    value = value.Replace("$input$", input);
                 }
 
                 NameParser parser = new NameParser(NameParserType.Text);
@@ -95,40 +86,59 @@ namespace UploadersLib.HelperClasses
             return arguments;
         }
 
-        public void Parse(string response)
+        public void ParseResponse(UploadResult result, bool isShortenedURL = false)
         {
-            ResultURL = "";
-            ResultThumbnailURL = "";
-            ResultDeletionURL = "";
-            regexResult = new List<Match>();
+            if (result != null && !string.IsNullOrEmpty(result.Response))
+            {
+                regexResult = ParseRegexList(result.Response);
 
-            foreach (string regex in RegexList)
+                string url;
+
+                if (!string.IsNullOrEmpty(URL))
+                {
+                    url = ParseURL(URL);
+                }
+                else
+                {
+                    url = result.Response;
+                }
+
+                if (isShortenedURL)
+                {
+                    result.ShortenedURL = url;
+                }
+                else
+                {
+                    result.URL = url;
+                }
+
+                result.ThumbnailURL = ParseURL(ThumbnailURL);
+                result.DeletionURL = ParseURL(DeletionURL);
+            }
+        }
+
+        private List<Match> ParseRegexList(string response)
+        {
+            List<Match> result = new List<Match>();
+
+            if (RegexList != null)
             {
-                regexResult.Add(Regex.Match(response, regex));
+                foreach (string regex in RegexList)
+                {
+                    result.Add(Regex.Match(response, regex));
+                }
             }
 
-            if (!string.IsNullOrEmpty(URL))
-            {
-                ResultURL = ParseURL(URL);
-            }
-            else if (AutoUseResponse)
-            {
-                ResultURL = response;
-            }
-
-            if (!string.IsNullOrEmpty(ThumbnailURL))
-            {
-                ResultThumbnailURL = ParseURL(ThumbnailURL);
-            }
-
-            if (!string.IsNullOrEmpty(DeletionURL))
-            {
-                ResultDeletionURL = ParseURL(DeletionURL);
-            }
+            return result;
         }
 
         private string ParseURL(string url)
         {
+            if (string.IsNullOrEmpty(url))
+            {
+                return string.Empty;
+            }
+
             StringBuilder result = new StringBuilder();
 
             bool regexStart = false;

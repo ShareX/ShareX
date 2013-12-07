@@ -51,8 +51,7 @@ namespace UploadersLib.URLShorteners
 
             UploadResult result = new UploadResult { URL = url };
 
-            customUploader.Input = url;
-            Dictionary<string, string> args = customUploader.ParseArguments();
+            Dictionary<string, string> args = customUploader.ParseArguments(url);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {
@@ -63,14 +62,7 @@ namespace UploadersLib.URLShorteners
                 result.Response = SendGetRequest(customUploader.RequestURL, args, customUploader.ResponseType);
             }
 
-            if (!string.IsNullOrEmpty(result.Response))
-            {
-                customUploader.Parse(result.Response);
-
-                result.ShortenedURL = customUploader.ResultURL;
-                result.ThumbnailURL = customUploader.ResultThumbnailURL;
-                result.DeletionURL = customUploader.ResultDeletionURL;
-            }
+            customUploader.ParseResponse(result, true);
 
             return result;
         }

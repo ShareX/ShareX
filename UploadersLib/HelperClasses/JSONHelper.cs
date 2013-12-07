@@ -29,7 +29,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace UploadersLib.HelperClasses
+namespace UploadersLib
 {
     public static class JSONHelper
     {

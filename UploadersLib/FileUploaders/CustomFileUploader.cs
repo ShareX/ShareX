@@ -48,11 +48,7 @@ namespace UploadersLib.FileUploaders
 
             if (result.IsSuccess)
             {
-                customUploader.Parse(result.Response);
-
-                result.URL = customUploader.ResultURL;
-                result.ThumbnailURL = customUploader.ResultThumbnailURL;
-                result.DeletionURL = customUploader.ResultDeletionURL;
+                customUploader.ParseResponse(result);
             }
 
             return result;

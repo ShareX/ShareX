@@ -266,6 +266,7 @@
             this.btnTwitterLogin = new System.Windows.Forms.Button();
             this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.tpCustomUploaders = new System.Windows.Forms.TabPage();
+            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
             this.lblCustomUploaderImageUploader = new System.Windows.Forms.Label();
             this.btnCustomUploaderFileUploaderTest = new System.Windows.Forms.Button();
             this.lblCustomUploaderFileUploader = new System.Windows.Forms.Label();
@@ -316,14 +317,13 @@
             this.txtCustomUploaderArgValue = new System.Windows.Forms.TextBox();
             this.btnCustomUploaderArgRemove = new System.Windows.Forms.Button();
             this.lvCustomUploaderArguments = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chArgumentsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chArgumentsValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCustomUploaderArgAdd = new System.Windows.Forms.Button();
             this.txtCustomUploaderArgName = new System.Windows.Forms.TextBox();
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
-            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -2906,6 +2906,16 @@
             this.tpCustomUploaders.Text = "Custom uploaders";
             this.tpCustomUploaders.UseVisualStyleBackColor = true;
             // 
+            // btnCustomUploaderHelp
+            // 
+            this.btnCustomUploaderHelp.Location = new System.Drawing.Point(576, 376);
+            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
+            this.btnCustomUploaderHelp.Size = new System.Drawing.Size(64, 24);
+            this.btnCustomUploaderHelp.TabIndex = 34;
+            this.btnCustomUploaderHelp.Text = "Help...";
+            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
+            // 
             // lblCustomUploaderImageUploader
             // 
             this.lblCustomUploaderImageUploader.AutoSize = true;
@@ -3383,11 +3393,11 @@
             // lvCustomUploaderArguments
             // 
             this.lvCustomUploaderArguments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.chArgumentsName,
+            this.chArgumentsValue});
             this.lvCustomUploaderArguments.FullRowSelect = true;
             this.lvCustomUploaderArguments.GridLines = true;
-            this.lvCustomUploaderArguments.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvCustomUploaderArguments.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvCustomUploaderArguments.HideSelection = false;
             this.lvCustomUploaderArguments.Location = new System.Drawing.Point(8, 72);
             this.lvCustomUploaderArguments.MultiSelect = false;
@@ -3398,13 +3408,15 @@
             this.lvCustomUploaderArguments.View = System.Windows.Forms.View.Details;
             this.lvCustomUploaderArguments.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderArguments_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // chArgumentsName
             // 
-            this.columnHeader1.Width = 113;
+            this.chArgumentsName.Text = "Name";
+            this.chArgumentsName.Width = 114;
             // 
-            // columnHeader2
+            // chArgumentsValue
             // 
-            this.columnHeader2.Width = 113;
+            this.chArgumentsValue.Text = "Value";
+            this.chArgumentsValue.Width = 114;
             // 
             // btnCustomUploaderArgAdd
             // 
@@ -3449,16 +3461,6 @@
             this.actRapidShareAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
-            // 
-            // btnCustomUploaderHelp
-            // 
-            this.btnCustomUploaderHelp.Location = new System.Drawing.Point(576, 376);
-            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
-            this.btnCustomUploaderHelp.Size = new System.Drawing.Size(64, 24);
-            this.btnCustomUploaderHelp.TabIndex = 34;
-            this.btnCustomUploaderHelp.Text = "Help...";
-            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
             // 
             // UploadersConfigForm
             // 
@@ -3676,8 +3678,8 @@
         internal System.Windows.Forms.TextBox txtCustomUploaderArgValue;
         internal System.Windows.Forms.Button btnCustomUploaderArgRemove;
         internal System.Windows.Forms.ListView lvCustomUploaderArguments;
-        internal System.Windows.Forms.ColumnHeader columnHeader1;
-        internal System.Windows.Forms.ColumnHeader columnHeader2;
+        internal System.Windows.Forms.ColumnHeader chArgumentsName;
+        internal System.Windows.Forms.ColumnHeader chArgumentsValue;
         internal System.Windows.Forms.Button btnCustomUploaderArgAdd;
         internal System.Windows.Forms.TextBox txtCustomUploaderArgName;
         private System.Windows.Forms.CheckBox chkTwitPicShowFull;

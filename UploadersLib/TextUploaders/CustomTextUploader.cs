@@ -51,8 +51,7 @@ namespace UploadersLib.TextUploaders
 
             UploadResult result = new UploadResult();
 
-            customUploader.Input = text;
-            Dictionary<string, string> args = customUploader.ParseArguments();
+            Dictionary<string, string> args = customUploader.ParseArguments(text);
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {
@@ -74,14 +73,7 @@ namespace UploadersLib.TextUploaders
                 result.Response = SendGetRequest(customUploader.RequestURL, args, customUploader.ResponseType);
             }
 
-            if (!string.IsNullOrEmpty(result.Response))
-            {
-                customUploader.Parse(result.Response);
-
-                result.URL = customUploader.ResultURL;
-                result.ThumbnailURL = customUploader.ResultThumbnailURL;
-                result.DeletionURL = customUploader.ResultDeletionURL;
-            }
+            customUploader.ParseResponse(result);
 
             return result;
         }
