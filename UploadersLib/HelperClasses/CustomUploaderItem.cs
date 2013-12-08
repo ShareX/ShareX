@@ -216,7 +216,7 @@ namespace UploadersLib
                             return match.Groups[groupNumber].Value;
                         }
 
-                        return match.Groups[@group].Value;
+                        return match.Groups[group].Value;
                     }
 
                     return match.Value;

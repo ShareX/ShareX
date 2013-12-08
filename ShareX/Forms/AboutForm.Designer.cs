@@ -46,7 +46,6 @@
             this.pbRU = new System.Windows.Forms.PictureBox();
             this.pbDana = new System.Windows.Forms.PictureBox();
             this.lblDana = new System.Windows.Forms.Label();
-            this.pbDanaSteamURL = new System.Windows.Forms.PictureBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
             this.cLogo = new HelpersLib.Canvas();
             this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
@@ -61,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDana)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDanaSteamURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).BeginInit();
             this.SuspendLayout();
             // 
@@ -257,19 +255,6 @@
             this.lblDana.TabIndex = 28;
             this.lblDana.Text = "dmxt - Dana";
             // 
-            // pbDanaSteamURL
-            // 
-            this.pbDanaSteamURL.BackColor = System.Drawing.Color.Transparent;
-            this.pbDanaSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbDanaSteamURL.Image = global::ShareX.Properties.Resources.steam;
-            this.pbDanaSteamURL.Location = new System.Drawing.Point(63, 265);
-            this.pbDanaSteamURL.Name = "pbDanaSteamURL";
-            this.pbDanaSteamURL.Size = new System.Drawing.Size(16, 16);
-            this.pbDanaSteamURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbDanaSteamURL.TabIndex = 31;
-            this.pbDanaSteamURL.TabStop = false;
-            this.pbDanaSteamURL.Click += new System.EventHandler(this.pbDanaSteamURL_Click);
-            // 
             // rtbShareXInfo
             // 
             this.rtbShareXInfo.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -331,7 +316,6 @@
             this.Controls.Add(this.pbMikeSteamURL);
             this.Controls.Add(this.lblOwners);
             this.Controls.Add(this.rtbShareXInfo);
-            this.Controls.Add(this.pbDanaSteamURL);
             this.Controls.Add(this.pbRU);
             this.Controls.Add(this.pbDana);
             this.Controls.Add(this.lblDana);
@@ -366,7 +350,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDana)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDanaSteamURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -393,7 +376,6 @@
         private System.Windows.Forms.PictureBox pbRU;
         private System.Windows.Forms.PictureBox pbDana;
         private System.Windows.Forms.Label lblDana;
-        private System.Windows.Forms.PictureBox pbDanaSteamURL;
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private System.Windows.Forms.Label lblOwners;
         private HelpersLib.UpdateCheckerLabel uclUpdate;

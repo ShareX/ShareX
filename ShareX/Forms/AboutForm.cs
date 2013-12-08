@@ -87,11 +87,6 @@ namespace ShareX
             Helpers.LoadBrowserAsync(Links.URL_DANA);
         }
 
-        private void pbDanaSteamURL_Click(object sender, EventArgs e)
-        {
-            Helpers.LoadBrowserAsync(Links.URL_DANA_STEAM);
-        }
-
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             Process.Start(e.LinkText);

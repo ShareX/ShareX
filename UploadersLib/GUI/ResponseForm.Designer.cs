@@ -45,7 +45,7 @@
             this.txtSource.Multiline = true;
             this.txtSource.Name = "txtSource";
             this.txtSource.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSource.Size = new System.Drawing.Size(746, 437);
+            this.txtSource.Size = new System.Drawing.Size(746, 481);
             this.txtSource.TabIndex = 0;
             // 
             // tcResponse
@@ -56,7 +56,7 @@
             this.tcResponse.Location = new System.Drawing.Point(5, 5);
             this.tcResponse.Name = "tcResponse";
             this.tcResponse.SelectedIndex = 0;
-            this.tcResponse.Size = new System.Drawing.Size(760, 469);
+            this.tcResponse.Size = new System.Drawing.Size(760, 513);
             this.tcResponse.TabIndex = 0;
             this.tcResponse.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tcResponse_Selecting);
             // 
@@ -66,7 +66,7 @@
             this.tpString.Location = new System.Drawing.Point(4, 22);
             this.tpString.Name = "tpString";
             this.tpString.Padding = new System.Windows.Forms.Padding(3);
-            this.tpString.Size = new System.Drawing.Size(752, 443);
+            this.tpString.Size = new System.Drawing.Size(752, 487);
             this.tpString.TabIndex = 0;
             this.tpString.Text = "Text";
             this.tpString.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 479);
+            this.ClientSize = new System.Drawing.Size(770, 523);
             this.Controls.Add(this.tcResponse);
             this.Name = "ResponseForm";
             this.Padding = new System.Windows.Forms.Padding(5);
