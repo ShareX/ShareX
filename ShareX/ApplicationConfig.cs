@@ -63,10 +63,6 @@ namespace ShareX
 
         #region Paths
 
-        public bool UseCustomUploadersConfigPath = false;
-        public string CustomUploadersConfigPath = string.Empty;
-        public bool UseCustomHistoryPath = false;
-        public string CustomHistoryPath = string.Empty;
         public bool UseCustomScreenshotsPath = false;
         public string CustomScreenshotsPath = string.Empty;
         public string SaveImageSubFolderPattern = "%y-%mo";

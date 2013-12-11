@@ -114,11 +114,6 @@ namespace ShareX
             {
                 if (!IsSandbox)
                 {
-                    if (Settings != null && Settings.UseCustomUploadersConfigPath && !string.IsNullOrEmpty(Settings.CustomUploadersConfigPath))
-                    {
-                        return Settings.CustomUploadersConfigPath;
-                    }
-
                     return Path.Combine(PersonalPath, UploadersConfigFilename);
                 }
 
@@ -143,12 +138,12 @@ namespace ShareX
         {
             get
             {
-                if (Settings != null && Settings.UseCustomHistoryPath && !string.IsNullOrEmpty(Settings.CustomHistoryPath))
+                if (!IsSandbox)
                 {
-                    return Settings.CustomHistoryPath;
+                    return Path.Combine(PersonalPath, HistoryFilename);
                 }
 
-                return Path.Combine(PersonalPath, HistoryFilename);
+                return null;
             }
         }
 

@@ -66,10 +66,6 @@ namespace ShareX
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
             // Paths
-            cbUseCustomUploadersConfigPath.Checked = Program.Settings.UseCustomUploadersConfigPath;
-            txtCustomUploadersConfigPath.Text = Program.Settings.CustomUploadersConfigPath;
-            cbUseCustomHistoryPath.Checked = Program.Settings.UseCustomHistoryPath;
-            txtCustomHistoryPath.Text = Program.Settings.CustomHistoryPath;
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
@@ -210,43 +206,6 @@ namespace ShareX
             {
                 Process.Start(Program.PersonalPath);
             }
-        }
-
-        private void cbUseCustomUploadersConfigPath_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.UseCustomUploadersConfigPath = cbUseCustomUploadersConfigPath.Checked;
-        }
-
-        private void txtCustomUploadersConfigPath_TextChanged(object sender, EventArgs e)
-        {
-            Program.Settings.CustomUploadersConfigPath = txtCustomUploadersConfigPath.Text;
-        }
-
-        private void btnBrowseCustomUploadersConfigPath_Click(object sender, EventArgs e)
-        {
-            Helpers.BrowseFile("ShareX - Choose uploaders config file path", txtCustomUploadersConfigPath, Program.PersonalPath);
-            Program.Settings.CustomUploadersConfigPath = txtCustomUploadersConfigPath.Text;
-            Program.LoadUploadersConfig();
-        }
-
-        private void btnLoadUploadersConfig_Click(object sender, EventArgs e)
-        {
-            Program.LoadUploadersConfig();
-        }
-
-        private void cbUseCustomHistoryPath_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.UseCustomHistoryPath = cbUseCustomHistoryPath.Checked;
-        }
-
-        private void txtCustomHistoryPath_TextChanged(object sender, EventArgs e)
-        {
-            Program.Settings.CustomHistoryPath = txtCustomHistoryPath.Text;
-        }
-
-        private void btnBrowseCustomHistoryPath_Click(object sender, EventArgs e)
-        {
-            Helpers.BrowseFile("ShareX - Choose history file path", txtCustomHistoryPath, Program.PersonalPath);
         }
 
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
