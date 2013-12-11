@@ -371,14 +371,19 @@ namespace HelpersLib
             return Encode(text, URLPathCharacters);
         }
 
-        public static bool OpenFolder(string folderPath)
+        public static void OpenFolder(string folderPath)
         {
-            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
+            if (!string.IsNullOrEmpty(folderPath))
             {
-                Process.Start("explorer.exe", folderPath);
-                return true;
+                if (Directory.Exists(folderPath))
+                {
+                    Process.Start("explorer.exe", folderPath);
+                }
+                else
+                {
+                    MessageBox.Show("Folder not exist:\r\n" + folderPath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            return false;
         }
 
         public static void OpenFolderWithFile(string filePath)

@@ -66,6 +66,8 @@ namespace ShareX
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
             // Paths
+            txtPersonalFolderPath.Text = Program.ReadPersonalPathConfig();
+            UpdatePersonalFolderPathPreview();
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
@@ -117,6 +119,11 @@ namespace ShareX
             Refresh();
         }
 
+        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
+        }
+
         private void UpdateProxyControls()
         {
             switch (Program.Settings.ProxySettings.ProxyMethod)
@@ -132,6 +139,22 @@ namespace ShareX
                     txtProxyHost.Enabled = nudProxyPort.Enabled = cbProxyType.Enabled = false;
                     break;
             }
+        }
+
+        private void UpdatePersonalFolderPathPreview()
+        {
+            string personalPath = txtPersonalFolderPath.Text;
+
+            if (string.IsNullOrEmpty(personalPath))
+            {
+                personalPath = Program.DefaultPersonalPath;
+            }
+            else
+            {
+                personalPath = Path.GetFullPath(personalPath);
+            }
+
+            lblPreviewPersonalFolderPath.Text = personalPath;
         }
 
         #region General
@@ -200,12 +223,19 @@ namespace ShareX
 
         #region Paths
 
+        private void txtPersonalFolderPath_TextChanged(object sender, EventArgs e)
+        {
+            UpdatePersonalFolderPathPreview();
+        }
+
+        private void btnBrowsePersonalFolderPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFolder("Choose ShareX personal folder path", txtPersonalFolderPath, Program.PersonalPath);
+        }
+
         private void btnOpenPersonalFolder_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Program.PersonalPath) && Directory.Exists(Program.PersonalPath))
-            {
-                Process.Start(Program.PersonalPath);
-            }
+            Helpers.OpenFolder(lblPreviewPersonalFolderPath.Text);
         }
 
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
@@ -229,6 +259,11 @@ namespace ShareX
         {
             Program.Settings.SaveImageSubFolderPattern = txtSaveImageSubFolderPattern.Text;
             lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsPath;
+        }
+
+        private void btnOpenScreenshotsFolder_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFolder(lblSaveImageSubFolderPatternPreview.Text);
         }
 
         #endregion Paths

@@ -40,32 +40,6 @@ namespace HelpersLib
         [Browsable(false), XmlIgnore, JsonIgnore]
         public string FilePath { get; private set; }
 
-        public virtual bool Save(string filePath)
-        {
-            FilePath = filePath;
-            return SettingsHelper.Save(this, filePath, SerializationType);
-        }
-
-        public void Save()
-        {
-            Save(FilePath);
-        }
-
-        public void SaveAsync(string filePath)
-        {
-            ThreadPool.QueueUserWorkItem(state => Save(filePath));
-        }
-
-        public void SaveAsync()
-        {
-            SaveAsync(FilePath);
-        }
-
-        public virtual void Save(Stream stream)
-        {
-            SettingsHelper.Save(this, stream, SerializationType);
-        }
-
         public static T Load(string filePath)
         {
             T setting = SettingsHelper.Load<T>(filePath, SerializationType);
@@ -77,6 +51,32 @@ namespace HelpersLib
         {
             T setting = SettingsHelper.Load<T>(stream, SerializationType);
             return setting;
+        }
+
+        public virtual bool Save(string filePath)
+        {
+            FilePath = filePath;
+            return SettingsHelper.Save(this, filePath, SerializationType);
+        }
+
+        private void Save()
+        {
+            Save(FilePath);
+        }
+
+        public void SaveAsync(string filePath)
+        {
+            ThreadPool.QueueUserWorkItem(state => Save(filePath));
+        }
+
+        private void SaveAsync()
+        {
+            SaveAsync(FilePath);
+        }
+
+        public virtual void Save(Stream stream)
+        {
+            SettingsHelper.Save(this, stream, SerializationType);
         }
     }
 }

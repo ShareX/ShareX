@@ -606,7 +606,7 @@ namespace ShareX
             {
                 e.Cancel = true;
                 Hide();
-                Program.Settings.SaveAsync();
+                Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
             }
         }
 
@@ -705,7 +705,7 @@ namespace ShareX
             }
 
             AfterSettingsJobs();
-            Program.Settings.SaveAsync();
+            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
         }
 
         private void tsbTaskSettings_Click(object sender, EventArgs e)
@@ -715,7 +715,7 @@ namespace ShareX
                 taskSettingsForm.ShowDialog();
             }
 
-            Program.Settings.SaveAsync();
+            Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
         }
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
@@ -730,7 +730,7 @@ namespace ShareX
                 hotkeySettingsForm.ShowDialog();
             }
 
-            Program.HotkeysConfig.SaveAsync();
+            Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
         }
 
         private void tsbDestinationSettings_Click(object sender, EventArgs e)
@@ -770,10 +770,7 @@ namespace ShareX
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
         {
-            if (!Helpers.OpenFolder(Program.ScreenshotsPath))
-            {
-                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
-            }
+            Helpers.OpenFolder(Program.ScreenshotsPath);
         }
 
         private void tsbHistory_Click(object sender, EventArgs e)

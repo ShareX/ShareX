@@ -71,7 +71,7 @@ namespace ShareX
 
         public static readonly string StartupPath = Application.StartupPath;
 
-        private static readonly string DefaultPersonalPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationName);
+        public static readonly string DefaultPersonalPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationName);
         private static readonly string PortablePersonalPath = Path.Combine(StartupPath, ApplicationName);
         private static readonly string PersonalPathConfig = Path.Combine(StartupPath, "PersonalPath.cfg");
         private static readonly string ApplicationConfigFilename = "ApplicationConfig.json";
@@ -352,19 +352,49 @@ namespace ShareX
 
         private static void CheckPersonalPathConfig()
         {
+            string customPersonalPath = ReadPersonalPathConfig();
+
+            if (!string.IsNullOrEmpty(customPersonalPath))
+            {
+                CustomPersonalPath = Path.GetFullPath(customPersonalPath);
+
+                if (CustomPersonalPath.Equals(PortablePersonalPath, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    IsPortable = true;
+                }
+            }
+        }
+
+        public static string ReadPersonalPathConfig()
+        {
             if (File.Exists(PersonalPathConfig))
             {
-                string customPersonalPath = File.ReadAllText(PersonalPathConfig, Encoding.UTF8).Trim();
+                return File.ReadAllText(PersonalPathConfig, Encoding.UTF8).Trim();
+            }
 
-                if (!string.IsNullOrEmpty(customPersonalPath))
+            return string.Empty;
+        }
+
+        public static void WritePersonalPathConfig(string path)
+        {
+            // If path is empty and config file is not exist then don't create it
+            if (!string.IsNullOrEmpty(path) || File.Exists(PersonalPathConfig))
+            {
+                File.WriteAllText(PersonalPathConfig, path ?? string.Empty, Encoding.UTF8);
+
+                CustomPersonalPath = Path.GetFullPath(path);
+
+                if (CustomPersonalPath.Equals(PortablePersonalPath, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    CustomPersonalPath = Path.GetFullPath(customPersonalPath);
-
-                    if (CustomPersonalPath.Equals(PortablePersonalPath, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        IsPortable = true;
-                    }
+                    IsPortable = true;
                 }
+
+                if (!string.IsNullOrEmpty(PersonalPath) && !Directory.Exists(PersonalPath))
+                {
+                    Directory.CreateDirectory(PersonalPath);
+                }
+
+                DebugHelper.WriteLine("CustomPersonalPath changed to: " + CustomPersonalPath);
             }
         }
 

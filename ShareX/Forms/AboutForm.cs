@@ -89,7 +89,7 @@ namespace ShareX
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Process.Start(e.LinkText);
+            Helpers.LoadBrowserAsync(e.LinkText);
         }
 
         #region Animation
