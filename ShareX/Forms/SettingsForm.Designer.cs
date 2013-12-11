@@ -85,6 +85,7 @@
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.lblNotePersonalFolderPath = new System.Windows.Forms.Label();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -221,6 +222,7 @@
             // 
             // tpPaths
             // 
+            this.tpPaths.Controls.Add(this.lblNotePersonalFolderPath);
             this.tpPaths.Controls.Add(this.btnOpenScreenshotsFolder);
             this.tpPaths.Controls.Add(this.lblPreviewPersonalFolderPath);
             this.tpPaths.Controls.Add(this.btnBrowsePersonalFolderPath);
@@ -243,7 +245,7 @@
             // 
             // btnOpenScreenshotsFolder
             // 
-            this.btnOpenScreenshotsFolder.Location = new System.Drawing.Point(16, 184);
+            this.btnOpenScreenshotsFolder.Location = new System.Drawing.Point(16, 208);
             this.btnOpenScreenshotsFolder.Name = "btnOpenScreenshotsFolder";
             this.btnOpenScreenshotsFolder.Size = new System.Drawing.Size(80, 23);
             this.btnOpenScreenshotsFolder.TabIndex = 18;
@@ -289,7 +291,7 @@
             // 
             // btnBrowseCustomScreenshotsPath
             // 
-            this.btnBrowseCustomScreenshotsPath.Location = new System.Drawing.Point(432, 127);
+            this.btnBrowseCustomScreenshotsPath.Location = new System.Drawing.Point(432, 151);
             this.btnBrowseCustomScreenshotsPath.Name = "btnBrowseCustomScreenshotsPath";
             this.btnBrowseCustomScreenshotsPath.Size = new System.Drawing.Size(80, 23);
             this.btnBrowseCustomScreenshotsPath.TabIndex = 10;
@@ -309,7 +311,7 @@
             // 
             // txtCustomScreenshotsPath
             // 
-            this.txtCustomScreenshotsPath.Location = new System.Drawing.Point(16, 128);
+            this.txtCustomScreenshotsPath.Location = new System.Drawing.Point(16, 152);
             this.txtCustomScreenshotsPath.Name = "txtCustomScreenshotsPath";
             this.txtCustomScreenshotsPath.Size = new System.Drawing.Size(408, 20);
             this.txtCustomScreenshotsPath.TabIndex = 9;
@@ -318,7 +320,7 @@
             // cbUseCustomScreenshotsPath
             // 
             this.cbUseCustomScreenshotsPath.AutoSize = true;
-            this.cbUseCustomScreenshotsPath.Location = new System.Drawing.Point(16, 104);
+            this.cbUseCustomScreenshotsPath.Location = new System.Drawing.Point(16, 128);
             this.cbUseCustomScreenshotsPath.Name = "cbUseCustomScreenshotsPath";
             this.cbUseCustomScreenshotsPath.Size = new System.Drawing.Size(174, 17);
             this.cbUseCustomScreenshotsPath.TabIndex = 8;
@@ -329,7 +331,7 @@
             // lblSaveImageSubFolderPattern
             // 
             this.lblSaveImageSubFolderPattern.AutoSize = true;
-            this.lblSaveImageSubFolderPattern.Location = new System.Drawing.Point(16, 160);
+            this.lblSaveImageSubFolderPattern.Location = new System.Drawing.Point(16, 184);
             this.lblSaveImageSubFolderPattern.Name = "lblSaveImageSubFolderPattern";
             this.lblSaveImageSubFolderPattern.Size = new System.Drawing.Size(94, 13);
             this.lblSaveImageSubFolderPattern.TabIndex = 11;
@@ -338,7 +340,7 @@
             // lblSaveImageSubFolderPatternPreview
             // 
             this.lblSaveImageSubFolderPatternPreview.AutoSize = true;
-            this.lblSaveImageSubFolderPatternPreview.Location = new System.Drawing.Point(104, 189);
+            this.lblSaveImageSubFolderPatternPreview.Location = new System.Drawing.Point(104, 213);
             this.lblSaveImageSubFolderPatternPreview.Name = "lblSaveImageSubFolderPatternPreview";
             this.lblSaveImageSubFolderPatternPreview.Size = new System.Drawing.Size(16, 13);
             this.lblSaveImageSubFolderPatternPreview.TabIndex = 13;
@@ -346,7 +348,7 @@
             // 
             // txtSaveImageSubFolderPattern
             // 
-            this.txtSaveImageSubFolderPattern.Location = new System.Drawing.Point(120, 156);
+            this.txtSaveImageSubFolderPattern.Location = new System.Drawing.Point(120, 180);
             this.txtSaveImageSubFolderPattern.Name = "txtSaveImageSubFolderPattern";
             this.txtSaveImageSubFolderPattern.Size = new System.Drawing.Size(392, 20);
             this.txtSaveImageSubFolderPattern.TabIndex = 12;
@@ -711,6 +713,15 @@
             this.pgSettings.Size = new System.Drawing.Size(516, 302);
             this.pgSettings.TabIndex = 0;
             // 
+            // lblNotePersonalFolderPath
+            // 
+            this.lblNotePersonalFolderPath.AutoSize = true;
+            this.lblNotePersonalFolderPath.Location = new System.Drawing.Point(16, 96);
+            this.lblNotePersonalFolderPath.Name = "lblNotePersonalFolderPath";
+            this.lblNotePersonalFolderPath.Size = new System.Drawing.Size(354, 13);
+            this.lblNotePersonalFolderPath.TabIndex = 19;
+            this.lblNotePersonalFolderPath.Text = "Note: You must reopen ShareX for personal folder changes to take effect.";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -808,5 +819,6 @@
         private System.Windows.Forms.Label lblPersonalFolderPath;
         private System.Windows.Forms.TextBox txtPersonalFolderPath;
         private System.Windows.Forms.Button btnOpenScreenshotsFolder;
+        private System.Windows.Forms.Label lblNotePersonalFolderPath;
     }
 }

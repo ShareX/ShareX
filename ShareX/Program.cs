@@ -381,20 +381,6 @@ namespace ShareX
             if (!string.IsNullOrEmpty(path) || File.Exists(PersonalPathConfig))
             {
                 File.WriteAllText(PersonalPathConfig, path ?? string.Empty, Encoding.UTF8);
-
-                CustomPersonalPath = Path.GetFullPath(path);
-
-                if (CustomPersonalPath.Equals(PortablePersonalPath, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    IsPortable = true;
-                }
-
-                if (!string.IsNullOrEmpty(PersonalPath) && !Directory.Exists(PersonalPath))
-                {
-                    Directory.CreateDirectory(PersonalPath);
-                }
-
-                DebugHelper.WriteLine("CustomPersonalPath changed to: " + CustomPersonalPath);
             }
         }
 
