@@ -64,14 +64,8 @@ namespace UploadersLib
         public const string GistSecret = "a538eff39300680f43d123a59ab9c1d9d4763640";
 
         // URL Shorteners
-        public const string BitlyLogin = "jaex";
-        public const string BitlyKey = "R_1734f57b772acb3c048eb2365075743b";
-        public const string BitlyConsumerKey = "91e5a02e001ada9c1122f54d73bc442d9cc2a7ab";
-        public const string BitlyConsumerSecret = "fe5f906b5f5e8114d5c266a709a9438c94e1cd3f";
         public const string BitlyClientID = "0bf9726bea922ab7d5760a913d6749b441e5176a";
         public const string BitlyClientSecret = "1156e02a228deccbe8c7f100711411063249497b";
-        public const string KlamKey = "a4e5a8de710d80db774a8264f4588ffb";
-        public const string ThreelyKey = "em5893833";
 
         // Other Services
         public const string GoogleClientID = "810697162603.apps.googleusercontent.com";

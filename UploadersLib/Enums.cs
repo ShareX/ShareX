@@ -121,8 +121,6 @@ namespace UploadersLib
         Google,
         [Description("bit.ly")]
         BITLY,
-        [Description("j.mp")]
-        Jmp,
         [Description("is.gd")]
         ISGD,
         [Description("tinyurl.com")]

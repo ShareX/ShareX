@@ -23,21 +23,20 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
+using System.Web;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {
     public sealed class Gist : TextUploader
     {
-        private readonly Uri GistUri = new Uri("https://api.github.com/gists");
-        private readonly Uri GistAuthorizeUri = new Uri("https://github.com/login/oauth/authorize");
-        private readonly Uri GistCompleteUri = new Uri("https://github.com/login/oauth/access_token");
-        private readonly Uri GistRedirectUri = new Uri("http://getsharex.com/github/");
+        private const string GistUri = "https://api.github.com/gists";
 
         private readonly OAuth2Info oAuthInfos;
         private readonly bool publishPublic;
@@ -60,15 +59,12 @@ namespace UploadersLib.TextUploaders
 
         public string GetAuthorizationURL()
         {
-            NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
-            queryString["client_id"] = this.oAuthInfos.Client_ID;
-            queryString["redirect_uri"] = this.GistRedirectUri.ToString();
-            queryString["scope"] = "gist";
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", oAuthInfos.Client_ID);
+            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("scope", "gist");
 
-            UriBuilder uri = new UriBuilder(this.GistAuthorizeUri);
-            uri.Query = queryString.ToString();
-
-            return uri.ToString();
+            return CreateQuery("https://github.com/login/oauth/authorize", args);
         }
 
         public bool GetAccessToken(string code)
@@ -81,7 +77,7 @@ namespace UploadersLib.TextUploaders
             WebHeaderCollection headers = new WebHeaderCollection();
             headers.Add("Accept", "application/json");
 
-            string response = this.SendPostRequest(this.GistCompleteUri.ToString(), args, headers: headers);
+            string response = this.SendPostRequest("https://github.com/login/oauth/access_token", args, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -114,13 +110,15 @@ namespace UploadersLib.TextUploaders
 
                 string argsJson = JsonConvert.SerializeObject(gistUploadObject);
 
-                string Uri = GistUri.ToString();
+                string url = GistUri;
+
                 if (this.oAuthInfos != null)
                 {
-                    Uri += "?access_token=" + this.oAuthInfos.Token.access_token;
+                    url += "?access_token=" + this.oAuthInfos.Token.access_token;
                 }
 
-                string response = SendPostRequestJSON(Uri, argsJson);
+                string response = SendPostRequestJSON(url, argsJson);
+
                 if (response != null)
                 {
                     var gistReturnType = new { html_url = string.Empty };

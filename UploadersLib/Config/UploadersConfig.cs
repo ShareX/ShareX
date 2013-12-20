@@ -195,6 +195,12 @@ namespace UploadersLib
 
         #region URL shorteners
 
+        // bit.ly
+
+        public OAuth2Info BitlyOAuth2Info = null;
+
+        // Google URL Shortener
+
         public AccountType GoogleURLShortenerAccountType = AccountType.Anonymous;
         public OAuth2Info GoogleURLShortenerOAuth2Info = null;
 
@@ -336,6 +342,8 @@ namespace UploadersLib
             {
                 case UrlShortenerType.Google:
                     return GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(GoogleURLShortenerOAuth2Info);
+                case UrlShortenerType.BITLY:
+                    return OAuth2Info.CheckOAuth(BitlyOAuth2Info);
                 case UrlShortenerType.CustomURLShortener:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
                 default:

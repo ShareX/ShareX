@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Web;
 using System.Xml.Linq;
 using UploadersLib.HelperClasses;
 
@@ -32,16 +34,48 @@ namespace UploadersLib.URLShorteners
 {
     public sealed class BitlyURLShortener : URLShortener
     {
-        private const string URLShorten = "http://api.bit.ly/v3/shorten";
+        private const string URLAPI = "https://api-ssl.bitly.com/";
+        private const string URLAccessToken = URLAPI + "oauth/access_token";
+        private const string URLShorten = URLAPI + "v3/shorten";
 
-        public string APILogin { get; set; }
+        public OAuth2Info AuthInfo { get; set; }
 
-        public string APIKey { get; set; }
-
-        public BitlyURLShortener(string login, string key)
+        public BitlyURLShortener(OAuth2Info oauth)
         {
-            APILogin = login;
-            APIKey = key;
+            AuthInfo = oauth;
+        }
+
+        public string GetAuthorizationURL()
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("redirect_uri", Links.URL_CALLBACK);
+
+            return CreateQuery("https://bitly.com/oauth/authorize", args);
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("client_secret", AuthInfo.Client_Secret);
+            args.Add("code", code);
+            args.Add("redirect_uri", Links.URL_CALLBACK);
+
+            string response = SendPostRequest(URLAccessToken, args);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                string token = HttpUtility.ParseQueryString(response)["access_token"];
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    AuthInfo.Token = new OAuth2Token { access_token = token };
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public override UploadResult ShortenURL(string url)
@@ -51,18 +85,36 @@ namespace UploadersLib.URLShorteners
             if (!string.IsNullOrEmpty(url))
             {
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("format", "xml");
+                arguments.Add("access_token", AuthInfo.Token.access_token);
                 arguments.Add("longUrl", url);
-                arguments.Add("login", APILogin);
-                arguments.Add("apiKey", APIKey);
 
                 result.Response = SendGetRequest(URLShorten, arguments);
 
-                XDocument xd = XDocument.Parse(result.Response);
-                result.ShortenedURL = xd.GetValue("response/data/url");
+                BitlyShorten shorten = JsonConvert.DeserializeObject<BitlyShorten>(result.Response);
+
+                if (shorten != null && shorten.data != null && !string.IsNullOrEmpty(shorten.data.url))
+                {
+                    result.ShortenedURL = shorten.data.url;
+                }
             }
 
             return result;
+        }
+
+        public class BitlyShortenData
+        {
+            public string global_hash { get; set; }
+            public string hash { get; set; }
+            public string long_url { get; set; }
+            public int new_hash { get; set; }
+            public string url { get; set; }
+        }
+
+        public class BitlyShorten
+        {
+            public BitlyShortenData data { get; set; }
+            public int status_code { get; set; }
+            public string status_txt { get; set; }
         }
     }
 }
