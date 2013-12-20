@@ -930,11 +930,6 @@ namespace UploadersLib
             this.GistAuthComplete(code);
         }
 
-        private void oAuth2Gist_RefreshButtonClicked()
-        {
-            MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
         {
             this.Config.GistPublishPublic = ((CheckBox)sender).Checked;
@@ -980,11 +975,6 @@ namespace UploadersLib
         private void oauth2Bitly_CompleteButtonClicked(string code)
         {
             BitlyAuthComplete(code);
-        }
-
-        private void oauth2Bitly_RefreshButtonClicked()
-        {
-            MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion bit.ly

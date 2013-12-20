@@ -260,6 +260,8 @@
             this.tpGoogleURLShortener = new System.Windows.Forms.TabPage();
             this.oauth2GoogleURLShortener = new UploadersLib.GUI.OAuth2Control();
             this.atcGoogleURLShortenerAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.tpBitly = new System.Windows.Forms.TabPage();
+            this.oauth2Bitly = new UploadersLib.GUI.OAuth2Control();
             this.tpSocialNetworkingServices = new System.Windows.Forms.TabPage();
             this.tcSocialNetworkingServices = new System.Windows.Forms.TabControl();
             this.tpTwitter = new System.Windows.Forms.TabPage();
@@ -324,8 +326,6 @@
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
-            this.tpBitly = new System.Windows.Forms.TabPage();
-            this.oauth2Bitly = new UploadersLib.GUI.OAuth2Control();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -375,6 +375,7 @@
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
             this.tpGoogleURLShortener.SuspendLayout();
+            this.tpBitly.SuspendLayout();
             this.tpSocialNetworkingServices.SuspendLayout();
             this.tcSocialNetworkingServices.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -382,7 +383,6 @@
             this.gbCustomUploaders.SuspendLayout();
             this.gbCustomUploaderRegexp.SuspendLayout();
             this.gbCustomUploaderArguments.SuspendLayout();
-            this.tpBitly.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcUploaders
@@ -666,6 +666,7 @@
             // 
             // oauth2Imgur
             // 
+            this.oauth2Imgur.IsRefreshable = true;
             this.oauth2Imgur.Location = new System.Drawing.Point(464, 16);
             this.oauth2Imgur.LoginStatus = false;
             this.oauth2Imgur.Name = "oauth2Imgur";
@@ -1241,6 +1242,7 @@
             // 
             // oauth2Picasa
             // 
+            this.oauth2Picasa.IsRefreshable = true;
             this.oauth2Picasa.Location = new System.Drawing.Point(16, 16);
             this.oauth2Picasa.LoginStatus = false;
             this.oauth2Picasa.Name = "oauth2Picasa";
@@ -1360,15 +1362,15 @@
             // oAuth2Gist
             // 
             this.oAuth2Gist.Enabled = false;
+            this.oAuth2Gist.IsRefreshable = false;
             this.oAuth2Gist.Location = new System.Drawing.Point(16, 51);
             this.oAuth2Gist.LoginStatus = false;
             this.oAuth2Gist.Name = "oAuth2Gist";
-            this.oAuth2Gist.Size = new System.Drawing.Size(328, 207);
+            this.oAuth2Gist.Size = new System.Drawing.Size(328, 173);
             this.oAuth2Gist.Status = "Status: Login required.";
             this.oAuth2Gist.TabIndex = 16;
             this.oAuth2Gist.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
             this.oAuth2Gist.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
-            this.oAuth2Gist.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oAuth2Gist_RefreshButtonClicked);
             // 
             // atcGistAccountType
             // 
@@ -2275,6 +2277,7 @@
             // 
             // oAuthJira
             // 
+            this.oAuthJira.IsRefreshable = true;
             this.oAuthJira.Location = new System.Drawing.Point(473, 13);
             this.oAuthJira.LoginStatus = false;
             this.oAuthJira.Name = "oAuthJira";
@@ -2298,6 +2301,7 @@
             // 
             // oauth2GoogleDrive
             // 
+            this.oauth2GoogleDrive.IsRefreshable = true;
             this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
             this.oauth2GoogleDrive.LoginStatus = false;
             this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
@@ -2797,6 +2801,7 @@
             // 
             // oauth2GoogleURLShortener
             // 
+            this.oauth2GoogleURLShortener.IsRefreshable = true;
             this.oauth2GoogleURLShortener.Location = new System.Drawing.Point(16, 56);
             this.oauth2GoogleURLShortener.LoginStatus = false;
             this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
@@ -2815,6 +2820,29 @@
             this.atcGoogleURLShortenerAccountType.Size = new System.Drawing.Size(214, 29);
             this.atcGoogleURLShortenerAccountType.TabIndex = 0;
             this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
+            // 
+            // tpBitly
+            // 
+            this.tpBitly.Controls.Add(this.oauth2Bitly);
+            this.tpBitly.Location = new System.Drawing.Point(4, 22);
+            this.tpBitly.Name = "tpBitly";
+            this.tpBitly.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBitly.Size = new System.Drawing.Size(804, 475);
+            this.tpBitly.TabIndex = 1;
+            this.tpBitly.Text = "bit.ly";
+            this.tpBitly.UseVisualStyleBackColor = true;
+            // 
+            // oauth2Bitly
+            // 
+            this.oauth2Bitly.IsRefreshable = false;
+            this.oauth2Bitly.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Bitly.LoginStatus = false;
+            this.oauth2Bitly.Name = "oauth2Bitly";
+            this.oauth2Bitly.Size = new System.Drawing.Size(328, 168);
+            this.oauth2Bitly.Status = "Login required.";
+            this.oauth2Bitly.TabIndex = 0;
+            this.oauth2Bitly.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
+            this.oauth2Bitly.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
             // 
             // tpSocialNetworkingServices
             // 
@@ -3466,29 +3494,6 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // tpBitly
-            // 
-            this.tpBitly.Controls.Add(this.oauth2Bitly);
-            this.tpBitly.Location = new System.Drawing.Point(4, 22);
-            this.tpBitly.Name = "tpBitly";
-            this.tpBitly.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBitly.Size = new System.Drawing.Size(804, 475);
-            this.tpBitly.TabIndex = 1;
-            this.tpBitly.Text = "bit.ly";
-            this.tpBitly.UseVisualStyleBackColor = true;
-            // 
-            // oauth2Bitly
-            // 
-            this.oauth2Bitly.Location = new System.Drawing.Point(16, 16);
-            this.oauth2Bitly.LoginStatus = false;
-            this.oauth2Bitly.Name = "oauth2Bitly";
-            this.oauth2Bitly.Size = new System.Drawing.Size(328, 207);
-            this.oauth2Bitly.Status = "Login required.";
-            this.oauth2Bitly.TabIndex = 0;
-            this.oauth2Bitly.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
-            this.oauth2Bitly.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
-            this.oauth2Bitly.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oauth2Bitly_RefreshButtonClicked);
-            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3581,6 +3586,7 @@
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
             this.tpGoogleURLShortener.ResumeLayout(false);
+            this.tpBitly.ResumeLayout(false);
             this.tpSocialNetworkingServices.ResumeLayout(false);
             this.tcSocialNetworkingServices.ResumeLayout(false);
             this.tpTwitter.ResumeLayout(false);
@@ -3592,7 +3598,6 @@
             this.gbCustomUploaderRegexp.PerformLayout();
             this.gbCustomUploaderArguments.ResumeLayout(false);
             this.gbCustomUploaderArguments.PerformLayout();
-            this.tpBitly.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
