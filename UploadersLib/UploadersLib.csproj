@@ -299,7 +299,6 @@
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\GoogleURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
-    <Compile Include="URLShorteners\ThreelyURLShortener.cs" />
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
   </ItemGroup>

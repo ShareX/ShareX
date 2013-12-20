@@ -38,7 +38,7 @@ namespace UploadersLib.URLShorteners
         private const string URLAccessToken = URLAPI + "oauth/access_token";
         private const string URLShorten = URLAPI + "v3/shorten";
 
-        public OAuth2Info AuthInfo { get; set; }
+        public OAuth2Info AuthInfo { get; private set; }
 
         public BitlyURLShortener(OAuth2Info oauth)
         {
@@ -90,7 +90,7 @@ namespace UploadersLib.URLShorteners
 
                 result.Response = SendGetRequest(URLShorten, arguments);
 
-                BitlyShorten shorten = JsonConvert.DeserializeObject<BitlyShorten>(result.Response);
+                BitlyShortenResponse shorten = JsonConvert.DeserializeObject<BitlyShortenResponse>(result.Response);
 
                 if (shorten != null && shorten.data != null && !string.IsNullOrEmpty(shorten.data.url))
                 {
@@ -110,7 +110,7 @@ namespace UploadersLib.URLShorteners
             public string url { get; set; }
         }
 
-        public class BitlyShorten
+        public class BitlyShortenResponse
         {
             public BitlyShortenData data { get; set; }
             public int status_code { get; set; }
