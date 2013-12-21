@@ -240,6 +240,7 @@
     <Compile Include="HelperClasses\JSONHelper.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth2.cs" />
+    <Compile Include="HelperClasses\OAuth\IOAuth2Simple.cs" />
     <Compile Include="HelperClasses\OAuth\OAuth2Info.cs" />
     <Compile Include="HelperClasses\OAuth\OAuth2Token.cs" />
     <Compile Include="HelperClasses\OAuth\OAuthManager.cs" />

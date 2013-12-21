@@ -27,12 +27,11 @@ using HelpersLib;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Web;
-using System.Xml.Linq;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.URLShorteners
 {
-    public sealed class BitlyURLShortener : URLShortener
+    public sealed class BitlyURLShortener : URLShortener, IOAuth2Simple
     {
         private const string URLAPI = "https://api-ssl.bitly.com/";
         private const string URLAccessToken = URLAPI + "oauth/access_token";

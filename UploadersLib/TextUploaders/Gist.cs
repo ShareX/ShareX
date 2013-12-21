@@ -23,22 +23,20 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Net;
-using System.Web;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {
-    public sealed class Gist : TextUploader
+    public sealed class Gist : TextUploader, IOAuth2Simple
     {
-        private const string GistUri = "https://api.github.com/gists";
+        private const string URLAPI = "https://api.github.com/";
+        private const string URLGists = URLAPI + "gists";
 
-        private readonly OAuth2Info oAuthInfos;
+        public OAuth2Info AuthInfo { get; private set; }
+
         private readonly bool publishPublic;
 
         public Gist(OAuth2Info oAuthInfos)
@@ -54,14 +52,14 @@ namespace UploadersLib.TextUploaders
         public Gist(bool publishPublic, OAuth2Info oAuthInfos)
         {
             this.publishPublic = publishPublic;
-            this.oAuthInfos = oAuthInfos;
+            AuthInfo = oAuthInfos;
         }
 
         public string GetAuthorizationURL()
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("client_id", oAuthInfos.Client_ID);
-            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("redirect_uri", "http://getsharex.com/github"); // TODO: Links.URL_CALLBACK
             args.Add("scope", "gist");
 
             return CreateQuery("https://github.com/login/oauth/authorize", args);
@@ -70,14 +68,14 @@ namespace UploadersLib.TextUploaders
         public bool GetAccessToken(string code)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("client_id", this.oAuthInfos.Client_ID);
-            args.Add("client_secret", this.oAuthInfos.Client_Secret);
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("client_secret", AuthInfo.Client_Secret);
             args.Add("code", code);
 
             WebHeaderCollection headers = new WebHeaderCollection();
             headers.Add("Accept", "application/json");
 
-            string response = this.SendPostRequest("https://github.com/login/oauth/access_token", args, headers: headers);
+            string response = SendPostRequest("https://github.com/login/oauth/access_token", args, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -85,7 +83,7 @@ namespace UploadersLib.TextUploaders
 
                 if (token != null && !string.IsNullOrEmpty(token.access_token))
                 {
-                    this.oAuthInfos.Token = token;
+                    AuthInfo.Token = token;
                     return true;
                 }
             }
@@ -110,11 +108,11 @@ namespace UploadersLib.TextUploaders
 
                 string argsJson = JsonConvert.SerializeObject(gistUploadObject);
 
-                string url = GistUri;
+                string url = URLGists;
 
-                if (this.oAuthInfos != null)
+                if (AuthInfo != null)
                 {
-                    url += "?access_token=" + this.oAuthInfos.Token.access_token;
+                    url += "?access_token=" + AuthInfo.Token.access_token;
                 }
 
                 string response = SendPostRequestJSON(url, argsJson);

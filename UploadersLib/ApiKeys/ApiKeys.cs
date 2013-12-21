@@ -52,6 +52,8 @@ namespace UploadersLib
         public const string MinusConsumerKey = "b57b69843f7a302a276dde89890fc6";
         public const string MinusConsumerSecret = "3fb097f08314d713959b1f41d543b0";
         public const string BoxKey = "5vd8549xmn9a7zil4iupb0ciroj7cvee";
+        public const string BoxClientID = "5vd8549xmn9a7zil4iupb0ciroj7cvee";
+        public const string BoxClientSecret = "52VncS5clEEdV4ck8NspYECWvsZo69LA";
         public const string SendSpaceKey = "LV6OS1R0Q3";
         public const string DropIOKey = "6c65e2d2bfd858f7d0aa6509784f876483582eea";
         public const string Ge_ttKey = "tdrrlb84kq2dquxrh4dw79gr3act0529";
