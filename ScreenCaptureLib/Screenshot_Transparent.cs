@@ -77,7 +77,7 @@ namespace ScreenCaptureLib
 
                         NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNormalNoActivate);
 
-                        if (!NativeMethods.SetWindowPos(form.Handle, handle, rect.X, rect.Y, rect.Width, rect.Height, NativeMethods.SWP_NOACTIVATE))
+                        if (!NativeMethods.SetWindowPos(form.Handle, handle, rect.X, rect.Y, rect.Width, rect.Height, SetWindowPosFlags.SWP_NOACTIVATE))
                         {
                             form.Close();
                             DebugHelper.WriteLine("Transparent capture failed. Reason: SetWindowPos fail.");
