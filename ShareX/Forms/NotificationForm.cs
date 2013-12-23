@@ -57,7 +57,9 @@ namespace ShareX
             URL = url;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
-            NativeMethods.AnimateWindow(Handle, 1000, AnimateWindowFlags.AW_BLEND);
+            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
+                SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
+            NativeMethods.AnimateWindow(Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
             tDuration.Interval = duration;
             tDuration.Start();
         }
@@ -75,9 +77,9 @@ namespace ShareX
 
             g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
 
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(200, 255, 255, 255)))
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
             {
-                g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 40));
+                g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 45));
             }
 
             using (Font font = new Font("Arial", 10))
@@ -114,11 +116,9 @@ namespace ShareX
                     Helpers.LoadBrowserAsync(URL);
                 }
             }
-            else if (e.Button == MouseButtons.Right)
-            {
-                tDuration.Stop();
-                Close();
-            }
+
+            tDuration.Stop();
+            Close();
         }
     }
 }

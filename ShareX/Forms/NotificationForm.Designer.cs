@@ -47,6 +47,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ToastForm";
+            this.TopMost = true;
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
             this.ResumeLayout(false);
 
