@@ -29,6 +29,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -36,20 +38,25 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ToastForm : Form
+    public partial class NotificationForm : Form
     {
         public string ToastText { get; private set; }
         public Image ToastImage { get; private set; }
+        public string URL { get; private set; }
 
-        public ToastForm(int duration, string text, Image image)
+        private int windowOffset = 3;
+
+        public NotificationForm(int duration, Size size, string text, Image image, string url)
         {
             InitializeComponent();
+            Size = size;
             ToastText = text;
             image = ImageHelpers.ResizeImage(image, ClientRectangle.Size.Offset(-2), true, true);
             image = ImageHelpers.DrawCheckers(image);
             ToastImage = image;
+            URL = url;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width, Screen.PrimaryScreen.WorkingArea.Bottom - Height);
+            Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
             NativeMethods.AnimateWindow(Handle, 1000, AnimateWindowFlags.AW_BLEND);
             tDuration.Interval = duration;
             tDuration.Start();
@@ -58,30 +65,60 @@ namespace ShareX
         private void tDuration_Tick(object sender, EventArgs e)
         {
             tDuration.Stop();
-            NativeMethods.AnimateWindow(Handle, 1000, AnimateWindowFlags.AW_HIDE | AnimateWindowFlags.AW_BLEND);
+            NativeMethods.AnimateWindow(Handle, 2000, AnimateWindowFlags.AW_HIDE | AnimateWindowFlags.AW_BLEND);
             Close();
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+
             g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
+
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(200, 255, 255, 255)))
+            {
+                g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 40));
+            }
+
+            using (Font font = new Font("Arial", 10))
+            {
+                g.DrawString(ToastText, font, Brushes.Black, e.ClipRectangle.RectangleOffset(-5));
+            }
+
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
 
-        public static void ShowAsync(string text, Image image)
+        public static void ShowAsync(string text, string imagePath, string url)
         {
-            Image cloneImage = (Image)image.Clone();
-
-            Thread thread = new Thread(() =>
+            if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
             {
-                using (ToastForm toastForm = new ToastForm(5000, text, cloneImage))
+                Thread thread = new Thread(() =>
                 {
-                    toastForm.ShowDialog();
-                }
-            });
+                    using (Image img = ImageHelpers.LoadImage(imagePath))
+                    using (NotificationForm toastForm = new NotificationForm(5000, new Size(400, 300), text, img, url))
+                    {
+                        toastForm.ShowDialog();
+                    }
+                });
 
-            thread.Start();
+                thread.Start();
+            }
+        }
+
+        private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                if (!string.IsNullOrEmpty(URL))
+                {
+                    Helpers.LoadBrowserAsync(URL);
+                }
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                tDuration.Stop();
+                Close();
+            }
         }
     }
 }

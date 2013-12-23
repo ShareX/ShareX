@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class ToastForm
+    partial class NotificationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,16 +36,18 @@
             // 
             this.tDuration.Tick += new System.EventHandler(this.tDuration_Tick);
             // 
-            // ToastForm
+            // NotificationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 150);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ToastForm";
+            this.Name = "NotificationForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ToastForm";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
             this.ResumeLayout(false);
 
         }
