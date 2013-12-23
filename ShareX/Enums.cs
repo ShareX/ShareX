@@ -95,8 +95,8 @@ namespace ShareX
 
     public enum AfterCaptureFormResult
     {
-        Continue,
         Cancel,
+        Continue,
         Copy
     }
 
