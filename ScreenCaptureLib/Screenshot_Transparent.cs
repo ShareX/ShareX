@@ -74,10 +74,14 @@ namespace ScreenCaptureLib
                         form.BackColor = Color.White;
                         form.FormBorderStyle = FormBorderStyle.None;
                         form.ShowInTaskbar = false;
+                        form.StartPosition = FormStartPosition.Manual;
+                        form.Location = new Point(rect.X, rect.Y);
+                        form.Size = new Size(rect.Width, rect.Height);
 
-                        NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNormalNoActivate);
+                        NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
 
-                        if (!NativeMethods.SetWindowPos(form.Handle, handle, rect.X, rect.Y, rect.Width, rect.Height, SetWindowPosFlags.SWP_NOACTIVATE))
+                        if (!NativeMethods.SetWindowPos(form.Handle, handle, 0, 0, 0, 0,
+                            SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE))
                         {
                             form.Close();
                             DebugHelper.WriteLine("Transparent capture failed. Reason: SetWindowPos fail.");

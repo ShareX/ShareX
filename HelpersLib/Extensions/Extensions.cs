@@ -191,6 +191,26 @@ namespace HelpersLib
             return rect.Width > 0 && rect.Height > 0;
         }
 
+        public static Size Offset(this Size size, int offset)
+        {
+            return new Size(size.Width + offset, size.Height + offset);
+        }
+
+        public static Rectangle RectangleOffset(this Rectangle rect, int offset)
+        {
+            return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + offset * 2, rect.Height + offset * 2);
+        }
+
+        public static Rectangle LocationOffset(this Rectangle rect, int offset)
+        {
+            return new Rectangle(rect.X + offset, rect.Y + offset, rect.Width, rect.Height);
+        }
+
+        public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
+        {
+            return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+        }
+
         public static Rectangle SizeOffset(this Rectangle rect, int offset)
         {
             return rect.SizeOffset(offset, offset);

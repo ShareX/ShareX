@@ -208,11 +208,6 @@ namespace ShareX
                 Screenshot.AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar;
 
                 img = capture();
-
-                if (img != null && taskSettings.GeneralSettings.PlaySoundAfterCapture)
-                {
-                    Helpers.PlaySoundAsync(Resources.CameraSound);
-                }
             }
             catch (Exception ex)
             {
@@ -233,6 +228,11 @@ namespace ShareX
         {
             if (img != null)
             {
+                if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
+                {
+                    Helpers.PlaySoundAsync(Resources.CameraSound);
+                }
+
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);

@@ -69,31 +69,26 @@ namespace HelpersLib
 {
     public static class ImageHelpers
     {
-        public static Image ResizeImage(Image img, int width, int height)
-        {
-            return ResizeImage(img, 0, 0, width, height);
-        }
-
         public static Image ResizeImage(Image img, Size size)
         {
-            return ResizeImage(img, 0, 0, size.Width, size.Height);
+            return ResizeImage(img, size.Width, size.Height);
         }
 
-        public static Image ResizeImage(Image img, int x, int y, int width, int height)
+        public static Image ResizeImage(Image img, int width, int height)
         {
             if (width < 1 || height < 1 || (img.Width == width && img.Height == height))
             {
                 return img;
             }
 
-            Bitmap bmp = new Bitmap(x + width, y + height, img.PixelFormat);
+            Bitmap bmp = new Bitmap(width, height, img.PixelFormat);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (img)
             {
                 g.SetHighQuality();
-                g.DrawImage(img, x, y, width, height);
+                g.DrawImage(img, 0, 0, width, height);
             }
 
             return bmp;
@@ -111,17 +106,17 @@ namespace HelpersLib
             return ResizeImage(img, width, height);
         }
 
+        public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage)
+        {
+            return ResizeImage(img, size.Width, size.Height, allowEnlarge, centerImage);
+        }
+
         public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage)
         {
-            return ResizeImage(img, 0, 0, width, height, allowEnlarge, centerImage);
+            return ResizeImage(img, width, height, allowEnlarge, centerImage, Color.Transparent);
         }
 
-        public static Image ResizeImage(Image img, Rectangle rect, bool allowEnlarge, bool centerImage)
-        {
-            return ResizeImage(img, rect.X, rect.Y, rect.Width, rect.Height, allowEnlarge, centerImage);
-        }
-
-        public static Image ResizeImage(Image img, int x, int y, int width, int height, bool allowEnlarge, bool centerImage)
+        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage, Color backColor)
         {
             double ratio;
             int newWidth, newHeight;
@@ -141,8 +136,8 @@ namespace HelpersLib
                 newHeight = (int)(img.Height * ratio);
             }
 
-            int newX = x;
-            int newY = y;
+            int newX = 0;
+            int newY = 0;
 
             if (centerImage)
             {
@@ -150,7 +145,18 @@ namespace HelpersLib
                 newY += (int)((height - (img.Height * ratio)) / 2);
             }
 
-            return ResizeImage(img, newX, newY, newWidth, newHeight);
+            Bitmap bmp = new Bitmap(width, height, img.PixelFormat);
+            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (img)
+            {
+                g.Clear(backColor);
+                g.SetHighQuality();
+                g.DrawImage(img, newX, newY, newWidth, newHeight);
+            }
+
+            return bmp;
         }
 
         public static Image CropImage(Image img, Rectangle rect)

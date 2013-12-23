@@ -69,6 +69,9 @@ namespace HelpersLib
 
         #region user32.dll
 
+        [DllImport("user32")]
+        public static extern bool AnimateWindow(IntPtr hwnd, int time, AnimateWindowFlags flags);
+
         [DllImport("user32.dll")]
         public static extern bool BringWindowToTop(IntPtr hWnd);
 

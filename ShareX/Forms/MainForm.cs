@@ -70,6 +70,7 @@ namespace ShareX
         private void AfterShownJobs()
         {
             this.ShowActivate();
+            ToastForm.ShowAsync("test", ShareXResources.Logo);
         }
 
         private void InitControls()
