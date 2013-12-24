@@ -324,7 +324,7 @@ namespace ShareX
 
                                         if (task.Info.TaskSettings.GeneralSettings.ShowToastWindowAfterTask)
                                         {
-                                            NotificationForm.ShowAsync(balloonTipText, info.FilePath, result);
+                                            NotificationForm.Show(info.FilePath, result);
                                         }
                                     }
 

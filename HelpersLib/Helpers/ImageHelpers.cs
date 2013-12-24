@@ -84,11 +84,20 @@ namespace HelpersLib
             Bitmap bmp = new Bitmap(width, height, img.PixelFormat);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
-            using (Graphics g = Graphics.FromImage(bmp))
             using (img)
+            using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.SetHighQuality();
-                g.DrawImage(img, 0, 0, width, height);
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                g.CompositingQuality = CompositingQuality.HighQuality;
+                g.CompositingMode = CompositingMode.SourceOver;
+
+                using (ImageAttributes ia = new ImageAttributes())
+                {
+                    ia.SetWrapMode(WrapMode.TileFlipXY);
+                    g.DrawImage(img, new Rectangle(0, 0, width, height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
+                }
             }
 
             return bmp;

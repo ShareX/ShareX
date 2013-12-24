@@ -45,13 +45,10 @@ namespace ShareX
         public string URL { get; private set; }
 
         private int windowOffset = 3;
-        private Size maxImageSize;
 
-        public NotificationForm(int duration, Size size, string text, Image img, string url)
+        public NotificationForm(int duration, Size size, Image img, string url)
         {
             InitializeComponent();
-            maxImageSize = size;
-            ToastText = text;
 
             img = ImageHelpers.ResizeImageLimit(img, size);
             img = ImageHelpers.DrawCheckers(img);
@@ -59,12 +56,9 @@ namespace ShareX
             URL = url;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            Size = new Size(img.Width + 2, img.Height + 2);
+            Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
 
-            Rectangle rect = new Rectangle(Screen.PrimaryScreen.WorkingArea.Right - (img.Width + 2) - windowOffset,
-                Screen.PrimaryScreen.WorkingArea.Bottom - (img.Height + 2) - windowOffset, img.Width + 2, img.Height + 2);
-
-            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, rect.X, rect.Y, rect.Width, rect.Height, SetWindowPosFlags.SWP_NOACTIVATE);
-            NativeMethods.AnimateWindow(Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
             tDuration.Interval = duration;
             tDuration.Start();
         }
@@ -72,7 +66,6 @@ namespace ShareX
         private void tDuration_Tick(object sender, EventArgs e)
         {
             tDuration.Stop();
-            NativeMethods.AnimateWindow(Handle, 1000, AnimateWindowFlags.AW_HIDE | AnimateWindowFlags.AW_BLEND);
             Close();
         }
 
@@ -95,26 +88,21 @@ namespace ShareX
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
 
-        public static void ShowAsync(string text, string imagePath, string url)
+        public static void Show(string imagePath, string url)
         {
             if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
             {
-                Thread thread = new Thread(() =>
-                {
-                    using (Image img = ImageHelpers.LoadImage(imagePath))
-                    using (NotificationForm toastForm = new NotificationForm(5000, new Size(400, 300), text, img, url))
-                    {
-                        toastForm.ShowDialog();
-                    }
-                });
-
-                thread.Start();
+                Image img = ImageHelpers.LoadImage(imagePath);
+                NotificationForm form = new NotificationForm(5000, new Size(400, 300), img, url);
+                NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
+                NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOP, 0, 0, 0, 0,
+                    SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
             }
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 if (!string.IsNullOrEmpty(URL))
                 {
