@@ -106,12 +106,12 @@ namespace HelpersLib
             return ResizeImage(img, width, height);
         }
 
-        public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage)
+        public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage = true)
         {
             return ResizeImage(img, size.Width, size.Height, allowEnlarge, centerImage);
         }
 
-        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage)
+        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage = true)
         {
             return ResizeImage(img, width, height, allowEnlarge, centerImage, Color.Transparent);
         }
@@ -157,6 +157,28 @@ namespace HelpersLib
             }
 
             return bmp;
+        }
+
+        public static Image ResizeImageLimit(Image img, Size size)
+        {
+            return ResizeImageLimit(img, size.Width, size.Height);
+        }
+
+        // If image size bigger than "size" then resize it and keep aspect ratio else return image
+        public static Image ResizeImageLimit(Image img, int width, int height)
+        {
+            if (img.Width <= width && img.Height <= height)
+            {
+                return img;
+            }
+
+            double ratioX = (double)width / img.Width;
+            double ratioY = (double)height / img.Height;
+            double ratio = ratioX < ratioY ? ratioX : ratioY;
+            int newWidth = (int)(img.Width * ratio);
+            int newHeight = (int)(img.Height * ratio);
+
+            return ResizeImage(img, newWidth, newHeight);
         }
 
         public static Image CropImage(Image img, Rectangle rect)

@@ -45,20 +45,25 @@ namespace ShareX
         public string URL { get; private set; }
 
         private int windowOffset = 3;
+        private Size maxImageSize;
 
-        public NotificationForm(int duration, Size size, string text, Image image, string url)
+        public NotificationForm(int duration, Size size, string text, Image img, string url)
         {
             InitializeComponent();
-            Size = size;
+            maxImageSize = size;
             ToastText = text;
-            image = ImageHelpers.ResizeImage(image, ClientRectangle.Size.Offset(-2), true, true);
-            image = ImageHelpers.DrawCheckers(image);
-            ToastImage = image;
+
+            img = ImageHelpers.ResizeImageLimit(img, size);
+            img = ImageHelpers.DrawCheckers(img);
+            ToastImage = img;
             URL = url;
+
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
-            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
-                SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
+
+            Rectangle rect = new Rectangle(Screen.PrimaryScreen.WorkingArea.Right - (img.Width + 2) - windowOffset,
+                Screen.PrimaryScreen.WorkingArea.Bottom - (img.Height + 2) - windowOffset, img.Width + 2, img.Height + 2);
+
+            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, rect.X, rect.Y, rect.Width, rect.Height, SetWindowPosFlags.SWP_NOACTIVATE);
             NativeMethods.AnimateWindow(Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
             tDuration.Interval = duration;
             tDuration.Start();
@@ -67,7 +72,7 @@ namespace ShareX
         private void tDuration_Tick(object sender, EventArgs e)
         {
             tDuration.Stop();
-            NativeMethods.AnimateWindow(Handle, 2000, AnimateWindowFlags.AW_HIDE | AnimateWindowFlags.AW_BLEND);
+            NativeMethods.AnimateWindow(Handle, 1000, AnimateWindowFlags.AW_HIDE | AnimateWindowFlags.AW_BLEND);
             Close();
         }
 
@@ -77,7 +82,7 @@ namespace ShareX
 
             g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
 
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+            /*using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
             {
                 g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 45));
             }
@@ -85,7 +90,7 @@ namespace ShareX
             using (Font font = new Font("Arial", 10))
             {
                 g.DrawString(ToastText, font, Brushes.Black, e.ClipRectangle.RectangleOffset(-5));
-            }
+            }*/
 
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
