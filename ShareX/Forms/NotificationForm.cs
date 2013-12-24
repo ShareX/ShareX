@@ -97,7 +97,7 @@ namespace ShareX
 
         public static void Show(string imagePath, string url)
         {
-            if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+            if (!string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
                 NotificationForm form = new NotificationForm(4000, new Size(400, 300), img, url);
