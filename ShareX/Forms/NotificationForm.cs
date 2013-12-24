@@ -45,6 +45,8 @@ namespace ShareX
         public string URL { get; private set; }
 
         private int windowOffset = 3;
+        private bool mouseInside = false;
+        private bool durationEnd = false;
 
         public NotificationForm(int duration, Size size, Image img, string url)
         {
@@ -65,8 +67,13 @@ namespace ShareX
 
         private void tDuration_Tick(object sender, EventArgs e)
         {
+            durationEnd = true;
             tDuration.Stop();
-            Close();
+
+            if (!mouseInside)
+            {
+                Close();
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -93,7 +100,7 @@ namespace ShareX
             if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
-                NotificationForm form = new NotificationForm(5000, new Size(400, 300), img, url);
+                NotificationForm form = new NotificationForm(4000, new Size(400, 300), img, url);
                 NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
                 NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
                     SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
@@ -113,6 +120,21 @@ namespace ShareX
             }
 
             Close();
+        }
+
+        private void NotificationForm_MouseEnter(object sender, EventArgs e)
+        {
+            mouseInside = true;
+        }
+
+        private void NotificationForm_MouseLeave(object sender, EventArgs e)
+        {
+            mouseInside = false;
+
+            if (durationEnd)
+            {
+                Close();
+            }
         }
     }
 }

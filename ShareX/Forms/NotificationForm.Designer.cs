@@ -54,6 +54,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ToastForm";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.NotificationForm_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.NotificationForm_MouseLeave);
             this.ResumeLayout(false);
 
         }
