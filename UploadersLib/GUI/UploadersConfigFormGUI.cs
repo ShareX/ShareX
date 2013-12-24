@@ -81,6 +81,7 @@ namespace UploadersLib
             ImageList urlShortenersImageList = new ImageList();
             urlShortenersImageList.ColorDepth = ColorDepth.Depth32Bit;
             urlShortenersImageList.Images.Add("Google", Resources.Google);
+            urlShortenersImageList.Images.Add("Bitly", Resources.Bitly);
             tcURLShorteners.ImageList = urlShortenersImageList;
 
             ImageList socialNetworkingServicesImageList = new ImageList();
@@ -112,6 +113,7 @@ namespace UploadersLib
             tpCustomUploaders.ImageKey = "CustomUploader";
             tpPastebin.ImageKey = "Pastebin";
             tpGoogleURLShortener.ImageKey = "Google";
+            tpBitly.ImageKey = "Bitly";
             tpTwitter.ImageKey = "Twitter";
             tpMega.ImageKey = "Mega";
             tpGist.ImageKey = "Gist";
@@ -386,12 +388,22 @@ namespace UploadersLib
 
             #region URL Shorteners
 
+            // Google URL Shortener
+
             atcGoogleURLShortenerAccountType.SelectedAccountType = Config.GoogleURLShortenerAccountType;
 
             if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
             {
                 oauth2GoogleURLShortener.Status = "Login successful.";
                 oauth2GoogleURLShortener.LoginStatus = true;
+            }
+
+            // bit.ly
+
+            if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
+            {
+                oauth2Bitly.Status = "Login successful.";
+                oauth2Bitly.LoginStatus = true;
             }
 
             #endregion URL Shorteners

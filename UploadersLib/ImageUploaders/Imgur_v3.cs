@@ -45,7 +45,11 @@ namespace UploadersLib.ImageUploaders
 
         public string GetAuthorizationURL()
         {
-            return string.Format("https://api.imgur.com/oauth2/authorize?client_id={0}&response_type={1}", AuthInfo.Client_ID, "pin");
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("response_type", "pin");
+
+            return CreateQuery("https://api.imgur.com/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)

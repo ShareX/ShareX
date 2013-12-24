@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace UploadersLib.GUI
@@ -69,9 +71,36 @@ namespace UploadersLib.GUI
             }
         }
 
+        private bool isRefreshable;
+
+        [DefaultValue(true)]
+        public bool IsRefreshable
+        {
+            get
+            {
+                return isRefreshable;
+            }
+            set
+            {
+                isRefreshable = value;
+
+                if (isRefreshable)
+                {
+                    gbUserAccount.Size = new Size(320, 200);
+                }
+                else
+                {
+                    gbUserAccount.Size = new Size(320, 165);
+                }
+
+                btnRefreshAuthorization.Visible = isRefreshable;
+            }
+        }
+
         public OAuth2Control()
         {
             InitializeComponent();
+            IsRefreshable = true;
         }
 
         private void btnOpenAuthorizePage_Click(object sender, EventArgs e)

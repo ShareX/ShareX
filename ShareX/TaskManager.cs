@@ -302,28 +302,36 @@ namespace ShareX
 
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
                                 {
-                                    string balloonTipText = result;
-
-                                    if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)
+                                    if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
-                                        AfterUploadForm dlg = new AfterUploadForm(info);
-                                        NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
+                                        SystemSounds.Exclamation.Play();
                                     }
+
+                                    string balloonTipText = result;
 
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
                                     {
                                         balloonTipText = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
-                                    if (!string.IsNullOrEmpty(balloonTipText) && task.Info.TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
+                                    if (!string.IsNullOrEmpty(balloonTipText))
                                     {
-                                        Program.MainForm.niTray.Tag = result;
-                                        Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", balloonTipText, ToolTipIcon.Info);
+                                        if (task.Info.TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
+                                        {
+                                            Program.MainForm.niTray.Tag = result;
+                                            Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", balloonTipText, ToolTipIcon.Info);
+                                        }
+
+                                        if (task.Info.TaskSettings.GeneralSettings.ShowToastWindowAfterTask)
+                                        {
+                                            NotificationForm.ShowAsync(balloonTipText, info.FilePath, result);
+                                        }
                                     }
 
-                                    if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                    if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)
                                     {
-                                        SystemSounds.Exclamation.Play();
+                                        AfterUploadForm dlg = new AfterUploadForm(info);
+                                        NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
                                     }
                                 }
                             }

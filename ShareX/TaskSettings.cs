@@ -193,9 +193,10 @@ namespace ShareX
     public class TaskSettingsGeneral
     {
         public bool PlaySoundAfterCapture = true;
+        public bool ShowAfterCaptureTasksForm = false;
         public bool PlaySoundAfterUpload = true;
         public bool TrayBalloonTipAfterUpload = true;
-        public bool ShowAfterCaptureTasksForm = false;
+        public bool ShowToastWindowAfterTask = false;
         public bool ShowAfterUploadForm = false;
         public bool SaveHistory = true;
     }

@@ -240,6 +240,7 @@
     <Compile Include="HelperClasses\JSONHelper.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth2.cs" />
+    <Compile Include="HelperClasses\OAuth\IOAuth2Simple.cs" />
     <Compile Include="HelperClasses\OAuth\OAuth2Info.cs" />
     <Compile Include="HelperClasses\OAuth\OAuth2Token.cs" />
     <Compile Include="HelperClasses\OAuth\OAuthManager.cs" />
@@ -299,8 +300,6 @@
     <Compile Include="URLShorteners\CustomURLShortener.cs" />
     <Compile Include="URLShorteners\GoogleURLShortener.cs" />
     <Compile Include="URLShorteners\IsgdURLShortener.cs" />
-    <Compile Include="URLShorteners\JmpURLShortener.cs" />
-    <Compile Include="URLShorteners\ThreelyURLShortener.cs" />
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
   </ItemGroup>
@@ -378,9 +377,11 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />
+    <None Include="Favicons\Bitly.ico" />
     <Content Include="Favicons\Dropbox.ico" />
     <Content Include="Favicons\Flickr.ico" />
     <None Include="Favicons\Gett.ico" />
+    <None Include="Favicons\Gist.ico" />
     <Content Include="Favicons\Google.ico" />
     <Content Include="Favicons\GoogleDrive.ico" />
     <Content Include="Favicons\ImageShack.ico" />

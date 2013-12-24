@@ -110,6 +110,7 @@ namespace ShareX
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
             cbTrayBalloonTipAfterUpload.Checked = TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload;
+            cbShowToastWindowAfterTask.Checked = TaskSettings.GeneralSettings.ShowToastWindowAfterTask;
             cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
             // Image - Quality
@@ -420,6 +421,11 @@ namespace ShareX
         private void cbTrayBalloonTipAfterUpload_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload = cbTrayBalloonTipAfterUpload.Checked;
+        }
+
+        private void cbShowToastWindowAfterTask_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ShowToastWindowAfterTask = cbShowToastWindowAfterTask.Checked;
         }
 
         private void cbHistorySave_CheckedChanged(object sender, EventArgs e)

@@ -23,36 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Generic;
-using UploadersLib.HelperClasses;
-
-namespace UploadersLib.URLShorteners
+namespace UploadersLib.HelperClasses
 {
-    public sealed class ThreelyURLShortener : URLShortener
+    public interface IOAuth2Simple
     {
-        private const string APIURL = "http://3.ly";
+        OAuth2Info AuthInfo { get; }
 
-        private string APIKey;
+        string GetAuthorizationURL();
 
-        public ThreelyURLShortener(string key)
-        {
-            APIKey = key;
-        }
-
-        public override UploadResult ShortenURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url };
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("api", APIKey);
-                arguments.Add("u", url);
-
-                result.Response = result.ShortenedURL = SendGetRequest(APIURL, arguments);
-            }
-
-            return result;
-        }
+        bool GetAccessToken(string code);
     }
 }

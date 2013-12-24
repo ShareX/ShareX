@@ -24,22 +24,19 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Net;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {
-    public sealed class Gist : TextUploader
+    public sealed class Gist : TextUploader, IOAuth2Simple
     {
-        private readonly Uri GistUri = new Uri("https://api.github.com/gists");
-        private readonly Uri GistAuthorizeUri = new Uri("https://github.com/login/oauth/authorize");
-        private readonly Uri GistCompleteUri = new Uri("https://github.com/login/oauth/access_token");
-        private readonly Uri GistRedirectUri = new Uri("http://getsharex.com/github/");
+        private const string URLAPI = "https://api.github.com/";
+        private const string URLGists = URLAPI + "gists";
 
-        private readonly OAuth2Info oAuthInfos;
+        public OAuth2Info AuthInfo { get; private set; }
+
         private readonly bool publishPublic;
 
         public Gist(OAuth2Info oAuthInfos)
@@ -55,33 +52,30 @@ namespace UploadersLib.TextUploaders
         public Gist(bool publishPublic, OAuth2Info oAuthInfos)
         {
             this.publishPublic = publishPublic;
-            this.oAuthInfos = oAuthInfos;
+            AuthInfo = oAuthInfos;
         }
 
         public string GetAuthorizationURL()
         {
-            NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
-            queryString["client_id"] = this.oAuthInfos.Client_ID;
-            queryString["redirect_uri"] = this.GistRedirectUri.ToString();
-            queryString["scope"] = "gist";
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("redirect_uri", "http://getsharex.com/github"); // TODO: Links.URL_CALLBACK
+            args.Add("scope", "gist");
 
-            UriBuilder uri = new UriBuilder(this.GistAuthorizeUri);
-            uri.Query = queryString.ToString();
-
-            return uri.ToString();
+            return CreateQuery("https://github.com/login/oauth/authorize", args);
         }
 
         public bool GetAccessToken(string code)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("client_id", this.oAuthInfos.Client_ID);
-            args.Add("client_secret", this.oAuthInfos.Client_Secret);
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("client_secret", AuthInfo.Client_Secret);
             args.Add("code", code);
 
             WebHeaderCollection headers = new WebHeaderCollection();
             headers.Add("Accept", "application/json");
 
-            string response = this.SendPostRequest(this.GistCompleteUri.ToString(), args, headers: headers);
+            string response = SendPostRequest("https://github.com/login/oauth/access_token", args, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -89,7 +83,7 @@ namespace UploadersLib.TextUploaders
 
                 if (token != null && !string.IsNullOrEmpty(token.access_token))
                 {
-                    this.oAuthInfos.Token = token;
+                    AuthInfo.Token = token;
                     return true;
                 }
             }
@@ -114,13 +108,15 @@ namespace UploadersLib.TextUploaders
 
                 string argsJson = JsonConvert.SerializeObject(gistUploadObject);
 
-                string Uri = GistUri.ToString();
-                if (this.oAuthInfos != null)
+                string url = URLGists;
+
+                if (AuthInfo != null)
                 {
-                    Uri += "?access_token=" + this.oAuthInfos.Token.access_token;
+                    url += "?access_token=" + AuthInfo.Token.access_token;
                 }
 
-                string response = SendPostRequestJSON(Uri, argsJson);
+                string response = SendPostRequestJSON(url, argsJson);
+
                 if (response != null)
                 {
                     var gistReturnType = new { html_url = string.Empty };

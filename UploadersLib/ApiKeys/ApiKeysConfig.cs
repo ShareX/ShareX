@@ -128,23 +128,11 @@ namespace UploadersLib
 
         #region URL Shorteners
 
-        [Category("bit.ly"), DefaultValue(ApiKeys.BitlyLogin), Description("bit.ly Consumer Secret")]
-        public string BitlyLogin { get; set; }
+        [Category("bit.ly"), DefaultValue(ApiKeys.BitlyClientID), Description("bit.ly Client ID")]
+        public string BitlyClientID { get; set; }
 
-        [Category("bit.ly"), DefaultValue(ApiKeys.BitlyKey), Description("bit.ly Consumer Secret")]
-        public string BitlyKey { get; set; }
-
-        [Category("bit.ly"), DefaultValue(ApiKeys.BitlyConsumerKey), Description("bit.ly Consumer Secret")]
-        public string BitlyConsumerKey { get; set; }
-
-        [Category("bit.ly"), DefaultValue(ApiKeys.BitlyConsumerSecret), Description("bit.ly Consumer Secret")]
-        public string BitlyConsumerSecret { get; set; }
-
-        [Category("kl.am"), Browsable(false), DefaultValue(ApiKeys.KlamKey), Description("kl.am key")]
-        public string KlamKey { get; set; }
-
-        [Category("3.ly"), Browsable(false), DefaultValue(ApiKeys.ThreelyKey), Description("3.ly key")]
-        public string ThreelyKey { get; set; }
+        [Category("bit.ly"), DefaultValue(ApiKeys.BitlyClientSecret), Description("bit.ly Client Secret")]
+        public string BitlyClientSecret { get; set; }
 
         #endregion URL Shorteners
 

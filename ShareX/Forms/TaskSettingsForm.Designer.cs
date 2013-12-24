@@ -155,6 +155,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.cbShowToastWindowAfterTask = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.tpGeneral.SuspendLayout();
@@ -454,6 +455,7 @@
             // panelGeneral
             // 
             this.panelGeneral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGeneral.Controls.Add(this.cbShowToastWindowAfterTask);
             this.panelGeneral.Controls.Add(this.chkShowAfterUploadForm);
             this.panelGeneral.Controls.Add(this.cbShowAfterCaptureTasksForm);
             this.panelGeneral.Controls.Add(this.cbTrayBalloonTipAfterUpload);
@@ -469,7 +471,7 @@
             // chkShowAfterUploadForm
             // 
             this.chkShowAfterUploadForm.AutoSize = true;
-            this.chkShowAfterUploadForm.Location = new System.Drawing.Point(8, 80);
+            this.chkShowAfterUploadForm.Location = new System.Drawing.Point(8, 128);
             this.chkShowAfterUploadForm.Name = "chkShowAfterUploadForm";
             this.chkShowAfterUploadForm.Size = new System.Drawing.Size(271, 17);
             this.chkShowAfterUploadForm.TabIndex = 18;
@@ -491,7 +493,7 @@
             // cbTrayBalloonTipAfterUpload
             // 
             this.cbTrayBalloonTipAfterUpload.AutoSize = true;
-            this.cbTrayBalloonTipAfterUpload.Location = new System.Drawing.Point(8, 104);
+            this.cbTrayBalloonTipAfterUpload.Location = new System.Drawing.Point(8, 80);
             this.cbTrayBalloonTipAfterUpload.Name = "cbTrayBalloonTipAfterUpload";
             this.cbTrayBalloonTipAfterUpload.Size = new System.Drawing.Size(233, 17);
             this.cbTrayBalloonTipAfterUpload.TabIndex = 16;
@@ -513,7 +515,7 @@
             // cbHistorySave
             // 
             this.cbHistorySave.AutoSize = true;
-            this.cbHistorySave.Location = new System.Drawing.Point(8, 128);
+            this.cbHistorySave.Location = new System.Drawing.Point(8, 152);
             this.cbHistorySave.Name = "cbHistorySave";
             this.cbHistorySave.Size = new System.Drawing.Size(139, 17);
             this.cbHistorySave.TabIndex = 17;
@@ -1633,6 +1635,17 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // cbShowToastWindowAfterTask
+            // 
+            this.cbShowToastWindowAfterTask.AutoSize = true;
+            this.cbShowToastWindowAfterTask.Location = new System.Drawing.Point(8, 104);
+            this.cbShowToastWindowAfterTask.Name = "cbShowToastWindowAfterTask";
+            this.cbShowToastWindowAfterTask.Size = new System.Drawing.Size(320, 17);
+            this.cbShowToastWindowAfterTask.TabIndex = 19;
+            this.cbShowToastWindowAfterTask.Text = "Show toast window with image preview after task is completed";
+            this.cbShowToastWindowAfterTask.UseVisualStyleBackColor = true;
+            this.cbShowToastWindowAfterTask.CheckedChanged += new System.EventHandler(this.cbShowToastWindowAfterTask_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1828,6 +1841,7 @@
         private System.Windows.Forms.CheckBox chkShowImageEffectsWindowAfterCapture;
         private System.Windows.Forms.CheckBox chkOverrideFTP;
         private System.Windows.Forms.ComboBox cboFTPaccounts;
+        private System.Windows.Forms.CheckBox cbShowToastWindowAfterTask;
 
 
 

@@ -920,19 +920,14 @@ namespace UploadersLib
             this.oAuth2Gist.Enabled = !this.Config.GistAnonymousLogin;
         }
 
-        private void oAuth2Gist_CompleteButtonClicked(string code)
-        {
-            this.GistAuthComplete(code);
-        }
-
         private void oAuth2Gist_OpenButtonClicked()
         {
             this.GistAuthOpen();
         }
 
-        private void oAuth2Gist_RefreshButtonClicked()
+        private void oAuth2Gist_CompleteButtonClicked(string code)
         {
-            MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.GistAuthComplete(code);
         }
 
         private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
@@ -945,6 +940,8 @@ namespace UploadersLib
         #endregion Text Uploaders
 
         #region URL Shorteners
+
+        #region Google URL Shortener
 
         private void atcGoogleURLShortenerAccountType_AccountTypeChanged(AccountType accountType)
         {
@@ -965,6 +962,22 @@ namespace UploadersLib
         {
             GoogleURLShortenerAuthRefresh();
         }
+
+        #endregion Google URL Shortener
+
+        #region bit.ly
+
+        private void oauth2Bitly_OpenButtonClicked()
+        {
+            BitlyAuthOpen();
+        }
+
+        private void oauth2Bitly_CompleteButtonClicked(string code)
+        {
+            BitlyAuthComplete(code);
+        }
+
+        #endregion bit.ly
 
         #endregion URL Shorteners
 

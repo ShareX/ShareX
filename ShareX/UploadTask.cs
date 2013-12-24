@@ -833,7 +833,12 @@ namespace ShareX
             switch (Info.TaskSettings.URLShortenerDestination)
             {
                 case UrlShortenerType.BITLY:
-                    urlShortener = new BitlyURLShortener(ApiKeys.BitlyLogin, ApiKeys.BitlyKey);
+                    if (Program.UploadersConfig.BitlyOAuth2Info == null)
+                    {
+                        Program.UploadersConfig.BitlyOAuth2Info = new OAuth2Info(ApiKeys.BitlyClientID, ApiKeys.BitlyClientSecret);
+                    }
+
+                    urlShortener = new BitlyURLShortener(Program.UploadersConfig.BitlyOAuth2Info);
                     break;
                 case UrlShortenerType.Google:
                     urlShortener = new GoogleURLShortener(Program.UploadersConfig.GoogleURLShortenerAccountType, ApiKeys.GoogleAPIKey,
@@ -841,9 +846,6 @@ namespace ShareX
                     break;
                 case UrlShortenerType.ISGD:
                     urlShortener = new IsgdURLShortener();
-                    break;
-                case UrlShortenerType.Jmp:
-                    urlShortener = new JmpURLShortener(ApiKeys.BitlyLogin, ApiKeys.BitlyKey);
                     break;
                 /*case UrlShortenerType.THREELY:
                 urlShortener = new ThreelyURLShortener(Program.ThreelyKey);
