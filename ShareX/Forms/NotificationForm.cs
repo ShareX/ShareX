@@ -95,13 +95,15 @@ namespace ShareX
                 Image img = ImageHelpers.LoadImage(imagePath);
                 NotificationForm form = new NotificationForm(5000, new Size(400, 300), img, url);
                 NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
-                NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOP, 0, 0, 0, 0,
+                NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
                     SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
             }
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
         {
+            tDuration.Stop();
+
             if (e.Button == MouseButtons.Left)
             {
                 if (!string.IsNullOrEmpty(URL))
@@ -110,7 +112,6 @@ namespace ShareX
                 }
             }
 
-            tDuration.Stop();
             Close();
         }
     }

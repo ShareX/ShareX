@@ -17,6 +17,12 @@
             {
                 components.Dispose();
             }
+            
+            if (ToastImage != null)
+            {
+                ToastImage.Dispose();
+            }
+            
             base.Dispose(disposing);
         }
 
