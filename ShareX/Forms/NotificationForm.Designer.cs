@@ -17,6 +17,12 @@
             {
                 components.Dispose();
             }
+            
+            if (ToastImage != null)
+            {
+                ToastImage.Dispose();
+            }
+            
             base.Dispose(disposing);
         }
 
@@ -47,8 +53,9 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ToastForm";
-            this.TopMost = true;
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.NotificationForm_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.NotificationForm_MouseLeave);
             this.ResumeLayout(false);
 
         }

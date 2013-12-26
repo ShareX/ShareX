@@ -84,11 +84,20 @@ namespace HelpersLib
             Bitmap bmp = new Bitmap(width, height, img.PixelFormat);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
-            using (Graphics g = Graphics.FromImage(bmp))
             using (img)
+            using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.SetHighQuality();
-                g.DrawImage(img, 0, 0, width, height);
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                g.CompositingQuality = CompositingQuality.HighQuality;
+                g.CompositingMode = CompositingMode.SourceOver;
+
+                using (ImageAttributes ia = new ImageAttributes())
+                {
+                    ia.SetWrapMode(WrapMode.TileFlipXY);
+                    g.DrawImage(img, new Rectangle(0, 0, width, height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
+                }
             }
 
             return bmp;
@@ -106,12 +115,12 @@ namespace HelpersLib
             return ResizeImage(img, width, height);
         }
 
-        public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage)
+        public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage = true)
         {
             return ResizeImage(img, size.Width, size.Height, allowEnlarge, centerImage);
         }
 
-        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage)
+        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage = true)
         {
             return ResizeImage(img, width, height, allowEnlarge, centerImage, Color.Transparent);
         }
@@ -157,6 +166,28 @@ namespace HelpersLib
             }
 
             return bmp;
+        }
+
+        public static Image ResizeImageLimit(Image img, Size size)
+        {
+            return ResizeImageLimit(img, size.Width, size.Height);
+        }
+
+        // If image size bigger than "size" then resize it and keep aspect ratio else return image
+        public static Image ResizeImageLimit(Image img, int width, int height)
+        {
+            if (img.Width <= width && img.Height <= height)
+            {
+                return img;
+            }
+
+            double ratioX = (double)width / img.Width;
+            double ratioY = (double)height / img.Height;
+            double ratio = ratioX < ratioY ? ratioX : ratioY;
+            int newWidth = (int)(img.Width * ratio);
+            int newHeight = (int)(img.Height * ratio);
+
+            return ResizeImage(img, newWidth, newHeight);
         }
 
         public static Image CropImage(Image img, Rectangle rect)
@@ -1058,9 +1089,16 @@ namespace HelpersLib
         // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
         public static Image LoadImage(string filePath)
         {
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            try
             {
-                return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                {
+                    return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
 
             return null;

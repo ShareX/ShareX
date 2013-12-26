@@ -45,30 +45,35 @@ namespace ShareX
         public string URL { get; private set; }
 
         private int windowOffset = 3;
+        private bool mouseInside = false;
+        private bool durationEnd = false;
 
-        public NotificationForm(int duration, Size size, string text, Image image, string url)
+        public NotificationForm(int duration, Size size, Image img, string url)
         {
             InitializeComponent();
-            Size = size;
-            ToastText = text;
-            image = ImageHelpers.ResizeImage(image, ClientRectangle.Size.Offset(-2), true, true);
-            image = ImageHelpers.DrawCheckers(image);
-            ToastImage = image;
+
+            img = ImageHelpers.ResizeImageLimit(img, size);
+            img = ImageHelpers.DrawCheckers(img);
+            ToastImage = img;
             URL = url;
+
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            Size = new Size(img.Width + 2, img.Height + 2);
             Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
-            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
-                SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
-            NativeMethods.AnimateWindow(Handle, 500, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
+
             tDuration.Interval = duration;
             tDuration.Start();
         }
 
         private void tDuration_Tick(object sender, EventArgs e)
         {
+            durationEnd = true;
             tDuration.Stop();
-            NativeMethods.AnimateWindow(Handle, 2000, AnimateWindowFlags.AW_HIDE | AnimateWindowFlags.AW_BLEND);
-            Close();
+
+            if (!mouseInside)
+            {
+                Close();
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -77,7 +82,7 @@ namespace ShareX
 
             g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
 
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+            /*using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
             {
                 g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 45));
             }
@@ -85,31 +90,28 @@ namespace ShareX
             using (Font font = new Font("Arial", 10))
             {
                 g.DrawString(ToastText, font, Brushes.Black, e.ClipRectangle.RectangleOffset(-5));
-            }
+            }*/
 
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
 
-        public static void ShowAsync(string text, string imagePath, string url)
+        public static void Show(string imagePath, string url)
         {
-            if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+            if (!string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
             {
-                Thread thread = new Thread(() =>
-                {
-                    using (Image img = ImageHelpers.LoadImage(imagePath))
-                    using (NotificationForm toastForm = new NotificationForm(5000, new Size(400, 300), text, img, url))
-                    {
-                        toastForm.ShowDialog();
-                    }
-                });
-
-                thread.Start();
+                Image img = ImageHelpers.LoadImage(imagePath);
+                NotificationForm form = new NotificationForm(4000, new Size(400, 300), img, url);
+                NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
+                NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
+                    SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
             }
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            tDuration.Stop();
+
+            if (e.Button == MouseButtons.Left)
             {
                 if (!string.IsNullOrEmpty(URL))
                 {
@@ -117,8 +119,22 @@ namespace ShareX
                 }
             }
 
-            tDuration.Stop();
             Close();
+        }
+
+        private void NotificationForm_MouseEnter(object sender, EventArgs e)
+        {
+            mouseInside = true;
+        }
+
+        private void NotificationForm_MouseLeave(object sender, EventArgs e)
+        {
+            mouseInside = false;
+
+            if (durationEnd)
+            {
+                Close();
+            }
         }
     }
 }
