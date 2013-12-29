@@ -40,8 +40,8 @@ namespace ShareX
 {
     public partial class NotificationForm : Form
     {
-        public string ToastText { get; private set; }
         public Image ToastImage { get; private set; }
+        public string ToastText { get; private set; }
         public string URL { get; private set; }
 
         private int windowOffset = 3;
@@ -82,15 +82,20 @@ namespace ShareX
 
             g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
 
-            /*using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+            if (!string.IsNullOrEmpty(ToastText))
             {
-                g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 45));
-            }
+                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 45);
 
-            using (Font font = new Font("Arial", 10))
-            {
-                g.DrawString(ToastText, font, Brushes.Black, e.ClipRectangle.RectangleOffset(-5));
-            }*/
+                using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+                {
+                    g.FillRectangle(brush, textRect);
+                }
+
+                using (Font font = new Font("Arial", 10))
+                {
+                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-5));
+                }
+            }
 
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
@@ -109,19 +114,16 @@ namespace ShareX
 
         public static void Show(string imagePath, string url)
         {
-            Show(4000, new Size(400, 300), imagePath, url);
+            Show(5000, new Size(400, 300), imagePath, url);
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
         {
             tDuration.Stop();
 
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(URL))
             {
-                if (!string.IsNullOrEmpty(URL))
-                {
-                    Helpers.LoadBrowserAsync(URL);
-                }
+                Helpers.LoadBrowserAsync(URL);
             }
 
             Close();
@@ -130,6 +132,9 @@ namespace ShareX
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
         {
             mouseInside = true;
+
+            ToastText = URL;
+            Refresh();
         }
 
         private void NotificationForm_MouseLeave(object sender, EventArgs e)

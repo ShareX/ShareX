@@ -324,7 +324,8 @@ namespace ShareX
 
                                         if (task.Info.TaskSettings.GeneralSettings.ShowToastWindowAfterTask)
                                         {
-                                            NotificationForm.Show((int)(task.Info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000), task.Info.TaskSettings.AdvancedSettings.ToastWindowSize, info.FilePath, result);
+                                            NotificationForm.Show((int)(task.Info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                                                task.Info.TaskSettings.AdvancedSettings.ToastWindowSize, info.FilePath, result);
                                         }
                                     }
 
