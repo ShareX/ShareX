@@ -72,7 +72,25 @@ namespace ShareX
 
             if (!mouseInside)
             {
+                StartClosing();
+            }
+        }
+
+        private void StartClosing()
+        {
+            Opacity = 1;
+            tOpacity.Start();
+        }
+
+        private void tOpacity_Tick(object sender, EventArgs e)
+        {
+            if (Opacity <= 0.05f)
+            {
                 Close();
+            }
+            else
+            {
+                Opacity -= 0.05f;
             }
         }
 
@@ -114,7 +132,7 @@ namespace ShareX
 
         public static void Show(string imagePath, string url)
         {
-            Show(5000, new Size(400, 300), imagePath, url);
+            Show(4000, new Size(400, 300), imagePath, url);
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
@@ -133,6 +151,9 @@ namespace ShareX
         {
             mouseInside = true;
 
+            tOpacity.Stop();
+            Opacity = 1;
+
             ToastText = URL;
             Refresh();
         }
@@ -143,7 +164,7 @@ namespace ShareX
 
             if (durationEnd)
             {
-                Close();
+                StartClosing();
             }
         }
     }
