@@ -30,6 +30,7 @@ using Newtonsoft.Json;
 using ScreenCaptureLib;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using UploadersLib;
 
 namespace ShareX
@@ -167,6 +168,7 @@ namespace ShareX
                 {
                     CaptureSettings = defaultTaskSettings.CaptureSettings;
                 }
+
                 if (UseDefaultUploadSettings)
                 {
                     UploadSettings = defaultTaskSettings.UploadSettings;
@@ -293,6 +295,12 @@ namespace ShareX
 
         [Category("After upload"), DefaultValue(""), Description("Balloon tip content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string BalloonTipContentFormat { get; set; }
+
+        [Category("After upload"), DefaultValue(4f), Description("How much toast window will stay on screen.")]
+        public float ToastWindowDuration { get; set; }
+
+        [Category("After upload"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast window size.")]
+        public Size ToastWindowSize { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }

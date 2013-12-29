@@ -95,16 +95,21 @@ namespace ShareX
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
 
-        public static void Show(string imagePath, string url)
+        public static void Show(int duration, Size size, string imagePath, string url)
         {
-            if (!string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
+            if (duration > 0 && !size.IsEmpty && !string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
-                NotificationForm form = new NotificationForm(4000, new Size(400, 300), img, url);
+                NotificationForm form = new NotificationForm(duration, size, img, url);
                 NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
                 NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
                     SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
             }
+        }
+
+        public static void Show(string imagePath, string url)
+        {
+            Show(4000, new Size(400, 300), imagePath, url);
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
