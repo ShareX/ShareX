@@ -173,7 +173,7 @@ namespace HelpersLib
             return ResizeImageLimit(img, size.Width, size.Height);
         }
 
-        // If image size bigger than "size" then resize it and keep aspect ratio else return image
+        /// <summary>If image size bigger than "size" then resize it and keep aspect ratio else return image.</summary>
         public static Image ResizeImageLimit(Image img, int width, int height)
         {
             if (img.Width <= width && img.Height <= height)

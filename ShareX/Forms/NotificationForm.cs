@@ -115,7 +115,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(ToastText))
             {
-                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 45);
+                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 40);
 
                 using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
                 {
@@ -124,7 +124,7 @@ namespace ShareX
 
                 using (Font font = new Font("Arial", 10))
                 {
-                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-5));
+                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-3));
                 }
             }
 
@@ -180,5 +180,61 @@ namespace ShareX
                 StartClosing();
             }
         }
+
+        #region Windows Form Designer generated code
+
+        private System.Windows.Forms.Timer tDuration;
+        private System.Windows.Forms.Timer tOpacity;
+
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            if (ToastImage != null)
+            {
+                ToastImage.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.tDuration = new System.Windows.Forms.Timer(this.components);
+            this.tOpacity = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            //
+            // tDuration
+            //
+            this.tDuration.Tick += new System.EventHandler(this.tDuration_Tick);
+            //
+            // tOpacity
+            //
+            this.tOpacity.Tick += new System.EventHandler(this.tOpacity_Tick);
+            //
+            // NotificationForm
+            //
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(400, 300);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "NotificationForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "NotificationForm";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.NotificationForm_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.NotificationForm_MouseLeave);
+            this.ResumeLayout(false);
+        }
+
+        #endregion Windows Form Designer generated code
     }
 }
