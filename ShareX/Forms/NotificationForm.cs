@@ -40,8 +40,8 @@ namespace ShareX
 {
     public partial class NotificationForm : Form
     {
-        public string ToastText { get; private set; }
         public Image ToastImage { get; private set; }
+        public string ToastText { get; private set; }
         public string URL { get; private set; }
 
         private int windowOffset = 3;
@@ -72,7 +72,25 @@ namespace ShareX
 
             if (!mouseInside)
             {
+                StartClosing();
+            }
+        }
+
+        private void StartClosing()
+        {
+            Opacity = 1;
+            tOpacity.Start();
+        }
+
+        private void tOpacity_Tick(object sender, EventArgs e)
+        {
+            if (Opacity <= 0.05f)
+            {
                 Close();
+            }
+            else
+            {
+                Opacity -= 0.05f;
             }
         }
 
@@ -82,41 +100,48 @@ namespace ShareX
 
             g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
 
-            /*using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+            if (!string.IsNullOrEmpty(ToastText))
             {
-                g.FillRectangle(brush, new Rectangle(0, 0, e.ClipRectangle.Width, 45));
-            }
+                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 45);
 
-            using (Font font = new Font("Arial", 10))
-            {
-                g.DrawString(ToastText, font, Brushes.Black, e.ClipRectangle.RectangleOffset(-5));
-            }*/
+                using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+                {
+                    g.FillRectangle(brush, textRect);
+                }
+
+                using (Font font = new Font("Arial", 10))
+                {
+                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-5));
+                }
+            }
 
             g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
         }
 
-        public static void Show(string imagePath, string url)
+        public static void Show(int duration, Size size, string imagePath, string url)
         {
-            if (!string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
+            if (duration > 0 && !size.IsEmpty && !string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
-                NotificationForm form = new NotificationForm(4000, new Size(400, 300), img, url);
+                NotificationForm form = new NotificationForm(duration, size, img, url);
                 NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
                 NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
                     SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
             }
         }
 
+        public static void Show(string imagePath, string url)
+        {
+            Show(4000, new Size(400, 300), imagePath, url);
+        }
+
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
         {
             tDuration.Stop();
 
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(URL))
             {
-                if (!string.IsNullOrEmpty(URL))
-                {
-                    Helpers.LoadBrowserAsync(URL);
-                }
+                Helpers.LoadBrowserAsync(URL);
             }
 
             Close();
@@ -125,6 +150,12 @@ namespace ShareX
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
         {
             mouseInside = true;
+
+            tOpacity.Stop();
+            Opacity = 1;
+
+            ToastText = URL;
+            Refresh();
         }
 
         private void NotificationForm_MouseLeave(object sender, EventArgs e)
@@ -133,7 +164,7 @@ namespace ShareX
 
             if (durationEnd)
             {
-                Close();
+                StartClosing();
             }
         }
     }

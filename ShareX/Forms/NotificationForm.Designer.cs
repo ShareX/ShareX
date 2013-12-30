@@ -36,11 +36,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tDuration = new System.Windows.Forms.Timer(this.components);
+            this.tOpacity = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // tDuration
             // 
             this.tDuration.Tick += new System.EventHandler(this.tDuration_Tick);
+            // 
+            // tOpacity
+            // 
+            this.tOpacity.Tick += new System.EventHandler(this.tOpacity_Tick);
             // 
             // NotificationForm
             // 
@@ -63,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Timer tDuration;
+        private System.Windows.Forms.Timer tOpacity;
 
     }
 }
