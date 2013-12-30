@@ -42,11 +42,14 @@ namespace ShareX
     {
         public Image ToastImage { get; private set; }
         public string ToastText { get; private set; }
-        public string URL { get; private set; }
+        public string ToastURL { get; private set; }
 
         private int windowOffset = 3;
         private bool mouseInside = false;
         private bool durationEnd = false;
+        private bool closingAnimation = true;
+        private int closingAnimationDuration = 2000;
+        private int closingAnimationInterval = 50;
 
         public NotificationForm(int duration, Size size, Image img, string url)
         {
@@ -55,7 +58,7 @@ namespace ShareX
             img = ImageHelpers.ResizeImageLimit(img, size);
             img = ImageHelpers.DrawCheckers(img);
             ToastImage = img;
-            URL = url;
+            ToastURL = url;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Size = new Size(img.Width + 2, img.Height + 2);
@@ -78,19 +81,29 @@ namespace ShareX
 
         private void StartClosing()
         {
-            Opacity = 1;
-            tOpacity.Start();
+            if (closingAnimation)
+            {
+                Opacity = 1;
+                tOpacity.Interval = closingAnimationInterval;
+                tOpacity.Start();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void tOpacity_Tick(object sender, EventArgs e)
         {
-            if (Opacity <= 0.05f)
+            float opacityDecrement = (float)closingAnimationInterval / closingAnimationDuration;
+
+            if (Opacity > opacityDecrement)
             {
-                Close();
+                Opacity -= opacityDecrement;
             }
             else
             {
-                Opacity -= 0.05f;
+                Close();
             }
         }
 
@@ -139,9 +152,9 @@ namespace ShareX
         {
             tDuration.Stop();
 
-            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(URL))
+            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(ToastURL))
             {
-                Helpers.LoadBrowserAsync(URL);
+                Helpers.LoadBrowserAsync(ToastURL);
             }
 
             Close();
@@ -154,7 +167,7 @@ namespace ShareX
             tOpacity.Stop();
             Opacity = 1;
 
-            ToastText = URL;
+            ToastText = ToastURL;
             Refresh();
         }
 
