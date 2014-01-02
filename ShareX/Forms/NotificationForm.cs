@@ -42,11 +42,14 @@ namespace ShareX
     {
         public Image ToastImage { get; private set; }
         public string ToastText { get; private set; }
-        public string URL { get; private set; }
+        public string ToastURL { get; private set; }
 
         private int windowOffset = 3;
         private bool mouseInside = false;
         private bool durationEnd = false;
+        private bool closingAnimation = true;
+        private int closingAnimationDuration = 2000;
+        private int closingAnimationInterval = 50;
 
         public NotificationForm(int duration, Size size, Image img, string url)
         {
@@ -55,7 +58,7 @@ namespace ShareX
             img = ImageHelpers.ResizeImageLimit(img, size);
             img = ImageHelpers.DrawCheckers(img);
             ToastImage = img;
-            URL = url;
+            ToastURL = url;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Size = new Size(img.Width + 2, img.Height + 2);
@@ -78,19 +81,29 @@ namespace ShareX
 
         private void StartClosing()
         {
-            Opacity = 1;
-            tOpacity.Start();
+            if (closingAnimation)
+            {
+                Opacity = 1;
+                tOpacity.Interval = closingAnimationInterval;
+                tOpacity.Start();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void tOpacity_Tick(object sender, EventArgs e)
         {
-            if (Opacity <= 0.05f)
+            float opacityDecrement = (float)closingAnimationInterval / closingAnimationDuration;
+
+            if (Opacity > opacityDecrement)
             {
-                Close();
+                Opacity -= opacityDecrement;
             }
             else
             {
-                Opacity -= 0.05f;
+                Close();
             }
         }
 
@@ -102,7 +115,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(ToastText))
             {
-                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 45);
+                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 40);
 
                 using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
                 {
@@ -111,7 +124,7 @@ namespace ShareX
 
                 using (Font font = new Font("Arial", 10))
                 {
-                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-5));
+                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-3));
                 }
             }
 
@@ -139,9 +152,9 @@ namespace ShareX
         {
             tDuration.Stop();
 
-            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(URL))
+            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(ToastURL))
             {
-                Helpers.LoadBrowserAsync(URL);
+                Helpers.LoadBrowserAsync(ToastURL);
             }
 
             Close();
@@ -154,7 +167,7 @@ namespace ShareX
             tOpacity.Stop();
             Opacity = 1;
 
-            ToastText = URL;
+            ToastText = ToastURL;
             Refresh();
         }
 
@@ -167,5 +180,61 @@ namespace ShareX
                 StartClosing();
             }
         }
+
+        #region Windows Form Designer generated code
+
+        private System.Windows.Forms.Timer tDuration;
+        private System.Windows.Forms.Timer tOpacity;
+
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            if (ToastImage != null)
+            {
+                ToastImage.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.tDuration = new System.Windows.Forms.Timer(this.components);
+            this.tOpacity = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            //
+            // tDuration
+            //
+            this.tDuration.Tick += new System.EventHandler(this.tDuration_Tick);
+            //
+            // tOpacity
+            //
+            this.tOpacity.Tick += new System.EventHandler(this.tOpacity_Tick);
+            //
+            // NotificationForm
+            //
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(400, 300);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "NotificationForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "NotificationForm";
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotificationForm_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.NotificationForm_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.NotificationForm_MouseLeave);
+            this.ResumeLayout(false);
+        }
+
+        #endregion Windows Form Designer generated code
     }
 }
