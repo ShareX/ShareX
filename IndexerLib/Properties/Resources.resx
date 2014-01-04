@@ -125,6 +125,6 @@
     <value>..\Resources\valid_xhtml.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="IndexerDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\indexerdefault.css;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1254</value>
+    <value>..\IndexerDefault.css;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1254</value>
   </data>
 </root>

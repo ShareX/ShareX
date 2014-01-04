@@ -109,3 +109,5 @@ UpgradeLog*.XML
 
 # Additional
 *.exe
+*.userprefs
+
