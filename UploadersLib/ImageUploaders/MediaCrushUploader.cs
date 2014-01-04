@@ -20,16 +20,16 @@
 
     Optionally you can also view the license at <http://www.gnu.org/licenses/>.
 */
-using System.Net;
-using Newtonsoft.Json.Linq;
-using System.Threading;
-using Newtonsoft.Json;
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
+using System.Net;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace UploadersLib.ImageUploaders
 {
@@ -41,55 +41,66 @@ namespace UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            var md5 = MD5.Create();
-            byte[] buffer = new byte[stream.Length];
-            stream.Read(buffer, 0, buffer.Length);
-            stream.Seek(0, SeekOrigin.Begin);
-            var hash = Convert.ToBase64String(md5.ComputeHash(buffer));
-            hash = hash.Replace('+', '-').Replace('/', '_').Remove(12);
-            UploadResult result;
-            result = CheckExists(hash);
+            string hash;
+
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+                stream.Seek(0, SeekOrigin.Begin);
+                hash = Convert.ToBase64String(md5.ComputeHash(buffer));
+                hash = hash.Replace('+', '-').Replace('/', '_').Remove(12);
+            }
+
+            UploadResult result = CheckExists(hash);
+
             if (result.IsSuccess)
+            {
                 return result;
+            }
+
             try
             {
                 result = UploadData(stream, "https://mediacru.sh/api/upload/file", fileName, suppressWebExceptions: false);
             }
             catch (WebException e)
             {
-                var response = e.Response as HttpWebResponse;
+                HttpWebResponse response = e.Response as HttpWebResponse;
+
                 if (response == null)
+                {
                     throw;
+                }
+
                 if (response.StatusCode == HttpStatusCode.Conflict)
+                {
                     return HandleDuplicate(response);
+                }
+
                 throw;
             }
+
             hash = JToken.Parse(result.Response)["hash"].Value<string>();
+
             while (true)
             {
-                var request = (HttpWebRequest)WebRequest.Create("https://mediacru.sh/api/" + hash + "/status");
-                var httpResponse = request.GetResponse();
-                JToken response;
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                    response = JToken.Parse(streamReader.ReadToEnd());
-                var status = response["status"].Value<string>();
-                var done = !(status == "processing" || status == "pending");
-                if (!done)
+                result.Response = SendGetRequest("https://mediacru.sh/api/" + hash + "/status");
+                JToken jsonResponse = JToken.Parse(result.Response);
+                string status = jsonResponse["status"].Value<string>();
+
+                if (status == "processing" || status == "pending")
                 {
                     Thread.Sleep(1000);
                     continue;
                 }
+
                 if (status == "done" || status == "ready")
                 {
-                    var blob = response[hash].ToObject<MediaCrushBlob>();
-                    return new UploadResult
-                    {
-                        DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
-                        IsSuccess = true,
-                        ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
-                        URL = blob.Url,
-                        IsURLExpected = false
-                    };
+                    MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
+
+                    result.URL = "https://mediacru.sh" + blob.Files[0].Path;
+                    result.DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete";
+                    break;
                 }
                 else
                 {
@@ -106,43 +117,41 @@ namespace UploadersLib.ImageUploaders
                     }
                 }
             }
+
+            return result;
         }
 
         public UploadResult HandleDuplicate(HttpWebResponse httpResponse)
         {
             JToken response;
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 response = JToken.Parse(streamReader.ReadToEnd());
-            var hash = response["hash"].Value<string>();
-            var blob = response[hash].ToObject<MediaCrushBlob>();
+            string hash = response["hash"].Value<string>();
+            MediaCrushBlob blob = response[hash].ToObject<MediaCrushBlob>();
+
             return new UploadResult
             {
-                DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
-                IsSuccess = true,
-                ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
                 URL = blob.Url,
-                IsURLExpected = false
+                ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
+                DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
+                IsSuccess = true
             };
         }
 
         private UploadResult CheckExists(string hash)
         {
-            var request = (HttpWebRequest)WebRequest.Create("https://mediacru.sh/api/" + hash);
             try
             {
-                var httpResponse = request.GetResponse();
-                JToken response;
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                    response = JToken.Parse(streamReader.ReadToEnd());
-                var blob = response.ToObject<MediaCrushBlob>();
+                string response = SendGetRequest("https://mediacru.sh/api/" + hash);
+                MediaCrushBlob blob = JsonConvert.DeserializeObject<MediaCrushBlob>(response);
+
                 return new UploadResult
                 {
-                    DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
-                    IsSuccess = true,
-                    ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
                     URL = blob.Url,
-                    IsURLExpected = false,
-                    Response = blob.ToString()
+                    ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
+                    DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
+                    Response = blob.ToString(),
+                    IsSuccess = true
                 };
             }
             catch
@@ -187,4 +196,3 @@ namespace UploadersLib.ImageUploaders
         }
     }
 }
-
