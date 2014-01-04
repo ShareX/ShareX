@@ -52,7 +52,7 @@ namespace UploadersLib
         yFrog,
         [Description("imm.io")]
         Immio,
-        [Description("MediaCrush")]
+        [Description("mediacru.sh")]
         MediaCrush,
         [Description("Custom image uploader")]
         CustomImageUploader,

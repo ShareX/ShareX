@@ -35,26 +35,13 @@ namespace UploadersLib.ImageUploaders
 {
     public class MediaCrushUploader : ImageUploader
     {
-        public MediaCrushUploader()
-        {
-        }
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            string hash;
-
-            using (MD5 md5 = MD5.Create())
-            {
-                byte[] buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, buffer.Length);
-                stream.Seek(0, SeekOrigin.Begin);
-                hash = Convert.ToBase64String(md5.ComputeHash(buffer));
-                hash = hash.Replace('+', '-').Replace('/', '_').Remove(12);
-            }
+            string hash = CreateHash(stream);
 
             UploadResult result = CheckExists(hash);
 
-            if (result.IsSuccess)
+            if (result != null)
             {
                 return result;
             }
@@ -88,40 +75,43 @@ namespace UploadersLib.ImageUploaders
                 JToken jsonResponse = JToken.Parse(result.Response);
                 string status = jsonResponse["status"].Value<string>();
 
-                if (status == "processing" || status == "pending")
+                switch (status)
                 {
-                    Thread.Sleep(1000);
-                    continue;
-                }
-
-                if (status == "done" || status == "ready")
-                {
-                    MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
-
-                    result.URL = "https://mediacru.sh" + blob.Files[0].Path;
-                    result.DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete";
-                    break;
-                }
-                else
-                {
-                    switch (status)
-                    {
-                        case "unrecognized":
-                            // Note: MediaCrush accepts just about _every_ kind of media file,
-                            // so the file itself is probably corrupted or just not actually a media file
-                            throw new Exception("This file is not an acceptable file type.");
-                        case "timeout":
-                            throw new Exception("This file took too long to process.");
-                        default:
-                            throw new Exception("This file failed to process.");
-                    }
+                    case "processing":
+                    case "pending":
+                        Thread.Sleep(1000);
+                        break;
+                    case "done":
+                    case "ready":
+                        MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
+                        result.URL = blob.DirectURL;
+                        result.DeletionURL = blob.DeletionURL;
+                        return result;
+                    case "unrecognized":
+                        // Note: MediaCrush accepts just about _every_ kind of media file,
+                        // so the file itself is probably corrupted or just not actually a media file
+                        throw new Exception("This file is not an acceptable file type.");
+                    case "timeout":
+                        throw new Exception("This file took too long to process.");
+                    default:
+                        throw new Exception("This file failed to process.");
                 }
             }
-
-            return result;
         }
 
-        public UploadResult HandleDuplicate(HttpWebResponse httpResponse)
+        private string CreateHash(Stream stream)
+        {
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+                stream.Seek(0, SeekOrigin.Begin);
+                string hash = Convert.ToBase64String(md5.ComputeHash(buffer));
+                return hash.Replace('+', '-').Replace('/', '_').Remove(12);
+            }
+        }
+
+        private UploadResult HandleDuplicate(HttpWebResponse httpResponse)
         {
             JToken response;
             using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
@@ -131,10 +121,8 @@ namespace UploadersLib.ImageUploaders
 
             return new UploadResult
             {
-                URL = blob.Url,
-                ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
-                DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
-                IsSuccess = true
+                URL = blob.DirectURL,
+                DeletionURL = blob.DeletionURL
             };
         }
 
@@ -143,21 +131,23 @@ namespace UploadersLib.ImageUploaders
             try
             {
                 string response = SendGetRequest("https://mediacru.sh/api/" + hash);
-                MediaCrushBlob blob = JsonConvert.DeserializeObject<MediaCrushBlob>(response);
 
-                return new UploadResult
+                if (!string.IsNullOrEmpty(response))
                 {
-                    URL = blob.Url,
-                    ThumbnailURL = "https://mediacru.sh" + blob.Files[0].Path,
-                    DeletionURL = "https://mediacru.sh/" + blob.Hash + "/delete",
-                    Response = blob.ToString(),
-                    IsSuccess = true
-                };
+                    MediaCrushBlob blob = JsonConvert.DeserializeObject<MediaCrushBlob>(response);
+
+                    return new UploadResult(response)
+                    {
+                        URL = blob.DirectURL,
+                        DeletionURL = blob.DeletionURL
+                    };
+                }
             }
             catch
             {
-                return new UploadResult { IsSuccess = false };
             }
+
+            return null;
         }
     }
 
@@ -187,11 +177,34 @@ namespace UploadersLib.ImageUploaders
         public string Hash { get; set; }
 
         [JsonIgnore]
-        public string Url
+        public string URL
         {
             get
             {
                 return "https://mediacru.sh/" + Hash;
+            }
+        }
+
+        [JsonIgnore]
+        public string DirectURL
+        {
+            get
+            {
+                if (Files != null && Files.Length > 0)
+                {
+                    return "https://mediacru.sh" + Files[0].Path;
+                }
+
+                return null;
+            }
+        }
+
+        [JsonIgnore]
+        public string DeletionURL
+        {
+            get
+            {
+                return "https://mediacru.sh/" + Hash + "/delete";
             }
         }
     }
