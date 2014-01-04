@@ -208,7 +208,8 @@ namespace UploadersLib
         }
 
         protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file",
-            Dictionary<string, string> arguments = null, CookieCollection cookies = null, NameValueCollection headers = null)
+            Dictionary<string, string> arguments = null, CookieCollection cookies = null, NameValueCollection headers = null,
+            bool suppressWebExceptions = true)
         {
             UploadResult result = new UploadResult();
 
@@ -236,6 +237,12 @@ namespace UploadersLib
 
                 result.Response = ResponseToString(request.GetResponse());
                 result.IsSuccess = true;
+            }
+            catch (WebException e)
+            {
+                if (!suppressWebExceptions)
+                    throw;
+                if (!stopUpload) result.Response = AddWebError(e);
             }
             catch (Exception e)
             {

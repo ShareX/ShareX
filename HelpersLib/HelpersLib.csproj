@@ -356,7 +356,7 @@
     <None Include="Resources\Loading.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\crosshair.cur" />
+    <None Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenshotImageEditor\GreenshotImageEditor.csproj">

@@ -333,7 +333,9 @@ namespace HelpersLib
         public static void TrimMemoryUse()
         {
             GC.Collect();
+#if !__MonoCS__
             GC.WaitForFullGCComplete();
+#endif
             SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, (IntPtr)(-1), (IntPtr)(-1));
         }
 

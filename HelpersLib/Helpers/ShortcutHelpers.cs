@@ -23,7 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+#if !__MonoCS__
 using IWshRuntimeLibrary;
+#endif
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -35,6 +37,7 @@ namespace HelpersLib
     {
         public static bool Create(string shortcutPath, string targetPath, string arguments = "")
         {
+#if !__MonoCS__
             if (!string.IsNullOrEmpty(shortcutPath) && !string.IsNullOrEmpty(targetPath) && File.Exists(targetPath))
             {
                 try
@@ -53,7 +56,7 @@ namespace HelpersLib
                     DebugHelper.WriteException(e);
                 }
             }
-
+#endif
             return false;
         }
 
