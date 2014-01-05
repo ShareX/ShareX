@@ -58,7 +58,7 @@ namespace UploadersLib
         {
             get
             {
-                return Errors != null && Errors.Count > 0;
+                return Errors != null && Errors.Count > 0 && (!IsURLExpected || string.IsNullOrEmpty(URL));
             }
         }
 

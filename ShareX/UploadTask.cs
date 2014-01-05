@@ -620,6 +620,9 @@ namespace ShareX
                 case ImageDestination.Immio:
                     imageUploader = new ImmioUploader();
                     break;
+                case ImageDestination.MediaCrush:
+                    imageUploader = new MediaCrushUploader();
+                    break;
                 case ImageDestination.CustomImageUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomImageUploaderSelected))
                     {
