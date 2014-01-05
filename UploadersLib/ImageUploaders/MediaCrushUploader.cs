@@ -84,7 +84,7 @@ namespace UploadersLib.ImageUploaders
                     case "done":
                     case "ready":
                         MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
-                        result.URL = blob.URL;
+                        result.URL = blob.DirectURL;
                         result.DeletionURL = blob.DeletionURL;
                         return result;
                     case "unrecognized":
@@ -121,7 +121,7 @@ namespace UploadersLib.ImageUploaders
 
             return new UploadResult
             {
-                URL = blob.URL,
+                URL = blob.DirectURL,
                 DeletionURL = blob.DeletionURL
             };
         }
@@ -138,7 +138,7 @@ namespace UploadersLib.ImageUploaders
 
                     return new UploadResult(response)
                     {
-                        URL = blob.URL,
+                        URL = blob.DirectURL,
                         DeletionURL = blob.DeletionURL
                     };
                 }
@@ -190,12 +190,12 @@ namespace UploadersLib.ImageUploaders
         {
             get
             {
-                if (Files != null && Files.Length > 0)
+                if (Files != null && Files.Length > 0 && IsDirectURLPossible(Files[0]))
                 {
                     return "https://mediacru.sh" + Files[0].Path;
                 }
 
-                return null;
+                return URL;
             }
         }
 
@@ -206,6 +206,19 @@ namespace UploadersLib.ImageUploaders
             {
                 return "https://mediacru.sh/" + Hash + "/delete";
             }
+        }
+
+        private bool IsDirectURLPossible(MediaCrushFile file)
+        {
+            switch (file.Mimetype)
+            {
+                case "image/png":
+                case "image/jpeg":
+                case "image/bmp":
+                    return true;
+            }
+
+            return false;
         }
     }
 }
