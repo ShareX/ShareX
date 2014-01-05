@@ -84,7 +84,7 @@ namespace UploadersLib.ImageUploaders
                     case "done":
                     case "ready":
                         MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
-                        result.URL = blob.DirectURL;
+                        result.URL = blob.URL;
                         result.DeletionURL = blob.DeletionURL;
                         return result;
                     case "unrecognized":
@@ -121,7 +121,7 @@ namespace UploadersLib.ImageUploaders
 
             return new UploadResult
             {
-                URL = blob.DirectURL,
+                URL = blob.URL,
                 DeletionURL = blob.DeletionURL
             };
         }
@@ -138,7 +138,7 @@ namespace UploadersLib.ImageUploaders
 
                     return new UploadResult(response)
                     {
-                        URL = blob.DirectURL,
+                        URL = blob.URL,
                         DeletionURL = blob.DeletionURL
                     };
                 }
@@ -153,7 +153,7 @@ namespace UploadersLib.ImageUploaders
 
     internal class MediaCrushBlob
     {
-        public class File
+        public class MediaCrushFile
         {
             [JsonProperty("file")]
             public string Path { get; set; }
@@ -166,9 +166,9 @@ namespace UploadersLib.ImageUploaders
         [JsonProperty("compression")]
         public double Compression { get; set; }
         [JsonProperty("files")]
-        public File[] Files { get; set; }
+        public MediaCrushFile[] Files { get; set; }
         [JsonProperty("extras")]
-        public File[] Extras { get; set; }
+        public MediaCrushFile[] Extras { get; set; }
         [JsonProperty("original")]
         public string Original { get; set; }
         [JsonProperty("type")]
