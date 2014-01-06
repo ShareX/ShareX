@@ -575,6 +575,14 @@ namespace ShareX
             }
         }
 
+        private void OpenMonitorTest()
+        {
+            using (MonitorTestForm monitorTestForm = new MonitorTestForm())
+            {
+                monitorTestForm.ShowDialog();
+            }
+        }
+
         #region Form events
 
         protected override void SetVisibleCore(bool value)
@@ -766,6 +774,11 @@ namespace ShareX
         private void tsmiImageEffects_Click(object sender, EventArgs e)
         {
             OpenImageEffects();
+        }
+
+        private void tsmiMonitorTest_Click(object sender, EventArgs e)
+        {
+            OpenMonitorTest();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
