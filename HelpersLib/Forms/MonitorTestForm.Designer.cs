@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pSettings = new System.Windows.Forms.Panel();
+            this.lblTip = new System.Windows.Forms.Label();
             this.cbGradient = new System.Windows.Forms.ComboBox();
             this.rbGradient = new System.Windows.Forms.RadioButton();
             this.btnClose = new System.Windows.Forms.Button();
@@ -51,7 +52,8 @@
             this.lblBlackWhiteValue = new System.Windows.Forms.Label();
             this.tbBlackWhite = new System.Windows.Forms.TrackBar();
             this.rbBlackWhite = new System.Windows.Forms.RadioButton();
-            this.lblTip = new System.Windows.Forms.Label();
+            this.btnGradientColor2 = new HelpersLib.ColorButton();
+            this.btnGradientColor1 = new HelpersLib.ColorButton();
             this.pSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbShapeSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).BeginInit();
@@ -64,6 +66,8 @@
             // 
             this.pSettings.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pSettings.Controls.Add(this.btnGradientColor2);
+            this.pSettings.Controls.Add(this.btnGradientColor1);
             this.pSettings.Controls.Add(this.lblTip);
             this.pSettings.Controls.Add(this.cbGradient);
             this.pSettings.Controls.Add(this.rbGradient);
@@ -89,8 +93,18 @@
             this.pSettings.Controls.Add(this.rbBlackWhite);
             this.pSettings.Location = new System.Drawing.Point(24, 24);
             this.pSettings.Name = "pSettings";
-            this.pSettings.Size = new System.Drawing.Size(320, 368);
+            this.pSettings.Size = new System.Drawing.Size(320, 408);
             this.pSettings.TabIndex = 0;
+            // 
+            // lblTip
+            // 
+            this.lblTip.AutoSize = true;
+            this.lblTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTip.Location = new System.Drawing.Point(16, 368);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(279, 16);
+            this.lblTip.TabIndex = 23;
+            this.lblTip.Text = "You can click outside for hide/show this panel.";
             // 
             // cbGradient
             // 
@@ -126,7 +140,7 @@
             // lblShapeSize
             // 
             this.lblShapeSize.AutoSize = true;
-            this.lblShapeSize.Location = new System.Drawing.Point(16, 302);
+            this.lblShapeSize.Location = new System.Drawing.Point(16, 334);
             this.lblShapeSize.Name = "lblShapeSize";
             this.lblShapeSize.Size = new System.Drawing.Size(30, 13);
             this.lblShapeSize.TabIndex = 19;
@@ -136,7 +150,7 @@
             // 
             this.lblShapeSizeValue.AutoSize = true;
             this.lblShapeSizeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblShapeSizeValue.Location = new System.Drawing.Point(280, 300);
+            this.lblShapeSizeValue.Location = new System.Drawing.Point(280, 332);
             this.lblShapeSizeValue.Name = "lblShapeSizeValue";
             this.lblShapeSizeValue.Size = new System.Drawing.Size(15, 16);
             this.lblShapeSizeValue.TabIndex = 18;
@@ -145,7 +159,7 @@
             // tbShapeSize
             // 
             this.tbShapeSize.AutoSize = false;
-            this.tbShapeSize.Location = new System.Drawing.Point(40, 296);
+            this.tbShapeSize.Location = new System.Drawing.Point(40, 328);
             this.tbShapeSize.Maximum = 100;
             this.tbShapeSize.Minimum = 1;
             this.tbShapeSize.Name = "tbShapeSize";
@@ -173,7 +187,7 @@
             "Checker",
             "Horizontal lines",
             "Vertical lines"});
-            this.cbShapes.Location = new System.Drawing.Point(88, 262);
+            this.cbShapes.Location = new System.Drawing.Point(88, 294);
             this.cbShapes.Name = "cbShapes";
             this.cbShapes.Size = new System.Drawing.Size(216, 21);
             this.cbShapes.TabIndex = 15;
@@ -182,7 +196,7 @@
             // rbShapes
             // 
             this.rbShapes.AutoSize = true;
-            this.rbShapes.Location = new System.Drawing.Point(16, 264);
+            this.rbShapes.Location = new System.Drawing.Point(16, 296);
             this.rbShapes.Name = "rbShapes";
             this.rbShapes.Size = new System.Drawing.Size(59, 17);
             this.rbShapes.TabIndex = 14;
@@ -323,15 +337,29 @@
             this.rbBlackWhite.UseVisualStyleBackColor = true;
             this.rbBlackWhite.CheckedChanged += new System.EventHandler(this.rbBlackWhite_CheckedChanged);
             // 
-            // lblTip
+            // btnGradientColor2
             // 
-            this.lblTip.AutoSize = true;
-            this.lblTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTip.Location = new System.Drawing.Point(16, 336);
-            this.lblTip.Name = "lblTip";
-            this.lblTip.Size = new System.Drawing.Size(279, 16);
-            this.lblTip.TabIndex = 23;
-            this.lblTip.Text = "You can click outside for hide/show this panel.";
+            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
+            this.btnGradientColor2.Location = new System.Drawing.Point(120, 256);
+            this.btnGradientColor2.Name = "btnGradientColor2";
+            this.btnGradientColor2.Size = new System.Drawing.Size(96, 24);
+            this.btnGradientColor2.TabIndex = 25;
+            this.btnGradientColor2.Text = "Color 2";
+            this.btnGradientColor2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGradientColor2.UseVisualStyleBackColor = true;
+            this.btnGradientColor2.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
+            // 
+            // btnGradientColor1
+            // 
+            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
+            this.btnGradientColor1.Location = new System.Drawing.Point(16, 256);
+            this.btnGradientColor1.Name = "btnGradientColor1";
+            this.btnGradientColor1.Size = new System.Drawing.Size(96, 24);
+            this.btnGradientColor1.TabIndex = 24;
+            this.btnGradientColor1.Text = "Color 1";
+            this.btnGradientColor1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGradientColor1.UseVisualStyleBackColor = true;
+            this.btnGradientColor1.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
             // 
             // MonitorTestForm
             // 
@@ -387,6 +415,8 @@
         private System.Windows.Forms.ComboBox cbGradient;
         private System.Windows.Forms.RadioButton rbGradient;
         private System.Windows.Forms.Label lblTip;
+        private ColorButton btnGradientColor2;
+        private ColorButton btnGradientColor1;
 
     }
 }

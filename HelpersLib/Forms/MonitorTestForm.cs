@@ -45,6 +45,8 @@ namespace HelpersLib
             tbRed.Value = 255;
             cbGradient.Items.AddRange(Enum.GetNames(typeof(LinearGradientMode)));
             cbGradient.SelectedIndex = 1;
+            btnGradientColor1.Color = Color.DarkGray;
+            btnGradientColor2.Color = Color.Black;
             cbShapes.SelectedIndex = 0;
             tbShapeSize.Value = 3;
         }
@@ -152,8 +154,10 @@ namespace HelpersLib
             {
                 SetBackColor();
 
+                Color color1 = btnGradientColor1.Color;
+                Color color2 = btnGradientColor2.Color;
                 LinearGradientMode gradientMode = (LinearGradientMode)cbGradient.SelectedIndex;
-                BackgroundImage = DrawGradient(Color.DarkGray, Color.Black, gradientMode);
+                BackgroundImage = DrawGradient(color1, color2, gradientMode);
             }
         }
 
@@ -247,6 +251,16 @@ namespace HelpersLib
         }
 
         private void cbGradient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DrawGradient();
+        }
+
+        private void btnGradientColor1_ColorChanged(Color color)
+        {
+            DrawGradient();
+        }
+
+        private void btnGradientColor2_ColorChanged(Color color)
         {
             DrawGradient();
         }
