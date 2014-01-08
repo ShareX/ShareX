@@ -87,6 +87,12 @@
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="FontSafe.cs" />
+    <Compile Include="Forms\MonitorTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MonitorTestForm.Designer.cs">
+      <DependentUpon>MonitorTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
@@ -309,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MonitorTestForm.resx">
+      <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdaterForm.resx">
       <DependentUpon>UpdaterForm.cs</DependentUpon>
