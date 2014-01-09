@@ -35,13 +35,13 @@ using UploadersLib;
 
 namespace ShareX
 {
-    public partial class SettingsForm : Form
+    public partial class ApplicationSettingsForm : Form
     {
         private bool loaded;
         private const int MaxBufferSizePower = 14;
         private ContextMenuStrip cmsSaveImageSubFolderPattern;
 
-        public SettingsForm()
+        public ApplicationSettingsForm()
         {
             InitializeComponent();
             LoadSettings();

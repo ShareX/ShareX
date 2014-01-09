@@ -91,9 +91,9 @@
             this.pSettings.Controls.Add(this.lblBlackWhiteValue);
             this.pSettings.Controls.Add(this.tbBlackWhite);
             this.pSettings.Controls.Add(this.rbBlackWhite);
-            this.pSettings.Location = new System.Drawing.Point(24, 24);
+            this.pSettings.Location = new System.Drawing.Point(100, 100);
             this.pSettings.Name = "pSettings";
-            this.pSettings.Size = new System.Drawing.Size(320, 408);
+            this.pSettings.Size = new System.Drawing.Size(320, 396);
             this.pSettings.TabIndex = 0;
             // 
             // lblTip
@@ -366,7 +366,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(600, 500);
+            this.ClientSize = new System.Drawing.Size(700, 700);
             this.Controls.Add(this.pSettings);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;

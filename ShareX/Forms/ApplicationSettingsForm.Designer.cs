@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class SettingsForm
+    partial class ApplicationSettingsForm
     {
         /// <summary>
         /// Required designer variable.
