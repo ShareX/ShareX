@@ -819,5 +819,13 @@ namespace HelpersLib
                 return g.MeasureString(text, font).ToSize();
             }
         }
+
+        public static Size MeasureText(string text, Font font, int width)
+        {
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                return g.MeasureString(text, font, width).ToSize();
+            }
+        }
     }
 }

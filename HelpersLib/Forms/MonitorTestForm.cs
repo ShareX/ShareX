@@ -41,7 +41,7 @@ namespace HelpersLib
             Size = screenBounds.Size;
 
             rbBlackWhite.Checked = true;
-            tbBlackWhite.Value = 100;
+            tbBlackWhite.Value = 128;
             tbRed.Value = 255;
             cbGradient.Items.AddRange(Enum.GetNames(typeof(LinearGradientMode)));
             cbGradient.SelectedIndex = 1;

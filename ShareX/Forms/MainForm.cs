@@ -707,7 +707,7 @@ namespace ShareX
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
         {
-            using (SettingsForm settingsForm = new SettingsForm())
+            using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
             {
                 settingsForm.ShowDialog();
             }

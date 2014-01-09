@@ -1091,7 +1091,7 @@ namespace HelpersLib
         {
             try
             {
-                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                 {
                     return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
                 }

@@ -50,18 +50,33 @@ namespace ShareX
         private bool closingAnimation = true;
         private int closingAnimationDuration = 2000;
         private int closingAnimationInterval = 50;
+        private Font textFont;
+        private int textPadding = 5;
+        private Size textRenderSize;
 
-        public NotificationForm(int duration, Size size, Image img, string url)
+        public NotificationForm(int duration, Size size, Image img, string text, string url)
         {
             InitializeComponent();
 
-            img = ImageHelpers.ResizeImageLimit(img, size);
-            img = ImageHelpers.DrawCheckers(img);
-            ToastImage = img;
+            if (img != null)
+            {
+                img = ImageHelpers.ResizeImageLimit(img, size);
+                img = ImageHelpers.DrawCheckers(img);
+                size = new Size(img.Width + 2, img.Height + 2);
+                ToastImage = img;
+            }
+            else if (!string.IsNullOrEmpty(text))
+            {
+                textFont = new Font("Arial", 10);
+                textRenderSize = Helpers.MeasureText(text, textFont, size.Width - textPadding * 2);
+                size = new Size(textRenderSize.Width + textPadding * 2, textRenderSize.Height + textPadding * 2 + 2);
+                ToastText = text;
+            }
+
             ToastURL = url;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Size = new Size(img.Width + 2, img.Height + 2);
+            Size = size;
             Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
 
             tDuration.Interval = duration;
@@ -111,41 +126,46 @@ namespace ShareX
         {
             Graphics g = e.Graphics;
 
-            g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
+            Rectangle rect = e.ClipRectangle;
 
-            if (!string.IsNullOrEmpty(ToastText))
+            if (ToastImage != null)
             {
-                Rectangle textRect = new Rectangle(0, 0, e.ClipRectangle.Width, 40);
-
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+                g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
+            }
+            else if (!string.IsNullOrEmpty(ToastText))
+            {
+                using (LinearGradientBrush brush = new LinearGradientBrush(rect, Color.FromArgb(80, 80, 80), Color.FromArgb(50, 50, 50), LinearGradientMode.Vertical))
                 {
-                    g.FillRectangle(brush, textRect);
+                    g.FillRectangle(brush, rect);
                 }
 
-                using (Font font = new Font("Arial", 10))
-                {
-                    g.DrawString(ToastText, font, Brushes.Black, textRect.RectangleOffset(-3));
-                }
+                Rectangle textRect = new Rectangle(textPadding, textPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
+                g.DrawString(ToastText, textFont, Brushes.Black, textRect);
+                g.DrawString(ToastText, textFont, Brushes.White, textRect.LocationOffset(1));
             }
 
-            g.DrawRectangleProper(Pens.Black, e.ClipRectangle);
+            g.DrawRectangleProper(Pens.Black, rect);
         }
 
-        public static void Show(int duration, Size size, string imagePath, string url)
+        public static void Show(int duration, Size size, string imagePath, string text, string url)
         {
-            if (duration > 0 && !size.IsEmpty && !string.IsNullOrEmpty(imagePath) && Helpers.IsImageFile(imagePath) && File.Exists(imagePath))
+            if (duration > 0 && !size.IsEmpty)
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
-                NotificationForm form = new NotificationForm(duration, size, img, url);
-                NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
-                NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
-                    SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
+
+                if (img != null || !string.IsNullOrEmpty(text))
+                {
+                    NotificationForm form = new NotificationForm(duration, size, img, text, url);
+                    NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
+                    NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
+                        SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
+                }
             }
         }
 
-        public static void Show(string imagePath, string url)
+        public static void Show(string imagePath, string text, string url)
         {
-            Show(4000, new Size(400, 300), imagePath, url);
+            Show(4000, new Size(400, 300), imagePath, text, url);
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
@@ -166,9 +186,6 @@ namespace ShareX
 
             tOpacity.Stop();
             Opacity = 1;
-
-            ToastText = ToastURL;
-            Refresh();
         }
 
         private void NotificationForm_MouseLeave(object sender, EventArgs e)
@@ -198,6 +215,11 @@ namespace ShareX
             if (ToastImage != null)
             {
                 ToastImage.Dispose();
+            }
+
+            if (textFont != null)
+            {
+                textFont.Dispose();
             }
 
             base.Dispose(disposing);
