@@ -69,14 +69,9 @@ namespace UploadersLib
 
         #region ImageShack
 
-        private void atcImageShackAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.ImageShackAccountType = accountType;
-        }
-
         private void txtImageShackRegistrationCode_TextChanged(object sender, EventArgs e)
         {
-            Config.ImageShackRegistrationCode = txtImageShackRegistrationCode.Text;
+            Config.ImageShackPassword = txtImageShackPassword.Text;
         }
 
         private void txtImageShackUsername_TextChanged(object sender, EventArgs e)

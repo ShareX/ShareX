@@ -552,8 +552,13 @@ namespace ShareX
             switch (Info.TaskSettings.ImageDestination)
             {
                 case ImageDestination.ImageShack:
-                    imageUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Program.UploadersConfig.ImageShackAccountType,
-                        Program.UploadersConfig.ImageShackRegistrationCode)
+                    imageUploader = new ImageShackUploader(ApiKeys.ImageShackKey, new ImageShackOptions()
+                    {
+                        user = Program.UploadersConfig.ImageShackUsername,
+                        password = Program.UploadersConfig.ImageShackPassword,
+                        remember_me = true,
+                        set_cookies = true
+                    }, null)
                     {
                         IsPublic = Program.UploadersConfig.ImageShackShowImagesInPublic
                     };

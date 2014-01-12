@@ -41,7 +41,7 @@
             this.lblImageShackUsername = new System.Windows.Forms.Label();
             this.btnImageShackOpenRegistrationCode = new System.Windows.Forms.Button();
             this.txtImageShackUsername = new System.Windows.Forms.TextBox();
-            this.txtImageShackRegistrationCode = new System.Windows.Forms.TextBox();
+            this.txtImageShackPassword = new System.Windows.Forms.TextBox();
             this.lblImageShackRegistrationCode = new System.Windows.Forms.Label();
             this.tpTinyPic = new System.Windows.Forms.TabPage();
             this.atcTinyPicAccountType = new UploadersLib.GUI.AccountTypeControl();
@@ -439,7 +439,7 @@
             this.tpImageShack.Controls.Add(this.lblImageShackUsername);
             this.tpImageShack.Controls.Add(this.btnImageShackOpenRegistrationCode);
             this.tpImageShack.Controls.Add(this.txtImageShackUsername);
-            this.tpImageShack.Controls.Add(this.txtImageShackRegistrationCode);
+            this.tpImageShack.Controls.Add(this.txtImageShackPassword);
             this.tpImageShack.Controls.Add(this.lblImageShackRegistrationCode);
             this.tpImageShack.Location = new System.Drawing.Point(4, 22);
             this.tpImageShack.Name = "tpImageShack";
@@ -456,7 +456,6 @@
             this.atcImageShackAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.atcImageShackAccountType.Size = new System.Drawing.Size(272, 29);
             this.atcImageShackAccountType.TabIndex = 0;
-            this.atcImageShackAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImageShackAccountType_AccountTypeChanged);
             // 
             // btnImageShackOpenPublicProfile
             // 
@@ -492,11 +491,11 @@
             // lblImageShackUsername
             // 
             this.lblImageShackUsername.AutoSize = true;
-            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 112);
+            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 56);
             this.lblImageShackUsername.Name = "lblImageShackUsername";
-            this.lblImageShackUsername.Size = new System.Drawing.Size(246, 13);
+            this.lblImageShackUsername.Size = new System.Drawing.Size(55, 13);
             this.lblImageShackUsername.TabIndex = 3;
-            this.lblImageShackUsername.Text = "Username (To be able to open public profile page):";
+            this.lblImageShackUsername.Text = "Username";
             // 
             // btnImageShackOpenRegistrationCode
             // 
@@ -510,28 +509,29 @@
             // 
             // txtImageShackUsername
             // 
-            this.txtImageShackUsername.Location = new System.Drawing.Point(16, 136);
+            this.txtImageShackUsername.Location = new System.Drawing.Point(16, 80);
             this.txtImageShackUsername.Name = "txtImageShackUsername";
             this.txtImageShackUsername.Size = new System.Drawing.Size(392, 20);
             this.txtImageShackUsername.TabIndex = 4;
             this.txtImageShackUsername.TextChanged += new System.EventHandler(this.txtImageShackUsername_TextChanged);
             // 
-            // txtImageShackRegistrationCode
+            // txtImageShackPassword
             // 
-            this.txtImageShackRegistrationCode.Location = new System.Drawing.Point(16, 80);
-            this.txtImageShackRegistrationCode.Name = "txtImageShackRegistrationCode";
-            this.txtImageShackRegistrationCode.Size = new System.Drawing.Size(392, 20);
-            this.txtImageShackRegistrationCode.TabIndex = 2;
-            this.txtImageShackRegistrationCode.TextChanged += new System.EventHandler(this.txtImageShackRegistrationCode_TextChanged);
+            this.txtImageShackPassword.Location = new System.Drawing.Point(16, 136);
+            this.txtImageShackPassword.Name = "txtImageShackPassword";
+            this.txtImageShackPassword.PasswordChar = '*';
+            this.txtImageShackPassword.Size = new System.Drawing.Size(392, 20);
+            this.txtImageShackPassword.TabIndex = 2;
+            this.txtImageShackPassword.TextChanged += new System.EventHandler(this.txtImageShackRegistrationCode_TextChanged);
             // 
             // lblImageShackRegistrationCode
             // 
             this.lblImageShackRegistrationCode.AutoSize = true;
-            this.lblImageShackRegistrationCode.Location = new System.Drawing.Point(16, 56);
+            this.lblImageShackRegistrationCode.Location = new System.Drawing.Point(16, 112);
             this.lblImageShackRegistrationCode.Name = "lblImageShackRegistrationCode";
-            this.lblImageShackRegistrationCode.Size = new System.Drawing.Size(93, 13);
+            this.lblImageShackRegistrationCode.Size = new System.Drawing.Size(56, 13);
             this.lblImageShackRegistrationCode.TabIndex = 1;
-            this.lblImageShackRegistrationCode.Text = "Registration code:";
+            this.lblImageShackRegistrationCode.Text = "Password:";
             // 
             // tpTinyPic
             // 
@@ -666,7 +666,6 @@
             // 
             // oauth2Imgur
             // 
-            this.oauth2Imgur.IsRefreshable = true;
             this.oauth2Imgur.Location = new System.Drawing.Point(464, 16);
             this.oauth2Imgur.LoginStatus = false;
             this.oauth2Imgur.Name = "oauth2Imgur";
@@ -1242,7 +1241,6 @@
             // 
             // oauth2Picasa
             // 
-            this.oauth2Picasa.IsRefreshable = true;
             this.oauth2Picasa.Location = new System.Drawing.Point(16, 16);
             this.oauth2Picasa.LoginStatus = false;
             this.oauth2Picasa.Name = "oauth2Picasa";
@@ -2277,7 +2275,6 @@
             // 
             // oAuthJira
             // 
-            this.oAuthJira.IsRefreshable = true;
             this.oAuthJira.Location = new System.Drawing.Point(473, 13);
             this.oAuthJira.LoginStatus = false;
             this.oAuthJira.Name = "oAuthJira";
@@ -2301,7 +2298,6 @@
             // 
             // oauth2GoogleDrive
             // 
-            this.oauth2GoogleDrive.IsRefreshable = true;
             this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
             this.oauth2GoogleDrive.LoginStatus = false;
             this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
@@ -2801,7 +2797,6 @@
             // 
             // oauth2GoogleURLShortener
             // 
-            this.oauth2GoogleURLShortener.IsRefreshable = true;
             this.oauth2GoogleURLShortener.Location = new System.Drawing.Point(16, 56);
             this.oauth2GoogleURLShortener.LoginStatus = false;
             this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
@@ -3632,7 +3627,7 @@
         internal System.Windows.Forms.Label lblImageShackUsername;
         internal System.Windows.Forms.Button btnImageShackOpenRegistrationCode;
         internal System.Windows.Forms.TextBox txtImageShackUsername;
-        internal System.Windows.Forms.TextBox txtImageShackRegistrationCode;
+        internal System.Windows.Forms.TextBox txtImageShackPassword;
         internal System.Windows.Forms.Label lblImageShackRegistrationCode;
         internal System.Windows.Forms.Button btnTinyPicOpenMyImages;
         internal System.Windows.Forms.CheckBox cbTinyPicRememberUsernamePassword;

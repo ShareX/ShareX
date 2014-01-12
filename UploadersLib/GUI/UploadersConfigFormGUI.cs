@@ -129,8 +129,7 @@ namespace UploadersLib
 
             // ImageShack
 
-            atcImageShackAccountType.SelectedAccountType = Config.ImageShackAccountType;
-            txtImageShackRegistrationCode.Text = Config.ImageShackRegistrationCode;
+            txtImageShackPassword.Text = Config.ImageShackPassword;
             txtImageShackUsername.Text = Config.ImageShackUsername;
             cbImageShackIsPublic.Checked = Config.ImageShackShowImagesInPublic;
 

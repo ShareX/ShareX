@@ -24,25 +24,59 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Web;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.ImageUploaders
 {
     public sealed class ImageShackUploader : ImageUploader
     {
-        public AccountType AccountType { get; private set; }
+        private const string URLAPI = "https://api.imageshack.us/v1/";
+        private const string URLAccessToken = URLAPI + "user/login";
+        private const string URLUpload = URLAPI + "images";
         public bool IsPublic { get; set; }
 
         private string DeveloperKey { get; set; }
-        private string RegistrationCode { get; set; }
+        public ImageShackOptions Config { get; set; }
+        public OAuth2Info AuthInfo { get; private set; }
 
-        public ImageShackUploader(string developerKey, AccountType accountType = AccountType.Anonymous, string registrationCode = null)
+        public ImageShackUploader(string developerKey, ImageShackOptions config, OAuth2Info auth)
         {
             DeveloperKey = developerKey;
-            AccountType = accountType;
-            RegistrationCode = registrationCode;
+            Config = config;
+            AuthInfo = auth;
+
+            if (!string.IsNullOrEmpty(config.RegistrationCode))
+            {
+                GetAccessToken(config);
+            }
+        }
+
+        public bool GetAccessToken(ImageShackOptions config)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("user", config.user);
+            args.Add("password", config.password);
+            args.Add("set_cookies", config.set_cookies.ToString());
+            args.Add("remember_me", config.remember_me.ToString());
+
+            string response = SendPostRequest(URLAccessToken, args);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                ImageShackLoginResponse resp = JsonConvert.DeserializeObject<ImageShackLoginResponse>(response);
+
+                if (resp != null && resp.result != null && !string.IsNullOrEmpty(resp.result.auth_token))
+                {
+                    config.RegistrationCode = resp.result.auth_token;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -51,20 +85,122 @@ namespace UploadersLib.ImageUploaders
             arguments.Add("key", DeveloperKey);
             arguments.Add("public", IsPublic ? "yes" : "no");
 
-            if (AccountType == AccountType.User && !string.IsNullOrEmpty(RegistrationCode))
+            if (!string.IsNullOrEmpty(Config.RegistrationCode))
             {
-                arguments.Add("cookie", RegistrationCode);
+                arguments.Add("cookie", Config.RegistrationCode);
             }
 
-            UploadResult result = UploadData(stream, "http://www.imageshack.us/upload_api.php", fileName, "fileupload", arguments);
+            UploadResult result = UploadData(stream, URLUpload, fileName, "fileupload", arguments);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                result.URL = Helpers.GetXMLValue(result.Response, "image_link");
-                result.ThumbnailURL = Helpers.GetXMLValue(result.Response, "thumb_link");
+                ImageShackUploadResponse resp = JsonConvert.DeserializeObject<ImageShackUploadResponse>(result.Response);
+                if (resp != null && resp.result != null && resp.result.images.Count > 0)
+                {
+                    result.URL = "http://" + resp.result.images[0].direct_link;
+                    result.ThumbnailURL = string.Format("http://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
+                              256, 0, resp.result.images[0].server, resp.result.images[0].filename);
+                }
             }
 
             return result;
         }
+
+        public class ImageShackLoginResponse
+        {
+            public bool success { get; set; }
+            public int process_time { get; set; }
+            public ImageShackLogin result { get; set; }
+        }
+
+        public class ImageShackLogin
+        {
+            public string auth_token { get; set; }
+            public int user_id { get; set; }
+            public string email { get; set; }
+            public string username { get; set; }
+            public ImageShackeUserAvatar avatar { get; set; }
+            public string membership { get; set; }
+            public string membership_item_number { get; set; }
+            public string membership_cookie { get; set; }
+        }
+
+        public class ImageShackUser
+        {
+            public bool is_owner { get; set; }
+            public int cache_version { get; set; }
+            public string username { get; set; }
+            public string description { get; set; }
+            public int creation_date { get; set; }
+            public string location { get; set; }
+            public string first_name { get; set; }
+            public string last_name { get; set; }
+            public ImageShackeUserAvatar Avatar { get; set; }
+        }
+
+        public class ImageShackeUserAvatar
+        {
+            public int image_id { get; set; }
+            public int server { get; set; }
+            public string filename { get; set; }
+        }
+
+        public class ImageShackUploadResponse
+        {
+            public bool success { get; set; }
+            public int process_time { get; set; }
+            public ImageShackUploadResult result { get; set; }
+        }
+
+        public class ImageShackUploadResult
+        {
+            public int max_filesize { get; set; }
+            public int space_limit { get; set; }
+            public int space_used { get; set; }
+            public int space_left { get; set; }
+            public int passed { get; set; }
+            public int failed { get; set; }
+            public int total { get; set; }
+            public List<ImageShackImage> images { get; set; }
+        }
+
+        public class ImageShackImage
+        {
+            public int id { get; set; }
+            public int server { get; set; }
+            public int bucket { get; set; }
+            public string lp_hash { get; set; }
+            public string filename { get; set; }
+            public string original_filename { get; set; }
+            public string direct_link { get; set; }
+            public object title { get; set; }
+            public object description { get; set; }
+            public List<string> tags { get; set; }
+            public int likes { get; set; }
+            public bool liked { get; set; }
+            public int views { get; set; }
+            public int comments_count { get; set; }
+            public bool comments_disabled { get; set; }
+            public int filter { get; set; }
+            public int filesize { get; set; }
+            public int creation_date { get; set; }
+            public int width { get; set; }
+            public int height { get; set; }
+            public bool @public { get; set; }
+            public bool is_owner { get; set; }
+            public ImageShackUser owner { get; set; }
+            public List<ImageShackImage> next_images { get; set; }
+            public List<ImageShackImage> prev_images { get; set; }
+            public object related_images { get; set; }
+        }
+    }
+
+    public class ImageShackOptions
+    {
+        public string user { get; set; }
+        public string password { get; set; }
+        public bool set_cookies { get; set; }
+        public bool remember_me { get; set; }
+        public string RegistrationCode { get; set; }
     }
 }
