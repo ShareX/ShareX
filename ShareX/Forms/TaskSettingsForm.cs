@@ -109,8 +109,9 @@ namespace ShareX
             cbShowAfterCaptureTasksForm.Checked = TaskSettings.GeneralSettings.ShowAfterCaptureTasksForm;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
-            cbTrayBalloonTipAfterUpload.Checked = TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload;
-            cbShowToastWindowAfterTask.Checked = TaskSettings.GeneralSettings.ShowToastWindowAfterTask;
+            cboPopUpNotification.Items.Clear();
+            cboPopUpNotification.Items.AddRange(Helpers.GetEnumDescriptions<PopUpNotificationType>());
+            cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
             cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
             // Image - Quality
@@ -418,14 +419,9 @@ namespace ShareX
             TaskSettings.GeneralSettings.ShowAfterUploadForm = chkShowAfterUploadForm.Checked;
         }
 
-        private void cbTrayBalloonTipAfterUpload_CheckedChanged(object sender, EventArgs e)
+        private void cboPopUpNotification_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload = cbTrayBalloonTipAfterUpload.Checked;
-        }
-
-        private void cbShowToastWindowAfterTask_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.GeneralSettings.ShowToastWindowAfterTask = cbShowToastWindowAfterTask.Checked;
+            TaskSettings.GeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
         }
 
         private void cbHistorySave_CheckedChanged(object sender, EventArgs e)

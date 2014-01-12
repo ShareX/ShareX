@@ -189,7 +189,7 @@ namespace ShareX
                         ClipboardHelpers.CopyText(path);
                     }
 
-                    TaskHelpers.ShowResultNotifications(path, TaskSettings);
+                    TaskHelpers.ShowResultNotifications(path, TaskSettings, path);
                 }
             }
 

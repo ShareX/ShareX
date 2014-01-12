@@ -197,8 +197,7 @@ namespace ShareX
         public bool PlaySoundAfterCapture = true;
         public bool ShowAfterCaptureTasksForm = false;
         public bool PlaySoundAfterUpload = true;
-        public bool TrayBalloonTipAfterUpload = true;
-        public bool ShowToastWindowAfterTask = false;
+        public PopUpNotificationType PopUpNotification = PopUpNotificationType.ToastNotification;
         public bool ShowAfterUploadForm = false;
         public bool SaveHistory = true;
     }

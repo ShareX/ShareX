@@ -307,27 +307,11 @@ namespace ShareX
                                         SystemSounds.Exclamation.Play();
                                     }
 
-                                    string balloonTipText = result;
-
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
                                     {
-                                        balloonTipText = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
+                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
-
-                                    if (!string.IsNullOrEmpty(balloonTipText))
-                                    {
-                                        if (task.Info.TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
-                                        {
-                                            Program.MainForm.niTray.Tag = result;
-                                            Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", balloonTipText, ToolTipIcon.Info);
-                                        }
-
-                                        if (task.Info.TaskSettings.GeneralSettings.ShowToastWindowAfterTask)
-                                        {
-                                            NotificationForm.Show((int)(task.Info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
-                                                task.Info.TaskSettings.AdvancedSettings.ToastWindowSize, info.FilePath, "ShareX - Task completed\r\n" + balloonTipText, result);
-                                        }
-                                    }
+                                    TaskHelpers.ShowResultNotifications(result, info.TaskSettings, info.FilePath);
 
                                     if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)
                                     {

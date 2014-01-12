@@ -618,9 +618,9 @@
             this.lblImageShackUsername.AutoSize = true;
             this.lblImageShackUsername.Location = new System.Drawing.Point(16, 56);
             this.lblImageShackUsername.Name = "lblImageShackUsername";
-            this.lblImageShackUsername.Size = new System.Drawing.Size(35, 13);
+            this.lblImageShackUsername.Size = new System.Drawing.Size(58, 13);
             this.lblImageShackUsername.TabIndex = 3;
-            this.lblImageShackUsername.Text = "Email:";
+            this.lblImageShackUsername.Text = "Username:";
             // 
             // txtImageShackUsername
             // 

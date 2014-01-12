@@ -174,4 +174,14 @@ namespace ShareX
         Failed,
         NotConfigured
     }
+
+    public enum PopUpNotificationType
+    {
+        [Description("Show nothing after task is completed")]
+        None,
+        [Description("Show tray balloon tip after task is completed")]
+        BalloonTip,
+        [Description("Show toast notification with preview after task is completed")]
+        ToastNotification
+    }
 }

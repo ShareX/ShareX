@@ -148,14 +148,26 @@ namespace ShareX
             return filename;
         }
 
-        public static void ShowResultNotifications(string result, TaskSettings taskSettings)
+        public static void ShowResultNotifications(string notificationText, TaskSettings taskSettings, string filePath)
         {
             if (!taskSettings.AdvancedSettings.DisableNotifications)
             {
-                if (taskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
+                if (!string.IsNullOrEmpty(notificationText))
                 {
-                    Program.MainForm.niTray.Tag = result;
-                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", result, ToolTipIcon.Info);
+                    switch (taskSettings.GeneralSettings.PopUpNotification)
+                    {
+                        case PopUpNotificationType.BalloonTip:
+                            if (Program.MainForm.niTray.Visible)
+                            {
+                                Program.MainForm.niTray.Tag = notificationText;
+                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", notificationText, ToolTipIcon.Info);
+                            }
+                            break;
+                        case PopUpNotificationType.ToastNotification:
+                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                   taskSettings.AdvancedSettings.ToastWindowSize, filePath, "ShareX - Task completed\r\n" + notificationText, notificationText);
+                            break;
+                    }
                 }
 
                 if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
