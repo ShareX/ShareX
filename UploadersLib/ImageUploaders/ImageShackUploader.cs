@@ -200,6 +200,5 @@ namespace UploadersLib.ImageUploaders
         public string Auth_token { get; set; }
         public int ThumbnailWidth { get; set; }
         public int ThumbnailHeight { get; set; }
-        public int ThumbnailQuality { get; set; }
     }
 }
