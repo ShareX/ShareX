@@ -95,7 +95,7 @@ namespace UploadersLib.ImageUploaders
                 {
                     result.URL = "http://" + resp.result.images[0].direct_link;
                     result.ThumbnailURL = string.Format("http://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
-                              256, 0, resp.result.images[0].server, resp.result.images[0].filename);
+                              Config.ThumbnailWidth, Config.ThumbnailHeight, resp.result.images[0].server, resp.result.images[0].filename);
                 }
             }
 
@@ -198,5 +198,8 @@ namespace UploadersLib.ImageUploaders
         public string Password { get; set; }
         public bool IsPublic { get; set; }
         public string Auth_token { get; set; }
+        public int ThumbnailWidth { get; set; }
+        public int ThumbnailHeight { get; set; }
+        public int ThumbnailQuality { get; set; }
     }
 }

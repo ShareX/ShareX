@@ -552,6 +552,9 @@ namespace ShareX
             switch (Info.TaskSettings.ImageDestination)
             {
                 case ImageDestination.ImageShack:
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailQuality = Info.TaskSettings.ImageSettings.ImageJPEGQuality;
                     imageUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
                     break;
                 case ImageDestination.TinyPic:
