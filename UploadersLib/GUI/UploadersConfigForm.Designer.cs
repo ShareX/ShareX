@@ -715,9 +715,9 @@
             this.lblTinyPicUsername.AutoSize = true;
             this.lblTinyPicUsername.Location = new System.Drawing.Point(16, 56);
             this.lblTinyPicUsername.Name = "lblTinyPicUsername";
-            this.lblTinyPicUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblTinyPicUsername.Size = new System.Drawing.Size(35, 13);
             this.lblTinyPicUsername.TabIndex = 1;
-            this.lblTinyPicUsername.Text = "Username:";
+            this.lblTinyPicUsername.Text = "Email:";
             // 
             // btnTinyPicOpenMyImages
             // 

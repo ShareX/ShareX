@@ -110,4 +110,4 @@ UpgradeLog*.XML
 # Additional
 *.exe
 *.userprefs
-
+Output/

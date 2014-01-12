@@ -58,7 +58,7 @@ Name: "CreateStartupIcon"; Description: "Launch {#MyAppName} automatically at Wi
 Source: "ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
-Source: "LICENSE.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
 ;Source: "ShareX\bin\Release\*.pdb"; DestDir: {app}; Flags: ignoreversion
 
 [Icons]
