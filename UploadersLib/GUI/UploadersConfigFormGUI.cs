@@ -129,6 +129,7 @@ namespace UploadersLib
 
             // ImageShack
 
+            atcImageShackAccountType.SelectedAccountType = Config.ImageShackSettings.AccountType;
             txtImageShackUsername.Text = Config.ImageShackSettings.Username;
             txtImageShackPassword.Text = Config.ImageShackSettings.Password;
             cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
@@ -138,8 +139,6 @@ namespace UploadersLib
             atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
             txtTinyPicUsername.Text = Config.TinyPicUsername;
             txtTinyPicPassword.Text = Config.TinyPicPassword;
-            cbTinyPicRememberUsernamePassword.Checked = Config.TinyPicRememberUserPass;
-            txtTinyPicRegistrationCode.Text = Config.TinyPicRegistrationCode;
 
             // Imgur
 

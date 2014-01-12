@@ -69,14 +69,41 @@ namespace UploadersLib
 
         #region ImageShack
 
+        private void atcImageShackAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.ImageShackSettings.AccountType = accountType;
+        }
+
         private void txtImageShackUsername_TextChanged(object sender, EventArgs e)
         {
             Config.ImageShackSettings.Username = txtImageShackUsername.Text;
         }
 
-        private void txtImageShackRegistrationCode_TextChanged(object sender, EventArgs e)
+        private void txtImageShackPassword_TextChanged(object sender, EventArgs e)
         {
             Config.ImageShackSettings.Password = txtImageShackPassword.Text;
+        }
+
+        private void btnImageShackLogin_Click(object sender, EventArgs e)
+        {
+            ImageShackUploader imageShackUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Config.ImageShackSettings);
+
+            try
+            {
+                if (imageShackUploader.GetAccessToken())
+                {
+                    MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbImageShackIsPublic_CheckedChanged(object sender, EventArgs e)
@@ -141,29 +168,18 @@ namespace UploadersLib
                     if (!string.IsNullOrEmpty(registrationCode))
                     {
                         Config.TinyPicRegistrationCode = registrationCode;
-                        txtTinyPicRegistrationCode.Text = registrationCode;
+                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        private void cbTinyPicRememberUsernamePassword_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.TinyPicRememberUserPass = cbTinyPicRememberUsernamePassword.Checked;
-
-            if (Config.TinyPicRememberUserPass)
-            {
-                Config.TinyPicUsername = txtTinyPicUsername.Text;
-                Config.TinyPicPassword = txtTinyPicPassword.Text;
-            }
-            else
-            {
-                Config.TinyPicUsername = string.Empty;
-                Config.TinyPicPassword = string.Empty;
             }
         }
 

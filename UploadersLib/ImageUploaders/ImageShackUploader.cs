@@ -48,22 +48,25 @@ namespace UploadersLib.ImageUploaders
             Config = config;
         }
 
-        public bool GetAccessToken(ImageShackOptions config)
+        public bool GetAccessToken()
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("user", config.Username);
-            args.Add("password", config.Password);
-
-            string response = SendPostRequest(URLAccessToken, args);
-
-            if (!string.IsNullOrEmpty(response))
+            if (!string.IsNullOrEmpty(Config.Username) && !string.IsNullOrEmpty(Config.Password))
             {
-                ImageShackLoginResponse resp = JsonConvert.DeserializeObject<ImageShackLoginResponse>(response);
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("user", Config.Username);
+                args.Add("password", Config.Password);
 
-                if (resp != null && resp.result != null && !string.IsNullOrEmpty(resp.result.auth_token))
+                string response = SendPostRequest(URLAccessToken, args);
+
+                if (!string.IsNullOrEmpty(response))
                 {
-                    config.Auth_token = resp.result.auth_token;
-                    return true;
+                    ImageShackLoginResponse resp = JsonConvert.DeserializeObject<ImageShackLoginResponse>(response);
+
+                    if (resp != null && resp.result != null && !string.IsNullOrEmpty(resp.result.auth_token))
+                    {
+                        Config.Auth_token = resp.result.auth_token;
+                        return true;
+                    }
                 }
             }
 
@@ -75,7 +78,7 @@ namespace UploadersLib.ImageUploaders
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", APIKey);
 
-            if (!string.IsNullOrEmpty(Config.Auth_token))
+            if (Config.AccountType == AccountType.User && !string.IsNullOrEmpty(Config.Auth_token))
             {
                 arguments.Add("auth_token", Config.Auth_token);
             }
@@ -190,6 +193,7 @@ namespace UploadersLib.ImageUploaders
 
     public class ImageShackOptions
     {
+        public AccountType AccountType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public bool IsPublic { get; set; }
