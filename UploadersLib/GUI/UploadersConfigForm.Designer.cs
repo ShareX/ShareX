@@ -33,6 +33,18 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
+            this.tpImgur = new System.Windows.Forms.TabPage();
+            this.oauth2Imgur = new UploadersLib.GUI.OAuth2Control();
+            this.txtImgurAlbumID = new System.Windows.Forms.TextBox();
+            this.lblImgurAlbumID = new System.Windows.Forms.Label();
+            this.lvImgurAlbumList = new System.Windows.Forms.ListView();
+            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnImgurRefreshAlbumList = new System.Windows.Forms.Button();
+            this.cbImgurThumbnailType = new System.Windows.Forms.ComboBox();
+            this.lblImgurThumbnailType = new System.Windows.Forms.Label();
+            this.atcImgurAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpImageShack = new System.Windows.Forms.TabPage();
             this.atcImageShackAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.btnImageShackLogin = new System.Windows.Forms.Button();
@@ -51,18 +63,6 @@
             this.txtTinyPicUsername = new System.Windows.Forms.TextBox();
             this.lblTinyPicUsername = new System.Windows.Forms.Label();
             this.btnTinyPicOpenMyImages = new System.Windows.Forms.Button();
-            this.tpImgur = new System.Windows.Forms.TabPage();
-            this.oauth2Imgur = new UploadersLib.GUI.OAuth2Control();
-            this.txtImgurAlbumID = new System.Windows.Forms.TextBox();
-            this.lblImgurAlbumID = new System.Windows.Forms.Label();
-            this.lvImgurAlbumList = new System.Windows.Forms.ListView();
-            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnImgurRefreshAlbumList = new System.Windows.Forms.Button();
-            this.cbImgurThumbnailType = new System.Windows.Forms.ComboBox();
-            this.lblImgurThumbnailType = new System.Windows.Forms.Label();
-            this.atcImgurAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpFlickr = new System.Windows.Forms.TabPage();
             this.btnFlickrOpenImages = new System.Windows.Forms.Button();
             this.pgFlickrAuthInfo = new System.Windows.Forms.PropertyGrid();
@@ -326,9 +326,9 @@
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
+            this.tpImgur.SuspendLayout();
             this.tpImageShack.SuspendLayout();
             this.tpTinyPic.SuspendLayout();
-            this.tpImgur.SuspendLayout();
             this.tpFlickr.SuspendLayout();
             this.tpPhotobucket.SuspendLayout();
             this.gbPhotobucketAlbumPath.SuspendLayout();
@@ -410,9 +410,9 @@
             // 
             // tcImageUploaders
             // 
+            this.tcImageUploaders.Controls.Add(this.tpImgur);
             this.tcImageUploaders.Controls.Add(this.tpImageShack);
             this.tcImageUploaders.Controls.Add(this.tpTinyPic);
-            this.tcImageUploaders.Controls.Add(this.tpImgur);
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
             this.tcImageUploaders.Controls.Add(this.tpTwitPic);
@@ -426,6 +426,123 @@
             this.tcImageUploaders.SelectedIndex = 0;
             this.tcImageUploaders.Size = new System.Drawing.Size(812, 501);
             this.tcImageUploaders.TabIndex = 0;
+            // 
+            // tpImgur
+            // 
+            this.tpImgur.Controls.Add(this.oauth2Imgur);
+            this.tpImgur.Controls.Add(this.txtImgurAlbumID);
+            this.tpImgur.Controls.Add(this.lblImgurAlbumID);
+            this.tpImgur.Controls.Add(this.lvImgurAlbumList);
+            this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
+            this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
+            this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
+            this.tpImgur.Controls.Add(this.atcImgurAccountType);
+            this.tpImgur.Location = new System.Drawing.Point(4, 22);
+            this.tpImgur.Name = "tpImgur";
+            this.tpImgur.Padding = new System.Windows.Forms.Padding(3);
+            this.tpImgur.Size = new System.Drawing.Size(804, 475);
+            this.tpImgur.TabIndex = 2;
+            this.tpImgur.Text = "Imgur";
+            this.tpImgur.UseVisualStyleBackColor = true;
+            // 
+            // oauth2Imgur
+            // 
+            this.oauth2Imgur.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Imgur.LoginStatus = false;
+            this.oauth2Imgur.Name = "oauth2Imgur";
+            this.oauth2Imgur.Size = new System.Drawing.Size(328, 207);
+            this.oauth2Imgur.Status = "Status: Login required.";
+            this.oauth2Imgur.TabIndex = 6;
+            this.oauth2Imgur.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
+            this.oauth2Imgur.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
+            this.oauth2Imgur.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
+            // 
+            // txtImgurAlbumID
+            // 
+            this.txtImgurAlbumID.Location = new System.Drawing.Point(592, 28);
+            this.txtImgurAlbumID.Name = "txtImgurAlbumID";
+            this.txtImgurAlbumID.Size = new System.Drawing.Size(176, 20);
+            this.txtImgurAlbumID.TabIndex = 4;
+            this.txtImgurAlbumID.TextChanged += new System.EventHandler(this.txtImgurAlbumID_TextChanged);
+            // 
+            // lblImgurAlbumID
+            // 
+            this.lblImgurAlbumID.AutoSize = true;
+            this.lblImgurAlbumID.Location = new System.Drawing.Point(352, 32);
+            this.lblImgurAlbumID.Name = "lblImgurAlbumID";
+            this.lblImgurAlbumID.Size = new System.Drawing.Size(233, 13);
+            this.lblImgurAlbumID.TabIndex = 3;
+            this.lblImgurAlbumID.Text = "Album ID for upload (Empty = No album upload):";
+            // 
+            // lvImgurAlbumList
+            // 
+            this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chID,
+            this.chTitle,
+            this.chDescription});
+            this.lvImgurAlbumList.FullRowSelect = true;
+            this.lvImgurAlbumList.Location = new System.Drawing.Point(352, 88);
+            this.lvImgurAlbumList.MultiSelect = false;
+            this.lvImgurAlbumList.Name = "lvImgurAlbumList";
+            this.lvImgurAlbumList.Size = new System.Drawing.Size(432, 368);
+            this.lvImgurAlbumList.TabIndex = 7;
+            this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
+            this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
+            this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
+            // 
+            // chID
+            // 
+            this.chID.Text = "ID";
+            this.chID.Width = 70;
+            // 
+            // chTitle
+            // 
+            this.chTitle.Text = "Title";
+            this.chTitle.Width = 150;
+            // 
+            // chDescription
+            // 
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 208;
+            // 
+            // btnImgurRefreshAlbumList
+            // 
+            this.btnImgurRefreshAlbumList.Enabled = false;
+            this.btnImgurRefreshAlbumList.Location = new System.Drawing.Point(352, 56);
+            this.btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
+            this.btnImgurRefreshAlbumList.Size = new System.Drawing.Size(200, 23);
+            this.btnImgurRefreshAlbumList.TabIndex = 5;
+            this.btnImgurRefreshAlbumList.Text = "Refresh album list";
+            this.btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
+            this.btnImgurRefreshAlbumList.Click += new System.EventHandler(this.btnImgurRefreshAlbumList_Click);
+            // 
+            // cbImgurThumbnailType
+            // 
+            this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImgurThumbnailType.FormattingEnabled = true;
+            this.cbImgurThumbnailType.Location = new System.Drawing.Point(104, 268);
+            this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
+            this.cbImgurThumbnailType.Size = new System.Drawing.Size(168, 21);
+            this.cbImgurThumbnailType.TabIndex = 2;
+            this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
+            // 
+            // lblImgurThumbnailType
+            // 
+            this.lblImgurThumbnailType.AutoSize = true;
+            this.lblImgurThumbnailType.Location = new System.Drawing.Point(16, 272);
+            this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
+            this.lblImgurThumbnailType.Size = new System.Drawing.Size(82, 13);
+            this.lblImgurThumbnailType.TabIndex = 1;
+            this.lblImgurThumbnailType.Text = "Thumbnail type:";
+            // 
+            // atcImgurAccountType
+            // 
+            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 232);
+            this.atcImgurAccountType.Name = "atcImgurAccountType";
+            this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
+            this.atcImgurAccountType.Size = new System.Drawing.Size(272, 29);
+            this.atcImgurAccountType.TabIndex = 0;
+            this.atcImgurAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
             // 
             // tpImageShack
             // 
@@ -611,123 +728,6 @@
             this.btnTinyPicOpenMyImages.Text = "Open my images page...";
             this.btnTinyPicOpenMyImages.UseVisualStyleBackColor = true;
             this.btnTinyPicOpenMyImages.Click += new System.EventHandler(this.btnTinyPicOpenMyImages_Click);
-            // 
-            // tpImgur
-            // 
-            this.tpImgur.Controls.Add(this.oauth2Imgur);
-            this.tpImgur.Controls.Add(this.txtImgurAlbumID);
-            this.tpImgur.Controls.Add(this.lblImgurAlbumID);
-            this.tpImgur.Controls.Add(this.lvImgurAlbumList);
-            this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
-            this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
-            this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
-            this.tpImgur.Controls.Add(this.atcImgurAccountType);
-            this.tpImgur.Location = new System.Drawing.Point(4, 22);
-            this.tpImgur.Name = "tpImgur";
-            this.tpImgur.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImgur.Size = new System.Drawing.Size(804, 475);
-            this.tpImgur.TabIndex = 2;
-            this.tpImgur.Text = "Imgur";
-            this.tpImgur.UseVisualStyleBackColor = true;
-            // 
-            // oauth2Imgur
-            // 
-            this.oauth2Imgur.Location = new System.Drawing.Point(464, 16);
-            this.oauth2Imgur.LoginStatus = false;
-            this.oauth2Imgur.Name = "oauth2Imgur";
-            this.oauth2Imgur.Size = new System.Drawing.Size(328, 207);
-            this.oauth2Imgur.Status = "Status: Login required.";
-            this.oauth2Imgur.TabIndex = 6;
-            this.oauth2Imgur.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
-            this.oauth2Imgur.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
-            this.oauth2Imgur.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
-            // 
-            // txtImgurAlbumID
-            // 
-            this.txtImgurAlbumID.Location = new System.Drawing.Point(256, 84);
-            this.txtImgurAlbumID.Name = "txtImgurAlbumID";
-            this.txtImgurAlbumID.Size = new System.Drawing.Size(176, 20);
-            this.txtImgurAlbumID.TabIndex = 4;
-            this.txtImgurAlbumID.TextChanged += new System.EventHandler(this.txtImgurAlbumID_TextChanged);
-            // 
-            // lblImgurAlbumID
-            // 
-            this.lblImgurAlbumID.AutoSize = true;
-            this.lblImgurAlbumID.Location = new System.Drawing.Point(16, 88);
-            this.lblImgurAlbumID.Name = "lblImgurAlbumID";
-            this.lblImgurAlbumID.Size = new System.Drawing.Size(233, 13);
-            this.lblImgurAlbumID.TabIndex = 3;
-            this.lblImgurAlbumID.Text = "Album ID for upload (Empty = No album upload):";
-            // 
-            // lvImgurAlbumList
-            // 
-            this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chID,
-            this.chTitle,
-            this.chDescription});
-            this.lvImgurAlbumList.FullRowSelect = true;
-            this.lvImgurAlbumList.Location = new System.Drawing.Point(16, 144);
-            this.lvImgurAlbumList.MultiSelect = false;
-            this.lvImgurAlbumList.Name = "lvImgurAlbumList";
-            this.lvImgurAlbumList.Size = new System.Drawing.Size(432, 312);
-            this.lvImgurAlbumList.TabIndex = 7;
-            this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
-            this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
-            this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
-            // 
-            // chID
-            // 
-            this.chID.Text = "ID";
-            this.chID.Width = 70;
-            // 
-            // chTitle
-            // 
-            this.chTitle.Text = "Title";
-            this.chTitle.Width = 150;
-            // 
-            // chDescription
-            // 
-            this.chDescription.Text = "Description";
-            this.chDescription.Width = 208;
-            // 
-            // btnImgurRefreshAlbumList
-            // 
-            this.btnImgurRefreshAlbumList.Enabled = false;
-            this.btnImgurRefreshAlbumList.Location = new System.Drawing.Point(16, 112);
-            this.btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
-            this.btnImgurRefreshAlbumList.Size = new System.Drawing.Size(200, 23);
-            this.btnImgurRefreshAlbumList.TabIndex = 5;
-            this.btnImgurRefreshAlbumList.Text = "Refresh album list";
-            this.btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
-            this.btnImgurRefreshAlbumList.Click += new System.EventHandler(this.btnImgurRefreshAlbumList_Click);
-            // 
-            // cbImgurThumbnailType
-            // 
-            this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImgurThumbnailType.FormattingEnabled = true;
-            this.cbImgurThumbnailType.Location = new System.Drawing.Point(104, 52);
-            this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
-            this.cbImgurThumbnailType.Size = new System.Drawing.Size(168, 21);
-            this.cbImgurThumbnailType.TabIndex = 2;
-            this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
-            // 
-            // lblImgurThumbnailType
-            // 
-            this.lblImgurThumbnailType.AutoSize = true;
-            this.lblImgurThumbnailType.Location = new System.Drawing.Point(16, 56);
-            this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
-            this.lblImgurThumbnailType.Size = new System.Drawing.Size(82, 13);
-            this.lblImgurThumbnailType.TabIndex = 1;
-            this.lblImgurThumbnailType.Text = "Thumbnail type:";
-            // 
-            // atcImgurAccountType
-            // 
-            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 16);
-            this.atcImgurAccountType.Name = "atcImgurAccountType";
-            this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcImgurAccountType.Size = new System.Drawing.Size(272, 29);
-            this.atcImgurAccountType.TabIndex = 0;
-            this.atcImgurAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
             // 
             // tpFlickr
             // 
@@ -3473,12 +3473,12 @@
             this.tcUploaders.ResumeLayout(false);
             this.tpImageUploaders.ResumeLayout(false);
             this.tcImageUploaders.ResumeLayout(false);
+            this.tpImgur.ResumeLayout(false);
+            this.tpImgur.PerformLayout();
             this.tpImageShack.ResumeLayout(false);
             this.tpImageShack.PerformLayout();
             this.tpTinyPic.ResumeLayout(false);
             this.tpTinyPic.PerformLayout();
-            this.tpImgur.ResumeLayout(false);
-            this.tpImgur.PerformLayout();
             this.tpFlickr.ResumeLayout(false);
             this.tpPhotobucket.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.ResumeLayout(false);

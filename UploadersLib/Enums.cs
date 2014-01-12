@@ -32,7 +32,7 @@ namespace UploadersLib
     {
         [Description("imgur.com")]
         Imgur,
-        [Description("imageshack.us")]
+        [Description("imageshack.com")]
         ImageShack,
         [Description("tinypic.com")]
         TinyPic,
