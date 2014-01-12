@@ -38,7 +38,8 @@ namespace ShareXPortable
         {
             string parentDir = @"..\..\..\";
             string releaseDir = Path.Combine(parentDir, @"ShareX\bin\Release");
-            string portableDir = Path.Combine(parentDir, @"Output\Portable");
+            string outputDir = Path.Combine(parentDir, "Output");
+            string portableDir = Path.Combine(outputDir, "Portable");
 
             List<string> files = new List<string>();
 
@@ -75,10 +76,33 @@ namespace ShareXPortable
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
             Console.WriteLine("Created PersonalPath.cfg file.");
 
-            Process.Start("explorer.exe", portableDir);
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
+            string version = string.Format("{0}.{1}", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart);
+            if (versionInfo.ProductBuildPart > 0) version += "." + versionInfo.ProductBuildPart;
+            string zipFilename = string.Format("ShareX-{0}-Portable.zip", version);
+            string zipPath = Path.Combine(outputDir, zipFilename);
+
+            if (File.Exists(zipPath))
+            {
+                File.Delete(zipPath);
+            }
+
+            Zip(portableDir + "\\*.*", zipPath);
+
+            Process.Start("explorer.exe", outputDir);
 
             Console.WriteLine("Done.");
             //Console.Read();
+        }
+
+        private static void Zip(string source, string target)
+        {
+            ProcessStartInfo p = new ProcessStartInfo();
+            p.FileName = "7za.exe";
+            p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -mx=9", target, source);
+            p.WindowStyle = ProcessWindowStyle.Hidden;
+            Process process = Process.Start(p);
+            process.WaitForExit();
         }
     }
 }
