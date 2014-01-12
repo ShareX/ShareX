@@ -37,31 +37,22 @@ namespace UploadersLib.ImageUploaders
         private const string URLAPI = "https://api.imageshack.us/v1/";
         private const string URLAccessToken = URLAPI + "user/login";
         private const string URLUpload = URLAPI + "images";
-        public bool IsPublic { get; set; }
 
-        private string DeveloperKey { get; set; }
         public ImageShackOptions Config { get; set; }
-        public OAuth2Info AuthInfo { get; private set; }
 
-        public ImageShackUploader(string developerKey, ImageShackOptions config, OAuth2Info auth)
+        private string APIKey;
+
+        public ImageShackUploader(string developerKey, ImageShackOptions config)
         {
-            DeveloperKey = developerKey;
+            APIKey = developerKey;
             Config = config;
-            AuthInfo = auth;
-
-            if (!string.IsNullOrEmpty(config.RegistrationCode))
-            {
-                GetAccessToken(config);
-            }
         }
 
         public bool GetAccessToken(ImageShackOptions config)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("user", config.user);
-            args.Add("password", config.password);
-            args.Add("set_cookies", config.set_cookies.ToString());
-            args.Add("remember_me", config.remember_me.ToString());
+            args.Add("user", config.Username);
+            args.Add("password", config.Password);
 
             string response = SendPostRequest(URLAccessToken, args);
 
@@ -71,7 +62,7 @@ namespace UploadersLib.ImageUploaders
 
                 if (resp != null && resp.result != null && !string.IsNullOrEmpty(resp.result.auth_token))
                 {
-                    config.RegistrationCode = resp.result.auth_token;
+                    config.Auth_token = resp.result.auth_token;
                     return true;
                 }
             }
@@ -82,19 +73,21 @@ namespace UploadersLib.ImageUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("key", DeveloperKey);
-            arguments.Add("public", IsPublic ? "yes" : "no");
+            arguments.Add("api_key", APIKey);
 
-            if (!string.IsNullOrEmpty(Config.RegistrationCode))
+            if (!string.IsNullOrEmpty(Config.Auth_token))
             {
-                arguments.Add("cookie", Config.RegistrationCode);
+                arguments.Add("auth_token", Config.Auth_token);
             }
 
-            UploadResult result = UploadData(stream, URLUpload, fileName, "fileupload", arguments);
+            arguments.Add("public", Config.IsPublic ? "y" : "n");
+
+            UploadResult result = UploadData(stream, URLUpload, fileName, "file", arguments);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
                 ImageShackUploadResponse resp = JsonConvert.DeserializeObject<ImageShackUploadResponse>(result.Response);
+
                 if (resp != null && resp.result != null && resp.result.images.Count > 0)
                 {
                     result.URL = "http://" + resp.result.images[0].direct_link;
@@ -197,10 +190,9 @@ namespace UploadersLib.ImageUploaders
 
     public class ImageShackOptions
     {
-        public string user { get; set; }
-        public string password { get; set; }
-        public bool set_cookies { get; set; }
-        public bool remember_me { get; set; }
-        public string RegistrationCode { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public bool IsPublic { get; set; }
+        public string Auth_token { get; set; }
     }
 }

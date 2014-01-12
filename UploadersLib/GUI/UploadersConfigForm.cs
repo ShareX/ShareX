@@ -69,31 +69,26 @@ namespace UploadersLib
 
         #region ImageShack
 
-        private void txtImageShackRegistrationCode_TextChanged(object sender, EventArgs e)
-        {
-            Config.ImageShackPassword = txtImageShackPassword.Text;
-        }
-
         private void txtImageShackUsername_TextChanged(object sender, EventArgs e)
         {
-            Config.ImageShackUsername = txtImageShackUsername.Text;
+            Config.ImageShackSettings.Username = txtImageShackUsername.Text;
+        }
+
+        private void txtImageShackRegistrationCode_TextChanged(object sender, EventArgs e)
+        {
+            Config.ImageShackSettings.Password = txtImageShackPassword.Text;
         }
 
         private void cbImageShackIsPublic_CheckedChanged(object sender, EventArgs e)
         {
-            Config.ImageShackShowImagesInPublic = cbImageShackIsPublic.Checked;
-        }
-
-        private void btnImageShackOpenRegistrationCode_Click(object sender, EventArgs e)
-        {
-            Helpers.LoadBrowserAsync("http://profile.imageshack.us/prefs/");
+            Config.ImageShackSettings.IsPublic = cbImageShackIsPublic.Checked;
         }
 
         private void btnImageShackOpenPublicProfile_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Config.ImageShackUsername))
+            if (!string.IsNullOrEmpty(Config.ImageShackSettings.Username))
             {
-                Helpers.LoadBrowserAsync("http://profile.imageshack.us/user/" + Config.ImageShackUsername);
+                Helpers.LoadBrowserAsync("https://imageshack.com/user/" + Config.ImageShackSettings.Username);
             }
             else
             {
@@ -103,7 +98,7 @@ namespace UploadersLib
 
         private void btnImageShackOpenMyImages_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("http://my.imageshack.us/v_images.php");
+            Helpers.LoadBrowserAsync("https://imageshack.com/my/images");
         }
 
         #endregion ImageShack

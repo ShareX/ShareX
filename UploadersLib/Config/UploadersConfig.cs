@@ -40,9 +40,7 @@ namespace UploadersLib
         #region Image uploaders
 
         // ImageShack
-        public string ImageShackPassword = string.Empty;
-        public string ImageShackUsername = string.Empty;
-        public bool ImageShackShowImagesInPublic = false;
+        public ImageShackOptions ImageShackSettings = new ImageShackOptions();
 
         // TinyPic
 
@@ -263,7 +261,7 @@ namespace UploadersLib
             switch (destination)
             {
                 case ImageDestination.ImageShack:
-                    return !string.IsNullOrEmpty(ImageShackPassword);
+                    return ImageShackSettings != null && !string.IsNullOrEmpty(ImageShackSettings.Auth_token);
                 case ImageDestination.TinyPic:
                     return TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(TinyPicRegistrationCode);
                 case ImageDestination.Imgur:

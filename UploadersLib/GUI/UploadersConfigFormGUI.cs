@@ -129,9 +129,9 @@ namespace UploadersLib
 
             // ImageShack
 
-            txtImageShackPassword.Text = Config.ImageShackPassword;
-            txtImageShackUsername.Text = Config.ImageShackUsername;
-            cbImageShackIsPublic.Checked = Config.ImageShackShowImagesInPublic;
+            txtImageShackUsername.Text = Config.ImageShackSettings.Username;
+            txtImageShackPassword.Text = Config.ImageShackSettings.Password;
+            cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
 
             // TinyPic
 

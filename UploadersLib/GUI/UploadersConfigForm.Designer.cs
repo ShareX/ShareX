@@ -34,12 +34,10 @@
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImageShack = new System.Windows.Forms.TabPage();
-            this.atcImageShackAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.btnImageShackOpenPublicProfile = new System.Windows.Forms.Button();
             this.cbImageShackIsPublic = new System.Windows.Forms.CheckBox();
             this.btnImageShackOpenMyImages = new System.Windows.Forms.Button();
             this.lblImageShackUsername = new System.Windows.Forms.Label();
-            this.btnImageShackOpenRegistrationCode = new System.Windows.Forms.Button();
             this.txtImageShackUsername = new System.Windows.Forms.TextBox();
             this.txtImageShackPassword = new System.Windows.Forms.TextBox();
             this.lblImageShackRegistrationCode = new System.Windows.Forms.Label();
@@ -432,12 +430,10 @@
             // 
             // tpImageShack
             // 
-            this.tpImageShack.Controls.Add(this.atcImageShackAccountType);
             this.tpImageShack.Controls.Add(this.btnImageShackOpenPublicProfile);
             this.tpImageShack.Controls.Add(this.cbImageShackIsPublic);
             this.tpImageShack.Controls.Add(this.btnImageShackOpenMyImages);
             this.tpImageShack.Controls.Add(this.lblImageShackUsername);
-            this.tpImageShack.Controls.Add(this.btnImageShackOpenRegistrationCode);
             this.tpImageShack.Controls.Add(this.txtImageShackUsername);
             this.tpImageShack.Controls.Add(this.txtImageShackPassword);
             this.tpImageShack.Controls.Add(this.lblImageShackRegistrationCode);
@@ -449,17 +445,9 @@
             this.tpImageShack.Text = "ImageShack";
             this.tpImageShack.UseVisualStyleBackColor = true;
             // 
-            // atcImageShackAccountType
-            // 
-            this.atcImageShackAccountType.Location = new System.Drawing.Point(8, 16);
-            this.atcImageShackAccountType.Name = "atcImageShackAccountType";
-            this.atcImageShackAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcImageShackAccountType.Size = new System.Drawing.Size(272, 29);
-            this.atcImageShackAccountType.TabIndex = 0;
-            // 
             // btnImageShackOpenPublicProfile
             // 
-            this.btnImageShackOpenPublicProfile.Location = new System.Drawing.Point(16, 232);
+            this.btnImageShackOpenPublicProfile.Location = new System.Drawing.Point(16, 160);
             this.btnImageShackOpenPublicProfile.Name = "btnImageShackOpenPublicProfile";
             this.btnImageShackOpenPublicProfile.Size = new System.Drawing.Size(200, 23);
             this.btnImageShackOpenPublicProfile.TabIndex = 7;
@@ -470,7 +458,7 @@
             // cbImageShackIsPublic
             // 
             this.cbImageShackIsPublic.AutoSize = true;
-            this.cbImageShackIsPublic.Location = new System.Drawing.Point(16, 168);
+            this.cbImageShackIsPublic.Location = new System.Drawing.Point(16, 128);
             this.cbImageShackIsPublic.Name = "cbImageShackIsPublic";
             this.cbImageShackIsPublic.Size = new System.Drawing.Size(307, 17);
             this.cbImageShackIsPublic.TabIndex = 5;
@@ -480,7 +468,7 @@
             // 
             // btnImageShackOpenMyImages
             // 
-            this.btnImageShackOpenMyImages.Location = new System.Drawing.Point(16, 264);
+            this.btnImageShackOpenMyImages.Location = new System.Drawing.Point(16, 192);
             this.btnImageShackOpenMyImages.Name = "btnImageShackOpenMyImages";
             this.btnImageShackOpenMyImages.Size = new System.Drawing.Size(200, 23);
             this.btnImageShackOpenMyImages.TabIndex = 8;
@@ -491,43 +479,33 @@
             // lblImageShackUsername
             // 
             this.lblImageShackUsername.AutoSize = true;
-            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 56);
+            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 16);
             this.lblImageShackUsername.Name = "lblImageShackUsername";
             this.lblImageShackUsername.Size = new System.Drawing.Size(55, 13);
             this.lblImageShackUsername.TabIndex = 3;
             this.lblImageShackUsername.Text = "Username";
             // 
-            // btnImageShackOpenRegistrationCode
-            // 
-            this.btnImageShackOpenRegistrationCode.Location = new System.Drawing.Point(16, 200);
-            this.btnImageShackOpenRegistrationCode.Name = "btnImageShackOpenRegistrationCode";
-            this.btnImageShackOpenRegistrationCode.Size = new System.Drawing.Size(200, 23);
-            this.btnImageShackOpenRegistrationCode.TabIndex = 6;
-            this.btnImageShackOpenRegistrationCode.Text = "Open registration code page...";
-            this.btnImageShackOpenRegistrationCode.UseVisualStyleBackColor = true;
-            this.btnImageShackOpenRegistrationCode.Click += new System.EventHandler(this.btnImageShackOpenRegistrationCode_Click);
-            // 
             // txtImageShackUsername
             // 
-            this.txtImageShackUsername.Location = new System.Drawing.Point(16, 80);
+            this.txtImageShackUsername.Location = new System.Drawing.Point(16, 40);
             this.txtImageShackUsername.Name = "txtImageShackUsername";
-            this.txtImageShackUsername.Size = new System.Drawing.Size(392, 20);
+            this.txtImageShackUsername.Size = new System.Drawing.Size(304, 20);
             this.txtImageShackUsername.TabIndex = 4;
             this.txtImageShackUsername.TextChanged += new System.EventHandler(this.txtImageShackUsername_TextChanged);
             // 
             // txtImageShackPassword
             // 
-            this.txtImageShackPassword.Location = new System.Drawing.Point(16, 136);
+            this.txtImageShackPassword.Location = new System.Drawing.Point(16, 96);
             this.txtImageShackPassword.Name = "txtImageShackPassword";
             this.txtImageShackPassword.PasswordChar = '*';
-            this.txtImageShackPassword.Size = new System.Drawing.Size(392, 20);
+            this.txtImageShackPassword.Size = new System.Drawing.Size(304, 20);
             this.txtImageShackPassword.TabIndex = 2;
             this.txtImageShackPassword.TextChanged += new System.EventHandler(this.txtImageShackRegistrationCode_TextChanged);
             // 
             // lblImageShackRegistrationCode
             // 
             this.lblImageShackRegistrationCode.AutoSize = true;
-            this.lblImageShackRegistrationCode.Location = new System.Drawing.Point(16, 112);
+            this.lblImageShackRegistrationCode.Location = new System.Drawing.Point(16, 72);
             this.lblImageShackRegistrationCode.Name = "lblImageShackRegistrationCode";
             this.lblImageShackRegistrationCode.Size = new System.Drawing.Size(56, 13);
             this.lblImageShackRegistrationCode.TabIndex = 1;
@@ -3625,7 +3603,6 @@
         internal System.Windows.Forms.CheckBox cbImageShackIsPublic;
         internal System.Windows.Forms.Button btnImageShackOpenMyImages;
         internal System.Windows.Forms.Label lblImageShackUsername;
-        internal System.Windows.Forms.Button btnImageShackOpenRegistrationCode;
         internal System.Windows.Forms.TextBox txtImageShackUsername;
         internal System.Windows.Forms.TextBox txtImageShackPassword;
         internal System.Windows.Forms.Label lblImageShackRegistrationCode;
@@ -3719,7 +3696,6 @@
         private System.Windows.Forms.Label lblYFrogUsername;
         private System.Windows.Forms.TextBox txtYFrogPassword;
         private System.Windows.Forms.TextBox txtYFrogUsername;
-        private GUI.AccountTypeControl atcImageShackAccountType;
         private GUI.AccountTypeControl atcTinyPicAccountType;
         private GUI.AccountTypeControl atcImgurAccountType;
         private GUI.AccountTypeControl atcSendSpaceAccountType;
