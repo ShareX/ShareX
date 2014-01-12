@@ -8,7 +8,7 @@
 
 [Setup]
 AllowNoIcons=true
-AppCopyright=Copyright (C) 2008-2013 {#MyAppPublisher}
+AppCopyright=Copyright (C) 2008-2014 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex=Global\{#MyAppId}
 AppName={#MyAppName}
