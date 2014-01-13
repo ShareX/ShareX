@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B1CCDF
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization", "Localization\Localization.csproj", "{58A3B7BF-E576-476B-AE45-235BBFE251BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareXPortable", "ShareXPortable\ShareXPortable.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +74,8 @@ Global
 		{58A3B7BF-E576-476B-AE45-235BBFE251BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58A3B7BF-E576-476B-AE45-235BBFE251BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58A3B7BF-E576-476B-AE45-235BBFE251BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D19A94A-7A58-4451-A686-EE70B471C206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D19A94A-7A58-4451-A686-EE70B471C206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

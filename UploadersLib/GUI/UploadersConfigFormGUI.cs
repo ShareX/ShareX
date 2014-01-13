@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -129,18 +129,16 @@ namespace UploadersLib
 
             // ImageShack
 
-            atcImageShackAccountType.SelectedAccountType = Config.ImageShackAccountType;
-            txtImageShackRegistrationCode.Text = Config.ImageShackRegistrationCode;
-            txtImageShackUsername.Text = Config.ImageShackUsername;
-            cbImageShackIsPublic.Checked = Config.ImageShackShowImagesInPublic;
+            atcImageShackAccountType.SelectedAccountType = Config.ImageShackSettings.AccountType;
+            txtImageShackUsername.Text = Config.ImageShackSettings.Username;
+            txtImageShackPassword.Text = Config.ImageShackSettings.Password;
+            cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
 
             // TinyPic
 
             atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
             txtTinyPicUsername.Text = Config.TinyPicUsername;
             txtTinyPicPassword.Text = Config.TinyPicPassword;
-            cbTinyPicRememberUsernamePassword.Checked = Config.TinyPicRememberUserPass;
-            txtTinyPicRegistrationCode.Text = Config.TinyPicRegistrationCode;
 
             // Imgur
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -103,7 +103,8 @@ namespace ShareX
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = 100
+                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
 
             string filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
@@ -122,10 +123,13 @@ namespace ShareX
         {
             string filename;
 
-            NameParser nameParser = new NameParser(NameParserType.FileName);
-            nameParser.MaxNameLength = 100;
-            nameParser.Picture = image;
-            nameParser.AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber;
+            NameParser nameParser = new NameParser(NameParserType.FileName)
+            {
+                Picture = image,
+                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
+            };
 
             ImageTag imageTag = image.Tag as ImageTag;
 
@@ -148,14 +152,26 @@ namespace ShareX
             return filename;
         }
 
-        public static void ShowResultNotifications(string result, TaskSettings taskSettings)
+        public static void ShowResultNotifications(string notificationText, TaskSettings taskSettings, string filePath)
         {
             if (!taskSettings.AdvancedSettings.DisableNotifications)
             {
-                if (taskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
+                if (!string.IsNullOrEmpty(notificationText))
                 {
-                    Program.MainForm.niTray.Tag = result;
-                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", result, ToolTipIcon.Info);
+                    switch (taskSettings.GeneralSettings.PopUpNotification)
+                    {
+                        case PopUpNotificationType.BalloonTip:
+                            if (Program.MainForm.niTray.Visible)
+                            {
+                                Program.MainForm.niTray.Tag = notificationText;
+                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", notificationText, ToolTipIcon.Info);
+                            }
+                            break;
+                        case PopUpNotificationType.ToastNotification:
+                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                   taskSettings.AdvancedSettings.ToastWindowSize, filePath, "ShareX - Task completed\r\n" + notificationText, notificationText);
+                            break;
+                    }
                 }
 
                 if (taskSettings.GeneralSettings.PlaySoundAfterUpload)

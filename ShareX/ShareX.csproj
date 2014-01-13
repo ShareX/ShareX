@@ -335,7 +335,6 @@
     <None Include="Resources\gear.png" />
     <None Include="Resources\block.png" />
     <None Include="Resources\present.png" />
-    <None Include="..\ShareX Setup.cmd" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -423,6 +422,9 @@
     <None Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LICENSE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />

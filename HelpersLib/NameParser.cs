@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -109,6 +109,7 @@ namespace HelpersLib
         public int AutoIncrementNumber { get; set; } // %i
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
+        public int MaxTitleLength { get; set; }
         public DateTime CustomDate { get; set; }
 
         protected NameParser()
@@ -131,7 +132,12 @@ namespace HelpersLib
 
             if (WindowText != null)
             {
-                sb.Replace(ReplacementVariables.t.ToPrefixString(), WindowText.Replace(' ', '_'));
+                string windowText = WindowText.Replace(' ', '_');
+                if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
+                {
+                    windowText = windowText.Remove(MaxTitleLength);
+                }
+                sb.Replace(ReplacementVariables.t.ToPrefixString(), windowText);
             }
 
             string width = string.Empty, height = string.Empty;

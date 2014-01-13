@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -307,27 +307,11 @@ namespace ShareX
                                         SystemSounds.Exclamation.Play();
                                     }
 
-                                    string balloonTipText = result;
-
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
                                     {
-                                        balloonTipText = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
+                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
-
-                                    if (!string.IsNullOrEmpty(balloonTipText))
-                                    {
-                                        if (task.Info.TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload && Program.MainForm.niTray.Visible)
-                                        {
-                                            Program.MainForm.niTray.Tag = result;
-                                            Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", balloonTipText, ToolTipIcon.Info);
-                                        }
-
-                                        if (task.Info.TaskSettings.GeneralSettings.ShowToastWindowAfterTask)
-                                        {
-                                            NotificationForm.Show((int)(task.Info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
-                                                task.Info.TaskSettings.AdvancedSettings.ToastWindowSize, info.FilePath, "ShareX - Task completed\r\n" + balloonTipText, result);
-                                        }
-                                    }
+                                    TaskHelpers.ShowResultNotifications(result, info.TaskSettings, info.FilePath);
 
                                     if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)
                                     {

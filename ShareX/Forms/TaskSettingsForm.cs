@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -109,8 +109,9 @@ namespace ShareX
             cbShowAfterCaptureTasksForm.Checked = TaskSettings.GeneralSettings.ShowAfterCaptureTasksForm;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
-            cbTrayBalloonTipAfterUpload.Checked = TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload;
-            cbShowToastWindowAfterTask.Checked = TaskSettings.GeneralSettings.ShowToastWindowAfterTask;
+            cboPopUpNotification.Items.Clear();
+            cboPopUpNotification.Items.AddRange(Helpers.GetEnumDescriptions<PopUpNotificationType>());
+            cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
             cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
             // Image - Quality
@@ -418,14 +419,9 @@ namespace ShareX
             TaskSettings.GeneralSettings.ShowAfterUploadForm = chkShowAfterUploadForm.Checked;
         }
 
-        private void cbTrayBalloonTipAfterUpload_CheckedChanged(object sender, EventArgs e)
+        private void cboPopUpNotification_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.GeneralSettings.TrayBalloonTipAfterUpload = cbTrayBalloonTipAfterUpload.Checked;
-        }
-
-        private void cbShowToastWindowAfterTask_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.GeneralSettings.ShowToastWindowAfterTask = cbShowToastWindowAfterTask.Checked;
+            TaskSettings.GeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
         }
 
         private void cbHistorySave_CheckedChanged(object sender, EventArgs e)
@@ -744,7 +740,9 @@ namespace ShareX
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                WindowText = Text
+                WindowText = Text,
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
             lblNameFormatPatternPreviewActiveWindow.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
         }
@@ -759,7 +757,9 @@ namespace ShareX
             TaskSettings.UploadSettings.NameFormatPattern = txtNameFormatPattern.Text;
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber
+                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
             lblNameFormatPatternPreview.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPattern);
         }

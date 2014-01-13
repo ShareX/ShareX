@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -71,34 +71,51 @@ namespace UploadersLib
 
         private void atcImageShackAccountType_AccountTypeChanged(AccountType accountType)
         {
-            Config.ImageShackAccountType = accountType;
-        }
-
-        private void txtImageShackRegistrationCode_TextChanged(object sender, EventArgs e)
-        {
-            Config.ImageShackRegistrationCode = txtImageShackRegistrationCode.Text;
+            Config.ImageShackSettings.AccountType = accountType;
         }
 
         private void txtImageShackUsername_TextChanged(object sender, EventArgs e)
         {
-            Config.ImageShackUsername = txtImageShackUsername.Text;
+            Config.ImageShackSettings.Username = txtImageShackUsername.Text;
+        }
+
+        private void txtImageShackPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.ImageShackSettings.Password = txtImageShackPassword.Text;
+        }
+
+        private void btnImageShackLogin_Click(object sender, EventArgs e)
+        {
+            ImageShackUploader imageShackUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Config.ImageShackSettings);
+
+            try
+            {
+                if (imageShackUploader.GetAccessToken())
+                {
+                    MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbImageShackIsPublic_CheckedChanged(object sender, EventArgs e)
         {
-            Config.ImageShackShowImagesInPublic = cbImageShackIsPublic.Checked;
-        }
-
-        private void btnImageShackOpenRegistrationCode_Click(object sender, EventArgs e)
-        {
-            Helpers.LoadBrowserAsync("http://profile.imageshack.us/prefs/");
+            Config.ImageShackSettings.IsPublic = cbImageShackIsPublic.Checked;
         }
 
         private void btnImageShackOpenPublicProfile_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Config.ImageShackUsername))
+            if (!string.IsNullOrEmpty(Config.ImageShackSettings.Username))
             {
-                Helpers.LoadBrowserAsync("http://profile.imageshack.us/user/" + Config.ImageShackUsername);
+                Helpers.LoadBrowserAsync("https://imageshack.com/user/" + Config.ImageShackSettings.Username);
             }
             else
             {
@@ -108,7 +125,7 @@ namespace UploadersLib
 
         private void btnImageShackOpenMyImages_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("http://my.imageshack.us/v_images.php");
+            Helpers.LoadBrowserAsync("https://imageshack.com/my/images");
         }
 
         #endregion ImageShack
@@ -151,29 +168,18 @@ namespace UploadersLib
                     if (!string.IsNullOrEmpty(registrationCode))
                     {
                         Config.TinyPicRegistrationCode = registrationCode;
-                        txtTinyPicRegistrationCode.Text = registrationCode;
+                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        private void cbTinyPicRememberUsernamePassword_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.TinyPicRememberUserPass = cbTinyPicRememberUsernamePassword.Checked;
-
-            if (Config.TinyPicRememberUserPass)
-            {
-                Config.TinyPicUsername = txtTinyPicUsername.Text;
-                Config.TinyPicPassword = txtTinyPicPassword.Text;
-            }
-            else
-            {
-                Config.TinyPicUsername = string.Empty;
-                Config.TinyPicPassword = string.Empty;
             }
         }
 

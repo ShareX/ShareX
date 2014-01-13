@@ -8,7 +8,7 @@
 
 [Setup]
 AllowNoIcons=true
-AppCopyright=Copyright (C) 2008-2013 {#MyAppPublisher}
+AppCopyright=Copyright (C) 2008-2014 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex=Global\{#MyAppId}
 AppName={#MyAppName}
@@ -58,7 +58,7 @@ Name: "CreateStartupIcon"; Description: "Launch {#MyAppName} automatically at Wi
 Source: "ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
-Source: "LICENSE.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
 ;Source: "ShareX\bin\Release\*.pdb"; DestDir: {app}; Flags: ignoreversion
 
 [Icons]

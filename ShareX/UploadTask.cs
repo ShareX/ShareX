@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -552,15 +552,12 @@ namespace ShareX
             switch (Info.TaskSettings.ImageDestination)
             {
                 case ImageDestination.ImageShack:
-                    imageUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Program.UploadersConfig.ImageShackAccountType,
-                        Program.UploadersConfig.ImageShackRegistrationCode)
-                    {
-                        IsPublic = Program.UploadersConfig.ImageShackShowImagesInPublic
-                    };
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
+                    imageUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
                     break;
                 case ImageDestination.TinyPic:
-                    imageUploader = new TinyPicUploader(ApiKeys.TinyPicID, ApiKeys.TinyPicKey, Program.UploadersConfig.TinyPicAccountType,
-                        Program.UploadersConfig.TinyPicRegistrationCode);
+                    imageUploader = new TinyPicUploader(ApiKeys.TinyPicID, ApiKeys.TinyPicKey, Program.UploadersConfig.TinyPicAccountType, Program.UploadersConfig.TinyPicRegistrationCode);
                     break;
                 case ImageDestination.Imgur:
                     if (Program.UploadersConfig.ImgurOAuth2Info == null)

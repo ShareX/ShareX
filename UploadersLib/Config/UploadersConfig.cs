@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,11 +40,7 @@ namespace UploadersLib
         #region Image uploaders
 
         // ImageShack
-
-        public AccountType ImageShackAccountType = AccountType.Anonymous;
-        public string ImageShackRegistrationCode = string.Empty;
-        public string ImageShackUsername = string.Empty;
-        public bool ImageShackShowImagesInPublic = false;
+        public ImageShackOptions ImageShackSettings = new ImageShackOptions();
 
         // TinyPic
 
@@ -265,7 +261,7 @@ namespace UploadersLib
             switch (destination)
             {
                 case ImageDestination.ImageShack:
-                    return ImageShackAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(ImageShackRegistrationCode);
+                    return ImageShackSettings != null && (ImageShackSettings.AccountType == AccountType.Anonymous || !string.IsNullOrEmpty(ImageShackSettings.Auth_token));
                 case ImageDestination.TinyPic:
                     return TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(TinyPicRegistrationCode);
                 case ImageDestination.Imgur:

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2008-2013 ShareX Developers
+    Copyright (C) 2008-2014 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -138,7 +138,7 @@ namespace ShareX
         ActiveMonitor,
         [Description("Capture rectangle region")]
         RectangleRegion,
-        [Description("Capture rectangle region with window")]
+        [Description("Capture rectangle region or window")]
         WindowRectangle,
         [Description("Capture rounded rectangle region")]
         RoundedRectangleRegion,
@@ -173,5 +173,15 @@ namespace ShareX
         Registered,
         Failed,
         NotConfigured
+    }
+
+    public enum PopUpNotificationType
+    {
+        [Description("Show nothing after task is completed")]
+        None,
+        [Description("Show tray balloon tip after task is completed")]
+        BalloonTip,
+        [Description("Show toast notification with preview after task is completed")]
+        ToastNotification
     }
 }
