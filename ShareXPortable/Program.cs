@@ -77,9 +77,7 @@ namespace ShareXPortable
             Console.WriteLine("Created PersonalPath.cfg file.");
 
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
-            string version = string.Format("{0}.{1}", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart);
-            if (versionInfo.ProductBuildPart > 0) version += "." + versionInfo.ProductBuildPart;
-            string zipFilename = string.Format("ShareX-{0}-Portable.zip", version);
+            string zipFilename = string.Format("ShareX-{0}.{1}.{2}-Portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
             string zipPath = Path.Combine(outputDir, zipFilename);
 
             if (File.Exists(zipPath))

@@ -322,6 +322,12 @@ namespace ShareX
         [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
         public string TextFormat { get; set; }
 
+        [Category("Name pattern"), DefaultValue(100), Description("Maximum name pattern length for file name.")]
+        public int NamePatternMaxLength { get; set; }
+
+        [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
+        public int NamePatternMaxTitleLength { get; set; }
+
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();

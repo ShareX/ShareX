@@ -103,7 +103,8 @@ namespace ShareX
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = 100
+                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
 
             string filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
@@ -122,10 +123,13 @@ namespace ShareX
         {
             string filename;
 
-            NameParser nameParser = new NameParser(NameParserType.FileName);
-            nameParser.MaxNameLength = 100;
-            nameParser.Picture = image;
-            nameParser.AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber;
+            NameParser nameParser = new NameParser(NameParserType.FileName)
+            {
+                Picture = image,
+                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
+            };
 
             ImageTag imageTag = image.Tag as ImageTag;
 

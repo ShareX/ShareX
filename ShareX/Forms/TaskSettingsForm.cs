@@ -740,7 +740,9 @@ namespace ShareX
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                WindowText = Text
+                WindowText = Text,
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
             lblNameFormatPatternPreviewActiveWindow.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
         }
@@ -755,7 +757,9 @@ namespace ShareX
             TaskSettings.UploadSettings.NameFormatPattern = txtNameFormatPattern.Text;
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber
+                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
             lblNameFormatPatternPreview.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPattern);
         }

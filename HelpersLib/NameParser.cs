@@ -109,6 +109,7 @@ namespace HelpersLib
         public int AutoIncrementNumber { get; set; } // %i
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
+        public int MaxTitleLength { get; set; }
         public DateTime CustomDate { get; set; }
 
         protected NameParser()
@@ -131,7 +132,12 @@ namespace HelpersLib
 
             if (WindowText != null)
             {
-                sb.Replace(ReplacementVariables.t.ToPrefixString(), WindowText.Replace(' ', '_'));
+                string windowText = WindowText.Replace(' ', '_');
+                if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
+                {
+                    windowText = windowText.Remove(MaxTitleLength);
+                }
+                sb.Replace(ReplacementVariables.t.ToPrefixString(), windowText);
             }
 
             string width = string.Empty, height = string.Empty;
