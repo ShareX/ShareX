@@ -29,6 +29,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -241,12 +242,10 @@ namespace ShareX
 
         private static void Run(string[] args)
         {
-            Mutex mutex = null;
+            string appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(GuidAttribute), false).GetValue(0)).Value.ToString();
 
-            try
+            using (Mutex mutex = new Mutex(false, appGuid)) // Required for installer
             {
-                mutex = new Mutex(false, @"Global\82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"); // Required for installer
-
                 IsSilentRun = CLIHelper.CheckArgs(args, "silent", "s");
                 IsSandbox = CLIHelper.CheckArgs(args, "sandbox");
 
@@ -299,13 +298,6 @@ namespace ShareX
 
                 DebugHelper.WriteLine("ShareX closing");
                 DebugHelper.Logger.SaveLog(LogFilePath);
-            }
-            finally
-            {
-                if (mutex != null)
-                {
-                    mutex.Close();
-                }
             }
         }
 
