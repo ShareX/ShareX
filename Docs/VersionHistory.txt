@@ -1,11 +1,11 @@
-﻿ShareX 8.5 - 2014-01-25
+﻿ShareX 8.5.0 - 2014-01-13
  
- * Updated ImageShack uploader to support their latest API
- * Added MediaCrush image uploader support (thanks Drew DeVault)
- * Added option for toast notifications 
- * Added bit.ly user account support
- * Added UI support to modify personal path
- * Added new tool to test the monitor for backlight bleeding and dead pixels
+* Updated ImageShack uploader to support their latest API
+* Added MediaCrush image uploader support (thanks @SirCmpwn)
+* Added option for toast notifications 
+* Added bit.ly user account support
+* Added UI support to modify personal path
+* Added new tool to test the monitor for backlight bleeding and dead pixels
 
 ShareX 8.4.1 - 2013-12-05
 
