@@ -54,7 +54,7 @@ namespace ShareX
         private int textPadding = 5;
         private Size textRenderSize;
 
-        public NotificationForm(int duration, Size size, Image img, string text, string url)
+        public NotificationForm(int duration, ContentAlignment placement, Size size, Image img, string text, string url)
         {
             InitializeComponent();
 
@@ -77,7 +77,8 @@ namespace ShareX
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Size = size;
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
+            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, Size);
+            Location = new Point(Screen.PrimaryScreen.WorkingArea.X + position.X, Screen.PrimaryScreen.WorkingArea.Y + position.Y);
 
             tDuration.Interval = duration;
             tDuration.Start();
@@ -147,7 +148,7 @@ namespace ShareX
             g.DrawRectangleProper(Pens.Black, rect);
         }
 
-        public static void Show(int duration, Size size, string imagePath, string text, string url)
+        public static void Show(int duration, ContentAlignment placement, Size size, string imagePath, string text, string url)
         {
             if (duration > 0 && !size.IsEmpty)
             {
@@ -155,7 +156,7 @@ namespace ShareX
 
                 if (img != null || !string.IsNullOrEmpty(text))
                 {
-                    NotificationForm form = new NotificationForm(duration, size, img, text, url);
+                    NotificationForm form = new NotificationForm(duration, placement, size, img, text, url);
                     NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
                     NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
                         SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
@@ -165,7 +166,7 @@ namespace ShareX
 
         public static void Show(string imagePath, string text, string url)
         {
-            Show(4000, new Size(400, 300), imagePath, text, url);
+            Show(4000, ContentAlignment.BottomRight, new Size(400, 300), imagePath, text, url);
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)

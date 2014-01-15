@@ -781,14 +781,14 @@ namespace HelpersLib
             return result.ToString();
         }
 
-        public static Point GetPosition(ContentAlignment alignment, Point offset, Size sourceImage, Size img)
+        public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
         {
-            int midX = sourceImage.Width / 2 - img.Width / 2;
-            int midY = sourceImage.Height / 2 - img.Height / 2;
-            int right = sourceImage.Width - img.Width;
-            int bottom = sourceImage.Height - img.Height;
+            int midX = backgroundSize.Width / 2 - objectSize.Width / 2;
+            int midY = backgroundSize.Height / 2 - objectSize.Height / 2;
+            int right = backgroundSize.Width - objectSize.Width;
+            int bottom = backgroundSize.Height - objectSize.Height;
 
-            switch (alignment)
+            switch (placement)
             {
                 default:
                 case ContentAlignment.TopLeft:

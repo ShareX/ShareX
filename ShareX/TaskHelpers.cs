@@ -168,7 +168,7 @@ namespace ShareX
                             }
                             break;
                         case PopUpNotificationType.ToastNotification:
-                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000), taskSettings.AdvancedSettings.ToastWindowPlacement,
                    taskSettings.AdvancedSettings.ToastWindowSize, filePath, "ShareX - Task completed\r\n" + notificationText, notificationText);
                             break;
                     }
