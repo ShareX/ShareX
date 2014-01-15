@@ -52,11 +52,14 @@ namespace ShareX
         private int closingAnimationInterval = 50;
         private Font textFont;
         private int textPadding = 5;
+        private int urlPadding = 3;
         private Size textRenderSize;
 
         public NotificationForm(int duration, ContentAlignment placement, Size size, Image img, string text, string url)
         {
             InitializeComponent();
+
+            textFont = new Font("Arial", 10);
 
             if (img != null)
             {
@@ -67,7 +70,6 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(text))
             {
-                textFont = new Font("Arial", 10);
                 textRenderSize = Helpers.MeasureText(text, textFont, size.Width - textPadding * 2);
                 size = new Size(textRenderSize.Width + textPadding * 2, textRenderSize.Height + textPadding * 2 + 2);
                 ToastText = text;
@@ -132,6 +134,18 @@ namespace ShareX
             if (ToastImage != null)
             {
                 g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
+
+                if (mouseInside && !string.IsNullOrEmpty(ToastURL))
+                {
+                    Rectangle textRect = new Rectangle(0, 0, rect.Width, 40);
+
+                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+                    {
+                        g.FillRectangle(brush, textRect);
+                    }
+
+                    g.DrawString(ToastURL, textFont, Brushes.Black, textRect.RectangleOffset(-urlPadding));
+                }
             }
             else if (!string.IsNullOrEmpty(ToastText))
             {
@@ -184,6 +198,7 @@ namespace ShareX
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
         {
             mouseInside = true;
+            Refresh();
 
             tOpacity.Stop();
             Opacity = 1;
@@ -192,6 +207,7 @@ namespace ShareX
         private void NotificationForm_MouseLeave(object sender, EventArgs e)
         {
             mouseInside = false;
+            Refresh();
 
             if (durationEnd)
             {
