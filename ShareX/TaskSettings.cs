@@ -301,10 +301,13 @@ namespace ShareX
         [Category("After upload"), DefaultValue(""), Description("Balloon tip content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string BalloonTipContentFormat { get; set; }
 
-        [Category("After upload"), DefaultValue(4f), Description("How much toast window will stay on screen.")]
+        [Category("After upload"), DefaultValue(4f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
         public float ToastWindowDuration { get; set; }
 
-        [Category("After upload"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast window size.")]
+        [Category("After upload"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
+        public ContentAlignment ToastWindowPlacement { get; set; }
+
+        [Category("After upload"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
         public Size ToastWindowSize { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
