@@ -52,11 +52,14 @@ namespace ShareX
         private int closingAnimationInterval = 50;
         private Font textFont;
         private int textPadding = 5;
+        private int urlPadding = 3;
         private Size textRenderSize;
 
-        public NotificationForm(int duration, Size size, Image img, string text, string url)
+        public NotificationForm(int duration, ContentAlignment placement, Size size, Image img, string text, string url)
         {
             InitializeComponent();
+
+            textFont = new Font("Arial", 10);
 
             if (img != null)
             {
@@ -67,7 +70,6 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(text))
             {
-                textFont = new Font("Arial", 10);
                 textRenderSize = Helpers.MeasureText(text, textFont, size.Width - textPadding * 2);
                 size = new Size(textRenderSize.Width + textPadding * 2, textRenderSize.Height + textPadding * 2 + 2);
                 ToastText = text;
@@ -77,7 +79,8 @@ namespace ShareX
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Size = size;
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - Width - windowOffset, Screen.PrimaryScreen.WorkingArea.Bottom - Height - windowOffset);
+            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, Size);
+            Location = new Point(Screen.PrimaryScreen.WorkingArea.X + position.X, Screen.PrimaryScreen.WorkingArea.Y + position.Y);
 
             tDuration.Interval = duration;
             tDuration.Start();
@@ -131,6 +134,18 @@ namespace ShareX
             if (ToastImage != null)
             {
                 g.DrawImage(ToastImage, 1, 1, ToastImage.Width, ToastImage.Height);
+
+                if (mouseInside && !string.IsNullOrEmpty(ToastURL))
+                {
+                    Rectangle textRect = new Rectangle(0, 0, rect.Width, 40);
+
+                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+                    {
+                        g.FillRectangle(brush, textRect);
+                    }
+
+                    g.DrawString(ToastURL, textFont, Brushes.Black, textRect.RectangleOffset(-urlPadding));
+                }
             }
             else if (!string.IsNullOrEmpty(ToastText))
             {
@@ -147,7 +162,7 @@ namespace ShareX
             g.DrawRectangleProper(Pens.Black, rect);
         }
 
-        public static void Show(int duration, Size size, string imagePath, string text, string url)
+        public static void Show(int duration, ContentAlignment placement, Size size, string imagePath, string text, string url)
         {
             if (duration > 0 && !size.IsEmpty)
             {
@@ -155,7 +170,7 @@ namespace ShareX
 
                 if (img != null || !string.IsNullOrEmpty(text))
                 {
-                    NotificationForm form = new NotificationForm(duration, size, img, text, url);
+                    NotificationForm form = new NotificationForm(duration, placement, size, img, text, url);
                     NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
                     NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
                         SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
@@ -165,7 +180,7 @@ namespace ShareX
 
         public static void Show(string imagePath, string text, string url)
         {
-            Show(4000, new Size(400, 300), imagePath, text, url);
+            Show(4000, ContentAlignment.BottomRight, new Size(400, 300), imagePath, text, url);
         }
 
         private void NotificationForm_MouseClick(object sender, MouseEventArgs e)
@@ -183,6 +198,7 @@ namespace ShareX
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
         {
             mouseInside = true;
+            Refresh();
 
             tOpacity.Stop();
             Opacity = 1;
@@ -191,6 +207,7 @@ namespace ShareX
         private void NotificationForm_MouseLeave(object sender, EventArgs e)
         {
             mouseInside = false;
+            Refresh();
 
             if (durationEnd)
             {

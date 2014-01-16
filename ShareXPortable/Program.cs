@@ -39,7 +39,7 @@ namespace ShareXPortable
             string parentDir = @"..\..\..\";
             string releaseDir = Path.Combine(parentDir, @"ShareX\bin\Release");
             string outputDir = Path.Combine(parentDir, "Output");
-            string portableDir = Path.Combine(outputDir, "Portable");
+            string portableDir = Path.Combine(outputDir, "ShareX-portable");
 
             List<string> files = new List<string>();
 
@@ -76,19 +76,26 @@ namespace ShareXPortable
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
             Console.WriteLine("Created PersonalPath.cfg file.");
 
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
-            string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
-            string zipPath = Path.Combine(outputDir, zipFilename);
+            //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
+            //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
+            string zipPath = Path.Combine(outputDir, "ShareX-portable.zip");
 
             if (File.Exists(zipPath))
             {
                 File.Delete(zipPath);
+                Console.WriteLine("File.Delete: \"{0}\"", zipPath);
             }
 
             Zip(portableDir + "\\*.*", zipPath);
+            Console.WriteLine("Zip: \"{0}\"", zipPath);
+
+            if (Directory.Exists(portableDir))
+            {
+                Directory.Delete(portableDir, true);
+                Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
+            }
 
             Process.Start("explorer.exe", outputDir);
-
             Console.WriteLine("Done.");
             //Console.Read();
         }
