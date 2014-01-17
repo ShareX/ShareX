@@ -164,7 +164,7 @@ namespace ShareX
 
         public static void Show(int duration, ContentAlignment placement, Size size, string imagePath, string text, string url)
         {
-            if (duration > 0 && !size.IsEmpty)
+            if (duration > 0 && size.Width > 0 && size.Height > 0)
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
 

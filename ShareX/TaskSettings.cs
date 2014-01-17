@@ -28,6 +28,7 @@ using ImageEffectsLib;
 using IndexerLib;
 using Newtonsoft.Json;
 using ScreenCaptureLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -301,14 +302,38 @@ namespace ShareX
         [Category("After upload"), DefaultValue(""), Description("Balloon tip content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string BalloonTipContentFormat { get; set; }
 
+        private float toastWindowDuration;
+
         [Category("After upload"), DefaultValue(4f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
-        public float ToastWindowDuration { get; set; }
+        public float ToastWindowDuration
+        {
+            get
+            {
+                return toastWindowDuration;
+            }
+            set
+            {
+                toastWindowDuration = Math.Max(value, 1f);
+            }
+        }
 
         [Category("After upload"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
         public ContentAlignment ToastWindowPlacement { get; set; }
 
+        private Size toastWindowSize;
+
         [Category("After upload"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
-        public Size ToastWindowSize { get; set; }
+        public Size ToastWindowSize
+        {
+            get
+            {
+                return toastWindowSize;
+            }
+            set
+            {
+                toastWindowSize = new Size(Math.Max(value.Width, 100), Math.Max(value.Height, 100));
+            }
+        }
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
