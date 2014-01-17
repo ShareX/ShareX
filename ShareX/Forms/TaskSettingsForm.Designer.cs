@@ -155,6 +155,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.lblAfterTaskNotification = new System.Windows.Forms.Label();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.tpGeneral.SuspendLayout();
@@ -454,6 +455,7 @@
             // panelGeneral
             // 
             this.panelGeneral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGeneral.Controls.Add(this.lblAfterTaskNotification);
             this.panelGeneral.Controls.Add(this.cboPopUpNotification);
             this.panelGeneral.Controls.Add(this.chkShowAfterUploadForm);
             this.panelGeneral.Controls.Add(this.cbShowAfterCaptureTasksForm);
@@ -470,9 +472,9 @@
             // 
             this.cboPopUpNotification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPopUpNotification.FormattingEnabled = true;
-            this.cboPopUpNotification.Location = new System.Drawing.Point(8, 80);
+            this.cboPopUpNotification.Location = new System.Drawing.Point(128, 80);
             this.cboPopUpNotification.Name = "cboPopUpNotification";
-            this.cboPopUpNotification.Size = new System.Drawing.Size(304, 21);
+            this.cboPopUpNotification.Size = new System.Drawing.Size(224, 21);
             this.cboPopUpNotification.TabIndex = 20;
             this.cboPopUpNotification.SelectedIndexChanged += new System.EventHandler(this.cboPopUpNotification_SelectedIndexChanged);
             // 
@@ -1632,6 +1634,15 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // lblAfterTaskNotification
+            // 
+            this.lblAfterTaskNotification.AutoSize = true;
+            this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 84);
+            this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
+            this.lblAfterTaskNotification.Size = new System.Drawing.Size(117, 13);
+            this.lblAfterTaskNotification.TabIndex = 21;
+            this.lblAfterTaskNotification.Text = "After task is completed:";
+            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1827,6 +1838,7 @@
         private System.Windows.Forms.CheckBox chkOverrideFTP;
         private System.Windows.Forms.ComboBox cboFTPaccounts;
         private System.Windows.Forms.ComboBox cboPopUpNotification;
+        private System.Windows.Forms.Label lblAfterTaskNotification;
 
 
 
