@@ -425,6 +425,8 @@
     <None Include="LICENSE.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\checkbox_uncheck.png" />
+    <None Include="Resources\checkbox_check.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />
