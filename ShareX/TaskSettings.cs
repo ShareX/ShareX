@@ -302,9 +302,12 @@ namespace ShareX
         [Category("After upload"), DefaultValue(""), Description("Balloon tip content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string BalloonTipContentFormat { get; set; }
 
+        [Category("After upload / Automatic URL Shortener"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
+        public int AutoShortenURLLength { get; set; }
+
         private float toastWindowDuration;
 
-        [Category("After upload"), DefaultValue(4f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
+        [Category("After upload / Notifications"), DefaultValue(4f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
         public float ToastWindowDuration
         {
             get
@@ -317,12 +320,12 @@ namespace ShareX
             }
         }
 
-        [Category("After upload"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
+        [Category("After upload / Notifications"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
         public ContentAlignment ToastWindowPlacement { get; set; }
 
         private Size toastWindowSize;
 
-        [Category("After upload"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
+        [Category("After upload / Notifications"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
         public Size ToastWindowSize
         {
             get
