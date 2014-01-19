@@ -177,11 +177,11 @@ namespace ShareX
 
     public enum PopUpNotificationType
     {
-        [Description("Show nothing after task is completed")]
+        [Description("Show nothing")]
         None,
-        [Description("Show tray balloon tip after task is completed")]
+        [Description("Show tray balloon tip")]
         BalloonTip,
-        [Description("Show toast notification with preview after task is completed")]
+        [Description("Show toast notification with preview")]
         ToastNotification
     }
 }

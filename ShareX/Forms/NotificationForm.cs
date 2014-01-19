@@ -139,12 +139,12 @@ namespace ShareX
                 {
                     Rectangle textRect = new Rectangle(0, 0, rect.Width, 40);
 
-                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, 255, 255, 255)))
+                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, 0, 0, 0)))
                     {
                         g.FillRectangle(brush, textRect);
                     }
 
-                    g.DrawString(ToastURL, textFont, Brushes.Black, textRect.RectangleOffset(-urlPadding));
+                    g.DrawString(ToastURL, textFont, Brushes.White, textRect.RectangleOffset(-urlPadding));
                 }
             }
             else if (!string.IsNullOrEmpty(ToastText))
@@ -164,7 +164,7 @@ namespace ShareX
 
         public static void Show(int duration, ContentAlignment placement, Size size, string imagePath, string text, string url)
         {
-            if (duration > 0 && !size.IsEmpty)
+            if (duration > 0 && size.Width > 0 && size.Height > 0)
             {
                 Image img = ImageHelpers.LoadImage(imagePath);
 

@@ -40,6 +40,12 @@ namespace ShareX
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+
+            ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
+            imageList.Images.Add(Resources.checkbox_uncheck);
+            imageList.Images.Add(Resources.checkbox_check);
+            lvAfterCaptureTasks.SmallImageList = imageList;
+
             AfterCaptureTasks = afterCaptureTasks;
             AddAfterCaptureItems(AfterCaptureTasks);
             pbImage.LoadImage(img);
@@ -52,10 +58,20 @@ namespace ShareX
             for (int i = 1; i < enums.Length; i++)
             {
                 ListViewItem lvi = new ListViewItem(enums[i].GetDescription());
-                lvi.Checked = afterCaptureTasks.HasFlag(1 << (i - 1));
+                CheckItem(lvi, afterCaptureTasks.HasFlag(1 << (i - 1)));
                 lvi.Tag = enums[i];
                 lvAfterCaptureTasks.Items.Add(lvi);
             }
+        }
+
+        private void CheckItem(ListViewItem lvi, bool check)
+        {
+            lvi.ImageIndex = check ? 1 : 0;
+        }
+
+        private bool IsChecked(ListViewItem lvi)
+        {
+            return lvi.ImageIndex == 1;
         }
 
         private AfterCaptureTasks GetAfterCaptureTasks()
@@ -66,7 +82,7 @@ namespace ShareX
             {
                 ListViewItem lvi = lvAfterCaptureTasks.Items[i];
 
-                if (lvi.Checked)
+                if (IsChecked(lvi))
                 {
                     afterCaptureTasks = afterCaptureTasks.Add((AfterCaptureTasks)(1 << i));
                 }
@@ -82,15 +98,20 @@ namespace ShareX
             Close();
         }
 
+        private void lvAfterCaptureTasks_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            e.Item.Selected = false;
+        }
+
         private void lvAfterCaptureTasks_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
                 ListViewItem lvi = lvAfterCaptureTasks.GetItemAt(e.X, e.Y);
 
                 if (lvi != null)
                 {
-                    lvi.Checked = !lvi.Checked;
+                    CheckItem(lvi, !IsChecked(lvi));
                 }
             }
         }

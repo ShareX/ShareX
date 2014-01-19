@@ -36,8 +36,7 @@ namespace UploadersLib.HelperClasses
 
         public ImageListManager(ListView listView)
         {
-            il = new ImageList();
-            il.ColorDepth = ColorDepth.Depth32Bit;
+            il = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
             listView.SmallImageList = il;
         }
 
