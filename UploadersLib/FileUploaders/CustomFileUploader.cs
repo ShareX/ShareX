@@ -44,7 +44,7 @@ namespace UploadersLib.FileUploaders
             if (string.IsNullOrEmpty(customUploader.FileFormName)) throw new Exception("'File form name' must be not empty when using custom file uploader.");
             if (string.IsNullOrEmpty(customUploader.RequestURL)) throw new Exception("'Request URL' must be not empty.");
 
-            UploadResult result = UploadData(stream, customUploader.RequestURL, fileName, customUploader.FileFormName, customUploader.ParseArguments());
+            UploadResult result = UploadData(stream, customUploader.RequestURL, fileName, customUploader.FileFormName, customUploader.ParseArguments(), responseType: customUploader.ResponseType);
 
             if (result.IsSuccess)
             {

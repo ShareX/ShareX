@@ -1406,6 +1406,8 @@ namespace UploadersLib
         {
             UploadResult result = null;
 
+            txtCustomUploaderLog.ResetText();
+
             await TaskEx.Run(() =>
             {
                 try

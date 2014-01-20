@@ -157,7 +157,9 @@ namespace UploadersLib
         [Description("Response text")]
         Text,
         [Description("Redirection URL")]
-        RedirectionURL
+        RedirectionURL,
+        [Description("Response headers")]
+        Headers
     }
 
     public enum ProxyMethod

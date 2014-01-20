@@ -64,7 +64,7 @@ namespace UploadersLib.TextUploaders
                     byte[] byteArray = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(byteArray))
                     {
-                        result = UploadData(stream, customUploader.RequestURL, fileName, customUploader.FileFormName, args);
+                        result = UploadData(stream, customUploader.RequestURL, fileName, customUploader.FileFormName, args, responseType: customUploader.ResponseType);
                     }
                 }
             }
