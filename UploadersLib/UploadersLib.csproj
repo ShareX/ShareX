@@ -189,7 +189,7 @@
     <Compile Include="GUI\UploadersConfigForm.Designer.cs">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Config\UploadersConfig.cs" />
+    <Compile Include="UploadersConfig.cs" />
     <Compile Include="GUI\UserPassBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,7 +202,7 @@
     <Compile Include="GUI\AccountsControl.Designer.cs">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Config\GoogleTranslatorConfig.cs" />
+    <Compile Include="OtherServices\GoogleTranslatorConfig.cs" />
     <Compile Include="GUI\DropboxFilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,32 +373,31 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Favicons\Yourls.ico" />
-    <None Include="Resources\gist.ico" />
+    <None Include="Favicons\Yourls.ico" />
     <None Include="packages.config" />
     <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
-    <Content Include="Favicons\Dropbox.ico" />
-    <Content Include="Favicons\Flickr.ico" />
+    <None Include="Favicons\Dropbox.ico" />
+    <None Include="Favicons\Flickr.ico" />
     <None Include="Favicons\Gett.ico" />
     <None Include="Favicons\Gist.ico" />
-    <Content Include="Favicons\Google.ico" />
-    <Content Include="Favicons\GoogleDrive.ico" />
-    <Content Include="Favicons\ImageShack.ico" />
-    <Content Include="Favicons\Imgur.ico" />
+    <None Include="Favicons\Google.ico" />
+    <None Include="Favicons\GoogleDrive.ico" />
+    <None Include="Favicons\ImageShack.ico" />
+    <None Include="Favicons\Imgur.ico" />
     <None Include="Favicons\Minus.ico" />
     <None Include="Favicons\Localhostr.ico" />
-    <Content Include="Favicons\jira.png" />
-    <Content Include="Favicons\Pastebin.ico" />
-    <Content Include="Favicons\Photobucket.ico" />
-    <Content Include="Favicons\RapidShare.ico" />
-    <Content Include="Favicons\SendSpace.ico" />
-    <Content Include="Favicons\TinyPic.ico" />
-    <Content Include="Favicons\TwitPic.ico" />
-    <Content Include="Favicons\TwitSnaps.ico" />
-    <Content Include="Favicons\Twitter.ico" />
-    <Content Include="Favicons\YFrog.ico" />
+    <None Include="Favicons\jira.png" />
+    <None Include="Favicons\Pastebin.ico" />
+    <None Include="Favicons\Photobucket.ico" />
+    <None Include="Favicons\RapidShare.ico" />
+    <None Include="Favicons\SendSpace.ico" />
+    <None Include="Favicons\TinyPic.ico" />
+    <None Include="Favicons\TwitPic.ico" />
+    <None Include="Favicons\TwitSnaps.ico" />
+    <None Include="Favicons\Twitter.ico" />
+    <None Include="Favicons\YFrog.ico" />
     <None Include="Resources\server-network.png" />
     <None Include="Resources\mail.png" />
     <None Include="Resources\globe-network.png" />

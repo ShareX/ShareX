@@ -994,7 +994,7 @@ namespace UploadersLib
 
         private void txtYourlsSignature_TextChanged(object sender, EventArgs e)
         {
-            Config.YourlsSignature = txtYourlsSignature.Text;
+            Config.YourlsSignature = txtYourlsSignature.Text.Trim();
             txtYourlsUsername.Enabled = txtYourlsPassword.Enabled = string.IsNullOrEmpty(Config.YourlsSignature);
         }
 

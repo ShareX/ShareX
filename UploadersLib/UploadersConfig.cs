@@ -347,6 +347,8 @@ namespace UploadersLib
                     return GoogleURLShortenerAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(GoogleURLShortenerOAuth2Info);
                 case UrlShortenerType.BITLY:
                     return OAuth2Info.CheckOAuth(BitlyOAuth2Info);
+                case UrlShortenerType.YOURLS:
+                    return !string.IsNullOrEmpty(YourlsAPIURL) && (!string.IsNullOrEmpty(YourlsSignature) || (!string.IsNullOrEmpty(YourlsUsername) && !string.IsNullOrEmpty(YourlsPassword)));
                 case UrlShortenerType.CustomURLShortener:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
                 default:
