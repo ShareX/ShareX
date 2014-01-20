@@ -129,6 +129,8 @@ namespace UploadersLib
         TINYURL,
         [Description("turl.ca")]
         TURL,
+        [Description("yourls.org")]
+        YOURLS,
         [Description("Custom URL shortener")]
         CustomURLShortener
     }

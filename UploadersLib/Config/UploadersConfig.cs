@@ -200,6 +200,13 @@ namespace UploadersLib
         public AccountType GoogleURLShortenerAccountType = AccountType.Anonymous;
         public OAuth2Info GoogleURLShortenerOAuth2Info = null;
 
+        // yourls.org
+
+        public string YourlsAPIURL = "http://yoursite.com/yourls-api.php";
+        public string YourlsSignature = string.Empty;
+        public string YourlsUsername = string.Empty;
+        public string YourlsPassword = string.Empty;
+
         #endregion URL shorteners
 
         #region Social networking services

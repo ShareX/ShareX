@@ -985,6 +985,31 @@ namespace UploadersLib
 
         #endregion bit.ly
 
+        #region yourls.org
+
+        private void txtYourlsAPIURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.YourlsAPIURL = txtYourlsAPIURL.Text;
+        }
+
+        private void txtYourlsSignature_TextChanged(object sender, EventArgs e)
+        {
+            Config.YourlsSignature = txtYourlsSignature.Text;
+            txtYourlsUsername.Enabled = txtYourlsPassword.Enabled = string.IsNullOrEmpty(Config.YourlsSignature);
+        }
+
+        private void txtYourlsUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.YourlsUsername = txtYourlsUsername.Text;
+        }
+
+        private void txtYourlsPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.YourlsPassword = txtYourlsPassword.Text;
+        }
+
+        #endregion yourls.org
+
         #endregion URL Shorteners
 
         #region Other Services

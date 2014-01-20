@@ -857,6 +857,15 @@ namespace ShareX
                 case UrlShortenerType.TURL:
                     urlShortener = new TurlURLShortener();
                     break;
+                case UrlShortenerType.YOURLS:
+                    urlShortener = new YourlsURLShortener
+                    {
+                        APIURL = Program.UploadersConfig.YourlsAPIURL,
+                        Signature = Program.UploadersConfig.YourlsSignature,
+                        Username = Program.UploadersConfig.YourlsUsername,
+                        Password = Program.UploadersConfig.YourlsPassword
+                    };
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomURLShortenerSelected))
                     {

@@ -82,6 +82,7 @@ namespace UploadersLib
             urlShortenersImageList.ColorDepth = ColorDepth.Depth32Bit;
             urlShortenersImageList.Images.Add("Google", Resources.Google);
             urlShortenersImageList.Images.Add("Bitly", Resources.Bitly);
+            urlShortenersImageList.Images.Add("Yourls", Resources.Yourls);
             tcURLShorteners.ImageList = urlShortenersImageList;
 
             ImageList socialNetworkingServicesImageList = new ImageList();
@@ -114,6 +115,7 @@ namespace UploadersLib
             tpPastebin.ImageKey = "Pastebin";
             tpGoogleURLShortener.ImageKey = "Google";
             tpBitly.ImageKey = "Bitly";
+            tpYourls.ImageKey = "Yourls";
             tpTwitter.ImageKey = "Twitter";
             tpMega.ImageKey = "Mega";
             tpGist.ImageKey = "Gist";
@@ -403,6 +405,14 @@ namespace UploadersLib
                 oauth2Bitly.Status = "Login successful.";
                 oauth2Bitly.LoginStatus = true;
             }
+
+            // yourls.org
+
+            txtYourlsAPIURL.Text = Config.YourlsAPIURL;
+            txtYourlsSignature.Text = Config.YourlsSignature;
+            txtYourlsUsername.Enabled = txtYourlsPassword.Enabled = string.IsNullOrEmpty(Config.YourlsSignature);
+            txtYourlsUsername.Text = Config.YourlsUsername;
+            txtYourlsPassword.Text = Config.YourlsPassword;
 
             #endregion URL Shorteners
 

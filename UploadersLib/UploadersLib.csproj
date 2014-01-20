@@ -301,6 +301,7 @@
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
     <Compile Include="ImageUploaders\MediaCrushUploader.cs" />
+    <Compile Include="URLShorteners\YourlsURLShortener.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ApiKeys\ApiKeysUI.resx">
@@ -372,6 +373,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\Yourls.ico" />
     <None Include="Resources\gist.ico" />
     <None Include="packages.config" />
     <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
