@@ -74,14 +74,15 @@ namespace HelpersLib
 
                         if (latestRelease.assets != null && latestRelease.assets.Count > 0)
                         {
-                            GitHubAsset asset = latestRelease.assets[0];
-
-                            if (asset != null && !string.IsNullOrEmpty(asset.name))
+                            foreach (GitHubAsset asset in latestRelease.assets)
                             {
-                                UpdateInfo.Filename = asset.name;
-                                UpdateInfo.DownloadURL = asset.url;
-                                UpdateInfo.RefreshStatus();
-                                return;
+                                if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(".exe", StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    UpdateInfo.Filename = asset.name;
+                                    UpdateInfo.DownloadURL = asset.url;
+                                    UpdateInfo.RefreshStatus();
+                                    return;
+                                }
                             }
                         }
                     }
