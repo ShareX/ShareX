@@ -52,7 +52,7 @@ namespace UploadersLib.TextUploaders
                 //arguments.Add("syntax", "");
                 //arguments.Add("name", "");
                 arguments.Add("privacy", "1"); // 0 public 1 private
-                arguments.Add("expire", "n");
+                arguments.Add("expire", "0");
                 arguments.Add("json", "true");
 
                 ur.Response = SendPostRequest(APIURL, arguments);
