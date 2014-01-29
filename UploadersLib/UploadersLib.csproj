@@ -189,6 +189,7 @@
     <Compile Include="GUI\UploadersConfigForm.Designer.cs">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="GUI\UserPassBox.cs">
       <SubType>Form</SubType>

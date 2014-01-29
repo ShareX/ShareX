@@ -77,6 +77,8 @@ namespace UploadersLib
         Paste_ee,
         [Description("gist.github.com")]
         Gist,
+        [Description("upaste.me")]
+        Upaste,
         [Description("Custom text uploader")]
         CustomTextUploader,
         [Description("File uploader")]
