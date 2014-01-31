@@ -33,11 +33,12 @@ namespace UploadersLib.TextUploaders
     {
         private const string APIURL = "http://upaste.me/api";
 
-        public string APIKey { get; private set; }
+        public string UserKey { get; private set; }
+        public bool IsPublic { get; set; }
 
-        public Upaste(string apiKey)
+        public Upaste(string userKey)
         {
-            APIKey = apiKey;
+            UserKey = userKey;
         }
 
         public override UploadResult UploadText(string text, string fileName)
@@ -47,14 +48,14 @@ namespace UploadersLib.TextUploaders
             if (!string.IsNullOrEmpty(text))
             {
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
-                if (!string.IsNullOrEmpty(APIKey))
+                if (!string.IsNullOrEmpty(UserKey))
                 {
-                    arguments.Add("api_key", APIKey);
+                    arguments.Add("api_key", UserKey);
                 }
                 arguments.Add("paste", text);
                 //arguments.Add("syntax", "");
                 //arguments.Add("name", "");
-                arguments.Add("privacy", "1"); // 0 public 1 private
+                arguments.Add("privacy", IsPublic ? "0" : "1"); // 0 public 1 private
                 arguments.Add("expire", "0");
                 arguments.Add("json", "true");
 

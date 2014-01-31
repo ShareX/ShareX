@@ -336,6 +336,7 @@
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.cbUpasteIsPublic = new System.Windows.Forms.CheckBox();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -1363,6 +1364,7 @@
             // 
             // tpUpaste
             // 
+            this.tpUpaste.Controls.Add(this.cbUpasteIsPublic);
             this.tpUpaste.Controls.Add(this.lblUpasteUserKey);
             this.tpUpaste.Controls.Add(this.txtUpasteUserKey);
             this.tpUpaste.Location = new System.Drawing.Point(4, 22);
@@ -3598,6 +3600,17 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
+            // cbUpasteIsPublic
+            // 
+            this.cbUpasteIsPublic.AutoSize = true;
+            this.cbUpasteIsPublic.Location = new System.Drawing.Point(16, 56);
+            this.cbUpasteIsPublic.Name = "cbUpasteIsPublic";
+            this.cbUpasteIsPublic.Size = new System.Drawing.Size(106, 17);
+            this.cbUpasteIsPublic.TabIndex = 2;
+            this.cbUpasteIsPublic.Text = "Is public upload?";
+            this.cbUpasteIsPublic.UseVisualStyleBackColor = true;
+            this.cbUpasteIsPublic.CheckedChanged += new System.EventHandler(this.cbUpasteIsPublic_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4018,5 +4031,6 @@
         private System.Windows.Forms.TabPage tpUpaste;
         private System.Windows.Forms.Label lblUpasteUserKey;
         private System.Windows.Forms.TextBox txtUpasteUserKey;
+        private System.Windows.Forms.CheckBox cbUpasteIsPublic;
     }
 }

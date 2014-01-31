@@ -234,6 +234,7 @@ namespace UploadersLib
             // Upaste
 
             txtUpasteUserKey.Text = Config.UpasteUserKey;
+            cbUpasteIsPublic.Checked = Config.UpasteIsPublic;
 
             #endregion Text uploaders
 

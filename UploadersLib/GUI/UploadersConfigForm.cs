@@ -950,6 +950,11 @@ namespace UploadersLib
             Config.UpasteUserKey = txtUpasteUserKey.Text;
         }
 
+        private void cbUpasteIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.UpasteIsPublic = cbUpasteIsPublic.Checked;
+        }
+
         #endregion uPaste
 
         #endregion Text Uploaders

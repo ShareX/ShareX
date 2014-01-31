@@ -40,6 +40,7 @@ namespace UploadersLib
         #region Image uploaders
 
         // ImageShack
+
         public ImageShackOptions ImageShackSettings = new ImageShackOptions();
 
         // TinyPic
@@ -103,6 +104,7 @@ namespace UploadersLib
         // uPaste
 
         public string UpasteUserKey = string.Empty;
+        public bool UpasteIsPublic = false;
 
         #endregion Text uploaders
 
