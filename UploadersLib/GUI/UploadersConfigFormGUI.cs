@@ -76,6 +76,7 @@ namespace UploadersLib
             textUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
             textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
             textUploadersImageList.Images.Add("Gist", Resources.Gist);
+            textUploadersImageList.Images.Add("Upaste", Resources.Upaste);
             tcTextUploaders.ImageList = textUploadersImageList;
 
             ImageList urlShortenersImageList = new ImageList();
@@ -119,6 +120,7 @@ namespace UploadersLib
             tpTwitter.ImageKey = "Twitter";
             tpMega.ImageKey = "Mega";
             tpGist.ImageKey = "Gist";
+            tpUpaste.ImageKey = "Upaste";
 
             cmsCustomUploaderArgValue = NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
 
@@ -228,6 +230,10 @@ namespace UploadersLib
                 oAuth2Gist.Status = "Login successful.";
                 oAuth2Gist.LoginStatus = true;
             }
+
+            // Upaste
+
+            txtUpasteUserKey.Text = Config.UpasteUserKey;
 
             #endregion Text uploaders
 

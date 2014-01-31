@@ -100,6 +100,10 @@ namespace UploadersLib
         public OAuth2Info GistOAuth2Info = null;
         public bool GistPublishPublic = false;
 
+        // uPaste
+
+        public string UpasteUserKey = string.Empty;
+
         #endregion Text uploaders
 
         #region File uploaders

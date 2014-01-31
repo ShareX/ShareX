@@ -47,7 +47,10 @@ namespace UploadersLib.TextUploaders
             if (!string.IsNullOrEmpty(text))
             {
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("api_key", APIKey);
+                if (!string.IsNullOrEmpty(APIKey))
+                {
+                    arguments.Add("api_key", APIKey);
+                }
                 arguments.Add("paste", text);
                 //arguments.Add("syntax", "");
                 //arguments.Add("name", "");

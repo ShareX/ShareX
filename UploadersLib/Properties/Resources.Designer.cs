@@ -653,6 +653,16 @@ namespace UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon Upaste {
+            get {
+                object obj = ResourceManager.GetObject("Upaste", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon YFrog {
             get {
                 object obj = ResourceManager.GetObject("YFrog", resourceCulture);

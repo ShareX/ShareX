@@ -673,7 +673,7 @@ namespace ShareX
                         : new Gist(Program.UploadersConfig.GistPublishPublic, Program.UploadersConfig.GistOAuth2Info);
                     break;
                 case TextDestination.Upaste:
-                    textUploader = new Upaste(ApiKeys.UpasteKey);
+                    textUploader = new Upaste(Program.UploadersConfig.UpasteUserKey);
                     break;
                 case TextDestination.CustomTextUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomTextUploaderSelected))

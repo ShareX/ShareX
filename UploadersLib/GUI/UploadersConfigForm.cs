@@ -922,26 +922,35 @@ namespace UploadersLib
 
         private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
         {
-            this.Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
-            this.oAuth2Gist.Enabled = !this.Config.GistAnonymousLogin;
+            Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
+            oAuth2Gist.Enabled = !Config.GistAnonymousLogin;
         }
 
         private void oAuth2Gist_OpenButtonClicked()
         {
-            this.GistAuthOpen();
+            GistAuthOpen();
         }
 
         private void oAuth2Gist_CompleteButtonClicked(string code)
         {
-            this.GistAuthComplete(code);
+            GistAuthComplete(code);
         }
 
         private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
         {
-            this.Config.GistPublishPublic = ((CheckBox)sender).Checked;
+            Config.GistPublishPublic = ((CheckBox)sender).Checked;
         }
 
         #endregion Gist
+
+        #region uPaste
+
+        private void txtUpasteUserKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpasteUserKey = txtUpasteUserKey.Text;
+        }
+
+        #endregion uPaste
 
         #endregion Text Uploaders
 
