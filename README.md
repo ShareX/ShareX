@@ -64,7 +64,6 @@ Copy URL to clipboard
 [twitpic.com](http://twitpic.com),
 [twitsnaps.com](http://www.twitsnaps.com),
 [yfrog.com](http://yfrog.com),
-[imm.io](http://imm.io),
 [mediacru.sh](https://mediacru.sh),
 Custom image uploader,
 File uploader
