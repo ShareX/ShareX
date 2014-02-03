@@ -615,9 +615,6 @@ namespace ShareX
                     yFrogOptions.Source = Application.ProductName;
                     imageUploader = new YfrogUploader(yFrogOptions);
                     break;
-                case ImageDestination.Immio:
-                    imageUploader = new ImmioUploader();
-                    break;
                 case ImageDestination.MediaCrush:
                     imageUploader = new MediaCrushUploader();
                     break;

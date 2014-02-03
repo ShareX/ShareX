@@ -124,9 +124,6 @@ namespace UploadersLib
         [Category("Pastebin"), DefaultValue(ApiKeys.PastebinCaKey), Description("Pastebin Consumer Secret")]
         public string PastebinCaKey { get; set; }
 
-        [Category("Upaste"), DefaultValue(ApiKeys.UpasteKey), Description("Upaste Key")]
-        public string UpasteKey { get; set; }
-
         #endregion Text Uploaders
 
         #region URL Shorteners

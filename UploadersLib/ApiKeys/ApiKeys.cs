@@ -64,7 +64,6 @@ namespace UploadersLib
         public const string PastebinCaKey = "KxTofLKQThSBZ63Gpa7hYLlMdyQlMD6u";
         public const string GistId = "badfa7b5e0a67e31da88";
         public const string GistSecret = "a538eff39300680f43d123a59ab9c1d9d4763640";
-        public const string UpasteKey = "67941cA40Ca76625c6Fa96e59b98be9f";
 
         // URL Shorteners
         public const string BitlyClientID = "0bf9726bea922ab7d5760a913d6749b441e5176a";

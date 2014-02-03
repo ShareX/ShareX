@@ -50,8 +50,6 @@ namespace UploadersLib
         Twitsnaps,
         [Description("yfrog.com")]
         yFrog,
-        [Description("imm.io")]
-        Immio,
         [Description("mediacru.sh")]
         MediaCrush,
         [Description("Custom image uploader")]
