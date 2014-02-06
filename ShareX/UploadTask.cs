@@ -585,9 +585,6 @@ namespace ShareX
                         AlbumID = Program.UploadersConfig.PicasaAlbumID
                     };
                     break;
-                case ImageDestination.UploadScreenshot:
-                    imageUploader = new UploadScreenshot(ApiKeys.UploadScreenshotKey);
-                    break;
                 case ImageDestination.Twitpic:
                     int indexTwitpic = Program.UploadersConfig.TwitterSelectedAccount;
 

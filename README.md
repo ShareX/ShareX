@@ -55,16 +55,15 @@ Copy URL to clipboard
 
 **Image uploaders:**
 [imgur.com](http://imgur.com),
-[imageshack.com](https://imageshack.com),
+[imageshack.com](http://imageshack.com),
 [tinypic.com](http://tinypic.com),
-[flickr.com](http://www.flickr.com),
+[flickr.com](http://flickr.com),
 [photobucket.com](http://photobucket.com),
-[picasaweb.google.com](https://picasaweb.google.com),
-[uploadscreenshot.com](http://uploadscreenshot.com),
+[picasaweb.google.com](http://picasaweb.google.com),
 [twitpic.com](http://twitpic.com),
-[twitsnaps.com](http://www.twitsnaps.com),
+[twitsnaps.com](http://twitsnaps.com),
 [yfrog.com](http://yfrog.com),
-[mediacru.sh](https://mediacru.sh),
+[mediacru.sh](http://mediacru.sh),
 Custom image uploader,
 File uploader
 
@@ -75,21 +74,22 @@ File uploader
 [slexy.org](http://slexy.org),
 [pastee.org](http://pastee.org),
 [paste.ee](http://paste.ee),
-[gist.github.com](https://gist.github.com),
+[gist.github.com](http://gist.github.com),
+[upaste.me](http://upaste.me),
 Custom text uploader,
 File uploader
 
 **File uploaders:**
-[dropbox.com](https://www.dropbox.com),
+[dropbox.com](http://dropbox.com),
 FTP server,
-[mega.co.nz](https://mega.co.nz),
-[drive.google.com](https://drive.google.com),
+[mega.co.nz](http://mega.co.nz),
+[drive.google.com](http://drive.google.com),
 [rapidshare.com](http://rapidshare.com),
-[sendspace.com](http://www.sendspace.com),
+[sendspace.com](http://sendspace.com),
 [minus.com](http://minus.com),
-[box.com](https://box.com),
+[box.com](http://box.com),
 [ge.tt](http://ge.tt),
-[hostr.co](https://hostr.co),
+[hostr.co](http://hostr.co),
 Shared folder,
 Email,
 Jira,
@@ -97,14 +97,15 @@ Custom file uploader
 
 **URL shorteners:**
 [goo.gl](http://goo.gl),
-[bit.ly](https://bitly.com),
+[bit.ly](http://bitly.com),
 [is.gd](http://is.gd),
 [tinyurl.com](http://tinyurl.com),
 [turl.ca](http://turl.ca),
+[yourls.org](http://yourls.org),
 Custom URL shortener
 
 **Social networking services:**
-[twitter.com](https://twitter.com)
+[twitter.com](http://twitter.com)
 
 **Tools:**
 Screen color picker,
