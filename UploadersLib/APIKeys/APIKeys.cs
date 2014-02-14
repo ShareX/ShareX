@@ -28,55 +28,50 @@ namespace UploadersLib
     public static class APIKeys
     {
         // Image Uploaders
-        public const string ImageShackKey = "5DEFHIMQ81951c9e786e00f21774fec39382b6ad";
-        public const string TinyPicID = "e2aabb8d555322fa";
-        public const string TinyPicKey = "00a68ed73ddd54da52dc2d5803fa35ee";
-        /*
-        public const string ImgurAnonymousKey = "af2fde9818ae53e7670ab52fb8ade644";
-        public const string ImgurConsumerKey = "7daf4350229dc1fd8a9d5f8a2302094004fab40cf";
-        public const string ImgurConsumerSecret = "6324137e9489cc561f76c372cc5efcd3";
-        */
-        public const string ImgurClientID = "d297fd441566f99";
-        public const string ImgurClientSecret = "e7d67e86cafa32e313930100607c7ed953c5ad83";
-        public const string FlickrKey = "fbe042faa01e6af0371b6d87be75436a";
-        public const string FlickrSecret = "9f85687dcccc7ef9";
-        public const string PhotobucketConsumerKey = "149828681";
-        public const string PhotobucketConsumerSecret = "d2638b653e88315aac528087e9db54e3";
-        public const string UploadScreenshotKey = "2807828f379860848433221358";
-        public const string ImageBamKey = "P9MMWVORXYCVM9LL";
-        public const string ImageBamSecret = "8NHVT2W777DEHZBV54A4CIT23XJFTL1D";
-        public const string TwitsnapsKey = "694aaea3bc8f28479c383cbcc094fb55";
-        public const string TwitPicKey = "816528c0152003a64e45402370805a5a";
+        public const string ImageShackKey = "";
+        public const string TinyPicID = "";
+        public const string TinyPicKey = "";
+        public const string ImgurClientID = "";
+        public const string ImgurClientSecret = "";
+        public const string FlickrKey = "";
+        public const string FlickrSecret = "";
+        public const string PhotobucketConsumerKey = "";
+        public const string PhotobucketConsumerSecret = "";
+        public const string UploadScreenshotKey = "";
+        public const string ImageBamKey = "";
+        public const string ImageBamSecret = "";
+        public const string TwitsnapsKey = "";
+        public const string TwitPicKey = "";
 
         // File Uploaders
-        public const string DropboxConsumerKey = "0te7j9ype9lrdfn";
-        public const string DropboxConsumerSecret = "r5d3aptd9a0cwp9";
-        public const string MinusConsumerKey = "b57b69843f7a302a276dde89890fc6";
-        public const string MinusConsumerSecret = "3fb097f08314d713959b1f41d543b0";
-        public const string BoxKey = "5vd8549xmn9a7zil4iupb0ciroj7cvee";
-        public const string BoxClientID = "5vd8549xmn9a7zil4iupb0ciroj7cvee";
-        public const string BoxClientSecret = "52VncS5clEEdV4ck8NspYECWvsZo69LA";
-        public const string SendSpaceKey = "LV6OS1R0Q3";
-        public const string DropIOKey = "6c65e2d2bfd858f7d0aa6509784f876483582eea";
-        public const string Ge_ttKey = "tdrrlb84kq2dquxrh4dw79gr3act0529";
-        public const string JiraConsumerKey = "NJgrJ4EhAahDwYuxLTtT"; // Random generated string
+        public const string DropboxConsumerKey = "";
+        public const string DropboxConsumerSecret = "";
+        public const string MinusConsumerKey = "";
+        public const string MinusConsumerSecret = "";
+        public const string BoxKey = "";
+        public const string BoxClientID = "";
+        public const string BoxClientSecret = "";
+        public const string SendSpaceKey = "";
+        public const string DropIOKey = "";
+        public const string Ge_ttKey = "";
+        public const string JiraConsumerKey = ""; // Random generated string
 
         // Text Uploaders
-        public const string PastebinKey = "4b23be71ec78bbd4fb96735320aa09ef";
-        public const string PastebinCaKey = "KxTofLKQThSBZ63Gpa7hYLlMdyQlMD6u";
-        public const string GistId = "badfa7b5e0a67e31da88";
-        public const string GistSecret = "a538eff39300680f43d123a59ab9c1d9d4763640";
+        public const string PastebinKey = "";
+        public const string PastebinCaKey = "";
+        public const string GistId = "";
+        public const string GistSecret = "";
 
         // URL Shorteners
-        public const string BitlyClientID = "0bf9726bea922ab7d5760a913d6749b441e5176a";
-        public const string BitlyClientSecret = "1156e02a228deccbe8c7f100711411063249497b";
+        public const string BitlyClientID = "";
+        public const string BitlyClientSecret = "";
 
         // Other Services
-        public const string GoogleClientID = "810697162603.apps.googleusercontent.com";
-        public const string GoogleClientSecret = "BzjPSjDufImJM6Dcg-WBZvoh";
-        public const string GoogleAPIKey = "AIzaSyDjW0ATw7G-72iAoNsnkGbQKplasWG3eSA";
-        public const string TwitterConsumerKey = "Dw9iuniatwgsk4nwOcKGNg";
-        public const string TwitterConsumerSecret = "q2fGaWzuHbbRwQPast1lYZjFnpuiI6axTYWwTytj8";
-        public const string PicnikKey = "3aacd2de4563b8817de708b29b5bdd0e";
+        public const string GoogleClientID = "";
+        public const string GoogleClientSecret = "";
+        public const string GoogleAPIKey = "";
+        public const string TwitterConsumerKey = "";
+        public const string TwitterConsumerSecret = "";
+        public const string PicnikKey = "";
     }
 }
