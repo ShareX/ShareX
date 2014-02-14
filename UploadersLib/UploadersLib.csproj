@@ -106,7 +106,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiKeys\APIKeys.cs" />
+    <Compile Include="APIKeys\APIKeys.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Email.cs" />
     <Compile Include="FileUploaders\Ge_tt.cs" />
@@ -366,7 +366,7 @@
   <ItemGroup>
     <None Include="Favicons\Yourls.ico" />
     <None Include="packages.config" />
-    <EmbeddedResource Include="ApiKeys\jira_sharex.pfx" />
+    <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
     <None Include="Favicons\Dropbox.ico" />
