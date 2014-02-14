@@ -379,7 +379,7 @@ namespace UploadersLib
         - Consumer Name: {1}
         - Public Key (without quotes): '{3}'
 
-- You can now authenticate to Jira", Links.URL_WEBSITE, Application.ProductName, ApiKeys.JiraConsumerKey, Jira.PublicKey);
+- You can now authenticate to Jira", Links.URL_WEBSITE, Application.ProductName, APIKeys.JiraConsumerKey, Jira.PublicKey);
 
             if (OAuthInfo.CheckOAuth(Config.JiraOAuthInfo))
             {

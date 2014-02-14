@@ -41,9 +41,7 @@ namespace UploadersLib
     {
         public UploadersConfig Config { get; private set; }
 
-        public UploadersAPIKeys APIKeys { get; private set; }
-
-        public UploadersConfigForm(UploadersConfig uploadersConfig, UploadersAPIKeys uploadersAPIKeys)
+        public UploadersConfigForm(UploadersConfig uploadersConfig)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -51,7 +49,6 @@ namespace UploadersLib
             ControlSettings();
             CreateUserControlEvents();
             LoadSettings(uploadersConfig);
-            APIKeys = uploadersAPIKeys;
             Text = "ShareX - Outputs Configuration" + (string.IsNullOrEmpty(uploadersConfig.FilePath) ? string.Empty : ": " + uploadersConfig.FilePath);
         }
 
@@ -86,7 +83,7 @@ namespace UploadersLib
 
         private void btnImageShackLogin_Click(object sender, EventArgs e)
         {
-            ImageShackUploader imageShackUploader = new ImageShackUploader(ApiKeys.ImageShackKey, Config.ImageShackSettings);
+            ImageShackUploader imageShackUploader = new ImageShackUploader(APIKeys.ImageShackKey, Config.ImageShackSettings);
 
             try
             {

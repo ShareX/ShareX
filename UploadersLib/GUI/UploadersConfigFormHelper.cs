@@ -1538,7 +1538,7 @@ namespace UploadersLib
         {
             try
             {
-                OAuth2Info oauth = new OAuth2Info(ApiKeys.GistId, ApiKeys.GistSecret);
+                OAuth2Info oauth = new OAuth2Info(APIKeys.GistId, APIKeys.GistSecret);
                 string url = new Gist(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
