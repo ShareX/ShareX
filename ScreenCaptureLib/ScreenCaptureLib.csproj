@@ -105,7 +105,7 @@
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
     <Compile Include="RegionHelpers\SurfaceOptions.cs" />
     <Compile Include="ScreenRecorder.cs" />
-    <Compile Include="ScreenRecorderCache.cs" />
+    <Compile Include="HardDiskCache.cs" />
     <Compile Include="AVICache.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

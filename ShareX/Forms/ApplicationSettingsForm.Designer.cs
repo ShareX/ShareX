@@ -39,6 +39,7 @@
             this.cbShowTray = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
             this.tpPaths = new System.Windows.Forms.TabPage();
+            this.lblNotePersonalFolderPath = new System.Windows.Forms.Label();
             this.btnOpenScreenshotsFolder = new System.Windows.Forms.Button();
             this.lblPreviewPersonalFolderPath = new System.Windows.Forms.Label();
             this.btnBrowsePersonalFolderPath = new System.Windows.Forms.Button();
@@ -85,7 +86,7 @@
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.lblNotePersonalFolderPath = new System.Windows.Forms.Label();
+            this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.cbSilentRun);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormSize);
             this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
@@ -135,7 +137,7 @@
             // cbRememberMainFormSize
             // 
             this.cbRememberMainFormSize.AutoSize = true;
-            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 184);
+            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 208);
             this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
             this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
             this.cbRememberMainFormSize.TabIndex = 7;
@@ -146,7 +148,7 @@
             // cbTaskbarProgressEnabled
             // 
             this.cbTaskbarProgressEnabled.AutoSize = true;
-            this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 160);
+            this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 184);
             this.cbTaskbarProgressEnabled.Name = "cbTaskbarProgressEnabled";
             this.cbTaskbarProgressEnabled.Size = new System.Drawing.Size(178, 17);
             this.cbTaskbarProgressEnabled.TabIndex = 6;
@@ -157,7 +159,7 @@
             // cbTrayIconProgressEnabled
             // 
             this.cbTrayIconProgressEnabled.AutoSize = true;
-            this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 136);
+            this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 160);
             this.cbTrayIconProgressEnabled.Name = "cbTrayIconProgressEnabled";
             this.cbTrayIconProgressEnabled.Size = new System.Drawing.Size(150, 17);
             this.cbTrayIconProgressEnabled.TabIndex = 5;
@@ -168,7 +170,7 @@
             // cbShellContextMenu
             // 
             this.cbShellContextMenu.AutoSize = true;
-            this.cbShellContextMenu.Location = new System.Drawing.Point(16, 88);
+            this.cbShellContextMenu.Location = new System.Drawing.Point(16, 112);
             this.cbShellContextMenu.Name = "cbShellContextMenu";
             this.cbShellContextMenu.Size = new System.Drawing.Size(301, 17);
             this.cbShellContextMenu.TabIndex = 3;
@@ -179,7 +181,7 @@
             // cbCheckUpdates
             // 
             this.cbCheckUpdates.AutoSize = true;
-            this.cbCheckUpdates.Location = new System.Drawing.Point(16, 112);
+            this.cbCheckUpdates.Location = new System.Drawing.Point(16, 136);
             this.cbCheckUpdates.Name = "cbCheckUpdates";
             this.cbCheckUpdates.Size = new System.Drawing.Size(209, 17);
             this.cbCheckUpdates.TabIndex = 4;
@@ -190,7 +192,7 @@
             // cbStartWithWindows
             // 
             this.cbStartWithWindows.AutoSize = true;
-            this.cbStartWithWindows.Location = new System.Drawing.Point(16, 40);
+            this.cbStartWithWindows.Location = new System.Drawing.Point(16, 64);
             this.cbStartWithWindows.Name = "cbStartWithWindows";
             this.cbStartWithWindows.Size = new System.Drawing.Size(188, 17);
             this.cbStartWithWindows.TabIndex = 1;
@@ -212,7 +214,7 @@
             // cbSendToMenu
             // 
             this.cbSendToMenu.AutoSize = true;
-            this.cbSendToMenu.Location = new System.Drawing.Point(16, 64);
+            this.cbSendToMenu.Location = new System.Drawing.Point(16, 88);
             this.cbSendToMenu.Name = "cbSendToMenu";
             this.cbSendToMenu.Size = new System.Drawing.Size(181, 17);
             this.cbSendToMenu.TabIndex = 2;
@@ -242,6 +244,15 @@
             this.tpPaths.TabIndex = 1;
             this.tpPaths.Text = "Paths";
             this.tpPaths.UseVisualStyleBackColor = true;
+            // 
+            // lblNotePersonalFolderPath
+            // 
+            this.lblNotePersonalFolderPath.AutoSize = true;
+            this.lblNotePersonalFolderPath.Location = new System.Drawing.Point(16, 96);
+            this.lblNotePersonalFolderPath.Name = "lblNotePersonalFolderPath";
+            this.lblNotePersonalFolderPath.Size = new System.Drawing.Size(354, 13);
+            this.lblNotePersonalFolderPath.TabIndex = 19;
+            this.lblNotePersonalFolderPath.Text = "Note: You must reopen ShareX for personal folder changes to take effect.";
             // 
             // btnOpenScreenshotsFolder
             // 
@@ -713,16 +724,18 @@
             this.pgSettings.Size = new System.Drawing.Size(516, 302);
             this.pgSettings.TabIndex = 0;
             // 
-            // lblNotePersonalFolderPath
+            // cbSilentRun
             // 
-            this.lblNotePersonalFolderPath.AutoSize = true;
-            this.lblNotePersonalFolderPath.Location = new System.Drawing.Point(16, 96);
-            this.lblNotePersonalFolderPath.Name = "lblNotePersonalFolderPath";
-            this.lblNotePersonalFolderPath.Size = new System.Drawing.Size(354, 13);
-            this.lblNotePersonalFolderPath.TabIndex = 19;
-            this.lblNotePersonalFolderPath.Text = "Note: You must reopen ShareX for personal folder changes to take effect.";
+            this.cbSilentRun.AutoSize = true;
+            this.cbSilentRun.Location = new System.Drawing.Point(16, 40);
+            this.cbSilentRun.Name = "cbSilentRun";
+            this.cbSilentRun.Size = new System.Drawing.Size(137, 17);
+            this.cbSilentRun.TabIndex = 8;
+            this.cbSilentRun.Text = "On start minimize to tray";
+            this.cbSilentRun.UseVisualStyleBackColor = true;
+            this.cbSilentRun.CheckedChanged += new System.EventHandler(this.cbSilentRun_CheckedChanged);
             // 
-            // SettingsForm
+            // ApplicationSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -731,7 +744,7 @@
             this.Controls.Add(this.tcSettings);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(552, 300);
-            this.Name = "SettingsForm";
+            this.Name = "ApplicationSettingsForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -820,5 +833,6 @@
         private System.Windows.Forms.TextBox txtPersonalFolderPath;
         private System.Windows.Forms.Button btnOpenScreenshotsFolder;
         private System.Windows.Forms.Label lblNotePersonalFolderPath;
+        private System.Windows.Forms.CheckBox cbSilentRun;
     }
 }

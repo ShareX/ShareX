@@ -56,6 +56,8 @@ namespace ShareX
 
             // General
             cbShowTray.Checked = Program.Settings.ShowTray;
+            cbSilentRun.Enabled = Program.Settings.ShowTray;
+            cbSilentRun.Checked = Program.Settings.SilentRun;
             cbStartWithWindows.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
             cbSendToMenu.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
             cbShellContextMenu.Checked = RegistryHelpers.CheckShellContextMenu();
@@ -167,6 +169,13 @@ namespace ShareX
             {
                 Program.MainForm.niTray.Visible = Program.Settings.ShowTray;
             }
+
+            cbSilentRun.Enabled = Program.Settings.ShowTray;
+        }
+
+        private void cbSilentRun_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.SilentRun = cbSilentRun.Checked;
         }
 
         private void cbStartWithWindows_CheckedChanged(object sender, EventArgs e)

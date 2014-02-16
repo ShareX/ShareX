@@ -587,7 +587,7 @@ namespace ShareX
 
         protected override void SetVisibleCore(bool value)
         {
-            if (value && !IsHandleCreated && Program.IsSilentRun && Program.Settings.ShowTray)
+            if (value && !IsHandleCreated && (Program.IsSilentRun || Program.Settings.SilentRun) && Program.Settings.ShowTray)
             {
                 CreateHandle();
                 value = false;
