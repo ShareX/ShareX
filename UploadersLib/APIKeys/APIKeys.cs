@@ -25,53 +25,52 @@
 
 namespace UploadersLib
 {
-    public static class APIKeys
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Note: For be able to compile project remove APIKeysLocal.cs from solution explorer or create empty APIKeysLocal.cs file. //
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static partial class APIKeys
     {
         // Image Uploaders
-        public const string ImageShackKey = "";
-        public const string TinyPicID = "";
-        public const string TinyPicKey = "";
-        public const string ImgurClientID = "";
-        public const string ImgurClientSecret = "";
-        public const string FlickrKey = "";
-        public const string FlickrSecret = "";
-        public const string PhotobucketConsumerKey = "";
-        public const string PhotobucketConsumerSecret = "";
-        public const string UploadScreenshotKey = "";
-        public const string ImageBamKey = "";
-        public const string ImageBamSecret = "";
-        public const string TwitsnapsKey = "";
-        public const string TwitPicKey = "";
+        public static string ImageShackKey = "";
+        public static string TinyPicID = "";
+        public static string TinyPicKey = "";
+        public static string ImgurClientID = "";
+        public static string ImgurClientSecret = "";
+        public static string FlickrKey = "";
+        public static string FlickrSecret = "";
+        public static string PhotobucketConsumerKey = "";
+        public static string PhotobucketConsumerSecret = "";
+        public static string TwitsnapsKey = "";
+        public static string TwitPicKey = "";
 
         // File Uploaders
-        public const string DropboxConsumerKey = "";
-        public const string DropboxConsumerSecret = "";
-        public const string MinusConsumerKey = "";
-        public const string MinusConsumerSecret = "";
-        public const string BoxKey = "";
-        public const string BoxClientID = "";
-        public const string BoxClientSecret = "";
-        public const string SendSpaceKey = "";
-        public const string DropIOKey = "";
-        public const string Ge_ttKey = "";
-        public const string JiraConsumerKey = ""; // Random generated string
+        public static string DropboxConsumerKey = "";
+        public static string DropboxConsumerSecret = "";
+        public static string MinusConsumerKey = "";
+        public static string MinusConsumerSecret = "";
+        public static string BoxKey = "";
+        public static string BoxClientID = "";
+        public static string BoxClientSecret = "";
+        public static string SendSpaceKey = "";
+        public static string Ge_ttKey = "";
+        public static string JiraConsumerKey = "";
 
         // Text Uploaders
-        public const string PastebinKey = "";
-        public const string PastebinCaKey = "";
-        public const string GistId = "";
-        public const string GistSecret = "";
+        public static string PastebinKey = "";
+        public static string PastebinCaKey = "";
+        public static string GistId = "";
+        public static string GistSecret = "";
 
         // URL Shorteners
-        public const string BitlyClientID = "";
-        public const string BitlyClientSecret = "";
+        public static string BitlyClientID = "";
+        public static string BitlyClientSecret = "";
 
         // Other Services
-        public const string GoogleClientID = "";
-        public const string GoogleClientSecret = "";
-        public const string GoogleAPIKey = "";
-        public const string TwitterConsumerKey = "";
-        public const string TwitterConsumerSecret = "";
-        public const string PicnikKey = "";
+        public static string GoogleAPIKey = "";
+        public static string GoogleClientID = "";
+        public static string GoogleClientSecret = "";
+        public static string TwitterConsumerKey = "";
+        public static string TwitterConsumerSecret = "";
     }
 }

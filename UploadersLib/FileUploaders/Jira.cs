@@ -70,7 +70,7 @@ namespace UploadersLib.FileUploaders
             // makecert -pe -n "CN=ShareX" -a sha1 -sky exchange -sp "Microsoft RSA SChannel Cryptographic Provider" -sy 12 -len 1024 -sv jira_sharex.pvk jira_sharex.cer
             // pvk2pfx -pvk jira_sharex.pvk -spc jira_sharex.cer -pfx jira_sharex.pfx
             // (Based on: http://nick-howard.blogspot.fr/2011/05/makecert-x509-certificates-and-rsa.html)
-            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("UploadersLib.ApiKeys.jira_sharex.pfx"))
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("UploadersLib.APIKeys.jira_sharex.pfx"))
             {
                 byte[] pfx = new byte[stream.Length];
                 stream.Read(pfx, 0, pfx.Length);

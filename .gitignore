@@ -109,3 +109,4 @@ UpgradeLog*.XML
 
 # Additional
 Output/
+UploadersLib/APIKeys/APIKeysLocal.cs
