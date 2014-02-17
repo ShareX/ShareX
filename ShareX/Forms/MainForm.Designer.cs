@@ -201,15 +201,16 @@ namespace ShareX
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1200,6 +1201,7 @@ namespace ShareX
             this.tsmiTrayDonate,
             this.tsmiTrayAbout,
             this.tssTray3,
+            this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
             this.cmsTray.Size = new System.Drawing.Size(189, 418);
@@ -1503,6 +1505,14 @@ namespace ShareX
             this.tsmiTrayImageEffects.Text = "Image effects...";
             this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
+            // tsmiTrayMonitorTest
+            // 
+            this.tsmiTrayMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
+            this.tsmiTrayMonitorTest.Name = "tsmiTrayMonitorTest";
+            this.tsmiTrayMonitorTest.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayMonitorTest.Text = "Monitor test...";
+            this.tsmiTrayMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
+            // 
             // tsmiScreenshotsFolder
             // 
             this.tsmiScreenshotsFolder.Image = global::ShareX.Properties.Resources.folder_open_image;
@@ -1548,6 +1558,14 @@ namespace ShareX
             this.tssTray3.Name = "tssTray3";
             this.tssTray3.Size = new System.Drawing.Size(185, 6);
             // 
+            // tsmiTrayShow
+            // 
+            this.tsmiTrayShow.Image = global::ShareX.Properties.Resources.tick_button;
+            this.tsmiTrayShow.Name = "tsmiTrayShow";
+            this.tsmiTrayShow.Size = new System.Drawing.Size(188, 22);
+            this.tsmiTrayShow.Text = "Show ShareX window";
+            this.tsmiTrayShow.Click += new System.EventHandler(this.tsmiTrayShow_Click);
+            // 
             // tsmiTrayExit
             // 
             this.tsmiTrayExit.Image = global::ShareX.Properties.Resources.cross_button;
@@ -1561,14 +1579,6 @@ namespace ShareX
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
-            // 
-            // tsmiTrayMonitorTest
-            // 
-            this.tsmiTrayMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
-            this.tsmiTrayMonitorTest.Name = "tsmiTrayMonitorTest";
-            this.tsmiTrayMonitorTest.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayMonitorTest.Text = "Monitor test...";
-            this.tsmiTrayMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
             // 
             // MainForm
             // 
@@ -1757,5 +1767,6 @@ namespace ShareX
         private System.Windows.Forms.ToolStripButton tsmiDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMonitorTest;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayShow;
     }
 }

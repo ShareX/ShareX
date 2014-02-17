@@ -921,6 +921,11 @@ namespace ShareX
             }
         }
 
+        private void tsmiTrayShow_Click(object sender, EventArgs e)
+        {
+            this.ShowActivate();
+        }
+
         private void tsmiTrayExit_Click(object sender, EventArgs e)
         {
             ForceClose();
