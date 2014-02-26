@@ -445,7 +445,7 @@ namespace HelpersLib
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
         {
-            Bitmap bmp = img.CreateEmptyBitmap();
+            Bitmap bmp = img.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (Image checker = CreateCheckers(size, color1, color2))
