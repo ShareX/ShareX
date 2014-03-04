@@ -298,11 +298,11 @@ namespace ShareX
                     case EDataType.Image:
                         Info.Result = UploadImage(Data, Info.FileName);
                         break;
-                    case EDataType.File:
-                        Info.Result = UploadFile(Data, Info.FileName);
-                        break;
                     case EDataType.Text:
                         Info.Result = UploadText(Data, Info.FileName);
+                        break;
+                    case EDataType.File:
+                        Info.Result = UploadFile(Data, Info.FileName);
                         break;
                 }
             }
@@ -693,7 +693,23 @@ namespace ShareX
         {
             FileUploader fileUploader = null;
 
-            switch (Info.TaskSettings.FileDestination)
+            FileDestination fileDestination;
+
+            switch (Info.DataType)
+            {
+                case EDataType.Image:
+                    fileDestination = Info.TaskSettings.ImageFileDestination;
+                    break;
+                case EDataType.Text:
+                    fileDestination = Info.TaskSettings.TextFileDestination;
+                    break;
+                default:
+                case EDataType.File:
+                    fileDestination = Info.TaskSettings.FileDestination;
+                    break;
+            }
+
+            switch (fileDestination)
             {
                 case FileDestination.Dropbox:
                     NameParser parser = new NameParser(NameParserType.URL);
