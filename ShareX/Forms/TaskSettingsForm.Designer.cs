@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.cmsAfterCapture = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsAfterUpload = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsImageUploaders = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsTextUploaders = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsFileUploaders = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsURLShorteners = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsSocialNetworkingServices = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbUseDefaultAfterCaptureSettings = new System.Windows.Forms.CheckBox();
             this.cbUseDefaultAfterUploadSettings = new System.Windows.Forms.CheckBox();
             this.cbUseDefaultDestinationSettings = new System.Windows.Forms.CheckBox();
@@ -48,14 +43,11 @@
             this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
             this.btnAfterCapture = new HelpersLib.MenuButton();
             this.btnAfterUpload = new HelpersLib.MenuButton();
-            this.btnImageUploaders = new HelpersLib.MenuButton();
-            this.btnTextUploaders = new HelpersLib.MenuButton();
-            this.btnFileUploaders = new HelpersLib.MenuButton();
-            this.btnURLShorteners = new HelpersLib.MenuButton();
-            this.btnSocialNetworkingServices = new HelpersLib.MenuButton();
+            this.btnDestinations = new HelpersLib.MenuButton();
             this.btnTask = new HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
+            this.lblAfterTaskNotification = new System.Windows.Forms.Label();
             this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
             this.chkShowAfterUploadForm = new System.Windows.Forms.CheckBox();
             this.cbShowAfterCaptureTasksForm = new System.Windows.Forms.CheckBox();
@@ -155,7 +147,12 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.lblAfterTaskNotification = new System.Windows.Forms.Label();
+            this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSocialServices = new System.Windows.Forms.ToolStripMenuItem();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.tpGeneral.SuspendLayout();
@@ -187,6 +184,7 @@
             this.tpUploadClipboard.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.cmsDestinations.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -198,31 +196,6 @@
             // 
             this.cmsAfterUpload.Name = "cmsAfterCapture";
             this.cmsAfterUpload.Size = new System.Drawing.Size(61, 4);
-            // 
-            // cmsImageUploaders
-            // 
-            this.cmsImageUploaders.Name = "cmsAfterCapture";
-            this.cmsImageUploaders.Size = new System.Drawing.Size(61, 4);
-            // 
-            // cmsTextUploaders
-            // 
-            this.cmsTextUploaders.Name = "cmsAfterCapture";
-            this.cmsTextUploaders.Size = new System.Drawing.Size(61, 4);
-            // 
-            // cmsFileUploaders
-            // 
-            this.cmsFileUploaders.Name = "cmsAfterCapture";
-            this.cmsFileUploaders.Size = new System.Drawing.Size(61, 4);
-            // 
-            // cmsURLShorteners
-            // 
-            this.cmsURLShorteners.Name = "cmsAfterCapture";
-            this.cmsURLShorteners.Size = new System.Drawing.Size(61, 4);
-            // 
-            // cmsSocialNetworkingServices
-            // 
-            this.cmsSocialNetworkingServices.Name = "cmsAfterCapture";
-            this.cmsSocialNetworkingServices.Size = new System.Drawing.Size(61, 4);
             // 
             // cbUseDefaultAfterCaptureSettings
             // 
@@ -304,11 +277,7 @@
             this.tpTask.Controls.Add(this.tbDescription);
             this.tpTask.Controls.Add(this.btnAfterCapture);
             this.tpTask.Controls.Add(this.btnAfterUpload);
-            this.tpTask.Controls.Add(this.btnImageUploaders);
-            this.tpTask.Controls.Add(this.btnTextUploaders);
-            this.tpTask.Controls.Add(this.btnFileUploaders);
-            this.tpTask.Controls.Add(this.btnURLShorteners);
-            this.tpTask.Controls.Add(this.btnSocialNetworkingServices);
+            this.tpTask.Controls.Add(this.btnDestinations);
             this.tpTask.Controls.Add(this.cbUseDefaultAfterCaptureSettings);
             this.tpTask.Controls.Add(this.btnTask);
             this.tpTask.Controls.Add(this.cbUseDefaultAfterUploadSettings);
@@ -325,7 +294,7 @@
             // chkOverrideFTP
             // 
             this.chkOverrideFTP.AutoSize = true;
-            this.chkOverrideFTP.Location = new System.Drawing.Point(6, 332);
+            this.chkOverrideFTP.Location = new System.Drawing.Point(6, 240);
             this.chkOverrideFTP.Name = "chkOverrideFTP";
             this.chkOverrideFTP.Size = new System.Drawing.Size(169, 17);
             this.chkOverrideFTP.TabIndex = 14;
@@ -338,7 +307,7 @@
             this.cboFTPaccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFTPaccounts.Enabled = false;
             this.cboFTPaccounts.FormattingEnabled = true;
-            this.cboFTPaccounts.Location = new System.Drawing.Point(181, 330);
+            this.cboFTPaccounts.Location = new System.Drawing.Point(181, 238);
             this.cboFTPaccounts.Name = "cboFTPaccounts";
             this.cboFTPaccounts.Size = new System.Drawing.Size(330, 21);
             this.cboFTPaccounts.TabIndex = 13;
@@ -368,65 +337,17 @@
             this.btnAfterUpload.UseMnemonic = false;
             this.btnAfterUpload.UseVisualStyleBackColor = true;
             // 
-            // btnImageUploaders
+            // btnDestinations
             // 
-            this.btnImageUploaders.Location = new System.Drawing.Point(6, 205);
-            this.btnImageUploaders.Menu = this.cmsImageUploaders;
-            this.btnImageUploaders.Name = "btnImageUploaders";
-            this.btnImageUploaders.Size = new System.Drawing.Size(506, 23);
-            this.btnImageUploaders.TabIndex = 8;
-            this.btnImageUploaders.Text = "Image uploaders";
-            this.btnImageUploaders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImageUploaders.UseMnemonic = false;
-            this.btnImageUploaders.UseVisualStyleBackColor = true;
-            // 
-            // btnTextUploaders
-            // 
-            this.btnTextUploaders.Location = new System.Drawing.Point(6, 229);
-            this.btnTextUploaders.Menu = this.cmsTextUploaders;
-            this.btnTextUploaders.Name = "btnTextUploaders";
-            this.btnTextUploaders.Size = new System.Drawing.Size(506, 23);
-            this.btnTextUploaders.TabIndex = 9;
-            this.btnTextUploaders.Text = "Text uploaders";
-            this.btnTextUploaders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTextUploaders.UseMnemonic = false;
-            this.btnTextUploaders.UseVisualStyleBackColor = true;
-            // 
-            // btnFileUploaders
-            // 
-            this.btnFileUploaders.Location = new System.Drawing.Point(6, 253);
-            this.btnFileUploaders.Menu = this.cmsFileUploaders;
-            this.btnFileUploaders.Name = "btnFileUploaders";
-            this.btnFileUploaders.Size = new System.Drawing.Size(506, 23);
-            this.btnFileUploaders.TabIndex = 10;
-            this.btnFileUploaders.Text = "File uploaders";
-            this.btnFileUploaders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFileUploaders.UseMnemonic = false;
-            this.btnFileUploaders.UseVisualStyleBackColor = true;
-            // 
-            // btnURLShorteners
-            // 
-            this.btnURLShorteners.Location = new System.Drawing.Point(6, 277);
-            this.btnURLShorteners.Menu = this.cmsURLShorteners;
-            this.btnURLShorteners.Name = "btnURLShorteners";
-            this.btnURLShorteners.Size = new System.Drawing.Size(506, 23);
-            this.btnURLShorteners.TabIndex = 11;
-            this.btnURLShorteners.Text = "URL shorteners";
-            this.btnURLShorteners.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnURLShorteners.UseMnemonic = false;
-            this.btnURLShorteners.UseVisualStyleBackColor = true;
-            // 
-            // btnSocialNetworkingServices
-            // 
-            this.btnSocialNetworkingServices.Location = new System.Drawing.Point(6, 301);
-            this.btnSocialNetworkingServices.Menu = this.cmsSocialNetworkingServices;
-            this.btnSocialNetworkingServices.Name = "btnSocialNetworkingServices";
-            this.btnSocialNetworkingServices.Size = new System.Drawing.Size(506, 23);
-            this.btnSocialNetworkingServices.TabIndex = 12;
-            this.btnSocialNetworkingServices.Text = "Social networking services";
-            this.btnSocialNetworkingServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSocialNetworkingServices.UseMnemonic = false;
-            this.btnSocialNetworkingServices.UseVisualStyleBackColor = true;
+            this.btnDestinations.Location = new System.Drawing.Point(6, 205);
+            this.btnDestinations.Menu = this.cmsDestinations;
+            this.btnDestinations.Name = "btnDestinations";
+            this.btnDestinations.Size = new System.Drawing.Size(506, 23);
+            this.btnDestinations.TabIndex = 8;
+            this.btnDestinations.Text = "Destinations...";
+            this.btnDestinations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDestinations.UseMnemonic = false;
+            this.btnDestinations.UseVisualStyleBackColor = true;
             // 
             // btnTask
             // 
@@ -467,6 +388,15 @@
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Size = new System.Drawing.Size(514, 327);
             this.panelGeneral.TabIndex = 19;
+            // 
+            // lblAfterTaskNotification
+            // 
+            this.lblAfterTaskNotification.AutoSize = true;
+            this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 84);
+            this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
+            this.lblAfterTaskNotification.Size = new System.Drawing.Size(117, 13);
+            this.lblAfterTaskNotification.TabIndex = 21;
+            this.lblAfterTaskNotification.Text = "After task is completed:";
             // 
             // cboPopUpNotification
             // 
@@ -1634,14 +1564,51 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // lblAfterTaskNotification
+            // cmsDestinations
             // 
-            this.lblAfterTaskNotification.AutoSize = true;
-            this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 84);
-            this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
-            this.lblAfterTaskNotification.Size = new System.Drawing.Size(117, 13);
-            this.lblAfterTaskNotification.TabIndex = 21;
-            this.lblAfterTaskNotification.Text = "After task is completed:";
+            this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiImageUploaders,
+            this.tsmiTextUploaders,
+            this.tsmiFileUploaders,
+            this.tsmiURLShorteners,
+            this.tsmiSocialServices});
+            this.cmsDestinations.Name = "cmsDestinations";
+            this.cmsDestinations.Size = new System.Drawing.Size(213, 114);
+            // 
+            // tsmiImageUploaders
+            // 
+            this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
+            this.tsmiImageUploaders.Name = "tsmiImageUploaders";
+            this.tsmiImageUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiImageUploaders.Text = "Image uploaders";
+            // 
+            // tsmiTextUploaders
+            // 
+            this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
+            this.tsmiTextUploaders.Name = "tsmiTextUploaders";
+            this.tsmiTextUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiTextUploaders.Text = "Text uploaders";
+            // 
+            // tsmiFileUploaders
+            // 
+            this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
+            this.tsmiFileUploaders.Name = "tsmiFileUploaders";
+            this.tsmiFileUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiFileUploaders.Text = "File uploaders";
+            // 
+            // tsmiURLShorteners
+            // 
+            this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
+            this.tsmiURLShorteners.Name = "tsmiURLShorteners";
+            this.tsmiURLShorteners.Size = new System.Drawing.Size(212, 22);
+            this.tsmiURLShorteners.Text = "URL shorteners";
+            // 
+            // tsmiSocialServices
+            // 
+            this.tsmiSocialServices.Image = global::ShareX.Properties.Resources.globe_share;
+            this.tsmiSocialServices.Name = "tsmiSocialServices";
+            this.tsmiSocialServices.Size = new System.Drawing.Size(212, 22);
+            this.tsmiSocialServices.Text = "Social networking services";
             // 
             // TaskSettingsForm
             // 
@@ -1706,6 +1673,7 @@
             this.tpIndexer.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.cmsDestinations.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1715,17 +1683,8 @@
         private HelpersLib.MenuButton btnAfterCapture;
         private System.Windows.Forms.ContextMenuStrip cmsAfterCapture;
         private HelpersLib.MenuButton btnAfterUpload;
-        private HelpersLib.MenuButton btnImageUploaders;
-        private HelpersLib.MenuButton btnTextUploaders;
-        private HelpersLib.MenuButton btnFileUploaders;
-        private HelpersLib.MenuButton btnURLShorteners;
-        private HelpersLib.MenuButton btnSocialNetworkingServices;
+        private HelpersLib.MenuButton btnDestinations;
         private System.Windows.Forms.ContextMenuStrip cmsAfterUpload;
-        private System.Windows.Forms.ContextMenuStrip cmsImageUploaders;
-        private System.Windows.Forms.ContextMenuStrip cmsTextUploaders;
-        private System.Windows.Forms.ContextMenuStrip cmsFileUploaders;
-        private System.Windows.Forms.ContextMenuStrip cmsURLShorteners;
-        private System.Windows.Forms.ContextMenuStrip cmsSocialNetworkingServices;
         private System.Windows.Forms.CheckBox cbUseDefaultAfterCaptureSettings;
         private System.Windows.Forms.CheckBox cbUseDefaultAfterUploadSettings;
         private System.Windows.Forms.CheckBox cbUseDefaultDestinationSettings;
@@ -1839,6 +1798,12 @@
         private System.Windows.Forms.ComboBox cboFTPaccounts;
         private System.Windows.Forms.ComboBox cboPopUpNotification;
         private System.Windows.Forms.Label lblAfterTaskNotification;
+        private System.Windows.Forms.ContextMenuStrip cmsDestinations;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageUploaders;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTextUploaders;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFileUploaders;
+        private System.Windows.Forms.ToolStripMenuItem tsmiURLShorteners;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSocialServices;
 
 
 

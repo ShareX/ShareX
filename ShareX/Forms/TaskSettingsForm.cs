@@ -41,6 +41,7 @@ namespace ShareX
         public bool IsDefault { get; private set; }
 
         private ContextMenuStrip cmsNameFormatPattern, cmsNameFormatPatternActiveWindow;
+        private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
         private bool loaded;
 
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
@@ -74,23 +75,29 @@ namespace ShareX
                 chkUseDefaultAdvancedSettings.Checked = TaskSettings.UseDefaultAdvancedSettings;
             }
 
-            AddEnumItems<HotkeyType>(x => TaskSettings.Job = x, cmsTask);
-            AddMultiEnumItems<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
-            AddMultiEnumItems<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
-            AddEnumItems<ImageDestination>(x => TaskSettings.ImageDestination = x, cmsImageUploaders);
-            AddEnumItems<TextDestination>(x => TaskSettings.TextDestination = x, cmsTextUploaders);
-            AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, cmsFileUploaders);
-            AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, cmsURLShorteners);
-            AddEnumItems<SocialNetworkingService>(x => TaskSettings.SocialNetworkingServiceDestination = x, cmsSocialNetworkingServices);
+            AddEnumItemsContextMenu<HotkeyType>(x => TaskSettings.Job = x, cmsTask);
+            AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
+            AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
+            AddEnumItems<ImageDestination>(x => TaskSettings.ImageDestination = x, tsmiImageUploaders);
+            tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
+            AddEnumItems<FileDestination>(x => TaskSettings.ImageFileDestination = x, tsmiImageFileUploaders);
+            AddEnumItems<TextDestination>(x => TaskSettings.TextDestination = x, tsmiTextUploaders);
+            tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
+            AddEnumItems<FileDestination>(x => TaskSettings.TextFileDestination = x, tsmiTextFileUploaders);
+            AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, tsmiFileUploaders);
+            AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, tsmiURLShorteners);
+            AddEnumItems<SocialNetworkingService>(x => TaskSettings.SocialNetworkingServiceDestination = x, tsmiSocialServices);
 
-            SetEnumChecked(TaskSettings.Job, cmsTask);
-            SetMultiEnumChecked(TaskSettings.AfterCaptureJob, cmsAfterCapture);
-            SetMultiEnumChecked(TaskSettings.AfterUploadJob, cmsAfterUpload);
-            SetEnumChecked(TaskSettings.ImageDestination, cmsImageUploaders);
-            SetEnumChecked(TaskSettings.TextDestination, cmsTextUploaders);
-            SetEnumChecked(TaskSettings.FileDestination, cmsFileUploaders);
-            SetEnumChecked(TaskSettings.URLShortenerDestination, cmsURLShorteners);
-            SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, cmsSocialNetworkingServices);
+            SetEnumCheckedContextMenu(TaskSettings.Job, cmsTask);
+            SetMultiEnumCheckedContextMenu(TaskSettings.AfterCaptureJob, cmsAfterCapture);
+            SetMultiEnumCheckedContextMenu(TaskSettings.AfterUploadJob, cmsAfterUpload);
+            SetEnumChecked(TaskSettings.ImageDestination, tsmiImageUploaders);
+            SetEnumChecked(TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
+            SetEnumChecked(TaskSettings.TextDestination, tsmiTextUploaders);
+            SetEnumChecked(TaskSettings.TextFileDestination, tsmiTextFileUploaders);
+            SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
+            SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
+            SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, tsmiSocialServices);
 
             // FTP
             if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
@@ -221,16 +228,18 @@ namespace ShareX
         {
             if (Program.UploadersConfig != null)
             {
-                EnableDisableToolStripMenuItems<ImageDestination>(cmsImageUploaders);
-                EnableDisableToolStripMenuItems<TextDestination>(cmsTextUploaders);
-                EnableDisableToolStripMenuItems<FileDestination>(cmsFileUploaders);
-                EnableDisableToolStripMenuItems<UrlShortenerType>(cmsURLShorteners);
-                EnableDisableToolStripMenuItems<SocialNetworkingService>(cmsSocialNetworkingServices);
+                EnableDisableToolStripMenuItems<ImageDestination>(tsmiImageUploaders);
+                EnableDisableToolStripMenuItems<FileDestination>(tsmiImageFileUploaders);
+                EnableDisableToolStripMenuItems<TextDestination>(tsmiTextUploaders);
+                EnableDisableToolStripMenuItems<FileDestination>(tsmiTextFileUploaders);
+                EnableDisableToolStripMenuItems<FileDestination>(tsmiFileUploaders);
+                EnableDisableToolStripMenuItems<UrlShortenerType>(tsmiURLShorteners);
+                EnableDisableToolStripMenuItems<SocialNetworkingService>(tsmiSocialServices);
                 chkOverrideFTP.Visible = cboFTPaccounts.Visible = Program.UploadersConfig.FTPAccountList.Count > 1;
             }
         }
 
-        private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
+        private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
         {
             string[] enums = Helpers.GetEnumDescriptions<T>().Select(x => x.Replace("&", "&&")).ToArray();
 
@@ -263,7 +272,7 @@ namespace ShareX
             }
         }
 
-        private void SetEnumChecked(Enum value, params ToolStripDropDown[] parents)
+        private void SetEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
         {
             int index = value.GetIndex();
 
@@ -273,7 +282,7 @@ namespace ShareX
             }
         }
 
-        private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
+        private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
         {
             string[] enums = Enum.GetValues(typeof(T)).Cast<Enum>().Skip(1).Select(x => x.GetDescription().Replace("&", "&&")).ToArray();
 
@@ -303,7 +312,7 @@ namespace ShareX
             }
         }
 
-        private void SetMultiEnumChecked(Enum value, params ToolStripDropDown[] parents)
+        private void SetMultiEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
         {
             for (int i = 0; i < parents[0].Items.Count; i++)
             {
@@ -315,13 +324,56 @@ namespace ShareX
             }
         }
 
-        private void EnableDisableToolStripMenuItems<T>(params ToolStripDropDown[] parents)
+        private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            foreach (ToolStripDropDown parent in parents)
+            string[] enums = Helpers.GetEnumDescriptions<T>();
+
+            foreach (ToolStripDropDownItem parent in parents)
             {
-                for (int i = 0; i < parent.Items.Count; i++)
+                for (int i = 0; i < enums.Length; i++)
                 {
-                    parent.Items[i].Enabled = Program.UploadersConfig.IsActive<T>(i);
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+
+                    int index = i;
+
+                    tsmi.Click += (sender, e) =>
+                    {
+                        foreach (ToolStripDropDownItem parent2 in parents)
+                        {
+                            for (int i2 = 0; i2 < enums.Length; i2++)
+                            {
+                                ToolStripMenuItem tsmi2 = (ToolStripMenuItem)parent2.DropDownItems[i2];
+                                tsmi2.Checked = index == i2;
+                            }
+                        }
+
+                        selectedEnum((T)Enum.ToObject(typeof(T), index));
+
+                        UpdateUploaderMenuNames();
+                    };
+
+                    parent.DropDownItems.Add(tsmi);
+                }
+            }
+        }
+
+        private void SetEnumChecked(Enum value, params ToolStripDropDownItem[] parents)
+        {
+            int index = value.GetIndex();
+
+            foreach (ToolStripDropDownItem parent in parents)
+            {
+                ((ToolStripMenuItem)parent.DropDownItems[index]).Checked = true;
+            }
+        }
+
+        private void EnableDisableToolStripMenuItems<T>(params ToolStripDropDownItem[] parents)
+        {
+            foreach (ToolStripDropDownItem parent in parents)
+            {
+                for (int i = 0; i < parent.DropDownItems.Count; i++)
+                {
+                    parent.DropDownItems[i].Enabled = Program.UploadersConfig.IsActive<T>(i);
                 }
             }
         }
@@ -337,18 +389,18 @@ namespace ShareX
                 Select(x => x.GetDescription()).ToArray());
 
             string imageUploader = TaskSettings.ImageDestination == ImageDestination.FileUploader ?
-                TaskSettings.FileDestination.GetDescription() : TaskSettings.ImageDestination.GetDescription();
-            btnImageUploaders.Text = "Image uploader: " + imageUploader;
+                TaskSettings.ImageFileDestination.GetDescription() : TaskSettings.ImageDestination.GetDescription();
+            tsmiImageUploaders.Text = "Image uploader: " + imageUploader;
 
             string textUploader = TaskSettings.TextDestination == TextDestination.FileUploader ?
-                TaskSettings.FileDestination.GetDescription() : TaskSettings.TextDestination.GetDescription();
-            btnTextUploaders.Text = "Text uploader: " + textUploader;
+                TaskSettings.TextFileDestination.GetDescription() : TaskSettings.TextDestination.GetDescription();
+            tsmiTextUploaders.Text = "Text uploader: " + textUploader;
 
-            btnFileUploaders.Text = "File uploader: " + TaskSettings.FileDestination.GetDescription();
+            tsmiFileUploaders.Text = "File uploader: " + TaskSettings.FileDestination.GetDescription();
 
-            btnURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
+            tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
 
-            btnSocialNetworkingServices.Text = "Social networking service: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiSocialServices.Text = "Social networking service: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)
@@ -371,11 +423,7 @@ namespace ShareX
         private void cbUseDefaultDestinationSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultDestinations = cbUseDefaultDestinationSettings.Checked;
-            btnImageUploaders.Enabled = !TaskSettings.UseDefaultDestinations;
-            btnTextUploaders.Enabled = !TaskSettings.UseDefaultDestinations;
-            btnFileUploaders.Enabled = !TaskSettings.UseDefaultDestinations;
-            btnURLShorteners.Enabled = !TaskSettings.UseDefaultDestinations;
-            btnSocialNetworkingServices.Enabled = !TaskSettings.UseDefaultDestinations;
+            btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
         }
 
         private void chkOverrideFTP_CheckedChanged(object sender, EventArgs e)
