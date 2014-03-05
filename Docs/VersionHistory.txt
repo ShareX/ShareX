@@ -1,4 +1,12 @@
-﻿ShareX 8.5.0 - 2014-01-13
+﻿ShareX 8.5.1 - 2014-03-??
+
+* Image and text destinations can have different file uploaders
+* Added uPaste.me text uploader support
+* Added yourls.org URL shortener support
+* Automatically shorten URL if the URL is longer than the specified length
+* Toast notification window location is now customizable
+
+ShareX 8.5.0 - 2014-01-13
  
 * Updated ImageShack uploader to support their latest API
 * Added MediaCrush image uploader support (thanks @SirCmpwn)

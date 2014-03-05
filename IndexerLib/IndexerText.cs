@@ -41,9 +41,12 @@ namespace IndexerLib
             StringBuilder sbTxtIndex = new StringBuilder();
             string index = base.Index(folderPath).Trim();
             sbTxtIndex.AppendLine(index);
-            string footer = GetFooter();
-            sbTxtIndex.AppendLine("_".Repeat(footer.Length));
-            sbTxtIndex.AppendLine(footer);
+            if (config.AddFooter)
+            {
+                string footer = GetFooter();
+                sbTxtIndex.AppendLine("_".Repeat(footer.Length));
+                sbTxtIndex.AppendLine(footer);
+            }
             return sbTxtIndex.ToString().Trim();
         }
 

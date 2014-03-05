@@ -44,6 +44,9 @@ namespace IndexerLib
         [Category("Indexer"), DefaultValue(0), Description("Maximum folder depth level for indexing. 0 means unlimited.")]
         public int MaxDepthLevel { get; set; }
 
+        [Category("Indexer"), DefaultValue(true), Description("Add footer information to show application and generated time.")]
+        public bool AddFooter { get; set; }
+
         [Category("Indexer / Text"), DefaultValue("|___"), Description("Padding text to show indentation in the folder hierarchy.")]
         public string IndentationText { get; set; }
 
