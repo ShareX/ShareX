@@ -43,7 +43,7 @@ namespace ShareX
         private bool waitUploads;
         private Stopwatch stopwatch = new Stopwatch();
 
-        public AutoCaptureForm()
+        private AutoCaptureForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -62,11 +62,23 @@ namespace ShareX
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
         }
 
-        public static void AutoStart()
+        public static void Open()
         {
-            AutoCaptureForm form = new AutoCaptureForm();
-            form.Show();
-            form.Execute(true);
+            if (!IsRunning)
+            {
+                AutoCaptureForm form = new AutoCaptureForm();
+                form.Show();
+            }
+        }
+
+        public static void Start()
+        {
+            if (!IsRunning)
+            {
+                AutoCaptureForm form = new AutoCaptureForm();
+                form.Show();
+                form.Execute();
+            }
         }
 
         private void screenshotTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -143,7 +155,7 @@ namespace ShareX
             }
         }
 
-        public void Execute(bool silent = false)
+        public void Execute()
         {
             if (IsRunning)
             {
@@ -160,7 +172,7 @@ namespace ShareX
                 delay = (int)(Program.Settings.AutoCaptureRepeatTime * 1000);
                 waitUploads = Program.Settings.AutoCaptureWaitUpload;
 
-                if (Program.Settings.AutoCaptureMinimizeToTray || silent)
+                if (Program.Settings.AutoCaptureMinimizeToTray)
                 {
                     Visible = false;
                     niTray.Visible = true;

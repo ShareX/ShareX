@@ -464,6 +464,10 @@ namespace ShareX
                     {
                         UploadManager.ClipboardUpload();
                     }
+                    else if (args[i].Equals("-autocapture", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        AutoCaptureForm.Start();
+                    }
                     else if (args[i][0] != '-')
                     {
                         UploadManager.UploadFile(args[i]);
@@ -549,11 +553,6 @@ namespace ShareX
             {
                 form.StartRecording(taskSettings);
             }
-        }
-
-        private void OpenAutoCapture()
-        {
-            new AutoCaptureForm().Show();
         }
 
         private void OpenScreenColorPicker(TaskSettings taskSettings = null)
@@ -713,7 +712,7 @@ namespace ShareX
 
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
         {
-            OpenAutoCapture();
+            AutoCaptureForm.Open();
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
