@@ -17,6 +17,17 @@
             {
                 components.Dispose();
             }
+
+            if (screenshotTimer != null)
+            {
+                screenshotTimer.Dispose();
+            }
+
+            if (statusTimer != null)
+            {
+                statusTimer.Dispose();
+            }
+
             base.Dispose(disposing);
         }
 

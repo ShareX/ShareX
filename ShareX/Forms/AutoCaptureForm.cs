@@ -35,10 +35,10 @@ namespace ShareX
 {
     public partial class AutoCaptureForm : Form
     {
-        public bool IsRunning { get; private set; }
-        public Rectangle CaptureRectangle { get; private set; }
+        public static bool IsRunning { get; private set; }
 
-        private Timer timer, statusTimer;
+        private Timer statusTimer;
+        private System.Timers.Timer screenshotTimer;
         private int delay, count, timeleft, percentage;
         private bool waitUploads;
         private Stopwatch stopwatch = new Stopwatch();
@@ -49,29 +49,39 @@ namespace ShareX
             Icon = ShareXResources.Icon;
             niTray.Icon = Resources.clock_plus.ToIcon();
 
-            timer = new Timer();
-            timer.Tick += TimerTick;
+            screenshotTimer = new System.Timers.Timer();
+            screenshotTimer.SynchronizingObject = this;
+            screenshotTimer.Elapsed += screenshotTimer_Elapsed;
+
             statusTimer = new Timer { Interval = 250 };
             statusTimer.Tick += (sender, e) => UpdateStatus();
 
+            UpdateRegion();
             nudRepeatTime.Value = Program.Settings.AutoCaptureRepeatTime;
             cbAutoMinimize.Checked = Program.Settings.AutoCaptureMinimizeToTray;
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
         }
 
-        private void TimerTick(object sender, EventArgs e)
+        public static void AutoStart()
+        {
+            AutoCaptureForm form = new AutoCaptureForm();
+            form.Show();
+            form.Execute(true);
+        }
+
+        private void screenshotTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             if (IsRunning)
             {
                 if (waitUploads && TaskManager.IsBusy)
                 {
-                    timer.Interval = 1000;
+                    screenshotTimer.Interval = 1000;
                 }
                 else
                 {
                     stopwatch.Reset();
                     stopwatch.Start();
-                    timer.Interval = delay;
+                    screenshotTimer.Interval = delay;
                     count++;
                     TakeScreenshot();
                 }
@@ -80,9 +90,11 @@ namespace ShareX
 
         private void TakeScreenshot()
         {
-            if (!CaptureRectangle.IsEmpty)
+            Rectangle rect = Program.Settings.AutoCaptureRegion;
+
+            if (!rect.IsEmpty)
             {
-                Image img = Screenshot.CaptureRectangle(CaptureRectangle);
+                Image img = Screenshot.CaptureRectangle(rect);
 
                 if (img != null)
                 {
@@ -100,19 +112,21 @@ namespace ShareX
         private void SelectRegion()
         {
             Rectangle rect;
+
             if (TaskHelpers.SelectRegion(out rect))
             {
-                UpdateRegion(rect);
+                Program.Settings.AutoCaptureRegion = rect;
+                UpdateRegion();
             }
         }
 
-        private void UpdateRegion(Rectangle rect)
+        private void UpdateRegion()
         {
+            Rectangle rect = Program.Settings.AutoCaptureRegion;
+
             if (!rect.IsEmpty)
             {
-                CaptureRectangle = rect;
-                lblRegion.Text = string.Format("X: {0}, Y: {1}, Width: {2}, Height: {3}", CaptureRectangle.X, CaptureRectangle.Y,
-                    CaptureRectangle.Width, CaptureRectangle.Height);
+                lblRegion.Text = string.Format("X: {0}, Y: {1}, Width: {2}, Height: {3}", rect.X, rect.Y, rect.Width, rect.Height);
                 btnExecute.Enabled = true;
             }
         }
@@ -129,7 +143,7 @@ namespace ShareX
             }
         }
 
-        public void Execute()
+        public void Execute(bool silent = false)
         {
             if (IsRunning)
             {
@@ -142,18 +156,18 @@ namespace ShareX
             {
                 IsRunning = true;
                 btnExecute.Text = "Stop";
-                timer.Interval = 1000;
+                screenshotTimer.Interval = 1000;
                 delay = (int)(Program.Settings.AutoCaptureRepeatTime * 1000);
                 waitUploads = Program.Settings.AutoCaptureWaitUpload;
 
-                if (Program.Settings.AutoCaptureMinimizeToTray)
+                if (Program.Settings.AutoCaptureMinimizeToTray || silent)
                 {
                     Visible = false;
                     niTray.Visible = true;
                 }
             }
 
-            timer.Enabled = IsRunning;
+            screenshotTimer.Enabled = IsRunning;
             statusTimer.Enabled = IsRunning;
         }
 
@@ -185,13 +199,14 @@ namespace ShareX
         private void AutoCapture_FormClosing(object sender, FormClosingEventArgs e)
         {
             IsRunning = false;
-            timer.Enabled = false;
+            screenshotTimer.Enabled = false;
             statusTimer.Enabled = false;
         }
 
         private void btnFullscreen_Click(object sender, EventArgs e)
         {
-            UpdateRegion(CaptureHelpers.GetScreenBounds());
+            Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
+            UpdateRegion();
         }
 
         private void AutoCapture_Resize(object sender, EventArgs e)
