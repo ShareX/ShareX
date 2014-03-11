@@ -369,10 +369,33 @@ namespace ShareX
 
         public static void WritePersonalPathConfig(string path)
         {
-            // If path is empty and config file is not exist then don't create it
-            if (!string.IsNullOrEmpty(path) || File.Exists(PersonalPathConfig))
+            if (path == null)
             {
-                File.WriteAllText(PersonalPathConfig, path ?? string.Empty, Encoding.UTF8);
+                path = string.Empty;
+            }
+            else
+            {
+                path = path.Trim();
+            }
+
+            bool isDefaultPath = string.IsNullOrEmpty(path) && !File.Exists(PersonalPathConfig);
+
+            if (!isDefaultPath)
+            {
+                string currentPath = ReadPersonalPathConfig();
+
+                if (!path.Equals(currentPath, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    try
+                    {
+                        File.WriteAllText(PersonalPathConfig, path, Encoding.UTF8);
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        MessageBox.Show("Can't access to \"" + PersonalPathConfig + "\" file.\r\nPlease run ShareX as administrator to change personal folder path.", "ShareX",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
         }
 
