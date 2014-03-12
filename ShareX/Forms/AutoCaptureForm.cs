@@ -226,13 +226,10 @@ namespace ShareX
             }
         }
 
-        private void niTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void niTray_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                niTray.Visible = false;
-                this.ShowActivate();
-            }
+            niTray.Visible = false;
+            this.ShowActivate();
         }
     }
 }

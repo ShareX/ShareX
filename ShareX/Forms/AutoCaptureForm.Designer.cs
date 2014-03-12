@@ -52,6 +52,7 @@
             this.lblDuration = new System.Windows.Forms.Label();
             this.btnFullscreen = new System.Windows.Forms.Button();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblDurationSeconds = new System.Windows.Forms.Label();
             this.ssBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).BeginInit();
             this.SuspendLayout();
@@ -94,9 +95,9 @@
             this.cbWaitUploads.AutoSize = true;
             this.cbWaitUploads.Location = new System.Drawing.Point(16, 128);
             this.cbWaitUploads.Name = "cbWaitUploads";
-            this.cbWaitUploads.Size = new System.Drawing.Size(156, 17);
+            this.cbWaitUploads.Size = new System.Drawing.Size(144, 17);
             this.cbWaitUploads.TabIndex = 5;
-            this.cbWaitUploads.Text = "Wait until uploads complete";
+            this.cbWaitUploads.Text = "Wait until tasks complete";
             this.cbWaitUploads.UseVisualStyleBackColor = true;
             this.cbWaitUploads.CheckedChanged += new System.EventHandler(this.cbWaitUploads_CheckedChanged);
             // 
@@ -138,7 +139,7 @@
             0,
             0,
             65536});
-            this.nudRepeatTime.Location = new System.Drawing.Point(136, 72);
+            this.nudRepeatTime.Location = new System.Drawing.Point(88, 72);
             this.nudRepeatTime.Maximum = new decimal(new int[] {
             3600,
             0,
@@ -165,9 +166,9 @@
             this.lblDuration.AutoSize = true;
             this.lblDuration.Location = new System.Drawing.Point(16, 76);
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(116, 13);
+            this.lblDuration.Size = new System.Drawing.Size(67, 13);
             this.lblDuration.TabIndex = 10;
-            this.lblDuration.Text = "Repeat time (seconds):";
+            this.lblDuration.Text = "Repeat time:";
             // 
             // btnFullscreen
             // 
@@ -182,13 +183,23 @@
             // niTray
             // 
             this.niTray.Text = "ShareX - Auto capture";
-            this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseDoubleClick);
+            this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseClick);
             // 
-            // AutoCapture
+            // lblDurationSeconds
+            // 
+            this.lblDurationSeconds.AutoSize = true;
+            this.lblDurationSeconds.Location = new System.Drawing.Point(160, 76);
+            this.lblDurationSeconds.Name = "lblDurationSeconds";
+            this.lblDurationSeconds.Size = new System.Drawing.Size(47, 13);
+            this.lblDurationSeconds.TabIndex = 13;
+            this.lblDurationSeconds.Text = "seconds";
+            // 
+            // AutoCaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 180);
+            this.Controls.Add(this.lblDurationSeconds);
             this.Controls.Add(this.btnFullscreen);
             this.Controls.Add(this.nudRepeatTime);
             this.Controls.Add(this.lblDuration);
@@ -200,7 +211,7 @@
             this.Controls.Add(this.ssBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "AutoCapture";
+            this.Name = "AutoCaptureForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Auto capture";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutoCapture_FormClosing);
@@ -227,5 +238,6 @@
         private System.Windows.Forms.Label lblDuration;
         private System.Windows.Forms.Button btnFullscreen;
         private System.Windows.Forms.NotifyIcon niTray;
+        private System.Windows.Forms.Label lblDurationSeconds;
     }
 }
