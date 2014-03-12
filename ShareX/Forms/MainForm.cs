@@ -466,7 +466,7 @@ namespace ShareX
                     }
                     else if (args[i].Equals("-autocapture", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        AutoCaptureForm.Start();
+                        StartAutoCapture();
                     }
                     else if (args[i][0] != '-')
                     {
@@ -552,6 +552,21 @@ namespace ShareX
             else
             {
                 form.StartRecording(taskSettings);
+            }
+        }
+
+        private void OpenAutoCapture()
+        {
+            AutoCaptureForm.Instance.ShowActivate();
+        }
+
+        private void StartAutoCapture()
+        {
+            if (!AutoCaptureForm.IsRunning)
+            {
+                AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.Show();
+                form.Execute();
             }
         }
 
@@ -712,7 +727,7 @@ namespace ShareX
 
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
         {
-            AutoCaptureForm.Open();
+            OpenAutoCapture();
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)

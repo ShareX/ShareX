@@ -123,7 +123,7 @@ namespace ShareX
                     DoScreenRecorder(taskSettings);
                     break;
                 case HotkeyType.AutoCapture:
-                    AutoCaptureForm.Open();
+                    OpenAutoCapture();
                     break;
                 case HotkeyType.ScreenColorPicker:
                     OpenScreenColorPicker(taskSettings);

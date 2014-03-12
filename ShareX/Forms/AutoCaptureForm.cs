@@ -37,6 +37,21 @@ namespace ShareX
     {
         public static bool IsRunning { get; private set; }
 
+        private static AutoCaptureForm instance;
+
+        public static AutoCaptureForm Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new AutoCaptureForm();
+                }
+
+                return instance;
+            }
+        }
+
         private Timer statusTimer;
         private System.Timers.Timer screenshotTimer;
         private int delay, count, timeleft, percentage;
@@ -60,25 +75,6 @@ namespace ShareX
             nudRepeatTime.Value = Program.Settings.AutoCaptureRepeatTime;
             cbAutoMinimize.Checked = Program.Settings.AutoCaptureMinimizeToTray;
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
-        }
-
-        public static void Open()
-        {
-            if (!IsRunning)
-            {
-                AutoCaptureForm form = new AutoCaptureForm();
-                form.Show();
-            }
-        }
-
-        public static void Start()
-        {
-            if (!IsRunning)
-            {
-                AutoCaptureForm form = new AutoCaptureForm();
-                form.Show();
-                form.Execute();
-            }
         }
 
         private void screenshotTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
