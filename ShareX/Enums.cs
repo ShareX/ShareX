@@ -192,7 +192,7 @@ namespace ShareX
         [Description("Overwrite file")]
         Overwrite,
         [Description("Add number end of file name")]
-        NewName,
+        UniqueName,
         [Description("Don't save")]
         Cancel
     }

@@ -40,6 +40,7 @@ namespace ShareX
     {
         public string Filepath { get; private set; }
 
+        private string filename;
         private string uniqueFilepath;
 
         public FileExistForm(string filepath)
@@ -48,9 +49,41 @@ namespace ShareX
             Icon = ShareXResources.Icon;
 
             Filepath = filepath;
+            filename = Path.GetFileNameWithoutExtension(Filepath);
+            txtNewName.Text = filename;
             btnOverwrite.Text += Path.GetFileName(Filepath);
             uniqueFilepath = Helpers.GetUniqueFilePath(Filepath);
-            btnNewName.Text += Path.GetFileName(uniqueFilepath);
+            btnUniqueName.Text += Path.GetFileName(uniqueFilepath);
+        }
+
+        private string GetNewFilename()
+        {
+            string newFilename = txtNewName.Text;
+
+            if (!string.IsNullOrEmpty(newFilename))
+            {
+                return newFilename + Path.GetExtension(Filepath);
+            }
+
+            return string.Empty;
+        }
+
+        private void btnNewName_Click(object sender, EventArgs e)
+        {
+            string newFilename = GetNewFilename();
+
+            if (!string.IsNullOrEmpty(newFilename))
+            {
+                Filepath = Path.Combine(Path.GetDirectoryName(Filepath), newFilename);
+                Close();
+            }
+        }
+
+        private void txtNewName_TextChanged(object sender, EventArgs e)
+        {
+            string newFilename = txtNewName.Text;
+            btnNewName.Enabled = !string.IsNullOrEmpty(newFilename) && !newFilename.Equals(filename, StringComparison.InvariantCultureIgnoreCase);
+            btnNewName.Text = "Use new name: " + GetNewFilename();
         }
 
         private void btnOverwrite_Click(object sender, EventArgs e)
@@ -58,7 +91,7 @@ namespace ShareX
             Close();
         }
 
-        private void btnNewName_Click(object sender, EventArgs e)
+        private void btnUniqueName_Click(object sender, EventArgs e)
         {
             Filepath = uniqueFilepath;
             Close();

@@ -369,7 +369,7 @@ namespace ShareX
                             filepath = form.Filepath;
                         }
                         break;
-                    case FileExistAction.NewName:
+                    case FileExistAction.UniqueName:
                         filepath = Helpers.GetUniqueFilePath(filepath);
                         break;
                     case FileExistAction.Cancel:
