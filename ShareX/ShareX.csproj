@@ -110,6 +110,12 @@
     <Compile Include="Forms\ExternalProgramForm.Designer.cs">
       <DependentUpon>ExternalProgramForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FileExistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileExistForm.Designer.cs">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm_Capture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExternalProgramForm.resx">
       <DependentUpon>ExternalProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>

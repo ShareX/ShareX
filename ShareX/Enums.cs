@@ -184,4 +184,16 @@ namespace ShareX
         [Description("Show toast notification with preview")]
         ToastNotification
     }
+
+    public enum FileExistAction
+    {
+        [Description("Ask what to do")]
+        Ask,
+        [Description("Overwrite file")]
+        Overwrite,
+        [Description("Add number end of file name")]
+        NewName,
+        [Description("Don't save")]
+        Cancel
+    }
 }

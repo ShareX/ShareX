@@ -353,6 +353,20 @@ namespace ShareX
 
             return updateChecker;
         }
+
+        public static string CheckFilename(string filepath, TaskSettings taskSettings)
+        {
+            if (File.Exists(filepath))
+            {
+                using (FileExistForm form = new FileExistForm(filepath))
+                {
+                    form.ShowDialog();
+                    filepath = form.Filepath;
+                }
+            }
+
+            return filepath;
+        }
     }
 
     public class PointInfo

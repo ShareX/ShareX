@@ -121,12 +121,15 @@ namespace ShareX
             cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
             cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
-            // Image - Quality
+            // Image - General
             cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
             nudImageJPEGQuality.Value = TaskSettings.ImageSettings.ImageJPEGQuality;
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
             nudUseImageFormat2After.Value = TaskSettings.ImageSettings.ImageSizeLimit;
             cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;
+            cbImageFileExist.Items.Clear();
+            cbImageFileExist.Items.AddRange(Helpers.GetEnumDescriptions<FileExistAction>());
+            cbImageFileExist.SelectedIndex = (int)TaskSettings.ImageSettings.FileExistAction;
 
             // Image - Effects
             chkShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
@@ -510,6 +513,11 @@ namespace ShareX
         private void nudUseImageFormat2After_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageSizeLimit = (int)nudUseImageFormat2After.Value;
+        }
+
+        private void cbImageFileExist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.FileExistAction = (FileExistAction)cbImageFileExist.SelectedIndex;
         }
 
         private void btnWatermarkSettings_Click(object sender, EventArgs e)

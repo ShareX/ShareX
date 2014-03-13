@@ -44,6 +44,12 @@
             this.btnAfterCapture = new HelpersLib.MenuButton();
             this.btnAfterUpload = new HelpersLib.MenuButton();
             this.btnDestinations = new HelpersLib.MenuButton();
+            this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSocialServices = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTask = new HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
@@ -147,14 +153,11 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSocialServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblImageFileExist = new System.Windows.Forms.Label();
+            this.cbImageFileExist = new System.Windows.Forms.ComboBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
+            this.cmsDestinations.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.panelGeneral.SuspendLayout();
             this.tpImage.SuspendLayout();
@@ -184,7 +187,6 @@
             this.tpUploadClipboard.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.cmsDestinations.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -349,6 +351,52 @@
             this.btnDestinations.UseMnemonic = false;
             this.btnDestinations.UseVisualStyleBackColor = true;
             // 
+            // cmsDestinations
+            // 
+            this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiImageUploaders,
+            this.tsmiTextUploaders,
+            this.tsmiFileUploaders,
+            this.tsmiURLShorteners,
+            this.tsmiSocialServices});
+            this.cmsDestinations.Name = "cmsDestinations";
+            this.cmsDestinations.Size = new System.Drawing.Size(213, 114);
+            // 
+            // tsmiImageUploaders
+            // 
+            this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
+            this.tsmiImageUploaders.Name = "tsmiImageUploaders";
+            this.tsmiImageUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiImageUploaders.Text = "Image uploaders";
+            // 
+            // tsmiTextUploaders
+            // 
+            this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
+            this.tsmiTextUploaders.Name = "tsmiTextUploaders";
+            this.tsmiTextUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiTextUploaders.Text = "Text uploaders";
+            // 
+            // tsmiFileUploaders
+            // 
+            this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
+            this.tsmiFileUploaders.Name = "tsmiFileUploaders";
+            this.tsmiFileUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiFileUploaders.Text = "File uploaders";
+            // 
+            // tsmiURLShorteners
+            // 
+            this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
+            this.tsmiURLShorteners.Name = "tsmiURLShorteners";
+            this.tsmiURLShorteners.Size = new System.Drawing.Size(212, 22);
+            this.tsmiURLShorteners.Text = "URL shorteners";
+            // 
+            // tsmiSocialServices
+            // 
+            this.tsmiSocialServices.Image = global::ShareX.Properties.Resources.globe_share;
+            this.tsmiSocialServices.Name = "tsmiSocialServices";
+            this.tsmiSocialServices.Size = new System.Drawing.Size(212, 22);
+            this.tsmiSocialServices.Text = "Social networking services";
+            // 
             // btnTask
             // 
             this.btnTask.Location = new System.Drawing.Point(6, 37);
@@ -503,6 +551,8 @@
             // 
             // tpQuality
             // 
+            this.tpQuality.Controls.Add(this.cbImageFileExist);
+            this.tpQuality.Controls.Add(this.lblImageFileExist);
             this.tpQuality.Controls.Add(this.lblImageFormat);
             this.tpQuality.Controls.Add(this.lblUseImageFormat2AfterHint);
             this.tpQuality.Controls.Add(this.cbImageFormat);
@@ -520,7 +570,7 @@
             this.tpQuality.Padding = new System.Windows.Forms.Padding(3);
             this.tpQuality.Size = new System.Drawing.Size(506, 301);
             this.tpQuality.TabIndex = 0;
-            this.tpQuality.Text = "Quality";
+            this.tpQuality.Text = "General";
             this.tpQuality.UseVisualStyleBackColor = true;
             // 
             // lblImageFormat
@@ -1564,51 +1614,24 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // cmsDestinations
+            // lblImageFileExist
             // 
-            this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiImageUploaders,
-            this.tsmiTextUploaders,
-            this.tsmiFileUploaders,
-            this.tsmiURLShorteners,
-            this.tsmiSocialServices});
-            this.cmsDestinations.Name = "cmsDestinations";
-            this.cmsDestinations.Size = new System.Drawing.Size(213, 114);
+            this.lblImageFileExist.AutoSize = true;
+            this.lblImageFileExist.Location = new System.Drawing.Point(16, 176);
+            this.lblImageFileExist.Name = "lblImageFileExist";
+            this.lblImageFileExist.Size = new System.Drawing.Size(56, 13);
+            this.lblImageFileExist.TabIndex = 12;
+            this.lblImageFileExist.Text = "If file exist:";
             // 
-            // tsmiImageUploaders
+            // cbImageFileExist
             // 
-            this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
-            this.tsmiImageUploaders.Name = "tsmiImageUploaders";
-            this.tsmiImageUploaders.Size = new System.Drawing.Size(212, 22);
-            this.tsmiImageUploaders.Text = "Image uploaders";
-            // 
-            // tsmiTextUploaders
-            // 
-            this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
-            this.tsmiTextUploaders.Name = "tsmiTextUploaders";
-            this.tsmiTextUploaders.Size = new System.Drawing.Size(212, 22);
-            this.tsmiTextUploaders.Text = "Text uploaders";
-            // 
-            // tsmiFileUploaders
-            // 
-            this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
-            this.tsmiFileUploaders.Name = "tsmiFileUploaders";
-            this.tsmiFileUploaders.Size = new System.Drawing.Size(212, 22);
-            this.tsmiFileUploaders.Text = "File uploaders";
-            // 
-            // tsmiURLShorteners
-            // 
-            this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
-            this.tsmiURLShorteners.Name = "tsmiURLShorteners";
-            this.tsmiURLShorteners.Size = new System.Drawing.Size(212, 22);
-            this.tsmiURLShorteners.Text = "URL shorteners";
-            // 
-            // tsmiSocialServices
-            // 
-            this.tsmiSocialServices.Image = global::ShareX.Properties.Resources.globe_share;
-            this.tsmiSocialServices.Name = "tsmiSocialServices";
-            this.tsmiSocialServices.Size = new System.Drawing.Size(212, 22);
-            this.tsmiSocialServices.Text = "Social networking services";
+            this.cbImageFileExist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImageFileExist.FormattingEnabled = true;
+            this.cbImageFileExist.Location = new System.Drawing.Point(104, 172);
+            this.cbImageFileExist.Name = "cbImageFileExist";
+            this.cbImageFileExist.Size = new System.Drawing.Size(176, 21);
+            this.cbImageFileExist.TabIndex = 13;
+            this.cbImageFileExist.SelectedIndexChanged += new System.EventHandler(this.cbImageFileExist_SelectedIndexChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1628,6 +1651,7 @@
             this.tcHotkeySettings.ResumeLayout(false);
             this.tpTask.ResumeLayout(false);
             this.tpTask.PerformLayout();
+            this.cmsDestinations.ResumeLayout(false);
             this.tpGeneral.ResumeLayout(false);
             this.tpGeneral.PerformLayout();
             this.panelGeneral.ResumeLayout(false);
@@ -1673,7 +1697,6 @@
             this.tpIndexer.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.cmsDestinations.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1804,6 +1827,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiFileUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiURLShorteners;
         private System.Windows.Forms.ToolStripMenuItem tsmiSocialServices;
+        private System.Windows.Forms.ComboBox cbImageFileExist;
+        private System.Windows.Forms.Label lblImageFileExist;
 
 
 

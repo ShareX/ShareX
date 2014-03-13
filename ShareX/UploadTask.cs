@@ -405,6 +405,7 @@ namespace ShareX
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                     {
                         Info.FilePath = Path.Combine(Program.ScreenshotsPath, Info.FileName);
+                        Info.FilePath = TaskHelpers.CheckFilename(Info.FilePath, Info.TaskSettings);
                         imageData.Write(Info.FilePath);
                         DebugHelper.WriteLine("SaveImageToFile: " + Info.FilePath);
                     }
