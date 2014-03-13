@@ -354,14 +354,27 @@ namespace ShareX
             return updateChecker;
         }
 
-        public static string CheckFilename(string filepath, TaskSettings taskSettings)
+        public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
         {
+            string filepath = Path.Combine(folder, filename);
+
             if (File.Exists(filepath))
             {
-                using (FileExistForm form = new FileExistForm(filepath))
+                switch (taskSettings.ImageSettings.FileExistAction)
                 {
-                    form.ShowDialog();
-                    filepath = form.Filepath;
+                    case FileExistAction.Ask:
+                        using (FileExistForm form = new FileExistForm(filepath))
+                        {
+                            form.ShowDialog();
+                            filepath = form.Filepath;
+                        }
+                        break;
+                    case FileExistAction.NewName:
+                        filepath = Helpers.GetUniqueFilePath(filepath);
+                        break;
+                    case FileExistAction.Cancel:
+                        filepath = string.Empty;
+                        break;
                 }
             }
 
