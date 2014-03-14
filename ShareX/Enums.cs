@@ -191,9 +191,9 @@ namespace ShareX
         Ask,
         [Description("Overwrite file")]
         Overwrite,
-        [Description("Add number end of file name")]
+        [Description("Append number to the filename")]
         UniqueName,
-        [Description("Don't save")]
+        [Description("Do not save")]
         Cancel
     }
 }

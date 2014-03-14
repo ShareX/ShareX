@@ -68,7 +68,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(352, 32);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Don\'t save";
+            this.btnCancel.Text = "Do not save";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -81,7 +81,7 @@
             this.btnUniqueName.Name = "btnUniqueName";
             this.btnUniqueName.Size = new System.Drawing.Size(352, 32);
             this.btnUniqueName.TabIndex = 1;
-            this.btnUniqueName.Text = "Use unique name: ";
+            this.btnUniqueName.Text = "Use a unique name: ";
             this.btnUniqueName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUniqueName.UseVisualStyleBackColor = true;
             this.btnUniqueName.Click += new System.EventHandler(this.btnUniqueName_Click);
