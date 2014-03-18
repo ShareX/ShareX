@@ -151,7 +151,9 @@ namespace ShareX
                 if (UseDefaultDestinations)
                 {
                     ImageDestination = defaultTaskSettings.ImageDestination;
+                    ImageFileDestination = defaultTaskSettings.ImageFileDestination;
                     TextDestination = defaultTaskSettings.TextDestination;
+                    TextFileDestination = defaultTaskSettings.TextFileDestination;
                     FileDestination = defaultTaskSettings.FileDestination;
                     URLShortenerDestination = defaultTaskSettings.URLShortenerDestination;
                     SocialNetworkingServiceDestination = defaultTaskSettings.SocialNetworkingServiceDestination;
