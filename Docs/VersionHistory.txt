@@ -1,5 +1,6 @@
-﻿ShareX 8.5.1 - 2014-03-??
+﻿ShareX 8.6.0 - 2014-03-18
 
+* New file operations wizard if file exists
 * Image and text destinations can have different file uploaders
 * Added uPaste.me text uploader support
 * Added yourls.org URL shortener support
