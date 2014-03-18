@@ -727,7 +727,10 @@ namespace ShareX
                     };
                     break;
                 case FileDestination.GoogleDrive:
-                    fileUploader = new GoogleDrive(Program.UploadersConfig.GoogleDriveOAuth2Info);
+                    fileUploader = new GoogleDrive(Program.UploadersConfig.GoogleDriveOAuth2Info)
+                    {
+                        IsPublic = Program.UploadersConfig.GoogleDriveIsPublic
+                    };
                     break;
                 case FileDestination.RapidShare:
                     fileUploader = new RapidShare(Program.UploadersConfig.RapidShareUsername, Program.UploadersConfig.RapidSharePassword,

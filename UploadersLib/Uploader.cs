@@ -123,9 +123,9 @@ namespace UploadersLib
             return SendPostRequestURLEncoded(url, CreateQuery(arguments), responseType);
         }
 
-        protected string SendPostRequestJSON(string url, string json, ResponseType responseType = ResponseType.Text)
+        protected string SendPostRequestJSON(string url, string json, ResponseType responseType = ResponseType.Text, CookieCollection cookies = null, NameValueCollection headers = null)
         {
-            using (HttpWebResponse response = PostResponseJSON(url, json))
+            using (HttpWebResponse response = PostResponseJSON(url, json, cookies, headers))
             {
                 return ResponseToString(response, responseType);
             }
@@ -167,14 +167,14 @@ namespace UploadersLib
             return PostResponseURLEncoded(url, CreateQuery(arguments));
         }
 
-        private HttpWebResponse PostResponseJSON(string url, string json)
+        private HttpWebResponse PostResponseJSON(string url, string json, CookieCollection cookies = null, NameValueCollection headers = null)
         {
             byte[] data = Encoding.UTF8.GetBytes(json);
 
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponseUsingPost(url, stream, null, "application/json");
+                return GetResponseUsingPost(url, stream, null, "application/json", cookies, headers);
             }
         }
 

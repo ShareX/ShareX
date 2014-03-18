@@ -256,6 +256,8 @@ namespace UploadersLib
                 oauth2GoogleDrive.LoginStatus = true;
             }
 
+            cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+
             // Minus
 
             cbMinusURLType.Items.Clear();

@@ -446,6 +446,11 @@ namespace UploadersLib
             GoogleDriveAuthRefresh();
         }
 
+        private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleDriveIsPublic = cbGoogleDriveIsPublic.Checked;
+        }
+
         #endregion Google Drive
 
         #region Box
