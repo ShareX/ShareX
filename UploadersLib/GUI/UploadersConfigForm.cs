@@ -488,11 +488,6 @@ namespace UploadersLib
 
         #region Minus
 
-        private bool HasFolder(string name)
-        {
-            return cboMinusFolders.Items.Cast<MinusFolder>().Any(mf => mf.name == name);
-        }
-
         private void btnMinusAuth_Click(object sender, EventArgs e)
         {
             MinusAuth();
@@ -515,29 +510,43 @@ namespace UploadersLib
 
         private void btnMinusFolderAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && !HasFolder(cboMinusFolders.Text))
+            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && !MinusHasFolder(cboMinusFolders.Text))
             {
-                Minus minus = new Minus(Config.MinusConfig, new OAuthInfo(APIKeys.MinusConsumerKey, APIKeys.MinusConsumerSecret));
+                btnMinusFolderAdd.Enabled = false;
+
+                Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
                 MinusFolder dir = minus.CreateFolder(cboMinusFolders.Text, chkMinusPublic.Checked);
                 if (dir != null)
                 {
                     cboMinusFolders.Items.Add(dir);
+                    cboMinusFolders.SelectedIndex = cboMinusFolders.Items.Count - 1;
                 }
+
+                btnMinusFolderAdd.Enabled = true;
             }
         }
 
         private void btnMinusFolderRemove_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && HasFolder(cboMinusFolders.Text))
+            if (!string.IsNullOrEmpty(cboMinusFolders.Text) && MinusHasFolder(cboMinusFolders.Text))
             {
-                Minus minus = new Minus(Config.MinusConfig, new OAuthInfo(APIKeys.MinusConsumerKey, APIKeys.MinusConsumerSecret));
+                btnMinusFolderRemove.Enabled = false;
 
-                int id = cboMinusFolders.SelectedIndex;
+                Minus minus = new Minus(Config.MinusConfig, Config.MinusOAuth2Info);
 
-                if (minus.DeleteFolder(id))
+                int index = cboMinusFolders.SelectedIndex;
+
+                if (minus.DeleteFolder(index))
                 {
-                    cboMinusFolders.Items.RemoveAt(id);
+                    cboMinusFolders.Items.RemoveAt(index);
+
+                    if (cboMinusFolders.Items.Count > 0)
+                    {
+                        cboMinusFolders.SelectedIndex = 0;
+                    }
                 }
+
+                btnMinusFolderRemove.Enabled = true;
             }
         }
 
@@ -547,8 +556,7 @@ namespace UploadersLib
             {
                 btnMinusReadFolderList.Enabled = false;
 
-                List<MinusFolder> tempListMf = new Minus(Config.MinusConfig,
-                    new OAuthInfo(APIKeys.MinusConsumerKey, APIKeys.MinusConsumerSecret)).ReadFolderList(MinusScope.read_all);
+                List<MinusFolder> tempListMf = new Minus(Config.MinusConfig, Config.MinusOAuth2Info).ReadFolderList();
 
                 if (tempListMf.Count > 0)
                 {

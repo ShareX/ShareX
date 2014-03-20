@@ -749,7 +749,7 @@ namespace ShareX
                     }
                     break;
                 case FileDestination.Minus:
-                    fileUploader = new Minus(Program.UploadersConfig.MinusConfig, new OAuthInfo(APIKeys.MinusConsumerKey, APIKeys.MinusConsumerSecret));
+                    fileUploader = new Minus(Program.UploadersConfig.MinusConfig, Program.UploadersConfig.MinusOAuth2Info);
                     break;
                 case FileDestination.Box:
                     fileUploader = new Box(APIKeys.BoxKey)

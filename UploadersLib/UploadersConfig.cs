@@ -137,6 +137,7 @@ namespace UploadersLib
 
         // Minus
 
+        public OAuth2Info MinusOAuth2Info = null;
         public MinusOptions MinusConfig = new MinusOptions();
 
         // Box
