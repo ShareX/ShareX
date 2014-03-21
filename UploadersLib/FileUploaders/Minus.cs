@@ -125,11 +125,6 @@ namespace UploadersLib.FileUploaders
             return true;
         }
 
-        private string GetFolderLinkFromID(string id)
-        {
-            return URL_API + "/folders/" + id + "/files?bearer_token=" + AuthInfo.Token.access_token;
-        }
-
         private string GetActiveUserFolderURL()
         {
             MinusUser user = Config.MinusUser ?? (Config.MinusUser = GetActiveUser());
@@ -227,7 +222,7 @@ namespace UploadersLib.FileUploaders
                 return null;
             }
 
-            string url = GetFolderLinkFromID(Config.GetActiveFolder().id);
+            string url = string.Format("{0}/folders/{1}/files?bearer_token={2}", URL_API, Config.GetActiveFolder().id, AuthInfo.Token.access_token);
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("caption", fileName);

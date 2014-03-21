@@ -205,6 +205,7 @@
             this.lblJiraHost = new System.Windows.Forms.Label();
             this.tpMinus = new System.Windows.Forms.TabPage();
             this.gbMinusUserPass = new System.Windows.Forms.GroupBox();
+            this.lblMinusAuthStatus = new System.Windows.Forms.Label();
             this.btnMinusRefreshAuth = new System.Windows.Forms.Button();
             this.lblMinusPassword = new System.Windows.Forms.Label();
             this.lblMinusUsername = new System.Windows.Forms.Label();
@@ -319,7 +320,6 @@
             this.txtCustomUploaderArgName = new System.Windows.Forms.TextBox();
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.lblMinusAuthStatus = new System.Windows.Forms.Label();
             this.oauth2Imgur = new UploadersLib.GUI.OAuth2Control();
             this.atcImgurAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.atcImageShackAccountType = new UploadersLib.GUI.AccountTypeControl();
@@ -2224,6 +2224,8 @@
             // 
             // tpMinus
             // 
+            this.tpMinus.Controls.Add(this.lblMinusURLType);
+            this.tpMinus.Controls.Add(this.cbMinusURLType);
             this.tpMinus.Controls.Add(this.gbMinusUserPass);
             this.tpMinus.Controls.Add(this.gbMinusUpload);
             this.tpMinus.Location = new System.Drawing.Point(4, 22);
@@ -2245,14 +2247,23 @@
             this.gbMinusUserPass.Controls.Add(this.btnMinusAuth);
             this.gbMinusUserPass.Location = new System.Drawing.Point(16, 16);
             this.gbMinusUserPass.Name = "gbMinusUserPass";
-            this.gbMinusUserPass.Size = new System.Drawing.Size(712, 120);
+            this.gbMinusUserPass.Size = new System.Drawing.Size(712, 112);
             this.gbMinusUserPass.TabIndex = 0;
             this.gbMinusUserPass.TabStop = false;
             this.gbMinusUserPass.Text = "Authentication";
             // 
+            // lblMinusAuthStatus
+            // 
+            this.lblMinusAuthStatus.AutoSize = true;
+            this.lblMinusAuthStatus.Location = new System.Drawing.Point(312, 86);
+            this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
+            this.lblMinusAuthStatus.Size = new System.Drawing.Size(67, 13);
+            this.lblMinusAuthStatus.TabIndex = 6;
+            this.lblMinusAuthStatus.Text = "Login status:";
+            // 
             // btnMinusRefreshAuth
             // 
-            this.btnMinusRefreshAuth.Location = new System.Drawing.Point(400, 50);
+            this.btnMinusRefreshAuth.Location = new System.Drawing.Point(160, 80);
             this.btnMinusRefreshAuth.Name = "btnMinusRefreshAuth";
             this.btnMinusRefreshAuth.Size = new System.Drawing.Size(144, 24);
             this.btnMinusRefreshAuth.TabIndex = 3;
@@ -2283,19 +2294,19 @@
             this.txtMinusPassword.Location = new System.Drawing.Point(72, 52);
             this.txtMinusPassword.Name = "txtMinusPassword";
             this.txtMinusPassword.PasswordChar = '*';
-            this.txtMinusPassword.Size = new System.Drawing.Size(168, 20);
+            this.txtMinusPassword.Size = new System.Drawing.Size(232, 20);
             this.txtMinusPassword.TabIndex = 5;
             // 
             // txtMinusUsername
             // 
             this.txtMinusUsername.Location = new System.Drawing.Point(72, 20);
             this.txtMinusUsername.Name = "txtMinusUsername";
-            this.txtMinusUsername.Size = new System.Drawing.Size(168, 20);
+            this.txtMinusUsername.Size = new System.Drawing.Size(232, 20);
             this.txtMinusUsername.TabIndex = 1;
             // 
             // btnMinusAuth
             // 
-            this.btnMinusAuth.Location = new System.Drawing.Point(248, 50);
+            this.btnMinusAuth.Location = new System.Drawing.Point(8, 80);
             this.btnMinusAuth.Name = "btnMinusAuth";
             this.btnMinusAuth.Size = new System.Drawing.Size(144, 24);
             this.btnMinusAuth.TabIndex = 2;
@@ -2305,14 +2316,12 @@
             // 
             // gbMinusUpload
             // 
-            this.gbMinusUpload.Controls.Add(this.lblMinusURLType);
-            this.gbMinusUpload.Controls.Add(this.cbMinusURLType);
             this.gbMinusUpload.Controls.Add(this.btnMinusReadFolderList);
             this.gbMinusUpload.Controls.Add(this.chkMinusPublic);
             this.gbMinusUpload.Controls.Add(this.btnMinusFolderAdd);
             this.gbMinusUpload.Controls.Add(this.btnMinusFolderRemove);
             this.gbMinusUpload.Controls.Add(this.cboMinusFolders);
-            this.gbMinusUpload.Location = new System.Drawing.Point(16, 144);
+            this.gbMinusUpload.Location = new System.Drawing.Point(16, 136);
             this.gbMinusUpload.Name = "gbMinusUpload";
             this.gbMinusUpload.Size = new System.Drawing.Size(712, 88);
             this.gbMinusUpload.TabIndex = 1;
@@ -2322,7 +2331,7 @@
             // lblMinusURLType
             // 
             this.lblMinusURLType.AutoSize = true;
-            this.lblMinusURLType.Location = new System.Drawing.Point(16, 56);
+            this.lblMinusURLType.Location = new System.Drawing.Point(16, 240);
             this.lblMinusURLType.Name = "lblMinusURLType";
             this.lblMinusURLType.Size = new System.Drawing.Size(55, 13);
             this.lblMinusURLType.TabIndex = 4;
@@ -2332,7 +2341,7 @@
             // 
             this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMinusURLType.FormattingEnabled = true;
-            this.cbMinusURLType.Location = new System.Drawing.Point(80, 52);
+            this.cbMinusURLType.Location = new System.Drawing.Point(80, 236);
             this.cbMinusURLType.Name = "cbMinusURLType";
             this.cbMinusURLType.Size = new System.Drawing.Size(88, 21);
             this.cbMinusURLType.TabIndex = 6;
@@ -2341,9 +2350,9 @@
             // btnMinusReadFolderList
             // 
             this.btnMinusReadFolderList.AutoSize = true;
-            this.btnMinusReadFolderList.Location = new System.Drawing.Point(512, 48);
+            this.btnMinusReadFolderList.Location = new System.Drawing.Point(8, 24);
             this.btnMinusReadFolderList.Name = "btnMinusReadFolderList";
-            this.btnMinusReadFolderList.Size = new System.Drawing.Size(184, 23);
+            this.btnMinusReadFolderList.Size = new System.Drawing.Size(144, 23);
             this.btnMinusReadFolderList.TabIndex = 5;
             this.btnMinusReadFolderList.Text = "Reload folder list";
             this.btnMinusReadFolderList.UseVisualStyleBackColor = true;
@@ -2352,7 +2361,7 @@
             // chkMinusPublic
             // 
             this.chkMinusPublic.AutoSize = true;
-            this.chkMinusPublic.Location = new System.Drawing.Point(416, 26);
+            this.chkMinusPublic.Location = new System.Drawing.Point(464, 58);
             this.chkMinusPublic.Name = "chkMinusPublic";
             this.chkMinusPublic.Size = new System.Drawing.Size(55, 17);
             this.chkMinusPublic.TabIndex = 3;
@@ -2361,9 +2370,9 @@
             // 
             // btnMinusFolderAdd
             // 
-            this.btnMinusFolderAdd.Location = new System.Drawing.Point(512, 16);
+            this.btnMinusFolderAdd.Location = new System.Drawing.Point(160, 24);
             this.btnMinusFolderAdd.Name = "btnMinusFolderAdd";
-            this.btnMinusFolderAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnMinusFolderAdd.Size = new System.Drawing.Size(144, 23);
             this.btnMinusFolderAdd.TabIndex = 0;
             this.btnMinusFolderAdd.Text = "Add folder";
             this.btnMinusFolderAdd.UseVisualStyleBackColor = true;
@@ -2372,9 +2381,9 @@
             // btnMinusFolderRemove
             // 
             this.btnMinusFolderRemove.AutoSize = true;
-            this.btnMinusFolderRemove.Location = new System.Drawing.Point(592, 16);
+            this.btnMinusFolderRemove.Location = new System.Drawing.Point(312, 24);
             this.btnMinusFolderRemove.Name = "btnMinusFolderRemove";
-            this.btnMinusFolderRemove.Size = new System.Drawing.Size(104, 23);
+            this.btnMinusFolderRemove.Size = new System.Drawing.Size(144, 23);
             this.btnMinusFolderRemove.TabIndex = 1;
             this.btnMinusFolderRemove.Text = "Remove folder";
             this.btnMinusFolderRemove.UseVisualStyleBackColor = true;
@@ -2383,9 +2392,9 @@
             // cboMinusFolders
             // 
             this.cboMinusFolders.FormattingEnabled = true;
-            this.cboMinusFolders.Location = new System.Drawing.Point(16, 24);
+            this.cboMinusFolders.Location = new System.Drawing.Point(8, 56);
             this.cboMinusFolders.Name = "cboMinusFolders";
-            this.cboMinusFolders.Size = new System.Drawing.Size(392, 21);
+            this.cboMinusFolders.Size = new System.Drawing.Size(448, 21);
             this.cboMinusFolders.TabIndex = 2;
             this.cboMinusFolders.SelectedIndexChanged += new System.EventHandler(this.cboMinusFolders_SelectedIndexChanged);
             // 
@@ -3431,15 +3440,6 @@
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
-            // lblMinusAuthStatus
-            // 
-            this.lblMinusAuthStatus.AutoSize = true;
-            this.lblMinusAuthStatus.Location = new System.Drawing.Point(8, 88);
-            this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
-            this.lblMinusAuthStatus.Size = new System.Drawing.Size(67, 13);
-            this.lblMinusAuthStatus.TabIndex = 6;
-            this.lblMinusAuthStatus.Text = "Login status:";
-            // 
             // oauth2Imgur
             // 
             this.oauth2Imgur.Location = new System.Drawing.Point(16, 16);
@@ -3702,6 +3702,7 @@
             this.gpJiraServer.ResumeLayout(false);
             this.gpJiraServer.PerformLayout();
             this.tpMinus.ResumeLayout(false);
+            this.tpMinus.PerformLayout();
             this.gbMinusUserPass.ResumeLayout(false);
             this.gbMinusUserPass.PerformLayout();
             this.gbMinusUpload.ResumeLayout(false);
