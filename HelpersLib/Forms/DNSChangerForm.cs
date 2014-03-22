@@ -86,7 +86,7 @@ namespace HelpersLib
             {
                 string[] dns = adapter.GetDNS();
 
-                if (dns != null)
+                if (dns != null && dns.Length == 2)
                 {
                     tempPrimaryDNS = dns[0];
                     txtPreferredDNS.Text = tempPrimaryDNS;
@@ -122,6 +122,8 @@ namespace HelpersLib
 
                     if (result)
                     {
+                        NativeMethods.DnsFlushResolverCache();
+
                         tempPrimaryDNS = txtPreferredDNS.Text;
                         tempSecondaryDNS = txtAlternateDNS.Text;
                         btnSave.Enabled = false;

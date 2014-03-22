@@ -630,6 +630,9 @@ namespace HelpersLib
         [DllImport("avifil32.dll")]
         public static extern int AVIMakeCompressedStream(out IntPtr compressedStream, IntPtr sourceStream, ref AVICOMPRESSOPTIONS options, IntPtr clsidHandler);
 
+        [DllImport("dnsapi.dll")]
+        public static extern uint DnsFlushResolverCache();
+
         #endregion Other dll
     }
 }
