@@ -40,9 +40,37 @@ namespace HelpersLib
             this.adapter = adapter;
         }
 
+        public static List<AdapterInfo> GetEnabledAdapters()
+        {
+            List<AdapterInfo> adapters = new List<AdapterInfo>();
+
+            using (ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration"))
+            using (ManagementObjectCollection moc = mc.GetInstances())
+            {
+                foreach (ManagementObject mo in moc)
+                {
+                    if ((bool)mo["IPEnabled"])
+                    {
+                        adapters.Add(new AdapterInfo(mo));
+                    }
+                    else
+                    {
+                        mo.Dispose();
+                    }
+                }
+            }
+
+            return adapters;
+        }
+
         public bool IsEnabled()
         {
             return (bool)adapter["IPEnabled"];
+        }
+
+        public string GetCaption()
+        {
+            return (string)adapter["Caption"];
         }
 
         public string GetDescription()
@@ -57,38 +85,40 @@ namespace HelpersLib
 
         public bool SetDNS(string primary, string secondary)
         {
-            if (IsEnabled())
+            try
             {
-                try
+                using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
                 {
-                    using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
+                    if (parameters != null)
                     {
-                        if (parameters != null)
+                        if (primary == null || secondary == null)
                         {
-                            if (primary == null || secondary == null)
-                            {
-                                // Obtain DNS server address automatically
-                                parameters["DNSServerSearchOrder"] = null;
-                            }
-                            else
-                            {
-                                parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
-                            }
+                            // Obtain DNS server address automatically
+                            parameters["DNSServerSearchOrder"] = null;
+                        }
+                        else
+                        {
+                            parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
+                        }
 
-                            using (ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null))
-                            {
-                                return (uint)result["ReturnValue"] == 0;
-                            }
+                        using (ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null))
+                        {
+                            return (uint)result["ReturnValue"] == 0;
                         }
                     }
                 }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
 
             return false;
+        }
+
+        public bool SetDNSAutomatic()
+        {
+            return SetDNS(null, null);
         }
 
         public void Dispose()

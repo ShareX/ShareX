@@ -49,7 +49,7 @@ namespace HelpersLib
             cbDNSType.Items.Add(new DNSInfo("Norton DNS", "199.85.126.10", "199.85.127.10"));
             cbDNSType.Items.Add(new DNSInfo("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"));
 
-            foreach (AdapterInfo adapter in GetEnabledAdapters())
+            foreach (AdapterInfo adapter in AdapterInfo.GetEnabledAdapters())
             {
                 cbAdapters.Items.Add(adapter);
             }
@@ -58,21 +58,6 @@ namespace HelpersLib
             {
                 cbAdapters.SelectedIndex = 0;
             }
-        }
-
-        private List<AdapterInfo> GetEnabledAdapters()
-        {
-            List<AdapterInfo> adapters = new List<AdapterInfo>();
-
-            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(@"SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = TRUE"))
-            {
-                foreach (ManagementObject mo in searcher.Get())
-                {
-                    adapters.Add(new AdapterInfo(mo));
-                }
-            }
-
-            return adapters;
         }
 
         private void cbAdapters_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,7 +142,7 @@ namespace HelpersLib
 
                 if (cbAutomatic.Checked)
                 {
-                    result = adapter.SetDNS(null, null);
+                    result = adapter.SetDNSAutomatic();
                 }
                 else
                 {
