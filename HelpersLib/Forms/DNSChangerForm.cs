@@ -42,7 +42,7 @@ namespace HelpersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            cbDNSType.Items.Add(new DNSInfo("Custom"));
+            cbDNSType.Items.Add(new DNSInfo("Manual"));
             cbDNSType.Items.Add(new DNSInfo("Google Public DNS", "8.8.8.8", "8.8.4.4"));
             cbDNSType.Items.Add(new DNSInfo("OpenDNS", "208.67.222.222", "208.67.220.220"));
             cbDNSType.Items.Add(new DNSInfo("Level 3", "4.2.2.1", "4.2.2.2"));
@@ -118,18 +118,9 @@ namespace HelpersLib
 
         private void UpdateControls()
         {
-            if (cbAutomatic.Checked)
-            {
-                cbDNSType.Enabled = false;
-                txtPreferredDNS.Enabled = false;
-                txtAlternateDNS.Enabled = false;
-            }
-            else
-            {
-                cbDNSType.Enabled = true;
-                txtPreferredDNS.Enabled = cbDNSType.SelectedIndex == 0;
-                txtAlternateDNS.Enabled = cbDNSType.SelectedIndex == 0;
-            }
+            cbDNSType.Enabled = !cbAutomatic.Checked;
+            txtPreferredDNS.Enabled = !cbAutomatic.Checked && cbDNSType.SelectedIndex == 0;
+            txtAlternateDNS.Enabled = !cbAutomatic.Checked && cbDNSType.SelectedIndex == 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -149,7 +140,7 @@ namespace HelpersLib
                     string primaryDNS = txtPreferredDNS.Text.Trim();
                     string secondaryDNS = txtAlternateDNS.Text.Trim();
 
-                    if (!string.IsNullOrEmpty(primaryDNS) && !string.IsNullOrEmpty(secondaryDNS))
+                    if (Helpers.IsValidIPAddress(primaryDNS) && Helpers.IsValidIPAddress(secondaryDNS))
                     {
                         result = adapter.SetDNS(primaryDNS, secondaryDNS);
                     }

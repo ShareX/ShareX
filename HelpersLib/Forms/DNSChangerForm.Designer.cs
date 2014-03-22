@@ -65,7 +65,7 @@
             this.txtPreferredDNS.Location = new System.Drawing.Point(136, 84);
             this.txtPreferredDNS.Name = "txtPreferredDNS";
             this.txtPreferredDNS.Size = new System.Drawing.Size(256, 20);
-            this.txtPreferredDNS.TabIndex = 2;
+            this.txtPreferredDNS.TabIndex = 3;
             this.txtPreferredDNS.TextChanged += new System.EventHandler(this.txtPreferredDNS_TextChanged);
             // 
             // lblPreferredDNS
@@ -91,25 +91,25 @@
             this.txtAlternateDNS.Location = new System.Drawing.Point(136, 108);
             this.txtAlternateDNS.Name = "txtAlternateDNS";
             this.txtAlternateDNS.Size = new System.Drawing.Size(256, 20);
-            this.txtAlternateDNS.TabIndex = 3;
+            this.txtAlternateDNS.TabIndex = 4;
             this.txtAlternateDNS.TextChanged += new System.EventHandler(this.txtAlternateDNS_TextChanged);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(192, 136);
+            this.btnSave.Location = new System.Drawing.Point(224, 136);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 24);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.Size = new System.Drawing.Size(80, 24);
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Apply";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(296, 136);
+            this.btnCancel.Location = new System.Drawing.Point(312, 136);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(96, 23);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Size = new System.Drawing.Size(80, 23);
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -121,7 +121,7 @@
             this.cbDNSType.Location = new System.Drawing.Point(136, 60);
             this.cbDNSType.Name = "cbDNSType";
             this.cbDNSType.Size = new System.Drawing.Size(256, 21);
-            this.cbDNSType.TabIndex = 1;
+            this.cbDNSType.TabIndex = 2;
             this.cbDNSType.SelectedIndexChanged += new System.EventHandler(this.cbDNSType_SelectedIndexChanged);
             // 
             // lblDNS
@@ -139,7 +139,7 @@
             this.cbAutomatic.Location = new System.Drawing.Point(19, 40);
             this.cbAutomatic.Name = "cbAutomatic";
             this.cbAutomatic.Size = new System.Drawing.Size(219, 17);
-            this.cbAutomatic.TabIndex = 10;
+            this.cbAutomatic.TabIndex = 1;
             this.cbAutomatic.Text = "Obtain DNS server address automatically";
             this.cbAutomatic.UseVisualStyleBackColor = true;
             this.cbAutomatic.CheckedChanged += new System.EventHandler(this.cbAutomatic_CheckedChanged);
