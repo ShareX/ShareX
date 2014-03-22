@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +132,9 @@
   </data>
   <data name="camcorder__pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camcorder--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ru.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="application_icon_large" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-icon-large.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +193,9 @@
   <data name="image_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="au" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\au.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="keyboard_pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,9 +204,6 @@
   </data>
   <data name="hammer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hammer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Window" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Window.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Polygon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +235,9 @@
   <data name="address_book_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address-book-blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\block.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -255,9 +261,6 @@
   </data>
   <data name="clock_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clock--plus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="navigation_090_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\navigation-090-button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upload_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,6 +292,9 @@
   <data name="drive_globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive-globe.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="checkbox_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkbox_check.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="application_browser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-browser.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,11 +316,14 @@
   <data name="pipette" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pipette.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Window" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Window.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="au" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\au.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="navigation_090_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\navigation-090-button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkbox_uncheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkbox_uncheck.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="layer_shape_polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-polygon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,13 +340,8 @@
   <data name="application_task" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-task.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ru.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checkbox_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkbox_check.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checkbox_uncheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkbox_uncheck.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="network-ip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\network-ip.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

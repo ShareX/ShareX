@@ -211,6 +211,8 @@ namespace ShareX
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -537,7 +539,8 @@ namespace ShareX
             this.tsmiHashCheck,
             this.tsmiIndexFolder,
             this.tsmiImageEffects,
-            this.tsmiMonitorTest});
+            this.tsmiMonitorTest,
+            this.tsmiDNSChanger});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsddbTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -1467,7 +1470,8 @@ namespace ShareX
             this.tsmiTrayHashCheck,
             this.tsmiTrayIndexFolder,
             this.tsmiTrayImageEffects,
-            this.tsmiTrayMonitorTest});
+            this.tsmiTrayMonitorTest,
+            this.tsmiTrayDNSChanger});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             this.tsmiTrayTools.Size = new System.Drawing.Size(188, 22);
@@ -1579,6 +1583,22 @@ namespace ShareX
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
+            // 
+            // tsmiDNSChanger
+            // 
+            this.tsmiDNSChanger.Image = global::ShareX.Properties.Resources.network_ip;
+            this.tsmiDNSChanger.Name = "tsmiDNSChanger";
+            this.tsmiDNSChanger.Size = new System.Drawing.Size(183, 22);
+            this.tsmiDNSChanger.Text = "DNS changer...";
+            this.tsmiDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
+            // 
+            // tsmiTrayDNSChanger
+            // 
+            this.tsmiTrayDNSChanger.Image = global::ShareX.Properties.Resources.network_ip;
+            this.tsmiTrayDNSChanger.Name = "tsmiTrayDNSChanger";
+            this.tsmiTrayDNSChanger.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayDNSChanger.Text = "DNS changer...";
+            this.tsmiTrayDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
             // 
             // MainForm
             // 
@@ -1768,5 +1788,7 @@ namespace ShareX
         private System.Windows.Forms.ToolStripMenuItem tsmiMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDNSChanger;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayDNSChanger;
     }
 }

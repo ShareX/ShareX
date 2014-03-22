@@ -608,6 +608,14 @@ namespace ShareX
             }
         }
 
+        private void OpenDNSChanger()
+        {
+            using (DNSChangerForm dnsForm = new DNSChangerForm())
+            {
+                dnsForm.ShowDialog();
+            }
+        }
+
         #region Form events
 
         protected override void SetVisibleCore(bool value)
@@ -804,6 +812,11 @@ namespace ShareX
         private void tsmiMonitorTest_Click(object sender, EventArgs e)
         {
             OpenMonitorTest();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            OpenDNSChanger();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)

@@ -437,6 +437,7 @@
     </None>
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
+    <None Include="Resources\network-ip.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />
