@@ -69,8 +69,9 @@
     <Reference Include="AsyncBridge.Net35">
       <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
     </Reference>
-    <Reference Include="MegaApiClient">
-      <HintPath>..\packages\MegaApiClient.1.0.2\lib\MegaApiClient.dll</HintPath>
+    <Reference Include="MegaApiClient, Version=1.0.3.0, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MegaApiClient.1.0.3\lib\MegaApiClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
