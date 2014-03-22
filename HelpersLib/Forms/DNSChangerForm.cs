@@ -37,12 +37,17 @@ namespace HelpersLib
 {
     public partial class DNSChangerForm : Form
     {
-        private string tempPrimaryDNS, tempSecondaryDNS;
-
         public DNSChangerForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+
+            cbDNSType.Items.Add(new DNSInfo("Custom"));
+            cbDNSType.Items.Add(new DNSInfo("Google Public DNS", "8.8.8.8", "8.8.4.4"));
+            cbDNSType.Items.Add(new DNSInfo("OpenDNS", "208.67.222.222", "208.67.220.220"));
+            cbDNSType.Items.Add(new DNSInfo("Level 3", "4.2.2.1", "4.2.2.2"));
+            cbDNSType.Items.Add(new DNSInfo("Norton DNS", "199.85.126.10", "199.85.127.10"));
+            cbDNSType.Items.Add(new DNSInfo("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"));
 
             foreach (AdapterInfo adapter in GetEnabledAdapters())
             {
@@ -53,14 +58,6 @@ namespace HelpersLib
             {
                 cbAdapters.SelectedIndex = 0;
             }
-
-            cbDNSType.Items.Add(new DNSInfo("Custom"));
-            cbDNSType.Items.Add(new DNSInfo("Google Public DNS", "8.8.8.8", "8.8.4.4"));
-            cbDNSType.Items.Add(new DNSInfo("OpenDNS", "208.67.222.222", "208.67.220.220"));
-            cbDNSType.Items.Add(new DNSInfo("Level 3", "4.2.2.1", "4.2.2.2"));
-            cbDNSType.Items.Add(new DNSInfo("Norton DNS", "199.85.126.10", "199.85.127.10"));
-            cbDNSType.Items.Add(new DNSInfo("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"));
-            cbDNSType.SelectedIndex = 0;
         }
 
         private List<AdapterInfo> GetEnabledAdapters()
@@ -88,78 +85,30 @@ namespace HelpersLib
 
                 if (dns != null && dns.Length == 2)
                 {
-                    tempPrimaryDNS = dns[0];
-                    txtPreferredDNS.Text = tempPrimaryDNS;
-
-                    tempSecondaryDNS = dns[1];
-                    txtAlternateDNS.Text = tempSecondaryDNS;
+                    cbAutomatic.Checked = false;
+                    txtPreferredDNS.Text = dns[0];
+                    txtAlternateDNS.Text = dns[1];
                 }
-            }
-
-            btnSave.Enabled = false;
-        }
-
-        private bool CheckDNSChanged()
-        {
-            string primaryDNS = txtPreferredDNS.Text.Trim();
-            string secondaryDNS = txtAlternateDNS.Text.Trim();
-
-            return !string.IsNullOrEmpty(primaryDNS) && !string.IsNullOrEmpty(secondaryDNS) && (primaryDNS != tempPrimaryDNS || secondaryDNS != tempSecondaryDNS);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string primaryDNS = txtPreferredDNS.Text.Trim();
-            string secondaryDNS = txtAlternateDNS.Text.Trim();
-
-            if (!string.IsNullOrEmpty(primaryDNS) && !string.IsNullOrEmpty(secondaryDNS))
-            {
-                AdapterInfo adapter = cbAdapters.SelectedItem as AdapterInfo;
-
-                if (adapter != null)
+                else
                 {
-                    bool result = adapter.SetDNS(primaryDNS, secondaryDNS);
-
-                    if (result)
-                    {
-                        NativeMethods.DnsFlushResolverCache();
-
-                        tempPrimaryDNS = txtPreferredDNS.Text;
-                        tempSecondaryDNS = txtAlternateDNS.Text;
-                        btnSave.Enabled = false;
-                        MessageBox.Show("DNS successfully set.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    cbAutomatic.Checked = true;
                 }
+
+                cbDNSType.SelectedIndex = 0;
             }
+
+            UpdateControls();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void cbAutomatic_CheckedChanged(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void txtPreferredDNS_TextChanged(object sender, EventArgs e)
-        {
-            btnSave.Enabled = CheckDNSChanged();
-        }
-
-        private void txtAlternateDNS_TextChanged(object sender, EventArgs e)
-        {
-            btnSave.Enabled = CheckDNSChanged();
+            UpdateControls();
         }
 
         private void cbDNSType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDNSType.SelectedIndex == 0)
+            if (cbDNSType.SelectedIndex > 0)
             {
-                txtPreferredDNS.Enabled = true;
-                txtAlternateDNS.Enabled = true;
-            }
-            else if (cbDNSType.SelectedIndex > 0)
-            {
-                txtPreferredDNS.Enabled = false;
-                txtAlternateDNS.Enabled = false;
-
                 DNSInfo dnsInfo = cbDNSType.SelectedItem as DNSInfo;
 
                 if (dnsInfo != null)
@@ -168,6 +117,70 @@ namespace HelpersLib
                     txtAlternateDNS.Text = dnsInfo.SecondaryDNS;
                 }
             }
+
+            UpdateControls();
+        }
+
+        private void txtPreferredDNS_TextChanged(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void txtAlternateDNS_TextChanged(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void UpdateControls()
+        {
+            if (cbAutomatic.Checked)
+            {
+                cbDNSType.Enabled = false;
+                txtPreferredDNS.Enabled = false;
+                txtAlternateDNS.Enabled = false;
+            }
+            else
+            {
+                cbDNSType.Enabled = true;
+                txtPreferredDNS.Enabled = cbDNSType.SelectedIndex == 0;
+                txtAlternateDNS.Enabled = cbDNSType.SelectedIndex == 0;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            AdapterInfo adapter = cbAdapters.SelectedItem as AdapterInfo;
+
+            if (adapter != null)
+            {
+                bool result = false;
+
+                if (cbAutomatic.Checked)
+                {
+                    result = adapter.SetDNS(null, null);
+                }
+                else
+                {
+                    string primaryDNS = txtPreferredDNS.Text.Trim();
+                    string secondaryDNS = txtAlternateDNS.Text.Trim();
+
+                    if (!string.IsNullOrEmpty(primaryDNS) && !string.IsNullOrEmpty(secondaryDNS))
+                    {
+                        result = adapter.SetDNS(primaryDNS, secondaryDNS);
+                    }
+                }
+
+                if (result)
+                {
+                    NativeMethods.DnsFlushResolverCache();
+                    MessageBox.Show("DNS successfully set.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

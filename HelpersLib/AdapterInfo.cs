@@ -65,7 +65,15 @@ namespace HelpersLib
                     {
                         if (parameters != null)
                         {
-                            parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
+                            if (primary == null || secondary == null)
+                            {
+                                // Obtain DNS server address automatically
+                                parameters["DNSServerSearchOrder"] = null;
+                            }
+                            else
+                            {
+                                parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
+                            }
 
                             using (ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null))
                             {

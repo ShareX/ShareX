@@ -38,6 +38,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.cbDNSType = new System.Windows.Forms.ComboBox();
             this.lblDNS = new System.Windows.Forms.Label();
+            this.cbAutomatic = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cbAdapters
@@ -61,7 +62,7 @@
             // 
             // txtPreferredDNS
             // 
-            this.txtPreferredDNS.Location = new System.Drawing.Point(136, 60);
+            this.txtPreferredDNS.Location = new System.Drawing.Point(136, 84);
             this.txtPreferredDNS.Name = "txtPreferredDNS";
             this.txtPreferredDNS.Size = new System.Drawing.Size(256, 20);
             this.txtPreferredDNS.TabIndex = 2;
@@ -70,7 +71,7 @@
             // lblPreferredDNS
             // 
             this.lblPreferredDNS.AutoSize = true;
-            this.lblPreferredDNS.Location = new System.Drawing.Point(16, 64);
+            this.lblPreferredDNS.Location = new System.Drawing.Point(16, 88);
             this.lblPreferredDNS.Name = "lblPreferredDNS";
             this.lblPreferredDNS.Size = new System.Drawing.Size(111, 13);
             this.lblPreferredDNS.TabIndex = 3;
@@ -79,7 +80,7 @@
             // lblAlternateDNS
             // 
             this.lblAlternateDNS.AutoSize = true;
-            this.lblAlternateDNS.Location = new System.Drawing.Point(16, 88);
+            this.lblAlternateDNS.Location = new System.Drawing.Point(16, 112);
             this.lblAlternateDNS.Name = "lblAlternateDNS";
             this.lblAlternateDNS.Size = new System.Drawing.Size(110, 13);
             this.lblAlternateDNS.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             // txtAlternateDNS
             // 
-            this.txtAlternateDNS.Location = new System.Drawing.Point(136, 84);
+            this.txtAlternateDNS.Location = new System.Drawing.Point(136, 108);
             this.txtAlternateDNS.Name = "txtAlternateDNS";
             this.txtAlternateDNS.Size = new System.Drawing.Size(256, 20);
             this.txtAlternateDNS.TabIndex = 3;
@@ -95,18 +96,17 @@
             // 
             // btnSave
             // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(192, 112);
+            this.btnSave.Location = new System.Drawing.Point(192, 136);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 24);
             this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Save changes";
+            this.btnSave.Text = "Apply";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(296, 112);
+            this.btnCancel.Location = new System.Drawing.Point(296, 136);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 23);
             this.btnCancel.TabIndex = 5;
@@ -118,7 +118,7 @@
             // 
             this.cbDNSType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDNSType.FormattingEnabled = true;
-            this.cbDNSType.Location = new System.Drawing.Point(136, 36);
+            this.cbDNSType.Location = new System.Drawing.Point(136, 60);
             this.cbDNSType.Name = "cbDNSType";
             this.cbDNSType.Size = new System.Drawing.Size(256, 21);
             this.cbDNSType.TabIndex = 1;
@@ -127,17 +127,29 @@
             // lblDNS
             // 
             this.lblDNS.AutoSize = true;
-            this.lblDNS.Location = new System.Drawing.Point(16, 40);
+            this.lblDNS.Location = new System.Drawing.Point(16, 64);
             this.lblDNS.Name = "lblDNS";
             this.lblDNS.Size = new System.Drawing.Size(70, 13);
             this.lblDNS.TabIndex = 9;
             this.lblDNS.Text = "DNS servers:";
             // 
+            // cbAutomatic
+            // 
+            this.cbAutomatic.AutoSize = true;
+            this.cbAutomatic.Location = new System.Drawing.Point(19, 40);
+            this.cbAutomatic.Name = "cbAutomatic";
+            this.cbAutomatic.Size = new System.Drawing.Size(219, 17);
+            this.cbAutomatic.TabIndex = 10;
+            this.cbAutomatic.Text = "Obtain DNS server address automatically";
+            this.cbAutomatic.UseVisualStyleBackColor = true;
+            this.cbAutomatic.CheckedChanged += new System.EventHandler(this.cbAutomatic_CheckedChanged);
+            // 
             // DNSChangerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 145);
+            this.ClientSize = new System.Drawing.Size(404, 170);
+            this.Controls.Add(this.cbAutomatic);
             this.Controls.Add(this.lblDNS);
             this.Controls.Add(this.cbDNSType);
             this.Controls.Add(this.btnCancel);
@@ -170,5 +182,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cbDNSType;
         private System.Windows.Forms.Label lblDNS;
+        private System.Windows.Forms.CheckBox cbAutomatic;
     }
 }
