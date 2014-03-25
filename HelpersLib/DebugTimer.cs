@@ -59,14 +59,14 @@ namespace HelpersLib
             Write(text, timer.Elapsed.TotalSeconds.ToString("0.000") + " seconds.");
         }
 
-        public void WriteElapsedMiliseconds(string text = "")
+        public void WriteElapsedMilliseconds(string text = "")
         {
-            Write(text, timer.ElapsedMilliseconds + " miliseconds.");
+            Write(text, timer.ElapsedMilliseconds + " millisecond.");
         }
 
         public void Dispose()
         {
-            WriteElapsedMiliseconds(text);
+            WriteElapsedMilliseconds(text);
         }
     }
 }

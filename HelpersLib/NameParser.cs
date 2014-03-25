@@ -55,7 +55,7 @@ namespace HelpersLib
         mi,
         [Description("Current second")]
         s,
-        [Description("Current milisecond")]
+        [Description("Current millisecond")]
         ms,
         [Description("Gets AM/PM")]
         pm,

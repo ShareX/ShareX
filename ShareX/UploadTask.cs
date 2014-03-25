@@ -838,7 +838,7 @@ namespace ShareX
                     fileUploader = new Jira(Program.UploadersConfig.JiraHost, Program.UploadersConfig.JiraOAuthInfo, Program.UploadersConfig.JiraIssuePrefix);
                     break;
                 case FileDestination.Mega:
-                    fileUploader = Program.UploadersConfig.MegaAnonymousLogin ? new Mega() : new Mega(Program.UploadersConfig.MegaAuthInfos, Program.UploadersConfig.MegaParentNodeId);
+                    fileUploader = new Mega(Program.UploadersConfig.MegaAuthInfos, Program.UploadersConfig.MegaParentNodeId);
                     break;
             }
 

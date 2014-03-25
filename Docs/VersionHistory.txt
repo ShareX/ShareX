@@ -1,4 +1,16 @@
-﻿ShareX 8.6.0 - 2014-03-18
+﻿ShareX 8.6.2
+
+* Added DNS Changer to Tools
+* Added %pn (process name of active window) to name parser
+* Removed Mega file uploader anonymous upload
+* Minus file uploader improvements
+* Added support for public access to Google Drive links
+
+ShareX 8.6.1 - 2014-03-19
+
+* Bug fixes
+
+ShareX 8.6.0 - 2014-03-18
 
 * New file operations wizard if file exists
 * Image and text destinations can have different file uploaders

@@ -809,23 +809,12 @@ namespace UploadersLib
 
             tpMega.Enabled = false;
 
-            atcMegaAccountType.AccountTypeChanged -= atcMegaAccountType_AccountTypeChanged;
-            atcMegaAccountType.SelectedAccountType = Config.MegaAnonymousLogin ? AccountType.Anonymous : AccountType.User;
-            atcMegaAccountType.AccountTypeChanged += atcMegaAccountType_AccountTypeChanged;
-
-            pnlMegaLogin.Enabled = !Config.MegaAnonymousLogin;
-
             if (Config.MegaAuthInfos != null)
             {
                 txtMegaEmail.Text = Config.MegaAuthInfos.Email;
             }
 
-            if (Config.MegaAnonymousLogin)
-            {
-                lblMegaStatus.Text = "Configured (anonymous)";
-                lblMegaStatus.ForeColor = OkColor;
-            }
-            else if (Config.MegaAuthInfos == null)
+            if (Config.MegaAuthInfos == null)
             {
                 lblMegaStatus.Text = "Not configured";
                 lblMegaStatus.ForeColor = NokColor;
@@ -860,17 +849,6 @@ namespace UploadersLib
             }
 
             tpMega.Enabled = true;
-        }
-
-        private void atcMegaAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.MegaAnonymousLogin = accountType == AccountType.Anonymous;
-            Config.MegaAuthInfos = null;
-            Config.MegaParentNodeId = null;
-            txtMegaEmail.Text = null;
-            txtMegaPassword.Text = null;
-            cbMegaFolder.SelectedIndex = -1;
-            MegaConfigureTab(true);
         }
 
         private void btnMegaLogin_Click(object sender, EventArgs e)

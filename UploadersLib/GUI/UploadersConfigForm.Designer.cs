@@ -204,6 +204,8 @@
             this.txtJiraHost = new System.Windows.Forms.TextBox();
             this.lblJiraHost = new System.Windows.Forms.Label();
             this.tpMinus = new System.Windows.Forms.TabPage();
+            this.lblMinusURLType = new System.Windows.Forms.Label();
+            this.cbMinusURLType = new System.Windows.Forms.ComboBox();
             this.gbMinusUserPass = new System.Windows.Forms.GroupBox();
             this.lblMinusAuthStatus = new System.Windows.Forms.Label();
             this.btnMinusRefreshAuth = new System.Windows.Forms.Button();
@@ -213,8 +215,6 @@
             this.txtMinusUsername = new System.Windows.Forms.TextBox();
             this.btnMinusAuth = new System.Windows.Forms.Button();
             this.gbMinusUpload = new System.Windows.Forms.GroupBox();
-            this.lblMinusURLType = new System.Windows.Forms.Label();
-            this.cbMinusURLType = new System.Windows.Forms.ComboBox();
             this.btnMinusReadFolderList = new System.Windows.Forms.Button();
             this.chkMinusPublic = new System.Windows.Forms.CheckBox();
             this.btnMinusFolderAdd = new System.Windows.Forms.Button();
@@ -328,7 +328,6 @@
             this.oAuth2Gist = new UploadersLib.GUI.OAuth2Control();
             this.atcGistAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.ucFTPAccounts = new UploadersLib.AccountsControl();
-            this.atcMegaAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.oauth2GoogleDrive = new UploadersLib.GUI.OAuth2Control();
             this.atcSendSpaceAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.oAuthJira = new UploadersLib.GUI.OAuth2Control();
@@ -1647,7 +1646,6 @@
             // 
             // tpMega
             // 
-            this.tpMega.Controls.Add(this.atcMegaAccountType);
             this.tpMega.Controls.Add(this.lblMegaStatus);
             this.tpMega.Controls.Add(this.pnlMegaLogin);
             this.tpMega.Controls.Add(this.lblMegaStatusTitle);
@@ -1661,7 +1659,7 @@
             // lblMegaStatus
             // 
             this.lblMegaStatus.AutoSize = true;
-            this.lblMegaStatus.Location = new System.Drawing.Point(70, 17);
+            this.lblMegaStatus.Location = new System.Drawing.Point(80, 16);
             this.lblMegaStatus.Name = "lblMegaStatus";
             this.lblMegaStatus.Size = new System.Drawing.Size(186, 13);
             this.lblMegaStatus.TabIndex = 13;
@@ -1678,14 +1676,14 @@
             this.pnlMegaLogin.Controls.Add(this.lblMegaPassword);
             this.pnlMegaLogin.Controls.Add(this.txtMegaPassword);
             this.pnlMegaLogin.Controls.Add(this.btnMegaLogin);
-            this.pnlMegaLogin.Location = new System.Drawing.Point(12, 67);
+            this.pnlMegaLogin.Location = new System.Drawing.Point(12, 40);
             this.pnlMegaLogin.Name = "pnlMegaLogin";
             this.pnlMegaLogin.Size = new System.Drawing.Size(378, 226);
             this.pnlMegaLogin.TabIndex = 11;
             // 
             // btnMegaRefreshFolders
             // 
-            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(152, 132);
+            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(72, 132);
             this.btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
             this.btnMegaRefreshFolders.Size = new System.Drawing.Size(96, 24);
             this.btnMegaRefreshFolders.TabIndex = 16;
@@ -2236,6 +2234,25 @@
             this.tpMinus.Text = "Minus";
             this.tpMinus.UseVisualStyleBackColor = true;
             // 
+            // lblMinusURLType
+            // 
+            this.lblMinusURLType.AutoSize = true;
+            this.lblMinusURLType.Location = new System.Drawing.Point(16, 240);
+            this.lblMinusURLType.Name = "lblMinusURLType";
+            this.lblMinusURLType.Size = new System.Drawing.Size(55, 13);
+            this.lblMinusURLType.TabIndex = 4;
+            this.lblMinusURLType.Text = "URL type:";
+            // 
+            // cbMinusURLType
+            // 
+            this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMinusURLType.FormattingEnabled = true;
+            this.cbMinusURLType.Location = new System.Drawing.Point(80, 236);
+            this.cbMinusURLType.Name = "cbMinusURLType";
+            this.cbMinusURLType.Size = new System.Drawing.Size(88, 21);
+            this.cbMinusURLType.TabIndex = 6;
+            this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
+            // 
             // gbMinusUserPass
             // 
             this.gbMinusUserPass.Controls.Add(this.lblMinusAuthStatus);
@@ -2327,25 +2344,6 @@
             this.gbMinusUpload.TabIndex = 1;
             this.gbMinusUpload.TabStop = false;
             this.gbMinusUpload.Text = "Upload images to";
-            // 
-            // lblMinusURLType
-            // 
-            this.lblMinusURLType.AutoSize = true;
-            this.lblMinusURLType.Location = new System.Drawing.Point(16, 240);
-            this.lblMinusURLType.Name = "lblMinusURLType";
-            this.lblMinusURLType.Size = new System.Drawing.Size(55, 13);
-            this.lblMinusURLType.TabIndex = 4;
-            this.lblMinusURLType.Text = "URL type:";
-            // 
-            // cbMinusURLType
-            // 
-            this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMinusURLType.FormattingEnabled = true;
-            this.cbMinusURLType.Location = new System.Drawing.Point(80, 236);
-            this.cbMinusURLType.Name = "cbMinusURLType";
-            this.cbMinusURLType.Size = new System.Drawing.Size(88, 21);
-            this.cbMinusURLType.TabIndex = 6;
-            this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
             // 
             // btnMinusReadFolderList
             // 
@@ -3522,14 +3520,6 @@
             this.ucFTPAccounts.Size = new System.Drawing.Size(792, 345);
             this.ucFTPAccounts.TabIndex = 0;
             // 
-            // atcMegaAccountType
-            // 
-            this.atcMegaAccountType.Location = new System.Drawing.Point(16, 34);
-            this.atcMegaAccountType.Name = "atcMegaAccountType";
-            this.atcMegaAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcMegaAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcMegaAccountType.TabIndex = 14;
-            // 
             // oauth2GoogleDrive
             // 
             this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
@@ -4014,7 +4004,6 @@
         private System.Windows.Forms.ComboBox cbMegaFolder;
         private System.Windows.Forms.Label lblMegaStatusTitle;
         private System.Windows.Forms.Label lblMegaStatus;
-        private GUI.AccountTypeControl atcMegaAccountType;
         private System.Windows.Forms.Button btnMegaRegister;
         private System.Windows.Forms.Button btnMegaRefreshFolders;
         private System.Windows.Forms.TabPage tpGist;

@@ -191,7 +191,6 @@ namespace UploadersLib
 
         // Mega
 
-        public bool MegaAnonymousLogin = true;
         public MegaApiClient.AuthInfos MegaAuthInfos = null;
         public string MegaParentNodeId = null;
 
@@ -341,7 +340,7 @@ namespace UploadersLib
                 case FileDestination.Jira:
                     return OAuthInfo.CheckOAuth(JiraOAuthInfo);
                 case FileDestination.Mega:
-                    return MegaAnonymousLogin || (MegaAuthInfos != null && MegaAuthInfos.Email != null && MegaAuthInfos.Hash != null && MegaAuthInfos.PasswordAesKey != null);
+                    return MegaAuthInfos != null && MegaAuthInfos.Email != null && MegaAuthInfos.Hash != null && MegaAuthInfos.PasswordAesKey != null;
                 default:
                     return true;
             }
