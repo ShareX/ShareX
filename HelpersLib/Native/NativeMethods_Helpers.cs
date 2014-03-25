@@ -35,6 +35,12 @@ namespace HelpersLib
 {
     public static partial class NativeMethods
     {
+        public static string GetForegroundWindowText()
+        {
+            IntPtr handle = GetForegroundWindow();
+            return GetWindowText(handle);
+        }
+
         public static string GetWindowText(IntPtr handle)
         {
             if (handle.ToInt32() > 0)
@@ -49,6 +55,31 @@ namespace HelpersLib
                     {
                         return sb.ToString();
                     }
+                }
+            }
+
+            return null;
+        }
+
+        public static Process GetForegroundWindowProcess()
+        {
+            IntPtr handle = GetForegroundWindow();
+            return GetProcessByWindowHandle(handle);
+        }
+
+        public static Process GetProcessByWindowHandle(IntPtr hwnd)
+        {
+            if (hwnd.ToInt32() > 0)
+            {
+                try
+                {
+                    uint processID;
+                    GetWindowThreadProcessId(hwnd, out processID);
+                    return Process.GetProcessById((int)processID);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
             }
 
@@ -131,40 +162,6 @@ namespace HelpersLib
         public static Icon GetApplicationIcon(IntPtr handle)
         {
             return GetSmallApplicationIcon(handle) ?? GetBigApplicationIcon(handle);
-        }
-
-        public static string GetForegroundWindowText()
-        {
-            IntPtr handle = GetForegroundWindow();
-            return GetWindowText(handle);
-        }
-
-        public static string GetWindowLabel()
-        {
-            const int numOfChars = 256;
-            IntPtr handle = GetForegroundWindow();
-            StringBuilder sb = new StringBuilder(numOfChars);
-
-            if (GetWindowText(handle, sb, numOfChars) > 0)
-            {
-                return sb.ToString();
-            }
-
-            return string.Empty;
-        }
-
-        public static IntPtr GetWindowHandle()
-        {
-            const int numOfChars = 256;
-            IntPtr handle = GetForegroundWindow();
-            StringBuilder sb = new StringBuilder(numOfChars);
-
-            if (GetWindowText(handle, sb, numOfChars) > 0)
-            {
-                return handle;
-            }
-
-            return IntPtr.Zero;
         }
 
         public static bool GetBorderSize(IntPtr handle, out Size size)

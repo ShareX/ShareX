@@ -136,6 +136,7 @@ namespace ShareX
             if (imageTag != null)
             {
                 nameParser.WindowText = imageTag.ActiveWindowTitle;
+                nameParser.ProcessName = imageTag.ActiveProcessName;
             }
 
             if (string.IsNullOrEmpty(nameParser.WindowText))

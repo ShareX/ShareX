@@ -29,6 +29,7 @@ using ShareX.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
@@ -275,6 +276,15 @@ namespace ShareX
             {
                 Image img;
                 string activeWindowTitle = NativeMethods.GetForegroundWindowText();
+                string activeProcessName = null;
+
+                using (Process process = NativeMethods.GetForegroundWindowProcess())
+                {
+                    if (process != null)
+                    {
+                        activeProcessName = process.ProcessName;
+                    }
+                }
 
                 if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
                 {
@@ -285,7 +295,11 @@ namespace ShareX
                     img = Screenshot.CaptureActiveWindow();
                 }
 
-                img.Tag = new ImageTag { ActiveWindowTitle = activeWindowTitle };
+                img.Tag = new ImageTag
+                {
+                    ActiveWindowTitle = activeWindowTitle,
+                    ActiveProcessName = activeProcessName
+                };
 
                 return img;
             }, CaptureType.ActiveWindow, taskSettings, autoHideForm);

@@ -25,6 +25,7 @@
 
 using HelpersLib;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 
 namespace ScreenCaptureLib
@@ -46,6 +47,14 @@ namespace ScreenCaptureLib
             get
             {
                 return NativeMethods.GetClassName(Handle);
+            }
+        }
+
+        public Process Process
+        {
+            get
+            {
+                return NativeMethods.GetProcessByWindowHandle(Handle);
             }
         }
 

@@ -797,6 +797,7 @@ namespace ShareX
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 WindowText = Text,
+                ProcessName = "ShareX",
                 MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
                 MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };

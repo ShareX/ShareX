@@ -28,5 +28,6 @@ namespace ShareX
     public class ImageTag
     {
         public string ActiveWindowTitle { get; set; }
+        public string ActiveProcessName { get; set; }
     }
 }

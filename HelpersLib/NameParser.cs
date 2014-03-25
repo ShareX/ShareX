@@ -37,6 +37,8 @@ namespace HelpersLib
     {
         [Description("Title of active window")]
         t,
+        [Description("Process name of active window")]
+        pn,
         [Description("Current year")]
         y,
         [Description("Current month")]
@@ -109,6 +111,7 @@ namespace HelpersLib
         public int AutoIncrementNumber { get; set; } // %i
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
+        public string ProcessName { get; set; } // %pn
         public int MaxTitleLength { get; set; }
         public DateTime CustomDate { get; set; }
 
@@ -138,6 +141,11 @@ namespace HelpersLib
                     windowText = windowText.Remove(MaxTitleLength);
                 }
                 sb.Replace(ReplacementVariables.t.ToPrefixString(), windowText);
+            }
+
+            if (ProcessName != null)
+            {
+                sb.Replace(ReplacementVariables.pn.ToPrefixString(), ProcessName);
             }
 
             string width = string.Empty, height = string.Empty;
