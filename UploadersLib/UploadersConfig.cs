@@ -194,6 +194,13 @@ namespace UploadersLib
         public MegaApiClient.AuthInfos MegaAuthInfos = null;
         public string MegaParentNodeId = null;
 
+        // Amazon S3
+
+        public AmazonS3Settings AmazonS3Settings = new AmazonS3Settings() {
+            ObjectPrefix = Application.ProductName + "/%y-%mo/",
+            UseReducedRedundancyStorage = true
+        };
+
         #endregion File uploaders
 
         #region URL shorteners

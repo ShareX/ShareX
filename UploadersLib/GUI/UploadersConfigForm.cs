@@ -884,6 +884,50 @@ namespace UploadersLib
 
         #endregion Mega
 
+        #region Amazon S3
+
+        private void txtAmazonS3AccessKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.AccessKeyID = txtAmazonS3AccessKey.Text;
+        }
+
+        private void txtAmazonS3SecretKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.SecretAccessKey = txtAmazonS3SecretKey.Text;
+        }
+
+        private void txtAmazonS3ObjectPrefix_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.ObjectPrefix = txtAmazonS3ObjectPrefix.Text;
+        }
+
+        private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
+        }
+
+        private void cbAmazonS3Endpoint_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
+        }
+
+        private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.Bucket = txtAmazonS3BucketName.Text;
+        }
+
+        private void cbAmazonS3UseRRS_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.UseReducedRedundancyStorage = cbAmazonS3UseRRS.Checked;
+        }
+
+        private void cbAmazonS3CustomCNAME_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.UseCustomCNAME = cbAmazonS3CustomCNAME.Checked;
+        }
+
+        #endregion Amazon S3
+
         #endregion File Uploaders
 
         #region Text Uploaders

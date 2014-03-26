@@ -70,6 +70,7 @@ namespace UploadersLib
             fileUploadersImageList.Images.Add("Email", Resources.mail);
             fileUploadersImageList.Images.Add("Jira", Resources.jira);
             fileUploadersImageList.Images.Add("Mega", Resources.Mega);
+            fileUploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
             tcFileUploaders.ImageList = fileUploadersImageList;
 
             ImageList textUploadersImageList = new ImageList();
@@ -121,6 +122,7 @@ namespace UploadersLib
             tpMega.ImageKey = "Mega";
             tpGist.ImageKey = "Gist";
             tpUpaste.ImageKey = "Upaste";
+            tpAmazonS3.ImageKey = "AmazonS3";
 
             cmsCustomUploaderArgValue = NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
 
@@ -393,6 +395,16 @@ namespace UploadersLib
 
             MegaConfigureTab(false);
 
+            // Amazon S3
+
+            txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
+            txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
+            cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
+            cbAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
+            cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
+            txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
+            txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
+                 
             #endregion File uploaders
 
             #region URL Shorteners
