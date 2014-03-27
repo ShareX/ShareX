@@ -23,54 +23,54 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json.Linq;
-using System.Text;
 using System.Net;
+using System.Net.Security;
+using System.Text;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {
     public sealed class Pushbullet : TextUploader
     {
-        public string APIKey { get; private set; }
-        public PushbulletSettings Config { get; set; }
+        public PushbulletSettings Config { get; private set; }
 
-        public Pushbullet(string apiKey, PushbulletSettings config)
+        public Pushbullet(PushbulletSettings config)
         {
-            APIKey = apiKey;
             Config = config;
         }
 
         public override UploadResult UploadText(string text, string fileName)
         {
-            if (string.IsNullOrEmpty(APIKey)) { throw new System.NullReferenceException("Missing API Key"); }
-            if (string.IsNullOrEmpty(text)) { throw new System.NullReferenceException("Nothing to push"); }
-            if (Config.CurrentDevice == null) { throw new System.NullReferenceException("No device set to push to"); }
+            if (string.IsNullOrEmpty(Config.UserAPIKey)) throw new Exception("Missing API Key.");
+            if (string.IsNullOrEmpty(text)) throw new Exception("Nothing to push.");
+            if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
 
-            string strDeviceKey = Config.CurrentDevice.DeviceKey;
+            string strDeviceKey = Config.CurrentDevice.Key;
 
-            if (string.IsNullOrEmpty(strDeviceKey)) { throw new System.NullReferenceException("For some reason, the device key was empty"); }
+            if (string.IsNullOrEmpty(strDeviceKey)) throw new Exception("For some reason, the device key was empty.");
 
-            UploadResult MakeURLHandlerHappy = new UploadResult();
+            UploadResult result = new UploadResult();
 
             try
             {
-                System.Net.WebRequest request = WebRequest.Create("https://api.pushbullet.com/api/pushes");
+                WebRequest request = WebRequest.Create("https://api.pushbullet.com/api/pushes");
 
-                request.AuthenticationLevel = System.Net.Security.AuthenticationLevel.MutualAuthRequested;
-                request.Credentials = new NetworkCredential(APIKey, "");
+                request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
+                request.Credentials = new NetworkCredential(Config.UserAPIKey, "");
                 request.Method = "POST";
 
                 string pushData = "";
 
                 pushData += "device_iden=" + strDeviceKey + "&";
                 pushData += "type=note&"; //For now set it to 'note' until it's dynamic w/ ShareX...
-                pushData += "title=ShareX: " + System.DateTime.UtcNow + "&";
+                pushData += "title=ShareX: " + DateTime.UtcNow + "&";
                 pushData += "body=" + text;
 
-                byte[] postBytes = System.Text.Encoding.UTF8.GetBytes(pushData);
+                byte[] postBytes = Encoding.UTF8.GetBytes(pushData);
 
                 request.ContentLength = postBytes.Length;
 
@@ -81,8 +81,6 @@ namespace UploadersLib.TextUploaders
 
                 string strPushURL = "";
 
-                //Due to the nature of Pushbullet, it might not even be desirable to copy the URL
-                //Plus, might as well not go through the trouble of getting it if the user doesn't want it
                 if (Config.ReturnPushURL)
                 {
                     WebResponse response = request.GetResponse();
@@ -93,7 +91,7 @@ namespace UploadersLib.TextUploaders
                     {
                         string strResponse = reader.ReadLine();
 
-                        MakeURLHandlerHappy.Response = strResponse;
+                        result.Response = strResponse;
 
                         if (!string.IsNullOrEmpty(strResponse) && strResponse.StartsWith("error"))
                         {
@@ -105,22 +103,22 @@ namespace UploadersLib.TextUploaders
 
                     strPushURL = "https://www.pushbullet.com/pushes?push_iden=" + jObject["iden"];
 
-                    MakeURLHandlerHappy.URL = strPushURL;
+                    result.URL = strPushURL;
                 }
                 else
                 {
-                    MakeURLHandlerHappy.URL = System.Windows.Forms.Clipboard.GetText();
+                    result.IsURLExpected = false;
                 }
 
-                MakeURLHandlerHappy.IsSuccess = true;
+                result.IsSuccess = true;
 
-                return MakeURLHandlerHappy;
+                return result;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Errors.Add(ex.ToString());
 
-                MakeURLHandlerHappy.IsSuccess = false;
+                result.IsSuccess = false;
             }
 
             return null;
@@ -132,8 +130,8 @@ namespace UploadersLib.TextUploaders
             {
                 WebRequest request = WebRequest.Create("https://api.pushbullet.com/api/devices");
 
-                request.AuthenticationLevel = System.Net.Security.AuthenticationLevel.MutualAuthRequested;
-                request.Credentials = new NetworkCredential(APIKey, "");
+                request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
+                request.Credentials = new NetworkCredential(Config.UserAPIKey, "");
                 request.Method = "GET";
 
                 WebResponse response = request.GetResponse();
@@ -153,12 +151,12 @@ namespace UploadersLib.TextUploaders
 
                     List<PushbulletDevice> deviceList = new List<PushbulletDevice>();
 
-                    foreach (Newtonsoft.Json.Linq.JObject device in jObject["devices"])
+                    foreach (JObject device in jObject["devices"])
                     {
                         PushbulletDevice currDevice = new PushbulletDevice();
 
-                        currDevice.DeviceKey = device["iden"].ToString();
-                        currDevice.DeviceName = device["extras"]["nickname"].ToString();
+                        currDevice.Key = device["iden"].ToString();
+                        currDevice.Name = device["extras"]["nickname"].ToString();
 
                         deviceList.Add(currDevice);
                     }
@@ -166,7 +164,7 @@ namespace UploadersLib.TextUploaders
                     return deviceList;
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Errors.Add(ex.ToString());
 
@@ -177,23 +175,22 @@ namespace UploadersLib.TextUploaders
 
     public class PushbulletDevice
     {
-        public string DeviceName = string.Empty;
-        public string DeviceKey = string.Empty;
+        public string Name = string.Empty;
+        public string Key = string.Empty;
 
         public override string ToString()
         {
-            return "Name:" + DeviceName + " | ID:" + DeviceKey;
+            return string.Format("Name: {0} ({1})", Name, Key);
         }
     }
 
     public class PushbulletSettings
     {
         public string UserAPIKey = string.Empty;
-        public bool HideAPIChars = true;
         public bool ReturnPushURL = false;
 
-        public PushbulletDevice CurrentDevice { get; set; }
-
         public List<PushbulletDevice> DeviceList { get; set; }
+
+        public PushbulletDevice CurrentDevice { get; set; } // TODO: Use int SelectedDevice
     }
 }

@@ -236,13 +236,12 @@ namespace UploadersLib
                 }
                 else
                 {
-                    cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.DeviceName;
+                    cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.Name;
                 }
 
-                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.DeviceName));
+                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name));
             }
 
-            cbPushbulletAPIKeyHideCharacters.Checked = Config.PushbulletSettings.HideAPIChars;
             cbPushbulletReturnPushURL.Checked = Config.PushbulletSettings.ReturnPushURL;
 
             // Gist
@@ -427,7 +426,7 @@ namespace UploadersLib
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
             txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
-                 
+
             #endregion File uploaders
 
             #region URL Shorteners

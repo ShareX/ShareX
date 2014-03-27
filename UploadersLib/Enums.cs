@@ -88,14 +88,14 @@ namespace UploadersLib
     [Description("File uploaders"), DefaultValue(FileDestination.Dropbox)]
     public enum FileDestination
     {
-        [Description("Amazon S3")]
-        AmazonS3,
         [Description("dropbox.com")]
         Dropbox,
         [Description("FTP Server")]
         FTP,
         [Description("mega.co.nz")]
         Mega,
+        [Description("Amazon S3")]
+        AmazonS3,
         [Description("drive.google.com")]
         GoogleDrive,
         [Description("rapidshare.com")]

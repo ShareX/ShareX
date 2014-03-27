@@ -1071,18 +1071,14 @@ namespace UploadersLib
 
         public void PushbulletSetCurrentDevice()
         {
-            if (Config.PushbulletSettings.CurrentDevice.DeviceName == cboPushbulletDevices.Text) { return; }
+            if (Config.PushbulletSettings.CurrentDevice.Name == cboPushbulletDevices.Text) { return; }
 
-            Config.PushbulletSettings.CurrentDevice =
-                Config.PushbulletSettings.DeviceList
-                .Find(x => x.DeviceName == cboPushbulletDevices.Text);
-
-            lblPushbulletCurrentDevice.Text = "Current device: " + Config.PushbulletSettings.CurrentDevice.ToString();
+            Config.PushbulletSettings.CurrentDevice = Config.PushbulletSettings.DeviceList.Find(x => x.Name == cboPushbulletDevices.Text);
         }
 
         public void PushbulletGetDevices()
         {
-            Pushbullet pushbullet = new Pushbullet(txtPushbulletUserKey.Text, Config.PushbulletSettings);
+            Pushbullet pushbullet = new Pushbullet(Config.PushbulletSettings);
 
             cboPushbulletDevices.Items.Clear();
 
@@ -1100,14 +1096,12 @@ namespace UploadersLib
             Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
             {
                 strDevices += "\n\t" + pbDevice.ToString();
-                cboPushbulletDevices.Items.Add(pbDevice.DeviceName);
+                cboPushbulletDevices.Items.Add(pbDevice.Name);
             });
 
-            cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.DeviceName;
-
-            lblPushbulletCurrentDevice.Text = "Current device: " + Config.PushbulletSettings.CurrentDevice.ToString();
-            lblPushbulletDeviceList.Text = strDevices;
+            cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.Name;
         }
+
         #endregion Pushbullet
 
         #region Twitter

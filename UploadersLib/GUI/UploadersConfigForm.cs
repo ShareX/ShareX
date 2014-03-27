@@ -1012,14 +1012,6 @@ namespace UploadersLib
             PushbulletGetDevices();
         }
 
-        private void cbPushbulletAPIKeyHideCharacters_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.PushbulletSettings.HideAPIChars = cbPushbulletAPIKeyHideCharacters.Checked;
-            txtPushbulletUserKey.UseSystemPasswordChar = cbPushbulletAPIKeyHideCharacters.Checked;
-
-            txtPushbulletUserKey.Focus();
-        }
-
         private void cbPushbulletReturnPushURL_CheckedChanged(object sender, EventArgs e)
         {
             Config.PushbulletSettings.ReturnPushURL = cbPushbulletReturnPushURL.Checked;
