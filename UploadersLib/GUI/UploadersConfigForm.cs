@@ -945,6 +945,44 @@ namespace UploadersLib
 
         #endregion uPaste
 
+        #region Pushbullet
+
+        private void txtPushbulletUserKey_TextChanged(object sender, EventArgs e)
+        {
+            bool bEnable = (txtPushbulletUserKey.Text.Trim() != "");
+
+            btnPushbulletGetDeviceList.Enabled = bEnable;
+            cboPushbulletDevices.Enabled = bEnable;
+            lblPushbulletDevices.Enabled = bEnable;
+
+            Config.PushbulletSettings.UserAPIKey = txtPushbulletUserKey.Text;
+        }
+
+        private void cboPushbulletDevices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PushbulletSetCurrentDevice();
+        }
+
+        private void btnPushbulletGetDeviceList_Click(object sender, EventArgs e)
+        {
+            PushbulletGetDevices();
+        }
+
+        private void cbPushbulletAPIKeyHideCharacters_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PushbulletSettings.HideAPIChars = cbPushbulletAPIKeyHideCharacters.Checked;
+            txtPushbulletUserKey.UseSystemPasswordChar = cbPushbulletAPIKeyHideCharacters.Checked;
+
+            txtPushbulletUserKey.Focus();
+        }
+
+        private void cbPushbulletReturnPushURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.PushbulletSettings.ReturnPushURL = cbPushbulletReturnPushURL.Checked;
+        }
+
+        #endregion Pushbullet
+
         #endregion Text Uploaders
 
         #region URL Shorteners

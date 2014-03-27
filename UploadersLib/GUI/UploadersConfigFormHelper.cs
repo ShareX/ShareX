@@ -1067,6 +1067,49 @@ namespace UploadersLib
 
         #endregion Pastebin
 
+        #region Pushbullet
+
+        public void PushbulletSetCurrentDevice()
+        {
+            if (Config.PushbulletSettings.CurrentDevice.DeviceName == cboPushbulletDevices.Text) { return; }
+
+            Config.PushbulletSettings.CurrentDevice =
+                Config.PushbulletSettings.DeviceList
+                .Find(x => x.DeviceName == cboPushbulletDevices.Text);
+
+            lblPushbulletCurrentDevice.Text = "Current device: " + Config.PushbulletSettings.CurrentDevice.ToString();
+        }
+
+        public void PushbulletGetDevices()
+        {
+            Pushbullet pushbullet = new Pushbullet(txtPushbulletUserKey.Text, Config.PushbulletSettings);
+
+            cboPushbulletDevices.Items.Clear();
+
+            Config.PushbulletSettings.DeviceList = pushbullet.GetDeviceList();
+
+            if (Config.PushbulletSettings.DeviceList.Count < 1) { throw new NullReferenceException("Pushbullet device list came back empty"); }
+
+            if (Config.PushbulletSettings.CurrentDevice == null) { Config.PushbulletSettings.CurrentDevice = Config.PushbulletSettings.DeviceList[0]; }
+
+            cboPushbulletDevices.Enabled = true;
+            lblPushbulletDevices.Enabled = true;
+
+            string strDevices = "Devices:";
+
+            Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
+            {
+                strDevices += "\n\t" + pbDevice.ToString();
+                cboPushbulletDevices.Items.Add(pbDevice.DeviceName);
+            });
+
+            cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.DeviceName;
+
+            lblPushbulletCurrentDevice.Text = "Current device: " + Config.PushbulletSettings.CurrentDevice.ToString();
+            lblPushbulletDeviceList.Text = strDevices;
+        }
+        #endregion Pushbullet
+
         #region Twitter
 
         public bool CheckTwitterAccounts()

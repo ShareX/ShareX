@@ -77,6 +77,7 @@ namespace UploadersLib
             textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
             textUploadersImageList.Images.Add("Gist", Resources.Gist);
             textUploadersImageList.Images.Add("Upaste", Resources.Upaste);
+            textUploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
             tcTextUploaders.ImageList = textUploadersImageList;
 
             ImageList urlShortenersImageList = new ImageList();
@@ -114,6 +115,7 @@ namespace UploadersLib
             tpHostr.ImageKey = "Localhostr";
             tpCustomUploaders.ImageKey = "CustomUploader";
             tpPastebin.ImageKey = "Pastebin";
+            tpPushbullet.ImageKey = "Pushbullet";
             tpGoogleURLShortener.ImageKey = "Google";
             tpBitly.ImageKey = "Bitly";
             tpYourls.ImageKey = "Yourls";
@@ -219,6 +221,27 @@ namespace UploadersLib
             // Paste.ee
 
             txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserAPIKey;
+
+            //Pushbullet
+
+            if (!string.IsNullOrEmpty(Config.PushbulletSettings.UserAPIKey))
+            {
+                txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
+
+                if (Config.PushbulletSettings.DeviceList == null)
+                {
+                    PushbulletGetDevices();
+                }
+                else
+                {
+                    cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.DeviceName;
+                }
+
+                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.DeviceName));
+            }
+
+            cbPushbulletAPIKeyHideCharacters.Checked = Config.PushbulletSettings.HideAPIChars;
+            cbPushbulletReturnPushURL.Checked = Config.PushbulletSettings.ReturnPushURL;
 
             // Gist
 

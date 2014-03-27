@@ -1829,8 +1829,5 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSocialServices;
         private System.Windows.Forms.ComboBox cbImageFileExist;
         private System.Windows.Forms.Label lblImageFileExist;
-
-
-
     }
 }
