@@ -84,6 +84,8 @@ namespace UploadersLib
     [Description("File uploaders"), DefaultValue(FileDestination.Dropbox)]
     public enum FileDestination
     {
+        [Description("Amazon S3")]
+        AmazonS3,
         [Description("dropbox.com")]
         Dropbox,
         [Description("FTP Server")]

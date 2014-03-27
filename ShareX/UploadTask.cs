@@ -840,6 +840,9 @@ namespace ShareX
                 case FileDestination.Mega:
                     fileUploader = new Mega(Program.UploadersConfig.MegaAuthInfos, Program.UploadersConfig.MegaParentNodeId);
                     break;
+                case FileDestination.AmazonS3:
+                    fileUploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
+                    break;
             }
 
             if (fileUploader != null)
