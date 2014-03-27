@@ -106,6 +106,10 @@ namespace UploadersLib
         public string UpasteUserKey = string.Empty;
         public bool UpasteIsPublic = false;
 
+        // Pushbullet
+
+        public PushbulletSettings PushbulletSettings = new PushbulletSettings();
+
         #endregion Text uploaders
 
         #region File uploaders
@@ -309,6 +313,8 @@ namespace UploadersLib
         {
             switch (destination)
             {
+                case TextDestination.Pushbullet:
+                    return (PushbulletSettings != null) && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && (PushbulletSettings.DeviceList != null);
                 case TextDestination.CustomTextUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomTextUploaderSelected);
                 default:

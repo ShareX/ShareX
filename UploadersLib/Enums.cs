@@ -50,6 +50,8 @@ namespace UploadersLib
         yFrog,
         [Description("mediacru.sh")]
         MediaCrush,
+        //[Description("pushbullet.com")]
+        //Pushbullet,
         [Description("Custom image uploader")]
         CustomImageUploader,
         [Description("File uploader")]
@@ -75,6 +77,8 @@ namespace UploadersLib
         Gist,
         [Description("upaste.me")]
         Upaste,
+        [Description("pushbullet.com")]
+        Pushbullet,
         [Description("Custom text uploader")]
         CustomTextUploader,
         [Description("File uploader")]
@@ -112,6 +116,8 @@ namespace UploadersLib
         Email,
         [Description("Jira")]
         Jira,
+        //[Description("pushbullet.com")]
+        //Pushbullet,
         [Description("Custom file uploader")]
         CustomFileUploader
     }
@@ -131,6 +137,8 @@ namespace UploadersLib
         TURL,
         [Description("yourls.org")]
         YOURLS,
+        //[Description("pushbullet.com")]
+        //Pushbullet,
         [Description("Custom URL shortener")]
         CustomURLShortener
     }

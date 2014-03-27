@@ -677,6 +677,9 @@ namespace ShareX
                         IsPublic = Program.UploadersConfig.UpasteIsPublic
                     };
                     break;
+                case TextDestination.Pushbullet:
+                    textUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings.UserAPIKey, Program.UploadersConfig.PushbulletSettings);
+                    break;
                 case TextDestination.CustomTextUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomTextUploaderSelected))
                     {

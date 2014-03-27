@@ -126,6 +126,16 @@
             this.cbUpasteIsPublic = new System.Windows.Forms.CheckBox();
             this.lblUpasteUserKey = new System.Windows.Forms.Label();
             this.txtUpasteUserKey = new System.Windows.Forms.TextBox();
+            this.tpPushbullet = new System.Windows.Forms.TabPage();
+            this.cbPushbulletReturnPushURL = new System.Windows.Forms.CheckBox();
+            this.cbPushbulletAPIKeyHideCharacters = new System.Windows.Forms.CheckBox();
+            this.lblPushbulletDeviceList = new System.Windows.Forms.Label();
+            this.lblPushbulletCurrentDevice = new System.Windows.Forms.Label();
+            this.lblPushbulletDevices = new System.Windows.Forms.Label();
+            this.cboPushbulletDevices = new System.Windows.Forms.ComboBox();
+            this.btnPushbulletGetDeviceList = new System.Windows.Forms.Button();
+            this.lblPushbulletUserKey = new System.Windows.Forms.Label();
+            this.txtPushbulletUserKey = new System.Windows.Forms.TextBox();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
@@ -371,6 +381,7 @@
             this.tpPaste_ee.SuspendLayout();
             this.tpGist.SuspendLayout();
             this.tpUpaste.SuspendLayout();
+            this.tpPushbullet.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
             this.tpDropbox.SuspendLayout();
@@ -1264,6 +1275,7 @@
             this.tcTextUploaders.Controls.Add(this.tpPaste_ee);
             this.tcTextUploaders.Controls.Add(this.tpGist);
             this.tcTextUploaders.Controls.Add(this.tpUpaste);
+            this.tcTextUploaders.Controls.Add(this.tpPushbullet);
             this.tcTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcTextUploaders.Location = new System.Drawing.Point(3, 3);
             this.tcTextUploaders.Name = "tcTextUploaders";
@@ -1416,6 +1428,113 @@
             this.txtUpasteUserKey.Size = new System.Drawing.Size(264, 20);
             this.txtUpasteUserKey.TabIndex = 0;
             this.txtUpasteUserKey.TextChanged += new System.EventHandler(this.txtUpasteUserKey_TextChanged);
+            // 
+            // tpPushbullet
+            // 
+            this.tpPushbullet.Controls.Add(this.cbPushbulletReturnPushURL);
+            this.tpPushbullet.Controls.Add(this.cbPushbulletAPIKeyHideCharacters);
+            this.tpPushbullet.Controls.Add(this.lblPushbulletDeviceList);
+            this.tpPushbullet.Controls.Add(this.lblPushbulletCurrentDevice);
+            this.tpPushbullet.Controls.Add(this.lblPushbulletDevices);
+            this.tpPushbullet.Controls.Add(this.cboPushbulletDevices);
+            this.tpPushbullet.Controls.Add(this.btnPushbulletGetDeviceList);
+            this.tpPushbullet.Controls.Add(this.lblPushbulletUserKey);
+            this.tpPushbullet.Controls.Add(this.txtPushbulletUserKey);
+            this.tpPushbullet.Location = new System.Drawing.Point(4, 22);
+            this.tpPushbullet.Name = "tpPushbullet";
+            this.tpPushbullet.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPushbullet.Size = new System.Drawing.Size(804, 475);
+            this.tpPushbullet.TabIndex = 4;
+            this.tpPushbullet.Text = "Pushbullet";
+            this.tpPushbullet.UseVisualStyleBackColor = true;
+            // 
+            // cbPushbulletReturnPushURL
+            // 
+            this.cbPushbulletReturnPushURL.AutoSize = true;
+            this.cbPushbulletReturnPushURL.Location = new System.Drawing.Point(396, 75);
+            this.cbPushbulletReturnPushURL.Name = "cbPushbulletReturnPushURL";
+            this.cbPushbulletReturnPushURL.Size = new System.Drawing.Size(161, 17);
+            this.cbPushbulletReturnPushURL.TabIndex = 8;
+            this.cbPushbulletReturnPushURL.Text = "Copy Push URL to Clipboard";
+            this.cbPushbulletReturnPushURL.UseVisualStyleBackColor = true;
+            this.cbPushbulletReturnPushURL.CheckedChanged += new System.EventHandler(this.cbPushbulletReturnPushURL_CheckedChanged);
+            // 
+            // cbPushbulletAPIKeyHideCharacters
+            // 
+            this.cbPushbulletAPIKeyHideCharacters.AutoSize = true;
+            this.cbPushbulletAPIKeyHideCharacters.Location = new System.Drawing.Point(396, 23);
+            this.cbPushbulletAPIKeyHideCharacters.Name = "cbPushbulletAPIKeyHideCharacters";
+            this.cbPushbulletAPIKeyHideCharacters.Size = new System.Drawing.Size(102, 17);
+            this.cbPushbulletAPIKeyHideCharacters.TabIndex = 7;
+            this.cbPushbulletAPIKeyHideCharacters.Text = "Hide Characters";
+            this.cbPushbulletAPIKeyHideCharacters.UseVisualStyleBackColor = true;
+            this.cbPushbulletAPIKeyHideCharacters.CheckedChanged += new System.EventHandler(this.cbPushbulletAPIKeyHideCharacters_CheckedChanged);
+            // 
+            // lblPushbulletDeviceList
+            // 
+            this.lblPushbulletDeviceList.AutoSize = true;
+            this.lblPushbulletDeviceList.Location = new System.Drawing.Point(53, 160);
+            this.lblPushbulletDeviceList.Name = "lblPushbulletDeviceList";
+            this.lblPushbulletDeviceList.Size = new System.Drawing.Size(0, 13);
+            this.lblPushbulletDeviceList.TabIndex = 6;
+            // 
+            // lblPushbulletCurrentDevice
+            // 
+            this.lblPushbulletCurrentDevice.AutoSize = true;
+            this.lblPushbulletCurrentDevice.Location = new System.Drawing.Point(53, 133);
+            this.lblPushbulletCurrentDevice.Name = "lblPushbulletCurrentDevice";
+            this.lblPushbulletCurrentDevice.Size = new System.Drawing.Size(0, 13);
+            this.lblPushbulletCurrentDevice.TabIndex = 5;
+            // 
+            // lblPushbulletDevices
+            // 
+            this.lblPushbulletDevices.AutoSize = true;
+            this.lblPushbulletDevices.Enabled = false;
+            this.lblPushbulletDevices.Location = new System.Drawing.Point(44, 51);
+            this.lblPushbulletDevices.Name = "lblPushbulletDevices";
+            this.lblPushbulletDevices.Size = new System.Drawing.Size(44, 13);
+            this.lblPushbulletDevices.TabIndex = 3;
+            this.lblPushbulletDevices.Text = "&Device:";
+            // 
+            // cboPushbulletDevices
+            // 
+            this.cboPushbulletDevices.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboPushbulletDevices.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboPushbulletDevices.Enabled = false;
+            this.cboPushbulletDevices.FormattingEnabled = true;
+            this.cboPushbulletDevices.Location = new System.Drawing.Point(94, 48);
+            this.cboPushbulletDevices.Name = "cboPushbulletDevices";
+            this.cboPushbulletDevices.Size = new System.Drawing.Size(296, 21);
+            this.cboPushbulletDevices.TabIndex = 4;
+            this.cboPushbulletDevices.SelectedIndexChanged += new System.EventHandler(this.cboPushbulletDevices_SelectedIndexChanged);
+            // 
+            // btnPushbulletGetDeviceList
+            // 
+            this.btnPushbulletGetDeviceList.Enabled = false;
+            this.btnPushbulletGetDeviceList.Location = new System.Drawing.Point(396, 46);
+            this.btnPushbulletGetDeviceList.Name = "btnPushbulletGetDeviceList";
+            this.btnPushbulletGetDeviceList.Size = new System.Drawing.Size(107, 23);
+            this.btnPushbulletGetDeviceList.TabIndex = 2;
+            this.btnPushbulletGetDeviceList.Text = "Get Device List";
+            this.btnPushbulletGetDeviceList.UseVisualStyleBackColor = true;
+            this.btnPushbulletGetDeviceList.Click += new System.EventHandler(this.btnPushbulletGetDeviceList_Click);
+            // 
+            // lblPushbulletUserKey
+            // 
+            this.lblPushbulletUserKey.AutoSize = true;
+            this.lblPushbulletUserKey.Location = new System.Drawing.Point(16, 24);
+            this.lblPushbulletUserKey.Name = "lblPushbulletUserKey";
+            this.lblPushbulletUserKey.Size = new System.Drawing.Size(72, 13);
+            this.lblPushbulletUserKey.TabIndex = 0;
+            this.lblPushbulletUserKey.Text = "User &API key:";
+            // 
+            // txtPushbulletUserKey
+            // 
+            this.txtPushbulletUserKey.Location = new System.Drawing.Point(94, 21);
+            this.txtPushbulletUserKey.Name = "txtPushbulletUserKey";
+            this.txtPushbulletUserKey.Size = new System.Drawing.Size(296, 20);
+            this.txtPushbulletUserKey.TabIndex = 1;
+            this.txtPushbulletUserKey.TextChanged += new System.EventHandler(this.txtPushbulletUserKey_TextChanged);
             // 
             // tpFileUploaders
             // 
@@ -3823,6 +3942,8 @@
             this.tpGist.PerformLayout();
             this.tpUpaste.ResumeLayout(false);
             this.tpUpaste.PerformLayout();
+            this.tpPushbullet.ResumeLayout(false);
+            this.tpPushbullet.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpDropbox.ResumeLayout(false);
@@ -4198,6 +4319,16 @@
         private System.Windows.Forms.TextBox txtUpasteUserKey;
         private System.Windows.Forms.CheckBox cbUpasteIsPublic;
         private System.Windows.Forms.CheckBox cbGoogleDriveIsPublic;
+        private System.Windows.Forms.TabPage tpPushbullet;
+        private System.Windows.Forms.Label lblPushbulletUserKey;
+        private System.Windows.Forms.TextBox txtPushbulletUserKey;
+        private System.Windows.Forms.Button btnPushbulletGetDeviceList;
+        private System.Windows.Forms.Label lblPushbulletDevices;
+        private System.Windows.Forms.ComboBox cboPushbulletDevices;
+        private System.Windows.Forms.Label lblPushbulletDeviceList;
+        private System.Windows.Forms.Label lblPushbulletCurrentDevice;
+        private System.Windows.Forms.CheckBox cbPushbulletAPIKeyHideCharacters;
+        private System.Windows.Forms.CheckBox cbPushbulletReturnPushURL;
         private System.Windows.Forms.Label lblMinusAuthStatus;
         private System.Windows.Forms.TabPage tpAmazonS3;
         private System.Windows.Forms.TextBox txtAmazonS3AccessKey;

@@ -185,6 +185,7 @@
     <Compile Include="GUI\UploadersConfigForm.Designer.cs">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextUploaders\Pushbullet.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="GUI\UserPassBox.cs">
@@ -440,6 +441,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Favicons\AmazonS3.ico" />
+    <Content Include="Favicons\Pushbullet.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
