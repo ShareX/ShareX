@@ -39,49 +39,52 @@ namespace UploadersLib.FileUploaders
 {
     public sealed class AmazonS3 : FileUploader
     {
-        const string FILE_INPUT_NAME = "file";
-
-        public AmazonS3Settings AccessKeys { get; set; }
+        private AmazonS3Settings S3Settings { get; set; }
 
         public AmazonS3(AmazonS3Settings accessKeys)
         {
-            AccessKeys = accessKeys;
+            S3Settings = accessKeys;
         }
 
         private string GetObjectStorageClass()
         {
-            return AccessKeys.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
+            return S3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
         }
 
         private string GetObjectKey(string fileName)
         {
             var parser = new NameParser(NameParserType.FileName);
-            return string.Format("{0}{1}", parser.Parse(AccessKeys.ObjectPrefix), fileName);
+            return string.Format("{0}{1}", parser.Parse(S3Settings.ObjectPrefix), fileName);
+        }
+
+        // Helper class to construct the S3 policy document (below)
+        private class S3PolicyCondition : Dictionary<string, string>
+        {
+            public S3PolicyCondition(string key, string value)
+            {
+                Add(key, value);
+            }
         }
 
         private string GetPolicyDocument(string fileName)
         {
-            var mimeType = Helpers.GetMimeType(fileName);
-            var objectKey = GetObjectKey(fileName);
-            var objectStorageClass = GetObjectStorageClass();
+            var policyDocument = new {
+                expiration = DateTime.UtcNow.AddDays(2).ToString("o"), // The policy is valid for 2 days
+                conditions = new List<S3PolicyCondition> {
+                    new S3PolicyCondition("acl", "public-read"),
+                    new S3PolicyCondition("bucket", S3Settings.Bucket),
+                    new S3PolicyCondition("Content-Type", Helpers.GetMimeType(fileName)),
+                    new S3PolicyCondition("key", GetObjectKey(fileName)),
+                    new S3PolicyCondition("x-amz-storage-class", GetObjectStorageClass())
+                }
+            };
 
-            var policyDocument = string.Format(@"{{
-                'expiration': '2015-12-01T12:00:00.000Z',
-                'conditions': [
-                    {{'acl': 'public-read' }},
-                    {{'bucket': '{0}' }},
-                    {{'Content-Type': '{1}'}},
-                    {{'key': '{2}'}},
-                    {{'x-amz-storage-class': '{3}'}},
-                ]
-            }}", AccessKeys.Bucket, mimeType, objectKey, objectStorageClass);
-
-            return Regex.Replace(policyDocument, @"\s", "");
+            return JsonConvert.SerializeObject(policyDocument);
         }
 
         private string GetEndpoint()
         {
-            return string.Format("{0}{1}", AccessKeys.Endpoint, AccessKeys.Bucket);
+            return string.Format("{0}{1}", S3Settings.Endpoint, S3Settings.Bucket);
         }
 
         // http://codeonaboat.wordpress.com/2011/04/22/uploading-a-file-to-amazon-s3-using-an-asp-net-mvc-application-directly-from-the-users-browser/
@@ -90,9 +93,14 @@ namespace UploadersLib.FileUploaders
             var encoding = new ASCIIEncoding();
             var base64Policy = Convert.ToBase64String(policyBytes);
             var secretKeyBytes = encoding.GetBytes(secretKey);
-            var hmacsha1 = new HMACSHA1(secretKeyBytes);
-            var base64PolicyBytes = encoding.GetBytes(base64Policy);
-            var signatureBytes = hmacsha1.ComputeHash(base64PolicyBytes);
+
+            byte[] signatureBytes;
+            using (var hmacsha1 = new HMACSHA1(secretKeyBytes))
+            {
+                var base64PolicyBytes = encoding.GetBytes(base64Policy);
+                signatureBytes = hmacsha1.ComputeHash(base64PolicyBytes);
+            }
+
             return Convert.ToBase64String(signatureBytes);
         }
 
@@ -100,13 +108,13 @@ namespace UploadersLib.FileUploaders
         {
             var policyDocument = GetPolicyDocument(fileName);
             var policyBytes = Encoding.ASCII.GetBytes(policyDocument);
-            var signature = CreateSignature(AccessKeys.SecretAccessKey, policyBytes);
+            var signature = CreateSignature(S3Settings.SecretAccessKey, policyBytes);
 
             var parameters = new Dictionary<string, string>();
             parameters.Add("key", objectKey);
             parameters.Add("acl", "public-read");
             parameters.Add("content-type", Helpers.GetMimeType(fileName));
-            parameters.Add("AWSAccessKeyId", AccessKeys.AccessKeyID);
+            parameters.Add("AWSAccessKeyId", S3Settings.AccessKeyID);
             parameters.Add("policy", Convert.ToBase64String(policyBytes));
             parameters.Add("signature", signature);
             parameters.Add("x-amz-storage-class", GetObjectStorageClass());
@@ -115,20 +123,20 @@ namespace UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(AccessKeys.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(AccessKeys.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(AccessKeys.Endpoint)) throw new Exception("'Endpoint' must not be emoty.");
-            if (string.IsNullOrEmpty(AccessKeys.Bucket)) throw new Exception("'Bucket' must not be empty.");
+            if (string.IsNullOrEmpty(S3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(S3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(S3Settings.Endpoint)) throw new Exception("'Endpoint' must not be emoty.");
+            if (string.IsNullOrEmpty(S3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
 
             var objectKey = GetObjectKey(fileName);
 
-            var uploadResult = UploadData(stream, GetEndpoint(), fileName, FILE_INPUT_NAME, GetParameters(fileName, objectKey), null, null, ResponseType.Headers);
+            var uploadResult = UploadData(stream, GetEndpoint(), fileName, arguments: GetParameters(fileName, objectKey), responseType: ResponseType.Headers);
 
             if (uploadResult.IsSuccess)
             {
-                if (AccessKeys.UseCustomCNAME)
+                if (S3Settings.UseCustomCNAME)
                 {
-                    uploadResult.URL = string.Format("http://{0}/{1}", AccessKeys.Bucket, objectKey);
+                    uploadResult.URL = string.Format("http://{0}/{1}", S3Settings.Bucket, objectKey);
                 }
                 else
                 {
@@ -148,12 +156,6 @@ namespace UploadersLib.FileUploaders
         public bool UseCustomCNAME { get; set; }
         public string ObjectPrefix { get; set; }
         public string Bucket { get; set; }
-        public string Endpoint { get; set; }
-    }
-
-    public class AmazonS3Region
-    {
-        public string Name { get; set; }
         public string Endpoint { get; set; }
     }
 }
