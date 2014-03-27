@@ -50,7 +50,6 @@ namespace UploadersLib.TextUploaders
             if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
 
             string strDeviceKey = Config.CurrentDevice.Key;
-
             if (string.IsNullOrEmpty(strDeviceKey)) throw new Exception("For some reason, the device key was empty.");
 
             UploadResult result = new UploadResult();
@@ -66,8 +65,8 @@ namespace UploadersLib.TextUploaders
                 string pushData = "";
 
                 pushData += "device_iden=" + strDeviceKey + "&";
-                pushData += "type=note&"; //For now set it to 'note' until it's dynamic w/ ShareX...
-                pushData += "title=ShareX: " + DateTime.UtcNow + "&";
+                pushData += "type=note&"; // For now set it to 'note' until it's dynamic w/ ShareX...
+                pushData += "title=ShareX&";
                 pushData += "body=" + text;
 
                 byte[] postBytes = Encoding.UTF8.GetBytes(pushData);
@@ -79,31 +78,26 @@ namespace UploadersLib.TextUploaders
                     requestStream.Write(postBytes, 0, postBytes.Length);
                 }
 
-                string strPushURL = "";
+                JObject jObject = null;
+
+                using (WebResponse response = request.GetResponse())
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string strResponse = reader.ReadLine();
+
+                    result.Response = strResponse;
+
+                    if (!string.IsNullOrEmpty(strResponse) && strResponse.StartsWith("error"))
+                    {
+                        throw new WebException(strResponse);
+                    }
+
+                    jObject = JObject.Parse(strResponse);
+                }
 
                 if (Config.ReturnPushURL)
                 {
-                    WebResponse response = request.GetResponse();
-
-                    JObject jObject = null;
-
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                    {
-                        string strResponse = reader.ReadLine();
-
-                        result.Response = strResponse;
-
-                        if (!string.IsNullOrEmpty(strResponse) && strResponse.StartsWith("error"))
-                        {
-                            throw new WebException(strResponse);
-                        }
-
-                        jObject = JObject.Parse(strResponse);
-                    }
-
-                    strPushURL = "https://www.pushbullet.com/pushes?push_iden=" + jObject["iden"];
-
-                    result.URL = strPushURL;
+                    result.URL = "https://www.pushbullet.com/pushes?push_iden=" + jObject["iden"];
                 }
                 else
                 {
@@ -111,13 +105,11 @@ namespace UploadersLib.TextUploaders
                 }
 
                 result.IsSuccess = true;
-
                 return result;
             }
             catch (Exception ex)
             {
                 Errors.Add(ex.ToString());
-
                 result.IsSuccess = false;
             }
 
@@ -134,8 +126,7 @@ namespace UploadersLib.TextUploaders
                 request.Credentials = new NetworkCredential(Config.UserAPIKey, "");
                 request.Method = "GET";
 
-                WebResponse response = request.GetResponse();
-
+                using (WebResponse response = request.GetResponse())
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                 {
                     string strResponse = reader.ReadLine();
@@ -143,7 +134,6 @@ namespace UploadersLib.TextUploaders
                     if (!string.IsNullOrEmpty(strResponse) && strResponse.StartsWith("error"))
                     {
                         Errors.Add(strResponse);
-
                         return null;
                     }
 
@@ -167,7 +157,6 @@ namespace UploadersLib.TextUploaders
             catch (Exception ex)
             {
                 Errors.Add(ex.ToString());
-
                 return null;
             }
         }
@@ -177,20 +166,13 @@ namespace UploadersLib.TextUploaders
     {
         public string Name = string.Empty;
         public string Key = string.Empty;
-
-        public override string ToString()
-        {
-            return string.Format("Name: {0} ({1})", Name, Key);
-        }
     }
 
     public class PushbulletSettings
     {
         public string UserAPIKey = string.Empty;
-        public bool ReturnPushURL = false;
-
-        public List<PushbulletDevice> DeviceList { get; set; }
-
-        public PushbulletDevice CurrentDevice { get; set; } // TODO: Use int SelectedDevice
+        public bool ReturnPushURL = true;
+        public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
+        public PushbulletDevice CurrentDevice = null; // TODO: Use int SelectedDevice
     }
 }
