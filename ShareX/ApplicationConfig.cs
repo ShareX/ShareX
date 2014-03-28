@@ -107,11 +107,11 @@ namespace ShareX
         [Category("Upload / Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }
 
-        [Category("Paths"), Description("Custom Uploaders Config path.")]
+        [Category("Paths"), Description("Custom uploaders config path.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomUploadersConfigPath { get; set; }
 
-        [Category("Paths"), Description("Custom Uploaders Config path.")]
+        [Category("Paths"), Description("Custom hotkeys config path.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomHotkeysConfigPath { get; set; }
 

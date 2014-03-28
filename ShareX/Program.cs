@@ -109,16 +109,42 @@ namespace ShareX
             }
         }
 
+        private static string UploadersConfigFolder
+        {
+            get
+            {
+                if (Settings != null && !string.IsNullOrEmpty(Settings.CustomUploadersConfigPath))
+                {
+                    return Settings.CustomUploadersConfigPath;
+                }
+
+                return PersonalPath;
+            }
+        }
+
         public static string UploadersConfigFilePath
         {
             get
             {
                 if (!IsSandbox)
                 {
-                    return Path.Combine(Directory.Exists(Settings.CustomUploadersConfigPath) ? Settings.CustomUploadersConfigPath : PersonalPath, UploadersConfigFilename);
+                    return Path.Combine(UploadersConfigFolder, UploadersConfigFilename);
                 }
 
                 return null;
+            }
+        }
+
+        private static string HotkeysConfigFolder
+        {
+            get
+            {
+                if (Settings != null && !string.IsNullOrEmpty(Settings.CustomHotkeysConfigPath))
+                {
+                    return Settings.CustomHotkeysConfigPath;
+                }
+
+                return PersonalPath;
             }
         }
 
@@ -128,7 +154,7 @@ namespace ShareX
             {
                 if (!IsSandbox)
                 {
-                    return Path.Combine(Directory.Exists(Settings.CustomHotkeysConfigPath) ? Settings.CustomHotkeysConfigPath : PersonalPath, HotkeysConfigFilename);
+                    return Path.Combine(HotkeysConfigFolder, HotkeysConfigFilename);
                 }
 
                 return null;
@@ -148,7 +174,7 @@ namespace ShareX
             }
         }
 
-        private static string LogParentFolder
+        private static string LogsFolder
         {
             get
             {
@@ -156,16 +182,16 @@ namespace ShareX
             }
         }
 
-        public static string LogFilePath
+        public static string LogsFilePath
         {
             get
             {
                 string filename = string.Format(LogFileName, FastDateTime.Now);
-                return Path.Combine(LogParentFolder, filename);
+                return Path.Combine(LogsFolder, filename);
             }
         }
 
-        public static string ScreenshotsParentFolder
+        public static string ScreenshotsFolder
         {
             get
             {
@@ -183,7 +209,7 @@ namespace ShareX
             get
             {
                 string subFolderName = new NameParser(NameParserType.FolderPath).Parse(Settings.SaveImageSubFolderPattern);
-                return Path.Combine(ScreenshotsParentFolder, subFolderName);
+                return Path.Combine(ScreenshotsFolder, subFolderName);
             }
         }
 
@@ -297,7 +323,7 @@ namespace ShareX
                 BackupSettings();
 
                 DebugHelper.WriteLine("ShareX closing");
-                DebugHelper.Logger.SaveLog(LogFilePath);
+                DebugHelper.Logger.SaveLog(LogsFilePath);
             }
         }
 
@@ -411,7 +437,7 @@ namespace ShareX
 
         private static void OnError(Exception e)
         {
-            using (ErrorForm errorForm = new ErrorForm(Application.ProductName, e, DebugHelper.Logger, LogFilePath, Links.URL_ISSUES))
+            using (ErrorForm errorForm = new ErrorForm(Application.ProductName, e, DebugHelper.Logger, LogsFilePath, Links.URL_ISSUES))
             {
                 errorForm.ShowDialog();
             }
