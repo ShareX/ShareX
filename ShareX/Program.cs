@@ -115,7 +115,7 @@ namespace ShareX
             {
                 if (!IsSandbox)
                 {
-                    return Path.Combine(PersonalPath, UploadersConfigFilename);
+                    return Path.Combine(Directory.Exists(Settings.CustomUploadersConfigPath) ? Settings.CustomUploadersConfigPath : PersonalPath, UploadersConfigFilename);
                 }
 
                 return null;
@@ -128,7 +128,7 @@ namespace ShareX
             {
                 if (!IsSandbox)
                 {
-                    return Path.Combine(PersonalPath, HotkeysConfigFilename);
+                    return Path.Combine(Directory.Exists(Settings.CustomHotkeysConfigPath) ? Settings.CustomHotkeysConfigPath : PersonalPath, HotkeysConfigFilename);
                 }
 
                 return null;

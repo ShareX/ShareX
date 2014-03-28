@@ -105,6 +105,7 @@
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="AdapterInfo.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
+    <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
     <Compile Include="UITypeEditors\MyColorEditor.cs" />
     <Compile Include="UITypeEditors\ImageFileNameEditor.cs" />

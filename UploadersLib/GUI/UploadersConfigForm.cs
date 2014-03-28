@@ -49,7 +49,7 @@ namespace UploadersLib
             ControlSettings();
             CreateUserControlEvents();
             LoadSettings(uploadersConfig);
-            Text = "ShareX - Outputs Configuration" + (string.IsNullOrEmpty(uploadersConfig.FilePath) ? string.Empty : ": " + uploadersConfig.FilePath);
+            Text = "ShareX - Outputs Configuration" + (string.IsNullOrEmpty(uploadersConfig.FilePath) ? string.Empty : " - " + uploadersConfig.FilePath);
         }
 
         private void UploadersConfigForm_FormClosed(object sender, FormClosedEventArgs e)

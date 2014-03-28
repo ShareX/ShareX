@@ -27,6 +27,7 @@ using HelpersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using UploadersLib;
 
 namespace ShareX
@@ -105,6 +106,14 @@ namespace ShareX
 
         [Category("Upload / Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }
+
+        [Category("Paths"), Description("Custom Uploaders Config path.")]
+        [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        public string CustomUploadersConfigPath { get; set; }
+
+        [Category("Paths"), Description("Custom Uploaders Config path.")]
+        [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        public string CustomHotkeysConfigPath { get; set; }
 
         #endregion Advanced
 
