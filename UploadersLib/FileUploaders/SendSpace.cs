@@ -31,7 +31,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Linq;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {

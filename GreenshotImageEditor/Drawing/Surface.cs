@@ -349,7 +349,10 @@ namespace Greenshot.Drawing
         /// </summary>
         public DrawingModes DrawingMode
         {
-            get { return drawingMode; }
+            get
+            {
+                return drawingMode;
+            }
             set
             {
                 drawingMode = value;

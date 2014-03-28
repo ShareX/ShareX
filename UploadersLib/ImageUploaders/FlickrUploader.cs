@@ -30,7 +30,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.ImageUploaders
 {

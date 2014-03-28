@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using System.ComponentModel;
 using System.Drawing;
 
 namespace ImageEffectsLib

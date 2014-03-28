@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System.Threading;
 using System.Windows.Forms;
 

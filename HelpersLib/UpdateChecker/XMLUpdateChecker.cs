@@ -23,13 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Cache;
-using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 

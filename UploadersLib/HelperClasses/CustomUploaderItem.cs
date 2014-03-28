@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;

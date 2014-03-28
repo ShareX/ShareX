@@ -25,15 +25,11 @@
 
 using HelpersLib;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO;
-using System.Text;
 using System;
-using System.Text.RegularExpressions;
-using UploadersLib.HelperClasses;
+using System.Collections.Generic;
+using System.IO;
 using System.Security.Cryptography;
-using System.Linq;
+using System.Text;
 
 namespace UploadersLib.FileUploaders
 {
@@ -68,7 +64,8 @@ namespace UploadersLib.FileUploaders
 
         private string GetPolicyDocument(string fileName)
         {
-            var policyDocument = new {
+            var policyDocument = new
+            {
                 expiration = DateTime.UtcNow.AddDays(2).ToString("o"), // The policy is valid for 2 days
                 conditions = new List<S3PolicyCondition> {
                     new S3PolicyCondition("acl", "public-read"),

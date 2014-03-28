@@ -28,7 +28,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Xml.Linq;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.ImageUploaders
 {

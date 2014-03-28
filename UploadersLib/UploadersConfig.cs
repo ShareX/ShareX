@@ -200,7 +200,8 @@ namespace UploadersLib
 
         // Amazon S3
 
-        public AmazonS3Settings AmazonS3Settings = new AmazonS3Settings() {
+        public AmazonS3Settings AmazonS3Settings = new AmazonS3Settings()
+        {
             ObjectPrefix = Application.ProductName + "/%y-%mo/",
             UseReducedRedundancyStorage = true
         };

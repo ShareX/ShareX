@@ -50,7 +50,10 @@ namespace Greenshot.Controls
 
         public Color SelectedColor
         {
-            get { return selectedColor; }
+            get
+            {
+                return selectedColor;
+            }
             set
             {
                 selectedColor = value;

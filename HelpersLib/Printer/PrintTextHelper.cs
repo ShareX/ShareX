@@ -117,7 +117,7 @@ namespace HelpersLib
             // next character
             int c;
 
-            for (;;)
+            for (; ; )
             {
                 // get next character
                 c = NextChar();

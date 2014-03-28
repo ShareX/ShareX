@@ -57,10 +57,7 @@ namespace Greenshot.Drawing
         public string Text
         {
             get { return text; }
-            set
-            {
-                ChangeText(value, true);
-            }
+            set { ChangeText(value, true); }
         }
 
         internal void ChangeText(string newText, bool allowUndoable)

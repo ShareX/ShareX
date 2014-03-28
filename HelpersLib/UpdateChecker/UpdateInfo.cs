@@ -23,9 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System;
-using System.Text;
 using System.Web;
 
 namespace HelpersLib

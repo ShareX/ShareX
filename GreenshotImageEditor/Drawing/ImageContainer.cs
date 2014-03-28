@@ -122,7 +122,10 @@ namespace Greenshot.Drawing
                     Top = Top - shadowOffset.Y;
                 }
             }
-            get { return image; }
+            get
+            {
+                return image;
+            }
         }
 
         /// <summary>

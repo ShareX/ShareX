@@ -19,8 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.ComponentModel;
-using System.Threading;
 using Greenshot.Drawing.Fields;
 using Greenshot.IniFile;
 using Greenshot.Memento;
@@ -29,7 +27,9 @@ using Greenshot.Plugin.Drawing;
 using GreenshotPlugin.Core;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Greenshot.Drawing

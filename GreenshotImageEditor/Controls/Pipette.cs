@@ -19,10 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.ComponentModel;
 using Greenshot.Forms;
 using GreenshotPlugin.UnmanagedHelpers;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 

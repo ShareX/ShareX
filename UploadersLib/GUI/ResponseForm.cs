@@ -26,7 +26,6 @@
 using HelpersLib;
 using System;
 using System.Windows.Forms;
-using UploadersLib.Properties;
 
 namespace UploadersLib
 {

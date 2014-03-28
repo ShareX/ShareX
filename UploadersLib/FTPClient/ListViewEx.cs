@@ -213,7 +213,7 @@ namespace UploadersLib
         {
             switch (msg.Msg)
             {
-                    // Look	for	WM_VSCROLL,WM_HSCROLL or WM_SIZE messages.
+                // Look	for	WM_VSCROLL,WM_HSCROLL or WM_SIZE messages.
                 case WM_VSCROLL:
                 case WM_HSCROLL:
                 case WM_SIZE:
@@ -365,16 +365,16 @@ namespace UploadersLib
             switch (e.KeyChar)
             {
                 case (char)(int)Keys.Escape:
-                {
-                    EndEditing(false);
-                    break;
-                }
+                    {
+                        EndEditing(false);
+                        break;
+                    }
 
                 case (char)(int)Keys.Enter:
-                {
-                    EndEditing(true);
-                    break;
-                }
+                    {
+                        EndEditing(true);
+                        break;
+                    }
             }
         }
 

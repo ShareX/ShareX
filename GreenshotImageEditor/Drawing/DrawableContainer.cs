@@ -121,7 +121,10 @@ namespace Greenshot.Drawing
         private bool selected = false;
         public bool Selected
         {
-            get { return selected; }
+            get
+            {
+                return selected;
+            }
             set
             {
                 selected = value;
@@ -146,7 +149,10 @@ namespace Greenshot.Drawing
         private int left = 0;
         public int Left
         {
-            get { return left; }
+            get
+            {
+                return left;
+            }
             set
             {
                 if (value != left)
@@ -160,7 +166,10 @@ namespace Greenshot.Drawing
         private int top = 0;
         public int Top
         {
-            get { return top; }
+            get
+            {
+                return top;
+            }
             set
             {
                 if (value != top)
@@ -174,7 +183,10 @@ namespace Greenshot.Drawing
         private int width = 0;
         public int Width
         {
-            get { return width; }
+            get
+            {
+                return width;
+            }
             set
             {
                 if (value != width)
@@ -188,7 +200,10 @@ namespace Greenshot.Drawing
         private int height = 0;
         public int Height
         {
-            get { return height; }
+            get
+            {
+                return height;
+            }
             set
             {
                 if (value != height)
@@ -229,7 +244,10 @@ namespace Greenshot.Drawing
 
         public Rectangle Bounds
         {
-            get { return GuiRectangle.GetGuiRectangle(Left, Top, Width, Height); }
+            get
+            {
+                return GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
+            }
             set
             {
                 Left = round(value.Left);

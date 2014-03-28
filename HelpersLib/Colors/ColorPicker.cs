@@ -138,34 +138,33 @@ namespace HelpersLib
             this.colorBox = new HelpersLib.ColorBox();
             this.colorSlider = new HelpersLib.ColorSlider();
             this.SuspendLayout();
-            // 
+            //
             // colorBox
-            // 
+            //
             this.colorBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorBox.DrawStyle = HelpersLib.DrawStyle.Hue;
             this.colorBox.Location = new System.Drawing.Point(0, 0);
             this.colorBox.Name = "colorBox";
             this.colorBox.Size = new System.Drawing.Size(258, 258);
             this.colorBox.TabIndex = 0;
-            // 
+            //
             // colorSlider
-            // 
+            //
             this.colorSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorSlider.DrawStyle = HelpersLib.DrawStyle.Hue;
             this.colorSlider.Location = new System.Drawing.Point(257, 0);
             this.colorSlider.Name = "colorSlider";
             this.colorSlider.Size = new System.Drawing.Size(32, 258);
             this.colorSlider.TabIndex = 1;
-            // 
+            //
             // ColorPicker
-            // 
+            //
             this.AutoSize = true;
             this.Controls.Add(this.colorBox);
             this.Controls.Add(this.colorSlider);
             this.Name = "ColorPicker";
             this.Size = new System.Drawing.Size(292, 261);
             this.ResumeLayout(false);
-
         }
 
         #endregion Component Designer generated code

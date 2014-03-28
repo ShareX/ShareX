@@ -25,7 +25,6 @@
 
 using System.IO;
 using System.Text.RegularExpressions;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {

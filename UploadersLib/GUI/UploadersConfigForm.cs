@@ -31,9 +31,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
-using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;
-using UploadersLib.Properties;
 
 namespace UploadersLib
 {

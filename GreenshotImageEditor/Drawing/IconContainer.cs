@@ -59,7 +59,10 @@ namespace Greenshot.Drawing
                 Width = value.Width;
                 Height = value.Height;
             }
-            get { return icon; }
+            get
+            {
+                return icon;
+            }
         }
 
         /**

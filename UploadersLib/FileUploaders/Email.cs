@@ -26,7 +26,6 @@
 using System.IO;
 using System.Net;
 using System.Net.Mail;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {

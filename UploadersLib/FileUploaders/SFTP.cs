@@ -31,7 +31,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {

@@ -26,7 +26,6 @@
 using HelpersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {

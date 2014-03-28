@@ -177,7 +177,10 @@ namespace GreenshotPlugin.Core
                 }
                 return screenBounds;
             }
-            set { screenBounds = value; }
+            set
+            {
+                screenBounds = value;
+            }
         }
 
         private Image image;
@@ -186,7 +189,10 @@ namespace GreenshotPlugin.Core
         /// </summary>
         public Image Image
         {
-            get { return image; }
+            get
+            {
+                return image;
+            }
             set
             {
                 if (image != null)
@@ -230,7 +236,10 @@ namespace GreenshotPlugin.Core
         /// </summary>
         public Icon Cursor
         {
-            get { return cursor; }
+            get
+            {
+                return cursor;
+            }
             set
             {
                 if (cursor != null)

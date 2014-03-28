@@ -15,7 +15,7 @@
             </setting>
             <setting name="Cleaning_UpdateAccessorsToBothBeSingleLineOrMultiLine"
                 serializeAs="String">
-                <value>False</value>
+                <value>True</value>
             </setting>
             <setting name="Cleaning_InsertBlankLinePaddingBeforeNamespaces"
                 serializeAs="String">
@@ -397,6 +397,35 @@
             </setting>
             <setting name="General_SkipUndoTransactionsDuringAutoCleanupOnSave"
                 serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_CommentXmlAlignParamTags" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_RemoveBlankLinesBetweenChainedStatements"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_IncludeLESS" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_CommentXmlSpaceTags" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_CommentXmlValueIndent" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="General_Multithread" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_CommentSkipWrapOnLastWord" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Cleaning_CommentXmlSplitSummaryTagToMultipleLines"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="General_CacheFiles" serializeAs="String">
                 <value>True</value>
             </setting>
         </SteveCadwallader.CodeMaid.Properties.Settings>

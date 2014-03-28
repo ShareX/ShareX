@@ -30,7 +30,6 @@ using System.IO;
 using System.Net;
 using System.Net.Security;
 using System.Text;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {

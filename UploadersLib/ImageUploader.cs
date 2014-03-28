@@ -25,7 +25,6 @@
 
 using System.Drawing;
 using System.IO;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib
 {

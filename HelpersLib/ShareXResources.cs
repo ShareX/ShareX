@@ -24,11 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib.Properties;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 
 namespace HelpersLib
 {

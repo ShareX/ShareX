@@ -26,7 +26,6 @@
 using Newtonsoft.Json;
 using System.Collections.Specialized;
 using System.IO;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {

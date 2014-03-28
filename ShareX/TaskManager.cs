@@ -25,7 +25,6 @@
 
 using HelpersLib;
 using HistoryLib;
-using ShareX.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;

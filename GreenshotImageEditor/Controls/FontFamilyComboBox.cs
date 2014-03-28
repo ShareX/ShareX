@@ -36,7 +36,10 @@ namespace Greenshot.Controls
 
         public FontFamily FontFamily
         {
-            get { return (FontFamily)SelectedItem; }
+            get
+            {
+                return (FontFamily)SelectedItem;
+            }
             set
             {
                 if (!SelectedItem.Equals(value))

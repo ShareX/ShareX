@@ -25,7 +25,6 @@
 
 using System;
 using System.IO;
-using UploadersLib.HelperClasses;
 
 namespace UploadersLib.ImageUploaders
 {

@@ -23,9 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 

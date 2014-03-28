@@ -29,7 +29,6 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
 using System.Web;
-using System.Windows.Forms.Design;
 
 namespace UploadersLib
 {
