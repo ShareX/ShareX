@@ -2,7 +2,7 @@
 
 * Added Pushbullet text uploader support (thanks @BallisticLingonberries)
 * Added Amazon S3 file uploader support (thanks @alanedwardes)
-* Added DNS Changer to Tools
+* Added DNS changer to Tools menu
 * Added %pn (process name of active window) to name parser
 * Removed Mega file uploader anonymous upload
 * Minus file uploader improvements

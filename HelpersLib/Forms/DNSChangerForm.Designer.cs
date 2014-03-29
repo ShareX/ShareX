@@ -56,9 +56,9 @@
             this.lblAdapters.AutoSize = true;
             this.lblAdapters.Location = new System.Drawing.Point(16, 16);
             this.lblAdapters.Name = "lblAdapters";
-            this.lblAdapters.Size = new System.Drawing.Size(52, 13);
+            this.lblAdapters.Size = new System.Drawing.Size(94, 13);
             this.lblAdapters.TabIndex = 1;
-            this.lblAdapters.Text = "Adapters:";
+            this.lblAdapters.Text = "Network adapters:";
             // 
             // txtPreferredDNS
             // 

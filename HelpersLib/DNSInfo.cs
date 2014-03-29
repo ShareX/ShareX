@@ -31,11 +31,6 @@ namespace HelpersLib
         public string PrimaryDNS { get; set; }
         public string SecondaryDNS { get; set; }
 
-        public DNSInfo(string name)
-        {
-            Name = name;
-        }
-
         public DNSInfo(string name, string primaryDNS, string secondaryDNS)
         {
             Name = name;

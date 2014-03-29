@@ -35,12 +35,14 @@ namespace HelpersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            cbDNSType.Items.Add(new DNSInfo("Manual"));
-            cbDNSType.Items.Add(new DNSInfo("Google Public DNS", "8.8.8.8", "8.8.4.4"));
-            cbDNSType.Items.Add(new DNSInfo("OpenDNS", "208.67.222.222", "208.67.220.220"));
-            cbDNSType.Items.Add(new DNSInfo("Level 3", "4.2.2.1", "4.2.2.2"));
-            cbDNSType.Items.Add(new DNSInfo("Norton DNS", "199.85.126.10", "199.85.127.10"));
-            cbDNSType.Items.Add(new DNSInfo("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"));
+            AddDNS("Manual");
+            AddDNS("Google Public DNS", "8.8.8.8", "8.8.4.4"); // https://developers.google.com/speed/public-dns/
+            AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // http://www.opendns.com/
+            AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com/
+            AddDNS("Norton ConnectSafe", "199.85.126.10", "199.85.127.10"); // https://dns.norton.com/
+            AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // http://www.comodo.com/secure-dns/
+            AddDNS("DNS Advantage", "156.154.70.1", "156.154.71.1"); // http://www.neustar.biz/services/dns-services/free-recursive-dns
+            AddDNS("Yandex DNS", "77.88.8.2", "77.88.8.88"); // http://dns.yandex.com/
 
             foreach (AdapterInfo adapter in AdapterInfo.GetEnabledAdapters())
             {
@@ -51,6 +53,11 @@ namespace HelpersLib
             {
                 cbAdapters.SelectedIndex = 0;
             }
+        }
+
+        private void AddDNS(string name, string primary = null, string secondary = null)
+        {
+            cbDNSType.Items.Add(new DNSInfo(name, primary, secondary));
         }
 
         private void cbAdapters_SelectedIndexChanged(object sender, EventArgs e)
