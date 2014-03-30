@@ -57,16 +57,12 @@ namespace ShareX
                 config.Image = ImageHelpers.ResizeImageLimit(config.Image, size);
                 config.Image = ImageHelpers.DrawCheckers(config.Image);
                 size = new Size(config.Image.Width + 2, config.Image.Height + 2);
-                ToastConfig.Image = config.Image;
             }
             else if (!string.IsNullOrEmpty(config.Text))
             {
                 textRenderSize = Helpers.MeasureText(config.Text, textFont, size.Width - textPadding * 2);
                 size = new Size(textRenderSize.Width + textPadding * 2, textRenderSize.Height + textPadding * 2 + 2);
-                ToastConfig.Text = config.Text;
             }
-
-            ToastConfig.URL = config.URL;
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Size = size;
@@ -178,7 +174,8 @@ namespace ShareX
                 switch (ToastConfig.Action)
                 {
                     case ToastClickAction.CopyImageToClipboard:
-                        ClipboardHelpers.CopyImage(ToastConfig.Image);
+                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                            ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
                         break;
                     case ToastClickAction.OpenFile:
                         if (!string.IsNullOrEmpty(ToastConfig.FilePath))
