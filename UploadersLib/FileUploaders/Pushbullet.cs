@@ -47,12 +47,8 @@ namespace UploadersLib.FileUploaders
             Config = config;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        public UploadResult PushFile(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(Config.UserAPIKey)) throw new Exception("Missing API Key.");
-            if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
-            if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception("Device key is empty.");
-
             NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
@@ -61,13 +57,13 @@ namespace UploadersLib.FileUploaders
 
             UploadResult result = UploadData(stream, "https://api.pushbullet.com/api/pushes", fileName, arguments: args, headers: headers);
 
-            PushbulletResponsePush response = JsonConvert.DeserializeObject<PushbulletResponsePush>(result.Response);
+            PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(result.Response);
 
-            if (response != null)
+            if (push != null)
             {
                 if (Config.ReturnPushURL)
                 {
-                    result.URL = "https://www.pushbullet.com/pushes?push_iden=" + response.iden;
+                    result.URL = "https://www.pushbullet.com/pushes?push_iden=" + push.iden;
                 }
                 else
                 {
@@ -76,6 +72,47 @@ namespace UploadersLib.FileUploaders
             }
 
             return result;
+        }
+
+        private string Push(string pushType, string valueType, string value, string title)
+        {
+            NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("device_iden", Config.CurrentDevice.Key);
+            args.Add("type", pushType);
+            args.Add("title", title);
+            args.Add(valueType, value);
+
+            string response = SendPostRequest("https://api.pushbullet.com/api/pushes", args, headers: headers);
+
+            PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(response);
+
+            if (push != null)
+            {
+                return "https://www.pushbullet.com/pushes?push_iden=" + push.iden;
+            }
+
+            return null;
+        }
+
+        public string PushNote(string note, string title)
+        {
+            return Push("note", "body", note, title);
+        }
+
+        public string PushLink(string link, string title)
+        {
+            return Push("link", "url", link, title);
+        }
+
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            if (string.IsNullOrEmpty(Config.UserAPIKey)) throw new Exception("Missing API key.");
+            if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
+            if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception("Missing device key.");
+
+            return PushFile(stream, fileName);
         }
 
         public List<PushbulletDevice> GetDeviceList()
