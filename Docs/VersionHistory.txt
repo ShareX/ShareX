@@ -1,6 +1,6 @@
 ﻿ShareX 8.7.0
 
-* Added Pushbullet text uploader support (thanks @BallisticLingonberries)
+* Added Pushbullet file uploader support (thanks @BallisticLingonberries)
 * Added Amazon S3 file uploader support (thanks @alanedwardes)
 * Added DNS changer to Tools menu
 * Added %pn (process name of active window) to name parser

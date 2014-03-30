@@ -185,6 +185,21 @@ namespace ShareX
         ToastNotification
     }
 
+    [DefaultValue(ToastClickAction.OpenUrl)]
+    public enum ToastClickAction
+    {
+        [Description("Copy image to clipboard")]
+        CopyImageToClipboard,
+        [Description("Open URL")]
+        OpenUrl,
+        [Description("Open file")]
+        OpenFile,
+        [Description("Open folder")]
+        OpenFolder,
+        [Description("Upload")]
+        Upload,
+    }
+
     public enum FileExistAction
     {
         [Description("Ask what to do")]
