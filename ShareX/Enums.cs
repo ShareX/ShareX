@@ -188,14 +188,16 @@ namespace ShareX
     [DefaultValue(ToastClickAction.OpenUrl)]
     public enum ToastClickAction
     {
+        [Description("Annotate image")]
+        AnnotateImage,
         [Description("Copy image to clipboard")]
         CopyImageToClipboard,
-        [Description("Open URL")]
-        OpenUrl,
         [Description("Open file")]
         OpenFile,
         [Description("Open folder")]
         OpenFolder,
+        [Description("Open URL")]
+        OpenUrl,
         [Description("Upload")]
         Upload,
     }
