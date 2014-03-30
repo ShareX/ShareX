@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/alanedwardes
+
 using HelpersLib;
 using Newtonsoft.Json;
 using System;

@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/SirCmpwn
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

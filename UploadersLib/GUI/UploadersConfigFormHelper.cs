@@ -1090,11 +1090,8 @@ namespace UploadersLib
             cboPushbulletDevices.Enabled = true;
             lblPushbulletDevices.Enabled = true;
 
-            string strDevices = "Devices:";
-
             Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
             {
-                strDevices += "\n\t" + pbDevice.ToString();
                 cboPushbulletDevices.Items.Add(pbDevice.Name);
             });
 

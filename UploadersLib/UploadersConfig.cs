@@ -314,8 +314,6 @@ namespace UploadersLib
         {
             switch (destination)
             {
-                case TextDestination.Pushbullet:
-                    return (PushbulletSettings != null) && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && (PushbulletSettings.DeviceList != null);
                 case TextDestination.CustomTextUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomTextUploaderSelected);
                 default:
@@ -355,6 +353,8 @@ namespace UploadersLib
                     return OAuthInfo.CheckOAuth(JiraOAuthInfo);
                 case FileDestination.Mega:
                     return MegaAuthInfos != null && MegaAuthInfos.Email != null && MegaAuthInfos.Hash != null && MegaAuthInfos.PasswordAesKey != null;
+                case FileDestination.Pushbullet:
+                    return PushbulletSettings != null && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && PushbulletSettings.DeviceList != null;
                 default:
                     return true;
             }

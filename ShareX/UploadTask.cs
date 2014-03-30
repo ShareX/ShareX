@@ -675,9 +675,6 @@ namespace ShareX
                         IsPublic = Program.UploadersConfig.UpasteIsPublic
                     };
                     break;
-                case TextDestination.Pushbullet:
-                    textUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
-                    break;
                 case TextDestination.CustomTextUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomTextUploaderSelected))
                     {
@@ -843,6 +840,9 @@ namespace ShareX
                     break;
                 case FileDestination.AmazonS3:
                     fileUploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
+                    break;
+                case FileDestination.Pushbullet:
+                    fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
                     break;
             }
 
