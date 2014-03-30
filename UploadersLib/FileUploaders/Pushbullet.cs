@@ -62,14 +62,7 @@ namespace UploadersLib.FileUploaders
 
             if (push != null)
             {
-                if (Config.ReturnPushURL)
-                {
-                    result.URL = "https://www.pushbullet.com/pushes?push_iden=" + push.iden;
-                }
-                else
-                {
-                    result.IsURLExpected = false;
-                }
+                result.URL = "https://www.pushbullet.com/pushes?push_iden=" + push.iden;
             }
 
             return result;
@@ -142,7 +135,6 @@ namespace UploadersLib.FileUploaders
     public class PushbulletSettings
     {
         public string UserAPIKey = string.Empty;
-        public bool ReturnPushURL = true;
         public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
         public int SelectedDevice = 0;
 

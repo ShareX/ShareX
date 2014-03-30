@@ -1009,11 +1009,6 @@ namespace UploadersLib
             PushbulletGetDevices();
         }
 
-        private void cbPushbulletReturnPushURL_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.PushbulletSettings.ReturnPushURL = cbPushbulletReturnPushURL.Checked;
-        }
-
         #endregion Pushbullet
 
         #endregion File Uploaders

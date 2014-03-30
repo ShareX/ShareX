@@ -24,9 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-
-using HelpersLib;
-
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -244,8 +241,6 @@ namespace UploadersLib
                     cboPushbulletDevices.SelectedIndex = 0;
                 }
             }
-
-            cbPushbulletReturnPushURL.Checked = Config.PushbulletSettings.ReturnPushURL;
 
             // Gist
 
