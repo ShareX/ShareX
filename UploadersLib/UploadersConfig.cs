@@ -355,7 +355,7 @@ namespace UploadersLib
                     return MegaAuthInfos != null && MegaAuthInfos.Email != null && MegaAuthInfos.Hash != null && MegaAuthInfos.PasswordAesKey != null;
                 case FileDestination.Pushbullet:
                     return PushbulletSettings != null && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && PushbulletSettings.DeviceList != null &&
-                        PushbulletSettings.DeviceList.Count > 0 && PushbulletSettings.CurrentDevice != null;
+                        PushbulletSettings.DeviceList.IsValidIndex(PushbulletSettings.SelectedDevice);
                 default:
                     return true;
             }

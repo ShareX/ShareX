@@ -1376,8 +1376,8 @@
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
             this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
-            this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpMinus);
+            this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             this.tcFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1523,10 +1523,10 @@
             // tpFTP
             // 
             this.tpFTP.Controls.Add(this.tlpFtp);
-            this.tpFTP.Location = new System.Drawing.Point(4, 40);
+            this.tpFTP.Location = new System.Drawing.Point(4, 22);
             this.tpFTP.Name = "tpFTP";
             this.tpFTP.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFTP.Size = new System.Drawing.Size(804, 457);
+            this.tpFTP.Size = new System.Drawing.Size(804, 475);
             this.tpFTP.TabIndex = 4;
             this.tpFTP.Text = "FTP";
             this.tpFTP.UseVisualStyleBackColor = true;
@@ -1674,9 +1674,9 @@
             this.tpMega.Controls.Add(this.lblMegaStatus);
             this.tpMega.Controls.Add(this.pnlMegaLogin);
             this.tpMega.Controls.Add(this.lblMegaStatusTitle);
-            this.tpMega.Location = new System.Drawing.Point(4, 40);
+            this.tpMega.Location = new System.Drawing.Point(4, 22);
             this.tpMega.Name = "tpMega";
-            this.tpMega.Size = new System.Drawing.Size(804, 457);
+            this.tpMega.Size = new System.Drawing.Size(804, 475);
             this.tpMega.TabIndex = 12;
             this.tpMega.Text = "Mega";
             this.tpMega.UseVisualStyleBackColor = true;
@@ -1813,10 +1813,10 @@
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3SecretKey);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3AccessKey);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3AccessKey);
-            this.tpAmazonS3.Location = new System.Drawing.Point(4, 40);
+            this.tpAmazonS3.Location = new System.Drawing.Point(4, 22);
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAmazonS3.Size = new System.Drawing.Size(804, 457);
+            this.tpAmazonS3.Size = new System.Drawing.Size(804, 475);
             this.tpAmazonS3.TabIndex = 13;
             this.tpAmazonS3.Text = "Amazon S3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
@@ -1955,10 +1955,10 @@
             this.tpPushbullet.Controls.Add(this.btnPushbulletGetDeviceList);
             this.tpPushbullet.Controls.Add(this.lblPushbulletUserKey);
             this.tpPushbullet.Controls.Add(this.txtPushbulletUserKey);
-            this.tpPushbullet.Location = new System.Drawing.Point(4, 40);
+            this.tpPushbullet.Location = new System.Drawing.Point(4, 22);
             this.tpPushbullet.Name = "tpPushbullet";
             this.tpPushbullet.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPushbullet.Size = new System.Drawing.Size(804, 457);
+            this.tpPushbullet.Size = new System.Drawing.Size(804, 475);
             this.tpPushbullet.TabIndex = 14;
             this.tpPushbullet.Text = "Pushbullet";
             this.tpPushbullet.UseVisualStyleBackColor = true;
@@ -1985,8 +1985,7 @@
             // 
             // cboPushbulletDevices
             // 
-            this.cboPushbulletDevices.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboPushbulletDevices.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboPushbulletDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPushbulletDevices.Enabled = false;
             this.cboPushbulletDevices.FormattingEnabled = true;
             this.cboPushbulletDevices.Location = new System.Drawing.Point(94, 40);
@@ -2027,10 +2026,10 @@
             // 
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
-            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 40);
+            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 22);
             this.tpGoogleDrive.Name = "tpGoogleDrive";
             this.tpGoogleDrive.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGoogleDrive.Size = new System.Drawing.Size(804, 457);
+            this.tpGoogleDrive.Size = new System.Drawing.Size(804, 475);
             this.tpGoogleDrive.TabIndex = 1;
             this.tpGoogleDrive.Text = "Google Drive";
             this.tpGoogleDrive.UseVisualStyleBackColor = true;
@@ -2054,10 +2053,10 @@
             this.tpBox.Controls.Add(this.tvBoxFolders);
             this.tpBox.Controls.Add(this.btnBoxCompleteAuth);
             this.tpBox.Controls.Add(this.btnBoxOpenAuthorize);
-            this.tpBox.Location = new System.Drawing.Point(4, 40);
+            this.tpBox.Location = new System.Drawing.Point(4, 22);
             this.tpBox.Name = "tpBox";
             this.tpBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBox.Size = new System.Drawing.Size(804, 457);
+            this.tpBox.Size = new System.Drawing.Size(804, 475);
             this.tpBox.TabIndex = 2;
             this.tpBox.Text = "Box";
             this.tpBox.UseVisualStyleBackColor = true;
@@ -2128,10 +2127,10 @@
             this.tpRapidShare.Controls.Add(this.lblRapidSharePremiumUsername);
             this.tpRapidShare.Controls.Add(this.txtRapidSharePassword);
             this.tpRapidShare.Controls.Add(this.txtRapidShareUsername);
-            this.tpRapidShare.Location = new System.Drawing.Point(4, 40);
+            this.tpRapidShare.Location = new System.Drawing.Point(4, 22);
             this.tpRapidShare.Name = "tpRapidShare";
             this.tpRapidShare.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRapidShare.Size = new System.Drawing.Size(804, 457);
+            this.tpRapidShare.Size = new System.Drawing.Size(804, 475);
             this.tpRapidShare.TabIndex = 5;
             this.tpRapidShare.Text = "RapidShare";
             this.tpRapidShare.UseVisualStyleBackColor = true;
@@ -2214,10 +2213,10 @@
             this.tpSendSpace.Controls.Add(this.txtSendSpacePassword);
             this.tpSendSpace.Controls.Add(this.txtSendSpaceUserName);
             this.tpSendSpace.Controls.Add(this.atcSendSpaceAccountType);
-            this.tpSendSpace.Location = new System.Drawing.Point(4, 40);
+            this.tpSendSpace.Location = new System.Drawing.Point(4, 22);
             this.tpSendSpace.Name = "tpSendSpace";
             this.tpSendSpace.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSendSpace.Size = new System.Drawing.Size(804, 457);
+            this.tpSendSpace.Size = new System.Drawing.Size(804, 475);
             this.tpSendSpace.TabIndex = 6;
             this.tpSendSpace.Text = "SendSpace";
             this.tpSendSpace.UseVisualStyleBackColor = true;
@@ -2275,10 +2274,10 @@
             this.tpGe_tt.Controls.Add(this.btnGe_ttLogin);
             this.tpGe_tt.Controls.Add(this.txtGe_ttPassword);
             this.tpGe_tt.Controls.Add(this.txtGe_ttEmail);
-            this.tpGe_tt.Location = new System.Drawing.Point(4, 40);
+            this.tpGe_tt.Location = new System.Drawing.Point(4, 22);
             this.tpGe_tt.Name = "tpGe_tt";
             this.tpGe_tt.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGe_tt.Size = new System.Drawing.Size(804, 457);
+            this.tpGe_tt.Size = new System.Drawing.Size(804, 475);
             this.tpGe_tt.TabIndex = 7;
             this.tpGe_tt.Text = "Ge.tt";
             this.tpGe_tt.UseVisualStyleBackColor = true;
@@ -2342,10 +2341,10 @@
             this.tpHostr.Controls.Add(this.lblLocalhostrEmail);
             this.tpHostr.Controls.Add(this.txtLocalhostrPassword);
             this.tpHostr.Controls.Add(this.txtLocalhostrEmail);
-            this.tpHostr.Location = new System.Drawing.Point(4, 40);
+            this.tpHostr.Location = new System.Drawing.Point(4, 22);
             this.tpHostr.Name = "tpHostr";
             this.tpHostr.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHostr.Size = new System.Drawing.Size(804, 457);
+            this.tpHostr.Size = new System.Drawing.Size(804, 475);
             this.tpHostr.TabIndex = 8;
             this.tpHostr.Text = "Hostr";
             this.tpHostr.UseVisualStyleBackColor = true;
@@ -2402,9 +2401,9 @@
             this.tpJira.Controls.Add(this.lblJiraIssuePrefix);
             this.tpJira.Controls.Add(this.gpJiraServer);
             this.tpJira.Controls.Add(this.oAuthJira);
-            this.tpJira.Location = new System.Drawing.Point(4, 40);
+            this.tpJira.Location = new System.Drawing.Point(4, 22);
             this.tpJira.Name = "tpJira";
-            this.tpJira.Size = new System.Drawing.Size(804, 457);
+            this.tpJira.Size = new System.Drawing.Size(804, 475);
             this.tpJira.TabIndex = 11;
             this.tpJira.Text = "Atlassian Jira";
             this.tpJira.UseVisualStyleBackColor = true;
@@ -2475,10 +2474,10 @@
             this.tpMinus.Controls.Add(this.cbMinusURLType);
             this.tpMinus.Controls.Add(this.gbMinusUserPass);
             this.tpMinus.Controls.Add(this.gbMinusUpload);
-            this.tpMinus.Location = new System.Drawing.Point(4, 40);
+            this.tpMinus.Location = new System.Drawing.Point(4, 22);
             this.tpMinus.Name = "tpMinus";
             this.tpMinus.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMinus.Size = new System.Drawing.Size(804, 457);
+            this.tpMinus.Size = new System.Drawing.Size(804, 475);
             this.tpMinus.TabIndex = 3;
             this.tpMinus.Text = "Minus";
             this.tpMinus.UseVisualStyleBackColor = true;
@@ -2661,10 +2660,10 @@
             this.tpEmail.Controls.Add(this.nudEmailSmtpPort);
             this.tpEmail.Controls.Add(this.lblEmailSmtpPort);
             this.tpEmail.Controls.Add(this.txtEmailDefaultSubject);
-            this.tpEmail.Location = new System.Drawing.Point(4, 40);
+            this.tpEmail.Location = new System.Drawing.Point(4, 22);
             this.tpEmail.Name = "tpEmail";
             this.tpEmail.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEmail.Size = new System.Drawing.Size(804, 457);
+            this.tpEmail.Size = new System.Drawing.Size(804, 475);
             this.tpEmail.TabIndex = 10;
             this.tpEmail.Text = "Email";
             this.tpEmail.UseVisualStyleBackColor = true;

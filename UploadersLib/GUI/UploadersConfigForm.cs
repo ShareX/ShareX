@@ -991,18 +991,17 @@ namespace UploadersLib
 
         private void txtPushbulletUserKey_TextChanged(object sender, EventArgs e)
         {
-            bool bEnable = (txtPushbulletUserKey.Text.Trim() != "");
+            bool enable = !string.IsNullOrEmpty(txtPushbulletUserKey.Text.Trim());
 
-            btnPushbulletGetDeviceList.Enabled = bEnable;
-            cboPushbulletDevices.Enabled = bEnable;
-            lblPushbulletDevices.Enabled = bEnable;
+            cboPushbulletDevices.Enabled = enable;
+            btnPushbulletGetDeviceList.Enabled = enable;
 
             Config.PushbulletSettings.UserAPIKey = txtPushbulletUserKey.Text;
         }
 
         private void cboPushbulletDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PushbulletSetCurrentDevice();
+            Config.PushbulletSettings.SelectedDevice = cboPushbulletDevices.SelectedIndex;
         }
 
         private void btnPushbulletGetDeviceList_Click(object sender, EventArgs e)

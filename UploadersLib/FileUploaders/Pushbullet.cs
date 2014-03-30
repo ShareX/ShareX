@@ -25,6 +25,7 @@
 
 // Credits: https://github.com/BallisticLingonberries
 
+using HelpersLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -143,7 +144,20 @@ namespace UploadersLib.FileUploaders
         public string UserAPIKey = string.Empty;
         public bool ReturnPushURL = true;
         public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
-        public PushbulletDevice CurrentDevice = null; // TODO: Use int SelectedDevice
+        public int SelectedDevice = 0;
+
+        public PushbulletDevice CurrentDevice
+        {
+            get
+            {
+                if (DeviceList.IsValidIndex(SelectedDevice))
+                {
+                    return DeviceList[SelectedDevice];
+                }
+
+                return null;
+            }
+        }
     }
 
     public class PushbulletResponseDevices

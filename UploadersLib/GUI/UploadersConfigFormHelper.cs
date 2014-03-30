@@ -1068,28 +1068,17 @@ namespace UploadersLib
 
         #region Pushbullet
 
-        public void PushbulletSetCurrentDevice()
-        {
-            if (Config.PushbulletSettings.CurrentDevice.Name == cboPushbulletDevices.Text) { return; }
-
-            Config.PushbulletSettings.CurrentDevice = Config.PushbulletSettings.DeviceList.Find(x => x.Name == cboPushbulletDevices.Text);
-        }
-
         public void PushbulletGetDevices()
         {
-            Pushbullet pushbullet = new Pushbullet(Config.PushbulletSettings);
-
             cboPushbulletDevices.Items.Clear();
-            cboPushbulletDevices.Text = "";
+            cboPushbulletDevices.ResetText();
 
+            Pushbullet pushbullet = new Pushbullet(Config.PushbulletSettings);
             Config.PushbulletSettings.DeviceList = pushbullet.GetDeviceList();
 
             if (Config.PushbulletSettings.DeviceList.Count > 0)
             {
-                if (Config.PushbulletSettings.CurrentDevice == null)
-                {
-                    Config.PushbulletSettings.CurrentDevice = Config.PushbulletSettings.DeviceList[0];
-                }
+                Config.PushbulletSettings.SelectedDevice = 0;
 
                 cboPushbulletDevices.Enabled = true;
 
@@ -1098,7 +1087,7 @@ namespace UploadersLib
                     cboPushbulletDevices.Items.Add(pbDevice.Name);
                 });
 
-                cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.Name;
+                cboPushbulletDevices.SelectedIndex = 0;
             }
         }
 

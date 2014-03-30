@@ -24,6 +24,9 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+
+using HelpersLib;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -226,20 +229,20 @@ namespace UploadersLib
 
             //Pushbullet
 
-            if (!string.IsNullOrEmpty(Config.PushbulletSettings.UserAPIKey))
-            {
-                txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
+            txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
 
-                if (Config.PushbulletSettings.DeviceList == null)
+            if (Config.PushbulletSettings.DeviceList.Count > 0)
+            {
+                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name));
+
+                if (Config.PushbulletSettings.DeviceList.IsValidIndex(Config.PushbulletSettings.SelectedDevice))
                 {
-                    PushbulletGetDevices();
+                    cboPushbulletDevices.SelectedIndex = Config.PushbulletSettings.SelectedDevice;
                 }
                 else
                 {
-                    cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.Name;
+                    cboPushbulletDevices.SelectedIndex = 0;
                 }
-
-                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name));
             }
 
             cbPushbulletReturnPushURL.Checked = Config.PushbulletSettings.ReturnPushURL;
