@@ -379,6 +379,67 @@ namespace UploadersLib
 
         #endregion Image Uploaders
 
+        #region Text Uploaders
+
+        #region Pastebin
+
+        private void btnPastebinLogin_Click(object sender, EventArgs e)
+        {
+            PastebinLogin();
+        }
+
+        #endregion Pastebin
+
+        #region Paste.ee
+
+        private void txtPaste_eeUserAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.Paste_eeUserAPIKey = txtPaste_eeUserAPIKey.Text;
+        }
+
+        #endregion Paste.ee
+
+        #region Gist
+
+        private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
+            oAuth2Gist.Enabled = !Config.GistAnonymousLogin;
+        }
+
+        private void oAuth2Gist_OpenButtonClicked()
+        {
+            GistAuthOpen();
+        }
+
+        private void oAuth2Gist_CompleteButtonClicked(string code)
+        {
+            GistAuthComplete(code);
+        }
+
+        private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GistPublishPublic = ((CheckBox)sender).Checked;
+        }
+
+        #endregion Gist
+
+        #region uPaste
+
+        private void txtUpasteUserKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.UpasteUserKey = txtUpasteUserKey.Text;
+        }
+
+        private void cbUpasteIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.UpasteIsPublic = cbUpasteIsPublic.Checked;
+        }
+
+        #endregion uPaste
+
+        #endregion Text Uploaders
+
         #region File Uploaders
 
         #region Dropbox
@@ -926,67 +987,6 @@ namespace UploadersLib
 
         #endregion Amazon S3
 
-        #endregion File Uploaders
-
-        #region Text Uploaders
-
-        #region Pastebin
-
-        private void btnPastebinLogin_Click(object sender, EventArgs e)
-        {
-            PastebinLogin();
-        }
-
-        #endregion Pastebin
-
-        #region Paste.ee
-
-        private void txtPaste_eeUserAPIKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.Paste_eeUserAPIKey = txtPaste_eeUserAPIKey.Text;
-        }
-
-        #endregion Paste.ee
-
-        #region Gist
-
-        private void atcGistAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.GistAnonymousLogin = accountType == AccountType.Anonymous;
-            oAuth2Gist.Enabled = !Config.GistAnonymousLogin;
-        }
-
-        private void oAuth2Gist_OpenButtonClicked()
-        {
-            GistAuthOpen();
-        }
-
-        private void oAuth2Gist_CompleteButtonClicked(string code)
-        {
-            GistAuthComplete(code);
-        }
-
-        private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.GistPublishPublic = ((CheckBox)sender).Checked;
-        }
-
-        #endregion Gist
-
-        #region uPaste
-
-        private void txtUpasteUserKey_TextChanged(object sender, EventArgs e)
-        {
-            Config.UpasteUserKey = txtUpasteUserKey.Text;
-        }
-
-        private void cbUpasteIsPublic_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.UpasteIsPublic = cbUpasteIsPublic.Checked;
-        }
-
-        #endregion uPaste
-
         #region Pushbullet
 
         private void txtPushbulletUserKey_TextChanged(object sender, EventArgs e)
@@ -1017,7 +1017,7 @@ namespace UploadersLib
 
         #endregion Pushbullet
 
-        #endregion Text Uploaders
+        #endregion File Uploaders
 
         #region URL Shorteners
 

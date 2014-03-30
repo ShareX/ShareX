@@ -1080,22 +1080,26 @@ namespace UploadersLib
             Pushbullet pushbullet = new Pushbullet(Config.PushbulletSettings);
 
             cboPushbulletDevices.Items.Clear();
+            cboPushbulletDevices.Text = "";
 
             Config.PushbulletSettings.DeviceList = pushbullet.GetDeviceList();
 
-            if (Config.PushbulletSettings.DeviceList.Count < 1) { throw new NullReferenceException("Pushbullet device list came back empty"); }
-
-            if (Config.PushbulletSettings.CurrentDevice == null) { Config.PushbulletSettings.CurrentDevice = Config.PushbulletSettings.DeviceList[0]; }
-
-            cboPushbulletDevices.Enabled = true;
-            lblPushbulletDevices.Enabled = true;
-
-            Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
+            if (Config.PushbulletSettings.DeviceList.Count > 0)
             {
-                cboPushbulletDevices.Items.Add(pbDevice.Name);
-            });
+                if (Config.PushbulletSettings.CurrentDevice == null)
+                {
+                    Config.PushbulletSettings.CurrentDevice = Config.PushbulletSettings.DeviceList[0];
+                }
 
-            cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.Name;
+                cboPushbulletDevices.Enabled = true;
+
+                Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
+                {
+                    cboPushbulletDevices.Items.Add(pbDevice.Name);
+                });
+
+                cboPushbulletDevices.Text = Config.PushbulletSettings.CurrentDevice.Name;
+            }
         }
 
         #endregion Pushbullet

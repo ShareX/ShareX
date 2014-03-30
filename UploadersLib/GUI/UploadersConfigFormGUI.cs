@@ -71,6 +71,7 @@ namespace UploadersLib
             fileUploadersImageList.Images.Add("Jira", Resources.jira);
             fileUploadersImageList.Images.Add("Mega", Resources.Mega);
             fileUploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
+            fileUploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
             tcFileUploaders.ImageList = fileUploadersImageList;
 
             ImageList textUploadersImageList = new ImageList();
@@ -78,7 +79,6 @@ namespace UploadersLib
             textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
             textUploadersImageList.Images.Add("Gist", Resources.Gist);
             textUploadersImageList.Images.Add("Upaste", Resources.Upaste);
-            textUploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
             tcTextUploaders.ImageList = textUploadersImageList;
 
             ImageList urlShortenersImageList = new ImageList();
