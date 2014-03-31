@@ -129,27 +129,46 @@ namespace HelpersLib
 
             if (adapter != null)
             {
-                bool result = false;
+                uint result;
 
-                if (cbAutomatic.Checked)
+                try
                 {
-                    result = adapter.SetDNSAutomatic();
-                }
-                else
-                {
-                    string primaryDNS = txtPreferredDNS.Text.Trim();
-                    string secondaryDNS = txtAlternateDNS.Text.Trim();
-
-                    if (Helpers.IsValidIPAddress(primaryDNS) && Helpers.IsValidIPAddress(secondaryDNS))
+                    if (cbAutomatic.Checked)
                     {
-                        result = adapter.SetDNS(primaryDNS, secondaryDNS);
+                        result = adapter.SetDNSAutomatic();
+                    }
+                    else
+                    {
+                        string primaryDNS = txtPreferredDNS.Text.Trim();
+                        string secondaryDNS = txtAlternateDNS.Text.Trim();
+
+                        if (Helpers.IsValidIPAddress(primaryDNS) && Helpers.IsValidIPAddress(secondaryDNS))
+                        {
+                            result = adapter.SetDNS(primaryDNS, secondaryDNS);
+                        }
+                        else
+                        {
+                            throw new Exception("Not valid ip address.");
+                        }
+                    }
+
+                    if (result == 0)
+                    {
+                        NativeMethods.DnsFlushResolverCache();
+                        MessageBox.Show("DNS successfully set.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (result == 1)
+                    {
+                        MessageBox.Show("DNS successfully set. Reboot is required.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (result > 1)
+                    {
+                        MessageBox.Show("DNS set failed with error code: " + result, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-                if (result)
+                catch (Exception ex)
                 {
-                    NativeMethods.DnsFlushResolverCache();
-                    MessageBox.Show("DNS successfully set.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("DNS set failed.\r\n" + ex.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

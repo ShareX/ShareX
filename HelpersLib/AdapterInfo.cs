@@ -81,40 +81,29 @@ namespace HelpersLib
             return (string[])adapter["DnsServerSearchOrder"];
         }
 
-        public bool SetDNS(string primary, string secondary)
+        public uint SetDNS(string primary, string secondary)
         {
-            try
+            using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
             {
-                using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
+                if (primary == null || secondary == null)
                 {
-                    if (parameters != null)
-                    {
-                        if (primary == null || secondary == null)
-                        {
-                            // Obtain DNS server address automatically
-                            parameters["DNSServerSearchOrder"] = null;
-                        }
-                        else
-                        {
-                            parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
-                        }
+                    // Obtain DNS server address automatically
+                    parameters["DNSServerSearchOrder"] = null;
+                }
+                else
+                {
+                    parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
+                }
 
-                        using (ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null))
-                        {
-                            return (uint)result["ReturnValue"] == 0;
-                        }
-                    }
+                // http://msdn.microsoft.com/en-us/library/aa393295(v=vs.85).aspx
+                using (ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null))
+                {
+                    return (uint)result["ReturnValue"];
                 }
             }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
         }
 
-        public bool SetDNSAutomatic()
+        public uint SetDNSAutomatic()
         {
             return SetDNS(null, null);
         }
