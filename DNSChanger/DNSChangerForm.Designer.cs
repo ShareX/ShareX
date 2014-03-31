@@ -39,6 +39,8 @@
             this.cbDNSType = new System.Windows.Forms.ComboBox();
             this.lblDNS = new System.Windows.Forms.Label();
             this.cbAutomatic = new System.Windows.Forms.CheckBox();
+            this.btnPingPrimary = new System.Windows.Forms.Button();
+            this.btnPingSecondary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbAdapters
@@ -64,7 +66,7 @@
             // 
             this.txtPreferredDNS.Location = new System.Drawing.Point(136, 84);
             this.txtPreferredDNS.Name = "txtPreferredDNS";
-            this.txtPreferredDNS.Size = new System.Drawing.Size(256, 20);
+            this.txtPreferredDNS.Size = new System.Drawing.Size(214, 20);
             this.txtPreferredDNS.TabIndex = 3;
             this.txtPreferredDNS.TextChanged += new System.EventHandler(this.txtPreferredDNS_TextChanged);
             // 
@@ -90,7 +92,7 @@
             // 
             this.txtAlternateDNS.Location = new System.Drawing.Point(136, 108);
             this.txtAlternateDNS.Name = "txtAlternateDNS";
-            this.txtAlternateDNS.Size = new System.Drawing.Size(256, 20);
+            this.txtAlternateDNS.Size = new System.Drawing.Size(214, 20);
             this.txtAlternateDNS.TabIndex = 4;
             this.txtAlternateDNS.TextChanged += new System.EventHandler(this.txtAlternateDNS_TextChanged);
             // 
@@ -144,11 +146,33 @@
             this.cbAutomatic.UseVisualStyleBackColor = true;
             this.cbAutomatic.CheckedChanged += new System.EventHandler(this.cbAutomatic_CheckedChanged);
             // 
+            // btnPingPrimary
+            // 
+            this.btnPingPrimary.Location = new System.Drawing.Point(352, 83);
+            this.btnPingPrimary.Name = "btnPingPrimary";
+            this.btnPingPrimary.Size = new System.Drawing.Size(40, 23);
+            this.btnPingPrimary.TabIndex = 10;
+            this.btnPingPrimary.Text = "Ping";
+            this.btnPingPrimary.UseVisualStyleBackColor = true;
+            this.btnPingPrimary.Click += new System.EventHandler(this.btnPingPrimary_Click);
+            // 
+            // btnPingSecondary
+            // 
+            this.btnPingSecondary.Location = new System.Drawing.Point(352, 107);
+            this.btnPingSecondary.Name = "btnPingSecondary";
+            this.btnPingSecondary.Size = new System.Drawing.Size(40, 23);
+            this.btnPingSecondary.TabIndex = 11;
+            this.btnPingSecondary.Text = "Ping";
+            this.btnPingSecondary.UseVisualStyleBackColor = true;
+            this.btnPingSecondary.Click += new System.EventHandler(this.btnPingSecondary_Click);
+            // 
             // DNSChangerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 170);
+            this.Controls.Add(this.btnPingSecondary);
+            this.Controls.Add(this.btnPingPrimary);
             this.Controls.Add(this.cbAutomatic);
             this.Controls.Add(this.lblDNS);
             this.Controls.Add(this.cbDNSType);
@@ -164,7 +188,7 @@
             this.MaximizeBox = false;
             this.Name = "DNSChangerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - DNS changer";
+            this.Text = "ShareX DNS Changer";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +207,7 @@
         private System.Windows.Forms.ComboBox cbDNSType;
         private System.Windows.Forms.Label lblDNS;
         private System.Windows.Forms.CheckBox cbAutomatic;
+        private System.Windows.Forms.Button btnPingPrimary;
+        private System.Windows.Forms.Button btnPingSecondary;
     }
 }

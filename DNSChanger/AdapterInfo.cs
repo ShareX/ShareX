@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Management;
 
-namespace HelpersLib
+namespace DNSChanger
 {
     public class AdapterInfo : IDisposable
     {
