@@ -402,7 +402,7 @@ namespace ShareX
 
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                     {
-                        string filePath = TaskHelpers.CheckFilePath(Program.ScreenshotsPath, Info.FileName, Info.TaskSettings);
+                        string filePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
                         if (!string.IsNullOrEmpty(filePath))
                         {
@@ -416,7 +416,7 @@ namespace ShareX
                     {
                         using (SaveFileDialog sfd = new SaveFileDialog())
                         {
-                            sfd.InitialDirectory = Program.ScreenshotsPath;
+                            sfd.InitialDirectory = Info.TaskSettings.CaptureFolder;
                             sfd.FileName = Info.FileName;
                             sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
                             sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));

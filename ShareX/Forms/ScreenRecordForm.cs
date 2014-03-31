@@ -107,7 +107,7 @@ namespace ShareX
                     {
                         if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI)
                         {
-                            path = Path.Combine(Program.ScreenshotsPath, TaskHelpers.GetFilename(TaskSettings, "avi"));
+                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi"));
                         }
                         else
                         {
@@ -143,11 +143,11 @@ namespace ShareX
                         switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
                         {
                             case ScreenRecordOutput.GIF:
-                                path = Path.Combine(Program.ScreenshotsPath, TaskHelpers.GetFilename(TaskSettings, "gif"));
+                                path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "gif"));
                                 screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
                                 break;
                             case ScreenRecordOutput.AVICommandLine:
-                                path = Path.Combine(Program.ScreenshotsPath, TaskHelpers.GetFilename(TaskSettings,
+                                path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings,
                                     TaskSettings.CaptureSettings.ScreenRecordCommandLineOutputExtension));
                                 screenRecorder.EncodeUsingCommandLine(path, TaskSettings.CaptureSettings.ScreenRecordCommandLinePath,
                                     TaskSettings.CaptureSettings.ScreenRecordCommandLineArgs);

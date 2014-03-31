@@ -1330,6 +1330,7 @@ namespace Greenshot
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             forceClose = true;
             Close();
         }
