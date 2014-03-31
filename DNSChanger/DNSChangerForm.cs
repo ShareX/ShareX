@@ -25,6 +25,9 @@
 
 using HelpersLib;
 using System;
+using System.ComponentModel;
+using System.Net.NetworkInformation;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DNSChanger
@@ -124,6 +127,29 @@ namespace DNSChanger
             txtAlternateDNS.Enabled = !cbAutomatic.Checked && cbDNSType.SelectedIndex == 0;
         }
 
+        private void SendPing(string ip)
+        {
+            if (!string.IsNullOrEmpty(ip))
+            {
+                btnPingPrimary.Enabled = btnPingSecondary.Enabled = false;
+
+                BackgroundWorker bw = new BackgroundWorker();
+
+                bw.DoWork += (sender, e) =>
+                {
+                    PingResult pingResult = PingHelper.PingHost(ip);
+                    MessageBox.Show(pingResult.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                };
+
+                bw.RunWorkerCompleted += (sender, e) =>
+                {
+                    btnPingPrimary.Enabled = btnPingSecondary.Enabled = true;
+                };
+
+                bw.RunWorkerAsync();
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             AdapterInfo adapter = cbAdapters.SelectedItem as AdapterInfo;
@@ -177,6 +203,16 @@ namespace DNSChanger
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnPingPrimary_Click(object sender, EventArgs e)
+        {
+            SendPing(txtPreferredDNS.Text);
+        }
+
+        private void btnPingSecondary_Click(object sender, EventArgs e)
+        {
+            SendPing(txtAlternateDNS.Text);
         }
     }
 }
