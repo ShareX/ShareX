@@ -88,14 +88,7 @@
     <Compile Include="Colors\RGBA.cs" />
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
-    <Compile Include="DNSInfo.cs" />
     <Compile Include="FontSafe.cs" />
-    <Compile Include="Forms\DNSChangerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DNSChangerForm.Designer.cs">
-      <DependentUpon>DNSChangerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MonitorTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,9 +310,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DNSChangerForm.resx">
-      <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>

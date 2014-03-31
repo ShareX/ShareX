@@ -23,10 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using System;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace DNSChanger
 {
     public partial class DNSChangerForm : Form
     {
@@ -148,27 +149,27 @@ namespace HelpersLib
                         }
                         else
                         {
-                            throw new Exception("Not valid ip address.");
+                            throw new Exception("Not valid IP address.");
                         }
                     }
 
                     if (result == 0)
                     {
                         NativeMethods.DnsFlushResolverCache();
-                        MessageBox.Show("DNS successfully set.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("DNS successfully set.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (result == 1)
                     {
-                        MessageBox.Show("DNS successfully set. Reboot is required.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("DNS successfully set. Reboot is required.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (result > 1)
                     {
-                        MessageBox.Show("DNS set failed with error code: " + result, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Setting DNS failed with error code: " + result, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("DNS set failed.\r\n" + ex.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Setting DNS failed.\r\n" + ex.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

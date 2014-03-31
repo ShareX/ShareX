@@ -29,7 +29,9 @@ using ImageEffectsLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
 using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -610,10 +612,10 @@ namespace ShareX
 
         private void OpenDNSChanger()
         {
-            using (DNSChangerForm dnsForm = new DNSChangerForm())
-            {
-                dnsForm.ShowDialog();
-            }
+            ProcessStartInfo psi = new ProcessStartInfo(Path.Combine(Application.StartupPath, "DNSChanger.exe"));
+            psi.UseShellExecute = true;
+            psi.Verb = "runas";
+            Process.Start(psi);
         }
 
         #region Form events

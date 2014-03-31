@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace HelpersLib
+namespace DNSChanger
 {
     public class DNSInfo
     {
