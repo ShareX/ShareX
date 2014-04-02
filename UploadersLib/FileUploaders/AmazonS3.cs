@@ -51,7 +51,7 @@ namespace UploadersLib.FileUploaders
 
         private string GetObjectKey(string fileName)
         {
-            var parser = new NameParser(NameParserType.FileName);
+            var parser = new NameParser(NameParserType.FolderPath);
             return string.Format("{0}{1}", parser.Parse(S3Settings.ObjectPrefix), fileName);
         }
 
