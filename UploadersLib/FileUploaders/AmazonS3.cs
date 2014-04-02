@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web;
 
 namespace UploadersLib.FileUploaders
 {
@@ -103,6 +104,19 @@ namespace UploadersLib.FileUploaders
             return Convert.ToBase64String(signatureBytes);
         }
 
+        private string GetObjectURL(string objectName)
+        {
+            var urlEncodedObjectName = Helpers.URLPathEncode(objectName);
+            if (S3Settings.UseCustomCNAME)
+            {
+                return string.Format("http://{0}/{1}", S3Settings.Bucket, urlEncodedObjectName);
+            }
+            else
+            {
+                return string.Format("{0}/{1}", GetEndpoint(), urlEncodedObjectName);
+            }
+        }
+
         private Dictionary<string, string> GetParameters(string fileName, string objectKey)
         {
             var policyDocument = GetPolicyDocument(fileName);
@@ -133,14 +147,7 @@ namespace UploadersLib.FileUploaders
 
             if (uploadResult.IsSuccess)
             {
-                if (S3Settings.UseCustomCNAME)
-                {
-                    uploadResult.URL = string.Format("http://{0}/{1}", S3Settings.Bucket, objectKey);
-                }
-                else
-                {
-                    uploadResult.URL = string.Format("{0}/{1}", GetEndpoint(), objectKey);
-                }
+                uploadResult.URL = GetObjectURL(objectKey);
             }
 
             return uploadResult;
