@@ -107,11 +107,11 @@ namespace ShareX
         [Category("Upload / Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }
 
-        [Category("Paths"), Description("Custom uploaders configuration path.")]
+        [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomUploadersConfigPath { get; set; }
 
-        [Category("Paths"), Description("Custom hotkeys configuration path.")]
+        [Category("Paths"), Description("Custom hotkeys configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomHotkeysConfigPath { get; set; }
 

@@ -241,57 +241,55 @@ namespace ShareX
                     {
                         tsmiShowErrors.Visible = true;
                     }
-                    else
+
+                    // Open
+                    tsmiOpen.Visible = true;
+
+                    tsmiOpenURL.Enabled = uim.SelectedItem.IsURLExist;
+                    tsmiOpenShortenedURL.Enabled = uim.SelectedItem.IsShortenedURLExist;
+                    tsmiOpenThumbnailURL.Enabled = uim.SelectedItem.IsThumbnailURLExist;
+                    tsmiOpenDeletionURL.Enabled = uim.SelectedItem.IsDeletionURLExist;
+
+                    tsmiOpenFile.Enabled = uim.SelectedItem.IsFileExist;
+                    tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
+
+                    // Copy
+                    tsmiCopy.Visible = true;
+
+                    tsmiCopyURL.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
+                    tsmiCopyShortenedURL.Enabled = uim.SelectedItems.Any(x => x.IsShortenedURLExist);
+                    tsmiCopyThumbnailURL.Enabled = uim.SelectedItems.Any(x => x.IsThumbnailURLExist);
+                    tsmiCopyDeletionURL.Enabled = uim.SelectedItems.Any(x => x.IsDeletionURLExist);
+
+                    tsmiCopyFile.Enabled = uim.SelectedItem.IsFileExist;
+                    tsmiCopyImage.Enabled = uim.SelectedItem.IsImageFile;
+                    tsmiCopyText.Enabled = uim.SelectedItem.IsTextFile;
+
+                    tsmiCopyHTMLLink.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
+                    tsmiCopyHTMLImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL);
+                    tsmiCopyHTMLLinkedImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsThumbnailURLExist);
+
+                    tsmiCopyForumLink.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
+                    tsmiCopyForumImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsURLExist);
+                    tsmiCopyForumLinkedImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsThumbnailURLExist);
+
+                    tsmiCopyFilePath.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
+                    tsmiCopyFileName.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
+                    tsmiCopyFileNameWithExtension.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
+                    tsmiCopyFolder.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
+
+                    CleanCustomClipboardFormats();
+
+                    if (Program.Settings.ClipboardContentFormats != null && Program.Settings.ClipboardContentFormats.Count > 0)
                     {
-                        // Open
-                        tsmiOpen.Visible = true;
+                        tssCopy5.Visible = true;
 
-                        tsmiOpenURL.Enabled = uim.SelectedItem.IsURLExist;
-                        tsmiOpenShortenedURL.Enabled = uim.SelectedItem.IsShortenedURLExist;
-                        tsmiOpenThumbnailURL.Enabled = uim.SelectedItem.IsThumbnailURLExist;
-                        tsmiOpenDeletionURL.Enabled = uim.SelectedItem.IsDeletionURLExist;
-
-                        tsmiOpenFile.Enabled = uim.SelectedItem.IsFileExist;
-                        tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
-
-                        // Copy
-                        tsmiCopy.Visible = true;
-
-                        tsmiCopyURL.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
-                        tsmiCopyShortenedURL.Enabled = uim.SelectedItems.Any(x => x.IsShortenedURLExist);
-                        tsmiCopyThumbnailURL.Enabled = uim.SelectedItems.Any(x => x.IsThumbnailURLExist);
-                        tsmiCopyDeletionURL.Enabled = uim.SelectedItems.Any(x => x.IsDeletionURLExist);
-
-                        tsmiCopyFile.Enabled = uim.SelectedItem.IsFileExist;
-                        tsmiCopyImage.Enabled = uim.SelectedItem.IsImageFile;
-                        tsmiCopyText.Enabled = uim.SelectedItem.IsTextFile;
-
-                        tsmiCopyHTMLLink.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
-                        tsmiCopyHTMLImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL);
-                        tsmiCopyHTMLLinkedImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsThumbnailURLExist);
-
-                        tsmiCopyForumLink.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
-                        tsmiCopyForumImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsURLExist);
-                        tsmiCopyForumLinkedImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL && x.IsThumbnailURLExist);
-
-                        tsmiCopyFilePath.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
-                        tsmiCopyFileName.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
-                        tsmiCopyFileNameWithExtension.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
-                        tsmiCopyFolder.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
-
-                        CleanCustomClipboardFormats();
-
-                        if (Program.Settings.ClipboardContentFormats != null && Program.Settings.ClipboardContentFormats.Count > 0)
+                        foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
                         {
-                            tssCopy5.Visible = true;
-
-                            foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
-                            {
-                                ToolStripMenuItem tsmiClipboardFormat = new ToolStripMenuItem(cf.Description);
-                                tsmiClipboardFormat.Tag = cf;
-                                tsmiClipboardFormat.Click += tsmiClipboardFormat_Click;
-                                tsmiCopy.DropDownItems.Add(tsmiClipboardFormat);
-                            }
+                            ToolStripMenuItem tsmiClipboardFormat = new ToolStripMenuItem(cf.Description);
+                            tsmiClipboardFormat.Tag = cf;
+                            tsmiClipboardFormat.Click += tsmiClipboardFormat_Click;
+                            tsmiCopy.DropDownItems.Add(tsmiClipboardFormat);
                         }
                     }
 
