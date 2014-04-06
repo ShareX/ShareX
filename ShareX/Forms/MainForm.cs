@@ -539,6 +539,11 @@ namespace ShareX
             Refresh();
         }
 
+        private void OpenDropWindow()
+        {
+            DropForm.Instance.ShowActivate();
+        }
+
         private void DoScreenRecorder(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -687,7 +692,7 @@ namespace ShareX
 
         private void tsbDragDropUpload_Click(object sender, EventArgs e)
         {
-            new DropForm().Show();
+            OpenDropWindow();
         }
 
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)

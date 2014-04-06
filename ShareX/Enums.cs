@@ -130,6 +130,8 @@ namespace ShareX
         ClipboardUploadWithContentViewer,
         [Description("File upload")]
         FileUpload,
+        [Description("Drag & drop upload")]
+        DragDropUpload,
         [Description("Capture entire screen")]
         PrintScreen,
         [Description("Capture active window")]

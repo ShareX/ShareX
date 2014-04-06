@@ -37,7 +37,22 @@ namespace ShareX
 {
     public partial class DropForm : LayeredForm
     {
-        public DropForm()
+        private static DropForm instance;
+
+        public static DropForm Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new DropForm();
+                }
+
+                return instance;
+            }
+        }
+
+        private DropForm()
         {
             InitializeComponent();
 

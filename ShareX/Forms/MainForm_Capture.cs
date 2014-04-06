@@ -84,6 +84,9 @@ namespace ShareX
                 case HotkeyType.FileUpload:
                     UploadManager.UploadFile(taskSettings);
                     break;
+                case HotkeyType.DragDropUpload:
+                    OpenDropWindow();
+                    break;
                 case HotkeyType.PrintScreen:
                     CaptureScreenshot(CaptureType.Screen, taskSettings, false);
                     break;
