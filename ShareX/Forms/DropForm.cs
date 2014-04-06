@@ -38,6 +38,8 @@ namespace ShareX
     public partial class DropForm : LayeredForm
     {
         private static DropForm instance;
+        private Image logoIdle = null;
+        private Image logoActive = null;
 
         public static DropForm Instance
         {
@@ -56,26 +58,24 @@ namespace ShareX
         {
             InitializeComponent();
 
-            Image logo = null;
-
             try
             {
-                logo = ShareXResources.Logo;
-                logo = ImageHelpers.ResizeImage(logo, 150, 150);
+                logoIdle = ShareXResources.LogoIdle;
+                logoIdle = ImageHelpers.ResizeImage(logoIdle, 150, 150);
+
+                logoActive = ShareXResources.Logo;
+                logoActive = ImageHelpers.ResizeImage(logoActive, 150, 150);
 
                 int windowOffset = 5;
                 ContentAlignment placement = ContentAlignment.BottomRight;
-                Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, logo.Size);
+                Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, logoIdle.Size);
                 Location = position;
 
-                SelectBitmap((Bitmap)logo, 150);
+                SelectBitmap((Bitmap)logoIdle, 150);
             }
-            finally
+            catch (Exception ex)
             {
-                if (logo != null)
-                {
-                    logo.Dispose();
-                }
+                DebugHelper.WriteException(ex, " while loading drag-and-drop window.");
             }
         }
 
@@ -100,6 +100,7 @@ namespace ShareX
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
+                SelectBitmap((Bitmap)logoActive, 150);
                 e.Effect = DragDropEffects.All;
             }
             else
@@ -113,6 +114,11 @@ namespace ShareX
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
 
             UploadManager.UploadFile(files);
+        }
+
+        private void DropForm_DragLeave(object sender, EventArgs e)
+        {
+            SelectBitmap((Bitmap)logoIdle, 150);
         }
 
         #region Windows Form Designer generated code
@@ -130,6 +136,8 @@ namespace ShareX
         {
             if (disposing && (components != null))
             {
+                if (logoIdle != null) logoIdle.Dispose();
+                if (logoActive != null) logoActive.Dispose();
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -150,6 +158,7 @@ namespace ShareX
             MouseUp += DropForm_MouseUp;
             DragEnter += DropForm_DragEnter;
             DragDrop += DropForm_DragDrop;
+            DragLeave += DropForm_DragLeave;
         }
 
         #endregion Windows Form Designer generated code
