@@ -685,6 +685,11 @@ namespace ShareX
             UploadManager.UploadFile();
         }
 
+        private void tsbDragDropUpload_Click(object sender, EventArgs e)
+        {
+            new DropForm().Show();
+        }
+
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)
         {
             UpdateDestinationStates();

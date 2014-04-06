@@ -32,33 +32,6 @@ namespace HelpersLib
 {
     public static partial class NativeMethods
     {
-        #region Constants
-
-        public const int GCL_HICONSM = -34;
-        public const int GCL_HICON = -14;
-
-        public const int ICON_SMALL = 0;
-        public const int ICON_BIG = 1;
-        public const int ICON_SMALL2 = 2;
-
-        public const int SC_MINIMIZE = 0xF020;
-
-        public const int HT_CAPTION = 2;
-        public const int CURSOR_SHOWING = 1;
-        public const int GWL_STYLE = -16;
-        public const ulong TARGETWINDOW = (uint)WindowStyles.WS_BORDER | (uint)WindowStyles.WS_VISIBLE;
-
-        public const int DWM_TNP_RECTDESTINATION = 0x1;
-        public const int DWM_TNP_RECTSOURCE = 0x2;
-        public const int DWM_TNP_OPACITY = 0x4;
-        public const int DWM_TNP_VISIBLE = 0x8;
-        public const int DWM_TNP_SOURCECLIENTAREAONLY = 0x10;
-
-        public const int WH_KEYBOARD_LL = 13;
-        public const int WH_MOUSE_LL = 14;
-
-        #endregion Constants
-
         #region Delegates
 
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);

@@ -88,6 +88,9 @@
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="FontSafe.cs" />
+    <Compile Include="Native\LayeredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\MonitorTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +98,7 @@
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\SSLBypassHelper.cs" />
+    <Compile Include="Native\NativeConstants.cs" />
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />

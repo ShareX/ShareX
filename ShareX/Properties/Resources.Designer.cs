@@ -522,6 +522,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap inbox_plus {
+            get {
+                object obj = ResourceManager.GetObject("inbox_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap keyboard_pencil {
             get {
                 object obj = ResourceManager.GetObject("keyboard_pencil", resourceCulture);
@@ -644,7 +654,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap network_ip {
             get {
-                object obj = ResourceManager.GetObject("network-ip", resourceCulture);
+                object obj = ResourceManager.GetObject("network_ip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

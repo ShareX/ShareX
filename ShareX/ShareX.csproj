@@ -106,6 +106,9 @@
     <Compile Include="Forms\AutoCaptureForm.Designer.cs">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DropForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ExternalProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,6 +447,7 @@
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
+    <None Include="Resources\inbox--plus.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />
