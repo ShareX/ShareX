@@ -38,8 +38,6 @@ namespace ShareX
     public partial class DropForm : LayeredForm
     {
         private static DropForm instance;
-        private Image logoIdle = null;
-        private Image logoActive = null;
 
         public static DropForm Instance
         {
@@ -54,29 +52,25 @@ namespace ShareX
             }
         }
 
+        private Image logoIdle = null;
+        private Image logoActive = null;
+
         private DropForm()
         {
             InitializeComponent();
 
-            try
-            {
-                logoIdle = ShareXResources.LogoIdle;
-                logoIdle = ImageHelpers.ResizeImage(logoIdle, 150, 150);
+            int size = 150;
+            logoIdle = ShareXResources.LogoIdle;
+            logoIdle = ImageHelpers.ResizeImage(logoIdle, size, size);
+            logoActive = ShareXResources.Logo;
+            logoActive = ImageHelpers.ResizeImage(logoActive, size, size);
 
-                logoActive = ShareXResources.Logo;
-                logoActive = ImageHelpers.ResizeImage(logoActive, 150, 150);
+            int windowOffset = 5;
+            ContentAlignment placement = ContentAlignment.BottomRight;
+            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, logoIdle.Size);
+            Location = position;
 
-                int windowOffset = 5;
-                ContentAlignment placement = ContentAlignment.BottomRight;
-                Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, logoIdle.Size);
-                Location = position;
-
-                SelectBitmap((Bitmap)logoIdle, 150);
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex, " while loading drag-and-drop window.");
-            }
+            SelectBitmap((Bitmap)logoIdle, 150);
         }
 
         private void DropForm_MouseDown(object sender, MouseEventArgs e)
