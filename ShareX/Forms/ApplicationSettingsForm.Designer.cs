@@ -30,6 +30,7 @@
         {
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
@@ -86,7 +87,6 @@
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -133,6 +133,17 @@
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbSilentRun
+            // 
+            this.cbSilentRun.AutoSize = true;
+            this.cbSilentRun.Location = new System.Drawing.Point(16, 40);
+            this.cbSilentRun.Name = "cbSilentRun";
+            this.cbSilentRun.Size = new System.Drawing.Size(137, 17);
+            this.cbSilentRun.TabIndex = 8;
+            this.cbSilentRun.Text = "On start minimize to tray";
+            this.cbSilentRun.UseVisualStyleBackColor = true;
+            this.cbSilentRun.CheckedChanged += new System.EventHandler(this.cbSilentRun_CheckedChanged);
             // 
             // cbRememberMainFormSize
             // 
@@ -721,19 +732,9 @@
             this.pgSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgSettings.Location = new System.Drawing.Point(3, 3);
             this.pgSettings.Name = "pgSettings";
+            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.Size = new System.Drawing.Size(516, 302);
             this.pgSettings.TabIndex = 0;
-            // 
-            // cbSilentRun
-            // 
-            this.cbSilentRun.AutoSize = true;
-            this.cbSilentRun.Location = new System.Drawing.Point(16, 40);
-            this.cbSilentRun.Name = "cbSilentRun";
-            this.cbSilentRun.Size = new System.Drawing.Size(137, 17);
-            this.cbSilentRun.TabIndex = 8;
-            this.cbSilentRun.Text = "On start minimize to tray";
-            this.cbSilentRun.UseVisualStyleBackColor = true;
-            this.cbSilentRun.CheckedChanged += new System.EventHandler(this.cbSilentRun_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 

@@ -39,38 +39,40 @@ namespace ShareX
     {
         private static DropForm instance;
 
-        public static DropForm Instance
+        public static DropForm GetInstance(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
         {
-            get
+            if (instance == null || instance.IsDisposed)
             {
-                if (instance == null || instance.IsDisposed)
-                {
-                    instance = new DropForm();
-                }
-
-                return instance;
+                instance = new DropForm(size, offset, alignment, opacity, hoverOpacity);
             }
+
+            return instance;
         }
 
-        private Image logoIdle = null;
-        private Image logoActive = null;
+        public int DropSize { get; set; }
+        public int DropOffset { get; set; }
+        public ContentAlignment DropAlignment { get; set; }
+        public int DropOpacity { get; set; }
+        public int DropHoverOpacity { get; set; }
 
-        private DropForm()
+        private Bitmap logo = null;
+        private bool isHovered = false;
+
+        private DropForm(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
         {
             InitializeComponent();
+            DropSize = size.Between(10, 300);
+            DropOffset = offset;
+            DropAlignment = alignment;
+            DropOpacity = opacity.Between(1, 255);
+            DropHoverOpacity = hoverOpacity.Between(1, 255);
 
-            int size = 150;
-            logoIdle = ShareXResources.LogoIdle;
-            logoIdle = ImageHelpers.ResizeImage(logoIdle, size, size);
-            logoActive = ShareXResources.Logo;
-            logoActive = ImageHelpers.ResizeImage(logoActive, size, size);
+            logo = (Bitmap)ImageHelpers.ResizeImage(ShareXResources.Logo, DropSize, DropSize);
 
-            int windowOffset = 5;
-            ContentAlignment placement = ContentAlignment.BottomRight;
-            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, logoIdle.Size);
+            Point position = Helpers.GetPosition(DropAlignment, new Point(DropOffset, DropOffset), Screen.PrimaryScreen.WorkingArea.Size, logo.Size);
             Location = position;
 
-            SelectBitmap((Bitmap)logoIdle, 150);
+            SelectBitmap(logo, DropOpacity);
         }
 
         private void DropForm_MouseDown(object sender, MouseEventArgs e)
@@ -94,8 +96,13 @@ namespace ShareX
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                SelectBitmap((Bitmap)logoActive, 150);
                 e.Effect = DragDropEffects.All;
+
+                if (!isHovered)
+                {
+                    SelectBitmap(logo, DropHoverOpacity);
+                    isHovered = true;
+                }
             }
             else
             {
@@ -106,13 +113,22 @@ namespace ShareX
         private void DropForm_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
-
             UploadManager.UploadFile(files);
+
+            if (isHovered)
+            {
+                SelectBitmap(logo, DropOpacity);
+                isHovered = false;
+            }
         }
 
         private void DropForm_DragLeave(object sender, EventArgs e)
         {
-            SelectBitmap((Bitmap)logoIdle, 150);
+            if (isHovered)
+            {
+                SelectBitmap(logo, DropOpacity);
+                isHovered = false;
+            }
         }
 
         #region Windows Form Designer generated code
@@ -130,10 +146,9 @@ namespace ShareX
         {
             if (disposing && (components != null))
             {
-                if (logoIdle != null) logoIdle.Dispose();
-                if (logoActive != null) logoActive.Dispose();
                 components.Dispose();
             }
+            if (logo != null) logo.Dispose();
             base.Dispose(disposing);
         }
 
