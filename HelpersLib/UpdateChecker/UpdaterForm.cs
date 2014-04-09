@@ -157,7 +157,7 @@ namespace HelpersLib
                     psi.Arguments = "/VERYSILENT";
                 }
 
-                // psi.Verb = "runas"; // is this needed?
+                psi.Verb = "runas";
                 psi.UseShellExecute = true;
                 Process.Start(psi);
             }
