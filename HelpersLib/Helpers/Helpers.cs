@@ -442,6 +442,11 @@ namespace HelpersLib
             return (OSVersion.Major == 6 && OSVersion.Minor >= 2) || OSVersion.Major > 6;
         }
 
+        public static bool IsDefaultInstallDir()
+        {
+            return Path.GetDirectoryName(Application.ExecutablePath).Contains(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+        }
+
         public static void LoadBrowserAsync(string url)
         {
             if (!string.IsNullOrEmpty(url))

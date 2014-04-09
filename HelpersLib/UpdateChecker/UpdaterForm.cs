@@ -156,8 +156,10 @@ namespace HelpersLib
                 {
                     psi.Arguments = "/VERYSILENT";
                 }
-
-                psi.Verb = "runas";
+                if (Helpers.IsDefaultInstallDir())
+                {
+                    psi.Verb = "runas";
+                }
                 psi.UseShellExecute = true;
                 Process.Start(psi);
             }
