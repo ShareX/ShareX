@@ -444,7 +444,8 @@ namespace HelpersLib
 
         public static bool IsDefaultInstallDir()
         {
-            return Path.GetDirectoryName(Application.ExecutablePath).Contains(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+            return Application.ExecutablePath.StartsWith(path);
         }
 
         public static void LoadBrowserAsync(string url)

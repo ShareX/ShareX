@@ -169,6 +169,7 @@ namespace ShareX
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiTrayClipboardUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFileUpload = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayDragDropUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFullscreen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWindow = new System.Windows.Forms.ToolStripMenuItem();
@@ -214,7 +215,6 @@ namespace ShareX
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayDragDropUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -255,7 +255,7 @@ namespace ShareX
             this.tsMain.Name = "tsMain";
             this.tsMain.Padding = new System.Windows.Forms.Padding(6);
             this.tsMain.ShowItemToolTips = false;
-            this.tsMain.Size = new System.Drawing.Size(160, 430);
+            this.tsMain.Size = new System.Drawing.Size(160, 452);
             this.tsMain.TabIndex = 0;
             // 
             // tsbClipboardUpload
@@ -747,7 +747,7 @@ namespace ShareX
             // scMain.Panel2
             // 
             this.scMain.Panel2.Controls.Add(this.pbPreview);
-            this.scMain.Size = new System.Drawing.Size(784, 430);
+            this.scMain.Size = new System.Drawing.Size(784, 452);
             this.scMain.SplitterDistance = 400;
             this.scMain.SplitterWidth = 6;
             this.scMain.TabIndex = 1;
@@ -764,7 +764,7 @@ namespace ShareX
             this.lblDragAndDropTip.Location = new System.Drawing.Point(8, 92);
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
             this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(30, 20, 30, 30);
-            this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 246);
+            this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 268);
             this.lblDragAndDropTip.TabIndex = 2;
             this.lblDragAndDropTip.Text = "You can drag and drop files to this window";
             this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -776,7 +776,7 @@ namespace ShareX
             this.lblSplitter.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblSplitter.Location = new System.Drawing.Point(0, 0);
             this.lblSplitter.Name = "lblSplitter";
-            this.lblSplitter.Size = new System.Drawing.Size(1, 430);
+            this.lblSplitter.Size = new System.Drawing.Size(1, 452);
             this.lblSplitter.TabIndex = 0;
             // 
             // lvUploads
@@ -801,7 +801,7 @@ namespace ShareX
             this.lvUploads.Location = new System.Drawing.Point(0, 0);
             this.lvUploads.Name = "lvUploads";
             this.lvUploads.ShowItemToolTips = true;
-            this.lvUploads.Size = new System.Drawing.Size(400, 430);
+            this.lvUploads.Size = new System.Drawing.Size(400, 452);
             this.lvUploads.TabIndex = 1;
             this.lvUploads.UseCompatibleStateImageBehavior = false;
             this.lvUploads.View = System.Windows.Forms.View.Details;
@@ -863,7 +863,7 @@ namespace ShareX
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Location = new System.Drawing.Point(0, 0);
             this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(378, 430);
+            this.pbPreview.Size = new System.Drawing.Size(378, 452);
             this.pbPreview.TabIndex = 1;
             // 
             // cmsUploadInfo
@@ -1246,6 +1246,14 @@ namespace ShareX
             this.tsmiTrayFileUpload.Text = "File upload...";
             this.tsmiTrayFileUpload.Click += new System.EventHandler(this.tsbFileUpload_Click);
             // 
+            // tsmiTrayDragDropUpload
+            // 
+            this.tsmiTrayDragDropUpload.Image = global::ShareX.Properties.Resources.inbox_plus;
+            this.tsmiTrayDragDropUpload.Name = "tsmiTrayDragDropUpload";
+            this.tsmiTrayDragDropUpload.Size = new System.Drawing.Size(189, 22);
+            this.tsmiTrayDragDropUpload.Text = "Drag && drop upload...";
+            this.tsmiTrayDragDropUpload.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
+            // 
             // tsmiTrayCapture
             // 
             this.tsmiTrayCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1613,20 +1621,12 @@ namespace ShareX
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiTrayDragDropUpload
-            // 
-            this.tsmiTrayDragDropUpload.Image = global::ShareX.Properties.Resources.inbox_plus;
-            this.tsmiTrayDragDropUpload.Name = "tsmiTrayDragDropUpload";
-            this.tsmiTrayDragDropUpload.Size = new System.Drawing.Size(189, 22);
-            this.tsmiTrayDragDropUpload.Text = "Drag && drop upload...";
-            this.tsmiTrayDragDropUpload.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 430);
+            this.ClientSize = new System.Drawing.Size(944, 452);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
