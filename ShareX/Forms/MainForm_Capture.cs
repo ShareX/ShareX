@@ -141,6 +141,9 @@ namespace ShareX
                 case HotkeyType.ImageEffects:
                     OpenImageEffects();
                     break;
+                case HotkeyType.Ruler:
+                    OpenRuler();
+                    break;
             }
         }
 

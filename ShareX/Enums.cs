@@ -167,7 +167,9 @@ namespace ShareX
         [Description("Index folder")]
         IndexFolder,
         [Description("Image effects")]
-        ImageEffects
+        ImageEffects,
+        [Description("Ruler")]
+        Ruler
     }
 
     public enum HotkeyStatus

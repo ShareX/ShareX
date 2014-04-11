@@ -39,6 +39,9 @@ namespace ScreenCaptureLib
         public bool OneClickMode { get; set; }
         public Point OneClickPosition { get; set; }
 
+        // For screen ruler
+        public bool RulerMode { get; set; }
+
         public RectangleRegion(Image backgroundImage = null)
             : base(backgroundImage)
         {
@@ -151,7 +154,7 @@ namespace ScreenCaptureLib
 
                         if (Config.ShowInfo)
                         {
-                            ImageHelpers.DrawTextWithOutline(g, string.Format("X:{0} Y:{1} W:{2} H:{3}", totalArea.X, totalArea.Y,
+                            ImageHelpers.DrawTextWithOutline(g, string.Format("X: {0} / Y: {1} / W: {2} / H: {3}", totalArea.X, totalArea.Y,
                                 totalArea.Width, totalArea.Height), new PointF(totalArea.X + 5, totalArea.Y - 25), textFont, Color.White, Color.Black);
                         }
                     }
@@ -173,6 +176,12 @@ namespace ScreenCaptureLib
                     g.DrawRectangleProper(borderDotPen, AreaManager.CurrentArea);
                     g.DrawRectangleProper(borderDotPen2, AreaManager.CurrentArea);
                     DrawObjects(g);
+
+                    if (RulerMode)
+                    {
+                        DrawRuler(g, AreaManager.CurrentArea, borderPen, 5, 10);
+                        DrawRuler(g, AreaManager.CurrentArea, borderPen, 15, 100);
+                    }
                 }
 
                 if (Config.ShowInfo)
@@ -181,8 +190,20 @@ namespace ScreenCaptureLib
                     {
                         if (area.IsValid())
                         {
-                            ImageHelpers.DrawTextWithOutline(g, string.Format("X:{0} Y:{1}\nW:{2} H:{3}", area.X, area.Y, area.Width, area.Height),
-                                new PointF(area.X + 5, area.Y + 5), textFont, Color.White, Color.Black);
+                            string areaText;
+
+                            if (RulerMode)
+                            {
+                                Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
+                                areaText = string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} / Height: {5} / Length: {6:0.00}", area.X, area.Y, endPos.X, endPos.Y,
+                                    area.Width, area.Height, Helpers.Distance(area.Location, endPos));
+                                ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 10, area.Y + 10), textFont, Color.White, Color.Black);
+                            }
+                            else
+                            {
+                                areaText = string.Format("X: {0} / Y: {1}\nW: {2} / H: {3}", area.X, area.Y, area.Width, area.Height);
+                                ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 5, area.Y + 5), textFont, Color.White, Color.Black);
+                            }
                         }
                     }
                 }
@@ -310,6 +331,24 @@ namespace ScreenCaptureLib
             }
 
             return bmp;
+        }
+
+        private void DrawRuler(Graphics g, Rectangle rect, Pen pen, int rulerSize, int rulerWidth)
+        {
+            if (rect.Width >= rulerSize && rect.Height >= rulerSize)
+            {
+                for (int x = 1; x <= rect.Width / rulerWidth; x++)
+                {
+                    g.DrawLine(pen, new Point(rect.X + x * rulerWidth, rect.Y), new Point(rect.X + x * rulerWidth, rect.Y + rulerSize));
+                    g.DrawLine(pen, new Point(rect.X + x * rulerWidth, rect.Bottom), new Point(rect.X + x * rulerWidth, rect.Bottom - rulerSize));
+                }
+
+                for (int y = 1; y <= rect.Height / rulerWidth; y++)
+                {
+                    g.DrawLine(pen, new Point(rect.X, rect.Y + y * rulerWidth), new Point(rect.X + rulerSize, rect.Y + y * rulerWidth));
+                    g.DrawLine(pen, new Point(rect.Right, rect.Y + y * rulerWidth), new Point(rect.Right - rulerSize, rect.Y + y * rulerWidth));
+                }
+            }
         }
 
         public void UpdateRegionPath()

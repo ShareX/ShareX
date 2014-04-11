@@ -622,6 +622,18 @@ namespace ShareX
             Process.Start(psi);
         }
 
+        public static void OpenRuler()
+        {
+            using (Image fullscreen = Screenshot.CaptureFullscreen())
+            using (RectangleRegion surface = new RectangleRegion(fullscreen))
+            {
+                surface.RulerMode = true;
+                surface.Config.QuickCrop = false;
+                surface.Prepare();
+                surface.ShowDialog();
+            }
+        }
+
         #region Form events
 
         protected override void SetVisibleCore(bool value)
@@ -828,6 +840,11 @@ namespace ShareX
         private void tsmiDNSChanger_Click(object sender, EventArgs e)
         {
             OpenDNSChanger();
+        }
+
+        private void tsmiRuler_Click(object sender, EventArgs e)
+        {
+            OpenRuler();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
