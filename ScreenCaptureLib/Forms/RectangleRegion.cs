@@ -181,6 +181,11 @@ namespace ScreenCaptureLib
                     {
                         DrawRuler(g, AreaManager.CurrentArea, borderPen, 5, 10);
                         DrawRuler(g, AreaManager.CurrentArea, borderPen, 15, 100);
+
+                        Point centerPos = new Point(AreaManager.CurrentArea.X + AreaManager.CurrentArea.Width / 2, AreaManager.CurrentArea.Y + AreaManager.CurrentArea.Height / 2);
+                        int markSize = 10;
+                        g.DrawLine(borderPen, centerPos.X, centerPos.Y - markSize, centerPos.X, centerPos.Y + markSize);
+                        g.DrawLine(borderPen, centerPos.X - markSize, centerPos.Y, centerPos.X + markSize, centerPos.Y);
                     }
                 }
 
@@ -197,7 +202,7 @@ namespace ScreenCaptureLib
                                 Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
                                 areaText = string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} / Height: {5} / Length: {6:0.00}", area.X, area.Y, endPos.X, endPos.Y,
                                     area.Width, area.Height, Helpers.Distance(area.Location, endPos));
-                                ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 10, area.Y + 10), textFont, Color.White, Color.Black);
+                                ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 15, area.Y + 15), textFont, Color.White, Color.Black);
                             }
                             else
                             {

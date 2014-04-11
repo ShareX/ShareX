@@ -207,6 +207,7 @@ namespace ShareX
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,7 +217,6 @@ namespace ShareX
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -550,12 +550,12 @@ namespace ShareX
             // 
             this.tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiScreenColorPicker,
+            this.tsmiRuler,
             this.tsmiHashCheck,
             this.tsmiIndexFolder,
             this.tsmiImageEffects,
             this.tsmiMonitorTest,
-            this.tsmiDNSChanger,
-            this.tsmiRuler});
+            this.tsmiDNSChanger});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsddbTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -1507,12 +1507,12 @@ namespace ShareX
             // 
             this.tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayScreenColorPicker,
+            this.tsmiTrayRuler,
             this.tsmiTrayHashCheck,
             this.tsmiTrayIndexFolder,
             this.tsmiTrayImageEffects,
             this.tsmiTrayMonitorTest,
-            this.tsmiTrayDNSChanger,
-            this.tsmiTrayRuler});
+            this.tsmiTrayDNSChanger});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             this.tsmiTrayTools.Size = new System.Drawing.Size(189, 22);
@@ -1565,6 +1565,14 @@ namespace ShareX
             this.tsmiTrayDNSChanger.Size = new System.Drawing.Size(183, 22);
             this.tsmiTrayDNSChanger.Text = "DNS changer...";
             this.tsmiTrayDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
+            // 
+            // tsmiTrayRuler
+            // 
+            this.tsmiTrayRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
+            this.tsmiTrayRuler.Name = "tsmiTrayRuler";
+            this.tsmiTrayRuler.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayRuler.Text = "Ruler...";
+            this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
             // tsmiScreenshotsFolder
             // 
@@ -1632,14 +1640,6 @@ namespace ShareX
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
-            // 
-            // tsmiTrayRuler
-            // 
-            this.tsmiTrayRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
-            this.tsmiTrayRuler.Name = "tsmiTrayRuler";
-            this.tsmiTrayRuler.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayRuler.Text = "Ruler...";
-            this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
             // MainForm
             // 

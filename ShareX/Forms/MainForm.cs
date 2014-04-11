@@ -616,10 +616,14 @@ namespace ShareX
 
         private void OpenDNSChanger()
         {
-            ProcessStartInfo psi = new ProcessStartInfo(Path.Combine(Application.StartupPath, "DNSChanger.exe"));
-            psi.UseShellExecute = true;
-            psi.Verb = "runas";
-            Process.Start(psi);
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo(Path.Combine(Application.StartupPath, "DNSChanger.exe"));
+                psi.UseShellExecute = true;
+                psi.Verb = "runas";
+                Process.Start(psi);
+            }
+            catch { }
         }
 
         public static void OpenRuler()
