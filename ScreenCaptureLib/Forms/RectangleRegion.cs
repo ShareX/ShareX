@@ -200,7 +200,7 @@ namespace ScreenCaptureLib
                             if (RulerMode)
                             {
                                 Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
-                                areaText = string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} / Height: {5}\nDistance: {6:0.00} / Angle: {7:0.00}°", area.X, area.Y, endPos.X, endPos.Y,
+                                areaText = string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} px / Height: {5} px\nDistance: {6:0.00} px / Angle: {7:0.00}°", area.X, area.Y, endPos.X, endPos.Y,
                                     area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
                                 ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 15, area.Y + 15), textFont, Color.White, Color.Black);
                             }
