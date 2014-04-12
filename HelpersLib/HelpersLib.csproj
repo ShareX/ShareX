@@ -88,6 +88,7 @@
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="FontSafe.cs" />
+    <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="Native\LayeredForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +301,7 @@
     <Compile Include="UpdateChecker\XMLUpdateChecker.cs" />
     <Compile Include="UpdateChecker\UpdateInfo.cs" />
     <Compile Include="Links.cs" />
+    <Compile Include="Vector2.cs" />
     <Compile Include="WindowState.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
