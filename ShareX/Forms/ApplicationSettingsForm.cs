@@ -430,14 +430,12 @@ namespace ShareX
         {
             MyListView lv = sender as MyListView;
             _itemDnD = lv.GetItemAt(e.X, e.Y);
-            Console.WriteLine(_itemDnD.Tag.ToString());
         }
 
         private void lvSecondaryUploaders_MouseMove(object sender, MouseEventArgs e)
         {
             if (_itemDnD != null)
             {
-                Console.WriteLine(_itemDnD.Tag.ToString());
                 Cursor = Cursors.Hand;
 
                 MyListView lv = sender as MyListView;
@@ -466,14 +464,46 @@ namespace ShareX
 
         private void lvSecondaryUploaders_MouseUp(object sender, MouseEventArgs e)
         {
-            MyListView lv = sender as MyListView;
-
             if (_itemDnD == null)
                 return;
 
+            MyListView lv = sender as MyListView;
             try
             {
+                int lastItemBottom = Math.Min(e.Y, lv.Items[lv.Items.Count - 1].GetBounds(ItemBoundsPortion.Entire).Bottom - 1);
+                ListViewItem itemOver = lv.GetItemAt(0, lastItemBottom);
+
+                if (itemOver == null)
+                    return;
+
+                Rectangle rc = itemOver.GetBounds(ItemBoundsPortion.Entire);
+
+                bool insertBefore;
+                if (e.Y < rc.Top + (rc.Height / 2))
+                {
+                    insertBefore = true;
+                }
+                else
+                {
+                    insertBefore = false;
+                }
+
+                if (_itemDnD != itemOver)
+                {
+                    if (insertBefore)
+                    {
+                        lv.Items.Remove(_itemDnD);
+                        lv.Items.Insert(itemOver.Index, _itemDnD);
+                    }
+                    else
+                    {
+                        lv.Items.Remove(_itemDnD);
+                        lv.Items.Insert(itemOver.Index + 1, _itemDnD);
+                    }
+                }
+
                 lv.LineAfter = lv.LineBefore = -1;
+
                 lv.Invalidate();
             }
             finally
