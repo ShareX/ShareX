@@ -75,7 +75,7 @@ namespace ShareX
             if (Program.Settings.ShowMultiUploadWarning)
             {
                 using (MyMessageBox msgbox = new MyMessageBox("Are you sure you want to upload " + length + " files?", "ShareX - Upload files",
-                    MessageBoxButtons.YesNo, "Don't show this message again"))
+                    MessageBoxButtons.YesNo, "Don't show this message again."))
                 {
                     msgbox.ShowDialog();
                     Program.Settings.ShowMultiUploadWarning = !msgbox.IsChecked;

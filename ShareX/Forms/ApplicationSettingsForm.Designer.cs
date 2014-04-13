@@ -68,12 +68,15 @@
             this.lblProxyUsername = new System.Windows.Forms.Label();
             this.txtProxyUsername = new System.Windows.Forms.TextBox();
             this.tpUpload = new System.Windows.Forms.TabPage();
+            this.tcUpload = new System.Windows.Forms.TabControl();
+            this.tpPerformance = new System.Windows.Forms.TabPage();
             this.gbBandwidth = new System.Windows.Forms.GroupBox();
             this.lblUploadLimit = new System.Windows.Forms.Label();
             this.nudUploadLimit = new System.Windows.Forms.NumericUpDown();
             this.lblUploadLimitHint = new System.Windows.Forms.Label();
             this.lblBufferSize = new System.Windows.Forms.Label();
             this.cbBufferSize = new System.Windows.Forms.ComboBox();
+            this.tpUploadResults = new System.Windows.Forms.TabPage();
             this.gbClipboardFormats = new System.Windows.Forms.GroupBox();
             this.btnClipboardFormatEdit = new System.Windows.Forms.Button();
             this.btnClipboardFormatRemove = new System.Windows.Forms.Button();
@@ -81,7 +84,17 @@
             this.lvClipboardFormats = new HelpersLib.MyListView();
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cbIfUploadFailRetryOnce = new System.Windows.Forms.CheckBox();
+            this.tpUploadRetry = new System.Windows.Forms.TabPage();
+            this.chkUseSecondaryUploaders = new System.Windows.Forms.CheckBox();
+            this.tlpBackupDestinations = new System.Windows.Forms.TableLayoutPanel();
+            this.gbSecondaryImageUploaders = new System.Windows.Forms.GroupBox();
+            this.lbSecondaryImageUploaders = new System.Windows.Forms.ListBox();
+            this.gbSecondaryFileUploaders = new System.Windows.Forms.GroupBox();
+            this.lbSecondaryFileUploaders = new System.Windows.Forms.ListBox();
+            this.gbSecondaryTextUploaders = new System.Windows.Forms.GroupBox();
+            this.lbSecondaryTextUploaders = new System.Windows.Forms.ListBox();
+            this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
+            this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
             this.tpPrint = new System.Windows.Forms.TabPage();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
@@ -93,9 +106,18 @@
             this.tpProxy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).BeginInit();
             this.tpUpload.SuspendLayout();
+            this.tcUpload.SuspendLayout();
+            this.tpPerformance.SuspendLayout();
             this.gbBandwidth.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUploadLimit)).BeginInit();
+            this.tpUploadResults.SuspendLayout();
             this.gbClipboardFormats.SuspendLayout();
+            this.tpUploadRetry.SuspendLayout();
+            this.tlpBackupDestinations.SuspendLayout();
+            this.gbSecondaryImageUploaders.SuspendLayout();
+            this.gbSecondaryFileUploaders.SuspendLayout();
+            this.gbSecondaryTextUploaders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpPrint.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +134,7 @@
             this.tcSettings.Location = new System.Drawing.Point(3, 3);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
-            this.tcSettings.Size = new System.Drawing.Size(530, 334);
+            this.tcSettings.Size = new System.Drawing.Size(618, 356);
             this.tcSettings.TabIndex = 0;
             // 
             // tpGeneral
@@ -129,7 +151,7 @@
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(522, 308);
+            this.tpGeneral.Size = new System.Drawing.Size(610, 330);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -251,7 +273,7 @@
             this.tpPaths.Location = new System.Drawing.Point(4, 22);
             this.tpPaths.Name = "tpPaths";
             this.tpPaths.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPaths.Size = new System.Drawing.Size(522, 308);
+            this.tpPaths.Size = new System.Drawing.Size(610, 330);
             this.tpPaths.TabIndex = 1;
             this.tpPaths.Text = "Paths";
             this.tpPaths.UseVisualStyleBackColor = true;
@@ -394,7 +416,7 @@
             this.tpProxy.Location = new System.Drawing.Point(4, 22);
             this.tpProxy.Name = "tpProxy";
             this.tpProxy.Padding = new System.Windows.Forms.Padding(5);
-            this.tpProxy.Size = new System.Drawing.Size(522, 308);
+            this.tpProxy.Size = new System.Drawing.Size(610, 330);
             this.tpProxy.TabIndex = 2;
             this.tpProxy.Text = "Proxy";
             this.tpProxy.UseVisualStyleBackColor = true;
@@ -524,16 +546,37 @@
             // 
             // tpUpload
             // 
-            this.tpUpload.Controls.Add(this.gbBandwidth);
-            this.tpUpload.Controls.Add(this.gbClipboardFormats);
-            this.tpUpload.Controls.Add(this.cbIfUploadFailRetryOnce);
+            this.tpUpload.Controls.Add(this.tcUpload);
             this.tpUpload.Location = new System.Drawing.Point(4, 22);
             this.tpUpload.Name = "tpUpload";
             this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpload.Size = new System.Drawing.Size(522, 308);
+            this.tpUpload.Size = new System.Drawing.Size(610, 330);
             this.tpUpload.TabIndex = 3;
             this.tpUpload.Text = "Upload";
             this.tpUpload.UseVisualStyleBackColor = true;
+            // 
+            // tcUpload
+            // 
+            this.tcUpload.Controls.Add(this.tpPerformance);
+            this.tcUpload.Controls.Add(this.tpUploadResults);
+            this.tcUpload.Controls.Add(this.tpUploadRetry);
+            this.tcUpload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcUpload.Location = new System.Drawing.Point(3, 3);
+            this.tcUpload.Name = "tcUpload";
+            this.tcUpload.SelectedIndex = 0;
+            this.tcUpload.Size = new System.Drawing.Size(604, 324);
+            this.tcUpload.TabIndex = 3;
+            // 
+            // tpPerformance
+            // 
+            this.tpPerformance.Controls.Add(this.gbBandwidth);
+            this.tpPerformance.Location = new System.Drawing.Point(4, 22);
+            this.tpPerformance.Name = "tpPerformance";
+            this.tpPerformance.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPerformance.Size = new System.Drawing.Size(596, 298);
+            this.tpPerformance.TabIndex = 0;
+            this.tpPerformance.Text = "Performance";
+            this.tpPerformance.UseVisualStyleBackColor = true;
             // 
             // gbBandwidth
             // 
@@ -542,7 +585,7 @@
             this.gbBandwidth.Controls.Add(this.lblUploadLimitHint);
             this.gbBandwidth.Controls.Add(this.lblBufferSize);
             this.gbBandwidth.Controls.Add(this.cbBufferSize);
-            this.gbBandwidth.Location = new System.Drawing.Point(16, 40);
+            this.gbBandwidth.Location = new System.Drawing.Point(8, 8);
             this.gbBandwidth.Name = "gbBandwidth";
             this.gbBandwidth.Size = new System.Drawing.Size(488, 88);
             this.gbBandwidth.TabIndex = 1;
@@ -605,13 +648,24 @@
             this.cbBufferSize.TabIndex = 4;
             this.cbBufferSize.SelectedIndexChanged += new System.EventHandler(this.cbBufferSize_SelectedIndexChanged);
             // 
+            // tpUploadResults
+            // 
+            this.tpUploadResults.Controls.Add(this.gbClipboardFormats);
+            this.tpUploadResults.Location = new System.Drawing.Point(4, 22);
+            this.tpUploadResults.Name = "tpUploadResults";
+            this.tpUploadResults.Padding = new System.Windows.Forms.Padding(3);
+            this.tpUploadResults.Size = new System.Drawing.Size(596, 298);
+            this.tpUploadResults.TabIndex = 1;
+            this.tpUploadResults.Text = "Results";
+            this.tpUploadResults.UseVisualStyleBackColor = true;
+            // 
             // gbClipboardFormats
             // 
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatEdit);
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatRemove);
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatAdd);
             this.gbClipboardFormats.Controls.Add(this.lvClipboardFormats);
-            this.gbClipboardFormats.Location = new System.Drawing.Point(16, 136);
+            this.gbClipboardFormats.Location = new System.Drawing.Point(8, 8);
             this.gbClipboardFormats.Name = "gbClipboardFormats";
             this.gbClipboardFormats.Size = new System.Drawing.Size(488, 160);
             this.gbClipboardFormats.TabIndex = 2;
@@ -672,16 +726,143 @@
             this.chFormat.Text = "Format";
             this.chFormat.Width = 320;
             // 
+            // tpUploadRetry
+            // 
+            this.tpUploadRetry.Controls.Add(this.chkUseSecondaryUploaders);
+            this.tpUploadRetry.Controls.Add(this.tlpBackupDestinations);
+            this.tpUploadRetry.Controls.Add(this.cbIfUploadFailRetryOnce);
+            this.tpUploadRetry.Controls.Add(this.nudRetryUpload);
+            this.tpUploadRetry.Location = new System.Drawing.Point(4, 22);
+            this.tpUploadRetry.Name = "tpUploadRetry";
+            this.tpUploadRetry.Padding = new System.Windows.Forms.Padding(3);
+            this.tpUploadRetry.Size = new System.Drawing.Size(596, 298);
+            this.tpUploadRetry.TabIndex = 2;
+            this.tpUploadRetry.Text = "Retry";
+            this.tpUploadRetry.UseVisualStyleBackColor = true;
+            // 
+            // chkUseSecondaryUploaders
+            // 
+            this.chkUseSecondaryUploaders.Location = new System.Drawing.Point(264, 12);
+            this.chkUseSecondaryUploaders.Name = "chkUseSecondaryUploaders";
+            this.chkUseSecondaryUploaders.Size = new System.Drawing.Size(305, 17);
+            this.chkUseSecondaryUploaders.TabIndex = 6;
+            this.chkUseSecondaryUploaders.Text = "Use secondary uploaders order of preference when retrying";
+            this.chkUseSecondaryUploaders.UseVisualStyleBackColor = true;
+            this.chkUseSecondaryUploaders.CheckedChanged += new System.EventHandler(this.chkUseSecondaryUploaders_CheckedChanged);
+            // 
+            // tlpBackupDestinations
+            // 
+            this.tlpBackupDestinations.ColumnCount = 3;
+            this.tlpBackupDestinations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpBackupDestinations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tlpBackupDestinations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tlpBackupDestinations.Controls.Add(this.gbSecondaryImageUploaders, 0, 0);
+            this.tlpBackupDestinations.Controls.Add(this.gbSecondaryFileUploaders, 2, 0);
+            this.tlpBackupDestinations.Controls.Add(this.gbSecondaryTextUploaders, 1, 0);
+            this.tlpBackupDestinations.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpBackupDestinations.Location = new System.Drawing.Point(3, 40);
+            this.tlpBackupDestinations.Name = "tlpBackupDestinations";
+            this.tlpBackupDestinations.RowCount = 1;
+            this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 255);
+            this.tlpBackupDestinations.TabIndex = 5;
+            // 
+            // gbSecondaryImageUploaders
+            // 
+            this.gbSecondaryImageUploaders.Controls.Add(this.lbSecondaryImageUploaders);
+            this.gbSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(3, 3);
+            this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
+            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(188, 249);
+            this.gbSecondaryImageUploaders.TabIndex = 3;
+            this.gbSecondaryImageUploaders.TabStop = false;
+            this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
+            // 
+            // lbSecondaryImageUploaders
+            // 
+            this.lbSecondaryImageUploaders.AllowDrop = true;
+            this.lbSecondaryImageUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSecondaryImageUploaders.FormattingEnabled = true;
+            this.lbSecondaryImageUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lbSecondaryImageUploaders.Name = "lbSecondaryImageUploaders";
+            this.lbSecondaryImageUploaders.Size = new System.Drawing.Size(182, 230);
+            this.lbSecondaryImageUploaders.TabIndex = 0;
+            this.lbSecondaryImageUploaders.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragDrop);
+            this.lbSecondaryImageUploaders.DragOver += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragOver);
+            this.lbSecondaryImageUploaders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbSecondaryUploaders_MouseDown);
+            // 
+            // gbSecondaryFileUploaders
+            // 
+            this.gbSecondaryFileUploaders.Controls.Add(this.lbSecondaryFileUploaders);
+            this.gbSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(397, 3);
+            this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
+            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(190, 249);
+            this.gbSecondaryFileUploaders.TabIndex = 2;
+            this.gbSecondaryFileUploaders.TabStop = false;
+            this.gbSecondaryFileUploaders.Text = "Secondary file uploaders";
+            // 
+            // lbSecondaryFileUploaders
+            // 
+            this.lbSecondaryFileUploaders.AllowDrop = true;
+            this.lbSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSecondaryFileUploaders.FormattingEnabled = true;
+            this.lbSecondaryFileUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lbSecondaryFileUploaders.Name = "lbSecondaryFileUploaders";
+            this.lbSecondaryFileUploaders.Size = new System.Drawing.Size(184, 230);
+            this.lbSecondaryFileUploaders.TabIndex = 1;
+            this.lbSecondaryFileUploaders.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragDrop);
+            this.lbSecondaryFileUploaders.DragOver += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragOver);
+            this.lbSecondaryFileUploaders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbSecondaryUploaders_MouseDown);
+            // 
+            // gbSecondaryTextUploaders
+            // 
+            this.gbSecondaryTextUploaders.Controls.Add(this.lbSecondaryTextUploaders);
+            this.gbSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(197, 3);
+            this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
+            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(194, 249);
+            this.gbSecondaryTextUploaders.TabIndex = 1;
+            this.gbSecondaryTextUploaders.TabStop = false;
+            this.gbSecondaryTextUploaders.Text = "Secondary text uploaders";
+            // 
+            // lbSecondaryTextUploaders
+            // 
+            this.lbSecondaryTextUploaders.AllowDrop = true;
+            this.lbSecondaryTextUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSecondaryTextUploaders.FormattingEnabled = true;
+            this.lbSecondaryTextUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lbSecondaryTextUploaders.Name = "lbSecondaryTextUploaders";
+            this.lbSecondaryTextUploaders.Size = new System.Drawing.Size(188, 230);
+            this.lbSecondaryTextUploaders.TabIndex = 1;
+            this.lbSecondaryTextUploaders.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragDrop);
+            this.lbSecondaryTextUploaders.DragOver += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragOver);
+            this.lbSecondaryTextUploaders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbSecondaryUploaders_MouseDown);
+            // 
             // cbIfUploadFailRetryOnce
             // 
             this.cbIfUploadFailRetryOnce.AutoSize = true;
-            this.cbIfUploadFailRetryOnce.Location = new System.Drawing.Point(16, 16);
+            this.cbIfUploadFailRetryOnce.Location = new System.Drawing.Point(8, 12);
             this.cbIfUploadFailRetryOnce.Name = "cbIfUploadFailRetryOnce";
-            this.cbIfUploadFailRetryOnce.Size = new System.Drawing.Size(223, 17);
+            this.cbIfUploadFailRetryOnce.Size = new System.Drawing.Size(185, 13);
             this.cbIfUploadFailRetryOnce.TabIndex = 0;
-            this.cbIfUploadFailRetryOnce.Text = "If upload fails then retry upload once more";
-            this.cbIfUploadFailRetryOnce.UseVisualStyleBackColor = true;
-            this.cbIfUploadFailRetryOnce.CheckedChanged += new System.EventHandler(this.cbIfUploadFailRetryOnce_CheckedChanged);
+            this.cbIfUploadFailRetryOnce.Text = "Number of times to retry if upload fails:";
+            // 
+            // nudRetryUpload
+            // 
+            this.nudRetryUpload.Location = new System.Drawing.Point(200, 9);
+            this.nudRetryUpload.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudRetryUpload.Name = "nudRetryUpload";
+            this.nudRetryUpload.Size = new System.Drawing.Size(48, 20);
+            this.nudRetryUpload.TabIndex = 4;
+
             // 
             // tpPrint
             // 
@@ -690,7 +871,7 @@
             this.tpPrint.Location = new System.Drawing.Point(4, 22);
             this.tpPrint.Name = "tpPrint";
             this.tpPrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrint.Size = new System.Drawing.Size(522, 308);
+            this.tpPrint.Size = new System.Drawing.Size(610, 330);
             this.tpPrint.TabIndex = 4;
             this.tpPrint.Text = "Print";
             this.tpPrint.UseVisualStyleBackColor = true;
@@ -722,7 +903,7 @@
             this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(522, 308);
+            this.tpAdvanced.Size = new System.Drawing.Size(610, 330);
             this.tpAdvanced.TabIndex = 5;
             this.tpAdvanced.Text = "Advanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
@@ -733,7 +914,7 @@
             this.pgSettings.Location = new System.Drawing.Point(3, 3);
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgSettings.Size = new System.Drawing.Size(516, 302);
+            this.pgSettings.Size = new System.Drawing.Size(604, 324);
             this.pgSettings.TabIndex = 0;
             // 
             // ApplicationSettingsForm
@@ -741,10 +922,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(536, 340);
+            this.ClientSize = new System.Drawing.Size(624, 362);
             this.Controls.Add(this.tcSettings);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(552, 300);
+            this.MinimumSize = new System.Drawing.Size(640, 400);
             this.Name = "ApplicationSettingsForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -762,11 +943,20 @@
             this.tpProxy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
             this.tpUpload.ResumeLayout(false);
-            this.tpUpload.PerformLayout();
+            this.tcUpload.ResumeLayout(false);
+            this.tpPerformance.ResumeLayout(false);
             this.gbBandwidth.ResumeLayout(false);
             this.gbBandwidth.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUploadLimit)).EndInit();
+            this.tpUploadResults.ResumeLayout(false);
             this.gbClipboardFormats.ResumeLayout(false);
+            this.tpUploadRetry.ResumeLayout(false);
+            this.tpUploadRetry.PerformLayout();
+            this.tlpBackupDestinations.ResumeLayout(false);
+            this.gbSecondaryImageUploaders.ResumeLayout(false);
+            this.gbSecondaryFileUploaders.ResumeLayout(false);
+            this.gbSecondaryTextUploaders.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).EndInit();
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
@@ -806,7 +996,7 @@
         private System.Windows.Forms.Label lblProxyMethod;
         private System.Windows.Forms.Label lblProxyNote;
         private System.Windows.Forms.TabPage tpUpload;
-        private System.Windows.Forms.CheckBox cbIfUploadFailRetryOnce;
+        private System.Windows.Forms.Label cbIfUploadFailRetryOnce;
         private System.Windows.Forms.Label lblUploadLimit;
         private System.Windows.Forms.ComboBox cbBufferSize;
         private System.Windows.Forms.Label lblUploadLimitHint;
@@ -835,5 +1025,18 @@
         private System.Windows.Forms.Button btnOpenScreenshotsFolder;
         private System.Windows.Forms.Label lblNotePersonalFolderPath;
         private System.Windows.Forms.CheckBox cbSilentRun;
+        private System.Windows.Forms.NumericUpDown nudRetryUpload;
+        private System.Windows.Forms.TableLayoutPanel tlpBackupDestinations;
+        private System.Windows.Forms.GroupBox gbSecondaryImageUploaders;
+        private System.Windows.Forms.ListBox lbSecondaryImageUploaders;
+        private System.Windows.Forms.GroupBox gbSecondaryFileUploaders;
+        private System.Windows.Forms.ListBox lbSecondaryFileUploaders;
+        private System.Windows.Forms.GroupBox gbSecondaryTextUploaders;
+        private System.Windows.Forms.ListBox lbSecondaryTextUploaders;
+        private System.Windows.Forms.TabControl tcUpload;
+        private System.Windows.Forms.TabPage tpPerformance;
+        private System.Windows.Forms.TabPage tpUploadResults;
+        private System.Windows.Forms.TabPage tpUploadRetry;
+        private System.Windows.Forms.CheckBox chkUseSecondaryUploaders;
     }
 }

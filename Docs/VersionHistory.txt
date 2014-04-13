@@ -1,4 +1,10 @@
-﻿ShareX 8.7.0
+﻿* Support for secondary uploaders if primary uploaders fail
+
+ShareX 8.7.1 - 2014-04-09
+
+* Bug fixes
+
+ShareX 8.7.0 - 2014-04-09
 
 * Added drag-and-drop window support
 * Toast notification window click actions

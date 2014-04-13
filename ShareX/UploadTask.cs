@@ -257,11 +257,14 @@ namespace ShareX
 
                     bool isError = DoUpload();
 
-                    if (isError && Program.Settings.IfUploadFailRetryOnce)
+                    if (isError && Program.Settings.MaxUploadFailRetry > 0)
                     {
                         DebugHelper.WriteLine("Upload failed. Retrying upload.");
-                        Thread.Sleep(1000);
-                        isError = DoUpload();
+                        int retry = 1;
+                        while (isError && retry <= Program.Settings.MaxUploadFailRetry)
+                        {
+                            isError = DoUpload(retry++);
+                        }
                     }
                 }
             }
@@ -274,7 +277,7 @@ namespace ShareX
             {
                 if (string.IsNullOrEmpty(Info.Result.URL))
                 {
-                    Info.Result.Errors.Add("URL is empty.");
+                    Info.Result.Errors.Add("URL is empty.\n\n" + Info.Result.ErrorsToString());
                 }
                 else
                 {
@@ -285,9 +288,22 @@ namespace ShareX
             Info.UploadTime = DateTime.UtcNow;
         }
 
-        private bool DoUpload()
+        private bool DoUpload(int retry = 0)
         {
             bool isError = false;
+
+            if (retry > 0 && Program.Settings.UseSecondaryUploaders)
+            {
+                Info.TaskSettings.ImageDestination = Program.Settings.SecondaryImageUploaders[retry - 1];
+                Info.TaskSettings.ImageFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                Info.TaskSettings.TextDestination = Program.Settings.SecondaryTextUploaders[retry - 1];
+                Info.TaskSettings.TextFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                Info.TaskSettings.FileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+            }
+            else
+            {
+                Thread.Sleep(1000);
+            }
 
             try
             {

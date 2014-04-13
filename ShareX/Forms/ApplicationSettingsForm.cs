@@ -28,6 +28,7 @@ using ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using UploadersLib;
 
@@ -85,7 +86,8 @@ namespace ShareX
             UpdateProxyControls();
 
             // Upload
-            cbIfUploadFailRetryOnce.Checked = Program.Settings.IfUploadFailRetryOnce;
+            nudRetryUpload.Value = Program.Settings.MaxUploadFailRetry;
+            chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
             nudUploadLimit.Value = Program.Settings.UploadLimit;
 
             for (int i = 0; i < MaxBufferSizePower; i++)
@@ -100,6 +102,21 @@ namespace ShareX
             {
                 AddClipboardFormat(cf);
             }
+
+            #region Secondary uploaders
+
+            if (Program.Settings.SecondaryImageUploaders.Count == 0)
+            {
+                Program.Settings.SecondaryImageUploaders.AddRange(Enum.GetValues(typeof(ImageDestination)).Cast<ImageDestination>());
+                Program.Settings.SecondaryTextUploaders.AddRange(Enum.GetValues(typeof(TextDestination)).Cast<TextDestination>());
+                Program.Settings.SecondaryFileUploaders.AddRange(Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>());
+            }
+
+            Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lbSecondaryImageUploaders.Items.Add(x));
+            Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lbSecondaryTextUploaders.Items.Add(x));
+            Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lbSecondaryFileUploaders.Items.Add(x));
+
+            #endregion Secondary uploaders
 
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
@@ -121,6 +138,11 @@ namespace ShareX
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Program.Settings.MaxUploadFailRetry = (int)nudRetryUpload.Value;
+            Program.Settings.SecondaryImageUploaders = lbSecondaryImageUploaders.Items.Cast<ImageDestination>().ToList<ImageDestination>();
+            Program.Settings.SecondaryTextUploaders = lbSecondaryTextUploaders.Items.Cast<TextDestination>().ToList<TextDestination>();
+            Program.Settings.SecondaryFileUploaders = lbSecondaryFileUploaders.Items.Cast<FileDestination>().ToList<FileDestination>();
+
             Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
         }
 
@@ -321,11 +343,6 @@ namespace ShareX
 
         #region Upload
 
-        private void cbIfUploadFailRetryOnce_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.IfUploadFailRetryOnce = cbIfUploadFailRetryOnce.Checked;
-        }
-
         private void nudUploadLimit_ValueChanged(object sender, EventArgs e)
         {
             Program.Settings.UploadLimit = (int)nudUploadLimit.Value;
@@ -397,6 +414,36 @@ namespace ShareX
                 Program.Settings.ClipboardContentFormats.Remove(cf);
                 lvClipboardFormats.Items.Remove(lvi);
             }
+        }
+
+        private void lbSecondaryUploaders_DragDrop(object sender, DragEventArgs e)
+        {
+            ListBox secondaryUploader = sender as ListBox;
+            int index = secondaryUploader.IndexFromPoint(secondaryUploader.PointToClient(new Point(e.X, e.Y)));
+            if (index < 0)
+                index = secondaryUploader.Items.Count - 1;
+            object data = e.Data.GetData(secondaryUploader.Items[index].GetType());
+            secondaryUploader.Items.Remove(data);
+            secondaryUploader.Items.Insert(index, data);
+        }
+
+        private void lbSecondaryUploaders_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void lbSecondaryUploaders_MouseDown(object sender, MouseEventArgs e)
+        {
+            ListBox secondaryUploader = sender as ListBox;
+            if (secondaryUploader.IndexFromPoint(e.X, e.Y) != -1)
+            {
+                secondaryUploader.DoDragDrop(secondaryUploader.SelectedItem, DragDropEffects.Move);
+            }
+        }
+
+        private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
         }
 
         #endregion Upload

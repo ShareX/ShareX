@@ -84,10 +84,15 @@ namespace ShareX
 
         #region Upload
 
-        public bool IfUploadFailRetryOnce = false;
         public int UploadLimit = 5;
         public int BufferSizePower = 5;
         public List<ClipboardFormat> ClipboardContentFormats = new List<ClipboardFormat>();
+
+        public int MaxUploadFailRetry = 0;
+        public bool UseSecondaryUploaders = true;
+        public List<ImageDestination> SecondaryImageUploaders = new List<ImageDestination>();
+        public List<TextDestination> SecondaryTextUploaders = new List<TextDestination>();
+        public List<FileDestination> SecondaryFileUploaders = new List<FileDestination>();
 
         #endregion Upload
 
