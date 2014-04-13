@@ -127,10 +127,13 @@ namespace HelpersLib
 
         protected override void OnItemDrag(ItemDragEventArgs e)
         {
-            base.OnItemDrag(e);
-            if (this.SelectedItems.Count > 0)
-                this.SelectedItem = this.SelectedItems[0];
-            this.DoDragDrop(this.SelectedItem, DragDropEffects.Move);
+            if (AllowDrop)
+            {
+                base.OnItemDrag(e);
+                if (this.SelectedItems.Count > 0)
+                    this.SelectedItem = this.SelectedItems[0];
+                this.DoDragDrop(this.SelectedItem, DragDropEffects.Move);
+            }
         }
 
         protected override void OnDragOver(DragEventArgs drgevent)
@@ -151,7 +154,6 @@ namespace HelpersLib
 
             if (this.SelectedItem != null)
             {
-                Cursor = Cursors.Hand;
                 ListViewItem insertItem = (ListViewItem)SelectedItem.Clone();
                 this.Items.Insert(DragToItem != null ? DragToItem.Index : Items.Count, insertItem);
                 this.Items.Remove(SelectedItem);
