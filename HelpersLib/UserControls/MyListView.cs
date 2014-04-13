@@ -130,7 +130,7 @@ namespace HelpersLib
 
             if (AllowDrop && e.Button == MouseButtons.Left)
             {
-                DoDragDrop((ListViewItem)e.Item, DragDropEffects.Move);
+                DoDragDrop(e.Item, DragDropEffects.Move);
             }
         }
 
@@ -138,18 +138,23 @@ namespace HelpersLib
         {
             base.OnDragOver(drgevent);
 
-            drgevent.Effect = DragDropEffects.Move;
+            ListViewItem lvi = drgevent.Data.GetData(typeof(ListViewItem)) as ListViewItem;
 
-            Point cp = PointToClient(new Point(drgevent.X, drgevent.Y));
-            dragOverItem = GetItemAt(cp.X, cp.Y);
-            lineIndex = dragOverItem != null ? dragOverItem.Index : Items.Count;
-
-            if (lineIndex != lastLineIndex)
+            if (lvi != null && lvi.ListView == this)
             {
-                Invalidate();
-            }
+                drgevent.Effect = DragDropEffects.Move;
 
-            lastLineIndex = lineIndex;
+                Point cp = PointToClient(new Point(drgevent.X, drgevent.Y));
+                dragOverItem = GetItemAt(cp.X, cp.Y);
+                lineIndex = dragOverItem != null ? dragOverItem.Index : Items.Count;
+
+                if (lineIndex != lastLineIndex)
+                {
+                    Invalidate();
+                }
+
+                lastLineIndex = lineIndex;
+            }
         }
 
         protected override void OnDragDrop(DragEventArgs drgevent)
@@ -158,7 +163,7 @@ namespace HelpersLib
 
             ListViewItem lvi = drgevent.Data.GetData(typeof(ListViewItem)) as ListViewItem;
 
-            if (lvi != null)
+            if (lvi != null && lvi.ListView == this)
             {
                 ListViewItem insertItem = (ListViewItem)lvi.Clone();
                 Items.Insert(dragOverItem != null ? dragOverItem.Index : Items.Count, insertItem);
