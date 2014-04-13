@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -42,10 +43,10 @@ namespace HelpersLib
         public int AutoFillColumnIndex { get; set; }
 
         [DefaultValue(-1)]
-        public int LineBefore { get; set; }
+        public int LineIndex { get; set; }
 
-        [DefaultValue(-1)]
-        public int LineAfter { get; set; }
+        private ListViewItem SelectedItem = null;
+        private ListViewItem DragToItem = null;
 
         public MyListView()
         {
@@ -117,18 +118,44 @@ namespace HelpersLib
         {
             base.WndProc(ref m);
 
-            if (m.Msg == WM_PAINT)
+            if (m.Msg == WM_PAINT && LineIndex >= 0)
             {
-                if (LineBefore >= 0 && LineBefore < Items.Count)
-                {
-                    Rectangle rc = Items[LineBefore].GetBounds(ItemBoundsPortion.Entire);
-                    DrawInsertionLine(rc.Left, rc.Right, rc.Top);
-                }
-                if (LineAfter >= 0 && LineBefore < Items.Count)
-                {
-                    Rectangle rc = Items[LineAfter].GetBounds(ItemBoundsPortion.Entire);
-                    DrawInsertionLine(rc.Left, rc.Right, rc.Bottom);
-                }
+                Rectangle rc = Items[LineIndex < Items.Count ? LineIndex : LineIndex - 1].GetBounds(ItemBoundsPortion.Entire);
+                DrawInsertionLine(rc.Left, rc.Right, LineIndex < Items.Count ? rc.Top : rc.Bottom);
+            }
+        }
+
+        protected override void OnItemDrag(ItemDragEventArgs e)
+        {
+            base.OnItemDrag(e);
+            if (this.SelectedItems.Count > 0)
+                this.SelectedItem = this.SelectedItems[0];
+            this.DoDragDrop(this.SelectedItem, DragDropEffects.Move);
+        }
+
+        protected override void OnDragOver(DragEventArgs drgevent)
+        {
+            base.OnDragOver(drgevent);
+            drgevent.Effect = DragDropEffects.Move;
+
+            Point cp = this.PointToClient(new Point(drgevent.X, drgevent.Y));
+            DragToItem = this.GetItemAt(cp.X, cp.Y);
+
+            this.LineIndex = DragToItem != null ? DragToItem.Index : this.Items.Count;
+            this.Invalidate();
+        }
+
+        protected override void OnDragDrop(DragEventArgs drgevent)
+        {
+            base.OnDragDrop(drgevent);
+
+            if (this.SelectedItem != null)
+            {
+                Cursor = Cursors.Hand;
+                ListViewItem insertItem = (ListViewItem)SelectedItem.Clone();
+                this.Items.Insert(DragToItem != null ? DragToItem.Index : Items.Count, insertItem);
+                this.Items.Remove(SelectedItem);
+                this.LineIndex = -1;
             }
         }
 

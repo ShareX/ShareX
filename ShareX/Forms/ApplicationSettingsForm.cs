@@ -39,7 +39,6 @@ namespace ShareX
         private bool loaded;
         private const int MaxBufferSizePower = 14;
         private ContextMenuStrip cmsSaveImageSubFolderPattern;
-        private ListViewItem _itemDnD = null;
 
         public ApplicationSettingsForm()
         {
@@ -426,95 +425,11 @@ namespace ShareX
             Program.Settings.MaxUploadFailRetry = (int)nudRetryUpload.Value;
         }
 
-        private void lvSecondaryUploaders_MouseDown(object sender, MouseEventArgs e)
-        {
-            MyListView lv = sender as MyListView;
-            _itemDnD = lv.GetItemAt(e.X, e.Y);
-        }
-
-        private void lvSecondaryUploaders_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_itemDnD != null)
-            {
-                Cursor = Cursors.Hand;
-
-                MyListView lv = sender as MyListView;
-
-                int lastItemBottom = Math.Min(e.Y, lv.Items[lv.Items.Count - 1].GetBounds(ItemBoundsPortion.Entire).Bottom - 1);
-                ListViewItem dragToItem = lv.GetItemAt(0, lastItemBottom);
-
-                if (dragToItem == null)
-                    return;
-
-                Rectangle rc = dragToItem.GetBounds(ItemBoundsPortion.Entire);
-                if (e.Y < rc.Top + (rc.Height / 2))
-                {
-                    lv.LineBefore = dragToItem.Index;
-                    lv.LineAfter = -1;
-                }
-                else
-                {
-                    lv.LineBefore = -1;
-                    lv.LineAfter = dragToItem.Index;
-                }
-
-                lv.Invalidate();
-            }
-        }
-
         private void lvSecondaryUploaders_MouseUp(object sender, MouseEventArgs e)
         {
-            if (_itemDnD == null)
-                return;
-
-            MyListView lv = sender as MyListView;
-            try
-            {
-                int lastItemBottom = Math.Min(e.Y, lv.Items[lv.Items.Count - 1].GetBounds(ItemBoundsPortion.Entire).Bottom - 1);
-                ListViewItem itemOver = lv.GetItemAt(0, lastItemBottom);
-
-                if (itemOver == null)
-                    return;
-
-                Rectangle rc = itemOver.GetBounds(ItemBoundsPortion.Entire);
-
-                bool insertBefore;
-                if (e.Y < rc.Top + (rc.Height / 2))
-                {
-                    insertBefore = true;
-                }
-                else
-                {
-                    insertBefore = false;
-                }
-
-                if (_itemDnD != itemOver)
-                {
-                    if (insertBefore)
-                    {
-                        lv.Items.Remove(_itemDnD);
-                        lv.Items.Insert(itemOver.Index, _itemDnD);
-                    }
-                    else
-                    {
-                        lv.Items.Remove(_itemDnD);
-                        lv.Items.Insert(itemOver.Index + 1, _itemDnD);
-                    }
-                }
-
-                lv.LineAfter = lv.LineBefore = -1;
-
-                lv.Invalidate();
-            }
-            finally
-            {
-                _itemDnD = null;
-                Cursor = Cursors.Default;
-
-                Program.Settings.SecondaryImageUploaders = lvSecondaryImageUploaders.Items.Cast<ListViewItem>().Select(x => (ImageDestination)x.Tag).ToList();
-                Program.Settings.SecondaryTextUploaders = lvSecondaryTextUploaders.Items.Cast<ListViewItem>().Select(x => (TextDestination)x.Tag).ToList();
-                Program.Settings.SecondaryFileUploaders = lvSecondaryFileUploaders.Items.Cast<ListViewItem>().Select(x => (FileDestination)x.Tag).ToList();
-            }
+            Program.Settings.SecondaryImageUploaders = lvSecondaryImageUploaders.Items.Cast<ListViewItem>().Select(x => (ImageDestination)x.Tag).ToList();
+            Program.Settings.SecondaryTextUploaders = lvSecondaryTextUploaders.Items.Cast<ListViewItem>().Select(x => (TextDestination)x.Tag).ToList();
+            Program.Settings.SecondaryFileUploaders = lvSecondaryFileUploaders.Items.Cast<ListViewItem>().Select(x => (FileDestination)x.Tag).ToList();
         }
 
         #endregion Upload

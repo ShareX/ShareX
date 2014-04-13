@@ -82,12 +82,21 @@ namespace ShareX
             this.btnClipboardFormatEdit = new System.Windows.Forms.Button();
             this.btnClipboardFormatRemove = new System.Windows.Forms.Button();
             this.btnClipboardFormatAdd = new System.Windows.Forms.Button();
+            this.lvClipboardFormats = new HelpersLib.MyListView();
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpUploadRetry = new System.Windows.Forms.TabPage();
             this.chkUseSecondaryUploaders = new System.Windows.Forms.CheckBox();
             this.tlpBackupDestinations = new System.Windows.Forms.TableLayoutPanel();
             this.gbSecondaryImageUploaders = new System.Windows.Forms.GroupBox();
+            this.lvSecondaryImageUploaders = new HelpersLib.MyListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryFileUploaders = new System.Windows.Forms.GroupBox();
+            this.lvSecondaryFileUploaders = new HelpersLib.MyListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryTextUploaders = new System.Windows.Forms.GroupBox();
+            this.lvSecondaryTextUploaders = new HelpersLib.MyListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
             this.tpPrint = new System.Windows.Forms.TabPage();
@@ -95,15 +104,6 @@ namespace ShareX
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.lvClipboardFormats = new HelpersLib.MyListView();
-            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvSecondaryImageUploaders = new HelpersLib.MyListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvSecondaryFileUploaders = new HelpersLib.MyListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvSecondaryTextUploaders = new HelpersLib.MyListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -138,7 +138,7 @@ namespace ShareX
             this.tcSettings.Location = new System.Drawing.Point(3, 3);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
-            this.tcSettings.Size = new System.Drawing.Size(658, 396);
+            this.tcSettings.Size = new System.Drawing.Size(778, 396);
             this.tcSettings.TabIndex = 0;
             // 
             // tpGeneral
@@ -155,7 +155,7 @@ namespace ShareX
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(650, 370);
+            this.tpGeneral.Size = new System.Drawing.Size(730, 370);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@ namespace ShareX
             this.tpPaths.Location = new System.Drawing.Point(4, 22);
             this.tpPaths.Name = "tpPaths";
             this.tpPaths.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPaths.Size = new System.Drawing.Size(650, 370);
+            this.tpPaths.Size = new System.Drawing.Size(730, 370);
             this.tpPaths.TabIndex = 1;
             this.tpPaths.Text = "Paths";
             this.tpPaths.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@ namespace ShareX
             this.tpProxy.Location = new System.Drawing.Point(4, 22);
             this.tpProxy.Name = "tpProxy";
             this.tpProxy.Padding = new System.Windows.Forms.Padding(5);
-            this.tpProxy.Size = new System.Drawing.Size(650, 370);
+            this.tpProxy.Size = new System.Drawing.Size(730, 370);
             this.tpProxy.TabIndex = 2;
             this.tpProxy.Text = "Proxy";
             this.tpProxy.UseVisualStyleBackColor = true;
@@ -554,7 +554,7 @@ namespace ShareX
             this.tpUpload.Location = new System.Drawing.Point(4, 22);
             this.tpUpload.Name = "tpUpload";
             this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpload.Size = new System.Drawing.Size(650, 370);
+            this.tpUpload.Size = new System.Drawing.Size(770, 370);
             this.tpUpload.TabIndex = 3;
             this.tpUpload.Text = "Upload";
             this.tpUpload.UseVisualStyleBackColor = true;
@@ -568,7 +568,7 @@ namespace ShareX
             this.tcUpload.Location = new System.Drawing.Point(3, 3);
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
-            this.tcUpload.Size = new System.Drawing.Size(644, 364);
+            this.tcUpload.Size = new System.Drawing.Size(764, 364);
             this.tcUpload.TabIndex = 3;
             // 
             // tpPerformance
@@ -577,7 +577,7 @@ namespace ShareX
             this.tpPerformance.Location = new System.Drawing.Point(4, 22);
             this.tpPerformance.Name = "tpPerformance";
             this.tpPerformance.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPerformance.Size = new System.Drawing.Size(636, 338);
+            this.tpPerformance.Size = new System.Drawing.Size(716, 338);
             this.tpPerformance.TabIndex = 0;
             this.tpPerformance.Text = "Performance";
             this.tpPerformance.UseVisualStyleBackColor = true;
@@ -658,7 +658,7 @@ namespace ShareX
             this.tpUploadResults.Location = new System.Drawing.Point(4, 22);
             this.tpUploadResults.Name = "tpUploadResults";
             this.tpUploadResults.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadResults.Size = new System.Drawing.Size(636, 338);
+            this.tpUploadResults.Size = new System.Drawing.Size(716, 338);
             this.tpUploadResults.TabIndex = 1;
             this.tpUploadResults.Text = "Results";
             this.tpUploadResults.UseVisualStyleBackColor = true;
@@ -706,6 +706,30 @@ namespace ShareX
             this.btnClipboardFormatAdd.UseVisualStyleBackColor = true;
             this.btnClipboardFormatAdd.Click += new System.EventHandler(this.btnAddClipboardFormat_Click);
             // 
+            // lvClipboardFormats
+            // 
+            this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chDescription,
+            this.chFormat});
+            this.lvClipboardFormats.FullRowSelect = true;
+            this.lvClipboardFormats.Location = new System.Drawing.Point(8, 48);
+            this.lvClipboardFormats.Name = "lvClipboardFormats";
+            this.lvClipboardFormats.Size = new System.Drawing.Size(472, 104);
+            this.lvClipboardFormats.TabIndex = 3;
+            this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
+            this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
+            this.lvClipboardFormats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvClipboardFormats_MouseDoubleClick);
+            // 
+            // chDescription
+            // 
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 135;
+            // 
+            // chFormat
+            // 
+            this.chFormat.Text = "Format";
+            this.chFormat.Width = 320;
+            // 
             // tpUploadRetry
             // 
             this.tpUploadRetry.Controls.Add(this.chkUseSecondaryUploaders);
@@ -715,7 +739,7 @@ namespace ShareX
             this.tpUploadRetry.Location = new System.Drawing.Point(4, 22);
             this.tpUploadRetry.Name = "tpUploadRetry";
             this.tpUploadRetry.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadRetry.Size = new System.Drawing.Size(636, 338);
+            this.tpUploadRetry.Size = new System.Drawing.Size(756, 338);
             this.tpUploadRetry.TabIndex = 2;
             this.tpUploadRetry.Text = "Retry";
             this.tpUploadRetry.UseVisualStyleBackColor = true;
@@ -732,6 +756,9 @@ namespace ShareX
             // 
             // tlpBackupDestinations
             // 
+            this.tlpBackupDestinations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpBackupDestinations.ColumnCount = 3;
             this.tlpBackupDestinations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tlpBackupDestinations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
@@ -739,13 +766,12 @@ namespace ShareX
             this.tlpBackupDestinations.Controls.Add(this.gbSecondaryImageUploaders, 0, 0);
             this.tlpBackupDestinations.Controls.Add(this.gbSecondaryFileUploaders, 2, 0);
             this.tlpBackupDestinations.Controls.Add(this.gbSecondaryTextUploaders, 1, 0);
-            this.tlpBackupDestinations.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBackupDestinations.Location = new System.Drawing.Point(3, 48);
+            this.tlpBackupDestinations.Location = new System.Drawing.Point(3, 40);
             this.tlpBackupDestinations.Name = "tlpBackupDestinations";
             this.tlpBackupDestinations.Padding = new System.Windows.Forms.Padding(5);
             this.tlpBackupDestinations.RowCount = 1;
             this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBackupDestinations.Size = new System.Drawing.Size(630, 287);
+            this.tlpBackupDestinations.Size = new System.Drawing.Size(750, 295);
             this.tlpBackupDestinations.TabIndex = 5;
             // 
             // gbSecondaryImageUploaders
@@ -754,32 +780,87 @@ namespace ShareX
             this.gbSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(8, 8);
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
-            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(198, 271);
+            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(238, 279);
             this.gbSecondaryImageUploaders.TabIndex = 3;
             this.gbSecondaryImageUploaders.TabStop = false;
             this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
+            // 
+            // lvSecondaryImageUploaders
+            // 
+            this.lvSecondaryImageUploaders.AllowDrop = true;
+            this.lvSecondaryImageUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvSecondaryImageUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lvSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvSecondaryImageUploaders.FullRowSelect = true;
+            this.lvSecondaryImageUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvSecondaryImageUploaders.HideSelection = false;
+            this.lvSecondaryImageUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lvSecondaryImageUploaders.MultiSelect = false;
+            this.lvSecondaryImageUploaders.Name = "lvSecondaryImageUploaders";
+            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(232, 260);
+            this.lvSecondaryImageUploaders.TabIndex = 0;
+            this.lvSecondaryImageUploaders.UseCompatibleStateImageBehavior = false;
+            this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
+            this.lvSecondaryImageUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
             // gbSecondaryFileUploaders
             // 
             this.gbSecondaryFileUploaders.Controls.Add(this.lvSecondaryFileUploaders);
             this.gbSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(422, 8);
+            this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(503, 8);
             this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
-            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(200, 271);
+            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(239, 279);
             this.gbSecondaryFileUploaders.TabIndex = 2;
             this.gbSecondaryFileUploaders.TabStop = false;
             this.gbSecondaryFileUploaders.Text = "Secondary file uploaders";
+            // 
+            // lvSecondaryFileUploaders
+            // 
+            this.lvSecondaryFileUploaders.AllowDrop = true;
+            this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3});
+            this.lvSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvSecondaryFileUploaders.FullRowSelect = true;
+            this.lvSecondaryFileUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvSecondaryFileUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lvSecondaryFileUploaders.MultiSelect = false;
+            this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
+            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(233, 260);
+            this.lvSecondaryFileUploaders.TabIndex = 1;
+            this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
+            this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
+            this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
             // gbSecondaryTextUploaders
             // 
             this.gbSecondaryTextUploaders.Controls.Add(this.lvSecondaryTextUploaders);
             this.gbSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(212, 8);
+            this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(252, 8);
             this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
-            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(204, 271);
+            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(245, 279);
             this.gbSecondaryTextUploaders.TabIndex = 1;
             this.gbSecondaryTextUploaders.TabStop = false;
             this.gbSecondaryTextUploaders.Text = "Secondary text uploaders";
+            // 
+            // lvSecondaryTextUploaders
+            // 
+            this.lvSecondaryTextUploaders.AllowDrop = true;
+            this.lvSecondaryTextUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvSecondaryTextUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.lvSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvSecondaryTextUploaders.FullRowSelect = true;
+            this.lvSecondaryTextUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvSecondaryTextUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lvSecondaryTextUploaders.MultiSelect = false;
+            this.lvSecondaryTextUploaders.Name = "lvSecondaryTextUploaders";
+            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(239, 260);
+            this.lvSecondaryTextUploaders.TabIndex = 1;
+            this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
+            this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
+            this.lvSecondaryTextUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
             // cbIfUploadFailRetryOnce
             // 
@@ -810,7 +891,7 @@ namespace ShareX
             this.tpPrint.Location = new System.Drawing.Point(4, 22);
             this.tpPrint.Name = "tpPrint";
             this.tpPrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrint.Size = new System.Drawing.Size(650, 370);
+            this.tpPrint.Size = new System.Drawing.Size(730, 370);
             this.tpPrint.TabIndex = 4;
             this.tpPrint.Text = "Print";
             this.tpPrint.UseVisualStyleBackColor = true;
@@ -842,7 +923,7 @@ namespace ShareX
             this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(650, 370);
+            this.tpAdvanced.Size = new System.Drawing.Size(730, 370);
             this.tpAdvanced.TabIndex = 5;
             this.tpAdvanced.Text = "Advanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
@@ -853,103 +934,18 @@ namespace ShareX
             this.pgSettings.Location = new System.Drawing.Point(3, 3);
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgSettings.Size = new System.Drawing.Size(644, 364);
+            this.pgSettings.Size = new System.Drawing.Size(724, 364);
             this.pgSettings.TabIndex = 0;
-            // 
-            // lvClipboardFormats
-            // 
-            this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chDescription,
-            this.chFormat});
-            this.lvClipboardFormats.FullRowSelect = true;
-            this.lvClipboardFormats.Location = new System.Drawing.Point(8, 48);
-            this.lvClipboardFormats.Name = "lvClipboardFormats";
-            this.lvClipboardFormats.Size = new System.Drawing.Size(472, 104);
-            this.lvClipboardFormats.TabIndex = 3;
-            this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
-            this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
-            this.lvClipboardFormats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvClipboardFormats_MouseDoubleClick);
-            // 
-            // chDescription
-            // 
-            this.chDescription.Text = "Description";
-            this.chDescription.Width = 135;
-            // 
-            // chFormat
-            // 
-            this.chFormat.Text = "Format";
-            this.chFormat.Width = 320;
-            // 
-            // lvSecondaryImageUploaders
-            // 
-            this.lvSecondaryImageUploaders.AllowDrop = true;
-            this.lvSecondaryImageUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvSecondaryImageUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.lvSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvSecondaryImageUploaders.FullRowSelect = true;
-            this.lvSecondaryImageUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvSecondaryImageUploaders.HideSelection = false;
-            this.lvSecondaryImageUploaders.Location = new System.Drawing.Point(3, 16);
-            this.lvSecondaryImageUploaders.MultiSelect = false;
-            this.lvSecondaryImageUploaders.Name = "lvSecondaryImageUploaders";
-            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(192, 252);
-            this.lvSecondaryImageUploaders.TabIndex = 0;
-            this.lvSecondaryImageUploaders.UseCompatibleStateImageBehavior = false;
-            this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
-            this.lvSecondaryImageUploaders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseDown);
-            this.lvSecondaryImageUploaders.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseMove);
-            this.lvSecondaryImageUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
-            // 
-            // lvSecondaryFileUploaders
-            // 
-            this.lvSecondaryFileUploaders.AllowDrop = true;
-            this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3});
-            this.lvSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvSecondaryFileUploaders.FullRowSelect = true;
-            this.lvSecondaryFileUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvSecondaryFileUploaders.Location = new System.Drawing.Point(3, 16);
-            this.lvSecondaryFileUploaders.MultiSelect = false;
-            this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
-            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(194, 252);
-            this.lvSecondaryFileUploaders.TabIndex = 1;
-            this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
-            this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
-            this.lvSecondaryFileUploaders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseDown);
-            this.lvSecondaryFileUploaders.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseMove);
-            this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
-            // 
-            // lvSecondaryTextUploaders
-            // 
-            this.lvSecondaryTextUploaders.AllowDrop = true;
-            this.lvSecondaryTextUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvSecondaryTextUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2});
-            this.lvSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvSecondaryTextUploaders.FullRowSelect = true;
-            this.lvSecondaryTextUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvSecondaryTextUploaders.Location = new System.Drawing.Point(3, 16);
-            this.lvSecondaryTextUploaders.MultiSelect = false;
-            this.lvSecondaryTextUploaders.Name = "lvSecondaryTextUploaders";
-            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(198, 252);
-            this.lvSecondaryTextUploaders.TabIndex = 1;
-            this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
-            this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
-            this.lvSecondaryTextUploaders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseDown);
-            this.lvSecondaryTextUploaders.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseMove);
-            this.lvSecondaryTextUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
             // ApplicationSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(664, 402);
+            this.ClientSize = new System.Drawing.Size(784, 402);
             this.Controls.Add(this.tcSettings);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(680, 440);
+            this.MinimumSize = new System.Drawing.Size(800, 440);
             this.Name = "ApplicationSettingsForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
