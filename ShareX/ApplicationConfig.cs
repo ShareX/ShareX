@@ -89,7 +89,7 @@ namespace ShareX
         public List<ClipboardFormat> ClipboardContentFormats = new List<ClipboardFormat>();
 
         public int MaxUploadFailRetry = 0;
-        public bool UseSecondaryUploaders = true;
+        public bool UseSecondaryUploaders = false;
         public List<ImageDestination> SecondaryImageUploaders = new List<ImageDestination>();
         public List<TextDestination> SecondaryTextUploaders = new List<TextDestination>();
         public List<FileDestination> SecondaryFileUploaders = new List<FileDestination>();

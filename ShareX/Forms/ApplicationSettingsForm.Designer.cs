@@ -760,20 +760,21 @@
             this.tlpBackupDestinations.Controls.Add(this.gbSecondaryFileUploaders, 2, 0);
             this.tlpBackupDestinations.Controls.Add(this.gbSecondaryTextUploaders, 1, 0);
             this.tlpBackupDestinations.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBackupDestinations.Location = new System.Drawing.Point(3, 40);
+            this.tlpBackupDestinations.Location = new System.Drawing.Point(3, 32);
             this.tlpBackupDestinations.Name = "tlpBackupDestinations";
+            this.tlpBackupDestinations.Padding = new System.Windows.Forms.Padding(5);
             this.tlpBackupDestinations.RowCount = 1;
             this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 255);
+            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 263);
             this.tlpBackupDestinations.TabIndex = 5;
             // 
             // gbSecondaryImageUploaders
             // 
             this.gbSecondaryImageUploaders.Controls.Add(this.lbSecondaryImageUploaders);
             this.gbSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(3, 3);
+            this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(8, 8);
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
-            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(188, 249);
+            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 247);
             this.gbSecondaryImageUploaders.TabIndex = 3;
             this.gbSecondaryImageUploaders.TabStop = false;
             this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
@@ -786,7 +787,7 @@
             this.lbSecondaryImageUploaders.FormattingEnabled = true;
             this.lbSecondaryImageUploaders.Location = new System.Drawing.Point(3, 16);
             this.lbSecondaryImageUploaders.Name = "lbSecondaryImageUploaders";
-            this.lbSecondaryImageUploaders.Size = new System.Drawing.Size(182, 230);
+            this.lbSecondaryImageUploaders.Size = new System.Drawing.Size(179, 228);
             this.lbSecondaryImageUploaders.TabIndex = 0;
             this.lbSecondaryImageUploaders.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragDrop);
             this.lbSecondaryImageUploaders.DragOver += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragOver);
@@ -796,9 +797,9 @@
             // 
             this.gbSecondaryFileUploaders.Controls.Add(this.lbSecondaryFileUploaders);
             this.gbSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(397, 3);
+            this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(396, 8);
             this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
-            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(190, 249);
+            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 247);
             this.gbSecondaryFileUploaders.TabIndex = 2;
             this.gbSecondaryFileUploaders.TabStop = false;
             this.gbSecondaryFileUploaders.Text = "Secondary file uploaders";
@@ -811,7 +812,7 @@
             this.lbSecondaryFileUploaders.FormattingEnabled = true;
             this.lbSecondaryFileUploaders.Location = new System.Drawing.Point(3, 16);
             this.lbSecondaryFileUploaders.Name = "lbSecondaryFileUploaders";
-            this.lbSecondaryFileUploaders.Size = new System.Drawing.Size(184, 230);
+            this.lbSecondaryFileUploaders.Size = new System.Drawing.Size(180, 228);
             this.lbSecondaryFileUploaders.TabIndex = 1;
             this.lbSecondaryFileUploaders.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragDrop);
             this.lbSecondaryFileUploaders.DragOver += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragOver);
@@ -821,9 +822,9 @@
             // 
             this.gbSecondaryTextUploaders.Controls.Add(this.lbSecondaryTextUploaders);
             this.gbSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(197, 3);
+            this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(199, 8);
             this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
-            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(194, 249);
+            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 247);
             this.gbSecondaryTextUploaders.TabIndex = 1;
             this.gbSecondaryTextUploaders.TabStop = false;
             this.gbSecondaryTextUploaders.Text = "Secondary text uploaders";
@@ -836,7 +837,7 @@
             this.lbSecondaryTextUploaders.FormattingEnabled = true;
             this.lbSecondaryTextUploaders.Location = new System.Drawing.Point(3, 16);
             this.lbSecondaryTextUploaders.Name = "lbSecondaryTextUploaders";
-            this.lbSecondaryTextUploaders.Size = new System.Drawing.Size(188, 230);
+            this.lbSecondaryTextUploaders.Size = new System.Drawing.Size(185, 228);
             this.lbSecondaryTextUploaders.TabIndex = 1;
             this.lbSecondaryTextUploaders.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragDrop);
             this.lbSecondaryTextUploaders.DragOver += new System.Windows.Forms.DragEventHandler(this.lbSecondaryUploaders_DragOver);
@@ -862,7 +863,7 @@
             this.nudRetryUpload.Name = "nudRetryUpload";
             this.nudRetryUpload.Size = new System.Drawing.Size(48, 20);
             this.nudRetryUpload.TabIndex = 4;
-
+            this.nudRetryUpload.ValueChanged += new System.EventHandler(this.nudRetryUpload_ValueChanged);
             // 
             // tpPrint
             // 

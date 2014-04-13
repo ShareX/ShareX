@@ -86,8 +86,6 @@ namespace ShareX
             UpdateProxyControls();
 
             // Upload
-            nudRetryUpload.Value = Program.Settings.MaxUploadFailRetry;
-            chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
             nudUploadLimit.Value = Program.Settings.UploadLimit;
 
             for (int i = 0; i < MaxBufferSizePower; i++)
@@ -103,20 +101,28 @@ namespace ShareX
                 AddClipboardFormat(cf);
             }
 
-            #region Secondary uploaders
+            nudRetryUpload.Value = Program.Settings.MaxUploadFailRetry;
+            chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
+            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
 
             if (Program.Settings.SecondaryImageUploaders.Count == 0)
             {
-                Program.Settings.SecondaryImageUploaders.AddRange(Enum.GetValues(typeof(ImageDestination)).Cast<ImageDestination>());
-                Program.Settings.SecondaryTextUploaders.AddRange(Enum.GetValues(typeof(TextDestination)).Cast<TextDestination>());
-                Program.Settings.SecondaryFileUploaders.AddRange(Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>());
+                Program.Settings.SecondaryImageUploaders.AddRange((ImageDestination[])Enum.GetValues(typeof(ImageDestination)));
+            }
+
+            if (Program.Settings.SecondaryTextUploaders.Count == 0)
+            {
+                Program.Settings.SecondaryTextUploaders.AddRange((TextDestination[])Enum.GetValues(typeof(TextDestination)));
+            }
+
+            if (Program.Settings.SecondaryFileUploaders.Count == 0)
+            {
+                Program.Settings.SecondaryFileUploaders.AddRange((FileDestination[])Enum.GetValues(typeof(FileDestination)));
             }
 
             Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lbSecondaryImageUploaders.Items.Add(x));
             Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lbSecondaryTextUploaders.Items.Add(x));
             Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lbSecondaryFileUploaders.Items.Add(x));
-
-            #endregion Secondary uploaders
 
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
@@ -138,11 +144,6 @@ namespace ShareX
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Program.Settings.MaxUploadFailRetry = (int)nudRetryUpload.Value;
-            Program.Settings.SecondaryImageUploaders = lbSecondaryImageUploaders.Items.Cast<ImageDestination>().ToList<ImageDestination>();
-            Program.Settings.SecondaryTextUploaders = lbSecondaryTextUploaders.Items.Cast<TextDestination>().ToList<TextDestination>();
-            Program.Settings.SecondaryFileUploaders = lbSecondaryFileUploaders.Items.Cast<FileDestination>().ToList<FileDestination>();
-
             Program.WritePersonalPathConfig(txtPersonalFolderPath.Text);
         }
 
@@ -420,11 +421,16 @@ namespace ShareX
         {
             ListBox secondaryUploader = sender as ListBox;
             int index = secondaryUploader.IndexFromPoint(secondaryUploader.PointToClient(new Point(e.X, e.Y)));
-            if (index < 0)
-                index = secondaryUploader.Items.Count - 1;
-            object data = e.Data.GetData(secondaryUploader.Items[index].GetType());
-            secondaryUploader.Items.Remove(data);
-            secondaryUploader.Items.Insert(index, data);
+            if (index >= 0)
+            {
+                object data = e.Data.GetData(secondaryUploader.Items[index].GetType());
+                secondaryUploader.Items.Remove(data);
+                secondaryUploader.Items.Insert(index, data);
+
+                Program.Settings.SecondaryImageUploaders = lbSecondaryImageUploaders.Items.Cast<ImageDestination>().ToList<ImageDestination>();
+                Program.Settings.SecondaryTextUploaders = lbSecondaryTextUploaders.Items.Cast<TextDestination>().ToList<TextDestination>();
+                Program.Settings.SecondaryFileUploaders = lbSecondaryFileUploaders.Items.Cast<FileDestination>().ToList<FileDestination>();
+            }
         }
 
         private void lbSecondaryUploaders_DragOver(object sender, DragEventArgs e)
@@ -441,9 +447,15 @@ namespace ShareX
             }
         }
 
+        private void nudRetryUpload_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.MaxUploadFailRetry = (int)nudRetryUpload.Value;
+        }
+
         private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
+            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
         }
 
         #endregion Upload

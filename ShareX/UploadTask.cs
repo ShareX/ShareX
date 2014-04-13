@@ -260,10 +260,10 @@ namespace ShareX
                     if (isError && Program.Settings.MaxUploadFailRetry > 0)
                     {
                         DebugHelper.WriteLine("Upload failed. Retrying upload.");
-                        int retry = 1;
-                        while (isError && retry <= Program.Settings.MaxUploadFailRetry)
+
+                        for (int retry = 1; isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
                         {
-                            isError = DoUpload(retry++);
+                            isError = DoUpload(retry);
                         }
                     }
                 }
@@ -277,7 +277,7 @@ namespace ShareX
             {
                 if (string.IsNullOrEmpty(Info.Result.URL))
                 {
-                    Info.Result.Errors.Add("URL is empty.\n\n" + Info.Result.ErrorsToString());
+                    Info.Result.Errors.Add("URL is empty.\r\n\r\n" + Info.Result.ErrorsToString());
                 }
                 else
                 {
@@ -292,17 +292,20 @@ namespace ShareX
         {
             bool isError = false;
 
-            if (retry > 0 && Program.Settings.UseSecondaryUploaders)
+            if (retry > 0)
             {
-                Info.TaskSettings.ImageDestination = Program.Settings.SecondaryImageUploaders[retry - 1];
-                Info.TaskSettings.ImageFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                Info.TaskSettings.TextDestination = Program.Settings.SecondaryTextUploaders[retry - 1];
-                Info.TaskSettings.TextFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                Info.TaskSettings.FileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-            }
-            else
-            {
-                Thread.Sleep(1000);
+                if (Program.Settings.UseSecondaryUploaders)
+                {
+                    Info.TaskSettings.ImageDestination = Program.Settings.SecondaryImageUploaders[retry - 1];
+                    Info.TaskSettings.ImageFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                    Info.TaskSettings.TextDestination = Program.Settings.SecondaryTextUploaders[retry - 1];
+                    Info.TaskSettings.TextFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                    Info.TaskSettings.FileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                }
+                else
+                {
+                    Thread.Sleep(1000);
+                }
             }
 
             try
