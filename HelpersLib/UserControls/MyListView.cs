@@ -25,6 +25,7 @@
 
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -40,12 +41,17 @@ namespace HelpersLib
         [DefaultValue(-1)]
         public int AutoFillColumnIndex { get; set; }
 
+        [DefaultValue(-1)]
+        public int LineBefore { get; set; }
+
+        [DefaultValue(-1)]
+        public int LineAfter { get; set; }
+
         public MyListView()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.EnableNotifyMessage, true);
 
-            AutoFillColumn = false;
-            AutoFillColumnIndex = -1;
+            this.ApplyDefaultPropertyValues();
             FullRowSelect = true;
             View = View.Details;
         }
@@ -105,6 +111,111 @@ namespace HelpersLib
             }
 
             base.OnKeyDown(e);
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+
+            if (m.Msg == WM_PAINT)
+            {
+                if (LineBefore >= 0 && LineBefore < Items.Count)
+                {
+                    Rectangle rc = Items[LineBefore].GetBounds(ItemBoundsPortion.Entire);
+                    DrawInsertionLine(rc.Left, rc.Right, rc.Top);
+                }
+                if (LineAfter >= 0 && LineBefore < Items.Count)
+                {
+                    Rectangle rc = Items[LineAfter].GetBounds(ItemBoundsPortion.Entire);
+                    DrawInsertionLine(rc.Left, rc.Right, rc.Bottom);
+                }
+            }
+        }
+
+        protected override void OnItemDrag(ItemDragEventArgs e)
+        {
+            base.OnItemDrag(e);
+            this.DoDragDrop(this.SelectedItems, DragDropEffects.Move);
+        }
+
+        protected override void OnDragEnter(DragEventArgs drgevent)
+        {
+            base.OnDragEnter(drgevent);
+            int len = drgevent.Data.GetFormats().Length - 1;
+            int i;
+            for (i = 0; i <= len; i++)
+            {
+                if (drgevent.Data.GetFormats()[i].Equals("System.Windows.Forms.ListView+SelectedListViewItemCollection"))
+                {
+                    drgevent.Effect = DragDropEffects.Move;
+                }
+            }
+        }
+
+        protected override void OnDragDrop(DragEventArgs drgevent)
+        {
+            base.OnDragDrop(drgevent);
+
+            if (this.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+            Point cp = this.PointToClient(new Point(drgevent.X, drgevent.Y));
+            ListViewItem dragToItem = this.GetItemAt(cp.X, cp.Y);
+            if (dragToItem == null)
+            {
+                return;
+            }
+
+            int dragIndex = dragToItem.Index;
+            ListViewItem[] sel = new ListViewItem[this.SelectedItems.Count];
+
+            for (int i = 0; i <= this.SelectedItems.Count - 1; i++)
+            {
+                sel[i] = this.SelectedItems[i];
+            }
+            for (int i = 0; i < sel.GetLength(0); i++)
+            {
+                ListViewItem dragItem = sel[i];
+                int itemIndex = dragIndex;
+                if (itemIndex == dragItem.Index)
+                {
+                    return;
+                }
+                if (dragItem.Index < itemIndex)
+                {
+                    itemIndex++;
+                }
+                else
+                {
+                    itemIndex = dragIndex + i;
+                }
+                ListViewItem insertItem = (ListViewItem)dragItem.Clone();
+                this.Items.Insert(itemIndex, insertItem);
+                this.Items.Remove(dragItem);
+            }
+        }
+
+        private void DrawInsertionLine(int X1, int X2, int Y)
+        {
+            using (Graphics g = this.CreateGraphics())
+            {
+                g.DrawLine(Pens.LightBlue, X1, Y, X2 - 1, Y);
+
+                Point[] leftTriangle = new Point[3] {
+                            new Point(X1,      Y-4),
+                            new Point(X1 + 7,  Y),
+                            new Point(X1,      Y+4)
+                        };
+                Point[] rightTriangle = new Point[3] {
+                            new Point(X2,     Y-4),
+                            new Point(X2 - 8, Y),
+                            new Point(X2,     Y+4)
+                        };
+                g.FillPolygon(Brushes.LightBlue, leftTriangle);
+                g.FillPolygon(Brushes.LightBlue, rightTriangle);
+            }
         }
     }
 }

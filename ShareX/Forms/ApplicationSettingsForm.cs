@@ -39,6 +39,7 @@ namespace ShareX
         private bool loaded;
         private const int MaxBufferSizePower = 14;
         private ContextMenuStrip cmsSaveImageSubFolderPattern;
+        private ListViewItem _itemDnD = null;
 
         public ApplicationSettingsForm()
         {
@@ -113,9 +114,13 @@ namespace ShareX
             Program.Settings.SecondaryTextUploaders.Where(n => (((TextDestination[])Enum.GetValues(typeof(TextDestination))).All(e => e != n))).ForEach(x => Program.Settings.SecondaryTextUploaders.Remove(x));
             Program.Settings.SecondaryFileUploaders.Where(n => (((FileDestination[])Enum.GetValues(typeof(FileDestination))).All(e => e != n))).ForEach(x => Program.Settings.SecondaryFileUploaders.Remove(x));
 
-            Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lbSecondaryImageUploaders.Items.Add(x));
-            Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lbSecondaryTextUploaders.Items.Add(x));
-            Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lbSecondaryFileUploaders.Items.Add(x));
+            Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lvSecondaryImageUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
+            Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lvSecondaryTextUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
+            Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
+
+            lvSecondaryImageUploaders.FillLastColumn();
+            lvSecondaryTextUploaders.FillLastColumn();
+            lvSecondaryFileUploaders.FillLastColumn();
 
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
@@ -410,34 +415,10 @@ namespace ShareX
             }
         }
 
-        private void lbSecondaryUploaders_DragDrop(object sender, DragEventArgs e)
+        private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
         {
-            ListBox secondaryUploader = sender as ListBox;
-            int index = secondaryUploader.IndexFromPoint(secondaryUploader.PointToClient(new Point(e.X, e.Y)));
-            if (index >= 0)
-            {
-                object data = e.Data.GetData(secondaryUploader.Items[index].GetType());
-                secondaryUploader.Items.Remove(data);
-                secondaryUploader.Items.Insert(index, data);
-
-                Program.Settings.SecondaryImageUploaders = lbSecondaryImageUploaders.Items.Cast<ImageDestination>().ToList<ImageDestination>();
-                Program.Settings.SecondaryTextUploaders = lbSecondaryTextUploaders.Items.Cast<TextDestination>().ToList<TextDestination>();
-                Program.Settings.SecondaryFileUploaders = lbSecondaryFileUploaders.Items.Cast<FileDestination>().ToList<FileDestination>();
-            }
-        }
-
-        private void lbSecondaryUploaders_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Move;
-        }
-
-        private void lbSecondaryUploaders_MouseDown(object sender, MouseEventArgs e)
-        {
-            ListBox secondaryUploader = sender as ListBox;
-            if (secondaryUploader.IndexFromPoint(e.X, e.Y) != -1)
-            {
-                secondaryUploader.DoDragDrop(secondaryUploader.SelectedItem, DragDropEffects.Move);
-            }
+            Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
+            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
         }
 
         private void nudRetryUpload_ValueChanged(object sender, EventArgs e)
@@ -445,10 +426,65 @@ namespace ShareX
             Program.Settings.MaxUploadFailRetry = (int)nudRetryUpload.Value;
         }
 
-        private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
+        private void lvSecondaryUploaders_MouseDown(object sender, MouseEventArgs e)
         {
-            Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
-            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
+            MyListView lv = sender as MyListView;
+            _itemDnD = lv.GetItemAt(e.X, e.Y);
+            Console.WriteLine(_itemDnD.Tag.ToString());
+        }
+
+        private void lvSecondaryUploaders_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_itemDnD != null)
+            {
+                Console.WriteLine(_itemDnD.Tag.ToString());
+                Cursor = Cursors.Hand;
+
+                MyListView lv = sender as MyListView;
+
+                int lastItemBottom = Math.Min(e.Y, lv.Items[lv.Items.Count - 1].GetBounds(ItemBoundsPortion.Entire).Bottom - 1);
+                ListViewItem dragToItem = lv.GetItemAt(0, lastItemBottom);
+
+                if (dragToItem == null)
+                    return;
+
+                Rectangle rc = dragToItem.GetBounds(ItemBoundsPortion.Entire);
+                if (e.Y < rc.Top + (rc.Height / 2))
+                {
+                    lv.LineBefore = dragToItem.Index;
+                    lv.LineAfter = -1;
+                }
+                else
+                {
+                    lv.LineBefore = -1;
+                    lv.LineAfter = dragToItem.Index;
+                }
+
+                lv.Invalidate();
+            }
+        }
+
+        private void lvSecondaryUploaders_MouseUp(object sender, MouseEventArgs e)
+        {
+            MyListView lv = sender as MyListView;
+
+            if (_itemDnD == null)
+                return;
+
+            try
+            {
+                lv.LineAfter = lv.LineBefore = -1;
+                lv.Invalidate();
+            }
+            finally
+            {
+                _itemDnD = null;
+                Cursor = Cursors.Default;
+
+                Program.Settings.SecondaryImageUploaders = lvSecondaryImageUploaders.Items.Cast<ListViewItem>().Select(x => (ImageDestination)x.Tag).ToList();
+                Program.Settings.SecondaryTextUploaders = lvSecondaryTextUploaders.Items.Cast<ListViewItem>().Select(x => (TextDestination)x.Tag).ToList();
+                Program.Settings.SecondaryFileUploaders = lvSecondaryFileUploaders.Items.Cast<ListViewItem>().Select(x => (FileDestination)x.Tag).ToList();
+            }
         }
 
         #endregion Upload
