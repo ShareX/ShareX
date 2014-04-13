@@ -117,10 +117,6 @@ namespace ShareX
             Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lvSecondaryTextUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
             Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
 
-            lvSecondaryImageUploaders.FillLastColumn();
-            lvSecondaryTextUploaders.FillLastColumn();
-            lvSecondaryFileUploaders.FillLastColumn();
-
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
 

@@ -138,7 +138,7 @@ namespace ShareX
             this.tcSettings.Location = new System.Drawing.Point(3, 3);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
-            this.tcSettings.Size = new System.Drawing.Size(618, 395);
+            this.tcSettings.Size = new System.Drawing.Size(618, 396);
             this.tcSettings.TabIndex = 0;
             // 
             // tpGeneral
@@ -155,7 +155,7 @@ namespace ShareX
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(610, 369);
+            this.tpGeneral.Size = new System.Drawing.Size(610, 370);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@ namespace ShareX
             this.tpPaths.Location = new System.Drawing.Point(4, 22);
             this.tpPaths.Name = "tpPaths";
             this.tpPaths.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPaths.Size = new System.Drawing.Size(770, 370);
+            this.tpPaths.Size = new System.Drawing.Size(610, 369);
             this.tpPaths.TabIndex = 1;
             this.tpPaths.Text = "Paths";
             this.tpPaths.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@ namespace ShareX
             this.tpProxy.Location = new System.Drawing.Point(4, 22);
             this.tpProxy.Name = "tpProxy";
             this.tpProxy.Padding = new System.Windows.Forms.Padding(5);
-            this.tpProxy.Size = new System.Drawing.Size(770, 370);
+            this.tpProxy.Size = new System.Drawing.Size(610, 369);
             this.tpProxy.TabIndex = 2;
             this.tpProxy.Text = "Proxy";
             this.tpProxy.UseVisualStyleBackColor = true;
@@ -554,7 +554,7 @@ namespace ShareX
             this.tpUpload.Location = new System.Drawing.Point(4, 22);
             this.tpUpload.Name = "tpUpload";
             this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpload.Size = new System.Drawing.Size(610, 369);
+            this.tpUpload.Size = new System.Drawing.Size(610, 370);
             this.tpUpload.TabIndex = 3;
             this.tpUpload.Text = "Upload";
             this.tpUpload.UseVisualStyleBackColor = true;
@@ -568,7 +568,7 @@ namespace ShareX
             this.tcUpload.Location = new System.Drawing.Point(3, 3);
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
-            this.tcUpload.Size = new System.Drawing.Size(604, 363);
+            this.tcUpload.Size = new System.Drawing.Size(604, 364);
             this.tcUpload.TabIndex = 3;
             // 
             // tpPerformance
@@ -577,7 +577,7 @@ namespace ShareX
             this.tpPerformance.Location = new System.Drawing.Point(4, 22);
             this.tpPerformance.Name = "tpPerformance";
             this.tpPerformance.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPerformance.Size = new System.Drawing.Size(596, 337);
+            this.tpPerformance.Size = new System.Drawing.Size(596, 338);
             this.tpPerformance.TabIndex = 0;
             this.tpPerformance.Text = "Performance";
             this.tpPerformance.UseVisualStyleBackColor = true;
@@ -658,7 +658,7 @@ namespace ShareX
             this.tpUploadResults.Location = new System.Drawing.Point(4, 22);
             this.tpUploadResults.Name = "tpUploadResults";
             this.tpUploadResults.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadResults.Size = new System.Drawing.Size(756, 338);
+            this.tpUploadResults.Size = new System.Drawing.Size(596, 338);
             this.tpUploadResults.TabIndex = 1;
             this.tpUploadResults.Text = "Results";
             this.tpUploadResults.UseVisualStyleBackColor = true;
@@ -739,7 +739,7 @@ namespace ShareX
             this.tpUploadRetry.Location = new System.Drawing.Point(4, 22);
             this.tpUploadRetry.Name = "tpUploadRetry";
             this.tpUploadRetry.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadRetry.Size = new System.Drawing.Size(596, 337);
+            this.tpUploadRetry.Size = new System.Drawing.Size(596, 338);
             this.tpUploadRetry.TabIndex = 2;
             this.tpUploadRetry.Text = "Retry";
             this.tpUploadRetry.UseVisualStyleBackColor = true;
@@ -771,7 +771,7 @@ namespace ShareX
             this.tlpBackupDestinations.Padding = new System.Windows.Forms.Padding(5);
             this.tlpBackupDestinations.RowCount = 1;
             this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 294);
+            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 295);
             this.tlpBackupDestinations.TabIndex = 5;
             // 
             // gbSecondaryImageUploaders
@@ -780,7 +780,8 @@ namespace ShareX
             this.gbSecondaryImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(8, 8);
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
-            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 278);
+            this.gbSecondaryImageUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 279);
             this.gbSecondaryImageUploaders.TabIndex = 3;
             this.gbSecondaryImageUploaders.TabStop = false;
             this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
@@ -788,6 +789,7 @@ namespace ShareX
             // lvSecondaryImageUploaders
             // 
             this.lvSecondaryImageUploaders.AllowDrop = true;
+            this.lvSecondaryImageUploaders.AutoFillColumn = true;
             this.lvSecondaryImageUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryImageUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
@@ -795,10 +797,10 @@ namespace ShareX
             this.lvSecondaryImageUploaders.FullRowSelect = true;
             this.lvSecondaryImageUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvSecondaryImageUploaders.HideSelection = false;
-            this.lvSecondaryImageUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lvSecondaryImageUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryImageUploaders.MultiSelect = false;
             this.lvSecondaryImageUploaders.Name = "lvSecondaryImageUploaders";
-            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(179, 259);
+            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(179, 258);
             this.lvSecondaryImageUploaders.TabIndex = 0;
             this.lvSecondaryImageUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
@@ -810,7 +812,8 @@ namespace ShareX
             this.gbSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(396, 8);
             this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
-            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 278);
+            this.gbSecondaryFileUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 279);
             this.gbSecondaryFileUploaders.TabIndex = 2;
             this.gbSecondaryFileUploaders.TabStop = false;
             this.gbSecondaryFileUploaders.Text = "Secondary file uploaders";
@@ -818,16 +821,17 @@ namespace ShareX
             // lvSecondaryFileUploaders
             // 
             this.lvSecondaryFileUploaders.AllowDrop = true;
+            this.lvSecondaryFileUploaders.AutoFillColumn = true;
             this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3});
             this.lvSecondaryFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvSecondaryFileUploaders.FullRowSelect = true;
             this.lvSecondaryFileUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvSecondaryFileUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lvSecondaryFileUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryFileUploaders.MultiSelect = false;
             this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
-            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 259);
+            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 258);
             this.lvSecondaryFileUploaders.TabIndex = 1;
             this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
@@ -839,7 +843,8 @@ namespace ShareX
             this.gbSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(199, 8);
             this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
-            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 278);
+            this.gbSecondaryTextUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 279);
             this.gbSecondaryTextUploaders.TabIndex = 1;
             this.gbSecondaryTextUploaders.TabStop = false;
             this.gbSecondaryTextUploaders.Text = "Secondary text uploaders";
@@ -847,16 +852,17 @@ namespace ShareX
             // lvSecondaryTextUploaders
             // 
             this.lvSecondaryTextUploaders.AllowDrop = true;
+            this.lvSecondaryTextUploaders.AutoFillColumn = true;
             this.lvSecondaryTextUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryTextUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2});
             this.lvSecondaryTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvSecondaryTextUploaders.FullRowSelect = true;
             this.lvSecondaryTextUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvSecondaryTextUploaders.Location = new System.Drawing.Point(3, 16);
+            this.lvSecondaryTextUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryTextUploaders.MultiSelect = false;
             this.lvSecondaryTextUploaders.Name = "lvSecondaryTextUploaders";
-            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 259);
+            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 258);
             this.lvSecondaryTextUploaders.TabIndex = 1;
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
@@ -891,7 +897,7 @@ namespace ShareX
             this.tpPrint.Location = new System.Drawing.Point(4, 22);
             this.tpPrint.Name = "tpPrint";
             this.tpPrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrint.Size = new System.Drawing.Size(770, 370);
+            this.tpPrint.Size = new System.Drawing.Size(610, 370);
             this.tpPrint.TabIndex = 4;
             this.tpPrint.Text = "Print";
             this.tpPrint.UseVisualStyleBackColor = true;
@@ -923,7 +929,7 @@ namespace ShareX
             this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(770, 370);
+            this.tpAdvanced.Size = new System.Drawing.Size(610, 370);
             this.tpAdvanced.TabIndex = 5;
             this.tpAdvanced.Text = "Advanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
@@ -934,7 +940,7 @@ namespace ShareX
             this.pgSettings.Location = new System.Drawing.Point(3, 3);
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgSettings.Size = new System.Drawing.Size(764, 364);
+            this.pgSettings.Size = new System.Drawing.Size(604, 364);
             this.pgSettings.TabIndex = 0;
             // 
             // ApplicationSettingsForm
@@ -942,7 +948,7 @@ namespace ShareX
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 401);
+            this.ClientSize = new System.Drawing.Size(624, 402);
             this.Controls.Add(this.tcSettings);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(640, 440);

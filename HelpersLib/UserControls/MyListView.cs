@@ -42,17 +42,16 @@ namespace HelpersLib
         [DefaultValue(-1)]
         public int AutoFillColumnIndex { get; set; }
 
-        [DefaultValue(-1)]
-        public int LineIndex { get; set; }
-
-        private ListViewItem SelectedItem = null;
-        private ListViewItem DragToItem = null;
+        private int lineIndex = -1;
+        private int lastLineIndex = -1;
+        private ListViewItem dragOverItem = null;
 
         public MyListView()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.EnableNotifyMessage, true);
 
-            this.ApplyDefaultPropertyValues();
+            AutoFillColumn = false;
+            AutoFillColumnIndex = -1;
             FullRowSelect = true;
             View = View.Details;
         }
@@ -118,66 +117,76 @@ namespace HelpersLib
         {
             base.WndProc(ref m);
 
-            if (m.Msg == WM_PAINT && LineIndex >= 0)
+            if (m.Msg == WM_PAINT && lineIndex >= 0)
             {
-                Rectangle rc = Items[LineIndex < Items.Count ? LineIndex : LineIndex - 1].GetBounds(ItemBoundsPortion.Entire);
-                DrawInsertionLine(rc.Left, rc.Right, LineIndex < Items.Count ? rc.Top : rc.Bottom);
+                Rectangle rc = Items[lineIndex < Items.Count ? lineIndex : lineIndex - 1].GetBounds(ItemBoundsPortion.Entire);
+                DrawInsertionLine(rc.Left, rc.Right, lineIndex < Items.Count ? rc.Top : rc.Bottom);
             }
         }
 
         protected override void OnItemDrag(ItemDragEventArgs e)
         {
-            if (AllowDrop)
+            base.OnItemDrag(e);
+
+            if (AllowDrop && e.Button == MouseButtons.Left)
             {
-                base.OnItemDrag(e);
-                if (this.SelectedItems.Count > 0)
-                    this.SelectedItem = this.SelectedItems[0];
-                this.DoDragDrop(this.SelectedItem, DragDropEffects.Move);
+                DoDragDrop((ListViewItem)e.Item, DragDropEffects.Move);
             }
         }
 
         protected override void OnDragOver(DragEventArgs drgevent)
         {
             base.OnDragOver(drgevent);
+
             drgevent.Effect = DragDropEffects.Move;
 
-            Point cp = this.PointToClient(new Point(drgevent.X, drgevent.Y));
-            DragToItem = this.GetItemAt(cp.X, cp.Y);
+            Point cp = PointToClient(new Point(drgevent.X, drgevent.Y));
+            dragOverItem = GetItemAt(cp.X, cp.Y);
+            lineIndex = dragOverItem != null ? dragOverItem.Index : Items.Count;
 
-            this.LineIndex = DragToItem != null ? DragToItem.Index : this.Items.Count;
-            this.Invalidate();
+            if (lineIndex != lastLineIndex)
+            {
+                Invalidate();
+            }
+
+            lastLineIndex = lineIndex;
         }
 
         protected override void OnDragDrop(DragEventArgs drgevent)
         {
             base.OnDragDrop(drgevent);
 
-            if (this.SelectedItem != null)
+            ListViewItem lvi = drgevent.Data.GetData(typeof(ListViewItem)) as ListViewItem;
+
+            if (lvi != null)
             {
-                ListViewItem insertItem = (ListViewItem)SelectedItem.Clone();
-                this.Items.Insert(DragToItem != null ? DragToItem.Index : Items.Count, insertItem);
-                this.Items.Remove(SelectedItem);
-                this.LineIndex = -1;
+                ListViewItem insertItem = (ListViewItem)lvi.Clone();
+                Items.Insert(dragOverItem != null ? dragOverItem.Index : Items.Count, insertItem);
+                Items.Remove(lvi);
             }
+
+            lineIndex = lastLineIndex = -1;
+            Invalidate();
         }
 
-        private void DrawInsertionLine(int X1, int X2, int Y)
+        protected override void OnDragLeave(EventArgs e)
         {
-            using (Graphics g = this.CreateGraphics())
-            {
-                g.DrawLine(Pens.LightBlue, X1, Y, X2 - 1, Y);
+            base.OnDragLeave(e);
 
-                Point[] leftTriangle = new Point[3] {
-                            new Point(X1,      Y-4),
-                            new Point(X1 + 7,  Y),
-                            new Point(X1,      Y+4)
-                        };
-                Point[] rightTriangle = new Point[3] {
-                            new Point(X2,     Y-4),
-                            new Point(X2 - 8, Y),
-                            new Point(X2,     Y+4)
-                        };
+            lineIndex = lastLineIndex = -1;
+            Invalidate();
+        }
+
+        private void DrawInsertionLine(int x1, int x2, int y)
+        {
+            using (Graphics g = CreateGraphics())
+            {
+                g.DrawLine(Pens.LightBlue, x1, y, x2 - 1, y);
+
+                Point[] leftTriangle = new Point[3] { new Point(x1, y - 4), new Point(x1 + 7, y), new Point(x1, y + 4) };
                 g.FillPolygon(Brushes.LightBlue, leftTriangle);
+
+                Point[] rightTriangle = new Point[3] { new Point(x2, y - 4), new Point(x2 - 8, y), new Point(x2, y + 4) };
                 g.FillPolygon(Brushes.LightBlue, rightTriangle);
             }
         }
