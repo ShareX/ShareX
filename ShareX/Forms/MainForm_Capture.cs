@@ -428,13 +428,23 @@ namespace ShareX
 
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            if (Surface.LastRegionFillPath != null)
+            if (!taskSettings.AdvancedSettings.UseLightRectangleCrop && Surface.LastRegionFillPath != null)
             {
                 DoCapture(() =>
                 {
                     using (Image screenshot = Screenshot.CaptureFullscreen())
                     {
                         return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                    }
+                }, CaptureType.LastRegion, taskSettings, autoHideForm);
+            }
+            else if (taskSettings.AdvancedSettings.UseLightRectangleCrop && !RectangleLight.LastSelectionRectangle0Based.IsEmpty)
+            {
+                DoCapture(() =>
+                {
+                    using (Image screenshot = Screenshot.CaptureFullscreen())
+                    {
+                        return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
                     }
                 }, CaptureType.LastRegion, taskSettings, autoHideForm);
             }

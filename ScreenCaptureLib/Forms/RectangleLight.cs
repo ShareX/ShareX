@@ -37,6 +37,8 @@ namespace ScreenCaptureLib
 {
     public class RectangleLight : Form
     {
+        public static Rectangle LastSelectionRectangle0Based;
+
         public Rectangle ScreenRectangle { get; private set; }
 
         public Rectangle ScreenRectangle0Based
@@ -172,8 +174,9 @@ namespace ScreenCaptureLib
         {
             if (isMouseDown && e.Button == MouseButtons.Left)
             {
-                if (SelectionRectangle.Width > 0 && SelectionRectangle.Height > 0)
+                if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
                 {
+                    LastSelectionRectangle0Based = SelectionRectangle0Based;
                     DialogResult = DialogResult.OK;
                 }
 
