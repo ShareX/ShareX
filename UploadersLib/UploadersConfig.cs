@@ -118,7 +118,7 @@ namespace UploadersLib
 
         public OAuthInfo DropboxOAuthInfo = null;
         public DropboxAccountInfo DropboxAccountInfo = null;
-        public string DropboxUploadPath = "Public/" + Application.ProductName + "/%y-%mo";
+        public string DropboxUploadPath = "Public/ShareX/%y/%mo";
         public bool DropboxAutoCreateShareableLink = false;
         public bool DropboxShortURL = true;
 
@@ -202,7 +202,7 @@ namespace UploadersLib
 
         public AmazonS3Settings AmazonS3Settings = new AmazonS3Settings()
         {
-            ObjectPrefix = Application.ProductName + "/%y-%mo/",
+            ObjectPrefix = "ShareX/%y/%mo",
             UseReducedRedundancyStorage = true
         };
 

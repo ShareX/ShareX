@@ -50,12 +50,6 @@ namespace UploadersLib.FileUploaders
             return S3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
         }
 
-        private string GetObjectKey(string fileName)
-        {
-            var parser = new NameParser(NameParserType.FolderPath);
-            return string.Format("{0}{1}", parser.Parse(S3Settings.ObjectPrefix), fileName);
-        }
-
         // Helper class to construct the S3 policy document (below)
         private class S3PolicyCondition : Dictionary<string, string>
         {
@@ -104,16 +98,25 @@ namespace UploadersLib.FileUploaders
             return Convert.ToBase64String(signatureBytes);
         }
 
+        private string GetObjectKey(string fileName)
+        {
+            NameParser parser = new NameParser(NameParserType.FolderPath);
+            string objectPrefix = S3Settings.ObjectPrefix.Trim('/');
+            return Helpers.CombineURL(parser.Parse(objectPrefix), fileName);
+        }
+
         private string GetObjectURL(string objectName)
         {
-            var urlEncodedObjectName = Helpers.URLPathEncode(objectName);
+            objectName = objectName.Trim('/');
+            objectName = Helpers.URLPathEncode(objectName);
+
             if (S3Settings.UseCustomCNAME)
             {
-                return string.Format("http://{0}/{1}", S3Settings.Bucket, urlEncodedObjectName);
+                return "http://" + Helpers.CombineURL(S3Settings.Bucket, objectName);
             }
             else
             {
-                return string.Format("{0}/{1}", GetEndpoint(), urlEncodedObjectName);
+                return Helpers.CombineURL(GetEndpoint(), objectName);
             }
         }
 

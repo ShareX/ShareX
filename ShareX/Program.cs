@@ -494,23 +494,17 @@ namespace ShareX
 
         public static void ConfigureUploadersConfigWatcher()
         {
-            if (Program.Settings.DetectUploaderConfigFileChanges)
+            if (Program.Settings.DetectUploaderConfigFileChanges && uploaderConfigWatcher == null)
             {
-                if (uploaderConfigWatcher == null)
-                {
-                    uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(Program.UploadersConfigFilePath), Path.GetFileName(Program.UploadersConfigFilePath));
-                    uploaderConfigWatcher.Changed += uploaderConfigWatcher_Changed;
-                    uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(Program.UploadersConfigFilePath);
-                    uploaderConfigWatcher.EnableRaisingEvents = true;
-                }
+                uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(Program.UploadersConfigFilePath), Path.GetFileName(Program.UploadersConfigFilePath));
+                uploaderConfigWatcher.Changed += uploaderConfigWatcher_Changed;
+                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(Program.UploadersConfigFilePath);
+                uploaderConfigWatcher.EnableRaisingEvents = true;
             }
-            else
+            else if (uploaderConfigWatcher != null)
             {
-                if (uploaderConfigWatcher != null)
-                {
-                    uploaderConfigWatcher.EnableRaisingEvents = false;
-                    uploaderConfigWatcher = null;
-                }
+                uploaderConfigWatcher.Dispose();
+                uploaderConfigWatcher = null;
             }
         }
 
@@ -527,7 +521,6 @@ namespace ShareX
 
         private static void ReloadUploadersConfig(string filePath)
         {
-            DebugHelper.WriteLine("uploaderConfigWatcher_Changed");
             UploadersConfig = UploadersLib.UploadersConfig.Load(filePath);
         }
 

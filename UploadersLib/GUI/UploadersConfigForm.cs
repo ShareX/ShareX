@@ -950,14 +950,14 @@ namespace UploadersLib
             Config.AmazonS3Settings.AccessKeyID = txtAmazonS3AccessKey.Text;
         }
 
+        private void btnAmazonS3AccessKeyOpen_Click(object sender, EventArgs e)
+        {
+            Helpers.LoadBrowserAsync("https://console.aws.amazon.com/iam/home?#security_credential");
+        }
+
         private void txtAmazonS3SecretKey_TextChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.SecretAccessKey = txtAmazonS3SecretKey.Text;
-        }
-
-        private void txtAmazonS3ObjectPrefix_TextChanged(object sender, EventArgs e)
-        {
-            Config.AmazonS3Settings.ObjectPrefix = txtAmazonS3ObjectPrefix.Text;
         }
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
@@ -973,6 +973,16 @@ namespace UploadersLib
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.Bucket = txtAmazonS3BucketName.Text;
+        }
+
+        private void btnAmazonS3BucketNameOpen_Click(object sender, EventArgs e)
+        {
+            Helpers.LoadBrowserAsync("https://console.aws.amazon.com/s3/home");
+        }
+
+        private void txtAmazonS3ObjectPrefix_TextChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.ObjectPrefix = txtAmazonS3ObjectPrefix.Text;
         }
 
         private void cbAmazonS3UseRRS_CheckedChanged(object sender, EventArgs e)
