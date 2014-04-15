@@ -774,6 +774,8 @@ namespace ShareX
 
             AfterSettingsJobs();
             Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
+
+            Program.ConfigureUploadersConfigWatcher();
         }
 
         private void tsbTaskSettings_Click(object sender, EventArgs e)
@@ -813,7 +815,7 @@ namespace ShareX
                 uploadersConfigForm.ShowDialog();
             }
 
-            Program.UploadersConfig.SaveAsync(Program.UploadersConfigFilePath);
+            Program.UploadersConfigSaveAsync();
         }
 
         private void tsmiCursorHelper_Click(object sender, EventArgs e)

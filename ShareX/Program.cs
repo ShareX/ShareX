@@ -32,6 +32,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UploadersLib;
 
@@ -82,6 +83,9 @@ namespace ShareX
         private static readonly string LogFileName = ApplicationName + "-Log-{0:yyyy-MM}.txt";
 
         public static string CustomPersonalPath { get; private set; }
+
+        private static FileSystemWatcher uploaderConfigWatcher;
+        private static WatchFolderDuplicateEventTimer uploaderConfigWatcherTimer;
 
         public static string PersonalPath
         {
@@ -335,6 +339,8 @@ namespace ShareX
             UploaderSettingsResetEvent.Set();
             LoadHotkeySettings();
             HotkeySettingsResetEvent.Set();
+
+            ConfigureUploadersConfigWatcher();
         }
 
         public static void LoadProgramSettings()
@@ -484,6 +490,52 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        public static void ConfigureUploadersConfigWatcher()
+        {
+            if (Program.Settings.DetectUploaderConfigFileChanges)
+            {
+                if (uploaderConfigWatcher == null)
+                {
+                    uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(Program.UploadersConfigFilePath), Path.GetFileName(Program.UploadersConfigFilePath));
+                    uploaderConfigWatcher.Changed += uploaderConfigWatcher_Changed;
+                    uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(Program.UploadersConfigFilePath);
+                    uploaderConfigWatcher.EnableRaisingEvents = true;
+                }
+            }
+            else
+            {
+                if (uploaderConfigWatcher != null)
+                {
+                    uploaderConfigWatcher.EnableRaisingEvents = false;
+                    uploaderConfigWatcher = null;
+                }
+            }
+        }
+
+        private static void uploaderConfigWatcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            if (!uploaderConfigWatcherTimer.IsDuplicateEvent(e.FullPath))
+            {
+                SynchronizationContext context = SynchronizationContext.Current ?? new SynchronizationContext();
+                Action onCompleted = () => context.Post(state => ReloadUploadersConfig(e.FullPath), null);
+                Helpers.WaitWhileAsync(() => Helpers.IsFileLocked(e.FullPath), 250, 5000, onCompleted, 1000);
+                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(e.FullPath);
+            }
+        }
+
+        private static void ReloadUploadersConfig(string filePath)
+        {
+            DebugHelper.WriteLine("uploaderConfigWatcher_Changed");
+            UploadersConfig = UploadersLib.UploadersConfig.Load(filePath);
+        }
+
+        public async static void UploadersConfigSaveAsync()
+        {
+            if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
+            await TaskEx.Run(() => UploadersConfig.Save(Program.UploadersConfigFilePath));
+            if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
         }
     }
 }
