@@ -176,7 +176,7 @@ namespace UploadersLib.FileUploaders
 
             MinusFolder dir;
 
-            string response = SendPostRequestURLEncoded(GetActiveUserFolderURL(), args);
+            string response = SendRequest(HttpMethod.POST, GetActiveUserFolderURL(), args);
             if (!string.IsNullOrEmpty(response))
             {
                 dir = JsonConvert.DeserializeObject<MinusFolder>(response);

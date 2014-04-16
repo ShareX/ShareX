@@ -115,7 +115,6 @@ namespace UploadersLib
             }
         }
 
-        // For send json text etc.
         protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
@@ -124,23 +123,27 @@ namespace UploadersLib
             using (MemoryStream ms = new MemoryStream())
             {
                 ms.Write(data, 0, data.Length);
-
-                using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, ms))
-                {
-                    return ResponseToString(response, responseType);
-                }
+                return SendRequest(method, url, ms, arguments, responseType, headers, cookies);
             }
         }
 
-        // Mainly for download file
-        protected bool SendRequest(HttpMethod method, Stream responseStream, string url, Dictionary<string, string> arguments = null,
+        protected string SendRequest(HttpMethod method, string url, Stream content, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
+            NameValueCollection headers = null, CookieCollection cookies = null)
+        {
+            using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, content))
+            {
+                return ResponseToString(response, responseType);
+            }
+        }
+
+        protected bool SendRequest(HttpMethod method, Stream downloadStream, string url, Dictionary<string, string> arguments = null,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
             using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies))
             {
                 if (response != null)
                 {
-                    response.GetResponseStream().CopyStreamTo(responseStream, BufferSize);
+                    response.GetResponseStream().CopyStreamTo(downloadStream, BufferSize);
                     return true;
                 }
             }
@@ -189,19 +192,6 @@ namespace UploadersLib
 
         #region Post methods
 
-        protected string SendPostRequestURLEncoded(string url, string arguments = null, ResponseType responseType = ResponseType.Text)
-        {
-            using (HttpWebResponse response = PostResponseURLEncoded(url, arguments))
-            {
-                return ResponseToString(response, responseType);
-            }
-        }
-
-        protected string SendPostRequestURLEncoded(string url, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text)
-        {
-            return SendPostRequestURLEncoded(url, CreateQuery(arguments), responseType);
-        }
-
         protected string SendPostRequestJSON(string url, string json, ResponseType responseType = ResponseType.Text, CookieCollection cookies = null, NameValueCollection headers = null)
         {
             using (HttpWebResponse response = PostResponseJSON(url, json, cookies, headers))
@@ -228,22 +218,6 @@ namespace UploadersLib
                 stream.Write(data, 0, data.Length);
                 return GetResponseUsingPost(url, stream, boundary, "multipart/form-data", cookies, headers);
             }
-        }
-
-        private HttpWebResponse PostResponseURLEncoded(string url, string arguments)
-        {
-            byte[] data = Encoding.UTF8.GetBytes(arguments);
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                stream.Write(data, 0, data.Length);
-                return GetResponseUsingPost(url, stream, null, "application/x-www-form-urlencoded");
-            }
-        }
-
-        private HttpWebResponse PostResponseURLEncoded(string url, Dictionary<string, string> arguments)
-        {
-            return PostResponseURLEncoded(url, CreateQuery(arguments));
         }
 
         private HttpWebResponse PostResponseJSON(string url, string json, CookieCollection cookies = null, NameValueCollection headers = null)

@@ -722,34 +722,25 @@ namespace UploadersLib
             }
             else
             {
-                tvBoxFolders.Nodes.Clear();
+                lvBoxFolders.Items.Clear();
+                BoxAddFolder(Box.RootFolder);
                 Box box = new Box(Config.BoxOAuth2Info);
-                BoxFolder root = box.GetFolderList();
-                BoxRecursiveAddChilds(tvBoxFolders.Nodes, root);
-                tvBoxFolders.ExpandAll();
+                BoxFileInfo files = box.GetFiles(Box.RootFolder);
+                if (files != null && files.entries != null && files.entries.Length > 0)
+                {
+                    foreach (BoxFileEntry folder in files.entries.Where(x => x.type == "folder"))
+                    {
+                        BoxAddFolder(folder);
+                    }
+                }
             }
         }
 
-        private void BoxRecursiveAddChilds(TreeNodeCollection treeNodes, BoxFolder folderInfo)
+        private void BoxAddFolder(BoxFileEntry folder)
         {
-            string folderName;
-
-            if (folderInfo.ID == "0")
-            {
-                folderName = "root";
-            }
-            else
-            {
-                folderName = folderInfo.Name;
-            }
-
-            TreeNode treeNode = treeNodes.Add(folderName);
-            treeNode.Tag = folderInfo;
-
-            foreach (BoxFolder folderInfo2 in folderInfo.Folders)
-            {
-                BoxRecursiveAddChilds(treeNode.Nodes, folderInfo2);
-            }
+            ListViewItem lvi = new ListViewItem(folder.name);
+            lvi.Tag = folder;
+            lvBoxFolders.Items.Add(lvi);
         }
 
         #endregion Box

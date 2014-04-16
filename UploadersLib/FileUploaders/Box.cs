@@ -35,6 +35,13 @@ namespace UploadersLib.FileUploaders
 {
     public sealed class Box : FileUploader, IOAuth2
     {
+        public static BoxFileEntry RootFolder = new BoxFileEntry
+        {
+            type = "folder",
+            id = "0",
+            name = "All Files"
+        };
+
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool Share { get; set; }
@@ -127,87 +134,26 @@ namespace UploadersLib.FileUploaders
             return true;
         }
 
-        public BoxFolder GetAccountTree(string folderID = "0", bool onelevel = false, bool nofiles = false, bool nozip = true, bool simple = false)
+        public BoxFileInfo GetFiles(BoxFileEntry folder)
         {
-            NameValueCollection args = new NameValueCollection();
-            args.Add("action", "get_account_tree");
-            args.Add("folder_id", folderID);
+            return GetFiles(folder.id);
+        }
 
-            if (onelevel) // Make a tree of one level depth, so you will get only the files and folders stored in the folder of the folder_id you have provided.
-            {
-                args.Add("params", "onelevel");
-            }
+        public BoxFileInfo GetFiles(string id)
+        {
+            string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
 
-            if (nofiles) // Only include the folders in the user account tree, and ignore the files.
-            {
-                args.Add("params", "nofiles");
-            }
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
 
-            if (nozip) // Do not zip the tree xml.
-            {
-                args.Add("params", "nozip");
-            }
-
-            if (simple) // Display the full tree with a limited list of attributes to make for smaller, more efficient output (folders only contain the 'name' and 'id' attributes, and files will contain the 'name', 'id', 'created', and 'size' attributes)
-            {
-                args.Add("params", "simple");
-            }
-
-            string url = CreateQuery("", args);
-
-            string response = SendRequest(HttpMethod.GET, url);
+            string response = SendRequest(HttpMethod.GET, url, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
             {
-                XDocument xd = XDocument.Parse(response);
-                XElement xe = xd.GetElement("response");
-
-                if (xe != null && xe.GetElementValue("status") == "listing_ok")
-                {
-                    XElement xeTree = xe.Element("tree");
-
-                    if (xeTree != null)
-                    {
-                        return ParseFolder(xeTree.Element("folder"));
-                    }
-                }
+                return JsonConvert.DeserializeObject<BoxFileInfo>(response);
             }
 
             return null;
-        }
-
-        private BoxFolder ParseFolder(XElement xe)
-        {
-            if (xe != null && xe.Name == "folder")
-            {
-                BoxFolder folder = new BoxFolder();
-                folder.ID = xe.GetAttributeValue("id");
-                folder.Name = xe.GetAttributeValue("name");
-
-                XElement xeFolders = xe.Element("folders");
-
-                if (xeFolders != null)
-                {
-                    foreach (XElement xeFolder in xeFolders.Elements())
-                    {
-                        BoxFolder childFolder = ParseFolder(xeFolder);
-
-                        if (childFolder != null)
-                        {
-                            folder.Folders.Add(childFolder);
-                        }
-                    }
-                }
-
-                return folder;
-            }
-
-            return null;
-        }
-
-        public BoxFolder GetFolderList()
-        {
-            return GetAccountTree("0", false, true, true, true);
         }
 
         public string CreateSharedLink(string id)
@@ -237,6 +183,11 @@ namespace UploadersLib.FileUploaders
                 return null;
             }
 
+            if (string.IsNullOrEmpty(FolderID))
+            {
+                FolderID = "0";
+            }
+
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("parent_id", FolderID);
 
@@ -251,13 +202,16 @@ namespace UploadersLib.FileUploaders
 
                 if (fileInfo != null && fileInfo.entries != null && fileInfo.entries.Length > 0)
                 {
+                    BoxFileEntry fileEntry = fileInfo.entries[0];
+
                     if (Share)
                     {
-                        result.URL = CreateSharedLink(fileInfo.entries[0].id);
+                        AllowReportProgress = false;
+                        result.URL = CreateSharedLink(fileEntry.id);
                     }
                     else
                     {
-                        result.URL = string.Format("https://app.box.com/files/0/f/{0}/1/f_{1}", "folder", "file");
+                        result.URL = string.Format("https://app.box.com/files/0/f/{0}/1/f_{1}", fileEntry.parent.id, fileEntry.id);
                     }
                 }
             }
@@ -273,9 +227,13 @@ namespace UploadersLib.FileUploaders
 
     public class BoxFileEntry
     {
+        public string type { get; set; }
         public string id { get; set; }
+        public string sequence_id { get; set; }
+        public string etag { get; set; }
         public string name { get; set; }
         public BoxFileSharedLink shared_link { get; set; }
+        public BoxFileEntry parent { get; set; }
     }
 
     public class BoxFileSharedLink

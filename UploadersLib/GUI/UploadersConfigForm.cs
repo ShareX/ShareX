@@ -529,6 +529,11 @@ namespace UploadersLib
             BoxAuthRefresh();
         }
 
+        private void cbBoxShare_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.BoxShare = cbBoxShare.Checked;
+        }
+
         private void txtBoxFolderID_TextChanged(object sender, EventArgs e)
         {
             Config.BoxFolderID = txtBoxFolderID.Text;
@@ -539,12 +544,16 @@ namespace UploadersLib
             BoxListFolders();
         }
 
-        private void tvBoxFolders_AfterSelect(object sender, TreeViewEventArgs e)
+        private void lvBoxFolders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (e.Node != null && e.Node.Tag is BoxFolder)
+            if (lvBoxFolders.SelectedItems.Count > 0)
             {
-                BoxFolder folderInfo = (BoxFolder)e.Node.Tag;
-                txtBoxFolderID.Text = folderInfo.ID;
+                ListViewItem lvi = lvBoxFolders.SelectedItems[0];
+                BoxFileEntry file = lvi.Tag as BoxFileEntry;
+                if (file != null)
+                {
+                    txtBoxFolderID.Text = file.id;
+                }
             }
         }
 

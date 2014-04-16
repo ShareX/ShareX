@@ -295,6 +295,7 @@ namespace UploadersLib
                 btnBoxRefreshFolders.Enabled = true;
             }
 
+            cbBoxShare.Checked = Config.BoxShare;
             txtBoxFolderID.Text = Config.BoxFolderID;
 
             // Ge.tt
