@@ -771,7 +771,7 @@ namespace ShareX
                 case FileDestination.Box:
                     fileUploader = new Box(Program.UploadersConfig.BoxOAuth2Info)
                     {
-                        FolderID = Program.UploadersConfig.BoxFolderID,
+                        FolderID = Program.UploadersConfig.BoxSelectedFolder.id,
                         Share = Program.UploadersConfig.BoxShare
                     };
                     break;

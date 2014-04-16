@@ -534,11 +534,6 @@ namespace UploadersLib
             Config.BoxShare = cbBoxShare.Checked;
         }
 
-        private void txtBoxFolderID_TextChanged(object sender, EventArgs e)
-        {
-            Config.BoxFolderID = txtBoxFolderID.Text;
-        }
-
         private void btnBoxRefreshFolders_Click(object sender, EventArgs e)
         {
             BoxListFolders();
@@ -552,7 +547,21 @@ namespace UploadersLib
                 BoxFileEntry file = lvi.Tag as BoxFileEntry;
                 if (file != null)
                 {
-                    txtBoxFolderID.Text = file.id;
+                    lblBoxFolderID.Text = "Selected folder: " + file.name;
+                }
+            }
+        }
+
+        private void lvBoxFolders_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && lvBoxFolders.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvBoxFolders.SelectedItems[0];
+                BoxFileEntry file = lvi.Tag as BoxFileEntry;
+                if (file != null)
+                {
+                    lvBoxFolders.Items.Clear();
+                    BoxListFolders(file);
                 }
             }
         }

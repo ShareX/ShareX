@@ -39,7 +39,7 @@ namespace UploadersLib.FileUploaders
         {
             type = "folder",
             id = "0",
-            name = "All Files"
+            name = "Root folder"
         };
 
         public OAuth2Info AuthInfo { get; set; }
@@ -141,6 +141,11 @@ namespace UploadersLib.FileUploaders
 
         public BoxFileInfo GetFiles(string id)
         {
+            if (!CheckAuthorization())
+            {
+                return null;
+            }
+
             string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
 
             NameValueCollection headers = new NameValueCollection();

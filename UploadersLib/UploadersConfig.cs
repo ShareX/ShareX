@@ -147,7 +147,7 @@ namespace UploadersLib
         // Box
 
         public OAuth2Info BoxOAuth2Info = null;
-        public string BoxFolderID = "0";
+        public BoxFileEntry BoxSelectedFolder = Box.RootFolder;
         public bool BoxShare = true;
 
         // Ge.tt

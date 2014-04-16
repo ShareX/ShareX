@@ -726,16 +726,21 @@ namespace UploadersLib
 
         public void BoxListFolders()
         {
+            lvBoxFolders.Items.Clear();
+            BoxAddFolder(Box.RootFolder);
+            BoxListFolders(Box.RootFolder);
+        }
+
+        public void BoxListFolders(BoxFileEntry fileEntry)
+        {
             if (!OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
             {
                 MessageBox.Show("Authentication required.", "Box refresh folders list failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                lvBoxFolders.Items.Clear();
-                BoxAddFolder(Box.RootFolder);
                 Box box = new Box(Config.BoxOAuth2Info);
-                BoxFileInfo files = box.GetFiles(Box.RootFolder);
+                BoxFileInfo files = box.GetFiles(fileEntry);
                 if (files != null && files.entries != null && files.entries.Length > 0)
                 {
                     foreach (BoxFileEntry folder in files.entries.Where(x => x.type == "folder"))

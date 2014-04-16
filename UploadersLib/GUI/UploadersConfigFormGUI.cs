@@ -296,7 +296,7 @@ namespace UploadersLib
             }
 
             cbBoxShare.Checked = Config.BoxShare;
-            txtBoxFolderID.Text = Config.BoxFolderID;
+            lblBoxFolderID.Text = "Selected folder: " + Config.BoxSelectedFolder.name;
 
             // Ge.tt
 

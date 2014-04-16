@@ -183,7 +183,9 @@
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.tpBox = new System.Windows.Forms.TabPage();
-            this.txtBoxFolderID = new System.Windows.Forms.TextBox();
+            this.cbBoxShare = new System.Windows.Forms.CheckBox();
+            this.lvBoxFolders = new HelpersLib.MyListView();
+            this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.tpRapidShare = new System.Windows.Forms.TabPage();
@@ -356,9 +358,7 @@
             this.atcGoogleURLShortenerAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
-            this.lvBoxFolders = new HelpersLib.MyListView();
-            this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cbBoxShare = new System.Windows.Forms.CheckBox();
+            this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -2058,10 +2058,10 @@
             // 
             // tpBox
             // 
+            this.tpBox.Controls.Add(this.lblBoxFolderTip);
             this.tpBox.Controls.Add(this.cbBoxShare);
             this.tpBox.Controls.Add(this.lvBoxFolders);
             this.tpBox.Controls.Add(this.oauth2Box);
-            this.tpBox.Controls.Add(this.txtBoxFolderID);
             this.tpBox.Controls.Add(this.lblBoxFolderID);
             this.tpBox.Controls.Add(this.btnBoxRefreshFolders);
             this.tpBox.Location = new System.Drawing.Point(4, 40);
@@ -2072,22 +2072,45 @@
             this.tpBox.Text = "Box";
             this.tpBox.UseVisualStyleBackColor = true;
             // 
-            // txtBoxFolderID
+            // cbBoxShare
             // 
-            this.txtBoxFolderID.Location = new System.Drawing.Point(600, 17);
-            this.txtBoxFolderID.Name = "txtBoxFolderID";
-            this.txtBoxFolderID.Size = new System.Drawing.Size(104, 20);
-            this.txtBoxFolderID.TabIndex = 3;
-            this.txtBoxFolderID.TextChanged += new System.EventHandler(this.txtBoxFolderID_TextChanged);
+            this.cbBoxShare.AutoSize = true;
+            this.cbBoxShare.Location = new System.Drawing.Point(16, 232);
+            this.cbBoxShare.Name = "cbBoxShare";
+            this.cbBoxShare.Size = new System.Drawing.Size(125, 17);
+            this.cbBoxShare.TabIndex = 9;
+            this.cbBoxShare.Text = "Create shareable link";
+            this.cbBoxShare.UseVisualStyleBackColor = true;
+            this.cbBoxShare.CheckedChanged += new System.EventHandler(this.cbBoxShare_CheckedChanged);
+            // 
+            // lvBoxFolders
+            // 
+            this.lvBoxFolders.AutoFillColumn = true;
+            this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chBoxFoldersName});
+            this.lvBoxFolders.FullRowSelect = true;
+            this.lvBoxFolders.Location = new System.Drawing.Point(352, 48);
+            this.lvBoxFolders.Name = "lvBoxFolders";
+            this.lvBoxFolders.Size = new System.Drawing.Size(440, 368);
+            this.lvBoxFolders.TabIndex = 8;
+            this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
+            this.lvBoxFolders.View = System.Windows.Forms.View.Details;
+            this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
+            this.lvBoxFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBoxFolders_MouseDoubleClick);
+            // 
+            // chBoxFoldersName
+            // 
+            this.chBoxFoldersName.Text = "Folder name";
+            this.chBoxFoldersName.Width = 435;
             // 
             // lblBoxFolderID
             // 
             this.lblBoxFolderID.AutoSize = true;
             this.lblBoxFolderID.Location = new System.Drawing.Point(488, 21);
             this.lblBoxFolderID.Name = "lblBoxFolderID";
-            this.lblBoxFolderID.Size = new System.Drawing.Size(103, 13);
+            this.lblBoxFolderID.Size = new System.Drawing.Size(81, 13);
             this.lblBoxFolderID.TabIndex = 2;
-            this.lblBoxFolderID.Text = "Folder ID for upload:";
+            this.lblBoxFolderID.Text = "Selected folder:";
             // 
             // btnBoxRefreshFolders
             // 
@@ -3854,35 +3877,14 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // lvBoxFolders
+            // lblBoxFolderTip
             // 
-            this.lvBoxFolders.AutoFillColumn = true;
-            this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chBoxFoldersName});
-            this.lvBoxFolders.FullRowSelect = true;
-            this.lvBoxFolders.Location = new System.Drawing.Point(352, 48);
-            this.lvBoxFolders.Name = "lvBoxFolders";
-            this.lvBoxFolders.Size = new System.Drawing.Size(440, 400);
-            this.lvBoxFolders.TabIndex = 8;
-            this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
-            this.lvBoxFolders.View = System.Windows.Forms.View.Details;
-            this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
-            // 
-            // chBoxFoldersName
-            // 
-            this.chBoxFoldersName.Text = "Folder name";
-            this.chBoxFoldersName.Width = 435;
-            // 
-            // cbBoxShare
-            // 
-            this.cbBoxShare.AutoSize = true;
-            this.cbBoxShare.Location = new System.Drawing.Point(16, 232);
-            this.cbBoxShare.Name = "cbBoxShare";
-            this.cbBoxShare.Size = new System.Drawing.Size(125, 17);
-            this.cbBoxShare.TabIndex = 9;
-            this.cbBoxShare.Text = "Create shareable link";
-            this.cbBoxShare.UseVisualStyleBackColor = true;
-            this.cbBoxShare.CheckedChanged += new System.EventHandler(this.cbBoxShare_CheckedChanged);
+            this.lblBoxFolderTip.AutoSize = true;
+            this.lblBoxFolderTip.Location = new System.Drawing.Point(352, 424);
+            this.lblBoxFolderTip.Name = "lblBoxFolderTip";
+            this.lblBoxFolderTip.Size = new System.Drawing.Size(304, 13);
+            this.lblBoxFolderTip.TabIndex = 10;
+            this.lblBoxFolderTip.Text = "Note: You can double click folder name to go inside that folder.";
             // 
             // UploadersConfigForm
             // 
@@ -4191,7 +4193,6 @@
         private System.Windows.Forms.TextBox txtRapidShareFolderID;
         private System.Windows.Forms.Label lblRapidShareFolderID;
         private System.Windows.Forms.TabPage tpBox;
-        private System.Windows.Forms.TextBox txtBoxFolderID;
         private System.Windows.Forms.Label lblBoxFolderID;
         private System.Windows.Forms.Button btnBoxRefreshFolders;
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
@@ -4333,5 +4334,6 @@
         private HelpersLib.MyListView lvBoxFolders;
         private System.Windows.Forms.ColumnHeader chBoxFoldersName;
         private System.Windows.Forms.CheckBox cbBoxShare;
+        private System.Windows.Forms.Label lblBoxFolderTip;
     }
 }
