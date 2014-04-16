@@ -514,14 +514,19 @@ namespace UploadersLib
 
         #region Box
 
-        private void btnBoxOpenAuthorize_Click(object sender, EventArgs e)
+        private void oauth2Box_OpenButtonClicked()
         {
             BoxAuthOpen();
         }
 
-        private void btnBoxCompleteAuth_Click(object sender, EventArgs e)
+        private void oauth2Box_CompleteButtonClicked(string code)
         {
-            BoxAuthComplete();
+            BoxAuthComplete(code);
+        }
+
+        private void oauth2Box_RefreshButtonClicked()
+        {
+            BoxAuthRefresh();
         }
 
         private void txtBoxFolderID_TextChanged(object sender, EventArgs e)

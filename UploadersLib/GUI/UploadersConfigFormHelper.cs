@@ -636,15 +636,19 @@ namespace UploadersLib
         {
             try
             {
-                Box box = new Box(APIKeys.BoxKey);
+                OAuth2Info oauth = new OAuth2Info(APIKeys.BoxClientID, APIKeys.BoxClientSecret);
 
-                string url = box.GetAuthorizationURL();
+                string url = new Box(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
-                    Config.BoxTicket = box.Ticket;
+                    Config.BoxOAuth2Info = oauth;
                     Helpers.LoadBrowserAsync(url);
-                    btnBoxCompleteAuth.Enabled = true;
+                    DebugHelper.WriteLine("BoxAuthOpen - Authorization URL is opened: " + url);
+                }
+                else
+                {
+                    DebugHelper.WriteLine("BoxAuthOpen - Authorization URL is empty.");
                 }
             }
             catch (Exception ex)
@@ -653,41 +657,73 @@ namespace UploadersLib
             }
         }
 
-        public void BoxAuthComplete()
+        public void BoxAuthComplete(string code)
         {
-            if (!string.IsNullOrEmpty(Config.BoxTicket))
+            try
             {
-                try
+                if (!string.IsNullOrEmpty(code) && Config.BoxOAuth2Info != null)
                 {
-                    Box box = new Box(APIKeys.BoxKey) { Ticket = Config.BoxTicket };
-                    Config.BoxAuthToken = box.GetAuthToken();
+                    bool result = new Box(Config.BoxOAuth2Info).GetAccessToken(code);
 
-                    if (!string.IsNullOrEmpty(Config.BoxAuthToken))
+                    if (result)
                     {
+                        oauth2Box.Status = "Login successful.";
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
+                        oauth2Box.Status = "Login failed.";
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    oauth2Box.LoginStatus = result;
+                    btnBoxRefreshFolders.Enabled = result;
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void BoxAuthRefresh()
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
                 {
-                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bool result = new Box(Config.BoxOAuth2Info).RefreshAccessToken();
+
+                    if (result)
+                    {
+                        oauth2Box.Status = "Login successful.";
+                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oauth2Box.Status = "Login failed.";
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    btnBoxRefreshFolders.Enabled = result;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public void BoxListFolders()
         {
-            if (string.IsNullOrEmpty(Config.BoxAuthToken))
+            if (!OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
             {
                 MessageBox.Show("Authentication required.", "Box refresh folders list failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 tvBoxFolders.Nodes.Clear();
-                Box box = new Box(APIKeys.BoxKey) { AuthToken = Config.BoxAuthToken };
+                Box box = new Box(Config.BoxOAuth2Info);
                 BoxFolder root = box.GetFolderList();
                 BoxRecursiveAddChilds(tvBoxFolders.Nodes, root);
                 tvBoxFolders.ExpandAll();

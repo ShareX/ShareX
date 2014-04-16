@@ -288,6 +288,13 @@ namespace UploadersLib
 
             // Box
 
+            if (OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
+            {
+                oauth2Box.Status = "Login successful.";
+                oauth2Box.LoginStatus = true;
+                btnBoxRefreshFolders.Enabled = true;
+            }
+
             txtBoxFolderID.Text = Config.BoxFolderID;
 
             // Ge.tt

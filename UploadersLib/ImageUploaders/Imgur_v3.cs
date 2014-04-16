@@ -117,7 +117,7 @@ namespace UploadersLib.ImageUploaders
             }
             else
             {
-                Errors.Add("Login is required.");
+                Errors.Add("Imgur login is required.");
                 return false;
             }
 

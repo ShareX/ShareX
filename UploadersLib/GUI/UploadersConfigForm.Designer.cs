@@ -160,6 +160,7 @@
             this.btnMegaLogin = new System.Windows.Forms.Button();
             this.lblMegaStatusTitle = new System.Windows.Forms.Label();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
             this.btnAmazonS3AccessKeyOpen = new System.Windows.Forms.Button();
             this.cbAmazonS3CustomCNAME = new System.Windows.Forms.CheckBox();
             this.cbAmazonS3Endpoint = new System.Windows.Forms.ComboBox();
@@ -186,8 +187,6 @@
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.tvBoxFolders = new System.Windows.Forms.TreeView();
-            this.btnBoxCompleteAuth = new System.Windows.Forms.Button();
-            this.btnBoxOpenAuthorize = new System.Windows.Forms.Button();
             this.tpRapidShare = new System.Windows.Forms.TabPage();
             this.txtRapidShareFolderID = new System.Windows.Forms.TextBox();
             this.lblRapidShareFolderID = new System.Windows.Forms.Label();
@@ -349,6 +348,7 @@
             this.atcGistAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.ucFTPAccounts = new UploadersLib.AccountsControl();
             this.oauth2GoogleDrive = new UploadersLib.GUI.OAuth2Control();
+            this.oauth2Box = new UploadersLib.GUI.OAuth2Control();
             this.atcSendSpaceAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.oAuthJira = new UploadersLib.GUI.OAuth2Control();
             this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
@@ -357,7 +357,6 @@
             this.atcGoogleURLShortenerAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
-            this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
             this.tcUploaders.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
@@ -1544,7 +1543,7 @@
             this.tlpFtp.RowCount = 2;
             this.tlpFtp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tlpFtp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpFtp.Size = new System.Drawing.Size(798, 451);
+            this.tlpFtp.Size = new System.Drawing.Size(798, 469);
             this.tlpFtp.TabIndex = 0;
             // 
             // panelFtp
@@ -1556,7 +1555,7 @@
             this.panelFtp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFtp.Location = new System.Drawing.Point(3, 3);
             this.panelFtp.Name = "panelFtp";
-            this.panelFtp.Size = new System.Drawing.Size(792, 332);
+            this.panelFtp.Size = new System.Drawing.Size(792, 345);
             this.panelFtp.TabIndex = 0;
             // 
             // btnFtpClient
@@ -1606,9 +1605,9 @@
             this.gbFtpSettings.Controls.Add(this.cboFtpText);
             this.gbFtpSettings.Controls.Add(this.cboFtpImages);
             this.gbFtpSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbFtpSettings.Location = new System.Drawing.Point(3, 341);
+            this.gbFtpSettings.Location = new System.Drawing.Point(3, 354);
             this.gbFtpSettings.Name = "gbFtpSettings";
-            this.gbFtpSettings.Size = new System.Drawing.Size(792, 107);
+            this.gbFtpSettings.Size = new System.Drawing.Size(792, 112);
             this.gbFtpSettings.TabIndex = 1;
             this.gbFtpSettings.TabStop = false;
             this.gbFtpSettings.Text = "FTP Settings";
@@ -1823,6 +1822,16 @@
             this.tpAmazonS3.TabIndex = 13;
             this.tpAmazonS3.Text = "Amazon S3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
+            // 
+            // btnAmazonS3BucketNameOpen
+            // 
+            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 104);
+            this.btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
+            this.btnAmazonS3BucketNameOpen.Size = new System.Drawing.Size(24, 24);
+            this.btnAmazonS3BucketNameOpen.TabIndex = 22;
+            this.btnAmazonS3BucketNameOpen.Text = "?";
+            this.btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
+            this.btnAmazonS3BucketNameOpen.Click += new System.EventHandler(this.btnAmazonS3BucketNameOpen_Click);
             // 
             // btnAmazonS3AccessKeyOpen
             // 
@@ -2047,12 +2056,11 @@
             // 
             // tpBox
             // 
+            this.tpBox.Controls.Add(this.oauth2Box);
             this.tpBox.Controls.Add(this.txtBoxFolderID);
             this.tpBox.Controls.Add(this.lblBoxFolderID);
             this.tpBox.Controls.Add(this.btnBoxRefreshFolders);
             this.tpBox.Controls.Add(this.tvBoxFolders);
-            this.tpBox.Controls.Add(this.btnBoxCompleteAuth);
-            this.tpBox.Controls.Add(this.btnBoxOpenAuthorize);
             this.tpBox.Location = new System.Drawing.Point(4, 40);
             this.tpBox.Name = "tpBox";
             this.tpBox.Padding = new System.Windows.Forms.Padding(3);
@@ -2063,7 +2071,7 @@
             // 
             // txtBoxFolderID
             // 
-            this.txtBoxFolderID.Location = new System.Drawing.Point(128, 52);
+            this.txtBoxFolderID.Location = new System.Drawing.Point(464, 20);
             this.txtBoxFolderID.Name = "txtBoxFolderID";
             this.txtBoxFolderID.Size = new System.Drawing.Size(88, 20);
             this.txtBoxFolderID.TabIndex = 3;
@@ -2072,7 +2080,7 @@
             // lblBoxFolderID
             // 
             this.lblBoxFolderID.AutoSize = true;
-            this.lblBoxFolderID.Location = new System.Drawing.Point(16, 56);
+            this.lblBoxFolderID.Location = new System.Drawing.Point(352, 24);
             this.lblBoxFolderID.Name = "lblBoxFolderID";
             this.lblBoxFolderID.Size = new System.Drawing.Size(103, 13);
             this.lblBoxFolderID.TabIndex = 2;
@@ -2080,7 +2088,8 @@
             // 
             // btnBoxRefreshFolders
             // 
-            this.btnBoxRefreshFolders.Location = new System.Drawing.Point(16, 80);
+            this.btnBoxRefreshFolders.Enabled = false;
+            this.btnBoxRefreshFolders.Location = new System.Drawing.Point(352, 48);
             this.btnBoxRefreshFolders.Name = "btnBoxRefreshFolders";
             this.btnBoxRefreshFolders.Size = new System.Drawing.Size(128, 23);
             this.btnBoxRefreshFolders.TabIndex = 4;
@@ -2090,32 +2099,11 @@
             // 
             // tvBoxFolders
             // 
-            this.tvBoxFolders.Location = new System.Drawing.Point(16, 112);
+            this.tvBoxFolders.Location = new System.Drawing.Point(352, 80);
             this.tvBoxFolders.Name = "tvBoxFolders";
-            this.tvBoxFolders.Size = new System.Drawing.Size(440, 312);
+            this.tvBoxFolders.Size = new System.Drawing.Size(440, 360);
             this.tvBoxFolders.TabIndex = 5;
             this.tvBoxFolders.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvBoxFolders_AfterSelect);
-            // 
-            // btnBoxCompleteAuth
-            // 
-            this.btnBoxCompleteAuth.Enabled = false;
-            this.btnBoxCompleteAuth.Location = new System.Drawing.Point(192, 16);
-            this.btnBoxCompleteAuth.Name = "btnBoxCompleteAuth";
-            this.btnBoxCompleteAuth.Size = new System.Drawing.Size(168, 23);
-            this.btnBoxCompleteAuth.TabIndex = 1;
-            this.btnBoxCompleteAuth.Text = "2. Complete authorization";
-            this.btnBoxCompleteAuth.UseVisualStyleBackColor = true;
-            this.btnBoxCompleteAuth.Click += new System.EventHandler(this.btnBoxCompleteAuth_Click);
-            // 
-            // btnBoxOpenAuthorize
-            // 
-            this.btnBoxOpenAuthorize.Location = new System.Drawing.Point(16, 16);
-            this.btnBoxOpenAuthorize.Name = "btnBoxOpenAuthorize";
-            this.btnBoxOpenAuthorize.Size = new System.Drawing.Size(168, 23);
-            this.btnBoxOpenAuthorize.TabIndex = 0;
-            this.btnBoxOpenAuthorize.Text = "1. Open authorize page...";
-            this.btnBoxOpenAuthorize.UseVisualStyleBackColor = true;
-            this.btnBoxOpenAuthorize.Click += new System.EventHandler(this.btnBoxOpenAuthorize_Click);
             // 
             // tpRapidShare
             // 
@@ -3765,7 +3753,7 @@
             this.ucFTPAccounts.Location = new System.Drawing.Point(0, 0);
             this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 332);
+            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 345);
             this.ucFTPAccounts.TabIndex = 0;
             // 
             // oauth2GoogleDrive
@@ -3779,6 +3767,18 @@
             this.oauth2GoogleDrive.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
             this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
             this.oauth2GoogleDrive.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
+            // 
+            // oauth2Box
+            // 
+            this.oauth2Box.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Box.LoginStatus = false;
+            this.oauth2Box.Name = "oauth2Box";
+            this.oauth2Box.Size = new System.Drawing.Size(328, 207);
+            this.oauth2Box.Status = "Status: Login required.";
+            this.oauth2Box.TabIndex = 7;
+            this.oauth2Box.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Box_OpenButtonClicked);
+            this.oauth2Box.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
+            this.oauth2Box.RefreshButtonClicked += new UploadersLib.GUI.OAuth2Control.RefreshButtonClickedEventHandler(this.oauth2Box_RefreshButtonClicked);
             // 
             // atcSendSpaceAccountType
             // 
@@ -3858,16 +3858,6 @@
             this.actRapidShareAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
-            // 
-            // btnAmazonS3BucketNameOpen
-            // 
-            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 104);
-            this.btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
-            this.btnAmazonS3BucketNameOpen.Size = new System.Drawing.Size(24, 24);
-            this.btnAmazonS3BucketNameOpen.TabIndex = 22;
-            this.btnAmazonS3BucketNameOpen.Text = "?";
-            this.btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
-            this.btnAmazonS3BucketNameOpen.Click += new System.EventHandler(this.btnAmazonS3BucketNameOpen_Click);
             // 
             // UploadersConfigForm
             // 
@@ -4176,8 +4166,6 @@
         private System.Windows.Forms.TextBox txtRapidShareFolderID;
         private System.Windows.Forms.Label lblRapidShareFolderID;
         private System.Windows.Forms.TabPage tpBox;
-        private System.Windows.Forms.Button btnBoxCompleteAuth;
-        private System.Windows.Forms.Button btnBoxOpenAuthorize;
         private System.Windows.Forms.TextBox txtBoxFolderID;
         private System.Windows.Forms.Label lblBoxFolderID;
         private System.Windows.Forms.Button btnBoxRefreshFolders;
@@ -4317,5 +4305,6 @@
         private System.Windows.Forms.TextBox txtPushbulletUserKey;
         private System.Windows.Forms.Button btnAmazonS3AccessKeyOpen;
         private System.Windows.Forms.Button btnAmazonS3BucketNameOpen;
+        private GUI.OAuth2Control oauth2Box;
     }
 }

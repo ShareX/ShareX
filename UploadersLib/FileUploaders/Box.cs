@@ -24,106 +24,117 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Xml.Linq;
+using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {
-    public sealed class Box : FileUploader
+    public sealed class Box : FileUploader, IOAuth2
     {
-        private string APIKey;
         private const string APIURL = "https://www.box.net/api/1.0/rest";
-        private const string AuthURL = "https://www.box.net/api/1.0/auth/{0}";
         private const string UploadURL = "https://upload.box.net/api/1.0/upload/{0}/{1}";
         private const string ShareURL = "http://www.box.com/s/{0}";
 
-        public string Ticket { get; set; }
-
-        public string AuthToken { get; set; }
-
+        public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
-
         public bool Share { get; set; }
 
-        public Box(string apiKey)
+        public Box(OAuth2Info oauth)
         {
-            APIKey = apiKey;
+            AuthInfo = oauth;
             FolderID = "0";
             Share = true;
         }
 
-        public string GetTicket()
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("action", "get_ticket");
-            args.Add("api_key", APIKey);
-
-            string response = SendGetRequest(APIURL, args);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                XDocument xd = XDocument.Parse(response);
-                XElement xe = xd.GetElement("response");
-
-                if (xe != null && xe.GetElementValue("status") == "get_ticket_ok")
-                {
-                    Ticket = xe.GetElementValue("ticket");
-                    return Ticket;
-                }
-            }
-
-            return null;
-        }
-
         public string GetAuthorizationURL()
         {
-            string ticket = GetTicket();
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("response_type", "code");
+            args.Add("client_id", AuthInfo.Client_ID);
 
-            if (!string.IsNullOrEmpty(ticket))
-            {
-                return string.Format(AuthURL, ticket);
-            }
-
-            return null;
+            return CreateQuery("https://www.box.com/api/oauth2/authorize", args);
         }
 
-        public string GetAuthToken(string ticket)
+        public bool GetAccessToken(string pin)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("action", "get_auth_token");
-            args.Add("api_key", APIKey);
-            args.Add("ticket", ticket);
+            args.Add("grant_type", "authorization_code");
+            args.Add("code", pin);
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("client_secret", AuthInfo.Client_Secret);
 
-            string response = SendGetRequest(APIURL, args);
+            string response = SendPostRequest("https://www.box.com/api/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
-                XDocument xd = XDocument.Parse(response);
-                XElement xe = xd.GetElement("response");
+                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
 
-                if (xe != null && xe.GetElementValue("status") == "get_auth_token_ok")
+                if (token != null && !string.IsNullOrEmpty(token.access_token))
                 {
-                    AuthToken = xe.GetElementValue("auth_token");
-                    return AuthToken;
+                    token.UpdateExpireDate();
+                    AuthInfo.Token = token;
+                    return true;
                 }
             }
 
-            return null;
+            return false;
         }
 
-        public string GetAuthToken()
+        public bool RefreshAccessToken()
         {
-            return GetAuthToken(Ticket);
+            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
+            {
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("grant_type", "refresh_token");
+                args.Add("refresh_token", AuthInfo.Token.refresh_token);
+                args.Add("client_id", AuthInfo.Client_ID);
+                args.Add("client_secret", AuthInfo.Client_Secret);
+
+                string response = SendPostRequest("https://www.box.com/api/oauth2/token", args);
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+                    if (token != null && !string.IsNullOrEmpty(token.access_token))
+                    {
+                        token.UpdateExpireDate();
+                        AuthInfo.Token = token;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool CheckAuthorization()
+        {
+            if (OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
+                {
+                    Errors.Add("Refresh access token failed.");
+                    return false;
+                }
+            }
+            else
+            {
+                Errors.Add("Box login is required.");
+                return false;
+            }
+
+            return true;
         }
 
         public BoxFolder GetAccountTree(string folderID = "0", bool onelevel = false, bool nofiles = false, bool nozip = true, bool simple = false)
         {
             NameValueCollection args = new NameValueCollection();
             args.Add("action", "get_account_tree");
-            args.Add("api_key", APIKey);
-            args.Add("auth_token", AuthToken);
             args.Add("folder_id", folderID);
 
             if (onelevel) // Make a tree of one level depth, so you will get only the files and folders stored in the folder of the folder_id you have provided.
@@ -205,17 +216,18 @@ namespace UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(AuthToken))
+            if (!CheckAuthorization())
             {
-                Errors.Add("Login is required.");
                 return null;
             }
 
             Dictionary<string, string> args = new Dictionary<string, string>();
-            if (Share) args.Add("share", "1");
+            args.Add("parent_id", FolderID);
 
-            string url = string.Format(UploadURL, AuthToken, FolderID);
-            UploadResult result = UploadData(stream, url, fileName, "file", args);
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+
+            UploadResult result = UploadData(stream, "https://upload.box.com/api/2.0/files/content", fileName, "filename", args, headers: headers);
 
             if (result.IsSuccess)
             {

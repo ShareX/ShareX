@@ -146,8 +146,7 @@ namespace UploadersLib
 
         // Box
 
-        public string BoxTicket = string.Empty;
-        public string BoxAuthToken = string.Empty;
+        public OAuth2Info BoxOAuth2Info = null;
         public string BoxFolderID = "0";
         public bool BoxShare = true;
 
@@ -336,7 +335,7 @@ namespace UploadersLib
                 case FileDestination.Minus:
                     return MinusConfig != null && MinusConfig.MinusUser != null;
                 case FileDestination.Box:
-                    return !string.IsNullOrEmpty(BoxAuthToken);
+                    return OAuth2Info.CheckOAuth(BoxOAuth2Info);
                 case FileDestination.Ge_tt:
                     return Ge_ttLogin != null && !string.IsNullOrEmpty(Ge_ttLogin.AccessToken);
                 case FileDestination.Localhostr:

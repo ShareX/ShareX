@@ -135,7 +135,7 @@ namespace UploadersLib.FileUploaders
         {
             if (!OAuthInfo.CheckOAuth(AuthInfo))
             {
-                Errors.Add("Login is required.");
+                Errors.Add("Dropbox login is required.");
                 return null;
             }
 

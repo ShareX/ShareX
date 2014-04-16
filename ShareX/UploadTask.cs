@@ -769,9 +769,8 @@ namespace ShareX
                     fileUploader = new Minus(Program.UploadersConfig.MinusConfig, Program.UploadersConfig.MinusOAuth2Info);
                     break;
                 case FileDestination.Box:
-                    fileUploader = new Box(APIKeys.BoxKey)
+                    fileUploader = new Box(Program.UploadersConfig.BoxOAuth2Info)
                     {
-                        AuthToken = Program.UploadersConfig.BoxAuthToken,
                         FolderID = Program.UploadersConfig.BoxFolderID,
                         Share = Program.UploadersConfig.BoxShare
                     };
