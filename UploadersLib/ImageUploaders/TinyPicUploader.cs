@@ -102,7 +102,7 @@ namespace UploadersLib.ImageUploaders
                 { "pass", password }
             };
 
-            string response = SendPostRequest(URLAPI, args);
+            string response = SendRequest(HttpMethod.POST, URLAPI, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -122,7 +122,7 @@ namespace UploadersLib.ImageUploaders
             args.Add("sig", TranslatorHelper.TextToHash(action + tpid + tpk, HashType.MD5));
             args.Add("responsetype", "XML");
 
-            string response = SendGetRequest(URLAPI, args);
+            string response = SendRequest(HttpMethod.GET, URLAPI, args);
 
             if (!string.IsNullOrEmpty(response) && CheckResponse(response))
             {

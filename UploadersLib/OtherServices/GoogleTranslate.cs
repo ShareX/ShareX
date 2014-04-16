@@ -50,7 +50,7 @@ namespace UploadersLib.OtherServices
             args.Add("key", APIKey);
             args.Add("target", "en");
 
-            string response = SendGetRequest(url, args);
+            string response = SendRequest(HttpMethod.GET, url, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -81,7 +81,7 @@ namespace UploadersLib.OtherServices
             args.Add("target", targetLanguage);
             args.Add("q", text);
 
-            string response = SendGetRequest(APIURL, args);
+            string response = SendRequest(HttpMethod.GET, APIURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {

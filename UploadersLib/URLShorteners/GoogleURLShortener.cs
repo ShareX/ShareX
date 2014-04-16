@@ -70,7 +70,7 @@ namespace UploadersLib.URLShorteners
             args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
             args.Add("grant_type", "authorization_code");
 
-            string response = SendPostRequest("https://accounts.google.com/o/oauth2/token", args);
+            string response = SendRequest(HttpMethod.POST, "https://accounts.google.com/o/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -97,7 +97,7 @@ namespace UploadersLib.URLShorteners
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendPostRequest("https://accounts.google.com/o/oauth2/token", args);
+                string response = SendRequest(HttpMethod.POST, "https://accounts.google.com/o/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {

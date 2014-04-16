@@ -60,9 +60,9 @@ namespace UploadersLib.SocialServices
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("status", message);
 
-            string query = OAuthManager.GenerateQuery(URLTweet, args, HttpMethod.Post, AuthInfo);
+            string query = OAuthManager.GenerateQuery(URLTweet, args, HttpMethod.POST, AuthInfo);
 
-            string response = SendPostRequest(query);
+            string response = SendRequest(HttpMethod.POST, query);
 
             if (!string.IsNullOrEmpty(response))
             {

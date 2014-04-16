@@ -60,7 +60,7 @@ namespace UploadersLib.ImageUploaders
             args.Add("grant_type", "pin");
             args.Add("pin", pin);
 
-            string response = SendPostRequest("https://api.imgur.com/oauth2/token", args);
+            string response = SendRequest(HttpMethod.POST, "https://api.imgur.com/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -87,7 +87,7 @@ namespace UploadersLib.ImageUploaders
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendPostRequest("https://api.imgur.com/oauth2/token", args);
+                string response = SendRequest(HttpMethod.POST, "https://api.imgur.com/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -130,7 +130,7 @@ namespace UploadersLib.ImageUploaders
             {
                 NameValueCollection headers = new NameValueCollection();
                 headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-                string response = SendGetRequest("https://api.imgur.com/3/account/me/albums", null, ResponseType.Text, null, headers);
+                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", null, ResponseType.Text, headers, null);
 
                 if (!string.IsNullOrEmpty(response))
                 {

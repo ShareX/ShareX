@@ -40,7 +40,7 @@ namespace UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("longurl", url);
 
-                result.Response = result.ShortenedURL = SendGetRequest(APIURL, arguments);
+                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, APIURL, arguments);
             }
 
             return result;

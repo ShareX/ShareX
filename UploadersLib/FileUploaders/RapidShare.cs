@@ -96,7 +96,7 @@ namespace UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("sub", "nextuploadserver");
 
-            string response = SendGetRequest(rapidshareURL, args);
+            string response = SendRequest(HttpMethod.GET, rapidshareURL, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -113,7 +113,7 @@ namespace UploadersLib.FileUploaders
             args.Add("login", Username);
             args.Add("password", Password);
 
-            string response = SendGetRequest(rapidshareURL, args);
+            string response = SendRequest(HttpMethod.GET, rapidshareURL, args);
 
             return RapidShareFolderInfo.GetRootFolderWithChilds(response);
         }

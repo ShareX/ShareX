@@ -62,7 +62,7 @@ namespace UploadersLib.ImageUploaders
             args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
             args.Add("grant_type", "authorization_code");
 
-            string response = SendPostRequest("https://accounts.google.com/o/oauth2/token", args);
+            string response = SendRequest(HttpMethod.POST, "https://accounts.google.com/o/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -89,7 +89,7 @@ namespace UploadersLib.ImageUploaders
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendPostRequest("https://accounts.google.com/o/oauth2/token", args);
+                string response = SendRequest(HttpMethod.POST, "https://accounts.google.com/o/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -137,7 +137,7 @@ namespace UploadersLib.ImageUploaders
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
 
-            string response = SendGetRequest("https://picasaweb.google.com/data/feed/api/user/default", null, ResponseType.Text, null, headers);
+            string response = SendRequest(HttpMethod.GET, "https://picasaweb.google.com/data/feed/api/user/default", null, ResponseType.Text, headers, null);
 
             if (!string.IsNullOrEmpty(response))
             {

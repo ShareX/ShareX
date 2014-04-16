@@ -146,12 +146,10 @@ namespace UploadersLib
 
     public enum HttpMethod
     {
-        [Description("GET")]
-        Get,
-        [Description("POST")]
-        Post,
-        [Description("DELETE")]
-        Delete
+        GET,
+        POST,
+        PUT,
+        DELETE
     }
 
     public enum ResponseType

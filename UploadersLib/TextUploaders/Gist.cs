@@ -75,7 +75,7 @@ namespace UploadersLib.TextUploaders
             WebHeaderCollection headers = new WebHeaderCollection();
             headers.Add("Accept", "application/json");
 
-            string response = SendPostRequest("https://github.com/login/oauth/access_token", args, headers: headers);
+            string response = SendRequest(HttpMethod.POST, "https://github.com/login/oauth/access_token", args, headers: headers);
 
             if (!string.IsNullOrEmpty(response))
             {

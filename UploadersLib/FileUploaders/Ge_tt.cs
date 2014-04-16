@@ -59,7 +59,7 @@ namespace UploadersLib.FileUploaders
             args.Add("accesstoken", accessToken);
 
             string url = CreateQuery("https://open.ge.tt/1/shares/create", args);
-            string response = SendPostRequest(url);
+            string response = SendRequest(HttpMethod.POST, url);
 
             return JsonConvert.DeserializeObject<Ge_ttShare>(response);
         }

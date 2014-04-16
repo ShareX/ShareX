@@ -59,7 +59,7 @@ namespace UploadersLib.TextUploaders
                 arguments.Add("expire", "0");
                 arguments.Add("json", "true");
 
-                ur.Response = SendPostRequest(APIURL, arguments);
+                ur.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {

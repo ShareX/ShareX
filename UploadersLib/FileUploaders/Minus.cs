@@ -58,7 +58,7 @@ namespace UploadersLib.FileUploaders
             args.Add("username", Config.Username);
             args.Add("password", Config.Password);
 
-            string response = SendPostRequest(URL_OAUTH_TOKEN, args);
+            string response = SendRequest(HttpMethod.POST, URL_OAUTH_TOKEN, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -86,7 +86,7 @@ namespace UploadersLib.FileUploaders
                 args.Add("scope", AuthInfo.Token.scope);
                 args.Add("refresh_token", AuthInfo.Token.refresh_token);
 
-                string response = SendPostRequest(URL_OAUTH_TOKEN, args);
+                string response = SendRequest(HttpMethod.POST, URL_OAUTH_TOKEN, args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -132,13 +132,13 @@ namespace UploadersLib.FileUploaders
         public MinusUser GetActiveUser()
         {
             string url = URL_API + "/activeuser?bearer_token=" + AuthInfo.Token.access_token;
-            string response = SendGetRequest(url);
+            string response = SendRequest(HttpMethod.GET, url);
             return JsonConvert.DeserializeObject<MinusUser>(response);
         }
 
         private MinusFolderListResponse GetUserFolderList()
         {
-            string response = SendGetRequest(GetActiveUserFolderURL());
+            string response = SendRequest(HttpMethod.GET, GetActiveUserFolderURL());
             return JsonConvert.DeserializeObject<MinusFolderListResponse>(response);
         }
 
@@ -199,7 +199,7 @@ namespace UploadersLib.FileUploaders
 
                 try
                 {
-                    string response = SendDeleteRequest(url);
+                    string response = SendRequest(HttpMethod.DELETE, url);
                 }
                 catch
                 {

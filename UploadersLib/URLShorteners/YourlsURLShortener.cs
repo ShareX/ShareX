@@ -63,7 +63,7 @@ namespace UploadersLib.URLShorteners
                 //arguments.Add("title", "");
                 arguments.Add("format", "simple");
 
-                result.Response = SendPostRequest(APIURL, arguments);
+                result.Response = SendRequest(HttpMethod.POST, APIURL, arguments);
                 result.ShortenedURL = result.Response;
             }
 

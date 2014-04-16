@@ -51,7 +51,7 @@ namespace UploadersLib.OtherServices
             arguments.Add("i", UserID + AppID);
             arguments.Add("a", FixText(artist));
             arguments.Add("t", FixText(title));
-            string response = SendGetRequest("http://lyricsfly.com/api/api.php", arguments);
+            string response = SendRequest(HttpMethod.GET, "http://lyricsfly.com/api/api.php", arguments);
             return ParseResponse(response);
         }
 
@@ -63,7 +63,7 @@ namespace UploadersLib.OtherServices
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("i", UserID + AppID);
             arguments.Add("l", FixText(text));
-            string response = SendGetRequest("http://lyricsfly.com/api/txt-api.php", arguments);
+            string response = SendRequest(HttpMethod.GET, "http://lyricsfly.com/api/txt-api.php", arguments);
             return ParseResponse(response);
         }
 
@@ -76,7 +76,7 @@ namespace UploadersLib.OtherServices
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("cs", lyrics.Checksum);
             arguments.Add("id", lyrics.SongID);
-            string response = SendGetRequest("http://lyricsfly.com/search/correction.php?", arguments);
+            string response = SendRequest(HttpMethod.GET, "http://lyricsfly.com/search/correction.php?", arguments);
             ParseResponse(response);
         }
 

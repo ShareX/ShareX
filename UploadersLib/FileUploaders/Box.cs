@@ -35,10 +35,6 @@ namespace UploadersLib.FileUploaders
 {
     public sealed class Box : FileUploader, IOAuth2
     {
-        private const string APIURL = "https://www.box.net/api/1.0/rest";
-        private const string UploadURL = "https://upload.box.net/api/1.0/upload/{0}/{1}";
-        private const string ShareURL = "http://www.box.com/s/{0}";
-
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool Share { get; set; }
@@ -67,7 +63,7 @@ namespace UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
-            string response = SendPostRequest("https://www.box.com/api/oauth2/token", args);
+            string response = SendRequest(HttpMethod.POST, "https://www.box.com/api/oauth2/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -94,7 +90,7 @@ namespace UploadersLib.FileUploaders
                 args.Add("client_id", AuthInfo.Client_ID);
                 args.Add("client_secret", AuthInfo.Client_Secret);
 
-                string response = SendPostRequest("https://www.box.com/api/oauth2/token", args);
+                string response = SendRequest(HttpMethod.POST, "https://www.box.com/api/oauth2/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -157,9 +153,9 @@ namespace UploadersLib.FileUploaders
                 args.Add("params", "simple");
             }
 
-            string url = CreateQuery(APIURL, args);
+            string url = CreateQuery("", args);
 
-            string response = SendGetRequest(url);
+            string response = SendRequest(HttpMethod.GET, url);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -214,6 +210,13 @@ namespace UploadersLib.FileUploaders
             return GetAccountTree("0", false, true, true, true);
         }
 
+        public int CreateSharedLink(int id)
+        {
+            string url = "https://api.box.com/2.0/files/" + id;
+            SendRequest(HttpMethod.PUT, url);
+            return 0;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization())
@@ -244,7 +247,7 @@ namespace UploadersLib.FileUploaders
 
                         if (!string.IsNullOrEmpty(publicName))
                         {
-                            result.URL = string.Format(ShareURL, publicName);
+                            result.URL = "http://www.box.com/s/" + publicName;
                         }
                     }
                 }

@@ -111,7 +111,7 @@ namespace UploadersLib.ImageUploaders
                 return null;
             }
 
-            string query = OAuthManager.GenerateQuery(URLUserUpload, null, HttpMethod.Post, AuthInfo);
+            string query = OAuthManager.GenerateQuery(URLUserUpload, null, HttpMethod.POST, AuthInfo);
 
             UploadResult result = UploadData(stream, query, fileName, "image");
 

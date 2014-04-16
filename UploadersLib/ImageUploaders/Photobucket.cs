@@ -55,14 +55,14 @@ namespace UploadersLib.ImageUploaders
 
         public string GetAuthorizationURL()
         {
-            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, null, HttpMethod.Post);
+            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, null, HttpMethod.POST);
         }
 
         public bool GetAccessToken(string verificationCode)
         {
             AuthInfo.AuthVerifier = verificationCode;
 
-            NameValueCollection nv = GetAccessTokenEx(URLAccessToken, AuthInfo, HttpMethod.Post);
+            NameValueCollection nv = GetAccessTokenEx(URLAccessToken, AuthInfo, HttpMethod.POST);
 
             if (nv != null)
             {
@@ -100,7 +100,7 @@ namespace UploadersLib.ImageUploaders
             */
 
             string url = "http://api.photobucket.com/album/!/upload";
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.Post, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
             UploadResult result = UploadData(stream, query, fileName, "uploadfile");
@@ -127,10 +127,10 @@ namespace UploadersLib.ImageUploaders
             args.Add("name", albumName); // Name of result. Must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space.
 
             string url = "http://api.photobucket.com/album/!";
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.Post, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
             query = FixURL(query);
 
-            string response = SendPostRequest(query, args);
+            string response = SendRequest(HttpMethod.POST, query, args);
 
             if (!string.IsNullOrEmpty(response))
             {

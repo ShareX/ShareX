@@ -75,7 +75,7 @@ namespace UploadersLib.FileUploaders
             args.Add("u", Username);
             args.Add("p", Password);
 
-            string response = SendGetRequest(APIURL, args);
+            string response = SendRequest(HttpMethod.GET, APIURL, args);
 
             XDocument xd = XDocument.Parse(response);
             return xd.GetValue("FSApi_Upload/getUploadUrl/response/url");

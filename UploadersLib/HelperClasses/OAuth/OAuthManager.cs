@@ -173,7 +173,7 @@ namespace UploadersLib.HelperClasses
         private static string GenerateSignatureBase(HttpMethod httpMethod, string normalizedUrl, string normalizedParameters)
         {
             StringBuilder signatureBase = new StringBuilder();
-            signatureBase.AppendFormat("{0}&", httpMethod.ToString().ToUpperInvariant());
+            signatureBase.AppendFormat("{0}&", httpMethod.ToString());
             signatureBase.AppendFormat("{0}&", Helpers.URLEncode(normalizedUrl));
             signatureBase.AppendFormat("{0}", Helpers.URLEncode(normalizedParameters));
             return signatureBase.ToString();

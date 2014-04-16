@@ -170,9 +170,9 @@ namespace UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args[OAuthManager.ParameterCallback] = "oob"; // Request activation code to validate authentication
 
-                string url = OAuthManager.GenerateQuery(_jiraRequestToken.ToString(), args, HttpMethod.Post, AuthInfo);
+                string url = OAuthManager.GenerateQuery(_jiraRequestToken.ToString(), args, HttpMethod.POST, AuthInfo);
 
-                string response = SendRequest(HttpMethod.Post, url);
+                string response = SendRequest(HttpMethod.POST, url);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -189,7 +189,7 @@ namespace UploadersLib.FileUploaders
             {
                 AuthInfo.AuthVerifier = verificationCode;
 
-                NameValueCollection nv = GetAccessTokenEx(_jiraAccessToken.ToString(), AuthInfo, HttpMethod.Post);
+                NameValueCollection nv = GetAccessTokenEx(_jiraAccessToken.ToString(), AuthInfo, HttpMethod.POST);
 
                 return nv != null;
             }
@@ -211,7 +211,7 @@ namespace UploadersLib.FileUploaders
                     }
 
                     Uri uri = this.Combine(_jiraBaseAddress, string.Format(PathIssueAttachments, up.IssueId));
-                    string query = OAuthManager.GenerateQuery(uri.ToString(), null, HttpMethod.Post, AuthInfo);
+                    string query = OAuthManager.GenerateQuery(uri.ToString(), null, HttpMethod.POST, AuthInfo);
 
                     NameValueCollection headers = new NameValueCollection();
                     headers.Set("X-Atlassian-Token", "nocheck");
@@ -243,9 +243,9 @@ namespace UploadersLib.FileUploaders
                 args["jql"] = string.Format("issueKey='{0}'", issueId);
                 args["maxResults"] = "10";
                 args["fields"] = "summary";
-                string query = OAuthManager.GenerateQuery(_jiraPathSearch.ToString(), args, HttpMethod.Get, AuthInfo);
+                string query = OAuthManager.GenerateQuery(_jiraPathSearch.ToString(), args, HttpMethod.GET, AuthInfo);
 
-                string response = SendGetRequest(query);
+                string response = SendRequest(HttpMethod.GET, query);
                 if (!string.IsNullOrEmpty(response))
                 {
                     var anonType = new { issues = new[] { new { key = "", fields = new { summary = "" } } } };

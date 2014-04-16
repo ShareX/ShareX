@@ -78,7 +78,7 @@ namespace UploadersLib.FileUploaders
             args.Add("title", title);
             args.Add(valueType, value);
 
-            string response = SendPostRequest("https://api.pushbullet.com/api/pushes", args, headers: headers);
+            string response = SendRequest(HttpMethod.POST, "https://api.pushbullet.com/api/pushes", args, headers: headers);
 
             PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(response);
 
@@ -113,7 +113,7 @@ namespace UploadersLib.FileUploaders
         {
             NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
 
-            string response = SendGetRequest("https://api.pushbullet.com/api/devices", headers: headers);
+            string response = SendRequest(HttpMethod.GET, "https://api.pushbullet.com/api/devices", headers: headers);
 
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 

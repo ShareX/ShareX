@@ -61,7 +61,7 @@ namespace UploadersLib.URLShorteners
             args.Add("code", code);
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            string response = SendPostRequest(URLAccessToken, args);
+            string response = SendRequest(HttpMethod.POST, URLAccessToken, args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -87,7 +87,7 @@ namespace UploadersLib.URLShorteners
                 arguments.Add("access_token", AuthInfo.Token.access_token);
                 arguments.Add("longUrl", url);
 
-                result.Response = SendGetRequest(URLShorten, arguments);
+                result.Response = SendRequest(HttpMethod.GET, URLShorten, arguments);
 
                 BitlyShortenResponse shorten = JsonConvert.DeserializeObject<BitlyShortenResponse>(result.Response);
 

@@ -95,9 +95,9 @@ namespace UploadersLib.FileUploaders
 
             if (OAuthInfo.CheckOAuth(AuthInfo))
             {
-                string query = OAuthManager.GenerateQuery(URLAccountInfo, null, HttpMethod.Get, AuthInfo);
+                string query = OAuthManager.GenerateQuery(URLAccountInfo, null, HttpMethod.GET, AuthInfo);
 
-                string response = SendGetRequest(query);
+                string response = SendRequest(HttpMethod.GET, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -123,8 +123,8 @@ namespace UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
             {
                 string url = Helpers.CombineURL(URLFiles, Helpers.URLPathEncode(path));
-                string query = OAuthManager.GenerateQuery(url, null, HttpMethod.Get, AuthInfo);
-                return SendGetRequest(downloadStream, query);
+                string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
+                return SendRequest(HttpMethod.GET, downloadStream, query);
             }
 
             return false;
@@ -144,7 +144,7 @@ namespace UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("file", fileName);
 
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.Post, AuthInfo);
+            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
 
             // There's a 150MB limit to all uploads through the API.
             UploadResult result = UploadData(stream, query, fileName);
@@ -186,9 +186,9 @@ namespace UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("list", list ? "true" : "false");
 
-                string query = OAuthManager.GenerateQuery(url, args, HttpMethod.Get, AuthInfo);
+                string query = OAuthManager.GenerateQuery(url, args, HttpMethod.GET, AuthInfo);
 
-                string response = SendGetRequest(query);
+                string response = SendRequest(HttpMethod.GET, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -217,9 +217,9 @@ namespace UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("short_url", short_url ? "true" : "false");
 
-                string query = OAuthManager.GenerateQuery(url, args, HttpMethod.Post, AuthInfo);
+                string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
 
-                string response = SendPostRequest(query);
+                string response = SendRequest(HttpMethod.POST, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -246,9 +246,9 @@ namespace UploadersLib.FileUploaders
                 args.Add("from_path", from_path);
                 args.Add("to_path", to_path);
 
-                string query = OAuthManager.GenerateQuery(URLCopy, args, HttpMethod.Post, AuthInfo);
+                string query = OAuthManager.GenerateQuery(URLCopy, args, HttpMethod.POST, AuthInfo);
 
-                string response = SendPostRequest(query);
+                string response = SendRequest(HttpMethod.POST, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -270,9 +270,9 @@ namespace UploadersLib.FileUploaders
                 args.Add("root", Root);
                 args.Add("path", path);
 
-                string query = OAuthManager.GenerateQuery(URLCreateFolder, args, HttpMethod.Post, AuthInfo);
+                string query = OAuthManager.GenerateQuery(URLCreateFolder, args, HttpMethod.POST, AuthInfo);
 
-                string response = SendPostRequest(query);
+                string response = SendRequest(HttpMethod.POST, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -294,9 +294,9 @@ namespace UploadersLib.FileUploaders
                 args.Add("root", Root);
                 args.Add("path", path);
 
-                string query = OAuthManager.GenerateQuery(URLDelete, args, HttpMethod.Post, AuthInfo);
+                string query = OAuthManager.GenerateQuery(URLDelete, args, HttpMethod.POST, AuthInfo);
 
-                string response = SendPostRequest(query);
+                string response = SendRequest(HttpMethod.POST, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -319,9 +319,9 @@ namespace UploadersLib.FileUploaders
                 args.Add("from_path", from_path);
                 args.Add("to_path", to_path);
 
-                string query = OAuthManager.GenerateQuery(URLMove, args, HttpMethod.Post, AuthInfo);
+                string query = OAuthManager.GenerateQuery(URLMove, args, HttpMethod.POST, AuthInfo);
 
-                string response = SendPostRequest(query);
+                string response = SendRequest(HttpMethod.POST, query);
 
                 if (!string.IsNullOrEmpty(response))
                 {
