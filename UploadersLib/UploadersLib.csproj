@@ -167,6 +167,12 @@
     <Compile Include="GUI\OAuth2Control.Designer.cs">
       <DependentUpon>OAuth2Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\OAuthWebForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OAuthWebForm.Designer.cs">
+      <DependentUpon>OAuthWebForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ResponseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\OAuth2Control.resx">
       <DependentUpon>OAuth2Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OAuthWebForm.resx">
+      <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ResponseForm.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>

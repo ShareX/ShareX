@@ -37,6 +37,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
 using UploadersLib.Forms;
+using UploadersLib.GUI;
 using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;
 using UploadersLib.SocialServices;
@@ -643,8 +644,17 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.BoxOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    //Helpers.LoadBrowserAsync(url);
                     DebugHelper.WriteLine("BoxAuthOpen - Authorization URL is opened: " + url);
+
+                    // Workaround for authorization because we don't have callback url which starts with https://
+                    using (OAuthWebForm oauthForm = new OAuthWebForm(url, "https://www.box.com/home/"))
+                    {
+                        if (oauthForm.ShowDialog() == DialogResult.OK)
+                        {
+                            BoxAuthComplete(oauthForm.Code);
+                        }
+                    }
                 }
                 else
                 {
