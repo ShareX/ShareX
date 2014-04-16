@@ -86,10 +86,11 @@ namespace UploadersLib
             }
         }
 
+        #region Request methods
+
         protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
-            string result = null;
             HttpWebResponse response = null;
 
             try
@@ -103,7 +104,7 @@ namespace UploadersLib
                     response = GetResponse(method, url, arguments, headers, cookies);
                 }
 
-                result = ResponseToString(response, responseType);
+                return ResponseToString(response, responseType);
             }
             finally
             {
@@ -112,11 +113,26 @@ namespace UploadersLib
                     response.Close();
                 }
             }
-
-            return result;
         }
 
-        // This method mainly for downloading file
+        // For send json text etc.
+        protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
+            NameValueCollection headers = null, CookieCollection cookies = null)
+        {
+            byte[] data = Encoding.UTF8.GetBytes(content);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                ms.Write(data, 0, data.Length);
+
+                using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, ms))
+                {
+                    return ResponseToString(response, responseType);
+                }
+            }
+        }
+
+        // Mainly for download file
         protected bool SendRequest(HttpMethod method, Stream responseStream, string url, Dictionary<string, string> arguments = null,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
@@ -133,19 +149,33 @@ namespace UploadersLib
         }
 
         private HttpWebResponse GetResponse(HttpMethod method, string url, Dictionary<string, string> arguments = null,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+            NameValueCollection headers = null, CookieCollection cookies = null, Stream dataStream = null)
         {
             IsUploading = true;
+            stopUpload = false;
 
             url = CreateQuery(url, arguments);
 
             try
             {
-                return (HttpWebResponse)PrepareWebRequest(method, url, headers, cookies).GetResponse();
+                HttpWebRequest request = PrepareWebRequest(method, url, headers, cookies);
+
+                if (dataStream != null)
+                {
+                    using (Stream requestStream = request.GetRequestStream())
+                    {
+                        if (!TransferData(dataStream, requestStream))
+                        {
+                            return null;
+                        }
+                    }
+                }
+
+                return (HttpWebResponse)request.GetResponse();
             }
             catch (Exception e)
             {
-                AddWebError(e);
+                if (!stopUpload) AddWebError(e);
             }
             finally
             {
@@ -154,6 +184,8 @@ namespace UploadersLib
 
             return null;
         }
+
+        #endregion Request methods
 
         #region Post methods
 

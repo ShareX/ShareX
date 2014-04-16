@@ -210,11 +210,24 @@ namespace UploadersLib.FileUploaders
             return GetAccountTree("0", false, true, true, true);
         }
 
-        public int CreateSharedLink(int id)
+        public string CreateSharedLink(string id)
         {
-            string url = "https://api.box.com/2.0/files/" + id;
-            SendRequest(HttpMethod.PUT, url);
-            return 0;
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+
+            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"open\"}}", headers: headers);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                BoxFileEntry fileEntry = JsonConvert.DeserializeObject<BoxFileEntry>(response);
+
+                if (fileEntry != null && fileEntry.shared_link != null)
+                {
+                    return fileEntry.shared_link.url;
+                }
+            }
+
+            return null;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -234,27 +247,40 @@ namespace UploadersLib.FileUploaders
 
             if (result.IsSuccess)
             {
-                XDocument xd = XDocument.Parse(result.Response);
-                XElement xe = xd.GetElement("response");
+                BoxFileInfo fileInfo = JsonConvert.DeserializeObject<BoxFileInfo>(result.Response);
 
-                if (xe != null && xe.GetElementValue("status") == "upload_ok")
+                if (fileInfo != null && fileInfo.entries != null && fileInfo.entries.Length > 0)
                 {
-                    XElement xeFile = xe.GetElement("files", "file");
-
-                    if (xeFile != null)
+                    if (Share)
                     {
-                        string publicName = xeFile.GetAttributeValue("public_name");
-
-                        if (!string.IsNullOrEmpty(publicName))
-                        {
-                            result.URL = "http://www.box.com/s/" + publicName;
-                        }
+                        result.URL = CreateSharedLink(fileInfo.entries[0].id);
+                    }
+                    else
+                    {
+                        result.URL = string.Format("https://app.box.com/files/0/f/{0}/1/f_{1}", "folder", "file");
                     }
                 }
             }
 
             return result;
         }
+    }
+
+    public class BoxFileInfo
+    {
+        public BoxFileEntry[] entries { get; set; }
+    }
+
+    public class BoxFileEntry
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public BoxFileSharedLink shared_link { get; set; }
+    }
+
+    public class BoxFileSharedLink
+    {
+        public string url { get; set; }
     }
 
     public class BoxFolder
