@@ -260,8 +260,13 @@ namespace HelpersLib
                 {
                     return regKey.GetValue("Content Type").ToString();
                 }
+                else
+                {
+                    return MimeTypes.GetMimeType(ext);
+                }
             }
-            return "application/octet-stream";
+
+            return MimeTypes.DefaultMimeType;
         }
 
         public static string[] GetEnumDescriptions<T>()

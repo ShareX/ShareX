@@ -89,6 +89,7 @@
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="FontSafe.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
+    <Compile Include="MimeTypes.cs" />
     <Compile Include="Native\LayeredForm.cs">
       <SubType>Form</SubType>
     </Compile>

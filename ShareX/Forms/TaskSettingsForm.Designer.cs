@@ -64,6 +64,8 @@
             this.tpImage = new System.Windows.Forms.TabPage();
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
+            this.cbImageFileExist = new System.Windows.Forms.ComboBox();
+            this.lblImageFileExist = new System.Windows.Forms.Label();
             this.lblImageFormat = new System.Windows.Forms.Label();
             this.lblUseImageFormat2AfterHint = new System.Windows.Forms.Label();
             this.cbImageFormat = new System.Windows.Forms.ComboBox();
@@ -97,23 +99,6 @@
             this.cbCaptureTransparent = new System.Windows.Forms.CheckBox();
             this.tpCaptureShape = new System.Windows.Forms.TabPage();
             this.pgShapesCapture = new System.Windows.Forms.PropertyGrid();
-            this.tpScreenRecorder = new System.Windows.Forms.TabPage();
-            this.nudScreenRecorderDuration = new System.Windows.Forms.NumericUpDown();
-            this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
-            this.nudScreenRecorderStartDelay = new System.Windows.Forms.NumericUpDown();
-            this.cbScreenRecorderOutput = new System.Windows.Forms.ComboBox();
-            this.lblScreenRecorderOutput = new System.Windows.Forms.Label();
-            this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
-            this.nudScreenRecorderFPS = new System.Windows.Forms.NumericUpDown();
-            this.lblScreenRecorderFPS = new System.Windows.Forms.Label();
-            this.gbCommandLineEncoderSettings = new System.Windows.Forms.GroupBox();
-            this.btnScreenRecorderBrowseCommandLinePath = new System.Windows.Forms.Button();
-            this.lblScreenRecorderCommandLineOutputExtension = new System.Windows.Forms.Label();
-            this.lblScreenRecorderCommandLineArgs = new System.Windows.Forms.Label();
-            this.lblScreenRecorderCommandLinePath = new System.Windows.Forms.Label();
-            this.txtScreenRecorderCommandLineArgs = new System.Windows.Forms.TextBox();
-            this.txtScreenRecorderCommandLineOutputExtension = new System.Windows.Forms.TextBox();
-            this.txtScreenRecorderCommandLinePath = new System.Windows.Forms.TextBox();
             this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
@@ -153,8 +138,23 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.lblImageFileExist = new System.Windows.Forms.Label();
-            this.cbImageFileExist = new System.Windows.Forms.ComboBox();
+            this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.nudScreenRecorderDuration = new System.Windows.Forms.NumericUpDown();
+            this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
+            this.nudScreenRecorderStartDelay = new System.Windows.Forms.NumericUpDown();
+            this.cbScreenRecorderOutput = new System.Windows.Forms.ComboBox();
+            this.lblScreenRecorderOutput = new System.Windows.Forms.Label();
+            this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
+            this.nudScreenRecorderFPS = new System.Windows.Forms.NumericUpDown();
+            this.lblScreenRecorderFPS = new System.Windows.Forms.Label();
+            this.gbCommandLineEncoderSettings = new System.Windows.Forms.GroupBox();
+            this.btnScreenRecorderBrowseCommandLinePath = new System.Windows.Forms.Button();
+            this.lblScreenRecorderCommandLineOutputExtension = new System.Windows.Forms.Label();
+            this.lblScreenRecorderCommandLineArgs = new System.Windows.Forms.Label();
+            this.lblScreenRecorderCommandLinePath = new System.Windows.Forms.Label();
+            this.txtScreenRecorderCommandLineArgs = new System.Windows.Forms.TextBox();
+            this.txtScreenRecorderCommandLineOutputExtension = new System.Windows.Forms.TextBox();
+            this.txtScreenRecorderCommandLinePath = new System.Windows.Forms.TextBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -173,11 +173,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpCaptureShape.SuspendLayout();
-            this.tpScreenRecorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderFPS)).BeginInit();
-            this.gbCommandLineEncoderSettings.SuspendLayout();
             this.tpActions.SuspendLayout();
             this.pActions.SuspendLayout();
             this.tpWatchFolders.SuspendLayout();
@@ -187,6 +182,11 @@
             this.tpUploadClipboard.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.tpScreenRecorder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderFPS)).BeginInit();
+            this.gbCommandLineEncoderSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -260,6 +260,7 @@
             this.tcHotkeySettings.Controls.Add(this.tpGeneral);
             this.tcHotkeySettings.Controls.Add(this.tpImage);
             this.tcHotkeySettings.Controls.Add(this.tpCapture);
+            this.tcHotkeySettings.Controls.Add(this.tpScreenRecorder);
             this.tcHotkeySettings.Controls.Add(this.tpActions);
             this.tcHotkeySettings.Controls.Add(this.tpWatchFolders);
             this.tcHotkeySettings.Controls.Add(this.tpUpload);
@@ -269,7 +270,7 @@
             this.tcHotkeySettings.Location = new System.Drawing.Point(3, 3);
             this.tcHotkeySettings.Name = "tcHotkeySettings";
             this.tcHotkeySettings.SelectedIndex = 0;
-            this.tcHotkeySettings.Size = new System.Drawing.Size(528, 386);
+            this.tcHotkeySettings.Size = new System.Drawing.Size(558, 386);
             this.tcHotkeySettings.TabIndex = 0;
             // 
             // tpTask
@@ -288,7 +289,7 @@
             this.tpTask.Location = new System.Drawing.Point(4, 22);
             this.tpTask.Name = "tpTask";
             this.tpTask.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTask.Size = new System.Drawing.Size(520, 360);
+            this.tpTask.Size = new System.Drawing.Size(550, 360);
             this.tpTask.TabIndex = 0;
             this.tpTask.Text = "Task";
             this.tpTask.UseVisualStyleBackColor = true;
@@ -416,7 +417,7 @@
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(520, 360);
+            this.tpGeneral.Size = new System.Drawing.Size(550, 360);
             this.tpGeneral.TabIndex = 7;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -434,7 +435,7 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(3, 30);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(514, 327);
+            this.panelGeneral.Size = new System.Drawing.Size(544, 327);
             this.panelGeneral.TabIndex = 19;
             // 
             // lblAfterTaskNotification
@@ -520,7 +521,7 @@
             this.chkUseDefaultGeneralSettings.Location = new System.Drawing.Point(3, 3);
             this.chkUseDefaultGeneralSettings.Name = "chkUseDefaultGeneralSettings";
             this.chkUseDefaultGeneralSettings.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultGeneralSettings.Size = new System.Drawing.Size(514, 27);
+            this.chkUseDefaultGeneralSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultGeneralSettings.TabIndex = 20;
             this.chkUseDefaultGeneralSettings.Text = "Use default general settings";
             this.chkUseDefaultGeneralSettings.UseVisualStyleBackColor = true;
@@ -533,7 +534,7 @@
             this.tpImage.Location = new System.Drawing.Point(4, 22);
             this.tpImage.Name = "tpImage";
             this.tpImage.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImage.Size = new System.Drawing.Size(520, 360);
+            this.tpImage.Size = new System.Drawing.Size(550, 360);
             this.tpImage.TabIndex = 1;
             this.tpImage.Text = "Image";
             this.tpImage.UseVisualStyleBackColor = true;
@@ -546,7 +547,7 @@
             this.tcImage.Location = new System.Drawing.Point(3, 30);
             this.tcImage.Name = "tcImage";
             this.tcImage.SelectedIndex = 0;
-            this.tcImage.Size = new System.Drawing.Size(514, 327);
+            this.tcImage.Size = new System.Drawing.Size(544, 327);
             this.tcImage.TabIndex = 1;
             // 
             // tpQuality
@@ -568,10 +569,29 @@
             this.tpQuality.Location = new System.Drawing.Point(4, 22);
             this.tpQuality.Name = "tpQuality";
             this.tpQuality.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQuality.Size = new System.Drawing.Size(506, 301);
+            this.tpQuality.Size = new System.Drawing.Size(536, 301);
             this.tpQuality.TabIndex = 0;
             this.tpQuality.Text = "General";
             this.tpQuality.UseVisualStyleBackColor = true;
+            // 
+            // cbImageFileExist
+            // 
+            this.cbImageFileExist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImageFileExist.FormattingEnabled = true;
+            this.cbImageFileExist.Location = new System.Drawing.Point(104, 172);
+            this.cbImageFileExist.Name = "cbImageFileExist";
+            this.cbImageFileExist.Size = new System.Drawing.Size(176, 21);
+            this.cbImageFileExist.TabIndex = 13;
+            this.cbImageFileExist.SelectedIndexChanged += new System.EventHandler(this.cbImageFileExist_SelectedIndexChanged);
+            // 
+            // lblImageFileExist
+            // 
+            this.lblImageFileExist.AutoSize = true;
+            this.lblImageFileExist.Location = new System.Drawing.Point(16, 176);
+            this.lblImageFileExist.Name = "lblImageFileExist";
+            this.lblImageFileExist.Size = new System.Drawing.Size(56, 13);
+            this.lblImageFileExist.TabIndex = 12;
+            this.lblImageFileExist.Text = "If file exist:";
             // 
             // lblImageFormat
             // 
@@ -791,7 +811,7 @@
             this.chkUseDefaultImageSettings.Location = new System.Drawing.Point(3, 3);
             this.chkUseDefaultImageSettings.Name = "chkUseDefaultImageSettings";
             this.chkUseDefaultImageSettings.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultImageSettings.Size = new System.Drawing.Size(514, 27);
+            this.chkUseDefaultImageSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultImageSettings.TabIndex = 0;
             this.chkUseDefaultImageSettings.Text = "Use default image settings";
             this.chkUseDefaultImageSettings.UseVisualStyleBackColor = true;
@@ -804,7 +824,7 @@
             this.tpCapture.Location = new System.Drawing.Point(4, 22);
             this.tpCapture.Name = "tpCapture";
             this.tpCapture.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCapture.Size = new System.Drawing.Size(520, 360);
+            this.tpCapture.Size = new System.Drawing.Size(550, 360);
             this.tpCapture.TabIndex = 2;
             this.tpCapture.Text = "Capture";
             this.tpCapture.UseVisualStyleBackColor = true;
@@ -813,12 +833,11 @@
             // 
             this.tcCapture.Controls.Add(this.tpCaptureGeneral);
             this.tcCapture.Controls.Add(this.tpCaptureShape);
-            this.tcCapture.Controls.Add(this.tpScreenRecorder);
             this.tcCapture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcCapture.Location = new System.Drawing.Point(3, 30);
             this.tcCapture.Name = "tcCapture";
             this.tcCapture.SelectedIndex = 0;
-            this.tcCapture.Size = new System.Drawing.Size(514, 327);
+            this.tcCapture.Size = new System.Drawing.Size(544, 327);
             this.tcCapture.TabIndex = 1;
             // 
             // tpCaptureGeneral
@@ -835,7 +854,7 @@
             this.tpCaptureGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpCaptureGeneral.Name = "tpCaptureGeneral";
             this.tpCaptureGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCaptureGeneral.Size = new System.Drawing.Size(506, 301);
+            this.tpCaptureGeneral.Size = new System.Drawing.Size(536, 301);
             this.tpCaptureGeneral.TabIndex = 0;
             this.tpCaptureGeneral.Text = "General";
             this.tpCaptureGeneral.UseVisualStyleBackColor = true;
@@ -975,6 +994,422 @@
             this.pgShapesCapture.TabIndex = 11;
             this.pgShapesCapture.ToolbarVisible = false;
             // 
+            // chkUseDefaultCaptureSettings
+            // 
+            this.chkUseDefaultCaptureSettings.AutoSize = true;
+            this.chkUseDefaultCaptureSettings.Checked = true;
+            this.chkUseDefaultCaptureSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultCaptureSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkUseDefaultCaptureSettings.Location = new System.Drawing.Point(3, 3);
+            this.chkUseDefaultCaptureSettings.Name = "chkUseDefaultCaptureSettings";
+            this.chkUseDefaultCaptureSettings.Padding = new System.Windows.Forms.Padding(5);
+            this.chkUseDefaultCaptureSettings.Size = new System.Drawing.Size(544, 27);
+            this.chkUseDefaultCaptureSettings.TabIndex = 0;
+            this.chkUseDefaultCaptureSettings.Text = "Use default capture settings";
+            this.chkUseDefaultCaptureSettings.UseVisualStyleBackColor = true;
+            this.chkUseDefaultCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
+            // 
+            // tpActions
+            // 
+            this.tpActions.Controls.Add(this.pActions);
+            this.tpActions.Controls.Add(this.chkUseDefaultActions);
+            this.tpActions.Location = new System.Drawing.Point(4, 22);
+            this.tpActions.Name = "tpActions";
+            this.tpActions.Padding = new System.Windows.Forms.Padding(3);
+            this.tpActions.Size = new System.Drawing.Size(550, 360);
+            this.tpActions.TabIndex = 3;
+            this.tpActions.Text = "Actions";
+            this.tpActions.UseVisualStyleBackColor = true;
+            // 
+            // pActions
+            // 
+            this.pActions.Controls.Add(this.btnActionsAdd);
+            this.pActions.Controls.Add(this.lvActions);
+            this.pActions.Controls.Add(this.btnActionsEdit);
+            this.pActions.Controls.Add(this.btnActionsRemove);
+            this.pActions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pActions.Location = new System.Drawing.Point(3, 30);
+            this.pActions.Margin = new System.Windows.Forms.Padding(0);
+            this.pActions.Name = "pActions";
+            this.pActions.Size = new System.Drawing.Size(544, 327);
+            this.pActions.TabIndex = 1;
+            // 
+            // btnActionsAdd
+            // 
+            this.btnActionsAdd.Location = new System.Drawing.Point(8, 8);
+            this.btnActionsAdd.Name = "btnActionsAdd";
+            this.btnActionsAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnActionsAdd.TabIndex = 0;
+            this.btnActionsAdd.Text = "Add";
+            this.btnActionsAdd.UseVisualStyleBackColor = true;
+            this.btnActionsAdd.Click += new System.EventHandler(this.btnActionsAdd_Click);
+            // 
+            // lvActions
+            // 
+            this.lvActions.CheckBoxes = true;
+            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chActionsName,
+            this.chActionsPath,
+            this.chActionsArgs});
+            this.lvActions.FullRowSelect = true;
+            this.lvActions.Location = new System.Drawing.Point(8, 40);
+            this.lvActions.MultiSelect = false;
+            this.lvActions.Name = "lvActions";
+            this.lvActions.Size = new System.Drawing.Size(496, 280);
+            this.lvActions.TabIndex = 3;
+            this.lvActions.UseCompatibleStateImageBehavior = false;
+            this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
+            // 
+            // chActionsName
+            // 
+            this.chActionsName.Text = "Name";
+            this.chActionsName.Width = 100;
+            // 
+            // chActionsPath
+            // 
+            this.chActionsPath.Text = "Path";
+            this.chActionsPath.Width = 250;
+            // 
+            // chActionsArgs
+            // 
+            this.chActionsArgs.Text = "Args";
+            this.chActionsArgs.Width = 134;
+            // 
+            // btnActionsEdit
+            // 
+            this.btnActionsEdit.Location = new System.Drawing.Point(88, 8);
+            this.btnActionsEdit.Name = "btnActionsEdit";
+            this.btnActionsEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnActionsEdit.TabIndex = 1;
+            this.btnActionsEdit.Text = "Edit";
+            this.btnActionsEdit.UseVisualStyleBackColor = true;
+            this.btnActionsEdit.Click += new System.EventHandler(this.btnActionsEdit_Click);
+            // 
+            // btnActionsRemove
+            // 
+            this.btnActionsRemove.Location = new System.Drawing.Point(168, 8);
+            this.btnActionsRemove.Name = "btnActionsRemove";
+            this.btnActionsRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnActionsRemove.TabIndex = 2;
+            this.btnActionsRemove.Text = "Remove";
+            this.btnActionsRemove.UseVisualStyleBackColor = true;
+            this.btnActionsRemove.Click += new System.EventHandler(this.btnActionsRemove_Click);
+            // 
+            // chkUseDefaultActions
+            // 
+            this.chkUseDefaultActions.AutoSize = true;
+            this.chkUseDefaultActions.Checked = true;
+            this.chkUseDefaultActions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultActions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkUseDefaultActions.Location = new System.Drawing.Point(3, 3);
+            this.chkUseDefaultActions.Name = "chkUseDefaultActions";
+            this.chkUseDefaultActions.Padding = new System.Windows.Forms.Padding(5);
+            this.chkUseDefaultActions.Size = new System.Drawing.Size(544, 27);
+            this.chkUseDefaultActions.TabIndex = 0;
+            this.chkUseDefaultActions.Text = "Use default actions";
+            this.chkUseDefaultActions.UseVisualStyleBackColor = true;
+            this.chkUseDefaultActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
+            // 
+            // tpWatchFolders
+            // 
+            this.tpWatchFolders.Controls.Add(this.cbWatchFolderEnabled);
+            this.tpWatchFolders.Controls.Add(this.lvWatchFolderList);
+            this.tpWatchFolders.Controls.Add(this.btnWatchFolderRemove);
+            this.tpWatchFolders.Controls.Add(this.btnWatchFolderAdd);
+            this.tpWatchFolders.Location = new System.Drawing.Point(4, 22);
+            this.tpWatchFolders.Name = "tpWatchFolders";
+            this.tpWatchFolders.Padding = new System.Windows.Forms.Padding(3);
+            this.tpWatchFolders.Size = new System.Drawing.Size(550, 360);
+            this.tpWatchFolders.TabIndex = 5;
+            this.tpWatchFolders.Text = "Watch folders";
+            this.tpWatchFolders.UseVisualStyleBackColor = true;
+            // 
+            // cbWatchFolderEnabled
+            // 
+            this.cbWatchFolderEnabled.AutoSize = true;
+            this.cbWatchFolderEnabled.Location = new System.Drawing.Point(8, 8);
+            this.cbWatchFolderEnabled.Name = "cbWatchFolderEnabled";
+            this.cbWatchFolderEnabled.Size = new System.Drawing.Size(266, 17);
+            this.cbWatchFolderEnabled.TabIndex = 0;
+            this.cbWatchFolderEnabled.Text = "Watch folders and if new file created then upload it";
+            this.cbWatchFolderEnabled.UseVisualStyleBackColor = true;
+            this.cbWatchFolderEnabled.CheckedChanged += new System.EventHandler(this.cbWatchFolderEnabled_CheckedChanged);
+            // 
+            // lvWatchFolderList
+            // 
+            this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chWatchFolderFolderPath,
+            this.chWatchFolderFilter,
+            this.chWatchFolderIncludeSubdirectories});
+            this.lvWatchFolderList.FullRowSelect = true;
+            this.lvWatchFolderList.Location = new System.Drawing.Point(8, 64);
+            this.lvWatchFolderList.Name = "lvWatchFolderList";
+            this.lvWatchFolderList.Size = new System.Drawing.Size(504, 288);
+            this.lvWatchFolderList.TabIndex = 3;
+            this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
+            this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
+            // 
+            // chWatchFolderFolderPath
+            // 
+            this.chWatchFolderFolderPath.Text = "Folder path";
+            this.chWatchFolderFolderPath.Width = 323;
+            // 
+            // chWatchFolderFilter
+            // 
+            this.chWatchFolderFilter.Text = "Filter";
+            this.chWatchFolderFilter.Width = 43;
+            // 
+            // chWatchFolderIncludeSubdirectories
+            // 
+            this.chWatchFolderIncludeSubdirectories.Text = "Include subdirectories";
+            this.chWatchFolderIncludeSubdirectories.Width = 124;
+            // 
+            // btnWatchFolderRemove
+            // 
+            this.btnWatchFolderRemove.Location = new System.Drawing.Point(88, 32);
+            this.btnWatchFolderRemove.Name = "btnWatchFolderRemove";
+            this.btnWatchFolderRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnWatchFolderRemove.TabIndex = 2;
+            this.btnWatchFolderRemove.Text = "Remove";
+            this.btnWatchFolderRemove.UseVisualStyleBackColor = true;
+            this.btnWatchFolderRemove.Click += new System.EventHandler(this.btnWatchFolderRemove_Click);
+            // 
+            // btnWatchFolderAdd
+            // 
+            this.btnWatchFolderAdd.Location = new System.Drawing.Point(8, 32);
+            this.btnWatchFolderAdd.Name = "btnWatchFolderAdd";
+            this.btnWatchFolderAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnWatchFolderAdd.TabIndex = 1;
+            this.btnWatchFolderAdd.Text = "Add...";
+            this.btnWatchFolderAdd.UseVisualStyleBackColor = true;
+            this.btnWatchFolderAdd.Click += new System.EventHandler(this.btnWatchFolderAdd_Click);
+            // 
+            // tpUpload
+            // 
+            this.tpUpload.Controls.Add(this.tcUpload);
+            this.tpUpload.Controls.Add(this.chkUseDefaultUploadSettings);
+            this.tpUpload.Location = new System.Drawing.Point(4, 22);
+            this.tpUpload.Name = "tpUpload";
+            this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
+            this.tpUpload.Size = new System.Drawing.Size(550, 360);
+            this.tpUpload.TabIndex = 4;
+            this.tpUpload.Text = "Upload";
+            this.tpUpload.UseVisualStyleBackColor = true;
+            // 
+            // tcUpload
+            // 
+            this.tcUpload.Controls.Add(this.tpUploadNamePattern);
+            this.tcUpload.Controls.Add(this.tpUploadClipboard);
+            this.tcUpload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcUpload.Location = new System.Drawing.Point(3, 30);
+            this.tcUpload.Name = "tcUpload";
+            this.tcUpload.SelectedIndex = 0;
+            this.tcUpload.Size = new System.Drawing.Size(544, 327);
+            this.tcUpload.TabIndex = 1;
+            // 
+            // tpUploadNamePattern
+            // 
+            this.tpUploadNamePattern.Controls.Add(this.cbFileUploadUseNamePattern);
+            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPattern);
+            this.tpUploadNamePattern.Controls.Add(this.txtNameFormatPatternActiveWindow);
+            this.tpUploadNamePattern.Controls.Add(this.btnResetAutoIncrementNumber);
+            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPatternActiveWindow);
+            this.tpUploadNamePattern.Controls.Add(this.txtNameFormatPattern);
+            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPatternPreview);
+            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
+            this.tpUploadNamePattern.Location = new System.Drawing.Point(4, 22);
+            this.tpUploadNamePattern.Name = "tpUploadNamePattern";
+            this.tpUploadNamePattern.Padding = new System.Windows.Forms.Padding(3);
+            this.tpUploadNamePattern.Size = new System.Drawing.Size(536, 301);
+            this.tpUploadNamePattern.TabIndex = 0;
+            this.tpUploadNamePattern.Text = "Name pattern";
+            this.tpUploadNamePattern.UseVisualStyleBackColor = true;
+            // 
+            // cbFileUploadUseNamePattern
+            // 
+            this.cbFileUploadUseNamePattern.AutoSize = true;
+            this.cbFileUploadUseNamePattern.Location = new System.Drawing.Point(16, 192);
+            this.cbFileUploadUseNamePattern.Name = "cbFileUploadUseNamePattern";
+            this.cbFileUploadUseNamePattern.Size = new System.Drawing.Size(313, 17);
+            this.cbFileUploadUseNamePattern.TabIndex = 7;
+            this.cbFileUploadUseNamePattern.Text = "Use name pattern for file uploads too instead actual file name";
+            this.cbFileUploadUseNamePattern.UseVisualStyleBackColor = true;
+            this.cbFileUploadUseNamePattern.CheckedChanged += new System.EventHandler(this.cbFileUploadUseNamePattern_CheckedChanged);
+            // 
+            // lblNameFormatPattern
+            // 
+            this.lblNameFormatPattern.AutoSize = true;
+            this.lblNameFormatPattern.Location = new System.Drawing.Point(16, 20);
+            this.lblNameFormatPattern.Name = "lblNameFormatPattern";
+            this.lblNameFormatPattern.Size = new System.Drawing.Size(221, 13);
+            this.lblNameFormatPattern.TabIndex = 0;
+            this.lblNameFormatPattern.Text = "Name pattern for capture or clipboard upload:";
+            // 
+            // txtNameFormatPatternActiveWindow
+            // 
+            this.txtNameFormatPatternActiveWindow.Location = new System.Drawing.Point(16, 129);
+            this.txtNameFormatPatternActiveWindow.Name = "txtNameFormatPatternActiveWindow";
+            this.txtNameFormatPatternActiveWindow.Size = new System.Drawing.Size(448, 20);
+            this.txtNameFormatPatternActiveWindow.TabIndex = 5;
+            this.txtNameFormatPatternActiveWindow.TextChanged += new System.EventHandler(this.txtNameFormatPatternActiveWindow_TextChanged);
+            // 
+            // btnResetAutoIncrementNumber
+            // 
+            this.btnResetAutoIncrementNumber.Location = new System.Drawing.Point(296, 17);
+            this.btnResetAutoIncrementNumber.Name = "btnResetAutoIncrementNumber";
+            this.btnResetAutoIncrementNumber.Size = new System.Drawing.Size(168, 23);
+            this.btnResetAutoIncrementNumber.TabIndex = 1;
+            this.btnResetAutoIncrementNumber.Text = "Reset auto increment number";
+            this.btnResetAutoIncrementNumber.UseVisualStyleBackColor = true;
+            this.btnResetAutoIncrementNumber.Click += new System.EventHandler(this.btnResetAutoIncrementNumber_Click);
+            // 
+            // lblNameFormatPatternActiveWindow
+            // 
+            this.lblNameFormatPatternActiveWindow.AutoSize = true;
+            this.lblNameFormatPatternActiveWindow.Location = new System.Drawing.Point(16, 105);
+            this.lblNameFormatPatternActiveWindow.Name = "lblNameFormatPatternActiveWindow";
+            this.lblNameFormatPatternActiveWindow.Size = new System.Drawing.Size(199, 13);
+            this.lblNameFormatPatternActiveWindow.TabIndex = 4;
+            this.lblNameFormatPatternActiveWindow.Text = "Name pattern for active window capture:";
+            // 
+            // txtNameFormatPattern
+            // 
+            this.txtNameFormatPattern.Location = new System.Drawing.Point(16, 44);
+            this.txtNameFormatPattern.Name = "txtNameFormatPattern";
+            this.txtNameFormatPattern.Size = new System.Drawing.Size(448, 20);
+            this.txtNameFormatPattern.TabIndex = 2;
+            this.txtNameFormatPattern.TextChanged += new System.EventHandler(this.txtNameFormatPattern_TextChanged);
+            // 
+            // lblNameFormatPatternPreview
+            // 
+            this.lblNameFormatPatternPreview.AutoSize = true;
+            this.lblNameFormatPatternPreview.Location = new System.Drawing.Point(16, 76);
+            this.lblNameFormatPatternPreview.Name = "lblNameFormatPatternPreview";
+            this.lblNameFormatPatternPreview.Size = new System.Drawing.Size(48, 13);
+            this.lblNameFormatPatternPreview.TabIndex = 3;
+            this.lblNameFormatPatternPreview.Text = "Preview:";
+            // 
+            // lblNameFormatPatternPreviewActiveWindow
+            // 
+            this.lblNameFormatPatternPreviewActiveWindow.AutoSize = true;
+            this.lblNameFormatPatternPreviewActiveWindow.Location = new System.Drawing.Point(16, 161);
+            this.lblNameFormatPatternPreviewActiveWindow.Name = "lblNameFormatPatternPreviewActiveWindow";
+            this.lblNameFormatPatternPreviewActiveWindow.Size = new System.Drawing.Size(48, 13);
+            this.lblNameFormatPatternPreviewActiveWindow.TabIndex = 6;
+            this.lblNameFormatPatternPreviewActiveWindow.Text = "Preview:";
+            // 
+            // tpUploadClipboard
+            // 
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoDetectURL);
+            this.tpUploadClipboard.Location = new System.Drawing.Point(4, 22);
+            this.tpUploadClipboard.Name = "tpUploadClipboard";
+            this.tpUploadClipboard.Padding = new System.Windows.Forms.Padding(3);
+            this.tpUploadClipboard.Size = new System.Drawing.Size(506, 301);
+            this.tpUploadClipboard.TabIndex = 1;
+            this.tpUploadClipboard.Text = "Clipboard upload";
+            this.tpUploadClipboard.UseVisualStyleBackColor = true;
+            // 
+            // cbClipboardUploadAutoDetectURL
+            // 
+            this.cbClipboardUploadAutoDetectURL.AutoSize = true;
+            this.cbClipboardUploadAutoDetectURL.Location = new System.Drawing.Point(16, 16);
+            this.cbClipboardUploadAutoDetectURL.Name = "cbClipboardUploadAutoDetectURL";
+            this.cbClipboardUploadAutoDetectURL.Size = new System.Drawing.Size(418, 17);
+            this.cbClipboardUploadAutoDetectURL.TabIndex = 1;
+            this.cbClipboardUploadAutoDetectURL.Text = "Automatically detect URL when doing clipboard text upload and use URL shortener";
+            this.cbClipboardUploadAutoDetectURL.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadAutoDetectURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
+            // 
+            // chkUseDefaultUploadSettings
+            // 
+            this.chkUseDefaultUploadSettings.AutoSize = true;
+            this.chkUseDefaultUploadSettings.Checked = true;
+            this.chkUseDefaultUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultUploadSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkUseDefaultUploadSettings.Location = new System.Drawing.Point(3, 3);
+            this.chkUseDefaultUploadSettings.Name = "chkUseDefaultUploadSettings";
+            this.chkUseDefaultUploadSettings.Padding = new System.Windows.Forms.Padding(5);
+            this.chkUseDefaultUploadSettings.Size = new System.Drawing.Size(544, 27);
+            this.chkUseDefaultUploadSettings.TabIndex = 0;
+            this.chkUseDefaultUploadSettings.Text = "Use default upload settings";
+            this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
+            this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
+            // 
+            // tpIndexer
+            // 
+            this.tpIndexer.Controls.Add(this.pgIndexerConfig);
+            this.tpIndexer.Controls.Add(this.chkUseDefaultIndexerSettings);
+            this.tpIndexer.Location = new System.Drawing.Point(4, 22);
+            this.tpIndexer.Name = "tpIndexer";
+            this.tpIndexer.Padding = new System.Windows.Forms.Padding(3);
+            this.tpIndexer.Size = new System.Drawing.Size(550, 360);
+            this.tpIndexer.TabIndex = 8;
+            this.tpIndexer.Text = "Indexer";
+            this.tpIndexer.UseVisualStyleBackColor = true;
+            // 
+            // pgIndexerConfig
+            // 
+            this.pgIndexerConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgIndexerConfig.Location = new System.Drawing.Point(3, 30);
+            this.pgIndexerConfig.Name = "pgIndexerConfig";
+            this.pgIndexerConfig.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.pgIndexerConfig.Size = new System.Drawing.Size(544, 327);
+            this.pgIndexerConfig.TabIndex = 0;
+            this.pgIndexerConfig.ToolbarVisible = false;
+            // 
+            // chkUseDefaultIndexerSettings
+            // 
+            this.chkUseDefaultIndexerSettings.AutoSize = true;
+            this.chkUseDefaultIndexerSettings.Checked = true;
+            this.chkUseDefaultIndexerSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultIndexerSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkUseDefaultIndexerSettings.Location = new System.Drawing.Point(3, 3);
+            this.chkUseDefaultIndexerSettings.Name = "chkUseDefaultIndexerSettings";
+            this.chkUseDefaultIndexerSettings.Padding = new System.Windows.Forms.Padding(5);
+            this.chkUseDefaultIndexerSettings.Size = new System.Drawing.Size(544, 27);
+            this.chkUseDefaultIndexerSettings.TabIndex = 1;
+            this.chkUseDefaultIndexerSettings.Text = "Use default indexer settings";
+            this.chkUseDefaultIndexerSettings.UseVisualStyleBackColor = true;
+            this.chkUseDefaultIndexerSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultIndexerSettings_CheckedChanged);
+            // 
+            // tpAdvanced
+            // 
+            this.tpAdvanced.Controls.Add(this.pgTaskSettings);
+            this.tpAdvanced.Controls.Add(this.chkUseDefaultAdvancedSettings);
+            this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
+            this.tpAdvanced.Name = "tpAdvanced";
+            this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAdvanced.Size = new System.Drawing.Size(550, 360);
+            this.tpAdvanced.TabIndex = 6;
+            this.tpAdvanced.Text = "Advanced";
+            this.tpAdvanced.UseVisualStyleBackColor = true;
+            // 
+            // pgTaskSettings
+            // 
+            this.pgTaskSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgTaskSettings.Location = new System.Drawing.Point(3, 30);
+            this.pgTaskSettings.Name = "pgTaskSettings";
+            this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
+            this.pgTaskSettings.Size = new System.Drawing.Size(544, 327);
+            this.pgTaskSettings.TabIndex = 1;
+            this.pgTaskSettings.ToolbarVisible = false;
+            // 
+            // chkUseDefaultAdvancedSettings
+            // 
+            this.chkUseDefaultAdvancedSettings.AutoSize = true;
+            this.chkUseDefaultAdvancedSettings.Checked = true;
+            this.chkUseDefaultAdvancedSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkUseDefaultAdvancedSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkUseDefaultAdvancedSettings.Location = new System.Drawing.Point(3, 3);
+            this.chkUseDefaultAdvancedSettings.Name = "chkUseDefaultAdvancedSettings";
+            this.chkUseDefaultAdvancedSettings.Padding = new System.Windows.Forms.Padding(5);
+            this.chkUseDefaultAdvancedSettings.Size = new System.Drawing.Size(544, 27);
+            this.chkUseDefaultAdvancedSettings.TabIndex = 0;
+            this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
+            this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
+            this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
+            // 
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecorderDuration);
@@ -989,7 +1424,7 @@
             this.tpScreenRecorder.Location = new System.Drawing.Point(4, 22);
             this.tpScreenRecorder.Name = "tpScreenRecorder";
             this.tpScreenRecorder.Padding = new System.Windows.Forms.Padding(3);
-            this.tpScreenRecorder.Size = new System.Drawing.Size(506, 301);
+            this.tpScreenRecorder.Size = new System.Drawing.Size(550, 360);
             this.tpScreenRecorder.TabIndex = 2;
             this.tpScreenRecorder.Text = "Screen recorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
@@ -1198,451 +1633,16 @@
             this.txtScreenRecorderCommandLinePath.TabIndex = 1;
             this.txtScreenRecorderCommandLinePath.TextChanged += new System.EventHandler(this.txtScreenRecorderCommandLinePath_TextChanged);
             // 
-            // chkUseDefaultCaptureSettings
-            // 
-            this.chkUseDefaultCaptureSettings.AutoSize = true;
-            this.chkUseDefaultCaptureSettings.Checked = true;
-            this.chkUseDefaultCaptureSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultCaptureSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkUseDefaultCaptureSettings.Location = new System.Drawing.Point(3, 3);
-            this.chkUseDefaultCaptureSettings.Name = "chkUseDefaultCaptureSettings";
-            this.chkUseDefaultCaptureSettings.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultCaptureSettings.Size = new System.Drawing.Size(514, 27);
-            this.chkUseDefaultCaptureSettings.TabIndex = 0;
-            this.chkUseDefaultCaptureSettings.Text = "Use default capture settings";
-            this.chkUseDefaultCaptureSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
-            // 
-            // tpActions
-            // 
-            this.tpActions.Controls.Add(this.pActions);
-            this.tpActions.Controls.Add(this.chkUseDefaultActions);
-            this.tpActions.Location = new System.Drawing.Point(4, 22);
-            this.tpActions.Name = "tpActions";
-            this.tpActions.Padding = new System.Windows.Forms.Padding(3);
-            this.tpActions.Size = new System.Drawing.Size(520, 360);
-            this.tpActions.TabIndex = 3;
-            this.tpActions.Text = "Actions";
-            this.tpActions.UseVisualStyleBackColor = true;
-            // 
-            // pActions
-            // 
-            this.pActions.Controls.Add(this.btnActionsAdd);
-            this.pActions.Controls.Add(this.lvActions);
-            this.pActions.Controls.Add(this.btnActionsEdit);
-            this.pActions.Controls.Add(this.btnActionsRemove);
-            this.pActions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pActions.Location = new System.Drawing.Point(3, 30);
-            this.pActions.Margin = new System.Windows.Forms.Padding(0);
-            this.pActions.Name = "pActions";
-            this.pActions.Size = new System.Drawing.Size(514, 327);
-            this.pActions.TabIndex = 1;
-            // 
-            // btnActionsAdd
-            // 
-            this.btnActionsAdd.Location = new System.Drawing.Point(8, 8);
-            this.btnActionsAdd.Name = "btnActionsAdd";
-            this.btnActionsAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnActionsAdd.TabIndex = 0;
-            this.btnActionsAdd.Text = "Add";
-            this.btnActionsAdd.UseVisualStyleBackColor = true;
-            this.btnActionsAdd.Click += new System.EventHandler(this.btnActionsAdd_Click);
-            // 
-            // lvActions
-            // 
-            this.lvActions.CheckBoxes = true;
-            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chActionsName,
-            this.chActionsPath,
-            this.chActionsArgs});
-            this.lvActions.FullRowSelect = true;
-            this.lvActions.Location = new System.Drawing.Point(8, 40);
-            this.lvActions.MultiSelect = false;
-            this.lvActions.Name = "lvActions";
-            this.lvActions.Size = new System.Drawing.Size(496, 280);
-            this.lvActions.TabIndex = 3;
-            this.lvActions.UseCompatibleStateImageBehavior = false;
-            this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
-            // 
-            // chActionsName
-            // 
-            this.chActionsName.Text = "Name";
-            this.chActionsName.Width = 100;
-            // 
-            // chActionsPath
-            // 
-            this.chActionsPath.Text = "Path";
-            this.chActionsPath.Width = 250;
-            // 
-            // chActionsArgs
-            // 
-            this.chActionsArgs.Text = "Args";
-            this.chActionsArgs.Width = 134;
-            // 
-            // btnActionsEdit
-            // 
-            this.btnActionsEdit.Location = new System.Drawing.Point(88, 8);
-            this.btnActionsEdit.Name = "btnActionsEdit";
-            this.btnActionsEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnActionsEdit.TabIndex = 1;
-            this.btnActionsEdit.Text = "Edit";
-            this.btnActionsEdit.UseVisualStyleBackColor = true;
-            this.btnActionsEdit.Click += new System.EventHandler(this.btnActionsEdit_Click);
-            // 
-            // btnActionsRemove
-            // 
-            this.btnActionsRemove.Location = new System.Drawing.Point(168, 8);
-            this.btnActionsRemove.Name = "btnActionsRemove";
-            this.btnActionsRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnActionsRemove.TabIndex = 2;
-            this.btnActionsRemove.Text = "Remove";
-            this.btnActionsRemove.UseVisualStyleBackColor = true;
-            this.btnActionsRemove.Click += new System.EventHandler(this.btnActionsRemove_Click);
-            // 
-            // chkUseDefaultActions
-            // 
-            this.chkUseDefaultActions.AutoSize = true;
-            this.chkUseDefaultActions.Checked = true;
-            this.chkUseDefaultActions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultActions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkUseDefaultActions.Location = new System.Drawing.Point(3, 3);
-            this.chkUseDefaultActions.Name = "chkUseDefaultActions";
-            this.chkUseDefaultActions.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultActions.Size = new System.Drawing.Size(514, 27);
-            this.chkUseDefaultActions.TabIndex = 0;
-            this.chkUseDefaultActions.Text = "Use default actions";
-            this.chkUseDefaultActions.UseVisualStyleBackColor = true;
-            this.chkUseDefaultActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
-            // 
-            // tpWatchFolders
-            // 
-            this.tpWatchFolders.Controls.Add(this.cbWatchFolderEnabled);
-            this.tpWatchFolders.Controls.Add(this.lvWatchFolderList);
-            this.tpWatchFolders.Controls.Add(this.btnWatchFolderRemove);
-            this.tpWatchFolders.Controls.Add(this.btnWatchFolderAdd);
-            this.tpWatchFolders.Location = new System.Drawing.Point(4, 22);
-            this.tpWatchFolders.Name = "tpWatchFolders";
-            this.tpWatchFolders.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWatchFolders.Size = new System.Drawing.Size(520, 360);
-            this.tpWatchFolders.TabIndex = 5;
-            this.tpWatchFolders.Text = "Watch folders";
-            this.tpWatchFolders.UseVisualStyleBackColor = true;
-            // 
-            // cbWatchFolderEnabled
-            // 
-            this.cbWatchFolderEnabled.AutoSize = true;
-            this.cbWatchFolderEnabled.Location = new System.Drawing.Point(8, 8);
-            this.cbWatchFolderEnabled.Name = "cbWatchFolderEnabled";
-            this.cbWatchFolderEnabled.Size = new System.Drawing.Size(266, 17);
-            this.cbWatchFolderEnabled.TabIndex = 0;
-            this.cbWatchFolderEnabled.Text = "Watch folders and if new file created then upload it";
-            this.cbWatchFolderEnabled.UseVisualStyleBackColor = true;
-            this.cbWatchFolderEnabled.CheckedChanged += new System.EventHandler(this.cbWatchFolderEnabled_CheckedChanged);
-            // 
-            // lvWatchFolderList
-            // 
-            this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chWatchFolderFolderPath,
-            this.chWatchFolderFilter,
-            this.chWatchFolderIncludeSubdirectories});
-            this.lvWatchFolderList.FullRowSelect = true;
-            this.lvWatchFolderList.Location = new System.Drawing.Point(8, 64);
-            this.lvWatchFolderList.Name = "lvWatchFolderList";
-            this.lvWatchFolderList.Size = new System.Drawing.Size(504, 288);
-            this.lvWatchFolderList.TabIndex = 3;
-            this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
-            this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
-            // 
-            // chWatchFolderFolderPath
-            // 
-            this.chWatchFolderFolderPath.Text = "Folder path";
-            this.chWatchFolderFolderPath.Width = 323;
-            // 
-            // chWatchFolderFilter
-            // 
-            this.chWatchFolderFilter.Text = "Filter";
-            this.chWatchFolderFilter.Width = 43;
-            // 
-            // chWatchFolderIncludeSubdirectories
-            // 
-            this.chWatchFolderIncludeSubdirectories.Text = "Include subdirectories";
-            this.chWatchFolderIncludeSubdirectories.Width = 124;
-            // 
-            // btnWatchFolderRemove
-            // 
-            this.btnWatchFolderRemove.Location = new System.Drawing.Point(88, 32);
-            this.btnWatchFolderRemove.Name = "btnWatchFolderRemove";
-            this.btnWatchFolderRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnWatchFolderRemove.TabIndex = 2;
-            this.btnWatchFolderRemove.Text = "Remove";
-            this.btnWatchFolderRemove.UseVisualStyleBackColor = true;
-            this.btnWatchFolderRemove.Click += new System.EventHandler(this.btnWatchFolderRemove_Click);
-            // 
-            // btnWatchFolderAdd
-            // 
-            this.btnWatchFolderAdd.Location = new System.Drawing.Point(8, 32);
-            this.btnWatchFolderAdd.Name = "btnWatchFolderAdd";
-            this.btnWatchFolderAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnWatchFolderAdd.TabIndex = 1;
-            this.btnWatchFolderAdd.Text = "Add...";
-            this.btnWatchFolderAdd.UseVisualStyleBackColor = true;
-            this.btnWatchFolderAdd.Click += new System.EventHandler(this.btnWatchFolderAdd_Click);
-            // 
-            // tpUpload
-            // 
-            this.tpUpload.Controls.Add(this.tcUpload);
-            this.tpUpload.Controls.Add(this.chkUseDefaultUploadSettings);
-            this.tpUpload.Location = new System.Drawing.Point(4, 22);
-            this.tpUpload.Name = "tpUpload";
-            this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpload.Size = new System.Drawing.Size(520, 360);
-            this.tpUpload.TabIndex = 4;
-            this.tpUpload.Text = "Upload";
-            this.tpUpload.UseVisualStyleBackColor = true;
-            // 
-            // tcUpload
-            // 
-            this.tcUpload.Controls.Add(this.tpUploadNamePattern);
-            this.tcUpload.Controls.Add(this.tpUploadClipboard);
-            this.tcUpload.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcUpload.Location = new System.Drawing.Point(3, 30);
-            this.tcUpload.Name = "tcUpload";
-            this.tcUpload.SelectedIndex = 0;
-            this.tcUpload.Size = new System.Drawing.Size(514, 327);
-            this.tcUpload.TabIndex = 1;
-            // 
-            // tpUploadNamePattern
-            // 
-            this.tpUploadNamePattern.Controls.Add(this.cbFileUploadUseNamePattern);
-            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPattern);
-            this.tpUploadNamePattern.Controls.Add(this.txtNameFormatPatternActiveWindow);
-            this.tpUploadNamePattern.Controls.Add(this.btnResetAutoIncrementNumber);
-            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPatternActiveWindow);
-            this.tpUploadNamePattern.Controls.Add(this.txtNameFormatPattern);
-            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPatternPreview);
-            this.tpUploadNamePattern.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
-            this.tpUploadNamePattern.Location = new System.Drawing.Point(4, 22);
-            this.tpUploadNamePattern.Name = "tpUploadNamePattern";
-            this.tpUploadNamePattern.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadNamePattern.Size = new System.Drawing.Size(506, 301);
-            this.tpUploadNamePattern.TabIndex = 0;
-            this.tpUploadNamePattern.Text = "Name pattern";
-            this.tpUploadNamePattern.UseVisualStyleBackColor = true;
-            // 
-            // cbFileUploadUseNamePattern
-            // 
-            this.cbFileUploadUseNamePattern.AutoSize = true;
-            this.cbFileUploadUseNamePattern.Location = new System.Drawing.Point(16, 192);
-            this.cbFileUploadUseNamePattern.Name = "cbFileUploadUseNamePattern";
-            this.cbFileUploadUseNamePattern.Size = new System.Drawing.Size(313, 17);
-            this.cbFileUploadUseNamePattern.TabIndex = 7;
-            this.cbFileUploadUseNamePattern.Text = "Use name pattern for file uploads too instead actual file name";
-            this.cbFileUploadUseNamePattern.UseVisualStyleBackColor = true;
-            this.cbFileUploadUseNamePattern.CheckedChanged += new System.EventHandler(this.cbFileUploadUseNamePattern_CheckedChanged);
-            // 
-            // lblNameFormatPattern
-            // 
-            this.lblNameFormatPattern.AutoSize = true;
-            this.lblNameFormatPattern.Location = new System.Drawing.Point(16, 20);
-            this.lblNameFormatPattern.Name = "lblNameFormatPattern";
-            this.lblNameFormatPattern.Size = new System.Drawing.Size(221, 13);
-            this.lblNameFormatPattern.TabIndex = 0;
-            this.lblNameFormatPattern.Text = "Name pattern for capture or clipboard upload:";
-            // 
-            // txtNameFormatPatternActiveWindow
-            // 
-            this.txtNameFormatPatternActiveWindow.Location = new System.Drawing.Point(16, 129);
-            this.txtNameFormatPatternActiveWindow.Name = "txtNameFormatPatternActiveWindow";
-            this.txtNameFormatPatternActiveWindow.Size = new System.Drawing.Size(448, 20);
-            this.txtNameFormatPatternActiveWindow.TabIndex = 5;
-            this.txtNameFormatPatternActiveWindow.TextChanged += new System.EventHandler(this.txtNameFormatPatternActiveWindow_TextChanged);
-            // 
-            // btnResetAutoIncrementNumber
-            // 
-            this.btnResetAutoIncrementNumber.Location = new System.Drawing.Point(296, 17);
-            this.btnResetAutoIncrementNumber.Name = "btnResetAutoIncrementNumber";
-            this.btnResetAutoIncrementNumber.Size = new System.Drawing.Size(168, 23);
-            this.btnResetAutoIncrementNumber.TabIndex = 1;
-            this.btnResetAutoIncrementNumber.Text = "Reset auto increment number";
-            this.btnResetAutoIncrementNumber.UseVisualStyleBackColor = true;
-            this.btnResetAutoIncrementNumber.Click += new System.EventHandler(this.btnResetAutoIncrementNumber_Click);
-            // 
-            // lblNameFormatPatternActiveWindow
-            // 
-            this.lblNameFormatPatternActiveWindow.AutoSize = true;
-            this.lblNameFormatPatternActiveWindow.Location = new System.Drawing.Point(16, 105);
-            this.lblNameFormatPatternActiveWindow.Name = "lblNameFormatPatternActiveWindow";
-            this.lblNameFormatPatternActiveWindow.Size = new System.Drawing.Size(199, 13);
-            this.lblNameFormatPatternActiveWindow.TabIndex = 4;
-            this.lblNameFormatPatternActiveWindow.Text = "Name pattern for active window capture:";
-            // 
-            // txtNameFormatPattern
-            // 
-            this.txtNameFormatPattern.Location = new System.Drawing.Point(16, 44);
-            this.txtNameFormatPattern.Name = "txtNameFormatPattern";
-            this.txtNameFormatPattern.Size = new System.Drawing.Size(448, 20);
-            this.txtNameFormatPattern.TabIndex = 2;
-            this.txtNameFormatPattern.TextChanged += new System.EventHandler(this.txtNameFormatPattern_TextChanged);
-            // 
-            // lblNameFormatPatternPreview
-            // 
-            this.lblNameFormatPatternPreview.AutoSize = true;
-            this.lblNameFormatPatternPreview.Location = new System.Drawing.Point(16, 76);
-            this.lblNameFormatPatternPreview.Name = "lblNameFormatPatternPreview";
-            this.lblNameFormatPatternPreview.Size = new System.Drawing.Size(48, 13);
-            this.lblNameFormatPatternPreview.TabIndex = 3;
-            this.lblNameFormatPatternPreview.Text = "Preview:";
-            // 
-            // lblNameFormatPatternPreviewActiveWindow
-            // 
-            this.lblNameFormatPatternPreviewActiveWindow.AutoSize = true;
-            this.lblNameFormatPatternPreviewActiveWindow.Location = new System.Drawing.Point(16, 161);
-            this.lblNameFormatPatternPreviewActiveWindow.Name = "lblNameFormatPatternPreviewActiveWindow";
-            this.lblNameFormatPatternPreviewActiveWindow.Size = new System.Drawing.Size(48, 13);
-            this.lblNameFormatPatternPreviewActiveWindow.TabIndex = 6;
-            this.lblNameFormatPatternPreviewActiveWindow.Text = "Preview:";
-            // 
-            // tpUploadClipboard
-            // 
-            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoDetectURL);
-            this.tpUploadClipboard.Location = new System.Drawing.Point(4, 22);
-            this.tpUploadClipboard.Name = "tpUploadClipboard";
-            this.tpUploadClipboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadClipboard.Size = new System.Drawing.Size(506, 301);
-            this.tpUploadClipboard.TabIndex = 1;
-            this.tpUploadClipboard.Text = "Clipboard upload";
-            this.tpUploadClipboard.UseVisualStyleBackColor = true;
-            // 
-            // cbClipboardUploadAutoDetectURL
-            // 
-            this.cbClipboardUploadAutoDetectURL.AutoSize = true;
-            this.cbClipboardUploadAutoDetectURL.Location = new System.Drawing.Point(16, 16);
-            this.cbClipboardUploadAutoDetectURL.Name = "cbClipboardUploadAutoDetectURL";
-            this.cbClipboardUploadAutoDetectURL.Size = new System.Drawing.Size(418, 17);
-            this.cbClipboardUploadAutoDetectURL.TabIndex = 1;
-            this.cbClipboardUploadAutoDetectURL.Text = "Automatically detect URL when doing clipboard text upload and use URL shortener";
-            this.cbClipboardUploadAutoDetectURL.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadAutoDetectURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
-            // 
-            // chkUseDefaultUploadSettings
-            // 
-            this.chkUseDefaultUploadSettings.AutoSize = true;
-            this.chkUseDefaultUploadSettings.Checked = true;
-            this.chkUseDefaultUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultUploadSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkUseDefaultUploadSettings.Location = new System.Drawing.Point(3, 3);
-            this.chkUseDefaultUploadSettings.Name = "chkUseDefaultUploadSettings";
-            this.chkUseDefaultUploadSettings.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultUploadSettings.Size = new System.Drawing.Size(514, 27);
-            this.chkUseDefaultUploadSettings.TabIndex = 0;
-            this.chkUseDefaultUploadSettings.Text = "Use default upload settings";
-            this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
-            // 
-            // tpIndexer
-            // 
-            this.tpIndexer.Controls.Add(this.pgIndexerConfig);
-            this.tpIndexer.Controls.Add(this.chkUseDefaultIndexerSettings);
-            this.tpIndexer.Location = new System.Drawing.Point(4, 22);
-            this.tpIndexer.Name = "tpIndexer";
-            this.tpIndexer.Padding = new System.Windows.Forms.Padding(3);
-            this.tpIndexer.Size = new System.Drawing.Size(520, 360);
-            this.tpIndexer.TabIndex = 8;
-            this.tpIndexer.Text = "Indexer";
-            this.tpIndexer.UseVisualStyleBackColor = true;
-            // 
-            // pgIndexerConfig
-            // 
-            this.pgIndexerConfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgIndexerConfig.Location = new System.Drawing.Point(3, 30);
-            this.pgIndexerConfig.Name = "pgIndexerConfig";
-            this.pgIndexerConfig.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgIndexerConfig.Size = new System.Drawing.Size(514, 327);
-            this.pgIndexerConfig.TabIndex = 0;
-            this.pgIndexerConfig.ToolbarVisible = false;
-            // 
-            // chkUseDefaultIndexerSettings
-            // 
-            this.chkUseDefaultIndexerSettings.AutoSize = true;
-            this.chkUseDefaultIndexerSettings.Checked = true;
-            this.chkUseDefaultIndexerSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultIndexerSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkUseDefaultIndexerSettings.Location = new System.Drawing.Point(3, 3);
-            this.chkUseDefaultIndexerSettings.Name = "chkUseDefaultIndexerSettings";
-            this.chkUseDefaultIndexerSettings.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultIndexerSettings.Size = new System.Drawing.Size(514, 27);
-            this.chkUseDefaultIndexerSettings.TabIndex = 1;
-            this.chkUseDefaultIndexerSettings.Text = "Use default indexer settings";
-            this.chkUseDefaultIndexerSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultIndexerSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultIndexerSettings_CheckedChanged);
-            // 
-            // tpAdvanced
-            // 
-            this.tpAdvanced.Controls.Add(this.pgTaskSettings);
-            this.tpAdvanced.Controls.Add(this.chkUseDefaultAdvancedSettings);
-            this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
-            this.tpAdvanced.Name = "tpAdvanced";
-            this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(520, 360);
-            this.tpAdvanced.TabIndex = 6;
-            this.tpAdvanced.Text = "Advanced";
-            this.tpAdvanced.UseVisualStyleBackColor = true;
-            // 
-            // pgTaskSettings
-            // 
-            this.pgTaskSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgTaskSettings.Location = new System.Drawing.Point(3, 30);
-            this.pgTaskSettings.Name = "pgTaskSettings";
-            this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgTaskSettings.Size = new System.Drawing.Size(514, 327);
-            this.pgTaskSettings.TabIndex = 1;
-            this.pgTaskSettings.ToolbarVisible = false;
-            // 
-            // chkUseDefaultAdvancedSettings
-            // 
-            this.chkUseDefaultAdvancedSettings.AutoSize = true;
-            this.chkUseDefaultAdvancedSettings.Checked = true;
-            this.chkUseDefaultAdvancedSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkUseDefaultAdvancedSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkUseDefaultAdvancedSettings.Location = new System.Drawing.Point(3, 3);
-            this.chkUseDefaultAdvancedSettings.Name = "chkUseDefaultAdvancedSettings";
-            this.chkUseDefaultAdvancedSettings.Padding = new System.Windows.Forms.Padding(5);
-            this.chkUseDefaultAdvancedSettings.Size = new System.Drawing.Size(514, 27);
-            this.chkUseDefaultAdvancedSettings.TabIndex = 0;
-            this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
-            this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
-            this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // lblImageFileExist
-            // 
-            this.lblImageFileExist.AutoSize = true;
-            this.lblImageFileExist.Location = new System.Drawing.Point(16, 176);
-            this.lblImageFileExist.Name = "lblImageFileExist";
-            this.lblImageFileExist.Size = new System.Drawing.Size(56, 13);
-            this.lblImageFileExist.TabIndex = 12;
-            this.lblImageFileExist.Text = "If file exist:";
-            // 
-            // cbImageFileExist
-            // 
-            this.cbImageFileExist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImageFileExist.FormattingEnabled = true;
-            this.cbImageFileExist.Location = new System.Drawing.Point(104, 172);
-            this.cbImageFileExist.Name = "cbImageFileExist";
-            this.cbImageFileExist.Size = new System.Drawing.Size(176, 21);
-            this.cbImageFileExist.TabIndex = 13;
-            this.cbImageFileExist.SelectedIndexChanged += new System.EventHandler(this.cbImageFileExist_SelectedIndexChanged);
-            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(534, 392);
+            this.ClientSize = new System.Drawing.Size(564, 392);
             this.Controls.Add(this.tcHotkeySettings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(550, 430);
+            this.MinimumSize = new System.Drawing.Size(580, 430);
             this.Name = "TaskSettingsForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1674,13 +1674,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpCaptureShape.ResumeLayout(false);
-            this.tpScreenRecorder.ResumeLayout(false);
-            this.tpScreenRecorder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderFPS)).EndInit();
-            this.gbCommandLineEncoderSettings.ResumeLayout(false);
-            this.gbCommandLineEncoderSettings.PerformLayout();
             this.tpActions.ResumeLayout(false);
             this.tpActions.PerformLayout();
             this.pActions.ResumeLayout(false);
@@ -1697,6 +1690,13 @@
             this.tpIndexer.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.tpScreenRecorder.ResumeLayout(false);
+            this.tpScreenRecorder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderFPS)).EndInit();
+            this.gbCommandLineEncoderSettings.ResumeLayout(false);
+            this.gbCommandLineEncoderSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
