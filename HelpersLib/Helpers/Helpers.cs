@@ -255,14 +255,28 @@ namespace HelpersLib
             if (!string.IsNullOrEmpty(fileName))
             {
                 string ext = Path.GetExtension(fileName).ToLower();
-                RegistryKey regKey = Registry.ClassesRoot.OpenSubKey(ext);
-                if (regKey != null && regKey.GetValue("Content Type") != null)
+
+                if (!string.IsNullOrEmpty(ext))
                 {
-                    return regKey.GetValue("Content Type").ToString();
-                }
-                else
-                {
-                    return MimeTypes.GetMimeType(ext);
+                    string mimeType = MimeTypes.GetMimeType(ext);
+
+                    if (!string.IsNullOrEmpty(mimeType))
+                    {
+                        return mimeType;
+                    }
+
+                    using (RegistryKey regKey = Registry.ClassesRoot.OpenSubKey(ext))
+                    {
+                        if (regKey != null && regKey.GetValue("Content Type") != null)
+                        {
+                            mimeType = regKey.GetValue("Content Type").ToString();
+
+                            if (!string.IsNullOrEmpty(mimeType))
+                            {
+                                return mimeType;
+                            }
+                        }
+                    }
                 }
             }
 
