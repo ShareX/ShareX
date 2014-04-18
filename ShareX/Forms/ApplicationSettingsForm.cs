@@ -120,6 +120,9 @@ namespace ShareX
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
 
+            // Profiles
+            Program.Settings.VideoEncoders.ForEach(x => AddVideoEncoder(x));
+
             // Advanced
             pgSettings.SelectedObject = Program.Settings;
         }
@@ -171,6 +174,12 @@ namespace ShareX
             }
 
             lblPreviewPersonalFolderPath.Text = personalPath;
+        }
+
+        public void SelectProfilesTab()
+        {
+            tcSettings.SelectedTab = tpProfiles;
+            tcProfiles.SelectedTab = tpEncodersCLI;
         }
 
         #region General
@@ -447,5 +456,64 @@ namespace ShareX
         }
 
         #endregion Print
+
+        #region Profiles
+
+        private void btnEncodersAdd_Click(object sender, EventArgs e)
+        {
+            using (EncoderProgramForm form = new EncoderProgramForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    VideoEncoder encoder = form.encoder;
+                    Program.Settings.VideoEncoders.Add(encoder);
+                    AddVideoEncoder(encoder);
+                }
+            }
+        }
+
+        private void AddVideoEncoder(VideoEncoder encoder)
+        {
+            ListViewItem lvi = new ListViewItem(encoder.Name ?? "");
+            lvi.Tag = encoder;
+            lvi.SubItems.Add(encoder.Path ?? "");
+            lvi.SubItems.Add(encoder.Args ?? "");
+            lvi.SubItems.Add(encoder.OutputExtension ?? "");
+            lvEncoders.Items.Add(lvi);
+        }
+
+        private void btnEncodersEdit_Click(object sender, EventArgs e)
+        {
+            if (lvEncoders.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvEncoders.SelectedItems[0];
+                VideoEncoder encoder = lvi.Tag as VideoEncoder;
+
+                using (EncoderProgramForm form = new EncoderProgramForm(encoder))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        lvi.Text = encoder.Name ?? "";
+                        lvi.SubItems[1].Text = encoder.Path ?? "";
+                        lvi.SubItems[2].Text = encoder.Args ?? "";
+                        lvi.SubItems[3].Text = encoder.OutputExtension ?? "";
+                    }
+                }
+            }
+        }
+
+        private void btnEncodersRemove_Click(object sender, EventArgs e)
+        {
+            if (lvEncoders.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvEncoders.SelectedItems[0];
+                VideoEncoder encoder = lvi.Tag as VideoEncoder;
+
+                Program.Settings.VideoEncoders.Remove(encoder);
+                lvEncoders.Items.Remove(lvi);
+            }
+        }
+
+        #endregion Profiles
     }
 }

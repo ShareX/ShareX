@@ -274,10 +274,6 @@ namespace ShareX
         public float ScreenRecordDuration = 3f;
         public float ScreenRecordStartDelay = 0.1f;
 
-        public string ScreenRecordCommandLinePath = "x264.exe";
-        public string ScreenRecordCommandLineArgs = "--output %output %input";
-        public string ScreenRecordCommandLineOutputExtension = "mp4";
-
         #endregion Capture / Screen recorder
     }
 
@@ -303,7 +299,7 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by treating them as images when files are handled during file upload, clipboard upload, drag & drop, watch folder and other tasks.")]
         public bool ProcessImagesDuringFileUpload { get; set; }
 
-        [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image upload.")]
+        [Category("General"), DefaultValue(true), Description("Use after capture tasks for clipboard image upload.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
 
         [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height")]

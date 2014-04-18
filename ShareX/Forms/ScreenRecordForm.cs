@@ -147,10 +147,12 @@ namespace ShareX
                                 screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
                                 break;
                             case ScreenRecordOutput.AVICommandLine:
-                                path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings,
-                                    TaskSettings.CaptureSettings.ScreenRecordCommandLineOutputExtension));
-                                screenRecorder.EncodeUsingCommandLine(path, TaskSettings.CaptureSettings.ScreenRecordCommandLinePath,
-                                    TaskSettings.CaptureSettings.ScreenRecordCommandLineArgs);
+                                if (Program.Settings.VideoEncoders.Count > 0)
+                                {
+                                    VideoEncoder encoder = Program.Settings.VideoEncoders[Program.Settings.VideoEncoderId.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1)];
+                                    path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
+                                    screenRecorder.EncodeUsingCommandLine(encoder, path);
+                                }
                                 break;
                         }
                     });

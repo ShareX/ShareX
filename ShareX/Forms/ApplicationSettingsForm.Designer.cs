@@ -102,6 +102,17 @@ namespace ShareX
             this.tpPrint = new System.Windows.Forms.TabPage();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
+            this.tpProfiles = new System.Windows.Forms.TabPage();
+            this.tcProfiles = new System.Windows.Forms.TabControl();
+            this.tpEncodersCLI = new System.Windows.Forms.TabPage();
+            this.lvEncoders = new HelpersLib.MyListView();
+            this.chEncoderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chEncoderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chEncoderArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chEncoderOutputExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnEncodersAdd = new System.Windows.Forms.Button();
+            this.btnEncodersEdit = new System.Windows.Forms.Button();
+            this.btnEncodersRemove = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tcSettings.SuspendLayout();
@@ -123,6 +134,9 @@ namespace ShareX
             this.gbSecondaryTextUploaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpPrint.SuspendLayout();
+            this.tpProfiles.SuspendLayout();
+            this.tcProfiles.SuspendLayout();
+            this.tpEncodersCLI.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,12 +147,13 @@ namespace ShareX
             this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpUpload);
             this.tcSettings.Controls.Add(this.tpPrint);
+            this.tcSettings.Controls.Add(this.tpProfiles);
             this.tcSettings.Controls.Add(this.tpAdvanced);
             this.tcSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcSettings.Location = new System.Drawing.Point(3, 3);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
-            this.tcSettings.Size = new System.Drawing.Size(618, 396);
+            this.tcSettings.Size = new System.Drawing.Size(618, 395);
             this.tcSettings.TabIndex = 0;
             // 
             // tpGeneral
@@ -155,7 +170,7 @@ namespace ShareX
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(610, 370);
+            this.tpGeneral.Size = new System.Drawing.Size(610, 369);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -554,7 +569,7 @@ namespace ShareX
             this.tpUpload.Location = new System.Drawing.Point(4, 22);
             this.tpUpload.Name = "tpUpload";
             this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpload.Size = new System.Drawing.Size(610, 370);
+            this.tpUpload.Size = new System.Drawing.Size(610, 369);
             this.tpUpload.TabIndex = 3;
             this.tpUpload.Text = "Upload";
             this.tpUpload.UseVisualStyleBackColor = true;
@@ -568,7 +583,7 @@ namespace ShareX
             this.tcUpload.Location = new System.Drawing.Point(3, 3);
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
-            this.tcUpload.Size = new System.Drawing.Size(604, 364);
+            this.tcUpload.Size = new System.Drawing.Size(604, 363);
             this.tcUpload.TabIndex = 3;
             // 
             // tpPerformance
@@ -577,7 +592,7 @@ namespace ShareX
             this.tpPerformance.Location = new System.Drawing.Point(4, 22);
             this.tpPerformance.Name = "tpPerformance";
             this.tpPerformance.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPerformance.Size = new System.Drawing.Size(596, 338);
+            this.tpPerformance.Size = new System.Drawing.Size(596, 337);
             this.tpPerformance.TabIndex = 0;
             this.tpPerformance.Text = "Performance";
             this.tpPerformance.UseVisualStyleBackColor = true;
@@ -591,7 +606,7 @@ namespace ShareX
             this.gbBandwidth.Controls.Add(this.cbBufferSize);
             this.gbBandwidth.Location = new System.Drawing.Point(8, 8);
             this.gbBandwidth.Name = "gbBandwidth";
-            this.gbBandwidth.Size = new System.Drawing.Size(488, 88);
+            this.gbBandwidth.Size = new System.Drawing.Size(576, 88);
             this.gbBandwidth.TabIndex = 1;
             this.gbBandwidth.TabStop = false;
             this.gbBandwidth.Text = "Bandwidth";
@@ -658,7 +673,7 @@ namespace ShareX
             this.tpUploadResults.Location = new System.Drawing.Point(4, 22);
             this.tpUploadResults.Name = "tpUploadResults";
             this.tpUploadResults.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadResults.Size = new System.Drawing.Size(596, 338);
+            this.tpUploadResults.Size = new System.Drawing.Size(596, 337);
             this.tpUploadResults.TabIndex = 1;
             this.tpUploadResults.Text = "Results";
             this.tpUploadResults.UseVisualStyleBackColor = true;
@@ -671,7 +686,7 @@ namespace ShareX
             this.gbClipboardFormats.Controls.Add(this.lvClipboardFormats);
             this.gbClipboardFormats.Location = new System.Drawing.Point(8, 8);
             this.gbClipboardFormats.Name = "gbClipboardFormats";
-            this.gbClipboardFormats.Size = new System.Drawing.Size(488, 160);
+            this.gbClipboardFormats.Size = new System.Drawing.Size(576, 168);
             this.gbClipboardFormats.TabIndex = 2;
             this.gbClipboardFormats.TabStop = false;
             this.gbClipboardFormats.Text = "Clipboard Formats";
@@ -714,7 +729,7 @@ namespace ShareX
             this.lvClipboardFormats.FullRowSelect = true;
             this.lvClipboardFormats.Location = new System.Drawing.Point(8, 48);
             this.lvClipboardFormats.Name = "lvClipboardFormats";
-            this.lvClipboardFormats.Size = new System.Drawing.Size(472, 104);
+            this.lvClipboardFormats.Size = new System.Drawing.Size(552, 104);
             this.lvClipboardFormats.TabIndex = 3;
             this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
             this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
@@ -739,7 +754,7 @@ namespace ShareX
             this.tpUploadRetry.Location = new System.Drawing.Point(4, 22);
             this.tpUploadRetry.Name = "tpUploadRetry";
             this.tpUploadRetry.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadRetry.Size = new System.Drawing.Size(596, 338);
+            this.tpUploadRetry.Size = new System.Drawing.Size(596, 337);
             this.tpUploadRetry.TabIndex = 2;
             this.tpUploadRetry.Text = "Retry";
             this.tpUploadRetry.UseVisualStyleBackColor = true;
@@ -771,7 +786,7 @@ namespace ShareX
             this.tlpBackupDestinations.Padding = new System.Windows.Forms.Padding(5);
             this.tlpBackupDestinations.RowCount = 1;
             this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 295);
+            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 294);
             this.tlpBackupDestinations.TabIndex = 5;
             // 
             // gbSecondaryImageUploaders
@@ -781,7 +796,7 @@ namespace ShareX
             this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(8, 8);
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
             this.gbSecondaryImageUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 279);
+            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 278);
             this.gbSecondaryImageUploaders.TabIndex = 3;
             this.gbSecondaryImageUploaders.TabStop = false;
             this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
@@ -800,7 +815,7 @@ namespace ShareX
             this.lvSecondaryImageUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryImageUploaders.MultiSelect = false;
             this.lvSecondaryImageUploaders.Name = "lvSecondaryImageUploaders";
-            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(179, 258);
+            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(179, 257);
             this.lvSecondaryImageUploaders.TabIndex = 0;
             this.lvSecondaryImageUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
@@ -813,7 +828,7 @@ namespace ShareX
             this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(396, 8);
             this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
             this.gbSecondaryFileUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 279);
+            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 278);
             this.gbSecondaryFileUploaders.TabIndex = 2;
             this.gbSecondaryFileUploaders.TabStop = false;
             this.gbSecondaryFileUploaders.Text = "Secondary file uploaders";
@@ -831,7 +846,7 @@ namespace ShareX
             this.lvSecondaryFileUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryFileUploaders.MultiSelect = false;
             this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
-            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 258);
+            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 257);
             this.lvSecondaryFileUploaders.TabIndex = 1;
             this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
@@ -844,7 +859,7 @@ namespace ShareX
             this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(199, 8);
             this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
             this.gbSecondaryTextUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 279);
+            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 278);
             this.gbSecondaryTextUploaders.TabIndex = 1;
             this.gbSecondaryTextUploaders.TabStop = false;
             this.gbSecondaryTextUploaders.Text = "Secondary text uploaders";
@@ -862,7 +877,7 @@ namespace ShareX
             this.lvSecondaryTextUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryTextUploaders.MultiSelect = false;
             this.lvSecondaryTextUploaders.Name = "lvSecondaryTextUploaders";
-            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 258);
+            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 257);
             this.lvSecondaryTextUploaders.TabIndex = 1;
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
@@ -897,7 +912,7 @@ namespace ShareX
             this.tpPrint.Location = new System.Drawing.Point(4, 22);
             this.tpPrint.Name = "tpPrint";
             this.tpPrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrint.Size = new System.Drawing.Size(610, 370);
+            this.tpPrint.Size = new System.Drawing.Size(610, 369);
             this.tpPrint.TabIndex = 4;
             this.tpPrint.Text = "Print";
             this.tpPrint.UseVisualStyleBackColor = true;
@@ -923,13 +938,117 @@ namespace ShareX
             this.btnShowImagePrintSettings.UseVisualStyleBackColor = true;
             this.btnShowImagePrintSettings.Click += new System.EventHandler(this.btnShowImagePrintSettings_Click);
             // 
+            // tpProfiles
+            // 
+            this.tpProfiles.Controls.Add(this.tcProfiles);
+            this.tpProfiles.Location = new System.Drawing.Point(4, 22);
+            this.tpProfiles.Name = "tpProfiles";
+            this.tpProfiles.Padding = new System.Windows.Forms.Padding(3);
+            this.tpProfiles.Size = new System.Drawing.Size(610, 369);
+            this.tpProfiles.TabIndex = 6;
+            this.tpProfiles.Text = "Profiles";
+            this.tpProfiles.UseVisualStyleBackColor = true;
+            // 
+            // tcProfiles
+            // 
+            this.tcProfiles.Controls.Add(this.tpEncodersCLI);
+            this.tcProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcProfiles.Location = new System.Drawing.Point(3, 3);
+            this.tcProfiles.Name = "tcProfiles";
+            this.tcProfiles.SelectedIndex = 0;
+            this.tcProfiles.Size = new System.Drawing.Size(604, 363);
+            this.tcProfiles.TabIndex = 0;
+            // 
+            // tpEncodersCLI
+            // 
+            this.tpEncodersCLI.Controls.Add(this.lvEncoders);
+            this.tpEncodersCLI.Controls.Add(this.btnEncodersAdd);
+            this.tpEncodersCLI.Controls.Add(this.btnEncodersEdit);
+            this.tpEncodersCLI.Controls.Add(this.btnEncodersRemove);
+            this.tpEncodersCLI.Location = new System.Drawing.Point(4, 22);
+            this.tpEncodersCLI.Name = "tpEncodersCLI";
+            this.tpEncodersCLI.Padding = new System.Windows.Forms.Padding(3);
+            this.tpEncodersCLI.Size = new System.Drawing.Size(596, 337);
+            this.tpEncodersCLI.TabIndex = 0;
+            this.tpEncodersCLI.Text = "CLI Encoders";
+            this.tpEncodersCLI.UseVisualStyleBackColor = true;
+            // 
+            // lvEncoders
+            // 
+            this.lvEncoders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvEncoders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chEncoderDescription,
+            this.chEncoderPath,
+            this.chEncoderArgs,
+            this.chEncoderOutputExtension});
+            this.lvEncoders.FullRowSelect = true;
+            this.lvEncoders.Location = new System.Drawing.Point(8, 40);
+            this.lvEncoders.MultiSelect = false;
+            this.lvEncoders.Name = "lvEncoders";
+            this.lvEncoders.Size = new System.Drawing.Size(576, 288);
+            this.lvEncoders.TabIndex = 4;
+            this.lvEncoders.UseCompatibleStateImageBehavior = false;
+            this.lvEncoders.View = System.Windows.Forms.View.Details;
+            // 
+            // chEncoderDescription
+            // 
+            this.chEncoderDescription.Text = "Description";
+            this.chEncoderDescription.Width = 137;
+            // 
+            // chEncoderPath
+            // 
+            this.chEncoderPath.Text = "Path";
+            this.chEncoderPath.Width = 213;
+            // 
+            // chEncoderArgs
+            // 
+            this.chEncoderArgs.Text = "Args";
+            this.chEncoderArgs.Width = 122;
+            // 
+            // chEncoderOutputExtension
+            // 
+            this.chEncoderOutputExtension.Text = "Output extension";
+            this.chEncoderOutputExtension.Width = 99;
+            // 
+            // btnEncodersAdd
+            // 
+            this.btnEncodersAdd.Location = new System.Drawing.Point(8, 8);
+            this.btnEncodersAdd.Name = "btnEncodersAdd";
+            this.btnEncodersAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnEncodersAdd.TabIndex = 0;
+            this.btnEncodersAdd.Text = "Add";
+            this.btnEncodersAdd.UseVisualStyleBackColor = true;
+            this.btnEncodersAdd.Click += new System.EventHandler(this.btnEncodersAdd_Click);
+            // 
+            // btnEncodersEdit
+            // 
+            this.btnEncodersEdit.Location = new System.Drawing.Point(88, 8);
+            this.btnEncodersEdit.Name = "btnEncodersEdit";
+            this.btnEncodersEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEncodersEdit.TabIndex = 1;
+            this.btnEncodersEdit.Text = "Edit";
+            this.btnEncodersEdit.UseVisualStyleBackColor = true;
+            this.btnEncodersEdit.Click += new System.EventHandler(this.btnEncodersEdit_Click);
+            // 
+            // btnEncodersRemove
+            // 
+            this.btnEncodersRemove.Location = new System.Drawing.Point(168, 8);
+            this.btnEncodersRemove.Name = "btnEncodersRemove";
+            this.btnEncodersRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnEncodersRemove.TabIndex = 2;
+            this.btnEncodersRemove.Text = "Remove";
+            this.btnEncodersRemove.UseVisualStyleBackColor = true;
+            this.btnEncodersRemove.Click += new System.EventHandler(this.btnEncodersRemove_Click);
+            // 
             // tpAdvanced
             // 
             this.tpAdvanced.Controls.Add(this.pgSettings);
             this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(610, 370);
+            this.tpAdvanced.Size = new System.Drawing.Size(610, 369);
             this.tpAdvanced.TabIndex = 5;
             this.tpAdvanced.Text = "Advanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
@@ -940,7 +1059,7 @@ namespace ShareX
             this.pgSettings.Location = new System.Drawing.Point(3, 3);
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgSettings.Size = new System.Drawing.Size(604, 364);
+            this.pgSettings.Size = new System.Drawing.Size(604, 363);
             this.pgSettings.TabIndex = 0;
             // 
             // ApplicationSettingsForm
@@ -948,9 +1067,8 @@ namespace ShareX
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 402);
+            this.ClientSize = new System.Drawing.Size(624, 401);
             this.Controls.Add(this.tcSettings);
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(640, 440);
             this.Name = "ApplicationSettingsForm";
             this.Padding = new System.Windows.Forms.Padding(3);
@@ -985,6 +1103,9 @@ namespace ShareX
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).EndInit();
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
+            this.tpProfiles.ResumeLayout(false);
+            this.tcProfiles.ResumeLayout(false);
+            this.tpEncodersCLI.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1069,5 +1190,16 @@ namespace ShareX
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.TabPage tpProfiles;
+        private System.Windows.Forms.TabControl tcProfiles;
+        private System.Windows.Forms.TabPage tpEncodersCLI;
+        private System.Windows.Forms.Button btnEncodersAdd;
+        private System.Windows.Forms.Button btnEncodersEdit;
+        private System.Windows.Forms.Button btnEncodersRemove;
+        private MyListView lvEncoders;
+        private System.Windows.Forms.ColumnHeader chEncoderDescription;
+        private System.Windows.Forms.ColumnHeader chEncoderPath;
+        private System.Windows.Forms.ColumnHeader chEncoderArgs;
+        private System.Windows.Forms.ColumnHeader chEncoderOutputExtension;
     }
 }

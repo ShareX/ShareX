@@ -43,6 +43,8 @@ namespace ShareX
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
         private bool loaded;
 
+        private readonly string ConfigureEncoder = "<--- Configure video encoders --->";
+
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
             InitializeComponent();
@@ -151,24 +153,17 @@ namespace ShareX
             // Capture / Screen recorder
             cbScreenRecorderOutput.Items.AddRange(Helpers.GetEnumDescriptions<ScreenRecordOutput>());
             cbScreenRecorderOutput.SelectedIndex = (int)TaskSettings.CaptureSettings.ScreenRecordOutput;
+            UpdateVideoEncoders();
+
             nudScreenRecorderFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS;
             cbScreenRecorderFixedDuration.Checked = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
             nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
 
-            gbCommandLineEncoderSettings.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
-            txtScreenRecorderCommandLinePath.Text = TaskSettings.CaptureSettings.ScreenRecordCommandLinePath;
-            txtScreenRecorderCommandLineArgs.Text = TaskSettings.CaptureSettings.ScreenRecordCommandLineArgs;
-            txtScreenRecorderCommandLineOutputExtension.Text = TaskSettings.CaptureSettings.ScreenRecordCommandLineOutputExtension;
-
             // Actions
             TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
-
-            foreach (ExternalProgram fileAction in TaskSettings.ExternalPrograms)
-            {
-                AddFileAction(fileAction);
-            }
+            TaskSettings.ExternalPrograms.ForEach(x => AddFileAction(x));
 
             // Watch folders
             cbWatchFolderEnabled.Checked = TaskSettings.WatchFolderEnabled;
@@ -203,6 +198,17 @@ namespace ShareX
 
             UpdateDefaultSettingVisibility();
             loaded = true;
+        }
+
+        private void UpdateVideoEncoders()
+        {
+            if (Program.Settings.VideoEncoders.Count > 0)
+            {
+                cboEncoder.Items.Clear();
+                Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
+                cboEncoder.Items.Add(ConfigureEncoder);
+                cboEncoder.SelectedIndex = Program.Settings.VideoEncoderId.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
+            }
         }
 
         private void UpdateDefaultSettingVisibility()
@@ -599,12 +605,31 @@ namespace ShareX
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
         }
 
+        #endregion Capture
+
         #region Screen recorder
 
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            gbCommandLineEncoderSettings.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
+            cboEncoder.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
+        }
+
+        private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboEncoder.SelectedIndex == cboEncoder.Items.Count - 1)
+            {
+                using (ApplicationSettingsForm form = new ApplicationSettingsForm())
+                {
+                    form.SelectProfilesTab();
+                    form.ShowDialog();
+                    UpdateVideoEncoders();
+                }
+            }
+            else
+            {
+                Program.Settings.VideoEncoderId = cboEncoder.SelectedIndex;
+            }
         }
 
         private void nudScreenRecorderFPS_ValueChanged(object sender, EventArgs e)
@@ -628,29 +653,7 @@ namespace ShareX
             TaskSettings.CaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
         }
 
-        private void txtScreenRecorderCommandLinePath_TextChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.ScreenRecordCommandLinePath = txtScreenRecorderCommandLinePath.Text;
-        }
-
-        private void btnScreenRecorderBrowseCommandLinePath_Click(object sender, EventArgs e)
-        {
-            Helpers.BrowseFile("ShareX - Choose encoder path", txtScreenRecorderCommandLinePath, Program.StartupPath);
-        }
-
-        private void txtScreenRecorderCommandLineArgs_TextChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.ScreenRecordCommandLineArgs = txtScreenRecorderCommandLineArgs.Text;
-        }
-
-        private void txtScreenRecorderCommandLineOutputExtension_TextChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.ScreenRecordCommandLineOutputExtension = txtScreenRecorderCommandLineOutputExtension.Text;
-        }
-
         #endregion Screen recorder
-
-        #endregion Capture
 
         #region Actions
 

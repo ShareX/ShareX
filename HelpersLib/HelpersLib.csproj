@@ -87,6 +87,7 @@
     <Compile Include="Colors\RGBA.cs" />
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
+    <Compile Include="EncoderProgram.cs" />
     <Compile Include="FontSafe.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="MimeTypes.cs" />
