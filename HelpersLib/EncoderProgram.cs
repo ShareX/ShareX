@@ -35,21 +35,17 @@ namespace HelpersLib
 {
     public class VideoEncoder
     {
-        [DefaultValue("x264 encoder to MP4")]
         public string Name { get; set; }
-
-        [DefaultValue("x264.exe")]
         public string Path { get; set; }
-
-        [DefaultValue("--output %output %input")]
         public string Args { get; set; }
-
-        [DefaultValue("mp4")]
         public string OutputExtension { get; set; }
 
         public VideoEncoder()
         {
-            this.ApplyDefaultPropertyValues();
+            Name = "x264 encoder to MP4";
+            Path = "x264.exe";
+            Args = "--output %output %input";
+            OutputExtension = "mp4";
         }
 
         /// <param name="sourceFilePath">AVI file path</param>

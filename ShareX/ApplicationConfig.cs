@@ -106,7 +106,6 @@ namespace ShareX
         #region Profiles
 
         public List<VideoEncoder> VideoEncoders = new List<VideoEncoder>();
-        public int VideoEncoderId = 0;
 
         #endregion Profiles
 

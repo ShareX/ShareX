@@ -274,6 +274,8 @@ namespace ShareX
         public float ScreenRecordDuration = 3f;
         public float ScreenRecordStartDelay = 0.1f;
 
+        public int VideoEncoderSelected = 0;
+
         #endregion Capture / Screen recorder
     }
 

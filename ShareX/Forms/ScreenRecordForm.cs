@@ -149,7 +149,7 @@ namespace ShareX
                             case ScreenRecordOutput.AVICommandLine:
                                 if (Program.Settings.VideoEncoders.Count > 0)
                                 {
-                                    VideoEncoder encoder = Program.Settings.VideoEncoders[Program.Settings.VideoEncoderId.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1)];
+                                    VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1)];
                                     path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
                                     screenRecorder.EncodeUsingCommandLine(encoder, path);
                                 }
