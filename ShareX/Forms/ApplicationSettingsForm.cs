@@ -504,7 +504,9 @@ namespace ShareX
 
         private void btnEncoderDuplicate_Click(object sender, EventArgs e)
         {
-            lvEncoders.SelectedItems.Cast<ListViewItem>().Select(x => ((VideoEncoder)x.Tag).Copy()).ToList().ForEach(x => AddVideoEncoder(x));
+            var encoders = lvEncoders.SelectedItems.Cast<ListViewItem>().Select(x => ((VideoEncoder)x.Tag).Copy()).ToList();
+            encoders.ForEach(x => AddVideoEncoder(x));
+            encoders.ForEach(x => Program.Settings.VideoEncoders.Add(x));
         }
 
         private void btnEncodersRemove_Click(object sender, EventArgs e)

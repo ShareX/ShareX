@@ -43,7 +43,7 @@ namespace ShareX
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
         private bool loaded;
 
-        private readonly string ConfigureEncoder = "<--- configure video encoders --->";
+        private readonly string ConfigureEncoder = "Configure video encoders --->";
 
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
@@ -208,7 +208,7 @@ namespace ShareX
                 Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
                 cboEncoder.SelectedIndex = TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
             }
-            if (!cboEncoder.Items.Contains(ConfigureEncoder))
+            else if (!cboEncoder.Items.Contains(ConfigureEncoder))
             {
                 cboEncoder.Items.Add(ConfigureEncoder);
             }
@@ -620,19 +620,7 @@ namespace ShareX
 
         private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboEncoder.SelectedIndex == cboEncoder.Items.Count - 1)
-            {
-                using (ApplicationSettingsForm form = new ApplicationSettingsForm())
-                {
-                    form.SelectProfilesTab();
-                    form.ShowDialog();
-                    UpdateVideoEncoders();
-                }
-            }
-            else
-            {
-                TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
-            }
+            TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
         }
 
         private void nudScreenRecorderFPS_ValueChanged(object sender, EventArgs e)
@@ -654,6 +642,16 @@ namespace ShareX
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
+        }
+
+        private void btnEncoderConfig_Click(object sender, EventArgs e)
+        {
+            using (ApplicationSettingsForm form = new ApplicationSettingsForm())
+            {
+                form.SelectProfilesTab();
+                form.ShowDialog();
+                UpdateVideoEncoders();
+            }
         }
 
         #endregion Screen recorder

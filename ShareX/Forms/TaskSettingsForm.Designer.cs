@@ -148,6 +148,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.btnEncoderConfig = new System.Windows.Forms.Button();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1003,6 +1004,7 @@
             // 
             // tpScreenRecorder
             // 
+            this.tpScreenRecorder.Controls.Add(this.btnEncoderConfig);
             this.tpScreenRecorder.Controls.Add(this.cboEncoder);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecorderDuration);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
@@ -1026,7 +1028,7 @@
             this.cboEncoder.FormattingEnabled = true;
             this.cboEncoder.Location = new System.Drawing.Point(200, 12);
             this.cboEncoder.Name = "cboEncoder";
-            this.cboEncoder.Size = new System.Drawing.Size(336, 21);
+            this.cboEncoder.Size = new System.Drawing.Size(296, 21);
             this.cboEncoder.TabIndex = 10;
             this.cboEncoder.SelectedIndexChanged += new System.EventHandler(this.cboEncoder_SelectedIndexChanged);
             // 
@@ -1558,6 +1560,16 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // btnEncoderConfig
+            // 
+            this.btnEncoderConfig.Location = new System.Drawing.Point(504, 12);
+            this.btnEncoderConfig.Name = "btnEncoderConfig";
+            this.btnEncoderConfig.Size = new System.Drawing.Size(40, 23);
+            this.btnEncoderConfig.TabIndex = 11;
+            this.btnEncoderConfig.Text = "...";
+            this.btnEncoderConfig.UseVisualStyleBackColor = true;
+            this.btnEncoderConfig.Click += new System.EventHandler(this.btnEncoderConfig_Click);
+            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1745,6 +1757,7 @@
         private System.Windows.Forms.ComboBox cbImageFileExist;
         private System.Windows.Forms.Label lblImageFileExist;
         private System.Windows.Forms.ComboBox cboEncoder;
+        private System.Windows.Forms.Button btnEncoderConfig;
 
 
 
