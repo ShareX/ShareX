@@ -52,7 +52,7 @@ namespace HelpersLib
         /// <param name="targetFilePath">Target file path without extension</param>
         public void Encode(string sourceFilePath, string targetFilePath)
         {
-            if (!string.IsNullOrEmpty(sourceFilePath) && !string.IsNullOrEmpty(targetFilePath))
+            if (IsValid() && !string.IsNullOrEmpty(sourceFilePath) && !string.IsNullOrEmpty(targetFilePath))
             {
                 if (!targetFilePath.EndsWith(OutputExtension))
                 {
@@ -71,6 +71,11 @@ namespace HelpersLib
                     process.WaitForExit();
                 }
             }
+        }
+
+        public bool IsValid()
+        {
+            return !string.IsNullOrEmpty(Path) && File.Exists(Path) && !string.IsNullOrEmpty(OutputExtension);
         }
 
         public override string ToString()

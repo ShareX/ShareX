@@ -101,6 +101,7 @@
             this.pgShapesCapture = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.btnEncoderConfig = new System.Windows.Forms.Button();
             this.cboEncoder = new System.Windows.Forms.ComboBox();
             this.nudScreenRecorderDuration = new System.Windows.Forms.NumericUpDown();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
@@ -148,7 +149,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.btnEncoderConfig = new System.Windows.Forms.Button();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1022,6 +1022,16 @@
             this.tpScreenRecorder.Text = "Screen recorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
+            // btnEncoderConfig
+            // 
+            this.btnEncoderConfig.Location = new System.Drawing.Point(504, 11);
+            this.btnEncoderConfig.Name = "btnEncoderConfig";
+            this.btnEncoderConfig.Size = new System.Drawing.Size(40, 23);
+            this.btnEncoderConfig.TabIndex = 11;
+            this.btnEncoderConfig.Text = "...";
+            this.btnEncoderConfig.UseVisualStyleBackColor = true;
+            this.btnEncoderConfig.Click += new System.EventHandler(this.btnEncoderConfig_Click);
+            // 
             // cboEncoder
             // 
             this.cboEncoder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1559,16 +1569,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // btnEncoderConfig
-            // 
-            this.btnEncoderConfig.Location = new System.Drawing.Point(504, 12);
-            this.btnEncoderConfig.Name = "btnEncoderConfig";
-            this.btnEncoderConfig.Size = new System.Drawing.Size(40, 23);
-            this.btnEncoderConfig.TabIndex = 11;
-            this.btnEncoderConfig.Text = "...";
-            this.btnEncoderConfig.UseVisualStyleBackColor = true;
-            this.btnEncoderConfig.Click += new System.EventHandler(this.btnEncoderConfig_Click);
             // 
             // TaskSettingsForm
             // 

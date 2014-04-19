@@ -82,6 +82,20 @@ namespace ShareX
 
         public async void StartRecording(TaskSettings TaskSettings)
         {
+            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine)
+            {
+                if (!Program.Settings.VideoEncoders.IsValidIndex(TaskSettings.CaptureSettings.VideoEncoderSelected))
+                {
+                    MessageBox.Show("Screen recorder CLI encoder not selected.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (!Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
+                {
+                    MessageBox.Show("Screen recorder CLI file path have problem.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             SelectRegion();
             Screenshot.CaptureCursor = TaskSettings.CaptureSettings.ShowCursor;
 
@@ -147,12 +161,9 @@ namespace ShareX
                                 screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
                                 break;
                             case ScreenRecordOutput.AVICommandLine:
-                                if (Program.Settings.VideoEncoders.Count > 0)
-                                {
-                                    VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1)];
-                                    path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
-                                    screenRecorder.EncodeUsingCommandLine(encoder, path);
-                                }
+                                VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected];
+                                path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
+                                screenRecorder.EncodeUsingCommandLine(encoder, path);
                                 break;
                         }
                     });
