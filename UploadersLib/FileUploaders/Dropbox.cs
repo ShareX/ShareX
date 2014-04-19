@@ -55,7 +55,7 @@ namespace UploadersLib.FileUploaders
         private const string URLCreateFolder = URLAPI + "/fileops/create_folder";
         private const string URLDelete = URLAPI + "/fileops/delete";
         private const string URLMove = URLAPI + "/fileops/move";
-        private const string URLDownload = "https://dl.dropbox.com/u";
+        private const string URLPublic = "https://dl.dropboxusercontent.com/u";
 
         private const string URLRequestToken = URLAPI + "/oauth/request_token";
         private const string URLAuthorize = "https://www.dropbox.com/" + APIVersion + "/oauth/authorize";
@@ -353,7 +353,7 @@ namespace UploadersLib.FileUploaders
                 if (path.StartsWith("Public/", StringComparison.InvariantCultureIgnoreCase))
                 {
                     path = Helpers.URLPathEncode((path.Substring(7)));
-                    return Helpers.CombineURL(URLDownload, userID.ToString(), path);
+                    return Helpers.CombineURL(URLPublic, userID.ToString(), path);
                 }
             }
 
