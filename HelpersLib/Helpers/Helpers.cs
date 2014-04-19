@@ -50,7 +50,7 @@ namespace HelpersLib
         public const string Alphanumeric = Numbers + AlphabetCapital + Alphabet;
         public const string URLCharacters = Alphanumeric + "-._~"; // 45 46 95 126
         public const string URLPathCharacters = URLCharacters + "/"; // 47
-        public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;=";
+        public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
 
         private static readonly object randomLock = new object();
         private static readonly Random random = new Random();
@@ -201,7 +201,7 @@ namespace HelpersLib
             return GetValidFolderPath(folderPath) + Path.DirectorySeparatorChar + GetValidFileName(fileName);
         }
 
-        public static string GetValidURL(string url, bool replaceSpace = true)
+        public static string GetValidURL(string url, bool replaceSpace = false)
         {
             if (replaceSpace) url = url.Replace(' ', '_');
             return new string(url.Where(c => ValidURLCharacters.Contains(c)).ToArray());

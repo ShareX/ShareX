@@ -120,7 +120,7 @@ namespace UploadersLib
         public DropboxAccountInfo DropboxAccountInfo = null;
         public string DropboxUploadPath = "Public/ShareX/%y/%mo";
         public bool DropboxAutoCreateShareableLink = false;
-        public bool DropboxShortURL = true;
+        public DropboxURLType DropboxURLType = DropboxURLType.Default;
 
         // Google Drive
 

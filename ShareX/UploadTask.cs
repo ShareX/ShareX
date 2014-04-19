@@ -740,7 +740,7 @@ namespace ShareX
                     {
                         UploadPath = uploadPath,
                         AutoCreateShareableLink = Program.UploadersConfig.DropboxAutoCreateShareableLink,
-                        ShortURL = Program.UploadersConfig.DropboxShortURL
+                        ShareURLType = Program.UploadersConfig.DropboxURLType
                     };
                     break;
                 case FileDestination.GoogleDrive:

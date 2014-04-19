@@ -28,6 +28,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
@@ -39,7 +40,7 @@ namespace UploadersLib.FileUploaders
 
         public string UploadPath { get; set; }
         public bool AutoCreateShareableLink { get; set; }
-        public bool ShortURL { get; set; }
+        public DropboxURLType ShareURLType { get; set; }
 
         private const string APIVersion = "1";
         private const string Root = "dropbox"; // dropbox or sandbox
@@ -55,7 +56,8 @@ namespace UploadersLib.FileUploaders
         private const string URLCreateFolder = URLAPI + "/fileops/create_folder";
         private const string URLDelete = URLAPI + "/fileops/delete";
         private const string URLMove = URLAPI + "/fileops/move";
-        private const string URLPublic = "https://dl.dropboxusercontent.com/u";
+        private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
+        private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
 
         private const string URLRequestToken = URLAPI + "/oauth/request_token";
         private const string URLAuthorize = "https://www.dropbox.com/" + APIVersion + "/oauth/authorize";
@@ -131,7 +133,7 @@ namespace UploadersLib.FileUploaders
         }
 
         // https://www.dropbox.com/developers/core/api#files-POST
-        public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableURL = false, bool shortURL = true)
+        public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableURL = false, DropboxURLType urlType = DropboxURLType.Default)
         {
             if (!OAuthInfo.CheckOAuth(AuthInfo))
             {
@@ -157,12 +159,7 @@ namespace UploadersLib.FileUploaders
                 {
                     if (createShareableURL)
                     {
-                        DropboxShares shares = CreateShareableLink(content.Path, shortURL);
-
-                        if (shares != null)
-                        {
-                            result.URL = shares.URL;
-                        }
+                        result.URL = CreateShareableLink(content.Path, urlType);
                     }
                     else
                     {
@@ -206,16 +203,14 @@ namespace UploadersLib.FileUploaders
         }
 
         // https://www.dropbox.com/developers/core/api#shares
-        public DropboxShares CreateShareableLink(string path, bool short_url = true)
+        public string CreateShareableLink(string path, DropboxURLType urlType)
         {
-            DropboxShares shares = null;
-
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
             {
                 string url = Helpers.CombineURL(URLShares, Helpers.URLPathEncode(path));
 
                 Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("short_url", short_url ? "true" : "false");
+                args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
 
                 string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
 
@@ -223,11 +218,28 @@ namespace UploadersLib.FileUploaders
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    shares = JsonConvert.DeserializeObject<DropboxShares>(response);
+                    DropboxShares shares = JsonConvert.DeserializeObject<DropboxShares>(response);
+
+                    if (urlType == DropboxURLType.Direct)
+                    {
+                        Match match = Regex.Match(shares.URL, @"https?://(?:www\.)?dropbox.com/s/(?<path>\w+/.+)");
+                        if (match.Success)
+                        {
+                            string urlPath = match.Groups["path"].Value;
+                            if (!string.IsNullOrEmpty(urlPath))
+                            {
+                                return Helpers.CombineURL(URLShareDirect, urlPath);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return shares.URL;
+                    }
                 }
             }
 
-            return shares;
+            return null;
         }
 
         #endregion Files and metadata
@@ -336,7 +348,7 @@ namespace UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShortURL);
+            return UploadFile(stream, UploadPath, fileName, AutoCreateShareableLink, ShareURLType);
         }
 
         public string GetPublicURL(string path)
@@ -353,7 +365,7 @@ namespace UploadersLib.FileUploaders
                 if (path.StartsWith("Public/", StringComparison.InvariantCultureIgnoreCase))
                 {
                     path = Helpers.URLPathEncode((path.Substring(7)));
-                    return Helpers.CombineURL(URLPublic, userID.ToString(), path);
+                    return Helpers.CombineURL(URLPublicDirect, userID.ToString(), path);
                 }
             }
 
@@ -369,6 +381,13 @@ namespace UploadersLib.FileUploaders
 
             return string.Empty;
         }
+    }
+
+    public enum DropboxURLType
+    {
+        Default,
+        Shortened,
+        Direct
     }
 
     public class DropboxAccountInfo

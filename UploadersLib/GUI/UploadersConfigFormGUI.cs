@@ -266,8 +266,9 @@ namespace UploadersLib
 
             txtDropboxPath.Text = Config.DropboxUploadPath;
             cbDropboxAutoCreateShareableLink.Checked = Config.DropboxAutoCreateShareableLink;
-            cbDropboxShortURL.Enabled = Config.DropboxAutoCreateShareableLink;
-            cbDropboxShortURL.Checked = Config.DropboxShortURL;
+            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
+            cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
             UpdateDropboxStatus();
 
             // Google Drive

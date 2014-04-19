@@ -478,12 +478,12 @@ namespace UploadersLib
         private void cbDropboxAutoCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.DropboxAutoCreateShareableLink = cbDropboxAutoCreateShareableLink.Checked;
-            cbDropboxShortURL.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
         }
 
-        private void cbDropboxShortURL_CheckedChanged(object sender, EventArgs e)
+        private void cbDropboxURLType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.DropboxShortURL = cbDropboxShortURL.Checked;
+            Config.DropboxURLType = (DropboxURLType)cbDropboxURLType.SelectedIndex;
         }
 
         #endregion Dropbox
