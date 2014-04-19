@@ -115,6 +115,7 @@ namespace ShareX
             this.btnEncodersRemove = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.btnEncoderDuplicate = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -961,6 +962,7 @@ namespace ShareX
             // 
             // tpEncodersCLI
             // 
+            this.tpEncodersCLI.Controls.Add(this.btnEncoderDuplicate);
             this.tpEncodersCLI.Controls.Add(this.lvEncoders);
             this.tpEncodersCLI.Controls.Add(this.btnEncodersAdd);
             this.tpEncodersCLI.Controls.Add(this.btnEncodersEdit);
@@ -1034,7 +1036,7 @@ namespace ShareX
             // 
             // btnEncodersRemove
             // 
-            this.btnEncodersRemove.Location = new System.Drawing.Point(168, 8);
+            this.btnEncodersRemove.Location = new System.Drawing.Point(248, 8);
             this.btnEncodersRemove.Name = "btnEncodersRemove";
             this.btnEncodersRemove.Size = new System.Drawing.Size(75, 23);
             this.btnEncodersRemove.TabIndex = 2;
@@ -1061,6 +1063,16 @@ namespace ShareX
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.Size = new System.Drawing.Size(604, 363);
             this.pgSettings.TabIndex = 0;
+            // 
+            // btnEncoderDuplicate
+            // 
+            this.btnEncoderDuplicate.Location = new System.Drawing.Point(168, 8);
+            this.btnEncoderDuplicate.Name = "btnEncoderDuplicate";
+            this.btnEncoderDuplicate.Size = new System.Drawing.Size(75, 23);
+            this.btnEncoderDuplicate.TabIndex = 5;
+            this.btnEncoderDuplicate.Text = "Duplicate";
+            this.btnEncoderDuplicate.UseVisualStyleBackColor = true;
+            this.btnEncoderDuplicate.Click += new System.EventHandler(this.btnEncoderDuplicate_Click);
             // 
             // ApplicationSettingsForm
             // 
@@ -1201,5 +1213,6 @@ namespace ShareX
         private System.Windows.Forms.ColumnHeader chEncoderPath;
         private System.Windows.Forms.ColumnHeader chEncoderArgs;
         private System.Windows.Forms.ColumnHeader chEncoderOutputExtension;
+        private System.Windows.Forms.Button btnEncoderDuplicate;
     }
 }

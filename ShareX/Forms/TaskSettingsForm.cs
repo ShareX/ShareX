@@ -208,7 +208,10 @@ namespace ShareX
                 Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
                 cboEncoder.SelectedIndex = TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
             }
-            cboEncoder.Items.Add(ConfigureEncoder);
+            if (!cboEncoder.Items.Contains(ConfigureEncoder))
+            {
+                cboEncoder.Items.Add(ConfigureEncoder);
+            }
         }
 
         private void UpdateDefaultSettingVisibility()
