@@ -29,6 +29,7 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
 using System.Web;
+using System.Windows.Forms;
 
 namespace UploadersLib
 {
@@ -53,8 +54,14 @@ namespace UploadersLib
         [Category("Localhost"), Description("Localhost Sub-folder Path, e.g. screenshots, %y = year, %mo = month. SubFolderPath will be automatically appended to HttpHomePath if HttpHomePath does not start with @"), DefaultValue("")]
         public string SubFolderPath { get; set; }
 
-        [Category("Localhost"), Description("HTTP Home Path, %host = Host e.g. google.com without http:// because you choose that in Remote Protocol.\nURL = HttpHomePath (+ SubFolderPath, if HttpHomePath does not start with @) + FileName\nURL = Host + SubFolderPath + FileName (if HttpHomePath is empty)"), DefaultValue("")]
+        [Category("Localhost"), Description("HTTP Home Path, %host = Host e.g. google.com without http:// because you choose that in Remote Protocol.\nURL = HttpHomePath + SubFolderPath + FileName\nURL = Host + SubFolderPath + FileName (if HttpHomePath is empty)"), DefaultValue("")]
         public string HttpHomePath { get; set; }
+
+        [Category("Localhost"), Description("Automatically add sub folder path to end of http home path"), DefaultValue(true)]
+        public bool HttpHomePathAutoAddSubFolderPath { get; set; }
+
+        [Category("Localhost"), Description("Don't add file extension to URL"), DefaultValue(false)]
+        public bool HttpHomePathNoExtension { get; set; }
 
         [Category("Localhost"), Description("Choose an appropriate protocol to be accessed by the browser. Use 'file' for Shared Folders. RemoteProtocol will always be 'file' if HTTP Home Path is empty. "), DefaultValue(BrowserProtocol.File)]
         public BrowserProtocol RemoteProtocol { get; set; }
@@ -93,6 +100,8 @@ namespace UploadersLib
             }
         }
 
+        private static bool warning1Showed = false;
+
         public LocalhostAccount()
         {
             this.ApplyDefaultPropertyValues();
@@ -117,51 +126,68 @@ namespace UploadersLib
             return parser.Parse(HttpHomePath);
         }
 
-        public string GetUriPath(string fileName)
-        {
-            return GetUriPath(fileName, false);
-        }
-
-        public string GetUriPath(string fileName, bool customPath)
+        public string GetUriPath(string filename)
         {
             if (string.IsNullOrEmpty(LocalhostRoot))
             {
                 return string.Empty;
             }
 
-            fileName = HttpUtility.UrlEncode(fileName).Replace("+", "%20");
-            string httppath;
-            string lHttpHomePath = GetHttpHomePath();
-            if (string.IsNullOrEmpty(lHttpHomePath))
+            if (HttpHomePathNoExtension)
+            {
+                filename = Path.GetFileNameWithoutExtension(filename);
+            }
+
+            filename = Helpers.URLEncode(filename);
+
+            string subFolderPath = GetSubFolderPath();
+            subFolderPath = Helpers.URLPathEncode(subFolderPath);
+
+            string httpHomePath = GetHttpHomePath();
+
+            string path;
+
+            if (string.IsNullOrEmpty(httpHomePath))
             {
                 RemoteProtocol = BrowserProtocol.File;
-            }
-            else if (!string.IsNullOrEmpty(lHttpHomePath) && RemoteProtocol == BrowserProtocol.File)
-            {
-                RemoteProtocol = BrowserProtocol.Http;
-            }
-
-            string lFolderPath = GetSubFolderPath();
-
-            if (lHttpHomePath.StartsWith("@") || customPath)
-            {
-                lFolderPath = string.Empty;
-            }
-
-            if (string.IsNullOrEmpty(lHttpHomePath))
-            {
-                httppath = LocalUri.Replace("file://", "");
+                path = LocalUri.Replace("file://", "");
             }
             else
             {
-                httppath = lHttpHomePath.Replace("%host", LocalhostRoot).TrimStart('@');
+                if (httpHomePath.StartsWith("@"))
+                {
+                    if (!warning1Showed)
+                    {
+                        // TODO: Remove this warning 2 release later.
+                        MessageBox.Show("Please use 'HttpHomePathAutoAddSubFolderPath' setting instead adding @ character in beginning of 'HttpHomePath' setting.", "ShareX - Localhost account problem",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        warning1Showed = true;
+                    }
+
+                    httpHomePath = httpHomePath.Substring(1);
+                }
+
+                httpHomePath = Helpers.URLPathEncode(httpHomePath);
+                path = httpHomePath;
             }
 
-            string path = Helpers.CombineURL(Port == 80 ? httppath : string.Format("{0}:{1}", httppath, Port), lFolderPath, fileName);
-
-            if (!path.StartsWith(RemoteProtocol.GetDescription()))
+            if (Port != 80)
             {
-                path = RemoteProtocol.GetDescription() + path;
+                path = string.Format("{0}:{1}", path, Port);
+            }
+
+            if (HttpHomePathAutoAddSubFolderPath)
+            {
+                path = Helpers.CombineURL(path, subFolderPath);
+            }
+
+            path = Helpers.CombineURL(path, filename);
+
+            string remoteProtocol = RemoteProtocol.GetDescription();
+
+            if (!path.StartsWith(remoteProtocol))
+            {
+                path = remoteProtocol + path;
             }
 
             return path;
@@ -178,14 +204,14 @@ namespace UploadersLib
 
         public string GetLocalhostUri(string fileName)
         {
-            string LocalhostAddress = LocalUri;
+            string localhostAddress = LocalUri;
 
-            if (string.IsNullOrEmpty(LocalhostAddress))
+            if (string.IsNullOrEmpty(localhostAddress))
             {
                 return string.Empty;
             }
 
-            return Helpers.CombineURL(LocalhostAddress, GetSubFolderPath(), fileName);
+            return Helpers.CombineURL(localhostAddress, GetSubFolderPath(), fileName);
         }
 
         public override string ToString()

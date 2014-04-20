@@ -154,7 +154,7 @@ namespace ShareX
             this.tcSettings.Location = new System.Drawing.Point(3, 3);
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
-            this.tcSettings.Size = new System.Drawing.Size(618, 395);
+            this.tcSettings.Size = new System.Drawing.Size(618, 396);
             this.tcSettings.TabIndex = 0;
             // 
             // tpGeneral
@@ -171,7 +171,7 @@ namespace ShareX
             this.tpGeneral.Location = new System.Drawing.Point(4, 22);
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeneral.Size = new System.Drawing.Size(610, 369);
+            this.tpGeneral.Size = new System.Drawing.Size(610, 370);
             this.tpGeneral.TabIndex = 0;
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
@@ -1061,7 +1061,7 @@ namespace ShareX
             this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(610, 369);
+            this.tpAdvanced.Size = new System.Drawing.Size(610, 370);
             this.tpAdvanced.TabIndex = 5;
             this.tpAdvanced.Text = "Advanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
@@ -1072,15 +1072,16 @@ namespace ShareX
             this.pgSettings.Location = new System.Drawing.Point(3, 3);
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgSettings.Size = new System.Drawing.Size(604, 363);
+            this.pgSettings.Size = new System.Drawing.Size(604, 364);
             this.pgSettings.TabIndex = 0;
+            this.pgSettings.ToolbarVisible = false;
             // 
             // ApplicationSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 401);
+            this.ClientSize = new System.Drawing.Size(624, 402);
             this.Controls.Add(this.tcSettings);
             this.MinimumSize = new System.Drawing.Size(640, 440);
             this.Name = "ApplicationSettingsForm";
