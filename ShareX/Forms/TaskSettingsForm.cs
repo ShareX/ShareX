@@ -753,6 +753,25 @@ namespace ShareX
             }
         }
 
+        private void lvWatchFolderList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lvWatchFolderList.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvWatchFolderList.SelectedItems[0];
+                WatchFolderSettings watchFolder = lvi.Tag as WatchFolderSettings;
+
+                using (WatchFolderForm form = new WatchFolderForm(watchFolder))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        lvi.Text = watchFolder.FolderPath ?? "";
+                        lvi.SubItems[1].Text = watchFolder.Filter ?? "";
+                        lvi.SubItems[2].Text = watchFolder.IncludeSubdirectories.ToString() ?? "";
+                    }
+                }
+            }
+        }
+
         private void AddWatchFolder(WatchFolderSettings watchFolderSetting)
         {
             if (watchFolderSetting != null)

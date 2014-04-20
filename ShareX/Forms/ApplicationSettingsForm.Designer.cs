@@ -105,6 +105,7 @@ namespace ShareX
             this.tpProfiles = new System.Windows.Forms.TabPage();
             this.tcProfiles = new System.Windows.Forms.TabControl();
             this.tpEncodersCLI = new System.Windows.Forms.TabPage();
+            this.btnEncoderDuplicate = new System.Windows.Forms.Button();
             this.lvEncoders = new HelpersLib.MyListView();
             this.chEncoderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chEncoderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -115,7 +116,6 @@ namespace ShareX
             this.btnEncodersRemove = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.btnEncoderDuplicate = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -975,6 +975,16 @@ namespace ShareX
             this.tpEncodersCLI.Text = "CLI Encoders";
             this.tpEncodersCLI.UseVisualStyleBackColor = true;
             // 
+            // btnEncoderDuplicate
+            // 
+            this.btnEncoderDuplicate.Location = new System.Drawing.Point(168, 8);
+            this.btnEncoderDuplicate.Name = "btnEncoderDuplicate";
+            this.btnEncoderDuplicate.Size = new System.Drawing.Size(75, 23);
+            this.btnEncoderDuplicate.TabIndex = 5;
+            this.btnEncoderDuplicate.Text = "Duplicate";
+            this.btnEncoderDuplicate.UseVisualStyleBackColor = true;
+            this.btnEncoderDuplicate.Click += new System.EventHandler(this.btnEncoderDuplicate_Click);
+            // 
             // lvEncoders
             // 
             this.lvEncoders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -993,6 +1003,7 @@ namespace ShareX
             this.lvEncoders.TabIndex = 4;
             this.lvEncoders.UseCompatibleStateImageBehavior = false;
             this.lvEncoders.View = System.Windows.Forms.View.Details;
+            this.lvEncoders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvEncoders_MouseDoubleClick);
             // 
             // chEncoderDescription
             // 
@@ -1063,16 +1074,6 @@ namespace ShareX
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.Size = new System.Drawing.Size(604, 363);
             this.pgSettings.TabIndex = 0;
-            // 
-            // btnEncoderDuplicate
-            // 
-            this.btnEncoderDuplicate.Location = new System.Drawing.Point(168, 8);
-            this.btnEncoderDuplicate.Name = "btnEncoderDuplicate";
-            this.btnEncoderDuplicate.Size = new System.Drawing.Size(75, 23);
-            this.btnEncoderDuplicate.TabIndex = 5;
-            this.btnEncoderDuplicate.Text = "Duplicate";
-            this.btnEncoderDuplicate.UseVisualStyleBackColor = true;
-            this.btnEncoderDuplicate.Click += new System.EventHandler(this.btnEncoderDuplicate_Click);
             // 
             // ApplicationSettingsForm
             // 

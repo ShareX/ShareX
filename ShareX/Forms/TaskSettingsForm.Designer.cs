@@ -1305,10 +1305,11 @@
             this.lvWatchFolderList.FullRowSelect = true;
             this.lvWatchFolderList.Location = new System.Drawing.Point(8, 64);
             this.lvWatchFolderList.Name = "lvWatchFolderList";
-            this.lvWatchFolderList.Size = new System.Drawing.Size(504, 288);
+            this.lvWatchFolderList.Size = new System.Drawing.Size(528, 288);
             this.lvWatchFolderList.TabIndex = 3;
             this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
             this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
+            this.lvWatchFolderList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvWatchFolderList_MouseDoubleClick);
             // 
             // chWatchFolderFolderPath
             // 

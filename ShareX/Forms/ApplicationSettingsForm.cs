@@ -487,6 +487,11 @@ namespace ShareX
             lvEncoders.Items.Add(lvi);
         }
 
+        private void lvEncoders_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            btnEncodersEdit_Click(sender, e);
+        }
+
         private void btnEncodersEdit_Click(object sender, EventArgs e)
         {
             if (lvEncoders.SelectedItems.Count > 0)
