@@ -724,17 +724,17 @@ namespace ShareX
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.RunImageTask(ShareXResources.Logo);
+            UploadManager.RunImageTask(Resources.Test);
         }
 
         private void tsmiTestTextUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadText(Program.ApplicationName + " text upload test");
+            UploadManager.UploadText("Text upload test");
         }
 
         private void tsmiTestFileUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader);
+            UploadManager.UploadImage(Resources.Test, ImageDestination.FileUploader);
         }
 
         private void tsmiTestURLShortener_Click(object sender, EventArgs e)

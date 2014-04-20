@@ -458,6 +458,7 @@
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\inbox--plus.png" />
     <None Include="Resources\ruler-triangle.png" />
+    <None Include="Resources\Test.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />

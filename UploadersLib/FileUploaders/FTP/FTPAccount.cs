@@ -28,13 +28,14 @@ using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
+using System.Windows.Forms;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib
 {
     public class FTPAccount : ICloneable
     {
-        [Category("Account"), Description("Connection Protocol"), DefaultValue(FTPProtocol.FTP)]
+        [Category("Account"), Description("Connection protocol"), DefaultValue(FTPProtocol.FTP)]
         public FTPProtocol Protocol { get; set; }
 
         [Category("FTP"), Description("Shown in the list as: Name - Server:Port")]
@@ -43,7 +44,7 @@ namespace UploadersLib
         [Category("FTP"), Description("Host, e.g. google.com")]
         public string Host { get; set; }
 
-        [Category("FTP"), Description("Port Number"), DefaultValue(21)]
+        [Category("FTP"), Description("Port number"), DefaultValue(21)]
         public int Port { get; set; }
 
         [Category("FTP")]
@@ -55,14 +56,17 @@ namespace UploadersLib
         [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the server. This affects the server address."), DefaultValue(ServerProtocol.Ftp)]
         public ServerProtocol ServerProtocol { get; set; }
 
-        [Category("FTP"), Description("FTP/HTTP Sub-folder Path, e.g. screenshots, %y = year, %mo = month. SubFolderPath will be automatically appended to HttpHomePath if HttpHomePath does not start with @"), DefaultValue("")]
+        [Category("FTP"), Description("FTP sub folder path, example: Screenshots.\r\nYou can use name parsing: %y = year, %mo = month."), DefaultValue("")]
         public string SubFolderPath { get; set; }
 
         [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the browser"), DefaultValue(BrowserProtocol.Http)]
         public BrowserProtocol BrowserProtocol { get; set; }
 
-        [Category("FTP"), Description("URL = HttpHomePath + SubFolderPath + FileName\r\nIf HttpHomePath is empty: URL = Host + SubFolderPath + FileName\r\n%host = Host, @ = Ignore auto SubFolderPath"), DefaultValue("")]
+        [Category("FTP"), Description("URL = HttpHomePath + SubFolderPath + FileName\r\nIf HttpHomePath is empty then URL = Host + SubFolderPath + FileName\r\n%host = Host"), DefaultValue("")]
         public string HttpHomePath { get; set; }
+
+        [Category("FTP"), Description("Automatically add sub folder path to end of http home path"), DefaultValue(true)]
+        public bool HttpHomePathAutoAddSubFolderPath { get; set; }
 
         [Category("FTP"), Description("Don't add file extension to URL"), DefaultValue(false)]
         public bool HttpHomePathNoExtension { get; set; }
@@ -86,7 +90,7 @@ namespace UploadersLib
 
         private string exampleFilename = "screenshot.jpg";
 
-        [Category("FTP"), Description("Preview of the FTP Path based on the settings above")]
+        [Category("FTP"), Description("Preview of the FTP path based on the settings above")]
         public string PreviewFtpPath
         {
             get
@@ -95,7 +99,7 @@ namespace UploadersLib
             }
         }
 
-        [Category("FTP"), Description("Preview of the HTTP Path based on the settings above")]
+        [Category("FTP"), Description("Preview of the HTTP path based on the settings above")]
         public string PreviewHttpPath
         {
             get
@@ -104,19 +108,21 @@ namespace UploadersLib
             }
         }
 
-        [Category("FTPS"), Description("Certification Location")]
+        [Category("FTPS"), Description("Certification location")]
         [Editor(typeof(CertFileNameEditor), typeof(UITypeEditor))]
         public string FtpsCertLocation { get; set; }
 
-        [Category("FTPS"), Description("Security Protocol"), DefaultValue(FtpSecurityProtocol.Ssl2Explicit)]
+        [Category("FTPS"), Description("Security protocol"), DefaultValue(FtpSecurityProtocol.Ssl2Explicit)]
         public FtpSecurityProtocol FtpsSecurityProtocol { get; set; }
 
-        [Category("SFTP"), Description("OpenSSH key Passphrase"), PasswordPropertyText(true)]
+        [Category("SFTP"), Description("OpenSSH key passphrase"), PasswordPropertyText(true)]
         public string Passphrase { get; set; }
 
-        [Category("SFTP"), Description("Key Location")]
+        [Category("SFTP"), Description("Key location")]
         [Editor(typeof(KeyFileNameEditor), typeof(UITypeEditor))]
         public string Keypath { get; set; }
+
+        private static bool warning1Showed = false;
 
         public FTPAccount()
         {
@@ -152,6 +158,13 @@ namespace UploadersLib
             return Helpers.CombineURL(GetSubFolderPath(), filename);
         }
 
+        public string GetHttpHomePath()
+        {
+            HttpHomePath = FTPHelpers.RemovePrefixes(HttpHomePath);
+            NameParser nameParser = new NameParser(NameParserType.URL);
+            return nameParser.Parse(HttpHomePath.Replace("%host", Host));
+        }
+
         public string GetUriPath(string filename)
         {
             if (string.IsNullOrEmpty(Host))
@@ -164,14 +177,29 @@ namespace UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            string path;
-
-            HttpHomePath = FTPHelpers.RemovePrefixes(HttpHomePath);
-            NameParser nameParser = new NameParser(NameParserType.URL);
-            string httpHomePath = nameParser.Parse(HttpHomePath.Replace("%host", Host));
+            filename = Helpers.URLEncode(filename);
 
             string subFolderPath = GetSubFolderPath();
-            string browserProtocol = BrowserProtocol.GetDescription();
+            subFolderPath = Helpers.URLPathEncode(subFolderPath);
+
+            string httpHomePath = GetHttpHomePath();
+
+            if (httpHomePath.StartsWith("@"))
+            {
+                if (!warning1Showed)
+                {
+                    // TODO: Remove this warning 2 release later.
+                    MessageBox.Show("Please use 'HttpHomePathAutoAddSubFolderPath' setting instead adding @ character in beginning of 'HttpHomePath' setting.", "ShareX - FTP account problem",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    warning1Showed = true;
+                }
+
+                httpHomePath = httpHomePath.Substring(1);
+            }
+
+            httpHomePath = Helpers.URLPathEncode(httpHomePath);
+
+            string path;
 
             if (string.IsNullOrEmpty(httpHomePath))
             {
@@ -186,13 +214,13 @@ namespace UploadersLib
             }
             else
             {
-                if (!httpHomePath.StartsWith("@"))
+                if (HttpHomePathAutoAddSubFolderPath)
                 {
                     path = Helpers.CombineURL(httpHomePath, subFolderPath);
                 }
                 else
                 {
-                    path = httpHomePath.Substring(1);
+                    path = httpHomePath;
                 }
 
                 if (path.EndsWith("="))
@@ -204,6 +232,8 @@ namespace UploadersLib
                     path = Helpers.CombineURL(path, filename);
                 }
             }
+
+            string browserProtocol = BrowserProtocol.GetDescription();
 
             if (!path.StartsWith(browserProtocol))
             {
