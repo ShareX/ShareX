@@ -202,9 +202,9 @@ namespace ShareX
 
         private void UpdateVideoEncoders()
         {
+            cboEncoder.Items.Clear();
             if (Program.Settings.VideoEncoders.Count > 0)
             {
-                cboEncoder.Items.Clear();
                 Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
                 cboEncoder.SelectedIndex = TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
             }
@@ -615,7 +615,7 @@ namespace ShareX
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            cboEncoder.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
+            btnEncoderConfig.Enabled = cboEncoder.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
         }
 
         private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)

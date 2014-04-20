@@ -86,12 +86,12 @@ namespace ShareX
             {
                 if (!Program.Settings.VideoEncoders.IsValidIndex(TaskSettings.CaptureSettings.VideoEncoderSelected))
                 {
-                    MessageBox.Show("Screen recorder CLI encoder not selected.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("There is no valid CLI video encoder selected.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (!Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
                 {
-                    MessageBox.Show("Screen recorder CLI file path have problem.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("There is a problem with the CLI video encoder file path.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
