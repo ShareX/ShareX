@@ -279,6 +279,14 @@ namespace HelpersLib
             img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
         }
 
+        public static void SaveJPG(this Image img, string filepath, int quality)
+        {
+            quality = quality.Between(0, 100);
+            EncoderParameters encoderParameters = new EncoderParameters(1);
+            encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
+            img.Save(filepath, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
+        }
+
         public static void SaveGIF(this Image img, Stream stream, GIFQuality quality)
         {
             if (quality == GIFQuality.Default)

@@ -29,7 +29,7 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
-    internal class Resize : ImageEffect
+    public class Resize : ImageEffect
     {
         [DefaultValue(250), Description("Use width as 0 to automatically adjust width to maintain aspect ratio.")]
         public int Width { get; set; }

@@ -243,6 +243,15 @@ namespace ShareX
         public WatermarkConfig WatermarkConfig = new WatermarkConfig();
 
         #endregion Image / Effects
+
+        #region Image / Thumbnail
+
+        public int ThumbnailWidth = 200;
+        public int ThumbnailHeight = 0;
+        public string ThumbnailName = "-thumbnail";
+        public bool ThumbnailCheckSize = false;
+
+        #endregion Image / Thumbnail
     }
 
     public class TaskSettingsCapture

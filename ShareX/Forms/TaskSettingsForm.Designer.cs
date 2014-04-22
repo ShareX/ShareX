@@ -84,6 +84,14 @@
             this.cbImageEffectOnlyRegionCapture = new System.Windows.Forms.CheckBox();
             this.btnImageEffects = new System.Windows.Forms.Button();
             this.btnWatermarkSettings = new System.Windows.Forms.Button();
+            this.tpThumbnail = new System.Windows.Forms.TabPage();
+            this.lblThumbnailNamePreview = new System.Windows.Forms.Label();
+            this.lblThumbnailName = new System.Windows.Forms.Label();
+            this.txtThumbnailName = new System.Windows.Forms.TextBox();
+            this.lblThumbnailHeight = new System.Windows.Forms.Label();
+            this.lblThumbnailWidth = new System.Windows.Forms.Label();
+            this.nudThumbnailHeight = new System.Windows.Forms.NumericUpDown();
+            this.nudThumbnailWidth = new System.Windows.Forms.NumericUpDown();
             this.chkUseDefaultImageSettings = new System.Windows.Forms.CheckBox();
             this.tpCapture = new System.Windows.Forms.TabPage();
             this.tcCapture = new System.Windows.Forms.TabControl();
@@ -149,6 +157,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.cbThumbnailIfSmaller = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -161,6 +170,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudUseImageFormat2After)).BeginInit();
             this.tpEffects.SuspendLayout();
             this.gbImageEffects.SuspendLayout();
+            this.tpThumbnail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThumbnailHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThumbnailWidth)).BeginInit();
             this.tpCapture.SuspendLayout();
             this.tcCapture.SuspendLayout();
             this.tpCaptureGeneral.SuspendLayout();
@@ -536,6 +548,7 @@
             // 
             this.tcImage.Controls.Add(this.tpQuality);
             this.tcImage.Controls.Add(this.tpEffects);
+            this.tcImage.Controls.Add(this.tpThumbnail);
             this.tcImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcImage.Location = new System.Drawing.Point(3, 30);
             this.tcImage.Name = "tcImage";
@@ -794,6 +807,96 @@
             this.btnWatermarkSettings.Text = "Watermark configuration...";
             this.btnWatermarkSettings.UseVisualStyleBackColor = true;
             this.btnWatermarkSettings.Click += new System.EventHandler(this.btnWatermarkSettings_Click);
+            // 
+            // tpThumbnail
+            // 
+            this.tpThumbnail.Controls.Add(this.cbThumbnailIfSmaller);
+            this.tpThumbnail.Controls.Add(this.lblThumbnailNamePreview);
+            this.tpThumbnail.Controls.Add(this.lblThumbnailName);
+            this.tpThumbnail.Controls.Add(this.txtThumbnailName);
+            this.tpThumbnail.Controls.Add(this.lblThumbnailHeight);
+            this.tpThumbnail.Controls.Add(this.lblThumbnailWidth);
+            this.tpThumbnail.Controls.Add(this.nudThumbnailHeight);
+            this.tpThumbnail.Controls.Add(this.nudThumbnailWidth);
+            this.tpThumbnail.Location = new System.Drawing.Point(4, 22);
+            this.tpThumbnail.Name = "tpThumbnail";
+            this.tpThumbnail.Padding = new System.Windows.Forms.Padding(3);
+            this.tpThumbnail.Size = new System.Drawing.Size(536, 301);
+            this.tpThumbnail.TabIndex = 3;
+            this.tpThumbnail.Text = "Thumbnail";
+            this.tpThumbnail.UseVisualStyleBackColor = true;
+            // 
+            // lblThumbnailNamePreview
+            // 
+            this.lblThumbnailNamePreview.AutoSize = true;
+            this.lblThumbnailNamePreview.Location = new System.Drawing.Point(248, 76);
+            this.lblThumbnailNamePreview.Name = "lblThumbnailNamePreview";
+            this.lblThumbnailNamePreview.Size = new System.Drawing.Size(45, 13);
+            this.lblThumbnailNamePreview.TabIndex = 6;
+            this.lblThumbnailNamePreview.Text = "Preview";
+            // 
+            // lblThumbnailName
+            // 
+            this.lblThumbnailName.AutoSize = true;
+            this.lblThumbnailName.Location = new System.Drawing.Point(16, 76);
+            this.lblThumbnailName.Name = "lblThumbnailName";
+            this.lblThumbnailName.Size = new System.Drawing.Size(88, 13);
+            this.lblThumbnailName.TabIndex = 5;
+            this.lblThumbnailName.Text = "Thumbnail name:";
+            // 
+            // txtThumbnailName
+            // 
+            this.txtThumbnailName.Location = new System.Drawing.Point(112, 72);
+            this.txtThumbnailName.Name = "txtThumbnailName";
+            this.txtThumbnailName.Size = new System.Drawing.Size(128, 20);
+            this.txtThumbnailName.TabIndex = 4;
+            this.txtThumbnailName.TextChanged += new System.EventHandler(this.txtThumbnailName_TextChanged);
+            // 
+            // lblThumbnailHeight
+            // 
+            this.lblThumbnailHeight.AutoSize = true;
+            this.lblThumbnailHeight.Location = new System.Drawing.Point(16, 44);
+            this.lblThumbnailHeight.Name = "lblThumbnailHeight";
+            this.lblThumbnailHeight.Size = new System.Drawing.Size(41, 13);
+            this.lblThumbnailHeight.TabIndex = 3;
+            this.lblThumbnailHeight.Text = "Height:";
+            // 
+            // lblThumbnailWidth
+            // 
+            this.lblThumbnailWidth.AutoSize = true;
+            this.lblThumbnailWidth.Location = new System.Drawing.Point(16, 16);
+            this.lblThumbnailWidth.Name = "lblThumbnailWidth";
+            this.lblThumbnailWidth.Size = new System.Drawing.Size(38, 13);
+            this.lblThumbnailWidth.TabIndex = 2;
+            this.lblThumbnailWidth.Text = "Width:";
+            // 
+            // nudThumbnailHeight
+            // 
+            this.nudThumbnailHeight.Location = new System.Drawing.Point(64, 40);
+            this.nudThumbnailHeight.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudThumbnailHeight.Name = "nudThumbnailHeight";
+            this.nudThumbnailHeight.Size = new System.Drawing.Size(64, 20);
+            this.nudThumbnailHeight.TabIndex = 1;
+            this.nudThumbnailHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudThumbnailHeight.ValueChanged += new System.EventHandler(this.nudThumbnailHeight_ValueChanged);
+            // 
+            // nudThumbnailWidth
+            // 
+            this.nudThumbnailWidth.Location = new System.Drawing.Point(64, 12);
+            this.nudThumbnailWidth.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudThumbnailWidth.Name = "nudThumbnailWidth";
+            this.nudThumbnailWidth.Size = new System.Drawing.Size(64, 20);
+            this.nudThumbnailWidth.TabIndex = 0;
+            this.nudThumbnailWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudThumbnailWidth.ValueChanged += new System.EventHandler(this.nudThumbnailWidth_ValueChanged);
             // 
             // chkUseDefaultImageSettings
             // 
@@ -1571,6 +1674,17 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // cbThumbnailIfSmaller
+            // 
+            this.cbThumbnailIfSmaller.AutoSize = true;
+            this.cbThumbnailIfSmaller.Location = new System.Drawing.Point(20, 104);
+            this.cbThumbnailIfSmaller.Name = "cbThumbnailIfSmaller";
+            this.cbThumbnailIfSmaller.Size = new System.Drawing.Size(322, 17);
+            this.cbThumbnailIfSmaller.TabIndex = 7;
+            this.cbThumbnailIfSmaller.Text = "Create thumbnail only if image size is bigger than thumbnail size";
+            this.cbThumbnailIfSmaller.UseVisualStyleBackColor = true;
+            this.cbThumbnailIfSmaller.CheckedChanged += new System.EventHandler(this.cbThumbnailIfSmaller_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1604,6 +1718,10 @@
             this.tpEffects.ResumeLayout(false);
             this.gbImageEffects.ResumeLayout(false);
             this.gbImageEffects.PerformLayout();
+            this.tpThumbnail.ResumeLayout(false);
+            this.tpThumbnail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThumbnailHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThumbnailWidth)).EndInit();
             this.tpCapture.ResumeLayout(false);
             this.tpCapture.PerformLayout();
             this.tcCapture.ResumeLayout(false);
@@ -1759,6 +1877,15 @@
         private System.Windows.Forms.Label lblImageFileExist;
         private System.Windows.Forms.ComboBox cboEncoder;
         private System.Windows.Forms.Button btnEncoderConfig;
+        private System.Windows.Forms.TabPage tpThumbnail;
+        private System.Windows.Forms.Label lblThumbnailHeight;
+        private System.Windows.Forms.Label lblThumbnailWidth;
+        private System.Windows.Forms.NumericUpDown nudThumbnailHeight;
+        private System.Windows.Forms.NumericUpDown nudThumbnailWidth;
+        private System.Windows.Forms.Label lblThumbnailName;
+        private System.Windows.Forms.TextBox txtThumbnailName;
+        private System.Windows.Forms.Label lblThumbnailNamePreview;
+        private System.Windows.Forms.CheckBox cbThumbnailIfSmaller;
 
 
 

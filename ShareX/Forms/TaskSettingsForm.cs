@@ -136,6 +136,13 @@ namespace ShareX
             chkShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
             cbImageEffectOnlyRegionCapture.Checked = TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture;
 
+            // Image - Thumbnail
+            nudThumbnailWidth.Value = TaskSettings.ImageSettings.ThumbnailWidth;
+            nudThumbnailHeight.Value = TaskSettings.ImageSettings.ThumbnailHeight;
+            txtThumbnailName.Text = TaskSettings.ImageSettings.ThumbnailName;
+            lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.ImageSettings.ThumbnailName + ".jpg";
+            cbThumbnailIfSmaller.Checked = TaskSettings.ImageSettings.ThumbnailCheckSize;
+
             // Capture
             cbShowCursor.Checked = TaskSettings.CaptureSettings.ShowCursor;
             cbCaptureTransparent.Checked = TaskSettings.CaptureSettings.CaptureTransparent;
@@ -555,6 +562,27 @@ namespace ShareX
                     TaskSettings.ImageSettings.ImageEffects = imageEffectsForm.Effects;
                 }
             }
+        }
+
+        private void nudThumbnailWidth_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ThumbnailWidth = (int)nudThumbnailWidth.Value;
+        }
+
+        private void nudThumbnailHeight_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ThumbnailHeight = (int)nudThumbnailHeight.Value;
+        }
+
+        private void txtThumbnailName_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ThumbnailName = txtThumbnailName.Text;
+            lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.ImageSettings.ThumbnailName + ".jpg";
+        }
+
+        private void cbThumbnailIfSmaller_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ThumbnailCheckSize = cbThumbnailIfSmaller.Checked;
         }
 
         #endregion Image
