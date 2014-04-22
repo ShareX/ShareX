@@ -73,6 +73,8 @@ namespace ShareX
         private ThreadWorker threadWorker;
         private Uploader uploader;
 
+        private static string lastSaveAsFolder;
+
         #region Constructors
 
         private UploadTask(TaskSettings taskSettings)
@@ -435,7 +437,12 @@ namespace ShareX
                     {
                         using (SaveFileDialog sfd = new SaveFileDialog())
                         {
-                            sfd.InitialDirectory = Info.TaskSettings.CaptureFolder;
+                            if (string.IsNullOrEmpty(lastSaveAsFolder) || !Directory.Exists(lastSaveAsFolder))
+                            {
+                                lastSaveAsFolder = Info.TaskSettings.CaptureFolder;
+                            }
+
+                            sfd.InitialDirectory = lastSaveAsFolder;
                             sfd.FileName = Info.FileName;
                             sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
                             sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
@@ -444,6 +451,7 @@ namespace ShareX
                             if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                             {
                                 Info.FilePath = sfd.FileName;
+                                lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
                                 imageData.Write(Info.FilePath);
                                 DebugHelper.WriteLine("SaveImageToFileWithDialog: " + Info.FilePath);
                             }
@@ -452,7 +460,20 @@ namespace ShareX
 
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
                     {
-                        Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(tempImage, Info.FileName, Info.TaskSettings);
+                        string thumbnailFilename, thumbnailFolder;
+
+                        if (!string.IsNullOrEmpty(Info.FilePath))
+                        {
+                            thumbnailFilename = Path.GetFileName(Info.FilePath);
+                            thumbnailFolder = Path.GetDirectoryName(Info.FilePath);
+                        }
+                        else
+                        {
+                            thumbnailFilename = Info.FileName;
+                            thumbnailFolder = Info.TaskSettings.CaptureFolder;
+                        }
+
+                        Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(tempImage, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
 
                         if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
                         {

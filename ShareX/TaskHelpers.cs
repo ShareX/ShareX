@@ -70,13 +70,13 @@ namespace ShareX
             return imageData;
         }
 
-        public static string CreateThumbnail(Image img, string filename, TaskSettings taskSettings)
+        public static string CreateThumbnail(Image img, string folder, string filename, TaskSettings taskSettings)
         {
             if ((taskSettings.ImageSettings.ThumbnailWidth > 0 || taskSettings.ImageSettings.ThumbnailHeight > 0) && (!taskSettings.ImageSettings.ThumbnailCheckSize ||
                 (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
                 string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
-                string thumbnailFilePath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, thumbnailFileName, taskSettings);
+                string thumbnailFilePath = TaskHelpers.CheckFilePath(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
