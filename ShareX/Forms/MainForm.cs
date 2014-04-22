@@ -252,6 +252,7 @@ namespace ShareX
 
                     tsmiOpenFile.Enabled = uim.SelectedItem.IsFileExist;
                     tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
+                    tsmiOpenThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
 
                     // Copy
                     tsmiCopy.Visible = true;
@@ -264,6 +265,8 @@ namespace ShareX
                     tsmiCopyFile.Enabled = uim.SelectedItem.IsFileExist;
                     tsmiCopyImage.Enabled = uim.SelectedItem.IsImageFile;
                     tsmiCopyText.Enabled = uim.SelectedItem.IsTextFile;
+                    tsmiCopyThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
+                    tsmiCopyThumbnailImage.Enabled = uim.SelectedItem.IsThumbnailFileExist;
 
                     tsmiCopyHTMLLink.Enabled = uim.SelectedItems.Any(x => x.IsURLExist);
                     tsmiCopyHTMLImage.Enabled = uim.SelectedItems.Any(x => x.IsImageURL);
@@ -1043,6 +1046,11 @@ namespace ShareX
             uim.OpenFile();
         }
 
+        private void tsmiOpenThumbnailFile_Click(object sender, EventArgs e)
+        {
+            uim.OpenThumbnailFile();
+        }
+
         private void tsmiOpenFolder_Click(object sender, EventArgs e)
         {
             uim.OpenFolder();
@@ -1081,6 +1089,16 @@ namespace ShareX
         private void tsmiCopyText_Click(object sender, EventArgs e)
         {
             uim.CopyText();
+        }
+
+        private void tsmiCopyThumbnailFile_Click(object sender, EventArgs e)
+        {
+            uim.CopyThumbnailFile();
+        }
+
+        private void tsmiCopyThumbnailImage_Click(object sender, EventArgs e)
+        {
+            uim.CopyThumbnailImage();
         }
 
         private void tsmiCopyHTMLLink_Click(object sender, EventArgs e)

@@ -65,6 +65,7 @@ namespace ShareX
         }
 
         public string FileName { get; set; }
+        public string ThumbnailFilePath { get; set; }
         public EDataType DataType { get; set; }
 
         public EDataType UploadDestination

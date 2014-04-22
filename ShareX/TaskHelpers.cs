@@ -70,7 +70,7 @@ namespace ShareX
             return imageData;
         }
 
-        public static bool CreateThumbnail(Image img, string filename, TaskSettings taskSettings)
+        public static string CreateThumbnail(Image img, string filename, TaskSettings taskSettings)
         {
             if ((taskSettings.ImageSettings.ThumbnailWidth > 0 || taskSettings.ImageSettings.ThumbnailHeight > 0) && (!taskSettings.ImageSettings.ThumbnailCheckSize ||
                 (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
@@ -92,8 +92,7 @@ namespace ShareX
                         }.Apply(thumbImage);
                         thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
                         thumbImage.SaveJPG(thumbnailFilePath, 90);
-                        DebugHelper.WriteLine("SaveThumbnailImageToFile: " + thumbnailFilePath);
-                        return true;
+                        return thumbnailFilePath;
                     }
                     finally
                     {
@@ -105,7 +104,7 @@ namespace ShareX
                 }
             }
 
-            return false;
+            return null;
         }
 
         public static MemoryStream SaveImage(Image img, EImageFormat imageFormat, TaskSettings taskSettings)

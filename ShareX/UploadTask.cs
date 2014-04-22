@@ -452,7 +452,12 @@ namespace ShareX
 
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
                     {
-                        TaskHelpers.CreateThumbnail(tempImage, Info.FileName, Info.TaskSettings);
+                        Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(tempImage, Info.FileName, Info.TaskSettings);
+
+                        if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
+                        {
+                            DebugHelper.WriteLine("SaveThumbnailImageToFile: " + Info.ThumbnailFilePath);
+                        }
                     }
 
                     if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard) && !string.IsNullOrEmpty(Info.FilePath) &&

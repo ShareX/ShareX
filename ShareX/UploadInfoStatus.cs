@@ -40,6 +40,8 @@ namespace ShareX
         public bool IsTextURL { get; private set; }
         public bool IsFilePathValid { get; private set; }
         public bool IsFileExist { get; private set; }
+        public bool IsThumbnailFilePathValid { get; private set; }
+        public bool IsThumbnailFileExist { get; private set; }
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
@@ -63,6 +65,8 @@ namespace ShareX
 
             IsFilePathValid = !string.IsNullOrEmpty(Info.FilePath) && Path.HasExtension(Info.FilePath);
             IsFileExist = IsFilePathValid && File.Exists(Info.FilePath);
+            IsThumbnailFilePathValid = !string.IsNullOrEmpty(Info.ThumbnailFilePath) && Path.HasExtension(Info.ThumbnailFilePath);
+            IsThumbnailFileExist = IsThumbnailFilePathValid && File.Exists(Info.ThumbnailFilePath);
             IsImageFile = IsFileExist && Helpers.IsImageFile(Info.FilePath);
             IsTextFile = IsFileExist && Helpers.IsTextFile(Info.FilePath);
         }
