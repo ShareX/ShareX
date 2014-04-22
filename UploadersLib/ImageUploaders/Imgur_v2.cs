@@ -33,14 +33,6 @@ using UploadersLib.HelperClasses;
 
 namespace UploadersLib.ImageUploaders
 {
-    public enum ImgurThumbnailType
-    {
-        [Description("Small Square")]
-        Small_Square,
-        [Description("Large Thumbnail")]
-        Large_Thumbnail
-    }
-
     public sealed class Imgur_v2 : ImageUploader, IOAuth
     {
         private const string URLAnonymousUpload = "http://api.imgur.com/2/upload.xml";
