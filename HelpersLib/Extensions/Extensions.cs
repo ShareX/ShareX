@@ -481,17 +481,11 @@ namespace HelpersLib
             lvi.Selected = true;
         }
 
-        public static Bitmap CreateEmptyBitmap(this Image img, int widthOffset = 0, int heightOffset = 0, PixelFormat pixelFormat = PixelFormat.Undefined)
+        public static Bitmap CreateEmptyBitmap(this Image img, int widthOffset = 0, int heightOffset = 0, PixelFormat pixelFormat = PixelFormat.Format32bppArgb)
         {
-            if (pixelFormat == PixelFormat.Undefined) pixelFormat = img.PixelFormat;
             Bitmap bmp = new Bitmap(img.Width + widthOffset, img.Height + heightOffset, pixelFormat);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
             return bmp;
-        }
-
-        public static Bitmap CreateEmptyBitmap(this Image img, PixelFormat pixelFormat)
-        {
-            return CreateEmptyBitmap(img, 0, 0, pixelFormat);
         }
 
         public static float Remap(this float value, float from1, float to1, float from2, float to2)

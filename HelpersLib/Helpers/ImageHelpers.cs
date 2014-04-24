@@ -81,7 +81,7 @@ namespace HelpersLib
                 return img;
             }
 
-            Bitmap bmp = new Bitmap(width, height, img.PixelFormat);
+            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
             using (img)
@@ -154,7 +154,7 @@ namespace HelpersLib
                 newY += (int)((height - (img.Height * ratio)) / 2);
             }
 
-            Bitmap bmp = new Bitmap(width, height, img.PixelFormat);
+            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
             using (Graphics g = Graphics.FromImage(bmp))
@@ -260,7 +260,7 @@ namespace HelpersLib
 
         public static Bitmap AddSkew(Image img, int x, int y)
         {
-            Bitmap result = img.CreateEmptyBitmap(Math.Abs(x), Math.Abs(y), PixelFormat.Format32bppArgb);
+            Bitmap result = img.CreateEmptyBitmap(Math.Abs(x), Math.Abs(y));
 
             using (Graphics g = Graphics.FromImage(result))
             using (img)
@@ -279,7 +279,7 @@ namespace HelpersLib
 
         public static Image AddCanvas(Image img, Padding margin)
         {
-            Bitmap bmp = img.CreateEmptyBitmap(margin.Horizontal, margin.Vertical, PixelFormat.Format32bppArgb);
+            Bitmap bmp = img.CreateEmptyBitmap(margin.Horizontal, margin.Vertical);
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (img)
@@ -393,7 +393,7 @@ namespace HelpersLib
             else
             {
                 int borderSize = (int)borderPen.Width;
-                bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2, PixelFormat.Format32bppArgb);
+                bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
 
                 using (Graphics g = Graphics.FromImage(bmp))
                 using (img)
@@ -425,7 +425,7 @@ namespace HelpersLib
 
         public static Bitmap FillBackground(Image img, Brush brush)
         {
-            Bitmap result = img.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
+            Bitmap result = img.CreateEmptyBitmap();
 
             using (Graphics g = Graphics.FromImage(result))
             using (img)
@@ -445,7 +445,7 @@ namespace HelpersLib
 
         public static Image DrawCheckers(Image img, int size, Color color1, Color color2)
         {
-            Bitmap bmp = img.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
+            Bitmap bmp = img.CreateEmptyBitmap();
 
             using (Graphics g = Graphics.FromImage(bmp))
             using (Image checker = CreateCheckers(size, color1, color2))
@@ -704,7 +704,7 @@ namespace HelpersLib
 
             try
             {
-                shadowImage = sourceImage.CreateEmptyBitmap(size * 2, size * 2, PixelFormat.Format32bppArgb);
+                shadowImage = sourceImage.CreateEmptyBitmap(size * 2, size * 2);
 
                 ColorMatrix maskMatrix = new ColorMatrix();
                 maskMatrix.Matrix00 = 0;
@@ -816,7 +816,7 @@ namespace HelpersLib
 
         public static Image CreateTornEdge(Image sourceImage, int toothHeight, int horizontalToothRange, int verticalToothRange, AnchorStyles sides)
         {
-            Image result = sourceImage.CreateEmptyBitmap(PixelFormat.Format32bppArgb);
+            Image result = sourceImage.CreateEmptyBitmap();
 
             using (GraphicsPath path = new GraphicsPath())
             {
