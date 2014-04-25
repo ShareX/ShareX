@@ -293,7 +293,7 @@ namespace ShareX
             this.tpPaths.Location = new System.Drawing.Point(4, 22);
             this.tpPaths.Name = "tpPaths";
             this.tpPaths.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPaths.Size = new System.Drawing.Size(610, 369);
+            this.tpPaths.Size = new System.Drawing.Size(610, 370);
             this.tpPaths.TabIndex = 1;
             this.tpPaths.Text = "Paths";
             this.tpPaths.UseVisualStyleBackColor = true;
@@ -436,7 +436,7 @@ namespace ShareX
             this.tpProxy.Location = new System.Drawing.Point(4, 22);
             this.tpProxy.Name = "tpProxy";
             this.tpProxy.Padding = new System.Windows.Forms.Padding(5);
-            this.tpProxy.Size = new System.Drawing.Size(610, 369);
+            this.tpProxy.Size = new System.Drawing.Size(610, 370);
             this.tpProxy.TabIndex = 2;
             this.tpProxy.Text = "Proxy";
             this.tpProxy.UseVisualStyleBackColor = true;
@@ -570,7 +570,7 @@ namespace ShareX
             this.tpUpload.Location = new System.Drawing.Point(4, 22);
             this.tpUpload.Name = "tpUpload";
             this.tpUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpload.Size = new System.Drawing.Size(610, 369);
+            this.tpUpload.Size = new System.Drawing.Size(610, 370);
             this.tpUpload.TabIndex = 3;
             this.tpUpload.Text = "Upload";
             this.tpUpload.UseVisualStyleBackColor = true;
@@ -584,7 +584,7 @@ namespace ShareX
             this.tcUpload.Location = new System.Drawing.Point(3, 3);
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
-            this.tcUpload.Size = new System.Drawing.Size(604, 363);
+            this.tcUpload.Size = new System.Drawing.Size(604, 364);
             this.tcUpload.TabIndex = 3;
             // 
             // tpPerformance
@@ -593,7 +593,7 @@ namespace ShareX
             this.tpPerformance.Location = new System.Drawing.Point(4, 22);
             this.tpPerformance.Name = "tpPerformance";
             this.tpPerformance.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPerformance.Size = new System.Drawing.Size(596, 337);
+            this.tpPerformance.Size = new System.Drawing.Size(596, 338);
             this.tpPerformance.TabIndex = 0;
             this.tpPerformance.Text = "Performance";
             this.tpPerformance.UseVisualStyleBackColor = true;
@@ -674,7 +674,7 @@ namespace ShareX
             this.tpUploadResults.Location = new System.Drawing.Point(4, 22);
             this.tpUploadResults.Name = "tpUploadResults";
             this.tpUploadResults.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadResults.Size = new System.Drawing.Size(596, 337);
+            this.tpUploadResults.Size = new System.Drawing.Size(596, 338);
             this.tpUploadResults.TabIndex = 1;
             this.tpUploadResults.Text = "Results";
             this.tpUploadResults.UseVisualStyleBackColor = true;
@@ -687,7 +687,7 @@ namespace ShareX
             this.gbClipboardFormats.Controls.Add(this.lvClipboardFormats);
             this.gbClipboardFormats.Location = new System.Drawing.Point(8, 8);
             this.gbClipboardFormats.Name = "gbClipboardFormats";
-            this.gbClipboardFormats.Size = new System.Drawing.Size(576, 168);
+            this.gbClipboardFormats.Size = new System.Drawing.Size(576, 320);
             this.gbClipboardFormats.TabIndex = 2;
             this.gbClipboardFormats.TabStop = false;
             this.gbClipboardFormats.Text = "Clipboard Formats";
@@ -724,13 +724,14 @@ namespace ShareX
             // 
             // lvClipboardFormats
             // 
+            this.lvClipboardFormats.AutoFillColumn = true;
             this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chDescription,
             this.chFormat});
             this.lvClipboardFormats.FullRowSelect = true;
             this.lvClipboardFormats.Location = new System.Drawing.Point(8, 48);
             this.lvClipboardFormats.Name = "lvClipboardFormats";
-            this.lvClipboardFormats.Size = new System.Drawing.Size(552, 104);
+            this.lvClipboardFormats.Size = new System.Drawing.Size(560, 264);
             this.lvClipboardFormats.TabIndex = 3;
             this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
             this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
@@ -913,7 +914,7 @@ namespace ShareX
             this.tpPrint.Location = new System.Drawing.Point(4, 22);
             this.tpPrint.Name = "tpPrint";
             this.tpPrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPrint.Size = new System.Drawing.Size(610, 369);
+            this.tpPrint.Size = new System.Drawing.Size(610, 370);
             this.tpPrint.TabIndex = 4;
             this.tpPrint.Text = "Print";
             this.tpPrint.UseVisualStyleBackColor = true;
@@ -945,7 +946,7 @@ namespace ShareX
             this.tpProfiles.Location = new System.Drawing.Point(4, 22);
             this.tpProfiles.Name = "tpProfiles";
             this.tpProfiles.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProfiles.Size = new System.Drawing.Size(610, 369);
+            this.tpProfiles.Size = new System.Drawing.Size(610, 370);
             this.tpProfiles.TabIndex = 6;
             this.tpProfiles.Text = "Profiles";
             this.tpProfiles.UseVisualStyleBackColor = true;
@@ -957,7 +958,7 @@ namespace ShareX
             this.tcProfiles.Location = new System.Drawing.Point(3, 3);
             this.tcProfiles.Name = "tcProfiles";
             this.tcProfiles.SelectedIndex = 0;
-            this.tcProfiles.Size = new System.Drawing.Size(604, 363);
+            this.tcProfiles.Size = new System.Drawing.Size(604, 364);
             this.tcProfiles.TabIndex = 0;
             // 
             // tpEncodersCLI
@@ -970,7 +971,7 @@ namespace ShareX
             this.tpEncodersCLI.Location = new System.Drawing.Point(4, 22);
             this.tpEncodersCLI.Name = "tpEncodersCLI";
             this.tpEncodersCLI.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEncodersCLI.Size = new System.Drawing.Size(596, 337);
+            this.tpEncodersCLI.Size = new System.Drawing.Size(596, 338);
             this.tpEncodersCLI.TabIndex = 0;
             this.tpEncodersCLI.Text = "CLI Encoders";
             this.tpEncodersCLI.UseVisualStyleBackColor = true;
@@ -999,7 +1000,7 @@ namespace ShareX
             this.lvEncoders.Location = new System.Drawing.Point(8, 40);
             this.lvEncoders.MultiSelect = false;
             this.lvEncoders.Name = "lvEncoders";
-            this.lvEncoders.Size = new System.Drawing.Size(576, 288);
+            this.lvEncoders.Size = new System.Drawing.Size(576, 289);
             this.lvEncoders.TabIndex = 4;
             this.lvEncoders.UseCompatibleStateImageBehavior = false;
             this.lvEncoders.View = System.Windows.Forms.View.Details;

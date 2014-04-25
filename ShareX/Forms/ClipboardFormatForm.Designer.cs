@@ -1,4 +1,4 @@
-﻿namespace HelpersLib
+﻿namespace ShareX
 {
     partial class ClipboardFormatForm
     {
@@ -39,7 +39,7 @@
             // 
             // txtFormat
             // 
-            this.txtFormat.Location = new System.Drawing.Point(88, 36);
+            this.txtFormat.Location = new System.Drawing.Point(88, 40);
             this.txtFormat.Name = "txtFormat";
             this.txtFormat.Size = new System.Drawing.Size(304, 20);
             this.txtFormat.TabIndex = 3;
@@ -73,13 +73,12 @@
             // 
             this.lblExample.Location = new System.Drawing.Point(88, 60);
             this.lblExample.Name = "lblExample";
-            this.lblExample.Size = new System.Drawing.Size(302, 52);
+            this.lblExample.Size = new System.Drawing.Size(302, 68);
             this.lblExample.TabIndex = 4;
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(316, 120);
+            this.btnCancel.Location = new System.Drawing.Point(312, 136);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 23);
             this.btnCancel.TabIndex = 6;
@@ -89,8 +88,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(228, 120);
+            this.btnOK.Location = new System.Drawing.Point(224, 136);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(80, 23);
             this.btnOK.TabIndex = 5;
@@ -102,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 153);
+            this.ClientSize = new System.Drawing.Size(400, 168);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblExample);
@@ -113,7 +111,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(420, 192);
             this.Name = "ClipboardFormatForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clipboard content format";
