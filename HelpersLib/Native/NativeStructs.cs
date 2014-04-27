@@ -430,94 +430,6 @@ namespace HelpersLib
     }
 
     /// <summary>
-    /// Structure, which contains information about the dimensions and color format of a DIB.
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public struct BITMAPINFOHEADER
-    {
-        /// <summary>
-        /// Specifies the number of bytes required by the structure.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int size;
-
-        /// <summary>
-        /// Specifies the width of the bitmap, in pixels.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int width;
-
-        /// <summary>
-        /// Specifies the height of the bitmap, in pixels.
-        /// </summary>
-        ///
-        /// <remarks>If <b>heigh</b>t is positive, the bitmap is a bottom-up DIB and its origin is
-        /// the lower-left corner. If <b>height</b> is negative, the bitmap is a top-down DIB and its
-        /// origin is the upper-left corner.</remarks>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int height;
-
-        /// <summary>
-        /// Specifies the number of planes for the target device. This value must be set to 1.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I2)]
-        public short planes;
-
-        /// <summary>
-        /// Specifies the number of bits-per-pixel.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I2)]
-        public short bitCount;
-
-        /// <summary>
-        /// Specifies the type of compression for a compressed bottom-up bitmap (top-down DIBs cannot be compressed).
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int compression;
-
-        /// <summary>
-        /// Specifies the size, in bytes, of the image.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int sizeImage;
-
-        /// <summary>
-        /// Specifies the horizontal resolution, in pixels-per-meter, of the target device for the bitmap.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int xPelsPerMeter;
-
-        /// <summary>
-        /// Specifies the vertical resolution, in pixels-per-meter, of the target device for the bitmap.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int yPelsPerMeter;
-
-        /// <summary>
-        /// Specifies the number of color indexes in the color table that are actually used by the bitmap.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int colorsUsed;
-
-        /// <summary>
-        /// Specifies the number of color indexes that are required for displaying the bitmap.
-        /// </summary>
-        ///
-        [MarshalAs(UnmanagedType.I4)]
-        public int colorsImportant;
-    }
-
-    /// <summary>
     /// Structure, which contains information about a stream and how it is compressed and saved.
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -598,5 +510,36 @@ namespace HelpersLib
         ///
         [MarshalAs(UnmanagedType.I4)]
         public int interleaveEvery;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct BITMAPINFOHEADER
+    {
+        public uint biSize;
+        public int biWidth;
+        public int biHeight;
+        public ushort biPlanes;
+        public ushort biBitCount;
+        public BitmapCompressionMode biCompression;
+        public uint biSizeImage;
+        public int biXPelsPerMeter;
+        public int biYPelsPerMeter;
+        public uint biClrUsed;
+        public uint biClrImportant;
+
+        public BITMAPINFOHEADER(int width, int height, ushort bitCount)
+        {
+            biSize = (uint)Marshal.SizeOf(typeof(BITMAPINFOHEADER));
+            biWidth = width;
+            biHeight = height;
+            biPlanes = 1;
+            biBitCount = bitCount;
+            biCompression = BitmapCompressionMode.BI_RGB;
+            biSizeImage = 0;
+            biXPelsPerMeter = 0;
+            biYPelsPerMeter = 0;
+            biClrUsed = 0;
+            biClrImportant = 0;
+        }
     }
 }

@@ -342,15 +342,7 @@ namespace HelpersLib
                         throw new Exception("Failed creating compressed stream.");
 
                     // describe frame format
-                    BITMAPINFOHEADER bitmapInfoHeader = new BITMAPINFOHEADER();
-
-                    bitmapInfoHeader.size = Marshal.SizeOf(bitmapInfoHeader.GetType());
-                    bitmapInfoHeader.width = width;
-                    bitmapInfoHeader.height = height;
-                    bitmapInfoHeader.planes = 1;
-                    bitmapInfoHeader.bitCount = 24;
-                    bitmapInfoHeader.sizeImage = 0;
-                    bitmapInfoHeader.compression = 0; // BI_RGB
+                    BITMAPINFOHEADER bitmapInfoHeader = new BITMAPINFOHEADER(width, height, 24);
 
                     // set frame format
                     if (NativeMethods.AVIStreamSetFormat(streamCompressed, 0, ref bitmapInfoHeader, Marshal.SizeOf(bitmapInfoHeader.GetType())) != 0)

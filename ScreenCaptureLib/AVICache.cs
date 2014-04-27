@@ -39,6 +39,7 @@ namespace ScreenCaptureLib
         public Size Size { get; private set; }
         public bool ShowOptions { get; private set; }
 
+        private AVIWriter aviWriter;
         private Task task;
         private BlockingCollection<Image> imageQueue;
         private int position;
@@ -49,8 +50,10 @@ namespace ScreenCaptureLib
             FPS = fps;
             Size = size;
             ShowOptions = showOptions;
+
+            Helpers.CreateDirectoryIfNotExist(OutputPath);
+            aviWriter = new AVIWriter(OutputPath, FPS, Size.Width, Size.Height, ShowOptions);
             imageQueue = new BlockingCollection<Image>();
-            StartConsumerThread();
         }
 
         private void StartConsumerThread()
@@ -58,10 +61,6 @@ namespace ScreenCaptureLib
             if (!IsWorking)
             {
                 IsWorking = true;
-
-                Helpers.CreateDirectoryIfNotExist(OutputPath);
-
-                AVIWriter aviWriter = new AVIWriter(OutputPath, FPS, Size.Width, Size.Height, ShowOptions);
 
                 task = TaskEx.Run(() =>
                 {
@@ -79,7 +78,7 @@ namespace ScreenCaptureLib
 
                                 if (img != null)
                                 {
-                                    //img.Save("Test\\" + position + ".bmp", ImageFormat.Bmp);
+                                    //using (new DebugTimer("Frame saved"))
                                     aviWriter.AddFrame((Bitmap)img);
                                     position++;
                                 }
@@ -96,11 +95,6 @@ namespace ScreenCaptureLib
                     finally
                     {
                         IsWorking = false;
-
-                        if (aviWriter != null)
-                        {
-                            aviWriter.Dispose();
-                        }
                     }
                 });
             }
@@ -108,15 +102,17 @@ namespace ScreenCaptureLib
 
         public void AddImageAsync(Image img)
         {
-            if (IsWorking)
+            if (!IsWorking)
             {
-                /*if (imageQueue.Count > 0)
-                {
-                    Debug.WriteLine("ImageQueue count: " + imageQueue.Count);
-                }*/
-
-                imageQueue.Add(img);
+                StartConsumerThread();
             }
+
+            /*if (imageQueue.Count > 0)
+            {
+                Debug.WriteLine("ImageQueue count: " + imageQueue.Count);
+            }*/
+
+            imageQueue.Add(img);
         }
 
         public void Finish()
@@ -126,10 +122,17 @@ namespace ScreenCaptureLib
                 imageQueue.CompleteAdding();
                 task.Wait();
             }
+
+            Dispose();
         }
 
         public void Dispose()
         {
+            if (aviWriter != null)
+            {
+                aviWriter.Dispose();
+            }
+
             if (imageQueue != null)
             {
                 imageQueue.Dispose();
