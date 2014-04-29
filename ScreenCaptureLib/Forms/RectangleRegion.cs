@@ -73,6 +73,28 @@ namespace ScreenCaptureLib
                 case Keys.M:
                     Config.ShowMagnifier = !Config.ShowMagnifier;
                     break;
+                case Keys.Control | Keys.C:
+                    CopyAreaInfo();
+                    break;
+            }
+        }
+
+        private void CopyAreaInfo()
+        {
+            if (AreaManager.IsCurrentAreaValid)
+            {
+                string clipboardText;
+
+                if (RulerMode)
+                {
+                    clipboardText = GetRulerText(AreaManager.CurrentArea);
+                }
+                else
+                {
+                    clipboardText = GetAreaText(AreaManager.CurrentArea);
+                }
+
+                ClipboardHelpers.CopyText(clipboardText);
             }
         }
 
@@ -195,19 +217,13 @@ namespace ScreenCaptureLib
                     {
                         if (area.IsValid())
                         {
-                            string areaText;
-
                             if (RulerMode)
                             {
-                                Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
-                                areaText = string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} px / Height: {5} px\nDistance: {6:0.00} px / Angle: {7:0.00}°", area.X, area.Y, endPos.X, endPos.Y,
-                                    area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
-                                ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 15, area.Y + 15), textFont, Color.White, Color.Black);
+                                ImageHelpers.DrawTextWithOutline(g, GetRulerText(area), new PointF(area.X + 15, area.Y + 15), textFont, Color.White, Color.Black);
                             }
                             else
                             {
-                                areaText = string.Format("X: {0} / Y: {1}\nW: {2} / H: {3}", area.X, area.Y, area.Width, area.Height);
-                                ImageHelpers.DrawTextWithOutline(g, areaText, new PointF(area.X + 5, area.Y + 5), textFont, Color.White, Color.Black);
+                                ImageHelpers.DrawTextWithOutline(g, GetAreaText(area), new PointF(area.X + 5, area.Y + 5), textFont, Color.White, Color.Black);
                             }
                         }
                     }
@@ -223,6 +239,18 @@ namespace ScreenCaptureLib
             {
                 DrawCrosshair(g);
             }
+        }
+
+        private string GetRulerText(Rectangle area)
+        {
+            Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
+            return string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} px / Height: {5} px\nDistance: {6:0.00} px / Angle: {7:0.00}°", area.X, area.Y, endPos.X, endPos.Y,
+                area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
+        }
+
+        private string GetAreaText(Rectangle area)
+        {
+            return string.Format("X: {0} / Y: {1}\nW: {2} / H: {3}", area.X, area.Y, area.Width, area.Height);
         }
 
         private void DrawCrosshair(Graphics g)
