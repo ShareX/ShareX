@@ -36,6 +36,7 @@ namespace HelpersLib
         public bool AllowEnlargeImage { get; set; }
         public bool CenterImage { get; set; }
         public XmlFont TextFont { get; set; }
+        public bool ShowPrintDialog { get; set; }
 
         public PrintSettings()
         {
@@ -45,6 +46,7 @@ namespace HelpersLib
             AllowEnlargeImage = false;
             CenterImage = false;
             TextFont = new XmlFont("Arial", 10);
+            ShowPrintDialog = true;
         }
     }
 }

@@ -96,7 +96,7 @@ namespace HelpersLib
 
         public bool Print()
         {
-            if (Printable && printDialog.ShowDialog() == DialogResult.OK)
+            if (Printable && (!Settings.ShowPrintDialog || printDialog.ShowDialog() == DialogResult.OK))
             {
                 if (PrintType == PrintType.Text)
                 {

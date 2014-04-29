@@ -116,6 +116,7 @@ namespace ShareX
             this.btnEncodersRemove = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -756,7 +757,7 @@ namespace ShareX
             this.tpUploadRetry.Location = new System.Drawing.Point(4, 22);
             this.tpUploadRetry.Name = "tpUploadRetry";
             this.tpUploadRetry.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUploadRetry.Size = new System.Drawing.Size(596, 337);
+            this.tpUploadRetry.Size = new System.Drawing.Size(596, 338);
             this.tpUploadRetry.TabIndex = 2;
             this.tpUploadRetry.Text = "Retry";
             this.tpUploadRetry.UseVisualStyleBackColor = true;
@@ -788,7 +789,7 @@ namespace ShareX
             this.tlpBackupDestinations.Padding = new System.Windows.Forms.Padding(5);
             this.tlpBackupDestinations.RowCount = 1;
             this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 294);
+            this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 295);
             this.tlpBackupDestinations.TabIndex = 5;
             // 
             // gbSecondaryImageUploaders
@@ -798,7 +799,7 @@ namespace ShareX
             this.gbSecondaryImageUploaders.Location = new System.Drawing.Point(8, 8);
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
             this.gbSecondaryImageUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 278);
+            this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 279);
             this.gbSecondaryImageUploaders.TabIndex = 3;
             this.gbSecondaryImageUploaders.TabStop = false;
             this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
@@ -817,7 +818,7 @@ namespace ShareX
             this.lvSecondaryImageUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryImageUploaders.MultiSelect = false;
             this.lvSecondaryImageUploaders.Name = "lvSecondaryImageUploaders";
-            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(179, 257);
+            this.lvSecondaryImageUploaders.Size = new System.Drawing.Size(179, 258);
             this.lvSecondaryImageUploaders.TabIndex = 0;
             this.lvSecondaryImageUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
@@ -830,7 +831,7 @@ namespace ShareX
             this.gbSecondaryFileUploaders.Location = new System.Drawing.Point(396, 8);
             this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
             this.gbSecondaryFileUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 278);
+            this.gbSecondaryFileUploaders.Size = new System.Drawing.Size(186, 279);
             this.gbSecondaryFileUploaders.TabIndex = 2;
             this.gbSecondaryFileUploaders.TabStop = false;
             this.gbSecondaryFileUploaders.Text = "Secondary file uploaders";
@@ -848,7 +849,7 @@ namespace ShareX
             this.lvSecondaryFileUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryFileUploaders.MultiSelect = false;
             this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
-            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 257);
+            this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 258);
             this.lvSecondaryFileUploaders.TabIndex = 1;
             this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
@@ -861,7 +862,7 @@ namespace ShareX
             this.gbSecondaryTextUploaders.Location = new System.Drawing.Point(199, 8);
             this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
             this.gbSecondaryTextUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 278);
+            this.gbSecondaryTextUploaders.Size = new System.Drawing.Size(191, 279);
             this.gbSecondaryTextUploaders.TabIndex = 1;
             this.gbSecondaryTextUploaders.TabStop = false;
             this.gbSecondaryTextUploaders.Text = "Secondary text uploaders";
@@ -879,7 +880,7 @@ namespace ShareX
             this.lvSecondaryTextUploaders.Location = new System.Drawing.Point(3, 18);
             this.lvSecondaryTextUploaders.MultiSelect = false;
             this.lvSecondaryTextUploaders.Name = "lvSecondaryTextUploaders";
-            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 257);
+            this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 258);
             this.lvSecondaryTextUploaders.TabIndex = 1;
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
@@ -909,6 +910,7 @@ namespace ShareX
             // 
             // tpPrint
             // 
+            this.tpPrint.Controls.Add(this.cbPrintDontShowWindowsDialog);
             this.tpPrint.Controls.Add(this.cbDontShowPrintSettingDialog);
             this.tpPrint.Controls.Add(this.btnShowImagePrintSettings);
             this.tpPrint.Location = new System.Drawing.Point(4, 22);
@@ -924,9 +926,9 @@ namespace ShareX
             this.cbDontShowPrintSettingDialog.AutoSize = true;
             this.cbDontShowPrintSettingDialog.Location = new System.Drawing.Point(16, 16);
             this.cbDontShowPrintSettingDialog.Name = "cbDontShowPrintSettingDialog";
-            this.cbDontShowPrintSettingDialog.Size = new System.Drawing.Size(172, 17);
+            this.cbDontShowPrintSettingDialog.Size = new System.Drawing.Size(203, 17);
             this.cbDontShowPrintSettingDialog.TabIndex = 0;
-            this.cbDontShowPrintSettingDialog.Text = "Don\'t show print settings dialog";
+            this.cbDontShowPrintSettingDialog.Text = "Don\'t show image print settings dialog";
             this.cbDontShowPrintSettingDialog.UseVisualStyleBackColor = true;
             this.cbDontShowPrintSettingDialog.CheckedChanged += new System.EventHandler(this.cbDontShowPrintSettingDialog_CheckedChanged);
             // 
@@ -934,9 +936,9 @@ namespace ShareX
             // 
             this.btnShowImagePrintSettings.Location = new System.Drawing.Point(16, 40);
             this.btnShowImagePrintSettings.Name = "btnShowImagePrintSettings";
-            this.btnShowImagePrintSettings.Size = new System.Drawing.Size(168, 23);
+            this.btnShowImagePrintSettings.Size = new System.Drawing.Size(144, 23);
             this.btnShowImagePrintSettings.TabIndex = 1;
-            this.btnShowImagePrintSettings.Text = "Show image print settings...";
+            this.btnShowImagePrintSettings.Text = "Image print settings...";
             this.btnShowImagePrintSettings.UseVisualStyleBackColor = true;
             this.btnShowImagePrintSettings.Click += new System.EventHandler(this.btnShowImagePrintSettings_Click);
             // 
@@ -1076,6 +1078,17 @@ namespace ShareX
             this.pgSettings.Size = new System.Drawing.Size(604, 364);
             this.pgSettings.TabIndex = 0;
             this.pgSettings.ToolbarVisible = false;
+            // 
+            // cbPrintDontShowWindowsDialog
+            // 
+            this.cbPrintDontShowWindowsDialog.AutoSize = true;
+            this.cbPrintDontShowWindowsDialog.Location = new System.Drawing.Point(16, 72);
+            this.cbPrintDontShowWindowsDialog.Name = "cbPrintDontShowWindowsDialog";
+            this.cbPrintDontShowWindowsDialog.Size = new System.Drawing.Size(180, 17);
+            this.cbPrintDontShowWindowsDialog.TabIndex = 2;
+            this.cbPrintDontShowWindowsDialog.Text = "Don\'t show Windows print dialog";
+            this.cbPrintDontShowWindowsDialog.UseVisualStyleBackColor = true;
+            this.cbPrintDontShowWindowsDialog.CheckedChanged += new System.EventHandler(this.cbPrintDontShowWindowsDialog_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 
@@ -1217,5 +1230,6 @@ namespace ShareX
         private System.Windows.Forms.ColumnHeader chEncoderArgs;
         private System.Windows.Forms.ColumnHeader chEncoderOutputExtension;
         private System.Windows.Forms.Button btnEncoderDuplicate;
+        private System.Windows.Forms.CheckBox cbPrintDontShowWindowsDialog;
     }
 }

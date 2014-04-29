@@ -74,6 +74,8 @@ namespace HelpersLib
             cbCenterImage.Checked = printSettings.CenterImage;
             cbAllowEnlarge.Enabled = printSettings.AutoScaleImage;
             cbCenterImage.Enabled = printSettings.AutoScaleImage;
+
+            btnPrint.Text = printSettings.ShowPrintDialog ? "Print..." : "Print";
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

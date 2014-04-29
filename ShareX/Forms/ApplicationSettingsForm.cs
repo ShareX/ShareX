@@ -119,6 +119,7 @@ namespace ShareX
 
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
+            cbPrintDontShowWindowsDialog.Checked = !Program.Settings.PrintSettings.ShowPrintDialog;
 
             // Profiles
             if (Program.Settings.VideoEncoders.Count == 0)
@@ -458,6 +459,11 @@ namespace ShareX
             {
                 printForm.ShowDialog();
             }
+        }
+
+        private void cbPrintDontShowWindowsDialog_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.PrintSettings.ShowPrintDialog = !cbPrintDontShowWindowsDialog.Checked;
         }
 
         #endregion Print
