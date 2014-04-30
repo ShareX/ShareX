@@ -79,6 +79,10 @@ namespace HelpersLib
         {
             btnStartHashCheck.Text = "Start";
             txtResult.Text = result.ToUpperInvariant();
+            if (!string.IsNullOrEmpty(txtTarget.Text))
+            {
+                txtTarget.Text = txtTarget.Text.ToUpperInvariant();
+            }
         }
 
         private void txtResult_TextChanged(object sender, EventArgs e)

@@ -1,7 +1,12 @@
 ﻿ShareX 8.7.2 
 
+* Added new After Capture task: Save thumbnail to file
+* Support for all thumbnail types in Imgur
+* HttpHomePathAutoAddSubFolderPath setting for FTP accounts
+* Configurable Dropbox shareable URL types: default, shortened, and direct
 * CLI Video Encoder configurations are now managed in Application Settings
 * Support for secondary uploaders if primary uploaders fail
+* Added Ruler to Tools menu
 
 ShareX 8.7.1 - 2014-04-09
 
