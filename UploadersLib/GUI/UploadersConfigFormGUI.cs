@@ -505,6 +505,7 @@ namespace UploadersLib
             ucTwitterAccounts.btnDuplicate.Click += TwitterAccountDuplicateButton_Click;
             ucTwitterAccounts.btnTest.Text = "Authorize";
             ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
+            ucTwitterAccounts.lbAccounts.SelectedIndexChanged += TwitterAccountSelectedIndexChanged;
         }
 
         #region FTP
@@ -571,10 +572,7 @@ namespace UploadersLib
 
         private void FTPAccountTestButton_Click(object sender, EventArgs e)
         {
-            if (CheckFTPAccounts())
-            {
-                TestFTPAccount(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex], false);
-            }
+            TestFTPAccount(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex], false);
         }
 
         private void FtpAccountSettingsGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
@@ -689,6 +687,14 @@ namespace UploadersLib
                     Helpers.LoadBrowserAsync(url);
                     ucTwitterAccounts.pgSettings.SelectedObject = acc;
                 }
+            }
+        }
+
+        private void TwitterAccountSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ucTwitterAccounts.lbAccounts.SelectedIndex > -1)
+            {
+                Config.TwitterSelectedAccount = ucTwitterAccounts.lbAccounts.SelectedIndex;
             }
         }
 
