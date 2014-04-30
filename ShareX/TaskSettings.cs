@@ -300,7 +300,8 @@ namespace ShareX
 
         #region Upload / Clipboard upload
 
-        public bool ClipboardUploadAutoDetectURL = true;
+        public bool ClipboardUploadAutoDetectURL = false;
+        public bool ClipboardUploadAutoIndexFolder = false;
 
         #endregion Upload / Clipboard upload
     }

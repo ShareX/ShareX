@@ -196,6 +196,7 @@ namespace ShareX
 
             // Upload / Clipboard upload
             cbClipboardUploadAutoDetectURL.Checked = TaskSettings.UploadSettings.ClipboardUploadAutoDetectURL;
+            cbClipboardUploadAutoIndexFolder.Checked = TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder;
 
             // Indexer
             pgIndexerConfig.SelectedObject = TaskSettings.IndexerSettings;
@@ -874,6 +875,11 @@ namespace ShareX
         private void cbClipboardUploadAutoDetectURL_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UploadSettings.ClipboardUploadAutoDetectURL = cbClipboardUploadAutoDetectURL.Checked;
+        }
+
+        private void cbClipboardUploadAutoIndexFolder_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder = cbClipboardUploadAutoIndexFolder.Checked;
         }
 
         #endregion Upload

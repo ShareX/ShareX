@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net;
@@ -59,7 +60,7 @@ namespace UploadersLib.TextUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", "http://getsharex.com/github"); // TODO: Links.URL_CALLBACK
+            args.Add("redirect_uri", Links.URL_CALLBACK);
             args.Add("scope", "gist");
 
             return CreateQuery("https://github.com/login/oauth/authorize", args);

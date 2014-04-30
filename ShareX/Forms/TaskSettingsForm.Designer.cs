@@ -85,6 +85,7 @@
             this.btnImageEffects = new System.Windows.Forms.Button();
             this.btnWatermarkSettings = new System.Windows.Forms.Button();
             this.tpThumbnail = new System.Windows.Forms.TabPage();
+            this.cbThumbnailIfSmaller = new System.Windows.Forms.CheckBox();
             this.lblThumbnailNamePreview = new System.Windows.Forms.Label();
             this.lblThumbnailName = new System.Windows.Forms.Label();
             this.txtThumbnailName = new System.Windows.Forms.TextBox();
@@ -157,7 +158,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.cbThumbnailIfSmaller = new System.Windows.Forms.CheckBox();
+            this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -825,6 +826,17 @@
             this.tpThumbnail.TabIndex = 3;
             this.tpThumbnail.Text = "Thumbnail";
             this.tpThumbnail.UseVisualStyleBackColor = true;
+            // 
+            // cbThumbnailIfSmaller
+            // 
+            this.cbThumbnailIfSmaller.AutoSize = true;
+            this.cbThumbnailIfSmaller.Location = new System.Drawing.Point(20, 104);
+            this.cbThumbnailIfSmaller.Name = "cbThumbnailIfSmaller";
+            this.cbThumbnailIfSmaller.Size = new System.Drawing.Size(322, 17);
+            this.cbThumbnailIfSmaller.TabIndex = 7;
+            this.cbThumbnailIfSmaller.Text = "Create thumbnail only if image size is bigger than thumbnail size";
+            this.cbThumbnailIfSmaller.UseVisualStyleBackColor = true;
+            this.cbThumbnailIfSmaller.CheckedChanged += new System.EventHandler(this.cbThumbnailIfSmaller_CheckedChanged);
             // 
             // lblThumbnailNamePreview
             // 
@@ -1565,6 +1577,7 @@
             // 
             // tpUploadClipboard
             // 
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoIndexFolder);
             this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoDetectURL);
             this.tpUploadClipboard.Location = new System.Drawing.Point(4, 22);
             this.tpUploadClipboard.Name = "tpUploadClipboard";
@@ -1674,16 +1687,17 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // cbThumbnailIfSmaller
+            // cbClipboardUploadAutoIndexFolder
             // 
-            this.cbThumbnailIfSmaller.AutoSize = true;
-            this.cbThumbnailIfSmaller.Location = new System.Drawing.Point(20, 104);
-            this.cbThumbnailIfSmaller.Name = "cbThumbnailIfSmaller";
-            this.cbThumbnailIfSmaller.Size = new System.Drawing.Size(322, 17);
-            this.cbThumbnailIfSmaller.TabIndex = 7;
-            this.cbThumbnailIfSmaller.Text = "Create thumbnail only if image size is bigger than thumbnail size";
-            this.cbThumbnailIfSmaller.UseVisualStyleBackColor = true;
-            this.cbThumbnailIfSmaller.CheckedChanged += new System.EventHandler(this.cbThumbnailIfSmaller_CheckedChanged);
+            this.cbClipboardUploadAutoIndexFolder.AutoSize = true;
+            this.cbClipboardUploadAutoIndexFolder.Location = new System.Drawing.Point(16, 40);
+            this.cbClipboardUploadAutoIndexFolder.Name = "cbClipboardUploadAutoIndexFolder";
+            this.cbClipboardUploadAutoIndexFolder.Size = new System.Drawing.Size(442, 17);
+            this.cbClipboardUploadAutoIndexFolder.TabIndex = 2;
+            this.cbClipboardUploadAutoIndexFolder.Text = "Automatically detect folder path when doing clipboard text upload and use \"Index " +
+    "folder\"";
+            this.cbClipboardUploadAutoIndexFolder.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadAutoIndexFolder.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoIndexFolder_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1886,6 +1900,7 @@
         private System.Windows.Forms.TextBox txtThumbnailName;
         private System.Windows.Forms.Label lblThumbnailNamePreview;
         private System.Windows.Forms.CheckBox cbThumbnailIfSmaller;
+        private System.Windows.Forms.CheckBox cbClipboardUploadAutoIndexFolder;
 
 
 

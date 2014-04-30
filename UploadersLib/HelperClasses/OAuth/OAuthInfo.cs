@@ -72,7 +72,7 @@ namespace UploadersLib.HelperClasses
 
         public OAuthInfo()
         {
-            Description = "New Account";
+            Description = "New account";
             OAuthVersion = "1.0";
         }
 

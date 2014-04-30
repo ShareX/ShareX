@@ -363,7 +363,6 @@ namespace GreenshotPlugin.Core
                 // Change mouse location according to the cropRegtangle (including screenbounds) offset
                 MoveMouseLocation(-cropRectangle.Location.X, -cropRectangle.Location.Y);
                 // Move all the elements
-                // TODO: Enable when the elements are usable again.
                 // MoveElements(-cropRectangle.Location.X, -cropRectangle.Location.Y);
 
                 // Remove invisible elements
@@ -393,7 +392,6 @@ namespace GreenshotPlugin.Core
             cursorLocation.Offset(x, y);
         }
 
-        // TODO: Enable when the elements are usable again.
         ///// <summary>
         ///// Apply a translate to the elements
         ///// e.g. needed for crop

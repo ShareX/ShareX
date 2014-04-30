@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using IndexerLib;
 using System;
 using System.Drawing;
 using System.IO;
@@ -122,9 +123,22 @@ namespace ShareX
             {
                 if (dlg.ShowDialog())
                 {
-                    if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-                    UploadText(dlg.FileName, taskSettings);
+                    IndexFolder(dlg.FileName, taskSettings);
                 }
+            }
+        }
+
+        public static void IndexFolder(string folderPath, TaskSettings taskSettings = null)
+        {
+            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
+            {
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                taskSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+                string text = Indexer.Index(folderPath, taskSettings.IndexerSettings);
+                UploadTask task = UploadTask.CreateTextUploaderTask(text, taskSettings);
+                task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.IndexerSettings.Output.ToString().ToLower());
+                TaskManager.Start(task);
             }
         }
 
@@ -136,12 +150,15 @@ namespace ShareX
             {
                 Image img = Clipboard.GetImage();
 
-                if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
+                if (img != null)
                 {
-                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                }
+                    if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
+                    {
+                        taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                    }
 
-                RunImageTask(img, taskSettings);
+                    RunImageTask(img, taskSettings);
+                }
             }
             else if (Clipboard.ContainsFileDropList())
             {
@@ -152,13 +169,20 @@ namespace ShareX
             {
                 string text = Clipboard.GetText();
 
-                if (taskSettings.UploadSettings.ClipboardUploadAutoDetectURL && Helpers.IsValidURLRegex(text))
+                if (!string.IsNullOrEmpty(text))
                 {
-                    ShortenURL(text.Trim(), taskSettings);
-                }
-                else
-                {
-                    UploadText(text, taskSettings);
+                    if (taskSettings.UploadSettings.ClipboardUploadAutoDetectURL && Helpers.IsValidURLRegex(text))
+                    {
+                        ShortenURL(text.Trim(), taskSettings);
+                    }
+                    else if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
+                    {
+                        IndexFolder(text, taskSettings);
+                    }
+                    else
+                    {
+                        UploadText(text, taskSettings);
+                    }
                 }
             }
         }
