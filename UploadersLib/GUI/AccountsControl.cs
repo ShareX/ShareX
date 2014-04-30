@@ -36,38 +36,50 @@ namespace UploadersLib
             InitializeComponent();
         }
 
-        public virtual bool RemoveItem(int selected)
+        public void AddItem(object item)
         {
-            if (selected.IsBetween(0, AccountsList.Items.Count - 1))
-            {
-                AccountsList.Items.RemoveAt(selected);
+            lbAccounts.Items.Add(item);
+            lbAccounts.SelectedIndex = lbAccounts.Items.Count - 1;
+        }
 
-                if (AccountsList.Items.Count > 0)
+        public bool RemoveItem(int selected)
+        {
+            if (selected.IsBetween(0, lbAccounts.Items.Count - 1))
+            {
+                lbAccounts.Items.RemoveAt(selected);
+
+                if (lbAccounts.Items.Count > 0)
                 {
-                    AccountsList.SelectedIndex = (selected > 0) ? (selected - 1) : 0;
-                    SettingsGrid.SelectedObject = AccountsList.Items[selected.Between(0, selected - 1)];
+                    lbAccounts.SelectedIndex = selected == lbAccounts.Items.Count ? lbAccounts.Items.Count - 1 : selected;
+                    pgSettings.SelectedObject = lbAccounts.Items[lbAccounts.SelectedIndex];
                 }
                 else
                 {
-                    SettingsGrid.SelectedObject = null;
+                    pgSettings.SelectedObject = null;
                 }
+
                 return true;
             }
 
             return false;
         }
 
-        private void SettingsGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        private void pgSettings_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            if (AccountsList.SelectedIndex > -1)
+            if (lbAccounts.SelectedIndex > -1)
             {
-                AccountsList.Items[AccountsList.SelectedIndex] = SettingsGrid.SelectedObject;
+                lbAccounts.Items[lbAccounts.SelectedIndex] = pgSettings.SelectedObject;
             }
         }
 
-        public virtual void AccountsList_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnClone.Enabled = AccountsList.SelectedIndex > -1;
+            btnRemove.Enabled = btnDuplicate.Enabled = btnTest.Enabled = lbAccounts.SelectedIndex > -1;
+
+            if (lbAccounts.SelectedIndex > -1)
+            {
+                pgSettings.SelectedObject = lbAccounts.Items[lbAccounts.SelectedIndex];
+            }
         }
     }
 }

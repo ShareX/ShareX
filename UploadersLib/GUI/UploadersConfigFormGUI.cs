@@ -323,9 +323,9 @@ namespace UploadersLib
             else
             {
                 FTPSetup(Config.FTPAccountList);
-                if (ucFTPAccounts.AccountsList.Items.Count > 0)
+                if (ucFTPAccounts.lbAccounts.Items.Count > 0)
                 {
-                    ucFTPAccounts.AccountsList.SelectedIndex = 0;
+                    ucFTPAccounts.lbAccounts.SelectedIndex = 0;
                 }
             }
 
@@ -361,12 +361,12 @@ namespace UploadersLib
             else
             {
                 LocalhostAccountsSetup(Config.LocalhostAccountList);
-                if (ucLocalhostAccounts.AccountsList.Items.Count > 0)
+                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
                 {
-                    ucLocalhostAccounts.AccountsList.SelectedIndex = 0;
-                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
-                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
-                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
+                    ucLocalhostAccounts.lbAccounts.SelectedIndex = 0;
+                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
                 }
             }
 
@@ -468,16 +468,16 @@ namespace UploadersLib
 
             #region Other Services
 
-            ucTwitterAccounts.AccountsList.Items.Clear();
+            ucTwitterAccounts.lbAccounts.Items.Clear();
 
             foreach (OAuthInfo acc in Config.TwitterOAuthInfoList)
             {
-                ucTwitterAccounts.AccountsList.Items.Add(acc);
+                ucTwitterAccounts.lbAccounts.Items.Add(acc);
             }
 
-            if (ucTwitterAccounts.AccountsList.Items.Count > 0)
+            if (ucTwitterAccounts.lbAccounts.Items.Count > 0)
             {
-                ucTwitterAccounts.AccountsList.SelectedIndex = Config.TwitterSelectedAccount;
+                ucTwitterAccounts.lbAccounts.SelectedIndex = Config.TwitterSelectedAccount;
             }
 
             #endregion Other Services
@@ -486,102 +486,26 @@ namespace UploadersLib
         private void CreateUserControlEvents()
         {
             // FTP
-
             ucFTPAccounts.btnAdd.Click += FTPAccountAddButton_Click;
             ucFTPAccounts.btnRemove.Click += FTPAccountRemoveButton_Click;
+            ucFTPAccounts.btnDuplicate.Click += FTPAccountDuplicateButton_Click;
             ucFTPAccounts.btnTest.Click += FTPAccountTestButton_Click;
-            ucFTPAccounts.btnClone.Visible = true;
-            ucFTPAccounts.btnClone.Click += FTPAccountCloneButton_Click;
-            ucFTPAccounts.AccountsList.SelectedIndexChanged += FTPAccountsList_SelectedIndexChanged;
-            ucFTPAccounts.SettingsGrid.PropertyValueChanged += FtpAccountSettingsGrid_PropertyValueChanged;
+            ucFTPAccounts.pgSettings.PropertyValueChanged += FtpAccountSettingsGrid_PropertyValueChanged;
 
             // Localhost
-
             ucLocalhostAccounts.btnAdd.Click += LocalhostAccountAddButton_Click;
             ucLocalhostAccounts.btnRemove.Click += LocalhostAccountRemoveButton_Click;
+            ucLocalhostAccounts.btnDuplicate.Click += LocalhostAccountDuplicateButton_Click;
             ucLocalhostAccounts.btnTest.Visible = false;
-            ucLocalhostAccounts.AccountsList.SelectedIndexChanged += LocalhostAccountsList_SelectedIndexChanged;
-            ucLocalhostAccounts.SettingsGrid.PropertyValueChanged += SettingsGrid_LocalhostPropertyValueChanged;
+            ucLocalhostAccounts.pgSettings.PropertyValueChanged += SettingsGrid_LocalhostPropertyValueChanged;
 
             // Twitter
-
-            ucTwitterAccounts.btnAdd.Text = "Add";
             ucTwitterAccounts.btnAdd.Click += TwitterAccountAddButton_Click;
             ucTwitterAccounts.btnRemove.Click += TwitterAccountRemoveButton_Click;
+            ucTwitterAccounts.btnDuplicate.Click += TwitterAccountDuplicateButton_Click;
             ucTwitterAccounts.btnTest.Text = "Authorize";
             ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
-            ucTwitterAccounts.SettingsGrid.PropertySort = PropertySort.NoSort;
-            ucTwitterAccounts.AccountsList.SelectedIndexChanged += TwitterAccountList_SelectedIndexChanged;
         }
-
-        #region Localhost
-
-        private void LocalhostAccountAddButton_Click(object sender, EventArgs e)
-        {
-            LocalhostAccount acc = new LocalhostAccount("New Account");
-            Config.LocalhostAccountList.Add(acc);
-            ucLocalhostAccounts.AccountsList.Items.Add(acc);
-            ucLocalhostAccounts.AccountsList.SelectedIndex = ucLocalhostAccounts.AccountsList.Items.Count - 1;
-        }
-
-        private void LocalhostAccountRemoveButton_Click(object sender, EventArgs e)
-        {
-            int sel = ucLocalhostAccounts.AccountsList.SelectedIndex;
-            if (ucLocalhostAccounts.RemoveItem(sel))
-            {
-                Config.LocalhostAccountList.RemoveAt(sel);
-            }
-        }
-
-        private void LocalhostAccountsList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int sel = ucLocalhostAccounts.AccountsList.SelectedIndex;
-
-            if (Config.LocalhostAccountList.IsValidIndex(sel))
-            {
-                LocalhostAccount acc = Config.LocalhostAccountList[sel];
-                ucLocalhostAccounts.SettingsGrid.SelectedObject = acc;
-            }
-        }
-
-        private void SettingsGrid_LocalhostPropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-        {
-            LocalhostAccountsSetup(Config.LocalhostAccountList);
-        }
-
-        private void LocalhostAccountsSetup(IEnumerable<LocalhostAccount> accs)
-        {
-            if (accs != null)
-            {
-                int sel = ucLocalhostAccounts.AccountsList.SelectedIndex;
-
-                ucLocalhostAccounts.AccountsList.Items.Clear();
-                Config.LocalhostAccountList = new List<LocalhostAccount>();
-                Config.LocalhostAccountList.AddRange(accs);
-
-                cboSharedFolderFiles.Items.Clear();
-                cboSharedFolderImages.Items.Clear();
-                cboSharedFolderText.Items.Clear();
-
-                foreach (LocalhostAccount acc in Config.LocalhostAccountList)
-                {
-                    ucLocalhostAccounts.AccountsList.Items.Add(acc);
-                    cboSharedFolderFiles.Items.Add(acc);
-                    cboSharedFolderImages.Items.Add(acc);
-                    cboSharedFolderText.Items.Add(acc);
-                }
-
-                if (ucLocalhostAccounts.AccountsList.Items.Count > 0)
-                {
-                    ucLocalhostAccounts.AccountsList.SelectedIndex = sel.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
-                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
-                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
-                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.AccountsList.Items.Count - 1);
-                }
-            }
-        }
-
-        #endregion Localhost
 
         #region FTP
 
@@ -589,10 +513,10 @@ namespace UploadersLib
         {
             if (accs != null)
             {
-                int selFtpList = ucFTPAccounts.AccountsList.SelectedIndex;
+                int selFtpList = ucFTPAccounts.lbAccounts.SelectedIndex;
 
-                ucFTPAccounts.AccountsList.Items.Clear();
-                ucFTPAccounts.SettingsGrid.PropertySort = PropertySort.Categorized;
+                ucFTPAccounts.lbAccounts.Items.Clear();
+                ucFTPAccounts.pgSettings.PropertySort = PropertySort.Categorized;
                 cboFtpImages.Items.Clear();
                 cboFtpText.Items.Clear();
                 cboFtpFiles.Items.Clear();
@@ -602,34 +526,33 @@ namespace UploadersLib
 
                 foreach (FTPAccount acc in Config.FTPAccountList)
                 {
-                    ucFTPAccounts.AccountsList.Items.Add(acc);
+                    ucFTPAccounts.lbAccounts.Items.Add(acc);
                     cboFtpImages.Items.Add(acc);
                     cboFtpText.Items.Add(acc);
                     cboFtpFiles.Items.Add(acc);
                 }
 
-                if (ucFTPAccounts.AccountsList.Items.Count > 0)
+                if (ucFTPAccounts.lbAccounts.Items.Count > 0)
                 {
-                    ucFTPAccounts.AccountsList.SelectedIndex = selFtpList.Between(0, ucFTPAccounts.AccountsList.Items.Count - 1);
-                    cboFtpImages.SelectedIndex = Config.FTPSelectedImage.Between(0, ucFTPAccounts.AccountsList.Items.Count - 1);
-                    cboFtpText.SelectedIndex = Config.FTPSelectedText.Between(0, ucFTPAccounts.AccountsList.Items.Count - 1);
-                    cboFtpFiles.SelectedIndex = Config.FTPSelectedFile.Between(0, ucFTPAccounts.AccountsList.Items.Count - 1);
+                    ucFTPAccounts.lbAccounts.SelectedIndex = selFtpList.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                    cboFtpImages.SelectedIndex = Config.FTPSelectedImage.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                    cboFtpText.SelectedIndex = Config.FTPSelectedText.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                    cboFtpFiles.SelectedIndex = Config.FTPSelectedFile.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
                 }
             }
         }
 
         private void FTPAccountAddButton_Click(object sender, EventArgs e)
         {
-            FTPAccount acc = new FTPAccount("New Account");
+            FTPAccount acc = new FTPAccount("New account");
             Config.FTPAccountList.Add(acc);
-            ucFTPAccounts.AccountsList.Items.Add(acc);
-            ucFTPAccounts.AccountsList.SelectedIndex = ucFTPAccounts.AccountsList.Items.Count - 1;
+            ucFTPAccounts.AddItem(acc);
             FTPSetup(Config.FTPAccountList);
         }
 
         private void FTPAccountRemoveButton_Click(object sender, EventArgs e)
         {
-            int sel = ucFTPAccounts.AccountsList.SelectedIndex;
+            int sel = ucFTPAccounts.lbAccounts.SelectedIndex;
             if (ucFTPAccounts.RemoveItem(sel))
             {
                 Config.FTPAccountList.RemoveAt(sel);
@@ -637,30 +560,20 @@ namespace UploadersLib
             FTPSetup(Config.FTPAccountList);
         }
 
+        private void FTPAccountDuplicateButton_Click(object sender, EventArgs e)
+        {
+            FTPAccount src = (FTPAccount)ucFTPAccounts.lbAccounts.Items[ucFTPAccounts.lbAccounts.SelectedIndex];
+            FTPAccount clone = (FTPAccount)src.Clone();
+            Config.FTPAccountList.Add(clone);
+            ucFTPAccounts.AddItem(clone);
+            FTPSetup(Config.FTPAccountList);
+        }
+
         private void FTPAccountTestButton_Click(object sender, EventArgs e)
         {
             if (CheckFTPAccounts())
             {
-                TestFTPAccount(Config.FTPAccountList[ucFTPAccounts.AccountsList.SelectedIndex], false);
-            }
-        }
-
-        private void FTPAccountCloneButton_Click(object sender, EventArgs e)
-        {
-            FTPAccount src = ucFTPAccounts.AccountsList.Items[ucFTPAccounts.AccountsList.SelectedIndex] as FTPAccount;
-            Config.FTPAccountList.Add(src.Clone());
-            ucFTPAccounts.AccountsList.SelectedIndex = ucFTPAccounts.AccountsList.Items.Count - 1;
-            FTPSetup(Config.FTPAccountList);
-        }
-
-        private void FTPAccountsList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int sel = ucFTPAccounts.AccountsList.SelectedIndex;
-
-            if (Config.FTPAccountList.IsValidIndex(sel))
-            {
-                FTPAccount acc = Config.FTPAccountList[sel];
-                ucFTPAccounts.SettingsGrid.SelectedObject = acc;
+                TestFTPAccount(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex], false);
             }
         }
 
@@ -671,7 +584,96 @@ namespace UploadersLib
 
         #endregion FTP
 
+        #region Localhost
+
+        private void LocalhostAccountsSetup(IEnumerable<LocalhostAccount> accs)
+        {
+            if (accs != null)
+            {
+                int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
+
+                ucLocalhostAccounts.lbAccounts.Items.Clear();
+                Config.LocalhostAccountList = new List<LocalhostAccount>();
+                Config.LocalhostAccountList.AddRange(accs);
+
+                cboSharedFolderFiles.Items.Clear();
+                cboSharedFolderImages.Items.Clear();
+                cboSharedFolderText.Items.Clear();
+
+                foreach (LocalhostAccount acc in Config.LocalhostAccountList)
+                {
+                    ucLocalhostAccounts.lbAccounts.Items.Add(acc);
+                    cboSharedFolderFiles.Items.Add(acc);
+                    cboSharedFolderImages.Items.Add(acc);
+                    cboSharedFolderText.Items.Add(acc);
+                }
+
+                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
+                {
+                    ucLocalhostAccounts.lbAccounts.SelectedIndex = sel.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                }
+            }
+        }
+
+        private void LocalhostAccountAddButton_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount acc = new LocalhostAccount("New account");
+            Config.LocalhostAccountList.Add(acc);
+            ucLocalhostAccounts.AddItem(acc);
+        }
+
+        private void LocalhostAccountRemoveButton_Click(object sender, EventArgs e)
+        {
+            int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
+            if (ucLocalhostAccounts.RemoveItem(sel))
+            {
+                Config.LocalhostAccountList.RemoveAt(sel);
+            }
+        }
+
+        private void LocalhostAccountDuplicateButton_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount src = (LocalhostAccount)ucLocalhostAccounts.lbAccounts.Items[ucLocalhostAccounts.lbAccounts.SelectedIndex];
+            LocalhostAccount clone = (LocalhostAccount)src.Clone();
+            Config.LocalhostAccountList.Add(clone);
+            ucLocalhostAccounts.AddItem(clone);
+        }
+
+        private void SettingsGrid_LocalhostPropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            LocalhostAccountsSetup(Config.LocalhostAccountList);
+        }
+
+        #endregion Localhost
+
         #region Twitter
+
+        private void TwitterAccountAddButton_Click(object sender, EventArgs e)
+        {
+            OAuthInfo acc = new OAuthInfo(APIKeys.TwitterConsumerKey, APIKeys.TwitterConsumerSecret);
+            Config.TwitterOAuthInfoList.Add(acc);
+            ucTwitterAccounts.AddItem(acc);
+        }
+
+        private void TwitterAccountRemoveButton_Click(object sender, EventArgs e)
+        {
+            int sel = ucTwitterAccounts.lbAccounts.SelectedIndex;
+            if (ucTwitterAccounts.RemoveItem(sel))
+            {
+                Config.TwitterOAuthInfoList.RemoveAt(sel);
+            }
+        }
+
+        private void TwitterAccountDuplicateButton_Click(object sender, EventArgs e)
+        {
+            OAuthInfo src = (OAuthInfo)ucTwitterAccounts.lbAccounts.Items[ucTwitterAccounts.lbAccounts.SelectedIndex];
+            OAuthInfo clone = (OAuthInfo)src.Clone();
+            Config.TwitterOAuthInfoList.Add(clone);
+            ucTwitterAccounts.AddItem(clone);
+        }
 
         private void TwitterAccountAuthButton_Click(object sender, EventArgs e)
         {
@@ -685,41 +687,8 @@ namespace UploadersLib
                 {
                     Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
                     Helpers.LoadBrowserAsync(url);
-                    ucTwitterAccounts.SettingsGrid.SelectedObject = acc;
+                    ucTwitterAccounts.pgSettings.SelectedObject = acc;
                 }
-            }
-        }
-
-        private void TwitterAccountRemoveButton_Click(object sender, EventArgs e)
-        {
-            int sel = ucTwitterAccounts.AccountsList.SelectedIndex;
-            if (ucTwitterAccounts.RemoveItem(sel))
-            {
-                Config.TwitterOAuthInfoList.RemoveAt(sel);
-            }
-        }
-
-        private void TwitterAccountList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int sel = ucTwitterAccounts.AccountsList.SelectedIndex;
-            Config.TwitterSelectedAccount = sel;
-
-            if (CheckTwitterAccounts())
-            {
-                OAuthInfo acc = Config.TwitterOAuthInfoList[sel];
-                ucTwitterAccounts.SettingsGrid.SelectedObject = acc;
-            }
-        }
-
-        private void TwitterAccountAddButton_Click(object sender, EventArgs e)
-        {
-            OAuthInfo acc = new OAuthInfo(APIKeys.TwitterConsumerKey, APIKeys.TwitterConsumerSecret);
-            Config.TwitterOAuthInfoList.Add(acc);
-            ucTwitterAccounts.AccountsList.Items.Add(acc);
-            ucTwitterAccounts.AccountsList.SelectedIndex = ucTwitterAccounts.AccountsList.Items.Count - 1;
-            if (CheckTwitterAccounts())
-            {
-                ucTwitterAccounts.SettingsGrid.SelectedObject = acc;
             }
         }
 

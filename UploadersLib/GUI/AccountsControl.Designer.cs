@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SettingsGrid = new System.Windows.Forms.PropertyGrid();
-            this.AccountsList = new System.Windows.Forms.ListBox();
+            this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.lbAccounts = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.AccountsLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.btnClone = new System.Windows.Forms.Button();
+            this.btnDuplicate = new System.Windows.Forms.Button();
             this.AccountsLayout.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SettingsGrid
+            // pgSettings
             // 
-            this.SettingsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingsGrid.Location = new System.Drawing.Point(258, 3);
-            this.SettingsGrid.Name = "SettingsGrid";
-            this.SettingsGrid.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.SettingsGrid.Size = new System.Drawing.Size(481, 345);
-            this.SettingsGrid.TabIndex = 1;
-            this.SettingsGrid.ToolbarVisible = false;
-            this.SettingsGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.SettingsGrid_PropertyValueChanged);
+            this.pgSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgSettings.Location = new System.Drawing.Point(200, 0);
+            this.pgSettings.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.pgSettings.Name = "pgSettings";
+            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgSettings.Size = new System.Drawing.Size(544, 352);
+            this.pgSettings.TabIndex = 1;
+            this.pgSettings.ToolbarVisible = false;
+            this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
             // 
-            // AccountsList
+            // lbAccounts
             // 
-            this.AccountsList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AccountsList.FormattingEnabled = true;
-            this.AccountsList.IntegralHeight = false;
-            this.AccountsList.Location = new System.Drawing.Point(3, 3);
-            this.AccountsList.Name = "AccountsList";
-            this.AccountsList.Size = new System.Drawing.Size(249, 345);
-            this.AccountsList.TabIndex = 0;
-            this.AccountsList.SelectedIndexChanged += new System.EventHandler(this.AccountsList_SelectedIndexChanged);
+            this.lbAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbAccounts.FormattingEnabled = true;
+            this.lbAccounts.IntegralHeight = false;
+            this.lbAccounts.Location = new System.Drawing.Point(0, 0);
+            this.lbAccounts.Margin = new System.Windows.Forms.Padding(0);
+            this.lbAccounts.Name = "lbAccounts";
+            this.lbAccounts.Size = new System.Drawing.Size(197, 352);
+            this.lbAccounts.TabIndex = 0;
+            this.lbAccounts.SelectedIndexChanged += new System.EventHandler(this.lbAccounts_SelectedIndexChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAdd.Location = new System.Drawing.Point(8, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(64, 24);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnTest
             // 
-            this.btnTest.BackColor = System.Drawing.Color.Transparent;
             this.btnTest.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnTest.Location = new System.Drawing.Point(152, 8);
+            this.btnTest.Location = new System.Drawing.Point(224, 8);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(64, 24);
             this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "Test...";
-            this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
             // 
             // btnRemove
             // 
@@ -98,32 +98,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AccountsLayout.ColumnCount = 2;
-            this.AccountsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.4086F));
-            this.AccountsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.5914F));
-            this.AccountsLayout.Controls.Add(this.SettingsGrid, 1, 0);
-            this.AccountsLayout.Controls.Add(this.AccountsList, -1, 0);
+            this.AccountsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.54987F));
+            this.AccountsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.45013F));
+            this.AccountsLayout.Controls.Add(this.pgSettings, 1, 0);
+            this.AccountsLayout.Controls.Add(this.lbAccounts, -1, 0);
             this.AccountsLayout.Location = new System.Drawing.Point(8, 40);
             this.AccountsLayout.Name = "AccountsLayout";
             this.AccountsLayout.RowCount = 1;
             this.AccountsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.AccountsLayout.Size = new System.Drawing.Size(742, 351);
+            this.AccountsLayout.Size = new System.Drawing.Size(744, 352);
             this.AccountsLayout.TabIndex = 4;
             // 
-            // btnClone
+            // btnDuplicate
             // 
-            this.btnClone.Location = new System.Drawing.Point(224, 8);
-            this.btnClone.Name = "btnClone";
-            this.btnClone.Size = new System.Drawing.Size(72, 24);
-            this.btnClone.TabIndex = 3;
-            this.btnClone.Text = "&Clone";
-            this.btnClone.UseVisualStyleBackColor = true;
-            this.btnClone.Visible = false;
+            this.btnDuplicate.Location = new System.Drawing.Point(152, 8);
+            this.btnDuplicate.Name = "btnDuplicate";
+            this.btnDuplicate.Size = new System.Drawing.Size(64, 24);
+            this.btnDuplicate.TabIndex = 3;
+            this.btnDuplicate.Text = "Duplicate";
+            this.btnDuplicate.UseVisualStyleBackColor = true;
             // 
             // AccountsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnClone);
+            this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.AccountsLayout);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnTest);
@@ -141,8 +140,8 @@
         public System.Windows.Forms.Button btnTest;
         public System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.TableLayoutPanel AccountsLayout;
-        public System.Windows.Forms.PropertyGrid SettingsGrid;
-        public System.Windows.Forms.ListBox AccountsList;
-        public System.Windows.Forms.Button btnClone;
+        public System.Windows.Forms.PropertyGrid pgSettings;
+        public System.Windows.Forms.ListBox lbAccounts;
+        public System.Windows.Forms.Button btnDuplicate;
     }
 }

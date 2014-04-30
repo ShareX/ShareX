@@ -265,7 +265,7 @@ namespace UploadersLib
 
         object ICloneable.Clone()
         {
-            return MemberwiseClone();
+            return Clone();
         }
     }
 }

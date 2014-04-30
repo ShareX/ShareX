@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace UploadersLib
 {
-    public class LocalhostAccount
+    public class LocalhostAccount : ICloneable
     {
         [Category("Localhost"), Description("Shown in the list as: Name - LocalhostRoot:Port")]
         public string Name { get; set; }
@@ -217,6 +217,16 @@ namespace UploadersLib
         public override string ToString()
         {
             return string.Format("{0} - {1}:{2}", Name, LocalhostRoot, Port);
+        }
+
+        public LocalhostAccount Clone()
+        {
+            return MemberwiseClone() as LocalhostAccount;
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
     }
 }

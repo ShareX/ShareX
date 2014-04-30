@@ -23,11 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 
 namespace UploadersLib.HelperClasses
 {
-    public class OAuthInfo
+    public class OAuthInfo : ICloneable
     {
         public enum OAuthInfoSignatureMethod
         {
@@ -106,6 +107,16 @@ namespace UploadersLib.HelperClasses
         public override string ToString()
         {
             return Description;
+        }
+
+        public OAuthInfo Clone()
+        {
+            return MemberwiseClone() as OAuthInfo;
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
     }
 }
