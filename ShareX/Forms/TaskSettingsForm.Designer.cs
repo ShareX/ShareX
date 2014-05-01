@@ -150,6 +150,7 @@
             this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
             this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
             this.tpUploadClipboard = new System.Windows.Forms.TabPage();
+            this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoDetectURL = new System.Windows.Forms.CheckBox();
             this.chkUseDefaultUploadSettings = new System.Windows.Forms.CheckBox();
             this.tpIndexer = new System.Windows.Forms.TabPage();
@@ -158,7 +159,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1587,6 +1587,18 @@
             this.tpUploadClipboard.Text = "Clipboard upload";
             this.tpUploadClipboard.UseVisualStyleBackColor = true;
             // 
+            // cbClipboardUploadAutoIndexFolder
+            // 
+            this.cbClipboardUploadAutoIndexFolder.AutoSize = true;
+            this.cbClipboardUploadAutoIndexFolder.Location = new System.Drawing.Point(16, 40);
+            this.cbClipboardUploadAutoIndexFolder.Name = "cbClipboardUploadAutoIndexFolder";
+            this.cbClipboardUploadAutoIndexFolder.Size = new System.Drawing.Size(407, 17);
+            this.cbClipboardUploadAutoIndexFolder.TabIndex = 2;
+            this.cbClipboardUploadAutoIndexFolder.Text = "If clipboard text contains a folder path then index that folder and upload the in" +
+    "dex";
+            this.cbClipboardUploadAutoIndexFolder.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadAutoIndexFolder.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoIndexFolder_CheckedChanged);
+            // 
             // cbClipboardUploadAutoDetectURL
             // 
             this.cbClipboardUploadAutoDetectURL.AutoSize = true;
@@ -1686,18 +1698,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // cbClipboardUploadAutoIndexFolder
-            // 
-            this.cbClipboardUploadAutoIndexFolder.AutoSize = true;
-            this.cbClipboardUploadAutoIndexFolder.Location = new System.Drawing.Point(16, 40);
-            this.cbClipboardUploadAutoIndexFolder.Name = "cbClipboardUploadAutoIndexFolder";
-            this.cbClipboardUploadAutoIndexFolder.Size = new System.Drawing.Size(442, 17);
-            this.cbClipboardUploadAutoIndexFolder.TabIndex = 2;
-            this.cbClipboardUploadAutoIndexFolder.Text = "Automatically detect folder path when doing clipboard text upload and use \"Index " +
-    "folder\"";
-            this.cbClipboardUploadAutoIndexFolder.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadAutoIndexFolder.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoIndexFolder_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
