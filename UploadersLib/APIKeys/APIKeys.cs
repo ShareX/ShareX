@@ -58,8 +58,8 @@ namespace UploadersLib
         // Text Uploaders
         public static string PastebinKey = "";
         public static string PastebinCaKey = "";
-        public static string GistId = "";
-        public static string GistSecret = "";
+        public static string GitHubID = "";
+        public static string GitHubSecret = "";
 
         // URL Shorteners
         public static string BitlyClientID = "";

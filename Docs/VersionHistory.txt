@@ -1,5 +1,6 @@
 ﻿ShareX 8.7.2 
 
+* Box 2.0 API support
 * Added new After Capture task: Save thumbnail to file
 * Support for all thumbnail types in Imgur
 * HttpHomePathAutoAddSubFolderPath setting for FTP accounts (instead of using @)
