@@ -732,6 +732,11 @@ namespace ShareX
             TaskHelpers.OpenRuler();
         }
 
+        private void tsmiFTPClient_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenFTPClient();
+        }
+
         private void tsmiHashCheck_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
@@ -755,11 +760,6 @@ namespace ShareX
         private void tsmiDNSChanger_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiFTPClient_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenFTPClient();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)

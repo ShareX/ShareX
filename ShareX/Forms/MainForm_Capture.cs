@@ -132,6 +132,12 @@ namespace ShareX
                 case HotkeyType.ScreenColorPicker:
                     TaskHelpers.OpenScreenColorPicker(taskSettings);
                     break;
+                case HotkeyType.Ruler:
+                    TaskHelpers.OpenRuler();
+                    break;
+                case HotkeyType.FTPClient:
+                    TaskHelpers.OpenFTPClient();
+                    break;
                 case HotkeyType.HashCheck:
                     TaskHelpers.OpenHashCheck();
                     break;
@@ -140,9 +146,6 @@ namespace ShareX
                     break;
                 case HotkeyType.ImageEffects:
                     TaskHelpers.OpenImageEffects();
-                    break;
-                case HotkeyType.Ruler:
-                    TaskHelpers.OpenRuler();
                     break;
             }
         }
