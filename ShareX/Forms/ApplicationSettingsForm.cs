@@ -279,13 +279,13 @@ namespace ShareX
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseCustomScreenshotsPath = cbUseCustomScreenshotsPath.Checked;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsPath;
+            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
         }
 
         private void txtCustomScreenshotsPath_TextChanged(object sender, EventArgs e)
         {
             Program.Settings.CustomScreenshotsPath = txtCustomScreenshotsPath.Text;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsPath;
+            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
         }
 
         private void btnBrowseCustomScreenshotsPath_Click(object sender, EventArgs e)
@@ -296,7 +296,7 @@ namespace ShareX
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)
         {
             Program.Settings.SaveImageSubFolderPattern = txtSaveImageSubFolderPattern.Text;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsPath;
+            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
         }
 
         private void btnOpenScreenshotsFolder_Click(object sender, EventArgs e)

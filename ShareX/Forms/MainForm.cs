@@ -858,7 +858,14 @@ namespace ShareX
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(Program.ScreenshotsPath);
+            if (Directory.Exists(Program.ScreenshotsFolder))
+            {
+                Helpers.OpenFolder(Program.ScreenshotsFolder);
+            }
+            else
+            {
+                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
+            }
         }
 
         private void tsbHistory_Click(object sender, EventArgs e)

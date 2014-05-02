@@ -1,4 +1,4 @@
-﻿ShareX 8.7.2 
+﻿ShareX 8.8.0 - 2014-05-01
 
 * Box 2.0 API support
 * Added new After Capture task: Save thumbnail to file

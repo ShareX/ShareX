@@ -204,7 +204,7 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
                     return AdvancedSettings.CapturePath;
 
-                return Program.ScreenshotsPath;
+                return Program.ScreenshotsFolder;
             }
         }
     }
