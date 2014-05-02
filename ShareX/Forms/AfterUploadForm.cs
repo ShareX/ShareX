@@ -166,7 +166,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
-                Helpers.LoadBrowserAsync(url);
+                Helpers.OpenURL(url);
             }
         }
 
@@ -174,7 +174,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
             {
-                Helpers.LoadBrowserAsync(Info.FilePath);
+                Helpers.OpenURL(Info.FilePath);
             }
         }
 

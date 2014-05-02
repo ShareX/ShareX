@@ -27,6 +27,7 @@ using HelpersLib;
 using ImageEffectsLib;
 using ScreenCaptureLib;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -212,7 +213,7 @@ namespace ShareX
                                 URL = notificationText
                             };
                             NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000), taskSettings.AdvancedSettings.ToastWindowPlacement,
-                   taskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
+                                taskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
                             break;
                     }
                 }
@@ -423,11 +424,114 @@ namespace ShareX
 
             return filepath;
         }
-    }
 
-    public class PointInfo
-    {
-        public Point Position { get; set; }
-        public Color Color { get; set; }
+        public static void OpenDropWindow()
+        {
+            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity,
+                Program.Settings.DropHoverOpacity).ShowActivate();
+        }
+
+        public static void DoScreenRecorder(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            ScreenRecordForm form = ScreenRecordForm.Instance;
+
+            if (form.IsRecording)
+            {
+                form.StopRecording();
+            }
+            else
+            {
+                form.StartRecording(taskSettings);
+            }
+        }
+
+        public static void OpenAutoCapture()
+        {
+            AutoCaptureForm.Instance.ShowActivate();
+        }
+
+        public static void StartAutoCapture()
+        {
+            if (!AutoCaptureForm.IsRunning)
+            {
+                AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.Show();
+                form.Execute();
+            }
+        }
+
+        public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            new ScreenColorPicker(taskSettings).Show();
+        }
+
+        public static void OpenRuler()
+        {
+            using (Image fullscreen = Screenshot.CaptureFullscreen())
+            using (RectangleRegion surface = new RectangleRegion(fullscreen))
+            {
+                surface.RulerMode = true;
+                surface.Config.QuickCrop = false;
+                surface.Prepare();
+                surface.ShowDialog();
+            }
+        }
+
+        public static void OpenHashCheck()
+        {
+            new HashCheckForm().Show();
+        }
+
+        public static void OpenIndexFolder()
+        {
+            UploadManager.IndexFolder();
+        }
+
+        public static void OpenImageEffects()
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                Image img = ImageHelpers.LoadImage(filePath);
+                ImageEffectsForm form = new ImageEffectsForm(img);
+                form.EditorMode();
+                form.Show();
+            }
+        }
+
+        public static void OpenMonitorTest()
+        {
+            using (MonitorTestForm monitorTestForm = new MonitorTestForm())
+            {
+                monitorTestForm.ShowDialog();
+            }
+        }
+
+        public static void OpenDNSChanger()
+        {
+            try
+            {
+                string path = Path.Combine(Application.StartupPath, "DNSChanger.exe");
+                ProcessStartInfo psi = new ProcessStartInfo(path);
+                psi.UseShellExecute = true;
+                psi.Verb = "runas";
+                Process.Start(psi);
+            }
+            catch { }
+        }
+
+        public static void OpenFTPClient()
+        {
+            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.IsValidIndex(Program.UploadersConfig.FTPSelectedImage))
+            {
+                FTPAccount account = Program.UploadersConfig.FTPAccountList[Program.UploadersConfig.FTPSelectedImage];
+                new FTPClientForm(account).Show();
+            }
+        }
     }
 }

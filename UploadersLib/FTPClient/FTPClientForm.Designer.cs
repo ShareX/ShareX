@@ -254,7 +254,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.lvFTPList);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 483);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 508);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -301,7 +301,7 @@
             this.lvFTPList.HideSelection = false;
             this.lvFTPList.Location = new System.Drawing.Point(0, 0);
             this.lvFTPList.Name = "lvFTPList";
-            this.lvFTPList.Size = new System.Drawing.Size(952, 483);
+            this.lvFTPList.Size = new System.Drawing.Size(952, 508);
             this.lvFTPList.TabIndex = 0;
             this.lvFTPList.UseCompatibleStateImageBehavior = false;
             this.lvFTPList.View = System.Windows.Forms.View.Details;
@@ -356,7 +356,7 @@
             this.tpMain.Padding = new System.Windows.Forms.Padding(3);
             this.tpMain.Size = new System.Drawing.Size(958, 563);
             this.tpMain.TabIndex = 0;
-            this.tpMain.Text = "FTP Client";
+            this.tpMain.Text = "Files";
             this.tpMain.UseVisualStyleBackColor = true;
             // 
             // tpAccount
@@ -375,7 +375,7 @@
             this.pgAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgAccount.Location = new System.Drawing.Point(3, 3);
             this.pgAccount.Name = "pgAccount";
-            this.pgAccount.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgAccount.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgAccount.Size = new System.Drawing.Size(952, 557);
             this.pgAccount.TabIndex = 0;
             this.pgAccount.ToolbarVisible = false;
@@ -446,7 +446,7 @@
             this.Controls.Add(this.txtRename);
             this.Name = "FTPClientForm";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Text = "FTP Client";
+            this.Text = "FTP client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FTPClient2_FormClosing);
             this.Resize += new System.EventHandler(this.FTPClient_Resize);
             this.cmsRightClickMenu.ResumeLayout(false);

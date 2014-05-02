@@ -33,6 +33,12 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace ShareX
 {
+    public class PointInfo
+    {
+        public Point Position { get; set; }
+        public Color Color { get; set; }
+    }
+
     public partial class ScreenColorPicker : DialogColor
     {
         private Timer colorTimer = new Timer { Interval = 10 };

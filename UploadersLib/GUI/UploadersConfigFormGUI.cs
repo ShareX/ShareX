@@ -684,7 +684,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     ucTwitterAccounts.pgSettings.SelectedObject = acc;
                 }
             }

@@ -111,27 +111,27 @@ namespace HistoryLib
 
         public void OpenURL()
         {
-            if (HistoryItem != null && IsURLExist) Helpers.LoadBrowserAsync(HistoryItem.URL);
+            if (HistoryItem != null && IsURLExist) Helpers.OpenURL(HistoryItem.URL);
         }
 
         public void OpenShortenedURL()
         {
-            if (HistoryItem != null && IsShortenedURLExist) Helpers.LoadBrowserAsync(HistoryItem.ShortenedURL);
+            if (HistoryItem != null && IsShortenedURLExist) Helpers.OpenURL(HistoryItem.ShortenedURL);
         }
 
         public void OpenThumbnailURL()
         {
-            if (HistoryItem != null && IsThumbnailURLExist) Helpers.LoadBrowserAsync(HistoryItem.ThumbnailURL);
+            if (HistoryItem != null && IsThumbnailURLExist) Helpers.OpenURL(HistoryItem.ThumbnailURL);
         }
 
         public void OpenDeletionURL()
         {
-            if (HistoryItem != null && IsDeletionURLExist) Helpers.LoadBrowserAsync(HistoryItem.DeletionURL);
+            if (HistoryItem != null && IsDeletionURLExist) Helpers.OpenURL(HistoryItem.DeletionURL);
         }
 
         public void OpenFile()
         {
-            if (HistoryItem != null && IsFileExist) Helpers.LoadBrowserAsync(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) Helpers.OpenURL(HistoryItem.Filepath);
         }
 
         public void OpenFolder()
@@ -145,15 +145,15 @@ namespace HistoryLib
             {
                 if (IsShortenedURLExist)
                 {
-                    Helpers.LoadBrowserAsync(HistoryItem.ShortenedURL);
+                    Helpers.OpenURL(HistoryItem.ShortenedURL);
                 }
                 else if (IsURLExist)
                 {
-                    Helpers.LoadBrowserAsync(HistoryItem.URL);
+                    Helpers.OpenURL(HistoryItem.URL);
                 }
                 else if (IsFileExist)
                 {
-                    Helpers.LoadBrowserAsync(HistoryItem.Filepath);
+                    Helpers.OpenURL(HistoryItem.Filepath);
                 }
             }
         }

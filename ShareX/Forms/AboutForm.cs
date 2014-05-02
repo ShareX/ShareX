@@ -56,37 +56,37 @@ namespace ShareX
 
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_BERK);
+            Helpers.OpenURL(Links.URL_BERK);
         }
 
         private void pbBerkSteamURL_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_BERK_STEAM);
+            Helpers.OpenURL(Links.URL_BERK_STEAM);
         }
 
         private void pbMikeURL_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_MIKE);
+            Helpers.OpenURL(Links.URL_MIKE);
         }
 
         private void pbMikeSteamURL_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_MIKE_STEAM);
+            Helpers.OpenURL(Links.URL_MIKE_STEAM);
         }
 
         private void pbGregoire_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_GREGOIRE);
+            Helpers.OpenURL(Links.URL_GREGOIRE);
         }
 
         private void pbDana_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_DANA);
+            Helpers.OpenURL(Links.URL_DANA);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Helpers.LoadBrowserAsync(e.LinkText);
+            Helpers.OpenURL(e.LinkText);
         }
 
         #region Animation

@@ -467,7 +467,7 @@ namespace HelpersLib
             return Application.ExecutablePath.StartsWith(path);
         }
 
-        public static void LoadBrowserAsync(string url)
+        public static void OpenURL(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {

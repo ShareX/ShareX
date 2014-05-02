@@ -97,7 +97,7 @@ namespace HelpersLib
 
         private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Helpers.LoadBrowserAsync(e.LinkText);
+            Helpers.OpenURL(e.LinkText);
         }
     }
 }

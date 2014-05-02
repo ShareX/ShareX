@@ -84,7 +84,7 @@ namespace HelpersLib
         {
             if (!string.IsNullOrEmpty(BugReportPath))
             {
-                Helpers.LoadBrowserAsync(BugReportPath);
+                Helpers.OpenURL(BugReportPath);
             }
         }
 

@@ -110,7 +110,7 @@ namespace UploadersLib
         {
             if (!string.IsNullOrEmpty(Config.ImageShackSettings.Username))
             {
-                Helpers.LoadBrowserAsync("https://imageshack.com/user/" + Config.ImageShackSettings.Username);
+                Helpers.OpenURL("https://imageshack.com/user/" + Config.ImageShackSettings.Username);
             }
             else
             {
@@ -120,7 +120,7 @@ namespace UploadersLib
 
         private void btnImageShackOpenMyImages_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("https://imageshack.com/my/images");
+            Helpers.OpenURL("https://imageshack.com/my/images");
         }
 
         #endregion ImageShack
@@ -180,7 +180,7 @@ namespace UploadersLib
 
         private void btnTinyPicOpenMyImages_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("http://tinypic.com/yourstuff.php");
+            Helpers.OpenURL("http://tinypic.com/yourstuff.php");
         }
 
         #endregion TinyPic
@@ -446,12 +446,12 @@ namespace UploadersLib
 
         private void pbDropboxLogo_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("https://www.dropbox.com");
+            Helpers.OpenURL("https://www.dropbox.com");
         }
 
         private void btnDropboxRegister_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("http://db.tt/CtPYXvu");
+            Helpers.OpenURL("http://db.tt/CtPYXvu");
         }
 
         private void btnDropboxAuthOpen_Click(object sender, EventArgs e)
@@ -956,7 +956,7 @@ namespace UploadersLib
 
         private void btnMegaRegister_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("https://mega.co.nz/#register");
+            Helpers.OpenURL("https://mega.co.nz/#register");
         }
 
         private void btnMegaRefreshFolders_Click(object sender, EventArgs e)
@@ -975,7 +975,7 @@ namespace UploadersLib
 
         private void btnAmazonS3AccessKeyOpen_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("https://console.aws.amazon.com/iam/home?#security_credential");
+            Helpers.OpenURL("https://console.aws.amazon.com/iam/home?#security_credential");
         }
 
         private void txtAmazonS3SecretKey_TextChanged(object sender, EventArgs e)
@@ -1000,7 +1000,7 @@ namespace UploadersLib
 
         private void btnAmazonS3BucketNameOpen_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync("https://console.aws.amazon.com/s3/home");
+            Helpers.OpenURL("https://console.aws.amazon.com/s3/home");
         }
 
         private void txtAmazonS3ObjectPrefix_TextChanged(object sender, EventArgs e)
@@ -1379,7 +1379,7 @@ namespace UploadersLib
 
         private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
         {
-            Helpers.LoadBrowserAsync(Links.URL_DOCS_CUSTOM_UPLOADER);
+            Helpers.OpenURL(Links.URL_DOCS_CUSTOM_UPLOADER);
         }
 
         private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)
@@ -1397,7 +1397,7 @@ namespace UploadersLib
 
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Helpers.LoadBrowserAsync(e.LinkText);
+            Helpers.OpenURL(e.LinkText);
         }
 
         #endregion Custom Uploaders

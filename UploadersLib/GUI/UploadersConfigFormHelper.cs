@@ -61,7 +61,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.ImgurOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     DebugHelper.WriteLine("ImgurAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -176,7 +176,7 @@ namespace UploadersLib
                 string url = flickr.GetAuthLink(FlickrPermission.Write);
                 if (!string.IsNullOrEmpty(url))
                 {
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     btnFlickrCompleteAuth.Enabled = true;
                 }
             }
@@ -239,7 +239,7 @@ namespace UploadersLib
                     string url = flickr.GetPhotosLink(userID);
                     if (!string.IsNullOrEmpty(url))
                     {
-                        Helpers.LoadBrowserAsync(url);
+                        Helpers.OpenURL(url);
                     }
                 }
             }
@@ -260,7 +260,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.PhotobucketOAuthInfo = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                 }
             }
             catch (Exception ex)
@@ -331,7 +331,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.PicasaOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     DebugHelper.WriteLine("PicasaAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -460,7 +460,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.DropboxOAuthInfo = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     btnDropboxCompleteAuth.Enabled = true;
                     DebugHelper.WriteLine("DropboxAuthOpen - Authorization URL is opened: " + url);
                 }
@@ -561,7 +561,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.GoogleDriveOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     DebugHelper.WriteLine("GoogleDriveAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -1195,7 +1195,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.GoogleURLShortenerOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     DebugHelper.WriteLine("GoogleURLShortenerAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -1278,7 +1278,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.BitlyOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                     DebugHelper.WriteLine("BitlyAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -1580,7 +1580,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.JiraOAuthInfo = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                 }
             }
             catch (Exception ex)
@@ -1633,7 +1633,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.GistOAuth2Info = oauth;
-                    Helpers.LoadBrowserAsync(url);
+                    Helpers.OpenURL(url);
                 }
             }
             catch (Exception ex)

@@ -310,6 +310,7 @@ namespace ShareX
                                     {
                                         result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
+
                                     TaskHelpers.ShowResultNotifications(result, info.TaskSettings, info.FilePath);
 
                                     if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)

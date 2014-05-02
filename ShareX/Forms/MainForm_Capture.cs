@@ -85,7 +85,7 @@ namespace ShareX
                     UploadManager.UploadFile(taskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
-                    OpenDropWindow();
+                    TaskHelpers.OpenDropWindow();
                     break;
                 case HotkeyType.PrintScreen:
                     CaptureScreenshot(CaptureType.Screen, taskSettings, false);
@@ -124,25 +124,25 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.LastRegion, taskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    DoScreenRecorder(taskSettings);
+                    TaskHelpers.DoScreenRecorder(taskSettings);
                     break;
                 case HotkeyType.AutoCapture:
-                    OpenAutoCapture();
+                    TaskHelpers.OpenAutoCapture();
                     break;
                 case HotkeyType.ScreenColorPicker:
-                    OpenScreenColorPicker(taskSettings);
+                    TaskHelpers.OpenScreenColorPicker(taskSettings);
                     break;
                 case HotkeyType.HashCheck:
-                    OpenHashCheck();
+                    TaskHelpers.OpenHashCheck();
                     break;
                 case HotkeyType.IndexFolder:
-                    OpenIndexFolder();
+                    TaskHelpers.OpenIndexFolder();
                     break;
                 case HotkeyType.ImageEffects:
-                    OpenImageEffects();
+                    TaskHelpers.OpenImageEffects();
                     break;
                 case HotkeyType.Ruler:
-                    OpenRuler();
+                    TaskHelpers.OpenRuler();
                     break;
             }
         }
