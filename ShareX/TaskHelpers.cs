@@ -492,6 +492,19 @@ namespace ShareX
             UploadManager.IndexFolder();
         }
 
+        public static void OpenImageEditor()
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                using (Image img = ImageHelpers.LoadImage(filePath))
+                {
+                    TaskHelpers.AnnotateImage(img);
+                }
+            }
+        }
+
         public static void OpenImageEffects()
         {
             string filePath = ImageHelpers.OpenImageFileDialog();

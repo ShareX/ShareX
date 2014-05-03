@@ -850,7 +850,7 @@ namespace Greenshot {
             this.btnSaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(23, 24);
-            this.btnSaveAs.Text = "toolStripButton1";
+            this.btnSaveAs.Text = "Save image as...";
             this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
             // btnClipboardCopy

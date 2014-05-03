@@ -469,6 +469,7 @@
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\Test.png" />
     <None Include="Resources\application-network.png" />
+    <None Include="Resources\90.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />

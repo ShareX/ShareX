@@ -91,12 +91,13 @@ namespace ShareX
             this.tsddbTools = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbImageHistory = new System.Windows.Forms.ToolStripButton();
@@ -207,12 +208,12 @@ namespace ShareX
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -559,6 +560,7 @@ namespace ShareX
             this.tsmiFTPClient,
             this.tsmiHashCheck,
             this.tsmiIndexFolder,
+            this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiMonitorTest,
             this.tsmiDNSChanger});
@@ -585,6 +587,14 @@ namespace ShareX
             this.tsmiRuler.Text = "Ruler...";
             this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
+            // tsmiFTPClient
+            // 
+            this.tsmiFTPClient.Image = global::ShareX.Properties.Resources.application_network;
+            this.tsmiFTPClient.Name = "tsmiFTPClient";
+            this.tsmiFTPClient.Size = new System.Drawing.Size(183, 22);
+            this.tsmiFTPClient.Text = "FTP client...";
+            this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
+            // 
             // tsmiHashCheck
             // 
             this.tsmiHashCheck.Image = global::ShareX.Properties.Resources.application_task;
@@ -600,6 +610,14 @@ namespace ShareX
             this.tsmiIndexFolder.Size = new System.Drawing.Size(183, 22);
             this.tsmiIndexFolder.Text = "Index folder...";
             this.tsmiIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
+            // 
+            // tsmiImageEditor
+            // 
+            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources._90;
+            this.tsmiImageEditor.Name = "tsmiImageEditor";
+            this.tsmiImageEditor.Size = new System.Drawing.Size(183, 22);
+            this.tsmiImageEditor.Text = "Image editor...";
+            this.tsmiImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiImageEffects
             // 
@@ -624,14 +642,6 @@ namespace ShareX
             this.tsmiDNSChanger.Size = new System.Drawing.Size(183, 22);
             this.tsmiDNSChanger.Text = "DNS changer...";
             this.tsmiDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
-            // 
-            // tsmiFTPClient
-            // 
-            this.tsmiFTPClient.Image = global::ShareX.Properties.Resources.application_network;
-            this.tsmiFTPClient.Name = "tsmiFTPClient";
-            this.tsmiFTPClient.Size = new System.Drawing.Size(183, 22);
-            this.tsmiFTPClient.Text = "FTP client...";
-            this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
             // 
             // tsbScreenshotsFolder
             // 
@@ -1277,7 +1287,7 @@ namespace ShareX
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(190, 462);
+            this.cmsTray.Size = new System.Drawing.Size(190, 440);
             // 
             // tsmiTrayClipboardUpload
             // 
@@ -1573,6 +1583,14 @@ namespace ShareX
             this.tsmiTrayRuler.Text = "Ruler...";
             this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
+            // tsmiTrayFTPClient
+            // 
+            this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
+            this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
+            this.tsmiTrayFTPClient.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayFTPClient.Text = "FTP client...";
+            this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
+            // 
             // tsmiTrayHashCheck
             // 
             this.tsmiTrayHashCheck.Image = global::ShareX.Properties.Resources.application_task;
@@ -1612,14 +1630,6 @@ namespace ShareX
             this.tsmiTrayDNSChanger.Size = new System.Drawing.Size(183, 22);
             this.tsmiTrayDNSChanger.Text = "DNS changer...";
             this.tsmiTrayDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
-            // 
-            // tsmiTrayFTPClient
-            // 
-            this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
-            this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
-            this.tsmiTrayFTPClient.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayFTPClient.Text = "FTP client...";
-            this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
             // 
             // tsmiScreenshotsFolder
             // 
@@ -1887,5 +1897,6 @@ namespace ShareX
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyThumbnailImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFTPClient;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
     }
 }
