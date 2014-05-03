@@ -645,7 +645,8 @@ namespace ShareX
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            btnScreenRecorderAVIOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI;
+            btnScreenRecorderAVIOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
+                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
         }
 
@@ -661,10 +662,18 @@ namespace ShareX
                 Size = new Size(100, 100)
             };
 
-            // Ugly workaround for show AVI compression dialog
-            using (AVICache aviCache = new AVICache(options))
+            try
             {
-                TaskSettings.CaptureSettings.ScreenRecordCompressOptions = options.CompressOptions;
+                // Ugly workaround for show AVI compression dialog
+                using (AVICache aviCache = new AVICache(options))
+                {
+                    TaskSettings.CaptureSettings.ScreenRecordCompressOptions = options.CompressOptions;
+                }
+            }
+            catch (Exception ex)
+            {
+                TaskSettings.CaptureSettings.ScreenRecordCompressOptions = new AVICOMPRESSOPTIONS();
+                MessageBox.Show(ex.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

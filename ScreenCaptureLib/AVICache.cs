@@ -72,8 +72,8 @@ namespace ScreenCaptureLib
 
                                 if (img != null)
                                 {
-                                    using (new DebugTimer("Frame saved"))
-                                        aviWriter.AddFrame((Bitmap)img);
+                                    //using (new DebugTimer("Frame saved"))
+                                    aviWriter.AddFrame((Bitmap)img);
 
                                     position++;
                                 }
