@@ -662,10 +662,13 @@ namespace HelpersLib
 
         public static Image AnnotateImage(Image img)
         {
-            return AnnotateImage(img, false, null, null, null);
+            return AnnotateImage(img, false, null, null, null, null);
         }
 
-        public static Image AnnotateImage(Image img, bool allowSave, string configPath, Action<Image> clipboardCopyRequested, Action<Image> imageUploadRequested)
+        public static Image AnnotateImage(Image img, bool allowSave, string configPath,
+            Action<Image> clipboardCopyRequested,
+            Action<Image> imageUploadRequested,
+            Action<Image> imageSaveAsRequested)
         {
             if (!IniConfig.isInitialized)
             {
@@ -680,6 +683,7 @@ namespace HelpersLib
             {
                 editor.ClipboardCopyRequested += clipboardCopyRequested;
                 editor.ImageUploadRequested += imageUploadRequested;
+                editor.ImageSaveAsRequested += imageSaveAsRequested;
 
                 if (editor.ShowDialog() == DialogResult.OK)
                 {

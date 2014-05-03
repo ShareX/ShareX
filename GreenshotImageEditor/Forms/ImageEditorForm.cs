@@ -46,6 +46,7 @@ namespace Greenshot
     {
         public event Action<Image> ClipboardCopyRequested;
         public event Action<Image> ImageUploadRequested;
+        public event Action<Image> ImageSaveAsRequested;
 
         private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
         private static List<string> ignoreDestinations = new List<string> { };
@@ -1358,6 +1359,20 @@ namespace Greenshot
                 Image img = surface.GetImageForExport();
                 ImageUploadRequested(img);
             }
+        }
+
+        public void OnImageSaveAsRequesed()
+        {
+            if (ImageSaveAsRequested != null)
+            {
+                Image img = surface.GetImageForExport();
+                ImageSaveAsRequested(img);
+            }
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            OnImageSaveAsRequesed();
         }
     }
 }

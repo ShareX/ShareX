@@ -229,7 +229,8 @@ namespace ShareX
         {
             return ImageHelpers.AnnotateImage(img, !Program.IsSandbox, Program.PersonalPath,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)));
+                x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)),
+                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x)));
         }
 
         public static Image AddImageEffects(Image img, TaskSettings taskSettings)
