@@ -34,25 +34,19 @@ namespace ScreenCaptureLib
     public class AVICache : IDisposable
     {
         public bool IsWorking { get; private set; }
-        public string OutputPath { get; private set; }
-        public int FPS { get; private set; }
-        public Size Size { get; private set; }
-        public bool ShowOptions { get; private set; }
+        public AVIOptions Options { get; set; }
 
         private AVIWriter aviWriter;
         private Task task;
         private BlockingCollection<Image> imageQueue;
         private int position;
 
-        public AVICache(string outputPath, int fps, Size size, bool showOptions = false)
+        public AVICache(AVIOptions options)
         {
-            OutputPath = outputPath;
-            FPS = fps;
-            Size = size;
-            ShowOptions = showOptions;
+            Options = options;
 
-            Helpers.CreateDirectoryIfNotExist(OutputPath);
-            aviWriter = new AVIWriter(OutputPath, FPS, Size.Width, Size.Height, ShowOptions);
+            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+            aviWriter = new AVIWriter(Options);
             imageQueue = new BlockingCollection<Image>();
         }
 
@@ -78,8 +72,9 @@ namespace ScreenCaptureLib
 
                                 if (img != null)
                                 {
-                                    //using (new DebugTimer("Frame saved"))
-                                    aviWriter.AddFrame((Bitmap)img);
+                                    using (new DebugTimer("Frame saved"))
+                                        aviWriter.AddFrame((Bitmap)img);
+
                                     position++;
                                 }
                             }

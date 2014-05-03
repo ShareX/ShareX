@@ -88,6 +88,8 @@ namespace ScreenCaptureLib
 
         public ScreenRecordOutput OutputType { get; private set; }
 
+        public AVIOptions Options { get; set; }
+
         public delegate void ProgressEventHandler(int progress);
 
         public event ProgressEventHandler EncodingProgressChanged;
@@ -99,7 +101,7 @@ namespace ScreenCaptureLib
         private AVICache aviCache;
         private bool stopRequest;
 
-        public ScreenRecorder(int fps, float durationSeconds, Rectangle captureRectangle, string cachePath, ScreenRecordOutput outputType)
+        public ScreenRecorder(int fps, float durationSeconds, Rectangle captureRectangle, string cachePath, ScreenRecordOutput outputType, AVICOMPRESSOPTIONS compressOptions)
         {
             if (string.IsNullOrEmpty(cachePath))
             {
@@ -114,8 +116,16 @@ namespace ScreenCaptureLib
 
             if (OutputType == ScreenRecordOutput.AVI || OutputType == ScreenRecordOutput.AVICommandLine)
             {
-                bool showOptions = OutputType == ScreenRecordOutput.AVI;
-                aviCache = new AVICache(CachePath, FPS, CaptureRectangle.Size, showOptions);
+                Options = new AVIOptions
+                {
+                    CompressOptions = compressOptions,
+                    FPS = FPS,
+                    OutputPath = CachePath,
+                    ShowOptionsDialog = OutputType == ScreenRecordOutput.AVI,
+                    Size = CaptureRectangle.Size
+                };
+
+                aviCache = new AVICache(Options);
             }
             else if (OutputType == ScreenRecordOutput.GIF)
             {

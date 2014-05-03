@@ -644,12 +644,28 @@ namespace ShareX
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
+            btnScreenRecorderAVIOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
+        }
+
+        private void btnScreenRecorderAVIOptions_Click(object sender, EventArgs e)
+        {
+            //NativeMethods.AVISaveOptions(IntPtr.Zero, ref TaskSettings.CaptureSettings.ScreenRecordAVIOptions);
         }
 
         private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
+        }
+
+        private void btnEncoderConfig_Click(object sender, EventArgs e)
+        {
+            using (ApplicationSettingsForm form = new ApplicationSettingsForm())
+            {
+                form.SelectProfilesTab();
+                form.ShowDialog();
+                UpdateVideoEncoders();
+            }
         }
 
         private void nudScreenRecorderFPS_ValueChanged(object sender, EventArgs e)
@@ -671,16 +687,6 @@ namespace ShareX
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
-        }
-
-        private void btnEncoderConfig_Click(object sender, EventArgs e)
-        {
-            using (ApplicationSettingsForm form = new ApplicationSettingsForm())
-            {
-                form.SelectProfilesTab();
-                form.ShowDialog();
-                UpdateVideoEncoders();
-            }
         }
 
         #endregion Screen recorder

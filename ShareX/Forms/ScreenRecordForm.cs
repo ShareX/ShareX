@@ -131,7 +131,7 @@ namespace ShareX
                         float duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
                         screenRecorder = new ScreenRecorder(TaskSettings.CaptureSettings.ScreenRecordFPS, duration, CaptureRectangle, path,
-                            TaskSettings.CaptureSettings.ScreenRecordOutput);
+                            TaskSettings.CaptureSettings.ScreenRecordOutput, TaskSettings.CaptureSettings.ScreenRecordCompressOptions);
 
                         int delay = (int)(TaskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 

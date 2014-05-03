@@ -80,156 +80,26 @@ namespace HelpersLib
         private int height;
         // length of one line
         private int stride;
-        // quality
-        private int quality;
         // frame rate
         private int rate = 25;
         // current position
         private int position;
-        // codec used for video compression
-        private string codec = "DIB ";
 
         // dummy object to lock for synchronization
         private readonly object sync = new object();
 
-        /// <summary>
-        /// Width of video frames.
-        /// </summary>
-        ///
-        /// <remarks><para>The property specifies the width of video frames, which are acceptable
-        /// by <see cref="AddFrame"/> method for saving, which is set in <see cref="Open"/>
-        /// method.</para></remarks>
-        public int Width
-        {
-            get
-            {
-                return (buffer != IntPtr.Zero) ? width : 0;
-            }
-        }
-
-        /// <summary>
-        /// Height of video frames.
-        /// </summary>
-        ///
-        /// <remarks><para>The property specifies the height of video frames, which are acceptable
-        /// by <see cref="AddFrame"/> method for saving, which is set in <see cref="Open"/>
-        /// method.</para></remarks>
-        public int Height
-        {
-            get
-            {
-                return (buffer != IntPtr.Zero) ? height : 0;
-            }
-        }
-
-        /// <summary>
-        /// Current position in video stream.
-        /// </summary>
-        ///
-        /// <remarks><para>The property tell current position in video stream, which actually equals
-        /// to the amount of frames added using <see cref="AddFrame"/> method.</para></remarks>
-        public int Position
-        {
-            get
-            {
-                return position;
-            }
-        }
-
-        /// <summary>
-        /// Desired playing frame rate.
-        /// </summary>
-        ///
-        /// <remarks><para>The property sets the video frame rate, which should be use during playing
-        /// of the video to be saved.</para>
-        ///
-        /// <para><note>The property should be set befor opening new file to take effect.</note></para>
-        ///
-        /// <para>Default frame rate is set to <b>25</b>.</para></remarks>
-        public int FrameRate
-        {
-            get
-            {
-                return rate;
-            }
-            set
-            {
-                rate = value;
-            }
-        }
-
-        /// <summary>
-        /// Codec used for video compression.
-        /// </summary>
-        ///
-        /// <remarks><para>The property sets the FOURCC code of video compression codec, which needs to
-        /// be used for video encoding.</para>
-        ///
-        /// <para><note>The property should be set befor opening new file to take effect.</note></para>
-        ///
-        /// <para>Default video codec is set <b>"DIB "</b>, which means no compression.</para></remarks>
-        public string Codec
-        {
-            get
-            {
-                return codec;
-            }
-            set
-            {
-                codec = value;
-            }
-        }
-
-        /// <summary>
-        /// Compression video quality.
-        /// </summary>
-        ///
-        /// <remarks><para>The property sets video quality used by codec in order to balance compression rate
-        /// and image quality. The quality is measured usually in the [0, 100] range.</para>
-        ///
-        /// <para><note>The property should be set befor opening new file to take effect.</note></para>
-        ///
-        /// <para>Default value is set to <b>-1</b> - default compression quality of the codec.</para></remarks>
-        public int Quality
-        {
-            get
-            {
-                return quality;
-            }
-            set
-            {
-                quality = value;
-            }
-        }
+        public AVIOptions Options { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AVIWriter"/> class.
         /// </summary>
         ///
         /// <remarks>Initializes Video for Windows library.</remarks>
-        public AVIWriter()
+        public AVIWriter(AVIOptions options)
         {
             NativeMethods.AVIFileInit();
-        }
-
-        public AVIWriter(string output, int fps, int width, int height, bool showOptions = false)
-            : this()
-        {
-            FrameRate = fps;
-            Open(output, width, height, showOptions);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AVIWriter"/> class.
-        /// </summary>
-        ///
-        /// <param name="codec">Codec to use for compression.</param>
-        ///
-        /// <remarks>Initializes Video for Windows library.</remarks>
-        public AVIWriter(string codec)
-            : this()
-        {
-            this.codec = codec;
+            Options = options;
+            Open();
         }
 
         /// <summary>
@@ -284,10 +154,13 @@ namespace HelpersLib
         /// <exception cref="VideoException">A error occurred while creating new video file. See exception message.</exception>
         /// <exception cref="OutOfMemoryException">Insufficient memory for internal buffer.</exception>
         /// <exception cref="ArgumentException">Video file resolution must be a multiple of two.</exception>
-        public void Open(string fileName, int width, int height, bool showOptions = false)
+        public void Open()
         {
             // close previous file
             Close();
+
+            this.width = Options.Size.Width;
+            this.height = Options.Size.Height;
 
             // check width and height
             if (((width & 1) != 0) || ((height & 1) != 0))
@@ -307,17 +180,16 @@ namespace HelpersLib
                         stride += (4 - stride % 4);
 
                     // create new file
-                    if (NativeMethods.AVIFileOpen(out file, fileName, OpenFileMode.Create | OpenFileMode.Write, IntPtr.Zero) != 0)
+                    if (NativeMethods.AVIFileOpen(out file, Options.OutputPath, OpenFileMode.Create | OpenFileMode.Write, IntPtr.Zero) != 0)
                         throw new IOException("Failed opening the specified file.");
 
-                    this.width = width;
-                    this.height = height;
+                    this.rate = Options.FPS;
 
                     // describe new stream
                     AVISTREAMINFO info = new AVISTREAMINFO();
 
                     info.type = NativeMethods.mmioFOURCC("vids");
-                    info.handler = NativeMethods.mmioFOURCC(codec);
+                    info.handler = NativeMethods.mmioFOURCC("DIB ");
                     info.scale = 1;
                     info.rate = rate;
                     info.suggestedBufferSize = stride * height;
@@ -326,19 +198,19 @@ namespace HelpersLib
                     if (NativeMethods.AVIFileCreateStream(file, out stream, ref info) != 0)
                         throw new Exception("Failed creating stream.");
 
-                    // describe compression options
-                    AVICOMPRESSOPTIONS options = new AVICOMPRESSOPTIONS();
-
-                    options.handler = NativeMethods.mmioFOURCC(codec);
-                    options.quality = quality;
-
-                    if (showOptions)
+                    if (Options.CompressOptions.handler == 0)
                     {
-                        NativeMethods.AVISaveOptions(stream, ref options);
+                        // describe compression options
+                        Options.CompressOptions.handler = NativeMethods.mmioFOURCC("DIB ");
+                    }
+
+                    if (Options.ShowOptionsDialog)
+                    {
+                        NativeMethods.AVISaveOptions(stream, ref Options.CompressOptions);
                     }
 
                     // create compressed stream
-                    if (NativeMethods.AVIMakeCompressedStream(out streamCompressed, stream, ref options, IntPtr.Zero) != 0)
+                    if (NativeMethods.AVIMakeCompressedStream(out streamCompressed, stream, ref Options.CompressOptions, IntPtr.Zero) != 0)
                         throw new Exception("Failed creating compressed stream.");
 
                     // describe frame format
