@@ -121,7 +121,6 @@ namespace ScreenCaptureLib
                     CompressOptions = compressOptions,
                     FPS = FPS,
                     OutputPath = CachePath,
-                    ShowOptionsDialog = OutputType == ScreenRecordOutput.AVI,
                     Size = CaptureRectangle.Size
                 };
 

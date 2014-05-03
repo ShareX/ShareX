@@ -39,5 +39,6 @@ namespace HelpersLib
         public int FPS;
         public Size Size;
         public bool ShowOptionsDialog;
+        public IntPtr ParentWindow;
     }
 }

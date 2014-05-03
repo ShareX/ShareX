@@ -379,7 +379,7 @@ namespace HelpersLib
         /// <param name="options">Stream options.</param>
         ///
         /// <returns>Returns TRUE if the user pressed OK, FALSE for CANCEL, or an error otherwise.</returns>
-        public static int AVISaveOptions(IntPtr stream, ref AVICOMPRESSOPTIONS options)
+        public static int AVISaveOptions(IntPtr stream, ref AVICOMPRESSOPTIONS options, IntPtr parentWindow)
         {
             IntPtr[] streams = new IntPtr[1];
             IntPtr[] infPtrs = new IntPtr[1];
@@ -394,7 +394,7 @@ namespace HelpersLib
             infPtrs[0] = mem;
 
             // show dialog with a list of available compresors and configuration
-            int ret = AVISaveOptions(IntPtr.Zero, 0, 1, streams, infPtrs);
+            int ret = AVISaveOptions(parentWindow, 0, 1, streams, infPtrs);
 
             // copy from unmanaged memory to managed structure
             options = (AVICOMPRESSOPTIONS)Marshal.PtrToStructure(mem, typeof(AVICOMPRESSOPTIONS));

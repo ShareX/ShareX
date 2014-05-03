@@ -28,6 +28,7 @@ using ImageEffectsLib;
 using ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using UploadersLib;
@@ -650,7 +651,21 @@ namespace ShareX
 
         private void btnScreenRecorderAVIOptions_Click(object sender, EventArgs e)
         {
-            //NativeMethods.AVISaveOptions(IntPtr.Zero, ref TaskSettings.CaptureSettings.ScreenRecordAVIOptions);
+            AVIOptions options = new AVIOptions
+            {
+                CompressOptions = TaskSettings.CaptureSettings.ScreenRecordCompressOptions,
+                FPS = 10,
+                OutputPath = Program.ScreenRecorderCacheFilePath,
+                ParentWindow = this.Handle,
+                ShowOptionsDialog = true,
+                Size = new Size(100, 100)
+            };
+
+            // Ugly workaround for show AVI compression dialog
+            using (AVICache aviCache = new AVICache(options))
+            {
+                TaskSettings.CaptureSettings.ScreenRecordCompressOptions = options.CompressOptions;
+            }
         }
 
         private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)

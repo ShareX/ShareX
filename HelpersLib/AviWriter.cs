@@ -206,7 +206,15 @@ namespace HelpersLib
 
                     if (Options.ShowOptionsDialog)
                     {
-                        NativeMethods.AVISaveOptions(stream, ref Options.CompressOptions);
+                        AVICOMPRESSOPTIONS options = new AVICOMPRESSOPTIONS();
+                        options.handler = Options.CompressOptions.handler;
+                        options.quality = Options.CompressOptions.quality;
+                        options.flags = 8; // AVICOMPRESSF_VALID
+                        int result = NativeMethods.AVISaveOptions(stream, ref options, Options.ParentWindow);
+                        if (result == 1)
+                        {
+                            Options.CompressOptions = options;
+                        }
                     }
 
                     // create compressed stream
