@@ -225,6 +225,15 @@ namespace ShareX
             }
         }
 
+        public static Image AnnotateImage(string filePath)
+        {
+            return ImageHelpers.AnnotateImage(filePath, !Program.IsSandbox, Program.PersonalPath,
+                x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
+                x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)),
+                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, filePath)),
+                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)));
+        }
+
         public static Image AnnotateImage(Image img)
         {
             return ImageHelpers.AnnotateImage(img, !Program.IsSandbox, Program.PersonalPath,
@@ -498,10 +507,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                using (Image img = ImageHelpers.LoadImage(filePath))
-                {
-                    TaskHelpers.AnnotateImage(img);
-                }
+                TaskHelpers.AnnotateImage(filePath);
             }
         }
 

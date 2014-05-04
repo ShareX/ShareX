@@ -47,6 +47,7 @@ namespace Greenshot
         public event Action<Image> ClipboardCopyRequested;
         public event Action<Image> ImageUploadRequested;
         public event Action<Image> ImageSaveAsRequested;
+        public event Action<Image> ImageSaveRequested;
 
         private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
         private static List<string> ignoreDestinations = new List<string> { };
@@ -671,6 +672,7 @@ namespace Greenshot
                     if (result == DialogResult.Yes)
                     {
                         DialogResult = DialogResult.OK;
+                        OnImageSaveRequested();
                     }
                 }
                 else
@@ -1321,6 +1323,7 @@ namespace Greenshot
 
         private void btnSaveClose_Click(object sender, EventArgs e)
         {
+            OnImageSaveRequested();
             DialogResult = DialogResult.OK;
             forceClose = true;
             Close();
@@ -1361,7 +1364,7 @@ namespace Greenshot
             }
         }
 
-        public void OnImageSaveAsRequesed()
+        public void OnImageSaveAsRequested()
         {
             if (ImageSaveAsRequested != null)
             {
@@ -1372,7 +1375,16 @@ namespace Greenshot
 
         private void btnSaveAs_Click(object sender, EventArgs e)
         {
-            OnImageSaveAsRequesed();
+            OnImageSaveAsRequested();
+        }
+
+        public void OnImageSaveRequested()
+        {
+            if (File.Exists(surface.LastSaveFullPath) && ImageSaveRequested != null)
+            {
+                Image img = surface.GetImageForExport();
+                ImageSaveRequested(img);
+            }
         }
     }
 }

@@ -665,6 +665,44 @@ namespace HelpersLib
             return AnnotateImage(img, false, null, null, null, null);
         }
 
+        public static Image AnnotateImage(string imgPath, bool allowSave, string configPath,
+            Action<Image> clipboardCopyRequested,
+            Action<Image> imageUploadRequested,
+            Action<Image> imageSaveAsRequested,
+            Action<Image> imageSaveRequested)
+        {
+            if (File.Exists(imgPath))
+            {
+                if (!IniConfig.isInitialized)
+                {
+                    IniConfig.AllowSave = allowSave;
+                    IniConfig.Init(configPath);
+                }
+
+                using (Image img = ImageHelper.LoadImage(imgPath))
+                using (ICapture capture = new Capture { Image = img })
+                using (Surface surface = new Surface(capture))
+                using (ImageEditorForm editor = new ImageEditorForm(surface, true))
+                {
+                    editor.SetImagePath(imgPath);
+                    editor.ClipboardCopyRequested += clipboardCopyRequested;
+                    editor.ImageUploadRequested += imageUploadRequested;
+                    editor.ImageSaveAsRequested += imageSaveAsRequested;
+                    editor.ImageSaveRequested += imageSaveRequested;
+
+                    if (editor.ShowDialog() == DialogResult.OK)
+                    {
+                        using (img)
+                        {
+                            return editor.GetImageForExport();
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public static Image AnnotateImage(Image img, bool allowSave, string configPath,
             Action<Image> clipboardCopyRequested,
             Action<Image> imageUploadRequested,
@@ -1044,48 +1082,53 @@ namespace HelpersLib
             return null;
         }
 
-        public static void SaveImageFileDialog(Image img)
+        public static void SaveImage(Image img, string filePath)
+        {
+            string ext = Helpers.GetProperExtension(filePath);
+
+            if (!string.IsNullOrEmpty(ext))
+            {
+                ImageFormat imageFormat;
+
+                switch (ext)
+                {
+                    default:
+                    case "png":
+                        imageFormat = ImageFormat.Png;
+                        break;
+                    case "jpg":
+                    case "jpeg":
+                    case "jpe":
+                    case "jfif":
+                        imageFormat = ImageFormat.Jpeg;
+                        break;
+                    case "gif":
+                        imageFormat = ImageFormat.Gif;
+                        break;
+                    case "bmp":
+                        imageFormat = ImageFormat.Bmp;
+                        break;
+                    case "tif":
+                    case "tiff":
+                        imageFormat = ImageFormat.Tiff;
+                        break;
+                }
+
+                img.Save(filePath, imageFormat);
+            }
+        }
+
+        public static void SaveImageFileDialog(Image img, string filePath = "")
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
+                if (!string.IsNullOrEmpty(filePath)) sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
                 sfd.DefaultExt = ".png";
                 sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    string filePath = sfd.FileName;
-                    string ext = Helpers.GetProperExtension(filePath);
-
-                    if (!string.IsNullOrEmpty(ext))
-                    {
-                        ImageFormat imageFormat;
-
-                        switch (ext)
-                        {
-                            default:
-                            case "png":
-                                imageFormat = ImageFormat.Png;
-                                break;
-                            case "jpg":
-                            case "jpeg":
-                            case "jpe":
-                            case "jfif":
-                                imageFormat = ImageFormat.Jpeg;
-                                break;
-                            case "gif":
-                                imageFormat = ImageFormat.Gif;
-                                break;
-                            case "bmp":
-                                imageFormat = ImageFormat.Bmp;
-                                break;
-                            case "tif":
-                            case "tiff":
-                                imageFormat = ImageFormat.Tiff;
-                                break;
-                        }
-
-                        img.Save(filePath, imageFormat);
-                    }
+                    SaveImage(img, sfd.FileName);
                 }
             }
         }
