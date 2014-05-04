@@ -663,8 +663,8 @@ namespace HelpersLib
         public static Image AnnotateImage(Image img, string imgPath, bool allowSave, string configPath,
             Action<Image> clipboardCopyRequested,
             Action<Image> imageUploadRequested,
-            Action<Image> imageSaveRequested,
-            Action<Image> imageSaveAsRequested)
+            Action<Image, string> imageSaveRequested,
+            Func<Image, string, string> imageSaveAsRequested)
         {
             if (!IniConfig.isInitialized)
             {
@@ -672,7 +672,7 @@ namespace HelpersLib
                 IniConfig.Init(configPath);
             }
 
-            using (Image cloneImage = File.Exists(imgPath) ? ImageHelpers.LoadImage(imgPath) : (Image)img.Clone())
+            using (Image cloneImage = img != null ? (Image)img.Clone() : ImageHelpers.LoadImage(imgPath))
             using (ICapture capture = new Capture { Image = cloneImage })
             using (Surface surface = new Surface(capture))
             using (ImageEditorForm editor = new ImageEditorForm(surface, true))
@@ -683,7 +683,7 @@ namespace HelpersLib
                 editor.ImageSaveRequested += imageSaveRequested;
                 editor.ImageSaveAsRequested += imageSaveAsRequested;
 
-                if (editor.ShowDialog() == DialogResult.OK)
+                if (editor.ShowDialog() == DialogResult.OK && img != null)
                 {
                     using (img)
                     {
@@ -1078,19 +1078,31 @@ namespace HelpersLib
             }
         }
 
-        public static void SaveImageFileDialog(Image img, string filePath = "")
+        public static string SaveImageFileDialog(Image img, string filePath = "")
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                if (!string.IsNullOrEmpty(filePath)) sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    string folder = Path.GetDirectoryName(filePath);
+                    if (!string.IsNullOrEmpty(folder))
+                    {
+                        sfd.InitialDirectory = folder;
+                    }
+                    sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
+                }
+
                 sfd.DefaultExt = ".png";
                 sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     SaveImage(img, sfd.FileName);
+                    return sfd.FileName;
                 }
             }
+
+            return null;
         }
 
         // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes

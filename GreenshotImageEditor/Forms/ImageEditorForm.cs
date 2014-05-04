@@ -46,8 +46,8 @@ namespace Greenshot
     {
         public event Action<Image> ClipboardCopyRequested;
         public event Action<Image> ImageUploadRequested;
-        public event Action<Image> ImageSaveAsRequested;
-        public event Action<Image> ImageSaveRequested;
+        public event Func<Image, string, string> ImageSaveAsRequested;
+        public event Action<Image, string> ImageSaveRequested;
 
         private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
         private static List<string> ignoreDestinations = new List<string> { };
@@ -642,7 +642,7 @@ namespace Greenshot
             updateClipboardSurfaceDependencies();
             updateUndoRedoSurfaceDependencies();
 
-            saveToolStripMenuItem.Visible = File.Exists(surface.LastSaveFullPath);
+            saveToolStripMenuItem.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void ImageEditorFormFormClosing(object sender, FormClosingEventArgs e)
@@ -1321,6 +1321,53 @@ namespace Greenshot
             }
         }
 
+        public void OnClipboardCopyRequested()
+        {
+            if (ClipboardCopyRequested != null)
+            {
+                using (Image img = surface.GetImageForExport())
+                {
+                    ClipboardCopyRequested(img);
+                }
+            }
+        }
+
+        public void OnImageUploadRequested()
+        {
+            if (ImageUploadRequested != null)
+            {
+                // Image will be disposed in upload task
+                Image img = surface.GetImageForExport();
+                ImageUploadRequested(img);
+            }
+        }
+
+        public void OnImageSaveRequested()
+        {
+            if (ImageSaveRequested != null && File.Exists(surface.LastSaveFullPath))
+            {
+                using (Image img = surface.GetImageForExport())
+                {
+                    ImageSaveRequested(img, surface.LastSaveFullPath);
+                }
+            }
+        }
+
+        public void OnImageSaveAsRequested()
+        {
+            if (ImageSaveAsRequested != null)
+            {
+                using (Image img = surface.GetImageForExport())
+                {
+                    string newFilePath = ImageSaveAsRequested(img, surface.LastSaveFullPath);
+                    if (!string.IsNullOrEmpty(newFilePath))
+                    {
+                        SetImagePath(newFilePath);
+                    }
+                }
+            }
+        }
+
         private void btnSaveClose_Click(object sender, EventArgs e)
         {
             OnImageSaveRequested();
@@ -1341,50 +1388,14 @@ namespace Greenshot
             OnClipboardCopyRequested();
         }
 
-        public void OnClipboardCopyRequested()
-        {
-            if (ClipboardCopyRequested != null)
-            {
-                Image img = surface.GetImageForExport();
-                ClipboardCopyRequested(img);
-            }
-        }
-
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
             OnImageUploadRequested();
         }
 
-        public void OnImageUploadRequested()
-        {
-            if (ImageUploadRequested != null)
-            {
-                Image img = surface.GetImageForExport();
-                ImageUploadRequested(img);
-            }
-        }
-
-        public void OnImageSaveAsRequested()
-        {
-            if (ImageSaveAsRequested != null)
-            {
-                Image img = surface.GetImageForExport();
-                ImageSaveAsRequested(img);
-            }
-        }
-
         private void btnSaveAs_Click(object sender, EventArgs e)
         {
             OnImageSaveAsRequested();
-        }
-
-        public void OnImageSaveRequested()
-        {
-            if (File.Exists(surface.LastSaveFullPath) && ImageSaveRequested != null)
-            {
-                Image img = surface.GetImageForExport();
-                ImageSaveRequested(img);
-            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1394,7 +1405,7 @@ namespace Greenshot
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnSaveAs_Click(sender, e);
+            OnImageSaveAsRequested();
         }
     }
 }
