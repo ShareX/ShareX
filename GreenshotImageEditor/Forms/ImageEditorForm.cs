@@ -187,8 +187,6 @@ namespace Greenshot
 
             // Workaround: for the MouseWheel event which doesn't get to the panel
             MouseWheel += PanelMouseWheel;
-
-            saveToolStripMenuItem.Visible = File.Exists(surface.LastSaveFullPath);
         }
 
         /// <summary>
@@ -643,6 +641,8 @@ namespace Greenshot
         {
             updateClipboardSurfaceDependencies();
             updateUndoRedoSurfaceDependencies();
+
+            saveToolStripMenuItem.Visible = File.Exists(surface.LastSaveFullPath);
         }
 
         private void ImageEditorFormFormClosing(object sender, FormClosingEventArgs e)
