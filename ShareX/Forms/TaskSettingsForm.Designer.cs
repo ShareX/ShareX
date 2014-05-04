@@ -1137,7 +1137,7 @@
             // 
             // btnScreenRecorderAVIOptions
             // 
-            this.btnScreenRecorderAVIOptions.Location = new System.Drawing.Point(200, 12);
+            this.btnScreenRecorderAVIOptions.Location = new System.Drawing.Point(200, 11);
             this.btnScreenRecorderAVIOptions.Name = "btnScreenRecorderAVIOptions";
             this.btnScreenRecorderAVIOptions.Size = new System.Drawing.Size(96, 23);
             this.btnScreenRecorderAVIOptions.TabIndex = 12;
@@ -1235,7 +1235,7 @@
             this.cbScreenRecorderOutput.FormattingEnabled = true;
             this.cbScreenRecorderOutput.Location = new System.Drawing.Point(64, 12);
             this.cbScreenRecorderOutput.Name = "cbScreenRecorderOutput";
-            this.cbScreenRecorderOutput.Size = new System.Drawing.Size(126, 21);
+            this.cbScreenRecorderOutput.Size = new System.Drawing.Size(128, 21);
             this.cbScreenRecorderOutput.TabIndex = 1;
             this.cbScreenRecorderOutput.SelectedIndexChanged += new System.EventHandler(this.cbScreenRecorderOutput_SelectedIndexChanged);
             // 

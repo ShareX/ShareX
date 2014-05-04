@@ -91,7 +91,8 @@ namespace ShareX
                 }
                 else if (!Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
                 {
-                    MessageBox.Show("There is a problem with the CLI video encoder file path.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("CLI video encoder file not exist: " + Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].Path,
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }

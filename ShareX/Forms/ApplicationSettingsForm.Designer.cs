@@ -100,6 +100,7 @@ namespace ShareX
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
             this.tpPrint = new System.Windows.Forms.TabPage();
+            this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpProfiles = new System.Windows.Forms.TabPage();
@@ -116,7 +117,6 @@ namespace ShareX
             this.btnEncodersRemove = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -921,6 +921,17 @@ namespace ShareX
             this.tpPrint.Text = "Print";
             this.tpPrint.UseVisualStyleBackColor = true;
             // 
+            // cbPrintDontShowWindowsDialog
+            // 
+            this.cbPrintDontShowWindowsDialog.AutoSize = true;
+            this.cbPrintDontShowWindowsDialog.Location = new System.Drawing.Point(16, 72);
+            this.cbPrintDontShowWindowsDialog.Name = "cbPrintDontShowWindowsDialog";
+            this.cbPrintDontShowWindowsDialog.Size = new System.Drawing.Size(180, 17);
+            this.cbPrintDontShowWindowsDialog.TabIndex = 2;
+            this.cbPrintDontShowWindowsDialog.Text = "Don\'t show Windows print dialog";
+            this.cbPrintDontShowWindowsDialog.UseVisualStyleBackColor = true;
+            this.cbPrintDontShowWindowsDialog.CheckedChanged += new System.EventHandler(this.cbPrintDontShowWindowsDialog_CheckedChanged);
+            // 
             // cbDontShowPrintSettingDialog
             // 
             this.cbDontShowPrintSettingDialog.AutoSize = true;
@@ -993,6 +1004,7 @@ namespace ShareX
             this.lvEncoders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvEncoders.AutoFillColumn = true;
             this.lvEncoders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chEncoderDescription,
             this.chEncoderPath,
@@ -1011,22 +1023,22 @@ namespace ShareX
             // chEncoderDescription
             // 
             this.chEncoderDescription.Text = "Description";
-            this.chEncoderDescription.Width = 137;
+            this.chEncoderDescription.Width = 130;
             // 
             // chEncoderPath
             // 
             this.chEncoderPath.Text = "Path";
-            this.chEncoderPath.Width = 213;
+            this.chEncoderPath.Width = 80;
             // 
             // chEncoderArgs
             // 
             this.chEncoderArgs.Text = "Args";
-            this.chEncoderArgs.Width = 122;
+            this.chEncoderArgs.Width = 230;
             // 
             // chEncoderOutputExtension
             // 
             this.chEncoderOutputExtension.Text = "Output extension";
-            this.chEncoderOutputExtension.Width = 99;
+            this.chEncoderOutputExtension.Width = 100;
             // 
             // btnEncodersAdd
             // 
@@ -1078,17 +1090,6 @@ namespace ShareX
             this.pgSettings.Size = new System.Drawing.Size(604, 364);
             this.pgSettings.TabIndex = 0;
             this.pgSettings.ToolbarVisible = false;
-            // 
-            // cbPrintDontShowWindowsDialog
-            // 
-            this.cbPrintDontShowWindowsDialog.AutoSize = true;
-            this.cbPrintDontShowWindowsDialog.Location = new System.Drawing.Point(16, 72);
-            this.cbPrintDontShowWindowsDialog.Name = "cbPrintDontShowWindowsDialog";
-            this.cbPrintDontShowWindowsDialog.Size = new System.Drawing.Size(180, 17);
-            this.cbPrintDontShowWindowsDialog.TabIndex = 2;
-            this.cbPrintDontShowWindowsDialog.Text = "Don\'t show Windows print dialog";
-            this.cbPrintDontShowWindowsDialog.UseVisualStyleBackColor = true;
-            this.cbPrintDontShowWindowsDialog.CheckedChanged += new System.EventHandler(this.cbPrintDontShowWindowsDialog_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 
