@@ -660,52 +660,10 @@ namespace HelpersLib
             return newBitmap;
         }
 
-        public static Image AnnotateImage(Image img)
-        {
-            return AnnotateImage(img, false, null, null, null, null);
-        }
-
-        public static Image AnnotateImage(string imgPath, bool allowSave, string configPath,
+        public static Image AnnotateImage(Image img, string imgPath, bool allowSave, string configPath,
             Action<Image> clipboardCopyRequested,
             Action<Image> imageUploadRequested,
-            Action<Image> imageSaveAsRequested,
-            Action<Image> imageSaveRequested)
-        {
-            if (File.Exists(imgPath))
-            {
-                if (!IniConfig.isInitialized)
-                {
-                    IniConfig.AllowSave = allowSave;
-                    IniConfig.Init(configPath);
-                }
-
-                using (Image img = ImageHelper.LoadImage(imgPath))
-                using (ICapture capture = new Capture { Image = img })
-                using (Surface surface = new Surface(capture))
-                using (ImageEditorForm editor = new ImageEditorForm(surface, true))
-                {
-                    editor.SetImagePath(imgPath);
-                    editor.ClipboardCopyRequested += clipboardCopyRequested;
-                    editor.ImageUploadRequested += imageUploadRequested;
-                    editor.ImageSaveAsRequested += imageSaveAsRequested;
-                    editor.ImageSaveRequested += imageSaveRequested;
-
-                    if (editor.ShowDialog() == DialogResult.OK)
-                    {
-                        using (img)
-                        {
-                            return editor.GetImageForExport();
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        public static Image AnnotateImage(Image img, bool allowSave, string configPath,
-            Action<Image> clipboardCopyRequested,
-            Action<Image> imageUploadRequested,
+            Action<Image> imageSaveRequested,
             Action<Image> imageSaveAsRequested)
         {
             if (!IniConfig.isInitialized)
@@ -714,13 +672,15 @@ namespace HelpersLib
                 IniConfig.Init(configPath);
             }
 
-            using (Image cloneImage = (Image)img.Clone())
+            using (Image cloneImage = File.Exists(imgPath) ? ImageHelpers.LoadImage(imgPath) : (Image)img.Clone())
             using (ICapture capture = new Capture { Image = cloneImage })
             using (Surface surface = new Surface(capture))
             using (ImageEditorForm editor = new ImageEditorForm(surface, true))
             {
+                editor.SetImagePath(imgPath);
                 editor.ClipboardCopyRequested += clipboardCopyRequested;
                 editor.ImageUploadRequested += imageUploadRequested;
+                editor.ImageSaveRequested += imageSaveRequested;
                 editor.ImageSaveAsRequested += imageSaveAsRequested;
 
                 if (editor.ShowDialog() == DialogResult.OK)

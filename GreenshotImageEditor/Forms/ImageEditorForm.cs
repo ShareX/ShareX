@@ -188,7 +188,7 @@ namespace Greenshot
             // Workaround: for the MouseWheel event which doesn't get to the panel
             MouseWheel += PanelMouseWheel;
 
-            //ApplyLanguage();
+            saveToolStripMenuItem.Visible = File.Exists(surface.LastSaveFullPath);
         }
 
         /// <summary>
@@ -1385,6 +1385,16 @@ namespace Greenshot
                 Image img = surface.GetImageForExport();
                 ImageSaveRequested(img);
             }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnImageSaveRequested();
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnSaveAs_Click(sender, e);
         }
     }
 }

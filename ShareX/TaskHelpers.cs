@@ -227,19 +227,16 @@ namespace ShareX
 
         public static Image AnnotateImage(string filePath)
         {
-            return ImageHelpers.AnnotateImage(filePath, !Program.IsSandbox, Program.PersonalPath,
-                x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)),
-                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, filePath)),
-                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)));
+            return AnnotateImage(null, filePath);
         }
 
-        public static Image AnnotateImage(Image img)
+        public static Image AnnotateImage(Image img, string imgPath)
         {
-            return ImageHelpers.AnnotateImage(img, !Program.IsSandbox, Program.PersonalPath,
+            return ImageHelpers.AnnotateImage(img, imgPath, !Program.IsSandbox, Program.PersonalPath,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
                 x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)),
-                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x)));
+                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, imgPath)),
+                x => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImageFileDialog(x, imgPath)));
         }
 
         public static Image AddImageEffects(Image img, TaskSettings taskSettings)
