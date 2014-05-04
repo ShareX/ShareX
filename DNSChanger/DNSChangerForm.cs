@@ -47,6 +47,7 @@ namespace DNSChanger
             AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // http://www.comodo.com/secure-dns/
             AddDNS("DNS Advantage", "156.154.70.1", "156.154.71.1"); // http://www.neustar.biz/services/dns-services/free-recursive-dns
             AddDNS("Yandex DNS", "77.88.8.2", "77.88.8.88"); // http://dns.yandex.com/
+            AddDNS("Ideal-Hosting Resolver", "84.200.69.80", "84.200.70.40"); // http://www.ideal-hosting.com/dns
 
             foreach (AdapterInfo adapter in AdapterInfo.GetEnabledAdapters())
             {
