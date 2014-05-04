@@ -126,6 +126,7 @@ namespace ShareX
             {
                 Program.Settings.VideoEncoders.Add(new VideoEncoder() { Name = "x264 encoder to MP4", Path = "x264.exe", Args = "--output %output %input", OutputExtension = "mp4" });
                 Program.Settings.VideoEncoders.Add(new VideoEncoder() { Name = "ffmpeg encoder to WebM", Path = "ffmpeg.exe", Args = "-i %input -c:v libvpx -crf 12 -b:v 500K %output", OutputExtension = "webm" });
+                Program.Settings.VideoEncoders.Add(new VideoEncoder() { Name = "Change container to MP4 using ffmpeg encoder", Path = "ffmpeg.exe", Args = "-i %input -vcodec copy %output", OutputExtension = "mp4" });
             }
             Program.Settings.VideoEncoders.ForEach(x => AddVideoEncoder(x));
 

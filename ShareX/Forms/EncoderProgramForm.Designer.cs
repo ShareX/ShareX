@@ -43,6 +43,8 @@
             // 
             // txtExtension
             // 
+            this.txtExtension.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtExtension.Location = new System.Drawing.Point(88, 80);
             this.txtExtension.Name = "txtExtension";
             this.txtExtension.Size = new System.Drawing.Size(224, 20);
@@ -59,6 +61,8 @@
             // 
             // txtArguments
             // 
+            this.txtArguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArguments.Location = new System.Drawing.Point(88, 56);
             this.txtArguments.Name = "txtArguments";
             this.txtArguments.Size = new System.Drawing.Size(224, 20);
@@ -66,6 +70,8 @@
             // 
             // txtPath
             // 
+            this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPath.Location = new System.Drawing.Point(88, 32);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(176, 20);
@@ -73,6 +79,8 @@
             // 
             // txtName
             // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(88, 8);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(224, 20);
@@ -107,6 +115,7 @@
             // 
             // btnPathBrowse
             // 
+            this.btnPathBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPathBrowse.Location = new System.Drawing.Point(272, 30);
             this.btnPathBrowse.Name = "btnPathBrowse";
             this.btnPathBrowse.Size = new System.Drawing.Size(40, 23);
@@ -154,7 +163,8 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtExtension);
             this.Controls.Add(this.lblExt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MinimumSize = new System.Drawing.Size(340, 184);
             this.Name = "EncoderProgramForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encoder Program";

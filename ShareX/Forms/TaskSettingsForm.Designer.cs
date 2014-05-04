@@ -109,6 +109,8 @@
             this.tpCaptureShape = new System.Windows.Forms.TabPage();
             this.pgShapesCapture = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.lblScreenRecorderCLI = new System.Windows.Forms.Label();
+            this.btnScreenRecorderAVIOptions = new System.Windows.Forms.Button();
             this.btnEncoderConfig = new System.Windows.Forms.Button();
             this.cboEncoder = new System.Windows.Forms.ComboBox();
             this.nudScreenRecorderDuration = new System.Windows.Forms.NumericUpDown();
@@ -159,8 +161,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.btnScreenRecorderAVIOptions = new System.Windows.Forms.Button();
-            this.lblScreenRecorderCLI = new System.Windows.Forms.Label();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1126,9 +1126,28 @@
             this.tpScreenRecorder.Text = "Screen recorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
+            // lblScreenRecorderCLI
+            // 
+            this.lblScreenRecorderCLI.AutoSize = true;
+            this.lblScreenRecorderCLI.Location = new System.Drawing.Point(16, 48);
+            this.lblScreenRecorderCLI.Name = "lblScreenRecorderCLI";
+            this.lblScreenRecorderCLI.Size = new System.Drawing.Size(26, 13);
+            this.lblScreenRecorderCLI.TabIndex = 13;
+            this.lblScreenRecorderCLI.Text = "CLI:";
+            // 
+            // btnScreenRecorderAVIOptions
+            // 
+            this.btnScreenRecorderAVIOptions.Location = new System.Drawing.Point(200, 12);
+            this.btnScreenRecorderAVIOptions.Name = "btnScreenRecorderAVIOptions";
+            this.btnScreenRecorderAVIOptions.Size = new System.Drawing.Size(96, 23);
+            this.btnScreenRecorderAVIOptions.TabIndex = 12;
+            this.btnScreenRecorderAVIOptions.Text = "AVI options...";
+            this.btnScreenRecorderAVIOptions.UseVisualStyleBackColor = true;
+            this.btnScreenRecorderAVIOptions.Click += new System.EventHandler(this.btnScreenRecorderAVIOptions_Click);
+            // 
             // btnEncoderConfig
             // 
-            this.btnEncoderConfig.Location = new System.Drawing.Point(336, 71);
+            this.btnEncoderConfig.Location = new System.Drawing.Point(336, 43);
             this.btnEncoderConfig.Name = "btnEncoderConfig";
             this.btnEncoderConfig.Size = new System.Drawing.Size(40, 23);
             this.btnEncoderConfig.TabIndex = 11;
@@ -1140,7 +1159,7 @@
             // 
             this.cboEncoder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEncoder.FormattingEnabled = true;
-            this.cboEncoder.Location = new System.Drawing.Point(48, 72);
+            this.cboEncoder.Location = new System.Drawing.Point(48, 44);
             this.cboEncoder.Name = "cboEncoder";
             this.cboEncoder.Size = new System.Drawing.Size(280, 21);
             this.cboEncoder.TabIndex = 10;
@@ -1154,7 +1173,7 @@
             0,
             0,
             65536});
-            this.nudScreenRecorderDuration.Location = new System.Drawing.Point(163, 128);
+            this.nudScreenRecorderDuration.Location = new System.Drawing.Point(163, 100);
             this.nudScreenRecorderDuration.Maximum = new decimal(new int[] {
             60,
             0,
@@ -1179,7 +1198,7 @@
             // lblScreenRecorderStartDelay
             // 
             this.lblScreenRecorderStartDelay.AutoSize = true;
-            this.lblScreenRecorderStartDelay.Location = new System.Drawing.Point(16, 162);
+            this.lblScreenRecorderStartDelay.Location = new System.Drawing.Point(16, 134);
             this.lblScreenRecorderStartDelay.Name = "lblScreenRecorderStartDelay";
             this.lblScreenRecorderStartDelay.Size = new System.Drawing.Size(60, 13);
             this.lblScreenRecorderStartDelay.TabIndex = 9;
@@ -1193,7 +1212,7 @@
             0,
             0,
             65536});
-            this.nudScreenRecorderStartDelay.Location = new System.Drawing.Point(80, 158);
+            this.nudScreenRecorderStartDelay.Location = new System.Drawing.Point(80, 130);
             this.nudScreenRecorderStartDelay.Maximum = new decimal(new int[] {
             60,
             0,
@@ -1232,7 +1251,7 @@
             // cbScreenRecorderFixedDuration
             // 
             this.cbScreenRecorderFixedDuration.AutoSize = true;
-            this.cbScreenRecorderFixedDuration.Location = new System.Drawing.Point(19, 130);
+            this.cbScreenRecorderFixedDuration.Location = new System.Drawing.Point(19, 102);
             this.cbScreenRecorderFixedDuration.Name = "cbScreenRecorderFixedDuration";
             this.cbScreenRecorderFixedDuration.Size = new System.Drawing.Size(144, 17);
             this.cbScreenRecorderFixedDuration.TabIndex = 4;
@@ -1242,7 +1261,7 @@
             // 
             // nudScreenRecorderFPS
             // 
-            this.nudScreenRecorderFPS.Location = new System.Drawing.Point(48, 102);
+            this.nudScreenRecorderFPS.Location = new System.Drawing.Point(48, 74);
             this.nudScreenRecorderFPS.Maximum = new decimal(new int[] {
             30,
             0,
@@ -1267,7 +1286,7 @@
             // lblScreenRecorderFPS
             // 
             this.lblScreenRecorderFPS.AutoSize = true;
-            this.lblScreenRecorderFPS.Location = new System.Drawing.Point(16, 106);
+            this.lblScreenRecorderFPS.Location = new System.Drawing.Point(16, 78);
             this.lblScreenRecorderFPS.Name = "lblScreenRecorderFPS";
             this.lblScreenRecorderFPS.Size = new System.Drawing.Size(30, 13);
             this.lblScreenRecorderFPS.TabIndex = 2;
@@ -1702,25 +1721,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // btnScreenRecorderAVIOptions
-            // 
-            this.btnScreenRecorderAVIOptions.Location = new System.Drawing.Point(16, 40);
-            this.btnScreenRecorderAVIOptions.Name = "btnScreenRecorderAVIOptions";
-            this.btnScreenRecorderAVIOptions.Size = new System.Drawing.Size(96, 23);
-            this.btnScreenRecorderAVIOptions.TabIndex = 12;
-            this.btnScreenRecorderAVIOptions.Text = "AVI options...";
-            this.btnScreenRecorderAVIOptions.UseVisualStyleBackColor = true;
-            this.btnScreenRecorderAVIOptions.Click += new System.EventHandler(this.btnScreenRecorderAVIOptions_Click);
-            // 
-            // lblScreenRecorderCLI
-            // 
-            this.lblScreenRecorderCLI.AutoSize = true;
-            this.lblScreenRecorderCLI.Location = new System.Drawing.Point(16, 76);
-            this.lblScreenRecorderCLI.Name = "lblScreenRecorderCLI";
-            this.lblScreenRecorderCLI.Size = new System.Drawing.Size(26, 13);
-            this.lblScreenRecorderCLI.TabIndex = 13;
-            this.lblScreenRecorderCLI.Text = "CLI:";
             // 
             // TaskSettingsForm
             // 
