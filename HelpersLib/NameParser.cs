@@ -291,6 +291,8 @@ namespace HelpersLib
                 }
             };
 
+            tb.Disposed += (sender, e) => cms.Dispose();
+
             return cms;
         }
     }

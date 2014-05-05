@@ -31,7 +31,6 @@ namespace ShareX
 {
     public partial class ClipboardFormatForm : Form
     {
-        private ContextMenuStrip cmsFormatPattern;
         public ClipboardFormat ClipboardFormat { get; private set; }
 
         public ClipboardFormatForm()
@@ -45,7 +44,7 @@ namespace ShareX
             ClipboardFormat = cbf;
             txtDescription.Text = cbf.Description ?? "";
             txtFormat.Text = cbf.Format ?? "";
-            cmsFormatPattern = NameParser.CreateCodesMenu(txtFormat);
+            NameParser.CreateCodesMenu(txtFormat);
             lblExample.Text = "Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $thumbnailfilename, $thumbnailfilenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.";
         }
 

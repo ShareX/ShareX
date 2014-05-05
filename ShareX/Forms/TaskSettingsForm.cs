@@ -40,7 +40,6 @@ namespace ShareX
         public TaskSettings TaskSettings { get; private set; }
         public bool IsDefault { get; private set; }
 
-        private ContextMenuStrip cmsNameFormatPattern, cmsNameFormatPatternActiveWindow;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
         private bool loaded;
 
@@ -191,8 +190,8 @@ namespace ShareX
             // Upload / Name pattern
             txtNameFormatPattern.Text = TaskSettings.UploadSettings.NameFormatPattern;
             txtNameFormatPatternActiveWindow.Text = TaskSettings.UploadSettings.NameFormatPatternActiveWindow;
-            cmsNameFormatPattern = NameParser.CreateCodesMenu(txtNameFormatPattern, ReplacementVariables.n);
-            cmsNameFormatPatternActiveWindow = NameParser.CreateCodesMenu(txtNameFormatPatternActiveWindow, ReplacementVariables.n);
+            NameParser.CreateCodesMenu(txtNameFormatPattern, ReplacementVariables.n);
+            NameParser.CreateCodesMenu(txtNameFormatPatternActiveWindow, ReplacementVariables.n);
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
 
             // Upload / Clipboard upload

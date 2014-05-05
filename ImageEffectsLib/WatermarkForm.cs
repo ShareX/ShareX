@@ -36,13 +36,12 @@ namespace ImageEffectsLib
     {
         private WatermarkConfig config;
         private bool IsGuiReady;
-        private ContextMenuStrip codesMenu;
 
         public WatermarkForm(WatermarkConfig watermarkConfig)
         {
             InitializeComponent();
             config = watermarkConfig;
-            codesMenu = NameParser.CreateCodesMenu(txtWatermarkText, ReplacementVariables.t);
+            NameParser.CreateCodesMenu(txtWatermarkText, ReplacementVariables.t, ReplacementVariables.pn);
         }
 
         private void WatermarkUI_Load(object sender, EventArgs e)

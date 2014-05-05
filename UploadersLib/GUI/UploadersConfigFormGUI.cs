@@ -37,8 +37,6 @@ namespace UploadersLib
 {
     public partial class UploadersConfigForm : Form
     {
-        private ContextMenuStrip cmsCustomUploaderArgValue;
-
         private void ControlSettings()
         {
             ImageList imageUploadersImageList = new ImageList();
@@ -126,7 +124,9 @@ namespace UploadersLib
             tpUpaste.ImageKey = "Upaste";
             tpAmazonS3.ImageKey = "AmazonS3";
 
-            cmsCustomUploaderArgValue = NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
+            NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
+            NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
+            NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
 
             txtCustomUploaderLog.AddContextMenu();
         }
