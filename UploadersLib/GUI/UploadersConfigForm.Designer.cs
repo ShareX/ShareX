@@ -1952,7 +1952,6 @@
             this.txtAmazonS3ObjectPrefix.Name = "txtAmazonS3ObjectPrefix";
             this.txtAmazonS3ObjectPrefix.Size = new System.Drawing.Size(348, 20);
             this.txtAmazonS3ObjectPrefix.TabIndex = 14;
-            this.ttHelpTip.SetToolTip(this.txtAmazonS3ObjectPrefix, "The name to prefix objects with when storing them.");
             this.txtAmazonS3ObjectPrefix.TextChanged += new System.EventHandler(this.txtAmazonS3ObjectPrefix_TextChanged);
             // 
             // lblAmazonS3ObjectPrefix
@@ -1960,9 +1959,9 @@
             this.lblAmazonS3ObjectPrefix.AutoSize = true;
             this.lblAmazonS3ObjectPrefix.Location = new System.Drawing.Point(26, 135);
             this.lblAmazonS3ObjectPrefix.Name = "lblAmazonS3ObjectPrefix";
-            this.lblAmazonS3ObjectPrefix.Size = new System.Drawing.Size(69, 13);
+            this.lblAmazonS3ObjectPrefix.Size = new System.Drawing.Size(68, 13);
             this.lblAmazonS3ObjectPrefix.TabIndex = 13;
-            this.lblAmazonS3ObjectPrefix.Text = "Object prefix:";
+            this.lblAmazonS3ObjectPrefix.Text = "Upload path:";
             // 
             // cbAmazonS3UseRRS
             // 

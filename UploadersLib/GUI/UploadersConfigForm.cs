@@ -48,6 +48,8 @@ namespace UploadersLib
             CreateUserControlEvents();
             LoadSettings(uploadersConfig);
             Text = "ShareX - Outputs Configuration" + (string.IsNullOrEmpty(uploadersConfig.FilePath) ? string.Empty : " - " + uploadersConfig.FilePath);
+
+            NameParser.CreateCodesMenu(this.txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
         }
 
         private void UploadersConfigForm_FormClosed(object sender, FormClosedEventArgs e)
