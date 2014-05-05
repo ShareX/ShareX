@@ -991,6 +991,7 @@ namespace UploadersLib
         private void cbAmazonS3Endpoint_TextChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
+            UpdateAmazonS3Status();
         }
 
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
@@ -1006,6 +1007,7 @@ namespace UploadersLib
         private void txtAmazonS3ObjectPrefix_TextChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.ObjectPrefix = txtAmazonS3ObjectPrefix.Text;
+            UpdateAmazonS3Status();
         }
 
         private void cbAmazonS3UseRRS_CheckedChanged(object sender, EventArgs e)
@@ -1016,6 +1018,7 @@ namespace UploadersLib
         private void cbAmazonS3CustomCNAME_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.UseCustomCNAME = cbAmazonS3CustomCNAME.Checked;
+            UpdateAmazonS3Status();
         }
 
         #endregion Amazon S3

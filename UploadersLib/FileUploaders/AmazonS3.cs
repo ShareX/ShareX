@@ -120,6 +120,11 @@ namespace UploadersLib.FileUploaders
             }
         }
 
+        public string GetURL(string fileName)
+        {
+            return GetObjectURL(GetObjectKey(fileName));
+        }
+
         private Dictionary<string, string> GetParameters(string fileName, string objectKey)
         {
             var policyDocument = GetPolicyDocument(fileName, objectKey);

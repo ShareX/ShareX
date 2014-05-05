@@ -531,7 +531,7 @@ namespace UploadersLib
                 sb.AppendLine("User ID: " + Config.DropboxAccountInfo.Uid.ToString());
                 string uploadPath = GetDropboxUploadPath();
                 sb.AppendLine("Upload path: " + uploadPath);
-                sb.AppendLine("Download path: " + Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid, uploadPath + "Example.jpg"));
+                sb.AppendLine("Download path: " + Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid, uploadPath + "Example.png"));
                 lblDropboxStatus.Text = sb.ToString();
                 btnDropboxShowFiles.Enabled = true;
             }
@@ -547,6 +547,15 @@ namespace UploadersLib
         }
 
         #endregion Dropbox
+
+        #region Amazon S3
+
+        private void UpdateAmazonS3Status()
+        {
+            lblAmazonS3PathPreview.Text = new AmazonS3(Config.AmazonS3Settings).GetURL("Example.png");
+        }
+
+        #endregion Amazon S3
 
         #region Google Drive
 
