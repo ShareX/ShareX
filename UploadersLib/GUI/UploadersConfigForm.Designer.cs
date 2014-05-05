@@ -1902,7 +1902,6 @@
             // 
             // cbAmazonS3Endpoint
             // 
-            this.cbAmazonS3Endpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAmazonS3Endpoint.FormattingEnabled = true;
             this.cbAmazonS3Endpoint.Items.AddRange(new object[] {
             "https://s3-ap-northeast-1.amazonaws.com/",

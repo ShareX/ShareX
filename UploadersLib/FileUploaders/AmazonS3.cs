@@ -63,7 +63,7 @@ namespace UploadersLib.FileUploaders
         {
             var policyDocument = new
             {
-                expiration = DateTime.UtcNow.AddDays(2).ToString("o"), // The policy is valid for 2 days
+                expiration = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-ddTHH:mm:ssZ"), // The policy is valid for 2 days
                 conditions = new List<S3PolicyCondition> {
                     new S3PolicyCondition("acl", "public-read"),
                     new S3PolicyCondition("bucket", S3Settings.Bucket),
