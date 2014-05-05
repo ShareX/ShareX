@@ -1911,7 +1911,8 @@
             "https://s3-sa-east-1.amazonaws.com/",
             "https://s3-us-west-1.amazonaws.com/",
             "https://s3-us-west-2.amazonaws.com/",
-            "https://s3.amazonaws.com/"});
+            "https://s3.amazonaws.com/",
+            "https://objects.dreamhost.com/"});
             this.cbAmazonS3Endpoint.Location = new System.Drawing.Point(108, 78);
             this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
             this.cbAmazonS3Endpoint.Size = new System.Drawing.Size(348, 21);
