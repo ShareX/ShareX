@@ -136,6 +136,7 @@ namespace UploadersLib
             SubFolderPath = string.Empty;
             BrowserProtocol = BrowserProtocol.Http;
             HttpHomePath = string.Empty;
+            HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;
             IsActive = false;
             FtpsSecurityProtocol = FtpSecurityProtocol.Ssl2Explicit;

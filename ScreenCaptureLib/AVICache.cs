@@ -38,55 +38,13 @@ namespace ScreenCaptureLib
         public AVICache(AVIOptions options)
         {
             Options = options;
-
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
             aviWriter = new AVIWriter(Options);
-            imageQueue = new BlockingCollection<Image>();
         }
 
-        protected override void StartConsumerThread()
+        protected override void WriteFrame(Image img)
         {
-            if (!IsWorking)
-            {
-                IsWorking = true;
-
-                task = TaskEx.Run(() =>
-                {
-                    try
-                    {
-                        position = 0;
-
-                        while (!imageQueue.IsCompleted)
-                        {
-                            Image img = null;
-
-                            try
-                            {
-                                img = imageQueue.Take();
-
-                                if (img != null)
-                                {
-                                    //using (new DebugTimer("Frame saved"))
-                                    aviWriter.AddFrame((Bitmap)img);
-
-                                    position++;
-                                }
-                            }
-                            catch (InvalidOperationException)
-                            {
-                            }
-                            finally
-                            {
-                                if (img != null) img.Dispose();
-                            }
-                        }
-                    }
-                    finally
-                    {
-                        IsWorking = false;
-                    }
-                });
-            }
+            aviWriter.AddFrame((Bitmap)img);
         }
 
         public override void Dispose()

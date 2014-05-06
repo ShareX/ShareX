@@ -1154,7 +1154,7 @@
             this.btnScreenRecorderAVIOptions.Name = "btnScreenRecorderAVIOptions";
             this.btnScreenRecorderAVIOptions.Size = new System.Drawing.Size(96, 23);
             this.btnScreenRecorderAVIOptions.TabIndex = 12;
-            this.btnScreenRecorderAVIOptions.Text = "VfW options...";
+            this.btnScreenRecorderAVIOptions.Text = "AVI options...";
             this.btnScreenRecorderAVIOptions.UseVisualStyleBackColor = true;
             this.btnScreenRecorderAVIOptions.Click += new System.EventHandler(this.btnScreenRecorderAVIOptions_Click);
             // 

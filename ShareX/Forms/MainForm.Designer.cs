@@ -211,6 +211,7 @@ namespace ShareX
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
@@ -613,7 +614,7 @@ namespace ShareX
             // 
             // tsmiImageEditor
             // 
-            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources._90;
+            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.Greenshot;
             this.tsmiImageEditor.Name = "tsmiImageEditor";
             this.tsmiImageEditor.Size = new System.Drawing.Size(183, 22);
             this.tsmiImageEditor.Text = "Image editor...";
@@ -1559,6 +1560,7 @@ namespace ShareX
             this.tsmiTrayFTPClient,
             this.tsmiTrayHashCheck,
             this.tsmiTrayIndexFolder,
+            this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayMonitorTest,
             this.tsmiTrayDNSChanger});
@@ -1606,6 +1608,14 @@ namespace ShareX
             this.tsmiTrayIndexFolder.Size = new System.Drawing.Size(183, 22);
             this.tsmiTrayIndexFolder.Text = "Index folder...";
             this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
+            // 
+            // tsmiTrayImageEditor
+            // 
+            this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.Greenshot;
+            this.tsmiTrayImageEditor.Name = "tsmiTrayImageEditor";
+            this.tsmiTrayImageEditor.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayImageEditor.Text = "Image editor...";
+            this.tsmiTrayImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiTrayImageEffects
             // 
@@ -1898,5 +1908,6 @@ namespace ShareX
         private System.Windows.Forms.ToolStripMenuItem tsmiFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
     }
 }

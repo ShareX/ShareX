@@ -132,8 +132,6 @@ namespace ScreenCaptureLib
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);
                     break;
-                default:
-                    throw new Exception("Not all possible ScreenRecordOutput types are handled.");
             }
         }
 
@@ -150,35 +148,35 @@ namespace ScreenCaptureLib
                 IsRecording = true;
                 stopRequest = false;
 
-                for (int i = 0; !stopRequest && (frameCount == 0 || i < frameCount); i++)
+                try
                 {
-                    Stopwatch timer = Stopwatch.StartNew();
-
-                    Image img = Screenshot.CaptureRectangle(CaptureRectangle);
-                    //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
-
-                    imgCache.AddImageAsync(img);
-
-                    if (!stopRequest && (frameCount == 0 || i + 1 < frameCount))
+                    for (int i = 0; !stopRequest && (frameCount == 0 || i < frameCount); i++)
                     {
-                        int sleepTime = delay - (int)timer.ElapsedMilliseconds;
+                        Stopwatch timer = Stopwatch.StartNew();
 
-                        if (sleepTime > 0)
+                        Image img = Screenshot.CaptureRectangle(CaptureRectangle);
+                        //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
+
+                        imgCache.AddImageAsync(img);
+
+                        if (!stopRequest && (frameCount == 0 || i + 1 < frameCount))
                         {
-                            Thread.Sleep(sleepTime);
-                        }
-                        else if (sleepTime < 0)
-                        {
-                            //DebugHelper.WriteLine("FPS drop: " + -sleepTime);
+                            int sleepTime = delay - (int)timer.ElapsedMilliseconds;
+
+                            if (sleepTime > 0)
+                            {
+                                Thread.Sleep(sleepTime);
+                            }
+                            else if (sleepTime < 0)
+                            {
+                                // Need to handle FPS drops
+                            }
                         }
                     }
                 }
-
-                imgCache.Finish();
-
-                if (OutputType != ScreenRecordOutput.GIF)
+                finally
                 {
-                    imgCache.Dispose();
+                    imgCache.Finish();
                 }
             }
 

@@ -39,69 +39,21 @@ namespace ScreenCaptureLib
 {
     public class FFmpegCache : ImageCache
     {
-        private VideoFileWriter ffmpegWriter;
+        private static readonly string[] ffmpegFiles = new string[] { "avcodec-53.dll", "avdevice-53.dll", "avfilter-2.dll", "avformat-53.dll", "avutil-51.dll", "swresample-0.dll", "swscale-2.dll" };
 
-        private static readonly string[] ffMpegFiles = new string[] { "avcodec-53.dll",
-                                                                      "avdevice-53.dll",
-                                                                      "avfilter-2.dll",
-                                                                      "avformat-53.dll",
-                                                                      "avutil-51.dll",
-                                                                      "swresample-0.dll",
-                                                                      "swscale-2.dll" };
+        private VideoFileWriter ffmpegWriter;
 
         public FFmpegCache(AVIOptions options)
         {
             Options = options;
-
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
             ffmpegWriter = new VideoFileWriter();
             ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, AForge.Video.FFMPEG.VideoCodec.MPEG4);
-            imageQueue = new BlockingCollection<Image>();
         }
 
-        protected override void StartConsumerThread()
+        protected override void WriteFrame(Image img)
         {
-            if (!IsWorking)
-            {
-                IsWorking = true;
-
-                task = TaskEx.Run(() =>
-                {
-                    try
-                    {
-                        position = 0;
-
-                        while (!imageQueue.IsCompleted)
-                        {
-                            Image img = null;
-
-                            try
-                            {
-                                img = imageQueue.Take();
-
-                                if (img != null)
-                                {
-                                    //using (new DebugTimer("Frame saved"))
-                                    ffmpegWriter.WriteVideoFrame((Bitmap)img);
-
-                                    position++;
-                                }
-                            }
-                            catch (InvalidOperationException)
-                            {
-                            }
-                            finally
-                            {
-                                if (img != null) img.Dispose();
-                            }
-                        }
-                    }
-                    finally
-                    {
-                        IsWorking = false;
-                    }
-                });
-            }
+            ffmpegWriter.WriteVideoFrame((Bitmap)img);
         }
 
         public override void Dispose()
@@ -111,23 +63,12 @@ namespace ScreenCaptureLib
                 ffmpegWriter.Dispose();
             }
 
-            if (imageQueue != null)
-            {
-                imageQueue.Dispose();
-            }
+            base.Dispose();
         }
 
         public static bool HasDependencies()
         {
-            foreach (string fn in ffMpegFiles)
-            {
-                string fp = Path.Combine(Application.StartupPath, fn);
-                if (!File.Exists(fp))
-                {
-                    return false;
-                }
-            }
-            return true;
+            return ffmpegFiles.Select(x => Path.Combine(Application.StartupPath, x)).All(x => File.Exists(x));
         }
     }
 }

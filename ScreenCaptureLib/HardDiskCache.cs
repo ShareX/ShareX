@@ -49,60 +49,36 @@ namespace ScreenCaptureLib
             }
         }
 
+        private FileStream fsCache;
         private List<LocationInfo> indexList;
 
         public HardDiskCache(AVIOptions options)
         {
             Options = options;
+            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+            fsCache = new FileStream(Options.OutputPath, FileMode.Create, FileAccess.Write, FileShare.Read);
             indexList = new List<LocationInfo>();
-            imageQueue = new BlockingCollection<Image>();
-            StartConsumerThread();
         }
 
-        protected override void StartConsumerThread()
+        protected override void WriteFrame(Image img)
         {
-            if (!IsWorking)
+            using (MemoryStream ms = new MemoryStream())
             {
-                IsWorking = true;
-
-                task = TaskEx.Run(() =>
-                {
-                    Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
-
-                    using (FileStream fsCache = new FileStream(Options.OutputPath, FileMode.Create, FileAccess.Write, FileShare.Read))
-                    {
-                        while (!imageQueue.IsCompleted)
-                        {
-                            Image img = null;
-
-                            try
-                            {
-                                img = imageQueue.Take();
-
-                                if (img != null)
-                                {
-                                    using (MemoryStream ms = new MemoryStream())
-                                    {
-                                        img.Save(ms, ImageFormat.Bmp);
-                                        long position = fsCache.Position;
-                                        ms.CopyStreamTo(fsCache);
-                                        indexList.Add(new LocationInfo(position, fsCache.Length - position));
-                                    }
-                                }
-                            }
-                            catch (InvalidOperationException)
-                            {
-                            }
-                            finally
-                            {
-                                if (img != null) img.Dispose();
-                            }
-                        }
-                    }
-
-                    IsWorking = false;
-                });
+                img.Save(ms, ImageFormat.Bmp);
+                long position = fsCache.Position;
+                ms.CopyStreamTo(fsCache);
+                indexList.Add(new LocationInfo(position, fsCache.Length - position));
             }
+        }
+
+        public override void Dispose()
+        {
+            if (fsCache != null)
+            {
+                fsCache.Dispose();
+            }
+
+            base.Dispose();
         }
 
         public IEnumerable<Image> GetImageEnumerator()

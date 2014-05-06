@@ -41,7 +41,11 @@ namespace ScreenCaptureLib
 
         protected Task task;
         protected BlockingCollection<Image> imageQueue;
-        protected int position;
+
+        public ImageCache()
+        {
+            imageQueue = new BlockingCollection<Image>();
+        }
 
         public void AddImageAsync(Image img)
         {
@@ -49,18 +53,52 @@ namespace ScreenCaptureLib
             {
                 StartConsumerThread();
             }
-            else
-            {
-                imageQueue.Add(img);
-            }
 
-            /*if (imageQueue.Count > 0)
-            {
-                Debug.WriteLine("ImageQueue count: " + imageQueue.Count);
-            }*/
+            imageQueue.Add(img);
         }
 
-        protected abstract void StartConsumerThread();
+        protected virtual void StartConsumerThread()
+        {
+            if (!IsWorking)
+            {
+                IsWorking = true;
+
+                task = TaskEx.Run(() =>
+                {
+                    try
+                    {
+                        while (!imageQueue.IsCompleted)
+                        {
+                            Image img = null;
+
+                            try
+                            {
+                                img = imageQueue.Take();
+
+                                if (img != null)
+                                {
+                                    //using (new DebugTimer("WriteFrame"))
+                                    WriteFrame(img);
+                                }
+                            }
+                            catch (InvalidOperationException)
+                            {
+                            }
+                            finally
+                            {
+                                if (img != null) img.Dispose();
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        IsWorking = false;
+                    }
+                });
+            }
+        }
+
+        protected abstract void WriteFrame(Image img);
 
         public void Finish()
         {
@@ -69,6 +107,8 @@ namespace ScreenCaptureLib
                 imageQueue.CompleteAdding();
                 task.Wait();
             }
+
+            Dispose();
         }
 
         public virtual void Dispose()

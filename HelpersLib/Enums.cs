@@ -225,7 +225,7 @@ namespace HelpersLib
     {
         [Description("Animated GIF")]
         GIF,
-        [Description("Video for Windows (VfW)")]
+        [Description("AVI")]
         AVI,
         [Description("FFmpeg")]
         FFmpeg,
