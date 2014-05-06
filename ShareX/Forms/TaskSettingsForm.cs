@@ -646,7 +646,8 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
             btnScreenRecorderAVIOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI;
-            btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput != ScreenRecordOutput.GIF;
+            chkRunScreencastCLI.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput != ScreenRecordOutput.GIF;
+            btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
         }
 
         private void btnScreenRecorderAVIOptions_Click(object sender, EventArgs e)

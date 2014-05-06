@@ -82,6 +82,15 @@ namespace ShareX
 
         public async void StartRecording(TaskSettings TaskSettings)
         {
+            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegRecorder.HasDependencies())
+            {
+                if (MessageBox.Show("FFmpeg files are not present. Would you like to download them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Helpers.OpenURL("http://aforgeffmpeg.codeplex.com");
+                }
+                return;
+            }
+
             if (TaskSettings.CaptureSettings.RunScreencastCLI)
             {
                 if (!Program.Settings.VideoEncoders.IsValidIndex(TaskSettings.CaptureSettings.VideoEncoderSelected))
@@ -95,14 +104,6 @@ namespace ShareX
                         Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-            }
-            else if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegRecorder.HasDependencies())
-            {
-                if (MessageBox.Show("FFmpeg files are not present. Would you like to download them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Helpers.OpenURL("http://aforgeffmpeg.codeplex.com");
-                }
-                return;
             }
 
             SelectRegion();
