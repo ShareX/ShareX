@@ -170,7 +170,8 @@ namespace ShareX
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "gif"));
                             screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
                         }
-                        else if (TaskSettings.CaptureSettings.RunScreencastCLI)
+
+                        if (TaskSettings.CaptureSettings.RunScreencastCLI)
                         {
                             VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected];
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));

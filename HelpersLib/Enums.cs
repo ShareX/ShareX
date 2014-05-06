@@ -225,9 +225,9 @@ namespace HelpersLib
     {
         [Description("Animated GIF")]
         GIF,
-        [Description("AVI")]
+        [Description("AVI via Video Compression Manager (VCM)")]
         AVI,
-        [Description("FFmpeg")]
+        [Description("AVI via AForge.NET FFmpeg")]
         FFmpeg,
     }
 
