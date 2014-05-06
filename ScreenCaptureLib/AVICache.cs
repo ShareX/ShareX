@@ -31,7 +31,7 @@ using System.Threading.Tasks;
 
 namespace ScreenCaptureLib
 {
-    public class AVICache : ImageRecorder
+    public class AVICache : ImageCache
     {
         private AVIWriter aviWriter;
 

@@ -34,7 +34,7 @@ using System.Threading.Tasks;
 
 namespace ScreenCaptureLib
 {
-    public abstract class ImageRecorder : IDisposable
+    public abstract class ImageCache : IDisposable
     {
         public bool IsWorking { get; protected set; }
         public AVIOptions Options { get; set; }
@@ -49,13 +49,15 @@ namespace ScreenCaptureLib
             {
                 StartConsumerThread();
             }
+            else
+            {
+                imageQueue.Add(img);
+            }
 
             /*if (imageQueue.Count > 0)
             {
                 Debug.WriteLine("ImageQueue count: " + imageQueue.Count);
             }*/
-
-            imageQueue.Add(img);
         }
 
         protected abstract void StartConsumerThread();
@@ -67,8 +69,6 @@ namespace ScreenCaptureLib
                 imageQueue.CompleteAdding();
                 task.Wait();
             }
-
-            Dispose();
         }
 
         public virtual void Dispose()

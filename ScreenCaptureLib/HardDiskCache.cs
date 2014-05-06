@@ -34,10 +34,8 @@ using System.Threading.Tasks;
 
 namespace ScreenCaptureLib
 {
-    public class HardDiskCache : IDisposable
+    public class HardDiskCache : ImageCache
     {
-        public string CachePath { get; private set; }
-
         public int Count
         {
             get
@@ -52,29 +50,26 @@ namespace ScreenCaptureLib
         }
 
         private List<LocationInfo> indexList;
-        private BlockingCollection<Image> imageQueue;
-        private bool isWorking;
-        private Task task;
 
-        public HardDiskCache(string cachePath)
+        public HardDiskCache(AVIOptions options)
         {
-            CachePath = cachePath;
+            Options = options;
             indexList = new List<LocationInfo>();
             imageQueue = new BlockingCollection<Image>();
             StartConsumerThread();
         }
 
-        private void StartConsumerThread()
+        protected override void StartConsumerThread()
         {
-            if (!isWorking)
+            if (!IsWorking)
             {
-                isWorking = true;
+                IsWorking = true;
 
                 task = TaskEx.Run(() =>
                 {
-                    Helpers.CreateDirectoryIfNotExist(CachePath);
+                    Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
 
-                    using (FileStream fsCache = new FileStream(CachePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+                    using (FileStream fsCache = new FileStream(Options.OutputPath, FileMode.Create, FileAccess.Write, FileShare.Read))
                     {
                         while (!imageQueue.IsCompleted)
                         {
@@ -105,30 +100,16 @@ namespace ScreenCaptureLib
                         }
                     }
 
-                    isWorking = false;
+                    IsWorking = false;
                 });
             }
         }
 
-        public void AddImageAsync(Image img)
-        {
-            if (isWorking)
-            {
-                imageQueue.Add(img);
-            }
-        }
-
-        public void Finish()
-        {
-            imageQueue.CompleteAdding();
-            task.Wait();
-        }
-
         public IEnumerable<Image> GetImageEnumerator()
         {
-            if (!isWorking && File.Exists(CachePath) && indexList != null && indexList.Count > 0)
+            if (!IsWorking && File.Exists(Options.OutputPath) && indexList != null && indexList.Count > 0)
             {
-                using (FileStream fsCache = new FileStream(CachePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (FileStream fsCache = new FileStream(Options.OutputPath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
                     foreach (LocationInfo index in indexList)
                     {
@@ -139,14 +120,6 @@ namespace ScreenCaptureLib
                         }
                     }
                 }
-            }
-        }
-
-        public void Dispose()
-        {
-            if (imageQueue != null)
-            {
-                imageQueue.Dispose();
             }
         }
     }

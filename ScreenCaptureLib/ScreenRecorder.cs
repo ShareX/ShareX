@@ -97,8 +97,7 @@ namespace ScreenCaptureLib
         private int fps, delay, frameCount;
         private float durationSeconds;
         private Rectangle captureRectangle;
-        private HardDiskCache hdCache;
-        private ImageRecorder imageRecorder;
+        private ImageCache imgCache;
         private bool stopRequest;
 
         public ScreenRecorder(int fps, float durationSeconds, Rectangle captureRectangle, string cachePath, ScreenRecordOutput outputType, AVICOMPRESSOPTIONS compressOptions)
@@ -114,35 +113,27 @@ namespace ScreenCaptureLib
             CachePath = cachePath;
             OutputType = outputType;
 
+            Options = new AVIOptions
+            {
+                CompressOptions = compressOptions,
+                FPS = FPS,
+                OutputPath = CachePath,
+                Size = CaptureRectangle.Size
+            };
+
             switch (OutputType)
             {
                 case ScreenRecordOutput.AVI:
+                    imgCache = new AVICache(Options);
+                    break;
                 case ScreenRecordOutput.FFmpeg:
-                    Options = new AVIOptions
-                    {
-                        CompressOptions = compressOptions,
-                        FPS = FPS,
-                        OutputPath = CachePath,
-                        Size = CaptureRectangle.Size
-                    };
+                    imgCache = new FFmpegCache(Options);
                     break;
                 case ScreenRecordOutput.GIF:
-                    hdCache = new HardDiskCache(CachePath);
+                    imgCache = new HardDiskCache(Options);
                     break;
                 default:
                     throw new Exception("Not all possible ScreenRecordOutput types are handled.");
-            }
-
-            if (Options != null)
-            {
-                if (OutputType == ScreenRecordOutput.AVI)
-                {
-                    imageRecorder = new AVICache(Options);
-                }
-                else if (OutputType == ScreenRecordOutput.FFmpeg)
-                {
-                    imageRecorder = new FFmpegRecorder(Options);
-                }
             }
         }
 
@@ -166,14 +157,7 @@ namespace ScreenCaptureLib
                     Image img = Screenshot.CaptureRectangle(CaptureRectangle);
                     //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
 
-                    if (OutputType == ScreenRecordOutput.AVI || OutputType == ScreenRecordOutput.FFmpeg)
-                    {
-                        imageRecorder.AddImageAsync(img);
-                    }
-                    else if (OutputType == ScreenRecordOutput.GIF)
-                    {
-                        hdCache.AddImageAsync(img);
-                    }
+                    imgCache.AddImageAsync(img);
 
                     if (!stopRequest && (frameCount == 0 || i + 1 < frameCount))
                     {
@@ -190,17 +174,11 @@ namespace ScreenCaptureLib
                     }
                 }
 
-                switch (OutputType)
+                imgCache.Finish();
+
+                if (OutputType != ScreenRecordOutput.GIF)
                 {
-                    case ScreenRecordOutput.AVI:
-                    case ScreenRecordOutput.FFmpeg:
-                        imageRecorder.Finish();
-                        break;
-                    case ScreenRecordOutput.GIF:
-                        hdCache.Finish();
-                        break;
-                    default:
-                        throw new Exception("Not all possible ScreenRecordOutput types are handled.");
+                    imgCache.Dispose();
                 }
             }
 
@@ -214,8 +192,10 @@ namespace ScreenCaptureLib
 
         public void SaveAsGIF(string path, GIFQuality quality)
         {
-            if (!IsRecording)
+            if (imgCache != null && imgCache is HardDiskCache && !IsRecording)
             {
+                HardDiskCache hdCache = imgCache as HardDiskCache;
+
                 using (GifCreator gifEncoder = new GifCreator(delay))
                 {
                     int i = 0;
@@ -258,14 +238,9 @@ namespace ScreenCaptureLib
 
         public void Dispose()
         {
-            if (hdCache != null)
+            if (imgCache != null)
             {
-                hdCache.Dispose();
-            }
-
-            if (imageRecorder != null)
-            {
-                imageRecorder.Dispose();
+                imgCache.Dispose();
             }
         }
     }

@@ -82,7 +82,7 @@ namespace ShareX
 
         public async void StartRecording(TaskSettings TaskSettings)
         {
-            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegRecorder.HasDependencies())
+            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegCache.HasDependencies())
             {
                 if (MessageBox.Show("FFmpeg files are not present. Would you like to download them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 {

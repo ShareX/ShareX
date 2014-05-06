@@ -37,7 +37,7 @@ using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public class FFmpegRecorder : ImageRecorder
+    public class FFmpegCache : ImageCache
     {
         private VideoFileWriter ffmpegWriter;
 
@@ -49,7 +49,7 @@ namespace ScreenCaptureLib
                                                                       "swresample-0.dll",
                                                                       "swscale-2.dll" };
 
-        public FFmpegRecorder(AVIOptions options)
+        public FFmpegCache(AVIOptions options)
         {
             Options = options;
 
