@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
-    <Compile Include="FFmpegRecorder.cs" />
+    <Compile Include="FFmpegCache.cs" />
     <Compile Include="Forms\RectangleLight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +76,7 @@
     <Compile Include="Forms\Surface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageRecorder.cs" />
+    <Compile Include="ImageCache.cs" />
     <Compile Include="LocationInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
