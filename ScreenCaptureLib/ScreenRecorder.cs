@@ -98,7 +98,7 @@ namespace ScreenCaptureLib
         private float durationSeconds;
         private Rectangle captureRectangle;
         private HardDiskCache hdCache;
-        private AVICache aviCache;
+        private ImageRecorder imageRecorder;
         private bool stopRequest;
 
         public ScreenRecorder(int fps, float durationSeconds, Rectangle captureRectangle, string cachePath, ScreenRecordOutput outputType, AVICOMPRESSOPTIONS compressOptions)
@@ -114,21 +114,35 @@ namespace ScreenCaptureLib
             CachePath = cachePath;
             OutputType = outputType;
 
-            if (OutputType == ScreenRecordOutput.AVI || OutputType == ScreenRecordOutput.AVICommandLine)
+            switch (OutputType)
             {
-                Options = new AVIOptions
-                {
-                    CompressOptions = compressOptions,
-                    FPS = FPS,
-                    OutputPath = CachePath,
-                    Size = CaptureRectangle.Size
-                };
-
-                aviCache = new AVICache(Options);
+                case ScreenRecordOutput.AVI:
+                case ScreenRecordOutput.FFmpeg:
+                    Options = new AVIOptions
+                    {
+                        CompressOptions = compressOptions,
+                        FPS = FPS,
+                        OutputPath = CachePath,
+                        Size = CaptureRectangle.Size
+                    };
+                    break;
+                case ScreenRecordOutput.GIF:
+                    hdCache = new HardDiskCache(CachePath);
+                    break;
+                default:
+                    throw new Exception("Not all possible ScreenRecordOutput types are handled.");
             }
-            else if (OutputType == ScreenRecordOutput.GIF)
+
+            if (Options != null)
             {
-                hdCache = new HardDiskCache(CachePath);
+                if (OutputType == ScreenRecordOutput.AVI)
+                {
+                    imageRecorder = new AVICache(Options);
+                }
+                else if (OutputType == ScreenRecordOutput.FFmpeg)
+                {
+                    imageRecorder = new FFmpegRecorder(Options);
+                }
             }
         }
 
@@ -152,9 +166,9 @@ namespace ScreenCaptureLib
                     Image img = Screenshot.CaptureRectangle(CaptureRectangle);
                     //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
 
-                    if (OutputType == ScreenRecordOutput.AVI || OutputType == ScreenRecordOutput.AVICommandLine)
+                    if (OutputType == ScreenRecordOutput.AVI || OutputType == ScreenRecordOutput.FFmpeg)
                     {
-                        aviCache.AddImageAsync(img);
+                        imageRecorder.AddImageAsync(img);
                     }
                     else if (OutputType == ScreenRecordOutput.GIF)
                     {
@@ -176,13 +190,17 @@ namespace ScreenCaptureLib
                     }
                 }
 
-                if (OutputType == ScreenRecordOutput.AVI || OutputType == ScreenRecordOutput.AVICommandLine)
+                switch (OutputType)
                 {
-                    aviCache.Finish();
-                }
-                else if (OutputType == ScreenRecordOutput.GIF)
-                {
-                    hdCache.Finish();
+                    case ScreenRecordOutput.AVI:
+                    case ScreenRecordOutput.FFmpeg:
+                        imageRecorder.Finish();
+                        break;
+                    case ScreenRecordOutput.GIF:
+                        hdCache.Finish();
+                        break;
+                    default:
+                        throw new Exception("Not all possible ScreenRecordOutput types are handled.");
                 }
             }
 
@@ -245,9 +263,9 @@ namespace ScreenCaptureLib
                 hdCache.Dispose();
             }
 
-            if (aviCache != null)
+            if (imageRecorder != null)
             {
-                aviCache.Dispose();
+                imageRecorder.Dispose();
             }
         }
     }

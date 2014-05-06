@@ -23,24 +23,39 @@
 
 #endregion License Information (GPL v3)
 
+using AForge.Video.FFMPEG;
 using HelpersLib;
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public class AVICache : ImageRecorder
+    public class FFmpegRecorder : ImageRecorder
     {
-        private AVIWriter aviWriter;
+        private VideoFileWriter ffmpegWriter;
 
-        public AVICache(AVIOptions options)
+        private static readonly string[] ffMpegFiles = new string[] { "avcodec-53.dll",
+                                                                      "avdevice-53.dll",
+                                                                      "avfilter-2.dll",
+                                                                      "avformat-53.dll",
+                                                                      "avutil-51.dll",
+                                                                      "swresample-0.dll",
+                                                                      "swscale-2.dll" };
+
+        public FFmpegRecorder(AVIOptions options)
         {
             Options = options;
 
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
-            aviWriter = new AVIWriter(Options);
+            ffmpegWriter = new VideoFileWriter();
+            ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, AForge.Video.FFMPEG.VideoCodec.MPEG4);
             imageQueue = new BlockingCollection<Image>();
         }
 
@@ -67,7 +82,7 @@ namespace ScreenCaptureLib
                                 if (img != null)
                                 {
                                     //using (new DebugTimer("Frame saved"))
-                                    aviWriter.AddFrame((Bitmap)img);
+                                    ffmpegWriter.WriteVideoFrame((Bitmap)img);
 
                                     position++;
                                 }
@@ -91,12 +106,28 @@ namespace ScreenCaptureLib
 
         public override void Dispose()
         {
-            if (aviWriter != null)
+            if (ffmpegWriter != null)
             {
-                aviWriter.Dispose();
+                ffmpegWriter.Dispose();
             }
 
-            base.Dispose();
+            if (imageQueue != null)
+            {
+                imageQueue.Dispose();
+            }
+        }
+
+        public static bool HasDependencies()
+        {
+            foreach (string fn in ffMpegFiles)
+            {
+                string fp = Path.Combine(Application.StartupPath, fn);
+                if (!File.Exists(fp))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

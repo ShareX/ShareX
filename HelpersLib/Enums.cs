@@ -225,10 +225,10 @@ namespace HelpersLib
     {
         [Description("Animated GIF")]
         GIF,
-        [Description("AVI")]
+        [Description("Video for Windows (VfW)")]
         AVI,
-        [Description("AVI CLI encoder")]
-        AVICommandLine
+        [Description("FFmpeg")]
+        FFmpeg,
     }
 
     public enum DownloaderFormStatus

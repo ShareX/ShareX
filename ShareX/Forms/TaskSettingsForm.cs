@@ -160,6 +160,7 @@ namespace ShareX
             // Capture / Screen recorder
             cbScreenRecorderOutput.Items.AddRange(Helpers.GetEnumDescriptions<ScreenRecordOutput>());
             cbScreenRecorderOutput.SelectedIndex = (int)TaskSettings.CaptureSettings.ScreenRecordOutput;
+            chkRunScreencastCLI.Checked = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
 
             nudScreenRecorderFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS;
@@ -644,9 +645,8 @@ namespace ShareX
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            btnScreenRecorderAVIOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
-            btnEncoderConfig.Enabled = cboEncoder.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine;
+            btnScreenRecorderAVIOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI;
+            btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput != ScreenRecordOutput.GIF;
         }
 
         private void btnScreenRecorderAVIOptions_Click(object sender, EventArgs e)
@@ -700,6 +700,11 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.ScreenRecordFixedDuration = cbScreenRecorderFixedDuration.Checked;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
+        }
+
+        private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.RunScreencastCLI = btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Checked;
         }
 
         private void nudScreenRecorderDuration_ValueChanged(object sender, EventArgs e)

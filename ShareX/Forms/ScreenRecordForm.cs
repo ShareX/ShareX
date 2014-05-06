@@ -82,7 +82,7 @@ namespace ShareX
 
         public async void StartRecording(TaskSettings TaskSettings)
         {
-            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine)
+            if (TaskSettings.CaptureSettings.RunScreencastCLI)
             {
                 if (!Program.Settings.VideoEncoders.IsValidIndex(TaskSettings.CaptureSettings.VideoEncoderSelected))
                 {
@@ -95,6 +95,14 @@ namespace ShareX
                         Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+            }
+            else if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegRecorder.HasDependencies())
+            {
+                if (MessageBox.Show("FFmpeg files are not present. Would you like to download them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Helpers.OpenURL("http://aforgeffmpeg.codeplex.com");
+                }
+                return;
             }
 
             SelectRegion();
@@ -120,7 +128,8 @@ namespace ShareX
 
                     await TaskEx.Run(() =>
                     {
-                        if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI)
+                        if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
+                            TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg)
                         {
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi"));
                         }
@@ -149,23 +158,22 @@ namespace ShareX
                     });
                 }
 
-                if (screenRecorder != null && TaskSettings.CaptureSettings.ScreenRecordOutput != ScreenRecordOutput.AVI)
+                if (screenRecorder != null)
                 {
                     TrayIcon.Icon = Resources.camcorder__pencil.ToIcon();
 
                     await TaskEx.Run(() =>
                     {
-                        switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
+                        if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.GIF)
                         {
-                            case ScreenRecordOutput.GIF:
-                                path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "gif"));
-                                screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
-                                break;
-                            case ScreenRecordOutput.AVICommandLine:
-                                VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected];
-                                path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
-                                screenRecorder.EncodeUsingCommandLine(encoder, path);
-                                break;
+                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "gif"));
+                            screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
+                        }
+                        else if (TaskSettings.CaptureSettings.RunScreencastCLI)
+                        {
+                            VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected];
+                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
+                            screenRecorder.EncodeUsingCommandLine(encoder, path);
                         }
                     });
                 }
@@ -174,7 +182,7 @@ namespace ShareX
             {
                 if (screenRecorder != null)
                 {
-                    if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVICommandLine &&
+                    if (TaskSettings.CaptureSettings.RunScreencastCLI &&
                         !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
                     {
                         File.Delete(screenRecorder.CachePath);
