@@ -216,12 +216,12 @@ namespace ScreenCaptureLib
             }
         }
 
-        public void EncodeUsingCommandLine(VideoEncoder encoder, string targetFilePath)
+        public void EncodeUsingCommandLine(VideoEncoder encoder, string sourceFilePath, string targetFilePath)
         {
-            if (!string.IsNullOrEmpty(CachePath) && File.Exists(CachePath))
+            if (!string.IsNullOrEmpty(sourceFilePath) && File.Exists(sourceFilePath))
             {
                 OnEncodingProgressChanged(-1);
-                encoder.Encode(CachePath, targetFilePath);
+                encoder.Encode(sourceFilePath, targetFilePath);
                 OnEncodingProgressChanged(100);
             }
         }

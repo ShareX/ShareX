@@ -165,17 +165,26 @@ namespace ShareX
 
                     await TaskEx.Run(() =>
                     {
+                        string sourceFilePath = path;
+
                         if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.GIF)
                         {
-                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "gif"));
-                            screenRecorder.SaveAsGIF(path, TaskSettings.ImageSettings.ImageGIFQuality);
+                            if (TaskSettings.CaptureSettings.RunScreencastCLI)
+                            {
+                                sourceFilePath = Path.ChangeExtension(Program.ScreenRecorderCacheFilePath, "gif");
+                            }
+                            else
+                            {
+                                sourceFilePath = path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "gif"));
+                            }
+                            screenRecorder.SaveAsGIF(sourceFilePath, TaskSettings.ImageSettings.ImageGIFQuality);
                         }
 
                         if (TaskSettings.CaptureSettings.RunScreencastCLI)
                         {
                             VideoEncoder encoder = Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected];
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, encoder.OutputExtension));
-                            screenRecorder.EncodeUsingCommandLine(encoder, path);
+                            screenRecorder.EncodeUsingCommandLine(encoder, sourceFilePath, path);
                         }
                     });
                 }
