@@ -93,6 +93,18 @@ namespace HelpersLib
             UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;
         }
 
+        public string GetLatestDownloadURL()
+        {
+            List<GitHubRelease> releases = GetReleases();
+
+            if (releases != null && releases.Count > 0)
+            {
+                return GetDownloadURL(releases[releases.Count - 1]);
+            }
+
+            return null;
+        }
+
         private string GetDownloadURL(GitHubRelease release)
         {
             if (release.assets != null && release.assets.Count > 0)

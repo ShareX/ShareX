@@ -70,17 +70,22 @@ namespace HelpersLib
         }
 
         public UpdaterForm(UpdateChecker updateChecker)
-            : this()
+            : this(updateChecker.UpdateInfo)
         {
-            URL = updateChecker.UpdateInfo.DownloadURL;
             Proxy = updateChecker.Proxy;
-            Filename = updateChecker.UpdateInfo.Filename;
-            lblFilename.Text = "Filename: " + Filename;
 
             if (updateChecker is GitHubUpdateChecker)
             {
                 AcceptHeader = "application/octet-stream";
             }
+        }
+
+        public UpdaterForm(UpdateInfo updateInfo)
+            : this()
+        {
+            URL = updateInfo.DownloadURL;
+            Filename = updateInfo.Filename;
+            lblFilename.Text = "Filename: " + Filename;
         }
 
         private void UpdaterForm_Paint(object sender, PaintEventArgs e)

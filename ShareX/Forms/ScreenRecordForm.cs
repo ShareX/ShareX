@@ -31,6 +31,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UploadersLib;
 
 namespace ShareX
 {
@@ -84,9 +85,17 @@ namespace ShareX
         {
             if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegCache.HasDependencies())
             {
-                if (MessageBox.Show("FFmpeg files are not present. Would you like to download them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("FFmpeg files are not present. Would you like to download and install them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    Helpers.OpenURL("http://aforgeffmpeg.codeplex.com");
+                    GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("McoreD", "FFmpegNet");
+                    updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+                    string downloadUrl = updateChecker.GetLatestDownloadURL();
+                    if (!string.IsNullOrEmpty(downloadUrl))
+                    {
+                        UpdateInfo updateInfo = new UpdateInfo() { DownloadURL = downloadUrl };
+                        UpdaterForm form = new UpdaterForm(updateInfo) { Proxy = ProxyInfo.Current.GetWebProxy() };
+                        form.ShowDialog();
+                    }
                 }
                 return;
             }
