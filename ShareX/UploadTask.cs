@@ -93,7 +93,7 @@ namespace ShareX
             return task;
         }
 
-        public static UploadTask CreateFileUploaderTask(string filePath, TaskSettings taskSettings)
+        public async static System.Threading.Tasks.Task<UploadTask> CreateFileUploaderTaskAsync(string filePath, TaskSettings taskSettings)
         {
             EDataType dataType = Helpers.FindDataType(filePath);
             UploadTask task = new UploadTask(taskSettings);
@@ -107,15 +107,19 @@ namespace ShareX
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
             }
 
-            if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && dataType == EDataType.Image)
+            if ((task.Info.TaskSettings.UploadSettings.ClipboardUploadFileContents || task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload) && dataType == EDataType.Image)
             {
                 task.Info.Job = TaskJob.ImageJob;
-                task.tempImage = ImageHelpers.LoadImage(filePath);
+                if (File.Exists(filePath))
+                    task.tempImage = ImageHelpers.LoadImage(filePath);
+                else if (Helpers.IsValidURLRegex(filePath))
+                    task.tempImage = await System.Threading.Tasks.TaskEx.Run<Image>(() => ImageHelpers.LoadRemoteImage(filePath));
             }
             else
             {
                 task.Info.Job = TaskJob.FileUpload;
-                task.Data = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                if (File.Exists(filePath))
+                    task.Data = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
             }
 
             return task;

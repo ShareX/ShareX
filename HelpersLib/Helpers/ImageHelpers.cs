@@ -60,9 +60,11 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -1113,6 +1115,28 @@ namespace HelpersLib
                 if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                 {
                     return Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return null;
+        }
+
+        public static Image LoadRemoteImage(string url)
+        {
+            try
+            {
+                HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+
+                using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
+                {
+                    using (Stream stream = httpWebReponse.GetResponseStream())
+                    {
+                        return Image.FromStream(stream);
+                    }
                 }
             }
             catch (Exception e)

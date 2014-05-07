@@ -36,15 +36,15 @@ namespace ShareX
 {
     public static class UploadManager
     {
-        public static void UploadFile(string filePath, TaskSettings taskSettings = null)
+        public async static void UploadFile(string filePath, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                if (File.Exists(filePath))
+                if (File.Exists(filePath) || Helpers.IsValidURLRegex(filePath))
                 {
-                    UploadTask task = UploadTask.CreateFileUploaderTask(filePath, taskSettings);
+                    UploadTask task = await UploadTask.CreateFileUploaderTaskAsync(filePath, taskSettings);
                     TaskManager.Start(task);
                 }
                 else if (Directory.Exists(filePath))
@@ -171,7 +171,11 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(text))
                 {
-                    if (taskSettings.UploadSettings.ClipboardUploadAutoDetectURL && Helpers.IsValidURLRegex(text))
+                    if (taskSettings.UploadSettings.ClipboardUploadFileContents && Helpers.IsValidURLRegex(text))
+                    {
+                        UploadFile(text, taskSettings);
+                    }
+                    else if (taskSettings.UploadSettings.ClipboardUploadShortenURL && Helpers.IsValidURLRegex(text))
                     {
                         ShortenURL(text.Trim(), taskSettings);
                     }
