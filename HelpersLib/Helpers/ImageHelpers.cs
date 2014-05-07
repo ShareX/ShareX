@@ -1124,27 +1124,5 @@ namespace HelpersLib
 
             return null;
         }
-
-        public static Image LoadRemoteImage(string url)
-        {
-            try
-            {
-                HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
-
-                using (HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse())
-                {
-                    using (Stream stream = httpWebReponse.GetResponseStream())
-                    {
-                        return Image.FromStream(stream);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return null;
-        }
     }
 }

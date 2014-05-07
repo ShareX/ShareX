@@ -85,7 +85,7 @@ namespace ShareX
         {
             if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegCache.HasDependencies())
             {
-                if (MessageBox.Show("FFmpeg files are not present. Would you like to download and install them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("FFmpeg files are not present. Would you like to download and install them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("McoreD", "FFmpegNet");
                     updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
@@ -93,8 +93,10 @@ namespace ShareX
                     if (!string.IsNullOrEmpty(downloadUrl))
                     {
                         UpdateInfo updateInfo = new UpdateInfo() { DownloadURL = downloadUrl };
-                        UpdaterForm form = new UpdaterForm(updateInfo) { Proxy = ProxyInfo.Current.GetWebProxy() };
-                        form.ShowDialog();
+                        using (UpdaterForm form = new UpdaterForm(updateInfo) { Proxy = ProxyInfo.Current.GetWebProxy() })
+                        {
+                            form.ShowDialog();
+                        }
                     }
                 }
                 return;

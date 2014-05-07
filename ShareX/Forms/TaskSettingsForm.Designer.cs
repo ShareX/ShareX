@@ -153,6 +153,7 @@
             this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
             this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
             this.tpUploadClipboard = new System.Windows.Forms.TabPage();
+            this.chkClipboardUploadContents = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoDetectURL = new System.Windows.Forms.CheckBox();
             this.chkUseDefaultUploadSettings = new System.Windows.Forms.CheckBox();
@@ -162,7 +163,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.chkClipboardUploadContents = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1625,6 +1625,17 @@
             this.tpUploadClipboard.Text = "Clipboard upload";
             this.tpUploadClipboard.UseVisualStyleBackColor = true;
             // 
+            // chkClipboardUploadContents
+            // 
+            this.chkClipboardUploadContents.AutoSize = true;
+            this.chkClipboardUploadContents.Location = new System.Drawing.Point(16, 16);
+            this.chkClipboardUploadContents.Name = "chkClipboardUploadContents";
+            this.chkClipboardUploadContents.Size = new System.Drawing.Size(345, 17);
+            this.chkClipboardUploadContents.TabIndex = 3;
+            this.chkClipboardUploadContents.Text = "If clipboard contains a image/text URL then download it and upload";
+            this.chkClipboardUploadContents.UseVisualStyleBackColor = true;
+            this.chkClipboardUploadContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
+            // 
             // cbClipboardUploadAutoIndexFolder
             // 
             this.cbClipboardUploadAutoIndexFolder.AutoSize = true;
@@ -1735,17 +1746,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // chkClipboardUploadContents
-            // 
-            this.chkClipboardUploadContents.AutoSize = true;
-            this.chkClipboardUploadContents.Location = new System.Drawing.Point(16, 16);
-            this.chkClipboardUploadContents.Name = "chkClipboardUploadContents";
-            this.chkClipboardUploadContents.Size = new System.Drawing.Size(323, 17);
-            this.chkClipboardUploadContents.TabIndex = 3;
-            this.chkClipboardUploadContents.Text = "If clipboard contains a file path or URL then upload its contents";
-            this.chkClipboardUploadContents.UseVisualStyleBackColor = true;
-            this.chkClipboardUploadContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
             // 
             // TaskSettingsForm
             // 

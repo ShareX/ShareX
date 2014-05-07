@@ -29,6 +29,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using UploadersLib;
 
@@ -36,15 +37,15 @@ namespace ShareX
 {
     public static class UploadManager
     {
-        public async static void UploadFile(string filePath, TaskSettings taskSettings = null)
+        public static void UploadFile(string filePath, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                if (File.Exists(filePath) || Helpers.IsValidURLRegex(filePath))
+                if (File.Exists(filePath))
                 {
-                    UploadTask task = await UploadTask.CreateFileUploaderTaskAsync(filePath, taskSettings);
+                    UploadTask task = UploadTask.CreateFileUploaderTask(filePath, taskSettings);
                     TaskManager.Start(task);
                 }
                 else if (Directory.Exists(filePath))
@@ -171,13 +172,16 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(text))
                 {
-                    if (taskSettings.UploadSettings.ClipboardUploadFileContents && Helpers.IsValidURLRegex(text))
+                    string url = text.Trim();
+                    bool isURL = Helpers.IsValidURLRegex(url);
+
+                    if (taskSettings.UploadSettings.ClipboardUploadURLContents && isURL && (Helpers.IsImageFile(url) || Helpers.IsTextFile(url)))
                     {
-                        UploadFile(text, taskSettings);
+                        DownloadAndUploadFile(url, taskSettings);
                     }
-                    else if (taskSettings.UploadSettings.ClipboardUploadShortenURL && Helpers.IsValidURLRegex(text))
+                    else if (taskSettings.UploadSettings.ClipboardUploadShortenURL && isURL)
                     {
-                        ShortenURL(text.Trim(), taskSettings);
+                        ShortenURL(url, taskSettings);
                     }
                     else if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
                     {
@@ -313,6 +317,28 @@ namespace ShareX
                 UploadTask task = UploadTask.CreateURLShortenerTask(url, taskSettings);
                 TaskManager.Start(task);
             }
+        }
+
+        public static void DownloadAndUploadFile(string url, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            string downloadPath = null;
+
+            Helpers.AsyncJob(() =>
+            {
+                downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, Path.GetFileName(url), taskSettings);
+
+                using (WebClient wc = new WebClient())
+                {
+                    wc.Proxy = ProxyInfo.Current.GetWebProxy();
+                    wc.DownloadFile(url, downloadPath);
+                }
+            },
+            () =>
+            {
+                UploadFile(downloadPath, taskSettings);
+            });
         }
     }
 }

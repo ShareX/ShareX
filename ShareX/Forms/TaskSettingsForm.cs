@@ -196,9 +196,9 @@ namespace ShareX
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
 
             // Upload / Clipboard upload
+            chkClipboardUploadContents.Checked = TaskSettings.UploadSettings.ClipboardUploadURLContents;
             cbClipboardUploadAutoDetectURL.Checked = TaskSettings.UploadSettings.ClipboardUploadShortenURL;
             cbClipboardUploadAutoIndexFolder.Checked = TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder;
-            chkClipboardUploadContents.Checked = TaskSettings.UploadSettings.ClipboardUploadFileContents;
 
             // Indexer
             pgIndexerConfig.SelectedObject = TaskSettings.IndexerSettings;
@@ -907,6 +907,11 @@ namespace ShareX
             lblNameFormatPatternPreview.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPattern);
         }
 
+        private void chkClipboardUploadContents_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.ClipboardUploadURLContents = chkClipboardUploadContents.Checked;
+        }
+
         private void cbClipboardUploadAutoDetectURL_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UploadSettings.ClipboardUploadShortenURL = cbClipboardUploadAutoDetectURL.Checked;
@@ -915,11 +920,6 @@ namespace ShareX
         private void cbClipboardUploadAutoIndexFolder_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder = cbClipboardUploadAutoIndexFolder.Checked;
-        }
-
-        private void chkClipboardUploadContents_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.UploadSettings.ClipboardUploadFileContents = chkClipboardUploadContents.Checked;
         }
 
         #endregion Upload

@@ -99,7 +99,7 @@ namespace HelpersLib
 
             if (releases != null && releases.Count > 0)
             {
-                return GetDownloadURL(releases[releases.Count - 1]);
+                return GetDownloadURL(releases[0]);
             }
 
             return null;

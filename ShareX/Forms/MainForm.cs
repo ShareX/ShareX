@@ -441,12 +441,14 @@ namespace ShareX
                 MessageBox.Show("An update is available for ShareX.\r\nWould you like to download it?", "ShareX",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                UpdaterForm updaterForm = new UpdaterForm(updateChecker);
-                updaterForm.ShowDialog();
-
-                if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                using (UpdaterForm updaterForm = new UpdaterForm(updateChecker))
                 {
-                    Application.Exit();
+                    updaterForm.ShowDialog();
+
+                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                    {
+                        Application.Exit();
+                    }
                 }
             }
         }

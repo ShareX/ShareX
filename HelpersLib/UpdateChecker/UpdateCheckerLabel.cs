@@ -92,12 +92,14 @@ namespace HelpersLib
         {
             if (updateChecker != null && updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable)
             {
-                UpdaterForm updaterForm = new UpdaterForm(updateChecker);
-                updaterForm.ShowDialog();
-
-                if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                using (UpdaterForm updaterForm = new UpdaterForm(updateChecker))
                 {
-                    Application.Exit();
+                    updaterForm.ShowDialog();
+
+                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                    {
+                        Application.Exit();
+                    }
                 }
             }
         }
