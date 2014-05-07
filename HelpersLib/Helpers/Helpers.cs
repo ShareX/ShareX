@@ -854,5 +854,18 @@ namespace HelpersLib
                 return g.MeasureString(text, font, width).ToSize();
             }
         }
+
+        public static string GetURLFilename(string url)
+        {
+            Uri uri = new Uri(url);
+
+            try
+            {
+                return Path.GetFileName(uri.LocalPath);
+            }
+            catch { }
+
+            return null;
+        }
     }
 }

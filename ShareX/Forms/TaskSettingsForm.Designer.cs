@@ -1630,9 +1630,9 @@
             this.chkClipboardUploadContents.AutoSize = true;
             this.chkClipboardUploadContents.Location = new System.Drawing.Point(16, 16);
             this.chkClipboardUploadContents.Name = "chkClipboardUploadContents";
-            this.chkClipboardUploadContents.Size = new System.Drawing.Size(345, 17);
+            this.chkClipboardUploadContents.Size = new System.Drawing.Size(308, 17);
             this.chkClipboardUploadContents.TabIndex = 3;
-            this.chkClipboardUploadContents.Text = "If clipboard contains a image/text URL then download it and upload";
+            this.chkClipboardUploadContents.Text = "If clipboard contains a file URL then download it and upload";
             this.chkClipboardUploadContents.UseVisualStyleBackColor = true;
             this.chkClipboardUploadContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
             // 

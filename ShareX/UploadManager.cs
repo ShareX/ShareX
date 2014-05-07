@@ -173,17 +173,28 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(text))
                 {
                     string url = text.Trim();
-                    bool isURL = Helpers.IsValidURLRegex(url);
 
-                    if (taskSettings.UploadSettings.ClipboardUploadURLContents && isURL && (Helpers.IsImageFile(url) || Helpers.IsTextFile(url)))
+                    if (Helpers.IsValidURLRegex(url))
                     {
-                        DownloadAndUploadFile(url, taskSettings);
+                        if (taskSettings.UploadSettings.ClipboardUploadURLContents)
+                        {
+                            string filename = Helpers.GetURLFilename(url);
+
+                            if (!string.IsNullOrEmpty(filename))
+                            {
+                                DownloadAndUploadFile(url, filename, taskSettings);
+                                return;
+                            }
+                        }
+
+                        if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
+                        {
+                            ShortenURL(url, taskSettings);
+                            return;
+                        }
                     }
-                    else if (taskSettings.UploadSettings.ClipboardUploadShortenURL && isURL)
-                    {
-                        ShortenURL(url, taskSettings);
-                    }
-                    else if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
+
+                    if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
                     {
                         IndexFolder(text, taskSettings);
                     }
@@ -319,7 +330,7 @@ namespace ShareX
             }
         }
 
-        public static void DownloadAndUploadFile(string url, TaskSettings taskSettings = null)
+        public static void DownloadAndUploadFile(string url, string filename, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -327,7 +338,7 @@ namespace ShareX
 
             Helpers.AsyncJob(() =>
             {
-                downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, Path.GetFileName(url), taskSettings);
+                downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
 
                 using (WebClient wc = new WebClient())
                 {
