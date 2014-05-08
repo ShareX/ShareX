@@ -160,7 +160,6 @@ namespace ScreenCaptureLib
         {
             ffMpegCli = new FFmpegCLIHelper(Options);
             ffMpegCli.Record();
-            ffMpegCli.ListDevices();
         }
 
         private void RecordUsingCache()

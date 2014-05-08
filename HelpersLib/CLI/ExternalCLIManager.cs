@@ -10,7 +10,7 @@ namespace HelpersLib
 {
     public abstract class ExternalCLIManager : IDisposable
     {
-        private Process CLI = new Process();
+        private Process cli = new Process();
 
         public StringBuilder Output = new StringBuilder();
         public StringBuilder Errors = new StringBuilder();
@@ -18,61 +18,51 @@ namespace HelpersLib
         public delegate void ErrorDataReceivedHandler();
         public event ErrorDataReceivedHandler ErrorDataReceived;
 
-        public virtual void Open(string cliPath)
+        public virtual void Open(string cliPath, string args = null)
         {
-            ProcessStartInfo psi = new ProcessStartInfo(cliPath);
-            psi.UseShellExecute = false;
-            psi.ErrorDialog = false;
-            psi.RedirectStandardInput = true;
-            psi.RedirectStandardError = true;
-            psi.RedirectStandardOutput = true;
-            psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
-
-            psi.WindowStyle = ProcessWindowStyle.Normal;
-
-            using (AutoResetEvent outputWaitHandle = new AutoResetEvent(false))
-            using (AutoResetEvent errorWaitHandle = new AutoResetEvent(false))
+            if (File.Exists(cliPath))
             {
-                CLI.OutputDataReceived += (sender, e) =>
-                {
-                    if (e.Data == null)
-                    {
-                        outputWaitHandle.Set();
-                    }
-                    else
-                    {
-                        Output.AppendLine(e.Data);
-                    }
-                };
+                ProcessStartInfo psi = new ProcessStartInfo(cliPath);
+                psi.UseShellExecute = false;
+                psi.ErrorDialog = false;
+                psi.CreateNoWindow = true;
+                psi.RedirectStandardInput = true;
+                psi.RedirectStandardError = true;
+                psi.RedirectStandardOutput = true;
+                psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
+                psi.Arguments = args;
 
-                CLI.ErrorDataReceived += (sender, e) =>
-                {
-                    if (e.Data == null)
-                    {
-                        errorWaitHandle.Set();
-                    }
-                    else
-                    {
-                        Errors.AppendLine(e.Data);
-                    }
-                };
+                cli.OutputDataReceived += (sender, e) => { if (e.Data != null) { Output.AppendLine(e.Data); } };
+                cli.ErrorDataReceived += (sender, e) => { if (e.Data == null) { Errors.AppendLine(e.Data); } };
 
-                CLI.StartInfo = psi;
-                CLI.Start();
+                cli.EnableRaisingEvents = true;
+                cli.StartInfo = psi;
+                cli.Start();
+
+                Console.WriteLine("CLI Path: " + cliPath);
+                Console.WriteLine("CLI Args: " + psi.Arguments);
+
+                cli.BeginOutputReadLine();
+                cli.BeginErrorReadLine();
+
+                System.Windows.Forms.MessageBox.Show(Output.ToString());
+                System.Windows.Forms.MessageBox.Show(Errors.ToString());
+
+                cli.WaitForExit();
             }
         }
 
         public void SendCommand(string command)
         {
-            if (CLI != null)
+            if (cli != null)
             {
-                CLI.StandardInput.WriteLine(command);
+                cli.StandardInput.WriteLine(command);
             }
         }
 
         public virtual void Close()
         {
-            CLI.CloseMainWindow();
+            cli.CloseMainWindow();
         }
 
         public virtual void OnErrorDataReceived()
@@ -85,9 +75,9 @@ namespace HelpersLib
 
         public void Dispose()
         {
-            if (CLI != null)
+            if (cli != null)
             {
-                CLI.Dispose();
+                cli.Dispose();
             }
         }
     }

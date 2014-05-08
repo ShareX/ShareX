@@ -66,7 +66,7 @@
     <Compile Include="Screencast\CLIEncoder.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Screencast\FFmpegCLIHelper.cs" />
-    <Compile Include="Screencast\AVIOptions.cs" />
+    <Compile Include="Screencast\ScreencastOptions.cs" />
     <Compile Include="Screencast\AviWriter.cs" />
     <Compile Include="Screencast\FFmpegCache.cs" />
     <Compile Include="Screencast\FFmpegOptionsForm.cs">
