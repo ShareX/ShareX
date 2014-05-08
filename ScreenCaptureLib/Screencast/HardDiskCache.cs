@@ -52,7 +52,7 @@ namespace ScreenCaptureLib
         private FileStream fsCache;
         private List<LocationInfo> indexList;
 
-        public HardDiskCache(AVIOptions options)
+        public HardDiskCache(ScreencastOptions options)
         {
             Options = options;
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);

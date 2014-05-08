@@ -10,7 +10,7 @@ namespace HelpersLib
 {
     public abstract class ExternalCLIManager : IDisposable
     {
-        protected Process CLI = new Process();
+        private Process CLI = new Process();
 
         public StringBuilder Output = new StringBuilder();
         public StringBuilder Errors = new StringBuilder();
@@ -18,7 +18,7 @@ namespace HelpersLib
         public delegate void ErrorDataReceivedHandler();
         public event ErrorDataReceivedHandler ErrorDataReceived;
 
-        public virtual void Run(string cliPath, string args = "")
+        public virtual void Open(string cliPath)
         {
             ProcessStartInfo psi = new ProcessStartInfo(cliPath);
             psi.UseShellExecute = false;
@@ -26,7 +26,8 @@ namespace HelpersLib
             psi.RedirectStandardInput = true;
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
-            psi.Arguments = args;
+            psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
+
             psi.WindowStyle = ProcessWindowStyle.Normal;
 
             using (AutoResetEvent outputWaitHandle = new AutoResetEvent(false))
@@ -58,9 +59,6 @@ namespace HelpersLib
 
                 CLI.StartInfo = psi;
                 CLI.Start();
-
-                CLI.BeginOutputReadLine();
-                CLI.WaitForExit();
             }
         }
 

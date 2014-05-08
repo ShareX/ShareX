@@ -43,12 +43,12 @@ namespace ScreenCaptureLib
 
         private VideoFileWriter ffmpegWriter;
 
-        public FFmpegCache(AVIOptions options)
+        public FFmpegCache(ScreencastOptions options)
         {
             Options = options;
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
             ffmpegWriter = new VideoFileWriter();
-            ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, AForge.Video.FFMPEG.VideoCodec.MPEG4);
+            ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, (AForge.Video.FFMPEG.VideoCodec)options.FFmpeg.VideoCodec, options.FFmpeg.BitRate * 1000);
         }
 
         protected override void WriteFrame(Image img)

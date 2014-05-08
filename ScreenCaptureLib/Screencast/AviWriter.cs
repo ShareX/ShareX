@@ -89,14 +89,14 @@ namespace ScreenCaptureLib
         // dummy object to lock for synchronization
         private readonly object sync = new object();
 
-        public AVIOptions Options { get; private set; }
+        public ScreencastOptions Options { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AVIWriter"/> class.
         /// </summary>
         ///
         /// <remarks>Initializes Video for Windows library.</remarks>
-        public AVIWriter(AVIOptions options)
+        public AVIWriter(ScreencastOptions options)
         {
             NativeMethods.AVIFileInit();
             Options = options;
@@ -199,27 +199,27 @@ namespace ScreenCaptureLib
                     if (NativeMethods.AVIFileCreateStream(file, out stream, ref info) != 0)
                         throw new Exception("Failed creating stream.");
 
-                    if (Options.CompressOptions.handler == 0)
+                    if (Options.AVI.CompressOptions.handler == 0)
                     {
                         // describe compression options
-                        Options.CompressOptions.handler = NativeMethods.mmioFOURCC("DIB ");
+                        Options.AVI.CompressOptions.handler = NativeMethods.mmioFOURCC("DIB ");
                     }
 
-                    if (Options.ShowOptionsDialog)
+                    if (Options.ShowAVIOptionsDialog)
                     {
                         AVICOMPRESSOPTIONS options = new AVICOMPRESSOPTIONS();
-                        options.handler = Options.CompressOptions.handler;
-                        options.quality = Options.CompressOptions.quality;
+                        options.handler = Options.AVI.CompressOptions.handler;
+                        options.quality = Options.AVI.CompressOptions.quality;
                         options.flags = 8; // AVICOMPRESSF_VALID
                         int result = NativeMethods.AVISaveOptions(stream, ref options, Options.ParentWindow);
                         if (result == 1)
                         {
-                            Options.CompressOptions = options;
+                            Options.AVI.CompressOptions = options;
                         }
                     }
 
                     // create compressed stream
-                    if (NativeMethods.AVIMakeCompressedStream(out streamCompressed, stream, ref Options.CompressOptions, IntPtr.Zero) != 0)
+                    if (NativeMethods.AVIMakeCompressedStream(out streamCompressed, stream, ref Options.AVI.CompressOptions, IntPtr.Zero) != 0)
                         throw new Exception("Failed creating compressed stream.");
 
                     // describe frame format

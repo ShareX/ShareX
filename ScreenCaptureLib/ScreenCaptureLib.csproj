@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CLIEncoder.cs" />
+    <Compile Include="Screencast\CLIEncoder.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Screencast\FFmpegCLIHelper.cs" />
     <Compile Include="Screencast\AVIOptions.cs" />

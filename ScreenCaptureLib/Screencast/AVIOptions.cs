@@ -32,19 +32,33 @@ using System.Text;
 
 namespace ScreenCaptureLib
 {
-    public class AVIOptions
+    public class ScreencastOptions
     {
         public string OutputPath;
         public int FPS;
         public Size Size;
-
-        // AVI
-        public AVICOMPRESSOPTIONS CompressOptions;
-        public bool ShowOptionsDialog;
         public IntPtr ParentWindow;
 
-        // FFmpeg
+        public bool ShowAVIOptionsDialog;
+        public AVIOptions AVI = new AVIOptions();
+
+        public FFmpegOptions FFmpeg = new FFmpegOptions();
+    }
+
+    public class AVIOptions
+    {
+        public AVICOMPRESSOPTIONS CompressOptions;
+    }
+
+    public class FFmpegOptions
+    {
         public string CLIPath { get; set; }
+        public VideoCodec VideoCodec { get; set; }
         public int BitRate { get; set; }
+
+        public FFmpegOptions()
+        {
+            VideoCodec = VideoCodec.MPEG4;
+        }
     }
 }

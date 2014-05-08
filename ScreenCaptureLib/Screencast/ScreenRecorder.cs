@@ -88,7 +88,7 @@ namespace ScreenCaptureLib
 
         public ScreenRecordOutput OutputType { get; private set; }
 
-        public AVIOptions Options { get; set; }
+        public ScreencastOptions Options { get; set; }
 
         public delegate void ProgressEventHandler(int progress);
 
@@ -101,26 +101,20 @@ namespace ScreenCaptureLib
         private FFmpegCLIHelper ffMpegCli;
         private bool stopRequest;
 
-        public ScreenRecorder(int fps, float durationSeconds, Rectangle captureRectangle, string cachePath, ScreenRecordOutput outputType, AVICOMPRESSOPTIONS compressOptions)
+        public ScreenRecorder(ScreencastOptions options, float durationSeconds, Rectangle captureRectangle, ScreenRecordOutput outputType)
         {
-            if (string.IsNullOrEmpty(cachePath))
+            if (string.IsNullOrEmpty(options.OutputPath))
             {
                 throw new Exception("Screen recorder cache path is empty.");
             }
 
-            FPS = fps;
+            FPS = options.FPS;
             DurationSeconds = durationSeconds;
             CaptureRectangle = captureRectangle;
-            CachePath = cachePath;
+            CachePath = options.OutputPath;
             OutputType = outputType;
 
-            Options = new AVIOptions()
-            {
-                FPS = FPS,
-                OutputPath = CachePath,
-                Size = CaptureRectangle.Size,
-                CompressOptions = compressOptions
-            };
+            Options = options;
 
             switch (OutputType)
             {

@@ -39,7 +39,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(224, 40);
+            this.btnCancel.Location = new System.Drawing.Point(224, 44);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 10;
@@ -49,7 +49,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(224, 8);
+            this.btnOK.Location = new System.Drawing.Point(224, 12);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 9;
@@ -61,15 +61,16 @@
             // 
             this.comboBoxCodecs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCodecs.FormattingEnabled = true;
-            this.comboBoxCodecs.Location = new System.Drawing.Point(56, 8);
+            this.comboBoxCodecs.Location = new System.Drawing.Point(72, 12);
             this.comboBoxCodecs.Name = "comboBoxCodecs";
-            this.comboBoxCodecs.Size = new System.Drawing.Size(152, 21);
+            this.comboBoxCodecs.Size = new System.Drawing.Size(136, 21);
             this.comboBoxCodecs.TabIndex = 11;
+            this.comboBoxCodecs.SelectedIndexChanged += new System.EventHandler(this.comboBoxCodecs_SelectedIndexChanged);
             // 
             // lblCodec
             // 
             this.lblCodec.AutoSize = true;
-            this.lblCodec.Location = new System.Drawing.Point(8, 8);
+            this.lblCodec.Location = new System.Drawing.Point(8, 16);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(38, 13);
             this.lblCodec.TabIndex = 12;
@@ -77,25 +78,31 @@
             // 
             // nudBitrate
             // 
-            this.nudBitrate.Location = new System.Drawing.Point(56, 40);
+            this.nudBitrate.Location = new System.Drawing.Point(72, 44);
+            this.nudBitrate.Maximum = new decimal(new int[] {
+            9000,
+            0,
+            0,
+            0});
             this.nudBitrate.Name = "nudBitrate";
-            this.nudBitrate.Size = new System.Drawing.Size(152, 20);
+            this.nudBitrate.Size = new System.Drawing.Size(136, 20);
             this.nudBitrate.TabIndex = 13;
+            this.nudBitrate.ValueChanged += new System.EventHandler(this.nudBitrate_ValueChanged);
             // 
             // lblBitrate
             // 
             this.lblBitrate.AutoSize = true;
-            this.lblBitrate.Location = new System.Drawing.Point(8, 40);
+            this.lblBitrate.Location = new System.Drawing.Point(8, 48);
             this.lblBitrate.Name = "lblBitrate";
-            this.lblBitrate.Size = new System.Drawing.Size(40, 13);
+            this.lblBitrate.Size = new System.Drawing.Size(56, 13);
             this.lblBitrate.TabIndex = 14;
-            this.lblBitrate.Text = "Bit rate";
+            this.lblBitrate.Text = "Bit rate (K)";
             // 
             // FFmpegOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 90);
+            this.ClientSize = new System.Drawing.Size(304, 89);
             this.Controls.Add(this.lblBitrate);
             this.Controls.Add(this.nudBitrate);
             this.Controls.Add(this.lblCodec);

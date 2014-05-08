@@ -35,7 +35,7 @@ namespace ScreenCaptureLib
     {
         private AVIWriter aviWriter;
 
-        public AVICache(AVIOptions options)
+        public AVICache(ScreencastOptions options)
         {
             Options = options;
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);

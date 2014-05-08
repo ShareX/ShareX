@@ -37,7 +37,7 @@ namespace ScreenCaptureLib
     public abstract class ImageCache : IDisposable
     {
         public bool IsWorking { get; protected set; }
-        public AVIOptions Options { get; set; }
+        public ScreencastOptions Options { get; set; }
 
         protected Task task;
         protected BlockingCollection<Image> imageQueue;

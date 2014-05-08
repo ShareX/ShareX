@@ -646,7 +646,8 @@ namespace ShareX
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput != ScreenRecordOutput.GIF;
+            btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
+                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegNet;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
         }
 
@@ -655,13 +656,13 @@ namespace ShareX
             switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
             {
                 case ScreenRecordOutput.AVI:
-                    AVIOptions options = new AVIOptions
+                    ScreencastOptions options = new ScreencastOptions
                     {
-                        CompressOptions = TaskSettings.CaptureSettings.ScreenRecordCompressOptions,
+                        AVI = TaskSettings.CaptureSettings.AVIOptions,
+                        ShowAVIOptionsDialog = true,
                         FPS = 10,
                         OutputPath = Program.ScreenRecorderCacheFilePath,
                         ParentWindow = this.Handle,
-                        ShowOptionsDialog = true,
                         Size = new Size(100, 100)
                     };
 
@@ -670,13 +671,13 @@ namespace ShareX
                         // Ugly workaround for show AVI compression dialog
                         using (AVICache aviCache = new AVICache(options))
                         {
-                            TaskSettings.CaptureSettings.ScreenRecordCompressOptions = options.CompressOptions;
+                            TaskSettings.CaptureSettings.AVIOptions.CompressOptions = options.AVI.CompressOptions;
                         }
                     }
                     catch (Exception ex)
                     {
-                        TaskSettings.CaptureSettings.ScreenRecordCompressOptions = new AVICOMPRESSOPTIONS();
-                        MessageBox.Show(ex.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TaskSettings.CaptureSettings.AVIOptions.CompressOptions = new AVICOMPRESSOPTIONS();
+                        MessageBox.Show(ex.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
                 case ScreenRecordOutput.FFmpegNet:

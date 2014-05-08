@@ -44,4 +44,18 @@ namespace ScreenCaptureLib
         BottomLeft,
         Left
     }
+
+    public enum VideoCodec
+    {
+        Default = -1,
+        MPEG4 = 0,
+        WMV1 = 1,
+        WMV2 = 2,
+        MSMPEG4v2 = 3,
+        MSMPEG4v3 = 4,
+        H263P = 5,
+        FLV1 = 6,
+        MPEG2 = 7,
+        Raw = 8,
+    }
 }

@@ -36,15 +36,16 @@ namespace ScreenCaptureLib
 {
     public class FFmpegCLIHelper : CLIEncoder
     {
-        public AVIOptions Options { get; private set; }
+        public string FileName = "ffmpeg.exe";
+        public ScreencastOptions Options { get; private set; }
 
-        public FFmpegCLIHelper(AVIOptions options)
+        public FFmpegCLIHelper(ScreencastOptions options)
         {
             Options = options;
 
-            if (string.IsNullOrEmpty(options.CLIPath))
+            if (string.IsNullOrEmpty(options.FFmpeg.CLIPath))
             {
-                options.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                options.FFmpeg.CLIPath = Path.Combine(Application.StartupPath, FileName);
             }
 
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
@@ -54,6 +55,8 @@ namespace ScreenCaptureLib
 
         public override void Record()
         {
+            Open(Options.FFmpeg.CLIPath);
+
             StringBuilder args = new StringBuilder();
             args.Append("-f dshow -i video=\"screen-capture-recorder\"");
             if (Options.FPS > 0)
@@ -62,7 +65,7 @@ namespace ScreenCaptureLib
             }
             args.Append(string.Format(" -c:v libx264 -crf 23 -preset medium -pix_fmt yuv420p -y \"{0}\"", Options.OutputPath));
 
-            Run(Options.CLIPath, args.ToString());
+            SendCommand(args.ToString());
         }
 
         public void ListDevices()
@@ -72,7 +75,7 @@ namespace ScreenCaptureLib
 
         public override void Close()
         {
-            CLI.StandardInput.WriteLine("q");
+            SendCommand("q");
         }
     }
 }

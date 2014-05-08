@@ -156,8 +156,16 @@ namespace ShareX
 
                         float duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-                        screenRecorder = new ScreenRecorder(TaskSettings.CaptureSettings.ScreenRecordFPS, duration, CaptureRectangle, path,
-                            TaskSettings.CaptureSettings.ScreenRecordOutput, TaskSettings.CaptureSettings.ScreenRecordCompressOptions);
+                        ScreencastOptions options = new ScreencastOptions()
+                        {
+                            Size = CaptureRectangle.Size,
+                            FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
+                            OutputPath = path,
+                            AVI = TaskSettings.CaptureSettings.AVIOptions,
+                            FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions
+                        };
+
+                        screenRecorder = new ScreenRecorder(options, duration, CaptureRectangle, TaskSettings.CaptureSettings.ScreenRecordOutput);
 
                         int delay = (int)(TaskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 
