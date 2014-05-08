@@ -23,52 +23,56 @@
 
 #endregion License Information (GPL v3)
 
-using AForge.Video.FFMPEG;
 using HelpersLib;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public class FFmpegCache : ImageCache
+    public class FFmpegCLIHelper : CLIEncoder
     {
-        private static readonly string[] ffmpegFiles = new string[] { "avcodec-53.dll", "avdevice-53.dll", "avfilter-2.dll", "avformat-53.dll", "avutil-51.dll", "swresample-0.dll", "swscale-2.dll" };
+        public AVIOptions Options { get; private set; }
 
-        private VideoFileWriter ffmpegWriter;
-
-        public FFmpegCache(AVIOptions options)
+        public FFmpegCLIHelper(AVIOptions options)
         {
             Options = options;
-            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
-            ffmpegWriter = new VideoFileWriter();
-            ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, AForge.Video.FFMPEG.VideoCodec.MPEG4);
-        }
 
-        protected override void WriteFrame(Image img)
-        {
-            ffmpegWriter.WriteVideoFrame((Bitmap)img);
-        }
-
-        public override void Dispose()
-        {
-            if (ffmpegWriter != null)
+            if (string.IsNullOrEmpty(options.CLIPath))
             {
-                ffmpegWriter.Dispose();
+                options.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
             }
 
-            base.Dispose();
+            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+
+            this.ErrorDataReceived += Close;
         }
 
-        public static bool HasDependencies()
+        public override void Record()
         {
-            return ffmpegFiles.Select(x => Path.Combine(Application.StartupPath, x)).All(x => File.Exists(x));
+            StringBuilder args = new StringBuilder();
+            args.Append("-f dshow -i video=\"screen-capture-recorder\"");
+            if (Options.FPS > 0)
+            {
+                args.Append(string.Format(" -r {0}", Options.FPS));
+            }
+            args.Append(string.Format(" -c:v libx264 -crf 23 -preset medium -pix_fmt yuv420p -y \"{0}\"", Options.OutputPath));
+
+            Run(Options.CLIPath, args.ToString());
+        }
+
+        public void ListDevices()
+        {
+            SendCommand("-list_devices true -f dshow -i dummy");
+        }
+
+        public override void Close()
+        {
+            CLI.StandardInput.WriteLine("q");
         }
     }
 }

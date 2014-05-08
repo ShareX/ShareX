@@ -37,7 +37,7 @@ namespace ScreenCaptureLib
 {
     public partial class FFmpegOptionsForm : Form
     {
-        public FFmpegOptionsForm(FFmpegOptions options)
+        public FFmpegOptionsForm(AVIOptions options)
         {
             InitializeComponent();
             this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);

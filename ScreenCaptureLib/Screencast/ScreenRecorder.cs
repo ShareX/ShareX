@@ -88,7 +88,7 @@ namespace ScreenCaptureLib
 
         public ScreenRecordOutput OutputType { get; private set; }
 
-        public ScreencastOptions Options { get; set; }
+        public AVIOptions Options { get; set; }
 
         public delegate void ProgressEventHandler(int progress);
 
@@ -98,6 +98,7 @@ namespace ScreenCaptureLib
         private float durationSeconds;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
+        private FFmpegCLIHelper ffMpegCli;
         private bool stopRequest;
 
         public ScreenRecorder(int fps, float durationSeconds, Rectangle captureRectangle, string cachePath, ScreenRecordOutput outputType, AVICOMPRESSOPTIONS compressOptions)
@@ -113,27 +114,24 @@ namespace ScreenCaptureLib
             CachePath = cachePath;
             OutputType = outputType;
 
-            Options = new ScreencastOptions()
+            Options = new AVIOptions()
             {
                 FPS = FPS,
                 OutputPath = CachePath,
-                Size = CaptureRectangle.Size
+                Size = CaptureRectangle.Size,
+                CompressOptions = compressOptions
             };
 
             switch (OutputType)
             {
                 case ScreenRecordOutput.AVI:
-                    AVIOptions aviOptions = Options as AVIOptions;
-                    aviOptions.CompressOptions = compressOptions;
-                    imgCache = new AVICache(aviOptions);
+                    imgCache = new AVICache(Options);
                     break;
                 case ScreenRecordOutput.FFmpegNet:
-                    FFmpegOptions ffMpegOptions = Options as FFmpegOptions;
-                    ffMpegOptions.BitRate = 1000;
-                    imgCache = new FFmpegCache(ffMpegOptions);
+                    imgCache = new FFmpegCache(Options);
                     break;
                 case ScreenRecordOutput.GIF:
-                    imgCache = new HardDiskCache(Options as AVIOptions);
+                    imgCache = new HardDiskCache(Options);
                     break;
             }
         }
@@ -151,44 +149,68 @@ namespace ScreenCaptureLib
                 IsRecording = true;
                 stopRequest = false;
 
-                try
+                if (OutputType == ScreenRecordOutput.FFmpegCLI)
                 {
-                    for (int i = 0; !stopRequest && (frameCount == 0 || i < frameCount); i++)
-                    {
-                        Stopwatch timer = Stopwatch.StartNew();
-
-                        Image img = Screenshot.CaptureRectangle(CaptureRectangle);
-                        //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
-
-                        imgCache.AddImageAsync(img);
-
-                        if (!stopRequest && (frameCount == 0 || i + 1 < frameCount))
-                        {
-                            int sleepTime = delay - (int)timer.ElapsedMilliseconds;
-
-                            if (sleepTime > 0)
-                            {
-                                Thread.Sleep(sleepTime);
-                            }
-                            else if (sleepTime < 0)
-                            {
-                                // Need to handle FPS drops
-                            }
-                        }
-                    }
+                    RecordUsingFFmpegCLI();
                 }
-                finally
+                else
                 {
-                    imgCache.Finish();
+                    RecordUsingCache();
                 }
             }
 
             IsRecording = false;
         }
 
+        private void RecordUsingFFmpegCLI()
+        {
+            ffMpegCli = new FFmpegCLIHelper(Options);
+            ffMpegCli.Record();
+            ffMpegCli.ListDevices();
+        }
+
+        private void RecordUsingCache()
+        {
+            try
+            {
+                for (int i = 0; !stopRequest && (frameCount == 0 || i < frameCount); i++)
+                {
+                    Stopwatch timer = Stopwatch.StartNew();
+
+                    Image img = Screenshot.CaptureRectangle(CaptureRectangle);
+                    //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
+
+                    imgCache.AddImageAsync(img);
+
+                    if (!stopRequest && (frameCount == 0 || i + 1 < frameCount))
+                    {
+                        int sleepTime = delay - (int)timer.ElapsedMilliseconds;
+
+                        if (sleepTime > 0)
+                        {
+                            Thread.Sleep(sleepTime);
+                        }
+                        else if (sleepTime < 0)
+                        {
+                            // Need to handle FPS drops
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                imgCache.Finish();
+            }
+        }
+
         public void StopRecording()
         {
             stopRequest = true;
+
+            if (ffMpegCli != null)
+            {
+                ffMpegCli.Close();
+            }
         }
 
         public void SaveAsGIF(string path, GIFQuality quality)
