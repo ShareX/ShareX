@@ -12,16 +12,19 @@ namespace HelpersLib
     {
         private Process cli = new Process();
 
+        public bool SwapStdErrAndStdOut { get; set; }
         public StringBuilder Output = new StringBuilder();
         public StringBuilder Errors = new StringBuilder();
 
         public delegate void ErrorDataReceivedHandler();
         public event ErrorDataReceivedHandler ErrorDataReceived;
 
-        public virtual void Open(string cliPath, string args = null)
+        public virtual void Open(string cliPath, string args = null, bool swapStdErrAndStdOut = false)
         {
             if (File.Exists(cliPath))
             {
+                SwapStdErrAndStdOut = swapStdErrAndStdOut;
+
                 ProcessStartInfo psi = new ProcessStartInfo(cliPath);
                 psi.UseShellExecute = false;
                 psi.ErrorDialog = false;
@@ -32,8 +35,14 @@ namespace HelpersLib
                 psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
                 psi.Arguments = args;
 
-                cli.OutputDataReceived += (sender, e) => { if (e.Data != null) { Output.AppendLine(e.Data); } };
-                cli.ErrorDataReceived += (sender, e) => { if (e.Data == null) { Errors.AppendLine(e.Data); } };
+                if (swapStdErrAndStdOut)
+                {
+                    cli.ErrorDataReceived += (sender, e) => { if (e.Data != null) { Output.AppendLine(e.Data); } };
+                }
+                else
+                {
+                    cli.ErrorDataReceived += (sender, e) => { if (e.Data != null) { Errors.AppendLine(e.Data); } };
+                }
 
                 cli.EnableRaisingEvents = true;
                 cli.StartInfo = psi;
@@ -42,13 +51,11 @@ namespace HelpersLib
                 Console.WriteLine("CLI Path: " + cliPath);
                 Console.WriteLine("CLI Args: " + psi.Arguments);
 
-                cli.BeginOutputReadLine();
                 cli.BeginErrorReadLine();
 
-                System.Windows.Forms.MessageBox.Show(Output.ToString());
-                System.Windows.Forms.MessageBox.Show(Errors.ToString());
-
                 cli.WaitForExit();
+
+                Console.WriteLine(Output.ToString());
             }
         }
 
@@ -67,7 +74,7 @@ namespace HelpersLib
 
         public virtual void OnErrorDataReceived()
         {
-            if (ErrorDataReceived != null)
+            if (!SwapStdErrAndStdOut && ErrorDataReceived != null)
             {
                 ErrorDataReceived();
             }

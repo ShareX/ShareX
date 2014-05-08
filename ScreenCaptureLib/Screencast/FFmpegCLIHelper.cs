@@ -63,7 +63,7 @@ namespace ScreenCaptureLib
             }
             args.Append(string.Format(" -c:v libx264 -crf 23 -preset medium -pix_fmt yuv420p -y \"{0}\"", Options.OutputPath));
 
-            Open(Options.FFmpeg.CLIPath, args.ToString());
+            Open(Options.FFmpeg.CLIPath, args.ToString(), true);
         }
 
         public void ListDevices()
