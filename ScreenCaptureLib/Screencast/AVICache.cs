@@ -25,20 +25,36 @@
 
 using HelpersLib;
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 
-namespace HelpersLib
+namespace ScreenCaptureLib
 {
-    public class AVIOptions
+    public class AVICache : ImageCache
     {
-        public string OutputPath;
-        public AVICOMPRESSOPTIONS CompressOptions;
-        public int FPS;
-        public Size Size;
-        public bool ShowOptionsDialog;
-        public IntPtr ParentWindow;
+        private AVIWriter aviWriter;
+
+        public AVICache(AVIOptions options)
+        {
+            Options = options;
+            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+            aviWriter = new AVIWriter(options);
+        }
+
+        protected override void WriteFrame(Image img)
+        {
+            aviWriter.AddFrame((Bitmap)img);
+        }
+
+        public override void Dispose()
+        {
+            if (aviWriter != null)
+            {
+                aviWriter.Dispose();
+            }
+
+            base.Dispose();
+        }
     }
 }

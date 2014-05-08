@@ -111,7 +111,7 @@
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.chkRunScreencastCLI = new System.Windows.Forms.CheckBox();
             this.lblScreenRecorderCLI = new System.Windows.Forms.Label();
-            this.btnScreenRecorderAVIOptions = new System.Windows.Forms.Button();
+            this.btnScreenRecorderOptions = new System.Windows.Forms.Button();
             this.btnEncoderConfig = new System.Windows.Forms.Button();
             this.cboEncoder = new System.Windows.Forms.ComboBox();
             this.nudScreenRecorderDuration = new System.Windows.Forms.NumericUpDown();
@@ -1110,7 +1110,7 @@
             // 
             this.tpScreenRecorder.Controls.Add(this.chkRunScreencastCLI);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderCLI);
-            this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderAVIOptions);
+            this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderOptions);
             this.tpScreenRecorder.Controls.Add(this.btnEncoderConfig);
             this.tpScreenRecorder.Controls.Add(this.cboEncoder);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecorderDuration);
@@ -1151,13 +1151,13 @@
             // 
             // btnScreenRecorderAVIOptions
             // 
-            this.btnScreenRecorderAVIOptions.Location = new System.Drawing.Point(304, 11);
-            this.btnScreenRecorderAVIOptions.Name = "btnScreenRecorderAVIOptions";
-            this.btnScreenRecorderAVIOptions.Size = new System.Drawing.Size(80, 23);
-            this.btnScreenRecorderAVIOptions.TabIndex = 12;
-            this.btnScreenRecorderAVIOptions.Text = "AVI options...";
-            this.btnScreenRecorderAVIOptions.UseVisualStyleBackColor = true;
-            this.btnScreenRecorderAVIOptions.Click += new System.EventHandler(this.btnScreenRecorderAVIOptions_Click);
+            this.btnScreenRecorderOptions.Location = new System.Drawing.Point(320, 11);
+            this.btnScreenRecorderOptions.Name = "btnScreenRecorderAVIOptions";
+            this.btnScreenRecorderOptions.Size = new System.Drawing.Size(64, 23);
+            this.btnScreenRecorderOptions.TabIndex = 12;
+            this.btnScreenRecorderOptions.Text = "Options...";
+            this.btnScreenRecorderOptions.UseVisualStyleBackColor = true;
+            this.btnScreenRecorderOptions.Click += new System.EventHandler(this.btnScreenRecorderOptions_Click);
             // 
             // btnEncoderConfig
             // 
@@ -1249,7 +1249,7 @@
             this.cbScreenRecorderOutput.FormattingEnabled = true;
             this.cbScreenRecorderOutput.Location = new System.Drawing.Point(64, 12);
             this.cbScreenRecorderOutput.Name = "cbScreenRecorderOutput";
-            this.cbScreenRecorderOutput.Size = new System.Drawing.Size(232, 21);
+            this.cbScreenRecorderOutput.Size = new System.Drawing.Size(248, 21);
             this.cbScreenRecorderOutput.TabIndex = 1;
             this.cbScreenRecorderOutput.SelectedIndexChanged += new System.EventHandler(this.cbScreenRecorderOutput_SelectedIndexChanged);
             // 
@@ -1949,7 +1949,7 @@
         private System.Windows.Forms.Label lblThumbnailNamePreview;
         private System.Windows.Forms.CheckBox cbThumbnailIfSmaller;
         private System.Windows.Forms.CheckBox cbClipboardUploadAutoIndexFolder;
-        private System.Windows.Forms.Button btnScreenRecorderAVIOptions;
+        private System.Windows.Forms.Button btnScreenRecorderOptions;
         private System.Windows.Forms.Label lblScreenRecorderCLI;
         private System.Windows.Forms.CheckBox chkRunScreencastCLI;
         private System.Windows.Forms.CheckBox chkClipboardUploadContents;

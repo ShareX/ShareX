@@ -83,7 +83,7 @@ namespace ShareX
 
         public async void StartRecording(TaskSettings TaskSettings)
         {
-            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !FFmpegCache.HasDependencies())
+            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegNet && !FFmpegCache.HasDependencies())
             {
                 if (MessageBox.Show("FFmpeg files are not present. Would you like to download and install them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
@@ -141,7 +141,7 @@ namespace ShareX
                     await TaskEx.Run(() =>
                     {
                         if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                            TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg)
+                            TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegNet)
                         {
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi"));
                         }

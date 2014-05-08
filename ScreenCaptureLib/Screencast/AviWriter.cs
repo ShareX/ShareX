@@ -30,13 +30,14 @@
 // Copyright © AForge.NET, 2007-2011
 // contacts@aforgenet.com
 
+using HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace HelpersLib
+namespace ScreenCaptureLib
 {
     /// <summary>
     /// AVI files writing using Video for Windows interface.

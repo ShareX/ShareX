@@ -52,6 +52,7 @@
       <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Threading, Version=1.0.2856.102, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -63,7 +64,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
-    <Compile Include="FFmpegCache.cs" />
+    <Compile Include="Screencast\FFmpegOptions.cs" />
+    <Compile Include="Screencast\ScreencastOptions.cs" />
+    <Compile Include="Screencast\AVIOptions.cs" />
+    <Compile Include="Screencast\AviWriter.cs" />
+    <Compile Include="Screencast\FFmpegCache.cs" />
+    <Compile Include="Screencast\FFmpegOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screencast\FFmpegOptionsForm.Designer.cs">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RectangleLight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +87,7 @@
     <Compile Include="Forms\Surface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageCache.cs" />
+    <Compile Include="Screencast\ImageCache.cs" />
     <Compile Include="LocationInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -112,9 +123,9 @@
     <Compile Include="RegionHelpers\ResizeManager.cs" />
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
     <Compile Include="RegionHelpers\SurfaceOptions.cs" />
-    <Compile Include="ScreenRecorder.cs" />
-    <Compile Include="HardDiskCache.cs" />
-    <Compile Include="AVICache.cs" />
+    <Compile Include="Screencast\ScreenRecorder.cs" />
+    <Compile Include="Screencast\HardDiskCache.cs" />
+    <Compile Include="Screencast\AVICache.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screenshot_Transparent.cs" />
@@ -138,6 +149,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

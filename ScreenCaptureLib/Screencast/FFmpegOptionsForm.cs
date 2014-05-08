@@ -25,36 +25,35 @@
 
 using HelpersLib;
 using System;
-using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using System.Threading.Tasks;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public class AVICache : ImageCache
+    public partial class FFmpegOptionsForm : Form
     {
-        private AVIWriter aviWriter;
-
-        public AVICache(AVIOptions options)
+        public FFmpegOptionsForm(FFmpegOptions options)
         {
-            Options = options;
-            Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
-            aviWriter = new AVIWriter(Options);
+            InitializeComponent();
+            this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
+            this.Icon = ShareXResources.Icon;
         }
 
-        protected override void WriteFrame(Image img)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            aviWriter.AddFrame((Bitmap)img);
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
-        public override void Dispose()
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (aviWriter != null)
-            {
-                aviWriter.Dispose();
-            }
-
-            base.Dispose();
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

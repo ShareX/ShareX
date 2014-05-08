@@ -227,8 +227,10 @@ namespace HelpersLib
         GIF,
         [Description("AVI via Video Compression Manager (VCM)")]
         AVI,
+        [Description("FFmpeg CLI")]
+        FFmpegCLI,
         [Description("AVI via AForge.NET FFmpeg")]
-        FFmpeg,
+        FFmpegNet,
     }
 
     public enum DownloaderFormStatus

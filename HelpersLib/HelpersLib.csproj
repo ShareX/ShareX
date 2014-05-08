@@ -77,8 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AVIOptions.cs" />
-    <Compile Include="AviWriter.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="ColorMatrixManager.cs" />
     <Compile Include="Colors\CMYK.cs" />

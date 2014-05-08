@@ -43,7 +43,7 @@ namespace ScreenCaptureLib
 
         private VideoFileWriter ffmpegWriter;
 
-        public FFmpegCache(AVIOptions options)
+        public FFmpegCache(FFmpegOptions options)
         {
             Options = options;
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);

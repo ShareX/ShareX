@@ -88,7 +88,7 @@ namespace ScreenCaptureLib
 
         public ScreenRecordOutput OutputType { get; private set; }
 
-        public AVIOptions Options { get; set; }
+        public ScreencastOptions Options { get; set; }
 
         public delegate void ProgressEventHandler(int progress);
 
@@ -113,9 +113,8 @@ namespace ScreenCaptureLib
             CachePath = cachePath;
             OutputType = outputType;
 
-            Options = new AVIOptions
+            Options = new ScreencastOptions()
             {
-                CompressOptions = compressOptions,
                 FPS = FPS,
                 OutputPath = CachePath,
                 Size = CaptureRectangle.Size
@@ -124,13 +123,17 @@ namespace ScreenCaptureLib
             switch (OutputType)
             {
                 case ScreenRecordOutput.AVI:
-                    imgCache = new AVICache(Options);
+                    AVIOptions aviOptions = Options as AVIOptions;
+                    aviOptions.CompressOptions = compressOptions;
+                    imgCache = new AVICache(aviOptions);
                     break;
-                case ScreenRecordOutput.FFmpeg:
-                    imgCache = new FFmpegCache(Options);
+                case ScreenRecordOutput.FFmpegNet:
+                    FFmpegOptions ffMpegOptions = Options as FFmpegOptions;
+                    ffMpegOptions.BitRate = 1000;
+                    imgCache = new FFmpegCache(ffMpegOptions);
                     break;
                 case ScreenRecordOutput.GIF:
-                    imgCache = new HardDiskCache(Options);
+                    imgCache = new HardDiskCache(Options as AVIOptions);
                     break;
             }
         }
