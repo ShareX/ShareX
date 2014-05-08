@@ -1,4 +1,29 @@
-﻿using System;
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (C) 2008-2014 ShareX Developers
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -10,81 +35,90 @@ namespace HelpersLib
 {
     public abstract class ExternalCLIManager : IDisposable
     {
-        private Process cli = new Process();
+        public event DataReceivedEventHandler OutputDataReceived;
+        public event DataReceivedEventHandler ErrorDataReceived;
 
-        public bool SwapStdErrAndStdOut { get; set; }
-        public StringBuilder Output = new StringBuilder();
-        public StringBuilder Errors = new StringBuilder();
+        public StringBuilder Output { get; private set; }
+        public StringBuilder Errors { get; private set; }
 
-        public delegate void ErrorDataReceivedHandler();
-        public event ErrorDataReceivedHandler ErrorDataReceived;
+        private Process process = new Process();
 
-        public virtual void Open(string cliPath, string args = null, bool swapStdErrAndStdOut = false)
+        public virtual int Open(string cliPath, string args = null)
         {
             if (File.Exists(cliPath))
             {
-                SwapStdErrAndStdOut = swapStdErrAndStdOut;
+                Output = new StringBuilder();
+                Errors = new StringBuilder();
 
                 ProcessStartInfo psi = new ProcessStartInfo(cliPath);
                 psi.UseShellExecute = false;
-                psi.ErrorDialog = false;
                 psi.CreateNoWindow = true;
                 psi.RedirectStandardInput = true;
-                psi.RedirectStandardError = true;
                 psi.RedirectStandardOutput = true;
-                psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
+                psi.RedirectStandardError = true;
                 psi.Arguments = args;
+                psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
 
-                if (swapStdErrAndStdOut)
+                process.EnableRaisingEvents = true;
+                process.OutputDataReceived += cli_OutputDataReceived;
+                process.ErrorDataReceived += cli_ErrorDataReceived;
+                process.StartInfo = psi;
+                process.Start();
+                process.BeginErrorReadLine();
+                process.WaitForExit();
+                return process.ExitCode;
+            }
+
+            return -1;
+        }
+
+        private void cli_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                Output.AppendLine(e.Data);
+
+                if (OutputDataReceived != null)
                 {
-                    cli.ErrorDataReceived += (sender, e) => { if (e.Data != null) { Output.AppendLine(e.Data); } };
+                    OutputDataReceived(sender, e);
                 }
-                else
-                {
-                    cli.ErrorDataReceived += (sender, e) => { if (e.Data != null) { Errors.AppendLine(e.Data); } };
-                }
-
-                cli.EnableRaisingEvents = true;
-                cli.StartInfo = psi;
-                cli.Start();
-
-                Console.WriteLine("CLI Path: " + cliPath);
-                Console.WriteLine("CLI Args: " + psi.Arguments);
-
-                cli.BeginErrorReadLine();
-
-                cli.WaitForExit();
-
-                Console.WriteLine(Output.ToString());
             }
         }
 
-        public void SendCommand(string command)
+        private void cli_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
-            if (cli != null)
+            if (e.Data != null)
             {
-                cli.StandardInput.WriteLine(command);
+                Errors.AppendLine(e.Data);
+
+                if (ErrorDataReceived != null)
+                {
+                    ErrorDataReceived(sender, e);
+                }
+            }
+        }
+
+        public void WriteInput(string input)
+        {
+            if (process != null && process.StartInfo != null && process.StartInfo.RedirectStandardInput)
+            {
+                process.StandardInput.WriteLine(input);
             }
         }
 
         public virtual void Close()
         {
-            cli.CloseMainWindow();
-        }
-
-        public virtual void OnErrorDataReceived()
-        {
-            if (!SwapStdErrAndStdOut && ErrorDataReceived != null)
+            if (process != null)
             {
-                ErrorDataReceived();
+                process.CloseMainWindow();
             }
         }
 
         public void Dispose()
         {
-            if (cli != null)
+            if (process != null)
             {
-                cli.Dispose();
+                process.Dispose();
             }
         }
     }

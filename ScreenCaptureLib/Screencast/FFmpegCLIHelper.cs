@@ -36,24 +36,29 @@ namespace ScreenCaptureLib
 {
     public class FFmpegCLIHelper : CLIEncoder
     {
-        public string FileName = "ffmpeg.exe";
         public ScreencastOptions Options { get; private set; }
 
         public FFmpegCLIHelper(ScreencastOptions options)
         {
             Options = options;
 
-            if (string.IsNullOrEmpty(options.FFmpeg.CLIPath))
+            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath))
             {
-                options.FFmpeg.CLIPath = Path.Combine(Application.StartupPath, FileName);
+                Options.FFmpeg.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
             }
 
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
 
-            this.ErrorDataReceived += Close;
+            // It is actually output data
+            ErrorDataReceived += FFmpegCLIHelper_ErrorDataReceived;
         }
 
-        public override void Record()
+        private void FFmpegCLIHelper_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            //DebugHelper.WriteLine(e.Data);
+        }
+
+        public override bool Record()
         {
             StringBuilder args = new StringBuilder();
             args.Append("-f dshow -i video=\"screen-capture-recorder\"");
@@ -63,17 +68,18 @@ namespace ScreenCaptureLib
             }
             args.Append(string.Format(" -c:v libx264 -crf 23 -preset medium -pix_fmt yuv420p -y \"{0}\"", Options.OutputPath));
 
-            Open(Options.FFmpeg.CLIPath, args.ToString(), true);
+            int result = Open(Options.FFmpeg.CLIPath, args.ToString());
+            return result == 0;
         }
 
         public void ListDevices()
         {
-            SendCommand("-list_devices true -f dshow -i dummy");
+            WriteInput("-list_devices true -f dshow -i dummy");
         }
 
         public override void Close()
         {
-            SendCommand("q");
+            WriteInput("q");
         }
     }
 }
