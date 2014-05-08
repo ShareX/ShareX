@@ -224,24 +224,6 @@ namespace UploadersLib
 
             txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserAPIKey;
 
-            //Pushbullet
-
-            txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
-
-            if (Config.PushbulletSettings.DeviceList.Count > 0)
-            {
-                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name));
-
-                if (Config.PushbulletSettings.DeviceList.IsValidIndex(Config.PushbulletSettings.SelectedDevice))
-                {
-                    cboPushbulletDevices.SelectedIndex = Config.PushbulletSettings.SelectedDevice;
-                }
-                else
-                {
-                    cboPushbulletDevices.SelectedIndex = 0;
-                }
-            }
-
             // Gist
 
             atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
@@ -423,6 +405,24 @@ namespace UploadersLib
             // Mega
 
             MegaConfigureTab(false);
+
+            //Pushbullet
+
+            txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
+
+            if (Config.PushbulletSettings.DeviceList.Count > 0)
+            {
+                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name ?? "Invalid device name"));
+
+                if (Config.PushbulletSettings.DeviceList.IsValidIndex(Config.PushbulletSettings.SelectedDevice))
+                {
+                    cboPushbulletDevices.SelectedIndex = Config.PushbulletSettings.SelectedDevice;
+                }
+                else
+                {
+                    cboPushbulletDevices.SelectedIndex = 0;
+                }
+            }
 
             // Amazon S3
 

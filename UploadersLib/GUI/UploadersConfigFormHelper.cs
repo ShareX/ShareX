@@ -1135,7 +1135,7 @@ namespace UploadersLib
 
                 Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
                 {
-                    cboPushbulletDevices.Items.Add(pbDevice.Name);
+                    cboPushbulletDevices.Items.Add(pbDevice.Name ?? "Invalid device name");
                 });
 
                 cboPushbulletDevices.SelectedIndex = 0;
