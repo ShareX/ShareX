@@ -160,8 +160,8 @@ namespace ScreenCaptureLib
             // close previous file
             Close();
 
-            this.width = Options.Size.Width;
-            this.height = Options.Size.Height;
+            this.width = Options.CaptureArea.Width;
+            this.height = Options.CaptureArea.Height;
 
             // check width and height
             if (((width & 1) != 0) || ((height & 1) != 0))

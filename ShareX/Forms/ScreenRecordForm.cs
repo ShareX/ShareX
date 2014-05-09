@@ -136,12 +136,13 @@ namespace ShareX
 
                         ScreencastOptions options = new ScreencastOptions()
                         {
-                            Size = CaptureRectangle.Size,
+                            CaptureArea = CaptureRectangle,
                             FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                             OutputPath = path,
                             Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                             AVI = TaskSettings.CaptureSettings.AVIOptions,
                             FFmpegCLI = TaskSettings.CaptureSettings.FFmpegCLIOptions,
+                            DrawCursor = TaskSettings.CaptureSettings.ShowCursor
                         };
 
                         screenRecorder = new ScreenRecorder(options, CaptureRectangle, TaskSettings.CaptureSettings.ScreenRecordOutput);

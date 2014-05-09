@@ -663,7 +663,7 @@ namespace ShareX
                         FPS = 10,
                         OutputPath = Program.ScreenRecorderCacheFilePath,
                         ParentWindow = this.Handle,
-                        Size = new Size(100, 100)
+                        CaptureArea = new Rectangle(0, 0, 100, 100)
                     };
 
                     try

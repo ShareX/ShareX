@@ -145,7 +145,7 @@ namespace ScreenCaptureLib
 
                 if (OutputType == ScreenRecordOutput.FFmpegCLI)
                 {
-                    ffMpegCli.Record(CaptureRectangle);
+                    ffMpegCli.Record();
                 }
                 else
                 {

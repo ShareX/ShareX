@@ -59,10 +59,8 @@ namespace ScreenCaptureLib
             //DebugHelper.WriteLine(e.Data);
         }
 
-        public bool Record(Rectangle captureRectangle)
+        public bool Record()
         {
-            StringBuilder args = new StringBuilder();
-
             /*
             // https://github.com/rdp/screen-capture-recorder-to-video-windows-free configuration section
             string dshowRegistryPath = "Software\\screen-capture-recorder";
@@ -82,9 +80,11 @@ namespace ScreenCaptureLib
             args.AppendFormat("video=\"{0}\" ", "screen-capture-recorder");
             */
 
+            StringBuilder args = new StringBuilder();
+
             // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-            args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -i desktop ",
-                Options.FPS, captureRectangle.X, captureRectangle.Y, captureRectangle.Width, captureRectangle.Height, 1);
+            args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
+                Options.FPS, Options.CaptureArea.X, Options.CaptureArea.Y, Options.CaptureArea.Width, Options.CaptureArea.Height, Options.DrawCursor ? 1 : 0, 0);
 
             args.AppendFormat("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString());
 
@@ -110,7 +110,10 @@ namespace ScreenCaptureLib
             }
 
             // -pix_fmt yuv420p required otherwise can't stream in Chrome
-            args.Append("-pix_fmt yuv420p ");
+            if (Options.FFmpegCLI.VideoCodec == FFmpegVideoCodec.libx264)
+            {
+                args.Append("-pix_fmt yuv420p ");
+            }
 
             if (Options.Duration > 0)
             {
