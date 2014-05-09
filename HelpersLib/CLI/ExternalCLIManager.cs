@@ -43,21 +43,23 @@ namespace HelpersLib
 
         private Process process = new Process();
 
-        public virtual int Open(string cliPath, string args = null)
+        public virtual int Open(string path, string args = null)
         {
-            if (File.Exists(cliPath))
+            DebugHelper.WriteLine("CLI path: \"{0}\" args: \"{1}\"", path, args);
+
+            if (File.Exists(path))
             {
                 Output = new StringBuilder();
                 Errors = new StringBuilder();
 
-                ProcessStartInfo psi = new ProcessStartInfo(cliPath);
+                ProcessStartInfo psi = new ProcessStartInfo(path);
                 psi.UseShellExecute = false;
                 psi.CreateNoWindow = true;
                 psi.RedirectStandardInput = true;
                 psi.RedirectStandardOutput = true;
                 psi.RedirectStandardError = true;
                 psi.Arguments = args;
-                psi.WorkingDirectory = Path.GetDirectoryName(cliPath);
+                psi.WorkingDirectory = Path.GetDirectoryName(path);
 
                 process.EnableRaisingEvents = true;
                 process.OutputDataReceived += cli_OutputDataReceived;

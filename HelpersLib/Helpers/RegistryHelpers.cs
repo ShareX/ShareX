@@ -125,23 +125,23 @@ namespace HelpersLib
 
         public static void RegisterShellContextMenu()
         {
-            CreateRegistryKey(ShellExtMenuFiles, ShellExtDesc);
-            AddRegistryValue(ShellExtMenuFiles, "Icon", ShellExtIcon);
-            CreateRegistryKey(ShellExtMenuFilesCmd, ShellExtPath);
+            CreateRegistry(ShellExtMenuFiles, ShellExtDesc);
+            CreateRegistry(ShellExtMenuFiles, "Icon", ShellExtIcon);
+            CreateRegistry(ShellExtMenuFilesCmd, ShellExtPath);
 
-            CreateRegistryKey(ShellExtMenuDirectory, ShellExtDesc);
-            AddRegistryValue(ShellExtMenuDirectory, "Icon", ShellExtIcon);
-            CreateRegistryKey(ShellExtMenuDirectoryCmd, ShellExtPath);
+            CreateRegistry(ShellExtMenuDirectory, ShellExtDesc);
+            CreateRegistry(ShellExtMenuDirectory, "Icon", ShellExtIcon);
+            CreateRegistry(ShellExtMenuDirectoryCmd, ShellExtPath);
         }
 
         public static void UnregisterShellContextMenu()
         {
-            RemoveRegistryKey(ShellExtMenuFilesCmd);
-            RemoveRegistryKey(ShellExtMenuFiles);
-            RemoveRegistryKey(ShellExtMenuDirectoryCmd);
-            RemoveRegistryKey(ShellExtMenuDirectory);
-            RemoveRegistryKey(ShellExtMenuFoldersCmd);
-            RemoveRegistryKey(ShellExtMenuFolders);
+            RemoveRegistry(ShellExtMenuFilesCmd);
+            RemoveRegistry(ShellExtMenuFiles);
+            RemoveRegistry(ShellExtMenuDirectoryCmd);
+            RemoveRegistry(ShellExtMenuDirectory);
+            RemoveRegistry(ShellExtMenuFoldersCmd);
+            RemoveRegistry(ShellExtMenuFolders);
         }
 
         public static ExternalProgram FindProgram(string name, string filename)
@@ -192,18 +192,39 @@ namespace HelpersLib
             return null;
         }
 
-        private static void CreateRegistryKey(string path, string value, string name = null)
+        public static void CreateRegistry(string path, string value)
+        {
+            CreateRegistry(path, null, value);
+        }
+
+        public static void CreateRegistry(string path, string name, string value)
         {
             using (RegistryKey rk = Registry.CurrentUser.CreateSubKey(path))
             {
                 if (rk != null)
                 {
-                    rk.SetValue(name, value);
+                    rk.SetValue(name, value, RegistryValueKind.String);
                 }
             }
         }
 
-        private static void RemoveRegistryKey(string path)
+        public static void CreateRegistry(string path, int value)
+        {
+            CreateRegistry(path, null, value);
+        }
+
+        public static void CreateRegistry(string path, string name, int value)
+        {
+            using (RegistryKey rk = Registry.CurrentUser.CreateSubKey(path))
+            {
+                if (rk != null)
+                {
+                    rk.SetValue(name, value, RegistryValueKind.DWord);
+                }
+            }
+        }
+
+        public static void RemoveRegistry(string path)
         {
             using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(path))
             {
@@ -214,18 +235,7 @@ namespace HelpersLib
             }
         }
 
-        private static void AddRegistryValue(string path, string name, string value)
-        {
-            using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(path, true))
-            {
-                if (rk != null)
-                {
-                    rk.SetValue(name, value);
-                }
-            }
-        }
-
-        private static bool CheckRegistry(string path, string name = null, string value = null)
+        public static bool CheckRegistry(string path, string name = null, string value = null)
         {
             string registryValue = GetRegistryValue(path, name);
 
@@ -237,7 +247,7 @@ namespace HelpersLib
             return false;
         }
 
-        private static string GetRegistryValue(string path, string name = null)
+        public static string GetRegistryValue(string path, string name = null)
         {
             using (RegistryKey rk = Registry.CurrentUser.OpenSubKey(path))
             {

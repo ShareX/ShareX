@@ -27,6 +27,7 @@ using HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,7 @@ using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public class FFmpegCLIHelper : CLIEncoder
+    public class FFmpegCLIHelper : ExternalCLIManager
     {
         public ScreencastOptions Options { get; private set; }
 
@@ -50,23 +51,54 @@ namespace ScreenCaptureLib
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
 
             // It is actually output data
-            ErrorDataReceived += FFmpegCLIHelper_ErrorDataReceived;
+            ErrorDataReceived += FFmpegCLIHelper_OutputDataReceived;
         }
 
-        private void FFmpegCLIHelper_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        private void FFmpegCLIHelper_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
             //DebugHelper.WriteLine(e.Data);
         }
 
-        public override bool Record()
+        public bool Record(Rectangle captureRectangle)
         {
+            // https://github.com/rdp/screen-capture-recorder-to-video-windows-free configuration section
+            string dshowRegistryPath = "Software\\screen-capture-recorder";
+            RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_x", captureRectangle.X);
+            RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_y", captureRectangle.Y);
+            RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_width", captureRectangle.Width);
+            RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_height", captureRectangle.Height);
+
             StringBuilder args = new StringBuilder();
-            args.Append("-f dshow -i video=\"screen-capture-recorder\"");
+
             if (Options.FPS > 0)
             {
-                args.Append(string.Format(" -r {0}", Options.FPS));
+                // input FPS
+                args.AppendFormat("-r {0} ", Options.FPS);
             }
-            args.Append(string.Format(" -c:v libx264 -crf 23 -preset medium -pix_fmt yuv420p -y \"{0}\"", Options.OutputPath));
+
+            args.Append("-f dshow -i ");
+
+            // dshow audio/video device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+            //args.AppendFormat("audio=\"{0}\":", "virtual-audio-capturer");
+            args.AppendFormat("video=\"{0}\" ", "screen-capture-recorder");
+
+            if (Options.FPS > 0)
+            {
+                // output FPS
+                args.AppendFormat("-r {0} ", Options.FPS);
+            }
+
+            // x264 encoder
+            args.Append("-c:v libx264 ");
+
+            // TODO: Add crf, preset etc. to options
+            // https://trac.ffmpeg.org/wiki/x264EncodingGuide
+            args.AppendFormat("-crf {0} ", 23);
+            args.AppendFormat("-preset {0} ", "medium");
+
+            // -pix_fmt yuv420p required otherwise can't stream in Chrome
+            // -y for overwrite file
+            args.AppendFormat("-pix_fmt yuv420p -y \"{0}\"", Options.OutputPath);
 
             int result = Open(Options.FFmpeg.CLIPath, args.ToString());
             return result == 0;

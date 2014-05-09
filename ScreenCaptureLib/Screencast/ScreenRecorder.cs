@@ -159,7 +159,7 @@ namespace ScreenCaptureLib
         private void RecordUsingFFmpegCLI()
         {
             ffMpegCli = new FFmpegCLIHelper(Options);
-            ffMpegCli.Record();
+            ffMpegCli.Record(CaptureRectangle);
         }
 
         private void RecordUsingCache()
