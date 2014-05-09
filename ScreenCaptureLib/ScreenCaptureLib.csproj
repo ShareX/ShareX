@@ -41,12 +41,6 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge.Video">
-      <HintPath>..\Lib\AForge.Video.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Video.FFMPEG">
-      <HintPath>..\Lib\AForge.Video.FFMPEG.dll</HintPath>
-    </Reference>
     <Reference Include="AsyncBridge.Net35, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b3b1c0202c0d6a87, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
@@ -73,13 +67,6 @@
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
     <Compile Include="Screencast\AviWriter.cs" />
-    <Compile Include="Screencast\FFmpegCache.cs" />
-    <Compile Include="Screencast\FFmpegOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screencast\FFmpegOptionsForm.Designer.cs">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\RectangleLight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegCLIOptionsForm.resx">
       <DependentUpon>FFmpegCLIOptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

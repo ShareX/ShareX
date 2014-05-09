@@ -647,7 +647,6 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
             btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegNet ||
                 TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
         }
@@ -683,12 +682,6 @@ namespace ShareX
                     break;
                 case ScreenRecordOutput.FFmpegCLI:
                     using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(TaskSettings.CaptureSettings.FFmpegCLIOptions))
-                    {
-                        form.ShowDialog();
-                    }
-                    break;
-                case ScreenRecordOutput.FFmpegNet:
-                    using (FFmpegOptionsForm form = new FFmpegOptionsForm(TaskSettings.CaptureSettings.FFmpegNetOptions))
                     {
                         form.ShowDialog();
                     }

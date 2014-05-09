@@ -280,7 +280,6 @@ namespace ShareX
         public ScreenRecordOutput ScreenRecordOutput = ScreenRecordOutput.GIF;
         public AVIOptions AVIOptions = new AVIOptions();
         public FFmpegOptions FFmpegCLIOptions = new FFmpegOptions();
-        public FFmpegNetOptions FFmpegNetOptions = new FFmpegNetOptions();
 
         public int ScreenRecordFPS = 5;
         public bool ScreenRecordFixedDuration = true;

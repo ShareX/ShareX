@@ -44,7 +44,6 @@ namespace ScreenCaptureLib
         public AVIOptions AVI = new AVIOptions();
 
         public FFmpegOptions FFmpegCLI = new FFmpegOptions();
-        public FFmpegNetOptions FFmpegNet = new FFmpegNetOptions();
     }
 
     public class AVIOptions
@@ -72,17 +71,6 @@ namespace ScreenCaptureLib
             CRF = 23;
             qscale = 3;
             Extension = "mp4";
-        }
-    }
-
-    public class FFmpegNetOptions
-    {
-        public FFmpegNetVideoCodec VideoCodec { get; set; }
-        public int BitRate { get; set; }
-
-        public FFmpegNetOptions()
-        {
-            VideoCodec = FFmpegNetVideoCodec.MPEG4;
         }
     }
 }

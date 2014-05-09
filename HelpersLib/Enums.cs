@@ -229,8 +229,6 @@ namespace HelpersLib
         AVI,
         [Description("FFmpeg CLI")]
         FFmpegCLI,
-        [Description("AVI via AForge.NET FFmpeg")]
-        FFmpegNet,
     }
 
     public enum DownloaderFormStatus

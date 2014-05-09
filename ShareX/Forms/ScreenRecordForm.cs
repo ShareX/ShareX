@@ -83,25 +83,6 @@ namespace ShareX
 
         public async void StartRecording(TaskSettings TaskSettings)
         {
-            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegNet && !FFmpegCache.HasDependencies())
-            {
-                if (MessageBox.Show("FFmpeg files are not present. Would you like to download and install them?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("McoreD", "FFmpegNet");
-                    updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
-                    string downloadUrl = updateChecker.GetLatestDownloadURL();
-                    if (!string.IsNullOrEmpty(downloadUrl))
-                    {
-                        UpdateInfo updateInfo = new UpdateInfo() { DownloadURL = downloadUrl };
-                        using (UpdaterForm form = new UpdaterForm(updateInfo) { Proxy = ProxyInfo.Current.GetWebProxy() })
-                        {
-                            form.ShowDialog();
-                        }
-                    }
-                }
-                return;
-            }
-
             if (TaskSettings.CaptureSettings.RunScreencastCLI)
             {
                 if (!Program.Settings.VideoEncoders.IsValidIndex(TaskSettings.CaptureSettings.VideoEncoderSelected))
@@ -140,8 +121,7 @@ namespace ShareX
 
                     await TaskEx.Run(() =>
                     {
-                        if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                            TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegNet)
+                        if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI)
                         {
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi"));
                         }
@@ -162,7 +142,6 @@ namespace ShareX
                             Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                             AVI = TaskSettings.CaptureSettings.AVIOptions,
                             FFmpegCLI = TaskSettings.CaptureSettings.FFmpegCLIOptions,
-                            FFmpegNet = TaskSettings.CaptureSettings.FFmpegNetOptions
                         };
 
                         screenRecorder = new ScreenRecorder(options, CaptureRectangle, TaskSettings.CaptureSettings.ScreenRecordOutput);

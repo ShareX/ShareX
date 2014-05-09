@@ -124,9 +124,6 @@ namespace ScreenCaptureLib
                 case ScreenRecordOutput.FFmpegCLI:
                     ffMpegCli = new FFmpegCLIHelper(Options);
                     break;
-                case ScreenRecordOutput.FFmpegNet:
-                    imgCache = new FFmpegCache(Options);
-                    break;
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);
                     break;
