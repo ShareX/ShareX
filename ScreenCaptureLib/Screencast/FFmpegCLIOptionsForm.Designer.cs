@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegCLIOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
-            this.lblQuantizer = new System.Windows.Forms.Label();
+            this.lblCRF = new System.Windows.Forms.Label();
             this.nudCRF = new System.Windows.Forms.NumericUpDown();
             this.toolTipFFmpeg = new System.Windows.Forms.ToolTip(this.components);
             this.comboBoxExtension = new System.Windows.Forms.ComboBox();
@@ -41,30 +41,37 @@
             this.lblPreset = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.groupBoxH264 = new System.Windows.Forms.GroupBox();
+            this.groupBoxH263 = new System.Windows.Forms.GroupBox();
+            this.nudQscale = new System.Windows.Forms.NumericUpDown();
+            this.labelQscale = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).BeginInit();
+            this.groupBoxH264.SuspendLayout();
+            this.groupBoxH263.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             this.SuspendLayout();
             // 
             // lblExt
             // 
             this.lblExt.AutoSize = true;
-            this.lblExt.Location = new System.Drawing.Point(16, 112);
+            this.lblExt.Location = new System.Drawing.Point(264, 13);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
             this.lblExt.TabIndex = 11;
             this.lblExt.Text = "Extension:";
             // 
-            // lblQuantizer
+            // lblCRF
             // 
-            this.lblQuantizer.AutoSize = true;
-            this.lblQuantizer.Location = new System.Drawing.Point(16, 48);
-            this.lblQuantizer.Name = "lblQuantizer";
-            this.lblQuantizer.Size = new System.Drawing.Size(31, 13);
-            this.lblQuantizer.TabIndex = 13;
-            this.lblQuantizer.Text = "CRF:";
+            this.lblCRF.AutoSize = true;
+            this.lblCRF.Location = new System.Drawing.Point(8, 29);
+            this.lblCRF.Name = "lblCRF";
+            this.lblCRF.Size = new System.Drawing.Size(31, 13);
+            this.lblCRF.TabIndex = 13;
+            this.lblCRF.Text = "CRF:";
             // 
             // nudCRF
             // 
-            this.nudCRF.Location = new System.Drawing.Point(88, 40);
+            this.nudCRF.Location = new System.Drawing.Point(80, 24);
             this.nudCRF.Maximum = new decimal(new int[] {
             51,
             0,
@@ -89,7 +96,7 @@
             "mp4",
             "webm",
             "avi"});
-            this.comboBoxExtension.Location = new System.Drawing.Point(88, 104);
+            this.comboBoxExtension.Location = new System.Drawing.Point(336, 8);
             this.comboBoxExtension.Name = "comboBoxExtension";
             this.comboBoxExtension.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtension.TabIndex = 15;
@@ -99,7 +106,7 @@
             // lblCodec
             // 
             this.lblCodec.AutoSize = true;
-            this.lblCodec.Location = new System.Drawing.Point(16, 16);
+            this.lblCodec.Location = new System.Drawing.Point(24, 13);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(41, 13);
             this.lblCodec.TabIndex = 16;
@@ -109,7 +116,7 @@
             // 
             this.comboBoxCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCodec.FormattingEnabled = true;
-            this.comboBoxCodec.Location = new System.Drawing.Point(88, 8);
+            this.comboBoxCodec.Location = new System.Drawing.Point(96, 8);
             this.comboBoxCodec.Name = "comboBoxCodec";
             this.comboBoxCodec.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCodec.TabIndex = 17;
@@ -119,7 +126,7 @@
             // 
             this.comboBoxPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPreset.FormattingEnabled = true;
-            this.comboBoxPreset.Location = new System.Drawing.Point(88, 72);
+            this.comboBoxPreset.Location = new System.Drawing.Point(80, 56);
             this.comboBoxPreset.Name = "comboBoxPreset";
             this.comboBoxPreset.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPreset.TabIndex = 19;
@@ -128,7 +135,7 @@
             // lblPreset
             // 
             this.lblPreset.AutoSize = true;
-            this.lblPreset.Location = new System.Drawing.Point(16, 80);
+            this.lblPreset.Location = new System.Drawing.Point(8, 61);
             this.lblPreset.Name = "lblPreset";
             this.lblPreset.Size = new System.Drawing.Size(40, 13);
             this.lblPreset.TabIndex = 18;
@@ -136,7 +143,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(200, 184);
+            this.btnCancel.Location = new System.Drawing.Point(384, 184);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 21;
@@ -146,7 +153,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(120, 184);
+            this.btnOK.Location = new System.Drawing.Point(304, 184);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 20;
@@ -154,21 +161,77 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // groupBoxH264
+            // 
+            this.groupBoxH264.Controls.Add(this.nudCRF);
+            this.groupBoxH264.Controls.Add(this.lblCRF);
+            this.groupBoxH264.Controls.Add(this.lblPreset);
+            this.groupBoxH264.Controls.Add(this.comboBoxPreset);
+            this.groupBoxH264.Location = new System.Drawing.Point(16, 40);
+            this.groupBoxH264.Name = "groupBoxH264";
+            this.groupBoxH264.Size = new System.Drawing.Size(216, 96);
+            this.groupBoxH264.TabIndex = 22;
+            this.groupBoxH264.TabStop = false;
+            this.groupBoxH264.Text = "H.264 (x264, VP8 etc.)";
+            // 
+            // groupBoxH263
+            // 
+            this.groupBoxH263.Controls.Add(this.nudQscale);
+            this.groupBoxH263.Controls.Add(this.labelQscale);
+            this.groupBoxH263.Location = new System.Drawing.Point(248, 40);
+            this.groupBoxH263.Name = "groupBoxH263";
+            this.groupBoxH263.Size = new System.Drawing.Size(216, 96);
+            this.groupBoxH263.TabIndex = 23;
+            this.groupBoxH263.TabStop = false;
+            this.groupBoxH263.Text = "H.263 (DivX, XviD etc.)";
+            // 
+            // numericUpDown1
+            // 
+            this.nudQscale.Location = new System.Drawing.Point(88, 24);
+            this.nudQscale.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.nudQscale.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudQscale.Name = "numericUpDown1";
+            this.nudQscale.Size = new System.Drawing.Size(121, 20);
+            this.nudQscale.TabIndex = 16;
+            this.toolTipFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
+        " filesize.");
+            this.nudQscale.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
+            // 
+            // labelQscale
+            // 
+            this.labelQscale.AutoSize = true;
+            this.labelQscale.Location = new System.Drawing.Point(16, 29);
+            this.labelQscale.Name = "labelQscale";
+            this.labelQscale.Size = new System.Drawing.Size(41, 13);
+            this.labelQscale.TabIndex = 15;
+            this.labelQscale.Text = "qscale:";
+            // 
             // FFmpegCLIOptionsForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 218);
+            this.ClientSize = new System.Drawing.Size(480, 218);
+            this.Controls.Add(this.groupBoxH263);
+            this.Controls.Add(this.groupBoxH264);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.comboBoxPreset);
-            this.Controls.Add(this.lblPreset);
             this.Controls.Add(this.comboBoxCodec);
             this.Controls.Add(this.lblCodec);
             this.Controls.Add(this.comboBoxExtension);
-            this.Controls.Add(this.nudCRF);
-            this.Controls.Add(this.lblQuantizer);
             this.Controls.Add(this.lblExt);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -177,6 +240,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpegGUI";
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).EndInit();
+            this.groupBoxH264.ResumeLayout(false);
+            this.groupBoxH264.PerformLayout();
+            this.groupBoxH263.ResumeLayout(false);
+            this.groupBoxH263.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,7 +253,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblExt;
-        private System.Windows.Forms.Label lblQuantizer;
+        private System.Windows.Forms.Label lblCRF;
         private System.Windows.Forms.NumericUpDown nudCRF;
         private System.Windows.Forms.ToolTip toolTipFFmpeg;
         private System.Windows.Forms.ComboBox comboBoxExtension;
@@ -195,5 +263,9 @@
         private System.Windows.Forms.Label lblPreset;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.GroupBox groupBoxH264;
+        private System.Windows.Forms.GroupBox groupBoxH263;
+        private System.Windows.Forms.NumericUpDown nudQscale;
+        private System.Windows.Forms.Label labelQscale;
     }
 }

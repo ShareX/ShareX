@@ -147,7 +147,7 @@ namespace ShareX
                         }
                         else if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI)
                         {
-                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "mp4"));
+                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, TaskSettings.CaptureSettings.FFmpegCLIOptions.Extension));
                         }
                         else
                         {

@@ -33,10 +33,12 @@ namespace ScreenCaptureLib
 
             comboBoxExtension.Text = Options.Extension;
 
-            nudCRF.Value = Options.Quantizer;
+            nudCRF.Value = Options.CRF;
 
             comboBoxPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             comboBoxPreset.SelectedIndex = (int)Options.Preset;
+
+            nudQscale.Value = Options.qscale;
         }
 
         private void comboBoxCodec_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace ScreenCaptureLib
 
         private void nudCRF_ValueChanged(object sender, EventArgs e)
         {
-            Options.Quantizer = (int)nudCRF.Value;
+            Options.CRF = (int)nudCRF.Value;
         }
 
         private void comboBoxPreset_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,25 +64,8 @@ namespace ScreenCaptureLib
 
         public void UpdateUI()
         {
-            switch (Options.VideoCodec)
-            {
-                case FFmpegVideoCodec.mpeg4:
-                case FFmpegVideoCodec.libxvid:
-                    lblQuantizer.Text = "qscale";
-                    nudCRF.Minimum = 1;
-                    nudCRF.Maximum = 31;
-                    break;
-                case FFmpegVideoCodec.libx264:
-                    lblQuantizer.Text = "crf";
-                    nudCRF.Minimum = 0;
-                    nudCRF.Maximum = 51;
-                    break;
-                case FFmpegVideoCodec.libvpx:
-                    lblQuantizer.Text = "crf";
-                    nudCRF.Minimum = 4;
-                    nudCRF.Maximum = 63;
-                    break;
-            }
+            groupBoxH263.Enabled = Options.VideoCodec == FFmpegVideoCodec.libxvid || Options.VideoCodec == FFmpegVideoCodec.mpeg4;
+            groupBoxH264.Enabled = Options.VideoCodec == FFmpegVideoCodec.libx264 || Options.VideoCodec == FFmpegVideoCodec.libvpx;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -93,6 +78,11 @@ namespace ScreenCaptureLib
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void nudQscale_ValueChanged(object sender, EventArgs e)
+        {
+            Options.qscale = (int)nudQscale.Value;
         }
     }
 }

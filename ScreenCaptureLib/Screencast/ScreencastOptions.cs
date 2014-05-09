@@ -56,15 +56,20 @@ namespace ScreenCaptureLib
     {
         public string CLIPath { get; set; }
         public FFmpegVideoCodec VideoCodec { get; set; }
-        public FFmpegPreset Preset { get; set; }
-        public int Quantizer { get; set; }
         public string Extension { get; set; }
+
+        // H264
+        public FFmpegPreset Preset { get; set; }
+        public int CRF { get; set; }
+
+        // H263
+        public int qscale { get; set; }
 
         public FFmpegOptions()
         {
             VideoCodec = FFmpegVideoCodec.libx264;
             Preset = FFmpegPreset.medium;
-            Quantizer = 23;
+            CRF = 23;
             Extension = "mp4";
         }
     }

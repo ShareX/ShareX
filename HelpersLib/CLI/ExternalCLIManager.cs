@@ -45,7 +45,7 @@ namespace HelpersLib
 
         public virtual int Open(string path, string args = null)
         {
-            DebugHelper.WriteLine("CLI path: \"{0}\" args: \"{1}\"", path, args);
+            DebugHelper.WriteLine("CLI: \"{0}\" {1}", path, args);
 
             if (File.Exists(path))
             {
@@ -60,9 +60,6 @@ namespace HelpersLib
                 psi.RedirectStandardError = true;
                 psi.Arguments = args;
                 psi.WorkingDirectory = Path.GetDirectoryName(path);
-
-                Console.WriteLine("Path: " + path);
-                Console.WriteLine("Args: " + psi.Arguments);
 
                 process.EnableRaisingEvents = true;
                 process.OutputDataReceived += cli_OutputDataReceived;

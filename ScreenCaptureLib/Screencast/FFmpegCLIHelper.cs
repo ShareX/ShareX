@@ -85,22 +85,21 @@ namespace ScreenCaptureLib
 
             args.AppendFormat("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString());
 
-            // https://trac.ffmpeg.org/wiki/x264EncodingGuide
             switch (Options.FFmpegCLI.VideoCodec)
             {
-                case FFmpegVideoCodec.libx264:
-                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.Quantizer);
+                case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
+                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.CRF);
                     args.AppendFormat("-preset {0} ", Options.FFmpegCLI.Preset.ToString());
                     break;
-                case FFmpegVideoCodec.libvpx:
-                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.Quantizer);
+                case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
+                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.CRF);
                     break;
-                case FFmpegVideoCodec.libxvid:
-                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.Quantizer);
+                case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
+                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.qscale);
                     break;
                 case FFmpegVideoCodec.mpeg4:
                     args.Append("-vtag xvid ");
-                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.Quantizer);
+                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.qscale);
                     break;
             }
 
@@ -113,7 +112,7 @@ namespace ScreenCaptureLib
             }
 
             // -y for overwrite file
-            args.AppendFormat("-y \"{0}\"", Path.ChangeExtension(Options.OutputPath, Options.FFmpegCLI.Extension));
+            args.AppendFormat("-y \"{0}\"", Options.OutputPath);
 
             int result = Open(Options.FFmpegCLI.CLIPath, args.ToString());
             return result == 0;
