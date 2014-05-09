@@ -121,6 +121,9 @@ namespace ScreenCaptureLib
                 case ScreenRecordOutput.AVI:
                     imgCache = new AVICache(Options);
                     break;
+                case ScreenRecordOutput.FFmpegCLI:
+                    ffMpegCli = new FFmpegCLIHelper(Options);
+                    break;
                 case ScreenRecordOutput.FFmpegNet:
                     imgCache = new FFmpegCache(Options);
                     break;
@@ -145,7 +148,7 @@ namespace ScreenCaptureLib
 
                 if (OutputType == ScreenRecordOutput.FFmpegCLI)
                 {
-                    RecordUsingFFmpegCLI();
+                    ffMpegCli.Record(CaptureRectangle);
                 }
                 else
                 {
@@ -154,12 +157,6 @@ namespace ScreenCaptureLib
             }
 
             IsRecording = false;
-        }
-
-        private void RecordUsingFFmpegCLI()
-        {
-            ffMpegCli = new FFmpegCLIHelper(Options);
-            ffMpegCli.Record(CaptureRectangle);
         }
 
         private void RecordUsingCache()

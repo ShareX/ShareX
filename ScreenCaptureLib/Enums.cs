@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
+
 namespace ScreenCaptureLib
 {
     public enum SurfaceResult
@@ -45,7 +47,7 @@ namespace ScreenCaptureLib
         Left
     }
 
-    public enum VideoCodec
+    public enum FFmpegNetVideoCodec
     {
         Default = -1,
         MPEG4 = 0,
@@ -57,5 +59,39 @@ namespace ScreenCaptureLib
         FLV1 = 6,
         MPEG2 = 7,
         Raw = 8,
+    }
+
+    public enum FFmpegVideoCodec
+    {
+        [Description("x264")]
+        libx264,
+        [Description("VP8")]
+        libvpx,
+        [Description("XviD (external)")]
+        libxvid,
+        [Description("XviD (native)")]
+        mpeg4
+    }
+
+    public enum FFmpegPreset
+    {
+        [Description("Ultra fast")]
+        ultrafast,
+        [Description("Super fast")]
+        superfast,
+        [Description("Very fast")]
+        veryfast,
+        [Description("Faster")]
+        faster,
+        [Description("Fast")]
+        fast,
+        [Description("Medium")]
+        medium,
+        [Description("Slow")]
+        slow,
+        [Description("Slower")]
+        slower,
+        [Description("Very slow")]
+        veryslow,
     }
 }

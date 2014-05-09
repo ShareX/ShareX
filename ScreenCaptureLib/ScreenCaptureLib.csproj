@@ -65,6 +65,12 @@
   <ItemGroup>
     <Compile Include="Enums.cs" />
     <Compile Include="Screencast\FFmpegCLIHelper.cs" />
+    <Compile Include="Screencast\FFmpegCLIOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screencast\FFmpegCLIOptionsForm.Designer.cs">
+      <DependentUpon>FFmpegCLIOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
     <Compile Include="Screencast\AviWriter.cs" />
     <Compile Include="Screencast\FFmpegCache.cs" />
@@ -148,6 +154,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screencast\FFmpegCLIOptionsForm.resx">
+      <DependentUpon>FFmpegCLIOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>

@@ -43,9 +43,9 @@ namespace ScreenCaptureLib
         {
             Options = options;
 
-            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath))
+            if (string.IsNullOrEmpty(Options.FFmpegCLI.CLIPath))
             {
-                Options.FFmpeg.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                Options.FFmpegCLI.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
             }
 
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
@@ -83,19 +83,27 @@ namespace ScreenCaptureLib
             // output FPS
             args.AppendFormat("-r {0} ", Options.FPS);
 
-            // x264 encoder
-            args.Append("-c:v libx264 ");
+            args.Append(string.Format("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString()));
 
-            // TODO: Add crf, preset etc. to options
             // https://trac.ffmpeg.org/wiki/x264EncodingGuide
-            args.AppendFormat("-crf {0} ", 23);
-            args.AppendFormat("-preset {0} ", "medium");
+            switch (Options.FFmpegCLI.VideoCodec)
+            {
+                case FFmpegVideoCodec.libx264:
+                case FFmpegVideoCodec.libvpx:
+                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.Quantizer);
+                    args.AppendFormat("-preset {0} ", Options.FFmpegCLI.Preset.ToString());
+                    break;
+                case FFmpegVideoCodec.mpeg4:
+                    args.Append("-vtag xvid ");
+                    args.Append(string.Format("-qscale:v {0} ", Options.FFmpegCLI.Quantizer));
+                    break;
+            }
 
             // -pix_fmt yuv420p required otherwise can't stream in Chrome
             // -y for overwrite file
-            args.AppendFormat("-pix_fmt yuv420p -y \"{0}\"", Options.OutputPath);
+            args.AppendFormat("-pix_fmt yuv420p -y \"{0}\"", Path.ChangeExtension(Options.OutputPath, Options.FFmpegCLI.Extension));
 
-            int result = Open(Options.FFmpeg.CLIPath, args.ToString());
+            int result = Open(Options.FFmpegCLI.CLIPath, args.ToString());
             return result == 0;
         }
 

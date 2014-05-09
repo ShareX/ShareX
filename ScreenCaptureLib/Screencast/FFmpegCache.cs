@@ -48,7 +48,7 @@ namespace ScreenCaptureLib
             Options = options;
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
             ffmpegWriter = new VideoFileWriter();
-            ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, (AForge.Video.FFMPEG.VideoCodec)options.FFmpeg.VideoCodec, options.FFmpeg.BitRate * 1000);
+            ffmpegWriter.Open(options.OutputPath, options.Size.Width, options.Size.Height, options.FPS, (AForge.Video.FFMPEG.VideoCodec)options.FFmpegNet.VideoCodec, options.FFmpegNet.BitRate * 1000);
         }
 
         protected override void WriteFrame(Image img)

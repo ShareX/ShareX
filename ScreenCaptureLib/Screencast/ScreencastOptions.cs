@@ -37,12 +37,13 @@ namespace ScreenCaptureLib
         public string OutputPath;
         public int FPS;
         public Size Size;
-        public IntPtr ParentWindow;
 
+        public IntPtr ParentWindow;
         public bool ShowAVIOptionsDialog;
         public AVIOptions AVI = new AVIOptions();
 
-        public FFmpegOptions FFmpeg = new FFmpegOptions();
+        public FFmpegOptions FFmpegCLI = new FFmpegOptions();
+        public FFmpegNetOptions FFmpegNet = new FFmpegNetOptions();
     }
 
     public class AVIOptions
@@ -53,12 +54,28 @@ namespace ScreenCaptureLib
     public class FFmpegOptions
     {
         public string CLIPath { get; set; }
-        public VideoCodec VideoCodec { get; set; }
-        public int BitRate { get; set; }
+        public FFmpegVideoCodec VideoCodec { get; set; }
+        public FFmpegPreset Preset { get; set; }
+        public int Quantizer { get; set; }
+        public string Extension { get; set; }
 
         public FFmpegOptions()
         {
-            VideoCodec = VideoCodec.MPEG4;
+            VideoCodec = FFmpegVideoCodec.libx264;
+            Preset = FFmpegPreset.medium;
+            Quantizer = 23;
+            Extension = "mp4";
+        }
+    }
+
+    public class FFmpegNetOptions
+    {
+        public FFmpegNetVideoCodec VideoCodec { get; set; }
+        public int BitRate { get; set; }
+
+        public FFmpegNetOptions()
+        {
+            VideoCodec = FFmpegNetVideoCodec.MPEG4;
         }
     }
 }

@@ -162,7 +162,8 @@ namespace ShareX
                             FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                             OutputPath = path,
                             AVI = TaskSettings.CaptureSettings.AVIOptions,
-                            FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions
+                            FFmpegCLI = TaskSettings.CaptureSettings.FFmpegCLIOptions,
+                            FFmpegNet = TaskSettings.CaptureSettings.FFmpegNetOptions
                         };
 
                         screenRecorder = new ScreenRecorder(options, duration, CaptureRectangle, TaskSettings.CaptureSettings.ScreenRecordOutput);

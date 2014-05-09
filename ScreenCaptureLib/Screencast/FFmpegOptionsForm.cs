@@ -37,16 +37,16 @@ namespace ScreenCaptureLib
 {
     public partial class FFmpegOptionsForm : Form
     {
-        private FFmpegOptions Options;
+        private FFmpegNetOptions Options;
 
-        public FFmpegOptionsForm(FFmpegOptions options)
+        public FFmpegOptionsForm(FFmpegNetOptions options)
         {
             InitializeComponent();
             Options = options;
             this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
             this.Icon = ShareXResources.Icon;
 
-            comboBoxCodecs.Items.AddRange(Helpers.GetEnumDescriptions<VideoCodec>());
+            comboBoxCodecs.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegNetVideoCodec>());
             comboBoxCodecs.SelectedIndex = (int)options.VideoCodec;
 
             nudBitrate.Value = Options.BitRate;
@@ -66,7 +66,7 @@ namespace ScreenCaptureLib
 
         private void comboBoxCodecs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.VideoCodec = (VideoCodec)comboBoxCodecs.SelectedIndex;
+            Options.VideoCodec = (FFmpegNetVideoCodec)comboBoxCodecs.SelectedIndex;
         }
 
         private void nudBitrate_ValueChanged(object sender, EventArgs e)
