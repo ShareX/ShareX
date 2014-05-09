@@ -658,9 +658,6 @@ namespace ShareX
                     yFrogOptions.Source = Application.ProductName;
                     imageUploader = new YfrogUploader(yFrogOptions);
                     break;
-                case ImageDestination.MediaCrush:
-                    imageUploader = new MediaCrushUploader();
-                    break;
                 case ImageDestination.CustomImageUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomImageUploaderSelected))
                     {
@@ -885,6 +882,9 @@ namespace ShareX
                     break;
                 case FileDestination.Pushbullet:
                     fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
+                    break;
+                case FileDestination.MediaCrush:
+                    fileUploader = new MediaCrushUploader();
                     break;
             }
 

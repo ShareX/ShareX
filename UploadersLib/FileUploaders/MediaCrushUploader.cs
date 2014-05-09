@@ -33,9 +33,9 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Threading;
 
-namespace UploadersLib.ImageUploaders
+namespace UploadersLib.FileUploaders
 {
-    public class MediaCrushUploader : ImageUploader
+    public class MediaCrushUploader : FileUploader
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {

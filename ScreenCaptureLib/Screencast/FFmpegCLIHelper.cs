@@ -67,14 +67,12 @@ namespace ScreenCaptureLib
             RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_y", captureRectangle.Y);
             RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_width", captureRectangle.Width);
             RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_height", captureRectangle.Height);
+            RegistryHelpers.CreateRegistry(dshowRegistryPath, "default_max_fps", Options.FPS);
 
             StringBuilder args = new StringBuilder();
 
-            if (Options.FPS > 0)
-            {
-                // input FPS
-                args.AppendFormat("-r {0} ", Options.FPS);
-            }
+            // input FPS
+            args.AppendFormat("-r {0} ", Options.FPS);
 
             args.Append("-f dshow -i ");
 
@@ -82,11 +80,8 @@ namespace ScreenCaptureLib
             //args.AppendFormat("audio=\"{0}\":", "virtual-audio-capturer");
             args.AppendFormat("video=\"{0}\" ", "screen-capture-recorder");
 
-            if (Options.FPS > 0)
-            {
-                // output FPS
-                args.AppendFormat("-r {0} ", Options.FPS);
-            }
+            // output FPS
+            args.AppendFormat("-r {0} ", Options.FPS);
 
             // x264 encoder
             args.Append("-c:v libx264 ");

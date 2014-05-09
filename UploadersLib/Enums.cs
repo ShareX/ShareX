@@ -48,8 +48,6 @@ namespace UploadersLib
         Twitsnaps,
         [Description("yfrog.com")]
         yFrog,
-        [Description("mediacru.sh")]
-        MediaCrush,
         [Description("Custom image uploader")]
         CustomImageUploader,
         [Description("File uploader")]
@@ -94,6 +92,8 @@ namespace UploadersLib
         AmazonS3,
         [Description("pushbullet.com")]
         Pushbullet,
+        [Description("mediacru.sh")]
+        MediaCrush,
         [Description("drive.google.com")]
         GoogleDrive,
         [Description("rapidshare.com")]
