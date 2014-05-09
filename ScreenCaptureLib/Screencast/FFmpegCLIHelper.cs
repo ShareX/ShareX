@@ -43,9 +43,9 @@ namespace ScreenCaptureLib
         {
             Options = options;
 
-            if (string.IsNullOrEmpty(Options.FFmpegCLI.CLIPath))
+            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath))
             {
-                Options.FFmpegCLI.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                Options.FFmpeg.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
             }
 
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
@@ -86,31 +86,27 @@ namespace ScreenCaptureLib
             args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
                 Options.FPS, Options.CaptureArea.X, Options.CaptureArea.Y, Options.CaptureArea.Width, Options.CaptureArea.Height, Options.DrawCursor ? 1 : 0, 0);
 
-            args.AppendFormat("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString());
+            args.AppendFormat("-c:v {0} ", Options.FFmpeg.VideoCodec.ToString());
 
             // output FPS
             args.AppendFormat("-r {0} ", Options.FPS);
 
-            switch (Options.FFmpegCLI.VideoCodec)
+            switch (Options.FFmpeg.VideoCodec)
             {
                 case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
-                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.CRF);
-                    args.AppendFormat("-preset {0} ", Options.FFmpegCLI.Preset.ToString());
+                    args.AppendFormat("-crf {0} ", Options.FFmpeg.CRF);
+                    args.AppendFormat("-preset {0} ", Options.FFmpeg.Preset.ToString());
                     break;
                 case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
-                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.CRF);
+                    args.AppendFormat("-crf {0} ", Options.FFmpeg.CRF);
                     break;
                 case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
-                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.qscale);
-                    break;
-                case FFmpegVideoCodec.mpeg4:
-                    args.Append("-vtag xvid ");
-                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.qscale);
+                    args.AppendFormat("-qscale:v {0} ", Options.FFmpeg.qscale);
                     break;
             }
 
-            // -pix_fmt yuv420p required otherwise can't stream in Chrome
-            if (Options.FFmpegCLI.VideoCodec == FFmpegVideoCodec.libx264)
+            // -pix_fmt yuv420p required for libx264 otherwise can't stream in Chrome
+            if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264)
             {
                 args.Append("-pix_fmt yuv420p ");
             }
@@ -123,7 +119,7 @@ namespace ScreenCaptureLib
             // -y for overwrite file
             args.AppendFormat("-y \"{0}\"", Options.OutputPath);
 
-            int result = Open(Options.FFmpegCLI.CLIPath, args.ToString());
+            int result = Open(Options.FFmpeg.CLIPath, args.ToString());
             return result == 0;
         }
 

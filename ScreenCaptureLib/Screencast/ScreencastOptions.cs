@@ -44,7 +44,7 @@ namespace ScreenCaptureLib
         public bool ShowAVIOptionsDialog;
         public AVIOptions AVI = new AVIOptions();
 
-        public FFmpegOptions FFmpegCLI = new FFmpegOptions();
+        public FFmpegOptions FFmpeg = new FFmpegOptions();
     }
 
     public class AVIOptions

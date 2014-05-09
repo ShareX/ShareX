@@ -46,8 +46,8 @@
             this.groupBoxH263 = new System.Windows.Forms.GroupBox();
             this.labelQscale = new System.Windows.Forms.Label();
             this.groupBoxFFmpegExe = new System.Windows.Forms.GroupBox();
-            this.textBoxFFmpegPath = new System.Windows.Forms.TextBox();
             this.buttonFFmpegBrowse = new System.Windows.Forms.Button();
+            this.textBoxFFmpegPath = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             this.groupBoxH264.SuspendLayout();
@@ -90,7 +90,6 @@
             0,
             0,
             0});
-            
             // 
             // nudQscale
             // 
@@ -115,7 +114,6 @@
             0,
             0,
             0});
-            
             // 
             // comboBoxExtension
             // 
@@ -130,7 +128,6 @@
             this.comboBoxExtension.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtension.TabIndex = 15;
             this.comboBoxExtension.Text = "mp4";
-            
             // 
             // lblCodec
             // 
@@ -159,7 +156,6 @@
             this.comboBoxPreset.Name = "comboBoxPreset";
             this.comboBoxPreset.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPreset.TabIndex = 19;
-            
             // 
             // lblPreset
             // 
@@ -203,7 +199,7 @@
             this.groupBoxH264.Size = new System.Drawing.Size(216, 96);
             this.groupBoxH264.TabIndex = 22;
             this.groupBoxH264.TabStop = false;
-            this.groupBoxH264.Text = "H.264 (x264, VP8 etc.)";
+            this.groupBoxH264.Text = "H.264";
             // 
             // groupBoxH263
             // 
@@ -214,7 +210,7 @@
             this.groupBoxH263.Size = new System.Drawing.Size(216, 96);
             this.groupBoxH263.TabIndex = 23;
             this.groupBoxH263.TabStop = false;
-            this.groupBoxH263.Text = "H.263 (DivX, XviD etc.)";
+            this.groupBoxH263.Text = "XviD";
             // 
             // labelQscale
             // 
@@ -236,13 +232,6 @@
             this.groupBoxFFmpegExe.TabStop = false;
             this.groupBoxFFmpegExe.Text = "ffmpeg.exe";
             // 
-            // textBoxFFmpegPath
-            // 
-            this.textBoxFFmpegPath.Location = new System.Drawing.Point(8, 24);
-            this.textBoxFFmpegPath.Name = "textBoxFFmpegPath";
-            this.textBoxFFmpegPath.Size = new System.Drawing.Size(392, 20);
-            this.textBoxFFmpegPath.TabIndex = 0;
-            // 
             // buttonFFmpegBrowse
             // 
             this.buttonFFmpegBrowse.Location = new System.Drawing.Point(408, 24);
@@ -252,6 +241,15 @@
             this.buttonFFmpegBrowse.Text = "...";
             this.buttonFFmpegBrowse.UseVisualStyleBackColor = true;
             this.buttonFFmpegBrowse.Click += new System.EventHandler(this.buttonFFmpegBrowse_Click);
+            // 
+            // textBoxFFmpegPath
+            // 
+            this.textBoxFFmpegPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxFFmpegPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.textBoxFFmpegPath.Location = new System.Drawing.Point(8, 24);
+            this.textBoxFFmpegPath.Name = "textBoxFFmpegPath";
+            this.textBoxFFmpegPath.Size = new System.Drawing.Size(392, 20);
+            this.textBoxFFmpegPath.TabIndex = 0;
             // 
             // FFmpegCLIOptionsForm
             // 

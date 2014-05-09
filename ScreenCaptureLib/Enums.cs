@@ -53,10 +53,8 @@ namespace ScreenCaptureLib
         libx264,
         [Description("VP8")]
         libvpx,
-        [Description("XviD (external)")]
-        libxvid,
-        [Description("XviD (native)")]
-        mpeg4
+        [Description("XviD")]
+        libxvid
     }
 
     public enum FFmpegPreset

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -40,6 +41,9 @@ namespace ScreenCaptureLib
 
             nudQscale.Value = Options.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
 
+            string cli = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            if (string.IsNullOrEmpty(Options.CLIPath) && File.Exists(cli))
+                Options.CLIPath = cli;
             textBoxFFmpegPath.Text = Options.CLIPath;
         }
 
@@ -61,8 +65,8 @@ namespace ScreenCaptureLib
 
         public void UpdateUI()
         {
-            groupBoxH263.Enabled = Options.VideoCodec == FFmpegVideoCodec.libxvid || Options.VideoCodec == FFmpegVideoCodec.mpeg4;
-            groupBoxH264.Enabled = Options.VideoCodec == FFmpegVideoCodec.libx264 || Options.VideoCodec == FFmpegVideoCodec.libvpx;
+            groupBoxH263.Enabled = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libxvid;
+            groupBoxH264.Enabled = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libx264 || (FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libvpx;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

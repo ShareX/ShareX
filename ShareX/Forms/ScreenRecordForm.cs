@@ -141,7 +141,7 @@ namespace ShareX
                             OutputPath = path,
                             Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                             AVI = TaskSettings.CaptureSettings.AVIOptions,
-                            FFmpegCLI = TaskSettings.CaptureSettings.FFmpegCLIOptions,
+                            FFmpeg = TaskSettings.CaptureSettings.FFmpegCLIOptions,
                             DrawCursor = TaskSettings.CaptureSettings.ShowCursor
                         };
 
