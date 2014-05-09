@@ -1,7 +1,7 @@
 ﻿ShareX 8.8.1
 
+* Screencast using FFmpegCLI and AForge.NET FFmpeg binaries
 * DreamObjects hosting support via Amazon S3
-* AVI output using AForge.NET FFmpeg binaries
 * Video Compression Manager (VCM) options to use Video for Windows (VfW) encoders
 * Added Greenshot Image Editor to Tools menu
 * Added FTP Client to Tools menu

@@ -33,12 +33,12 @@ namespace ScreenCaptureLib
 
             comboBoxExtension.Text = Options.Extension;
 
-            nudCRF.Value = Options.CRF;
+            nudCRF.Value = Options.CRF.Between((int)nudCRF.Minimum, (int)nudCRF.Maximum);
 
             comboBoxPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             comboBoxPreset.SelectedIndex = (int)Options.Preset;
 
-            nudQscale.Value = Options.qscale;
+            nudQscale.Value = Options.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
         }
 
         private void comboBoxCodec_SelectedIndexChanged(object sender, EventArgs e)
