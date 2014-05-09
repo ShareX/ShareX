@@ -61,6 +61,9 @@ namespace ScreenCaptureLib
 
         public bool Record(Rectangle captureRectangle)
         {
+            StringBuilder args = new StringBuilder();
+
+            /*
             // https://github.com/rdp/screen-capture-recorder-to-video-windows-free configuration section
             string dshowRegistryPath = "Software\\screen-capture-recorder";
             RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_x", captureRectangle.X);
@@ -69,21 +72,24 @@ namespace ScreenCaptureLib
             RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_height", captureRectangle.Height);
             RegistryHelpers.CreateRegistry(dshowRegistryPath, "default_max_fps", Options.FPS);
 
-            StringBuilder args = new StringBuilder();
-
             // input FPS
             args.AppendFormat("-r {0} ", Options.FPS);
 
             args.Append("-f dshow -i ");
 
             // dshow audio/video device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-            //args.AppendFormat("audio=\"{0}\":", "virtual-audio-capturer");
+            args.AppendFormat("audio=\"{0}\":", "virtual-audio-capturer");
             args.AppendFormat("video=\"{0}\" ", "screen-capture-recorder");
+            */
+
+            // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
+            args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -i desktop ",
+                Options.FPS, captureRectangle.X, captureRectangle.Y, captureRectangle.Width, captureRectangle.Height, 1);
+
+            args.AppendFormat("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString());
 
             // output FPS
             args.AppendFormat("-r {0} ", Options.FPS);
-
-            args.AppendFormat("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString());
 
             switch (Options.FFmpegCLI.VideoCodec)
             {
