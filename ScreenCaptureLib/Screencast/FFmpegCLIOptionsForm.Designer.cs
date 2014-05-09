@@ -40,25 +40,30 @@
             this.comboBoxCodec = new System.Windows.Forms.ComboBox();
             this.comboBoxPreset = new System.Windows.Forms.ComboBox();
             this.lblPreset = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.groupBoxH264 = new System.Windows.Forms.GroupBox();
             this.groupBoxH263 = new System.Windows.Forms.GroupBox();
             this.labelQscale = new System.Windows.Forms.Label();
             this.groupBoxFFmpegExe = new System.Windows.Forms.GroupBox();
             this.buttonFFmpegBrowse = new System.Windows.Forms.Button();
             this.textBoxFFmpegPath = new System.Windows.Forms.TextBox();
+            this.groupBoxCommandLinePreview = new System.Windows.Forms.GroupBox();
+            this.textBoxCommandLinePreview = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonFFmpegHelp = new System.Windows.Forms.Button();
+            this.textBoxUserArgs = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             this.groupBoxH264.SuspendLayout();
             this.groupBoxH263.SuspendLayout();
             this.groupBoxFFmpegExe.SuspendLayout();
+            this.groupBoxCommandLinePreview.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblExt
             // 
             this.lblExt.AutoSize = true;
-            this.lblExt.Location = new System.Drawing.Point(264, 13);
+            this.lblExt.Location = new System.Drawing.Point(256, 13);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
             this.lblExt.TabIndex = 11;
@@ -117,22 +122,21 @@
             // 
             // comboBoxExtension
             // 
-            this.comboBoxExtension.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxExtension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExtension.FormattingEnabled = true;
             this.comboBoxExtension.Items.AddRange(new object[] {
             "mp4",
             "webm",
             "avi"});
-            this.comboBoxExtension.Location = new System.Drawing.Point(336, 8);
+            this.comboBoxExtension.Location = new System.Drawing.Point(335, 8);
             this.comboBoxExtension.Name = "comboBoxExtension";
             this.comboBoxExtension.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtension.TabIndex = 15;
-            this.comboBoxExtension.Text = "mp4";
             // 
             // lblCodec
             // 
             this.lblCodec.AutoSize = true;
-            this.lblCodec.Location = new System.Drawing.Point(24, 13);
+            this.lblCodec.Location = new System.Drawing.Point(16, 13);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(41, 13);
             this.lblCodec.TabIndex = 16;
@@ -142,11 +146,10 @@
             // 
             this.comboBoxCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCodec.FormattingEnabled = true;
-            this.comboBoxCodec.Location = new System.Drawing.Point(96, 8);
+            this.comboBoxCodec.Location = new System.Drawing.Point(88, 8);
             this.comboBoxCodec.Name = "comboBoxCodec";
             this.comboBoxCodec.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCodec.TabIndex = 17;
-            this.comboBoxCodec.SelectedIndexChanged += new System.EventHandler(this.comboBoxCodec_SelectedIndexChanged);
             // 
             // comboBoxPreset
             // 
@@ -166,35 +169,13 @@
             this.lblPreset.TabIndex = 18;
             this.lblPreset.Text = "Preset:";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(392, 224);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(312, 224);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 20;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
             // groupBoxH264
             // 
             this.groupBoxH264.Controls.Add(this.nudCRF);
             this.groupBoxH264.Controls.Add(this.lblCRF);
             this.groupBoxH264.Controls.Add(this.lblPreset);
             this.groupBoxH264.Controls.Add(this.comboBoxPreset);
-            this.groupBoxH264.Location = new System.Drawing.Point(16, 40);
+            this.groupBoxH264.Location = new System.Drawing.Point(8, 40);
             this.groupBoxH264.Name = "groupBoxH264";
             this.groupBoxH264.Size = new System.Drawing.Size(216, 96);
             this.groupBoxH264.TabIndex = 22;
@@ -205,7 +186,7 @@
             // 
             this.groupBoxH263.Controls.Add(this.nudQscale);
             this.groupBoxH263.Controls.Add(this.labelQscale);
-            this.groupBoxH263.Location = new System.Drawing.Point(248, 40);
+            this.groupBoxH263.Location = new System.Drawing.Point(240, 40);
             this.groupBoxH263.Name = "groupBoxH263";
             this.groupBoxH263.Size = new System.Drawing.Size(216, 96);
             this.groupBoxH263.TabIndex = 23;
@@ -225,7 +206,7 @@
             // 
             this.groupBoxFFmpegExe.Controls.Add(this.buttonFFmpegBrowse);
             this.groupBoxFFmpegExe.Controls.Add(this.textBoxFFmpegPath);
-            this.groupBoxFFmpegExe.Location = new System.Drawing.Point(16, 144);
+            this.groupBoxFFmpegExe.Location = new System.Drawing.Point(8, 144);
             this.groupBoxFFmpegExe.Name = "groupBoxFFmpegExe";
             this.groupBoxFFmpegExe.Size = new System.Drawing.Size(448, 56);
             this.groupBoxFFmpegExe.TabIndex = 24;
@@ -251,25 +232,73 @@
             this.textBoxFFmpegPath.Size = new System.Drawing.Size(392, 20);
             this.textBoxFFmpegPath.TabIndex = 0;
             // 
+            // groupBoxCommandLinePreview
+            // 
+            this.groupBoxCommandLinePreview.Controls.Add(this.textBoxCommandLinePreview);
+            this.groupBoxCommandLinePreview.Location = new System.Drawing.Point(8, 272);
+            this.groupBoxCommandLinePreview.Name = "groupBoxCommandLinePreview";
+            this.groupBoxCommandLinePreview.Size = new System.Drawing.Size(448, 96);
+            this.groupBoxCommandLinePreview.TabIndex = 25;
+            this.groupBoxCommandLinePreview.TabStop = false;
+            this.groupBoxCommandLinePreview.Text = "Command line preview";
+            // 
+            // textBoxCommandLinePreview
+            // 
+            this.textBoxCommandLinePreview.Location = new System.Drawing.Point(8, 24);
+            this.textBoxCommandLinePreview.Multiline = true;
+            this.textBoxCommandLinePreview.Name = "textBoxCommandLinePreview";
+            this.textBoxCommandLinePreview.Size = new System.Drawing.Size(432, 64);
+            this.textBoxCommandLinePreview.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonFFmpegHelp);
+            this.groupBox1.Controls.Add(this.textBoxUserArgs);
+            this.groupBox1.Location = new System.Drawing.Point(8, 208);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(448, 56);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Additional command line arguments";
+            // 
+            // buttonFFmpegHelp
+            // 
+            this.buttonFFmpegHelp.Location = new System.Drawing.Point(408, 24);
+            this.buttonFFmpegHelp.Name = "buttonFFmpegHelp";
+            this.buttonFFmpegHelp.Size = new System.Drawing.Size(35, 20);
+            this.buttonFFmpegHelp.TabIndex = 1;
+            this.buttonFFmpegHelp.Text = "?";
+            this.buttonFFmpegHelp.UseVisualStyleBackColor = true;
+            this.buttonFFmpegHelp.Click += new System.EventHandler(this.buttonFFmpegHelp_Click);
+            // 
+            // textBoxUserArgs
+            // 
+            this.textBoxUserArgs.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxUserArgs.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.textBoxUserArgs.Location = new System.Drawing.Point(8, 24);
+            this.textBoxUserArgs.Name = "textBoxUserArgs";
+            this.textBoxUserArgs.Size = new System.Drawing.Size(392, 20);
+            this.textBoxUserArgs.TabIndex = 0;
+            // 
             // FFmpegCLIOptionsForm
             // 
-            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 262);
+            this.ClientSize = new System.Drawing.Size(464, 377);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxCommandLinePreview);
             this.Controls.Add(this.groupBoxFFmpegExe);
             this.Controls.Add(this.groupBoxH263);
             this.Controls.Add(this.groupBoxH264);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.comboBoxCodec);
             this.Controls.Add(this.lblCodec);
             this.Controls.Add(this.comboBoxExtension);
             this.Controls.Add(this.lblExt);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(496, 300);
+            this.MinimumSize = new System.Drawing.Size(480, 416);
             this.Name = "FFmpegCLIOptionsForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpegGUI";
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).EndInit();
@@ -280,6 +309,10 @@
             this.groupBoxH263.PerformLayout();
             this.groupBoxFFmpegExe.ResumeLayout(false);
             this.groupBoxFFmpegExe.PerformLayout();
+            this.groupBoxCommandLinePreview.ResumeLayout(false);
+            this.groupBoxCommandLinePreview.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,8 +329,6 @@
         private System.Windows.Forms.ComboBox comboBoxCodec;
         private System.Windows.Forms.ComboBox comboBoxPreset;
         private System.Windows.Forms.Label lblPreset;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.GroupBox groupBoxH264;
         private System.Windows.Forms.GroupBox groupBoxH263;
         private System.Windows.Forms.NumericUpDown nudQscale;
@@ -305,5 +336,10 @@
         private System.Windows.Forms.GroupBox groupBoxFFmpegExe;
         private System.Windows.Forms.Button buttonFFmpegBrowse;
         private System.Windows.Forms.TextBox textBoxFFmpegPath;
+        private System.Windows.Forms.GroupBox groupBoxCommandLinePreview;
+        private System.Windows.Forms.TextBox textBoxCommandLinePreview;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonFFmpegHelp;
+        private System.Windows.Forms.TextBox textBoxUserArgs;
     }
 }

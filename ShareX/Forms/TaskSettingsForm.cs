@@ -29,6 +29,7 @@ using ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using UploadersLib;
@@ -653,18 +654,20 @@ namespace ShareX
 
         private void btnScreenRecorderOptions_Click(object sender, EventArgs e)
         {
+            ScreencastOptions options = new ScreencastOptions
+            {
+                AVI = TaskSettings.CaptureSettings.AVIOptions,
+                FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
+                ShowAVIOptionsDialog = true,
+                FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
+                OutputPath = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi")),
+                ParentWindow = this.Handle,
+                CaptureArea = new Rectangle(0, 0, 100, 100)
+            };
+
             switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
             {
                 case ScreenRecordOutput.AVI:
-                    ScreencastOptions options = new ScreencastOptions
-                    {
-                        AVI = TaskSettings.CaptureSettings.AVIOptions,
-                        ShowAVIOptionsDialog = true,
-                        FPS = 10,
-                        OutputPath = Program.ScreenRecorderCacheFilePath,
-                        ParentWindow = this.Handle,
-                        CaptureArea = new Rectangle(0, 0, 100, 100)
-                    };
 
                     try
                     {
@@ -681,7 +684,7 @@ namespace ShareX
                     }
                     break;
                 case ScreenRecordOutput.FFmpegCLI:
-                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(TaskSettings.CaptureSettings.FFmpegCLIOptions))
+                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(options))
                     {
                         form.ShowDialog();
                     }

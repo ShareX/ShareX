@@ -13,9 +13,9 @@ namespace ScreenCaptureLib
 {
     public partial class FFmpegCLIOptionsForm : Form
     {
-        private FFmpegOptions Options = null;
+        private ScreencastOptions Options = null;
 
-        public FFmpegCLIOptionsForm(FFmpegOptions options)
+        public FFmpegCLIOptionsForm(ScreencastOptions options)
         {
             Options = options;
 
@@ -30,62 +30,71 @@ namespace ScreenCaptureLib
         private void LoadSettings()
         {
             comboBoxCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
-            comboBoxCodec.SelectedIndex = (int)Options.VideoCodec;
+            comboBoxCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+            comboBoxCodec.SelectedIndexChanged += (sender, e) => UpdateUI();
 
-            comboBoxExtension.Text = Options.Extension;
+            comboBoxExtension.Text = Options.FFmpeg.Extension;
+            comboBoxExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
 
-            nudCRF.Value = Options.CRF.Between((int)nudCRF.Minimum, (int)nudCRF.Maximum);
+            nudCRF.Value = Options.FFmpeg.CRF.Between((int)nudCRF.Minimum, (int)nudCRF.Maximum);
+            nudCRF.ValueChanged += (sender, e) => UpdateUI();
 
             comboBoxPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
-            comboBoxPreset.SelectedIndex = (int)Options.Preset;
+            comboBoxPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
+            comboBoxPreset.SelectedIndexChanged += (sender, e) => UpdateUI();
 
-            nudQscale.Value = Options.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+            nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+            nudQscale.ValueChanged += (sender, e) => UpdateUI();
+
+            textBoxUserArgs.Text = Options.FFmpeg.UserArgs;
+            textBoxUserArgs.TextChanged += (sender, e) => UpdateUI();
 
             string cli = Path.Combine(Application.StartupPath, "ffmpeg.exe");
-            if (string.IsNullOrEmpty(Options.CLIPath) && File.Exists(cli))
-                Options.CLIPath = cli;
-            textBoxFFmpegPath.Text = Options.CLIPath;
+            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
+                Options.FFmpeg.CLIPath = cli;
+            textBoxFFmpegPath.Text = Options.FFmpeg.CLIPath;
+            textBoxFFmpegPath.TextChanged += (sender, e) => UpdateUI();
         }
 
-        private void SaveSettings()
+        public void SaveSettings()
         {
-            Options.VideoCodec = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex;
-            Options.Extension = comboBoxExtension.Text;
+            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex;
+            Options.FFmpeg.Extension = comboBoxExtension.Text;
 
-            Options.CRF = (int)nudCRF.Value;
-            Options.Preset = (FFmpegPreset)comboBoxPreset.SelectedIndex;
+            Options.FFmpeg.CRF = (int)nudCRF.Value;
+            Options.FFmpeg.Preset = (FFmpegPreset)comboBoxPreset.SelectedIndex;
 
-            Options.qscale = (int)nudQscale.Value;
-        }
+            Options.FFmpeg.qscale = (int)nudQscale.Value;
 
-        private void comboBoxCodec_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateUI();
+            Options.FFmpeg.UserArgs = textBoxUserArgs.Text;
+
+            Options.FFmpeg.CLIPath = textBoxFFmpegPath.Text;
         }
 
         public void UpdateUI()
         {
-            groupBoxH263.Enabled = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libxvid;
-            groupBoxH264.Enabled = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libx264 || (FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libvpx;
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
             SaveSettings();
-            Close();
-        }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
+            groupBoxH263.Enabled = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid;
+            groupBoxH264.Enabled = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx;
+
+            if ((Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid) && comboBoxExtension.Text == "webm")
+                comboBoxExtension.Text = "mp4";
+            else if ((FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libvpx && comboBoxExtension.Text != "webm")
+                comboBoxExtension.Text = "webm";
+
+            textBoxCommandLinePreview.Text = Options.GetFFmpegArgs();
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
             Helpers.BrowseFile("Browse for ffmpeg.exe", textBoxFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
-            Options.CLIPath = textBoxFFmpegPath.Text;
+            UpdateUI();
+        }
+
+        private void buttonFFmpegHelp_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenURL("https://www.ffmpeg.org/ffmpeg.html");
         }
     }
 }

@@ -92,7 +92,7 @@ namespace ShareX
                 }
                 else if (!Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
                 {
-                    MessageBox.Show("CLI video encoder file not exist: " + Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].Path,
+                    MessageBox.Show("CLI video encoder file does not exist: " + Program.Settings.VideoEncoders[TaskSettings.CaptureSettings.VideoEncoderSelected].Path,
                         Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -127,7 +127,7 @@ namespace ShareX
                         }
                         else if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI)
                         {
-                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, TaskSettings.CaptureSettings.FFmpegCLIOptions.Extension));
+                            path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, TaskSettings.CaptureSettings.FFmpegOptions.Extension));
                         }
                         else
                         {
@@ -141,7 +141,7 @@ namespace ShareX
                             OutputPath = path,
                             Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                             AVI = TaskSettings.CaptureSettings.AVIOptions,
-                            FFmpeg = TaskSettings.CaptureSettings.FFmpegCLIOptions,
+                            FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
                             DrawCursor = TaskSettings.CaptureSettings.ShowCursor
                         };
 

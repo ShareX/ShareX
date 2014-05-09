@@ -27,6 +27,7 @@ using HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -45,6 +46,55 @@ namespace ScreenCaptureLib
         public AVIOptions AVI = new AVIOptions();
 
         public FFmpegOptions FFmpeg = new FFmpegOptions();
+
+        public string GetFFmpegArgs()
+        {
+            StringBuilder args = new StringBuilder();
+
+            // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
+            args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
+                FPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
+
+            args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
+
+            // output FPS
+            args.AppendFormat("-r {0} ", FPS);
+
+            switch (FFmpeg.VideoCodec)
+            {
+                case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
+                    args.AppendFormat("-crf {0} ", FFmpeg.CRF);
+                    args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
+                    break;
+                case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
+                    args.AppendFormat("-crf {0} ", FFmpeg.CRF);
+                    break;
+                case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
+                    args.AppendFormat("-qscale:v {0} ", FFmpeg.qscale);
+                    break;
+            }
+
+            // -pix_fmt yuv420p required for libx264 otherwise can't stream in Chrome
+            if (FFmpeg.VideoCodec == FFmpegVideoCodec.libx264)
+            {
+                args.Append("-pix_fmt yuv420p ");
+            }
+
+            if (Duration > 0)
+            {
+                args.AppendFormat("-t {0} ", Duration);
+            }
+
+            if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
+            {
+                args.Append(FFmpeg.UserArgs + " ");
+            }
+
+            // -y for overwrite file
+            args.AppendFormat("-y \"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
+
+            return args.ToString();
+        }
     }
 
     public class AVIOptions
@@ -57,6 +107,7 @@ namespace ScreenCaptureLib
         public string CLIPath { get; set; }
         public FFmpegVideoCodec VideoCodec { get; set; }
         public string Extension { get; set; }
+        public string UserArgs { get; set; }
 
         // H264
         public FFmpegPreset Preset { get; set; }

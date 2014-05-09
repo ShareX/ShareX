@@ -80,46 +80,7 @@ namespace ScreenCaptureLib
             args.AppendFormat("video=\"{0}\" ", "screen-capture-recorder");
             */
 
-            StringBuilder args = new StringBuilder();
-
-            // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-            args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
-                Options.FPS, Options.CaptureArea.X, Options.CaptureArea.Y, Options.CaptureArea.Width, Options.CaptureArea.Height, Options.DrawCursor ? 1 : 0, 0);
-
-            args.AppendFormat("-c:v {0} ", Options.FFmpeg.VideoCodec.ToString());
-
-            // output FPS
-            args.AppendFormat("-r {0} ", Options.FPS);
-
-            switch (Options.FFmpeg.VideoCodec)
-            {
-                case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
-                    args.AppendFormat("-crf {0} ", Options.FFmpeg.CRF);
-                    args.AppendFormat("-preset {0} ", Options.FFmpeg.Preset.ToString());
-                    break;
-                case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
-                    args.AppendFormat("-crf {0} ", Options.FFmpeg.CRF);
-                    break;
-                case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
-                    args.AppendFormat("-qscale:v {0} ", Options.FFmpeg.qscale);
-                    break;
-            }
-
-            // -pix_fmt yuv420p required for libx264 otherwise can't stream in Chrome
-            if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264)
-            {
-                args.Append("-pix_fmt yuv420p ");
-            }
-
-            if (Options.Duration > 0)
-            {
-                args.AppendFormat("-t {0} ", Options.Duration);
-            }
-
-            // -y for overwrite file
-            args.AppendFormat("-y \"{0}\"", Options.OutputPath);
-
-            int result = Open(Options.FFmpeg.CLIPath, args.ToString());
+            int result = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegArgs());
             return result == 0;
         }
 
