@@ -43,25 +43,20 @@ namespace ScreenCaptureLib
             textBoxFFmpegPath.Text = Options.CLIPath;
         }
 
-        private void comboBoxCodec_SelectedIndexChanged(object sender, EventArgs e)
+        private void SaveSettings()
         {
             Options.VideoCodec = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex;
-            UpdateUI();
-        }
-
-        private void comboBoxExtension_SelectedValueChanged(object sender, EventArgs e)
-        {
             Options.Extension = comboBoxExtension.Text;
-        }
 
-        private void nudCRF_ValueChanged(object sender, EventArgs e)
-        {
             Options.CRF = (int)nudCRF.Value;
+            Options.Preset = (FFmpegPreset)comboBoxPreset.SelectedIndex;
+
+            Options.qscale = (int)nudQscale.Value;
         }
 
-        private void comboBoxPreset_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.Preset = (FFmpegPreset)comboBoxPreset.SelectedIndex;
+            UpdateUI();
         }
 
         public void UpdateUI()
@@ -73,6 +68,7 @@ namespace ScreenCaptureLib
         private void btnOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+            SaveSettings();
             Close();
         }
 
@@ -80,11 +76,6 @@ namespace ScreenCaptureLib
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-
-        private void nudQscale_ValueChanged(object sender, EventArgs e)
-        {
-            Options.qscale = (int)nudQscale.Value;
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)

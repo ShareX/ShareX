@@ -90,7 +90,7 @@
             0,
             0,
             0});
-            this.nudCRF.ValueChanged += new System.EventHandler(this.nudCRF_ValueChanged);
+            
             // 
             // nudQscale
             // 
@@ -115,7 +115,7 @@
             0,
             0,
             0});
-            this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
+            
             // 
             // comboBoxExtension
             // 
@@ -130,7 +130,7 @@
             this.comboBoxExtension.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtension.TabIndex = 15;
             this.comboBoxExtension.Text = "mp4";
-            this.comboBoxExtension.SelectedValueChanged += new System.EventHandler(this.comboBoxExtension_SelectedValueChanged);
+            
             // 
             // lblCodec
             // 
@@ -159,7 +159,7 @@
             this.comboBoxPreset.Name = "comboBoxPreset";
             this.comboBoxPreset.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPreset.TabIndex = 19;
-            this.comboBoxPreset.SelectedIndexChanged += new System.EventHandler(this.comboBoxPreset_SelectedIndexChanged);
+            
             // 
             // lblPreset
             // 
