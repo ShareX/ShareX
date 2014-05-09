@@ -37,6 +37,7 @@ namespace ScreenCaptureLib
         public string OutputPath;
         public int FPS;
         public Size Size;
+        public float Duration;
 
         public IntPtr ParentWindow;
         public bool ShowAVIOptionsDialog;

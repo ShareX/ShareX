@@ -101,7 +101,7 @@ namespace ScreenCaptureLib
         private FFmpegCLIHelper ffMpegCli;
         private bool stopRequest;
 
-        public ScreenRecorder(ScreencastOptions options, float durationSeconds, Rectangle captureRectangle, ScreenRecordOutput outputType)
+        public ScreenRecorder(ScreencastOptions options, Rectangle captureRectangle, ScreenRecordOutput outputType)
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
@@ -109,7 +109,7 @@ namespace ScreenCaptureLib
             }
 
             FPS = options.FPS;
-            DurationSeconds = durationSeconds;
+            DurationSeconds = options.Duration;
             CaptureRectangle = captureRectangle;
             CachePath = options.OutputPath;
             OutputType = outputType;

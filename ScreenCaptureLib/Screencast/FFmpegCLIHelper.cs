@@ -83,25 +83,37 @@ namespace ScreenCaptureLib
             // output FPS
             args.AppendFormat("-r {0} ", Options.FPS);
 
-            args.Append(string.Format("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString()));
+            args.AppendFormat("-c:v {0} ", Options.FFmpegCLI.VideoCodec.ToString());
 
             // https://trac.ffmpeg.org/wiki/x264EncodingGuide
             switch (Options.FFmpegCLI.VideoCodec)
             {
                 case FFmpegVideoCodec.libx264:
-                case FFmpegVideoCodec.libvpx:
                     args.AppendFormat("-crf {0} ", Options.FFmpegCLI.Quantizer);
                     args.AppendFormat("-preset {0} ", Options.FFmpegCLI.Preset.ToString());
                     break;
+                case FFmpegVideoCodec.libvpx:
+                    args.AppendFormat("-crf {0} ", Options.FFmpegCLI.Quantizer);
+                    break;
+                case FFmpegVideoCodec.libxvid:
+                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.Quantizer);
+                    break;
                 case FFmpegVideoCodec.mpeg4:
                     args.Append("-vtag xvid ");
-                    args.Append(string.Format("-qscale:v {0} ", Options.FFmpegCLI.Quantizer));
+                    args.AppendFormat("-qscale:v {0} ", Options.FFmpegCLI.Quantizer);
                     break;
             }
 
             // -pix_fmt yuv420p required otherwise can't stream in Chrome
+            args.Append("-pix_fmt yuv420p ");
+
+            if (Options.Duration > 0)
+            {
+                args.AppendFormat("-t {0} ", Options.Duration);
+            }
+
             // -y for overwrite file
-            args.AppendFormat("-pix_fmt yuv420p -y \"{0}\"", Path.ChangeExtension(Options.OutputPath, Options.FFmpegCLI.Extension));
+            args.AppendFormat("-y \"{0}\"", Path.ChangeExtension(Options.OutputPath, Options.FFmpegCLI.Extension));
 
             int result = Open(Options.FFmpegCLI.CLIPath, args.ToString());
             return result == 0;

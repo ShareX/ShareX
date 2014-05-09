@@ -61,6 +61,9 @@ namespace HelpersLib
                 psi.Arguments = args;
                 psi.WorkingDirectory = Path.GetDirectoryName(path);
 
+                Console.WriteLine("Path: " + path);
+                Console.WriteLine("Args: " + psi.Arguments);
+
                 process.EnableRaisingEvents = true;
                 process.OutputDataReceived += cli_OutputDataReceived;
                 process.ErrorDataReceived += cli_ErrorDataReceived;
