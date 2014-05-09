@@ -70,6 +70,7 @@ namespace ScreenCaptureLib
             VideoCodec = FFmpegVideoCodec.libx264;
             Preset = FFmpegPreset.medium;
             CRF = 23;
+            qscale = 3;
             Extension = "mp4";
         }
     }

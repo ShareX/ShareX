@@ -34,6 +34,7 @@
             this.lblCRF = new System.Windows.Forms.Label();
             this.nudCRF = new System.Windows.Forms.NumericUpDown();
             this.toolTipFFmpeg = new System.Windows.Forms.ToolTip(this.components);
+            this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.comboBoxExtension = new System.Windows.Forms.ComboBox();
             this.lblCodec = new System.Windows.Forms.Label();
             this.comboBoxCodec = new System.Windows.Forms.ComboBox();
@@ -43,12 +44,15 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.groupBoxH264 = new System.Windows.Forms.GroupBox();
             this.groupBoxH263 = new System.Windows.Forms.GroupBox();
-            this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.labelQscale = new System.Windows.Forms.Label();
+            this.groupBoxFFmpegExe = new System.Windows.Forms.GroupBox();
+            this.textBoxFFmpegPath = new System.Windows.Forms.TextBox();
+            this.buttonFFmpegBrowse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             this.groupBoxH264.SuspendLayout();
             this.groupBoxH263.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
+            this.groupBoxFFmpegExe.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblExt
@@ -87,6 +91,31 @@
             0,
             0});
             this.nudCRF.ValueChanged += new System.EventHandler(this.nudCRF_ValueChanged);
+            // 
+            // nudQscale
+            // 
+            this.nudQscale.Location = new System.Drawing.Point(88, 24);
+            this.nudQscale.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.nudQscale.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudQscale.Name = "nudQscale";
+            this.nudQscale.Size = new System.Drawing.Size(121, 20);
+            this.nudQscale.TabIndex = 16;
+            this.toolTipFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
+        " filesize.");
+            this.nudQscale.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
             // 
             // comboBoxExtension
             // 
@@ -143,7 +172,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(384, 184);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(392, 224);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 21;
@@ -153,7 +183,8 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(304, 184);
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.Location = new System.Drawing.Point(312, 224);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 20;
@@ -185,31 +216,6 @@
             this.groupBoxH263.TabStop = false;
             this.groupBoxH263.Text = "H.263 (DivX, XviD etc.)";
             // 
-            // numericUpDown1
-            // 
-            this.nudQscale.Location = new System.Drawing.Point(88, 24);
-            this.nudQscale.Maximum = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
-            this.nudQscale.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudQscale.Name = "numericUpDown1";
-            this.nudQscale.Size = new System.Drawing.Size(121, 20);
-            this.nudQscale.TabIndex = 16;
-            this.toolTipFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
-        " filesize.");
-            this.nudQscale.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
-            // 
             // labelQscale
             // 
             this.labelQscale.AutoSize = true;
@@ -219,12 +225,41 @@
             this.labelQscale.TabIndex = 15;
             this.labelQscale.Text = "qscale:";
             // 
+            // groupBoxFFmpegExe
+            // 
+            this.groupBoxFFmpegExe.Controls.Add(this.buttonFFmpegBrowse);
+            this.groupBoxFFmpegExe.Controls.Add(this.textBoxFFmpegPath);
+            this.groupBoxFFmpegExe.Location = new System.Drawing.Point(16, 144);
+            this.groupBoxFFmpegExe.Name = "groupBoxFFmpegExe";
+            this.groupBoxFFmpegExe.Size = new System.Drawing.Size(448, 56);
+            this.groupBoxFFmpegExe.TabIndex = 24;
+            this.groupBoxFFmpegExe.TabStop = false;
+            this.groupBoxFFmpegExe.Text = "ffmpeg.exe";
+            // 
+            // textBoxFFmpegPath
+            // 
+            this.textBoxFFmpegPath.Location = new System.Drawing.Point(8, 24);
+            this.textBoxFFmpegPath.Name = "textBoxFFmpegPath";
+            this.textBoxFFmpegPath.Size = new System.Drawing.Size(392, 20);
+            this.textBoxFFmpegPath.TabIndex = 0;
+            // 
+            // buttonFFmpegBrowse
+            // 
+            this.buttonFFmpegBrowse.Location = new System.Drawing.Point(408, 24);
+            this.buttonFFmpegBrowse.Name = "buttonFFmpegBrowse";
+            this.buttonFFmpegBrowse.Size = new System.Drawing.Size(35, 20);
+            this.buttonFFmpegBrowse.TabIndex = 1;
+            this.buttonFFmpegBrowse.Text = "...";
+            this.buttonFFmpegBrowse.UseVisualStyleBackColor = true;
+            this.buttonFFmpegBrowse.Click += new System.EventHandler(this.buttonFFmpegBrowse_Click);
+            // 
             // FFmpegCLIOptionsForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 218);
+            this.ClientSize = new System.Drawing.Size(480, 262);
+            this.Controls.Add(this.groupBoxFFmpegExe);
             this.Controls.Add(this.groupBoxH263);
             this.Controls.Add(this.groupBoxH264);
             this.Controls.Add(this.btnCancel);
@@ -235,16 +270,18 @@
             this.Controls.Add(this.lblExt);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(300, 256);
+            this.MinimumSize = new System.Drawing.Size(496, 300);
             this.Name = "FFmpegCLIOptionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpegGUI";
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
             this.groupBoxH264.ResumeLayout(false);
             this.groupBoxH264.PerformLayout();
             this.groupBoxH263.ResumeLayout(false);
             this.groupBoxH263.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
+            this.groupBoxFFmpegExe.ResumeLayout(false);
+            this.groupBoxFFmpegExe.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +304,8 @@
         private System.Windows.Forms.GroupBox groupBoxH263;
         private System.Windows.Forms.NumericUpDown nudQscale;
         private System.Windows.Forms.Label labelQscale;
+        private System.Windows.Forms.GroupBox groupBoxFFmpegExe;
+        private System.Windows.Forms.Button buttonFFmpegBrowse;
+        private System.Windows.Forms.TextBox textBoxFFmpegPath;
     }
 }

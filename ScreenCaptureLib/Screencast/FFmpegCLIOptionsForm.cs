@@ -39,6 +39,8 @@ namespace ScreenCaptureLib
             comboBoxPreset.SelectedIndex = (int)Options.Preset;
 
             nudQscale.Value = Options.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+
+            textBoxFFmpegPath.Text = Options.CLIPath;
         }
 
         private void comboBoxCodec_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +85,12 @@ namespace ScreenCaptureLib
         private void nudQscale_ValueChanged(object sender, EventArgs e)
         {
             Options.qscale = (int)nudQscale.Value;
+        }
+
+        private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile("Browse for ffmpeg.exe", textBoxFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+            Options.CLIPath = textBoxFFmpegPath.Text;
         }
     }
 }
