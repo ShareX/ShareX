@@ -50,6 +50,7 @@ namespace UploadersLib
         public bool IsUploading { get; protected set; }
         public int BufferSize { get; set; }
         public bool AllowReportProgress { get; set; }
+        public bool SuppressWebExceptions { get; set; }
 
         protected bool stopUpload;
 
@@ -176,6 +177,11 @@ namespace UploadersLib
 
                 return (HttpWebResponse)request.GetResponse();
             }
+            catch (WebException e)
+            {
+                if (SuppressWebExceptions) throw;
+                if (!stopUpload) AddWebError(e);
+            }
             catch (Exception e)
             {
                 if (!stopUpload) AddWebError(e);
@@ -248,6 +254,11 @@ namespace UploadersLib
 
                 return (HttpWebResponse)request.GetResponse();
             }
+            catch (WebException e)
+            {
+                if (SuppressWebExceptions) throw;
+                if (!stopUpload) AddWebError(e);
+            }
             catch (Exception e)
             {
                 if (!stopUpload) AddWebError(e);
@@ -262,7 +273,7 @@ namespace UploadersLib
 
         protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file",
             Dictionary<string, string> arguments = null, CookieCollection cookies = null, NameValueCollection headers = null,
-            ResponseType responseType = ResponseType.Text, bool suppressWebExceptions = true)
+            ResponseType responseType = ResponseType.Text)
         {
             UploadResult result = new UploadResult();
 
@@ -293,9 +304,7 @@ namespace UploadersLib
             }
             catch (WebException e)
             {
-                if (!suppressWebExceptions)
-                    throw;
-
+                if (SuppressWebExceptions) throw;
                 if (!stopUpload) result.Response = AddWebError(e);
             }
             catch (Exception e)
