@@ -243,7 +243,8 @@ namespace HelpersLib
     {
         Default,
         Silent,
-        VerySilent
+        VerySilent,
+        Event
     }
 
     public enum ReleaseChannelType

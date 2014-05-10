@@ -276,6 +276,10 @@ namespace HelpersLib
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetModuleHandle(string lpModuleName);
 
+        [DllImport("kernel32.dll", CallingConvention = CallingConvention.Winapi)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool IsWow64Process([In] IntPtr hProcess, [Out] out bool lpSystemInfo);
+
         #endregion kernel32.dll
 
         #region gdi32.dll

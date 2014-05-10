@@ -98,6 +98,12 @@ namespace ShareX
                 }
             }
 
+            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI && !File.Exists(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+            {
+                MessageBox.Show("FFmpeg CLI file does not exist: " + TaskSettings.CaptureSettings.FFmpegOptions.CLIPath + "\r\nYou can automatically download it from FFmpeg options window.",
+                    Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             SelectRegion();
             Screenshot.CaptureCursor = TaskSettings.CaptureSettings.ShowCursor;
 

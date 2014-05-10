@@ -92,7 +92,7 @@ namespace HelpersLib
         {
             if (updateChecker != null && updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable)
             {
-                using (UpdaterForm updaterForm = new UpdaterForm(updateChecker))
+                using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
                 {
                     updaterForm.ShowDialog();
 

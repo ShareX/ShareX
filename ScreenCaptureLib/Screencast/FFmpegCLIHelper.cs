@@ -45,7 +45,7 @@ namespace ScreenCaptureLib
 
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath))
             {
-                Options.FFmpeg.CLIPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                Options.FFmpeg.CLIPath = "ffmpeg.exe";
             }
 
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);

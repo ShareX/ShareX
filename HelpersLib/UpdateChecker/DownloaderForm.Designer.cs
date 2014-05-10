@@ -1,6 +1,6 @@
 ﻿namespace HelpersLib
 {
-    partial class UpdaterForm
+    partial class DownloaderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -135,7 +135,7 @@
             this.pbProgress.TabIndex = 8;
             this.pbProgress.Value = 0;
             // 
-            // UpdaterForm
+            // DownloaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,9 +152,9 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "UpdaterForm";
+            this.Name = "DownloaderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX updater";
+            this.Text = "ShareX downloader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdaterForm_FormClosing);
             this.Shown += new System.EventHandler(this.DownloaderForm_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UpdaterForm_Paint);

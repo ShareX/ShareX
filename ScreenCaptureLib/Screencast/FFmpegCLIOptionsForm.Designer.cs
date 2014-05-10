@@ -44,11 +44,12 @@
             this.groupBoxH263 = new System.Windows.Forms.GroupBox();
             this.labelQscale = new System.Windows.Forms.Label();
             this.groupBoxFFmpegExe = new System.Windows.Forms.GroupBox();
+            this.btnDownload = new System.Windows.Forms.Button();
             this.buttonFFmpegBrowse = new System.Windows.Forms.Button();
             this.textBoxFFmpegPath = new System.Windows.Forms.TextBox();
             this.groupBoxCommandLinePreview = new System.Windows.Forms.GroupBox();
             this.textBoxCommandLinePreview = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbCommandLineArgs = new System.Windows.Forms.GroupBox();
             this.buttonFFmpegHelp = new System.Windows.Forms.Button();
             this.textBoxUserArgs = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).BeginInit();
@@ -57,13 +58,13 @@
             this.groupBoxH263.SuspendLayout();
             this.groupBoxFFmpegExe.SuspendLayout();
             this.groupBoxCommandLinePreview.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbCommandLineArgs.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblExt
             // 
             this.lblExt.AutoSize = true;
-            this.lblExt.Location = new System.Drawing.Point(256, 13);
+            this.lblExt.Location = new System.Drawing.Point(240, 13);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
             this.lblExt.TabIndex = 11;
@@ -128,9 +129,9 @@
             "mp4",
             "webm",
             "avi"});
-            this.comboBoxExtension.Location = new System.Drawing.Point(335, 8);
+            this.comboBoxExtension.Location = new System.Drawing.Point(304, 9);
             this.comboBoxExtension.Name = "comboBoxExtension";
-            this.comboBoxExtension.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxExtension.Size = new System.Drawing.Size(152, 21);
             this.comboBoxExtension.TabIndex = 15;
             // 
             // lblCodec
@@ -146,9 +147,9 @@
             // 
             this.comboBoxCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCodec.FormattingEnabled = true;
-            this.comboBoxCodec.Location = new System.Drawing.Point(88, 8);
+            this.comboBoxCodec.Location = new System.Drawing.Point(64, 9);
             this.comboBoxCodec.Name = "comboBoxCodec";
-            this.comboBoxCodec.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCodec.Size = new System.Drawing.Size(160, 21);
             this.comboBoxCodec.TabIndex = 17;
             // 
             // comboBoxPreset
@@ -204,6 +205,7 @@
             // 
             // groupBoxFFmpegExe
             // 
+            this.groupBoxFFmpegExe.Controls.Add(this.btnDownload);
             this.groupBoxFFmpegExe.Controls.Add(this.buttonFFmpegBrowse);
             this.groupBoxFFmpegExe.Controls.Add(this.textBoxFFmpegPath);
             this.groupBoxFFmpegExe.Location = new System.Drawing.Point(8, 144);
@@ -213,11 +215,21 @@
             this.groupBoxFFmpegExe.TabStop = false;
             this.groupBoxFFmpegExe.Text = "ffmpeg.exe";
             // 
+            // btnDownload
+            // 
+            this.btnDownload.Location = new System.Drawing.Point(368, 22);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(72, 24);
+            this.btnDownload.TabIndex = 26;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.UseVisualStyleBackColor = true;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // buttonFFmpegBrowse
             // 
-            this.buttonFFmpegBrowse.Location = new System.Drawing.Point(408, 24);
+            this.buttonFFmpegBrowse.Location = new System.Drawing.Point(320, 22);
             this.buttonFFmpegBrowse.Name = "buttonFFmpegBrowse";
-            this.buttonFFmpegBrowse.Size = new System.Drawing.Size(35, 20);
+            this.buttonFFmpegBrowse.Size = new System.Drawing.Size(40, 24);
             this.buttonFFmpegBrowse.TabIndex = 1;
             this.buttonFFmpegBrowse.Text = "...";
             this.buttonFFmpegBrowse.UseVisualStyleBackColor = true;
@@ -225,11 +237,9 @@
             // 
             // textBoxFFmpegPath
             // 
-            this.textBoxFFmpegPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBoxFFmpegPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.textBoxFFmpegPath.Location = new System.Drawing.Point(8, 24);
             this.textBoxFFmpegPath.Name = "textBoxFFmpegPath";
-            this.textBoxFFmpegPath.Size = new System.Drawing.Size(392, 20);
+            this.textBoxFFmpegPath.Size = new System.Drawing.Size(304, 20);
             this.textBoxFFmpegPath.TabIndex = 0;
             // 
             // groupBoxCommandLinePreview
@@ -247,25 +257,26 @@
             this.textBoxCommandLinePreview.Location = new System.Drawing.Point(8, 24);
             this.textBoxCommandLinePreview.Multiline = true;
             this.textBoxCommandLinePreview.Name = "textBoxCommandLinePreview";
+            this.textBoxCommandLinePreview.ReadOnly = true;
             this.textBoxCommandLinePreview.Size = new System.Drawing.Size(432, 64);
             this.textBoxCommandLinePreview.TabIndex = 0;
             // 
-            // groupBox1
+            // gbCommandLineArgs
             // 
-            this.groupBox1.Controls.Add(this.buttonFFmpegHelp);
-            this.groupBox1.Controls.Add(this.textBoxUserArgs);
-            this.groupBox1.Location = new System.Drawing.Point(8, 208);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(448, 56);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Additional command line arguments";
+            this.gbCommandLineArgs.Controls.Add(this.buttonFFmpegHelp);
+            this.gbCommandLineArgs.Controls.Add(this.textBoxUserArgs);
+            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 208);
+            this.gbCommandLineArgs.Name = "gbCommandLineArgs";
+            this.gbCommandLineArgs.Size = new System.Drawing.Size(448, 56);
+            this.gbCommandLineArgs.TabIndex = 25;
+            this.gbCommandLineArgs.TabStop = false;
+            this.gbCommandLineArgs.Text = "Additional command line arguments";
             // 
             // buttonFFmpegHelp
             // 
-            this.buttonFFmpegHelp.Location = new System.Drawing.Point(408, 24);
+            this.buttonFFmpegHelp.Location = new System.Drawing.Point(400, 22);
             this.buttonFFmpegHelp.Name = "buttonFFmpegHelp";
-            this.buttonFFmpegHelp.Size = new System.Drawing.Size(35, 20);
+            this.buttonFFmpegHelp.Size = new System.Drawing.Size(40, 24);
             this.buttonFFmpegHelp.TabIndex = 1;
             this.buttonFFmpegHelp.Text = "?";
             this.buttonFFmpegHelp.UseVisualStyleBackColor = true;
@@ -277,23 +288,23 @@
             this.textBoxUserArgs.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.textBoxUserArgs.Location = new System.Drawing.Point(8, 24);
             this.textBoxUserArgs.Name = "textBoxUserArgs";
-            this.textBoxUserArgs.Size = new System.Drawing.Size(392, 20);
+            this.textBoxUserArgs.Size = new System.Drawing.Size(384, 20);
             this.textBoxUserArgs.TabIndex = 0;
             // 
             // FFmpegCLIOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 377);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(464, 378);
+            this.Controls.Add(this.gbCommandLineArgs);
             this.Controls.Add(this.groupBoxCommandLinePreview);
-            this.Controls.Add(this.groupBoxFFmpegExe);
             this.Controls.Add(this.groupBoxH263);
             this.Controls.Add(this.groupBoxH264);
             this.Controls.Add(this.comboBoxCodec);
             this.Controls.Add(this.lblCodec);
             this.Controls.Add(this.comboBoxExtension);
             this.Controls.Add(this.lblExt);
+            this.Controls.Add(this.groupBoxFFmpegExe);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(480, 416);
@@ -311,8 +322,8 @@
             this.groupBoxFFmpegExe.PerformLayout();
             this.groupBoxCommandLinePreview.ResumeLayout(false);
             this.groupBoxCommandLinePreview.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbCommandLineArgs.ResumeLayout(false);
+            this.gbCommandLineArgs.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,8 +349,9 @@
         private System.Windows.Forms.TextBox textBoxFFmpegPath;
         private System.Windows.Forms.GroupBox groupBoxCommandLinePreview;
         private System.Windows.Forms.TextBox textBoxCommandLinePreview;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbCommandLineArgs;
         private System.Windows.Forms.Button buttonFFmpegHelp;
         private System.Windows.Forms.TextBox textBoxUserArgs;
+        private System.Windows.Forms.Button btnDownload;
     }
 }

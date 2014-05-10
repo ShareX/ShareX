@@ -205,11 +205,11 @@
     <Compile Include="UnsafeBitmap.cs" />
     <Compile Include="UpdateChecker\GitHubUpdateChecker.cs" />
     <Compile Include="UpdateChecker\UpdateChecker.cs" />
-    <Compile Include="UpdateChecker\UpdaterForm.cs">
+    <Compile Include="UpdateChecker\DownloaderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateChecker\UpdaterForm.Designer.cs">
-      <DependentUpon>UpdaterForm.cs</DependentUpon>
+    <Compile Include="UpdateChecker\DownloaderForm.Designer.cs">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileDownloader.cs" />
     <Compile Include="UserControls\BlackStyle\MyButton.cs">
@@ -322,8 +322,8 @@
     <EmbeddedResource Include="Forms\MonitorTestForm.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateChecker\UpdaterForm.resx">
-      <DependentUpon>UpdaterForm.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateChecker\DownloaderForm.resx">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>

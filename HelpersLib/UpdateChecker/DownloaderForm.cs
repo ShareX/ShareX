@@ -35,8 +35,11 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
-    public partial class UpdaterForm : Form
+    public partial class DownloaderForm : Form
     {
+        public delegate void DownloaderInstallEventHandler(string filePath);
+        public event DownloaderInstallEventHandler InstallRequested;
+
         public string URL { get; set; }
         public string Filename { get; set; }
         public string SavePath { get; private set; }
@@ -52,7 +55,7 @@ namespace HelpersLib
         private FileStream fileStream;
         private Rectangle fillRect;
 
-        private UpdaterForm()
+        private DownloaderForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -69,7 +72,7 @@ namespace HelpersLib
             AutoStartInstall = true;
         }
 
-        public UpdaterForm(UpdateChecker updateChecker)
+        public DownloaderForm(UpdateChecker updateChecker)
             : this(updateChecker.UpdateInfo)
         {
             Proxy = updateChecker.Proxy;
@@ -80,11 +83,16 @@ namespace HelpersLib
             }
         }
 
-        public UpdaterForm(UpdateInfo updateInfo)
+        public DownloaderForm(UpdateInfo updateInfo)
+            : this(updateInfo.DownloadURL, updateInfo.Filename)
+        {
+        }
+
+        public DownloaderForm(string url, string filename)
             : this()
         {
-            URL = updateInfo.DownloadURL;
-            Filename = updateInfo.Filename;
+            URL = url;
+            Filename = filename;
             lblFilename.Text = "Filename: " + Filename;
         }
 
@@ -149,28 +157,43 @@ namespace HelpersLib
 
         private void RunInstaller()
         {
-            try
+            if (InstallType == InstallType.Event)
             {
-                ProcessStartInfo psi = new ProcessStartInfo(SavePath);
-
-                if (InstallType == InstallType.Silent)
-                {
-                    psi.Arguments = "/SILENT";
-                }
-                else if (InstallType == InstallType.VerySilent)
-                {
-                    psi.Arguments = "/VERYSILENT";
-                }
-
-                if (Helpers.IsDefaultInstallDir())
-                {
-                    psi.Verb = "runas";
-                }
-
-                psi.UseShellExecute = true;
-                Process.Start(psi);
+                OnInstallRequested();
             }
-            catch { }
+            else
+            {
+                try
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo(SavePath);
+
+                    if (InstallType == InstallType.Silent)
+                    {
+                        psi.Arguments = "/SILENT";
+                    }
+                    else if (InstallType == InstallType.VerySilent)
+                    {
+                        psi.Arguments = "/VERYSILENT";
+                    }
+
+                    if (Helpers.IsDefaultInstallDir())
+                    {
+                        psi.Verb = "runas";
+                    }
+
+                    psi.UseShellExecute = true;
+                    Process.Start(psi);
+                }
+                catch { }
+            }
+        }
+
+        protected void OnInstallRequested()
+        {
+            if (InstallRequested != null)
+            {
+                InstallRequested(SavePath);
+            }
         }
 
         private void ChangeStatus(string status)
@@ -201,7 +224,7 @@ namespace HelpersLib
                 fileStream = new FileStream(SavePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 fileDownloader = new FileDownloader(URL, fileStream, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
-                fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus("Download started.");
+                fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus("Downloading.");
                 fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadCompleted += fileDownloader_DownloadCompleted;
                 fileDownloader.ExceptionThrowed += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);

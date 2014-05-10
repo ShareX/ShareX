@@ -459,9 +459,6 @@
     <None Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LICENSE.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
@@ -470,6 +467,18 @@
     <None Include="Resources\Test.png" />
     <None Include="Resources\application-network.png" />
     <None Include="Resources\Greenshot.png" />
+    <None Include="..\Docs\LICENSE.txt">
+      <Link>LICENSE.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Lib\7z-x64.dll">
+      <Link>7z-x64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Lib\7z.dll">
+      <Link>7z.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />
@@ -482,9 +491,10 @@
     <None Include="Resources\folder-tree.png" />
     <None Include="Resources\fr.png" />
     <None Include="Resources\color.png" />
-    <Content Include="..\Docs\VersionHistory.txt">
+    <None Include="..\Docs\VersionHistory.txt">
       <Link>VersionHistory.txt</Link>
-    </Content>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\image-saturation.png" />
     <None Include="Resources\pipette.png" />
   </ItemGroup>

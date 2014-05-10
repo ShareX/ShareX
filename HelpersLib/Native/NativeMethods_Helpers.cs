@@ -330,9 +330,7 @@ namespace HelpersLib
         public static void TrimMemoryUse()
         {
             GC.Collect();
-#if !__MonoCS__
             GC.WaitForFullGCComplete();
-#endif
             SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, (IntPtr)(-1), (IntPtr)(-1));
         }
 
@@ -446,6 +444,27 @@ namespace HelpersLib
                     chs[i] = ' ';
             }
             return new string(chs);
+        }
+
+        public static bool Is64Bit()
+        {
+            if (IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static bool Is32BitProcessOn64BitProcessor()
+        {
+            bool retVal;
+
+            IsWow64Process(Process.GetCurrentProcess().Handle, out retVal);
+
+            return retVal;
         }
     }
 }

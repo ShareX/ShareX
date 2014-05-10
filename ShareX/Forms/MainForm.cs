@@ -441,7 +441,7 @@ namespace ShareX
                 MessageBox.Show("An update is available for ShareX.\r\nWould you like to download it?", "ShareX",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                using (UpdaterForm updaterForm = new UpdaterForm(updateChecker))
+                using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
                 {
                     updaterForm.ShowDialog();
 
