@@ -1,6 +1,6 @@
 ﻿namespace ScreenCaptureLib
 {
-    partial class FFmpegCLIOptionsForm
+    partial class FFmpegOptionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegCLIOptionsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
             this.lblCRF = new System.Windows.Forms.Label();
             this.nudCRF = new System.Windows.Forms.NumericUpDown();

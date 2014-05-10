@@ -106,7 +106,7 @@ namespace ShareX
                 {
                     TaskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
 
-                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(TaskSettings.CaptureSettings.FFmpegOptions))
+                    using (FFmpegOptionsForm form = new FFmpegOptionsForm(TaskSettings.CaptureSettings.FFmpegOptions))
                     {
                         if (form.DownloadFFmpeg(false) == System.Windows.Forms.DialogResult.Cancel)
                         {

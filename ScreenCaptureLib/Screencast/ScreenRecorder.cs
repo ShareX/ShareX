@@ -98,7 +98,7 @@ namespace ScreenCaptureLib
         private float durationSeconds;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
-        private FFmpegCLIHelper ffMpegCli;
+        private FFmpegHelper ffMpegCli;
         private bool stopRequest;
 
         public ScreenRecorder(ScreencastOptions options, Rectangle captureRectangle, ScreenRecordOutput outputType)
@@ -122,7 +122,7 @@ namespace ScreenCaptureLib
                     imgCache = new AVICache(Options);
                     break;
                 case ScreenRecordOutput.FFmpeg:
-                    ffMpegCli = new FFmpegCLIHelper(Options);
+                    ffMpegCli = new FFmpegHelper(Options);
                     break;
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);

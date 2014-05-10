@@ -35,11 +35,11 @@ using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public class FFmpegCLIHelper : ExternalCLIManager
+    public class FFmpegHelper : ExternalCLIManager
     {
         public ScreencastOptions Options { get; private set; }
 
-        public FFmpegCLIHelper(ScreencastOptions options)
+        public FFmpegHelper(ScreencastOptions options)
         {
             Options = options;
 

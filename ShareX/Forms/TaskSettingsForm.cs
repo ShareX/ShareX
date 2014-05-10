@@ -684,7 +684,7 @@ namespace ShareX
                     }
                     break;
                 case ScreenRecordOutput.FFmpeg:
-                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(options))
+                    using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
                     {
                         form.ShowDialog();
                     }

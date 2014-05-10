@@ -38,21 +38,21 @@ using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
-    public partial class FFmpegCLIOptionsForm : Form
+    public partial class FFmpegOptionsForm : Form
     {
         private ScreencastOptions Options = new ScreencastOptions();
 
-        public FFmpegCLIOptionsForm(FFmpegOptions ffMpegOptions)
+        public FFmpegOptionsForm(FFmpegOptions ffMpegOptions)
         {
             Options.FFmpeg = ffMpegOptions;
 
             InitializeComponent();
 
-            this.Text = string.Format("{0} - FFmpeg CLI Options", Application.ProductName);
+            this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
             this.Icon = ShareXResources.Icon;
         }
 
-        public FFmpegCLIOptionsForm(ScreencastOptions options)
+        public FFmpegOptionsForm(ScreencastOptions options)
             : this(options.FFmpeg)
         {
             Options = options;
