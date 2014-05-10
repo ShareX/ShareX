@@ -421,8 +421,8 @@ namespace ShareX
             this.tsmiScreenRecorder.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.tsmiScreenRecorder.Name = "tsmiScreenRecorder";
             this.tsmiScreenRecorder.Size = new System.Drawing.Size(181, 22);
-            this.tsmiScreenRecorder.Text = "Screen Recorder";
-            this.tsmiScreenRecorder.Click += new System.EventHandler(this.tsmiScreenRecorderGIF_Click);
+            this.tsmiScreenRecorder.Text = "Screencast";
+            this.tsmiScreenRecorder.Click += new System.EventHandler(this.tsmiScreenRecorder_Click);
             // 
             // tsmiAutoCapture
             // 
@@ -1437,7 +1437,7 @@ namespace ShareX
             this.tsmiTrayScreenRecorder.Name = "tsmiTrayScreenRecorder";
             this.tsmiTrayScreenRecorder.Size = new System.Drawing.Size(184, 22);
             this.tsmiTrayScreenRecorder.Text = "Screen Recorder";
-            this.tsmiTrayScreenRecorder.Click += new System.EventHandler(this.tsmiScreenRecorderGIF_Click);
+            this.tsmiTrayScreenRecorder.Click += new System.EventHandler(this.tsmiScreenRecorder_Click);
             // 
             // tsmiTrayAutoCapture
             // 

@@ -661,7 +661,7 @@ namespace ShareX
             new RegionCapturePreview(Program.DefaultTaskSettings.CaptureSettings.SurfaceOptions).Show();
         }
 
-        private void tsmiScreenRecorderGIF_Click(object sender, EventArgs e)
+        private void tsmiScreenRecorder_Click(object sender, EventArgs e)
         {
             TaskHelpers.DoScreenRecorder();
         }
