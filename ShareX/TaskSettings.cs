@@ -277,7 +277,7 @@ namespace ShareX
 
         #region Capture / Screen recorder
 
-        public ScreenRecordOutput ScreenRecordOutput = ScreenRecordOutput.GIF;
+        public ScreenRecordOutput ScreenRecordOutput = ScreenRecordOutput.FFmpeg;
         public AVIOptions AVIOptions = new AVIOptions();
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
 

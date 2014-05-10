@@ -121,7 +121,7 @@ namespace ScreenCaptureLib
                 case ScreenRecordOutput.AVI:
                     imgCache = new AVICache(Options);
                     break;
-                case ScreenRecordOutput.FFmpegCLI:
+                case ScreenRecordOutput.FFmpeg:
                     ffMpegCli = new FFmpegCLIHelper(Options);
                     break;
                 case ScreenRecordOutput.GIF:
@@ -143,7 +143,7 @@ namespace ScreenCaptureLib
                 IsRecording = true;
                 stopRequest = false;
 
-                if (OutputType == ScreenRecordOutput.FFmpegCLI)
+                if (OutputType == ScreenRecordOutput.FFmpeg)
                 {
                     ffMpegCli.Record();
                 }

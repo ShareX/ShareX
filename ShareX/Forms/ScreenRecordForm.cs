@@ -99,7 +99,7 @@ namespace ShareX
                 }
             }
 
-            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI && !File.Exists(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+            if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !File.Exists(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath))
             {
                 if (MessageBox.Show("ffmpeg.exe does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
                     Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
@@ -141,7 +141,7 @@ namespace ShareX
                         {
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi"));
                         }
-                        else if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI)
+                        else if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg)
                         {
                             path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, TaskSettings.CaptureSettings.FFmpegOptions.Extension));
                         }

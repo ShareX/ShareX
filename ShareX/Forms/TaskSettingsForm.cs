@@ -648,7 +648,7 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
             btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI;
+                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
         }
 
@@ -683,7 +683,7 @@ namespace ShareX
                         MessageBox.Show(ex.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
-                case ScreenRecordOutput.FFmpegCLI:
+                case ScreenRecordOutput.FFmpeg:
                     using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(options))
                     {
                         form.ShowDialog();
