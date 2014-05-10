@@ -355,6 +355,7 @@ namespace ShareX
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
+            MigrateTaskSettings(DefaultTaskSettings);
         }
 
         public static void LoadUploadersConfig()
@@ -365,6 +366,34 @@ namespace ShareX
         public static void LoadHotkeySettings()
         {
             HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
+
+            if (HotkeysConfig != null && HotkeysConfig.Hotkeys != null)
+            {
+                HotkeysConfig.Hotkeys.ForEach(x => MigrateTaskSettings(x.TaskSettings));
+            }
+        }
+
+        private static void MigrateTaskSettings(TaskSettings taskSetting)
+        {
+            if (!taskSetting.CoreSettings.SettingsMigrated)
+            {
+                taskSetting.UseDefaultTaskSettings = taskSetting.UseDefaultAfterCaptureJob && taskSetting.UseDefaultAfterUploadJob && taskSetting.UseDefaultDestinations;
+
+                taskSetting.CoreSettings.AfterCaptureJob = taskSetting.AfterCaptureJob;
+                taskSetting.CoreSettings.AfterUploadJob = taskSetting.AfterUploadJob;
+
+                taskSetting.CoreSettings.ImageDestination = taskSetting.ImageDestination;
+                taskSetting.CoreSettings.FileDestination = taskSetting.FileDestination;
+                taskSetting.CoreSettings.TextDestination = taskSetting.TextDestination;
+                taskSetting.CoreSettings.TextFileDestination = taskSetting.TextFileDestination;
+                taskSetting.CoreSettings.URLShortenerDestination = taskSetting.URLShortenerDestination;
+                taskSetting.CoreSettings.SocialNetworkingServiceDestination = taskSetting.SocialNetworkingServiceDestination;
+
+                taskSetting.CoreSettings.OverrideFTP = taskSetting.OverrideFTP;
+                taskSetting.CoreSettings.FTPIndex = taskSetting.FTPIndex;
+
+                taskSetting.CoreSettings.SettingsMigrated = true;
+            }
         }
 
         public static void SaveSettings()
