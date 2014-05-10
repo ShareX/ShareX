@@ -106,7 +106,10 @@ namespace ShareX
                 {
                     using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm())
                     {
-                        form.DownloadFFmpeg();
+                        if (form.DownloadFFmpeg(false) == System.Windows.Forms.DialogResult.Cancel)
+                        {
+                            return;
+                        }
                     }
                 }
             }

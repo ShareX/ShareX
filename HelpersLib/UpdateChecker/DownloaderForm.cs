@@ -50,6 +50,7 @@ namespace HelpersLib
         public InstallType InstallType { get; set; }
         public bool AutoStartInstall { get; set; }
         public DownloaderFormStatus Status { get; private set; }
+        public bool RunInstallerInBackground { get; set; }
 
         private FileDownloader fileDownloader;
         private FileStream fileStream;
@@ -70,6 +71,7 @@ namespace HelpersLib
             AutoStartDownload = true;
             InstallType = InstallType.Silent;
             AutoStartInstall = true;
+            RunInstallerInBackground = true;
         }
 
         public DownloaderForm(UpdateChecker updateChecker)
@@ -124,10 +126,12 @@ namespace HelpersLib
                 }
                 else if (Status == DownloaderFormStatus.DownloadCompleted)
                 {
+                    DialogResult = DialogResult.OK;
                     Install();
                 }
                 else
                 {
+                    DialogResult = DialogResult.Cancel;
                     Close();
                 }
             }
@@ -147,12 +151,20 @@ namespace HelpersLib
         // This function will give time for ShareX to close so installer won't tell ShareX is already running
         private void RunInstallerWithDelay(int delay = 1000)
         {
-            Thread thread = new Thread(() =>
+            if (RunInstallerInBackground)
             {
-                Thread.Sleep(delay);
+                Thread thread = new Thread(() =>
+                {
+                    Thread.Sleep(delay);
+                    RunInstaller();
+                });
+                thread.Start();
+            }
+            else
+            {
+                Hide();
                 RunInstaller();
-            });
-            thread.Start();
+            }
         }
 
         private void RunInstaller()
@@ -192,6 +204,7 @@ namespace HelpersLib
         {
             if (InstallRequested != null)
             {
+                DialogResult = DialogResult.OK;
                 InstallRequested(SavePath);
             }
         }
@@ -207,8 +220,8 @@ namespace HelpersLib
             {
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
                 lblProgress.Text = String.Format(CultureInfo.CurrentCulture,
-                    "Progress: {0:0.##}%\nDownload speed: {1:0.##} kB/s\nFile size: {2:n0} / {3:n0} kB",
-                    fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024,
+                    "Progress: {0:0.0}%\nDownload speed: {1:0.0} kB/s\nFile size: {2:n0} / {3:n0} KiB",
+                    fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1000, fileDownloader.DownloadedSize / 1024,
                     fileDownloader.FileSize / 1024);
             }
         }

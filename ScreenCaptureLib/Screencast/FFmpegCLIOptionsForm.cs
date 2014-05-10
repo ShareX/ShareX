@@ -140,25 +140,30 @@ namespace ScreenCaptureLib
             DownloadFFmpeg();
         }
 
-        public void DownloadFFmpeg(bool showConfirmation = true)
+        public DialogResult DownloadFFmpeg(bool runInstallerInBackground = true)
         {
-            string url;
-
-            if (NativeMethods.Is64Bit())
-            {
-                url = "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
-            }
-            else
-            {
-                url = "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
-            }
-
-            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.7z"))
+            using (DownloaderForm form = new DownloaderForm(FFmpegDownloadLink, "ffmpeg.7z"))
             {
                 form.Proxy = ProxyInfo.Current.GetWebProxy();
                 form.InstallType = InstallType.Event;
+                form.RunInstallerInBackground = runInstallerInBackground;
                 form.InstallRequested += form_InstallRequested;
-                form.ShowDialog();
+                return form.ShowDialog();
+            }
+        }
+
+        public static string FFmpegDownloadLink
+        {
+            get
+            {
+                if (NativeMethods.Is64Bit())
+                {
+                    return "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
+                }
+                else
+                {
+                    return "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
+                }
             }
         }
 
@@ -178,7 +183,7 @@ namespace ScreenCaptureLib
             }
         }
 
-        private bool ExtractFFmpeg(string zipPath, string extractPath)
+        public static bool ExtractFFmpeg(string zipPath, string extractPath)
         {
             try
             {
