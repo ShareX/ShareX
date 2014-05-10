@@ -162,25 +162,6 @@ namespace UploadersLib
         Headers
     }
 
-    public enum ProxyMethod
-    {
-        None,
-        Manual,
-        Automatic
-    }
-
-    public enum ProxyType
-    {
-        [Description("HTTP proxy")]
-        HTTP,
-        [Description("SOCKS v4 proxy")]
-        SOCKS4,
-        [Description("SOCKS v4a proxy")]
-        SOCKS4a,
-        [Description("SOCKS v5 proxy")]
-        SOCKS5
-    }
-
     public enum FTPProtocol
     {
         [Description("FTP")]

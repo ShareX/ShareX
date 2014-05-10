@@ -26,6 +26,7 @@
 using HelpersLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -100,8 +101,14 @@ namespace ShareX
 
             if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpegCLI && !File.Exists(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath))
             {
-                MessageBox.Show("FFmpeg CLI file does not exist: " + TaskSettings.CaptureSettings.FFmpegOptions.CLIPath + "\r\nYou can automatically download it from FFmpeg options window.",
-                    Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (MessageBox.Show("ffmpeg.exe does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
+                    Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm())
+                    {
+                        form.DownloadFFmpeg();
+                    }
+                }
             }
 
             SelectRegion();

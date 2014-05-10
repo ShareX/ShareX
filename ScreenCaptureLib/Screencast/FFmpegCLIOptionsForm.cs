@@ -42,16 +42,24 @@ namespace ScreenCaptureLib
     {
         private ScreencastOptions Options = null;
 
+        public FFmpegCLIOptionsForm()
+        {
+            InitializeComponent();
+
+            this.Text = string.Format("{0} - FFmpeg CLI Options", Application.ProductName);
+            this.Icon = ShareXResources.Icon;
+        }
+
         public FFmpegCLIOptionsForm(ScreencastOptions options)
+            : this()
         {
             Options = options;
 
-            InitializeComponent();
-            this.Text = string.Format("{0} - FFmpeg CLI Options", Application.ProductName);
-            this.Icon = ShareXResources.Icon;
-
-            LoadSettings();
-            UpdateUI();
+            if (options != null)
+            {
+                LoadSettings();
+                UpdateUI();
+            }
         }
 
         private void LoadSettings()
@@ -129,6 +137,11 @@ namespace ScreenCaptureLib
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            DownloadFFmpeg();
+        }
+
+        public void DownloadFFmpeg(bool showConfirmation = true)
+        {
             string url;
 
             if (NativeMethods.Is64Bit())
@@ -142,7 +155,7 @@ namespace ScreenCaptureLib
 
             using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.7z"))
             {
-                //form.Proxy =
+                form.Proxy = ProxyInfo.Current.GetWebProxy();
                 form.InstallType = InstallType.Event;
                 form.InstallRequested += form_InstallRequested;
                 form.ShowDialog();
@@ -157,11 +170,11 @@ namespace ScreenCaptureLib
             if (result)
             {
                 this.InvokeSafe(() => textBoxFFmpegPath.Text = "ffmpeg.exe");
-                MessageBox.Show("FFmpeg successfully downloaded.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Download of FFmpeg failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Download of FFmpeg failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -266,7 +266,6 @@
     <Compile Include="ImageUploaders\Photobucket.cs" />
     <Compile Include="SocialServices\Twitter.cs" />
     <Compile Include="HelperClasses\ProgressManager.cs" />
-    <Compile Include="ProxyInfo.cs" />
     <Compile Include="HelperClasses\TCPClient.cs" />
     <Compile Include="ImageUploader.cs" />
     <Compile Include="FileUploaders\CustomFileUploader.cs" />

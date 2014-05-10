@@ -59,6 +59,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Starksoft.Net.Proxy">
+      <HintPath>..\Lib\Starksoft.Net.Proxy.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -104,6 +107,7 @@
     <Compile Include="Native\NativeConstants.cs" />
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
+    <Compile Include="ProxyInfo.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
