@@ -40,10 +40,12 @@ namespace ScreenCaptureLib
 {
     public partial class FFmpegCLIOptionsForm : Form
     {
-        private ScreencastOptions Options = null;
+        private ScreencastOptions Options = new ScreencastOptions();
 
-        public FFmpegCLIOptionsForm()
+        public FFmpegCLIOptionsForm(FFmpegOptions ffMpegOptions)
         {
+            Options.FFmpeg = ffMpegOptions;
+
             InitializeComponent();
 
             this.Text = string.Format("{0} - FFmpeg CLI Options", Application.ProductName);
@@ -51,7 +53,7 @@ namespace ScreenCaptureLib
         }
 
         public FFmpegCLIOptionsForm(ScreencastOptions options)
-            : this()
+            : this(options.FFmpeg)
         {
             Options = options;
 
@@ -169,12 +171,12 @@ namespace ScreenCaptureLib
 
         private void form_InstallRequested(string filePath)
         {
-            string extractPath = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            string extractPath = Options.FFmpeg.CLIPath;
             bool result = ExtractFFmpeg(filePath, extractPath);
 
             if (result)
             {
-                this.InvokeSafe(() => textBoxFFmpegPath.Text = "ffmpeg.exe");
+                this.InvokeSafe(() => textBoxFFmpegPath.Text = extractPath);
                 MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -195,6 +197,8 @@ namespace ScreenCaptureLib
                 {
                     SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z.dll"));
                 }
+
+                Helpers.CreateDirectoryIfNotExist(extractPath);
 
                 using (SevenZipExtractor zip = new SevenZipExtractor(zipPath))
                 {

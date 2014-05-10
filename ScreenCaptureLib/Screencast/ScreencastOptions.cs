@@ -118,6 +118,7 @@ namespace ScreenCaptureLib
 
         public FFmpegOptions()
         {
+            CLIPath = "ffmpeg.exe";
             VideoCodec = FFmpegVideoCodec.libx264;
             Preset = FFmpegPreset.medium;
             CRF = 23;

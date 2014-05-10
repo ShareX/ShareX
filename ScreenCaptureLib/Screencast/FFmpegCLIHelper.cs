@@ -43,11 +43,6 @@ namespace ScreenCaptureLib
         {
             Options = options;
 
-            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath))
-            {
-                Options.FFmpeg.CLIPath = "ffmpeg.exe";
-            }
-
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
 
             // It is actually output data

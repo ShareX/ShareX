@@ -365,7 +365,7 @@ namespace ShareX
             this.tsmiRoundedRectangle.Image = global::ShareX.Properties.Resources.layer_shape_round;
             this.tsmiRoundedRectangle.Name = "tsmiRoundedRectangle";
             this.tsmiRoundedRectangle.Size = new System.Drawing.Size(181, 22);
-            this.tsmiRoundedRectangle.Text = "Rounded Rectangle";
+            this.tsmiRoundedRectangle.Text = "Rounded rectangle";
             this.tsmiRoundedRectangle.Click += new System.EventHandler(this.tsmiRoundedRectangle_Click);
             // 
             // tsmiEllipse
@@ -405,7 +405,7 @@ namespace ShareX
             this.tsmiFreeHand.Image = global::ShareX.Properties.Resources.layer_shape_curve;
             this.tsmiFreeHand.Name = "tsmiFreeHand";
             this.tsmiFreeHand.Size = new System.Drawing.Size(181, 22);
-            this.tsmiFreeHand.Text = "Free Hand";
+            this.tsmiFreeHand.Text = "Freehand";
             this.tsmiFreeHand.Click += new System.EventHandler(this.tsmiFreeHand_Click);
             // 
             // tsmiLastRegion
@@ -413,7 +413,7 @@ namespace ShareX
             this.tsmiLastRegion.Image = global::ShareX.Properties.Resources.layers_arrange;
             this.tsmiLastRegion.Name = "tsmiLastRegion";
             this.tsmiLastRegion.Size = new System.Drawing.Size(181, 22);
-            this.tsmiLastRegion.Text = "Last Region";
+            this.tsmiLastRegion.Text = "Last region";
             this.tsmiLastRegion.Click += new System.EventHandler(this.tsmiLastRegion_Click);
             // 
             // tsmiScreenRecorder
@@ -429,7 +429,7 @@ namespace ShareX
             this.tsmiAutoCapture.Image = global::ShareX.Properties.Resources.clock_plus;
             this.tsmiAutoCapture.Name = "tsmiAutoCapture";
             this.tsmiAutoCapture.Size = new System.Drawing.Size(181, 22);
-            this.tsmiAutoCapture.Text = "Auto Capture...";
+            this.tsmiAutoCapture.Text = "Auto capture...";
             this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
             // tsddbAfterCaptureTasks
@@ -1288,7 +1288,7 @@ namespace ShareX
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(190, 440);
+            this.cmsTray.Size = new System.Drawing.Size(190, 462);
             // 
             // tsmiTrayClipboardUpload
             // 
@@ -1380,7 +1380,7 @@ namespace ShareX
             this.tsmiTrayRoundedRectangle.Image = global::ShareX.Properties.Resources.layer_shape_round;
             this.tsmiTrayRoundedRectangle.Name = "tsmiTrayRoundedRectangle";
             this.tsmiTrayRoundedRectangle.Size = new System.Drawing.Size(184, 22);
-            this.tsmiTrayRoundedRectangle.Text = "Rounded Rectangle";
+            this.tsmiTrayRoundedRectangle.Text = "Rounded rectangle";
             this.tsmiTrayRoundedRectangle.Click += new System.EventHandler(this.tsmiTrayRoundedRectangle_Click);
             // 
             // tsmiTrayEllipse
@@ -1420,7 +1420,7 @@ namespace ShareX
             this.tsmiTrayFreeHand.Image = global::ShareX.Properties.Resources.layer_shape_curve;
             this.tsmiTrayFreeHand.Name = "tsmiTrayFreeHand";
             this.tsmiTrayFreeHand.Size = new System.Drawing.Size(184, 22);
-            this.tsmiTrayFreeHand.Text = "Free Hand";
+            this.tsmiTrayFreeHand.Text = "Freehand";
             this.tsmiTrayFreeHand.Click += new System.EventHandler(this.tsmiTrayFreeHand_Click);
             // 
             // tsmiTrayLastRegion
@@ -1428,7 +1428,7 @@ namespace ShareX
             this.tsmiTrayLastRegion.Image = global::ShareX.Properties.Resources.layers_arrange;
             this.tsmiTrayLastRegion.Name = "tsmiTrayLastRegion";
             this.tsmiTrayLastRegion.Size = new System.Drawing.Size(184, 22);
-            this.tsmiTrayLastRegion.Text = "Last Region";
+            this.tsmiTrayLastRegion.Text = "Last region";
             this.tsmiTrayLastRegion.Click += new System.EventHandler(this.tsmiTrayLastRegion_Click);
             // 
             // tsmiTrayScreenRecorder
@@ -1444,7 +1444,7 @@ namespace ShareX
             this.tsmiTrayAutoCapture.Image = global::ShareX.Properties.Resources.clock_plus;
             this.tsmiTrayAutoCapture.Name = "tsmiTrayAutoCapture";
             this.tsmiTrayAutoCapture.Size = new System.Drawing.Size(184, 22);
-            this.tsmiTrayAutoCapture.Text = "Auto Capture...";
+            this.tsmiTrayAutoCapture.Text = "Auto capture...";
             this.tsmiTrayAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
             // tsmiTrayAfterCaptureTasks

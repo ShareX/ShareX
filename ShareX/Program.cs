@@ -233,6 +233,14 @@ namespace ShareX
             }
         }
 
+        public static string ToolsFolder
+        {
+            get
+            {
+                return Path.Combine(PersonalPath, "Tools");
+            }
+        }
+
         #endregion Paths
 
         public static bool IsMultiInstance { get; private set; }

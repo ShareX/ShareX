@@ -101,16 +101,22 @@ namespace ShareX
 
             if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !File.Exists(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath))
             {
-                if (MessageBox.Show("ffmpeg.exe does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
-                    Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath + " does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
+                    Application.ProductName + " - Missing ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm())
+                    TaskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+
+                    using (FFmpegCLIOptionsForm form = new FFmpegCLIOptionsForm(TaskSettings.CaptureSettings.FFmpegOptions))
                     {
                         if (form.DownloadFFmpeg(false) == System.Windows.Forms.DialogResult.Cancel)
                         {
                             return;
                         }
                     }
+                }
+                else
+                {
+                    return;
                 }
             }
 
