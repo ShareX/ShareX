@@ -213,6 +213,7 @@ namespace ShareX
             }
             else
             {
+                taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob;
                 return taskSettings;
             }
         }
@@ -302,6 +303,9 @@ namespace ShareX
     {
         public AfterCaptureTasks AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost;
         public AfterUploadTasks AfterUploadJob = AfterUploadTasks.CopyURLToClipboard;
+
+        [JsonIgnore]
+        public AfterCaptureTasks AfterCaptureJobsTemp;
     }
 
     public class TaskSettingsDestinations
