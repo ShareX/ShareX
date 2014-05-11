@@ -158,7 +158,7 @@ namespace ShareX
         FreeHandRegion,
         [Description("Capture last region")]
         LastRegion,
-        [Description("Screen recorder")]
+        [Description("Screen recording")]
         ScreenRecorder,
         [Description("Auto capture")]
         AutoCapture,

@@ -74,7 +74,8 @@ namespace ShareX
 
             foreach (LinkFormatEnum type in Enum.GetValues(typeof(LinkFormatEnum)))
             {
-                if (!Helpers.IsImageFile(Info.Result.URL) && type != LinkFormatEnum.URL && type != LinkFormatEnum.LocalFilePath && type != LinkFormatEnum.LocalFilePathUri)
+                if (!Helpers.IsImageFile(Info.Result.URL) && (type == LinkFormatEnum.HTMLImage || type == LinkFormatEnum.HTMLLinkedImage ||
+                    type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage))
                     continue;
 
                 AddFormat(type.GetDescription(), GetUrlByType(type));
