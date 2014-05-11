@@ -1,6 +1,6 @@
 ﻿ShareX 8.8.1
 
-* Screencast using FFmpegCLI and AForge.NET FFmpeg binaries
+* Screencast using FFmpeg
 * Clipboard Upload supports image or file URLs in their respective data types
 * DreamObjects hosting support via Amazon S3
 * Video Compression Manager (VCM) options to use Video for Windows (VfW) encoders

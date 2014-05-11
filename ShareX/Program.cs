@@ -381,6 +381,7 @@ namespace ShareX
                 taskSettings.SafeAfterTasks.AfterUploadJob = taskSettings.AfterUploadJob;
 
                 taskSettings.TaskDestinations.ImageDestination = taskSettings.ImageDestination;
+                taskSettings.TaskDestinations.ImageFileDestination = taskSettings.ImageFileDestination;
                 taskSettings.TaskDestinations.FileDestination = taskSettings.FileDestination;
                 taskSettings.TaskDestinations.TextDestination = taskSettings.TextDestination;
                 taskSettings.TaskDestinations.TextFileDestination = taskSettings.TextFileDestination;
