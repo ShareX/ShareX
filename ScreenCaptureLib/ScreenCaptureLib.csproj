@@ -45,6 +45,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
     </Reference>
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -58,7 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums.cs" />
+    <Compile Include="Screencast\AVIOptions.cs" />
+    <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
+    <Compile Include="Screencast\FFmpegOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screencast\FFmpegOptionsForm.Designer.cs">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
     <Compile Include="Screencast\AviWriter.cs" />
     <Compile Include="Forms\RectangleLight.cs">
@@ -135,6 +146,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

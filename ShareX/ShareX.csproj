@@ -77,10 +77,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -130,12 +126,6 @@
     </Compile>
     <Compile Include="Forms\ExternalProgramForm.Designer.cs">
       <DependentUpon>ExternalProgramForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FFmpegOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FFmpegOptionsForm.Designer.cs">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FileExistForm.cs">
       <SubType>Form</SubType>
@@ -268,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExternalProgramForm.resx">
       <DependentUpon>ExternalProgramForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FFmpegOptionsForm.resx">
-      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>

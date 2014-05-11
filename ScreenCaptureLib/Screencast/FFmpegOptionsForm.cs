@@ -37,11 +37,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ScreenCaptureLib
 {
     public partial class FFmpegOptionsForm : Form
     {
-        private ScreencastOptions Options = new ScreencastOptions();
+        public ScreencastOptions Options = new ScreencastOptions();
+        public string DefaultToolsPath;
 
         public FFmpegOptionsForm(FFmpegOptions ffMpegOptions)
         {
@@ -140,85 +141,22 @@ namespace ShareX
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            DownloadFFmpeg();
+            FFmpegHelper.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
         }
 
-        public DialogResult DownloadFFmpeg(bool runInstallerInBackground = true)
+        private void DownloaderForm_InstallRequested(string filePath)
         {
-            using (DownloaderForm form = new DownloaderForm(FFmpegDownloadLink(), "ffmpeg.7z"))
-            {
-                form.Proxy = ProxyInfo.Current.GetWebProxy();
-                form.InstallType = InstallType.Event;
-                form.RunInstallerInBackground = runInstallerInBackground;
-                form.InstallRequested += form_InstallRequested;
-                return form.ShowDialog();
-            }
-        }
-
-        public static string FFmpegDownloadLink()
-        {
-            if (NativeMethods.Is64Bit())
-            {
-                return "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
-            }
-
-            return "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
-        }
-
-        private void form_InstallRequested(string filePath)
-        {
-            string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-            bool result = ExtractFFmpeg(filePath, extractPath);
+            bool result = FFmpegHelper.ExtractFFmpeg(filePath, DefaultToolsPath ?? "ffmpeg.exe");
 
             if (result)
             {
-                this.InvokeSafe(() => textBoxFFmpegPath.Text = extractPath);
+                this.InvokeSafe(() => textBoxFFmpegPath.Text = DefaultToolsPath);
                 MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Download of FFmpeg failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        public static bool ExtractFFmpeg(string zipPath, string extractPath)
-        {
-            try
-            {
-                if (NativeMethods.Is64Bit())
-                {
-                    SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z-x64.dll"));
-                }
-                else
-                {
-                    SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z.dll"));
-                }
-
-                Helpers.CreateDirectoryIfNotExist(extractPath);
-
-                using (SevenZipExtractor zip = new SevenZipExtractor(zipPath))
-                {
-                    Regex regex = new Regex(@"^ffmpeg-.+\\bin\\ffmpeg\.exe$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-                    foreach (ArchiveFileInfo item in zip.ArchiveFileData)
-                    {
-                        if (regex.IsMatch(item.FileName))
-                        {
-                            using (FileStream fs = new FileStream(extractPath, FileMode.Create, FileAccess.Write, FileShare.None))
-                            {
-                                zip.ExtractFile(item.Index, fs);
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
         }
     }
 }

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using SevenZip;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,6 +32,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ScreenCaptureLib
@@ -77,6 +79,69 @@ namespace ScreenCaptureLib
 
             int result = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegArgs());
             return result == 0;
+        }
+
+        public static DialogResult DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
+        {
+            string url;
+
+            if (NativeMethods.Is64Bit())
+            {
+                url = "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
+            }
+            else
+            {
+                url = "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
+            }
+
+            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.7z"))
+            {
+                form.Proxy = ProxyInfo.Current.GetWebProxy();
+                form.InstallType = InstallType.Event;
+                form.RunInstallerInBackground = async;
+                form.InstallRequested += installRequested;
+                return form.ShowDialog();
+            }
+        }
+
+        public static bool ExtractFFmpeg(string zipPath, string extractPath)
+        {
+            try
+            {
+                if (NativeMethods.Is64Bit())
+                {
+                    SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z-x64.dll"));
+                }
+                else
+                {
+                    SevenZipExtractor.SetLibraryPath(Path.Combine(Application.StartupPath, "7z.dll"));
+                }
+
+                Helpers.CreateDirectoryIfNotExist(extractPath);
+
+                using (SevenZipExtractor zip = new SevenZipExtractor(zipPath))
+                {
+                    Regex regex = new Regex(@"^ffmpeg-.+\\bin\\ffmpeg\.exe$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+                    foreach (ArchiveFileInfo item in zip.ArchiveFileData)
+                    {
+                        if (regex.IsMatch(item.FileName))
+                        {
+                            using (FileStream fs = new FileStream(extractPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                            {
+                                zip.ExtractFile(item.Index, fs);
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
         }
 
         public void ListDevices()

@@ -96,34 +96,4 @@ namespace ScreenCaptureLib
             return args.ToString();
         }
     }
-
-    public class AVIOptions
-    {
-        public AVICOMPRESSOPTIONS CompressOptions;
-    }
-
-    public class FFmpegOptions
-    {
-        public string CLIPath { get; set; }
-        public FFmpegVideoCodec VideoCodec { get; set; }
-        public string Extension { get; set; }
-        public string UserArgs { get; set; }
-
-        // H264
-        public FFmpegPreset Preset { get; set; }
-        public int CRF { get; set; }
-
-        // H263
-        public int qscale { get; set; }
-
-        public FFmpegOptions()
-        {
-            CLIPath = "ffmpeg.exe";
-            VideoCodec = FFmpegVideoCodec.libx264;
-            Preset = FFmpegPreset.medium;
-            CRF = 23;
-            qscale = 3;
-            Extension = "mp4";
-        }
-    }
 }
