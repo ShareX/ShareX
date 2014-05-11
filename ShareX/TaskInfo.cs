@@ -43,7 +43,7 @@ namespace ShareX
         {
             get
             {
-                return Job != TaskJob.ImageJob || TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                return Job != TaskJob.ImageJob || TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.UploadImageToHost);
             }
         }
 

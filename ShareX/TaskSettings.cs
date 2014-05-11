@@ -209,6 +209,7 @@ namespace ShareX
         {
             if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
             {
+                Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob;
                 return Program.DefaultTaskSettings;
             }
             else

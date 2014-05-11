@@ -236,13 +236,13 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
-                if (TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost))
+                if (TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.UploadImageToHost))
                 {
                     UploadManager.UploadFile(path, TaskSettings);
                 }
                 else
                 {
-                    if (TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
+                    if (TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
                     {
                         ClipboardHelpers.CopyText(path);
                     }
