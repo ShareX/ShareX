@@ -108,9 +108,9 @@ namespace ShareX
                 {
                     TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                     taskSettings.UseDefaultAfterCaptureJob = false;
-                    taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
+                    taskSettings.SafeAfterTasks.AfterCaptureJob = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     taskSettings.UseDefaultAdvancedSettings = false;
-                    taskSettings.AdvancedSettings.DisableNotifications = true;
+                    taskSettings.SafeAdvancedSettings.DisableNotifications = true;
 
                     UploadManager.RunImageTask(img, taskSettings);
                 }

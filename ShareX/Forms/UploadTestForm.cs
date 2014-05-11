@@ -105,9 +105,12 @@ namespace ShareX
 
                 lvi = new ListViewItem(uploader.GetDescription());
 
-                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
-                UploadTask task = UploadTask.CreateImageUploaderTask((Image)TestImage.Clone(), defaultTaskSettings);
-                task.Info.TaskSettings.ImageDestination = uploader;
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.UseDefaultImageSettings = false;
+                taskSettings.SafeImageSettings.FileExistAction = FileExistAction.Cancel;
+                taskSettings.UseDefaultDestinations = false;
+                taskSettings.SafeDestinations.ImageDestination = uploader;
+                UploadTask task = UploadTask.CreateImageUploaderTask((Image)TestImage.Clone(), taskSettings);
 
                 lvi.Tag = task;
                 lvi.Group = imageUploadersGroup;
@@ -124,9 +127,12 @@ namespace ShareX
 
                 lvi = new ListViewItem(uploader.GetDescription());
 
-                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
-                UploadTask task = UploadTask.CreateTextUploaderTask(TestText, defaultTaskSettings);
-                task.Info.TaskSettings.TextDestination = uploader;
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.UseDefaultImageSettings = false;
+                taskSettings.SafeImageSettings.FileExistAction = FileExistAction.Cancel;
+                taskSettings.UseDefaultDestinations = false;
+                taskSettings.SafeDestinations.TextDestination = uploader;
+                UploadTask task = UploadTask.CreateTextUploaderTask(TestText, taskSettings);
 
                 lvi.Tag = task;
                 lvi.Group = textUploadersGroup;
@@ -145,10 +151,13 @@ namespace ShareX
 
                 lvi = new ListViewItem(uploader.GetDescription());
 
-                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
-                UploadTask task = UploadTask.CreateImageUploaderTask((Image)TestImage.Clone(), defaultTaskSettings);
-                task.Info.TaskSettings.ImageDestination = ImageDestination.FileUploader;
-                task.Info.TaskSettings.FileDestination = uploader;
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.UseDefaultImageSettings = false;
+                taskSettings.SafeImageSettings.FileExistAction = FileExistAction.Cancel;
+                taskSettings.UseDefaultDestinations = false;
+                taskSettings.SafeDestinations.ImageDestination = ImageDestination.FileUploader;
+                taskSettings.SafeDestinations.ImageFileDestination = uploader;
+                UploadTask task = UploadTask.CreateImageUploaderTask((Image)TestImage.Clone(), taskSettings);
 
                 lvi.Tag = task;
                 lvi.Group = fileUploadersGroup;
@@ -159,9 +168,12 @@ namespace ShareX
             {
                 lvi = new ListViewItem(uploader.GetDescription());
 
-                TaskSettings defaultTaskSettings = TaskSettings.GetDefaultTaskSettings();
-                UploadTask task = UploadTask.CreateURLShortenerTask(TestURL, defaultTaskSettings);
-                task.Info.TaskSettings.URLShortenerDestination = uploader;
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.UseDefaultImageSettings = false;
+                taskSettings.SafeImageSettings.FileExistAction = FileExistAction.Cancel;
+                taskSettings.UseDefaultDestinations = false;
+                taskSettings.SafeDestinations.URLShortenerDestination = uploader;
+                UploadTask task = UploadTask.CreateURLShortenerTask(TestURL, taskSettings);
 
                 lvi.Tag = task;
                 lvi.Group = urlShortenersGroup;
