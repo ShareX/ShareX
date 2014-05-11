@@ -73,7 +73,6 @@ namespace ShareX
         public bool UseCustomScreenshotsPath = false;
         public string CustomScreenshotsPath = string.Empty;
         public string SaveImageSubFolderPattern = "%y-%mo";
-        public string FFmpegPath = "ffmpeg.exe";
 
         #endregion Paths
 

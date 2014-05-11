@@ -1,4 +1,4 @@
-﻿namespace ShareX
+﻿namespace ScreenCaptureLib
 {
     partial class FFmpegOptionsForm
     {
