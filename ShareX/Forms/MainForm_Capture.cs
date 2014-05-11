@@ -245,7 +245,7 @@ namespace ShareX
 
                 if (taskSettings.SafeImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
                 {
-                    taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
+                    taskSettings.SafeAfterTasks.AfterCaptureJob = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
                 if (taskSettings.SafeGeneralSettings.ShowAfterCaptureTasksForm)
@@ -257,10 +257,10 @@ namespace ShareX
                         switch (afterCaptureForm.Result)
                         {
                             case AfterCaptureFormResult.Continue:
-                                taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = afterCaptureForm.AfterCaptureTasks;
+                                taskSettings.SafeAfterTasks.AfterCaptureJob = afterCaptureForm.AfterCaptureTasks;
                                 break;
                             case AfterCaptureFormResult.Copy:
-                                taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = AfterCaptureTasks.CopyImageToClipboard;
+                                taskSettings.SafeAfterTasks.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
                                 break;
                             case AfterCaptureFormResult.Cancel:
                                 if (img != null) img.Dispose();

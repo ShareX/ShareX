@@ -230,7 +230,7 @@ namespace ShareX
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     Program.Settings.ShowUploadWarning = false;
-                    Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                    Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
                     RequestSettingUpdate = true;
                     Stop();
                 }
@@ -365,28 +365,28 @@ namespace ShareX
 
         private void DoAfterCaptureJobs()
         {
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.AddImageEffects))
+            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
                 tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings);
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.AddWatermark) && Info.TaskSettings.SafeImageSettings.WatermarkConfig != null)
+            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark) && Info.TaskSettings.SafeImageSettings.WatermarkConfig != null)
             {
                 Info.TaskSettings.SafeImageSettings.WatermarkConfig.Apply(tempImage);
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.AnnotateImage))
+            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
                 tempImage = TaskHelpers.AnnotateImage(tempImage, Info.FileName);
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
+            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
             {
                 ClipboardHelpers.CopyImage(tempImage);
                 DebugHelper.WriteLine("CopyImageToClipboard");
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.SendImageToPrinter))
+            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SendImageToPrinter))
             {
                 if (Program.Settings.DontShowPrintSettingsDialog)
                 {
@@ -405,7 +405,7 @@ namespace ShareX
                 }
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog,
+            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog,
                 AfterCaptureTasks.UploadImageToHost))
             {
                 using (tempImage)
@@ -414,7 +414,7 @@ namespace ShareX
                     Data = imageData.ImageStream;
                     Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.SaveImageToFile))
+                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                     {
                         string filePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
@@ -426,7 +426,7 @@ namespace ShareX
                         }
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
+                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
                     {
                         using (SaveFileDialog sfd = new SaveFileDialog())
                         {
@@ -451,7 +451,7 @@ namespace ShareX
                         }
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
+                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
                     {
                         string thumbnailFilename, thumbnailFolder;
 
@@ -474,17 +474,17 @@ namespace ShareX
                         }
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.CopyFileToClipboard) && !string.IsNullOrEmpty(Info.FilePath) &&
+                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard) && !string.IsNullOrEmpty(Info.FilePath) &&
                         File.Exists(Info.FilePath))
                     {
                         ClipboardHelpers.CopyFile(Info.FilePath);
                     }
-                    else if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard) && !string.IsNullOrEmpty(Info.FilePath))
+                    else if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard) && !string.IsNullOrEmpty(Info.FilePath))
                     {
                         ClipboardHelpers.CopyText(Info.FilePath);
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.SafeActions != null &&
+                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.SafeActions != null &&
                         !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
                     {
                         var actions = Info.TaskSettings.SafeActions.Where(x => x.IsActive);

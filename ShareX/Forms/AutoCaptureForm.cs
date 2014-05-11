@@ -108,7 +108,7 @@ namespace ShareX
                 {
                     TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                     taskSettings.UseDefaultAfterCaptureJob = false;
-                    taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
+                    taskSettings.SafeAfterTasks.AfterCaptureJob = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     taskSettings.UseDefaultAdvancedSettings = false;
                     taskSettings.SafeAdvancedSettings.DisableNotifications = true;
 

@@ -155,7 +155,7 @@ namespace ShareX
                 {
                     if (!taskSettings.SafeAdvancedSettings.ProcessImagesDuringClipboardUpload)
                     {
-                        taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = AfterCaptureTasks.UploadImageToHost;
+                        taskSettings.SafeAfterTasks.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                     }
 
                     RunImageTask(img, taskSettings);
@@ -279,7 +279,7 @@ namespace ShareX
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = imageJob;
+                taskSettings.SafeAfterTasks.AfterCaptureJob = imageJob;
 
                 RunImageTask(img, taskSettings);
             }
