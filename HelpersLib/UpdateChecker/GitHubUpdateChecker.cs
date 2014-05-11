@@ -54,7 +54,7 @@ namespace HelpersLib
 
         public override void CheckUpdate()
         {
-            UpdateInfo = new UpdateInfo { CurrentVersion = this.CurrentVersion };
+            UpdateInfo = new UpdateInfo { CurrentVersion = this.CurrentVersion, ExpiryDate = this.ExpiryDate };
 
             try
             {
