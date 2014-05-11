@@ -30,7 +30,6 @@ namespace HelpersLib
 {
     public abstract class UpdateChecker
     {
-        public DateTime ExpiryDate { get; set; }
         public Version CurrentVersion { get; set; }
         public ReleaseChannelType ReleaseType { get; set; }
         public IWebProxy Proxy { get; set; }

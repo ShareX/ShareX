@@ -416,11 +416,6 @@ namespace HelpersLib
             return NormalizeVersion(latestVersion).CompareTo(NormalizeVersion(currentVersion)) > 0;
         }
 
-        public static bool CheckExpiryDate(DateTime expiryDate)
-        {
-            return DateTime.Today > expiryDate;
-        }
-
         private static Version NormalizeVersion(Version version)
         {
             return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));

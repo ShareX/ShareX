@@ -26,7 +26,6 @@
 using HelpersLib;
 using ImageEffectsLib;
 using ScreenCaptureLib;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -395,7 +394,6 @@ namespace ShareX
         public static UpdateChecker CheckUpdate()
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
-            updateChecker.ExpiryDate = new DateTime(2014, 05, 18);
             updateChecker.CurrentVersion = Program.AssemblyVersion;
             updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
             updateChecker.CheckUpdate();

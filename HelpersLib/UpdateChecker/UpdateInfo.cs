@@ -33,7 +33,6 @@ namespace HelpersLib
         public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
         public Version LatestVersion { get; set; }
-        public DateTime ExpiryDate { get; set; }
 
         private string filename;
 
@@ -66,8 +65,8 @@ namespace HelpersLib
 
         public void RefreshStatus()
         {
-            if (Status != UpdateStatus.UpdateCheckFailed && !string.IsNullOrEmpty(DownloadURL) && CurrentVersion != null && LatestVersion != null &&
-               (forceUpdate || Helpers.CheckVersion(CurrentVersion, LatestVersion) || Helpers.CheckExpiryDate(ExpiryDate)))
+            if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null &&
+                !string.IsNullOrEmpty(DownloadURL) && (forceUpdate || Helpers.CheckVersion(CurrentVersion, LatestVersion)))
             {
                 Status = UpdateStatus.UpdateAvailable;
             }
