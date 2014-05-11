@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib;
 using SevenZip;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace ScreenCaptureLib
+namespace ShareX
 {
     public partial class FFmpegOptionsForm : Form
     {
@@ -86,10 +87,9 @@ namespace ScreenCaptureLib
             textBoxUserArgs.Text = Options.FFmpeg.UserArgs;
             textBoxUserArgs.TextChanged += (sender, e) => UpdateUI();
 
-            string cli = "ffmpeg.exe";
-            if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
+            if (!File.Exists(Options.FFmpeg.CLIPath) && File.Exists(Program.Settings.FFmpegPath))
             {
-                Options.FFmpeg.CLIPath = cli;
+                Options.FFmpeg.CLIPath = Program.Settings.FFmpegPath;
             }
 
             textBoxFFmpegPath.Text = Options.FFmpeg.CLIPath;
@@ -171,12 +171,13 @@ namespace ScreenCaptureLib
 
         private void form_InstallRequested(string filePath)
         {
-            string extractPath = Options.FFmpeg.CLIPath;
+            string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
             bool result = ExtractFFmpeg(filePath, extractPath);
 
             if (result)
             {
                 this.InvokeSafe(() => textBoxFFmpegPath.Text = extractPath);
+                Options.FFmpeg.CLIPath = extractPath;
                 MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

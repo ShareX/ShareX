@@ -104,8 +104,6 @@ namespace ShareX
                 if (MessageBox.Show(TaskSettings.CaptureSettings.FFmpegOptions.CLIPath + " does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
                     Application.ProductName + " - Missing ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    TaskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-
                     using (FFmpegOptionsForm form = new FFmpegOptionsForm(TaskSettings.CaptureSettings.FFmpegOptions))
                     {
                         if (form.DownloadFFmpeg(false) == System.Windows.Forms.DialogResult.Cancel)

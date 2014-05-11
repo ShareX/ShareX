@@ -221,16 +221,6 @@ namespace HelpersLib
         Inside
     }
 
-    public enum ScreenRecordOutput
-    {
-        [Description("FFmpeg")]
-        FFmpeg,
-        [Description("Video Compression Manager (VCM)")]
-        AVI,
-        [Description("Animated GIF")]
-        GIF
-    }
-
     public enum DownloaderFormStatus
     {
         Waiting,
