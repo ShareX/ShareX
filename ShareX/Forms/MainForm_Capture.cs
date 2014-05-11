@@ -245,12 +245,12 @@ namespace ShareX
 
                 if (taskSettings.SafeImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
                 {
-                    taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJobsTemp.Remove(AfterCaptureTasks.AddImageEffects);
+                    taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
                 if (taskSettings.SafeGeneralSettings.ShowAfterCaptureTasksForm)
                 {
-                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings.SafeAfterTasks.AfterCaptureJobsTemp))
+                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings.SafeAfterTasks.AfterCaptureJob))
                     {
                         afterCaptureForm.ShowDialog();
 

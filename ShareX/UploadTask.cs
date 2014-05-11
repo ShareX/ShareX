@@ -230,7 +230,7 @@ namespace ShareX
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     Program.Settings.ShowUploadWarning = false;
-                    Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp.Remove(AfterCaptureTasks.UploadImageToHost);
+                    Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
                     RequestSettingUpdate = true;
                     Stop();
                 }

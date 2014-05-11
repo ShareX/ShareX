@@ -112,87 +112,9 @@ namespace ShareX
             get
             {
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && UseDefaultGeneralSettings &&
-                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
-                    UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
+                       UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
+                       UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
-        }
-
-        public TaskSettingsAfterTasks SafeAfterTasks
-        {
-            get
-            {
-                return UseDefaultAfterCaptureJob && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.TaskSettingsAfterTasks : TaskSettingsAfterTasks;
-            }
-        }
-
-        public TaskSettingsDestinations SafeDestinations
-        {
-            get
-            {
-                return UseDefaultDestinations && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.TaskDestinations : TaskDestinations;
-            }
-        }
-
-        public TaskSettingsGeneral SafeGeneralSettings
-        {
-            get
-            {
-                return UseDefaultGeneralSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.GeneralSettings : GeneralSettings;
-            }
-        }
-
-        public TaskSettingsImage SafeImageSettings
-        {
-            get
-            {
-                return UseDefaultImageSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.ImageSettings : ImageSettings;
-            }
-        }
-
-        public TaskSettingsCapture SafeCaptureSettings
-        {
-            get
-            {
-                return UseDefaultCaptureSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.CaptureSettings : CaptureSettings;
-            }
-        }
-
-        public List<ExternalProgram> SafeActions
-        {
-            get
-            {
-                return UseDefaultActions && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.ExternalPrograms : ExternalPrograms;
-            }
-        }
-
-        public TaskSettingsUpload SafeUploadSettings
-        {
-            get
-            {
-                return UseDefaultUploadSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.UploadSettings : UploadSettings;
-            }
-        }
-
-        public IndexerSettings SafeIndexerSettings
-        {
-            get
-            {
-                return UseDefaultIndexerSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.IndexerSettings : IndexerSettings;
-            }
-        }
-
-        public TaskSettingsAdvanced SafeAdvancedSettings
-        {
-            get
-            {
-                return UseDefaultAdvancedSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.AdvancedSettings : AdvancedSettings;
-            }
-        }
-
-        public static TaskSettings GetSafeTaskSettings(TaskSettings taskSettings)
-        {
-            taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob;
-            return taskSettings;
         }
 
         public static TaskSettings GetDefaultTaskSettings()
@@ -200,6 +122,101 @@ namespace ShareX
             TaskSettings taskSettings = new TaskSettings();
             taskSettings.SetDefaultSettings();
             return taskSettings;
+        }
+
+        public TaskSettingsAfterTasks SafeAfterTasks
+        {
+            get
+            {
+                return UseDefaultAfterCaptureJob && Program.DefaultTaskSettings != null ?
+                    Program.DefaultTaskSettings.TaskSettingsAfterTasks : TaskSettingsAfterTasks;
+            }
+        }
+
+        public TaskSettingsDestinations SafeDestinations
+        {
+            get
+            {
+                return UseDefaultDestinations && Program.DefaultTaskSettings != null ?
+                    Program.DefaultTaskSettings.TaskDestinations : TaskDestinations;
+            }
+        }
+
+        public TaskSettingsGeneral SafeGeneralSettings
+        {
+            get
+            {
+                return UseDefaultGeneralSettings && Program.DefaultTaskSettings != null ?
+                    Program.DefaultTaskSettings.GeneralSettings : GeneralSettings;
+            }
+        }
+
+        public TaskSettingsImage SafeImageSettings
+        {
+            get
+            {
+                return UseDefaultImageSettings && Program.DefaultTaskSettings != null ?
+            Program.DefaultTaskSettings.ImageSettings : ImageSettings;
+            }
+        }
+
+        public TaskSettingsCapture SafeCaptureSettings
+        {
+            get
+            {
+                return UseDefaultCaptureSettings && Program.DefaultTaskSettings != null ?
+            Program.DefaultTaskSettings.CaptureSettings : CaptureSettings;
+            }
+        }
+
+        public List<ExternalProgram> SafeActions
+        {
+            get
+            {
+                return UseDefaultActions && Program.DefaultTaskSettings != null ?
+                    Program.DefaultTaskSettings.ExternalPrograms : ExternalPrograms;
+            }
+        }
+
+        public TaskSettingsUpload SafeUploadSettings
+        {
+            get
+            {
+                return UseDefaultUploadSettings && Program.DefaultTaskSettings != null ?
+                    Program.DefaultTaskSettings.UploadSettings : UploadSettings;
+            }
+        }
+
+        public IndexerSettings SafeIndexerSettings
+        {
+            get
+            {
+                return UseDefaultIndexerSettings && Program.DefaultTaskSettings != null ?
+                    Program.DefaultTaskSettings.IndexerSettings : IndexerSettings;
+            }
+        }
+
+        public TaskSettingsAdvanced SafeAdvancedSettings
+        {
+            get
+            {
+                return UseDefaultAdvancedSettings && Program.DefaultTaskSettings != null ?
+                  Program.DefaultTaskSettings.AdvancedSettings : AdvancedSettings;
+            }
+        }
+
+        public static TaskSettings GetSafeTaskSettings(TaskSettings taskSettings)
+        {
+            if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
+            {
+                Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob;
+                return Program.DefaultTaskSettings;
+            }
+            else
+            {
+                taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob;
+                return taskSettings;
+            }
         }
 
         private void SetDefaultSettings()
@@ -276,9 +293,7 @@ namespace ShareX
             get
             {
                 if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
-                {
                     return AdvancedSettings.CapturePath;
-                }
 
                 return Program.ScreenshotsFolder;
             }
