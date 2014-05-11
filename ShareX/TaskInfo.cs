@@ -43,7 +43,7 @@ namespace ShareX
         {
             get
             {
-                return Job != TaskJob.ImageJob || TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                return Job != TaskJob.ImageJob || TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
             }
         }
 
@@ -72,8 +72,8 @@ namespace ShareX
         {
             get
             {
-                if ((DataType == EDataType.Image && TaskSettings.SafeDestinations.ImageDestination == ImageDestination.FileUploader) ||
-                    (DataType == EDataType.Text && TaskSettings.SafeDestinations.TextDestination == TextDestination.FileUploader))
+                if ((DataType == EDataType.Image && TaskSettings.ImageDestination == ImageDestination.FileUploader) ||
+                    (DataType == EDataType.Text && TaskSettings.TextDestination == TextDestination.FileUploader))
                 {
                     return EDataType.File;
                 }
@@ -89,22 +89,22 @@ namespace ShareX
                 switch (UploadDestination)
                 {
                     case EDataType.Image:
-                        return TaskSettings.SafeDestinations.ImageDestination.GetDescription();
+                        return TaskSettings.ImageDestination.GetDescription();
                     case EDataType.Text:
-                        return TaskSettings.SafeDestinations.TextDestination.GetDescription();
+                        return TaskSettings.TextDestination.GetDescription();
                     case EDataType.File:
                         switch (DataType)
                         {
                             case EDataType.Image:
-                                return TaskSettings.SafeDestinations.ImageFileDestination.GetDescription();
+                                return TaskSettings.ImageFileDestination.GetDescription();
                             case EDataType.Text:
-                                return TaskSettings.SafeDestinations.TextFileDestination.GetDescription();
+                                return TaskSettings.TextFileDestination.GetDescription();
                             default:
                             case EDataType.File:
-                                return TaskSettings.SafeDestinations.FileDestination.GetDescription();
+                                return TaskSettings.FileDestination.GetDescription();
                         }
                     case EDataType.URL:
-                        return TaskSettings.SafeDestinations.URLShortenerDestination.GetDescription();
+                        return TaskSettings.URLShortenerDestination.GetDescription();
                 }
 
                 return string.Empty;

@@ -33,31 +33,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Text;
 using UploadersLib;
 
 namespace ShareX
 {
     public class TaskSettings
     {
-        public bool SettingsMigrated = false;
-
         public string Description = string.Empty;
         public HotkeyType Job = HotkeyType.None;
 
         public bool UseDefaultAfterCaptureJob = true;
-        public bool UseDefaultAfterUploadJob = true;
-        public TaskSettingsAfterTasks TaskSettingsAfterTasks = new TaskSettingsAfterTasks();
-
-        #region Deprecated - See TaskSettingsAfterTasks - these settings will be removed at v8.10.0
-
         public AfterCaptureTasks AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost;
+
+        public bool UseDefaultAfterUploadJob = true;
         public AfterUploadTasks AfterUploadJob = AfterUploadTasks.CopyURLToClipboard;
 
-        #endregion Deprecated - See TaskSettingsAfterTasks - these settings will be removed at v8.10.0
-
-        #region Deprecated - See DestinationSettings - these settings will be removed at v8.10.0
-
+        public bool UseDefaultDestinations = true;
         public ImageDestination ImageDestination = ImageDestination.Imgur;
         public FileDestination ImageFileDestination = FileDestination.Dropbox;
         public TextDestination TextDestination = TextDestination.Pastebin;
@@ -67,11 +58,6 @@ namespace ShareX
         public SocialNetworkingService SocialNetworkingServiceDestination = SocialNetworkingService.Twitter;
         public bool OverrideFTP = false;
         public int FTPIndex = 0;
-
-        #endregion Deprecated - See DestinationSettings - these settings will be removed at v8.10.0
-
-        public bool UseDefaultDestinations = true;
-        public TaskSettingsDestinations TaskDestinations = new TaskSettingsDestinations();
 
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();
@@ -96,6 +82,9 @@ namespace ShareX
 
         public bool WatchFolderEnabled = false;
         public List<WatchFolderSettings> WatchFolderList = new List<WatchFolderSettings>();
+
+        [JsonIgnore]
+        public TaskSettings TaskSettingsReference { get; private set; }
 
         public override string ToString()
         {
@@ -124,97 +113,24 @@ namespace ShareX
             return taskSettings;
         }
 
-        public TaskSettingsAfterTasks SafeAfterTasks
-        {
-            get
-            {
-                return UseDefaultAfterCaptureJob && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.TaskSettingsAfterTasks : TaskSettingsAfterTasks;
-            }
-        }
-
-        public TaskSettingsDestinations SafeDestinations
-        {
-            get
-            {
-                return UseDefaultDestinations && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.TaskDestinations : TaskDestinations;
-            }
-        }
-
-        public TaskSettingsGeneral SafeGeneralSettings
-        {
-            get
-            {
-                return UseDefaultGeneralSettings && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.GeneralSettings : GeneralSettings;
-            }
-        }
-
-        public TaskSettingsImage SafeImageSettings
-        {
-            get
-            {
-                return UseDefaultImageSettings && Program.DefaultTaskSettings != null ?
-            Program.DefaultTaskSettings.ImageSettings : ImageSettings;
-            }
-        }
-
-        public TaskSettingsCapture SafeCaptureSettings
-        {
-            get
-            {
-                return UseDefaultCaptureSettings && Program.DefaultTaskSettings != null ?
-            Program.DefaultTaskSettings.CaptureSettings : CaptureSettings;
-            }
-        }
-
-        public List<ExternalProgram> SafeActions
-        {
-            get
-            {
-                return UseDefaultActions && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.ExternalPrograms : ExternalPrograms;
-            }
-        }
-
-        public TaskSettingsUpload SafeUploadSettings
-        {
-            get
-            {
-                return UseDefaultUploadSettings && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.UploadSettings : UploadSettings;
-            }
-        }
-
-        public IndexerSettings SafeIndexerSettings
-        {
-            get
-            {
-                return UseDefaultIndexerSettings && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.IndexerSettings : IndexerSettings;
-            }
-        }
-
-        public TaskSettingsAdvanced SafeAdvancedSettings
-        {
-            get
-            {
-                return UseDefaultAdvancedSettings && Program.DefaultTaskSettings != null ?
-                  Program.DefaultTaskSettings.AdvancedSettings : AdvancedSettings;
-            }
-        }
-
         public static TaskSettings GetSafeTaskSettings(TaskSettings taskSettings)
         {
+            TaskSettings taskSettingsCopy;
+
             if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
             {
-                return Program.DefaultTaskSettings;
+                taskSettingsCopy = Program.DefaultTaskSettings.Copy();
+                taskSettingsCopy.Description = taskSettings.Description;
+                taskSettingsCopy.Job = taskSettings.Job;
             }
             else
             {
-                return taskSettings;
+                taskSettingsCopy = taskSettings.Copy();
+                taskSettingsCopy.SetDefaultSettings();
             }
+
+            taskSettingsCopy.TaskSettingsReference = taskSettings;
+            return taskSettingsCopy;
         }
 
         private void SetDefaultSettings()
@@ -231,11 +147,6 @@ namespace ShareX
                 if (UseDefaultAfterUploadJob)
                 {
                     AfterUploadJob = defaultTaskSettings.AfterUploadJob;
-                }
-
-                if (UseDefaultDestinations)
-                {
-                    TaskDestinations = defaultTaskSettings.TaskDestinations;
                 }
 
                 if (UseDefaultDestinations)
@@ -295,36 +206,6 @@ namespace ShareX
 
                 return Program.ScreenshotsFolder;
             }
-        }
-    }
-
-    public class TaskSettingsAfterTasks
-    {
-        public AfterCaptureTasks AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost;
-        public AfterUploadTasks AfterUploadJob = AfterUploadTasks.CopyURLToClipboard;
-    }
-
-    public class TaskSettingsDestinations
-    {
-        public ImageDestination ImageDestination = ImageDestination.Imgur;
-        public FileDestination ImageFileDestination = FileDestination.Dropbox;
-        public TextDestination TextDestination = TextDestination.Pastebin;
-        public FileDestination TextFileDestination = FileDestination.Dropbox;
-        public FileDestination FileDestination = FileDestination.Dropbox;
-        public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
-        public SocialNetworkingService SocialNetworkingServiceDestination = SocialNetworkingService.Twitter;
-        public bool OverrideFTP = false;
-        public int FTPIndex = 0;
-
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Image destination: " + ((ImageDestination == UploadersLib.ImageDestination.FileUploader) ? ImageFileDestination.GetDescription() : ImageDestination.GetDescription()));
-            sb.AppendLine("Text destination: " + ((TextDestination == UploadersLib.TextDestination.FileUploader) ? TextFileDestination.GetDescription() : TextDestination.GetDescription()));
-            sb.AppendLine("File destination: " + FileDestination.GetDescription());
-            sb.AppendLine("URL shortener: " + URLShortenerDestination.GetDescription());
-            sb.AppendLine("Social network: " + SocialNetworkingServiceDestination.GetDescription());
-            return sb.ToString();
         }
     }
 

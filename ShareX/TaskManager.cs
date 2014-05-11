@@ -299,16 +299,16 @@ namespace ShareX
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
 
-                                if (!info.TaskSettings.SafeAdvancedSettings.DisableNotifications)
+                                if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
                                 {
                                     if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
                                         SystemSounds.Exclamation.Play();
                                     }
 
-                                    if (!string.IsNullOrEmpty(info.TaskSettings.SafeAdvancedSettings.BalloonTipContentFormat))
+                                    if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
                                     {
-                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.SafeAdvancedSettings.BalloonTipContentFormat);
+                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
                                     TaskHelpers.ShowResultNotifications(result, info.TaskSettings, info.FilePath);
