@@ -153,9 +153,9 @@ namespace ShareX
 
                 if (img != null)
                 {
-                    if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
+                    if (!taskSettings.SafeAdvancedSettings.ProcessImagesDuringClipboardUpload)
                     {
-                        taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                        taskSettings.SafeAfterTasks.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                     }
 
                     RunImageTask(img, taskSettings);
@@ -279,7 +279,7 @@ namespace ShareX
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = imageJob;
+                taskSettings.SafeAfterTasks.AfterCaptureJob = imageJob;
 
                 RunImageTask(img, taskSettings);
             }
@@ -291,7 +291,7 @@ namespace ShareX
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.UseDefaultDestinations = false;
-                taskSettings.ImageDestination = imageDestination;
+                taskSettings.SafeDestinations.ImageDestination = imageDestination;
 
                 RunImageTask(img, taskSettings);
             }

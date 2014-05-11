@@ -373,26 +373,24 @@ namespace ShareX
             }
         }
 
-        private static void MigrateTaskSettings(TaskSettings taskSetting)
+        public static void MigrateTaskSettings(TaskSettings taskSettings)
         {
-            if (!taskSetting.CoreSettings.SettingsMigrated)
+            if (!taskSettings.SettingsMigrated)
             {
-                taskSetting.UseDefaultTaskSettings = taskSetting.UseDefaultAfterCaptureJob && taskSetting.UseDefaultAfterUploadJob && taskSetting.UseDefaultDestinations;
+                taskSettings.SafeAfterTasks.AfterCaptureJob = taskSettings.AfterCaptureJob;
+                taskSettings.SafeAfterTasks.AfterUploadJob = taskSettings.AfterUploadJob;
 
-                taskSetting.CoreSettings.AfterCaptureJob = taskSetting.AfterCaptureJob;
-                taskSetting.CoreSettings.AfterUploadJob = taskSetting.AfterUploadJob;
+                taskSettings.TaskDestinations.ImageDestination = taskSettings.ImageDestination;
+                taskSettings.TaskDestinations.FileDestination = taskSettings.FileDestination;
+                taskSettings.TaskDestinations.TextDestination = taskSettings.TextDestination;
+                taskSettings.TaskDestinations.TextFileDestination = taskSettings.TextFileDestination;
+                taskSettings.TaskDestinations.URLShortenerDestination = taskSettings.URLShortenerDestination;
+                taskSettings.TaskDestinations.SocialNetworkingServiceDestination = taskSettings.SocialNetworkingServiceDestination;
 
-                taskSetting.CoreSettings.ImageDestination = taskSetting.ImageDestination;
-                taskSetting.CoreSettings.FileDestination = taskSetting.FileDestination;
-                taskSetting.CoreSettings.TextDestination = taskSetting.TextDestination;
-                taskSetting.CoreSettings.TextFileDestination = taskSetting.TextFileDestination;
-                taskSetting.CoreSettings.URLShortenerDestination = taskSetting.URLShortenerDestination;
-                taskSetting.CoreSettings.SocialNetworkingServiceDestination = taskSetting.SocialNetworkingServiceDestination;
+                taskSettings.TaskDestinations.OverrideFTP = taskSettings.OverrideFTP;
+                taskSettings.TaskDestinations.FTPIndex = taskSettings.FTPIndex;
 
-                taskSetting.CoreSettings.OverrideFTP = taskSetting.OverrideFTP;
-                taskSetting.CoreSettings.FTPIndex = taskSetting.FTPIndex;
-
-                taskSetting.CoreSettings.SettingsMigrated = true;
+                taskSettings.SettingsMigrated = true;
             }
         }
 

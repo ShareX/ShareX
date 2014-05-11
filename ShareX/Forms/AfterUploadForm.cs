@@ -48,7 +48,7 @@ namespace ShareX
             InitializeComponent();
             Icon = ShareXResources.Icon;
             Info = info;
-            if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm) tmrClose.Start();
+            if (Info.TaskSettings.SafeAdvancedSettings.AutoCloseAfterUploadForm) tmrClose.Start();
 
             bool isFileExist = !string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath);
 

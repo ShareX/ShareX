@@ -163,6 +163,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.ttTaskSettings = new System.Windows.Forms.ToolTip(this.components);
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -214,9 +215,9 @@
             this.cbUseDefaultAfterCaptureSettings.AutoSize = true;
             this.cbUseDefaultAfterCaptureSettings.Location = new System.Drawing.Point(6, 70);
             this.cbUseDefaultAfterCaptureSettings.Name = "cbUseDefaultAfterCaptureSettings";
-            this.cbUseDefaultAfterCaptureSettings.Size = new System.Drawing.Size(193, 17);
+            this.cbUseDefaultAfterCaptureSettings.Size = new System.Drawing.Size(222, 17);
             this.cbUseDefaultAfterCaptureSettings.TabIndex = 3;
-            this.cbUseDefaultAfterCaptureSettings.Text = "Use default \"After capture\" settings";
+            this.cbUseDefaultAfterCaptureSettings.Text = "Use main window \"After capture\" settings";
             this.cbUseDefaultAfterCaptureSettings.UseVisualStyleBackColor = true;
             this.cbUseDefaultAfterCaptureSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterCaptureSettings_CheckedChanged);
             // 
@@ -225,9 +226,9 @@
             this.cbUseDefaultAfterUploadSettings.AutoSize = true;
             this.cbUseDefaultAfterUploadSettings.Location = new System.Drawing.Point(6, 126);
             this.cbUseDefaultAfterUploadSettings.Name = "cbUseDefaultAfterUploadSettings";
-            this.cbUseDefaultAfterUploadSettings.Size = new System.Drawing.Size(189, 17);
+            this.cbUseDefaultAfterUploadSettings.Size = new System.Drawing.Size(218, 17);
             this.cbUseDefaultAfterUploadSettings.TabIndex = 5;
-            this.cbUseDefaultAfterUploadSettings.Text = "Use default \"After upload\" settings";
+            this.cbUseDefaultAfterUploadSettings.Text = "Use main window \"After upload\" settings";
             this.cbUseDefaultAfterUploadSettings.UseVisualStyleBackColor = true;
             this.cbUseDefaultAfterUploadSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterUploadSettings_CheckedChanged);
             // 
@@ -236,9 +237,9 @@
             this.cbUseDefaultDestinationSettings.AutoSize = true;
             this.cbUseDefaultDestinationSettings.Location = new System.Drawing.Point(6, 182);
             this.cbUseDefaultDestinationSettings.Name = "cbUseDefaultDestinationSettings";
-            this.cbUseDefaultDestinationSettings.Size = new System.Drawing.Size(185, 17);
+            this.cbUseDefaultDestinationSettings.Size = new System.Drawing.Size(214, 17);
             this.cbUseDefaultDestinationSettings.TabIndex = 7;
-            this.cbUseDefaultDestinationSettings.Text = "Use default \"Destination\" settings";
+            this.cbUseDefaultDestinationSettings.Text = "Use main window \"Destination\" settings";
             this.cbUseDefaultDestinationSettings.UseVisualStyleBackColor = true;
             this.cbUseDefaultDestinationSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultDestinationSettings_CheckedChanged);
             // 
@@ -532,7 +533,7 @@
             this.chkUseDefaultGeneralSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultGeneralSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultGeneralSettings.TabIndex = 20;
-            this.chkUseDefaultGeneralSettings.Text = "Use default general settings";
+            this.chkUseDefaultGeneralSettings.Text = "Use general settings in main window task settings";
             this.chkUseDefaultGeneralSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
             // 
@@ -924,7 +925,7 @@
             this.chkUseDefaultImageSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultImageSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultImageSettings.TabIndex = 0;
-            this.chkUseDefaultImageSettings.Text = "Use default image settings";
+            this.chkUseDefaultImageSettings.Text = "Use image settings in main window task settings";
             this.chkUseDefaultImageSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultImageSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultImageSettings_CheckedChanged);
             // 
@@ -1149,10 +1150,10 @@
             this.lblScreenRecorderCLI.TabIndex = 13;
             this.lblScreenRecorderCLI.Text = "CLI:";
             // 
-            // btnScreenRecorderAVIOptions
+            // btnScreenRecorderOptions
             // 
             this.btnScreenRecorderOptions.Location = new System.Drawing.Point(320, 11);
-            this.btnScreenRecorderOptions.Name = "btnScreenRecorderAVIOptions";
+            this.btnScreenRecorderOptions.Name = "btnScreenRecorderOptions";
             this.btnScreenRecorderOptions.Size = new System.Drawing.Size(64, 23);
             this.btnScreenRecorderOptions.TabIndex = 12;
             this.btnScreenRecorderOptions.Text = "Options...";
@@ -1317,7 +1318,7 @@
             this.chkUseDefaultCaptureSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultCaptureSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultCaptureSettings.TabIndex = 0;
-            this.chkUseDefaultCaptureSettings.Text = "Use default capture settings";
+            this.chkUseDefaultCaptureSettings.Text = "Use capture settings in main window task settings";
             this.chkUseDefaultCaptureSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
             // 
@@ -1419,7 +1420,7 @@
             this.chkUseDefaultActions.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultActions.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultActions.TabIndex = 0;
-            this.chkUseDefaultActions.Text = "Use default actions";
+            this.chkUseDefaultActions.Text = "Use actions in main window task settings";
             this.chkUseDefaultActions.UseVisualStyleBackColor = true;
             this.chkUseDefaultActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
             // 
@@ -1669,7 +1670,7 @@
             this.chkUseDefaultUploadSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultUploadSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultUploadSettings.TabIndex = 0;
-            this.chkUseDefaultUploadSettings.Text = "Use default upload settings";
+            this.chkUseDefaultUploadSettings.Text = "Use upload settings in main window task settings";
             this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
             // 
@@ -1706,7 +1707,7 @@
             this.chkUseDefaultIndexerSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultIndexerSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultIndexerSettings.TabIndex = 1;
-            this.chkUseDefaultIndexerSettings.Text = "Use default indexer settings";
+            this.chkUseDefaultIndexerSettings.Text = "Use indexer settings in main window task settings";
             this.chkUseDefaultIndexerSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultIndexerSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultIndexerSettings_CheckedChanged);
             // 
@@ -1743,7 +1744,7 @@
             this.chkUseDefaultAdvancedSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultAdvancedSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultAdvancedSettings.TabIndex = 0;
-            this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
+            this.chkUseDefaultAdvancedSettings.Text = "Use advanced settings in main window task settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
@@ -1953,6 +1954,7 @@
         private System.Windows.Forms.Label lblScreenRecorderCLI;
         private System.Windows.Forms.CheckBox chkRunScreencastCLI;
         private System.Windows.Forms.CheckBox chkClipboardUploadContents;
+        private System.Windows.Forms.ToolTip ttTaskSettings;
 
 
 

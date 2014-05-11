@@ -82,21 +82,21 @@ namespace ShareX
             Text = Program.Title;
             Icon = ShareXResources.Icon;
 
-            AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
+            AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
-            AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(x),
+            AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.SafeAfterTasks.AfterUploadJob = Program.DefaultTaskSettings.SafeAfterTasks.AfterUploadJob.Swap(x),
                 tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
-            AddEnumItems<ImageDestination>(x => Program.DefaultTaskSettings.ImageDestination = x, tsmiImageUploaders, tsmiTrayImageUploaders);
+            AddEnumItems<ImageDestination>(x => Program.DefaultTaskSettings.SafeDestinations.ImageDestination = x, tsmiImageUploaders, tsmiTrayImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
             tsmiTrayImageFileUploaders = (ToolStripDropDownItem)tsmiTrayImageUploaders.DropDownItems[tsmiTrayImageUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.ImageFileDestination = x, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
-            AddEnumItems<TextDestination>(x => Program.DefaultTaskSettings.TextDestination = x, tsmiTextUploaders, tsmiTrayTextUploaders);
+            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.SafeDestinations.ImageFileDestination = x, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
+            AddEnumItems<TextDestination>(x => Program.DefaultTaskSettings.SafeDestinations.TextDestination = x, tsmiTextUploaders, tsmiTrayTextUploaders);
             tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
             tsmiTrayTextFileUploaders = (ToolStripDropDownItem)tsmiTrayTextUploaders.DropDownItems[tsmiTrayTextUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.TextFileDestination = x, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
-            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
-            AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
-            AddEnumItems<SocialNetworkingService>(x => Program.DefaultTaskSettings.SocialNetworkingServiceDestination = x, tsmiSocialServices, tsmiTraySocialServices);
+            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.SafeDestinations.TextFileDestination = x, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.SafeDestinations.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
+            AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.SafeDestinations.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
+            AddEnumItems<SocialNetworkingService>(x => Program.DefaultTaskSettings.SafeDestinations.SocialNetworkingServiceDestination = x, tsmiSocialServices, tsmiTraySocialServices);
 
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
@@ -395,32 +395,32 @@ namespace ShareX
 
         public void UpdateMainFormSettings()
         {
-            SetMultiEnumChecked(Program.DefaultTaskSettings.AfterCaptureJob, tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
-            SetMultiEnumChecked(Program.DefaultTaskSettings.AfterUploadJob, tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
-            SetEnumChecked(Program.DefaultTaskSettings.ImageDestination, tsmiImageUploaders, tsmiTrayImageUploaders);
-            SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
-            SetEnumChecked(Program.DefaultTaskSettings.TextDestination, tsmiTextUploaders, tsmiTrayTextUploaders);
-            SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
-            SetEnumChecked(Program.DefaultTaskSettings.FileDestination, tsmiFileUploaders, tsmiTrayFileUploaders);
-            SetEnumChecked(Program.DefaultTaskSettings.URLShortenerDestination, tsmiURLShorteners, tsmiTrayURLShorteners);
-            SetEnumChecked(Program.DefaultTaskSettings.SocialNetworkingServiceDestination, tsmiSocialServices, tsmiTraySocialServices);
+            SetMultiEnumChecked(Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob, tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
+            SetMultiEnumChecked(Program.DefaultTaskSettings.SafeAfterTasks.AfterUploadJob, tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.ImageDestination, tsmiImageUploaders, tsmiTrayImageUploaders);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.ImageFileDestination, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.TextDestination, tsmiTextUploaders, tsmiTrayTextUploaders);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.TextFileDestination, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.FileDestination, tsmiFileUploaders, tsmiTrayFileUploaders);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.URLShortenerDestination, tsmiURLShorteners, tsmiTrayURLShorteners);
+            SetEnumChecked(Program.DefaultTaskSettings.SafeDestinations.SocialNetworkingServiceDestination, tsmiSocialServices, tsmiTraySocialServices);
         }
 
         private void UpdateUploaderMenuNames()
         {
-            string imageUploader = Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader ?
-                Program.DefaultTaskSettings.ImageFileDestination.GetDescription() : Program.DefaultTaskSettings.ImageDestination.GetDescription();
+            string imageUploader = Program.DefaultTaskSettings.SafeDestinations.ImageDestination == ImageDestination.FileUploader ?
+                Program.DefaultTaskSettings.SafeDestinations.ImageFileDestination.GetDescription() : Program.DefaultTaskSettings.SafeDestinations.ImageDestination.GetDescription();
             tsmiImageUploaders.Text = tsmiTrayImageUploaders.Text = "Image uploader: " + imageUploader;
 
-            string textUploader = Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader ?
-                Program.DefaultTaskSettings.TextFileDestination.GetDescription() : Program.DefaultTaskSettings.TextDestination.GetDescription();
+            string textUploader = Program.DefaultTaskSettings.SafeDestinations.TextDestination == TextDestination.FileUploader ?
+                Program.DefaultTaskSettings.SafeDestinations.TextFileDestination.GetDescription() : Program.DefaultTaskSettings.SafeDestinations.TextDestination.GetDescription();
             tsmiTextUploaders.Text = tsmiTrayTextUploaders.Text = "Text uploader: " + textUploader;
 
-            tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = "File uploader: " + Program.DefaultTaskSettings.FileDestination.GetDescription();
+            tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = "File uploader: " + Program.DefaultTaskSettings.SafeDestinations.FileDestination.GetDescription();
 
-            tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = "URL shortener: " + Program.DefaultTaskSettings.URLShortenerDestination.GetDescription();
+            tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = "URL shortener: " + Program.DefaultTaskSettings.SafeDestinations.URLShortenerDestination.GetDescription();
 
-            tsmiSocialServices.Text = tsmiTraySocialServices.Text = "Social networking service: " + Program.DefaultTaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiSocialServices.Text = tsmiTraySocialServices.Text = "Social networking service: " + Program.DefaultTaskSettings.SafeDestinations.SocialNetworkingServiceDestination.GetDescription();
         }
 
         private void AutoCheckUpdate()
@@ -658,12 +658,12 @@ namespace ShareX
 
         private void tsmiTestShapeCapture_Click(object sender, EventArgs e)
         {
-            new RegionCapturePreview(Program.DefaultTaskSettings.CaptureSettings.SurfaceOptions).Show();
+            new RegionCapturePreview(Program.DefaultTaskSettings.SafeCaptureSettings.SurfaceOptions).Show();
         }
 
         private void tsmiScreenRecorder_Click(object sender, EventArgs e)
         {
-            TaskHelpers.DoScreenRecorder();
+            TaskHelpers.DoScreenRecorder(Program.DefaultTaskSettings);
         }
 
         private void tsmiAutoCapture_Click(object sender, EventArgs e)

@@ -185,9 +185,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
+            if (taskSettings.SafeCaptureSettings.IsDelayScreenshot && taskSettings.SafeCaptureSettings.DelayScreenshot > 0)
             {
-                int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+                int sleep = (int)(taskSettings.SafeCaptureSettings.DelayScreenshot * 1000);
                 BackgroundWorker bw = new BackgroundWorker();
                 bw.DoWork += (sender, e) => Thread.Sleep(sleep);
                 bw.RunWorkerCompleted += (sender, e) => DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
@@ -211,11 +211,11 @@ namespace ShareX
 
             try
             {
-                Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
-                Screenshot.CaptureShadow = taskSettings.CaptureSettings.CaptureShadow;
-                Screenshot.ShadowOffset = taskSettings.CaptureSettings.CaptureShadowOffset;
-                Screenshot.CaptureClientArea = taskSettings.CaptureSettings.CaptureClientArea;
-                Screenshot.AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar;
+                Screenshot.CaptureCursor = taskSettings.SafeCaptureSettings.ShowCursor;
+                Screenshot.CaptureShadow = taskSettings.SafeCaptureSettings.CaptureShadow;
+                Screenshot.ShadowOffset = taskSettings.SafeCaptureSettings.CaptureShadowOffset;
+                Screenshot.CaptureClientArea = taskSettings.SafeCaptureSettings.CaptureClientArea;
+                Screenshot.AutoHideTaskbar = taskSettings.SafeCaptureSettings.CaptureAutoHideTaskbar;
 
                 img = capture();
             }
@@ -238,29 +238,29 @@ namespace ShareX
         {
             if (img != null)
             {
-                if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
+                if (taskSettings.SafeGeneralSettings.PlaySoundAfterCapture)
                 {
                     Helpers.PlaySoundAsync(Resources.CameraSound);
                 }
 
-                if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
+                if (taskSettings.SafeImageSettings.ImageEffectOnlyRegionCapture && !IsRegionCapture(captureType))
                 {
-                    taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
+                    taskSettings.SafeAfterTasks.AfterCaptureJob = taskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
-                if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
+                if (taskSettings.SafeGeneralSettings.ShowAfterCaptureTasksForm)
                 {
-                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings.AfterCaptureJob))
+                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings.SafeAfterTasks.AfterCaptureJob))
                     {
                         afterCaptureForm.ShowDialog();
 
                         switch (afterCaptureForm.Result)
                         {
                             case AfterCaptureFormResult.Continue:
-                                taskSettings.AfterCaptureJob = afterCaptureForm.AfterCaptureTasks;
+                                taskSettings.SafeAfterTasks.AfterCaptureJob = afterCaptureForm.AfterCaptureTasks;
                                 break;
                             case AfterCaptureFormResult.Copy:
-                                taskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
+                                taskSettings.SafeAfterTasks.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
                                 break;
                             case AfterCaptureFormResult.Cancel:
                                 if (img != null) img.Dispose();
@@ -295,7 +295,7 @@ namespace ShareX
                     }
                 }
 
-                if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
+                if (taskSettings.SafeCaptureSettings.CaptureTransparent && !taskSettings.SafeCaptureSettings.CaptureClientArea)
                 {
                     img = Screenshot.CaptureActiveWindowTransparent();
                 }
@@ -330,7 +330,7 @@ namespace ShareX
                 NativeMethods.SetForegroundWindow(handle);
                 Thread.Sleep(250);
 
-                if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
+                if (taskSettings.SafeCaptureSettings.CaptureTransparent && !taskSettings.SafeCaptureSettings.CaptureClientArea)
                 {
                     return Screenshot.CaptureWindowTransparent(handle);
                 }
@@ -347,7 +347,7 @@ namespace ShareX
             {
                 default:
                 case CaptureType.Rectangle:
-                    if (taskSettings.AdvancedSettings.UseLightRectangleCrop)
+                    if (taskSettings.SafeAdvancedSettings.UseLightRectangleCrop)
                     {
                         CaptureLightRectangle(taskSettings, autoHideForm);
                         return;
@@ -387,7 +387,7 @@ namespace ShareX
 
                 try
                 {
-                    surface.Config = taskSettings.CaptureSettings.SurfaceOptions;
+                    surface.Config = taskSettings.SafeCaptureSettings.SurfaceOptions;
                     surface.SurfaceImage = screenshot;
                     surface.Prepare();
                     surface.ShowDialog();
@@ -431,17 +431,17 @@ namespace ShareX
 
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            if (!taskSettings.AdvancedSettings.UseLightRectangleCrop && Surface.LastRegionFillPath != null)
+            if (!taskSettings.SafeAdvancedSettings.UseLightRectangleCrop && Surface.LastRegionFillPath != null)
             {
                 DoCapture(() =>
                 {
                     using (Image screenshot = Screenshot.CaptureFullscreen())
                     {
-                        return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                        return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.SafeCaptureSettings.SurfaceOptions);
                     }
                 }, CaptureType.LastRegion, taskSettings, autoHideForm);
             }
-            else if (taskSettings.AdvancedSettings.UseLightRectangleCrop && !RectangleLight.LastSelectionRectangle0Based.IsEmpty)
+            else if (taskSettings.SafeAdvancedSettings.UseLightRectangleCrop && !RectangleLight.LastSelectionRectangle0Based.IsEmpty)
             {
                 DoCapture(() =>
                 {
