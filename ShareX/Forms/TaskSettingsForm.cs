@@ -686,6 +686,7 @@ namespace ShareX
                 case ScreenRecordOutput.FFmpeg:
                     using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
                     {
+                        form.DefaultToolsPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
                         form.ShowDialog();
                     }
                     break;

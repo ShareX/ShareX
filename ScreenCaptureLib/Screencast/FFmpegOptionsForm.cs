@@ -68,25 +68,25 @@ namespace ScreenCaptureLib
 
         private void LoadSettings()
         {
-            comboBoxCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
-            comboBoxCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-            comboBoxCodec.SelectedIndexChanged += (sender, e) => UpdateUI();
+            cbCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
+            cbCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+            cbCodec.SelectedIndexChanged += (sender, e) => UpdateUI();
 
-            comboBoxExtension.Text = Options.FFmpeg.Extension;
-            comboBoxExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
+            cbExtension.Text = Options.FFmpeg.Extension;
+            cbExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
 
             nudCRF.Value = Options.FFmpeg.CRF.Between((int)nudCRF.Minimum, (int)nudCRF.Maximum);
             nudCRF.ValueChanged += (sender, e) => UpdateUI();
 
-            comboBoxPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
-            comboBoxPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
-            comboBoxPreset.SelectedIndexChanged += (sender, e) => UpdateUI();
+            cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
+            cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
+            cbPreset.SelectedIndexChanged += (sender, e) => UpdateUI();
 
             nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
             nudQscale.ValueChanged += (sender, e) => UpdateUI();
 
-            textBoxUserArgs.Text = Options.FFmpeg.UserArgs;
-            textBoxUserArgs.TextChanged += (sender, e) => UpdateUI();
+            tbUserArgs.Text = Options.FFmpeg.UserArgs;
+            tbUserArgs.TextChanged += (sender, e) => UpdateUI();
 
             string cli = "ffmpeg.exe";
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
@@ -94,43 +94,47 @@ namespace ScreenCaptureLib
                 Options.FFmpeg.CLIPath = cli;
             }
 
-            textBoxFFmpegPath.Text = Options.FFmpeg.CLIPath;
-            textBoxFFmpegPath.TextChanged += (sender, e) => UpdateUI();
+            tbFFmpegPath.Text = Options.FFmpeg.CLIPath;
+            tbFFmpegPath.TextChanged += (sender, e) => UpdateUI();
         }
 
         public void SaveSettings()
         {
-            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)comboBoxCodec.SelectedIndex;
-            Options.FFmpeg.Extension = comboBoxExtension.Text;
+            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cbCodec.SelectedIndex;
+            Options.FFmpeg.Extension = cbExtension.Text;
 
             Options.FFmpeg.CRF = (int)nudCRF.Value;
-            Options.FFmpeg.Preset = (FFmpegPreset)comboBoxPreset.SelectedIndex;
+            Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
 
             Options.FFmpeg.qscale = (int)nudQscale.Value;
 
-            Options.FFmpeg.UserArgs = textBoxUserArgs.Text;
+            Options.FFmpeg.UserArgs = tbUserArgs.Text;
 
-            Options.FFmpeg.CLIPath = textBoxFFmpegPath.Text;
+            Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
         }
 
         public void UpdateUI()
         {
             SaveSettings();
 
-            groupBoxH263.Enabled = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid;
-            groupBoxH264.Enabled = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx;
+            gbH263.Visible = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid;
+            gbH264.Visible = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx;
 
-            if ((Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid) && comboBoxExtension.Text == "webm")
-                comboBoxExtension.Text = "mp4";
-            else if ((FFmpegVideoCodec)comboBoxCodec.SelectedIndex == FFmpegVideoCodec.libvpx && comboBoxExtension.Text != "webm")
-                comboBoxExtension.Text = "webm";
+            if ((Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid) && cbExtension.Text == "webm")
+            {
+                cbExtension.Text = "mp4";
+            }
+            else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx && cbExtension.Text != "webm")
+            {
+                cbExtension.Text = "webm";
+            }
 
-            textBoxCommandLinePreview.Text = Options.GetFFmpegArgs();
+            tbCommandLinePreview.Text = Options.GetFFmpegArgs();
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("Browse for ffmpeg.exe", textBoxFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+            Helpers.BrowseFile("Browse for ffmpeg.exe", tbFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
             UpdateUI();
         }
 
@@ -146,11 +150,12 @@ namespace ScreenCaptureLib
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegHelper.ExtractFFmpeg(filePath, DefaultToolsPath ?? "ffmpeg.exe");
+            string extractPath = DefaultToolsPath ?? "ffmpeg.exe";
+            bool result = FFmpegHelper.ExtractFFmpeg(filePath, extractPath);
 
             if (result)
             {
-                this.InvokeSafe(() => textBoxFFmpegPath.Text = DefaultToolsPath);
+                this.InvokeSafe(() => tbFFmpegPath.Text = extractPath);
                 MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

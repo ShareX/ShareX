@@ -101,8 +101,8 @@ namespace ShareX
             get
             {
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && UseDefaultGeneralSettings &&
-                       UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
-                       UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
+                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
+                    UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
         }
 
@@ -203,7 +203,9 @@ namespace ShareX
             get
             {
                 if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
+                {
                     return AdvancedSettings.CapturePath;
+                }
 
                 return Program.ScreenshotsFolder;
             }
