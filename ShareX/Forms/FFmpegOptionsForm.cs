@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib;
 using SevenZip;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace ScreenCaptureLib
+namespace ShareX
 {
     public partial class FFmpegOptionsForm : Form
     {
@@ -144,7 +145,7 @@ namespace ScreenCaptureLib
 
         public DialogResult DownloadFFmpeg(bool runInstallerInBackground = true)
         {
-            using (DownloaderForm form = new DownloaderForm(FFmpegDownloadLink, "ffmpeg.7z"))
+            using (DownloaderForm form = new DownloaderForm(FFmpegDownloadLink(), "ffmpeg.7z"))
             {
                 form.Proxy = ProxyInfo.Current.GetWebProxy();
                 form.InstallType = InstallType.Event;
@@ -154,24 +155,19 @@ namespace ScreenCaptureLib
             }
         }
 
-        public static string FFmpegDownloadLink
+        public static string FFmpegDownloadLink()
         {
-            get
+            if (NativeMethods.Is64Bit())
             {
-                if (NativeMethods.Is64Bit())
-                {
-                    return "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
-                }
-                else
-                {
-                    return "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
-                }
+                return "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
             }
+
+            return "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
         }
 
         private void form_InstallRequested(string filePath)
         {
-            string extractPath = Options.FFmpeg.CLIPath;
+            string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
             bool result = ExtractFFmpeg(filePath, extractPath);
 
             if (result)

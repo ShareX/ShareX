@@ -110,6 +110,7 @@ namespace ShareX
         {
             TaskSettings taskSettings = new TaskSettings();
             taskSettings.SetDefaultSettings();
+            taskSettings.TaskSettingsReference = Program.DefaultTaskSettings;
             return taskSettings;
         }
 
