@@ -56,8 +56,6 @@ namespace HelpersLib
         public string DownloadURL { get; set; }
         public ReleaseChannelType ReleaseChannel { get; set; }
 
-        private bool forceUpdate = false; // For testing purposes
-
         public UpdateInfo()
         {
             ReleaseChannel = ReleaseChannelType.Stable;
@@ -66,7 +64,7 @@ namespace HelpersLib
         public void RefreshStatus()
         {
             if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null &&
-                !string.IsNullOrEmpty(DownloadURL) && (forceUpdate || Helpers.CheckVersion(CurrentVersion, LatestVersion)))
+                !string.IsNullOrEmpty(DownloadURL) && Helpers.CheckVersion(CurrentVersion, LatestVersion))
             {
                 Status = UpdateStatus.UpdateAvailable;
             }
