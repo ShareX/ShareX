@@ -48,7 +48,7 @@ namespace ShareX
         {
             if (taskSettings != null)
             {
-                surfaceOptions = taskSettings.SafeCaptureSettings.SurfaceOptions;
+                surfaceOptions = taskSettings.CaptureSettings.SurfaceOptions;
             }
             else
             {

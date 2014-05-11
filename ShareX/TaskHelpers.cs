@@ -46,26 +46,26 @@ namespace ShareX
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();
-            imageData.ImageFormat = taskSettings.SafeImageSettings.ImageFormat;
+            imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat;
 
-            if (taskSettings.SafeImageSettings.ImageFormat == EImageFormat.JPEG)
+            if (taskSettings.ImageSettings.ImageFormat == EImageFormat.JPEG)
             {
                 img = ImageHelpers.FillBackground(img, Color.White);
             }
 
-            imageData.ImageStream = SaveImage(img, taskSettings.SafeImageSettings.ImageFormat, taskSettings);
+            imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
 
-            int sizeLimit = taskSettings.SafeImageSettings.ImageSizeLimit * 1000;
+            int sizeLimit = taskSettings.ImageSettings.ImageSizeLimit * 1000;
 
-            if (taskSettings.SafeImageSettings.ImageFormat != taskSettings.SafeImageSettings.ImageFormat2 && sizeLimit > 0 && imageData.ImageStream.Length > sizeLimit)
+            if (taskSettings.ImageSettings.ImageFormat != taskSettings.ImageSettings.ImageFormat2 && sizeLimit > 0 && imageData.ImageStream.Length > sizeLimit)
             {
-                if (taskSettings.SafeImageSettings.ImageFormat2 == EImageFormat.JPEG)
+                if (taskSettings.ImageSettings.ImageFormat2 == EImageFormat.JPEG)
                 {
                     img = ImageHelpers.FillBackground(img, Color.White);
                 }
 
-                imageData.ImageStream = SaveImage(img, taskSettings.SafeImageSettings.ImageFormat2, taskSettings);
-                imageData.ImageFormat = taskSettings.SafeImageSettings.ImageFormat2;
+                imageData.ImageStream = SaveImage(img, taskSettings.ImageSettings.ImageFormat2, taskSettings);
+                imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat2;
             }
 
             return imageData;
@@ -73,10 +73,10 @@ namespace ShareX
 
         public static string CreateThumbnail(Image img, string folder, string filename, TaskSettings taskSettings)
         {
-            if ((taskSettings.SafeImageSettings.ThumbnailWidth > 0 || taskSettings.SafeImageSettings.ThumbnailHeight > 0) && (!taskSettings.SafeImageSettings.ThumbnailCheckSize ||
-                (img.Width > taskSettings.SafeImageSettings.ThumbnailWidth && img.Height > taskSettings.SafeImageSettings.ThumbnailHeight)))
+            if ((taskSettings.ImageSettings.ThumbnailWidth > 0 || taskSettings.ImageSettings.ThumbnailHeight > 0) && (!taskSettings.ImageSettings.ThumbnailCheckSize ||
+                (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
-                string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.SafeImageSettings.ThumbnailName + ".jpg";
+                string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
                 string thumbnailFilePath = TaskHelpers.CheckFilePath(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
@@ -88,8 +88,8 @@ namespace ShareX
                         thumbImage = (Image)img.Clone();
                         thumbImage = new Resize
                         {
-                            Width = taskSettings.SafeImageSettings.ThumbnailWidth,
-                            Height = taskSettings.SafeImageSettings.ThumbnailHeight
+                            Width = taskSettings.ImageSettings.ThumbnailWidth,
+                            Height = taskSettings.ImageSettings.ThumbnailHeight
                         }.Apply(thumbImage);
                         thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
                         thumbImage.SaveJPG(thumbnailFilePath, 90);
@@ -118,10 +118,10 @@ namespace ShareX
                     img.Save(stream, ImageFormat.Png);
                     break;
                 case EImageFormat.JPEG:
-                    img.SaveJPG(stream, taskSettings.SafeImageSettings.ImageJPEGQuality);
+                    img.SaveJPG(stream, taskSettings.ImageSettings.ImageJPEGQuality);
                     break;
                 case EImageFormat.GIF:
-                    img.SaveGIF(stream, taskSettings.SafeImageSettings.ImageGIFQuality);
+                    img.SaveGIF(stream, taskSettings.ImageSettings.ImageGIFQuality);
                     break;
                 case EImageFormat.BMP:
                     img.Save(stream, ImageFormat.Bmp);
@@ -139,11 +139,11 @@ namespace ShareX
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = taskSettings.SafeAdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.SafeAdvancedSettings.NamePatternMaxTitleLength
+                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
 
-            string filename = nameParser.Parse(taskSettings.SafeUploadSettings.NameFormatPattern);
+            string filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
 
             if (!string.IsNullOrEmpty(extension))
             {
@@ -163,8 +163,8 @@ namespace ShareX
             {
                 Picture = image,
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = taskSettings.SafeAdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.SafeAdvancedSettings.NamePatternMaxTitleLength
+                MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
 
             ImageTag imageTag = image.Tag as ImageTag;
@@ -177,11 +177,11 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(nameParser.WindowText))
             {
-                filename = nameParser.Parse(taskSettings.SafeUploadSettings.NameFormatPattern) + ".bmp";
+                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern) + ".bmp";
             }
             else
             {
-                filename = nameParser.Parse(taskSettings.SafeUploadSettings.NameFormatPatternActiveWindow) + ".bmp";
+                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPatternActiveWindow) + ".bmp";
             }
 
             Program.Settings.NameParserAutoIncrementNumber = nameParser.AutoIncrementNumber;
@@ -191,7 +191,7 @@ namespace ShareX
 
         public static void ShowResultNotifications(string notificationText, TaskSettings taskSettings, string filePath)
         {
-            if (!taskSettings.SafeAdvancedSettings.DisableNotifications)
+            if (!taskSettings.AdvancedSettings.DisableNotifications)
             {
                 if (!string.IsNullOrEmpty(notificationText))
                 {
@@ -207,13 +207,13 @@ namespace ShareX
                         case PopUpNotificationType.ToastNotification:
                             NotificationFormConfig toastConfig = new NotificationFormConfig()
                             {
-                                Action = taskSettings.SafeAdvancedSettings.ToastWindowClickAction,
+                                Action = taskSettings.AdvancedSettings.ToastWindowClickAction,
                                 FilePath = filePath,
                                 Text = "ShareX - Task completed\r\n" + notificationText,
                                 URL = notificationText
                             };
-                            NotificationForm.Show((int)(taskSettings.SafeAdvancedSettings.ToastWindowDuration * 1000), taskSettings.SafeAdvancedSettings.ToastWindowPlacement,
-                                taskSettings.SafeAdvancedSettings.ToastWindowSize, toastConfig);
+                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000), taskSettings.AdvancedSettings.ToastWindowPlacement,
+                                taskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
                             break;
                     }
                 }
@@ -246,20 +246,20 @@ namespace ShareX
 
         public static Image AddImageEffects(Image img, TaskSettings taskSettings)
         {
-            if (taskSettings.SafeImageSettings.ShowImageEffectsWindowAfterCapture)
+            if (taskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture)
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.SafeImageSettings.ImageEffects))
+                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffects))
                 {
                     if (imageEffectsForm.ShowDialog() == DialogResult.OK)
                     {
-                        taskSettings.SafeImageSettings.ImageEffects = imageEffectsForm.Effects;
+                        taskSettings.ImageSettings.ImageEffects = imageEffectsForm.Effects;
                     }
                 }
             }
 
             using (img)
             {
-                return ImageEffectManager.ApplyEffects(img, taskSettings.SafeImageSettings.ImageEffects);
+                return ImageEffectManager.ApplyEffects(img, taskSettings.ImageSettings.ImageEffects);
             }
         }
 
@@ -280,26 +280,26 @@ namespace ShareX
 
         private static void AddExternalProgramFromFile(TaskSettings taskSettings, string name, string filename, string args = "")
         {
-            if (!taskSettings.SafeActions.Exists(x => x.Name == name))
+            if (!taskSettings.ExternalPrograms.Exists(x => x.Name == name))
             {
                 if (File.Exists(filename))
                 {
                     DebugHelper.WriteLine("Found program: " + filename);
 
-                    taskSettings.SafeActions.Add(new ExternalProgram(name, filename, args));
+                    taskSettings.ExternalPrograms.Add(new ExternalProgram(name, filename, args));
                 }
             }
         }
 
         private static void AddExternalProgramFromRegistry(TaskSettings taskSettings, string name, string filename)
         {
-            if (!taskSettings.SafeActions.Exists(x => x.Name == name))
+            if (!taskSettings.ExternalPrograms.Exists(x => x.Name == name))
             {
                 ExternalProgram externalProgram = RegistryHelpers.FindProgram(name, filename);
 
                 if (externalProgram != null)
                 {
-                    taskSettings.SafeActions.Add(externalProgram);
+                    taskSettings.ExternalPrograms.Add(externalProgram);
                 }
             }
         }
@@ -416,7 +416,7 @@ namespace ShareX
 
             if (File.Exists(filepath))
             {
-                switch (taskSettings.SafeImageSettings.FileExistAction)
+                switch (taskSettings.ImageSettings.FileExistAction)
                 {
                     case FileExistAction.Ask:
                         using (FileExistForm form = new FileExistForm(filepath))

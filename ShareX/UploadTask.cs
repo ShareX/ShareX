@@ -101,13 +101,13 @@ namespace ShareX
             task.Info.DataType = dataType;
             task.Info.FilePath = filePath;
 
-            if (task.Info.TaskSettings.SafeUploadSettings.FileUploadUseNamePattern)
+            if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
                 string ext = Path.GetExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
             }
 
-            if (task.Info.TaskSettings.SafeAdvancedSettings.ProcessImagesDuringFileUpload && dataType == EDataType.Image)
+            if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && dataType == EDataType.Image)
             {
                 task.Info.Job = TaskJob.ImageJob;
                 task.tempImage = ImageHelpers.LoadImage(filePath);
@@ -137,7 +137,7 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.TextUpload;
             task.Info.DataType = EDataType.Text;
-            task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.SafeAdvancedSettings.TextFileExtension);
+            task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
             task.tempText = text;
             return task;
         }
@@ -230,7 +230,7 @@ namespace ShareX
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     Program.Settings.ShowUploadWarning = false;
-                    Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                    Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
                     RequestSettingUpdate = true;
                     Stop();
                 }
@@ -298,11 +298,11 @@ namespace ShareX
             {
                 if (Program.Settings.UseSecondaryUploaders)
                 {
-                    Info.TaskSettings.SafeDestinations.ImageDestination = Program.Settings.SecondaryImageUploaders[retry - 1];
-                    Info.TaskSettings.SafeDestinations.ImageFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                    Info.TaskSettings.SafeDestinations.TextDestination = Program.Settings.SecondaryTextUploaders[retry - 1];
-                    Info.TaskSettings.SafeDestinations.TextFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
-                    Info.TaskSettings.SafeDestinations.FileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                    Info.TaskSettings.ImageDestination = Program.Settings.SecondaryImageUploaders[retry - 1];
+                    Info.TaskSettings.ImageFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                    Info.TaskSettings.TextDestination = Program.Settings.SecondaryTextUploaders[retry - 1];
+                    Info.TaskSettings.TextFileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
+                    Info.TaskSettings.FileDestination = Program.Settings.SecondaryFileUploaders[retry - 1];
                 }
                 else
                 {
@@ -365,28 +365,28 @@ namespace ShareX
 
         private void DoAfterCaptureJobs()
         {
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
                 tempImage = TaskHelpers.AddImageEffects(tempImage, Info.TaskSettings);
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark) && Info.TaskSettings.SafeImageSettings.WatermarkConfig != null)
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddWatermark) && Info.TaskSettings.ImageSettings.WatermarkConfig != null)
             {
-                Info.TaskSettings.SafeImageSettings.WatermarkConfig.Apply(tempImage);
+                Info.TaskSettings.ImageSettings.WatermarkConfig.Apply(tempImage);
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
                 tempImage = TaskHelpers.AnnotateImage(tempImage, Info.FileName);
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
             {
                 ClipboardHelpers.CopyImage(tempImage);
                 DebugHelper.WriteLine("CopyImageToClipboard");
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SendImageToPrinter))
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SendImageToPrinter))
             {
                 if (Program.Settings.DontShowPrintSettingsDialog)
                 {
@@ -405,7 +405,7 @@ namespace ShareX
                 }
             }
 
-            if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog,
+            if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog,
                 AfterCaptureTasks.UploadImageToHost))
             {
                 using (tempImage)
@@ -414,7 +414,7 @@ namespace ShareX
                     Data = imageData.ImageStream;
                     Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                     {
                         string filePath = TaskHelpers.CheckFilePath(Info.TaskSettings.CaptureFolder, Info.FileName, Info.TaskSettings);
 
@@ -426,7 +426,7 @@ namespace ShareX
                         }
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
                     {
                         using (SaveFileDialog sfd = new SaveFileDialog())
                         {
@@ -451,7 +451,7 @@ namespace ShareX
                         }
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
                     {
                         string thumbnailFilename, thumbnailFolder;
 
@@ -474,20 +474,20 @@ namespace ShareX
                         }
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard) && !string.IsNullOrEmpty(Info.FilePath) &&
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard) && !string.IsNullOrEmpty(Info.FilePath) &&
                         File.Exists(Info.FilePath))
                     {
                         ClipboardHelpers.CopyFile(Info.FilePath);
                     }
-                    else if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard) && !string.IsNullOrEmpty(Info.FilePath))
+                    else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard) && !string.IsNullOrEmpty(Info.FilePath))
                     {
                         ClipboardHelpers.CopyText(Info.FilePath);
                     }
 
-                    if (Info.TaskSettings.SafeAfterTasks.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.SafeActions != null &&
+                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.ExternalPrograms != null &&
                         !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
                     {
-                        var actions = Info.TaskSettings.SafeActions.Where(x => x.IsActive);
+                        var actions = Info.TaskSettings.ExternalPrograms.Where(x => x.IsActive);
 
                         if (actions.Count() > 0)
                         {
@@ -512,8 +512,8 @@ namespace ShareX
         {
             try
             {
-                if (Info.TaskSettings.SafeAfterTasks.AfterUploadJob.HasFlag(AfterUploadTasks.UseURLShortener) || Info.Job == TaskJob.ShortenURL ||
-                    (Info.TaskSettings.SafeAdvancedSettings.AutoShortenURLLength > 0 && Info.Result.URL.Length > Info.TaskSettings.SafeAdvancedSettings.AutoShortenURLLength))
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.UseURLShortener) || Info.Job == TaskJob.ShortenURL ||
+                    (Info.TaskSettings.AdvancedSettings.AutoShortenURLLength > 0 && Info.Result.URL.Length > Info.TaskSettings.AdvancedSettings.AutoShortenURLLength))
                 {
                     UploadResult result = ShortenURL(Info.Result.URL);
 
@@ -523,7 +523,7 @@ namespace ShareX
                     }
                 }
 
-                if (Info.TaskSettings.SafeAfterTasks.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURLToSocialNetworkingService))
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURLToSocialNetworkingService))
                 {
                     OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
 
@@ -538,7 +538,7 @@ namespace ShareX
                     }
                 }
 
-                if (Info.TaskSettings.SafeAfterTasks.AfterUploadJob.HasFlag(AfterUploadTasks.SendURLWithEmail))
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.SendURLWithEmail))
                 {
                     using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
                         Program.UploadersConfig.EmailDefaultSubject, Info.Result.ToString()))
@@ -565,13 +565,13 @@ namespace ShareX
                     }
                 }
 
-                if (Info.TaskSettings.SafeAfterTasks.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard))
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard))
                 {
                     string txt;
 
-                    if (!string.IsNullOrEmpty(Info.TaskSettings.SafeAdvancedSettings.ClipboardContentFormat))
+                    if (!string.IsNullOrEmpty(Info.TaskSettings.AdvancedSettings.ClipboardContentFormat))
                     {
-                        txt = new UploadInfoParser().Parse(Info, Info.TaskSettings.SafeAdvancedSettings.ClipboardContentFormat);
+                        txt = new UploadInfoParser().Parse(Info, Info.TaskSettings.AdvancedSettings.ClipboardContentFormat);
                     }
                     else
                     {
@@ -596,11 +596,11 @@ namespace ShareX
         {
             ImageUploader imageUploader = null;
 
-            switch (Info.TaskSettings.SafeDestinations.ImageDestination)
+            switch (Info.TaskSettings.ImageDestination)
             {
                 case ImageDestination.ImageShack:
-                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.SafeAdvancedSettings.ThumbnailPreferredWidth;
-                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.SafeAdvancedSettings.ThumbnailPreferredHeight;
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
                     imageUploader = new ImageShackUploader(APIKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
                     break;
                 case ImageDestination.TinyPic:
@@ -679,27 +679,27 @@ namespace ShareX
         {
             TextUploader textUploader = null;
 
-            switch (Info.TaskSettings.SafeDestinations.TextDestination)
+            switch (Info.TaskSettings.TextDestination)
             {
                 case TextDestination.Pastebin:
                     PastebinSettings settings = Program.UploadersConfig.PastebinSettings;
                     if (string.IsNullOrEmpty(settings.TextFormat))
                     {
-                        settings.TextFormat = Info.TaskSettings.SafeAdvancedSettings.TextFormat;
+                        settings.TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat;
                     }
                     textUploader = new Pastebin(APIKeys.PastebinKey, settings);
                     break;
                 case TextDestination.PastebinCA:
-                    textUploader = new Pastebin_ca(APIKeys.PastebinCaKey, new PastebinCaSettings { TextFormat = Info.TaskSettings.SafeAdvancedSettings.TextFormat });
+                    textUploader = new Pastebin_ca(APIKeys.PastebinCaKey, new PastebinCaSettings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
                     break;
                 case TextDestination.Paste2:
-                    textUploader = new Paste2(new Paste2Settings { TextFormat = Info.TaskSettings.SafeAdvancedSettings.TextFormat });
+                    textUploader = new Paste2(new Paste2Settings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
                     break;
                 case TextDestination.Slexy:
-                    textUploader = new Slexy(new SlexySettings { TextFormat = Info.TaskSettings.SafeAdvancedSettings.TextFormat });
+                    textUploader = new Slexy(new SlexySettings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
                     break;
                 case TextDestination.Pastee:
-                    textUploader = new Pastee { Lexer = Info.TaskSettings.SafeAdvancedSettings.TextFormat };
+                    textUploader = new Pastee { Lexer = Info.TaskSettings.AdvancedSettings.TextFormat };
                     break;
                 case TextDestination.Paste_ee:
                     textUploader = new Paste_ee(Program.UploadersConfig.Paste_eeUserAPIKey);
@@ -741,14 +741,14 @@ namespace ShareX
             switch (Info.DataType)
             {
                 case EDataType.Image:
-                    fileDestination = Info.TaskSettings.SafeDestinations.ImageFileDestination;
+                    fileDestination = Info.TaskSettings.ImageFileDestination;
                     break;
                 case EDataType.Text:
-                    fileDestination = Info.TaskSettings.SafeDestinations.TextFileDestination;
+                    fileDestination = Info.TaskSettings.TextFileDestination;
                     break;
                 default:
                 case EDataType.File:
-                    fileDestination = Info.TaskSettings.SafeDestinations.FileDestination;
+                    fileDestination = Info.TaskSettings.FileDestination;
                     break;
             }
 
@@ -818,7 +818,7 @@ namespace ShareX
                     }
                     break;
                 case FileDestination.FTP:
-                    int index = Info.TaskSettings.SafeDestinations.OverrideFTP ? Info.TaskSettings.SafeDestinations.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1) : Program.UploadersConfig.GetFTPIndex(Info.DataType);
+                    int index = Info.TaskSettings.OverrideFTP ? Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1) : Program.UploadersConfig.GetFTPIndex(Info.DataType);
 
                     FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
 
@@ -901,7 +901,7 @@ namespace ShareX
         {
             URLShortener urlShortener = null;
 
-            switch (Info.TaskSettings.SafeDestinations.URLShortenerDestination)
+            switch (Info.TaskSettings.URLShortenerDestination)
             {
                 case UrlShortenerType.BITLY:
                     if (Program.UploadersConfig.BitlyOAuth2Info == null)

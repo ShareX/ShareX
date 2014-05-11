@@ -78,7 +78,101 @@ namespace ShareX
             }
 
             AddEnumItemsContextMenu<HotkeyType>(x => TaskSettings.Job = x, cmsTask);
+            AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
+            AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
+            AddEnumItems<ImageDestination>(x => TaskSettings.ImageDestination = x, tsmiImageUploaders);
+            tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
+            AddEnumItems<FileDestination>(x => TaskSettings.ImageFileDestination = x, tsmiImageFileUploaders);
+            AddEnumItems<TextDestination>(x => TaskSettings.TextDestination = x, tsmiTextUploaders);
+            tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
+            AddEnumItems<FileDestination>(x => TaskSettings.TextFileDestination = x, tsmiTextFileUploaders);
+            AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, tsmiFileUploaders);
+            AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, tsmiURLShorteners);
+            AddEnumItems<SocialNetworkingService>(x => TaskSettings.SocialNetworkingServiceDestination = x, tsmiSocialServices);
+
             SetEnumCheckedContextMenu(TaskSettings.Job, cmsTask);
+            SetMultiEnumCheckedContextMenu(TaskSettings.AfterCaptureJob, cmsAfterCapture);
+            SetMultiEnumCheckedContextMenu(TaskSettings.AfterUploadJob, cmsAfterUpload);
+            SetEnumChecked(TaskSettings.ImageDestination, tsmiImageUploaders);
+            SetEnumChecked(TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
+            SetEnumChecked(TaskSettings.TextDestination, tsmiTextUploaders);
+            SetEnumChecked(TaskSettings.TextFileDestination, tsmiTextFileUploaders);
+            SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
+            SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
+            SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, tsmiSocialServices);
+
+            // FTP
+            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
+            {
+                chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
+                cboFTPaccounts.Items.Clear();
+                cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
+                cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
+            }
+
+            UpdateDestinationStates();
+            UpdateUploaderMenuNames();
+
+            // General
+            cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
+            cbShowAfterCaptureTasksForm.Checked = TaskSettings.GeneralSettings.ShowAfterCaptureTasksForm;
+            cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
+            chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
+            cboPopUpNotification.Items.Clear();
+            cboPopUpNotification.Items.AddRange(Helpers.GetEnumDescriptions<PopUpNotificationType>());
+            cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
+            cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
+
+            // Image - General
+            cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
+            nudImageJPEGQuality.Value = TaskSettings.ImageSettings.ImageJPEGQuality;
+            cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
+            nudUseImageFormat2After.Value = TaskSettings.ImageSettings.ImageSizeLimit;
+            cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;
+            cbImageFileExist.Items.Clear();
+            cbImageFileExist.Items.AddRange(Helpers.GetEnumDescriptions<FileExistAction>());
+            cbImageFileExist.SelectedIndex = (int)TaskSettings.ImageSettings.FileExistAction;
+
+            // Image - Effects
+            chkShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
+            cbImageEffectOnlyRegionCapture.Checked = TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture;
+
+            // Image - Thumbnail
+            nudThumbnailWidth.Value = TaskSettings.ImageSettings.ThumbnailWidth;
+            nudThumbnailHeight.Value = TaskSettings.ImageSettings.ThumbnailHeight;
+            txtThumbnailName.Text = TaskSettings.ImageSettings.ThumbnailName;
+            lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.ImageSettings.ThumbnailName + ".jpg";
+            cbThumbnailIfSmaller.Checked = TaskSettings.ImageSettings.ThumbnailCheckSize;
+
+            // Capture
+            cbShowCursor.Checked = TaskSettings.CaptureSettings.ShowCursor;
+            cbCaptureTransparent.Checked = TaskSettings.CaptureSettings.CaptureTransparent;
+            cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
+            cbCaptureShadow.Checked = TaskSettings.CaptureSettings.CaptureShadow;
+            nudCaptureShadowOffset.Value = TaskSettings.CaptureSettings.CaptureShadowOffset;
+            cbCaptureClientArea.Checked = TaskSettings.CaptureSettings.CaptureClientArea;
+            cbScreenshotDelay.Checked = TaskSettings.CaptureSettings.IsDelayScreenshot;
+            nudScreenshotDelay.Value = TaskSettings.CaptureSettings.DelayScreenshot;
+            cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
+
+            if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new SurfaceOptions();
+            pgShapesCapture.SelectedObject = TaskSettings.CaptureSettings.SurfaceOptions;
+
+            // Capture / Screen recorder
+            cbScreenRecorderOutput.Items.AddRange(Helpers.GetEnumDescriptions<ScreenRecordOutput>());
+            cbScreenRecorderOutput.SelectedIndex = (int)TaskSettings.CaptureSettings.ScreenRecordOutput;
+            chkRunScreencastCLI.Checked = TaskSettings.CaptureSettings.RunScreencastCLI;
+            UpdateVideoEncoders();
+
+            nudScreenRecorderFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS;
+            cbScreenRecorderFixedDuration.Checked = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
+            nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
+            nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
+            nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
+
+            // Actions
+            TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
+            TaskSettings.ExternalPrograms.ForEach(x => AddFileAction(x));
 
             // Watch folders
             cbWatchFolderEnabled.Checked = TaskSettings.WatchFolderEnabled;
@@ -95,6 +189,24 @@ namespace ShareX
                 }
             }
 
+            // Upload / Name pattern
+            txtNameFormatPattern.Text = TaskSettings.UploadSettings.NameFormatPattern;
+            txtNameFormatPatternActiveWindow.Text = TaskSettings.UploadSettings.NameFormatPatternActiveWindow;
+            NameParser.CreateCodesMenu(txtNameFormatPattern, ReplacementVariables.n);
+            NameParser.CreateCodesMenu(txtNameFormatPatternActiveWindow, ReplacementVariables.n);
+            cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
+
+            // Upload / Clipboard upload
+            chkClipboardUploadContents.Checked = TaskSettings.UploadSettings.ClipboardUploadURLContents;
+            cbClipboardUploadAutoDetectURL.Checked = TaskSettings.UploadSettings.ClipboardUploadShortenURL;
+            cbClipboardUploadAutoIndexFolder.Checked = TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder;
+
+            // Indexer
+            pgIndexerConfig.SelectedObject = TaskSettings.IndexerSettings;
+
+            // Advanced
+            pgTaskSettings.SelectedObject = TaskSettings.AdvancedSettings;
+
             UpdateDefaultSettingVisibility();
             loaded = true;
         }
@@ -105,7 +217,7 @@ namespace ShareX
             if (Program.Settings.VideoEncoders.Count > 0)
             {
                 Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
-                cboEncoder.SelectedIndex = TaskSettings.SafeCaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
+                cboEncoder.SelectedIndex = TaskSettings.CaptureSettings.VideoEncoderSelected.BetweenOrDefault(0, Program.Settings.VideoEncoders.Count - 1);
             }
             else if (!cboEncoder.Items.Contains(ConfigureEncoder))
             {
@@ -125,129 +237,6 @@ namespace ShareX
                 pgIndexerConfig.Enabled = !TaskSettings.UseDefaultIndexerSettings;
                 pgTaskSettings.Enabled = !TaskSettings.UseDefaultAdvancedSettings;
             }
-
-            // Core
-            AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.SafeAfterTasks.AfterCaptureJob = TaskSettings.SafeAfterTasks.AfterCaptureJob.Swap(x), cmsAfterCapture);
-            AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.SafeAfterTasks.AfterUploadJob = TaskSettings.SafeAfterTasks.AfterUploadJob.Swap(x), cmsAfterUpload);
-            AddEnumItems<ImageDestination>(x => TaskSettings.SafeDestinations.ImageDestination = x, tsmiImageUploaders);
-            tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => TaskSettings.SafeDestinations.ImageFileDestination = x, tsmiImageFileUploaders);
-            AddEnumItems<TextDestination>(x => TaskSettings.SafeDestinations.TextDestination = x, tsmiTextUploaders);
-            tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => TaskSettings.SafeDestinations.TextFileDestination = x, tsmiTextFileUploaders);
-            AddEnumItems<FileDestination>(x => TaskSettings.SafeDestinations.FileDestination = x, tsmiFileUploaders);
-            AddEnumItems<UrlShortenerType>(x => TaskSettings.SafeDestinations.URLShortenerDestination = x, tsmiURLShorteners);
-            AddEnumItems<SocialNetworkingService>(x => TaskSettings.SafeDestinations.SocialNetworkingServiceDestination = x, tsmiSocialServices);
-
-            // Core - After capture and  After upload
-            SetMultiEnumCheckedContextMenu(TaskSettings.SafeAfterTasks.AfterCaptureJob, cmsAfterCapture);
-            SetMultiEnumCheckedContextMenu(TaskSettings.SafeAfterTasks.AfterUploadJob, cmsAfterUpload);
-
-            // Core - Destinations
-            SetEnumChecked(TaskSettings.SafeDestinations.ImageDestination, tsmiImageUploaders);
-            SetEnumChecked(TaskSettings.SafeDestinations.ImageFileDestination, tsmiImageFileUploaders);
-            SetEnumChecked(TaskSettings.SafeDestinations.TextDestination, tsmiTextUploaders);
-            SetEnumChecked(TaskSettings.SafeDestinations.TextFileDestination, tsmiTextFileUploaders);
-            SetEnumChecked(TaskSettings.SafeDestinations.FileDestination, tsmiFileUploaders);
-            SetEnumChecked(TaskSettings.SafeDestinations.URLShortenerDestination, tsmiURLShorteners);
-            SetEnumChecked(TaskSettings.SafeDestinations.SocialNetworkingServiceDestination, tsmiSocialServices);
-
-            // Core - FTP
-            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
-            {
-                chkOverrideFTP.Checked = TaskSettings.SafeDestinations.OverrideFTP;
-                cboFTPaccounts.Items.Clear();
-                cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
-                cboFTPaccounts.SelectedIndex = TaskSettings.SafeDestinations.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
-            }
-
-            btnAfterCapture.Enabled = !TaskSettings.UseDefaultAfterCaptureJob;
-            btnAfterUpload.Enabled = !TaskSettings.UseDefaultAfterUploadJob;
-            btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
-
-            UpdateDestinationStates();
-            UpdateCoreMenuNames();
-
-            // General
-            cbPlaySoundAfterCapture.Checked = TaskSettings.SafeGeneralSettings.PlaySoundAfterCapture;
-            cbShowAfterCaptureTasksForm.Checked = TaskSettings.SafeGeneralSettings.ShowAfterCaptureTasksForm;
-            cbPlaySoundAfterUpload.Checked = TaskSettings.SafeGeneralSettings.PlaySoundAfterUpload;
-            chkShowAfterUploadForm.Checked = TaskSettings.SafeGeneralSettings.ShowAfterUploadForm;
-            cboPopUpNotification.Items.Clear();
-            cboPopUpNotification.Items.AddRange(Helpers.GetEnumDescriptions<PopUpNotificationType>());
-            cboPopUpNotification.SelectedIndex = (int)TaskSettings.SafeGeneralSettings.PopUpNotification;
-            cbHistorySave.Checked = TaskSettings.SafeGeneralSettings.SaveHistory;
-
-            // Image - General
-            cbImageFormat.SelectedIndex = (int)TaskSettings.SafeImageSettings.ImageFormat;
-            nudImageJPEGQuality.Value = TaskSettings.SafeImageSettings.ImageJPEGQuality;
-            cbImageGIFQuality.SelectedIndex = (int)TaskSettings.SafeImageSettings.ImageGIFQuality;
-            nudUseImageFormat2After.Value = TaskSettings.SafeImageSettings.ImageSizeLimit;
-            cbImageFormat2.SelectedIndex = (int)TaskSettings.SafeImageSettings.ImageFormat2;
-            cbImageFileExist.Items.Clear();
-            cbImageFileExist.Items.AddRange(Helpers.GetEnumDescriptions<FileExistAction>());
-            cbImageFileExist.SelectedIndex = (int)TaskSettings.SafeImageSettings.FileExistAction;
-
-            // Image - Effects
-            chkShowImageEffectsWindowAfterCapture.Checked = TaskSettings.SafeImageSettings.ShowImageEffectsWindowAfterCapture;
-            cbImageEffectOnlyRegionCapture.Checked = TaskSettings.SafeImageSettings.ImageEffectOnlyRegionCapture;
-
-            // Image - Thumbnail
-            nudThumbnailWidth.Value = TaskSettings.SafeImageSettings.ThumbnailWidth;
-            nudThumbnailHeight.Value = TaskSettings.SafeImageSettings.ThumbnailHeight;
-            txtThumbnailName.Text = TaskSettings.SafeImageSettings.ThumbnailName;
-            lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.SafeImageSettings.ThumbnailName + ".jpg";
-            cbThumbnailIfSmaller.Checked = TaskSettings.SafeImageSettings.ThumbnailCheckSize;
-
-            // Capture
-            cbShowCursor.Checked = TaskSettings.SafeCaptureSettings.ShowCursor;
-            cbCaptureTransparent.Checked = TaskSettings.SafeCaptureSettings.CaptureTransparent;
-            cbCaptureShadow.Enabled = TaskSettings.SafeCaptureSettings.CaptureTransparent;
-            cbCaptureShadow.Checked = TaskSettings.SafeCaptureSettings.CaptureShadow;
-            nudCaptureShadowOffset.Value = TaskSettings.SafeCaptureSettings.CaptureShadowOffset;
-            cbCaptureClientArea.Checked = TaskSettings.SafeCaptureSettings.CaptureClientArea;
-            cbScreenshotDelay.Checked = TaskSettings.SafeCaptureSettings.IsDelayScreenshot;
-            nudScreenshotDelay.Value = TaskSettings.SafeCaptureSettings.DelayScreenshot;
-            cbCaptureAutoHideTaskbar.Checked = TaskSettings.SafeCaptureSettings.CaptureAutoHideTaskbar;
-
-            if (TaskSettings.SafeCaptureSettings.SurfaceOptions == null) TaskSettings.SafeCaptureSettings.SurfaceOptions = new SurfaceOptions();
-            pgShapesCapture.SelectedObject = TaskSettings.SafeCaptureSettings.SurfaceOptions;
-
-            // Capture / Screen recorder
-            cbScreenRecorderOutput.Items.Clear();
-            cbScreenRecorderOutput.Items.AddRange(Helpers.GetEnumDescriptions<ScreenRecordOutput>());
-            cbScreenRecorderOutput.SelectedIndex = (int)TaskSettings.SafeCaptureSettings.ScreenRecordOutput;
-            chkRunScreencastCLI.Checked = TaskSettings.SafeCaptureSettings.RunScreencastCLI;
-            UpdateVideoEncoders();
-
-            nudScreenRecorderFPS.Value = TaskSettings.SafeCaptureSettings.ScreenRecordFPS;
-            cbScreenRecorderFixedDuration.Checked = TaskSettings.SafeCaptureSettings.ScreenRecordFixedDuration;
-            nudScreenRecorderDuration.Enabled = TaskSettings.SafeCaptureSettings.ScreenRecordFixedDuration;
-            nudScreenRecorderDuration.Value = (decimal)TaskSettings.SafeCaptureSettings.ScreenRecordDuration;
-            nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.SafeCaptureSettings.ScreenRecordStartDelay;
-
-            // Actions
-            TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
-            lvActions.Clear();
-            TaskSettings.SafeActions.ForEach(x => AddFileAction(x));
-
-            // Upload / Name pattern
-            txtNameFormatPattern.Text = TaskSettings.SafeUploadSettings.NameFormatPattern;
-            txtNameFormatPatternActiveWindow.Text = TaskSettings.SafeUploadSettings.NameFormatPatternActiveWindow;
-            NameParser.CreateCodesMenu(txtNameFormatPattern, ReplacementVariables.n);
-            NameParser.CreateCodesMenu(txtNameFormatPatternActiveWindow, ReplacementVariables.n);
-            cbFileUploadUseNamePattern.Checked = TaskSettings.SafeUploadSettings.FileUploadUseNamePattern;
-
-            // Upload / Clipboard upload
-            chkClipboardUploadContents.Checked = TaskSettings.SafeUploadSettings.ClipboardUploadURLContents;
-            cbClipboardUploadAutoDetectURL.Checked = TaskSettings.SafeUploadSettings.ClipboardUploadShortenURL;
-            cbClipboardUploadAutoIndexFolder.Checked = TaskSettings.SafeUploadSettings.ClipboardUploadAutoIndexFolder;
-
-            // Indexer
-            pgIndexerConfig.SelectedObject = TaskSettings.SafeIndexerSettings;
-
-            // Advanced
-            pgTaskSettings.SelectedObject = TaskSettings.SafeAdvancedSettings;
         }
 
         private void TaskSettingsForm_Resize(object sender, EventArgs e)
@@ -268,7 +257,7 @@ namespace ShareX
                 EnableDisableToolStripMenuItems<FileDestination>(tsmiFileUploaders);
                 EnableDisableToolStripMenuItems<UrlShortenerType>(tsmiURLShorteners);
                 EnableDisableToolStripMenuItems<SocialNetworkingService>(tsmiSocialServices);
-                chkOverrideFTP.Enabled = cboFTPaccounts.Enabled = Program.UploadersConfig.FTPAccountList.Count > 1;
+                chkOverrideFTP.Visible = cboFTPaccounts.Visible = Program.UploadersConfig.FTPAccountList.Count > 1;
             }
         }
 
@@ -278,8 +267,6 @@ namespace ShareX
 
             foreach (ToolStripDropDown parent in parents)
             {
-                parent.Items.Clear();
-
                 for (int i = 0; i < enums.Length; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
@@ -299,7 +286,7 @@ namespace ShareX
 
                         selectedEnum((T)Enum.ToObject(typeof(T), index));
 
-                        UpdateCoreMenuNames();
+                        UpdateUploaderMenuNames();
                     };
 
                     parent.Items.Add(tsmi);
@@ -323,8 +310,6 @@ namespace ShareX
 
             foreach (ToolStripDropDown parent in parents)
             {
-                parent.Items.Clear();
-
                 for (int i = 0; i < enums.Length; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
@@ -341,7 +326,7 @@ namespace ShareX
 
                         selectedEnum((T)Enum.ToObject(typeof(T), 1 << index));
 
-                        UpdateCoreMenuNames();
+                        UpdateUploaderMenuNames();
                     };
 
                     parent.Items.Add(tsmi);
@@ -367,8 +352,6 @@ namespace ShareX
 
             foreach (ToolStripDropDownItem parent in parents)
             {
-                parent.DropDown.Items.Clear();
-
                 for (int i = 0; i < enums.Length; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
@@ -388,7 +371,7 @@ namespace ShareX
 
                         selectedEnum((T)Enum.ToObject(typeof(T), index));
 
-                        UpdateCoreMenuNames();
+                        UpdateUploaderMenuNames();
                     };
 
                     parent.DropDownItems.Add(tsmi);
@@ -417,31 +400,29 @@ namespace ShareX
             }
         }
 
-        private void UpdateCoreMenuNames()
+        private void UpdateUploaderMenuNames()
         {
             btnTask.Text = "Task: " + TaskSettings.Job.GetDescription();
 
-            btnAfterCapture.Text = "After capture: " + string.Join(", ", TaskSettings.SafeAfterTasks.AfterCaptureJob.GetFlags<AfterCaptureTasks>().
+            btnAfterCapture.Text = "After capture: " + string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags<AfterCaptureTasks>().
                 Select(x => x.GetDescription()).ToArray());
 
-            btnAfterUpload.Text = "After upload: " + string.Join(", ", TaskSettings.SafeAfterTasks.AfterUploadJob.GetFlags<AfterUploadTasks>().
+            btnAfterUpload.Text = "After upload: " + string.Join(", ", TaskSettings.AfterUploadJob.GetFlags<AfterUploadTasks>().
                 Select(x => x.GetDescription()).ToArray());
 
-            string imageUploader = TaskSettings.SafeDestinations.ImageDestination == ImageDestination.FileUploader ?
-                TaskSettings.SafeDestinations.ImageFileDestination.GetDescription() : TaskSettings.SafeDestinations.ImageDestination.GetDescription();
+            string imageUploader = TaskSettings.ImageDestination == ImageDestination.FileUploader ?
+                TaskSettings.ImageFileDestination.GetDescription() : TaskSettings.ImageDestination.GetDescription();
             tsmiImageUploaders.Text = "Image uploader: " + imageUploader;
 
-            string textUploader = TaskSettings.SafeDestinations.TextDestination == TextDestination.FileUploader ?
-                TaskSettings.SafeDestinations.TextFileDestination.GetDescription() : TaskSettings.SafeDestinations.TextDestination.GetDescription();
+            string textUploader = TaskSettings.TextDestination == TextDestination.FileUploader ?
+                TaskSettings.TextFileDestination.GetDescription() : TaskSettings.TextDestination.GetDescription();
             tsmiTextUploaders.Text = "Text uploader: " + textUploader;
 
-            tsmiFileUploaders.Text = "File uploader: " + TaskSettings.SafeDestinations.FileDestination.GetDescription();
+            tsmiFileUploaders.Text = "File uploader: " + TaskSettings.FileDestination.GetDescription();
 
-            tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.SafeDestinations.URLShortenerDestination.GetDescription();
+            tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiSocialServices.Text = "Social networking service: " + TaskSettings.SafeDestinations.SocialNetworkingServiceDestination.GetDescription();
-
-            ttTaskSettings.SetToolTip(btnDestinations, TaskSettings.SafeDestinations.ToString());
+            tsmiSocialServices.Text = "Social networking service: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)
@@ -452,30 +433,30 @@ namespace ShareX
         private void cbUseDefaultAfterCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultAfterCaptureJob = cbUseDefaultAfterCaptureSettings.Checked;
-            UpdateDefaultSettingVisibility();
+            btnAfterCapture.Enabled = !TaskSettings.UseDefaultAfterCaptureJob;
         }
 
         private void cbUseDefaultAfterUploadSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultAfterUploadJob = cbUseDefaultAfterUploadSettings.Checked;
-            UpdateDefaultSettingVisibility();
+            btnAfterUpload.Enabled = !TaskSettings.UseDefaultAfterUploadJob;
         }
 
         private void cbUseDefaultDestinationSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultDestinations = cbUseDefaultDestinationSettings.Checked;
-            UpdateDefaultSettingVisibility();
+            btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
         }
 
         private void chkOverrideFTP_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeDestinations.OverrideFTP = chkOverrideFTP.Checked;
-            cboFTPaccounts.Enabled = TaskSettings.SafeDestinations.OverrideFTP;
+            TaskSettings.OverrideFTP = chkOverrideFTP.Checked;
+            cboFTPaccounts.Enabled = TaskSettings.OverrideFTP;
         }
 
         private void cboFTPaccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeDestinations.FTPIndex = cboFTPaccounts.SelectedIndex;
+            TaskSettings.FTPIndex = cboFTPaccounts.SelectedIndex;
         }
 
         #endregion Task
@@ -490,32 +471,32 @@ namespace ShareX
 
         private void cbPlaySoundAfterCapture_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeGeneralSettings.PlaySoundAfterCapture = cbPlaySoundAfterCapture.Checked;
+            TaskSettings.GeneralSettings.PlaySoundAfterCapture = cbPlaySoundAfterCapture.Checked;
         }
 
         private void cbShowAfterCaptureTasksForm_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeGeneralSettings.ShowAfterCaptureTasksForm = cbShowAfterCaptureTasksForm.Checked;
+            TaskSettings.GeneralSettings.ShowAfterCaptureTasksForm = cbShowAfterCaptureTasksForm.Checked;
         }
 
         private void cbPlaySoundAfterUpload_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeGeneralSettings.PlaySoundAfterUpload = cbPlaySoundAfterUpload.Checked;
+            TaskSettings.GeneralSettings.PlaySoundAfterUpload = cbPlaySoundAfterUpload.Checked;
         }
 
         private void chkShowAfterUploadForm_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeGeneralSettings.ShowAfterUploadForm = chkShowAfterUploadForm.Checked;
+            TaskSettings.GeneralSettings.ShowAfterUploadForm = chkShowAfterUploadForm.Checked;
         }
 
         private void cboPopUpNotification_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeGeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
+            TaskSettings.GeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
         }
 
         private void cbHistorySave_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeGeneralSettings.SaveHistory = cbHistorySave.Checked;
+            TaskSettings.GeneralSettings.SaveHistory = cbHistorySave.Checked;
         }
 
         #endregion General
@@ -530,37 +511,37 @@ namespace ShareX
 
         private void cbImageFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+            TaskSettings.ImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
         }
 
         private void cbImageGIFQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ImageGIFQuality = (GIFQuality)cbImageGIFQuality.SelectedIndex;
+            TaskSettings.ImageSettings.ImageGIFQuality = (GIFQuality)cbImageGIFQuality.SelectedIndex;
         }
 
         private void cbImageFormat2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ImageFormat2 = (EImageFormat)cbImageFormat2.SelectedIndex;
+            TaskSettings.ImageSettings.ImageFormat2 = (EImageFormat)cbImageFormat2.SelectedIndex;
         }
 
         private void nudImageJPEGQuality_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ImageJPEGQuality = (int)nudImageJPEGQuality.Value;
+            TaskSettings.ImageSettings.ImageJPEGQuality = (int)nudImageJPEGQuality.Value;
         }
 
         private void nudUseImageFormat2After_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ImageSizeLimit = (int)nudUseImageFormat2After.Value;
+            TaskSettings.ImageSettings.ImageSizeLimit = (int)nudUseImageFormat2After.Value;
         }
 
         private void cbImageFileExist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.FileExistAction = (FileExistAction)cbImageFileExist.SelectedIndex;
+            TaskSettings.ImageSettings.FileExistAction = (FileExistAction)cbImageFileExist.SelectedIndex;
         }
 
         private void btnWatermarkSettings_Click(object sender, EventArgs e)
         {
-            using (WatermarkForm watermarkForm = new WatermarkForm(TaskSettings.SafeImageSettings.WatermarkConfig) { Icon = Icon })
+            using (WatermarkForm watermarkForm = new WatermarkForm(TaskSettings.ImageSettings.WatermarkConfig) { Icon = Icon })
             {
                 watermarkForm.ShowDialog();
             }
@@ -568,44 +549,44 @@ namespace ShareX
 
         private void cbImageEffectOnlyRegionCapture_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ImageEffectOnlyRegionCapture = cbImageEffectOnlyRegionCapture.Checked;
+            TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture = cbImageEffectOnlyRegionCapture.Checked;
         }
 
         private void chkShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ShowImageEffectsWindowAfterCapture = chkShowImageEffectsWindowAfterCapture.Checked;
+            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = chkShowImageEffectsWindowAfterCapture.Checked;
         }
 
         private void btnImageEffects_Click(object sender, EventArgs e)
         {
-            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(ShareXResources.Logo, TaskSettings.SafeImageSettings.ImageEffects))
+            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(ShareXResources.Logo, TaskSettings.ImageSettings.ImageEffects))
             {
                 if (imageEffectsForm.ShowDialog() == DialogResult.OK)
                 {
-                    TaskSettings.SafeImageSettings.ImageEffects = imageEffectsForm.Effects;
+                    TaskSettings.ImageSettings.ImageEffects = imageEffectsForm.Effects;
                 }
             }
         }
 
         private void nudThumbnailWidth_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ThumbnailWidth = (int)nudThumbnailWidth.Value;
+            TaskSettings.ImageSettings.ThumbnailWidth = (int)nudThumbnailWidth.Value;
         }
 
         private void nudThumbnailHeight_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ThumbnailHeight = (int)nudThumbnailHeight.Value;
+            TaskSettings.ImageSettings.ThumbnailHeight = (int)nudThumbnailHeight.Value;
         }
 
         private void txtThumbnailName_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ThumbnailName = txtThumbnailName.Text;
-            lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.SafeImageSettings.ThumbnailName + ".jpg";
+            TaskSettings.ImageSettings.ThumbnailName = txtThumbnailName.Text;
+            lblThumbnailNamePreview.Text = "ImageName" + TaskSettings.ImageSettings.ThumbnailName + ".jpg";
         }
 
         private void cbThumbnailIfSmaller_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeImageSettings.ThumbnailCheckSize = cbThumbnailIfSmaller.Checked;
+            TaskSettings.ImageSettings.ThumbnailCheckSize = cbThumbnailIfSmaller.Checked;
         }
 
         #endregion Image
@@ -620,43 +601,43 @@ namespace ShareX
 
         private void cbCaptureAutoHideTaskbar_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.CaptureAutoHideTaskbar = cbCaptureAutoHideTaskbar.Checked;
+            TaskSettings.CaptureSettings.CaptureAutoHideTaskbar = cbCaptureAutoHideTaskbar.Checked;
         }
 
         private void nudScreenshotDelay_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.DelayScreenshot = nudScreenshotDelay.Value;
+            TaskSettings.CaptureSettings.DelayScreenshot = nudScreenshotDelay.Value;
         }
 
         private void cbScreenshotDelay_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.IsDelayScreenshot = cbScreenshotDelay.Checked;
+            TaskSettings.CaptureSettings.IsDelayScreenshot = cbScreenshotDelay.Checked;
         }
 
         private void nudCaptureShadowOffset_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.CaptureShadowOffset = (int)nudCaptureShadowOffset.Value;
+            TaskSettings.CaptureSettings.CaptureShadowOffset = (int)nudCaptureShadowOffset.Value;
         }
 
         private void cbCaptureClientArea_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.CaptureClientArea = cbCaptureClientArea.Checked;
+            TaskSettings.CaptureSettings.CaptureClientArea = cbCaptureClientArea.Checked;
         }
 
         private void cbCaptureShadow_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.CaptureShadow = cbCaptureShadow.Checked;
+            TaskSettings.CaptureSettings.CaptureShadow = cbCaptureShadow.Checked;
         }
 
         private void cbShowCursor_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.ShowCursor = cbShowCursor.Checked;
+            TaskSettings.CaptureSettings.ShowCursor = cbShowCursor.Checked;
         }
 
         private void cbCaptureTransparent_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.CaptureTransparent = cbCaptureTransparent.Checked;
-            cbCaptureShadow.Enabled = TaskSettings.SafeCaptureSettings.CaptureTransparent;
+            TaskSettings.CaptureSettings.CaptureTransparent = cbCaptureTransparent.Checked;
+            cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
         }
 
         #endregion Capture
@@ -665,9 +646,9 @@ namespace ShareX
 
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            btnScreenRecorderOptions.Enabled = TaskSettings.SafeCaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                TaskSettings.SafeCaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg;
+            TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
+            btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
+                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
         }
 
@@ -675,16 +656,16 @@ namespace ShareX
         {
             ScreencastOptions options = new ScreencastOptions
             {
-                AVI = TaskSettings.SafeCaptureSettings.AVIOptions,
-                FFmpeg = TaskSettings.SafeCaptureSettings.FFmpegOptions,
+                AVI = TaskSettings.CaptureSettings.AVIOptions,
+                FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
                 ShowAVIOptionsDialog = true,
-                FPS = TaskSettings.SafeCaptureSettings.ScreenRecordFPS,
+                FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 OutputPath = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi")),
                 ParentWindow = this.Handle,
                 CaptureArea = new Rectangle(0, 0, 100, 100)
             };
 
-            switch (TaskSettings.SafeCaptureSettings.ScreenRecordOutput)
+            switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
             {
                 case ScreenRecordOutput.AVI:
 
@@ -693,12 +674,12 @@ namespace ShareX
                         // Ugly workaround for show AVI compression dialog
                         using (AVICache aviCache = new AVICache(options))
                         {
-                            TaskSettings.SafeCaptureSettings.AVIOptions.CompressOptions = options.AVI.CompressOptions;
+                            TaskSettings.CaptureSettings.AVIOptions.CompressOptions = options.AVI.CompressOptions;
                         }
                     }
                     catch (Exception ex)
                     {
-                        TaskSettings.SafeCaptureSettings.AVIOptions.CompressOptions = new AVICOMPRESSOPTIONS();
+                        TaskSettings.CaptureSettings.AVIOptions.CompressOptions = new AVICOMPRESSOPTIONS();
                         MessageBox.Show(ex.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
@@ -713,7 +694,7 @@ namespace ShareX
 
         private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
+            TaskSettings.CaptureSettings.VideoEncoderSelected = cboEncoder.SelectedIndex;
         }
 
         private void btnEncoderConfig_Click(object sender, EventArgs e)
@@ -728,28 +709,28 @@ namespace ShareX
 
         private void nudScreenRecorderFPS_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.ScreenRecordFPS = (int)nudScreenRecorderFPS.Value;
+            TaskSettings.CaptureSettings.ScreenRecordFPS = (int)nudScreenRecorderFPS.Value;
         }
 
         private void cbScreenRecorderFixedDuration_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.ScreenRecordFixedDuration = cbScreenRecorderFixedDuration.Checked;
-            nudScreenRecorderDuration.Enabled = TaskSettings.SafeCaptureSettings.ScreenRecordFixedDuration;
+            TaskSettings.CaptureSettings.ScreenRecordFixedDuration = cbScreenRecorderFixedDuration.Checked;
+            nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
         }
 
         private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.RunScreencastCLI = btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Checked;
+            TaskSettings.CaptureSettings.RunScreencastCLI = btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Checked;
         }
 
         private void nudScreenRecorderDuration_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.ScreenRecordDuration = (float)nudScreenRecorderDuration.Value;
+            TaskSettings.CaptureSettings.ScreenRecordDuration = (float)nudScreenRecorderDuration.Value;
         }
 
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeCaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
+            TaskSettings.CaptureSettings.ScreenRecordStartDelay = (float)nudScreenRecorderStartDelay.Value;
         }
 
         #endregion Screen recorder
@@ -770,7 +751,7 @@ namespace ShareX
                 {
                     ExternalProgram fileAction = form.FileAction;
                     fileAction.IsActive = true;
-                    TaskSettings.SafeActions.Add(fileAction);
+                    TaskSettings.ExternalPrograms.Add(fileAction);
                     AddFileAction(fileAction);
                 }
             }
@@ -812,7 +793,7 @@ namespace ShareX
                 ListViewItem lvi = lvActions.SelectedItems[0];
                 ExternalProgram fileAction = lvi.Tag as ExternalProgram;
 
-                TaskSettings.SafeActions.Remove(fileAction);
+                TaskSettings.ExternalPrograms.Remove(fileAction);
                 lvActions.Items.Remove(lvi);
             }
         }
@@ -907,21 +888,21 @@ namespace ShareX
 
         private void cbFileUploadUseNamePattern_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeUploadSettings.FileUploadUseNamePattern = cbFileUploadUseNamePattern.Checked;
+            TaskSettings.UploadSettings.FileUploadUseNamePattern = cbFileUploadUseNamePattern.Checked;
         }
 
         private void txtNameFormatPatternActiveWindow_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeUploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
+            TaskSettings.UploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 WindowText = Text,
                 ProcessName = "ShareX",
-                MaxNameLength = TaskSettings.SafeAdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = TaskSettings.SafeAdvancedSettings.NamePatternMaxTitleLength
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
-            lblNameFormatPatternPreviewActiveWindow.Text = "Preview: " + nameParser.Parse(TaskSettings.SafeUploadSettings.NameFormatPatternActiveWindow);
+            lblNameFormatPatternPreviewActiveWindow.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
         }
 
         private void btnResetAutoIncrementNumber_Click(object sender, EventArgs e)
@@ -931,29 +912,29 @@ namespace ShareX
 
         private void txtNameFormatPattern_TextChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeUploadSettings.NameFormatPattern = txtNameFormatPattern.Text;
+            TaskSettings.UploadSettings.NameFormatPattern = txtNameFormatPattern.Text;
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = TaskSettings.SafeAdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = TaskSettings.SafeAdvancedSettings.NamePatternMaxTitleLength
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
             };
-            lblNameFormatPatternPreview.Text = "Preview: " + nameParser.Parse(TaskSettings.SafeUploadSettings.NameFormatPattern);
+            lblNameFormatPatternPreview.Text = "Preview: " + nameParser.Parse(TaskSettings.UploadSettings.NameFormatPattern);
         }
 
         private void chkClipboardUploadContents_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeUploadSettings.ClipboardUploadURLContents = chkClipboardUploadContents.Checked;
+            TaskSettings.UploadSettings.ClipboardUploadURLContents = chkClipboardUploadContents.Checked;
         }
 
         private void cbClipboardUploadAutoDetectURL_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeUploadSettings.ClipboardUploadShortenURL = cbClipboardUploadAutoDetectURL.Checked;
+            TaskSettings.UploadSettings.ClipboardUploadShortenURL = cbClipboardUploadAutoDetectURL.Checked;
         }
 
         private void cbClipboardUploadAutoIndexFolder_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.SafeUploadSettings.ClipboardUploadAutoIndexFolder = cbClipboardUploadAutoIndexFolder.Checked;
+            TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder = cbClipboardUploadAutoIndexFolder.Checked;
         }
 
         #endregion Upload

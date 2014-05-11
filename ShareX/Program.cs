@@ -355,7 +355,6 @@ namespace ShareX
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
             DefaultTaskSettings = Settings.DefaultTaskSettings;
-            MigrateTaskSettings(DefaultTaskSettings);
         }
 
         public static void LoadUploadersConfig()
@@ -366,33 +365,6 @@ namespace ShareX
         public static void LoadHotkeySettings()
         {
             HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
-
-            if (HotkeysConfig != null && HotkeysConfig.Hotkeys != null)
-            {
-                HotkeysConfig.Hotkeys.ForEach(x => MigrateTaskSettings(x.TaskSettings));
-            }
-        }
-
-        public static void MigrateTaskSettings(TaskSettings taskSettings)
-        {
-            if (!taskSettings.SettingsMigrated)
-            {
-                taskSettings.SafeAfterTasks.AfterCaptureJob = taskSettings.AfterCaptureJob;
-                taskSettings.SafeAfterTasks.AfterUploadJob = taskSettings.AfterUploadJob;
-
-                taskSettings.TaskDestinations.ImageDestination = taskSettings.ImageDestination;
-                taskSettings.TaskDestinations.ImageFileDestination = taskSettings.ImageFileDestination;
-                taskSettings.TaskDestinations.FileDestination = taskSettings.FileDestination;
-                taskSettings.TaskDestinations.TextDestination = taskSettings.TextDestination;
-                taskSettings.TaskDestinations.TextFileDestination = taskSettings.TextFileDestination;
-                taskSettings.TaskDestinations.URLShortenerDestination = taskSettings.URLShortenerDestination;
-                taskSettings.TaskDestinations.SocialNetworkingServiceDestination = taskSettings.SocialNetworkingServiceDestination;
-
-                taskSettings.TaskDestinations.OverrideFTP = taskSettings.OverrideFTP;
-                taskSettings.TaskDestinations.FTPIndex = taskSettings.FTPIndex;
-
-                taskSettings.SettingsMigrated = true;
-            }
         }
 
         public static void SaveSettings()
