@@ -557,7 +557,7 @@ namespace ShareX
 
         private static void ReloadUploadersConfig(string filePath)
         {
-            UploadersConfig = UploadersLib.UploadersConfig.Load(filePath);
+            UploadersConfig = UploadersConfig.Load(filePath);
         }
 
         public async static void UploadersConfigSaveAsync()

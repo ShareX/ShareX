@@ -112,24 +112,16 @@ namespace ShareX
             get
             {
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && UseDefaultGeneralSettings &&
-                       UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
-                       UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
+                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
+                    UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
-        }
-
-        public static TaskSettings GetDefaultTaskSettings()
-        {
-            TaskSettings taskSettings = new TaskSettings();
-            taskSettings.SetDefaultSettings();
-            return taskSettings;
         }
 
         public TaskSettingsAfterTasks SafeAfterTasks
         {
             get
             {
-                return UseDefaultAfterCaptureJob && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.TaskSettingsAfterTasks : TaskSettingsAfterTasks;
+                return UseDefaultAfterCaptureJob && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.TaskSettingsAfterTasks : TaskSettingsAfterTasks;
             }
         }
 
@@ -137,8 +129,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultDestinations && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.TaskDestinations : TaskDestinations;
+                return UseDefaultDestinations && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.TaskDestinations : TaskDestinations;
             }
         }
 
@@ -146,8 +137,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultGeneralSettings && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.GeneralSettings : GeneralSettings;
+                return UseDefaultGeneralSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.GeneralSettings : GeneralSettings;
             }
         }
 
@@ -155,8 +145,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultImageSettings && Program.DefaultTaskSettings != null ?
-            Program.DefaultTaskSettings.ImageSettings : ImageSettings;
+                return UseDefaultImageSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.ImageSettings : ImageSettings;
             }
         }
 
@@ -164,8 +153,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultCaptureSettings && Program.DefaultTaskSettings != null ?
-            Program.DefaultTaskSettings.CaptureSettings : CaptureSettings;
+                return UseDefaultCaptureSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.CaptureSettings : CaptureSettings;
             }
         }
 
@@ -173,8 +161,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultActions && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.ExternalPrograms : ExternalPrograms;
+                return UseDefaultActions && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.ExternalPrograms : ExternalPrograms;
             }
         }
 
@@ -182,8 +169,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultUploadSettings && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.UploadSettings : UploadSettings;
+                return UseDefaultUploadSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.UploadSettings : UploadSettings;
             }
         }
 
@@ -191,8 +177,7 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultIndexerSettings && Program.DefaultTaskSettings != null ?
-                    Program.DefaultTaskSettings.IndexerSettings : IndexerSettings;
+                return UseDefaultIndexerSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.IndexerSettings : IndexerSettings;
             }
         }
 
@@ -200,23 +185,21 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultAdvancedSettings && Program.DefaultTaskSettings != null ?
-                  Program.DefaultTaskSettings.AdvancedSettings : AdvancedSettings;
+                return UseDefaultAdvancedSettings && Program.DefaultTaskSettings != null ? Program.DefaultTaskSettings.AdvancedSettings : AdvancedSettings;
             }
         }
 
         public static TaskSettings GetSafeTaskSettings(TaskSettings taskSettings)
         {
-            if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
-            {
-                Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJobsTemp = Program.DefaultTaskSettings.SafeAfterTasks.AfterCaptureJob;
-                return Program.DefaultTaskSettings;
-            }
-            else
-            {
-                taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob;
-                return taskSettings;
-            }
+            taskSettings.SafeAfterTasks.AfterCaptureJobsTemp = taskSettings.SafeAfterTasks.AfterCaptureJob;
+            return taskSettings;
+        }
+
+        public static TaskSettings GetDefaultTaskSettings()
+        {
+            TaskSettings taskSettings = new TaskSettings();
+            taskSettings.SetDefaultSettings();
+            return taskSettings;
         }
 
         private void SetDefaultSettings()
@@ -293,7 +276,9 @@ namespace ShareX
             get
             {
                 if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
+                {
                     return AdvancedSettings.CapturePath;
+                }
 
                 return Program.ScreenshotsFolder;
             }
