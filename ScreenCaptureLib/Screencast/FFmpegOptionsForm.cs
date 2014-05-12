@@ -192,8 +192,8 @@ namespace ScreenCaptureLib
                 {
                     using (Process process = new Process())
                     {
-                        ProcessStartInfo psi = new ProcessStartInfo(Options.FFmpeg.CLIPath);
-                        psi.Arguments = Options.GetFFmpegArgs();
+                        ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
+                        psi.Arguments = "/k ffmpeg " + Options.GetFFmpegArgs();
                         psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.CLIPath);
 
                         process.StartInfo = psi;
