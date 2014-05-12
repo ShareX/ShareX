@@ -661,7 +661,8 @@ namespace ShareX
                 AVI = TaskSettings.CaptureSettings.AVIOptions,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
                 ShowAVIOptionsDialog = true,
-                GIFFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
+                GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
+                ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 OutputPath = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi")),
                 ParentWindow = this.Handle,
                 CaptureArea = new Rectangle(0, 0, 100, 100)
