@@ -110,11 +110,6 @@ namespace ShareX
             }
         }
 
-        private void UpdateUI<T>(int index)
-        {
-            Enum destination = (Enum)Enum.ToObject(typeof(T), index);
-        }
-
         private void AddDestination<T>(int index, EDataType dataType, TaskSettings taskSettings)
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
