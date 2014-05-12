@@ -129,7 +129,7 @@ namespace ScreenCaptureLib
         public void UpdateUI()
         {
             SettingsSave();
-            tbCommandLinePreview.Text = Options.GetFFmpegArgs();
+            tbCommandLinePreview.Text = Options.GetFFmpegArgs(true);
         }
 
         public void UpdateExtensions()

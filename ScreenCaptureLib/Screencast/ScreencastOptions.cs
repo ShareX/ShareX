@@ -48,9 +48,14 @@ namespace ScreenCaptureLib
 
         public FFmpegOptions FFmpeg = new FFmpegOptions();
 
-        public string GetFFmpegArgs()
+        public string GetFFmpegArgs(bool isPreview = false)
         {
             StringBuilder args = new StringBuilder();
+
+            if (isPreview)
+            {
+                args.Append("ffmpeg ");
+            }
 
             // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
             args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
@@ -92,7 +97,9 @@ namespace ScreenCaptureLib
             }
 
             // -y for overwrite file
-            args.AppendFormat("-y \"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
+            args.Append("-y ");
+
+            args.AppendFormat("\"{0}\"", Path.ChangeExtension(isPreview ? "output" : OutputPath, FFmpeg.Extension));
 
             return args.ToString();
         }
