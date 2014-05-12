@@ -605,12 +605,12 @@ namespace ShareX
 
         private void tsbClipboardUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.ClipboardUploadMainWindow(HotkeyManager.GetTasksettings(HotkeyType.ClipboardUpload));
+            UploadManager.ClipboardUploadMainWindow();
         }
 
         private void tsbFileUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadFile(HotkeyManager.GetTasksettings(HotkeyType.FileUpload));
+            UploadManager.UploadFile();
         }
 
         private void tsbDragDropUpload_Click(object sender, EventArgs e)
@@ -876,7 +876,7 @@ namespace ShareX
                     uim.CopyURL();
                     break;
                 case Keys.Control | Keys.V:
-                    UploadManager.ClipboardUploadMainWindow(HotkeyManager.GetTasksettings(HotkeyType.ClipboardUpload));
+                    UploadManager.ClipboardUploadMainWindow();
                     break;
                 case Keys.Delete:
                     RemoveSelectedItems();
@@ -1093,12 +1093,12 @@ namespace ShareX
 
         private void tsmiClipboardUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.ClipboardUploadMainWindow(HotkeyManager.GetTasksettings(HotkeyType.ClipboardUpload));
+            UploadManager.ClipboardUploadMainWindow();
         }
 
         private void tsmiUploadFile_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadFile(HotkeyManager.GetTasksettings(HotkeyType.FileUpload));
+            UploadManager.UploadFile();
         }
 
         private void tsmiHideMenu_Click(object sender, EventArgs e)

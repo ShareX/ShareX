@@ -32,7 +32,7 @@ namespace ShareX
 {
     public class HotkeyManager
     {
-        public static List<HotkeySettings> Hotkeys { get; private set; }
+        public List<HotkeySettings> Hotkeys { get; private set; }
         public bool IgnoreHotkeys { get; set; }
 
         public delegate void HotkeyTriggerEventHandler(HotkeySettings hotkeySetting);
@@ -163,18 +163,6 @@ namespace ShareX
             UnregisterAllHotkeys();
             Hotkeys.AddRange(GetDefaultHotkeyList());
             RegisterAllHotkeys();
-        }
-
-        public static TaskSettings GetTasksettings(HotkeyType job)
-        {
-            HotkeySettings hotkeySetting = Hotkeys.Find(x => x.TaskSettings.Job == job);
-
-            if (hotkeySetting != null)
-            {
-                return hotkeySetting.TaskSettings;
-            }
-
-            return TaskSettings.GetDefaultTaskSettings();
         }
 
         private HotkeySettings[] GetDefaultHotkeyList()
