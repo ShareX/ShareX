@@ -47,35 +47,23 @@ namespace ShareX
 
             Info = info;
 
-            if (info.DataType == EDataType.Image)
-            {
-                Enum.GetValues(typeof(ImageDestination)).Cast<ImageDestination>().ForEach(x =>
-                {
-                    if (x != ImageDestination.FileUploader)
-                    {
-                        AddDestination<ImageDestination>((int)x);
-                    }
-                });
-            }
-            else if (info.DataType == EDataType.Text)
-            {
-                Enum.GetValues(typeof(TextDestination)).Cast<TextDestination>().ForEach(x =>
-                    {
-                        if (x != TextDestination.FileUploader)
-                        {
-                            AddDestination<TextDestination>((int)x);
-                        }
-                    });
-            }
-
-            Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
-            {
-                AddDestination<FileDestination>((int)x);
-            });
-
             switch (Info.DataType)
             {
                 case EDataType.Image:
+
+                    Enum.GetValues(typeof(ImageDestination)).Cast<ImageDestination>().ForEach(x =>
+                    {
+                        if (x != ImageDestination.FileUploader)
+                        {
+                            AddDestination<ImageDestination>((int)x);
+                        }
+                    });
+
+                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    {
+                        AddDestination<FileDestination>((int)x);
+                    });
+
                     ucBeforeUpload.flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
                         x.Checked = (x.Tag is ImageDestination && (ImageDestination)x.Tag == (ImageDestination)Info.TaskSettings.ImageDestination) ||
@@ -83,6 +71,19 @@ namespace ShareX
                     });
                     break;
                 case EDataType.Text:
+                    Enum.GetValues(typeof(TextDestination)).Cast<TextDestination>().ForEach(x =>
+                    {
+                        if (x != TextDestination.FileUploader)
+                        {
+                            AddDestination<TextDestination>((int)x);
+                        }
+                    });
+
+                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    {
+                        AddDestination<FileDestination>((int)x);
+                    });
+
                     ucBeforeUpload.flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
                         x.Checked = (x.Tag is TextDestination && (TextDestination)x.Tag == (TextDestination)Info.TaskSettings.ImageDestination) ||
@@ -90,12 +91,31 @@ namespace ShareX
                     });
                     break;
                 case EDataType.File:
+                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    {
+                        AddDestination<FileDestination>((int)x);
+                    });
+
                     ucBeforeUpload.flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)Info.TaskSettings.ImageDestination;
+                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)Info.TaskSettings.FileDestination;
                     });
                     break;
+                case EDataType.URL:
+                    Enum.GetValues(typeof(UrlShortenerType)).Cast<UrlShortenerType>().ForEach(x =>
+                    {
+                        AddDestination<UrlShortenerType>((int)x);
+                    });
+
+                    ucBeforeUpload.flp.Controls.OfType<RadioButton>().ForEach(x =>
+                    {
+                        x.Checked = x.Tag is UrlShortenerType && (UrlShortenerType)x.Tag == (UrlShortenerType)Info.TaskSettings.URLShortenerDestination;
+                    });
+
+                    break;
             }
+
+            lblTitle.Text = string.Format("{0} is about to be uploaded to {1}. You may choose a different destination.", info.FileName, ucBeforeUpload.flp.Controls.OfType<RadioButton>().First<RadioButton>(x => x.Checked).Text);
         }
 
         private void UpdateUI<T>(int index)
@@ -149,6 +169,12 @@ namespace ShareX
                         if (destination is FileDestination)
                         {
                             Info.TaskSettings.FileDestination = (FileDestination)destination;
+                        }
+                        break;
+                    case EDataType.URL:
+                        if (destination is UrlShortenerType)
+                        {
+                            Info.TaskSettings.URLShortenerDestination = (UrlShortenerType)destination;
                         }
                         break;
                 }
