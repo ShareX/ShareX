@@ -1136,7 +1136,7 @@
             // 
             // nudScreenRecordFPS
             // 
-            this.nudScreenRecordFPS.Location = new System.Drawing.Point(320, 96);
+            this.nudScreenRecordFPS.Location = new System.Drawing.Point(320, 69);
             this.nudScreenRecordFPS.Maximum = new decimal(new int[] {
             30,
             0,
@@ -1161,7 +1161,7 @@
             // lblScreenRecordFPS
             // 
             this.lblScreenRecordFPS.AutoSize = true;
-            this.lblScreenRecordFPS.Location = new System.Drawing.Point(208, 100);
+            this.lblScreenRecordFPS.Location = new System.Drawing.Point(208, 73);
             this.lblScreenRecordFPS.Name = "lblScreenRecordFPS";
             this.lblScreenRecordFPS.Size = new System.Drawing.Size(100, 13);
             this.lblScreenRecordFPS.TabIndex = 15;
@@ -1250,7 +1250,7 @@
             // lblScreenRecorderStartDelay
             // 
             this.lblScreenRecorderStartDelay.AutoSize = true;
-            this.lblScreenRecorderStartDelay.Location = new System.Drawing.Point(248, 158);
+            this.lblScreenRecorderStartDelay.Location = new System.Drawing.Point(248, 154);
             this.lblScreenRecorderStartDelay.Name = "lblScreenRecorderStartDelay";
             this.lblScreenRecorderStartDelay.Size = new System.Drawing.Size(60, 13);
             this.lblScreenRecorderStartDelay.TabIndex = 9;
@@ -1303,7 +1303,7 @@
             // cbScreenRecorderFixedDuration
             // 
             this.cbScreenRecorderFixedDuration.AutoSize = true;
-            this.cbScreenRecorderFixedDuration.Location = new System.Drawing.Point(164, 126);
+            this.cbScreenRecorderFixedDuration.Location = new System.Drawing.Point(164, 125);
             this.cbScreenRecorderFixedDuration.Name = "cbScreenRecorderFixedDuration";
             this.cbScreenRecorderFixedDuration.Size = new System.Drawing.Size(144, 17);
             this.cbScreenRecorderFixedDuration.TabIndex = 4;
@@ -1313,7 +1313,7 @@
             // 
             // nudGIFFPS
             // 
-            this.nudGIFFPS.Location = new System.Drawing.Point(320, 69);
+            this.nudGIFFPS.Location = new System.Drawing.Point(320, 96);
             this.nudGIFFPS.Maximum = new decimal(new int[] {
             30,
             0,
@@ -1338,7 +1338,7 @@
             // lblGIFPS
             // 
             this.lblGIFPS.AutoSize = true;
-            this.lblGIFPS.Location = new System.Drawing.Point(258, 74);
+            this.lblGIFPS.Location = new System.Drawing.Point(258, 100);
             this.lblGIFPS.Name = "lblGIFPS";
             this.lblGIFPS.Size = new System.Drawing.Size(50, 13);
             this.lblGIFPS.TabIndex = 2;

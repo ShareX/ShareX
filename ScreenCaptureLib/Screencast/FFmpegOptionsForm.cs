@@ -138,6 +138,8 @@ namespace ScreenCaptureLib
                 cbExtension.Text = "webm";
             }
 
+            tcFFmpeg.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+
             tbCommandLinePreview.Text = Options.GetFFmpegArgs();
         }
 
