@@ -61,29 +61,20 @@ namespace ScreenCaptureLib
 
             if (options != null)
             {
-                LoadSettings();
+                SettingsLoad();
                 UpdateUI();
             }
         }
 
-        private void LoadSettings()
+        private void SettingsLoad()
         {
+            // General
             cbCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cbCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cbCodec.SelectedIndexChanged += (sender, e) => UpdateUI();
 
             cbExtension.Text = Options.FFmpeg.Extension;
             cbExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
-
-            nudCRF.Value = Options.FFmpeg.CRF.Between((int)nudCRF.Minimum, (int)nudCRF.Maximum);
-            nudCRF.ValueChanged += (sender, e) => UpdateUI();
-
-            cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
-            cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
-            cbPreset.SelectedIndexChanged += (sender, e) => UpdateUI();
-
-            nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
-            nudQscale.ValueChanged += (sender, e) => UpdateUI();
 
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
             tbUserArgs.TextChanged += (sender, e) => UpdateUI();
@@ -96,29 +87,47 @@ namespace ScreenCaptureLib
 
             tbFFmpegPath.Text = Options.FFmpeg.CLIPath;
             tbFFmpegPath.TextChanged += (sender, e) => UpdateUI();
+
+            // x264
+            nudx264CRF.Value = Options.FFmpeg.x264CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
+            nudx264CRF.ValueChanged += (sender, e) => UpdateUI();
+
+            cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
+            cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
+            cbPreset.SelectedIndexChanged += (sender, e) => UpdateUI();
+
+            // VPx
+            nudVPxCRF.Value = Options.FFmpeg.VPxCRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
+            nudVPxCRF.ValueChanged += (sender, e) => UpdateUI();
+
+            // XviD
+            nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+            nudQscale.ValueChanged += (sender, e) => UpdateUI();
         }
 
-        public void SaveSettings()
+        public void SettingsSave()
         {
+            // General
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cbCodec.SelectedIndex;
             Options.FFmpeg.Extension = cbExtension.Text;
 
-            Options.FFmpeg.CRF = (int)nudCRF.Value;
+            Options.FFmpeg.UserArgs = tbUserArgs.Text;
+            Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
+
+            // x264
+            Options.FFmpeg.x264CRF = (int)nudx264CRF.Value;
             Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
 
+            // VPx
+            Options.FFmpeg.VPxCRF = (int)nudVPxCRF.Value;
+
+            // XviD
             Options.FFmpeg.qscale = (int)nudQscale.Value;
-
-            Options.FFmpeg.UserArgs = tbUserArgs.Text;
-
-            Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
         }
 
         public void UpdateUI()
         {
-            SaveSettings();
-
-            gbH263.Visible = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid;
-            gbH264.Visible = Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx;
+            SettingsSave();
 
             if ((Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid) && cbExtension.Text == "webm")
             {

@@ -31,17 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
-            this.lblCRF = new System.Windows.Forms.Label();
-            this.nudCRF = new System.Windows.Forms.NumericUpDown();
+            this.lblX264CRF = new System.Windows.Forms.Label();
+            this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
             this.tpFFmpeg = new System.Windows.Forms.ToolTip(this.components);
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
+            this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbExtension = new System.Windows.Forms.ComboBox();
             this.lblCodec = new System.Windows.Forms.Label();
             this.cbCodec = new System.Windows.Forms.ComboBox();
             this.cbPreset = new System.Windows.Forms.ComboBox();
             this.lblPreset = new System.Windows.Forms.Label();
-            this.gbH264 = new System.Windows.Forms.GroupBox();
-            this.gbH263 = new System.Windows.Forms.GroupBox();
             this.lblQscale = new System.Windows.Forms.Label();
             this.gbFFmpegExe = new System.Windows.Forms.GroupBox();
             this.btnDownload = new System.Windows.Forms.Button();
@@ -52,46 +51,56 @@
             this.gbCommandLineArgs = new System.Windows.Forms.GroupBox();
             this.btnFFmpegHelp = new System.Windows.Forms.Button();
             this.tbUserArgs = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).BeginInit();
+            this.tcFFmpeg = new System.Windows.Forms.TabControl();
+            this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.tpX264 = new System.Windows.Forms.TabPage();
+            this.tpVpx = new System.Windows.Forms.TabPage();
+            this.lblVpxCRF = new System.Windows.Forms.Label();
+            this.tpXvid = new System.Windows.Forms.TabPage();
+            ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
-            this.gbH264.SuspendLayout();
-            this.gbH263.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
             this.gbFFmpegExe.SuspendLayout();
             this.gbCommandLinePreview.SuspendLayout();
             this.gbCommandLineArgs.SuspendLayout();
+            this.tcFFmpeg.SuspendLayout();
+            this.tpGeneral.SuspendLayout();
+            this.tpX264.SuspendLayout();
+            this.tpVpx.SuspendLayout();
+            this.tpXvid.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblExt
             // 
             this.lblExt.AutoSize = true;
-            this.lblExt.Location = new System.Drawing.Point(240, 13);
+            this.lblExt.Location = new System.Drawing.Point(221, 12);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
             this.lblExt.TabIndex = 11;
             this.lblExt.Text = "Extension:";
             // 
-            // lblCRF
+            // lblX264CRF
             // 
-            this.lblCRF.AutoSize = true;
-            this.lblCRF.Location = new System.Drawing.Point(16, 24);
-            this.lblCRF.Name = "lblCRF";
-            this.lblCRF.Size = new System.Drawing.Size(31, 13);
-            this.lblCRF.TabIndex = 13;
-            this.lblCRF.Text = "CRF:";
+            this.lblX264CRF.AutoSize = true;
+            this.lblX264CRF.Location = new System.Drawing.Point(28, 12);
+            this.lblX264CRF.Name = "lblX264CRF";
+            this.lblX264CRF.Size = new System.Drawing.Size(31, 13);
+            this.lblX264CRF.TabIndex = 13;
+            this.lblX264CRF.Text = "CRF:";
             // 
-            // nudCRF
+            // nudx264CRF
             // 
-            this.nudCRF.Location = new System.Drawing.Point(72, 20);
-            this.nudCRF.Maximum = new decimal(new int[] {
+            this.nudx264CRF.Location = new System.Drawing.Point(72, 8);
+            this.nudx264CRF.Maximum = new decimal(new int[] {
             51,
             0,
             0,
             0});
-            this.nudCRF.Name = "nudCRF";
-            this.nudCRF.Size = new System.Drawing.Size(121, 20);
-            this.nudCRF.TabIndex = 14;
-            this.tpFFmpeg.SetToolTip(this.nudCRF, resources.GetString("nudCRF.ToolTip"));
-            this.nudCRF.Value = new decimal(new int[] {
+            this.nudx264CRF.Name = "nudx264CRF";
+            this.nudx264CRF.Size = new System.Drawing.Size(121, 20);
+            this.nudx264CRF.TabIndex = 14;
+            this.tpFFmpeg.SetToolTip(this.nudx264CRF, resources.GetString("nudx264CRF.ToolTip"));
+            this.nudx264CRF.Value = new decimal(new int[] {
             23,
             0,
             0,
@@ -99,7 +108,7 @@
             // 
             // nudQscale
             // 
-            this.nudQscale.Location = new System.Drawing.Point(72, 20);
+            this.nudQscale.Location = new System.Drawing.Point(72, 8);
             this.nudQscale.Maximum = new decimal(new int[] {
             31,
             0,
@@ -121,6 +130,29 @@
             0,
             0});
             // 
+            // nudVPxCRF
+            // 
+            this.nudVPxCRF.Location = new System.Drawing.Point(72, 8);
+            this.nudVPxCRF.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nudVPxCRF.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudVPxCRF.Name = "nudVPxCRF";
+            this.nudVPxCRF.Size = new System.Drawing.Size(121, 20);
+            this.nudVPxCRF.TabIndex = 16;
+            this.tpFFmpeg.SetToolTip(this.nudVPxCRF, resources.GetString("nudVPxCRF.ToolTip"));
+            this.nudVPxCRF.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
             // cbExtension
             // 
             this.cbExtension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -129,15 +161,15 @@
             "mp4",
             "webm",
             "avi"});
-            this.cbExtension.Location = new System.Drawing.Point(304, 9);
+            this.cbExtension.Location = new System.Drawing.Point(288, 8);
             this.cbExtension.Name = "cbExtension";
-            this.cbExtension.Size = new System.Drawing.Size(152, 21);
+            this.cbExtension.Size = new System.Drawing.Size(120, 21);
             this.cbExtension.TabIndex = 15;
             // 
             // lblCodec
             // 
             this.lblCodec.AutoSize = true;
-            this.lblCodec.Location = new System.Drawing.Point(16, 13);
+            this.lblCodec.Location = new System.Drawing.Point(28, 12);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(41, 13);
             this.lblCodec.TabIndex = 16;
@@ -147,16 +179,16 @@
             // 
             this.cbCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCodec.FormattingEnabled = true;
-            this.cbCodec.Location = new System.Drawing.Point(64, 9);
+            this.cbCodec.Location = new System.Drawing.Point(80, 8);
             this.cbCodec.Name = "cbCodec";
-            this.cbCodec.Size = new System.Drawing.Size(160, 21);
+            this.cbCodec.Size = new System.Drawing.Size(120, 21);
             this.cbCodec.TabIndex = 17;
             // 
             // cbPreset
             // 
             this.cbPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPreset.FormattingEnabled = true;
-            this.cbPreset.Location = new System.Drawing.Point(72, 52);
+            this.cbPreset.Location = new System.Drawing.Point(280, 8);
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
             this.cbPreset.TabIndex = 19;
@@ -164,40 +196,16 @@
             // lblPreset
             // 
             this.lblPreset.AutoSize = true;
-            this.lblPreset.Location = new System.Drawing.Point(16, 56);
+            this.lblPreset.Location = new System.Drawing.Point(227, 12);
             this.lblPreset.Name = "lblPreset";
             this.lblPreset.Size = new System.Drawing.Size(40, 13);
             this.lblPreset.TabIndex = 18;
             this.lblPreset.Text = "Preset:";
             // 
-            // gbH264
-            // 
-            this.gbH264.Controls.Add(this.nudCRF);
-            this.gbH264.Controls.Add(this.lblCRF);
-            this.gbH264.Controls.Add(this.lblPreset);
-            this.gbH264.Controls.Add(this.cbPreset);
-            this.gbH264.Location = new System.Drawing.Point(8, 40);
-            this.gbH264.Name = "gbH264";
-            this.gbH264.Size = new System.Drawing.Size(448, 88);
-            this.gbH264.TabIndex = 22;
-            this.gbH264.TabStop = false;
-            this.gbH264.Text = "H.264";
-            // 
-            // gbH263
-            // 
-            this.gbH263.Controls.Add(this.nudQscale);
-            this.gbH263.Controls.Add(this.lblQscale);
-            this.gbH263.Location = new System.Drawing.Point(8, 40);
-            this.gbH263.Name = "gbH263";
-            this.gbH263.Size = new System.Drawing.Size(448, 88);
-            this.gbH263.TabIndex = 23;
-            this.gbH263.TabStop = false;
-            this.gbH263.Text = "XviD";
-            // 
             // lblQscale
             // 
             this.lblQscale.AutoSize = true;
-            this.lblQscale.Location = new System.Drawing.Point(16, 24);
+            this.lblQscale.Location = new System.Drawing.Point(16, 12);
             this.lblQscale.Name = "lblQscale";
             this.lblQscale.Size = new System.Drawing.Size(41, 13);
             this.lblQscale.TabIndex = 15;
@@ -208,7 +216,7 @@
             this.gbFFmpegExe.Controls.Add(this.btnDownload);
             this.gbFFmpegExe.Controls.Add(this.btnFFmpegBrowse);
             this.gbFFmpegExe.Controls.Add(this.tbFFmpegPath);
-            this.gbFFmpegExe.Location = new System.Drawing.Point(8, 136);
+            this.gbFFmpegExe.Location = new System.Drawing.Point(8, 88);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(448, 56);
             this.gbFFmpegExe.TabIndex = 24;
@@ -245,9 +253,9 @@
             // gbCommandLinePreview
             // 
             this.gbCommandLinePreview.Controls.Add(this.tbCommandLinePreview);
-            this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 264);
+            this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 216);
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
-            this.gbCommandLinePreview.Size = new System.Drawing.Size(448, 104);
+            this.gbCommandLinePreview.Size = new System.Drawing.Size(448, 152);
             this.gbCommandLinePreview.TabIndex = 25;
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
@@ -258,14 +266,14 @@
             this.tbCommandLinePreview.Multiline = true;
             this.tbCommandLinePreview.Name = "tbCommandLinePreview";
             this.tbCommandLinePreview.ReadOnly = true;
-            this.tbCommandLinePreview.Size = new System.Drawing.Size(432, 72);
+            this.tbCommandLinePreview.Size = new System.Drawing.Size(432, 120);
             this.tbCommandLinePreview.TabIndex = 0;
             // 
             // gbCommandLineArgs
             // 
             this.gbCommandLineArgs.Controls.Add(this.btnFFmpegHelp);
             this.gbCommandLineArgs.Controls.Add(this.tbUserArgs);
-            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 200);
+            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 152);
             this.gbCommandLineArgs.Name = "gbCommandLineArgs";
             this.gbCommandLineArgs.Size = new System.Drawing.Size(448, 56);
             this.gbCommandLineArgs.TabIndex = 25;
@@ -291,19 +299,85 @@
             this.tbUserArgs.Size = new System.Drawing.Size(384, 20);
             this.tbUserArgs.TabIndex = 0;
             // 
+            // tcFFmpeg
+            // 
+            this.tcFFmpeg.Controls.Add(this.tpGeneral);
+            this.tcFFmpeg.Controls.Add(this.tpX264);
+            this.tcFFmpeg.Controls.Add(this.tpVpx);
+            this.tcFFmpeg.Controls.Add(this.tpXvid);
+            this.tcFFmpeg.Location = new System.Drawing.Point(8, 8);
+            this.tcFFmpeg.Name = "tcFFmpeg";
+            this.tcFFmpeg.SelectedIndex = 0;
+            this.tcFFmpeg.Size = new System.Drawing.Size(448, 72);
+            this.tcFFmpeg.TabIndex = 26;
+            // 
+            // tpGeneral
+            // 
+            this.tpGeneral.Controls.Add(this.cbCodec);
+            this.tpGeneral.Controls.Add(this.lblCodec);
+            this.tpGeneral.Controls.Add(this.cbExtension);
+            this.tpGeneral.Controls.Add(this.lblExt);
+            this.tpGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tpGeneral.Name = "tpGeneral";
+            this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
+            this.tpGeneral.Size = new System.Drawing.Size(440, 46);
+            this.tpGeneral.TabIndex = 0;
+            this.tpGeneral.Text = "General";
+            this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // tpX264
+            // 
+            this.tpX264.Controls.Add(this.nudx264CRF);
+            this.tpX264.Controls.Add(this.lblX264CRF);
+            this.tpX264.Controls.Add(this.cbPreset);
+            this.tpX264.Controls.Add(this.lblPreset);
+            this.tpX264.Location = new System.Drawing.Point(4, 22);
+            this.tpX264.Name = "tpX264";
+            this.tpX264.Padding = new System.Windows.Forms.Padding(3);
+            this.tpX264.Size = new System.Drawing.Size(440, 46);
+            this.tpX264.TabIndex = 1;
+            this.tpX264.Text = "x264";
+            this.tpX264.UseVisualStyleBackColor = true;
+            // 
+            // tpVpx
+            // 
+            this.tpVpx.Controls.Add(this.nudVPxCRF);
+            this.tpVpx.Controls.Add(this.lblVpxCRF);
+            this.tpVpx.Location = new System.Drawing.Point(4, 22);
+            this.tpVpx.Name = "tpVpx";
+            this.tpVpx.Size = new System.Drawing.Size(440, 46);
+            this.tpVpx.TabIndex = 2;
+            this.tpVpx.Text = "VP8";
+            this.tpVpx.UseVisualStyleBackColor = true;
+            // 
+            // lblVpxCRF
+            // 
+            this.lblVpxCRF.AutoSize = true;
+            this.lblVpxCRF.Location = new System.Drawing.Point(28, 12);
+            this.lblVpxCRF.Name = "lblVpxCRF";
+            this.lblVpxCRF.Size = new System.Drawing.Size(31, 13);
+            this.lblVpxCRF.TabIndex = 15;
+            this.lblVpxCRF.Text = "CRF:";
+            // 
+            // tpXvid
+            // 
+            this.tpXvid.Controls.Add(this.nudQscale);
+            this.tpXvid.Controls.Add(this.lblQscale);
+            this.tpXvid.Location = new System.Drawing.Point(4, 22);
+            this.tpXvid.Name = "tpXvid";
+            this.tpXvid.Size = new System.Drawing.Size(440, 46);
+            this.tpXvid.TabIndex = 3;
+            this.tpXvid.Text = "XviD";
+            this.tpXvid.UseVisualStyleBackColor = true;
+            // 
             // FFmpegOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 378);
-            this.Controls.Add(this.gbH263);
+            this.Controls.Add(this.tcFFmpeg);
             this.Controls.Add(this.gbCommandLineArgs);
             this.Controls.Add(this.gbCommandLinePreview);
-            this.Controls.Add(this.gbH264);
-            this.Controls.Add(this.cbCodec);
-            this.Controls.Add(this.lblCodec);
-            this.Controls.Add(this.cbExtension);
-            this.Controls.Add(this.lblExt);
             this.Controls.Add(this.gbFFmpegExe);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -312,36 +386,39 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpegGUI";
-            ((System.ComponentModel.ISupportInitialize)(this.nudCRF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
-            this.gbH264.ResumeLayout(false);
-            this.gbH264.PerformLayout();
-            this.gbH263.ResumeLayout(false);
-            this.gbH263.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).EndInit();
             this.gbFFmpegExe.ResumeLayout(false);
             this.gbFFmpegExe.PerformLayout();
             this.gbCommandLinePreview.ResumeLayout(false);
             this.gbCommandLinePreview.PerformLayout();
             this.gbCommandLineArgs.ResumeLayout(false);
             this.gbCommandLineArgs.PerformLayout();
+            this.tcFFmpeg.ResumeLayout(false);
+            this.tpGeneral.ResumeLayout(false);
+            this.tpGeneral.PerformLayout();
+            this.tpX264.ResumeLayout(false);
+            this.tpX264.PerformLayout();
+            this.tpVpx.ResumeLayout(false);
+            this.tpVpx.PerformLayout();
+            this.tpXvid.ResumeLayout(false);
+            this.tpXvid.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblExt;
-        private System.Windows.Forms.Label lblCRF;
-        private System.Windows.Forms.NumericUpDown nudCRF;
+        private System.Windows.Forms.Label lblX264CRF;
+        private System.Windows.Forms.NumericUpDown nudx264CRF;
         private System.Windows.Forms.ToolTip tpFFmpeg;
         private System.Windows.Forms.ComboBox cbExtension;
         private System.Windows.Forms.Label lblCodec;
         private System.Windows.Forms.ComboBox cbCodec;
         private System.Windows.Forms.ComboBox cbPreset;
         private System.Windows.Forms.Label lblPreset;
-        private System.Windows.Forms.GroupBox gbH264;
-        private System.Windows.Forms.GroupBox gbH263;
         private System.Windows.Forms.NumericUpDown nudQscale;
         private System.Windows.Forms.Label lblQscale;
         private System.Windows.Forms.GroupBox gbFFmpegExe;
@@ -353,5 +430,12 @@
         private System.Windows.Forms.Button btnFFmpegHelp;
         private System.Windows.Forms.TextBox tbUserArgs;
         private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.TabControl tcFFmpeg;
+        private System.Windows.Forms.TabPage tpGeneral;
+        private System.Windows.Forms.TabPage tpX264;
+        private System.Windows.Forms.TabPage tpVpx;
+        private System.Windows.Forms.TabPage tpXvid;
+        private System.Windows.Forms.NumericUpDown nudVPxCRF;
+        private System.Windows.Forms.Label lblVpxCRF;
     }
 }

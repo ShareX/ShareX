@@ -32,26 +32,39 @@ namespace ScreenCaptureLib
 {
     public class FFmpegOptions
     {
-        public string CLIPath { get; set; }
+        // General
         public FFmpegVideoCodec VideoCodec { get; set; }
         public string Extension { get; set; }
+        public int FPS { get; set; }
         public string UserArgs { get; set; }
+        public string CLIPath { get; set; }
 
-        // H264
+        // H.264 - x264
         public FFmpegPreset Preset { get; set; }
-        public int CRF { get; set; }
+        public int x264CRF { get; set; }
 
-        // H263
+        // H.264 - VPx
+        public int VPxCRF { get; set; }
+
+        // H.263
         public int qscale { get; set; }
 
         public FFmpegOptions()
         {
-            CLIPath = "ffmpeg.exe";
+            // General
             VideoCodec = FFmpegVideoCodec.libx264;
-            Preset = FFmpegPreset.medium;
-            CRF = 23;
-            qscale = 3;
             Extension = "mp4";
+            CLIPath = "ffmpeg.exe";
+
+            // x264
+            x264CRF = 23;
+            Preset = FFmpegPreset.medium;
+
+            // VPx
+            VPxCRF = 12;
+
+            // XviD
+            qscale = 3;
         }
     }
 }

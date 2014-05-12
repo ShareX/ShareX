@@ -164,7 +164,8 @@ namespace ShareX
             chkRunScreencastCLI.Checked = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
 
-            nudScreenRecorderFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS;
+            nudGIFFPS.Value = TaskSettings.CaptureSettings.GIFFPS;
+            nudScreenRecordFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS;
             cbScreenRecorderFixedDuration.Checked = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
@@ -647,9 +648,10 @@ namespace ShareX
         private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
+            nudScreenRecordFPS.Enabled = btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
                 TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg;
             btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
+            nudGIFFPS.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.GIF;
         }
 
         private void btnScreenRecorderOptions_Click(object sender, EventArgs e)
@@ -659,7 +661,7 @@ namespace ShareX
                 AVI = TaskSettings.CaptureSettings.AVIOptions,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
                 ShowAVIOptionsDialog = true,
-                FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
+                GIFFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 OutputPath = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi")),
                 ParentWindow = this.Handle,
                 CaptureArea = new Rectangle(0, 0, 100, 100)
@@ -708,9 +710,14 @@ namespace ShareX
             }
         }
 
-        private void nudScreenRecorderFPS_ValueChanged(object sender, EventArgs e)
+        private void nudGIFFPS_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.ScreenRecordFPS = (int)nudScreenRecorderFPS.Value;
+            TaskSettings.CaptureSettings.GIFFPS = (int)nudGIFFPS.Value;
+        }
+
+        private void nudScreenRecordFPS_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordFPS = (int)nudScreenRecordFPS.Value;
         }
 
         private void cbScreenRecorderFixedDuration_CheckedChanged(object sender, EventArgs e)

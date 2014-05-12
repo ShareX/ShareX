@@ -284,7 +284,8 @@ namespace ShareX
         public AVIOptions AVIOptions = new AVIOptions();
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
 
-        public int ScreenRecordFPS = 5;
+        public int GIFFPS = 5;
+        public int ScreenRecordFPS = 20;
         public bool ScreenRecordFixedDuration = true;
         public float ScreenRecordDuration = 3f;
         public float ScreenRecordStartDelay = 0.1f;

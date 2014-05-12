@@ -184,7 +184,7 @@ namespace ScreenCaptureLib
                     if (NativeMethods.AVIFileOpen(out file, Options.OutputPath, OpenFileMode.Create | OpenFileMode.Write, IntPtr.Zero) != 0)
                         throw new IOException("Failed opening the specified file.");
 
-                    this.rate = Options.FPS;
+                    this.rate = Options.ScreenRecordFPS;
 
                     // describe new stream
                     AVISTREAMINFO info = new AVISTREAMINFO();

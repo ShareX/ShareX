@@ -36,7 +36,8 @@ namespace ScreenCaptureLib
     public class ScreencastOptions
     {
         public string OutputPath;
-        public int FPS;
+        public int GIFFPS;
+        public int ScreenRecordFPS;
         public Rectangle CaptureArea;
         public float Duration;
         public bool DrawCursor;
@@ -53,21 +54,21 @@ namespace ScreenCaptureLib
 
             // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
             args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
-                FPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
+                ScreenRecordFPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
 
             args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
 
             // output FPS
-            args.AppendFormat("-r {0} ", FPS);
+            args.AppendFormat("-r {0} ", ScreenRecordFPS);
 
             switch (FFmpeg.VideoCodec)
             {
                 case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
-                    args.AppendFormat("-crf {0} ", FFmpeg.CRF);
+                    args.AppendFormat("-crf {0} ", FFmpeg.x264CRF);
                     args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
                     break;
                 case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
-                    args.AppendFormat("-crf {0} ", FFmpeg.CRF);
+                    args.AppendFormat("-crf {0} ", FFmpeg.x264CRF);
                     break;
                 case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
                     args.AppendFormat("-qscale:v {0} ", FFmpeg.qscale);

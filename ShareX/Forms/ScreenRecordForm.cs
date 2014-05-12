@@ -157,7 +157,8 @@ namespace ShareX
                         ScreencastOptions options = new ScreencastOptions()
                         {
                             CaptureArea = CaptureRectangle,
-                            FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
+                            GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
+                            ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                             OutputPath = path,
                             Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                             AVI = TaskSettings.CaptureSettings.AVIOptions,
