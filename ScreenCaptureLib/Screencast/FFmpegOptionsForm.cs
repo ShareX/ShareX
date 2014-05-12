@@ -50,8 +50,8 @@ namespace ScreenCaptureLib
 
             InitializeComponent();
 
-            this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
             this.Icon = ShareXResources.Icon;
+            this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
         }
 
         public FFmpegOptionsForm(ScreencastOptions options)
@@ -63,6 +63,7 @@ namespace ScreenCaptureLib
             {
                 SettingsLoad();
                 UpdateUI();
+                UpdateExtensions();
             }
         }
 
@@ -71,7 +72,7 @@ namespace ScreenCaptureLib
             // General
             cbCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cbCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-            cbCodec.SelectedIndexChanged += (sender, e) => UpdateUI();
+            cbCodec.SelectedIndexChanged += (sender, e) => { UpdateUI(); UpdateExtensions(); };
 
             cbExtension.Text = Options.FFmpeg.Extension;
             cbExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
@@ -128,19 +129,26 @@ namespace ScreenCaptureLib
         public void UpdateUI()
         {
             SettingsSave();
+            tbCommandLinePreview.Text = Options.GetFFmpegArgs();
+        }
 
-            if ((Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid) && cbExtension.Text == "webm")
+        public void UpdateExtensions()
+        {
+            cbExtension.Items.Clear();
+
+            if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid)
             {
-                cbExtension.Text = "mp4";
+                cbExtension.Items.Add("mp4");
             }
-            else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx && cbExtension.Text != "webm")
+            else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx)
             {
-                cbExtension.Text = "webm";
+                cbExtension.Items.Add("webm");
             }
+
+            cbExtension.Items.Add("avi");
+            cbExtension.SelectedIndex = 0;
 
             tcFFmpeg.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-
-            tbCommandLinePreview.Text = Options.GetFFmpegArgs();
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)

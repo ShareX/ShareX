@@ -71,7 +71,7 @@
             // lblExt
             // 
             this.lblExt.AutoSize = true;
-            this.lblExt.Location = new System.Drawing.Point(226, 16);
+            this.lblExt.Location = new System.Drawing.Point(192, 16);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
             this.lblExt.TabIndex = 11;
@@ -80,7 +80,7 @@
             // lblX264CRF
             // 
             this.lblX264CRF.AutoSize = true;
-            this.lblX264CRF.Location = new System.Drawing.Point(28, 12);
+            this.lblX264CRF.Location = new System.Drawing.Point(16, 16);
             this.lblX264CRF.Name = "lblX264CRF";
             this.lblX264CRF.Size = new System.Drawing.Size(31, 13);
             this.lblX264CRF.TabIndex = 13;
@@ -88,15 +88,16 @@
             // 
             // nudx264CRF
             // 
-            this.nudx264CRF.Location = new System.Drawing.Point(72, 8);
+            this.nudx264CRF.Location = new System.Drawing.Point(56, 12);
             this.nudx264CRF.Maximum = new decimal(new int[] {
             51,
             0,
             0,
             0});
             this.nudx264CRF.Name = "nudx264CRF";
-            this.nudx264CRF.Size = new System.Drawing.Size(121, 20);
+            this.nudx264CRF.Size = new System.Drawing.Size(48, 20);
             this.nudx264CRF.TabIndex = 14;
+            this.nudx264CRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tpFFmpeg.SetToolTip(this.nudx264CRF, resources.GetString("nudx264CRF.ToolTip"));
             this.nudx264CRF.Value = new decimal(new int[] {
             23,
@@ -106,7 +107,7 @@
             // 
             // nudQscale
             // 
-            this.nudQscale.Location = new System.Drawing.Point(72, 8);
+            this.nudQscale.Location = new System.Drawing.Point(104, 12);
             this.nudQscale.Maximum = new decimal(new int[] {
             31,
             0,
@@ -118,8 +119,9 @@
             0,
             0});
             this.nudQscale.Name = "nudQscale";
-            this.nudQscale.Size = new System.Drawing.Size(121, 20);
+            this.nudQscale.Size = new System.Drawing.Size(48, 20);
             this.nudQscale.TabIndex = 16;
+            this.nudQscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tpFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
         " filesize.");
             this.nudQscale.Value = new decimal(new int[] {
@@ -130,7 +132,7 @@
             // 
             // nudVPxCRF
             // 
-            this.nudVPxCRF.Location = new System.Drawing.Point(72, 8);
+            this.nudVPxCRF.Location = new System.Drawing.Point(56, 12);
             this.nudVPxCRF.Maximum = new decimal(new int[] {
             15,
             0,
@@ -142,8 +144,9 @@
             0,
             0});
             this.nudVPxCRF.Name = "nudVPxCRF";
-            this.nudVPxCRF.Size = new System.Drawing.Size(121, 20);
+            this.nudVPxCRF.Size = new System.Drawing.Size(48, 20);
             this.nudVPxCRF.TabIndex = 16;
+            this.nudVPxCRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tpFFmpeg.SetToolTip(this.nudVPxCRF, resources.GetString("nudVPxCRF.ToolTip"));
             this.nudVPxCRF.Value = new decimal(new int[] {
             12,
@@ -155,11 +158,7 @@
             // 
             this.cbExtension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExtension.FormattingEnabled = true;
-            this.cbExtension.Items.AddRange(new object[] {
-            "mp4",
-            "webm",
-            "avi"});
-            this.cbExtension.Location = new System.Drawing.Point(293, 12);
+            this.cbExtension.Location = new System.Drawing.Point(256, 12);
             this.cbExtension.Name = "cbExtension";
             this.cbExtension.Size = new System.Drawing.Size(120, 21);
             this.cbExtension.TabIndex = 15;
@@ -167,7 +166,7 @@
             // lblCodec
             // 
             this.lblCodec.AutoSize = true;
-            this.lblCodec.Location = new System.Drawing.Point(33, 16);
+            this.lblCodec.Location = new System.Drawing.Point(8, 16);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(41, 13);
             this.lblCodec.TabIndex = 16;
@@ -177,7 +176,7 @@
             // 
             this.cbCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCodec.FormattingEnabled = true;
-            this.cbCodec.Location = new System.Drawing.Point(85, 12);
+            this.cbCodec.Location = new System.Drawing.Point(56, 12);
             this.cbCodec.Name = "cbCodec";
             this.cbCodec.Size = new System.Drawing.Size(120, 21);
             this.cbCodec.TabIndex = 17;
@@ -186,7 +185,7 @@
             // 
             this.cbPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPreset.FormattingEnabled = true;
-            this.cbPreset.Location = new System.Drawing.Point(280, 8);
+            this.cbPreset.Location = new System.Drawing.Point(168, 12);
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
             this.cbPreset.TabIndex = 19;
@@ -194,7 +193,7 @@
             // lblPreset
             // 
             this.lblPreset.AutoSize = true;
-            this.lblPreset.Location = new System.Drawing.Point(227, 12);
+            this.lblPreset.Location = new System.Drawing.Point(120, 16);
             this.lblPreset.Name = "lblPreset";
             this.lblPreset.Size = new System.Drawing.Size(40, 13);
             this.lblPreset.TabIndex = 18;
@@ -203,18 +202,18 @@
             // lblQscale
             // 
             this.lblQscale.AutoSize = true;
-            this.lblQscale.Location = new System.Drawing.Point(16, 12);
+            this.lblQscale.Location = new System.Drawing.Point(16, 16);
             this.lblQscale.Name = "lblQscale";
-            this.lblQscale.Size = new System.Drawing.Size(41, 13);
+            this.lblQscale.Size = new System.Drawing.Size(83, 13);
             this.lblQscale.TabIndex = 15;
-            this.lblQscale.Text = "qscale:";
+            this.lblQscale.Text = "Variable bit rate:";
             // 
             // gbFFmpegExe
             // 
             this.gbFFmpegExe.Controls.Add(this.btnDownload);
             this.gbFFmpegExe.Controls.Add(this.btnFFmpegBrowse);
             this.gbFFmpegExe.Controls.Add(this.tbFFmpegPath);
-            this.gbFFmpegExe.Location = new System.Drawing.Point(8, 128);
+            this.gbFFmpegExe.Location = new System.Drawing.Point(8, 120);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(448, 56);
             this.gbFFmpegExe.TabIndex = 24;
@@ -254,29 +253,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbCommandLinePreview.Controls.Add(this.tbCommandLinePreview);
-            this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 256);
+            this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 248);
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.Padding = new System.Windows.Forms.Padding(8);
-            this.gbCommandLinePreview.Size = new System.Drawing.Size(448, 112);
+            this.gbCommandLinePreview.Size = new System.Drawing.Size(448, 104);
             this.gbCommandLinePreview.TabIndex = 25;
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
             // 
             // tbCommandLinePreview
             // 
+            this.tbCommandLinePreview.BackColor = System.Drawing.Color.White;
             this.tbCommandLinePreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbCommandLinePreview.Location = new System.Drawing.Point(8, 21);
             this.tbCommandLinePreview.Multiline = true;
             this.tbCommandLinePreview.Name = "tbCommandLinePreview";
             this.tbCommandLinePreview.ReadOnly = true;
-            this.tbCommandLinePreview.Size = new System.Drawing.Size(432, 83);
+            this.tbCommandLinePreview.Size = new System.Drawing.Size(432, 75);
             this.tbCommandLinePreview.TabIndex = 0;
             // 
             // gbCommandLineArgs
             // 
             this.gbCommandLineArgs.Controls.Add(this.btnFFmpegHelp);
             this.gbCommandLineArgs.Controls.Add(this.tbUserArgs);
-            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 192);
+            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 184);
             this.gbCommandLineArgs.Name = "gbCommandLineArgs";
             this.gbCommandLineArgs.Size = new System.Drawing.Size(448, 56);
             this.gbCommandLineArgs.TabIndex = 25;
@@ -307,7 +307,7 @@
             this.tcFFmpeg.Controls.Add(this.tpX264);
             this.tcFFmpeg.Controls.Add(this.tpVpx);
             this.tcFFmpeg.Controls.Add(this.tpXvid);
-            this.tcFFmpeg.Location = new System.Drawing.Point(8, 48);
+            this.tcFFmpeg.Location = new System.Drawing.Point(8, 40);
             this.tcFFmpeg.Name = "tcFFmpeg";
             this.tcFFmpeg.SelectedIndex = 0;
             this.tcFFmpeg.Size = new System.Drawing.Size(448, 72);
@@ -341,7 +341,7 @@
             // lblVpxCRF
             // 
             this.lblVpxCRF.AutoSize = true;
-            this.lblVpxCRF.Location = new System.Drawing.Point(28, 12);
+            this.lblVpxCRF.Location = new System.Drawing.Point(16, 16);
             this.lblVpxCRF.Name = "lblVpxCRF";
             this.lblVpxCRF.Size = new System.Drawing.Size(31, 13);
             this.lblVpxCRF.TabIndex = 15;
@@ -362,7 +362,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 378);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(464, 360);
             this.Controls.Add(this.cbCodec);
             this.Controls.Add(this.tcFFmpeg);
             this.Controls.Add(this.lblCodec);
@@ -373,7 +374,6 @@
             this.Controls.Add(this.gbFFmpegExe);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(480, 416);
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
