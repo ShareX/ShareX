@@ -56,7 +56,7 @@ namespace ShareX
         {
             flpHotkeys.Controls.Clear();
 
-            foreach (HotkeySettings hotkeySetting in manager.Hotkeys)
+            foreach (HotkeySettings hotkeySetting in HotkeyManager.Hotkeys)
             {
                 AddHotkeySelectionControl(hotkeySetting);
             }
@@ -138,7 +138,7 @@ namespace ShareX
         {
             HotkeySettings hotkeySetting = new HotkeySettings();
             hotkeySetting.TaskSettings = TaskSettings.GetDefaultTaskSettings();
-            manager.Hotkeys.Add(hotkeySetting);
+            HotkeyManager.Hotkeys.Add(hotkeySetting);
             HotkeySelectionControl control = AddHotkeySelectionControl(hotkeySetting);
             control.Selected = true;
             Selected = control;
@@ -174,7 +174,7 @@ namespace ShareX
                 hotkeySetting.TaskSettings = Selected.Setting.TaskSettings.Copy();
                 hotkeySetting.TaskSettings.WatchFolderEnabled = false;
                 hotkeySetting.TaskSettings.WatchFolderList = new List<WatchFolderSettings>();
-                manager.Hotkeys.Add(hotkeySetting);
+                HotkeyManager.Hotkeys.Add(hotkeySetting);
                 HotkeySelectionControl control = AddHotkeySelectionControl(hotkeySetting);
                 control.Selected = true;
                 Selected = control;
