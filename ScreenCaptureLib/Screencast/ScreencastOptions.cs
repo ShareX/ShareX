@@ -56,6 +56,11 @@ namespace ScreenCaptureLib
             args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
                 ScreenRecordFPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
 
+            if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
+            {
+                args.Append(FFmpeg.UserArgs + " ");
+            }
+
             args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
 
             // output FPS
@@ -84,11 +89,6 @@ namespace ScreenCaptureLib
             if (Duration > 0)
             {
                 args.AppendFormat("-t {0} ", Duration);
-            }
-
-            if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
-            {
-                args.Append(FFmpeg.UserArgs + " ");
             }
 
             // -y for overwrite file
