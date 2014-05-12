@@ -56,6 +56,8 @@
             this.tpVpx = new System.Windows.Forms.TabPage();
             this.lblVpxCRF = new System.Windows.Forms.Label();
             this.tpXvid = new System.Windows.Forms.TabPage();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.btnCopyPreview = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -358,20 +360,42 @@
             this.tpXvid.Text = "XviD";
             this.tpXvid.UseVisualStyleBackColor = true;
             // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(136, 243);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(88, 23);
+            this.btnTest.TabIndex = 1;
+            this.btnTest.Text = "Test with CMD";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // btnCopyPreview
+            // 
+            this.btnCopyPreview.Location = new System.Drawing.Point(227, 243);
+            this.btnCopyPreview.Name = "btnCopyPreview";
+            this.btnCopyPreview.Size = new System.Drawing.Size(56, 23);
+            this.btnCopyPreview.TabIndex = 1;
+            this.btnCopyPreview.Text = "Copy";
+            this.btnCopyPreview.UseVisualStyleBackColor = true;
+            this.btnCopyPreview.Click += new System.EventHandler(this.btnCopyPreview_Click);
+            // 
             // FFmpegOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(464, 360);
+            this.Controls.Add(this.btnCopyPreview);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.cbCodec);
             this.Controls.Add(this.tcFFmpeg);
             this.Controls.Add(this.lblCodec);
-            this.Controls.Add(this.gbCommandLineArgs);
             this.Controls.Add(this.cbExtension);
             this.Controls.Add(this.gbCommandLinePreview);
             this.Controls.Add(this.lblExt);
             this.Controls.Add(this.gbFFmpegExe);
+            this.Controls.Add(this.gbCommandLineArgs);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FFmpegOptionsForm";
@@ -427,5 +451,7 @@
         private System.Windows.Forms.TabPage tpXvid;
         private System.Windows.Forms.NumericUpDown nudVPxCRF;
         private System.Windows.Forms.Label lblVpxCRF;
+        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnCopyPreview;
     }
 }

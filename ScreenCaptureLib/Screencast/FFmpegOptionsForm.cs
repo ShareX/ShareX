@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -129,7 +130,7 @@ namespace ScreenCaptureLib
         public void UpdateUI()
         {
             SettingsSave();
-            tbCommandLinePreview.Text = Options.GetFFmpegArgs(true);
+            tbCommandLinePreview.Text = Options.GetFFmpegArgs();
         }
 
         public void UpdateExtensions()
@@ -181,6 +182,34 @@ namespace ScreenCaptureLib
             {
                 MessageBox.Show("Download of FFmpeg failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(Options.FFmpeg.CLIPath))
+            {
+                try
+                {
+                    using (Process process = new Process())
+                    {
+                        ProcessStartInfo psi = new ProcessStartInfo(Options.FFmpeg.CLIPath);
+                        psi.Arguments = Options.GetFFmpegArgs();
+                        psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.CLIPath);
+
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+                }
+            }
+        }
+
+        private void btnCopyPreview_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText("ffmpeg " + Options.GetFFmpegArgs());
         }
     }
 }

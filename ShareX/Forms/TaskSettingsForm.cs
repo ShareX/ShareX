@@ -663,9 +663,9 @@ namespace ShareX
                 ShowAVIOptionsDialog = true,
                 GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
                 ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
-                OutputPath = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi")),
+                OutputPath = "output.mp4",
                 ParentWindow = this.Handle,
-                CaptureArea = new Rectangle(0, 0, 100, 100)
+                CaptureArea = Screen.PrimaryScreen.Bounds
             };
 
             switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
@@ -674,6 +674,8 @@ namespace ShareX
 
                     try
                     {
+                        options.OutputPath = Program.ScreenRecorderCacheFilePath;
+
                         // Ugly workaround for show AVI compression dialog
                         using (AVICache aviCache = new AVICache(options))
                         {
