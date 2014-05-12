@@ -162,7 +162,7 @@
             this.cbExtension.FormattingEnabled = true;
             this.cbExtension.Location = new System.Drawing.Point(256, 12);
             this.cbExtension.Name = "cbExtension";
-            this.cbExtension.Size = new System.Drawing.Size(120, 21);
+            this.cbExtension.Size = new System.Drawing.Size(72, 21);
             this.cbExtension.TabIndex = 15;
             // 
             // lblCodec
@@ -374,7 +374,7 @@
             // 
             this.btnCopyPreview.Location = new System.Drawing.Point(227, 243);
             this.btnCopyPreview.Name = "btnCopyPreview";
-            this.btnCopyPreview.Size = new System.Drawing.Size(56, 23);
+            this.btnCopyPreview.Size = new System.Drawing.Size(53, 23);
             this.btnCopyPreview.TabIndex = 1;
             this.btnCopyPreview.Text = "Copy";
             this.btnCopyPreview.UseVisualStyleBackColor = true;

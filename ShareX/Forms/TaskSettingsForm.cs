@@ -665,7 +665,8 @@ namespace ShareX
                 ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 OutputPath = "output.mp4",
                 ParentWindow = this.Handle,
-                CaptureArea = Screen.PrimaryScreen.Bounds
+                CaptureArea = Screen.PrimaryScreen.Bounds,
+                DrawCursor = true
             };
 
             switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
