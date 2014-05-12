@@ -36,7 +36,7 @@ namespace ShareX
         public AfterCaptureTasks AfterCaptureTasks { get; private set; }
         public AfterCaptureFormResult Result { get; private set; }
 
-        public AfterCaptureForm(Image img, AfterCaptureTasks afterCaptureTasks)
+        public AfterCaptureForm(Image img, TaskSettings taskSettings)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -46,7 +46,9 @@ namespace ShareX
             imageList.Images.Add(Resources.checkbox_check);
             lvAfterCaptureTasks.SmallImageList = imageList;
 
-            AfterCaptureTasks = afterCaptureTasks;
+            ucBeforeUpload.InitCapture(taskSettings);
+
+            AfterCaptureTasks = taskSettings.AfterCaptureJob;
             AddAfterCaptureItems(AfterCaptureTasks);
             pbImage.LoadImage(img);
         }

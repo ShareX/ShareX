@@ -250,7 +250,7 @@ namespace ShareX
 
                 if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
                 {
-                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings.AfterCaptureJob))
+                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings))
                     {
                         afterCaptureForm.ShowDialog();
 
