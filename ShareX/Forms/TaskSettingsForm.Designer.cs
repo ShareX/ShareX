@@ -45,11 +45,6 @@
             this.btnAfterUpload = new HelpersLib.MenuButton();
             this.btnDestinations = new HelpersLib.MenuButton();
             this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSocialServices = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTask = new HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
@@ -165,6 +160,12 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSocialServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.chkShowBeforeUploadForm = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -375,41 +376,6 @@
             this.cmsDestinations.Name = "cmsDestinations";
             this.cmsDestinations.Size = new System.Drawing.Size(213, 114);
             // 
-            // tsmiImageUploaders
-            // 
-            this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
-            this.tsmiImageUploaders.Name = "tsmiImageUploaders";
-            this.tsmiImageUploaders.Size = new System.Drawing.Size(212, 22);
-            this.tsmiImageUploaders.Text = "Image uploaders";
-            // 
-            // tsmiTextUploaders
-            // 
-            this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
-            this.tsmiTextUploaders.Name = "tsmiTextUploaders";
-            this.tsmiTextUploaders.Size = new System.Drawing.Size(212, 22);
-            this.tsmiTextUploaders.Text = "Text uploaders";
-            // 
-            // tsmiFileUploaders
-            // 
-            this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
-            this.tsmiFileUploaders.Name = "tsmiFileUploaders";
-            this.tsmiFileUploaders.Size = new System.Drawing.Size(212, 22);
-            this.tsmiFileUploaders.Text = "File uploaders";
-            // 
-            // tsmiURLShorteners
-            // 
-            this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
-            this.tsmiURLShorteners.Name = "tsmiURLShorteners";
-            this.tsmiURLShorteners.Size = new System.Drawing.Size(212, 22);
-            this.tsmiURLShorteners.Text = "URL shorteners";
-            // 
-            // tsmiSocialServices
-            // 
-            this.tsmiSocialServices.Image = global::ShareX.Properties.Resources.globe_share;
-            this.tsmiSocialServices.Name = "tsmiSocialServices";
-            this.tsmiSocialServices.Size = new System.Drawing.Size(212, 22);
-            this.tsmiSocialServices.Text = "Social networking services";
-            // 
             // btnTask
             // 
             this.btnTask.Location = new System.Drawing.Point(6, 37);
@@ -437,6 +403,7 @@
             // panelGeneral
             // 
             this.panelGeneral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGeneral.Controls.Add(this.chkShowBeforeUploadForm);
             this.panelGeneral.Controls.Add(this.lblAfterTaskNotification);
             this.panelGeneral.Controls.Add(this.cboPopUpNotification);
             this.panelGeneral.Controls.Add(this.chkShowAfterUploadForm);
@@ -453,7 +420,7 @@
             // lblAfterTaskNotification
             // 
             this.lblAfterTaskNotification.AutoSize = true;
-            this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 84);
+            this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 160);
             this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
             this.lblAfterTaskNotification.Size = new System.Drawing.Size(117, 13);
             this.lblAfterTaskNotification.TabIndex = 3;
@@ -463,7 +430,7 @@
             // 
             this.cboPopUpNotification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPopUpNotification.FormattingEnabled = true;
-            this.cboPopUpNotification.Location = new System.Drawing.Point(128, 80);
+            this.cboPopUpNotification.Location = new System.Drawing.Point(128, 156);
             this.cboPopUpNotification.Name = "cboPopUpNotification";
             this.cboPopUpNotification.Size = new System.Drawing.Size(224, 21);
             this.cboPopUpNotification.TabIndex = 4;
@@ -472,7 +439,7 @@
             // chkShowAfterUploadForm
             // 
             this.chkShowAfterUploadForm.AutoSize = true;
-            this.chkShowAfterUploadForm.Location = new System.Drawing.Point(8, 112);
+            this.chkShowAfterUploadForm.Location = new System.Drawing.Point(8, 83);
             this.chkShowAfterUploadForm.Name = "chkShowAfterUploadForm";
             this.chkShowAfterUploadForm.Size = new System.Drawing.Size(271, 17);
             this.chkShowAfterUploadForm.TabIndex = 5;
@@ -483,7 +450,7 @@
             // cbShowAfterCaptureTasksForm
             // 
             this.cbShowAfterCaptureTasksForm.AutoSize = true;
-            this.cbShowAfterCaptureTasksForm.Location = new System.Drawing.Point(8, 32);
+            this.cbShowAfterCaptureTasksForm.Location = new System.Drawing.Point(8, 33);
             this.cbShowAfterCaptureTasksForm.Name = "cbShowAfterCaptureTasksForm";
             this.cbShowAfterCaptureTasksForm.Size = new System.Drawing.Size(295, 17);
             this.cbShowAfterCaptureTasksForm.TabIndex = 1;
@@ -494,7 +461,7 @@
             // cbPlaySoundAfterUpload
             // 
             this.cbPlaySoundAfterUpload.AutoSize = true;
-            this.cbPlaySoundAfterUpload.Location = new System.Drawing.Point(8, 56);
+            this.cbPlaySoundAfterUpload.Location = new System.Drawing.Point(8, 133);
             this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
             this.cbPlaySoundAfterUpload.Size = new System.Drawing.Size(187, 17);
             this.cbPlaySoundAfterUpload.TabIndex = 2;
@@ -505,7 +472,7 @@
             // cbHistorySave
             // 
             this.cbHistorySave.AutoSize = true;
-            this.cbHistorySave.Location = new System.Drawing.Point(8, 136);
+            this.cbHistorySave.Location = new System.Drawing.Point(8, 108);
             this.cbHistorySave.Name = "cbHistorySave";
             this.cbHistorySave.Size = new System.Drawing.Size(139, 17);
             this.cbHistorySave.TabIndex = 6;
@@ -1785,6 +1752,52 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // tsmiImageUploaders
+            // 
+            this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
+            this.tsmiImageUploaders.Name = "tsmiImageUploaders";
+            this.tsmiImageUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiImageUploaders.Text = "Image uploaders";
+            // 
+            // tsmiTextUploaders
+            // 
+            this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
+            this.tsmiTextUploaders.Name = "tsmiTextUploaders";
+            this.tsmiTextUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiTextUploaders.Text = "Text uploaders";
+            // 
+            // tsmiFileUploaders
+            // 
+            this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
+            this.tsmiFileUploaders.Name = "tsmiFileUploaders";
+            this.tsmiFileUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiFileUploaders.Text = "File uploaders";
+            // 
+            // tsmiURLShorteners
+            // 
+            this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
+            this.tsmiURLShorteners.Name = "tsmiURLShorteners";
+            this.tsmiURLShorteners.Size = new System.Drawing.Size(212, 22);
+            this.tsmiURLShorteners.Text = "URL shorteners";
+            // 
+            // tsmiSocialServices
+            // 
+            this.tsmiSocialServices.Image = global::ShareX.Properties.Resources.globe_share;
+            this.tsmiSocialServices.Name = "tsmiSocialServices";
+            this.tsmiSocialServices.Size = new System.Drawing.Size(212, 22);
+            this.tsmiSocialServices.Text = "Social networking services";
+            // 
+            // chkShowBeforeUploadForm
+            // 
+            this.chkShowBeforeUploadForm.AutoSize = true;
+            this.chkShowBeforeUploadForm.Location = new System.Drawing.Point(8, 58);
+            this.chkShowBeforeUploadForm.Name = "chkShowBeforeUploadForm";
+            this.chkShowBeforeUploadForm.Size = new System.Drawing.Size(291, 17);
+            this.chkShowBeforeUploadForm.TabIndex = 7;
+            this.chkShowBeforeUploadForm.Text = "Prompt to dynamically change destination prior to upload";
+            this.chkShowBeforeUploadForm.UseVisualStyleBackColor = true;
+            this.chkShowBeforeUploadForm.CheckedChanged += new System.EventHandler(this.chkShowBeforeUploadForm_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1994,6 +2007,7 @@
         private System.Windows.Forms.CheckBox chkClipboardUploadContents;
         private System.Windows.Forms.NumericUpDown nudScreenRecordFPS;
         private System.Windows.Forms.Label lblScreenRecordFPS;
+        private System.Windows.Forms.CheckBox chkShowBeforeUploadForm;
 
 
 

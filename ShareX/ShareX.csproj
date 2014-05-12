@@ -94,6 +94,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BeforeUploadControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BeforeUploadControl.Designer.cs">
+      <DependentUpon>BeforeUploadControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BeforeUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BeforeUploadForm.Designer.cs">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClipboardFormatForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +252,9 @@
     <Compile Include="WatchFolder.cs" />
     <Compile Include="WatchFolderManager.cs" />
     <Compile Include="WatchFolderSettings.cs" />
+    <EmbeddedResource Include="Controls\BeforeUploadControl.resx">
+      <DependentUpon>BeforeUploadControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -249,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeforeUploadForm.resx">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>

@@ -288,6 +288,7 @@ namespace ShareX
 
                                 if (!string.IsNullOrEmpty(result))
                                 {
+                                    lvi.SubItems[7].Text = task.Info.UploaderHost;
                                     lvi.SubItems[8].Text = result;
                                 }
                             }

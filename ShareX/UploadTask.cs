@@ -248,24 +248,35 @@ namespace ShareX
 
                     TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Normal);
 
-                    if (threadWorker != null)
+                    DialogResult beforeUploadResult = DialogResult.OK;
+
+                    if (Info.TaskSettings.GeneralSettings.ShowBeforeUploadForm)
                     {
-                        threadWorker.InvokeAsync(OnUploadStarted);
+                        BeforeUploadForm form = new BeforeUploadForm(Info);
+                        beforeUploadResult = form.ShowDialog();
                     }
-                    else
+
+                    if (beforeUploadResult == DialogResult.OK)
                     {
-                        OnUploadStarted();
-                    }
-
-                    bool isError = DoUpload();
-
-                    if (isError && Program.Settings.MaxUploadFailRetry > 0)
-                    {
-                        DebugHelper.WriteLine("Upload failed. Retrying upload.");
-
-                        for (int retry = 1; isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
+                        if (threadWorker != null)
                         {
-                            isError = DoUpload(retry);
+                            threadWorker.InvokeAsync(OnUploadStarted);
+                        }
+                        else
+                        {
+                            OnUploadStarted();
+                        }
+
+                        bool isError = DoUpload();
+
+                        if (isError && Program.Settings.MaxUploadFailRetry > 0)
+                        {
+                            DebugHelper.WriteLine("Upload failed. Retrying upload.");
+
+                            for (int retry = 1; isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
+                            {
+                                isError = DoUpload(retry);
+                            }
                         }
                     }
                 }

@@ -116,6 +116,7 @@ namespace ShareX
             // General
             cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
             cbShowAfterCaptureTasksForm.Checked = TaskSettings.GeneralSettings.ShowAfterCaptureTasksForm;
+            chkShowBeforeUploadForm.Checked = TaskSettings.GeneralSettings.ShowBeforeUploadForm;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
             cboPopUpNotification.Items.Clear();
@@ -478,6 +479,11 @@ namespace ShareX
         private void cbShowAfterCaptureTasksForm_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.ShowAfterCaptureTasksForm = cbShowAfterCaptureTasksForm.Checked;
+        }
+
+        private void chkShowBeforeUploadForm_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ShowBeforeUploadForm = chkShowBeforeUploadForm.Checked;
         }
 
         private void cbPlaySoundAfterUpload_CheckedChanged(object sender, EventArgs e)
