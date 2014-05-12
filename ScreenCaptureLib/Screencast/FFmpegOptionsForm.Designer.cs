@@ -111,7 +111,10 @@
             // 
             this.tpFFmpeg.AutoPopDelay = 30000;
             this.tpFFmpeg.InitialDelay = 500;
+            this.tpFFmpeg.IsBalloon = true;
             this.tpFFmpeg.ReshowDelay = 100;
+            this.tpFFmpeg.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.tpFFmpeg.ToolTipTitle = "FFmpeg";
             // 
             // nudQscale
             // 

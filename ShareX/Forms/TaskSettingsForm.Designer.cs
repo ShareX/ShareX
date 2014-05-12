@@ -312,7 +312,7 @@
             this.chkOverrideFTP.Location = new System.Drawing.Point(6, 240);
             this.chkOverrideFTP.Name = "chkOverrideFTP";
             this.chkOverrideFTP.Size = new System.Drawing.Size(169, 17);
-            this.chkOverrideFTP.TabIndex = 14;
+            this.chkOverrideFTP.TabIndex = 9;
             this.chkOverrideFTP.Text = "Override default FTP account:";
             this.chkOverrideFTP.UseVisualStyleBackColor = true;
             this.chkOverrideFTP.CheckedChanged += new System.EventHandler(this.chkOverrideFTP_CheckedChanged);
@@ -325,7 +325,7 @@
             this.cboFTPaccounts.Location = new System.Drawing.Point(181, 238);
             this.cboFTPaccounts.Name = "cboFTPaccounts";
             this.cboFTPaccounts.Size = new System.Drawing.Size(330, 21);
-            this.cboFTPaccounts.TabIndex = 13;
+            this.cboFTPaccounts.TabIndex = 10;
             this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
             // 
             // btnAfterCapture
@@ -448,7 +448,7 @@
             this.panelGeneral.Location = new System.Drawing.Point(3, 30);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Size = new System.Drawing.Size(544, 327);
-            this.panelGeneral.TabIndex = 19;
+            this.panelGeneral.TabIndex = 1;
             // 
             // lblAfterTaskNotification
             // 
@@ -456,7 +456,7 @@
             this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 84);
             this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
             this.lblAfterTaskNotification.Size = new System.Drawing.Size(117, 13);
-            this.lblAfterTaskNotification.TabIndex = 21;
+            this.lblAfterTaskNotification.TabIndex = 3;
             this.lblAfterTaskNotification.Text = "After task is completed:";
             // 
             // cboPopUpNotification
@@ -466,7 +466,7 @@
             this.cboPopUpNotification.Location = new System.Drawing.Point(128, 80);
             this.cboPopUpNotification.Name = "cboPopUpNotification";
             this.cboPopUpNotification.Size = new System.Drawing.Size(224, 21);
-            this.cboPopUpNotification.TabIndex = 20;
+            this.cboPopUpNotification.TabIndex = 4;
             this.cboPopUpNotification.SelectedIndexChanged += new System.EventHandler(this.cboPopUpNotification_SelectedIndexChanged);
             // 
             // chkShowAfterUploadForm
@@ -475,7 +475,7 @@
             this.chkShowAfterUploadForm.Location = new System.Drawing.Point(8, 112);
             this.chkShowAfterUploadForm.Name = "chkShowAfterUploadForm";
             this.chkShowAfterUploadForm.Size = new System.Drawing.Size(271, 17);
-            this.chkShowAfterUploadForm.TabIndex = 18;
+            this.chkShowAfterUploadForm.TabIndex = 5;
             this.chkShowAfterUploadForm.Text = "Show \"After upload\" window after task is completed";
             this.chkShowAfterUploadForm.UseVisualStyleBackColor = true;
             this.chkShowAfterUploadForm.CheckedChanged += new System.EventHandler(this.chkShowAfterUploadForm_CheckedChanged);
@@ -486,7 +486,7 @@
             this.cbShowAfterCaptureTasksForm.Location = new System.Drawing.Point(8, 32);
             this.cbShowAfterCaptureTasksForm.Name = "cbShowAfterCaptureTasksForm";
             this.cbShowAfterCaptureTasksForm.Size = new System.Drawing.Size(295, 17);
-            this.cbShowAfterCaptureTasksForm.TabIndex = 13;
+            this.cbShowAfterCaptureTasksForm.TabIndex = 1;
             this.cbShowAfterCaptureTasksForm.Text = "Show \"Post capture tasks\" window after capture is made";
             this.cbShowAfterCaptureTasksForm.UseVisualStyleBackColor = true;
             this.cbShowAfterCaptureTasksForm.CheckedChanged += new System.EventHandler(this.cbShowAfterCaptureTasksForm_CheckedChanged);
@@ -497,7 +497,7 @@
             this.cbPlaySoundAfterUpload.Location = new System.Drawing.Point(8, 56);
             this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
             this.cbPlaySoundAfterUpload.Size = new System.Drawing.Size(187, 17);
-            this.cbPlaySoundAfterUpload.TabIndex = 15;
+            this.cbPlaySoundAfterUpload.TabIndex = 2;
             this.cbPlaySoundAfterUpload.Text = "Play sound after task is completed";
             this.cbPlaySoundAfterUpload.UseVisualStyleBackColor = true;
             this.cbPlaySoundAfterUpload.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterUpload_CheckedChanged);
@@ -508,7 +508,7 @@
             this.cbHistorySave.Location = new System.Drawing.Point(8, 136);
             this.cbHistorySave.Name = "cbHistorySave";
             this.cbHistorySave.Size = new System.Drawing.Size(139, 17);
-            this.cbHistorySave.TabIndex = 17;
+            this.cbHistorySave.TabIndex = 6;
             this.cbHistorySave.Text = "Save task info to history";
             this.cbHistorySave.UseVisualStyleBackColor = true;
             this.cbHistorySave.CheckedChanged += new System.EventHandler(this.cbHistorySave_CheckedChanged);
@@ -519,7 +519,7 @@
             this.cbPlaySoundAfterCapture.Location = new System.Drawing.Point(8, 8);
             this.cbPlaySoundAfterCapture.Name = "cbPlaySoundAfterCapture";
             this.cbPlaySoundAfterCapture.Size = new System.Drawing.Size(180, 17);
-            this.cbPlaySoundAfterCapture.TabIndex = 14;
+            this.cbPlaySoundAfterCapture.TabIndex = 0;
             this.cbPlaySoundAfterCapture.Text = "Play sound after capture is made";
             this.cbPlaySoundAfterCapture.UseVisualStyleBackColor = true;
             this.cbPlaySoundAfterCapture.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterCapture_CheckedChanged);
@@ -534,7 +534,7 @@
             this.chkUseDefaultGeneralSettings.Name = "chkUseDefaultGeneralSettings";
             this.chkUseDefaultGeneralSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultGeneralSettings.Size = new System.Drawing.Size(544, 27);
-            this.chkUseDefaultGeneralSettings.TabIndex = 20;
+            this.chkUseDefaultGeneralSettings.TabIndex = 0;
             this.chkUseDefaultGeneralSettings.Text = "Use default general settings";
             this.chkUseDefaultGeneralSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
@@ -769,7 +769,7 @@
             this.gbImageEffects.Location = new System.Drawing.Point(16, 16);
             this.gbImageEffects.Name = "gbImageEffects";
             this.gbImageEffects.Size = new System.Drawing.Size(304, 112);
-            this.gbImageEffects.TabIndex = 5;
+            this.gbImageEffects.TabIndex = 0;
             this.gbImageEffects.TabStop = false;
             this.gbImageEffects.Text = "Image effects";
             // 
@@ -779,7 +779,7 @@
             this.chkShowImageEffectsWindowAfterCapture.Location = new System.Drawing.Point(16, 56);
             this.chkShowImageEffectsWindowAfterCapture.Name = "chkShowImageEffectsWindowAfterCapture";
             this.chkShowImageEffectsWindowAfterCapture.Size = new System.Drawing.Size(221, 17);
-            this.chkShowImageEffectsWindowAfterCapture.TabIndex = 4;
+            this.chkShowImageEffectsWindowAfterCapture.TabIndex = 1;
             this.chkShowImageEffectsWindowAfterCapture.Text = "Show image effects window after capture";
             this.chkShowImageEffectsWindowAfterCapture.UseVisualStyleBackColor = true;
             this.chkShowImageEffectsWindowAfterCapture.CheckedChanged += new System.EventHandler(this.chkShowImageEffectsWindowAfterCapture_CheckedChanged);
@@ -790,7 +790,7 @@
             this.cbImageEffectOnlyRegionCapture.Location = new System.Drawing.Point(16, 80);
             this.cbImageEffectOnlyRegionCapture.Name = "cbImageEffectOnlyRegionCapture";
             this.cbImageEffectOnlyRegionCapture.Size = new System.Drawing.Size(193, 17);
-            this.cbImageEffectOnlyRegionCapture.TabIndex = 3;
+            this.cbImageEffectOnlyRegionCapture.TabIndex = 2;
             this.cbImageEffectOnlyRegionCapture.Text = "Only apply effects to region capture";
             this.cbImageEffectOnlyRegionCapture.UseVisualStyleBackColor = true;
             this.cbImageEffectOnlyRegionCapture.CheckedChanged += new System.EventHandler(this.cbImageEffectOnlyRegionCapture_CheckedChanged);
@@ -800,7 +800,7 @@
             this.btnImageEffects.Location = new System.Drawing.Point(16, 24);
             this.btnImageEffects.Name = "btnImageEffects";
             this.btnImageEffects.Size = new System.Drawing.Size(208, 23);
-            this.btnImageEffects.TabIndex = 2;
+            this.btnImageEffects.TabIndex = 0;
             this.btnImageEffects.Text = "Image effects configuration...";
             this.btnImageEffects.UseVisualStyleBackColor = true;
             this.btnImageEffects.Click += new System.EventHandler(this.btnImageEffects_Click);
@@ -810,7 +810,7 @@
             this.btnWatermarkSettings.Location = new System.Drawing.Point(16, 144);
             this.btnWatermarkSettings.Name = "btnWatermarkSettings";
             this.btnWatermarkSettings.Size = new System.Drawing.Size(208, 23);
-            this.btnWatermarkSettings.TabIndex = 0;
+            this.btnWatermarkSettings.TabIndex = 1;
             this.btnWatermarkSettings.Text = "Watermark configuration...";
             this.btnWatermarkSettings.UseVisualStyleBackColor = true;
             this.btnWatermarkSettings.Click += new System.EventHandler(this.btnWatermarkSettings_Click);
@@ -859,7 +859,7 @@
             this.lblThumbnailName.Location = new System.Drawing.Point(16, 76);
             this.lblThumbnailName.Name = "lblThumbnailName";
             this.lblThumbnailName.Size = new System.Drawing.Size(88, 13);
-            this.lblThumbnailName.TabIndex = 5;
+            this.lblThumbnailName.TabIndex = 4;
             this.lblThumbnailName.Text = "Thumbnail name:";
             // 
             // txtThumbnailName
@@ -867,7 +867,7 @@
             this.txtThumbnailName.Location = new System.Drawing.Point(112, 72);
             this.txtThumbnailName.Name = "txtThumbnailName";
             this.txtThumbnailName.Size = new System.Drawing.Size(128, 20);
-            this.txtThumbnailName.TabIndex = 4;
+            this.txtThumbnailName.TabIndex = 5;
             this.txtThumbnailName.TextChanged += new System.EventHandler(this.txtThumbnailName_TextChanged);
             // 
             // lblThumbnailHeight
@@ -876,7 +876,7 @@
             this.lblThumbnailHeight.Location = new System.Drawing.Point(16, 44);
             this.lblThumbnailHeight.Name = "lblThumbnailHeight";
             this.lblThumbnailHeight.Size = new System.Drawing.Size(41, 13);
-            this.lblThumbnailHeight.TabIndex = 3;
+            this.lblThumbnailHeight.TabIndex = 2;
             this.lblThumbnailHeight.Text = "Height:";
             // 
             // lblThumbnailWidth
@@ -885,7 +885,7 @@
             this.lblThumbnailWidth.Location = new System.Drawing.Point(16, 16);
             this.lblThumbnailWidth.Name = "lblThumbnailWidth";
             this.lblThumbnailWidth.Size = new System.Drawing.Size(38, 13);
-            this.lblThumbnailWidth.TabIndex = 2;
+            this.lblThumbnailWidth.TabIndex = 0;
             this.lblThumbnailWidth.Text = "Width:";
             // 
             // nudThumbnailHeight
@@ -898,7 +898,7 @@
             0});
             this.nudThumbnailHeight.Name = "nudThumbnailHeight";
             this.nudThumbnailHeight.Size = new System.Drawing.Size(64, 20);
-            this.nudThumbnailHeight.TabIndex = 1;
+            this.nudThumbnailHeight.TabIndex = 3;
             this.nudThumbnailHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudThumbnailHeight.ValueChanged += new System.EventHandler(this.nudThumbnailHeight_ValueChanged);
             // 
@@ -912,7 +912,7 @@
             0});
             this.nudThumbnailWidth.Name = "nudThumbnailWidth";
             this.nudThumbnailWidth.Size = new System.Drawing.Size(64, 20);
-            this.nudThumbnailWidth.TabIndex = 0;
+            this.nudThumbnailWidth.TabIndex = 1;
             this.nudThumbnailWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudThumbnailWidth.ValueChanged += new System.EventHandler(this.nudThumbnailWidth_ValueChanged);
             // 
@@ -1106,7 +1106,7 @@
             this.pgShapesCapture.Name = "pgShapesCapture";
             this.pgShapesCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgShapesCapture.Size = new System.Drawing.Size(530, 295);
-            this.pgShapesCapture.TabIndex = 11;
+            this.pgShapesCapture.TabIndex = 0;
             this.pgShapesCapture.ToolbarVisible = false;
             // 
             // tpScreenRecorder
@@ -1149,7 +1149,7 @@
             0});
             this.nudScreenRecordFPS.Name = "nudScreenRecordFPS";
             this.nudScreenRecordFPS.Size = new System.Drawing.Size(64, 20);
-            this.nudScreenRecordFPS.TabIndex = 16;
+            this.nudScreenRecordFPS.TabIndex = 8;
             this.nudScreenRecordFPS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScreenRecordFPS.Value = new decimal(new int[] {
             20,
@@ -1164,7 +1164,7 @@
             this.lblScreenRecordFPS.Location = new System.Drawing.Point(208, 73);
             this.lblScreenRecordFPS.Name = "lblScreenRecordFPS";
             this.lblScreenRecordFPS.Size = new System.Drawing.Size(100, 13);
-            this.lblScreenRecordFPS.TabIndex = 15;
+            this.lblScreenRecordFPS.TabIndex = 7;
             this.lblScreenRecordFPS.Text = "Screen record FPS:";
             // 
             // chkRunScreencastCLI
@@ -1173,7 +1173,7 @@
             this.chkRunScreencastCLI.Location = new System.Drawing.Point(392, 14);
             this.chkRunScreencastCLI.Name = "chkRunScreencastCLI";
             this.chkRunScreencastCLI.Size = new System.Drawing.Size(117, 17);
-            this.chkRunScreencastCLI.TabIndex = 14;
+            this.chkRunScreencastCLI.TabIndex = 3;
             this.chkRunScreencastCLI.Text = "Run CLI afterwards";
             this.chkRunScreencastCLI.UseVisualStyleBackColor = true;
             this.chkRunScreencastCLI.CheckedChanged += new System.EventHandler(this.chkRunScreencastCLI_CheckedChanged);
@@ -1184,7 +1184,7 @@
             this.lblScreenRecorderCLI.Location = new System.Drawing.Point(16, 48);
             this.lblScreenRecorderCLI.Name = "lblScreenRecorderCLI";
             this.lblScreenRecorderCLI.Size = new System.Drawing.Size(26, 13);
-            this.lblScreenRecorderCLI.TabIndex = 13;
+            this.lblScreenRecorderCLI.TabIndex = 4;
             this.lblScreenRecorderCLI.Text = "CLI:";
             // 
             // btnScreenRecorderOptions
@@ -1192,7 +1192,7 @@
             this.btnScreenRecorderOptions.Location = new System.Drawing.Point(320, 11);
             this.btnScreenRecorderOptions.Name = "btnScreenRecorderOptions";
             this.btnScreenRecorderOptions.Size = new System.Drawing.Size(64, 23);
-            this.btnScreenRecorderOptions.TabIndex = 12;
+            this.btnScreenRecorderOptions.TabIndex = 2;
             this.btnScreenRecorderOptions.Text = "Options...";
             this.btnScreenRecorderOptions.UseVisualStyleBackColor = true;
             this.btnScreenRecorderOptions.Click += new System.EventHandler(this.btnScreenRecorderOptions_Click);
@@ -1202,7 +1202,7 @@
             this.btnEncoderConfig.Location = new System.Drawing.Point(392, 40);
             this.btnEncoderConfig.Name = "btnEncoderConfig";
             this.btnEncoderConfig.Size = new System.Drawing.Size(40, 23);
-            this.btnEncoderConfig.TabIndex = 11;
+            this.btnEncoderConfig.TabIndex = 6;
             this.btnEncoderConfig.Text = "...";
             this.btnEncoderConfig.UseVisualStyleBackColor = true;
             this.btnEncoderConfig.Click += new System.EventHandler(this.btnEncoderConfig_Click);
@@ -1214,7 +1214,7 @@
             this.cboEncoder.Location = new System.Drawing.Point(64, 41);
             this.cboEncoder.Name = "cboEncoder";
             this.cboEncoder.Size = new System.Drawing.Size(320, 21);
-            this.cboEncoder.TabIndex = 10;
+            this.cboEncoder.TabIndex = 5;
             this.cboEncoder.SelectedIndexChanged += new System.EventHandler(this.cboEncoder_SelectedIndexChanged);
             // 
             // nudScreenRecorderDuration
@@ -1238,7 +1238,7 @@
             0});
             this.nudScreenRecorderDuration.Name = "nudScreenRecorderDuration";
             this.nudScreenRecorderDuration.Size = new System.Drawing.Size(64, 20);
-            this.nudScreenRecorderDuration.TabIndex = 6;
+            this.nudScreenRecorderDuration.TabIndex = 12;
             this.nudScreenRecorderDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScreenRecorderDuration.Value = new decimal(new int[] {
             3,
@@ -1253,7 +1253,7 @@
             this.lblScreenRecorderStartDelay.Location = new System.Drawing.Point(248, 154);
             this.lblScreenRecorderStartDelay.Name = "lblScreenRecorderStartDelay";
             this.lblScreenRecorderStartDelay.Size = new System.Drawing.Size(60, 13);
-            this.lblScreenRecorderStartDelay.TabIndex = 9;
+            this.lblScreenRecorderStartDelay.TabIndex = 13;
             this.lblScreenRecorderStartDelay.Text = "Start delay:";
             // 
             // nudScreenRecorderStartDelay
@@ -1272,7 +1272,7 @@
             0});
             this.nudScreenRecorderStartDelay.Name = "nudScreenRecorderStartDelay";
             this.nudScreenRecorderStartDelay.Size = new System.Drawing.Size(64, 20);
-            this.nudScreenRecorderStartDelay.TabIndex = 8;
+            this.nudScreenRecorderStartDelay.TabIndex = 14;
             this.nudScreenRecorderStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScreenRecorderStartDelay.Value = new decimal(new int[] {
             1,
@@ -1306,7 +1306,7 @@
             this.cbScreenRecorderFixedDuration.Location = new System.Drawing.Point(164, 125);
             this.cbScreenRecorderFixedDuration.Name = "cbScreenRecorderFixedDuration";
             this.cbScreenRecorderFixedDuration.Size = new System.Drawing.Size(144, 17);
-            this.cbScreenRecorderFixedDuration.TabIndex = 4;
+            this.cbScreenRecorderFixedDuration.TabIndex = 11;
             this.cbScreenRecorderFixedDuration.Text = "Fixed duration (seconds):";
             this.cbScreenRecorderFixedDuration.UseVisualStyleBackColor = true;
             this.cbScreenRecorderFixedDuration.CheckedChanged += new System.EventHandler(this.cbScreenRecorderFixedDuration_CheckedChanged);
@@ -1326,7 +1326,7 @@
             0});
             this.nudGIFFPS.Name = "nudGIFFPS";
             this.nudGIFFPS.Size = new System.Drawing.Size(64, 20);
-            this.nudGIFFPS.TabIndex = 3;
+            this.nudGIFFPS.TabIndex = 10;
             this.nudGIFFPS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudGIFFPS.Value = new decimal(new int[] {
             5,
@@ -1341,7 +1341,7 @@
             this.lblGIFPS.Location = new System.Drawing.Point(258, 100);
             this.lblGIFPS.Name = "lblGIFPS";
             this.lblGIFPS.Size = new System.Drawing.Size(50, 13);
-            this.lblGIFPS.TabIndex = 2;
+            this.lblGIFPS.TabIndex = 9;
             this.lblGIFPS.Text = "GIF FPS:";
             // 
             // chkUseDefaultCaptureSettings
@@ -1669,7 +1669,7 @@
             this.chkClipboardUploadContents.Location = new System.Drawing.Point(16, 16);
             this.chkClipboardUploadContents.Name = "chkClipboardUploadContents";
             this.chkClipboardUploadContents.Size = new System.Drawing.Size(308, 17);
-            this.chkClipboardUploadContents.TabIndex = 3;
+            this.chkClipboardUploadContents.TabIndex = 0;
             this.chkClipboardUploadContents.Text = "If clipboard contains a file URL then download it and upload";
             this.chkClipboardUploadContents.UseVisualStyleBackColor = true;
             this.chkClipboardUploadContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
@@ -1730,7 +1730,7 @@
             this.pgIndexerConfig.Name = "pgIndexerConfig";
             this.pgIndexerConfig.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgIndexerConfig.Size = new System.Drawing.Size(544, 327);
-            this.pgIndexerConfig.TabIndex = 0;
+            this.pgIndexerConfig.TabIndex = 1;
             this.pgIndexerConfig.ToolbarVisible = false;
             // 
             // chkUseDefaultIndexerSettings
@@ -1743,7 +1743,7 @@
             this.chkUseDefaultIndexerSettings.Name = "chkUseDefaultIndexerSettings";
             this.chkUseDefaultIndexerSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultIndexerSettings.Size = new System.Drawing.Size(544, 27);
-            this.chkUseDefaultIndexerSettings.TabIndex = 1;
+            this.chkUseDefaultIndexerSettings.TabIndex = 0;
             this.chkUseDefaultIndexerSettings.Text = "Use default indexer settings";
             this.chkUseDefaultIndexerSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultIndexerSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultIndexerSettings_CheckedChanged);
