@@ -76,7 +76,7 @@
             this.lblExt.Location = new System.Drawing.Point(192, 16);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
-            this.lblExt.TabIndex = 11;
+            this.lblExt.TabIndex = 2;
             this.lblExt.Text = "Extension:";
             // 
             // lblX264CRF
@@ -85,7 +85,7 @@
             this.lblX264CRF.Location = new System.Drawing.Point(16, 16);
             this.lblX264CRF.Name = "lblX264CRF";
             this.lblX264CRF.Size = new System.Drawing.Size(31, 13);
-            this.lblX264CRF.TabIndex = 13;
+            this.lblX264CRF.TabIndex = 0;
             this.lblX264CRF.Text = "CRF:";
             // 
             // nudx264CRF
@@ -98,7 +98,7 @@
             0});
             this.nudx264CRF.Name = "nudx264CRF";
             this.nudx264CRF.Size = new System.Drawing.Size(48, 20);
-            this.nudx264CRF.TabIndex = 14;
+            this.nudx264CRF.TabIndex = 1;
             this.nudx264CRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tpFFmpeg.SetToolTip(this.nudx264CRF, resources.GetString("nudx264CRF.ToolTip"));
             this.nudx264CRF.Value = new decimal(new int[] {
@@ -106,6 +106,12 @@
             0,
             0,
             0});
+            // 
+            // tpFFmpeg
+            // 
+            this.tpFFmpeg.AutoPopDelay = 30000;
+            this.tpFFmpeg.InitialDelay = 500;
+            this.tpFFmpeg.ReshowDelay = 100;
             // 
             // nudQscale
             // 
@@ -122,7 +128,7 @@
             0});
             this.nudQscale.Name = "nudQscale";
             this.nudQscale.Size = new System.Drawing.Size(48, 20);
-            this.nudQscale.TabIndex = 16;
+            this.nudQscale.TabIndex = 1;
             this.nudQscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tpFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
         " filesize.");
@@ -147,9 +153,10 @@
             0});
             this.nudVPxCRF.Name = "nudVPxCRF";
             this.nudVPxCRF.Size = new System.Drawing.Size(48, 20);
-            this.nudVPxCRF.TabIndex = 16;
+            this.nudVPxCRF.TabIndex = 1;
             this.nudVPxCRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tpFFmpeg.SetToolTip(this.nudVPxCRF, resources.GetString("nudVPxCRF.ToolTip"));
+            this.tpFFmpeg.SetToolTip(this.nudVPxCRF, "CRF value can be from 4–63, and 10 is a good starting point. Lower values mean be" +
+        "tter quality. ");
             this.nudVPxCRF.Value = new decimal(new int[] {
             12,
             0,
@@ -163,7 +170,7 @@
             this.cbExtension.Location = new System.Drawing.Point(256, 12);
             this.cbExtension.Name = "cbExtension";
             this.cbExtension.Size = new System.Drawing.Size(72, 21);
-            this.cbExtension.TabIndex = 15;
+            this.cbExtension.TabIndex = 3;
             // 
             // lblCodec
             // 
@@ -171,7 +178,7 @@
             this.lblCodec.Location = new System.Drawing.Point(8, 16);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(41, 13);
-            this.lblCodec.TabIndex = 16;
+            this.lblCodec.TabIndex = 0;
             this.lblCodec.Text = "Codec:";
             // 
             // cbCodec
@@ -181,7 +188,7 @@
             this.cbCodec.Location = new System.Drawing.Point(56, 12);
             this.cbCodec.Name = "cbCodec";
             this.cbCodec.Size = new System.Drawing.Size(120, 21);
-            this.cbCodec.TabIndex = 17;
+            this.cbCodec.TabIndex = 1;
             // 
             // cbPreset
             // 
@@ -190,7 +197,7 @@
             this.cbPreset.Location = new System.Drawing.Point(168, 12);
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
-            this.cbPreset.TabIndex = 19;
+            this.cbPreset.TabIndex = 3;
             // 
             // lblPreset
             // 
@@ -198,7 +205,7 @@
             this.lblPreset.Location = new System.Drawing.Point(120, 16);
             this.lblPreset.Name = "lblPreset";
             this.lblPreset.Size = new System.Drawing.Size(40, 13);
-            this.lblPreset.TabIndex = 18;
+            this.lblPreset.TabIndex = 2;
             this.lblPreset.Text = "Preset:";
             // 
             // lblQscale
@@ -207,7 +214,7 @@
             this.lblQscale.Location = new System.Drawing.Point(16, 16);
             this.lblQscale.Name = "lblQscale";
             this.lblQscale.Size = new System.Drawing.Size(83, 13);
-            this.lblQscale.TabIndex = 15;
+            this.lblQscale.TabIndex = 0;
             this.lblQscale.Text = "Variable bit rate:";
             // 
             // gbFFmpegExe
@@ -218,7 +225,7 @@
             this.gbFFmpegExe.Location = new System.Drawing.Point(8, 120);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(448, 56);
-            this.gbFFmpegExe.TabIndex = 24;
+            this.gbFFmpegExe.TabIndex = 5;
             this.gbFFmpegExe.TabStop = false;
             this.gbFFmpegExe.Text = "ffmpeg.exe";
             // 
@@ -227,7 +234,7 @@
             this.btnDownload.Location = new System.Drawing.Point(368, 22);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(72, 24);
-            this.btnDownload.TabIndex = 26;
+            this.btnDownload.TabIndex = 2;
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = true;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
@@ -259,7 +266,7 @@
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.Padding = new System.Windows.Forms.Padding(8);
             this.gbCommandLinePreview.Size = new System.Drawing.Size(448, 104);
-            this.gbCommandLinePreview.TabIndex = 25;
+            this.gbCommandLinePreview.TabIndex = 9;
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
             // 
@@ -281,7 +288,7 @@
             this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 184);
             this.gbCommandLineArgs.Name = "gbCommandLineArgs";
             this.gbCommandLineArgs.Size = new System.Drawing.Size(448, 56);
-            this.gbCommandLineArgs.TabIndex = 25;
+            this.gbCommandLineArgs.TabIndex = 6;
             this.gbCommandLineArgs.TabStop = false;
             this.gbCommandLineArgs.Text = "Additional command line arguments";
             // 
@@ -313,7 +320,7 @@
             this.tcFFmpeg.Name = "tcFFmpeg";
             this.tcFFmpeg.SelectedIndex = 0;
             this.tcFFmpeg.Size = new System.Drawing.Size(448, 72);
-            this.tcFFmpeg.TabIndex = 26;
+            this.tcFFmpeg.TabIndex = 4;
             // 
             // tpX264
             // 
@@ -346,7 +353,7 @@
             this.lblVpxCRF.Location = new System.Drawing.Point(16, 16);
             this.lblVpxCRF.Name = "lblVpxCRF";
             this.lblVpxCRF.Size = new System.Drawing.Size(31, 13);
-            this.lblVpxCRF.TabIndex = 15;
+            this.lblVpxCRF.TabIndex = 0;
             this.lblVpxCRF.Text = "CRF:";
             // 
             // tpXvid
@@ -365,7 +372,7 @@
             this.btnTest.Location = new System.Drawing.Point(136, 243);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(88, 23);
-            this.btnTest.TabIndex = 1;
+            this.btnTest.TabIndex = 7;
             this.btnTest.Text = "Test with CMD";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
@@ -375,7 +382,7 @@
             this.btnCopyPreview.Location = new System.Drawing.Point(227, 243);
             this.btnCopyPreview.Name = "btnCopyPreview";
             this.btnCopyPreview.Size = new System.Drawing.Size(53, 23);
-            this.btnCopyPreview.TabIndex = 1;
+            this.btnCopyPreview.TabIndex = 8;
             this.btnCopyPreview.Text = "Copy";
             this.btnCopyPreview.UseVisualStyleBackColor = true;
             this.btnCopyPreview.Click += new System.EventHandler(this.btnCopyPreview_Click);
