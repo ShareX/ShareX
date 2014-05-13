@@ -33,11 +33,13 @@ namespace ScreenCaptureLib
     public class FFmpegOptions
     {
         // General
+        public string VideoSource { get; set; }
+        public string AudioSource { get; set; }
         public FFmpegVideoCodec VideoCodec { get; set; }
+        public FFmpegAudioCodec AudioCodec { get; set; }
         public string Extension { get; set; }
-        public int FPS { get; set; }
-        public string UserArgs { get; set; }
         public string CLIPath { get; set; }
+        public string UserArgs { get; set; }
 
         // H.264 - x264
         public FFmpegPreset Preset { get; set; }
@@ -52,9 +54,13 @@ namespace ScreenCaptureLib
         public FFmpegOptions()
         {
             // General
+            VideoSource = "GDI grab";
+            AudioSource = "None";
             VideoCodec = FFmpegVideoCodec.libx264;
+            AudioCodec = FFmpegAudioCodec.libvorbis;
             Extension = "mp4";
             CLIPath = "ffmpeg.exe";
+            UserArgs = "";
 
             // x264
             x264CRF = 23;
@@ -65,6 +71,11 @@ namespace ScreenCaptureLib
 
             // XviD
             qscale = 3;
+        }
+
+        public bool IsAudioSourceSelected()
+        {
+            return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals("None", StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

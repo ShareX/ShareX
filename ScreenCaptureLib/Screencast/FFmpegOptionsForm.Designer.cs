@@ -123,6 +123,7 @@
             0,
             0,
             0});
+            this.nudx264CRF.ValueChanged += new System.EventHandler(this.nudx264CRF_ValueChanged);
             // 
             // tpFFmpeg
             // 
@@ -157,6 +158,7 @@
             0,
             0,
             0});
+            this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
             // 
             // nudVPxCRF
             // 
@@ -182,6 +184,7 @@
             0,
             0,
             0});
+            this.nudVPxCRF.ValueChanged += new System.EventHandler(this.nudVPxCRF_ValueChanged);
             // 
             // cbExtension
             // 
@@ -191,6 +194,7 @@
             this.cbExtension.Name = "cbExtension";
             this.cbExtension.Size = new System.Drawing.Size(88, 21);
             this.cbExtension.TabIndex = 3;
+            this.cbExtension.SelectedIndexChanged += new System.EventHandler(this.cbExtension_SelectedIndexChanged);
             // 
             // lblCodec
             // 
@@ -209,6 +213,7 @@
             this.cboVideoCodec.Name = "cboVideoCodec";
             this.cboVideoCodec.Size = new System.Drawing.Size(136, 21);
             this.cboVideoCodec.TabIndex = 1;
+            this.cboVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cboVideoCodec_SelectedIndexChanged);
             // 
             // cbPreset
             // 
@@ -218,6 +223,7 @@
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
             this.cbPreset.TabIndex = 3;
+            this.cbPreset.SelectedIndexChanged += new System.EventHandler(this.cbPreset_SelectedIndexChanged);
             // 
             // lblPreset
             // 
@@ -275,6 +281,7 @@
             this.tbFFmpegPath.Name = "tbFFmpegPath";
             this.tbFFmpegPath.Size = new System.Drawing.Size(504, 20);
             this.tbFFmpegPath.TabIndex = 0;
+            this.tbFFmpegPath.TextChanged += new System.EventHandler(this.tbFFmpegPath_TextChanged);
             // 
             // gbCommandLinePreview
             // 
@@ -330,6 +337,7 @@
             this.tbUserArgs.Name = "tbUserArgs";
             this.tbUserArgs.Size = new System.Drawing.Size(584, 20);
             this.tbUserArgs.TabIndex = 0;
+            this.tbUserArgs.TextChanged += new System.EventHandler(this.tbUserArgs_TextChanged);
             // 
             // tcFFmpegVideoCodecs
             // 
@@ -444,6 +452,7 @@
             this.cboVideoSource.Name = "cboVideoSource";
             this.cboVideoSource.Size = new System.Drawing.Size(136, 21);
             this.cboVideoSource.TabIndex = 12;
+            this.cboVideoSource.SelectedIndexChanged += new System.EventHandler(this.cboVideoSource_SelectedIndexChanged);
             // 
             // lblVideoSource
             // 
@@ -462,6 +471,7 @@
             this.cboAudioSource.Name = "cboAudioSource";
             this.cboAudioSource.Size = new System.Drawing.Size(136, 21);
             this.cboAudioSource.TabIndex = 14;
+            this.cboAudioSource.SelectedIndexChanged += new System.EventHandler(this.cboAudioSource_SelectedIndexChanged);
             // 
             // lblAudioSource
             // 
@@ -480,6 +490,7 @@
             this.cboAudioCodec.Name = "cboAudioCodec";
             this.cboAudioCodec.Size = new System.Drawing.Size(136, 21);
             this.cboAudioCodec.TabIndex = 16;
+            this.cboAudioCodec.SelectedIndexChanged += new System.EventHandler(this.cboAudioCodec_SelectedIndexChanged);
             // 
             // lblAudioCodec
             // 

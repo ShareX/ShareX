@@ -52,9 +52,45 @@ namespace ScreenCaptureLib
         {
             StringBuilder args = new StringBuilder();
 
-            // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-            args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
-                ScreenRecordFPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
+            // input FPS
+            args.AppendFormat("-r {0} ", ScreenRecordFPS);
+
+            if (string.IsNullOrEmpty(FFmpeg.VideoSource) || FFmpeg.VideoSource.Equals("GDI grab", StringComparison.InvariantCultureIgnoreCase))
+            {
+                // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
+                args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
+                    ScreenRecordFPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
+
+                if (FFmpeg.IsAudioSourceSelected())
+                {
+                    args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
+                }
+            }
+            else
+            {
+                // https://github.com/rdp/screen-capture-recorder-to-video-windows-free configuration section
+                string dshowRegistryPath = "Software\\screen-capture-recorder";
+                RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_x", CaptureArea.X);
+                RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_y", CaptureArea.Y);
+                RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_width", CaptureArea.Width);
+                RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_height", CaptureArea.Height);
+                RegistryHelpers.CreateRegistry(dshowRegistryPath, "default_max_fps", ScreenRecordFPS);
+                RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_mouse_default_1", DrawCursor ? 1 : 0);
+
+                args.Append("-f dshow -i ");
+
+                // dshow audio/video device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+                args.AppendFormat("video=\"{0}\"", FFmpeg.VideoSource);
+
+                if (FFmpeg.IsAudioSourceSelected())
+                {
+                    args.AppendFormat(":audio=\"{0}\" ", FFmpeg.AudioSource);
+                }
+                else
+                {
+                    args.Append(" ");
+                }
+            }
 
             if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
             {
@@ -83,7 +119,12 @@ namespace ScreenCaptureLib
             // -pix_fmt yuv420p required for libx264 otherwise can't stream in Chrome
             if (FFmpeg.VideoCodec == FFmpegVideoCodec.libx264)
             {
-                args.Append("-pix_fmt yuv420p ");
+                args.Append("-pix_fmt yuv420p -tune zerolatency ");
+            }
+
+            if (FFmpeg.IsAudioSourceSelected())
+            {
+                args.AppendFormat("-c:a {0} ", FFmpeg.AudioCodec.ToString());
             }
 
             if (Duration > 0)

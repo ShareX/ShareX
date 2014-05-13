@@ -58,25 +58,6 @@ namespace ScreenCaptureLib
 
         public bool Record()
         {
-            /*
-            // https://github.com/rdp/screen-capture-recorder-to-video-windows-free configuration section
-            string dshowRegistryPath = "Software\\screen-capture-recorder";
-            RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_x", captureRectangle.X);
-            RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_y", captureRectangle.Y);
-            RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_width", captureRectangle.Width);
-            RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_height", captureRectangle.Height);
-            RegistryHelpers.CreateRegistry(dshowRegistryPath, "default_max_fps", Options.FPS);
-
-            // input FPS
-            args.AppendFormat("-r {0} ", Options.FPS);
-
-            args.Append("-f dshow -i ");
-
-            // dshow audio/video device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-            args.AppendFormat("audio=\"{0}\":", "virtual-audio-capturer");
-            args.AppendFormat("video=\"{0}\" ", "screen-capture-recorder");
-            */
-
             int result = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegArgs());
             return result == 0;
         }

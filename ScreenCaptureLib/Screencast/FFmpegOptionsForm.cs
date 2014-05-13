@@ -51,8 +51,8 @@ namespace ScreenCaptureLib
 
             InitializeComponent();
 
-            this.Icon = ShareXResources.Icon;
-            this.Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
+            Icon = ShareXResources.Icon;
+            Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
         }
 
         public FFmpegOptionsForm(ScreencastOptions options)
@@ -63,7 +63,7 @@ namespace ScreenCaptureLib
             if (options != null)
             {
                 SettingsLoad();
-                UpdateUI();
+                UpdatePreview();
                 UpdateExtensions();
             }
         }
@@ -71,17 +71,12 @@ namespace ScreenCaptureLib
         private void SettingsLoad()
         {
             // General
-            RefreshSources();
-
+            RefreshSourcesAsync();
             cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-            cboVideoCodec.SelectedIndexChanged += (sender, e) => { UpdateUI(); UpdateExtensions(); };
-
+            cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
+            cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
             cbExtension.Text = Options.FFmpeg.Extension;
-            cbExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
-
-            tbUserArgs.Text = Options.FFmpeg.UserArgs;
-            tbUserArgs.TextChanged += (sender, e) => UpdateUI();
 
             string cli = "ffmpeg.exe";
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
@@ -90,27 +85,24 @@ namespace ScreenCaptureLib
             }
 
             tbFFmpegPath.Text = Options.FFmpeg.CLIPath;
-            tbFFmpegPath.TextChanged += (sender, e) => UpdateUI();
+
+            tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
             // x264
             nudx264CRF.Value = Options.FFmpeg.x264CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
-            nudx264CRF.ValueChanged += (sender, e) => UpdateUI();
-
             cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
-            cbPreset.SelectedIndexChanged += (sender, e) => UpdateUI();
 
             // VPx
             nudVPxCRF.Value = Options.FFmpeg.VPxCRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
-            nudVPxCRF.ValueChanged += (sender, e) => UpdateUI();
 
             // XviD
             nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
-            nudQscale.ValueChanged += (sender, e) => UpdateUI();
         }
 
-        private void RefreshSources()
+        private void RefreshSourcesAsync()
         {
+            btnRefreshSources.Enabled = false;
             DirectShowDevices devices = null;
             Helpers.AsyncJob(() =>
             {
@@ -130,33 +122,15 @@ namespace ScreenCaptureLib
                     cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
                     cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
                 }
+                cboVideoSource.Text = Options.FFmpeg.VideoSource;
+                cboAudioSource.Text = Options.FFmpeg.AudioSource;
+                btnRefreshSources.Enabled = true;
             });
         }
 
-        public void SettingsSave()
+        public void UpdatePreview()
         {
-            // General
-            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
-            Options.FFmpeg.Extension = cbExtension.Text;
-
-            Options.FFmpeg.UserArgs = tbUserArgs.Text;
-            Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
-
-            // x264
-            Options.FFmpeg.x264CRF = (int)nudx264CRF.Value;
-            Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
-
-            // VPx
-            Options.FFmpeg.VPxCRF = (int)nudVPxCRF.Value;
-
-            // XviD
-            Options.FFmpeg.qscale = (int)nudQscale.Value;
-        }
-
-        public void UpdateUI()
-        {
-            SettingsSave();
-            tbCommandLinePreview.Text = Options.GetFFmpegArgs();
+            tbCommandLinePreview.Text = "ffmpeg " + Options.GetFFmpegArgs();
         }
 
         public void UpdateExtensions()
@@ -178,13 +152,85 @@ namespace ScreenCaptureLib
             tcFFmpegVideoCodecs.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
         }
 
+        private void btnRefreshSources_Click(object sender, EventArgs e)
+        {
+            RefreshSourcesAsync();
+        }
+
+        private void cboVideoSource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.VideoSource = cboVideoSource.Text;
+            UpdatePreview();
+        }
+
+        private void cboAudioSource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AudioSource = cboAudioSource.Text;
+            UpdatePreview();
+        }
+
+        private void cboVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
+            UpdateExtensions();
+            UpdatePreview();
+        }
+
+        private void cboAudioCodec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
+            UpdatePreview();
+        }
+
+        private void cbExtension_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.Extension = cbExtension.Text;
+            UpdatePreview();
+        }
+
+        private void nudx264CRF_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.x264CRF = (int)nudx264CRF.Value;
+            UpdatePreview();
+        }
+
+        private void cbPreset_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
+            UpdatePreview();
+        }
+
+        private void nudVPxCRF_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.VPxCRF = (int)nudVPxCRF.Value;
+            UpdatePreview();
+        }
+
+        private void nudQscale_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.qscale = (int)nudQscale.Value;
+            UpdatePreview();
+        }
+
+        private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
+            UpdatePreview();
+        }
+
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
             if (Helpers.BrowseFile("Browse for ffmpeg.exe", tbFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
             {
-                RefreshSources();
-                UpdateUI();
+                RefreshSourcesAsync();
+                UpdatePreview();
             }
+        }
+
+        private void tbUserArgs_TextChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.UserArgs = tbUserArgs.Text;
+            UpdatePreview();
         }
 
         private void buttonFFmpegHelp_Click(object sender, EventArgs e)
@@ -207,8 +253,8 @@ namespace ScreenCaptureLib
                 this.InvokeSafe(() =>
                 {
                     tbFFmpegPath.Text = extractPath;
-                    RefreshSources();
-                    UpdateUI();
+                    RefreshSourcesAsync();
+                    UpdatePreview();
                 });
                 MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -243,12 +289,7 @@ namespace ScreenCaptureLib
 
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
-            ClipboardHelpers.CopyText("ffmpeg " + Options.GetFFmpegArgs());
-        }
-
-        private void btnRefreshSources_Click(object sender, EventArgs e)
-        {
-            RefreshSources();
+            ClipboardHelpers.CopyText(tbCommandLinePreview.Text);
         }
     }
 }
