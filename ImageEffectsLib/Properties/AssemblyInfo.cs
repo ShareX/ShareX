@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShareX Developers")]
 [assembly: AssemblyProduct("ImageEffectsLib")]
-[assembly: AssemblyCopyright("Copyright (C) 2008-2014 ShareX Developers")]
+[assembly: AssemblyCopyright("Copyright (C) 2007-2014 ShareX Developers")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
