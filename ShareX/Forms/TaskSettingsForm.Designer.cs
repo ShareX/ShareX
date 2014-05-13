@@ -457,9 +457,9 @@
             this.chkShowBeforeUploadForm.AutoSize = true;
             this.chkShowBeforeUploadForm.Location = new System.Drawing.Point(8, 58);
             this.chkShowBeforeUploadForm.Name = "chkShowBeforeUploadForm";
-            this.chkShowBeforeUploadForm.Size = new System.Drawing.Size(376, 17);
+            this.chkShowBeforeUploadForm.Size = new System.Drawing.Size(415, 17);
             this.chkShowBeforeUploadForm.TabIndex = 7;
-            this.chkShowBeforeUploadForm.Text = "Show \"Before upload\" to dynamically change destination before uploading";
+            this.chkShowBeforeUploadForm.Text = "Show \"Before upload\" window to dynamically change destination before uploading";
             this.chkShowBeforeUploadForm.UseVisualStyleBackColor = true;
             this.chkShowBeforeUploadForm.CheckedChanged += new System.EventHandler(this.chkShowBeforeUploadForm_CheckedChanged);
             // 

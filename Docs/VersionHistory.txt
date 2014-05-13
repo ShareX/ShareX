@@ -1,7 +1,7 @@
-﻿ShareX 8.8.1
+﻿ShareX 9.0
 
-* Capture screencasts using FFmpeg
-* Capture screencasts (screen recordings) using Video Compression Manager (VCM) via Video for Windows (VfW) encoders
+* Capture screen recordings (screencasts) with audio using FFmpeg
+* Capture screen recordings using Video Compression Manager (VCM) via Video for Windows (VfW) encoders
 * Clipboard Upload supports image or file URLs in their respective data types
 * DreamObjects hosting support via Amazon S3
 * Added Greenshot Image Editor to Tools menu
