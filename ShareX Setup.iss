@@ -59,7 +59,10 @@ Source: "ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flag
 Source: "ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
 Source: "ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
-;Source: "ShareX\bin\Release\*.pdb"; DestDir: {app}; Flags: ignoreversion
+Source: "Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: Not IsWin64
+Source: "Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
+Source: "Lib\audio_sniffer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: Not IsWin64 
+Source: "Lib\audio_sniffer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFile}"; WorkingDir: "{app}"
