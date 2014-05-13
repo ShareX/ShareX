@@ -78,4 +78,12 @@ namespace ScreenCaptureLib
         [Description("Very slow")]
         veryslow,
     }
+
+    public enum FFmpegAudioCodec
+    {
+        [Description("Vorbis")]
+        libvorbis,
+        [Description("MP3")]
+        libmp3lame
+    }
 }

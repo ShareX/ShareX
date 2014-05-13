@@ -71,9 +71,9 @@ namespace ScreenCaptureLib
         private void SettingsLoad()
         {
             // General
-            cbCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
-            cbCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-            cbCodec.SelectedIndexChanged += (sender, e) => { UpdateUI(); UpdateExtensions(); };
+            cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
+            cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+            cboVideoCodec.SelectedIndexChanged += (sender, e) => { UpdateUI(); UpdateExtensions(); };
 
             cbExtension.Text = Options.FFmpeg.Extension;
             cbExtension.SelectedIndexChanged += (sender, e) => UpdateUI();
@@ -110,7 +110,7 @@ namespace ScreenCaptureLib
         public void SettingsSave()
         {
             // General
-            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cbCodec.SelectedIndex;
+            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
             Options.FFmpeg.Extension = cbExtension.Text;
 
             Options.FFmpeg.UserArgs = tbUserArgs.Text;
@@ -149,7 +149,7 @@ namespace ScreenCaptureLib
             cbExtension.Items.Add("avi");
             cbExtension.SelectedIndex = 0;
 
-            tcFFmpeg.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+            tcFFmpegVideoCodecs.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
