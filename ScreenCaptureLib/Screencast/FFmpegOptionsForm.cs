@@ -45,22 +45,16 @@ namespace ScreenCaptureLib
         public ScreencastOptions Options = new ScreencastOptions();
         public string DefaultToolsPath;
 
-        public FFmpegOptionsForm(FFmpegOptions ffMpegOptions)
+        public FFmpegOptionsForm(ScreencastOptions options)
         {
-            Options.FFmpeg = ffMpegOptions;
-
             InitializeComponent();
 
             Icon = ShareXResources.Icon;
             Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
-        }
 
-        public FFmpegOptionsForm(ScreencastOptions options)
-            : this(options.FFmpeg)
-        {
             Options = options;
 
-            if (options != null)
+            if (Options != null)
             {
                 SettingsLoad();
                 UpdatePreview();

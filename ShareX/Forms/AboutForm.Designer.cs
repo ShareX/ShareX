@@ -166,7 +166,7 @@
             this.rtbCredits.Location = new System.Drawing.Point(15, 295);
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
-            this.rtbCredits.Size = new System.Drawing.Size(367, 152);
+            this.rtbCredits.Size = new System.Drawing.Size(369, 143);
             this.rtbCredits.TabIndex = 22;
             this.rtbCredits.Text = resources.GetString("rtbCredits.Text");
             this.rtbCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);

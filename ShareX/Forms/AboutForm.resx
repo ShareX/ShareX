@@ -118,7 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbCredits.Text" xml:space="preserve">
-    <value>Logo &amp; Icon: Mopsy - http://mpql.net
+    <value>Copyright © 2007 - 2014 ShareX Developers
+
+Logo &amp; Icon: Mopsy - http://mpql.net
 Greenshot Image Editor: http://sourceforge.net/projects/greenshot
 FTP Library: http://biko.codeplex.com
 Json.NET: http://json.codeplex.com
@@ -127,7 +129,9 @@ Icons: http://p.yusukekamiyamane.com
 ImageListView: http://code.google.com/p/imagelistview
 AviWriter: https://code.google.com/p/aforge
 AsyncBridge: http://omermor.github.com/AsyncBridge
-
-Copyright © 2008 - 2014 ShareX Developers</value>
+FFmpeg: http://www.ffmpeg.org/
+7-Zip: http://www.7-zip.org/
+Direct show video &amp; audio device:
+https://github.com/rdp/screen-capture-recorder-to-video-windows-free</value>
   </data>
 </root>
