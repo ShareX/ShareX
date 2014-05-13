@@ -60,7 +60,11 @@
             this.btnCopyPreview = new System.Windows.Forms.Button();
             this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
             this.tpVorbis = new System.Windows.Forms.TabPage();
+            this.tbVorbis_qscale = new System.Windows.Forms.TrackBar();
+            this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
+            this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.cboVideoSource = new System.Windows.Forms.ComboBox();
             this.lblVideoSource = new System.Windows.Forms.Label();
             this.cboAudioSource = new System.Windows.Forms.ComboBox();
@@ -82,6 +86,10 @@
             this.tpVpx.SuspendLayout();
             this.tpXvid.SuspendLayout();
             this.tcFFmpegAudioCodecs.SuspendLayout();
+            this.tpVorbis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
+            this.tpMP3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
             this.gbContainer.SuspendLayout();
@@ -93,7 +101,7 @@
             this.lblExt.Location = new System.Drawing.Point(8, 26);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
-            this.lblExt.TabIndex = 2;
+            this.lblExt.TabIndex = 0;
             this.lblExt.Text = "Extension:";
             // 
             // lblX264CRF
@@ -115,7 +123,7 @@
             0});
             this.nudx264CRF.Name = "nudx264CRF";
             this.nudx264CRF.Size = new System.Drawing.Size(48, 20);
-            this.nudx264CRF.TabIndex = 0;
+            this.nudx264CRF.TabIndex = 1;
             this.nudx264CRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tpFFmpeg.SetToolTip(this.nudx264CRF, resources.GetString("nudx264CRF.ToolTip"));
             this.nudx264CRF.Value = new decimal(new int[] {
@@ -193,7 +201,7 @@
             this.cbExtension.Location = new System.Drawing.Point(72, 22);
             this.cbExtension.Name = "cbExtension";
             this.cbExtension.Size = new System.Drawing.Size(88, 21);
-            this.cbExtension.TabIndex = 0;
+            this.cbExtension.TabIndex = 1;
             this.cbExtension.SelectedIndexChanged += new System.EventHandler(this.cbExtension_SelectedIndexChanged);
             // 
             // lblCodec
@@ -212,7 +220,7 @@
             this.cboVideoCodec.Location = new System.Drawing.Point(88, 22);
             this.cboVideoCodec.Name = "cboVideoCodec";
             this.cboVideoCodec.Size = new System.Drawing.Size(136, 21);
-            this.cboVideoCodec.TabIndex = 0;
+            this.cboVideoCodec.TabIndex = 1;
             this.cboVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cboVideoCodec_SelectedIndexChanged);
             // 
             // cbPreset
@@ -222,7 +230,7 @@
             this.cbPreset.Location = new System.Drawing.Point(168, 12);
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
-            this.cbPreset.TabIndex = 1;
+            this.cbPreset.TabIndex = 3;
             this.cbPreset.SelectedIndexChanged += new System.EventHandler(this.cbPreset_SelectedIndexChanged);
             // 
             // lblPreset
@@ -251,7 +259,7 @@
             this.gbFFmpegExe.Location = new System.Drawing.Point(8, 200);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(648, 56);
-            this.gbFFmpegExe.TabIndex = 5;
+            this.gbFFmpegExe.TabIndex = 6;
             this.gbFFmpegExe.TabStop = false;
             this.gbFFmpegExe.Text = "ffmpeg.exe";
             // 
@@ -290,7 +298,7 @@
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.Padding = new System.Windows.Forms.Padding(8);
             this.gbCommandLinePreview.Size = new System.Drawing.Size(648, 96);
-            this.gbCommandLinePreview.TabIndex = 9;
+            this.gbCommandLinePreview.TabIndex = 10;
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
             // 
@@ -312,7 +320,7 @@
             this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 264);
             this.gbCommandLineArgs.Name = "gbCommandLineArgs";
             this.gbCommandLineArgs.Size = new System.Drawing.Size(648, 56);
-            this.gbCommandLineArgs.TabIndex = 6;
+            this.gbCommandLineArgs.TabIndex = 7;
             this.gbCommandLineArgs.TabStop = false;
             this.gbCommandLineArgs.Text = "Additional command line arguments";
             // 
@@ -348,7 +356,7 @@
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
             this.tcFFmpegVideoCodecs.Size = new System.Drawing.Size(320, 72);
-            this.tcFFmpegVideoCodecs.TabIndex = 1;
+            this.tcFFmpegVideoCodecs.TabIndex = 4;
             // 
             // tpX264
             // 
@@ -400,7 +408,7 @@
             this.btnTest.Location = new System.Drawing.Point(136, 323);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(88, 23);
-            this.btnTest.TabIndex = 3;
+            this.btnTest.TabIndex = 8;
             this.btnTest.Text = "Test with CMD";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
@@ -410,7 +418,7 @@
             this.btnCopyPreview.Location = new System.Drawing.Point(227, 323);
             this.btnCopyPreview.Name = "btnCopyPreview";
             this.btnCopyPreview.Size = new System.Drawing.Size(53, 23);
-            this.btnCopyPreview.TabIndex = 4;
+            this.btnCopyPreview.TabIndex = 9;
             this.btnCopyPreview.Text = "Copy";
             this.btnCopyPreview.UseVisualStyleBackColor = true;
             this.btnCopyPreview.Click += new System.EventHandler(this.btnCopyPreview_Click);
@@ -423,10 +431,12 @@
             this.tcFFmpegAudioCodecs.Name = "tcFFmpegAudioCodecs";
             this.tcFFmpegAudioCodecs.SelectedIndex = 0;
             this.tcFFmpegAudioCodecs.Size = new System.Drawing.Size(320, 72);
-            this.tcFFmpegAudioCodecs.TabIndex = 2;
+            this.tcFFmpegAudioCodecs.TabIndex = 5;
             // 
             // tpVorbis
             // 
+            this.tpVorbis.Controls.Add(this.tbVorbis_qscale);
+            this.tpVorbis.Controls.Add(this.lblVorbisQuality);
             this.tpVorbis.Location = new System.Drawing.Point(4, 22);
             this.tpVorbis.Name = "tpVorbis";
             this.tpVorbis.Padding = new System.Windows.Forms.Padding(3);
@@ -435,14 +445,57 @@
             this.tpVorbis.Text = "Vorbis";
             this.tpVorbis.UseVisualStyleBackColor = true;
             // 
+            // tbVorbis_qscale
+            // 
+            this.tbVorbis_qscale.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbVorbis_qscale.LargeChange = 1;
+            this.tbVorbis_qscale.Location = new System.Drawing.Point(56, 3);
+            this.tbVorbis_qscale.Name = "tbVorbis_qscale";
+            this.tbVorbis_qscale.Size = new System.Drawing.Size(253, 40);
+            this.tbVorbis_qscale.TabIndex = 1;
+            this.tbVorbis_qscale.Value = 3;
+            this.tbVorbis_qscale.Scroll += new System.EventHandler(this.tbVorbis_qscale_Scroll);
+            // 
+            // lblVorbisQuality
+            // 
+            this.lblVorbisQuality.AutoSize = true;
+            this.lblVorbisQuality.Location = new System.Drawing.Point(8, 16);
+            this.lblVorbisQuality.Name = "lblVorbisQuality";
+            this.lblVorbisQuality.Size = new System.Drawing.Size(42, 13);
+            this.lblVorbisQuality.TabIndex = 0;
+            this.lblVorbisQuality.Text = "Quality:";
+            // 
             // tpMP3
             // 
+            this.tpMP3.Controls.Add(this.tbMP3_qscale);
+            this.tpMP3.Controls.Add(this.label1);
             this.tpMP3.Location = new System.Drawing.Point(4, 22);
             this.tpMP3.Name = "tpMP3";
             this.tpMP3.Size = new System.Drawing.Size(312, 46);
             this.tpMP3.TabIndex = 2;
             this.tpMP3.Text = "MP3";
             this.tpMP3.UseVisualStyleBackColor = true;
+            // 
+            // tbMP3_qscale
+            // 
+            this.tbMP3_qscale.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbMP3_qscale.LargeChange = 1;
+            this.tbMP3_qscale.Location = new System.Drawing.Point(56, 0);
+            this.tbMP3_qscale.Maximum = 9;
+            this.tbMP3_qscale.Name = "tbMP3_qscale";
+            this.tbMP3_qscale.Size = new System.Drawing.Size(256, 46);
+            this.tbMP3_qscale.TabIndex = 1;
+            this.tbMP3_qscale.Value = 5;
+            this.tbMP3_qscale.Scroll += new System.EventHandler(this.tbMP3_qscale_Scroll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quality:";
             // 
             // cboVideoSource
             // 
@@ -451,7 +504,7 @@
             this.cboVideoSource.Location = new System.Drawing.Point(88, 22);
             this.cboVideoSource.Name = "cboVideoSource";
             this.cboVideoSource.Size = new System.Drawing.Size(136, 21);
-            this.cboVideoSource.TabIndex = 0;
+            this.cboVideoSource.TabIndex = 1;
             this.cboVideoSource.SelectedIndexChanged += new System.EventHandler(this.cboVideoSource_SelectedIndexChanged);
             // 
             // lblVideoSource
@@ -460,7 +513,7 @@
             this.lblVideoSource.Location = new System.Drawing.Point(8, 26);
             this.lblVideoSource.Name = "lblVideoSource";
             this.lblVideoSource.Size = new System.Drawing.Size(72, 13);
-            this.lblVideoSource.TabIndex = 11;
+            this.lblVideoSource.TabIndex = 0;
             this.lblVideoSource.Text = "Video source:";
             // 
             // cboAudioSource
@@ -470,7 +523,7 @@
             this.cboAudioSource.Location = new System.Drawing.Point(88, 52);
             this.cboAudioSource.Name = "cboAudioSource";
             this.cboAudioSource.Size = new System.Drawing.Size(136, 21);
-            this.cboAudioSource.TabIndex = 1;
+            this.cboAudioSource.TabIndex = 3;
             this.cboAudioSource.SelectedIndexChanged += new System.EventHandler(this.cboAudioSource_SelectedIndexChanged);
             // 
             // lblAudioSource
@@ -479,7 +532,7 @@
             this.lblAudioSource.Location = new System.Drawing.Point(8, 56);
             this.lblAudioSource.Name = "lblAudioSource";
             this.lblAudioSource.Size = new System.Drawing.Size(72, 13);
-            this.lblAudioSource.TabIndex = 13;
+            this.lblAudioSource.TabIndex = 2;
             this.lblAudioSource.Text = "Audio source:";
             // 
             // cboAudioCodec
@@ -489,7 +542,7 @@
             this.cboAudioCodec.Location = new System.Drawing.Point(88, 52);
             this.cboAudioCodec.Name = "cboAudioCodec";
             this.cboAudioCodec.Size = new System.Drawing.Size(136, 21);
-            this.cboAudioCodec.TabIndex = 1;
+            this.cboAudioCodec.TabIndex = 3;
             this.cboAudioCodec.SelectedIndexChanged += new System.EventHandler(this.cboAudioCodec_SelectedIndexChanged);
             // 
             // lblAudioCodec
@@ -498,7 +551,7 @@
             this.lblAudioCodec.Location = new System.Drawing.Point(8, 56);
             this.lblAudioCodec.Name = "lblAudioCodec";
             this.lblAudioCodec.Size = new System.Drawing.Size(70, 13);
-            this.lblAudioCodec.TabIndex = 15;
+            this.lblAudioCodec.TabIndex = 2;
             this.lblAudioCodec.Text = "Audio codec:";
             // 
             // gbSource
@@ -510,7 +563,7 @@
             this.gbSource.Location = new System.Drawing.Point(8, 8);
             this.gbSource.Name = "gbSource";
             this.gbSource.Size = new System.Drawing.Size(232, 88);
-            this.gbSource.TabIndex = 17;
+            this.gbSource.TabIndex = 1;
             this.gbSource.TabStop = false;
             this.gbSource.Text = "Sources";
             // 
@@ -523,7 +576,7 @@
             this.gbCodecs.Location = new System.Drawing.Point(248, 8);
             this.gbCodecs.Name = "gbCodecs";
             this.gbCodecs.Size = new System.Drawing.Size(232, 88);
-            this.gbCodecs.TabIndex = 18;
+            this.gbCodecs.TabIndex = 2;
             this.gbCodecs.TabStop = false;
             this.gbCodecs.Text = "Codecs";
             // 
@@ -534,13 +587,13 @@
             this.gbContainer.Location = new System.Drawing.Point(488, 8);
             this.gbContainer.Name = "gbContainer";
             this.gbContainer.Size = new System.Drawing.Size(168, 88);
-            this.gbContainer.TabIndex = 19;
+            this.gbContainer.TabIndex = 3;
             this.gbContainer.TabStop = false;
             this.gbContainer.Text = "Container format";
             // 
             // btnRefreshSources
             // 
-            this.btnRefreshSources.Location = new System.Drawing.Point(176, 4);
+            this.btnRefreshSources.Location = new System.Drawing.Point(177, 4);
             this.btnRefreshSources.Name = "btnRefreshSources";
             this.btnRefreshSources.Size = new System.Drawing.Size(56, 23);
             this.btnRefreshSources.TabIndex = 0;
@@ -589,6 +642,12 @@
             this.tpXvid.ResumeLayout(false);
             this.tpXvid.PerformLayout();
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
+            this.tpVorbis.ResumeLayout(false);
+            this.tpVorbis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
+            this.tpMP3.ResumeLayout(false);
+            this.tpMP3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             this.gbSource.ResumeLayout(false);
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
@@ -642,5 +701,9 @@
         private System.Windows.Forms.GroupBox gbCodecs;
         private System.Windows.Forms.GroupBox gbContainer;
         private System.Windows.Forms.Button btnRefreshSources;
+        private System.Windows.Forms.TrackBar tbVorbis_qscale;
+        private System.Windows.Forms.Label lblVorbisQuality;
+        private System.Windows.Forms.TrackBar tbMP3_qscale;
+        private System.Windows.Forms.Label label1;
     }
 }

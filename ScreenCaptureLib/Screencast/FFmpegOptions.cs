@@ -44,13 +44,17 @@ namespace ScreenCaptureLib
 
         // H.264 - x264
         public FFmpegPreset Preset { get; set; }
-        public int x264CRF { get; set; }
+        public int x264_CRF { get; set; }
 
         // H.264 - VPx
-        public int VPxCRF { get; set; }
+        public int VPx_CRF { get; set; }
 
         // H.263
-        public int qscale { get; set; }
+        public int XviD_qscale { get; set; }
+
+        // Audio
+        public int Vorbis_qscale { get; set; }
+        public int MP3_qscale { get; set; }
 
         public FFmpegOptions()
         {
@@ -64,14 +68,17 @@ namespace ScreenCaptureLib
             UserArgs = "";
 
             // x264
-            x264CRF = 23;
+            x264_CRF = 20;
             Preset = FFmpegPreset.medium;
 
             // VPx
-            VPxCRF = 12;
+            VPx_CRF = 12;
 
             // XviD
-            qscale = 3;
+            XviD_qscale = 3;
+
+            // Vorbis
+            Vorbis_qscale = 3;
         }
 
         public bool IsAudioSourceSelected()

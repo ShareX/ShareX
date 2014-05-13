@@ -45,6 +45,8 @@ namespace ScreenCaptureLib
         public ScreencastOptions Options = new ScreencastOptions();
         public string DefaultToolsPath;
 
+        private readonly int libmp3lame_qscale_end = 9;
+
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
@@ -57,7 +59,7 @@ namespace ScreenCaptureLib
             if (Options != null)
             {
                 SettingsLoad();
-                UpdatePreview();
+                BindUpdatePreview(Controls);
                 UpdateExtensions();
             }
         }
@@ -83,15 +85,21 @@ namespace ScreenCaptureLib
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
             // x264
-            nudx264CRF.Value = Options.FFmpeg.x264CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
+            nudx264CRF.Value = Options.FFmpeg.x264_CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
             cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
 
             // VPx
-            nudVPxCRF.Value = Options.FFmpeg.VPxCRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
+            nudVPxCRF.Value = Options.FFmpeg.VPx_CRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
 
             // XviD
-            nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+            nudQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+
+            // Audio - Vorbis
+            tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
+
+            // Audio - MP3
+            tbMP3_qscale.Value = libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale; // 0-9 where a lower value is a higher quality
         }
 
         private void RefreshSourcesAsync()
@@ -120,6 +128,31 @@ namespace ScreenCaptureLib
                 cboAudioSource.Text = Options.FFmpeg.AudioSource;
                 btnRefreshSources.Enabled = true;
             });
+        }
+
+        private void BindUpdatePreview(System.Windows.Forms.Control.ControlCollection controls)
+        {
+            controls.Cast<Control>().ForEach(x => { if (x.HasChildren) BindUpdatePreview(x.Controls); });
+
+            foreach (Control ctl in controls)
+            {
+                if (ctl is NumericUpDown)
+                {
+                    ((NumericUpDown)ctl).ValueChanged += (sender, e) => UpdatePreview();
+                }
+                else if (ctl is TrackBar)
+                {
+                    ((TrackBar)ctl).ValueChanged += (sender, e) => UpdatePreview();
+                }
+                else if (ctl is TextBox)
+                {
+                    ((TextBox)ctl).TextChanged += (sender, e) => UpdatePreview();
+                }
+                else if (ctl is ComboBox)
+                {
+                    ((ComboBox)ctl).SelectedIndexChanged += (sender, e) => UpdatePreview();
+                }
+            }
         }
 
         public void UpdatePreview()
@@ -154,62 +187,52 @@ namespace ScreenCaptureLib
         private void cboVideoSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoSource = cboVideoSource.Text;
-            UpdatePreview();
         }
 
         private void cboAudioSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AudioSource = cboAudioSource.Text;
-            UpdatePreview();
         }
 
         private void cboVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
             UpdateExtensions();
-            UpdatePreview();
         }
 
         private void cboAudioCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
-            UpdatePreview();
         }
 
         private void cbExtension_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.Extension = cbExtension.Text;
-            UpdatePreview();
         }
 
         private void nudx264CRF_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.x264CRF = (int)nudx264CRF.Value;
-            UpdatePreview();
+            Options.FFmpeg.x264_CRF = (int)nudx264CRF.Value;
         }
 
         private void cbPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
-            UpdatePreview();
         }
 
         private void nudVPxCRF_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.VPxCRF = (int)nudVPxCRF.Value;
-            UpdatePreview();
+            Options.FFmpeg.VPx_CRF = (int)nudVPxCRF.Value;
         }
 
         private void nudQscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.qscale = (int)nudQscale.Value;
-            UpdatePreview();
+            Options.FFmpeg.XviD_qscale = (int)nudQscale.Value;
         }
 
         private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
-            UpdatePreview();
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
@@ -217,14 +240,12 @@ namespace ScreenCaptureLib
             if (Helpers.BrowseFile("Browse for ffmpeg.exe", tbFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
             {
                 RefreshSourcesAsync();
-                UpdatePreview();
             }
         }
 
         private void tbUserArgs_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.UserArgs = tbUserArgs.Text;
-            UpdatePreview();
         }
 
         private void buttonFFmpegHelp_Click(object sender, EventArgs e)
@@ -284,6 +305,16 @@ namespace ScreenCaptureLib
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
             ClipboardHelpers.CopyText(tbCommandLinePreview.Text);
+        }
+
+        private void tbVorbis_qscale_Scroll(object sender, EventArgs e)
+        {
+            Options.FFmpeg.Vorbis_qscale = tbVorbis_qscale.Value;
+        }
+
+        private void tbMP3_qscale_Scroll(object sender, EventArgs e)
+        {
+            Options.FFmpeg.MP3_qscale = libmp3lame_qscale_end - tbMP3_qscale.Value; // 0-9 where a lower value is a higher quality
         }
     }
 }

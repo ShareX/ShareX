@@ -105,14 +105,14 @@ namespace ScreenCaptureLib
             switch (FFmpeg.VideoCodec)
             {
                 case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
-                    args.AppendFormat("-crf {0} ", FFmpeg.x264CRF);
+                    args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                     args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
                     break;
                 case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
-                    args.AppendFormat("-crf {0} ", FFmpeg.x264CRF);
+                    args.AppendFormat("-crf {0} ", FFmpeg.VPx_CRF);
                     break;
                 case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
-                    args.AppendFormat("-qscale:v {0} ", FFmpeg.qscale);
+                    args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
                     break;
             }
 
@@ -124,7 +124,7 @@ namespace ScreenCaptureLib
 
             if (FFmpeg.IsAudioSourceSelected())
             {
-                args.AppendFormat("-c:a {0} ", FFmpeg.AudioCodec.ToString());
+                args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpeg.AudioCodec.ToString(), GetAudioQuality());
             }
 
             if (Duration > 0)
@@ -138,6 +138,23 @@ namespace ScreenCaptureLib
             args.AppendFormat("\"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
 
             return args.ToString();
+        }
+
+        private int GetAudioQuality()
+        {
+            int qscale = 5;
+
+            switch (FFmpeg.AudioCodec)
+            {
+                case FFmpegAudioCodec.libvorbis:
+                    qscale = FFmpeg.Vorbis_qscale;
+                    break;
+                case FFmpegAudioCodec.libmp3lame:
+                    qscale = FFmpeg.MP3_qscale;
+                    break;
+            }
+
+            return qscale;
         }
     }
 }
