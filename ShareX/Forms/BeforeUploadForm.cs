@@ -42,6 +42,7 @@ namespace ShareX
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            DialogResult = DialogResult.OK;
 
             ucBeforeUpload.InitCompleted += (currentDestination) =>
             {

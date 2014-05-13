@@ -80,12 +80,13 @@
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 381);
+            this.ClientSize = new System.Drawing.Size(404, 382);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.ucBeforeUpload);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(420, 460);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(420, 420);
             this.Name = "BeforeUploadForm";

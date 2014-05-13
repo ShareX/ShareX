@@ -55,7 +55,7 @@
             this.lvAfterCaptureTasks.MultiSelect = false;
             this.lvAfterCaptureTasks.Name = "lvAfterCaptureTasks";
             this.lvAfterCaptureTasks.Scrollable = false;
-            this.lvAfterCaptureTasks.Size = new System.Drawing.Size(242, 247);
+            this.lvAfterCaptureTasks.Size = new System.Drawing.Size(290, 247);
             this.lvAfterCaptureTasks.TabIndex = 0;
             this.lvAfterCaptureTasks.UseCompatibleStateImageBehavior = false;
             this.lvAfterCaptureTasks.View = System.Windows.Forms.View.Details;
@@ -100,7 +100,7 @@
             this.pbImage.DrawCheckeredBackground = true;
             this.pbImage.EnableRightClickMenu = true;
             this.pbImage.FullscreenOnClick = true;
-            this.pbImage.Location = new System.Drawing.Point(272, 8);
+            this.pbImage.Location = new System.Drawing.Point(320, 8);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(376, 314);
             this.pbImage.TabIndex = 4;
@@ -118,15 +118,14 @@
             // 
             // tcTasks
             // 
-            this.tcTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tcTasks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tcTasks.Controls.Add(this.tpAfterCapture);
             this.tcTasks.Controls.Add(this.tpBeforeUpload);
             this.tcTasks.Location = new System.Drawing.Point(8, 8);
             this.tcTasks.Name = "tcTasks";
             this.tcTasks.SelectedIndex = 0;
-            this.tcTasks.Size = new System.Drawing.Size(256, 279);
+            this.tcTasks.Size = new System.Drawing.Size(304, 279);
             this.tcTasks.TabIndex = 5;
             // 
             // tpAfterCapture
@@ -135,7 +134,7 @@
             this.tpAfterCapture.Location = new System.Drawing.Point(4, 22);
             this.tpAfterCapture.Name = "tpAfterCapture";
             this.tpAfterCapture.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAfterCapture.Size = new System.Drawing.Size(248, 253);
+            this.tpAfterCapture.Size = new System.Drawing.Size(296, 253);
             this.tpAfterCapture.TabIndex = 0;
             this.tpAfterCapture.Text = "After capture";
             this.tpAfterCapture.UseVisualStyleBackColor = true;
@@ -146,7 +145,7 @@
             this.tpBeforeUpload.Location = new System.Drawing.Point(4, 22);
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBeforeUpload.Size = new System.Drawing.Size(248, 245);
+            this.tpBeforeUpload.Size = new System.Drawing.Size(280, 253);
             this.tpBeforeUpload.TabIndex = 1;
             this.tpBeforeUpload.Text = "Before upload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
@@ -156,7 +155,7 @@
             this.ucBeforeUpload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucBeforeUpload.Location = new System.Drawing.Point(3, 3);
             this.ucBeforeUpload.Name = "ucBeforeUpload";
-            this.ucBeforeUpload.Size = new System.Drawing.Size(242, 239);
+            this.ucBeforeUpload.Size = new System.Drawing.Size(274, 247);
             this.ucBeforeUpload.TabIndex = 0;
             // 
             // AfterCaptureForm
@@ -164,13 +163,13 @@
             this.AcceptButton = this.btnContinue;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 330);
+            this.ClientSize = new System.Drawing.Size(704, 330);
             this.Controls.Add(this.tcTasks);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.pbImage);
-            this.MinimumSize = new System.Drawing.Size(672, 368);
+            this.MinimumSize = new System.Drawing.Size(720, 368);
             this.Name = "AfterCaptureForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
