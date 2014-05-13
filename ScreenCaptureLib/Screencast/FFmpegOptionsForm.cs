@@ -80,7 +80,7 @@ namespace ScreenCaptureLib
                 Options.FFmpeg.CLIPath = cli;
             }
 
-            tbFFmpegPath.Text = Options.FFmpeg.CLIPath;
+            txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
 
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
@@ -144,7 +144,7 @@ namespace ScreenCaptureLib
                 {
                     ((TrackBar)ctl).ValueChanged += (sender, e) => UpdatePreview();
                 }
-                else if (ctl is TextBox)
+                else if (ctl is TextBox && ctl.Name != txtCommandLinePreview.Name)
                 {
                     ((TextBox)ctl).TextChanged += (sender, e) => UpdatePreview();
                 }
@@ -157,7 +157,7 @@ namespace ScreenCaptureLib
 
         public void UpdatePreview()
         {
-            tbCommandLinePreview.Text = "ffmpeg " + Options.GetFFmpegArgs();
+            txtCommandLinePreview.Text = "ffmpeg " + Options.GetFFmpegArgs();
         }
 
         public void UpdateExtensions()
@@ -232,12 +232,13 @@ namespace ScreenCaptureLib
 
         private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.CLIPath = tbFFmpegPath.Text;
+            Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
+            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.LightGreen : Color.LightPink;
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            if (Helpers.BrowseFile("Browse for ffmpeg.exe", tbFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
+            if (Helpers.BrowseFile("Browse for ffmpeg.exe", txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
             {
                 RefreshSourcesAsync();
             }
@@ -267,7 +268,7 @@ namespace ScreenCaptureLib
             {
                 this.InvokeSafe(() =>
                 {
-                    tbFFmpegPath.Text = extractPath;
+                    txtFFmpegPath.Text = extractPath;
                     RefreshSourcesAsync();
                     UpdatePreview();
                 });
@@ -304,7 +305,7 @@ namespace ScreenCaptureLib
 
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
-            ClipboardHelpers.CopyText(tbCommandLinePreview.Text);
+            ClipboardHelpers.CopyText(txtCommandLinePreview.Text);
         }
 
         private void tbVorbis_qscale_Scroll(object sender, EventArgs e)

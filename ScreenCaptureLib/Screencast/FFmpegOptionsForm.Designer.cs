@@ -45,9 +45,9 @@
             this.gbFFmpegExe = new System.Windows.Forms.GroupBox();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnFFmpegBrowse = new System.Windows.Forms.Button();
-            this.tbFFmpegPath = new System.Windows.Forms.TextBox();
+            this.txtFFmpegPath = new System.Windows.Forms.TextBox();
             this.gbCommandLinePreview = new System.Windows.Forms.GroupBox();
-            this.tbCommandLinePreview = new System.Windows.Forms.TextBox();
+            this.txtCommandLinePreview = new System.Windows.Forms.TextBox();
             this.gbCommandLineArgs = new System.Windows.Forms.GroupBox();
             this.btnFFmpegHelp = new System.Windows.Forms.Button();
             this.tbUserArgs = new System.Windows.Forms.TextBox();
@@ -255,7 +255,7 @@
             // 
             this.gbFFmpegExe.Controls.Add(this.btnDownload);
             this.gbFFmpegExe.Controls.Add(this.btnFFmpegBrowse);
-            this.gbFFmpegExe.Controls.Add(this.tbFFmpegPath);
+            this.gbFFmpegExe.Controls.Add(this.txtFFmpegPath);
             this.gbFFmpegExe.Location = new System.Drawing.Point(8, 200);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(648, 56);
@@ -283,17 +283,17 @@
             this.btnFFmpegBrowse.UseVisualStyleBackColor = true;
             this.btnFFmpegBrowse.Click += new System.EventHandler(this.buttonFFmpegBrowse_Click);
             // 
-            // tbFFmpegPath
+            // txtFFmpegPath
             // 
-            this.tbFFmpegPath.Location = new System.Drawing.Point(8, 24);
-            this.tbFFmpegPath.Name = "tbFFmpegPath";
-            this.tbFFmpegPath.Size = new System.Drawing.Size(504, 20);
-            this.tbFFmpegPath.TabIndex = 0;
-            this.tbFFmpegPath.TextChanged += new System.EventHandler(this.tbFFmpegPath_TextChanged);
+            this.txtFFmpegPath.Location = new System.Drawing.Point(8, 24);
+            this.txtFFmpegPath.Name = "txtFFmpegPath";
+            this.txtFFmpegPath.Size = new System.Drawing.Size(504, 20);
+            this.txtFFmpegPath.TabIndex = 0;
+            this.txtFFmpegPath.TextChanged += new System.EventHandler(this.tbFFmpegPath_TextChanged);
             // 
             // gbCommandLinePreview
             // 
-            this.gbCommandLinePreview.Controls.Add(this.tbCommandLinePreview);
+            this.gbCommandLinePreview.Controls.Add(this.txtCommandLinePreview);
             this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 328);
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.Padding = new System.Windows.Forms.Padding(8);
@@ -304,14 +304,14 @@
             // 
             // tbCommandLinePreview
             // 
-            this.tbCommandLinePreview.BackColor = System.Drawing.Color.White;
-            this.tbCommandLinePreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCommandLinePreview.Location = new System.Drawing.Point(8, 21);
-            this.tbCommandLinePreview.Multiline = true;
-            this.tbCommandLinePreview.Name = "tbCommandLinePreview";
-            this.tbCommandLinePreview.ReadOnly = true;
-            this.tbCommandLinePreview.Size = new System.Drawing.Size(632, 67);
-            this.tbCommandLinePreview.TabIndex = 0;
+            this.txtCommandLinePreview.BackColor = System.Drawing.Color.White;
+            this.txtCommandLinePreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCommandLinePreview.Location = new System.Drawing.Point(8, 21);
+            this.txtCommandLinePreview.Multiline = true;
+            this.txtCommandLinePreview.Name = "tbCommandLinePreview";
+            this.txtCommandLinePreview.ReadOnly = true;
+            this.txtCommandLinePreview.Size = new System.Drawing.Size(632, 67);
+            this.txtCommandLinePreview.TabIndex = 0;
             // 
             // gbCommandLineArgs
             // 
@@ -673,9 +673,9 @@
         private System.Windows.Forms.Label lblQscale;
         private System.Windows.Forms.GroupBox gbFFmpegExe;
         private System.Windows.Forms.Button btnFFmpegBrowse;
-        private System.Windows.Forms.TextBox tbFFmpegPath;
+        private System.Windows.Forms.TextBox txtFFmpegPath;
         private System.Windows.Forms.GroupBox gbCommandLinePreview;
-        private System.Windows.Forms.TextBox tbCommandLinePreview;
+        private System.Windows.Forms.TextBox txtCommandLinePreview;
         private System.Windows.Forms.GroupBox gbCommandLineArgs;
         private System.Windows.Forms.Button btnFFmpegHelp;
         private System.Windows.Forms.TextBox tbUserArgs;
