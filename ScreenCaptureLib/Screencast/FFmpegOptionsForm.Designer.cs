@@ -70,6 +70,7 @@
             this.gbSource = new System.Windows.Forms.GroupBox();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.gbContainer = new System.Windows.Forms.GroupBox();
+            this.btnRefreshSources = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -89,7 +90,7 @@
             // lblExt
             // 
             this.lblExt.AutoSize = true;
-            this.lblExt.Location = new System.Drawing.Point(8, 36);
+            this.lblExt.Location = new System.Drawing.Point(8, 26);
             this.lblExt.Name = "lblExt";
             this.lblExt.Size = new System.Drawing.Size(56, 13);
             this.lblExt.TabIndex = 2;
@@ -186,15 +187,15 @@
             // 
             this.cbExtension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExtension.FormattingEnabled = true;
-            this.cbExtension.Location = new System.Drawing.Point(72, 32);
+            this.cbExtension.Location = new System.Drawing.Point(72, 22);
             this.cbExtension.Name = "cbExtension";
-            this.cbExtension.Size = new System.Drawing.Size(72, 21);
+            this.cbExtension.Size = new System.Drawing.Size(88, 21);
             this.cbExtension.TabIndex = 3;
             // 
             // lblCodec
             // 
             this.lblCodec.AutoSize = true;
-            this.lblCodec.Location = new System.Drawing.Point(8, 28);
+            this.lblCodec.Location = new System.Drawing.Point(8, 26);
             this.lblCodec.Name = "lblCodec";
             this.lblCodec.Size = new System.Drawing.Size(70, 13);
             this.lblCodec.TabIndex = 0;
@@ -204,9 +205,9 @@
             // 
             this.cboVideoCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboVideoCodec.FormattingEnabled = true;
-            this.cboVideoCodec.Location = new System.Drawing.Point(88, 24);
+            this.cboVideoCodec.Location = new System.Drawing.Point(88, 22);
             this.cboVideoCodec.Name = "cboVideoCodec";
-            this.cboVideoCodec.Size = new System.Drawing.Size(120, 21);
+            this.cboVideoCodec.Size = new System.Drawing.Size(136, 21);
             this.cboVideoCodec.TabIndex = 1;
             // 
             // cbPreset
@@ -361,7 +362,7 @@
             this.tpVpx.Controls.Add(this.lblVpxCRF);
             this.tpVpx.Location = new System.Drawing.Point(4, 22);
             this.tpVpx.Name = "tpVpx";
-            this.tpVpx.Size = new System.Drawing.Size(304, 46);
+            this.tpVpx.Size = new System.Drawing.Size(312, 46);
             this.tpVpx.TabIndex = 2;
             this.tpVpx.Text = "VP8";
             this.tpVpx.UseVisualStyleBackColor = true;
@@ -381,7 +382,7 @@
             this.tpXvid.Controls.Add(this.lblQscale);
             this.tpXvid.Location = new System.Drawing.Point(4, 22);
             this.tpXvid.Name = "tpXvid";
-            this.tpXvid.Size = new System.Drawing.Size(304, 46);
+            this.tpXvid.Size = new System.Drawing.Size(312, 46);
             this.tpXvid.TabIndex = 3;
             this.tpXvid.Text = "XviD";
             this.tpXvid.UseVisualStyleBackColor = true;
@@ -439,15 +440,15 @@
             // 
             this.cboVideoSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboVideoSource.FormattingEnabled = true;
-            this.cboVideoSource.Location = new System.Drawing.Point(96, 22);
+            this.cboVideoSource.Location = new System.Drawing.Point(88, 22);
             this.cboVideoSource.Name = "cboVideoSource";
-            this.cboVideoSource.Size = new System.Drawing.Size(120, 21);
+            this.cboVideoSource.Size = new System.Drawing.Size(136, 21);
             this.cboVideoSource.TabIndex = 12;
             // 
             // lblVideoSource
             // 
             this.lblVideoSource.AutoSize = true;
-            this.lblVideoSource.Location = new System.Drawing.Point(16, 26);
+            this.lblVideoSource.Location = new System.Drawing.Point(8, 26);
             this.lblVideoSource.Name = "lblVideoSource";
             this.lblVideoSource.Size = new System.Drawing.Size(72, 13);
             this.lblVideoSource.TabIndex = 11;
@@ -457,17 +458,15 @@
             // 
             this.cboAudioSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAudioSource.FormattingEnabled = true;
-            this.cboAudioSource.Items.AddRange(new object[] {
-            "None"});
-            this.cboAudioSource.Location = new System.Drawing.Point(96, 56);
+            this.cboAudioSource.Location = new System.Drawing.Point(88, 52);
             this.cboAudioSource.Name = "cboAudioSource";
-            this.cboAudioSource.Size = new System.Drawing.Size(120, 21);
+            this.cboAudioSource.Size = new System.Drawing.Size(136, 21);
             this.cboAudioSource.TabIndex = 14;
             // 
             // lblAudioSource
             // 
             this.lblAudioSource.AutoSize = true;
-            this.lblAudioSource.Location = new System.Drawing.Point(16, 60);
+            this.lblAudioSource.Location = new System.Drawing.Point(8, 56);
             this.lblAudioSource.Name = "lblAudioSource";
             this.lblAudioSource.Size = new System.Drawing.Size(72, 13);
             this.lblAudioSource.TabIndex = 13;
@@ -477,15 +476,15 @@
             // 
             this.cboAudioCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAudioCodec.FormattingEnabled = true;
-            this.cboAudioCodec.Location = new System.Drawing.Point(88, 56);
+            this.cboAudioCodec.Location = new System.Drawing.Point(88, 52);
             this.cboAudioCodec.Name = "cboAudioCodec";
-            this.cboAudioCodec.Size = new System.Drawing.Size(120, 21);
+            this.cboAudioCodec.Size = new System.Drawing.Size(136, 21);
             this.cboAudioCodec.TabIndex = 16;
             // 
             // lblAudioCodec
             // 
             this.lblAudioCodec.AutoSize = true;
-            this.lblAudioCodec.Location = new System.Drawing.Point(8, 60);
+            this.lblAudioCodec.Location = new System.Drawing.Point(8, 56);
             this.lblAudioCodec.Name = "lblAudioCodec";
             this.lblAudioCodec.Size = new System.Drawing.Size(70, 13);
             this.lblAudioCodec.TabIndex = 15;
@@ -510,9 +509,9 @@
             this.gbCodecs.Controls.Add(this.lblAudioCodec);
             this.gbCodecs.Controls.Add(this.cboVideoCodec);
             this.gbCodecs.Controls.Add(this.lblCodec);
-            this.gbCodecs.Location = new System.Drawing.Point(256, 8);
+            this.gbCodecs.Location = new System.Drawing.Point(248, 8);
             this.gbCodecs.Name = "gbCodecs";
-            this.gbCodecs.Size = new System.Drawing.Size(224, 88);
+            this.gbCodecs.Size = new System.Drawing.Size(232, 88);
             this.gbCodecs.TabIndex = 18;
             this.gbCodecs.TabStop = false;
             this.gbCodecs.Text = "Codecs";
@@ -521,12 +520,22 @@
             // 
             this.gbContainer.Controls.Add(this.cbExtension);
             this.gbContainer.Controls.Add(this.lblExt);
-            this.gbContainer.Location = new System.Drawing.Point(496, 8);
+            this.gbContainer.Location = new System.Drawing.Point(488, 8);
             this.gbContainer.Name = "gbContainer";
-            this.gbContainer.Size = new System.Drawing.Size(160, 88);
+            this.gbContainer.Size = new System.Drawing.Size(168, 88);
             this.gbContainer.TabIndex = 19;
             this.gbContainer.TabStop = false;
             this.gbContainer.Text = "Container format";
+            // 
+            // btnRefreshSources
+            // 
+            this.btnRefreshSources.Location = new System.Drawing.Point(176, 4);
+            this.btnRefreshSources.Name = "btnRefreshSources";
+            this.btnRefreshSources.Size = new System.Drawing.Size(56, 23);
+            this.btnRefreshSources.TabIndex = 20;
+            this.btnRefreshSources.Text = "Refresh";
+            this.btnRefreshSources.UseVisualStyleBackColor = true;
+            this.btnRefreshSources.Click += new System.EventHandler(this.btnRefreshSources_Click);
             // 
             // FFmpegOptionsForm
             // 
@@ -534,6 +543,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(668, 474);
+            this.Controls.Add(this.btnRefreshSources);
             this.Controls.Add(this.gbContainer);
             this.Controls.Add(this.gbCodecs);
             this.Controls.Add(this.gbSource);
@@ -619,5 +629,6 @@
         private System.Windows.Forms.GroupBox gbSource;
         private System.Windows.Forms.GroupBox gbCodecs;
         private System.Windows.Forms.GroupBox gbContainer;
+        private System.Windows.Forms.Button btnRefreshSources;
     }
 }

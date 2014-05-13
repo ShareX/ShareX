@@ -144,14 +144,61 @@ namespace ScreenCaptureLib
             return false;
         }
 
-        public void ListDevices()
+        public DirectShowDevices GetDirectShowDevices()
         {
-            WriteInput("-list_devices true -f dshow -i dummy");
+            DirectShowDevices devices = new DirectShowDevices();
+
+            if (File.Exists(Options.FFmpeg.CLIPath))
+            {
+                string arg = "-list_devices true -f dshow -i dummy";
+                Open(Options.FFmpeg.CLIPath, arg);
+                string output = Errors.ToString();
+                string[] lines = output.Lines();
+                bool isVideo = true;
+                Regex regex = new Regex("\\[dshow @ \\w+\\]  \"(.+)\"", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+                foreach (string line in lines)
+                {
+                    if (line.EndsWith("] DirectShow video devices", StringComparison.InvariantCulture))
+                    {
+                        isVideo = true;
+                        continue;
+                    }
+                    else if (line.EndsWith("] DirectShow audio devices", StringComparison.InvariantCulture))
+                    {
+                        isVideo = false;
+                        continue;
+                    }
+
+                    Match match = regex.Match(line);
+
+                    if (match.Success)
+                    {
+                        string value = match.Groups[1].Value;
+
+                        if (isVideo)
+                        {
+                            devices.VideoDevices.Add(value);
+                        }
+                        else
+                        {
+                            devices.AudioDevices.Add(value);
+                        }
+                    }
+                }
+            }
+
+            return devices;
         }
 
         public override void Close()
         {
             WriteInput("q");
         }
+    }
+
+    public class DirectShowDevices
+    {
+        public List<string> VideoDevices = new List<string>();
+        public List<string> AudioDevices = new List<string>();
     }
 }

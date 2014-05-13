@@ -71,6 +71,8 @@ namespace ScreenCaptureLib
         private void SettingsLoad()
         {
             // General
+            RefreshSources();
+
             cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboVideoCodec.SelectedIndexChanged += (sender, e) => { UpdateUI(); UpdateExtensions(); };
@@ -105,6 +107,30 @@ namespace ScreenCaptureLib
             // XviD
             nudQscale.Value = Options.FFmpeg.qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
             nudQscale.ValueChanged += (sender, e) => UpdateUI();
+        }
+
+        private void RefreshSources()
+        {
+            DirectShowDevices devices = null;
+            Helpers.AsyncJob(() =>
+            {
+                using (FFmpegHelper ffmpeg = new FFmpegHelper(Options))
+                {
+                    devices = ffmpeg.GetDirectShowDevices();
+                }
+            },
+            () =>
+            {
+                cboVideoSource.Items.Clear();
+                cboVideoSource.Items.Add("GDI grab");
+                cboAudioSource.Items.Clear();
+                cboAudioSource.Items.Add("None");
+                if (devices != null)
+                {
+                    cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
+                    cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
+                }
+            });
         }
 
         public void SettingsSave()
@@ -154,8 +180,11 @@ namespace ScreenCaptureLib
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("Browse for ffmpeg.exe", tbFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
-            UpdateUI();
+            if (Helpers.BrowseFile("Browse for ffmpeg.exe", tbFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
+            {
+                RefreshSources();
+                UpdateUI();
+            }
         }
 
         private void buttonFFmpegHelp_Click(object sender, EventArgs e)
@@ -175,7 +204,12 @@ namespace ScreenCaptureLib
 
             if (result)
             {
-                this.InvokeSafe(() => tbFFmpegPath.Text = extractPath);
+                this.InvokeSafe(() =>
+                {
+                    tbFFmpegPath.Text = extractPath;
+                    RefreshSources();
+                    UpdateUI();
+                });
                 MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -210,6 +244,11 @@ namespace ScreenCaptureLib
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
             ClipboardHelpers.CopyText("ffmpeg " + Options.GetFFmpegArgs());
+        }
+
+        private void btnRefreshSources_Click(object sender, EventArgs e)
+        {
+            RefreshSources();
         }
     }
 }
