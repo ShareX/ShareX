@@ -498,5 +498,10 @@ namespace HelpersLib
             DescriptionAttribute[] attributes = (DescriptionAttribute[])type.GetCustomAttributes(typeof(DescriptionAttribute), false);
             return (attributes.Length > 0) ? attributes[0].Description : type.Name;
         }
+
+        public static IEnumerable<T> TakeLast<T>(this IEnumerable<T> source, int count)
+        {
+            return source.Reverse().Take(count).Reverse();
+        }
     }
 }

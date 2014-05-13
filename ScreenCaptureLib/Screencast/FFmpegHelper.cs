@@ -44,22 +44,19 @@ namespace ScreenCaptureLib
         public FFmpegHelper(ScreencastOptions options)
         {
             Options = options;
-
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
-
-            // It is actually output data
-            ErrorDataReceived += FFmpegCLIHelper_OutputDataReceived;
-        }
-
-        private void FFmpegCLIHelper_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            //DebugHelper.WriteLine(e.Data);
         }
 
         public bool Record()
         {
-            int result = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegArgs());
-            return result == 0;
+            int errorCode = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegArgs());
+            bool result = errorCode == 0;
+            if (Options.FFmpeg.ShowError && !result)
+            {
+                string text = string.Join("\r\n", Errors.ToString().Lines().Where(x => !string.IsNullOrEmpty(x)).TakeLast(10).ToArray());
+                MessageBox.Show(text, "ShareX - FFmpeg error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
         }
 
         public static DialogResult DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)

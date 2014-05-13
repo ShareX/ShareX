@@ -40,6 +40,7 @@ namespace ScreenCaptureLib
         public string Extension { get; set; }
         public string CLIPath { get; set; }
         public string UserArgs { get; set; }
+        public bool ShowError { get; set; }
 
         // H.264 - x264
         public FFmpegPreset Preset { get; set; }
