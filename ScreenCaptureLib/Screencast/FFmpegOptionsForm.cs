@@ -144,7 +144,7 @@ namespace ScreenCaptureLib
                 {
                     ((TrackBar)ctl).ValueChanged += (sender, e) => UpdatePreview();
                 }
-                else if (ctl is TextBox && ctl.Name != txtCommandLinePreview.Name)
+                else if (ctl is TextBox && ctl != txtCommandLinePreview)
                 {
                     ((TextBox)ctl).TextChanged += (sender, e) => UpdatePreview();
                 }
