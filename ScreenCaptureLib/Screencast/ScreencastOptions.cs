@@ -124,10 +124,17 @@ namespace ScreenCaptureLib
 
             if (FFmpeg.IsAudioSourceSelected())
             {
-                string audioString = GetAudioString();
-                if (!string.IsNullOrEmpty(audioString))
+                switch (FFmpeg.AudioCodec)
                 {
-                    args.Append(audioString);
+                    case FFmpegAudioCodec.libvorbis: // http://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
+                        args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libvorbis.ToString(), FFmpeg.Vorbis_qscale);
+                        break;
+                    case FFmpegAudioCodec.libmp3lame: // http://trac.ffmpeg.org/wiki/Encoding%20VBR%20(Variable%20Bit%20Rate)%20mp3%20audio
+                        args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libmp3lame.ToString(), FFmpeg.MP3_qscale);
+                        break;
+                    case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/AACEncodingGuide
+                        args.AppendFormat("-ac 2 -c:a libvo_aacenc -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
+                        break;
                 }
             }
 
@@ -142,26 +149,6 @@ namespace ScreenCaptureLib
             args.AppendFormat("\"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
 
             return args.ToString();
-        }
-
-        private string GetAudioString()
-        {
-            StringBuilder sbAudioString = new StringBuilder();
-
-            switch (FFmpeg.AudioCodec)
-            {
-                case FFmpegAudioCodec.libvorbis:
-                    sbAudioString.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libvorbis.ToString(), FFmpeg.Vorbis_qscale);
-                    break;
-                case FFmpegAudioCodec.libmp3lame:
-                    sbAudioString.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libmp3lame.ToString(), FFmpeg.MP3_qscale);
-                    break;
-                case FFmpegAudioCodec.libvoaacenc:
-                    sbAudioString.AppendFormat("-ac 2 -c:a {0} -b:a {1}k ", "libvo_aacenc", FFmpeg.AAC_bitrate);
-                    break;
-            }
-
-            return sbAudioString.ToString();
         }
     }
 }
