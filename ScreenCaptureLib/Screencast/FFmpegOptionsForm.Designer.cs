@@ -302,13 +302,13 @@
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
             // 
-            // tbCommandLinePreview
+            // txtCommandLinePreview
             // 
             this.txtCommandLinePreview.BackColor = System.Drawing.Color.White;
             this.txtCommandLinePreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCommandLinePreview.Location = new System.Drawing.Point(8, 21);
             this.txtCommandLinePreview.Multiline = true;
-            this.txtCommandLinePreview.Name = "tbCommandLinePreview";
+            this.txtCommandLinePreview.Name = "txtCommandLinePreview";
             this.txtCommandLinePreview.ReadOnly = true;
             this.txtCommandLinePreview.Size = new System.Drawing.Size(632, 67);
             this.txtCommandLinePreview.TabIndex = 0;
@@ -447,6 +447,7 @@
             // 
             // tbVorbis_qscale
             // 
+            this.tbVorbis_qscale.BackColor = System.Drawing.Color.White;
             this.tbVorbis_qscale.Dock = System.Windows.Forms.DockStyle.Right;
             this.tbVorbis_qscale.LargeChange = 1;
             this.tbVorbis_qscale.Location = new System.Drawing.Point(56, 3);
@@ -478,6 +479,7 @@
             // 
             // tbMP3_qscale
             // 
+            this.tbMP3_qscale.BackColor = System.Drawing.Color.White;
             this.tbMP3_qscale.Dock = System.Windows.Forms.DockStyle.Right;
             this.tbMP3_qscale.LargeChange = 1;
             this.tbMP3_qscale.Location = new System.Drawing.Point(56, 0);

@@ -272,7 +272,6 @@ namespace ScreenCaptureLib
                     RefreshSourcesAsync();
                     UpdatePreview();
                 });
-                MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
