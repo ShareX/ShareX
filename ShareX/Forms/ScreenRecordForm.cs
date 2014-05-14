@@ -38,7 +38,6 @@ namespace ShareX
 {
     public class ScreenRecordForm : TrayForm
     {
-        public Rectangle CaptureRectangle { get; private set; }
         public bool IsRecording { get; private set; }
 
         private static ScreenRecordForm instance;
@@ -58,6 +57,7 @@ namespace ShareX
         }
 
         private ScreenRecorder screenRecorder;
+        private Rectangle captureRectangle;
 
         private ScreenRecordForm()
         {
@@ -75,10 +75,9 @@ namespace ShareX
 
         private void SelectRegion()
         {
-            Rectangle rect;
-            if (TaskHelpers.SelectRegion(out rect) && !rect.IsEmpty)
+            if (TaskHelpers.SelectRegion(out captureRectangle) && !captureRectangle.IsEmpty)
             {
-                CaptureRectangle = CaptureHelpers.EvenRectangleSize(rect);
+                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
             }
         }
 
@@ -119,14 +118,14 @@ namespace ShareX
             }
 
             SelectRegion();
-            Screenshot.CaptureCursor = TaskSettings.CaptureSettings.ShowCursor;
 
-            if (IsRecording || CaptureRectangle.IsEmpty || screenRecorder != null)
+            if (IsRecording || captureRectangle.IsEmpty || screenRecorder != null)
             {
                 return;
             }
 
             IsRecording = true;
+            Screenshot.CaptureCursor = TaskSettings.CaptureSettings.ShowCursor;
 
             TrayIcon.Icon = Resources.control_record_yellow.ToIcon();
             TrayIcon.Visible = true;
@@ -137,7 +136,7 @@ namespace ShareX
             {
                 using (ScreenRegionManager screenRegionManager = new ScreenRegionManager())
                 {
-                    screenRegionManager.Start(CaptureRectangle);
+                    screenRegionManager.Start(captureRectangle);
 
                     await TaskEx.Run(() =>
                     {
@@ -156,7 +155,7 @@ namespace ShareX
 
                         ScreencastOptions options = new ScreencastOptions()
                         {
-                            CaptureArea = CaptureRectangle,
+                            CaptureArea = captureRectangle,
                             GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
                             ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                             OutputPath = path,
@@ -166,7 +165,7 @@ namespace ShareX
                             DrawCursor = TaskSettings.CaptureSettings.ShowCursor
                         };
 
-                        screenRecorder = new ScreenRecorder(options, CaptureRectangle, TaskSettings.CaptureSettings.ScreenRecordOutput);
+                        screenRecorder = new ScreenRecorder(options, captureRectangle, TaskSettings.CaptureSettings.ScreenRecordOutput);
 
                         int delay = (int)(TaskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 
