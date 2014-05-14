@@ -73,7 +73,7 @@ namespace ScreenCaptureLib
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
-            cbExtension.Text = Options.FFmpeg.Extension;
+            cboExtension.Text = Options.FFmpeg.Extension;
 
             string cli = "ffmpeg.exe";
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
@@ -152,6 +152,7 @@ namespace ScreenCaptureLib
                 else if (ctl is ComboBox)
                 {
                     ((ComboBox)ctl).SelectedIndexChanged += (sender, e) => UpdatePreview();
+                    ((ComboBox)ctl).TextChanged += (sender, e) => UpdatePreview();
                 }
             }
         }
@@ -163,19 +164,20 @@ namespace ScreenCaptureLib
 
         public void UpdateExtensions()
         {
-            cbExtension.Items.Clear();
+            cboExtension.Items.Clear();
 
             if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid)
             {
-                cbExtension.Items.Add("mp4");
+                cboExtension.Items.Add("mp4");
             }
             else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx)
             {
-                cbExtension.Items.Add("webm");
+                cboExtension.Items.Add("webm");
             }
 
-            cbExtension.Items.Add("avi");
-            cbExtension.SelectedIndex = 0;
+            cboExtension.Items.Add("avi");
+            cboExtension.Items.Add("mkv");
+            cboExtension.Text = Options.FFmpeg.Extension;
         }
 
         private void UpdateUI()
@@ -213,7 +215,7 @@ namespace ScreenCaptureLib
 
         private void cbExtension_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Extension = cbExtension.Text;
+            Options.FFmpeg.Extension = cboExtension.Text;
         }
 
         private void nudx264CRF_ValueChanged(object sender, EventArgs e)
@@ -331,6 +333,11 @@ namespace ScreenCaptureLib
             tbAACBitrate.Value = (int)(Math.Round(Convert.ToDouble(tbAACBitrate.Value) / 32.0) * 32.0);
             Options.FFmpeg.AAC_bitrate = tbAACBitrate.Value;
             UpdateUI();
+        }
+
+        private void cboExtension_TextChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.Extension = cboExtension.Text;
         }
     }
 }
