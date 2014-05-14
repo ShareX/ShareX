@@ -176,8 +176,6 @@ namespace ScreenCaptureLib
 
             cbExtension.Items.Add("avi");
             cbExtension.SelectedIndex = 0;
-
-            tcFFmpegVideoCodecs.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
         }
 
         private void UpdateUI()

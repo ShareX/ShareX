@@ -78,10 +78,10 @@ namespace ScreenCaptureLib
             // XviD
             XviD_qscale = 3;
 
-            // Vorbis
+            // Audio
             Vorbis_qscale = 3;
             MP3_qscale = 4;
-            AAC_bitrate = 64;
+            AAC_bitrate = 128;
         }
 
         public bool IsAudioSourceSelected()
