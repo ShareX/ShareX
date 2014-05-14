@@ -73,7 +73,7 @@ namespace ScreenCaptureLib
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
-            cbExtension.Text = Options.FFmpeg.Extension;
+            cboExtension.Text = Options.FFmpeg.Extension;
 
             string cli = "ffmpeg.exe";
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
@@ -163,19 +163,24 @@ namespace ScreenCaptureLib
 
         public void UpdateExtensions()
         {
-            cbExtension.Items.Clear();
+            cboExtension.Items.Clear();
 
-            if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid)
+            cboExtension.Items.Add("mkv");
+
+            if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264)
             {
-                cbExtension.Items.Add("mp4");
+                cboExtension.Items.Add("mp4");
             }
             else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx)
             {
-                cbExtension.Items.Add("webm");
+                cboExtension.Items.Add("webm");
+            }
+            else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid)
+            {
+                cboExtension.Items.Add("avi");
             }
 
-            cbExtension.Items.Add("avi");
-            cbExtension.SelectedIndex = 0;
+            cboExtension.SelectedIndex = Options.FFmpeg.Extension.Equals("mkv") ? 0 : 1;
         }
 
         private void UpdateUI()
@@ -213,7 +218,7 @@ namespace ScreenCaptureLib
 
         private void cbExtension_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Extension = cbExtension.Text;
+            Options.FFmpeg.Extension = cboExtension.Text;
         }
 
         private void nudx264CRF_ValueChanged(object sender, EventArgs e)
