@@ -61,6 +61,7 @@ namespace ScreenCaptureLib
                 SettingsLoad();
                 BindUpdatePreview(Controls);
                 UpdateExtensions();
+                UpdateUI();
             }
         }
 
@@ -179,6 +180,13 @@ namespace ScreenCaptureLib
             tcFFmpegVideoCodecs.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
         }
 
+        private void UpdateUI()
+        {
+            lblVorbisQuality.Text = "Quality: " + Options.FFmpeg.Vorbis_qscale;
+            lblMP3Quality.Text = "Quality: " + Options.FFmpeg.MP3_qscale;
+            lblAACQuality.Text = string.Format("Bitrate: {0}k", Options.FFmpeg.AAC_bitrate);
+        }
+
         private void btnRefreshSources_Click(object sender, EventArgs e)
         {
             RefreshSourcesAsync();
@@ -233,7 +241,7 @@ namespace ScreenCaptureLib
         private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
-            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.LightGreen : Color.LightPink;
+            txtFFmpegPath.BackColor = File.Exists(txtFFmpegPath.Text) ? Color.FromArgb(200, 255, 200) : Color.FromArgb(255, 200, 200);
         }
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
@@ -272,6 +280,7 @@ namespace ScreenCaptureLib
                     RefreshSourcesAsync();
                     UpdatePreview();
                 });
+                MessageBox.Show("Successfully downloaded FFmpeg.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -310,11 +319,20 @@ namespace ScreenCaptureLib
         private void tbVorbis_qscale_Scroll(object sender, EventArgs e)
         {
             Options.FFmpeg.Vorbis_qscale = tbVorbis_qscale.Value;
+            UpdateUI();
         }
 
         private void tbMP3_qscale_Scroll(object sender, EventArgs e)
         {
             Options.FFmpeg.MP3_qscale = libmp3lame_qscale_end - tbMP3_qscale.Value; // 0-9 where a lower value is a higher quality
+            UpdateUI();
+        }
+
+        private void tbAACBitrate_Scroll(object sender, EventArgs e)
+        {
+            tbAACBitrate.Value = (int)(Math.Round(Convert.ToDouble(tbAACBitrate.Value) / 32.0) * 32.0);
+            Options.FFmpeg.AAC_bitrate = tbAACBitrate.Value;
+            UpdateUI();
         }
     }
 }

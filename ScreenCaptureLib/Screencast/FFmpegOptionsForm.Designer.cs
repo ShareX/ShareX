@@ -64,7 +64,7 @@
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
             this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMP3Quality = new System.Windows.Forms.Label();
             this.cboVideoSource = new System.Windows.Forms.ComboBox();
             this.lblVideoSource = new System.Windows.Forms.Label();
             this.cboAudioSource = new System.Windows.Forms.ComboBox();
@@ -75,6 +75,9 @@
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.gbContainer = new System.Windows.Forms.GroupBox();
             this.btnRefreshSources = new System.Windows.Forms.Button();
+            this.tpAAC = new System.Windows.Forms.TabPage();
+            this.tbAACBitrate = new System.Windows.Forms.TrackBar();
+            this.lblAACQuality = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -93,6 +96,8 @@
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
             this.gbContainer.SuspendLayout();
+            this.tpAAC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblExt
@@ -427,6 +432,7 @@
             // 
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpVorbis);
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpMP3);
+            this.tcFFmpegAudioCodecs.Controls.Add(this.tpAAC);
             this.tcFFmpegAudioCodecs.Location = new System.Drawing.Point(336, 112);
             this.tcFFmpegAudioCodecs.Name = "tcFFmpegAudioCodecs";
             this.tcFFmpegAudioCodecs.SelectedIndex = 0;
@@ -450,10 +456,11 @@
             this.tbVorbis_qscale.BackColor = System.Drawing.Color.White;
             this.tbVorbis_qscale.Dock = System.Windows.Forms.DockStyle.Right;
             this.tbVorbis_qscale.LargeChange = 1;
-            this.tbVorbis_qscale.Location = new System.Drawing.Point(56, 3);
+            this.tbVorbis_qscale.Location = new System.Drawing.Point(64, 3);
             this.tbVorbis_qscale.Name = "tbVorbis_qscale";
-            this.tbVorbis_qscale.Size = new System.Drawing.Size(253, 40);
+            this.tbVorbis_qscale.Size = new System.Drawing.Size(245, 40);
             this.tbVorbis_qscale.TabIndex = 1;
+            this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.tbVorbis_qscale.Value = 3;
             this.tbVorbis_qscale.Scroll += new System.EventHandler(this.tbVorbis_qscale_Scroll);
             // 
@@ -469,7 +476,7 @@
             // tpMP3
             // 
             this.tpMP3.Controls.Add(this.tbMP3_qscale);
-            this.tpMP3.Controls.Add(this.label1);
+            this.tpMP3.Controls.Add(this.lblMP3Quality);
             this.tpMP3.Location = new System.Drawing.Point(4, 22);
             this.tpMP3.Name = "tpMP3";
             this.tpMP3.Size = new System.Drawing.Size(312, 46);
@@ -487,17 +494,18 @@
             this.tbMP3_qscale.Name = "tbMP3_qscale";
             this.tbMP3_qscale.Size = new System.Drawing.Size(256, 46);
             this.tbMP3_qscale.TabIndex = 1;
+            this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.tbMP3_qscale.Value = 5;
             this.tbMP3_qscale.Scroll += new System.EventHandler(this.tbMP3_qscale_Scroll);
             // 
-            // label1
+            // lblMP3Quality
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quality:";
+            this.lblMP3Quality.AutoSize = true;
+            this.lblMP3Quality.Location = new System.Drawing.Point(8, 16);
+            this.lblMP3Quality.Name = "lblMP3Quality";
+            this.lblMP3Quality.Size = new System.Drawing.Size(42, 13);
+            this.lblMP3Quality.TabIndex = 0;
+            this.lblMP3Quality.Text = "Quality:";
             // 
             // cboVideoSource
             // 
@@ -603,6 +611,44 @@
             this.btnRefreshSources.UseVisualStyleBackColor = true;
             this.btnRefreshSources.Click += new System.EventHandler(this.btnRefreshSources_Click);
             // 
+            // tpAAC
+            // 
+            this.tpAAC.Controls.Add(this.tbAACBitrate);
+            this.tpAAC.Controls.Add(this.lblAACQuality);
+            this.tpAAC.Location = new System.Drawing.Point(4, 22);
+            this.tpAAC.Name = "tpAAC";
+            this.tpAAC.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAAC.Size = new System.Drawing.Size(312, 46);
+            this.tpAAC.TabIndex = 3;
+            this.tpAAC.Text = "AAC";
+            this.tpAAC.UseVisualStyleBackColor = true;
+            // 
+            // tbAACBitrate
+            // 
+            this.tbAACBitrate.BackColor = System.Drawing.Color.White;
+            this.tbAACBitrate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbAACBitrate.LargeChange = 32;
+            this.tbAACBitrate.Location = new System.Drawing.Point(72, 3);
+            this.tbAACBitrate.Maximum = 320;
+            this.tbAACBitrate.Minimum = 32;
+            this.tbAACBitrate.Name = "tbAACBitrate";
+            this.tbAACBitrate.Size = new System.Drawing.Size(237, 40);
+            this.tbAACBitrate.SmallChange = 32;
+            this.tbAACBitrate.TabIndex = 1;
+            this.tbAACBitrate.TickFrequency = 32;
+            this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tbAACBitrate.Value = 64;
+            this.tbAACBitrate.Scroll += new System.EventHandler(this.tbAACBitrate_Scroll);
+            // 
+            // lblAACQuality
+            // 
+            this.lblAACQuality.AutoSize = true;
+            this.lblAACQuality.Location = new System.Drawing.Point(8, 16);
+            this.lblAACQuality.Name = "lblAACQuality";
+            this.lblAACQuality.Size = new System.Drawing.Size(40, 13);
+            this.lblAACQuality.TabIndex = 0;
+            this.lblAACQuality.Text = "Bitrate:";
+            // 
             // FFmpegOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,6 +702,9 @@
             this.gbCodecs.PerformLayout();
             this.gbContainer.ResumeLayout(false);
             this.gbContainer.PerformLayout();
+            this.tpAAC.ResumeLayout(false);
+            this.tpAAC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -706,6 +755,9 @@
         private System.Windows.Forms.TrackBar tbVorbis_qscale;
         private System.Windows.Forms.Label lblVorbisQuality;
         private System.Windows.Forms.TrackBar tbMP3_qscale;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMP3Quality;
+        private System.Windows.Forms.TabPage tpAAC;
+        private System.Windows.Forms.TrackBar tbAACBitrate;
+        private System.Windows.Forms.Label lblAACQuality;
     }
 }

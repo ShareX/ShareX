@@ -55,6 +55,7 @@ namespace ScreenCaptureLib
         // Audio
         public int Vorbis_qscale { get; set; }
         public int MP3_qscale { get; set; }
+        public int AAC_bitrate { get; set; }  // kbit/s
 
         public FFmpegOptions()
         {
@@ -79,6 +80,8 @@ namespace ScreenCaptureLib
 
             // Vorbis
             Vorbis_qscale = 3;
+            MP3_qscale = 4;
+            AAC_bitrate = 64;
         }
 
         public bool IsAudioSourceSelected()

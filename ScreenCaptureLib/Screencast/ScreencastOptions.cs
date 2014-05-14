@@ -124,7 +124,11 @@ namespace ScreenCaptureLib
 
             if (FFmpeg.IsAudioSourceSelected())
             {
-                args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpeg.AudioCodec.ToString(), GetAudioQuality());
+                string audioString = GetAudioString();
+                if (!string.IsNullOrEmpty(audioString))
+                {
+                    args.Append(audioString);
+                }
             }
 
             if (Duration > 0)
@@ -140,21 +144,24 @@ namespace ScreenCaptureLib
             return args.ToString();
         }
 
-        private int GetAudioQuality()
+        private string GetAudioString()
         {
-            int qscale = 5;
+            StringBuilder sbAudioString = new StringBuilder();
 
             switch (FFmpeg.AudioCodec)
             {
                 case FFmpegAudioCodec.libvorbis:
-                    qscale = FFmpeg.Vorbis_qscale;
+                    sbAudioString.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libvorbis.ToString(), FFmpeg.Vorbis_qscale);
                     break;
                 case FFmpegAudioCodec.libmp3lame:
-                    qscale = FFmpeg.MP3_qscale;
+                    sbAudioString.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libmp3lame.ToString(), FFmpeg.MP3_qscale);
+                    break;
+                case FFmpegAudioCodec.libvoaacenc:
+                    sbAudioString.AppendFormat("-ac 2 -c:a {0} -b:a {1}k ", "libvo_aacenc", FFmpeg.AAC_bitrate);
                     break;
             }
 
-            return qscale;
+            return sbAudioString.ToString();
         }
     }
 }

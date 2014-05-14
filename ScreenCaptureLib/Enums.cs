@@ -84,6 +84,8 @@ namespace ScreenCaptureLib
         [Description("Vorbis")]
         libvorbis,
         [Description("MP3")]
-        libmp3lame
+        libmp3lame,
+        [Description("AAC")]
+        libvoaacenc
     }
 }
