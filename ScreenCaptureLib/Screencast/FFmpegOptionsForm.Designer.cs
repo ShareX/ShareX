@@ -34,7 +34,7 @@
             this.lblX264CRF = new System.Windows.Forms.Label();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
             this.tpFFmpeg = new System.Windows.Forms.ToolTip(this.components);
-            this.nudQscale = new System.Windows.Forms.NumericUpDown();
+            this.nudXviDQscale = new System.Windows.Forms.NumericUpDown();
             this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbExtension = new System.Windows.Forms.ComboBox();
             this.lblCodec = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.tbAACBitrate = new System.Windows.Forms.TrackBar();
             this.lblAACQuality = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudXviDQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
             this.gbFFmpegExe.SuspendLayout();
             this.gbCommandLinePreview.SuspendLayout();
@@ -147,31 +147,31 @@
             this.tpFFmpeg.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.tpFFmpeg.ToolTipTitle = "FFmpeg";
             // 
-            // nudQscale
+            // nudXviDQscale
             // 
-            this.nudQscale.Location = new System.Drawing.Point(104, 12);
-            this.nudQscale.Maximum = new decimal(new int[] {
+            this.nudXviDQscale.Location = new System.Drawing.Point(104, 12);
+            this.nudXviDQscale.Maximum = new decimal(new int[] {
             31,
             0,
             0,
             0});
-            this.nudQscale.Minimum = new decimal(new int[] {
+            this.nudXviDQscale.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudQscale.Name = "nudQscale";
-            this.nudQscale.Size = new System.Drawing.Size(48, 20);
-            this.nudQscale.TabIndex = 1;
-            this.nudQscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tpFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
+            this.nudXviDQscale.Name = "nudXviDQscale";
+            this.nudXviDQscale.Size = new System.Drawing.Size(48, 20);
+            this.nudXviDQscale.TabIndex = 1;
+            this.nudXviDQscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tpFFmpeg.SetToolTip(this.nudXviDQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
         " filesize.");
-            this.nudQscale.Value = new decimal(new int[] {
+            this.nudXviDQscale.Value = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
+            this.nudXviDQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
             // 
             // nudVPxCRF
             // 
@@ -399,7 +399,7 @@
             // 
             // tpXvid
             // 
-            this.tpXvid.Controls.Add(this.nudQscale);
+            this.tpXvid.Controls.Add(this.nudXviDQscale);
             this.tpXvid.Controls.Add(this.lblQscale);
             this.tpXvid.Location = new System.Drawing.Point(4, 22);
             this.tpXvid.Name = "tpXvid";
@@ -461,6 +461,8 @@
             this.tbVorbis_qscale.Size = new System.Drawing.Size(245, 40);
             this.tbVorbis_qscale.TabIndex = 1;
             this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tpFFmpeg.SetToolTip(this.tbVorbis_qscale, "Range is 0–10, where 10 is highest quality. \r\n3–6 is a good range to try. Default" +
+        " is 3.");
             this.tbVorbis_qscale.Value = 3;
             this.tbVorbis_qscale.Scroll += new System.EventHandler(this.tbVorbis_qscale_Scroll);
             // 
@@ -495,6 +497,9 @@
             this.tbMP3_qscale.Size = new System.Drawing.Size(256, 46);
             this.tbMP3_qscale.TabIndex = 1;
             this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tpFFmpeg.SetToolTip(this.tbMP3_qscale, "Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce t" +
+        "ransparent results. \r\n4 (default) should be close to perceptual transparency, an" +
+        "d 6 produces an \"acceptable\" quality.");
             this.tbMP3_qscale.Value = 5;
             this.tbMP3_qscale.Scroll += new System.EventHandler(this.tbMP3_qscale_Scroll);
             // 
@@ -674,7 +679,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpegGUI";
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudXviDQscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).EndInit();
             this.gbFFmpegExe.ResumeLayout(false);
             this.gbFFmpegExe.PerformLayout();
@@ -720,7 +725,7 @@
         private System.Windows.Forms.ComboBox cboVideoCodec;
         private System.Windows.Forms.ComboBox cbPreset;
         private System.Windows.Forms.Label lblPreset;
-        private System.Windows.Forms.NumericUpDown nudQscale;
+        private System.Windows.Forms.NumericUpDown nudXviDQscale;
         private System.Windows.Forms.Label lblQscale;
         private System.Windows.Forms.GroupBox gbFFmpegExe;
         private System.Windows.Forms.Button btnFFmpegBrowse;
