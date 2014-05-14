@@ -94,7 +94,7 @@ namespace ScreenCaptureLib
             nudVPxCRF.Value = Options.FFmpeg.VPx_CRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
 
             // XviD
-            nudXviDQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudXviDQscale.Minimum, (int)nudXviDQscale.Maximum);
+            nudQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
 
             // Audio - Vorbis
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
@@ -233,7 +233,7 @@ namespace ScreenCaptureLib
 
         private void nudQscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.XviD_qscale = (int)nudXviDQscale.Value;
+            Options.FFmpeg.XviD_qscale = (int)nudQscale.Value;
         }
 
         private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
