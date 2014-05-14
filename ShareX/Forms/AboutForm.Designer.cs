@@ -84,7 +84,7 @@
             this.lblBerk.Location = new System.Drawing.Point(87, 144);
             this.lblBerk.Name = "lblBerk";
             this.lblBerk.Size = new System.Drawing.Size(60, 13);
-            this.lblBerk.TabIndex = 1;
+            this.lblBerk.TabIndex = 4;
             this.lblBerk.Text = "Jaex - Berk";
             // 
             // pbTR
@@ -167,7 +167,7 @@
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
             this.rtbCredits.Size = new System.Drawing.Size(369, 143);
-            this.rtbCredits.TabIndex = 22;
+            this.rtbCredits.TabIndex = 11;
             this.rtbCredits.Text = resources.GetString("rtbCredits.Text");
             this.rtbCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
             // 
@@ -177,7 +177,7 @@
             this.lblGregoire.Location = new System.Drawing.Point(87, 216);
             this.lblGregoire.Name = "lblGregoire";
             this.lblGregoire.Size = new System.Drawing.Size(120, 13);
-            this.lblGregoire.TabIndex = 23;
+            this.lblGregoire.TabIndex = 8;
             this.lblGregoire.Text = "gpailler - Grégoire Pailler";
             // 
             // pbGregoire
@@ -199,7 +199,7 @@
             this.lblCommitters.Location = new System.Drawing.Point(15, 190);
             this.lblCommitters.Name = "lblCommitters";
             this.lblCommitters.Size = new System.Drawing.Size(61, 13);
-            this.lblCommitters.TabIndex = 25;
+            this.lblCommitters.TabIndex = 7;
             this.lblCommitters.Text = "Committers:";
             // 
             // pbFR
@@ -219,7 +219,7 @@
             this.lblWebSite.Location = new System.Drawing.Point(15, 241);
             this.lblWebSite.Name = "lblWebSite";
             this.lblWebSite.Size = new System.Drawing.Size(76, 13);
-            this.lblWebSite.TabIndex = 27;
+            this.lblWebSite.TabIndex = 9;
             this.lblWebSite.Text = "Web designer:";
             // 
             // pbRU
@@ -252,7 +252,7 @@
             this.lblDana.Location = new System.Drawing.Point(87, 267);
             this.lblDana.Name = "lblDana";
             this.lblDana.Size = new System.Drawing.Size(64, 13);
-            this.lblDana.TabIndex = 28;
+            this.lblDana.TabIndex = 10;
             this.lblDana.Text = "dmxt - Dana";
             // 
             // rtbShareXInfo
@@ -263,7 +263,7 @@
             this.rtbShareXInfo.Name = "rtbShareXInfo";
             this.rtbShareXInfo.ReadOnly = true;
             this.rtbShareXInfo.Size = new System.Drawing.Size(247, 48);
-            this.rtbShareXInfo.TabIndex = 32;
+            this.rtbShareXInfo.TabIndex = 2;
             this.rtbShareXInfo.Text = "Website: http://getsharex.com\nProject page: https://github.com/ShareX/ShareX\nIssu" +
     "es: https://github.com/ShareX/ShareX/issues";
             this.rtbShareXInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
@@ -274,7 +274,7 @@
             this.cLogo.Location = new System.Drawing.Point(210, -8);
             this.cLogo.Name = "cLogo";
             this.cLogo.Size = new System.Drawing.Size(200, 200);
-            this.cLogo.TabIndex = 2;
+            this.cLogo.TabIndex = 5;
             this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
             this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
             // 
@@ -283,7 +283,7 @@
             this.uclUpdate.Location = new System.Drawing.Point(15, 36);
             this.uclUpdate.Name = "uclUpdate";
             this.uclUpdate.Size = new System.Drawing.Size(224, 24);
-            this.uclUpdate.TabIndex = 3;
+            this.uclUpdate.TabIndex = 1;
             // 
             // lblOwners
             // 
@@ -291,7 +291,7 @@
             this.lblOwners.Location = new System.Drawing.Point(15, 117);
             this.lblOwners.Name = "lblOwners";
             this.lblOwners.Size = new System.Drawing.Size(46, 13);
-            this.lblOwners.TabIndex = 33;
+            this.lblOwners.TabIndex = 3;
             this.lblOwners.Text = "Owners:";
             // 
             // pbMikeSteamURL
