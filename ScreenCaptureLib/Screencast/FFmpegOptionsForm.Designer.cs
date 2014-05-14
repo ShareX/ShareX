@@ -36,10 +36,13 @@
             this.tpFFmpeg = new System.Windows.Forms.ToolTip(this.components);
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
+            this.cbPreset = new System.Windows.Forms.ComboBox();
+            this.tbVorbis_qscale = new System.Windows.Forms.TrackBar();
+            this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
+            this.tbAACBitrate = new System.Windows.Forms.TrackBar();
             this.cbExtension = new System.Windows.Forms.ComboBox();
             this.lblCodec = new System.Windows.Forms.Label();
             this.cboVideoCodec = new System.Windows.Forms.ComboBox();
-            this.cbPreset = new System.Windows.Forms.ComboBox();
             this.lblPreset = new System.Windows.Forms.Label();
             this.lblQscale = new System.Windows.Forms.Label();
             this.gbFFmpegExe = new System.Windows.Forms.GroupBox();
@@ -60,13 +63,10 @@
             this.btnCopyPreview = new System.Windows.Forms.Button();
             this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
             this.tpVorbis = new System.Windows.Forms.TabPage();
-            this.tbVorbis_qscale = new System.Windows.Forms.TrackBar();
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
-            this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
             this.lblMP3Quality = new System.Windows.Forms.Label();
             this.tpAAC = new System.Windows.Forms.TabPage();
-            this.tbAACBitrate = new System.Windows.Forms.TrackBar();
             this.lblAACQuality = new System.Windows.Forms.Label();
             this.cboVideoSource = new System.Windows.Forms.ComboBox();
             this.lblVideoSource = new System.Windows.Forms.Label();
@@ -81,6 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
             this.gbFFmpegExe.SuspendLayout();
             this.gbCommandLinePreview.SuspendLayout();
             this.gbCommandLineArgs.SuspendLayout();
@@ -90,11 +93,8 @@
             this.tpXvid.SuspendLayout();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpVorbis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
             this.tpMP3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             this.tpAAC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
             this.gbContainer.SuspendLayout();
@@ -199,6 +199,67 @@
             0});
             this.nudVPxCRF.ValueChanged += new System.EventHandler(this.nudVPxCRF_ValueChanged);
             // 
+            // cbPreset
+            // 
+            this.cbPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPreset.FormattingEnabled = true;
+            this.cbPreset.Location = new System.Drawing.Point(168, 12);
+            this.cbPreset.Name = "cbPreset";
+            this.cbPreset.Size = new System.Drawing.Size(121, 21);
+            this.cbPreset.TabIndex = 3;
+            this.tpFFmpeg.SetToolTip(this.cbPreset, "Default is \"Medium\".");
+            this.cbPreset.SelectedIndexChanged += new System.EventHandler(this.cbPreset_SelectedIndexChanged);
+            // 
+            // tbVorbis_qscale
+            // 
+            this.tbVorbis_qscale.BackColor = System.Drawing.Color.White;
+            this.tbVorbis_qscale.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbVorbis_qscale.LargeChange = 1;
+            this.tbVorbis_qscale.Location = new System.Drawing.Point(88, 3);
+            this.tbVorbis_qscale.Name = "tbVorbis_qscale";
+            this.tbVorbis_qscale.Size = new System.Drawing.Size(221, 40);
+            this.tbVorbis_qscale.TabIndex = 1;
+            this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tpFFmpeg.SetToolTip(this.tbVorbis_qscale, "Range is 0–10, where 10 is highest quality. 3–6 is a good range to try. Default i" +
+        "s 3.");
+            this.tbVorbis_qscale.Value = 3;
+            this.tbVorbis_qscale.Scroll += new System.EventHandler(this.tbVorbis_qscale_Scroll);
+            // 
+            // tbMP3_qscale
+            // 
+            this.tbMP3_qscale.BackColor = System.Drawing.Color.White;
+            this.tbMP3_qscale.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbMP3_qscale.LargeChange = 1;
+            this.tbMP3_qscale.Location = new System.Drawing.Point(88, 3);
+            this.tbMP3_qscale.Maximum = 9;
+            this.tbMP3_qscale.Name = "tbMP3_qscale";
+            this.tbMP3_qscale.Size = new System.Drawing.Size(221, 40);
+            this.tbMP3_qscale.TabIndex = 1;
+            this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tpFFmpeg.SetToolTip(this.tbMP3_qscale, "Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce t" +
+        "ransparent results, 4 (default) should be close to perceptual transparency, and " +
+        "6 produces an \"acceptable\" quality.");
+            this.tbMP3_qscale.Value = 5;
+            this.tbMP3_qscale.Scroll += new System.EventHandler(this.tbMP3_qscale_Scroll);
+            // 
+            // tbAACBitrate
+            // 
+            this.tbAACBitrate.BackColor = System.Drawing.Color.White;
+            this.tbAACBitrate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbAACBitrate.LargeChange = 32;
+            this.tbAACBitrate.Location = new System.Drawing.Point(88, 3);
+            this.tbAACBitrate.Maximum = 320;
+            this.tbAACBitrate.Minimum = 32;
+            this.tbAACBitrate.Name = "tbAACBitrate";
+            this.tbAACBitrate.Size = new System.Drawing.Size(221, 40);
+            this.tbAACBitrate.SmallChange = 32;
+            this.tbAACBitrate.TabIndex = 1;
+            this.tbAACBitrate.TickFrequency = 32;
+            this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.tpFFmpeg.SetToolTip(this.tbAACBitrate, "Default is 128k.");
+            this.tbAACBitrate.Value = 64;
+            this.tbAACBitrate.Scroll += new System.EventHandler(this.tbAACBitrate_Scroll);
+            // 
             // cbExtension
             // 
             this.cbExtension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -227,17 +288,6 @@
             this.cboVideoCodec.Size = new System.Drawing.Size(136, 21);
             this.cboVideoCodec.TabIndex = 1;
             this.cboVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cboVideoCodec_SelectedIndexChanged);
-            // 
-            // cbPreset
-            // 
-            this.cbPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPreset.FormattingEnabled = true;
-            this.cbPreset.Location = new System.Drawing.Point(168, 12);
-            this.cbPreset.Name = "cbPreset";
-            this.cbPreset.Size = new System.Drawing.Size(121, 21);
-            this.cbPreset.TabIndex = 3;
-            this.tpFFmpeg.SetToolTip(this.cbPreset, "Default is \"Medium\".");
-            this.cbPreset.SelectedIndexChanged += new System.EventHandler(this.cbPreset_SelectedIndexChanged);
             // 
             // lblPreset
             // 
@@ -431,9 +481,9 @@
             // 
             // tcFFmpegAudioCodecs
             // 
+            this.tcFFmpegAudioCodecs.Controls.Add(this.tpAAC);
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpVorbis);
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpMP3);
-            this.tcFFmpegAudioCodecs.Controls.Add(this.tpAAC);
             this.tcFFmpegAudioCodecs.Location = new System.Drawing.Point(336, 112);
             this.tcFFmpegAudioCodecs.Name = "tcFFmpegAudioCodecs";
             this.tcFFmpegAudioCodecs.SelectedIndex = 0;
@@ -451,21 +501,6 @@
             this.tpVorbis.TabIndex = 0;
             this.tpVorbis.Text = "Vorbis";
             this.tpVorbis.UseVisualStyleBackColor = true;
-            // 
-            // tbVorbis_qscale
-            // 
-            this.tbVorbis_qscale.BackColor = System.Drawing.Color.White;
-            this.tbVorbis_qscale.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tbVorbis_qscale.LargeChange = 1;
-            this.tbVorbis_qscale.Location = new System.Drawing.Point(88, 3);
-            this.tbVorbis_qscale.Name = "tbVorbis_qscale";
-            this.tbVorbis_qscale.Size = new System.Drawing.Size(221, 40);
-            this.tbVorbis_qscale.TabIndex = 1;
-            this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.tpFFmpeg.SetToolTip(this.tbVorbis_qscale, "Range is 0–10, where 10 is highest quality. 3–6 is a good range to try. Default i" +
-        "s 3.");
-            this.tbVorbis_qscale.Value = 3;
-            this.tbVorbis_qscale.Scroll += new System.EventHandler(this.tbVorbis_qscale_Scroll);
             // 
             // lblVorbisQuality
             // 
@@ -488,23 +523,6 @@
             this.tpMP3.Text = "MP3";
             this.tpMP3.UseVisualStyleBackColor = true;
             // 
-            // tbMP3_qscale
-            // 
-            this.tbMP3_qscale.BackColor = System.Drawing.Color.White;
-            this.tbMP3_qscale.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tbMP3_qscale.LargeChange = 1;
-            this.tbMP3_qscale.Location = new System.Drawing.Point(88, 3);
-            this.tbMP3_qscale.Maximum = 9;
-            this.tbMP3_qscale.Name = "tbMP3_qscale";
-            this.tbMP3_qscale.Size = new System.Drawing.Size(221, 40);
-            this.tbMP3_qscale.TabIndex = 1;
-            this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.tpFFmpeg.SetToolTip(this.tbMP3_qscale, "Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce t" +
-        "ransparent results, 4 (default) should be close to perceptual transparency, and " +
-        "6 produces an \"acceptable\" quality.");
-            this.tbMP3_qscale.Value = 5;
-            this.tbMP3_qscale.Scroll += new System.EventHandler(this.tbMP3_qscale_Scroll);
-            // 
             // lblMP3Quality
             // 
             this.lblMP3Quality.AutoSize = true;
@@ -525,24 +543,6 @@
             this.tpAAC.TabIndex = 3;
             this.tpAAC.Text = "AAC";
             this.tpAAC.UseVisualStyleBackColor = true;
-            // 
-            // tbAACBitrate
-            // 
-            this.tbAACBitrate.BackColor = System.Drawing.Color.White;
-            this.tbAACBitrate.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tbAACBitrate.LargeChange = 32;
-            this.tbAACBitrate.Location = new System.Drawing.Point(88, 3);
-            this.tbAACBitrate.Maximum = 320;
-            this.tbAACBitrate.Minimum = 32;
-            this.tbAACBitrate.Name = "tbAACBitrate";
-            this.tbAACBitrate.Size = new System.Drawing.Size(221, 40);
-            this.tbAACBitrate.SmallChange = 32;
-            this.tbAACBitrate.TabIndex = 1;
-            this.tbAACBitrate.TickFrequency = 32;
-            this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.tpFFmpeg.SetToolTip(this.tbAACBitrate, "Default is 128k.");
-            this.tbAACBitrate.Value = 64;
-            this.tbAACBitrate.Scroll += new System.EventHandler(this.tbAACBitrate_Scroll);
             // 
             // lblAACQuality
             // 
@@ -684,6 +684,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
             this.gbFFmpegExe.ResumeLayout(false);
             this.gbFFmpegExe.PerformLayout();
             this.gbCommandLinePreview.ResumeLayout(false);
@@ -700,13 +703,10 @@
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
             this.tpVorbis.ResumeLayout(false);
             this.tpVorbis.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
             this.tpMP3.ResumeLayout(false);
             this.tpMP3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             this.tpAAC.ResumeLayout(false);
             this.tpAAC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
             this.gbSource.ResumeLayout(false);
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);

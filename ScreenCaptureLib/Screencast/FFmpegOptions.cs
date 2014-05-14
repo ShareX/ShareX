@@ -53,9 +53,9 @@ namespace ScreenCaptureLib
         public int XviD_qscale { get; set; }
 
         // Audio
+        public int AAC_bitrate { get; set; }  // kbit/s
         public int Vorbis_qscale { get; set; }
         public int MP3_qscale { get; set; }
-        public int AAC_bitrate { get; set; }  // kbit/s
 
         public FFmpegOptions()
         {
@@ -63,7 +63,7 @@ namespace ScreenCaptureLib
             VideoSource = "GDI grab";
             AudioSource = "None";
             VideoCodec = FFmpegVideoCodec.libx264;
-            AudioCodec = FFmpegAudioCodec.libvorbis;
+            AudioCodec = FFmpegAudioCodec.libvoaacenc;
             Extension = "mp4";
             CLIPath = "ffmpeg.exe";
             UserArgs = "";

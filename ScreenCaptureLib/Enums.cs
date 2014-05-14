@@ -81,11 +81,11 @@ namespace ScreenCaptureLib
 
     public enum FFmpegAudioCodec
     {
+        [Description("AAC")]
+        libvoaacenc,
         [Description("Vorbis")]
         libvorbis,
         [Description("MP3")]
-        libmp3lame,
-        [Description("AAC")]
-        libvoaacenc
+        libmp3lame
     }
 }
