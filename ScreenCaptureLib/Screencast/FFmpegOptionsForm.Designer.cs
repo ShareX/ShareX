@@ -246,18 +246,16 @@
             // 
             this.tbAACBitrate.BackColor = System.Drawing.Color.White;
             this.tbAACBitrate.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tbAACBitrate.LargeChange = 32;
+            this.tbAACBitrate.LargeChange = 1;
             this.tbAACBitrate.Location = new System.Drawing.Point(88, 3);
-            this.tbAACBitrate.Maximum = 320;
-            this.tbAACBitrate.Minimum = 32;
+            this.tbAACBitrate.Maximum = 16;
+            this.tbAACBitrate.Minimum = 1;
             this.tbAACBitrate.Name = "tbAACBitrate";
             this.tbAACBitrate.Size = new System.Drawing.Size(221, 40);
-            this.tbAACBitrate.SmallChange = 32;
             this.tbAACBitrate.TabIndex = 1;
-            this.tbAACBitrate.TickFrequency = 32;
             this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.tpFFmpeg.SetToolTip(this.tbAACBitrate, "Default is 128k.");
-            this.tbAACBitrate.Value = 64;
+            this.tbAACBitrate.Value = 4;
             this.tbAACBitrate.Scroll += new System.EventHandler(this.tbAACBitrate_Scroll);
             // 
             // cboExtension
