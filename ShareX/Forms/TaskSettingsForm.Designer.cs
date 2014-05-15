@@ -458,7 +458,7 @@
             this.chkShowBeforeUploadForm.Location = new System.Drawing.Point(8, 58);
             this.chkShowBeforeUploadForm.Name = "chkShowBeforeUploadForm";
             this.chkShowBeforeUploadForm.Size = new System.Drawing.Size(415, 17);
-            this.chkShowBeforeUploadForm.TabIndex = 7;
+            this.chkShowBeforeUploadForm.TabIndex = 2;
             this.chkShowBeforeUploadForm.Text = "Show \"Before upload\" window to dynamically change destination before uploading";
             this.chkShowBeforeUploadForm.UseVisualStyleBackColor = true;
             this.chkShowBeforeUploadForm.CheckedChanged += new System.EventHandler(this.chkShowBeforeUploadForm_CheckedChanged);
@@ -469,7 +469,7 @@
             this.lblAfterTaskNotification.Location = new System.Drawing.Point(8, 160);
             this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
             this.lblAfterTaskNotification.Size = new System.Drawing.Size(117, 13);
-            this.lblAfterTaskNotification.TabIndex = 3;
+            this.lblAfterTaskNotification.TabIndex = 6;
             this.lblAfterTaskNotification.Text = "After task is completed:";
             // 
             // cboPopUpNotification
@@ -479,7 +479,7 @@
             this.cboPopUpNotification.Location = new System.Drawing.Point(128, 156);
             this.cboPopUpNotification.Name = "cboPopUpNotification";
             this.cboPopUpNotification.Size = new System.Drawing.Size(224, 21);
-            this.cboPopUpNotification.TabIndex = 4;
+            this.cboPopUpNotification.TabIndex = 7;
             this.cboPopUpNotification.SelectedIndexChanged += new System.EventHandler(this.cboPopUpNotification_SelectedIndexChanged);
             // 
             // chkShowAfterUploadForm
@@ -488,7 +488,7 @@
             this.chkShowAfterUploadForm.Location = new System.Drawing.Point(8, 83);
             this.chkShowAfterUploadForm.Name = "chkShowAfterUploadForm";
             this.chkShowAfterUploadForm.Size = new System.Drawing.Size(271, 17);
-            this.chkShowAfterUploadForm.TabIndex = 5;
+            this.chkShowAfterUploadForm.TabIndex = 3;
             this.chkShowAfterUploadForm.Text = "Show \"After upload\" window after task is completed";
             this.chkShowAfterUploadForm.UseVisualStyleBackColor = true;
             this.chkShowAfterUploadForm.CheckedChanged += new System.EventHandler(this.chkShowAfterUploadForm_CheckedChanged);
@@ -510,7 +510,7 @@
             this.cbPlaySoundAfterUpload.Location = new System.Drawing.Point(8, 133);
             this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
             this.cbPlaySoundAfterUpload.Size = new System.Drawing.Size(187, 17);
-            this.cbPlaySoundAfterUpload.TabIndex = 2;
+            this.cbPlaySoundAfterUpload.TabIndex = 5;
             this.cbPlaySoundAfterUpload.Text = "Play sound after task is completed";
             this.cbPlaySoundAfterUpload.UseVisualStyleBackColor = true;
             this.cbPlaySoundAfterUpload.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterUpload_CheckedChanged);
@@ -521,7 +521,7 @@
             this.cbHistorySave.Location = new System.Drawing.Point(8, 108);
             this.cbHistorySave.Name = "cbHistorySave";
             this.cbHistorySave.Size = new System.Drawing.Size(139, 17);
-            this.cbHistorySave.TabIndex = 6;
+            this.cbHistorySave.TabIndex = 4;
             this.cbHistorySave.Text = "Save task info to history";
             this.cbHistorySave.UseVisualStyleBackColor = true;
             this.cbHistorySave.CheckedChanged += new System.EventHandler(this.cbHistorySave_CheckedChanged);
@@ -548,7 +548,7 @@
             this.chkUseDefaultGeneralSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultGeneralSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultGeneralSettings.TabIndex = 0;
-            this.chkUseDefaultGeneralSettings.Text = "Use default general settings";
+            this.chkUseDefaultGeneralSettings.Text = "Use general settings in main window task settings";
             this.chkUseDefaultGeneralSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
             // 
@@ -940,7 +940,7 @@
             this.chkUseDefaultImageSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultImageSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultImageSettings.TabIndex = 0;
-            this.chkUseDefaultImageSettings.Text = "Use default image settings";
+            this.chkUseDefaultImageSettings.Text = "Use image settings in main window task settings";
             this.chkUseDefaultImageSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultImageSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultImageSettings_CheckedChanged);
             // 
@@ -1368,7 +1368,7 @@
             this.chkUseDefaultCaptureSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultCaptureSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultCaptureSettings.TabIndex = 0;
-            this.chkUseDefaultCaptureSettings.Text = "Use default capture settings";
+            this.chkUseDefaultCaptureSettings.Text = "Use capture settings in main window task settings";
             this.chkUseDefaultCaptureSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
             // 
@@ -1470,7 +1470,7 @@
             this.chkUseDefaultActions.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultActions.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultActions.TabIndex = 0;
-            this.chkUseDefaultActions.Text = "Use default actions";
+            this.chkUseDefaultActions.Text = "Use actions in main window task settings";
             this.chkUseDefaultActions.UseVisualStyleBackColor = true;
             this.chkUseDefaultActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
             // 
@@ -1720,7 +1720,7 @@
             this.chkUseDefaultUploadSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultUploadSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultUploadSettings.TabIndex = 0;
-            this.chkUseDefaultUploadSettings.Text = "Use default upload settings";
+            this.chkUseDefaultUploadSettings.Text = "Use upload settings in main window task settings";
             this.chkUseDefaultUploadSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
             // 
@@ -1757,7 +1757,7 @@
             this.chkUseDefaultIndexerSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultIndexerSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultIndexerSettings.TabIndex = 0;
-            this.chkUseDefaultIndexerSettings.Text = "Use default indexer settings";
+            this.chkUseDefaultIndexerSettings.Text = "Use indexer settings in main window task settings";
             this.chkUseDefaultIndexerSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultIndexerSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultIndexerSettings_CheckedChanged);
             // 
@@ -1794,7 +1794,7 @@
             this.chkUseDefaultAdvancedSettings.Padding = new System.Windows.Forms.Padding(5);
             this.chkUseDefaultAdvancedSettings.Size = new System.Drawing.Size(544, 27);
             this.chkUseDefaultAdvancedSettings.TabIndex = 0;
-            this.chkUseDefaultAdvancedSettings.Text = "Use default advanced settings";
+            this.chkUseDefaultAdvancedSettings.Text = "Use advanced settings in main window task settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 

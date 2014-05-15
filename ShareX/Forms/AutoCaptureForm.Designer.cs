@@ -66,7 +66,7 @@
             this.ssBar.Name = "ssBar";
             this.ssBar.Size = new System.Drawing.Size(319, 22);
             this.ssBar.SizingGrip = false;
-            this.ssBar.TabIndex = 6;
+            this.ssBar.TabIndex = 9;
             this.ssBar.Text = "statusStrip1";
             // 
             // tspbBar
@@ -85,7 +85,7 @@
             this.btnExecute.Location = new System.Drawing.Point(192, 104);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(112, 40);
-            this.btnExecute.TabIndex = 4;
+            this.btnExecute.TabIndex = 7;
             this.btnExecute.Text = "Start";
             this.btnExecute.UseVisualStyleBackColor = true;
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
@@ -96,7 +96,7 @@
             this.cbWaitUploads.Location = new System.Drawing.Point(16, 128);
             this.cbWaitUploads.Name = "cbWaitUploads";
             this.cbWaitUploads.Size = new System.Drawing.Size(144, 17);
-            this.cbWaitUploads.TabIndex = 5;
+            this.cbWaitUploads.TabIndex = 8;
             this.cbWaitUploads.Text = "Wait until tasks complete";
             this.cbWaitUploads.UseVisualStyleBackColor = true;
             this.cbWaitUploads.CheckedChanged += new System.EventHandler(this.cbWaitUploads_CheckedChanged);
@@ -107,7 +107,7 @@
             this.cbAutoMinimize.Location = new System.Drawing.Point(16, 104);
             this.cbAutoMinimize.Name = "cbAutoMinimize";
             this.cbAutoMinimize.Size = new System.Drawing.Size(122, 17);
-            this.cbAutoMinimize.TabIndex = 3;
+            this.cbAutoMinimize.TabIndex = 6;
             this.cbAutoMinimize.Text = "Auto minimize to tray";
             this.cbAutoMinimize.UseVisualStyleBackColor = true;
             this.cbAutoMinimize.CheckedChanged += new System.EventHandler(this.cbAutoMinimize_CheckedChanged);
@@ -118,7 +118,7 @@
             this.lblRegion.Location = new System.Drawing.Point(16, 48);
             this.lblRegion.Name = "lblRegion";
             this.lblRegion.Size = new System.Drawing.Size(41, 13);
-            this.lblRegion.TabIndex = 9;
+            this.lblRegion.TabIndex = 2;
             this.lblRegion.Text = "Region";
             // 
             // btnRegion
@@ -126,7 +126,7 @@
             this.btnRegion.Location = new System.Drawing.Point(16, 16);
             this.btnRegion.Name = "btnRegion";
             this.btnRegion.Size = new System.Drawing.Size(104, 24);
-            this.btnRegion.TabIndex = 8;
+            this.btnRegion.TabIndex = 0;
             this.btnRegion.Text = "Select region";
             this.btnRegion.UseVisualStyleBackColor = true;
             this.btnRegion.Click += new System.EventHandler(this.btnRegion_Click);
@@ -152,7 +152,7 @@
             0});
             this.nudRepeatTime.Name = "nudRepeatTime";
             this.nudRepeatTime.Size = new System.Drawing.Size(64, 20);
-            this.nudRepeatTime.TabIndex = 11;
+            this.nudRepeatTime.TabIndex = 4;
             this.nudRepeatTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudRepeatTime.Value = new decimal(new int[] {
             3,
@@ -167,7 +167,7 @@
             this.lblDuration.Location = new System.Drawing.Point(16, 76);
             this.lblDuration.Name = "lblDuration";
             this.lblDuration.Size = new System.Drawing.Size(67, 13);
-            this.lblDuration.TabIndex = 10;
+            this.lblDuration.TabIndex = 3;
             this.lblDuration.Text = "Repeat time:";
             // 
             // btnFullscreen
@@ -175,7 +175,7 @@
             this.btnFullscreen.Location = new System.Drawing.Point(128, 16);
             this.btnFullscreen.Name = "btnFullscreen";
             this.btnFullscreen.Size = new System.Drawing.Size(104, 23);
-            this.btnFullscreen.TabIndex = 12;
+            this.btnFullscreen.TabIndex = 1;
             this.btnFullscreen.Text = "Fullscreen";
             this.btnFullscreen.UseVisualStyleBackColor = true;
             this.btnFullscreen.Click += new System.EventHandler(this.btnFullscreen_Click);
@@ -191,7 +191,7 @@
             this.lblDurationSeconds.Location = new System.Drawing.Point(160, 76);
             this.lblDurationSeconds.Name = "lblDurationSeconds";
             this.lblDurationSeconds.Size = new System.Drawing.Size(47, 13);
-            this.lblDurationSeconds.TabIndex = 13;
+            this.lblDurationSeconds.TabIndex = 5;
             this.lblDurationSeconds.Text = "seconds";
             // 
             // AutoCaptureForm

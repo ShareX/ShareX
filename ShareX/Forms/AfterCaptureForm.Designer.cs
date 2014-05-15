@@ -126,7 +126,7 @@
             this.tcTasks.Name = "tcTasks";
             this.tcTasks.SelectedIndex = 0;
             this.tcTasks.Size = new System.Drawing.Size(304, 279);
-            this.tcTasks.TabIndex = 5;
+            this.tcTasks.TabIndex = 0;
             // 
             // tpAfterCapture
             // 
@@ -145,7 +145,7 @@
             this.tpBeforeUpload.Location = new System.Drawing.Point(4, 22);
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBeforeUpload.Size = new System.Drawing.Size(280, 253);
+            this.tpBeforeUpload.Size = new System.Drawing.Size(296, 253);
             this.tpBeforeUpload.TabIndex = 1;
             this.tpBeforeUpload.Text = "Before upload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.ucBeforeUpload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucBeforeUpload.Location = new System.Drawing.Point(3, 3);
             this.ucBeforeUpload.Name = "ucBeforeUpload";
-            this.ucBeforeUpload.Size = new System.Drawing.Size(274, 247);
+            this.ucBeforeUpload.Size = new System.Drawing.Size(290, 247);
             this.ucBeforeUpload.TabIndex = 0;
             // 
             // AfterCaptureForm

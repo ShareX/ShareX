@@ -127,7 +127,7 @@
             this.tcTesters.Name = "tcTesters";
             this.tcTesters.SelectedIndex = 0;
             this.tcTesters.Size = new System.Drawing.Size(635, 663);
-            this.tcTesters.TabIndex = 1;
+            this.tcTesters.TabIndex = 0;
             // 
             // tpTestUploaders
             // 
@@ -151,7 +151,7 @@
             this.tscTesters.Location = new System.Drawing.Point(3, 3);
             this.tscTesters.Name = "tscTesters";
             this.tscTesters.Size = new System.Drawing.Size(621, 631);
-            this.tscTesters.TabIndex = 3;
+            this.tscTesters.TabIndex = 0;
             this.tscTesters.Text = "toolStripContainer1";
             // 
             // tscTesters.TopToolStripPanel

@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
             this.lblX264CRF = new System.Windows.Forms.Label();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
-            this.tpFFmpeg = new System.Windows.Forms.ToolTip(this.components);
+            this.tpFFmpeg = new System.Windows.Forms.ToolTip();
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbPreset = new System.Windows.Forms.ComboBox();

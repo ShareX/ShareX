@@ -38,7 +38,7 @@
             this.hmHotkeys.Location = new System.Drawing.Point(0, 0);
             this.hmHotkeys.Name = "hmHotkeys";
             this.hmHotkeys.Size = new System.Drawing.Size(534, 412);
-            this.hmHotkeys.TabIndex = 1;
+            this.hmHotkeys.TabIndex = 0;
             // 
             // HotkeySettingsForm
             // 

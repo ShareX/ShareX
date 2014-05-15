@@ -54,7 +54,7 @@
             this.btnOverwrite.Location = new System.Drawing.Point(8, 120);
             this.btnOverwrite.Name = "btnOverwrite";
             this.btnOverwrite.Size = new System.Drawing.Size(352, 32);
-            this.btnOverwrite.TabIndex = 0;
+            this.btnOverwrite.TabIndex = 3;
             this.btnOverwrite.Text = "Overwrite: ";
             this.btnOverwrite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOverwrite.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.btnCancel.Location = new System.Drawing.Point(8, 200);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(352, 32);
-            this.btnCancel.TabIndex = 2;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Do not save";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             this.btnUniqueName.Location = new System.Drawing.Point(8, 160);
             this.btnUniqueName.Name = "btnUniqueName";
             this.btnUniqueName.Size = new System.Drawing.Size(352, 32);
-            this.btnUniqueName.TabIndex = 1;
+            this.btnUniqueName.TabIndex = 4;
             this.btnUniqueName.Text = "Use a unique name: ";
             this.btnUniqueName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUniqueName.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             this.btnNewName.Location = new System.Drawing.Point(8, 80);
             this.btnNewName.Name = "btnNewName";
             this.btnNewName.Size = new System.Drawing.Size(352, 32);
-            this.btnNewName.TabIndex = 4;
+            this.btnNewName.TabIndex = 2;
             this.btnNewName.Text = "Use new name:";
             this.btnNewName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNewName.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.txtNewName.Location = new System.Drawing.Point(8, 48);
             this.txtNewName.Name = "txtNewName";
             this.txtNewName.Size = new System.Drawing.Size(352, 22);
-            this.txtNewName.TabIndex = 3;
+            this.txtNewName.TabIndex = 1;
             this.txtNewName.TextChanged += new System.EventHandler(this.txtNewName_TextChanged);
             // 
             // FileExistForm

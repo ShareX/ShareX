@@ -183,7 +183,7 @@ namespace ShareX
             this.cbSilentRun.Location = new System.Drawing.Point(16, 40);
             this.cbSilentRun.Name = "cbSilentRun";
             this.cbSilentRun.Size = new System.Drawing.Size(137, 17);
-            this.cbSilentRun.TabIndex = 8;
+            this.cbSilentRun.TabIndex = 1;
             this.cbSilentRun.Text = "On start minimize to tray";
             this.cbSilentRun.UseVisualStyleBackColor = true;
             this.cbSilentRun.CheckedChanged += new System.EventHandler(this.cbSilentRun_CheckedChanged);
@@ -194,7 +194,7 @@ namespace ShareX
             this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 208);
             this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
             this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
-            this.cbRememberMainFormSize.TabIndex = 7;
+            this.cbRememberMainFormSize.TabIndex = 8;
             this.cbRememberMainFormSize.Text = "Remember main window size";
             this.cbRememberMainFormSize.UseVisualStyleBackColor = true;
             this.cbRememberMainFormSize.CheckedChanged += new System.EventHandler(this.cbRememberMainFormSize_CheckedChanged);
@@ -205,7 +205,7 @@ namespace ShareX
             this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 184);
             this.cbTaskbarProgressEnabled.Name = "cbTaskbarProgressEnabled";
             this.cbTaskbarProgressEnabled.Size = new System.Drawing.Size(178, 17);
-            this.cbTaskbarProgressEnabled.TabIndex = 6;
+            this.cbTaskbarProgressEnabled.TabIndex = 7;
             this.cbTaskbarProgressEnabled.Text = "Show progress in taskbar button";
             this.cbTaskbarProgressEnabled.UseVisualStyleBackColor = true;
             this.cbTaskbarProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTaskbarProgressEnabled_CheckedChanged);
@@ -216,7 +216,7 @@ namespace ShareX
             this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 160);
             this.cbTrayIconProgressEnabled.Name = "cbTrayIconProgressEnabled";
             this.cbTrayIconProgressEnabled.Size = new System.Drawing.Size(150, 17);
-            this.cbTrayIconProgressEnabled.TabIndex = 5;
+            this.cbTrayIconProgressEnabled.TabIndex = 6;
             this.cbTrayIconProgressEnabled.Text = "Show progress in tray icon";
             this.cbTrayIconProgressEnabled.UseVisualStyleBackColor = true;
             this.cbTrayIconProgressEnabled.CheckedChanged += new System.EventHandler(this.cbTrayIconProgressEnabled_CheckedChanged);
@@ -227,7 +227,7 @@ namespace ShareX
             this.cbShellContextMenu.Location = new System.Drawing.Point(16, 112);
             this.cbShellContextMenu.Name = "cbShellContextMenu";
             this.cbShellContextMenu.Size = new System.Drawing.Size(301, 17);
-            this.cbShellContextMenu.TabIndex = 3;
+            this.cbShellContextMenu.TabIndex = 4;
             this.cbShellContextMenu.Text = "Show \"Upload using ShareX\" button in shell context menu";
             this.cbShellContextMenu.UseVisualStyleBackColor = true;
             this.cbShellContextMenu.CheckedChanged += new System.EventHandler(this.cbShellContextMenu_CheckedChanged);
@@ -238,7 +238,7 @@ namespace ShareX
             this.cbCheckUpdates.Location = new System.Drawing.Point(16, 136);
             this.cbCheckUpdates.Name = "cbCheckUpdates";
             this.cbCheckUpdates.Size = new System.Drawing.Size(209, 17);
-            this.cbCheckUpdates.TabIndex = 4;
+            this.cbCheckUpdates.TabIndex = 5;
             this.cbCheckUpdates.Text = "Automatically check updates at startup";
             this.cbCheckUpdates.UseVisualStyleBackColor = true;
             this.cbCheckUpdates.CheckedChanged += new System.EventHandler(this.cbCheckUpdates_CheckedChanged);
@@ -249,7 +249,7 @@ namespace ShareX
             this.cbStartWithWindows.Location = new System.Drawing.Point(16, 64);
             this.cbStartWithWindows.Name = "cbStartWithWindows";
             this.cbStartWithWindows.Size = new System.Drawing.Size(188, 17);
-            this.cbStartWithWindows.TabIndex = 1;
+            this.cbStartWithWindows.TabIndex = 2;
             this.cbStartWithWindows.Text = "Run ShareX when Windows starts";
             this.cbStartWithWindows.UseVisualStyleBackColor = true;
             this.cbStartWithWindows.CheckedChanged += new System.EventHandler(this.cbStartWithWindows_CheckedChanged);
@@ -271,7 +271,7 @@ namespace ShareX
             this.cbSendToMenu.Location = new System.Drawing.Point(16, 88);
             this.cbSendToMenu.Name = "cbSendToMenu";
             this.cbSendToMenu.Size = new System.Drawing.Size(181, 17);
-            this.cbSendToMenu.TabIndex = 2;
+            this.cbSendToMenu.TabIndex = 3;
             this.cbSendToMenu.Text = "Show ShareX in \"Send to\" menu";
             this.cbSendToMenu.UseVisualStyleBackColor = true;
             this.cbSendToMenu.CheckedChanged += new System.EventHandler(this.cbSendToMenu_CheckedChanged);
@@ -305,7 +305,7 @@ namespace ShareX
             this.lblNotePersonalFolderPath.Location = new System.Drawing.Point(16, 96);
             this.lblNotePersonalFolderPath.Name = "lblNotePersonalFolderPath";
             this.lblNotePersonalFolderPath.Size = new System.Drawing.Size(354, 13);
-            this.lblNotePersonalFolderPath.TabIndex = 19;
+            this.lblNotePersonalFolderPath.TabIndex = 5;
             this.lblNotePersonalFolderPath.Text = "Note: You must reopen ShareX for personal folder changes to take effect.";
             // 
             // btnOpenScreenshotsFolder
@@ -313,7 +313,7 @@ namespace ShareX
             this.btnOpenScreenshotsFolder.Location = new System.Drawing.Point(16, 208);
             this.btnOpenScreenshotsFolder.Name = "btnOpenScreenshotsFolder";
             this.btnOpenScreenshotsFolder.Size = new System.Drawing.Size(80, 23);
-            this.btnOpenScreenshotsFolder.TabIndex = 18;
+            this.btnOpenScreenshotsFolder.TabIndex = 11;
             this.btnOpenScreenshotsFolder.Text = "Open...";
             this.btnOpenScreenshotsFolder.UseVisualStyleBackColor = true;
             this.btnOpenScreenshotsFolder.Click += new System.EventHandler(this.btnOpenScreenshotsFolder_Click);
@@ -324,7 +324,7 @@ namespace ShareX
             this.lblPreviewPersonalFolderPath.Location = new System.Drawing.Point(104, 69);
             this.lblPreviewPersonalFolderPath.Name = "lblPreviewPersonalFolderPath";
             this.lblPreviewPersonalFolderPath.Size = new System.Drawing.Size(16, 13);
-            this.lblPreviewPersonalFolderPath.TabIndex = 17;
+            this.lblPreviewPersonalFolderPath.TabIndex = 4;
             this.lblPreviewPersonalFolderPath.Text = "...";
             // 
             // btnBrowsePersonalFolderPath
@@ -332,7 +332,7 @@ namespace ShareX
             this.btnBrowsePersonalFolderPath.Location = new System.Drawing.Point(432, 39);
             this.btnBrowsePersonalFolderPath.Name = "btnBrowsePersonalFolderPath";
             this.btnBrowsePersonalFolderPath.Size = new System.Drawing.Size(80, 23);
-            this.btnBrowsePersonalFolderPath.TabIndex = 16;
+            this.btnBrowsePersonalFolderPath.TabIndex = 2;
             this.btnBrowsePersonalFolderPath.Text = "Browse...";
             this.btnBrowsePersonalFolderPath.UseVisualStyleBackColor = true;
             this.btnBrowsePersonalFolderPath.Click += new System.EventHandler(this.btnBrowsePersonalFolderPath_Click);
@@ -343,7 +343,7 @@ namespace ShareX
             this.lblPersonalFolderPath.Location = new System.Drawing.Point(16, 16);
             this.lblPersonalFolderPath.Name = "lblPersonalFolderPath";
             this.lblPersonalFolderPath.Size = new System.Drawing.Size(117, 13);
-            this.lblPersonalFolderPath.TabIndex = 15;
+            this.lblPersonalFolderPath.TabIndex = 0;
             this.lblPersonalFolderPath.Text = "ShareX personal folder:";
             // 
             // txtPersonalFolderPath
@@ -351,7 +351,7 @@ namespace ShareX
             this.txtPersonalFolderPath.Location = new System.Drawing.Point(16, 40);
             this.txtPersonalFolderPath.Name = "txtPersonalFolderPath";
             this.txtPersonalFolderPath.Size = new System.Drawing.Size(408, 20);
-            this.txtPersonalFolderPath.TabIndex = 14;
+            this.txtPersonalFolderPath.TabIndex = 1;
             this.txtPersonalFolderPath.TextChanged += new System.EventHandler(this.txtPersonalFolderPath_TextChanged);
             // 
             // btnBrowseCustomScreenshotsPath
@@ -359,7 +359,7 @@ namespace ShareX
             this.btnBrowseCustomScreenshotsPath.Location = new System.Drawing.Point(432, 151);
             this.btnBrowseCustomScreenshotsPath.Name = "btnBrowseCustomScreenshotsPath";
             this.btnBrowseCustomScreenshotsPath.Size = new System.Drawing.Size(80, 23);
-            this.btnBrowseCustomScreenshotsPath.TabIndex = 10;
+            this.btnBrowseCustomScreenshotsPath.TabIndex = 8;
             this.btnBrowseCustomScreenshotsPath.Text = "Browse...";
             this.btnBrowseCustomScreenshotsPath.UseVisualStyleBackColor = true;
             this.btnBrowseCustomScreenshotsPath.Click += new System.EventHandler(this.btnBrowseCustomScreenshotsPath_Click);
@@ -369,7 +369,7 @@ namespace ShareX
             this.btnOpenPersonalFolderPath.Location = new System.Drawing.Point(16, 64);
             this.btnOpenPersonalFolderPath.Name = "btnOpenPersonalFolderPath";
             this.btnOpenPersonalFolderPath.Size = new System.Drawing.Size(80, 23);
-            this.btnOpenPersonalFolderPath.TabIndex = 0;
+            this.btnOpenPersonalFolderPath.TabIndex = 3;
             this.btnOpenPersonalFolderPath.Text = "Open...";
             this.btnOpenPersonalFolderPath.UseVisualStyleBackColor = true;
             this.btnOpenPersonalFolderPath.Click += new System.EventHandler(this.btnOpenPersonalFolder_Click);
@@ -379,7 +379,7 @@ namespace ShareX
             this.txtCustomScreenshotsPath.Location = new System.Drawing.Point(16, 152);
             this.txtCustomScreenshotsPath.Name = "txtCustomScreenshotsPath";
             this.txtCustomScreenshotsPath.Size = new System.Drawing.Size(408, 20);
-            this.txtCustomScreenshotsPath.TabIndex = 9;
+            this.txtCustomScreenshotsPath.TabIndex = 7;
             this.txtCustomScreenshotsPath.TextChanged += new System.EventHandler(this.txtCustomScreenshotsPath_TextChanged);
             // 
             // cbUseCustomScreenshotsPath
@@ -388,7 +388,7 @@ namespace ShareX
             this.cbUseCustomScreenshotsPath.Location = new System.Drawing.Point(16, 128);
             this.cbUseCustomScreenshotsPath.Name = "cbUseCustomScreenshotsPath";
             this.cbUseCustomScreenshotsPath.Size = new System.Drawing.Size(174, 17);
-            this.cbUseCustomScreenshotsPath.TabIndex = 8;
+            this.cbUseCustomScreenshotsPath.TabIndex = 6;
             this.cbUseCustomScreenshotsPath.Text = "Use custom screenshots folder:";
             this.cbUseCustomScreenshotsPath.UseVisualStyleBackColor = true;
             this.cbUseCustomScreenshotsPath.CheckedChanged += new System.EventHandler(this.cbUseCustomScreenshotsPath_CheckedChanged);
@@ -399,7 +399,7 @@ namespace ShareX
             this.lblSaveImageSubFolderPattern.Location = new System.Drawing.Point(16, 184);
             this.lblSaveImageSubFolderPattern.Name = "lblSaveImageSubFolderPattern";
             this.lblSaveImageSubFolderPattern.Size = new System.Drawing.Size(94, 13);
-            this.lblSaveImageSubFolderPattern.TabIndex = 11;
+            this.lblSaveImageSubFolderPattern.TabIndex = 9;
             this.lblSaveImageSubFolderPattern.Text = "Sub folder pattern:";
             // 
             // lblSaveImageSubFolderPatternPreview
@@ -408,7 +408,7 @@ namespace ShareX
             this.lblSaveImageSubFolderPatternPreview.Location = new System.Drawing.Point(104, 213);
             this.lblSaveImageSubFolderPatternPreview.Name = "lblSaveImageSubFolderPatternPreview";
             this.lblSaveImageSubFolderPatternPreview.Size = new System.Drawing.Size(16, 13);
-            this.lblSaveImageSubFolderPatternPreview.TabIndex = 13;
+            this.lblSaveImageSubFolderPatternPreview.TabIndex = 12;
             this.lblSaveImageSubFolderPatternPreview.Text = "...";
             // 
             // txtSaveImageSubFolderPattern
@@ -416,7 +416,7 @@ namespace ShareX
             this.txtSaveImageSubFolderPattern.Location = new System.Drawing.Point(120, 180);
             this.txtSaveImageSubFolderPattern.Name = "txtSaveImageSubFolderPattern";
             this.txtSaveImageSubFolderPattern.Size = new System.Drawing.Size(392, 20);
-            this.txtSaveImageSubFolderPattern.TabIndex = 12;
+            this.txtSaveImageSubFolderPattern.TabIndex = 10;
             this.txtSaveImageSubFolderPattern.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPattern_TextChanged);
             // 
             // tpProxy
@@ -448,7 +448,7 @@ namespace ShareX
             this.lblProxyNote.Location = new System.Drawing.Point(264, 48);
             this.lblProxyNote.Name = "lblProxyNote";
             this.lblProxyNote.Size = new System.Drawing.Size(196, 13);
-            this.lblProxyNote.TabIndex = 12;
+            this.lblProxyNote.TabIndex = 4;
             this.lblProxyNote.Text = "SOCKS proxy is only supported by FTP. ";
             // 
             // cbProxyMethod
@@ -477,7 +477,7 @@ namespace ShareX
             this.cbProxyType.Location = new System.Drawing.Point(120, 44);
             this.cbProxyType.Name = "cbProxyType";
             this.cbProxyType.Size = new System.Drawing.Size(136, 21);
-            this.cbProxyType.TabIndex = 11;
+            this.cbProxyType.TabIndex = 3;
             this.cbProxyType.SelectedIndexChanged += new System.EventHandler(this.cboProxyType_SelectedIndexChanged);
             // 
             // lblProxyType
@@ -486,7 +486,7 @@ namespace ShareX
             this.lblProxyType.Location = new System.Drawing.Point(16, 48);
             this.lblProxyType.Name = "lblProxyType";
             this.lblProxyType.Size = new System.Drawing.Size(34, 13);
-            this.lblProxyType.TabIndex = 10;
+            this.lblProxyType.TabIndex = 2;
             this.lblProxyType.Text = "Type:";
             // 
             // lblProxyHost
@@ -495,7 +495,7 @@ namespace ShareX
             this.lblProxyHost.Location = new System.Drawing.Point(16, 80);
             this.lblProxyHost.Name = "lblProxyHost";
             this.lblProxyHost.Size = new System.Drawing.Size(32, 13);
-            this.lblProxyHost.TabIndex = 6;
+            this.lblProxyHost.TabIndex = 5;
             this.lblProxyHost.Text = "Host:";
             // 
             // txtProxyHost
@@ -503,7 +503,7 @@ namespace ShareX
             this.txtProxyHost.Location = new System.Drawing.Point(120, 76);
             this.txtProxyHost.Name = "txtProxyHost";
             this.txtProxyHost.Size = new System.Drawing.Size(232, 20);
-            this.txtProxyHost.TabIndex = 7;
+            this.txtProxyHost.TabIndex = 6;
             this.txtProxyHost.TextChanged += new System.EventHandler(this.txtProxyHost_TextChanged);
             // 
             // nudProxyPort
@@ -516,7 +516,7 @@ namespace ShareX
             0});
             this.nudProxyPort.Name = "nudProxyPort";
             this.nudProxyPort.Size = new System.Drawing.Size(64, 20);
-            this.nudProxyPort.TabIndex = 9;
+            this.nudProxyPort.TabIndex = 8;
             this.nudProxyPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudProxyPort.ValueChanged += new System.EventHandler(this.nudProxyPort_ValueChanged);
             // 
@@ -527,7 +527,7 @@ namespace ShareX
             this.lblProxyPort.Name = "lblProxyPort";
             this.lblProxyPort.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblProxyPort.Size = new System.Drawing.Size(26, 13);
-            this.lblProxyPort.TabIndex = 8;
+            this.lblProxyPort.TabIndex = 7;
             this.lblProxyPort.Text = "Port";
             // 
             // lblProxyPassword
@@ -536,7 +536,7 @@ namespace ShareX
             this.lblProxyPassword.Location = new System.Drawing.Point(16, 144);
             this.lblProxyPassword.Name = "lblProxyPassword";
             this.lblProxyPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblProxyPassword.TabIndex = 4;
+            this.lblProxyPassword.TabIndex = 11;
             this.lblProxyPassword.Text = "Password:";
             // 
             // txtProxyPassword
@@ -545,7 +545,7 @@ namespace ShareX
             this.txtProxyPassword.Name = "txtProxyPassword";
             this.txtProxyPassword.PasswordChar = '●';
             this.txtProxyPassword.Size = new System.Drawing.Size(232, 20);
-            this.txtProxyPassword.TabIndex = 5;
+            this.txtProxyPassword.TabIndex = 12;
             this.txtProxyPassword.TextChanged += new System.EventHandler(this.txtProxyPassword_TextChanged);
             // 
             // lblProxyUsername
@@ -554,7 +554,7 @@ namespace ShareX
             this.lblProxyUsername.Location = new System.Drawing.Point(16, 112);
             this.lblProxyUsername.Name = "lblProxyUsername";
             this.lblProxyUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblProxyUsername.TabIndex = 2;
+            this.lblProxyUsername.TabIndex = 9;
             this.lblProxyUsername.Text = "Username:";
             // 
             // txtProxyUsername
@@ -562,7 +562,7 @@ namespace ShareX
             this.txtProxyUsername.Location = new System.Drawing.Point(120, 108);
             this.txtProxyUsername.Name = "txtProxyUsername";
             this.txtProxyUsername.Size = new System.Drawing.Size(232, 20);
-            this.txtProxyUsername.TabIndex = 3;
+            this.txtProxyUsername.TabIndex = 10;
             this.txtProxyUsername.TextChanged += new System.EventHandler(this.txtProxyUsername_TextChanged);
             // 
             // tpUpload
@@ -586,7 +586,7 @@ namespace ShareX
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
             this.tcUpload.Size = new System.Drawing.Size(604, 364);
-            this.tcUpload.TabIndex = 3;
+            this.tcUpload.TabIndex = 0;
             // 
             // tpPerformance
             // 
@@ -609,7 +609,7 @@ namespace ShareX
             this.gbBandwidth.Location = new System.Drawing.Point(8, 8);
             this.gbBandwidth.Name = "gbBandwidth";
             this.gbBandwidth.Size = new System.Drawing.Size(576, 88);
-            this.gbBandwidth.TabIndex = 1;
+            this.gbBandwidth.TabIndex = 0;
             this.gbBandwidth.TabStop = false;
             this.gbBandwidth.Text = "Bandwidth";
             // 
@@ -689,7 +689,7 @@ namespace ShareX
             this.gbClipboardFormats.Location = new System.Drawing.Point(8, 8);
             this.gbClipboardFormats.Name = "gbClipboardFormats";
             this.gbClipboardFormats.Size = new System.Drawing.Size(576, 320);
-            this.gbClipboardFormats.TabIndex = 2;
+            this.gbClipboardFormats.TabIndex = 0;
             this.gbClipboardFormats.TabStop = false;
             this.gbClipboardFormats.Text = "Clipboard Formats";
             // 
@@ -767,7 +767,7 @@ namespace ShareX
             this.chkUseSecondaryUploaders.Location = new System.Drawing.Point(264, 12);
             this.chkUseSecondaryUploaders.Name = "chkUseSecondaryUploaders";
             this.chkUseSecondaryUploaders.Size = new System.Drawing.Size(305, 17);
-            this.chkUseSecondaryUploaders.TabIndex = 6;
+            this.chkUseSecondaryUploaders.TabIndex = 2;
             this.chkUseSecondaryUploaders.Text = "Use secondary uploaders order of preference when retrying";
             this.chkUseSecondaryUploaders.UseVisualStyleBackColor = true;
             this.chkUseSecondaryUploaders.CheckedChanged += new System.EventHandler(this.chkUseSecondaryUploaders_CheckedChanged);
@@ -790,7 +790,7 @@ namespace ShareX
             this.tlpBackupDestinations.RowCount = 1;
             this.tlpBackupDestinations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpBackupDestinations.Size = new System.Drawing.Size(590, 295);
-            this.tlpBackupDestinations.TabIndex = 5;
+            this.tlpBackupDestinations.TabIndex = 3;
             // 
             // gbSecondaryImageUploaders
             // 
@@ -800,7 +800,7 @@ namespace ShareX
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
             this.gbSecondaryImageUploaders.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.gbSecondaryImageUploaders.Size = new System.Drawing.Size(185, 279);
-            this.gbSecondaryImageUploaders.TabIndex = 3;
+            this.gbSecondaryImageUploaders.TabIndex = 0;
             this.gbSecondaryImageUploaders.TabStop = false;
             this.gbSecondaryImageUploaders.Text = "Secondary image uploaders";
             // 
@@ -850,7 +850,7 @@ namespace ShareX
             this.lvSecondaryFileUploaders.MultiSelect = false;
             this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
             this.lvSecondaryFileUploaders.Size = new System.Drawing.Size(180, 258);
-            this.lvSecondaryFileUploaders.TabIndex = 1;
+            this.lvSecondaryFileUploaders.TabIndex = 0;
             this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
@@ -881,7 +881,7 @@ namespace ShareX
             this.lvSecondaryTextUploaders.MultiSelect = false;
             this.lvSecondaryTextUploaders.Name = "lvSecondaryTextUploaders";
             this.lvSecondaryTextUploaders.Size = new System.Drawing.Size(185, 258);
-            this.lvSecondaryTextUploaders.TabIndex = 1;
+            this.lvSecondaryTextUploaders.TabIndex = 0;
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryTextUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
@@ -905,7 +905,7 @@ namespace ShareX
             0});
             this.nudRetryUpload.Name = "nudRetryUpload";
             this.nudRetryUpload.Size = new System.Drawing.Size(48, 20);
-            this.nudRetryUpload.TabIndex = 4;
+            this.nudRetryUpload.TabIndex = 1;
             this.nudRetryUpload.ValueChanged += new System.EventHandler(this.nudRetryUpload_ValueChanged);
             // 
             // tpPrint
@@ -994,7 +994,7 @@ namespace ShareX
             this.btnEncoderDuplicate.Location = new System.Drawing.Point(168, 8);
             this.btnEncoderDuplicate.Name = "btnEncoderDuplicate";
             this.btnEncoderDuplicate.Size = new System.Drawing.Size(75, 23);
-            this.btnEncoderDuplicate.TabIndex = 5;
+            this.btnEncoderDuplicate.TabIndex = 2;
             this.btnEncoderDuplicate.Text = "Duplicate";
             this.btnEncoderDuplicate.UseVisualStyleBackColor = true;
             this.btnEncoderDuplicate.Click += new System.EventHandler(this.btnEncoderDuplicate_Click);
@@ -1065,7 +1065,7 @@ namespace ShareX
             this.btnEncodersRemove.Location = new System.Drawing.Point(248, 8);
             this.btnEncodersRemove.Name = "btnEncodersRemove";
             this.btnEncodersRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnEncodersRemove.TabIndex = 2;
+            this.btnEncodersRemove.TabIndex = 3;
             this.btnEncodersRemove.Text = "Remove";
             this.btnEncodersRemove.UseVisualStyleBackColor = true;
             this.btnEncodersRemove.Click += new System.EventHandler(this.btnEncodersRemove_Click);

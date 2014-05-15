@@ -54,7 +54,7 @@
             this.pbPreview.Location = new System.Drawing.Point(392, 8);
             this.pbPreview.Name = "pbPreview";
             this.pbPreview.Size = new System.Drawing.Size(304, 288);
-            this.pbPreview.TabIndex = 6;
+            this.pbPreview.TabIndex = 1;
             // 
             // btnCopyImage
             // 
@@ -64,7 +64,7 @@
             this.btnCopyImage.Margin = new System.Windows.Forms.Padding(0);
             this.btnCopyImage.Name = "btnCopyImage";
             this.btnCopyImage.Size = new System.Drawing.Size(88, 32);
-            this.btnCopyImage.TabIndex = 0;
+            this.btnCopyImage.TabIndex = 2;
             this.btnCopyImage.Text = "Copy image";
             this.btnCopyImage.UseVisualStyleBackColor = true;
             this.btnCopyImage.Click += new System.EventHandler(this.btnCopyImage_Click);
@@ -77,7 +77,7 @@
             this.btnCopyLink.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnCopyLink.Name = "btnCopyLink";
             this.btnCopyLink.Size = new System.Drawing.Size(88, 32);
-            this.btnCopyLink.TabIndex = 1;
+            this.btnCopyLink.TabIndex = 3;
             this.btnCopyLink.Text = "Copy link";
             this.btnCopyLink.UseVisualStyleBackColor = true;
             this.btnCopyLink.Click += new System.EventHandler(this.btnCopyLink_Click);
@@ -90,7 +90,7 @@
             this.btnOpenLink.Margin = new System.Windows.Forms.Padding(0);
             this.btnOpenLink.Name = "btnOpenLink";
             this.btnOpenLink.Size = new System.Drawing.Size(88, 32);
-            this.btnOpenLink.TabIndex = 2;
+            this.btnOpenLink.TabIndex = 4;
             this.btnOpenLink.Text = "Open link...";
             this.btnOpenLink.UseVisualStyleBackColor = true;
             this.btnOpenLink.Click += new System.EventHandler(this.btnOpenLink_Click);
@@ -103,7 +103,7 @@
             this.btnOpenFile.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(88, 32);
-            this.btnOpenFile.TabIndex = 3;
+            this.btnOpenFile.TabIndex = 5;
             this.btnOpenFile.Text = "Open file...";
             this.btnOpenFile.UseVisualStyleBackColor = true;
             this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
@@ -116,7 +116,7 @@
             this.btnOpenFolder.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(88, 32);
-            this.btnOpenFolder.TabIndex = 4;
+            this.btnOpenFolder.TabIndex = 6;
             this.btnOpenFolder.Text = "Open folder...";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnFolderOpen_Click);
@@ -133,7 +133,7 @@
             this.btnClose.Location = new System.Drawing.Point(608, 304);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(88, 32);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -153,7 +153,7 @@
             this.lvClipboardFormats.Location = new System.Drawing.Point(8, 8);
             this.lvClipboardFormats.Name = "lvClipboardFormats";
             this.lvClipboardFormats.Size = new System.Drawing.Size(376, 288);
-            this.lvClipboardFormats.TabIndex = 7;
+            this.lvClipboardFormats.TabIndex = 0;
             this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
             this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
             this.lvClipboardFormats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvClipboardFormats_MouseDoubleClick);

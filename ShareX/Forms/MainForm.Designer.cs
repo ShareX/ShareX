@@ -875,7 +875,7 @@
             this.pbPreview.Location = new System.Drawing.Point(0, 0);
             this.pbPreview.Name = "pbPreview";
             this.pbPreview.Size = new System.Drawing.Size(378, 452);
-            this.pbPreview.TabIndex = 1;
+            this.pbPreview.TabIndex = 0;
             // 
             // cmsUploadInfo
             // 
@@ -1263,7 +1263,7 @@
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(190, 462);
+            this.cmsTray.Size = new System.Drawing.Size(190, 440);
             // 
             // tsmiTrayClipboardUpload
             // 

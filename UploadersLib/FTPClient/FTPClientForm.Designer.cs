@@ -254,7 +254,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.lvFTPList);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 508);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 483);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -301,7 +301,7 @@
             this.lvFTPList.HideSelection = false;
             this.lvFTPList.Location = new System.Drawing.Point(0, 0);
             this.lvFTPList.Name = "lvFTPList";
-            this.lvFTPList.Size = new System.Drawing.Size(952, 508);
+            this.lvFTPList.Size = new System.Drawing.Size(952, 483);
             this.lvFTPList.TabIndex = 0;
             this.lvFTPList.UseCompatibleStateImageBehavior = false;
             this.lvFTPList.View = System.Windows.Forms.View.Details;
