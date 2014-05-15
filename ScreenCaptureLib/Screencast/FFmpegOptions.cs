@@ -60,7 +60,7 @@ namespace ScreenCaptureLib
         public FFmpegOptions()
         {
             // General
-            VideoSource = "GDI grab";
+            VideoSource = FFmpegHelper.GDIgrab;
             AudioSource = "None";
             VideoCodec = FFmpegVideoCodec.libx264;
             AudioCodec = FFmpegAudioCodec.libvoaacenc;

@@ -45,8 +45,6 @@ namespace ScreenCaptureLib
         public ScreencastOptions Options = new ScreencastOptions();
         public string DefaultToolsPath;
 
-        private readonly int libmp3lame_qscale_end = 9;
-
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
@@ -100,7 +98,7 @@ namespace ScreenCaptureLib
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
 
             // Audio - MP3
-            tbMP3_qscale.Value = libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale; // 0-9 where a lower value is a higher quality
+            tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale; // 0-9 where a lower value is a higher quality
         }
 
         private void RefreshSourcesAsync()
@@ -117,7 +115,7 @@ namespace ScreenCaptureLib
             () =>
             {
                 cboVideoSource.Items.Clear();
-                cboVideoSource.Items.Add("GDI grab");
+                cboVideoSource.Items.Add(FFmpegHelper.GDIgrab);
                 cboAudioSource.Items.Clear();
                 cboAudioSource.Items.Add("None");
                 if (devices != null)
@@ -327,7 +325,7 @@ namespace ScreenCaptureLib
 
         private void tbMP3_qscale_Scroll(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_qscale = libmp3lame_qscale_end - tbMP3_qscale.Value; // 0-9 where a lower value is a higher quality
+            Options.FFmpeg.MP3_qscale = FFmpegHelper.libmp3lame_qscale_end - tbMP3_qscale.Value; // 0-9 where a lower value is a higher quality
             UpdateUI();
         }
 
