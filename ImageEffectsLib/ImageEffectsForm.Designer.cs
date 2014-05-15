@@ -58,7 +58,7 @@
             this.tvEffects.ShowPlusMinus = false;
             this.tvEffects.ShowRootLines = false;
             this.tvEffects.Size = new System.Drawing.Size(232, 688);
-            this.tvEffects.TabIndex = 6;
+            this.tvEffects.TabIndex = 7;
             this.tvEffects.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvEffects_BeforeCollapse);
             this.tvEffects.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tvEffects_MouseDoubleClick);
             // 
@@ -70,7 +70,7 @@
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgSettings.Size = new System.Drawing.Size(408, 304);
-            this.pgSettings.TabIndex = 8;
+            this.pgSettings.TabIndex = 9;
             this.pgSettings.ToolbarVisible = false;
             this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
             // 
@@ -95,7 +95,7 @@
             this.lvEffects.MultiSelect = false;
             this.lvEffects.Name = "lvEffects";
             this.lvEffects.Size = new System.Drawing.Size(232, 272);
-            this.lvEffects.TabIndex = 7;
+            this.lvEffects.TabIndex = 8;
             this.lvEffects.UseCompatibleStateImageBehavior = false;
             this.lvEffects.View = System.Windows.Forms.View.Details;
             this.lvEffects.SelectedIndexChanged += new System.EventHandler(this.lvEffects_SelectedIndexChanged);
@@ -121,7 +121,7 @@
             this.btnOK.Location = new System.Drawing.Point(744, 734);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(72, 24);
-            this.btnOK.TabIndex = 9;
+            this.btnOK.TabIndex = 15;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -132,7 +132,7 @@
             this.btnCancel.Location = new System.Drawing.Point(824, 734);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(72, 24);
-            this.btnCancel.TabIndex = 10;
+            this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -184,7 +184,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(408, 8);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(72, 24);
-            this.btnRefresh.TabIndex = 14;
+            this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -196,7 +196,7 @@
             this.btnLoadImage.Location = new System.Drawing.Point(318, 734);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(81, 24);
-            this.btnLoadImage.TabIndex = 15;
+            this.btnLoadImage.TabIndex = 13;
             this.btnLoadImage.Text = "Load image...";
             this.btnLoadImage.UseVisualStyleBackColor = true;
             this.btnLoadImage.Visible = false;
@@ -209,7 +209,7 @@
             this.btnSaveImage.Location = new System.Drawing.Point(405, 734);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(82, 24);
-            this.btnSaveImage.TabIndex = 16;
+            this.btnSaveImage.TabIndex = 14;
             this.btnSaveImage.Text = "Save image...";
             this.btnSaveImage.UseVisualStyleBackColor = true;
             this.btnSaveImage.Visible = false;
@@ -222,7 +222,7 @@
             this.btnSettingsExport.Location = new System.Drawing.Point(8, 734);
             this.btnSettingsExport.Name = "btnSettingsExport";
             this.btnSettingsExport.Size = new System.Drawing.Size(144, 24);
-            this.btnSettingsExport.TabIndex = 17;
+            this.btnSettingsExport.TabIndex = 11;
             this.btnSettingsExport.Text = "Export settings to clipboard";
             this.btnSettingsExport.UseVisualStyleBackColor = true;
             this.btnSettingsExport.Click += new System.EventHandler(this.btnSettingsExport_Click);
@@ -234,7 +234,7 @@
             this.btnSettingsImport.Location = new System.Drawing.Point(158, 734);
             this.btnSettingsImport.Name = "btnSettingsImport";
             this.btnSettingsImport.Size = new System.Drawing.Size(154, 24);
-            this.btnSettingsImport.TabIndex = 18;
+            this.btnSettingsImport.TabIndex = 12;
             this.btnSettingsImport.Text = "Import settings from clipboard";
             this.btnSettingsImport.UseVisualStyleBackColor = true;
             this.btnSettingsImport.Click += new System.EventHandler(this.btnSettingsImport_Click);
@@ -252,7 +252,7 @@
             this.pbResult.Location = new System.Drawing.Point(248, 320);
             this.pbResult.Name = "pbResult";
             this.pbResult.Size = new System.Drawing.Size(648, 408);
-            this.pbResult.TabIndex = 11;
+            this.pbResult.TabIndex = 10;
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 
