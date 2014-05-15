@@ -279,6 +279,10 @@ namespace ShareX
                             }
                         }
                     }
+                    else if (beforeUploadResult == DialogResult.Cancel)
+                    {
+                        Info.Result.IsURLExpected = false;
+                    }
                 }
             }
             else
