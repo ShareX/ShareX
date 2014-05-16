@@ -54,6 +54,11 @@ namespace ShareX
             cLogo.Start(50);
         }
 
+        private void lblProductName_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenURL(Links.URL_VERSION_HISTORY);
+        }
+
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
             Helpers.OpenURL(Links.URL_BERK);

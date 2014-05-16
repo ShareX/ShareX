@@ -47,10 +47,10 @@
             this.pbDana = new System.Windows.Forms.PictureBox();
             this.lblDana = new System.Windows.Forms.Label();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
-            this.cLogo = new HelpersLib.Canvas();
-            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
             this.lblOwners = new System.Windows.Forms.Label();
             this.pbMikeSteamURL = new System.Windows.Forms.PictureBox();
+            this.cLogo = new HelpersLib.Canvas();
+            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
@@ -67,21 +67,23 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
+            this.lblProductName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProductName.ForeColor = System.Drawing.Color.Black;
-            this.lblProductName.Location = new System.Drawing.Point(13, 9);
+            this.lblProductName.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblProductName.Location = new System.Drawing.Point(11, 8);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(134, 24);
             this.lblProductName.TabIndex = 0;
             this.lblProductName.Text = "ShareX 1.0.0.0";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
             // 
             // lblBerk
             // 
             this.lblBerk.AutoSize = true;
             this.lblBerk.BackColor = System.Drawing.Color.Transparent;
             this.lblBerk.ForeColor = System.Drawing.Color.Black;
-            this.lblBerk.Location = new System.Drawing.Point(87, 144);
+            this.lblBerk.Location = new System.Drawing.Point(89, 144);
             this.lblBerk.Name = "lblBerk";
             this.lblBerk.Size = new System.Drawing.Size(60, 13);
             this.lblBerk.TabIndex = 4;
@@ -91,7 +93,7 @@
             // 
             this.pbTR.BackColor = System.Drawing.Color.Transparent;
             this.pbTR.Image = global::ShareX.Properties.Resources.tr;
-            this.pbTR.Location = new System.Drawing.Point(15, 142);
+            this.pbTR.Location = new System.Drawing.Point(17, 142);
             this.pbTR.Name = "pbTR";
             this.pbTR.Size = new System.Drawing.Size(16, 16);
             this.pbTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -103,7 +105,7 @@
             this.pbBerkURL.BackColor = System.Drawing.Color.Transparent;
             this.pbBerkURL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBerkURL.Image = global::ShareX.Properties.Resources.application_browser;
-            this.pbBerkURL.Location = new System.Drawing.Point(39, 142);
+            this.pbBerkURL.Location = new System.Drawing.Point(41, 142);
             this.pbBerkURL.Name = "pbBerkURL";
             this.pbBerkURL.Size = new System.Drawing.Size(16, 16);
             this.pbBerkURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -116,7 +118,7 @@
             this.pbMikeURL.BackColor = System.Drawing.Color.Transparent;
             this.pbMikeURL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMikeURL.Image = global::ShareX.Properties.Resources.application_browser;
-            this.pbMikeURL.Location = new System.Drawing.Point(39, 166);
+            this.pbMikeURL.Location = new System.Drawing.Point(41, 166);
             this.pbMikeURL.Name = "pbMikeURL";
             this.pbMikeURL.Size = new System.Drawing.Size(16, 16);
             this.pbMikeURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -128,7 +130,7 @@
             // 
             this.pbAU.BackColor = System.Drawing.Color.Transparent;
             this.pbAU.Image = global::ShareX.Properties.Resources.au;
-            this.pbAU.Location = new System.Drawing.Point(15, 166);
+            this.pbAU.Location = new System.Drawing.Point(17, 166);
             this.pbAU.Name = "pbAU";
             this.pbAU.Size = new System.Drawing.Size(16, 16);
             this.pbAU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -140,7 +142,7 @@
             this.lblMike.AutoSize = true;
             this.lblMike.BackColor = System.Drawing.Color.Transparent;
             this.lblMike.ForeColor = System.Drawing.Color.Black;
-            this.lblMike.Location = new System.Drawing.Point(87, 168);
+            this.lblMike.Location = new System.Drawing.Point(89, 168);
             this.lblMike.Name = "lblMike";
             this.lblMike.Size = new System.Drawing.Size(131, 13);
             this.lblMike.TabIndex = 6;
@@ -151,7 +153,7 @@
             this.pbBerkSteamURL.BackColor = System.Drawing.Color.Transparent;
             this.pbBerkSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBerkSteamURL.Image = global::ShareX.Properties.Resources.steam;
-            this.pbBerkSteamURL.Location = new System.Drawing.Point(63, 142);
+            this.pbBerkSteamURL.Location = new System.Drawing.Point(65, 142);
             this.pbBerkSteamURL.Name = "pbBerkSteamURL";
             this.pbBerkSteamURL.Size = new System.Drawing.Size(16, 16);
             this.pbBerkSteamURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -174,7 +176,7 @@
             // lblGregoire
             // 
             this.lblGregoire.AutoSize = true;
-            this.lblGregoire.Location = new System.Drawing.Point(87, 216);
+            this.lblGregoire.Location = new System.Drawing.Point(89, 216);
             this.lblGregoire.Name = "lblGregoire";
             this.lblGregoire.Size = new System.Drawing.Size(120, 13);
             this.lblGregoire.TabIndex = 8;
@@ -185,7 +187,7 @@
             this.pbGregoire.BackColor = System.Drawing.Color.Transparent;
             this.pbGregoire.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbGregoire.Image = global::ShareX.Properties.Resources.application_browser;
-            this.pbGregoire.Location = new System.Drawing.Point(39, 214);
+            this.pbGregoire.Location = new System.Drawing.Point(41, 214);
             this.pbGregoire.Name = "pbGregoire";
             this.pbGregoire.Size = new System.Drawing.Size(16, 16);
             this.pbGregoire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -196,7 +198,7 @@
             // lblCommitters
             // 
             this.lblCommitters.AutoSize = true;
-            this.lblCommitters.Location = new System.Drawing.Point(15, 190);
+            this.lblCommitters.Location = new System.Drawing.Point(14, 190);
             this.lblCommitters.Name = "lblCommitters";
             this.lblCommitters.Size = new System.Drawing.Size(61, 13);
             this.lblCommitters.TabIndex = 7;
@@ -206,7 +208,7 @@
             // 
             this.pbFR.BackColor = System.Drawing.Color.Transparent;
             this.pbFR.Image = global::ShareX.Properties.Resources.fr;
-            this.pbFR.Location = new System.Drawing.Point(15, 214);
+            this.pbFR.Location = new System.Drawing.Point(17, 214);
             this.pbFR.Name = "pbFR";
             this.pbFR.Size = new System.Drawing.Size(16, 16);
             this.pbFR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -216,7 +218,7 @@
             // lblWebSite
             // 
             this.lblWebSite.AutoSize = true;
-            this.lblWebSite.Location = new System.Drawing.Point(15, 241);
+            this.lblWebSite.Location = new System.Drawing.Point(14, 241);
             this.lblWebSite.Name = "lblWebSite";
             this.lblWebSite.Size = new System.Drawing.Size(76, 13);
             this.lblWebSite.TabIndex = 9;
@@ -226,7 +228,7 @@
             // 
             this.pbRU.BackColor = System.Drawing.Color.Transparent;
             this.pbRU.Image = global::ShareX.Properties.Resources.ru;
-            this.pbRU.Location = new System.Drawing.Point(15, 265);
+            this.pbRU.Location = new System.Drawing.Point(17, 265);
             this.pbRU.Name = "pbRU";
             this.pbRU.Size = new System.Drawing.Size(16, 16);
             this.pbRU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -238,7 +240,7 @@
             this.pbDana.BackColor = System.Drawing.Color.Transparent;
             this.pbDana.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDana.Image = global::ShareX.Properties.Resources.application_browser;
-            this.pbDana.Location = new System.Drawing.Point(39, 265);
+            this.pbDana.Location = new System.Drawing.Point(41, 265);
             this.pbDana.Name = "pbDana";
             this.pbDana.Size = new System.Drawing.Size(16, 16);
             this.pbDana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -249,7 +251,7 @@
             // lblDana
             // 
             this.lblDana.AutoSize = true;
-            this.lblDana.Location = new System.Drawing.Point(87, 267);
+            this.lblDana.Location = new System.Drawing.Point(89, 267);
             this.lblDana.Name = "lblDana";
             this.lblDana.Size = new System.Drawing.Size(64, 13);
             this.lblDana.TabIndex = 10;
@@ -268,6 +270,28 @@
     "es: https://github.com/ShareX/ShareX/issues";
             this.rtbShareXInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
             // 
+            // lblOwners
+            // 
+            this.lblOwners.AutoSize = true;
+            this.lblOwners.Location = new System.Drawing.Point(14, 117);
+            this.lblOwners.Name = "lblOwners";
+            this.lblOwners.Size = new System.Drawing.Size(46, 13);
+            this.lblOwners.TabIndex = 3;
+            this.lblOwners.Text = "Owners:";
+            // 
+            // pbMikeSteamURL
+            // 
+            this.pbMikeSteamURL.BackColor = System.Drawing.Color.Transparent;
+            this.pbMikeSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMikeSteamURL.Image = global::ShareX.Properties.Resources.steam;
+            this.pbMikeSteamURL.Location = new System.Drawing.Point(65, 166);
+            this.pbMikeSteamURL.Name = "pbMikeSteamURL";
+            this.pbMikeSteamURL.Size = new System.Drawing.Size(16, 16);
+            this.pbMikeSteamURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMikeSteamURL.TabIndex = 34;
+            this.pbMikeSteamURL.TabStop = false;
+            this.pbMikeSteamURL.Click += new System.EventHandler(this.pbMikeSteamURL_Click);
+            // 
             // cLogo
             // 
             this.cLogo.Interval = 100;
@@ -280,32 +304,10 @@
             // 
             // uclUpdate
             // 
-            this.uclUpdate.Location = new System.Drawing.Point(15, 36);
+            this.uclUpdate.Location = new System.Drawing.Point(13, 36);
             this.uclUpdate.Name = "uclUpdate";
             this.uclUpdate.Size = new System.Drawing.Size(224, 24);
             this.uclUpdate.TabIndex = 1;
-            // 
-            // lblOwners
-            // 
-            this.lblOwners.AutoSize = true;
-            this.lblOwners.Location = new System.Drawing.Point(15, 117);
-            this.lblOwners.Name = "lblOwners";
-            this.lblOwners.Size = new System.Drawing.Size(46, 13);
-            this.lblOwners.TabIndex = 3;
-            this.lblOwners.Text = "Owners:";
-            // 
-            // pbMikeSteamURL
-            // 
-            this.pbMikeSteamURL.BackColor = System.Drawing.Color.Transparent;
-            this.pbMikeSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMikeSteamURL.Image = global::ShareX.Properties.Resources.steam;
-            this.pbMikeSteamURL.Location = new System.Drawing.Point(63, 166);
-            this.pbMikeSteamURL.Name = "pbMikeSteamURL";
-            this.pbMikeSteamURL.Size = new System.Drawing.Size(16, 16);
-            this.pbMikeSteamURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbMikeSteamURL.TabIndex = 34;
-            this.pbMikeSteamURL.TabStop = false;
-            this.pbMikeSteamURL.Click += new System.EventHandler(this.pbMikeSteamURL_Click);
             // 
             // AboutForm
             // 
