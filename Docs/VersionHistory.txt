@@ -1,11 +1,12 @@
-﻿ShareX 9.0
+﻿ShareX 9.0.0 2014-05-16
 
-* Capture screen recordings (screencasts) with audio using FFmpeg
+* Capture screen recordings with audio using FFmpeg
 * Capture screen recordings using Video Compression Manager (VCM) via Video for Windows (VfW) encoders
 * Clipboard Upload supports image or file URLs in their respective data types
 * DreamObjects hosting support via Amazon S3
 * Added Greenshot Image Editor to Tools menu
 * Added FTP Client to Tools menu
+* MediaCrush moved to file uploaders for be able to upload videos
 
 ShareX 8.8.0 - 2014-05-01
 
