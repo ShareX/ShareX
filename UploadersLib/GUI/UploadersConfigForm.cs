@@ -997,6 +997,7 @@ namespace UploadersLib
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.Bucket = txtAmazonS3BucketName.Text;
+            UpdateAmazonS3Status();
         }
 
         private void btnAmazonS3BucketNameOpen_Click(object sender, EventArgs e)
