@@ -49,6 +49,7 @@
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecorder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddbWorkflows = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbDestinations = new System.Windows.Forms.ToolStripDropDownButton();
@@ -218,6 +219,7 @@
             this.tsbFileUpload,
             this.tsbDragDropUpload,
             this.tsddbCapture,
+            this.tsddbWorkflows,
             this.tsddbAfterCaptureTasks,
             this.tsddbAfterUploadTasks,
             this.tsddbDestinations,
@@ -239,7 +241,7 @@
             this.tsMain.Name = "tsMain";
             this.tsMain.Padding = new System.Windows.Forms.Padding(6);
             this.tsMain.ShowItemToolTips = false;
-            this.tsMain.Size = new System.Drawing.Size(160, 452);
+            this.tsMain.Size = new System.Drawing.Size(160, 474);
             this.tsMain.TabIndex = 0;
             // 
             // tsbClipboardUpload
@@ -269,7 +271,7 @@
             this.tsbDragDropUpload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDragDropUpload.Name = "tsbDragDropUpload";
             this.tsbDragDropUpload.Size = new System.Drawing.Size(147, 20);
-            this.tsbDragDropUpload.Text = "Drag && drop upload...";
+            this.tsbDragDropUpload.Text = "Drag and drop upload...";
             this.tsbDragDropUpload.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
             // 
             // tsddbCapture
@@ -406,6 +408,15 @@
             this.tsmiAutoCapture.Size = new System.Drawing.Size(181, 22);
             this.tsmiAutoCapture.Text = "Auto capture...";
             this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
+            // 
+            // tsddbWorkflows
+            // 
+            this.tsddbWorkflows.Image = global::ShareX.Properties.Resources.application_wave;
+            this.tsddbWorkflows.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.tsddbWorkflows.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbWorkflows.Name = "tsddbWorkflows";
+            this.tsddbWorkflows.Size = new System.Drawing.Size(147, 20);
+            this.tsddbWorkflows.Text = "Workflows";
             // 
             // tsddbAfterCaptureTasks
             // 
@@ -758,7 +769,7 @@
             // scMain.Panel2
             // 
             this.scMain.Panel2.Controls.Add(this.pbPreview);
-            this.scMain.Size = new System.Drawing.Size(784, 452);
+            this.scMain.Size = new System.Drawing.Size(784, 474);
             this.scMain.SplitterDistance = 400;
             this.scMain.SplitterWidth = 6;
             this.scMain.TabIndex = 1;
@@ -775,7 +786,7 @@
             this.lblDragAndDropTip.Location = new System.Drawing.Point(8, 92);
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
             this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(30, 20, 30, 30);
-            this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 268);
+            this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 290);
             this.lblDragAndDropTip.TabIndex = 2;
             this.lblDragAndDropTip.Text = "You can drag and drop files to this window";
             this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -787,7 +798,7 @@
             this.lblSplitter.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblSplitter.Location = new System.Drawing.Point(0, 0);
             this.lblSplitter.Name = "lblSplitter";
-            this.lblSplitter.Size = new System.Drawing.Size(1, 452);
+            this.lblSplitter.Size = new System.Drawing.Size(1, 474);
             this.lblSplitter.TabIndex = 0;
             // 
             // lvUploads
@@ -812,7 +823,7 @@
             this.lvUploads.Location = new System.Drawing.Point(0, 0);
             this.lvUploads.Name = "lvUploads";
             this.lvUploads.ShowItemToolTips = true;
-            this.lvUploads.Size = new System.Drawing.Size(400, 452);
+            this.lvUploads.Size = new System.Drawing.Size(400, 474);
             this.lvUploads.TabIndex = 1;
             this.lvUploads.UseCompatibleStateImageBehavior = false;
             this.lvUploads.View = System.Windows.Forms.View.Details;
@@ -874,7 +885,7 @@
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Location = new System.Drawing.Point(0, 0);
             this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(378, 452);
+            this.pbPreview.Size = new System.Drawing.Size(378, 474);
             this.pbPreview.TabIndex = 0;
             // 
             // cmsUploadInfo
@@ -1286,7 +1297,7 @@
             this.tsmiTrayDragDropUpload.Image = global::ShareX.Properties.Resources.inbox_plus;
             this.tsmiTrayDragDropUpload.Name = "tsmiTrayDragDropUpload";
             this.tsmiTrayDragDropUpload.Size = new System.Drawing.Size(189, 22);
-            this.tsmiTrayDragDropUpload.Text = "Drag && drop upload...";
+            this.tsmiTrayDragDropUpload.Text = "Drag and drop upload...";
             this.tsmiTrayDragDropUpload.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
             // 
             // tsmiTrayCapture
@@ -1688,7 +1699,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 452);
+            this.ClientSize = new System.Drawing.Size(944, 474);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;
@@ -1884,5 +1895,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;
     }
 }

@@ -110,6 +110,17 @@ namespace ShareX
             uim = new UploadInfoManager(lvUploads);
         }
 
+        private void UpdateWorkflowsMenu()
+        {
+            tsddbWorkflows.DropDownItems.Clear();
+            Program.HotkeyManager.Hotkeys.ForEach<HotkeySettings>(x =>
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
+                tsmi.Click += (sender, e) => HandleHotkeys(x);
+                tsddbWorkflows.DropDownItems.Add(tsmi);
+            });
+        }
+
         private void UpdateDestinationStates()
         {
             if (Program.UploadersConfig != null)
@@ -706,6 +717,7 @@ namespace ShareX
                 hotkeySettingsForm.ShowDialog();
             }
 
+            UpdateWorkflowsMenu();
             Program.HotkeysConfig.SaveAsync(Program.HotkeysConfigFilePath);
         }
 

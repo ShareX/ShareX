@@ -56,6 +56,8 @@ namespace ShareX
                     Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                     DebugHelper.WriteLine("HotkeyManager started");
 
+                    UpdateWorkflowsMenu();
+
                     Program.WatchFolderManager = new WatchFolderManager();
                     DebugHelper.WriteLine("WatchFolderManager started");
                 }));

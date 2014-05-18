@@ -39,7 +39,18 @@ namespace ShareX
 {
     public class TaskSettings
     {
-        public string Description = string.Empty;
+        private string description = string.Empty;
+        public string Description
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(description) ? description : Job.GetDescription();
+            }
+            set
+            {
+                description = value;
+            }
+        }
         public HotkeyType Job = HotkeyType.None;
 
         public bool UseDefaultAfterCaptureJob = true;

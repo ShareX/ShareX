@@ -88,7 +88,7 @@
             this.tsbWindowRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbWindowRectangle.Name = "tsbWindowRectangle";
             this.tsbWindowRectangle.Size = new System.Drawing.Size(139, 20);
-            this.tsbWindowRectangle.Text = "Window && Rectangle";
+            this.tsbWindowRectangle.Text = "Window and Rectangle";
             this.tsbWindowRectangle.Click += new System.EventHandler(this.tsbWindowRectangle_Click);
             // 
             // tsbRectangle
