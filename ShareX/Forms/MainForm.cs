@@ -115,9 +115,12 @@ namespace ShareX
             tsddbWorkflows.DropDownItems.Clear();
             Program.HotkeyManager.Hotkeys.ForEach<HotkeySettings>(x =>
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
-                tsmi.Click += (sender, e) => HandleHotkeys(x);
-                tsddbWorkflows.DropDownItems.Add(tsmi);
+                if (!x.TaskSettings.IsUsingDefaultSettings)
+                {
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
+                    tsmi.Click += (sender, e) => HandleHotkeys(x);
+                    tsddbWorkflows.DropDownItems.Add(tsmi);
+                }
             });
         }
 
