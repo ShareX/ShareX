@@ -334,21 +334,25 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            string downloadPath = null;
+            string downloadPath, uploadPath = null;
 
             Helpers.AsyncJob(() =>
             {
                 downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
+                uploadPath = string.IsNullOrEmpty(downloadPath) ? Path.Combine(taskSettings.CaptureFolder, filename) : downloadPath;
 
-                using (WebClient wc = new WebClient())
+                if (!string.IsNullOrEmpty(downloadPath))
                 {
-                    wc.Proxy = ProxyInfo.Current.GetWebProxy();
-                    wc.DownloadFile(url, downloadPath);
+                    using (WebClient wc = new WebClient())
+                    {
+                        wc.Proxy = ProxyInfo.Current.GetWebProxy();
+                        wc.DownloadFile(url, downloadPath);
+                    }
                 }
             },
             () =>
             {
-                UploadFile(downloadPath, taskSettings);
+                UploadFile(uploadPath, taskSettings);
             });
         }
     }

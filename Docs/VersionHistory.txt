@@ -230,57 +230,10 @@ Magnifier support during shapes capture, resizeable with mouse wheel (hold shift
 Added imm.io Image Uploader
 Rebranded as ShareX
 
-ZUploader 5.5.0.3030 - 2012-03-07
+ZUploader 5.x
 
-5.5.0 Added Email as file uploader
-5.4.1 Clipboard upload auto detects URL and shortens it
-5.4.0 Added optional shadow capture for transparent capture
-5.3.1 Settings are backed up for automatic recovery
-5.3.0 Added Twitpic, Twitsnaps and yFrog
-5.2.1 Improved tray menu
-5.2.0 New updater with automatic downloader
-5.1.0 Added image resize settings
-5.0.0 Added Window & Control capture support to shape captures
-4.9.0 Added new post-capture option: save screenshots to file
-4.8.0 Added Box file uploader support
-4.7.2 Supported image/text/file based FTP destinations
-4.7.1 Added camera sound when capture is made
-4.7.0 Added Transparent window capture
-4.6.0 Added Hotkeys support
-4.5.0 Added support to capture window from a list of windows
-4.4.0 Added support to capture shapes to Clipboard
-4.3.0 Added Minus uploader support
-4.2.0 Added Photobucket uploader support
-4.1.1 Added user account support for Goo.gl URL Shortener service
-4.1.0 Added tray icon support
-4.0.0 Added Capture menu to capture rectangle, rounded rectangle, ellipse, triangle, diamond, polygon and freehand shapes
-3.12.0 Plugin system to perform Crop Shot and Entire Screen capture
-3.11.0 New Uploaders Configuration window to setup user accounts
-3.10.0 Added Clipboard Content Viewer to confirm uploading using Clipboard
-3.9.0 Added URL Shortener support
-3.8.0 Added ClipboardUpload hotkey (Ctrl + Page up)
-3.7.0 Added upload queue system to limit simultaneous uploads
-3.6.0 Added buffer size setting to improve upload speed
-3.5.0 Added support to copy multiple URLs in history form
-3.4.0 Text file detection improved for detecting popular programming code files
-3.3.0 Image and text encoding operations moved to upload thread to prevent the main window from freezing
-3.2.0 Drag & drop bitmap / text support
-3.1.0 Startup time improved by using precompiled xml serialization dll (SGEN) and threads
-3.0.0 Improved uploading speed and memory allocation especially for big uploads, many bug fixes
-2.8.0 Added auto naming settings for clipboard upload
-2.6.0 Added debug tab to settings form which also saves debug messages automatically to "ZUploaderPersonalPath/Log_(Month)_(Year).txt"
-2.5.0 Added "Show response" button to right click menu to see upload response (Useful for debugging)
-2.4.0 Added new CLI command (-clipboardupload)
-2.3.0 Portable support
-2.2.0 Added image viewer to history form
-2.1.0 Added filters to history form
-2.0.0 History support using SQLite as database
-1.5.0 Image settings for changing image related settings such as image format, quality etc.
-1.4.0 Single instance support for better shell extension uploading (Useful for CLI uploads)
-1.3.0 Added "Stop upload" button to right click menu
-1.2.0 Added support for Shell Extension "Upload using ShareX"
-1.1.0 Reconfigured UI, Added proxy support
+http://zscreen.googlecode.com/svn/trunk/ZUploader/Docs/VersionHistory.txt
 
-ZUploader 1.0.0.0 - 27-03-2010
+ZScreen 1.x to 4.x
 
-1.0.0 Initial version of ZUploader
+http://zscreen.googlecode.com/svn/trunk/ZScreenLib/Documents/VersionHistory.txt
