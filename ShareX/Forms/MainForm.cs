@@ -118,21 +118,24 @@ namespace ShareX
             tsddbWorkflows.DropDownItems.Clear();
             tsmiTrayWorkflows.DropDownItems.Clear();
 
-            Program.HotkeyManager.Hotkeys.ForEach<HotkeySettings>(x =>
+            foreach (HotkeySettings hotkeySetting in Program.HotkeyManager.Hotkeys)
             {
-                if (x.TaskSettings.Job != HotkeyType.None && (!Program.Settings.WorkflowsOnlyShowEdited || !x.TaskSettings.IsUsingDefaultSettings))
+                if (hotkeySetting.TaskSettings.Job != HotkeyType.None && (!Program.Settings.WorkflowsOnlyShowEdited || !hotkeySetting.TaskSettings.IsUsingDefaultSettings))
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
-                    tsmi.Click += (sender, e) => HandleTask(x.TaskSettings);
-                    tsddbWorkflows.DropDownItems.Add(tsmi);
-
-                    tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
-                    tsmi.Click += (sender, e) => HandleTask(x.TaskSettings);
-                    tsmiTrayWorkflows.DropDownItems.Add(tsmi);
+                    tsddbWorkflows.DropDownItems.Add(WorkflowMenuItem(hotkeySetting));
+                    tsmiTrayWorkflows.DropDownItems.Add(WorkflowMenuItem(hotkeySetting));
                 }
-            });
+            }
 
             tsddbWorkflows.Visible = tsmiTrayWorkflows.Visible = tsddbWorkflows.DropDownItems.Count > 0;
+        }
+
+        private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.Description);
+            if (hotkeySetting.HotkeyInfo.IsValidHotkey) tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo.ToString();
+            tsmi.Click += (sender, e) => HandleTask(hotkeySetting.TaskSettings);
+            return tsmi;
         }
 
         private void UpdateDestinationStates()
