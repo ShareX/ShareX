@@ -79,16 +79,6 @@ namespace ShareX
             Helpers.OpenURL(Links.URL_MIKE_STEAM);
         }
 
-        private void pbGregoire_Click(object sender, EventArgs e)
-        {
-            Helpers.OpenURL(Links.URL_GREGOIRE);
-        }
-
-        private void pbDana_Click(object sender, EventArgs e)
-        {
-            Helpers.OpenURL(Links.URL_DANA);
-        }
-
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             Helpers.OpenURL(e.LinkText);
