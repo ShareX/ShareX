@@ -113,6 +113,7 @@ namespace ShareX
         private void UpdateWorkflowsMenu()
         {
             tsddbWorkflows.DropDownItems.Clear();
+
             Program.HotkeyManager.Hotkeys.ForEach<HotkeySettings>(x =>
             {
                 if (!x.TaskSettings.IsUsingDefaultSettings)
@@ -122,6 +123,8 @@ namespace ShareX
                     tsddbWorkflows.DropDownItems.Add(tsmi);
                 }
             });
+
+            tsddbWorkflows.Visible = tsddbWorkflows.DropDownItems.Count > 0;
         }
 
         private void UpdateDestinationStates()

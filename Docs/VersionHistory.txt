@@ -1,4 +1,8 @@
-﻿ShareX 9.0.0 - 2014-05-16
+﻿ShareX 9.0.1
+
+* Customized task settings are now shown as workflows in main window
+
+ShareX 9.0.0 - 2014-05-16
 
 * Capture screen recordings with audio using FFmpeg
 * Capture screen recordings using Video Compression Manager (VCM) via Video for Windows (VfW) encoders
