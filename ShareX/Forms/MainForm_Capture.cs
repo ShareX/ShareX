@@ -56,10 +56,10 @@ namespace ShareX
                     Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
                     DebugHelper.WriteLine("HotkeyManager started");
 
-                    UpdateWorkflowsMenu();
-
                     Program.WatchFolderManager = new WatchFolderManager();
                     DebugHelper.WriteLine("WatchFolderManager started");
+
+                    UpdateWorkflowsMenu();
                 }));
             });
         }
@@ -70,69 +70,74 @@ namespace ShareX
 
             if (hotkeySetting.TaskSettings.Job == HotkeyType.None) return;
 
-            TaskSettings taskSettings = TaskSettings.GetSafeTaskSettings(hotkeySetting.TaskSettings);
+            HandleTask(hotkeySetting.TaskSettings);
+        }
 
-            switch (hotkeySetting.TaskSettings.Job)
+        private void HandleTask(TaskSettings taskSettings)
+        {
+            TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
+
+            switch (safeTaskSettings.Job)
             {
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
                     break;
                 case HotkeyType.ClipboardUpload:
-                    UploadManager.ClipboardUpload(taskSettings);
+                    UploadManager.ClipboardUpload(safeTaskSettings);
                     break;
                 case HotkeyType.ClipboardUploadWithContentViewer:
-                    UploadManager.ClipboardUploadWithContentViewer(taskSettings);
+                    UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
                     break;
                 case HotkeyType.FileUpload:
-                    UploadManager.UploadFile(taskSettings);
+                    UploadManager.UploadFile(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
                     TaskHelpers.OpenDropWindow();
                     break;
                 case HotkeyType.PrintScreen:
-                    CaptureScreenshot(CaptureType.Screen, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Screen, safeTaskSettings, false);
                     break;
                 case HotkeyType.ActiveWindow:
-                    CaptureScreenshot(CaptureType.ActiveWindow, taskSettings, false);
+                    CaptureScreenshot(CaptureType.ActiveWindow, safeTaskSettings, false);
                     break;
                 case HotkeyType.ActiveMonitor:
-                    CaptureScreenshot(CaptureType.ActiveMonitor, taskSettings, false);
+                    CaptureScreenshot(CaptureType.ActiveMonitor, safeTaskSettings, false);
                     break;
                 case HotkeyType.RectangleRegion:
-                    CaptureScreenshot(CaptureType.Rectangle, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Rectangle, safeTaskSettings, false);
                     break;
                 case HotkeyType.WindowRectangle:
-                    CaptureScreenshot(CaptureType.RectangleWindow, taskSettings, false);
+                    CaptureScreenshot(CaptureType.RectangleWindow, safeTaskSettings, false);
                     break;
                 case HotkeyType.RoundedRectangleRegion:
-                    CaptureScreenshot(CaptureType.RoundedRectangle, taskSettings, false);
+                    CaptureScreenshot(CaptureType.RoundedRectangle, safeTaskSettings, false);
                     break;
                 case HotkeyType.EllipseRegion:
-                    CaptureScreenshot(CaptureType.Ellipse, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Ellipse, safeTaskSettings, false);
                     break;
                 case HotkeyType.TriangleRegion:
-                    CaptureScreenshot(CaptureType.Triangle, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Triangle, safeTaskSettings, false);
                     break;
                 case HotkeyType.DiamondRegion:
-                    CaptureScreenshot(CaptureType.Diamond, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Diamond, safeTaskSettings, false);
                     break;
                 case HotkeyType.PolygonRegion:
-                    CaptureScreenshot(CaptureType.Polygon, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Polygon, safeTaskSettings, false);
                     break;
                 case HotkeyType.FreeHandRegion:
-                    CaptureScreenshot(CaptureType.Freehand, taskSettings, false);
+                    CaptureScreenshot(CaptureType.Freehand, safeTaskSettings, false);
                     break;
                 case HotkeyType.LastRegion:
-                    CaptureScreenshot(CaptureType.LastRegion, taskSettings, false);
+                    CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    TaskHelpers.DoScreenRecorder(taskSettings);
+                    TaskHelpers.DoScreenRecorder(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
                     break;
                 case HotkeyType.ScreenColorPicker:
-                    TaskHelpers.OpenScreenColorPicker(taskSettings);
+                    TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
                     break;
                 case HotkeyType.Ruler:
                     TaskHelpers.OpenRuler();

@@ -108,23 +108,31 @@ namespace ShareX
 
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
+
+            ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
+                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin = false;
         }
 
         private void UpdateWorkflowsMenu()
         {
             tsddbWorkflows.DropDownItems.Clear();
+            tsmiTrayWorkflows.DropDownItems.Clear();
 
             Program.HotkeyManager.Hotkeys.ForEach<HotkeySettings>(x =>
             {
-                if (!x.TaskSettings.IsUsingDefaultSettings)
+                if (x.TaskSettings.Job != HotkeyType.None && (!Program.Settings.WorkflowsOnlyShowEdited || !x.TaskSettings.IsUsingDefaultSettings))
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
-                    tsmi.Click += (sender, e) => HandleHotkeys(x);
+                    tsmi.Click += (sender, e) => HandleTask(x.TaskSettings);
                     tsddbWorkflows.DropDownItems.Add(tsmi);
+
+                    tsmi = new ToolStripMenuItem(x.TaskSettings.Description);
+                    tsmi.Click += (sender, e) => HandleTask(x.TaskSettings);
+                    tsmiTrayWorkflows.DropDownItems.Add(tsmi);
                 }
             });
 
-            tsddbWorkflows.Visible = tsddbWorkflows.DropDownItems.Count > 0;
+            tsddbWorkflows.Visible = tsmiTrayWorkflows.Visible = tsddbWorkflows.DropDownItems.Count > 0;
         }
 
         private void UpdateDestinationStates()
@@ -696,6 +704,7 @@ namespace ShareX
             }
 
             AfterSettingsJobs();
+            UpdateWorkflowsMenu();
             Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
 
             Program.ConfigureUploadersConfigWatcher();

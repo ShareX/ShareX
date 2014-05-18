@@ -34,6 +34,7 @@
             this.tsbClipboardUpload = new System.Windows.Forms.ToolStripButton();
             this.tsbFileUpload = new System.Windows.Forms.ToolStripButton();
             this.tsbDragDropUpload = new System.Windows.Forms.ToolStripButton();
+            this.tsddbWorkflows = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbCapture = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiFullscreen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWindow = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecorder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsddbWorkflows = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbDestinations = new System.Windows.Forms.ToolStripDropDownButton();
@@ -200,6 +200,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayWorkflows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -273,6 +274,15 @@
             this.tsbDragDropUpload.Size = new System.Drawing.Size(147, 20);
             this.tsbDragDropUpload.Text = "Drag and drop upload...";
             this.tsbDragDropUpload.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
+            // 
+            // tsddbWorkflows
+            // 
+            this.tsddbWorkflows.Image = global::ShareX.Properties.Resources.application_wave;
+            this.tsddbWorkflows.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.tsddbWorkflows.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbWorkflows.Name = "tsddbWorkflows";
+            this.tsddbWorkflows.Size = new System.Drawing.Size(147, 20);
+            this.tsddbWorkflows.Text = "Workflows";
             // 
             // tsddbCapture
             // 
@@ -408,15 +418,6 @@
             this.tsmiAutoCapture.Size = new System.Drawing.Size(181, 22);
             this.tsmiAutoCapture.Text = "Auto capture...";
             this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
-            // 
-            // tsddbWorkflows
-            // 
-            this.tsddbWorkflows.Image = global::ShareX.Properties.Resources.application_wave;
-            this.tsddbWorkflows.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.tsddbWorkflows.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbWorkflows.Name = "tsddbWorkflows";
-            this.tsddbWorkflows.Size = new System.Drawing.Size(147, 20);
-            this.tsddbWorkflows.Text = "Workflows";
             // 
             // tsddbAfterCaptureTasks
             // 
@@ -1254,6 +1255,7 @@
             this.tsmiTrayClipboardUpload,
             this.tsmiTrayFileUpload,
             this.tsmiTrayDragDropUpload,
+            this.tsmiTrayWorkflows,
             this.tsmiTrayCapture,
             this.tsmiTrayAfterCaptureTasks,
             this.tsmiTrayAfterUploadTasks,
@@ -1274,7 +1276,7 @@
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(200, 440);
+            this.cmsTray.Size = new System.Drawing.Size(200, 462);
             // 
             // tsmiTrayClipboardUpload
             // 
@@ -1694,6 +1696,13 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
+            // tsmiTrayWorkflows
+            // 
+            this.tsmiTrayWorkflows.Image = global::ShareX.Properties.Resources.application_wave;
+            this.tsmiTrayWorkflows.Name = "tsmiTrayWorkflows";
+            this.tsmiTrayWorkflows.Size = new System.Drawing.Size(199, 22);
+            this.tsmiTrayWorkflows.Text = "Workflows";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1896,5 +1905,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
         private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayWorkflows;
     }
 }

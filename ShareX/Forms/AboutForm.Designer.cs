@@ -159,7 +159,7 @@
             this.rtbCredits.Location = new System.Drawing.Point(15, 200);
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
-            this.rtbCredits.Size = new System.Drawing.Size(409, 248);
+            this.rtbCredits.Size = new System.Drawing.Size(417, 248);
             this.rtbCredits.TabIndex = 11;
             this.rtbCredits.Text = resources.GetString("rtbCredits.Text");
             this.rtbCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
@@ -204,7 +204,7 @@
             this.cLogo.Interval = 100;
             this.cLogo.Location = new System.Drawing.Point(224, -8);
             this.cLogo.Name = "cLogo";
-            this.cLogo.Size = new System.Drawing.Size(200, 200);
+            this.cLogo.Size = new System.Drawing.Size(208, 200);
             this.cLogo.TabIndex = 5;
             this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
             this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
@@ -221,7 +221,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(433, 457);
+            this.ClientSize = new System.Drawing.Size(441, 457);
             this.Controls.Add(this.pbMikeSteamURL);
             this.Controls.Add(this.lblOwners);
             this.Controls.Add(this.rtbShareXInfo);
