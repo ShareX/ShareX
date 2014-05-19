@@ -121,6 +121,7 @@
             this.Name = "FileExistForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - How to save?";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
