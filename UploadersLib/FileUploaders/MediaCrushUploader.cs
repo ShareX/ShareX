@@ -74,7 +74,7 @@ namespace UploadersLib.FileUploaders
 
             hash = JToken.Parse(result.Response)["hash"].Value<string>();
 
-            while (true)
+            while (!stopUpload)
             {
                 result.Response = SendRequest(HttpMethod.GET, "https://mediacru.sh/api/" + hash + "/status");
                 JToken jsonResponse = JToken.Parse(result.Response);
@@ -102,6 +102,8 @@ namespace UploadersLib.FileUploaders
                         throw new Exception("This file failed to process.");
                 }
             }
+
+            return result;
         }
 
         private string CreateHash(Stream stream)
@@ -120,7 +122,9 @@ namespace UploadersLib.FileUploaders
         {
             JToken response;
             using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
                 response = JToken.Parse(streamReader.ReadToEnd());
+            }
             string hash = response["hash"].Value<string>();
             MediaCrushBlob blob = response[hash].ToObject<MediaCrushBlob>();
 
