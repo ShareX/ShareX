@@ -547,6 +547,11 @@ namespace ShareX
             catch { }
         }
 
+        public static void OpenQRCode()
+        {
+            new QRCodeForm().Show();
+        }
+
         public static void OpenFTPClient()
         {
             if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.IsValidIndex(Program.UploadersConfig.FTPSelectedImage))

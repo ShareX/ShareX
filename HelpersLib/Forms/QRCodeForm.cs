@@ -36,13 +36,30 @@ namespace HelpersLib
 {
     public partial class QRCodeForm : Form
     {
-        public QRCodeForm(string text)
+        public QRCodeForm(string text = null)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            Text = "QR code: " + text;
-            qrMain.Text = text;
             ClientSize = new Size(400, 400);
+
+            if (!string.IsNullOrEmpty(text))
+            {
+                qrMain.Dock = DockStyle.Fill;
+                qrMain.Cursor = Cursors.Hand;
+                Text = "QR code: " + text;
+                qrMain.Text = text;
+            }
+            else
+            {
+                txtQRCode.Visible = true;
+                txtQRCode.Text = "Text";
+                txtQRCode.SelectAll();
+            }
+        }
+
+        private void txtQRCode_TextChanged(object sender, EventArgs e)
+        {
+            qrMain.Text = txtQRCode.Text;
         }
 
         private void QRCodeForm_Resize(object sender, EventArgs e)
@@ -52,7 +69,10 @@ namespace HelpersLib
 
         private void qrMain_Click(object sender, EventArgs e)
         {
-            Close();
+            if (qrMain.Cursor == Cursors.Hand)
+            {
+                Close();
+            }
         }
     }
 }

@@ -801,6 +801,11 @@ namespace ShareX
             TaskHelpers.OpenDNSChanger();
         }
 
+        private void tsmiQRCode_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQRCode();
+        }
+
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(Program.ScreenshotsFolder))

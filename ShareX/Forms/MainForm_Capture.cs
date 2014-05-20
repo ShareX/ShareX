@@ -154,6 +154,9 @@ namespace ShareX
                 case HotkeyType.ImageEffects:
                     TaskHelpers.OpenImageEffects();
                     break;
+                case HotkeyType.QRCode:
+                    TaskHelpers.OpenQRCode();
+                    break;
             }
         }
 

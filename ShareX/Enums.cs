@@ -175,7 +175,9 @@ namespace ShareX
         [Description("Index folder")]
         IndexFolder,
         [Description("Image effects")]
-        ImageEffects
+        ImageEffects,
+        [Description("QR code")]
+        QRCode
     }
 
     public enum HotkeyStatus

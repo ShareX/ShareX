@@ -74,6 +74,7 @@
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbImageHistory = new System.Windows.Forms.ToolStripButton();
@@ -139,6 +140,7 @@
             this.tsmiCopyFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiShowResponse = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearList = new System.Windows.Forms.ToolStripMenuItem();
             this.tssUploadInfo1 = new System.Windows.Forms.ToolStripSeparator();
@@ -201,7 +203,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -552,7 +554,8 @@
             this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiMonitorTest,
-            this.tsmiDNSChanger});
+            this.tsmiDNSChanger,
+            this.tsmiQRCode});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsddbTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -631,6 +634,14 @@
             this.tsmiDNSChanger.Size = new System.Drawing.Size(183, 22);
             this.tsmiDNSChanger.Text = "DNS changer...";
             this.tsmiDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
+            // 
+            // tsmiQRCode
+            // 
+            this.tsmiQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
+            this.tsmiQRCode.Name = "tsmiQRCode";
+            this.tsmiQRCode.Size = new System.Drawing.Size(183, 22);
+            this.tsmiQRCode.Text = "QR code...";
+            this.tsmiQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
             // tsbScreenshotsFolder
             // 
@@ -909,7 +920,7 @@
             this.tsmiHidePreview});
             this.cmsUploadInfo.Name = "cmsHistory";
             this.cmsUploadInfo.ShowImageMargin = false;
-            this.cmsUploadInfo.Size = new System.Drawing.Size(155, 302);
+            this.cmsUploadInfo.Size = new System.Drawing.Size(155, 280);
             // 
             // tsmiShowErrors
             // 
@@ -1191,6 +1202,13 @@
             this.tsmiShowResponse.Text = "Show response";
             this.tsmiShowResponse.Click += new System.EventHandler(this.tsmiShowResponse_Click);
             // 
+            // tsmiShowQRCode
+            // 
+            this.tsmiShowQRCode.Name = "tsmiShowQRCode";
+            this.tsmiShowQRCode.Size = new System.Drawing.Size(154, 22);
+            this.tsmiShowQRCode.Text = "Show QR code";
+            this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
+            // 
             // tsmiUploadSelectedFile
             // 
             this.tsmiUploadSelectedFile.Name = "tsmiUploadSelectedFile";
@@ -1278,7 +1296,7 @@
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(200, 462);
+            this.cmsTray.Size = new System.Drawing.Size(200, 484);
             // 
             // tsmiTrayClipboardUpload
             // 
@@ -1560,7 +1578,8 @@
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayMonitorTest,
-            this.tsmiTrayDNSChanger});
+            this.tsmiTrayDNSChanger,
+            this.tsmiTrayQRCode});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             this.tsmiTrayTools.Size = new System.Drawing.Size(199, 22);
@@ -1705,12 +1724,13 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiShowQRCode
+            // tsmiTrayQRCode
             // 
-            this.tsmiShowQRCode.Name = "tsmiShowQRCode";
-            this.tsmiShowQRCode.Size = new System.Drawing.Size(154, 22);
-            this.tsmiShowQRCode.Text = "Show QR code";
-            this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
+            this.tsmiTrayQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
+            this.tsmiTrayQRCode.Name = "tsmiTrayQRCode";
+            this.tsmiTrayQRCode.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayQRCode.Text = "QR code...";
+            this.tsmiTrayQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
             // MainForm
             // 
@@ -1916,5 +1936,7 @@
         private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowQRCode;
+        private System.Windows.Forms.ToolStripMenuItem tsmiQRCode;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayQRCode;
     }
 }
