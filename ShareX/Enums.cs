@@ -92,7 +92,9 @@ namespace ShareX
         [Description("Send URL with Email")]
         SendURLWithEmail = 1 << 2,
         [Description("Copy URL to clipboard")]
-        CopyURLToClipboard = 1 << 3
+        CopyURLToClipboard = 1 << 3,
+        [Description("Show QR code window")]
+        ShowQRCode = 1 << 4
     }
 
     public enum AfterCaptureFormResult

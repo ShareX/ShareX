@@ -33,6 +33,7 @@
             // 
             // qrMain
             // 
+            this.qrMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.qrMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.qrMain.ErrorCorrectLevel = Gma.QrCodeNet.Encoding.ErrorCorrectionLevel.M;
             this.qrMain.Location = new System.Drawing.Point(0, 0);
@@ -40,6 +41,7 @@
             this.qrMain.QuietZoneModule = Gma.QrCodeNet.Encoding.Windows.Render.QuietZoneModules.Two;
             this.qrMain.Size = new System.Drawing.Size(384, 362);
             this.qrMain.TabIndex = 0;
+            this.qrMain.Click += new System.EventHandler(this.qrMain_Click);
             // 
             // QRCodeForm
             // 

@@ -598,6 +598,11 @@ namespace ShareX
                         ClipboardHelpers.CopyText(txt);
                     }
                 }
+
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowQRCode))
+                {
+                    threadWorker.InvokeAsync(() => new QRCodeForm(Info.Result.ToString()).Show());
+                }
             }
             catch (Exception e)
             {

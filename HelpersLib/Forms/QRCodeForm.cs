@@ -41,13 +41,18 @@ namespace HelpersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             Text = "QR code: " + text;
-            ClientSize = new Size(400, 400);
             qrMain.Text = text;
+            ClientSize = new Size(400, 400);
         }
 
         private void QRCodeForm_Resize(object sender, EventArgs e)
         {
             qrMain.Refresh();
+        }
+
+        private void qrMain_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
