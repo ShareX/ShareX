@@ -252,7 +252,7 @@ namespace ShareX
         {
             cmsUploadInfo.SuspendLayout();
 
-            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible =
+            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible =
                 tsmiUploadSelectedFile.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
@@ -328,6 +328,8 @@ namespace ShareX
                     {
                         tsmiShowResponse.Visible = true;
                     }
+
+                    tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
 
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                 }
@@ -1109,6 +1111,11 @@ namespace ShareX
         private void tsmiShowResponse_Click(object sender, EventArgs e)
         {
             uim.ShowResponse();
+        }
+
+        private void tsmiShowQRCode_Click(object sender, EventArgs e)
+        {
+            uim.ShowQRCode();
         }
 
         private void tsmiUploadSelectedFile_Click(object sender, EventArgs e)

@@ -201,6 +201,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -897,6 +898,7 @@
             this.tsmiOpen,
             this.tsmiCopy,
             this.tsmiShowResponse,
+            this.tsmiShowQRCode,
             this.tsmiUploadSelectedFile,
             this.tsmiClearList,
             this.tssUploadInfo1,
@@ -907,7 +909,7 @@
             this.tsmiHidePreview});
             this.cmsUploadInfo.Name = "cmsHistory";
             this.cmsUploadInfo.ShowImageMargin = false;
-            this.cmsUploadInfo.Size = new System.Drawing.Size(155, 258);
+            this.cmsUploadInfo.Size = new System.Drawing.Size(155, 302);
             // 
             // tsmiShowErrors
             // 
@@ -1703,6 +1705,13 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
+            // tsmiShowQRCode
+            // 
+            this.tsmiShowQRCode.Name = "tsmiShowQRCode";
+            this.tsmiShowQRCode.Size = new System.Drawing.Size(154, 22);
+            this.tsmiShowQRCode.Text = "Show QR code";
+            this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1906,5 +1915,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
         private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayWorkflows;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowQRCode;
     }
 }

@@ -297,6 +297,11 @@ namespace ShareX
             }
         }
 
+        public void ShowQRCode()
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
+        }
+
         public void Upload()
         {
             if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);

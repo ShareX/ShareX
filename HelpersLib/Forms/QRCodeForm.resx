@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,30 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbCredits.Text" xml:space="preserve">
-    <value>Contributors:
-
-Logo and icon: Mopsy - http://mpql.net
-Jira, Gist and Mega support: gpailler (Grégoire Pailler)
-Web site: dmxt (Dana)
-Amazon S3 and DreamObjects support: Alan Edwardes - http://alanedwardes.com
-
-External libraries:
-
-Greenshot Image Editor: http://sourceforge.net/projects/greenshot
-FTP Library: http://biko.codeplex.com
-Json.NET: http://json.codeplex.com
-SSH.NET: http://sshnet.codeplex.com
-Icons: http://p.yusukekamiyamane.com
-ImageListView: http://code.google.com/p/imagelistview
-AviWriter: https://code.google.com/p/aforge
-AsyncBridge: http://omermor.github.com/AsyncBridge
-FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
-7-Zip: http://www.7-zip.org
-SevenZipSharp: http://sevenzipsharp.codeplex.com
-DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-QrCode.Net: https://qrcodenet.codeplex.com
-
-Copyright © 2007 - 2014 ShareX Developers</value>
-  </data>
 </root>
