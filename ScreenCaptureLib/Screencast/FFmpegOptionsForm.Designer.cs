@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
             this.lblX264CRF = new System.Windows.Forms.Label();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
-            this.tpFFmpeg = new System.Windows.Forms.ToolTip();
+            this.tpFFmpeg = new System.Windows.Forms.ToolTip(this.components);
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbPreset = new System.Windows.Forms.ComboBox();
@@ -206,7 +207,7 @@
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
             this.cbPreset.TabIndex = 3;
-            this.tpFFmpeg.SetToolTip(this.cbPreset, "Default is \"Medium\".");
+            this.tpFFmpeg.SetToolTip(this.cbPreset, resources.GetString("cbPreset.ToolTip"));
             this.cbPreset.SelectedIndexChanged += new System.EventHandler(this.cbPreset_SelectedIndexChanged);
             // 
             // tbVorbis_qscale

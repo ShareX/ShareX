@@ -123,6 +123,15 @@
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): The range of the quantizer scale is 0-51: where 0 is lossless, 23 is default, and 51 is worst possible.
 A lower value is a higher quality and a subjectively sane range is 18-28.
-Consider 18 to be visually lossless or nearly so: it should look the same or nearly the same as the input but it isn't technically lossless.</value>
+Consider 18 to be visually lossless or nearly so: it should look the same or nearly the same as the input but it isn't technically lossless.
+The range is exponential, so increasing the CRF value +6 is roughly half the bitrate while -6 is roughly twice the bitrate.
+General usage is to choose the highest CRF value that still provides an acceptable quality.
+If the output looks good, then try a higher value and if it looks bad then choose a lower value.</value>
+  </data>
+  <data name="cbPreset.ToolTip" xml:space="preserve">
+    <value>The default preset is "Medium".
+A preset is a collection of options that will provide a certain encoding speed to compression ratio. A slower preset will provide better compression (compression is quality per filesize).
+This means that, for example, if you target a certain file size or constant bit rate, you will achieve better quality with a slower preset.
+Similarly, for constant quality encoding, you will simply save bitrate by choosing a slower preset.</value>
   </data>
 </root>

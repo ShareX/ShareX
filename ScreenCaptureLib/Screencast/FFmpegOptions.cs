@@ -67,9 +67,10 @@ namespace ScreenCaptureLib
             Extension = "mp4";
             CLIPath = "ffmpeg.exe";
             UserArgs = "";
+            ShowError = true;
 
             // x264
-            x264_CRF = 20;
+            x264_CRF = 23;
             Preset = FFmpegPreset.medium;
 
             // VPx

@@ -293,17 +293,17 @@ namespace ShareX
         #region Capture / Screen recorder
 
         public ScreenRecordOutput ScreenRecordOutput = ScreenRecordOutput.FFmpeg;
-        public AVIOptions AVIOptions = new AVIOptions();
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
-
-        public int GIFFPS = 5;
-        public int ScreenRecordFPS = 20;
-        public bool ScreenRecordFixedDuration = true;
-        public float ScreenRecordDuration = 3f;
-        public float ScreenRecordStartDelay = 0.1f;
+        public AVIOptions AVIOptions = new AVIOptions();
 
         public bool RunScreencastCLI = false;
         public int VideoEncoderSelected = 0;
+
+        public int ScreenRecordFPS = 20;
+        public int GIFFPS = 5;
+        public bool ScreenRecordFixedDuration = false;
+        public float ScreenRecordDuration = 3f;
+        public float ScreenRecordStartDelay = 0.5f;
 
         #endregion Capture / Screen recorder
     }

@@ -76,7 +76,7 @@ namespace ScreenCaptureLib
         [Description("Slower")]
         slower,
         [Description("Very slow")]
-        veryslow,
+        veryslow
     }
 
     public enum FFmpegAudioCodec
