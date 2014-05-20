@@ -56,13 +56,13 @@ namespace UploadersLib
         [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the server. This affects the server address."), DefaultValue(ServerProtocol.Ftp)]
         public ServerProtocol ServerProtocol { get; set; }
 
-        [Category("FTP"), Description("FTP sub folder path, example: Screenshots.\r\nYou can use name parsing: %y = year, %mo = month."), DefaultValue("")]
+        [Category("FTP"), Description("FTP sub folder path, example: Screenshots.\r\nYou can use name parsing: %y = year, %mo = month.")]
         public string SubFolderPath { get; set; }
 
         [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the browser"), DefaultValue(BrowserProtocol.Http)]
         public BrowserProtocol BrowserProtocol { get; set; }
 
-        [Category("FTP"), Description("URL = HttpHomePath + SubFolderPath + FileName\r\nIf HttpHomePath is empty then URL = Host + SubFolderPath + FileName\r\n%host = Host"), DefaultValue("")]
+        [Category("FTP"), Description("URL = HttpHomePath + SubFolderPath + FileName\r\nIf HttpHomePath is empty then URL = Host + SubFolderPath + FileName\r\n%host = Host")]
         public string HttpHomePath { get; set; }
 
         [Category("FTP"), Description("Automatically add sub folder path to end of http home path"), DefaultValue(true)]
@@ -122,16 +122,12 @@ namespace UploadersLib
         [Editor(typeof(KeyFileNameEditor), typeof(UITypeEditor))]
         public string Keypath { get; set; }
 
-        private static bool warning1Showed = false;
-
         public FTPAccount()
         {
             Protocol = FTPProtocol.FTP;
-            Name = "New Account";
+            Name = "New account";
             Host = "host";
             Port = 21;
-            Username = "username";
-            Password = "password";
             ServerProtocol = ServerProtocol.Ftp;
             SubFolderPath = string.Empty;
             BrowserProtocol = BrowserProtocol.Http;
@@ -142,26 +138,24 @@ namespace UploadersLib
             FtpsSecurityProtocol = FtpSecurityProtocol.Ssl2Explicit;
         }
 
-        public FTPAccount(string name)
-            : this()
-        {
-            Name = name;
-        }
-
-        public string GetSubFolderPath()
+        public string GetSubFolderPath(string filename = null)
         {
             NameParser parser = new NameParser(NameParserType.URL);
-            return parser.Parse(SubFolderPath.Replace("%host", Host));
-        }
-
-        public string GetSubFolderPath(string filename)
-        {
-            return Helpers.CombineURL(GetSubFolderPath(), filename);
+            string path = parser.Parse(SubFolderPath.Replace("%host", Host));
+            return Helpers.CombineURL(path, filename);
         }
 
         public string GetHttpHomePath()
         {
+            // @ deprecated
+            if (HttpHomePath.StartsWith("@"))
+            {
+                HttpHomePath = HttpHomePath.Substring(1);
+                HttpHomePathAutoAddSubFolderPath = false;
+            }
+
             HttpHomePath = FTPHelpers.RemovePrefixes(HttpHomePath);
+
             NameParser nameParser = new NameParser(NameParserType.URL);
             return nameParser.Parse(HttpHomePath.Replace("%host", Host));
         }
@@ -184,20 +178,6 @@ namespace UploadersLib
             subFolderPath = Helpers.URLPathEncode(subFolderPath);
 
             string httpHomePath = GetHttpHomePath();
-
-            if (httpHomePath.StartsWith("@"))
-            {
-                if (!warning1Showed)
-                {
-                    // TODO: Remove this warning 2 release later.
-                    MessageBox.Show("Please use 'HttpHomePathAutoAddSubFolderPath' setting instead adding @ character in beginning of 'HttpHomePath' setting.", "ShareX - FTP account problem",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    warning1Showed = true;
-                }
-
-                httpHomePath = httpHomePath.Substring(1);
-            }
-
             httpHomePath = Helpers.URLPathEncode(httpHomePath);
 
             string path;

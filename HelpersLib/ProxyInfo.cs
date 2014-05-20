@@ -138,7 +138,7 @@ namespace HelpersLib
         {
             try
             {
-                // TODO: Need better solution
+                // Need better solution
                 return (WebProxy)typeof(WebProxy).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic,
                     null, new Type[] { typeof(bool) }, null).Invoke(new object[] { true });
             }

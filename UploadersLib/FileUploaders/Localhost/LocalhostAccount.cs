@@ -51,10 +51,10 @@ namespace UploadersLib
         [Category("Localhost"), PasswordPropertyText(true)]
         public string Password { get; set; }
 
-        [Category("Localhost"), Description("Localhost Sub-folder Path, e.g. screenshots, %y = year, %mo = month. SubFolderPath will be automatically appended to HttpHomePath if HttpHomePath does not start with @"), DefaultValue("")]
+        [Category("Localhost"), Description("Localhost Sub-folder Path, e.g. screenshots, %y = year, %mo = month. SubFolderPath will be automatically appended to HttpHomePath if HttpHomePath does not start with @")]
         public string SubFolderPath { get; set; }
 
-        [Category("Localhost"), Description("HTTP Home Path, %host = Host e.g. google.com without http:// because you choose that in Remote Protocol.\nURL = HttpHomePath + SubFolderPath + FileName\nURL = Host + SubFolderPath + FileName (if HttpHomePath is empty)"), DefaultValue("")]
+        [Category("Localhost"), Description("HTTP Home Path, %host = Host e.g. google.com without http:// because you choose that in Remote Protocol.\nURL = HttpHomePath + SubFolderPath + FileName\nURL = Host + SubFolderPath + FileName (if HttpHomePath is empty)")]
         public string HttpHomePath { get; set; }
 
         [Category("Localhost"), Description("Automatically add sub folder path to end of http home path"), DefaultValue(true)]
@@ -100,17 +100,16 @@ namespace UploadersLib
             }
         }
 
-        private static bool warning1Showed = false;
-
         public LocalhostAccount()
         {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public LocalhostAccount(string name)
-            : this()
-        {
-            Name = name;
+            Name = "New account";
+            LocalhostRoot = string.Empty;
+            Port = 80;
+            SubFolderPath = string.Empty;
+            HttpHomePath = string.Empty;
+            HttpHomePathAutoAddSubFolderPath = true;
+            HttpHomePathNoExtension = false;
+            RemoteProtocol = BrowserProtocol.File;
         }
 
         public string GetSubFolderPath()
@@ -121,9 +120,17 @@ namespace UploadersLib
 
         public string GetHttpHomePath()
         {
+            // @ deprecated
+            if (HttpHomePath.StartsWith("@"))
+            {
+                HttpHomePath = HttpHomePath.Substring(1);
+                HttpHomePathAutoAddSubFolderPath = false;
+            }
+
+            HttpHomePath = FTPHelpers.RemovePrefixes(HttpHomePath);
+
             NameParser parser = new NameParser(NameParserType.URL);
-            HttpHomePath = FTPHelpers.RemovePrefixes(HttpHomePath.Replace("%host", LocalhostRoot));
-            return parser.Parse(HttpHomePath);
+            return parser.Parse(HttpHomePath.Replace("%host", LocalhostRoot));
         }
 
         public string GetUriPath(string filename)
@@ -154,21 +161,7 @@ namespace UploadersLib
             }
             else
             {
-                if (httpHomePath.StartsWith("@"))
-                {
-                    if (!warning1Showed)
-                    {
-                        // TODO: Remove this warning 2 release later.
-                        MessageBox.Show("Please use 'HttpHomePathAutoAddSubFolderPath' setting instead adding @ character in beginning of 'HttpHomePath' setting.", "ShareX - Localhost account problem",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        warning1Showed = true;
-                    }
-
-                    httpHomePath = httpHomePath.Substring(1);
-                }
-
-                httpHomePath = Helpers.URLPathEncode(httpHomePath);
-                path = httpHomePath;
+                path = Helpers.URLPathEncode(httpHomePath);
             }
 
             if (Port != 80)

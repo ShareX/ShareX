@@ -550,7 +550,6 @@ namespace HelpersLib
 
             try
             {
-                // TODO: Need better solution
                 pi = (PropertyItem)typeof(PropertyItem).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[] { }, null).Invoke(null);
                 pi.Id = id;
                 pi.Len = text.Length + 1;

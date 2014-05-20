@@ -545,7 +545,7 @@ namespace UploadersLib
 
         private void FTPAccountAddButton_Click(object sender, EventArgs e)
         {
-            FTPAccount acc = new FTPAccount("New account");
+            FTPAccount acc = new FTPAccount();
             Config.FTPAccountList.Add(acc);
             ucFTPAccounts.AddItem(acc);
             FTPSetup(Config.FTPAccountList);
@@ -618,7 +618,7 @@ namespace UploadersLib
 
         private void LocalhostAccountAddButton_Click(object sender, EventArgs e)
         {
-            LocalhostAccount acc = new LocalhostAccount("New account");
+            LocalhostAccount acc = new LocalhostAccount();
             Config.LocalhostAccountList.Add(acc);
             ucLocalhostAccounts.AddItem(acc);
         }
