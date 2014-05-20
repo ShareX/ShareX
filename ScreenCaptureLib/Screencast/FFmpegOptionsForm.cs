@@ -70,6 +70,7 @@ namespace ScreenCaptureLib
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
+            cbShowError.Checked = Options.FFmpeg.ShowError;
 
             string cli = "ffmpeg.exe";
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
@@ -256,6 +257,11 @@ namespace ScreenCaptureLib
         {
             Options.FFmpeg.MP3_qscale = FFmpegHelper.libmp3lame_qscale_end - tbMP3_qscale.Value; // 0-9 where a lower value is a higher quality
             UpdateUI();
+        }
+
+        private void cbShowError_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.ShowError = cbShowError.Checked;
         }
 
         private void tbFFmpegPath_TextChanged(object sender, EventArgs e)
