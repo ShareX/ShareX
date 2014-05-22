@@ -133,20 +133,15 @@ namespace DNSChanger
             {
                 btnPingPrimary.Enabled = btnPingSecondary.Enabled = false;
 
-                BackgroundWorker bw = new BackgroundWorker();
-
-                bw.DoWork += (sender, e) =>
+                Task.Run(() =>
                 {
                     PingResult pingResult = PingHelper.PingHost(ip);
                     MessageBox.Show(pingResult.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                };
-
-                bw.RunWorkerCompleted += (sender, e) =>
+                },
+                () =>
                 {
                     btnPingPrimary.Enabled = btnPingSecondary.Enabled = true;
-                };
-
-                bw.RunWorkerAsync();
+                });
             }
         }
 

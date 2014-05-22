@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using System.Windows.Forms;
 using UploadersLib.OtherServices;
 
@@ -65,7 +66,7 @@ namespace UploadersLib
         {
             if (!string.IsNullOrEmpty(txtTranslateText.Text))
             {
-                StartBW_LanguageTranslator(new GoogleTranslateInfo
+                TranslateAsync(new GoogleTranslateInfo
                 {
                     Text = txtTranslateText.Text,
                     SourceLanguage = Config.GoogleAutoDetectSource ? null : Config.GoogleSourceLanguage,
@@ -130,11 +131,29 @@ namespace UploadersLib
             return string.Empty;
         }
 
-        public void StartBW_LanguageTranslator(GoogleTranslateInfo gti)
+        public void TranslateAsync(GoogleTranslateInfo info)
         {
             btnTranslate.Enabled = false;
             btnTranslateTo.Enabled = false;
-            CreateWorker().RunWorkerAsync(gti);
+
+            Task.Run(() =>
+            {
+                info = new GoogleTranslate(Config.APIKey).TranslateText(info);
+            },
+            () =>
+            {
+                UpdateGoogleTranslateGUI(info);
+            });
+        }
+
+        private void UpdateGoogleTranslateGUI(GoogleTranslateInfo info)
+        {
+            btnTranslate.Enabled = true;
+            btnTranslateTo.Enabled = true;
+
+            txtTranslateText.Text = info.Text;
+            txtLanguages.Text = info.SourceLanguage + " -> " + info.TargetLanguage;
+            txtTranslateResult.Text = info.Result;
         }
     }
 }

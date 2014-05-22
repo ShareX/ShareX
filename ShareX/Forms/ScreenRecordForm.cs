@@ -134,7 +134,7 @@ namespace ShareX
             ScreenRegionManager screenRegionManager = new ScreenRegionManager();
             screenRegionManager.Start(captureRectangle);
 
-            Helpers.AsyncJob(() =>
+            Task.Run(() =>
             {
                 if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI)
                 {

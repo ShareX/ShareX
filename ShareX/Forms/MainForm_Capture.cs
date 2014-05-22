@@ -196,11 +196,15 @@ namespace ShareX
 
             if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
             {
-                int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
-                BackgroundWorker bw = new BackgroundWorker();
-                bw.DoWork += (sender, e) => Thread.Sleep(sleep);
-                bw.RunWorkerCompleted += (sender, e) => DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
-                bw.RunWorkerAsync();
+                Task.Run(() =>
+                {
+                    int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+                    Thread.Sleep(sleep);
+                },
+                () =>
+                {
+                    DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
+                });
             }
             else
             {
@@ -473,7 +477,7 @@ namespace ShareX
             WindowsList windowsList = new WindowsList();
             List<WindowInfo> windows = null;
 
-            Helpers.AsyncJob(() =>
+            Task.Run(() =>
             {
                 windows = windowsList.GetVisibleWindowsList();
             },

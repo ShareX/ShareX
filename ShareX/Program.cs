@@ -535,7 +535,7 @@ namespace ShareX
         {
             if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
 
-            Helpers.AsyncJob(() =>
+            Task.Run(() =>
             {
                 UploadersConfig.Save(Program.UploadersConfigFilePath);
             },

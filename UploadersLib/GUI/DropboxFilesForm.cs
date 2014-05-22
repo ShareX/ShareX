@@ -65,7 +65,7 @@ namespace UploadersLib.Forms
 
             DropboxContentInfo contentInfo = null;
 
-            Helpers.AsyncJob(() =>
+            Task.Run(() =>
             {
                 contentInfo = dropbox.GetMetadata(path, true);
             },

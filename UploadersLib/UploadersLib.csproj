@@ -207,9 +207,6 @@
     <Compile Include="GUI\DropboxFilesForm.Designer.cs">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GoogleTranslateGUIWorker.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GUI\GoogleTranslateGUIHelper.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -36,6 +37,14 @@ namespace HelpersLib
         public static void Run(Action action)
         {
             ThreadPool.QueueUserWorkItem(state => action());
+        }
+
+        public static void Run(Action action, Action completed)
+        {
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += (sender, e) => action();
+            bw.RunWorkerCompleted += (sender, e) => completed();
+            bw.RunWorkerAsync();
         }
     }
 }

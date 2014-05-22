@@ -585,14 +585,6 @@ namespace HelpersLib
             return time;
         }
 
-        public static void AsyncJob(Action thread, Action threadCompleted)
-        {
-            BackgroundWorker bw = new BackgroundWorker();
-            bw.DoWork += (sender, e) => thread();
-            bw.RunWorkerCompleted += (sender, e) => threadCompleted();
-            bw.RunWorkerAsync();
-        }
-
         public static object Clone(object obj)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -700,21 +692,21 @@ namespace HelpersLib
 
         public static void WaitWhileAsync(Func<bool> check, int interval, int timeout, Action onSuccess, int waitStart = 0)
         {
-            BackgroundWorker bw = new BackgroundWorker();
-            bw.DoWork += (sender, e) =>
+            bool result = false;
+
+            Task.Run(() =>
             {
                 if (waitStart > 0)
                 {
                     Thread.Sleep(waitStart);
                 }
 
-                e.Result = WaitWhile(check, interval, timeout);
-            };
-            bw.RunWorkerCompleted += (sender, e) =>
+                result = WaitWhile(check, interval, timeout);
+            },
+            () =>
             {
-                if ((bool)e.Result) onSuccess();
-            };
-            bw.RunWorkerAsync();
+                if (result) onSuccess();
+            });
         }
 
         public static bool IsFileLocked(string path)

@@ -880,21 +880,16 @@ namespace UploadersLib
             if (acc != null)
             {
                 ucFTPAccounts.btnTest.Enabled = false;
-                BackgroundWorker bw = new BackgroundWorker();
-                bw.DoWork += bw_DoWorkTestFTPAccount;
-                bw.RunWorkerCompleted += bw_RunWorkerCompletedTestFTPAccount;
-                bw.RunWorkerAsync(acc);
+
+                Task.Run(() =>
+                {
+                    TestFTPAccount(acc, false);
+                },
+                () =>
+                {
+                    ucFTPAccounts.btnTest.Enabled = true;
+                });
             }
-        }
-
-        private void bw_DoWorkTestFTPAccount(object sender, DoWorkEventArgs e)
-        {
-            TestFTPAccount((FTPAccount)e.Argument, false);
-        }
-
-        private void bw_RunWorkerCompletedTestFTPAccount(object sender, RunWorkerCompletedEventArgs e)
-        {
-            ucFTPAccounts.btnTest.Enabled = true;
         }
 
         private void FTPOpenClient()
@@ -1505,7 +1500,7 @@ namespace UploadersLib
 
             txtCustomUploaderLog.ResetText();
 
-            Helpers.AsyncJob(() =>
+            Task.Run(() =>
             {
                 try
                 {

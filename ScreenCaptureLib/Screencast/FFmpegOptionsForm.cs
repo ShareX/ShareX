@@ -107,7 +107,8 @@ namespace ScreenCaptureLib
         {
             btnRefreshSources.Enabled = false;
             DirectShowDevices devices = null;
-            Helpers.AsyncJob(() =>
+
+            Task.Run(() =>
             {
                 using (FFmpegHelper ffmpeg = new FFmpegHelper(Options))
                 {
