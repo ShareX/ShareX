@@ -554,7 +554,7 @@ namespace UploadersLib
                 FtpItem file = lvFTPList.SelectedItems[0].Tag as FtpItem;
                 if (file != null && file.ItemType == FtpItemType.File)
                 {
-                    ThreadPool.QueueUserWorkItem(x => Process.Start(Account.GetUriPath("@" + file.FullPath)));
+                    Task.Run(() => Process.Start(Account.GetUriPath("@" + file.FullPath)));
                 }
             }
         }

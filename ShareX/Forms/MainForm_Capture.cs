@@ -32,7 +32,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -43,7 +42,7 @@ namespace ShareX
 
         private void InitHotkeys()
         {
-            ThreadPool.QueueUserWorkItem(state =>
+            Task.Run(() =>
             {
                 if (Program.HotkeysConfig == null)
                 {
@@ -467,54 +466,61 @@ namespace ShareX
             }
         }
 
-        private async void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
+        private void PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
         {
             tsmiWindow.DropDownItems.Clear();
 
             WindowsList windowsList = new WindowsList();
-            List<WindowInfo> windows = await TaskEx.Run(() => windowsList.GetVisibleWindowsList());
+            List<WindowInfo> windows = null;
 
-            if (windows != null)
+            Helpers.AsyncJob(() =>
             {
-                foreach (WindowInfo window in windows)
+                windows = windowsList.GetVisibleWindowsList();
+            },
+            () =>
+            {
+                if (windows != null)
                 {
-                    try
+                    foreach (WindowInfo window in windows)
                     {
-                        string title = window.Text.Truncate(50);
-                        ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
-                        tsi.Tag = window;
-                        tsi.Click += handlerWindow;
-
-                        using (Icon icon = window.Icon)
+                        try
                         {
-                            if (icon != null && icon.Width > 0 && icon.Height > 0)
+                            string title = window.Text.Truncate(50);
+                            ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
+                            tsi.Tag = window;
+                            tsi.Click += handlerWindow;
+
+                            using (Icon icon = window.Icon)
                             {
-                                tsi.Image = icon.ToBitmap();
+                                if (icon != null && icon.Width > 0 && icon.Height > 0)
+                                {
+                                    tsi.Image = icon.ToBitmap();
+                                }
                             }
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
+                        catch (Exception e)
+                        {
+                            DebugHelper.WriteException(e);
+                        }
                     }
                 }
-            }
 
-            tsmiMonitor.DropDownItems.Clear();
+                tsmiMonitor.DropDownItems.Clear();
 
-            Screen[] screens = Screen.AllScreens;
+                Screen[] screens = Screen.AllScreens;
 
-            for (int i = 0; i < screens.Length; i++)
-            {
-                Screen screen = screens[i];
-                string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
-                ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
-                tsi.Tag = screen.Bounds;
-                tsi.Click += handlerMonitor;
-            }
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    Screen screen = screens[i];
+                    string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
+                    ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
+                    tsi.Tag = screen.Bounds;
+                    tsi.Click += handlerMonitor;
+                }
 
-            tsmiWindow.Invalidate();
-            tsmiMonitor.Invalidate();
+                tsmiWindow.Invalidate();
+                tsmiMonitor.Invalidate();
+            });
         }
 
         #region Menu events

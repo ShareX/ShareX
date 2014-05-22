@@ -51,10 +51,6 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AsyncBridge.Net35, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b3b1c0202c0d6a87, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
-    </Reference>
     <Reference Include="Gma.QrCodeNet.Encoding">
       <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net35\Gma.QrCodeNet.Encoding.dll</HintPath>
     </Reference>
@@ -70,10 +66,6 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Remoting" />
-    <Reference Include="System.Threading, Version=1.0.2856.102, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\TaskParallelLibrary.1.0.2856.0\lib\Net35\System.Threading.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -95,6 +87,12 @@
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
     <Compile Include="FontSafe.cs" />
+    <Compile Include="Forms\OutputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutputBox.Designer.cs">
+      <DependentUpon>OutputBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QRCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +115,7 @@
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="ProxyInfo.cs" />
+    <Compile Include="Task.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
@@ -334,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MonitorTestForm.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutputBox.resx">
+      <DependentUpon>OutputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>

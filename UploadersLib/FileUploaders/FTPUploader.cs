@@ -76,7 +76,7 @@ namespace UploadersLib.FileUploaders
             {
                 stopUpload = true;
 
-                ThreadPool.QueueUserWorkItem(state => ftpClient.StopUpload());
+                Task.Run(() => ftpClient.StopUpload());
             }
         }
 

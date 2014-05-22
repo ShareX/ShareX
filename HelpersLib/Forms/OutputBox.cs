@@ -23,44 +23,26 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 
-namespace ShareX
+namespace HelpersLib
 {
-    public class ScreenRegionManager : IDisposable
+    public partial class OutputBox : Form
     {
-        private ScreenRegionForm regionForm;
-
-        public void Start(Rectangle captureRectangle)
+        public OutputBox(string text, string title)
         {
-            if (captureRectangle != CaptureHelpers.GetScreenBounds())
-            {
-                regionForm = new ScreenRegionForm(captureRectangle);
-                regionForm.Show();
-            }
-        }
-
-        public void ChangeColor(Color color)
-        {
-            if (regionForm != null)
-            {
-                regionForm.ChangeColor(color);
-            }
-        }
-
-        public void Dispose()
-        {
-            if (regionForm != null)
-            {
-                if (regionForm.Visible)
-                {
-                    regionForm.Close();
-                }
-
-                regionForm.Dispose();
-            }
+            InitializeComponent();
+            Icon = ShareXResources.Icon;
+            Text = "ShareX - " + title;
+            txtText.Text = text;
+            txtText.SelectionStart = txtText.TextLength;
         }
     }
 }

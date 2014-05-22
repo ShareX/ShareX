@@ -133,7 +133,7 @@
   <data name="hammer_pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hammer--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="camcorder__pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="camcorder_pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camcorder--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ru" type="System.Resources.ResXFileRef, System.Windows.Forms">

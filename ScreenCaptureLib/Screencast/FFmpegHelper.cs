@@ -42,12 +42,27 @@ namespace ScreenCaptureLib
         public static readonly int libmp3lame_qscale_end = 9;
         public static readonly string GDIgrab = "GDI grab";
 
+        public StringBuilder Output { get; private set; }
         public ScreencastOptions Options { get; private set; }
 
         public FFmpegHelper(ScreencastOptions options)
         {
+            Output = new StringBuilder();
+            OutputDataReceived += FFmpegHelper_DataReceived;
+            ErrorDataReceived += FFmpegHelper_DataReceived;
             Options = options;
             Helpers.CreateDirectoryIfNotExist(Options.OutputPath);
+        }
+
+        private void FFmpegHelper_DataReceived(object sender, DataReceivedEventArgs e)
+        {
+            lock (this)
+            {
+                if (!string.IsNullOrEmpty(e.Data))
+                {
+                    Output.AppendLine(e.Data);
+                }
+            }
         }
 
         public bool Record()
@@ -56,8 +71,7 @@ namespace ScreenCaptureLib
             bool result = errorCode == 0;
             if (Options.FFmpeg.ShowError && !result)
             {
-                string text = string.Join("\r\n", Errors.ToString().Lines().Where(x => !string.IsNullOrEmpty(x)).TakeLast(10).ToArray());
-                MessageBox.Show(text, "ShareX - FFmpeg error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new OutputBox(Output.ToString(), "FFmpeg error").ShowDialog();
             }
             return result;
         }
@@ -133,7 +147,7 @@ namespace ScreenCaptureLib
             {
                 string arg = "-list_devices true -f dshow -i dummy";
                 Open(Options.FFmpeg.CLIPath, arg);
-                string output = Errors.ToString();
+                string output = Output.ToString();
                 string[] lines = output.Lines();
                 bool isVideo = true;
                 Regex regex = new Regex("\\[dshow @ \\w+\\]  \"(.+)\"", RegexOptions.Compiled | RegexOptions.CultureInvariant);

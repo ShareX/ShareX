@@ -33,7 +33,6 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
 using UploadersLib.Forms;
@@ -1500,13 +1499,13 @@ namespace UploadersLib
             return item;
         }
 
-        private async void TestCustomUploader(CustomUploaderType type, CustomUploaderItem item)
+        private void TestCustomUploader(CustomUploaderType type, CustomUploaderItem item)
         {
             UploadResult result = null;
 
             txtCustomUploaderLog.ResetText();
 
-            await TaskEx.Run(() =>
+            Helpers.AsyncJob(() =>
             {
                 try
                 {
@@ -1545,31 +1544,33 @@ namespace UploadersLib
                     result = new UploadResult();
                     result.Errors.Add(e.Message);
                 }
-            });
-
-            if (result != null)
+            },
+            () =>
             {
-                if ((type != CustomUploaderType.URL && !string.IsNullOrEmpty(result.URL)) || (type == CustomUploaderType.URL && !string.IsNullOrEmpty(result.ShortenedURL)))
+                if (result != null)
                 {
-                    txtCustomUploaderLog.AppendText("URL: " + result + Environment.NewLine);
-                }
-                else if (result.IsError)
-                {
-                    txtCustomUploaderLog.AppendText("Error: " + result.ErrorsToString() + Environment.NewLine);
-                }
-                else
-                {
-                    txtCustomUploaderLog.AppendText("Error: Result is empty." + Environment.NewLine);
+                    if ((type != CustomUploaderType.URL && !string.IsNullOrEmpty(result.URL)) || (type == CustomUploaderType.URL && !string.IsNullOrEmpty(result.ShortenedURL)))
+                    {
+                        txtCustomUploaderLog.AppendText("URL: " + result + Environment.NewLine);
+                    }
+                    else if (result.IsError)
+                    {
+                        txtCustomUploaderLog.AppendText("Error: " + result.ErrorsToString() + Environment.NewLine);
+                    }
+                    else
+                    {
+                        txtCustomUploaderLog.AppendText("Error: Result is empty." + Environment.NewLine);
+                    }
+
+                    txtCustomUploaderLog.ScrollToCaret();
+
+                    btnCustomUploaderShowLastResponse.Tag = result.Response;
+                    btnCustomUploaderShowLastResponse.Enabled = !string.IsNullOrEmpty(result.Response);
                 }
 
-                txtCustomUploaderLog.ScrollToCaret();
-
-                btnCustomUploaderShowLastResponse.Tag = result.Response;
-                btnCustomUploaderShowLastResponse.Enabled = !string.IsNullOrEmpty(result.Response);
-            }
-
-            btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = true;
+                btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
+                    btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = true;
+            });
         }
 
         #endregion Custom uploader

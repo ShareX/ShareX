@@ -66,9 +66,6 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AsyncBridge.Net35">
-      <HintPath>..\packages\AsyncBridge.Net35.0.2.0\lib\net35-Client\AsyncBridge.Net35.dll</HintPath>
-    </Reference>
     <Reference Include="MegaApiClient, Version=1.0.4.0, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MegaApiClient.1.0.4\lib\MegaApiClient.dll</HintPath>
@@ -83,9 +80,6 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Threading">
-      <HintPath>..\packages\TaskParallelLibrary.1.0.2856.0\lib\Net35\System.Threading.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>

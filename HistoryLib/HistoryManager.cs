@@ -73,13 +73,11 @@ namespace HistoryLib
 
         public static void AddHistoryItemAsync(string historyPath, HistoryItem historyItem)
         {
-            WaitCallback thread = state =>
+            Task.Run(() =>
             {
                 HistoryManager history = new HistoryManager(historyPath);
                 history.AppendHistoryItem(historyItem);
-            };
-
-            ThreadPool.QueueUserWorkItem(thread);
+            });
         }
     }
 }

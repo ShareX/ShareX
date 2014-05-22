@@ -38,9 +38,6 @@ namespace HelpersLib
         public event DataReceivedEventHandler OutputDataReceived;
         public event DataReceivedEventHandler ErrorDataReceived;
 
-        public StringBuilder Output { get; private set; }
-        public StringBuilder Errors { get; private set; }
-
         private Process process = new Process();
 
         public virtual int Open(string path, string args = null)
@@ -49,9 +46,6 @@ namespace HelpersLib
 
             if (File.Exists(path))
             {
-                Output = new StringBuilder();
-                Errors = new StringBuilder();
-
                 ProcessStartInfo psi = new ProcessStartInfo(path);
                 psi.UseShellExecute = false;
                 psi.CreateNoWindow = true;
@@ -78,8 +72,6 @@ namespace HelpersLib
         {
             if (e.Data != null)
             {
-                Output.AppendLine(e.Data);
-
                 if (OutputDataReceived != null)
                 {
                     OutputDataReceived(sender, e);
@@ -91,8 +83,6 @@ namespace HelpersLib
         {
             if (e.Data != null)
             {
-                Errors.AppendLine(e.Data);
-
                 if (ErrorDataReceived != null)
                 {
                     ErrorDataReceived(sender, e);

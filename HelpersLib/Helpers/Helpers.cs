@@ -471,7 +471,7 @@ namespace HelpersLib
         {
             if (!string.IsNullOrEmpty(url))
             {
-                ThreadPool.QueueUserWorkItem(state =>
+                Task.Run(() =>
                 {
                     try
                     {
@@ -606,7 +606,7 @@ namespace HelpersLib
 
         public static void PlaySoundAsync(Stream stream)
         {
-            ThreadPool.QueueUserWorkItem(state =>
+            Task.Run(() =>
             {
                 using (stream)
                 using (SoundPlayer soundPlayer = new SoundPlayer(stream))

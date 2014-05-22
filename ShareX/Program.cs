@@ -32,7 +32,6 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UploadersLib;
 
@@ -317,7 +316,7 @@ namespace ShareX
                 SettingsResetEvent = new ManualResetEvent(false);
                 UploaderSettingsResetEvent = new ManualResetEvent(false);
                 HotkeySettingsResetEvent = new ManualResetEvent(false);
-                ThreadPool.QueueUserWorkItem(state => LoadSettings());
+                Task.Run(() => LoadSettings());
 
                 DebugHelper.WriteLine("MainForm init started");
                 MainForm = new MainForm();
@@ -532,11 +531,18 @@ namespace ShareX
             UploadersConfig = UploadersLib.UploadersConfig.Load(filePath);
         }
 
-        public async static void UploadersConfigSaveAsync()
+        public static void UploadersConfigSaveAsync()
         {
             if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
-            await TaskEx.Run(() => UploadersConfig.Save(Program.UploadersConfigFilePath));
-            if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
+
+            Helpers.AsyncJob(() =>
+            {
+                UploadersConfig.Save(Program.UploadersConfigFilePath);
+            },
+            () =>
+            {
+                if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
+            });
         }
     }
 }

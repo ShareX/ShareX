@@ -66,7 +66,7 @@ namespace HelpersLib
 
         public void SaveAsync(string filePath)
         {
-            ThreadPool.QueueUserWorkItem(state => Save(filePath));
+            Task.Run(() => Save(filePath));
         }
 
         private void SaveAsync()
