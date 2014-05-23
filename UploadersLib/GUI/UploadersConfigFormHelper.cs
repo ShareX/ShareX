@@ -881,7 +881,7 @@ namespace UploadersLib
             {
                 ucFTPAccounts.btnTest.Enabled = false;
 
-                Task.Run(() =>
+                TaskEx.Run(() =>
                 {
                     TestFTPAccount(acc, false);
                 },
@@ -1500,7 +1500,7 @@ namespace UploadersLib
 
             txtCustomUploaderLog.ResetText();
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 try
                 {

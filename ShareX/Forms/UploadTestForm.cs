@@ -313,7 +313,7 @@ namespace ShareX
 
                 if (task != null && task.Info != null && task.Info.Result != null && !string.IsNullOrEmpty(task.Info.Result.ToString()))
                 {
-                    Task.Run(() => Process.Start(task.Info.Result.ToString()));
+                    TaskEx.Run(() => Process.Start(task.Info.Result.ToString()));
                 }
             }
         }

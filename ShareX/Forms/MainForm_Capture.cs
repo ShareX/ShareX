@@ -42,7 +42,7 @@ namespace ShareX
 
         private void InitHotkeys()
         {
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 if (Program.HotkeysConfig == null)
                 {
@@ -196,7 +196,7 @@ namespace ShareX
 
             if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
             {
-                Task.Run(() =>
+                TaskEx.Run(() =>
                 {
                     int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
                     Thread.Sleep(sleep);
@@ -477,7 +477,7 @@ namespace ShareX
             WindowsList windowsList = new WindowsList();
             List<WindowInfo> windows = null;
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 windows = windowsList.GetVisibleWindowsList();
             },

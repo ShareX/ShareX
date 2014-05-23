@@ -76,7 +76,7 @@ namespace UploadersLib.FileUploaders
             {
                 stopUpload = true;
 
-                Task.Run(() => ftpClient.StopUpload());
+                TaskEx.Run(() => ftpClient.StopUpload());
             }
         }
 

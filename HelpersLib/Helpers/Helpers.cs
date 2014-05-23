@@ -471,7 +471,7 @@ namespace HelpersLib
         {
             if (!string.IsNullOrEmpty(url))
             {
-                Task.Run(() =>
+                TaskEx.Run(() =>
                 {
                     try
                     {
@@ -598,7 +598,7 @@ namespace HelpersLib
 
         public static void PlaySoundAsync(Stream stream)
         {
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 using (stream)
                 using (SoundPlayer soundPlayer = new SoundPlayer(stream))
@@ -694,7 +694,7 @@ namespace HelpersLib
         {
             bool result = false;
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 if (waitStart > 0)
                 {

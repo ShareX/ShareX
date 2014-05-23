@@ -116,7 +116,7 @@
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="ProxyInfo.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="TaskEx.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />

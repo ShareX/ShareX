@@ -316,7 +316,7 @@ namespace ShareX
                 SettingsResetEvent = new ManualResetEvent(false);
                 UploaderSettingsResetEvent = new ManualResetEvent(false);
                 HotkeySettingsResetEvent = new ManualResetEvent(false);
-                Task.Run(() => LoadSettings());
+                TaskEx.Run(() => LoadSettings());
 
                 DebugHelper.WriteLine("MainForm init started");
                 MainForm = new MainForm();
@@ -535,7 +535,7 @@ namespace ShareX
         {
             if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = false;
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 UploadersConfig.Save(Program.UploadersConfigFilePath);
             },

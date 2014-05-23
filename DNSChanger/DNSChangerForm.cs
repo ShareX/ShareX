@@ -133,7 +133,7 @@ namespace DNSChanger
             {
                 btnPingPrimary.Enabled = btnPingSecondary.Enabled = false;
 
-                Task.Run(() =>
+                TaskEx.Run(() =>
                 {
                     PingResult pingResult = PingHelper.PingHost(ip);
                     MessageBox.Show(pingResult.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);

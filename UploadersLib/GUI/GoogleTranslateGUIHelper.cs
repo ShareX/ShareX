@@ -136,7 +136,7 @@ namespace UploadersLib
             btnTranslate.Enabled = false;
             btnTranslateTo.Enabled = false;
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 info = new GoogleTranslate(Config.APIKey).TranslateText(info);
             },

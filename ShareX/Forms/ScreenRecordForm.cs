@@ -134,7 +134,7 @@ namespace ShareX
             ScreenRegionManager screenRegionManager = new ScreenRegionManager();
             screenRegionManager.Start(captureRectangle);
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 try
                 {

@@ -29,22 +29,20 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace HelpersLib
 {
-    public static class Task
+    public static class TaskEx
     {
-        public static void Run(Action action)
+        public static Task Run(Action action)
         {
-            ThreadPool.QueueUserWorkItem(state => action());
+            return Task.Factory.StartNew(action);
         }
 
-        public static void Run(Action action, Action completed)
+        public static Task Run(Action action, Action completed)
         {
-            BackgroundWorker bw = new BackgroundWorker();
-            bw.DoWork += (sender, e) => action();
-            bw.RunWorkerCompleted += (sender, e) => completed();
-            bw.RunWorkerAsync();
+            return Run(action).ContinueWith(task => completed(), TaskScheduler.FromCurrentSynchronizationContext());
         }
     }
 }

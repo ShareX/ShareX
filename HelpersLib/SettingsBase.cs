@@ -66,7 +66,7 @@ namespace HelpersLib
 
         public void SaveAsync(string filePath)
         {
-            Task.Run(() => Save(filePath));
+            TaskEx.Run(() => Save(filePath));
         }
 
         private void SaveAsync()

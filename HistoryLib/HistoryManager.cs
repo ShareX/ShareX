@@ -73,7 +73,7 @@ namespace HistoryLib
 
         public static void AddHistoryItemAsync(string historyPath, HistoryItem historyItem)
         {
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 HistoryManager history = new HistoryManager(historyPath);
                 history.AppendHistoryItem(historyItem);

@@ -337,7 +337,7 @@ namespace ShareX
             string downloadPath = null;
             bool isDownloaded = false;
 
-            Task.Run(() =>
+            TaskEx.Run(() =>
             {
                 downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
 
