@@ -344,7 +344,7 @@
       <Name>HelpersLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\UploadersLib\UploadersLib.csproj">
-      <Project>{E1C94415-3424-4517-A2A1-B2FDD1F59C67}</Project>
+      <Project>{e1c94415-3424-4517-a2a1-b2fdd1f59c67}</Project>
       <Name>UploadersLib</Name>
     </ProjectReference>
   </ItemGroup>

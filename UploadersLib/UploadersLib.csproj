@@ -102,7 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIKeys\APIKeys.cs" />
-    <Compile Include="APIKeys\APIKeysLocal.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\Email.cs" />
     <Compile Include="FileUploaders\Ge_tt.cs" />

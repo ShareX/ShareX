@@ -210,7 +210,23 @@ namespace HistoryLib
 
         public void CopyHTMLLink()
         {
-            if (HistoryItem != null && IsURLExist) ClipboardHelpers.CopyText(string.Format("<a href=\"{0}\">{0}</a>", HistoryItem.URL));
+            if (HistoryItem != null && IsURLExist)
+            {
+                HistoryItem[] historyItems = OnGetHistoryItems();
+
+                string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).Select(x => string.Format("<a href=\"{0}\">{0}</a>", x.URL)).ToArray();
+
+                if (array != null && array.Length > 0)
+                {
+                    string htmlLinks = string.Join("\r\n", array);
+
+                    if (!string.IsNullOrEmpty(htmlLinks))
+                    {
+                        ClipboardHelpers.CopyText(htmlLinks);
+                    }
+                }
+            }
+
         }
 
         public void CopyHTMLImage()
