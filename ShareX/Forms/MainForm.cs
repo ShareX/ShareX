@@ -82,6 +82,9 @@ namespace ShareX
             Text = Program.Title;
             Icon = ShareXResources.Icon;
 
+            ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
+                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin = false;
+
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
             AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(x),
@@ -89,11 +92,21 @@ namespace ShareX
             AddEnumItems<ImageDestination>(x => Program.DefaultTaskSettings.ImageDestination = x, tsmiImageUploaders, tsmiTrayImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
             tsmiTrayImageFileUploaders = (ToolStripDropDownItem)tsmiTrayImageUploaders.DropDownItems[tsmiTrayImageUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.ImageFileDestination = x, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
+            AddEnumItems<FileDestination>(x =>
+            {
+                Program.DefaultTaskSettings.ImageFileDestination = x;
+                tsmiImageFileUploaders.PerformClick();
+                tsmiTrayImageFileUploaders.PerformClick();
+            }, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
             AddEnumItems<TextDestination>(x => Program.DefaultTaskSettings.TextDestination = x, tsmiTextUploaders, tsmiTrayTextUploaders);
             tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
             tsmiTrayTextFileUploaders = (ToolStripDropDownItem)tsmiTrayTextUploaders.DropDownItems[tsmiTrayTextUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.TextFileDestination = x, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+            AddEnumItems<FileDestination>(x =>
+            {
+                Program.DefaultTaskSettings.TextFileDestination = x;
+                tsmiTextFileUploaders.PerformClick();
+                tsmiTrayTextFileUploaders.PerformClick();
+            }, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
             AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
             AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
             AddEnumItems<SocialNetworkingService>(x => Program.DefaultTaskSettings.SocialNetworkingServiceDestination = x, tsmiSocialServices, tsmiTraySocialServices);
@@ -108,9 +121,6 @@ namespace ShareX
 
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
-
-            ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin = false;
         }
 
         private void UpdateWorkflowsMenu()
