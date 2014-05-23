@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using Starksoft.Net.Proxy;
 using System;
 using System.Net;

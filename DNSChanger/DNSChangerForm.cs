@@ -25,9 +25,6 @@
 
 using HelpersLib;
 using System;
-using System.ComponentModel;
-using System.Net.NetworkInformation;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace DNSChanger

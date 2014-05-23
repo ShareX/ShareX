@@ -25,11 +25,9 @@
 
 using HelpersLib;
 using HistoryLib;
-using ImageEffectsLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;

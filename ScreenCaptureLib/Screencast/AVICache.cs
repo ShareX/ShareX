@@ -24,10 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using System;
-using System.Collections.Concurrent;
 using System.Drawing;
-using System.Threading.Tasks;
 
 namespace ScreenCaptureLib
 {

@@ -28,7 +28,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
-using System.Windows.Forms;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib

@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.IO;
-using System.Threading;
 using System.Xml.Serialization;
 
 namespace HelpersLib

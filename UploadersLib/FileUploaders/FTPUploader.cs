@@ -25,7 +25,6 @@
 
 using HelpersLib;
 using System.IO;
-using System.Threading;
 
 namespace UploadersLib.FileUploaders
 {

@@ -27,15 +27,11 @@
 
 using HelpersLib;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Security;
-using System.Text;
 
 namespace UploadersLib.FileUploaders
 {

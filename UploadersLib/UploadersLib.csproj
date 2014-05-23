@@ -368,7 +368,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Yourls.ico" />
-    <None Include="packages.config" />
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
@@ -392,6 +391,7 @@
     <None Include="Favicons\TwitSnaps.ico" />
     <None Include="Favicons\Twitter.ico" />
     <None Include="Favicons\YFrog.ico" />
+    <None Include="packages.config" />
     <None Include="Resources\server-network.png" />
     <None Include="Resources\mail.png" />
     <None Include="Resources\globe-network.png" />
