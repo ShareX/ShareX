@@ -355,6 +355,7 @@ namespace ShareX
                     }
                     catch (Exception e)
                     {
+                        DebugHelper.WriteException(e);
                         MessageBox.Show("Download failed: " + e.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
