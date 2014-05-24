@@ -837,19 +837,20 @@ namespace ShareX
                     }
                     break;
                 case FileDestination.FTP:
-                    int index = Info.TaskSettings.OverrideFTP ? Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1) : Program.UploadersConfig.GetFTPIndex(Info.DataType);
+                    int index = Info.TaskSettings.OverrideFTP ? Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1) :
+                        Program.UploadersConfig.GetFTPIndex(Info.DataType);
 
                     FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
 
                     if (account != null)
                     {
-                        if (account.Protocol == FTPProtocol.SFTP)
+                        if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                        {
+                            fileUploader = new FTP(account);
+                        }
+                        else if (account.Protocol == FTPProtocol.SFTP)
                         {
                             fileUploader = new SFTP(account);
-                        }
-                        else
-                        {
-                            fileUploader = new FTPUploader(account);
                         }
                     }
                     break;

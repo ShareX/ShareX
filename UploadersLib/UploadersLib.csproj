@@ -80,16 +80,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SSH.NET.2014.4.6-beta1\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
-    <Reference Include="Starksoft.Net.Ftp">
-      <HintPath>..\Lib\Starksoft.Net.Ftp.dll</HintPath>
-    </Reference>
-    <Reference Include="Starksoft.Net.Proxy">
-      <HintPath>..\Lib\Starksoft.Net.Proxy.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.FtpClient">
+      <HintPath>..\packages\System.Net.FtpClient.1.0.5200.21177\lib\net40\System.Net.FtpClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
@@ -114,9 +111,7 @@
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\Minus.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
-    <Compile Include="FTPClient\FTPClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FTPClient\FTPClientForm.cs" />
     <Compile Include="FTPClient\FTPClientForm.Designer.cs">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </Compile>
@@ -261,7 +256,6 @@
     <Compile Include="ImageUploader.cs" />
     <Compile Include="FileUploaders\CustomFileUploader.cs" />
     <Compile Include="ImageUploaders\FlickrUploader.cs" />
-    <Compile Include="FileUploaders\FTPUploader.cs" />
     <Compile Include="ImageUploaders\ImageBin.cs" />
     <Compile Include="ImageUploaders\ImageShackUploader.cs" />
     <Compile Include="ImageUploaders\Img1Uploader.cs" />

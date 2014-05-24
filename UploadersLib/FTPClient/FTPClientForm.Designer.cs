@@ -1,6 +1,6 @@
 ﻿namespace UploadersLib
 {
-    partial class FTPClientForm
+    /*partial class FTPClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -511,5 +511,5 @@
         private System.Windows.Forms.RichTextBox rtbConsole;
         private System.Windows.Forms.SplitContainer scConsole;
         private System.Windows.Forms.TextBox txtConsoleWrite;
-    }
+    }*/
 }

@@ -24,123 +24,147 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using Starksoft.Net.Ftp;
-using Starksoft.Net.Proxy;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Net;
+using System.Net.FtpClient;
+using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using UploadersLib.HelperClasses;
 
-namespace UploadersLib
+namespace UploadersLib.FileUploaders
 {
-    public sealed class FTP : IDisposable
+    public sealed class FTP : FileUploader, IDisposable
     {
-        public event Uploader.ProgressEventHandler ProgressChanged;
+        public FTPAccount Account { get; private set; }
+        //public bool AutoReconnect { get; set; }
 
-        public FTPAccount Account { get; set; }
-        public FtpClient Client { get; set; }
-        public bool AutoReconnect { get; set; }
+        private FtpClient client;
 
-        private ProgressManager progress;
-
-        public FTP(FTPAccount account, int bufferSize = 8192)
+        public FTP(FTPAccount account)
         {
             Account = account;
-            Client = new FtpClient(account.Host, account.Port);
-            Client.TcpBufferSize = bufferSize;
 
-            if (account.Protocol == FTPProtocol.FTP || account.FtpsSecurityProtocol == FtpSecurityProtocol.None)
+            client = new FtpClient()
             {
-                Client.SecurityProtocol = (Starksoft.Net.Ftp.FtpSecurityProtocol)FtpSecurityProtocol.None;
+                Host = Account.Host,
+                Port = Account.Port,
+                Credentials = new NetworkCredential(Account.Username, Account.Password)
+            };
+
+            if (account.IsActive)
+            {
+                client.DataConnectionType = FtpDataConnectionType.AutoActive;
             }
             else
             {
-                Client.SecurityProtocol = (Starksoft.Net.Ftp.FtpSecurityProtocol)account.FtpsSecurityProtocol;
+                client.DataConnectionType = FtpDataConnectionType.AutoPassive;
+            }
+
+            if (account.Protocol == FTPProtocol.FTPS && account.FtpsSecurityProtocol != FtpSecurityProtocol.None)
+            {
+                client.EncryptionMode = FtpEncryptionMode.Explicit;
+                client.DataConnectionEncryption = true;
 
                 if (!string.IsNullOrEmpty(account.FtpsCertLocation) && File.Exists(account.FtpsCertLocation))
                 {
-                    Client.SecurityCertificates.Add(X509Certificate.CreateFromSignedFile(account.FtpsCertLocation));
+                    X509Certificate cert = X509Certificate2.CreateFromSignedFile(Account.FtpsCertLocation);
+                    client.ClientCertificates.Add(cert);
                 }
                 else
                 {
-                    Client.ValidateServerCertificate += (sender, e) => e.IsCertificateValid = true;
+                    client.ValidateCertificate += (FtpClient control, FtpSslValidationEventArgs e) =>
+                    {
+                        if (e.PolicyErrors != SslPolicyErrors.None)
+                        {
+                            e.Accept = true;
+                        }
+                    };
                 }
             }
-
-            Client.DataTransferMode = account.IsActive ? TransferMode.Active : TransferMode.Passive;
-
-            if (ProxyInfo.Current != null)
-            {
-                IProxyClient proxy = ProxyInfo.Current.GetProxyClient();
-
-                if (proxy != null)
-                {
-                    Client.Proxy = proxy;
-                }
-            }
-
-            Client.TransferProgress += OnTransferProgressChanged;
-            Client.ConnectionClosed += Client_ConnectionClosed;
         }
 
-        private void OnTransferProgressChanged(object sender, TransferProgressEventArgs e)
+        public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (ProgressChanged != null)
+            UploadResult result = new UploadResult();
+
+            fileName = Helpers.GetValidURL(fileName);
+            string path = Account.GetSubFolderPath(fileName);
+
+            try
             {
-                progress.UpdateProgress(e.BytesTransferred);
-                ProgressChanged(progress);
+                IsUploading = true;
+                UploadData(stream, path);
+            }
+            finally
+            {
+                IsUploading = false;
+            }
+
+            if (!stopUpload && Errors.Count == 0)
+            {
+                result.URL = Account.GetUriPath(fileName);
+            }
+
+            return result;
+        }
+
+        public override void StopUpload()
+        {
+            if (IsUploading && !stopUpload)
+            {
+                stopUpload = true;
+                Disconnect();
             }
         }
 
-        private void Client_ConnectionClosed(object sender, ConnectionClosedEventArgs e)
+        private string GetRemotePath(string filename)
         {
-            if (AutoReconnect)
-            {
-                Connect();
-            }
-        }
-
-        public bool Connect(string username, string password)
-        {
-            if (!Client.IsConnected && !string.IsNullOrEmpty(password))
-            {
-                Client.Open(username, password);
-            }
-            return Client.IsConnected;
+            filename = Helpers.GetValidURL(filename);
+            return Account.GetSubFolderPath(filename);
         }
 
         public bool Connect()
         {
-            return Connect(Account.Username, Account.Password);
+            if (!client.IsConnected)
+            {
+                client.Connect();
+            }
+
+            return client.IsConnected;
         }
 
         public void Disconnect()
         {
-            if (Client != null && Client.IsConnected)
+            if (client != null && client.IsConnected)
             {
-                Client.Close();
+                client.Disconnect();
             }
         }
 
-        public void UploadData(Stream stream, string remotePath)
+        public void UploadData(Stream localStream, string remotePath)
         {
             if (Connect())
             {
-                progress = new ProgressManager(stream.Length);
-
                 try
                 {
-                    Client.PutFile(stream, remotePath, FileAction.Create);
+                    using (Stream remoteStream = client.OpenWrite(remotePath))
+                    {
+                        TransferData(localStream, remoteStream);
+                    }
                 }
                 catch (Exception e)
                 {
                     if (e.InnerException.Message.Contains("No such file or directory"))
                     {
                         MakeMultiDirectory(FTPHelpers.GetDirectoryName(remotePath));
-                        Client.PutFile(stream, remotePath, FileAction.Create);
+
+                        using (Stream remoteStream = client.OpenWrite(remotePath))
+                        {
+                            TransferData(localStream, remoteStream);
+                        }
                     }
                     else
                     {
@@ -190,6 +214,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(file))
                 {
                     string filename = Path.GetFileName(file);
+
                     if (File.Exists(file))
                     {
                         UploadFile(file, Helpers.CombineURL(remotePath, filename));
@@ -207,36 +232,39 @@ namespace UploadersLib
             }
         }
 
-        public void StopUpload()
-        {
-            if (Client != null && Client.IsConnected)
-            {
-                Client.Abort();
-            }
-        }
-
         public void DownloadFile(string remotePath, string localPath)
         {
             Connect();
-            Client.GetFile(remotePath, localPath, FileAction.Create);
+
+            using (FileStream fs = new FileStream(localPath, FileMode.Create))
+            {
+                DownloadFile(remotePath, fs);
+            }
         }
 
-        public void DownloadFile(string remotePath, Stream outStream)
+        public void DownloadFile(string remotePath, Stream localStream)
         {
             Connect();
-            Client.GetFile(remotePath, outStream, false);
+
+            using (Stream remoteStream = client.OpenRead(remotePath))
+            {
+                TransferData(remoteStream, localStream);
+            }
         }
 
-        public void DownloadFiles(IEnumerable<FtpItem> files, string localPath)
+        public void DownloadFiles(IEnumerable<FtpListItem> files, string localPath, bool recursive = true)
         {
-            foreach (FtpItem file in files)
+            Connect();
+
+            foreach (FtpListItem file in files)
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
                 {
-                    if (file.ItemType == FtpItemType.Directory)
+                    if (recursive && file.Type == FtpFileSystemObjectType.Directory)
                     {
-                        FtpItemCollection newFiles = GetDirList(file.FullPath);
+                        FtpListItem[] newFiles = client.GetListing(file.FullName);
                         string directoryPath = Path.Combine(localPath, file.Name);
+
                         if (!Directory.Exists(directoryPath))
                         {
                             Directory.CreateDirectory(directoryPath);
@@ -244,18 +272,13 @@ namespace UploadersLib
 
                         DownloadFiles(newFiles, directoryPath);
                     }
-                    else if (file.ItemType == FtpItemType.File)
+                    else if (file.Type == FtpFileSystemObjectType.File)
                     {
-                        DownloadFile(file.FullPath, Path.Combine(localPath, file.Name));
+                        string filePath = Path.Combine(localPath, file.Name);
+                        DownloadFile(file.FullName, filePath);
                     }
                 }
             }
-        }
-
-        public FtpItemCollection GetDirList(string remotePath)
-        {
-            Connect();
-            return Client.GetDirList(remotePath);
         }
 
         public bool ChangeDirectory(string remotePath, bool autoCreateDirectory = false)
@@ -266,7 +289,7 @@ namespace UploadersLib
 
                 try
                 {
-                    Client.ChangeDirectory(remotePath);
+                    client.SetWorkingDirectory(remotePath);
                     return true;
                 }
                 catch (Exception e)
@@ -274,7 +297,7 @@ namespace UploadersLib
                     if (autoCreateDirectory && e.Message.StartsWith("Could not change working directory to"))
                     {
                         MakeMultiDirectory(remotePath);
-                        Client.ChangeDirectory(remotePath);
+                        client.SetWorkingDirectory(remotePath);
                         return true;
                     }
 
@@ -291,7 +314,7 @@ namespace UploadersLib
             {
                 try
                 {
-                    Client.MakeDirectory(remotePath);
+                    client.CreateDirectory(remotePath);
                     return true;
                 }
                 catch (Exception e)
@@ -319,28 +342,28 @@ namespace UploadersLib
         public void Rename(string fromRemotePath, string toRemotePath)
         {
             Connect();
-            Client.Rename(fromRemotePath, toRemotePath);
+            client.Rename(fromRemotePath, toRemotePath);
         }
 
         public void DeleteFile(string remotePath)
         {
             Connect();
-            Client.DeleteFile(remotePath);
+            client.DeleteFile(remotePath);
         }
 
-        public void DeleteFiles(IEnumerable<FtpItem> files)
+        public void DeleteFiles(IEnumerable<FtpListItem> files)
         {
-            foreach (FtpItem file in files)
+            foreach (FtpListItem file in files)
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
                 {
-                    if (file.ItemType == FtpItemType.Directory)
+                    if (file.Type == FtpFileSystemObjectType.Directory)
                     {
-                        DeleteDirectory(file.FullPath);
+                        DeleteDirectory(file.FullName);
                     }
-                    else if (file.ItemType == FtpItemType.File)
+                    else if (file.Type == FtpFileSystemObjectType.File)
                     {
-                        DeleteFile(file.FullPath);
+                        DeleteFile(file.FullName);
                     }
                 }
             }
@@ -356,21 +379,11 @@ namespace UploadersLib
                 return;
             }
 
-            FtpItemCollection files = GetDirList(remotePath);
+            FtpListItem[] files = client.GetListing(remotePath);
 
-            foreach (FtpItem file in files)
-            {
-                if (file.ItemType == FtpItemType.Directory)
-                {
-                    DeleteDirectory(file.FullPath);
-                }
-                else
-                {
-                    DeleteFile(file.FullPath);
-                }
-            }
+            DeleteFiles(files);
 
-            Client.DeleteDirectory(remotePath);
+            client.DeleteDirectory(remotePath);
         }
 
         public bool SendCommand(string command)
@@ -379,7 +392,7 @@ namespace UploadersLib
 
             try
             {
-                Client.Quote(command);
+                client.Execute(command);
                 return true;
             }
             catch
@@ -390,8 +403,11 @@ namespace UploadersLib
 
         public void Dispose()
         {
-            Disconnect();
-            Client.Dispose();
+            if (client != null)
+            {
+                Disconnect();
+                client.Dispose();
+            }
         }
     }
 }

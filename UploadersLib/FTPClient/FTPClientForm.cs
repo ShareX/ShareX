@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using Starksoft.Net.Ftp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,10 +31,11 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using UploadersLib.FileUploaders;
 
 namespace UploadersLib
 {
-    public partial class FTPClientForm : Form
+    /*public partial class FTPClientForm : Form
     {
         private const string Root = "/";
 
@@ -56,15 +56,15 @@ namespace UploadersLib
             Account = account;
 
             FTPAdapter = new FTP(account);
-            FTPAdapter.Client.ClientRequest += Client_ClientRequest;
-            FTPAdapter.Client.ServerResponse += Client_ServerResponse;
-            FTPAdapter.Client.OpenAsyncCompleted += Client_OpenAsyncCompleted;
+            FTPAdapter.client.ClientRequest += Client_ClientRequest;
+            FTPAdapter.client.ServerResponse += Client_ServerResponse;
+            FTPAdapter.client.OpenAsyncCompleted += Client_OpenAsyncCompleted;
 
             pgAccount.SelectedObject = FTPAdapter.Account;
             Text = "FTP Client - " + account.Name;
             lblConnecting.Text = "Connecting to " + account.FTPAddress;
 
-            FTPAdapter.Client.OpenAsync(account.Username, account.Password);
+            FTPAdapter.client.OpenAsync(account.Username, account.Password);
         }
 
         #region Methods
@@ -609,5 +609,5 @@ namespace UploadersLib
         }
 
         #endregion Events
-    }
+    }*/
 }
