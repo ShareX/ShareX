@@ -384,10 +384,12 @@ namespace HistoryLib
             if (itemsCount > 1)
             {
                 tsmiCopyURL.Text = string.Format("URLs ({0})", itemsCount);
+                tsmiCopyHTMLLink.Text = string.Format("HTML link ({0})", itemsCount);
             }
             else
             {
                 tsmiCopyURL.Text = "URL";
+                tsmiCopyHTMLLink.Text = "HTML link";
             }
         }
 

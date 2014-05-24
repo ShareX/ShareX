@@ -267,7 +267,6 @@
             this.chHost,
             this.chURL});
             this.lvHistory.FullRowSelect = true;
-            this.lvHistory.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvHistory.HideSelection = false;
             this.lvHistory.Location = new System.Drawing.Point(8, 288);
             this.lvHistory.Name = "lvHistory";
@@ -275,6 +274,7 @@
             this.lvHistory.TabIndex = 1;
             this.lvHistory.UseCompatibleStateImageBehavior = false;
             this.lvHistory.View = System.Windows.Forms.View.Details;
+            this.lvHistory.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvHistory_ColumnClick);
             this.lvHistory.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvHistory_ItemSelectionChanged);
             this.lvHistory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvHistory_KeyDown);
             this.lvHistory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvHistory_MouseDoubleClick);
