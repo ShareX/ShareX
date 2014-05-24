@@ -226,7 +226,6 @@ namespace HistoryLib
                     }
                 }
             }
-
         }
 
         public void CopyHTMLImage()
