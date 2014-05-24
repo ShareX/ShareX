@@ -42,6 +42,10 @@ namespace HelpersLib
         [DefaultValue(-1)]
         public int AutoFillColumnIndex { get; set; }
 
+        [DefaultValue(false)]
+        public bool AllowColumnSort { get; set; }
+
+        private ListViewColumnSorter lvwColumnSorter;
         private int lineIndex = -1;
         private int lastLineIndex = -1;
         private ListViewItem dragOverItem = null;
@@ -52,8 +56,12 @@ namespace HelpersLib
 
             AutoFillColumn = false;
             AutoFillColumnIndex = -1;
+            AllowColumnSort = false;
             FullRowSelect = true;
             View = View.Details;
+
+            lvwColumnSorter = new ListViewColumnSorter();
+            ListViewItemSorter = lvwColumnSorter;
         }
 
         public void FillColumn(int index)
@@ -180,6 +188,33 @@ namespace HelpersLib
 
             lineIndex = lastLineIndex = -1;
             Invalidate();
+        }
+
+        protected override void OnColumnClick(ColumnClickEventArgs e)
+        {
+            base.OnColumnClick(e);
+
+            if (AllowColumnSort)
+            {
+                if (e.Column == lvwColumnSorter.SortColumn)
+                {
+                    if (lvwColumnSorter.Order == SortOrder.Ascending)
+                    {
+                        lvwColumnSorter.Order = SortOrder.Descending;
+                    }
+                    else
+                    {
+                        lvwColumnSorter.Order = SortOrder.Ascending;
+                    }
+                }
+                else
+                {
+                    lvwColumnSorter.SortColumn = e.Column;
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+
+                Sort();
+            }
         }
 
         private void DrawInsertionLine(int x1, int x2, int y)

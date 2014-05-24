@@ -101,7 +101,7 @@
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MathHelpers.cs" />
-    <Compile Include="ListViewItemComparer.cs" />
+    <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
     <Compile Include="Native\LayeredForm.cs">
       <SubType>Form</SubType>

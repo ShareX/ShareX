@@ -326,12 +326,6 @@ namespace HistoryLib
             e.Handled = true;
         }
 
-        private void lvHistory_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            lvHistory.ListViewItemSorter = new ListViewItemComparer(e.Column);
-            lvHistory.Sort();
-        }
-
         #endregion Form events
     }
 }
