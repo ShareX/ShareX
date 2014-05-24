@@ -1,9 +1,10 @@
 #define MyAppName "ShareX"
 #define MyAppFile "ShareX.exe"
 #define MyAppPath "ShareX\bin\Release\ShareX.exe"
-#define MyAppVersion Copy(GetFileVersion(MyAppPath), 0, 5)
+#dim Version[4]
+#expr ParseVersion(MyAppPath, Version[0], Version[1], Version[2], Version[3])
+#define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
 #define MyAppPublisher "ShareX Developers"
-#define MyAppURL "http://getsharex.com"
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC" 
 
 [Setup]
@@ -13,9 +14,9 @@ AppId={#MyAppId}
 AppMutex=Global\{#MyAppId}
 AppName={#MyAppName}
 AppPublisher={#MyAppPublisher}
-AppPublisherURL={#MyAppURL}
-AppSupportURL={#MyAppURL}/issues/list
-AppUpdatesURL={#MyAppURL}/downloads/list
+AppPublisherURL=http://getsharex.com
+AppSupportURL=https://github.com/ShareX/ShareX/issues
+AppUpdatesURL=https://github.com/ShareX/ShareX/releases
 AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
 ArchitecturesAllowed=x86 x64 ia64
