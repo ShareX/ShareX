@@ -39,7 +39,6 @@ namespace UploadersLib.FileUploaders
     public sealed class FTP : FileUploader, IDisposable
     {
         public FTPAccount Account { get; private set; }
-        //public bool AutoReconnect { get; set; }
 
         private FtpClient client;
 
@@ -63,14 +62,24 @@ namespace UploadersLib.FileUploaders
                 client.DataConnectionType = FtpDataConnectionType.AutoPassive;
             }
 
-            if (account.Protocol == FTPProtocol.FTPS && account.FtpsSecurityProtocol != FtpSecurityProtocol.None)
+            if (account.Protocol == FTPProtocol.FTPS)
             {
-                client.EncryptionMode = FtpEncryptionMode.Explicit;
+                switch (Account.FTPSEncryption)
+                {
+                    default:
+                    case FTPSEncryption.Explicit:
+                        client.EncryptionMode = FtpEncryptionMode.Explicit;
+                        break;
+                    case FTPSEncryption.Implicit:
+                        client.EncryptionMode = FtpEncryptionMode.Implicit;
+                        break;
+                }
+
                 client.DataConnectionEncryption = true;
 
-                if (!string.IsNullOrEmpty(account.FtpsCertLocation) && File.Exists(account.FtpsCertLocation))
+                if (!string.IsNullOrEmpty(account.FTPSCertificateLocation) && File.Exists(account.FTPSCertificateLocation))
                 {
-                    X509Certificate cert = X509Certificate2.CreateFromSignedFile(Account.FtpsCertLocation);
+                    X509Certificate cert = X509Certificate2.CreateFromSignedFile(Account.FTPSCertificateLocation);
                     client.ClientCertificates.Add(cert);
                 }
                 else
@@ -118,12 +127,6 @@ namespace UploadersLib.FileUploaders
                 stopUpload = true;
                 Disconnect();
             }
-        }
-
-        private string GetRemotePath(string filename)
-        {
-            filename = Helpers.GetValidURL(filename);
-            return Account.GetSubFolderPath(filename);
         }
 
         public bool Connect()

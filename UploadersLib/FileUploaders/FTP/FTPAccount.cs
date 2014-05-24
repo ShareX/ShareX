@@ -107,12 +107,12 @@ namespace UploadersLib
             }
         }
 
-        [Category("FTPS"), Description("Certification location")]
-        [Editor(typeof(CertFileNameEditor), typeof(UITypeEditor))]
-        public string FtpsCertLocation { get; set; }
+        [Category("FTPS"), Description("Type of SSL to use. Explicit is TLS, Implicit is SSL."), DefaultValue(FTPSEncryption.Explicit)]
+        public FTPSEncryption FTPSEncryption { get; set; }
 
-        [Category("FTPS"), Description("Security protocol"), DefaultValue(FtpSecurityProtocol.Ssl2Explicit)]
-        public FtpSecurityProtocol FtpsSecurityProtocol { get; set; }
+        [Category("FTPS"), Description("Certificate file location")]
+        [Editor(typeof(CertFileNameEditor), typeof(UITypeEditor))]
+        public string FTPSCertificateLocation { get; set; }
 
         [Category("SFTP"), Description("OpenSSH key passphrase"), PasswordPropertyText(true)]
         public string Passphrase { get; set; }
@@ -134,7 +134,8 @@ namespace UploadersLib
             HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;
             IsActive = false;
-            FtpsSecurityProtocol = FtpSecurityProtocol.Ssl2Explicit;
+            FTPSEncryption = FTPSEncryption.Explicit;
+            FTPSCertificateLocation = string.Empty;
         }
 
         public string GetSubFolderPath(string filename = null)

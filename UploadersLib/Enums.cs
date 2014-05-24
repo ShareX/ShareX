@@ -248,16 +248,15 @@ namespace UploadersLib
         GET
     }
 
-    public enum FtpSecurityProtocol
+    public enum FTPSEncryption
     {
-        None = 0,
-        Tls1Explicit = 1,
-        Tls1OrSsl3Explicit = 2,
-        Ssl3Explicit = 3,
-        Ssl2Explicit = 4,
-        Tls1Implicit = 5,
-        Tls1OrSsl3Implicit = 6,
-        Ssl3Implicit = 7,
-        Ssl2Implicit = 8,
+        /// <summary>
+        /// Connection starts in plain text and encryption is enabled with the AUTH command immediately after the server greeting.
+        /// </summary>
+        Explicit,
+        /// <summary>
+        /// Encryption is used from the start of the connection, port 990
+        /// </summary>
+        Implicit
     }
 }
