@@ -24,21 +24,35 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
-namespace UploadersLib
+namespace HelpersLib
 {
-    public partial class LoginDialog : Form
+    public class TextBoxTraceListener : TraceListener
     {
-        public LoginDialog()
+        private TextBox textBox;
+
+        public TextBoxTraceListener(TextBox textBox)
         {
-            InitializeComponent();
+            this.textBox = textBox;
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        public override void Write(string message)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            textBox.InvokeSafe(() =>
+            {
+                string text = string.Format("{0} - {1}", DateTime.Now.ToLongTimeString(), message);
+                textBox.AppendText(text);
+            });
+        }
+
+        public override void WriteLine(string message)
+        {
+            Write(message + "\r\n");
         }
     }
 }

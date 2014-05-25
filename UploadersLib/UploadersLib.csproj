@@ -122,12 +122,6 @@
     <Compile Include="FTPClient\ListViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FTPClient\LoginDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FTPClient\LoginDialog.Designer.cs">
-      <DependentUpon>LoginDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\AccountTypeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,9 +290,6 @@
   <ItemGroup>
     <EmbeddedResource Include="FTPClient\FTPClientForm.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\LoginDialog.resx">
-      <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AccountTypeControl.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>

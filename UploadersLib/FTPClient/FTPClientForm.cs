@@ -54,6 +54,8 @@ namespace UploadersLib
             lblStatus.Text = string.Empty;
             lvFTPList.SubItemEndEditing += lvFTPList_SubItemEndEditing;
 
+            FtpTrace.AddListener(new TextBoxTraceListener(txtDebug));
+
             Account = account;
 
             Client = new FTP(account);
@@ -310,17 +312,17 @@ namespace UploadersLib
             }
         }
 
-        private void AddConsoleMessage(string text, Color color)
+        private string GetURL(FtpListItem file)
         {
-            this.InvokeSafe(() =>
+            if (file != null && file.Type == FtpFileSystemObjectType.File)
             {
-                text = string.Format("{0} - {1}\r\n", DateTime.Now.ToLongTimeString(), text);
-                rtbConsole.AppendText(text);
-                rtbConsole.SelectionStart = rtbConsole.TextLength - text.Length + 1;
-                rtbConsole.SelectionLength = text.Length;
-                rtbConsole.SelectionColor = color;
-                rtbConsole.ScrollToCaret();
-            });
+                FTPAccount accountClone = Account.Clone();
+                accountClone.SubFolderPath = currentDirectory;
+                accountClone.HttpHomePathAutoAddSubFolderPath = true;
+                return accountClone.GetUriPath(file.Name);
+            }
+
+            return null;
         }
 
         #endregion Methods
@@ -532,16 +534,15 @@ namespace UploadersLib
 
         private void copyURLsToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string path;
             List<string> list = new List<string>();
 
             foreach (ListViewItem lvi in lvFTPList.SelectedItems)
             {
                 FtpListItem file = lvi.Tag as FtpListItem;
-                if (file != null && file.Type == FtpFileSystemObjectType.File)
+                string url = GetURL(file);
+                if (!string.IsNullOrEmpty(url))
                 {
-                    path = Helpers.CombineURL(Account.HttpHomePath, file.FullName);
-                    list.Add(path);
+                    list.Add(url);
                 }
             }
 
@@ -558,10 +559,8 @@ namespace UploadersLib
             if (lvFTPList.SelectedItems.Count > 0)
             {
                 FtpListItem file = lvFTPList.SelectedItems[0].Tag as FtpListItem;
-                if (file != null && file.Type == FtpFileSystemObjectType.File)
-                {
-                    TaskEx.Run(() => Process.Start(Account.GetUriPath("@" + file.FullName)));
-                }
+                string url = GetURL(file);
+                Helpers.OpenURL(url);
             }
         }
 

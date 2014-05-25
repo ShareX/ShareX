@@ -50,19 +50,19 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lvFTPList = new UploadersLib.ListViewEx();
+            this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFilesize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFiletype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chLastModified = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcFTP = new System.Windows.Forms.TabControl();
             this.tpMain = new System.Windows.Forms.TabPage();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.pgAccount = new System.Windows.Forms.PropertyGrid();
             this.tpConsole = new System.Windows.Forms.TabPage();
             this.scConsole = new System.Windows.Forms.SplitContainer();
-            this.rtbConsole = new System.Windows.Forms.RichTextBox();
+            this.txtDebug = new System.Windows.Forms.TextBox();
             this.txtConsoleWrite = new System.Windows.Forms.TextBox();
-            this.lvFTPList = new UploadersLib.ListViewEx();
-            this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFilesize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFiletype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chLastModified = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsRightClickMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -200,7 +200,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.pConnecting);
             this.splitContainer1.Panel2.Controls.Add(this.toolStripContainer1);
             this.splitContainer1.Size = new System.Drawing.Size(952, 557);
-            this.splitContainer1.SplitterDistance = 23;
+            this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
             // cbDirectoryList
@@ -255,11 +255,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.lvFTPList);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 483);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 481);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(952, 530);
+            this.toolStripContainer1.Size = new System.Drawing.Size(952, 528);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -281,6 +281,55 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(38, 17);
             this.lblStatus.Text = "status";
+            // 
+            // lvFTPList
+            // 
+            this.lvFTPList.AllowColumnReorder = true;
+            this.lvFTPList.AllowDrop = true;
+            this.lvFTPList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chFilename,
+            this.chFilesize,
+            this.chFiletype,
+            this.chLastModified});
+            this.lvFTPList.ContextMenuStrip = this.cmsRightClickMenu;
+            this.lvFTPList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvFTPList.DoubleClickActivation = false;
+            this.lvFTPList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvFTPList.FullRowSelect = true;
+            this.lvFTPList.GridLines = true;
+            this.lvFTPList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvFTPList.HideSelection = false;
+            this.lvFTPList.Location = new System.Drawing.Point(0, 0);
+            this.lvFTPList.Name = "lvFTPList";
+            this.lvFTPList.Size = new System.Drawing.Size(952, 481);
+            this.lvFTPList.TabIndex = 0;
+            this.lvFTPList.UseCompatibleStateImageBehavior = false;
+            this.lvFTPList.View = System.Windows.Forms.View.Details;
+            this.lvFTPList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvFTPList_ItemDrag);
+            this.lvFTPList.SelectedIndexChanged += new System.EventHandler(this.lvFTPList_SelectedIndexChanged);
+            this.lvFTPList.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragDrop);
+            this.lvFTPList.DragOver += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragOver);
+            this.lvFTPList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFTPList_MouseDoubleClick);
+            // 
+            // chFilename
+            // 
+            this.chFilename.Text = "Filename";
+            this.chFilename.Width = 493;
+            // 
+            // chFilesize
+            // 
+            this.chFilesize.Text = "Filesize";
+            this.chFilesize.Width = 100;
+            // 
+            // chFiletype
+            // 
+            this.chFiletype.Text = "Filetype";
+            this.chFiletype.Width = 200;
+            // 
+            // chLastModified
+            // 
+            this.chLastModified.Text = "Last modified";
+            this.chLastModified.Width = 150;
             // 
             // tcFTP
             // 
@@ -348,89 +397,36 @@
             // 
             // scConsole.Panel1
             // 
-            this.scConsole.Panel1.Controls.Add(this.rtbConsole);
+            this.scConsole.Panel1.Controls.Add(this.txtDebug);
             // 
             // scConsole.Panel2
             // 
             this.scConsole.Panel2.Controls.Add(this.txtConsoleWrite);
             this.scConsole.Panel2MinSize = 20;
             this.scConsole.Size = new System.Drawing.Size(952, 557);
-            this.scConsole.SplitterDistance = 536;
+            this.scConsole.SplitterDistance = 531;
             this.scConsole.SplitterWidth = 1;
             this.scConsole.TabIndex = 0;
             // 
-            // rtbConsole
+            // txtDebug
             // 
-            this.rtbConsole.BackColor = System.Drawing.Color.White;
-            this.rtbConsole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbConsole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbConsole.EnableAutoDragDrop = true;
-            this.rtbConsole.Location = new System.Drawing.Point(0, 0);
-            this.rtbConsole.Name = "rtbConsole";
-            this.rtbConsole.ReadOnly = true;
-            this.rtbConsole.Size = new System.Drawing.Size(952, 536);
-            this.rtbConsole.TabIndex = 0;
-            this.rtbConsole.Text = "";
-            this.rtbConsole.WordWrap = false;
+            this.txtDebug.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDebug.Location = new System.Drawing.Point(0, 0);
+            this.txtDebug.Multiline = true;
+            this.txtDebug.Name = "txtDebug";
+            this.txtDebug.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtDebug.Size = new System.Drawing.Size(952, 531);
+            this.txtDebug.TabIndex = 0;
             // 
             // txtConsoleWrite
             // 
             this.txtConsoleWrite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConsoleWrite.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtConsoleWrite.Location = new System.Drawing.Point(0, 0);
+            this.txtConsoleWrite.Location = new System.Drawing.Point(0, 5);
             this.txtConsoleWrite.Name = "txtConsoleWrite";
             this.txtConsoleWrite.Size = new System.Drawing.Size(952, 20);
             this.txtConsoleWrite.TabIndex = 0;
             this.txtConsoleWrite.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConsoleWrite_KeyDown);
-            // 
-            // lvFTPList
-            // 
-            this.lvFTPList.AllowColumnReorder = true;
-            this.lvFTPList.AllowDrop = true;
-            this.lvFTPList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chFilename,
-            this.chFilesize,
-            this.chFiletype,
-            this.chLastModified});
-            this.lvFTPList.ContextMenuStrip = this.cmsRightClickMenu;
-            this.lvFTPList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvFTPList.DoubleClickActivation = false;
-            this.lvFTPList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvFTPList.FullRowSelect = true;
-            this.lvFTPList.GridLines = true;
-            this.lvFTPList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvFTPList.HideSelection = false;
-            this.lvFTPList.Location = new System.Drawing.Point(0, 0);
-            this.lvFTPList.Name = "lvFTPList";
-            this.lvFTPList.Size = new System.Drawing.Size(952, 483);
-            this.lvFTPList.TabIndex = 0;
-            this.lvFTPList.UseCompatibleStateImageBehavior = false;
-            this.lvFTPList.View = System.Windows.Forms.View.Details;
-            this.lvFTPList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvFTPList_ItemDrag);
-            this.lvFTPList.SelectedIndexChanged += new System.EventHandler(this.lvFTPList_SelectedIndexChanged);
-            this.lvFTPList.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragDrop);
-            this.lvFTPList.DragOver += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragOver);
-            this.lvFTPList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFTPList_MouseDoubleClick);
-            // 
-            // chFilename
-            // 
-            this.chFilename.Text = "Filename";
-            this.chFilename.Width = 493;
-            // 
-            // chFilesize
-            // 
-            this.chFilesize.Text = "Filesize";
-            this.chFilesize.Width = 100;
-            // 
-            // chFiletype
-            // 
-            this.chFiletype.Text = "Filetype";
-            this.chFiletype.Width = 200;
-            // 
-            // chLastModified
-            // 
-            this.chLastModified.Text = "Last modified";
-            this.chLastModified.Width = 150;
             // 
             // FTPClientForm
             // 
@@ -442,7 +438,7 @@
             this.Name = "FTPClientForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FTP client";
+            this.Text = "ShareX FTP client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FTPClient2_FormClosing);
             this.Resize += new System.EventHandler(this.FTPClient_Resize);
             this.cmsRightClickMenu.ResumeLayout(false);
@@ -463,6 +459,7 @@
             this.tpAccount.ResumeLayout(false);
             this.tpConsole.ResumeLayout(false);
             this.scConsole.Panel1.ResumeLayout(false);
+            this.scConsole.Panel1.PerformLayout();
             this.scConsole.Panel2.ResumeLayout(false);
             this.scConsole.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scConsole)).EndInit();
@@ -505,8 +502,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.TabPage tpAccount;
         private System.Windows.Forms.PropertyGrid pgAccount;
-        private System.Windows.Forms.RichTextBox rtbConsole;
         private System.Windows.Forms.SplitContainer scConsole;
         private System.Windows.Forms.TextBox txtConsoleWrite;
+        private System.Windows.Forms.TextBox txtDebug;
     }
 }
