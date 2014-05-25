@@ -953,12 +953,11 @@ namespace UploadersLib
 
                                 if (sftp.IsConnected)
                                 {
-                                    msg = (createddirs.Count == 0) ? "Connected!" : "Connected!\r\nCreated folders:\r\n";
+                                    msg = (createddirs.Count == 0) ? "Connected!" : "Connected!\r\nCreated folders:";
                                     for (int x = 0; x <= createddirs.Count - 1; x++)
                                     {
-                                        msg += createddirs[x] + "\r\n";
+                                        msg += "\r\n" + createddirs[x];
                                     }
-                                    msg += "\r\n\r\nPing results:\r\n " + SendPing(account.Host, 3);
                                 }
                             }
                         }
@@ -975,7 +974,7 @@ namespace UploadersLib
                         {
                             if (ftpClient.ChangeDirectory(sfp, true))
                             {
-                                msg = "Connected!\r\n\r\nPing results:\r\n" + SendPing(account.Host, 3);
+                                msg = "Connected!";
                             }
                         }
                     }

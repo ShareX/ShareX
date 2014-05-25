@@ -147,7 +147,7 @@ namespace UploadersLib.FileUploaders
             }
         }
 
-        public void UploadData(Stream localStream, string remotePath)
+        public bool UploadData(Stream localStream, string remotePath)
         {
             if (Connect())
             {
@@ -155,26 +155,27 @@ namespace UploadersLib.FileUploaders
                 {
                     using (Stream remoteStream = client.OpenWrite(remotePath))
                     {
-                        TransferData(localStream, remoteStream);
+                        return TransferData(localStream, remoteStream);
                     }
                 }
-                catch (Exception e)
+                catch (FtpCommandException e)
                 {
-                    if (e.InnerException.Message.Contains("No such file or directory"))
+                    // Probably directory not exist, try creating it
+                    if (e.CompletionCode == "553")
                     {
                         MakeMultiDirectory(FTPHelpers.GetDirectoryName(remotePath));
 
                         using (Stream remoteStream = client.OpenWrite(remotePath))
                         {
-                            TransferData(localStream, remoteStream);
+                            return TransferData(localStream, remoteStream);
                         }
                     }
-                    else
-                    {
-                        throw e;
-                    }
+
+                    throw e;
                 }
             }
+
+            return false;
         }
 
         public void UploadData(byte[] data, string remotePath)
@@ -235,30 +236,27 @@ namespace UploadersLib.FileUploaders
             }
         }
 
+        public void DownloadFile(string remotePath, Stream localStream)
+        {
+            if (Connect())
+            {
+                using (Stream remoteStream = client.OpenRead(remotePath))
+                {
+                    TransferData(remoteStream, localStream);
+                }
+            }
+        }
+
         public void DownloadFile(string remotePath, string localPath)
         {
-            Connect();
-
             using (FileStream fs = new FileStream(localPath, FileMode.Create))
             {
                 DownloadFile(remotePath, fs);
             }
         }
 
-        public void DownloadFile(string remotePath, Stream localStream)
-        {
-            Connect();
-
-            using (Stream remoteStream = client.OpenRead(remotePath))
-            {
-                TransferData(remoteStream, localStream);
-            }
-        }
-
         public void DownloadFiles(IEnumerable<FtpListItem> files, string localPath, bool recursive = true)
         {
-            Connect();
-
             foreach (FtpListItem file in files)
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
@@ -295,9 +293,10 @@ namespace UploadersLib.FileUploaders
                     client.SetWorkingDirectory(remotePath);
                     return true;
                 }
-                catch (Exception e)
+                catch (FtpCommandException e)
                 {
-                    if (autoCreateDirectory && e.Message.StartsWith("Could not change working directory to"))
+                    // Probably directory not exist, try creating it
+                    if (e.CompletionCode == "550" && autoCreateDirectory)
                     {
                         MakeMultiDirectory(remotePath);
                         client.SetWorkingDirectory(remotePath);
@@ -337,21 +336,25 @@ namespace UploadersLib.FileUploaders
             {
                 if (MakeDirectory(path))
                 {
-                    DebugHelper.WriteLine("FTP MakeDirectory: " + path);
+                    DebugHelper.WriteLine("FTP directory created: " + path);
                 }
             }
         }
 
         public void Rename(string fromRemotePath, string toRemotePath)
         {
-            Connect();
-            client.Rename(fromRemotePath, toRemotePath);
+            if (Connect())
+            {
+                client.Rename(fromRemotePath, toRemotePath);
+            }
         }
 
         public void DeleteFile(string remotePath)
         {
-            Connect();
-            client.DeleteFile(remotePath);
+            if (Connect())
+            {
+                client.DeleteFile(remotePath);
+            }
         }
 
         public void DeleteFiles(IEnumerable<FtpListItem> files)
@@ -374,34 +377,38 @@ namespace UploadersLib.FileUploaders
 
         public void DeleteDirectory(string remotePath)
         {
-            Connect();
-
-            string filename = FTPHelpers.GetFileName(remotePath);
-            if (filename == "." || filename == "..")
+            if (Connect())
             {
-                return;
+                string filename = FTPHelpers.GetFileName(remotePath);
+                if (filename == "." || filename == "..")
+                {
+                    return;
+                }
+
+                FtpListItem[] files = client.GetListing(remotePath);
+
+                DeleteFiles(files);
+
+                client.DeleteDirectory(remotePath);
             }
-
-            FtpListItem[] files = client.GetListing(remotePath);
-
-            DeleteFiles(files);
-
-            client.DeleteDirectory(remotePath);
         }
 
         public bool SendCommand(string command)
         {
-            Connect();
+            if (Connect())
+            {
+                try
+                {
+                    client.Execute(command);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
 
-            try
-            {
-                client.Execute(command);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
 
         public void Dispose()

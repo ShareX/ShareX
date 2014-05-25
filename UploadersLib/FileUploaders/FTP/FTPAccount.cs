@@ -110,7 +110,7 @@ namespace UploadersLib
         [Category("FTPS"), Description("Type of SSL to use. Explicit is TLS, Implicit is SSL."), DefaultValue(FTPSEncryption.Explicit)]
         public FTPSEncryption FTPSEncryption { get; set; }
 
-        [Category("FTPS"), Description("Certificate file location")]
+        [Category("FTPS"), Description("Certificate file location. Optional setting.")]
         [Editor(typeof(CertFileNameEditor), typeof(UITypeEditor))]
         public string FTPSCertificateLocation { get; set; }
 
