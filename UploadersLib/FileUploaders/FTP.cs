@@ -263,7 +263,7 @@ namespace UploadersLib.FileUploaders
                 {
                     if (recursive && file.Type == FtpFileSystemObjectType.Directory)
                     {
-                        FtpListItem[] newFiles = client.GetListing(file.FullName);
+                        FtpListItem[] newFiles = GetListing(file.FullName);
                         string directoryPath = Path.Combine(localPath, file.Name);
 
                         if (!Directory.Exists(directoryPath))
@@ -280,6 +280,11 @@ namespace UploadersLib.FileUploaders
                     }
                 }
             }
+        }
+
+        public FtpListItem[] GetListing(string remotePath)
+        {
+            return client.GetListing(remotePath);
         }
 
         public bool ChangeDirectory(string remotePath, bool autoCreateDirectory = false)
@@ -385,7 +390,7 @@ namespace UploadersLib.FileUploaders
                     return;
                 }
 
-                FtpListItem[] files = client.GetListing(remotePath);
+                FtpListItem[] files = GetListing(remotePath);
 
                 DeleteFiles(files);
 

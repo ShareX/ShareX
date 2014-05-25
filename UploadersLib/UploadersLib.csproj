@@ -111,7 +111,9 @@
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\Minus.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
-    <Compile Include="FTPClient\FTPClientForm.cs" />
+    <Compile Include="FTPClient\FTPClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FTPClient\FTPClientForm.Designer.cs">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </Compile>

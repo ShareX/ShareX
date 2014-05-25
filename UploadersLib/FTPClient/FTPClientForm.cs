@@ -30,16 +30,17 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.FtpClient;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
 
 namespace UploadersLib
 {
-    /*public partial class FTPClientForm : Form
+    public partial class FTPClientForm : Form
     {
         private const string Root = "/";
 
-        public FTP FTPAdapter { get; set; }
+        public FTP Client { get; set; }
         public FTPAccount Account { get; set; }
 
         private string currentDirectory;
@@ -55,16 +56,22 @@ namespace UploadersLib
 
             Account = account;
 
-            FTPAdapter = new FTP(account);
-            FTPAdapter.client.ClientRequest += Client_ClientRequest;
-            FTPAdapter.client.ServerResponse += Client_ServerResponse;
-            FTPAdapter.client.OpenAsyncCompleted += Client_OpenAsyncCompleted;
+            Client = new FTP(account);
 
-            pgAccount.SelectedObject = FTPAdapter.Account;
-            Text = "FTP Client - " + account.Name;
+            pgAccount.SelectedObject = Client.Account;
+            Text = "ShareX FTP client - " + account.Name;
             lblConnecting.Text = "Connecting to " + account.FTPAddress;
 
-            FTPAdapter.client.OpenAsync(account.Username, account.Password);
+            TaskEx.Run(() =>
+            {
+                Client.Connect();
+            },
+            () =>
+            {
+                pConnecting.Visible = false;
+                Refresh();
+                RefreshDirectory();
+            });
         }
 
         #region Methods
@@ -101,17 +108,19 @@ namespace UploadersLib
             currentDirectory = path;
             FillDirectories(currentDirectory);
 
-            List<FtpItem> list = FTPAdapter.GetDirList(currentDirectory).
-                OrderBy(x => x.ItemType != FtpItemType.Directory).ThenBy(x => x.Name).ToList();
+            List<FtpListItem> list = Client.GetListing(currentDirectory).OrderBy(x => x.Type != FtpFileSystemObjectType.Directory).ThenBy(x => x.Name).ToList();
 
-            list.Insert(0, new FtpItem("..", DateTime.Now, 0, null, null, FtpItemType.Unknown, null));
+            if (currentDirectory != Root)
+            {
+                list.Insert(0, new FtpListItem { FullName = "..", Type = FtpFileSystemObjectType.Link });
+            }
 
             lvFTPList.Items.Clear();
             lvFTPList.SmallImageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
 
-            foreach (FtpItem file in list)
+            foreach (FtpListItem file in list)
             {
-                if (file.ItemType == FtpItemType.Directory && (file.Name == "." || file.Name == ".."))
+                if (file.Type == FtpFileSystemObjectType.Directory && (file.Name == "." || file.Name == ".."))
                 {
                     continue;
                 }
@@ -120,9 +129,9 @@ namespace UploadersLib
 
                 lvi.Tag = file;
 
-                if (file.ItemType != FtpItemType.Unknown)
+                if (file.Type != FtpFileSystemObjectType.Link)
                 {
-                    if (file.ItemType == FtpItemType.File)
+                    if (file.Type == FtpFileSystemObjectType.File)
                     {
                         lvi.SubItems.Add(file.Size.ToString("N0"));
                     }
@@ -131,13 +140,12 @@ namespace UploadersLib
                         lvi.SubItems.Add(string.Empty);
                     }
 
-                    lvi.SubItems.Add(IconReader.GetDisplayName(file.Name, file.ItemType == FtpItemType.Directory));
+                    lvi.SubItems.Add(IconReader.GetDisplayName(file.Name, file.Type == FtpFileSystemObjectType.Directory));
                     lvi.SubItems.Add(file.Modified.ToLocalTime().ToString());
-                    lvi.SubItems.Add(file.Attributes);
                 }
 
                 string ext;
-                if (file.ItemType == FtpItemType.Directory || file.ItemType == FtpItemType.Unknown)
+                if (file.Type == FtpFileSystemObjectType.Directory || file.Type == FtpFileSystemObjectType.Link)
                 {
                     ext = "Directory";
                 }
@@ -192,12 +200,12 @@ namespace UploadersLib
                 list = lvFTPList.Items.Cast<ListViewItem>().ToArray();
             }
 
-            List<FtpItem> items = new List<FtpItem>();
-            FtpItem item;
+            List<FtpListItem> items = new List<FtpListItem>();
+            FtpListItem item;
 
             foreach (ListViewItem lvi in list)
             {
-                item = lvi.Tag as FtpItem;
+                item = lvi.Tag as FtpListItem;
 
                 if (item != null)
                 {
@@ -206,33 +214,32 @@ namespace UploadersLib
             }
 
             string isSelected = selected ? "Selected " : string.Empty;
-            int filesCount = items.Count(x => x.ItemType == FtpItemType.File);
+            int filesCount = items.Count(x => x.Type == FtpFileSystemObjectType.File);
             string file = filesCount > 1 ? "files" : "file";
-            int directoriesCount = items.Count(x => x.ItemType == FtpItemType.Directory);
+            int directoriesCount = items.Count(x => x.Type == FtpFileSystemObjectType.Directory);
             string directory = directoriesCount > 1 ? "directories" : "directory";
-            string totalSize = items.Where(x => x.ItemType == FtpItemType.File).Sum(x => x.Size).ToString("N0");
+            string totalSize = items.Where(x => x.Type == FtpFileSystemObjectType.File).Sum(x => x.Size).ToString("N0");
 
-            lblStatus.Text = string.Format("{0}{1} {2} and {3} {4}. Total size: {5} bytes",
-                isSelected, filesCount, file, directoriesCount, directory, totalSize);
+            lblStatus.Text = string.Format("{0}{1} {2} and {3} {4}. Total size: {5} bytes", isSelected, filesCount, file, directoriesCount, directory, totalSize);
         }
 
         private void FTPDownload(bool openDirectory)
         {
             if (lvFTPList.SelectedItems.Count > 0)
             {
-                FtpItem checkDirectory = lvFTPList.SelectedItems[0].Tag as FtpItem;
+                FtpListItem checkDirectory = lvFTPList.SelectedItems[0].Tag as FtpListItem;
 
                 if (openDirectory && checkDirectory != null)
                 {
-                    if (checkDirectory.ItemType == FtpItemType.Unknown && checkDirectory.Name == "..")
+                    if (checkDirectory.Type == FtpFileSystemObjectType.Link && checkDirectory.Name == "..")
                     {
                         FTPNavigateBack();
                         return;
                     }
 
-                    if (checkDirectory.ItemType == FtpItemType.Directory)
+                    if (checkDirectory.Type == FtpFileSystemObjectType.Directory)
                     {
-                        LoadDirectory(checkDirectory.FullPath);
+                        LoadDirectory(checkDirectory.FullName);
                         return;
                     }
                 }
@@ -242,17 +249,17 @@ namespace UploadersLib
 
                 if (fbd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
                 {
-                    FtpItemCollection list = new FtpItemCollection();
+                    List<FtpListItem> list = new List<FtpListItem>();
                     foreach (ListViewItem lvi in lvFTPList.SelectedItems)
                     {
-                        FtpItem file = lvi.Tag as FtpItem;
+                        FtpListItem file = lvi.Tag as FtpListItem;
                         if (file != null)
                         {
                             list.Add(file);
                         }
                     }
 
-                    FTPAdapter.DownloadFiles(list, fbd.SelectedPath);
+                    Client.DownloadFiles(list, fbd.SelectedPath);
                 }
             }
         }
@@ -261,8 +268,8 @@ namespace UploadersLib
         {
             if (lvFTPList.SelectedItems.Count > 0)
             {
-                FtpItem file = lvFTPList.SelectedItems[0].Tag as FtpItem;
-                if (file != null && file.ItemType != FtpItemType.Unknown)
+                FtpListItem file = lvFTPList.SelectedItems[0].Tag as FtpListItem;
+                if (file != null && file.Type != FtpFileSystemObjectType.Link)
                 {
                     lvFTPList.StartEditing(txtRename, lvFTPList.SelectedItems[0], 0);
                     int offset = 23;
@@ -276,7 +283,7 @@ namespace UploadersLib
         {
             if (lvFTPList.SelectedItems.Count > 0)
             {
-                FTPAdapter.DeleteFiles(lvFTPList.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as FtpItem));
+                Client.DeleteFiles(lvFTPList.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as FtpListItem));
                 RefreshDirectory();
             }
         }
@@ -289,7 +296,7 @@ namespace UploadersLib
                 BringToFront();
                 if (ib.DialogResult == DialogResult.OK)
                 {
-                    FTPAdapter.MakeDirectory(Helpers.CombineURL(currentDirectory, ib.InputText));
+                    Client.MakeDirectory(Helpers.CombineURL(currentDirectory, ib.InputText));
                     RefreshDirectory();
                 }
             }
@@ -352,7 +359,7 @@ namespace UploadersLib
                 List<string> filenames = new List<string>();
                 foreach (ListViewItem lvi in lvFTPList.SelectedItems)
                 {
-                    FtpItem file = lvi.Tag as FtpItem;
+                    FtpListItem file = lvi.Tag as FtpListItem;
                     if (file != null && !string.IsNullOrEmpty(file.Name))
                     {
                         filenames.Add(file.Name);
@@ -379,8 +386,8 @@ namespace UploadersLib
                         tempSelected.Selected = false;
                     }
 
-                    FtpItem file = lvi.Tag as FtpItem;
-                    if (file != null && file.ItemType == FtpItemType.Directory)
+                    FtpListItem file = lvi.Tag as FtpListItem;
+                    if (file != null && file.Type == FtpFileSystemObjectType.Directory)
                     {
                         lvi.Selected = true;
                         tempSelected = lvi;
@@ -415,8 +422,8 @@ namespace UploadersLib
                         tempSelected.Selected = false;
                     }
 
-                    FtpItem file = lvi.Tag as FtpItem;
-                    if (file != null && file.ItemType == FtpItemType.Directory)
+                    FtpListItem file = lvi.Tag as FtpListItem;
+                    if (file != null && file.Type == FtpFileSystemObjectType.Directory)
                     {
                         string[] filenames = e.Data.GetData(typeof(string[])) as string[];
                         if (filenames != null)
@@ -428,7 +435,7 @@ namespace UploadersLib
                                 {
                                     string path = Helpers.CombineURL(currentDirectory, filename);
                                     string movePath = string.Empty;
-                                    if (file.ItemType == FtpItemType.Unknown)
+                                    if (file.Type == FtpFileSystemObjectType.Link)
                                     {
                                         if (file.Name == ".")
                                         {
@@ -441,12 +448,12 @@ namespace UploadersLib
                                     }
                                     else
                                     {
-                                        movePath = Helpers.CombineURL(file.FullPath, filename);
+                                        movePath = Helpers.CombineURL(file.FullName, filename);
                                     }
 
                                     if (!string.IsNullOrEmpty(movePath))
                                     {
-                                        FTPAdapter.Rename(path, movePath);
+                                        Client.Rename(path, movePath);
                                         renameCount++;
                                     }
                                 }
@@ -467,7 +474,7 @@ namespace UploadersLib
                 string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
                 if (files != null)
                 {
-                    FTPAdapter.UploadFiles(files, currentDirectory);
+                    Client.UploadFiles(files, currentDirectory);
                     RefreshDirectory();
                 }
             }
@@ -477,10 +484,10 @@ namespace UploadersLib
         {
             if (lvFTPList.SelectedItems.Count > 0 && !e.Cancel && !string.IsNullOrEmpty(e.DisplayText))
             {
-                FtpItem file = (FtpItem)lvFTPList.SelectedItems[0].Tag;
+                FtpListItem file = (FtpListItem)lvFTPList.SelectedItems[0].Tag;
                 if (file.Name != e.DisplayText)
                 {
-                    FTPAdapter.Rename(file.FullPath, Helpers.CombineURL(currentDirectory, e.DisplayText));
+                    Client.Rename(file.FullName, Helpers.CombineURL(currentDirectory, e.DisplayText));
                     RefreshDirectory();
                 }
             }
@@ -492,11 +499,11 @@ namespace UploadersLib
 
             if (lvFTPList.SelectedItems.Count > 0)
             {
-                FtpItem file = lvFTPList.SelectedItems[0].Tag as FtpItem;
+                FtpListItem file = lvFTPList.SelectedItems[0].Tag as FtpListItem;
 
                 if (file != null)
                 {
-                    enabled = file.ItemType != FtpItemType.Unknown;
+                    enabled = file.Type != FtpFileSystemObjectType.Link;
                 }
             }
 
@@ -530,10 +537,10 @@ namespace UploadersLib
 
             foreach (ListViewItem lvi in lvFTPList.SelectedItems)
             {
-                FtpItem file = lvi.Tag as FtpItem;
-                if (file != null && file.ItemType == FtpItemType.File)
+                FtpListItem file = lvi.Tag as FtpListItem;
+                if (file != null && file.Type == FtpFileSystemObjectType.File)
                 {
-                    path = Helpers.CombineURL(Account.HttpHomePath, file.FullPath);
+                    path = Helpers.CombineURL(Account.HttpHomePath, file.FullName);
                     list.Add(path);
                 }
             }
@@ -550,10 +557,10 @@ namespace UploadersLib
         {
             if (lvFTPList.SelectedItems.Count > 0)
             {
-                FtpItem file = lvFTPList.SelectedItems[0].Tag as FtpItem;
-                if (file != null && file.ItemType == FtpItemType.File)
+                FtpListItem file = lvFTPList.SelectedItems[0].Tag as FtpListItem;
+                if (file != null && file.Type == FtpFileSystemObjectType.File)
                 {
-                    TaskEx.Run(() => Process.Start(Account.GetUriPath("@" + file.FullPath)));
+                    TaskEx.Run(() => Process.Start(Account.GetUriPath("@" + file.FullName)));
                 }
             }
         }
@@ -563,13 +570,6 @@ namespace UploadersLib
             Refresh();
         }
 
-        private void Client_OpenAsyncCompleted(object sender, OpenAsyncCompletedEventArgs e)
-        {
-            pConnecting.Visible = false;
-            Refresh();
-            RefreshDirectory();
-        }
-
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshDirectory();
@@ -577,37 +577,27 @@ namespace UploadersLib
 
         private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FTPAdapter.Disconnect();
+            Client.Disconnect();
             lvFTPList.Items.Clear();
-        }
-
-        private void Client_ClientRequest(object sender, FtpRequestEventArgs e)
-        {
-            AddConsoleMessage(e.Request.Text, Color.Blue);
-        }
-
-        private void Client_ServerResponse(object sender, FtpResponseEventArgs e)
-        {
-            AddConsoleMessage(e.Response.RawText, Color.DarkGreen);
         }
 
         private void txtConsoleWrite_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                FTPAdapter.SendCommand(txtConsoleWrite.Text);
+                Client.SendCommand(txtConsoleWrite.Text);
                 txtConsoleWrite.Clear();
             }
         }
 
         private void FTPClient2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (FTPAdapter != null)
+            if (Client != null)
             {
-                FTPAdapter.Dispose();
+                Client.Dispose();
             }
         }
 
         #endregion Events
-    }*/
+    }
 }

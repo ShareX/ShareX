@@ -557,7 +557,7 @@ namespace ShareX
             if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.IsValidIndex(Program.UploadersConfig.FTPSelectedImage))
             {
                 FTPAccount account = Program.UploadersConfig.FTPAccountList[Program.UploadersConfig.FTPSelectedImage];
-                //new FTPClientForm(account).Show();
+                new FTPClientForm(account).Show();
             }
         }
     }
