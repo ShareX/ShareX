@@ -75,13 +75,11 @@ namespace ShareX
 
             // Proxy
             cbProxyMethod.Items.AddRange(Enum.GetNames(typeof(ProxyMethod)));
-            cbProxyType.Items.AddRange(Helpers.GetEnumDescriptions<ProxyType>());
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
             txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? string.Empty;
             nudProxyPort.Value = Program.Settings.ProxySettings.Port;
-            cbProxyType.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyType;
             UpdateProxyControls();
 
             // Upload
@@ -155,14 +153,14 @@ namespace ShareX
             switch (Program.Settings.ProxySettings.ProxyMethod)
             {
                 case ProxyMethod.None:
-                    txtProxyUsername.Enabled = txtProxyPassword.Enabled = txtProxyHost.Enabled = nudProxyPort.Enabled = cbProxyType.Enabled = false;
+                    txtProxyUsername.Enabled = txtProxyPassword.Enabled = txtProxyHost.Enabled = nudProxyPort.Enabled = false;
                     break;
                 case ProxyMethod.Manual:
-                    txtProxyUsername.Enabled = txtProxyPassword.Enabled = txtProxyHost.Enabled = nudProxyPort.Enabled = cbProxyType.Enabled = true;
+                    txtProxyUsername.Enabled = txtProxyPassword.Enabled = txtProxyHost.Enabled = nudProxyPort.Enabled = true;
                     break;
                 case ProxyMethod.Automatic:
                     txtProxyUsername.Enabled = txtProxyPassword.Enabled = true;
-                    txtProxyHost.Enabled = nudProxyPort.Enabled = cbProxyType.Enabled = false;
+                    txtProxyHost.Enabled = nudProxyPort.Enabled = false;
                     break;
             }
         }
@@ -318,7 +316,6 @@ namespace ShareX
                 Program.Settings.ProxySettings.IsValidProxy();
                 txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? string.Empty;
                 nudProxyPort.Value = Program.Settings.ProxySettings.Port;
-                cbProxyType.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyType;
             }
 
             UpdateProxyControls();
@@ -342,11 +339,6 @@ namespace ShareX
         private void nudProxyPort_ValueChanged(object sender, EventArgs e)
         {
             Program.Settings.ProxySettings.Port = (int)nudProxyPort.Value;
-        }
-
-        private void cboProxyType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ProxySettings.ProxyType = (ProxyType)cbProxyType.SelectedIndex;
         }
 
         #endregion Proxy

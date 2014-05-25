@@ -51,7 +51,6 @@ namespace HelpersLib
         }
 
         public ProxyMethod ProxyMethod { get; set; }
-        public ProxyType ProxyType { get; set; }
         public string Host { get; set; }
         public int Port { get; set; }
         public string Username { get; set; }
@@ -60,7 +59,6 @@ namespace HelpersLib
         public ProxyInfo()
         {
             ProxyMethod = ProxyMethod.Manual;
-            ProxyType = ProxyType.HTTP;
         }
 
         public bool IsValidProxy()
@@ -78,7 +76,6 @@ namespace HelpersLib
                 {
                     Host = systemProxy.Address.Host;
                     Port = systemProxy.Address.Port;
-                    ProxyType = ProxyType.HTTP;
                     return true;
                 }
             }
@@ -86,7 +83,6 @@ namespace HelpersLib
             return false;
         }
 
-        // Proxy for HTTP
         public IWebProxy GetWebProxy()
         {
             if (IsValidProxy())
@@ -117,7 +113,7 @@ namespace HelpersLib
 
         public override string ToString()
         {
-            return string.Format("{0} - {1}:{2} ({3})", Username, Host, Port, ProxyType);
+            return string.Format("{0} - {1}:{2}", Username, Host, Port);
         }
     }
 }
