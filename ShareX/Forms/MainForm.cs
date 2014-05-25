@@ -273,10 +273,7 @@ namespace ShareX
                 }
                 else
                 {
-                    if (uim.SelectedItem.Info.Result.IsError)
-                    {
-                        tsmiShowErrors.Visible = true;
-                    }
+                    tsmiShowErrors.Visible = uim.SelectedItem.Info.Result.IsError;
 
                     // Open
                     tsmiOpen.Visible = true;
@@ -332,10 +329,7 @@ namespace ShareX
                         }
                     }
 
-                    if (uim.SelectedItem.Info.Result.IsError && !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response))
-                    {
-                        tsmiShowResponse.Visible = true;
-                    }
+                    tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
 
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
 
