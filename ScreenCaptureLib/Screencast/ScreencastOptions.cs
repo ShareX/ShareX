@@ -105,6 +105,9 @@ namespace ScreenCaptureLib
                 case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
                     args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                     args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
+                    args.AppendFormat("-tune {0} ", "zerolatency");
+                    // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                    args.Append("-pix_fmt yuv420p ");
                     break;
                 case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
                     args.AppendFormat("-crf {0} ", FFmpeg.VPx_CRF);
@@ -114,24 +117,18 @@ namespace ScreenCaptureLib
                     break;
             }
 
-            // -pix_fmt yuv420p required for libx264 otherwise can't stream in Chrome
-            if (FFmpeg.VideoCodec == FFmpegVideoCodec.libx264)
-            {
-                args.Append("-pix_fmt yuv420p -tune zerolatency ");
-            }
-
             if (FFmpeg.IsAudioSourceSelected())
             {
                 switch (FFmpeg.AudioCodec)
                 {
+                    case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/AACEncodingGuide
+                        args.AppendFormat("-c:a libvo_aacenc -ac 2 -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
+                        break;
                     case FFmpegAudioCodec.libvorbis: // http://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
                         args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libvorbis.ToString(), FFmpeg.Vorbis_qscale);
                         break;
                     case FFmpegAudioCodec.libmp3lame: // http://trac.ffmpeg.org/wiki/Encoding%20VBR%20(Variable%20Bit%20Rate)%20mp3%20audio
                         args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libmp3lame.ToString(), FFmpeg.MP3_qscale);
-                        break;
-                    case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/AACEncodingGuide
-                        args.AppendFormat("-c:a libvo_aacenc -ac 2 -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
                         break;
                 }
             }

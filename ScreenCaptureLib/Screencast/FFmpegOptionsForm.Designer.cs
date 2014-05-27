@@ -311,7 +311,7 @@
             this.gbFFmpegExe.Controls.Add(this.btnDownload);
             this.gbFFmpegExe.Controls.Add(this.btnFFmpegBrowse);
             this.gbFFmpegExe.Controls.Add(this.txtFFmpegPath);
-            this.gbFFmpegExe.Location = new System.Drawing.Point(8, 216);
+            this.gbFFmpegExe.Location = new System.Drawing.Point(8, 184);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(648, 56);
             this.gbFFmpegExe.TabIndex = 6;
@@ -349,7 +349,7 @@
             // gbCommandLinePreview
             // 
             this.gbCommandLinePreview.Controls.Add(this.txtCommandLinePreview);
-            this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 349);
+            this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 317);
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.Padding = new System.Windows.Forms.Padding(8);
             this.gbCommandLinePreview.Size = new System.Drawing.Size(648, 96);
@@ -372,7 +372,7 @@
             // 
             this.gbCommandLineArgs.Controls.Add(this.btnFFmpegHelp);
             this.gbCommandLineArgs.Controls.Add(this.tbUserArgs);
-            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 280);
+            this.gbCommandLineArgs.Location = new System.Drawing.Point(8, 248);
             this.gbCommandLineArgs.Name = "gbCommandLineArgs";
             this.gbCommandLineArgs.Size = new System.Drawing.Size(648, 56);
             this.gbCommandLineArgs.TabIndex = 7;
@@ -460,7 +460,7 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(136, 344);
+            this.btnTest.Location = new System.Drawing.Point(136, 312);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(88, 23);
             this.btnTest.TabIndex = 8;
@@ -470,7 +470,7 @@
             // 
             // btnCopyPreview
             // 
-            this.btnCopyPreview.Location = new System.Drawing.Point(227, 344);
+            this.btnCopyPreview.Location = new System.Drawing.Point(227, 312);
             this.btnCopyPreview.Name = "btnCopyPreview";
             this.btnCopyPreview.Size = new System.Drawing.Size(53, 23);
             this.btnCopyPreview.TabIndex = 9;
@@ -659,7 +659,7 @@
             // cbShowError
             // 
             this.cbShowError.AutoSize = true;
-            this.cbShowError.Location = new System.Drawing.Point(10, 184);
+            this.cbShowError.Location = new System.Drawing.Point(9, 424);
             this.cbShowError.Name = "cbShowError";
             this.cbShowError.Size = new System.Drawing.Size(295, 17);
             this.cbShowError.TabIndex = 11;

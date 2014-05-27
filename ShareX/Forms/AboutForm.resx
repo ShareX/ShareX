@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value>Contributors:
@@ -127,18 +127,18 @@ Amazon S3 and DreamObjects support: Alan Edwardes - http://alanedwardes.com
 
 External libraries:
 
-Greenshot Image Editor: http://sourceforge.net/projects/greenshot
-FTP Library: http://biko.codeplex.com
-Json.NET: http://json.codeplex.com
-SSH.NET: http://sshnet.codeplex.com
+Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
+Json.NET: https://json.codeplex.com
+SSH.NET: https://sshnet.codeplex.com
 Icons: http://p.yusukekamiyamane.com
-ImageListView: http://code.google.com/p/imagelistview
+ImageListView: https://code.google.com/p/imagelistview
 AviWriter: https://code.google.com/p/aforge
 FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org
-SevenZipSharp: http://sevenzipsharp.codeplex.com
+SevenZipSharp: https://sevenzipsharp.codeplex.com
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 QrCode.Net: https://qrcodenet.codeplex.com
+System.Net.FtpClient: https://netftp.codeplex.com
 
 Copyright © 2007 - 2014 ShareX Developers</value>
   </data>
