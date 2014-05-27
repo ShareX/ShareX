@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ScreenCaptureLib
 {
@@ -86,6 +87,12 @@ namespace ScreenCaptureLib
                 {
                     foreach (LocationInfo index in indexList)
                     {
+                        if (index.Location > int.MaxValue || index.Length > int.MaxValue)
+                        {
+                            MessageBox.Show("Cache file size can't exceed 2.14 GB.\r\nPlease use FFmpeg screen recording instead of GIF.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            yield break;
+                        }
+
                         using (MemoryStream ms = new MemoryStream())
                         {
                             fsCache.CopyStreamTo(ms, (int)index.Location, (int)index.Length);

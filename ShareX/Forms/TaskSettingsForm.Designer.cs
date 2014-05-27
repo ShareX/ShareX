@@ -110,6 +110,7 @@
             this.tpCaptureShape = new System.Windows.Forms.TabPage();
             this.pgShapesCapture = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
             this.nudScreenRecordFPS = new System.Windows.Forms.NumericUpDown();
             this.lblScreenRecordFPS = new System.Windows.Forms.Label();
             this.chkRunScreencastCLI = new System.Windows.Forms.CheckBox();
@@ -165,7 +166,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1147,6 +1147,15 @@
             this.tpScreenRecorder.Text = "Screen recorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
+            // lblScreenRecorderFixedDuration
+            // 
+            this.lblScreenRecorderFixedDuration.AutoSize = true;
+            this.lblScreenRecorderFixedDuration.Location = new System.Drawing.Point(211, 115);
+            this.lblScreenRecorderFixedDuration.Name = "lblScreenRecorderFixedDuration";
+            this.lblScreenRecorderFixedDuration.Size = new System.Drawing.Size(47, 13);
+            this.lblScreenRecorderFixedDuration.TabIndex = 15;
+            this.lblScreenRecorderFixedDuration.Text = "seconds";
+            // 
             // nudScreenRecordFPS
             // 
             this.nudScreenRecordFPS.Location = new System.Drawing.Point(144, 64);
@@ -1319,7 +1328,7 @@
             // 
             this.nudGIFFPS.Location = new System.Drawing.Point(144, 88);
             this.nudGIFFPS.Maximum = new decimal(new int[] {
-            30,
+            15,
             0,
             0,
             0});
@@ -1788,15 +1797,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use advanced settings in main window task settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // lblScreenRecorderFixedDuration
-            // 
-            this.lblScreenRecorderFixedDuration.AutoSize = true;
-            this.lblScreenRecorderFixedDuration.Location = new System.Drawing.Point(210, 115);
-            this.lblScreenRecorderFixedDuration.Name = "lblScreenRecorderFixedDuration";
-            this.lblScreenRecorderFixedDuration.Size = new System.Drawing.Size(47, 13);
-            this.lblScreenRecorderFixedDuration.TabIndex = 15;
-            this.lblScreenRecorderFixedDuration.Text = "seconds";
             // 
             // TaskSettingsForm
             // 

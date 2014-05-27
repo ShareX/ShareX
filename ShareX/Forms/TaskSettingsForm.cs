@@ -164,8 +164,8 @@ namespace ShareX
             chkRunScreencastCLI.Checked = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
 
-            nudGIFFPS.Value = TaskSettings.CaptureSettings.GIFFPS;
-            nudScreenRecordFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS;
+            nudScreenRecordFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS.Between((int)nudScreenRecordFPS.Minimum, (int)nudScreenRecordFPS.Maximum);
+            nudGIFFPS.Value = TaskSettings.CaptureSettings.GIFFPS.Between((int)nudGIFFPS.Minimum, (int)nudGIFFPS.Maximum);
             cbScreenRecorderFixedDuration.Checked = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;

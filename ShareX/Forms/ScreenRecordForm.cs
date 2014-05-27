@@ -59,7 +59,7 @@ namespace ShareX
 
         private ScreenRecordForm()
         {
-            TrayIcon.Text = "ShareX - Screen recording";
+            TrayIcon.Text = "ShareX";
             TrayIcon.MouseClick += TrayIcon_MouseClick;
         }
 
@@ -125,6 +125,7 @@ namespace ShareX
             IsRecording = true;
             Screenshot.CaptureCursor = TaskSettings.CaptureSettings.ShowCursor;
 
+            TrayIcon.Text = "ShareX - Waiting...";
             TrayIcon.Icon = Resources.control_record_yellow.ToIcon();
             TrayIcon.Visible = true;
 
@@ -174,8 +175,10 @@ namespace ShareX
                     this.InvokeSafe(() =>
                     {
                         screenRegionManager.ChangeColor(Color.FromArgb(0, 255, 0));
-                        TrayIcon.Icon = Resources.control_record.ToIcon();
                     });
+
+                    TrayIcon.Text = "ShareX - Click tray icon to stop recording.";
+                    TrayIcon.Icon = Resources.control_record.ToIcon();
 
                     screenRecorder.StartRecording();
                 }
@@ -191,6 +194,7 @@ namespace ShareX
                 {
                     if (screenRecorder != null)
                     {
+                        TrayIcon.Text = "ShareX - Encoding...";
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
 
                         string sourceFilePath = path;
