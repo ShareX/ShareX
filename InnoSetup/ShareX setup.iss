@@ -1,6 +1,6 @@
 #define MyAppName "ShareX"
 #define MyAppFile "ShareX.exe"
-#define MyAppPath "ShareX\bin\Release\ShareX.exe"
+#define MyAppPath "..\ShareX\bin\Release\ShareX.exe"
 #dim Version[4]
 #expr ParseVersion(MyAppPath, Version[0], Version[1], Version[2], Version[3])
 #define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
@@ -26,10 +26,10 @@ CreateAppDir=true
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DirExistsWarning=no
-InfoBeforeFile=Docs\VersionHistory.txt
+InfoBeforeFile=..\Docs\VersionHistory.txt
 InternalCompressLevel=ultra64
 LanguageDetectionMethod=uilanguage
-LicenseFile=LICENSE.txt
+LicenseFile=..\LICENSE.txt
 MinVersion=0,5.01.2600
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir=Output\
@@ -47,7 +47,8 @@ VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"
@@ -56,14 +57,14 @@ Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescrip
 Name: "CreateStartupIcon"; Description: "Launch {#MyAppName} automatically at Windows startup"; GroupDescription: "Other tasks:"; Flags: unchecked
 
 [Files]
-Source: "ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flags: ignoreversion
-Source: "ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
-Source: "ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
-Source: "ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
-Source: "Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn
-Source: "Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
-Source: "Lib\audio_sniffer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn
-Source: "Lib\audio_sniffer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
+Source: "..\ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flags: ignoreversion
+Source: "..\ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
+Source: "..\ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
+Source: "..\ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn
+Source: "..\Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
+Source: "..\Lib\audio_sniffer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn
+Source: "..\Lib\audio_sniffer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFile}"; WorkingDir: "{app}"
@@ -82,7 +83,27 @@ Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreate
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 
+#include "Scripts\products.iss"
+#include "Scripts\products\stringversion.iss"
+#include "Scripts\products\winversion.iss"
+#include "Scripts\products\fileversion.iss"
+#include "Scripts\products\dotnetfxversion.iss"
+#include "Scripts\products\msi31.iss"
+#include "Scripts\products\dotnetfx40full.iss"
+#include "Scripts\products\vcredist2010.iss"
+
 [Code]
+function InitializeSetup(): Boolean;
+begin
+	initwinversion();
+
+  msi31('3.1');
+  dotnetfx40full();
+  vcredist2010();
+
+	Result := true;
+end;
+
 function DesktopIconExists(): Boolean;
 begin
   Result := FileExists(ExpandConstant('{userdesktop}\{#MyAppName}.lnk'));

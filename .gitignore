@@ -108,5 +108,5 @@ Backup*/
 UpgradeLog*.XML
 
 # Additional
-Output/
+InnoSetup/Output/
 UploadersLib/APIKeys/APIKeysLocal.cs
