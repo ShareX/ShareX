@@ -89,9 +89,11 @@ namespace ShareX
 
         private void DropForm_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) ||
+                e.Data.GetDataPresent(DataFormats.Bitmap, false) ||
+                e.Data.GetDataPresent(DataFormats.Text, false))
             {
-                e.Effect = DragDropEffects.All;
+                e.Effect = DragDropEffects.Copy;
 
                 if (!isHovered)
                 {
@@ -107,8 +109,7 @@ namespace ShareX
 
         private void DropForm_DragDrop(object sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, true);
-            UploadManager.UploadFile(files);
+            UploadManager.DragDropUpload(e.Data);
 
             if (isHovered)
             {

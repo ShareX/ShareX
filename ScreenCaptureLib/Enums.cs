@@ -27,6 +27,16 @@ using System.ComponentModel;
 
 namespace ScreenCaptureLib
 {
+    public enum ScreenRecordOutput
+    {
+        [Description("FFmpeg")]
+        FFmpeg,
+        [Description("Animated GIF")]
+        GIF,
+        [Description("Video Compression Manager (VCM)")]
+        AVI
+    }
+
     public enum SurfaceResult
     {
         None,
