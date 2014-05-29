@@ -219,10 +219,8 @@ namespace HelpersLib
             if (fileDownloader != null)
             {
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-                lblProgress.Text = String.Format(CultureInfo.CurrentCulture,
-                    "Progress: {0:0.0}%\nDownload speed: {1:0.0} kB/s\nFile size: {2:n0} / {3:n0} KiB",
-                    fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1000, fileDownloader.DownloadedSize / 1024,
-                    fileDownloader.FileSize / 1024);
+                lblProgress.Text = String.Format(CultureInfo.CurrentCulture, "Progress: {0:0.0}%\nDownload speed: {1:0.0} KB/s\nFile size: {2:n0} / {3:n0} KB",
+                    fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
             }
         }
 

@@ -181,9 +181,9 @@ namespace HelpersLib
         public static double ToDouble(this Version value)
         {
             return Math.Max(value.Major, 0) * Math.Pow(10, 12) +
-                   Math.Max(value.Minor, 0) * Math.Pow(10, 9) +
-                   Math.Max(value.Build, 0) * Math.Pow(10, 6) +
-                   Math.Max(value.Revision, 0);
+                Math.Max(value.Minor, 0) * Math.Pow(10, 9) +
+                Math.Max(value.Build, 0) * Math.Pow(10, 6) +
+                Math.Max(value.Revision, 0);
         }
 
         public static bool IsValid(this Rectangle rect)
@@ -400,12 +400,17 @@ namespace HelpersLib
         private static readonly string[] Suffix_Decimal = new[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
         private static readonly string[] Suffix_Binary = new[] { "B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB" };
 
+        public static string GetSizeSuffix(int place, bool binary = false)
+        {
+            return binary ? Suffix_Binary[place] : Suffix_Decimal[place];
+        }
+
         public static string ToSizeString(this long size, bool binary = false, int decimalPlaces = 2)
         {
             if (size < 1024) return Math.Max(size, 0) + " B";
             int place = (int)Math.Floor(Math.Log(size, 1024));
             double num = size / Math.Pow(1024, place);
-            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Between(0, 3)), binary ? Suffix_Binary[place] : Suffix_Decimal[place]);
+            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Between(0, 3)), GetSizeSuffix(place, binary));
         }
 
         public static string ToDecimalString(this double number, int decimalPlaces)
