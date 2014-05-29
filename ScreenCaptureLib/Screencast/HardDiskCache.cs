@@ -89,7 +89,7 @@ namespace ScreenCaptureLib
                     {
                         if (index.Location > int.MaxValue || index.Length > int.MaxValue)
                         {
-                            MessageBox.Show("Cache file size can't exceed 2.14 GB.\r\nPlease use FFmpeg screen recording instead of GIF.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Cache file size cannot exceed 2.00 GiB.\r\nPlease use FFmpeg screen recording instead of GIF.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             yield break;
                         }
 
