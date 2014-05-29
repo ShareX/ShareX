@@ -30,7 +30,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using UploadersLib;
 
@@ -144,32 +143,11 @@ namespace ShareX
             }
         }
 
-        public static bool ClipboardUploadGif(TaskSettings taskSettings)
-        {
-            IDataObject clipboardData = Clipboard.GetDataObject();
-            if (clipboardData != null && clipboardData.GetDataPresent(DataFormats.Html))
-            {
-                String data = clipboardData.GetData(DataFormats.Html).ToString();
-                Match match = Regex.Match(data, @"<!--StartFragment--><img.*?src=""(.*?)"".*?><!--EndFragment-->");
-                if (match.Success)
-                {
-                    String url = match.Groups[1].Value;
-                    if (Helpers.GetProperExtension(Helpers.GetURLFilename(url)) == "gif")
-                    {
-                        string filename = Helpers.GetURLFilename(url);
-                        DownloadAndUploadFile(url, filename, taskSettings);
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
         public static void ClipboardUpload(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (Clipboard.ContainsImage() && !ClipboardUploadGif(taskSettings))
+            if (Clipboard.ContainsImage())
             {
                 Image img = Clipboard.GetImage();
 
