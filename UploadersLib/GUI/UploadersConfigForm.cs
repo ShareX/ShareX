@@ -1228,7 +1228,7 @@ namespace UploadersLib
 
         private void FTPAccountTestButton_Click(object sender, EventArgs e)
         {
-            TestFTPAccount(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex]);
+            TestFTPAccountAsync(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex]);
         }
 
         private void FtpAccountSettingsGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)

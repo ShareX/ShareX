@@ -52,13 +52,13 @@ namespace UploadersLib
         [Category("FTP"), PasswordPropertyText(true)]
         public string Password { get; set; }
 
-        [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the server. This affects the server address."), DefaultValue(ServerProtocol.Ftp)]
+        [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the server. This affects the server address."), DefaultValue(ServerProtocol.ftp)]
         public ServerProtocol ServerProtocol { get; set; }
 
         [Category("FTP"), Description("FTP sub folder path, example: Screenshots.\r\nYou can use name parsing: %y = year, %mo = month.")]
         public string SubFolderPath { get; set; }
 
-        [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the browser"), DefaultValue(BrowserProtocol.Http)]
+        [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the browser"), DefaultValue(BrowserProtocol.http)]
         public BrowserProtocol BrowserProtocol { get; set; }
 
         [Category("FTP"), Description("URL = HttpHomePath + SubFolderPath + FileName\r\nIf HttpHomePath is empty then URL = Host + SubFolderPath + FileName\r\n%host = Host")]
@@ -127,9 +127,9 @@ namespace UploadersLib
             Name = "New account";
             Host = "host";
             Port = 21;
-            ServerProtocol = ServerProtocol.Ftp;
+            ServerProtocol = ServerProtocol.ftp;
             SubFolderPath = string.Empty;
-            BrowserProtocol = BrowserProtocol.Http;
+            BrowserProtocol = BrowserProtocol.http;
             HttpHomePath = string.Empty;
             HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;

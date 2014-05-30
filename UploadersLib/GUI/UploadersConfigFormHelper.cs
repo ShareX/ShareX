@@ -895,7 +895,7 @@ namespace UploadersLib
         {
             if (CheckFTPAccounts())
             {
-                //new FTPClientForm(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex]).Show();
+                new FTPClientForm(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex]).Show();
             }
         }
 

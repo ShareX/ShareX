@@ -61,7 +61,7 @@ namespace UploadersLib
         [Category("Localhost"), Description("Don't add file extension to URL"), DefaultValue(false)]
         public bool HttpHomePathNoExtension { get; set; }
 
-        [Category("Localhost"), Description("Choose an appropriate protocol to be accessed by the browser. Use 'file' for Shared Folders. RemoteProtocol will always be 'file' if HTTP Home Path is empty. "), DefaultValue(BrowserProtocol.File)]
+        [Category("Localhost"), Description("Choose an appropriate protocol to be accessed by the browser. Use 'file' for Shared Folders. RemoteProtocol will always be 'file' if HTTP Home Path is empty. "), DefaultValue(BrowserProtocol.file)]
         public BrowserProtocol RemoteProtocol { get; set; }
 
         [Category("Localhost"), Description("file://Host:Port"), Browsable(false)]
@@ -107,7 +107,7 @@ namespace UploadersLib
             HttpHomePath = string.Empty;
             HttpHomePathAutoAddSubFolderPath = true;
             HttpHomePathNoExtension = false;
-            RemoteProtocol = BrowserProtocol.File;
+            RemoteProtocol = BrowserProtocol.file;
         }
 
         public string GetSubFolderPath()
@@ -154,7 +154,7 @@ namespace UploadersLib
 
             if (string.IsNullOrEmpty(httpHomePath))
             {
-                RemoteProtocol = BrowserProtocol.File;
+                RemoteProtocol = BrowserProtocol.file;
                 path = LocalUri.Replace("file://", "");
             }
             else

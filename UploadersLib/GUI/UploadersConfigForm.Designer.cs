@@ -1715,7 +1715,7 @@
             this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
             this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 516);
+            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 416);
             this.ucFTPAccounts.TabIndex = 6;
             // 
             // tpMega

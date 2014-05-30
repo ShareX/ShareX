@@ -145,16 +145,7 @@ namespace UploadersLib.FileUploaders
         {
             if (Connect())
             {
-                try
-                {
-                    string workingDirectory = client.WorkingDirectory;
-                    client.ChangeDirectory(path);
-                    client.ChangeDirectory(workingDirectory);
-                    return true;
-                }
-                catch (SftpPathNotFoundException)
-                {
-                }
+                return client.Exists(path);
             }
 
             return false;
@@ -171,6 +162,7 @@ namespace UploadersLib.FileUploaders
                 if (!DirectoryExists(directory))
                 {
                     CreateDirectory(directory);
+                    DebugHelper.WriteLine("FTP directory created: " + path);
                     directoryList.Add(directory);
                 }
             }

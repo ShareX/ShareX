@@ -175,23 +175,23 @@ namespace UploadersLib
     public enum BrowserProtocol
     {
         [Description("http://")]
-        Http,
+        http,
         [Description("https://")]
-        Https,
+        https,
         [Description("ftp://")]
-        Ftp,
+        ftp,
         [Description("ftps://")]
-        Ftps,
+        ftps,
         [Description("file://")]
-        File
+        file
     }
 
     public enum ServerProtocol
     {
         [Description("ftp://")]
-        Ftp,
+        ftp,
         [Description("ftps://")]
-        Ftps
+        ftps
     }
 
     public enum Privacy
