@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.FtpClient;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
@@ -881,7 +882,7 @@ namespace UploadersLib
 
                 TaskEx.Run(() =>
                 {
-                    TestFTPAccount(acc, false);
+                    TestFTPAccount(acc);
                 },
                 () =>
                 {
@@ -925,74 +926,71 @@ namespace UploadersLib
             }
         }
 
-        public static void TestFTPAccount(FTPAccount account, bool silent)
+        public static void TestFTPAccount(FTPAccount account)
         {
             string msg = string.Empty;
-            string sfp = account.GetSubFolderPath();
+            string remotePath = account.GetSubFolderPath();
+            List<string> directories = new List<string>();
 
-            switch (account.Protocol)
+            try
             {
-                case FTPProtocol.SFTP:
-                    try
+                if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                {
+                    using (FTP ftp = new FTP(account))
                     {
-                        using (SFTP sftp = new SFTP(account))
+                        if (ftp.Connect())
                         {
-                            if (!sftp.IsValidAccount)
+                            if (!ftp.DirectoryExists(remotePath))
                             {
-                                msg = "An SFTP client couldn't be instantiated, not enough information.\r\nCould be a missing key file.";
+                                directories = ftp.CreateMultiDirectory(remotePath);
                             }
-                            else if (sftp.Connect())
+
+                            if (ftp.IsConnected)
                             {
-                                List<string> createddirs = new List<string>();
-
-                                if (!sftp.DirectoryExists(sfp))
+                                if (directories.Count > 0)
                                 {
-                                    createddirs = sftp.CreateMultiDirectory(sfp);
+                                    msg = "Connected!\r\nCreated folders:\r\n" + string.Join("\r\n", directories);
                                 }
-
-                                if (sftp.IsConnected)
+                                else
                                 {
-                                    msg = (createddirs.Count == 0) ? "Connected!" : "Connected!\r\nCreated folders:";
-                                    for (int x = 0; x <= createddirs.Count - 1; x++)
-                                    {
-                                        msg += "\r\n" + createddirs[x];
-                                    }
+                                    msg = "Connected!";
                                 }
                             }
                         }
                     }
-                    catch (Exception e)
+                }
+                else if (account.Protocol == FTPProtocol.SFTP)
+                {
+                    using (SFTP sftp = new SFTP(account))
                     {
-                        msg = e.Message;
-                    }
-                    break;
-                default:
-                    try
-                    {
-                        using (FTP ftpClient = new FTP(account))
+                        if (sftp.Connect())
                         {
-                            if (ftpClient.ChangeDirectory(sfp, true))
+                            if (!sftp.DirectoryExists(remotePath))
                             {
-                                msg = "Connected!";
+                                directories = sftp.CreateMultiDirectory(remotePath);
+                            }
+
+                            if (sftp.IsConnected)
+                            {
+                                if (directories.Count > 0)
+                                {
+                                    msg = "Connected!\r\nCreated folders:\r\n" + string.Join("\r\n", directories);
+                                }
+                                else
+                                {
+                                    msg = "Connected!";
+                                }
                             }
                         }
                     }
-                    catch (Exception e)
-                    {
-                        msg = e.Message;
-                    }
-
-                    break;
+                }
             }
-
-            if (silent)
+            catch (Exception e)
             {
-                DebugHelper.WriteLine(string.Format("Tested {0} sub-folder path in {1}", sfp, account));
+                msg = e.Message;
             }
-            else
-            {
-                MessageBox.Show(msg, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            MessageBox.Show(msg, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static string SendPing(string host)

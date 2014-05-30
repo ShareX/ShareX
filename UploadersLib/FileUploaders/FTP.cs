@@ -40,6 +40,14 @@ namespace UploadersLib.FileUploaders
     {
         public FTPAccount Account { get; private set; }
 
+        public bool IsConnected
+        {
+            get
+            {
+                return client != null && client.IsConnected;
+            }
+        }
+
         private FtpClient client;
 
         public FTP(FTPAccount account)
@@ -163,7 +171,7 @@ namespace UploadersLib.FileUploaders
                     // Probably directory not exist, try creating it
                     if (e.CompletionCode == "553")
                     {
-                        MakeMultiDirectory(URLHelpers.GetDirectoryPath(remotePath));
+                        CreateMultiDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
                         using (Stream remoteStream = client.OpenWrite(remotePath))
                         {
@@ -229,7 +237,7 @@ namespace UploadersLib.FileUploaders
                         filesList.AddRange(Directory.GetFiles(file));
                         filesList.AddRange(Directory.GetDirectories(file));
                         string path = Helpers.CombineURL(remotePath, filename);
-                        MakeDirectory(path);
+                        CreateDirectory(path);
                         UploadFiles(filesList.ToArray(), path);
                     }
                 }
@@ -287,35 +295,17 @@ namespace UploadersLib.FileUploaders
             return client.GetListing(remotePath);
         }
 
-        public bool ChangeDirectory(string remotePath, bool autoCreateDirectory = false)
+        public bool DirectoryExists(string remotePath)
         {
             if (Connect())
             {
-                remotePath = URLHelpers.AddSlash(remotePath, SlashType.Prefix);
-
-                try
-                {
-                    client.SetWorkingDirectory(remotePath);
-                    return true;
-                }
-                catch (FtpCommandException e)
-                {
-                    // Probably directory not exist, try creating it
-                    if (e.CompletionCode == "550" && autoCreateDirectory)
-                    {
-                        MakeMultiDirectory(remotePath);
-                        client.SetWorkingDirectory(remotePath);
-                        return true;
-                    }
-
-                    throw e;
-                }
+                return client.DirectoryExists(remotePath);
             }
 
             return false;
         }
 
-        public bool MakeDirectory(string remotePath)
+        public bool CreateDirectory(string remotePath)
         {
             if (Connect())
             {
@@ -333,17 +323,19 @@ namespace UploadersLib.FileUploaders
             return false;
         }
 
-        public void MakeMultiDirectory(string remotePath)
+        public List<string> CreateMultiDirectory(string remotePath)
         {
             List<string> paths = URLHelpers.GetPaths(remotePath);
 
             foreach (string path in paths)
             {
-                if (MakeDirectory(path))
+                if (CreateDirectory(path))
                 {
                     DebugHelper.WriteLine("FTP directory created: " + path);
                 }
             }
+
+            return paths;
         }
 
         public void Rename(string fromRemotePath, string toRemotePath)

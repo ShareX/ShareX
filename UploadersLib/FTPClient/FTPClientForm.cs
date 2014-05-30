@@ -298,7 +298,7 @@ namespace UploadersLib
                 BringToFront();
                 if (ib.DialogResult == DialogResult.OK)
                 {
-                    Client.MakeDirectory(Helpers.CombineURL(currentDirectory, ib.InputText));
+                    Client.CreateDirectory(Helpers.CombineURL(currentDirectory, ib.InputText));
                     RefreshDirectory();
                 }
             }
