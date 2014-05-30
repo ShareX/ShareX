@@ -115,25 +115,24 @@ namespace UploadersLib.TextUploaders
 
     public class PastebinSettings
     {
-        [Description("This will be the name / title of your paste")]
-        public string Title { get; set; }
-
-        [Description("This will be the syntax highlighting value\r\nExample: c = C, java = Java, objc = Objective C, cpp = c++, csharp = C#, php = PHP, vb = VisualBasic, python = Python, perl = Perl, ruby = Ruby, javascript = JavaScript, vbnet = VB.NET")]
-        public string TextFormat { get; set; }
-
-        [Description("This sets the expiration date of your paste\r\nN = Never, 10M = 10 Minutes, 1H = 1 Hour, 1D = 1 Day, 1W = 1 Week, 2W = 2 Weeks, 1M = 1 Month"),
-         DefaultValue("N")]
-        public string ExpireTime { get; set; }
-
-        [Description("This makes a paste public or private\r\n0 = Public, 1 = Unlisted, 2 = Private (only allowed in combination with api_user_key, as you have to be logged into your account to access the paste)"),
-         DefaultValue("1")]
-        public string Privacy { get; set; }
-
         [Description("This is the username of the user you want to login")]
         public string Username { get; set; }
 
         [PasswordPropertyText(true), Description("This is the password of the user you want to login")]
         public string Password { get; set; }
+
+        [Description("This makes a paste public or private\r\n0 = Public, 1 = Unlisted, 2 = Private (only allowed in combination with api_user_key, as you have to be logged into your account to access the paste)"),
+        DefaultValue("1")]
+        public string Privacy { get; set; }
+
+        [Description("This sets the expiration date of your paste\r\nN = Never, 10M = 10 Minutes, 1H = 1 Hour, 1D = 1 Day, 1W = 1 Week, 2W = 2 Weeks, 1M = 1 Month"), DefaultValue("N")]
+        public string ExpireTime { get; set; }
+
+        [Description("This will be the name / title of your paste")]
+        public string Title { get; set; }
+
+        [Description("This will be the syntax highlighting value\r\nExample: c = C, java = Java, objc = Objective C, cpp = c++, csharp = C#, php = PHP, vb = VisualBasic, python = Python, perl = Perl, ruby = Ruby, javascript = JavaScript, vbnet = VB.NET")]
+        public string TextFormat { get; set; }
 
         [Browsable(false)]
         public string UserKey { get; set; }

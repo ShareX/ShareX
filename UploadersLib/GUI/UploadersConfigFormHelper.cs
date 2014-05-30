@@ -282,7 +282,7 @@ namespace UploadersLib
                     if (result)
                     {
                         Config.PhotobucketAccountInfo = pb.GetAccountInfo();
-                        lblPhotobucketAccountStatus.Text = "Login successful: " + Config.PhotobucketOAuthInfo.UserToken;
+                        lblPhotobucketAccountStatus.Text = "Login successful.";
                         txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
                         Config.PhotobucketAccountInfo.AlbumList.Add(Config.PhotobucketAccountInfo.AlbumID);
                         cboPhotobucketAlbumPaths.Items.Add(Config.PhotobucketAccountInfo.AlbumID);
@@ -477,8 +477,7 @@ namespace UploadersLib
         {
             try
             {
-                if (Config.DropboxOAuthInfo != null && !string.IsNullOrEmpty(Config.DropboxOAuthInfo.AuthToken) &&
-                    !string.IsNullOrEmpty(Config.DropboxOAuthInfo.AuthSecret))
+                if (Config.DropboxOAuthInfo != null && !string.IsNullOrEmpty(Config.DropboxOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.DropboxOAuthInfo.AuthSecret))
                 {
                     Dropbox dropbox = new Dropbox(Config.DropboxOAuthInfo);
                     bool result = dropbox.GetAccessToken();
@@ -1068,12 +1067,12 @@ namespace UploadersLib
                 Ge_tt gett = new Ge_tt(APIKeys.Ge_ttKey);
                 Ge_ttLogin login = gett.Login(txtGe_ttEmail.Text, txtGe_ttPassword.Text);
                 Config.Ge_ttLogin = login;
-                lblGe_ttAccessToken.Text = "Access token: " + login.AccessToken;
+                lblGe_ttStatus.Text = "Login successful.";
             }
             catch (Exception ex)
             {
                 Config.Ge_ttLogin = null;
-                lblGe_ttAccessToken.Text = "Access token:";
+                lblGe_ttStatus.Text = "Login failed.";
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1143,38 +1142,47 @@ namespace UploadersLib
             return Config.TwitterOAuthInfoList.IsValidIndex(Config.TwitterSelectedAccount);
         }
 
-        /// <summary>
-        /// Returns the active TwitterAuthInfo object; if nothing is active then a new TwitterAuthInfo object is returned
-        /// </summary>
-        /// <returns></returns>
-        public OAuthInfo TwitterGetActiveAccount()
+        public void TwitterAuthOpen()
         {
             if (CheckTwitterAccounts())
             {
-                return Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount];
-            }
+                OAuthInfo acc = new OAuthInfo(APIKeys.TwitterConsumerKey, APIKeys.TwitterConsumerSecret);
+                Twitter twitter = new Twitter(acc);
+                string url = twitter.GetAuthorizationURL();
 
-            return new OAuthInfo(APIKeys.TwitterConsumerKey, APIKeys.TwitterConsumerSecret);
+                if (!string.IsNullOrEmpty(url))
+                {
+                    acc.Description = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount].Description;
+                    Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
+                    ucTwitterAccounts.pgSettings.SelectedObject = acc;
+                    Helpers.OpenURL(url);
+                    btnTwitterLogin.Enabled = true;
+                }
+            }
         }
 
-        public void TwitterLogin()
+        public void TwitterAuthComplete()
         {
-            OAuthInfo acc = TwitterGetActiveAccount();
-            string verification = acc.AuthVerifier;
-
-            if (!string.IsNullOrEmpty(verification) && acc != null &&
-                !string.IsNullOrEmpty(acc.AuthToken) && !string.IsNullOrEmpty(acc.AuthSecret))
+            if (CheckTwitterAccounts())
             {
-                Twitter twitter = new Twitter(acc);
-                bool result = twitter.GetAccessToken(acc.AuthVerifier);
+                OAuthInfo acc = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount];
 
-                if (result)
+                if (acc != null && !string.IsNullOrEmpty(acc.AuthToken) && !string.IsNullOrEmpty(acc.AuthSecret) && !string.IsNullOrEmpty(acc.AuthVerifier))
                 {
-                    MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Twitter twitter = new Twitter(acc);
+                    bool result = twitter.GetAccessToken(acc.AuthVerifier);
+
+                    if (result)
+                    {
+                        acc.AuthVerifier = string.Empty;
+                        Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
+                        ucTwitterAccounts.pgSettings.SelectedObject = acc;
+                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -1596,8 +1604,7 @@ namespace UploadersLib
         {
             try
             {
-                if (!string.IsNullOrEmpty(code) && Config.JiraOAuthInfo != null &&
-                    !string.IsNullOrEmpty(Config.JiraOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.JiraOAuthInfo.AuthSecret))
+                if (!string.IsNullOrEmpty(code) && Config.JiraOAuthInfo != null && !string.IsNullOrEmpty(Config.JiraOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.JiraOAuthInfo.AuthSecret))
                 {
                     Jira jira = new Jira(Config.JiraHost, Config.JiraOAuthInfo);
                     bool result = jira.GetAccessToken(code);

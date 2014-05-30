@@ -31,7 +31,9 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
+using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;
+using UploadersLib.Properties;
 
 namespace UploadersLib
 {
@@ -44,20 +46,491 @@ namespace UploadersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             Config = uploadersConfig;
-            ControlSettings();
-            CreateUserControlEvents();
+            FormSettings();
             LoadSettings(uploadersConfig);
-            Text = "ShareX - Outputs Configuration" + (string.IsNullOrEmpty(uploadersConfig.FilePath) ? string.Empty : " - " + uploadersConfig.FilePath);
-        }
-
-        private void UploadersConfigForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DialogResult = DialogResult.OK;
         }
 
         private void UploadersConfigForm_Resize(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void FormSettings()
+        {
+            string title = "ShareX - Outputs Configuration";
+
+            if (!string.IsNullOrEmpty(Config.FilePath))
+            {
+                title += " - " + Config.FilePath;
+            }
+
+            Text = title;
+
+            ImageList imageUploadersImageList = new ImageList();
+            imageUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
+            imageUploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
+            imageUploadersImageList.Images.Add("TinyPic", Resources.TinyPic);
+            imageUploadersImageList.Images.Add("Imgur", Resources.Imgur);
+            imageUploadersImageList.Images.Add("Flickr", Resources.Flickr);
+            imageUploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
+            imageUploadersImageList.Images.Add("Picasa", Resources.Picasa);
+            imageUploadersImageList.Images.Add("TwitPic", Resources.TwitPic);
+            imageUploadersImageList.Images.Add("TwitSnaps", Resources.TwitSnaps);
+            imageUploadersImageList.Images.Add("YFrog", Resources.YFrog);
+            tcImageUploaders.ImageList = imageUploadersImageList;
+
+            ImageList fileUploadersImageList = new ImageList();
+            fileUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
+            fileUploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
+            fileUploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
+            fileUploadersImageList.Images.Add("Box", Resources.Box);
+            fileUploadersImageList.Images.Add("Minus", Resources.Minus);
+            fileUploadersImageList.Images.Add("FTP", Resources.folder_network);
+            fileUploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
+            fileUploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
+            fileUploadersImageList.Images.Add("Gett", Resources.Gett);
+            fileUploadersImageList.Images.Add("Localhostr", Resources.Localhostr);
+            fileUploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
+            fileUploadersImageList.Images.Add("SharedFolders", Resources.server_network);
+            fileUploadersImageList.Images.Add("Email", Resources.mail);
+            fileUploadersImageList.Images.Add("Jira", Resources.jira);
+            fileUploadersImageList.Images.Add("Mega", Resources.Mega);
+            fileUploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
+            fileUploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
+            tcFileUploaders.ImageList = fileUploadersImageList;
+
+            ImageList textUploadersImageList = new ImageList();
+            textUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
+            textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
+            textUploadersImageList.Images.Add("Gist", Resources.Gist);
+            textUploadersImageList.Images.Add("Upaste", Resources.Upaste);
+            tcTextUploaders.ImageList = textUploadersImageList;
+
+            ImageList urlShortenersImageList = new ImageList();
+            urlShortenersImageList.ColorDepth = ColorDepth.Depth32Bit;
+            urlShortenersImageList.Images.Add("Google", Resources.Google);
+            urlShortenersImageList.Images.Add("Bitly", Resources.Bitly);
+            urlShortenersImageList.Images.Add("Yourls", Resources.Yourls);
+            tcURLShorteners.ImageList = urlShortenersImageList;
+
+            ImageList socialNetworkingServicesImageList = new ImageList();
+            socialNetworkingServicesImageList.ColorDepth = ColorDepth.Depth32Bit;
+            socialNetworkingServicesImageList.Images.Add("Twitter", Resources.Twitter);
+            tcSocialNetworkingServices.ImageList = socialNetworkingServicesImageList;
+
+            tpImageShack.ImageKey = "ImageShack";
+            tpTinyPic.ImageKey = "TinyPic";
+            tpImgur.ImageKey = "Imgur";
+            tpFlickr.ImageKey = "Flickr";
+            tpPhotobucket.ImageKey = "Photobucket";
+            tpPicasa.ImageKey = "Picasa";
+            tpTwitPic.ImageKey = "TwitPic";
+            tpTwitSnaps.ImageKey = "TwitSnaps";
+            tpYFrog.ImageKey = "YFrog";
+            tpDropbox.ImageKey = "Dropbox";
+            tpGoogleDrive.ImageKey = "GoogleDrive";
+            tpBox.ImageKey = "Box";
+            tpMinus.ImageKey = "Minus";
+            tpFTP.ImageKey = "FTP";
+            tpRapidShare.ImageKey = "RapidShare";
+            tpSendSpace.ImageKey = "SendSpace";
+            tpSharedFolder.ImageKey = "SharedFolders";
+            tpEmail.ImageKey = "Email";
+            tpJira.ImageKey = "Jira";
+            tpGe_tt.ImageKey = "Gett";
+            tpHostr.ImageKey = "Localhostr";
+            tpCustomUploaders.ImageKey = "CustomUploader";
+            tpPastebin.ImageKey = "Pastebin";
+            tpPushbullet.ImageKey = "Pushbullet";
+            tpGoogleURLShortener.ImageKey = "Google";
+            tpBitly.ImageKey = "Bitly";
+            tpYourls.ImageKey = "Yourls";
+            tpTwitter.ImageKey = "Twitter";
+            tpMega.ImageKey = "Mega";
+            tpGist.ImageKey = "Gist";
+            tpUpaste.ImageKey = "Upaste";
+            tpAmazonS3.ImageKey = "AmazonS3";
+
+            NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
+            NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
+            NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
+
+            txtCustomUploaderLog.AddContextMenu();
+
+            // FTP
+            ucFTPAccounts.btnAdd.Click += FTPAccountAddButton_Click;
+            ucFTPAccounts.btnRemove.Click += FTPAccountRemoveButton_Click;
+            ucFTPAccounts.btnDuplicate.Click += FTPAccountDuplicateButton_Click;
+            ucFTPAccounts.btnTest.Click += FTPAccountTestButton_Click;
+            ucFTPAccounts.pgSettings.PropertyValueChanged += FtpAccountSettingsGrid_PropertyValueChanged;
+
+            // Localhost
+            ucLocalhostAccounts.btnAdd.Click += LocalhostAccountAddButton_Click;
+            ucLocalhostAccounts.btnRemove.Click += LocalhostAccountRemoveButton_Click;
+            ucLocalhostAccounts.btnDuplicate.Click += LocalhostAccountDuplicateButton_Click;
+            ucLocalhostAccounts.btnTest.Visible = false;
+            ucLocalhostAccounts.pgSettings.PropertyValueChanged += SettingsGrid_LocalhostPropertyValueChanged;
+
+            // Twitter
+            ucTwitterAccounts.btnAdd.Click += TwitterAccountAddButton_Click;
+            ucTwitterAccounts.btnRemove.Click += TwitterAccountRemoveButton_Click;
+            ucTwitterAccounts.btnDuplicate.Click += TwitterAccountDuplicateButton_Click;
+            ucTwitterAccounts.btnTest.Text = "Authorize";
+            ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
+            ucTwitterAccounts.lbAccounts.SelectedIndexChanged += TwitterAccountSelectedIndexChanged;
+        }
+
+        public void LoadSettings(UploadersConfig uploadersConfig)
+        {
+            #region Image uploaders
+
+            // ImageShack
+
+            atcImageShackAccountType.SelectedAccountType = Config.ImageShackSettings.AccountType;
+            txtImageShackUsername.Text = Config.ImageShackSettings.Username;
+            txtImageShackPassword.Text = Config.ImageShackSettings.Password;
+            cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
+
+            // TinyPic
+
+            atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
+            txtTinyPicUsername.Text = Config.TinyPicUsername;
+            txtTinyPicPassword.Text = Config.TinyPicPassword;
+
+            // Imgur
+
+            atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
+            cbImgurThumbnailType.Items.Clear();
+            cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
+            cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
+            txtImgurAlbumID.Text = Config.ImgurAlbumID;
+
+            if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
+            {
+                oauth2Imgur.Status = "Login successful.";
+                oauth2Imgur.LoginStatus = true;
+                btnImgurRefreshAlbumList.Enabled = true;
+            }
+
+            // Photobucket
+
+            if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
+            {
+                lblPhotobucketAccountStatus.Text = "Login successful.";
+                txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
+                lblPhotobucketParentAlbumPath.Text = "Parent album path e.g. " + Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
+            }
+
+            if (Config.PhotobucketAccountInfo != null)
+            {
+                cboPhotobucketAlbumPaths.Items.Clear();
+
+                if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)
+                {
+                    cboPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
+                    cboPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
+                        BetweenOrDefault(0, Config.PhotobucketAccountInfo.AlbumList.Count - 1);
+                }
+            }
+
+            // Picasa
+
+            if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
+            {
+                oauth2Picasa.Status = "Login successful.";
+                oauth2Picasa.LoginStatus = true;
+                btnPicasaRefreshAlbumList.Enabled = true;
+            }
+
+            txtPicasaAlbumID.Text = Config.PicasaAlbumID;
+
+            // Flickr
+
+            pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
+            pgFlickrSettings.SelectedObject = Config.FlickrSettings;
+
+            // TwitPic
+
+            chkTwitPicShowFull.Checked = Config.TwitPicShowFull;
+            cboTwitPicThumbnailMode.Items.Clear();
+            cboTwitPicThumbnailMode.Items.AddRange(Helpers.GetEnumDescriptions<TwitPicThumbnailType>());
+            cboTwitPicThumbnailMode.SelectedIndex = (int)Config.TwitPicThumbnailMode;
+
+            // YFrog
+
+            txtYFrogUsername.Text = Config.YFrogUsername;
+            txtYFrogPassword.Text = Config.YFrogPassword;
+
+            #endregion Image uploaders
+
+            #region Text uploaders
+
+            // Pastebin
+
+            pgPastebinSettings.SelectedObject = Config.PastebinSettings;
+
+            // Paste.ee
+
+            txtPaste_eeUserAPIKey.Text = Config.Paste_eeUserAPIKey;
+
+            // Gist
+
+            atcGistAccountType.SelectedAccountType = Config.GistAnonymousLogin ? AccountType.Anonymous : AccountType.User;
+            chkGistPublishPublic.Checked = Config.GistPublishPublic;
+
+            if (OAuth2Info.CheckOAuth(Config.GistOAuth2Info))
+            {
+                oAuth2Gist.Status = "Login successful.";
+                oAuth2Gist.LoginStatus = true;
+            }
+
+            // Upaste
+
+            txtUpasteUserKey.Text = Config.UpasteUserKey;
+            cbUpasteIsPublic.Checked = Config.UpasteIsPublic;
+
+            #endregion Text uploaders
+
+            #region File uploaders
+
+            // Dropbox
+
+            txtDropboxPath.Text = Config.DropboxUploadPath;
+            cbDropboxAutoCreateShareableLink.Checked = Config.DropboxAutoCreateShareableLink;
+            cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
+            cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
+            cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
+            UpdateDropboxStatus();
+
+            // Google Drive
+
+            if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
+            {
+                oauth2GoogleDrive.Status = "Login successful.";
+                oauth2GoogleDrive.LoginStatus = true;
+            }
+
+            cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+
+            // Minus
+
+            cbMinusURLType.Items.Clear();
+            cbMinusURLType.Items.AddRange(Enum.GetNames(typeof(MinusLinkType)));
+            MinusUpdateControls();
+
+            // Box
+
+            if (OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
+            {
+                oauth2Box.Status = "Login successful.";
+                oauth2Box.LoginStatus = true;
+                btnBoxRefreshFolders.Enabled = true;
+            }
+
+            cbBoxShare.Checked = Config.BoxShare;
+            lblBoxFolderID.Text = "Selected folder: " + Config.BoxSelectedFolder.name;
+
+            // Ge.tt
+
+            if (Config.Ge_ttLogin != null && !string.IsNullOrEmpty(Config.Ge_ttLogin.AccessToken))
+            {
+                lblGe_ttStatus.Text = "Login successful.";
+            }
+
+            // Localhostr
+
+            txtLocalhostrEmail.Text = Config.LocalhostrEmail;
+            txtLocalhostrPassword.Text = Config.LocalhostrPassword;
+            cbLocalhostrDirectURL.Checked = Config.LocalhostrDirectURL;
+
+            // FTP
+
+            if (Config.FTPAccountList == null || Config.FTPAccountList.Count == 0)
+            {
+                FTPSetup(new List<FTPAccount>());
+            }
+            else
+            {
+                FTPSetup(Config.FTPAccountList);
+                if (ucFTPAccounts.lbAccounts.Items.Count > 0)
+                {
+                    ucFTPAccounts.lbAccounts.SelectedIndex = 0;
+                }
+            }
+
+            // Email
+
+            txtEmailSmtpServer.Text = Config.EmailSmtpServer;
+            nudEmailSmtpPort.Value = Config.EmailSmtpPort;
+            txtEmailFrom.Text = Config.EmailFrom;
+            txtEmailPassword.Text = Config.EmailPassword;
+            chkEmailConfirm.Checked = Config.EmailConfirmSend;
+            cbEmailRememberLastTo.Checked = Config.EmailRememberLastTo;
+            txtEmailDefaultSubject.Text = Config.EmailDefaultSubject;
+            txtEmailDefaultBody.Text = Config.EmailDefaultBody;
+
+            // RapidShare
+
+            txtRapidShareUsername.Text = Config.RapidShareUsername;
+            txtRapidSharePassword.Text = Config.RapidSharePassword;
+            txtRapidShareFolderID.Text = Config.RapidShareFolderID;
+
+            // SendSpace
+
+            atcSendSpaceAccountType.SelectedAccountType = Config.SendSpaceAccountType;
+            txtSendSpacePassword.Text = Config.SendSpacePassword;
+            txtSendSpaceUserName.Text = Config.SendSpaceUsername;
+
+            // Localhost
+
+            if (Config.LocalhostAccountList == null || Config.LocalhostAccountList.Count == 0)
+            {
+                LocalhostAccountsSetup(new List<LocalhostAccount>());
+            }
+            else
+            {
+                LocalhostAccountsSetup(Config.LocalhostAccountList);
+                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
+                {
+                    ucLocalhostAccounts.lbAccounts.SelectedIndex = 0;
+                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                }
+            }
+
+            // Custom uploaders
+
+            lbCustomUploaderList.Items.Clear();
+
+            if (Config.CustomUploadersList == null)
+            {
+                Config.CustomUploadersList = new List<CustomUploaderItem>();
+            }
+            else
+            {
+                foreach (CustomUploaderItem customUploader in Config.CustomUploadersList)
+                {
+                    lbCustomUploaderList.Items.Add(customUploader.Name);
+                }
+
+                PrepareCustomUploaderList();
+            }
+
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
+            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetEnumDescriptions<ResponseType>());
+
+            CustomUploaderClear();
+
+            // Jira
+
+            txtJiraHost.Text = Config.JiraHost;
+            txtJiraIssuePrefix.Text = Config.JiraIssuePrefix;
+            txtJiraConfigHelp.Text = string.Format(@"Howto configure your Jira server:
+
+- Go to 'Administration' -> 'Add-ons'
+- Select 'Application Links'
+
+- Add a new 'Application Link' with following settings:
+    - Server URL: {0}
+    - Application Name: {1}
+    - Application Type: Generic Application
+
+- Now, you have to configure Incoming Authentication
+        - Consumer Key: {2}
+        - Consumer Name: {1}
+        - Public Key (without quotes): '{3}'
+
+- You can now authenticate to Jira", Links.URL_WEBSITE, Application.ProductName, APIKeys.JiraConsumerKey, Jira.PublicKey);
+
+            if (OAuthInfo.CheckOAuth(Config.JiraOAuthInfo))
+            {
+                oAuthJira.Status = "Login successful.";
+                oAuthJira.LoginStatus = true;
+            }
+
+            // Mega
+
+            MegaConfigureTab(false);
+
+            //Pushbullet
+
+            txtPushbulletUserKey.Text = Config.PushbulletSettings.UserAPIKey;
+
+            if (Config.PushbulletSettings.DeviceList.Count > 0)
+            {
+                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name ?? "Invalid device name"));
+
+                if (Config.PushbulletSettings.DeviceList.IsValidIndex(Config.PushbulletSettings.SelectedDevice))
+                {
+                    cboPushbulletDevices.SelectedIndex = Config.PushbulletSettings.SelectedDevice;
+                }
+                else
+                {
+                    cboPushbulletDevices.SelectedIndex = 0;
+                }
+            }
+
+            // Amazon S3
+
+            txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
+            txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
+            cbAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
+            txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
+            txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
+            cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
+            txtAmazonS3CustomDomain.Enabled = Config.AmazonS3Settings.UseCustomCNAME;
+            txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
+            cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
+            UpdateAmazonS3Status();
+
+            #endregion File uploaders
+
+            #region URL Shorteners
+
+            // Google URL Shortener
+
+            atcGoogleURLShortenerAccountType.SelectedAccountType = Config.GoogleURLShortenerAccountType;
+
+            if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
+            {
+                oauth2GoogleURLShortener.Status = "Login successful.";
+                oauth2GoogleURLShortener.LoginStatus = true;
+            }
+
+            // bit.ly
+
+            if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
+            {
+                oauth2Bitly.Status = "Login successful.";
+                oauth2Bitly.LoginStatus = true;
+            }
+
+            // yourls.org
+
+            txtYourlsAPIURL.Text = Config.YourlsAPIURL;
+            txtYourlsSignature.Text = Config.YourlsSignature;
+            txtYourlsUsername.Enabled = txtYourlsPassword.Enabled = string.IsNullOrEmpty(Config.YourlsSignature);
+            txtYourlsUsername.Text = Config.YourlsUsername;
+            txtYourlsPassword.Text = Config.YourlsPassword;
+
+            #endregion URL Shorteners
+
+            #region Other Services
+
+            ucTwitterAccounts.lbAccounts.Items.Clear();
+
+            foreach (OAuthInfo acc in Config.TwitterOAuthInfoList)
+            {
+                ucTwitterAccounts.lbAccounts.Items.Add(acc);
+            }
+
+            if (ucTwitterAccounts.lbAccounts.Items.Count > 0)
+            {
+                ucTwitterAccounts.lbAccounts.SelectedIndex = Config.TwitterSelectedAccount;
+            }
+
+            #endregion Other Services
         }
 
         #region Image Uploaders
@@ -693,6 +1166,76 @@ namespace UploadersLib
             FTPAccountsExport();
         }
 
+        private void FTPSetup(IEnumerable<FTPAccount> accs)
+        {
+            if (accs != null)
+            {
+                int selFtpList = ucFTPAccounts.lbAccounts.SelectedIndex;
+
+                ucFTPAccounts.lbAccounts.Items.Clear();
+                ucFTPAccounts.pgSettings.PropertySort = PropertySort.Categorized;
+                cboFtpImages.Items.Clear();
+                cboFtpText.Items.Clear();
+                cboFtpFiles.Items.Clear();
+
+                Config.FTPAccountList = new List<FTPAccount>();
+                Config.FTPAccountList.AddRange(accs);
+
+                foreach (FTPAccount acc in Config.FTPAccountList)
+                {
+                    ucFTPAccounts.lbAccounts.Items.Add(acc);
+                    cboFtpImages.Items.Add(acc);
+                    cboFtpText.Items.Add(acc);
+                    cboFtpFiles.Items.Add(acc);
+                }
+
+                if (ucFTPAccounts.lbAccounts.Items.Count > 0)
+                {
+                    ucFTPAccounts.lbAccounts.SelectedIndex = selFtpList.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                    cboFtpImages.SelectedIndex = Config.FTPSelectedImage.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                    cboFtpText.SelectedIndex = Config.FTPSelectedText.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                    cboFtpFiles.SelectedIndex = Config.FTPSelectedFile.Between(0, ucFTPAccounts.lbAccounts.Items.Count - 1);
+                }
+            }
+        }
+
+        private void FTPAccountAddButton_Click(object sender, EventArgs e)
+        {
+            FTPAccount acc = new FTPAccount();
+            Config.FTPAccountList.Add(acc);
+            ucFTPAccounts.AddItem(acc);
+            FTPSetup(Config.FTPAccountList);
+        }
+
+        private void FTPAccountRemoveButton_Click(object sender, EventArgs e)
+        {
+            int sel = ucFTPAccounts.lbAccounts.SelectedIndex;
+            if (ucFTPAccounts.RemoveItem(sel))
+            {
+                Config.FTPAccountList.RemoveAt(sel);
+            }
+            FTPSetup(Config.FTPAccountList);
+        }
+
+        private void FTPAccountDuplicateButton_Click(object sender, EventArgs e)
+        {
+            FTPAccount src = (FTPAccount)ucFTPAccounts.lbAccounts.Items[ucFTPAccounts.lbAccounts.SelectedIndex];
+            FTPAccount clone = (FTPAccount)src.Clone();
+            Config.FTPAccountList.Add(clone);
+            ucFTPAccounts.AddItem(clone);
+            FTPSetup(Config.FTPAccountList);
+        }
+
+        private void FTPAccountTestButton_Click(object sender, EventArgs e)
+        {
+            TestFTPAccount(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex], false);
+        }
+
+        private void FtpAccountSettingsGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            FTPSetup(Config.FTPAccountList);
+        }
+
         #endregion FTP
 
         #region Email
@@ -1056,6 +1599,71 @@ namespace UploadersLib
 
         #endregion Pushbullet
 
+        #region Shared folder
+
+        private void LocalhostAccountsSetup(IEnumerable<LocalhostAccount> accs)
+        {
+            if (accs != null)
+            {
+                int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
+
+                ucLocalhostAccounts.lbAccounts.Items.Clear();
+                Config.LocalhostAccountList = new List<LocalhostAccount>();
+                Config.LocalhostAccountList.AddRange(accs);
+
+                cboSharedFolderFiles.Items.Clear();
+                cboSharedFolderImages.Items.Clear();
+                cboSharedFolderText.Items.Clear();
+
+                foreach (LocalhostAccount acc in Config.LocalhostAccountList)
+                {
+                    ucLocalhostAccounts.lbAccounts.Items.Add(acc);
+                    cboSharedFolderFiles.Items.Add(acc);
+                    cboSharedFolderImages.Items.Add(acc);
+                    cboSharedFolderText.Items.Add(acc);
+                }
+
+                if (ucLocalhostAccounts.lbAccounts.Items.Count > 0)
+                {
+                    ucLocalhostAccounts.lbAccounts.SelectedIndex = sel.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                    cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Between(0, ucLocalhostAccounts.lbAccounts.Items.Count - 1);
+                }
+            }
+        }
+
+        private void LocalhostAccountAddButton_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount acc = new LocalhostAccount();
+            Config.LocalhostAccountList.Add(acc);
+            ucLocalhostAccounts.AddItem(acc);
+        }
+
+        private void LocalhostAccountRemoveButton_Click(object sender, EventArgs e)
+        {
+            int sel = ucLocalhostAccounts.lbAccounts.SelectedIndex;
+            if (ucLocalhostAccounts.RemoveItem(sel))
+            {
+                Config.LocalhostAccountList.RemoveAt(sel);
+            }
+        }
+
+        private void LocalhostAccountDuplicateButton_Click(object sender, EventArgs e)
+        {
+            LocalhostAccount src = (LocalhostAccount)ucLocalhostAccounts.lbAccounts.Items[ucLocalhostAccounts.lbAccounts.SelectedIndex];
+            LocalhostAccount clone = (LocalhostAccount)src.Clone();
+            Config.LocalhostAccountList.Add(clone);
+            ucLocalhostAccounts.AddItem(clone);
+        }
+
+        private void SettingsGrid_LocalhostPropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            LocalhostAccountsSetup(Config.LocalhostAccountList);
+        }
+
+        #endregion Shared folder
+
         #endregion File Uploaders
 
         #region URL Shorteners
@@ -1127,9 +1735,46 @@ namespace UploadersLib
 
         #region Other Services
 
+        private void TwitterAccountAddButton_Click(object sender, EventArgs e)
+        {
+            OAuthInfo acc = new OAuthInfo();
+            Config.TwitterOAuthInfoList.Add(acc);
+            ucTwitterAccounts.AddItem(acc);
+        }
+
+        private void TwitterAccountRemoveButton_Click(object sender, EventArgs e)
+        {
+            int sel = ucTwitterAccounts.lbAccounts.SelectedIndex;
+            if (ucTwitterAccounts.RemoveItem(sel))
+            {
+                Config.TwitterOAuthInfoList.RemoveAt(sel);
+            }
+        }
+
+        private void TwitterAccountDuplicateButton_Click(object sender, EventArgs e)
+        {
+            OAuthInfo src = (OAuthInfo)ucTwitterAccounts.lbAccounts.Items[ucTwitterAccounts.lbAccounts.SelectedIndex];
+            OAuthInfo clone = (OAuthInfo)src.Clone();
+            Config.TwitterOAuthInfoList.Add(clone);
+            ucTwitterAccounts.AddItem(clone);
+        }
+
+        private void TwitterAccountAuthButton_Click(object sender, EventArgs e)
+        {
+            TwitterAuthOpen();
+        }
+
         private void btnTwitterLogin_Click(object sender, EventArgs e)
         {
-            TwitterLogin();
+            TwitterAuthComplete();
+        }
+
+        private void TwitterAccountSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ucTwitterAccounts.lbAccounts.SelectedIndex > -1)
+            {
+                Config.TwitterSelectedAccount = ucTwitterAccounts.lbAccounts.SelectedIndex;
+            }
         }
 
         private void cboSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)

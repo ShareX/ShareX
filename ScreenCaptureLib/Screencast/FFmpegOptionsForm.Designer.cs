@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
             this.lblX264CRF = new System.Windows.Forms.Label();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
-            this.tpFFmpeg = new System.Windows.Forms.ToolTip(this.components);
+            this.ttHelpTip = new System.Windows.Forms.ToolTip();
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbPreset = new System.Windows.Forms.ComboBox();
@@ -131,7 +130,7 @@
             this.nudx264CRF.Size = new System.Drawing.Size(48, 20);
             this.nudx264CRF.TabIndex = 1;
             this.nudx264CRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tpFFmpeg.SetToolTip(this.nudx264CRF, resources.GetString("nudx264CRF.ToolTip"));
+            this.ttHelpTip.SetToolTip(this.nudx264CRF, resources.GetString("nudx264CRF.ToolTip"));
             this.nudx264CRF.Value = new decimal(new int[] {
             23,
             0,
@@ -139,14 +138,16 @@
             0});
             this.nudx264CRF.ValueChanged += new System.EventHandler(this.nudx264CRF_ValueChanged);
             // 
-            // tpFFmpeg
+            // ttHelpTip
             // 
-            this.tpFFmpeg.AutoPopDelay = 30000;
-            this.tpFFmpeg.InitialDelay = 500;
-            this.tpFFmpeg.IsBalloon = true;
-            this.tpFFmpeg.ReshowDelay = 100;
-            this.tpFFmpeg.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.tpFFmpeg.ToolTipTitle = "FFmpeg";
+            this.ttHelpTip.AutomaticDelay = 0;
+            this.ttHelpTip.AutoPopDelay = 30000;
+            this.ttHelpTip.BackColor = System.Drawing.Color.White;
+            this.ttHelpTip.InitialDelay = 500;
+            this.ttHelpTip.IsBalloon = true;
+            this.ttHelpTip.ReshowDelay = 100;
+            this.ttHelpTip.UseAnimation = false;
+            this.ttHelpTip.UseFading = false;
             // 
             // nudQscale
             // 
@@ -165,7 +166,7 @@
             this.nudQscale.Size = new System.Drawing.Size(48, 20);
             this.nudQscale.TabIndex = 1;
             this.nudQscale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tpFFmpeg.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
+            this.ttHelpTip.SetToolTip(this.nudQscale, "1 being highest quality/largest filesize and 31 being the lowest quality/smallest" +
         " filesize.");
             this.nudQscale.Value = new decimal(new int[] {
             3,
@@ -191,7 +192,7 @@
             this.nudVPxCRF.Size = new System.Drawing.Size(48, 20);
             this.nudVPxCRF.TabIndex = 1;
             this.nudVPxCRF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tpFFmpeg.SetToolTip(this.nudVPxCRF, "CRF value can be from 4–63, and 10 is a good starting point. Lower values mean be" +
+            this.ttHelpTip.SetToolTip(this.nudVPxCRF, "CRF value can be from 4–63, and 10 is a good starting point. Lower values mean be" +
         "tter quality.");
             this.nudVPxCRF.Value = new decimal(new int[] {
             12,
@@ -208,7 +209,7 @@
             this.cbPreset.Name = "cbPreset";
             this.cbPreset.Size = new System.Drawing.Size(121, 21);
             this.cbPreset.TabIndex = 3;
-            this.tpFFmpeg.SetToolTip(this.cbPreset, resources.GetString("cbPreset.ToolTip"));
+            this.ttHelpTip.SetToolTip(this.cbPreset, resources.GetString("cbPreset.ToolTip"));
             this.cbPreset.SelectedIndexChanged += new System.EventHandler(this.cbPreset_SelectedIndexChanged);
             // 
             // tbVorbis_qscale
@@ -221,7 +222,7 @@
             this.tbVorbis_qscale.Size = new System.Drawing.Size(221, 40);
             this.tbVorbis_qscale.TabIndex = 1;
             this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.tpFFmpeg.SetToolTip(this.tbVorbis_qscale, "Range is 0–10, where 10 is highest quality. 3–6 is a good range to try. Default i" +
+            this.ttHelpTip.SetToolTip(this.tbVorbis_qscale, "Range is 0–10, where 10 is highest quality. 3–6 is a good range to try. Default i" +
         "s 3.");
             this.tbVorbis_qscale.Value = 3;
             this.tbVorbis_qscale.Scroll += new System.EventHandler(this.tbVorbis_qscale_Scroll);
@@ -237,7 +238,7 @@
             this.tbMP3_qscale.Size = new System.Drawing.Size(221, 40);
             this.tbMP3_qscale.TabIndex = 1;
             this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.tpFFmpeg.SetToolTip(this.tbMP3_qscale, "Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce t" +
+            this.ttHelpTip.SetToolTip(this.tbMP3_qscale, "Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce t" +
         "ransparent results, 4 (default) should be close to perceptual transparency, and " +
         "6 produces an \"acceptable\" quality.");
             this.tbMP3_qscale.Value = 5;
@@ -255,7 +256,7 @@
             this.tbAACBitrate.Size = new System.Drawing.Size(221, 40);
             this.tbAACBitrate.TabIndex = 1;
             this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.tpFFmpeg.SetToolTip(this.tbAACBitrate, "Default is 128k.");
+            this.ttHelpTip.SetToolTip(this.tbAACBitrate, "Default is 128k.");
             this.tbAACBitrate.Value = 4;
             this.tbAACBitrate.Scroll += new System.EventHandler(this.tbAACBitrate_Scroll);
             // 
@@ -736,7 +737,7 @@
         private System.Windows.Forms.Label lblExt;
         private System.Windows.Forms.Label lblX264CRF;
         private System.Windows.Forms.NumericUpDown nudx264CRF;
-        private System.Windows.Forms.ToolTip tpFFmpeg;
+        private System.Windows.Forms.ToolTip ttHelpTip;
         private System.Windows.Forms.ComboBox cboExtension;
         private System.Windows.Forms.Label lblCodec;
         private System.Windows.Forms.ComboBox cboVideoCodec;

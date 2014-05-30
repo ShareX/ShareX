@@ -164,9 +164,6 @@
     <Compile Include="GUI\ResponseForm.Designer.cs">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UploadersConfigFormGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GUI\UploadersConfigFormHelper.cs">
       <SubType>Form</SubType>
     </Compile>

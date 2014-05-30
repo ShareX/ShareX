@@ -216,7 +216,7 @@
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
             this.atcSendSpaceAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpGe_tt = new System.Windows.Forms.TabPage();
-            this.lblGe_ttAccessToken = new System.Windows.Forms.Label();
+            this.lblGe_ttStatus = new System.Windows.Forms.Label();
             this.lblGe_ttPassword = new System.Windows.Forms.Label();
             this.lblGe_ttEmail = new System.Windows.Forms.Label();
             this.btnGe_ttLogin = new System.Windows.Forms.Button();
@@ -559,7 +559,7 @@
             this.cbImgurThumbnailType.FormattingEnabled = true;
             this.cbImgurThumbnailType.Location = new System.Drawing.Point(104, 268);
             this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
-            this.cbImgurThumbnailType.Size = new System.Drawing.Size(168, 21);
+            this.cbImgurThumbnailType.Size = new System.Drawing.Size(136, 21);
             this.cbImgurThumbnailType.TabIndex = 6;
             this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
             // 
@@ -577,7 +577,7 @@
             this.atcImgurAccountType.Location = new System.Drawing.Point(8, 232);
             this.atcImgurAccountType.Name = "atcImgurAccountType";
             this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcImgurAccountType.Size = new System.Drawing.Size(272, 29);
+            this.atcImgurAccountType.Size = new System.Drawing.Size(208, 32);
             this.atcImgurAccountType.TabIndex = 4;
             this.atcImgurAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
             // 
@@ -671,9 +671,9 @@
             // 
             this.txtImageShackPassword.Location = new System.Drawing.Point(80, 84);
             this.txtImageShackPassword.Name = "txtImageShackPassword";
-            this.txtImageShackPassword.PasswordChar = '*';
             this.txtImageShackPassword.Size = new System.Drawing.Size(208, 20);
             this.txtImageShackPassword.TabIndex = 4;
+            this.txtImageShackPassword.UseSystemPasswordChar = true;
             this.txtImageShackPassword.TextChanged += new System.EventHandler(this.txtImageShackPassword_TextChanged);
             // 
             // lblImageShackPassword
@@ -725,9 +725,9 @@
             // 
             this.txtTinyPicPassword.Location = new System.Drawing.Point(80, 84);
             this.txtTinyPicPassword.Name = "txtTinyPicPassword";
-            this.txtTinyPicPassword.PasswordChar = '*';
             this.txtTinyPicPassword.Size = new System.Drawing.Size(208, 20);
             this.txtTinyPicPassword.TabIndex = 4;
+            this.txtTinyPicPassword.UseSystemPasswordChar = true;
             this.txtTinyPicPassword.TextChanged += new System.EventHandler(this.txtTinyPicPassword_TextChanged);
             // 
             // lblTinyPicPassword
@@ -1038,7 +1038,7 @@
             // lblPhotobucketAccountStatus
             // 
             this.lblPhotobucketAccountStatus.AutoSize = true;
-            this.lblPhotobucketAccountStatus.Location = new System.Drawing.Point(24, 152);
+            this.lblPhotobucketAccountStatus.Location = new System.Drawing.Point(16, 152);
             this.lblPhotobucketAccountStatus.Name = "lblPhotobucketAccountStatus";
             this.lblPhotobucketAccountStatus.Size = new System.Drawing.Size(77, 13);
             this.lblPhotobucketAccountStatus.TabIndex = 6;
@@ -1155,9 +1155,9 @@
             // 
             this.txtYFrogPassword.Location = new System.Drawing.Point(88, 52);
             this.txtYFrogPassword.Name = "txtYFrogPassword";
-            this.txtYFrogPassword.PasswordChar = '*';
             this.txtYFrogPassword.Size = new System.Drawing.Size(160, 20);
             this.txtYFrogPassword.TabIndex = 3;
+            this.txtYFrogPassword.UseSystemPasswordChar = true;
             this.txtYFrogPassword.TextChanged += new System.EventHandler(this.txtYFrogPassword_TextChanged);
             // 
             // txtYFrogUsername
@@ -1308,6 +1308,7 @@
             this.pgPastebinSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgPastebinSettings.Size = new System.Drawing.Size(504, 469);
             this.pgPastebinSettings.TabIndex = 0;
+            this.pgPastebinSettings.ToolbarVisible = false;
             // 
             // tpPaste_ee
             // 
@@ -1336,6 +1337,7 @@
             this.txtPaste_eeUserAPIKey.Name = "txtPaste_eeUserAPIKey";
             this.txtPaste_eeUserAPIKey.Size = new System.Drawing.Size(296, 20);
             this.txtPaste_eeUserAPIKey.TabIndex = 1;
+            this.txtPaste_eeUserAPIKey.UseSystemPasswordChar = true;
             this.txtPaste_eeUserAPIKey.TextChanged += new System.EventHandler(this.txtPaste_eeUserAPIKey_TextChanged);
             // 
             // tpGist
@@ -1422,6 +1424,7 @@
             this.txtUpasteUserKey.Name = "txtUpasteUserKey";
             this.txtUpasteUserKey.Size = new System.Drawing.Size(264, 20);
             this.txtUpasteUserKey.TabIndex = 1;
+            this.txtUpasteUserKey.UseSystemPasswordChar = true;
             this.txtUpasteUserKey.TextChanged += new System.EventHandler(this.txtUpasteUserKey_TextChanged);
             // 
             // tpFileUploaders
@@ -1712,7 +1715,7 @@
             this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
             this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 470);
+            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 516);
             this.ucFTPAccounts.TabIndex = 6;
             // 
             // tpMega
@@ -1822,9 +1825,9 @@
             // 
             this.txtMegaPassword.Location = new System.Drawing.Point(72, 34);
             this.txtMegaPassword.Name = "txtMegaPassword";
-            this.txtMegaPassword.PasswordChar = '*';
             this.txtMegaPassword.Size = new System.Drawing.Size(176, 20);
             this.txtMegaPassword.TabIndex = 4;
+            this.txtMegaPassword.UseSystemPasswordChar = true;
             // 
             // btnMegaLogin
             // 
@@ -2101,6 +2104,7 @@
             this.txtPushbulletUserKey.Name = "txtPushbulletUserKey";
             this.txtPushbulletUserKey.Size = new System.Drawing.Size(346, 20);
             this.txtPushbulletUserKey.TabIndex = 1;
+            this.txtPushbulletUserKey.UseSystemPasswordChar = true;
             this.txtPushbulletUserKey.TextChanged += new System.EventHandler(this.txtPushbulletUserKey_TextChanged);
             // 
             // tpGoogleDrive
@@ -2275,7 +2279,7 @@
             // 
             this.tvRapidShareFolders.Location = new System.Drawing.Point(16, 144);
             this.tvRapidShareFolders.Name = "tvRapidShareFolders";
-            this.tvRapidShareFolders.Size = new System.Drawing.Size(440, 312);
+            this.tvRapidShareFolders.Size = new System.Drawing.Size(440, 304);
             this.tvRapidShareFolders.TabIndex = 7;
             this.tvRapidShareFolders.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRapidShareFolders_AfterSelect);
             // 
@@ -2301,9 +2305,9 @@
             // 
             this.txtRapidSharePassword.Location = new System.Drawing.Point(80, 52);
             this.txtRapidSharePassword.Name = "txtRapidSharePassword";
-            this.txtRapidSharePassword.PasswordChar = '*';
             this.txtRapidSharePassword.Size = new System.Drawing.Size(136, 20);
             this.txtRapidSharePassword.TabIndex = 3;
+            this.txtRapidSharePassword.UseSystemPasswordChar = true;
             this.txtRapidSharePassword.TextChanged += new System.EventHandler(this.txtRapidSharePassword_TextChanged);
             // 
             // txtRapidShareUsername
@@ -2332,7 +2336,7 @@
             // 
             // btnSendSpaceRegister
             // 
-            this.btnSendSpaceRegister.Location = new System.Drawing.Point(232, 19);
+            this.btnSendSpaceRegister.Location = new System.Drawing.Point(224, 51);
             this.btnSendSpaceRegister.Name = "btnSendSpaceRegister";
             this.btnSendSpaceRegister.Size = new System.Drawing.Size(75, 23);
             this.btnSendSpaceRegister.TabIndex = 1;
@@ -2362,9 +2366,9 @@
             // 
             this.txtSendSpacePassword.Location = new System.Drawing.Point(80, 84);
             this.txtSendSpacePassword.Name = "txtSendSpacePassword";
-            this.txtSendSpacePassword.PasswordChar = '*';
             this.txtSendSpacePassword.Size = new System.Drawing.Size(136, 20);
             this.txtSendSpacePassword.TabIndex = 5;
+            this.txtSendSpacePassword.UseSystemPasswordChar = true;
             this.txtSendSpacePassword.TextChanged += new System.EventHandler(this.txtSendSpacePassword_TextChanged);
             // 
             // txtSendSpaceUserName
@@ -2386,7 +2390,7 @@
             // 
             // tpGe_tt
             // 
-            this.tpGe_tt.Controls.Add(this.lblGe_ttAccessToken);
+            this.tpGe_tt.Controls.Add(this.lblGe_ttStatus);
             this.tpGe_tt.Controls.Add(this.lblGe_ttPassword);
             this.tpGe_tt.Controls.Add(this.lblGe_ttEmail);
             this.tpGe_tt.Controls.Add(this.btnGe_ttLogin);
@@ -2400,14 +2404,14 @@
             this.tpGe_tt.Text = "Ge.tt";
             this.tpGe_tt.UseVisualStyleBackColor = true;
             // 
-            // lblGe_ttAccessToken
+            // lblGe_ttStatus
             // 
-            this.lblGe_ttAccessToken.AutoSize = true;
-            this.lblGe_ttAccessToken.Location = new System.Drawing.Point(24, 112);
-            this.lblGe_ttAccessToken.Name = "lblGe_ttAccessToken";
-            this.lblGe_ttAccessToken.Size = new System.Drawing.Size(75, 13);
-            this.lblGe_ttAccessToken.TabIndex = 5;
-            this.lblGe_ttAccessToken.Text = "Access token:";
+            this.lblGe_ttStatus.AutoSize = true;
+            this.lblGe_ttStatus.Location = new System.Drawing.Point(24, 80);
+            this.lblGe_ttStatus.Name = "lblGe_ttStatus";
+            this.lblGe_ttStatus.Size = new System.Drawing.Size(77, 13);
+            this.lblGe_ttStatus.TabIndex = 5;
+            this.lblGe_ttStatus.Text = "Login required.";
             // 
             // lblGe_ttPassword
             // 
@@ -2429,7 +2433,7 @@
             // 
             // btnGe_ttLogin
             // 
-            this.btnGe_ttLogin.Location = new System.Drawing.Point(184, 72);
+            this.btnGe_ttLogin.Location = new System.Drawing.Point(184, 75);
             this.btnGe_ttLogin.Name = "btnGe_ttLogin";
             this.btnGe_ttLogin.Size = new System.Drawing.Size(75, 23);
             this.btnGe_ttLogin.TabIndex = 4;
@@ -2441,9 +2445,9 @@
             // 
             this.txtGe_ttPassword.Location = new System.Drawing.Point(88, 44);
             this.txtGe_ttPassword.Name = "txtGe_ttPassword";
-            this.txtGe_ttPassword.PasswordChar = '*';
             this.txtGe_ttPassword.Size = new System.Drawing.Size(168, 20);
             this.txtGe_ttPassword.TabIndex = 3;
+            this.txtGe_ttPassword.UseSystemPasswordChar = true;
             // 
             // txtGe_ttEmail
             // 
@@ -2500,9 +2504,9 @@
             // 
             this.txtLocalhostrPassword.Location = new System.Drawing.Point(88, 44);
             this.txtLocalhostrPassword.Name = "txtLocalhostrPassword";
-            this.txtLocalhostrPassword.PasswordChar = '*';
             this.txtLocalhostrPassword.Size = new System.Drawing.Size(168, 20);
             this.txtLocalhostrPassword.TabIndex = 3;
+            this.txtLocalhostrPassword.UseSystemPasswordChar = true;
             this.txtLocalhostrPassword.TextChanged += new System.EventHandler(this.txtLocalhostrPassword_TextChanged);
             // 
             // txtLocalhostrEmail
@@ -2603,9 +2607,9 @@
             // 
             this.txtMinusPassword.Location = new System.Drawing.Point(72, 52);
             this.txtMinusPassword.Name = "txtMinusPassword";
-            this.txtMinusPassword.PasswordChar = '*';
             this.txtMinusPassword.Size = new System.Drawing.Size(232, 20);
             this.txtMinusPassword.TabIndex = 3;
+            this.txtMinusPassword.UseSystemPasswordChar = true;
             // 
             // txtMinusUsername
             // 
@@ -2850,9 +2854,9 @@
             // 
             this.txtEmailPassword.Location = new System.Drawing.Point(96, 60);
             this.txtEmailPassword.Name = "txtEmailPassword";
-            this.txtEmailPassword.PasswordChar = '*';
             this.txtEmailPassword.Size = new System.Drawing.Size(200, 20);
             this.txtEmailPassword.TabIndex = 7;
+            this.txtEmailPassword.UseSystemPasswordChar = true;
             this.txtEmailPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmailDefaultBody
@@ -3150,9 +3154,9 @@
             // 
             this.txtYourlsPassword.Location = new System.Drawing.Point(88, 148);
             this.txtYourlsPassword.Name = "txtYourlsPassword";
-            this.txtYourlsPassword.PasswordChar = '*';
             this.txtYourlsPassword.Size = new System.Drawing.Size(224, 20);
             this.txtYourlsPassword.TabIndex = 8;
+            this.txtYourlsPassword.UseSystemPasswordChar = true;
             this.txtYourlsPassword.TextChanged += new System.EventHandler(this.txtYourlsPassword_TextChanged);
             // 
             // txtYourlsUsername
@@ -3169,6 +3173,7 @@
             this.txtYourlsSignature.Name = "txtYourlsSignature";
             this.txtYourlsSignature.Size = new System.Drawing.Size(224, 20);
             this.txtYourlsSignature.TabIndex = 3;
+            this.txtYourlsSignature.UseSystemPasswordChar = true;
             this.txtYourlsSignature.TextChanged += new System.EventHandler(this.txtYourlsSignature_TextChanged);
             // 
             // lblYourlsNote
@@ -3258,6 +3263,7 @@
             // 
             // btnTwitterLogin
             // 
+            this.btnTwitterLogin.Enabled = false;
             this.btnTwitterLogin.Location = new System.Drawing.Point(296, 8);
             this.btnTwitterLogin.Name = "btnTwitterLogin";
             this.btnTwitterLogin.Size = new System.Drawing.Size(64, 24);
@@ -3859,10 +3865,9 @@
             this.ttHelpTip.AutomaticDelay = 0;
             this.ttHelpTip.AutoPopDelay = 30000;
             this.ttHelpTip.BackColor = System.Drawing.Color.White;
-            this.ttHelpTip.InitialDelay = 10;
+            this.ttHelpTip.InitialDelay = 500;
             this.ttHelpTip.IsBalloon = true;
-            this.ttHelpTip.ReshowDelay = 10;
-            this.ttHelpTip.ShowAlways = true;
+            this.ttHelpTip.ReshowDelay = 100;
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
@@ -3887,7 +3892,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Outputs Configuration";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UploadersConfigForm_FormClosed);
             this.Resize += new System.EventHandler(this.UploadersConfigForm_Resize);
             this.tcUploaders.ResumeLayout(false);
             this.tpImageUploaders.ResumeLayout(false);
@@ -4015,8 +4019,6 @@
         internal System.Windows.Forms.Button btnImageShackOpenPublicProfile;
         internal System.Windows.Forms.Button btnImageShackOpenMyImages;
         internal System.Windows.Forms.Label lblImageShackUsername;
-        internal System.Windows.Forms.TextBox txtImageShackUsername;
-        internal System.Windows.Forms.TextBox txtImageShackPassword;
         internal System.Windows.Forms.Label lblImageShackPassword;
         internal System.Windows.Forms.Button btnTinyPicOpenMyImages;
         private System.Windows.Forms.TextBox txtTinyPicPassword;
@@ -4184,7 +4186,7 @@
         private System.Windows.Forms.Label lblPaste_eeUserAPIKey;
         private System.Windows.Forms.TextBox txtPaste_eeUserAPIKey;
         private System.Windows.Forms.TabPage tpGe_tt;
-        private System.Windows.Forms.Label lblGe_ttAccessToken;
+        private System.Windows.Forms.Label lblGe_ttStatus;
         private System.Windows.Forms.Label lblGe_ttPassword;
         private System.Windows.Forms.Label lblGe_ttEmail;
         private System.Windows.Forms.Button btnGe_ttLogin;
@@ -4319,5 +4321,7 @@
         private System.Windows.Forms.Label lblAmazonS3PathPreview;
         private System.Windows.Forms.Label lblAmazonS3PathPreviewLabel;
         private System.Windows.Forms.TextBox txtAmazonS3CustomDomain;
+        private System.Windows.Forms.TextBox txtImageShackUsername;
+        private System.Windows.Forms.TextBox txtImageShackPassword;
     }
 }
