@@ -1383,7 +1383,7 @@ namespace UploadersLib
 
         private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_DOCS_CUSTOM_UPLOADER);
+            Helpers.OpenURL("https://docs.google.com/document/d/1TSttAfH-1970JNsu3i9tl6UY0a8KNbUCeGri0Fs-jcU/edit?usp=sharing");
         }
 
         private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)

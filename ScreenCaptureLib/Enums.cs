@@ -63,7 +63,7 @@ namespace ScreenCaptureLib
         libx264,
         [Description("VP8")]
         libvpx,
-        [Description("XviD")]
+        [Description("Xvid")]
         libxvid
     }
 

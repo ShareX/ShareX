@@ -83,7 +83,7 @@ namespace ScreenCaptureLib
             // VPx
             nudVPxCRF.Value = Options.FFmpeg.VPx_CRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
 
-            // XviD
+            // Xvid
             nudQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
 
             // AAC
@@ -334,6 +334,11 @@ namespace ScreenCaptureLib
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
             ClipboardHelpers.CopyText(txtCommandLinePreview.Text);
+        }
+
+        private void FFmpegOptionsForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Helpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
         }
     }
 }

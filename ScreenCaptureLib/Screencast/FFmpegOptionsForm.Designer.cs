@@ -686,12 +686,14 @@
             this.Controls.Add(this.gbFFmpegExe);
             this.Controls.Add(this.gbCommandLineArgs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpegGUI";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.FFmpegOptionsForm_HelpButtonClicked);
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).EndInit();
