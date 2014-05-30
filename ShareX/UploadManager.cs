@@ -178,7 +178,7 @@ namespace ShareX
                     {
                         if (taskSettings.UploadSettings.ClipboardUploadURLContents)
                         {
-                            string filename = Helpers.GetURLFilename(url);
+                            string filename = URLHelpers.GetFileName(url, true);
 
                             if (!string.IsNullOrEmpty(filename))
                             {

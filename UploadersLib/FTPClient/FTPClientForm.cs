@@ -90,7 +90,7 @@ namespace UploadersLib
 
         private void FillDirectories(string path)
         {
-            List<string> paths = FTPHelpers.GetPaths(path);
+            List<string> paths = URLHelpers.GetPaths(path);
             paths.Insert(0, "/");
 
             cbDirectoryList.Items.Clear();
@@ -441,11 +441,11 @@ namespace UploadersLib
                                     {
                                         if (file.Name == ".")
                                         {
-                                            movePath = FTPHelpers.AddSlash(filename, FTPHelpers.SlashType.Prefix, 2);
+                                            movePath = URLHelpers.AddSlash(filename, SlashType.Prefix, 2);
                                         }
                                         else if (file.Name == "..")
                                         {
-                                            movePath = FTPHelpers.AddSlash(filename, FTPHelpers.SlashType.Prefix);
+                                            movePath = URLHelpers.AddSlash(filename, SlashType.Prefix);
                                         }
                                     }
                                     else

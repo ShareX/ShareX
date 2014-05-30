@@ -125,7 +125,7 @@ namespace UploadersLib
                 HttpHomePathAutoAddSubFolderPath = false;
             }
 
-            HttpHomePath = FTPHelpers.RemovePrefixes(HttpHomePath);
+            HttpHomePath = URLHelpers.RemovePrefixes(HttpHomePath);
 
             NameParser parser = new NameParser(NameParserType.URL);
             return parser.Parse(HttpHomePath.Replace("%host", LocalhostRoot));

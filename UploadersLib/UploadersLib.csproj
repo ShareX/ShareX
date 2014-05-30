@@ -212,7 +212,6 @@
     <Compile Include="FileUploaders\FTP\FTPAccount.cs" />
     <Compile Include="FileUploaders\FTP\FTPAccountManager.cs" />
     <Compile Include="FileUploaders\FTP\FTPAdapter.cs" />
-    <Compile Include="FileUploaders\FTP\FTPHelpers.cs" />
     <Compile Include="FileUploaders\FTP.cs" />
     <Compile Include="FileUploaders\RapidShare.cs" />
     <Compile Include="FileUploaders\SendSpace.cs" />

@@ -30,6 +30,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib
@@ -242,7 +243,7 @@ namespace UploadersLib
 
         public void DeleteFile(string url)
         {
-            string filename = FTPHelpers.GetFileName(url);
+            string filename = URLHelpers.GetFileName(url);
             if (filename == "." || filename == "..") return;
 
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(url);
@@ -258,11 +259,11 @@ namespace UploadersLib
 
         public void RemoveDirectory(string url)
         {
-            string filename = FTPHelpers.GetFileName(url);
+            string filename = URLHelpers.GetFileName(url);
             if (filename == "." || filename == "..") return;
 
             List<FTPLineResult> files = ListDirectoryDetails(url);
-            string path = FTPHelpers.GetDirectoryName(url);
+            string path = URLHelpers.GetDirectoryPath(url);
 
             foreach (FTPLineResult file in files)
             {
@@ -321,7 +322,7 @@ namespace UploadersLib
         {
             List<string> result = new List<string>();
 
-            url = FTPHelpers.AddSlash(url, FTPHelpers.SlashType.Suffix);
+            url = URLHelpers.AddSlash(url, SlashType.Suffix);
 
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(url);
             request.Proxy = Options.ProxySettings;
@@ -414,6 +415,97 @@ namespace UploadersLib
             {
                 FTPOutput(string.Format("{0} - {1}", FastDateTime.Now.ToLongTimeString(), text));
             }
+        }
+    }
+
+    public static class FTPLineParser
+    {
+        private static Regex unixStyle = new Regex(@"^(?<Permissions>(?<Directory>[-dl])(?<OwnerPerm>[-r][-w][-x])(?<GroupPerm>[-r][-w][-x])(?<EveryonePerm>[-r][-w][-x]))\s+(?<FileType>\d+)\s+(?<Owner>\w+)\s+(?<Group>\w+)\s+(?<Size>\d+)\s+(?<Month>\w+)\s+(?<Day>\d{1,2})\s+(?<Year>(?<Hour>\d{1,2}):*(?<Minutes>\d{1,2}))\s+(?<Name>.*)$");
+        private static Regex winStyle = new Regex(@"^(?<Month>\d{1,2})-(?<Day>\d{1,2})-(?<Year>\d{1,2})\s+(?<Hour>\d{1,2}):(?<Minutes>\d{1,2})(?<ampm>am|pm)\s+(?<Dir>[<]dir[>])?\s+(?<Size>\d+)?\s+(?<Name>.*)$");
+
+        public static FTPLineResult Parse(string line)
+        {
+            Match match = unixStyle.Match(line);
+            if (match.Success)
+            {
+                return ParseMatch(match.Groups, ListStyle.Unix);
+            }
+
+            throw new Exception("Only support Unix ftp servers.");
+
+            /*
+            match = winStyle.Match(line);
+            if (match.Success)
+            {
+                return ParseMatch(match.Groups, ListStyle.Windows);
+            }
+
+            throw new Exception("Invalid line format");
+            */
+        }
+
+        private static FTPLineResult ParseMatch(GroupCollection matchGroups, ListStyle style)
+        {
+            FTPLineResult result = new FTPLineResult();
+
+            result.Style = style;
+            string dirMatch = style == ListStyle.Unix ? "d" : "<dir>";
+            result.IsDirectory = matchGroups["Directory"].Value.Equals(dirMatch, StringComparison.InvariantCultureIgnoreCase);
+            result.Permissions = matchGroups["Permissions"].Value;
+            result.Name = matchGroups["Name"].Value;
+
+            if (!result.IsDirectory)
+            {
+                result.SetSize(matchGroups["Size"].Value);
+            }
+
+            result.Owner = matchGroups["Owner"].Value;
+            result.Group = matchGroups["Group"].Value;
+            result.SetDateTime(matchGroups["Year"].Value, matchGroups["Month"].Value, matchGroups["Day"].Value);
+
+            return result;
+        }
+    }
+
+    public enum ListStyle
+    {
+        Unix,
+        Windows
+    }
+
+    public class FTPLineResult
+    {
+        public ListStyle Style;
+        public string Name;
+        public string Permissions;
+        public DateTime DateTime;
+        public bool TimeInfo;
+        public bool IsDirectory;
+        public long Size;
+        public string SizeString;
+        public string Owner;
+        public string Group;
+        public bool IsSpecial;
+
+        public void SetSize(string size)
+        {
+            Size = long.Parse(size);
+            SizeString = Size.ToString("N0");
+        }
+
+        public void SetDateTime(string year, string month, string day)
+        {
+            string time = string.Empty;
+
+            if (year.Contains(":"))
+            {
+                time = year;
+                year = FastDateTime.Now.Year.ToString();
+                TimeInfo = true;
+            }
+
+            DateTime = DateTime.Parse(string.Format("{0}/{1}/{2} {3}", year, month, day, time));
+            DateTime = DateTime.ToLocalTime();
         }
     }
 }

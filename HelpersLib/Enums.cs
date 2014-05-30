@@ -287,4 +287,10 @@ namespace HelpersLib
         Manual,
         Automatic
     }
+
+    public enum SlashType
+    {
+        Prefix,
+        Suffix
+    }
 }

@@ -165,6 +165,7 @@
             this.btnMegaLogin = new System.Windows.Forms.Button();
             this.lblMegaStatusTitle = new System.Windows.Forms.Label();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
             this.lblAmazonS3PathPreview = new System.Windows.Forms.Label();
             this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
@@ -1846,6 +1847,7 @@
             // 
             // tpAmazonS3
             // 
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3CustomDomain);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreviewLabel);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreview);
             this.tpAmazonS3.Controls.Add(this.btnAmazonS3BucketNameOpen);
@@ -1870,10 +1872,18 @@
             this.tpAmazonS3.Text = "Amazon S3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
             // 
+            // txtAmazonS3CustomDomain
+            // 
+            this.txtAmazonS3CustomDomain.Location = new System.Drawing.Point(152, 144);
+            this.txtAmazonS3CustomDomain.Name = "txtAmazonS3CustomDomain";
+            this.txtAmazonS3CustomDomain.Size = new System.Drawing.Size(304, 20);
+            this.txtAmazonS3CustomDomain.TabIndex = 16;
+            this.txtAmazonS3CustomDomain.TextChanged += new System.EventHandler(this.txtAmazonS3CustomDomain_TextChanged);
+            // 
             // lblAmazonS3PathPreviewLabel
             // 
             this.lblAmazonS3PathPreviewLabel.AutoSize = true;
-            this.lblAmazonS3PathPreviewLabel.Location = new System.Drawing.Point(24, 144);
+            this.lblAmazonS3PathPreviewLabel.Location = new System.Drawing.Point(24, 192);
             this.lblAmazonS3PathPreviewLabel.Name = "lblAmazonS3PathPreviewLabel";
             this.lblAmazonS3PathPreviewLabel.Size = new System.Drawing.Size(72, 13);
             this.lblAmazonS3PathPreviewLabel.TabIndex = 12;
@@ -1882,7 +1892,7 @@
             // lblAmazonS3PathPreview
             // 
             this.lblAmazonS3PathPreview.AutoSize = true;
-            this.lblAmazonS3PathPreview.Location = new System.Drawing.Point(102, 144);
+            this.lblAmazonS3PathPreview.Location = new System.Drawing.Point(102, 192);
             this.lblAmazonS3PathPreview.Name = "lblAmazonS3PathPreview";
             this.lblAmazonS3PathPreview.Size = new System.Drawing.Size(45, 13);
             this.lblAmazonS3PathPreview.TabIndex = 13;
@@ -1890,11 +1900,11 @@
             // 
             // btnAmazonS3BucketNameOpen
             // 
-            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 114);
+            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 90);
             this.btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
             this.btnAmazonS3BucketNameOpen.Size = new System.Drawing.Size(24, 24);
             this.btnAmazonS3BucketNameOpen.TabIndex = 11;
-            this.btnAmazonS3BucketNameOpen.Text = "?";
+            this.btnAmazonS3BucketNameOpen.Text = "...";
             this.btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
             this.btnAmazonS3BucketNameOpen.Click += new System.EventHandler(this.btnAmazonS3BucketNameOpen_Click);
             // 
@@ -1904,21 +1914,19 @@
             this.btnAmazonS3AccessKeyOpen.Name = "btnAmazonS3AccessKeyOpen";
             this.btnAmazonS3AccessKeyOpen.Size = new System.Drawing.Size(24, 24);
             this.btnAmazonS3AccessKeyOpen.TabIndex = 2;
-            this.btnAmazonS3AccessKeyOpen.Text = "?";
+            this.btnAmazonS3AccessKeyOpen.Text = "...";
             this.btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
             this.btnAmazonS3AccessKeyOpen.Click += new System.EventHandler(this.btnAmazonS3AccessKeyOpen_Click);
             // 
             // cbAmazonS3CustomCNAME
             // 
             this.cbAmazonS3CustomCNAME.AutoSize = true;
-            this.cbAmazonS3CustomCNAME.Location = new System.Drawing.Point(104, 192);
+            this.cbAmazonS3CustomCNAME.Location = new System.Drawing.Point(27, 144);
             this.cbAmazonS3CustomCNAME.Name = "cbAmazonS3CustomCNAME";
-            this.cbAmazonS3CustomCNAME.Size = new System.Drawing.Size(163, 17);
+            this.cbAmazonS3CustomCNAME.Size = new System.Drawing.Size(122, 17);
             this.cbAmazonS3CustomCNAME.TabIndex = 15;
-            this.cbAmazonS3CustomCNAME.Text = "Bucket uses custom CNAME";
-            this.ttHelpTip.SetToolTip(this.cbAmazonS3CustomCNAME, "Use this option if you have a bucket set up with a custom CNAME.\r\nFor example, if" +
-        " your bucket is called bucket.example.com, and is accessible\r\nfrom http://bucket" +
-        ".example.com/.");
+            this.cbAmazonS3CustomCNAME.Text = "Use custom domain:";
+            this.ttHelpTip.SetToolTip(this.cbAmazonS3CustomCNAME, resources.GetString("cbAmazonS3CustomCNAME.ToolTip"));
             this.cbAmazonS3CustomCNAME.UseVisualStyleBackColor = true;
             this.cbAmazonS3CustomCNAME.CheckedChanged += new System.EventHandler(this.cbAmazonS3CustomCNAME_CheckedChanged);
             // 
@@ -1988,7 +1996,7 @@
             // cbAmazonS3UseRRS
             // 
             this.cbAmazonS3UseRRS.AutoSize = true;
-            this.cbAmazonS3UseRRS.Location = new System.Drawing.Point(104, 168);
+            this.cbAmazonS3UseRRS.Location = new System.Drawing.Point(27, 168);
             this.cbAmazonS3UseRRS.Name = "cbAmazonS3UseRRS";
             this.cbAmazonS3UseRRS.Size = new System.Drawing.Size(184, 17);
             this.cbAmazonS3UseRRS.TabIndex = 14;
@@ -4310,5 +4318,6 @@
         private System.Windows.Forms.ComboBox cbDropboxURLType;
         private System.Windows.Forms.Label lblAmazonS3PathPreview;
         private System.Windows.Forms.Label lblAmazonS3PathPreviewLabel;
+        private System.Windows.Forms.TextBox txtAmazonS3CustomDomain;
     }
 }

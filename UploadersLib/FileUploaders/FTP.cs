@@ -163,7 +163,7 @@ namespace UploadersLib.FileUploaders
                     // Probably directory not exist, try creating it
                     if (e.CompletionCode == "553")
                     {
-                        MakeMultiDirectory(FTPHelpers.GetDirectoryName(remotePath));
+                        MakeMultiDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
                         using (Stream remoteStream = client.OpenWrite(remotePath))
                         {
@@ -291,7 +291,7 @@ namespace UploadersLib.FileUploaders
         {
             if (Connect())
             {
-                remotePath = FTPHelpers.AddSlash(remotePath, FTPHelpers.SlashType.Prefix);
+                remotePath = URLHelpers.AddSlash(remotePath, SlashType.Prefix);
 
                 try
                 {
@@ -335,7 +335,7 @@ namespace UploadersLib.FileUploaders
 
         public void MakeMultiDirectory(string remotePath)
         {
-            List<string> paths = FTPHelpers.GetPaths(remotePath);
+            List<string> paths = URLHelpers.GetPaths(remotePath);
 
             foreach (string path in paths)
             {
@@ -384,7 +384,7 @@ namespace UploadersLib.FileUploaders
         {
             if (Connect())
             {
-                string filename = FTPHelpers.GetFileName(remotePath);
+                string filename = URLHelpers.GetFileName(remotePath);
                 if (filename == "." || filename == "..")
                 {
                     return;

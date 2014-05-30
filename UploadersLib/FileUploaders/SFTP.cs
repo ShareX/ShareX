@@ -164,7 +164,7 @@ namespace UploadersLib.FileUploaders
         {
             List<string> directoryList = new List<string>();
 
-            IEnumerable<string> paths = FTPHelpers.GetPaths(path).Select(x => x.TrimStart('/'));
+            IEnumerable<string> paths = URLHelpers.GetPaths(path).Select(x => x.TrimStart('/'));
 
             foreach (string directory in paths)
             {
