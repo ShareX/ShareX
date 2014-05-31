@@ -146,6 +146,8 @@ namespace ShareX
         RectangleRegion,
         [Description("Capture rectangle region or window")]
         WindowRectangle,
+        [Description("Capture rectangle region (Light)")]
+        RectangleLight,
         [Description("Capture rounded rectangle region")]
         RoundedRectangleRegion,
         [Description("Capture ellipse region")]

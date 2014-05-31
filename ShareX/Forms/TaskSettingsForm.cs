@@ -431,6 +431,11 @@ namespace ShareX
             TaskSettings.Description = tbDescription.Text;
         }
 
+        private void btnDescriptionAutoFill_Click(object sender, EventArgs e)
+        {
+            tbDescription.Text = TaskSettings.Job.GetDescription();
+        }
+
         private void cbUseDefaultAfterCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultAfterCaptureJob = cbUseDefaultAfterCaptureSettings.Checked;
