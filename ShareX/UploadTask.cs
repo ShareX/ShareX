@@ -815,6 +815,9 @@ namespace ShareX
                         Share = Program.UploadersConfig.BoxShare
                     };
                     break;
+                case FileDestination.Gfycat:
+                    fileUploader = new GfycatUploader();
+                    break;
                 case FileDestination.Ge_tt:
                     if (Program.UploadersConfig.IsActive(FileDestination.Ge_tt))
                     {

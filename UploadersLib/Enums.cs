@@ -86,6 +86,8 @@ namespace UploadersLib
         Dropbox,
         [Description("FTP Server")]
         FTP,
+        [Description("gfycat.com")]
+        Gfycat,
         [Description("mega.co.nz")]
         Mega,
         [Description("s3.amazon.com")]
