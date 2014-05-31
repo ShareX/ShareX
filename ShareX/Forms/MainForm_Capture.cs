@@ -39,6 +39,8 @@ namespace ShareX
     {
         private delegate Image ScreenCaptureDelegate();
 
+        private bool isLightCapture;
+
         private void InitHotkeys()
         {
             TaskEx.Run(() =>
@@ -173,8 +175,8 @@ namespace ShareX
                 case CaptureType.ActiveMonitor:
                     DoCapture(Screenshot.CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
                     break;
-                case CaptureType.RectangleWindow:
                 case CaptureType.Rectangle:
+                case CaptureType.RectangleWindow:
                 case CaptureType.RoundedRectangle:
                 case CaptureType.Ellipse:
                 case CaptureType.Triangle:
@@ -359,12 +361,6 @@ namespace ShareX
             {
                 default:
                 case CaptureType.Rectangle:
-                    if (taskSettings.AdvancedSettings.UseLightRectangleCrop)
-                    {
-                        CaptureLightRectangle(taskSettings, autoHideForm);
-                        return;
-                    }
-
                     surface = new RectangleRegion();
                     break;
                 case CaptureType.RectangleWindow:
@@ -413,6 +409,11 @@ namespace ShareX
                     {
                         img = screenshot;
                     }
+
+                    if (img != null)
+                    {
+                        isLightCapture = false;
+                    }
                 }
                 finally
                 {
@@ -423,8 +424,10 @@ namespace ShareX
             }, captureType, taskSettings, autoHideForm);
         }
 
-        private void CaptureLightRectangle(TaskSettings taskSettings, bool autoHideForm = true)
+        private void CaptureLightRectangle(TaskSettings taskSettings = null, bool autoHideForm = true)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             DoCapture(() =>
             {
                 Image img = null;
@@ -434,6 +437,11 @@ namespace ShareX
                     if (rectangleLight.ShowDialog() == DialogResult.OK)
                     {
                         img = rectangleLight.GetAreaImage();
+
+                        if (img != null)
+                        {
+                            isLightCapture = true;
+                        }
                     }
                 }
 
@@ -443,29 +451,39 @@ namespace ShareX
 
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            if (!taskSettings.AdvancedSettings.UseLightRectangleCrop && Surface.LastRegionFillPath != null)
+            if (!isLightCapture)
             {
-                DoCapture(() =>
+                if (Surface.LastRegionFillPath != null)
                 {
-                    using (Image screenshot = Screenshot.CaptureFullscreen())
+                    DoCapture(() =>
                     {
-                        return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
-                    }
-                }, CaptureType.LastRegion, taskSettings, autoHideForm);
-            }
-            else if (taskSettings.AdvancedSettings.UseLightRectangleCrop && !RectangleLight.LastSelectionRectangle0Based.IsEmpty)
-            {
-                DoCapture(() =>
+                        using (Image screenshot = Screenshot.CaptureFullscreen())
+                        {
+                            return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                        }
+                    }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                }
+                else
                 {
-                    using (Image screenshot = Screenshot.CaptureFullscreen())
-                    {
-                        return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
-                    }
-                }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                    CaptureRegion(CaptureType.Rectangle, taskSettings, autoHideForm);
+                }
             }
             else
             {
-                CaptureRegion(CaptureType.Rectangle, taskSettings, autoHideForm);
+                if (!RectangleLight.LastSelectionRectangle0Based.IsEmpty)
+                {
+                    DoCapture(() =>
+                    {
+                        using (Image screenshot = Screenshot.CaptureFullscreen())
+                        {
+                            return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
+                        }
+                    }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                }
+                else
+                {
+                    CaptureLightRectangle(taskSettings, autoHideForm);
+                }
             }
         }
 
@@ -573,6 +591,11 @@ namespace ShareX
             CaptureScreenshot(CaptureType.RoundedRectangle);
         }
 
+        private void tsmiRectangleLight_Click(object sender, EventArgs e)
+        {
+            CaptureLightRectangle();
+        }
+
         private void tsmiEllipse_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Ellipse);
@@ -637,14 +660,19 @@ namespace ShareX
             }
         }
 
+        private void tsmiTrayRectangle_Click(object sender, EventArgs e)
+        {
+            CaptureScreenshot(CaptureType.Rectangle, null, false);
+        }
+
         private void tsmiTrayWindowRectangle_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.RectangleWindow, null, false);
         }
 
-        private void tsmiTrayRectangle_Click(object sender, EventArgs e)
+        private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureScreenshot(CaptureType.Rectangle, null, false);
+            CaptureLightRectangle(null, false);
         }
 
         private void tsmiTrayRoundedRectangle_Click(object sender, EventArgs e)

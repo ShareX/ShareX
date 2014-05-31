@@ -41,6 +41,7 @@
             this.tsmiMonitor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWindowRectangle = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRoundedRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEllipse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTriangle = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,6 +195,7 @@
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,8 +205,9 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
@@ -295,6 +298,7 @@
             this.tsmiMonitor,
             this.tsmiRectangle,
             this.tsmiWindowRectangle,
+            this.tsmiRectangleLight,
             this.tsmiRoundedRectangle,
             this.tsmiEllipse,
             this.tsmiTriangle,
@@ -349,6 +353,14 @@
             this.tsmiWindowRectangle.Size = new System.Drawing.Size(181, 22);
             this.tsmiWindowRectangle.Text = "Rectangle / Window";
             this.tsmiWindowRectangle.Click += new System.EventHandler(this.tsmiWindowRectangle_Click);
+            // 
+            // tsmiRectangleLight
+            // 
+            this.tsmiRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
+            this.tsmiRectangleLight.Name = "tsmiRectangleLight";
+            this.tsmiRectangleLight.Size = new System.Drawing.Size(181, 22);
+            this.tsmiRectangleLight.Text = "Rectangle (Light)";
+            this.tsmiRectangleLight.Click += new System.EventHandler(this.tsmiRectangleLight_Click);
             // 
             // tsmiRoundedRectangle
             // 
@@ -1337,6 +1349,7 @@
             this.tsmiTrayMonitor,
             this.tsmiTrayRectangle,
             this.tsmiTrayWindowRectangle,
+            this.tsmiTrayRectangleLight,
             this.tsmiTrayRoundedRectangle,
             this.tsmiTrayEllipse,
             this.tsmiTrayTriangle,
@@ -1657,6 +1670,14 @@
             this.tsmiTrayDNSChanger.Text = "DNS changer...";
             this.tsmiTrayDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
             // 
+            // tsmiTrayQRCode
+            // 
+            this.tsmiTrayQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
+            this.tsmiTrayQRCode.Name = "tsmiTrayQRCode";
+            this.tsmiTrayQRCode.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayQRCode.Text = "QR code...";
+            this.tsmiTrayQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
+            // 
             // tsmiScreenshotsFolder
             // 
             this.tsmiScreenshotsFolder.Image = global::ShareX.Properties.Resources.folder_open_image;
@@ -1724,13 +1745,13 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiTrayQRCode
+            // tsmiTrayRectangleLight
             // 
-            this.tsmiTrayQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
-            this.tsmiTrayQRCode.Name = "tsmiTrayQRCode";
-            this.tsmiTrayQRCode.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayQRCode.Text = "QR code...";
-            this.tsmiTrayQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
+            this.tsmiTrayRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
+            this.tsmiTrayRectangleLight.Name = "tsmiTrayRectangleLight";
+            this.tsmiTrayRectangleLight.Size = new System.Drawing.Size(184, 22);
+            this.tsmiTrayRectangleLight.Text = "Rectangle (Light)";
+            this.tsmiTrayRectangleLight.Click += new System.EventHandler(this.tsmiTrayRectangleLight_Click);
             // 
             // MainForm
             // 
@@ -1755,6 +1776,7 @@
             this.tsMain.PerformLayout();
             this.scMain.Panel1.ResumeLayout(false);
             this.scMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
             this.cmsUploadInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
@@ -1938,5 +1960,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiShowQRCode;
         private System.Windows.Forms.ToolStripMenuItem tsmiQRCode;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayQRCode;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRectangleLight;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleLight;
     }
 }
