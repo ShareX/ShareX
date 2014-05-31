@@ -34,7 +34,7 @@ namespace ScreenCaptureLib
         [DefaultValue(true), Description("Allow screenshot capture as soon as the mouse is released. This disables the ability to capture multiple shapes and to move and/or resize them.")]
         public bool QuickCrop { get; set; }
 
-        [DefaultValue(true), Description("Show coordinate and size information.")]
+        [DefaultValue(false), Description("Show coordinate and size information.")]
         public bool ShowInfo { get; set; }
 
         [DefaultValue(true), Description("Show magnifier.")]
