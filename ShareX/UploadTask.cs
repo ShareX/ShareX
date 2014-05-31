@@ -837,8 +837,16 @@ namespace ShareX
                     }
                     break;
                 case FileDestination.FTP:
-                    int index = Info.TaskSettings.OverrideFTP ? Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1) :
-                        Program.UploadersConfig.GetFTPIndex(Info.DataType);
+                    int index;
+
+                    if (Info.TaskSettings.OverrideFTP)
+                    {
+                        index = Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
+                    }
+                    else
+                    {
+                        index = Program.UploadersConfig.GetFTPIndex(Info.DataType);
+                    }
 
                     FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
 

@@ -67,6 +67,7 @@ namespace ShareX
         public FileDestination FileDestination = FileDestination.Dropbox;
         public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
         public SocialNetworkingService SocialNetworkingServiceDestination = SocialNetworkingService.Twitter;
+
         public bool OverrideFTP = false;
         public int FTPIndex = 0;
 
@@ -111,9 +112,9 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && UseDefaultGeneralSettings &&
-                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions &&
-                    UseDefaultIndexerSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
+                return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && UseDefaultGeneralSettings &&
+                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultIndexerSettings &&
+                    UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
         }
 
