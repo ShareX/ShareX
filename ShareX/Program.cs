@@ -519,8 +519,7 @@ namespace ShareX
         {
             if (!uploaderConfigWatcherTimer.IsDuplicateEvent(e.FullPath))
             {
-                SynchronizationContext context = SynchronizationContext.Current ?? new SynchronizationContext();
-                Action onCompleted = () => context.Post(state => ReloadUploadersConfig(e.FullPath), null);
+                Action onCompleted = () => ReloadUploadersConfig(e.FullPath);
                 Helpers.WaitWhileAsync(() => Helpers.IsFileLocked(e.FullPath), 250, 5000, onCompleted, 1000);
                 uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(e.FullPath);
             }
@@ -528,7 +527,7 @@ namespace ShareX
 
         private static void ReloadUploadersConfig(string filePath)
         {
-            UploadersConfig = UploadersLib.UploadersConfig.Load(filePath);
+            UploadersConfig = UploadersConfig.Load(filePath);
         }
 
         public static void UploadersConfigSaveAsync()

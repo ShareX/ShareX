@@ -30,14 +30,25 @@ namespace HelpersLib
 {
     public static class TaskEx
     {
-        public static Task Run(Action action)
+        public static Task Run(Action thread)
         {
-            return Task.Factory.StartNew(action);
+            return Task.Factory.StartNew(thread);
         }
 
-        public static Task Run(Action action, Action completed)
+        public static Task Run(Action thread, Action completed, bool completedInFormThread = true)
         {
-            return Run(action).ContinueWith(task => completed(), TaskScheduler.FromCurrentSynchronizationContext());
+            TaskScheduler taskScheduler;
+
+            if (completedInFormThread)
+            {
+                taskScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+            }
+            else
+            {
+                taskScheduler = TaskScheduler.Current;
+            }
+
+            return Run(thread).ContinueWith(task => completed(), taskScheduler);
         }
     }
 }

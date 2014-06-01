@@ -705,7 +705,7 @@ namespace HelpersLib
             () =>
             {
                 if (result) onSuccess();
-            });
+            }, false);
         }
 
         public static bool IsFileLocked(string path)
