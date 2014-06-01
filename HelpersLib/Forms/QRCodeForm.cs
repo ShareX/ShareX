@@ -23,8 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -67,6 +71,70 @@ namespace HelpersLib
             if (qrMain.Cursor == Cursors.Hand)
             {
                 Close();
+            }
+        }
+
+        private void tsmiCopy_Click(object sender, EventArgs e)
+        {
+            GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
+            BitMatrix matrix = qrMain.GetQrMatrix();
+            using (MemoryStream stream = new MemoryStream())
+            {
+                gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
+                ClipboardHelpers.CopyImage(Image.FromStream(stream));
+            }
+        }
+
+        private void tsmiSaveAs_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = @"PNG (*.png)|*.png|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps|SVG (*.svg)|*.svg";
+                saveFileDialog.FileName = txtQRCode.Text;
+                saveFileDialog.DefaultExt = "png";
+
+                if (saveFileDialog.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                if (saveFileDialog.FileName.EndsWith("eps"))
+                {
+                    BitMatrix matrix = qrMain.GetQrMatrix();
+
+                    // Initialize the EPS renderer
+                    var renderer = new EncapsulatedPostScriptRenderer(
+                        new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
+                        new FormColor(Color.Black), new FormColor(Color.White));
+
+                    using (var file = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
+                    {
+                        renderer.WriteToStream(matrix, file);
+                    }
+                }
+                else if (saveFileDialog.FileName.EndsWith("svg"))
+                {
+                    BitMatrix matrix = qrMain.GetQrMatrix();
+
+                    // Initialize the EPS renderer
+                    var renderer = new SVGRenderer(
+                        new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
+                        new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
+
+                    using (var file = File.OpenWrite(saveFileDialog.FileName))
+                    {
+                        renderer.WriteToStream(matrix, file, false);
+                    }
+                }
+                else
+                {
+                    GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
+                    BitMatrix matrix = qrMain.GetQrMatrix();
+                    using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                    {
+                        gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
+                    }
+                }
             }
         }
     }
