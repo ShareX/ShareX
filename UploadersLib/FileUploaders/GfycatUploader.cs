@@ -59,16 +59,43 @@ namespace UploadersLib.FileUploaders
 
         private void TranscodeFile(string key, UploadResult result)
         {
-            string json = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/transcode/" + key);
-            GfycatTranscodeResponse response = JsonConvert.DeserializeObject<GfycatTranscodeResponse>(json);
+            string transcodeJson = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/transcodeRelease/" + key + "?noResize=true");
+            GfycatTranscodeResponse transcodeResponse = JsonConvert.DeserializeObject<GfycatTranscodeResponse>(transcodeJson);
 
-            if (response.Task == GfycatTask.COMPLETE)
+            if (transcodeResponse.IsOk)
             {
-                result.URL = "http://gfycat.com/" + response.GfyName;
+                ProgressManager progress = new ProgressManager(10000);
+                if (AllowReportProgress)
+                {
+                    OnProgressChanged(progress);
+                }
+
+                while (!stopUpload)
+                {
+                    string statusJson = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/status/" + key);
+                    GfycatStatusResponse response = JsonConvert.DeserializeObject<GfycatStatusResponse>(statusJson);
+                    if (response.Error != null)
+                    {
+                        result.Errors.Add(response.Error);
+                        result.IsSuccess = false;
+                        break;
+                    } else if (response.GfyName != null) {
+                        result.IsSuccess = true;
+                        result.URL = "https://gfycat.com/" + response.GfyName;
+                        break;
+                    }
+                    else
+                    {
+                        if (AllowReportProgress && progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
+                        {
+                            OnProgressChanged(progress);
+                        }
+                    }
+                }
             }
             else
             {
-                result.Errors.Add(response.Error);
+                result.Errors.Add(transcodeResponse.Error);
                 result.IsSuccess = false;
             }
         }
@@ -76,13 +103,15 @@ namespace UploadersLib.FileUploaders
 
     public class GfycatTranscodeResponse
     {
-        public GfycatTask Task { get; set; }
-        public string GfyName { get; set; }
+        public bool IsOk { get; set; }
         public string Error { get; set; }
     }
 
-    public enum GfycatTask {
-        ERROR,
-        COMPLETE
+    public class GfycatStatusResponse
+    {
+        public string Task { get; set; }
+        public int Time { get; set; }
+        public string GfyName { get; set; }
+        public string Error { get; set; }
     }
 }

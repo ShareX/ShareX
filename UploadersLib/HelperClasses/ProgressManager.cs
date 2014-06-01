@@ -79,7 +79,7 @@ namespace UploadersLib.HelperClasses
             smoothTimer.Start();
         }
 
-        public bool UpdateProgress(int bytesRead)
+        public bool UpdateProgress(long bytesRead)
         {
             Position += bytesRead;
             speedTest += bytesRead;
