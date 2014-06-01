@@ -462,6 +462,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap GitHub {
+            get {
+                object obj = ResourceManager.GetObject("GitHub", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap globe_pencil {
             get {
                 object obj = ResourceManager.GetObject("globe_pencil", resourceCulture);

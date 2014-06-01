@@ -102,7 +102,7 @@ namespace UploadersLib
             ImageList textUploadersImageList = new ImageList();
             textUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
             textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
-            textUploadersImageList.Images.Add("Gist", Resources.Gist);
+            textUploadersImageList.Images.Add("Gist", Resources.GitHub);
             textUploadersImageList.Images.Add("Upaste", Resources.Upaste);
             tcTextUploaders.ImageList = textUploadersImageList;
 

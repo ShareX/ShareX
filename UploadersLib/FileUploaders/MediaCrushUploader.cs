@@ -83,7 +83,7 @@ namespace UploadersLib.FileUploaders
                 {
                     case "processing":
                     case "pending":
-                        Thread.Sleep(1000);
+                        Thread.Sleep(500);
                         break;
                     case "done":
                     case "ready":

@@ -120,10 +120,12 @@
   <data name="rtbCredits.Text" xml:space="preserve">
     <value>Contributors:
 
-Logo and icon: Mopsy - http://mpql.net
-Jira, Gist and Mega support: gpailler (Grégoire Pailler)
-Web site: dmxt (Dana)
-Amazon S3 and DreamObjects support: Alan Edwardes - http://alanedwardes.com
+Logo and icon: https://github.com/mopquill - http://mpql.net
+Jira, Gist and Mega support: https://github.com/gpailler
+Web site: https://github.com/dmxt
+MediaCrush support: https://github.com/SirCmpwn - http://drewdevault.com
+Amazon S3 and DreamObjects support: https://github.com/alanedwardes - http://alanedwardes.com
+Gfycat support: https://github.com/Dinnerbone - http://dinnerbone.com
 
 External libraries:
 

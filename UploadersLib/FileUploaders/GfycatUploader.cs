@@ -23,30 +23,42 @@
 
 #endregion License Information (GPL v3)
 
+// Credits: https://github.com/Dinnerbone
+
 using HelpersLib;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
+using System.Threading;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {
     public class GfycatUploader : FileUploader
     {
+        public bool NoResize { get; set; }
+        public bool IgnoreExisting { get; set; }
+
+        public GfycatUploader()
+        {
+            NoResize = true;
+            IgnoreExisting = false;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-
             // Magical official values from http://www.reddit.com/r/gfycat/comments/20xbth/any_word_on_allowing_uploading_a_gif_through_the/
+            Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("key", Helpers.GetRandomAlphanumeric(10));
             args.Add("acl", "private");
             args.Add("AWSAccessKeyId", "AKIAIT4VU4B7G2LQYKZQ");
             args.Add("policy", "eyAiZXhwaXJhdGlvbiI6ICIyMDIwLTEyLTAxVDEyOjAwOjAwLjAwMFoiLAogICAgICAgICAgICAiY29uZGl0aW9ucyI6IFsKICAgICAgICAgICAgeyJidWNrZXQiOiAiZ2lmYWZmZSJ9LAogICAgICAgICAgICBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAiIl0sCiAgICAgICAgICAgIHsiYWNsIjogInByaXZhdGUifSwKCSAgICB7InN1Y2Nlc3NfYWN0aW9uX3N0YXR1cyI6ICIyMDAifSwKICAgICAgICAgICAgWyJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgIiJdLAogICAgICAgICAgICBbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwgMCwgNTI0Mjg4MDAwXQogICAgICAgICAgICBdCiAgICAgICAgICB9");
             args.Add("success_action_status", "200");
             args.Add("signature", "mk9t/U/wRN4/uU01mXfeTe2Kcoc=");
-            args.Add("Content-Type", MimeTypes.GetMimeType(Path.GetExtension(fileName).ToLower()));
+            args.Add("Content-Type", Helpers.GetMimeType(fileName));
+
             UploadResult result = UploadData(stream, "https://gifaffe.s3.amazonaws.com/", fileName, "file", args);
 
             if (!result.IsError)
@@ -59,12 +71,18 @@ namespace UploadersLib.FileUploaders
 
         private void TranscodeFile(string key, UploadResult result)
         {
-            string transcodeJson = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/transcodeRelease/" + key + "?noResize=true");
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            if (NoResize) args.Add("noResize", "true");
+            if (IgnoreExisting) args.Add("noMd5", "true");
+
+            string url = CreateQuery("https://upload.gfycat.com/transcodeRelease/" + key, args);
+            string transcodeJson = SendRequest(HttpMethod.GET, url);
             GfycatTranscodeResponse transcodeResponse = JsonConvert.DeserializeObject<GfycatTranscodeResponse>(transcodeJson);
 
             if (transcodeResponse.IsOk)
             {
                 ProgressManager progress = new ProgressManager(10000);
+
                 if (AllowReportProgress)
                 {
                     OnProgressChanged(progress);
@@ -79,18 +97,20 @@ namespace UploadersLib.FileUploaders
                         result.Errors.Add(response.Error);
                         result.IsSuccess = false;
                         break;
-                    } else if (response.GfyName != null) {
+                    }
+                    else if (response.GfyName != null)
+                    {
                         result.IsSuccess = true;
                         result.URL = "https://gfycat.com/" + response.GfyName;
                         break;
                     }
-                    else
+
+                    if (AllowReportProgress && progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
                     {
-                        if (AllowReportProgress && progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
-                        {
-                            OnProgressChanged(progress);
-                        }
+                        OnProgressChanged(progress);
                     }
+
+                    Thread.Sleep(100);
                 }
             }
             else

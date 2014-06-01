@@ -193,9 +193,9 @@ namespace UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon Gist {
+        internal static System.Drawing.Icon GitHub {
             get {
-                object obj = ResourceManager.GetObject("Gist", resourceCulture);
+                object obj = ResourceManager.GetObject("GitHub", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
