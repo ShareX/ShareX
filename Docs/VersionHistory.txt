@@ -1,5 +1,11 @@
-﻿ShareX 9.0.1
+﻿ShareX 9.1.0
 
+* Added gfycat file uploader support (thanks @Dinnerbone)
+* Added new Capture menu item: Rectangle (Light)
+* Custom domain support for Amazon S3
+* Drag-and-drop box now supports image and text too
+* Added new After Upload task: Show QR window
+* Added QR code generator to Tools menu
 * Customized task settings are now shown as workflows in main window
 
 ShareX 9.0.0 - 2014-05-16
