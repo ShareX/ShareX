@@ -41,8 +41,9 @@
             this.txtText.Location = new System.Drawing.Point(0, 0);
             this.txtText.Multiline = true;
             this.txtText.Name = "txtText";
+            this.txtText.ReadOnly = true;
             this.txtText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtText.Size = new System.Drawing.Size(684, 562);
+            this.txtText.Size = new System.Drawing.Size(784, 562);
             this.txtText.TabIndex = 0;
             // 
             // OutputBox
@@ -50,12 +51,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(684, 562);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.txtText);
             this.Name = "OutputBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OutputBox";
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.OutputBox_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

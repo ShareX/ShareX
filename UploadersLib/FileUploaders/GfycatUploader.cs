@@ -92,6 +92,7 @@ namespace UploadersLib.FileUploaders
                 {
                     string statusJson = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/status/" + key);
                     GfycatStatusResponse response = JsonConvert.DeserializeObject<GfycatStatusResponse>(statusJson);
+
                     if (response.Error != null)
                     {
                         result.Errors.Add(response.Error);

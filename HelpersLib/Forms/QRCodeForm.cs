@@ -81,7 +81,10 @@ namespace HelpersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
-                ClipboardHelpers.CopyImage(Image.FromStream(stream));
+                using (Image img = Image.FromStream(stream))
+                {
+                    ClipboardHelpers.CopyImage(img);
+                }
             }
         }
 
@@ -103,11 +106,11 @@ namespace HelpersLib
                     BitMatrix matrix = qrMain.GetQrMatrix();
 
                     // Initialize the EPS renderer
-                    var renderer = new EncapsulatedPostScriptRenderer(
+                    EncapsulatedPostScriptRenderer renderer = new EncapsulatedPostScriptRenderer(
                         new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
                         new FormColor(Color.Black), new FormColor(Color.White));
 
-                    using (var file = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
+                    using (FileStream file = new FileStream(saveFileDialog.FileName, FileMode.Create))
                     {
                         renderer.WriteToStream(matrix, file);
                     }
@@ -117,11 +120,11 @@ namespace HelpersLib
                     BitMatrix matrix = qrMain.GetQrMatrix();
 
                     // Initialize the EPS renderer
-                    var renderer = new SVGRenderer(
+                    SVGRenderer renderer = new SVGRenderer(
                         new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
                         new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
 
-                    using (var file = File.OpenWrite(saveFileDialog.FileName))
+                    using (FileStream file = new FileStream(saveFileDialog.FileName, FileMode.Create))
                     {
                         renderer.WriteToStream(matrix, file, false);
                     }

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -35,7 +36,12 @@ namespace HelpersLib
             Icon = ShareXResources.Icon;
             Text = "ShareX - " + title;
             txtText.Text = text;
+        }
+
+        private void OutputBox_Shown(object sender, EventArgs e)
+        {
             txtText.SelectionStart = txtText.TextLength;
+            txtText.ScrollToCaret();
         }
     }
 }
