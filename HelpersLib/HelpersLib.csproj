@@ -115,6 +115,15 @@
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="ProxyInfo.cs" />
+    <Compile Include="UserControls\TablessControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\TabToTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TabToTreeView.Designer.cs">
+      <DependentUpon>TabToTreeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaskEx.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
@@ -340,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TabToTreeView.resx">
+      <DependentUpon>TabToTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
