@@ -118,6 +118,12 @@
     <Compile Include="UserControls\TablessControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\TabToListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TabToListView.Designer.cs">
+      <DependentUpon>TabToListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TabToTreeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TabToListView.resx">
+      <DependentUpon>TabToListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TabToTreeView.resx">
       <DependentUpon>TabToTreeView.cs</DependentUpon>

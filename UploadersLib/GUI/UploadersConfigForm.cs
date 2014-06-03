@@ -50,6 +50,11 @@ namespace UploadersLib
             LoadSettings(uploadersConfig);
         }
 
+        private void UploadersConfigForm_Shown(object sender, EventArgs e)
+        {
+            ttlvMain.FocusListView();
+        }
+
         private void UploadersConfigForm_Resize(object sender, EventArgs e)
         {
             Refresh();
@@ -66,57 +71,40 @@ namespace UploadersLib
 
             Text = title;
 
-            ImageList imageUploadersImageList = new ImageList();
-            imageUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
-            imageUploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
-            imageUploadersImageList.Images.Add("TinyPic", Resources.TinyPic);
-            imageUploadersImageList.Images.Add("Imgur", Resources.Imgur);
-            imageUploadersImageList.Images.Add("Flickr", Resources.Flickr);
-            imageUploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
-            imageUploadersImageList.Images.Add("Picasa", Resources.Picasa);
-            imageUploadersImageList.Images.Add("TwitPic", Resources.TwitPic);
-            imageUploadersImageList.Images.Add("TwitSnaps", Resources.TwitSnaps);
-            imageUploadersImageList.Images.Add("YFrog", Resources.YFrog);
-            tcImageUploaders.ImageList = imageUploadersImageList;
-
-            ImageList fileUploadersImageList = new ImageList();
-            fileUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
-            fileUploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
-            fileUploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
-            fileUploadersImageList.Images.Add("Box", Resources.Box);
-            fileUploadersImageList.Images.Add("Minus", Resources.Minus);
-            fileUploadersImageList.Images.Add("FTP", Resources.folder_network);
-            fileUploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
-            fileUploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
-            fileUploadersImageList.Images.Add("Gett", Resources.Gett);
-            fileUploadersImageList.Images.Add("Localhostr", Resources.Localhostr);
-            fileUploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
-            fileUploadersImageList.Images.Add("SharedFolders", Resources.server_network);
-            fileUploadersImageList.Images.Add("Email", Resources.mail);
-            fileUploadersImageList.Images.Add("Jira", Resources.jira);
-            fileUploadersImageList.Images.Add("Mega", Resources.Mega);
-            fileUploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
-            fileUploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
-            tcFileUploaders.ImageList = fileUploadersImageList;
-
-            ImageList textUploadersImageList = new ImageList();
-            textUploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
-            textUploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
-            textUploadersImageList.Images.Add("Gist", Resources.GitHub);
-            textUploadersImageList.Images.Add("Upaste", Resources.Upaste);
-            tcTextUploaders.ImageList = textUploadersImageList;
-
-            ImageList urlShortenersImageList = new ImageList();
-            urlShortenersImageList.ColorDepth = ColorDepth.Depth32Bit;
-            urlShortenersImageList.Images.Add("Google", Resources.Google);
-            urlShortenersImageList.Images.Add("Bitly", Resources.Bitly);
-            urlShortenersImageList.Images.Add("Yourls", Resources.Yourls);
-            tcURLShorteners.ImageList = urlShortenersImageList;
-
-            ImageList socialNetworkingServicesImageList = new ImageList();
-            socialNetworkingServicesImageList.ColorDepth = ColorDepth.Depth32Bit;
-            socialNetworkingServicesImageList.Images.Add("Twitter", Resources.Twitter);
-            tcSocialNetworkingServices.ImageList = socialNetworkingServicesImageList;
+            ImageList uploadersImageList = new ImageList();
+            uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
+            uploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
+            uploadersImageList.Images.Add("TinyPic", Resources.TinyPic);
+            uploadersImageList.Images.Add("Imgur", Resources.Imgur);
+            uploadersImageList.Images.Add("Flickr", Resources.Flickr);
+            uploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
+            uploadersImageList.Images.Add("Picasa", Resources.Picasa);
+            uploadersImageList.Images.Add("TwitPic", Resources.TwitPic);
+            uploadersImageList.Images.Add("TwitSnaps", Resources.TwitSnaps);
+            uploadersImageList.Images.Add("YFrog", Resources.YFrog);
+            uploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
+            uploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
+            uploadersImageList.Images.Add("Box", Resources.Box);
+            uploadersImageList.Images.Add("Minus", Resources.Minus);
+            uploadersImageList.Images.Add("FTP", Resources.folder_network);
+            uploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
+            uploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
+            uploadersImageList.Images.Add("Gett", Resources.Gett);
+            uploadersImageList.Images.Add("Localhostr", Resources.Localhostr);
+            uploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
+            uploadersImageList.Images.Add("SharedFolders", Resources.server_network);
+            uploadersImageList.Images.Add("Email", Resources.mail);
+            uploadersImageList.Images.Add("Jira", Resources.jira);
+            uploadersImageList.Images.Add("Mega", Resources.Mega);
+            uploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
+            uploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
+            uploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
+            uploadersImageList.Images.Add("Gist", Resources.GitHub);
+            uploadersImageList.Images.Add("Upaste", Resources.Upaste);
+            uploadersImageList.Images.Add("Google", Resources.Google);
+            uploadersImageList.Images.Add("Bitly", Resources.Bitly);
+            uploadersImageList.Images.Add("Yourls", Resources.Yourls);
+            uploadersImageList.Images.Add("Twitter", Resources.Twitter);
 
             tpImageShack.ImageKey = "ImageShack";
             tpTinyPic.ImageKey = "TinyPic";
@@ -150,6 +138,9 @@ namespace UploadersLib
             tpGist.ImageKey = "Gist";
             tpUpaste.ImageKey = "Upaste";
             tpAmazonS3.ImageKey = "AmazonS3";
+
+            ttlvMain.ImageList = uploadersImageList;
+            ttlvMain.MainTabControl = tcUploaders;
 
             NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);

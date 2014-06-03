@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
-    public partial class TabToTreeView : UserControl
+    public partial class TabToListView : UserControl
     {
         private TabControl mainTabControl;
 
@@ -47,23 +47,22 @@ namespace HelpersLib
             set
             {
                 mainTabControl = value;
-                FillTreeView(tvMain.Nodes, mainTabControl);
-                tvMain.ExpandAll();
+                FillListView(mainTabControl);
             }
         }
 
-        private int treeViewSize;
+        private int listViewSize;
 
-        public int TreeViewSize
+        public int ListViewSize
         {
             get
             {
-                return treeViewSize;
+                return listViewSize;
             }
             set
             {
-                treeViewSize = value;
-                scMain.SplitterDistance = treeViewSize;
+                listViewSize = value;
+                scMain.SplitterDistance = listViewSize;
             }
         }
 
@@ -71,61 +70,72 @@ namespace HelpersLib
         {
             get
             {
-                return tvMain.ImageList;
+                return lvMain.SmallImageList;
             }
             set
             {
-                tvMain.ImageList = value;
+                lvMain.SmallImageList = value;
             }
         }
 
-        public TabToTreeView()
+        public TabToListView()
         {
             InitializeComponent();
-            TreeViewSize = 150;
+            ListViewSize = 150;
         }
 
-        private void FillTreeView(TreeNodeCollection nodeCollection, TabControl tab)
+        private void FillListView(TabControl tab)
         {
-            if (nodeCollection != null && tab != null)
+            if (tab != null)
             {
                 foreach (TabPage tabPage in tab.TabPages)
                 {
-                    TreeNode treeNode = new TreeNode(tabPage.Text);
-                    if (!string.IsNullOrEmpty(tabPage.ImageKey))
-                    {
-                        treeNode.ImageKey = treeNode.SelectedImageKey = tabPage.ImageKey;
-                    }
-                    treeNode.Tag = tabPage;
-                    nodeCollection.Add(treeNode);
+                    ListViewGroup lvg = new ListViewGroup(tabPage.Text);
+                    lvMain.Groups.Add(lvg);
 
                     foreach (Control control in tabPage.Controls)
                     {
                         if (control is TabControl)
                         {
-                            FillTreeView(treeNode.Nodes, control as TabControl);
-                            break;
+                            TabControl tab2 = control as TabControl;
+
+                            foreach (TabPage tabPage2 in tab2.TabPages)
+                            {
+                                ListViewItem lvi = new ListViewItem(tabPage2.Text);
+                                lvi.ImageKey = tabPage2.ImageKey;
+                                lvi.Tag = tabPage2;
+                                lvi.Group = lvg;
+                                lvMain.Items.Add(lvi);
+                            }
                         }
                     }
+                }
+
+                if (lvMain.Items.Count > 0)
+                {
+                    lvMain.Items[0].Selected = true;
                 }
             }
         }
 
-        private void tvMain_BeforeCollapse(object sender, TreeViewCancelEventArgs e)
+        private void lvMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            e.Cancel = true;
+            if (lvMain.SelectedItems != null && lvMain.SelectedItems.Count > 0)
+            {
+                TabPage tabPage = lvMain.SelectedItems[0].Tag as TabPage;
+
+                if (tabPage != null)
+                {
+                    tcMain.Visible = true;
+                    tcMain.TabPages.Clear();
+                    tcMain.TabPages.Add(tabPage);
+                }
+            }
         }
 
-        private void tvMain_AfterSelect(object sender, TreeViewEventArgs e)
+        public void FocusListView()
         {
-            TabPage tabPage = e.Node.Tag as TabPage;
-
-            if (tabPage != null)
-            {
-                tcMain.Visible = true;
-                tcMain.TabPages.Clear();
-                tcMain.TabPages.Add(tabPage);
-            }
+            lvMain.Focus();
         }
     }
 }
