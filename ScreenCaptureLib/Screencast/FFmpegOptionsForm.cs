@@ -50,7 +50,6 @@ namespace ScreenCaptureLib
             if (Options != null)
             {
                 SettingsLoad();
-                BindUpdatePreview(Controls);
                 UpdateUI();
             }
         }
@@ -94,6 +93,10 @@ namespace ScreenCaptureLib
 
             // MP3
             tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale; // 0-9 where a lower value is a higher quality
+
+            cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
+
+            txtCommandLinePreview.Text = Options.GetFFmpegCommands();
         }
 
         private void RefreshSourcesAsync()
@@ -125,37 +128,16 @@ namespace ScreenCaptureLib
             });
         }
 
-        private void BindUpdatePreview(System.Windows.Forms.Control.ControlCollection controls)
-        {
-            controls.Cast<Control>().ForEach(x => { if (x.HasChildren) BindUpdatePreview(x.Controls); });
-
-            foreach (Control ctl in controls)
-            {
-                if (ctl is NumericUpDown)
-                {
-                    ((NumericUpDown)ctl).ValueChanged += (sender, e) => UpdateUI();
-                }
-                else if (ctl is TrackBar)
-                {
-                    ((TrackBar)ctl).ValueChanged += (sender, e) => UpdateUI();
-                }
-                else if (ctl is TextBox && ctl != txtCommandLinePreview)
-                {
-                    ((TextBox)ctl).TextChanged += (sender, e) => UpdateUI();
-                }
-                else if (ctl is ComboBox)
-                {
-                    ((ComboBox)ctl).SelectedIndexChanged += (sender, e) => UpdateUI();
-                }
-            }
-        }
-
         public void UpdateUI()
         {
             lblVorbisQuality.Text = "Quality: " + Options.FFmpeg.Vorbis_qscale;
             lblMP3Quality.Text = "Quality: " + Options.FFmpeg.MP3_qscale;
             lblAACQuality.Text = string.Format("Bitrate: {0}k", Options.FFmpeg.AAC_bitrate);
-            txtCommandLinePreview.Text = "ffmpeg " + Options.GetFFmpegArgs();
+
+            if (!Options.FFmpeg.UseCustomCommands)
+            {
+                txtCommandLinePreview.Text = Options.GetFFmpegCommands();
+            }
         }
 
         public void UpdateExtensions()
@@ -192,47 +174,56 @@ namespace ScreenCaptureLib
         private void cboVideoSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoSource = cboVideoSource.Text;
+            UpdateUI();
         }
 
         private void cboAudioSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AudioSource = cboAudioSource.Text;
+            UpdateUI();
         }
 
         private void cboVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
             UpdateExtensions();
+            UpdateUI();
         }
 
         private void cboAudioCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
+            UpdateUI();
         }
 
         private void cbExtension_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.Extension = cboExtension.Text;
+            UpdateUI();
         }
 
         private void nudx264CRF_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.x264_CRF = (int)nudx264CRF.Value;
+            UpdateUI();
         }
 
         private void cbPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
+            UpdateUI();
         }
 
         private void nudVPxCRF_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VPx_CRF = (int)nudVPxCRF.Value;
+            UpdateUI();
         }
 
         private void nudQscale_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.XviD_qscale = (int)nudQscale.Value;
+            UpdateUI();
         }
 
         private void tbAACBitrate_Scroll(object sender, EventArgs e)
@@ -275,6 +266,7 @@ namespace ScreenCaptureLib
         private void tbUserArgs_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.UserArgs = tbUserArgs.Text;
+            UpdateUI();
         }
 
         private void buttonFFmpegHelp_Click(object sender, EventArgs e)
@@ -317,7 +309,7 @@ namespace ScreenCaptureLib
                     using (Process process = new Process())
                     {
                         ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
-                        psi.Arguments = "/k ffmpeg " + Options.GetFFmpegArgs();
+                        psi.Arguments = "/k ffmpeg " + Options.GetFFmpegCommands();
                         psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.CLIPath);
 
                         process.StartInfo = psi;
@@ -333,12 +325,28 @@ namespace ScreenCaptureLib
 
         private void btnCopyPreview_Click(object sender, EventArgs e)
         {
-            ClipboardHelpers.CopyText(txtCommandLinePreview.Text);
+            ClipboardHelpers.CopyText("ffmpeg " + Options.GetFFmpegCommands());
         }
 
         private void FFmpegOptionsForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Helpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
+        }
+
+        private void cbCustomCommands_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.UseCustomCommands = cbCustomCommands.Checked;
+            txtCommandLinePreview.ReadOnly = !Options.FFmpeg.UseCustomCommands;
+
+            if (!Options.FFmpeg.UseCustomCommands)
+            {
+                txtCommandLinePreview.Text = Options.GetFFmpegCommands();
+            }
+        }
+
+        private void txtCommandLinePreview_TextChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
         }
     }
 }

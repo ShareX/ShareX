@@ -65,7 +65,7 @@ namespace ScreenCaptureLib
 
         public bool Record()
         {
-            int errorCode = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegArgs());
+            int errorCode = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegCommands());
             bool result = errorCode == 0;
             if (Options.FFmpeg.ShowError && !result)
             {

@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.lblExt = new System.Windows.Forms.Label();
             this.lblX264CRF = new System.Windows.Forms.Label();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
-            this.ttHelpTip = new System.Windows.Forms.ToolTip();
+            this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
             this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbPreset = new System.Windows.Forms.ComboBox();
@@ -78,6 +79,7 @@
             this.gbContainer = new System.Windows.Forms.GroupBox();
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.cbShowError = new System.Windows.Forms.CheckBox();
+            this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -349,6 +351,7 @@
             // 
             // gbCommandLinePreview
             // 
+            this.gbCommandLinePreview.Controls.Add(this.cbCustomCommands);
             this.gbCommandLinePreview.Controls.Add(this.txtCommandLinePreview);
             this.gbCommandLinePreview.Location = new System.Drawing.Point(8, 317);
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
@@ -360,7 +363,6 @@
             // 
             // txtCommandLinePreview
             // 
-            this.txtCommandLinePreview.BackColor = System.Drawing.Color.White;
             this.txtCommandLinePreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCommandLinePreview.Location = new System.Drawing.Point(8, 21);
             this.txtCommandLinePreview.Multiline = true;
@@ -368,6 +370,7 @@
             this.txtCommandLinePreview.ReadOnly = true;
             this.txtCommandLinePreview.Size = new System.Drawing.Size(632, 67);
             this.txtCommandLinePreview.TabIndex = 0;
+            this.txtCommandLinePreview.TextChanged += new System.EventHandler(this.txtCommandLinePreview_TextChanged);
             // 
             // gbCommandLineArgs
             // 
@@ -668,6 +671,17 @@
             this.cbShowError.UseVisualStyleBackColor = true;
             this.cbShowError.CheckedChanged += new System.EventHandler(this.cbShowError_CheckedChanged);
             // 
+            // cbCustomCommands
+            // 
+            this.cbCustomCommands.AutoSize = true;
+            this.cbCustomCommands.Location = new System.Drawing.Point(280, 0);
+            this.cbCustomCommands.Name = "cbCustomCommands";
+            this.cbCustomCommands.Size = new System.Drawing.Size(136, 17);
+            this.cbCustomCommands.TabIndex = 1;
+            this.cbCustomCommands.Text = "Use custom commands";
+            this.cbCustomCommands.UseVisualStyleBackColor = true;
+            this.cbCustomCommands.CheckedChanged += new System.EventHandler(this.cbCustomCommands_CheckedChanged);
+            // 
             // FFmpegOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -783,5 +797,6 @@
         private System.Windows.Forms.TrackBar tbAACBitrate;
         private System.Windows.Forms.Label lblAACQuality;
         private System.Windows.Forms.CheckBox cbShowError;
+        private System.Windows.Forms.CheckBox cbCustomCommands;
     }
 }

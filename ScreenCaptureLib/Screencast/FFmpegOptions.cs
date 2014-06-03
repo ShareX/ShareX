@@ -38,6 +38,8 @@ namespace ScreenCaptureLib
         public string CLIPath { get; set; }
         public string UserArgs { get; set; }
         public bool ShowError { get; set; }
+        public bool UseCustomCommands { get; set; }
+        public string CustomCommands { get; set; }
 
         // H.264 - x264
         public FFmpegPreset Preset { get; set; }
