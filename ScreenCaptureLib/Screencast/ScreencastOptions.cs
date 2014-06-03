@@ -50,8 +50,11 @@ namespace ScreenCaptureLib
         {
             StringBuilder args = new StringBuilder();
 
-            // input FPS
-            args.AppendFormat("-r {0} ", ScreenRecordFPS);
+            // -y for overwrite file
+            args.Append("-y ");
+
+            // default real time buffer size was 3041280 (3M)
+            args.Append("-rtbufsize 10M ");
 
             if (string.IsNullOrEmpty(FFmpeg.VideoSource) || FFmpeg.VideoSource.Equals(FFmpegHelper.GDIgrab, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -106,6 +109,7 @@ namespace ScreenCaptureLib
                     args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                     args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
                     args.AppendFormat("-tune {0} ", "zerolatency");
+
                     // -pix_fmt yuv420p required otherwise can't stream in Chrome
                     args.Append("-pix_fmt yuv420p ");
                     break;
@@ -135,11 +139,9 @@ namespace ScreenCaptureLib
 
             if (Duration > 0)
             {
+                // duration limit
                 args.AppendFormat("-t {0} ", Duration);
             }
-
-            // -y for overwrite file
-            args.Append("-y ");
 
             args.AppendFormat("\"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
 

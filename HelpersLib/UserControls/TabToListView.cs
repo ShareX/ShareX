@@ -107,6 +107,8 @@ namespace HelpersLib
                                 lvi.Group = lvg;
                                 lvMain.Items.Add(lvi);
                             }
+
+                            tab2.TabPages.Clear();
                         }
                     }
                 }
