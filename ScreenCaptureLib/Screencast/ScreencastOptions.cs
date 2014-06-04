@@ -77,8 +77,10 @@ namespace ScreenCaptureLib
 
                 return commands;
             }
-
-            return GetFFmpegArgs();
+            else
+            {
+                return GetFFmpegArgs();
+            }
         }
 
         private string GetFFmpegArgs()

@@ -338,15 +338,15 @@ namespace ScreenCaptureLib
             Options.FFmpeg.UseCustomCommands = cbCustomCommands.Checked;
             txtCommandLinePreview.ReadOnly = !Options.FFmpeg.UseCustomCommands;
 
-            if (!Options.FFmpeg.UseCustomCommands)
-            {
-                txtCommandLinePreview.Text = Options.GetFFmpegCommands();
-            }
+            txtCommandLinePreview.Text = Options.FFmpeg.UseCustomCommands ? Options.FFmpeg.CustomCommands : Options.GetFFmpegCommands();
         }
 
         private void txtCommandLinePreview_TextChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
+            if (cbCustomCommands.Checked)
+            {
+                Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
+            }
         }
     }
 }
