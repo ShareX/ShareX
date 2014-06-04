@@ -66,8 +66,7 @@ namespace ScreenCaptureLib
                 int lastIndex = commands.LastIndexOf('"');
                 if (lastIndex >= 0)
                 {
-                    commands = commands.Remove(lastIndex);
-                    lastIndex = commands.LastIndexOf('"');
+                    lastIndex = commands.LastIndexOf('"', lastIndex - 1);
                     if (lastIndex >= 0)
                     {
                         commands = commands.Remove(lastIndex);

@@ -52,11 +52,12 @@ namespace HelpersLib
                 psi.WorkingDirectory = Path.GetDirectoryName(path);
 
                 process.EnableRaisingEvents = true;
-                process.OutputDataReceived += cli_OutputDataReceived;
-                process.ErrorDataReceived += cli_ErrorDataReceived;
+                if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
+                if (psi.RedirectStandardError) process.ErrorDataReceived += cli_ErrorDataReceived;
                 process.StartInfo = psi;
                 process.Start();
-                process.BeginErrorReadLine();
+                if (psi.RedirectStandardOutput) process.BeginOutputReadLine();
+                if (psi.RedirectStandardError) process.BeginErrorReadLine();
                 process.WaitForExit();
                 return process.ExitCode;
             }
