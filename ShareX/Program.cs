@@ -312,6 +312,7 @@ namespace ShareX
                 DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
                 DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
                 DebugHelper.WriteLine("Personal path: " + PersonalPath);
+                DebugHelper.WriteLine("Git: https://github.com/ShareX/ShareX/tree/" + GetGitHash());
 
                 SettingsResetEvent = new ManualResetEvent(false);
                 UploaderSettingsResetEvent = new ManualResetEvent(false);
@@ -542,6 +543,15 @@ namespace ShareX
             {
                 if (uploaderConfigWatcher != null) uploaderConfigWatcher.EnableRaisingEvents = true;
             });
+        }
+
+        public static string GetGitHash()
+        {
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ShareX.GitHash.txt"))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return reader.ReadLine();
+            }
         }
     }
 }

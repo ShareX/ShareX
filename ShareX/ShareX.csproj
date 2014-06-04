@@ -495,6 +495,7 @@
     <None Include="Resources\application-wave.png" />
     <None Include="Resources\barcode-2d.png" />
     <None Include="Resources\GitHub.png" />
+    <EmbeddedResource Include="GitHash.txt" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />
@@ -520,8 +521,7 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>%25git%25 rev-parse HEAD &gt; "$(ProjectDir)GitHash.txt"</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

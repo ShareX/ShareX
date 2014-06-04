@@ -110,3 +110,4 @@ UpgradeLog*.XML
 # Additional
 InnoSetup/Output/
 UploadersLib/APIKeys/APIKeysLocal.cs
+ShareX/GitHash.txt
