@@ -48,28 +48,30 @@ namespace ScreenCaptureLib
 
         public string GetFFmpegCommands()
         {
-            if (!string.IsNullOrEmpty(FFmpeg.VideoSource) && !FFmpeg.VideoSource.Equals(FFmpegHelper.GDIgrab, StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(FFmpeg.VideoSource) && FFmpeg.VideoSource.Equals("screen-capture-recorder", StringComparison.InvariantCultureIgnoreCase))
             {
-                // https://github.com/rdp/screen-capture-recorder-to-video-windows-free configuration section
-                string dshowRegistryPath = "Software\\screen-capture-recorder";
-                RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_x", CaptureArea.X);
-                RegistryHelpers.CreateRegistry(dshowRegistryPath, "start_y", CaptureArea.Y);
-                RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_width", CaptureArea.Width);
-                RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_height", CaptureArea.Height);
-                RegistryHelpers.CreateRegistry(dshowRegistryPath, "default_max_fps", ScreenRecordFPS);
-                RegistryHelpers.CreateRegistry(dshowRegistryPath, "capture_mouse_default_1", DrawCursor ? 1 : 0);
+                // https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+                string registryPath = "Software\\screen-capture-recorder";
+                RegistryHelpers.CreateRegistry(registryPath, "start_x", CaptureArea.X);
+                RegistryHelpers.CreateRegistry(registryPath, "start_y", CaptureArea.Y);
+                RegistryHelpers.CreateRegistry(registryPath, "capture_width", CaptureArea.Width);
+                RegistryHelpers.CreateRegistry(registryPath, "capture_height", CaptureArea.Height);
+                RegistryHelpers.CreateRegistry(registryPath, "default_max_fps", ScreenRecordFPS);
+                RegistryHelpers.CreateRegistry(registryPath, "capture_mouse_default_1", DrawCursor ? 1 : 0);
             }
 
-            if (FFmpeg.UseCustomCommands)
+            if (FFmpeg.UseCustomCommands && !string.IsNullOrEmpty(FFmpeg.CustomCommands))
             {
-                string commands = FFmpeg.CustomCommands;
-                int lastIndex = commands.LastIndexOf('"');
-                if (lastIndex >= 0)
+                string commands = FFmpeg.CustomCommands.Trim();
+
+                // Replace output path
+                if (commands[commands.Length - 1] == '"')
                 {
-                    lastIndex = commands.LastIndexOf('"', lastIndex - 1);
-                    if (lastIndex >= 0)
+                    int index = commands.LastIndexOf('"', commands.Length - 2);
+
+                    if (index >= 0)
                     {
-                        commands = commands.Remove(lastIndex);
+                        commands = commands.Remove(index);
                         commands += string.Format("\"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
                     }
                 }

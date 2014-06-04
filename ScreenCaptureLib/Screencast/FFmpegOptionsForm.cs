@@ -41,9 +41,7 @@ namespace ScreenCaptureLib
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
-
             Icon = ShareXResources.Icon;
-            Text = string.Format("{0} - FFmpeg Options", Application.ProductName);
 
             Options = options;
 
@@ -292,6 +290,7 @@ namespace ScreenCaptureLib
                     RefreshSourcesAsync();
                     UpdateUI();
                 });
+
                 MessageBox.Show("Successfully downloaded FFmpeg.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

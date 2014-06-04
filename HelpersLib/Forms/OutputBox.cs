@@ -43,5 +43,13 @@ namespace HelpersLib
             txtText.SelectionStart = txtText.TextLength;
             txtText.ScrollToCaret();
         }
+
+        private void txtText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

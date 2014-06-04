@@ -50,6 +50,7 @@
             this.btnFFmpegBrowse = new System.Windows.Forms.Button();
             this.txtFFmpegPath = new System.Windows.Forms.TextBox();
             this.gbCommandLinePreview = new System.Windows.Forms.GroupBox();
+            this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             this.txtCommandLinePreview = new System.Windows.Forms.TextBox();
             this.gbCommandLineArgs = new System.Windows.Forms.GroupBox();
             this.btnFFmpegHelp = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@
             this.gbContainer = new System.Windows.Forms.GroupBox();
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.cbShowError = new System.Windows.Forms.CheckBox();
-            this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -181,12 +181,12 @@
             // 
             this.nudVPxCRF.Location = new System.Drawing.Point(56, 12);
             this.nudVPxCRF.Maximum = new decimal(new int[] {
-            15,
+            63,
             0,
             0,
             0});
             this.nudVPxCRF.Minimum = new decimal(new int[] {
-            1,
+            4,
             0,
             0,
             0});
@@ -287,7 +287,7 @@
             this.cboVideoCodec.FormattingEnabled = true;
             this.cboVideoCodec.Location = new System.Drawing.Point(88, 22);
             this.cboVideoCodec.Name = "cboVideoCodec";
-            this.cboVideoCodec.Size = new System.Drawing.Size(136, 21);
+            this.cboVideoCodec.Size = new System.Drawing.Size(88, 21);
             this.cboVideoCodec.TabIndex = 1;
             this.cboVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cboVideoCodec_SelectedIndexChanged);
             // 
@@ -360,6 +360,17 @@
             this.gbCommandLinePreview.TabIndex = 10;
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
+            // 
+            // cbCustomCommands
+            // 
+            this.cbCustomCommands.AutoSize = true;
+            this.cbCustomCommands.Location = new System.Drawing.Point(280, 0);
+            this.cbCustomCommands.Name = "cbCustomCommands";
+            this.cbCustomCommands.Size = new System.Drawing.Size(136, 17);
+            this.cbCustomCommands.TabIndex = 1;
+            this.cbCustomCommands.Text = "Use custom commands";
+            this.cbCustomCommands.UseVisualStyleBackColor = true;
+            this.cbCustomCommands.CheckedChanged += new System.EventHandler(this.cbCustomCommands_CheckedChanged);
             // 
             // txtCommandLinePreview
             // 
@@ -562,7 +573,7 @@
             this.cboVideoSource.FormattingEnabled = true;
             this.cboVideoSource.Location = new System.Drawing.Point(88, 22);
             this.cboVideoSource.Name = "cboVideoSource";
-            this.cboVideoSource.Size = new System.Drawing.Size(136, 21);
+            this.cboVideoSource.Size = new System.Drawing.Size(184, 21);
             this.cboVideoSource.TabIndex = 1;
             this.cboVideoSource.SelectedIndexChanged += new System.EventHandler(this.cboVideoSource_SelectedIndexChanged);
             // 
@@ -581,7 +592,7 @@
             this.cboAudioSource.FormattingEnabled = true;
             this.cboAudioSource.Location = new System.Drawing.Point(88, 52);
             this.cboAudioSource.Name = "cboAudioSource";
-            this.cboAudioSource.Size = new System.Drawing.Size(136, 21);
+            this.cboAudioSource.Size = new System.Drawing.Size(184, 21);
             this.cboAudioSource.TabIndex = 3;
             this.cboAudioSource.SelectedIndexChanged += new System.EventHandler(this.cboAudioSource_SelectedIndexChanged);
             // 
@@ -600,7 +611,7 @@
             this.cboAudioCodec.FormattingEnabled = true;
             this.cboAudioCodec.Location = new System.Drawing.Point(88, 52);
             this.cboAudioCodec.Name = "cboAudioCodec";
-            this.cboAudioCodec.Size = new System.Drawing.Size(136, 21);
+            this.cboAudioCodec.Size = new System.Drawing.Size(88, 21);
             this.cboAudioCodec.TabIndex = 3;
             this.cboAudioCodec.SelectedIndexChanged += new System.EventHandler(this.cboAudioCodec_SelectedIndexChanged);
             // 
@@ -621,7 +632,7 @@
             this.gbSource.Controls.Add(this.lblAudioSource);
             this.gbSource.Location = new System.Drawing.Point(8, 8);
             this.gbSource.Name = "gbSource";
-            this.gbSource.Size = new System.Drawing.Size(232, 88);
+            this.gbSource.Size = new System.Drawing.Size(280, 88);
             this.gbSource.TabIndex = 1;
             this.gbSource.TabStop = false;
             this.gbSource.Text = "Sources";
@@ -632,9 +643,9 @@
             this.gbCodecs.Controls.Add(this.lblAudioCodec);
             this.gbCodecs.Controls.Add(this.cboVideoCodec);
             this.gbCodecs.Controls.Add(this.lblCodec);
-            this.gbCodecs.Location = new System.Drawing.Point(248, 8);
+            this.gbCodecs.Location = new System.Drawing.Point(296, 8);
             this.gbCodecs.Name = "gbCodecs";
-            this.gbCodecs.Size = new System.Drawing.Size(232, 88);
+            this.gbCodecs.Size = new System.Drawing.Size(184, 88);
             this.gbCodecs.TabIndex = 2;
             this.gbCodecs.TabStop = false;
             this.gbCodecs.Text = "Codecs";
@@ -652,7 +663,7 @@
             // 
             // btnRefreshSources
             // 
-            this.btnRefreshSources.Location = new System.Drawing.Point(177, 4);
+            this.btnRefreshSources.Location = new System.Drawing.Point(225, 4);
             this.btnRefreshSources.Name = "btnRefreshSources";
             this.btnRefreshSources.Size = new System.Drawing.Size(56, 23);
             this.btnRefreshSources.TabIndex = 0;
@@ -665,22 +676,11 @@
             this.cbShowError.AutoSize = true;
             this.cbShowError.Location = new System.Drawing.Point(9, 424);
             this.cbShowError.Name = "cbShowError";
-            this.cbShowError.Size = new System.Drawing.Size(295, 17);
+            this.cbShowError.Size = new System.Drawing.Size(274, 17);
             this.cbShowError.TabIndex = 11;
-            this.cbShowError.Text = "If recording or encoding fail then show error message box";
+            this.cbShowError.Text = "If recording or encoding fails then show error window";
             this.cbShowError.UseVisualStyleBackColor = true;
             this.cbShowError.CheckedChanged += new System.EventHandler(this.cbShowError_CheckedChanged);
-            // 
-            // cbCustomCommands
-            // 
-            this.cbCustomCommands.AutoSize = true;
-            this.cbCustomCommands.Location = new System.Drawing.Point(280, 0);
-            this.cbCustomCommands.Name = "cbCustomCommands";
-            this.cbCustomCommands.Size = new System.Drawing.Size(136, 17);
-            this.cbCustomCommands.TabIndex = 1;
-            this.cbCustomCommands.Text = "Use custom commands";
-            this.cbCustomCommands.UseVisualStyleBackColor = true;
-            this.cbCustomCommands.CheckedChanged += new System.EventHandler(this.cbCustomCommands_CheckedChanged);
             // 
             // FFmpegOptionsForm
             // 
@@ -707,7 +707,7 @@
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FFmpegGUI";
+            this.Text = "ShareX - FFmpeg options";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.FFmpegOptionsForm_HelpButtonClicked);
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();

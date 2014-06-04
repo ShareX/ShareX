@@ -45,6 +45,7 @@
             this.txtText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtText.Size = new System.Drawing.Size(784, 562);
             this.txtText.TabIndex = 0;
+            this.txtText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyUp);
             // 
             // OutputBox
             // 
