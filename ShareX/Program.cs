@@ -312,7 +312,12 @@ namespace ShareX
                 DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
                 DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
                 DebugHelper.WriteLine("Personal path: " + PersonalPath);
-                DebugHelper.WriteLine("Git: https://github.com/ShareX/ShareX/tree/" + GetGitHash());
+
+                string gitHash = GetGitHash();
+                if (!string.IsNullOrEmpty(gitHash))
+                {
+                    DebugHelper.WriteLine("Git: https://github.com/ShareX/ShareX/tree/" + gitHash);
+                }
 
                 SettingsResetEvent = new ManualResetEvent(false);
                 UploaderSettingsResetEvent = new ManualResetEvent(false);

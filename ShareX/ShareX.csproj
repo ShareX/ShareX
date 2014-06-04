@@ -521,7 +521,7 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>%25git%25 rev-parse HEAD &gt; "$(ProjectDir)GitHash.txt"</PreBuildEvent>
+    <PreBuildEvent>"$(ProjectDir)prebuild.cmd" "$(ProjectDir)" "GitHash.txt"</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
