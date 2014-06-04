@@ -246,19 +246,8 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(path) && File.Exists(path))
                 {
-                    if (TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost))
-                    {
-                        UploadManager.UploadFile(path, TaskSettings);
-                    }
-                    else
-                    {
-                        if (TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
-                        {
-                            ClipboardHelpers.CopyText(path);
-                        }
-
-                        TaskHelpers.ShowResultNotifications(path, TaskSettings, path);
-                    }
+                    UploadTask task = UploadTask.CreateFileJobTask(path, TaskSettings);
+                    TaskManager.Start(task);
                 }
             });
         }

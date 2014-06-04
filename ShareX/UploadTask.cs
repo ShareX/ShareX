@@ -108,7 +108,7 @@ namespace ShareX
 
             if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && dataType == EDataType.Image)
             {
-                task.Info.Job = TaskJob.ImageJob;
+                task.Info.Job = TaskJob.Job;
                 task.tempImage = ImageHelpers.LoadImage(filePath);
             }
             else
@@ -124,7 +124,7 @@ namespace ShareX
         {
             UploadTask task = new UploadTask(taskSettings);
 
-            task.Info.Job = TaskJob.ImageJob;
+            task.Info.Job = TaskJob.Job;
             task.Info.DataType = EDataType.Image;
             task.Info.FileName = TaskHelpers.GetImageFilename(taskSettings, image);
             task.tempImage = image;
@@ -148,6 +148,30 @@ namespace ShareX
             task.Info.DataType = EDataType.URL;
             task.Info.FileName = "URL shorten";
             task.Info.Result.URL = url;
+            return task;
+        }
+
+        public static UploadTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
+        {
+            EDataType dataType = Helpers.FindDataType(filePath);
+            UploadTask task = new UploadTask(taskSettings);
+
+            task.Info.DataType = dataType;
+            task.Info.FilePath = filePath;
+
+            if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
+            {
+                string ext = Path.GetExtension(task.Info.FilePath);
+                task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
+            }
+
+            task.Info.Job = TaskJob.Job;
+
+            if (task.Info.IsUploadJob)
+            {
+                task.Data = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            }
+
             return task;
         }
 
@@ -181,7 +205,7 @@ namespace ShareX
 
             switch (Info.Job)
             {
-                case TaskJob.ImageJob:
+                case TaskJob.Job:
                 case TaskJob.TextUpload:
                     Info.Status = "Preparing";
                     break;
@@ -361,9 +385,14 @@ namespace ShareX
 
         private void DoThreadJob()
         {
-            if (Info.Job == TaskJob.ImageJob && tempImage != null)
+            if (Info.Job == TaskJob.Job)
             {
-                DoAfterCaptureJobs();
+                if (tempImage != null)
+                {
+                    DoAfterCaptureJobs();
+                }
+
+                DoFileJobs();
             }
             else if (Info.Job == TaskJob.TextUpload && !string.IsNullOrEmpty(tempText))
             {
@@ -419,8 +448,7 @@ namespace ShareX
                 }
             }
 
-            if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog,
-                AfterCaptureTasks.UploadImageToHost))
+            if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.UploadImageToHost))
             {
                 using (tempImage)
                 {
@@ -487,36 +515,40 @@ namespace ShareX
                             DebugHelper.WriteLine("SaveThumbnailImageToFile: " + Info.ThumbnailFilePath);
                         }
                     }
+                }
+            }
+        }
 
-                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard) && !string.IsNullOrEmpty(Info.FilePath) &&
-                        File.Exists(Info.FilePath))
-                    {
-                        ClipboardHelpers.CopyFile(Info.FilePath);
-                    }
-                    else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard) && !string.IsNullOrEmpty(Info.FilePath))
-                    {
-                        ClipboardHelpers.CopyText(Info.FilePath);
-                    }
+        private void DoFileJobs()
+        {
+            if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
+            {
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard))
+                {
+                    ClipboardHelpers.CopyFile(Info.FilePath);
+                }
+                else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
+                {
+                    ClipboardHelpers.CopyText(Info.FilePath);
+                }
 
-                    if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.ExternalPrograms != null &&
-                        !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
-                    {
-                        var actions = Info.TaskSettings.ExternalPrograms.Where(x => x.IsActive);
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.ExternalPrograms != null)
+                {
+                    var actions = Info.TaskSettings.ExternalPrograms.Where(x => x.IsActive);
 
-                        if (actions.Count() > 0)
+                    if (actions.Count() > 0)
+                    {
+                        if (Data != null)
                         {
-                            if (Data != null)
-                            {
-                                Data.Dispose();
-                            }
-
-                            foreach (ExternalProgram fileAction in actions)
-                            {
-                                fileAction.Run(Info.FilePath);
-                            }
-
-                            Data = new FileStream(Info.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                            Data.Dispose();
                         }
+
+                        foreach (ExternalProgram fileAction in actions)
+                        {
+                            fileAction.Run(Info.FilePath);
+                        }
+
+                        Data = new FileStream(Info.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
                     }
                 }
             }
