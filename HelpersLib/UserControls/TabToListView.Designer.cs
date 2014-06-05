@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.scMain = new System.Windows.Forms.SplitContainer();
+            this.tcMain = new System.Windows.Forms.TabControl();
             this.lvMain = new HelpersLib.MyListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tcMain = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -59,12 +59,22 @@
             this.scMain.SplitterWidth = 3;
             this.scMain.TabIndex = 0;
             // 
+            // tcMain
+            // 
+            this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcMain.Location = new System.Drawing.Point(0, 0);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Size = new System.Drawing.Size(460, 500);
+            this.tcMain.TabIndex = 0;
+            // 
             // lvMain
             // 
             this.lvMain.AutoFillColumn = true;
             this.lvMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2});
             this.lvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lvMain.FullRowSelect = true;
             this.lvMain.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvMain.HideSelection = false;
@@ -76,15 +86,7 @@
             this.lvMain.UseCompatibleStateImageBehavior = false;
             this.lvMain.View = System.Windows.Forms.View.Details;
             this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMain_SelectedIndexChanged);
-            // 
-            // tcMain
-            // 
-            this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMain.Location = new System.Drawing.Point(0, 0);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(460, 500);
-            this.tcMain.TabIndex = 0;
+            this.lvMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvMain_MouseUp);
             // 
             // TabToListView
             // 
