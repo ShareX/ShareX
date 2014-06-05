@@ -25,10 +25,6 @@
 
 namespace UploadersLib
 {
-    /////////////////////////////////////////////////////////////////////////////
-    // Note: For be able to compile project create empty APIKeysLocal.cs file. //
-    /////////////////////////////////////////////////////////////////////////////
-
     public static partial class APIKeys
     {
         // Image Uploaders
@@ -47,6 +43,8 @@ namespace UploadersLib
         // File Uploaders
         public static string DropboxConsumerKey = "";
         public static string DropboxConsumerSecret = "";
+        public static string CopyConsumerKey = "";
+        public static string CopyConsumerSecret = "";
         public static string MinusConsumerKey = "";
         public static string MinusConsumerSecret = "";
         public static string BoxClientID = "";

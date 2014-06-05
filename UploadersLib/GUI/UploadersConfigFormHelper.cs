@@ -546,6 +546,103 @@ namespace UploadersLib
 
         #endregion Dropbox
 
+        #region Copy
+
+        public void CopyAuthOpen()
+        {
+            try
+            {
+                OAuthInfo oauth = new OAuthInfo(APIKeys.CopyConsumerKey, APIKeys.CopyConsumerSecret);
+
+                string url = new Copy(oauth).GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    Config.CopyOAuthInfo = oauth;
+                    Helpers.OpenURL(url);
+                    DebugHelper.WriteLine("CopyAuthOpen - Authorization URL is opened: " + url);
+                }
+                else
+                {
+                    DebugHelper.WriteLine("CopyAuthOpen - Authorization URL is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void CopyAuthComplete(string code)
+        {
+            try
+            {
+                if (Config.CopyOAuthInfo != null && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthToken) 
+                    && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthSecret) && !string.IsNullOrEmpty(code))
+                {
+                    Copy copy = new Copy(Config.CopyOAuthInfo);
+                    bool result = copy.GetAccessToken(code);
+
+                    if (result)
+                    {
+                        CopyAccountInfo account = copy.GetAccountInfo();
+
+                        if (account != null)
+                        {
+                            Config.CopyAccountInfo = account;
+                            Config.CopyUploadPath = txtCopyPath.Text;
+                            UpdateCopyStatus();
+                            MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
+                        MessageBox.Show("GetAccountInfo failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You must gain access from the Authorize page and copy the verification code into the box first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                Config.CopyOAuthInfo = null;
+                UpdateCopyStatus();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateCopyStatus()
+        {
+            if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo) && Config.CopyAccountInfo != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Login status: Successful");
+                sb.AppendLine("Email: " + Config.CopyAccountInfo.email);
+                sb.AppendLine("Name: " + Config.CopyAccountInfo.first_name + " " + Config.CopyAccountInfo.last_name);
+                sb.AppendLine("User ID: " + Config.CopyAccountInfo.id.ToString());
+                sb.AppendLine("Upload path: " + GetCopyUploadPath());
+                lblCopyStatus.Text = sb.ToString();
+            }
+            else
+            {
+                lblCopyStatus.Text = "Login status: Authorize required";
+            }
+        }
+
+        private string GetCopyUploadPath()
+        {
+            return new NameParser(NameParserType.URL).Parse(Copy.TidyUploadPath(Config.CopyUploadPath));
+        }
+
+        #endregion Copy
+
         #region Amazon S3
 
         private void UpdateAmazonS3Status()

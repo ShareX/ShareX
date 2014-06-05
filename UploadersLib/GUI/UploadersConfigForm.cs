@@ -83,6 +83,7 @@ namespace UploadersLib
             uploadersImageList.Images.Add("TwitSnaps", Resources.TwitSnaps);
             uploadersImageList.Images.Add("YFrog", Resources.YFrog);
             uploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
+            uploadersImageList.Images.Add("Copy", Resources.Copy);
             uploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
             uploadersImageList.Images.Add("Box", Resources.Box);
             uploadersImageList.Images.Add("Minus", Resources.Minus);
@@ -116,6 +117,7 @@ namespace UploadersLib
             tpTwitSnaps.ImageKey = "TwitSnaps";
             tpYFrog.ImageKey = "YFrog";
             tpDropbox.ImageKey = "Dropbox";
+            tpCopy.ImageKey = "Copy";
             tpGoogleDrive.ImageKey = "GoogleDrive";
             tpBox.ImageKey = "Box";
             tpMinus.ImageKey = "Minus";
@@ -292,6 +294,16 @@ namespace UploadersLib
             cbDropboxURLType.Items.AddRange(Helpers.GetEnumNamesProper<DropboxURLType>());
             cbDropboxURLType.SelectedIndex = (int)Config.DropboxURLType;
             UpdateDropboxStatus();
+
+            // Copy
+
+            txtCopyPath.Text = Config.CopyUploadPath;
+
+            if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo))
+            {
+                oAuthCopy.Status = "Login successful.";
+                oAuthCopy.LoginStatus = true;
+            }
 
             // Google Drive
 
@@ -951,6 +963,36 @@ namespace UploadersLib
         }
 
         #endregion Dropbox
+
+        #region Copy
+
+        private void pbCopyLogo_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenURL("https://copy.com");
+        }
+
+        private void btnCopyRegister_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenURL("https://copy.com?r=hC3DMW");
+        }
+
+        private void txtCopyPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.CopyUploadPath = txtCopyPath.Text;
+            UpdateCopyStatus();
+        }
+
+        private void oAuthCopy_OpenButtonClicked()
+        {
+            CopyAuthOpen();
+        }
+
+        private void oAuthCopy_CompleteButtonClicked(string code)
+        {
+            CopyAuthComplete(code);
+        }
+
+        #endregion Copy
 
         #region Google Drive
 
