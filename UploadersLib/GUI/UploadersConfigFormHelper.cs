@@ -625,7 +625,6 @@ namespace UploadersLib
             if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo) && Config.CopyAccountInfo != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Login status: Successful");
                 sb.AppendLine("Email: " + Config.CopyAccountInfo.email);
                 sb.AppendLine("Name: " + Config.CopyAccountInfo.first_name + " " + Config.CopyAccountInfo.last_name);
                 sb.AppendLine("User ID: " + Config.CopyAccountInfo.id.ToString());
@@ -634,7 +633,7 @@ namespace UploadersLib
             }
             else
             {
-                lblCopyStatus.Text = "Login status: Authorize required";
+                lblCopyStatus.Text = string.Empty;
             }
         }
 

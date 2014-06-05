@@ -304,6 +304,7 @@ namespace UploadersLib
             }
 
             txtCopyPath.Text = Config.CopyUploadPath;
+            UpdateCopyStatus();
 
             // Google Drive
 
