@@ -74,7 +74,7 @@ namespace HelpersLib
             }
             set
             {
-                lvMain.SmallImageList = value;
+                lvMain.SmallImageList = tcMain.ImageList = value;
             }
         }
 
@@ -143,13 +143,15 @@ namespace HelpersLib
         {
             if (lvMain.SelectedItems.Count > 0)
             {
-                TabPage tabPage = lvMain.SelectedItems[0].Tag as TabPage;
+                ListViewItem lvi = lvMain.SelectedItems[0];
+                TabPage tabPage = lvi.Tag as TabPage;
 
-                if (tabPage != null)
+                if (tabPage != null && !tcMain.TabPages.Contains(tabPage))
                 {
-                    tcMain.Visible = true;
                     tcMain.TabPages.Clear();
                     tcMain.TabPages.Add(tabPage);
+                    // Need to set ImageKey again otherwise icon not show up
+                    tabPage.ImageKey = lvi.ImageKey;
                     lvMain.Focus();
                 }
             }

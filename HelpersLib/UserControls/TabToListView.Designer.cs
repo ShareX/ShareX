@@ -74,6 +74,7 @@
             this.lvMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2});
             this.lvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lvMain.FullRowSelect = true;
             this.lvMain.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvMain.HideSelection = false;
