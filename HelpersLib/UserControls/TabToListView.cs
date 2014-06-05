@@ -120,9 +120,28 @@ namespace HelpersLib
             }
         }
 
+        private void lvMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (lvMain.SelectedItems.Count == 0 && (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right))
+            {
+                ListViewItem lvi = lvMain.GetItemAt(e.X, e.Y);
+
+                if (lvi == null)
+                {
+                    // Workaround for 1px space between items
+                    lvi = lvMain.GetItemAt(e.X, e.Y - 1);
+                }
+
+                if (lvi != null)
+                {
+                    lvi.Selected = true;
+                }
+            }
+        }
+
         private void lvMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvMain.SelectedItems != null && lvMain.SelectedItems.Count > 0)
+            if (lvMain.SelectedItems.Count > 0)
             {
                 TabPage tabPage = lvMain.SelectedItems[0].Tag as TabPage;
 
@@ -131,6 +150,7 @@ namespace HelpersLib
                     tcMain.Visible = true;
                     tcMain.TabPages.Clear();
                     tcMain.TabPages.Add(tabPage);
+                    lvMain.Focus();
                 }
             }
         }
