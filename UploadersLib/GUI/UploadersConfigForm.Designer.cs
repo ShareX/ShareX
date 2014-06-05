@@ -129,12 +129,12 @@
             this.btnDropboxOpenAuthorize = new System.Windows.Forms.Button();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.tpCopy = new System.Windows.Forms.TabPage();
-            this.oAuthCopy = new UploadersLib.GUI.OAuth2Control();
             this.pbCopyLogo = new System.Windows.Forms.PictureBox();
             this.btnCopyRegister = new System.Windows.Forms.Button();
             this.lblCopyStatus = new System.Windows.Forms.Label();
             this.lblCopyPath = new System.Windows.Forms.Label();
             this.txtCopyPath = new System.Windows.Forms.TextBox();
+            this.oAuthCopy = new UploadersLib.GUI.OAuth2Control();
             this.tpFTP = new System.Windows.Forms.TabPage();
             this.btnFtpClient = new System.Windows.Forms.Button();
             this.btnFTPExport = new System.Windows.Forms.Button();
@@ -1476,18 +1476,6 @@
             this.tpCopy.Text = "Copy";
             this.tpCopy.UseVisualStyleBackColor = true;
             // 
-            // oAuthCopy
-            // 
-            this.oAuthCopy.IsRefreshable = false;
-            this.oAuthCopy.Location = new System.Drawing.Point(16, 99);
-            this.oAuthCopy.LoginStatus = false;
-            this.oAuthCopy.Name = "oAuthCopy";
-            this.oAuthCopy.Size = new System.Drawing.Size(328, 173);
-            this.oAuthCopy.Status = "Status: Login required.";
-            this.oAuthCopy.TabIndex = 2;
-            this.oAuthCopy.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
-            this.oAuthCopy.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
-            // 
             // pbCopyLogo
             // 
             this.pbCopyLogo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1529,11 +1517,23 @@
             // 
             // txtCopyPath
             // 
-            this.txtCopyPath.Location = new System.Drawing.Point(81, 272);
+            this.txtCopyPath.Location = new System.Drawing.Point(88, 272);
             this.txtCopyPath.Name = "txtCopyPath";
             this.txtCopyPath.Size = new System.Drawing.Size(272, 20);
             this.txtCopyPath.TabIndex = 4;
             this.txtCopyPath.TextChanged += new System.EventHandler(this.txtCopyPath_TextChanged);
+            // 
+            // oAuthCopy
+            // 
+            this.oAuthCopy.IsRefreshable = false;
+            this.oAuthCopy.Location = new System.Drawing.Point(16, 99);
+            this.oAuthCopy.LoginStatus = false;
+            this.oAuthCopy.Name = "oAuthCopy";
+            this.oAuthCopy.Size = new System.Drawing.Size(328, 173);
+            this.oAuthCopy.Status = "Status: Login required.";
+            this.oAuthCopy.TabIndex = 2;
+            this.oAuthCopy.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
+            this.oAuthCopy.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
             // 
             // tpFTP
             // 

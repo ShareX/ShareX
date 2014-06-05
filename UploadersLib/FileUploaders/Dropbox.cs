@@ -37,7 +37,6 @@ namespace UploadersLib.FileUploaders
     {
         public OAuthInfo AuthInfo { get; set; }
         public DropboxAccountInfo AccountInfo { get; set; }
-
         public string UploadPath { get; set; }
         public bool AutoCreateShareableLink { get; set; }
         public DropboxURLType ShareURLType { get; set; }

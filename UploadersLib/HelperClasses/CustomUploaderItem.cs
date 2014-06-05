@@ -76,8 +76,7 @@ namespace UploadersLib
                     value = value.Replace("$input$", input);
                 }
 
-                NameParser parser = new NameParser(NameParserType.Text);
-                value = parser.Parse(value);
+                value = NameParser.Parse(NameParserType.Text, value);
 
                 arguments.Add(arg.Key, value);
             }

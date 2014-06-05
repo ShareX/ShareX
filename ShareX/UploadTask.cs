@@ -806,21 +806,17 @@ namespace ShareX
             switch (fileDestination)
             {
                 case FileDestination.Dropbox:
-                    NameParser parser = new NameParser(NameParserType.URL);
-                    string uploadPath = parser.Parse(Dropbox.TidyUploadPath(Program.UploadersConfig.DropboxUploadPath));
                     fileUploader = new Dropbox(Program.UploadersConfig.DropboxOAuthInfo, Program.UploadersConfig.DropboxAccountInfo)
                     {
-                        UploadPath = uploadPath,
+                        UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(Program.UploadersConfig.DropboxUploadPath)),
                         AutoCreateShareableLink = Program.UploadersConfig.DropboxAutoCreateShareableLink,
                         ShareURLType = Program.UploadersConfig.DropboxURLType
                     };
                     break;
                 case FileDestination.Copy:
-                    parser = new NameParser(NameParserType.URL);
-                    uploadPath = parser.Parse(Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath));
                     fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
                     {
-                        UploadPath = uploadPath
+                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath))
                     };
                     break;
                 case FileDestination.GoogleDrive:

@@ -297,13 +297,13 @@ namespace UploadersLib
 
             // Copy
 
-            txtCopyPath.Text = Config.CopyUploadPath;
-
             if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo))
             {
                 oAuthCopy.Status = "Login successful.";
                 oAuthCopy.LoginStatus = true;
             }
+
+            txtCopyPath.Text = Config.CopyUploadPath;
 
             // Google Drive
 

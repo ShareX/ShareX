@@ -108,12 +108,11 @@ namespace HelpersLib
     {
         public NameParserType Type { get; private set; }
         public int MaxNameLength { get; set; }
+        public int MaxTitleLength { get; set; }
         public int AutoIncrementNumber { get; set; } // %i
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
         public string ProcessName { get; set; } // %pn
-        public int MaxTitleLength { get; set; }
-        public DateTime CustomDate { get; set; }
 
         protected NameParser()
         {
@@ -122,6 +121,11 @@ namespace HelpersLib
         public NameParser(NameParserType nameParserType)
         {
             Type = nameParserType;
+        }
+
+        public static string Parse(NameParserType nameParserType, string pattern)
+        {
+            return new NameParser(nameParserType).Parse(pattern);
         }
 
         public string Parse(string pattern)
@@ -160,10 +164,6 @@ namespace HelpersLib
             sb.Replace(ReplacementVariables.height.ToPrefixString(), height);
 
             DateTime dt = DateTime.Now;
-            if (CustomDate != DateTime.MinValue)
-            {
-                dt = CustomDate;
-            }
 
             sb.Replace(ReplacementVariables.mon2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(dt.Month))
                 .Replace(ReplacementVariables.mon.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dt.Month))

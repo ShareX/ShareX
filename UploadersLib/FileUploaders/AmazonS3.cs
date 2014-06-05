@@ -99,9 +99,8 @@ namespace UploadersLib.FileUploaders
 
         private string GetObjectKey(string fileName)
         {
-            NameParser parser = new NameParser(NameParserType.FolderPath);
-            string objectPrefix = S3Settings.ObjectPrefix.Trim('/');
-            return Helpers.CombineURL(parser.Parse(objectPrefix), fileName);
+            string objectPrefix = NameParser.Parse(NameParserType.FolderPath, S3Settings.ObjectPrefix.Trim('/'));
+            return Helpers.CombineURL(objectPrefix, fileName);
         }
 
         private string GetObjectURL(string objectName)

@@ -541,7 +541,7 @@ namespace UploadersLib
 
         private string GetDropboxUploadPath()
         {
-            return new NameParser(NameParserType.URL).Parse(Dropbox.TidyUploadPath(Config.DropboxUploadPath));
+            return NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(Config.DropboxUploadPath));
         }
 
         #endregion Dropbox
@@ -577,8 +577,8 @@ namespace UploadersLib
         {
             try
             {
-                if (Config.CopyOAuthInfo != null && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthToken) 
-                    && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthSecret) && !string.IsNullOrEmpty(code))
+                if (Config.CopyOAuthInfo != null && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthToken) &&
+                    !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthSecret) && !string.IsNullOrEmpty(code))
                 {
                     Copy copy = new Copy(Config.CopyOAuthInfo);
                     bool result = copy.GetAccessToken(code);
@@ -592,6 +592,7 @@ namespace UploadersLib
                             Config.CopyAccountInfo = account;
                             Config.CopyUploadPath = txtCopyPath.Text;
                             UpdateCopyStatus();
+                            oAuthCopy.Status = "Login successful.";
                             MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
@@ -600,6 +601,7 @@ namespace UploadersLib
                     }
                     else
                     {
+                        oAuthCopy.Status = "Login failed.";
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -638,7 +640,7 @@ namespace UploadersLib
 
         private string GetCopyUploadPath()
         {
-            return new NameParser(NameParserType.URL).Parse(Copy.TidyUploadPath(Config.CopyUploadPath));
+            return NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Config.CopyUploadPath));
         }
 
         #endregion Copy

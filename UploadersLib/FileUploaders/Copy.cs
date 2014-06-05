@@ -38,7 +38,6 @@ namespace UploadersLib.FileUploaders
     {
         public OAuthInfo AuthInfo { get; set; }
         public CopyAccountInfo AccountInfo { get; set; }
-
         public string UploadPath { get; set; }
 
         private const string APIVersion = "1";
@@ -60,9 +59,7 @@ namespace UploadersLib.FileUploaders
         private const string URLAuthorize = "https://www.copy.com/applications/authorize";
         private const string URLAccessToken = "https://api.copy.com/oauth/access";
 
-        private readonly NameValueCollection APIHeaders = new NameValueCollection { 
-               { "X-Api-Version", APIVersion }
-        };
+        private readonly NameValueCollection APIHeaders = new NameValueCollection { { "X-Api-Version", APIVersion } };
 
         public Copy(OAuthInfo oauth)
         {
@@ -79,8 +76,7 @@ namespace UploadersLib.FileUploaders
         // https://developers.copy.com/console
         public string GetAuthorizationURL()
         {
-            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo
-               , new Dictionary<string, string> { { "oauth_callback", Links.URL_CALLBACK } });
+            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, new Dictionary<string, string> { { "oauth_callback", Links.URL_CALLBACK } });
         }
 
         public bool GetAccessToken(string verificationCode = null)
@@ -134,7 +130,7 @@ namespace UploadersLib.FileUploaders
         }*/
 
         // https://developers.copy.com/documentation#api-calls/filesystem - Create File or Directory
-            // POST https://api.copy.com/rest/files/PATH/TO/FILE?overwrite=true
+        // POST https://api.copy.com/rest/files/PATH/TO/FILE?overwrite=true
         public UploadResult UploadFile(Stream stream, string path, string fileName)
         {
             if (!OAuthInfo.CheckOAuth(AuthInfo))
@@ -159,6 +155,7 @@ namespace UploadersLib.FileUploaders
 
                 if (content != null)
                 {
+                    AllowReportProgress = false;
                     result.URL = CreatePublicURL(content.objects[0].path);
                 }
             }
@@ -343,12 +340,13 @@ namespace UploadersLib.FileUploaders
             return UploadFile(stream, UploadPath, fileName);
         }
 
-        /* Link types:
-         * Shortened: http://copy.com/BWr9OswktCLl
-         * Extended: http://www.copy.com/s/BWr9OswktCLl/2014-06-05_17-00-01.mp4
-         * Direct: http://copy.com/BWr9OswktCLl/2014-06-05_17-00-01.mp4
-         */
-        public string CreatePublicURL(string path)
+        /// <summary>
+        /// Link types:
+        /// Shortened: http://copy.com/BWr9OswktCLl
+        /// Extended: http://www.copy.com/s/BWr9OswktCLl/2014-06-05_17-00-01.mp4
+        /// Direct: http://copy.com/BWr9OswktCLl/2014-06-05_17-00-01.mp4
+        /// </summary>
+        public string CreatePublicURL(string path) // TODO: Add link type parameter
         {
             path = path.Trim('/');
 
@@ -360,7 +358,7 @@ namespace UploadersLib.FileUploaders
             publicLink.@public = true;
             publicLink.name = "ShareX";
             publicLink.paths = new string[] { path };
-            
+
             string content = JsonConvert.SerializeObject(publicLink);
 
             string response = SendRequest(HttpMethod.POST, query, content, null, ResponseType.Text, APIHeaders);
@@ -369,7 +367,8 @@ namespace UploadersLib.FileUploaders
             {
                 return JsonConvert.DeserializeObject<CopyLinksInfo>(response).url_short;
             }
-            return "";
+
+            return string.Empty;
         }
 
         public string GetPublicURL(string path)
@@ -377,14 +376,15 @@ namespace UploadersLib.FileUploaders
             path = path.Trim('/');
 
             CopyContentInfo fileInfo = GetMetadata(path);
-            foreach(CopyLinksInfo link in fileInfo.links)
+            foreach (CopyLinksInfo link in fileInfo.links)
             {
-                if(!link.expired)
+                if (!link.expired)
                 {
                     return link.url_short;
                 }
             }
-            return "";
+
+            return string.Empty;
         }
 
         public static string TidyUploadPath(string uploadPath)
@@ -437,7 +437,7 @@ namespace UploadersLib.FileUploaders
         public string permissions { get; set; }
     }
 
-    public class CopyContentInfo //https://api.copy.com/rest/meta //also works on rest/meta/copy
+    public class CopyContentInfo // https://api.copy.com/rest/meta also works on rest/meta/copy
     {
         public string id { get; set; } // Internal copy name
         public string path { get; set; } // hmm?

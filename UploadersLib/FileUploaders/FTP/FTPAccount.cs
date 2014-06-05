@@ -140,8 +140,7 @@ namespace UploadersLib
 
         public string GetSubFolderPath(string filename = null)
         {
-            NameParser parser = new NameParser(NameParserType.URL);
-            string path = parser.Parse(SubFolderPath.Replace("%host", Host));
+            string path = NameParser.Parse(NameParserType.URL, SubFolderPath.Replace("%host", Host));
             return Helpers.CombineURL(path, filename);
         }
 
@@ -156,8 +155,7 @@ namespace UploadersLib
 
             HttpHomePath = URLHelpers.RemovePrefixes(HttpHomePath);
 
-            NameParser nameParser = new NameParser(NameParserType.URL);
-            return nameParser.Parse(HttpHomePath.Replace("%host", Host));
+            return NameParser.Parse(NameParserType.URL, HttpHomePath.Replace("%host", Host));
         }
 
         public string GetUriPath(string filename)
