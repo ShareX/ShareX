@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>Use a lower-redundancy storage class for stored objects.
+With this option, objects are cheaper to store, but have 99.99% durability, instead of 99.999999999%.
+This means that they may be lost from Amazon S3 at some point.</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>Use this option if you have a bucket set up with a custom domain.
+If text field is empty then bucket name will be used for URL.
+For example, if your bucket is called bucket.example.com then URL will be http://bucket.example.com/...</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbDropboxLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -234,18 +247,92 @@
         cEDOIz9clMt26LAWUUxcLUy92z9hAUk7h0+HDimqY/4fT5V6IeBXOg8AAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>Use this option if you have a bucket set up with a custom domain.
-If text field is empty then bucket name will be used for URL.
-For example, if your bucket is called bucket.example.com then URL will be http://bucket.example.com/...</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Use a lower-redundancy storage class for stored objects.
-With this option, objects are cheaper to store, but have 99.99% durability, instead of 99.999999999%.
-This means that they may be lost from Amazon S3 at some point.</value>
+  <data name="pbCopyLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+        CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+        DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCABAAMkDASIAAhEBAxEB/8QA
+        HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+        MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+        V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+        x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+        BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+        YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+        hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+        8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAopGcKeTS5oAKKKKACiisP4j/ABB0n4WeBdV8
+        Ra5dLZ6Vo1u11cyt/CqjoB3YnAA6kkDqaqMXKSjFXbM61aFKDq1GlGKbbeiSWrbfZHO/EX40x+FPir4N
+        8G2Kx3eueKp5pmjPSzsYIy807Y6ZbZGgPVnPUK2O8QkrzXxb/wAE2vFmqftQ/tEfEz4va1C0Ue2HRNIh
+        JDJZwsTKYR/tRxrb5YY3NNIeM4r7Ur084wKwVdYV/FFLm/xPVr5JpeqZ8vwbns86wUs1WlKpOXsls/Zx
+        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
+</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>72</value>

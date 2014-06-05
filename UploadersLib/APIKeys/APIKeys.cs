@@ -43,6 +43,8 @@ namespace UploadersLib
         // File Uploaders
         public static string DropboxConsumerKey = "";
         public static string DropboxConsumerSecret = "";
+        public static string CopyConsumerKey = "";
+        public static string CopyConsumerSecret = "";
         public static string MinusConsumerKey = "";
         public static string MinusConsumerSecret = "";
         public static string BoxClientID = "";

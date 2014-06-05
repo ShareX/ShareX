@@ -84,6 +84,8 @@ namespace UploadersLib
     {
         [Description("dropbox.com")]
         Dropbox,
+        [Description("copy.com")]
+        Copy,
         [Description("FTP Server")]
         FTP,
         [Description("gfycat.com")]
