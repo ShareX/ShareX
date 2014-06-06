@@ -115,6 +115,12 @@
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="ProxyInfo.cs" />
+    <Compile Include="UserControls\ExportImportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ExportImportControl.Designer.cs">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TablessControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ExportImportControl.resx">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TabToListView.resx">
       <DependentUpon>TabToListView.cs</DependentUpon>

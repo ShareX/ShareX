@@ -168,6 +168,8 @@ namespace UploadersLib
             ucTwitterAccounts.btnTest.Text = "Authorize";
             ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
             ucTwitterAccounts.lbAccounts.SelectedIndexChanged += TwitterAccountSelectedIndexChanged;
+
+            eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
         }
 
         public void LoadSettings(UploadersConfig uploadersConfig)
@@ -1882,14 +1884,14 @@ namespace UploadersLib
             }
         }
 
-        private void btnCustomUploaderExport_Click(object sender, EventArgs e)
+        private object eiCustomUploaders_ExportRequested()
         {
-            ExportCustomUploader();
+            return GetSelectedCustomUploader();
         }
 
-        private void btnCustomUploaderImport_Click(object sender, EventArgs e)
+        private void eiCustomUploaders_ImportRequested(object obj)
         {
-            ImportCustomUploader();
+            AddCustomUploader(obj as CustomUploaderItem);
         }
 
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)

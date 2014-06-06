@@ -162,6 +162,7 @@
             this.tsmiTrayMonitor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWindowRectangle = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRoundedRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayEllipse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTriangle = new System.Windows.Forms.ToolStripMenuItem();
@@ -205,7 +206,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -225,8 +225,8 @@
             this.tsbClipboardUpload,
             this.tsbFileUpload,
             this.tsbDragDropUpload,
-            this.tsddbWorkflows,
             this.tsddbCapture,
+            this.tsddbWorkflows,
             this.tsddbAfterCaptureTasks,
             this.tsddbAfterUploadTasks,
             this.tsddbDestinations,
@@ -1287,8 +1287,8 @@
             this.tsmiTrayClipboardUpload,
             this.tsmiTrayFileUpload,
             this.tsmiTrayDragDropUpload,
-            this.tsmiTrayWorkflows,
             this.tsmiTrayCapture,
+            this.tsmiTrayWorkflows,
             this.tsmiTrayAfterCaptureTasks,
             this.tsmiTrayAfterUploadTasks,
             this.tsmiTrayDestinations,
@@ -1308,7 +1308,7 @@
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(200, 484);
+            this.cmsTray.Size = new System.Drawing.Size(200, 462);
             // 
             // tsmiTrayClipboardUpload
             // 
@@ -1402,6 +1402,14 @@
             this.tsmiTrayWindowRectangle.Size = new System.Drawing.Size(184, 22);
             this.tsmiTrayWindowRectangle.Text = "Rectangle + Window";
             this.tsmiTrayWindowRectangle.Click += new System.EventHandler(this.tsmiTrayWindowRectangle_Click);
+            // 
+            // tsmiTrayRectangleLight
+            // 
+            this.tsmiTrayRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
+            this.tsmiTrayRectangleLight.Name = "tsmiTrayRectangleLight";
+            this.tsmiTrayRectangleLight.Size = new System.Drawing.Size(184, 22);
+            this.tsmiTrayRectangleLight.Text = "Rectangle (Light)";
+            this.tsmiTrayRectangleLight.Click += new System.EventHandler(this.tsmiTrayRectangleLight_Click);
             // 
             // tsmiTrayRoundedRectangle
             // 
@@ -1744,14 +1752,6 @@
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
-            // 
-            // tsmiTrayRectangleLight
-            // 
-            this.tsmiTrayRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
-            this.tsmiTrayRectangleLight.Name = "tsmiTrayRectangleLight";
-            this.tsmiTrayRectangleLight.Size = new System.Drawing.Size(184, 22);
-            this.tsmiTrayRectangleLight.Text = "Rectangle (Light)";
-            this.tsmiTrayRectangleLight.Click += new System.EventHandler(this.tsmiTrayRectangleLight_Click);
             // 
             // MainForm
             // 

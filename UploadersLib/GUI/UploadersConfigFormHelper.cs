@@ -1008,8 +1008,8 @@ namespace UploadersLib
                 };
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-                    FTPAccountManager fam = new FTPAccountManager(Config.FTPAccountList);
-                    fam.Save(dlg.FileName);
+                    //FTPAccountManager fam = new FTPAccountManager(Config.FTPAccountList);
+                    //fam.Save(dlg.FileName);
                 }
             }
         }
@@ -1019,8 +1019,8 @@ namespace UploadersLib
             OpenFileDialog dlg = new OpenFileDialog { Filter = "FTP Accounts(*.json)|*.json" };
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                FTPAccountManager fam = FTPAccountManager.Read(dlg.FileName);
-                FTPSetup(fam.FTPAccounts);
+                //FTPAccountManager fam = FTPAccountManager.Read(dlg.FileName);
+                //FTPSetup(fam.FTPAccounts);
             }
         }
 
@@ -1448,55 +1448,29 @@ namespace UploadersLib
             }
         }
 
-        private void ExportCustomUploader()
+        private CustomUploaderItem GetSelectedCustomUploader()
         {
-            int index = lbCustomUploaderList.SelectedIndex;
-
-            if (index >= 0)
+            if (lbCustomUploaderList.SelectedIndex >= 0)
             {
                 CustomUploaderItem customUploader = GetCustomUploaderFromFields();
 
                 if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
                 {
-                    try
-                    {
-                        string json = JsonConvert.SerializeObject(customUploader, Formatting.Indented);
-                        ClipboardHelpers.CopyText(json);
-                        MessageBox.Show("Selected custom uploader copied to your clipboard.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
+                    return customUploader;
                 }
             }
+
+            return null;
         }
 
-        private void ImportCustomUploader()
+        private void AddCustomUploader(CustomUploaderItem customUploader)
         {
-            if (Clipboard.ContainsText())
+            if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
             {
-                string json = Clipboard.GetText();
-
-                if (!string.IsNullOrEmpty(json))
-                {
-                    try
-                    {
-                        CustomUploaderItem customUploader = JsonConvert.DeserializeObject<CustomUploaderItem>(json);
-
-                        if (customUploader != null && !string.IsNullOrEmpty(customUploader.Name))
-                        {
-                            Config.CustomUploadersList.Add(customUploader);
-                            lbCustomUploaderList.Items.Add(customUploader.Name);
-                            lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
-                            PrepareCustomUploaderList();
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
-                }
+                Config.CustomUploadersList.Add(customUploader);
+                lbCustomUploaderList.Items.Add(customUploader.Name);
+                lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
+                PrepareCustomUploaderList();
             }
         }
 
