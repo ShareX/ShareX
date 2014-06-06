@@ -46,6 +46,9 @@ namespace HelpersLib.UserControls
         public delegate void ImportEventHandler(object obj);
         public event ImportEventHandler ImportRequested;
 
+        public delegate void UploadEventHandler(string json);
+        public static event UploadEventHandler UploadRequested;
+
         // Can't use generic class because not works in form designer
         public Type ObjectType { get; set; }
 
@@ -118,6 +121,21 @@ namespace HelpersLib.UserControls
                             File.WriteAllText(sfd.FileName, json, Encoding.UTF8);
                         }
                     }
+                }
+            }
+        }
+
+        private void tsmiExportUpload_Click(object sender, EventArgs e)
+        {
+            if (ExportRequested != null && UploadRequested != null)
+            {
+                object obj = ExportRequested();
+
+                string json = Export(obj);
+
+                if (!string.IsNullOrEmpty(json))
+                {
+                    UploadRequested(json);
                 }
             }
         }

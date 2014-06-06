@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmsExport = new System.Windows.Forms.ContextMenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.cmsExport = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsImport = new System.Windows.Forms.ContextMenuStrip();
+            this.cmsImport = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportFile = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImport = new HelpersLib.MenuButton();
             this.btnExport = new HelpersLib.MenuButton();
+            this.tsmiExportUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsExport.SuspendLayout();
             this.cmsImport.SuspendLayout();
             this.SuspendLayout();
@@ -44,23 +46,24 @@
             // 
             this.cmsExport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiExportClipboard,
-            this.tsmiExportFile});
+            this.tsmiExportFile,
+            this.tsmiExportUpload});
             this.cmsExport.Name = "cmsExport";
             this.cmsExport.ShowImageMargin = false;
-            this.cmsExport.Size = new System.Drawing.Size(117, 48);
+            this.cmsExport.Size = new System.Drawing.Size(145, 92);
             // 
             // tsmiExportClipboard
             // 
             this.tsmiExportClipboard.Name = "tsmiExportClipboard";
-            this.tsmiExportClipboard.Size = new System.Drawing.Size(116, 22);
-            this.tsmiExportClipboard.Text = "To clipboard";
+            this.tsmiExportClipboard.Size = new System.Drawing.Size(144, 22);
+            this.tsmiExportClipboard.Text = "Copy to clipboard";
             this.tsmiExportClipboard.Click += new System.EventHandler(this.tsmiExportClipboard_Click);
             // 
             // tsmiExportFile
             // 
             this.tsmiExportFile.Name = "tsmiExportFile";
-            this.tsmiExportFile.Size = new System.Drawing.Size(116, 22);
-            this.tsmiExportFile.Text = "To file...";
+            this.tsmiExportFile.Size = new System.Drawing.Size(144, 22);
+            this.tsmiExportFile.Text = "Save to file...";
             this.tsmiExportFile.Click += new System.EventHandler(this.tsmiExportFile_Click);
             // 
             // cmsImport
@@ -94,7 +97,7 @@
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(64, 24);
             this.btnImport.TabIndex = 3;
-            this.btnImport.Text = "Import";
+            this.btnImport.Text = " Import";
             this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImport.UseVisualStyleBackColor = true;
             // 
@@ -106,9 +109,16 @@
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(64, 24);
             this.btnExport.TabIndex = 2;
-            this.btnExport.Text = "Export";
+            this.btnExport.Text = " Export";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExport.UseVisualStyleBackColor = true;
+            // 
+            // tsmiExportUpload
+            // 
+            this.tsmiExportUpload.Name = "tsmiExportUpload";
+            this.tsmiExportUpload.Size = new System.Drawing.Size(144, 22);
+            this.tsmiExportUpload.Text = "Upload as text";
+            this.tsmiExportUpload.Click += new System.EventHandler(this.tsmiExportUpload_Click);
             // 
             // ExportImportControl
             // 
@@ -134,5 +144,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImportFile;
         private MenuButton btnExport;
         private MenuButton btnImport;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExportUpload;
     }
 }

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using HelpersLib.UserControls;
 using HistoryLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
@@ -119,6 +120,8 @@ namespace ShareX
 
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
+
+            ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
         }
 
         private void UpdateWorkflowsMenu()
