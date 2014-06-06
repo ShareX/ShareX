@@ -131,6 +131,7 @@ namespace HelpersLib.UserControls
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
+                    serializer.TypeNameHandling = TypeNameHandling.Auto;
                     return serializer.Deserialize(textReader, ObjectType);
                 }
             }

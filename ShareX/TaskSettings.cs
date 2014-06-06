@@ -250,7 +250,7 @@ namespace ShareX
 
         #region Image / Effects
 
-        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.All)]
+        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
         public List<ImageEffect> ImageEffects = new List<ImageEffect>();
 
         public bool ShowImageEffectsWindowAfterCapture = false;

@@ -488,6 +488,7 @@ namespace ShareX
             {
                 surface.RulerMode = true;
                 surface.Config.QuickCrop = false;
+                surface.Config.ShowInfo = true;
                 surface.Prepare();
                 surface.ShowDialog();
             }

@@ -45,50 +45,5 @@ namespace ImageEffectsLib
 
             return result;
         }
-
-        public static string ExportEffects(List<ImageEffect> imageEffects)
-        {
-            if (imageEffects != null && imageEffects.Count > 0)
-            {
-                try
-                {
-                    JsonSerializerSettings settings = new JsonSerializerSettings
-                    {
-                        Formatting = Formatting.Indented,
-                        TypeNameHandling = TypeNameHandling.Auto
-                    };
-
-                    return JsonConvert.SerializeObject(imageEffects, settings);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
-            }
-
-            return null;
-        }
-
-        public static List<ImageEffect> ImportEffects(string json)
-        {
-            if (!string.IsNullOrEmpty(json))
-            {
-                try
-                {
-                    JsonSerializerSettings settings = new JsonSerializerSettings
-                    {
-                        TypeNameHandling = TypeNameHandling.Auto
-                    };
-
-                    return JsonConvert.DeserializeObject<List<ImageEffect>>(json, settings);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
-            }
-
-            return null;
-        }
     }
 }

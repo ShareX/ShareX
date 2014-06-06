@@ -44,6 +44,7 @@ namespace ImageEffectsLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             DefaultImage = img;
+            eiImageEffects.ObjectType = typeof(List<ImageEffect>);
             AddAllEffectsToTreeView();
 
             if (effects != null)
@@ -314,30 +315,20 @@ namespace ImageEffectsLib
             UpdatePreview();
         }
 
-        private void btnSettingsExport_Click(object sender, EventArgs e)
+        private object eiImageEffects_ExportRequested()
         {
-            List<ImageEffect> imageEffects = GetImageEffects();
+            return GetImageEffects();
+        }
+
+        private void eiImageEffects_ImportRequested(object obj)
+        {
+            List<ImageEffect> imageEffects = obj as List<ImageEffect>;
 
             if (imageEffects != null && imageEffects.Count > 0)
             {
-                string json = ImageEffectManager.ExportEffects(imageEffects);
-                ClipboardHelpers.CopyText(json);
-                MessageBox.Show("Image effects copied to your clipboard.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void btnSettingsImport_Click(object sender, EventArgs e)
-        {
-            if (Clipboard.ContainsText())
-            {
-                string json = Clipboard.GetText();
-                List<ImageEffect> imageEffects = ImageEffectManager.ImportEffects(json);
-                if (imageEffects != null && imageEffects.Count > 0)
-                {
-                    ClearEffects();
-                    AddEffects(imageEffects);
-                    UpdatePreview();
-                }
+                ClearEffects();
+                AddEffects(imageEffects);
+                UpdatePreview();
             }
         }
 

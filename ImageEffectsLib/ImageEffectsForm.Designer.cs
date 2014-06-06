@@ -43,8 +43,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
-            this.btnSettingsExport = new System.Windows.Forms.Button();
-            this.btnSettingsImport = new System.Windows.Forms.Button();
+            this.eiImageEffects = new HelpersLib.UserControls.ExportImportControl();
             this.pbResult = new HelpersLib.MyPictureBox();
             this.SuspendLayout();
             // 
@@ -193,7 +192,7 @@
             // 
             this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLoadImage.AutoSize = true;
-            this.btnLoadImage.Location = new System.Drawing.Point(318, 734);
+            this.btnLoadImage.Location = new System.Drawing.Point(152, 734);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(81, 24);
             this.btnLoadImage.TabIndex = 13;
@@ -206,7 +205,7 @@
             // 
             this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveImage.AutoSize = true;
-            this.btnSaveImage.Location = new System.Drawing.Point(405, 734);
+            this.btnSaveImage.Location = new System.Drawing.Point(240, 734);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(82, 24);
             this.btnSaveImage.TabIndex = 14;
@@ -215,29 +214,15 @@
             this.btnSaveImage.Visible = false;
             this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
             // 
-            // btnSettingsExport
+            // eiImageEffects
             // 
-            this.btnSettingsExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSettingsExport.AutoSize = true;
-            this.btnSettingsExport.Location = new System.Drawing.Point(8, 734);
-            this.btnSettingsExport.Name = "btnSettingsExport";
-            this.btnSettingsExport.Size = new System.Drawing.Size(144, 24);
-            this.btnSettingsExport.TabIndex = 11;
-            this.btnSettingsExport.Text = "Export settings to clipboard";
-            this.btnSettingsExport.UseVisualStyleBackColor = true;
-            this.btnSettingsExport.Click += new System.EventHandler(this.btnSettingsExport_Click);
-            // 
-            // btnSettingsImport
-            // 
-            this.btnSettingsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSettingsImport.AutoSize = true;
-            this.btnSettingsImport.Location = new System.Drawing.Point(158, 734);
-            this.btnSettingsImport.Name = "btnSettingsImport";
-            this.btnSettingsImport.Size = new System.Drawing.Size(154, 24);
-            this.btnSettingsImport.TabIndex = 12;
-            this.btnSettingsImport.Text = "Import settings from clipboard";
-            this.btnSettingsImport.UseVisualStyleBackColor = true;
-            this.btnSettingsImport.Click += new System.EventHandler(this.btnSettingsImport_Click);
+            this.eiImageEffects.Location = new System.Drawing.Point(8, 734);
+            this.eiImageEffects.Name = "eiImageEffects";
+            this.eiImageEffects.ObjectType = null;
+            this.eiImageEffects.Size = new System.Drawing.Size(136, 24);
+            this.eiImageEffects.TabIndex = 17;
+            this.eiImageEffects.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
+            this.eiImageEffects.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
             // 
             // pbResult
             // 
@@ -261,8 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 766);
-            this.Controls.Add(this.btnSettingsImport);
-            this.Controls.Add(this.btnSettingsExport);
+            this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
@@ -305,8 +289,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;
-        private System.Windows.Forms.Button btnSettingsExport;
-        private System.Windows.Forms.Button btnSettingsImport;
+        private HelpersLib.UserControls.ExportImportControl eiImageEffects;
     }
 }
 
