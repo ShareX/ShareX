@@ -523,10 +523,14 @@
   <PropertyGroup>
     <PreBuildEvent>cd $(ProjectDir)
 
-for %25%25x in (git.exe) do if not [%25%25~$PATH:x]==[] (
-git rev-parse HEAD &gt; GitHash.txt
-) else (
-type nul &gt; GitHash.txt
+if $(ConfigurationName) == Release (
+    for %25%25x in (git.exe) do if not [%25%25~$PATH:x]==[] (
+        git rev-parse HEAD &gt; GitHash.txt
+    )
+)
+
+if not exist GitHash.txt (
+    type nul &gt; GitHash.txt
 )</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
