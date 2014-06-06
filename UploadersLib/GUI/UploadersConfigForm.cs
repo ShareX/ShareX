@@ -43,16 +43,21 @@ namespace UploadersLib
 
         public UploadersConfigForm(UploadersConfig uploadersConfig)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             Config = uploadersConfig;
-            FormSettings();
-            LoadSettings(uploadersConfig);
+            InitializeComponent();
+            string title = "ShareX - Outputs Configuration";
+            if (!string.IsNullOrEmpty(Config.FilePath))
+            {
+                title += " - " + Config.FilePath;
+            }
+            Text = title;
+            Icon = ShareXResources.Icon;
         }
 
         private void UploadersConfigForm_Shown(object sender, EventArgs e)
         {
-            ttlvMain.FocusListView();
+            FormSettings();
+            LoadSettings(Config);
         }
 
         private void UploadersConfigForm_Resize(object sender, EventArgs e)
@@ -62,15 +67,6 @@ namespace UploadersLib
 
         private void FormSettings()
         {
-            string title = "ShareX - Outputs Configuration";
-
-            if (!string.IsNullOrEmpty(Config.FilePath))
-            {
-                title += " - " + Config.FilePath;
-            }
-
-            Text = title;
-
             ImageList uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
             uploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
@@ -143,6 +139,7 @@ namespace UploadersLib
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
+            ttlvMain.FocusListView();
 
             NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
