@@ -28,38 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.cmsExport = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsExport = new System.Windows.Forms.ContextMenuStrip();
             this.tsmiExportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsImport = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsImport = new System.Windows.Forms.ContextMenuStrip();
             this.tsmiImportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImport = new HelpersLib.MenuButton();
+            this.btnExport = new HelpersLib.MenuButton();
             this.cmsExport.SuspendLayout();
             this.cmsImport.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(0, 0);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(64, 24);
-            this.btnExport.TabIndex = 0;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnExport_MouseUp);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(72, 0);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(64, 24);
-            this.btnImport.TabIndex = 1;
-            this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnImport_MouseUp);
             // 
             // cmsExport
             // 
@@ -107,6 +86,30 @@
             this.tsmiImportFile.Text = "From file...";
             this.tsmiImportFile.Click += new System.EventHandler(this.tsmiImportFile_Click);
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(72, 0);
+            this.btnImport.Menu = this.cmsImport;
+            this.btnImport.MenuX0 = true;
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(64, 24);
+            this.btnImport.TabIndex = 3;
+            this.btnImport.Text = "Import";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.UseVisualStyleBackColor = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(0, 0);
+            this.btnExport.Menu = this.cmsExport;
+            this.btnExport.MenuX0 = true;
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(64, 24);
+            this.btnExport.TabIndex = 2;
+            this.btnExport.Text = "Export";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
             // ExportImportControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,13 +126,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.ContextMenuStrip cmsExport;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportClipboard;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportFile;
         private System.Windows.Forms.ContextMenuStrip cmsImport;
         private System.Windows.Forms.ToolStripMenuItem tsmiImportClipboard;
         private System.Windows.Forms.ToolStripMenuItem tsmiImportFile;
+        private MenuButton btnExport;
+        private MenuButton btnImport;
     }
 }

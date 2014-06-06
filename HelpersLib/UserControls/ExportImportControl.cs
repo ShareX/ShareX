@@ -54,16 +54,6 @@ namespace HelpersLib.UserControls
             InitializeComponent();
         }
 
-        private void btnExport_MouseUp(object sender, MouseEventArgs e)
-        {
-            cmsExport.Show(btnExport, e.Location);
-        }
-
-        private void btnImport_MouseUp(object sender, MouseEventArgs e)
-        {
-            cmsImport.Show(btnImport, e.Location);
-        }
-
         public string Export(object obj)
         {
             if (obj != null)

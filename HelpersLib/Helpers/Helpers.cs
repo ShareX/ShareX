@@ -31,6 +31,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Net.NetworkInformation;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -844,6 +845,37 @@ namespace HelpersLib
             {
                 return g.MeasureString(text, font, width).ToSize();
             }
+        }
+
+        public static string SendPing(string host)
+        {
+            return SendPing(host, 1);
+        }
+
+        public static string SendPing(string host, int count)
+        {
+            string[] status = new string[count];
+
+            using (Ping ping = new Ping())
+            {
+                PingReply reply;
+                //byte[] buffer = Encoding.ASCII.GetBytes(new string('a', 32));
+                for (int i = 0; i < count; i++)
+                {
+                    reply = ping.Send(host, 3000);
+                    if (reply.Status == IPStatus.Success)
+                    {
+                        status[i] = reply.RoundtripTime.ToString() + " ms";
+                    }
+                    else
+                    {
+                        status[i] = "Timeout";
+                    }
+                    Thread.Sleep(100);
+                }
+            }
+
+            return string.Join(", ", status);
         }
     }
 }

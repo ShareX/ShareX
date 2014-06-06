@@ -34,13 +34,16 @@ namespace HelpersLib
         [DefaultValue(null)]
         public ContextMenuStrip Menu { get; set; }
 
+        [DefaultValue(false)]
+        public bool MenuX0 { get; set; }
+
         protected override void OnMouseDown(MouseEventArgs mevent)
         {
             base.OnMouseDown(mevent);
 
             if (Menu != null && mevent.Button == MouseButtons.Left)
             {
-                Menu.Show(this, mevent.Location);
+                Menu.Show(this, MenuX0 ? 0 : mevent.X, this.Height);
             }
         }
 

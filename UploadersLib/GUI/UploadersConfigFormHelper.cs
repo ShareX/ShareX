@@ -972,6 +972,26 @@ namespace UploadersLib
             return Config.FTPAccountList.IsValidIndex(Config.FTPSelectedImage);
         }
 
+        public FTPAccount GetSelectedFTPAccount()
+        {
+            if (CheckFTPAccounts())
+            {
+                return Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex];
+            }
+
+            return null;
+        }
+
+        public void AddFTPAccount(FTPAccount account)
+        {
+            if (account != null)
+            {
+                Config.FTPAccountList.Add(account);
+                ucFTPAccounts.AddItem(account);
+                FTPSetup(Config.FTPAccountList);
+            }
+        }
+
         public void TestFTPAccountAsync(FTPAccount acc)
         {
             if (acc != null)
@@ -991,36 +1011,11 @@ namespace UploadersLib
 
         private void FTPOpenClient()
         {
-            if (CheckFTPAccounts())
-            {
-                new FTPClientForm(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex]).Show();
-            }
-        }
+            FTPAccount account = GetSelectedFTPAccount();
 
-        private void FTPAccountsExport()
-        {
-            if (Config.FTPAccountList != null)
+            if (account != null)
             {
-                SaveFileDialog dlg = new SaveFileDialog
-                {
-                    FileName = string.Format("{0}-{1}-accounts", Application.ProductName, DateTime.Now.ToString("yyyyMMdd")),
-                    Filter = "FTP Accounts(*.json)|*.json"
-                };
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    //FTPAccountManager fam = new FTPAccountManager(Config.FTPAccountList);
-                    //fam.Save(dlg.FileName);
-                }
-            }
-        }
-
-        private void FTPAccountsImport()
-        {
-            OpenFileDialog dlg = new OpenFileDialog { Filter = "FTP Accounts(*.json)|*.json" };
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                //FTPAccountManager fam = FTPAccountManager.Read(dlg.FileName);
-                //FTPSetup(fam.FTPAccounts);
+                new FTPClientForm(account).Show();
             }
         }
 
@@ -1089,47 +1084,6 @@ namespace UploadersLib
             }
 
             MessageBox.Show(msg, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public static string SendPing(string host)
-        {
-            return SendPing(host, 1);
-        }
-
-        public static string SendPing(string host, int count)
-        {
-            string[] status = new string[count];
-
-            using (Ping ping = new Ping())
-            {
-                PingReply reply;
-                //byte[] buffer = Encoding.ASCII.GetBytes(new string('a', 32));
-                for (int i = 0; i < count; i++)
-                {
-                    reply = ping.Send(host, 3000);
-                    if (reply.Status == IPStatus.Success)
-                    {
-                        status[i] = reply.RoundtripTime.ToString() + " ms";
-                    }
-                    else
-                    {
-                        status[i] = "Timeout";
-                    }
-                    Thread.Sleep(100);
-                }
-            }
-
-            return string.Join(", ", status);
-        }
-
-        public FTPAccount GetFtpAcctActive()
-        {
-            FTPAccount acc = null;
-            if (CheckFTPAccounts())
-            {
-                acc = Config.FTPAccountList[Config.FTPSelectedImage];
-            }
-            return acc;
         }
 
         #endregion FTP

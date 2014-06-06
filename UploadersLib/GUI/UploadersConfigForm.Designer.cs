@@ -128,9 +128,7 @@
             this.txtCopyPath = new System.Windows.Forms.TextBox();
             this.tpFTP = new System.Windows.Forms.TabPage();
             this.btnFtpClient = new System.Windows.Forms.Button();
-            this.btnFTPExport = new System.Windows.Forms.Button();
             this.lblFtpFiles = new System.Windows.Forms.Label();
-            this.btnFTPImport = new System.Windows.Forms.Button();
             this.lblFtpText = new System.Windows.Forms.Label();
             this.lblFtpImages = new System.Windows.Forms.Label();
             this.cboFtpImages = new System.Windows.Forms.ComboBox();
@@ -367,6 +365,7 @@
             this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.ttlvMain = new HelpersLib.TabToListView();
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.eiFTP = new HelpersLib.UserControls.ExportImportControl();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1442,10 +1441,9 @@
             // 
             // tpFTP
             // 
+            this.tpFTP.Controls.Add(this.eiFTP);
             this.tpFTP.Controls.Add(this.btnFtpClient);
-            this.tpFTP.Controls.Add(this.btnFTPExport);
             this.tpFTP.Controls.Add(this.lblFtpFiles);
-            this.tpFTP.Controls.Add(this.btnFTPImport);
             this.tpFTP.Controls.Add(this.lblFtpText);
             this.tpFTP.Controls.Add(this.lblFtpImages);
             this.tpFTP.Controls.Add(this.cboFtpImages);
@@ -1462,24 +1460,13 @@
             // 
             // btnFtpClient
             // 
-            this.btnFtpClient.Location = new System.Drawing.Point(456, 48);
+            this.btnFtpClient.Location = new System.Drawing.Point(584, 48);
             this.btnFtpClient.Name = "btnFtpClient";
             this.btnFtpClient.Size = new System.Drawing.Size(64, 24);
             this.btnFtpClient.TabIndex = 7;
             this.btnFtpClient.Text = "Client...";
             this.btnFtpClient.UseVisualStyleBackColor = true;
             this.btnFtpClient.Click += new System.EventHandler(this.btnFtpClient_Click);
-            // 
-            // btnFTPExport
-            // 
-            this.btnFTPExport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnFTPExport.Location = new System.Drawing.Point(664, 48);
-            this.btnFTPExport.Name = "btnFTPExport";
-            this.btnFTPExport.Size = new System.Drawing.Size(128, 24);
-            this.btnFTPExport.TabIndex = 9;
-            this.btnFTPExport.Text = "Export FTP accounts...";
-            this.btnFTPExport.UseVisualStyleBackColor = true;
-            this.btnFTPExport.Click += new System.EventHandler(this.btnFTPExport_Click);
             // 
             // lblFtpFiles
             // 
@@ -1489,17 +1476,6 @@
             this.lblFtpFiles.Size = new System.Drawing.Size(26, 13);
             this.lblFtpFiles.TabIndex = 4;
             this.lblFtpFiles.Text = "File:";
-            // 
-            // btnFTPImport
-            // 
-            this.btnFTPImport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnFTPImport.Location = new System.Drawing.Point(528, 48);
-            this.btnFTPImport.Name = "btnFTPImport";
-            this.btnFTPImport.Size = new System.Drawing.Size(128, 24);
-            this.btnFTPImport.TabIndex = 8;
-            this.btnFTPImport.Text = "Import FTP accounts...";
-            this.btnFTPImport.UseVisualStyleBackColor = true;
-            this.btnFTPImport.Click += new System.EventHandler(this.btnFTPImport_Click);
             // 
             // lblFtpText
             // 
@@ -3932,6 +3908,7 @@
             // 
             this.eiCustomUploaders.Location = new System.Drawing.Point(8, 328);
             this.eiCustomUploaders.Name = "eiCustomUploaders";
+            this.eiCustomUploaders.ObjectType = null;
             this.eiCustomUploaders.Size = new System.Drawing.Size(140, 26);
             this.eiCustomUploaders.TabIndex = 8;
             this.eiCustomUploaders.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
@@ -3965,6 +3942,16 @@
             this.actRapidShareAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
+            // 
+            // eiFTP
+            // 
+            this.eiFTP.Location = new System.Drawing.Point(656, 48);
+            this.eiFTP.Name = "eiFTP";
+            this.eiFTP.ObjectType = null;
+            this.eiFTP.Size = new System.Drawing.Size(136, 24);
+            this.eiFTP.TabIndex = 8;
+            this.eiFTP.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
+            this.eiFTP.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
             // 
             // UploadersConfigForm
             // 
@@ -4192,9 +4179,7 @@
 
         public System.Windows.Forms.TabPage tpFTP;
         private System.Windows.Forms.Button btnFtpClient;
-        internal System.Windows.Forms.Button btnFTPExport;
         private System.Windows.Forms.Label lblFtpFiles;
-        internal System.Windows.Forms.Button btnFTPImport;
         private System.Windows.Forms.Label lblFtpText;
         private System.Windows.Forms.Label lblFtpImages;
         private System.Windows.Forms.ComboBox cboFtpImages;
@@ -4425,5 +4410,6 @@
         private GUI.OAuth2Control oauth2Picasa;
         public System.Windows.Forms.TabControl tcUploaders;
         private HelpersLib.UserControls.ExportImportControl eiCustomUploaders;
+        private HelpersLib.UserControls.ExportImportControl eiFTP;
     }
 }

@@ -169,6 +169,7 @@ namespace UploadersLib
             ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
             ucTwitterAccounts.lbAccounts.SelectedIndexChanged += TwitterAccountSelectedIndexChanged;
 
+            eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
         }
 
@@ -1189,14 +1190,14 @@ namespace UploadersLib
             FTPOpenClient();
         }
 
-        private void btnFTPImport_Click(object sender, EventArgs e)
+        private object eiFTP_ExportRequested()
         {
-            FTPAccountsImport();
+            return GetSelectedFTPAccount();
         }
 
-        private void btnFTPExport_Click(object sender, EventArgs e)
+        private void eiFTP_ImportRequested(object obj)
         {
-            FTPAccountsExport();
+            AddFTPAccount(obj as FTPAccount);
         }
 
         private void FTPSetup(IEnumerable<FTPAccount> accs)
@@ -1234,10 +1235,7 @@ namespace UploadersLib
 
         private void FTPAccountAddButton_Click(object sender, EventArgs e)
         {
-            FTPAccount acc = new FTPAccount();
-            Config.FTPAccountList.Add(acc);
-            ucFTPAccounts.AddItem(acc);
-            FTPSetup(Config.FTPAccountList);
+            AddFTPAccount(new FTPAccount());
         }
 
         private void FTPAccountRemoveButton_Click(object sender, EventArgs e)
@@ -1254,14 +1252,12 @@ namespace UploadersLib
         {
             FTPAccount src = (FTPAccount)ucFTPAccounts.lbAccounts.Items[ucFTPAccounts.lbAccounts.SelectedIndex];
             FTPAccount clone = (FTPAccount)src.Clone();
-            Config.FTPAccountList.Add(clone);
-            ucFTPAccounts.AddItem(clone);
-            FTPSetup(Config.FTPAccountList);
+            AddFTPAccount(clone);
         }
 
         private void FTPAccountTestButton_Click(object sender, EventArgs e)
         {
-            TestFTPAccountAsync(Config.FTPAccountList[ucFTPAccounts.lbAccounts.SelectedIndex]);
+            TestFTPAccountAsync(GetSelectedFTPAccount());
         }
 
         private void FtpAccountSettingsGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
