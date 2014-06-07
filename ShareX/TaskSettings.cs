@@ -51,6 +51,7 @@ namespace ShareX
                 description = value;
             }
         }
+
         public HotkeyType Job = HotkeyType.None;
 
         public bool UseDefaultAfterCaptureJob = true;
@@ -409,6 +410,9 @@ namespace ShareX
 
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
+
+        [Category("Screen recorder"), DefaultValue(false), Description("Use active window region instead of showing region selection window for screen recorder.")]
+        public bool ScreenRecorderUseActiveWindow { get; set; }
 
         public TaskSettingsAdvanced()
         {

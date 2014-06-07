@@ -79,6 +79,27 @@ namespace ShareX
             }
         }
 
+        private void ActiveWindowRegion(TaskSettings taskSettings)
+        {
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+
+            if (handle.ToInt32() > 0)
+            {
+                if (taskSettings.CaptureSettings.CaptureClientArea)
+                {
+                    captureRectangle = NativeMethods.GetClientRect(handle);
+                }
+                else
+                {
+                    captureRectangle = CaptureHelpers.GetWindowRectangle(handle);
+                }
+            }
+            else
+            {
+                SelectRegion();
+            }
+        }
+
         public void StartRecording(TaskSettings TaskSettings)
         {
             if (TaskSettings.CaptureSettings.RunScreencastCLI)
@@ -115,7 +136,14 @@ namespace ShareX
                 }
             }
 
-            SelectRegion();
+            if (TaskSettings.AdvancedSettings.ScreenRecorderUseActiveWindow)
+            {
+                ActiveWindowRegion(TaskSettings);
+            }
+            else
+            {
+                SelectRegion();
+            }
 
             if (IsRecording || captureRectangle.IsEmpty || screenRecorder != null)
             {
