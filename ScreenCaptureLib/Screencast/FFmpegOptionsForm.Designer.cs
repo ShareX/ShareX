@@ -375,10 +375,12 @@
             // txtCommandLinePreview
             // 
             this.txtCommandLinePreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCommandLinePreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtCommandLinePreview.Location = new System.Drawing.Point(8, 21);
             this.txtCommandLinePreview.Multiline = true;
             this.txtCommandLinePreview.Name = "txtCommandLinePreview";
             this.txtCommandLinePreview.ReadOnly = true;
+            this.txtCommandLinePreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtCommandLinePreview.Size = new System.Drawing.Size(632, 67);
             this.txtCommandLinePreview.TabIndex = 0;
             this.txtCommandLinePreview.TextChanged += new System.EventHandler(this.txtCommandLinePreview_TextChanged);

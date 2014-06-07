@@ -39,6 +39,7 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcHotkeySettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.btnDescriptionAutoFill = new System.Windows.Forms.Button();
             this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
             this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
             this.btnAfterCapture = new HelpersLib.MenuButton();
@@ -166,7 +167,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.btnDescriptionAutoFill = new System.Windows.Forms.Button();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -217,7 +217,7 @@
             // cbUseDefaultAfterCaptureSettings
             // 
             this.cbUseDefaultAfterCaptureSettings.AutoSize = true;
-            this.cbUseDefaultAfterCaptureSettings.Location = new System.Drawing.Point(6, 70);
+            this.cbUseDefaultAfterCaptureSettings.Location = new System.Drawing.Point(8, 70);
             this.cbUseDefaultAfterCaptureSettings.Name = "cbUseDefaultAfterCaptureSettings";
             this.cbUseDefaultAfterCaptureSettings.Size = new System.Drawing.Size(193, 17);
             this.cbUseDefaultAfterCaptureSettings.TabIndex = 3;
@@ -228,7 +228,7 @@
             // cbUseDefaultAfterUploadSettings
             // 
             this.cbUseDefaultAfterUploadSettings.AutoSize = true;
-            this.cbUseDefaultAfterUploadSettings.Location = new System.Drawing.Point(6, 126);
+            this.cbUseDefaultAfterUploadSettings.Location = new System.Drawing.Point(8, 126);
             this.cbUseDefaultAfterUploadSettings.Name = "cbUseDefaultAfterUploadSettings";
             this.cbUseDefaultAfterUploadSettings.Size = new System.Drawing.Size(189, 17);
             this.cbUseDefaultAfterUploadSettings.TabIndex = 5;
@@ -239,7 +239,7 @@
             // cbUseDefaultDestinationSettings
             // 
             this.cbUseDefaultDestinationSettings.AutoSize = true;
-            this.cbUseDefaultDestinationSettings.Location = new System.Drawing.Point(6, 182);
+            this.cbUseDefaultDestinationSettings.Location = new System.Drawing.Point(8, 182);
             this.cbUseDefaultDestinationSettings.Name = "cbUseDefaultDestinationSettings";
             this.cbUseDefaultDestinationSettings.Size = new System.Drawing.Size(185, 17);
             this.cbUseDefaultDestinationSettings.TabIndex = 7;
@@ -309,10 +309,20 @@
             this.tpTask.Text = "Task";
             this.tpTask.UseVisualStyleBackColor = true;
             // 
+            // btnDescriptionAutoFill
+            // 
+            this.btnDescriptionAutoFill.Location = new System.Drawing.Point(448, 7);
+            this.btnDescriptionAutoFill.Name = "btnDescriptionAutoFill";
+            this.btnDescriptionAutoFill.Size = new System.Drawing.Size(64, 24);
+            this.btnDescriptionAutoFill.TabIndex = 11;
+            this.btnDescriptionAutoFill.Text = "Auto fill";
+            this.btnDescriptionAutoFill.UseVisualStyleBackColor = true;
+            this.btnDescriptionAutoFill.Click += new System.EventHandler(this.btnDescriptionAutoFill_Click);
+            // 
             // chkOverrideFTP
             // 
             this.chkOverrideFTP.AutoSize = true;
-            this.chkOverrideFTP.Location = new System.Drawing.Point(6, 240);
+            this.chkOverrideFTP.Location = new System.Drawing.Point(8, 240);
             this.chkOverrideFTP.Name = "chkOverrideFTP";
             this.chkOverrideFTP.Size = new System.Drawing.Size(169, 17);
             this.chkOverrideFTP.TabIndex = 9;
@@ -1803,16 +1813,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use advanced settings in main window task settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // btnDescriptionAutoFill
-            // 
-            this.btnDescriptionAutoFill.Location = new System.Drawing.Point(448, 7);
-            this.btnDescriptionAutoFill.Name = "btnDescriptionAutoFill";
-            this.btnDescriptionAutoFill.Size = new System.Drawing.Size(64, 24);
-            this.btnDescriptionAutoFill.TabIndex = 11;
-            this.btnDescriptionAutoFill.Text = "Auto fill";
-            this.btnDescriptionAutoFill.UseVisualStyleBackColor = true;
-            this.btnDescriptionAutoFill.Click += new System.EventHandler(this.btnDescriptionAutoFill_Click);
             // 
             // TaskSettingsForm
             // 

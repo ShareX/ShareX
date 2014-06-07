@@ -26,6 +26,7 @@
 using HelpersLib;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -48,6 +49,8 @@ namespace ScreenCaptureLib
 
         public string GetFFmpegCommands()
         {
+            string commands;
+
             if (!string.IsNullOrEmpty(FFmpeg.VideoSource) && FFmpeg.VideoSource.Equals("screen-capture-recorder", StringComparison.InvariantCultureIgnoreCase))
             {
                 // https://github.com/rdp/screen-capture-recorder-to-video-windows-free
@@ -62,27 +65,20 @@ namespace ScreenCaptureLib
 
             if (FFmpeg.UseCustomCommands && !string.IsNullOrEmpty(FFmpeg.CustomCommands))
             {
-                string commands = FFmpeg.CustomCommands.Trim();
-
-                // Replace output path
-                if (commands[commands.Length - 1] == '"')
-                {
-                    int index = commands.LastIndexOf('"', commands.Length - 2);
-
-                    if (index >= 0)
-                    {
-                        commands = commands.Remove(index);
-                        commands += string.Format("\"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
-                    }
-                }
-
-                return commands;
+                commands = FFmpeg.CustomCommands;
+                commands = commands.Replace("$fps$", ScreenRecordFPS.ToString());
+                commands = commands.Replace("$duration$", Duration.ToString("0.0", CultureInfo.InvariantCulture));
+                commands = commands.Replace("$output$", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
+            }
+            else
+            {
+                commands = GetFFmpegArgs();
             }
 
-            return GetFFmpegArgs();
+            return commands.Trim();
         }
 
-        private string GetFFmpegArgs()
+        public string GetFFmpegArgs(bool isCustom = false)
         {
             StringBuilder args = new StringBuilder();
 
@@ -92,11 +88,13 @@ namespace ScreenCaptureLib
             // default real time buffer size was 3041280 (3M)
             args.Append("-rtbufsize 10M ");
 
+            string fps = isCustom ? "$fps$" : ScreenRecordFPS.ToString();
+
             if (string.IsNullOrEmpty(FFmpeg.VideoSource) || FFmpeg.VideoSource.Equals(FFmpegHelper.GDIgrab, StringComparison.InvariantCultureIgnoreCase))
             {
                 // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
                 args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
-                    ScreenRecordFPS, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
+                    fps, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
 
                 if (FFmpeg.IsAudioSourceSelected())
                 {
@@ -105,7 +103,7 @@ namespace ScreenCaptureLib
             }
             else
             {
-                args.AppendFormat("-f dshow -framerate {0} -i video=\"{1}\"", ScreenRecordFPS, FFmpeg.VideoSource);
+                args.AppendFormat("-f dshow -framerate {0} -i video=\"{1}\"", fps, FFmpeg.VideoSource);
 
                 if (FFmpeg.IsAudioSourceSelected())
                 {
@@ -125,7 +123,7 @@ namespace ScreenCaptureLib
             args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
 
             // output FPS
-            args.AppendFormat("-r {0} ", ScreenRecordFPS);
+            args.AppendFormat("-r {0} ", fps);
 
             switch (FFmpeg.VideoCodec)
             {
@@ -164,10 +162,10 @@ namespace ScreenCaptureLib
             if (Duration > 0)
             {
                 // duration limit
-                args.AppendFormat("-t {0} ", Duration);
+                args.AppendFormat("-t {0} ", isCustom ? "$duration$" : Duration.ToString("0.0", CultureInfo.InvariantCulture));
             }
 
-            args.AppendFormat("\"{0}\"", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
+            args.AppendFormat("\"{0}\"", isCustom ? "$output$" : Path.ChangeExtension(OutputPath, FFmpeg.Extension));
 
             return args.ToString();
         }

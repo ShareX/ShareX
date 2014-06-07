@@ -668,15 +668,16 @@ namespace ShareX
         {
             ScreencastOptions options = new ScreencastOptions
             {
-                AVI = TaskSettings.CaptureSettings.AVIOptions,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
+                AVI = TaskSettings.CaptureSettings.AVIOptions,
                 ShowAVIOptionsDialog = true,
-                GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
                 ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
+                GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
+                Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
-                ParentWindow = this.Handle,
                 CaptureArea = Screen.PrimaryScreen.Bounds,
-                DrawCursor = true
+                DrawCursor = TaskSettings.CaptureSettings.ShowCursor,
+                ParentWindow = this.Handle
             };
 
             switch (TaskSettings.CaptureSettings.ScreenRecordOutput)

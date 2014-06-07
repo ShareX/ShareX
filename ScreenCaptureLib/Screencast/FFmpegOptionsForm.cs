@@ -48,7 +48,6 @@ namespace ScreenCaptureLib
             if (Options != null)
             {
                 SettingsLoad();
-                UpdateUI();
             }
         }
 
@@ -94,7 +93,12 @@ namespace ScreenCaptureLib
 
             cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
 
-            txtCommandLinePreview.Text = Options.GetFFmpegCommands();
+            if (Options.FFmpeg.UseCustomCommands)
+            {
+                txtCommandLinePreview.Text = Options.FFmpeg.CustomCommands;
+            }
+
+            UpdateUI();
         }
 
         private void RefreshSourcesAsync()
@@ -134,7 +138,7 @@ namespace ScreenCaptureLib
 
             if (!Options.FFmpeg.UseCustomCommands)
             {
-                txtCommandLinePreview.Text = Options.GetFFmpegCommands();
+                txtCommandLinePreview.Text = Options.GetFFmpegArgs();
             }
         }
 
@@ -337,9 +341,13 @@ namespace ScreenCaptureLib
             Options.FFmpeg.UseCustomCommands = cbCustomCommands.Checked;
             txtCommandLinePreview.ReadOnly = !Options.FFmpeg.UseCustomCommands;
 
-            if (!Options.FFmpeg.UseCustomCommands)
+            if (Options.FFmpeg.UseCustomCommands)
             {
-                txtCommandLinePreview.Text = Options.GetFFmpegCommands();
+                txtCommandLinePreview.Text = Options.GetFFmpegArgs(true);
+            }
+            else
+            {
+                txtCommandLinePreview.Text = Options.GetFFmpegArgs();
             }
         }
 
