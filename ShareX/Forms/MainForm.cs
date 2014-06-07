@@ -129,7 +129,7 @@ namespace ShareX
             tsddbWorkflows.DropDownItems.Clear();
             tsmiTrayWorkflows.DropDownItems.Clear();
 
-            foreach (HotkeySettings hotkeySetting in Program.HotkeyManager.Hotkeys)
+            foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
             {
                 if (hotkeySetting.TaskSettings.Job != HotkeyType.None && (!Program.Settings.WorkflowsOnlyShowEdited || !hotkeySetting.TaskSettings.IsUsingDefaultSettings))
                 {
@@ -138,13 +138,30 @@ namespace ShareX
                 }
             }
 
-            tsddbWorkflows.Visible = tsmiTrayWorkflows.Visible = tsddbWorkflows.DropDownItems.Count > 0;
+            if (tsddbWorkflows.DropDownItems.Count > 0)
+            {
+                ToolStripSeparator tss = new ToolStripSeparator();
+                tsddbWorkflows.DropDownItems.Add(tss);
+            }
+
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("You can add workflow from hotkey settings...");
+            tsmi.Click += tsbHotkeySettings_Click;
+            tsddbWorkflows.DropDownItems.Add(tsmi);
+
+            tsmiTrayWorkflows.Visible = tsmiTrayWorkflows.DropDownItems.Count > 0;
         }
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
         {
             ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.Description);
-            if (hotkeySetting.HotkeyInfo.IsValidHotkey) tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo.ToString();
+            if (hotkeySetting.HotkeyInfo.IsValidHotkey)
+            {
+                tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo.ToString();
+            }
+            if (!hotkeySetting.TaskSettings.IsUsingDefaultSettings)
+            {
+                tsmi.Font = new Font(tsmi.Font, FontStyle.Bold);
+            }
             tsmi.Click += (sender, e) => HandleTask(hotkeySetting.TaskSettings);
             return tsmi;
         }

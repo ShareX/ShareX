@@ -120,7 +120,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG and DIB\" to clipboard.")]
         public bool UseAlternativeClipboardCopyImage { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show only customized tasks in main window workflows.")]
+        [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
         [Category("Application / Config"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]

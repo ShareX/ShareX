@@ -49,18 +49,17 @@ namespace ShareX
                 {
                     Program.HotkeySettingsResetEvent.WaitOne();
                 }
+            },
+            () =>
+            {
+                Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys);
+                Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
+                DebugHelper.WriteLine("HotkeyManager started");
 
-                Invoke(new MethodInvoker(() =>
-                {
-                    Program.HotkeyManager = new HotkeyManager(this, Program.HotkeysConfig.Hotkeys);
-                    Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
-                    DebugHelper.WriteLine("HotkeyManager started");
+                Program.WatchFolderManager = new WatchFolderManager();
+                DebugHelper.WriteLine("WatchFolderManager started");
 
-                    Program.WatchFolderManager = new WatchFolderManager();
-                    DebugHelper.WriteLine("WatchFolderManager started");
-
-                    UpdateWorkflowsMenu();
-                }));
+                UpdateWorkflowsMenu();
             });
         }
 

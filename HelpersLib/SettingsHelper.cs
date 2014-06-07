@@ -96,14 +96,13 @@ namespace HelpersLib
                     break;
                 case SerializationType.Json:
                     StreamWriter streamWriter = new StreamWriter(stream);
-                    using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
-                    {
-                        jsonWriter.Formatting = Formatting.Indented;
-                        JsonSerializer serializer = new JsonSerializer();
-                        serializer.ContractResolver = new WritablePropertiesOnlyResolver();
-                        serializer.Converters.Add(new StringEnumConverter());
-                        serializer.Serialize(jsonWriter, obj);
-                    }
+                    JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter);
+                    jsonWriter.Formatting = Formatting.Indented;
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                    serializer.Converters.Add(new StringEnumConverter());
+                    serializer.Serialize(jsonWriter, obj);
+                    jsonWriter.Flush();
                     break;
             }
         }
