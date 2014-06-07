@@ -331,11 +331,6 @@ namespace ScreenCaptureLib
             ClipboardHelpers.CopyText("ffmpeg " + Options.GetFFmpegCommands());
         }
 
-        private void FFmpegOptionsForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Helpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
-        }
-
         private void cbCustomCommands_CheckedChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.UseCustomCommands = cbCustomCommands.Checked;
@@ -354,6 +349,11 @@ namespace ScreenCaptureLib
         private void txtCommandLinePreview_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
         }
     }
 }

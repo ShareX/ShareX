@@ -80,6 +80,7 @@
             this.gbContainer = new System.Windows.Forms.GroupBox();
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.cbShowError = new System.Windows.Forms.CheckBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -317,7 +318,7 @@
             this.gbFFmpegExe.Location = new System.Drawing.Point(8, 8);
             this.gbFFmpegExe.Name = "gbFFmpegExe";
             this.gbFFmpegExe.Size = new System.Drawing.Size(648, 56);
-            this.gbFFmpegExe.TabIndex = 6;
+            this.gbFFmpegExe.TabIndex = 0;
             this.gbFFmpegExe.TabStop = false;
             this.gbFFmpegExe.Text = "ffmpeg.exe";
             // 
@@ -357,7 +358,7 @@
             this.gbCommandLinePreview.Name = "gbCommandLinePreview";
             this.gbCommandLinePreview.Padding = new System.Windows.Forms.Padding(8);
             this.gbCommandLinePreview.Size = new System.Drawing.Size(648, 96);
-            this.gbCommandLinePreview.TabIndex = 10;
+            this.gbCommandLinePreview.TabIndex = 8;
             this.gbCommandLinePreview.TabStop = false;
             this.gbCommandLinePreview.Text = "Command line preview";
             // 
@@ -367,7 +368,7 @@
             this.cbCustomCommands.Location = new System.Drawing.Point(280, 0);
             this.cbCustomCommands.Name = "cbCustomCommands";
             this.cbCustomCommands.Size = new System.Drawing.Size(136, 17);
-            this.cbCustomCommands.TabIndex = 1;
+            this.cbCustomCommands.TabIndex = 0;
             this.cbCustomCommands.Text = "Use custom commands";
             this.cbCustomCommands.UseVisualStyleBackColor = true;
             this.cbCustomCommands.CheckedChanged += new System.EventHandler(this.cbCustomCommands_CheckedChanged);
@@ -382,7 +383,7 @@
             this.txtCommandLinePreview.ReadOnly = true;
             this.txtCommandLinePreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtCommandLinePreview.Size = new System.Drawing.Size(632, 67);
-            this.txtCommandLinePreview.TabIndex = 0;
+            this.txtCommandLinePreview.TabIndex = 1;
             this.txtCommandLinePreview.TextChanged += new System.EventHandler(this.txtCommandLinePreview_TextChanged);
             // 
             // gbCommandLineArgs
@@ -428,7 +429,7 @@
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
             this.tcFFmpegVideoCodecs.Size = new System.Drawing.Size(320, 68);
-            this.tcFFmpegVideoCodecs.TabIndex = 4;
+            this.tcFFmpegVideoCodecs.TabIndex = 5;
             // 
             // tpX264
             // 
@@ -480,7 +481,7 @@
             this.btnTest.Location = new System.Drawing.Point(136, 304);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(88, 23);
-            this.btnTest.TabIndex = 8;
+            this.btnTest.TabIndex = 9;
             this.btnTest.Text = "Test with CMD";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
@@ -490,7 +491,7 @@
             this.btnCopyPreview.Location = new System.Drawing.Point(227, 304);
             this.btnCopyPreview.Name = "btnCopyPreview";
             this.btnCopyPreview.Size = new System.Drawing.Size(53, 23);
-            this.btnCopyPreview.TabIndex = 9;
+            this.btnCopyPreview.TabIndex = 10;
             this.btnCopyPreview.Text = "Copy";
             this.btnCopyPreview.UseVisualStyleBackColor = true;
             this.btnCopyPreview.Click += new System.EventHandler(this.btnCopyPreview_Click);
@@ -504,7 +505,7 @@
             this.tcFFmpegAudioCodecs.Name = "tcFFmpegAudioCodecs";
             this.tcFFmpegAudioCodecs.SelectedIndex = 0;
             this.tcFFmpegAudioCodecs.Size = new System.Drawing.Size(320, 68);
-            this.tcFFmpegAudioCodecs.TabIndex = 5;
+            this.tcFFmpegAudioCodecs.TabIndex = 6;
             // 
             // tpAAC
             // 
@@ -648,7 +649,7 @@
             this.gbCodecs.Location = new System.Drawing.Point(296, 68);
             this.gbCodecs.Name = "gbCodecs";
             this.gbCodecs.Size = new System.Drawing.Size(184, 88);
-            this.gbCodecs.TabIndex = 2;
+            this.gbCodecs.TabIndex = 3;
             this.gbCodecs.TabStop = false;
             this.gbCodecs.Text = "Codecs";
             // 
@@ -659,7 +660,7 @@
             this.gbContainer.Location = new System.Drawing.Point(488, 68);
             this.gbContainer.Name = "gbContainer";
             this.gbContainer.Size = new System.Drawing.Size(168, 88);
-            this.gbContainer.TabIndex = 3;
+            this.gbContainer.TabIndex = 4;
             this.gbContainer.TabStop = false;
             this.gbContainer.Text = "Container format";
             // 
@@ -668,7 +669,7 @@
             this.btnRefreshSources.Location = new System.Drawing.Point(225, 64);
             this.btnRefreshSources.Name = "btnRefreshSources";
             this.btnRefreshSources.Size = new System.Drawing.Size(56, 23);
-            this.btnRefreshSources.TabIndex = 0;
+            this.btnRefreshSources.TabIndex = 2;
             this.btnRefreshSources.Text = "Refresh";
             this.btnRefreshSources.UseVisualStyleBackColor = true;
             this.btnRefreshSources.Click += new System.EventHandler(this.btnRefreshSources_Click);
@@ -684,12 +685,23 @@
             this.cbShowError.UseVisualStyleBackColor = true;
             this.cbShowError.CheckedChanged += new System.EventHandler(this.cbShowError_CheckedChanged);
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(599, 413);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(59, 24);
+            this.btnHelp.TabIndex = 0;
+            this.btnHelp.Text = "Help...";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // FFmpegOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(666, 442);
+            this.ClientSize = new System.Drawing.Size(666, 445);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.cbShowError);
             this.Controls.Add(this.btnRefreshSources);
             this.Controls.Add(this.gbContainer);
@@ -703,14 +715,12 @@
             this.Controls.Add(this.gbFFmpegExe);
             this.Controls.Add(this.gbCommandLineArgs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - FFmpeg options";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.FFmpegOptionsForm_HelpButtonClicked);
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).EndInit();
@@ -800,5 +810,6 @@
         private System.Windows.Forms.Label lblAACQuality;
         private System.Windows.Forms.CheckBox cbShowError;
         private System.Windows.Forms.CheckBox cbCustomCommands;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
