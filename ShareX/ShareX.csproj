@@ -508,7 +508,7 @@
     <None Include="Resources\folder-tree.png" />
     <None Include="Resources\fr.png" />
     <None Include="Resources\color.png" />
-    <None Include="..\Docs\VersionHistory.txt">
+    <None Include="..\VersionHistory.txt">
       <Link>VersionHistory.txt</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
