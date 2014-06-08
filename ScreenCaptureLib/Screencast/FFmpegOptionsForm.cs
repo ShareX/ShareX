@@ -42,8 +42,11 @@ namespace ScreenCaptureLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-
             Options = options;
+            eiFFmpeg.ObjectType = typeof(FFmpegOptions);
+            cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
+            cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
+            cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
 
             if (Options != null)
             {
@@ -55,9 +58,8 @@ namespace ScreenCaptureLib
         {
             // General
             RefreshSourcesAsync();
-            cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
+
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-            cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
             cbShowError.Checked = Options.FFmpeg.ShowError;
 
@@ -73,7 +75,6 @@ namespace ScreenCaptureLib
 
             // x264
             nudx264CRF.Value = Options.FFmpeg.x264_CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
-            cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
 
             // VPx
@@ -354,6 +355,24 @@ namespace ScreenCaptureLib
         private void btnHelp_Click(object sender, EventArgs e)
         {
             Helpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
+        }
+
+        private object eiFFmpeg_ExportRequested()
+        {
+            return Options.FFmpeg;
+        }
+
+        private void eiFFmpeg_ImportRequested(object obj)
+        {
+            FFmpegOptions ffmpegOptions = obj as FFmpegOptions;
+
+            if (ffmpegOptions != null)
+            {
+                string tempFFmpegPath = Options.FFmpeg.CLIPath;
+                Options.FFmpeg = ffmpegOptions;
+                Options.FFmpeg.CLIPath = tempFFmpegPath;
+                SettingsLoad();
+            }
         }
     }
 }

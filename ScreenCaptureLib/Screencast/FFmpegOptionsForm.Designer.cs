@@ -81,6 +81,7 @@
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.cbShowError = new System.Windows.Forms.CheckBox();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.eiFFmpeg = new HelpersLib.UserControls.ExportImportControl();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -687,13 +688,23 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(599, 413);
+            this.btnHelp.Location = new System.Drawing.Point(592, 412);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(59, 24);
+            this.btnHelp.Size = new System.Drawing.Size(64, 24);
             this.btnHelp.TabIndex = 0;
             this.btnHelp.Text = "Help...";
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // eiFFmpeg
+            // 
+            this.eiFFmpeg.Location = new System.Drawing.Point(448, 412);
+            this.eiFFmpeg.Name = "eiFFmpeg";
+            this.eiFFmpeg.ObjectType = null;
+            this.eiFFmpeg.Size = new System.Drawing.Size(136, 24);
+            this.eiFFmpeg.TabIndex = 12;
+            this.eiFFmpeg.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
+            this.eiFFmpeg.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
             // FFmpegOptionsForm
             // 
@@ -701,6 +712,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(666, 445);
+            this.Controls.Add(this.eiFFmpeg);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.cbShowError);
             this.Controls.Add(this.btnRefreshSources);
@@ -811,5 +823,6 @@
         private System.Windows.Forms.CheckBox cbShowError;
         private System.Windows.Forms.CheckBox cbCustomCommands;
         private System.Windows.Forms.Button btnHelp;
+        private HelpersLib.UserControls.ExportImportControl eiFFmpeg;
     }
 }
