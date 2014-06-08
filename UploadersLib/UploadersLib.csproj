@@ -352,7 +352,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Favicons\Yourls.ico" />
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />

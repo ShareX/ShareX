@@ -460,7 +460,6 @@ namespace UploadersLib
                 {
                     Config.DropboxOAuth2Info = oauth;
                     Helpers.OpenURL(url);
-                    btnDropboxCompleteAuth.Enabled = true;
                     DebugHelper.WriteLine("DropboxAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -474,48 +473,48 @@ namespace UploadersLib
             }
         }
 
-        public void DropboxAuthComplete()
+        public void DropboxAuthComplete(string code)
         {
-            /* try
-             {
-                 if (Config.DropboxOAuth2Info != null && !string.IsNullOrEmpty(Config.DropboxOAuth2Info.AuthToken) && !string.IsNullOrEmpty(Config.DropboxOAuth2Info.AuthSecret))
-                 {
-                     Dropbox dropbox = new Dropbox(Config.DropboxOAuth2Info);
-                     bool result = dropbox.GetAccessToken();
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && Config.DropboxOAuth2Info != null)
+                {
+                    Dropbox dropbox = new Dropbox(Config.DropboxOAuth2Info);
+                    bool result = dropbox.GetAccessToken(code);
 
-                     if (result)
-                     {
-                         DropboxAccountInfo account = dropbox.GetAccountInfo();
+                    if (result)
+                    {
+                        oauth2Dropbox.Status = "Login successful.";
 
-                         if (account != null)
-                         {
-                             Config.DropboxAccountInfo = account;
-                             Config.DropboxUploadPath = txtDropboxPath.Text;
-                             UpdateDropboxStatus();
-                             MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                             return;
-                         }
+                        Config.DropboxAccountInfo = dropbox.GetAccountInfo();
+                        UpdateDropboxStatus();
 
-                         MessageBox.Show("GetAccountInfo failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     }
-                     else
-                     {
-                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     }
-                 }
-                 else
-                 {
-                     MessageBox.Show("You must give access from Authorize page first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 }
+                        if (Config.DropboxAccountInfo != null)
+                        {
+                            MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login successful but GetAccountInfo failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
 
-                 Config.DropboxOAut2hInfo = null;
-                 UpdateDropboxStatus();
-             }
-             catch (Exception ex)
-             {
-                 DebugHelper.WriteException(ex);
-                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             } */
+                        return;
+                    }
+                    else
+                    {
+                        oauth2Dropbox.Status = "Login failed.";
+                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                Config.DropboxAccountInfo = null;
+                UpdateDropboxStatus();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                MessageBox.Show(ex.ToString(), Application.ProductName + " - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void UpdateDropboxStatus()
@@ -523,7 +522,6 @@ namespace UploadersLib
             if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccountInfo != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Login status: Successful");
                 sb.AppendLine("Email: " + Config.DropboxAccountInfo.Email);
                 sb.AppendLine("Name: " + Config.DropboxAccountInfo.Display_name);
                 sb.AppendLine("User ID: " + Config.DropboxAccountInfo.Uid.ToString());
@@ -535,7 +533,7 @@ namespace UploadersLib
             }
             else
             {
-                lblDropboxStatus.Text = "Login status: Authorize required";
+                lblDropboxStatus.Text = string.Empty;
             }
         }
 
@@ -577,37 +575,34 @@ namespace UploadersLib
         {
             try
             {
-                if (Config.CopyOAuthInfo != null && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthToken) &&
-                    !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthSecret) && !string.IsNullOrEmpty(code))
+                if (Config.CopyOAuthInfo != null && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.CopyOAuthInfo.AuthSecret) && !string.IsNullOrEmpty(code))
                 {
                     Copy copy = new Copy(Config.CopyOAuthInfo);
                     bool result = copy.GetAccessToken(code);
 
                     if (result)
                     {
-                        CopyAccountInfo account = copy.GetAccountInfo();
+                        oAuthCopy.Status = "Login successful.";
 
-                        if (account != null)
+                        Config.CopyAccountInfo = copy.GetAccountInfo();
+                        UpdateCopyStatus();
+
+                        if (Config.CopyAccountInfo != null)
                         {
-                            Config.CopyAccountInfo = account;
-                            Config.CopyUploadPath = txtCopyPath.Text;
-                            UpdateCopyStatus();
-                            oAuthCopy.Status = "Login successful.";
                             MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login successful but GetAccountInfo failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
-                        MessageBox.Show("GetAccountInfo failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                     else
                     {
                         oAuthCopy.Status = "Login failed.";
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("You must gain access from the Authorize page and copy the verification code into the box first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 Config.CopyOAuthInfo = null;
@@ -616,7 +611,7 @@ namespace UploadersLib
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Application.ProductName + " - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1239,8 +1234,6 @@ namespace UploadersLib
 
         #endregion Twitter
 
-        #region URL Shorteners
-
         #region goo.gl
 
         public void GoogleURLShortenerAuthOpen()
@@ -1380,8 +1373,6 @@ namespace UploadersLib
         }
 
         #endregion bit.ly
-
-        #endregion URL Shorteners
 
         #region Custom uploader
 

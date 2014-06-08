@@ -181,11 +181,8 @@ namespace UploadersLib.FileUploaders
 
             string url = Helpers.CombineURL(URLFiles, Helpers.URLPathEncode(path));
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("file", fileName);
-
             // There's a 150MB limit to all uploads through the API.
-            UploadResult result = UploadData(stream, url, fileName, arguments: args, headers: GetAuthHeaders());
+            UploadResult result = UploadData(stream, url, fileName, headers: GetAuthHeaders());
 
             if (result.IsSuccess)
             {

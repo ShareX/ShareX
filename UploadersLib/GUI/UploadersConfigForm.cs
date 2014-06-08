@@ -288,6 +288,12 @@ namespace UploadersLib
 
             // Dropbox
 
+            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info))
+            {
+                oauth2Dropbox.Status = "Login successful.";
+                oauth2Dropbox.LoginStatus = true;
+            }
+
             txtDropboxPath.Text = Config.DropboxUploadPath;
             cbDropboxAutoCreateShareableLink.Checked = Config.DropboxAutoCreateShareableLink;
             cbDropboxURLType.Enabled = Config.DropboxAutoCreateShareableLink;
@@ -931,14 +937,14 @@ namespace UploadersLib
             Helpers.OpenURL("http://db.tt/CtPYXvu");
         }
 
-        private void btnDropboxAuthOpen_Click(object sender, EventArgs e)
+        private void oauth2Dropbox_OpenButtonClicked()
         {
             DropboxAuthOpen();
         }
 
-        private void btnDropboxAuthComplete_Click(object sender, EventArgs e)
+        private void oauth2Dropbox_CompleteButtonClicked(string code)
         {
-            DropboxAuthComplete();
+            DropboxAuthComplete(code);
         }
 
         private void txtDropboxPath_TextChanged(object sender, EventArgs e)
