@@ -292,7 +292,7 @@ namespace ShareX
                                 }
                             }
 
-                            if (!task.IsStopped && !string.IsNullOrEmpty(result))
+                            if (!task.StopRequested && !string.IsNullOrEmpty(result))
                             {
                                 if (task.Info.TaskSettings.GeneralSettings.SaveHistory)
                                 {
