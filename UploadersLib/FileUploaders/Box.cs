@@ -113,6 +113,13 @@ namespace UploadersLib.FileUploaders
             return false;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
         public bool CheckAuthorization()
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
@@ -146,10 +153,7 @@ namespace UploadersLib.FileUploaders
 
             string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
 
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-
-            string response = SendRequest(HttpMethod.GET, url, headers: headers);
+            string response = SendRequest(HttpMethod.GET, url, headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -161,10 +165,7 @@ namespace UploadersLib.FileUploaders
 
         public string CreateSharedLink(string id)
         {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-
-            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"open\"}}", headers: headers);
+            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"open\"}}", headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -194,10 +195,7 @@ namespace UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("parent_id", FolderID);
 
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-
-            UploadResult result = UploadData(stream, "https://upload.box.com/api/2.0/files/content", fileName, "filename", args, headers: headers);
+            UploadResult result = UploadData(stream, "https://upload.box.com/api/2.0/files/content", fileName, "filename", args, headers: GetAuthHeaders());
 
             if (result.IsSuccess)
             {

@@ -109,6 +109,13 @@ namespace UploadersLib.ImageUploaders
             return false;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
         public bool CheckAuthorization()
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
@@ -134,10 +141,7 @@ namespace UploadersLib.ImageUploaders
 
             List<PicasaAlbumInfo> albumList = new List<PicasaAlbumInfo>();
 
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-
-            string response = SendRequest(HttpMethod.GET, "https://picasaweb.google.com/data/feed/api/user/default", null, ResponseType.Text, headers, null);
+            string response = SendRequest(HttpMethod.GET, "https://picasaweb.google.com/data/feed/api/user/default", headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -173,11 +177,10 @@ namespace UploadersLib.ImageUploaders
             string url = string.Format("https://picasaweb.google.com/data/feed/api/user/default/albumid/" + AlbumID);
             string contentType = Helpers.GetMimeType(fileName);
 
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            NameValueCollection headers = GetAuthHeaders();
             headers.Add("Slug", Helpers.URLEncode(fileName));
 
-            ur.Response = SendPostRequestStream(url, stream, contentType, null, headers);
+            ur.Response = SendPostRequestStream(url, stream, contentType, headers: headers);
 
             XDocument xd = XDocument.Parse(ur.Response);
 

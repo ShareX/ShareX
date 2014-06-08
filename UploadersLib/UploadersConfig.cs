@@ -116,7 +116,7 @@ namespace UploadersLib
 
         // Dropbox
 
-        public OAuthInfo DropboxOAuthInfo = null;
+        public OAuth2Info DropboxOAuth2Info = null;
         public DropboxAccountInfo DropboxAccountInfo = null;
         public string DropboxUploadPath = "Public/ShareX/%y/%mo";
         public bool DropboxAutoCreateShareableLink = false;
@@ -331,7 +331,7 @@ namespace UploadersLib
             switch (destination)
             {
                 case FileDestination.Dropbox:
-                    return OAuthInfo.CheckOAuth(DropboxOAuthInfo);
+                    return OAuth2Info.CheckOAuth(DropboxOAuth2Info);
                 case FileDestination.Copy:
                     return OAuthInfo.CheckOAuth(CopyOAuthInfo);
                 case FileDestination.GoogleDrive:

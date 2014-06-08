@@ -436,9 +436,9 @@ namespace UploadersLib
 
         public void DropboxOpenFiles()
         {
-            if (OAuthInfo.CheckOAuth(Config.DropboxOAuthInfo))
+            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info))
             {
-                using (DropboxFilesForm filesForm = new DropboxFilesForm(Config.DropboxOAuthInfo, GetDropboxUploadPath(), Config.DropboxAccountInfo))
+                using (DropboxFilesForm filesForm = new DropboxFilesForm(Config.DropboxOAuth2Info, GetDropboxUploadPath(), Config.DropboxAccountInfo))
                 {
                     if (filesForm.ShowDialog() == DialogResult.OK)
                     {
@@ -452,13 +452,13 @@ namespace UploadersLib
         {
             try
             {
-                OAuthInfo oauth = new OAuthInfo(APIKeys.DropboxConsumerKey, APIKeys.DropboxConsumerSecret);
+                OAuth2Info oauth = new OAuth2Info(APIKeys.DropboxConsumerKey, APIKeys.DropboxConsumerSecret);
 
                 string url = new Dropbox(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
                 {
-                    Config.DropboxOAuthInfo = oauth;
+                    Config.DropboxOAuth2Info = oauth;
                     Helpers.OpenURL(url);
                     btnDropboxCompleteAuth.Enabled = true;
                     DebugHelper.WriteLine("DropboxAuthOpen - Authorization URL is opened: " + url);
@@ -476,51 +476,51 @@ namespace UploadersLib
 
         public void DropboxAuthComplete()
         {
-            try
-            {
-                if (Config.DropboxOAuthInfo != null && !string.IsNullOrEmpty(Config.DropboxOAuthInfo.AuthToken) && !string.IsNullOrEmpty(Config.DropboxOAuthInfo.AuthSecret))
-                {
-                    Dropbox dropbox = new Dropbox(Config.DropboxOAuthInfo);
-                    bool result = dropbox.GetAccessToken();
+            /* try
+             {
+                 if (Config.DropboxOAuth2Info != null && !string.IsNullOrEmpty(Config.DropboxOAuth2Info.AuthToken) && !string.IsNullOrEmpty(Config.DropboxOAuth2Info.AuthSecret))
+                 {
+                     Dropbox dropbox = new Dropbox(Config.DropboxOAuth2Info);
+                     bool result = dropbox.GetAccessToken();
 
-                    if (result)
-                    {
-                        DropboxAccountInfo account = dropbox.GetAccountInfo();
+                     if (result)
+                     {
+                         DropboxAccountInfo account = dropbox.GetAccountInfo();
 
-                        if (account != null)
-                        {
-                            Config.DropboxAccountInfo = account;
-                            Config.DropboxUploadPath = txtDropboxPath.Text;
-                            UpdateDropboxStatus();
-                            MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
+                         if (account != null)
+                         {
+                             Config.DropboxAccountInfo = account;
+                             Config.DropboxUploadPath = txtDropboxPath.Text;
+                             UpdateDropboxStatus();
+                             MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                             return;
+                         }
 
-                        MessageBox.Show("GetAccountInfo failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("You must give access from Authorize page first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                         MessageBox.Show("GetAccountInfo failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }
+                     else
+                     {
+                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }
+                 }
+                 else
+                 {
+                     MessageBox.Show("You must give access from Authorize page first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }
 
-                Config.DropboxOAuthInfo = null;
-                UpdateDropboxStatus();
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                 Config.DropboxOAut2hInfo = null;
+                 UpdateDropboxStatus();
+             }
+             catch (Exception ex)
+             {
+                 DebugHelper.WriteException(ex);
+                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             } */
         }
 
         private void UpdateDropboxStatus()
         {
-            if (OAuthInfo.CheckOAuth(Config.DropboxOAuthInfo) && Config.DropboxAccountInfo != null)
+            if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccountInfo != null)
             {
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine("Login status: Successful");

@@ -104,6 +104,13 @@ namespace UploadersLib.FileUploaders
             return false;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
         public bool CheckAuthorization()
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
@@ -125,9 +132,6 @@ namespace UploadersLib.FileUploaders
 
         public void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
         {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-
             string url = string.Format("https://www.googleapis.com/drive/v2/files/{0}/permissions", fileID);
 
             string json = JsonConvert.SerializeObject(new
@@ -138,7 +142,7 @@ namespace UploadersLib.FileUploaders
                 withLink = withLink.ToString()
             });
 
-            string response = SendPostRequestJSON(url, json, headers: headers);
+            string response = SendPostRequestJSON(url, json, headers: GetAuthHeaders());
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -148,13 +152,10 @@ namespace UploadersLib.FileUploaders
                 return null;
             }
 
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("title", fileName);
 
-            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, "file", args, headers: headers);
+            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, "file", args, headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(result.Response))
             {

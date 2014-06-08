@@ -44,7 +44,7 @@ namespace UploadersLib.Forms
         private ImageListManager ilm;
         private bool isSelectedFile, isSelectedPublic;
 
-        public DropboxFilesForm(OAuthInfo oauth, string path, DropboxAccountInfo accountInfo)
+        public DropboxFilesForm(OAuth2Info oauth, string path, DropboxAccountInfo accountInfo)
         {
             InitializeComponent();
             Icon = Resources.Dropbox;

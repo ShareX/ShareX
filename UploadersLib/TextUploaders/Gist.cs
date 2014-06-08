@@ -31,7 +31,7 @@ using UploadersLib.HelperClasses;
 
 namespace UploadersLib.TextUploaders
 {
-    public sealed class Gist : TextUploader, IOAuth2Simple
+    public sealed class Gist : TextUploader, IOAuth2Basic
     {
         private const string URLAPI = "https://api.github.com/";
         private const string URLGists = URLAPI + "gists";

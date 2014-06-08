@@ -31,7 +31,7 @@ using UploadersLib.HelperClasses;
 
 namespace UploadersLib.URLShorteners
 {
-    public sealed class BitlyURLShortener : URLShortener, IOAuth2Simple
+    public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic
     {
         private const string URLAPI = "https://api-ssl.bitly.com/";
         private const string URLAccessToken = URLAPI + "oauth/access_token";

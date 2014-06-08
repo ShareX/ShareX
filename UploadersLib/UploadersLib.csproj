@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
+    <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="GUI\UserPassBox.cs">
@@ -221,7 +222,7 @@
     <Compile Include="HelperClasses\JSONHelper.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuth2.cs" />
-    <Compile Include="HelperClasses\OAuth\IOAuth2Simple.cs" />
+    <Compile Include="HelperClasses\OAuth\IOAuth2Basic.cs" />
     <Compile Include="HelperClasses\OAuth\OAuth2Info.cs" />
     <Compile Include="HelperClasses\OAuth\OAuth2Token.cs" />
     <Compile Include="HelperClasses\OAuth\OAuthManager.cs" />
@@ -351,6 +352,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Favicons\Yourls.ico" />
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
     <None Include="Favicons\Box.ico" />

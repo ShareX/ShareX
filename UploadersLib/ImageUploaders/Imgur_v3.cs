@@ -122,6 +122,13 @@ namespace UploadersLib.ImageUploaders
             return false;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
         public bool CheckAuthorization()
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
@@ -145,9 +152,7 @@ namespace UploadersLib.ImageUploaders
         {
             if (CheckAuthorization())
             {
-                NameValueCollection headers = new NameValueCollection();
-                headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", null, ResponseType.Text, headers, null);
+                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", headers: GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -171,7 +176,7 @@ namespace UploadersLib.ImageUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            NameValueCollection headers = new NameValueCollection();
+            NameValueCollection headers;
 
             if (UploadMethod == AccountType.User)
             {
@@ -185,14 +190,15 @@ namespace UploadersLib.ImageUploaders
                     args.Add("album", UploadAlbumID);
                 }
 
-                headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+                headers = GetAuthHeaders();
             }
-            else if (UploadMethod == AccountType.Anonymous)
+            else
             {
+                headers = new NameValueCollection();
                 headers.Add("Authorization", "Client-ID " + AuthInfo.Client_ID);
             }
 
-            UploadResult result = UploadData(stream, "https://api.imgur.com/3/image", fileName, "image", args, null, headers);
+            UploadResult result = UploadData(stream, "https://api.imgur.com/3/image", fileName, "image", args, headers: headers);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

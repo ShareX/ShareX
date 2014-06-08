@@ -805,7 +805,7 @@ namespace ShareX
             switch (fileDestination)
             {
                 case FileDestination.Dropbox:
-                    fileUploader = new Dropbox(Program.UploadersConfig.DropboxOAuthInfo, Program.UploadersConfig.DropboxAccountInfo)
+                    fileUploader = new Dropbox(Program.UploadersConfig.DropboxOAuth2Info, Program.UploadersConfig.DropboxAccountInfo)
                     {
                         UploadPath = NameParser.Parse(NameParserType.URL, Dropbox.TidyUploadPath(Program.UploadersConfig.DropboxUploadPath)),
                         AutoCreateShareableLink = Program.UploadersConfig.DropboxAutoCreateShareableLink,

@@ -23,10 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.Specialized;
+
 namespace UploadersLib.HelperClasses
 {
-    public interface IOAuth : IOAuthBase
+    public interface IOAuth2Basic : IOAuthBase
     {
-        OAuthInfo AuthInfo { get; }
+        OAuth2Info AuthInfo { get; }
     }
 }
