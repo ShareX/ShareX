@@ -480,7 +480,7 @@
     <None Include="Resources\Test.png" />
     <None Include="Resources\application-network.png" />
     <None Include="Resources\Greenshot.png" />
-    <None Include="..\Docs\LICENSE.txt">
+    <None Include="..\LICENSE.txt">
       <Link>LICENSE.txt</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
