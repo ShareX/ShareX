@@ -174,7 +174,7 @@ namespace ShareX
                 {
                     string url = text.Trim();
 
-                    if (Helpers.IsValidURLRegex(url))
+                    if (URLHelpers.IsValidURLRegex(url))
                     {
                         if (taskSettings.UploadSettings.ClipboardUploadURLContents)
                         {

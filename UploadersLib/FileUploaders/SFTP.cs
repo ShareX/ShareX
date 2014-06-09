@@ -178,7 +178,7 @@ namespace UploadersLib.FileUploaders
             {
                 fileName = Helpers.GetValidURL(fileName);
                 string folderPath = Account.GetSubFolderPath();
-                string filePath = Helpers.CombineURL(folderPath, fileName);
+                string filePath = URLHelpers.CombineURL(folderPath, fileName);
 
                 try
                 {

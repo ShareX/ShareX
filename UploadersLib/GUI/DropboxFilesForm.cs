@@ -214,7 +214,7 @@ namespace UploadersLib.Forms
             {
                 if (ib.ShowDialog() == DialogResult.OK)
                 {
-                    string path = Helpers.CombineURL(CurrentFolderPath, ib.InputText);
+                    string path = URLHelpers.CombineURL(CurrentFolderPath, ib.InputText);
                     dropbox.CreateFolder(path);
                     RefreshDirectory();
                 }

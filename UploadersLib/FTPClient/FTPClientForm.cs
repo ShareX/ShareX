@@ -298,7 +298,7 @@ namespace UploadersLib
                 BringToFront();
                 if (ib.DialogResult == DialogResult.OK)
                 {
-                    Client.CreateDirectory(Helpers.CombineURL(currentDirectory, ib.InputText));
+                    Client.CreateDirectory(URLHelpers.CombineURL(currentDirectory, ib.InputText));
                     RefreshDirectory();
                 }
             }
@@ -435,7 +435,7 @@ namespace UploadersLib
                             {
                                 if (file.Name != filename)
                                 {
-                                    string path = Helpers.CombineURL(currentDirectory, filename);
+                                    string path = URLHelpers.CombineURL(currentDirectory, filename);
                                     string movePath = string.Empty;
                                     if (file.Type == FtpFileSystemObjectType.Link)
                                     {
@@ -450,7 +450,7 @@ namespace UploadersLib
                                     }
                                     else
                                     {
-                                        movePath = Helpers.CombineURL(file.FullName, filename);
+                                        movePath = URLHelpers.CombineURL(file.FullName, filename);
                                     }
 
                                     if (!string.IsNullOrEmpty(movePath))
@@ -489,7 +489,7 @@ namespace UploadersLib
                 FtpListItem file = (FtpListItem)lvFTPList.SelectedItems[0].Tag;
                 if (file.Name != e.DisplayText)
                 {
-                    Client.Rename(file.FullName, Helpers.CombineURL(currentDirectory, e.DisplayText));
+                    Client.Rename(file.FullName, URLHelpers.CombineURL(currentDirectory, e.DisplayText));
                     RefreshDirectory();
                 }
             }

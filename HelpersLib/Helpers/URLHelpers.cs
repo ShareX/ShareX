@@ -26,14 +26,146 @@
 using HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace HelpersLib
 {
     public static class URLHelpers
     {
+        private static string Encode(string text, string unreservedCharacters)
+        {
+            StringBuilder result = new StringBuilder();
+
+            if (!string.IsNullOrEmpty(text))
+            {
+                foreach (char c in text)
+                {
+                    if (unreservedCharacters.Contains(c))
+                    {
+                        result.Append(c);
+                    }
+                    else
+                    {
+                        byte[] bytes = Encoding.UTF8.GetBytes(c.ToString());
+
+                        foreach (byte b in bytes)
+                        {
+                            result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", b);
+                        }
+                    }
+                }
+            }
+
+            return result.ToString();
+        }
+
+        public static string URLEncode(string text)
+        {
+            return Encode(text, Helpers.URLCharacters);
+        }
+
+        public static string URLPathEncode(string text)
+        {
+            return Encode(text, Helpers.URLPathCharacters);
+        }
+
+        public static string CombineURL(string url1, string url2)
+        {
+            bool url1Empty = string.IsNullOrEmpty(url1);
+            bool url2Empty = string.IsNullOrEmpty(url2);
+
+            if (url1Empty && url2Empty)
+            {
+                return string.Empty;
+            }
+
+            if (url1Empty)
+            {
+                return url2;
+            }
+
+            if (url2Empty)
+            {
+                return url1;
+            }
+
+            if (url1.EndsWith("/"))
+            {
+                url1 = url1.Substring(0, url1.Length - 1);
+            }
+
+            if (url2.StartsWith("/"))
+            {
+                url2 = url2.Remove(0, 1);
+            }
+
+            return url1 + "/" + url2;
+        }
+
+        public static string CombineURL(params string[] urls)
+        {
+            return urls.Aggregate(CombineURL);
+        }
+
+        public static bool IsValidURL(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                url = url.Trim();
+                return !url.StartsWith("file://") && Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute);
+            }
+
+            return false;
+        }
+
+        public static bool IsValidURLRegex(string url)
+        {
+            if (string.IsNullOrEmpty(url)) return false;
+
+            // https://gist.github.com/729294
+            string pattern =
+                "^" +
+                // protocol identifier
+                "(?:(?:https?|ftp)://)" +
+                // user:pass authentication
+                "(?:\\S+(?::\\S*)?@)?" +
+                "(?:" +
+                // IP address exclusion
+                // private & local networks
+                "(?!10(?:\\.\\d{1,3}){3})" +
+                "(?!127(?:\\.\\d{1,3}){3})" +
+                "(?!169\\.254(?:\\.\\d{1,3}){2})" +
+                "(?!192\\.168(?:\\.\\d{1,3}){2})" +
+                "(?!172\\.(?:1[6-9]|2\\d|3[0-1])(?:\\.\\d{1,3}){2})" +
+                // IP address dotted notation octets
+                // excludes loopback network 0.0.0.0
+                // excludes reserved space >= 224.0.0.0
+                // excludes network & broacast addresses
+                // (first & last IP address of each class)
+                "(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])" +
+                "(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}" +
+                "(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))" +
+                "|" +
+                // host name
+                "(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)" +
+                // domain name
+                "(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*" +
+                // TLD identifier
+                "(?:\\.(?:[a-z\\u00a1-\\uffff]{2,}))" +
+                ")" +
+                // port number
+                "(?::\\d{2,5})?" +
+                // resource path
+                "(?:/[^\\s]*)?" +
+                "$";
+
+            return Regex.IsMatch(url.Trim(), pattern, RegexOptions.IgnoreCase);
+        }
+
         public static string AddSlash(string url, SlashType slashType)
         {
             return AddSlash(url, slashType, 1);

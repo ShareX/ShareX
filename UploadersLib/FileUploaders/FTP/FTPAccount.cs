@@ -141,7 +141,7 @@ namespace UploadersLib
         public string GetSubFolderPath(string filename = null)
         {
             string path = NameParser.Parse(NameParserType.URL, SubFolderPath.Replace("%host", Host));
-            return Helpers.CombineURL(path, filename);
+            return URLHelpers.CombineURL(path, filename);
         }
 
         public string GetHttpHomePath()
@@ -170,13 +170,13 @@ namespace UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            filename = Helpers.URLEncode(filename);
+            filename = URLHelpers.URLEncode(filename);
 
             string subFolderPath = GetSubFolderPath();
-            subFolderPath = Helpers.URLPathEncode(subFolderPath);
+            subFolderPath = URLHelpers.URLPathEncode(subFolderPath);
 
             string httpHomePath = GetHttpHomePath();
-            httpHomePath = Helpers.URLPathEncode(httpHomePath);
+            httpHomePath = URLHelpers.URLPathEncode(httpHomePath);
 
             string path;
 
@@ -189,13 +189,13 @@ namespace UploadersLib
                     host = host.Substring(4);
                 }
 
-                path = Helpers.CombineURL(host, subFolderPath, filename);
+                path = URLHelpers.CombineURL(host, subFolderPath, filename);
             }
             else
             {
                 if (HttpHomePathAutoAddSubFolderPath)
                 {
-                    path = Helpers.CombineURL(httpHomePath, subFolderPath);
+                    path = URLHelpers.CombineURL(httpHomePath, subFolderPath);
                 }
                 else
                 {
@@ -208,7 +208,7 @@ namespace UploadersLib
                 }
                 else
                 {
-                    path = Helpers.CombineURL(path, filename);
+                    path = URLHelpers.CombineURL(path, filename);
                 }
             }
 
@@ -229,7 +229,7 @@ namespace UploadersLib
                 return string.Empty;
             }
 
-            return Helpers.CombineURL(FTPAddress, GetSubFolderPath(filemame));
+            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame));
         }
 
         public override string ToString()

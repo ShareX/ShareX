@@ -119,7 +119,7 @@ namespace UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
             {
-                string url = Helpers.CombineURL(URLFiles, Helpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
                 return SendRequest(HttpMethod.GET, downloadStream, query);
             }
@@ -137,7 +137,7 @@ namespace UploadersLib.FileUploaders
                 return null;
             }
 
-            string url = Helpers.CombineURL(URLFiles, Helpers.URLPathEncode(path));
+            string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("overwrite", "true");
@@ -151,7 +151,7 @@ namespace UploadersLib.FileUploaders
             {
                 CopyUploadInfo content = JsonConvert.DeserializeObject<CopyUploadInfo>(result.Response);
 
-                if (content != null)
+                if (content != null && content.objects != null && content.objects.Length > 0)
                 {
                     AllowReportProgress = false;
                     result.URL = CreatePublicURL(content.objects[0].path, URLType);
@@ -169,7 +169,7 @@ namespace UploadersLib.FileUploaders
 
             if (OAuthInfo.CheckOAuth(AuthInfo))
             {
-                string url = Helpers.CombineURL(URLMetaData, Helpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLMetaData, URLHelpers.URLPathEncode(path));
 
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
 
@@ -193,7 +193,7 @@ namespace UploadersLib.FileUploaders
 
         public string GetLinkURL(CopyLinksInfo link, string path, CopyURLType urlType = CopyURLType.Default)
         {
-            string filename = URLHelpers.GetFileName(path);
+            string filename = URLHelpers.URLEncode(URLHelpers.GetFileName(path));
 
             switch (urlType)
             {
@@ -211,7 +211,7 @@ namespace UploadersLib.FileUploaders
         {
             path = path.Trim('/');
 
-            string url = Helpers.CombineURL(URLLinks, Helpers.URLPathEncode(path));
+            string url = URLHelpers.CombineURL(URLLinks, URLHelpers.URLPathEncode(path));
 
             string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
 
@@ -310,11 +310,11 @@ namespace UploadersLib.FileUploaders
     public class CopyContentInfo // https://api.copy.com/rest/meta also works on 'rest/files'
     {
         public string id { get; set; } // Internal copy name
-        public string path { get; set; } // hmm?
+        public string path { get; set; } // file path
         public string name { get; set; } // Human readable (Filesystem) folder name
         public string type { get; set; } // "inbox", "root", "copy", "dir", "file"?
         public bool stub { get; set; } // 'The stub attribute you see on all of the nodes represents if the specified node is incomplete, that is, if the children have not all been delivered to you. Basically, they will always be a stub, unless you are looking at that item directly.'
-        public long size { get; set; } // size of the folder/file
+        public long? size { get; set; } // Filesizes (size attributes) are measured in bytes. If an item displayed in the filesystem is a directory or an otherwise special location which doesn't represent a file, the size attribute will be null.
         public long date_last_synced { get; set; }
         public bool @public { get; set; } // is available to public; isnt everything private but shared in copy???
         public string url { get; set; } // web access url (private)

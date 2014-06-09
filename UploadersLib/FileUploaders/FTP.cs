@@ -229,14 +229,14 @@ namespace UploadersLib.FileUploaders
 
                     if (File.Exists(file))
                     {
-                        UploadFile(file, Helpers.CombineURL(remotePath, filename));
+                        UploadFile(file, URLHelpers.CombineURL(remotePath, filename));
                     }
                     else if (Directory.Exists(file))
                     {
                         List<string> filesList = new List<string>();
                         filesList.AddRange(Directory.GetFiles(file));
                         filesList.AddRange(Directory.GetDirectories(file));
-                        string path = Helpers.CombineURL(remotePath, filename);
+                        string path = URLHelpers.CombineURL(remotePath, filename);
                         CreateDirectory(path);
                         UploadFiles(filesList.ToArray(), path);
                     }

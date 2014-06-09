@@ -141,10 +141,10 @@ namespace UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            filename = Helpers.URLEncode(filename);
+            filename = URLHelpers.URLEncode(filename);
 
             string subFolderPath = GetSubFolderPath();
-            subFolderPath = Helpers.URLPathEncode(subFolderPath);
+            subFolderPath = URLHelpers.URLPathEncode(subFolderPath);
 
             string httpHomePath = GetHttpHomePath();
 
@@ -157,7 +157,7 @@ namespace UploadersLib
             }
             else
             {
-                path = Helpers.URLPathEncode(httpHomePath);
+                path = URLHelpers.URLPathEncode(httpHomePath);
             }
 
             if (Port != 80)
@@ -167,10 +167,10 @@ namespace UploadersLib
 
             if (HttpHomePathAutoAddSubFolderPath)
             {
-                path = Helpers.CombineURL(path, subFolderPath);
+                path = URLHelpers.CombineURL(path, subFolderPath);
             }
 
-            path = Helpers.CombineURL(path, filename);
+            path = URLHelpers.CombineURL(path, filename);
 
             string remoteProtocol = RemoteProtocol.GetDescription();
 
@@ -200,7 +200,7 @@ namespace UploadersLib
                 return string.Empty;
             }
 
-            return Helpers.CombineURL(localhostAddress, GetSubFolderPath(), fileName);
+            return URLHelpers.CombineURL(localhostAddress, GetSubFolderPath(), fileName);
         }
 
         public override string ToString()

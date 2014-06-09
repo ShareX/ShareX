@@ -269,11 +269,11 @@ namespace UploadersLib
             {
                 if (file.IsDirectory)
                 {
-                    RemoveDirectory(Helpers.CombineURL(url, file.Name));
+                    RemoveDirectory(URLHelpers.CombineURL(url, file.Name));
                 }
                 else
                 {
-                    DeleteFile(Helpers.CombineURL(url, file.Name));
+                    DeleteFile(URLHelpers.CombineURL(url, file.Name));
                 }
             }
 
@@ -401,8 +401,8 @@ namespace UploadersLib
             {
                 if (!string.IsNullOrEmpty(dir))
                 {
-                    path = Helpers.CombineURL(path, dir);
-                    MakeDirectory(Helpers.CombineURL(Options.Account.FTPAddress, path));
+                    path = URLHelpers.CombineURL(path, dir);
+                    MakeDirectory(URLHelpers.CombineURL(Options.Account.FTPAddress, path));
                 }
             }
 

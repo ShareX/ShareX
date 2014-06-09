@@ -163,7 +163,7 @@ namespace UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = Helpers.CombineURL(URLFiles, Helpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
                 return SendRequest(HttpMethod.GET, downloadStream, url, headers: GetAuthHeaders());
             }
 
@@ -179,7 +179,7 @@ namespace UploadersLib.FileUploaders
                 return null;
             }
 
-            string url = Helpers.CombineURL(URLFiles, Helpers.URLPathEncode(path));
+            string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
 
             // There's a 150MB limit to all uploads through the API.
             UploadResult result = UploadData(stream, url, fileName, headers: GetAuthHeaders());
@@ -211,7 +211,7 @@ namespace UploadersLib.FileUploaders
 
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = Helpers.CombineURL(URLMetaData, Helpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLMetaData, URLHelpers.URLPathEncode(path));
 
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("list", list ? "true" : "false");
@@ -238,7 +238,7 @@ namespace UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string url = Helpers.CombineURL(URLShares, Helpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLShares, URLHelpers.URLPathEncode(path));
 
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
@@ -257,7 +257,7 @@ namespace UploadersLib.FileUploaders
                             string urlPath = match.Groups["path"].Value;
                             if (!string.IsNullOrEmpty(urlPath))
                             {
-                                return Helpers.CombineURL(URLShareDirect, urlPath);
+                                return URLHelpers.CombineURL(URLShareDirect, urlPath);
                             }
                         }
                     }
@@ -385,8 +385,8 @@ namespace UploadersLib.FileUploaders
 
                 if (path.StartsWith("Public/", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    path = Helpers.URLPathEncode((path.Substring(7)));
-                    return Helpers.CombineURL(URLPublicDirect, userID.ToString(), path);
+                    path = URLHelpers.URLPathEncode((path.Substring(7)));
+                    return URLHelpers.CombineURL(URLPublicDirect, userID.ToString(), path);
                 }
             }
 

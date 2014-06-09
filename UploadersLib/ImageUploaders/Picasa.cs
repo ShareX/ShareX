@@ -50,7 +50,7 @@ namespace UploadersLib.ImageUploaders
         public string GetAuthorizationURL()
         {
             return string.Format("https://accounts.google.com/o/oauth2/auth?response_type={0}&client_id={1}&redirect_uri={2}&scope={3}",
-                "code", AuthInfo.Client_ID, "urn:ietf:wg:oauth:2.0:oob", Helpers.URLEncode("https://picasaweb.google.com/data"));
+                "code", AuthInfo.Client_ID, "urn:ietf:wg:oauth:2.0:oob", URLHelpers.URLEncode("https://picasaweb.google.com/data"));
         }
 
         public bool GetAccessToken(string code)
@@ -178,7 +178,7 @@ namespace UploadersLib.ImageUploaders
             string contentType = Helpers.GetMimeType(fileName);
 
             NameValueCollection headers = GetAuthHeaders();
-            headers.Add("Slug", Helpers.URLEncode(fileName));
+            headers.Add("Slug", URLHelpers.URLEncode(fileName));
 
             ur.Response = SendPostRequestStream(url, stream, contentType, headers: headers);
 

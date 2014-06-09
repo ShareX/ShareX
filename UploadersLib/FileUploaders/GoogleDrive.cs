@@ -45,7 +45,7 @@ namespace UploadersLib.FileUploaders
         public string GetAuthorizationURL()
         {
             return string.Format("https://accounts.google.com/o/oauth2/auth?response_type={0}&client_id={1}&redirect_uri={2}&scope={3}",
-                "code", AuthInfo.Client_ID, "urn:ietf:wg:oauth:2.0:oob", Helpers.URLEncode("https://www.googleapis.com/auth/drive"));
+                "code", AuthInfo.Client_ID, "urn:ietf:wg:oauth:2.0:oob", URLHelpers.URLEncode("https://www.googleapis.com/auth/drive"));
         }
 
         public bool GetAccessToken(string code)

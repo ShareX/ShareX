@@ -100,13 +100,13 @@ namespace UploadersLib.FileUploaders
         private string GetObjectKey(string fileName)
         {
             string objectPrefix = NameParser.Parse(NameParserType.FolderPath, S3Settings.ObjectPrefix.Trim('/'));
-            return Helpers.CombineURL(objectPrefix, fileName);
+            return URLHelpers.CombineURL(objectPrefix, fileName);
         }
 
         private string GetObjectURL(string objectName)
         {
             objectName = objectName.Trim('/');
-            objectName = Helpers.URLPathEncode(objectName);
+            objectName = URLHelpers.URLPathEncode(objectName);
 
             string url = string.Empty;
 
@@ -114,16 +114,16 @@ namespace UploadersLib.FileUploaders
             {
                 if (!string.IsNullOrEmpty(S3Settings.CustomDomain))
                 {
-                    url = Helpers.CombineURL(S3Settings.CustomDomain, objectName);
+                    url = URLHelpers.CombineURL(S3Settings.CustomDomain, objectName);
                 }
                 else
                 {
-                    url = Helpers.CombineURL(S3Settings.Bucket, objectName);
+                    url = URLHelpers.CombineURL(S3Settings.Bucket, objectName);
                 }
             }
             else
             {
-                url = Helpers.CombineURL(GetEndpoint(), objectName);
+                url = URLHelpers.CombineURL(GetEndpoint(), objectName);
             }
 
             if (!URLHelpers.HasPrefix(url))

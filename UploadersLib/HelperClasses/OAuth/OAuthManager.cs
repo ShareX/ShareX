@@ -122,7 +122,7 @@ namespace UploadersLib.HelperClasses
                     throw new NotImplementedException("Unsupported signature method");
             }
 
-            string signature = Helpers.URLEncode(Convert.ToBase64String(signatureData));
+            string signature = URLHelpers.URLEncode(Convert.ToBase64String(signatureData));
             return string.Format("{0}?{1}&{2}={3}", normalizedUrl, normalizedParameters, ParameterSignature, signature);
         }
 
@@ -139,7 +139,7 @@ namespace UploadersLib.HelperClasses
 
                 if (!string.IsNullOrEmpty(callback))
                 {
-                    url += string.Format("&{0}={1}", ParameterCallback, Helpers.URLEncode(callback));
+                    url += string.Format("&{0}={1}", ParameterCallback, URLHelpers.URLEncode(callback));
                 }
 
                 if (args[ParameterTokenSecret] != null)
@@ -174,8 +174,8 @@ namespace UploadersLib.HelperClasses
         {
             StringBuilder signatureBase = new StringBuilder();
             signatureBase.AppendFormat("{0}&", httpMethod.ToString());
-            signatureBase.AppendFormat("{0}&", Helpers.URLEncode(normalizedUrl));
-            signatureBase.AppendFormat("{0}", Helpers.URLEncode(normalizedParameters));
+            signatureBase.AppendFormat("{0}&", URLHelpers.URLEncode(normalizedUrl));
+            signatureBase.AppendFormat("{0}", URLHelpers.URLEncode(normalizedParameters));
             return signatureBase.ToString();
         }
 
@@ -253,7 +253,7 @@ namespace UploadersLib.HelperClasses
 
         private static string NormalizeParameters(Dictionary<string, string> parameters)
         {
-            return string.Join("&", parameters.OrderBy(x => x.Key).ThenBy(x => x.Value).Select(x => x.Key + "=" + Helpers.URLEncode(x.Value)).ToArray());
+            return string.Join("&", parameters.OrderBy(x => x.Key).ThenBy(x => x.Value).Select(x => x.Key + "=" + URLHelpers.URLEncode(x.Value)).ToArray());
         }
     }
 }
