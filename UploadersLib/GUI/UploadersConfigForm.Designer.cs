@@ -114,6 +114,7 @@
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
+            this.oauth2Dropbox = new UploadersLib.GUI.OAuth2Control();
             this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.btnDropboxShowFiles = new System.Windows.Forms.Button();
@@ -144,7 +145,6 @@
             this.ucFTPAccounts = new UploadersLib.AccountsControl();
             this.tpMega = new System.Windows.Forms.TabPage();
             this.lblMegaStatus = new System.Windows.Forms.Label();
-            this.pnlMegaLogin = new System.Windows.Forms.Panel();
             this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
             this.btnMegaRegister = new System.Windows.Forms.Button();
             this.lblMegaFolder = new System.Windows.Forms.Label();
@@ -366,7 +366,6 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.ttlvMain = new HelpersLib.TabToListView();
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
-            this.oauth2Dropbox = new UploadersLib.GUI.OAuth2Control();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -387,7 +386,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).BeginInit();
             this.tpFTP.SuspendLayout();
             this.tpMega.SuspendLayout();
-            this.pnlMegaLogin.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
@@ -1316,6 +1314,18 @@
             this.tpDropbox.Text = "Dropbox";
             this.tpDropbox.UseVisualStyleBackColor = true;
             // 
+            // oauth2Dropbox
+            // 
+            this.oauth2Dropbox.IsRefreshable = false;
+            this.oauth2Dropbox.Location = new System.Drawing.Point(16, 88);
+            this.oauth2Dropbox.LoginStatus = false;
+            this.oauth2Dropbox.Name = "oauth2Dropbox";
+            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 168);
+            this.oauth2Dropbox.Status = "Login required.";
+            this.oauth2Dropbox.TabIndex = 20;
+            this.oauth2Dropbox.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
+            this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
+            // 
             // cbDropboxURLType
             // 
             this.cbDropboxURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1611,9 +1621,17 @@
             // 
             // tpMega
             // 
+            this.tpMega.Controls.Add(this.btnMegaRefreshFolders);
             this.tpMega.Controls.Add(this.lblMegaStatus);
-            this.tpMega.Controls.Add(this.pnlMegaLogin);
+            this.tpMega.Controls.Add(this.btnMegaRegister);
+            this.tpMega.Controls.Add(this.lblMegaFolder);
             this.tpMega.Controls.Add(this.lblMegaStatusTitle);
+            this.tpMega.Controls.Add(this.cbMegaFolder);
+            this.tpMega.Controls.Add(this.lblMegaEmail);
+            this.tpMega.Controls.Add(this.btnMegaLogin);
+            this.tpMega.Controls.Add(this.txtMegaEmail);
+            this.tpMega.Controls.Add(this.txtMegaPassword);
+            this.tpMega.Controls.Add(this.lblMegaPassword);
             this.tpMega.Location = new System.Drawing.Point(4, 22);
             this.tpMega.Name = "tpMega";
             this.tpMega.Size = new System.Drawing.Size(972, 493);
@@ -1624,43 +1642,27 @@
             // lblMegaStatus
             // 
             this.lblMegaStatus.AutoSize = true;
-            this.lblMegaStatus.Location = new System.Drawing.Point(80, 16);
+            this.lblMegaStatus.Location = new System.Drawing.Point(88, 24);
             this.lblMegaStatus.Name = "lblMegaStatus";
             this.lblMegaStatus.Size = new System.Drawing.Size(186, 13);
             this.lblMegaStatus.TabIndex = 0;
             this.lblMegaStatus.Text = "CONFIGURED / NOT CONFIGURED";
             // 
-            // pnlMegaLogin
-            // 
-            this.pnlMegaLogin.Controls.Add(this.btnMegaRefreshFolders);
-            this.pnlMegaLogin.Controls.Add(this.btnMegaRegister);
-            this.pnlMegaLogin.Controls.Add(this.lblMegaFolder);
-            this.pnlMegaLogin.Controls.Add(this.cbMegaFolder);
-            this.pnlMegaLogin.Controls.Add(this.lblMegaEmail);
-            this.pnlMegaLogin.Controls.Add(this.txtMegaEmail);
-            this.pnlMegaLogin.Controls.Add(this.lblMegaPassword);
-            this.pnlMegaLogin.Controls.Add(this.txtMegaPassword);
-            this.pnlMegaLogin.Controls.Add(this.btnMegaLogin);
-            this.pnlMegaLogin.Location = new System.Drawing.Point(12, 40);
-            this.pnlMegaLogin.Name = "pnlMegaLogin";
-            this.pnlMegaLogin.Size = new System.Drawing.Size(378, 226);
-            this.pnlMegaLogin.TabIndex = 2;
-            // 
             // btnMegaRefreshFolders
             // 
-            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(72, 132);
+            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(264, 114);
             this.btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
-            this.btnMegaRefreshFolders.Size = new System.Drawing.Size(96, 24);
+            this.btnMegaRefreshFolders.Size = new System.Drawing.Size(88, 24);
             this.btnMegaRefreshFolders.TabIndex = 8;
-            this.btnMegaRefreshFolders.Text = "Refresh folders";
+            this.btnMegaRefreshFolders.Text = "Refresh";
             this.btnMegaRefreshFolders.UseVisualStyleBackColor = true;
             this.btnMegaRefreshFolders.Click += new System.EventHandler(this.btnMegaRefreshFolders_Click);
             // 
             // btnMegaRegister
             // 
-            this.btnMegaRegister.Location = new System.Drawing.Point(264, 8);
+            this.btnMegaRegister.Location = new System.Drawing.Point(264, 50);
             this.btnMegaRegister.Name = "btnMegaRegister";
-            this.btnMegaRegister.Size = new System.Drawing.Size(96, 24);
+            this.btnMegaRegister.Size = new System.Drawing.Size(88, 24);
             this.btnMegaRegister.TabIndex = 2;
             this.btnMegaRegister.Text = "Register...";
             this.btnMegaRegister.UseVisualStyleBackColor = true;
@@ -1669,7 +1671,7 @@
             // lblMegaFolder
             // 
             this.lblMegaFolder.AutoSize = true;
-            this.lblMegaFolder.Location = new System.Drawing.Point(12, 109);
+            this.lblMegaFolder.Location = new System.Drawing.Point(24, 120);
             this.lblMegaFolder.Name = "lblMegaFolder";
             this.lblMegaFolder.Size = new System.Drawing.Size(39, 13);
             this.lblMegaFolder.TabIndex = 6;
@@ -1680,9 +1682,9 @@
             this.cbMegaFolder.DisplayMember = "DisplayName";
             this.cbMegaFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMegaFolder.FormattingEnabled = true;
-            this.cbMegaFolder.Location = new System.Drawing.Point(72, 105);
+            this.cbMegaFolder.Location = new System.Drawing.Point(88, 116);
             this.cbMegaFolder.Name = "cbMegaFolder";
-            this.cbMegaFolder.Size = new System.Drawing.Size(176, 21);
+            this.cbMegaFolder.Size = new System.Drawing.Size(168, 21);
             this.cbMegaFolder.TabIndex = 7;
             this.cbMegaFolder.ValueMember = "Node";
             this.cbMegaFolder.SelectedIndexChanged += new System.EventHandler(this.cbMegaFolder_SelectedIndexChanged);
@@ -1690,7 +1692,7 @@
             // lblMegaEmail
             // 
             this.lblMegaEmail.AutoSize = true;
-            this.lblMegaEmail.Location = new System.Drawing.Point(12, 14);
+            this.lblMegaEmail.Location = new System.Drawing.Point(24, 56);
             this.lblMegaEmail.Name = "lblMegaEmail";
             this.lblMegaEmail.Size = new System.Drawing.Size(35, 13);
             this.lblMegaEmail.TabIndex = 0;
@@ -1698,15 +1700,15 @@
             // 
             // txtMegaEmail
             // 
-            this.txtMegaEmail.Location = new System.Drawing.Point(72, 10);
+            this.txtMegaEmail.Location = new System.Drawing.Point(88, 52);
             this.txtMegaEmail.Name = "txtMegaEmail";
-            this.txtMegaEmail.Size = new System.Drawing.Size(176, 20);
+            this.txtMegaEmail.Size = new System.Drawing.Size(168, 20);
             this.txtMegaEmail.TabIndex = 1;
             // 
             // lblMegaPassword
             // 
             this.lblMegaPassword.AutoSize = true;
-            this.lblMegaPassword.Location = new System.Drawing.Point(12, 38);
+            this.lblMegaPassword.Location = new System.Drawing.Point(24, 88);
             this.lblMegaPassword.Name = "lblMegaPassword";
             this.lblMegaPassword.Size = new System.Drawing.Size(56, 13);
             this.lblMegaPassword.TabIndex = 3;
@@ -1714,17 +1716,17 @@
             // 
             // txtMegaPassword
             // 
-            this.txtMegaPassword.Location = new System.Drawing.Point(72, 34);
+            this.txtMegaPassword.Location = new System.Drawing.Point(88, 84);
             this.txtMegaPassword.Name = "txtMegaPassword";
-            this.txtMegaPassword.Size = new System.Drawing.Size(176, 20);
+            this.txtMegaPassword.Size = new System.Drawing.Size(168, 20);
             this.txtMegaPassword.TabIndex = 4;
             this.txtMegaPassword.UseSystemPasswordChar = true;
             // 
             // btnMegaLogin
             // 
-            this.btnMegaLogin.Location = new System.Drawing.Point(168, 64);
+            this.btnMegaLogin.Location = new System.Drawing.Point(264, 82);
             this.btnMegaLogin.Name = "btnMegaLogin";
-            this.btnMegaLogin.Size = new System.Drawing.Size(80, 24);
+            this.btnMegaLogin.Size = new System.Drawing.Size(88, 24);
             this.btnMegaLogin.TabIndex = 5;
             this.btnMegaLogin.Text = "Login";
             this.btnMegaLogin.UseVisualStyleBackColor = true;
@@ -1733,7 +1735,7 @@
             // lblMegaStatusTitle
             // 
             this.lblMegaStatusTitle.AutoSize = true;
-            this.lblMegaStatusTitle.Location = new System.Drawing.Point(24, 17);
+            this.lblMegaStatusTitle.Location = new System.Drawing.Point(24, 24);
             this.lblMegaStatusTitle.Name = "lblMegaStatusTitle";
             this.lblMegaStatusTitle.Size = new System.Drawing.Size(43, 13);
             this.lblMegaStatusTitle.TabIndex = 1;
@@ -1928,7 +1930,7 @@
             // lblPushbulletDevices
             // 
             this.lblPushbulletDevices.AutoSize = true;
-            this.lblPushbulletDevices.Location = new System.Drawing.Point(16, 43);
+            this.lblPushbulletDevices.Location = new System.Drawing.Point(24, 51);
             this.lblPushbulletDevices.Name = "lblPushbulletDevices";
             this.lblPushbulletDevices.Size = new System.Drawing.Size(44, 13);
             this.lblPushbulletDevices.TabIndex = 2;
@@ -1939,7 +1941,7 @@
             this.cboPushbulletDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPushbulletDevices.Enabled = false;
             this.cboPushbulletDevices.FormattingEnabled = true;
-            this.cboPushbulletDevices.Location = new System.Drawing.Point(94, 40);
+            this.cboPushbulletDevices.Location = new System.Drawing.Point(102, 48);
             this.cboPushbulletDevices.Name = "cboPushbulletDevices";
             this.cboPushbulletDevices.Size = new System.Drawing.Size(346, 21);
             this.cboPushbulletDevices.TabIndex = 3;
@@ -1948,7 +1950,7 @@
             // btnPushbulletGetDeviceList
             // 
             this.btnPushbulletGetDeviceList.Enabled = false;
-            this.btnPushbulletGetDeviceList.Location = new System.Drawing.Point(448, 39);
+            this.btnPushbulletGetDeviceList.Location = new System.Drawing.Point(456, 47);
             this.btnPushbulletGetDeviceList.Name = "btnPushbulletGetDeviceList";
             this.btnPushbulletGetDeviceList.Size = new System.Drawing.Size(107, 23);
             this.btnPushbulletGetDeviceList.TabIndex = 4;
@@ -1959,7 +1961,7 @@
             // lblPushbulletUserKey
             // 
             this.lblPushbulletUserKey.AutoSize = true;
-            this.lblPushbulletUserKey.Location = new System.Drawing.Point(16, 16);
+            this.lblPushbulletUserKey.Location = new System.Drawing.Point(24, 24);
             this.lblPushbulletUserKey.Name = "lblPushbulletUserKey";
             this.lblPushbulletUserKey.Size = new System.Drawing.Size(72, 13);
             this.lblPushbulletUserKey.TabIndex = 0;
@@ -1967,7 +1969,7 @@
             // 
             // txtPushbulletUserKey
             // 
-            this.txtPushbulletUserKey.Location = new System.Drawing.Point(94, 13);
+            this.txtPushbulletUserKey.Location = new System.Drawing.Point(102, 21);
             this.txtPushbulletUserKey.Name = "txtPushbulletUserKey";
             this.txtPushbulletUserKey.Size = new System.Drawing.Size(346, 20);
             this.txtPushbulletUserKey.TabIndex = 1;
@@ -2203,7 +2205,7 @@
             // 
             // btnSendSpaceRegister
             // 
-            this.btnSendSpaceRegister.Location = new System.Drawing.Point(224, 51);
+            this.btnSendSpaceRegister.Location = new System.Drawing.Point(240, 51);
             this.btnSendSpaceRegister.Name = "btnSendSpaceRegister";
             this.btnSendSpaceRegister.Size = new System.Drawing.Size(75, 23);
             this.btnSendSpaceRegister.TabIndex = 1;
@@ -2216,22 +2218,22 @@
             this.lblSendSpacePassword.AutoSize = true;
             this.lblSendSpacePassword.Location = new System.Drawing.Point(16, 88);
             this.lblSendSpacePassword.Name = "lblSendSpacePassword";
-            this.lblSendSpacePassword.Size = new System.Drawing.Size(53, 13);
+            this.lblSendSpacePassword.Size = new System.Drawing.Size(56, 13);
             this.lblSendSpacePassword.TabIndex = 4;
-            this.lblSendSpacePassword.Text = "Password";
+            this.lblSendSpacePassword.Text = "Password:";
             // 
             // lblSendSpaceUsername
             // 
             this.lblSendSpaceUsername.AutoSize = true;
             this.lblSendSpaceUsername.Location = new System.Drawing.Point(16, 56);
             this.lblSendSpaceUsername.Name = "lblSendSpaceUsername";
-            this.lblSendSpaceUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblSendSpaceUsername.Size = new System.Drawing.Size(58, 13);
             this.lblSendSpaceUsername.TabIndex = 2;
-            this.lblSendSpaceUsername.Text = "Username";
+            this.lblSendSpaceUsername.Text = "Username:";
             // 
             // txtSendSpacePassword
             // 
-            this.txtSendSpacePassword.Location = new System.Drawing.Point(80, 84);
+            this.txtSendSpacePassword.Location = new System.Drawing.Point(96, 84);
             this.txtSendSpacePassword.Name = "txtSendSpacePassword";
             this.txtSendSpacePassword.Size = new System.Drawing.Size(136, 20);
             this.txtSendSpacePassword.TabIndex = 5;
@@ -2240,7 +2242,7 @@
             // 
             // txtSendSpaceUserName
             // 
-            this.txtSendSpaceUserName.Location = new System.Drawing.Point(80, 52);
+            this.txtSendSpaceUserName.Location = new System.Drawing.Point(96, 52);
             this.txtSendSpaceUserName.Name = "txtSendSpaceUserName";
             this.txtSendSpaceUserName.Size = new System.Drawing.Size(136, 20);
             this.txtSendSpaceUserName.TabIndex = 3;
@@ -3072,7 +3074,7 @@
             // cbUpasteIsPublic
             // 
             this.cbUpasteIsPublic.AutoSize = true;
-            this.cbUpasteIsPublic.Location = new System.Drawing.Point(16, 56);
+            this.cbUpasteIsPublic.Location = new System.Drawing.Point(18, 56);
             this.cbUpasteIsPublic.Name = "cbUpasteIsPublic";
             this.cbUpasteIsPublic.Size = new System.Drawing.Size(106, 17);
             this.cbUpasteIsPublic.TabIndex = 2;
@@ -3116,10 +3118,10 @@
             this.tcImageUploaders.Controls.Add(this.tpTinyPic);
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
+            this.tcImageUploaders.Controls.Add(this.tpPicasa);
             this.tcImageUploaders.Controls.Add(this.tpTwitPic);
             this.tcImageUploaders.Controls.Add(this.tpTwitSnaps);
             this.tcImageUploaders.Controls.Add(this.tpYFrog);
-            this.tcImageUploaders.Controls.Add(this.tpPicasa);
             this.tcImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcImageUploaders.Location = new System.Drawing.Point(3, 3);
             this.tcImageUploaders.MinimumSize = new System.Drawing.Size(780, 480);
@@ -3953,18 +3955,6 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // oauth2Dropbox
-            // 
-            this.oauth2Dropbox.IsRefreshable = false;
-            this.oauth2Dropbox.Location = new System.Drawing.Point(16, 88);
-            this.oauth2Dropbox.LoginStatus = false;
-            this.oauth2Dropbox.Name = "oauth2Dropbox";
-            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 168);
-            this.oauth2Dropbox.Status = "Login required.";
-            this.oauth2Dropbox.TabIndex = 20;
-            this.oauth2Dropbox.OpenButtonClicked += new UploadersLib.GUI.OAuth2Control.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
-            this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.GUI.OAuth2Control.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
-            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4010,8 +4000,6 @@
             this.tpFTP.PerformLayout();
             this.tpMega.ResumeLayout(false);
             this.tpMega.PerformLayout();
-            this.pnlMegaLogin.ResumeLayout(false);
-            this.pnlMegaLogin.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
             this.tpPushbullet.ResumeLayout(false);
@@ -4200,7 +4188,6 @@
         private AccountsControl ucFTPAccounts;
         private System.Windows.Forms.TabPage tpMega;
         private System.Windows.Forms.Label lblMegaStatus;
-        private System.Windows.Forms.Panel pnlMegaLogin;
         private System.Windows.Forms.Button btnMegaRefreshFolders;
         private System.Windows.Forms.Button btnMegaRegister;
         private System.Windows.Forms.Label lblMegaFolder;

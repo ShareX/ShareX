@@ -65,10 +65,15 @@ namespace ScreenCaptureLib
 
             if (FFmpeg.UseCustomCommands && !string.IsNullOrEmpty(FFmpeg.CustomCommands))
             {
-                commands = FFmpeg.CustomCommands;
-                commands = commands.Replace("$fps$", ScreenRecordFPS.ToString());
-                commands = commands.Replace("$duration$", Duration.ToString("0.0", CultureInfo.InvariantCulture));
-                commands = commands.Replace("$output$", Path.ChangeExtension(OutputPath, FFmpeg.Extension));
+                commands = FFmpeg.CustomCommands.
+                    Replace("$fps$", ScreenRecordFPS.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$area_x$", CaptureArea.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$area_y$", CaptureArea.Y.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$area_width$", CaptureArea.Width.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$area_height$", CaptureArea.Height.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$cursor$", DrawCursor ? "1" : "0", StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$duration$", Duration.ToString("0.0", CultureInfo.InvariantCulture), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$output$", Path.ChangeExtension(OutputPath, FFmpeg.Extension), StringComparison.InvariantCultureIgnoreCase);
             }
             else
             {
@@ -86,15 +91,17 @@ namespace ScreenCaptureLib
             args.Append("-y ");
 
             // default real time buffer size was 3041280 (3M)
-            args.Append("-rtbufsize 10M ");
+            args.Append("-rtbufsize 100M ");
 
             string fps = isCustom ? "$fps$" : ScreenRecordFPS.ToString();
 
             if (string.IsNullOrEmpty(FFmpeg.VideoSource) || FFmpeg.VideoSource.Equals(FFmpegHelper.GDIgrab, StringComparison.InvariantCultureIgnoreCase))
             {
                 // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-                args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -show_region {6} -i desktop ",
-                    fps, CaptureArea.X, CaptureArea.Y, CaptureArea.Width, CaptureArea.Height, DrawCursor ? 1 : 0, 0);
+                args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -i desktop ",
+                    fps, isCustom ? "$area_x$" : CaptureArea.X.ToString(), isCustom ? "$area_y$" : CaptureArea.Y.ToString(),
+                    isCustom ? "$area_width$" : CaptureArea.Width.ToString(), isCustom ? "$area_height$" : CaptureArea.Height.ToString(),
+                    isCustom ? "$cursor$" : DrawCursor ? "1" : "0");
 
                 if (FFmpeg.IsAudioSourceSelected())
                 {

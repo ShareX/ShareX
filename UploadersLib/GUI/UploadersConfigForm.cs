@@ -1504,7 +1504,7 @@ namespace UploadersLib
                     }
                     else
                     {
-                        cbMegaFolder.Items.Add("[Click refresh folders]");
+                        cbMegaFolder.Items.Add("[Click refresh button]");
                         cbMegaFolder.SelectedIndex = 0;
                     }
                 }
