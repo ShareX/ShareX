@@ -51,7 +51,6 @@ namespace UploadersLib.FileUploaders
         private const string URLFiles = URLAPI + "/files";
         private const string URLMetaData = URLAPI + "/meta/";
         private const string URLLinks = URLAPI + "/links";
-        private const string URLPublicDirect = "http://copy.com";
 
         private const string URLRequestToken = "https://api.copy.com/oauth/request";
         private const string URLAuthorize = "https://www.copy.com/applications/authorize";
@@ -194,34 +193,18 @@ namespace UploadersLib.FileUploaders
 
         public string GetLinkURL(CopyLinksInfo link, string path, CopyURLType urlType = CopyURLType.Default)
         {
+            string filename = URLHelpers.GetFileName(path);
+
             switch (urlType)
             {
+                default:
                 case CopyURLType.Default:
-                    return link.url;
-
+                    return string.Format("https://www.copy.com/s/{0}/{1}", link.id, filename);
                 case CopyURLType.Shortened:
-                    return link.url_short;
-
+                    return string.Format("https://copy.com/{0}", link.id);
                 case CopyURLType.Direct:
-                    //use regex to get everything past the last '/' in path - the filename
-                    //default = 'http://www.copy.com/s/' + link.id + file(regex)
-                    //direct = 'http://copy.com/' + link.id + file(regex)
-                    //NOTE: link.id and filename need a '/' between, but the regex should provide that...
-                    //NOTE2: 'default' will use link.url because that's what the official docs state, even though it's not the true link,
-                    //links can be a gallery, and the link.url is the link to the gallery..
-
-                    Match match = Regex.Match(path, @"\/[^\/]+$"); // one '/' and multiple 'not /' and end
-                    if (match.Success)
-                    {
-                        return URLPublicDirect + "/" + link.id + match.ToString();
-                    }
-                    else
-                    {
-                        return string.Empty;
-                    }
+                    return string.Format("https://copy.com/{0}/{1}", link.id, filename);
             }
-
-            return string.Empty; //theoretically this shouldn't happen as urlType will default to 'Default' and all options are covered, but an error is an error...
         }
 
         public string CreatePublicURL(string path, CopyURLType urlType = CopyURLType.Default)
@@ -239,7 +222,7 @@ namespace UploadersLib.FileUploaders
 
             string content = JsonConvert.SerializeObject(publicLink);
 
-            string response = SendRequest(HttpMethod.POST, query, content, null, ResponseType.Text, APIHeaders);
+            string response = SendRequest(HttpMethod.POST, query, content, headers: APIHeaders);
 
             if (!string.IsNullOrEmpty(response))
             {

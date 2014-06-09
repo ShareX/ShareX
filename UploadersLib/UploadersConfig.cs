@@ -127,7 +127,7 @@ namespace UploadersLib
         public OAuthInfo CopyOAuthInfo = null;
         public CopyAccountInfo CopyAccountInfo = null;
         public string CopyUploadPath = "ShareX/%y/%mo";
-        public CopyURLType CopyURLType = CopyURLType.Default;
+        public CopyURLType CopyURLType = CopyURLType.Shortened;
 
         // Google Drive
 
