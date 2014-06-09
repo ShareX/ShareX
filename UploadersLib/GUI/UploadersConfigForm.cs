@@ -310,6 +310,8 @@ namespace UploadersLib
             }
 
             txtCopyPath.Text = Config.CopyUploadPath;
+            cbCopyURLType.Items.AddRange(Helpers.GetEnumNamesProper<CopyURLType>());
+            cbCopyURLType.SelectedIndex = (int)Config.CopyURLType;
             UpdateCopyStatus();
 
             // Google Drive
@@ -997,6 +999,11 @@ namespace UploadersLib
         private void oAuthCopy_CompleteButtonClicked(string code)
         {
             CopyAuthComplete(code);
+        }
+
+        private void cbCopyURLType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.CopyURLType = (CopyURLType)cbCopyURLType.SelectedIndex;
         }
 
         #endregion Copy

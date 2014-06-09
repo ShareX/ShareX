@@ -125,6 +125,8 @@
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.tpCopy = new System.Windows.Forms.TabPage();
+            this.lblCopyURLType = new System.Windows.Forms.Label();
+            this.cbCopyURLType = new System.Windows.Forms.ComboBox();
             this.pbCopyLogo = new System.Windows.Forms.PictureBox();
             this.btnCopyRegister = new System.Windows.Forms.Button();
             this.lblCopyStatus = new System.Windows.Forms.Label();
@@ -1417,6 +1419,8 @@
             // tpCopy
             // 
             this.tpCopy.Controls.Add(this.pbCopyLogo);
+            this.tpCopy.Controls.Add(this.lblCopyURLType);
+            this.tpCopy.Controls.Add(this.cbCopyURLType);
             this.tpCopy.Controls.Add(this.btnCopyRegister);
             this.tpCopy.Controls.Add(this.lblCopyStatus);
             this.tpCopy.Controls.Add(this.lblCopyPath);
@@ -1429,6 +1433,25 @@
             this.tpCopy.TabIndex = 0;
             this.tpCopy.Text = "Copy";
             this.tpCopy.UseVisualStyleBackColor = true;
+            // 
+            // lblCopyURLType
+            // 
+            this.lblCopyURLType.AutoSize = true;
+            this.lblCopyURLType.Location = new System.Drawing.Point(16, 299);
+            this.lblCopyURLType.Name = "lblCopyURLType";
+            this.lblCopyURLType.Size = new System.Drawing.Size(68, 13);
+            this.lblCopyURLType.TabIndex = 3;
+            this.lblCopyURLType.Text = "URL type:";
+            // 
+            // cbCopyURLType
+            // 
+            this.cbCopyURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCopyURLType.FormattingEnabled = true;
+            this.cbCopyURLType.Location = new System.Drawing.Point(88, 295);
+            this.cbCopyURLType.Name = "cbCopyURLType";
+            this.cbCopyURLType.Size = new System.Drawing.Size(121, 21);
+            this.cbCopyURLType.TabIndex = 8;
+            this.cbCopyURLType.SelectedIndexChanged += new System.EventHandler(this.cbCopyURLType_SelectedIndexChanged);
             // 
             // pbCopyLogo
             // 
@@ -1455,7 +1478,7 @@
             // 
             this.lblCopyStatus.AutoSize = true;
             this.lblCopyStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCopyStatus.Location = new System.Drawing.Point(16, 304);
+            this.lblCopyStatus.Location = new System.Drawing.Point(16, 324);
             this.lblCopyStatus.Name = "lblCopyStatus";
             this.lblCopyStatus.Size = new System.Drawing.Size(45, 16);
             this.lblCopyStatus.TabIndex = 9;
@@ -4144,6 +4167,8 @@
         private System.Windows.Forms.TextBox txtDropboxPath;
 
         private System.Windows.Forms.TabPage tpCopy;
+        private System.Windows.Forms.Label lblCopyURLType;
+        private System.Windows.Forms.ComboBox cbCopyURLType;
         private GUI.OAuth2Control oAuthCopy;
         private System.Windows.Forms.Button btnCopyShowFiles;
         private System.Windows.Forms.PictureBox pbCopyLogo;

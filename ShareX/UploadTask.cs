@@ -815,7 +815,8 @@ namespace ShareX
                 case FileDestination.Copy:
                     fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
                     {
-                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath))
+                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath)),
+                        URLType = Program.UploadersConfig.CopyURLType
                     };
                     break;
                 case FileDestination.GoogleDrive:

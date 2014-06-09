@@ -41,6 +41,7 @@ namespace UploadersLib.FileUploaders
         public OAuthInfo AuthInfo { get; set; }
         public CopyAccountInfo AccountInfo { get; set; }
         public string UploadPath { get; set; }
+        public CopyURLType URLType { get; set; }
 
         private const string APIVersion = "1";
 
@@ -50,11 +51,6 @@ namespace UploadersLib.FileUploaders
         private const string URLFiles = URLAPI + "/files";
         private const string URLMetaData = URLAPI + "/meta/";
         private const string URLLinks = URLAPI + "/links";
-        //private const string URLShares = URLAPI + "/shares/" + Root;
-        //private const string URLCopy = URLAPI + "/fileops/copy";
-        //private const string URLCreateFolder = URLAPI + "/fileops/create_folder";
-        //private const string URLDelete = URLAPI + "/fileops/delete";
-        //private const string URLMove = URLAPI + "/fileops/move";
         private const string URLPublicDirect = "http://copy.com";
 
         private const string URLRequestToken = "https://api.copy.com/oauth/request";
@@ -118,7 +114,8 @@ namespace UploadersLib.FileUploaders
 
         #region Files and metadata
 
-        /*// https://www.dropbox.com/developers/core/api#files-GET
+        // https://developers.copy.com/documentation#api-calls/filesystem - Download Raw File Conents
+        // GET https://api.copy.com/rest/files/PATH/TO/FILE
         public bool DownloadFile(string path, Stream downloadStream)
         {
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
@@ -129,7 +126,7 @@ namespace UploadersLib.FileUploaders
             }
 
             return false;
-        }*/
+        }
 
         // https://developers.copy.com/documentation#api-calls/filesystem - Create File or Directory
         // POST https://api.copy.com/rest/files/PATH/TO/FILE?overwrite=true
@@ -158,14 +155,15 @@ namespace UploadersLib.FileUploaders
                 if (content != null)
                 {
                     AllowReportProgress = false;
-                    result.URL = CreatePublicURL(content.objects[0].path);
+                    result.URL = CreatePublicURL(content.objects[0].path, URLType);
                 }
             }
 
             return result;
         }
 
-        // https://developers.copy.com/documentation#api-calls/filesystem
+        // https://developers.copy.com/documentation#api-calls/filesystem - Read Root Directory
+        // GET https://api.copy.com/rest/meta/copy
         public CopyContentInfo GetMetadata(string path)
         {
             CopyContentInfo contentInfo = null;
@@ -187,168 +185,46 @@ namespace UploadersLib.FileUploaders
             return contentInfo;
         }
 
-        /*public bool IsExists(string path)
-        {
-            DropboxContentInfo contentInfo = GetMetadata(path, false);
-            return contentInfo != null && !contentInfo.Is_deleted;
-        }
-
-        // https://www.dropbox.com/developers/core/api#shares
-        public string CreateShareableLink(string path, DropboxURLType urlType)
-        {
-            if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
-            {
-                string url = Helpers.CombineURL(URLShares, Helpers.URLPathEncode(path));
-
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
-
-                string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
-
-                string response = SendRequest(HttpMethod.POST, query);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    DropboxShares shares = JsonConvert.DeserializeObject<DropboxShares>(response);
-
-                    if (urlType == DropboxURLType.Direct)
-                    {
-                        Match match = Regex.Match(shares.URL, @"https?://(?:www\.)?dropbox.com/s/(?<path>\w+/.+)");
-                        if (match.Success)
-                        {
-                            string urlPath = match.Groups["path"].Value;
-                            if (!string.IsNullOrEmpty(urlPath))
-                            {
-                                return Helpers.CombineURL(URLShareDirect, urlPath);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        return shares.URL;
-                    }
-                }
-            }
-
-            return null;
-        }*/
-
         #endregion Files and metadata
-
-        #region File operations
-
-        /*// https://www.dropbox.com/developers/core/api#fileops-copy
-        public DropboxContentInfo Copy(string from_path, string to_path)
-        {
-            DropboxContentInfo contentInfo = null;
-
-            if (!string.IsNullOrEmpty(from_path) && !string.IsNullOrEmpty(to_path) && OAuthInfo.CheckOAuth(AuthInfo))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("from_path", from_path);
-                args.Add("to_path", to_path);
-
-                string query = OAuthManager.GenerateQuery(URLCopy, args, HttpMethod.POST, AuthInfo);
-
-                string response = SendRequest(HttpMethod.POST, query);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxContentInfo>(response);
-                }
-            }
-
-            return contentInfo;
-        }
-
-        // https://www.dropbox.com/developers/core/api#fileops-create-folder
-        public DropboxContentInfo CreateFolder(string path)
-        {
-            DropboxContentInfo contentInfo = null;
-
-            if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("path", path);
-
-                string query = OAuthManager.GenerateQuery(URLCreateFolder, args, HttpMethod.POST, AuthInfo);
-
-                string response = SendRequest(HttpMethod.POST, query);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxContentInfo>(response);
-                }
-            }
-
-            return contentInfo;
-        }
-
-        // https://www.dropbox.com/developers/core/api#fileops-delete
-        public DropboxContentInfo Delete(string path)
-        {
-            DropboxContentInfo contentInfo = null;
-
-            if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("path", path);
-
-                string query = OAuthManager.GenerateQuery(URLDelete, args, HttpMethod.POST, AuthInfo);
-
-                string response = SendRequest(HttpMethod.POST, query);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxContentInfo>(response);
-                }
-            }
-
-            return contentInfo;
-        }
-
-        // https://www.dropbox.com/developers/core/api#fileops-move
-        public DropboxContentInfo Move(string from_path, string to_path)
-        {
-            DropboxContentInfo contentInfo = null;
-
-            if (!string.IsNullOrEmpty(from_path) && !string.IsNullOrEmpty(to_path) && OAuthInfo.CheckOAuth(AuthInfo))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("root", Root);
-                args.Add("from_path", from_path);
-                args.Add("to_path", to_path);
-
-                string query = OAuthManager.GenerateQuery(URLMove, args, HttpMethod.POST, AuthInfo);
-
-                string response = SendRequest(HttpMethod.POST, query);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    contentInfo = JsonConvert.DeserializeObject<DropboxContentInfo>(response);
-                }
-            }
-
-            return contentInfo;
-        }*/
-
-        #endregion File operations
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             return UploadFile(stream, UploadPath, fileName);
         }
 
-        /// <summary>
-        /// Link types:
-        /// Shortened: http://copy.com/BWr9OswktCLl
-        /// Extended: http://www.copy.com/s/BWr9OswktCLl/2014-06-05_17-00-01.mp4
-        /// Direct: http://copy.com/BWr9OswktCLl/2014-06-05_17-00-01.mp4
-        /// </summary>
-        public string CreatePublicURL(string path) // TODO: Add link type parameter
+        public string GetLinkURL(CopyLinksInfo link, string path, CopyURLType urlType = CopyURLType.Default)
+        {
+            switch (urlType)
+            {
+                case CopyURLType.Default:
+                    return link.url;
+
+                case CopyURLType.Shortened:
+                    return link.url_short;
+
+                case CopyURLType.Direct:
+                    //use regex to get everything past the last '/' in path - the filename
+                    //default = 'http://www.copy.com/s/' + link.id + file(regex)
+                    //direct = 'http://copy.com/' + link.id + file(regex)
+                    //NOTE: link.id and filename need a '/' between, but the regex should provide that...
+                    //NOTE2: 'default' will use link.url because that's what the official docs state, even though it's not the true link,
+                    //links can be a gallery, and the link.url is the link to the gallery..
+
+                    Match match = Regex.Match(path, @"\/[^\/]+$"); // one '/' and multiple 'not /' and end
+                    if (match.Success)
+                    {
+                        return URLPublicDirect + "/" + link.id + match.ToString();
+                    }
+                    else
+                    {
+                        return string.Empty;
+                    }
+            }
+
+            return string.Empty; //theoretically this shouldn't happen as urlType will default to 'Default' and all options are covered, but an error is an error...
+        }
+
+        public string CreatePublicURL(string path, CopyURLType urlType = CopyURLType.Default)
         {
             path = path.Trim('/');
 
@@ -367,22 +243,24 @@ namespace UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<CopyLinksInfo>(response).url_short;
+                CopyLinksInfo link = JsonConvert.DeserializeObject<CopyLinksInfo>(response);
+
+                return GetLinkURL(link, path, urlType);
             }
 
             return string.Empty;
         }
 
-        public string GetPublicURL(string path)
+        public string GetPublicURL(string path, CopyURLType urlType = CopyURLType.Default)
         {
             path = path.Trim('/');
 
             CopyContentInfo fileInfo = GetMetadata(path);
             foreach (CopyLinksInfo link in fileInfo.links)
             {
-                if (!link.expired)
+                if (!link.expired && link.@public)
                 {
-                    return link.url_short;
+                    return GetLinkURL(link, path, urlType);
                 }
             }
 
@@ -398,6 +276,13 @@ namespace UploadersLib.FileUploaders
 
             return string.Empty;
         }
+    }
+
+    public enum CopyURLType
+    {
+        Default,
+        Shortened,
+        Direct
     }
 
     public class CopyAccountInfo
@@ -439,7 +324,7 @@ namespace UploadersLib.FileUploaders
         public string permissions { get; set; }
     }
 
-    public class CopyContentInfo // https://api.copy.com/rest/meta also works on rest/meta/copy
+    public class CopyContentInfo // https://api.copy.com/rest/meta also works on 'rest/files'
     {
         public string id { get; set; } // Internal copy name
         public string path { get; set; } // hmm?
