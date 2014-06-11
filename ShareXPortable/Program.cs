@@ -38,7 +38,7 @@ namespace ShareXPortable
         {
             string parentDir = @"..\..\..\";
             string releaseDir = Path.Combine(parentDir, @"ShareX\bin\Release");
-            string outputDir = Path.Combine(parentDir, "Output");
+            string outputDir = Path.Combine(parentDir, @"InnoSetup\Output");
             string portableDir = Path.Combine(outputDir, "ShareX-portable");
 
             List<string> files = new List<string>();
