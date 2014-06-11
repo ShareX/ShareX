@@ -629,6 +629,11 @@ namespace ShareX
                     }
                 }
 
+                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.OpenURL))
+                {
+                    Helpers.OpenURL(Info.Result.ToString());
+                }
+
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowQRCode))
                 {
                     threadWorker.InvokeAsync(() => new QRCodeForm(Info.Result.ToString()).Show());
