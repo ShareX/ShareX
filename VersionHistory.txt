@@ -1,4 +1,4 @@
-﻿ShareX 9.1.0
+﻿ShareX 9.1.0 - 2014-06-11
 
 * ShareX now uses .NET Framework 4.0, which the installer automatically downloads and installs if needed
 * Switched to OAuth 2.0 for Dropbox, which means you need to re-authenticate
@@ -8,15 +8,16 @@
 * Videos recorded using FFmpeg will no longer play faster when framerate drops
 * Destinations settings window use list tab view now
 * Added gfycat.com file uploader support (thanks @Dinnerbone)
-* Added new Capture menu item and hotkey “Rectangle (Light)” which is lightweight version of Rectangle capture for slower computers
+* Added new Capture menu item and hotkey "Rectangle (Light)" which is lightweight version of Rectangle capture for slower computers
 * Custom domain support for Amazon S3
 * Added help button to FFmpeg which opens up the documentation web page
 * Drag-and-drop box now supports image and text too
 * Using System.Net.FtpClient library for FTP/FTPS
 * Added an error window for FFmpeg incase recording or encoding fails
-* Added QR code generator to After Upload tasks, Tools menu and right click menu in main window
+* Added "Open URL" to After Upload tasks
+* Added "Show QR code window" to After Upload tasks, Tools menu and right click menu in main window
 * Hotkey task settings are now shown as Workflows in main window and tray menu
-* Added version history link to ‘about’ window
+* Added version history link to About window
 
 ShareX 9.0.0 - 2014-05-16
 
