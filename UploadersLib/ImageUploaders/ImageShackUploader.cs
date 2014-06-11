@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
 
@@ -86,17 +87,43 @@ namespace UploadersLib.ImageUploaders
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                ImageShackUploadResponse resp = JsonConvert.DeserializeObject<ImageShackUploadResponse>(result.Response);
+                JToken jsonResponse = JToken.Parse(result.Response);
 
-                if (resp != null && resp.result != null && resp.result.images.Count > 0)
+                if (jsonResponse != null)
                 {
-                    result.URL = "http://" + resp.result.images[0].direct_link;
-                    result.ThumbnailURL = string.Format("http://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
-                              Config.ThumbnailWidth, Config.ThumbnailHeight, resp.result.images[0].server, resp.result.images[0].filename);
+                    bool isSuccess = jsonResponse["success"].Value<bool>();
+
+                    if (isSuccess)
+                    {
+                        ImageShackUploadResult uploadResult = jsonResponse["result"].ToObject<ImageShackUploadResult>();
+
+                        if (uploadResult != null && uploadResult.images.Count > 0)
+                        {
+                            result.URL = "http://" + uploadResult.images[0].direct_link;
+                            result.ThumbnailURL = string.Format("http://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
+                                Config.ThumbnailWidth, Config.ThumbnailHeight, uploadResult.images[0].server, uploadResult.images[0].filename);
+                        }
+                    }
+                    else
+                    {
+                        ImageShackErrorInfo errorInfo = jsonResponse["error"].ToObject<ImageShackErrorInfo>();
+                        Errors.Add(errorInfo.ToString());
+                    }
                 }
             }
 
             return result;
+        }
+
+        public class ImageShackErrorInfo
+        {
+            public int error_code { get; set; }
+            public string error_message { get; set; }
+
+            public override string ToString()
+            {
+                return string.Format("Error message: {0}\r\nError code: {1}", error_message, error_code);
+            }
         }
 
         public class ImageShackLoginResponse

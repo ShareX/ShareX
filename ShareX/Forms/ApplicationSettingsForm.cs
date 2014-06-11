@@ -134,8 +134,7 @@ namespace ShareX
 
         private void SettingsForm_Shown(object sender, EventArgs e)
         {
-            BringToFront();
-            Activate();
+            this.ShowActivate();
         }
 
         private void SettingsForm_Resize(object sender, EventArgs e)

@@ -256,8 +256,7 @@ namespace HistoryLib
         private void HistoryForm_Shown(object sender, EventArgs e)
         {
             Application.DoEvents();
-            BringToFront();
-            Activate();
+            this.ShowActivate();
             RefreshHistoryItems();
         }
 

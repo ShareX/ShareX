@@ -32,78 +32,61 @@ namespace HelpersLib
 {
     public partial class ErrorForm : Form
     {
-        public string ApplicationName { get; private set; }
-        public Logger Logger { get; private set; }
         public string LogPath { get; private set; }
         public string BugReportPath { get; private set; }
 
-        public ErrorForm(string productName, Exception error, Logger logger, string logPath, string bugReportPath)
-            : this(productName, error.Message, error.ToString(), logger, logPath, bugReportPath)
+        public ErrorForm(Exception error, string logPath, string bugReportPath)
+            : this(error.Message, error.ToString(), logPath, bugReportPath)
         {
         }
 
-        public ErrorForm(string productName, string errorMessage, string errorString, Logger logger, string logPath, string bugReportPath)
+        public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-
-            ApplicationName = productName;
-            Logger = logger;
             LogPath = logPath;
             BugReportPath = bugReportPath;
 
-            Text = string.Format("{0} - Error", ApplicationName);
-            Logger.WriteException(errorString, "Unhandled exception");
+            DebugHelper.WriteException(errorMessage, "Unhandled exception");
 
-            lblErrorMessage.Text = errorMessage;
-            txtException.Text = errorString;
+            lblErrorMessage.Text = errorTitle;
+            txtException.Text = errorMessage;
+            txtException.SelectionStart = txtException.TextLength;
 
             btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogPath) && File.Exists(LogPath);
             btnSendBugReport.Visible = !string.IsNullOrEmpty(BugReportPath);
         }
 
+        private void ErrorForm_Shown(object sender, EventArgs e)
+        {
+            this.ShowActivate();
+        }
+
         private void btnCopyAll_Click(object sender, EventArgs e)
         {
-            string text = txtException.Text;
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                ClipboardHelpers.CopyText(text);
-            }
+            ClipboardHelpers.CopyText(txtException.Text);
         }
 
         private void btnOpenLogFile_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(LogPath) && File.Exists(LogPath))
-            {
-                Process.Start(LogPath);
-            }
+            Helpers.OpenFile(LogPath);
         }
 
         private void btnSendBugReport_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(BugReportPath))
-            {
-                Helpers.OpenURL(BugReportPath);
-            }
+            Helpers.OpenURL(BugReportPath);
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            Logger.WriteLine("{0} continue.", ProductName);
+            DebugHelper.WriteLine("ShareX continue.");
             Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Logger.WriteLine("{0} closing. Reason: Unhandled exception", ProductName);
+            DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception");
             Application.Exit();
-        }
-
-        private void ErrorForm_Shown(object sender, EventArgs e)
-        {
-            Activate();
-            BringToFront();
         }
 
         public static void ThrowExceptionForTest()

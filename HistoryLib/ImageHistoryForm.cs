@@ -129,8 +129,7 @@ namespace HistoryLib
         private void ImageHistoryForm_Shown(object sender, EventArgs e)
         {
             Application.DoEvents();
-            BringToFront();
-            Activate();
+            this.ShowActivate();
             RefreshHistoryItems();
         }
 

@@ -456,7 +456,7 @@ namespace ShareX
 
         private static void OnError(Exception e)
         {
-            using (ErrorForm errorForm = new ErrorForm(Application.ProductName, e, DebugHelper.Logger, LogsFilePath, Links.URL_ISSUES))
+            using (ErrorForm errorForm = new ErrorForm(e, LogsFilePath, Links.URL_ISSUES))
             {
                 errorForm.ShowDialog();
             }

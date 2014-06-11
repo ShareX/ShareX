@@ -52,7 +52,8 @@ namespace HelpersLib
 
         private void InputBox_Shown(object sender, EventArgs e)
         {
-            BringToFront();
+            this.ShowActivate();
+
             txtInputText.Focus();
             txtInputText.SelectionLength = txtInputText.Text.Length;
         }

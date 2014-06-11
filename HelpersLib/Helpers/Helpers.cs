@@ -404,7 +404,25 @@ namespace HelpersLib
                     }
                     catch (Exception e)
                     {
-                        DebugHelper.WriteException(e, "OpenURL(" + url + ") failed");
+                        DebugHelper.WriteException(e, string.Format("OpenURL({0}) failed", url));
+                    }
+                });
+            }
+        }
+
+        public static void OpenFile(string filepath)
+        {
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                TaskEx.Run(() =>
+                {
+                    try
+                    {
+                        Process.Start(filepath);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e, string.Format("OpenFile({0}) failed", filepath));
                     }
                 });
             }

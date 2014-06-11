@@ -127,7 +127,7 @@ namespace ScreenCaptureLib
 
         private void Surface_Shown(object sender, EventArgs e)
         {
-            Activate();
+            this.ShowActivate();
         }
 
         private void Surface_KeyUp(object sender, KeyEventArgs e)

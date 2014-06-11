@@ -490,7 +490,7 @@ namespace ShareX
             UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
 
             if (updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable &&
-                MessageBox.Show("A newer version of ShareX is available.\r\nWould you like to download and install it?", string.Format("{0} v{1} is available", Application.ProductName, updateChecker.UpdateInfo.LatestVersion.ToString()),
+                MessageBox.Show("A newer version of ShareX is available.\r\nWould you like to download and install it?", string.Format("{0} {1} is available", Application.ProductName, updateChecker.UpdateInfo.LatestVersion.ToString()),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))

@@ -140,7 +140,7 @@ namespace ScreenCaptureLib
 
         private void RectangleLight_Shown(object sender, EventArgs e)
         {
-            Activate();
+            this.ShowActivate();
         }
 
         private void RectangleLight_KeyUp(object sender, KeyEventArgs e)

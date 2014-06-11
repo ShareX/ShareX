@@ -48,8 +48,7 @@ namespace ShareX
 
         private void AboutForm_Shown(object sender, EventArgs e)
         {
-            BringToFront();
-            Activate();
+            this.ShowActivate();
 
             cLogo.Start(50);
         }

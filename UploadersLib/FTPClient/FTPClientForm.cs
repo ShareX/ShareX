@@ -295,7 +295,7 @@ namespace UploadersLib
             using (InputBox ib = new InputBox { Text = "Create directory", Question = "Please enter the name of the directory which should be created:" })
             {
                 ib.ShowDialog();
-                BringToFront();
+                this.ShowActivate();
                 if (ib.DialogResult == DialogResult.OK)
                 {
                     Client.CreateDirectory(URLHelpers.CombineURL(currentDirectory, ib.InputText));
