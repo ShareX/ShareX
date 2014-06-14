@@ -617,12 +617,15 @@ namespace ShareX
         private void MainForm_Resize(object sender, EventArgs e)
         {
             Refresh();
+
+            if (WindowState == FormWindowState.Normal)
+            {
+                Program.Settings.MainFormSize = Size;
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.Settings.MainFormSize = Size;
-
             if (e.CloseReason == CloseReason.UserClosing && Program.Settings.ShowTray && !forceClose)
             {
                 e.Cancel = true;

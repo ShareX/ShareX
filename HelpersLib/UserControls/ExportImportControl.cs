@@ -156,6 +156,7 @@ namespace HelpersLib.UserControls
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
+                MessageBox.Show("Import failed.\n\n" + e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return null;
