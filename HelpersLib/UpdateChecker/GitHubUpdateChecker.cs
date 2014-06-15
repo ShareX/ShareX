@@ -87,7 +87,7 @@ namespace HelpersLib
             }
             catch (Exception e)
             {
-                DebugHelper.WriteException(e, "Update check failed");
+                DebugHelper.WriteException(e, "GitHub update check failed");
             }
 
             UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;

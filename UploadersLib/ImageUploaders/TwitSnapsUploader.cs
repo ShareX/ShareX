@@ -47,7 +47,7 @@ namespace UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            using (TwitterMsg msgBox = new TwitterMsg("Update Twitter Status"))
+            using (TwitterMsg msgBox = new TwitterMsg())
             {
                 msgBox.ShowDialog();
                 return Upload(stream, fileName, msgBox.Message);

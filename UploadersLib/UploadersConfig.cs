@@ -304,6 +304,8 @@ namespace UploadersLib
                     return PhotobucketAccountInfo != null && OAuthInfo.CheckOAuth(PhotobucketOAuthInfo);
                 case ImageDestination.Picasa:
                     return OAuth2Info.CheckOAuth(PicasaOAuth2Info);
+                case ImageDestination.Twitter:
+                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount);
                 case ImageDestination.Twitpic:
                 case ImageDestination.Twitsnaps:
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount);

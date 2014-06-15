@@ -570,17 +570,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURLToSocialNetworkingService))
                 {
-                    OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-
-                    if (twitterOAuth != null)
-                    {
-                        using (TwitterMsg twitter = new TwitterMsg(twitterOAuth))
-                        {
-                            twitter.Message = Info.Result.ToString();
-                            twitter.Config = Program.UploadersConfig.TwitterClientConfig;
-                            twitter.ShowDialog();
-                        }
-                    }
+                    DoSocialNetworkingService();
                 }
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.SendURLWithEmail))
@@ -686,6 +676,10 @@ namespace ShareX
                         AlbumID = Program.UploadersConfig.PicasaAlbumID
                     };
                     break;
+                case ImageDestination.Twitter:
+                    OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
+                    imageUploader = new TwitterUploader(twitterOAuth);
+                    break;
                 case ImageDestination.Twitpic:
                     int indexTwitpic = Program.UploadersConfig.TwitterSelectedAccount;
 
@@ -760,9 +754,8 @@ namespace ShareX
                     textUploader = new Paste_ee(Program.UploadersConfig.Paste_eeUserAPIKey);
                     break;
                 case TextDestination.Gist:
-                    textUploader = Program.UploadersConfig.GistAnonymousLogin
-                        ? new Gist(Program.UploadersConfig.GistPublishPublic)
-                        : new Gist(Program.UploadersConfig.GistPublishPublic, Program.UploadersConfig.GistOAuth2Info);
+                    textUploader = Program.UploadersConfig.GistAnonymousLogin ? new Gist(Program.UploadersConfig.GistPublishPublic) :
+                        new Gist(Program.UploadersConfig.GistPublishPublic, Program.UploadersConfig.GistOAuth2Info);
                     break;
                 case TextDestination.Upaste:
                     textUploader = new Upaste(Program.UploadersConfig.UpasteUserKey)
@@ -1022,6 +1015,26 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        public void DoSocialNetworkingService()
+        {
+            switch (Info.TaskSettings.SocialNetworkingServiceDestination)
+            {
+                case SocialNetworkingService.Twitter:
+                    OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
+
+                    if (twitterOAuth != null)
+                    {
+                        using (TwitterMsg twitter = new TwitterMsg(twitterOAuth))
+                        {
+                            twitter.Message = Info.Result.ToString();
+                            twitter.Config = Program.UploadersConfig.TwitterClientConfig;
+                            twitter.ShowDialog();
+                        }
+                    }
+                    break;
+            }
         }
 
         private void ThreadCompleted()

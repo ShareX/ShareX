@@ -35,8 +35,6 @@ namespace UploadersLib
 {
     public partial class TwitterMsg : Form
     {
-        public string ActiveAccountName { get; set; }
-
         public string Message
         {
             get
@@ -49,41 +47,66 @@ namespace UploadersLib
             }
         }
 
+        private int length;
+
+        public int Length
+        {
+            get
+            {
+                return length;
+            }
+            set
+            {
+                length = value;
+                UpdateLength();
+            }
+        }
+
+        public bool IsValidMessage
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(Message) && Message.Length <= Length;
+            }
+        }
+
         public OAuthInfo AuthInfo { get; set; }
         public TwitterClientSettings Config { get; set; }
 
-        public TwitterMsg(OAuthInfo oauth, string title)
+        public TwitterMsg(OAuthInfo oauth)
         {
             InitializeComponent();
             AuthInfo = oauth;
-            Text = title;
             Icon = Resources.Twitter;
+            Length = Twitter.MessageLimit;
             Config = new TwitterClientSettings();
         }
 
-        public TwitterMsg(OAuthInfo oauth)
-            : this(oauth, "Update Twitter status")
+        public TwitterMsg()
+            : this(null)
         {
         }
 
-        public TwitterMsg(string title)
-            : this(null, title)
+        private void UpdateLength()
         {
+            lblTweetLength.Text = (Length - Message.Length).ToString();
+            btnOK.Enabled = IsValidMessage;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtTweet.Text))
+            if (IsValidMessage)
             {
                 DialogResult = DialogResult.OK;
 
-                if (AuthInfo != null && !string.IsNullOrEmpty(Message))
+                if (AuthInfo != null)
                 {
                     Hide();
 
                     try
                     {
-                        TweetStatus status = new Twitter(AuthInfo).TweetMessage(Message);
+                        TwitterStatusResponse status = new Twitter(AuthInfo).TweetMessage(Message);
+
                         if (status != null && !string.IsNullOrEmpty(status.in_reply_to_screen_name))
                         {
                             Config.AddUser(status.in_reply_to_screen_name);
@@ -105,9 +128,17 @@ namespace UploadersLib
             Close();
         }
 
+        private void TwitterMsg_Load(object sender, EventArgs e)
+        {
+            foreach (string user in Config.Addressees)
+            {
+                lbUsers.Items.Add(user);
+            }
+        }
+
         private void txtTweet_TextChanged(object sender, EventArgs e)
         {
-            lblCount.Text = (140 - txtTweet.Text.Length).ToString();
+            UpdateLength();
         }
 
         private void lbUsers_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,14 +148,6 @@ namespace UploadersLib
                 txtTweet.Text = txtTweet.Text.Insert(txtTweet.SelectionStart, "@" + lbUsers.SelectedItem + " ");
                 txtTweet.SelectionStart = txtTweet.Text.Length;
                 txtTweet.Focus();
-            }
-        }
-
-        private void TwitterMsg_Load(object sender, EventArgs e)
-        {
-            foreach (string user in Config.Addressees)
-            {
-                lbUsers.Items.Add(user);
             }
         }
 
@@ -154,11 +177,6 @@ namespace UploadersLib
                     }
                 }
             }
-        }
-
-        private void TwitterMsg_Shown(object sender, EventArgs e)
-        {
-            txtTweet.Focus();
         }
     }
 

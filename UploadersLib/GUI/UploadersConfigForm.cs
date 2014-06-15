@@ -45,7 +45,7 @@ namespace UploadersLib
         {
             Config = uploadersConfig;
             InitializeComponent();
-            string title = "ShareX - Outputs Configuration";
+            string title = "ShareX - Destination settings";
             if (!string.IsNullOrEmpty(Config.FilePath))
             {
                 title += " - " + Config.FilePath;

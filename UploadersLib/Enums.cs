@@ -42,6 +42,8 @@ namespace UploadersLib
         Photobucket,
         [Description("picasaweb.google.com")]
         Picasa,
+        [Description("twitter.com")]
+        Twitter,
         [Description("twitpic.com")]
         Twitpic,
         [Description("twitsnaps.com")]
