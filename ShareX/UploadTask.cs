@@ -678,34 +678,7 @@ namespace ShareX
                     break;
                 case ImageDestination.Twitter:
                     OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-                    imageUploader = new TwitterUploader(twitterOAuth);
-                    break;
-                case ImageDestination.Twitpic:
-                    int indexTwitpic = Program.UploadersConfig.TwitterSelectedAccount;
-
-                    if (Program.UploadersConfig.TwitterOAuthInfoList != null && Program.UploadersConfig.TwitterOAuthInfoList.IsValidIndex(indexTwitpic))
-                    {
-                        imageUploader = new TwitPicUploader(APIKeys.TwitPicKey, Program.UploadersConfig.TwitterOAuthInfoList[indexTwitpic])
-                        {
-                            TwitPicThumbnailMode = Program.UploadersConfig.TwitPicThumbnailMode,
-                            ShowFull = Program.UploadersConfig.TwitPicShowFull
-                        };
-                    }
-                    break;
-                case ImageDestination.Twitsnaps:
-                    int indexTwitsnaps = Program.UploadersConfig.TwitterSelectedAccount;
-
-                    if (Program.UploadersConfig.TwitterOAuthInfoList.IsValidIndex(indexTwitsnaps))
-                    {
-                        imageUploader = new TwitSnapsUploader(APIKeys.TwitsnapsKey, Program.UploadersConfig.TwitterOAuthInfoList[indexTwitsnaps]);
-                    }
-                    break;
-                case ImageDestination.yFrog:
-                    YfrogOptions yFrogOptions = new YfrogOptions(APIKeys.ImageShackKey);
-                    yFrogOptions.Username = Program.UploadersConfig.YFrogUsername;
-                    yFrogOptions.Password = Program.UploadersConfig.YFrogPassword;
-                    yFrogOptions.Source = Application.ProductName;
-                    imageUploader = new YfrogUploader(yFrogOptions);
+                    imageUploader = new Twitter(twitterOAuth);
                     break;
                 case ImageDestination.CustomImageUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomImageUploaderSelected))

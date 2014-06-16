@@ -39,6 +39,13 @@ namespace UploadersLib
     {
         #region Image uploaders
 
+        // Imgur
+
+        public AccountType ImgurAccountType = AccountType.Anonymous;
+        public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Large_Thumbnail;
+        public OAuth2Info ImgurOAuth2Info = null;
+        public string ImgurAlbumID = string.Empty;
+
         // ImageShack
 
         public ImageShackOptions ImageShackSettings = new ImageShackOptions();
@@ -51,13 +58,6 @@ namespace UploadersLib
         public string TinyPicPassword = string.Empty;
         public bool TinyPicRememberUserPass = false;
 
-        // Imgur
-
-        public AccountType ImgurAccountType = AccountType.Anonymous;
-        public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Large_Thumbnail;
-        public OAuth2Info ImgurOAuth2Info = null;
-        public string ImgurAlbumID = string.Empty;
-
         // Flickr
 
         public FlickrAuthInfo FlickrAuthInfo = new FlickrAuthInfo();
@@ -67,16 +67,6 @@ namespace UploadersLib
 
         public OAuthInfo PhotobucketOAuthInfo = null;
         public PhotobucketAccountInfo PhotobucketAccountInfo = null;
-
-        // TwitPic
-
-        public bool TwitPicShowFull = false;
-        public TwitPicThumbnailType TwitPicThumbnailMode = TwitPicThumbnailType.Thumb;
-
-        // YFrog
-
-        public string YFrogUsername = string.Empty;
-        public string YFrogPassword = string.Empty;
 
         // Picasa
 
@@ -306,11 +296,6 @@ namespace UploadersLib
                     return OAuth2Info.CheckOAuth(PicasaOAuth2Info);
                 case ImageDestination.Twitter:
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount);
-                case ImageDestination.Twitpic:
-                case ImageDestination.Twitsnaps:
-                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount);
-                case ImageDestination.yFrog:
-                    return !string.IsNullOrEmpty(YFrogUsername) && !string.IsNullOrEmpty(YFrogPassword);
                 case ImageDestination.CustomImageUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomImageUploaderSelected);
                 default:

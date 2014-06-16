@@ -243,6 +243,16 @@ namespace UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon Hostr {
+            get {
+                object obj = ResourceManager.GetObject("Hostr", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon ImageShack {
             get {
                 object obj = ResourceManager.GetObject("ImageShack", resourceCulture);
@@ -267,16 +277,6 @@ namespace UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("jira", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Localhostr {
-            get {
-                object obj = ResourceManager.GetObject("Localhostr", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -653,26 +653,6 @@ namespace UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon TwitPic {
-            get {
-                object obj = ResourceManager.GetObject("TwitPic", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon TwitSnaps {
-            get {
-                object obj = ResourceManager.GetObject("TwitSnaps", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
         internal static System.Drawing.Icon Twitter {
             get {
                 object obj = ResourceManager.GetObject("Twitter", resourceCulture);
@@ -686,16 +666,6 @@ namespace UploadersLib.Properties {
         internal static System.Drawing.Icon Upaste {
             get {
                 object obj = ResourceManager.GetObject("Upaste", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon YFrog {
-            get {
-                object obj = ResourceManager.GetObject("YFrog", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

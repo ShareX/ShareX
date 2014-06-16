@@ -28,8 +28,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using UploadersLib.HelperClasses;
+using UploadersLib.ImageUploaders;
 using UploadersLib.Properties;
-using UploadersLib.SocialServices;
 
 namespace UploadersLib
 {

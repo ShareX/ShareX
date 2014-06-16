@@ -178,7 +178,6 @@
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
-    <Compile Include="ImageUploaders\TwitterUploader.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
     <Compile Include="GUI\UserPassBox.cs">
@@ -246,7 +245,7 @@
     <Compile Include="HelperClasses\CustomUploaderItem.cs" />
     <Compile Include="ImageUploaders\ImmioUploader.cs" />
     <Compile Include="ImageUploaders\Photobucket.cs" />
-    <Compile Include="SocialServices\Twitter.cs" />
+    <Compile Include="ImageUploaders\Twitter.cs" />
     <Compile Include="HelperClasses\ProgressManager.cs" />
     <Compile Include="HelperClasses\TCPClient.cs" />
     <Compile Include="ImageUploader.cs" />
@@ -366,17 +365,13 @@
     <None Include="Favicons\ImageShack.ico" />
     <None Include="Favicons\Imgur.ico" />
     <None Include="Favicons\Minus.ico" />
-    <None Include="Favicons\Localhostr.ico" />
     <None Include="Favicons\jira.png" />
     <None Include="Favicons\Pastebin.ico" />
     <None Include="Favicons\Photobucket.ico" />
     <None Include="Favicons\RapidShare.ico" />
     <None Include="Favicons\SendSpace.ico" />
     <None Include="Favicons\TinyPic.ico" />
-    <None Include="Favicons\TwitPic.ico" />
-    <None Include="Favicons\TwitSnaps.ico" />
     <None Include="Favicons\Twitter.ico" />
-    <None Include="Favicons\YFrog.ico" />
     <None Include="packages.config" />
     <None Include="Resources\server-network.png" />
     <None Include="Resources\mail.png" />
@@ -427,6 +422,7 @@
   <ItemGroup>
     <Content Include="Favicons\AmazonS3.ico" />
     <None Include="Favicons\GitHub.ico" />
+    <Content Include="Favicons\Hostr.ico" />
     <Content Include="Favicons\Pushbullet.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

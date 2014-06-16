@@ -27,11 +27,12 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 using UploadersLib.HelperClasses;
 
-namespace UploadersLib.SocialServices
+namespace UploadersLib.ImageUploaders
 {
-    public class Twitter : Uploader, IOAuth
+    public class Twitter : ImageUploader, IOAuth
     {
         private const string APIVersion = "1.1";
         private const int characters_reserved_per_media = 23;
@@ -55,6 +56,21 @@ namespace UploadersLib.SocialServices
         {
             AuthInfo.AuthVerifier = verificationCode;
             return GetAccessToken("https://api.twitter.com/oauth/access_token", AuthInfo);
+        }
+
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            using (TwitterMsg twitterMsg = new TwitterMsg())
+            {
+                twitterMsg.Length = Twitter.MessageMediaLimit;
+
+                if (twitterMsg.ShowDialog() == DialogResult.OK)
+                {
+                    return TweetMessageWithMedia(twitterMsg.Message, stream, fileName);
+                }
+            }
+
+            return new UploadResult() { IsURLExpected = false };
         }
 
         public TwitterStatusResponse TweetMessage(string message)

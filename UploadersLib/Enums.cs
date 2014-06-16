@@ -44,12 +44,6 @@ namespace UploadersLib
         Picasa,
         [Description("twitter.com")]
         Twitter,
-        [Description("twitpic.com")]
-        Twitpic,
-        [Description("twitsnaps.com")]
-        Twitsnaps,
-        [Description("yfrog.com")]
-        yFrog,
         [Description("Custom image uploader")]
         CustomImageUploader,
         [Description("File uploader")]

@@ -75,9 +75,6 @@ namespace UploadersLib
             uploadersImageList.Images.Add("Flickr", Resources.Flickr);
             uploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
             uploadersImageList.Images.Add("Picasa", Resources.Picasa);
-            uploadersImageList.Images.Add("TwitPic", Resources.TwitPic);
-            uploadersImageList.Images.Add("TwitSnaps", Resources.TwitSnaps);
-            uploadersImageList.Images.Add("YFrog", Resources.YFrog);
             uploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
             uploadersImageList.Images.Add("Copy", Resources.Copy);
             uploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
@@ -87,7 +84,7 @@ namespace UploadersLib
             uploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
             uploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
             uploadersImageList.Images.Add("Gett", Resources.Gett);
-            uploadersImageList.Images.Add("Localhostr", Resources.Localhostr);
+            uploadersImageList.Images.Add("Hostr", Resources.Hostr);
             uploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
             uploadersImageList.Images.Add("SharedFolders", Resources.server_network);
             uploadersImageList.Images.Add("Email", Resources.mail);
@@ -109,9 +106,6 @@ namespace UploadersLib
             tpFlickr.ImageKey = "Flickr";
             tpPhotobucket.ImageKey = "Photobucket";
             tpPicasa.ImageKey = "Picasa";
-            tpTwitPic.ImageKey = "TwitPic";
-            tpTwitSnaps.ImageKey = "TwitSnaps";
-            tpYFrog.ImageKey = "YFrog";
             tpDropbox.ImageKey = "Dropbox";
             tpCopy.ImageKey = "Copy";
             tpGoogleDrive.ImageKey = "GoogleDrive";
@@ -124,7 +118,7 @@ namespace UploadersLib
             tpEmail.ImageKey = "Email";
             tpJira.ImageKey = "Jira";
             tpGe_tt.ImageKey = "Gett";
-            tpHostr.ImageKey = "Localhostr";
+            tpHostr.ImageKey = "Hostr";
             tpCustomUploaders.ImageKey = "CustomUploader";
             tpPastebin.ImageKey = "Pastebin";
             tpPushbullet.ImageKey = "Pushbullet";
@@ -177,19 +171,6 @@ namespace UploadersLib
         {
             #region Image uploaders
 
-            // ImageShack
-
-            atcImageShackAccountType.SelectedAccountType = Config.ImageShackSettings.AccountType;
-            txtImageShackUsername.Text = Config.ImageShackSettings.Username;
-            txtImageShackPassword.Text = Config.ImageShackSettings.Password;
-            cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
-
-            // TinyPic
-
-            atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
-            txtTinyPicUsername.Text = Config.TinyPicUsername;
-            txtTinyPicPassword.Text = Config.TinyPicPassword;
-
             // Imgur
 
             atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
@@ -204,6 +185,24 @@ namespace UploadersLib
                 oauth2Imgur.LoginStatus = true;
                 btnImgurRefreshAlbumList.Enabled = true;
             }
+
+            // ImageShack
+
+            atcImageShackAccountType.SelectedAccountType = Config.ImageShackSettings.AccountType;
+            txtImageShackUsername.Text = Config.ImageShackSettings.Username;
+            txtImageShackPassword.Text = Config.ImageShackSettings.Password;
+            cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
+
+            // TinyPic
+
+            atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
+            txtTinyPicUsername.Text = Config.TinyPicUsername;
+            txtTinyPicPassword.Text = Config.TinyPicPassword;
+
+            // Flickr
+
+            pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
+            pgFlickrSettings.SelectedObject = Config.FlickrSettings;
 
             // Photobucket
 
@@ -236,23 +235,6 @@ namespace UploadersLib
             }
 
             txtPicasaAlbumID.Text = Config.PicasaAlbumID;
-
-            // Flickr
-
-            pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
-            pgFlickrSettings.SelectedObject = Config.FlickrSettings;
-
-            // TwitPic
-
-            chkTwitPicShowFull.Checked = Config.TwitPicShowFull;
-            cboTwitPicThumbnailMode.Items.Clear();
-            cboTwitPicThumbnailMode.Items.AddRange(Helpers.GetEnumDescriptions<TwitPicThumbnailType>());
-            cboTwitPicThumbnailMode.SelectedIndex = (int)Config.TwitPicThumbnailMode;
-
-            // YFrog
-
-            txtYFrogUsername.Text = Config.YFrogUsername;
-            txtYFrogPassword.Text = Config.YFrogPassword;
 
             #endregion Image uploaders
 
@@ -547,6 +529,58 @@ namespace UploadersLib
 
         #region Image Uploaders
 
+        #region Imgur
+
+        private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.ImgurAccountType = accountType;
+        }
+
+        private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
+        }
+
+        private void txtImgurAlbumID_TextChanged(object sender, EventArgs e)
+        {
+            Config.ImgurAlbumID = txtImgurAlbumID.Text;
+        }
+
+        private void btnImgurRefreshAlbumList_Click(object sender, EventArgs e)
+        {
+            ImgurRefreshAlbumList();
+        }
+
+        private void lvImgurAlbumList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvImgurAlbumList.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvImgurAlbumList.SelectedItems[0];
+                if (lvi.Tag is ImgurAlbumData)
+                {
+                    ImgurAlbumData album = (ImgurAlbumData)lvi.Tag;
+                    txtImgurAlbumID.Text = album.id;
+                }
+            }
+        }
+
+        private void oauth2Imgur_OpenButtonClicked()
+        {
+            ImgurAuthOpen();
+        }
+
+        private void oauth2Imgur_CompleteButtonClicked(string code)
+        {
+            ImgurAuthComplete(code);
+        }
+
+        private void oauth2Imgur_RefreshButtonClicked()
+        {
+            ImgurAuthRefresh();
+        }
+
+        #endregion Imgur
+
         #region ImageShack
 
         private void atcImageShackAccountType_AccountTypeChanged(AccountType accountType)
@@ -670,57 +704,29 @@ namespace UploadersLib
 
         #endregion TinyPic
 
-        #region Imgur
+        #region Flickr
 
-        private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
+        private void btnFlickrOpenAuthorize_Click(object sender, EventArgs e)
         {
-            Config.ImgurAccountType = accountType;
+            FlickrAuthOpen();
         }
 
-        private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnFlickrCompleteAuth_Click(object sender, EventArgs e)
         {
-            Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
+            FlickrAuthComplete();
         }
 
-        private void txtImgurAlbumID_TextChanged(object sender, EventArgs e)
+        private void btnFlickrCheckToken_Click(object sender, EventArgs e)
         {
-            Config.ImgurAlbumID = txtImgurAlbumID.Text;
+            FlickrCheckToken();
         }
 
-        private void btnImgurRefreshAlbumList_Click(object sender, EventArgs e)
+        private void btnFlickrOpenImages_Click(object sender, EventArgs e)
         {
-            ImgurRefreshAlbumList();
+            FlickrOpenImages();
         }
 
-        private void lvImgurAlbumList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvImgurAlbumList.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvImgurAlbumList.SelectedItems[0];
-                if (lvi.Tag is ImgurAlbumData)
-                {
-                    ImgurAlbumData album = (ImgurAlbumData)lvi.Tag;
-                    txtImgurAlbumID.Text = album.id;
-                }
-            }
-        }
-
-        private void oauth2Imgur_OpenButtonClicked()
-        {
-            ImgurAuthOpen();
-        }
-
-        private void oauth2Imgur_CompleteButtonClicked(string code)
-        {
-            ImgurAuthComplete(code);
-        }
-
-        private void oauth2Imgur_RefreshButtonClicked()
-        {
-            ImgurAuthRefresh();
-        }
-
-        #endregion Imgur
+        #endregion Flickr
 
         #region Photobucket
 
@@ -809,58 +815,6 @@ namespace UploadersLib
         }
 
         #endregion Picasa
-
-        #region Flickr
-
-        private void btnFlickrOpenAuthorize_Click(object sender, EventArgs e)
-        {
-            FlickrAuthOpen();
-        }
-
-        private void btnFlickrCompleteAuth_Click(object sender, EventArgs e)
-        {
-            FlickrAuthComplete();
-        }
-
-        private void btnFlickrCheckToken_Click(object sender, EventArgs e)
-        {
-            FlickrCheckToken();
-        }
-
-        private void btnFlickrOpenImages_Click(object sender, EventArgs e)
-        {
-            FlickrOpenImages();
-        }
-
-        #endregion Flickr
-
-        #region TwitPic
-
-        private void cboTwitPicThumbnailMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.TwitPicThumbnailMode = (TwitPicThumbnailType)cboTwitPicThumbnailMode.SelectedIndex;
-        }
-
-        private void chkTwitPicShowFull_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.TwitPicShowFull = chkTwitPicShowFull.Checked;
-        }
-
-        #endregion TwitPic
-
-        #region YFrog
-
-        private void txtYFrogUsername_TextChanged(object sender, EventArgs e)
-        {
-            Config.YFrogUsername = txtYFrogUsername.Text;
-        }
-
-        private void txtYFrogPassword_TextChanged(object sender, EventArgs e)
-        {
-            Config.YFrogPassword = txtYFrogPassword.Text;
-        }
-
-        #endregion YFrog
 
         #endregion Image Uploaders
 
