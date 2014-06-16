@@ -537,6 +537,11 @@ namespace UploadersLib
             Config.ImgurAlbumID = txtImgurAlbumID.Text;
         }
 
+        private void oauth2Imgur_ClearButtonClicked()
+        {
+            Config.ImgurOAuth2Info = null;
+        }
+
         private void btnImgurRefreshAlbumList_Click(object sender, EventArgs e)
         {
             ImgurRefreshAlbumList();
@@ -772,6 +777,11 @@ namespace UploadersLib
             PicasaAuthComplete(code);
         }
 
+        private void oauth2Picasa_ClearButtonClicked()
+        {
+            Config.PicasaOAuth2Info = null;
+        }
+
         private void oauth2Picasa_RefreshButtonClicked()
         {
             PicasaAuthRefresh();
@@ -842,6 +852,11 @@ namespace UploadersLib
             GistAuthComplete(code);
         }
 
+        private void oAuth2Gist_ClearButtonClicked()
+        {
+            Config.GistOAuth2Info = null;
+        }
+
         private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GistPublishPublic = ((CheckBox)sender).Checked;
@@ -887,6 +902,11 @@ namespace UploadersLib
         private void oauth2Dropbox_CompleteButtonClicked(string code)
         {
             DropboxAuthComplete(code);
+        }
+
+        private void oauth2Dropbox_ClearButtonClicked()
+        {
+            Config.DropboxOAuth2Info = null;
         }
 
         private void txtDropboxPath_TextChanged(object sender, EventArgs e)
@@ -941,6 +961,11 @@ namespace UploadersLib
             CopyAuthComplete(code);
         }
 
+        private void oAuthCopy_ClearButtonClicked()
+        {
+            Config.CopyOAuthInfo = null;
+        }
+
         private void cbCopyURLType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.CopyURLType = (CopyURLType)cbCopyURLType.SelectedIndex;
@@ -965,6 +990,11 @@ namespace UploadersLib
             GoogleDriveAuthRefresh();
         }
 
+        private void oauth2GoogleDrive_ClearButtonClicked()
+        {
+            Config.GoogleDriveOAuth2Info = null;
+        }
+
         private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleDriveIsPublic = cbGoogleDriveIsPublic.Checked;
@@ -987,6 +1017,11 @@ namespace UploadersLib
         private void oauth2Box_RefreshButtonClicked()
         {
             BoxAuthRefresh();
+        }
+
+        private void oauth2Box_ClearButtonClicked()
+        {
+            Config.BoxOAuth2Info = null;
         }
 
         private void cbBoxShare_CheckedChanged(object sender, EventArgs e)
@@ -1400,6 +1435,11 @@ namespace UploadersLib
             JiraAuthComplete(code);
         }
 
+        private void oAuthJira_ClearButtonClicked()
+        {
+            Config.JiraOAuthInfo = null;
+        }
+
         private void oAuthJira_RefreshButtonClicked()
         {
             MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1650,6 +1690,25 @@ namespace UploadersLib
 
         #region URL Shorteners
 
+        #region bit.ly
+
+        private void oauth2Bitly_OpenButtonClicked()
+        {
+            BitlyAuthOpen();
+        }
+
+        private void oauth2Bitly_CompleteButtonClicked(string code)
+        {
+            BitlyAuthComplete(code);
+        }
+
+        private void oauth2Bitly_ClearButtonClicked()
+        {
+            Config.BitlyOAuth2Info = null;
+        }
+
+        #endregion bit.ly
+
         #region Google URL Shortener
 
         private void atcGoogleURLShortenerAccountType_AccountTypeChanged(AccountType accountType)
@@ -1672,21 +1731,12 @@ namespace UploadersLib
             GoogleURLShortenerAuthRefresh();
         }
 
+        private void oauth2GoogleURLShortener_ClearButtonClicked()
+        {
+            Config.GoogleURLShortenerOAuth2Info = null;
+        }
+
         #endregion Google URL Shortener
-
-        #region bit.ly
-
-        private void oauth2Bitly_OpenButtonClicked()
-        {
-            BitlyAuthOpen();
-        }
-
-        private void oauth2Bitly_CompleteButtonClicked(string code)
-        {
-            BitlyAuthComplete(code);
-        }
-
-        #endregion bit.ly
 
         #region yourls.org
 

@@ -38,6 +38,9 @@ namespace UploadersLib.GUI
         public delegate void CompleteButtonClickedEventHandler(string code);
         public event CompleteButtonClickedEventHandler CompleteButtonClicked;
 
+        public delegate void ClearButtonclickedEventHandler();
+        public event ClearButtonclickedEventHandler ClearButtonClicked;
+
         public delegate void RefreshButtonClickedEventHandler();
         public event RefreshButtonClickedEventHandler RefreshButtonClicked;
 
@@ -132,6 +135,16 @@ namespace UploadersLib.GUI
             if (RefreshButtonClicked != null)
             {
                 RefreshButtonClicked();
+            }
+        }
+
+        private void btnClearAuthorization_Click(object sender, EventArgs e)
+        {
+            if (ClearButtonClicked != null)
+            {
+                ClearButtonClicked();
+
+                Status = OAuthLoginStatus.LoginRequired;
             }
         }
     }

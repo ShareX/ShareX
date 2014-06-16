@@ -481,10 +481,10 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
-
                         Config.DropboxAccountInfo = dropbox.GetAccountInfo();
                         UpdateDropboxStatus();
+
+                        oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
 
                         if (Config.DropboxAccountInfo != null)
                         {
@@ -579,10 +579,10 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
-
                         Config.CopyAccountInfo = copy.GetAccountInfo();
                         UpdateCopyStatus();
+
+                        oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
 
                         if (Config.CopyAccountInfo != null)
                         {

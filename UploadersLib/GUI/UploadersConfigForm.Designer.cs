@@ -93,14 +93,10 @@
             this.txtCustomUploaderArgName = new System.Windows.Forms.TextBox();
             this.tpTwitter = new System.Windows.Forms.TabPage();
             this.btnTwitterLogin = new System.Windows.Forms.Button();
-            this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.tpURLShorteners = new System.Windows.Forms.TabPage();
             this.tcURLShorteners = new System.Windows.Forms.TabControl();
             this.tpBitly = new System.Windows.Forms.TabPage();
-            this.oauth2Bitly = new UploadersLib.GUI.OAuthControl();
             this.tpGoogleURLShortener = new System.Windows.Forms.TabPage();
-            this.oauth2GoogleURLShortener = new UploadersLib.GUI.OAuthControl();
-            this.atcGoogleURLShortenerAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpYourls = new System.Windows.Forms.TabPage();
             this.txtYourlsPassword = new System.Windows.Forms.TextBox();
             this.txtYourlsUsername = new System.Windows.Forms.TextBox();
@@ -114,7 +110,6 @@
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
-            this.oauth2Dropbox = new UploadersLib.GUI.OAuthControl();
             this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.btnDropboxShowFiles = new System.Windows.Forms.Button();
@@ -132,7 +127,6 @@
             this.lblCopyStatus = new System.Windows.Forms.Label();
             this.lblCopyPath = new System.Windows.Forms.Label();
             this.txtCopyPath = new System.Windows.Forms.TextBox();
-            this.oAuthCopy = new UploadersLib.GUI.OAuthControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
             this.eiFTP = new HelpersLib.UserControls.ExportImportControl();
             this.btnFtpClient = new System.Windows.Forms.Button();
@@ -142,7 +136,6 @@
             this.cboFtpImages = new System.Windows.Forms.ComboBox();
             this.cboFtpFiles = new System.Windows.Forms.ComboBox();
             this.cboFtpText = new System.Windows.Forms.ComboBox();
-            this.ucFTPAccounts = new UploadersLib.AccountsControl();
             this.tpMega = new System.Windows.Forms.TabPage();
             this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
             this.lblMegaStatus = new System.Windows.Forms.Label();
@@ -179,7 +172,6 @@
             this.txtPushbulletUserKey = new System.Windows.Forms.TextBox();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
-            this.oauth2GoogleDrive = new UploadersLib.GUI.OAuthControl();
             this.tpBox = new System.Windows.Forms.TabPage();
             this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
@@ -187,7 +179,6 @@
             this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
-            this.oauth2Box = new UploadersLib.GUI.OAuthControl();
             this.tpRapidShare = new System.Windows.Forms.TabPage();
             this.txtRapidShareFolderID = new System.Windows.Forms.TextBox();
             this.lblRapidShareFolderID = new System.Windows.Forms.Label();
@@ -203,7 +194,6 @@
             this.lblSendSpaceUsername = new System.Windows.Forms.Label();
             this.txtSendSpacePassword = new System.Windows.Forms.TextBox();
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
-            this.atcSendSpaceAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpGe_tt = new System.Windows.Forms.TabPage();
             this.lblGe_ttStatus = new System.Windows.Forms.Label();
             this.lblGe_ttPassword = new System.Windows.Forms.Label();
@@ -241,7 +231,6 @@
             this.txtJiraConfigHelp = new System.Windows.Forms.TextBox();
             this.txtJiraHost = new System.Windows.Forms.TextBox();
             this.lblJiraHost = new System.Windows.Forms.Label();
-            this.oAuthJira = new UploadersLib.GUI.OAuthControl();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.chkEmailConfirm = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
@@ -264,7 +253,6 @@
             this.lblSharedFolderImages = new System.Windows.Forms.Label();
             this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
-            this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -276,8 +264,6 @@
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
             this.tpGist = new System.Windows.Forms.TabPage();
             this.chkGistPublishPublic = new System.Windows.Forms.CheckBox();
-            this.oAuth2Gist = new UploadersLib.GUI.OAuthControl();
-            this.atcGistAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpUpaste = new System.Windows.Forms.TabPage();
             this.cbUpasteIsPublic = new System.Windows.Forms.CheckBox();
             this.lblUpasteUserKey = new System.Windows.Forms.Label();
@@ -285,7 +271,6 @@
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImgur = new System.Windows.Forms.TabPage();
-            this.oauth2Imgur = new UploadersLib.GUI.OAuthControl();
             this.txtImgurAlbumID = new System.Windows.Forms.TextBox();
             this.lblImgurAlbumID = new System.Windows.Forms.Label();
             this.lvImgurAlbumList = new System.Windows.Forms.ListView();
@@ -295,7 +280,6 @@
             this.btnImgurRefreshAlbumList = new System.Windows.Forms.Button();
             this.cbImgurThumbnailType = new System.Windows.Forms.ComboBox();
             this.lblImgurThumbnailType = new System.Windows.Forms.Label();
-            this.atcImgurAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpImageShack = new System.Windows.Forms.TabPage();
             this.btnImageShackLogin = new System.Windows.Forms.Button();
             this.btnImageShackOpenPublicProfile = new System.Windows.Forms.Button();
@@ -306,7 +290,6 @@
             this.txtImageShackPassword = new System.Windows.Forms.TextBox();
             this.lblImageShackPassword = new System.Windows.Forms.Label();
             this.tpTinyPic = new System.Windows.Forms.TabPage();
-            this.atcTinyPicAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.btnTinyPicLogin = new System.Windows.Forms.Button();
             this.txtTinyPicPassword = new System.Windows.Forms.TextBox();
             this.lblTinyPicPassword = new System.Windows.Forms.Label();
@@ -347,9 +330,26 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
-            this.oauth2Picasa = new UploadersLib.GUI.OAuthControl();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.ttlvMain = new HelpersLib.TabToListView();
+            this.oauth2Imgur = new UploadersLib.GUI.OAuthControl();
+            this.atcImgurAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.atcTinyPicAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.oauth2Picasa = new UploadersLib.GUI.OAuthControl();
+            this.oAuth2Gist = new UploadersLib.GUI.OAuthControl();
+            this.atcGistAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.oauth2Dropbox = new UploadersLib.GUI.OAuthControl();
+            this.oAuthCopy = new UploadersLib.GUI.OAuthControl();
+            this.ucFTPAccounts = new UploadersLib.AccountsControl();
+            this.oauth2GoogleDrive = new UploadersLib.GUI.OAuthControl();
+            this.oauth2Box = new UploadersLib.GUI.OAuthControl();
+            this.atcSendSpaceAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.oAuthJira = new UploadersLib.GUI.OAuthControl();
+            this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
+            this.oauth2Bitly = new UploadersLib.GUI.OAuthControl();
+            this.oauth2GoogleURLShortener = new UploadersLib.GUI.OAuthControl();
+            this.atcGoogleURLShortenerAccountType = new UploadersLib.GUI.AccountTypeControl();
+            this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.actRapidShareAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
@@ -1051,15 +1051,6 @@
             this.btnTwitterLogin.UseVisualStyleBackColor = true;
             this.btnTwitterLogin.Click += new System.EventHandler(this.btnTwitterLogin_Click);
             // 
-            // ucTwitterAccounts
-            // 
-            this.ucTwitterAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTwitterAccounts.Location = new System.Drawing.Point(0, 0);
-            this.ucTwitterAccounts.Margin = new System.Windows.Forms.Padding(0);
-            this.ucTwitterAccounts.Name = "ucTwitterAccounts";
-            this.ucTwitterAccounts.Size = new System.Drawing.Size(972, 493);
-            this.ucTwitterAccounts.TabIndex = 0;
-            // 
             // tpURLShorteners
             // 
             this.tpURLShorteners.Controls.Add(this.tcURLShorteners);
@@ -1094,16 +1085,6 @@
             this.tpBitly.Text = "bit.ly";
             this.tpBitly.UseVisualStyleBackColor = true;
             // 
-            // oauth2Bitly
-            // 
-            this.oauth2Bitly.IsRefreshable = false;
-            this.oauth2Bitly.Location = new System.Drawing.Point(16, 16);
-            this.oauth2Bitly.Name = "oauth2Bitly";
-            this.oauth2Bitly.Size = new System.Drawing.Size(328, 208);
-            this.oauth2Bitly.TabIndex = 0;
-            this.oauth2Bitly.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
-            this.oauth2Bitly.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
-            // 
             // tpGoogleURLShortener
             // 
             this.tpGoogleURLShortener.Controls.Add(this.oauth2GoogleURLShortener);
@@ -1115,25 +1096,6 @@
             this.tpGoogleURLShortener.TabIndex = 0;
             this.tpGoogleURLShortener.Text = "Google";
             this.tpGoogleURLShortener.UseVisualStyleBackColor = true;
-            // 
-            // oauth2GoogleURLShortener
-            // 
-            this.oauth2GoogleURLShortener.Location = new System.Drawing.Point(16, 56);
-            this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
-            this.oauth2GoogleURLShortener.Size = new System.Drawing.Size(328, 240);
-            this.oauth2GoogleURLShortener.TabIndex = 1;
-            this.oauth2GoogleURLShortener.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleURLShortener_OpenButtonClicked);
-            this.oauth2GoogleURLShortener.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
-            this.oauth2GoogleURLShortener.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleURLShortener_RefreshButtonClicked);
-            // 
-            // atcGoogleURLShortenerAccountType
-            // 
-            this.atcGoogleURLShortenerAccountType.Location = new System.Drawing.Point(8, 16);
-            this.atcGoogleURLShortenerAccountType.Name = "atcGoogleURLShortenerAccountType";
-            this.atcGoogleURLShortenerAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcGoogleURLShortenerAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcGoogleURLShortenerAccountType.TabIndex = 0;
-            this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
             // 
             // tpYourls
             // 
@@ -1289,16 +1251,6 @@
             this.tpDropbox.TabIndex = 0;
             this.tpDropbox.Text = "Dropbox";
             this.tpDropbox.UseVisualStyleBackColor = true;
-            // 
-            // oauth2Dropbox
-            // 
-            this.oauth2Dropbox.IsRefreshable = false;
-            this.oauth2Dropbox.Location = new System.Drawing.Point(16, 88);
-            this.oauth2Dropbox.Name = "oauth2Dropbox";
-            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 200);
-            this.oauth2Dropbox.TabIndex = 20;
-            this.oauth2Dropbox.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
-            this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
             // 
             // cbDropboxURLType
             // 
@@ -1475,16 +1427,6 @@
             this.txtCopyPath.TabIndex = 4;
             this.txtCopyPath.TextChanged += new System.EventHandler(this.txtCopyPath_TextChanged);
             // 
-            // oAuthCopy
-            // 
-            this.oAuthCopy.IsRefreshable = false;
-            this.oAuthCopy.Location = new System.Drawing.Point(16, 88);
-            this.oAuthCopy.Name = "oAuthCopy";
-            this.oAuthCopy.Size = new System.Drawing.Size(328, 208);
-            this.oAuthCopy.TabIndex = 2;
-            this.oAuthCopy.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
-            this.oAuthCopy.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
-            // 
             // tpFTP
             // 
             this.tpFTP.Controls.Add(this.eiFTP);
@@ -1580,16 +1522,6 @@
             this.cboFtpText.Size = new System.Drawing.Size(216, 21);
             this.cboFtpText.TabIndex = 3;
             this.cboFtpText.SelectedIndexChanged += new System.EventHandler(this.cboFtpText_SelectedIndexChanged);
-            // 
-            // ucFTPAccounts
-            // 
-            this.ucFTPAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
-            this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
-            this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 448);
-            this.ucFTPAccounts.TabIndex = 6;
             // 
             // tpMega
             // 
@@ -1971,16 +1903,6 @@
             this.cbGoogleDriveIsPublic.UseVisualStyleBackColor = true;
             this.cbGoogleDriveIsPublic.CheckedChanged += new System.EventHandler(this.cbGoogleDriveIsPublic_CheckedChanged);
             // 
-            // oauth2GoogleDrive
-            // 
-            this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
-            this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
-            this.oauth2GoogleDrive.Size = new System.Drawing.Size(328, 240);
-            this.oauth2GoogleDrive.TabIndex = 0;
-            this.oauth2GoogleDrive.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
-            this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
-            this.oauth2GoogleDrive.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
-            // 
             // tpBox
             // 
             this.tpBox.Controls.Add(this.lblBoxFolderTip);
@@ -2056,16 +1978,6 @@
             this.btnBoxRefreshFolders.Text = "Refresh folders list";
             this.btnBoxRefreshFolders.UseVisualStyleBackColor = true;
             this.btnBoxRefreshFolders.Click += new System.EventHandler(this.btnBoxRefreshFolders_Click);
-            // 
-            // oauth2Box
-            // 
-            this.oauth2Box.Location = new System.Drawing.Point(16, 16);
-            this.oauth2Box.Name = "oauth2Box";
-            this.oauth2Box.Size = new System.Drawing.Size(328, 240);
-            this.oauth2Box.TabIndex = 0;
-            this.oauth2Box.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Box_OpenButtonClicked);
-            this.oauth2Box.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
-            this.oauth2Box.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Box_RefreshButtonClicked);
             // 
             // tpRapidShare
             // 
@@ -2215,15 +2127,6 @@
             this.txtSendSpaceUserName.Size = new System.Drawing.Size(136, 20);
             this.txtSendSpaceUserName.TabIndex = 3;
             this.txtSendSpaceUserName.TextChanged += new System.EventHandler(this.txtSendSpaceUserName_TextChanged);
-            // 
-            // atcSendSpaceAccountType
-            // 
-            this.atcSendSpaceAccountType.Location = new System.Drawing.Point(8, 16);
-            this.atcSendSpaceAccountType.Name = "atcSendSpaceAccountType";
-            this.atcSendSpaceAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcSendSpaceAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcSendSpaceAccountType.TabIndex = 0;
-            this.atcSendSpaceAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcSendSpaceAccountType_AccountTypeChanged);
             // 
             // tpGe_tt
             // 
@@ -2603,16 +2506,6 @@
             this.lblJiraHost.TabIndex = 0;
             this.lblJiraHost.Text = "Jira host: ";
             // 
-            // oAuthJira
-            // 
-            this.oAuthJira.Location = new System.Drawing.Point(473, 13);
-            this.oAuthJira.Name = "oAuthJira";
-            this.oAuthJira.Size = new System.Drawing.Size(328, 243);
-            this.oAuthJira.TabIndex = 1;
-            this.oAuthJira.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
-            this.oAuthJira.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
-            this.oAuthJira.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oAuthJira_RefreshButtonClicked);
-            // 
             // tpEmail
             // 
             this.tpEmail.Controls.Add(this.chkEmailConfirm);
@@ -2848,16 +2741,6 @@
             this.cboSharedFolderImages.TabIndex = 1;
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
             // 
-            // ucLocalhostAccounts
-            // 
-            this.ucLocalhostAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ucLocalhostAccounts.Location = new System.Drawing.Point(8, 40);
-            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
-            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
-            this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 448);
-            this.ucLocalhostAccounts.TabIndex = 0;
-            // 
             // btnCopyShowFiles
             // 
             this.btnCopyShowFiles.Location = new System.Drawing.Point(0, 0);
@@ -2974,26 +2857,6 @@
             this.chkGistPublishPublic.UseVisualStyleBackColor = true;
             this.chkGistPublishPublic.CheckedChanged += new System.EventHandler(this.chkGistPublishPublic_CheckedChanged);
             // 
-            // oAuth2Gist
-            // 
-            this.oAuth2Gist.Enabled = false;
-            this.oAuth2Gist.IsRefreshable = false;
-            this.oAuth2Gist.Location = new System.Drawing.Point(16, 51);
-            this.oAuth2Gist.Name = "oAuth2Gist";
-            this.oAuth2Gist.Size = new System.Drawing.Size(328, 205);
-            this.oAuth2Gist.TabIndex = 2;
-            this.oAuth2Gist.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
-            this.oAuth2Gist.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
-            // 
-            // atcGistAccountType
-            // 
-            this.atcGistAccountType.Location = new System.Drawing.Point(15, 16);
-            this.atcGistAccountType.Name = "atcGistAccountType";
-            this.atcGistAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcGistAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcGistAccountType.TabIndex = 0;
-            this.atcGistAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGistAccountType_AccountTypeChanged);
-            // 
             // tpUpaste
             // 
             this.tpUpaste.Controls.Add(this.cbUpasteIsPublic);
@@ -3065,6 +2928,7 @@
             // 
             // tpImgur
             // 
+            this.tpImgur.Controls.Add(this.atcImgurAccountType);
             this.tpImgur.Controls.Add(this.oauth2Imgur);
             this.tpImgur.Controls.Add(this.txtImgurAlbumID);
             this.tpImgur.Controls.Add(this.lblImgurAlbumID);
@@ -3072,7 +2936,6 @@
             this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
             this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
             this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
-            this.tpImgur.Controls.Add(this.atcImgurAccountType);
             this.tpImgur.Location = new System.Drawing.Point(4, 22);
             this.tpImgur.Name = "tpImgur";
             this.tpImgur.Padding = new System.Windows.Forms.Padding(3);
@@ -3080,16 +2943,6 @@
             this.tpImgur.TabIndex = 2;
             this.tpImgur.Text = "Imgur";
             this.tpImgur.UseVisualStyleBackColor = true;
-            // 
-            // oauth2Imgur
-            // 
-            this.oauth2Imgur.Location = new System.Drawing.Point(16, 16);
-            this.oauth2Imgur.Name = "oauth2Imgur";
-            this.oauth2Imgur.Size = new System.Drawing.Size(328, 240);
-            this.oauth2Imgur.TabIndex = 0;
-            this.oauth2Imgur.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
-            this.oauth2Imgur.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
-            this.oauth2Imgur.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
             // 
             // txtImgurAlbumID
             // 
@@ -3168,15 +3021,6 @@
             this.lblImgurThumbnailType.Size = new System.Drawing.Size(82, 13);
             this.lblImgurThumbnailType.TabIndex = 5;
             this.lblImgurThumbnailType.Text = "Thumbnail type:";
-            // 
-            // atcImgurAccountType
-            // 
-            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
-            this.atcImgurAccountType.Name = "atcImgurAccountType";
-            this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcImgurAccountType.Size = new System.Drawing.Size(208, 32);
-            this.atcImgurAccountType.TabIndex = 4;
-            this.atcImgurAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
             // 
             // tpImageShack
             // 
@@ -3289,15 +3133,6 @@
             this.tpTinyPic.Text = "TinyPic";
             this.tpTinyPic.UseVisualStyleBackColor = true;
             // 
-            // atcTinyPicAccountType
-            // 
-            this.atcTinyPicAccountType.Location = new System.Drawing.Point(8, 8);
-            this.atcTinyPicAccountType.Name = "atcTinyPicAccountType";
-            this.atcTinyPicAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcTinyPicAccountType.Size = new System.Drawing.Size(272, 29);
-            this.atcTinyPicAccountType.TabIndex = 0;
-            this.atcTinyPicAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcTinyPicAccountType_AccountTypeChanged);
-            // 
             // btnTinyPicLogin
             // 
             this.btnTinyPicLogin.Location = new System.Drawing.Point(296, 74);
@@ -3320,7 +3155,7 @@
             // lblTinyPicPassword
             // 
             this.lblTinyPicPassword.AutoSize = true;
-            this.lblTinyPicPassword.Location = new System.Drawing.Point(16, 88);
+            this.lblTinyPicPassword.Location = new System.Drawing.Point(16, 80);
             this.lblTinyPicPassword.Name = "lblTinyPicPassword";
             this.lblTinyPicPassword.Size = new System.Drawing.Size(56, 13);
             this.lblTinyPicPassword.TabIndex = 3;
@@ -3337,7 +3172,7 @@
             // lblTinyPicUsername
             // 
             this.lblTinyPicUsername.AutoSize = true;
-            this.lblTinyPicUsername.Location = new System.Drawing.Point(16, 56);
+            this.lblTinyPicUsername.Location = new System.Drawing.Point(16, 48);
             this.lblTinyPicUsername.Name = "lblTinyPicUsername";
             this.lblTinyPicUsername.Size = new System.Drawing.Size(35, 13);
             this.lblTinyPicUsername.TabIndex = 1;
@@ -3374,7 +3209,7 @@
             this.btnFlickrOpenImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFlickrOpenImages.Location = new System.Drawing.Point(661, 104);
             this.btnFlickrOpenImages.Name = "btnFlickrOpenImages";
-            this.btnFlickrOpenImages.Size = new System.Drawing.Size(168, 23);
+            this.btnFlickrOpenImages.Size = new System.Drawing.Size(179, 23);
             this.btnFlickrOpenImages.TabIndex = 5;
             this.btnFlickrOpenImages.Text = "Your photostream...";
             this.btnFlickrOpenImages.UseVisualStyleBackColor = true;
@@ -3410,7 +3245,7 @@
             this.btnFlickrCheckToken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFlickrCheckToken.Location = new System.Drawing.Point(661, 75);
             this.btnFlickrCheckToken.Name = "btnFlickrCheckToken";
-            this.btnFlickrCheckToken.Size = new System.Drawing.Size(168, 23);
+            this.btnFlickrCheckToken.Size = new System.Drawing.Size(179, 23);
             this.btnFlickrCheckToken.TabIndex = 4;
             this.btnFlickrCheckToken.Text = "Refresh authorization";
             this.btnFlickrCheckToken.UseVisualStyleBackColor = true;
@@ -3422,10 +3257,9 @@
             this.btnFlickrCompleteAuth.Enabled = false;
             this.btnFlickrCompleteAuth.Location = new System.Drawing.Point(661, 47);
             this.btnFlickrCompleteAuth.Name = "btnFlickrCompleteAuth";
-            this.btnFlickrCompleteAuth.Size = new System.Drawing.Size(168, 24);
+            this.btnFlickrCompleteAuth.Size = new System.Drawing.Size(179, 24);
             this.btnFlickrCompleteAuth.TabIndex = 2;
             this.btnFlickrCompleteAuth.Text = "Step 2. Complete authorization";
-            this.btnFlickrCompleteAuth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFlickrCompleteAuth.UseVisualStyleBackColor = true;
             this.btnFlickrCompleteAuth.Click += new System.EventHandler(this.btnFlickrCompleteAuth_Click);
             // 
@@ -3434,10 +3268,9 @@
             this.btnFlickrOpenAuthorize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFlickrOpenAuthorize.Location = new System.Drawing.Point(661, 18);
             this.btnFlickrOpenAuthorize.Name = "btnFlickrOpenAuthorize";
-            this.btnFlickrOpenAuthorize.Size = new System.Drawing.Size(168, 23);
+            this.btnFlickrOpenAuthorize.Size = new System.Drawing.Size(179, 23);
             this.btnFlickrOpenAuthorize.TabIndex = 1;
             this.btnFlickrOpenAuthorize.Text = "Step 1. Open authorize page...";
-            this.btnFlickrOpenAuthorize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFlickrOpenAuthorize.UseVisualStyleBackColor = true;
             this.btnFlickrOpenAuthorize.Click += new System.EventHandler(this.btnFlickrOpenAuthorize_Click);
             // 
@@ -3705,16 +3538,6 @@
             this.btnPicasaRefreshAlbumList.UseVisualStyleBackColor = true;
             this.btnPicasaRefreshAlbumList.Click += new System.EventHandler(this.btnPicasaRefreshAlbumList_Click);
             // 
-            // oauth2Picasa
-            // 
-            this.oauth2Picasa.Location = new System.Drawing.Point(16, 16);
-            this.oauth2Picasa.Name = "oauth2Picasa";
-            this.oauth2Picasa.Size = new System.Drawing.Size(328, 240);
-            this.oauth2Picasa.TabIndex = 0;
-            this.oauth2Picasa.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Picasa_OpenButtonClicked);
-            this.oauth2Picasa.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Picasa_CompleteButtonClicked);
-            this.oauth2Picasa.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Picasa_RefreshButtonClicked);
-            // 
             // tcUploaders
             // 
             this.tcUploaders.Controls.Add(this.tpImageUploaders);
@@ -3741,6 +3564,191 @@
             this.ttlvMain.Name = "ttlvMain";
             this.ttlvMain.Size = new System.Drawing.Size(994, 551);
             this.ttlvMain.TabIndex = 0;
+            // 
+            // oauth2Imgur
+            // 
+            this.oauth2Imgur.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Imgur.Name = "oauth2Imgur";
+            this.oauth2Imgur.Size = new System.Drawing.Size(328, 240);
+            this.oauth2Imgur.TabIndex = 0;
+            this.oauth2Imgur.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
+            this.oauth2Imgur.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
+            this.oauth2Imgur.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
+            this.oauth2Imgur.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
+            // 
+            // atcImgurAccountType
+            // 
+            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
+            this.atcImgurAccountType.Name = "atcImgurAccountType";
+            this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
+            this.atcImgurAccountType.Size = new System.Drawing.Size(208, 32);
+            this.atcImgurAccountType.TabIndex = 4;
+            this.atcImgurAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
+            // 
+            // atcTinyPicAccountType
+            // 
+            this.atcTinyPicAccountType.Location = new System.Drawing.Point(8, 8);
+            this.atcTinyPicAccountType.Name = "atcTinyPicAccountType";
+            this.atcTinyPicAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
+            this.atcTinyPicAccountType.Size = new System.Drawing.Size(272, 29);
+            this.atcTinyPicAccountType.TabIndex = 0;
+            this.atcTinyPicAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcTinyPicAccountType_AccountTypeChanged);
+            // 
+            // oauth2Picasa
+            // 
+            this.oauth2Picasa.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Picasa.Name = "oauth2Picasa";
+            this.oauth2Picasa.Size = new System.Drawing.Size(328, 240);
+            this.oauth2Picasa.TabIndex = 0;
+            this.oauth2Picasa.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Picasa_OpenButtonClicked);
+            this.oauth2Picasa.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Picasa_CompleteButtonClicked);
+            this.oauth2Picasa.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Picasa_ClearButtonClicked);
+            this.oauth2Picasa.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Picasa_RefreshButtonClicked);
+            // 
+            // oAuth2Gist
+            // 
+            this.oAuth2Gist.Enabled = false;
+            this.oAuth2Gist.IsRefreshable = false;
+            this.oAuth2Gist.Location = new System.Drawing.Point(16, 51);
+            this.oAuth2Gist.Name = "oAuth2Gist";
+            this.oAuth2Gist.Size = new System.Drawing.Size(328, 205);
+            this.oAuth2Gist.TabIndex = 2;
+            this.oAuth2Gist.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
+            this.oAuth2Gist.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
+            this.oAuth2Gist.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2Gist_ClearButtonClicked);
+            // 
+            // atcGistAccountType
+            // 
+            this.atcGistAccountType.Location = new System.Drawing.Point(15, 16);
+            this.atcGistAccountType.Name = "atcGistAccountType";
+            this.atcGistAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
+            this.atcGistAccountType.Size = new System.Drawing.Size(214, 29);
+            this.atcGistAccountType.TabIndex = 0;
+            this.atcGistAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGistAccountType_AccountTypeChanged);
+            // 
+            // oauth2Dropbox
+            // 
+            this.oauth2Dropbox.IsRefreshable = false;
+            this.oauth2Dropbox.Location = new System.Drawing.Point(16, 88);
+            this.oauth2Dropbox.Name = "oauth2Dropbox";
+            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 200);
+            this.oauth2Dropbox.TabIndex = 20;
+            this.oauth2Dropbox.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
+            this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
+            this.oauth2Dropbox.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
+            // 
+            // oAuthCopy
+            // 
+            this.oAuthCopy.IsRefreshable = false;
+            this.oAuthCopy.Location = new System.Drawing.Point(16, 88);
+            this.oAuthCopy.Name = "oAuthCopy";
+            this.oAuthCopy.Size = new System.Drawing.Size(328, 208);
+            this.oAuthCopy.TabIndex = 2;
+            this.oAuthCopy.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
+            this.oAuthCopy.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
+            this.oAuthCopy.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
+            // 
+            // ucFTPAccounts
+            // 
+            this.ucFTPAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
+            this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
+            this.ucFTPAccounts.Name = "ucFTPAccounts";
+            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 448);
+            this.ucFTPAccounts.TabIndex = 6;
+            // 
+            // oauth2GoogleDrive
+            // 
+            this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
+            this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
+            this.oauth2GoogleDrive.Size = new System.Drawing.Size(328, 240);
+            this.oauth2GoogleDrive.TabIndex = 0;
+            this.oauth2GoogleDrive.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
+            this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
+            this.oauth2GoogleDrive.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleDrive_ClearButtonClicked);
+            this.oauth2GoogleDrive.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
+            // 
+            // oauth2Box
+            // 
+            this.oauth2Box.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Box.Name = "oauth2Box";
+            this.oauth2Box.Size = new System.Drawing.Size(328, 240);
+            this.oauth2Box.TabIndex = 0;
+            this.oauth2Box.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Box_OpenButtonClicked);
+            this.oauth2Box.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
+            this.oauth2Box.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Box_ClearButtonClicked);
+            this.oauth2Box.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Box_RefreshButtonClicked);
+            // 
+            // atcSendSpaceAccountType
+            // 
+            this.atcSendSpaceAccountType.Location = new System.Drawing.Point(8, 16);
+            this.atcSendSpaceAccountType.Name = "atcSendSpaceAccountType";
+            this.atcSendSpaceAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
+            this.atcSendSpaceAccountType.Size = new System.Drawing.Size(214, 29);
+            this.atcSendSpaceAccountType.TabIndex = 0;
+            this.atcSendSpaceAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcSendSpaceAccountType_AccountTypeChanged);
+            // 
+            // oAuthJira
+            // 
+            this.oAuthJira.Location = new System.Drawing.Point(473, 13);
+            this.oAuthJira.Name = "oAuthJira";
+            this.oAuthJira.Size = new System.Drawing.Size(328, 243);
+            this.oAuthJira.TabIndex = 1;
+            this.oAuthJira.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
+            this.oAuthJira.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
+            this.oAuthJira.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oAuthJira_ClearButtonClicked);
+            this.oAuthJira.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oAuthJira_RefreshButtonClicked);
+            // 
+            // ucLocalhostAccounts
+            // 
+            this.ucLocalhostAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ucLocalhostAccounts.Location = new System.Drawing.Point(8, 40);
+            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
+            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
+            this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 448);
+            this.ucLocalhostAccounts.TabIndex = 0;
+            // 
+            // oauth2Bitly
+            // 
+            this.oauth2Bitly.IsRefreshable = false;
+            this.oauth2Bitly.Location = new System.Drawing.Point(16, 16);
+            this.oauth2Bitly.Name = "oauth2Bitly";
+            this.oauth2Bitly.Size = new System.Drawing.Size(328, 208);
+            this.oauth2Bitly.TabIndex = 0;
+            this.oauth2Bitly.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
+            this.oauth2Bitly.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
+            this.oauth2Bitly.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Bitly_ClearButtonClicked);
+            // 
+            // oauth2GoogleURLShortener
+            // 
+            this.oauth2GoogleURLShortener.Location = new System.Drawing.Point(16, 56);
+            this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
+            this.oauth2GoogleURLShortener.Size = new System.Drawing.Size(328, 240);
+            this.oauth2GoogleURLShortener.TabIndex = 1;
+            this.oauth2GoogleURLShortener.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleURLShortener_OpenButtonClicked);
+            this.oauth2GoogleURLShortener.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
+            this.oauth2GoogleURLShortener.ClearButtonClicked += new UploadersLib.GUI.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleURLShortener_ClearButtonClicked);
+            this.oauth2GoogleURLShortener.RefreshButtonClicked += new UploadersLib.GUI.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleURLShortener_RefreshButtonClicked);
+            // 
+            // atcGoogleURLShortenerAccountType
+            // 
+            this.atcGoogleURLShortenerAccountType.Location = new System.Drawing.Point(8, 16);
+            this.atcGoogleURLShortenerAccountType.Name = "atcGoogleURLShortenerAccountType";
+            this.atcGoogleURLShortenerAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
+            this.atcGoogleURLShortenerAccountType.Size = new System.Drawing.Size(214, 29);
+            this.atcGoogleURLShortenerAccountType.TabIndex = 0;
+            this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
+            // 
+            // ucTwitterAccounts
+            // 
+            this.ucTwitterAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTwitterAccounts.Location = new System.Drawing.Point(0, 0);
+            this.ucTwitterAccounts.Margin = new System.Windows.Forms.Padding(0);
+            this.ucTwitterAccounts.Name = "ucTwitterAccounts";
+            this.ucTwitterAccounts.Size = new System.Drawing.Size(972, 493);
+            this.ucTwitterAccounts.TabIndex = 0;
             // 
             // actRapidShareAccountType
             // 

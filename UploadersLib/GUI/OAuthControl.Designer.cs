@@ -122,6 +122,7 @@
             this.btnClearAuthorization.TabIndex = 6;
             this.btnClearAuthorization.Text = "Clear authorization";
             this.btnClearAuthorization.UseVisualStyleBackColor = true;
+            this.btnClearAuthorization.Click += new System.EventHandler(this.btnClearAuthorization_Click);
             // 
             // OAuthControl
             // 
