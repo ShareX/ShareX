@@ -999,10 +999,9 @@ namespace ShareX
 
                     if (twitterOAuth != null)
                     {
-                        using (TwitterMsg twitter = new TwitterMsg(twitterOAuth))
+                        using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
                         {
                             twitter.Message = Info.Result.ToString();
-                            twitter.Config = Program.UploadersConfig.TwitterClientConfig;
                             twitter.ShowDialog();
                         }
                     }

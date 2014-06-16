@@ -47,7 +47,7 @@ namespace UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            using (TwitterMsg msgBox = new TwitterMsg())
+            using (TwitterTweetForm msgBox = new TwitterTweetForm())
             {
                 msgBox.ShowDialog();
                 return Upload(stream, fileName, msgBox.Message);

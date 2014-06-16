@@ -30,44 +30,44 @@ using System.Windows.Forms;
 
 namespace UploadersLib.GUI
 {
-    public partial class OAuth2Control : UserControl
+    public partial class OAuthControl : UserControl
     {
         public delegate void OpenButtonClickedEventHandler();
-
         public event OpenButtonClickedEventHandler OpenButtonClicked;
 
         public delegate void CompleteButtonClickedEventHandler(string code);
-
         public event CompleteButtonClickedEventHandler CompleteButtonClicked;
 
         public delegate void RefreshButtonClickedEventHandler();
-
         public event RefreshButtonClickedEventHandler RefreshButtonClicked;
 
-        public string Status
+        private OAuthLoginStatus status;
+
+        [DefaultValue(OAuthLoginStatus.LoginRequired)]
+        public OAuthLoginStatus Status
         {
             get
             {
-                return lblLoginStatus.Text;
+                return status;
             }
             set
             {
-                lblLoginStatus.Text = value;
-            }
-        }
+                status = value;
 
-        private bool loginStatus;
+                switch (status)
+                {
+                    case OAuthLoginStatus.LoginRequired:
+                        lblLoginStatus.Text = "Status: Not logged in.";
+                        break;
+                    case OAuthLoginStatus.LoginSuccessful:
+                        lblLoginStatus.Text = "Status: Login successful.";
+                        break;
+                    case OAuthLoginStatus.LoginFailed:
+                        lblLoginStatus.Text = "Status: Login failed.";
+                        break;
+                }
 
-        public bool LoginStatus
-        {
-            get
-            {
-                return loginStatus;
-            }
-            set
-            {
-                loginStatus = value;
-                btnRefreshAuthorization.Enabled = loginStatus;
+                btnRefreshAuthorization.Enabled = status == OAuthLoginStatus.LoginSuccessful;
             }
         }
 
@@ -97,9 +97,10 @@ namespace UploadersLib.GUI
             }
         }
 
-        public OAuth2Control()
+        public OAuthControl()
         {
             InitializeComponent();
+            Status = OAuthLoginStatus.LoginRequired;
             IsRefreshable = true;
         }
 

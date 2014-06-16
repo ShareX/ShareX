@@ -148,11 +148,11 @@
     <Compile Include="GUI\JiraUpload.Designer.cs">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\OAuth2Control.cs">
+    <Compile Include="GUI\OAuthControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\OAuth2Control.Designer.cs">
-      <DependentUpon>OAuth2Control.cs</DependentUpon>
+    <Compile Include="GUI\OAuthControl.Designer.cs">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\OAuthWebForm.cs">
       <SubType>Form</SubType>
@@ -235,11 +235,11 @@
     <Compile Include="TextUploaders\Gist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
     <Compile Include="UploadResult.cs" />
-    <Compile Include="GUI\TwitterMsg.cs">
+    <Compile Include="GUI\TwitterTweetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\TwitterMsg.Designer.cs">
-      <DependentUpon>TwitterMsg.cs</DependentUpon>
+    <Compile Include="GUI\TwitterTweetForm.Designer.cs">
+      <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
     <Compile Include="HelperClasses\CustomUploaderItem.cs" />
@@ -302,8 +302,8 @@
     <EmbeddedResource Include="GUI\JiraUpload.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\OAuth2Control.resx">
-      <DependentUpon>OAuth2Control.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\OAuthControl.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\OAuthWebForm.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
@@ -325,8 +325,8 @@
     <EmbeddedResource Include="GUI\DropboxFilesForm.resx">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TwitterMsg.resx">
-      <DependentUpon>TwitterMsg.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\TwitterTweetForm.resx">
+      <DependentUpon>TwitterTweetForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -259,4 +259,11 @@ namespace UploadersLib
         /// </summary>
         Implicit
     }
+
+    public enum OAuthLoginStatus
+    {
+        LoginRequired,
+        LoginSuccessful,
+        LoginFailed
+    }
 }

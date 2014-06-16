@@ -1,6 +1,6 @@
 ﻿namespace UploadersLib.GUI
 {
-    partial class OAuth2Control
+    partial class OAuthControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -107,9 +107,9 @@
             this.lblLoginStatus.AutoSize = true;
             this.lblLoginStatus.Location = new System.Drawing.Point(16, 136);
             this.lblLoginStatus.Name = "lblLoginStatus";
-            this.lblLoginStatus.Size = new System.Drawing.Size(77, 13);
+            this.lblLoginStatus.Size = new System.Drawing.Size(37, 13);
             this.lblLoginStatus.TabIndex = 4;
-            this.lblLoginStatus.Text = "Login required.";
+            this.lblLoginStatus.Text = "Status";
             // 
             // OAuth2Control
             // 

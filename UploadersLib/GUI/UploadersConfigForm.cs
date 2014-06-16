@@ -93,6 +93,7 @@ namespace UploadersLib
             uploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
             uploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
             uploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
+            uploadersImageList.Images.Add("Pasteee", Resources.page_white_text);
             uploadersImageList.Images.Add("Gist", Resources.GitHub);
             uploadersImageList.Images.Add("Upaste", Resources.Upaste);
             uploadersImageList.Images.Add("Google", Resources.Google);
@@ -121,6 +122,7 @@ namespace UploadersLib
             tpHostr.ImageKey = "Hostr";
             tpCustomUploaders.ImageKey = "CustomUploader";
             tpPastebin.ImageKey = "Pastebin";
+            tpPaste_ee.ImageKey = "Pasteee";
             tpPushbullet.ImageKey = "Pushbullet";
             tpGoogleURLShortener.ImageKey = "Google";
             tpBitly.ImageKey = "Bitly";
@@ -181,8 +183,7 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
             {
-                oauth2Imgur.Status = "Login successful.";
-                oauth2Imgur.LoginStatus = true;
+                oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
                 btnImgurRefreshAlbumList.Enabled = true;
             }
 
@@ -229,8 +230,7 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
             {
-                oauth2Picasa.Status = "Login successful.";
-                oauth2Picasa.LoginStatus = true;
+                oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
                 btnPicasaRefreshAlbumList.Enabled = true;
             }
 
@@ -255,8 +255,7 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.GistOAuth2Info))
             {
-                oAuth2Gist.Status = "Login successful.";
-                oAuth2Gist.LoginStatus = true;
+                oAuth2Gist.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             // Upaste
@@ -272,8 +271,7 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info))
             {
-                oauth2Dropbox.Status = "Login successful.";
-                oauth2Dropbox.LoginStatus = true;
+                oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             txtDropboxPath.Text = Config.DropboxUploadPath;
@@ -287,8 +285,7 @@ namespace UploadersLib
 
             if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo))
             {
-                oAuthCopy.Status = "Login successful.";
-                oAuthCopy.LoginStatus = true;
+                oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             txtCopyPath.Text = Config.CopyUploadPath;
@@ -300,8 +297,7 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
             {
-                oauth2GoogleDrive.Status = "Login successful.";
-                oauth2GoogleDrive.LoginStatus = true;
+                oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
@@ -316,8 +312,7 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
             {
-                oauth2Box.Status = "Login successful.";
-                oauth2Box.LoginStatus = true;
+                oauth2Box.Status = OAuthLoginStatus.LoginSuccessful;
                 btnBoxRefreshFolders.Enabled = true;
             }
 
@@ -439,8 +434,7 @@ namespace UploadersLib
 
             if (OAuthInfo.CheckOAuth(Config.JiraOAuthInfo))
             {
-                oAuthJira.Status = "Login successful.";
-                oAuthJira.LoginStatus = true;
+                oAuthJira.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             // Mega
@@ -488,16 +482,14 @@ namespace UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.GoogleURLShortenerOAuth2Info))
             {
-                oauth2GoogleURLShortener.Status = "Login successful.";
-                oauth2GoogleURLShortener.LoginStatus = true;
+                oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             // bit.ly
 
             if (OAuth2Info.CheckOAuth(Config.BitlyOAuth2Info))
             {
-                oauth2Bitly.Status = "Login successful.";
-                oauth2Bitly.LoginStatus = true;
+                oauth2Bitly.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
             // yourls.org

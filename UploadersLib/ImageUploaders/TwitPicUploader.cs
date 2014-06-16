@@ -75,7 +75,7 @@ namespace UploadersLib.ImageUploaders
                 case TwitPicUploadType.UPLOAD_IMAGE_ONLY:
                     return Upload(stream, fileName, UploadLink);
                 case TwitPicUploadType.UPLOAD_IMAGE_AND_TWITTER:
-                    using (TwitterMsg msgBox = new TwitterMsg())
+                    using (TwitterTweetForm msgBox = new TwitterTweetForm())
                     {
                         msgBox.ShowDialog();
                         return Upload(stream, fileName, UploadAndPostLink, msgBox.Message);

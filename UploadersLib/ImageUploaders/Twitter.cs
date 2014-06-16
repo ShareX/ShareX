@@ -60,9 +60,9 @@ namespace UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            using (TwitterMsg twitterMsg = new TwitterMsg())
+            using (TwitterTweetForm twitterMsg = new TwitterTweetForm())
             {
-                twitterMsg.Length = Twitter.MessageMediaLimit;
+                twitterMsg.Length = MessageMediaLimit;
 
                 if (twitterMsg.ShowDialog() == DialogResult.OK)
                 {
@@ -126,7 +126,7 @@ namespace UploadersLib.ImageUploaders
             return result;
         }
 
-        public string GetConfiguration()
+        private string GetConfiguration()
         {
             string url = string.Format("https://api.twitter.com/{0}/help/configuration.json", APIVersion);
             string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);

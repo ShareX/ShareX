@@ -1,6 +1,6 @@
 ﻿namespace UploadersLib
 {
-    partial class TwitterMsg
+    partial class TwitterTweetForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,25 +32,24 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtTweet = new System.Windows.Forms.TextBox();
             this.lblTweetLength = new System.Windows.Forms.Label();
-            this.lbUsers = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(368, 208);
+            this.btnOK.Location = new System.Drawing.Point(224, 208);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(80, 24);
-            this.btnOK.TabIndex = 2;
+            this.btnOK.TabIndex = 1;
             this.btnOK.Text = "&Tweet";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(456, 208);
+            this.btnCancel.Location = new System.Drawing.Point(312, 208);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 24);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -62,7 +61,7 @@
             this.txtTweet.Location = new System.Drawing.Point(8, 8);
             this.txtTweet.Multiline = true;
             this.txtTweet.Name = "txtTweet";
-            this.txtTweet.Size = new System.Drawing.Size(416, 192);
+            this.txtTweet.Size = new System.Drawing.Size(384, 192);
             this.txtTweet.TabIndex = 0;
             this.txtTweet.TextChanged += new System.EventHandler(this.txtTweet_TextChanged);
             // 
@@ -73,29 +72,16 @@
             this.lblTweetLength.Location = new System.Drawing.Point(8, 208);
             this.lblTweetLength.Name = "lblTweetLength";
             this.lblTweetLength.Size = new System.Drawing.Size(36, 20);
-            this.lblTweetLength.TabIndex = 2;
+            this.lblTweetLength.TabIndex = 3;
             this.lblTweetLength.Text = "140";
-            // 
-            // lbUsers
-            // 
-            this.lbUsers.FormattingEnabled = true;
-            this.lbUsers.IntegralHeight = false;
-            this.lbUsers.Location = new System.Drawing.Point(432, 8);
-            this.lbUsers.Name = "lbUsers";
-            this.lbUsers.Size = new System.Drawing.Size(104, 192);
-            this.lbUsers.Sorted = true;
-            this.lbUsers.TabIndex = 1;
-            this.lbUsers.SelectedIndexChanged += new System.EventHandler(this.lbUsers_SelectedIndexChanged);
-            this.lbUsers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbUsers_KeyDown);
             // 
             // TwitterMsg
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 240);
+            this.ClientSize = new System.Drawing.Size(400, 240);
             this.Controls.Add(this.txtTweet);
-            this.Controls.Add(this.lbUsers);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblTweetLength);
@@ -104,9 +90,8 @@
             this.MinimizeBox = false;
             this.Name = "TwitterMsg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Update Twitter status";
-            this.TopMost = true;
-            this.Load += new System.EventHandler(this.TwitterMsg_Load);
+            this.Text = "ShareX - Twitter message";
+            this.Shown += new System.EventHandler(this.TwitterMsg_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +102,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblTweetLength;
-        private System.Windows.Forms.ListBox lbUsers;
         private System.Windows.Forms.TextBox txtTweet;
     }
 }

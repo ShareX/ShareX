@@ -83,17 +83,16 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Imgur.Status = "Login successful.";
+                        oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Imgur.Status = "Login failed.";
+                        oauth2Imgur.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         atcImgurAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
 
-                    oauth2Imgur.LoginStatus = result;
                     btnImgurRefreshAlbumList.Enabled = result;
                 }
             }
@@ -113,12 +112,12 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Imgur.Status = "Login successful.";
+                        oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Imgur.Status = "Login failed.";
+                        oauth2Imgur.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         atcImgurAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
@@ -353,16 +352,15 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Picasa.Status = "Login successful.";
+                        oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Picasa.Status = "Login failed.";
+                        oauth2Picasa.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    oauth2Picasa.LoginStatus = result;
                     btnPicasaRefreshAlbumList.Enabled = result;
                 }
             }
@@ -382,12 +380,12 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Picasa.Status = "Login successful.";
+                        oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Picasa.Status = "Login failed.";
+                        oauth2Picasa.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
@@ -483,7 +481,7 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Dropbox.Status = "Login successful.";
+                        oauth2Dropbox.Status = OAuthLoginStatus.LoginSuccessful;
 
                         Config.DropboxAccountInfo = dropbox.GetAccountInfo();
                         UpdateDropboxStatus();
@@ -501,7 +499,7 @@ namespace UploadersLib
                     }
                     else
                     {
-                        oauth2Dropbox.Status = "Login failed.";
+                        oauth2Dropbox.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -581,7 +579,7 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oAuthCopy.Status = "Login successful.";
+                        oAuthCopy.Status = OAuthLoginStatus.LoginSuccessful;
 
                         Config.CopyAccountInfo = copy.GetAccountInfo();
                         UpdateCopyStatus();
@@ -599,7 +597,7 @@ namespace UploadersLib
                     }
                     else
                     {
-                        oAuthCopy.Status = "Login failed.";
+                        oAuthCopy.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -684,16 +682,14 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2GoogleDrive.Status = "Login successful.";
+                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2GoogleDrive.Status = "Login failed.";
+                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    oauth2GoogleDrive.LoginStatus = result;
                 }
             }
             catch (Exception ex)
@@ -712,12 +708,12 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2GoogleDrive.Status = "Login successful.";
+                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2GoogleDrive.Status = "Login failed.";
+                        oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -776,16 +772,15 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Box.Status = "Login successful.";
+                        oauth2Box.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Box.Status = "Login failed.";
+                        oauth2Box.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    oauth2Box.LoginStatus = result;
                     btnBoxRefreshFolders.Enabled = result;
                 }
             }
@@ -805,12 +800,12 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Box.Status = "Login successful.";
+                        oauth2Box.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Box.Status = "Login failed.";
+                        oauth2Box.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
@@ -1270,16 +1265,14 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2GoogleURLShortener.Status = "Login successful.";
+                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2GoogleURLShortener.Status = "Login failed.";
+                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    oauth2GoogleURLShortener.LoginStatus = result;
                 }
             }
             catch (Exception ex)
@@ -1298,12 +1291,12 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2GoogleURLShortener.Status = "Login successful.";
+                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2GoogleURLShortener.Status = "Login failed.";
+                        oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -1353,16 +1346,14 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oauth2Bitly.Status = "Login successful.";
+                        oauth2Bitly.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oauth2Bitly.Status = "Login failed.";
+                        oauth2Bitly.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    oauth2Bitly.LoginStatus = result;
                 }
             }
             catch (Exception ex)
@@ -1625,16 +1616,14 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oAuthJira.Status = "Login successful.";
+                        oAuthJira.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oAuthJira.Status = "Login failed.";
+                        oAuthJira.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    oAuthJira.LoginStatus = result;
                 }
             }
             catch (Exception ex)
@@ -1676,17 +1665,15 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        oAuth2Gist.Status = "Login successful.";
+                        oAuth2Gist.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oAuth2Gist.Status = "Login failed.";
+                        oAuth2Gist.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         atcGistAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
-
-                    oAuth2Gist.LoginStatus = result;
                 }
             }
             catch (Exception ex)

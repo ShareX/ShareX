@@ -85,7 +85,7 @@ namespace UploadersLib.ImageUploaders
                 case YfrogUploadType.UPLOAD_IMAGE_ONLY:
                     return Upload(stream, fileName, "");
                 case YfrogUploadType.UPLOAD_IMAGE_AND_TWITTER:
-                    using (TwitterMsg msgBox = new TwitterMsg())
+                    using (TwitterTweetForm msgBox = new TwitterTweetForm())
                     {
                         msgBox.ShowDialog();
                         return Upload(stream, fileName, msgBox.Message);
