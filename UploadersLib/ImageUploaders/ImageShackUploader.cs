@@ -75,12 +75,7 @@ namespace UploadersLib.ImageUploaders
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("api_key", APIKey);
-
-            if (Config.AccountType == AccountType.User && !string.IsNullOrEmpty(Config.Auth_token))
-            {
-                arguments.Add("auth_token", Config.Auth_token);
-            }
-
+            arguments.Add("auth_token", Config.Auth_token);
             arguments.Add("public", Config.IsPublic ? "y" : "n");
 
             UploadResult result = UploadData(stream, URLUpload, fileName, "file", arguments);
@@ -217,7 +212,6 @@ namespace UploadersLib.ImageUploaders
 
     public class ImageShackOptions
     {
-        public AccountType AccountType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public bool IsPublic { get; set; }

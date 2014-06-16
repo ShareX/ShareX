@@ -282,7 +282,7 @@ namespace UploadersLib
             switch (destination)
             {
                 case ImageDestination.ImageShack:
-                    return ImageShackSettings != null && (ImageShackSettings.AccountType == AccountType.Anonymous || !string.IsNullOrEmpty(ImageShackSettings.Auth_token));
+                    return ImageShackSettings != null && !string.IsNullOrEmpty(ImageShackSettings.Auth_token);
                 case ImageDestination.TinyPic:
                     return TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(TinyPicRegistrationCode);
                 case ImageDestination.Imgur:

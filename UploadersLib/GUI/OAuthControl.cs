@@ -67,7 +67,7 @@ namespace UploadersLib.GUI
                         break;
                 }
 
-                btnRefreshAuthorization.Enabled = status == OAuthLoginStatus.LoginSuccessful;
+                btnClearAuthorization.Enabled = btnRefreshAuthorization.Enabled = status == OAuthLoginStatus.LoginSuccessful;
             }
         }
 
@@ -86,11 +86,11 @@ namespace UploadersLib.GUI
 
                 if (isRefreshable)
                 {
-                    gbUserAccount.Size = new Size(320, 200);
+                    gbUserAccount.Size = new Size(320, 230);
                 }
                 else
                 {
-                    gbUserAccount.Size = new Size(320, 165);
+                    gbUserAccount.Size = new Size(320, 198);
                 }
 
                 btnRefreshAuthorization.Visible = isRefreshable;

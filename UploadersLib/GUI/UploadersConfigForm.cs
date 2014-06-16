@@ -189,7 +189,6 @@ namespace UploadersLib
 
             // ImageShack
 
-            atcImageShackAccountType.SelectedAccountType = Config.ImageShackSettings.AccountType;
             txtImageShackUsername.Text = Config.ImageShackSettings.Username;
             txtImageShackPassword.Text = Config.ImageShackSettings.Password;
             cbImageShackIsPublic.Checked = Config.ImageShackSettings.IsPublic;
@@ -574,11 +573,6 @@ namespace UploadersLib
         #endregion Imgur
 
         #region ImageShack
-
-        private void atcImageShackAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.ImageShackSettings.AccountType = accountType;
-        }
 
         private void txtImageShackUsername_TextChanged(object sender, EventArgs e)
         {

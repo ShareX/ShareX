@@ -258,15 +258,13 @@
             this.lblEmailSmtpPort = new System.Windows.Forms.Label();
             this.txtEmailDefaultSubject = new System.Windows.Forms.TextBox();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
-            this.tlpSharedFolders = new System.Windows.Forms.TableLayoutPanel();
-            this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
-            this.gbSharedFolder = new System.Windows.Forms.GroupBox();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
-            this.lblSharedFolderImages = new System.Windows.Forms.Label();
             this.cboSharedFolderFiles = new System.Windows.Forms.ComboBox();
+            this.lblSharedFolderImages = new System.Windows.Forms.Label();
             this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
+            this.ucLocalhostAccounts = new UploadersLib.AccountsControl();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -299,7 +297,6 @@
             this.lblImgurThumbnailType = new System.Windows.Forms.Label();
             this.atcImgurAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.tpImageShack = new System.Windows.Forms.TabPage();
-            this.atcImageShackAccountType = new UploadersLib.GUI.AccountTypeControl();
             this.btnImageShackLogin = new System.Windows.Forms.Button();
             this.btnImageShackOpenPublicProfile = new System.Windows.Forms.Button();
             this.cbImageShackIsPublic = new System.Windows.Forms.CheckBox();
@@ -390,8 +387,6 @@
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
-            this.tlpSharedFolders.SuspendLayout();
-            this.gbSharedFolder.SuspendLayout();
             this.tpTextUploaders.SuspendLayout();
             this.tcTextUploaders.SuspendLayout();
             this.tpPastebin.SuspendLayout();
@@ -1104,7 +1099,7 @@
             this.oauth2Bitly.IsRefreshable = false;
             this.oauth2Bitly.Location = new System.Drawing.Point(16, 16);
             this.oauth2Bitly.Name = "oauth2Bitly";
-            this.oauth2Bitly.Size = new System.Drawing.Size(328, 168);
+            this.oauth2Bitly.Size = new System.Drawing.Size(328, 208);
             this.oauth2Bitly.TabIndex = 0;
             this.oauth2Bitly.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
             this.oauth2Bitly.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
@@ -1125,7 +1120,7 @@
             // 
             this.oauth2GoogleURLShortener.Location = new System.Drawing.Point(16, 56);
             this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
-            this.oauth2GoogleURLShortener.Size = new System.Drawing.Size(328, 207);
+            this.oauth2GoogleURLShortener.Size = new System.Drawing.Size(328, 240);
             this.oauth2GoogleURLShortener.TabIndex = 1;
             this.oauth2GoogleURLShortener.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleURLShortener_OpenButtonClicked);
             this.oauth2GoogleURLShortener.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
@@ -1300,7 +1295,7 @@
             this.oauth2Dropbox.IsRefreshable = false;
             this.oauth2Dropbox.Location = new System.Drawing.Point(16, 88);
             this.oauth2Dropbox.Name = "oauth2Dropbox";
-            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 168);
+            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 200);
             this.oauth2Dropbox.TabIndex = 20;
             this.oauth2Dropbox.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
             this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
@@ -1309,7 +1304,7 @@
             // 
             this.cbDropboxURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDropboxURLType.FormattingEnabled = true;
-            this.cbDropboxURLType.Location = new System.Drawing.Point(160, 320);
+            this.cbDropboxURLType.Location = new System.Drawing.Point(160, 352);
             this.cbDropboxURLType.Name = "cbDropboxURLType";
             this.cbDropboxURLType.Size = new System.Drawing.Size(121, 21);
             this.cbDropboxURLType.TabIndex = 8;
@@ -1318,7 +1313,7 @@
             // cbDropboxAutoCreateShareableLink
             // 
             this.cbDropboxAutoCreateShareableLink.AutoSize = true;
-            this.cbDropboxAutoCreateShareableLink.Location = new System.Drawing.Point(19, 323);
+            this.cbDropboxAutoCreateShareableLink.Location = new System.Drawing.Point(19, 355);
             this.cbDropboxAutoCreateShareableLink.Name = "cbDropboxAutoCreateShareableLink";
             this.cbDropboxAutoCreateShareableLink.Size = new System.Drawing.Size(134, 17);
             this.cbDropboxAutoCreateShareableLink.TabIndex = 7;
@@ -1329,7 +1324,7 @@
             // btnDropboxShowFiles
             // 
             this.btnDropboxShowFiles.Enabled = false;
-            this.btnDropboxShowFiles.Location = new System.Drawing.Point(344, 266);
+            this.btnDropboxShowFiles.Location = new System.Drawing.Point(344, 298);
             this.btnDropboxShowFiles.Name = "btnDropboxShowFiles";
             this.btnDropboxShowFiles.Size = new System.Drawing.Size(64, 24);
             this.btnDropboxShowFiles.TabIndex = 5;
@@ -1362,7 +1357,7 @@
             // 
             this.lblDropboxStatus.AutoSize = true;
             this.lblDropboxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDropboxStatus.Location = new System.Drawing.Point(16, 352);
+            this.lblDropboxStatus.Location = new System.Drawing.Point(16, 384);
             this.lblDropboxStatus.Name = "lblDropboxStatus";
             this.lblDropboxStatus.Size = new System.Drawing.Size(45, 16);
             this.lblDropboxStatus.TabIndex = 9;
@@ -1371,7 +1366,7 @@
             // lblDropboxPathTip
             // 
             this.lblDropboxPathTip.AutoSize = true;
-            this.lblDropboxPathTip.Location = new System.Drawing.Point(16, 298);
+            this.lblDropboxPathTip.Location = new System.Drawing.Point(16, 330);
             this.lblDropboxPathTip.Name = "lblDropboxPathTip";
             this.lblDropboxPathTip.Size = new System.Drawing.Size(585, 13);
             this.lblDropboxPathTip.TabIndex = 6;
@@ -1381,7 +1376,7 @@
             // lblDropboxPath
             // 
             this.lblDropboxPath.AutoSize = true;
-            this.lblDropboxPath.Location = new System.Drawing.Point(16, 272);
+            this.lblDropboxPath.Location = new System.Drawing.Point(16, 304);
             this.lblDropboxPath.Name = "lblDropboxPath";
             this.lblDropboxPath.Size = new System.Drawing.Size(68, 13);
             this.lblDropboxPath.TabIndex = 3;
@@ -1389,7 +1384,7 @@
             // 
             // txtDropboxPath
             // 
-            this.txtDropboxPath.Location = new System.Drawing.Point(88, 268);
+            this.txtDropboxPath.Location = new System.Drawing.Point(88, 300);
             this.txtDropboxPath.Name = "txtDropboxPath";
             this.txtDropboxPath.Size = new System.Drawing.Size(248, 20);
             this.txtDropboxPath.TabIndex = 4;
@@ -1427,7 +1422,7 @@
             // lblCopyURLType
             // 
             this.lblCopyURLType.AutoSize = true;
-            this.lblCopyURLType.Location = new System.Drawing.Point(16, 299);
+            this.lblCopyURLType.Location = new System.Drawing.Point(16, 331);
             this.lblCopyURLType.Name = "lblCopyURLType";
             this.lblCopyURLType.Size = new System.Drawing.Size(55, 13);
             this.lblCopyURLType.TabIndex = 3;
@@ -1437,7 +1432,7 @@
             // 
             this.cbCopyURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCopyURLType.FormattingEnabled = true;
-            this.cbCopyURLType.Location = new System.Drawing.Point(88, 295);
+            this.cbCopyURLType.Location = new System.Drawing.Point(88, 327);
             this.cbCopyURLType.Name = "cbCopyURLType";
             this.cbCopyURLType.Size = new System.Drawing.Size(121, 21);
             this.cbCopyURLType.TabIndex = 8;
@@ -1457,7 +1452,7 @@
             // 
             this.lblCopyStatus.AutoSize = true;
             this.lblCopyStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCopyStatus.Location = new System.Drawing.Point(16, 324);
+            this.lblCopyStatus.Location = new System.Drawing.Point(16, 356);
             this.lblCopyStatus.Name = "lblCopyStatus";
             this.lblCopyStatus.Size = new System.Drawing.Size(45, 16);
             this.lblCopyStatus.TabIndex = 9;
@@ -1466,7 +1461,7 @@
             // lblCopyPath
             // 
             this.lblCopyPath.AutoSize = true;
-            this.lblCopyPath.Location = new System.Drawing.Point(16, 272);
+            this.lblCopyPath.Location = new System.Drawing.Point(16, 304);
             this.lblCopyPath.Name = "lblCopyPath";
             this.lblCopyPath.Size = new System.Drawing.Size(68, 13);
             this.lblCopyPath.TabIndex = 3;
@@ -1474,7 +1469,7 @@
             // 
             // txtCopyPath
             // 
-            this.txtCopyPath.Location = new System.Drawing.Point(88, 268);
+            this.txtCopyPath.Location = new System.Drawing.Point(88, 300);
             this.txtCopyPath.Name = "txtCopyPath";
             this.txtCopyPath.Size = new System.Drawing.Size(248, 20);
             this.txtCopyPath.TabIndex = 4;
@@ -1485,7 +1480,7 @@
             this.oAuthCopy.IsRefreshable = false;
             this.oAuthCopy.Location = new System.Drawing.Point(16, 88);
             this.oAuthCopy.Name = "oAuthCopy";
-            this.oAuthCopy.Size = new System.Drawing.Size(328, 173);
+            this.oAuthCopy.Size = new System.Drawing.Size(328, 208);
             this.oAuthCopy.TabIndex = 2;
             this.oAuthCopy.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
             this.oAuthCopy.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
@@ -1968,7 +1963,7 @@
             // cbGoogleDriveIsPublic
             // 
             this.cbGoogleDriveIsPublic.AutoSize = true;
-            this.cbGoogleDriveIsPublic.Location = new System.Drawing.Point(16, 232);
+            this.cbGoogleDriveIsPublic.Location = new System.Drawing.Point(16, 264);
             this.cbGoogleDriveIsPublic.Name = "cbGoogleDriveIsPublic";
             this.cbGoogleDriveIsPublic.Size = new System.Drawing.Size(106, 17);
             this.cbGoogleDriveIsPublic.TabIndex = 1;
@@ -1980,7 +1975,7 @@
             // 
             this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
             this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
-            this.oauth2GoogleDrive.Size = new System.Drawing.Size(328, 207);
+            this.oauth2GoogleDrive.Size = new System.Drawing.Size(328, 240);
             this.oauth2GoogleDrive.TabIndex = 0;
             this.oauth2GoogleDrive.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
             this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
@@ -2014,7 +2009,7 @@
             // cbBoxShare
             // 
             this.cbBoxShare.AutoSize = true;
-            this.cbBoxShare.Location = new System.Drawing.Point(16, 232);
+            this.cbBoxShare.Location = new System.Drawing.Point(16, 264);
             this.cbBoxShare.Name = "cbBoxShare";
             this.cbBoxShare.Size = new System.Drawing.Size(125, 17);
             this.cbBoxShare.TabIndex = 3;
@@ -2066,7 +2061,7 @@
             // 
             this.oauth2Box.Location = new System.Drawing.Point(16, 16);
             this.oauth2Box.Name = "oauth2Box";
-            this.oauth2Box.Size = new System.Drawing.Size(328, 207);
+            this.oauth2Box.Size = new System.Drawing.Size(328, 240);
             this.oauth2Box.TabIndex = 0;
             this.oauth2Box.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Box_OpenButtonClicked);
             this.oauth2Box.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
@@ -2550,7 +2545,7 @@
             // 
             // txtJiraIssuePrefix
             // 
-            this.txtJiraIssuePrefix.Location = new System.Drawing.Point(560, 226);
+            this.txtJiraIssuePrefix.Location = new System.Drawing.Point(560, 256);
             this.txtJiraIssuePrefix.Name = "txtJiraIssuePrefix";
             this.txtJiraIssuePrefix.Size = new System.Drawing.Size(117, 20);
             this.txtJiraIssuePrefix.TabIndex = 3;
@@ -2560,7 +2555,7 @@
             // lblJiraIssuePrefix
             // 
             this.lblJiraIssuePrefix.AutoSize = true;
-            this.lblJiraIssuePrefix.Location = new System.Drawing.Point(473, 229);
+            this.lblJiraIssuePrefix.Location = new System.Drawing.Point(473, 259);
             this.lblJiraIssuePrefix.Name = "lblJiraIssuePrefix";
             this.lblJiraIssuePrefix.Size = new System.Drawing.Size(81, 13);
             this.lblJiraIssuePrefix.TabIndex = 2;
@@ -2612,7 +2607,7 @@
             // 
             this.oAuthJira.Location = new System.Drawing.Point(473, 13);
             this.oAuthJira.Name = "oAuthJira";
-            this.oAuthJira.Size = new System.Drawing.Size(328, 207);
+            this.oAuthJira.Size = new System.Drawing.Size(328, 243);
             this.oAuthJira.TabIndex = 1;
             this.oAuthJira.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
             this.oAuthJira.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
@@ -2781,7 +2776,13 @@
             // 
             // tpSharedFolder
             // 
-            this.tpSharedFolder.Controls.Add(this.tlpSharedFolders);
+            this.tpSharedFolder.Controls.Add(this.lblSharedFolderFiles);
+            this.tpSharedFolder.Controls.Add(this.lblSharedFolderText);
+            this.tpSharedFolder.Controls.Add(this.cboSharedFolderFiles);
+            this.tpSharedFolder.Controls.Add(this.lblSharedFolderImages);
+            this.tpSharedFolder.Controls.Add(this.cboSharedFolderText);
+            this.tpSharedFolder.Controls.Add(this.cboSharedFolderImages);
+            this.tpSharedFolder.Controls.Add(this.ucLocalhostAccounts);
             this.tpSharedFolder.Location = new System.Drawing.Point(4, 22);
             this.tpSharedFolder.Name = "tpSharedFolder";
             this.tpSharedFolder.Padding = new System.Windows.Forms.Padding(3);
@@ -2790,94 +2791,50 @@
             this.tpSharedFolder.Text = "Shared folder";
             this.tpSharedFolder.UseVisualStyleBackColor = true;
             // 
-            // tlpSharedFolders
-            // 
-            this.tlpSharedFolders.ColumnCount = 1;
-            this.tlpSharedFolders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpSharedFolders.Controls.Add(this.ucLocalhostAccounts, 0, 0);
-            this.tlpSharedFolders.Controls.Add(this.gbSharedFolder, 0, 1);
-            this.tlpSharedFolders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpSharedFolders.Location = new System.Drawing.Point(3, 3);
-            this.tlpSharedFolders.Name = "tlpSharedFolders";
-            this.tlpSharedFolders.RowCount = 2;
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpSharedFolders.Size = new System.Drawing.Size(966, 487);
-            this.tlpSharedFolders.TabIndex = 0;
-            // 
-            // ucLocalhostAccounts
-            // 
-            this.ucLocalhostAccounts.Location = new System.Drawing.Point(4, 4);
-            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
-            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
-            this.ucLocalhostAccounts.Size = new System.Drawing.Size(828, 357);
-            this.ucLocalhostAccounts.TabIndex = 0;
-            // 
-            // gbSharedFolder
-            // 
-            this.gbSharedFolder.Controls.Add(this.lblSharedFolderFiles);
-            this.gbSharedFolder.Controls.Add(this.lblSharedFolderText);
-            this.gbSharedFolder.Controls.Add(this.lblSharedFolderImages);
-            this.gbSharedFolder.Controls.Add(this.cboSharedFolderFiles);
-            this.gbSharedFolder.Controls.Add(this.cboSharedFolderText);
-            this.gbSharedFolder.Controls.Add(this.cboSharedFolderImages);
-            this.gbSharedFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSharedFolder.Location = new System.Drawing.Point(3, 368);
-            this.gbSharedFolder.Name = "gbSharedFolder";
-            this.gbSharedFolder.Size = new System.Drawing.Size(960, 116);
-            this.gbSharedFolder.TabIndex = 1;
-            this.gbSharedFolder.TabStop = false;
-            this.gbSharedFolder.Text = "Settings";
-            // 
             // lblSharedFolderFiles
             // 
             this.lblSharedFolderFiles.AutoSize = true;
-            this.lblSharedFolderFiles.Location = new System.Drawing.Point(24, 78);
+            this.lblSharedFolderFiles.Location = new System.Drawing.Point(544, 16);
             this.lblSharedFolderFiles.Name = "lblSharedFolderFiles";
-            this.lblSharedFolderFiles.Size = new System.Drawing.Size(28, 13);
+            this.lblSharedFolderFiles.Size = new System.Drawing.Size(26, 13);
             this.lblSharedFolderFiles.TabIndex = 4;
-            this.lblSharedFolderFiles.Text = "Files";
+            this.lblSharedFolderFiles.Text = "File:";
             // 
             // lblSharedFolderText
             // 
             this.lblSharedFolderText.AutoSize = true;
-            this.lblSharedFolderText.Location = new System.Drawing.Point(24, 52);
+            this.lblSharedFolderText.Location = new System.Drawing.Point(285, 16);
             this.lblSharedFolderText.Name = "lblSharedFolderText";
-            this.lblSharedFolderText.Size = new System.Drawing.Size(28, 13);
+            this.lblSharedFolderText.Size = new System.Drawing.Size(31, 13);
             this.lblSharedFolderText.TabIndex = 2;
-            this.lblSharedFolderText.Text = "Text";
-            // 
-            // lblSharedFolderImages
-            // 
-            this.lblSharedFolderImages.AutoSize = true;
-            this.lblSharedFolderImages.Location = new System.Drawing.Point(11, 27);
-            this.lblSharedFolderImages.Name = "lblSharedFolderImages";
-            this.lblSharedFolderImages.Size = new System.Drawing.Size(41, 13);
-            this.lblSharedFolderImages.TabIndex = 0;
-            this.lblSharedFolderImages.Text = "Images";
+            this.lblSharedFolderText.Text = "Text:";
             // 
             // cboSharedFolderFiles
             // 
             this.cboSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSharedFolderFiles.FormattingEnabled = true;
-            this.cboSharedFolderFiles.Location = new System.Drawing.Point(64, 72);
+            this.cboSharedFolderFiles.Location = new System.Drawing.Point(576, 12);
             this.cboSharedFolderFiles.Name = "cboSharedFolderFiles";
-            this.cboSharedFolderFiles.Size = new System.Drawing.Size(472, 21);
+            this.cboSharedFolderFiles.Size = new System.Drawing.Size(216, 21);
             this.cboSharedFolderFiles.TabIndex = 5;
             this.cboSharedFolderFiles.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderFiles_SelectedIndexChanged);
+            // 
+            // lblSharedFolderImages
+            // 
+            this.lblSharedFolderImages.AutoSize = true;
+            this.lblSharedFolderImages.Location = new System.Drawing.Point(16, 16);
+            this.lblSharedFolderImages.Name = "lblSharedFolderImages";
+            this.lblSharedFolderImages.Size = new System.Drawing.Size(39, 13);
+            this.lblSharedFolderImages.TabIndex = 0;
+            this.lblSharedFolderImages.Text = "Image:";
             // 
             // cboSharedFolderText
             // 
             this.cboSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSharedFolderText.FormattingEnabled = true;
-            this.cboSharedFolderText.Location = new System.Drawing.Point(64, 48);
+            this.cboSharedFolderText.Location = new System.Drawing.Point(317, 12);
             this.cboSharedFolderText.Name = "cboSharedFolderText";
-            this.cboSharedFolderText.Size = new System.Drawing.Size(472, 21);
+            this.cboSharedFolderText.Size = new System.Drawing.Size(216, 21);
             this.cboSharedFolderText.TabIndex = 3;
             this.cboSharedFolderText.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderText_SelectedIndexChanged);
             // 
@@ -2885,11 +2842,21 @@
             // 
             this.cboSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSharedFolderImages.FormattingEnabled = true;
-            this.cboSharedFolderImages.Location = new System.Drawing.Point(64, 24);
+            this.cboSharedFolderImages.Location = new System.Drawing.Point(56, 12);
             this.cboSharedFolderImages.Name = "cboSharedFolderImages";
-            this.cboSharedFolderImages.Size = new System.Drawing.Size(472, 21);
+            this.cboSharedFolderImages.Size = new System.Drawing.Size(216, 21);
             this.cboSharedFolderImages.TabIndex = 1;
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
+            // 
+            // ucLocalhostAccounts
+            // 
+            this.ucLocalhostAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ucLocalhostAccounts.Location = new System.Drawing.Point(8, 40);
+            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
+            this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
+            this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 448);
+            this.ucLocalhostAccounts.TabIndex = 0;
             // 
             // btnCopyShowFiles
             // 
@@ -3013,7 +2980,7 @@
             this.oAuth2Gist.IsRefreshable = false;
             this.oAuth2Gist.Location = new System.Drawing.Point(16, 51);
             this.oAuth2Gist.Name = "oAuth2Gist";
-            this.oAuth2Gist.Size = new System.Drawing.Size(328, 173);
+            this.oAuth2Gist.Size = new System.Drawing.Size(328, 205);
             this.oAuth2Gist.TabIndex = 2;
             this.oAuth2Gist.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
             this.oAuth2Gist.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
@@ -3118,7 +3085,7 @@
             // 
             this.oauth2Imgur.Location = new System.Drawing.Point(16, 16);
             this.oauth2Imgur.Name = "oauth2Imgur";
-            this.oauth2Imgur.Size = new System.Drawing.Size(328, 207);
+            this.oauth2Imgur.Size = new System.Drawing.Size(328, 240);
             this.oauth2Imgur.TabIndex = 0;
             this.oauth2Imgur.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
             this.oauth2Imgur.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
@@ -3187,7 +3154,7 @@
             // 
             this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbImgurThumbnailType.FormattingEnabled = true;
-            this.cbImgurThumbnailType.Location = new System.Drawing.Point(104, 268);
+            this.cbImgurThumbnailType.Location = new System.Drawing.Point(104, 296);
             this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
             this.cbImgurThumbnailType.Size = new System.Drawing.Size(136, 21);
             this.cbImgurThumbnailType.TabIndex = 6;
@@ -3196,7 +3163,7 @@
             // lblImgurThumbnailType
             // 
             this.lblImgurThumbnailType.AutoSize = true;
-            this.lblImgurThumbnailType.Location = new System.Drawing.Point(16, 272);
+            this.lblImgurThumbnailType.Location = new System.Drawing.Point(16, 300);
             this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
             this.lblImgurThumbnailType.Size = new System.Drawing.Size(82, 13);
             this.lblImgurThumbnailType.TabIndex = 5;
@@ -3204,7 +3171,7 @@
             // 
             // atcImgurAccountType
             // 
-            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 232);
+            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
             this.atcImgurAccountType.Name = "atcImgurAccountType";
             this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.atcImgurAccountType.Size = new System.Drawing.Size(208, 32);
@@ -3213,7 +3180,6 @@
             // 
             // tpImageShack
             // 
-            this.tpImageShack.Controls.Add(this.atcImageShackAccountType);
             this.tpImageShack.Controls.Add(this.btnImageShackLogin);
             this.tpImageShack.Controls.Add(this.btnImageShackOpenPublicProfile);
             this.tpImageShack.Controls.Add(this.cbImageShackIsPublic);
@@ -3230,18 +3196,9 @@
             this.tpImageShack.Text = "ImageShack";
             this.tpImageShack.UseVisualStyleBackColor = true;
             // 
-            // atcImageShackAccountType
-            // 
-            this.atcImageShackAccountType.Location = new System.Drawing.Point(8, 16);
-            this.atcImageShackAccountType.Name = "atcImageShackAccountType";
-            this.atcImageShackAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcImageShackAccountType.Size = new System.Drawing.Size(272, 29);
-            this.atcImageShackAccountType.TabIndex = 0;
-            this.atcImageShackAccountType.AccountTypeChanged += new UploadersLib.GUI.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImageShackAccountType_AccountTypeChanged);
-            // 
             // btnImageShackLogin
             // 
-            this.btnImageShackLogin.Location = new System.Drawing.Point(296, 82);
+            this.btnImageShackLogin.Location = new System.Drawing.Point(296, 42);
             this.btnImageShackLogin.Name = "btnImageShackLogin";
             this.btnImageShackLogin.Size = new System.Drawing.Size(72, 24);
             this.btnImageShackLogin.TabIndex = 5;
@@ -3251,7 +3208,7 @@
             // 
             // btnImageShackOpenPublicProfile
             // 
-            this.btnImageShackOpenPublicProfile.Location = new System.Drawing.Point(184, 152);
+            this.btnImageShackOpenPublicProfile.Location = new System.Drawing.Point(184, 112);
             this.btnImageShackOpenPublicProfile.Name = "btnImageShackOpenPublicProfile";
             this.btnImageShackOpenPublicProfile.Size = new System.Drawing.Size(160, 24);
             this.btnImageShackOpenPublicProfile.TabIndex = 8;
@@ -3262,7 +3219,7 @@
             // cbImageShackIsPublic
             // 
             this.cbImageShackIsPublic.AutoSize = true;
-            this.cbImageShackIsPublic.Location = new System.Drawing.Point(18, 120);
+            this.cbImageShackIsPublic.Location = new System.Drawing.Point(18, 80);
             this.cbImageShackIsPublic.Name = "cbImageShackIsPublic";
             this.cbImageShackIsPublic.Size = new System.Drawing.Size(106, 17);
             this.cbImageShackIsPublic.TabIndex = 6;
@@ -3272,7 +3229,7 @@
             // 
             // btnImageShackOpenMyImages
             // 
-            this.btnImageShackOpenMyImages.Location = new System.Drawing.Point(16, 152);
+            this.btnImageShackOpenMyImages.Location = new System.Drawing.Point(16, 112);
             this.btnImageShackOpenMyImages.Name = "btnImageShackOpenMyImages";
             this.btnImageShackOpenMyImages.Size = new System.Drawing.Size(160, 24);
             this.btnImageShackOpenMyImages.TabIndex = 7;
@@ -3283,7 +3240,7 @@
             // lblImageShackUsername
             // 
             this.lblImageShackUsername.AutoSize = true;
-            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 56);
+            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 16);
             this.lblImageShackUsername.Name = "lblImageShackUsername";
             this.lblImageShackUsername.Size = new System.Drawing.Size(58, 13);
             this.lblImageShackUsername.TabIndex = 1;
@@ -3291,7 +3248,7 @@
             // 
             // txtImageShackUsername
             // 
-            this.txtImageShackUsername.Location = new System.Drawing.Point(80, 52);
+            this.txtImageShackUsername.Location = new System.Drawing.Point(80, 12);
             this.txtImageShackUsername.Name = "txtImageShackUsername";
             this.txtImageShackUsername.Size = new System.Drawing.Size(208, 20);
             this.txtImageShackUsername.TabIndex = 2;
@@ -3299,7 +3256,7 @@
             // 
             // txtImageShackPassword
             // 
-            this.txtImageShackPassword.Location = new System.Drawing.Point(80, 84);
+            this.txtImageShackPassword.Location = new System.Drawing.Point(80, 44);
             this.txtImageShackPassword.Name = "txtImageShackPassword";
             this.txtImageShackPassword.Size = new System.Drawing.Size(208, 20);
             this.txtImageShackPassword.TabIndex = 4;
@@ -3309,7 +3266,7 @@
             // lblImageShackPassword
             // 
             this.lblImageShackPassword.AutoSize = true;
-            this.lblImageShackPassword.Location = new System.Drawing.Point(16, 88);
+            this.lblImageShackPassword.Location = new System.Drawing.Point(16, 48);
             this.lblImageShackPassword.Name = "lblImageShackPassword";
             this.lblImageShackPassword.Size = new System.Drawing.Size(56, 13);
             this.lblImageShackPassword.TabIndex = 3;
@@ -3334,7 +3291,7 @@
             // 
             // atcTinyPicAccountType
             // 
-            this.atcTinyPicAccountType.Location = new System.Drawing.Point(8, 16);
+            this.atcTinyPicAccountType.Location = new System.Drawing.Point(8, 8);
             this.atcTinyPicAccountType.Name = "atcTinyPicAccountType";
             this.atcTinyPicAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.atcTinyPicAccountType.Size = new System.Drawing.Size(272, 29);
@@ -3343,7 +3300,7 @@
             // 
             // btnTinyPicLogin
             // 
-            this.btnTinyPicLogin.Location = new System.Drawing.Point(296, 82);
+            this.btnTinyPicLogin.Location = new System.Drawing.Point(296, 74);
             this.btnTinyPicLogin.Name = "btnTinyPicLogin";
             this.btnTinyPicLogin.Size = new System.Drawing.Size(72, 24);
             this.btnTinyPicLogin.TabIndex = 5;
@@ -3353,7 +3310,7 @@
             // 
             // txtTinyPicPassword
             // 
-            this.txtTinyPicPassword.Location = new System.Drawing.Point(80, 84);
+            this.txtTinyPicPassword.Location = new System.Drawing.Point(80, 76);
             this.txtTinyPicPassword.Name = "txtTinyPicPassword";
             this.txtTinyPicPassword.Size = new System.Drawing.Size(208, 20);
             this.txtTinyPicPassword.TabIndex = 4;
@@ -3371,7 +3328,7 @@
             // 
             // txtTinyPicUsername
             // 
-            this.txtTinyPicUsername.Location = new System.Drawing.Point(80, 52);
+            this.txtTinyPicUsername.Location = new System.Drawing.Point(80, 44);
             this.txtTinyPicUsername.Name = "txtTinyPicUsername";
             this.txtTinyPicUsername.Size = new System.Drawing.Size(208, 20);
             this.txtTinyPicUsername.TabIndex = 2;
@@ -3388,7 +3345,7 @@
             // 
             // btnTinyPicOpenMyImages
             // 
-            this.btnTinyPicOpenMyImages.Location = new System.Drawing.Point(16, 120);
+            this.btnTinyPicOpenMyImages.Location = new System.Drawing.Point(16, 112);
             this.btnTinyPicOpenMyImages.Name = "btnTinyPicOpenMyImages";
             this.btnTinyPicOpenMyImages.Size = new System.Drawing.Size(160, 24);
             this.btnTinyPicOpenMyImages.TabIndex = 6;
@@ -3752,7 +3709,7 @@
             // 
             this.oauth2Picasa.Location = new System.Drawing.Point(16, 16);
             this.oauth2Picasa.Name = "oauth2Picasa";
-            this.oauth2Picasa.Size = new System.Drawing.Size(328, 207);
+            this.oauth2Picasa.Size = new System.Drawing.Size(328, 240);
             this.oauth2Picasa.TabIndex = 0;
             this.oauth2Picasa.OpenButtonClicked += new UploadersLib.GUI.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Picasa_OpenButtonClicked);
             this.oauth2Picasa.CompleteButtonClicked += new UploadersLib.GUI.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Picasa_CompleteButtonClicked);
@@ -3868,9 +3825,7 @@
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
             this.tpSharedFolder.ResumeLayout(false);
-            this.tlpSharedFolders.ResumeLayout(false);
-            this.gbSharedFolder.ResumeLayout(false);
-            this.gbSharedFolder.PerformLayout();
+            this.tpSharedFolder.PerformLayout();
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -4135,9 +4090,7 @@
         private System.Windows.Forms.Label lblEmailSmtpPort;
         private System.Windows.Forms.TextBox txtEmailDefaultSubject;
         private System.Windows.Forms.TabPage tpSharedFolder;
-        private System.Windows.Forms.TableLayoutPanel tlpSharedFolders;
         internal AccountsControl ucLocalhostAccounts;
-        private System.Windows.Forms.GroupBox gbSharedFolder;
         private System.Windows.Forms.Label lblSharedFolderFiles;
         private System.Windows.Forms.Label lblSharedFolderText;
         private System.Windows.Forms.Label lblSharedFolderImages;
@@ -4175,7 +4128,6 @@
         private System.Windows.Forms.Label lblImgurThumbnailType;
         private GUI.AccountTypeControl atcImgurAccountType;
         private System.Windows.Forms.TabPage tpImageShack;
-        private GUI.AccountTypeControl atcImageShackAccountType;
         private System.Windows.Forms.Button btnImageShackLogin;
         internal System.Windows.Forms.Button btnImageShackOpenPublicProfile;
         private System.Windows.Forms.CheckBox cbImageShackIsPublic;

@@ -35,11 +35,13 @@
             this.btnCompleteAuthorization = new System.Windows.Forms.Button();
             this.txtVerificationCode = new System.Windows.Forms.TextBox();
             this.lblLoginStatus = new System.Windows.Forms.Label();
+            this.btnClearAuthorization = new System.Windows.Forms.Button();
             this.gbUserAccount.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbUserAccount
             // 
+            this.gbUserAccount.Controls.Add(this.btnClearAuthorization);
             this.gbUserAccount.Controls.Add(this.btnRefreshAuthorization);
             this.gbUserAccount.Controls.Add(this.btnOpenAuthorizePage);
             this.gbUserAccount.Controls.Add(this.lblVerificationCode);
@@ -48,7 +50,7 @@
             this.gbUserAccount.Controls.Add(this.lblLoginStatus);
             this.gbUserAccount.Location = new System.Drawing.Point(0, 0);
             this.gbUserAccount.Name = "gbUserAccount";
-            this.gbUserAccount.Size = new System.Drawing.Size(320, 200);
+            this.gbUserAccount.Size = new System.Drawing.Size(320, 230);
             this.gbUserAccount.TabIndex = 5;
             this.gbUserAccount.TabStop = false;
             this.gbUserAccount.Text = "User account";
@@ -56,7 +58,7 @@
             // btnRefreshAuthorization
             // 
             this.btnRefreshAuthorization.Enabled = false;
-            this.btnRefreshAuthorization.Location = new System.Drawing.Point(16, 160);
+            this.btnRefreshAuthorization.Location = new System.Drawing.Point(16, 192);
             this.btnRefreshAuthorization.Name = "btnRefreshAuthorization";
             this.btnRefreshAuthorization.Size = new System.Drawing.Size(288, 23);
             this.btnRefreshAuthorization.TabIndex = 5;
@@ -111,13 +113,23 @@
             this.lblLoginStatus.TabIndex = 4;
             this.lblLoginStatus.Text = "Status";
             // 
-            // OAuth2Control
+            // btnClearAuthorization
+            // 
+            this.btnClearAuthorization.Enabled = false;
+            this.btnClearAuthorization.Location = new System.Drawing.Point(16, 160);
+            this.btnClearAuthorization.Name = "btnClearAuthorization";
+            this.btnClearAuthorization.Size = new System.Drawing.Size(288, 23);
+            this.btnClearAuthorization.TabIndex = 6;
+            this.btnClearAuthorization.Text = "Clear authorization";
+            this.btnClearAuthorization.UseVisualStyleBackColor = true;
+            // 
+            // OAuthControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbUserAccount);
-            this.Name = "OAuth2Control";
-            this.Size = new System.Drawing.Size(328, 207);
+            this.Name = "OAuthControl";
+            this.Size = new System.Drawing.Size(326, 238);
             this.gbUserAccount.ResumeLayout(false);
             this.gbUserAccount.PerformLayout();
             this.ResumeLayout(false);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.Button btnCompleteAuthorization;
         private System.Windows.Forms.TextBox txtVerificationCode;
         private System.Windows.Forms.Label lblLoginStatus;
+        private System.Windows.Forms.Button btnClearAuthorization;
     }
 }
