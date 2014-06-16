@@ -45,12 +45,10 @@ namespace UploadersLib
         {
             Config = uploadersConfig;
             InitializeComponent();
-            string title = "ShareX - Destination settings";
             if (!string.IsNullOrEmpty(Config.FilePath))
             {
-                title += " - " + Config.FilePath;
+                Text += " - " + Config.FilePath;
             }
-            Text = title;
             Icon = ShareXResources.Icon;
         }
 

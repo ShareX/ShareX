@@ -281,12 +281,12 @@ namespace UploadersLib
         {
             switch (destination)
             {
+                case ImageDestination.Imgur:
+                    return ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(ImgurOAuth2Info);
                 case ImageDestination.ImageShack:
                     return ImageShackSettings != null && !string.IsNullOrEmpty(ImageShackSettings.Auth_token);
                 case ImageDestination.TinyPic:
                     return TinyPicAccountType == AccountType.Anonymous || !string.IsNullOrEmpty(TinyPicRegistrationCode);
-                case ImageDestination.Imgur:
-                    return ImgurAccountType == AccountType.Anonymous || OAuth2Info.CheckOAuth(ImgurOAuth2Info);
                 case ImageDestination.Flickr:
                     return !string.IsNullOrEmpty(FlickrAuthInfo.Token);
                 case ImageDestination.Photobucket:
@@ -294,12 +294,12 @@ namespace UploadersLib
                 case ImageDestination.Picasa:
                     return OAuth2Info.CheckOAuth(PicasaOAuth2Info);
                 case ImageDestination.Twitter:
-                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount);
+                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
                 case ImageDestination.CustomImageUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomImageUploaderSelected);
-                default:
-                    return true;
             }
+
+            return true;
         }
 
         public bool IsActive(TextDestination destination)
@@ -308,9 +308,9 @@ namespace UploadersLib
             {
                 case TextDestination.CustomTextUploader:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomTextUploaderSelected);
-                default:
-                    return true;
             }
+
+            return true;
         }
 
         public bool IsActive(FileDestination destination)
@@ -350,9 +350,9 @@ namespace UploadersLib
                 case FileDestination.Pushbullet:
                     return PushbulletSettings != null && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && PushbulletSettings.DeviceList != null &&
                         PushbulletSettings.DeviceList.IsValidIndex(PushbulletSettings.SelectedDevice);
-                default:
-                    return true;
             }
+
+            return true;
         }
 
         public bool IsActive(UrlShortenerType destination)
@@ -367,9 +367,9 @@ namespace UploadersLib
                     return !string.IsNullOrEmpty(YourlsAPIURL) && (!string.IsNullOrEmpty(YourlsSignature) || (!string.IsNullOrEmpty(YourlsUsername) && !string.IsNullOrEmpty(YourlsPassword)));
                 case UrlShortenerType.CustomURLShortener:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
-                default:
-                    return true;
             }
+
+            return true;
         }
 
         public bool IsActive(SocialNetworkingService destination)
@@ -377,10 +377,10 @@ namespace UploadersLib
             switch (destination)
             {
                 case SocialNetworkingService.Twitter:
-                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount);
-                default:
-                    return true;
+                    return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
             }
+
+            return true;
         }
 
         public int GetFTPIndex(EDataType dataType)
@@ -391,9 +391,9 @@ namespace UploadersLib
                     return FTPSelectedImage;
                 case EDataType.Text:
                     return FTPSelectedText;
-                default:
-                    return FTPSelectedFile;
             }
+
+            return FTPSelectedFile;
         }
 
         public int GetLocalhostIndex(EDataType dataType)
@@ -404,9 +404,9 @@ namespace UploadersLib
                     return LocalhostSelectedImages;
                 case EDataType.Text:
                     return LocalhostSelectedText;
-                default:
-                    return LocalhostSelectedFiles;
             }
+
+            return LocalhostSelectedFiles;
         }
 
         #endregion Helper Methods

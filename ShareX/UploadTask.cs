@@ -316,7 +316,7 @@ namespace ShareX
             {
                 if (string.IsNullOrEmpty(Info.Result.URL))
                 {
-                    Info.Result.Errors.Add("URL is empty.\r\n\r\n" + Info.Result.ErrorsToString());
+                    Info.Result.Errors.Add("URL is empty.");
                 }
                 else
                 {
