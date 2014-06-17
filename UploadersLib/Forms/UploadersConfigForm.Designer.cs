@@ -351,6 +351,8 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.ttlvMain = new HelpersLib.TabToListView();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
+            this.lblBitlyDomain = new System.Windows.Forms.Label();
+            this.txtBitlyDomain = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -1085,6 +1087,8 @@
             // 
             // tpBitly
             // 
+            this.tpBitly.Controls.Add(this.txtBitlyDomain);
+            this.tpBitly.Controls.Add(this.lblBitlyDomain);
             this.tpBitly.Controls.Add(this.oauth2Bitly);
             this.tpBitly.Location = new System.Drawing.Point(4, 22);
             this.tpBitly.Name = "tpBitly";
@@ -3758,6 +3762,23 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
+            // lblBitlyDomain
+            // 
+            this.lblBitlyDomain.AutoSize = true;
+            this.lblBitlyDomain.Location = new System.Drawing.Point(16, 232);
+            this.lblBitlyDomain.Name = "lblBitlyDomain";
+            this.lblBitlyDomain.Size = new System.Drawing.Size(46, 13);
+            this.lblBitlyDomain.TabIndex = 1;
+            this.lblBitlyDomain.Text = "Domain:";
+            // 
+            // txtBitlyDomain
+            // 
+            this.txtBitlyDomain.Location = new System.Drawing.Point(64, 228);
+            this.txtBitlyDomain.Name = "txtBitlyDomain";
+            this.txtBitlyDomain.Size = new System.Drawing.Size(272, 20);
+            this.txtBitlyDomain.TabIndex = 2;
+            this.txtBitlyDomain.TextChanged += new System.EventHandler(this.txtBitlyDomain_TextChanged);
+            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3788,6 +3809,7 @@
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
             this.tpBitly.ResumeLayout(false);
+            this.tpBitly.PerformLayout();
             this.tpGoogleURLShortener.ResumeLayout(false);
             this.tpYourls.ResumeLayout(false);
             this.tpYourls.PerformLayout();
@@ -4191,5 +4213,7 @@
         private HelpersLib.UserControls.ExportImportControl eiCustomUploaders;
         private HelpersLib.UserControls.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
+        private System.Windows.Forms.TextBox txtBitlyDomain;
+        private System.Windows.Forms.Label lblBitlyDomain;
     }
 }

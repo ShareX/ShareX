@@ -489,6 +489,8 @@ namespace UploadersLib
                 oauth2Bitly.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
+            txtBitlyDomain.Text = Config.BitlyDomain;
+
             // yourls.org
 
             txtYourlsAPIURL.Text = Config.YourlsAPIURL;
@@ -1703,6 +1705,11 @@ namespace UploadersLib
         private void oauth2Bitly_ClearButtonClicked()
         {
             Config.BitlyOAuth2Info = null;
+        }
+
+        private void txtBitlyDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.BitlyDomain = txtBitlyDomain.Text;
         }
 
         #endregion bit.ly

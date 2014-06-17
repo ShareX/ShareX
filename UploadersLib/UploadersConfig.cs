@@ -209,6 +209,7 @@ namespace UploadersLib
         // bit.ly
 
         public OAuth2Info BitlyOAuth2Info = null;
+        public string BitlyDomain = string.Empty;
 
         // Google URL Shortener
 

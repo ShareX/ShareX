@@ -947,7 +947,10 @@ namespace ShareX
                         Program.UploadersConfig.BitlyOAuth2Info = new OAuth2Info(APIKeys.BitlyClientID, APIKeys.BitlyClientSecret);
                     }
 
-                    urlShortener = new BitlyURLShortener(Program.UploadersConfig.BitlyOAuth2Info);
+                    urlShortener = new BitlyURLShortener(Program.UploadersConfig.BitlyOAuth2Info)
+                    {
+                        Domain = Program.UploadersConfig.BitlyDomain
+                    };
                     break;
                 case UrlShortenerType.Google:
                     urlShortener = new GoogleURLShortener(Program.UploadersConfig.GoogleURLShortenerAccountType, APIKeys.GoogleAPIKey,
