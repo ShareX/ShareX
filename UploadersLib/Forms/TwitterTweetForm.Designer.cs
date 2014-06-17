@@ -64,6 +64,7 @@
             this.txtTweet.Size = new System.Drawing.Size(384, 192);
             this.txtTweet.TabIndex = 0;
             this.txtTweet.TextChanged += new System.EventHandler(this.txtTweet_TextChanged);
+            this.txtTweet.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTweet_KeyDown);
             // 
             // lblTweetLength
             // 
@@ -75,9 +76,8 @@
             this.lblTweetLength.TabIndex = 3;
             this.lblTweetLength.Text = "140";
             // 
-            // TwitterMsg
+            // TwitterTweetForm
             // 
-            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 240);
@@ -88,7 +88,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TwitterMsg";
+            this.Name = "TwitterTweetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Twitter message";
             this.Shown += new System.EventHandler(this.TwitterMsg_Shown);

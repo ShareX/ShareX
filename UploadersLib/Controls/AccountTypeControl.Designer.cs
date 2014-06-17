@@ -1,4 +1,4 @@
-﻿namespace UploadersLib.GUI
+﻿namespace UploadersLib
 {
     partial class AccountTypeControl
     {

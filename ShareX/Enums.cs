@@ -181,7 +181,9 @@ namespace ShareX
         [Description("Image effects")]
         ImageEffects,
         [Description("QR code")]
-        QRCode
+        QRCode,
+        [Description("Tweet message")]
+        TweetMessage
     }
 
     public enum HotkeyStatus

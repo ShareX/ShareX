@@ -159,6 +159,9 @@ namespace ShareX
                 case HotkeyType.QRCode:
                     TaskHelpers.OpenQRCode();
                     break;
+                case HotkeyType.TweetMessage:
+                    TaskHelpers.TweetMessage();
+                    break;
             }
         }
 

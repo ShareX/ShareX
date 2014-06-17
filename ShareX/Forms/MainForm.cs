@@ -831,6 +831,11 @@ namespace ShareX
             TaskHelpers.OpenQRCode();
         }
 
+        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.TweetMessage();
+        }
+
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(Program.ScreenshotsFolder))

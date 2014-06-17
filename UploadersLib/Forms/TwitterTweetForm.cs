@@ -71,6 +71,8 @@ namespace UploadersLib
             }
         }
 
+        public bool IsTweetSent { get; private set; }
+
         public OAuthInfo AuthInfo { get; set; }
 
         public TwitterTweetForm()
@@ -92,17 +94,7 @@ namespace UploadersLib
             btnOK.Enabled = IsValidMessage;
         }
 
-        private void TwitterMsg_Shown(object sender, EventArgs e)
-        {
-            this.ShowActivate();
-        }
-
-        private void txtTweet_TextChanged(object sender, EventArgs e)
-        {
-            UpdateLength();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
+        private void OK()
         {
             if (IsValidMessage)
             {
@@ -120,7 +112,8 @@ namespace UploadersLib
 
                 try
                 {
-                    new Twitter(AuthInfo).TweetMessage(Message);
+                    TwitterStatusResponse status = new Twitter(AuthInfo).TweetMessage(Message);
+                    IsTweetSent = status != null;
                 }
                 catch (Exception ex)
                 {
@@ -128,6 +121,29 @@ namespace UploadersLib
                     MessageBox.Show(ex.ToString(), "ShareX - Tweet error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void TwitterMsg_Shown(object sender, EventArgs e)
+        {
+            this.ShowActivate();
+        }
+
+        private void txtTweet_TextChanged(object sender, EventArgs e)
+        {
+            UpdateLength();
+        }
+
+        private void txtTweet_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == (Keys.Control | Keys.Enter))
+            {
+                OK();
+            }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            OK();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

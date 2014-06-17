@@ -496,6 +496,7 @@
     <None Include="Resources\barcode-2d.png" />
     <None Include="Resources\GitHub.png" />
     <EmbeddedResource Include="GitHash.txt" />
+    <None Include="Resources\Twitter.ico" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\ru.png" />
     <None Include="Resources\keyboard--pencil.png" />

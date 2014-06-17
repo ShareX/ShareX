@@ -124,55 +124,55 @@
     <Compile Include="FTPClient\ListViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\AccountTypeControl.cs">
+    <Compile Include="Controls\AccountTypeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\AccountTypeControl.Designer.cs">
+    <Compile Include="Controls\AccountTypeControl.Designer.cs">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EmailForm.cs">
+    <Compile Include="Forms\EmailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EmailForm.Designer.cs">
+    <Compile Include="Forms\EmailForm.Designer.cs">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GoogleTranslateGUI.cs">
+    <Compile Include="Forms\GoogleTranslateGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\GoogleTranslateGUI.Designer.cs">
+    <Compile Include="Forms\GoogleTranslateGUI.Designer.cs">
       <DependentUpon>GoogleTranslateGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\JiraUpload.cs">
+    <Compile Include="Forms\JiraUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\JiraUpload.Designer.cs">
+    <Compile Include="Forms\JiraUpload.Designer.cs">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\OAuthControl.cs">
+    <Compile Include="Controls\OAuthControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\OAuthControl.Designer.cs">
+    <Compile Include="Controls\OAuthControl.Designer.cs">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\OAuthWebForm.cs">
+    <Compile Include="Forms\OAuthWebForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\OAuthWebForm.Designer.cs">
+    <Compile Include="Forms\OAuthWebForm.Designer.cs">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ResponseForm.cs">
+    <Compile Include="Forms\ResponseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ResponseForm.Designer.cs">
+    <Compile Include="Forms\ResponseForm.Designer.cs">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UploadersConfigFormHelper.cs">
+    <Compile Include="Forms\UploadersConfigFormHelper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\UploadersConfigForm.cs">
+    <Compile Include="Forms\UploadersConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\UploadersConfigForm.Designer.cs">
+    <Compile Include="Forms\UploadersConfigForm.Designer.cs">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
@@ -180,26 +180,26 @@
     <Compile Include="HelperClasses\OAuth\IOAuthBase.cs" />
     <Compile Include="TextUploaders\Upaste.cs" />
     <Compile Include="UploadersConfig.cs" />
-    <Compile Include="GUI\UserPassBox.cs">
+    <Compile Include="Forms\UserPassBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\UserPassBox.Designer.cs">
+    <Compile Include="Forms\UserPassBox.Designer.cs">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AccountsControl.cs">
+    <Compile Include="Controls\AccountsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\AccountsControl.Designer.cs">
+    <Compile Include="Controls\AccountsControl.Designer.cs">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherServices\GoogleTranslatorConfig.cs" />
-    <Compile Include="GUI\DropboxFilesForm.cs">
+    <Compile Include="Forms\DropboxFilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DropboxFilesForm.Designer.cs">
+    <Compile Include="Forms\DropboxFilesForm.Designer.cs">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GoogleTranslateGUIHelper.cs">
+    <Compile Include="Forms\GoogleTranslateGUIHelper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HelperClasses\CertFileNameEditor.cs" />
@@ -235,10 +235,10 @@
     <Compile Include="TextUploaders\Gist.cs" />
     <Compile Include="TextUploaders\Paste_ee.cs" />
     <Compile Include="UploadResult.cs" />
-    <Compile Include="GUI\TwitterTweetForm.cs">
+    <Compile Include="Forms\TwitterTweetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\TwitterTweetForm.Designer.cs">
+    <Compile Include="Forms\TwitterTweetForm.Designer.cs">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
@@ -290,42 +290,42 @@
     <EmbeddedResource Include="FTPClient\FTPClientForm.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AccountTypeControl.resx">
+    <EmbeddedResource Include="Controls\AccountTypeControl.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EmailForm.resx">
+    <EmbeddedResource Include="Forms\EmailForm.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GoogleTranslateGUI.resx">
+    <EmbeddedResource Include="Forms\GoogleTranslateGUI.resx">
       <DependentUpon>GoogleTranslateGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\JiraUpload.resx">
+    <EmbeddedResource Include="Forms\JiraUpload.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\OAuthControl.resx">
+    <EmbeddedResource Include="Controls\OAuthControl.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\OAuthWebForm.resx">
+    <EmbeddedResource Include="Forms\OAuthWebForm.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ResponseForm.resx">
+    <EmbeddedResource Include="Forms\ResponseForm.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UploadersConfigForm.resx">
+    <EmbeddedResource Include="Forms\UploadersConfigForm.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserPassBox.resx">
+    <EmbeddedResource Include="Forms\UserPassBox.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AccountsControl.resx">
+    <EmbeddedResource Include="Controls\AccountsControl.resx">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DropboxFilesForm.resx">
+    <EmbeddedResource Include="Forms\DropboxFilesForm.resx">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TwitterTweetForm.resx">
+    <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

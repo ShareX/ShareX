@@ -76,6 +76,7 @@
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbImageHistory = new System.Windows.Forms.ToolStripButton();
@@ -206,6 +207,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -567,7 +569,8 @@
             this.tsmiImageEffects,
             this.tsmiMonitorTest,
             this.tsmiDNSChanger,
-            this.tsmiQRCode});
+            this.tsmiQRCode,
+            this.tsmiTweetMessage});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsddbTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -654,6 +657,14 @@
             this.tsmiQRCode.Size = new System.Drawing.Size(183, 22);
             this.tsmiQRCode.Text = "QR code...";
             this.tsmiQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
+            // 
+            // tsmiTweetMessage
+            // 
+            this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
+            this.tsmiTweetMessage.Name = "tsmiTweetMessage";
+            this.tsmiTweetMessage.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTweetMessage.Text = "Tweet message...";
+            this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // tsbScreenshotsFolder
             // 
@@ -1308,7 +1319,7 @@
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(200, 462);
+            this.cmsTray.Size = new System.Drawing.Size(200, 484);
             // 
             // tsmiTrayClipboardUpload
             // 
@@ -1600,7 +1611,8 @@
             this.tsmiTrayImageEffects,
             this.tsmiTrayMonitorTest,
             this.tsmiTrayDNSChanger,
-            this.tsmiTrayQRCode});
+            this.tsmiTrayQRCode,
+            this.tsmiTrayTweetMessage});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             this.tsmiTrayTools.Size = new System.Drawing.Size(199, 22);
@@ -1752,6 +1764,14 @@
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
+            // 
+            // tsmiTrayTweetMessage
+            // 
+            this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
+            this.tsmiTrayTweetMessage.Name = "tsmiTrayTweetMessage";
+            this.tsmiTrayTweetMessage.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayTweetMessage.Text = "Tweet message...";
+            this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // MainForm
             // 
@@ -1963,5 +1983,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayQRCode;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleLight;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleLight;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTweetMessage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTweetMessage;
     }
 }

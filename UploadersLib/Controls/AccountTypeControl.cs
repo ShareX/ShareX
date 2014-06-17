@@ -28,7 +28,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace UploadersLib.GUI
+namespace UploadersLib
 {
     [DefaultEvent("AccountTypeChanged")]
     public partial class AccountTypeControl : UserControl
