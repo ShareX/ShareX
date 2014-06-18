@@ -508,5 +508,19 @@ namespace HelpersLib
         {
             return source.Reverse().Take(count).Reverse();
         }
+
+        public static void Check(this ToolStripMenuItem tsmi)
+        {
+            if (tsmi != null)
+            {
+                foreach (ToolStripMenuItem item in tsmi.GetCurrentParent().Items)
+                {
+                    if (item != null)
+                    {
+                        item.Checked = item == tsmi;
+                    }
+                }
+            }
+        }
     }
 }

@@ -49,7 +49,6 @@ namespace ShareX
         public MainForm()
         {
             InitControls();
-            UpdateControls();
             HandleCreated += MainForm_HandleCreated;
         }
 
@@ -285,6 +284,19 @@ namespace ShareX
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
+            switch (Program.Settings.ImagePreview)
+            {
+                case ImagePreviewVisibility.Show:
+                    scMain.Panel2Collapsed = false;
+                    break;
+                case ImagePreviewVisibility.Hide:
+                    scMain.Panel2Collapsed = true;
+                    break;
+                case ImagePreviewVisibility.Automatic:
+                    scMain.Panel2Collapsed = !uim.IsItemSelected || (!uim.SelectedItem.IsImageFile && !uim.SelectedItem.IsImageURL);
+                    break;
+            }
+
             if (uim.IsItemSelected)
             {
                 if (GetCurrentTasks().Any(x => x.IsWorking))
@@ -372,6 +384,7 @@ namespace ShareX
             tsmiClearList.Visible = tssUploadInfo1.Visible = lvUploads.Items.Count > 0;
 
             cmsUploadInfo.ResumeLayout();
+            Refresh();
         }
 
         private void CleanCustomClipboardFormats()
@@ -409,6 +422,19 @@ namespace ShareX
                 Location = new Point(currentScreen.Bounds.Width / 2 - Size.Width / 2, currentScreen.Bounds.Height / 2 - Size.Height / 2);
             }
 
+            switch (Program.Settings.ImagePreview)
+            {
+                case ImagePreviewVisibility.Show:
+                    tsmiImagePreviewShow.Check();
+                    break;
+                case ImagePreviewVisibility.Hide:
+                    tsmiImagePreviewHide.Check();
+                    break;
+                case ImagePreviewVisibility.Automatic:
+                    tsmiImagePreviewAutomatic.Check();
+                    break;
+            }
+
             UpdateMainFormSettings();
             UpdateMenu();
             UpdateUploaderMenuNames();
@@ -421,7 +447,7 @@ namespace ShareX
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
             }
 
-            UpdatePreviewSplitter();
+            UpdateControls();
 
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
         }
@@ -578,21 +604,6 @@ namespace ShareX
             }
 
             tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
-            Refresh();
-        }
-
-        private void UpdatePreviewSplitter()
-        {
-            if (Program.Settings.ShowPreview)
-            {
-                tsmiHidePreview.Text = "Hide image preview";
-            }
-            else
-            {
-                tsmiHidePreview.Text = "Show image preview";
-            }
-
-            scMain.Panel2Collapsed = !Program.Settings.ShowPreview;
             Refresh();
         }
 
@@ -1179,10 +1190,24 @@ namespace ShareX
             UpdateMenu();
         }
 
-        private void tsmiHidePreview_Click(object sender, EventArgs e)
+        private void tsmiImagePreviewShow_Click(object sender, EventArgs e)
         {
-            Program.Settings.ShowPreview = !Program.Settings.ShowPreview;
-            UpdatePreviewSplitter();
+            Program.Settings.ImagePreview = ImagePreviewVisibility.Show;
+            tsmiImagePreviewShow.Check();
+            UpdateControls();
+        }
+
+        private void tsmiImagePreviewHide_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreview = ImagePreviewVisibility.Hide;
+            tsmiImagePreviewHide.Check();
+            UpdateControls();
+        }
+
+        private void tsmiImagePreviewAutomatic_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
+            tsmiImagePreviewAutomatic.Check();
             UpdateControls();
         }
 

@@ -49,7 +49,7 @@ namespace ShareX
         #region Main Form
 
         public bool ShowMenu = true;
-        public bool ShowPreview = true;
+        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public int PreviewSplitterDistance = 400;
 
         #endregion Main Form

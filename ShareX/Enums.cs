@@ -231,4 +231,9 @@ namespace ShareX
         [Description("Do not save")]
         Cancel
     }
+
+    public enum ImagePreviewVisibility
+    {
+        Show, Hide, Automatic
+    }
 }
