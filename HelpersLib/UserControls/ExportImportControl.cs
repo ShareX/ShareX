@@ -210,6 +210,8 @@ namespace HelpersLib.UserControls
 
                 if (!string.IsNullOrEmpty(url))
                 {
+                    btnImport.Enabled = false;
+
                     string json = null;
 
                     TaskEx.Run(() =>
@@ -219,6 +221,8 @@ namespace HelpersLib.UserControls
                     () =>
                     {
                         Import(json);
+
+                        btnImport.Enabled = true;
                     });
                 }
             }
