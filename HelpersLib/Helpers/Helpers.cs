@@ -31,6 +31,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -764,6 +765,29 @@ namespace HelpersLib
             }
 
             return string.Join(", ", status);
+        }
+
+        public static string DownloadString(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                try
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        wc.Encoding = Encoding.UTF8;
+                        wc.Proxy = ProxyInfo.Current.GetWebProxy();
+                        return wc.DownloadString(url);
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                    MessageBox.Show("Download failed:\r\n" + e.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return null;
         }
     }
 }

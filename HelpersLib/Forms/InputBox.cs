@@ -30,41 +30,32 @@ namespace HelpersLib
 {
     public class InputBox : Form
     {
-        public string Question { get; set; }
+        public string Title { get; set; }
         public string InputText { get; set; }
 
-        public InputBox()
+        public InputBox(string title = null, string inputText = null)
         {
             InitializeComponent();
-        }
+            Icon = ShareXResources.Icon;
 
-        public InputBox(string question, string inputText)
-        {
-            Question = question;
+            Title = title;
             InputText = inputText;
-        }
 
-        private void InputBox_Load(object sender, EventArgs e)
-        {
-            lblQuestion.Text = Question ?? "";
-            txtInputText.Text = InputText ?? "";
+            if (!string.IsNullOrEmpty(Title)) Text = Title;
+            if (!string.IsNullOrEmpty(InputText)) txtInputText.Text = InputText;
         }
 
         private void InputBox_Shown(object sender, EventArgs e)
         {
             this.ShowActivate();
 
-            txtInputText.Focus();
             txtInputText.SelectionLength = txtInputText.Text.Length;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtInputText.Text))
-            {
-                InputText = txtInputText.Text;
-                DialogResult = DialogResult.OK;
-            }
+            InputText = txtInputText.Text;
+            DialogResult = DialogResult.OK;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -72,9 +63,9 @@ namespace HelpersLib
             DialogResult = DialogResult.Cancel;
         }
 
-        public static string GetInputText(string question = "", string inputText = "")
+        public static string GetInputText(string title = null, string inputText = null)
         {
-            using (InputBox form = new InputBox(question, inputText))
+            using (InputBox form = new InputBox(title, inputText))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -103,70 +94,60 @@ namespace HelpersLib
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtInputText = new System.Windows.Forms.TextBox();
-            this.lblQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             //
             // btnOK
             //
-            this.btnOK.Location = new System.Drawing.Point(208, 56);
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.Location = new System.Drawing.Point(208, 32);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(72, 24);
-            this.btnOK.TabIndex = 2;
+            this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             //
             // btnCancel
             //
-            this.btnCancel.Location = new System.Drawing.Point(288, 56);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(288, 32);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(72, 24);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             //
             // txtInputText
             //
-            this.txtInputText.Location = new System.Drawing.Point(8, 32);
+            this.txtInputText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtInputText.Location = new System.Drawing.Point(8, 8);
             this.txtInputText.Name = "txtInputText";
             this.txtInputText.Size = new System.Drawing.Size(352, 20);
-            this.txtInputText.TabIndex = 1;
-            //
-            // lblQuestion
-            //
-            this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Location = new System.Drawing.Point(8, 8);
-            this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(31, 13);
-            this.lblQuestion.TabIndex = 0;
-            this.lblQuestion.Text = "Input";
+            this.txtInputText.TabIndex = 0;
             //
             // InputBox
             //
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 89);
-            this.Controls.Add(this.lblQuestion);
+            this.ClientSize = new System.Drawing.Size(368, 64);
             this.Controls.Add(this.txtInputText);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InputBox";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InputBox";
+            this.Text = "ShareX - Input box";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.InputBox_Load);
             this.Shown += new System.EventHandler(this.InputBox_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtInputText;

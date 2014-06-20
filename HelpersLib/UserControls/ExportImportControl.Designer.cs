@@ -32,12 +32,13 @@
             this.cmsExport = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExportUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsImport = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportFile = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImport = new HelpersLib.MenuButton();
             this.btnExport = new HelpersLib.MenuButton();
-            this.tsmiExportUpload = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImportURL = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsExport.SuspendLayout();
             this.cmsImport.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.tsmiExportUpload});
             this.cmsExport.Name = "cmsExport";
             this.cmsExport.ShowImageMargin = false;
-            this.cmsExport.Size = new System.Drawing.Size(145, 92);
+            this.cmsExport.Size = new System.Drawing.Size(145, 70);
             // 
             // tsmiExportClipboard
             // 
@@ -66,14 +67,22 @@
             this.tsmiExportFile.Text = "Save to file...";
             this.tsmiExportFile.Click += new System.EventHandler(this.tsmiExportFile_Click);
             // 
+            // tsmiExportUpload
+            // 
+            this.tsmiExportUpload.Name = "tsmiExportUpload";
+            this.tsmiExportUpload.Size = new System.Drawing.Size(144, 22);
+            this.tsmiExportUpload.Text = "Upload as text";
+            this.tsmiExportUpload.Click += new System.EventHandler(this.tsmiExportUpload_Click);
+            // 
             // cmsImport
             // 
             this.cmsImport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiImportClipboard,
-            this.tsmiImportFile});
+            this.tsmiImportFile,
+            this.tsmiImportURL});
             this.cmsImport.Name = "cmsImport";
             this.cmsImport.ShowImageMargin = false;
-            this.cmsImport.Size = new System.Drawing.Size(131, 48);
+            this.cmsImport.Size = new System.Drawing.Size(131, 92);
             // 
             // tsmiImportClipboard
             // 
@@ -113,12 +122,12 @@
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // tsmiExportUpload
+            // tsmiImportURL
             // 
-            this.tsmiExportUpload.Name = "tsmiExportUpload";
-            this.tsmiExportUpload.Size = new System.Drawing.Size(144, 22);
-            this.tsmiExportUpload.Text = "Upload as text";
-            this.tsmiExportUpload.Click += new System.EventHandler(this.tsmiExportUpload_Click);
+            this.tsmiImportURL.Name = "tsmiImportURL";
+            this.tsmiImportURL.Size = new System.Drawing.Size(130, 22);
+            this.tsmiImportURL.Text = "From URL...";
+            this.tsmiImportURL.Click += new System.EventHandler(this.tsmiImportURL_Click);
             // 
             // ExportImportControl
             // 
@@ -145,5 +154,6 @@
         private MenuButton btnExport;
         private MenuButton btnImport;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportUpload;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImportURL;
     }
 }

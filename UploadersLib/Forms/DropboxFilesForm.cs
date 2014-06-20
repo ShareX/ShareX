@@ -210,7 +210,7 @@ namespace UploadersLib.Forms
 
         private void tsmiCreateDirectory_Click(object sender, EventArgs e)
         {
-            using (InputBox ib = new InputBox { Text = "Dropbox - Create directory", Question = "Please enter the name of the directory which should be created:" })
+            using (InputBox ib = new InputBox("Directory name to create"))
             {
                 if (ib.ShowDialog() == DialogResult.OK)
                 {

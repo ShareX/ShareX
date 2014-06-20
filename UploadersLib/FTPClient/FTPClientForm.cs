@@ -292,7 +292,7 @@ namespace UploadersLib
 
         private void FTPCreateDirectory()
         {
-            using (InputBox ib = new InputBox { Text = "Create directory", Question = "Please enter the name of the directory which should be created:" })
+            using (InputBox ib = new InputBox("Directory name to create"))
             {
                 ib.ShowDialog();
                 this.ShowActivate();
