@@ -56,6 +56,7 @@ namespace ShareX
 
         private ScreenRecorder screenRecorder;
         private Rectangle captureRectangle;
+        private ScreenRegionForm regionForm;
 
         private ScreenRecordForm()
         {
@@ -159,8 +160,8 @@ namespace ShareX
 
             string path = "";
 
-            ScreenRegionManager screenRegionManager = new ScreenRegionManager();
-            screenRegionManager.Start(captureRectangle);
+            regionForm = ScreenRegionForm.Start(captureRectangle);
+            regionForm.StopRequested += () => StopRecording();
 
             TaskEx.Run(() =>
             {
@@ -200,10 +201,10 @@ namespace ShareX
                         Thread.Sleep(delay);
                     }
 
-                    this.InvokeSafe(() =>
+                    if (regionForm != null)
                     {
-                        screenRegionManager.ChangeColor(Color.FromArgb(0, 255, 0));
-                    });
+                        this.InvokeSafe(() => regionForm.StartTimer());
+                    }
 
                     TrayIcon.Text = "ShareX - Click tray icon to stop recording.";
                     TrayIcon.Icon = Resources.control_record.ToIcon();
@@ -212,9 +213,9 @@ namespace ShareX
                 }
                 finally
                 {
-                    if (screenRegionManager != null)
+                    if (regionForm != null)
                     {
-                        this.InvokeSafe(() => screenRegionManager.Dispose());
+                        this.InvokeSafe(() => regionForm.Close());
                     }
                 }
 
