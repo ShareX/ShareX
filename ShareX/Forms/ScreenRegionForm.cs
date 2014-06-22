@@ -65,11 +65,12 @@ namespace ShareX
             }
         }
 
-        public static ScreenRegionForm Start(Rectangle captureRectangle)
+        public static ScreenRegionForm Start(Rectangle captureRectangle, Action stopRequested)
         {
             if (captureRectangle != CaptureHelpers.GetScreenBounds())
             {
                 ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
+                regionForm.StopRequested += stopRequested;
                 regionForm.Show();
                 return regionForm;
             }

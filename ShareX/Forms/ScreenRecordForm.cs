@@ -160,8 +160,7 @@ namespace ShareX
 
             string path = "";
 
-            regionForm = ScreenRegionForm.Start(captureRectangle);
-            regionForm.StopRequested += () => StopRecording();
+            regionForm = ScreenRegionForm.Start(captureRectangle, StopRecording);
 
             TaskEx.Run(() =>
             {
