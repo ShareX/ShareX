@@ -35,10 +35,13 @@ namespace ShareX
     {
         public event Action StopRequested;
 
-        private Color color = Color.Red;
+        public bool IsCountdown { get; set; }
+        public TimeSpan Countdown { get; set; }
+        public Stopwatch Timer { get; private set; }
+
+        private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
-        private Stopwatch Timer;
 
         public ScreenRegionForm(Rectangle regionRectangle)
         {
@@ -55,6 +58,8 @@ namespace ShareX
             region.Exclude(borderRectangle0Based.RectangleOffset(-1));
             region.Exclude(new Rectangle(0, pInfo.Location.Y, pInfo.Location.X, pInfo.Height));
             Region = region;
+
+            Timer = new Stopwatch();
         }
 
         protected void OnStopRequested()
@@ -65,12 +70,18 @@ namespace ShareX
             }
         }
 
-        public static ScreenRegionForm Start(Rectangle captureRectangle, Action stopRequested)
+        public static ScreenRegionForm Show(Rectangle captureRectangle, Action stopRequested, float duration = 0)
         {
             if (captureRectangle != CaptureHelpers.GetScreenBounds())
             {
                 ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
                 regionForm.StopRequested += stopRequested;
+                if (duration > 0)
+                {
+                    regionForm.IsCountdown = true;
+                    regionForm.Countdown = TimeSpan.FromSeconds(duration);
+                }
+                regionForm.UpdateTimer();
                 regionForm.Show();
                 return regionForm;
             }
@@ -80,17 +91,37 @@ namespace ShareX
 
         public void StartTimer()
         {
-            this.color = Color.FromArgb(0, 255, 0);
+            borderColor = Color.FromArgb(0, 255, 0);
             Refresh();
 
-            Timer = Stopwatch.StartNew();
+            Timer.Start();
             timerRefresh.Start();
+        }
+
+        private void UpdateTimer()
+        {
+            if (!IsDisposed)
+            {
+                TimeSpan timer;
+
+                if (IsCountdown)
+                {
+                    timer = Countdown - Timer.Elapsed;
+                    if (timer.Ticks < 0) timer = TimeSpan.Zero;
+                }
+                else
+                {
+                    timer = Timer.Elapsed;
+                }
+
+                lblTimer.Text = timer.ToString("mm\\:ss\\:ff");
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             using (Pen pen1 = new Pen(Color.Black) { DashPattern = new float[] { 5, 5 } })
-            using (Pen pen2 = new Pen(color) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
+            using (Pen pen2 = new Pen(borderColor) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
             {
                 e.Graphics.DrawRectangleProper(pen1, borderRectangle0Based);
                 e.Graphics.DrawRectangleProper(pen2, borderRectangle0Based);
@@ -101,10 +132,7 @@ namespace ShareX
 
         private void timerRefresh_Tick(object sender, EventArgs e)
         {
-            if (!IsDisposed)
-            {
-                lblTimer.Text = Timer.Elapsed.ToString("mm\\:ss\\:ff");
-            }
+            UpdateTimer();
         }
 
         private void btnStop_Click(object sender, EventArgs e)

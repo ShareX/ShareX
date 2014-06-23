@@ -160,7 +160,8 @@ namespace ShareX
 
             string path = "";
 
-            regionForm = ScreenRegionForm.Start(captureRectangle, StopRecording);
+            float duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0;
+            regionForm = ScreenRegionForm.Show(captureRectangle, StopRecording, duration);
 
             TaskEx.Run(() =>
             {
@@ -185,7 +186,7 @@ namespace ShareX
                         AVI = TaskSettings.CaptureSettings.AVIOptions,
                         ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                         GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
-                        Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
+                        Duration = duration,
                         OutputPath = path,
                         CaptureArea = captureRectangle,
                         DrawCursor = TaskSettings.CaptureSettings.ShowCursor
@@ -200,13 +201,13 @@ namespace ShareX
                         Thread.Sleep(delay);
                     }
 
+                    TrayIcon.Text = "ShareX - Click tray icon to stop recording.";
+                    TrayIcon.Icon = Resources.control_record.ToIcon();
+
                     if (regionForm != null)
                     {
                         this.InvokeSafe(() => regionForm.StartTimer());
                     }
-
-                    TrayIcon.Text = "ShareX - Click tray icon to stop recording.";
-                    TrayIcon.Icon = Resources.control_record.ToIcon();
 
                     screenRecorder.StartRecording();
                 }
