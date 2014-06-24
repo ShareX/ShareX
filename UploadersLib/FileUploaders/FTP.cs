@@ -117,10 +117,11 @@ namespace UploadersLib.FileUploaders
             }
             finally
             {
+                Dispose();
                 IsUploading = false;
             }
 
-            if (!stopUpload && Errors.Count == 0)
+            if (!StopUploadRequested && !IsError)
             {
                 result.URL = Account.GetUriPath(fileName);
             }
@@ -130,9 +131,9 @@ namespace UploadersLib.FileUploaders
 
         public override void StopUpload()
         {
-            if (IsUploading && !stopUpload)
+            if (IsUploading && !StopUploadRequested)
             {
-                stopUpload = true;
+                StopUploadRequested = true;
                 Disconnect();
             }
         }
@@ -149,7 +150,7 @@ namespace UploadersLib.FileUploaders
 
         public void Disconnect()
         {
-            if (client != null && client.IsConnected)
+            if (client != null)
             {
                 client.Disconnect();
             }
@@ -412,8 +413,14 @@ namespace UploadersLib.FileUploaders
         {
             if (client != null)
             {
-                Disconnect();
-                client.Dispose();
+                try
+                {
+                    client.Dispose();
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
         }
     }

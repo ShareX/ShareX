@@ -39,7 +39,7 @@ namespace UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            SuppressWebExceptions = true;
+            ThrowWebExceptions = true;
 
             string hash = CreateHash(stream);
 
@@ -73,7 +73,7 @@ namespace UploadersLib.FileUploaders
 
             hash = JToken.Parse(result.Response)["hash"].Value<string>();
 
-            while (!stopUpload)
+            while (!StopUploadRequested)
             {
                 result.Response = SendRequest(HttpMethod.GET, "https://mediacru.sh/api/" + hash + "/status");
                 JToken jsonResponse = JToken.Parse(result.Response);

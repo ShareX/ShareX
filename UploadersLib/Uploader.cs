@@ -49,9 +49,17 @@ namespace UploadersLib
         public bool IsUploading { get; protected set; }
         public int BufferSize { get; set; }
         public bool AllowReportProgress { get; set; }
-        public bool SuppressWebExceptions { get; set; }
+        public bool ThrowWebExceptions { get; set; }
 
-        protected bool stopUpload;
+        public bool IsError
+        {
+            get
+            {
+                return !StopUploadRequested && Errors != null && Errors.Count > 0;
+            }
+        }
+
+        public bool StopUploadRequested { get; protected set; }
 
         private HttpWebRequest currentRequest;
 
@@ -61,6 +69,7 @@ namespace UploadersLib
             IsUploading = false;
             BufferSize = 8192;
             AllowReportProgress = true;
+            ThrowWebExceptions = false;
 
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;
@@ -77,14 +86,19 @@ namespace UploadersLib
 
         public string ToErrorString()
         {
-            return string.Join("\r\n", Errors.ToArray());
+            if (IsError)
+            {
+                return string.Join(Environment.NewLine, Errors);
+            }
+
+            return string.Empty;
         }
 
         public virtual void StopUpload()
         {
             if (IsUploading)
             {
-                stopUpload = true;
+                StopUploadRequested = true;
 
                 if (currentRequest != null)
                 {
@@ -169,7 +183,7 @@ namespace UploadersLib
             NameValueCollection headers = null, CookieCollection cookies = null, Stream dataStream = null)
         {
             IsUploading = true;
-            stopUpload = false;
+            StopUploadRequested = false;
 
             url = CreateQuery(url, arguments);
 
@@ -192,9 +206,9 @@ namespace UploadersLib
             }
             catch (Exception e)
             {
-                if (!stopUpload)
+                if (!StopUploadRequested)
                 {
-                    if (SuppressWebExceptions && e is WebException) throw;
+                    if (ThrowWebExceptions && e is WebException) throw;
                     AddWebError(e);
                 }
             }
@@ -254,7 +268,7 @@ namespace UploadersLib
             CookieCollection cookies = null, NameValueCollection headers = null)
         {
             IsUploading = true;
-            stopUpload = false;
+            StopUploadRequested = false;
 
             try
             {
@@ -269,9 +283,9 @@ namespace UploadersLib
             }
             catch (Exception e)
             {
-                if (!stopUpload)
+                if (!StopUploadRequested)
                 {
-                    if (SuppressWebExceptions && e is WebException) throw;
+                    if (ThrowWebExceptions && e is WebException) throw;
                     AddWebError(e);
                 }
             }
@@ -291,7 +305,7 @@ namespace UploadersLib
             UploadResult result = new UploadResult();
 
             IsUploading = true;
-            stopUpload = false;
+            StopUploadRequested = false;
 
             try
             {
@@ -317,9 +331,9 @@ namespace UploadersLib
             }
             catch (Exception e)
             {
-                if (!stopUpload)
+                if (!StopUploadRequested)
                 {
-                    if (SuppressWebExceptions && e is WebException) throw;
+                    if (ThrowWebExceptions && e is WebException) throw;
                     AddWebError(e);
                 }
             }
@@ -396,7 +410,7 @@ namespace UploadersLib
             byte[] buffer = new byte[length];
             int bytesRead;
 
-            while (!stopUpload && (bytesRead = dataStream.Read(buffer, 0, length)) > 0)
+            while (!StopUploadRequested && (bytesRead = dataStream.Read(buffer, 0, length)) > 0)
             {
                 requestStream.Write(buffer, 0, bytesRead);
 
@@ -406,7 +420,7 @@ namespace UploadersLib
                 }
             }
 
-            return !stopUpload;
+            return !StopUploadRequested;
         }
 
         private string CreateBoundary()

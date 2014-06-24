@@ -88,7 +88,7 @@ namespace UploadersLib.FileUploaders
                     OnProgressChanged(progress);
                 }
 
-                while (!stopUpload)
+                while (!StopUploadRequested)
                 {
                     string statusJson = SendRequest(HttpMethod.GET, "https://upload.gfycat.com/status/" + key);
                     GfycatStatusResponse response = JsonConvert.DeserializeObject<GfycatStatusResponse>(statusJson);

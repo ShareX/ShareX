@@ -534,20 +534,14 @@ namespace UploadersLib.FileUploaders
                 }
             }
 
-            public class ProgressInfo
+            private class ProgressInfo
             {
                 public string Status { get; set; }
-
                 public string ETA { get; set; }
-
                 public string Speed { get; set; }
-
                 public string UploadedBytes { get; set; }
-
                 public string TotalSize { get; set; }
-
                 public string Elapsed { get; set; }
-
                 public string Meter { get; set; }
 
                 public ProgressInfo()
