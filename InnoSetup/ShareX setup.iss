@@ -93,6 +93,11 @@ Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontc
 #include "Scripts\products\vcredist2010.iss"
 
 [Code]
+procedure InitializeWizard;
+begin
+  WizardForm.LicenseAcceptedRadio.Checked := true;
+end;
+
 function InitializeSetup(): Boolean;
 begin
 	initwinversion();
