@@ -1002,7 +1002,7 @@ namespace UploadersLib
         {
             FTPAccount account = GetSelectedFTPAccount();
 
-            if (account != null)
+            if (account != null && (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS))
             {
                 new FTPClientForm(account).Show();
             }

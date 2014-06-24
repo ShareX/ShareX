@@ -61,31 +61,30 @@ namespace UploadersLib.FileUploaders
             Account = account;
         }
 
+        #region FileUploader methods
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             UploadResult result = new UploadResult();
 
-            if (Connect())
+            fileName = Helpers.GetValidURL(fileName);
+            string path = Account.GetSubFolderPath(fileName);
+            bool uploadResult;
+
+            try
             {
-                fileName = Helpers.GetValidURL(fileName);
-                string folderPath = Account.GetSubFolderPath();
-                string filePath = URLHelpers.CombineURL(folderPath, fileName);
+                IsUploading = true;
+                uploadResult = UploadStream(stream, path);
+            }
+            finally
+            {
+                Dispose();
+                IsUploading = false;
+            }
 
-                try
-                {
-                    IsUploading = true;
-                    UploadStream(stream, filePath);
-                }
-                finally
-                {
-                    Dispose();
-                    IsUploading = false;
-                }
-
-                if (!StopUploadRequested && !IsError)
-                {
-                    result.URL = Account.GetUriPath(fileName);
-                }
+            if (uploadResult && !StopUploadRequested && !IsError)
+            {
+                result.URL = Account.GetUriPath(fileName);
             }
 
             return result;
@@ -99,6 +98,8 @@ namespace UploadersLib.FileUploaders
                 Disconnect();
             }
         }
+
+        #endregion FileUploader methods
 
         public bool Connect()
         {
@@ -209,24 +210,29 @@ namespace UploadersLib.FileUploaders
             return directoryList;
         }
 
-        private void UploadStream(Stream stream, string remotePath)
+        private bool UploadStream(Stream stream, string remotePath)
         {
-            try
+            if (Connect())
             {
-                using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
+                try
                 {
-                    TransferData(stream, sftpStream);
+                    using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
+                    {
+                        return TransferData(stream, sftpStream);
+                    }
                 }
-            }
-            catch (SftpPathNotFoundException)
-            {
-                CreateDirectory(URLHelpers.GetDirectoryPath(remotePath));
+                catch (SftpPathNotFoundException)
+                {
+                    CreateDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
-                using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
-                {
-                    TransferData(stream, sftpStream);
+                    using (SftpFileStream sftpStream = client.OpenWrite(remotePath))
+                    {
+                        return TransferData(stream, sftpStream);
+                    }
                 }
             }
+
+            return false;
         }
 
         public void Dispose()

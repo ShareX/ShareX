@@ -103,17 +103,20 @@ namespace UploadersLib.FileUploaders
             }
         }
 
+        #region FileUploader methods
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             UploadResult result = new UploadResult();
 
             fileName = Helpers.GetValidURL(fileName);
             string path = Account.GetSubFolderPath(fileName);
+            bool uploadResult;
 
             try
             {
                 IsUploading = true;
-                UploadData(stream, path);
+                uploadResult = UploadData(stream, path);
             }
             finally
             {
@@ -121,7 +124,7 @@ namespace UploadersLib.FileUploaders
                 IsUploading = false;
             }
 
-            if (!StopUploadRequested && !IsError)
+            if (uploadResult && !StopUploadRequested && !IsError)
             {
                 result.URL = Account.GetUriPath(fileName);
             }
@@ -137,6 +140,8 @@ namespace UploadersLib.FileUploaders
                 Disconnect();
             }
         }
+
+        #endregion FileUploader methods
 
         public bool Connect()
         {
