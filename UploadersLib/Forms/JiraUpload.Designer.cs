@@ -64,7 +64,7 @@
             this.lblSummary.Location = new System.Drawing.Point(3, 16);
             this.lblSummary.Name = "lblSummary";
             this.lblSummary.Size = new System.Drawing.Size(207, 41);
-            this.lblSummary.TabIndex = 2;
+            this.lblSummary.TabIndex = 0;
             this.lblSummary.Text = "lblSummary";
             // 
             // btnUpload
@@ -73,7 +73,7 @@
             this.btnUpload.Location = new System.Drawing.Point(147, 98);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 23);
-            this.btnUpload.TabIndex = 3;
+            this.btnUpload.TabIndex = 4;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnSend_Click);
@@ -85,7 +85,7 @@
             this.btnCancel.Location = new System.Drawing.Point(18, 98);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -99,7 +99,7 @@
             this.gpSummary.Location = new System.Drawing.Point(12, 32);
             this.gpSummary.Name = "gpSummary";
             this.gpSummary.Size = new System.Drawing.Size(213, 60);
-            this.gpSummary.TabIndex = 5;
+            this.gpSummary.TabIndex = 2;
             this.gpSummary.TabStop = false;
             this.gpSummary.Text = "Summary";
             // 

@@ -64,11 +64,12 @@
             // 
             // btnHotkey
             // 
+            this.btnHotkey.AccessibleName = "";
             this.btnHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHotkey.Location = new System.Drawing.Point(259, 0);
             this.btnHotkey.Name = "btnHotkey";
             this.btnHotkey.Size = new System.Drawing.Size(192, 23);
-            this.btnHotkey.TabIndex = 3;
+            this.btnHotkey.TabIndex = 1;
             this.btnHotkey.Text = "Hotkey";
             this.btnHotkey.UseVisualStyleBackColor = true;
             this.btnHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyDown);

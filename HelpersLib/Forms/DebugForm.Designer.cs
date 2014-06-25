@@ -39,7 +39,7 @@
             this.btnLoadedAssemblies.Location = new System.Drawing.Point(96, 511);
             this.btnLoadedAssemblies.Name = "btnLoadedAssemblies";
             this.btnLoadedAssemblies.Size = new System.Drawing.Size(120, 23);
-            this.btnLoadedAssemblies.TabIndex = 1;
+            this.btnLoadedAssemblies.TabIndex = 2;
             this.btnLoadedAssemblies.Text = "Loaded assemblies";
             this.btnLoadedAssemblies.UseVisualStyleBackColor = true;
             this.btnLoadedAssemblies.Click += new System.EventHandler(this.btnLoadedAssemblies_Click);
@@ -50,7 +50,7 @@
             this.btnCopyAll.Location = new System.Drawing.Point(8, 511);
             this.btnCopyAll.Name = "btnCopyAll";
             this.btnCopyAll.Size = new System.Drawing.Size(80, 23);
-            this.btnCopyAll.TabIndex = 0;
+            this.btnCopyAll.TabIndex = 1;
             this.btnCopyAll.Text = "Copy all";
             this.btnCopyAll.UseVisualStyleBackColor = true;
             this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
@@ -65,7 +65,7 @@
             this.rtbDebug.Name = "rtbDebug";
             this.rtbDebug.ReadOnly = true;
             this.rtbDebug.Size = new System.Drawing.Size(744, 496);
-            this.rtbDebug.TabIndex = 3;
+            this.rtbDebug.TabIndex = 0;
             this.rtbDebug.Text = "";
             this.rtbDebug.WordWrap = false;
             this.rtbDebug.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDebug_LinkClicked);

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.qrMain = new Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeGraphicControl();
-            this.txtQRCode = new System.Windows.Forms.TextBox();
             this.cmsQR = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtQRCode = new System.Windows.Forms.TextBox();
             this.cmsQR.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,30 @@
             this.qrMain.TabIndex = 1;
             this.qrMain.Click += new System.EventHandler(this.qrMain_Click);
             // 
+            // cmsQR
+            // 
+            this.cmsQR.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCopy,
+            this.tsmiSaveAs});
+            this.cmsQR.Name = "cmsQR";
+            this.cmsQR.Size = new System.Drawing.Size(212, 48);
+            this.cmsQR.Text = "QR";
+            // 
+            // tsmiCopy
+            // 
+            this.tsmiCopy.Name = "tsmiCopy";
+            this.tsmiCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.tsmiCopy.Size = new System.Drawing.Size(211, 22);
+            this.tsmiCopy.Text = "Copy to clipboard";
+            this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
+            // 
+            // tsmiSaveAs
+            // 
+            this.tsmiSaveAs.Name = "tsmiSaveAs";
+            this.tsmiSaveAs.Size = new System.Drawing.Size(211, 22);
+            this.tsmiSaveAs.Text = "Save image as PNG...";
+            this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
+            // 
             // txtQRCode
             // 
             this.txtQRCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -61,30 +85,6 @@
             this.txtQRCode.TabIndex = 0;
             this.txtQRCode.Visible = false;
             this.txtQRCode.TextChanged += new System.EventHandler(this.txtQRCode_TextChanged);
-            // 
-            // cmsQR
-            // 
-            this.cmsQR.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiCopy,
-            this.tsmiSaveAs});
-            this.cmsQR.Name = "cmsQR";
-            this.cmsQR.Size = new System.Drawing.Size(212, 48);
-            this.cmsQR.Text = "QR";
-            // 
-            // tsmiSaveAs
-            // 
-            this.tsmiSaveAs.Name = "tsmiSaveAs";
-            this.tsmiSaveAs.Size = new System.Drawing.Size(211, 22);
-            this.tsmiSaveAs.Text = "Save image as PNG...";
-            this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
-            // 
-            // tsmiCopy
-            // 
-            this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.tsmiCopy.Size = new System.Drawing.Size(211, 22);
-            this.tsmiCopy.Text = "Copy to clipboard";
-            this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
             // QRCodeForm
             // 

@@ -84,7 +84,7 @@
             this.btnTranslateTo.Location = new System.Drawing.Point(216, 208);
             this.btnTranslateTo.Name = "btnTranslateTo";
             this.btnTranslateTo.Size = new System.Drawing.Size(136, 24);
-            this.btnTranslateTo.TabIndex = 9;
+            this.btnTranslateTo.TabIndex = 7;
             this.btnTranslateTo.Text = "???";
             this.btnTranslateTo.UseVisualStyleBackColor = true;
             this.btnTranslateTo.Click += new System.EventHandler(this.btnTranslateTo_Click);
@@ -101,7 +101,7 @@
             this.txtTranslateResult.ReadOnly = true;
             this.txtTranslateResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTranslateResult.Size = new System.Drawing.Size(336, 114);
-            this.txtTranslateResult.TabIndex = 7;
+            this.txtTranslateResult.TabIndex = 9;
             // 
             // txtLanguages
             // 
@@ -109,14 +109,14 @@
             this.txtLanguages.Name = "txtLanguages";
             this.txtLanguages.ReadOnly = true;
             this.txtLanguages.Size = new System.Drawing.Size(336, 20);
-            this.txtLanguages.TabIndex = 6;
+            this.txtLanguages.TabIndex = 8;
             // 
             // btnTranslate
             // 
             this.btnTranslate.Location = new System.Drawing.Point(16, 208);
             this.btnTranslate.Name = "btnTranslate";
             this.btnTranslate.Size = new System.Drawing.Size(192, 24);
-            this.btnTranslate.TabIndex = 8;
+            this.btnTranslate.TabIndex = 6;
             this.btnTranslate.Text = "Translate ( Ctrl + Enter )";
             this.btnTranslate.UseVisualStyleBackColor = true;
             this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);

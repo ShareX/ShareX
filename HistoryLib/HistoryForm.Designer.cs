@@ -106,7 +106,7 @@
             this.btnApplyFilters.Location = new System.Drawing.Point(16, 232);
             this.btnApplyFilters.Name = "btnApplyFilters";
             this.btnApplyFilters.Size = new System.Drawing.Size(136, 24);
-            this.btnApplyFilters.TabIndex = 1;
+            this.btnApplyFilters.TabIndex = 14;
             this.btnApplyFilters.Text = "Apply filters";
             this.btnApplyFilters.UseVisualStyleBackColor = true;
             this.btnApplyFilters.Click += new System.EventHandler(this.btnApplyFilters_Click);
@@ -171,7 +171,7 @@
             this.ssMain.Location = new System.Drawing.Point(0, 665);
             this.ssMain.Name = "ssMain";
             this.ssMain.Size = new System.Drawing.Size(920, 22);
-            this.ssMain.TabIndex = 1;
+            this.ssMain.TabIndex = 3;
             this.ssMain.Text = "statusStrip1";
             // 
             // tsslStatus
@@ -210,7 +210,7 @@
             this.btnRemoveFilters.Location = new System.Drawing.Point(160, 232);
             this.btnRemoveFilters.Name = "btnRemoveFilters";
             this.btnRemoveFilters.Size = new System.Drawing.Size(136, 24);
-            this.btnRemoveFilters.TabIndex = 2;
+            this.btnRemoveFilters.TabIndex = 15;
             this.btnRemoveFilters.Text = "Remove filters";
             this.btnRemoveFilters.UseVisualStyleBackColor = true;
             this.btnRemoveFilters.Click += new System.EventHandler(this.btnRemoveFilters_Click);
@@ -272,7 +272,7 @@
             this.lvHistory.Location = new System.Drawing.Point(8, 288);
             this.lvHistory.Name = "lvHistory";
             this.lvHistory.Size = new System.Drawing.Size(904, 368);
-            this.lvHistory.TabIndex = 1;
+            this.lvHistory.TabIndex = 0;
             this.lvHistory.UseCompatibleStateImageBehavior = false;
             this.lvHistory.View = System.Windows.Forms.View.Details;
             this.lvHistory.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvHistory_ItemSelectionChanged);

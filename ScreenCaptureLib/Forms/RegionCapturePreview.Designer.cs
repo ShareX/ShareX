@@ -87,7 +87,7 @@
             this.tsbWindowRectangle.Image = ((System.Drawing.Image)(resources.GetObject("tsbWindowRectangle.Image")));
             this.tsbWindowRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbWindowRectangle.Name = "tsbWindowRectangle";
-            this.tsbWindowRectangle.Size = new System.Drawing.Size(139, 20);
+            this.tsbWindowRectangle.Size = new System.Drawing.Size(149, 20);
             this.tsbWindowRectangle.Text = "Window and Rectangle";
             this.tsbWindowRectangle.Click += new System.EventHandler(this.tsbWindowRectangle_Click);
             // 
@@ -183,7 +183,7 @@
             this.pImage.Location = new System.Drawing.Point(304, 8);
             this.pImage.Name = "pImage";
             this.pImage.Size = new System.Drawing.Size(536, 632);
-            this.pImage.TabIndex = 4;
+            this.pImage.TabIndex = 3;
             // 
             // pgSurfaceConfig
             // 
@@ -199,7 +199,7 @@
             this.btnClipboardCopy.Location = new System.Drawing.Point(184, 8);
             this.btnClipboardCopy.Name = "btnClipboardCopy";
             this.btnClipboardCopy.Size = new System.Drawing.Size(112, 40);
-            this.btnClipboardCopy.TabIndex = 2;
+            this.btnClipboardCopy.TabIndex = 1;
             this.btnClipboardCopy.Text = "Copy image to clipboard";
             this.btnClipboardCopy.UseVisualStyleBackColor = true;
             this.btnClipboardCopy.Click += new System.EventHandler(this.btnClipboardCopy_Click);

@@ -85,7 +85,7 @@
             this.lblMike.Location = new System.Drawing.Point(89, 168);
             this.lblMike.Name = "lblMike";
             this.lblMike.Size = new System.Drawing.Size(131, 13);
-            this.lblMike.TabIndex = 6;
+            this.lblMike.TabIndex = 5;
             this.lblMike.Text = "mcored (Michael Delpach)";
             // 
             // rtbCredits
@@ -99,7 +99,7 @@
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
             this.rtbCredits.Size = new System.Drawing.Size(411, 240);
-            this.rtbCredits.TabIndex = 11;
+            this.rtbCredits.TabIndex = 6;
             this.rtbCredits.Text = resources.GetString("rtbCredits.Text");
             this.rtbCredits.WordWrap = false;
             this.rtbCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
@@ -132,7 +132,7 @@
             this.cLogo.Location = new System.Drawing.Point(224, -8);
             this.cLogo.Name = "cLogo";
             this.cLogo.Size = new System.Drawing.Size(208, 200);
-            this.cLogo.TabIndex = 5;
+            this.cLogo.TabIndex = 7;
             this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
             this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
             // 

@@ -120,7 +120,7 @@
             this.btnOK.Location = new System.Drawing.Point(744, 734);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(72, 24);
-            this.btnOK.TabIndex = 15;
+            this.btnOK.TabIndex = 14;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -131,7 +131,7 @@
             this.btnCancel.Location = new System.Drawing.Point(824, 734);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(72, 24);
-            this.btnCancel.TabIndex = 16;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -195,7 +195,7 @@
             this.btnLoadImage.Location = new System.Drawing.Point(152, 734);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(81, 24);
-            this.btnLoadImage.TabIndex = 13;
+            this.btnLoadImage.TabIndex = 12;
             this.btnLoadImage.Text = "Load image...";
             this.btnLoadImage.UseVisualStyleBackColor = true;
             this.btnLoadImage.Visible = false;
@@ -208,7 +208,7 @@
             this.btnSaveImage.Location = new System.Drawing.Point(240, 734);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(82, 24);
-            this.btnSaveImage.TabIndex = 14;
+            this.btnSaveImage.TabIndex = 13;
             this.btnSaveImage.Text = "Save image...";
             this.btnSaveImage.UseVisualStyleBackColor = true;
             this.btnSaveImage.Visible = false;
@@ -220,7 +220,7 @@
             this.eiImageEffects.Name = "eiImageEffects";
             this.eiImageEffects.ObjectType = null;
             this.eiImageEffects.Size = new System.Drawing.Size(136, 24);
-            this.eiImageEffects.TabIndex = 17;
+            this.eiImageEffects.TabIndex = 11;
             this.eiImageEffects.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
             this.eiImageEffects.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
             // 

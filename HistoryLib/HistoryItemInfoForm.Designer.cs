@@ -30,9 +30,9 @@
         {
             this.olvMain = new HistoryLib.CustomControls.ObjectListView();
             this.SuspendLayout();
-            //
+            // 
             // olvMain
-            //
+            // 
             this.olvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.olvMain.FullRowSelect = true;
             this.olvMain.GridLines = true;
@@ -45,9 +45,9 @@
             this.olvMain.TabIndex = 0;
             this.olvMain.UseCompatibleStateImageBehavior = false;
             this.olvMain.View = System.Windows.Forms.View.Details;
-            //
+            // 
             // HistoryItemInfoForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 411);
@@ -58,6 +58,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - History item info";
             this.ResumeLayout(false);
+
         }
 
         #endregion Windows Form Designer generated code

@@ -45,7 +45,7 @@
             this.lblQuestion.Location = new System.Drawing.Point(0, 0);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(420, 25);
-            this.lblQuestion.TabIndex = 0;
+            this.lblQuestion.TabIndex = 2;
             this.lblQuestion.Text = "Your clipboard contains the following:";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -105,7 +105,7 @@
             this.cbDontShowThisWindow.Location = new System.Drawing.Point(9, 332);
             this.cbDontShowThisWindow.Name = "cbDontShowThisWindow";
             this.cbDontShowThisWindow.Size = new System.Drawing.Size(137, 17);
-            this.cbDontShowThisWindow.TabIndex = 2;
+            this.cbDontShowThisWindow.TabIndex = 4;
             this.cbDontShowThisWindow.Text = "Don\'t show this window";
             this.cbDontShowThisWindow.UseVisualStyleBackColor = true;
             this.cbDontShowThisWindow.CheckedChanged += new System.EventHandler(this.cbDontShowThisWindow_CheckedChanged);

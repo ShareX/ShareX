@@ -43,13 +43,11 @@ namespace ShareX
         {
             InitializeComponent();
             LoadSettings();
-
             loaded = true;
         }
 
         private void LoadSettings()
         {
-            Text = Program.Title + " - Settings";
             Icon = ShareXResources.Icon;
 
             // General

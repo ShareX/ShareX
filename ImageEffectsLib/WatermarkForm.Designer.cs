@@ -90,7 +90,7 @@
             this.cbWatermarkAutoHide.Location = new System.Drawing.Point(17, 112);
             this.cbWatermarkAutoHide.Name = "cbWatermarkAutoHide";
             this.cbWatermarkAutoHide.Size = new System.Drawing.Size(260, 17);
-            this.cbWatermarkAutoHide.TabIndex = 8;
+            this.cbWatermarkAutoHide.TabIndex = 7;
             this.cbWatermarkAutoHide.Text = "Hide watermark if image is smaller than watermark";
             this.cbWatermarkAutoHide.UseVisualStyleBackColor = true;
             this.cbWatermarkAutoHide.CheckedChanged += new System.EventHandler(this.cbWatermarkAutoHide_CheckedChanged);
@@ -160,7 +160,7 @@
             this.gbWatermarkBackground.Location = new System.Drawing.Point(304, 126);
             this.gbWatermarkBackground.Name = "gbWatermarkBackground";
             this.gbWatermarkBackground.Size = new System.Drawing.Size(448, 210);
-            this.gbWatermarkBackground.TabIndex = 10;
+            this.gbWatermarkBackground.TabIndex = 9;
             this.gbWatermarkBackground.TabStop = false;
             this.gbWatermarkBackground.Text = "Text background settings";
             // 
@@ -276,7 +276,7 @@
             this.gbWatermarkText.Location = new System.Drawing.Point(304, 8);
             this.gbWatermarkText.Name = "gbWatermarkText";
             this.gbWatermarkText.Size = new System.Drawing.Size(448, 112);
-            this.gbWatermarkText.TabIndex = 7;
+            this.gbWatermarkText.TabIndex = 8;
             this.gbWatermarkText.TabStop = false;
             this.gbWatermarkText.Text = "Text settings";
             // 
@@ -356,7 +356,7 @@
             this.gbImageWatermark.Location = new System.Drawing.Point(304, 344);
             this.gbImageWatermark.Name = "gbImageWatermark";
             this.gbImageWatermark.Size = new System.Drawing.Size(448, 56);
-            this.gbImageWatermark.TabIndex = 12;
+            this.gbImageWatermark.TabIndex = 10;
             this.gbImageWatermark.TabStop = false;
             this.gbImageWatermark.Text = "Image settings";
             // 
@@ -377,7 +377,7 @@
             this.pbPreview.Location = new System.Drawing.Point(8, 160);
             this.pbPreview.Name = "pbPreview";
             this.pbPreview.Size = new System.Drawing.Size(288, 240);
-            this.pbPreview.TabIndex = 11;
+            this.pbPreview.TabIndex = 12;
             // 
             // lblPreview
             // 
@@ -385,7 +385,7 @@
             this.lblPreview.Location = new System.Drawing.Point(8, 144);
             this.lblPreview.Name = "lblPreview";
             this.lblPreview.Size = new System.Drawing.Size(102, 13);
-            this.lblPreview.TabIndex = 9;
+            this.lblPreview.TabIndex = 11;
             this.lblPreview.Text = "Watermark preview:";
             // 
             // WatermarkForm

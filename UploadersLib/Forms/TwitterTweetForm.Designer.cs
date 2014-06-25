@@ -39,7 +39,7 @@
             this.btnOK.Location = new System.Drawing.Point(224, 208);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(80, 24);
-            this.btnOK.TabIndex = 1;
+            this.btnOK.TabIndex = 2;
             this.btnOK.Text = "&Tweet";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -49,7 +49,7 @@
             this.btnCancel.Location = new System.Drawing.Point(312, 208);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 24);
-            this.btnCancel.TabIndex = 2;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -73,7 +73,7 @@
             this.lblTweetLength.Location = new System.Drawing.Point(8, 208);
             this.lblTweetLength.Name = "lblTweetLength";
             this.lblTweetLength.Size = new System.Drawing.Size(36, 20);
-            this.lblTweetLength.TabIndex = 3;
+            this.lblTweetLength.TabIndex = 1;
             this.lblTweetLength.Text = "140";
             // 
             // TwitterTweetForm

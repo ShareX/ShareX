@@ -77,7 +77,7 @@
             this.tpWebBrowser.Location = new System.Drawing.Point(4, 22);
             this.tpWebBrowser.Name = "tpWebBrowser";
             this.tpWebBrowser.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWebBrowser.Size = new System.Drawing.Size(752, 443);
+            this.tpWebBrowser.Size = new System.Drawing.Size(752, 487);
             this.tpWebBrowser.TabIndex = 1;
             this.tpWebBrowser.Text = "Web browser";
             this.tpWebBrowser.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.wbResponse.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbResponse.Name = "wbResponse";
             this.wbResponse.ScriptErrorsSuppressed = true;
-            this.wbResponse.Size = new System.Drawing.Size(746, 437);
+            this.wbResponse.Size = new System.Drawing.Size(746, 481);
             this.wbResponse.TabIndex = 0;
             // 
             // ResponseForm

@@ -254,7 +254,8 @@
             this.tsMain.Padding = new System.Windows.Forms.Padding(6);
             this.tsMain.ShowItemToolTips = false;
             this.tsMain.Size = new System.Drawing.Size(170, 474);
-            this.tsMain.TabIndex = 0;
+            this.tsMain.TabIndex = 1;
+            this.tsMain.TabStop = true;
             // 
             // tsbClipboardUpload
             // 
@@ -826,7 +827,7 @@
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
             this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(30, 20, 30, 30);
             this.lblDragAndDropTip.Size = new System.Drawing.Size(384, 290);
-            this.lblDragAndDropTip.TabIndex = 2;
+            this.lblDragAndDropTip.TabIndex = 1;
             this.lblDragAndDropTip.Text = "You can drag and drop files to this window";
             this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDragAndDropTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
@@ -863,7 +864,7 @@
             this.lvUploads.Name = "lvUploads";
             this.lvUploads.ShowItemToolTips = true;
             this.lvUploads.Size = new System.Drawing.Size(400, 474);
-            this.lvUploads.TabIndex = 1;
+            this.lvUploads.TabIndex = 2;
             this.lvUploads.UseCompatibleStateImageBehavior = false;
             this.lvUploads.View = System.Windows.Forms.View.Details;
             this.lvUploads.SelectedIndexChanged += new System.EventHandler(this.lvUploads_SelectedIndexChanged);
@@ -917,6 +918,8 @@
             // 
             // pbPreview
             // 
+            this.pbPreview.AccessibleDescription = "";
+            this.pbPreview.AccessibleName = "";
             this.pbPreview.BackColor = System.Drawing.Color.White;
             this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbPreview.DrawCheckeredBackground = true;
@@ -946,7 +949,7 @@
             this.tsmiImagePreview});
             this.cmsUploadInfo.Name = "cmsHistory";
             this.cmsUploadInfo.ShowImageMargin = false;
-            this.cmsUploadInfo.Size = new System.Drawing.Size(151, 302);
+            this.cmsUploadInfo.Size = new System.Drawing.Size(151, 280);
             // 
             // tsmiShowErrors
             // 
@@ -1295,21 +1298,21 @@
             this.tsmiImagePreviewShow.Checked = true;
             this.tsmiImagePreviewShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiImagePreviewShow.Name = "tsmiImagePreviewShow";
-            this.tsmiImagePreviewShow.Size = new System.Drawing.Size(152, 22);
+            this.tsmiImagePreviewShow.Size = new System.Drawing.Size(130, 22);
             this.tsmiImagePreviewShow.Text = "Show";
             this.tsmiImagePreviewShow.Click += new System.EventHandler(this.tsmiImagePreviewShow_Click);
             // 
             // tsmiImagePreviewHide
             // 
             this.tsmiImagePreviewHide.Name = "tsmiImagePreviewHide";
-            this.tsmiImagePreviewHide.Size = new System.Drawing.Size(152, 22);
+            this.tsmiImagePreviewHide.Size = new System.Drawing.Size(130, 22);
             this.tsmiImagePreviewHide.Text = "Hide";
             this.tsmiImagePreviewHide.Click += new System.EventHandler(this.tsmiImagePreviewHide_Click);
             // 
             // tsmiImagePreviewAutomatic
             // 
             this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
-            this.tsmiImagePreviewAutomatic.Size = new System.Drawing.Size(152, 22);
+            this.tsmiImagePreviewAutomatic.Size = new System.Drawing.Size(130, 22);
             this.tsmiImagePreviewAutomatic.Text = "Automatic";
             this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
             // 

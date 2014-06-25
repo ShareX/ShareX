@@ -461,7 +461,7 @@ namespace ShareX
             this.lblProxyHost.Location = new System.Drawing.Point(16, 48);
             this.lblProxyHost.Name = "lblProxyHost";
             this.lblProxyHost.Size = new System.Drawing.Size(32, 13);
-            this.lblProxyHost.TabIndex = 5;
+            this.lblProxyHost.TabIndex = 2;
             this.lblProxyHost.Text = "Host:";
             // 
             // txtProxyHost
@@ -469,7 +469,7 @@ namespace ShareX
             this.txtProxyHost.Location = new System.Drawing.Point(128, 44);
             this.txtProxyHost.Name = "txtProxyHost";
             this.txtProxyHost.Size = new System.Drawing.Size(232, 20);
-            this.txtProxyHost.TabIndex = 6;
+            this.txtProxyHost.TabIndex = 3;
             this.txtProxyHost.TextChanged += new System.EventHandler(this.txtProxyHost_TextChanged);
             // 
             // nudProxyPort
@@ -482,7 +482,7 @@ namespace ShareX
             0});
             this.nudProxyPort.Name = "nudProxyPort";
             this.nudProxyPort.Size = new System.Drawing.Size(64, 20);
-            this.nudProxyPort.TabIndex = 8;
+            this.nudProxyPort.TabIndex = 5;
             this.nudProxyPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudProxyPort.ValueChanged += new System.EventHandler(this.nudProxyPort_ValueChanged);
             // 
@@ -493,7 +493,7 @@ namespace ShareX
             this.lblProxyPort.Name = "lblProxyPort";
             this.lblProxyPort.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblProxyPort.Size = new System.Drawing.Size(26, 13);
-            this.lblProxyPort.TabIndex = 7;
+            this.lblProxyPort.TabIndex = 4;
             this.lblProxyPort.Text = "Port";
             // 
             // lblProxyPassword
@@ -502,7 +502,7 @@ namespace ShareX
             this.lblProxyPassword.Location = new System.Drawing.Point(16, 112);
             this.lblProxyPassword.Name = "lblProxyPassword";
             this.lblProxyPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblProxyPassword.TabIndex = 11;
+            this.lblProxyPassword.TabIndex = 8;
             this.lblProxyPassword.Text = "Password:";
             // 
             // txtProxyPassword
@@ -510,7 +510,7 @@ namespace ShareX
             this.txtProxyPassword.Location = new System.Drawing.Point(128, 108);
             this.txtProxyPassword.Name = "txtProxyPassword";
             this.txtProxyPassword.Size = new System.Drawing.Size(232, 20);
-            this.txtProxyPassword.TabIndex = 12;
+            this.txtProxyPassword.TabIndex = 9;
             this.txtProxyPassword.UseSystemPasswordChar = true;
             this.txtProxyPassword.TextChanged += new System.EventHandler(this.txtProxyPassword_TextChanged);
             // 
@@ -520,7 +520,7 @@ namespace ShareX
             this.lblProxyUsername.Location = new System.Drawing.Point(16, 80);
             this.lblProxyUsername.Name = "lblProxyUsername";
             this.lblProxyUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblProxyUsername.TabIndex = 9;
+            this.lblProxyUsername.TabIndex = 6;
             this.lblProxyUsername.Text = "Username:";
             // 
             // txtProxyUsername
@@ -528,7 +528,7 @@ namespace ShareX
             this.txtProxyUsername.Location = new System.Drawing.Point(128, 76);
             this.txtProxyUsername.Name = "txtProxyUsername";
             this.txtProxyUsername.Size = new System.Drawing.Size(232, 20);
-            this.txtProxyUsername.TabIndex = 10;
+            this.txtProxyUsername.TabIndex = 7;
             this.txtProxyUsername.TextChanged += new System.EventHandler(this.txtProxyUsername_TextChanged);
             // 
             // tpUpload
@@ -657,7 +657,7 @@ namespace ShareX
             this.gbClipboardFormats.Size = new System.Drawing.Size(576, 320);
             this.gbClipboardFormats.TabIndex = 0;
             this.gbClipboardFormats.TabStop = false;
-            this.gbClipboardFormats.Text = "Clipboard Formats";
+            this.gbClipboardFormats.Text = "Clipboard formats";
             // 
             // btnClipboardFormatEdit
             // 
@@ -901,20 +901,20 @@ namespace ShareX
             // cbDontShowPrintSettingDialog
             // 
             this.cbDontShowPrintSettingDialog.AutoSize = true;
-            this.cbDontShowPrintSettingDialog.Location = new System.Drawing.Point(16, 16);
+            this.cbDontShowPrintSettingDialog.Location = new System.Drawing.Point(16, 48);
             this.cbDontShowPrintSettingDialog.Name = "cbDontShowPrintSettingDialog";
             this.cbDontShowPrintSettingDialog.Size = new System.Drawing.Size(203, 17);
-            this.cbDontShowPrintSettingDialog.TabIndex = 0;
+            this.cbDontShowPrintSettingDialog.TabIndex = 1;
             this.cbDontShowPrintSettingDialog.Text = "Don\'t show image print settings dialog";
             this.cbDontShowPrintSettingDialog.UseVisualStyleBackColor = true;
             this.cbDontShowPrintSettingDialog.CheckedChanged += new System.EventHandler(this.cbDontShowPrintSettingDialog_CheckedChanged);
             // 
             // btnShowImagePrintSettings
             // 
-            this.btnShowImagePrintSettings.Location = new System.Drawing.Point(16, 40);
+            this.btnShowImagePrintSettings.Location = new System.Drawing.Point(16, 16);
             this.btnShowImagePrintSettings.Name = "btnShowImagePrintSettings";
             this.btnShowImagePrintSettings.Size = new System.Drawing.Size(144, 23);
-            this.btnShowImagePrintSettings.TabIndex = 1;
+            this.btnShowImagePrintSettings.TabIndex = 0;
             this.btnShowImagePrintSettings.Text = "Image print settings...";
             this.btnShowImagePrintSettings.UseVisualStyleBackColor = true;
             this.btnShowImagePrintSettings.Click += new System.EventHandler(this.btnShowImagePrintSettings_Click);
@@ -952,7 +952,7 @@ namespace ShareX
             this.tpEncodersCLI.Padding = new System.Windows.Forms.Padding(3);
             this.tpEncodersCLI.Size = new System.Drawing.Size(596, 338);
             this.tpEncodersCLI.TabIndex = 0;
-            this.tpEncodersCLI.Text = "CLI Encoders";
+            this.tpEncodersCLI.Text = "CLI encoders";
             this.tpEncodersCLI.UseVisualStyleBackColor = true;
             // 
             // btnEncoderDuplicate
@@ -1069,7 +1069,7 @@ namespace ShareX
             this.Padding = new System.Windows.Forms.Padding(3);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Settings";
+            this.Text = "ShareX - Application settings";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
             this.Shown += new System.EventHandler(this.SettingsForm_Shown);
             this.Resize += new System.EventHandler(this.SettingsForm_Resize);

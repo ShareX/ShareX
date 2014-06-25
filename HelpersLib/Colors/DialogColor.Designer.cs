@@ -86,7 +86,7 @@
             this.btnCancel.Location = new System.Drawing.Point(536, 240);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 24);
-            this.btnCancel.TabIndex = 41;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -96,7 +96,7 @@
             this.btnOK.Location = new System.Drawing.Point(464, 240);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(64, 24);
-            this.btnOK.TabIndex = 40;
+            this.btnOK.TabIndex = 0;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -107,7 +107,7 @@
             this.lblOld.Location = new System.Drawing.Point(312, 240);
             this.lblOld.Name = "lblOld";
             this.lblOld.Size = new System.Drawing.Size(26, 13);
-            this.lblOld.TabIndex = 33;
+            this.lblOld.TabIndex = 37;
             this.lblOld.Text = "Old:";
             // 
             // lblNew
@@ -116,7 +116,7 @@
             this.lblNew.Location = new System.Drawing.Point(312, 216);
             this.lblNew.Name = "lblNew";
             this.lblNew.Size = new System.Drawing.Size(32, 13);
-            this.lblNew.TabIndex = 32;
+            this.lblNew.TabIndex = 36;
             this.lblNew.Text = "New:";
             // 
             // txtHex
@@ -125,7 +125,7 @@
             this.txtHex.MaxLength = 9;
             this.txtHex.Name = "txtHex";
             this.txtHex.Size = new System.Drawing.Size(72, 20);
-            this.txtHex.TabIndex = 27;
+            this.txtHex.TabIndex = 33;
             this.txtHex.Text = "FF00FF00";
             this.txtHex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHex.TextChanged += new System.EventHandler(this.txtHex_TextChanged);
@@ -136,7 +136,7 @@
             this.lblHex.Location = new System.Drawing.Point(472, 177);
             this.lblHex.Name = "lblHex";
             this.lblHex.Size = new System.Drawing.Size(54, 13);
-            this.lblHex.TabIndex = 26;
+            this.lblHex.TabIndex = 32;
             this.lblHex.Text = "Hex:      #";
             // 
             // nudKey
@@ -145,7 +145,7 @@
             this.nudKey.Location = new System.Drawing.Point(528, 141);
             this.nudKey.Name = "nudKey";
             this.nudKey.Size = new System.Drawing.Size(56, 20);
-            this.nudKey.TabIndex = 23;
+            this.nudKey.TabIndex = 30;
             this.nudKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudKey.Value = new decimal(new int[] {
             100,
@@ -160,7 +160,7 @@
             this.nudYellow.Location = new System.Drawing.Point(528, 109);
             this.nudYellow.Name = "nudYellow";
             this.nudYellow.Size = new System.Drawing.Size(56, 20);
-            this.nudYellow.TabIndex = 18;
+            this.nudYellow.TabIndex = 27;
             this.nudYellow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudYellow.Value = new decimal(new int[] {
             100,
@@ -175,7 +175,7 @@
             this.nudMagenta.Location = new System.Drawing.Point(528, 77);
             this.nudMagenta.Name = "nudMagenta";
             this.nudMagenta.Size = new System.Drawing.Size(56, 20);
-            this.nudMagenta.TabIndex = 11;
+            this.nudMagenta.TabIndex = 24;
             this.nudMagenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudMagenta.Value = new decimal(new int[] {
             100,
@@ -190,7 +190,7 @@
             this.nudCyan.Location = new System.Drawing.Point(528, 45);
             this.nudCyan.Name = "nudCyan";
             this.nudCyan.Size = new System.Drawing.Size(56, 20);
-            this.nudCyan.TabIndex = 6;
+            this.nudCyan.TabIndex = 21;
             this.nudCyan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCyan.Value = new decimal(new int[] {
             100,
@@ -205,7 +205,7 @@
             this.lblKey.Location = new System.Drawing.Point(472, 145);
             this.lblKey.Name = "lblKey";
             this.lblKey.Size = new System.Drawing.Size(28, 13);
-            this.lblKey.TabIndex = 22;
+            this.lblKey.TabIndex = 29;
             this.lblKey.Text = "Key:";
             // 
             // lblYellow
@@ -214,7 +214,7 @@
             this.lblYellow.Location = new System.Drawing.Point(472, 113);
             this.lblYellow.Name = "lblYellow";
             this.lblYellow.Size = new System.Drawing.Size(41, 13);
-            this.lblYellow.TabIndex = 17;
+            this.lblYellow.TabIndex = 26;
             this.lblYellow.Text = "Yellow:";
             // 
             // lblMagenta
@@ -223,7 +223,7 @@
             this.lblMagenta.Location = new System.Drawing.Point(472, 81);
             this.lblMagenta.Name = "lblMagenta";
             this.lblMagenta.Size = new System.Drawing.Size(52, 13);
-            this.lblMagenta.TabIndex = 10;
+            this.lblMagenta.TabIndex = 23;
             this.lblMagenta.Text = "Magenta:";
             // 
             // lblCyan
@@ -232,7 +232,7 @@
             this.lblCyan.Location = new System.Drawing.Point(472, 49);
             this.lblCyan.Name = "lblCyan";
             this.lblCyan.Size = new System.Drawing.Size(34, 13);
-            this.lblCyan.TabIndex = 5;
+            this.lblCyan.TabIndex = 20;
             this.lblCyan.Text = "Cyan:";
             // 
             // lblHue
@@ -242,7 +242,7 @@
             this.lblHue.Location = new System.Drawing.Point(444, 17);
             this.lblHue.Name = "lblHue";
             this.lblHue.Size = new System.Drawing.Size(13, 13);
-            this.lblHue.TabIndex = 3;
+            this.lblHue.TabIndex = 5;
             this.lblHue.Text = "°";
             // 
             // lblBrightnessPerc
@@ -252,7 +252,7 @@
             this.lblBrightnessPerc.Location = new System.Drawing.Point(444, 81);
             this.lblBrightnessPerc.Name = "lblBrightnessPerc";
             this.lblBrightnessPerc.Size = new System.Drawing.Size(19, 13);
-            this.lblBrightnessPerc.TabIndex = 15;
+            this.lblBrightnessPerc.TabIndex = 11;
             this.lblBrightnessPerc.Text = "%";
             // 
             // lblSaturationPerc
@@ -262,7 +262,7 @@
             this.lblSaturationPerc.Location = new System.Drawing.Point(444, 49);
             this.lblSaturationPerc.Name = "lblSaturationPerc";
             this.lblSaturationPerc.Size = new System.Drawing.Size(19, 13);
-            this.lblSaturationPerc.TabIndex = 9;
+            this.lblSaturationPerc.TabIndex = 8;
             this.lblSaturationPerc.Text = "%";
             // 
             // nudBlue
@@ -275,7 +275,7 @@
             0});
             this.nudBlue.Name = "nudBlue";
             this.nudBlue.Size = new System.Drawing.Size(48, 20);
-            this.nudBlue.TabIndex = 29;
+            this.nudBlue.TabIndex = 17;
             this.nudBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudBlue.Value = new decimal(new int[] {
             255,
@@ -294,7 +294,7 @@
             0});
             this.nudGreen.Name = "nudGreen";
             this.nudGreen.Size = new System.Drawing.Size(48, 20);
-            this.nudGreen.TabIndex = 25;
+            this.nudGreen.TabIndex = 15;
             this.nudGreen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudGreen.Value = new decimal(new int[] {
             255,
@@ -313,7 +313,7 @@
             0});
             this.nudRed.Name = "nudRed";
             this.nudRed.Size = new System.Drawing.Size(48, 20);
-            this.nudRed.TabIndex = 20;
+            this.nudRed.TabIndex = 13;
             this.nudRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudRed.Value = new decimal(new int[] {
             255,
@@ -327,7 +327,7 @@
             this.nudBrightness.Location = new System.Drawing.Point(392, 77);
             this.nudBrightness.Name = "nudBrightness";
             this.nudBrightness.Size = new System.Drawing.Size(48, 20);
-            this.nudBrightness.TabIndex = 14;
+            this.nudBrightness.TabIndex = 10;
             this.nudBrightness.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudBrightness.Value = new decimal(new int[] {
             100,
@@ -341,7 +341,7 @@
             this.nudSaturation.Location = new System.Drawing.Point(392, 45);
             this.nudSaturation.Name = "nudSaturation";
             this.nudSaturation.Size = new System.Drawing.Size(48, 20);
-            this.nudSaturation.TabIndex = 8;
+            this.nudSaturation.TabIndex = 7;
             this.nudSaturation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudSaturation.Value = new decimal(new int[] {
             100,
@@ -360,7 +360,7 @@
             0});
             this.nudHue.Name = "nudHue";
             this.nudHue.Size = new System.Drawing.Size(48, 20);
-            this.nudHue.TabIndex = 2;
+            this.nudHue.TabIndex = 4;
             this.nudHue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudHue.Value = new decimal(new int[] {
             360,
@@ -374,7 +374,7 @@
             this.rbBlue.Location = new System.Drawing.Point(312, 173);
             this.rbBlue.Name = "rbBlue";
             this.rbBlue.Size = new System.Drawing.Size(77, 20);
-            this.rbBlue.TabIndex = 28;
+            this.rbBlue.TabIndex = 16;
             this.rbBlue.Text = "Blue:";
             this.rbBlue.UseVisualStyleBackColor = true;
             this.rbBlue.CheckedChanged += new System.EventHandler(this.rbBlue_CheckedChanged);
@@ -384,7 +384,7 @@
             this.rbGreen.Location = new System.Drawing.Point(312, 141);
             this.rbGreen.Name = "rbGreen";
             this.rbGreen.Size = new System.Drawing.Size(77, 20);
-            this.rbGreen.TabIndex = 24;
+            this.rbGreen.TabIndex = 14;
             this.rbGreen.Text = "Green:";
             this.rbGreen.UseVisualStyleBackColor = true;
             this.rbGreen.CheckedChanged += new System.EventHandler(this.rbGreen_CheckedChanged);
@@ -394,7 +394,7 @@
             this.rbRed.Location = new System.Drawing.Point(312, 109);
             this.rbRed.Name = "rbRed";
             this.rbRed.Size = new System.Drawing.Size(77, 20);
-            this.rbRed.TabIndex = 19;
+            this.rbRed.TabIndex = 12;
             this.rbRed.Text = "Red:";
             this.rbRed.UseVisualStyleBackColor = true;
             this.rbRed.CheckedChanged += new System.EventHandler(this.rbRed_CheckedChanged);
@@ -404,7 +404,7 @@
             this.rbBrightness.Location = new System.Drawing.Point(312, 77);
             this.rbBrightness.Name = "rbBrightness";
             this.rbBrightness.Size = new System.Drawing.Size(77, 20);
-            this.rbBrightness.TabIndex = 13;
+            this.rbBrightness.TabIndex = 9;
             this.rbBrightness.Text = "Brightness:";
             this.rbBrightness.UseVisualStyleBackColor = true;
             this.rbBrightness.CheckedChanged += new System.EventHandler(this.rbBrightness_CheckedChanged);
@@ -414,7 +414,7 @@
             this.rbSaturation.Location = new System.Drawing.Point(312, 45);
             this.rbSaturation.Name = "rbSaturation";
             this.rbSaturation.Size = new System.Drawing.Size(77, 20);
-            this.rbSaturation.TabIndex = 7;
+            this.rbSaturation.TabIndex = 6;
             this.rbSaturation.Text = "Saturation:";
             this.rbSaturation.UseVisualStyleBackColor = true;
             this.rbSaturation.CheckedChanged += new System.EventHandler(this.rbSaturation_CheckedChanged);
@@ -425,7 +425,7 @@
             this.rbHue.Location = new System.Drawing.Point(312, 13);
             this.rbHue.Name = "rbHue";
             this.rbHue.Size = new System.Drawing.Size(77, 20);
-            this.rbHue.TabIndex = 1;
+            this.rbHue.TabIndex = 3;
             this.rbHue.TabStop = true;
             this.rbHue.Text = "Hue:";
             this.rbHue.UseVisualStyleBackColor = true;
@@ -437,7 +437,7 @@
             this.lblDecimal.Location = new System.Drawing.Point(472, 208);
             this.lblDecimal.Name = "lblDecimal";
             this.lblDecimal.Size = new System.Drawing.Size(48, 13);
-            this.lblDecimal.TabIndex = 30;
+            this.lblDecimal.TabIndex = 34;
             this.lblDecimal.Text = "Decimal:";
             // 
             // txtDecimal
@@ -445,7 +445,7 @@
             this.txtDecimal.Location = new System.Drawing.Point(528, 204);
             this.txtDecimal.Name = "txtDecimal";
             this.txtDecimal.Size = new System.Drawing.Size(72, 20);
-            this.txtDecimal.TabIndex = 31;
+            this.txtDecimal.TabIndex = 35;
             this.txtDecimal.Text = "12345678";
             this.txtDecimal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDecimal.TextChanged += new System.EventHandler(this.txtDecimal_TextChanged);
@@ -457,7 +457,7 @@
             this.lblCyanPerc.Location = new System.Drawing.Point(586, 49);
             this.lblCyanPerc.Name = "lblCyanPerc";
             this.lblCyanPerc.Size = new System.Drawing.Size(19, 13);
-            this.lblCyanPerc.TabIndex = 4;
+            this.lblCyanPerc.TabIndex = 22;
             this.lblCyanPerc.Text = "%";
             // 
             // lblMagentaPerc
@@ -467,7 +467,7 @@
             this.lblMagentaPerc.Location = new System.Drawing.Point(586, 81);
             this.lblMagentaPerc.Name = "lblMagentaPerc";
             this.lblMagentaPerc.Size = new System.Drawing.Size(19, 13);
-            this.lblMagentaPerc.TabIndex = 12;
+            this.lblMagentaPerc.TabIndex = 25;
             this.lblMagentaPerc.Text = "%";
             // 
             // lblYellowPerc
@@ -477,7 +477,7 @@
             this.lblYellowPerc.Location = new System.Drawing.Point(586, 113);
             this.lblYellowPerc.Name = "lblYellowPerc";
             this.lblYellowPerc.Size = new System.Drawing.Size(19, 13);
-            this.lblYellowPerc.TabIndex = 16;
+            this.lblYellowPerc.TabIndex = 28;
             this.lblYellowPerc.Text = "%";
             // 
             // lblKeyPerc
@@ -487,7 +487,7 @@
             this.lblKeyPerc.Location = new System.Drawing.Point(586, 145);
             this.lblKeyPerc.Name = "lblKeyPerc";
             this.lblKeyPerc.Size = new System.Drawing.Size(19, 13);
-            this.lblKeyPerc.TabIndex = 21;
+            this.lblKeyPerc.TabIndex = 31;
             this.lblKeyPerc.Text = "%";
             // 
             // nudAlpha
@@ -500,7 +500,7 @@
             0});
             this.nudAlpha.Name = "nudAlpha";
             this.nudAlpha.Size = new System.Drawing.Size(48, 20);
-            this.nudAlpha.TabIndex = 43;
+            this.nudAlpha.TabIndex = 19;
             this.nudAlpha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudAlpha.Value = new decimal(new int[] {
             255,
@@ -515,7 +515,7 @@
             this.lblAlpha.Location = new System.Drawing.Point(472, 17);
             this.lblAlpha.Name = "lblAlpha";
             this.lblAlpha.Size = new System.Drawing.Size(37, 13);
-            this.lblAlpha.TabIndex = 44;
+            this.lblAlpha.TabIndex = 18;
             this.lblAlpha.Text = "Alpha:";
             // 
             // pbColorPreview
@@ -526,7 +526,7 @@
             this.pbColorPreview.Location = new System.Drawing.Point(360, 208);
             this.pbColorPreview.Name = "pbColorPreview";
             this.pbColorPreview.Size = new System.Drawing.Size(80, 56);
-            this.pbColorPreview.TabIndex = 49;
+            this.pbColorPreview.TabIndex = 38;
             this.pbColorPreview.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbColorPreview_MouseClick);
             // 
             // colorPicker
@@ -535,8 +535,8 @@
             this.colorPicker.DrawStyle = HelpersLib.DrawStyle.Hue;
             this.colorPicker.Location = new System.Drawing.Point(8, 8);
             this.colorPicker.Name = "colorPicker";
-            this.colorPicker.Size = new System.Drawing.Size(290, 261);
-            this.colorPicker.TabIndex = 0;
+            this.colorPicker.Size = new System.Drawing.Size(292, 261);
+            this.colorPicker.TabIndex = 2;
             this.colorPicker.ColorChanged += new HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
             // 
             // DialogColor

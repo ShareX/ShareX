@@ -78,7 +78,7 @@
             this.btnTest.Location = new System.Drawing.Point(224, 8);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(64, 24);
-            this.btnTest.TabIndex = 2;
+            this.btnTest.TabIndex = 3;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
             // 
@@ -114,7 +114,7 @@
             this.btnDuplicate.Location = new System.Drawing.Point(152, 8);
             this.btnDuplicate.Name = "btnDuplicate";
             this.btnDuplicate.Size = new System.Drawing.Size(64, 24);
-            this.btnDuplicate.TabIndex = 3;
+            this.btnDuplicate.TabIndex = 2;
             this.btnDuplicate.Text = "Duplicate";
             this.btnDuplicate.UseVisualStyleBackColor = true;
             // 

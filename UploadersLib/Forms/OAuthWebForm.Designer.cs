@@ -31,8 +31,8 @@
             this.wbMain = new System.Windows.Forms.WebBrowser();
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.tsMain = new System.Windows.Forms.ToolStrip();
-            this.tstbURL = new System.Windows.Forms.ToolStripTextBox();
             this.tslURL = new System.Windows.Forms.ToolStripLabel();
+            this.tstbURL = new System.Windows.Forms.ToolStripTextBox();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -70,6 +70,7 @@
             // 
             // tsMain
             // 
+            this.tsMain.Dock = System.Windows.Forms.DockStyle.None;
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslURL,
@@ -82,17 +83,17 @@
             this.tsMain.Stretch = true;
             this.tsMain.TabIndex = 0;
             // 
-            // tstbURL
-            // 
-            this.tstbURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tstbURL.Name = "tstbURL";
-            this.tstbURL.Size = new System.Drawing.Size(800, 23);
-            // 
             // tslURL
             // 
             this.tslURL.Name = "tslURL";
             this.tslURL.Size = new System.Drawing.Size(31, 20);
             this.tslURL.Text = "URL:";
+            // 
+            // tstbURL
+            // 
+            this.tstbURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tstbURL.Name = "tstbURL";
+            this.tstbURL.Size = new System.Drawing.Size(800, 23);
             // 
             // OAuthWebForm
             // 

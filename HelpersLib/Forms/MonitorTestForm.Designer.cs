@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pSettings = new System.Windows.Forms.Panel();
+            this.btnGradientColor2 = new HelpersLib.ColorButton();
+            this.btnGradientColor1 = new HelpersLib.ColorButton();
             this.lblTip = new System.Windows.Forms.Label();
             this.cbGradient = new System.Windows.Forms.ComboBox();
             this.rbGradient = new System.Windows.Forms.RadioButton();
@@ -52,8 +54,6 @@
             this.lblBlackWhiteValue = new System.Windows.Forms.Label();
             this.tbBlackWhite = new System.Windows.Forms.TrackBar();
             this.rbBlackWhite = new System.Windows.Forms.RadioButton();
-            this.btnGradientColor2 = new HelpersLib.ColorButton();
-            this.btnGradientColor1 = new HelpersLib.ColorButton();
             this.pSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbShapeSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).BeginInit();
@@ -96,6 +96,30 @@
             this.pSettings.Size = new System.Drawing.Size(320, 396);
             this.pSettings.TabIndex = 0;
             // 
+            // btnGradientColor2
+            // 
+            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
+            this.btnGradientColor2.Location = new System.Drawing.Point(120, 256);
+            this.btnGradientColor2.Name = "btnGradientColor2";
+            this.btnGradientColor2.Size = new System.Drawing.Size(96, 24);
+            this.btnGradientColor2.TabIndex = 18;
+            this.btnGradientColor2.Text = "Color 2";
+            this.btnGradientColor2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGradientColor2.UseVisualStyleBackColor = true;
+            this.btnGradientColor2.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
+            // 
+            // btnGradientColor1
+            // 
+            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
+            this.btnGradientColor1.Location = new System.Drawing.Point(16, 256);
+            this.btnGradientColor1.Name = "btnGradientColor1";
+            this.btnGradientColor1.Size = new System.Drawing.Size(96, 24);
+            this.btnGradientColor1.TabIndex = 17;
+            this.btnGradientColor1.Text = "Color 1";
+            this.btnGradientColor1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGradientColor1.UseVisualStyleBackColor = true;
+            this.btnGradientColor1.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
+            // 
             // lblTip
             // 
             this.lblTip.AutoSize = true;
@@ -103,7 +127,7 @@
             this.lblTip.Location = new System.Drawing.Point(16, 368);
             this.lblTip.Name = "lblTip";
             this.lblTip.Size = new System.Drawing.Size(279, 16);
-            this.lblTip.TabIndex = 23;
+            this.lblTip.TabIndex = 24;
             this.lblTip.Text = "You can click outside for hide/show this panel.";
             // 
             // cbGradient
@@ -113,7 +137,7 @@
             this.cbGradient.Location = new System.Drawing.Point(88, 222);
             this.cbGradient.Name = "cbGradient";
             this.cbGradient.Size = new System.Drawing.Size(216, 21);
-            this.cbGradient.TabIndex = 22;
+            this.cbGradient.TabIndex = 16;
             this.cbGradient.SelectedIndexChanged += new System.EventHandler(this.cbGradient_SelectedIndexChanged);
             // 
             // rbGradient
@@ -122,7 +146,7 @@
             this.rbGradient.Location = new System.Drawing.Point(16, 224);
             this.rbGradient.Name = "rbGradient";
             this.rbGradient.Size = new System.Drawing.Size(68, 17);
-            this.rbGradient.TabIndex = 21;
+            this.rbGradient.TabIndex = 15;
             this.rbGradient.Text = "Gradient:";
             this.rbGradient.UseVisualStyleBackColor = true;
             this.rbGradient.CheckedChanged += new System.EventHandler(this.rbGradient_CheckedChanged);
@@ -132,7 +156,7 @@
             this.btnClose.Location = new System.Drawing.Point(208, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 23);
-            this.btnClose.TabIndex = 20;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -143,7 +167,7 @@
             this.lblShapeSize.Location = new System.Drawing.Point(16, 334);
             this.lblShapeSize.Name = "lblShapeSize";
             this.lblShapeSize.Size = new System.Drawing.Size(30, 13);
-            this.lblShapeSize.TabIndex = 19;
+            this.lblShapeSize.TabIndex = 21;
             this.lblShapeSize.Text = "Size:";
             // 
             // lblShapeSizeValue
@@ -153,7 +177,7 @@
             this.lblShapeSizeValue.Location = new System.Drawing.Point(280, 332);
             this.lblShapeSizeValue.Name = "lblShapeSizeValue";
             this.lblShapeSizeValue.Size = new System.Drawing.Size(15, 16);
-            this.lblShapeSizeValue.TabIndex = 18;
+            this.lblShapeSizeValue.TabIndex = 23;
             this.lblShapeSizeValue.Text = "1";
             // 
             // tbShapeSize
@@ -164,7 +188,7 @@
             this.tbShapeSize.Minimum = 1;
             this.tbShapeSize.Name = "tbShapeSize";
             this.tbShapeSize.Size = new System.Drawing.Size(232, 24);
-            this.tbShapeSize.TabIndex = 17;
+            this.tbShapeSize.TabIndex = 22;
             this.tbShapeSize.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbShapeSize.Value = 1;
             this.tbShapeSize.ValueChanged += new System.EventHandler(this.tbShapeSize_ValueChanged);
@@ -174,7 +198,7 @@
             this.btnColorDialog.Location = new System.Drawing.Point(208, 88);
             this.btnColorDialog.Name = "btnColorDialog";
             this.btnColorDialog.Size = new System.Drawing.Size(96, 23);
-            this.btnColorDialog.TabIndex = 16;
+            this.btnColorDialog.TabIndex = 5;
             this.btnColorDialog.Text = "Color dialog...";
             this.btnColorDialog.UseVisualStyleBackColor = true;
             this.btnColorDialog.Click += new System.EventHandler(this.btnColorDialog_Click);
@@ -190,7 +214,7 @@
             this.cbShapes.Location = new System.Drawing.Point(88, 294);
             this.cbShapes.Name = "cbShapes";
             this.cbShapes.Size = new System.Drawing.Size(216, 21);
-            this.cbShapes.TabIndex = 15;
+            this.cbShapes.TabIndex = 20;
             this.cbShapes.SelectedIndexChanged += new System.EventHandler(this.cbShapes_SelectedIndexChanged);
             // 
             // rbShapes
@@ -199,7 +223,7 @@
             this.rbShapes.Location = new System.Drawing.Point(16, 296);
             this.rbShapes.Name = "rbShapes";
             this.rbShapes.Size = new System.Drawing.Size(59, 17);
-            this.rbShapes.TabIndex = 14;
+            this.rbShapes.TabIndex = 19;
             this.rbShapes.Text = "Shape:";
             this.rbShapes.UseVisualStyleBackColor = true;
             this.rbShapes.CheckedChanged += new System.EventHandler(this.rbShapes_CheckedChanged);
@@ -210,7 +234,7 @@
             this.lblBlue.Location = new System.Drawing.Point(16, 190);
             this.lblBlue.Name = "lblBlue";
             this.lblBlue.Size = new System.Drawing.Size(17, 13);
-            this.lblBlue.TabIndex = 13;
+            this.lblBlue.TabIndex = 12;
             this.lblBlue.Text = "B:";
             // 
             // lblBlueValue
@@ -220,7 +244,7 @@
             this.lblBlueValue.Location = new System.Drawing.Point(280, 188);
             this.lblBlueValue.Name = "lblBlueValue";
             this.lblBlueValue.Size = new System.Drawing.Size(15, 16);
-            this.lblBlueValue.TabIndex = 12;
+            this.lblBlueValue.TabIndex = 14;
             this.lblBlueValue.Text = "0";
             // 
             // tbBlue
@@ -230,7 +254,7 @@
             this.tbBlue.Maximum = 255;
             this.tbBlue.Name = "tbBlue";
             this.tbBlue.Size = new System.Drawing.Size(240, 24);
-            this.tbBlue.TabIndex = 11;
+            this.tbBlue.TabIndex = 13;
             this.tbBlue.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbBlue.ValueChanged += new System.EventHandler(this.tbRedGreenBlue_ValueChanged);
             // 
@@ -240,7 +264,7 @@
             this.lblGreen.Location = new System.Drawing.Point(16, 158);
             this.lblGreen.Name = "lblGreen";
             this.lblGreen.Size = new System.Drawing.Size(18, 13);
-            this.lblGreen.TabIndex = 10;
+            this.lblGreen.TabIndex = 9;
             this.lblGreen.Text = "G:";
             // 
             // lblGreenValue
@@ -250,7 +274,7 @@
             this.lblGreenValue.Location = new System.Drawing.Point(280, 156);
             this.lblGreenValue.Name = "lblGreenValue";
             this.lblGreenValue.Size = new System.Drawing.Size(15, 16);
-            this.lblGreenValue.TabIndex = 9;
+            this.lblGreenValue.TabIndex = 11;
             this.lblGreenValue.Text = "0";
             // 
             // tbGreen
@@ -260,7 +284,7 @@
             this.tbGreen.Maximum = 255;
             this.tbGreen.Name = "tbGreen";
             this.tbGreen.Size = new System.Drawing.Size(240, 24);
-            this.tbGreen.TabIndex = 8;
+            this.tbGreen.TabIndex = 10;
             this.tbGreen.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbGreen.ValueChanged += new System.EventHandler(this.tbRedGreenBlue_ValueChanged);
             // 
@@ -270,7 +294,7 @@
             this.lblRed.Location = new System.Drawing.Point(16, 126);
             this.lblRed.Name = "lblRed";
             this.lblRed.Size = new System.Drawing.Size(18, 13);
-            this.lblRed.TabIndex = 7;
+            this.lblRed.TabIndex = 6;
             this.lblRed.Text = "R:";
             // 
             // lblRedValue
@@ -280,7 +304,7 @@
             this.lblRedValue.Location = new System.Drawing.Point(280, 124);
             this.lblRedValue.Name = "lblRedValue";
             this.lblRedValue.Size = new System.Drawing.Size(15, 16);
-            this.lblRedValue.TabIndex = 6;
+            this.lblRedValue.TabIndex = 8;
             this.lblRedValue.Text = "0";
             // 
             // tbRed
@@ -290,7 +314,7 @@
             this.tbRed.Maximum = 255;
             this.tbRed.Name = "tbRed";
             this.tbRed.Size = new System.Drawing.Size(240, 24);
-            this.tbRed.TabIndex = 5;
+            this.tbRed.TabIndex = 7;
             this.tbRed.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbRed.ValueChanged += new System.EventHandler(this.tbRedGreenBlue_ValueChanged);
             // 
@@ -332,34 +356,10 @@
             this.rbBlackWhite.Location = new System.Drawing.Point(16, 16);
             this.rbBlackWhite.Name = "rbBlackWhite";
             this.rbBlackWhite.Size = new System.Drawing.Size(89, 17);
-            this.rbBlackWhite.TabIndex = 1;
+            this.rbBlackWhite.TabIndex = 0;
             this.rbBlackWhite.Text = "Black, White:";
             this.rbBlackWhite.UseVisualStyleBackColor = true;
             this.rbBlackWhite.CheckedChanged += new System.EventHandler(this.rbBlackWhite_CheckedChanged);
-            // 
-            // btnGradientColor2
-            // 
-            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
-            this.btnGradientColor2.Location = new System.Drawing.Point(120, 256);
-            this.btnGradientColor2.Name = "btnGradientColor2";
-            this.btnGradientColor2.Size = new System.Drawing.Size(96, 24);
-            this.btnGradientColor2.TabIndex = 25;
-            this.btnGradientColor2.Text = "Color 2";
-            this.btnGradientColor2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGradientColor2.UseVisualStyleBackColor = true;
-            this.btnGradientColor2.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
-            // 
-            // btnGradientColor1
-            // 
-            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
-            this.btnGradientColor1.Location = new System.Drawing.Point(16, 256);
-            this.btnGradientColor1.Name = "btnGradientColor1";
-            this.btnGradientColor1.Size = new System.Drawing.Size(96, 24);
-            this.btnGradientColor1.TabIndex = 24;
-            this.btnGradientColor1.Text = "Color 1";
-            this.btnGradientColor1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGradientColor1.UseVisualStyleBackColor = true;
-            this.btnGradientColor1.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
             // 
             // MonitorTestForm
             // 

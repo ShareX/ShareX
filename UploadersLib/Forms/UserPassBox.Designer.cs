@@ -76,7 +76,7 @@
             this.txtPassword.Location = new System.Drawing.Point(80, 88);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(208, 20);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 7;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label1
@@ -94,7 +94,7 @@
             this.label2.Location = new System.Drawing.Point(16, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Password:";
             // 
             // label3

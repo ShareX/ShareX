@@ -220,7 +220,7 @@
             this.cbUseDefaultAfterCaptureSettings.Location = new System.Drawing.Point(8, 70);
             this.cbUseDefaultAfterCaptureSettings.Name = "cbUseDefaultAfterCaptureSettings";
             this.cbUseDefaultAfterCaptureSettings.Size = new System.Drawing.Size(193, 17);
-            this.cbUseDefaultAfterCaptureSettings.TabIndex = 3;
+            this.cbUseDefaultAfterCaptureSettings.TabIndex = 4;
             this.cbUseDefaultAfterCaptureSettings.Text = "Use default \"After capture\" settings";
             this.cbUseDefaultAfterCaptureSettings.UseVisualStyleBackColor = true;
             this.cbUseDefaultAfterCaptureSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterCaptureSettings_CheckedChanged);
@@ -231,7 +231,7 @@
             this.cbUseDefaultAfterUploadSettings.Location = new System.Drawing.Point(8, 126);
             this.cbUseDefaultAfterUploadSettings.Name = "cbUseDefaultAfterUploadSettings";
             this.cbUseDefaultAfterUploadSettings.Size = new System.Drawing.Size(189, 17);
-            this.cbUseDefaultAfterUploadSettings.TabIndex = 5;
+            this.cbUseDefaultAfterUploadSettings.TabIndex = 6;
             this.cbUseDefaultAfterUploadSettings.Text = "Use default \"After upload\" settings";
             this.cbUseDefaultAfterUploadSettings.UseVisualStyleBackColor = true;
             this.cbUseDefaultAfterUploadSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAfterUploadSettings_CheckedChanged);
@@ -242,7 +242,7 @@
             this.cbUseDefaultDestinationSettings.Location = new System.Drawing.Point(8, 182);
             this.cbUseDefaultDestinationSettings.Name = "cbUseDefaultDestinationSettings";
             this.cbUseDefaultDestinationSettings.Size = new System.Drawing.Size(185, 17);
-            this.cbUseDefaultDestinationSettings.TabIndex = 7;
+            this.cbUseDefaultDestinationSettings.TabIndex = 8;
             this.cbUseDefaultDestinationSettings.Text = "Use default \"Destination\" settings";
             this.cbUseDefaultDestinationSettings.UseVisualStyleBackColor = true;
             this.cbUseDefaultDestinationSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultDestinationSettings_CheckedChanged);
@@ -314,7 +314,7 @@
             this.btnDescriptionAutoFill.Location = new System.Drawing.Point(448, 7);
             this.btnDescriptionAutoFill.Name = "btnDescriptionAutoFill";
             this.btnDescriptionAutoFill.Size = new System.Drawing.Size(64, 24);
-            this.btnDescriptionAutoFill.TabIndex = 11;
+            this.btnDescriptionAutoFill.TabIndex = 2;
             this.btnDescriptionAutoFill.Text = "Auto fill";
             this.btnDescriptionAutoFill.UseVisualStyleBackColor = true;
             this.btnDescriptionAutoFill.Click += new System.EventHandler(this.btnDescriptionAutoFill_Click);
@@ -325,7 +325,7 @@
             this.chkOverrideFTP.Location = new System.Drawing.Point(8, 240);
             this.chkOverrideFTP.Name = "chkOverrideFTP";
             this.chkOverrideFTP.Size = new System.Drawing.Size(169, 17);
-            this.chkOverrideFTP.TabIndex = 9;
+            this.chkOverrideFTP.TabIndex = 10;
             this.chkOverrideFTP.Text = "Override default FTP account:";
             this.chkOverrideFTP.UseVisualStyleBackColor = true;
             this.chkOverrideFTP.CheckedChanged += new System.EventHandler(this.chkOverrideFTP_CheckedChanged);
@@ -338,7 +338,7 @@
             this.cboFTPaccounts.Location = new System.Drawing.Point(181, 238);
             this.cboFTPaccounts.Name = "cboFTPaccounts";
             this.cboFTPaccounts.Size = new System.Drawing.Size(330, 21);
-            this.cboFTPaccounts.TabIndex = 10;
+            this.cboFTPaccounts.TabIndex = 11;
             this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
             // 
             // btnAfterCapture
@@ -347,7 +347,7 @@
             this.btnAfterCapture.Menu = this.cmsAfterCapture;
             this.btnAfterCapture.Name = "btnAfterCapture";
             this.btnAfterCapture.Size = new System.Drawing.Size(506, 23);
-            this.btnAfterCapture.TabIndex = 4;
+            this.btnAfterCapture.TabIndex = 5;
             this.btnAfterCapture.Text = "After capture...";
             this.btnAfterCapture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAfterCapture.UseMnemonic = false;
@@ -359,7 +359,7 @@
             this.btnAfterUpload.Menu = this.cmsAfterUpload;
             this.btnAfterUpload.Name = "btnAfterUpload";
             this.btnAfterUpload.Size = new System.Drawing.Size(506, 23);
-            this.btnAfterUpload.TabIndex = 6;
+            this.btnAfterUpload.TabIndex = 7;
             this.btnAfterUpload.Text = "After upload...";
             this.btnAfterUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAfterUpload.UseMnemonic = false;
@@ -371,7 +371,7 @@
             this.btnDestinations.Menu = this.cmsDestinations;
             this.btnDestinations.Name = "btnDestinations";
             this.btnDestinations.Size = new System.Drawing.Size(506, 23);
-            this.btnDestinations.TabIndex = 8;
+            this.btnDestinations.TabIndex = 9;
             this.btnDestinations.Text = "Destinations...";
             this.btnDestinations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDestinations.UseMnemonic = false;
@@ -429,7 +429,7 @@
             this.btnTask.Menu = this.cmsTask;
             this.btnTask.Name = "btnTask";
             this.btnTask.Size = new System.Drawing.Size(506, 23);
-            this.btnTask.TabIndex = 2;
+            this.btnTask.TabIndex = 3;
             this.btnTask.Text = "Task...";
             this.btnTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTask.UseMnemonic = false;
@@ -1165,7 +1165,7 @@
             this.lblScreenRecorderFixedDuration.Location = new System.Drawing.Point(211, 115);
             this.lblScreenRecorderFixedDuration.Name = "lblScreenRecorderFixedDuration";
             this.lblScreenRecorderFixedDuration.Size = new System.Drawing.Size(47, 13);
-            this.lblScreenRecorderFixedDuration.TabIndex = 15;
+            this.lblScreenRecorderFixedDuration.TabIndex = 12;
             this.lblScreenRecorderFixedDuration.Text = "seconds";
             // 
             // nudScreenRecordFPS
@@ -1183,7 +1183,7 @@
             0});
             this.nudScreenRecordFPS.Name = "nudScreenRecordFPS";
             this.nudScreenRecordFPS.Size = new System.Drawing.Size(64, 20);
-            this.nudScreenRecordFPS.TabIndex = 8;
+            this.nudScreenRecordFPS.TabIndex = 7;
             this.nudScreenRecordFPS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScreenRecordFPS.Value = new decimal(new int[] {
             20,
@@ -1198,7 +1198,7 @@
             this.lblScreenRecordFPS.Location = new System.Drawing.Point(16, 68);
             this.lblScreenRecordFPS.Name = "lblScreenRecordFPS";
             this.lblScreenRecordFPS.Size = new System.Drawing.Size(100, 13);
-            this.lblScreenRecordFPS.TabIndex = 7;
+            this.lblScreenRecordFPS.TabIndex = 6;
             this.lblScreenRecordFPS.Text = "Screen record FPS:";
             // 
             // chkRunScreencastCLI
@@ -1227,7 +1227,7 @@
             this.btnEncoderConfig.Location = new System.Drawing.Point(402, 39);
             this.btnEncoderConfig.Name = "btnEncoderConfig";
             this.btnEncoderConfig.Size = new System.Drawing.Size(70, 23);
-            this.btnEncoderConfig.TabIndex = 6;
+            this.btnEncoderConfig.TabIndex = 5;
             this.btnEncoderConfig.Text = "Profiles...";
             this.btnEncoderConfig.UseVisualStyleBackColor = true;
             this.btnEncoderConfig.Click += new System.EventHandler(this.btnEncoderConfig_Click);
@@ -1239,7 +1239,7 @@
             this.cboEncoder.Location = new System.Drawing.Point(144, 40);
             this.cboEncoder.Name = "cboEncoder";
             this.cboEncoder.Size = new System.Drawing.Size(256, 21);
-            this.cboEncoder.TabIndex = 5;
+            this.cboEncoder.TabIndex = 4;
             this.cboEncoder.SelectedIndexChanged += new System.EventHandler(this.cboEncoder_SelectedIndexChanged);
             // 
             // nudScreenRecorderDuration
@@ -1263,7 +1263,7 @@
             0});
             this.nudScreenRecorderDuration.Name = "nudScreenRecorderDuration";
             this.nudScreenRecorderDuration.Size = new System.Drawing.Size(64, 20);
-            this.nudScreenRecorderDuration.TabIndex = 12;
+            this.nudScreenRecorderDuration.TabIndex = 11;
             this.nudScreenRecorderDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScreenRecorderDuration.Value = new decimal(new int[] {
             3,
@@ -1331,7 +1331,7 @@
             this.cbScreenRecorderFixedDuration.Location = new System.Drawing.Point(18, 114);
             this.cbScreenRecorderFixedDuration.Name = "cbScreenRecorderFixedDuration";
             this.cbScreenRecorderFixedDuration.Size = new System.Drawing.Size(95, 17);
-            this.cbScreenRecorderFixedDuration.TabIndex = 11;
+            this.cbScreenRecorderFixedDuration.TabIndex = 10;
             this.cbScreenRecorderFixedDuration.Text = "Fixed duration:";
             this.cbScreenRecorderFixedDuration.UseVisualStyleBackColor = true;
             this.cbScreenRecorderFixedDuration.CheckedChanged += new System.EventHandler(this.cbScreenRecorderFixedDuration_CheckedChanged);
@@ -1351,7 +1351,7 @@
             0});
             this.nudGIFFPS.Name = "nudGIFFPS";
             this.nudGIFFPS.Size = new System.Drawing.Size(64, 20);
-            this.nudGIFFPS.TabIndex = 10;
+            this.nudGIFFPS.TabIndex = 9;
             this.nudGIFFPS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudGIFFPS.Value = new decimal(new int[] {
             5,
@@ -1366,7 +1366,7 @@
             this.lblGIFPS.Location = new System.Drawing.Point(16, 92);
             this.lblGIFPS.Name = "lblGIFPS";
             this.lblGIFPS.Size = new System.Drawing.Size(50, 13);
-            this.lblGIFPS.TabIndex = 9;
+            this.lblGIFPS.TabIndex = 8;
             this.lblGIFPS.Text = "GIF FPS:";
             // 
             // chkUseDefaultCaptureSettings

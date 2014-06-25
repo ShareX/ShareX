@@ -85,7 +85,7 @@
             this.btnExecute.Location = new System.Drawing.Point(192, 104);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(112, 40);
-            this.btnExecute.TabIndex = 7;
+            this.btnExecute.TabIndex = 8;
             this.btnExecute.Text = "Start";
             this.btnExecute.UseVisualStyleBackColor = true;
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
@@ -96,7 +96,7 @@
             this.cbWaitUploads.Location = new System.Drawing.Point(16, 128);
             this.cbWaitUploads.Name = "cbWaitUploads";
             this.cbWaitUploads.Size = new System.Drawing.Size(144, 17);
-            this.cbWaitUploads.TabIndex = 8;
+            this.cbWaitUploads.TabIndex = 7;
             this.cbWaitUploads.Text = "Wait until tasks complete";
             this.cbWaitUploads.UseVisualStyleBackColor = true;
             this.cbWaitUploads.CheckedChanged += new System.EventHandler(this.cbWaitUploads_CheckedChanged);
