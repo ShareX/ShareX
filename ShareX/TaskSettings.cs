@@ -347,12 +347,15 @@ namespace ShareX
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
 
-        [Category("After upload"), DefaultValue(""),
+        [Category("After upload"), DefaultValue("$result"),
         Description("Clipboard content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string ClipboardContentFormat { get; set; }
 
-        [Category("After upload"), DefaultValue(""), Description("Balloon tip content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
+        [Category("After upload"), DefaultValue("$result"), Description("Balloon tip content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string BalloonTipContentFormat { get; set; }
+
+        [Category("After upload"), DefaultValue("$result"), Description("After upload task \"Open URL\" format. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
+        public string OpenURLFormat { get; set; }
 
         [Category("After upload / Automatic URL Shortener"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
         public int AutoShortenURLLength { get; set; }

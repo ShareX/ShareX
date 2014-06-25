@@ -621,7 +621,18 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.OpenURL))
                 {
-                    Helpers.OpenURL(Info.Result.ToString());
+                    string result;
+
+                    if (!string.IsNullOrEmpty(Info.TaskSettings.AdvancedSettings.OpenURLFormat))
+                    {
+                        result = new UploadInfoParser().Parse(Info, Info.TaskSettings.AdvancedSettings.OpenURLFormat);
+                    }
+                    else
+                    {
+                        result = Info.Result.ToString();
+                    }
+
+                    Helpers.OpenURL(result);
                 }
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowQRCode))
