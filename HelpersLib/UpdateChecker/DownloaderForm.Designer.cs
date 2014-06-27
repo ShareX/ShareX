@@ -30,12 +30,12 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtChangelog = new System.Windows.Forms.TextBox();
-            this.lblProgress = new HelpersLib.MyLabel();
-            this.cbShowChangelog = new HelpersLib.MyCheckBox();
-            this.lblStatus = new HelpersLib.MyLabel();
-            this.lblFilename = new HelpersLib.MyLabel();
-            this.btnAction = new HelpersLib.MyButton();
-            this.pbProgress = new HelpersLib.MyProgressBar();
+            this.lblProgress = new HelpersLib.BlackStyleLabel();
+            this.cbShowChangelog = new HelpersLib.BlackStyleCheckBox();
+            this.lblStatus = new HelpersLib.BlackStyleLabel();
+            this.lblFilename = new HelpersLib.BlackStyleLabel();
+            this.btnAction = new HelpersLib.BlackStyleButton();
+            this.pbProgress = new HelpersLib.BlackStyleProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,12 +167,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MyProgressBar pbProgress;
-        private MyButton btnAction;
-        private MyLabel lblFilename;
-        private MyLabel lblStatus;
-        private MyLabel lblProgress;
+        private BlackStyleProgressBar pbProgress;
+        private BlackStyleButton btnAction;
+        private BlackStyleLabel lblFilename;
+        private BlackStyleLabel lblStatus;
+        private BlackStyleLabel lblProgress;
         private System.Windows.Forms.TextBox txtChangelog;
-        private MyCheckBox cbShowChangelog;
+        private BlackStyleCheckBox cbShowChangelog;
     }
 }

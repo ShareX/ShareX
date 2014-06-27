@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
-    public class MyProgressBar : Control
+    public class BlackStyleProgressBar : Control
     {
         public int Maximum
         {
@@ -120,15 +120,11 @@ namespace HelpersLib
 
         private int maximum, minimum, value;
 
-        public MyProgressBar()
+        public BlackStyleProgressBar()
         {
             InitializeComponent();
 
-            SetStyle(ControlStyles.UserPaint |
-                     ControlStyles.AllPaintingInWmPaint |
-                     ControlStyles.ResizeRedraw |
-                     ControlStyles.OptimizedDoubleBuffer |
-                     ControlStyles.SupportsTransparentBackColor, true);
+            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
             maximum = 100;
             minimum = 0;
@@ -184,8 +180,7 @@ namespace HelpersLib
                 g.FillRectangle(progressBarBrush, progressBarRect);
             }
 
-            using (LinearGradientBrush innerBorderBrush = new LinearGradientBrush(progressBarRect, Color.FromArgb(133, 192, 241), Color.FromArgb(76, 119, 163),
-                LinearGradientMode.Vertical))
+            using (LinearGradientBrush innerBorderBrush = new LinearGradientBrush(progressBarRect, Color.FromArgb(133, 192, 241), Color.FromArgb(76, 119, 163), LinearGradientMode.Vertical))
             using (Pen innerBorderPen = new Pen(innerBorderBrush))
             {
                 g.DrawRectangle(innerBorderPen, new Rectangle(progressBarRect.X, progressBarRect.Y, progressBarRect.Width - 1, progressBarRect.Height - 1));

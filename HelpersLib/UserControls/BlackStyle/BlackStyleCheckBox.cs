@@ -32,7 +32,7 @@ using System.Windows.Forms;
 namespace HelpersLib
 {
     [DefaultEvent("CheckedChanged")]
-    public class MyCheckBox : Control
+    public class BlackStyleCheckBox : Control
     {
         [DefaultValue(false)]
         public bool Checked
@@ -88,17 +88,13 @@ namespace HelpersLib
 
         public event EventHandler CheckedChanged;
 
-        public MyCheckBox()
+        public BlackStyleCheckBox()
         {
             InitializeComponent();
 
             SpaceAfterCheckBox = 3;
 
-            SetStyle(ControlStyles.UserPaint |
-                     ControlStyles.AllPaintingInWmPaint |
-                     ControlStyles.ResizeRedraw |
-                     ControlStyles.OptimizedDoubleBuffer |
-                     ControlStyles.SupportsTransparentBackColor, true);
+            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
             Prepare();
         }
@@ -108,11 +104,9 @@ namespace HelpersLib
             ForeColor = Color.White;
 
             // http://connect.microsoft.com/VisualStudio/feedback/details/348321/bug-in-fillrectangle-using-lineargradientbrush
-            backgroundBrush = new LinearGradientBrush(new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 3),
-                Color.FromArgb(105, 105, 105), Color.FromArgb(55, 55, 55), LinearGradientMode.Vertical);
+            backgroundBrush = new LinearGradientBrush(new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 3), Color.FromArgb(105, 105, 105), Color.FromArgb(55, 55, 55), LinearGradientMode.Vertical);
 
-            innerBorderBrush = new LinearGradientBrush(new Rectangle(1, 1, checkBoxSize - 2, checkBoxSize - 2),
-                Color.FromArgb(125, 125, 125), Color.FromArgb(65, 75, 75), LinearGradientMode.Vertical);
+            innerBorderBrush = new LinearGradientBrush(new Rectangle(1, 1, checkBoxSize - 2, checkBoxSize - 2), Color.FromArgb(125, 125, 125), Color.FromArgb(65, 75, 75), LinearGradientMode.Vertical);
             innerBorderPen = new Pen(innerBorderBrush);
 
             backgroundCheckedBrush = new LinearGradientBrush(new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 3), Color.Black, Color.Black, LinearGradientMode.Vertical);
@@ -121,8 +115,7 @@ namespace HelpersLib
             cb.Colors = new Color[] { Color.FromArgb(102, 163, 226), Color.FromArgb(83, 135, 186), Color.FromArgb(75, 121, 175), Color.FromArgb(56, 93, 135) };
             backgroundCheckedBrush.InterpolationColors = cb;
 
-            innerBorderCheckedBrush = new LinearGradientBrush(new Rectangle(1, 1, checkBoxSize - 2, checkBoxSize - 2),
-                Color.FromArgb(133, 192, 241), Color.FromArgb(76, 119, 163), LinearGradientMode.Vertical);
+            innerBorderCheckedBrush = new LinearGradientBrush(new Rectangle(1, 1, checkBoxSize - 2, checkBoxSize - 2), Color.FromArgb(133, 192, 241), Color.FromArgb(76, 119, 163), LinearGradientMode.Vertical);
             innerBorderCheckedPen = new Pen(innerBorderCheckedBrush);
 
             borderPen = new Pen(Color.FromArgb(30, 30, 30));
@@ -164,8 +157,7 @@ namespace HelpersLib
         {
             Rectangle rect = new Rectangle(checkBoxSize + SpaceAfterCheckBox, 0, ClientRectangle.Width - checkBoxSize + SpaceAfterCheckBox, ClientRectangle.Height);
             TextFormatFlags tff = TextFormatFlags.Left | TextFormatFlags.Top;
-            TextRenderer.DrawText(g, Text, Font, new Rectangle(rect.X, rect.Y + 1, rect.Width, rect.Height + 1),
-                Color.Black, tff);
+            TextRenderer.DrawText(g, Text, Font, new Rectangle(rect.X, rect.Y + 1, rect.Width, rect.Height + 1), Color.Black, tff);
             TextRenderer.DrawText(g, Text, Font, rect, ForeColor, tff);
         }
 

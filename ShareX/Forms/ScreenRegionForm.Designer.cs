@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pInfo = new System.Windows.Forms.Panel();
-            this.lblTimer = new System.Windows.Forms.Label();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.btnStop = new HelpersLib.MyButton();
+            this.btnStop = new HelpersLib.BlackStyleButton();
+            this.lblTimer = new HelpersLib.BlackStyleLabel();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,21 +45,6 @@
             this.pInfo.Name = "pInfo";
             this.pInfo.Size = new System.Drawing.Size(136, 32);
             this.pInfo.TabIndex = 1;
-            // 
-            // lblTimer
-            // 
-            this.lblTimer.BackColor = System.Drawing.Color.DimGray;
-            this.lblTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTimer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTimer.ForeColor = System.Drawing.Color.White;
-            this.lblTimer.Location = new System.Drawing.Point(0, 0);
-            this.lblTimer.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(80, 32);
-            this.lblTimer.TabIndex = 3;
-            this.lblTimer.Text = "00:00:00";
-            this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timerRefresh
             // 
@@ -77,6 +62,20 @@
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Stop";
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.BackColor = System.Drawing.Color.DimGray;
+            this.lblTimer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTimer.DrawBorder = true;
+            this.lblTimer.Font = new System.Drawing.Font("Arial", 12F);
+            this.lblTimer.ForeColor = System.Drawing.Color.White;
+            this.lblTimer.Location = new System.Drawing.Point(0, 0);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(81, 32);
+            this.lblTimer.TabIndex = 2;
+            this.lblTimer.Text = "00:00:00";
+            this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ScreenRegionForm
             // 
@@ -98,9 +97,9 @@
         #endregion
 
         private System.Windows.Forms.Panel pInfo;
-        private System.Windows.Forms.Label lblTimer;
-        private HelpersLib.MyButton btnStop;
+        private HelpersLib.BlackStyleButton btnStop;
         private System.Windows.Forms.Timer timerRefresh;
+        private HelpersLib.BlackStyleLabel lblTimer;
 
     }
 }

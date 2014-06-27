@@ -32,7 +32,7 @@ using System.Windows.Forms;
 namespace HelpersLib
 {
     [DefaultEvent("MouseClick")]
-    public class MyButton : Control
+    public class BlackStyleButton : Control
     {
         public override string Text
         {
@@ -61,15 +61,11 @@ namespace HelpersLib
         private LinearGradientBrush backgroundBrush, backgroundHoverBrush, innerBorderBrush;
         private Pen innerBorderPen, borderPen;
 
-        public MyButton()
+        public BlackStyleButton()
         {
             InitializeComponent();
 
-            SetStyle(ControlStyles.UserPaint |
-                     ControlStyles.AllPaintingInWmPaint |
-                     ControlStyles.ResizeRedraw |
-                     ControlStyles.OptimizedDoubleBuffer |
-                     ControlStyles.SupportsTransparentBackColor, true);
+            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
             Prepare();
         }
@@ -77,12 +73,9 @@ namespace HelpersLib
         private void Prepare()
         {
             ForeColor = Color.White;
-            backgroundBrush = new LinearGradientBrush(new Rectangle(2, 2, ClientSize.Width - 4, ClientSize.Height - 4),
-                Color.FromArgb(105, 105, 105), Color.FromArgb(65, 65, 65), LinearGradientMode.Vertical);
-            backgroundHoverBrush = new LinearGradientBrush(new Rectangle(2, 2, ClientSize.Width - 4, ClientSize.Height - 4),
-                Color.FromArgb(115, 115, 115), Color.FromArgb(75, 75, 75), LinearGradientMode.Vertical);
-            innerBorderBrush = new LinearGradientBrush(new Rectangle(1, 1, ClientSize.Width - 2, ClientSize.Height - 2),
-                Color.FromArgb(125, 125, 125), Color.FromArgb(75, 75, 75), LinearGradientMode.Vertical);
+            backgroundBrush = new LinearGradientBrush(new Rectangle(2, 2, ClientSize.Width - 4, ClientSize.Height - 4), Color.FromArgb(105, 105, 105), Color.FromArgb(65, 65, 65), LinearGradientMode.Vertical);
+            backgroundHoverBrush = new LinearGradientBrush(new Rectangle(2, 2, ClientSize.Width - 4, ClientSize.Height - 4), Color.FromArgb(115, 115, 115), Color.FromArgb(75, 75, 75), LinearGradientMode.Vertical);
+            innerBorderBrush = new LinearGradientBrush(new Rectangle(1, 1, ClientSize.Width - 2, ClientSize.Height - 2), Color.FromArgb(125, 125, 125), Color.FromArgb(75, 75, 75), LinearGradientMode.Vertical);
             innerBorderPen = new Pen(innerBorderBrush);
             borderPen = new Pen(Color.FromArgb(30, 30, 30));
             Font = new Font("Arial", 12);

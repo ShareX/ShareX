@@ -246,16 +246,16 @@
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileDownloader.cs" />
-    <Compile Include="UserControls\BlackStyle\MyButton.cs">
+    <Compile Include="UserControls\BlackStyle\BlackStyleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\BlackStyle\MyCheckBox.cs">
+    <Compile Include="UserControls\BlackStyle\BlackStyleCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\BlackStyle\MyLabel.cs">
+    <Compile Include="UserControls\BlackStyle\BlackStyleLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\BlackStyle\MyProgressBar.cs">
+    <Compile Include="UserControls\BlackStyle\BlackStyleProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\Canvas.cs">
