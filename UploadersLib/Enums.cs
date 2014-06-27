@@ -141,7 +141,9 @@ namespace UploadersLib
     public enum SocialNetworkingService
     {
         [Description("twitter.com")]
-        Twitter
+        Twitter,
+        [Description("plus.google.com")]
+        GooglePlus
     }
 
     public enum HttpMethod

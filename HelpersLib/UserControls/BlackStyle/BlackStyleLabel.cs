@@ -98,6 +98,7 @@ namespace HelpersLib
 
         private void Prepare()
         {
+            TextAlign = ContentAlignment.TopLeft;
             BackColor = Color.Transparent;
             ForeColor = Color.White;
             Font = new Font("Arial", 12);

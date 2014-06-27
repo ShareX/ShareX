@@ -94,12 +94,6 @@
     <Compile Include="Controls\BeforeUploadControl.Designer.cs">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TaskInfoControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\TaskInfoControl.Designer.cs">
-      <DependentUpon>TaskInfoControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,9 +247,6 @@
     <Compile Include="WatchFolderSettings.cs" />
     <EmbeddedResource Include="Controls\BeforeUploadControl.resx">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TaskInfoControl.resx">
-      <DependentUpon>TaskInfoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
