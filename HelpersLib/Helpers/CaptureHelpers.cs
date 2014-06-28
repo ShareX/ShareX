@@ -37,6 +37,11 @@ namespace HelpersLib
             return SystemInformation.VirtualScreen;
         }
 
+        public static Rectangle GetScreenWorkingArea()
+        {
+            return SystemInformation.WorkingArea;
+        }
+
         public static Rectangle GetScreenBounds2()
         {
             Point topLeft = Point.Empty;

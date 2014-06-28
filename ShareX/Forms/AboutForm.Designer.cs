@@ -17,6 +17,9 @@
             {
                 components.Dispose();
             }
+
+            if (bounceTimer != null) bounceTimer.Dispose();
+
             base.Dispose(disposing);
         }
 
@@ -35,14 +38,14 @@
             this.rtbCredits = new System.Windows.Forms.RichTextBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
             this.lblOwners = new System.Windows.Forms.Label();
-            this.cLogo = new HelpersLib.Canvas();
-            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
             this.pbMikeSteamURL = new System.Windows.Forms.PictureBox();
             this.pbBerkSteamURL = new System.Windows.Forms.PictureBox();
             this.pbMikeURL = new System.Windows.Forms.PictureBox();
             this.pbAU = new System.Windows.Forms.PictureBox();
             this.pbBerkURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
+            this.cLogo = new HelpersLib.Canvas();
+            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkSteamURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
@@ -126,23 +129,6 @@
             this.lblOwners.TabIndex = 3;
             this.lblOwners.Text = "Owners:";
             // 
-            // cLogo
-            // 
-            this.cLogo.Interval = 100;
-            this.cLogo.Location = new System.Drawing.Point(224, -8);
-            this.cLogo.Name = "cLogo";
-            this.cLogo.Size = new System.Drawing.Size(208, 200);
-            this.cLogo.TabIndex = 7;
-            this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
-            this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
-            // 
-            // uclUpdate
-            // 
-            this.uclUpdate.Location = new System.Drawing.Point(13, 36);
-            this.uclUpdate.Name = "uclUpdate";
-            this.uclUpdate.Size = new System.Drawing.Size(224, 24);
-            this.uclUpdate.TabIndex = 1;
-            // 
             // pbMikeSteamURL
             // 
             this.pbMikeSteamURL.BackColor = System.Drawing.Color.Transparent;
@@ -216,6 +202,23 @@
             this.pbTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbTR.TabIndex = 8;
             this.pbTR.TabStop = false;
+            // 
+            // cLogo
+            // 
+            this.cLogo.Interval = 100;
+            this.cLogo.Location = new System.Drawing.Point(240, -8);
+            this.cLogo.Name = "cLogo";
+            this.cLogo.Size = new System.Drawing.Size(200, 200);
+            this.cLogo.TabIndex = 7;
+            this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
+            this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
+            // 
+            // uclUpdate
+            // 
+            this.uclUpdate.Location = new System.Drawing.Point(13, 36);
+            this.uclUpdate.Name = "uclUpdate";
+            this.uclUpdate.Size = new System.Drawing.Size(224, 24);
+            this.uclUpdate.TabIndex = 1;
             // 
             // AboutForm
             // 

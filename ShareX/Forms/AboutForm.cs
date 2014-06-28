@@ -49,7 +49,6 @@ namespace ShareX
         private void AboutForm_Shown(object sender, EventArgs e)
         {
             this.ShowActivate();
-
             cLogo.Start(50);
         }
 
@@ -96,6 +95,7 @@ namespace ShareX
         private int direction = speed;
         private Color lineColor = new HSB(0d, 1d, 0.9d);
         private bool isPaused;
+        private int clickCount = 0;
 
         private void cLogo_Draw(Graphics g)
         {
@@ -107,7 +107,7 @@ namespace ShareX
                 g.Transform = m;
             }
 
-            using (Pen pen = new Pen(lineColor))
+            using (Pen pen = new Pen(lineColor, 2))
             {
                 for (int i = 0; i <= mX; i += step)
                 {
@@ -154,8 +154,76 @@ namespace ShareX
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
             isPaused = !isPaused;
+            clickCount++;
+            if (clickCount >= 10)
+            {
+                cLogo.Stop();
+                RunEasterEgg();
+            }
         }
 
         #endregion Animation
+
+        #region Easter egg
+
+        private bool easterEggIsStarted;
+        private Rectangle screenRect;
+        private Timer bounceTimer;
+        private const int windowGravityPower = 3;
+        private const int windowBouncePower = -50;
+        private const int windowSpeed = 20;
+        private Point windowVelocity = new Point(windowSpeed, windowGravityPower);
+
+        private void RunEasterEgg()
+        {
+            if (!easterEggIsStarted)
+            {
+                easterEggIsStarted = true;
+
+                screenRect = CaptureHelpers.GetScreenWorkingArea();
+
+                bounceTimer = new Timer();
+                bounceTimer.Interval = 20;
+                bounceTimer.Tick += bounceTimer_Tick;
+                bounceTimer.Start();
+            }
+        }
+
+        private void bounceTimer_Tick(object sender, EventArgs e)
+        {
+            if (!IsDisposed)
+            {
+                int x = Location.X + windowVelocity.X;
+                int windowRight = screenRect.X + screenRect.Width - 1 - Width;
+
+                if (x <= screenRect.X)
+                {
+                    x = screenRect.X;
+                    windowVelocity.X = windowSpeed;
+                }
+                else if (x >= windowRight)
+                {
+                    x = windowRight;
+                    windowVelocity.X = -windowSpeed;
+                }
+
+                int y = Location.Y + windowVelocity.Y;
+                int windowBottom = screenRect.Y + screenRect.Height - 1 - Height;
+
+                if (y >= windowBottom)
+                {
+                    y = windowBottom;
+                    windowVelocity.Y = windowBouncePower;
+                }
+                else
+                {
+                    windowVelocity.Y += windowGravityPower;
+                }
+
+                Location = new Point(x, y);
+            }
+        }
+
+        #endregion Easter egg
     }
 }
