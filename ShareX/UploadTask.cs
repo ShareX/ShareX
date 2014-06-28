@@ -1024,6 +1024,9 @@ namespace ShareX
                             }
                         }
                         break;
+                    case SocialNetworkingService.Facebook:
+                        URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + url);
+                        break;
                     case SocialNetworkingService.GooglePlus:
                         // The Google+ API currently provides read-only access to public data. So sharing with API not possible yet.
                         URLHelpers.OpenURL("https://plus.google.com/share?url=" + url);

@@ -142,6 +142,8 @@ namespace UploadersLib
     {
         [Description("twitter.com")]
         Twitter,
+        [Description("facebook.com")]
+        Facebook,
         [Description("plus.google.com")]
         GooglePlus
     }
