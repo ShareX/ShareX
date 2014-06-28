@@ -169,7 +169,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
-                Helpers.OpenURL(url);
+                URLHelpers.OpenURL(url);
             }
         }
 
@@ -177,7 +177,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
             {
-                Helpers.OpenURL(Info.FilePath);
+                URLHelpers.OpenURL(Info.FilePath);
             }
         }
 

@@ -23,9 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;

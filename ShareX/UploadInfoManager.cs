@@ -96,32 +96,32 @@ namespace ShareX
 
         public void OpenURL()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) Helpers.OpenURL(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.URL);
         }
 
         public void OpenShortenedURL()
         {
-            if (IsItemSelected && SelectedItem.IsShortenedURLExist) Helpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
+            if (IsItemSelected && SelectedItem.IsShortenedURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
         }
 
         public void OpenThumbnailURL()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailURLExist) Helpers.OpenURL(SelectedItem.Info.Result.ThumbnailURL);
+            if (IsItemSelected && SelectedItem.IsThumbnailURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.ThumbnailURL);
         }
 
         public void OpenDeletionURL()
         {
-            if (IsItemSelected && SelectedItem.IsDeletionURLExist) Helpers.OpenURL(SelectedItem.Info.Result.DeletionURL);
+            if (IsItemSelected && SelectedItem.IsDeletionURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.DeletionURL);
         }
 
         public void OpenFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenURL(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) URLHelpers.OpenURL(SelectedItem.Info.FilePath);
         }
 
         public void OpenThumbnailFile()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) Helpers.OpenURL(SelectedItem.Info.ThumbnailFilePath);
+            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) URLHelpers.OpenURL(SelectedItem.Info.ThumbnailFilePath);
         }
 
         public void OpenFolder()
@@ -135,15 +135,15 @@ namespace ShareX
             {
                 if (SelectedItem.IsShortenedURLExist)
                 {
-                    Helpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
+                    URLHelpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
                 }
                 else if (SelectedItem.IsURLExist)
                 {
-                    Helpers.OpenURL(SelectedItem.Info.Result.URL);
+                    URLHelpers.OpenURL(SelectedItem.Info.Result.URL);
                 }
                 else if (SelectedItem.IsFileExist)
                 {
-                    Helpers.OpenURL(SelectedItem.Info.FilePath);
+                    URLHelpers.OpenURL(SelectedItem.Info.FilePath);
                 }
             }
         }

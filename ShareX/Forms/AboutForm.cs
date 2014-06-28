@@ -55,32 +55,32 @@ namespace ShareX
 
         private void lblProductName_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_VERSION_HISTORY);
+            URLHelpers.OpenURL(Links.URL_VERSION_HISTORY);
         }
 
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_BERK);
+            URLHelpers.OpenURL(Links.URL_BERK);
         }
 
         private void pbBerkSteamURL_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_BERK_STEAM);
+            URLHelpers.OpenURL(Links.URL_BERK_STEAM);
         }
 
         private void pbMikeURL_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_MIKE);
+            URLHelpers.OpenURL(Links.URL_MIKE);
         }
 
         private void pbMikeSteamURL_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_MIKE_STEAM);
+            URLHelpers.OpenURL(Links.URL_MIKE_STEAM);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Helpers.OpenURL(e.LinkText);
+            URLHelpers.OpenURL(e.LinkText);
         }
 
         #region Animation

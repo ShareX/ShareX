@@ -1,4 +1,4 @@
-﻿namespace HelpersLib.UserControls
+﻿namespace HelpersLib
 {
     partial class ExportImportControl
     {

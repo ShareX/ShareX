@@ -136,6 +136,7 @@ namespace UploadersLib
             ttlvMain.FocusListView();
 
             NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
+            NameParser.CreateCodesMenu(txtCopyPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
 
@@ -620,7 +621,7 @@ namespace UploadersLib
         {
             if (!string.IsNullOrEmpty(Config.ImageShackSettings.Username))
             {
-                Helpers.OpenURL("https://imageshack.com/user/" + Config.ImageShackSettings.Username);
+                URLHelpers.OpenURL("https://imageshack.com/user/" + Config.ImageShackSettings.Username);
             }
             else
             {
@@ -630,7 +631,7 @@ namespace UploadersLib
 
         private void btnImageShackOpenMyImages_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://imageshack.com/my/images");
+            URLHelpers.OpenURL("https://imageshack.com/my/images");
         }
 
         #endregion ImageShack
@@ -690,7 +691,7 @@ namespace UploadersLib
 
         private void btnTinyPicOpenMyImages_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("http://tinypic.com/yourstuff.php");
+            URLHelpers.OpenURL("http://tinypic.com/yourstuff.php");
         }
 
         #endregion TinyPic
@@ -886,12 +887,12 @@ namespace UploadersLib
 
         private void pbDropboxLogo_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://www.dropbox.com");
+            URLHelpers.OpenURL("https://www.dropbox.com");
         }
 
         private void btnDropboxRegister_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("http://db.tt/CtPYXvu");
+            URLHelpers.OpenURL("http://db.tt/CtPYXvu");
         }
 
         private void oauth2Dropbox_OpenButtonClicked()
@@ -937,12 +938,12 @@ namespace UploadersLib
 
         private void pbCopyLogo_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://copy.com");
+            URLHelpers.OpenURL("https://copy.com");
         }
 
         private void btnCopyRegister_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://copy.com?r=hC3DMW");
+            URLHelpers.OpenURL("https://copy.com?r=hC3DMW");
         }
 
         private void txtCopyPath_TextChanged(object sender, EventArgs e)
@@ -1521,7 +1522,7 @@ namespace UploadersLib
 
         private void btnMegaRegister_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://mega.co.nz/#register");
+            URLHelpers.OpenURL("https://mega.co.nz/#register");
         }
 
         private void btnMegaRefreshFolders_Click(object sender, EventArgs e)
@@ -1540,7 +1541,7 @@ namespace UploadersLib
 
         private void btnAmazonS3AccessKeyOpen_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://console.aws.amazon.com/iam/home?#security_credential");
+            URLHelpers.OpenURL("https://console.aws.amazon.com/iam/home?#security_credential");
         }
 
         private void txtAmazonS3SecretKey_TextChanged(object sender, EventArgs e)
@@ -1567,7 +1568,7 @@ namespace UploadersLib
 
         private void btnAmazonS3BucketNameOpen_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://console.aws.amazon.com/s3/home");
+            URLHelpers.OpenURL("https://console.aws.amazon.com/s3/home");
         }
 
         private void txtAmazonS3ObjectPrefix_TextChanged(object sender, EventArgs e)
@@ -2073,7 +2074,7 @@ namespace UploadersLib
 
         private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://docs.google.com/document/d/1TSttAfH-1970JNsu3i9tl6UY0a8KNbUCeGri0Fs-jcU/edit?usp=sharing");
+            URLHelpers.OpenURL("https://docs.google.com/document/d/1TSttAfH-1970JNsu3i9tl6UY0a8KNbUCeGri0Fs-jcU/edit?usp=sharing");
         }
 
         private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)
@@ -2091,7 +2092,7 @@ namespace UploadersLib
 
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Helpers.OpenURL(e.LinkText);
+            URLHelpers.OpenURL(e.LinkText);
         }
 
         #endregion Custom Uploaders

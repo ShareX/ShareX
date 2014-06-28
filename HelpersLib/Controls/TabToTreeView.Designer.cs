@@ -31,7 +31,7 @@
             this.tvMain = new System.Windows.Forms.TreeView();
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tcMain = new HelpersLib.UserControls.TablessControl();
+            this.tcMain = new HelpersLib.TablessControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -115,7 +115,7 @@
 
         private System.Windows.Forms.TreeView tvMain;
         private System.Windows.Forms.SplitContainer scMain;
-        private UserControls.TablessControl tcMain;
+        private TablessControl tcMain;
         private System.Windows.Forms.Panel panel1;
     }
 }

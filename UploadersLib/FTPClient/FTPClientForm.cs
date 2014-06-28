@@ -26,7 +26,6 @@
 using HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -560,7 +559,7 @@ namespace UploadersLib
             {
                 FtpListItem file = lvFTPList.SelectedItems[0].Tag as FtpListItem;
                 string url = GetURL(file);
-                Helpers.OpenURL(url);
+                URLHelpers.OpenURL(url);
             }
         }
 

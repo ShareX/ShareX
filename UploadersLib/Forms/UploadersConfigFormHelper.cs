@@ -24,15 +24,11 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.FtpClient;
-using System.Net.NetworkInformation;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
 using UploadersLib.Forms;
@@ -59,7 +55,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.ImgurOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("ImgurAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -173,7 +169,7 @@ namespace UploadersLib
                 string url = flickr.GetAuthLink(FlickrPermission.Write);
                 if (!string.IsNullOrEmpty(url))
                 {
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     btnFlickrCompleteAuth.Enabled = true;
                 }
             }
@@ -236,7 +232,7 @@ namespace UploadersLib
                     string url = flickr.GetPhotosLink(userID);
                     if (!string.IsNullOrEmpty(url))
                     {
-                        Helpers.OpenURL(url);
+                        URLHelpers.OpenURL(url);
                     }
                 }
             }
@@ -257,7 +253,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.PhotobucketOAuthInfo = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                 }
             }
             catch (Exception ex)
@@ -328,7 +324,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.PicasaOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("PicasaAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -456,7 +452,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.DropboxOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("DropboxAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -554,7 +550,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.CopyOAuthInfo = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("CopyAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -658,7 +654,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.GoogleDriveOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("GoogleDriveAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -1194,7 +1190,7 @@ namespace UploadersLib
                     acc.Description = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount].Description;
                     Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
                     ucTwitterAccounts.pgSettings.SelectedObject = acc;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     btnTwitterLogin.Enabled = true;
                 }
             }
@@ -1241,7 +1237,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.GoogleURLShortenerOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("GoogleURLShortenerAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -1322,7 +1318,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.BitlyOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("BitlyAuthOpen - Authorization URL is opened: " + url);
                 }
                 else
@@ -1596,7 +1592,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.JiraOAuthInfo = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                 }
             }
             catch (Exception ex)
@@ -1646,7 +1642,7 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.GistOAuth2Info = oauth;
-                    Helpers.OpenURL(url);
+                    URLHelpers.OpenURL(url);
                 }
             }
             catch (Exception ex)

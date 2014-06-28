@@ -23,19 +23,38 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace HelpersLib
 {
     public static class URLHelpers
     {
+        public static void OpenURL(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                TaskEx.Run(() =>
+                {
+                    try
+                    {
+                        Process.Start(url);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e, string.Format("OpenURL({0}) failed", url));
+                    }
+                });
+            }
+        }
+
         private static string Encode(string text, string unreservedCharacters)
         {
             StringBuilder result = new StringBuilder();
@@ -71,6 +90,28 @@ namespace HelpersLib
         public static string URLPathEncode(string text)
         {
             return Encode(text, Helpers.URLPathCharacters);
+        }
+
+        public static string HtmlEncode(string text)
+        {
+            char[] chars = HttpUtility.HtmlEncode(text).ToCharArray();
+            StringBuilder result = new StringBuilder(chars.Length + (int)(chars.Length * 0.1));
+
+            foreach (char c in chars)
+            {
+                int value = Convert.ToInt32(c);
+
+                if (value > 127)
+                {
+                    result.AppendFormat("&#{0};", value);
+                }
+                else
+                {
+                    result.Append(c);
+                }
+            }
+
+            return result.ToString();
         }
 
         public static string CombineURL(string url1, string url2)

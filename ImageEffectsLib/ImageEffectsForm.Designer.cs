@@ -43,7 +43,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
-            this.eiImageEffects = new HelpersLib.UserControls.ExportImportControl();
+            this.eiImageEffects = new HelpersLib.ExportImportControl();
             this.pbResult = new HelpersLib.MyPictureBox();
             this.SuspendLayout();
             // 
@@ -221,8 +221,8 @@
             this.eiImageEffects.ObjectType = null;
             this.eiImageEffects.Size = new System.Drawing.Size(136, 24);
             this.eiImageEffects.TabIndex = 11;
-            this.eiImageEffects.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
-            this.eiImageEffects.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
+            this.eiImageEffects.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
+            this.eiImageEffects.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
             // 
             // pbResult
             // 
@@ -289,7 +289,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;
-        private HelpersLib.UserControls.ExportImportControl eiImageEffects;
+        private HelpersLib.ExportImportControl eiImageEffects;
     }
 }
 

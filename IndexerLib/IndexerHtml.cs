@@ -112,14 +112,14 @@ namespace IndexerLib
                 folderInfoText = "  " + HtmlHelper.Tag("span", folderInfoText, "", "class=\"folderinfo\"");
             }
 
-            return HtmlHelper.StartTag("h" + heading) + Helpers.HtmlEncode(dir.FolderName) + folderInfoText + HtmlHelper.EndTag("h" + heading);
+            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderInfoText + HtmlHelper.EndTag("h" + heading);
         }
 
         protected override string GetFileNameRow(FileInfo fi, int level)
         {
             string size = " " + HtmlHelper.Tag("span", fi.Length.ToSizeString(config.BinaryUnits), "", "class=\"filesize\"");
 
-            return HtmlHelper.StartTag("li") + Helpers.HtmlEncode(fi.Name) + size + HtmlHelper.EndTag("li");
+            return HtmlHelper.StartTag("li") + URLHelpers.HtmlEncode(fi.Name) + size + HtmlHelper.EndTag("li");
         }
 
         protected override string GetFooter()

@@ -81,7 +81,7 @@
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.cbShowError = new System.Windows.Forms.CheckBox();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.eiFFmpeg = new HelpersLib.UserControls.ExportImportControl();
+            this.eiFFmpeg = new HelpersLib.ExportImportControl();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -703,8 +703,8 @@
             this.eiFFmpeg.ObjectType = null;
             this.eiFFmpeg.Size = new System.Drawing.Size(136, 24);
             this.eiFFmpeg.TabIndex = 12;
-            this.eiFFmpeg.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
-            this.eiFFmpeg.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
+            this.eiFFmpeg.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
+            this.eiFFmpeg.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
             // FFmpegOptionsForm
             // 
@@ -823,6 +823,6 @@
         private System.Windows.Forms.CheckBox cbShowError;
         private System.Windows.Forms.CheckBox cbCustomCommands;
         private System.Windows.Forms.Button btnHelp;
-        private HelpersLib.UserControls.ExportImportControl eiFFmpeg;
+        private HelpersLib.ExportImportControl eiFFmpeg;
     }
 }

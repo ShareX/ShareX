@@ -74,7 +74,7 @@ namespace IndexerLib
 
         public static string Tag(string tag, string content, string style = "", string otherFields = "")
         {
-            return StartTag(tag, style, otherFields) + Helpers.HtmlEncode(content) + EndTag(tag);
+            return StartTag(tag, style, otherFields) + URLHelpers.HtmlEncode(content) + EndTag(tag);
         }
     }
 }

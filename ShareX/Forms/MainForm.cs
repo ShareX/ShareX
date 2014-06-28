@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using HelpersLib.UserControls;
 using HistoryLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
@@ -895,7 +894,7 @@ namespace ShareX
 
         private void tsbDonate_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(Links.URL_DONATE);
+            URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
         private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
@@ -990,7 +989,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
-                Helpers.OpenURL(url);
+                URLHelpers.OpenURL(url);
             }
         }
 

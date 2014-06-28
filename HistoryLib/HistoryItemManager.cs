@@ -111,27 +111,27 @@ namespace HistoryLib
 
         public void OpenURL()
         {
-            if (HistoryItem != null && IsURLExist) Helpers.OpenURL(HistoryItem.URL);
+            if (HistoryItem != null && IsURLExist) URLHelpers.OpenURL(HistoryItem.URL);
         }
 
         public void OpenShortenedURL()
         {
-            if (HistoryItem != null && IsShortenedURLExist) Helpers.OpenURL(HistoryItem.ShortenedURL);
+            if (HistoryItem != null && IsShortenedURLExist) URLHelpers.OpenURL(HistoryItem.ShortenedURL);
         }
 
         public void OpenThumbnailURL()
         {
-            if (HistoryItem != null && IsThumbnailURLExist) Helpers.OpenURL(HistoryItem.ThumbnailURL);
+            if (HistoryItem != null && IsThumbnailURLExist) URLHelpers.OpenURL(HistoryItem.ThumbnailURL);
         }
 
         public void OpenDeletionURL()
         {
-            if (HistoryItem != null && IsDeletionURLExist) Helpers.OpenURL(HistoryItem.DeletionURL);
+            if (HistoryItem != null && IsDeletionURLExist) URLHelpers.OpenURL(HistoryItem.DeletionURL);
         }
 
         public void OpenFile()
         {
-            if (HistoryItem != null && IsFileExist) Helpers.OpenURL(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) URLHelpers.OpenURL(HistoryItem.Filepath);
         }
 
         public void OpenFolder()
@@ -145,15 +145,15 @@ namespace HistoryLib
             {
                 if (IsShortenedURLExist)
                 {
-                    Helpers.OpenURL(HistoryItem.ShortenedURL);
+                    URLHelpers.OpenURL(HistoryItem.ShortenedURL);
                 }
                 else if (IsURLExist)
                 {
-                    Helpers.OpenURL(HistoryItem.URL);
+                    URLHelpers.OpenURL(HistoryItem.URL);
                 }
                 else if (IsFileExist)
                 {
-                    Helpers.OpenURL(HistoryItem.Filepath);
+                    URLHelpers.OpenURL(HistoryItem.Filepath);
                 }
             }
         }

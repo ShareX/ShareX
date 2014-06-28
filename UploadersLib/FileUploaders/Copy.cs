@@ -27,11 +27,9 @@
 
 using HelpersLib;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Text.RegularExpressions;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders

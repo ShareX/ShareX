@@ -115,25 +115,25 @@
     <Compile Include="PingHelper.cs" />
     <Compile Include="PingResult.cs" />
     <Compile Include="ProxyInfo.cs" />
-    <Compile Include="UserControls\ExportImportControl.cs">
+    <Compile Include="Controls\ExportImportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ExportImportControl.Designer.cs">
+    <Compile Include="Controls\ExportImportControl.Designer.cs">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TablessControl.cs">
+    <Compile Include="Controls\TablessControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\TabToListView.cs">
+    <Compile Include="Controls\TabToListView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TabToListView.Designer.cs">
+    <Compile Include="Controls\TabToListView.Designer.cs">
       <DependentUpon>TabToListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TabToTreeView.cs">
+    <Compile Include="Controls\TabToTreeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TabToTreeView.Designer.cs">
+    <Compile Include="Controls\TabToTreeView.Designer.cs">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="TaskEx.cs" />
@@ -246,28 +246,28 @@
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileDownloader.cs" />
-    <Compile Include="UserControls\BlackStyle\BlackStyleButton.cs">
+    <Compile Include="Controls\BlackStyle\BlackStyleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\BlackStyle\BlackStyleCheckBox.cs">
+    <Compile Include="Controls\BlackStyle\BlackStyleCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\BlackStyle\BlackStyleLabel.cs">
+    <Compile Include="Controls\BlackStyle\BlackStyleLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\BlackStyle\BlackStyleProgressBar.cs">
+    <Compile Include="Controls\BlackStyle\BlackStyleProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\Canvas.cs">
+    <Compile Include="Controls\Canvas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ColorButton.cs">
+    <Compile Include="Controls\ColorButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\MenuButton.cs">
+    <Compile Include="Controls\MenuButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\NoFocusBorderButton.cs">
+    <Compile Include="Controls\NoFocusBorderButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Native\NativeEnums.cs" />
@@ -300,16 +300,16 @@
     <Compile Include="UpdateChecker\UpdateCheckerLabel.Designer.cs">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SplitContainerCustomSplitter.cs">
+    <Compile Include="Controls\SplitContainerCustomSplitter.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\ToolStripRadioButtonMenuItem.cs">
+    <Compile Include="Controls\ToolStripRadioButtonMenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\ImageViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControls\MyListView.cs">
+    <Compile Include="Controls\MyListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Enums.cs" />
@@ -322,10 +322,10 @@
     <Compile Include="Extensions\StreamExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\XMLExtensions.cs" />
-    <Compile Include="UserControls\MyPictureBox.cs">
+    <Compile Include="Controls\MyPictureBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MyPictureBox.Designer.cs">
+    <Compile Include="Controls\MyPictureBox.Designer.cs">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateChecker\XMLUpdateChecker.cs" />
@@ -362,13 +362,13 @@
     <EmbeddedResource Include="Forms\QRCodeForm.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ExportImportControl.resx">
+    <EmbeddedResource Include="Controls\ExportImportControl.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TabToListView.resx">
+    <EmbeddedResource Include="Controls\TabToListView.resx">
       <DependentUpon>TabToListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TabToTreeView.resx">
+    <EmbeddedResource Include="Controls\TabToTreeView.resx">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.resx">
@@ -394,7 +394,7 @@
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MyPictureBox.resx">
+    <EmbeddedResource Include="Controls\MyPictureBox.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

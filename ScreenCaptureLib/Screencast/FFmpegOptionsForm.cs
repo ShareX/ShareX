@@ -28,7 +28,6 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ScreenCaptureLib
@@ -274,7 +273,7 @@ namespace ScreenCaptureLib
 
         private void buttonFFmpegHelp_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://www.ffmpeg.org/ffmpeg.html");
+            URLHelpers.OpenURL("https://www.ffmpeg.org/ffmpeg.html");
         }
 
         private void btnDownload_Click(object sender, EventArgs e)
@@ -354,7 +353,7 @@ namespace ScreenCaptureLib
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
+            URLHelpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
         }
 
         private object eiFFmpeg_ExportRequested()

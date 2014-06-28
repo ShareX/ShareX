@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -74,7 +73,7 @@ namespace HelpersLib
 
         private void btnSendBugReport_Click(object sender, EventArgs e)
         {
-            Helpers.OpenURL(BugReportPath);
+            URLHelpers.OpenURL(BugReportPath);
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

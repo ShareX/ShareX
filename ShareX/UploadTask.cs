@@ -632,7 +632,7 @@ namespace ShareX
                         result = Info.Result.ToString();
                     }
 
-                    Helpers.OpenURL(result);
+                    URLHelpers.OpenURL(result);
                 }
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowQRCode))
@@ -1026,7 +1026,7 @@ namespace ShareX
                         break;
                     case SocialNetworkingService.GooglePlus:
                         // The Google+ API currently provides read-only access to public data. So sharing with API not possible yet.
-                        Helpers.OpenURL("https://plus.google.com/share?url=" + url);
+                        URLHelpers.OpenURL("https://plus.google.com/share?url=" + url);
                         break;
                 }
             }

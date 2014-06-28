@@ -50,7 +50,7 @@
             this.lblCustomUploaderResponseType = new System.Windows.Forms.Label();
             this.cbCustomUploaderURLShortener = new System.Windows.Forms.ComboBox();
             this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
-            this.eiCustomUploaders = new HelpersLib.UserControls.ExportImportControl();
+            this.eiCustomUploaders = new HelpersLib.ExportImportControl();
             this.lbCustomUploaderList = new System.Windows.Forms.ListBox();
             this.btnCustomUploaderRemove = new System.Windows.Forms.Button();
             this.btnCustomUploaderClear = new System.Windows.Forms.Button();
@@ -130,7 +130,7 @@
             this.lblCopyPath = new System.Windows.Forms.Label();
             this.txtCopyPath = new System.Windows.Forms.TextBox();
             this.tpFTP = new System.Windows.Forms.TabPage();
-            this.eiFTP = new HelpersLib.UserControls.ExportImportControl();
+            this.eiFTP = new HelpersLib.ExportImportControl();
             this.btnFtpClient = new System.Windows.Forms.Button();
             this.lblFtpFiles = new System.Windows.Forms.Label();
             this.lblFtpText = new System.Windows.Forms.Label();
@@ -652,8 +652,8 @@
             this.eiCustomUploaders.ObjectType = null;
             this.eiCustomUploaders.Size = new System.Drawing.Size(140, 26);
             this.eiCustomUploaders.TabIndex = 5;
-            this.eiCustomUploaders.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
-            this.eiCustomUploaders.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
+            this.eiCustomUploaders.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
+            this.eiCustomUploaders.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
             // 
             // lbCustomUploaderList
             // 
@@ -1474,8 +1474,8 @@
             this.eiFTP.ObjectType = null;
             this.eiFTP.Size = new System.Drawing.Size(136, 24);
             this.eiFTP.TabIndex = 8;
-            this.eiFTP.ExportRequested += new HelpersLib.UserControls.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
-            this.eiFTP.ImportRequested += new HelpersLib.UserControls.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
+            this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
+            this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
             // 
             // btnFtpClient
             // 
@@ -4210,8 +4210,8 @@
         private System.Windows.Forms.Button btnPicasaRefreshAlbumList;
         private OAuthControl oauth2Picasa;
         public System.Windows.Forms.TabControl tcUploaders;
-        private HelpersLib.UserControls.ExportImportControl eiCustomUploaders;
-        private HelpersLib.UserControls.ExportImportControl eiFTP;
+        private HelpersLib.ExportImportControl eiCustomUploaders;
+        private HelpersLib.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
         private System.Windows.Forms.TextBox txtBitlyDomain;
         private System.Windows.Forms.Label lblBitlyDomain;
