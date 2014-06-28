@@ -153,12 +153,27 @@ namespace ShareX
 
         private void cLogo_MouseDown(object sender, MouseEventArgs e)
         {
-            isPaused = !isPaused;
-            clickCount++;
-            if (clickCount >= 10)
+            if (!isEasterEggStarted)
             {
-                cLogo.Stop();
-                RunEasterEgg();
+                isPaused = !isPaused;
+
+                clickCount++;
+
+                if (clickCount >= 10)
+                {
+                    isEasterEggStarted = true;
+                    cLogo.Stop();
+                    RunEasterEgg();
+                }
+            }
+            else
+            {
+                if (bounceTimer != null)
+                {
+                    bounceTimer.Stop();
+                }
+
+                isEasterEggStarted = false;
             }
         }
 
@@ -166,7 +181,7 @@ namespace ShareX
 
         #region Easter egg
 
-        private bool easterEggIsStarted;
+        private bool isEasterEggStarted;
         private Rectangle screenRect;
         private Timer bounceTimer;
         private const int windowGravityPower = 3;
@@ -176,24 +191,19 @@ namespace ShareX
 
         private void RunEasterEgg()
         {
-            if (!easterEggIsStarted)
-            {
-                easterEggIsStarted = true;
+            screenRect = CaptureHelpers.GetScreenWorkingArea();
 
-                screenRect = CaptureHelpers.GetScreenWorkingArea();
-
-                bounceTimer = new Timer();
-                bounceTimer.Interval = 20;
-                bounceTimer.Tick += bounceTimer_Tick;
-                bounceTimer.Start();
-            }
+            bounceTimer = new Timer();
+            bounceTimer.Interval = 20;
+            bounceTimer.Tick += bounceTimer_Tick;
+            bounceTimer.Start();
         }
 
         private void bounceTimer_Tick(object sender, EventArgs e)
         {
             if (!IsDisposed)
             {
-                int x = Location.X + windowVelocity.X;
+                int x = Left + windowVelocity.X;
                 int windowRight = screenRect.X + screenRect.Width - 1 - Width;
 
                 if (x <= screenRect.X)
@@ -207,7 +217,7 @@ namespace ShareX
                     windowVelocity.X = -windowSpeed;
                 }
 
-                int y = Location.Y + windowVelocity.Y;
+                int y = Top + windowVelocity.Y;
                 int windowBottom = screenRect.Y + screenRect.Height - 1 - Height;
 
                 if (y >= windowBottom)
