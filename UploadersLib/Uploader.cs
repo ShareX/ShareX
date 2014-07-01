@@ -114,8 +114,6 @@ namespace UploadersLib
             }
         }
 
-        #region Request methods
-
         protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
             NameValueCollection headers = null, CookieCollection cookies = null)
         {
@@ -125,7 +123,7 @@ namespace UploadersLib
             {
                 if (method == HttpMethod.POST) // Multipart form data
                 {
-                    response = PostResponseMultiPart(url, arguments, headers, cookies);
+                    response = SendRequestMultiPart(url, arguments, headers, cookies);
                 }
                 else
                 {
@@ -221,27 +219,27 @@ namespace UploadersLib
             return null;
         }
 
-        #endregion Request methods
-
-        #region Post methods
-
-        protected string SendPostRequestJSON(string url, string json, ResponseType responseType = ResponseType.Text, CookieCollection cookies = null, NameValueCollection headers = null)
+        protected string SendRequestJSON(string url, string json, CookieCollection cookies = null, NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
         {
-            using (HttpWebResponse response = PostResponseJSON(url, json, cookies, headers))
+            byte[] data = Encoding.UTF8.GetBytes(json);
+
+            using (MemoryStream stream = new MemoryStream())
             {
-                return ResponseToString(response, responseType);
+                stream.Write(data, 0, data.Length);
+
+                return SendRequestStream(url, stream, "application/json", cookies, headers, method);
             }
         }
 
-        protected string SendPostRequestStream(string url, Stream stream, string contentType, CookieCollection cookies = null, NameValueCollection headers = null)
+        protected string SendRequestStream(string url, Stream stream, string contentType, CookieCollection cookies = null, NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
         {
-            using (HttpWebResponse response = GetResponseUsingPost(url, stream, CreateBoundary(), contentType, cookies, headers))
+            using (HttpWebResponse response = GetResponse(url, stream, null, contentType, cookies, headers, method))
             {
                 return ResponseToString(response);
             }
         }
 
-        private HttpWebResponse PostResponseMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null)
+        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
             string boundary = CreateBoundary();
             byte[] data = MakeInputContent(boundary, arguments);
@@ -249,30 +247,19 @@ namespace UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponseUsingPost(url, stream, boundary, "multipart/form-data", cookies, headers);
+                return GetResponse(url, stream, boundary, "multipart/form-data", cookies, headers, method);
             }
         }
 
-        private HttpWebResponse PostResponseJSON(string url, string json, CookieCollection cookies = null, NameValueCollection headers = null)
-        {
-            byte[] data = Encoding.UTF8.GetBytes(json);
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                stream.Write(data, 0, data.Length);
-                return GetResponseUsingPost(url, stream, null, "application/json", cookies, headers);
-            }
-        }
-
-        private HttpWebResponse GetResponseUsingPost(string url, Stream dataStream, string boundary, string contentType,
-            CookieCollection cookies = null, NameValueCollection headers = null)
+        private HttpWebResponse GetResponse(string url, Stream dataStream, string boundary, string contentType,
+            CookieCollection cookies = null, NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
         {
             IsUploading = true;
             StopUploadRequested = false;
 
             try
             {
-                HttpWebRequest request = PreparePostWebRequest(url, boundary, dataStream.Length, contentType, cookies, headers);
+                HttpWebRequest request = PrepareDataWebRequest(url, boundary, dataStream.Length, contentType, cookies, headers, method);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -316,7 +303,7 @@ namespace UploadersLib
                 byte[] bytesDataClose = MakeFileInputContentClose(boundary);
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + dataStream.Length + bytesDataClose.Length;
-                HttpWebRequest request = PreparePostWebRequest(url, boundary, contentLength, "multipart/form-data", cookies, headers);
+                HttpWebRequest request = PrepareDataWebRequest(url, boundary, contentLength, "multipart/form-data", cookies, headers);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -346,11 +333,10 @@ namespace UploadersLib
             return result;
         }
 
-        #endregion Post methods
-
         #region Helper methods
 
-        private HttpWebRequest PreparePostWebRequest(string url, string boundary, long length, string contentType, CookieCollection cookies = null, NameValueCollection headers = null)
+        private HttpWebRequest PrepareDataWebRequest(string url, string boundary, long length, string contentType, CookieCollection cookies = null,
+            NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
@@ -369,7 +355,7 @@ namespace UploadersLib
             if (cookies != null) request.CookieContainer.Add(cookies);
             if (headers != null) request.Headers.Add(headers);
             request.KeepAlive = false;
-            request.Method = HttpMethod.POST.ToString();
+            request.Method = method.ToString();
             request.Pipelined = false;
             request.ProtocolVersion = HttpVersion.Version11;
             request.Proxy = ProxyInfo.Current.GetWebProxy();

@@ -180,7 +180,7 @@ namespace UploadersLib.ImageUploaders
             NameValueCollection headers = GetAuthHeaders();
             headers.Add("Slug", URLHelpers.URLEncode(fileName));
 
-            ur.Response = SendPostRequestStream(url, stream, contentType, headers: headers);
+            ur.Response = SendRequestStream(url, stream, contentType, headers: headers);
 
             XDocument xd = XDocument.Parse(ur.Response);
 

@@ -162,7 +162,7 @@ namespace UploadersLib.URLShorteners
 
                 string json = string.Format("{{\"longUrl\":\"{0}\"}}", url);
 
-                result.Response = SendPostRequestJSON(query, json);
+                result.Response = SendRequestJSON(query, json);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {

@@ -123,6 +123,7 @@ namespace UploadersLib
 
         public OAuth2Info GoogleDriveOAuth2Info = null;
         public bool GoogleDriveIsPublic = false;
+        public string GoogleDriveFolderID = string.Empty;
 
         // RapidShare
 

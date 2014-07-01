@@ -116,7 +116,7 @@ namespace UploadersLib.TextUploaders
                     url += "?access_token=" + AuthInfo.Token.access_token;
                 }
 
-                string response = SendPostRequestJSON(url, argsJson);
+                string response = SendRequestJSON(url, argsJson);
 
                 if (response != null)
                 {

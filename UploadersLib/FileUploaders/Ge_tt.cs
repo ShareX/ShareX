@@ -48,7 +48,7 @@ namespace UploadersLib.FileUploaders
 
             string argsJSON = JsonConvert.SerializeObject(args);
 
-            string response = SendPostRequestJSON("https://open.ge.tt/1/users/login", argsJSON);
+            string response = SendRequestJSON("https://open.ge.tt/1/users/login", argsJSON);
 
             return JsonConvert.DeserializeObject<Ge_ttLogin>(response);
         }
@@ -76,7 +76,7 @@ namespace UploadersLib.FileUploaders
 
             string argsJSON = JsonConvert.SerializeObject(args2);
 
-            string response = SendPostRequestJSON(url, argsJSON);
+            string response = SendRequestJSON(url, argsJSON);
 
             return JsonConvert.DeserializeObject<Ge_ttFile>(response);
         }

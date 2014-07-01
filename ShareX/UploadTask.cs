@@ -804,7 +804,8 @@ namespace ShareX
                 case FileDestination.GoogleDrive:
                     fileUploader = new GoogleDrive(Program.UploadersConfig.GoogleDriveOAuth2Info)
                     {
-                        IsPublic = Program.UploadersConfig.GoogleDriveIsPublic
+                        IsPublic = Program.UploadersConfig.GoogleDriveIsPublic,
+                        FolderID = Program.UploadersConfig.GoogleDriveFolderID
                     };
                     break;
                 case FileDestination.RapidShare:

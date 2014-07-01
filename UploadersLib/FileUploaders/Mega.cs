@@ -123,7 +123,7 @@ namespace UploadersLib.FileUploaders
 
         public string PostRequestJson(Uri url, string jsonData)
         {
-            return SendPostRequestJSON(url.ToString(), jsonData);
+            return SendRequestJSON(url.ToString(), jsonData);
         }
 
         public string PostRequestRaw(Uri url, Stream dataStream)
@@ -131,7 +131,7 @@ namespace UploadersLib.FileUploaders
             try
             {
                 AllowReportProgress = true;
-                return SendPostRequestStream(url.ToString(), dataStream, "application/octet-stream");
+                return SendRequestStream(url.ToString(), dataStream, "application/octet-stream");
             }
             finally
             {
