@@ -131,7 +131,7 @@ namespace UploadersLib.FileUploaders
             return true;
         }
 
-        public void SetMetadata(string fileID, string title, string parentID = null)
+        private void SetMetadata(string fileID, string title, string parentID = null)
         {
             string url = string.Format("https://www.googleapis.com/drive/v2/files/{0}", fileID);
 
@@ -164,7 +164,7 @@ namespace UploadersLib.FileUploaders
             string response = SendRequestJSON(url, json, headers: GetAuthHeaders(), method: HttpMethod.PUT);
         }
 
-        public void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
+        private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
         {
             string url = string.Format("https://www.googleapis.com/drive/v2/files/{0}/permissions", fileID);
 
@@ -179,10 +179,24 @@ namespace UploadersLib.FileUploaders
             string response = SendRequestJSON(url, json, headers: GetAuthHeaders());
         }
 
-        public List<GoogleDriveFile> GetFolders()
+        public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)
         {
+            if (!CheckAuthorization()) return null;
+
+            string query = "mimeType = 'application/vnd.google-apps.folder'";
+
+            if (!trashed)
+            {
+                query += " and trashed = false";
+            }
+
+            if (writer)
+            {
+                query += " and 'me' in writers";
+            }
+
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("q", "mimeType = 'application/vnd.google-apps.folder' and trashed = false and 'me' in writers");
+            args.Add("q", query);
 
             string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, headers: GetAuthHeaders());
 
@@ -201,10 +215,7 @@ namespace UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (!CheckAuthorization())
-            {
-                return null;
-            }
+            if (!CheckAuthorization()) return null;
 
             UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, "file", headers: GetAuthHeaders());
 
@@ -235,6 +246,7 @@ namespace UploadersLib.FileUploaders
             public string id { get; set; }
             public string alternateLink { get; set; }
             public string title { get; set; }
+            public string description { get; set; }
         }
 
         public class GoogleDriveFileList

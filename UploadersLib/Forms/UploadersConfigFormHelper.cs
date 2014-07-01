@@ -739,6 +739,7 @@ namespace UploadersLib
                         foreach (var folder in folders)
                         {
                             ListViewItem lvi = new ListViewItem(folder.title);
+                            lvi.SubItems.Add(folder.description);
                             lvi.Tag = folder;
                             lvGoogleDriveFoldersList.Items.Add(lvi);
                         }

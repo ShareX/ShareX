@@ -122,7 +122,7 @@ namespace UploadersLib
         // Google Drive
 
         public OAuth2Info GoogleDriveOAuth2Info = null;
-        public bool GoogleDriveIsPublic = false;
+        public bool GoogleDriveIsPublic = true;
         public string GoogleDriveFolderID = string.Empty;
 
         // RapidShare

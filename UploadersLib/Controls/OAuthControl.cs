@@ -70,6 +70,7 @@ namespace UploadersLib
                         break;
                 }
 
+                txtVerificationCode.ResetText();
                 btnClearAuthorization.Enabled = btnRefreshAuthorization.Enabled = status == OAuthLoginStatus.LoginSuccessful;
             }
         }
