@@ -179,6 +179,26 @@ namespace UploadersLib.FileUploaders
             string response = SendRequestJSON(url, json, headers: GetAuthHeaders());
         }
 
+        public List<GoogleDriveFile> GetFolders()
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("q", "mimeType = 'application/vnd.google-apps.folder' and trashed = false and 'me' in writers");
+
+            string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, headers: GetAuthHeaders());
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                GoogleDriveFileList fileList = JsonConvert.DeserializeObject<GoogleDriveFileList>(response);
+
+                if (fileList != null)
+                {
+                    return fileList.items;
+                }
+            }
+
+            return null;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization())
@@ -190,7 +210,7 @@ namespace UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                GoogleDriveUpload upload = JsonConvert.DeserializeObject<GoogleDriveUpload>(result.Response);
+                GoogleDriveFile upload = JsonConvert.DeserializeObject<GoogleDriveFile>(result.Response);
 
                 if (upload != null)
                 {
@@ -210,10 +230,16 @@ namespace UploadersLib.FileUploaders
             return result;
         }
 
-        public class GoogleDriveUpload
+        public class GoogleDriveFile
         {
             public string id { get; set; }
             public string alternateLink { get; set; }
+            public string title { get; set; }
+        }
+
+        public class GoogleDriveFileList
+        {
+            public List<GoogleDriveFile> items { get; set; }
         }
 
         public enum GoogleDrivePermissionRole

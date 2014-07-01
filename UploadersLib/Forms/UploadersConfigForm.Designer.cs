@@ -166,14 +166,19 @@
             this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
+            this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
+            this.lblGoogleDriveFolderID = new System.Windows.Forms.Label();
+            this.lvGoogleDriveFoldersList = new HelpersLib.MyListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
+            this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.tpPushbullet = new System.Windows.Forms.TabPage();
             this.lblPushbulletDevices = new System.Windows.Forms.Label();
             this.cboPushbulletDevices = new System.Windows.Forms.ComboBox();
             this.btnPushbulletGetDeviceList = new System.Windows.Forms.Button();
             this.lblPushbulletUserKey = new System.Windows.Forms.Label();
             this.txtPushbulletUserKey = new System.Windows.Forms.TextBox();
-            this.tpGoogleDrive = new System.Windows.Forms.TabPage();
-            this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.tpBox = new System.Windows.Forms.TabPage();
             this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
@@ -374,8 +379,8 @@
             this.tpFTP.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
-            this.tpPushbullet.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
+            this.tpPushbullet.SuspendLayout();
             this.tpBox.SuspendLayout();
             this.tpRapidShare.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
@@ -1234,8 +1239,8 @@
             this.tcFileUploaders.Controls.Add(this.tpFTP);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
-            this.tcFileUploaders.Controls.Add(this.tpPushbullet);
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
+            this.tcFileUploaders.Controls.Add(this.tpPushbullet);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpRapidShare);
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
@@ -1837,6 +1842,81 @@
             this.txtAmazonS3AccessKey.TabIndex = 1;
             this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
             // 
+            // tpGoogleDrive
+            // 
+            this.tpGoogleDrive.Controls.Add(this.txtGoogleDriveFolderID);
+            this.tpGoogleDrive.Controls.Add(this.lblGoogleDriveFolderID);
+            this.tpGoogleDrive.Controls.Add(this.lvGoogleDriveFoldersList);
+            this.tpGoogleDrive.Controls.Add(this.btnGoogleDriveRefreshFolders);
+            this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
+            this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
+            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 22);
+            this.tpGoogleDrive.Name = "tpGoogleDrive";
+            this.tpGoogleDrive.Padding = new System.Windows.Forms.Padding(3);
+            this.tpGoogleDrive.Size = new System.Drawing.Size(972, 493);
+            this.tpGoogleDrive.TabIndex = 1;
+            this.tpGoogleDrive.Text = "Google Drive";
+            this.tpGoogleDrive.UseVisualStyleBackColor = true;
+            // 
+            // txtGoogleDriveFolderID
+            // 
+            this.txtGoogleDriveFolderID.Location = new System.Drawing.Point(592, 13);
+            this.txtGoogleDriveFolderID.Name = "txtGoogleDriveFolderID";
+            this.txtGoogleDriveFolderID.Size = new System.Drawing.Size(192, 20);
+            this.txtGoogleDriveFolderID.TabIndex = 9;
+            this.txtGoogleDriveFolderID.TextChanged += new System.EventHandler(this.txtGoogleDriveFolderID_TextChanged);
+            // 
+            // lblGoogleDriveFolderID
+            // 
+            this.lblGoogleDriveFolderID.AutoSize = true;
+            this.lblGoogleDriveFolderID.Location = new System.Drawing.Point(352, 16);
+            this.lblGoogleDriveFolderID.Name = "lblGoogleDriveFolderID";
+            this.lblGoogleDriveFolderID.Size = new System.Drawing.Size(231, 13);
+            this.lblGoogleDriveFolderID.TabIndex = 8;
+            this.lblGoogleDriveFolderID.Text = "Folder ID for upload (Empty = No folder upload):";
+            // 
+            // lvGoogleDriveFoldersList
+            // 
+            this.lvGoogleDriveFoldersList.AutoFillColumn = true;
+            this.lvGoogleDriveFoldersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lvGoogleDriveFoldersList.FullRowSelect = true;
+            this.lvGoogleDriveFoldersList.Location = new System.Drawing.Point(352, 72);
+            this.lvGoogleDriveFoldersList.MultiSelect = false;
+            this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
+            this.lvGoogleDriveFoldersList.Size = new System.Drawing.Size(432, 408);
+            this.lvGoogleDriveFoldersList.TabIndex = 11;
+            this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
+            this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
+            this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Folder name";
+            this.columnHeader1.Width = 400;
+            // 
+            // btnGoogleDriveRefreshFolders
+            // 
+            this.btnGoogleDriveRefreshFolders.Enabled = false;
+            this.btnGoogleDriveRefreshFolders.Location = new System.Drawing.Point(352, 40);
+            this.btnGoogleDriveRefreshFolders.Name = "btnGoogleDriveRefreshFolders";
+            this.btnGoogleDriveRefreshFolders.Size = new System.Drawing.Size(200, 23);
+            this.btnGoogleDriveRefreshFolders.TabIndex = 10;
+            this.btnGoogleDriveRefreshFolders.Text = "Refresh folders list";
+            this.btnGoogleDriveRefreshFolders.UseVisualStyleBackColor = true;
+            this.btnGoogleDriveRefreshFolders.Click += new System.EventHandler(this.btnGoogleDriveRefreshFolders_Click);
+            // 
+            // cbGoogleDriveIsPublic
+            // 
+            this.cbGoogleDriveIsPublic.AutoSize = true;
+            this.cbGoogleDriveIsPublic.Location = new System.Drawing.Point(16, 264);
+            this.cbGoogleDriveIsPublic.Name = "cbGoogleDriveIsPublic";
+            this.cbGoogleDriveIsPublic.Size = new System.Drawing.Size(106, 17);
+            this.cbGoogleDriveIsPublic.TabIndex = 1;
+            this.cbGoogleDriveIsPublic.Text = "Is public upload?";
+            this.cbGoogleDriveIsPublic.UseVisualStyleBackColor = true;
+            this.cbGoogleDriveIsPublic.CheckedChanged += new System.EventHandler(this.cbGoogleDriveIsPublic_CheckedChanged);
+            // 
             // tpPushbullet
             // 
             this.tpPushbullet.Controls.Add(this.lblPushbulletDevices);
@@ -1900,29 +1980,6 @@
             this.txtPushbulletUserKey.TabIndex = 1;
             this.txtPushbulletUserKey.UseSystemPasswordChar = true;
             this.txtPushbulletUserKey.TextChanged += new System.EventHandler(this.txtPushbulletUserKey_TextChanged);
-            // 
-            // tpGoogleDrive
-            // 
-            this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
-            this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
-            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 22);
-            this.tpGoogleDrive.Name = "tpGoogleDrive";
-            this.tpGoogleDrive.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGoogleDrive.Size = new System.Drawing.Size(972, 493);
-            this.tpGoogleDrive.TabIndex = 1;
-            this.tpGoogleDrive.Text = "Google Drive";
-            this.tpGoogleDrive.UseVisualStyleBackColor = true;
-            // 
-            // cbGoogleDriveIsPublic
-            // 
-            this.cbGoogleDriveIsPublic.AutoSize = true;
-            this.cbGoogleDriveIsPublic.Location = new System.Drawing.Point(16, 264);
-            this.cbGoogleDriveIsPublic.Name = "cbGoogleDriveIsPublic";
-            this.cbGoogleDriveIsPublic.Size = new System.Drawing.Size(106, 17);
-            this.cbGoogleDriveIsPublic.TabIndex = 1;
-            this.cbGoogleDriveIsPublic.Text = "Is public upload?";
-            this.cbGoogleDriveIsPublic.UseVisualStyleBackColor = true;
-            this.cbGoogleDriveIsPublic.CheckedChanged += new System.EventHandler(this.cbGoogleDriveIsPublic_CheckedChanged);
             // 
             // tpBox
             // 
@@ -2967,7 +3024,7 @@
             // 
             // txtImgurAlbumID
             // 
-            this.txtImgurAlbumID.Location = new System.Drawing.Point(592, 12);
+            this.txtImgurAlbumID.Location = new System.Drawing.Point(592, 13);
             this.txtImgurAlbumID.Name = "txtImgurAlbumID";
             this.txtImgurAlbumID.Size = new System.Drawing.Size(192, 20);
             this.txtImgurAlbumID.TabIndex = 5;
@@ -3827,10 +3884,10 @@
             this.tpMega.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
-            this.tpPushbullet.ResumeLayout(false);
-            this.tpPushbullet.PerformLayout();
             this.tpGoogleDrive.ResumeLayout(false);
             this.tpGoogleDrive.PerformLayout();
+            this.tpPushbullet.ResumeLayout(false);
+            this.tpPushbullet.PerformLayout();
             this.tpBox.ResumeLayout(false);
             this.tpBox.PerformLayout();
             this.tpRapidShare.ResumeLayout(false);
@@ -4215,5 +4272,10 @@
         private OAuthControl oauth2Dropbox;
         private System.Windows.Forms.TextBox txtBitlyDomain;
         private System.Windows.Forms.Label lblBitlyDomain;
+        private System.Windows.Forms.TextBox txtGoogleDriveFolderID;
+        private System.Windows.Forms.Label lblGoogleDriveFolderID;
+        private HelpersLib.MyListView lvGoogleDriveFoldersList;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
     }
 }

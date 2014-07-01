@@ -296,9 +296,11 @@ namespace UploadersLib
             if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
             {
                 oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
+                btnGoogleDriveRefreshFolders.Enabled = true;
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+            txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
 
             // Minus
 
@@ -999,6 +1001,29 @@ namespace UploadersLib
         private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleDriveIsPublic = cbGoogleDriveIsPublic.Checked;
+        }
+
+        private void txtGoogleDriveFolderID_TextChanged(object sender, EventArgs e)
+        {
+            Config.GoogleDriveFolderID = txtGoogleDriveFolderID.Text;
+        }
+
+        private void btnGoogleDriveRefreshFolders_Click(object sender, EventArgs e)
+        {
+            GoogleDriveRefreshFolders();
+        }
+
+        private void lvGoogleDriveFoldersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvGoogleDriveFoldersList.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvGoogleDriveFoldersList.SelectedItems[0];
+                var folder = lvi.Tag as UploadersLib.FileUploaders.GoogleDrive.GoogleDriveFile;
+                if (folder != null)
+                {
+                    txtGoogleDriveFolderID.Text = folder.id;
+                }
+            }
         }
 
         #endregion Google Drive

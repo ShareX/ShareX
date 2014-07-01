@@ -686,6 +686,8 @@ namespace UploadersLib
                         oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    btnGoogleDriveRefreshFolders.Enabled = result;
                 }
             }
             catch (Exception ex)
@@ -711,6 +713,35 @@ namespace UploadersLib
                     {
                         oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    btnGoogleDriveRefreshFolders.Enabled = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GoogleDriveRefreshFolders()
+        {
+            try
+            {
+                lvGoogleDriveFoldersList.Items.Clear();
+
+                if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
+                {
+                    var folders = new GoogleDrive(Config.GoogleDriveOAuth2Info).GetFolders();
+
+                    if (folders != null)
+                    {
+                        foreach (var folder in folders)
+                        {
+                            ListViewItem lvi = new ListViewItem(folder.title);
+                            lvi.Tag = folder;
+                            lvGoogleDriveFoldersList.Items.Add(lvi);
+                        }
                     }
                 }
             }
