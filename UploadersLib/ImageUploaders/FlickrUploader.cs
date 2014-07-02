@@ -37,9 +37,8 @@ namespace UploadersLib.ImageUploaders
     {
         private string API_Key, API_Secret;
 
-        private const string API_URL = "http://api.flickr.com/services/rest/";
-        private const string API_Auth_URL = "http://www.flickr.com/services/auth/";
-        private const string API_Upload_URL = "http://api.flickr.com/services/upload/";
+        private const string API_URL = "https://api.flickr.com/services/rest/";
+        private const string API_Auth_URL = "https://www.flickr.com/services/auth/";
 
         public FlickrAuthInfo Auth = new FlickrAuthInfo();
         public FlickrSettings Settings = new FlickrSettings();
@@ -177,7 +176,7 @@ namespace UploadersLib.ImageUploaders
 
         public string GetPhotosLink(string userID)
         {
-            return URLHelpers.CombineURL("http://www.flickr.com/photos", userID);
+            return URLHelpers.CombineURL("https://www.flickr.com/photos", userID);
         }
 
         public string GetPhotosLink()
@@ -241,7 +240,7 @@ namespace UploadersLib.ImageUploaders
 
             args.Add("api_sig", GetAPISig(args));
 
-            UploadResult result = UploadData(stream, API_Upload_URL, fileName, "photo", args);
+            UploadResult result = UploadData(stream, "https://up.flickr.com/services/upload/", fileName, "photo", args);
 
             if (result.IsSuccess)
             {

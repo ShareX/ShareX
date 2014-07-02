@@ -300,6 +300,8 @@ namespace UploadersLib
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+            cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
+            txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
 
             // Minus
@@ -1001,6 +1003,12 @@ namespace UploadersLib
         private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleDriveIsPublic = cbGoogleDriveIsPublic.Checked;
+        }
+
+        private void cbGoogleDriveUseFolder_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleDriveUseFolder = cbGoogleDriveUseFolder.Checked;
+            txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
         }
 
         private void txtGoogleDriveFolderID_TextChanged(object sender, EventArgs e)
