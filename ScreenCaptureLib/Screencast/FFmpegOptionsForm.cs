@@ -353,7 +353,7 @@ namespace ScreenCaptureLib
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://docs.google.com/document/d/1aKLSqsouoeC5Tjf-Z3P880V3rpzvQU0A2Clayn9ElZo/edit?usp=sharing");
+            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/FFmpeg-options");
         }
 
         private object eiFFmpeg_ExportRequested()

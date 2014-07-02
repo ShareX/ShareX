@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace HelpersLib
@@ -38,6 +39,8 @@ namespace HelpersLib
 
         [Browsable(false), XmlIgnore, JsonIgnore]
         public string FilePath { get; private set; }
+
+        public string ApplicationVersion { get; set; }
 
         public static T Load(string filePath)
         {
@@ -55,6 +58,7 @@ namespace HelpersLib
         public virtual bool Save(string filePath)
         {
             FilePath = filePath;
+            ApplicationVersion = Application.ProductVersion;
             return SettingsHelper.Save(this, filePath, SerializationType);
         }
 
