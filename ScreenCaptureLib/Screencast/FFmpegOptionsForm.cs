@@ -37,6 +37,8 @@ namespace ScreenCaptureLib
         public ScreencastOptions Options = new ScreencastOptions();
         public string DefaultToolsPath;
 
+        private bool settingsLoaded;
+
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
@@ -47,14 +49,13 @@ namespace ScreenCaptureLib
             cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
 
-            if (Options != null)
-            {
-                SettingsLoad();
-            }
+            SettingsLoad();
         }
 
         private void SettingsLoad()
         {
+            settingsLoaded = false;
+
             // General
             RefreshSourcesAsync();
 
@@ -89,7 +90,9 @@ namespace ScreenCaptureLib
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
 
             // MP3
-            tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale; // 0-9 where a lower value is a higher quality
+            tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale;
+
+            txtExtension.Text = Options.FFmpeg.Extension;
 
             cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
 
@@ -97,6 +100,8 @@ namespace ScreenCaptureLib
             {
                 txtCommandLinePreview.Text = Options.FFmpeg.CustomCommands;
             }
+
+            settingsLoaded = true;
 
             UpdateUI();
         }
@@ -130,41 +135,18 @@ namespace ScreenCaptureLib
             });
         }
 
-        public void UpdateUI()
+        private void UpdateUI()
         {
-            lblVorbisQuality.Text = "Quality: " + Options.FFmpeg.Vorbis_qscale;
-            lblMP3Quality.Text = "Quality: " + Options.FFmpeg.MP3_qscale;
-            lblAACQuality.Text = string.Format("Bitrate: {0}k", Options.FFmpeg.AAC_bitrate);
-
-            if (!Options.FFmpeg.UseCustomCommands)
+            if (settingsLoaded)
             {
-                txtCommandLinePreview.Text = Options.GetFFmpegArgs();
-            }
-        }
+                lblAACQuality.Text = string.Format("Bitrate: {0}k", Options.FFmpeg.AAC_bitrate);
+                lblVorbisQuality.Text = "Quality: " + Options.FFmpeg.Vorbis_qscale;
+                lblMP3Quality.Text = "Quality: " + Options.FFmpeg.MP3_qscale;
 
-        public void UpdateExtensions()
-        {
-            cboExtension.Items.Clear();
-
-            if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libx264 || Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libxvid)
-            {
-                cboExtension.Items.Add("mp4");
-            }
-            else if (Options.FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx)
-            {
-                cboExtension.Items.Add("webm");
-            }
-
-            cboExtension.Items.Add("mkv");
-            cboExtension.Items.Add("avi");
-
-            if (cboExtension.Items.Contains(Options.FFmpeg.Extension))
-            {
-                cboExtension.Text = Options.FFmpeg.Extension;
-            }
-            else
-            {
-                cboExtension.SelectedIndex = 0;
+                if (!Options.FFmpeg.UseCustomCommands)
+                {
+                    txtCommandLinePreview.Text = Options.GetFFmpegArgs();
+                }
             }
         }
 
@@ -188,19 +170,46 @@ namespace ScreenCaptureLib
         private void cboVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
-            UpdateExtensions();
+
+            if (settingsLoaded)
+            {
+                switch (Options.FFmpeg.VideoCodec)
+                {
+                    case FFmpegVideoCodec.libx264:
+                        txtExtension.Text = "mp4";
+                        break;
+                    case FFmpegVideoCodec.libvpx:
+                        txtExtension.Text = "webm";
+                        break;
+                    case FFmpegVideoCodec.libxvid:
+                        txtExtension.Text = "avi";
+                        break;
+                }
+            }
+
+            if (cboVideoCodec.SelectedIndex >= 0)
+            {
+                tcFFmpegVideoCodecs.SelectedIndex = cboVideoCodec.SelectedIndex;
+            }
+
             UpdateUI();
         }
 
         private void cboAudioCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
+
+            if (cboAudioCodec.SelectedIndex >= 0)
+            {
+                tcFFmpegAudioCodecs.SelectedIndex = cboAudioCodec.SelectedIndex;
+            }
+
             UpdateUI();
         }
 
-        private void cbExtension_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtExtension_TextChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Extension = cboExtension.Text;
+            Options.FFmpeg.Extension = txtExtension.Text;
             UpdateUI();
         }
 
@@ -228,21 +237,21 @@ namespace ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbAACBitrate_Scroll(object sender, EventArgs e)
+        private void tbAACBitrate_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AAC_bitrate = tbAACBitrate.Value * 32;
             UpdateUI();
         }
 
-        private void tbVorbis_qscale_Scroll(object sender, EventArgs e)
+        private void tbVorbis_qscale_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.Vorbis_qscale = tbVorbis_qscale.Value;
             UpdateUI();
         }
 
-        private void tbMP3_qscale_Scroll(object sender, EventArgs e)
+        private void tbMP3_qscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_qscale = FFmpegHelper.libmp3lame_qscale_end - tbMP3_qscale.Value; // 0-9 where a lower value is a higher quality
+            Options.FFmpeg.MP3_qscale = FFmpegHelper.libmp3lame_qscale_end - tbMP3_qscale.Value;
             UpdateUI();
         }
 
@@ -273,7 +282,7 @@ namespace ScreenCaptureLib
 
         private void buttonFFmpegHelp_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://www.ffmpeg.org/ffmpeg.html");
+            URLHelpers.OpenURL("https://github.com/ShareX/ShareX/wiki/FFmpeg-options#additional-commands");
         }
 
         private void btnDownload_Click(object sender, EventArgs e)
