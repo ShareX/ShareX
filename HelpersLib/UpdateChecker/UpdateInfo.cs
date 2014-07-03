@@ -25,6 +25,7 @@
 
 using System;
 using System.Web;
+using System.Windows.Forms;
 
 namespace HelpersLib
 {
@@ -65,8 +66,13 @@ namespace HelpersLib
 
         public void RefreshStatus()
         {
-            if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null &&
-                !string.IsNullOrEmpty(DownloadURL) && (forceUpdate || Helpers.CheckVersion(CurrentVersion, LatestVersion)))
+            if (CurrentVersion == null)
+            {
+                CurrentVersion = Version.Parse(Application.ProductVersion);
+            }
+
+            if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(DownloadURL) &&
+                (forceUpdate || Helpers.CheckVersion(CurrentVersion, LatestVersion)))
             {
                 Status = UpdateStatus.UpdateAvailable;
             }

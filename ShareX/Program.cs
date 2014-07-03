@@ -39,47 +39,18 @@ namespace ShareX
 {
     internal static class Program
     {
-        public static readonly string ApplicationName = Application.ProductName;
-        public static readonly Version AssemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
-
-        public static string Title
-        {
-            get
-            {
-                string title = string.Format("{0} {1}.{2}", ApplicationName, AssemblyVersion.Major, AssemblyVersion.Minor);
-                if (AssemblyVersion.Build > 0) title += "." + AssemblyVersion.Build;
-                if (IsPortable) title += " Portable";
-                return title;
-            }
-        }
-
-        public static string AssemblyCopyright
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-
-                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
-            }
-        }
-
         #region Paths
 
         public static readonly string StartupPath = Application.StartupPath;
 
-        public static readonly string DefaultPersonalPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationName);
-        private static readonly string PortablePersonalPath = Path.Combine(StartupPath, ApplicationName);
+        public static readonly string DefaultPersonalPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ShareX");
+        private static readonly string PortablePersonalPath = Path.Combine(StartupPath, "ShareX");
         private static readonly string PersonalPathConfig = Path.Combine(StartupPath, "PersonalPath.cfg");
         private static readonly string ApplicationConfigFilename = "ApplicationConfig.json";
         private static readonly string UploadersConfigFilename = "UploadersConfig.json";
         private static readonly string HotkeysConfigFilename = "HotkeysConfig.json";
         private static readonly string HistoryFilename = "History.xml";
-        private static readonly string LogFileName = ApplicationName + "-Log-{0:yyyy-MM}.txt";
+        private static readonly string LogFileName = "ShareX-Log-{0:yyyy-MM}.txt";
 
         public static string CustomPersonalPath { get; private set; }
 
@@ -241,6 +212,18 @@ namespace ShareX
         }
 
         #endregion Paths
+
+        public static string Title
+        {
+            get
+            {
+                Version version = Version.Parse(Application.ProductVersion);
+                string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
+                if (version.Build > 0) title += "." + version.Build;
+                if (IsPortable) title += " Portable";
+                return title;
+            }
+        }
 
         public static bool IsMultiInstance { get; private set; }
         public static bool IsPortable { get; private set; }

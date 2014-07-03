@@ -37,10 +37,25 @@ namespace HelpersLib
     {
         public static readonly SerializationType SerializationType = SerializationType.Json;
 
-        [Browsable(false), XmlIgnore, JsonIgnore]
         public string FilePath { get; private set; }
 
         public string ApplicationVersion { get; set; }
+
+        public bool IsFirstTimeRun
+        {
+            get
+            {
+                return string.IsNullOrEmpty(ApplicationVersion);
+            }
+        }
+
+        public bool IsPreviousVersion
+        {
+            get
+            {
+                return !IsFirstTimeRun && Helpers.CompareApplicationVersion(ApplicationVersion) < 0;
+            }
+        }
 
         public static T Load(string filePath)
         {
@@ -55,11 +70,11 @@ namespace HelpersLib
             return setting;
         }
 
-        public virtual bool Save(string filePath)
+        public bool Save(string filePath)
         {
             FilePath = filePath;
             ApplicationVersion = Application.ProductVersion;
-            return SettingsHelper.Save(this, filePath, SerializationType);
+            return SettingsHelper.Save(this, FilePath, SerializationType);
         }
 
         private void Save()
@@ -77,7 +92,7 @@ namespace HelpersLib
             SaveAsync(FilePath);
         }
 
-        public virtual void Save(Stream stream)
+        public void Save(Stream stream)
         {
             SettingsHelper.Save(this, stream, SerializationType);
         }

@@ -395,7 +395,6 @@ namespace ShareX
         public static UpdateChecker CheckUpdate()
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
-            updateChecker.CurrentVersion = Program.AssemblyVersion;
             updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
             updateChecker.CheckUpdate();
 
@@ -403,7 +402,6 @@ namespace ShareX
             if (updateChecker.UpdateInfo == null || updateChecker.UpdateInfo.Status == UpdateStatus.UpdateCheckFailed)
             {
                 updateChecker = new XMLUpdateChecker("http://getsharex.com/Update.xml", "ShareX");
-                updateChecker.CurrentVersion = Program.AssemblyVersion;
                 updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
                 updateChecker.CheckUpdate();
             }

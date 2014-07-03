@@ -77,7 +77,7 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(TestText))
             {
-                TestText = Program.ApplicationName + " text upload test";
+                TestText = "ShareX text upload test";
             }
 
             if (string.IsNullOrEmpty(TestURL))

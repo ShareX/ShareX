@@ -25,6 +25,7 @@
 
 using System;
 using System.Net;
+using System.Windows.Forms;
 
 namespace HelpersLib
 {
@@ -37,6 +38,7 @@ namespace HelpersLib
 
         public UpdateChecker()
         {
+            CurrentVersion = Version.Parse(Application.ProductVersion);
             ReleaseType = ReleaseChannelType.Stable;
         }
 

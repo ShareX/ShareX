@@ -335,6 +335,29 @@ namespace HelpersLib
             }
         }
 
+        /// <summary>
+        /// If version1 newer than version2 = 1
+        /// If version1 equal to version2 = 0
+        /// If version1 older than version2 = -1
+        /// </summary>
+        public static int CompareVersion(string version1, string version2)
+        {
+            return NormalizeVersion(version1).CompareTo(NormalizeVersion(version2));
+        }
+
+        /// <summary>
+        /// If version newer than ApplicationVersion = 1
+        /// If version equal to ApplicationVersion = 0
+        /// If version older than ApplicationVersion = -1
+        /// </summary>
+        public static int CompareApplicationVersion(string version)
+        {
+            return CompareVersion(version, Application.ProductVersion);
+        }
+
+        /// <summary>
+        /// If latestVersion newer than currentVersion = true
+        /// </summary>
         public static bool CheckVersion(Version currentVersion, Version latestVersion)
         {
             return NormalizeVersion(latestVersion).CompareTo(NormalizeVersion(currentVersion)) > 0;
@@ -343,6 +366,11 @@ namespace HelpersLib
         private static Version NormalizeVersion(Version version)
         {
             return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
+        }
+
+        private static Version NormalizeVersion(string version)
+        {
+            return NormalizeVersion(Version.Parse(version));
         }
 
         public static bool IsWindowsXP()
