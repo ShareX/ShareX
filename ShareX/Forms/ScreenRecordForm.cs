@@ -57,6 +57,7 @@ namespace ShareX
         private ScreenRecorder screenRecorder;
         private Rectangle captureRectangle;
         private ScreenRegionForm regionForm;
+        private DWMManager dwmManager;
 
         private ScreenRecordForm()
         {
@@ -167,6 +168,12 @@ namespace ShareX
             {
                 try
                 {
+                    if (TaskSettings.CaptureSettings.ScreenRecordAutoDisableAero)
+                    {
+                        dwmManager = new DWMManager();
+                        dwmManager.AutoDisable();
+                    }
+
                     if (TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI)
                     {
                         path = Path.Combine(TaskSettings.CaptureFolder, TaskHelpers.GetFilename(TaskSettings, "avi"));
@@ -213,6 +220,12 @@ namespace ShareX
                 }
                 finally
                 {
+                    if (dwmManager != null)
+                    {
+                        dwmManager.Dispose();
+                        dwmManager = null;
+                    }
+
                     if (regionForm != null)
                     {
                         this.InvokeSafe(() => regionForm.Close());

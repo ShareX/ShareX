@@ -2025,4 +2025,11 @@ namespace HelpersLib
         BI_JPEG = 4,
         BI_PNG = 5
     }
+
+    [Flags]
+    public enum CompositionAction : uint
+    {
+        DWM_EC_DISABLECOMPOSITION = 0,
+        DWM_EC_ENABLECOMPOSITION = 1
+    }
 }

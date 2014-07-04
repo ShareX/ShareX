@@ -82,6 +82,7 @@
     <Compile Include="Colors\RGBA.cs" />
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
+    <Compile Include="DWMManager.cs" />
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
