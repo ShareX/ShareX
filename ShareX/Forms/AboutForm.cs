@@ -223,7 +223,7 @@ namespace ShareX
                 if (y >= windowBottom)
                 {
                     y = windowBottom;
-                    windowVelocity.Y = windowBouncePower;
+                    windowVelocity.Y = windowBouncePower.RandomAdd(-10, 10);
                 }
                 else
                 {

@@ -84,6 +84,7 @@
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
+    <Compile Include="Extensions\NumberExtensions.cs" />
     <Compile Include="FontSafe.cs" />
     <Compile Include="Forms\OutputBox.cs">
       <SubType>Form</SubType>
