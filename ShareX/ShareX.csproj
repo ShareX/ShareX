@@ -139,9 +139,6 @@
     <Compile Include="Forms\FileExistForm.Designer.cs">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm_Capture.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
