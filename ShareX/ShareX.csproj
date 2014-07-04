@@ -372,7 +372,6 @@
     <None Include="Resources\image.png" />
     <None Include="Resources\application-browser.png" />
     <None Include="Resources\gear.png" />
-    <None Include="Resources\present.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -473,6 +472,8 @@
     <None Include="Resources\keyboard.png" />
     <None Include="Resources\wrench-screwdriver.png" />
     <None Include="Resources\clock.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\crown.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

@@ -670,14 +670,19 @@ namespace ShareX
             UploadManager.DragDropUpload(e.Data);
         }
 
+        private void tsbFileUpload_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadFile();
+        }
+
         private void tsbClipboardUpload_Click(object sender, EventArgs e)
         {
             UploadManager.ClipboardUploadMainWindow();
         }
 
-        private void tsbFileUpload_Click(object sender, EventArgs e)
+        private void tsmiUploadURL_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadFile();
+            UploadManager.UploadURL();
         }
 
         private void tsbDragDropUpload_Click(object sender, EventArgs e)
@@ -1259,8 +1264,8 @@ namespace ShareX
 
             switch (safeTaskSettings.Job)
             {
-                case HotkeyType.StopUploads:
-                    TaskManager.StopAllTasks();
+                case HotkeyType.FileUpload:
+                    UploadManager.UploadFile(safeTaskSettings);
                     break;
                 case HotkeyType.ClipboardUpload:
                     UploadManager.ClipboardUpload(safeTaskSettings);
@@ -1268,11 +1273,14 @@ namespace ShareX
                 case HotkeyType.ClipboardUploadWithContentViewer:
                     UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
                     break;
-                case HotkeyType.FileUpload:
-                    UploadManager.UploadFile(safeTaskSettings);
+                case HotkeyType.UploadURL:
+                    UploadManager.UploadURL(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
                     TaskHelpers.OpenDropWindow();
+                    break;
+                case HotkeyType.StopUploads:
+                    TaskManager.StopAllTasks();
                     break;
                 case HotkeyType.PrintScreen:
                     CaptureScreenshot(CaptureType.Screen, safeTaskSettings, false);

@@ -262,6 +262,23 @@ namespace ShareX
             }
         }
 
+        public static void UploadURL(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            string url = InputBox.GetInputText("ShareX - URL to download from and upload");
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                string filename = URLHelpers.GetFileName(url, true);
+
+                if (!string.IsNullOrEmpty(filename))
+                {
+                    DownloadAndUploadFile(url, filename, taskSettings);
+                }
+            }
+        }
+
         public static void RunImageTask(Image img, TaskSettings taskSettings)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
