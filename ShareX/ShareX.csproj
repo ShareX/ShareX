@@ -365,12 +365,9 @@
     <None Include="Resources\navigation-090-button.png" />
     <None Include="Resources\cross-button.png" />
     <None Include="Resources\tick-button.png" />
-    <None Include="Resources\clipboard--plus.png" />
-    <None Include="Resources\folder--plus.png" />
     <None Include="Resources\document-copy.png" />
     <None Include="Resources\document--arrow.png" />
     <None Include="Resources\application-form.png" />
-    <None Include="Resources\address-book-blue.png" />
     <None Include="Resources\navigation-000-button.png" />
     <None Include="Resources\tr.png" />
     <None Include="Resources\au.png" />
@@ -382,7 +379,6 @@
     <None Include="Resources\image.png" />
     <None Include="Resources\application-browser.png" />
     <None Include="Resources\gear.png" />
-    <None Include="Resources\block.png" />
     <None Include="Resources\present.png" />
   </ItemGroup>
   <ItemGroup>
@@ -453,28 +449,12 @@
     <None Include="Resources\control-record.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hammer-screwdriver.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hammer--arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hammer--pencil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hammer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\question-button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
-    <None Include="Resources\inbox--plus.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\Test.png" />
     <None Include="Resources\application-network.png" />
@@ -491,22 +471,27 @@
       <Link>7z.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\application-wave.png" />
     <None Include="Resources\barcode-2d.png" />
     <None Include="Resources\GitHub.png" />
     <EmbeddedResource Include="GitHash.txt" />
     <None Include="Resources\Twitter.ico" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\drive.png" />
+    <None Include="Resources\inbox.png" />
+    <None Include="Resources\arrow-090.png" />
+    <None Include="Resources\traffic-cone.png" />
+    <None Include="Resources\categories.png" />
+    <None Include="Resources\application-blog.png" />
+    <None Include="Resources\keyboard.png" />
+    <None Include="Resources\wrench-screwdriver.png" />
     <Content Include="ShareX_Icon.ico" />
-    <None Include="Resources\ru.png" />
-    <None Include="Resources\keyboard--pencil.png" />
     <None Include="Resources\globe--pencil.png" />
-    <None Include="Resources\application--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
     <None Include="Resources\control-record-yellow.png" />
     <None Include="Resources\application-monitor.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\folder-tree.png" />
-    <None Include="Resources\fr.png" />
     <None Include="Resources\color.png" />
     <None Include="..\VersionHistory.txt">
       <Link>VersionHistory.txt</Link>

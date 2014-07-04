@@ -165,8 +165,6 @@ namespace ShareX
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(info.DataType.ToString());
-                lvi.SubItems.Add(info.UploaderHost);
                 lvi.SubItems.Add(string.Empty);
                 lvi.ImageIndex = 3;
                 if (Program.Settings.ShowMostRecentTaskFirst)
@@ -259,7 +257,7 @@ namespace ShareX
                             if (lvi != null)
                             {
                                 lvi.SubItems[1].Text = "Error";
-                                lvi.SubItems[8].Text = string.Empty;
+                                lvi.SubItems[6].Text = string.Empty;
                                 lvi.ImageIndex = 1;
                             }
 
@@ -287,8 +285,7 @@ namespace ShareX
 
                                 if (!string.IsNullOrEmpty(result))
                                 {
-                                    lvi.SubItems[7].Text = task.Info.UploaderHost;
-                                    lvi.SubItems[8].Text = result;
+                                    lvi.SubItems[6].Text = result;
                                 }
                             }
 
