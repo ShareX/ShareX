@@ -62,7 +62,7 @@ namespace ShareX
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            niTray.Icon = Resources.clock_plus.ToIcon();
+            niTray.Icon = Resources.clock.ToIcon();
 
             screenshotTimer = new System.Timers.Timer();
             screenshotTimer.SynchronizingObject = this;

@@ -353,7 +353,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Resources\Window.png" />
     <None Include="Resources\RoundedRectangle.png" />
     <None Include="Resources\Rectangle.png" />
     <None Include="Resources\Polygon.png" />
@@ -365,9 +364,6 @@
     <None Include="Resources\navigation-090-button.png" />
     <None Include="Resources\cross-button.png" />
     <None Include="Resources\tick-button.png" />
-    <None Include="Resources\document-copy.png" />
-    <None Include="Resources\document--arrow.png" />
-    <None Include="Resources\application-form.png" />
     <None Include="Resources\navigation-000-button.png" />
     <None Include="Resources\tr.png" />
     <None Include="Resources\au.png" />
@@ -413,9 +409,6 @@
     <None Include="Resources\folder-open-image.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\clock--plus.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\layer-shape-curve.png" />
   </ItemGroup>
   <ItemGroup>
@@ -447,9 +440,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\control-record.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\question-button.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkbox_uncheck.png" />
@@ -485,6 +475,7 @@
     <None Include="Resources\application-blog.png" />
     <None Include="Resources\keyboard.png" />
     <None Include="Resources\wrench-screwdriver.png" />
+    <None Include="Resources\clock.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

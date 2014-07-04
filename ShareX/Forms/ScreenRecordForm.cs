@@ -224,7 +224,7 @@ namespace ShareX
                     if (screenRecorder != null)
                     {
                         TrayIcon.Text = "ShareX - Encoding...";
-                        TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
+                        TrayIcon.Icon = Resources.camcorder__pencil.ToIcon();
 
                         string sourceFilePath = path;
 
