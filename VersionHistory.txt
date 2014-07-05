@@ -1,4 +1,14 @@
-﻿ShareX 9.1.0 - 2014-06-11
+﻿ShareX 9.1.1 
+
+* Task setting to disable Aero before screen recording
+* Main window UI and menu changes
+* Google Drive file uploader enhancements (title and folder support)
+* Added support to share URL to Google+ and Facebook via web browser
+* FTP client improvements
+* bit.ly custom domain support
+* ImageShack image uploader changes (better error handling, removed anonymous support)
+
+ShareX 9.1.0 - 2014-06-11
 
 * ShareX now uses .NET Framework 4.0, which the installer automatically downloads and installs if needed
 * Switched to OAuth 2.0 for Dropbox, which means you need to re-authenticate

@@ -144,7 +144,7 @@ namespace ShareX
                 tsddbWorkflows.DropDownItems.Add(tss);
             }
 
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("You can add workflow from hotkey settings...");
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("You can add workflows from hotkey settings...");
             tsmi.Click += tsbHotkeySettings_Click;
             tsddbWorkflows.DropDownItems.Add(tsmi);
 
