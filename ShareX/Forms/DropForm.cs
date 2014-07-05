@@ -26,6 +26,7 @@
 using HelpersLib;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -50,7 +51,7 @@ namespace ShareX
         public int DropOpacity { get; set; }
         public int DropHoverOpacity { get; set; }
 
-        private Bitmap logo = null;
+        private Bitmap backgroundImage = null;
         private bool isHovered = false;
 
         private DropForm(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
@@ -62,12 +63,41 @@ namespace ShareX
             DropOpacity = opacity.Between(1, 255);
             DropHoverOpacity = hoverOpacity.Between(1, 255);
 
-            logo = (Bitmap)ImageHelpers.ResizeImage(ShareXResources.Logo, DropSize, DropSize);
+            backgroundImage = DrawDropImage(size);
 
-            Point position = Helpers.GetPosition(DropAlignment, new Point(DropOffset, DropOffset), Screen.PrimaryScreen.WorkingArea.Size, logo.Size);
+            Point position = Helpers.GetPosition(DropAlignment, new Point(DropOffset, DropOffset), Screen.PrimaryScreen.WorkingArea.Size, backgroundImage.Size);
             Location = position;
 
-            SelectBitmap(logo, DropOpacity);
+            SelectBitmap(backgroundImage, DropOpacity);
+        }
+
+        private Bitmap DrawDropImage(int size)
+        {
+            Bitmap bmp = new Bitmap(size, size);
+            Rectangle rect = new Rectangle(0, 0, size, size);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.FillRectangle(Brushes.CornflowerBlue, rect);
+
+                g.DrawRectangleProper(Pens.Black, rect);
+
+                using (Pen pen = new Pen(Color.WhiteSmoke, 5) { Alignment = PenAlignment.Inset })
+                {
+                    g.DrawRectangleProper(pen, rect.RectangleOffset(-1));
+                }
+
+                string text = "Drag\n&\nDrop";
+                StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+
+                using (Font font = new Font("Arial", 20, FontStyle.Bold))
+                {
+                    g.DrawString(text, font, Brushes.Black, rect.LocationOffset(1), sf);
+                    g.DrawString(text, font, Brushes.White, rect, sf);
+                }
+            }
+
+            return bmp;
         }
 
         private void DropForm_MouseDown(object sender, MouseEventArgs e)
@@ -97,7 +127,7 @@ namespace ShareX
 
                 if (!isHovered)
                 {
-                    SelectBitmap(logo, DropHoverOpacity);
+                    SelectBitmap(backgroundImage, DropHoverOpacity);
                     isHovered = true;
                 }
             }
@@ -113,7 +143,7 @@ namespace ShareX
 
             if (isHovered)
             {
-                SelectBitmap(logo, DropOpacity);
+                SelectBitmap(backgroundImage, DropOpacity);
                 isHovered = false;
             }
         }
@@ -122,7 +152,7 @@ namespace ShareX
         {
             if (isHovered)
             {
-                SelectBitmap(logo, DropOpacity);
+                SelectBitmap(backgroundImage, DropOpacity);
                 isHovered = false;
             }
         }
@@ -144,7 +174,7 @@ namespace ShareX
             {
                 components.Dispose();
             }
-            if (logo != null) logo.Dispose();
+            if (backgroundImage != null) backgroundImage.Dispose();
             base.Dispose(disposing);
         }
 

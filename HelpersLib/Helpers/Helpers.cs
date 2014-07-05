@@ -355,22 +355,17 @@ namespace HelpersLib
             return CompareVersion(version, Application.ProductVersion);
         }
 
+        private static Version NormalizeVersion(string version)
+        {
+            return Version.Parse(version).Normalize();
+        }
+
         /// <summary>
         /// If latestVersion newer than currentVersion = true
         /// </summary>
         public static bool CheckVersion(Version currentVersion, Version latestVersion)
         {
-            return NormalizeVersion(latestVersion).CompareTo(NormalizeVersion(currentVersion)) > 0;
-        }
-
-        private static Version NormalizeVersion(Version version)
-        {
-            return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
-        }
-
-        private static Version NormalizeVersion(string version)
-        {
-            return NormalizeVersion(Version.Parse(version));
+            return currentVersion.Normalize() < latestVersion.Normalize();
         }
 
         public static bool IsWindowsXP()
