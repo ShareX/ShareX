@@ -438,8 +438,7 @@ namespace ShareX
 
         public static void OpenDropWindow()
         {
-            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity,
-                Program.Settings.DropHoverOpacity).ShowActivate();
+            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity, Program.Settings.DropHoverOpacity).ShowActivate();
         }
 
         public static void DoScreenRecorder(TaskSettings taskSettings = null)

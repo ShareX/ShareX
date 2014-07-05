@@ -57,16 +57,16 @@ namespace ShareX
         private DropForm(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
         {
             InitializeComponent();
+
             DropSize = size.Between(10, 300);
             DropOffset = offset;
             DropAlignment = alignment;
             DropOpacity = opacity.Between(1, 255);
             DropHoverOpacity = hoverOpacity.Between(1, 255);
 
-            backgroundImage = DrawDropImage(size);
+            backgroundImage = DrawDropImage(DropSize);
 
-            Point position = Helpers.GetPosition(DropAlignment, new Point(DropOffset, DropOffset), Screen.PrimaryScreen.WorkingArea.Size, backgroundImage.Size);
-            Location = position;
+            Location = Helpers.GetPosition(DropAlignment, new Point(DropOffset, DropOffset), Screen.PrimaryScreen.WorkingArea.Size, backgroundImage.Size);
 
             SelectBitmap(backgroundImage, DropOpacity);
         }
@@ -87,10 +87,10 @@ namespace ShareX
                     g.DrawRectangleProper(pen, rect.RectangleOffset(-1));
                 }
 
-                string text = "Drag\n&\nDrop";
-                StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+                string text = "Drop\nhere";
 
                 using (Font font = new Font("Arial", 20, FontStyle.Bold))
+                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
                     g.DrawString(text, font, Brushes.Black, rect.LocationOffset(1), sf);
                     g.DrawString(text, font, Brushes.White, rect, sf);
@@ -174,7 +174,9 @@ namespace ShareX
             {
                 components.Dispose();
             }
+
             if (backgroundImage != null) backgroundImage.Dispose();
+
             base.Dispose(disposing);
         }
 
@@ -186,6 +188,7 @@ namespace ShareX
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Cursor = Cursors.SizeAll;
             this.Text = "DropForm";
             this.AllowDrop = true;
 

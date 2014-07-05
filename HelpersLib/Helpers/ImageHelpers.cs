@@ -504,7 +504,10 @@ namespace HelpersLib
 
             using (GraphicsPath gp = new GraphicsPath())
             {
-                gp.AddString(text, font.FontFamily, (int)font.Style, font.Size, position, new StringFormat());
+                using (StringFormat sf = new StringFormat())
+                {
+                    gp.AddString(text, font.FontFamily, (int)font.Style, font.Size, position, sf);
+                }
 
                 using (Pen borderPen = new Pen(borderColor, 2) { LineJoin = LineJoin.Round })
                 {
