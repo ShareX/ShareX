@@ -41,13 +41,13 @@ namespace UploadersLib.FileUploaders
         public string Username { get; set; }
         public string Password { get; set; }
         public string Path { get; set; }
+        public bool CreateShare { get; set; }
 
-        public OwnCloud(string host, string username, string password, string path = "/")
+        public OwnCloud(string host, string username, string password)
         {
             Host = host;
             Username = username;
             Password = password;
-            Path = path;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -70,11 +70,22 @@ namespace UploadersLib.FileUploaders
             string path = URLHelpers.CombineURL(Path, fileName);
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", path);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            UploadResult result = UploadData(stream, url, fileName, headers: headers, method: HttpMethod.PUT);
+
+            string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
+
+            UploadResult result = new UploadResult(response);
 
             if (!IsError)
             {
-                result.URL = ShareFile(path);
+                if (CreateShare)
+                {
+                    AllowReportProgress = false;
+                    result.URL = ShareFile(path);
+                }
+                else
+                {
+                    result.IsURLExpected = false;
+                }
             }
 
             return result;

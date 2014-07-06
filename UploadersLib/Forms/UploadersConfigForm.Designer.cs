@@ -371,6 +371,7 @@
             this.ttlvMain = new HelpersLib.TabToListView();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
+            this.cbOwnCloudCreateShare = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -2046,6 +2047,7 @@
             // 
             // tpOwnCloud
             // 
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateShare);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPath);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPassword);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudUsername);
@@ -3967,6 +3969,17 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
+            // cbOwnCloudCreateShare
+            // 
+            this.cbOwnCloudCreateShare.AutoSize = true;
+            this.cbOwnCloudCreateShare.Location = new System.Drawing.Point(19, 112);
+            this.cbOwnCloudCreateShare.Name = "cbOwnCloudCreateShare";
+            this.cbOwnCloudCreateShare.Size = new System.Drawing.Size(131, 17);
+            this.cbOwnCloudCreateShare.TabIndex = 8;
+            this.cbOwnCloudCreateShare.Text = "Create shareable URL";
+            this.cbOwnCloudCreateShare.UseVisualStyleBackColor = true;
+            this.cbOwnCloudCreateShare.CheckedChanged += new System.EventHandler(this.cbOwnCloudCreateShare_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4424,5 +4437,6 @@
         private System.Windows.Forms.Label lblOwnCloudPassword;
         private System.Windows.Forms.Label lblOwnCloudUsername;
         private System.Windows.Forms.Label lblOwnCloudHost;
+        private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
     }
 }

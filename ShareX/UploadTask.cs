@@ -931,7 +931,11 @@ namespace ShareX
                     fileUploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
                     break;
                 case FileDestination.OwnCloud:
-                    fileUploader = new OwnCloud(Program.UploadersConfig.OwnCloudHost, Program.UploadersConfig.OwnCloudUsername, Program.UploadersConfig.OwnCloudPassword, Program.UploadersConfig.OwnCloudPath);
+                    fileUploader = new OwnCloud(Program.UploadersConfig.OwnCloudHost, Program.UploadersConfig.OwnCloudUsername, Program.UploadersConfig.OwnCloudPassword)
+                    {
+                        Path = Program.UploadersConfig.OwnCloudPath,
+                        CreateShare = Program.UploadersConfig.OwnCloudCreateShare
+                    };
                     break;
                 case FileDestination.Pushbullet:
                     fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
