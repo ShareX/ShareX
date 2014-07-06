@@ -24,12 +24,14 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace UploadersLib.FileUploaders
 {
@@ -40,34 +42,12 @@ namespace UploadersLib.FileUploaders
         public string Password { get; set; }
         public string Path { get; set; }
 
-        public OwnCloud(string host, string username, string password)
+        public OwnCloud(string host, string username, string password, string path = "/")
         {
             Host = host;
             Username = username;
             Password = password;
-        }
-
-        public string ShareFile(string path)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("format", "json");
-            args.Add("path", path); // path to the file/folder which should be shared
-            args.Add("shareType", "3"); // ‘0’ = user; ‘1’ = group; ‘3’ = public link
-            // args.Add("shareWith", ""); // user / group id with which the file should be shared
-            // args.Add("publicUpload", "false"); // allow public upload to a public shared folder (true/false)
-            // args.Add("password", ""); // password to protect public link Share with
-            // args.Add("permissions", "1"); // 1 = read; 2 = update; 4 = create; 8 = delete; 16 = share; 31 = all (default: 31, for public shares: 1)
-
-            string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares");
-            NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            string response = SendRequest(HttpMethod.GET, url, args, headers);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return ""; // Parse response
-            }
-
-            return null;
+            Path = path;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -87,16 +67,77 @@ namespace UploadersLib.FileUploaders
                 Path = "/";
             }
 
-            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", Path);
+            string path = URLHelpers.CombineURL(Path, fileName);
+            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", path);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
             UploadResult result = UploadData(stream, url, fileName, headers: headers, method: HttpMethod.PUT);
 
-            if (result.IsSuccess)
+            if (!IsError)
             {
-                result.URL = ShareFile(Path);
+                result.URL = ShareFile(path);
             }
 
             return result;
+        }
+
+        // http://doc.owncloud.org/server/7.0/developer_manual/core/ocs-share-api.html#create-a-new-share
+        public string ShareFile(string path)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("path", path); // path to the file/folder which should be shared
+            args.Add("shareType", "3"); // ‘0’ = user; ‘1’ = group; ‘3’ = public link
+            // args.Add("shareWith", ""); // user / group id with which the file should be shared
+            // args.Add("publicUpload", "false"); // allow public upload to a public shared folder (true/false)
+            // args.Add("password", ""); // password to protect public link Share with
+            args.Add("permissions", "1"); // 1 = read; 2 = update; 4 = create; 8 = delete; 16 = share; 31 = all (default: 31, for public shares: 1)
+
+            string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");
+            NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
+            string response = SendRequest(HttpMethod.POST, url, args, headers);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                OwnCloudShareResponse result = JsonConvert.DeserializeObject<OwnCloudShareResponse>(response);
+
+                if (result != null && result.ocs != null && result.ocs.meta != null)
+                {
+                    if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
+                    {
+                        return result.ocs.data.url;
+                    }
+                    else
+                    {
+                        Errors.Add(string.Format("Status: {0}\r\nStatus code: {1}\r\nMessage: {2}", result.ocs.meta.status, result.ocs.meta.statuscode, result.ocs.meta.message));
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public class OwnCloudShareResponse
+        {
+            public OwnCloudShareResponseOcs ocs { get; set; }
+        }
+
+        public class OwnCloudShareResponseOcs
+        {
+            public OwnCloudShareResponseMeta meta { get; set; }
+            public OwnCloudShareResponseData data { get; set; }
+        }
+
+        public class OwnCloudShareResponseMeta
+        {
+            public string status { get; set; }
+            public int statuscode { get; set; }
+            public string message { get; set; }
+        }
+
+        public class OwnCloudShareResponseData
+        {
+            public int id { get; set; }
+            public string url { get; set; }
+            public string token { get; set; }
         }
     }
 }

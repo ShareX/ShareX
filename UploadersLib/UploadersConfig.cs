@@ -204,6 +204,13 @@ namespace UploadersLib
             UseReducedRedundancyStorage = true
         };
 
+        // ownCloud
+
+        public string OwnCloudHost = "";
+        public string OwnCloudUsername = "";
+        public string OwnCloudPassword = "";
+        public string OwnCloudPath = "/";
+
         #endregion File uploaders
 
         #region URL shorteners

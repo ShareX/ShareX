@@ -98,6 +98,7 @@ namespace UploadersLib
             uploadersImageList.Images.Add("Bitly", Resources.Bitly);
             uploadersImageList.Images.Add("Yourls", Resources.Yourls);
             uploadersImageList.Images.Add("Twitter", Resources.Twitter);
+            uploadersImageList.Images.Add("ownCloud", Resources.OwnCloud);
 
             tpImageShack.ImageKey = "ImageShack";
             tpTinyPic.ImageKey = "TinyPic";
@@ -130,6 +131,7 @@ namespace UploadersLib
             tpGist.ImageKey = "Gist";
             tpUpaste.ImageKey = "Upaste";
             tpAmazonS3.ImageKey = "AmazonS3";
+            tpOwnCloud.ImageKey = "ownCloud";
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -473,6 +475,13 @@ namespace UploadersLib
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
             UpdateAmazonS3Status();
+
+            // ownCloud
+
+            txtOwnCloudHost.Text = Config.OwnCloudHost;
+            txtOwnCloudUsername.Text = Config.OwnCloudUsername;
+            txtOwnCloudPassword.Text = Config.OwnCloudPassword;
+            txtOwnCloudPath.Text = Config.OwnCloudPath;
 
             #endregion File uploaders
 
@@ -1630,6 +1639,30 @@ namespace UploadersLib
         }
 
         #endregion Amazon S3
+
+        #region ownCloud
+
+        private void txtOwnCloudHost_TextChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudHost = txtOwnCloudHost.Text;
+        }
+
+        private void txtOwnCloudUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudUsername = txtOwnCloudUsername.Text;
+        }
+
+        private void txtOwnCloudPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudPassword = txtOwnCloudPassword.Text;
+        }
+
+        private void txtOwnCloudPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudPath = txtOwnCloudPath.Text;
+        }
+
+        #endregion ownCloud
 
         #region Pushbullet
 

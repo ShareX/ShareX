@@ -37,6 +37,7 @@
             this.tpOtherUploaders = new System.Windows.Forms.TabPage();
             this.tcOtherUploaders = new System.Windows.Forms.TabControl();
             this.tpCustomUploaders = new System.Windows.Forms.TabPage();
+            this.btnCustomUploaderExamples = new System.Windows.Forms.Button();
             this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
             this.lblCustomUploaderImageUploader = new System.Windows.Forms.Label();
             this.btnCustomUploaderFileUploaderTest = new System.Windows.Forms.Button();
@@ -183,6 +184,15 @@
             this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.oauth2GoogleDrive = new UploadersLib.OAuthControl();
+            this.tpOwnCloud = new System.Windows.Forms.TabPage();
+            this.txtOwnCloudPath = new System.Windows.Forms.TextBox();
+            this.txtOwnCloudPassword = new System.Windows.Forms.TextBox();
+            this.txtOwnCloudUsername = new System.Windows.Forms.TextBox();
+            this.txtOwnCloudHost = new System.Windows.Forms.TextBox();
+            this.lblOwnCloudPath = new System.Windows.Forms.Label();
+            this.lblOwnCloudPassword = new System.Windows.Forms.Label();
+            this.lblOwnCloudUsername = new System.Windows.Forms.Label();
+            this.lblOwnCloudHost = new System.Windows.Forms.Label();
             this.tpPushbullet = new System.Windows.Forms.TabPage();
             this.lblPushbulletDevices = new System.Windows.Forms.Label();
             this.cboPushbulletDevices = new System.Windows.Forms.ComboBox();
@@ -361,7 +371,6 @@
             this.ttlvMain = new HelpersLib.TabToListView();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
-            this.btnCustomUploaderExamples = new System.Windows.Forms.Button();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -384,6 +393,7 @@
             this.tpMega.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
+            this.tpOwnCloud.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
             this.tpBox.SuspendLayout();
             this.tpRapidShare.SuspendLayout();
@@ -525,6 +535,16 @@
             this.tpCustomUploaders.TabIndex = 5;
             this.tpCustomUploaders.Text = "Custom uploaders";
             this.tpCustomUploaders.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomUploaderExamples
+            // 
+            this.btnCustomUploaderExamples.Location = new System.Drawing.Point(560, 376);
+            this.btnCustomUploaderExamples.Name = "btnCustomUploaderExamples";
+            this.btnCustomUploaderExamples.Size = new System.Drawing.Size(80, 24);
+            this.btnCustomUploaderExamples.TabIndex = 32;
+            this.btnCustomUploaderExamples.Text = "Examples...";
+            this.btnCustomUploaderExamples.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderExamples.Click += new System.EventHandler(this.btnCustomUploaderExamples_Click);
             // 
             // btnCustomUploaderHelp
             // 
@@ -1285,6 +1305,7 @@
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
+            this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpPushbullet);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpRapidShare);
@@ -2022,6 +2043,93 @@
             this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
             this.oauth2GoogleDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleDrive_ClearButtonClicked);
             this.oauth2GoogleDrive.RefreshButtonClicked += new UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
+            // 
+            // tpOwnCloud
+            // 
+            this.tpOwnCloud.Controls.Add(this.txtOwnCloudPath);
+            this.tpOwnCloud.Controls.Add(this.txtOwnCloudPassword);
+            this.tpOwnCloud.Controls.Add(this.txtOwnCloudUsername);
+            this.tpOwnCloud.Controls.Add(this.txtOwnCloudHost);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudPath);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudPassword);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudUsername);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
+            this.tpOwnCloud.Location = new System.Drawing.Point(4, 22);
+            this.tpOwnCloud.Name = "tpOwnCloud";
+            this.tpOwnCloud.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOwnCloud.Size = new System.Drawing.Size(972, 493);
+            this.tpOwnCloud.TabIndex = 15;
+            this.tpOwnCloud.Text = "ownCloud";
+            this.tpOwnCloud.UseVisualStyleBackColor = true;
+            // 
+            // txtOwnCloudPath
+            // 
+            this.txtOwnCloudPath.Location = new System.Drawing.Point(80, 84);
+            this.txtOwnCloudPath.Name = "txtOwnCloudPath";
+            this.txtOwnCloudPath.Size = new System.Drawing.Size(248, 20);
+            this.txtOwnCloudPath.TabIndex = 7;
+            this.txtOwnCloudPath.TextChanged += new System.EventHandler(this.txtOwnCloudPath_TextChanged);
+            // 
+            // txtOwnCloudPassword
+            // 
+            this.txtOwnCloudPassword.Location = new System.Drawing.Point(80, 60);
+            this.txtOwnCloudPassword.Name = "txtOwnCloudPassword";
+            this.txtOwnCloudPassword.Size = new System.Drawing.Size(248, 20);
+            this.txtOwnCloudPassword.TabIndex = 6;
+            this.txtOwnCloudPassword.UseSystemPasswordChar = true;
+            this.txtOwnCloudPassword.TextChanged += new System.EventHandler(this.txtOwnCloudPassword_TextChanged);
+            // 
+            // txtOwnCloudUsername
+            // 
+            this.txtOwnCloudUsername.Location = new System.Drawing.Point(80, 36);
+            this.txtOwnCloudUsername.Name = "txtOwnCloudUsername";
+            this.txtOwnCloudUsername.Size = new System.Drawing.Size(248, 20);
+            this.txtOwnCloudUsername.TabIndex = 5;
+            this.txtOwnCloudUsername.TextChanged += new System.EventHandler(this.txtOwnCloudUsername_TextChanged);
+            // 
+            // txtOwnCloudHost
+            // 
+            this.txtOwnCloudHost.Location = new System.Drawing.Point(80, 12);
+            this.txtOwnCloudHost.Name = "txtOwnCloudHost";
+            this.txtOwnCloudHost.Size = new System.Drawing.Size(248, 20);
+            this.txtOwnCloudHost.TabIndex = 4;
+            this.txtOwnCloudHost.TextChanged += new System.EventHandler(this.txtOwnCloudHost_TextChanged);
+            // 
+            // lblOwnCloudPath
+            // 
+            this.lblOwnCloudPath.AutoSize = true;
+            this.lblOwnCloudPath.Location = new System.Drawing.Point(16, 88);
+            this.lblOwnCloudPath.Name = "lblOwnCloudPath";
+            this.lblOwnCloudPath.Size = new System.Drawing.Size(32, 13);
+            this.lblOwnCloudPath.TabIndex = 3;
+            this.lblOwnCloudPath.Text = "Path:";
+            // 
+            // lblOwnCloudPassword
+            // 
+            this.lblOwnCloudPassword.AutoSize = true;
+            this.lblOwnCloudPassword.Location = new System.Drawing.Point(16, 64);
+            this.lblOwnCloudPassword.Name = "lblOwnCloudPassword";
+            this.lblOwnCloudPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblOwnCloudPassword.TabIndex = 2;
+            this.lblOwnCloudPassword.Text = "Password:";
+            // 
+            // lblOwnCloudUsername
+            // 
+            this.lblOwnCloudUsername.AutoSize = true;
+            this.lblOwnCloudUsername.Location = new System.Drawing.Point(16, 40);
+            this.lblOwnCloudUsername.Name = "lblOwnCloudUsername";
+            this.lblOwnCloudUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblOwnCloudUsername.TabIndex = 1;
+            this.lblOwnCloudUsername.Text = "Username:";
+            // 
+            // lblOwnCloudHost
+            // 
+            this.lblOwnCloudHost.AutoSize = true;
+            this.lblOwnCloudHost.Location = new System.Drawing.Point(16, 16);
+            this.lblOwnCloudHost.Name = "lblOwnCloudHost";
+            this.lblOwnCloudHost.Size = new System.Drawing.Size(32, 13);
+            this.lblOwnCloudHost.TabIndex = 0;
+            this.lblOwnCloudHost.Text = "Host:";
             // 
             // tpPushbullet
             // 
@@ -3859,16 +3967,6 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // btnCustomUploaderExamples
-            // 
-            this.btnCustomUploaderExamples.Location = new System.Drawing.Point(560, 376);
-            this.btnCustomUploaderExamples.Name = "btnCustomUploaderExamples";
-            this.btnCustomUploaderExamples.Size = new System.Drawing.Size(80, 24);
-            this.btnCustomUploaderExamples.TabIndex = 32;
-            this.btnCustomUploaderExamples.Text = "Examples...";
-            this.btnCustomUploaderExamples.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderExamples.Click += new System.EventHandler(this.btnCustomUploaderExamples_Click);
-            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3920,6 +4018,8 @@
             this.tpAmazonS3.PerformLayout();
             this.tpGoogleDrive.ResumeLayout(false);
             this.tpGoogleDrive.PerformLayout();
+            this.tpOwnCloud.ResumeLayout(false);
+            this.tpOwnCloud.PerformLayout();
             this.tpPushbullet.ResumeLayout(false);
             this.tpPushbullet.PerformLayout();
             this.tpBox.ResumeLayout(false);
@@ -4315,5 +4415,14 @@
         private System.Windows.Forms.CheckBox cbGoogleDriveUseFolder;
         private System.Windows.Forms.Label lblWidthHint;
         private System.Windows.Forms.Button btnCustomUploaderExamples;
+        private System.Windows.Forms.TabPage tpOwnCloud;
+        private System.Windows.Forms.TextBox txtOwnCloudPath;
+        private System.Windows.Forms.TextBox txtOwnCloudPassword;
+        private System.Windows.Forms.TextBox txtOwnCloudUsername;
+        private System.Windows.Forms.TextBox txtOwnCloudHost;
+        private System.Windows.Forms.Label lblOwnCloudPath;
+        private System.Windows.Forms.Label lblOwnCloudPassword;
+        private System.Windows.Forms.Label lblOwnCloudUsername;
+        private System.Windows.Forms.Label lblOwnCloudHost;
     }
 }

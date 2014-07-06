@@ -424,6 +424,7 @@
     <Content Include="Favicons\AmazonS3.ico" />
     <None Include="Favicons\GitHub.ico" />
     <Content Include="Favicons\Hostr.ico" />
+    <Content Include="Favicons\OwnCloud.png" />
     <Content Include="Favicons\Pushbullet.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
