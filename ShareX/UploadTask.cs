@@ -930,6 +930,9 @@ namespace ShareX
                 case FileDestination.AmazonS3:
                     fileUploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
                     break;
+                case FileDestination.OwnCloud:
+                    fileUploader = new OwnCloud("http://demo.owncloud.org", "test", "test");
+                    break;
                 case FileDestination.Pushbullet:
                     fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
                     break;

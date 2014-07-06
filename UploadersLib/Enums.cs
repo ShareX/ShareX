@@ -90,6 +90,8 @@ namespace UploadersLib
         Mega,
         [Description("s3.amazon.com")]
         AmazonS3,
+        [Description("owncloud.org")]
+        OwnCloud,
         [Description("pushbullet.com")]
         Pushbullet,
         [Description("mediacru.sh")]
