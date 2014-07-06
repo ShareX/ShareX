@@ -287,7 +287,7 @@ namespace UploadersLib
 
         protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file",
             Dictionary<string, string> arguments = null, CookieCollection cookies = null, NameValueCollection headers = null,
-            ResponseType responseType = ResponseType.Text)
+            ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST)
         {
             UploadResult result = new UploadResult();
 
@@ -303,7 +303,7 @@ namespace UploadersLib
                 byte[] bytesDataClose = MakeFileInputContentClose(boundary);
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + dataStream.Length + bytesDataClose.Length;
-                HttpWebRequest request = PrepareDataWebRequest(url, boundary, contentLength, "multipart/form-data", cookies, headers);
+                HttpWebRequest request = PrepareDataWebRequest(url, boundary, contentLength, "multipart/form-data", cookies, headers, method);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {

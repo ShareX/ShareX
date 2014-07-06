@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -46,6 +47,29 @@ namespace UploadersLib.FileUploaders
             Password = password;
         }
 
+        public string ShareFile(string path)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("format", "json");
+            args.Add("path", path); // path to the file/folder which should be shared
+            args.Add("shareType", "3"); // ‘0’ = user; ‘1’ = group; ‘3’ = public link
+            // args.Add("shareWith", ""); // user / group id with which the file should be shared
+            // args.Add("publicUpload", "false"); // allow public upload to a public shared folder (true/false)
+            // args.Add("password", ""); // password to protect public link Share with
+            // args.Add("permissions", "1"); // 1 = read; 2 = update; 4 = create; 8 = delete; 16 = share; 31 = all (default: 31, for public shares: 1)
+
+            string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares");
+            NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
+            string response = SendRequest(HttpMethod.GET, url, args, headers: headers);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return ""; // Parse response
+            }
+
+            return null;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (string.IsNullOrEmpty(Host))
@@ -63,22 +87,13 @@ namespace UploadersLib.FileUploaders
                 Path = "/";
             }
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("format", "json");
-            args.Add("path", Path); // path to the file/folder which should be shared
-            args.Add("shareType", "3"); // ‘0’ = user; ‘1’ = group; ‘3’ = public link
-            // args.Add("shareWith", ""); // user / group id with which the file should be shared
-            // args.Add("publicUpload", "true"); // allow public upload to a public shared folder (true/false)
-            // args.Add("password", ""); // password to protect public link Share with
-            // args.Add("permissions", "3"); // 1 = read; 2 = update; 4 = create; 8 = delete; 16 = share; 31 = all (default: 31, for public shares: 1)
-
-            string url = Host + "/ocs/v1.php/apps/files_sharing/api/v1/shares";
+            string url = URLHelpers.CombineURL(Host, "remote.php/webdav", Path);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            UploadResult result = UploadData(stream, url, fileName, "file", args, headers: headers);
+            UploadResult result = UploadData(stream, url, fileName, headers: headers, method: HttpMethod.PUT);
 
             if (result.IsSuccess)
             {
-                result.URL = ""; // Parse response
+                result.URL = ShareFile(Path);
             }
 
             return result;
