@@ -27,7 +27,7 @@ using System.Collections.Generic;
 
 namespace UploadersLib.URLShorteners
 {
-    public sealed class IsgdURLShortener : URLShortener
+    public sealed class NlcmURLShortener : URLShortener
     {
         public override UploadResult ShortenURL(string url)
         {
@@ -36,9 +36,9 @@ namespace UploadersLib.URLShorteners
             if (!string.IsNullOrEmpty(url))
             {
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("longurl", url);
+                arguments.Add("url", url);
 
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://is.gd/api.php", arguments);
+                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://nl.cm/api/", arguments);
             }
 
             return result;

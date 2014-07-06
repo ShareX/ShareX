@@ -997,6 +997,9 @@ namespace ShareX
                         Password = Program.UploadersConfig.YourlsPassword
                     };
                     break;
+                case UrlShortenerType.NLCM:
+                    urlShortener = new NlcmURLShortener();
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomURLShortenerSelected))
                     {

@@ -135,6 +135,8 @@ namespace UploadersLib
         TURL,
         [Description("yourls.org")]
         YOURLS,
+        [Description("nl.cm")]
+        NLCM,
         [Description("Custom URL shortener")]
         CustomURLShortener
     }

@@ -29,8 +29,6 @@ namespace UploadersLib.URLShorteners
 {
     public sealed class TinyURLShortener : URLShortener
     {
-        private const string APIURL = "http://tinyurl.com/api-create.php";
-
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
@@ -40,7 +38,7 @@ namespace UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, APIURL, arguments);
+                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments);
             }
 
             return result;

@@ -29,8 +29,6 @@ namespace UploadersLib.URLShorteners
 {
     public sealed class TurlURLShortener : URLShortener
     {
-        private const string APIURL = "http://turl.ca/api.php";
-
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
@@ -40,7 +38,7 @@ namespace UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
+                result.Response = SendRequest(HttpMethod.GET, "http://turl.ca/api.php", arguments);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {
