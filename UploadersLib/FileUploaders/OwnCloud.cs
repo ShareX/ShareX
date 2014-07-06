@@ -42,6 +42,7 @@ namespace UploadersLib.FileUploaders
         public string Password { get; set; }
         public string Path { get; set; }
         public bool CreateShare { get; set; }
+        public bool DirectLink { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
@@ -114,7 +115,9 @@ namespace UploadersLib.FileUploaders
                 {
                     if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
                     {
-                        return result.ocs.data.url;
+                        string link = result.ocs.data.url;
+                        if (DirectLink) link += "&download";
+                        return link;
                     }
                     else
                     {

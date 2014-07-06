@@ -483,6 +483,7 @@ namespace UploadersLib
             txtOwnCloudPassword.Text = Config.OwnCloudPassword;
             txtOwnCloudPath.Text = Config.OwnCloudPath;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
+            cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
 
             #endregion File uploaders
 
@@ -1666,6 +1667,11 @@ namespace UploadersLib
         private void cbOwnCloudCreateShare_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudCreateShare = cbOwnCloudCreateShare.Checked;
+        }
+
+        private void cbOwnCloudDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudDirectLink = cbOwnCloudDirectLink.Checked;
         }
 
         #endregion ownCloud

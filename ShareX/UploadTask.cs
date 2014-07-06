@@ -934,7 +934,8 @@ namespace ShareX
                     fileUploader = new OwnCloud(Program.UploadersConfig.OwnCloudHost, Program.UploadersConfig.OwnCloudUsername, Program.UploadersConfig.OwnCloudPassword)
                     {
                         Path = Program.UploadersConfig.OwnCloudPath,
-                        CreateShare = Program.UploadersConfig.OwnCloudCreateShare
+                        CreateShare = Program.UploadersConfig.OwnCloudCreateShare,
+                        DirectLink = Program.UploadersConfig.OwnCloudDirectLink
                     };
                     break;
                 case FileDestination.Pushbullet:

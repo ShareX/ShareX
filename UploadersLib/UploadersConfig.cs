@@ -211,6 +211,7 @@ namespace UploadersLib
         public string OwnCloudPassword = "";
         public string OwnCloudPath = "/";
         public bool OwnCloudCreateShare = true;
+        public bool OwnCloudDirectLink = false;
 
         #endregion File uploaders
 
