@@ -52,7 +52,7 @@ namespace UploadersLib.FileUploaders
             args.Add("device_iden", Config.CurrentDevice.Key);
             args.Add("type", "file");
 
-            UploadResult result = UploadData(stream, "https://api.pushbullet.com/api/pushes", fileName, arguments: args, headers: headers);
+            UploadResult result = UploadData(stream, "https://api.pushbullet.com/api/pushes", fileName, "file", args, headers);
 
             PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(result.Response);
 
@@ -74,7 +74,7 @@ namespace UploadersLib.FileUploaders
             args.Add("title", title);
             args.Add(valueType, value);
 
-            string response = SendRequest(HttpMethod.POST, "https://api.pushbullet.com/api/pushes", args, headers: headers);
+            string response = SendRequest(HttpMethod.POST, "https://api.pushbullet.com/api/pushes", args, headers);
 
             PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(response);
 

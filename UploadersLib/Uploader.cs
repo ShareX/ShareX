@@ -114,8 +114,8 @@ namespace UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+            CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
             HttpWebResponse response = null;
 
@@ -141,20 +141,20 @@ namespace UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+        protected string SendRequest(HttpMethod method, string url, string content, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+            CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
             byte[] data = Encoding.UTF8.GetBytes(content);
 
             using (MemoryStream ms = new MemoryStream())
             {
                 ms.Write(data, 0, data.Length);
-                return SendRequest(method, url, ms, arguments, responseType, headers, cookies);
+                return SendRequest(method, url, ms, arguments, headers, cookies, responseType);
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Stream content, Dictionary<string, string> arguments = null, ResponseType responseType = ResponseType.Text,
-            NameValueCollection headers = null, CookieCollection cookies = null)
+        protected string SendRequest(HttpMethod method, string url, Stream content, Dictionary<string, string> arguments = null, NameValueCollection headers = null,
+            CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
         {
             using (HttpWebResponse response = GetResponse(method, url, arguments, headers, cookies, content))
             {
@@ -219,7 +219,7 @@ namespace UploadersLib
             return null;
         }
 
-        protected string SendRequestJSON(string url, string json, CookieCollection cookies = null, NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
+        protected string SendRequestJSON(string url, string json, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
             byte[] data = Encoding.UTF8.GetBytes(json);
 
@@ -227,19 +227,21 @@ namespace UploadersLib
             {
                 stream.Write(data, 0, data.Length);
 
-                return SendRequestStream(url, stream, "application/json", cookies, headers, method);
+                return SendRequestStream(url, stream, "application/json", headers, cookies, method);
             }
         }
 
-        protected string SendRequestStream(string url, Stream stream, string contentType, CookieCollection cookies = null, NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
+        protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
-            using (HttpWebResponse response = GetResponse(url, stream, null, contentType, cookies, headers, method))
+            using (HttpWebResponse response = GetResponse(url, stream, null, contentType, headers, cookies, method))
             {
                 return ResponseToString(response);
             }
         }
 
-        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
+        private HttpWebResponse SendRequestMultiPart(string url, Dictionary<string, string> arguments, NameValueCollection headers = null,
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
             string boundary = CreateBoundary();
             byte[] data = MakeInputContent(boundary, arguments);
@@ -247,12 +249,12 @@ namespace UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 stream.Write(data, 0, data.Length);
-                return GetResponse(url, stream, boundary, "multipart/form-data", cookies, headers, method);
+                return GetResponse(url, stream, boundary, "multipart/form-data", headers, cookies, method);
             }
         }
 
-        private HttpWebResponse GetResponse(string url, Stream dataStream, string boundary, string contentType,
-            CookieCollection cookies = null, NameValueCollection headers = null, HttpMethod method = HttpMethod.POST)
+        private HttpWebResponse GetResponse(string url, Stream dataStream, string boundary, string contentType, NameValueCollection headers = null,
+            CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
             IsUploading = true;
             StopUploadRequested = false;
@@ -285,9 +287,8 @@ namespace UploadersLib
             return null;
         }
 
-        protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file",
-            Dictionary<string, string> arguments = null, CookieCollection cookies = null, NameValueCollection headers = null,
-            ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST)
+        protected UploadResult UploadData(Stream dataStream, string url, string fileName, string fileFormName = "file", Dictionary<string, string> arguments = null,
+            NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST)
         {
             UploadResult result = new UploadResult();
 

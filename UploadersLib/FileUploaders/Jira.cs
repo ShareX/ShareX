@@ -216,7 +216,7 @@ namespace UploadersLib.FileUploaders
                     NameValueCollection headers = new NameValueCollection();
                     headers.Set("X-Atlassian-Token", "nocheck");
 
-                    UploadResult res = UploadData(stream, query, fileName, "file", null, null, headers);
+                    UploadResult res = UploadData(stream, query, fileName, headers: headers);
                     if (res.Response.Contains("errorMessages"))
                     {
                         res.Errors.Add(res.Response);

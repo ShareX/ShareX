@@ -63,7 +63,7 @@ namespace UploadersLib.TextUploaders
                 arguments.Add("tabbing", "true");
                 arguments.Add("tabtype", "real");
 
-                ur.URL = SendRequest(HttpMethod.POST, APIURL, arguments, ResponseType.RedirectionURL);
+                ur.URL = SendRequest(HttpMethod.POST, APIURL, arguments, responseType: ResponseType.RedirectionURL);
             }
 
             return ur;

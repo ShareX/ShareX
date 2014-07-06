@@ -56,7 +56,7 @@ namespace UploadersLib.TextUploaders
                     arguments.Add("key", Key);
                 }
 
-                ur.URL = SendRequest(HttpMethod.POST, "https://pastee.org/submit", arguments, ResponseType.RedirectionURL);
+                ur.URL = SendRequest(HttpMethod.POST, "https://pastee.org/submit", arguments, responseType: ResponseType.RedirectionURL);
             }
 
             return ur;

@@ -54,11 +54,11 @@ namespace UploadersLib.URLShorteners
 
             if (customUploader.RequestType == CustomUploaderRequestType.POST)
             {
-                result.Response = SendRequest(HttpMethod.POST, customUploader.RequestURL, args, customUploader.ResponseType);
+                result.Response = SendRequest(HttpMethod.POST, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
             }
             else if (customUploader.RequestType == CustomUploaderRequestType.GET)
             {
-                result.Response = SendRequest(HttpMethod.GET, customUploader.RequestURL, args, customUploader.ResponseType);
+                result.Response = SendRequest(HttpMethod.GET, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
             }
 
             customUploader.ParseResponse(result, true);

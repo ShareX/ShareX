@@ -56,7 +56,7 @@ namespace UploadersLib.TextUploaders
             {
                 if (string.IsNullOrEmpty(customUploader.FileFormName))
                 {
-                    result.Response = SendRequest(HttpMethod.POST, customUploader.RequestURL, args, customUploader.ResponseType);
+                    result.Response = SendRequest(HttpMethod.POST, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace UploadersLib.TextUploaders
             }
             else if (customUploader.RequestType == CustomUploaderRequestType.GET)
             {
-                result.Response = SendRequest(HttpMethod.GET, customUploader.RequestURL, args, customUploader.ResponseType);
+                result.Response = SendRequest(HttpMethod.GET, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
             }
 
             customUploader.ParseResponse(result);

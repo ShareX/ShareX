@@ -48,7 +48,7 @@ namespace UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 NameValueCollection headers = CreateAuthenticationHeader(Email, Password);
-                result = UploadData(stream, "https://api.hostr.co/file", fileName, "file", null, null, headers);
+                result = UploadData(stream, "https://api.hostr.co/file", fileName, headers: headers);
 
                 if (result.IsSuccess)
                 {

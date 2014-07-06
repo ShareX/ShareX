@@ -60,7 +60,7 @@ namespace UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares");
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
-            string response = SendRequest(HttpMethod.GET, url, args, headers: headers);
+            string response = SendRequest(HttpMethod.GET, url, args, headers);
 
             if (!string.IsNullOrEmpty(response))
             {

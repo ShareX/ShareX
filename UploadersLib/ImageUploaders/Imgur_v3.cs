@@ -198,7 +198,7 @@ namespace UploadersLib.ImageUploaders
                 headers.Add("Authorization", "Client-ID " + AuthInfo.Client_ID);
             }
 
-            UploadResult result = UploadData(stream, "https://api.imgur.com/3/image", fileName, "image", args, headers: headers);
+            UploadResult result = UploadData(stream, "https://api.imgur.com/3/image", fileName, "image", args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

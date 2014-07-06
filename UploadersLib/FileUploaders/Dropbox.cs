@@ -216,7 +216,7 @@ namespace UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("list", list ? "true" : "false");
 
-                string response = SendRequest(HttpMethod.GET, url, args, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.GET, url, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -243,7 +243,7 @@ namespace UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("short_url", urlType == DropboxURLType.Shortened ? "true" : "false");
 
-                string response = SendRequest(HttpMethod.POST, url, args, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, url, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -287,7 +287,7 @@ namespace UploadersLib.FileUploaders
                 args.Add("from_path", from_path);
                 args.Add("to_path", to_path);
 
-                string response = SendRequest(HttpMethod.POST, URLCopy, args, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLCopy, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -309,7 +309,7 @@ namespace UploadersLib.FileUploaders
                 args.Add("root", Root);
                 args.Add("path", path);
 
-                string response = SendRequest(HttpMethod.POST, URLCreateFolder, args, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLCreateFolder, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -331,7 +331,7 @@ namespace UploadersLib.FileUploaders
                 args.Add("root", Root);
                 args.Add("path", path);
 
-                string response = SendRequest(HttpMethod.POST, URLDelete, args, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLDelete, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -354,7 +354,7 @@ namespace UploadersLib.FileUploaders
                 args.Add("from_path", from_path);
                 args.Add("to_path", to_path);
 
-                string response = SendRequest(HttpMethod.POST, URLMove, args, headers: GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLMove, args, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {

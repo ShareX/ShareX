@@ -91,7 +91,7 @@ namespace UploadersLib.FileUploaders
             {
                 string query = OAuthManager.GenerateQuery(URLAccountInfo, null, HttpMethod.GET, AuthInfo);
 
-                string response = SendRequest(HttpMethod.GET, query, null, ResponseType.Text, APIHeaders);
+                string response = SendRequest(HttpMethod.GET, query, null, APIHeaders, responseType: ResponseType.Text);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -143,7 +143,7 @@ namespace UploadersLib.FileUploaders
             string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo);
 
             // There's a 1GB and 5 hour(max time for a single upload) limit to all uploads through the API.
-            UploadResult result = UploadData(stream, query, fileName, "file", null, null, APIHeaders);
+            UploadResult result = UploadData(stream, query, fileName, "file", headers: APIHeaders);
 
             if (result.IsSuccess)
             {

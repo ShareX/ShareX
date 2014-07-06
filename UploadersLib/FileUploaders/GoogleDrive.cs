@@ -161,7 +161,7 @@ namespace UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(metadata);
 
-            string response = SendRequestJSON(url, json, headers: GetAuthHeaders(), method: HttpMethod.PUT);
+            string response = SendRequestJSON(url, json, GetAuthHeaders(), method: HttpMethod.PUT);
         }
 
         private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
@@ -176,7 +176,7 @@ namespace UploadersLib.FileUploaders
                 withLink = withLink.ToString()
             });
 
-            string response = SendRequestJSON(url, json, headers: GetAuthHeaders());
+            string response = SendRequestJSON(url, json, GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)
@@ -198,7 +198,7 @@ namespace UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("q", query);
 
-            string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, headers: GetAuthHeaders());
+            string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -217,7 +217,7 @@ namespace UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, "file", headers: GetAuthHeaders());
+            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(result.Response))
             {
