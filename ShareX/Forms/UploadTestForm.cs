@@ -93,7 +93,7 @@ namespace ShareX
             ListViewGroup urlShortenersGroup = new ListViewGroup("URL Shorteners", HorizontalAlignment.Left);
             lvUploaders.Groups.AddRange(new[] { imageUploadersGroup, textUploadersGroup, fileUploadersGroup, urlShortenersGroup });
 
-            foreach (ImageDestination uploader in Enum.GetValues(typeof(ImageDestination)))
+            foreach (ImageDestination uploader in Helpers.GetEnums<ImageDestination>())
             {
                 switch (uploader)
                 {
@@ -112,7 +112,7 @@ namespace ShareX
                 lvUploaders.Items.Add(lvi);
             }
 
-            foreach (TextDestination uploader in Enum.GetValues(typeof(TextDestination)))
+            foreach (TextDestination uploader in Helpers.GetEnums<TextDestination>())
             {
                 switch (uploader)
                 {
@@ -131,7 +131,7 @@ namespace ShareX
                 lvUploaders.Items.Add(lvi);
             }
 
-            foreach (FileDestination uploader in Enum.GetValues(typeof(FileDestination)))
+            foreach (FileDestination uploader in Helpers.GetEnums<FileDestination>())
             {
                 switch (uploader)
                 {
@@ -153,7 +153,7 @@ namespace ShareX
                 lvUploaders.Items.Add(lvi);
             }
 
-            foreach (UrlShortenerType uploader in Enum.GetValues(typeof(UrlShortenerType)))
+            foreach (UrlShortenerType uploader in Helpers.GetEnums<UrlShortenerType>())
             {
                 lvi = new ListViewItem(uploader.GetDescription());
 

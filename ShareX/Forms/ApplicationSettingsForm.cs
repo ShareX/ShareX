@@ -99,13 +99,13 @@ namespace ShareX
             chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
             tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
 
-            Program.Settings.SecondaryImageUploaders.AddRange(((ImageDestination[])Enum.GetValues(typeof(ImageDestination))).Where(n => (Program.Settings.SecondaryImageUploaders.All(e => e != n))));
-            Program.Settings.SecondaryTextUploaders.AddRange(((TextDestination[])Enum.GetValues(typeof(TextDestination))).Where(n => (Program.Settings.SecondaryTextUploaders.All(e => e != n))));
-            Program.Settings.SecondaryFileUploaders.AddRange(((FileDestination[])Enum.GetValues(typeof(FileDestination))).Where(n => (Program.Settings.SecondaryFileUploaders.All(e => e != n))));
+            Program.Settings.SecondaryImageUploaders.AddRange(Helpers.GetEnums<ImageDestination>().Where(n => Program.Settings.SecondaryImageUploaders.All(e => e != n)));
+            Program.Settings.SecondaryTextUploaders.AddRange(Helpers.GetEnums<TextDestination>().Where(n => Program.Settings.SecondaryTextUploaders.All(e => e != n)));
+            Program.Settings.SecondaryFileUploaders.AddRange(Helpers.GetEnums<FileDestination>().Where(n => Program.Settings.SecondaryFileUploaders.All(e => e != n)));
 
-            Program.Settings.SecondaryImageUploaders.Where(n => (((ImageDestination[])Enum.GetValues(typeof(ImageDestination))).All(e => e != n))).ForEach(x => Program.Settings.SecondaryImageUploaders.Remove(x));
-            Program.Settings.SecondaryTextUploaders.Where(n => (((TextDestination[])Enum.GetValues(typeof(TextDestination))).All(e => e != n))).ForEach(x => Program.Settings.SecondaryTextUploaders.Remove(x));
-            Program.Settings.SecondaryFileUploaders.Where(n => (((FileDestination[])Enum.GetValues(typeof(FileDestination))).All(e => e != n))).ForEach(x => Program.Settings.SecondaryFileUploaders.Remove(x));
+            Program.Settings.SecondaryImageUploaders.Where(n => Helpers.GetEnums<ImageDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryImageUploaders.Remove(x));
+            Program.Settings.SecondaryTextUploaders.Where(n => Helpers.GetEnums<TextDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryTextUploaders.Remove(x));
+            Program.Settings.SecondaryFileUploaders.Where(n => Helpers.GetEnums<FileDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryFileUploaders.Remove(x));
 
             Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lvSecondaryImageUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
             Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lvSecondaryTextUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
@@ -123,6 +123,7 @@ namespace ShareX
                 Program.Settings.VideoEncoders.Add(new VideoEncoder() { Name = "Change container to MP4 using ffmpeg.exe", Path = "ffmpeg.exe", Args = "-i %input -c:v copy %output", OutputExtension = "mp4" });
                 Program.Settings.VideoEncoders.Add(new VideoEncoder() { Name = "Optimize GIF using gifsicle.exe", Path = "gifsicle.exe", Args = "-O2 %input -o %output", OutputExtension = "gif" });
             }
+
             Program.Settings.VideoEncoders.ForEach(x => AddVideoEncoder(x));
 
             // Advanced

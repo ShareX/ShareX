@@ -49,7 +49,7 @@ namespace ShareX
                     InitCapture(info.TaskSettings);
                     break;
                 case EDataType.Text:
-                    Enum.GetValues(typeof(TextDestination)).Cast<TextDestination>().ForEach(x =>
+                    Helpers.GetEnums<TextDestination>().ForEach(x =>
                     {
                         if (x != TextDestination.FileUploader)
                         {
@@ -57,19 +57,19 @@ namespace ShareX
                         }
                     });
 
-                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    Helpers.GetEnums<FileDestination>().ForEach(x =>
                     {
                         AddDestination<FileDestination>((int)x, EDataType.Text, info.TaskSettings);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = (x.Tag is TextDestination && (TextDestination)x.Tag == (TextDestination)info.TaskSettings.ImageDestination) ||
+                        x.Checked = (x.Tag is TextDestination && (TextDestination)x.Tag == (TextDestination)info.TaskSettings.TextDestination) ||
                             (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)info.TaskSettings.TextFileDestination);
                     });
                     break;
                 case EDataType.File:
-                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    Helpers.GetEnums<FileDestination>().ForEach(x =>
                     {
                         AddDestination<FileDestination>((int)x, EDataType.File, info.TaskSettings);
                     });
@@ -80,7 +80,7 @@ namespace ShareX
                     });
                     break;
                 case EDataType.URL:
-                    Enum.GetValues(typeof(UrlShortenerType)).Cast<UrlShortenerType>().ForEach(x =>
+                    Helpers.GetEnums<UrlShortenerType>().ForEach(x =>
                     {
                         AddDestination<UrlShortenerType>((int)x, EDataType.URL, info.TaskSettings);
                     });
@@ -98,7 +98,7 @@ namespace ShareX
 
         public void InitCapture(TaskSettings taskSettings)
         {
-            Enum.GetValues(typeof(ImageDestination)).Cast<ImageDestination>().ForEach(x =>
+            Helpers.GetEnums<ImageDestination>().ForEach(x =>
             {
                 if (x != ImageDestination.FileUploader)
                 {
@@ -106,7 +106,7 @@ namespace ShareX
                 }
             });
 
-            Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+            Helpers.GetEnums<FileDestination>().ForEach(x =>
             {
                 AddDestination<FileDestination>((int)x, EDataType.File, taskSettings);
             });
@@ -114,7 +114,7 @@ namespace ShareX
             flp.Controls.OfType<RadioButton>().ForEach(x =>
             {
                 x.Checked = (x.Tag is ImageDestination && (ImageDestination)x.Tag == (ImageDestination)taskSettings.ImageDestination) ||
-                  (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)taskSettings.ImageFileDestination);
+                    (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)taskSettings.ImageFileDestination);
             });
         }
 
@@ -122,7 +122,8 @@ namespace ShareX
         {
             if (InitCompleted != null)
             {
-                string currentDestination = flp.Controls.OfType<RadioButton>().First<RadioButton>(x => x.Checked).Text;
+                string currentDestination = flp.Controls.OfType<RadioButton>().First(x => x.Checked).Text;
+
                 if (!string.IsNullOrEmpty(currentDestination))
                 {
                     InitCompleted(currentDestination);

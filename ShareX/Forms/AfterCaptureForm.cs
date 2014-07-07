@@ -55,7 +55,7 @@ namespace ShareX
 
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
-            AfterCaptureTasks[] enums = (AfterCaptureTasks[])Enum.GetValues(typeof(AfterCaptureTasks));
+            AfterCaptureTasks[] enums = Helpers.GetEnums<AfterCaptureTasks>();
 
             for (int i = 1; i < enums.Length; i++)
             {

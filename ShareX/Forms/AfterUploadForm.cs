@@ -72,12 +72,12 @@ namespace ShareX
             lvClipboardFormats.Groups.Add(lvgLocal);
             lvClipboardFormats.Groups.Add(lvgCustom);
 
-            foreach (LinkFormatEnum type in Enum.GetValues(typeof(LinkFormatEnum)))
+            foreach (LinkFormatEnum type in Helpers.GetEnums<LinkFormatEnum>())
             {
                 if (!Helpers.IsImageFile(Info.Result.URL) &&
                     (type == LinkFormatEnum.HTMLImage || type == LinkFormatEnum.HTMLLinkedImage ||
-                     type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
-                     type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
+                    type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
+                    type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
                     continue;
 
                 AddFormat(type.GetDescription(), GetUrlByType(type));

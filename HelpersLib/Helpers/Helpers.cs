@@ -246,7 +246,7 @@ namespace HelpersLib
 
         public static T[] GetEnums<T>()
         {
-            return Enum.GetValues(typeof(T)).Cast<T>().ToArray();
+            return (T[])Enum.GetValues(typeof(T));
         }
 
         public static string[] GetEnumDescriptions<T>()
@@ -261,8 +261,7 @@ namespace HelpersLib
 
         public static T GetEnumFromIndex<T>(int i)
         {
-            Array values = Enum.GetValues(typeof(T));
-            return (T)values.GetValue(i);
+            return GetEnums<T>()[i];
         }
 
         public static string[] GetEnumNamesProper<T>()
@@ -301,6 +300,7 @@ namespace HelpersLib
             return sb.ToString();
         }
 
+        // Extension without dot
         public static string GetProperExtension(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath))

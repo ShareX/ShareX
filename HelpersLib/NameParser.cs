@@ -247,7 +247,7 @@ namespace HelpersLib
                 ShowImageMargin = false
             };
 
-            var variables = Enum.GetValues(typeof(ReplacementVariables)).Cast<ReplacementVariables>().Where(x => !ignoreList.Contains(x)).
+            var variables = Helpers.GetEnums<ReplacementVariables>().Where(x => !ignoreList.Contains(x)).
                 Select(x => new
                 {
                     Name = ReplacementExtension.Prefix + Enum.GetName(typeof(ReplacementVariables), x),
