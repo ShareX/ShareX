@@ -111,6 +111,7 @@
             this.tpCaptureShape = new System.Windows.Forms.TabPage();
             this.pgShapesCapture = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.cbScreenRecordAutoDisableAero = new System.Windows.Forms.CheckBox();
             this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
             this.nudScreenRecordFPS = new System.Windows.Forms.NumericUpDown();
             this.lblScreenRecordFPS = new System.Windows.Forms.Label();
@@ -157,9 +158,9 @@
             this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
             this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
             this.tpUploadClipboard = new System.Windows.Forms.TabPage();
-            this.chkClipboardUploadContents = new System.Windows.Forms.CheckBox();
+            this.chkClipboardUploadURLContents = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
-            this.cbClipboardUploadAutoDetectURL = new System.Windows.Forms.CheckBox();
+            this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.chkUseDefaultUploadSettings = new System.Windows.Forms.CheckBox();
             this.tpIndexer = new System.Windows.Forms.TabPage();
             this.pgIndexerConfig = new System.Windows.Forms.PropertyGrid();
@@ -167,7 +168,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.cbScreenRecordAutoDisableAero = new System.Windows.Forms.CheckBox();
+            this.cbClipboardUploadShareURL = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1161,6 +1162,18 @@
             this.tpScreenRecorder.Text = "Screen recorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
+            // cbScreenRecordAutoDisableAero
+            // 
+            this.cbScreenRecordAutoDisableAero.AutoSize = true;
+            this.cbScreenRecordAutoDisableAero.Location = new System.Drawing.Point(18, 160);
+            this.cbScreenRecordAutoDisableAero.Name = "cbScreenRecordAutoDisableAero";
+            this.cbScreenRecordAutoDisableAero.Size = new System.Drawing.Size(465, 17);
+            this.cbScreenRecordAutoDisableAero.TabIndex = 15;
+            this.cbScreenRecordAutoDisableAero.Text = "Automatically disable Windows Aero while recording (Aero decreasing recording per" +
+    "formance)";
+            this.cbScreenRecordAutoDisableAero.UseVisualStyleBackColor = true;
+            this.cbScreenRecordAutoDisableAero.CheckedChanged += new System.EventHandler(this.cbScreenRecordAutoDisableAero_CheckedChanged);
+            // 
             // lblScreenRecorderFixedDuration
             // 
             this.lblScreenRecorderFixedDuration.AutoSize = true;
@@ -1683,9 +1696,10 @@
             // 
             // tpUploadClipboard
             // 
-            this.tpUploadClipboard.Controls.Add(this.chkClipboardUploadContents);
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShareURL);
+            this.tpUploadClipboard.Controls.Add(this.chkClipboardUploadURLContents);
             this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoIndexFolder);
-            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadAutoDetectURL);
+            this.tpUploadClipboard.Controls.Add(this.cbClipboardUploadShortenURL);
             this.tpUploadClipboard.Location = new System.Drawing.Point(4, 22);
             this.tpUploadClipboard.Name = "tpUploadClipboard";
             this.tpUploadClipboard.Padding = new System.Windows.Forms.Padding(3);
@@ -1694,21 +1708,21 @@
             this.tpUploadClipboard.Text = "Clipboard upload";
             this.tpUploadClipboard.UseVisualStyleBackColor = true;
             // 
-            // chkClipboardUploadContents
+            // chkClipboardUploadURLContents
             // 
-            this.chkClipboardUploadContents.AutoSize = true;
-            this.chkClipboardUploadContents.Location = new System.Drawing.Point(16, 16);
-            this.chkClipboardUploadContents.Name = "chkClipboardUploadContents";
-            this.chkClipboardUploadContents.Size = new System.Drawing.Size(308, 17);
-            this.chkClipboardUploadContents.TabIndex = 0;
-            this.chkClipboardUploadContents.Text = "If clipboard contains a file URL then download it and upload";
-            this.chkClipboardUploadContents.UseVisualStyleBackColor = true;
-            this.chkClipboardUploadContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
+            this.chkClipboardUploadURLContents.AutoSize = true;
+            this.chkClipboardUploadURLContents.Location = new System.Drawing.Point(16, 16);
+            this.chkClipboardUploadURLContents.Name = "chkClipboardUploadURLContents";
+            this.chkClipboardUploadURLContents.Size = new System.Drawing.Size(308, 17);
+            this.chkClipboardUploadURLContents.TabIndex = 0;
+            this.chkClipboardUploadURLContents.Text = "If clipboard contains a file URL then download it and upload";
+            this.chkClipboardUploadURLContents.UseVisualStyleBackColor = true;
+            this.chkClipboardUploadURLContents.CheckedChanged += new System.EventHandler(this.chkClipboardUploadContents_CheckedChanged);
             // 
             // cbClipboardUploadAutoIndexFolder
             // 
             this.cbClipboardUploadAutoIndexFolder.AutoSize = true;
-            this.cbClipboardUploadAutoIndexFolder.Location = new System.Drawing.Point(16, 64);
+            this.cbClipboardUploadAutoIndexFolder.Location = new System.Drawing.Point(16, 88);
             this.cbClipboardUploadAutoIndexFolder.Name = "cbClipboardUploadAutoIndexFolder";
             this.cbClipboardUploadAutoIndexFolder.Size = new System.Drawing.Size(387, 17);
             this.cbClipboardUploadAutoIndexFolder.TabIndex = 2;
@@ -1716,16 +1730,16 @@
             this.cbClipboardUploadAutoIndexFolder.UseVisualStyleBackColor = true;
             this.cbClipboardUploadAutoIndexFolder.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoIndexFolder_CheckedChanged);
             // 
-            // cbClipboardUploadAutoDetectURL
+            // cbClipboardUploadShortenURL
             // 
-            this.cbClipboardUploadAutoDetectURL.AutoSize = true;
-            this.cbClipboardUploadAutoDetectURL.Location = new System.Drawing.Point(16, 40);
-            this.cbClipboardUploadAutoDetectURL.Name = "cbClipboardUploadAutoDetectURL";
-            this.cbClipboardUploadAutoDetectURL.Size = new System.Drawing.Size(271, 17);
-            this.cbClipboardUploadAutoDetectURL.TabIndex = 1;
-            this.cbClipboardUploadAutoDetectURL.Text = "If clipboard contains a URL then use URL shortener";
-            this.cbClipboardUploadAutoDetectURL.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadAutoDetectURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
+            this.cbClipboardUploadShortenURL.AutoSize = true;
+            this.cbClipboardUploadShortenURL.Location = new System.Drawing.Point(16, 40);
+            this.cbClipboardUploadShortenURL.Name = "cbClipboardUploadShortenURL";
+            this.cbClipboardUploadShortenURL.Size = new System.Drawing.Size(271, 17);
+            this.cbClipboardUploadShortenURL.TabIndex = 1;
+            this.cbClipboardUploadShortenURL.Text = "If clipboard contains a URL then use URL shortener";
+            this.cbClipboardUploadShortenURL.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadShortenURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadAutoDetectURL_CheckedChanged);
             // 
             // chkUseDefaultUploadSettings
             // 
@@ -1816,17 +1830,16 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // cbScreenRecordAutoDisableAero
+            // cbClipboardUploadShareURL
             // 
-            this.cbScreenRecordAutoDisableAero.AutoSize = true;
-            this.cbScreenRecordAutoDisableAero.Location = new System.Drawing.Point(18, 160);
-            this.cbScreenRecordAutoDisableAero.Name = "cbScreenRecordAutoDisableAero";
-            this.cbScreenRecordAutoDisableAero.Size = new System.Drawing.Size(465, 17);
-            this.cbScreenRecordAutoDisableAero.TabIndex = 15;
-            this.cbScreenRecordAutoDisableAero.Text = "Automatically disable Windows Aero while recording (Aero decreasing recording per" +
-    "formance)";
-            this.cbScreenRecordAutoDisableAero.UseVisualStyleBackColor = true;
-            this.cbScreenRecordAutoDisableAero.CheckedChanged += new System.EventHandler(this.cbScreenRecordAutoDisableAero_CheckedChanged);
+            this.cbClipboardUploadShareURL.AutoSize = true;
+            this.cbClipboardUploadShareURL.Location = new System.Drawing.Point(16, 64);
+            this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
+            this.cbClipboardUploadShareURL.Size = new System.Drawing.Size(366, 17);
+            this.cbClipboardUploadShareURL.TabIndex = 3;
+            this.cbClipboardUploadShareURL.Text = "If clipboard contains a URL then share it using social networking service";
+            this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadShareURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadShareURL_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1965,7 +1978,7 @@
         private System.Windows.Forms.Label lblNameFormatPatternPreview;
         private System.Windows.Forms.Label lblNameFormatPatternPreviewActiveWindow;
         private System.Windows.Forms.TabPage tpUploadClipboard;
-        private System.Windows.Forms.CheckBox cbClipboardUploadAutoDetectURL;
+        private System.Windows.Forms.CheckBox cbClipboardUploadShortenURL;
         private System.Windows.Forms.TabPage tpAdvanced;
         private System.Windows.Forms.PropertyGrid pgTaskSettings;
         private System.Windows.Forms.CheckBox chkUseDefaultImageSettings;
@@ -2032,13 +2045,14 @@
         private System.Windows.Forms.CheckBox cbClipboardUploadAutoIndexFolder;
         private System.Windows.Forms.Button btnScreenRecorderOptions;
         private System.Windows.Forms.CheckBox chkRunScreencastCLI;
-        private System.Windows.Forms.CheckBox chkClipboardUploadContents;
+        private System.Windows.Forms.CheckBox chkClipboardUploadURLContents;
         private System.Windows.Forms.NumericUpDown nudScreenRecordFPS;
         private System.Windows.Forms.Label lblScreenRecordFPS;
         private System.Windows.Forms.CheckBox chkShowBeforeUploadForm;
         private System.Windows.Forms.Label lblScreenRecorderFixedDuration;
         private System.Windows.Forms.Button btnDescriptionAutoFill;
         private System.Windows.Forms.CheckBox cbScreenRecordAutoDisableAero;
+        private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
 
 
 

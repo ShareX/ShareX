@@ -255,9 +255,9 @@ namespace HistoryLib
 
         private void HistoryForm_Shown(object sender, EventArgs e)
         {
-            Application.DoEvents();
-            this.ShowActivate();
+            Refresh();
             RefreshHistoryItems();
+            this.ShowActivate();
         }
 
         private void HistoryForm_KeyDown(object sender, KeyEventArgs e)

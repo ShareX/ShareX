@@ -48,7 +48,8 @@ namespace ShareX
         DataUpload,
         FileUpload,
         TextUpload,
-        ShortenURL
+        ShortenURL,
+        ShareURL
     }
 
     [Flags]

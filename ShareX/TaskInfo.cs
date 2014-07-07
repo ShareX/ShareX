@@ -106,6 +106,11 @@ namespace ShareX
                                     return TaskSettings.FileDestination.GetDescription();
                             }
                         case EDataType.URL:
+                            if (Job == TaskJob.ShareURL)
+                            {
+                                return TaskSettings.SocialNetworkingServiceDestination.GetDescription();
+                            }
+
                             return TaskSettings.URLShortenerDestination.GetDescription();
                     }
                 }

@@ -151,6 +151,16 @@ namespace ShareX
             return task;
         }
 
+        public static UploadTask CreateShareURLTask(string url, TaskSettings taskSettings)
+        {
+            UploadTask task = new UploadTask(taskSettings);
+            task.Info.Job = TaskJob.ShareURL;
+            task.Info.DataType = EDataType.URL;
+            task.Info.FileName = "Share URL";
+            task.Info.Result.URL = url;
+            return task;
+        }
+
         public static UploadTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
         {
             EDataType dataType = Helpers.FindDataType(filePath);
@@ -557,8 +567,8 @@ namespace ShareX
         {
             try
             {
-                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.UseURLShortener) || Info.Job == TaskJob.ShortenURL ||
-                    (Info.TaskSettings.AdvancedSettings.AutoShortenURLLength > 0 && Info.Result.URL.Length > Info.TaskSettings.AdvancedSettings.AutoShortenURLLength))
+                if (Info.Job != TaskJob.ShareURL && (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.UseURLShortener) || Info.Job == TaskJob.ShortenURL ||
+                    (Info.TaskSettings.AdvancedSettings.AutoShortenURLLength > 0 && Info.Result.URL.Length > Info.TaskSettings.AdvancedSettings.AutoShortenURLLength)))
                 {
                     UploadResult result = ShortenURL(Info.Result.URL);
 
@@ -568,9 +578,10 @@ namespace ShareX
                     }
                 }
 
-                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURLToSocialNetworkingService))
+                if (Info.Job != TaskJob.ShortenURL && (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURLToSocialNetworkingService) || Info.Job == TaskJob.ShareURL))
                 {
-                    DoSocialNetworkingService();
+                    ShareURL(Info.Result.ToString());
+                    if (Info.Job == TaskJob.ShareURL) Info.Result.IsURLExpected = false;
                 }
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.SendURLWithEmail))
@@ -979,9 +990,6 @@ namespace ShareX
                 case UrlShortenerType.ISGD:
                     urlShortener = new IsgdURLShortener();
                     break;
-                /*case UrlShortenerType.THREELY:
-                urlShortener = new ThreelyURLShortener(Program.ThreelyKey);
-                break;*/
                 case UrlShortenerType.TINYURL:
                     urlShortener = new TinyURLShortener();
                     break;
@@ -1016,10 +1024,8 @@ namespace ShareX
             return null;
         }
 
-        public void DoSocialNetworkingService()
+        public void ShareURL(string url)
         {
-            string url = Info.Result.ToString();
-
             if (!string.IsNullOrEmpty(url))
             {
                 string encodedUrl = URLHelpers.URLEncode(url);
@@ -1036,6 +1042,7 @@ namespace ShareX
                                 twitter.ShowDialog();
                             }
                         }
+                        //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
                         break;
                     case SocialNetworkingService.Facebook:
                         URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl);

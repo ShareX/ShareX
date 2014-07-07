@@ -199,8 +199,9 @@ namespace ShareX
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
 
             // Upload / Clipboard upload
-            chkClipboardUploadContents.Checked = TaskSettings.UploadSettings.ClipboardUploadURLContents;
-            cbClipboardUploadAutoDetectURL.Checked = TaskSettings.UploadSettings.ClipboardUploadShortenURL;
+            chkClipboardUploadURLContents.Checked = TaskSettings.UploadSettings.ClipboardUploadURLContents;
+            cbClipboardUploadShortenURL.Checked = TaskSettings.UploadSettings.ClipboardUploadShortenURL;
+            cbClipboardUploadShareURL.Checked = TaskSettings.UploadSettings.ClipboardUploadShareURL;
             cbClipboardUploadAutoIndexFolder.Checked = TaskSettings.UploadSettings.ClipboardUploadAutoIndexFolder;
 
             // Indexer
@@ -957,12 +958,17 @@ namespace ShareX
 
         private void chkClipboardUploadContents_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UploadSettings.ClipboardUploadURLContents = chkClipboardUploadContents.Checked;
+            TaskSettings.UploadSettings.ClipboardUploadURLContents = chkClipboardUploadURLContents.Checked;
         }
 
         private void cbClipboardUploadAutoDetectURL_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UploadSettings.ClipboardUploadShortenURL = cbClipboardUploadAutoDetectURL.Checked;
+            TaskSettings.UploadSettings.ClipboardUploadShortenURL = cbClipboardUploadShortenURL.Checked;
+        }
+
+        private void cbClipboardUploadShareURL_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.ClipboardUploadShareURL = cbClipboardUploadShareURL.Checked;
         }
 
         private void cbClipboardUploadAutoIndexFolder_CheckedChanged(object sender, EventArgs e)
