@@ -152,6 +152,8 @@ namespace UploadersLib
         GooglePlus,
         [Description("VK")]
         VK,
+        [Description("Reddit")]
+        Reddit,
         [Description("Pinterest")]
         Pinterest,
         [Description("Delicious")]

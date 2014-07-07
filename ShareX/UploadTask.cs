@@ -1046,6 +1046,9 @@ namespace ShareX
                     case SocialNetworkingService.VK:
                         URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
+                    case SocialNetworkingService.Reddit:
+                        URLHelpers.OpenURL("http://www.reddit.com/submit?url=" + encodedUrl);
+                        break;
                     case SocialNetworkingService.Pinterest:
                         URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
                         break;
