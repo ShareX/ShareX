@@ -36,7 +36,6 @@ namespace ShareX
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
-            this.cbCheckUpdates = new System.Windows.Forms.CheckBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.cbShowTray = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
@@ -162,7 +161,6 @@ namespace ShareX
             this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbTrayIconProgressEnabled);
             this.tpGeneral.Controls.Add(this.cbShellContextMenu);
-            this.tpGeneral.Controls.Add(this.cbCheckUpdates);
             this.tpGeneral.Controls.Add(this.cbStartWithWindows);
             this.tpGeneral.Controls.Add(this.cbShowTray);
             this.tpGeneral.Controls.Add(this.cbSendToMenu);
@@ -188,7 +186,7 @@ namespace ShareX
             // cbRememberMainFormSize
             // 
             this.cbRememberMainFormSize.AutoSize = true;
-            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 208);
+            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 184);
             this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
             this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
             this.cbRememberMainFormSize.TabIndex = 8;
@@ -199,7 +197,7 @@ namespace ShareX
             // cbTaskbarProgressEnabled
             // 
             this.cbTaskbarProgressEnabled.AutoSize = true;
-            this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 184);
+            this.cbTaskbarProgressEnabled.Location = new System.Drawing.Point(16, 160);
             this.cbTaskbarProgressEnabled.Name = "cbTaskbarProgressEnabled";
             this.cbTaskbarProgressEnabled.Size = new System.Drawing.Size(178, 17);
             this.cbTaskbarProgressEnabled.TabIndex = 7;
@@ -210,7 +208,7 @@ namespace ShareX
             // cbTrayIconProgressEnabled
             // 
             this.cbTrayIconProgressEnabled.AutoSize = true;
-            this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 160);
+            this.cbTrayIconProgressEnabled.Location = new System.Drawing.Point(16, 136);
             this.cbTrayIconProgressEnabled.Name = "cbTrayIconProgressEnabled";
             this.cbTrayIconProgressEnabled.Size = new System.Drawing.Size(150, 17);
             this.cbTrayIconProgressEnabled.TabIndex = 6;
@@ -228,17 +226,6 @@ namespace ShareX
             this.cbShellContextMenu.Text = "Show \"Upload using ShareX\" button in shell context menu";
             this.cbShellContextMenu.UseVisualStyleBackColor = true;
             this.cbShellContextMenu.CheckedChanged += new System.EventHandler(this.cbShellContextMenu_CheckedChanged);
-            // 
-            // cbCheckUpdates
-            // 
-            this.cbCheckUpdates.AutoSize = true;
-            this.cbCheckUpdates.Location = new System.Drawing.Point(16, 136);
-            this.cbCheckUpdates.Name = "cbCheckUpdates";
-            this.cbCheckUpdates.Size = new System.Drawing.Size(209, 17);
-            this.cbCheckUpdates.TabIndex = 5;
-            this.cbCheckUpdates.Text = "Automatically check updates at startup";
-            this.cbCheckUpdates.UseVisualStyleBackColor = true;
-            this.cbCheckUpdates.CheckedChanged += new System.EventHandler(this.cbCheckUpdates_CheckedChanged);
             // 
             // cbStartWithWindows
             // 
@@ -1120,7 +1107,6 @@ namespace ShareX
         private System.Windows.Forms.Label lblSaveImageSubFolderPatternPreview;
         private System.Windows.Forms.TextBox txtSaveImageSubFolderPattern;
         private System.Windows.Forms.Label lblSaveImageSubFolderPattern;
-        private System.Windows.Forms.CheckBox cbCheckUpdates;
         private System.Windows.Forms.CheckBox cbUseCustomScreenshotsPath;
         private System.Windows.Forms.TabPage tpPaths;
         private System.Windows.Forms.Button btnBrowseCustomScreenshotsPath;

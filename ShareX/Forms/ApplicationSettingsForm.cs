@@ -57,7 +57,6 @@ namespace ShareX
             cbStartWithWindows.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup); //RegistryHelper.CheckStartWithWindows();
             cbSendToMenu.Checked = ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo);
             cbShellContextMenu.Checked = RegistryHelpers.CheckShellContextMenu();
-            cbCheckUpdates.Checked = Program.Settings.AutoCheckUpdate;
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
@@ -226,11 +225,6 @@ namespace ShareX
             {
                 RegistryHelpers.SetShellContextMenu(cbShellContextMenu.Checked);
             }
-        }
-
-        private void cbCheckUpdates_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.AutoCheckUpdate = cbCheckUpdates.Checked;
         }
 
         private void cbTrayIconProgressEnabled_CheckedChanged(object sender, EventArgs e)

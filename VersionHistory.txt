@@ -1,9 +1,12 @@
-﻿ShareX 9.1.1 
+﻿ShareX 9.2.0 - 2014-07-08
 
-* Task setting to disable Aero before screen recording
+* nl.cm URL shortener support
+* ownCloud file uploader support
+* Share and shorten right click menu items for saved/uploaded tasks
+* Task setting to disable Aero while screen recording
 * Main window UI and menu changes
 * Google Drive file uploader enhancements (title and folder support)
-* Added support to share URL to Google+ and Facebook via web browser
+* Added support to share URL to Facebook, Pinterest, Reddit, Delicious, VK, and Google+ via web browser
 * FTP client improvements
 * bit.ly custom domain support
 * ImageShack image uploader changes (better error handling, removed anonymous support)
