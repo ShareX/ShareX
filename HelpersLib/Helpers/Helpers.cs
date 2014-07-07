@@ -244,6 +244,11 @@ namespace HelpersLib
             return MimeTypes.DefaultMimeType;
         }
 
+        public static T[] GetEnums<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>().ToArray();
+        }
+
         public static string[] GetEnumDescriptions<T>()
         {
             return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetDescription()).ToArray();

@@ -353,11 +353,35 @@ namespace ShareX
             }
         }
 
+        public static void ShortenURL(string url, UrlShortenerType urlShortener)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.URLShortenerDestination = urlShortener;
+
+                UploadTask task = UploadTask.CreateURLShortenerTask(url, taskSettings);
+                TaskManager.Start(task);
+            }
+        }
+
         public static void ShareURL(string url, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(url))
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                UploadTask task = UploadTask.CreateShareURLTask(url, taskSettings);
+                TaskManager.Start(task);
+            }
+        }
+
+        public static void ShareURL(string url, SocialNetworkingService socialNetworkingService)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.SocialNetworkingServiceDestination = socialNetworkingService;
 
                 UploadTask task = UploadTask.CreateShareURLTask(url, taskSettings);
                 TaskManager.Start(task);

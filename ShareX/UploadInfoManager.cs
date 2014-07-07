@@ -209,9 +209,7 @@ namespace ShareX
 
         public void CopyHTMLLinkedImage()
         {
-            if (IsItemSelected)
-                CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).
-                    Select(x => parser.Parse(x.Info, UploadInfoParser.HTMLLinkedImage)));
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.HTMLLinkedImage)));
         }
 
         public void CopyForumLink()
@@ -226,9 +224,7 @@ namespace ShareX
 
         public void CopyForumLinkedImage()
         {
-            if (IsItemSelected)
-                CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).
-                    Select(x => parser.Parse(x.Info, UploadInfoParser.ForumLinkedImage)));
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.ForumLinkedImage)));
         }
 
         public void CopyFilePath()
@@ -253,10 +249,7 @@ namespace ShareX
 
         public void CopyCustomFormat(string format)
         {
-            if (!string.IsNullOrEmpty(format) && IsItemSelected)
-            {
-                CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => parser.Parse(x.Info, format)));
-            }
+            if (!string.IsNullOrEmpty(format) && IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => parser.Parse(x.Info, format)));
         }
 
         #endregion Copy
@@ -284,6 +277,26 @@ namespace ShareX
             }
         }
 
+        public void Upload()
+        {
+            if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
+        }
+
+        public void ShortenURL(UrlShortenerType urlShortener)
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShortenURL(SelectedItem.Info.Result.ToString(), urlShortener);
+        }
+
+        public void ShareURL(SocialNetworkingService socialNetworkingService)
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), socialNetworkingService);
+        }
+
+        public void ShowQRCode()
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
+        }
+
         public void ShowResponse()
         {
             if (IsItemSelected && SelectedItem.Info.Result != null && !string.IsNullOrEmpty(SelectedItem.Info.Result.Response))
@@ -294,16 +307,6 @@ namespace ShareX
                     form.ShowDialog();
                 }
             }
-        }
-
-        public void ShowQRCode()
-        {
-            if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
-        }
-
-        public void Upload()
-        {
-            if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
         }
 
         #endregion Other

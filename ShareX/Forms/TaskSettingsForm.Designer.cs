@@ -158,6 +158,7 @@
             this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
             this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
             this.tpUploadClipboard = new System.Windows.Forms.TabPage();
+            this.cbClipboardUploadShareURL = new System.Windows.Forms.CheckBox();
             this.chkClipboardUploadURLContents = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
@@ -168,7 +169,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.cbClipboardUploadShareURL = new System.Windows.Forms.CheckBox();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1708,6 +1708,17 @@
             this.tpUploadClipboard.Text = "Clipboard upload";
             this.tpUploadClipboard.UseVisualStyleBackColor = true;
             // 
+            // cbClipboardUploadShareURL
+            // 
+            this.cbClipboardUploadShareURL.AutoSize = true;
+            this.cbClipboardUploadShareURL.Location = new System.Drawing.Point(16, 64);
+            this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
+            this.cbClipboardUploadShareURL.Size = new System.Drawing.Size(366, 17);
+            this.cbClipboardUploadShareURL.TabIndex = 3;
+            this.cbClipboardUploadShareURL.Text = "If clipboard contains a URL then share it using social networking service";
+            this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
+            this.cbClipboardUploadShareURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadShareURL_CheckedChanged);
+            // 
             // chkClipboardUploadURLContents
             // 
             this.chkClipboardUploadURLContents.AutoSize = true;
@@ -1829,17 +1840,6 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use advanced settings in main window task settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // cbClipboardUploadShareURL
-            // 
-            this.cbClipboardUploadShareURL.AutoSize = true;
-            this.cbClipboardUploadShareURL.Location = new System.Drawing.Point(16, 64);
-            this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
-            this.cbClipboardUploadShareURL.Size = new System.Drawing.Size(366, 17);
-            this.cbClipboardUploadShareURL.TabIndex = 3;
-            this.cbClipboardUploadShareURL.Text = "If clipboard contains a URL then share it using social networking service";
-            this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
-            this.cbClipboardUploadShareURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadShareURL_CheckedChanged);
             // 
             // TaskSettingsForm
             // 

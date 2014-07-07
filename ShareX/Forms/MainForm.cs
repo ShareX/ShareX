@@ -82,7 +82,8 @@ namespace ShareX
             Icon = ShareXResources.Icon;
 
             ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
-                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin = false;
+                ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin =
+                ((ToolStripDropDownMenu)tsmiShortenSelectedURL.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiShareSelectedURL.DropDown).ShowImageMargin = false;
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
@@ -109,6 +110,20 @@ namespace ShareX
             AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
             AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
             AddEnumItems<SocialNetworkingService>(x => Program.DefaultTaskSettings.SocialNetworkingServiceDestination = x, tsmiSocialServices, tsmiTraySocialServices);
+
+            foreach (UrlShortenerType urlShortener in Helpers.GetEnums<UrlShortenerType>())
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(urlShortener.GetDescription());
+                tsmi.Click += (sender, e) => uim.ShortenURL(urlShortener);
+                tsmiShortenSelectedURL.DropDownItems.Add(tsmi);
+            }
+
+            foreach (SocialNetworkingService socialNetworkingService in Helpers.GetEnums<SocialNetworkingService>())
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(socialNetworkingService.GetDescription());
+                tsmi.Click += (sender, e) => uim.ShareURL(socialNetworkingService);
+                tsmiShareSelectedURL.DropDownItems.Add(tsmi);
+            }
 
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
@@ -281,7 +296,7 @@ namespace ShareX
             cmsUploadInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible =
-                tsmiUploadSelectedFile.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+                tsmiUploadSelectedFile.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -362,11 +377,11 @@ namespace ShareX
                         }
                     }
 
-                    tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
-
-                    tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
-
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
+                    tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
                 if (!scMain.Panel2Collapsed)
@@ -1178,16 +1193,6 @@ namespace ShareX
         private void tsmiClearList_Click(object sender, EventArgs e)
         {
             RemoveAllItems();
-        }
-
-        private void tsmiClipboardUpload_Click(object sender, EventArgs e)
-        {
-            UploadManager.ClipboardUploadMainWindow();
-        }
-
-        private void tsmiUploadFile_Click(object sender, EventArgs e)
-        {
-            UploadManager.UploadFile();
         }
 
         private void tsmiHideMenu_Click(object sender, EventArgs e)
