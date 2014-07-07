@@ -144,12 +144,16 @@ namespace UploadersLib
     [Description("Social networking services"), DefaultValue(SocialNetworkingService.Twitter)]
     public enum SocialNetworkingService
     {
-        [Description("twitter.com")]
+        [Description("Twitter")]
         Twitter,
-        [Description("facebook.com")]
+        [Description("Facebook")]
         Facebook,
-        [Description("plus.google.com")]
-        GooglePlus
+        [Description("Google+")]
+        GooglePlus,
+        [Description("VK")]
+        VK,
+        [Description("Pinterest")]
+        Pinterest
     }
 
     public enum HttpMethod

@@ -1022,6 +1022,8 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
+                url = URLHelpers.URLEncode(url);
+
                 switch (Info.TaskSettings.SocialNetworkingServiceDestination)
                 {
                     case SocialNetworkingService.Twitter:
@@ -1040,8 +1042,13 @@ namespace ShareX
                         URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + url);
                         break;
                     case SocialNetworkingService.GooglePlus:
-                        // The Google+ API currently provides read-only access to public data. So sharing with API not possible yet.
                         URLHelpers.OpenURL("https://plus.google.com/share?url=" + url);
+                        break;
+                    case SocialNetworkingService.VK:
+                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + url);
+                        break;
+                    case SocialNetworkingService.Pinterest:
+                        URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", url));
                         break;
                 }
             }
