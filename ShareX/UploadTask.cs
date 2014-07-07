@@ -1022,7 +1022,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
-                url = URLHelpers.URLEncode(url);
+                string encodedUrl = URLHelpers.URLEncode(url);
 
                 switch (Info.TaskSettings.SocialNetworkingServiceDestination)
                 {
@@ -1031,24 +1031,23 @@ namespace ShareX
 
                         if (twitterOAuth != null)
                         {
-                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
+                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, " " + url))
                             {
-                                twitter.Message = url;
                                 twitter.ShowDialog();
                             }
                         }
                         break;
                     case SocialNetworkingService.Facebook:
-                        URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + url);
+                        URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl);
                         break;
                     case SocialNetworkingService.GooglePlus:
-                        URLHelpers.OpenURL("https://plus.google.com/share?url=" + url);
+                        URLHelpers.OpenURL("https://plus.google.com/share?url=" + encodedUrl);
                         break;
                     case SocialNetworkingService.VK:
-                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + url);
+                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
                     case SocialNetworkingService.Pinterest:
-                        URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", url));
+                        URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
                         break;
                 }
             }

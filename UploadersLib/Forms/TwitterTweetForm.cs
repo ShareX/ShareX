@@ -40,7 +40,7 @@ namespace UploadersLib
             {
                 return txtTweet.Text;
             }
-            set
+            private set
             {
                 txtTweet.Text = value;
             }
@@ -86,6 +86,12 @@ namespace UploadersLib
             AuthInfo = oauth;
         }
 
+        public TwitterTweetForm(OAuthInfo oauth, string message)
+            : this(oauth)
+        {
+            Message = message;
+        }
+
         private void UpdateLength()
         {
             lblTweetLength.Text = (Length - Message.Length).ToString();
@@ -123,6 +129,7 @@ namespace UploadersLib
 
         private void TwitterMsg_Shown(object sender, EventArgs e)
         {
+            txtTweet.SelectionLength = 0;
             this.ShowActivate();
         }
 
