@@ -153,7 +153,9 @@ namespace UploadersLib
         [Description("VK")]
         VK,
         [Description("Pinterest")]
-        Pinterest
+        Pinterest,
+        [Description("Delicious")]
+        Delicious
     }
 
     public enum HttpMethod

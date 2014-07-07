@@ -1049,6 +1049,9 @@ namespace ShareX
                     case SocialNetworkingService.Pinterest:
                         URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
                         break;
+                    case SocialNetworkingService.Delicious:
+                        URLHelpers.OpenURL("https://delicious.com/save?v=5&noui&jump=close&url=" + encodedUrl);
+                        break;
                 }
             }
         }
