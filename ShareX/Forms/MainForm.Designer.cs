@@ -142,6 +142,7 @@
             this.tsmiCopyFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowResponse = new System.Windows.Forms.ToolStripMenuItem();
@@ -212,7 +213,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -829,7 +829,7 @@
             // scMain.Panel2
             // 
             this.scMain.Panel2.Controls.Add(this.pbPreview);
-            this.scMain.Size = new System.Drawing.Size(714, 407);
+            this.scMain.Size = new System.Drawing.Size(664, 407);
             this.scMain.SplitterDistance = 335;
             this.scMain.SplitterWidth = 6;
             this.scMain.TabIndex = 1;
@@ -842,11 +842,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDragAndDropTip.BackColor = System.Drawing.Color.White;
             this.lblDragAndDropTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDragAndDropTip.ForeColor = System.Drawing.Color.LightGray;
-            this.lblDragAndDropTip.Location = new System.Drawing.Point(8, 92);
+            this.lblDragAndDropTip.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblDragAndDropTip.Location = new System.Drawing.Point(8, 39);
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
             this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(30, 20, 30, 30);
-            this.lblDragAndDropTip.Size = new System.Drawing.Size(319, 223);
+            this.lblDragAndDropTip.Size = new System.Drawing.Size(319, 328);
             this.lblDragAndDropTip.TabIndex = 1;
             this.lblDragAndDropTip.Text = "You can drag and drop files to this window";
             this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -935,7 +935,7 @@
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Location = new System.Drawing.Point(0, 0);
             this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(373, 407);
+            this.pbPreview.Size = new System.Drawing.Size(323, 407);
             this.pbPreview.TabIndex = 0;
             // 
             // cmsUploadInfo
@@ -956,7 +956,7 @@
             this.tsmiImagePreview});
             this.cmsUploadInfo.Name = "cmsHistory";
             this.cmsUploadInfo.ShowImageMargin = false;
-            this.cmsUploadInfo.Size = new System.Drawing.Size(129, 296);
+            this.cmsUploadInfo.Size = new System.Drawing.Size(129, 274);
             // 
             // tsmiShowErrors
             // 
@@ -1237,6 +1237,12 @@
             this.tsmiUploadSelectedFile.Size = new System.Drawing.Size(128, 22);
             this.tsmiUploadSelectedFile.Text = "Upload";
             this.tsmiUploadSelectedFile.Click += new System.EventHandler(this.tsmiUploadSelectedFile_Click);
+            // 
+            // tsmiShortenSelectedURL
+            // 
+            this.tsmiShortenSelectedURL.Name = "tsmiShortenSelectedURL";
+            this.tsmiShortenSelectedURL.Size = new System.Drawing.Size(128, 22);
+            this.tsmiShortenSelectedURL.Text = "Shorten URL";
             // 
             // tsmiShareSelectedURL
             // 
@@ -1823,18 +1829,12 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiShortenSelectedURL
-            // 
-            this.tsmiShortenSelectedURL.Name = "tsmiShortenSelectedURL";
-            this.tsmiShortenSelectedURL.Size = new System.Drawing.Size(128, 22);
-            this.tsmiShortenSelectedURL.Text = "Shorten URL";
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 407);
+            this.ClientSize = new System.Drawing.Size(834, 407);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
             this.DoubleBuffered = true;

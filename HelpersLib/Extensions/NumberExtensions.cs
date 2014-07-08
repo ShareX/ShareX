@@ -95,7 +95,7 @@ namespace HelpersLib
 
         public static int RandomAdd(this int num, int min, int max)
         {
-            return num + Helpers.Random(min, max);
+            return num + MathHelpers.Random(min, max);
         }
 
         private static readonly string[] Suffix_Decimal = new[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
