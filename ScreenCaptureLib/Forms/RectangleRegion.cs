@@ -131,12 +131,13 @@ namespace ScreenCaptureLib
             if (Config != null)
             {
                 AreaManager.WindowCaptureMode |= Config.ForceWindowCapture;
+                AreaManager.IncludeControls |= Config.IncludeControls;
 
                 if (AreaManager.WindowCaptureMode)
                 {
                     WindowsListAdvanced wla = new WindowsListAdvanced();
                     wla.IgnoreWindows.Add(Handle);
-                    wla.IncludeChildWindows = Config.IncludeControls;
+                    wla.IncludeChildWindows = AreaManager.IncludeControls;
                     AreaManager.Windows = wla.GetWindowsRectangleList();
                 }
             }

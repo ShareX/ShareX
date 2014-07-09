@@ -71,12 +71,6 @@
     <Compile Include="Forms\RectangleLight.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegionCapturePreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RegionCapturePreview.Designer.cs">
-      <DependentUpon>RegionCapturePreview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Surface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,9 +130,6 @@
     <Content Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\RegionCapturePreview.resx">
-      <DependentUpon>RegionCapturePreview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

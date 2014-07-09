@@ -743,11 +743,6 @@ namespace ShareX
             }
         }
 
-        private void tsmiTestShapeCapture_Click(object sender, EventArgs e)
-        {
-            new RegionCapturePreview(Program.DefaultTaskSettings.CaptureSettings.SurfaceOptions).Show();
-        }
-
         private void tsmiScreenRecorder_Click(object sender, EventArgs e)
         {
             TaskHelpers.DoScreenRecorder();
@@ -1568,6 +1563,7 @@ namespace ShareX
                 case CaptureType.RectangleWindow:
                     RectangleRegion rectangleRegion = new RectangleRegion();
                     rectangleRegion.AreaManager.WindowCaptureMode = true;
+                    rectangleRegion.AreaManager.IncludeControls = true;
                     surface = rectangleRegion;
                     break;
                 case CaptureType.RoundedRectangle:

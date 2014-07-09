@@ -98,6 +98,7 @@ namespace ScreenCaptureLib
 
         public List<Rectangle> Windows { get; set; }
         public bool WindowCaptureMode { get; set; }
+        public bool IncludeControls { get; set; }
         public int MinimumSize { get; set; }
 
         private RectangleRegion surface;
