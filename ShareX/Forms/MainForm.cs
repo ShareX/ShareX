@@ -1225,7 +1225,9 @@ namespace ShareX
 
         private delegate Image ScreenCaptureDelegate();
 
-        private bool isLightCapture;
+        private enum LastRegionCaptureType { Surface, Light, Annotate }
+
+        private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Surface;
 
         private void InitHotkeys()
         {
@@ -1610,7 +1612,7 @@ namespace ShareX
 
                     if (img != null)
                     {
-                        isLightCapture = false;
+                        lastRegionCaptureType = LastRegionCaptureType.Surface;
                     }
                 }
                 finally
@@ -1638,7 +1640,7 @@ namespace ShareX
 
                         if (img != null)
                         {
-                            isLightCapture = true;
+                            lastRegionCaptureType = LastRegionCaptureType.Annotate;
                         }
                     }
                 }
@@ -1663,7 +1665,7 @@ namespace ShareX
 
                         if (img != null)
                         {
-                            isLightCapture = true;
+                            lastRegionCaptureType = LastRegionCaptureType.Light;
                         }
                     }
                 }
@@ -1674,39 +1676,56 @@ namespace ShareX
 
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
-            if (!isLightCapture)
+            switch (lastRegionCaptureType)
             {
-                if (Surface.LastRegionFillPath != null)
-                {
-                    DoCapture(() =>
+                case LastRegionCaptureType.Surface:
+                    if (Surface.LastRegionFillPath != null)
                     {
-                        using (Image screenshot = Screenshot.CaptureFullscreen())
+                        DoCapture(() =>
                         {
-                            return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
-                        }
-                    }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                }
-                else
-                {
-                    CaptureRegion(CaptureType.Rectangle, taskSettings, autoHideForm);
-                }
-            }
-            else
-            {
-                if (!RectangleLight.LastSelectionRectangle0Based.IsEmpty)
-                {
-                    DoCapture(() =>
+                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            {
+                                return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
+                            }
+                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                    }
+                    else
                     {
-                        using (Image screenshot = Screenshot.CaptureFullscreen())
+                        CaptureRegion(CaptureType.Rectangle, taskSettings, autoHideForm);
+                    }
+                    break;
+                case LastRegionCaptureType.Light:
+                    if (!RectangleLight.LastSelectionRectangle0Based.IsEmpty)
+                    {
+                        DoCapture(() =>
                         {
-                            return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
-                        }
-                    }, CaptureType.LastRegion, taskSettings, autoHideForm);
-                }
-                else
-                {
-                    CaptureRectangleLight(taskSettings, autoHideForm);
-                }
+                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            {
+                                return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
+                            }
+                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                    }
+                    else
+                    {
+                        CaptureRectangleLight(taskSettings, autoHideForm);
+                    }
+                    break;
+                case LastRegionCaptureType.Annotate:
+                    if (!RectangleAnnotate.LastSelectionRectangle0Based.IsEmpty)
+                    {
+                        DoCapture(() =>
+                        {
+                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            {
+                                return ImageHelpers.CropImage(screenshot, RectangleAnnotate.LastSelectionRectangle0Based);
+                            }
+                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                    }
+                    else
+                    {
+                        CaptureRectangleAnnotate(taskSettings, autoHideForm);
+                    }
+                    break;
             }
         }
 

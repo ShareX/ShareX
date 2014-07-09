@@ -2,20 +2,21 @@
 
 * Main window menu changes to simplify UI
 * Automatic show/hide image preview in main window
-* Support to Upload from URL
-* Ability to customize URL format when opening the URL
-* Better stop upload mechanism (ability to stop stuck uploads)
-* Added Tweet Message to Tools menu with hotkey support
-* Share URL and shorten URL context menu items for tasks in main window
-* ImageShack image uploader changes (better error handling, removed anonymous support)
+* Added support to share URL to Facebook, Google+, VK, Reddit, Pinterest and Delicious via web browser
+* Share URL and Shorten URL context menu items for tasks in main window
+* Google Drive file uploader enhancements (title and folder support)
 * Twitter image upload support
 * ownCloud file uploader support
-* Google Drive file uploader enhancements (title and folder support)
-* bit.ly custom domain support
 * nl.cm URL shortener support
-* Added support to share URL to Facebook, Pinterest, Reddit, Delicious, VK, and Google+ via web browser
-* Task setting to disable Aero while screen recording
+* bit.ly custom domain support
+* Support to Upload from URL
+* Added Rectangle (Annotate) to capture menu which will alow drawing in rectangle capture
 * Screen recording improvements (timer and stop button under region)
+* Task setting to disable Aero while screen recording
+* Ability to customize URL format when automatically opening the URL
+* Better stop upload mechanism (ability to stop stuck uploads)
+* Added Tweet Message to Tools menu with hotkey support
+* ImageShack image uploader changes (better error handling, removed anonymous support)
 
 ShareX 9.1.0 - 2014-06-11
 

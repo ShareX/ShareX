@@ -382,7 +382,7 @@ namespace ScreenCaptureLib
             using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.White)))
             using (Pen pen = new Pen(Color.FromArgb(150, Color.Black)))
             {
-                backgroundPath.AddRoundedRectangle(textRectangle, 7);
+                backgroundPath.AddRoundedRectangle(textRectangle, 5);
                 g.FillPath(brush, backgroundPath);
                 g.DrawPath(pen, backgroundPath);
             }
