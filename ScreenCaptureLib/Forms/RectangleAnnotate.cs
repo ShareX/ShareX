@@ -81,13 +81,42 @@ namespace ScreenCaptureLib
 
         public bool ShowRectangleInfo { get; set; }
 
+        private bool cursorShown = true;
+
+        public bool CursorShown
+        {
+            get
+            {
+                return cursorShown;
+            }
+            set
+            {
+                if (cursorShown == value)
+                {
+                    return;
+                }
+
+                if (value)
+                {
+                    Cursor.Show();
+                }
+                else
+                {
+                    Cursor.Hide();
+                }
+
+                cursorShown = value;
+            }
+        }
+
         private Timer timer;
         private Image backgroundImage;
         private Pen borderDotPen, borderDotPen2;
         private Point positionOnClick;
-        private bool isMouseDown, isDrawingMode;
+        private bool isMouseDown, isCtrlDown;
         private Stopwatch penTimer;
-        private Cursor crosshairCursor;
+        private int drawingPenSize = 7;
+        private Color drawingPenColor = Color.FromArgb(255, 0, 0);
 
         public RectangleAnnotate()
         {
@@ -102,10 +131,8 @@ namespace ScreenCaptureLib
 
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {
-                crosshairCursor = new Cursor(cursorStream);
+                Cursor = new Cursor(cursorStream);
             }
-
-            Cursor = crosshairCursor;
 
             timer = new Timer { Interval = 10 };
             timer.Tick += timer_Tick;
@@ -125,7 +152,6 @@ namespace ScreenCaptureLib
             if (backgroundImage != null) backgroundImage.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
-            if (crosshairCursor != null) crosshairCursor.Dispose();
 
             base.Dispose(disposing);
         }
@@ -142,43 +168,61 @@ namespace ScreenCaptureLib
             Text = "ShareX - Rectangle Capture Annotate";
             ShowInTaskbar = false;
             TopMost = true;
-            Shown += RectangleLight_Shown;
-            KeyUp += RectangleLight_KeyUp;
-            MouseDown += RectangleLight_MouseDown;
-            MouseUp += RectangleLight_MouseUp;
+
+            Shown += RectangleAnnotate_Shown;
+            MouseDown += RectangleAnnotate_MouseDown;
+            MouseUp += RectangleAnnotate_MouseUp;
+            MouseWheel += RectangleAnnotate_MouseWheel;
+            KeyDown += RectangleAnnotate_KeyDown;
+            KeyUp += RectangleAnnotate_KeyUp;
+            FormClosing += RectangleAnnotate_FormClosing;
+
             ResumeLayout(false);
         }
 
-        private void RectangleLight_Shown(object sender, EventArgs e)
+        private void RectangleAnnotate_Shown(object sender, EventArgs e)
         {
             this.ShowActivate();
         }
 
-        private void RectangleLight_KeyUp(object sender, KeyEventArgs e)
+        private void RectangleAnnotate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CursorShown = true;
+        }
+
+        private void RectangleAnnotate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                isCtrlDown = true;
+                CursorShown = false;
+            }
+        }
+
+        private void RectangleAnnotate_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
                 Close();
             }
+
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                isCtrlDown = false;
+                CursorShown = true;
+            }
         }
 
-        private void RectangleLight_MouseDown(object sender, MouseEventArgs e)
+        private void RectangleAnnotate_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 positionOnClick = CaptureHelpers.GetCursorPosition();
                 isMouseDown = true;
-
-                if (Control.ModifierKeys == Keys.Control)
-                {
-                    isDrawingMode = true;
-                    Cursor = Cursors.Cross;
-                }
             }
             else if (isMouseDown)
             {
                 isMouseDown = false;
-                isDrawingMode = false;
                 Refresh();
             }
             else
@@ -187,24 +231,39 @@ namespace ScreenCaptureLib
             }
         }
 
-        private void RectangleLight_MouseUp(object sender, MouseEventArgs e)
+        private void RectangleAnnotate_MouseUp(object sender, MouseEventArgs e)
         {
-            if (isDrawingMode)
+            if (isMouseDown && e.Button == MouseButtons.Left)
             {
-                isMouseDown = false;
-                isDrawingMode = false;
-                Cursor = crosshairCursor;
-            }
-            else if (isMouseDown && e.Button == MouseButtons.Left)
-            {
-                if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+                if (isCtrlDown)
                 {
-                    LastSelectionRectangle0Based = SelectionRectangle0Based;
-                    DialogResult = DialogResult.OK;
+                    isMouseDown = false;
                 }
+                else
+                {
+                    if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+                    {
+                        LastSelectionRectangle0Based = SelectionRectangle0Based;
+                        DialogResult = DialogResult.OK;
+                    }
 
-                Close();
+                    Close();
+                }
             }
+        }
+
+        private void RectangleAnnotate_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                drawingPenSize++;
+            }
+            else if (e.Delta < 0)
+            {
+                drawingPenSize--;
+            }
+
+            drawingPenSize = drawingPenSize.Between(1, 100);
         }
 
         public Image GetAreaImage()
@@ -243,38 +302,45 @@ namespace ScreenCaptureLib
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.SmoothingMode = SmoothingMode.HighSpeed;
 
-            if (isDrawingMode)
+            if (isCtrlDown && isMouseDown)
             {
                 using (Graphics gBackgroundImage = Graphics.FromImage(backgroundImage))
-                using (Pen penDrawing = new Pen(Color.FromArgb(0, 255, 0), 5) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                using (Pen penDrawing = new Pen(drawingPenColor, drawingPenSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
                 {
                     gBackgroundImage.DrawLine(penDrawing, PreviousMousePosition0Based, CurrentMousePosition0Based);
                 }
-
-                g.DrawImage(backgroundImage, ScreenRectangle0Based);
             }
-            else
+
+            g.DrawImage(backgroundImage, ScreenRectangle0Based);
+
+            if (isCtrlDown)
             {
-                g.DrawImage(backgroundImage, ScreenRectangle0Based);
-
-                if (isMouseDown)
+                using (Pen penDrawing = new Pen(drawingPenColor, drawingPenSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                using (Brush brushDrawing = new SolidBrush(drawingPenColor))
                 {
-                    if (ShowRectangleInfo)
-                    {
-                        int offset = 10;
-                        Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
-
-                        using (Font font = new Font("Arial", 17, FontStyle.Bold))
-                        {
-                            ImageHelpers.DrawTextWithOutline(g, string.Format("{0}, {1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
-                                SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black, 3);
-                        }
-                    }
-
-                    g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
-                    borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
-                    g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+                    Rectangle rectCursor = new Rectangle(CurrentMousePosition0Based.X - drawingPenSize / 2, CurrentMousePosition0Based.Y - drawingPenSize / 2, drawingPenSize, drawingPenSize);
+                    g.FillEllipse(brushDrawing, rectCursor);
+                    g.DrawEllipse(Pens.Black, rectCursor);
                 }
+            }
+
+            if (isMouseDown && !isCtrlDown)
+            {
+                if (ShowRectangleInfo)
+                {
+                    int offset = 10;
+                    Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
+
+                    using (Font font = new Font("Arial", 17, FontStyle.Bold))
+                    {
+                        ImageHelpers.DrawTextWithOutline(g, string.Format("{0}, {1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
+                            SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black, 3);
+                    }
+                }
+
+                g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
+                borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
+                g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
         }
     }
