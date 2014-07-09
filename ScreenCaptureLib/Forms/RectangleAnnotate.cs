@@ -37,7 +37,7 @@ namespace ScreenCaptureLib
 {
     public class RectangleAnnotate : Form
     {
-        public static Rectangle LastSelectionRectangle0Based { get; set; }
+        public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
 
@@ -79,11 +79,6 @@ namespace ScreenCaptureLib
             }
         }
 
-        public bool ShowRectangleInfo { get; set; }
-        public bool ShowTips { get; set; }
-        public Color DrawingPenColor { get; set; }
-        public int DrawingPenSize { get; set; }
-
         private bool cursorShown = true;
 
         public bool CursorShown
@@ -112,17 +107,20 @@ namespace ScreenCaptureLib
             }
         }
 
+        public RectangleAnnotateOptions Options;
+
         private Timer timer;
         private Image backgroundImage;
         private Pen borderDotPen, borderDotPen2;
         private Point positionOnClick;
         private bool isMouseDown, isDrawingMode;
         private Stopwatch penTimer;
-
         private Font rectangleInfofont, tipFont;
 
-        public RectangleAnnotate()
+        public RectangleAnnotate(RectangleAnnotateOptions options)
         {
+            Options = options;
+
             backgroundImage = Screenshot.CaptureFullscreen();
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
@@ -131,11 +129,6 @@ namespace ScreenCaptureLib
             tipFont = new Font("Arial", 13);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
-
-            ShowRectangleInfo = true;
-            ShowTips = true;
-            DrawingPenColor = Color.FromArgb(0, 230, 0);
-            DrawingPenSize = 7;
 
             InitializeComponent();
 
@@ -150,23 +143,6 @@ namespace ScreenCaptureLib
         }
 
         private IContainer components = null;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
-            if (timer != null) timer.Dispose();
-            if (backgroundImage != null) backgroundImage.Dispose();
-            if (borderDotPen != null) borderDotPen.Dispose();
-            if (borderDotPen2 != null) borderDotPen2.Dispose();
-            if (rectangleInfofont != null) rectangleInfofont.Dispose();
-            if (tipFont != null) tipFont.Dispose();
-
-            base.Dispose(disposing);
-        }
 
         private void InitializeComponent()
         {
@@ -190,6 +166,23 @@ namespace ScreenCaptureLib
             FormClosing += RectangleAnnotate_FormClosing;
 
             ResumeLayout(false);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            if (timer != null) timer.Dispose();
+            if (backgroundImage != null) backgroundImage.Dispose();
+            if (borderDotPen != null) borderDotPen.Dispose();
+            if (borderDotPen2 != null) borderDotPen2.Dispose();
+            if (rectangleInfofont != null) rectangleInfofont.Dispose();
+            if (tipFont != null) tipFont.Dispose();
+
+            base.Dispose(disposing);
         }
 
         private void RectangleAnnotate_Shown(object sender, EventArgs e)
@@ -216,7 +209,7 @@ namespace ScreenCaptureLib
 
                 try
                 {
-                    DrawingPenColor = DialogColor.GetColor(DrawingPenColor);
+                    Options.DrawingPenColor = DialogColor.GetColor(Options.DrawingPenColor);
                 }
                 finally
                 {
@@ -277,14 +270,14 @@ namespace ScreenCaptureLib
         {
             if (e.Delta > 0)
             {
-                DrawingPenSize++;
+                Options.DrawingPenSize++;
             }
             else if (e.Delta < 0)
             {
-                DrawingPenSize--;
+                Options.DrawingPenSize--;
             }
 
-            DrawingPenSize = DrawingPenSize.Between(1, 100);
+            Options.DrawingPenSize = Options.DrawingPenSize.Between(1, 100);
         }
 
         private void DoSelection(Rectangle rect)
@@ -341,7 +334,7 @@ namespace ScreenCaptureLib
                 using (Graphics gImage = Graphics.FromImage(backgroundImage))
                 {
                     gImage.SmoothingMode = SmoothingMode.HighQuality;
-                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, DrawingPenSize, DrawingPenColor);
+                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, Options.DrawingPenSize, Options.DrawingPenColor);
                 }
             }
 
@@ -349,17 +342,17 @@ namespace ScreenCaptureLib
 
             if (isDrawingMode)
             {
-                DrawDot(g, CurrentMousePosition0Based, DrawingPenSize, DrawingPenColor, true);
+                DrawDot(g, CurrentMousePosition0Based, Options.DrawingPenSize, Options.DrawingPenColor, true);
             }
 
-            if (ShowTips)
+            if (Options.ShowTips)
             {
                 DrawTips(g);
             }
 
             if (isMouseDown && !isDrawingMode)
             {
-                if (ShowRectangleInfo)
+                if (Options.ShowRectangleInfo)
                 {
                     DrawRectangleInfo(g);
                 }
@@ -373,8 +366,8 @@ namespace ScreenCaptureLib
         private void DrawTips(Graphics g)
         {
             int offset = 10;
-            int padding = 5;
-            string tipText = "Ctrl: Drawing mode, Shift: Brush color, Mouse wheel: Brush size, Space: Fullscreen capture";
+            int padding = 2;
+            string tipText = "Ctrl: Drawing mode ░ Shift: Pen color ░ Mouse wheel: Pen size ░ Space: Fullscreen capture";
             Size textSize = g.MeasureString(tipText, tipFont).ToSize();
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;

@@ -1630,7 +1630,7 @@ namespace ShareX
             {
                 Image img = null;
 
-                using (RectangleAnnotate rectangleAnnotate = new RectangleAnnotate())
+                using (RectangleAnnotate rectangleAnnotate = new RectangleAnnotate(taskSettings.TaskSettingsCaptureReference.RectangleAnnotateOptions))
                 {
                     if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
                     {

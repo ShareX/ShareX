@@ -99,6 +99,20 @@ namespace ShareX
         [JsonIgnore]
         public TaskSettings TaskSettingsReference { get; private set; }
 
+        [JsonIgnore]
+        public TaskSettingsCapture TaskSettingsCaptureReference
+        {
+            get
+            {
+                if (UseDefaultCaptureSettings)
+                {
+                    return Program.DefaultTaskSettings.CaptureSettings;
+                }
+
+                return TaskSettingsReference.CaptureSettings;
+            }
+        }
+
         public override string ToString()
         {
             if (!string.IsNullOrEmpty(Description))
@@ -286,11 +300,17 @@ namespace ShareX
 
         #endregion Capture / General
 
-        #region Capture / Shape capture
+        #region Capture / Region capture
 
         public SurfaceOptions SurfaceOptions = new SurfaceOptions();
 
-        #endregion Capture / Shape capture
+        #endregion Capture / Region capture
+
+        #region Capture / Rectangle annotate
+
+        public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
+
+        #endregion Capture / Rectangle annotate
 
         #region Capture / Screen recorder
 

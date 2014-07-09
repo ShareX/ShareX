@@ -57,6 +57,7 @@
     <Compile Include="Forms\RectangleAnnotate.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="Screencast\AVIOptions.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
@@ -109,7 +110,7 @@
     <Compile Include="RegionHelpers\NodeObject.cs" />
     <Compile Include="RegionHelpers\ResizeManager.cs" />
     <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
-    <Compile Include="RegionHelpers\SurfaceOptions.cs" />
+    <Compile Include="SurfaceOptions.cs" />
     <Compile Include="Screencast\ScreenRecorder.cs" />
     <Compile Include="Screencast\HardDiskCache.cs" />
     <Compile Include="Screencast\AVICache.cs" />

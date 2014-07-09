@@ -108,8 +108,8 @@
             this.cbCaptureShadow = new System.Windows.Forms.CheckBox();
             this.cbShowCursor = new System.Windows.Forms.CheckBox();
             this.cbCaptureTransparent = new System.Windows.Forms.CheckBox();
-            this.tpCaptureShape = new System.Windows.Forms.TabPage();
-            this.pgShapesCapture = new System.Windows.Forms.PropertyGrid();
+            this.tpRegionCapture = new System.Windows.Forms.TabPage();
+            this.pgRegionCapture = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.cbScreenRecordAutoDisableAero = new System.Windows.Forms.CheckBox();
             this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
@@ -169,6 +169,8 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
+            this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -189,7 +191,7 @@
             this.tpCaptureGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
-            this.tpCaptureShape.SuspendLayout();
+            this.tpRegionCapture.SuspendLayout();
             this.tpScreenRecorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
@@ -204,6 +206,7 @@
             this.tpUploadClipboard.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.tpRectangleAnnotate.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -973,7 +976,8 @@
             // tcCapture
             // 
             this.tcCapture.Controls.Add(this.tpCaptureGeneral);
-            this.tcCapture.Controls.Add(this.tpCaptureShape);
+            this.tcCapture.Controls.Add(this.tpRegionCapture);
+            this.tcCapture.Controls.Add(this.tpRectangleAnnotate);
             this.tcCapture.Controls.Add(this.tpScreenRecorder);
             this.tcCapture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcCapture.Location = new System.Drawing.Point(3, 30);
@@ -1115,26 +1119,26 @@
             this.cbCaptureTransparent.UseVisualStyleBackColor = true;
             this.cbCaptureTransparent.CheckedChanged += new System.EventHandler(this.cbCaptureTransparent_CheckedChanged);
             // 
-            // tpCaptureShape
+            // tpRegionCapture
             // 
-            this.tpCaptureShape.Controls.Add(this.pgShapesCapture);
-            this.tpCaptureShape.Location = new System.Drawing.Point(4, 22);
-            this.tpCaptureShape.Name = "tpCaptureShape";
-            this.tpCaptureShape.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCaptureShape.Size = new System.Drawing.Size(509, 301);
-            this.tpCaptureShape.TabIndex = 1;
-            this.tpCaptureShape.Text = "Shape capture";
-            this.tpCaptureShape.UseVisualStyleBackColor = true;
+            this.tpRegionCapture.Controls.Add(this.pgRegionCapture);
+            this.tpRegionCapture.Location = new System.Drawing.Point(4, 22);
+            this.tpRegionCapture.Name = "tpRegionCapture";
+            this.tpRegionCapture.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRegionCapture.Size = new System.Drawing.Size(509, 301);
+            this.tpRegionCapture.TabIndex = 1;
+            this.tpRegionCapture.Text = "Region capture";
+            this.tpRegionCapture.UseVisualStyleBackColor = true;
             // 
-            // pgShapesCapture
+            // pgRegionCapture
             // 
-            this.pgShapesCapture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgShapesCapture.Location = new System.Drawing.Point(3, 3);
-            this.pgShapesCapture.Name = "pgShapesCapture";
-            this.pgShapesCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgShapesCapture.Size = new System.Drawing.Size(503, 295);
-            this.pgShapesCapture.TabIndex = 0;
-            this.pgShapesCapture.ToolbarVisible = false;
+            this.pgRegionCapture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgRegionCapture.Location = new System.Drawing.Point(3, 3);
+            this.pgRegionCapture.Name = "pgRegionCapture";
+            this.pgRegionCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgRegionCapture.Size = new System.Drawing.Size(503, 295);
+            this.pgRegionCapture.TabIndex = 0;
+            this.pgRegionCapture.ToolbarVisible = false;
             // 
             // tpScreenRecorder
             // 
@@ -1841,6 +1845,26 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // tpRectangleAnnotate
+            // 
+            this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
+            this.tpRectangleAnnotate.Location = new System.Drawing.Point(4, 22);
+            this.tpRectangleAnnotate.Name = "tpRectangleAnnotate";
+            this.tpRectangleAnnotate.Size = new System.Drawing.Size(509, 301);
+            this.tpRectangleAnnotate.TabIndex = 3;
+            this.tpRectangleAnnotate.Text = "Rectangle annotate";
+            this.tpRectangleAnnotate.UseVisualStyleBackColor = true;
+            // 
+            // pgRectangleAnnotate
+            // 
+            this.pgRectangleAnnotate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgRectangleAnnotate.Location = new System.Drawing.Point(0, 0);
+            this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
+            this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgRectangleAnnotate.Size = new System.Drawing.Size(509, 301);
+            this.pgRectangleAnnotate.TabIndex = 1;
+            this.pgRectangleAnnotate.ToolbarVisible = false;
+            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1884,7 +1908,7 @@
             this.tpCaptureGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
-            this.tpCaptureShape.ResumeLayout(false);
+            this.tpRegionCapture.ResumeLayout(false);
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
@@ -1907,6 +1931,7 @@
             this.tpIndexer.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.tpRectangleAnnotate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1955,7 +1980,7 @@
         private System.Windows.Forms.CheckBox cbCaptureShadow;
         private System.Windows.Forms.CheckBox cbShowCursor;
         private System.Windows.Forms.CheckBox cbCaptureTransparent;
-        private System.Windows.Forms.TabPage tpCaptureShape;
+        private System.Windows.Forms.TabPage tpRegionCapture;
         private System.Windows.Forms.TabPage tpScreenRecorder;
         private System.Windows.Forms.TabPage tpTask;
         private System.Windows.Forms.TabPage tpActions;
@@ -2009,7 +2034,7 @@
         private System.Windows.Forms.CheckBox chkShowAfterUploadForm;
         private System.Windows.Forms.CheckBox chkUseDefaultGeneralSettings;
         private System.Windows.Forms.Panel panelGeneral;
-        private System.Windows.Forms.PropertyGrid pgShapesCapture;
+        private System.Windows.Forms.PropertyGrid pgRegionCapture;
         private System.Windows.Forms.TabPage tpIndexer;
         private System.Windows.Forms.PropertyGrid pgIndexerConfig;
         private System.Windows.Forms.CheckBox chkUseDefaultIndexerSettings;
@@ -2053,6 +2078,8 @@
         private System.Windows.Forms.Button btnDescriptionAutoFill;
         private System.Windows.Forms.CheckBox cbScreenRecordAutoDisableAero;
         private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
+        private System.Windows.Forms.TabPage tpRectangleAnnotate;
+        private System.Windows.Forms.PropertyGrid pgRectangleAnnotate;
 
 
 

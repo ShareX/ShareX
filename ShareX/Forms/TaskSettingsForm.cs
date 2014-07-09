@@ -155,8 +155,13 @@ namespace ShareX
             nudScreenshotDelay.Value = TaskSettings.CaptureSettings.DelayScreenshot;
             cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
 
+            // Capture / Region capture
             if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new SurfaceOptions();
-            pgShapesCapture.SelectedObject = TaskSettings.CaptureSettings.SurfaceOptions;
+            pgRegionCapture.SelectedObject = TaskSettings.CaptureSettings.SurfaceOptions;
+
+            // Capture / Rectangle annotate
+            if (TaskSettings.CaptureSettings.RectangleAnnotateOptions == null) TaskSettings.CaptureSettings.RectangleAnnotateOptions = new RectangleAnnotateOptions();
+            pgRectangleAnnotate.SelectedObject = TaskSettings.CaptureSettings.RectangleAnnotateOptions;
 
             // Capture / Screen recorder
             cbScreenRecorderOutput.Items.AddRange(Helpers.GetEnumDescriptions<ScreenRecordOutput>());
