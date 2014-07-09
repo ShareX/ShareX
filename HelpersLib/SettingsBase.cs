@@ -35,12 +35,15 @@ namespace HelpersLib
     [Serializable]
     public abstract class SettingsBase<T> where T : SettingsBase<T>, new()
     {
-        public static readonly SerializationType SerializationType = SerializationType.Json;
+        private static readonly SerializationType SerializationType = SerializationType.Json;
 
+        [Browsable(false)]
         public string FilePath { get; private set; }
 
+        [Browsable(false)]
         public string ApplicationVersion { get; set; }
 
+        [Browsable(false)]
         public bool IsFirstTimeRun
         {
             get
@@ -49,6 +52,7 @@ namespace HelpersLib
             }
         }
 
+        [Browsable(false)]
         public bool IsPreviousVersion
         {
             get

@@ -81,6 +81,8 @@ namespace ScreenCaptureLib
 
         public bool ShowRectangleInfo { get; set; }
 
+        public bool ShowTips { get; set; }
+
         private bool cursorShown = true;
 
         public bool CursorShown
@@ -89,7 +91,7 @@ namespace ScreenCaptureLib
             {
                 return cursorShown;
             }
-            set
+            private set
             {
                 if (cursorShown == value)
                 {
@@ -113,7 +115,7 @@ namespace ScreenCaptureLib
         private Image backgroundImage;
         private Pen borderDotPen, borderDotPen2;
         private Point positionOnClick;
-        private bool isMouseDown, isCtrlDown;
+        private bool isMouseDown, isDrawingMode;
         private Stopwatch penTimer;
         private int drawingPenSize = 7;
         private Color drawingPenColor = Color.FromArgb(255, 0, 0);
@@ -194,8 +196,23 @@ namespace ScreenCaptureLib
         {
             if (e.KeyCode == Keys.ControlKey)
             {
-                isCtrlDown = true;
-                CursorShown = false;
+                isDrawingMode = !isDrawingMode;
+                CursorShown = !isDrawingMode;
+            }
+            else if (e.KeyCode == Keys.ShiftKey && isDrawingMode)
+            {
+                isDrawingMode = false;
+                CursorShown = true;
+
+                try
+                {
+                    drawingPenColor = DialogColor.GetColor(drawingPenColor);
+                }
+                finally
+                {
+                    CursorShown = false;
+                    isDrawingMode = true;
+                }
             }
         }
 
@@ -204,12 +221,6 @@ namespace ScreenCaptureLib
             if (e.KeyCode == Keys.Escape)
             {
                 Close();
-            }
-
-            if (e.KeyCode == Keys.ControlKey)
-            {
-                isCtrlDown = false;
-                CursorShown = true;
             }
         }
 
@@ -220,22 +231,13 @@ namespace ScreenCaptureLib
                 positionOnClick = CaptureHelpers.GetCursorPosition();
                 isMouseDown = true;
             }
-            else if (isMouseDown)
-            {
-                isMouseDown = false;
-                Refresh();
-            }
-            else
-            {
-                Close();
-            }
         }
 
         private void RectangleAnnotate_MouseUp(object sender, MouseEventArgs e)
         {
-            if (isMouseDown && e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && isMouseDown)
             {
-                if (isCtrlDown)
+                if (isDrawingMode)
                 {
                     isMouseDown = false;
                 }
@@ -247,6 +249,17 @@ namespace ScreenCaptureLib
                         DialogResult = DialogResult.OK;
                     }
 
+                    Close();
+                }
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                if (isMouseDown)
+                {
+                    isMouseDown = false;
+                }
+                else
+                {
                     Close();
                 }
             }
@@ -300,31 +313,25 @@ namespace ScreenCaptureLib
         {
             Graphics g = e.Graphics;
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
-            g.SmoothingMode = SmoothingMode.HighSpeed;
+            g.SmoothingMode = SmoothingMode.HighQuality;
 
-            if (isCtrlDown && isMouseDown)
+            if (isDrawingMode && isMouseDown)
             {
-                using (Graphics gBackgroundImage = Graphics.FromImage(backgroundImage))
-                using (Pen penDrawing = new Pen(drawingPenColor, drawingPenSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                using (Graphics gImage = Graphics.FromImage(backgroundImage))
                 {
-                    gBackgroundImage.DrawLine(penDrawing, PreviousMousePosition0Based, CurrentMousePosition0Based);
+                    gImage.SmoothingMode = SmoothingMode.HighQuality;
+                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, drawingPenSize, drawingPenColor);
                 }
             }
 
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
 
-            if (isCtrlDown)
+            if (isDrawingMode)
             {
-                using (Pen penDrawing = new Pen(drawingPenColor, drawingPenSize) { StartCap = LineCap.Round, EndCap = LineCap.Round })
-                using (Brush brushDrawing = new SolidBrush(drawingPenColor))
-                {
-                    Rectangle rectCursor = new Rectangle(CurrentMousePosition0Based.X - drawingPenSize / 2, CurrentMousePosition0Based.Y - drawingPenSize / 2, drawingPenSize, drawingPenSize);
-                    g.FillEllipse(brushDrawing, rectCursor);
-                    g.DrawEllipse(Pens.Black, rectCursor);
-                }
+                DrawDot(g, CurrentMousePosition0Based, drawingPenSize, drawingPenColor, true);
             }
 
-            if (isMouseDown && !isCtrlDown)
+            if (isMouseDown && !isDrawingMode)
             {
                 if (ShowRectangleInfo)
                 {
@@ -341,6 +348,35 @@ namespace ScreenCaptureLib
                 g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
                 g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
+            }
+        }
+
+        private void DrawLine(Graphics g, Point pos1, Point pos2, int size, Color color)
+        {
+            if (pos1 == pos2)
+            {
+                DrawDot(g, pos1, size, color);
+            }
+            else
+            {
+                using (Pen pen = new Pen(color, size) { StartCap = LineCap.Round, EndCap = LineCap.Round })
+                {
+                    g.DrawLine(pen, PreviousMousePosition0Based, CurrentMousePosition0Based);
+                }
+            }
+        }
+
+        private void DrawDot(Graphics g, Point pos, int size, Color color, bool border = false)
+        {
+            using (Brush brush = new SolidBrush(color))
+            {
+                RectangleF rect = new RectangleF(pos.X - size / 2f, pos.Y - size / 2f, size, size);
+                g.FillEllipse(brush, rect);
+
+                if (border)
+                {
+                    g.DrawEllipse(Pens.Black, rect);
+                }
             }
         }
     }

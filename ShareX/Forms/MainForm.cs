@@ -1303,7 +1303,7 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.RectangleWindow, safeTaskSettings, false);
                     break;
                 case HotkeyType.RectangleLight:
-                    CaptureLightRectangle(safeTaskSettings, false);
+                    CaptureRectangleLight(safeTaskSettings, false);
                     break;
                 case HotkeyType.RoundedRectangleRegion:
                     CaptureScreenshot(CaptureType.RoundedRectangle, safeTaskSettings, false);
@@ -1623,7 +1623,32 @@ namespace ShareX
             }, captureType, taskSettings, autoHideForm);
         }
 
-        private void CaptureLightRectangle(TaskSettings taskSettings = null, bool autoHideForm = true)
+        private void CaptureRectangleAnnotate(TaskSettings taskSettings = null, bool autoHideForm = true)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            DoCapture(() =>
+            {
+                Image img = null;
+
+                using (RectangleAnnotate rectangleAnnotate = new RectangleAnnotate())
+                {
+                    if (rectangleAnnotate.ShowDialog() == DialogResult.OK)
+                    {
+                        img = rectangleAnnotate.GetAreaImage();
+
+                        if (img != null)
+                        {
+                            isLightCapture = true;
+                        }
+                    }
+                }
+
+                return img;
+            }, CaptureType.Rectangle, taskSettings, autoHideForm);
+        }
+
+        private void CaptureRectangleLight(TaskSettings taskSettings = null, bool autoHideForm = true)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -1681,7 +1706,7 @@ namespace ShareX
                 }
                 else
                 {
-                    CaptureLightRectangle(taskSettings, autoHideForm);
+                    CaptureRectangleLight(taskSettings, autoHideForm);
                 }
             }
         }
@@ -1790,9 +1815,14 @@ namespace ShareX
             CaptureScreenshot(CaptureType.RoundedRectangle);
         }
 
+        private void tsmiRectangleAnnotate_Click(object sender, EventArgs e)
+        {
+            CaptureRectangleAnnotate();
+        }
+
         private void tsmiRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureLightRectangle();
+            CaptureRectangleLight();
         }
 
         private void tsmiEllipse_Click(object sender, EventArgs e)
@@ -1869,9 +1899,14 @@ namespace ShareX
             CaptureScreenshot(CaptureType.RectangleWindow, null, false);
         }
 
+        private void tsmiTrayRectangleAnnotate_Click(object sender, EventArgs e)
+        {
+            CaptureRectangleAnnotate(null, false);
+        }
+
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
         {
-            CaptureLightRectangle(null, false);
+            CaptureRectangleLight(null, false);
         }
 
         private void tsmiTrayRoundedRectangle_Click(object sender, EventArgs e)

@@ -48,6 +48,19 @@ namespace HelpersLib
             Initialize(currentColor);
         }
 
+        public static Color GetColor(Color currentColor)
+        {
+            using (DialogColor dialog = new DialogColor(currentColor))
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    return dialog.NewColor;
+                }
+            }
+
+            return currentColor;
+        }
+
         private void Initialize(Color currentColor)
         {
             InitializeComponent();

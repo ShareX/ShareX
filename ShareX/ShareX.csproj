@@ -474,6 +474,8 @@
     <None Include="Resources\clock.png" />
     <None Include="Resources\heart.png" />
     <None Include="Resources\crown.png" />
+    <None Include="Resources\layer--pencil.png" />
+    <None Include="Resources\layer1.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
