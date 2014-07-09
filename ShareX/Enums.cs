@@ -149,8 +149,10 @@ namespace ShareX
         ActiveMonitor,
         [Description("Capture rectangle region")]
         RectangleRegion,
-        [Description("Capture rectangle region or window")]
+        [Description("Capture rectangle region (Window)")]
         WindowRectangle,
+        [Description("Capture rectangle region (Annotate)")]
+        RectangleAnnotate,
         [Description("Capture rectangle region (Light)")]
         RectangleLight,
         [Description("Capture rounded rectangle region")]

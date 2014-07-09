@@ -1302,6 +1302,9 @@ namespace ShareX
                 case HotkeyType.WindowRectangle:
                     CaptureScreenshot(CaptureType.RectangleWindow, safeTaskSettings, false);
                     break;
+                case HotkeyType.RectangleAnnotate:
+                    CaptureRectangleAnnotate(safeTaskSettings, false);
+                    break;
                 case HotkeyType.RectangleLight:
                     CaptureRectangleLight(safeTaskSettings, false);
                     break;

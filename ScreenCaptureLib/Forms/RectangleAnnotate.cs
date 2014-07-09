@@ -128,13 +128,13 @@ namespace ScreenCaptureLib
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             rectangleInfofont = new Font("Arial", 17, FontStyle.Bold);
-            tipFont = new Font("Arial", 15);
+            tipFont = new Font("Arial", 13);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
 
             ShowRectangleInfo = true;
             ShowTips = true;
-            DrawingPenColor = Color.FromArgb(255, 0, 0);
+            DrawingPenColor = Color.FromArgb(0, 230, 0);
             DrawingPenSize = 7;
 
             InitializeComponent();
@@ -232,6 +232,10 @@ namespace ScreenCaptureLib
             {
                 Close();
             }
+            else if (e.KeyCode == Keys.Space)
+            {
+                DoSelection(ScreenRectangle);
+            }
         }
 
         private void RectangleAnnotate_MouseDown(object sender, MouseEventArgs e)
@@ -253,13 +257,7 @@ namespace ScreenCaptureLib
                 }
                 else
                 {
-                    if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
-                    {
-                        LastSelectionRectangle0Based = SelectionRectangle0Based;
-                        DialogResult = DialogResult.OK;
-                    }
-
-                    Close();
+                    DoSelection(SelectionRectangle);
                 }
             }
             else if (e.Button == MouseButtons.Right)
@@ -287,6 +285,19 @@ namespace ScreenCaptureLib
             }
 
             DrawingPenSize = DrawingPenSize.Between(1, 100);
+        }
+
+        private void DoSelection(Rectangle rect)
+        {
+            SelectionRectangle = rect;
+
+            if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+            {
+                LastSelectionRectangle0Based = SelectionRectangle0Based;
+                DialogResult = DialogResult.OK;
+            }
+
+            Close();
         }
 
         public Image GetAreaImage()
@@ -363,7 +374,7 @@ namespace ScreenCaptureLib
         {
             int offset = 10;
             int padding = 5;
-            string tipText = "Ctrl: Drawing mode, Shift: Brush color, Mouse wheel: Brush size";
+            string tipText = "Ctrl: Drawing mode, Shift: Brush color, Mouse wheel: Brush size, Space: Fullscreen capture";
             Size textSize = g.MeasureString(tipText, tipFont).ToSize();
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;
@@ -376,13 +387,14 @@ namespace ScreenCaptureLib
 
             using (GraphicsPath backgroundPath = new GraphicsPath())
             using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.White)))
+            using (Pen pen = new Pen(Color.FromArgb(150, Color.Black)))
             {
                 backgroundPath.AddRoundedRectangle(textRectangle, 7);
                 g.FillPath(brush, backgroundPath);
-                g.DrawPath(Pens.Black, backgroundPath);
+                g.DrawPath(pen, backgroundPath);
             }
 
-            ImageHelpers.DrawTextWithShadow(g, tipText, new PointF(textRectangle.X + padding, textRectangle.Y + padding), tipFont, Color.Black, Color.White);
+            ImageHelpers.DrawTextWithShadow(g, tipText, new PointF(textRectangle.X + padding, textRectangle.Y + padding), tipFont, Color.Black, Color.WhiteSmoke);
         }
 
         private void DrawRectangleInfo(Graphics g)
@@ -419,6 +431,7 @@ namespace ScreenCaptureLib
                 if (border)
                 {
                     g.DrawEllipse(Pens.Black, rect);
+                    g.DrawEllipse(Pens.White, new RectangleF(rect.X - 1, rect.Y - 1, rect.Width + 2, rect.Height + 2));
                 }
             }
         }
