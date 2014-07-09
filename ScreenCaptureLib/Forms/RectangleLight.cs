@@ -229,7 +229,7 @@ namespace ScreenCaptureLib
                     using (Font font = new Font("Arial", 17, FontStyle.Bold))
                     {
                         ImageHelpers.DrawTextWithOutline(g, string.Format("{0}, {1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
-                            SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black, 3);
+                            SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black);
                     }
                 }
 

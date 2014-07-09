@@ -496,7 +496,7 @@ namespace HelpersLib
             return bmp;
         }
 
-        public static void DrawTextWithOutline(Graphics g, string text, PointF position, Font font, Color textColor, Color borderColor, int shadowOffset = 1)
+        public static void DrawTextWithOutline(Graphics g, string text, PointF position, Font font, Color textColor, Color borderColor, int borderSize = 2)
         {
             SmoothingMode tempMode = g.SmoothingMode;
 
@@ -509,7 +509,7 @@ namespace HelpersLib
                     gp.AddString(text, font.FontFamily, (int)font.Style, font.Size, position, sf);
                 }
 
-                using (Pen borderPen = new Pen(borderColor, 2) { LineJoin = LineJoin.Round })
+                using (Pen borderPen = new Pen(borderColor, borderSize) { LineJoin = LineJoin.Round })
                 {
                     g.DrawPath(borderPen, gp);
                 }

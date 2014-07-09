@@ -52,6 +52,8 @@ namespace HelpersLib
         {
             using (DialogColor dialog = new DialogColor(currentColor))
             {
+                dialog.rbSaturation.Checked = true;
+
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     return dialog.NewColor;

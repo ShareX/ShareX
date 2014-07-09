@@ -80,8 +80,9 @@ namespace ScreenCaptureLib
         }
 
         public bool ShowRectangleInfo { get; set; }
-
         public bool ShowTips { get; set; }
+        public Color DrawingPenColor { get; set; }
+        public int DrawingPenSize { get; set; }
 
         private bool cursorShown = true;
 
@@ -117,8 +118,8 @@ namespace ScreenCaptureLib
         private Point positionOnClick;
         private bool isMouseDown, isDrawingMode;
         private Stopwatch penTimer;
-        private int drawingPenSize = 7;
-        private Color drawingPenColor = Color.FromArgb(255, 0, 0);
+
+        private Font rectangleInfofont, tipFont;
 
         public RectangleAnnotate()
         {
@@ -126,8 +127,15 @@ namespace ScreenCaptureLib
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
+            rectangleInfofont = new Font("Arial", 17, FontStyle.Bold);
+            tipFont = new Font("Arial", 15);
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
+
+            ShowRectangleInfo = true;
+            ShowTips = true;
+            DrawingPenColor = Color.FromArgb(255, 0, 0);
+            DrawingPenSize = 7;
 
             InitializeComponent();
 
@@ -154,6 +162,8 @@ namespace ScreenCaptureLib
             if (backgroundImage != null) backgroundImage.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
+            if (rectangleInfofont != null) rectangleInfofont.Dispose();
+            if (tipFont != null) tipFont.Dispose();
 
             base.Dispose(disposing);
         }
@@ -206,7 +216,7 @@ namespace ScreenCaptureLib
 
                 try
                 {
-                    drawingPenColor = DialogColor.GetColor(drawingPenColor);
+                    DrawingPenColor = DialogColor.GetColor(DrawingPenColor);
                 }
                 finally
                 {
@@ -269,14 +279,14 @@ namespace ScreenCaptureLib
         {
             if (e.Delta > 0)
             {
-                drawingPenSize++;
+                DrawingPenSize++;
             }
             else if (e.Delta < 0)
             {
-                drawingPenSize--;
+                DrawingPenSize--;
             }
 
-            drawingPenSize = drawingPenSize.Between(1, 100);
+            DrawingPenSize = DrawingPenSize.Between(1, 100);
         }
 
         public Image GetAreaImage()
@@ -320,7 +330,7 @@ namespace ScreenCaptureLib
                 using (Graphics gImage = Graphics.FromImage(backgroundImage))
                 {
                     gImage.SmoothingMode = SmoothingMode.HighQuality;
-                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, drawingPenSize, drawingPenColor);
+                    DrawLine(gImage, PreviousMousePosition0Based, CurrentMousePosition0Based, DrawingPenSize, DrawingPenColor);
                 }
             }
 
@@ -328,27 +338,60 @@ namespace ScreenCaptureLib
 
             if (isDrawingMode)
             {
-                DrawDot(g, CurrentMousePosition0Based, drawingPenSize, drawingPenColor, true);
+                DrawDot(g, CurrentMousePosition0Based, DrawingPenSize, DrawingPenColor, true);
+            }
+
+            if (ShowTips)
+            {
+                DrawTips(g);
             }
 
             if (isMouseDown && !isDrawingMode)
             {
                 if (ShowRectangleInfo)
                 {
-                    int offset = 10;
-                    Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
-
-                    using (Font font = new Font("Arial", 17, FontStyle.Bold))
-                    {
-                        ImageHelpers.DrawTextWithOutline(g, string.Format("{0}, {1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
-                            SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black, 3);
-                    }
+                    DrawRectangleInfo(g);
                 }
 
                 g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
                 g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
+        }
+
+        private void DrawTips(Graphics g)
+        {
+            int offset = 10;
+            int padding = 5;
+            string tipText = "Ctrl: Drawing mode, Shift: Brush color, Mouse wheel: Brush size";
+            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
+            int rectWidth = textSize.Width + padding * 2;
+            int rectHeight = textSize.Height + padding * 2;
+            Rectangle textRectangle = new Rectangle(ScreenRectangle0Based.Width / 2 - rectWidth / 2, offset, rectWidth, rectHeight);
+
+            if (textRectangle.RectangleOffset(10).Contains(CurrentMousePosition0Based))
+            {
+                textRectangle.Y = ScreenRectangle0Based.Height - rectHeight - offset;
+            }
+
+            using (GraphicsPath backgroundPath = new GraphicsPath())
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.White)))
+            {
+                backgroundPath.AddRoundedRectangle(textRectangle, 7);
+                g.FillPath(brush, backgroundPath);
+                g.DrawPath(Pens.Black, backgroundPath);
+            }
+
+            ImageHelpers.DrawTextWithShadow(g, tipText, new PointF(textRectangle.X + padding, textRectangle.Y + padding), tipFont, Color.Black, Color.White);
+        }
+
+        private void DrawRectangleInfo(Graphics g)
+        {
+            int offset = 10;
+            Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
+
+            ImageHelpers.DrawTextWithOutline(g, string.Format("X:{0} Y:{1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
+                SelectionRectangle.Width, SelectionRectangle.Height), position, rectangleInfofont, Color.White, Color.Black);
         }
 
         private void DrawLine(Graphics g, Point pos1, Point pos2, int size, Color color)
