@@ -164,6 +164,7 @@ namespace ScreenCaptureLib
             KeyDown += RectangleAnnotate_KeyDown;
             KeyUp += RectangleAnnotate_KeyUp;
             FormClosing += RectangleAnnotate_FormClosing;
+            LostFocus += RectangleAnnotate_LostFocus;
 
             ResumeLayout(false);
         }
@@ -195,6 +196,11 @@ namespace ScreenCaptureLib
             CursorShown = true;
         }
 
+        private void RectangleAnnotate_LostFocus(object sender, EventArgs e)
+        {
+            CursorShown = true;
+        }
+
         private void RectangleAnnotate_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.ControlKey)
@@ -205,7 +211,6 @@ namespace ScreenCaptureLib
             else if (e.KeyCode == Keys.ShiftKey && isDrawingMode)
             {
                 isDrawingMode = false;
-                CursorShown = true;
 
                 try
                 {
@@ -268,16 +273,17 @@ namespace ScreenCaptureLib
 
         private void RectangleAnnotate_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
+            if (isDrawingMode)
             {
-                Options.DrawingPenSize++;
+                if (e.Delta > 0)
+                {
+                    Options.DrawingPenSize++;
+                }
+                else if (e.Delta < 0)
+                {
+                    Options.DrawingPenSize--;
+                }
             }
-            else if (e.Delta < 0)
-            {
-                Options.DrawingPenSize--;
-            }
-
-            Options.DrawingPenSize = Options.DrawingPenSize.Between(1, 100);
         }
 
         private void DoSelection(Rectangle rect)
@@ -367,7 +373,18 @@ namespace ScreenCaptureLib
         {
             int offset = 10;
             int padding = 2;
-            string tipText = "Ctrl: Drawing mode ░ Shift: Pen color ░ Mouse wheel: Pen size ░ Space: Fullscreen capture";
+
+            string tipText;
+
+            if (isDrawingMode)
+            {
+                tipText = "Ctrl: Region mode ░ Shift: Pen color ░ Mouse wheel: Pen size ░ Space: Fullscreen capture";
+            }
+            else
+            {
+                tipText = "Ctrl: Drawing mode ░ Space: Fullscreen capture";
+            }
+
             Size textSize = g.MeasureString(tipText, tipFont).ToSize();
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;

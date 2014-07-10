@@ -35,7 +35,7 @@ namespace ScreenCaptureLib
 {
     public class RectangleAnnotateOptions
     {
-        [DefaultValue(true), Description("Show position and size of selected rectangle area.")]
+        [DefaultValue(false), Description("Show position and size of selected rectangle area.")]
         public bool ShowRectangleInfo { get; set; }
 
         [DefaultValue(true), Description("Show hotkey tips.")]
@@ -44,8 +44,20 @@ namespace ScreenCaptureLib
         [DefaultValue(typeof(Color), "0, 230, 0"), Description("In drawing mode color of pen.")]
         public Color DrawingPenColor { get; set; }
 
+        private int drawingPenSize;
+
         [DefaultValue(7), Description("In drawing mode size of pen.")]
-        public int DrawingPenSize { get; set; }
+        public int DrawingPenSize
+        {
+            get
+            {
+                return drawingPenSize;
+            }
+            set
+            {
+                drawingPenSize = value.Between(1, 100);
+            }
+        }
 
         public RectangleAnnotateOptions()
         {
