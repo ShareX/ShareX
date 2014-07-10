@@ -107,7 +107,7 @@ namespace ScreenCaptureLib
             }
         }
 
-        public RectangleAnnotateOptions Options;
+        public RectangleAnnotateOptions Options { get; private set; }
 
         private Timer timer;
         private Image backgroundImage;
@@ -372,7 +372,7 @@ namespace ScreenCaptureLib
         private void DrawTips(Graphics g)
         {
             int offset = 10;
-            int padding = 2;
+            int padding = 3;
 
             string tipText;
 
@@ -396,15 +396,18 @@ namespace ScreenCaptureLib
             }
 
             using (GraphicsPath backgroundPath = new GraphicsPath())
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.White)))
-            using (Pen pen = new Pen(Color.FromArgb(150, Color.Black)))
+            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.White)))
+            using (Pen pen = new Pen(Color.FromArgb(175, Color.Black)))
             {
                 backgroundPath.AddRoundedRectangle(textRectangle, 5);
                 g.FillPath(brush, backgroundPath);
                 g.DrawPath(pen, backgroundPath);
             }
 
-            ImageHelpers.DrawTextWithShadow(g, tipText, new PointF(textRectangle.X + padding, textRectangle.Y + padding), tipFont, Color.Black, Color.WhiteSmoke);
+            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+            {
+                g.DrawString(tipText, tipFont, Brushes.Black, textRectangle, sf);
+            }
         }
 
         private void DrawRectangleInfo(Graphics g)

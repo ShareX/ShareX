@@ -37,7 +37,7 @@ namespace ScreenCaptureLib
 {
     public class RectangleLight : Form
     {
-        public static Rectangle LastSelectionRectangle0Based;
+        public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
 
@@ -131,10 +131,12 @@ namespace ScreenCaptureLib
             Text = "ShareX - Rectangle Capture Light";
             ShowInTaskbar = false;
             TopMost = true;
+
             Shown += RectangleLight_Shown;
             KeyUp += RectangleLight_KeyUp;
             MouseDown += RectangleLight_MouseDown;
             MouseUp += RectangleLight_MouseUp;
+
             ResumeLayout(false);
         }
 
@@ -228,7 +230,7 @@ namespace ScreenCaptureLib
 
                     using (Font font = new Font("Arial", 17, FontStyle.Bold))
                     {
-                        ImageHelpers.DrawTextWithOutline(g, string.Format("{0}, {1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
+                        ImageHelpers.DrawTextWithOutline(g, string.Format("X:{0} Y:{1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
                             SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black);
                     }
                 }
