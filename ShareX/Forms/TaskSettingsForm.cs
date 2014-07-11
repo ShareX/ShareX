@@ -87,7 +87,7 @@ namespace ShareX
             AddEnumItems<FileDestination>(x => TaskSettings.TextFileDestination = x, tsmiTextFileUploaders);
             AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, tsmiFileUploaders);
             AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, tsmiURLShorteners);
-            AddEnumItems<SocialNetworkingService>(x => TaskSettings.SocialNetworkingServiceDestination = x, tsmiSocialServices);
+            AddEnumItems<URLSharingServices>(x => TaskSettings.SocialNetworkingServiceDestination = x, tsmiURLSharingServices);
 
             SetEnumCheckedContextMenu(TaskSettings.Job, cmsTask);
             SetMultiEnumCheckedContextMenu(TaskSettings.AfterCaptureJob, cmsAfterCapture);
@@ -98,7 +98,7 @@ namespace ShareX
             SetEnumChecked(TaskSettings.TextFileDestination, tsmiTextFileUploaders);
             SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
             SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
-            SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, tsmiSocialServices);
+            SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, tsmiURLSharingServices);
 
             // FTP
             if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
@@ -264,7 +264,7 @@ namespace ShareX
                 EnableDisableToolStripMenuItems<FileDestination>(tsmiTextFileUploaders);
                 EnableDisableToolStripMenuItems<FileDestination>(tsmiFileUploaders);
                 EnableDisableToolStripMenuItems<UrlShortenerType>(tsmiURLShorteners);
-                EnableDisableToolStripMenuItems<SocialNetworkingService>(tsmiSocialServices);
+                EnableDisableToolStripMenuItems<URLSharingServices>(tsmiURLSharingServices);
                 chkOverrideFTP.Visible = cboFTPaccounts.Visible = Program.UploadersConfig.FTPAccountList.Count > 1;
             }
         }
@@ -430,7 +430,7 @@ namespace ShareX
 
             tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiSocialServices.Text = "Social networking service: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = "Share URL via: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)

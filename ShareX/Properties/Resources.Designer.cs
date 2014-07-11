@@ -442,16 +442,6 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap globe_share {
-            get {
-                object obj = ResourceManager.GetObject("globe_share", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Greenshot {
             get {
                 object obj = ResourceManager.GetObject("Greenshot", resourceCulture);
@@ -715,6 +705,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap ruler_triangle {
             get {
                 object obj = ResourceManager.GetObject("ruler_triangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap share {
+            get {
+                object obj = ResourceManager.GetObject("share", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

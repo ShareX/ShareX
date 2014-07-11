@@ -50,7 +50,7 @@
             this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSocialServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTask = new HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
@@ -110,6 +110,8 @@
             this.cbCaptureTransparent = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
             this.pgRegionCapture = new System.Windows.Forms.PropertyGrid();
+            this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
+            this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.cbScreenRecordAutoDisableAero = new System.Windows.Forms.CheckBox();
             this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
@@ -169,8 +171,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
-            this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -192,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
+            this.tpRectangleAnnotate.SuspendLayout();
             this.tpScreenRecorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
@@ -206,7 +207,6 @@
             this.tpUploadClipboard.SuspendLayout();
             this.tpIndexer.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.tpRectangleAnnotate.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -389,44 +389,44 @@
             this.tsmiTextUploaders,
             this.tsmiFileUploaders,
             this.tsmiURLShorteners,
-            this.tsmiSocialServices});
+            this.tsmiURLSharingServices});
             this.cmsDestinations.Name = "cmsDestinations";
-            this.cmsDestinations.Size = new System.Drawing.Size(213, 114);
+            this.cmsDestinations.Size = new System.Drawing.Size(163, 114);
             // 
             // tsmiImageUploaders
             // 
             this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
             this.tsmiImageUploaders.Name = "tsmiImageUploaders";
-            this.tsmiImageUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiImageUploaders.Size = new System.Drawing.Size(162, 22);
             this.tsmiImageUploaders.Text = "Image uploaders";
             // 
             // tsmiTextUploaders
             // 
             this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTextUploaders.Name = "tsmiTextUploaders";
-            this.tsmiTextUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiTextUploaders.Size = new System.Drawing.Size(162, 22);
             this.tsmiTextUploaders.Text = "Text uploaders";
             // 
             // tsmiFileUploaders
             // 
             this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiFileUploaders.Name = "tsmiFileUploaders";
-            this.tsmiFileUploaders.Size = new System.Drawing.Size(212, 22);
+            this.tsmiFileUploaders.Size = new System.Drawing.Size(162, 22);
             this.tsmiFileUploaders.Text = "File uploaders";
             // 
             // tsmiURLShorteners
             // 
             this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiURLShorteners.Name = "tsmiURLShorteners";
-            this.tsmiURLShorteners.Size = new System.Drawing.Size(212, 22);
+            this.tsmiURLShorteners.Size = new System.Drawing.Size(162, 22);
             this.tsmiURLShorteners.Text = "URL shorteners";
             // 
-            // tsmiSocialServices
+            // tsmiURLSharingServices
             // 
-            this.tsmiSocialServices.Image = global::ShareX.Properties.Resources.globe_share;
-            this.tsmiSocialServices.Name = "tsmiSocialServices";
-            this.tsmiSocialServices.Size = new System.Drawing.Size(212, 22);
-            this.tsmiSocialServices.Text = "Social networking services";
+            this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.share;
+            this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
+            this.tsmiURLSharingServices.Size = new System.Drawing.Size(162, 22);
+            this.tsmiURLSharingServices.Text = "Share URL via";
             // 
             // btnTask
             // 
@@ -1140,6 +1140,26 @@
             this.pgRegionCapture.TabIndex = 0;
             this.pgRegionCapture.ToolbarVisible = false;
             // 
+            // tpRectangleAnnotate
+            // 
+            this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
+            this.tpRectangleAnnotate.Location = new System.Drawing.Point(4, 22);
+            this.tpRectangleAnnotate.Name = "tpRectangleAnnotate";
+            this.tpRectangleAnnotate.Size = new System.Drawing.Size(509, 301);
+            this.tpRectangleAnnotate.TabIndex = 3;
+            this.tpRectangleAnnotate.Text = "Rectangle annotate";
+            this.tpRectangleAnnotate.UseVisualStyleBackColor = true;
+            // 
+            // pgRectangleAnnotate
+            // 
+            this.pgRectangleAnnotate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgRectangleAnnotate.Location = new System.Drawing.Point(0, 0);
+            this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
+            this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgRectangleAnnotate.Size = new System.Drawing.Size(509, 301);
+            this.pgRectangleAnnotate.TabIndex = 1;
+            this.pgRectangleAnnotate.ToolbarVisible = false;
+            // 
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordAutoDisableAero);
@@ -1845,26 +1865,6 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // tpRectangleAnnotate
-            // 
-            this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
-            this.tpRectangleAnnotate.Location = new System.Drawing.Point(4, 22);
-            this.tpRectangleAnnotate.Name = "tpRectangleAnnotate";
-            this.tpRectangleAnnotate.Size = new System.Drawing.Size(509, 301);
-            this.tpRectangleAnnotate.TabIndex = 3;
-            this.tpRectangleAnnotate.Text = "Rectangle annotate";
-            this.tpRectangleAnnotate.UseVisualStyleBackColor = true;
-            // 
-            // pgRectangleAnnotate
-            // 
-            this.pgRectangleAnnotate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgRectangleAnnotate.Location = new System.Drawing.Point(0, 0);
-            this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
-            this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgRectangleAnnotate.Size = new System.Drawing.Size(509, 301);
-            this.pgRectangleAnnotate.TabIndex = 1;
-            this.pgRectangleAnnotate.ToolbarVisible = false;
-            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1909,6 +1909,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
+            this.tpRectangleAnnotate.ResumeLayout(false);
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
@@ -1931,7 +1932,6 @@
             this.tpIndexer.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.tpRectangleAnnotate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2053,7 +2053,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTextUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiFileUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiURLShorteners;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSocialServices;
+        private System.Windows.Forms.ToolStripMenuItem tsmiURLSharingServices;
         private System.Windows.Forms.ComboBox cbImageFileExist;
         private System.Windows.Forms.Label lblImageFileExist;
         private System.Windows.Forms.ComboBox cboEncoder;

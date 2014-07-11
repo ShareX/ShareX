@@ -281,9 +281,9 @@ namespace UploadersLib
                 return IsActive((UrlShortenerType)destination);
             }
 
-            if (destination is SocialNetworkingService)
+            if (destination is URLSharingServices)
             {
-                return IsActive((SocialNetworkingService)destination);
+                return IsActive((URLSharingServices)destination);
             }
 
             return true;
@@ -384,11 +384,11 @@ namespace UploadersLib
             return true;
         }
 
-        public bool IsActive(SocialNetworkingService destination)
+        public bool IsActive(URLSharingServices destination)
         {
             switch (destination)
             {
-                case SocialNetworkingService.Twitter:
+                case URLSharingServices.Twitter:
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
             }
 

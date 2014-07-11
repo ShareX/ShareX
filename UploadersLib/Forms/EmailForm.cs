@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using System;
 using System.Windows.Forms;
 
@@ -37,6 +38,7 @@ namespace UploadersLib.GUI
         public EmailForm()
         {
             InitializeComponent();
+            Icon = ShareXResources.Icon;
         }
 
         public EmailForm(string toEmail, string subject, string body)

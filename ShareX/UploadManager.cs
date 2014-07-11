@@ -376,7 +376,7 @@ namespace ShareX
             }
         }
 
-        public static void ShareURL(string url, SocialNetworkingService socialNetworkingService)
+        public static void ShareURL(string url, URLSharingServices socialNetworkingService)
         {
             if (!string.IsNullOrEmpty(url))
             {

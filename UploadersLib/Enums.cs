@@ -30,19 +30,19 @@ namespace UploadersLib
     [Description("Image uploaders"), DefaultValue(ImageDestination.Imgur)]
     public enum ImageDestination
     {
-        [Description("imgur.com")]
+        [Description("Imgur")]
         Imgur,
-        [Description("imageshack.com")]
+        [Description("ImageShack")]
         ImageShack,
-        [Description("tinypic.com")]
+        [Description("TinyPic")]
         TinyPic,
-        [Description("flickr.com")]
+        [Description("Flickr")]
         Flickr,
-        [Description("photobucket.com")]
+        [Description("Photobucket")]
         Photobucket,
-        [Description("picasaweb.google.com")]
+        [Description("Picasa")]
         Picasa,
-        [Description("twitter.com")]
+        [Description("Twitter")]
         Twitter,
         [Description("Custom image uploader")]
         CustomImageUploader,
@@ -53,21 +53,19 @@ namespace UploadersLib
     [Description("Text uploaders"), DefaultValue(TextDestination.Pastebin)]
     public enum TextDestination
     {
-        [Description("pastebin.com")]
+        [Description("Pastebin")]
         Pastebin,
-        [Description("pastebin.ca")]
-        PastebinCA,
-        [Description("paste2.org")]
+        [Description("Paste2")]
         Paste2,
-        [Description("slexy.org")]
+        [Description("Slexy")]
         Slexy,
-        [Description("pastee.org")]
+        [Description("Pastee")]
         Pastee,
-        [Description("paste.ee")]
+        [Description("Paste.ee")]
         Paste_ee,
-        [Description("gist.github.com")]
+        [Description("GitHub Gist")]
         Gist,
-        [Description("upaste.me")]
+        [Description("uPaste")]
         Upaste,
         [Description("Custom text uploader")]
         CustomTextUploader,
@@ -78,44 +76,44 @@ namespace UploadersLib
     [Description("File uploaders"), DefaultValue(FileDestination.Dropbox)]
     public enum FileDestination
     {
-        [Description("dropbox.com")]
+        [Description("Dropbox")]
         Dropbox,
-        [Description("copy.com")]
-        Copy,
-        [Description("FTP Server")]
+        [Description("FTP server")]
         FTP,
-        [Description("gfycat.com")]
-        Gfycat,
-        [Description("mega.co.nz")]
-        Mega,
-        [Description("s3.amazon.com")]
-        AmazonS3,
-        [Description("owncloud.org")]
-        OwnCloud,
-        [Description("pushbullet.com")]
-        Pushbullet,
-        [Description("mediacru.sh")]
-        MediaCrush,
-        [Description("drive.google.com")]
+        [Description("Copy")]
+        Copy,
+        [Description("Google Drive")]
         GoogleDrive,
-        [Description("rapidshare.com")]
-        RapidShare,
-        [Description("sendspace.com")]
-        SendSpace,
-        [Description("minus.com")]
-        Minus,
-        [Description("box.com")]
+        [Description("Box")]
         Box,
-        [Description("ge.tt")]
+        [Description("MEGA")]
+        Mega,
+        [Description("Amazon S3")]
+        AmazonS3,
+        [Description("ownCloud")]
+        OwnCloud,
+        [Description("Gfycat")]
+        Gfycat,
+        [Description("Pushbullet")]
+        Pushbullet,
+        [Description("MediaCrush")]
+        MediaCrush,
+        [Description("RapidShare")]
+        RapidShare,
+        [Description("SendSpace")]
+        SendSpace,
+        [Description("Minus")]
+        Minus,
+        [Description("Ge.tt")]
         Ge_tt,
-        [Description("hostr.co")]
+        [Description("Hostr")]
         Localhostr,
+        [Description("Jira")]
+        Jira,
         [Description("Shared folder")]
         SharedFolder,
         [Description("Email")]
         Email,
-        [Description("Jira")]
-        Jira,
         [Description("Custom file uploader")]
         CustomFileUploader
     }
@@ -141,21 +139,23 @@ namespace UploadersLib
         CustomURLShortener
     }
 
-    [Description("Social networking services"), DefaultValue(SocialNetworkingService.Twitter)]
-    public enum SocialNetworkingService
+    [Description("URL sharing services"), DefaultValue(URLSharingServices.Twitter)]
+    public enum URLSharingServices
     {
+        [Description("Email")]
+        Email,
         [Description("Twitter")]
         Twitter,
         [Description("Facebook")]
         Facebook,
         [Description("Google+")]
         GooglePlus,
-        [Description("VK")]
-        VK,
         [Description("Reddit")]
         Reddit,
         [Description("Pinterest")]
         Pinterest,
+        [Description("VK")]
+        VK,
         [Description("Delicious")]
         Delicious
     }

@@ -578,37 +578,10 @@ namespace ShareX
                     }
                 }
 
-                if (Info.Job != TaskJob.ShortenURL && (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURLToSocialNetworkingService) || Info.Job == TaskJob.ShareURL))
+                if (Info.Job != TaskJob.ShortenURL && (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShareURL) || Info.Job == TaskJob.ShareURL))
                 {
                     ShareURL(Info.Result.ToString());
                     if (Info.Job == TaskJob.ShareURL) Info.Result.IsURLExpected = false;
-                }
-
-                if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.SendURLWithEmail))
-                {
-                    using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
-                        Program.UploadersConfig.EmailDefaultSubject, Info.Result.ToString()))
-                    {
-                        emailForm.Icon = ShareXResources.Icon;
-
-                        if (emailForm.ShowDialog() == DialogResult.OK)
-                        {
-                            if (Program.UploadersConfig.EmailRememberLastTo)
-                            {
-                                Program.UploadersConfig.EmailLastTo = emailForm.ToEmail;
-                            }
-
-                            Email email = new Email
-                            {
-                                SmtpServer = Program.UploadersConfig.EmailSmtpServer,
-                                SmtpPort = Program.UploadersConfig.EmailSmtpPort,
-                                FromEmail = Program.UploadersConfig.EmailFrom,
-                                Password = Program.UploadersConfig.EmailPassword
-                            };
-
-                            email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
-                        }
-                    }
                 }
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard))
@@ -732,9 +705,6 @@ namespace ShareX
                         settings.TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat;
                     }
                     textUploader = new Pastebin(APIKeys.PastebinKey, settings);
-                    break;
-                case TextDestination.PastebinCA:
-                    textUploader = new Pastebin_ca(APIKeys.PastebinCaKey, new PastebinCaSettings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
                     break;
                 case TextDestination.Paste2:
                     textUploader = new Paste2(new Paste2Settings { TextFormat = Info.TaskSettings.AdvancedSettings.TextFormat });
@@ -1032,7 +1002,30 @@ namespace ShareX
 
                 switch (Info.TaskSettings.SocialNetworkingServiceDestination)
                 {
-                    case SocialNetworkingService.Twitter:
+                    case URLSharingServices.Email:
+                        using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
+                            Program.UploadersConfig.EmailDefaultSubject, url))
+                        {
+                            if (emailForm.ShowDialog() == DialogResult.OK)
+                            {
+                                if (Program.UploadersConfig.EmailRememberLastTo)
+                                {
+                                    Program.UploadersConfig.EmailLastTo = emailForm.ToEmail;
+                                }
+
+                                Email email = new Email
+                                {
+                                    SmtpServer = Program.UploadersConfig.EmailSmtpServer,
+                                    SmtpPort = Program.UploadersConfig.EmailSmtpPort,
+                                    FromEmail = Program.UploadersConfig.EmailFrom,
+                                    Password = Program.UploadersConfig.EmailPassword
+                                };
+
+                                email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
+                            }
+                        }
+                        break;
+                    case URLSharingServices.Twitter:
                         OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
 
                         if (twitterOAuth != null)
@@ -1044,22 +1037,22 @@ namespace ShareX
                         }
                         //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
                         break;
-                    case SocialNetworkingService.Facebook:
+                    case URLSharingServices.Facebook:
                         URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl);
                         break;
-                    case SocialNetworkingService.GooglePlus:
+                    case URLSharingServices.GooglePlus:
                         URLHelpers.OpenURL("https://plus.google.com/share?url=" + encodedUrl);
                         break;
-                    case SocialNetworkingService.VK:
+                    case URLSharingServices.VK:
                         URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
-                    case SocialNetworkingService.Reddit:
+                    case URLSharingServices.Reddit:
                         URLHelpers.OpenURL("http://www.reddit.com/submit?url=" + encodedUrl);
                         break;
-                    case SocialNetworkingService.Pinterest:
+                    case URLSharingServices.Pinterest:
                         URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
                         break;
-                    case SocialNetworkingService.Delicious:
+                    case URLSharingServices.Delicious:
                         URLHelpers.OpenURL("https://delicious.com/save?v=5&noui&jump=close&url=" + encodedUrl);
                         break;
                 }

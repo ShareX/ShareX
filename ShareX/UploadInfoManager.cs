@@ -287,7 +287,7 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShortenURL(SelectedItem.Info.Result.ToString(), urlShortener);
         }
 
-        public void ShareURL(SocialNetworkingService socialNetworkingService)
+        public void ShareURL(URLSharingServices socialNetworkingService)
         {
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), socialNetworkingService);
         }
