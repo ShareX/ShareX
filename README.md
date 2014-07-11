@@ -1,3 +1,1 @@
-### [Download latest version](https://github.com/ShareX/ShareX/releases/latest)
-
-### Website: [getsharex.com](http://www.getsharex.com)
+### [getsharex.com](http://getsharex.com)

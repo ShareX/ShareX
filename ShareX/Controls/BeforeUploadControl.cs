@@ -135,7 +135,7 @@ namespace ShareX
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
 
-            if (Program.UploadersConfig.IsActive<T>(index))
+            if (Program.UploadersConfig.IsValid<T>(index))
             {
                 RadioButton rb = new RadioButton() { AutoSize = true };
                 rb.Text = destination.GetDescription();

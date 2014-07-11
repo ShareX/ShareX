@@ -819,13 +819,10 @@ namespace ShareX
                     fileUploader = new GfycatUploader();
                     break;
                 case FileDestination.Ge_tt:
-                    if (Program.UploadersConfig.IsActive(FileDestination.Ge_tt))
+                    fileUploader = new Ge_tt(APIKeys.Ge_ttKey)
                     {
-                        fileUploader = new Ge_tt(APIKeys.Ge_ttKey)
-                        {
-                            AccessToken = Program.UploadersConfig.Ge_ttLogin.AccessToken
-                        };
-                    }
+                        AccessToken = Program.UploadersConfig.Ge_ttLogin.AccessToken
+                    };
                     break;
                 case FileDestination.Localhostr:
                     fileUploader = new Hostr(Program.UploadersConfig.LocalhostrEmail, Program.UploadersConfig.LocalhostrPassword)
