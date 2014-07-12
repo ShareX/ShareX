@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShareX</RootNamespace>
+    <AssemblyName>ShareX</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MegaApiClient, Version=1.0.4.0, Culture=neutral, PublicKeyToken=0480d311efbeb4e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MegaApiClient.1.0.4\lib\MegaApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BeforeUploadControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BeforeUploadControl.Designer.cs">
+      <DependentUpon>BeforeUploadControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BeforeUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BeforeUploadForm.Designer.cs">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClipboardFormatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClipboardFormatForm.Designer.cs">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EncoderProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EncoderProgramForm.Designer.cs">
+      <DependentUpon>EncoderProgramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AfterCaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AfterCaptureForm.Designer.cs">
+      <DependentUpon>AfterCaptureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AutoCaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutoCaptureForm.Designer.cs">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DropForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExternalProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExternalProgramForm.Designer.cs">
+      <DependentUpon>ExternalProgramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileExistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileExistForm.Designer.cs">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Forms\ScreenColorPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScreenColorPicker.Designer.cs">
+      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScreenRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScreenRegionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScreenRegionForm.Designer.cs">
+      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationSettingsForm.Designer.cs">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UploadTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UploadTestForm.Designer.cs">
+      <DependentUpon>UploadTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WatchFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WatchFolderForm.Designer.cs">
+      <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AfterUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AfterUploadForm.designer.cs">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotkeysConfig.cs" />
+    <Compile Include="HotkeyManager.cs" />
+    <Compile Include="HotkeySettings.cs" />
+    <Compile Include="Forms\HotkeyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotkeyInfo.cs" />
+    <Compile Include="Controls\HotkeyManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HotkeyManagerControl.Designer.cs">
+      <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HotkeySelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HotkeySelectionControl.Designer.cs">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TaskSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskSettingsForm.Designer.cs">
+      <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageData.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageTag.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskHelpers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskManager.cs" />
+    <Compile Include="TaskSettings.cs" />
+    <Compile Include="UploadInfoParser.cs" />
+    <Compile Include="UploadInfoStatus.cs" />
+    <Compile Include="Forms\HotkeySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HotkeySettingsForm.Designer.cs">
+      <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WatchFolder.cs" />
+    <Compile Include="WatchFolderManager.cs" />
+    <Compile Include="WatchFolderSettings.cs" />
+    <EmbeddedResource Include="Controls\BeforeUploadControl.resx">
+      <DependentUpon>BeforeUploadControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterCaptureForm.resx">
+      <DependentUpon>AfterCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCaptureForm.resx">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeforeUploadForm.resx">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EncoderProgramForm.resx">
+      <DependentUpon>EncoderProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExternalProgramForm.resx">
+      <DependentUpon>ExternalProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenColorPicker.resx">
+      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenRegionForm.resx">
+      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationSettingsForm.resx">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadTestForm.resx">
+      <DependentUpon>UploadTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchFolderForm.resx">
+      <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeyManagerControl.resx">
+      <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeySelectionControl.resx">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskSettingsForm.resx">
+      <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterUploadForm.resx">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="UploadTask.cs" />
+    <Compile Include="UploadInfoManager.cs" />
+    <Compile Include="UploadManager.cs" />
+    <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="TaskInfo.cs" />
+    <EmbeddedResource Include="Forms\HotkeySettingsForm.resx">
+      <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DNSChanger\DNSChanger.csproj">
+      <Project>{f1061d2b-4c92-42b9-9a98-34118d6b45a8}</Project>
+      <Name>DNSChanger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HistoryLib\HistoryLib.csproj">
+      <Project>{E7DE6237-AEA2-498B-8F56-9B392472C490}</Project>
+      <Name>HistoryLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageEffectsLib\ImageEffectsLib.csproj">
+      <Project>{d13441b6-96e1-4d1b-8a95-58a7d6cb1e24}</Project>
+      <Name>ImageEffectsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IndexerLib\IndexerLib.csproj">
+      <Project>{750c6f46-2c5a-4488-81d3-3b35ca50f3ee}</Project>
+      <Name>IndexerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScreenCaptureLib\ScreenCaptureLib.csproj">
+      <Project>{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}</Project>
+      <Name>ScreenCaptureLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelpersLib\HelpersLib.csproj">
+      <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
+      <Name>HelpersLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UploadersLib\UploadersLib.csproj">
+      <Project>{E1C94415-3424-4517-A2A1-B2FDD1F59C67}</Project>
+      <Name>UploadersLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\RoundedRectangle.png" />
+    <None Include="Resources\Rectangle.png" />
+    <None Include="Resources\Polygon.png" />
+    <None Include="Resources\Fullscreen.png" />
+    <None Include="Resources\FreeHand.png" />
+    <None Include="Resources\Ellipse.png" />
+    <None Include="Resources\Triangle.png" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\navigation-090-button.png" />
+    <None Include="Resources\cross-button.png" />
+    <None Include="Resources\tick-button.png" />
+    <None Include="Resources\navigation-000-button.png" />
+    <None Include="Resources\tr.png" />
+    <None Include="Resources\au.png" />
+    <None Include="Resources\application-block.png" />
+    <None Include="Resources\edit-scale.png" />
+    <None Include="Resources\drive-globe.png" />
+    <None Include="Resources\diamond.png" />
+    <None Include="Resources\notebook.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\application-browser.png" />
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camera.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-task.png" />
+    <None Include="Resources\steam.ico" />
+    <None Include="Resources\camcorder-image.png" />
+    <None Include="Resources\toolbox.png" />
+    <None Include="Resources\application-icon-large.png" />
+    <None Include="Resources\upload-cloud.png" />
+    <None Include="Resources\image-export.png" />
+    <None Include="Resources\folder-open-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer-shape-curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer-shape-ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer-shape-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer-shape-polygon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layers-ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layers-arrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control-record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_uncheck.png" />
+    <None Include="Resources\checkbox_check.png" />
+    <None Include="Resources\network-ip.png" />
+    <None Include="Resources\ruler-triangle.png" />
+    <None Include="Resources\Test.png" />
+    <None Include="Resources\application-network.png" />
+    <None Include="Resources\Greenshot.png" />
+    <None Include="..\LICENSE.txt">
+      <Link>LICENSE.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Lib\7z-x64.dll">
+      <Link>7z-x64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Lib\7z.dll">
+      <Link>7z.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\barcode-2d.png" />
+    <None Include="Resources\GitHub.png" />
+    <EmbeddedResource Include="GitHash.txt" />
+    <None Include="Resources\Twitter.ico" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\drive.png" />
+    <None Include="Resources\inbox.png" />
+    <None Include="Resources\arrow-090.png" />
+    <None Include="Resources\traffic-cone.png" />
+    <None Include="Resources\categories.png" />
+    <None Include="Resources\application-blog.png" />
+    <None Include="Resources\keyboard.png" />
+    <None Include="Resources\wrench-screwdriver.png" />
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\crown.png" />
+    <None Include="Resources\layer--pencil.png" />
+    <None Include="Resources\share.png" />
+    <Content Include="ShareX_Icon.ico" />
+    <None Include="Resources\globe--pencil.png" />
+    <None Include="Resources\camcorder--pencil.png" />
+    <None Include="Resources\control-record-yellow.png" />
+    <None Include="Resources\application-monitor.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\folder-tree.png" />
+    <None Include="Resources\color.png" />
+    <None Include="..\VersionHistory.txt">
+      <Link>VersionHistory.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\image-saturation.png" />
+    <None Include="Resources\pipette.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>cd $(ProjectDir)
+
+if $(ConfigurationName) == Release (
+    for %25%25x in (git.exe) do if not [%25%25~$PATH:x]==[] (
+        git rev-parse HEAD &gt; GitHash.txt
+    )
+)
+
+if not exist GitHash.txt (
+    type nul &gt; GitHash.txt
+)</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

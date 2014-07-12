@@ -1,0 +1,291 @@
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (C) 2007-2014 ShareX Developers
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.IO;
+using UploadersLib.HelperClasses;
+
+namespace UploadersLib.ImageUploaders
+{
+    public enum ImgurThumbnailType
+    {
+        [Description("Small Square")]
+        Small_Square,
+        [Description("Big Square")]
+        Big_Square,
+        [Description("Small Thumbnail")]
+        Small_Thumbnail,
+        [Description("Medium Thumbnail")]
+        Medium_Thumbnail,
+        [Description("Large Thumbnail")]
+        Large_Thumbnail,
+        [Description("Huge Thumbnail")]
+        Huge_Thumbnail
+    }
+
+    public sealed class Imgur_v3 : ImageUploader, IOAuth2
+    {
+        public AccountType UploadMethod { get; set; }
+        public OAuth2Info AuthInfo { get; set; }
+        public ImgurThumbnailType ThumbnailType { get; set; }
+        public string UploadAlbumID { get; set; }
+
+        public Imgur_v3(OAuth2Info oauth)
+        {
+            AuthInfo = oauth;
+        }
+
+        public string GetAuthorizationURL()
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("response_type", "pin");
+
+            return CreateQuery("https://api.imgur.com/oauth2/authorize", args);
+        }
+
+        public bool GetAccessToken(string pin)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("client_secret", AuthInfo.Client_Secret);
+            args.Add("grant_type", "pin");
+            args.Add("pin", pin);
+
+            string response = SendRequest(HttpMethod.POST, "https://api.imgur.com/oauth2/token", args);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+                if (token != null && !string.IsNullOrEmpty(token.access_token))
+                {
+                    token.UpdateExpireDate();
+                    AuthInfo.Token = token;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool RefreshAccessToken()
+        {
+            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
+            {
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("refresh_token", AuthInfo.Token.refresh_token);
+                args.Add("client_id", AuthInfo.Client_ID);
+                args.Add("client_secret", AuthInfo.Client_Secret);
+                args.Add("grant_type", "refresh_token");
+
+                string response = SendRequest(HttpMethod.POST, "https://api.imgur.com/oauth2/token", args);
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+                    if (token != null && !string.IsNullOrEmpty(token.access_token))
+                    {
+                        token.UpdateExpireDate();
+                        AuthInfo.Token = token;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
+        public bool CheckAuthorization()
+        {
+            if (OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
+                {
+                    Errors.Add("Refresh access token failed.");
+                    return false;
+                }
+            }
+            else
+            {
+                Errors.Add("Imgur login is required.");
+                return false;
+            }
+
+            return true;
+        }
+
+        public List<ImgurAlbumData> GetAlbums()
+        {
+            if (CheckAuthorization())
+            {
+                string response = SendRequest(HttpMethod.GET, "https://api.imgur.com/3/account/me/albums", headers: GetAuthHeaders());
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    ImgurAlbums albums = JsonConvert.DeserializeObject<ImgurAlbums>(response);
+
+                    if (albums != null)
+                    {
+                        if (albums.success)
+                        {
+                            return albums.data;
+                        }
+
+                        Errors.Add("Imgur albums failed. Status code: " + albums.status);
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public override UploadResult Upload(Stream stream, string fileName)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            NameValueCollection headers;
+
+            if (UploadMethod == AccountType.User)
+            {
+                if (!CheckAuthorization())
+                {
+                    return null;
+                }
+
+                if (!string.IsNullOrEmpty(UploadAlbumID))
+                {
+                    args.Add("album", UploadAlbumID);
+                }
+
+                headers = GetAuthHeaders();
+            }
+            else
+            {
+                headers = new NameValueCollection();
+                headers.Add("Authorization", "Client-ID " + AuthInfo.Client_ID);
+            }
+
+            UploadResult result = UploadData(stream, "https://api.imgur.com/3/image", fileName, "image", args, headers);
+
+            if (!string.IsNullOrEmpty(result.Response))
+            {
+                ImgurUpload upload = JsonConvert.DeserializeObject<ImgurUpload>(result.Response);
+
+                if (upload != null)
+                {
+                    if (upload.success)
+                    {
+                        if (upload.data != null && !string.IsNullOrEmpty(upload.data.link))
+                        {
+                            result.URL = upload.data.link;
+
+                            int index = result.URL.LastIndexOf('.');
+                            string thumbnail = string.Empty;
+
+                            switch (ThumbnailType)
+                            {
+                                case ImgurThumbnailType.Small_Square:
+                                    thumbnail = "s";
+                                    break;
+                                case ImgurThumbnailType.Big_Square:
+                                    thumbnail = "b";
+                                    break;
+                                case ImgurThumbnailType.Small_Thumbnail:
+                                    thumbnail = "t";
+                                    break;
+                                case ImgurThumbnailType.Medium_Thumbnail:
+                                    thumbnail = "m";
+                                    break;
+                                case ImgurThumbnailType.Large_Thumbnail:
+                                    thumbnail = "l";
+                                    break;
+                                case ImgurThumbnailType.Huge_Thumbnail:
+                                    thumbnail = "h";
+                                    break;
+                            }
+
+                            result.ThumbnailURL = result.URL.Remove(index) + thumbnail + result.URL.Substring(index);
+                            result.DeletionURL = "http://imgur.com/delete/" + upload.data.deletehash;
+                        }
+                    }
+                    else
+                    {
+                        Errors.Add("Imgur upload failed. Status code: " + upload.status);
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+
+    public class ImgurUploadData
+    {
+        public string id { get; set; }
+        public string deletehash { get; set; }
+        public string link { get; set; }
+    }
+
+    public class ImgurUpload
+    {
+        public ImgurUploadData data { get; set; }
+        public bool success { get; set; }
+        public int status { get; set; }
+    }
+
+    public class ImgurAlbumData
+    {
+        public string id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public int datetime { get; set; }
+        public object cover { get; set; }
+        public string account_url { get; set; }
+        public string privacy { get; set; }
+        public string layout { get; set; }
+        public int views { get; set; }
+        public string link { get; set; }
+        public bool favorite { get; set; }
+        public int order { get; set; }
+    }
+
+    public class ImgurAlbums
+    {
+        public List<ImgurAlbumData> data { get; set; }
+        public bool success { get; set; }
+        public int status { get; set; }
+    }
+}
