@@ -174,6 +174,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Post capture tasks";
+            this.TopMost = true;
             this.tcTasks.ResumeLayout(false);
             this.tpAfterCapture.ResumeLayout(false);
             this.tpBeforeUpload.ResumeLayout(false);

@@ -138,6 +138,7 @@ namespace HelpersLib
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Text = "ShareX - Image viewer";
+            this.TopMost = true;
             this.WindowState = FormWindowState.Maximized;
             this.Controls.Add(this.pbPreview);
 

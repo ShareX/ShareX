@@ -310,6 +310,7 @@ namespace ShareX
             using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.AreaManager.WindowCaptureMode = true;
+                surface.AreaManager.IncludeControls = true;
                 surface.Prepare();
                 surface.ShowDialog();
 

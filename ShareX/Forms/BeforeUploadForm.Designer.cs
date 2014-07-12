@@ -88,12 +88,13 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.ucBeforeUpload);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(420, 460);
+            this.MaximumSize = new System.Drawing.Size(420, 800);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(420, 420);
             this.Name = "BeforeUploadForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Dynamic Destinations";
+            this.Text = "ShareX - Dynamic destinations";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
