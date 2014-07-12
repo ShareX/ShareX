@@ -1050,10 +1050,10 @@ namespace ShareX
                         URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
                         break;
                     case URLSharingServices.Tumblr:
-                        URLHelpers.OpenURL("https://www.tumblr.com/share?v=3&u=" + url);
+                        URLHelpers.OpenURL("https://www.tumblr.com/share?v=3&u=" + encodedUrl);
                         break;
                     case URLSharingServices.VK:
-                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + url);
+                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
                     case URLSharingServices.Delicious:
                         URLHelpers.OpenURL("https://delicious.com/save?v=5&noui&jump=close&url=" + encodedUrl);
