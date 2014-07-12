@@ -1025,14 +1025,17 @@ namespace ShareX
                     case URLSharingServices.Twitter:
                         OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
 
-                        if (twitterOAuth != null)
+                        if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
                         {
                             using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, " " + url))
                             {
                                 twitter.ShowDialog();
                             }
                         }
-                        //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
+                        else
+                        {
+                            URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
+                        }
                         break;
                     case URLSharingServices.Facebook:
                         URLHelpers.OpenURL("https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl);
@@ -1040,14 +1043,17 @@ namespace ShareX
                     case URLSharingServices.GooglePlus:
                         URLHelpers.OpenURL("https://plus.google.com/share?url=" + encodedUrl);
                         break;
-                    case URLSharingServices.VK:
-                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
-                        break;
                     case URLSharingServices.Reddit:
                         URLHelpers.OpenURL("http://www.reddit.com/submit?url=" + encodedUrl);
                         break;
                     case URLSharingServices.Pinterest:
                         URLHelpers.OpenURL(string.Format("http://pinterest.com/pin/create/button/?url={0}&media={0}", encodedUrl));
+                        break;
+                    case URLSharingServices.Tumblr:
+                        URLHelpers.OpenURL("https://www.tumblr.com/share?v=3&u=" + url);
+                        break;
+                    case URLSharingServices.VK:
+                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + url);
                         break;
                     case URLSharingServices.Delicious:
                         URLHelpers.OpenURL("https://delicious.com/save?v=5&noui&jump=close&url=" + encodedUrl);

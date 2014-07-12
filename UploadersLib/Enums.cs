@@ -154,6 +154,8 @@ namespace UploadersLib
         Reddit,
         [Description("Pinterest")]
         Pinterest,
+        [Description("Tumblr")]
+        Tumblr,
         [Description("VK")]
         VK,
         [Description("Delicious")]
