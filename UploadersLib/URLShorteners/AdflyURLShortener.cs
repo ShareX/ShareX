@@ -49,7 +49,7 @@ namespace UploadersLib.URLShorteners
 
             string response = SendRequest(HttpMethod.GET, "http://api.adf.ly/api.php", args);
 
-            if (response != "error")
+            if (!string.IsNullOrEmpty(response) && response != "error")
             {
                 result.ShortenedURL = response;
             }

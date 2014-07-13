@@ -99,6 +99,7 @@ namespace UploadersLib
             uploadersImageList.Images.Add("Yourls", Resources.Yourls);
             uploadersImageList.Images.Add("Twitter", Resources.Twitter);
             uploadersImageList.Images.Add("ownCloud", Resources.OwnCloud);
+            uploadersImageList.Images.Add("AdFly", Resources.AdFly);
 
             tpImageShack.ImageKey = "ImageShack";
             tpTinyPic.ImageKey = "TinyPic";
@@ -132,6 +133,7 @@ namespace UploadersLib
             tpUpaste.ImageKey = "Upaste";
             tpAmazonS3.ImageKey = "AmazonS3";
             tpOwnCloud.ImageKey = "ownCloud";
+            tpAdFly.ImageKey = "AdFly";
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -1862,6 +1864,11 @@ namespace UploadersLib
         private void txtAdflyAPIUID_TextChanged(object sender, EventArgs e)
         {
             Config.AdFlyAPIUID = txtAdflyAPIUID.Text;
+        }
+
+        private void llAdflyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://adf.ly/publisher/tools#tools-api");
         }
 
         #endregion adf.ly

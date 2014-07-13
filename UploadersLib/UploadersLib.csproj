@@ -423,6 +423,7 @@
     <None Include="Favicons\Upaste.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicons\AdFly.ico" />
     <Content Include="Favicons\AmazonS3.ico" />
     <None Include="Favicons\GitHub.ico" />
     <Content Include="Favicons\Hostr.ico" />
