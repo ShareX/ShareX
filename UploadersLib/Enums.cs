@@ -156,6 +156,8 @@ namespace UploadersLib
         Pinterest,
         [Description("Tumblr")]
         Tumblr,
+        [Description("LinkedIn")]
+        LinkedIn,
         [Description("VK")]
         VK,
         [Description("Delicious")]

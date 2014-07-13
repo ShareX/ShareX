@@ -514,7 +514,7 @@ namespace ShareX
 
             tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = "URL shortener: " + Program.DefaultTaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = "Share URL via: " + Program.DefaultTaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = "URL sharing service: " + Program.DefaultTaskSettings.SocialNetworkingServiceDestination.GetDescription();
         }
 
         private void AutoCheckUpdate()

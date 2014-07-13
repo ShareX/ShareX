@@ -1000,34 +1000,41 @@ namespace ShareX
                 switch (Info.TaskSettings.SocialNetworkingServiceDestination)
                 {
                     case URLSharingServices.Email:
-                        using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
-                            Program.UploadersConfig.EmailDefaultSubject, url))
+                        if (Program.UploadersConfig.IsValid(URLSharingServices.Email))
                         {
-                            if (emailForm.ShowDialog() == DialogResult.OK)
+                            using (EmailForm emailForm = new EmailForm(Program.UploadersConfig.EmailRememberLastTo ? Program.UploadersConfig.EmailLastTo : string.Empty,
+                                Program.UploadersConfig.EmailDefaultSubject, url))
                             {
-                                if (Program.UploadersConfig.EmailRememberLastTo)
+                                if (emailForm.ShowDialog() == DialogResult.OK)
                                 {
-                                    Program.UploadersConfig.EmailLastTo = emailForm.ToEmail;
+                                    if (Program.UploadersConfig.EmailRememberLastTo)
+                                    {
+                                        Program.UploadersConfig.EmailLastTo = emailForm.ToEmail;
+                                    }
+
+                                    Email email = new Email
+                                    {
+                                        SmtpServer = Program.UploadersConfig.EmailSmtpServer,
+                                        SmtpPort = Program.UploadersConfig.EmailSmtpPort,
+                                        FromEmail = Program.UploadersConfig.EmailFrom,
+                                        Password = Program.UploadersConfig.EmailPassword
+                                    };
+
+                                    email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
                                 }
-
-                                Email email = new Email
-                                {
-                                    SmtpServer = Program.UploadersConfig.EmailSmtpServer,
-                                    SmtpPort = Program.UploadersConfig.EmailSmtpPort,
-                                    FromEmail = Program.UploadersConfig.EmailFrom,
-                                    Password = Program.UploadersConfig.EmailPassword
-                                };
-
-                                email.Send(emailForm.ToEmail, emailForm.Subject, emailForm.Body);
                             }
+                        }
+                        else
+                        {
+                            URLHelpers.OpenURL("mailto:?body=" + encodedUrl);
                         }
                         break;
                     case URLSharingServices.Twitter:
-                        OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-
-                        if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
+                        if (Program.UploadersConfig.IsValid(URLSharingServices.Twitter))
                         {
-                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, " " + url))
+                            OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList[Program.UploadersConfig.TwitterSelectedAccount];
+
+                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, url))
                             {
                                 twitter.ShowDialog();
                             }
@@ -1052,11 +1059,14 @@ namespace ShareX
                     case URLSharingServices.Tumblr:
                         URLHelpers.OpenURL("https://www.tumblr.com/share?v=3&u=" + encodedUrl);
                         break;
+                    case URLSharingServices.LinkedIn:
+                        URLHelpers.OpenURL("https://www.linkedin.com/shareArticle?url=" + encodedUrl);
+                        break;
                     case URLSharingServices.VK:
                         URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
                     case URLSharingServices.Delicious:
-                        URLHelpers.OpenURL("https://delicious.com/save?v=5&noui&jump=close&url=" + encodedUrl);
+                        URLHelpers.OpenURL("https://delicious.com/save?v=5&url=" + encodedUrl);
                         break;
                 }
             }

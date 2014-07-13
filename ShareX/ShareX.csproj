@@ -474,7 +474,7 @@
     <None Include="Resources\heart.png" />
     <None Include="Resources\crown.png" />
     <None Include="Resources\layer--pencil.png" />
-    <None Include="Resources\share.png" />
+    <None Include="Resources\globe-share.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

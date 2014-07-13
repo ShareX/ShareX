@@ -391,42 +391,42 @@
             this.tsmiURLShorteners,
             this.tsmiURLSharingServices});
             this.cmsDestinations.Name = "cmsDestinations";
-            this.cmsDestinations.Size = new System.Drawing.Size(163, 114);
+            this.cmsDestinations.Size = new System.Drawing.Size(182, 114);
             // 
             // tsmiImageUploaders
             // 
             this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
             this.tsmiImageUploaders.Name = "tsmiImageUploaders";
-            this.tsmiImageUploaders.Size = new System.Drawing.Size(162, 22);
+            this.tsmiImageUploaders.Size = new System.Drawing.Size(181, 22);
             this.tsmiImageUploaders.Text = "Image uploaders";
             // 
             // tsmiTextUploaders
             // 
             this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTextUploaders.Name = "tsmiTextUploaders";
-            this.tsmiTextUploaders.Size = new System.Drawing.Size(162, 22);
+            this.tsmiTextUploaders.Size = new System.Drawing.Size(181, 22);
             this.tsmiTextUploaders.Text = "Text uploaders";
             // 
             // tsmiFileUploaders
             // 
             this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiFileUploaders.Name = "tsmiFileUploaders";
-            this.tsmiFileUploaders.Size = new System.Drawing.Size(162, 22);
+            this.tsmiFileUploaders.Size = new System.Drawing.Size(181, 22);
             this.tsmiFileUploaders.Text = "File uploaders";
             // 
             // tsmiURLShorteners
             // 
             this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiURLShorteners.Name = "tsmiURLShorteners";
-            this.tsmiURLShorteners.Size = new System.Drawing.Size(162, 22);
+            this.tsmiURLShorteners.Size = new System.Drawing.Size(181, 22);
             this.tsmiURLShorteners.Text = "URL shorteners";
             // 
             // tsmiURLSharingServices
             // 
-            this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.share;
+            this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
-            this.tsmiURLSharingServices.Size = new System.Drawing.Size(162, 22);
-            this.tsmiURLSharingServices.Text = "Share URL via";
+            this.tsmiURLSharingServices.Size = new System.Drawing.Size(181, 22);
+            this.tsmiURLSharingServices.Text = "URL sharing services";
             // 
             // btnTask
             // 

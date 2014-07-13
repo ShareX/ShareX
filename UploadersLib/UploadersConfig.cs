@@ -281,10 +281,12 @@ namespace UploadersLib
                 return IsValid((UrlShortenerType)destination);
             }
 
+            /*
             if (destination is URLSharingServices)
             {
                 return IsValid((URLSharingServices)destination);
             }
+            */
 
             return true;
         }

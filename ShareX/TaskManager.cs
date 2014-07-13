@@ -296,7 +296,7 @@ namespace ShareX
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
 
-                                if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
+                                if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
                                     if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {

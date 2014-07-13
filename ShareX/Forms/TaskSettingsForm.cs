@@ -430,7 +430,7 @@ namespace ShareX
 
             tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiURLSharingServices.Text = "Share URL via: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = "URL sharing service: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)
