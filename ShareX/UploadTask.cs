@@ -975,6 +975,13 @@ namespace ShareX
                 case UrlShortenerType.NLCM:
                     urlShortener = new NlcmURLShortener();
                     break;
+                case UrlShortenerType.AdFly:
+                    urlShortener = new AdFlyURLShortener
+                    {
+                        APIKEY = Program.UploadersConfig.AdFlyAPIKEY,
+                        APIUID = Program.UploadersConfig.AdFlyAPIUID
+                    };
+                    break;
                 case UrlShortenerType.CustomURLShortener:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomURLShortenerSelected))
                     {

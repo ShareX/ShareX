@@ -114,6 +114,11 @@
             this.lblYourlsSignature = new System.Windows.Forms.Label();
             this.txtYourlsAPIURL = new System.Windows.Forms.TextBox();
             this.lblYourlsAPIURL = new System.Windows.Forms.Label();
+            this.tpAdfly = new System.Windows.Forms.TabPage();
+            this.txtAdflyAPIUID = new System.Windows.Forms.TextBox();
+            this.lblAdflyAPIUID = new System.Windows.Forms.Label();
+            this.txtAdflyAPIKEY = new System.Windows.Forms.TextBox();
+            this.lblAdflyAPIKEY = new System.Windows.Forms.Label();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
@@ -385,6 +390,7 @@
             this.tpBitly.SuspendLayout();
             this.tpGoogleURLShortener.SuspendLayout();
             this.tpYourls.SuspendLayout();
+            this.tpAdfly.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
             this.tpDropbox.SuspendLayout();
@@ -1110,6 +1116,7 @@
             this.tcURLShorteners.Controls.Add(this.tpBitly);
             this.tcURLShorteners.Controls.Add(this.tpGoogleURLShortener);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
+            this.tcURLShorteners.Controls.Add(this.tpAdfly);
             this.tcURLShorteners.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcURLShorteners.Location = new System.Drawing.Point(3, 3);
             this.tcURLShorteners.Name = "tcURLShorteners";
@@ -1287,6 +1294,55 @@
             this.lblYourlsAPIURL.Size = new System.Drawing.Size(52, 13);
             this.lblYourlsAPIURL.TabIndex = 0;
             this.lblYourlsAPIURL.Text = "API URL:";
+            // 
+            // tpAdfly
+            // 
+            this.tpAdfly.Controls.Add(this.txtAdflyAPIUID);
+            this.tpAdfly.Controls.Add(this.lblAdflyAPIUID);
+            this.tpAdfly.Controls.Add(this.txtAdflyAPIKEY);
+            this.tpAdfly.Controls.Add(this.lblAdflyAPIKEY);
+            this.tpAdfly.Location = new System.Drawing.Point(4, 22);
+            this.tpAdfly.Name = "tpAdfly";
+            this.tpAdfly.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAdfly.Size = new System.Drawing.Size(972, 493);
+            this.tpAdfly.TabIndex = 3;
+            this.tpAdfly.Text = "adf.ly";
+            this.tpAdfly.UseVisualStyleBackColor = true;
+            // 
+            // txtAdflyAPIUID
+            // 
+            this.txtAdflyAPIUID.Location = new System.Drawing.Point(70, 36);
+            this.txtAdflyAPIUID.Name = "txtAdflyAPIUID";
+            this.txtAdflyAPIUID.Size = new System.Drawing.Size(224, 20);
+            this.txtAdflyAPIUID.TabIndex = 7;
+            this.txtAdflyAPIUID.UseSystemPasswordChar = true;
+            this.txtAdflyAPIUID.TextChanged += new System.EventHandler(this.txtAdflyAPIUID_TextChanged);
+            // 
+            // lblAdflyAPIUID
+            // 
+            this.lblAdflyAPIUID.AutoSize = true;
+            this.lblAdflyAPIUID.Location = new System.Drawing.Point(16, 40);
+            this.lblAdflyAPIUID.Name = "lblAdflyAPIUID";
+            this.lblAdflyAPIUID.Size = new System.Drawing.Size(49, 13);
+            this.lblAdflyAPIUID.TabIndex = 6;
+            this.lblAdflyAPIUID.Text = "API UID:";
+            // 
+            // txtAdflyAPIKEY
+            // 
+            this.txtAdflyAPIKEY.Location = new System.Drawing.Point(70, 12);
+            this.txtAdflyAPIKEY.Name = "txtAdflyAPIKEY";
+            this.txtAdflyAPIKEY.Size = new System.Drawing.Size(224, 20);
+            this.txtAdflyAPIKEY.TabIndex = 5;
+            this.txtAdflyAPIKEY.TextChanged += new System.EventHandler(this.txtAdflyAPIKEY_TextChanged);
+            // 
+            // lblAdflyAPIKEY
+            // 
+            this.lblAdflyAPIKEY.AutoSize = true;
+            this.lblAdflyAPIKEY.Location = new System.Drawing.Point(16, 16);
+            this.lblAdflyAPIKEY.Name = "lblAdflyAPIKEY";
+            this.lblAdflyAPIKEY.Size = new System.Drawing.Size(47, 13);
+            this.lblAdflyAPIKEY.TabIndex = 4;
+            this.lblAdflyAPIKEY.Text = "API key:";
             // 
             // tpFileUploaders
             // 
@@ -4028,6 +4084,8 @@
             this.tpGoogleURLShortener.ResumeLayout(false);
             this.tpYourls.ResumeLayout(false);
             this.tpYourls.PerformLayout();
+            this.tpAdfly.ResumeLayout(false);
+            this.tpAdfly.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpDropbox.ResumeLayout(false);
@@ -4452,5 +4510,10 @@
         private System.Windows.Forms.Label lblOwnCloudHost;
         private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
         private System.Windows.Forms.CheckBox cbOwnCloudDirectLink;
+        private System.Windows.Forms.TabPage tpAdfly;
+        private System.Windows.Forms.TextBox txtAdflyAPIUID;
+        private System.Windows.Forms.Label lblAdflyAPIUID;
+        private System.Windows.Forms.TextBox txtAdflyAPIKEY;
+        private System.Windows.Forms.Label lblAdflyAPIKEY;
     }
 }
