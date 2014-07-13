@@ -135,6 +135,8 @@ namespace UploadersLib
         YOURLS,
         [Description("nl.cm")]
         NLCM,
+        [Description("adf.ly")]
+        adfly,
         [Description("Custom URL shortener")]
         CustomURLShortener
     }
