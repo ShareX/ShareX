@@ -38,15 +38,15 @@
             this.rtbCredits = new System.Windows.Forms.RichTextBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
             this.lblOwners = new System.Windows.Forms.Label();
-            this.pbMikeSteamURL = new System.Windows.Forms.PictureBox();
+            this.cLogo = new HelpersLib.Canvas();
+            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
+            this.pbMikeGooglePlus = new System.Windows.Forms.PictureBox();
             this.pbBerkSteamURL = new System.Windows.Forms.PictureBox();
             this.pbMikeURL = new System.Windows.Forms.PictureBox();
             this.pbAU = new System.Windows.Forms.PictureBox();
             this.pbBerkURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
-            this.cLogo = new HelpersLib.Canvas();
-            this.uclUpdate = new HelpersLib.UpdateCheckerLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMikeGooglePlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkSteamURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
@@ -93,15 +93,13 @@
             // 
             // rtbCredits
             // 
-            this.rtbCredits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbCredits.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbCredits.Location = new System.Drawing.Point(15, 200);
             this.rtbCredits.Name = "rtbCredits";
             this.rtbCredits.ReadOnly = true;
-            this.rtbCredits.Size = new System.Drawing.Size(411, 240);
+            this.rtbCredits.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbCredits.Size = new System.Drawing.Size(409, 234);
             this.rtbCredits.TabIndex = 6;
             this.rtbCredits.Text = resources.GetString("rtbCredits.Text");
             this.rtbCredits.WordWrap = false;
@@ -129,18 +127,35 @@
             this.lblOwners.TabIndex = 3;
             this.lblOwners.Text = "Owners:";
             // 
-            // pbMikeSteamURL
+            // cLogo
             // 
-            this.pbMikeSteamURL.BackColor = System.Drawing.Color.Transparent;
-            this.pbMikeSteamURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMikeSteamURL.Image = global::ShareX.Properties.Resources.steam;
-            this.pbMikeSteamURL.Location = new System.Drawing.Point(65, 166);
-            this.pbMikeSteamURL.Name = "pbMikeSteamURL";
-            this.pbMikeSteamURL.Size = new System.Drawing.Size(16, 16);
-            this.pbMikeSteamURL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbMikeSteamURL.TabIndex = 34;
-            this.pbMikeSteamURL.TabStop = false;
-            this.pbMikeSteamURL.Click += new System.EventHandler(this.pbMikeSteamURL_Click);
+            this.cLogo.Interval = 100;
+            this.cLogo.Location = new System.Drawing.Point(240, -8);
+            this.cLogo.Name = "cLogo";
+            this.cLogo.Size = new System.Drawing.Size(200, 200);
+            this.cLogo.TabIndex = 7;
+            this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
+            this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
+            // 
+            // uclUpdate
+            // 
+            this.uclUpdate.Location = new System.Drawing.Point(13, 36);
+            this.uclUpdate.Name = "uclUpdate";
+            this.uclUpdate.Size = new System.Drawing.Size(224, 24);
+            this.uclUpdate.TabIndex = 1;
+            // 
+            // pbMikeGooglePlus
+            // 
+            this.pbMikeGooglePlus.BackColor = System.Drawing.Color.Transparent;
+            this.pbMikeGooglePlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMikeGooglePlus.Image = global::ShareX.Properties.Resources.google_plus;
+            this.pbMikeGooglePlus.Location = new System.Drawing.Point(64, 166);
+            this.pbMikeGooglePlus.Name = "pbMikeGooglePlus";
+            this.pbMikeGooglePlus.Size = new System.Drawing.Size(16, 16);
+            this.pbMikeGooglePlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMikeGooglePlus.TabIndex = 22;
+            this.pbMikeGooglePlus.TabStop = false;
+            this.pbMikeGooglePlus.Click += new System.EventHandler(this.pbMikeGooglePlus_Click);
             // 
             // pbBerkSteamURL
             // 
@@ -203,30 +218,13 @@
             this.pbTR.TabIndex = 8;
             this.pbTR.TabStop = false;
             // 
-            // cLogo
-            // 
-            this.cLogo.Interval = 100;
-            this.cLogo.Location = new System.Drawing.Point(240, -8);
-            this.cLogo.Name = "cLogo";
-            this.cLogo.Size = new System.Drawing.Size(200, 200);
-            this.cLogo.TabIndex = 7;
-            this.cLogo.Draw += new HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
-            this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
-            // 
-            // uclUpdate
-            // 
-            this.uclUpdate.Location = new System.Drawing.Point(13, 36);
-            this.uclUpdate.Name = "uclUpdate";
-            this.uclUpdate.Size = new System.Drawing.Size(224, 24);
-            this.uclUpdate.TabIndex = 1;
-            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(435, 449);
-            this.Controls.Add(this.pbMikeSteamURL);
+            this.ClientSize = new System.Drawing.Size(433, 446);
+            this.Controls.Add(this.pbMikeGooglePlus);
             this.Controls.Add(this.lblOwners);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.rtbCredits);
@@ -240,12 +238,13 @@
             this.Controls.Add(this.pbBerkURL);
             this.Controls.Add(this.pbTR);
             this.Controls.Add(this.lblProductName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - About";
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMikeSteamURL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMikeGooglePlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBerkSteamURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
@@ -271,6 +270,6 @@
         private System.Windows.Forms.RichTextBox rtbShareXInfo;
         private System.Windows.Forms.Label lblOwners;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
-        private System.Windows.Forms.PictureBox pbMikeSteamURL;
+        private System.Windows.Forms.PictureBox pbMikeGooglePlus;
     }
 }

@@ -109,7 +109,7 @@ namespace ShareX
             }, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
             AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
             AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
-            AddEnumItems<URLSharingServices>(x => Program.DefaultTaskSettings.SocialNetworkingServiceDestination = x, tsmiURLSharingServices, tsmiTrayURLSharingServices);
+            AddEnumItems<URLSharingServices>(x => Program.DefaultTaskSettings.URLSharingServiceDestination = x, tsmiURLSharingServices, tsmiTrayURLSharingServices);
 
             foreach (UrlShortenerType urlShortener in Helpers.GetEnums<UrlShortenerType>())
             {
@@ -118,10 +118,10 @@ namespace ShareX
                 tsmiShortenSelectedURL.DropDownItems.Add(tsmi);
             }
 
-            foreach (URLSharingServices socialNetworkingService in Helpers.GetEnums<URLSharingServices>())
+            foreach (URLSharingServices urlSharingService in Helpers.GetEnums<URLSharingServices>())
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(socialNetworkingService.GetDescription());
-                tsmi.Click += (sender, e) => uim.ShareURL(socialNetworkingService);
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(urlSharingService.GetDescription());
+                tsmi.Click += (sender, e) => uim.ShareURL(urlSharingService);
                 tsmiShareSelectedURL.DropDownItems.Add(tsmi);
             }
 
@@ -497,7 +497,7 @@ namespace ShareX
             SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.FileDestination, tsmiFileUploaders, tsmiTrayFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.URLShortenerDestination, tsmiURLShorteners, tsmiTrayURLShorteners);
-            SetEnumChecked(Program.DefaultTaskSettings.SocialNetworkingServiceDestination, tsmiURLSharingServices, tsmiTrayURLSharingServices);
+            SetEnumChecked(Program.DefaultTaskSettings.URLSharingServiceDestination, tsmiURLSharingServices, tsmiTrayURLSharingServices);
         }
 
         private void UpdateUploaderMenuNames()
@@ -514,7 +514,7 @@ namespace ShareX
 
             tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = "URL shortener: " + Program.DefaultTaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = "URL sharing service: " + Program.DefaultTaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = "URL sharing service: " + Program.DefaultTaskSettings.URLSharingServiceDestination.GetDescription();
         }
 
         private void AutoCheckUpdate()

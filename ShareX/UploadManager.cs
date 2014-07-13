@@ -376,12 +376,12 @@ namespace ShareX
             }
         }
 
-        public static void ShareURL(string url, URLSharingServices socialNetworkingService)
+        public static void ShareURL(string url, URLSharingServices urlSharingService)
         {
             if (!string.IsNullOrEmpty(url))
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.SocialNetworkingServiceDestination = socialNetworkingService;
+                taskSettings.URLSharingServiceDestination = urlSharingService;
 
                 UploadTask task = UploadTask.CreateShareURLTask(url, taskSettings);
                 TaskManager.Start(task);

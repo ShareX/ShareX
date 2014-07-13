@@ -287,9 +287,9 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShortenURL(SelectedItem.Info.Result.ToString(), urlShortener);
         }
 
-        public void ShareURL(URLSharingServices socialNetworkingService)
+        public void ShareURL(URLSharingServices urlSharingService)
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), socialNetworkingService);
+            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), urlSharingService);
         }
 
         public void ShowQRCode()

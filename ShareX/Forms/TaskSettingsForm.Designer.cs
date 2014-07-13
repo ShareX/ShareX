@@ -1739,7 +1739,7 @@
             this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
             this.cbClipboardUploadShareURL.Size = new System.Drawing.Size(366, 17);
             this.cbClipboardUploadShareURL.TabIndex = 3;
-            this.cbClipboardUploadShareURL.Text = "If clipboard contains a URL then share it using social networking service";
+            this.cbClipboardUploadShareURL.Text = "If clipboard contains a URL then share it using URL sharing service";
             this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
             this.cbClipboardUploadShareURL.CheckedChanged += new System.EventHandler(this.cbClipboardUploadShareURL_CheckedChanged);
             // 

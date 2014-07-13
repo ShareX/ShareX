@@ -452,6 +452,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap google_plus {
+            get {
+                object obj = ResourceManager.GetObject("google_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Greenshot {
             get {
                 object obj = ResourceManager.GetObject("Greenshot", resourceCulture);

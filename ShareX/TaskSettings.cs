@@ -67,7 +67,7 @@ namespace ShareX
         public FileDestination TextFileDestination = FileDestination.Dropbox;
         public FileDestination FileDestination = FileDestination.Dropbox;
         public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
-        public URLSharingServices SocialNetworkingServiceDestination = URLSharingServices.Twitter;
+        public URLSharingServices URLSharingServiceDestination = URLSharingServices.Twitter;
 
         public bool OverrideFTP = false;
         public int FTPIndex = 0;
@@ -185,7 +185,7 @@ namespace ShareX
                     TextFileDestination = defaultTaskSettings.TextFileDestination;
                     FileDestination = defaultTaskSettings.FileDestination;
                     URLShortenerDestination = defaultTaskSettings.URLShortenerDestination;
-                    SocialNetworkingServiceDestination = defaultTaskSettings.SocialNetworkingServiceDestination;
+                    URLSharingServiceDestination = defaultTaskSettings.URLSharingServiceDestination;
                 }
 
                 if (UseDefaultGeneralSettings)

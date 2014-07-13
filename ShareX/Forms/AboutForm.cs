@@ -72,9 +72,9 @@ namespace ShareX
             URLHelpers.OpenURL(Links.URL_MIKE);
         }
 
-        private void pbMikeSteamURL_Click(object sender, EventArgs e)
+        private void pbMikeGooglePlus_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_MIKE_STEAM);
+            URLHelpers.OpenURL(Links.URL_MIKE_GOOGLE_PLUS);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)

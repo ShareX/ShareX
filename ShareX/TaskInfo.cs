@@ -108,7 +108,7 @@ namespace ShareX
                         case EDataType.URL:
                             if (Job == TaskJob.ShareURL)
                             {
-                                return TaskSettings.SocialNetworkingServiceDestination.GetDescription();
+                                return TaskSettings.URLSharingServiceDestination.GetDescription();
                             }
 
                             return TaskSettings.URLShortenerDestination.GetDescription();

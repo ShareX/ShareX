@@ -156,7 +156,7 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.ShareURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = "Share URL (" + taskSettings.SocialNetworkingServiceDestination.GetDescription() + ")";
+            task.Info.FileName = "Share URL (" + taskSettings.URLSharingServiceDestination.GetDescription() + ")";
             task.Info.Result.URL = url;
             return task;
         }
@@ -1004,7 +1004,7 @@ namespace ShareX
             {
                 string encodedUrl = URLHelpers.URLEncode(url);
 
-                switch (Info.TaskSettings.SocialNetworkingServiceDestination)
+                switch (Info.TaskSettings.URLSharingServiceDestination)
                 {
                     case URLSharingServices.Email:
                         if (Program.UploadersConfig.IsValid(URLSharingServices.Email))

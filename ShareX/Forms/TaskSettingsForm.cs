@@ -87,7 +87,7 @@ namespace ShareX
             AddEnumItems<FileDestination>(x => TaskSettings.TextFileDestination = x, tsmiTextFileUploaders);
             AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, tsmiFileUploaders);
             AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, tsmiURLShorteners);
-            AddEnumItems<URLSharingServices>(x => TaskSettings.SocialNetworkingServiceDestination = x, tsmiURLSharingServices);
+            AddEnumItems<URLSharingServices>(x => TaskSettings.URLSharingServiceDestination = x, tsmiURLSharingServices);
 
             SetEnumCheckedContextMenu(TaskSettings.Job, cmsTask);
             SetMultiEnumCheckedContextMenu(TaskSettings.AfterCaptureJob, cmsAfterCapture);
@@ -98,7 +98,7 @@ namespace ShareX
             SetEnumChecked(TaskSettings.TextFileDestination, tsmiTextFileUploaders);
             SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
             SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
-            SetEnumChecked(TaskSettings.SocialNetworkingServiceDestination, tsmiURLSharingServices);
+            SetEnumChecked(TaskSettings.URLSharingServiceDestination, tsmiURLSharingServices);
 
             // FTP
             if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
@@ -430,7 +430,7 @@ namespace ShareX
 
             tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiURLSharingServices.Text = "URL sharing service: " + TaskSettings.SocialNetworkingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = "URL sharing service: " + TaskSettings.URLSharingServiceDestination.GetDescription();
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)
