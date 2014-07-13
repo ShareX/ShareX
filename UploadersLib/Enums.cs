@@ -136,7 +136,9 @@ namespace UploadersLib
         [Description("nl.cm")]
         NLCM,
         [Description("Custom URL shortener")]
-        CustomURLShortener
+        CustomURLShortener,
+        [Description("adf.ly")]
+        adfly
     }
 
     [Description("URL sharing services"), DefaultValue(URLSharingServices.Twitter)]

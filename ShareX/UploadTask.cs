@@ -981,6 +981,13 @@ namespace ShareX
                         urlShortener = new CustomURLShortener(Program.UploadersConfig.CustomUploadersList[Program.UploadersConfig.CustomURLShortenerSelected]);
                     }
                     break;
+                    case UrlShortenerType.adfly:
+                     urlShortener = new AdflyURLShortener
+                     {
+                         APIKEY = Program.UploadersConfig.adflyAPIKEY,
+                         APIUID = Program.UploadersConfig.adflyAPIUID
+                     };
+                     break;
             }
 
             if (urlShortener != null)

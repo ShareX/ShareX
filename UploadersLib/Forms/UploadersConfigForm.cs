@@ -515,6 +515,7 @@ namespace UploadersLib
             txtYourlsUsername.Text = Config.YourlsUsername;
             txtYourlsPassword.Text = Config.YourlsPassword;
 
+
             #endregion URL Shorteners
 
             #region Other Services
@@ -1846,6 +1847,20 @@ namespace UploadersLib
         }
 
         #endregion yourls.org
+
+        #region adf.ly
+         
+         private void txtAdflyAPIKEY_TextChanged(object sender, EventArgs e)
+         {
+             Config.adflyAPIKEY = txtAdflyAPIKEY.Text;
+         }
+ 
+         private void txtAdflyAPIUID_TextChanged(object sender, EventArgs e)
+         {
+             Config.adflyAPIUID = txtAdflyAPIUID.Text;
+         }
+ 
+         #endregion
 
         #endregion URL Shorteners
 

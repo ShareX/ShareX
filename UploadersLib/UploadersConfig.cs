@@ -234,6 +234,10 @@ namespace UploadersLib
         public string YourlsUsername = string.Empty;
         public string YourlsPassword = string.Empty;
 
+        // adf.ly
+        public string adflyAPIKEY = String.Empty;
+        public string adflyAPIUID = String.Empty;
+
         #endregion URL shorteners
 
         #region URL sharing services
@@ -383,6 +387,8 @@ namespace UploadersLib
                     return !string.IsNullOrEmpty(YourlsAPIURL) && (!string.IsNullOrEmpty(YourlsSignature) || (!string.IsNullOrEmpty(YourlsUsername) && !string.IsNullOrEmpty(YourlsPassword)));
                 case UrlShortenerType.CustomURLShortener:
                     return CustomUploadersList != null && CustomUploadersList.IsValidIndex(CustomURLShortenerSelected);
+                    case UrlShortenerType.adfly:
+                     return !string.IsNullOrEmpty(adflyAPIKEY) && !string.IsNullOrEmpty(adflyAPIUID);
             }
 
             return true;
