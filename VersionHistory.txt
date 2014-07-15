@@ -1,22 +1,22 @@
-﻿ShareX 9.2.0 - 2014-07-08
+﻿ShareX 9.2.0 - 2014-07-15
 
 * Main window menu changes to simplify UI
 * Automatic show/hide image preview in main window
-* Added support to share URL to Facebook, Google+, VK, Reddit, Pinterest and Delicious via web browser
-* Share URL and Shorten URL context menu items for tasks in main window
+* Added support to share URL to Email, Twitter, Facebook, Google+, Reddit, Pinterest, Tumblr, LinkedIn, StumbleUpon, Delicious and VK via web browser
+* Shorten URL and Share URL context menu for tasks in main window
 * Google Drive file uploader enhancements (title and folder support)
 * Twitter image upload support
 * ownCloud file uploader support
 * nl.cm URL shortener support
+* adf.ly URL shortener support (thanks @LRNAB)
 * bit.ly custom domain support
 * Support to Upload from URL
-* Added Rectangle (Annotate) to capture menu which will alow drawing in rectangle capture
+* Added Rectangle (Annotate) to capture menu which will allow annotations during rectangle capture
 * Screen recording improvements (timer and stop button under region)
 * Task setting to disable Aero while screen recording
 * Ability to customize URL format when automatically opening the URL
 * Better stop upload mechanism (ability to stop stuck uploads)
 * Added Tweet Message to Tools menu with hotkey support
-* ImageShack image uploader changes (better error handling, removed anonymous support)
 
 ShareX 9.1.0 - 2014-06-11
 
@@ -28,16 +28,15 @@ ShareX 9.1.0 - 2014-06-11
 * Videos recorded using FFmpeg will no longer play faster when framerate drops
 * Destinations settings window use list tab view now
 * Added gfycat.com file uploader support (thanks @Dinnerbone)
-* Added new Capture menu item and hotkey "Rectangle (Light)" which is lightweight version of Rectangle capture for slower computers
+* Added new Capture menu item and hotkey “Rectangle (Light)” which is lightweight version of Rectangle capture for slower computers
 * Custom domain support for Amazon S3
 * Added help button to FFmpeg which opens up the documentation web page
 * Drag-and-drop box now supports image and text too
 * Using System.Net.FtpClient library for FTP/FTPS
 * Added an error window for FFmpeg incase recording or encoding fails
-* Added "Open URL" to After Upload tasks
-* Added "Show QR code window" to After Upload tasks, Tools menu and right click menu in main window
+* Added QR code generator to After Upload tasks, Tools menu and right click menu in main window
 * Hotkey task settings are now shown as Workflows in main window and tray menu
-* Added version history link to About window
+* Added version history link to ‘about’ window
 
 ShareX 9.0.0 - 2014-05-16
 

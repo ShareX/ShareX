@@ -71,7 +71,10 @@ namespace UploadersLib.FileUploaders
         // https://developers.copy.com/console
         public string GetAuthorizationURL()
         {
-            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, new Dictionary<string, string> { { "oauth_callback", Links.URL_CALLBACK } });
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("oauth_callback", Links.URL_CALLBACK);
+
+            return GetAuthorizationURL(URLRequestToken, URLAuthorize, AuthInfo, args);
         }
 
         public bool GetAccessToken(string verificationCode = null)

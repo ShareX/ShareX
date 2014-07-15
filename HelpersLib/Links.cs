@@ -27,7 +27,7 @@ namespace HelpersLib
 {
     public static class Links
     {
-        public const string URL_WEBSITE = "http://www.getsharex.com";
+        public const string URL_WEBSITE = "http://getsharex.com";
         public const string URL_PROJECT = "https://github.com/ShareX/ShareX";
         public const string URL_ISSUES = "https://github.com/ShareX/ShareX/issues";
         public const string URL_CALLBACK = URL_WEBSITE + "/callback/";
