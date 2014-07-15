@@ -645,7 +645,7 @@ namespace ShareX
         {
             Refresh();
 
-            if (WindowState == FormWindowState.Normal)
+            if (IsReady && WindowState == FormWindowState.Normal)
             {
                 Program.Settings.MainFormSize = Size;
             }
