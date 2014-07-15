@@ -160,10 +160,12 @@ namespace UploadersLib
         Tumblr,
         [Description("LinkedIn")]
         LinkedIn,
-        [Description("VK")]
-        VK,
+        [Description("StumbleUpon")]
+        StumbleUpon,
         [Description("Delicious")]
-        Delicious
+        Delicious,
+        [Description("VK")]
+        VK
     }
 
     public enum HttpMethod

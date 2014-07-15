@@ -1069,11 +1069,14 @@ namespace ShareX
                     case URLSharingServices.LinkedIn:
                         URLHelpers.OpenURL("https://www.linkedin.com/shareArticle?url=" + encodedUrl);
                         break;
-                    case URLSharingServices.VK:
-                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
+                    case URLSharingServices.StumbleUpon:
+                        URLHelpers.OpenURL("http://www.stumbleupon.com/submit?url=" + encodedUrl);
                         break;
                     case URLSharingServices.Delicious:
                         URLHelpers.OpenURL("https://delicious.com/save?v=5&url=" + encodedUrl);
+                        break;
+                    case URLSharingServices.VK:
+                        URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
                 }
             }
