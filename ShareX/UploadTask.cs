@@ -775,6 +775,9 @@ namespace ShareX
                         ShareURLType = Program.UploadersConfig.DropboxURLType
                     };
                     break;
+                case FileDestination.OneDrive:
+                    fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info);
+                    break;
                 case FileDestination.Copy:
                     fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
                     {
@@ -790,8 +793,7 @@ namespace ShareX
                     };
                     break;
                 case FileDestination.RapidShare:
-                    fileUploader = new RapidShare(Program.UploadersConfig.RapidShareUsername, Program.UploadersConfig.RapidSharePassword,
-                        Program.UploadersConfig.RapidShareFolderID);
+                    fileUploader = new RapidShare(Program.UploadersConfig.RapidShareUsername, Program.UploadersConfig.RapidSharePassword, Program.UploadersConfig.RapidShareFolderID);
                     break;
                 case FileDestination.SendSpace:
                     fileUploader = new SendSpace(APIKeys.SendSpaceKey);

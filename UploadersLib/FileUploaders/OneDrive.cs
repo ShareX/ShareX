@@ -36,7 +36,7 @@ namespace UploadersLib.FileUploaders
     {
         public OAuth2Info AuthInfo { get; private set; }
 
-        public string FolderId { get; set; }
+        public string FolderID { get; set; }
 
         public OneDrive(OAuth2Info authInfo)
         {
@@ -50,20 +50,24 @@ namespace UploadersLib.FileUploaders
                 return null;
             }
 
-            if (string.IsNullOrEmpty(FolderId))
+            if (string.IsNullOrEmpty(FolderID))
             {
-                FolderId = "me/skydrive/files";
+                FolderID = "me/skydrive/files";
             }
 
-            var uploadUri = string.Format("https://apis.live.net/v5.0/{0}/{1}?access_token={2}&overwrite=true", FolderId, fileName, AuthInfo.Token.access_token);
-            var result = UploadData(stream, uploadUri, string.Empty, string.Empty, null, null, null, ResponseType.Text, HttpMethod.PUT);
-            if (!result.IsSuccess)
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("access_token", AuthInfo.Token.access_token);
+            args.Add("overwrite", "true");
+
+            string url = string.Format("https://apis.live.net/v5.0/{0}/{1}", FolderID, fileName);
+            UploadResult result = UploadData(stream, url, string.Empty, arguments: args, method: HttpMethod.PUT);
+
+            if (result.IsSuccess)
             {
-                return result;
+                OneDriveUploadInfo resultJson = JsonConvert.DeserializeObject<OneDriveUploadInfo>(result.Response);
+                result.URL = resultJson.source;
             }
 
-            var resultJson = JsonConvert.DeserializeObject<OneDriveUploadInfo>(result.Response);
-            result.URL = resultJson.source;
             return result;
         }
 
@@ -73,6 +77,7 @@ namespace UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("scope", "wl.skydrive_update");
+
             return CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
         }
 
@@ -84,7 +89,7 @@ namespace UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
-            var response = SendRequest(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
+            string response = SendRequest(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
 
             if (string.IsNullOrEmpty(response))
             {
@@ -116,7 +121,7 @@ namespace UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
-            var response = SendRequest(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
+            string response = SendRequest(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
 
             if (string.IsNullOrEmpty(response))
             {
@@ -148,7 +153,7 @@ namespace UploadersLib.FileUploaders
                 return false;
             }
 
-            Errors.Add("Live Id login is required.");
+            Errors.Add("OneDrive login is required.");
             return false;
         }
     }

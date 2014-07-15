@@ -112,6 +112,10 @@ namespace UploadersLib
         public bool DropboxAutoCreateShareableLink = false;
         public DropboxURLType DropboxURLType = DropboxURLType.Default;
 
+        // OneDrive
+
+        public OAuth2Info OneDriveOAuth2Info = null;
+
         // Copy
 
         public OAuthInfo CopyOAuthInfo = null;
