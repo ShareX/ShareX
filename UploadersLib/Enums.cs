@@ -78,6 +78,8 @@ namespace UploadersLib
     {
         [Description("Dropbox")]
         Dropbox,
+        [Description("OneDrive")]
+        OneDrive,
         [Description("FTP")]
         FTP,
         [Description("Copy")]
