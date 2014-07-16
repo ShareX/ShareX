@@ -142,6 +142,7 @@
             this.tsmiCopyFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
@@ -947,6 +948,7 @@
             this.tsmiOpen,
             this.tsmiCopy,
             this.tsmiUploadSelectedFile,
+            this.tsmiEditSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
             this.tsmiShowQRCode,
@@ -1238,6 +1240,13 @@
             this.tsmiUploadSelectedFile.Size = new System.Drawing.Size(128, 22);
             this.tsmiUploadSelectedFile.Text = "Upload";
             this.tsmiUploadSelectedFile.Click += new System.EventHandler(this.tsmiUploadSelectedFile_Click);
+            // 
+            // tsmiEditSelectedFile
+            // 
+            this.tsmiEditSelectedFile.Name = "tsmiEditSelectedFile";
+            this.tsmiEditSelectedFile.Size = new System.Drawing.Size(128, 22);
+            this.tsmiEditSelectedFile.Text = "Edit Image";
+            this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
             // tsmiShortenSelectedURL
             // 
@@ -2057,5 +2066,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiShortenSelectedURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleAnnotate;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleAnnotate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditSelectedFile;
     }
 }

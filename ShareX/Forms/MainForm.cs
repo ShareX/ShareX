@@ -295,7 +295,7 @@ namespace ShareX
         {
             cmsUploadInfo.SuspendLayout();
 
-            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible =
+            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiEditSelectedFile.Visible =
                 tsmiUploadSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
@@ -361,6 +361,9 @@ namespace ShareX
                     tsmiCopyFileName.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
                     tsmiCopyFileNameWithExtension.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
                     tsmiCopyFolder.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
+
+                    // Edit
+                    tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
 
                     CleanCustomClipboardFormats();
 
@@ -1183,6 +1186,11 @@ namespace ShareX
         private void tsmiUploadSelectedFile_Click(object sender, EventArgs e)
         {
             uim.Upload();
+        }
+
+        private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
+        {
+            uim.EditImage();
         }
 
         private void tsmiClearList_Click(object sender, EventArgs e)
