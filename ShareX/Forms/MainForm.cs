@@ -83,6 +83,7 @@ namespace ShareX
 
             ((ToolStripDropDownMenu)tsddbWorkflows.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayWorkflows.DropDown).ShowImageMargin =
                 ((ToolStripDropDownMenu)tsmiMonitor.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiTrayMonitor.DropDown).ShowImageMargin =
+                ((ToolStripDropDownMenu)tsmiOpen.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiCopy.DropDown).ShowImageMargin =
                 ((ToolStripDropDownMenu)tsmiShortenSelectedURL.DropDown).ShowImageMargin = ((ToolStripDropDownMenu)tsmiShareSelectedURL.DropDown).ShowImageMargin = false;
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
@@ -293,10 +294,10 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            cmsUploadInfo.SuspendLayout();
+            cmsTaskInfo.SuspendLayout();
 
-            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiEditSelectedFile.Visible =
-                tsmiUploadSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiUploadSelectedFile.Visible =
+                 tsmiEditSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -362,9 +363,6 @@ namespace ShareX
                     tsmiCopyFileNameWithExtension.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
                     tsmiCopyFolder.Enabled = uim.SelectedItems.Any(x => x.IsFilePathValid);
 
-                    // Edit
-                    tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
-
                     CleanCustomClipboardFormats();
 
                     if (Program.Settings.ClipboardContentFormats != null && Program.Settings.ClipboardContentFormats.Count > 0)
@@ -381,6 +379,7 @@ namespace ShareX
                     }
 
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
+                    tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
@@ -402,7 +401,7 @@ namespace ShareX
 
             tsmiClearList.Visible = tssUploadInfo1.Visible = lvUploads.Items.Count > 0;
 
-            cmsUploadInfo.ResumeLayout();
+            cmsTaskInfo.ResumeLayout();
             Refresh();
         }
 
@@ -922,7 +921,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Right)
             {
                 UpdateControls();
-                cmsUploadInfo.Show(lblDragAndDropTip, e.X + 1, e.Y + 1);
+                cmsTaskInfo.Show(lblDragAndDropTip, e.X + 1, e.Y + 1);
             }
         }
 
@@ -936,7 +935,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Right)
             {
                 UpdateControls();
-                cmsUploadInfo.Show(lvUploads, e.X + 1, e.Y + 1);
+                cmsTaskInfo.Show(lvUploads, e.X + 1, e.Y + 1);
             }
         }
 
@@ -1026,6 +1025,11 @@ namespace ShareX
         #endregion Tray events
 
         #region UploadInfoMenu events
+
+        private void tsmiShowErrors_Click(object sender, EventArgs e)
+        {
+            uim.ShowErrors();
+        }
 
         private void tsmiStopUpload_Click(object sender, EventArgs e)
         {
@@ -1168,21 +1172,6 @@ namespace ShareX
             uim.CopyFolder();
         }
 
-        private void tsmiShowErrors_Click(object sender, EventArgs e)
-        {
-            uim.ShowErrors();
-        }
-
-        private void tsmiShowResponse_Click(object sender, EventArgs e)
-        {
-            uim.ShowResponse();
-        }
-
-        private void tsmiShowQRCode_Click(object sender, EventArgs e)
-        {
-            uim.ShowQRCode();
-        }
-
         private void tsmiUploadSelectedFile_Click(object sender, EventArgs e)
         {
             uim.Upload();
@@ -1191,6 +1180,16 @@ namespace ShareX
         private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
         {
             uim.EditImage();
+        }
+
+        private void tsmiShowQRCode_Click(object sender, EventArgs e)
+        {
+            uim.ShowQRCode();
+        }
+
+        private void tsmiShowResponse_Click(object sender, EventArgs e)
+        {
+            uim.ShowResponse();
         }
 
         private void tsmiClearList_Click(object sender, EventArgs e)
@@ -1471,23 +1470,7 @@ namespace ShareX
 
                 if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
                 {
-                    using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings))
-                    {
-                        afterCaptureForm.ShowDialog();
-
-                        switch (afterCaptureForm.Result)
-                        {
-                            case AfterCaptureFormResult.Continue:
-                                taskSettings.AfterCaptureJob = afterCaptureForm.AfterCaptureTasks;
-                                break;
-                            case AfterCaptureFormResult.Copy:
-                                taskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
-                                break;
-                            case AfterCaptureFormResult.Cancel:
-                                if (img != null) img.Dispose();
-                                return;
-                        }
-                    }
+                    TaskHelpers.ShowAfterCaptureForm(img, taskSettings);
                 }
 
                 UploadManager.RunImageTask(img, taskSettings);

@@ -443,7 +443,6 @@
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\Test.png" />
     <None Include="Resources\application-network.png" />
-    <None Include="Resources\Greenshot.png" />
     <None Include="..\LICENSE.txt">
       <Link>LICENSE.txt</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -476,6 +475,13 @@
     <None Include="Resources\layer--pencil.png" />
     <None Include="Resources\globe-share.png" />
     <None Include="Resources\google_plus.png" />
+    <None Include="Resources\document-copy.png" />
+    <None Include="Resources\image--pencil.png" />
+    <None Include="Resources\exclamation-button.png" />
+    <None Include="Resources\folder-open-document.png" />
+    <None Include="Resources\eraser.png" />
+    <None Include="Resources\layout-select-sidebar.png" />
+    <None Include="Resources\layout-select-content.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

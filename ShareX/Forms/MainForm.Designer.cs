@@ -104,7 +104,7 @@
             this.chRemaining = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbPreview = new HelpersLib.MyPictureBox();
-            this.cmsUploadInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowErrors = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStopUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,7 +220,7 @@
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.cmsUploadInfo.SuspendLayout();
+            this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -529,7 +529,7 @@
             // 
             // tsmiImageEditor
             // 
-            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.Greenshot;
+            this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiImageEditor.Name = "tsmiImageEditor";
             this.tsmiImageEditor.Size = new System.Drawing.Size(183, 22);
             this.tsmiImageEditor.Text = "Image editor...";
@@ -940,9 +940,9 @@
             this.pbPreview.Size = new System.Drawing.Size(323, 407);
             this.pbPreview.TabIndex = 0;
             // 
-            // cmsUploadInfo
+            // cmsTaskInfo
             // 
-            this.cmsUploadInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiShowErrors,
             this.tsmiStopUpload,
             this.tsmiOpen,
@@ -957,21 +957,22 @@
             this.tssUploadInfo1,
             this.tsmiHideMenu,
             this.tsmiImagePreview});
-            this.cmsUploadInfo.Name = "cmsHistory";
-            this.cmsUploadInfo.ShowImageMargin = false;
-            this.cmsUploadInfo.Size = new System.Drawing.Size(129, 274);
+            this.cmsTaskInfo.Name = "cmsHistory";
+            this.cmsTaskInfo.Size = new System.Drawing.Size(154, 318);
             // 
             // tsmiShowErrors
             // 
+            this.tsmiShowErrors.Image = global::ShareX.Properties.Resources.exclamation_button;
             this.tsmiShowErrors.Name = "tsmiShowErrors";
-            this.tsmiShowErrors.Size = new System.Drawing.Size(128, 22);
+            this.tsmiShowErrors.Size = new System.Drawing.Size(153, 22);
             this.tsmiShowErrors.Text = "Show errors";
             this.tsmiShowErrors.Click += new System.EventHandler(this.tsmiShowErrors_Click);
             // 
             // tsmiStopUpload
             // 
+            this.tsmiStopUpload.Image = global::ShareX.Properties.Resources.cross_button;
             this.tsmiStopUpload.Name = "tsmiStopUpload";
-            this.tsmiStopUpload.Size = new System.Drawing.Size(128, 22);
+            this.tsmiStopUpload.Size = new System.Drawing.Size(153, 22);
             this.tsmiStopUpload.Text = "Stop upload";
             this.tsmiStopUpload.Click += new System.EventHandler(this.tsmiStopUpload_Click);
             // 
@@ -986,8 +987,9 @@
             this.tsmiOpenFile,
             this.tsmiOpenFolder,
             this.tsmiOpenThumbnailFile});
+            this.tsmiOpen.Image = global::ShareX.Properties.Resources.folder_open_document;
             this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(128, 22);
+            this.tsmiOpen.Size = new System.Drawing.Size(153, 22);
             this.tsmiOpen.Text = "Open";
             // 
             // tsmiOpenURL
@@ -1071,8 +1073,9 @@
             this.tsmiCopyFileNameWithExtension,
             this.tsmiCopyFolder,
             this.tssCopy5});
+            this.tsmiCopy.Image = global::ShareX.Properties.Resources.document_copy;
             this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.Size = new System.Drawing.Size(128, 22);
+            this.tsmiCopy.Size = new System.Drawing.Size(153, 22);
             this.tsmiCopy.Text = "Copy";
             // 
             // tsmiCopyURL
@@ -1236,60 +1239,68 @@
             // 
             // tsmiUploadSelectedFile
             // 
+            this.tsmiUploadSelectedFile.Image = global::ShareX.Properties.Resources.arrow_090;
             this.tsmiUploadSelectedFile.Name = "tsmiUploadSelectedFile";
-            this.tsmiUploadSelectedFile.Size = new System.Drawing.Size(128, 22);
+            this.tsmiUploadSelectedFile.Size = new System.Drawing.Size(153, 22);
             this.tsmiUploadSelectedFile.Text = "Upload";
             this.tsmiUploadSelectedFile.Click += new System.EventHandler(this.tsmiUploadSelectedFile_Click);
             // 
             // tsmiEditSelectedFile
             // 
+            this.tsmiEditSelectedFile.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiEditSelectedFile.Name = "tsmiEditSelectedFile";
-            this.tsmiEditSelectedFile.Size = new System.Drawing.Size(128, 22);
-            this.tsmiEditSelectedFile.Text = "Edit Image";
+            this.tsmiEditSelectedFile.Size = new System.Drawing.Size(153, 22);
+            this.tsmiEditSelectedFile.Text = "Edit image";
             this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
             // tsmiShortenSelectedURL
             // 
+            this.tsmiShortenSelectedURL.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiShortenSelectedURL.Name = "tsmiShortenSelectedURL";
-            this.tsmiShortenSelectedURL.Size = new System.Drawing.Size(128, 22);
+            this.tsmiShortenSelectedURL.Size = new System.Drawing.Size(153, 22);
             this.tsmiShortenSelectedURL.Text = "Shorten URL";
             // 
             // tsmiShareSelectedURL
             // 
+            this.tsmiShareSelectedURL.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
-            this.tsmiShareSelectedURL.Size = new System.Drawing.Size(128, 22);
+            this.tsmiShareSelectedURL.Size = new System.Drawing.Size(153, 22);
             this.tsmiShareSelectedURL.Text = "Share URL";
             // 
             // tsmiShowQRCode
             // 
+            this.tsmiShowQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
             this.tsmiShowQRCode.Name = "tsmiShowQRCode";
-            this.tsmiShowQRCode.Size = new System.Drawing.Size(128, 22);
+            this.tsmiShowQRCode.Size = new System.Drawing.Size(153, 22);
             this.tsmiShowQRCode.Text = "Show QR code";
             this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
             // 
             // tsmiShowResponse
             // 
+            this.tsmiShowResponse.Image = global::ShareX.Properties.Resources.application_browser;
             this.tsmiShowResponse.Name = "tsmiShowResponse";
-            this.tsmiShowResponse.Size = new System.Drawing.Size(128, 22);
+            this.tsmiShowResponse.Size = new System.Drawing.Size(153, 22);
             this.tsmiShowResponse.Text = "Show response";
             this.tsmiShowResponse.Click += new System.EventHandler(this.tsmiShowResponse_Click);
             // 
             // tsmiClearList
             // 
+            this.tsmiClearList.Image = global::ShareX.Properties.Resources.eraser;
             this.tsmiClearList.Name = "tsmiClearList";
-            this.tsmiClearList.Size = new System.Drawing.Size(128, 22);
+            this.tsmiClearList.Size = new System.Drawing.Size(153, 22);
             this.tsmiClearList.Text = "Clear list";
             this.tsmiClearList.Click += new System.EventHandler(this.tsmiClearList_Click);
             // 
             // tssUploadInfo1
             // 
             this.tssUploadInfo1.Name = "tssUploadInfo1";
-            this.tssUploadInfo1.Size = new System.Drawing.Size(125, 6);
+            this.tssUploadInfo1.Size = new System.Drawing.Size(150, 6);
             // 
             // tsmiHideMenu
             // 
+            this.tsmiHideMenu.Image = global::ShareX.Properties.Resources.layout_select_sidebar;
             this.tsmiHideMenu.Name = "tsmiHideMenu";
-            this.tsmiHideMenu.Size = new System.Drawing.Size(128, 22);
+            this.tsmiHideMenu.Size = new System.Drawing.Size(153, 22);
             this.tsmiHideMenu.Text = "Hide menu";
             this.tsmiHideMenu.Click += new System.EventHandler(this.tsmiHideMenu_Click);
             // 
@@ -1299,8 +1310,9 @@
             this.tsmiImagePreviewShow,
             this.tsmiImagePreviewHide,
             this.tsmiImagePreviewAutomatic});
+            this.tsmiImagePreview.Image = global::ShareX.Properties.Resources.layout_select_content;
             this.tsmiImagePreview.Name = "tsmiImagePreview";
-            this.tsmiImagePreview.Size = new System.Drawing.Size(128, 22);
+            this.tsmiImagePreview.Size = new System.Drawing.Size(153, 22);
             this.tsmiImagePreview.Text = "Image preview";
             // 
             // tsmiImagePreviewShow
@@ -1623,7 +1635,7 @@
             // 
             // tsmiTrayImageEditor
             // 
-            this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.Greenshot;
+            this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiTrayImageEditor.Name = "tsmiTrayImageEditor";
             this.tsmiTrayImageEditor.Size = new System.Drawing.Size(183, 22);
             this.tsmiTrayImageEditor.Text = "Image editor...";
@@ -1873,7 +1885,7 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.cmsUploadInfo.ResumeLayout(false);
+            this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1934,7 +1946,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayFileUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayURLShorteners;
-        private System.Windows.Forms.ContextMenuStrip cmsUploadInfo;
+        private System.Windows.Forms.ContextMenuStrip cmsTaskInfo;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpen;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenShortenedURL;

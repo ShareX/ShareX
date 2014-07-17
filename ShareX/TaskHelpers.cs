@@ -503,18 +503,13 @@ namespace ShareX
             UploadManager.IndexFolder();
         }
 
-        public static void OpenImageEditor()
+        public static void OpenImageEditor(string filePath = null)
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
-
-            if (!string.IsNullOrEmpty(filePath))
+            if (string.IsNullOrEmpty(filePath))
             {
-                TaskHelpers.AnnotateImage(filePath);
+                filePath = ImageHelpers.OpenImageFileDialog();
             }
-        }
 
-        public static void OpenImageEditor(string filePath)
-        {
             if (!string.IsNullOrEmpty(filePath))
             {
                 TaskHelpers.AnnotateImage(filePath);
@@ -589,6 +584,27 @@ namespace ShareX
             {
                 FTPAccount account = Program.UploadersConfig.FTPAccountList[Program.UploadersConfig.FTPSelectedImage];
                 new FTPClientForm(account).Show();
+            }
+        }
+
+        public static void ShowAfterCaptureForm(Image img, TaskSettings taskSettings)
+        {
+            using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings))
+            {
+                afterCaptureForm.ShowDialog();
+
+                switch (afterCaptureForm.Result)
+                {
+                    case AfterCaptureFormResult.Continue:
+                        taskSettings.AfterCaptureJob = afterCaptureForm.AfterCaptureTasks;
+                        break;
+                    case AfterCaptureFormResult.Copy:
+                        taskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
+                        break;
+                    case AfterCaptureFormResult.Cancel:
+                        if (img != null) img.Dispose();
+                        return;
+                }
             }
         }
     }
