@@ -513,6 +513,14 @@ namespace ShareX
             }
         }
 
+        public static void OpenImageEditor(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                TaskHelpers.AnnotateImage(filePath);
+            }
+        }
+
         public static void OpenImageEffects()
         {
             string filePath = ImageHelpers.OpenImageFileDialog();

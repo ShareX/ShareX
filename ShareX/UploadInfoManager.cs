@@ -309,6 +309,11 @@ namespace ShareX
             }
         }
 
+        public void EditImage()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEditor(SelectedItem.Info.FilePath);
+        }
+
         #endregion Other
     }
 }
