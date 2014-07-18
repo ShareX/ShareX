@@ -1044,14 +1044,13 @@ namespace HelpersLib
             return null;
         }
 
-        public static void SaveImage(Image img, string filePath)
+        public static ImageFormat GetImageFormat(string filePath)
         {
+            ImageFormat imageFormat = ImageFormat.Png;
             string ext = Helpers.GetProperExtension(filePath);
 
             if (!string.IsNullOrEmpty(ext))
             {
-                ImageFormat imageFormat;
-
                 switch (ext)
                 {
                     default:
@@ -1075,9 +1074,14 @@ namespace HelpersLib
                         imageFormat = ImageFormat.Tiff;
                         break;
                 }
-
-                img.Save(filePath, imageFormat);
             }
+
+            return imageFormat;
+        }
+
+        public static void SaveImage(Image img, string filePath)
+        {
+            img.Save(filePath, GetImageFormat(filePath));
         }
 
         public static string SaveImageFileDialog(Image img, string filePath = "")

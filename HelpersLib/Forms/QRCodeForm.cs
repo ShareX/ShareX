@@ -35,6 +35,8 @@ namespace HelpersLib
 {
     public partial class QRCodeForm : Form
     {
+        public bool EditMode { get; set; }
+
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
@@ -45,11 +47,12 @@ namespace HelpersLib
             {
                 qrMain.Dock = DockStyle.Fill;
                 qrMain.Cursor = Cursors.Hand;
-                Text = "QR code: " + text;
+                Text += ": " + text;
                 qrMain.Text = text;
             }
             else
             {
+                EditMode = true;
                 txtQRCode.Visible = true;
                 txtQRCode.Text = "Text";
                 txtQRCode.SelectAll();
@@ -68,7 +71,7 @@ namespace HelpersLib
 
         private void qrMain_Click(object sender, EventArgs e)
         {
-            if (qrMain.Cursor == Cursors.Hand)
+            if (!EditMode)
             {
                 Close();
             }
@@ -92,50 +95,44 @@ namespace HelpersLib
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                saveFileDialog.Filter = @"PNG (*.png)|*.png|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps|SVG (*.svg)|*.svg";
+                saveFileDialog.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps|SVG (*.svg)|*.svg";
                 saveFileDialog.FileName = txtQRCode.Text;
                 saveFileDialog.DefaultExt = "png";
 
-                if (saveFileDialog.ShowDialog() != DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    return;
-                }
+                    string filePath = saveFileDialog.FileName;
 
-                if (saveFileDialog.FileName.EndsWith("eps"))
-                {
-                    BitMatrix matrix = qrMain.GetQrMatrix();
-
-                    // Initialize the EPS renderer
-                    EncapsulatedPostScriptRenderer renderer = new EncapsulatedPostScriptRenderer(
-                        new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                        new FormColor(Color.Black), new FormColor(Color.White));
-
-                    using (FileStream file = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                    if (filePath.EndsWith("eps"))
                     {
-                        renderer.WriteToStream(matrix, file);
+                        // Initialize the EPS renderer
+                        EncapsulatedPostScriptRenderer renderer = new EncapsulatedPostScriptRenderer(new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
+                            new FormColor(Color.Black), new FormColor(Color.White));
+                        BitMatrix matrix = qrMain.GetQrMatrix();
+                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        {
+                            renderer.WriteToStream(matrix, fs);
+                        }
                     }
-                }
-                else if (saveFileDialog.FileName.EndsWith("svg"))
-                {
-                    BitMatrix matrix = qrMain.GetQrMatrix();
-
-                    // Initialize the EPS renderer
-                    SVGRenderer renderer = new SVGRenderer(
-                        new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                        new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
-
-                    using (FileStream file = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                    else if (filePath.EndsWith("svg"))
                     {
-                        renderer.WriteToStream(matrix, file, false);
+                        // Initialize the EPS renderer
+                        SVGRenderer renderer = new SVGRenderer(new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
+                            new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
+                        BitMatrix matrix = qrMain.GetQrMatrix();
+                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        {
+                            renderer.WriteToStream(matrix, fs, false);
+                        }
                     }
-                }
-                else
-                {
-                    GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
-                    BitMatrix matrix = qrMain.GetQrMatrix();
-                    using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                    else
                     {
-                        gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
+                        GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
+                        BitMatrix matrix = qrMain.GetQrMatrix();
+                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        {
+                            gRender.WriteToStream(matrix, ImageHelpers.GetImageFormat(filePath), fs, new Point(600, 600));
+                        }
                     }
                 }
             }

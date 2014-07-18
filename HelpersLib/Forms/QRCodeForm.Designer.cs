@@ -57,7 +57,8 @@
             this.tsmiCopy,
             this.tsmiSaveAs});
             this.cmsQR.Name = "cmsQR";
-            this.cmsQR.Size = new System.Drawing.Size(212, 48);
+            this.cmsQR.ShowImageMargin = false;
+            this.cmsQR.Size = new System.Drawing.Size(192, 70);
             this.cmsQR.Text = "QR";
             // 
             // tsmiCopy
@@ -71,8 +72,9 @@
             // tsmiSaveAs
             // 
             this.tsmiSaveAs.Name = "tsmiSaveAs";
-            this.tsmiSaveAs.Size = new System.Drawing.Size(211, 22);
-            this.tsmiSaveAs.Text = "Save image as PNG...";
+            this.tsmiSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveAs.Size = new System.Drawing.Size(191, 22);
+            this.tsmiSaveAs.Text = "Save as image file...";
             this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
             // 
             // txtQRCode
