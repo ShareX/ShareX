@@ -50,7 +50,13 @@ namespace ShareX
 
             AfterCaptureTasks = taskSettings.AfterCaptureJob;
             AddAfterCaptureItems(AfterCaptureTasks);
-            pbImage.LoadImage(img);
+
+            btnCopy.Visible = img != null;
+
+            if (img != null)
+            {
+                pbImage.LoadImage(img);
+            }
         }
 
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)

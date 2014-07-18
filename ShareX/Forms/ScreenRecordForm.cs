@@ -286,7 +286,7 @@ namespace ShareX
 
                 IsRecording = false;
 
-                if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                if (!string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings))
                 {
                     UploadTask task = UploadTask.CreateFileJobTask(path, taskSettings);
                     TaskManager.Start(task);

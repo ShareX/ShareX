@@ -110,7 +110,7 @@ namespace UploadersLib
         Ge_tt,
         [Description("Hostr")]
         Localhostr,
-        [Description("Jira")]
+        [Description("JIRA")]
         Jira,
         [Description("Shared folder")]
         SharedFolder,

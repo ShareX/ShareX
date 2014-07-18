@@ -252,8 +252,38 @@ namespace ShareX
         {
             Info.StartTime = DateTime.UtcNow;
 
-            DoThreadJob();
+            try
+            {
+                DoThreadJob();
+                DoUploadJob();
+            }
+            finally
+            {
+                Dispose();
 
+                if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
+                {
+                    File.Delete(Info.FilePath);
+                }
+            }
+
+            if (!StopRequested && Info.Result != null && Info.Result.IsURLExpected && !Info.Result.IsError)
+            {
+                if (string.IsNullOrEmpty(Info.Result.URL))
+                {
+                    Info.Result.Errors.Add("URL is empty.");
+                }
+                else
+                {
+                    DoAfterUploadJobs();
+                }
+            }
+
+            Info.UploadTime = DateTime.UtcNow;
+        }
+
+        private void DoUploadJob()
+        {
             if (Info.IsUploadJob)
             {
                 if (Program.Settings.ShowUploadWarning && MessageBox.Show(
@@ -321,20 +351,6 @@ namespace ShareX
             {
                 Info.Result.IsURLExpected = false;
             }
-
-            if (!StopRequested && Info.Result != null && Info.Result.IsURLExpected && !Info.Result.IsError)
-            {
-                if (string.IsNullOrEmpty(Info.Result.URL))
-                {
-                    Info.Result.Errors.Add("URL is empty.");
-                }
-                else
-                {
-                    DoAfterUploadJobs();
-                }
-            }
-
-            Info.UploadTime = DateTime.UtcNow;
         }
 
         private bool DoUpload(int retry = 0)
@@ -1167,8 +1183,17 @@ namespace ShareX
 
         public void Dispose()
         {
-            if (Data != null) Data.Dispose();
-            if (tempImage != null) tempImage.Dispose();
+            if (Data != null)
+            {
+                Data.Dispose();
+                Data = null;
+            }
+
+            if (tempImage != null)
+            {
+                tempImage.Dispose();
+                tempImage = null;
+            }
         }
     }
 }

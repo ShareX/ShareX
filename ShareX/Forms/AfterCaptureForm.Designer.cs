@@ -55,7 +55,7 @@
             this.lvAfterCaptureTasks.MultiSelect = false;
             this.lvAfterCaptureTasks.Name = "lvAfterCaptureTasks";
             this.lvAfterCaptureTasks.Scrollable = false;
-            this.lvAfterCaptureTasks.Size = new System.Drawing.Size(290, 247);
+            this.lvAfterCaptureTasks.Size = new System.Drawing.Size(290, 268);
             this.lvAfterCaptureTasks.TabIndex = 0;
             this.lvAfterCaptureTasks.UseCompatibleStateImageBehavior = false;
             this.lvAfterCaptureTasks.View = System.Windows.Forms.View.Details;
@@ -70,9 +70,9 @@
             // btnContinue
             // 
             this.btnContinue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnContinue.Location = new System.Drawing.Point(8, 298);
+            this.btnContinue.Location = new System.Drawing.Point(8, 312);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(80, 24);
+            this.btnContinue.Size = new System.Drawing.Size(80, 32);
             this.btnContinue.TabIndex = 1;
             this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = true;
@@ -81,9 +81,9 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.Location = new System.Drawing.Point(96, 298);
+            this.btnCancel.Location = new System.Drawing.Point(96, 312);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 24);
+            this.btnCancel.Size = new System.Drawing.Size(80, 32);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -102,15 +102,15 @@
             this.pbImage.FullscreenOnClick = true;
             this.pbImage.Location = new System.Drawing.Point(320, 8);
             this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(376, 314);
+            this.pbImage.Size = new System.Drawing.Size(376, 336);
             this.pbImage.TabIndex = 4;
             // 
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCopy.Location = new System.Drawing.Point(184, 298);
+            this.btnCopy.Location = new System.Drawing.Point(184, 312);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(80, 24);
+            this.btnCopy.Size = new System.Drawing.Size(80, 32);
             this.btnCopy.TabIndex = 3;
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             this.tcTasks.Location = new System.Drawing.Point(8, 8);
             this.tcTasks.Name = "tcTasks";
             this.tcTasks.SelectedIndex = 0;
-            this.tcTasks.Size = new System.Drawing.Size(304, 279);
+            this.tcTasks.Size = new System.Drawing.Size(304, 300);
             this.tcTasks.TabIndex = 0;
             // 
             // tpAfterCapture
@@ -134,7 +134,7 @@
             this.tpAfterCapture.Location = new System.Drawing.Point(4, 22);
             this.tpAfterCapture.Name = "tpAfterCapture";
             this.tpAfterCapture.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAfterCapture.Size = new System.Drawing.Size(296, 253);
+            this.tpAfterCapture.Size = new System.Drawing.Size(296, 274);
             this.tpAfterCapture.TabIndex = 0;
             this.tpAfterCapture.Text = "After capture";
             this.tpAfterCapture.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             this.tpBeforeUpload.Location = new System.Drawing.Point(4, 22);
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBeforeUpload.Size = new System.Drawing.Size(296, 253);
+            this.tpBeforeUpload.Size = new System.Drawing.Size(296, 274);
             this.tpBeforeUpload.TabIndex = 1;
             this.tpBeforeUpload.Text = "Before upload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.ucBeforeUpload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucBeforeUpload.Location = new System.Drawing.Point(3, 3);
             this.ucBeforeUpload.Name = "ucBeforeUpload";
-            this.ucBeforeUpload.Size = new System.Drawing.Size(290, 247);
+            this.ucBeforeUpload.Size = new System.Drawing.Size(290, 268);
             this.ucBeforeUpload.TabIndex = 0;
             // 
             // AfterCaptureForm
@@ -163,7 +163,7 @@
             this.AcceptButton = this.btnContinue;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 330);
+            this.ClientSize = new System.Drawing.Size(704, 352);
             this.Controls.Add(this.tcTasks);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnCancel);

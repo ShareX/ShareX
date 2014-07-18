@@ -79,7 +79,9 @@ namespace ShareX
         [Description("Perform actions")]
         PerformActions = 1 << 10,
         [Description("Upload image to host")]
-        UploadImageToHost = 1 << 11
+        UploadImageToHost = 1 << 11,
+        [Description("Delete file")]
+        DeleteFile = 1 << 12
     }
 
     [Flags]

@@ -1468,12 +1468,10 @@ namespace ShareX
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
-                if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
+                if (TaskHelpers.ShowAfterCaptureForm(taskSettings, img))
                 {
-                    TaskHelpers.ShowAfterCaptureForm(img, taskSettings);
+                    UploadManager.RunImageTask(img, taskSettings);
                 }
-
-                UploadManager.RunImageTask(img, taskSettings);
             }
         }
 
