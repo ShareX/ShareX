@@ -707,6 +707,61 @@ namespace ShareX
             TaskHelpers.OpenDropWindow();
         }
 
+        private void tsmiCursorHelper_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenScreenColorPicker();
+        }
+
+        private void tsmiRuler_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenRuler();
+        }
+
+        private void tsmiFTPClient_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenFTPClient();
+        }
+
+        private void tsmiHashCheck_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiIndexFolder_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenIndexFolder();
+        }
+
+        private void tsmiImageEditor_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageEditor();
+        }
+
+        private void tsmiImageEffects_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageEffects();
+        }
+
+        private void tsmiMonitorTest_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenMonitorTest();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDNSChanger();
+        }
+
+        private void tsmiQRCode_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQRCode();
+        }
+
+        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.TweetMessage();
+        }
+
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)
         {
             UpdateDestinationStates();
@@ -735,6 +790,11 @@ namespace ShareX
         private void tsmiTestURLShortener_Click(object sender, EventArgs e)
         {
             UploadManager.ShortenURL(Links.URL_WEBSITE);
+        }
+
+        private void tsmiTestURLSharing_Click(object sender, EventArgs e)
+        {
+            UploadManager.ShareURL(Links.URL_WEBSITE);
         }
 
         private void tsmiTestUploaders_Click(object sender, EventArgs e)
@@ -808,61 +868,6 @@ namespace ShareX
             }
 
             Program.UploadersConfigSaveAsync();
-        }
-
-        private void tsmiCursorHelper_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenScreenColorPicker();
-        }
-
-        private void tsmiRuler_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenRuler();
-        }
-
-        private void tsmiFTPClient_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenFTPClient();
-        }
-
-        private void tsmiHashCheck_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenHashCheck();
-        }
-
-        private void tsmiIndexFolder_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenIndexFolder();
-        }
-
-        private void tsmiImageEditor_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenImageEditor();
-        }
-
-        private void tsmiImageEffects_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenImageEffects();
-        }
-
-        private void tsmiMonitorTest_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenMonitorTest();
-        }
-
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiQRCode_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQRCode();
-        }
-
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.TweetMessage();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)

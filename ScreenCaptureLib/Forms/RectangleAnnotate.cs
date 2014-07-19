@@ -395,13 +395,10 @@ namespace ScreenCaptureLib
                 textRectangle.Y = ScreenRectangle0Based.Height - rectHeight - offset;
             }
 
-            using (GraphicsPath backgroundPath = new GraphicsPath())
             using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.White)))
             using (Pen pen = new Pen(Color.FromArgb(175, Color.Black)))
             {
-                backgroundPath.AddRoundedRectangle(textRectangle, 5);
-                g.FillPath(brush, backgroundPath);
-                g.DrawPath(pen, backgroundPath);
+                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
             }
 
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })

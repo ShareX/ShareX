@@ -215,6 +215,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -739,6 +740,7 @@
             this.tsmiTestTextUpload,
             this.tsmiTestFileUpload,
             this.tsmiTestURLShortener,
+            this.tsmiTestURLSharing,
             this.tsmiTestUploaders});
             this.tsddbDebug.Image = global::ShareX.Properties.Resources.traffic_cone;
             this.tsddbDebug.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -958,7 +960,7 @@
             this.tsmiHideMenu,
             this.tsmiImagePreview});
             this.cmsTaskInfo.Name = "cmsHistory";
-            this.cmsTaskInfo.Size = new System.Drawing.Size(154, 318);
+            this.cmsTaskInfo.Size = new System.Drawing.Size(154, 296);
             // 
             // tsmiShowErrors
             // 
@@ -1860,6 +1862,14 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
+            // tsmiTestURLSharing
+            // 
+            this.tsmiTestURLSharing.Image = global::ShareX.Properties.Resources.globe_share;
+            this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
+            this.tsmiTestURLSharing.Size = new System.Drawing.Size(173, 22);
+            this.tsmiTestURLSharing.Text = "Test URL sharing";
+            this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2079,5 +2089,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleAnnotate;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleAnnotate;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditSelectedFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTestURLSharing;
     }
 }

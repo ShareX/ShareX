@@ -34,7 +34,6 @@ namespace ScreenCaptureLib
     public class RoundedRectangleRegion : RectangleRegion
     {
         public float Radius { get; set; }
-
         public int RadiusIncrement { get; set; }
 
         public RoundedRectangleRegion(Image backgroundImage = null)

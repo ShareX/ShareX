@@ -48,6 +48,21 @@ namespace HelpersLib
             DrawRectangleProper(g, pen, new Rectangle(x, y, width, height));
         }
 
+        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, Rectangle rect, float radius)
+        {
+            using (GraphicsPath gp = new GraphicsPath())
+            {
+                gp.AddRoundedRectangle(rect, radius);
+                if (brush != null) g.FillPath(brush, gp);
+                if (pen != null) g.DrawPath(pen, gp);
+            }
+        }
+
+        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, int x, int y, int width, int height, float radius)
+        {
+            DrawRoundedRectangle(g, brush, pen, new Rectangle(x, y, width, height), radius);
+        }
+
         public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect, int crossSize)
         {
             rect = rect.SizeOffset(-1);

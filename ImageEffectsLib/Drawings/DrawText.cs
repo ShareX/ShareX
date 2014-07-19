@@ -175,44 +175,37 @@ namespace ImageEffectsLib
 
                     if (DrawBackground)
                     {
-                        using (GraphicsPath backgroundPath = new GraphicsPath())
+                        Rectangle backgroundRect = new Rectangle(0, 0, watermarkSize.Width, watermarkSize.Height);
+                        Brush backgroundBrush = null;
+
+                        try
                         {
-                            Rectangle backgroundRect = new Rectangle(0, 0, watermarkSize.Width, watermarkSize.Height);
-                            backgroundPath.AddRoundedRectangle(backgroundRect, CornerRadius);
-
-                            Brush backgroundBrush = null;
-
-                            try
+                            if (UseGradient)
                             {
-                                if (UseGradient)
-                                {
-                                    backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
+                                backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
 
-                                    if (UseCustomGradient && CustomGradientList != null && CustomGradientList.Count > 1)
-                                    {
-                                        ColorBlend colorBlend = new ColorBlend();
-                                        IEnumerable<GradientStop> gradient = CustomGradientList.OrderBy(x => x.Offset);
-                                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                        colorBlend.Positions = gradient.Select(x => x.Offset).ToArray();
-                                        ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
-                                    }
-                                }
-                                else
+                                if (UseCustomGradient && CustomGradientList != null && CustomGradientList.Count > 1)
                                 {
-                                    backgroundBrush = new SolidBrush(BackgroundColor);
+                                    ColorBlend colorBlend = new ColorBlend();
+                                    IEnumerable<GradientStop> gradient = CustomGradientList.OrderBy(x => x.Offset);
+                                    colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                    colorBlend.Positions = gradient.Select(x => x.Offset).ToArray();
+                                    ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
                                 }
-
-                                gWatermark.FillPath(backgroundBrush, backgroundPath);
                             }
-                            finally
+                            else
                             {
-                                if (backgroundBrush != null) backgroundBrush.Dispose();
+                                backgroundBrush = new SolidBrush(BackgroundColor);
                             }
 
                             using (Pen borderPen = new Pen(BorderColor))
                             {
-                                gWatermark.DrawPath(borderPen, backgroundPath);
+                                gWatermark.DrawRoundedRectangle(backgroundBrush, borderPen, backgroundRect, CornerRadius);
                             }
+                        }
+                        finally
+                        {
+                            if (backgroundBrush != null) backgroundBrush.Dispose();
                         }
                     }
 
@@ -227,8 +220,7 @@ namespace ImageEffectsLib
                         {
                             using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
                             {
-                                gWatermark.DrawString(parsedText, textFont, textShadowBrush,
-                                    centerX + TextShadowOffset.X, centerY + TextShadowOffset.Y, sf);
+                                gWatermark.DrawString(parsedText, textFont, textShadowBrush, centerX + TextShadowOffset.X, centerY + TextShadowOffset.Y, sf);
                             }
                         }
 
