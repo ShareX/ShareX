@@ -345,13 +345,16 @@ namespace ScreenCaptureLib
             Options.FFmpeg.UseCustomCommands = cbCustomCommands.Checked;
             txtCommandLinePreview.ReadOnly = !Options.FFmpeg.UseCustomCommands;
 
-            if (Options.FFmpeg.UseCustomCommands)
+            if (settingsLoaded)
             {
-                txtCommandLinePreview.Text = Options.GetFFmpegArgs(true);
-            }
-            else
-            {
-                txtCommandLinePreview.Text = Options.GetFFmpegArgs();
+                if (Options.FFmpeg.UseCustomCommands)
+                {
+                    txtCommandLinePreview.Text = Options.GetFFmpegArgs(true);
+                }
+                else
+                {
+                    txtCommandLinePreview.Text = Options.GetFFmpegArgs();
+                }
             }
         }
 
