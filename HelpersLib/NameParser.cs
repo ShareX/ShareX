@@ -241,7 +241,7 @@ namespace HelpersLib
         {
             ContextMenuStrip cms = new ContextMenuStrip
             {
-                Font = new XmlFont("Lucida Console", 8),
+                Font = new Font("Lucida Console", 8),
                 AutoClose = false,
                 Opacity = 0.9,
                 ShowImageMargin = false

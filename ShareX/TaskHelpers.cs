@@ -408,9 +408,10 @@ namespace ShareX
                     }
                 }
 
+                using (Font font = new Font("Arial", 7, FontStyle.Bold))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), new XmlFont("Arial", 7, FontStyle.Bold), Brushes.White, 8, 8, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 8, sf);
                 }
 
                 g.DrawRectangleProper(Pens.WhiteSmoke, 0, 0, 16, 16);
