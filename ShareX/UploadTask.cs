@@ -654,14 +654,6 @@ namespace ShareX
 
             switch (Info.TaskSettings.ImageDestination)
             {
-                case ImageDestination.ImageShack:
-                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
-                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
-                    imageUploader = new ImageShackUploader(APIKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
-                    break;
-                case ImageDestination.TinyPic:
-                    imageUploader = new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, Program.UploadersConfig.TinyPicAccountType, Program.UploadersConfig.TinyPicRegistrationCode);
-                    break;
                 case ImageDestination.Imgur:
                     if (Program.UploadersConfig.ImgurOAuth2Info == null)
                     {
@@ -671,9 +663,18 @@ namespace ShareX
                     imageUploader = new Imgur_v3(Program.UploadersConfig.ImgurOAuth2Info)
                     {
                         UploadMethod = Program.UploadersConfig.ImgurAccountType,
+                        DirectLink = Program.UploadersConfig.ImgurDirectLink,
                         ThumbnailType = Program.UploadersConfig.ImgurThumbnailType,
                         UploadAlbumID = Program.UploadersConfig.ImgurAlbumID
                     };
+                    break;
+                case ImageDestination.ImageShack:
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailWidth = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredWidth;
+                    Program.UploadersConfig.ImageShackSettings.ThumbnailHeight = Info.TaskSettings.AdvancedSettings.ThumbnailPreferredHeight;
+                    imageUploader = new ImageShackUploader(APIKeys.ImageShackKey, Program.UploadersConfig.ImageShackSettings);
+                    break;
+                case ImageDestination.TinyPic:
+                    imageUploader = new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey, Program.UploadersConfig.TinyPicAccountType, Program.UploadersConfig.TinyPicRegistrationCode);
                     break;
                 case ImageDestination.Flickr:
                     imageUploader = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret, Program.UploadersConfig.FlickrAuthInfo, Program.UploadersConfig.FlickrSettings);

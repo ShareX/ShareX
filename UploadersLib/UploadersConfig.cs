@@ -42,6 +42,7 @@ namespace UploadersLib
         // Imgur
 
         public AccountType ImgurAccountType = AccountType.Anonymous;
+        public bool ImgurDirectLink = true;
         public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Large_Thumbnail;
         public OAuth2Info ImgurOAuth2Info = null;
         public string ImgurAlbumID = string.Empty;

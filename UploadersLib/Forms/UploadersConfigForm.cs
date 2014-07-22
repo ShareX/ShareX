@@ -179,6 +179,7 @@ namespace UploadersLib
             // Imgur
 
             atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
+            cbImgurDirectLink.Checked = Config.ImgurDirectLink;
             cbImgurThumbnailType.Items.Clear();
             cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
@@ -548,6 +549,11 @@ namespace UploadersLib
         private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
         {
             Config.ImgurAccountType = accountType;
+        }
+
+        private void cbImgurDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.ImgurDirectLink = cbImgurDirectLink.Checked;
         }
 
         private void cbImgurThumbnailType_SelectedIndexChanged(object sender, EventArgs e)

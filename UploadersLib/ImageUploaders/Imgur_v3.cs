@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -34,17 +35,17 @@ namespace UploadersLib.ImageUploaders
 {
     public enum ImgurThumbnailType
     {
-        [Description("Small Square")]
+        [Description("Small square")]
         Small_Square,
-        [Description("Big Square")]
+        [Description("Big square")]
         Big_Square,
-        [Description("Small Thumbnail")]
+        [Description("Small thumbnail")]
         Small_Thumbnail,
-        [Description("Medium Thumbnail")]
+        [Description("Medium thumbnail")]
         Medium_Thumbnail,
-        [Description("Large Thumbnail")]
+        [Description("Large thumbnail")]
         Large_Thumbnail,
-        [Description("Huge Thumbnail")]
+        [Description("Huge thumbnail")]
         Huge_Thumbnail
     }
 
@@ -54,6 +55,7 @@ namespace UploadersLib.ImageUploaders
         public OAuth2Info AuthInfo { get; set; }
         public ImgurThumbnailType ThumbnailType { get; set; }
         public string UploadAlbumID { get; set; }
+        public bool DirectLink { get; set; }
 
         public Imgur_v3(OAuth2Info oauth)
         {
@@ -202,15 +204,27 @@ namespace UploadersLib.ImageUploaders
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                ImgurUpload upload = JsonConvert.DeserializeObject<ImgurUpload>(result.Response);
+                JToken jsonResponse = JToken.Parse(result.Response);
 
-                if (upload != null)
+                if (jsonResponse != null)
                 {
-                    if (upload.success)
+                    bool success = jsonResponse["success"].Value<bool>();
+                    int status = jsonResponse["status"].Value<int>();
+
+                    if (success && status == 200)
                     {
-                        if (upload.data != null && !string.IsNullOrEmpty(upload.data.link))
+                        ImgurUploadData uploadData = jsonResponse["data"].ToObject<ImgurUploadData>();
+
+                        if (uploadData != null && !string.IsNullOrEmpty(uploadData.link))
                         {
-                            result.URL = upload.data.link;
+                            if (DirectLink)
+                            {
+                                result.URL = uploadData.link;
+                            }
+                            else
+                            {
+                                result.URL = "http://imgur.com/" + uploadData.id;
+                            }
 
                             int index = result.URL.LastIndexOf('.');
                             string thumbnail = string.Empty;
@@ -237,13 +251,19 @@ namespace UploadersLib.ImageUploaders
                                     break;
                             }
 
-                            result.ThumbnailURL = result.URL.Remove(index) + thumbnail + result.URL.Substring(index);
-                            result.DeletionURL = "http://imgur.com/delete/" + upload.data.deletehash;
+                            result.ThumbnailURL = string.Format("http://i.imgur.com/{0}{1}.jpg", uploadData.id, thumbnail); // Thumbnails always jpg
+                            result.DeletionURL = "http://imgur.com/delete/" + uploadData.deletehash;
                         }
                     }
                     else
                     {
-                        Errors.Add("Imgur upload failed. Status code: " + upload.status);
+                        ImgurErrorData errorData = jsonResponse["data"].ToObject<ImgurErrorData>();
+
+                        if (errorData != null && !string.IsNullOrEmpty(errorData.error))
+                        {
+                            string errorMessage = string.Format("Status: {0}, Error: {1}", status, errorData.error);
+                            Errors.Add(errorMessage);
+                        }
                     }
                 }
             }
@@ -257,13 +277,6 @@ namespace UploadersLib.ImageUploaders
         public string id { get; set; }
         public string deletehash { get; set; }
         public string link { get; set; }
-    }
-
-    public class ImgurUpload
-    {
-        public ImgurUploadData data { get; set; }
-        public bool success { get; set; }
-        public int status { get; set; }
     }
 
     public class ImgurAlbumData
@@ -280,6 +293,13 @@ namespace UploadersLib.ImageUploaders
         public string link { get; set; }
         public bool favorite { get; set; }
         public int order { get; set; }
+    }
+
+    public class ImgurErrorData
+    {
+        public string error { get; set; }
+        public string request { get; set; }
+        public string method { get; set; }
     }
 
     public class ImgurAlbums
