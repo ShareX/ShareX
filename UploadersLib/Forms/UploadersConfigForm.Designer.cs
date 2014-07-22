@@ -111,6 +111,7 @@
             this.txtYourlsAPIURL = new System.Windows.Forms.TextBox();
             this.lblYourlsAPIURL = new System.Windows.Forms.Label();
             this.tpAdFly = new System.Windows.Forms.TabPage();
+            this.llAdflyLink = new System.Windows.Forms.LinkLabel();
             this.txtAdflyAPIUID = new System.Windows.Forms.TextBox();
             this.lblAdflyAPIUID = new System.Windows.Forms.Label();
             this.txtAdflyAPIKEY = new System.Windows.Forms.TextBox();
@@ -279,6 +280,11 @@
             this.lblSharedFolderImages = new System.Windows.Forms.Label();
             this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
+            this.tpMediaFire = new System.Windows.Forms.TabPage();
+            this.txtMediaFirePassword = new System.Windows.Forms.TextBox();
+            this.txtMediaFireUsername = new System.Windows.Forms.TextBox();
+            this.lblMediaFirePassword = new System.Windows.Forms.Label();
+            this.lblMediaFireUsername = new System.Windows.Forms.Label();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -359,7 +365,6 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.ttlvMain = new HelpersLib.TabToListView();
             this.lblWidthHint = new System.Windows.Forms.Label();
-            this.llAdflyLink = new System.Windows.Forms.LinkLabel();
             this.atcImgurAccountType = new UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new UploadersLib.AccountTypeControl();
@@ -379,6 +384,8 @@
             this.atcGoogleURLShortenerAccountType = new UploadersLib.AccountTypeControl();
             this.ucTwitterAccounts = new UploadersLib.AccountsControl();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
+            this.lblMediaFirePath = new System.Windows.Forms.Label();
+            this.txtMediaFirePath = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -417,6 +424,7 @@
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
+            this.tpMediaFire.SuspendLayout();
             this.tpTextUploaders.SuspendLayout();
             this.tcTextUploaders.SuspendLayout();
             this.tpPastebin.SuspendLayout();
@@ -1271,6 +1279,17 @@
             this.tpAdFly.Text = "adf.ly";
             this.tpAdFly.UseVisualStyleBackColor = true;
             // 
+            // llAdflyLink
+            // 
+            this.llAdflyLink.AutoSize = true;
+            this.llAdflyLink.Location = new System.Drawing.Point(16, 15);
+            this.llAdflyLink.Name = "llAdflyLink";
+            this.llAdflyLink.Size = new System.Drawing.Size(208, 13);
+            this.llAdflyLink.TabIndex = 8;
+            this.llAdflyLink.TabStop = true;
+            this.llAdflyLink.Text = "You can find your API key and UID in here";
+            this.llAdflyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAdflyLink_LinkClicked);
+            // 
             // txtAdflyAPIUID
             // 
             this.txtAdflyAPIUID.Location = new System.Drawing.Point(70, 60);
@@ -1336,6 +1355,7 @@
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
+            this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcFileUploaders.Location = new System.Drawing.Point(3, 3);
             this.tcFileUploaders.Multiline = true;
@@ -1356,10 +1376,10 @@
             this.tpDropbox.Controls.Add(this.lblDropboxPathTip);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
             this.tpDropbox.Controls.Add(this.txtDropboxPath);
-            this.tpDropbox.Location = new System.Drawing.Point(4, 22);
+            this.tpDropbox.Location = new System.Drawing.Point(4, 40);
             this.tpDropbox.Name = "tpDropbox";
             this.tpDropbox.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDropbox.Size = new System.Drawing.Size(972, 493);
+            this.tpDropbox.Size = new System.Drawing.Size(972, 475);
             this.tpDropbox.TabIndex = 0;
             this.tpDropbox.Text = "Dropbox";
             this.tpDropbox.UseVisualStyleBackColor = true;
@@ -1464,10 +1484,10 @@
             this.tpCopy.Controls.Add(this.lblCopyPath);
             this.tpCopy.Controls.Add(this.txtCopyPath);
             this.tpCopy.Controls.Add(this.oAuthCopy);
-            this.tpCopy.Location = new System.Drawing.Point(4, 22);
+            this.tpCopy.Location = new System.Drawing.Point(4, 40);
             this.tpCopy.Name = "tpCopy";
             this.tpCopy.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCopy.Size = new System.Drawing.Size(972, 493);
+            this.tpCopy.Size = new System.Drawing.Size(972, 475);
             this.tpCopy.TabIndex = 0;
             this.tpCopy.Text = "Copy";
             this.tpCopy.UseVisualStyleBackColor = true;
@@ -1550,10 +1570,10 @@
             this.tpFTP.Controls.Add(this.cboFtpFiles);
             this.tpFTP.Controls.Add(this.cboFtpText);
             this.tpFTP.Controls.Add(this.ucFTPAccounts);
-            this.tpFTP.Location = new System.Drawing.Point(4, 22);
+            this.tpFTP.Location = new System.Drawing.Point(4, 40);
             this.tpFTP.Name = "tpFTP";
             this.tpFTP.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFTP.Size = new System.Drawing.Size(972, 493);
+            this.tpFTP.Size = new System.Drawing.Size(972, 475);
             this.tpFTP.TabIndex = 4;
             this.tpFTP.Text = "FTP";
             this.tpFTP.UseVisualStyleBackColor = true;
@@ -1648,9 +1668,9 @@
             this.tpMega.Controls.Add(this.txtMegaEmail);
             this.tpMega.Controls.Add(this.txtMegaPassword);
             this.tpMega.Controls.Add(this.lblMegaPassword);
-            this.tpMega.Location = new System.Drawing.Point(4, 22);
+            this.tpMega.Location = new System.Drawing.Point(4, 40);
             this.tpMega.Name = "tpMega";
-            this.tpMega.Size = new System.Drawing.Size(972, 493);
+            this.tpMega.Size = new System.Drawing.Size(972, 475);
             this.tpMega.TabIndex = 12;
             this.tpMega.Text = "Mega";
             this.tpMega.UseVisualStyleBackColor = true;
@@ -1776,10 +1796,10 @@
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3SecretKey);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3AccessKey);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3AccessKey);
-            this.tpAmazonS3.Location = new System.Drawing.Point(4, 22);
+            this.tpAmazonS3.Location = new System.Drawing.Point(4, 40);
             this.tpAmazonS3.Name = "tpAmazonS3";
             this.tpAmazonS3.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAmazonS3.Size = new System.Drawing.Size(972, 493);
+            this.tpAmazonS3.Size = new System.Drawing.Size(972, 475);
             this.tpAmazonS3.TabIndex = 13;
             this.tpAmazonS3.Text = "Amazon S3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
@@ -1937,10 +1957,10 @@
             this.tpGoogleDrive.Controls.Add(this.btnGoogleDriveRefreshFolders);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
-            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 22);
+            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 40);
             this.tpGoogleDrive.Name = "tpGoogleDrive";
             this.tpGoogleDrive.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGoogleDrive.Size = new System.Drawing.Size(972, 493);
+            this.tpGoogleDrive.Size = new System.Drawing.Size(972, 475);
             this.tpGoogleDrive.TabIndex = 1;
             this.tpGoogleDrive.Text = "Google Drive";
             this.tpGoogleDrive.UseVisualStyleBackColor = true;
@@ -2033,10 +2053,10 @@
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudPassword);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudUsername);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
-            this.tpOwnCloud.Location = new System.Drawing.Point(4, 22);
+            this.tpOwnCloud.Location = new System.Drawing.Point(4, 40);
             this.tpOwnCloud.Name = "tpOwnCloud";
             this.tpOwnCloud.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOwnCloud.Size = new System.Drawing.Size(972, 493);
+            this.tpOwnCloud.Size = new System.Drawing.Size(972, 475);
             this.tpOwnCloud.TabIndex = 15;
             this.tpOwnCloud.Text = "ownCloud";
             this.tpOwnCloud.UseVisualStyleBackColor = true;
@@ -2139,10 +2159,10 @@
             this.tpPushbullet.Controls.Add(this.btnPushbulletGetDeviceList);
             this.tpPushbullet.Controls.Add(this.lblPushbulletUserKey);
             this.tpPushbullet.Controls.Add(this.txtPushbulletUserKey);
-            this.tpPushbullet.Location = new System.Drawing.Point(4, 22);
+            this.tpPushbullet.Location = new System.Drawing.Point(4, 40);
             this.tpPushbullet.Name = "tpPushbullet";
             this.tpPushbullet.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPushbullet.Size = new System.Drawing.Size(972, 493);
+            this.tpPushbullet.Size = new System.Drawing.Size(972, 475);
             this.tpPushbullet.TabIndex = 14;
             this.tpPushbullet.Text = "Pushbullet";
             this.tpPushbullet.UseVisualStyleBackColor = true;
@@ -2204,10 +2224,10 @@
             this.tpBox.Controls.Add(this.lblBoxFolderID);
             this.tpBox.Controls.Add(this.btnBoxRefreshFolders);
             this.tpBox.Controls.Add(this.oauth2Box);
-            this.tpBox.Location = new System.Drawing.Point(4, 22);
+            this.tpBox.Location = new System.Drawing.Point(4, 40);
             this.tpBox.Name = "tpBox";
             this.tpBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBox.Size = new System.Drawing.Size(972, 493);
+            this.tpBox.Size = new System.Drawing.Size(972, 475);
             this.tpBox.TabIndex = 2;
             this.tpBox.Text = "Box";
             this.tpBox.UseVisualStyleBackColor = true;
@@ -2282,10 +2302,10 @@
             this.tpRapidShare.Controls.Add(this.lblRapidSharePremiumUsername);
             this.tpRapidShare.Controls.Add(this.txtRapidSharePassword);
             this.tpRapidShare.Controls.Add(this.txtRapidShareUsername);
-            this.tpRapidShare.Location = new System.Drawing.Point(4, 22);
+            this.tpRapidShare.Location = new System.Drawing.Point(4, 40);
             this.tpRapidShare.Name = "tpRapidShare";
             this.tpRapidShare.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRapidShare.Size = new System.Drawing.Size(972, 493);
+            this.tpRapidShare.Size = new System.Drawing.Size(972, 475);
             this.tpRapidShare.TabIndex = 5;
             this.tpRapidShare.Text = "RapidShare";
             this.tpRapidShare.UseVisualStyleBackColor = true;
@@ -2368,10 +2388,10 @@
             this.tpSendSpace.Controls.Add(this.txtSendSpacePassword);
             this.tpSendSpace.Controls.Add(this.txtSendSpaceUserName);
             this.tpSendSpace.Controls.Add(this.atcSendSpaceAccountType);
-            this.tpSendSpace.Location = new System.Drawing.Point(4, 22);
+            this.tpSendSpace.Location = new System.Drawing.Point(4, 40);
             this.tpSendSpace.Name = "tpSendSpace";
             this.tpSendSpace.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSendSpace.Size = new System.Drawing.Size(972, 493);
+            this.tpSendSpace.Size = new System.Drawing.Size(972, 475);
             this.tpSendSpace.TabIndex = 6;
             this.tpSendSpace.Text = "SendSpace";
             this.tpSendSpace.UseVisualStyleBackColor = true;
@@ -2429,10 +2449,10 @@
             this.tpGe_tt.Controls.Add(this.btnGe_ttLogin);
             this.tpGe_tt.Controls.Add(this.txtGe_ttPassword);
             this.tpGe_tt.Controls.Add(this.txtGe_ttEmail);
-            this.tpGe_tt.Location = new System.Drawing.Point(4, 22);
+            this.tpGe_tt.Location = new System.Drawing.Point(4, 40);
             this.tpGe_tt.Name = "tpGe_tt";
             this.tpGe_tt.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGe_tt.Size = new System.Drawing.Size(972, 493);
+            this.tpGe_tt.Size = new System.Drawing.Size(972, 475);
             this.tpGe_tt.TabIndex = 7;
             this.tpGe_tt.Text = "Ge.tt";
             this.tpGe_tt.UseVisualStyleBackColor = true;
@@ -2496,10 +2516,10 @@
             this.tpHostr.Controls.Add(this.lblLocalhostrEmail);
             this.tpHostr.Controls.Add(this.txtLocalhostrPassword);
             this.tpHostr.Controls.Add(this.txtLocalhostrEmail);
-            this.tpHostr.Location = new System.Drawing.Point(4, 22);
+            this.tpHostr.Location = new System.Drawing.Point(4, 40);
             this.tpHostr.Name = "tpHostr";
             this.tpHostr.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHostr.Size = new System.Drawing.Size(972, 493);
+            this.tpHostr.Size = new System.Drawing.Size(972, 475);
             this.tpHostr.TabIndex = 8;
             this.tpHostr.Text = "Hostr";
             this.tpHostr.UseVisualStyleBackColor = true;
@@ -2556,10 +2576,10 @@
             this.tpMinus.Controls.Add(this.cbMinusURLType);
             this.tpMinus.Controls.Add(this.gbMinusUserPass);
             this.tpMinus.Controls.Add(this.gbMinusUpload);
-            this.tpMinus.Location = new System.Drawing.Point(4, 22);
+            this.tpMinus.Location = new System.Drawing.Point(4, 40);
             this.tpMinus.Name = "tpMinus";
             this.tpMinus.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMinus.Size = new System.Drawing.Size(972, 493);
+            this.tpMinus.Size = new System.Drawing.Size(972, 475);
             this.tpMinus.TabIndex = 3;
             this.tpMinus.Text = "Minus";
             this.tpMinus.UseVisualStyleBackColor = true;
@@ -2732,9 +2752,9 @@
             this.tpJira.Controls.Add(this.lblJiraIssuePrefix);
             this.tpJira.Controls.Add(this.gpJiraServer);
             this.tpJira.Controls.Add(this.oAuthJira);
-            this.tpJira.Location = new System.Drawing.Point(4, 22);
+            this.tpJira.Location = new System.Drawing.Point(4, 40);
             this.tpJira.Name = "tpJira";
-            this.tpJira.Size = new System.Drawing.Size(972, 493);
+            this.tpJira.Size = new System.Drawing.Size(972, 475);
             this.tpJira.TabIndex = 11;
             this.tpJira.Text = "Atlassian Jira";
             this.tpJira.UseVisualStyleBackColor = true;
@@ -2815,10 +2835,10 @@
             this.tpEmail.Controls.Add(this.nudEmailSmtpPort);
             this.tpEmail.Controls.Add(this.lblEmailSmtpPort);
             this.tpEmail.Controls.Add(this.txtEmailDefaultSubject);
-            this.tpEmail.Location = new System.Drawing.Point(4, 22);
+            this.tpEmail.Location = new System.Drawing.Point(4, 40);
             this.tpEmail.Name = "tpEmail";
             this.tpEmail.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEmail.Size = new System.Drawing.Size(972, 493);
+            this.tpEmail.Size = new System.Drawing.Size(972, 475);
             this.tpEmail.TabIndex = 10;
             this.tpEmail.Text = "Email";
             this.tpEmail.UseVisualStyleBackColor = true;
@@ -2969,10 +2989,10 @@
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderImages);
             this.tpSharedFolder.Controls.Add(this.ucLocalhostAccounts);
-            this.tpSharedFolder.Location = new System.Drawing.Point(4, 22);
+            this.tpSharedFolder.Location = new System.Drawing.Point(4, 40);
             this.tpSharedFolder.Name = "tpSharedFolder";
             this.tpSharedFolder.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSharedFolder.Size = new System.Drawing.Size(972, 493);
+            this.tpSharedFolder.Size = new System.Drawing.Size(972, 475);
             this.tpSharedFolder.TabIndex = 9;
             this.tpSharedFolder.Text = "Shared folder";
             this.tpSharedFolder.UseVisualStyleBackColor = true;
@@ -3033,6 +3053,57 @@
             this.cboSharedFolderImages.Size = new System.Drawing.Size(216, 21);
             this.cboSharedFolderImages.TabIndex = 1;
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
+            // 
+            // tpMediaFire
+            // 
+            this.tpMediaFire.Controls.Add(this.txtMediaFirePath);
+            this.tpMediaFire.Controls.Add(this.lblMediaFirePath);
+            this.tpMediaFire.Controls.Add(this.txtMediaFirePassword);
+            this.tpMediaFire.Controls.Add(this.txtMediaFireUsername);
+            this.tpMediaFire.Controls.Add(this.lblMediaFirePassword);
+            this.tpMediaFire.Controls.Add(this.lblMediaFireUsername);
+            this.tpMediaFire.Location = new System.Drawing.Point(4, 40);
+            this.tpMediaFire.Name = "tpMediaFire";
+            this.tpMediaFire.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMediaFire.Size = new System.Drawing.Size(972, 475);
+            this.tpMediaFire.TabIndex = 16;
+            this.tpMediaFire.Text = "MediaFire";
+            this.tpMediaFire.UseVisualStyleBackColor = true;
+            // 
+            // txtMediaFirePassword
+            // 
+            this.txtMediaFirePassword.Location = new System.Drawing.Point(80, 52);
+            this.txtMediaFirePassword.Name = "txtMediaFirePassword";
+            this.txtMediaFirePassword.PasswordChar = '*';
+            this.txtMediaFirePassword.Size = new System.Drawing.Size(136, 20);
+            this.txtMediaFirePassword.TabIndex = 3;
+            this.txtMediaFirePassword.TextChanged += new System.EventHandler(this.txtMediaFirePassword_TextChanged);
+            // 
+            // txtMediaFireUsername
+            // 
+            this.txtMediaFireUsername.Location = new System.Drawing.Point(80, 20);
+            this.txtMediaFireUsername.Name = "txtMediaFireUsername";
+            this.txtMediaFireUsername.Size = new System.Drawing.Size(136, 20);
+            this.txtMediaFireUsername.TabIndex = 2;
+            this.txtMediaFireUsername.TextChanged += new System.EventHandler(this.txtMediaFireUsername_TextChanged);
+            // 
+            // lblMediaFirePassword
+            // 
+            this.lblMediaFirePassword.AutoSize = true;
+            this.lblMediaFirePassword.Location = new System.Drawing.Point(16, 56);
+            this.lblMediaFirePassword.Name = "lblMediaFirePassword";
+            this.lblMediaFirePassword.Size = new System.Drawing.Size(56, 13);
+            this.lblMediaFirePassword.TabIndex = 1;
+            this.lblMediaFirePassword.Text = "Password:";
+            // 
+            // lblMediaFireUsername
+            // 
+            this.lblMediaFireUsername.AutoSize = true;
+            this.lblMediaFireUsername.Location = new System.Drawing.Point(16, 24);
+            this.lblMediaFireUsername.Name = "lblMediaFireUsername";
+            this.lblMediaFireUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblMediaFireUsername.TabIndex = 0;
+            this.lblMediaFireUsername.Text = "Username:";
             // 
             // btnCopyShowFiles
             // 
@@ -3858,17 +3929,6 @@
             this.lblWidthHint.TabIndex = 1;
             this.lblWidthHint.Visible = false;
             // 
-            // llAdflyLink
-            // 
-            this.llAdflyLink.AutoSize = true;
-            this.llAdflyLink.Location = new System.Drawing.Point(16, 15);
-            this.llAdflyLink.Name = "llAdflyLink";
-            this.llAdflyLink.Size = new System.Drawing.Size(208, 13);
-            this.llAdflyLink.TabIndex = 8;
-            this.llAdflyLink.TabStop = true;
-            this.llAdflyLink.Text = "You can find your API key and UID in here";
-            this.llAdflyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAdflyLink_LinkClicked);
-            // 
             // atcImgurAccountType
             // 
             this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
@@ -3959,7 +4019,7 @@
             this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
             this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 448);
+            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 898);
             this.ucFTPAccounts.TabIndex = 6;
             // 
             // oauth2GoogleDrive
@@ -4011,7 +4071,7 @@
             this.ucLocalhostAccounts.Location = new System.Drawing.Point(8, 40);
             this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
-            this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 448);
+            this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 898);
             this.ucLocalhostAccounts.TabIndex = 6;
             // 
             // oauth2Bitly
@@ -4061,6 +4121,23 @@
             this.actRapidShareAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
+            // 
+            // lblMediaFirePath
+            // 
+            this.lblMediaFirePath.AutoSize = true;
+            this.lblMediaFirePath.Location = new System.Drawing.Point(16, 88);
+            this.lblMediaFirePath.Name = "lblMediaFirePath";
+            this.lblMediaFirePath.Size = new System.Drawing.Size(68, 13);
+            this.lblMediaFirePath.TabIndex = 4;
+            this.lblMediaFirePath.Text = "Upload path:";
+            // 
+            // txtMediaFirePath
+            // 
+            this.txtMediaFirePath.Location = new System.Drawing.Point(88, 85);
+            this.txtMediaFirePath.Name = "txtMediaFirePath";
+            this.txtMediaFirePath.Size = new System.Drawing.Size(248, 20);
+            this.txtMediaFirePath.TabIndex = 5;
+            this.txtMediaFirePath.TextChanged += new System.EventHandler(this.txtMediaFirePath_TextChanged);
             // 
             // UploadersConfigForm
             // 
@@ -4144,6 +4221,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
+            this.tpMediaFire.ResumeLayout(false);
+            this.tpMediaFire.PerformLayout();
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -4529,5 +4608,12 @@
         private System.Windows.Forms.TextBox txtAdflyAPIKEY;
         private System.Windows.Forms.Label lblAdflyAPIKEY;
         private System.Windows.Forms.LinkLabel llAdflyLink;
+        private System.Windows.Forms.TabPage tpMediaFire;
+        private System.Windows.Forms.TextBox txtMediaFirePassword;
+        private System.Windows.Forms.TextBox txtMediaFireUsername;
+        private System.Windows.Forms.Label lblMediaFirePassword;
+        private System.Windows.Forms.Label lblMediaFireUsername;
+        private System.Windows.Forms.TextBox txtMediaFirePath;
+        private System.Windows.Forms.Label lblMediaFirePath;
     }
 }
