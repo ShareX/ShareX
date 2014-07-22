@@ -117,7 +117,9 @@ namespace UploadersLib
         [Description("Email")]
         Email,
         [Description("Custom file uploader")]
-        CustomFileUploader
+        CustomFileUploader,
+        [Description("MediaFire")]
+        MediaFire
     }
 
     [Description("URL shorteners"), DefaultValue(UrlShortenerType.BITLY)]
