@@ -410,6 +410,11 @@ namespace ShareX
 
         private void DoThreadJob()
         {
+            if (Info.IsUploadJob && Info.TaskSettings.AdvancedSettings.AutoClearClipboard)
+            {
+                ClipboardHelpers.Clear();
+            }
+
             if (Info.Job == TaskJob.Job)
             {
                 if (tempImage != null)
