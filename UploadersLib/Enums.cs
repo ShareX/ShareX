@@ -94,6 +94,8 @@ namespace UploadersLib
         AmazonS3,
         [Description("ownCloud")]
         OwnCloud,
+        [Description("MediaFire")]
+        MediaFire,
         [Description("Gfycat")]
         Gfycat,
         [Description("Pushbullet")]
@@ -117,9 +119,7 @@ namespace UploadersLib
         [Description("Email")]
         Email,
         [Description("Custom file uploader")]
-        CustomFileUploader,
-        [Description("MediaFire")]
-        MediaFire
+        CustomFileUploader
     }
 
     [Description("URL shorteners"), DefaultValue(UrlShortenerType.BITLY)]

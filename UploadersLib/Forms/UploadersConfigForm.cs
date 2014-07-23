@@ -493,7 +493,7 @@ namespace UploadersLib
 
             // MediaFire
 
-            txtMediaFireUsername.Text = Config.MediaFireUsername;
+            txtMediaFireEmail.Text = Config.MediaFireUsername;
             txtMediaFirePassword.Text = Config.MediaFirePassword;
             txtMediaFirePath.Text = Config.MediaFirePath;
 
@@ -1791,7 +1791,7 @@ namespace UploadersLib
 
         private void txtMediaFireUsername_TextChanged(object sender, EventArgs e)
         {
-            Config.MediaFireUsername = txtMediaFireUsername.Text;
+            Config.MediaFireUsername = txtMediaFireEmail.Text;
         }
 
         private void txtMediaFirePassword_TextChanged(object sender, EventArgs e)

@@ -41,8 +41,7 @@ namespace UploadersLib.FileUploaders
     public sealed class MediaFire : FileUploader
     {
         private static readonly string _apiUrl = "https://www.mediafire.com/api/";
-        private static readonly string _viewUrl = "http://www.mediafire.com/view/?";
-        private static readonly int _pollInterval = 3000;
+        private static readonly int _pollInterval = 1000;
         private readonly string _appId, _apiKey, _user, _pasw, _path;
         private string _sessionToken, _signatureTime;
         private int _signatureKey;
@@ -60,9 +59,9 @@ namespace UploadersLib.FileUploaders
         {
             GetSessionToken();
             string key = SimpleUpload(stream, fileName);
-            string quickKey = null;
-            while ((quickKey = PollUpload(key, fileName)) == null) Thread.Sleep(_pollInterval);
-            return new UploadResult() { IsSuccess = true, URL = _viewUrl + quickKey };
+            string url = null;
+            while ((url = PollUpload(key, fileName)) == null) Thread.Sleep(_pollInterval);
+            return new UploadResult() { IsSuccess = true, URL = url };
         }
 
         private void GetSessionToken()
@@ -119,7 +118,7 @@ namespace UploadersLib.FileUploaders
             if (resp.doupload.status == 99)
             {
                 if (resp.doupload.quickkey == null) throw new IOException("Invalid response");
-                return resp.doupload.quickkey;
+                return string.Format("http://www.mediafire.com/view/{0}/{1}", resp.doupload.quickkey, resp.doupload.filename);
             }
             return null;
         }
@@ -224,6 +223,7 @@ namespace UploadersLib.FileUploaders
                 public string description { get; set; }
                 public int? fileerror { get; set; }
                 public string quickkey { get; set; }
+                public string filename { get; set; }
             }
         }
     }
