@@ -358,8 +358,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Favicons\Yourls.ico" />
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
+    <None Include="Favicons\Yourls.ico" />
     <None Include="Favicons\Box.ico" />
     <None Include="Favicons\Bitly.ico" />
     <None Include="Favicons\Dropbox.ico" />
@@ -377,6 +377,14 @@
     <None Include="Favicons\SendSpace.ico" />
     <None Include="Favicons\TinyPic.ico" />
     <None Include="Favicons\Twitter.ico" />
+    <None Include="Favicons\Upaste.ico" />
+    <None Include="Favicons\AdFly.ico" />
+    <None Include="Favicons\AmazonS3.ico" />
+    <None Include="Favicons\GitHub.ico" />
+    <None Include="Favicons\Hostr.ico" />
+    <None Include="Favicons\MediaFire.ico" />
+    <None Include="Favicons\OwnCloud.png" />
+    <None Include="Favicons\Pushbullet.ico" />
     <None Include="packages.config" />
     <None Include="Resources\server-network.png" />
     <None Include="Resources\mail.png" />
@@ -420,18 +428,6 @@
       <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
       <Name>HelpersLib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Favicons\Upaste.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Favicons\AdFly.ico" />
-    <Content Include="Favicons\AmazonS3.ico" />
-    <None Include="Resources\MediaFire.ico" />
-    <None Include="Favicons\GitHub.ico" />
-    <Content Include="Favicons\Hostr.ico" />
-    <Content Include="Favicons\OwnCloud.png" />
-    <Content Include="Favicons\Pushbullet.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

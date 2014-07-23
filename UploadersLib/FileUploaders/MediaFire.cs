@@ -1,9 +1,39 @@
-﻿using Newtonsoft.Json;
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (C) 2007-2014 ShareX Developers
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+// Credits: https://github.com/michalx2
+
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Xml.Serialization;
 
 namespace UploadersLib.FileUploaders
@@ -31,7 +61,7 @@ namespace UploadersLib.FileUploaders
             GetSessionToken();
             string key = SimpleUpload(stream, fileName);
             string quickKey = null;
-            while ((quickKey = PollUpload(key, fileName)) == null) System.Threading.Thread.Sleep(_pollInterval);
+            while ((quickKey = PollUpload(key, fileName)) == null) Thread.Sleep(_pollInterval);
             return new UploadResult() { IsSuccess = true, URL = _viewUrl + quickKey };
         }
 
@@ -82,11 +112,12 @@ namespace UploadersLib.FileUploaders
             PollUploadResponse resp = DeserializeResponse<PollUploadResponse>(respStr);
             EnsureSuccess(resp);
             if (resp.doupload.result == null || resp.doupload.status == null) throw new IOException("Invalid response");
-            if (resp.doupload.result != 0 || resp.doupload.fileerror != null) {
-                throw new IOException(string.Format("Couldn't upload the file: {0}", resp.doupload.description
-                    ?? "Unknown error"));
+            if (resp.doupload.result != 0 || resp.doupload.fileerror != null)
+            {
+                throw new IOException(string.Format("Couldn't upload the file: {0}", resp.doupload.description ?? "Unknown error"));
             }
-            if (resp.doupload.status == 99) {
+            if (resp.doupload.status == 99)
+            {
                 if (resp.doupload.quickkey == null) throw new IOException("Invalid response");
                 return resp.doupload.quickkey;
             }
@@ -104,23 +135,23 @@ namespace UploadersLib.FileUploaders
         {
             string signatureStr = _user + _pasw + _appId + _apiKey;
             byte[] signatureBytes = Encoding.ASCII.GetBytes(signatureStr);
-            System.Security.Cryptography.SHA1 sha1Gen = System.Security.Cryptography.SHA1.Create();
+            SHA1 sha1Gen = SHA1.Create();
             byte[] sha1Bytes = sha1Gen.ComputeHash(signatureBytes);
             return BytesToString(sha1Bytes);
         }
 
-        private string GetSignature(string urlSuffix, Dictionary<string,string> args)
+        private string GetSignature(string urlSuffix, Dictionary<string, string> args)
         {
-            string keyStr = (_signatureKey % 256).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            string keyStr = (_signatureKey % 256).ToString(CultureInfo.InvariantCulture);
             string urlStr = CreateNonEscapedQuery("/api/" + urlSuffix, args);
             string signatureStr = keyStr + _signatureTime + urlStr;
             byte[] signatureBytes = Encoding.ASCII.GetBytes(signatureStr);
-            System.Security.Cryptography.MD5 md5gen = System.Security.Cryptography.MD5.Create();
+            MD5 md5gen = MD5.Create();
             byte[] md5Bytes = md5gen.ComputeHash(signatureBytes);
             return BytesToString(md5Bytes);
         }
 
-        void NextSignatureKey()
+        private void NextSignatureKey()
         {
             _signatureKey = (int)(((long)_signatureKey * 16807) % 2147483647);
         }
@@ -141,7 +172,8 @@ namespace UploadersLib.FileUploaders
         private static string BytesToString(byte[] b)
         {
             char[] res = new char[b.Length * 2];
-            for (int i = 0; i < b.Length; ++i) {
+            for (int i = 0; i < b.Length; ++i)
+            {
                 res[2 * i] = IntToChar(b[i] >> 4);
                 res[2 * i + 1] = IntToChar(b[i] & 0xf);
             }
