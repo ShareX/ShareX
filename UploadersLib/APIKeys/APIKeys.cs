@@ -52,6 +52,8 @@ namespace UploadersLib
         public static string SendSpaceKey = "";
         public static string Ge_ttKey = "";
         public static string JiraConsumerKey = "";
+        public static string MediaFireAppId = "";
+        public static string MediaFireApiKey = "";
 
         // Text Uploaders
         public static string PastebinKey = "";

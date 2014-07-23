@@ -380,6 +380,13 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
+            this.tpMediaFire = new System.Windows.Forms.TabPage();
+            this.txtMediaFirePassword = new System.Windows.Forms.TextBox();
+            this.txtMediaFireUsername = new System.Windows.Forms.TextBox();
+            this.lblMediaFirePassword = new System.Windows.Forms.Label();
+            this.lblMediaFireUsername = new System.Windows.Forms.Label();
+            this.lblMediaFirePath = new System.Windows.Forms.Label();
+            this.txtMediaFirePath = new System.Windows.Forms.TextBox();                        
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -435,6 +442,7 @@
             this.gbPhotobucketAlbums.SuspendLayout();
             this.gbPhotobucketUserAccount.SuspendLayout();
             this.tpPicasa.SuspendLayout();
+            this.tpMediaFire.SuspendLayout();
             this.tcUploaders.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1388,6 +1396,7 @@
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
+            this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcFileUploaders.Location = new System.Drawing.Point(3, 3);
             this.tcFileUploaders.Multiline = true;
@@ -3169,6 +3178,74 @@
             this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
             this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 448);
             this.ucLocalhostAccounts.TabIndex = 6;
+            //
+            // tpMediaFire
+            // 
+            this.tpMediaFire.Controls.Add(this.txtMediaFirePath);
+            this.tpMediaFire.Controls.Add(this.lblMediaFirePath);
+            this.tpMediaFire.Controls.Add(this.txtMediaFirePassword);
+            this.tpMediaFire.Controls.Add(this.txtMediaFireUsername);
+            this.tpMediaFire.Controls.Add(this.lblMediaFirePassword);
+            this.tpMediaFire.Controls.Add(this.lblMediaFireUsername);
+            this.tpMediaFire.Location = new System.Drawing.Point(4, 40);
+            this.tpMediaFire.Name = "tpMediaFire";
+            this.tpMediaFire.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMediaFire.Size = new System.Drawing.Size(972, 475);
+            this.tpMediaFire.TabIndex = 16;
+            this.tpMediaFire.Text = "MediaFire";
+            this.tpMediaFire.UseVisualStyleBackColor = true;
+            // 
+            // txtMediaFirePassword
+            // 
+            this.txtMediaFirePassword.Location = new System.Drawing.Point(80, 52);
+            this.txtMediaFirePassword.Name = "txtMediaFirePassword";
+            this.txtMediaFirePassword.PasswordChar = '*';
+            this.txtMediaFirePassword.Size = new System.Drawing.Size(136, 20);
+            this.txtMediaFirePassword.TabIndex = 3;
+            this.txtMediaFirePassword.TextChanged += new System.EventHandler(this.txtMediaFirePassword_TextChanged);
+            // 
+            // txtMediaFireUsername
+            // 
+            this.txtMediaFireUsername.Location = new System.Drawing.Point(80, 20);
+            this.txtMediaFireUsername.Name = "txtMediaFireUsername";
+            this.txtMediaFireUsername.Size = new System.Drawing.Size(136, 20);
+            this.txtMediaFireUsername.TabIndex = 2;
+            this.txtMediaFireUsername.TextChanged += new System.EventHandler(this.txtMediaFireUsername_TextChanged);
+            // 
+            // lblMediaFirePassword
+            // 
+            this.lblMediaFirePassword.AutoSize = true;
+            this.lblMediaFirePassword.Location = new System.Drawing.Point(16, 56);
+            this.lblMediaFirePassword.Name = "lblMediaFirePassword";
+            this.lblMediaFirePassword.Size = new System.Drawing.Size(56, 13);
+            this.lblMediaFirePassword.TabIndex = 1;
+            this.lblMediaFirePassword.Text = "Password:";
+            // 
+            // lblMediaFireUsername
+            // 
+            this.lblMediaFireUsername.AutoSize = true;
+            this.lblMediaFireUsername.Location = new System.Drawing.Point(16, 24);
+            this.lblMediaFireUsername.Name = "lblMediaFireUsername";
+            this.lblMediaFireUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblMediaFireUsername.TabIndex = 0;
+            this.lblMediaFireUsername.Text = "Username:";
+            //
+            // lblMediaFirePath
+            // 
+            this.lblMediaFirePath.AutoSize = true;
+            this.lblMediaFirePath.Location = new System.Drawing.Point(16, 88);
+            this.lblMediaFirePath.Name = "lblMediaFirePath";
+            this.lblMediaFirePath.Size = new System.Drawing.Size(68, 13);
+            this.lblMediaFirePath.TabIndex = 4;
+            this.lblMediaFirePath.Text = "Upload path:";
+            // 
+            // txtMediaFirePath
+            // 
+            this.txtMediaFirePath.Location = new System.Drawing.Point(88, 85);
+            this.txtMediaFirePath.Name = "txtMediaFirePath";
+            this.txtMediaFirePath.Size = new System.Drawing.Size(248, 20);
+            this.txtMediaFirePath.TabIndex = 5;
+            this.txtMediaFirePath.TextChanged += new System.EventHandler(this.txtMediaFirePath_TextChanged);                    
             // 
             // btnCopyShowFiles
             // 
@@ -4157,6 +4234,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
+            this.tpMediaFire.ResumeLayout(false);
+            this.tpMediaFire.PerformLayout();            
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -4543,5 +4622,12 @@
         private System.Windows.Forms.Label lblAdflyAPIKEY;
         private System.Windows.Forms.LinkLabel llAdflyLink;
         private System.Windows.Forms.CheckBox cbImgurDirectLink;
+        private System.Windows.Forms.TabPage tpMediaFire;
+        private System.Windows.Forms.TextBox txtMediaFirePassword;
+        private System.Windows.Forms.TextBox txtMediaFireUsername;
+        private System.Windows.Forms.Label lblMediaFirePassword;
+        private System.Windows.Forms.Label lblMediaFireUsername;
+        private System.Windows.Forms.TextBox txtMediaFirePath;
+        private System.Windows.Forms.Label lblMediaFirePath;        
     }
 }

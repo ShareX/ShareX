@@ -218,6 +218,12 @@ namespace UploadersLib
         public bool OwnCloudCreateShare = true;
         public bool OwnCloudDirectLink = false;
 
+        // MediaFire
+
+        public string MediaFireUsername = "";
+        public string MediaFirePassword = "";
+        public string MediaFirePath = "";
+
         #endregion File uploaders
 
         #region URL shorteners
@@ -375,6 +381,8 @@ namespace UploadersLib
                         PushbulletSettings.DeviceList.IsValidIndex(PushbulletSettings.SelectedDevice);
                 case FileDestination.OwnCloud:
                     return !string.IsNullOrEmpty(OwnCloudHost) && !string.IsNullOrEmpty(OwnCloudUsername) && !string.IsNullOrEmpty(OwnCloudPassword);
+                case FileDestination.MediaFire:
+                    return !string.IsNullOrEmpty(MediaFireUsername) && !string.IsNullOrEmpty(MediaFirePassword);
             }
 
             return true;

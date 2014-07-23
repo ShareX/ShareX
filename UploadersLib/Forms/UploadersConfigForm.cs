@@ -100,6 +100,7 @@ namespace UploadersLib
             uploadersImageList.Images.Add("Twitter", Resources.Twitter);
             uploadersImageList.Images.Add("ownCloud", Resources.OwnCloud);
             uploadersImageList.Images.Add("AdFly", Resources.AdFly);
+            uploadersImageList.Images.Add("MediaFire", Resources.MediaFire);
 
             tpImageShack.ImageKey = "ImageShack";
             tpTinyPic.ImageKey = "TinyPic";
@@ -134,6 +135,7 @@ namespace UploadersLib
             tpAmazonS3.ImageKey = "AmazonS3";
             tpOwnCloud.ImageKey = "ownCloud";
             tpAdFly.ImageKey = "AdFly";
+            tpMediaFire.ImageKey = "MediaFire";
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -142,6 +144,7 @@ namespace UploadersLib
             NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtCopyPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
+            NameParser.CreateCodesMenu(txtMediaFirePath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
             NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
 
             txtCustomUploaderLog.AddContextMenu();
@@ -487,6 +490,12 @@ namespace UploadersLib
             txtOwnCloudPath.Text = Config.OwnCloudPath;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
+
+            // MediaFire
+
+            txtMediaFireUsername.Text = Config.MediaFireUsername;
+            txtMediaFirePassword.Text = Config.MediaFirePassword;
+            txtMediaFirePath.Text = Config.MediaFirePath;
 
             #endregion File uploaders
 
@@ -1777,6 +1786,25 @@ namespace UploadersLib
         }
 
         #endregion Shared folder
+
+        #region MediaFire
+
+        private void txtMediaFireUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.MediaFireUsername = txtMediaFireUsername.Text;
+        }
+
+        private void txtMediaFirePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.MediaFirePassword = txtMediaFirePassword.Text;
+        }
+
+        private void txtMediaFirePath_TextChanged(object sender, EventArgs e)
+        {
+            Config.MediaFirePath = txtMediaFirePath.Text;
+        }
+
+        #endregion
 
         #endregion File Uploaders
 
