@@ -25,6 +25,7 @@
 
 // Credits: https://github.com/michalx2
 
+using HelpersLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -57,8 +58,11 @@ namespace UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            AllowReportProgress = false;
             GetSessionToken();
+            AllowReportProgress = true;
             string key = SimpleUpload(stream, fileName);
+            AllowReportProgress = false;
             string url = null;
             while ((url = PollUpload(key, fileName)) == null) Thread.Sleep(_pollInterval);
             return new UploadResult() { IsSuccess = true, URL = url };
@@ -118,7 +122,7 @@ namespace UploadersLib.FileUploaders
             if (resp.doupload.status == 99)
             {
                 if (resp.doupload.quickkey == null) throw new IOException("Invalid response");
-                return string.Format("http://www.mediafire.com/view/{0}/{1}", resp.doupload.quickkey, resp.doupload.filename);
+                return string.Format("http://www.mediafire.com/view/{0}/{1}", resp.doupload.quickkey, URLHelpers.URLEncode(resp.doupload.filename));
             }
             return null;
         }
