@@ -75,7 +75,7 @@ namespace HelpersLib
         }
 
         public DownloaderForm(UpdateChecker updateChecker)
-            : this(updateChecker.UpdateInfo)
+            : this(updateChecker.DownloadURL, updateChecker.Filename)
         {
             Proxy = updateChecker.Proxy;
 
@@ -83,11 +83,6 @@ namespace HelpersLib
             {
                 AcceptHeader = "application/octet-stream";
             }
-        }
-
-        public DownloaderForm(UpdateInfo updateInfo)
-            : this(updateInfo.DownloadURL, updateInfo.Filename)
-        {
         }
 
         public DownloaderForm(string url, string filename)

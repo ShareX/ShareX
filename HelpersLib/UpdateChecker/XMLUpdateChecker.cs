@@ -45,8 +45,6 @@ namespace HelpersLib
 
         public override void CheckUpdate()
         {
-            UpdateInfo = new UpdateInfo { CurrentVersion = this.CurrentVersion, ReleaseChannel = ReleaseType };
-
             try
             {
                 using (WebClient wc = new WebClient())
@@ -83,9 +81,9 @@ namespace HelpersLib
 
                             if (xe != null)
                             {
-                                UpdateInfo.LatestVersion = new Version(xe.Element("Version").Value);
-                                UpdateInfo.DownloadURL = xe.Element("URL").Value;
-                                UpdateInfo.RefreshStatus();
+                                LatestVersion = new Version(xe.Element("Version").Value);
+                                DownloadURL = xe.Element("URL").Value;
+                                RefreshStatus();
                                 return;
                             }
                         }
@@ -97,7 +95,7 @@ namespace HelpersLib
                 DebugHelper.WriteException(e, "XML update check failed");
             }
 
-            UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;
+            Status = UpdateStatus.UpdateCheckFailed;
         }
     }
 }

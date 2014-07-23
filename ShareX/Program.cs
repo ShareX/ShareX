@@ -213,6 +213,8 @@ namespace ShareX
 
         #endregion Paths
 
+        public const bool IsBeta = true;
+
         public static string Title
         {
             get
@@ -221,6 +223,7 @@ namespace ShareX
                 string title = string.Format("ShareX {0}.{1}", version.Major, version.Minor);
                 if (version.Build > 0) title += "." + version.Build;
                 if (IsPortable) title += " Portable";
+                if (IsBeta) title += " Beta";
                 return title;
             }
         }

@@ -70,7 +70,7 @@ namespace HelpersLib
                 pbLoading.Visible = false;
                 lblCheckingUpdates.Visible = false;
 
-                switch (updateChecker.UpdateInfo.Status)
+                switch (updateChecker.Status)
                 {
                     case UpdateStatus.UpdateCheckFailed:
                         lblStatus.Text = "Update check failed";
@@ -90,7 +90,7 @@ namespace HelpersLib
 
         private void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (updateChecker != null && updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable)
+            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
                 using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
                 {

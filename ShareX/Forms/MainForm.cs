@@ -533,8 +533,9 @@ namespace ShareX
         {
             UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
 
-            if (updateChecker.UpdateInfo != null && updateChecker.UpdateInfo.Status == UpdateStatus.UpdateAvailable &&
-                MessageBox.Show("A newer version of ShareX is available.\r\nWould you like to download and install it?", string.Format("{0} {1} is available", Application.ProductName, updateChecker.UpdateInfo.LatestVersion.ToString()),
+            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable &&
+                MessageBox.Show("A newer version of ShareX is available.\r\nWould you like to download and install it?",
+                string.Format("ShareX {0} is available", updateChecker.LatestVersion.ToString()),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))

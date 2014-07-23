@@ -54,8 +54,6 @@ namespace HelpersLib
 
         public override void CheckUpdate()
         {
-            UpdateInfo = new UpdateInfo { CurrentVersion = this.CurrentVersion };
-
             try
             {
                 List<GitHubRelease> releases = GetReleases();
@@ -67,7 +65,7 @@ namespace HelpersLib
                     if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name.Length > 1 &&
                         latestRelease.tag_name[0] == 'v')
                     {
-                        UpdateInfo.LatestVersion = new Version(latestRelease.tag_name.Substring(1));
+                        LatestVersion = new Version(latestRelease.tag_name.Substring(1));
 
                         if (latestRelease.assets != null && latestRelease.assets.Count > 0)
                         {
@@ -75,9 +73,9 @@ namespace HelpersLib
                             {
                                 if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(".exe", StringComparison.InvariantCultureIgnoreCase))
                                 {
-                                    UpdateInfo.Filename = asset.name;
-                                    UpdateInfo.DownloadURL = asset.url;
-                                    UpdateInfo.RefreshStatus();
+                                    Filename = asset.name;
+                                    DownloadURL = asset.url;
+                                    RefreshStatus();
                                     return;
                                 }
                             }
@@ -90,7 +88,7 @@ namespace HelpersLib
                 DebugHelper.WriteException(e, "GitHub update check failed");
             }
 
-            UpdateInfo.Status = UpdateStatus.UpdateCheckFailed;
+            Status = UpdateStatus.UpdateCheckFailed;
         }
 
         public string GetLatestDownloadURL()

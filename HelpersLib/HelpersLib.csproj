@@ -331,7 +331,6 @@
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateChecker\XMLUpdateChecker.cs" />
-    <Compile Include="UpdateChecker\UpdateInfo.cs" />
     <Compile Include="Links.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="WindowState.cs" />
