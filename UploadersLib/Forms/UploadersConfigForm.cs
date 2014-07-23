@@ -496,6 +496,7 @@ namespace UploadersLib
             txtMediaFireEmail.Text = Config.MediaFireUsername;
             txtMediaFirePassword.Text = Config.MediaFirePassword;
             txtMediaFirePath.Text = Config.MediaFirePath;
+            cbMediaFireUseLongLink.Checked = Config.MediaFireUseLongLink;
 
             #endregion File uploaders
 
@@ -1804,7 +1805,12 @@ namespace UploadersLib
             Config.MediaFirePath = txtMediaFirePath.Text;
         }
 
-        #endregion
+        private void cbMediaFireUseLongLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.MediaFireUseLongLink = cbMediaFireUseLongLink.Checked;
+        }
+
+        #endregion MediaFire
 
         #endregion File Uploaders
 

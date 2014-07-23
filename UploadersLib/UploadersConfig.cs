@@ -223,6 +223,7 @@ namespace UploadersLib
         public string MediaFireUsername = "";
         public string MediaFirePassword = "";
         public string MediaFirePath = "";
+        public bool MediaFireUseLongLink = false;
 
         #endregion File uploaders
 

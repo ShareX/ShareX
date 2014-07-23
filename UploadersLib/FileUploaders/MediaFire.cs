@@ -43,17 +43,19 @@ namespace UploadersLib.FileUploaders
     {
         private static readonly string _apiUrl = "https://www.mediafire.com/api/";
         private static readonly int _pollInterval = 1000;
-        private readonly string _appId, _apiKey, _user, _pasw, _path;
+        private readonly string _appId, _apiKey, _user, _pasw;
         private string _sessionToken, _signatureTime;
         private int _signatureKey;
 
-        public MediaFire(string appId, string apiKey, string user, string pasw, string path)
+        public string UploadPath { get; set; }
+        public bool UseLongLink { get; set; }
+
+        public MediaFire(string appId, string apiKey, string user, string pasw)
         {
             _appId = appId;
             _apiKey = apiKey;
             _user = user;
             _pasw = pasw;
-            _path = path;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -91,7 +93,7 @@ namespace UploadersLib.FileUploaders
         {
             var args = new Dictionary<string, string>();
             args.Add("session_token", _sessionToken);
-            args.Add("path", _path);
+            args.Add("path", UploadPath);
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/simple.php", args));
             string url = CreateQuery(_apiUrl + "upload/simple.php", args);
@@ -122,7 +124,10 @@ namespace UploadersLib.FileUploaders
             if (resp.doupload.status == 99)
             {
                 if (resp.doupload.quickkey == null) throw new IOException("Invalid response");
-                return string.Format("http://www.mediafire.com/view/{0}/{1}", resp.doupload.quickkey, URLHelpers.URLEncode(resp.doupload.filename));
+
+                string url = URLHelpers.CombineURL("http://www.mediafire.com/view", resp.doupload.quickkey);
+                if (UseLongLink) url = URLHelpers.CombineURL(url, URLHelpers.URLEncode(resp.doupload.filename));
+                return url;
             }
             return null;
         }

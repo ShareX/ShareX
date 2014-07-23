@@ -947,8 +947,11 @@ namespace ShareX
                     fileUploader = new MediaCrushUploader();
                     break;
                 case FileDestination.MediaFire:
-                    fileUploader = new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, Program.UploadersConfig.MediaFireUsername, Program.UploadersConfig.MediaFirePassword,
-                        NameParser.Parse(NameParserType.URL, Program.UploadersConfig.MediaFirePath));
+                    fileUploader = new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, Program.UploadersConfig.MediaFireUsername, Program.UploadersConfig.MediaFirePassword)
+                    {
+                        UploadPath = NameParser.Parse(NameParserType.URL, Program.UploadersConfig.MediaFirePath),
+                        UseLongLink = Program.UploadersConfig.MediaFireUseLongLink
+                    };
                     break;
             }
 
