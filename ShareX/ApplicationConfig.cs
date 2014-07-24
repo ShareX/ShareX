@@ -126,6 +126,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Automatically check updates at startup.")]
         public bool AutoCheckUpdate { get; set; }
 
+        [Category("Application"), DefaultValue(HotkeyType.RectangleRegion), Description("You can set which action to happen when you middle click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public HotkeyType TrayMiddleClickAction { get; set; }
+
         [Category("Application / Config"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 

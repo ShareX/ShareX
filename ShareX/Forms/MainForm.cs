@@ -178,7 +178,7 @@ namespace ShareX
             {
                 tsmi.Font = new Font(tsmi.Font, FontStyle.Bold);
             }
-            tsmi.Click += (sender, e) => HandleTask(hotkeySetting.TaskSettings);
+            tsmi.Click += (sender, e) => ExecuteJob(hotkeySetting.TaskSettings);
             return tsmi;
         }
 
@@ -999,21 +999,21 @@ namespace ShareX
 
         #region Tray events
 
-        private void niTray_MouseUp(object sender, MouseEventArgs e)
-        {
-            switch (e.Button)
-            {
-                case MouseButtons.Middle:
-                    CaptureScreenshot(CaptureType.Rectangle, null, false);
-                    break;
-            }
-        }
-
         private void niTray_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 this.ShowActivate();
+            }
+        }
+
+        private void niTray_MouseUp(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Middle:
+                    ExecuteJob(Program.Settings.TrayMiddleClickAction);
+                    break;
             }
         }
 
@@ -1277,23 +1277,27 @@ namespace ShareX
         {
             DebugHelper.WriteLine("Hotkey triggered: " + hotkeySetting);
 
-            if (hotkeySetting.TaskSettings.Job == HotkeyType.None) return;
-
-            HandleTask(hotkeySetting.TaskSettings);
+            if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
+            {
+                ExecuteJob(hotkeySetting.TaskSettings);
+            }
         }
 
         private void ExecuteJob(HotkeyType job)
         {
-            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-            taskSettings.Job = job;
-            HandleTask(taskSettings);
+            ExecuteJob(Program.DefaultTaskSettings, job);
         }
 
-        private void HandleTask(TaskSettings taskSettings)
+        private void ExecuteJob(TaskSettings taskSettings)
+        {
+            ExecuteJob(taskSettings, taskSettings.Job);
+        }
+
+        private void ExecuteJob(TaskSettings taskSettings, HotkeyType job)
         {
             TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
 
-            switch (safeTaskSettings.Job)
+            switch (job)
             {
                 case HotkeyType.FileUpload:
                     UploadManager.UploadFile(safeTaskSettings);

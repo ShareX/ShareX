@@ -40,6 +40,7 @@ namespace ShareX
     public class TaskSettings
     {
         private string description = string.Empty;
+
         public string Description
         {
             get
@@ -135,30 +136,27 @@ namespace ShareX
 
         public static TaskSettings GetDefaultTaskSettings()
         {
-            TaskSettings taskSettings = new TaskSettings();
-            taskSettings.SetDefaultSettings();
-            taskSettings.TaskSettingsReference = Program.DefaultTaskSettings;
-            return taskSettings;
+            return GetSafeTaskSettings(Program.DefaultTaskSettings);
         }
 
         public static TaskSettings GetSafeTaskSettings(TaskSettings taskSettings)
         {
-            TaskSettings taskSettingsCopy;
+            TaskSettings safeTaskSettings;
 
-            if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
+            if (taskSettings.IsUsingDefaultSettings)
             {
-                taskSettingsCopy = Program.DefaultTaskSettings.Copy();
-                taskSettingsCopy.Description = taskSettings.Description;
-                taskSettingsCopy.Job = taskSettings.Job;
+                safeTaskSettings = Program.DefaultTaskSettings.Copy();
+                safeTaskSettings.Description = taskSettings.Description;
+                safeTaskSettings.Job = taskSettings.Job;
             }
             else
             {
-                taskSettingsCopy = taskSettings.Copy();
-                taskSettingsCopy.SetDefaultSettings();
+                safeTaskSettings = taskSettings.Copy();
+                safeTaskSettings.SetDefaultSettings();
             }
 
-            taskSettingsCopy.TaskSettingsReference = taskSettings;
-            return taskSettingsCopy;
+            safeTaskSettings.TaskSettingsReference = taskSettings;
+            return safeTaskSettings;
         }
 
         private void SetDefaultSettings()
