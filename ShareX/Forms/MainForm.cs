@@ -562,17 +562,26 @@ namespace ShareX
             {
                 for (int i = 1; i < args.Length; i++)
                 {
-                    if (args[i].Equals("-clipboardupload", StringComparison.InvariantCultureIgnoreCase))
+                    string arg = args[i];
+
+                    if (arg != null && arg.Length > 1)
                     {
-                        UploadManager.ClipboardUpload();
-                    }
-                    else if (args[i].Equals("-autocapture", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        TaskHelpers.StartAutoCapture();
-                    }
-                    else if (args[i][0] != '-')
-                    {
-                        UploadManager.UploadFile(args[i]);
+                        if (arg[0] == '-')
+                        {
+                            string command = arg.Substring(1);
+
+                            foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
+                            {
+                                if (command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    ExecuteJob(job);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            UploadManager.UploadFile(arg);
+                        }
                     }
                 }
             }
@@ -1271,6 +1280,13 @@ namespace ShareX
             if (hotkeySetting.TaskSettings.Job == HotkeyType.None) return;
 
             HandleTask(hotkeySetting.TaskSettings);
+        }
+
+        private void ExecuteJob(HotkeyType job)
+        {
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            taskSettings.Job = job;
+            HandleTask(taskSettings);
         }
 
         private void HandleTask(TaskSettings taskSettings)
