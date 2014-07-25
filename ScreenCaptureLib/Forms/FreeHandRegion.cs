@@ -107,9 +107,6 @@ namespace ScreenCaptureLib
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
 
-                borderDotPen.DashOffset = (float)timer.Elapsed.TotalSeconds * 10;
-                borderDotPen2.DashOffset = 5 + (float)timer.Elapsed.TotalSeconds * 10;
-
                 using (Region region = new Region(regionFillPath))
                 {
                     g.Clip = region;
@@ -117,10 +114,10 @@ namespace ScreenCaptureLib
                     g.ResetClip();
                 }
 
+                g.DrawPath(borderPen, regionFillPath);
                 g.DrawPath(borderDotPen, regionFillPath);
-                g.DrawPath(borderDotPen2, regionFillPath);
+                g.DrawLine(borderPen, points[points.Count - 1], points[0]);
                 g.DrawLine(borderDotPen, points[points.Count - 1], points[0]);
-                g.DrawLine(borderDotPen2, points[points.Count - 1], points[0]);
                 g.DrawRectangleProper(borderPen, currentArea);
             }
 

@@ -151,8 +151,6 @@ namespace ScreenCaptureLib
 
         protected override void Draw(Graphics g)
         {
-            borderDotPen2.DashOffset = (float)timer.Elapsed.TotalSeconds * 10;
-
             List<Rectangle> areas = AreaManager.GetValidAreas;
 
             if (areas.Count > 0 || !AreaManager.CurrentHoverArea.IsEmpty)
@@ -189,15 +187,15 @@ namespace ScreenCaptureLib
                     {
                         AddShapePath(hoverDrawPath, AreaManager.CurrentHoverArea.SizeOffset(-1));
 
+                        g.DrawPath(borderPen, hoverDrawPath);
                         g.DrawPath(borderDotPen, hoverDrawPath);
-                        g.DrawPath(borderDotPen2, hoverDrawPath);
                     }
                 }
 
                 if (AreaManager.IsCurrentAreaValid)
                 {
+                    g.DrawRectangleProper(borderPen, AreaManager.CurrentArea);
                     g.DrawRectangleProper(borderDotPen, AreaManager.CurrentArea);
-                    g.DrawRectangleProper(borderDotPen2, AreaManager.CurrentArea);
                     DrawObjects(g);
 
                     if (RulerMode)
@@ -256,7 +254,7 @@ namespace ScreenCaptureLib
 
         private void DrawCrosshair(Graphics g)
         {
-            int offset = 10;
+            int offset = 5;
             Point mousePos = InputManager.MousePosition0Based;
             Point left = new Point(mousePos.X - offset, mousePos.Y), left2 = new Point(0, mousePos.Y);
             Point right = new Point(mousePos.X + offset, mousePos.Y), right2 = new Point(ScreenRectangle0Based.Width - 1, mousePos.Y);
@@ -265,26 +263,26 @@ namespace ScreenCaptureLib
 
             if (left.X - left2.X > 10)
             {
+                g.DrawLine(borderPen, left, left2);
                 g.DrawLine(borderDotPen, left, left2);
-                g.DrawLine(borderDotPen2, left, left2);
             }
 
             if (right2.X - right.X > 10)
             {
+                g.DrawLine(borderPen, right, right2);
                 g.DrawLine(borderDotPen, right, right2);
-                g.DrawLine(borderDotPen2, right, right2);
             }
 
             if (top.Y - top2.Y > 10)
             {
+                g.DrawLine(borderPen, top, top2);
                 g.DrawLine(borderDotPen, top, top2);
-                g.DrawLine(borderDotPen2, top, top2);
             }
 
             if (bottom2.Y - bottom.Y > 10)
             {
+                g.DrawLine(borderPen, bottom, bottom2);
                 g.DrawLine(borderDotPen, bottom, bottom2);
-                g.DrawLine(borderDotPen2, bottom, bottom2);
             }
         }
 

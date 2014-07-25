@@ -50,7 +50,7 @@ namespace ScreenCaptureLib
 
         protected TextureBrush darkBackgroundBrush, lightBackgroundBrush;
         protected GraphicsPath regionFillPath, regionDrawPath;
-        protected Pen borderPen, borderDotPen, borderDotPen2;
+        protected Pen borderPen, borderDotPen;
         protected Brush nodeBackgroundBrush;
         protected Font textFont;
         protected Stopwatch timer;
@@ -81,9 +81,8 @@ namespace ScreenCaptureLib
             timer = new Stopwatch();
 
             borderPen = new Pen(Color.Black);
-            borderDotPen = new Pen(Color.Black, 1);
-            borderDotPen2 = new Pen(Color.White, 1);
-            borderDotPen2.DashPattern = new float[] { 5, 5 };
+            borderDotPen = new Pen(Color.White);
+            borderDotPen.DashPattern = new float[] { 5, 5 };
             nodeBackgroundBrush = new SolidBrush(Color.White);
             textFont = new Font("Arial", 17, FontStyle.Bold);
         }
@@ -114,7 +113,7 @@ namespace ScreenCaptureLib
                 SurfaceImage = Screenshot.CaptureFullscreen();
             }
 
-            using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.8f).Apply(SurfaceImage))
+            using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))
             {
                 darkBackgroundBrush = new TextureBrush(darkSurfaceImage);
             }
@@ -171,6 +170,8 @@ namespace ScreenCaptureLib
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.HighSpeed;
             g.FillRectangle(darkBackgroundBrush, ScreenRectangle0Based);
+
+            borderDotPen.DashOffset = (float)timer.Elapsed.TotalSeconds * 10;
 
             Draw(g);
 
@@ -343,7 +344,6 @@ namespace ScreenCaptureLib
             if (lightBackgroundBrush != null) lightBackgroundBrush.Dispose();
             if (borderPen != null) borderPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
-            if (borderDotPen2 != null) borderDotPen2.Dispose();
             if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
             if (textFont != null) textFont.Dispose();
 
