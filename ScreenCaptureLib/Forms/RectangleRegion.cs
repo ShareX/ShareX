@@ -108,18 +108,18 @@ namespace ScreenCaptureLib
                 }
                 else
                 {
-                    if (Config.MagnifierPixelCount < 35) Config.MagnifierPixelCount += 2;
+                    if (Config.MagnifierPixelCount < 41) Config.MagnifierPixelCount += 2;
                 }
             }
             else if (e.Delta < 0)
             {
                 if (ModifierKeys.HasFlag(Keys.Control))
                 {
-                    if (Config.MagnifierPixelSize > 1) Config.MagnifierPixelSize--;
+                    if (Config.MagnifierPixelSize > 2) Config.MagnifierPixelSize--;
                 }
                 else
                 {
-                    if (Config.MagnifierPixelCount > 1) Config.MagnifierPixelCount -= 2;
+                    if (Config.MagnifierPixelCount > 2) Config.MagnifierPixelCount -= 2;
                 }
             }
         }
@@ -314,7 +314,14 @@ namespace ScreenCaptureLib
                     y = mousePos.Y - offsetY - magnifier.Height;
                 }
 
-                g.DrawImage(magnifier, x, y, magnifier.Width, magnifier.Height);
+                g.SetHighQuality();
+
+                using (TextureBrush brush = new TextureBrush(magnifier))
+                {
+                    brush.TranslateTransform(x, y);
+                    g.FillEllipse(brush, x, y, magnifier.Width, magnifier.Height);
+                    g.DrawEllipse(Pens.Black, x, y, magnifier.Width, magnifier.Height);
+                }
             }
         }
 
@@ -324,7 +331,7 @@ namespace ScreenCaptureLib
             verticalPixelCount = (verticalPixelCount | 1).Between(1, 101);
             pixelSize = pixelSize.Between(1, 1000);
 
-            if (horizontalPixelCount * pixelSize > 1000 || verticalPixelCount * pixelSize > 1000)
+            if (horizontalPixelCount * pixelSize > ScreenRectangle0Based.Width || verticalPixelCount * pixelSize > ScreenRectangle0Based.Height)
             {
                 horizontalPixelCount = verticalPixelCount = 15;
                 pixelSize = 10;
@@ -332,19 +339,19 @@ namespace ScreenCaptureLib
 
             int width = horizontalPixelCount * pixelSize;
             int height = verticalPixelCount * pixelSize;
-            Bitmap bmp = new Bitmap(width + 1, height + 1);
+            Bitmap bmp = new Bitmap(width - 1, height - 1);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.PixelOffsetMode = PixelOffsetMode.Half;
 
-                g.DrawImage(img, new Rectangle(Point.Empty, new Size(width, height)),
-                    new Rectangle(position.X - horizontalPixelCount / 2, position.Y - verticalPixelCount / 2, horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
+                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - horizontalPixelCount / 2, position.Y - verticalPixelCount / 2,
+                    horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
 
                 g.PixelOffsetMode = PixelOffsetMode.None;
 
-                using (SolidBrush crosshairBrush = new SolidBrush(Color.FromArgb(100, Color.Red)))
+                using (SolidBrush crosshairBrush = new SolidBrush(Color.FromArgb(125, Color.LightBlue)))
                 {
                     g.FillRectangle(crosshairBrush, new Rectangle(0, (height - pixelSize) / 2, (width - pixelSize) / 2, pixelSize)); // Left
                     g.FillRectangle(crosshairBrush, new Rectangle((width + pixelSize) / 2, (height - pixelSize) / 2, (width - pixelSize) / 2, pixelSize)); // Right
@@ -356,17 +363,17 @@ namespace ScreenCaptureLib
                 {
                     for (int x = 1; x < horizontalPixelCount; x++)
                     {
-                        g.DrawLine(pen, new Point(x * pixelSize, 0), new Point(x * pixelSize, height));
+                        g.DrawLine(pen, new Point(x * pixelSize - 1, 0), new Point(x * pixelSize - 1, height - 1));
                     }
 
                     for (int y = 1; y < verticalPixelCount; y++)
                     {
-                        g.DrawLine(pen, new Point(0, y * pixelSize), new Point(width, y * pixelSize));
+                        g.DrawLine(pen, new Point(0, y * pixelSize - 1), new Point(width - 1, y * pixelSize - 1));
                     }
                 }
 
-                g.DrawRectangle(Pens.Black, 0, 0, width, height);
-                g.DrawRectangle(Pens.Black, (width - pixelSize) / 2, (height - pixelSize) / 2, pixelSize, pixelSize);
+                g.DrawRectangle(Pens.Black, (width - pixelSize) / 2 - 1, (height - pixelSize) / 2 - 1, pixelSize, pixelSize);
+                g.DrawRectangle(Pens.White, (width - pixelSize) / 2, (height - pixelSize) / 2, pixelSize - 2, pixelSize - 2);
             }
 
             return bmp;
