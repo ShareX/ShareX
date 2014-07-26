@@ -388,19 +388,12 @@ namespace ScreenCaptureLib
             Size textSize = g.MeasureString(tipText, tipFont).ToSize();
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;
-            Rectangle primaryScreenBounds = Screen.PrimaryScreen.Bounds;
-            foreach(Screen screen in Screen.AllScreens)
-            {
-                if(screen.Bounds.Left < 0)
-                {
-                    primaryScreenBounds.X -= screen.Bounds.Left;
-                }
-            }
+            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
             Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), offset, rectWidth, rectHeight);
 
             if (textRectangle.RectangleOffset(10).Contains(CurrentMousePosition0Based))
             {
-                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset - offset;
+                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
             }
 
             using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.White)))

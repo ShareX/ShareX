@@ -84,9 +84,24 @@ namespace HelpersLib
             return Screen.FromPoint(GetCursorPosition()).Bounds;
         }
 
+        public static Rectangle GetPrimaryScreenBounds()
+        {
+            return Screen.PrimaryScreen.Bounds;
+        }
+
         public static Rectangle GetScreenBounds0Based()
         {
             return ScreenToClient(GetScreenBounds());
+        }
+
+        public static Rectangle GetActiveScreenBounds0Based()
+        {
+            return ScreenToClient(GetActiveScreenBounds());
+        }
+
+        public static Rectangle GetPrimaryScreenBounds0Based()
+        {
+            return ScreenToClient(GetPrimaryScreenBounds());
         }
 
         public static Point ScreenToClient(Point p)
