@@ -89,6 +89,7 @@
             this.tsmiTestTextUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
             this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
@@ -215,7 +216,7 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -789,6 +790,14 @@
             this.tsmiTestURLShortener.Text = "Test URL shortener";
             this.tsmiTestURLShortener.Click += new System.EventHandler(this.tsmiTestURLShortener_Click);
             // 
+            // tsmiTestURLSharing
+            // 
+            this.tsmiTestURLSharing.Image = global::ShareX.Properties.Resources.globe_share;
+            this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
+            this.tsmiTestURLSharing.Size = new System.Drawing.Size(173, 22);
+            this.tsmiTestURLSharing.Text = "Test URL sharing";
+            this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            // 
             // tsmiTestUploaders
             // 
             this.tsmiTestUploaders.Image = global::ShareX.Properties.Resources.application_browser;
@@ -950,6 +959,7 @@
             this.tsmiOpen,
             this.tsmiCopy,
             this.tsmiUploadSelectedFile,
+            this.tsmiDeleteSelectedFile,
             this.tsmiEditSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
@@ -960,7 +970,7 @@
             this.tsmiHideMenu,
             this.tsmiImagePreview});
             this.cmsTaskInfo.Name = "cmsHistory";
-            this.cmsTaskInfo.Size = new System.Drawing.Size(154, 296);
+            this.cmsTaskInfo.Size = new System.Drawing.Size(154, 340);
             // 
             // tsmiShowErrors
             // 
@@ -1862,13 +1872,12 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiTestURLSharing
+            // tsmiDeleteSelectedFile
             // 
-            this.tsmiTestURLSharing.Image = global::ShareX.Properties.Resources.globe_share;
-            this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
-            this.tsmiTestURLSharing.Size = new System.Drawing.Size(173, 22);
-            this.tsmiTestURLSharing.Text = "Test URL sharing";
-            this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            this.tsmiDeleteSelectedFile.Name = "tsmiDeleteSelectedFile";
+            this.tsmiDeleteSelectedFile.Size = new System.Drawing.Size(153, 22);
+            this.tsmiDeleteSelectedFile.Text = "Delete file";
+            this.tsmiDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFile_Click);
             // 
             // MainForm
             // 
@@ -2090,5 +2099,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleAnnotate;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestURLSharing;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedFile;
     }
 }

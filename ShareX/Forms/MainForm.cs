@@ -297,7 +297,7 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiUploadSelectedFile.Visible =
-                 tsmiEditSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+                 tsmiEditSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = tsmiDeleteSelectedFile.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -379,6 +379,7 @@ namespace ShareX
                     }
 
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
+                    tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
@@ -1192,6 +1193,16 @@ namespace ShareX
             uim.Upload();
         }
 
+        private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you really want to delete this file?", "Are you sure?", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                uim.Delete();
+                RemoveSelectedItems();
+            }
+        }
+
         private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
         {
             uim.EditImage();
@@ -1978,6 +1989,7 @@ namespace ShareX
         }
 
         #endregion Tray events
+
 
         #endregion Hotkey/Capture codes and form events
     }
