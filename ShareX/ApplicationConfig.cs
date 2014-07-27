@@ -63,6 +63,8 @@ namespace ShareX
         public bool SilentRun = false;
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
+        public bool RememberMainFormPosition = false;
+        public Point MainFormPosition = Point.Empty;
         public bool RememberMainFormSize = false;
         public Size MainFormSize = Size.Empty;
 

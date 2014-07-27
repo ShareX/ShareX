@@ -60,6 +60,7 @@ namespace ShareX
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
+            cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
             // Paths
@@ -241,6 +242,11 @@ namespace ShareX
             {
                 TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
             }
+        }
+
+        private void cbRememberMainFormPosition_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.RememberMainFormPosition = cbRememberMainFormPosition.Checked;
         }
 
         private void cbRememberMainFormSize_CheckedChanged(object sender, EventArgs e)

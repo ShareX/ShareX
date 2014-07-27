@@ -80,7 +80,7 @@ namespace ShareX
         PerformActions = 1 << 10,
         [Description("Upload image to host")]
         UploadImageToHost = 1 << 11,
-        [Description("Delete file")]
+        [Description("Delete file locally")]
         DeleteFile = 1 << 12
     }
 

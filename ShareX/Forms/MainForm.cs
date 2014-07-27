@@ -433,12 +433,26 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             niTray.Visible = Program.Settings.ShowTray;
 
-            if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
+            bool isPositionChanged = false;
+
+            if (Program.Settings.RememberMainFormPosition && !Program.Settings.MainFormPosition.IsEmpty &&
+                CaptureHelpers.GetScreenBounds().Contains(Program.Settings.MainFormPosition))
             {
                 StartPosition = FormStartPosition.Manual;
+                Location = Program.Settings.MainFormPosition;
+                isPositionChanged = true;
+            }
+
+            if (Program.Settings.RememberMainFormSize && !Program.Settings.MainFormSize.IsEmpty)
+            {
                 Size = Program.Settings.MainFormSize;
-                Screen currentScreen = Screen.FromPoint(Cursor.Position);
-                Location = new Point(currentScreen.Bounds.Width / 2 - Size.Width / 2, currentScreen.Bounds.Height / 2 - Size.Height / 2);
+
+                if (!isPositionChanged)
+                {
+                    StartPosition = FormStartPosition.Manual;
+                    Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+                    Location = new Point(activeScreen.Width / 2 - Size.Width / 2, activeScreen.Height / 2 - Size.Height / 2);
+                }
             }
 
             switch (Program.Settings.ImagePreview)
@@ -657,10 +671,23 @@ namespace ShareX
         private void MainForm_Resize(object sender, EventArgs e)
         {
             Refresh();
+        }
 
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (IsReady && WindowState == FormWindowState.Normal)
+            {
+                Program.Settings.MainFormPosition = Location;
+                Console.WriteLine(Program.Settings.MainFormPosition);
+            }
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
             if (IsReady && WindowState == FormWindowState.Normal)
             {
                 Program.Settings.MainFormSize = Size;
+                Console.WriteLine(Program.Settings.MainFormSize);
             }
         }
 

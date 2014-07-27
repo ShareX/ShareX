@@ -31,6 +31,7 @@ namespace ShareX
         {
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
             this.cbSilentRun = new System.Windows.Forms.CheckBox();
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.cbTaskbarProgressEnabled = new System.Windows.Forms.CheckBox();
@@ -156,6 +157,7 @@ namespace ShareX
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.cbRememberMainFormPosition);
             this.tpGeneral.Controls.Add(this.cbSilentRun);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormSize);
             this.tpGeneral.Controls.Add(this.cbTaskbarProgressEnabled);
@@ -172,6 +174,17 @@ namespace ShareX
             this.tpGeneral.Text = "General";
             this.tpGeneral.UseVisualStyleBackColor = true;
             // 
+            // cbRememberMainFormPosition
+            // 
+            this.cbRememberMainFormPosition.AutoSize = true;
+            this.cbRememberMainFormPosition.Location = new System.Drawing.Point(16, 184);
+            this.cbRememberMainFormPosition.Name = "cbRememberMainFormPosition";
+            this.cbRememberMainFormPosition.Size = new System.Drawing.Size(180, 17);
+            this.cbRememberMainFormPosition.TabIndex = 9;
+            this.cbRememberMainFormPosition.Text = "Remember main window position";
+            this.cbRememberMainFormPosition.UseVisualStyleBackColor = true;
+            this.cbRememberMainFormPosition.CheckedChanged += new System.EventHandler(this.cbRememberMainFormPosition_CheckedChanged);
+            // 
             // cbSilentRun
             // 
             this.cbSilentRun.AutoSize = true;
@@ -186,7 +199,7 @@ namespace ShareX
             // cbRememberMainFormSize
             // 
             this.cbRememberMainFormSize.AutoSize = true;
-            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 184);
+            this.cbRememberMainFormSize.Location = new System.Drawing.Point(16, 208);
             this.cbRememberMainFormSize.Name = "cbRememberMainFormSize";
             this.cbRememberMainFormSize.Size = new System.Drawing.Size(162, 17);
             this.cbRememberMainFormSize.TabIndex = 8;
@@ -1181,5 +1194,6 @@ namespace ShareX
         private System.Windows.Forms.ColumnHeader chEncoderOutputExtension;
         private System.Windows.Forms.Button btnEncoderDuplicate;
         private System.Windows.Forms.CheckBox cbPrintDontShowWindowsDialog;
+        private System.Windows.Forms.CheckBox cbRememberMainFormPosition;
     }
 }
