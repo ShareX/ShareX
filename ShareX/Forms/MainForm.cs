@@ -297,7 +297,7 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiShowQRCode.Visible = tsmiUploadSelectedFile.Visible =
-                 tsmiEditSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+                 tsmiEditSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = tsmiDeleteSelectedFile.Visible = false;
             pbPreview.Reset();
             uim.RefreshSelectedItems();
 
@@ -1195,8 +1195,12 @@ namespace ShareX
 
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
-            uim.Delete();
-            RemoveSelectedItems();
+            DialogResult result = MessageBox.Show("Do you really want to delete this file?", "Are you sure?", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                uim.Delete();
+                RemoveSelectedItems();
+            }
         }
 
         private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
