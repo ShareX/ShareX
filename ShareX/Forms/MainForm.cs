@@ -1196,7 +1196,7 @@ namespace ShareX
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
             uim.Delete();
-            lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as UploadTask).Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+            RemoveSelectedItems();
         }
 
         private void tsmiEditSelectedFile_Click(object sender, EventArgs e)
