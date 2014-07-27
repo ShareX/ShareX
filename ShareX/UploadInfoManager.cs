@@ -277,14 +277,19 @@ namespace ShareX
             }
         }
 
-        public void Delete()
-        {
-            if (IsItemSelected && SelectedItem.IsFileExist) File.Delete(SelectedItem.Info.FilePath);
-        }
-
         public void Upload()
         {
             if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
+        }
+
+        public void EditImage()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEditor(SelectedItem.Info.FilePath);
+        }
+
+        public void DeleteFile()
+        {
+            if (IsItemSelected && SelectedItem.IsFileExist) File.Delete(SelectedItem.Info.FilePath);
         }
 
         public void ShortenURL(UrlShortenerType urlShortener)
@@ -312,11 +317,6 @@ namespace ShareX
                     form.ShowDialog();
                 }
             }
-        }
-
-        public void EditImage()
-        {
-            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEditor(SelectedItem.Info.FilePath);
         }
 
         #endregion Other

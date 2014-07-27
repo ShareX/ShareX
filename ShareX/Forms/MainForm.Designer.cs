@@ -143,6 +143,7 @@
             this.tsmiCopyFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCopy5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,7 +217,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -959,8 +959,8 @@
             this.tsmiOpen,
             this.tsmiCopy,
             this.tsmiUploadSelectedFile,
-            this.tsmiDeleteSelectedFile,
             this.tsmiEditSelectedFile,
+            this.tsmiDeleteSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
             this.tsmiShowQRCode,
@@ -1257,6 +1257,14 @@
             this.tsmiUploadSelectedFile.Text = "Upload";
             this.tsmiUploadSelectedFile.Click += new System.EventHandler(this.tsmiUploadSelectedFile_Click);
             // 
+            // tsmiDeleteSelectedFile
+            // 
+            this.tsmiDeleteSelectedFile.Image = global::ShareX.Properties.Resources.bin;
+            this.tsmiDeleteSelectedFile.Name = "tsmiDeleteSelectedFile";
+            this.tsmiDeleteSelectedFile.Size = new System.Drawing.Size(153, 22);
+            this.tsmiDeleteSelectedFile.Text = "Delete file";
+            this.tsmiDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFile_Click);
+            // 
             // tsmiEditSelectedFile
             // 
             this.tsmiEditSelectedFile.Image = global::ShareX.Properties.Resources.image_pencil;
@@ -1332,21 +1340,21 @@
             this.tsmiImagePreviewShow.Checked = true;
             this.tsmiImagePreviewShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiImagePreviewShow.Name = "tsmiImagePreviewShow";
-            this.tsmiImagePreviewShow.Size = new System.Drawing.Size(130, 22);
+            this.tsmiImagePreviewShow.Size = new System.Drawing.Size(152, 22);
             this.tsmiImagePreviewShow.Text = "Show";
             this.tsmiImagePreviewShow.Click += new System.EventHandler(this.tsmiImagePreviewShow_Click);
             // 
             // tsmiImagePreviewHide
             // 
             this.tsmiImagePreviewHide.Name = "tsmiImagePreviewHide";
-            this.tsmiImagePreviewHide.Size = new System.Drawing.Size(130, 22);
+            this.tsmiImagePreviewHide.Size = new System.Drawing.Size(152, 22);
             this.tsmiImagePreviewHide.Text = "Hide";
             this.tsmiImagePreviewHide.Click += new System.EventHandler(this.tsmiImagePreviewHide_Click);
             // 
             // tsmiImagePreviewAutomatic
             // 
             this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
-            this.tsmiImagePreviewAutomatic.Size = new System.Drawing.Size(130, 22);
+            this.tsmiImagePreviewAutomatic.Size = new System.Drawing.Size(152, 22);
             this.tsmiImagePreviewAutomatic.Text = "Automatic";
             this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
             // 
@@ -1871,13 +1879,6 @@
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
-            // 
-            // tsmiDeleteSelectedFile
-            // 
-            this.tsmiDeleteSelectedFile.Name = "tsmiDeleteSelectedFile";
-            this.tsmiDeleteSelectedFile.Size = new System.Drawing.Size(153, 22);
-            this.tsmiDeleteSelectedFile.Text = "Delete file";
-            this.tsmiDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFile_Click);
             // 
             // MainForm
             // 

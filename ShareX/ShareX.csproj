@@ -482,6 +482,7 @@
     <None Include="Resources\eraser.png" />
     <None Include="Resources\layout-select-sidebar.png" />
     <None Include="Resources\layout-select-content.png" />
+    <None Include="Resources\bin.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
