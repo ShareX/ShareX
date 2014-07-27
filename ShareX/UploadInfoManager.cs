@@ -277,6 +277,11 @@ namespace ShareX
             }
         }
 
+        public void Delete()
+        {
+            if (IsItemSelected && SelectedItem.IsFileExist) File.Delete(SelectedItem.Info.FilePath);
+        }
+
         public void Upload()
         {
             if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
