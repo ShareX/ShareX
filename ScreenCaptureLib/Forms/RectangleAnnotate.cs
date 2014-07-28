@@ -344,7 +344,9 @@ namespace ScreenCaptureLib
                 }
             }
 
+            g.CompositingMode = CompositingMode.SourceCopy;
             g.DrawImage(backgroundImage, ScreenRectangle0Based);
+            g.CompositingMode = CompositingMode.SourceOver;
 
             if (isDrawingMode)
             {
@@ -389,7 +391,7 @@ namespace ScreenCaptureLib
             int rectWidth = textSize.Width + padding * 2;
             int rectHeight = textSize.Height + padding * 2;
             Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), offset, rectWidth, rectHeight);
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + (primaryScreenBounds.Width / 2) - (rectWidth / 2), primaryScreenBounds.Y + offset, rectWidth, rectHeight);
 
             if (textRectangle.RectangleOffset(10).Contains(CurrentMousePosition0Based))
             {

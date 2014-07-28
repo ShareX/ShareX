@@ -115,12 +115,12 @@ namespace ScreenCaptureLib
 
             using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))
             {
-                darkBackgroundBrush = new TextureBrush(darkSurfaceImage);
+                darkBackgroundBrush = new TextureBrush(darkSurfaceImage) { WrapMode = WrapMode.Clamp };
             }
 
             using (Image lightSurfaceImage = ColorMatrixManager.Contrast(1.1f).Apply(SurfaceImage))
             {
-                lightBackgroundBrush = new TextureBrush(lightSurfaceImage);
+                lightBackgroundBrush = new TextureBrush(lightSurfaceImage) { WrapMode = WrapMode.Clamp };
             }
         }
 
@@ -163,15 +163,12 @@ namespace ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (!timer.IsRunning) timer.Start();
-
             Update();
 
             Graphics g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.HighSpeed;
+            g.CompositingMode = CompositingMode.SourceCopy;
             g.FillRectangle(darkBackgroundBrush, ScreenRectangle0Based);
-
-            borderDotPen.DashOffset = (float)timer.Elapsed.TotalSeconds * 10;
+            g.CompositingMode = CompositingMode.SourceOver;
 
             Draw(g);
 
@@ -197,6 +194,8 @@ namespace ScreenCaptureLib
 
         protected new virtual void Update()
         {
+            if (!timer.IsRunning) timer.Start();
+
             InputManager.Update();
 
             DrawableObject[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
@@ -239,6 +238,8 @@ namespace ScreenCaptureLib
                     }
                 }
             }
+
+            borderDotPen.DashOffset = (float)timer.Elapsed.TotalSeconds * 10;
         }
 
         protected virtual void Draw(Graphics g)
@@ -278,17 +279,15 @@ namespace ScreenCaptureLib
 
             int offset = 30;
 
-            Rectangle primaryScreen = Screen.PrimaryScreen.Bounds;
+            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + offset, primaryScreenBounds.Y + offset, (int)textSize.Width, (int)textSize.Height);
 
-            Point position = CaptureHelpers.ScreenToClient(new Point(primaryScreen.X + offset, primaryScreen.Y + offset));
-            Rectangle rect = new Rectangle(position, new Size((int)textSize.Width, (int)textSize.Height));
-
-            if (rect.Contains(InputManager.MousePosition0Based))
+            if (textRectangle.RectangleOffset(10).Contains(InputManager.MousePosition0Based))
             {
-                position = CaptureHelpers.ScreenToClient(new Point(primaryScreen.X + offset, primaryScreen.Y + primaryScreen.Height - (int)textSize.Height - offset));
+                textRectangle.Y = primaryScreenBounds.Height - textRectangle.Height - offset;
             }
 
-            ImageHelpers.DrawTextWithOutline(g, text, position, textFont, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithOutline(g, text, textRectangle.Location, textFont, Color.White, Color.Black);
         }
 
         protected Rectangle CalculateAreaFromNodes()

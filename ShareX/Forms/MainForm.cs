@@ -678,7 +678,6 @@ namespace ShareX
             if (IsReady && WindowState == FormWindowState.Normal)
             {
                 Program.Settings.MainFormPosition = Location;
-                Console.WriteLine(Program.Settings.MainFormPosition);
             }
         }
 
@@ -687,7 +686,6 @@ namespace ShareX
             if (IsReady && WindowState == FormWindowState.Normal)
             {
                 Program.Settings.MainFormSize = Size;
-                Console.WriteLine(Program.Settings.MainFormSize);
             }
         }
 

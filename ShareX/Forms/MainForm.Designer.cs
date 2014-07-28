@@ -416,7 +416,7 @@
             this.tsmiHideMenu,
             this.tsmiImagePreview});
             this.cmsTaskInfo.Name = "cmsHistory";
-            this.cmsTaskInfo.Size = new System.Drawing.Size(164, 318);
+            this.cmsTaskInfo.Size = new System.Drawing.Size(173, 340);
             // 
             // tssUploadInfo1
             // 
@@ -1321,16 +1321,16 @@
             // 
             this.tsmiEditSelectedFile.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiEditSelectedFile.Name = "tsmiEditSelectedFile";
-            this.tsmiEditSelectedFile.Size = new System.Drawing.Size(163, 22);
-            this.tsmiEditSelectedFile.Text = "Edit image";
+            this.tsmiEditSelectedFile.Size = new System.Drawing.Size(172, 22);
+            this.tsmiEditSelectedFile.Text = "Edit image...";
             this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
             // tsmiDeleteSelectedFile
             // 
             this.tsmiDeleteSelectedFile.Image = global::ShareX.Properties.Resources.bin;
             this.tsmiDeleteSelectedFile.Name = "tsmiDeleteSelectedFile";
-            this.tsmiDeleteSelectedFile.Size = new System.Drawing.Size(163, 22);
-            this.tsmiDeleteSelectedFile.Text = "Delete file locally";
+            this.tsmiDeleteSelectedFile.Size = new System.Drawing.Size(172, 22);
+            this.tsmiDeleteSelectedFile.Text = "Delete file locally...";
             this.tsmiDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFile_Click);
             // 
             // tsmiShortenSelectedURL
@@ -1351,16 +1351,16 @@
             // 
             this.tsmiShowQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
             this.tsmiShowQRCode.Name = "tsmiShowQRCode";
-            this.tsmiShowQRCode.Size = new System.Drawing.Size(163, 22);
-            this.tsmiShowQRCode.Text = "Show QR code";
+            this.tsmiShowQRCode.Size = new System.Drawing.Size(172, 22);
+            this.tsmiShowQRCode.Text = "Show QR code...";
             this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
             // 
             // tsmiShowResponse
             // 
             this.tsmiShowResponse.Image = global::ShareX.Properties.Resources.application_browser;
             this.tsmiShowResponse.Name = "tsmiShowResponse";
-            this.tsmiShowResponse.Size = new System.Drawing.Size(163, 22);
-            this.tsmiShowResponse.Text = "Show response";
+            this.tsmiShowResponse.Size = new System.Drawing.Size(172, 22);
+            this.tsmiShowResponse.Text = "Show response...";
             this.tsmiShowResponse.Click += new System.EventHandler(this.tsmiShowResponse_Click);
             // 
             // tsmiClearList

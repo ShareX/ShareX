@@ -219,22 +219,13 @@ namespace ScreenCaptureLib
             Graphics g = e.Graphics;
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.SmoothingMode = SmoothingMode.HighSpeed;
+            g.CompositingMode = CompositingMode.SourceCopy;
             g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
 
             if (isMouseDown)
             {
-                if (ShowRectangleInfo)
-                {
-                    int offset = 10;
-                    Point position = new Point(CurrentMousePosition0Based.X + offset, CurrentMousePosition0Based.Y + offset);
-
-                    using (Font font = new Font("Arial", 17, FontStyle.Bold))
-                    {
-                        ImageHelpers.DrawTextWithOutline(g, string.Format("X:{0} Y:{1}\r\n{2} x {3}", SelectionRectangle.X, SelectionRectangle.Y,
-                            SelectionRectangle.Width, SelectionRectangle.Height), position, font, Color.White, Color.Black);
-                    }
-                }
-
+                g.CompositingMode = CompositingMode.SourceOver;
+                g.CompositingQuality = CompositingQuality.HighSpeed;
                 g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
                 g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
