@@ -25,9 +25,7 @@
 
 // Credits: https://github.com/LRNAB
 
-using System;
 using System.Collections.Generic;
-using System.Net;
 
 namespace UploadersLib.URLShorteners
 {
