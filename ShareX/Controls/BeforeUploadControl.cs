@@ -122,12 +122,13 @@ namespace ShareX
         {
             if (InitCompleted != null)
             {
-                string currentDestination = flp.Controls.OfType<RadioButton>().First(x => x.Checked).Text;
-
-                if (!string.IsNullOrEmpty(currentDestination))
+                RadioButton rbDestination = flp.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
+                string currentDestination = string.Empty;
+                if (rbDestination != null)
                 {
-                    InitCompleted(currentDestination);
+                    currentDestination = rbDestination.Text;
                 }
+                InitCompleted(currentDestination);
             }
         }
 
