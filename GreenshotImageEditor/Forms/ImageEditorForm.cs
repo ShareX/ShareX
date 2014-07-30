@@ -330,6 +330,8 @@ namespace Greenshot
             }
             //updateStatusLabel(string.Format("Image saved to {0}.", fullpath), fileSavedStatusContextMenu);
             SetTitle(Path.GetFileName(fullpath));
+
+            btnSave.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void surface_DrawingModeChanged(object source, SurfaceDrawingModeEventArgs eventArgs)
@@ -675,7 +677,7 @@ namespace Greenshot
                         buttons = MessageBoxButtons.YesNo;
                     }
 
-                    DialogResult result = MessageBox.Show("Do you want the save the screenshot?", "Save image?", buttons, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Do you want to save the screenshot?", "Save confirmation", buttons, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Cancel)
                     {
@@ -1363,6 +1365,7 @@ namespace Greenshot
                 using (Image img = surface.GetImageForExport())
                 {
                     ImageSaveRequested(img, surface.LastSaveFullPath);
+                    surface.Modified = false;
                 }
             }
         }
@@ -1374,6 +1377,7 @@ namespace Greenshot
                 using (Image img = surface.GetImageForExport())
                 {
                     string newFilePath = ImageSaveAsRequested(img, surface.LastSaveFullPath);
+                    surface.Modified = false;
                     if (!string.IsNullOrEmpty(newFilePath))
                     {
                         SetImagePath(newFilePath);
