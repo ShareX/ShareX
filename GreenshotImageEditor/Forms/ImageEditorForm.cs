@@ -656,7 +656,7 @@ namespace Greenshot
             updateClipboardSurfaceDependencies();
             updateUndoRedoSurfaceDependencies();
 
-            saveToolStripMenuItem.Enabled = File.Exists(surface.LastSaveFullPath);
+            btnSave.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void ImageEditorFormFormClosing(object sender, FormClosingEventArgs e)
@@ -1404,6 +1404,16 @@ namespace Greenshot
             Close();
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            OnImageSaveRequested();
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            OnImageSaveAsRequested();
+        }
+
         private void btnClipboardCopy_Click(object sender, EventArgs e)
         {
             OnClipboardCopyRequested();
@@ -1412,21 +1422,6 @@ namespace Greenshot
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
             OnImageUploadRequested();
-        }
-
-        private void btnSaveAs_Click(object sender, EventArgs e)
-        {
-            OnImageSaveAsRequested();
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OnImageSaveRequested();
-        }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OnImageSaveAsRequested();
         }
     }
 }
