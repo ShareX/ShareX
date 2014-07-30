@@ -39,7 +39,7 @@ namespace ShareX
 
             ucBeforeUpload.InitCompleted += (currentDestination) =>
             {
-                string title = string.IsNullOrEmpty(currentDestination) ? "Please choose a destination." : "{0} is about to be- uploaded to {1}. You may choose a different destination.";
+                string title = string.IsNullOrEmpty(currentDestination) ? "Please choose a destination." : "{0} is about to be uploaded to {1}. You may choose a different destination.";
                 lblTitle.Text = string.Format(title, info.FileName, currentDestination);
             };
             ucBeforeUpload.Init(info);

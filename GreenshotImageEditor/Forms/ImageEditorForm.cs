@@ -83,6 +83,20 @@ namespace Greenshot
             }
         }
 
+        private bool isTaskWork;
+
+        public bool IsTaskWork
+        {
+            get
+            {
+                return isTaskWork;
+            }
+            set
+            {
+                isTaskWork = btnSaveClose.Visible = btnClose.Visible = btnCancelTasks.Visible = tssTaskButtons.Visible = value;
+            }
+        }
+
         public ImageEditorForm(ISurface iSurface, bool outputMade)
         {
             editorList.Add(this);
@@ -1379,6 +1393,13 @@ namespace Greenshot
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+            forceClose = true;
+            Close();
+        }
+
+        private void btnCancelTasks_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
             forceClose = true;
             Close();
         }

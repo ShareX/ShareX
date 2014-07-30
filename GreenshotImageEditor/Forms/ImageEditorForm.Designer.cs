@@ -109,7 +109,8 @@ namespace Greenshot {
             this.propertiesToolStrip = new Greenshot.Controls.ToolStripEx();
             this.btnSaveClose = new System.Windows.Forms.ToolStripButton();
             this.btnClose = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCancelTasks = new System.Windows.Forms.ToolStripButton();
+            this.tssTaskButtons = new System.Windows.Forms.ToolStripSeparator();
             this.btnSaveAs = new System.Windows.Forms.ToolStripButton();
             this.btnClipboardCopy = new System.Windows.Forms.ToolStripButton();
             this.btnUploadImage = new System.Windows.Forms.ToolStripButton();
@@ -499,7 +500,7 @@ namespace Greenshot {
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -507,7 +508,7 @@ namespace Greenshot {
             // 
             this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -800,7 +801,8 @@ namespace Greenshot {
             this.propertiesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSaveClose,
             this.btnClose,
-            this.toolStripSeparator6,
+            this.btnCancelTasks,
+            this.tssTaskButtons,
             this.btnSaveAs,
             this.btnClipboardCopy,
             this.btnUploadImage,
@@ -867,10 +869,19 @@ namespace Greenshot {
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // toolStripSeparator6
+            // btnCancelTasks
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            this.btnCancelTasks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCancelTasks.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelTasks.Image")));
+            this.btnCancelTasks.Name = "btnCancelTasks";
+            this.btnCancelTasks.Size = new System.Drawing.Size(23, 24);
+            this.btnCancelTasks.Text = "Close and cancel tasks";
+            this.btnCancelTasks.Click += new System.EventHandler(this.btnCancelTasks_Click);
+            // 
+            // tssTaskButtons
+            // 
+            this.tssTaskButtons.Name = "tssTaskButtons";
+            this.tssTaskButtons.Size = new System.Drawing.Size(6, 27);
             // 
             // btnSaveAs
             // 
@@ -1140,7 +1151,7 @@ namespace Greenshot {
             this.fontFamilyComboBox.MaxDropDownItems = 20;
             this.fontFamilyComboBox.Name = "fontFamilyComboBox";
             this.fontFamilyComboBox.Size = new System.Drawing.Size(200, 23);
-            this.fontFamilyComboBox.Text = "Agency FB";
+            this.fontFamilyComboBox.Text = "Aharoni";
             this.fontFamilyComboBox.GotFocus += new System.EventHandler(this.ToolBarFocusableElementGotFocus);
             this.fontFamilyComboBox.LostFocus += new System.EventHandler(this.ToolBarFocusableElementLostFocus);
             // 
@@ -1748,12 +1759,13 @@ namespace Greenshot {
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator tssTaskButtons;
         private System.Windows.Forms.ToolStripButton btnClipboardCopy;
         private System.Windows.Forms.ToolStripButton btnUploadImage;
         private System.Windows.Forms.ToolStripButton btnSaveAs;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnCancelTasks;
 	}
 }

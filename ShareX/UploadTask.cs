@@ -254,8 +254,12 @@ namespace ShareX
 
             try
             {
-                DoThreadJob();
-                DoUploadJob();
+                StopRequested = !DoThreadJob();
+
+                if (!StopRequested)
+                {
+                    DoUploadJob();
+                }
             }
             finally
             {
@@ -408,7 +412,7 @@ namespace ShareX
             return isError;
         }
 
-        private void DoThreadJob()
+        private bool DoThreadJob()
         {
             if (Info.IsUploadJob && Info.TaskSettings.AdvancedSettings.AutoClearClipboard)
             {
@@ -417,9 +421,9 @@ namespace ShareX
 
             if (Info.Job == TaskJob.Job)
             {
-                if (tempImage != null)
+                if (tempImage != null && !DoAfterCaptureJobs())
                 {
-                    DoAfterCaptureJobs();
+                    return false;
                 }
 
                 DoFileJobs();
@@ -434,9 +438,11 @@ namespace ShareX
             {
                 Data.Position = 0;
             }
+
+            return true;
         }
 
-        private void DoAfterCaptureJobs()
+        private bool DoAfterCaptureJobs()
         {
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
@@ -451,6 +457,11 @@ namespace ShareX
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
                 tempImage = TaskHelpers.AnnotateImage(tempImage, Info.FileName);
+
+                if (tempImage == null)
+                {
+                    return false;
+                }
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
@@ -547,6 +558,8 @@ namespace ShareX
                     }
                 }
             }
+
+            return true;
         }
 
         private void DoFileJobs()

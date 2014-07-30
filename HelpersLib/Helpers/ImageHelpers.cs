@@ -679,18 +679,25 @@ namespace HelpersLib
             using (Surface surface = new Surface(capture))
             using (ImageEditorForm editor = new ImageEditorForm(surface, true))
             {
+                editor.IsTaskWork = img != null;
                 editor.SetImagePath(imgPath);
                 editor.ClipboardCopyRequested += clipboardCopyRequested;
                 editor.ImageUploadRequested += imageUploadRequested;
                 editor.ImageSaveRequested += imageSaveRequested;
                 editor.ImageSaveAsRequested += imageSaveAsRequested;
 
-                if (editor.ShowDialog() == DialogResult.OK && img != null)
+                DialogResult result = editor.ShowDialog();
+
+                if (result == DialogResult.OK && editor.IsTaskWork)
                 {
                     using (img)
                     {
                         return editor.GetImageForExport();
                     }
+                }
+                else if (result == DialogResult.Abort)
+                {
+                    return null;
                 }
             }
 
