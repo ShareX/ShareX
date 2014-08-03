@@ -918,21 +918,6 @@ namespace Greenshot
             }
         }*/
 
-        private void CopyPathMenuItemClick(object sender, EventArgs e)
-        {
-            ClipboardHelper.SetClipboardData(surface.LastSaveFullPath);
-        }
-
-        private void OpenDirectoryMenuItemClick(object sender, EventArgs e)
-        {
-            ProcessStartInfo psi = new ProcessStartInfo("explorer");
-            psi.Arguments = Path.GetDirectoryName(surface.LastSaveFullPath);
-            psi.UseShellExecute = false;
-            Process p = new Process();
-            p.StartInfo = psi;
-            p.Start();
-        }
-
         #endregion status label handling
 
         private void bindFieldControls()

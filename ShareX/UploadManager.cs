@@ -296,13 +296,13 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, AfterCaptureTasks imageJob = AfterCaptureTasks.UploadImageToHost)
+        public static void UploadImage(Image img)
         {
-            if (imageJob != AfterCaptureTasks.None)
+            if (img != null)
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = imageJob;
+                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
 
                 RunImageTask(img, taskSettings);
             }
@@ -313,6 +313,8 @@ namespace ShareX
             if (img != null)
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+                taskSettings.UseDefaultAfterCaptureJob = false;
+                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                 taskSettings.UseDefaultDestinations = false;
                 taskSettings.ImageDestination = imageDestination;
 

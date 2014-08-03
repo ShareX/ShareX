@@ -183,9 +183,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap camcorder__pencil {
+        public static System.Drawing.Bitmap camcorder_image {
             get {
-                object obj = ResourceManager.GetObject("camcorder__pencil", resourceCulture);
+                object obj = ResourceManager.GetObject("camcorder_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap camcorder_image {
+        public static System.Drawing.Bitmap camcorder_pencil {
             get {
-                object obj = ResourceManager.GetObject("camcorder_image", resourceCulture);
+                object obj = ResourceManager.GetObject("camcorder_pencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -394,7 +394,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap exclamation_button {
             get {
-                object obj = ResourceManager.GetObject("exclamation-button", resourceCulture);
+                object obj = ResourceManager.GetObject("exclamation_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -414,7 +414,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap folder_open_document {
             get {
-                object obj = ResourceManager.GetObject("folder-open-document", resourceCulture);
+                object obj = ResourceManager.GetObject("folder_open_document", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -674,7 +674,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap layout_select_content {
             get {
-                object obj = ResourceManager.GetObject("layout-select-content", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_select_content", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -684,7 +684,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap layout_select_sidebar {
             get {
-                object obj = ResourceManager.GetObject("layout-select-sidebar", resourceCulture);
+                object obj = ResourceManager.GetObject("layout_select_sidebar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -261,7 +261,7 @@ namespace ShareX
         {
             return ImageHelpers.AnnotateImage(img, imgPath, !Program.IsSandbox, Program.PersonalPath,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)),
+                x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
                 (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
                 (x, filePath) =>
                 {
