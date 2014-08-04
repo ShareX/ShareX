@@ -26,12 +26,13 @@
 using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 
 namespace ImageEffectsLib
 {
     public class GradientStop
     {
-        [DefaultValue(typeof(Color), "Black")]
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color { get; set; }
 
         private float offset;
@@ -45,10 +46,7 @@ namespace ImageEffectsLib
             }
             set
             {
-                if (value >= 0 || value <= 1)
-                {
-                    offset = value;
-                }
+                offset = value.Between(0, 1);
             }
         }
 

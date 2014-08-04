@@ -216,6 +216,7 @@
             // 
             // eiImageEffects
             // 
+            this.eiImageEffects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.eiImageEffects.Location = new System.Drawing.Point(8, 734);
             this.eiImageEffects.Name = "eiImageEffects";
             this.eiImageEffects.ObjectType = null;

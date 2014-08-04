@@ -126,11 +126,10 @@ namespace ImageEffectsLib
         [DefaultValue(typeof(Color), "0, 20, 40"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
-        [Browsable(false), DefaultValue(false)]
+        [DefaultValue(false)]
         public bool UseCustomGradient { get; set; }
 
-        // Need custom editor
-        [Browsable(false)]
+        // TODO: Need custom editor
         public List<GradientStop> CustomGradientList { get; set; }
 
         [DefaultValue(LinearGradientMode.Vertical)]
@@ -139,6 +138,7 @@ namespace ImageEffectsLib
         public DrawText()
         {
             this.ApplyDefaultPropertyValues();
+            CustomGradientList = new List<GradientStop>();
         }
 
         public override Image Apply(Image img)
