@@ -33,29 +33,15 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace ShareX
 {
-    public class PointInfo
-    {
-        public Point Position { get; set; }
-        public Color Color { get; set; }
-    }
-
     public partial class ScreenColorPicker : DialogColor
     {
         private Timer colorTimer = new Timer { Interval = 10 };
-        private SurfaceOptions surfaceOptions;
 
-        public ScreenColorPicker(TaskSettings taskSettings)
+        public ScreenColorPicker()
         {
-            if (taskSettings != null)
-            {
-                surfaceOptions = taskSettings.CaptureSettings.SurfaceOptions;
-            }
-            else
-            {
-                surfaceOptions = new SurfaceOptions();
-            }
-
             InitializeComponent();
+            btnOK.Visible = false;
+            btnCancel.Text = "Close";
             colorPicker.DrawCrosshair = true;
             colorTimer.Tick += colorTimer_Tick;
 
@@ -115,7 +101,6 @@ namespace ShareX
             }
 
             lblScreenColorPickerTip.Visible = colorTimerEnable;
-
             TopMost = colorTimerEnable;
         }
 
@@ -135,7 +120,7 @@ namespace ShareX
                 Hide();
                 Thread.Sleep(250);
 
-                PointInfo pointInfo = TaskHelpers.SelectPointColor(surfaceOptions);
+                PointInfo pointInfo = TaskHelpers.SelectPointColor();
 
                 if (pointInfo != null)
                 {

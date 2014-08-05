@@ -51,13 +51,12 @@
             // 
             // lblScreenColorPickerTip
             // 
-            this.lblScreenColorPickerTip.AutoSize = true;
             this.lblScreenColorPickerTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblScreenColorPickerTip.Location = new System.Drawing.Point(408, 270);
+            this.lblScreenColorPickerTip.Location = new System.Drawing.Point(336, 270);
             this.lblScreenColorPickerTip.Name = "lblScreenColorPickerTip";
-            this.lblScreenColorPickerTip.Size = new System.Drawing.Size(193, 30);
+            this.lblScreenColorPickerTip.Size = new System.Drawing.Size(265, 34);
             this.lblScreenColorPickerTip.TabIndex = 55;
-            this.lblScreenColorPickerTip.Text = "Press Ctrl when this window active\r\nto stop screen color picker.";
+            this.lblScreenColorPickerTip.Text = "Press \"Ctrl\" button when this window active\r\nto stop screen color picker.";
             this.lblScreenColorPickerTip.Visible = false;
             // 
             // btnColorPicker
@@ -91,9 +90,9 @@
             // btnCopyAll
             // 
             this.btnCopyAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopyAll.Location = new System.Drawing.Point(336, 274);
+            this.btnCopyAll.Location = new System.Drawing.Point(464, 232);
             this.btnCopyAll.Name = "btnCopyAll";
-            this.btnCopyAll.Size = new System.Drawing.Size(64, 24);
+            this.btnCopyAll.Size = new System.Drawing.Size(64, 32);
             this.btnCopyAll.TabIndex = 57;
             this.btnCopyAll.Text = "Copy all";
             this.btnCopyAll.UseVisualStyleBackColor = true;
@@ -137,6 +136,8 @@
             this.Text = "ShareX - Screen color picker";
             this.TopMost = false;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScreenColorPicker_KeyDown);
+            this.Controls.SetChildIndex(this.btnOK, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.txtHex, 0);
             this.Controls.SetChildIndex(this.colorPicker, 0);
             this.Controls.SetChildIndex(this.lblX, 0);

@@ -361,18 +361,15 @@ namespace ShareX
 
         public static PointInfo SelectPointColor(SurfaceOptions surfaceOptions = null)
         {
+            if (surfaceOptions == null)
+            {
+                surfaceOptions = new SurfaceOptions();
+            }
+
             using (Image fullscreen = Screenshot.CaptureFullscreen())
             using (RectangleRegion surface = new RectangleRegion(fullscreen))
             {
-                if (surfaceOptions != null)
-                {
-                    surface.Config = new SurfaceOptions
-                    {
-                        MagnifierPixelCount = surfaceOptions.MagnifierPixelCount,
-                        MagnifierPixelSize = surfaceOptions.MagnifierPixelSize
-                    };
-                }
-
+                surface.Config = surfaceOptions;
                 surface.OneClickMode = true;
                 surface.Prepare();
                 surface.ShowDialog();
@@ -506,7 +503,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            new ScreenColorPicker(taskSettings).Show();
+            new ScreenColorPicker().Show();
         }
 
         public static void OpenRuler()
