@@ -286,6 +286,16 @@ namespace HelpersLib
 
         private static readonly string[] URLPrefixes = new string[] { "http://", "https://", "ftp://", "ftps://", "file://" };
 
+        public static string FixPrefix(string url)
+        {
+            if (!URLHelpers.HasPrefix(url))
+            {
+                return "http://" + url;
+            }
+
+            return url;
+        }
+
         public static bool HasPrefix(string url)
         {
             return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));

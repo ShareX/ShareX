@@ -126,10 +126,7 @@ namespace UploadersLib.FileUploaders
                 url = URLHelpers.CombineURL(GetEndpoint(), objectName);
             }
 
-            if (!URLHelpers.HasPrefix(url))
-            {
-                url = "http://" + url;
-            }
+            url = URLHelpers.FixPrefix(url);
 
             return url;
         }

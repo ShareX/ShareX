@@ -67,6 +67,7 @@ namespace UploadersLib.FileUploaders
 
             string path = URLHelpers.CombineURL(Path, fileName);
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", path);
+            url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
             string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);

@@ -197,6 +197,11 @@ namespace HelpersLib
             return Uri.IsWellFormedUriString(url.Trim(), UriKind.Absolute);
         }
 
+        public static string CombineURL(this string url, string url2)
+        {
+            return URLHelpers.CombineURL(url, url2);
+        }
+
         public static byte[] HexToBytes(this string hex)
         {
             byte[] bytes = new byte[hex.Length / 2];
