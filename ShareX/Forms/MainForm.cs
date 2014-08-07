@@ -67,7 +67,7 @@ namespace ShareX
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
-            UseCommandLineArgs(Environment.GetCommandLineArgs());
+            UseCommandLineArgs(Program.Arguments);
         }
 
         private void AfterShownJobs()
@@ -574,15 +574,15 @@ namespace ShareX
 
         public void UseCommandLineArgs(string[] args)
         {
-            if (args != null && args.Length > 1)
+            if (args != null)
             {
-                for (int i = 1; i < args.Length; i++)
+                foreach (string arg in args)
                 {
-                    string arg = args[i];
-
-                    if (arg != null && arg.Length > 1)
+                    if (!string.IsNullOrEmpty(arg))
                     {
-                        if (arg[0] == '-')
+                        DebugHelper.WriteLine("CommandLine: " + arg);
+
+                        if (arg.Length > 1 && arg[0] == '-')
                         {
                             string command = arg.Substring(1);
 

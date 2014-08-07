@@ -28,6 +28,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -229,6 +230,7 @@ namespace ShareX
             }
         }
 
+        public static string[] Arguments { get; private set; }
         public static bool IsPortable { get; private set; }
         public static bool IsSilentRun { get; private set; }
         public static bool IsSandbox { get; private set; }
@@ -247,7 +249,7 @@ namespace ShareX
         public static HotkeyManager HotkeyManager { get; set; }
         public static WatchFolderManager WatchFolderManager { get; set; }
 
-        private static ShareXApplicationBase _appBase;
+        private static ShareXApplicationBase applicationBase;
 
         [STAThread]
         private static void Main(string[] args)
@@ -256,28 +258,27 @@ namespace ShareX
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             StartTimer = Stopwatch.StartNew();
-
-            bool isMultiInstance = CLIHelper.CheckArgs(args, "multi", "m");
-            _appBase = new ShareXApplicationBase(!isMultiInstance);
-            _appBase.Startup += StartupHandler;
-            _appBase.StartupNextInstance += StartupNextInstanceHandler;
-            _appBase.Shutdown += ShutdownHandler;
-            _appBase.Run(args);
+            Arguments = args;
+            bool isMultiInstance = CLIHelper.CheckArgs(Arguments, "multi", "m");
+            applicationBase = new ShareXApplicationBase(!isMultiInstance);
+            applicationBase.Startup += StartupHandler;
+            applicationBase.StartupNextInstance += StartupNextInstanceHandler;
+            applicationBase.Shutdown += ShutdownHandler;
+            applicationBase.Run(Arguments);
         }
 
         private static void StartupHandler(object sender, StartupEventArgs e)
         {
             string appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(GuidAttribute), false).GetValue(0)).Value.ToString();
-            string[] args = Environment.GetCommandLineArgs();
 
             using (Mutex mutex = new Mutex(false, appGuid)) // Required for installer
             {
-                IsSilentRun = CLIHelper.CheckArgs(args, "silent", "s");
-                IsSandbox = CLIHelper.CheckArgs(args, "sandbox");
+                IsSilentRun = CLIHelper.CheckArgs(Arguments, "silent", "s");
+                IsSandbox = CLIHelper.CheckArgs(Arguments, "sandbox");
 
                 if (!IsSandbox)
                 {
-                    IsPortable = CLIHelper.CheckArgs(args, "portable", "p");
+                    IsPortable = CLIHelper.CheckArgs(Arguments, "portable", "p");
 
                     if (IsPortable)
                     {
@@ -312,7 +313,7 @@ namespace ShareX
 
                 DebugHelper.WriteLine("MainForm init started");
                 MainForm = new MainForm();
-                _appBase.MainForm = MainForm;
+                applicationBase.MainForm = MainForm;
                 DebugHelper.WriteLine("MainForm init finished");
 
                 if (Settings == null)
@@ -325,18 +326,26 @@ namespace ShareX
         private static void StartupNextInstanceHandler(object sender, StartupNextInstanceEventArgs e)
         {
             e.BringToForeground = false;
-            string[] args = new string[e.CommandLine.Count + 1];
-            args[0] = "";
-            e.CommandLine.CopyTo(args, 1);
-            if (MainForm.ReadyWaitHandle.WaitOne(0)) DoStartupNextInstance(args);
-            else Task.Factory.StartNew(WaitFormLoad, args);
+
+            string[] args = e.CommandLine.ToArray();
+
+            if (MainForm.ReadyWaitHandle.WaitOne(0))
+            {
+                DoStartupNextInstance(args);
+            }
+            else
+            {
+                TaskEx.Run(() => WaitFormLoad(args));
+            }
         }
 
-        private static void WaitFormLoad(object args)
+        private static void WaitFormLoad(string[] args)
         {
-            try {
-                if (MainForm.ReadyWaitHandle.WaitOne(5000)) {
-                    MainForm.Invoke(new Action<string[]>(DoStartupNextInstance), args);
+            try
+            {
+                if (MainForm.ReadyWaitHandle.WaitOne(5000))
+                {
+                    MainForm.InvokeSafe(() => DoStartupNextInstance(args));
                 }
             }
             catch { }
@@ -344,8 +353,10 @@ namespace ShareX
 
         private static void DoStartupNextInstance(string[] args)
         {
-            if (args == null || args.Length <= 1) {
-                if (MainForm.niTray != null && MainForm.niTray.Visible) {
+            if (args == null || args.Length == 0)
+            {
+                if (MainForm.niTray != null && MainForm.niTray.Visible)
+                {
                     // Workaround for Windows startup tray icon bug
                     MainForm.niTray.Visible = false;
                     MainForm.niTray.Visible = true;
@@ -353,7 +364,8 @@ namespace ShareX
 
                 MainForm.ShowActivate();
             }
-            else if (MainForm.Visible) {
+            else if (MainForm.Visible)
+            {
                 MainForm.ShowActivate();
             }
 

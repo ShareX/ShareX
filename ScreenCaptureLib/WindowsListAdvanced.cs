@@ -33,16 +33,10 @@ namespace ScreenCaptureLib
 {
     public class WindowsListAdvanced
     {
+        public IntPtr IgnoreHandle { get; set; }
         public bool IncludeChildWindows { get; set; }
 
-        public List<IntPtr> IgnoreWindows { get; set; }
-
         private List<WindowInfo> windows;
-
-        public WindowsListAdvanced()
-        {
-            IgnoreWindows = new List<IntPtr>();
-        }
 
         public List<WindowInfo> GetWindowsList()
         {
@@ -80,7 +74,7 @@ namespace ScreenCaptureLib
 
         private bool IsValidWindow(WindowInfo window)
         {
-            return IgnoreWindows.All(x => window.Handle != x) && window.Rectangle.IsValid() && window.IsVisible;
+            return window.Handle != IgnoreHandle && window.Rectangle.IsValid() && window.IsVisible;
         }
 
         private bool EvalWindow(IntPtr hWnd, IntPtr lParam)
