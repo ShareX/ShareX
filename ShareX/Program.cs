@@ -257,6 +257,7 @@ namespace ShareX
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
+            Application.SetCompatibleTextRenderingDefault(false);
             StartTimer = Stopwatch.StartNew();
             Arguments = args;
             bool isMultiInstance = CLIHelper.CheckArgs(Arguments, "multi", "m");
