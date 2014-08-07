@@ -41,7 +41,7 @@ namespace ShareX
 {
     public partial class MainForm : HotkeyForm
     {
-        public bool IsReady { get; private set; }
+        public ManualResetEvent ReadyWaitHandle { get; private set; }
 
         private bool forceClose;
         private UploadInfoManager uim;
@@ -49,6 +49,7 @@ namespace ShareX
 
         public MainForm()
         {
+            ReadyWaitHandle = new ManualResetEvent(false);
             InitControls();
             HandleCreated += MainForm_HandleCreated;
         }
@@ -62,7 +63,7 @@ namespace ShareX
             AutoCheckUpdate();
 #endif
 
-            IsReady = true;
+            ReadyWaitHandle.Set();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
@@ -675,7 +676,7 @@ namespace ShareX
 
         private void MainForm_LocationChanged(object sender, EventArgs e)
         {
-            if (IsReady && WindowState == FormWindowState.Normal)
+            if (ReadyWaitHandle.WaitOne(0) && WindowState == FormWindowState.Normal)
             {
                 Program.Settings.MainFormPosition = Location;
             }
@@ -683,7 +684,7 @@ namespace ShareX
 
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            if (IsReady && WindowState == FormWindowState.Normal)
+            if (ReadyWaitHandle.WaitOne(0) && WindowState == FormWindowState.Normal)
             {
                 Program.Settings.MainFormSize = Size;
             }
