@@ -468,7 +468,21 @@ namespace ShareX
             DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity, Program.Settings.DropHoverOpacity).ShowActivate();
         }
 
-        public static void DoScreenRecorder(TaskSettings taskSettings = null)
+        public static void DoScreenRecordingFFmpeg()
+        {
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            taskSettings.CaptureSettings.ScreenRecordOutput = ScreenRecordOutput.FFmpeg;
+            DoScreenRecording(taskSettings);
+        }
+
+        public static void DoScreenRecordingGIF()
+        {
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            taskSettings.CaptureSettings.ScreenRecordOutput = ScreenRecordOutput.GIF;
+            DoScreenRecording(taskSettings);
+        }
+
+        public static void DoScreenRecording(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 

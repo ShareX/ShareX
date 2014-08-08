@@ -842,9 +842,14 @@ namespace ShareX
             }
         }
 
-        private void tsmiScreenRecorder_Click(object sender, EventArgs e)
+        private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
         {
-            TaskHelpers.DoScreenRecorder();
+            TaskHelpers.DoScreenRecordingFFmpeg();
+        }
+
+        private void tsmiScreenRecordingGIF_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.DoScreenRecordingGIF();
         }
 
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
@@ -1396,7 +1401,7 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    TaskHelpers.DoScreenRecorder(safeTaskSettings);
+                    TaskHelpers.DoScreenRecording(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();

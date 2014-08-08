@@ -257,11 +257,13 @@ namespace ShareX
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            Application.SetCompatibleTextRenderingDefault(false);
-            StartTimer = Stopwatch.StartNew();
+            StartTimer = Stopwatch.StartNew(); // For be able to show startup time
+
             Arguments = args;
-            bool isMultiInstance = CLIHelper.CheckArgs(Arguments, "multi", "m");
-            applicationBase = new ShareXApplicationBase(!isMultiInstance);
+            bool forceMultiInstance = CLIHelper.CheckArgs(Arguments, "multi", "m");
+
+            Application.SetCompatibleTextRenderingDefault(false);
+            applicationBase = new ShareXApplicationBase(!forceMultiInstance);
             applicationBase.Startup += StartupHandler;
             applicationBase.StartupNextInstance += StartupNextInstanceHandler;
             applicationBase.Shutdown += ShutdownHandler;
