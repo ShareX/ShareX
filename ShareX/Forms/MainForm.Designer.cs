@@ -174,6 +174,7 @@
             this.tsmiTrayPolygon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFreeHand = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayLastRegion = new System.Windows.Forms.ToolStripMenuItem();
+            this.screenRecordingFFmpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -218,7 +219,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.screenRecordingFFmpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -294,7 +294,7 @@
             // 
             this.tsmiFullscreen.Image = global::ShareX.Properties.Resources.layer;
             this.tsmiFullscreen.Name = "tsmiFullscreen";
-            this.tsmiFullscreen.Size = new System.Drawing.Size(226, 22);
+            this.tsmiFullscreen.Size = new System.Drawing.Size(217, 22);
             this.tsmiFullscreen.Text = "Fullscreen";
             this.tsmiFullscreen.Click += new System.EventHandler(this.tsmiFullscreen_Click);
             // 
@@ -302,21 +302,21 @@
             // 
             this.tsmiWindow.Image = global::ShareX.Properties.Resources.application_blue;
             this.tsmiWindow.Name = "tsmiWindow";
-            this.tsmiWindow.Size = new System.Drawing.Size(226, 22);
+            this.tsmiWindow.Size = new System.Drawing.Size(217, 22);
             this.tsmiWindow.Text = "Window";
             // 
             // tsmiMonitor
             // 
             this.tsmiMonitor.Image = global::ShareX.Properties.Resources.monitor;
             this.tsmiMonitor.Name = "tsmiMonitor";
-            this.tsmiMonitor.Size = new System.Drawing.Size(226, 22);
+            this.tsmiMonitor.Size = new System.Drawing.Size(217, 22);
             this.tsmiMonitor.Text = "Monitor";
             // 
             // tsmiRectangle
             // 
             this.tsmiRectangle.Image = global::ShareX.Properties.Resources.layer_shape;
             this.tsmiRectangle.Name = "tsmiRectangle";
-            this.tsmiRectangle.Size = new System.Drawing.Size(226, 22);
+            this.tsmiRectangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiRectangle.Text = "Rectangle";
             this.tsmiRectangle.Click += new System.EventHandler(this.tsmiRectangle_Click);
             // 
@@ -324,7 +324,7 @@
             // 
             this.tsmiWindowRectangle.Image = global::ShareX.Properties.Resources.layers_ungroup;
             this.tsmiWindowRectangle.Name = "tsmiWindowRectangle";
-            this.tsmiWindowRectangle.Size = new System.Drawing.Size(226, 22);
+            this.tsmiWindowRectangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiWindowRectangle.Text = "Rectangle (Objects)";
             this.tsmiWindowRectangle.Click += new System.EventHandler(this.tsmiWindowRectangle_Click);
             // 
@@ -332,7 +332,7 @@
             // 
             this.tsmiRectangleAnnotate.Image = global::ShareX.Properties.Resources.layer_pencil;
             this.tsmiRectangleAnnotate.Name = "tsmiRectangleAnnotate";
-            this.tsmiRectangleAnnotate.Size = new System.Drawing.Size(226, 22);
+            this.tsmiRectangleAnnotate.Size = new System.Drawing.Size(217, 22);
             this.tsmiRectangleAnnotate.Text = "Rectangle (Annotate)";
             this.tsmiRectangleAnnotate.Click += new System.EventHandler(this.tsmiRectangleAnnotate_Click);
             // 
@@ -340,7 +340,7 @@
             // 
             this.tsmiRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
             this.tsmiRectangleLight.Name = "tsmiRectangleLight";
-            this.tsmiRectangleLight.Size = new System.Drawing.Size(226, 22);
+            this.tsmiRectangleLight.Size = new System.Drawing.Size(217, 22);
             this.tsmiRectangleLight.Text = "Rectangle (Light)";
             this.tsmiRectangleLight.Click += new System.EventHandler(this.tsmiRectangleLight_Click);
             // 
@@ -348,7 +348,7 @@
             // 
             this.tsmiRoundedRectangle.Image = global::ShareX.Properties.Resources.layer_shape_round;
             this.tsmiRoundedRectangle.Name = "tsmiRoundedRectangle";
-            this.tsmiRoundedRectangle.Size = new System.Drawing.Size(226, 22);
+            this.tsmiRoundedRectangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiRoundedRectangle.Text = "Rounded rectangle";
             this.tsmiRoundedRectangle.Click += new System.EventHandler(this.tsmiRoundedRectangle_Click);
             // 
@@ -356,7 +356,7 @@
             // 
             this.tsmiEllipse.Image = global::ShareX.Properties.Resources.layer_shape_ellipse;
             this.tsmiEllipse.Name = "tsmiEllipse";
-            this.tsmiEllipse.Size = new System.Drawing.Size(226, 22);
+            this.tsmiEllipse.Size = new System.Drawing.Size(217, 22);
             this.tsmiEllipse.Text = "Ellipse";
             this.tsmiEllipse.Click += new System.EventHandler(this.tsmiEllipse_Click);
             // 
@@ -364,7 +364,7 @@
             // 
             this.tsmiTriangle.Image = global::ShareX.Properties.Resources.Triangle;
             this.tsmiTriangle.Name = "tsmiTriangle";
-            this.tsmiTriangle.Size = new System.Drawing.Size(226, 22);
+            this.tsmiTriangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiTriangle.Text = "Triangle";
             this.tsmiTriangle.Click += new System.EventHandler(this.tsmiTriangle_Click);
             // 
@@ -372,7 +372,7 @@
             // 
             this.tsmiDiamond.Image = global::ShareX.Properties.Resources.Diamond;
             this.tsmiDiamond.Name = "tsmiDiamond";
-            this.tsmiDiamond.Size = new System.Drawing.Size(226, 22);
+            this.tsmiDiamond.Size = new System.Drawing.Size(217, 22);
             this.tsmiDiamond.Text = "Diamond";
             this.tsmiDiamond.Click += new System.EventHandler(this.tsmiDiamond_Click);
             // 
@@ -380,7 +380,7 @@
             // 
             this.tsmiPolygon.Image = global::ShareX.Properties.Resources.layer_shape_polygon;
             this.tsmiPolygon.Name = "tsmiPolygon";
-            this.tsmiPolygon.Size = new System.Drawing.Size(226, 22);
+            this.tsmiPolygon.Size = new System.Drawing.Size(217, 22);
             this.tsmiPolygon.Text = "Polygon";
             this.tsmiPolygon.Click += new System.EventHandler(this.tsmiPolygon_Click);
             // 
@@ -388,7 +388,7 @@
             // 
             this.tsmiFreeHand.Image = global::ShareX.Properties.Resources.layer_shape_curve;
             this.tsmiFreeHand.Name = "tsmiFreeHand";
-            this.tsmiFreeHand.Size = new System.Drawing.Size(226, 22);
+            this.tsmiFreeHand.Size = new System.Drawing.Size(217, 22);
             this.tsmiFreeHand.Text = "Freehand";
             this.tsmiFreeHand.Click += new System.EventHandler(this.tsmiFreeHand_Click);
             // 
@@ -396,7 +396,7 @@
             // 
             this.tsmiLastRegion.Image = global::ShareX.Properties.Resources.layers_arrange;
             this.tsmiLastRegion.Name = "tsmiLastRegion";
-            this.tsmiLastRegion.Size = new System.Drawing.Size(226, 22);
+            this.tsmiLastRegion.Size = new System.Drawing.Size(217, 22);
             this.tsmiLastRegion.Text = "Last region";
             this.tsmiLastRegion.Click += new System.EventHandler(this.tsmiLastRegion_Click);
             // 
@@ -404,23 +404,23 @@
             // 
             this.tsmiScreenRecordingFFmpeg.Image = global::ShareX.Properties.Resources.film;
             this.tsmiScreenRecordingFFmpeg.Name = "tsmiScreenRecordingFFmpeg";
-            this.tsmiScreenRecordingFFmpeg.Size = new System.Drawing.Size(226, 22);
-            this.tsmiScreenRecordingFFmpeg.Text = "Screen recording (FFmpeg)...";
+            this.tsmiScreenRecordingFFmpeg.Size = new System.Drawing.Size(217, 22);
+            this.tsmiScreenRecordingFFmpeg.Text = "Screen recording (FFmpeg)";
             this.tsmiScreenRecordingFFmpeg.Click += new System.EventHandler(this.tsmiScreenRecordingFFmpeg_Click);
             // 
             // tsmiScreenRecordingGIF
             // 
             this.tsmiScreenRecordingGIF.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.tsmiScreenRecordingGIF.Name = "tsmiScreenRecordingGIF";
-            this.tsmiScreenRecordingGIF.Size = new System.Drawing.Size(226, 22);
-            this.tsmiScreenRecordingGIF.Text = "Screen recording (GIF)...";
+            this.tsmiScreenRecordingGIF.Size = new System.Drawing.Size(217, 22);
+            this.tsmiScreenRecordingGIF.Text = "Screen recording (GIF)";
             this.tsmiScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
             // 
             // tsmiAutoCapture
             // 
             this.tsmiAutoCapture.Image = global::ShareX.Properties.Resources.clock;
             this.tsmiAutoCapture.Name = "tsmiAutoCapture";
-            this.tsmiAutoCapture.Size = new System.Drawing.Size(226, 22);
+            this.tsmiAutoCapture.Size = new System.Drawing.Size(217, 22);
             this.tsmiAutoCapture.Text = "Auto capture...";
             this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
@@ -1434,7 +1434,7 @@
             // 
             this.tsmiTrayFullscreen.Image = global::ShareX.Properties.Resources.layer;
             this.tsmiTrayFullscreen.Name = "tsmiTrayFullscreen";
-            this.tsmiTrayFullscreen.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayFullscreen.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayFullscreen.Text = "Fullscreen";
             this.tsmiTrayFullscreen.Click += new System.EventHandler(this.tsmiTrayFullscreen_Click);
             // 
@@ -1442,21 +1442,21 @@
             // 
             this.tsmiTrayWindow.Image = global::ShareX.Properties.Resources.application_blue;
             this.tsmiTrayWindow.Name = "tsmiTrayWindow";
-            this.tsmiTrayWindow.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayWindow.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayWindow.Text = "Window";
             // 
             // tsmiTrayMonitor
             // 
             this.tsmiTrayMonitor.Image = global::ShareX.Properties.Resources.monitor;
             this.tsmiTrayMonitor.Name = "tsmiTrayMonitor";
-            this.tsmiTrayMonitor.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayMonitor.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayMonitor.Text = "Monitor";
             // 
             // tsmiTrayRectangle
             // 
             this.tsmiTrayRectangle.Image = global::ShareX.Properties.Resources.layer_shape;
             this.tsmiTrayRectangle.Name = "tsmiTrayRectangle";
-            this.tsmiTrayRectangle.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayRectangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayRectangle.Text = "Rectangle";
             this.tsmiTrayRectangle.Click += new System.EventHandler(this.tsmiTrayRectangle_Click);
             // 
@@ -1464,7 +1464,7 @@
             // 
             this.tsmiTrayWindowRectangle.Image = global::ShareX.Properties.Resources.layers_ungroup;
             this.tsmiTrayWindowRectangle.Name = "tsmiTrayWindowRectangle";
-            this.tsmiTrayWindowRectangle.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayWindowRectangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayWindowRectangle.Text = "Rectangle (Objects)";
             this.tsmiTrayWindowRectangle.Click += new System.EventHandler(this.tsmiTrayWindowRectangle_Click);
             // 
@@ -1472,7 +1472,7 @@
             // 
             this.tsmiTrayRectangleAnnotate.Image = global::ShareX.Properties.Resources.layer_pencil;
             this.tsmiTrayRectangleAnnotate.Name = "tsmiTrayRectangleAnnotate";
-            this.tsmiTrayRectangleAnnotate.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayRectangleAnnotate.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayRectangleAnnotate.Text = "Rectangle (Annotate)";
             this.tsmiTrayRectangleAnnotate.Click += new System.EventHandler(this.tsmiTrayRectangleAnnotate_Click);
             // 
@@ -1480,7 +1480,7 @@
             // 
             this.tsmiTrayRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
             this.tsmiTrayRectangleLight.Name = "tsmiTrayRectangleLight";
-            this.tsmiTrayRectangleLight.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayRectangleLight.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayRectangleLight.Text = "Rectangle (Light)";
             this.tsmiTrayRectangleLight.Click += new System.EventHandler(this.tsmiTrayRectangleLight_Click);
             // 
@@ -1488,7 +1488,7 @@
             // 
             this.tsmiTrayRoundedRectangle.Image = global::ShareX.Properties.Resources.layer_shape_round;
             this.tsmiTrayRoundedRectangle.Name = "tsmiTrayRoundedRectangle";
-            this.tsmiTrayRoundedRectangle.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayRoundedRectangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayRoundedRectangle.Text = "Rounded rectangle";
             this.tsmiTrayRoundedRectangle.Click += new System.EventHandler(this.tsmiTrayRoundedRectangle_Click);
             // 
@@ -1496,7 +1496,7 @@
             // 
             this.tsmiTrayEllipse.Image = global::ShareX.Properties.Resources.layer_shape_ellipse;
             this.tsmiTrayEllipse.Name = "tsmiTrayEllipse";
-            this.tsmiTrayEllipse.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayEllipse.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayEllipse.Text = "Ellipse";
             this.tsmiTrayEllipse.Click += new System.EventHandler(this.tsmiTrayEllipse_Click);
             // 
@@ -1504,7 +1504,7 @@
             // 
             this.tsmiTrayTriangle.Image = global::ShareX.Properties.Resources.Triangle;
             this.tsmiTrayTriangle.Name = "tsmiTrayTriangle";
-            this.tsmiTrayTriangle.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayTriangle.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayTriangle.Text = "Triangle";
             this.tsmiTrayTriangle.Click += new System.EventHandler(this.tsmiTrayTriangle_Click);
             // 
@@ -1512,7 +1512,7 @@
             // 
             this.tsmiTrayDiamond.Image = global::ShareX.Properties.Resources.Diamond;
             this.tsmiTrayDiamond.Name = "tsmiTrayDiamond";
-            this.tsmiTrayDiamond.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayDiamond.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayDiamond.Text = "Diamond";
             this.tsmiTrayDiamond.Click += new System.EventHandler(this.tsmiTrayDiamond_Click);
             // 
@@ -1520,7 +1520,7 @@
             // 
             this.tsmiTrayPolygon.Image = global::ShareX.Properties.Resources.layer_shape_polygon;
             this.tsmiTrayPolygon.Name = "tsmiTrayPolygon";
-            this.tsmiTrayPolygon.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayPolygon.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayPolygon.Text = "Polygon";
             this.tsmiTrayPolygon.Click += new System.EventHandler(this.tsmiTrayPolygon_Click);
             // 
@@ -1528,7 +1528,7 @@
             // 
             this.tsmiTrayFreeHand.Image = global::ShareX.Properties.Resources.layer_shape_curve;
             this.tsmiTrayFreeHand.Name = "tsmiTrayFreeHand";
-            this.tsmiTrayFreeHand.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayFreeHand.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayFreeHand.Text = "Freehand";
             this.tsmiTrayFreeHand.Click += new System.EventHandler(this.tsmiTrayFreeHand_Click);
             // 
@@ -1536,23 +1536,31 @@
             // 
             this.tsmiTrayLastRegion.Image = global::ShareX.Properties.Resources.layers_arrange;
             this.tsmiTrayLastRegion.Name = "tsmiTrayLastRegion";
-            this.tsmiTrayLastRegion.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayLastRegion.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayLastRegion.Text = "Last region";
             this.tsmiTrayLastRegion.Click += new System.EventHandler(this.tsmiTrayLastRegion_Click);
+            // 
+            // screenRecordingFFmpegToolStripMenuItem
+            // 
+            this.screenRecordingFFmpegToolStripMenuItem.Image = global::ShareX.Properties.Resources.film;
+            this.screenRecordingFFmpegToolStripMenuItem.Name = "screenRecordingFFmpegToolStripMenuItem";
+            this.screenRecordingFFmpegToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.screenRecordingFFmpegToolStripMenuItem.Text = "Screen recording (FFmpeg)";
+            this.screenRecordingFFmpegToolStripMenuItem.Click += new System.EventHandler(this.tsmiScreenRecordingFFmpeg_Click);
             // 
             // tsmiTrayScreenRecordingGIF
             // 
             this.tsmiTrayScreenRecordingGIF.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.tsmiTrayScreenRecordingGIF.Name = "tsmiTrayScreenRecordingGIF";
-            this.tsmiTrayScreenRecordingGIF.Size = new System.Drawing.Size(226, 22);
-            this.tsmiTrayScreenRecordingGIF.Text = "Screen recording (GIF)...";
+            this.tsmiTrayScreenRecordingGIF.Size = new System.Drawing.Size(217, 22);
+            this.tsmiTrayScreenRecordingGIF.Text = "Screen recording (GIF)";
             this.tsmiTrayScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
             // 
             // tsmiTrayAutoCapture
             // 
             this.tsmiTrayAutoCapture.Image = global::ShareX.Properties.Resources.clock;
             this.tsmiTrayAutoCapture.Name = "tsmiTrayAutoCapture";
-            this.tsmiTrayAutoCapture.Size = new System.Drawing.Size(186, 22);
+            this.tsmiTrayAutoCapture.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayAutoCapture.Text = "Auto capture...";
             this.tsmiTrayAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
@@ -1892,14 +1900,6 @@
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
-            // 
-            // screenRecordingFFmpegToolStripMenuItem
-            // 
-            this.screenRecordingFFmpegToolStripMenuItem.Image = global::ShareX.Properties.Resources.film;
-            this.screenRecordingFFmpegToolStripMenuItem.Name = "screenRecordingFFmpegToolStripMenuItem";
-            this.screenRecordingFFmpegToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.screenRecordingFFmpegToolStripMenuItem.Text = "Screen recording (FFmpeg)...";
-            this.screenRecordingFFmpegToolStripMenuItem.Click += new System.EventHandler(this.tsmiScreenRecordingFFmpeg_Click);
             // 
             // MainForm
             // 

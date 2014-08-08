@@ -23,11 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using System.Drawing;
 
 namespace ScreenCaptureLib
 {
-    public class NodeObject : DrawableObject
+    internal class NodeObject : DrawableObject
     {
         private PointF position;
 
@@ -46,16 +47,30 @@ namespace ScreenCaptureLib
 
         public float NodeSize { get; set; }
 
+        public NodeShape Shape { get; set; }
+
         public NodeObject(float x = 0, float y = 0)
         {
             NodeSize = 13;
+            Shape = NodeShape.Square;
             Position = new PointF(x, y);
         }
 
         public override void Draw(Graphics g)
         {
-            g.DrawRectangle(Pens.White, Rectangle.X + 1, Rectangle.Y + 1, Rectangle.Width - 3, Rectangle.Height - 3);
-            g.DrawRectangle(Pens.Black, Rectangle.X, Rectangle.Y, Rectangle.Width - 1, Rectangle.Height - 1);
+            Rectangle rect = new Rectangle((int)Rectangle.X, (int)Rectangle.Y, (int)Rectangle.Width - 1, (int)Rectangle.Height - 1);
+
+            switch (Shape)
+            {
+                case NodeShape.Square:
+                    g.DrawRectangle(Pens.White, rect.RectangleOffset(-1));
+                    g.DrawRectangle(Pens.Black, rect);
+                    break;
+                case NodeShape.Circle:
+                    g.DrawEllipse(Pens.White, rect.RectangleOffset(-1));
+                    g.DrawEllipse(Pens.Black, rect);
+                    break;
+            }
         }
     }
 }

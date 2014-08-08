@@ -307,7 +307,7 @@ namespace ScreenCaptureLib
             return Rectangle.Empty;
         }
 
-        public NodeObject MakeNode()
+        internal NodeObject MakeNode()
         {
             NodeObject node = new NodeObject();
             DrawableObjects.Add(node);

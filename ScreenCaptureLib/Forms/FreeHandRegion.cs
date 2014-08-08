@@ -44,7 +44,7 @@ namespace ScreenCaptureLib
             points = new List<Point>(128);
             regionFillPath = new GraphicsPath();
 
-            lastNode = new NodeObject();
+            lastNode = new NodeObject() { Shape = NodeShape.Circle };
             DrawableObjects.Add(lastNode);
         }
 

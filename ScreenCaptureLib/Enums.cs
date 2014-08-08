@@ -45,7 +45,7 @@ namespace ScreenCaptureLib
         Fullscreen
     }
 
-    public enum NodePosition
+    internal enum NodePosition
     {
         TopLeft,
         Top,
@@ -55,6 +55,11 @@ namespace ScreenCaptureLib
         Bottom,
         BottomLeft,
         Left
+    }
+
+    internal enum NodeShape
+    {
+        Square, Circle
     }
 
     public enum FFmpegVideoCodec

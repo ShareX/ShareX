@@ -145,7 +145,7 @@ namespace ScreenCaptureLib
 
         private void CreateNode()
         {
-            NodeObject newNode = new NodeObject();
+            NodeObject newNode = new NodeObject() { Shape = NodeShape.Circle };
             ActivateNode(newNode);
             nodes.Add(newNode);
             DrawableObjects.Add(newNode);
