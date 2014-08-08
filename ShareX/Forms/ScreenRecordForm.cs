@@ -75,10 +75,7 @@ namespace ShareX
 
         private void SelectRegion()
         {
-            if (TaskHelpers.SelectRegion(out captureRectangle) && !captureRectangle.IsEmpty)
-            {
-                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
-            }
+            TaskHelpers.SelectRegion(out captureRectangle);
         }
 
         private void ActiveWindowRegion(TaskSettings taskSettings)
@@ -147,7 +144,9 @@ namespace ShareX
                 SelectRegion();
             }
 
-            if (IsRecording || captureRectangle.IsEmpty || screenRecorder != null)
+            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+
+            if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
                 return;
             }

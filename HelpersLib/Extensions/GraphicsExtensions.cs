@@ -63,6 +63,15 @@ namespace HelpersLib
             DrawRoundedRectangle(g, brush, pen, new Rectangle(x, y, width, height), radius);
         }
 
+        public static void DrawDiamond(this Graphics g, Pen pen, Rectangle rect)
+        {
+            using (GraphicsPath gp = new GraphicsPath())
+            {
+                gp.AddDiamond(rect);
+                g.DrawPath(pen, gp);
+            }
+        }
+
         public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect, int crossSize)
         {
             rect = rect.SizeOffset(-1);

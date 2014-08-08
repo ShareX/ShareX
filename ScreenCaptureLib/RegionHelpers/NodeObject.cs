@@ -70,6 +70,10 @@ namespace ScreenCaptureLib
                     g.DrawEllipse(Pens.White, rect.RectangleOffset(-1));
                     g.DrawEllipse(Pens.Black, rect);
                     break;
+                case NodeShape.Diamond:
+                    g.DrawDiamond(Pens.White, rect.RectangleOffset(-1));
+                    g.DrawDiamond(Pens.Black, rect);
+                    break;
             }
         }
     }

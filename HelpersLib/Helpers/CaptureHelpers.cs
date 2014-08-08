@@ -311,8 +311,8 @@ namespace HelpersLib
 
         public static Rectangle EvenRectangleSize(Rectangle rect)
         {
-            rect.Width += rect.Width & 1;
-            rect.Height += rect.Height & 1;
+            rect.Width -= rect.Width & 1;
+            rect.Height -= rect.Height & 1;
             return rect;
         }
     }

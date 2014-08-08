@@ -59,7 +59,7 @@ namespace ScreenCaptureLib
 
     internal enum NodeShape
     {
-        Square, Circle
+        Square, Circle, Diamond
     }
 
     public enum FFmpegVideoCodec
