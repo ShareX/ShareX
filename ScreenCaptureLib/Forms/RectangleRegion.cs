@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -135,10 +136,15 @@ namespace ScreenCaptureLib
 
                 if (AreaManager.WindowCaptureMode)
                 {
-                    WindowsListAdvanced wla = new WindowsListAdvanced();
-                    wla.IgnoreHandle = Handle;
-                    wla.IncludeChildWindows = AreaManager.IncludeControls;
-                    AreaManager.Windows = wla.GetWindowsRectangleList();
+                    IntPtr handle = Handle;
+
+                    TaskEx.Run(() =>
+                    {
+                        WindowsListAdvanced wla = new WindowsListAdvanced();
+                        wla.IgnoreHandle = handle;
+                        wla.IncludeChildWindows = AreaManager.IncludeControls;
+                        AreaManager.Windows = wla.GetWindowsRectangleList();
+                    });
                 }
             }
         }
