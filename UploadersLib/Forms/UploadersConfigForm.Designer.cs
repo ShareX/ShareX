@@ -180,6 +180,8 @@
             this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
+            this.tpOneDrive = new System.Windows.Forms.TabPage();
+            this.oAuth2OneDrive = new UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
@@ -210,6 +212,7 @@
             this.lblOwnCloudUsername = new System.Windows.Forms.Label();
             this.lblOwnCloudHost = new System.Windows.Forms.Label();
             this.tpMediaFire = new System.Windows.Forms.TabPage();
+            this.cbMediaFireUseLongLink = new System.Windows.Forms.CheckBox();
             this.txtMediaFirePath = new System.Windows.Forms.TextBox();
             this.lblMediaFirePath = new System.Windows.Forms.Label();
             this.txtMediaFirePassword = new System.Windows.Forms.TextBox();
@@ -387,7 +390,6 @@
             this.ttlvMain = new HelpersLib.TabToListView();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
-            this.cbMediaFireUseLongLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -410,6 +412,7 @@
             this.tpFTP.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
+            this.tpOneDrive.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
             this.tpBox.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
@@ -1385,6 +1388,7 @@
             this.tcFileUploaders.Controls.Add(this.tpFTP);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
+            this.tcFileUploaders.Controls.Add(this.tpOneDrive);
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
             this.tcFileUploaders.Controls.Add(this.tpBox);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
@@ -2022,6 +2026,28 @@
             this.txtAmazonS3AccessKey.TabIndex = 1;
             this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
             // 
+            // tpOneDrive
+            // 
+            this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
+            this.tpOneDrive.Location = new System.Drawing.Point(4, 40);
+            this.tpOneDrive.Name = "tpOneDrive";
+            this.tpOneDrive.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOneDrive.Size = new System.Drawing.Size(972, 475);
+            this.tpOneDrive.TabIndex = 17;
+            this.tpOneDrive.Text = "OneDrive";
+            this.tpOneDrive.UseVisualStyleBackColor = true;
+            // 
+            // oAuth2OneDrive
+            // 
+            this.oAuth2OneDrive.IsRefreshable = false;
+            this.oAuth2OneDrive.Location = new System.Drawing.Point(16, 16);
+            this.oAuth2OneDrive.Name = "oAuth2OneDrive";
+            this.oAuth2OneDrive.Size = new System.Drawing.Size(328, 200);
+            this.oAuth2OneDrive.TabIndex = 2;
+            this.oAuth2OneDrive.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
+            this.oAuth2OneDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
+            this.oAuth2OneDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
+            // 
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
@@ -2077,7 +2103,7 @@
             this.lvGoogleDriveFoldersList.Location = new System.Drawing.Point(352, 72);
             this.lvGoogleDriveFoldersList.MultiSelect = false;
             this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
-            this.lvGoogleDriveFoldersList.Size = new System.Drawing.Size(432, 408);
+            this.lvGoogleDriveFoldersList.Size = new System.Drawing.Size(432, 392);
             this.lvGoogleDriveFoldersList.TabIndex = 11;
             this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
             this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
@@ -2340,6 +2366,17 @@
             this.tpMediaFire.TabIndex = 16;
             this.tpMediaFire.Text = "MediaFire";
             this.tpMediaFire.UseVisualStyleBackColor = true;
+            // 
+            // cbMediaFireUseLongLink
+            // 
+            this.cbMediaFireUseLongLink.AutoSize = true;
+            this.cbMediaFireUseLongLink.Location = new System.Drawing.Point(16, 120);
+            this.cbMediaFireUseLongLink.Name = "cbMediaFireUseLongLink";
+            this.cbMediaFireUseLongLink.Size = new System.Drawing.Size(205, 17);
+            this.cbMediaFireUseLongLink.TabIndex = 6;
+            this.cbMediaFireUseLongLink.Text = "Use long link which includes file name";
+            this.cbMediaFireUseLongLink.UseVisualStyleBackColor = true;
+            this.cbMediaFireUseLongLink.CheckedChanged += new System.EventHandler(this.cbMediaFireUseLongLink_CheckedChanged);
             // 
             // txtMediaFirePath
             // 
@@ -4154,17 +4191,6 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // cbMediaFireUseLongLink
-            // 
-            this.cbMediaFireUseLongLink.AutoSize = true;
-            this.cbMediaFireUseLongLink.Location = new System.Drawing.Point(16, 120);
-            this.cbMediaFireUseLongLink.Name = "cbMediaFireUseLongLink";
-            this.cbMediaFireUseLongLink.Size = new System.Drawing.Size(205, 17);
-            this.cbMediaFireUseLongLink.TabIndex = 6;
-            this.cbMediaFireUseLongLink.Text = "Use long link which includes file name";
-            this.cbMediaFireUseLongLink.UseVisualStyleBackColor = true;
-            this.cbMediaFireUseLongLink.CheckedChanged += new System.EventHandler(this.cbMediaFireUseLongLink_CheckedChanged);
-            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4216,6 +4242,7 @@
             this.tpMega.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
+            this.tpOneDrive.ResumeLayout(false);
             this.tpGoogleDrive.ResumeLayout(false);
             this.tpGoogleDrive.PerformLayout();
             this.tpBox.ResumeLayout(false);
@@ -4642,6 +4669,8 @@
         private System.Windows.Forms.Label lblMediaFireEmail;
         private System.Windows.Forms.TextBox txtMediaFirePath;
         private System.Windows.Forms.Label lblMediaFirePath;
-        private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;        
+        private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
+        private System.Windows.Forms.TabPage tpOneDrive;
+        private OAuthControl oAuth2OneDrive;        
     }
 }

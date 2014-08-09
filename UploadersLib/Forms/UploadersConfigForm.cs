@@ -67,75 +67,77 @@ namespace UploadersLib
         {
             ImageList uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
-            uploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
-            uploadersImageList.Images.Add("TinyPic", Resources.TinyPic);
-            uploadersImageList.Images.Add("Imgur", Resources.Imgur);
-            uploadersImageList.Images.Add("Flickr", Resources.Flickr);
-            uploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
-            uploadersImageList.Images.Add("Picasa", Resources.Picasa);
-            uploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
-            uploadersImageList.Images.Add("Copy", Resources.Copy);
-            uploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
-            uploadersImageList.Images.Add("Box", Resources.Box);
-            uploadersImageList.Images.Add("Minus", Resources.Minus);
-            uploadersImageList.Images.Add("FTP", Resources.folder_network);
-            uploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
-            uploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
-            uploadersImageList.Images.Add("Gett", Resources.Gett);
-            uploadersImageList.Images.Add("Hostr", Resources.Hostr);
-            uploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
-            uploadersImageList.Images.Add("SharedFolders", Resources.server_network);
-            uploadersImageList.Images.Add("Email", Resources.mail);
-            uploadersImageList.Images.Add("Jira", Resources.jira);
-            uploadersImageList.Images.Add("Mega", Resources.Mega);
+            uploadersImageList.Images.Add("AdFly", Resources.AdFly);
             uploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
-            uploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
+            uploadersImageList.Images.Add("Bitly", Resources.Bitly);
+            uploadersImageList.Images.Add("Box", Resources.Box);
+            uploadersImageList.Images.Add("Copy", Resources.Copy);
+            uploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
+            uploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
+            uploadersImageList.Images.Add("Email", Resources.mail);
+            uploadersImageList.Images.Add("Flickr", Resources.Flickr);
+            uploadersImageList.Images.Add("FTP", Resources.folder_network);
+            uploadersImageList.Images.Add("Gett", Resources.Gett);
+            uploadersImageList.Images.Add("Gist", Resources.GitHub);
+            uploadersImageList.Images.Add("Google", Resources.Google);
+            uploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
+            uploadersImageList.Images.Add("Hostr", Resources.Hostr);
+            uploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
+            uploadersImageList.Images.Add("Imgur", Resources.Imgur);
+            uploadersImageList.Images.Add("Jira", Resources.jira);
+            uploadersImageList.Images.Add("MediaFire", Resources.MediaFire);
+            uploadersImageList.Images.Add("Mega", Resources.Mega);
+            uploadersImageList.Images.Add("Minus", Resources.Minus);
+            uploadersImageList.Images.Add("OneDrive", Resources.OneDrive);
+            uploadersImageList.Images.Add("ownCloud", Resources.OwnCloud);
             uploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
             uploadersImageList.Images.Add("Pasteee", Resources.page_white_text);
-            uploadersImageList.Images.Add("Gist", Resources.GitHub);
-            uploadersImageList.Images.Add("Upaste", Resources.Upaste);
-            uploadersImageList.Images.Add("Google", Resources.Google);
-            uploadersImageList.Images.Add("Bitly", Resources.Bitly);
-            uploadersImageList.Images.Add("Yourls", Resources.Yourls);
+            uploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
+            uploadersImageList.Images.Add("Picasa", Resources.Picasa);
+            uploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
+            uploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
+            uploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
+            uploadersImageList.Images.Add("SharedFolders", Resources.server_network);
+            uploadersImageList.Images.Add("TinyPic", Resources.TinyPic);
             uploadersImageList.Images.Add("Twitter", Resources.Twitter);
-            uploadersImageList.Images.Add("ownCloud", Resources.OwnCloud);
-            uploadersImageList.Images.Add("AdFly", Resources.AdFly);
-            uploadersImageList.Images.Add("MediaFire", Resources.MediaFire);
+            uploadersImageList.Images.Add("Upaste", Resources.Upaste);
+            uploadersImageList.Images.Add("Yourls", Resources.Yourls);
 
-            tpImageShack.ImageKey = "ImageShack";
-            tpTinyPic.ImageKey = "TinyPic";
-            tpImgur.ImageKey = "Imgur";
+            tpAdFly.ImageKey = "AdFly";
+            tpAmazonS3.ImageKey = "AmazonS3";
+            tpBitly.ImageKey = "Bitly";
+            tpBox.ImageKey = "Box";
+            tpCopy.ImageKey = "Copy";
+            tpCustomUploaders.ImageKey = "CustomUploader";
+            tpDropbox.ImageKey = "Dropbox";
+            tpEmail.ImageKey = "Email";
             tpFlickr.ImageKey = "Flickr";
+            tpFTP.ImageKey = "FTP";
+            tpGe_tt.ImageKey = "Gett";
+            tpGist.ImageKey = "Gist";
+            tpGoogleDrive.ImageKey = "GoogleDrive";
+            tpGoogleURLShortener.ImageKey = "Google";
+            tpHostr.ImageKey = "Hostr";
+            tpImageShack.ImageKey = "ImageShack";
+            tpImgur.ImageKey = "Imgur";
+            tpJira.ImageKey = "Jira";
+            tpMediaFire.ImageKey = "MediaFire";
+            tpMega.ImageKey = "Mega";
+            tpMinus.ImageKey = "Minus";
+            tpOneDrive.ImageKey = "OneDrive";
+            tpOwnCloud.ImageKey = "ownCloud";
+            tpPaste_ee.ImageKey = "Pasteee";
+            tpPastebin.ImageKey = "Pastebin";
             tpPhotobucket.ImageKey = "Photobucket";
             tpPicasa.ImageKey = "Picasa";
-            tpDropbox.ImageKey = "Dropbox";
-            tpCopy.ImageKey = "Copy";
-            tpGoogleDrive.ImageKey = "GoogleDrive";
-            tpBox.ImageKey = "Box";
-            tpMinus.ImageKey = "Minus";
-            tpFTP.ImageKey = "FTP";
+            tpPushbullet.ImageKey = "Pushbullet";
             tpRapidShare.ImageKey = "RapidShare";
             tpSendSpace.ImageKey = "SendSpace";
             tpSharedFolder.ImageKey = "SharedFolders";
-            tpEmail.ImageKey = "Email";
-            tpJira.ImageKey = "Jira";
-            tpGe_tt.ImageKey = "Gett";
-            tpHostr.ImageKey = "Hostr";
-            tpCustomUploaders.ImageKey = "CustomUploader";
-            tpPastebin.ImageKey = "Pastebin";
-            tpPaste_ee.ImageKey = "Pasteee";
-            tpPushbullet.ImageKey = "Pushbullet";
-            tpGoogleURLShortener.ImageKey = "Google";
-            tpBitly.ImageKey = "Bitly";
-            tpYourls.ImageKey = "Yourls";
+            tpTinyPic.ImageKey = "TinyPic";
             tpTwitter.ImageKey = "Twitter";
-            tpMega.ImageKey = "Mega";
-            tpGist.ImageKey = "Gist";
             tpUpaste.ImageKey = "Upaste";
-            tpAmazonS3.ImageKey = "AmazonS3";
-            tpOwnCloud.ImageKey = "ownCloud";
-            tpAdFly.ImageKey = "AdFly";
-            tpMediaFire.ImageKey = "MediaFire";
+            tpYourls.ImageKey = "Yourls";
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -1664,6 +1666,25 @@ namespace UploadersLib
         }
 
         #endregion Amazon S3
+
+        #region OneDrive
+
+        private void oAuth2OneDrive_OpenButtonClicked()
+        {
+            OneDriveAuthOpen();
+        }
+
+        private void oAuth2OneDrive_CompleteButtonClicked(string code)
+        {
+            OneDriveAuthComplete(code);
+        }
+
+        private void oAuth2OneDrive_ClearButtonClicked()
+        {
+            Config.OneDriveOAuth2Info = null;
+        }
+
+        #endregion OneDrive
 
         #region ownCloud
 
