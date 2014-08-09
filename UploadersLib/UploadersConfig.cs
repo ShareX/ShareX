@@ -225,6 +225,10 @@ namespace UploadersLib
         public string MediaFirePath = "";
         public bool MediaFireUseLongLink = false;
 
+        // MediaCrush
+
+        public bool MediaCrushDirectLink = false;
+
         #endregion File uploaders
 
         #region URL shorteners

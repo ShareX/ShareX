@@ -37,6 +37,8 @@ namespace UploadersLib.FileUploaders
 {
     public class MediaCrushUploader : FileUploader
     {
+        public bool DirectLink { get; set; }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
             ThrowWebExceptions = true;
@@ -88,7 +90,7 @@ namespace UploadersLib.FileUploaders
                     case "done":
                     case "ready":
                         MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
-                        result.URL = blob.DirectURL;
+                        result.URL = DirectLink ? blob.DirectURL : blob.URL;
                         result.DeletionURL = blob.DeletionURL;
                         return result;
                     case "unrecognized":
@@ -129,7 +131,7 @@ namespace UploadersLib.FileUploaders
 
             return new UploadResult
             {
-                URL = blob.DirectURL,
+                URL = DirectLink ? blob.DirectURL : blob.URL,
                 DeletionURL = blob.DeletionURL
             };
         }
@@ -146,7 +148,7 @@ namespace UploadersLib.FileUploaders
 
                     return new UploadResult(response)
                     {
-                        URL = blob.DirectURL,
+                        URL = DirectLink ? blob.DirectURL : blob.URL,
                         DeletionURL = blob.DeletionURL
                     };
                 }

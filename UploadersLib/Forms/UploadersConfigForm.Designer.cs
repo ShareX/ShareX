@@ -122,6 +122,16 @@
             this.lblAdflyAPIKEY = new System.Windows.Forms.Label();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
+            this.tpFTP = new System.Windows.Forms.TabPage();
+            this.eiFTP = new HelpersLib.ExportImportControl();
+            this.btnFtpClient = new System.Windows.Forms.Button();
+            this.lblFtpFiles = new System.Windows.Forms.Label();
+            this.lblFtpText = new System.Windows.Forms.Label();
+            this.lblFtpImages = new System.Windows.Forms.Label();
+            this.cboFtpImages = new System.Windows.Forms.ComboBox();
+            this.cboFtpFiles = new System.Windows.Forms.ComboBox();
+            this.cboFtpText = new System.Windows.Forms.ComboBox();
+            this.ucFTPAccounts = new UploadersLib.AccountsControl();
             this.tpDropbox = new System.Windows.Forms.TabPage();
             this.oauth2Dropbox = new UploadersLib.OAuthControl();
             this.cbDropboxURLType = new System.Windows.Forms.ComboBox();
@@ -133,55 +143,6 @@
             this.lblDropboxPathTip = new System.Windows.Forms.Label();
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
-            this.tpCopy = new System.Windows.Forms.TabPage();
-            this.pbCopyLogo = new System.Windows.Forms.PictureBox();
-            this.lblCopyURLType = new System.Windows.Forms.Label();
-            this.cbCopyURLType = new System.Windows.Forms.ComboBox();
-            this.btnCopyRegister = new System.Windows.Forms.Button();
-            this.lblCopyStatus = new System.Windows.Forms.Label();
-            this.lblCopyPath = new System.Windows.Forms.Label();
-            this.txtCopyPath = new System.Windows.Forms.TextBox();
-            this.oAuthCopy = new UploadersLib.OAuthControl();
-            this.tpFTP = new System.Windows.Forms.TabPage();
-            this.eiFTP = new HelpersLib.ExportImportControl();
-            this.btnFtpClient = new System.Windows.Forms.Button();
-            this.lblFtpFiles = new System.Windows.Forms.Label();
-            this.lblFtpText = new System.Windows.Forms.Label();
-            this.lblFtpImages = new System.Windows.Forms.Label();
-            this.cboFtpImages = new System.Windows.Forms.ComboBox();
-            this.cboFtpFiles = new System.Windows.Forms.ComboBox();
-            this.cboFtpText = new System.Windows.Forms.ComboBox();
-            this.ucFTPAccounts = new UploadersLib.AccountsControl();
-            this.tpMega = new System.Windows.Forms.TabPage();
-            this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
-            this.lblMegaStatus = new System.Windows.Forms.Label();
-            this.btnMegaRegister = new System.Windows.Forms.Button();
-            this.lblMegaFolder = new System.Windows.Forms.Label();
-            this.lblMegaStatusTitle = new System.Windows.Forms.Label();
-            this.cbMegaFolder = new System.Windows.Forms.ComboBox();
-            this.lblMegaEmail = new System.Windows.Forms.Label();
-            this.btnMegaLogin = new System.Windows.Forms.Button();
-            this.txtMegaEmail = new System.Windows.Forms.TextBox();
-            this.txtMegaPassword = new System.Windows.Forms.TextBox();
-            this.lblMegaPassword = new System.Windows.Forms.Label();
-            this.tpAmazonS3 = new System.Windows.Forms.TabPage();
-            this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
-            this.lblAmazonS3PathPreview = new System.Windows.Forms.Label();
-            this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
-            this.btnAmazonS3AccessKeyOpen = new System.Windows.Forms.Button();
-            this.cbAmazonS3Endpoint = new System.Windows.Forms.ComboBox();
-            this.lblAmazonS3BucketName = new System.Windows.Forms.Label();
-            this.txtAmazonS3BucketName = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
-            this.txtAmazonS3ObjectPrefix = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3ObjectPrefix = new System.Windows.Forms.Label();
-            this.txtAmazonS3SecretKey = new System.Windows.Forms.TextBox();
-            this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
-            this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
-            this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
-            this.tpOneDrive = new System.Windows.Forms.TabPage();
-            this.oAuth2OneDrive = new UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
@@ -200,6 +161,45 @@
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Box = new UploadersLib.OAuthControl();
+            this.tpCopy = new System.Windows.Forms.TabPage();
+            this.pbCopyLogo = new System.Windows.Forms.PictureBox();
+            this.lblCopyURLType = new System.Windows.Forms.Label();
+            this.cbCopyURLType = new System.Windows.Forms.ComboBox();
+            this.btnCopyRegister = new System.Windows.Forms.Button();
+            this.lblCopyStatus = new System.Windows.Forms.Label();
+            this.lblCopyPath = new System.Windows.Forms.Label();
+            this.txtCopyPath = new System.Windows.Forms.TextBox();
+            this.oAuthCopy = new UploadersLib.OAuthControl();
+            this.tpOneDrive = new System.Windows.Forms.TabPage();
+            this.oAuth2OneDrive = new UploadersLib.OAuthControl();
+            this.tpAmazonS3 = new System.Windows.Forms.TabPage();
+            this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
+            this.lblAmazonS3PathPreview = new System.Windows.Forms.Label();
+            this.btnAmazonS3BucketNameOpen = new System.Windows.Forms.Button();
+            this.btnAmazonS3AccessKeyOpen = new System.Windows.Forms.Button();
+            this.cbAmazonS3Endpoint = new System.Windows.Forms.ComboBox();
+            this.lblAmazonS3BucketName = new System.Windows.Forms.Label();
+            this.txtAmazonS3BucketName = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3Endpoint = new System.Windows.Forms.Label();
+            this.txtAmazonS3ObjectPrefix = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3ObjectPrefix = new System.Windows.Forms.Label();
+            this.txtAmazonS3SecretKey = new System.Windows.Forms.TextBox();
+            this.lblAmazonS3SecretKey = new System.Windows.Forms.Label();
+            this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
+            this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
+            this.tpMega = new System.Windows.Forms.TabPage();
+            this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
+            this.lblMegaStatus = new System.Windows.Forms.Label();
+            this.btnMegaRegister = new System.Windows.Forms.Button();
+            this.lblMegaFolder = new System.Windows.Forms.Label();
+            this.lblMegaStatusTitle = new System.Windows.Forms.Label();
+            this.cbMegaFolder = new System.Windows.Forms.ComboBox();
+            this.lblMegaEmail = new System.Windows.Forms.Label();
+            this.btnMegaLogin = new System.Windows.Forms.Button();
+            this.txtMegaEmail = new System.Windows.Forms.TextBox();
+            this.txtMegaPassword = new System.Windows.Forms.TextBox();
+            this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
             this.cbOwnCloudDirectLink = new System.Windows.Forms.CheckBox();
             this.cbOwnCloudCreateShare = new System.Windows.Forms.CheckBox();
@@ -241,6 +241,7 @@
             this.txtSendSpacePassword = new System.Windows.Forms.TextBox();
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
             this.atcSendSpaceAccountType = new UploadersLib.AccountTypeControl();
+            this.tpMediaCrush = new System.Windows.Forms.TabPage();
             this.tpGe_tt = new System.Windows.Forms.TabPage();
             this.lblGe_ttStatus = new System.Windows.Forms.Label();
             this.lblGe_ttPassword = new System.Windows.Forms.Label();
@@ -390,6 +391,7 @@
             this.ttlvMain = new HelpersLib.TabToListView();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
+            this.cbMediaCrushDirectLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -405,21 +407,22 @@
             this.tpAdFly.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
+            this.tpFTP.SuspendLayout();
             this.tpDropbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).BeginInit();
-            this.tpCopy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).BeginInit();
-            this.tpFTP.SuspendLayout();
-            this.tpMega.SuspendLayout();
-            this.tpAmazonS3.SuspendLayout();
-            this.tpOneDrive.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
             this.tpBox.SuspendLayout();
+            this.tpCopy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).BeginInit();
+            this.tpOneDrive.SuspendLayout();
+            this.tpAmazonS3.SuspendLayout();
+            this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
             this.tpMediaFire.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
             this.tpRapidShare.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
+            this.tpMediaCrush.SuspendLayout();
             this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
             this.tpMinus.SuspendLayout();
@@ -1383,19 +1386,20 @@
             // 
             // tcFileUploaders
             // 
-            this.tcFileUploaders.Controls.Add(this.tpDropbox);
-            this.tcFileUploaders.Controls.Add(this.tpCopy);
             this.tcFileUploaders.Controls.Add(this.tpFTP);
-            this.tcFileUploaders.Controls.Add(this.tpMega);
-            this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
-            this.tcFileUploaders.Controls.Add(this.tpOneDrive);
+            this.tcFileUploaders.Controls.Add(this.tpDropbox);
             this.tcFileUploaders.Controls.Add(this.tpGoogleDrive);
             this.tcFileUploaders.Controls.Add(this.tpBox);
+            this.tcFileUploaders.Controls.Add(this.tpCopy);
+            this.tcFileUploaders.Controls.Add(this.tpOneDrive);
+            this.tcFileUploaders.Controls.Add(this.tpAmazonS3);
+            this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Controls.Add(this.tpPushbullet);
             this.tcFileUploaders.Controls.Add(this.tpRapidShare);
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
+            this.tcFileUploaders.Controls.Add(this.tpMediaCrush);
             this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
             this.tcFileUploaders.Controls.Add(this.tpMinus);
@@ -1409,6 +1413,112 @@
             this.tcFileUploaders.SelectedIndex = 0;
             this.tcFileUploaders.Size = new System.Drawing.Size(980, 519);
             this.tcFileUploaders.TabIndex = 0;
+            // 
+            // tpFTP
+            // 
+            this.tpFTP.Controls.Add(this.eiFTP);
+            this.tpFTP.Controls.Add(this.btnFtpClient);
+            this.tpFTP.Controls.Add(this.lblFtpFiles);
+            this.tpFTP.Controls.Add(this.lblFtpText);
+            this.tpFTP.Controls.Add(this.lblFtpImages);
+            this.tpFTP.Controls.Add(this.cboFtpImages);
+            this.tpFTP.Controls.Add(this.cboFtpFiles);
+            this.tpFTP.Controls.Add(this.cboFtpText);
+            this.tpFTP.Controls.Add(this.ucFTPAccounts);
+            this.tpFTP.Location = new System.Drawing.Point(4, 40);
+            this.tpFTP.Name = "tpFTP";
+            this.tpFTP.Padding = new System.Windows.Forms.Padding(3);
+            this.tpFTP.Size = new System.Drawing.Size(972, 475);
+            this.tpFTP.TabIndex = 4;
+            this.tpFTP.Text = "FTP";
+            this.tpFTP.UseVisualStyleBackColor = true;
+            // 
+            // eiFTP
+            // 
+            this.eiFTP.Location = new System.Drawing.Point(656, 48);
+            this.eiFTP.Name = "eiFTP";
+            this.eiFTP.ObjectType = null;
+            this.eiFTP.Size = new System.Drawing.Size(136, 24);
+            this.eiFTP.TabIndex = 8;
+            this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
+            this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
+            // 
+            // btnFtpClient
+            // 
+            this.btnFtpClient.Location = new System.Drawing.Point(584, 48);
+            this.btnFtpClient.Name = "btnFtpClient";
+            this.btnFtpClient.Size = new System.Drawing.Size(64, 24);
+            this.btnFtpClient.TabIndex = 7;
+            this.btnFtpClient.Text = "Client...";
+            this.btnFtpClient.UseVisualStyleBackColor = true;
+            this.btnFtpClient.Click += new System.EventHandler(this.btnFtpClient_Click);
+            // 
+            // lblFtpFiles
+            // 
+            this.lblFtpFiles.AutoSize = true;
+            this.lblFtpFiles.Location = new System.Drawing.Point(544, 16);
+            this.lblFtpFiles.Name = "lblFtpFiles";
+            this.lblFtpFiles.Size = new System.Drawing.Size(26, 13);
+            this.lblFtpFiles.TabIndex = 4;
+            this.lblFtpFiles.Text = "File:";
+            // 
+            // lblFtpText
+            // 
+            this.lblFtpText.AutoSize = true;
+            this.lblFtpText.Location = new System.Drawing.Point(285, 16);
+            this.lblFtpText.Name = "lblFtpText";
+            this.lblFtpText.Size = new System.Drawing.Size(31, 13);
+            this.lblFtpText.TabIndex = 2;
+            this.lblFtpText.Text = "Text:";
+            // 
+            // lblFtpImages
+            // 
+            this.lblFtpImages.AutoSize = true;
+            this.lblFtpImages.Location = new System.Drawing.Point(16, 16);
+            this.lblFtpImages.Name = "lblFtpImages";
+            this.lblFtpImages.Size = new System.Drawing.Size(39, 13);
+            this.lblFtpImages.TabIndex = 0;
+            this.lblFtpImages.Text = "Image:";
+            // 
+            // cboFtpImages
+            // 
+            this.cboFtpImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFtpImages.FormattingEnabled = true;
+            this.cboFtpImages.Location = new System.Drawing.Point(56, 12);
+            this.cboFtpImages.Name = "cboFtpImages";
+            this.cboFtpImages.Size = new System.Drawing.Size(216, 21);
+            this.cboFtpImages.TabIndex = 1;
+            this.cboFtpImages.SelectedIndexChanged += new System.EventHandler(this.cboFtpImages_SelectedIndexChanged);
+            // 
+            // cboFtpFiles
+            // 
+            this.cboFtpFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFtpFiles.FormattingEnabled = true;
+            this.cboFtpFiles.Location = new System.Drawing.Point(576, 12);
+            this.cboFtpFiles.Name = "cboFtpFiles";
+            this.cboFtpFiles.Size = new System.Drawing.Size(216, 21);
+            this.cboFtpFiles.TabIndex = 5;
+            this.cboFtpFiles.SelectedIndexChanged += new System.EventHandler(this.cboFtpFiles_SelectedIndexChanged);
+            // 
+            // cboFtpText
+            // 
+            this.cboFtpText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFtpText.FormattingEnabled = true;
+            this.cboFtpText.Location = new System.Drawing.Point(317, 12);
+            this.cboFtpText.Name = "cboFtpText";
+            this.cboFtpText.Size = new System.Drawing.Size(216, 21);
+            this.cboFtpText.TabIndex = 3;
+            this.cboFtpText.SelectedIndexChanged += new System.EventHandler(this.cboFtpText_SelectedIndexChanged);
+            // 
+            // ucFTPAccounts
+            // 
+            this.ucFTPAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
+            this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
+            this.ucFTPAccounts.Name = "ucFTPAccounts";
+            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 448);
+            this.ucFTPAccounts.TabIndex = 6;
             // 
             // tpDropbox
             // 
@@ -1530,523 +1640,6 @@
             this.txtDropboxPath.Size = new System.Drawing.Size(248, 20);
             this.txtDropboxPath.TabIndex = 3;
             this.txtDropboxPath.TextChanged += new System.EventHandler(this.txtDropboxPath_TextChanged);
-            // 
-            // tpCopy
-            // 
-            this.tpCopy.Controls.Add(this.pbCopyLogo);
-            this.tpCopy.Controls.Add(this.lblCopyURLType);
-            this.tpCopy.Controls.Add(this.cbCopyURLType);
-            this.tpCopy.Controls.Add(this.btnCopyRegister);
-            this.tpCopy.Controls.Add(this.lblCopyStatus);
-            this.tpCopy.Controls.Add(this.lblCopyPath);
-            this.tpCopy.Controls.Add(this.txtCopyPath);
-            this.tpCopy.Controls.Add(this.oAuthCopy);
-            this.tpCopy.Location = new System.Drawing.Point(4, 40);
-            this.tpCopy.Name = "tpCopy";
-            this.tpCopy.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCopy.Size = new System.Drawing.Size(972, 475);
-            this.tpCopy.TabIndex = 0;
-            this.tpCopy.Text = "Copy";
-            this.tpCopy.UseVisualStyleBackColor = true;
-            // 
-            // pbCopyLogo
-            // 
-            this.pbCopyLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCopyLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbCopyLogo.Image")));
-            this.pbCopyLogo.Location = new System.Drawing.Point(16, 16);
-            this.pbCopyLogo.Name = "pbCopyLogo";
-            this.pbCopyLogo.Size = new System.Drawing.Size(216, 64);
-            this.pbCopyLogo.TabIndex = 19;
-            this.pbCopyLogo.TabStop = false;
-            this.pbCopyLogo.Click += new System.EventHandler(this.pbCopyLogo_Click);
-            // 
-            // lblCopyURLType
-            // 
-            this.lblCopyURLType.AutoSize = true;
-            this.lblCopyURLType.Location = new System.Drawing.Point(16, 331);
-            this.lblCopyURLType.Name = "lblCopyURLType";
-            this.lblCopyURLType.Size = new System.Drawing.Size(55, 13);
-            this.lblCopyURLType.TabIndex = 4;
-            this.lblCopyURLType.Text = "URL type:";
-            // 
-            // cbCopyURLType
-            // 
-            this.cbCopyURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCopyURLType.FormattingEnabled = true;
-            this.cbCopyURLType.Location = new System.Drawing.Point(88, 327);
-            this.cbCopyURLType.Name = "cbCopyURLType";
-            this.cbCopyURLType.Size = new System.Drawing.Size(121, 21);
-            this.cbCopyURLType.TabIndex = 5;
-            this.cbCopyURLType.SelectedIndexChanged += new System.EventHandler(this.cbCopyURLType_SelectedIndexChanged);
-            // 
-            // btnCopyRegister
-            // 
-            this.btnCopyRegister.Location = new System.Drawing.Point(240, 16);
-            this.btnCopyRegister.Name = "btnCopyRegister";
-            this.btnCopyRegister.Size = new System.Drawing.Size(96, 24);
-            this.btnCopyRegister.TabIndex = 0;
-            this.btnCopyRegister.Text = "Register...";
-            this.btnCopyRegister.UseVisualStyleBackColor = true;
-            this.btnCopyRegister.Click += new System.EventHandler(this.btnCopyRegister_Click);
-            // 
-            // lblCopyStatus
-            // 
-            this.lblCopyStatus.AutoSize = true;
-            this.lblCopyStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCopyStatus.Location = new System.Drawing.Point(16, 356);
-            this.lblCopyStatus.Name = "lblCopyStatus";
-            this.lblCopyStatus.Size = new System.Drawing.Size(45, 16);
-            this.lblCopyStatus.TabIndex = 6;
-            this.lblCopyStatus.Text = "Status";
-            // 
-            // lblCopyPath
-            // 
-            this.lblCopyPath.AutoSize = true;
-            this.lblCopyPath.Location = new System.Drawing.Point(16, 304);
-            this.lblCopyPath.Name = "lblCopyPath";
-            this.lblCopyPath.Size = new System.Drawing.Size(68, 13);
-            this.lblCopyPath.TabIndex = 2;
-            this.lblCopyPath.Text = "Upload path:";
-            // 
-            // txtCopyPath
-            // 
-            this.txtCopyPath.Location = new System.Drawing.Point(88, 300);
-            this.txtCopyPath.Name = "txtCopyPath";
-            this.txtCopyPath.Size = new System.Drawing.Size(248, 20);
-            this.txtCopyPath.TabIndex = 3;
-            this.txtCopyPath.TextChanged += new System.EventHandler(this.txtCopyPath_TextChanged);
-            // 
-            // oAuthCopy
-            // 
-            this.oAuthCopy.IsRefreshable = false;
-            this.oAuthCopy.Location = new System.Drawing.Point(16, 88);
-            this.oAuthCopy.Name = "oAuthCopy";
-            this.oAuthCopy.Size = new System.Drawing.Size(328, 208);
-            this.oAuthCopy.TabIndex = 1;
-            this.oAuthCopy.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
-            this.oAuthCopy.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
-            this.oAuthCopy.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
-            // 
-            // tpFTP
-            // 
-            this.tpFTP.Controls.Add(this.eiFTP);
-            this.tpFTP.Controls.Add(this.btnFtpClient);
-            this.tpFTP.Controls.Add(this.lblFtpFiles);
-            this.tpFTP.Controls.Add(this.lblFtpText);
-            this.tpFTP.Controls.Add(this.lblFtpImages);
-            this.tpFTP.Controls.Add(this.cboFtpImages);
-            this.tpFTP.Controls.Add(this.cboFtpFiles);
-            this.tpFTP.Controls.Add(this.cboFtpText);
-            this.tpFTP.Controls.Add(this.ucFTPAccounts);
-            this.tpFTP.Location = new System.Drawing.Point(4, 40);
-            this.tpFTP.Name = "tpFTP";
-            this.tpFTP.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFTP.Size = new System.Drawing.Size(972, 475);
-            this.tpFTP.TabIndex = 4;
-            this.tpFTP.Text = "FTP";
-            this.tpFTP.UseVisualStyleBackColor = true;
-            // 
-            // eiFTP
-            // 
-            this.eiFTP.Location = new System.Drawing.Point(656, 48);
-            this.eiFTP.Name = "eiFTP";
-            this.eiFTP.ObjectType = null;
-            this.eiFTP.Size = new System.Drawing.Size(136, 24);
-            this.eiFTP.TabIndex = 8;
-            this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
-            this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
-            // 
-            // btnFtpClient
-            // 
-            this.btnFtpClient.Location = new System.Drawing.Point(584, 48);
-            this.btnFtpClient.Name = "btnFtpClient";
-            this.btnFtpClient.Size = new System.Drawing.Size(64, 24);
-            this.btnFtpClient.TabIndex = 7;
-            this.btnFtpClient.Text = "Client...";
-            this.btnFtpClient.UseVisualStyleBackColor = true;
-            this.btnFtpClient.Click += new System.EventHandler(this.btnFtpClient_Click);
-            // 
-            // lblFtpFiles
-            // 
-            this.lblFtpFiles.AutoSize = true;
-            this.lblFtpFiles.Location = new System.Drawing.Point(544, 16);
-            this.lblFtpFiles.Name = "lblFtpFiles";
-            this.lblFtpFiles.Size = new System.Drawing.Size(26, 13);
-            this.lblFtpFiles.TabIndex = 4;
-            this.lblFtpFiles.Text = "File:";
-            // 
-            // lblFtpText
-            // 
-            this.lblFtpText.AutoSize = true;
-            this.lblFtpText.Location = new System.Drawing.Point(285, 16);
-            this.lblFtpText.Name = "lblFtpText";
-            this.lblFtpText.Size = new System.Drawing.Size(31, 13);
-            this.lblFtpText.TabIndex = 2;
-            this.lblFtpText.Text = "Text:";
-            // 
-            // lblFtpImages
-            // 
-            this.lblFtpImages.AutoSize = true;
-            this.lblFtpImages.Location = new System.Drawing.Point(16, 16);
-            this.lblFtpImages.Name = "lblFtpImages";
-            this.lblFtpImages.Size = new System.Drawing.Size(39, 13);
-            this.lblFtpImages.TabIndex = 0;
-            this.lblFtpImages.Text = "Image:";
-            // 
-            // cboFtpImages
-            // 
-            this.cboFtpImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFtpImages.FormattingEnabled = true;
-            this.cboFtpImages.Location = new System.Drawing.Point(56, 12);
-            this.cboFtpImages.Name = "cboFtpImages";
-            this.cboFtpImages.Size = new System.Drawing.Size(216, 21);
-            this.cboFtpImages.TabIndex = 1;
-            this.cboFtpImages.SelectedIndexChanged += new System.EventHandler(this.cboFtpImages_SelectedIndexChanged);
-            // 
-            // cboFtpFiles
-            // 
-            this.cboFtpFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFtpFiles.FormattingEnabled = true;
-            this.cboFtpFiles.Location = new System.Drawing.Point(576, 12);
-            this.cboFtpFiles.Name = "cboFtpFiles";
-            this.cboFtpFiles.Size = new System.Drawing.Size(216, 21);
-            this.cboFtpFiles.TabIndex = 5;
-            this.cboFtpFiles.SelectedIndexChanged += new System.EventHandler(this.cboFtpFiles_SelectedIndexChanged);
-            // 
-            // cboFtpText
-            // 
-            this.cboFtpText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFtpText.FormattingEnabled = true;
-            this.cboFtpText.Location = new System.Drawing.Point(317, 12);
-            this.cboFtpText.Name = "cboFtpText";
-            this.cboFtpText.Size = new System.Drawing.Size(216, 21);
-            this.cboFtpText.TabIndex = 3;
-            this.cboFtpText.SelectedIndexChanged += new System.EventHandler(this.cboFtpText_SelectedIndexChanged);
-            // 
-            // ucFTPAccounts
-            // 
-            this.ucFTPAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
-            this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
-            this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 448);
-            this.ucFTPAccounts.TabIndex = 6;
-            // 
-            // tpMega
-            // 
-            this.tpMega.Controls.Add(this.btnMegaRefreshFolders);
-            this.tpMega.Controls.Add(this.lblMegaStatus);
-            this.tpMega.Controls.Add(this.btnMegaRegister);
-            this.tpMega.Controls.Add(this.lblMegaFolder);
-            this.tpMega.Controls.Add(this.lblMegaStatusTitle);
-            this.tpMega.Controls.Add(this.cbMegaFolder);
-            this.tpMega.Controls.Add(this.lblMegaEmail);
-            this.tpMega.Controls.Add(this.btnMegaLogin);
-            this.tpMega.Controls.Add(this.txtMegaEmail);
-            this.tpMega.Controls.Add(this.txtMegaPassword);
-            this.tpMega.Controls.Add(this.lblMegaPassword);
-            this.tpMega.Location = new System.Drawing.Point(4, 40);
-            this.tpMega.Name = "tpMega";
-            this.tpMega.Size = new System.Drawing.Size(972, 475);
-            this.tpMega.TabIndex = 12;
-            this.tpMega.Text = "Mega";
-            this.tpMega.UseVisualStyleBackColor = true;
-            // 
-            // btnMegaRefreshFolders
-            // 
-            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(264, 114);
-            this.btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
-            this.btnMegaRefreshFolders.Size = new System.Drawing.Size(88, 24);
-            this.btnMegaRefreshFolders.TabIndex = 10;
-            this.btnMegaRefreshFolders.Text = "Refresh";
-            this.btnMegaRefreshFolders.UseVisualStyleBackColor = true;
-            this.btnMegaRefreshFolders.Click += new System.EventHandler(this.btnMegaRefreshFolders_Click);
-            // 
-            // lblMegaStatus
-            // 
-            this.lblMegaStatus.AutoSize = true;
-            this.lblMegaStatus.Location = new System.Drawing.Point(88, 24);
-            this.lblMegaStatus.Name = "lblMegaStatus";
-            this.lblMegaStatus.Size = new System.Drawing.Size(186, 13);
-            this.lblMegaStatus.TabIndex = 1;
-            this.lblMegaStatus.Text = "CONFIGURED / NOT CONFIGURED";
-            // 
-            // btnMegaRegister
-            // 
-            this.btnMegaRegister.Location = new System.Drawing.Point(264, 50);
-            this.btnMegaRegister.Name = "btnMegaRegister";
-            this.btnMegaRegister.Size = new System.Drawing.Size(88, 24);
-            this.btnMegaRegister.TabIndex = 4;
-            this.btnMegaRegister.Text = "Register...";
-            this.btnMegaRegister.UseVisualStyleBackColor = true;
-            this.btnMegaRegister.Click += new System.EventHandler(this.btnMegaRegister_Click);
-            // 
-            // lblMegaFolder
-            // 
-            this.lblMegaFolder.AutoSize = true;
-            this.lblMegaFolder.Location = new System.Drawing.Point(24, 120);
-            this.lblMegaFolder.Name = "lblMegaFolder";
-            this.lblMegaFolder.Size = new System.Drawing.Size(39, 13);
-            this.lblMegaFolder.TabIndex = 8;
-            this.lblMegaFolder.Text = "Folder:";
-            // 
-            // lblMegaStatusTitle
-            // 
-            this.lblMegaStatusTitle.AutoSize = true;
-            this.lblMegaStatusTitle.Location = new System.Drawing.Point(24, 24);
-            this.lblMegaStatusTitle.Name = "lblMegaStatusTitle";
-            this.lblMegaStatusTitle.Size = new System.Drawing.Size(43, 13);
-            this.lblMegaStatusTitle.TabIndex = 0;
-            this.lblMegaStatusTitle.Text = "Status: ";
-            // 
-            // cbMegaFolder
-            // 
-            this.cbMegaFolder.DisplayMember = "DisplayName";
-            this.cbMegaFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMegaFolder.FormattingEnabled = true;
-            this.cbMegaFolder.Location = new System.Drawing.Point(88, 116);
-            this.cbMegaFolder.Name = "cbMegaFolder";
-            this.cbMegaFolder.Size = new System.Drawing.Size(168, 21);
-            this.cbMegaFolder.TabIndex = 9;
-            this.cbMegaFolder.ValueMember = "Node";
-            this.cbMegaFolder.SelectedIndexChanged += new System.EventHandler(this.cbMegaFolder_SelectedIndexChanged);
-            // 
-            // lblMegaEmail
-            // 
-            this.lblMegaEmail.AutoSize = true;
-            this.lblMegaEmail.Location = new System.Drawing.Point(24, 56);
-            this.lblMegaEmail.Name = "lblMegaEmail";
-            this.lblMegaEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblMegaEmail.TabIndex = 2;
-            this.lblMegaEmail.Text = "Email:";
-            // 
-            // btnMegaLogin
-            // 
-            this.btnMegaLogin.Location = new System.Drawing.Point(264, 82);
-            this.btnMegaLogin.Name = "btnMegaLogin";
-            this.btnMegaLogin.Size = new System.Drawing.Size(88, 24);
-            this.btnMegaLogin.TabIndex = 7;
-            this.btnMegaLogin.Text = "Login";
-            this.btnMegaLogin.UseVisualStyleBackColor = true;
-            this.btnMegaLogin.Click += new System.EventHandler(this.btnMegaLogin_Click);
-            // 
-            // txtMegaEmail
-            // 
-            this.txtMegaEmail.Location = new System.Drawing.Point(88, 52);
-            this.txtMegaEmail.Name = "txtMegaEmail";
-            this.txtMegaEmail.Size = new System.Drawing.Size(168, 20);
-            this.txtMegaEmail.TabIndex = 3;
-            // 
-            // txtMegaPassword
-            // 
-            this.txtMegaPassword.Location = new System.Drawing.Point(88, 84);
-            this.txtMegaPassword.Name = "txtMegaPassword";
-            this.txtMegaPassword.Size = new System.Drawing.Size(168, 20);
-            this.txtMegaPassword.TabIndex = 6;
-            this.txtMegaPassword.UseSystemPasswordChar = true;
-            // 
-            // lblMegaPassword
-            // 
-            this.lblMegaPassword.AutoSize = true;
-            this.lblMegaPassword.Location = new System.Drawing.Point(24, 88);
-            this.lblMegaPassword.Name = "lblMegaPassword";
-            this.lblMegaPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblMegaPassword.TabIndex = 5;
-            this.lblMegaPassword.Text = "Password:";
-            // 
-            // tpAmazonS3
-            // 
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3CustomDomain);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreviewLabel);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreview);
-            this.tpAmazonS3.Controls.Add(this.btnAmazonS3BucketNameOpen);
-            this.tpAmazonS3.Controls.Add(this.btnAmazonS3AccessKeyOpen);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3CustomCNAME);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3Endpoint);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3BucketName);
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3BucketName);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3ObjectPrefix);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3ObjectPrefix);
-            this.tpAmazonS3.Controls.Add(this.cbAmazonS3UseRRS);
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3SecretKey);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3SecretKey);
-            this.tpAmazonS3.Controls.Add(this.lblAmazonS3AccessKey);
-            this.tpAmazonS3.Controls.Add(this.txtAmazonS3AccessKey);
-            this.tpAmazonS3.Location = new System.Drawing.Point(4, 40);
-            this.tpAmazonS3.Name = "tpAmazonS3";
-            this.tpAmazonS3.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAmazonS3.Size = new System.Drawing.Size(972, 475);
-            this.tpAmazonS3.TabIndex = 13;
-            this.tpAmazonS3.Text = "Amazon S3";
-            this.tpAmazonS3.UseVisualStyleBackColor = true;
-            // 
-            // txtAmazonS3CustomDomain
-            // 
-            this.txtAmazonS3CustomDomain.Location = new System.Drawing.Point(152, 144);
-            this.txtAmazonS3CustomDomain.Name = "txtAmazonS3CustomDomain";
-            this.txtAmazonS3CustomDomain.Size = new System.Drawing.Size(304, 20);
-            this.txtAmazonS3CustomDomain.TabIndex = 13;
-            this.txtAmazonS3CustomDomain.TextChanged += new System.EventHandler(this.txtAmazonS3CustomDomain_TextChanged);
-            // 
-            // lblAmazonS3PathPreviewLabel
-            // 
-            this.lblAmazonS3PathPreviewLabel.AutoSize = true;
-            this.lblAmazonS3PathPreviewLabel.Location = new System.Drawing.Point(24, 192);
-            this.lblAmazonS3PathPreviewLabel.Name = "lblAmazonS3PathPreviewLabel";
-            this.lblAmazonS3PathPreviewLabel.Size = new System.Drawing.Size(72, 13);
-            this.lblAmazonS3PathPreviewLabel.TabIndex = 15;
-            this.lblAmazonS3PathPreviewLabel.Text = "URL preview:";
-            // 
-            // lblAmazonS3PathPreview
-            // 
-            this.lblAmazonS3PathPreview.AutoSize = true;
-            this.lblAmazonS3PathPreview.Location = new System.Drawing.Point(102, 192);
-            this.lblAmazonS3PathPreview.Name = "lblAmazonS3PathPreview";
-            this.lblAmazonS3PathPreview.Size = new System.Drawing.Size(45, 13);
-            this.lblAmazonS3PathPreview.TabIndex = 16;
-            this.lblAmazonS3PathPreview.Text = "Preview";
-            // 
-            // btnAmazonS3BucketNameOpen
-            // 
-            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 90);
-            this.btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
-            this.btnAmazonS3BucketNameOpen.Size = new System.Drawing.Size(24, 24);
-            this.btnAmazonS3BucketNameOpen.TabIndex = 9;
-            this.btnAmazonS3BucketNameOpen.Text = "...";
-            this.btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
-            this.btnAmazonS3BucketNameOpen.Click += new System.EventHandler(this.btnAmazonS3BucketNameOpen_Click);
-            // 
-            // btnAmazonS3AccessKeyOpen
-            // 
-            this.btnAmazonS3AccessKeyOpen.Location = new System.Drawing.Point(464, 18);
-            this.btnAmazonS3AccessKeyOpen.Name = "btnAmazonS3AccessKeyOpen";
-            this.btnAmazonS3AccessKeyOpen.Size = new System.Drawing.Size(24, 24);
-            this.btnAmazonS3AccessKeyOpen.TabIndex = 2;
-            this.btnAmazonS3AccessKeyOpen.Text = "...";
-            this.btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
-            this.btnAmazonS3AccessKeyOpen.Click += new System.EventHandler(this.btnAmazonS3AccessKeyOpen_Click);
-            // 
-            // cbAmazonS3Endpoint
-            // 
-            this.cbAmazonS3Endpoint.FormattingEnabled = true;
-            this.cbAmazonS3Endpoint.Items.AddRange(new object[] {
-            "https://s3-ap-northeast-1.amazonaws.com/",
-            "https://s3-ap-southeast-1.amazonaws.com/",
-            "https://s3-ap-southeast-2.amazonaws.com/",
-            "https://s3-eu-west-1.amazonaws.com/",
-            "https://s3-sa-east-1.amazonaws.com/",
-            "https://s3-us-west-1.amazonaws.com/",
-            "https://s3-us-west-2.amazonaws.com/",
-            "https://s3.amazonaws.com/",
-            "https://objects.dreamhost.com/"});
-            this.cbAmazonS3Endpoint.Location = new System.Drawing.Point(104, 68);
-            this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
-            this.cbAmazonS3Endpoint.Size = new System.Drawing.Size(352, 21);
-            this.cbAmazonS3Endpoint.TabIndex = 6;
-            this.cbAmazonS3Endpoint.SelectionChangeCommitted += new System.EventHandler(this.cbAmazonS3Endpoint_SelectionChangeCommitted);
-            this.cbAmazonS3Endpoint.TextChanged += new System.EventHandler(this.cbAmazonS3Endpoint_TextChanged);
-            // 
-            // lblAmazonS3BucketName
-            // 
-            this.lblAmazonS3BucketName.AutoSize = true;
-            this.lblAmazonS3BucketName.Location = new System.Drawing.Point(24, 96);
-            this.lblAmazonS3BucketName.Name = "lblAmazonS3BucketName";
-            this.lblAmazonS3BucketName.Size = new System.Drawing.Size(73, 13);
-            this.lblAmazonS3BucketName.TabIndex = 7;
-            this.lblAmazonS3BucketName.Text = "Bucket name:";
-            // 
-            // txtAmazonS3BucketName
-            // 
-            this.txtAmazonS3BucketName.Location = new System.Drawing.Point(104, 92);
-            this.txtAmazonS3BucketName.Name = "txtAmazonS3BucketName";
-            this.txtAmazonS3BucketName.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3BucketName.TabIndex = 8;
-            this.txtAmazonS3BucketName.TextChanged += new System.EventHandler(this.txtAmazonS3BucketName_TextChanged);
-            // 
-            // lblAmazonS3Endpoint
-            // 
-            this.lblAmazonS3Endpoint.AutoSize = true;
-            this.lblAmazonS3Endpoint.Location = new System.Drawing.Point(24, 72);
-            this.lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
-            this.lblAmazonS3Endpoint.Size = new System.Drawing.Size(52, 13);
-            this.lblAmazonS3Endpoint.TabIndex = 5;
-            this.lblAmazonS3Endpoint.Text = "Endpoint:";
-            // 
-            // txtAmazonS3ObjectPrefix
-            // 
-            this.txtAmazonS3ObjectPrefix.Location = new System.Drawing.Point(104, 116);
-            this.txtAmazonS3ObjectPrefix.Name = "txtAmazonS3ObjectPrefix";
-            this.txtAmazonS3ObjectPrefix.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3ObjectPrefix.TabIndex = 11;
-            this.txtAmazonS3ObjectPrefix.TextChanged += new System.EventHandler(this.txtAmazonS3ObjectPrefix_TextChanged);
-            // 
-            // lblAmazonS3ObjectPrefix
-            // 
-            this.lblAmazonS3ObjectPrefix.AutoSize = true;
-            this.lblAmazonS3ObjectPrefix.Location = new System.Drawing.Point(24, 120);
-            this.lblAmazonS3ObjectPrefix.Name = "lblAmazonS3ObjectPrefix";
-            this.lblAmazonS3ObjectPrefix.Size = new System.Drawing.Size(68, 13);
-            this.lblAmazonS3ObjectPrefix.TabIndex = 10;
-            this.lblAmazonS3ObjectPrefix.Text = "Upload path:";
-            // 
-            // txtAmazonS3SecretKey
-            // 
-            this.txtAmazonS3SecretKey.Location = new System.Drawing.Point(104, 44);
-            this.txtAmazonS3SecretKey.Name = "txtAmazonS3SecretKey";
-            this.txtAmazonS3SecretKey.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3SecretKey.TabIndex = 4;
-            this.txtAmazonS3SecretKey.UseSystemPasswordChar = true;
-            this.txtAmazonS3SecretKey.TextChanged += new System.EventHandler(this.txtAmazonS3SecretKey_TextChanged);
-            // 
-            // lblAmazonS3SecretKey
-            // 
-            this.lblAmazonS3SecretKey.AutoSize = true;
-            this.lblAmazonS3SecretKey.Location = new System.Drawing.Point(24, 48);
-            this.lblAmazonS3SecretKey.Name = "lblAmazonS3SecretKey";
-            this.lblAmazonS3SecretKey.Size = new System.Drawing.Size(61, 13);
-            this.lblAmazonS3SecretKey.TabIndex = 3;
-            this.lblAmazonS3SecretKey.Text = "Secret key:";
-            // 
-            // lblAmazonS3AccessKey
-            // 
-            this.lblAmazonS3AccessKey.AutoSize = true;
-            this.lblAmazonS3AccessKey.Location = new System.Drawing.Point(24, 24);
-            this.lblAmazonS3AccessKey.Name = "lblAmazonS3AccessKey";
-            this.lblAmazonS3AccessKey.Size = new System.Drawing.Size(65, 13);
-            this.lblAmazonS3AccessKey.TabIndex = 0;
-            this.lblAmazonS3AccessKey.Text = "Access key:";
-            // 
-            // txtAmazonS3AccessKey
-            // 
-            this.txtAmazonS3AccessKey.Location = new System.Drawing.Point(104, 20);
-            this.txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
-            this.txtAmazonS3AccessKey.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3AccessKey.TabIndex = 1;
-            this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
-            // 
-            // tpOneDrive
-            // 
-            this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
-            this.tpOneDrive.Location = new System.Drawing.Point(4, 40);
-            this.tpOneDrive.Name = "tpOneDrive";
-            this.tpOneDrive.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOneDrive.Size = new System.Drawing.Size(972, 475);
-            this.tpOneDrive.TabIndex = 17;
-            this.tpOneDrive.Text = "OneDrive";
-            this.tpOneDrive.UseVisualStyleBackColor = true;
-            // 
-            // oAuth2OneDrive
-            // 
-            this.oAuth2OneDrive.IsRefreshable = false;
-            this.oAuth2OneDrive.Location = new System.Drawing.Point(16, 16);
-            this.oAuth2OneDrive.Name = "oAuth2OneDrive";
-            this.oAuth2OneDrive.Size = new System.Drawing.Size(328, 200);
-            this.oAuth2OneDrive.TabIndex = 2;
-            this.oAuth2OneDrive.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
-            this.oAuth2OneDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
-            this.oAuth2OneDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
             // 
             // tpGoogleDrive
             // 
@@ -2238,6 +1831,417 @@
             this.oauth2Box.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
             this.oauth2Box.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Box_ClearButtonClicked);
             this.oauth2Box.RefreshButtonClicked += new UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Box_RefreshButtonClicked);
+            // 
+            // tpCopy
+            // 
+            this.tpCopy.Controls.Add(this.pbCopyLogo);
+            this.tpCopy.Controls.Add(this.lblCopyURLType);
+            this.tpCopy.Controls.Add(this.cbCopyURLType);
+            this.tpCopy.Controls.Add(this.btnCopyRegister);
+            this.tpCopy.Controls.Add(this.lblCopyStatus);
+            this.tpCopy.Controls.Add(this.lblCopyPath);
+            this.tpCopy.Controls.Add(this.txtCopyPath);
+            this.tpCopy.Controls.Add(this.oAuthCopy);
+            this.tpCopy.Location = new System.Drawing.Point(4, 40);
+            this.tpCopy.Name = "tpCopy";
+            this.tpCopy.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCopy.Size = new System.Drawing.Size(972, 475);
+            this.tpCopy.TabIndex = 0;
+            this.tpCopy.Text = "Copy";
+            this.tpCopy.UseVisualStyleBackColor = true;
+            // 
+            // pbCopyLogo
+            // 
+            this.pbCopyLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCopyLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbCopyLogo.Image")));
+            this.pbCopyLogo.Location = new System.Drawing.Point(16, 16);
+            this.pbCopyLogo.Name = "pbCopyLogo";
+            this.pbCopyLogo.Size = new System.Drawing.Size(216, 64);
+            this.pbCopyLogo.TabIndex = 19;
+            this.pbCopyLogo.TabStop = false;
+            this.pbCopyLogo.Click += new System.EventHandler(this.pbCopyLogo_Click);
+            // 
+            // lblCopyURLType
+            // 
+            this.lblCopyURLType.AutoSize = true;
+            this.lblCopyURLType.Location = new System.Drawing.Point(16, 331);
+            this.lblCopyURLType.Name = "lblCopyURLType";
+            this.lblCopyURLType.Size = new System.Drawing.Size(55, 13);
+            this.lblCopyURLType.TabIndex = 4;
+            this.lblCopyURLType.Text = "URL type:";
+            // 
+            // cbCopyURLType
+            // 
+            this.cbCopyURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCopyURLType.FormattingEnabled = true;
+            this.cbCopyURLType.Location = new System.Drawing.Point(88, 327);
+            this.cbCopyURLType.Name = "cbCopyURLType";
+            this.cbCopyURLType.Size = new System.Drawing.Size(121, 21);
+            this.cbCopyURLType.TabIndex = 5;
+            this.cbCopyURLType.SelectedIndexChanged += new System.EventHandler(this.cbCopyURLType_SelectedIndexChanged);
+            // 
+            // btnCopyRegister
+            // 
+            this.btnCopyRegister.Location = new System.Drawing.Point(240, 16);
+            this.btnCopyRegister.Name = "btnCopyRegister";
+            this.btnCopyRegister.Size = new System.Drawing.Size(96, 24);
+            this.btnCopyRegister.TabIndex = 0;
+            this.btnCopyRegister.Text = "Register...";
+            this.btnCopyRegister.UseVisualStyleBackColor = true;
+            this.btnCopyRegister.Click += new System.EventHandler(this.btnCopyRegister_Click);
+            // 
+            // lblCopyStatus
+            // 
+            this.lblCopyStatus.AutoSize = true;
+            this.lblCopyStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCopyStatus.Location = new System.Drawing.Point(16, 356);
+            this.lblCopyStatus.Name = "lblCopyStatus";
+            this.lblCopyStatus.Size = new System.Drawing.Size(45, 16);
+            this.lblCopyStatus.TabIndex = 6;
+            this.lblCopyStatus.Text = "Status";
+            // 
+            // lblCopyPath
+            // 
+            this.lblCopyPath.AutoSize = true;
+            this.lblCopyPath.Location = new System.Drawing.Point(16, 304);
+            this.lblCopyPath.Name = "lblCopyPath";
+            this.lblCopyPath.Size = new System.Drawing.Size(68, 13);
+            this.lblCopyPath.TabIndex = 2;
+            this.lblCopyPath.Text = "Upload path:";
+            // 
+            // txtCopyPath
+            // 
+            this.txtCopyPath.Location = new System.Drawing.Point(88, 300);
+            this.txtCopyPath.Name = "txtCopyPath";
+            this.txtCopyPath.Size = new System.Drawing.Size(248, 20);
+            this.txtCopyPath.TabIndex = 3;
+            this.txtCopyPath.TextChanged += new System.EventHandler(this.txtCopyPath_TextChanged);
+            // 
+            // oAuthCopy
+            // 
+            this.oAuthCopy.IsRefreshable = false;
+            this.oAuthCopy.Location = new System.Drawing.Point(16, 88);
+            this.oAuthCopy.Name = "oAuthCopy";
+            this.oAuthCopy.Size = new System.Drawing.Size(328, 208);
+            this.oAuthCopy.TabIndex = 1;
+            this.oAuthCopy.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
+            this.oAuthCopy.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
+            this.oAuthCopy.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
+            // 
+            // tpOneDrive
+            // 
+            this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
+            this.tpOneDrive.Location = new System.Drawing.Point(4, 40);
+            this.tpOneDrive.Name = "tpOneDrive";
+            this.tpOneDrive.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOneDrive.Size = new System.Drawing.Size(972, 475);
+            this.tpOneDrive.TabIndex = 17;
+            this.tpOneDrive.Text = "OneDrive";
+            this.tpOneDrive.UseVisualStyleBackColor = true;
+            // 
+            // oAuth2OneDrive
+            // 
+            this.oAuth2OneDrive.IsRefreshable = false;
+            this.oAuth2OneDrive.Location = new System.Drawing.Point(16, 16);
+            this.oAuth2OneDrive.Name = "oAuth2OneDrive";
+            this.oAuth2OneDrive.Size = new System.Drawing.Size(328, 200);
+            this.oAuth2OneDrive.TabIndex = 2;
+            this.oAuth2OneDrive.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
+            this.oAuth2OneDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
+            this.oAuth2OneDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
+            // 
+            // tpAmazonS3
+            // 
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3CustomDomain);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreviewLabel);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3PathPreview);
+            this.tpAmazonS3.Controls.Add(this.btnAmazonS3BucketNameOpen);
+            this.tpAmazonS3.Controls.Add(this.btnAmazonS3AccessKeyOpen);
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3CustomCNAME);
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3BucketName);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3BucketName);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3Endpoint);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3ObjectPrefix);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3ObjectPrefix);
+            this.tpAmazonS3.Controls.Add(this.cbAmazonS3UseRRS);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3SecretKey);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3SecretKey);
+            this.tpAmazonS3.Controls.Add(this.lblAmazonS3AccessKey);
+            this.tpAmazonS3.Controls.Add(this.txtAmazonS3AccessKey);
+            this.tpAmazonS3.Location = new System.Drawing.Point(4, 40);
+            this.tpAmazonS3.Name = "tpAmazonS3";
+            this.tpAmazonS3.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAmazonS3.Size = new System.Drawing.Size(972, 475);
+            this.tpAmazonS3.TabIndex = 13;
+            this.tpAmazonS3.Text = "Amazon S3";
+            this.tpAmazonS3.UseVisualStyleBackColor = true;
+            // 
+            // txtAmazonS3CustomDomain
+            // 
+            this.txtAmazonS3CustomDomain.Location = new System.Drawing.Point(152, 144);
+            this.txtAmazonS3CustomDomain.Name = "txtAmazonS3CustomDomain";
+            this.txtAmazonS3CustomDomain.Size = new System.Drawing.Size(304, 20);
+            this.txtAmazonS3CustomDomain.TabIndex = 13;
+            this.txtAmazonS3CustomDomain.TextChanged += new System.EventHandler(this.txtAmazonS3CustomDomain_TextChanged);
+            // 
+            // lblAmazonS3PathPreviewLabel
+            // 
+            this.lblAmazonS3PathPreviewLabel.AutoSize = true;
+            this.lblAmazonS3PathPreviewLabel.Location = new System.Drawing.Point(24, 192);
+            this.lblAmazonS3PathPreviewLabel.Name = "lblAmazonS3PathPreviewLabel";
+            this.lblAmazonS3PathPreviewLabel.Size = new System.Drawing.Size(72, 13);
+            this.lblAmazonS3PathPreviewLabel.TabIndex = 15;
+            this.lblAmazonS3PathPreviewLabel.Text = "URL preview:";
+            // 
+            // lblAmazonS3PathPreview
+            // 
+            this.lblAmazonS3PathPreview.AutoSize = true;
+            this.lblAmazonS3PathPreview.Location = new System.Drawing.Point(102, 192);
+            this.lblAmazonS3PathPreview.Name = "lblAmazonS3PathPreview";
+            this.lblAmazonS3PathPreview.Size = new System.Drawing.Size(45, 13);
+            this.lblAmazonS3PathPreview.TabIndex = 16;
+            this.lblAmazonS3PathPreview.Text = "Preview";
+            // 
+            // btnAmazonS3BucketNameOpen
+            // 
+            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 90);
+            this.btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
+            this.btnAmazonS3BucketNameOpen.Size = new System.Drawing.Size(24, 24);
+            this.btnAmazonS3BucketNameOpen.TabIndex = 9;
+            this.btnAmazonS3BucketNameOpen.Text = "...";
+            this.btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
+            this.btnAmazonS3BucketNameOpen.Click += new System.EventHandler(this.btnAmazonS3BucketNameOpen_Click);
+            // 
+            // btnAmazonS3AccessKeyOpen
+            // 
+            this.btnAmazonS3AccessKeyOpen.Location = new System.Drawing.Point(464, 18);
+            this.btnAmazonS3AccessKeyOpen.Name = "btnAmazonS3AccessKeyOpen";
+            this.btnAmazonS3AccessKeyOpen.Size = new System.Drawing.Size(24, 24);
+            this.btnAmazonS3AccessKeyOpen.TabIndex = 2;
+            this.btnAmazonS3AccessKeyOpen.Text = "...";
+            this.btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
+            this.btnAmazonS3AccessKeyOpen.Click += new System.EventHandler(this.btnAmazonS3AccessKeyOpen_Click);
+            // 
+            // cbAmazonS3Endpoint
+            // 
+            this.cbAmazonS3Endpoint.FormattingEnabled = true;
+            this.cbAmazonS3Endpoint.Items.AddRange(new object[] {
+            "https://s3-ap-northeast-1.amazonaws.com/",
+            "https://s3-ap-southeast-1.amazonaws.com/",
+            "https://s3-ap-southeast-2.amazonaws.com/",
+            "https://s3-eu-west-1.amazonaws.com/",
+            "https://s3-sa-east-1.amazonaws.com/",
+            "https://s3-us-west-1.amazonaws.com/",
+            "https://s3-us-west-2.amazonaws.com/",
+            "https://s3.amazonaws.com/",
+            "https://objects.dreamhost.com/"});
+            this.cbAmazonS3Endpoint.Location = new System.Drawing.Point(104, 68);
+            this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
+            this.cbAmazonS3Endpoint.Size = new System.Drawing.Size(352, 21);
+            this.cbAmazonS3Endpoint.TabIndex = 6;
+            this.cbAmazonS3Endpoint.SelectionChangeCommitted += new System.EventHandler(this.cbAmazonS3Endpoint_SelectionChangeCommitted);
+            this.cbAmazonS3Endpoint.TextChanged += new System.EventHandler(this.cbAmazonS3Endpoint_TextChanged);
+            // 
+            // lblAmazonS3BucketName
+            // 
+            this.lblAmazonS3BucketName.AutoSize = true;
+            this.lblAmazonS3BucketName.Location = new System.Drawing.Point(24, 96);
+            this.lblAmazonS3BucketName.Name = "lblAmazonS3BucketName";
+            this.lblAmazonS3BucketName.Size = new System.Drawing.Size(73, 13);
+            this.lblAmazonS3BucketName.TabIndex = 7;
+            this.lblAmazonS3BucketName.Text = "Bucket name:";
+            // 
+            // txtAmazonS3BucketName
+            // 
+            this.txtAmazonS3BucketName.Location = new System.Drawing.Point(104, 92);
+            this.txtAmazonS3BucketName.Name = "txtAmazonS3BucketName";
+            this.txtAmazonS3BucketName.Size = new System.Drawing.Size(352, 20);
+            this.txtAmazonS3BucketName.TabIndex = 8;
+            this.txtAmazonS3BucketName.TextChanged += new System.EventHandler(this.txtAmazonS3BucketName_TextChanged);
+            // 
+            // lblAmazonS3Endpoint
+            // 
+            this.lblAmazonS3Endpoint.AutoSize = true;
+            this.lblAmazonS3Endpoint.Location = new System.Drawing.Point(24, 72);
+            this.lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
+            this.lblAmazonS3Endpoint.Size = new System.Drawing.Size(52, 13);
+            this.lblAmazonS3Endpoint.TabIndex = 5;
+            this.lblAmazonS3Endpoint.Text = "Endpoint:";
+            // 
+            // txtAmazonS3ObjectPrefix
+            // 
+            this.txtAmazonS3ObjectPrefix.Location = new System.Drawing.Point(104, 116);
+            this.txtAmazonS3ObjectPrefix.Name = "txtAmazonS3ObjectPrefix";
+            this.txtAmazonS3ObjectPrefix.Size = new System.Drawing.Size(352, 20);
+            this.txtAmazonS3ObjectPrefix.TabIndex = 11;
+            this.txtAmazonS3ObjectPrefix.TextChanged += new System.EventHandler(this.txtAmazonS3ObjectPrefix_TextChanged);
+            // 
+            // lblAmazonS3ObjectPrefix
+            // 
+            this.lblAmazonS3ObjectPrefix.AutoSize = true;
+            this.lblAmazonS3ObjectPrefix.Location = new System.Drawing.Point(24, 120);
+            this.lblAmazonS3ObjectPrefix.Name = "lblAmazonS3ObjectPrefix";
+            this.lblAmazonS3ObjectPrefix.Size = new System.Drawing.Size(68, 13);
+            this.lblAmazonS3ObjectPrefix.TabIndex = 10;
+            this.lblAmazonS3ObjectPrefix.Text = "Upload path:";
+            // 
+            // txtAmazonS3SecretKey
+            // 
+            this.txtAmazonS3SecretKey.Location = new System.Drawing.Point(104, 44);
+            this.txtAmazonS3SecretKey.Name = "txtAmazonS3SecretKey";
+            this.txtAmazonS3SecretKey.Size = new System.Drawing.Size(352, 20);
+            this.txtAmazonS3SecretKey.TabIndex = 4;
+            this.txtAmazonS3SecretKey.UseSystemPasswordChar = true;
+            this.txtAmazonS3SecretKey.TextChanged += new System.EventHandler(this.txtAmazonS3SecretKey_TextChanged);
+            // 
+            // lblAmazonS3SecretKey
+            // 
+            this.lblAmazonS3SecretKey.AutoSize = true;
+            this.lblAmazonS3SecretKey.Location = new System.Drawing.Point(24, 48);
+            this.lblAmazonS3SecretKey.Name = "lblAmazonS3SecretKey";
+            this.lblAmazonS3SecretKey.Size = new System.Drawing.Size(61, 13);
+            this.lblAmazonS3SecretKey.TabIndex = 3;
+            this.lblAmazonS3SecretKey.Text = "Secret key:";
+            // 
+            // lblAmazonS3AccessKey
+            // 
+            this.lblAmazonS3AccessKey.AutoSize = true;
+            this.lblAmazonS3AccessKey.Location = new System.Drawing.Point(24, 24);
+            this.lblAmazonS3AccessKey.Name = "lblAmazonS3AccessKey";
+            this.lblAmazonS3AccessKey.Size = new System.Drawing.Size(65, 13);
+            this.lblAmazonS3AccessKey.TabIndex = 0;
+            this.lblAmazonS3AccessKey.Text = "Access key:";
+            // 
+            // txtAmazonS3AccessKey
+            // 
+            this.txtAmazonS3AccessKey.Location = new System.Drawing.Point(104, 20);
+            this.txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
+            this.txtAmazonS3AccessKey.Size = new System.Drawing.Size(352, 20);
+            this.txtAmazonS3AccessKey.TabIndex = 1;
+            this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
+            // 
+            // tpMega
+            // 
+            this.tpMega.Controls.Add(this.btnMegaRefreshFolders);
+            this.tpMega.Controls.Add(this.lblMegaStatus);
+            this.tpMega.Controls.Add(this.btnMegaRegister);
+            this.tpMega.Controls.Add(this.lblMegaFolder);
+            this.tpMega.Controls.Add(this.lblMegaStatusTitle);
+            this.tpMega.Controls.Add(this.cbMegaFolder);
+            this.tpMega.Controls.Add(this.lblMegaEmail);
+            this.tpMega.Controls.Add(this.btnMegaLogin);
+            this.tpMega.Controls.Add(this.txtMegaEmail);
+            this.tpMega.Controls.Add(this.txtMegaPassword);
+            this.tpMega.Controls.Add(this.lblMegaPassword);
+            this.tpMega.Location = new System.Drawing.Point(4, 40);
+            this.tpMega.Name = "tpMega";
+            this.tpMega.Size = new System.Drawing.Size(972, 475);
+            this.tpMega.TabIndex = 12;
+            this.tpMega.Text = "Mega";
+            this.tpMega.UseVisualStyleBackColor = true;
+            // 
+            // btnMegaRefreshFolders
+            // 
+            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(264, 114);
+            this.btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
+            this.btnMegaRefreshFolders.Size = new System.Drawing.Size(88, 24);
+            this.btnMegaRefreshFolders.TabIndex = 10;
+            this.btnMegaRefreshFolders.Text = "Refresh";
+            this.btnMegaRefreshFolders.UseVisualStyleBackColor = true;
+            this.btnMegaRefreshFolders.Click += new System.EventHandler(this.btnMegaRefreshFolders_Click);
+            // 
+            // lblMegaStatus
+            // 
+            this.lblMegaStatus.AutoSize = true;
+            this.lblMegaStatus.Location = new System.Drawing.Point(88, 24);
+            this.lblMegaStatus.Name = "lblMegaStatus";
+            this.lblMegaStatus.Size = new System.Drawing.Size(186, 13);
+            this.lblMegaStatus.TabIndex = 1;
+            this.lblMegaStatus.Text = "CONFIGURED / NOT CONFIGURED";
+            // 
+            // btnMegaRegister
+            // 
+            this.btnMegaRegister.Location = new System.Drawing.Point(264, 50);
+            this.btnMegaRegister.Name = "btnMegaRegister";
+            this.btnMegaRegister.Size = new System.Drawing.Size(88, 24);
+            this.btnMegaRegister.TabIndex = 4;
+            this.btnMegaRegister.Text = "Register...";
+            this.btnMegaRegister.UseVisualStyleBackColor = true;
+            this.btnMegaRegister.Click += new System.EventHandler(this.btnMegaRegister_Click);
+            // 
+            // lblMegaFolder
+            // 
+            this.lblMegaFolder.AutoSize = true;
+            this.lblMegaFolder.Location = new System.Drawing.Point(24, 120);
+            this.lblMegaFolder.Name = "lblMegaFolder";
+            this.lblMegaFolder.Size = new System.Drawing.Size(39, 13);
+            this.lblMegaFolder.TabIndex = 8;
+            this.lblMegaFolder.Text = "Folder:";
+            // 
+            // lblMegaStatusTitle
+            // 
+            this.lblMegaStatusTitle.AutoSize = true;
+            this.lblMegaStatusTitle.Location = new System.Drawing.Point(24, 24);
+            this.lblMegaStatusTitle.Name = "lblMegaStatusTitle";
+            this.lblMegaStatusTitle.Size = new System.Drawing.Size(43, 13);
+            this.lblMegaStatusTitle.TabIndex = 0;
+            this.lblMegaStatusTitle.Text = "Status: ";
+            // 
+            // cbMegaFolder
+            // 
+            this.cbMegaFolder.DisplayMember = "DisplayName";
+            this.cbMegaFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMegaFolder.FormattingEnabled = true;
+            this.cbMegaFolder.Location = new System.Drawing.Point(88, 116);
+            this.cbMegaFolder.Name = "cbMegaFolder";
+            this.cbMegaFolder.Size = new System.Drawing.Size(168, 21);
+            this.cbMegaFolder.TabIndex = 9;
+            this.cbMegaFolder.ValueMember = "Node";
+            this.cbMegaFolder.SelectedIndexChanged += new System.EventHandler(this.cbMegaFolder_SelectedIndexChanged);
+            // 
+            // lblMegaEmail
+            // 
+            this.lblMegaEmail.AutoSize = true;
+            this.lblMegaEmail.Location = new System.Drawing.Point(24, 56);
+            this.lblMegaEmail.Name = "lblMegaEmail";
+            this.lblMegaEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblMegaEmail.TabIndex = 2;
+            this.lblMegaEmail.Text = "Email:";
+            // 
+            // btnMegaLogin
+            // 
+            this.btnMegaLogin.Location = new System.Drawing.Point(264, 82);
+            this.btnMegaLogin.Name = "btnMegaLogin";
+            this.btnMegaLogin.Size = new System.Drawing.Size(88, 24);
+            this.btnMegaLogin.TabIndex = 7;
+            this.btnMegaLogin.Text = "Login";
+            this.btnMegaLogin.UseVisualStyleBackColor = true;
+            this.btnMegaLogin.Click += new System.EventHandler(this.btnMegaLogin_Click);
+            // 
+            // txtMegaEmail
+            // 
+            this.txtMegaEmail.Location = new System.Drawing.Point(88, 52);
+            this.txtMegaEmail.Name = "txtMegaEmail";
+            this.txtMegaEmail.Size = new System.Drawing.Size(168, 20);
+            this.txtMegaEmail.TabIndex = 3;
+            // 
+            // txtMegaPassword
+            // 
+            this.txtMegaPassword.Location = new System.Drawing.Point(88, 84);
+            this.txtMegaPassword.Name = "txtMegaPassword";
+            this.txtMegaPassword.Size = new System.Drawing.Size(168, 20);
+            this.txtMegaPassword.TabIndex = 6;
+            this.txtMegaPassword.UseSystemPasswordChar = true;
+            // 
+            // lblMegaPassword
+            // 
+            this.lblMegaPassword.AutoSize = true;
+            this.lblMegaPassword.Location = new System.Drawing.Point(24, 88);
+            this.lblMegaPassword.Name = "lblMegaPassword";
+            this.lblMegaPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblMegaPassword.TabIndex = 5;
+            this.lblMegaPassword.Text = "Password:";
             // 
             // tpOwnCloud
             // 
@@ -2651,6 +2655,17 @@
             this.atcSendSpaceAccountType.Size = new System.Drawing.Size(214, 29);
             this.atcSendSpaceAccountType.TabIndex = 0;
             this.atcSendSpaceAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcSendSpaceAccountType_AccountTypeChanged);
+            // 
+            // tpMediaCrush
+            // 
+            this.tpMediaCrush.Controls.Add(this.cbMediaCrushDirectLink);
+            this.tpMediaCrush.Location = new System.Drawing.Point(4, 40);
+            this.tpMediaCrush.Name = "tpMediaCrush";
+            this.tpMediaCrush.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMediaCrush.Size = new System.Drawing.Size(972, 475);
+            this.tpMediaCrush.TabIndex = 18;
+            this.tpMediaCrush.Text = "MediaCrush";
+            this.tpMediaCrush.UseVisualStyleBackColor = true;
             // 
             // tpGe_tt
             // 
@@ -4191,6 +4206,17 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
+            // cbMediaCrushDirectLink
+            // 
+            this.cbMediaCrushDirectLink.AutoSize = true;
+            this.cbMediaCrushDirectLink.Location = new System.Drawing.Point(16, 16);
+            this.cbMediaCrushDirectLink.Name = "cbMediaCrushDirectLink";
+            this.cbMediaCrushDirectLink.Size = new System.Drawing.Size(187, 17);
+            this.cbMediaCrushDirectLink.TabIndex = 10;
+            this.cbMediaCrushDirectLink.Text = "Direct link (Adds \"/direct\" to URL)";
+            this.cbMediaCrushDirectLink.UseVisualStyleBackColor = true;
+            this.cbMediaCrushDirectLink.CheckedChanged += new System.EventHandler(this.cbMediaCrushDirectLink_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4230,23 +4256,23 @@
             this.tpAdFly.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
+            this.tpFTP.ResumeLayout(false);
+            this.tpFTP.PerformLayout();
             this.tpDropbox.ResumeLayout(false);
             this.tpDropbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).EndInit();
-            this.tpCopy.ResumeLayout(false);
-            this.tpCopy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).EndInit();
-            this.tpFTP.ResumeLayout(false);
-            this.tpFTP.PerformLayout();
-            this.tpMega.ResumeLayout(false);
-            this.tpMega.PerformLayout();
-            this.tpAmazonS3.ResumeLayout(false);
-            this.tpAmazonS3.PerformLayout();
-            this.tpOneDrive.ResumeLayout(false);
             this.tpGoogleDrive.ResumeLayout(false);
             this.tpGoogleDrive.PerformLayout();
             this.tpBox.ResumeLayout(false);
             this.tpBox.PerformLayout();
+            this.tpCopy.ResumeLayout(false);
+            this.tpCopy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).EndInit();
+            this.tpOneDrive.ResumeLayout(false);
+            this.tpAmazonS3.ResumeLayout(false);
+            this.tpAmazonS3.PerformLayout();
+            this.tpMega.ResumeLayout(false);
+            this.tpMega.PerformLayout();
             this.tpOwnCloud.ResumeLayout(false);
             this.tpOwnCloud.PerformLayout();
             this.tpMediaFire.ResumeLayout(false);
@@ -4257,6 +4283,8 @@
             this.tpRapidShare.PerformLayout();
             this.tpSendSpace.ResumeLayout(false);
             this.tpSendSpace.PerformLayout();
+            this.tpMediaCrush.ResumeLayout(false);
+            this.tpMediaCrush.PerformLayout();
             this.tpGe_tt.ResumeLayout(false);
             this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
@@ -4671,6 +4699,8 @@
         private System.Windows.Forms.Label lblMediaFirePath;
         private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
         private System.Windows.Forms.TabPage tpOneDrive;
-        private OAuthControl oAuth2OneDrive;        
+        private OAuthControl oAuth2OneDrive;
+        private System.Windows.Forms.TabPage tpMediaCrush;
+        private System.Windows.Forms.CheckBox cbMediaCrushDirectLink;        
     }
 }

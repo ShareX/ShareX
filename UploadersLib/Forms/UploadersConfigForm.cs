@@ -41,6 +41,8 @@ namespace UploadersLib
     {
         public UploadersConfig Config { get; private set; }
 
+        private ImageList uploadersImageList;
+
         public UploadersConfigForm(UploadersConfig uploadersConfig)
         {
             Config = uploadersConfig;
@@ -65,79 +67,45 @@ namespace UploadersLib
 
         private void FormSettings()
         {
-            ImageList uploadersImageList = new ImageList();
+            uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
-            uploadersImageList.Images.Add("AdFly", Resources.AdFly);
-            uploadersImageList.Images.Add("AmazonS3", Resources.AmazonS3);
-            uploadersImageList.Images.Add("Bitly", Resources.Bitly);
-            uploadersImageList.Images.Add("Box", Resources.Box);
-            uploadersImageList.Images.Add("Copy", Resources.Copy);
-            uploadersImageList.Images.Add("CustomUploader", Resources.globe_network);
-            uploadersImageList.Images.Add("Dropbox", Resources.Dropbox);
-            uploadersImageList.Images.Add("Email", Resources.mail);
-            uploadersImageList.Images.Add("Flickr", Resources.Flickr);
-            uploadersImageList.Images.Add("FTP", Resources.folder_network);
-            uploadersImageList.Images.Add("Gett", Resources.Gett);
-            uploadersImageList.Images.Add("Gist", Resources.GitHub);
-            uploadersImageList.Images.Add("Google", Resources.Google);
-            uploadersImageList.Images.Add("GoogleDrive", Resources.GoogleDrive);
-            uploadersImageList.Images.Add("Hostr", Resources.Hostr);
-            uploadersImageList.Images.Add("ImageShack", Resources.ImageShack);
-            uploadersImageList.Images.Add("Imgur", Resources.Imgur);
-            uploadersImageList.Images.Add("Jira", Resources.jira);
-            uploadersImageList.Images.Add("MediaFire", Resources.MediaFire);
-            uploadersImageList.Images.Add("Mega", Resources.Mega);
-            uploadersImageList.Images.Add("Minus", Resources.Minus);
-            uploadersImageList.Images.Add("OneDrive", Resources.OneDrive);
-            uploadersImageList.Images.Add("ownCloud", Resources.OwnCloud);
-            uploadersImageList.Images.Add("Pastebin", Resources.Pastebin);
-            uploadersImageList.Images.Add("Pasteee", Resources.page_white_text);
-            uploadersImageList.Images.Add("Photobucket", Resources.Photobucket);
-            uploadersImageList.Images.Add("Picasa", Resources.Picasa);
-            uploadersImageList.Images.Add("Pushbullet", Resources.Pushbullet);
-            uploadersImageList.Images.Add("RapidShare", Resources.RapidShare);
-            uploadersImageList.Images.Add("SendSpace", Resources.SendSpace);
-            uploadersImageList.Images.Add("SharedFolders", Resources.server_network);
-            uploadersImageList.Images.Add("TinyPic", Resources.TinyPic);
-            uploadersImageList.Images.Add("Twitter", Resources.Twitter);
-            uploadersImageList.Images.Add("Upaste", Resources.Upaste);
-            uploadersImageList.Images.Add("Yourls", Resources.Yourls);
 
-            tpAdFly.ImageKey = "AdFly";
-            tpAmazonS3.ImageKey = "AmazonS3";
-            tpBitly.ImageKey = "Bitly";
-            tpBox.ImageKey = "Box";
-            tpCopy.ImageKey = "Copy";
-            tpCustomUploaders.ImageKey = "CustomUploader";
-            tpDropbox.ImageKey = "Dropbox";
-            tpEmail.ImageKey = "Email";
-            tpFlickr.ImageKey = "Flickr";
-            tpFTP.ImageKey = "FTP";
-            tpGe_tt.ImageKey = "Gett";
-            tpGist.ImageKey = "Gist";
-            tpGoogleDrive.ImageKey = "GoogleDrive";
-            tpGoogleURLShortener.ImageKey = "Google";
-            tpHostr.ImageKey = "Hostr";
-            tpImageShack.ImageKey = "ImageShack";
-            tpImgur.ImageKey = "Imgur";
-            tpJira.ImageKey = "Jira";
-            tpMediaFire.ImageKey = "MediaFire";
-            tpMega.ImageKey = "Mega";
-            tpMinus.ImageKey = "Minus";
-            tpOneDrive.ImageKey = "OneDrive";
-            tpOwnCloud.ImageKey = "ownCloud";
-            tpPaste_ee.ImageKey = "Pasteee";
-            tpPastebin.ImageKey = "Pastebin";
-            tpPhotobucket.ImageKey = "Photobucket";
-            tpPicasa.ImageKey = "Picasa";
-            tpPushbullet.ImageKey = "Pushbullet";
-            tpRapidShare.ImageKey = "RapidShare";
-            tpSendSpace.ImageKey = "SendSpace";
-            tpSharedFolder.ImageKey = "SharedFolders";
-            tpTinyPic.ImageKey = "TinyPic";
-            tpTwitter.ImageKey = "Twitter";
-            tpUpaste.ImageKey = "Upaste";
-            tpYourls.ImageKey = "Yourls";
+            AddIconToTab(tpAdFly, Resources.AdFly);
+            AddIconToTab(tpAmazonS3, Resources.AmazonS3);
+            AddIconToTab(tpBitly, Resources.Bitly);
+            AddIconToTab(tpBox, Resources.Box);
+            AddIconToTab(tpCopy, Resources.Copy);
+            AddIconToTab(tpCustomUploaders, Resources.globe_network);
+            AddIconToTab(tpDropbox, Resources.Dropbox);
+            AddIconToTab(tpEmail, Resources.mail);
+            AddIconToTab(tpFlickr, Resources.Flickr);
+            AddIconToTab(tpFTP, Resources.folder_network);
+            AddIconToTab(tpGe_tt, Resources.Gett);
+            AddIconToTab(tpGist, Resources.GitHub);
+            AddIconToTab(tpGoogleDrive, Resources.GoogleDrive);
+            AddIconToTab(tpGoogleURLShortener, Resources.Google);
+            AddIconToTab(tpHostr, Resources.Hostr);
+            AddIconToTab(tpImageShack, Resources.ImageShack);
+            AddIconToTab(tpImgur, Resources.Imgur);
+            AddIconToTab(tpJira, Resources.jira);
+            AddIconToTab(tpMediaCrush, Resources.MediaCrush);
+            AddIconToTab(tpMediaFire, Resources.MediaFire);
+            AddIconToTab(tpMega, Resources.Mega);
+            AddIconToTab(tpMinus, Resources.Minus);
+            AddIconToTab(tpOneDrive, Resources.OneDrive);
+            AddIconToTab(tpOwnCloud, Resources.OwnCloud);
+            AddIconToTab(tpPastebin, Resources.Pastebin);
+            AddIconToTab(tpPaste_ee, Resources.page_white_text);
+            AddIconToTab(tpPhotobucket, Resources.Photobucket);
+            AddIconToTab(tpPicasa, Resources.Picasa);
+            AddIconToTab(tpPushbullet, Resources.Pushbullet);
+            AddIconToTab(tpRapidShare, Resources.RapidShare);
+            AddIconToTab(tpSendSpace, Resources.SendSpace);
+            AddIconToTab(tpSharedFolder, Resources.server_network);
+            AddIconToTab(tpTinyPic, Resources.TinyPic);
+            AddIconToTab(tpTwitter, Resources.Twitter);
+            AddIconToTab(tpUpaste, Resources.Upaste);
+            AddIconToTab(tpYourls, Resources.Yourls);
 
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
@@ -175,6 +143,18 @@ namespace UploadersLib
 
             eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
+        }
+
+        private void AddIconToTab(TabPage tp, Icon icon)
+        {
+            uploadersImageList.Images.Add(tp.Name, icon);
+            tp.ImageKey = tp.Name;
+        }
+
+        private void AddIconToTab(TabPage tp, Bitmap bitmap)
+        {
+            uploadersImageList.Images.Add(tp.Name, bitmap);
+            tp.ImageKey = tp.Name;
         }
 
         public void LoadSettings(UploadersConfig uploadersConfig)
@@ -499,6 +479,10 @@ namespace UploadersLib
             txtMediaFirePassword.Text = Config.MediaFirePassword;
             txtMediaFirePath.Text = Config.MediaFirePath;
             cbMediaFireUseLongLink.Checked = Config.MediaFireUseLongLink;
+
+            // MediaCrush
+
+            cbMediaCrushDirectLink.Checked = Config.MediaCrushDirectLink;
 
             #endregion File uploaders
 
@@ -1832,6 +1816,15 @@ namespace UploadersLib
         }
 
         #endregion MediaFire
+
+        #region MediaCrush
+
+        private void cbMediaCrushDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.MediaCrushDirectLink = cbMediaCrushDirectLink.Checked;
+        }
+
+        #endregion MediaCrush
 
         #endregion File Uploaders
 

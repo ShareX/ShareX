@@ -957,7 +957,10 @@ namespace ShareX
                     fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
                     break;
                 case FileDestination.MediaCrush:
-                    fileUploader = new MediaCrushUploader();
+                    fileUploader = new MediaCrushUploader()
+                    {
+                        DirectLink = Program.UploadersConfig.MediaCrushDirectLink
+                    };
                     break;
                 case FileDestination.MediaFire:
                     fileUploader = new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, Program.UploadersConfig.MediaFireUsername, Program.UploadersConfig.MediaFirePassword)
