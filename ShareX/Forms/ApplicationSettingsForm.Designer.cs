@@ -100,18 +100,6 @@ namespace ShareX
             this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
-            this.tpProfiles = new System.Windows.Forms.TabPage();
-            this.tcProfiles = new System.Windows.Forms.TabControl();
-            this.tpEncodersCLI = new System.Windows.Forms.TabPage();
-            this.btnEncoderDuplicate = new System.Windows.Forms.Button();
-            this.lvEncoders = new HelpersLib.MyListView();
-            this.chEncoderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chEncoderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chEncoderArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chEncoderOutputExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnEncodersAdd = new System.Windows.Forms.Button();
-            this.btnEncodersEdit = new System.Windows.Forms.Button();
-            this.btnEncodersRemove = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tcSettings.SuspendLayout();
@@ -133,9 +121,6 @@ namespace ShareX
             this.gbSecondaryTextUploaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpPrint.SuspendLayout();
-            this.tpProfiles.SuspendLayout();
-            this.tcProfiles.SuspendLayout();
-            this.tpEncodersCLI.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,7 +131,6 @@ namespace ShareX
             this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpUpload);
             this.tcSettings.Controls.Add(this.tpPrint);
-            this.tcSettings.Controls.Add(this.tpProfiles);
             this.tcSettings.Controls.Add(this.tpAdvanced);
             this.tcSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcSettings.Location = new System.Drawing.Point(3, 3);
@@ -919,123 +903,6 @@ namespace ShareX
             this.btnShowImagePrintSettings.UseVisualStyleBackColor = true;
             this.btnShowImagePrintSettings.Click += new System.EventHandler(this.btnShowImagePrintSettings_Click);
             // 
-            // tpProfiles
-            // 
-            this.tpProfiles.Controls.Add(this.tcProfiles);
-            this.tpProfiles.Location = new System.Drawing.Point(4, 22);
-            this.tpProfiles.Name = "tpProfiles";
-            this.tpProfiles.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProfiles.Size = new System.Drawing.Size(610, 370);
-            this.tpProfiles.TabIndex = 6;
-            this.tpProfiles.Text = "Profiles";
-            this.tpProfiles.UseVisualStyleBackColor = true;
-            // 
-            // tcProfiles
-            // 
-            this.tcProfiles.Controls.Add(this.tpEncodersCLI);
-            this.tcProfiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcProfiles.Location = new System.Drawing.Point(3, 3);
-            this.tcProfiles.Name = "tcProfiles";
-            this.tcProfiles.SelectedIndex = 0;
-            this.tcProfiles.Size = new System.Drawing.Size(604, 364);
-            this.tcProfiles.TabIndex = 0;
-            // 
-            // tpEncodersCLI
-            // 
-            this.tpEncodersCLI.Controls.Add(this.btnEncoderDuplicate);
-            this.tpEncodersCLI.Controls.Add(this.lvEncoders);
-            this.tpEncodersCLI.Controls.Add(this.btnEncodersAdd);
-            this.tpEncodersCLI.Controls.Add(this.btnEncodersEdit);
-            this.tpEncodersCLI.Controls.Add(this.btnEncodersRemove);
-            this.tpEncodersCLI.Location = new System.Drawing.Point(4, 22);
-            this.tpEncodersCLI.Name = "tpEncodersCLI";
-            this.tpEncodersCLI.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEncodersCLI.Size = new System.Drawing.Size(596, 338);
-            this.tpEncodersCLI.TabIndex = 0;
-            this.tpEncodersCLI.Text = "CLI encoders";
-            this.tpEncodersCLI.UseVisualStyleBackColor = true;
-            // 
-            // btnEncoderDuplicate
-            // 
-            this.btnEncoderDuplicate.Location = new System.Drawing.Point(168, 8);
-            this.btnEncoderDuplicate.Name = "btnEncoderDuplicate";
-            this.btnEncoderDuplicate.Size = new System.Drawing.Size(75, 23);
-            this.btnEncoderDuplicate.TabIndex = 2;
-            this.btnEncoderDuplicate.Text = "Duplicate";
-            this.btnEncoderDuplicate.UseVisualStyleBackColor = true;
-            this.btnEncoderDuplicate.Click += new System.EventHandler(this.btnEncoderDuplicate_Click);
-            // 
-            // lvEncoders
-            // 
-            this.lvEncoders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvEncoders.AutoFillColumn = true;
-            this.lvEncoders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chEncoderDescription,
-            this.chEncoderPath,
-            this.chEncoderArgs,
-            this.chEncoderOutputExtension});
-            this.lvEncoders.FullRowSelect = true;
-            this.lvEncoders.Location = new System.Drawing.Point(8, 40);
-            this.lvEncoders.MultiSelect = false;
-            this.lvEncoders.Name = "lvEncoders";
-            this.lvEncoders.Size = new System.Drawing.Size(576, 289);
-            this.lvEncoders.TabIndex = 4;
-            this.lvEncoders.UseCompatibleStateImageBehavior = false;
-            this.lvEncoders.View = System.Windows.Forms.View.Details;
-            this.lvEncoders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvEncoders_MouseDoubleClick);
-            // 
-            // chEncoderDescription
-            // 
-            this.chEncoderDescription.Text = "Description";
-            this.chEncoderDescription.Width = 130;
-            // 
-            // chEncoderPath
-            // 
-            this.chEncoderPath.Text = "Path";
-            this.chEncoderPath.Width = 80;
-            // 
-            // chEncoderArgs
-            // 
-            this.chEncoderArgs.Text = "Args";
-            this.chEncoderArgs.Width = 230;
-            // 
-            // chEncoderOutputExtension
-            // 
-            this.chEncoderOutputExtension.Text = "Output extension";
-            this.chEncoderOutputExtension.Width = 100;
-            // 
-            // btnEncodersAdd
-            // 
-            this.btnEncodersAdd.Location = new System.Drawing.Point(8, 8);
-            this.btnEncodersAdd.Name = "btnEncodersAdd";
-            this.btnEncodersAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnEncodersAdd.TabIndex = 0;
-            this.btnEncodersAdd.Text = "Add";
-            this.btnEncodersAdd.UseVisualStyleBackColor = true;
-            this.btnEncodersAdd.Click += new System.EventHandler(this.btnEncodersAdd_Click);
-            // 
-            // btnEncodersEdit
-            // 
-            this.btnEncodersEdit.Location = new System.Drawing.Point(88, 8);
-            this.btnEncodersEdit.Name = "btnEncodersEdit";
-            this.btnEncodersEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEncodersEdit.TabIndex = 1;
-            this.btnEncodersEdit.Text = "Edit";
-            this.btnEncodersEdit.UseVisualStyleBackColor = true;
-            this.btnEncodersEdit.Click += new System.EventHandler(this.btnEncodersEdit_Click);
-            // 
-            // btnEncodersRemove
-            // 
-            this.btnEncodersRemove.Location = new System.Drawing.Point(248, 8);
-            this.btnEncodersRemove.Name = "btnEncodersRemove";
-            this.btnEncodersRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnEncodersRemove.TabIndex = 3;
-            this.btnEncodersRemove.Text = "Remove";
-            this.btnEncodersRemove.UseVisualStyleBackColor = true;
-            this.btnEncodersRemove.Click += new System.EventHandler(this.btnEncodersRemove_Click);
-            // 
             // tpAdvanced
             // 
             this.tpAdvanced.Controls.Add(this.pgSettings);
@@ -1098,9 +965,6 @@ namespace ShareX
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).EndInit();
             this.tpPrint.ResumeLayout(false);
             this.tpPrint.PerformLayout();
-            this.tpProfiles.ResumeLayout(false);
-            this.tcProfiles.ResumeLayout(false);
-            this.tpEncodersCLI.ResumeLayout(false);
             this.tpAdvanced.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1181,18 +1045,6 @@ namespace ShareX
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.TabPage tpProfiles;
-        private System.Windows.Forms.TabControl tcProfiles;
-        private System.Windows.Forms.TabPage tpEncodersCLI;
-        private System.Windows.Forms.Button btnEncodersAdd;
-        private System.Windows.Forms.Button btnEncodersEdit;
-        private System.Windows.Forms.Button btnEncodersRemove;
-        private MyListView lvEncoders;
-        private System.Windows.Forms.ColumnHeader chEncoderDescription;
-        private System.Windows.Forms.ColumnHeader chEncoderPath;
-        private System.Windows.Forms.ColumnHeader chEncoderArgs;
-        private System.Windows.Forms.ColumnHeader chEncoderOutputExtension;
-        private System.Windows.Forms.Button btnEncoderDuplicate;
         private System.Windows.Forms.CheckBox cbPrintDontShowWindowsDialog;
         private System.Windows.Forms.CheckBox cbRememberMainFormPosition;
     }

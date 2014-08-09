@@ -724,9 +724,8 @@ namespace ShareX
 
         private void btnEncoderConfig_Click(object sender, EventArgs e)
         {
-            using (ApplicationSettingsForm form = new ApplicationSettingsForm())
+            using (VideoEncodersForm form = new VideoEncodersForm() { Icon = this.Icon })
             {
-                form.SelectProfilesTab();
                 form.ShowDialog();
                 UpdateVideoEncoders();
             }
