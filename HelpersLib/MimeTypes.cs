@@ -60,7 +60,7 @@ namespace HelpersLib
 			{ "3ds", "image/x-3ds" },
 			{ "3g2", "video/3gpp2" },
 			{ "3gp", "video/3gpp" },
-			{ "7z", "application/x-7z-compressed" },
+			//{ "7z", "application/x-7z-compressed" },
 			{ "aab", "application/x-authorware-bin" },
 			{ "aac", "audio/x-aac" },
 			{ "aam", "application/x-authorware-map" },
