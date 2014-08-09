@@ -110,7 +110,8 @@ namespace UploadersLib.FileUploaders
             UploadResult result = new UploadResult();
 
             fileName = Helpers.GetValidURL(fileName);
-            string path = Account.GetSubFolderPath(fileName);
+            string subFolderPath = Account.GetSubFolderPath();
+            string path = subFolderPath.CombineURL(fileName);
             bool uploadResult;
 
             try
@@ -126,7 +127,7 @@ namespace UploadersLib.FileUploaders
 
             if (uploadResult && !StopUploadRequested && !IsError)
             {
-                result.URL = Account.GetUriPath(fileName);
+                result.URL = Account.GetUriPath(fileName, subFolderPath);
             }
 
             return result;

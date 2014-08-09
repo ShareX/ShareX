@@ -158,7 +158,7 @@ namespace UploadersLib
             return NameParser.Parse(NameParserType.URL, HttpHomePath.Replace("%host", Host));
         }
 
-        public string GetUriPath(string filename)
+        public string GetUriPath(string filename, string subFolderPath = null)
         {
             if (string.IsNullOrEmpty(Host))
             {
@@ -172,7 +172,11 @@ namespace UploadersLib
 
             filename = URLHelpers.URLEncode(filename);
 
-            string subFolderPath = GetSubFolderPath();
+            if (subFolderPath == null)
+            {
+                subFolderPath = GetSubFolderPath();
+            }
+
             subFolderPath = URLHelpers.URLPathEncode(subFolderPath);
 
             string httpHomePath = GetHttpHomePath();

@@ -144,6 +144,7 @@ namespace HelpersLib
             InitializeComponent();
             Text = string.Empty;
             pbMain.InitialImage = Resources.Loading;
+            pbMain.ErrorImage = Resources.cross;
             pbMain.LoadProgressChanged += pbMain_LoadProgressChanged;
             pbMain.LoadCompleted += pbMain_LoadCompleted;
             pbMain.Resize += pbMain_Resize;
@@ -237,12 +238,22 @@ namespace HelpersLib
 
         public void Reset()
         {
-            if (!isImageLoading)
+            if (!isImageLoading && Image != null)
             {
-                if (Image != null)
+                Image temp = null;
+
+                try
                 {
-                    Image.Dispose();
+                    temp = Image;
                     Image = null;
+                }
+                finally
+                {
+                    // If error happened in previous image load then PictureBox set image as error image and if we dispose it then error happens.
+                    if (temp != null && temp != pbMain.ErrorImage)
+                    {
+                        temp.Dispose();
+                    }
                 }
             }
 
