@@ -171,6 +171,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -391,41 +392,41 @@
             this.tsmiURLShorteners,
             this.tsmiURLSharingServices});
             this.cmsDestinations.Name = "cmsDestinations";
-            this.cmsDestinations.Size = new System.Drawing.Size(182, 114);
+            this.cmsDestinations.Size = new System.Drawing.Size(174, 114);
             // 
             // tsmiImageUploaders
             // 
             this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
             this.tsmiImageUploaders.Name = "tsmiImageUploaders";
-            this.tsmiImageUploaders.Size = new System.Drawing.Size(181, 22);
+            this.tsmiImageUploaders.Size = new System.Drawing.Size(173, 22);
             this.tsmiImageUploaders.Text = "Image uploaders";
             // 
             // tsmiTextUploaders
             // 
             this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTextUploaders.Name = "tsmiTextUploaders";
-            this.tsmiTextUploaders.Size = new System.Drawing.Size(181, 22);
+            this.tsmiTextUploaders.Size = new System.Drawing.Size(173, 22);
             this.tsmiTextUploaders.Text = "Text uploaders";
             // 
             // tsmiFileUploaders
             // 
             this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiFileUploaders.Name = "tsmiFileUploaders";
-            this.tsmiFileUploaders.Size = new System.Drawing.Size(181, 22);
+            this.tsmiFileUploaders.Size = new System.Drawing.Size(173, 22);
             this.tsmiFileUploaders.Text = "File uploaders";
             // 
             // tsmiURLShorteners
             // 
             this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiURLShorteners.Name = "tsmiURLShorteners";
-            this.tsmiURLShorteners.Size = new System.Drawing.Size(181, 22);
+            this.tsmiURLShorteners.Size = new System.Drawing.Size(173, 22);
             this.tsmiURLShorteners.Text = "URL shorteners";
             // 
             // tsmiURLSharingServices
             // 
             this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
-            this.tsmiURLSharingServices.Size = new System.Drawing.Size(181, 22);
+            this.tsmiURLSharingServices.Size = new System.Drawing.Size(173, 22);
             this.tsmiURLSharingServices.Text = "URL sharing services";
             // 
             // btnTask
@@ -1468,7 +1469,8 @@
             this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chActionsName,
             this.chActionsPath,
-            this.chActionsArgs});
+            this.chActionsArgs,
+            this.chActionsExtensions});
             this.lvActions.FullRowSelect = true;
             this.lvActions.Location = new System.Drawing.Point(8, 40);
             this.lvActions.MultiSelect = false;
@@ -1482,17 +1484,17 @@
             // chActionsName
             // 
             this.chActionsName.Text = "Name";
-            this.chActionsName.Width = 100;
+            this.chActionsName.Width = 90;
             // 
             // chActionsPath
             // 
             this.chActionsPath.Text = "Path";
-            this.chActionsPath.Width = 250;
+            this.chActionsPath.Width = 220;
             // 
             // chActionsArgs
             // 
             this.chActionsArgs.Text = "Args";
-            this.chActionsArgs.Width = 134;
+            this.chActionsArgs.Width = 114;
             // 
             // btnActionsEdit
             // 
@@ -1737,7 +1739,7 @@
             this.cbClipboardUploadShareURL.AutoSize = true;
             this.cbClipboardUploadShareURL.Location = new System.Drawing.Point(16, 64);
             this.cbClipboardUploadShareURL.Name = "cbClipboardUploadShareURL";
-            this.cbClipboardUploadShareURL.Size = new System.Drawing.Size(366, 17);
+            this.cbClipboardUploadShareURL.Size = new System.Drawing.Size(343, 17);
             this.cbClipboardUploadShareURL.TabIndex = 3;
             this.cbClipboardUploadShareURL.Text = "If clipboard contains a URL then share it using URL sharing service";
             this.cbClipboardUploadShareURL.UseVisualStyleBackColor = true;
@@ -1864,6 +1866,11 @@
             this.chkUseDefaultAdvancedSettings.Text = "Use advanced settings in main window task settings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
+            // 
+            // chActionsExtensions
+            // 
+            this.chActionsExtensions.Text = "Extensions";
+            this.chActionsExtensions.Width = 75;
             // 
             // TaskSettingsForm
             // 
@@ -2080,6 +2087,7 @@
         private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
         private System.Windows.Forms.TabPage tpRectangleAnnotate;
         private System.Windows.Forms.PropertyGrid pgRectangleAnnotate;
+        private System.Windows.Forms.ColumnHeader chActionsExtensions;
 
 
 

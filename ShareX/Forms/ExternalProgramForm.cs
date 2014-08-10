@@ -45,6 +45,8 @@ namespace ShareX
             txtName.Text = fileAction.Name ?? "";
             txtPath.Text = fileAction.Path ?? "";
             txtArguments.Text = fileAction.Args ?? "";
+            CodeMenu.Create<ExtCodeMenuEntry>(txtExtensions);
+            txtExtensions.Text = fileAction.Extensions ?? "";
         }
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace ShareX
             FileAction.Name = txtName.Text;
             FileAction.Path = txtPath.Text;
             FileAction.Args = txtArguments.Text;
+            FileAction.Extensions = txtExtensions.Text;
             DialogResult = DialogResult.OK;
         }
 

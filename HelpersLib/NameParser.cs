@@ -33,66 +33,36 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
-    public enum ReplacementVariables
+    public class ReplCodeMenuEntry : CodeMenuEntry
     {
-        [Description("Title of active window")]
-        t,
-        [Description("Process name of active window")]
-        pn,
-        [Description("Current year")]
-        y,
-        [Description("Current month")]
-        mo,
-        [Description("Current month name (Local language)")]
-        mon,
-        [Description("Current month name (English)")]
-        mon2,
-        [Description("Current day")]
-        d,
-        [Description("Current hour")]
-        h,
-        [Description("Current minute")]
-        mi,
-        [Description("Current second")]
-        s,
-        [Description("Current millisecond")]
-        ms,
-        [Description("Gets AM/PM")]
-        pm,
-        [Description("Current week name (Local language)")]
-        w,
-        [Description("Current week name (English)")]
-        w2,
-        [Description("Unix timestamp")]
-        unix,
-        [Description("Auto increment number")]
-        i,
-        [Description("Random number 0 to 9")]
-        rn,
-        [Description("Random alphanumeric char")]
-        ra,
-        [Description("Gets image width")]
-        width,
-        [Description("Gets image height")]
-        height,
-        [Description("User name")]
-        un,
-        [Description("User login name")]
-        uln,
-        [Description("Computer name")]
-        cn,
-        [Description("New line")]
-        n
-    }
+        public ReplCodeMenuEntry(string value, string description) : base(value, description) { }
 
-    public static class ReplacementExtension
-    {
-        public const char Prefix = '%';
+        public override String ToPrefixString() { return '%' + _value; }
 
-        public static string ToPrefixString(this ReplacementVariables replacement)
-        {
-            return Prefix + replacement.ToString();
-        }
+        public static readonly ReplCodeMenuEntry t = new ReplCodeMenuEntry("t", "Title of active window");
+        public static readonly ReplCodeMenuEntry pn = new ReplCodeMenuEntry("pn", "Process name of active window");
+        public static readonly ReplCodeMenuEntry y = new ReplCodeMenuEntry("y", "Current year");
+        public static readonly ReplCodeMenuEntry mo = new ReplCodeMenuEntry("mo", "Current month");
+        public static readonly ReplCodeMenuEntry mon = new ReplCodeMenuEntry("mon", "Current month name (Local language)");
+        public static readonly ReplCodeMenuEntry mon2 = new ReplCodeMenuEntry("mon2", "Current month name (English)");
+        public static readonly ReplCodeMenuEntry d = new ReplCodeMenuEntry("d", "Current day");
+        public static readonly ReplCodeMenuEntry h = new ReplCodeMenuEntry("h", "Current hour");
+        public static readonly ReplCodeMenuEntry mi = new ReplCodeMenuEntry("mi", "Current minute");
+        public static readonly ReplCodeMenuEntry s = new ReplCodeMenuEntry("s", "Current second");
+        public static readonly ReplCodeMenuEntry ms = new ReplCodeMenuEntry("ms", "Current millisecond");
+        public static readonly ReplCodeMenuEntry pm = new ReplCodeMenuEntry("pm", "Gets AM/PM");
+        public static readonly ReplCodeMenuEntry w = new ReplCodeMenuEntry("w", "Current week name (Local language)");
+        public static readonly ReplCodeMenuEntry w2 = new ReplCodeMenuEntry("w2", "Current week name (English)");
+        public static readonly ReplCodeMenuEntry unix = new ReplCodeMenuEntry("unix", "Unix timestamp");
+        public static readonly ReplCodeMenuEntry i = new ReplCodeMenuEntry("i", "Auto increment number");
+        public static readonly ReplCodeMenuEntry rn = new ReplCodeMenuEntry("rn", "Random number 0 to 9");
+        public static readonly ReplCodeMenuEntry ra = new ReplCodeMenuEntry("ra", "Random alphanumeric char");
+        public static readonly ReplCodeMenuEntry width = new ReplCodeMenuEntry("width", "Gets image width");
+        public static readonly ReplCodeMenuEntry height = new ReplCodeMenuEntry("height", "Gets image height");
+        public static readonly ReplCodeMenuEntry un = new ReplCodeMenuEntry("un", "User name");
+        public static readonly ReplCodeMenuEntry uln = new ReplCodeMenuEntry("uln", "User login name");
+        public static readonly ReplCodeMenuEntry cn = new ReplCodeMenuEntry("cn", "Computer name");
+        public static readonly ReplCodeMenuEntry n = new ReplCodeMenuEntry("n", "New line");
     }
 
     public enum NameParserType
@@ -144,12 +114,12 @@ namespace HelpersLib
                 {
                     windowText = windowText.Remove(MaxTitleLength);
                 }
-                sb.Replace(ReplacementVariables.t.ToPrefixString(), windowText);
+                sb.Replace(ReplCodeMenuEntry.t.ToPrefixString(), windowText);
             }
 
             if (ProcessName != null)
             {
-                sb.Replace(ReplacementVariables.pn.ToPrefixString(), ProcessName);
+                sb.Replace(ReplCodeMenuEntry.pn.ToPrefixString(), ProcessName);
             }
 
             string width = string.Empty, height = string.Empty;
@@ -160,20 +130,20 @@ namespace HelpersLib
                 height = Picture.Height.ToString();
             }
 
-            sb.Replace(ReplacementVariables.width.ToPrefixString(), width);
-            sb.Replace(ReplacementVariables.height.ToPrefixString(), height);
+            sb.Replace(ReplCodeMenuEntry.width.ToPrefixString(), width);
+            sb.Replace(ReplCodeMenuEntry.height.ToPrefixString(), height);
 
             DateTime dt = DateTime.Now;
 
-            sb.Replace(ReplacementVariables.mon2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(dt.Month))
-                .Replace(ReplacementVariables.mon.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dt.Month))
-                .Replace(ReplacementVariables.y.ToPrefixString(), dt.Year.ToString())
-                .Replace(ReplacementVariables.mo.ToPrefixString(), Helpers.AddZeroes(dt.Month))
-                .Replace(ReplacementVariables.d.ToPrefixString(), Helpers.AddZeroes(dt.Day));
+            sb.Replace(ReplCodeMenuEntry.mon2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(dt.Month))
+                .Replace(ReplCodeMenuEntry.mon.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dt.Month))
+                .Replace(ReplCodeMenuEntry.y.ToPrefixString(), dt.Year.ToString())
+                .Replace(ReplCodeMenuEntry.mo.ToPrefixString(), Helpers.AddZeroes(dt.Month))
+                .Replace(ReplCodeMenuEntry.d.ToPrefixString(), Helpers.AddZeroes(dt.Day));
 
             string hour;
 
-            if (sb.ToString().Contains(ReplacementVariables.pm.ToPrefixString()))
+            if (sb.ToString().Contains(ReplCodeMenuEntry.pm.ToPrefixString()))
             {
                 hour = Helpers.HourTo12(dt.Hour);
             }
@@ -182,35 +152,35 @@ namespace HelpersLib
                 hour = Helpers.AddZeroes(dt.Hour);
             }
 
-            sb.Replace(ReplacementVariables.h.ToPrefixString(), hour)
-                .Replace(ReplacementVariables.mi.ToPrefixString(), Helpers.AddZeroes(dt.Minute))
-                .Replace(ReplacementVariables.s.ToPrefixString(), Helpers.AddZeroes(dt.Second))
-                .Replace(ReplacementVariables.ms.ToPrefixString(), Helpers.AddZeroes(dt.Millisecond, 3))
-                .Replace(ReplacementVariables.w2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
-                .Replace(ReplacementVariables.w.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
-                .Replace(ReplacementVariables.pm.ToPrefixString(), (dt.Hour >= 12 ? "PM" : "AM"));
+            sb.Replace(ReplCodeMenuEntry.h.ToPrefixString(), hour)
+                .Replace(ReplCodeMenuEntry.mi.ToPrefixString(), Helpers.AddZeroes(dt.Minute))
+                .Replace(ReplCodeMenuEntry.s.ToPrefixString(), Helpers.AddZeroes(dt.Second))
+                .Replace(ReplCodeMenuEntry.ms.ToPrefixString(), Helpers.AddZeroes(dt.Millisecond, 3))
+                .Replace(ReplCodeMenuEntry.w2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
+                .Replace(ReplCodeMenuEntry.w.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
+                .Replace(ReplCodeMenuEntry.pm.ToPrefixString(), (dt.Hour >= 12 ? "PM" : "AM"));
 
-            sb.Replace(ReplacementVariables.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
+            sb.Replace(ReplCodeMenuEntry.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
 
-            if (sb.ToString().Contains(ReplacementVariables.i.ToPrefixString()))
+            if (sb.ToString().Contains(ReplCodeMenuEntry.i.ToPrefixString()))
             {
                 AutoIncrementNumber++;
-                sb.Replace(ReplacementVariables.i.ToPrefixString(), AutoIncrementNumber.ToString());
+                sb.Replace(ReplCodeMenuEntry.i.ToPrefixString(), AutoIncrementNumber.ToString());
             }
 
-            sb.Replace(ReplacementVariables.un.ToPrefixString(), Environment.UserName);
-            sb.Replace(ReplacementVariables.uln.ToPrefixString(), Environment.UserDomainName);
-            sb.Replace(ReplacementVariables.cn.ToPrefixString(), Environment.MachineName);
+            sb.Replace(ReplCodeMenuEntry.un.ToPrefixString(), Environment.UserName);
+            sb.Replace(ReplCodeMenuEntry.uln.ToPrefixString(), Environment.UserDomainName);
+            sb.Replace(ReplCodeMenuEntry.cn.ToPrefixString(), Environment.MachineName);
 
             if (Type == NameParserType.Text)
             {
-                sb.Replace(ReplacementVariables.n.ToPrefixString(), Environment.NewLine);
+                sb.Replace(ReplCodeMenuEntry.n.ToPrefixString(), Environment.NewLine);
             }
 
             string result = sb.ToString();
 
-            result = result.ReplaceAll(ReplacementVariables.rn.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Numbers).ToString());
-            result = result.ReplaceAll(ReplacementVariables.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
+            result = result.ReplaceAll(ReplCodeMenuEntry.rn.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Numbers).ToString());
+            result = result.ReplaceAll(ReplCodeMenuEntry.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
 
             if (Type == NameParserType.FolderPath)
             {
@@ -235,65 +205,6 @@ namespace HelpersLib
             }
 
             return result;
-        }
-
-        public static ContextMenuStrip CreateCodesMenu(TextBox tb, params ReplacementVariables[] ignoreList)
-        {
-            ContextMenuStrip cms = new ContextMenuStrip
-            {
-                Font = new Font("Lucida Console", 8),
-                AutoClose = false,
-                Opacity = 0.9,
-                ShowImageMargin = false
-            };
-
-            var variables = Helpers.GetEnums<ReplacementVariables>().Where(x => !ignoreList.Contains(x)).
-                Select(x => new
-                {
-                    Name = ReplacementExtension.Prefix + Enum.GetName(typeof(ReplacementVariables), x),
-                    Description = x.GetDescription(),
-                    Enum = x
-                });
-
-            foreach (var variable in variables)
-            {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
-                tsmi.Click += (sender, e) =>
-                {
-                    string text = ((ToolStripMenuItem)sender).Tag.ToString();
-                    tb.AppendTextToSelection(text);
-                };
-                cms.Items.Add(tsmi);
-            }
-
-            cms.Items.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiClose = new ToolStripMenuItem("Close");
-            tsmiClose.Click += (sender, e) => cms.Close();
-            cms.Items.Add(tsmiClose);
-
-            tb.MouseDown += (sender, e) =>
-            {
-                if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
-            };
-
-            tb.Leave += (sender, e) =>
-            {
-                if (cms.Visible) cms.Close();
-            };
-
-            tb.KeyDown += (sender, e) =>
-            {
-                if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) && cms.Visible)
-                {
-                    cms.Close();
-                    e.SuppressKeyPress = true;
-                }
-            };
-
-            tb.Disposed += (sender, e) => cms.Dispose();
-
-            return cms;
         }
     }
 }

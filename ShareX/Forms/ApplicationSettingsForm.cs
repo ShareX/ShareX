@@ -69,8 +69,8 @@ namespace ShareX
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
-            NameParser.CreateCodesMenu(txtSaveImageSubFolderPattern, ReplacementVariables.t, ReplacementVariables.pn, ReplacementVariables.i,
-                ReplacementVariables.width, ReplacementVariables.height, ReplacementVariables.n);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtSaveImageSubFolderPattern, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn, ReplCodeMenuEntry.i,
+                ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
 
             // Proxy
             cbProxyMethod.Items.AddRange(Enum.GetNames(typeof(ProxyMethod)));

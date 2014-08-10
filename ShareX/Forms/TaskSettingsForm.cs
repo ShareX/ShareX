@@ -199,8 +199,8 @@ namespace ShareX
             // Upload / Name pattern
             txtNameFormatPattern.Text = TaskSettings.UploadSettings.NameFormatPattern;
             txtNameFormatPatternActiveWindow.Text = TaskSettings.UploadSettings.NameFormatPatternActiveWindow;
-            NameParser.CreateCodesMenu(txtNameFormatPattern, ReplacementVariables.n);
-            NameParser.CreateCodesMenu(txtNameFormatPatternActiveWindow, ReplacementVariables.n);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtNameFormatPattern, ReplCodeMenuEntry.n);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtNameFormatPatternActiveWindow, ReplCodeMenuEntry.n);
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
 
             // Upload / Clipboard upload
@@ -798,6 +798,7 @@ namespace ShareX
             lvi.Checked = fileAction.IsActive;
             lvi.SubItems.Add(fileAction.Path ?? "");
             lvi.SubItems.Add(fileAction.Args ?? "");
+            lvi.SubItems.Add(fileAction.Extensions ?? "");
             lvActions.Items.Add(lvi);
         }
 
@@ -815,6 +816,7 @@ namespace ShareX
                         lvi.Text = fileAction.Name ?? "";
                         lvi.SubItems[1].Text = fileAction.Path ?? "";
                         lvi.SubItems[2].Text = fileAction.Args ?? "";
+                        lvi.SubItems[3].Text = fileAction.Extensions ?? "";
                     }
                 }
             }
