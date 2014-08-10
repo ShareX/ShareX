@@ -40,6 +40,7 @@ namespace UploadersLib.FileUploaders
         public string Path { get; set; }
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
+        public bool IgnoreInvalidCert { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
@@ -70,6 +71,10 @@ namespace UploadersLib.FileUploaders
             url = URLHelpers.FixPrefix(url);
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
+            SSLBypassHelper sslBypassHelper = null;
+            if (IgnoreInvalidCert)
+                sslBypassHelper = new SSLBypassHelper();
+            
             string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
 
             UploadResult result = new UploadResult(response);
@@ -86,6 +91,9 @@ namespace UploadersLib.FileUploaders
                     result.IsURLExpected = false;
                 }
             }
+
+            if (sslBypassHelper != null)
+                sslBypassHelper.Dispose();
 
             return result;
         }

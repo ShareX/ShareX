@@ -242,6 +242,7 @@
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
             this.atcSendSpaceAccountType = new UploadersLib.AccountTypeControl();
             this.tpMediaCrush = new System.Windows.Forms.TabPage();
+            this.cbMediaCrushDirectLink = new System.Windows.Forms.CheckBox();
             this.tpGe_tt = new System.Windows.Forms.TabPage();
             this.lblGe_ttStatus = new System.Windows.Forms.Label();
             this.lblGe_ttPassword = new System.Windows.Forms.Label();
@@ -391,7 +392,7 @@
             this.ttlvMain = new HelpersLib.TabToListView();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
-            this.cbMediaCrushDirectLink = new System.Windows.Forms.CheckBox();
+            this.cbOwnCloudIgnoreInvalidCert = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -2245,6 +2246,7 @@
             // 
             // tpOwnCloud
             // 
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudIgnoreInvalidCert);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateShare);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPath);
@@ -2666,6 +2668,17 @@
             this.tpMediaCrush.TabIndex = 18;
             this.tpMediaCrush.Text = "MediaCrush";
             this.tpMediaCrush.UseVisualStyleBackColor = true;
+            // 
+            // cbMediaCrushDirectLink
+            // 
+            this.cbMediaCrushDirectLink.AutoSize = true;
+            this.cbMediaCrushDirectLink.Location = new System.Drawing.Point(16, 16);
+            this.cbMediaCrushDirectLink.Name = "cbMediaCrushDirectLink";
+            this.cbMediaCrushDirectLink.Size = new System.Drawing.Size(187, 17);
+            this.cbMediaCrushDirectLink.TabIndex = 10;
+            this.cbMediaCrushDirectLink.Text = "Direct link (Adds \"/direct\" to URL)";
+            this.cbMediaCrushDirectLink.UseVisualStyleBackColor = true;
+            this.cbMediaCrushDirectLink.CheckedChanged += new System.EventHandler(this.cbMediaCrushDirectLink_CheckedChanged);
             // 
             // tpGe_tt
             // 
@@ -4206,16 +4219,16 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // cbMediaCrushDirectLink
+            // cbOwnCloudIgnoreInvalidCert
             // 
-            this.cbMediaCrushDirectLink.AutoSize = true;
-            this.cbMediaCrushDirectLink.Location = new System.Drawing.Point(16, 16);
-            this.cbMediaCrushDirectLink.Name = "cbMediaCrushDirectLink";
-            this.cbMediaCrushDirectLink.Size = new System.Drawing.Size(187, 17);
-            this.cbMediaCrushDirectLink.TabIndex = 10;
-            this.cbMediaCrushDirectLink.Text = "Direct link (Adds \"/direct\" to URL)";
-            this.cbMediaCrushDirectLink.UseVisualStyleBackColor = true;
-            this.cbMediaCrushDirectLink.CheckedChanged += new System.EventHandler(this.cbMediaCrushDirectLink_CheckedChanged);
+            this.cbOwnCloudIgnoreInvalidCert.AutoSize = true;
+            this.cbOwnCloudIgnoreInvalidCert.Location = new System.Drawing.Point(19, 159);
+            this.cbOwnCloudIgnoreInvalidCert.Name = "cbOwnCloudIgnoreInvalidCert";
+            this.cbOwnCloudIgnoreInvalidCert.Size = new System.Drawing.Size(161, 17);
+            this.cbOwnCloudIgnoreInvalidCert.TabIndex = 10;
+            this.cbOwnCloudIgnoreInvalidCert.Text = "Ignore invalid SSL certificate";
+            this.cbOwnCloudIgnoreInvalidCert.UseVisualStyleBackColor = true;
+            this.cbOwnCloudIgnoreInvalidCert.CheckedChanged += new System.EventHandler(this.cbOwnCloudIgnoreInvalidCert_CheckedChanged);
             // 
             // UploadersConfigForm
             // 
@@ -4701,6 +4714,7 @@
         private System.Windows.Forms.TabPage tpOneDrive;
         private OAuthControl oAuth2OneDrive;
         private System.Windows.Forms.TabPage tpMediaCrush;
-        private System.Windows.Forms.CheckBox cbMediaCrushDirectLink;        
+        private System.Windows.Forms.CheckBox cbMediaCrushDirectLink;
+        private System.Windows.Forms.CheckBox cbOwnCloudIgnoreInvalidCert;        
     }
 }
