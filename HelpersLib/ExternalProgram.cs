@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -35,6 +36,7 @@ namespace HelpersLib
         public string Name { get; set; }
         public string Path { get; set; }
         public string Args { get; set; }
+        public string Extensions { get; set; }
 
         public ExternalProgram()
         {
@@ -60,6 +62,7 @@ namespace HelpersLib
 
         public void Run(string filePath)
         {
+            if (!CheckExtensions(filePath)) return;
             if (!string.IsNullOrEmpty(Path) && File.Exists(Path))
             {
                 filePath = '"' + filePath.Trim('"') + '"';
@@ -92,6 +95,19 @@ namespace HelpersLib
                     DebugHelper.WriteException(e);
                 }
             }
+        }
+
+        private bool CheckExtensions(string path)
+        {
+            if (string.IsNullOrEmpty(Extensions) || string.IsNullOrEmpty(path)) return true;
+            int idx = 0;
+            for (int i = 0; i <= Extensions.Length; ++i) {
+                if (i == Extensions.Length || !char.IsLetterOrDigit(Extensions[i])) {
+                    if (idx < i && path.EndsWith(Extensions.Substring(idx, i - idx))) return true;
+                    idx = i + 1;
+                }
+            }
+            return false;
         }
     }
 }

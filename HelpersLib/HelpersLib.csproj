@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClipboardFormat.cs" />
+    <Compile Include="CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />
     <Compile Include="Colors\CMYK.cs" />
     <Compile Include="Colors\ColorEventHandler.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="DWMManager.cs" />
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
+    <Compile Include="ExtCodeMenuEntry.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
     <Compile Include="FontSafe.cs" />
     <Compile Include="Forms\OutputBox.cs">
@@ -101,6 +103,7 @@
     </Compile>
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
+    <Compile Include="CodeMenuEntry.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
     <Compile Include="Native\LayeredForm.cs">

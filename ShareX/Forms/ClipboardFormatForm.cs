@@ -44,7 +44,7 @@ namespace ShareX
             ClipboardFormat = cbf;
             txtDescription.Text = cbf.Description ?? "";
             txtFormat.Text = cbf.Format ?? "";
-            NameParser.CreateCodesMenu(txtFormat);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtFormat);
             lblExample.Text = "Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $thumbnailfilename, $thumbnailfilenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.";
         }
 

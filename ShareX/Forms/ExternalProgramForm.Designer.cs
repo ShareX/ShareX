@@ -37,6 +37,8 @@
             this.btnPathBrowse = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblExtensions = new System.Windows.Forms.Label();
+            this.txtExtensions = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -99,7 +101,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(160, 88);
+            this.btnOK.Location = new System.Drawing.Point(156, 125);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 7;
@@ -109,7 +111,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(240, 88);
+            this.btnCancel.Location = new System.Drawing.Point(237, 125);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 8;
@@ -117,12 +119,30 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblExtensions
+            // 
+            this.lblExtensions.AutoSize = true;
+            this.lblExtensions.Location = new System.Drawing.Point(16, 88);
+            this.lblExtensions.Name = "lblExtensions";
+            this.lblExtensions.Size = new System.Drawing.Size(61, 13);
+            this.lblExtensions.TabIndex = 9;
+            this.lblExtensions.Text = "Extensions:";
+            // 
+            // txtExtensions
+            // 
+            this.txtExtensions.Location = new System.Drawing.Point(88, 85);
+            this.txtExtensions.Name = "txtExtensions";
+            this.txtExtensions.Size = new System.Drawing.Size(224, 20);
+            this.txtExtensions.TabIndex = 10;
+            // 
             // ExternalProgramForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 121);
+            this.ClientSize = new System.Drawing.Size(327, 160);
+            this.Controls.Add(this.txtExtensions);
+            this.Controls.Add(this.lblExtensions);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnPathBrowse);
@@ -152,5 +172,7 @@
         private System.Windows.Forms.Button btnPathBrowse;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblExtensions;
+        private System.Windows.Forms.TextBox txtExtensions;
     }
 }

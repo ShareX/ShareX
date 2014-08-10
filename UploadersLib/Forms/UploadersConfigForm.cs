@@ -111,11 +111,11 @@ namespace UploadersLib
             ttlvMain.MainTabControl = tcUploaders;
             ttlvMain.FocusListView();
 
-            NameParser.CreateCodesMenu(txtDropboxPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
-            NameParser.CreateCodesMenu(txtCopyPath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
-            NameParser.CreateCodesMenu(txtAmazonS3ObjectPrefix, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
-            NameParser.CreateCodesMenu(txtMediaFirePath, ReplacementVariables.n, ReplacementVariables.t, ReplacementVariables.pn);
-            NameParser.CreateCodesMenu(txtCustomUploaderArgValue, ReplacementVariables.n);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtDropboxPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtCopyPath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtAmazonS3ObjectPrefix, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtMediaFirePath, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtCustomUploaderArgValue, ReplCodeMenuEntry.n);
 
             txtCustomUploaderLog.AddContextMenu();
 

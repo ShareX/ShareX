@@ -41,7 +41,7 @@ namespace ImageEffectsLib
         {
             InitializeComponent();
             config = watermarkConfig;
-            NameParser.CreateCodesMenu(txtWatermarkText, ReplacementVariables.t, ReplacementVariables.pn);
+            CodeMenu.Create<ReplCodeMenuEntry>(txtWatermarkText, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
         }
 
         private void WatermarkUI_Load(object sender, EventArgs e)
