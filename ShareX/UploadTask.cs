@@ -950,7 +950,8 @@ namespace ShareX
                     {
                         Path = Program.UploadersConfig.OwnCloudPath,
                         CreateShare = Program.UploadersConfig.OwnCloudCreateShare,
-                        DirectLink = Program.UploadersConfig.OwnCloudDirectLink
+                        DirectLink = Program.UploadersConfig.OwnCloudDirectLink,
+                        IgnoreInvalidCert = Program.UploadersConfig.OwnCloudIgnoreInvalidCert
                     };
                     break;
                 case FileDestination.Pushbullet:

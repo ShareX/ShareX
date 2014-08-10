@@ -472,6 +472,7 @@ namespace UploadersLib
             txtOwnCloudPath.Text = Config.OwnCloudPath;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
+            cbOwnCloudIgnoreInvalidCert.Checked = Config.OwnCloudIgnoreInvalidCert;
 
             // MediaFire
 
@@ -1700,6 +1701,11 @@ namespace UploadersLib
         private void cbOwnCloudDirectLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudDirectLink = cbOwnCloudDirectLink.Checked;
+        }
+
+        private void cbOwnCloudIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudIgnoreInvalidCert = cbOwnCloudIgnoreInvalidCert.Checked;
         }
 
         #endregion ownCloud
