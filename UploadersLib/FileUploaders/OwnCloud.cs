@@ -72,30 +72,40 @@ namespace UploadersLib.FileUploaders
             NameValueCollection headers = CreateAuthenticationHeader(Username, Password);
 
             SSLBypassHelper sslBypassHelper = null;
-            if (IgnoreInvalidCert)
-                sslBypassHelper = new SSLBypassHelper();
-            
-            string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
 
-            UploadResult result = new UploadResult(response);
-
-            if (!IsError)
+            try
             {
-                if (CreateShare)
+                if (IgnoreInvalidCert)
                 {
-                    AllowReportProgress = false;
-                    result.URL = ShareFile(path);
+                    sslBypassHelper = new SSLBypassHelper();
                 }
-                else
+
+                string response = SendRequestStream(url, stream, Helpers.GetMimeType(fileName), headers, method: HttpMethod.PUT);
+
+                UploadResult result = new UploadResult(response);
+
+                if (!IsError)
                 {
-                    result.IsURLExpected = false;
+                    if (CreateShare)
+                    {
+                        AllowReportProgress = false;
+                        result.URL = ShareFile(path);
+                    }
+                    else
+                    {
+                        result.IsURLExpected = false;
+                    }
+                }
+
+                return result;
+            }
+            finally
+            {
+                if (sslBypassHelper != null)
+                {
+                    sslBypassHelper.Dispose();
                 }
             }
-
-            if (sslBypassHelper != null)
-                sslBypassHelper.Dispose();
-
-            return result;
         }
 
         // http://doc.owncloud.org/server/7.0/developer_manual/core/ocs-share-api.html#create-a-new-share
