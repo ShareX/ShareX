@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using Microsoft.VisualBasic.FileIO;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -289,7 +290,7 @@ namespace ShareX
 
         public void DeleteFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) File.Delete(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) FileSystem.DeleteFile(SelectedItem.Info.FilePath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
         }
 
         public void ShortenURL(UrlShortenerType urlShortener)
