@@ -131,6 +131,8 @@ namespace ShareX
         None,
         [Description("Upload file")]
         FileUpload,
+        [Description("Upload folder")]
+        FolderUpload,
         [Description("Upload from clipboard")]
         ClipboardUpload,
         [Description("Upload from clipboard with content viewer")]

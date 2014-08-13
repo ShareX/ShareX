@@ -112,8 +112,30 @@ namespace ShareX
                         Program.Settings.FileUploadDefaultDirectory = Path.GetDirectoryName(ofd.FileName);
                     }
 
-                    if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-                    UploadFile(ofd.FileNames, taskSettings);
+                    UploadFile(ofd.FileNames);
+                }
+            }
+        }
+
+        public static void UploadFolder(TaskSettings taskSettings = null)
+        {
+            using (FolderSelectDialog folderDialog = new FolderSelectDialog())
+            {
+                folderDialog.Title = "ShareX - Folder upload";
+
+                if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
+                {
+                    folderDialog.InitialDirectory = Program.Settings.FileUploadDefaultDirectory;
+                }
+                else
+                {
+                    folderDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                }
+
+                if (folderDialog.ShowDialog() && !string.IsNullOrEmpty(folderDialog.FileName))
+                {
+                    Program.Settings.FileUploadDefaultDirectory = folderDialog.FileName;
+                    UploadFile(folderDialog.FileName);
                 }
             }
         }

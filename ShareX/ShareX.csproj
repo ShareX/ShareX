@@ -242,10 +242,10 @@
     <Compile Include="Forms\HotkeySettingsForm.Designer.cs">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VideoEncodersForm.cs">
+    <Compile Include="Forms\VideoEncodersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VideoEncodersForm.Designer.cs">
+    <Compile Include="Forms\VideoEncodersForm.Designer.cs">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WatchFolder.cs" />
@@ -322,7 +322,7 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VideoEncodersForm.resx">
+    <EmbeddedResource Include="Forms\VideoEncodersForm.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

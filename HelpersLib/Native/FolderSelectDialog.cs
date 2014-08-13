@@ -101,7 +101,8 @@ namespace HelpersLib
         /// <returns>True if the user presses OK else false</returns>
         public bool ShowDialog()
         {
-            return ShowDialog(IntPtr.Zero);
+            IntPtr activeWindow = NativeMethods.GetForegroundWindow();
+            return ShowDialog(activeWindow);
         }
 
         /// <summary>

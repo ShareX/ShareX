@@ -729,6 +729,11 @@ namespace ShareX
             UploadManager.UploadFile();
         }
 
+        private void tsmiUploadFolder_Click(object sender, EventArgs e)
+        {
+            UploadManager.UploadFolder();
+        }
+
         private void tsbClipboardUpload_Click(object sender, EventArgs e)
         {
             UploadManager.ClipboardUploadMainWindow();
@@ -1342,6 +1347,9 @@ namespace ShareX
             {
                 case HotkeyType.FileUpload:
                     UploadManager.UploadFile(safeTaskSettings);
+                    break;
+                case HotkeyType.FolderUpload:
+                    UploadManager.UploadFolder(safeTaskSettings);
                     break;
                 case HotkeyType.ClipboardUpload:
                     UploadManager.ClipboardUpload(safeTaskSettings);

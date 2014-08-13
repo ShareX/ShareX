@@ -178,10 +178,10 @@
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUpload = new System.Windows.Forms.ToolStripMenuItem();
-            this.uploadFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uploadFromClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uploadFromURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dragAndDropUploadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadClipboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadURL = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadDragDrop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWorkflows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,6 +219,8 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -428,6 +430,7 @@
             // 
             this.tsddbUpload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUploadFile,
+            this.tsmiUploadFolder,
             this.tsmiUploadClipboard,
             this.tsmiUploadURL,
             this.tsmiUploadDragDrop});
@@ -440,7 +443,7 @@
             // 
             // tsmiUploadFile
             // 
-            this.tsmiUploadFile.Image = global::ShareX.Properties.Resources.folder;
+            this.tsmiUploadFile.Image = global::ShareX.Properties.Resources.folder_open_document;
             this.tsmiUploadFile.Name = "tsmiUploadFile";
             this.tsmiUploadFile.Size = new System.Drawing.Size(203, 22);
             this.tsmiUploadFile.Text = "Upload file...";
@@ -982,7 +985,7 @@
             this.tsmiHideMenu,
             this.tsmiImagePreview});
             this.cmsTaskInfo.Name = "cmsHistory";
-            this.cmsTaskInfo.Size = new System.Drawing.Size(164, 340);
+            this.cmsTaskInfo.Size = new System.Drawing.Size(164, 318);
             // 
             // tsmiShowErrors
             // 
@@ -1567,46 +1570,47 @@
             // tsmiTrayUpload
             // 
             this.tsmiTrayUpload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uploadFileToolStripMenuItem,
-            this.uploadFromClipboardToolStripMenuItem,
-            this.uploadFromURLToolStripMenuItem,
-            this.dragAndDropUploadToolStripMenuItem});
+            this.tsmiTrayUploadFile,
+            this.tsmiTrayUploadFolder,
+            this.tsmiTrayUploadClipboard,
+            this.tsmiTrayUploadURL,
+            this.tsmiTrayUploadDragDrop});
             this.tsmiTrayUpload.Image = global::ShareX.Properties.Resources.arrow_090;
             this.tsmiTrayUpload.Name = "tsmiTrayUpload";
             this.tsmiTrayUpload.Size = new System.Drawing.Size(188, 22);
             this.tsmiTrayUpload.Text = "Upload";
             // 
-            // uploadFileToolStripMenuItem
+            // tsmiTrayUploadFile
             // 
-            this.uploadFileToolStripMenuItem.Image = global::ShareX.Properties.Resources.folder;
-            this.uploadFileToolStripMenuItem.Name = "uploadFileToolStripMenuItem";
-            this.uploadFileToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.uploadFileToolStripMenuItem.Text = "Upload file...";
-            this.uploadFileToolStripMenuItem.Click += new System.EventHandler(this.tsbFileUpload_Click);
+            this.tsmiTrayUploadFile.Image = global::ShareX.Properties.Resources.folder_open_document;
+            this.tsmiTrayUploadFile.Name = "tsmiTrayUploadFile";
+            this.tsmiTrayUploadFile.Size = new System.Drawing.Size(203, 22);
+            this.tsmiTrayUploadFile.Text = "Upload file...";
+            this.tsmiTrayUploadFile.Click += new System.EventHandler(this.tsbFileUpload_Click);
             // 
-            // uploadFromClipboardToolStripMenuItem
+            // tsmiTrayUploadClipboard
             // 
-            this.uploadFromClipboardToolStripMenuItem.Image = global::ShareX.Properties.Resources.clipboard;
-            this.uploadFromClipboardToolStripMenuItem.Name = "uploadFromClipboardToolStripMenuItem";
-            this.uploadFromClipboardToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.uploadFromClipboardToolStripMenuItem.Text = "Upload from clipboard...";
-            this.uploadFromClipboardToolStripMenuItem.Click += new System.EventHandler(this.tsbClipboardUpload_Click);
+            this.tsmiTrayUploadClipboard.Image = global::ShareX.Properties.Resources.clipboard;
+            this.tsmiTrayUploadClipboard.Name = "tsmiTrayUploadClipboard";
+            this.tsmiTrayUploadClipboard.Size = new System.Drawing.Size(203, 22);
+            this.tsmiTrayUploadClipboard.Text = "Upload from clipboard...";
+            this.tsmiTrayUploadClipboard.Click += new System.EventHandler(this.tsbClipboardUpload_Click);
             // 
-            // uploadFromURLToolStripMenuItem
+            // tsmiTrayUploadURL
             // 
-            this.uploadFromURLToolStripMenuItem.Image = global::ShareX.Properties.Resources.drive;
-            this.uploadFromURLToolStripMenuItem.Name = "uploadFromURLToolStripMenuItem";
-            this.uploadFromURLToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.uploadFromURLToolStripMenuItem.Text = "Upload from URL...";
-            this.uploadFromURLToolStripMenuItem.Click += new System.EventHandler(this.tsmiUploadURL_Click);
+            this.tsmiTrayUploadURL.Image = global::ShareX.Properties.Resources.drive;
+            this.tsmiTrayUploadURL.Name = "tsmiTrayUploadURL";
+            this.tsmiTrayUploadURL.Size = new System.Drawing.Size(203, 22);
+            this.tsmiTrayUploadURL.Text = "Upload from URL...";
+            this.tsmiTrayUploadURL.Click += new System.EventHandler(this.tsmiUploadURL_Click);
             // 
-            // dragAndDropUploadToolStripMenuItem
+            // tsmiTrayUploadDragDrop
             // 
-            this.dragAndDropUploadToolStripMenuItem.Image = global::ShareX.Properties.Resources.inbox;
-            this.dragAndDropUploadToolStripMenuItem.Name = "dragAndDropUploadToolStripMenuItem";
-            this.dragAndDropUploadToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.dragAndDropUploadToolStripMenuItem.Text = "Drag and drop upload...";
-            this.dragAndDropUploadToolStripMenuItem.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
+            this.tsmiTrayUploadDragDrop.Image = global::ShareX.Properties.Resources.inbox;
+            this.tsmiTrayUploadDragDrop.Name = "tsmiTrayUploadDragDrop";
+            this.tsmiTrayUploadDragDrop.Size = new System.Drawing.Size(203, 22);
+            this.tsmiTrayUploadDragDrop.Text = "Drag and drop upload...";
+            this.tsmiTrayUploadDragDrop.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
             // 
             // tsmiTrayWorkflows
             // 
@@ -1901,6 +1905,22 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
+            // tsmiUploadFolder
+            // 
+            this.tsmiUploadFolder.Image = global::ShareX.Properties.Resources.folder;
+            this.tsmiUploadFolder.Name = "tsmiUploadFolder";
+            this.tsmiUploadFolder.Size = new System.Drawing.Size(203, 22);
+            this.tsmiUploadFolder.Text = "Upload folder...";
+            this.tsmiUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
+            // 
+            // tsmiTrayUploadFolder
+            // 
+            this.tsmiTrayUploadFolder.Image = global::ShareX.Properties.Resources.folder;
+            this.tsmiTrayUploadFolder.Name = "tsmiTrayUploadFolder";
+            this.tsmiTrayUploadFolder.Size = new System.Drawing.Size(203, 22);
+            this.tsmiTrayUploadFolder.Text = "Upload folder...";
+            this.tsmiTrayUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2111,10 +2131,10 @@
         private System.Windows.Forms.ToolStripSeparator tssDestinations1;
         private System.Windows.Forms.ToolStripMenuItem tsmiDestinationSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUpload;
-        private System.Windows.Forms.ToolStripMenuItem uploadFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uploadFromClipboardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uploadFromURLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dragAndDropUploadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadClipboard;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadURL;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadDragDrop;
         private System.Windows.Forms.ToolStripSeparator tssTrayDestinations1;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayDestinationSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiShareSelectedURL;
@@ -2126,5 +2146,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenRecordingFFmpeg;
         private System.Windows.Forms.ToolStripMenuItem screenRecordingFFmpegToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUploadFolder;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadFolder;
     }
 }
