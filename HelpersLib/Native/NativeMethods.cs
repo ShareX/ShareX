@@ -86,6 +86,9 @@ namespace HelpersLib
         public static extern IntPtr FindWindowEx(IntPtr parentHwnd, IntPtr childAfterHwnd, IntPtr className, string windowText);
 
         [DllImport("user32.dll")]
+        public static extern IntPtr GetActiveWindow();
+
+        [DllImport("user32.dll")]
         public static extern bool GetClientRect(IntPtr hWnd, out RECT lpRect);
 
         [DllImport("user32.dll")]
