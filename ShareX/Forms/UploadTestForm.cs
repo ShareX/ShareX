@@ -72,7 +72,7 @@ namespace ShareX
 
             if (TestImage == null)
             {
-                TestImage = Resources.Test;
+                TestImage = ShareXResources.Logo;
             }
 
             if (string.IsNullOrEmpty(TestText))

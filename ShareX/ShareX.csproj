@@ -453,7 +453,6 @@
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
-    <None Include="Resources\Test.png" />
     <None Include="Resources\application-network.png" />
     <None Include="..\LICENSE.txt">
       <Link>LICENSE.txt</Link>
