@@ -115,7 +115,7 @@ namespace ShareX
 
         private static void UpdateDragAndDropTip()
         {
-            Program.MainForm.lblDragAndDropTip.Visible = Tasks.Count == 0;
+            Program.MainForm.pBackground.Visible = Tasks.Count == 0;
         }
 
         private static ListViewItem FindListViewItem(UploadTask task)

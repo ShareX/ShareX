@@ -50,6 +50,7 @@
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbUpload = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiUploadFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUploadDragDrop = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,6 +96,8 @@
             this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
             this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
             this.scMain = new HelpersLib.SplitContainerCustomSplitter();
+            this.pBackground = new System.Windows.Forms.Panel();
+            this.pbLogo = new HelpersLib.MyPictureBox();
             this.lblDragAndDropTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
             this.lvUploads = new HelpersLib.MyListView();
@@ -179,6 +182,7 @@
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayUploadDragDrop = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,13 +223,12 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.ssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayUploadFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
+            this.pBackground.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
             this.SuspendLayout();
@@ -448,6 +451,14 @@
             this.tsmiUploadFile.Size = new System.Drawing.Size(203, 22);
             this.tsmiUploadFile.Text = "Upload file...";
             this.tsmiUploadFile.Click += new System.EventHandler(this.tsbFileUpload_Click);
+            // 
+            // tsmiUploadFolder
+            // 
+            this.tsmiUploadFolder.Image = global::ShareX.Properties.Resources.folder;
+            this.tsmiUploadFolder.Name = "tsmiUploadFolder";
+            this.tsmiUploadFolder.Size = new System.Drawing.Size(203, 22);
+            this.tsmiUploadFolder.Text = "Upload folder...";
+            this.tsmiUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
             // 
             // tsmiUploadClipboard
             // 
@@ -850,7 +861,7 @@
             // 
             // scMain.Panel1
             // 
-            this.scMain.Panel1.Controls.Add(this.lblDragAndDropTip);
+            this.scMain.Panel1.Controls.Add(this.pBackground);
             this.scMain.Panel1.Controls.Add(this.lblSplitter);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
             // 
@@ -863,21 +874,43 @@
             this.scMain.TabIndex = 1;
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
-            // lblDragAndDropTip
+            // pBackground
             // 
-            this.lblDragAndDropTip.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pBackground.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBackground.BackColor = System.Drawing.Color.White;
+            this.pBackground.Controls.Add(this.pbLogo);
+            this.pBackground.Controls.Add(this.lblDragAndDropTip);
+            this.pBackground.Location = new System.Drawing.Point(8, 40);
+            this.pBackground.Name = "pBackground";
+            this.pBackground.Size = new System.Drawing.Size(320, 344);
+            this.pBackground.TabIndex = 3;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(320, 280);
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
+            // 
+            // lblDragAndDropTip
+            // 
             this.lblDragAndDropTip.BackColor = System.Drawing.Color.White;
+            this.lblDragAndDropTip.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblDragAndDropTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblDragAndDropTip.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDragAndDropTip.Location = new System.Drawing.Point(8, 39);
+            this.lblDragAndDropTip.Location = new System.Drawing.Point(0, 280);
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
-            this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(30, 20, 30, 30);
-            this.lblDragAndDropTip.Size = new System.Drawing.Size(319, 328);
+            this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblDragAndDropTip.Size = new System.Drawing.Size(320, 64);
             this.lblDragAndDropTip.TabIndex = 1;
             this.lblDragAndDropTip.Text = "You can drag and drop files to this window";
-            this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDragAndDropTip.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblDragAndDropTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
             // 
             // lblSplitter
@@ -1588,6 +1621,14 @@
             this.tsmiTrayUploadFile.Text = "Upload file...";
             this.tsmiTrayUploadFile.Click += new System.EventHandler(this.tsbFileUpload_Click);
             // 
+            // tsmiTrayUploadFolder
+            // 
+            this.tsmiTrayUploadFolder.Image = global::ShareX.Properties.Resources.folder;
+            this.tsmiTrayUploadFolder.Name = "tsmiTrayUploadFolder";
+            this.tsmiTrayUploadFolder.Size = new System.Drawing.Size(203, 22);
+            this.tsmiTrayUploadFolder.Text = "Upload folder...";
+            this.tsmiTrayUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
+            // 
             // tsmiTrayUploadClipboard
             // 
             this.tsmiTrayUploadClipboard.Image = global::ShareX.Properties.Resources.clipboard;
@@ -1905,22 +1946,6 @@
             this.ssToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ssToolStripMenuItem.Text = "ss";
             // 
-            // tsmiUploadFolder
-            // 
-            this.tsmiUploadFolder.Image = global::ShareX.Properties.Resources.folder;
-            this.tsmiUploadFolder.Name = "tsmiUploadFolder";
-            this.tsmiUploadFolder.Size = new System.Drawing.Size(203, 22);
-            this.tsmiUploadFolder.Text = "Upload folder...";
-            this.tsmiUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
-            // 
-            // tsmiTrayUploadFolder
-            // 
-            this.tsmiTrayUploadFolder.Image = global::ShareX.Properties.Resources.folder;
-            this.tsmiTrayUploadFolder.Name = "tsmiTrayUploadFolder";
-            this.tsmiTrayUploadFolder.Size = new System.Drawing.Size(203, 22);
-            this.tsmiTrayUploadFolder.Text = "Upload folder...";
-            this.tsmiTrayUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1948,6 +1973,7 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
+            this.pBackground.ResumeLayout(false);
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2092,7 +2118,6 @@
         private System.Windows.Forms.ToolStripSeparator tssTray3;
         private System.Windows.Forms.ToolStripMenuItem tsmiIndexFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayIndexFolder;
-        public System.Windows.Forms.Label lblDragAndDropTip;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEffects;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEffects;
         private System.Windows.Forms.ToolStripButton tsmiAbout;
@@ -2148,5 +2173,8 @@
         private System.Windows.Forms.ToolStripMenuItem screenRecordingFFmpegToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadFolder;
+        private HelpersLib.MyPictureBox pbLogo;
+        private System.Windows.Forms.Label lblDragAndDropTip;
+        internal System.Windows.Forms.Panel pBackground;
     }
 }
