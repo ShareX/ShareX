@@ -54,9 +54,8 @@ namespace UploadersLib
         public static string JiraConsumerKey = "";
         public static string MediaFireAppId = "";
         public static string MediaFireApiKey = "";
-        public static string OneDriveClientID = "";
-        public static string OneDriveClientSecret = "";
-
+        public static string LiveApiKey = "0000000048126AB4";
+        
         // Text Uploaders
         public static string PastebinKey = "";
         public static string PastebinCaKey = "";
