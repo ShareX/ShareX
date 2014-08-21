@@ -72,6 +72,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MegaApiClient.1.0.4\lib\MegaApiClient.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Live">
+      <HintPath>..\..\LiveSDK-for-Windows\src\Desktop\Samples\ApiExplorer\bin\Debug\Microsoft.Live.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -116,6 +119,14 @@
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\Minus.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
+    <Compile Include="Forms\AuthCompleteEventArgs.cs" />
+    <Compile Include="Forms\AuthResult.cs" />
+    <Compile Include="Forms\WebAuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebAuthForm.Designer.cs">
+      <DependentUpon>WebAuthForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FTPClient\FTPClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +303,9 @@
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\WebAuthForm.resx">
+      <DependentUpon>WebAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>

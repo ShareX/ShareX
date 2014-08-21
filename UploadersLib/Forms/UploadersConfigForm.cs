@@ -30,7 +30,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Live;
 using UploadersLib.FileUploaders;
+using UploadersLib.Forms;
 using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;
 using UploadersLib.Properties;
@@ -42,8 +44,9 @@ namespace UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
+      private WebAuthForm webAuthForm;
 
-        public UploadersConfigForm(UploadersConfig uploadersConfig)
+      public UploadersConfigForm(UploadersConfig uploadersConfig)
         {
             Config = uploadersConfig;
             InitializeComponent();
@@ -1652,25 +1655,6 @@ namespace UploadersLib
 
         #endregion Amazon S3
 
-        #region OneDrive
-
-        private void oAuth2OneDrive_OpenButtonClicked()
-        {
-            OneDriveAuthOpen();
-        }
-
-        private void oAuth2OneDrive_CompleteButtonClicked(string code)
-        {
-            OneDriveAuthComplete(code);
-        }
-
-        private void oAuth2OneDrive_ClearButtonClicked()
-        {
-            Config.OneDriveOAuth2Info = null;
-        }
-
-        #endregion OneDrive
-
         #region ownCloud
 
         private void txtOwnCloudHost_TextChanged(object sender, EventArgs e)
@@ -2265,5 +2249,22 @@ namespace UploadersLib
         }
 
         #endregion Custom Uploaders
+
+        private void btnOneDriveSignIn_Click(object sender, EventArgs e)
+        {
+          var liveAuth = new LiveAuthClient(APIKeys.LiveApiKey);
+          var endUrl = "https://login.live.com/oauth20_desktop.srf";
+          webAuthForm = new WebAuthForm(liveAuth.GetLoginUrl(new[] {"wl.signin", "wl.skydrive_update"}), endUrl, SignInComplete);
+          webAuthForm.ShowDialog(this);
+        }
+
+      private void SignInComplete(AuthCompleteEventArgs e)
+      {
+        webAuthForm.Close();
+        if (e.Result.AuthorizeCode != null)
+        {
+          Config.OneDriveOAuth2Info = new OAuth2Info(APIKeys.LiveApiKey, e.Result.AuthorizeCode);
+        }
+      }
     }
 }

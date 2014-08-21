@@ -25,142 +25,67 @@
 
 // Credits: https://github.com/l0nley
 
-using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
+using Microsoft.Live;
 using UploadersLib.HelperClasses;
 
 namespace UploadersLib.FileUploaders
 {
-    public sealed class OneDrive : FileUploader, IOAuth2
+  public sealed class OneDrive : FileUploader
+  {
+    public OAuth2Info AuthInfo { get; private set; }
+
+    public string FolderId { get; set; }
+
+    public OneDrive(OAuth2Info authInfo)
     {
-        public OAuth2Info AuthInfo { get; private set; }
-
-        public string FolderID { get; set; }
-
-        public OneDrive(OAuth2Info authInfo)
-        {
-            AuthInfo = authInfo;
-        }
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            if (!CheckAuthorization())
-            {
-                return null;
-            }
-
-            if (string.IsNullOrEmpty(FolderID))
-            {
-                FolderID = "me/skydrive/files";
-            }
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("access_token", AuthInfo.Token.access_token);
-            args.Add("overwrite", "true");
-
-            string url = string.Format("https://apis.live.net/v5.0/{0}/{1}", FolderID, fileName);
-            UploadResult result = UploadData(stream, url, string.Empty, arguments: args, method: HttpMethod.PUT);
-
-            if (result.IsSuccess)
-            {
-                OneDriveUploadInfo resultJson = JsonConvert.DeserializeObject<OneDriveUploadInfo>(result.Response);
-                result.URL = resultJson.source;
-            }
-
-            return result;
-        }
-
-        public string GetAuthorizationURL()
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("response_type", "code");
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("scope", "wl.skydrive_update");
-
-            return CreateQuery("https://login.live.com/oauth20_authorize.srf", args);
-        }
-
-        public bool GetAccessToken(string code)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("grant_type", "authorization_code");
-            args.Add("code", code);
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("client_secret", AuthInfo.Client_Secret);
-
-            string response = SendRequest(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
-
-            if (string.IsNullOrEmpty(response))
-            {
-                return false;
-            }
-
-            OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-            if (token == null || string.IsNullOrEmpty(token.access_token))
-            {
-                return false;
-            }
-
-            token.UpdateExpireDate();
-            AuthInfo.Token = token;
-            return true;
-        }
-
-        public bool RefreshAccessToken()
-        {
-            if (!OAuth2Info.CheckOAuth(AuthInfo) || string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
-            {
-                return false;
-            }
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("grant_type", "refresh_token");
-            args.Add("refresh_token", AuthInfo.Token.refresh_token);
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("client_secret", AuthInfo.Client_Secret);
-
-            string response = SendRequest(HttpMethod.POST, "https://login.live.com/oauth20_token.srf", args);
-
-            if (string.IsNullOrEmpty(response))
-            {
-                return false;
-            }
-
-            OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-            if (token == null || string.IsNullOrEmpty(token.access_token))
-            {
-                return false;
-            }
-
-            token.UpdateExpireDate();
-            AuthInfo.Token = token;
-            return true;
-        }
-
-        public bool CheckAuthorization()
-        {
-            if (OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                if (!AuthInfo.Token.IsExpired || RefreshAccessToken())
-                {
-                    return true;
-                }
-
-                Errors.Add("Refresh access token failed.");
-                return false;
-            }
-
-            Errors.Add("OneDrive login is required.");
-            return false;
-        }
+      AuthInfo = authInfo;
     }
 
-    internal sealed class OneDriveUploadInfo
+    public override UploadResult Upload(Stream stream, string fileName)
     {
-        public string id { get; set; }
-        public string source { get; set; }
+      try
+      {
+        // This code should be refactored. This code uses async\await api in synchronous manner,
+        // but be aware that async/await adding may cause deadlocks here, because of
+        // custom implementation in Microsoft.Live library. 
+        // Officially Microsoft doesnot support .net4 with Live SDK. 
+        // I port this library from scraps and build for .net4
+        var client = new LiveAuthClient(AuthInfo.Client_ID);
+        var tsk = client.ExchangeAuthCodeAsync(AuthInfo.Client_Secret);
+        try
+        {
+          tsk.Start();
+        }catch
+        {
+        }
+        tsk.Wait();
+        var result = tsk.Result;
+        var connectClient = new LiveConnectClient(result);
+        var upload = connectClient.UploadAsync("me/skydrive/", fileName, stream, OverwriteOption.Overwrite);
+        try
+        {
+          upload.Start();
+        }
+        catch
+        {
+        }
+        upload.Wait();
+        var uploadResult = upload.Result;
+        var downloadLink = string.Format("{0}", uploadResult.Result["source"]);
+        return new UploadResult
+        {
+          IsSuccess = true,
+          URL = downloadLink
+        };
+      }
+      catch (Exception e)
+      {
+        return new UploadResult {IsSuccess = false, Errors = new List<string> { e.Message }};
+      }
     }
+  }
 }
