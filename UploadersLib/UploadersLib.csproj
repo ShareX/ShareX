@@ -113,6 +113,7 @@
     <Compile Include="FileUploaders\Mega.cs" />
     <Compile Include="FileUploaders\OneDrive.cs" />
     <Compile Include="FileUploaders\OwnCloud.cs" />
+    <Compile Include="FileUploaders\Pomf.cs" />
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\Minus.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />

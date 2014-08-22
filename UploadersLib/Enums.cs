@@ -96,6 +96,8 @@ namespace UploadersLib
         OwnCloud,
         [Description("MediaFire")]
         MediaFire,
+        [Description("Pomf")]
+        Pomf,
         [Description("Gfycat")]
         Gfycat,
         [Description("Pushbullet")]

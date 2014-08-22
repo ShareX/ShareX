@@ -970,6 +970,9 @@ namespace ShareX
                         UseLongLink = Program.UploadersConfig.MediaFireUseLongLink
                     };
                     break;
+                case FileDestination.Pomf:
+                    fileUploader = new Pomf();
+                    break;
             }
 
             if (fileUploader != null)
