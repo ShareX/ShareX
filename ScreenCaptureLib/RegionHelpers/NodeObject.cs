@@ -63,15 +63,15 @@ namespace ScreenCaptureLib
             switch (Shape)
             {
                 case NodeShape.Square:
-                    g.DrawRectangle(Pens.White, rect.RectangleOffset(-1));
+                    g.DrawRectangle(Pens.White, rect.Offset(-1));
                     g.DrawRectangle(Pens.Black, rect);
                     break;
                 case NodeShape.Circle:
-                    g.DrawEllipse(Pens.White, rect.RectangleOffset(-1));
+                    g.DrawEllipse(Pens.White, rect.Offset(-1));
                     g.DrawEllipse(Pens.Black, rect);
                     break;
                 case NodeShape.Diamond:
-                    g.DrawDiamond(Pens.White, rect.RectangleOffset(-1));
+                    g.DrawDiamond(Pens.White, rect.Offset(-1));
                     g.DrawDiamond(Pens.Black, rect);
                     break;
             }

@@ -47,7 +47,7 @@ namespace ShareX
         {
             InitializeComponent();
 
-            borderRectangle = regionRectangle.RectangleOffset(1);
+            borderRectangle = regionRectangle.Offset(1);
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
 
             Location = borderRectangle.Location;
@@ -55,7 +55,7 @@ namespace ShareX
             pInfo.Location = new Point(Width - pInfo.Width, Height - pInfo.Height);
 
             Region region = new Region(ClientRectangle);
-            region.Exclude(borderRectangle0Based.RectangleOffset(-1));
+            region.Exclude(borderRectangle0Based.Offset(-1));
             region.Exclude(new Rectangle(0, pInfo.Location.Y, pInfo.Location.X, pInfo.Height));
             Region = region;
 

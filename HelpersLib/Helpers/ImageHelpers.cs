@@ -1054,7 +1054,7 @@ namespace HelpersLib
         public static ImageFormat GetImageFormat(string filePath)
         {
             ImageFormat imageFormat = ImageFormat.Png;
-            string ext = Helpers.GetProperExtension(filePath);
+            string ext = Helpers.GetFilenameExtension(filePath);
 
             if (!string.IsNullOrEmpty(ext))
             {

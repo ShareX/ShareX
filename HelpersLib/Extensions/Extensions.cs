@@ -145,14 +145,9 @@ namespace HelpersLib
             return new Size(size.Width + offset, size.Height + offset);
         }
 
-        public static Rectangle RectangleOffset(this Rectangle rect, int offset)
+        public static Rectangle Offset(this Rectangle rect, int offset)
         {
             return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + offset * 2, rect.Height + offset * 2);
-        }
-
-        public static Rectangle LocationOffset(this Rectangle rect, int offset)
-        {
-            return new Rectangle(rect.X + offset, rect.Y + offset, rect.Width, rect.Height);
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
@@ -160,14 +155,19 @@ namespace HelpersLib
             return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
         }
 
-        public static Rectangle SizeOffset(this Rectangle rect, int offset)
+        public static Rectangle LocationOffset(this Rectangle rect, int offset)
         {
-            return rect.SizeOffset(offset, offset);
+            return rect.LocationOffset(offset, offset);
         }
 
         public static Rectangle SizeOffset(this Rectangle rect, int width, int height)
         {
             return new Rectangle(rect.X, rect.Y, rect.Width + width, rect.Height + height);
+        }
+
+        public static Rectangle SizeOffset(this Rectangle rect, int offset)
+        {
+            return rect.SizeOffset(offset, offset);
         }
 
         public static string Join<T>(this T[] array, string separator = " ")

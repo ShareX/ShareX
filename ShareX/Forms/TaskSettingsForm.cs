@@ -779,7 +779,7 @@ namespace ShareX
 
         private void btnActionsAdd_Click(object sender, EventArgs e)
         {
-            using (ExternalProgramForm form = new ExternalProgramForm())
+            using (ActionsForm form = new ActionsForm())
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -809,7 +809,7 @@ namespace ShareX
                 ListViewItem lvi = lvActions.SelectedItems[0];
                 ExternalProgram fileAction = lvi.Tag as ExternalProgram;
 
-                using (ExternalProgramForm form = new ExternalProgramForm(fileAction))
+                using (ActionsForm form = new ActionsForm(fileAction))
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
@@ -819,6 +819,15 @@ namespace ShareX
                         lvi.SubItems[3].Text = fileAction.Extensions ?? "";
                     }
                 }
+            }
+        }
+
+        private void btnActionsDuplicate_Click(object sender, EventArgs e)
+        {
+            foreach (ExternalProgram fileAction in lvActions.SelectedItems.Cast<ListViewItem>().Select(x => ((ExternalProgram)x.Tag).Copy()))
+            {
+                TaskSettings.ExternalPrograms.Add(fileAction);
+                AddFileAction(fileAction);
             }
         }
 

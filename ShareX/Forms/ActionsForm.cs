@@ -29,23 +29,25 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class ExternalProgramForm : Form
+    public partial class ActionsForm : Form
     {
         public ExternalProgram FileAction { get; private set; }
 
-        public ExternalProgramForm()
+        public ActionsForm()
             : this(new ExternalProgram())
         {
         }
 
-        public ExternalProgramForm(ExternalProgram fileAction)
+        public ActionsForm(ExternalProgram fileAction)
         {
-            FileAction = fileAction;
             InitializeComponent();
+            Icon = ShareXResources.Icon;
+            FileAction = fileAction;
             txtName.Text = fileAction.Name ?? "";
             txtPath.Text = fileAction.Path ?? "";
             txtArguments.Text = fileAction.Args ?? "";
-            CodeMenu.Create<ExtCodeMenuEntry>(txtExtensions);
+            CodeMenu.Create<ActionsCodeMenuEntry>(txtArguments);
+            txtOutputExtension.Text = fileAction.OutputExtension ?? "";
             txtExtensions.Text = fileAction.Extensions ?? "";
         }
 
@@ -56,10 +58,23 @@ namespace ShareX
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("Name can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtPath.Text))
+            {
+                MessageBox.Show("File path can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             FileAction.Name = txtName.Text;
             FileAction.Path = txtPath.Text;
             FileAction.Args = txtArguments.Text;
             FileAction.Extensions = txtExtensions.Text;
+            FileAction.OutputExtension = txtOutputExtension.Text;
             DialogResult = DialogResult.OK;
         }
 

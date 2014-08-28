@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionsCodeMenuEntry.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="DWMManager.cs" />
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
-    <Compile Include="ExtCodeMenuEntry.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
     <Compile Include="FontSafe.cs" />
     <Compile Include="Forms\OutputBox.cs">

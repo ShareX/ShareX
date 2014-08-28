@@ -282,7 +282,7 @@ namespace ScreenCaptureLib
             Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
             Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + offset, primaryScreenBounds.Y + offset, (int)textSize.Width, (int)textSize.Height);
 
-            if (textRectangle.RectangleOffset(10).Contains(InputManager.MousePosition0Based))
+            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
             {
                 textRectangle.Y = primaryScreenBounds.Height - textRectangle.Height - offset;
             }

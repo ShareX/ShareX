@@ -37,11 +37,12 @@ namespace HelpersLib
         public string Path { get; set; }
         public string Args { get; set; }
         public string Extensions { get; set; }
+        public string OutputExtension { get; set; }
 
         public ExternalProgram()
         {
             IsActive = false;
-            Args = "%filepath%";
+            Args = "%input";
         }
 
         public ExternalProgram(string name, string path)
@@ -60,12 +61,11 @@ namespace HelpersLib
             }
         }
 
-        public void Run(string filePath)
+        public string Run(string filePath)
         {
-            if (!CheckExtensions(filePath)) return;
-            if (!string.IsNullOrEmpty(Path) && File.Exists(Path))
+            if (!string.IsNullOrEmpty(filePath) && CheckExtensions(filePath) && !string.IsNullOrEmpty(Path) && File.Exists(Path))
             {
-                filePath = '"' + filePath.Trim('"') + '"';
+                filePath = filePath.Trim('"');
 
                 try
                 {
@@ -79,7 +79,15 @@ namespace HelpersLib
                         }
                         else
                         {
-                            psi.Arguments = Args.Replace("%filepath%", filePath);
+                            string args = Args.Replace("%filepath%", '"' + filePath + '"').Replace("%input", '"' + filePath + '"');
+
+                            if (!string.IsNullOrEmpty(OutputExtension))
+                            {
+                                filePath = Helpers.ChangeFilenameExtension(filePath, OutputExtension);
+                                args = args.Replace("%output", '"' + filePath + '"');
+                            }
+
+                            psi.Arguments = args;
                         }
 
                         process.StartInfo = psi;
@@ -89,20 +97,26 @@ namespace HelpersLib
                         process.Start();
                         process.WaitForExit();
                     }
+
+                    return filePath;
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
                 }
             }
+
+            return filePath;
         }
 
         private bool CheckExtensions(string path)
         {
             if (string.IsNullOrEmpty(Extensions) || string.IsNullOrEmpty(path)) return true;
             int idx = 0;
-            for (int i = 0; i <= Extensions.Length; ++i) {
-                if (i == Extensions.Length || !char.IsLetterOrDigit(Extensions[i])) {
+            for (int i = 0; i <= Extensions.Length; ++i)
+            {
+                if (i == Extensions.Length || !char.IsLetterOrDigit(Extensions[i]))
+                {
                     if (idx < i && path.EndsWith(Extensions.Substring(idx, i - idx))) return true;
                     idx = i + 1;
                 }

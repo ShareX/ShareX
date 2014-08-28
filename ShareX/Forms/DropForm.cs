@@ -84,7 +84,7 @@ namespace ShareX
 
                 using (Pen pen = new Pen(Color.WhiteSmoke, 5) { Alignment = PenAlignment.Inset })
                 {
-                    g.DrawRectangleProper(pen, rect.RectangleOffset(-1));
+                    g.DrawRectangleProper(pen, rect.Offset(-1));
                 }
 
                 string text = "Drop\nhere";

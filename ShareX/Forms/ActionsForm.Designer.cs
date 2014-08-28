@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class ExternalProgramForm
+    partial class ActionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,14 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblExtensions = new System.Windows.Forms.Label();
             this.txtExtensions = new System.Windows.Forms.TextBox();
+            this.txtOutputExtension = new System.Windows.Forms.TextBox();
+            this.lblOutputExtension = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(16, 16);
+            this.lblName.Location = new System.Drawing.Point(8, 8);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 13);
             this.lblName.TabIndex = 0;
@@ -53,16 +55,16 @@
             // lblPath
             // 
             this.lblPath.AutoSize = true;
-            this.lblPath.Location = new System.Drawing.Point(16, 40);
+            this.lblPath.Location = new System.Drawing.Point(8, 56);
             this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(32, 13);
+            this.lblPath.Size = new System.Drawing.Size(50, 13);
             this.lblPath.TabIndex = 2;
-            this.lblPath.Text = "Path:";
+            this.lblPath.Text = "File path:";
             // 
             // lblArgs
             // 
             this.lblArgs.AutoSize = true;
-            this.lblArgs.Location = new System.Drawing.Point(16, 64);
+            this.lblArgs.Location = new System.Drawing.Point(8, 104);
             this.lblArgs.Name = "lblArgs";
             this.lblArgs.Size = new System.Drawing.Size(60, 13);
             this.lblArgs.TabIndex = 5;
@@ -70,30 +72,37 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(88, 12);
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Location = new System.Drawing.Point(8, 24);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(224, 20);
+            this.txtName.Size = new System.Drawing.Size(296, 20);
             this.txtName.TabIndex = 1;
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(88, 36);
+            this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPath.Location = new System.Drawing.Point(8, 72);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(176, 20);
+            this.txtPath.Size = new System.Drawing.Size(248, 20);
             this.txtPath.TabIndex = 3;
             // 
             // txtArguments
             // 
-            this.txtArguments.Location = new System.Drawing.Point(88, 60);
+            this.txtArguments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtArguments.Location = new System.Drawing.Point(8, 120);
             this.txtArguments.Name = "txtArguments";
-            this.txtArguments.Size = new System.Drawing.Size(224, 20);
+            this.txtArguments.Size = new System.Drawing.Size(296, 20);
             this.txtArguments.TabIndex = 6;
             // 
             // btnPathBrowse
             // 
-            this.btnPathBrowse.Location = new System.Drawing.Point(272, 35);
+            this.btnPathBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPathBrowse.Location = new System.Drawing.Point(264, 70);
             this.btnPathBrowse.Name = "btnPathBrowse";
-            this.btnPathBrowse.Size = new System.Drawing.Size(40, 23);
+            this.btnPathBrowse.Size = new System.Drawing.Size(40, 24);
             this.btnPathBrowse.TabIndex = 4;
             this.btnPathBrowse.Text = "...";
             this.btnPathBrowse.UseVisualStyleBackColor = true;
@@ -101,9 +110,10 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(156, 125);
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.Location = new System.Drawing.Point(152, 248);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(72, 24);
             this.btnOK.TabIndex = 7;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -111,9 +121,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(237, 125);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(232, 248);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(72, 24);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -122,25 +133,47 @@
             // lblExtensions
             // 
             this.lblExtensions.AutoSize = true;
-            this.lblExtensions.Location = new System.Drawing.Point(16, 88);
+            this.lblExtensions.Location = new System.Drawing.Point(8, 200);
             this.lblExtensions.Name = "lblExtensions";
-            this.lblExtensions.Size = new System.Drawing.Size(61, 13);
+            this.lblExtensions.Size = new System.Drawing.Size(191, 13);
             this.lblExtensions.TabIndex = 9;
-            this.lblExtensions.Text = "Extensions:";
+            this.lblExtensions.Text = "Extension filter: (Example: jpg png mp4)";
             // 
             // txtExtensions
             // 
-            this.txtExtensions.Location = new System.Drawing.Point(88, 85);
+            this.txtExtensions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtExtensions.Location = new System.Drawing.Point(8, 216);
             this.txtExtensions.Name = "txtExtensions";
-            this.txtExtensions.Size = new System.Drawing.Size(224, 20);
+            this.txtExtensions.Size = new System.Drawing.Size(296, 20);
             this.txtExtensions.TabIndex = 10;
             // 
-            // ExternalProgramForm
+            // txtOutputExtension
+            // 
+            this.txtOutputExtension.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOutputExtension.Location = new System.Drawing.Point(8, 168);
+            this.txtOutputExtension.Name = "txtOutputExtension";
+            this.txtOutputExtension.Size = new System.Drawing.Size(296, 20);
+            this.txtOutputExtension.TabIndex = 11;
+            // 
+            // lblOutputExtension
+            // 
+            this.lblOutputExtension.AutoSize = true;
+            this.lblOutputExtension.Location = new System.Drawing.Point(8, 152);
+            this.lblOutputExtension.Name = "lblOutputExtension";
+            this.lblOutputExtension.Size = new System.Drawing.Size(277, 13);
+            this.lblOutputExtension.TabIndex = 12;
+            this.lblOutputExtension.Text = "Output file name extension: (Empty = Use same file name)";
+            // 
+            // ActionsForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 160);
+            this.ClientSize = new System.Drawing.Size(313, 281);
+            this.Controls.Add(this.lblOutputExtension);
+            this.Controls.Add(this.txtOutputExtension);
             this.Controls.Add(this.txtExtensions);
             this.Controls.Add(this.lblExtensions);
             this.Controls.Add(this.btnCancel);
@@ -152,10 +185,10 @@
             this.Controls.Add(this.lblArgs);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.lblName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "ExternalProgramForm";
+            this.MaximizeBox = false;
+            this.Name = "ActionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "External program";
+            this.Text = "ShareX - Actions";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +207,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblExtensions;
         private System.Windows.Forms.TextBox txtExtensions;
+        private System.Windows.Forms.TextBox txtOutputExtension;
+        private System.Windows.Forms.Label lblOutputExtension;
     }
 }

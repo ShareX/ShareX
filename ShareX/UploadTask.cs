@@ -588,7 +588,7 @@ namespace ShareX
 
                         foreach (ExternalProgram fileAction in actions)
                         {
-                            fileAction.Run(Info.FilePath);
+                            Info.FilePath = fileAction.Run(Info.FilePath);
                         }
 
                         Data = new FileStream(Info.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);

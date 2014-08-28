@@ -128,11 +128,11 @@
     <Compile Include="Forms\DropForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ExternalProgramForm.cs">
+    <Compile Include="Forms\ActionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ExternalProgramForm.Designer.cs">
-      <DependentUpon>ExternalProgramForm.cs</DependentUpon>
+    <Compile Include="Forms\ActionsForm.Designer.cs">
+      <DependentUpon>ActionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FileExistForm.cs">
       <SubType>Form</SubType>
@@ -273,8 +273,8 @@
     <EmbeddedResource Include="Forms\EncoderProgramForm.resx">
       <DependentUpon>EncoderProgramForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ExternalProgramForm.resx">
-      <DependentUpon>ExternalProgramForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ActionsForm.resx">
+      <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>

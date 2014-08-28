@@ -131,7 +131,7 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    g.DrawString(ToastConfig.URL, textFont, Brushes.White, textRect.RectangleOffset(-urlPadding));
+                    g.DrawString(ToastConfig.URL, textFont, Brushes.White, textRect.Offset(-urlPadding));
                 }
             }
             else if (!string.IsNullOrEmpty(ToastConfig.Text))

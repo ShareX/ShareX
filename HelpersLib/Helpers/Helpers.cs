@@ -55,19 +55,45 @@ namespace HelpersLib
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
 
+        // Extension without dot
         public static string GetFilenameExtension(string filePath)
         {
-            if (!string.IsNullOrEmpty(filePath) && filePath.Contains('.'))
+            if (!string.IsNullOrEmpty(filePath))
             {
                 int pos = filePath.LastIndexOf('.');
 
-                if (pos <= filePath.Length)
+                if (pos >= 0)
                 {
-                    return filePath.Substring(pos + 1);
+                    return filePath.Substring(pos + 1).ToLowerInvariant();
                 }
             }
 
-            return string.Empty;
+            return null;
+        }
+
+        public static string ChangeFilenameExtension(string filePath, string extension)
+        {
+            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(extension))
+            {
+                int pos = filePath.LastIndexOf('.');
+
+                if (pos >= 0)
+                {
+                    filePath = filePath.Remove(pos);
+
+                    extension = extension.Trim();
+                    pos = extension.LastIndexOf('.');
+
+                    if (pos >= 0)
+                    {
+                        extension = extension.Substring(pos + 1);
+                    }
+
+                    return filePath + "." + extension;
+                }
+            }
+
+            return filePath;
         }
 
         private static bool IsValidFile(string filePath, Type enumType)
@@ -264,7 +290,8 @@ namespace HelpersLib
         public static T[] GetValueFields<T>()
         {
             var res = new List<T>();
-            foreach (FieldInfo fi in typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public)) {
+            foreach (FieldInfo fi in typeof(T).GetFields(BindingFlags.Static | BindingFlags.Public))
+            {
                 if (fi.FieldType != typeof(T)) continue;
                 res.Add((T)fi.GetValue(null));
             }
@@ -292,23 +319,6 @@ namespace HelpersLib
             }
 
             return sb.ToString();
-        }
-
-        // Extension without dot
-        public static string GetProperExtension(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                int dot = filePath.LastIndexOf('.');
-
-                if (dot >= 0)
-                {
-                    string ext = filePath.Substring(dot + 1);
-                    return ext.ToLowerInvariant();
-                }
-            }
-
-            return null;
         }
 
         public static void OpenFolder(string folderPath)
