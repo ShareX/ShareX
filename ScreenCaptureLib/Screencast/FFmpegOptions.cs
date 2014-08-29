@@ -56,6 +56,30 @@ namespace ScreenCaptureLib
         public int Vorbis_qscale { get; set; }
         public int MP3_qscale { get; set; }
 
+        public bool IsSourceSelected
+        {
+            get
+            {
+                return IsVideoSourceSelected || IsAudioSourceSelected;
+            }
+        }
+
+        public bool IsVideoSourceSelected
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
+            }
+        }
+
+        public bool IsAudioSourceSelected
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
+            }
+        }
+
         public FFmpegOptions()
         {
             // General
@@ -82,16 +106,6 @@ namespace ScreenCaptureLib
             AAC_bitrate = 128;
             Vorbis_qscale = 3;
             MP3_qscale = 4;
-        }
-
-        public bool IsVideoSourceSelected()
-        {
-            return !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
-        }
-
-        public bool IsAudioSourceSelected()
-        {
-            return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

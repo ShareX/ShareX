@@ -85,7 +85,7 @@ namespace ScreenCaptureLib
 
         public string GetFFmpegArgs(bool isCustom = false)
         {
-            if (!FFmpeg.IsVideoSourceSelected() && !FFmpeg.IsAudioSourceSelected())
+            if (!FFmpeg.IsVideoSourceSelected && !FFmpeg.IsAudioSourceSelected)
             {
                 return null;
             }
@@ -96,7 +96,7 @@ namespace ScreenCaptureLib
 
             string fps = isCustom ? "$fps$" : ScreenRecordFPS.ToString();
 
-            if (FFmpeg.IsVideoSourceSelected())
+            if (FFmpeg.IsVideoSourceSelected)
             {
                 if (FFmpeg.VideoSource.Equals(FFmpegHelper.SourceGDIGrab, StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -106,7 +106,7 @@ namespace ScreenCaptureLib
                         isCustom ? "$area_width$" : CaptureArea.Width.ToString(), isCustom ? "$area_height$" : CaptureArea.Height.ToString(),
                         isCustom ? "$cursor$" : DrawCursor ? "1" : "0");
 
-                    if (FFmpeg.IsAudioSourceSelected())
+                    if (FFmpeg.IsAudioSourceSelected)
                     {
                         args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
                     }
@@ -115,7 +115,7 @@ namespace ScreenCaptureLib
                 {
                     args.AppendFormat("-f dshow -framerate {0} -i video=\"{1}\"", fps, FFmpeg.VideoSource);
 
-                    if (FFmpeg.IsAudioSourceSelected())
+                    if (FFmpeg.IsAudioSourceSelected)
                     {
                         args.AppendFormat(":audio=\"{0}\" ", FFmpeg.AudioSource);
                     }
@@ -125,7 +125,7 @@ namespace ScreenCaptureLib
                     }
                 }
             }
-            else if (FFmpeg.IsAudioSourceSelected())
+            else if (FFmpeg.IsAudioSourceSelected)
             {
                 args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
             }
@@ -135,7 +135,7 @@ namespace ScreenCaptureLib
                 args.Append(FFmpeg.UserArgs + " ");
             }
 
-            if (FFmpeg.IsVideoSourceSelected())
+            if (FFmpeg.IsVideoSourceSelected)
             {
                 args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
                 args.AppendFormat("-r {0} ", fps); // output FPS
@@ -157,7 +157,7 @@ namespace ScreenCaptureLib
                 }
             }
 
-            if (FFmpeg.IsAudioSourceSelected())
+            if (FFmpeg.IsAudioSourceSelected)
             {
                 switch (FFmpeg.AudioCodec)
                 {

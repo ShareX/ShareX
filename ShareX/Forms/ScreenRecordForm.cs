@@ -116,21 +116,30 @@ namespace ShareX
                 }
             }
 
-            if (taskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg && !File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+            if (taskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg)
             {
-                string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
-
-                if (MessageBox.Show(ffmpegText + " does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
-                    Application.ProductName + " - Missing ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
                 {
-                    if (FFmpegHelper.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                    string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
+
+                    if (MessageBox.Show(ffmpegText + " does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
+                        Application.ProductName + " - Missing ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
-                           taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+                        if (FFmpegHelper.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                        {
+                            Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
+                               taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+                        }
+                    }
+                    else
+                    {
+                        return;
                     }
                 }
-                else
+
+                if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
                 {
+                    MessageBox.Show("FFmpeg video and audio source both can't be \"None\".", Application.ProductName + " - FFmpeg error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
