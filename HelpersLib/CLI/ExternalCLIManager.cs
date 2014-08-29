@@ -26,6 +26,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace HelpersLib
 {
@@ -50,6 +51,8 @@ namespace HelpersLib
                 psi.RedirectStandardError = true;
                 psi.Arguments = args;
                 psi.WorkingDirectory = Path.GetDirectoryName(path);
+                psi.StandardOutputEncoding = Encoding.UTF8;
+                psi.StandardErrorEncoding = Encoding.UTF8;
 
                 process.EnableRaisingEvents = true;
                 if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
