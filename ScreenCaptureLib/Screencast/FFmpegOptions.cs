@@ -59,8 +59,8 @@ namespace ScreenCaptureLib
         public FFmpegOptions()
         {
             // General
-            VideoSource = FFmpegHelper.GDIgrab;
-            AudioSource = "None";
+            VideoSource = FFmpegHelper.SourceGDIGrab;
+            AudioSource = FFmpegHelper.SourceNone;
             VideoCodec = FFmpegVideoCodec.libx264;
             AudioCodec = FFmpegAudioCodec.libvoaacenc;
             Extension = "mp4";
@@ -84,9 +84,14 @@ namespace ScreenCaptureLib
             MP3_qscale = 4;
         }
 
+        public bool IsVideoSourceSelected()
+        {
+            return !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
+        }
+
         public bool IsAudioSourceSelected()
         {
-            return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals("None", StringComparison.InvariantCultureIgnoreCase);
+            return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

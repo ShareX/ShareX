@@ -38,7 +38,8 @@ namespace ScreenCaptureLib
     public class FFmpegHelper : ExternalCLIManager
     {
         public static readonly int libmp3lame_qscale_end = 9;
-        public static readonly string GDIgrab = "GDI grab";
+        public static readonly string SourceNone = "None";
+        public static readonly string SourceGDIGrab = "GDI grab";
 
         public StringBuilder Output { get; private set; }
         public ScreencastOptions Options { get; private set; }

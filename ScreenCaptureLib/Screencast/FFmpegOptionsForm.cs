@@ -121,9 +121,10 @@ namespace ScreenCaptureLib
             () =>
             {
                 cboVideoSource.Items.Clear();
-                cboVideoSource.Items.Add(FFmpegHelper.GDIgrab);
+                cboVideoSource.Items.Add(FFmpegHelper.SourceNone);
+                cboVideoSource.Items.Add(FFmpegHelper.SourceGDIGrab);
                 cboAudioSource.Items.Clear();
-                cboAudioSource.Items.Add("None");
+                cboAudioSource.Items.Add(FFmpegHelper.SourceNone);
                 if (devices != null)
                 {
                     cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());

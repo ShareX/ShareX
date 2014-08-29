@@ -85,41 +85,49 @@ namespace ScreenCaptureLib
 
         public string GetFFmpegArgs(bool isCustom = false)
         {
+            if (!FFmpeg.IsVideoSourceSelected() && !FFmpeg.IsAudioSourceSelected())
+            {
+                return null;
+            }
+
             StringBuilder args = new StringBuilder();
-
-            // -y for overwrite file
-            args.Append("-y ");
-
-            // default real time buffer size was 3041280 (3M)
-            args.Append("-rtbufsize 100M ");
+            args.Append("-y "); // -y for overwrite file
+            args.Append("-rtbufsize 100M "); // default real time buffer size was 3041280 (3M)
 
             string fps = isCustom ? "$fps$" : ScreenRecordFPS.ToString();
 
-            if (string.IsNullOrEmpty(FFmpeg.VideoSource) || FFmpeg.VideoSource.Equals(FFmpegHelper.GDIgrab, StringComparison.InvariantCultureIgnoreCase))
+            if (FFmpeg.IsVideoSourceSelected())
             {
-                // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-                args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -i desktop ",
-                    fps, isCustom ? "$area_x$" : CaptureArea.X.ToString(), isCustom ? "$area_y$" : CaptureArea.Y.ToString(),
-                    isCustom ? "$area_width$" : CaptureArea.Width.ToString(), isCustom ? "$area_height$" : CaptureArea.Height.ToString(),
-                    isCustom ? "$cursor$" : DrawCursor ? "1" : "0");
-
-                if (FFmpeg.IsAudioSourceSelected())
+                if (FFmpeg.VideoSource.Equals(FFmpegHelper.SourceGDIGrab, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
-                }
-            }
-            else
-            {
-                args.AppendFormat("-f dshow -framerate {0} -i video=\"{1}\"", fps, FFmpeg.VideoSource);
+                    // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
+                    args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -i desktop ",
+                        fps, isCustom ? "$area_x$" : CaptureArea.X.ToString(), isCustom ? "$area_y$" : CaptureArea.Y.ToString(),
+                        isCustom ? "$area_width$" : CaptureArea.Width.ToString(), isCustom ? "$area_height$" : CaptureArea.Height.ToString(),
+                        isCustom ? "$cursor$" : DrawCursor ? "1" : "0");
 
-                if (FFmpeg.IsAudioSourceSelected())
-                {
-                    args.AppendFormat(":audio=\"{0}\" ", FFmpeg.AudioSource);
+                    if (FFmpeg.IsAudioSourceSelected())
+                    {
+                        args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
+                    }
                 }
                 else
                 {
-                    args.Append(" ");
+                    args.AppendFormat("-f dshow -framerate {0} -i video=\"{1}\"", fps, FFmpeg.VideoSource);
+
+                    if (FFmpeg.IsAudioSourceSelected())
+                    {
+                        args.AppendFormat(":audio=\"{0}\" ", FFmpeg.AudioSource);
+                    }
+                    else
+                    {
+                        args.Append(" ");
+                    }
                 }
+            }
+            else if (FFmpeg.IsAudioSourceSelected())
+            {
+                args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
             }
 
             if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
@@ -127,27 +135,26 @@ namespace ScreenCaptureLib
                 args.Append(FFmpeg.UserArgs + " ");
             }
 
-            args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
-
-            // output FPS
-            args.AppendFormat("-r {0} ", fps);
-
-            switch (FFmpeg.VideoCodec)
+            if (FFmpeg.IsVideoSourceSelected())
             {
-                case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
-                    args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
-                    args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
-                    args.AppendFormat("-tune {0} ", "zerolatency");
+                args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
+                args.AppendFormat("-r {0} ", fps); // output FPS
 
-                    // -pix_fmt yuv420p required otherwise can't stream in Chrome
-                    args.Append("-pix_fmt yuv420p ");
-                    break;
-                case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
-                    args.AppendFormat("-crf {0} ", FFmpeg.VPx_CRF);
-                    break;
-                case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
-                    args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
-                    break;
+                switch (FFmpeg.VideoCodec)
+                {
+                    case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
+                        args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
+                        args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
+                        args.AppendFormat("-tune {0} ", "zerolatency");
+                        args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                        break;
+                    case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
+                        args.AppendFormat("-crf {0} ", FFmpeg.VPx_CRF);
+                        break;
+                    case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
+                        args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
+                        break;
+                }
             }
 
             if (FFmpeg.IsAudioSourceSelected())
@@ -168,8 +175,7 @@ namespace ScreenCaptureLib
 
             if (Duration > 0)
             {
-                // duration limit
-                args.AppendFormat("-t {0} ", isCustom ? "$duration$" : Duration.ToString("0.0", CultureInfo.InvariantCulture));
+                args.AppendFormat("-t {0} ", isCustom ? "$duration$" : Duration.ToString("0.0", CultureInfo.InvariantCulture)); // duration limit
             }
 
             args.AppendFormat("\"{0}\"", isCustom ? "$output$" : Path.ChangeExtension(OutputPath, FFmpeg.Extension));
