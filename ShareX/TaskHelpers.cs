@@ -503,6 +503,18 @@ namespace ShareX
             AutoCaptureForm.Instance.ShowActivate();
         }
 
+        public static void OpenScreenshotsFolder()
+        {
+            if (Directory.Exists(Program.ScreenshotsFolder))
+            {
+                Helpers.OpenFolder(Program.ScreenshotsFolder);
+            }
+            else
+            {
+                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
+            }
+        }
+
         public static void StartAutoCapture()
         {
             if (!AutoCaptureForm.IsRunning)

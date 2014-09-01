@@ -175,6 +175,8 @@ namespace ShareX
         ScreenRecorder,
         [Description("Auto capture")]
         AutoCapture,
+        [Description("Open screenshots folder")]
+        OpenScreenshotsFolder,
         [Description("Screen color picker")]
         ScreenColorPicker,
         [Description("Ruler")]

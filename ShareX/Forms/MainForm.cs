@@ -921,14 +921,7 @@ namespace ShareX
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(Program.ScreenshotsFolder))
-            {
-                Helpers.OpenFolder(Program.ScreenshotsFolder);
-            }
-            else
-            {
-                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
-            }
+            TaskHelpers.OpenScreenshotsFolder();
         }
 
         private void tsbHistory_Click(object sender, EventArgs e)
@@ -1415,6 +1408,9 @@ namespace ShareX
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
+                    break;
+                case HotkeyType.OpenScreenshotsFolder:
+                    TaskHelpers.OpenScreenshotsFolder();
                     break;
                 case HotkeyType.ScreenColorPicker:
                     TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
