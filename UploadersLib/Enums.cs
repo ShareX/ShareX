@@ -80,8 +80,8 @@ namespace UploadersLib
         Dropbox,
         [Description("FTP")]
         FTP,
-        [Description("OneDrive")]
-        OneDrive,
+        //[Description("OneDrive")]
+        //OneDrive,
         [Description("Copy")]
         Copy,
         [Description("Google Drive")]

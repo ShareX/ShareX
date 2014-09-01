@@ -135,7 +135,7 @@ namespace ShareX
             il.Images.Add(Resources.navigation_000_button);
             lvUploads.SmallImageList = il;
 
-            pbLogo.LoadImage(ColorMatrixManager.Alpha(0.3f, 0f).Apply(ShareXResources.Logo));
+            pbLogo.LoadImage(ShareXResources.Logo);
 
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
@@ -975,7 +975,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Right)
             {
                 UpdateControls();
-                cmsTaskInfo.Show(lblDragAndDropTip, e.X + 1, e.Y + 1);
+                cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
             }
         }
 

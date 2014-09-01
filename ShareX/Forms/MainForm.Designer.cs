@@ -892,18 +892,20 @@
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.BackColor = System.Drawing.Color.White;
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(320, 280);
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
+            this.pbLogo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
             // 
             // lblDragAndDropTip
             // 
             this.lblDragAndDropTip.BackColor = System.Drawing.Color.White;
             this.lblDragAndDropTip.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblDragAndDropTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDragAndDropTip.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblDragAndDropTip.ForeColor = System.Drawing.Color.DimGray;
             this.lblDragAndDropTip.Location = new System.Drawing.Point(0, 280);
             this.lblDragAndDropTip.Name = "lblDragAndDropTip";
             this.lblDragAndDropTip.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);

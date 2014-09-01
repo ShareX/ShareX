@@ -810,9 +810,9 @@ namespace ShareX
                         ShareURLType = Program.UploadersConfig.DropboxURLType
                     };
                     break;
-                case FileDestination.OneDrive:
+                /*case FileDestination.OneDrive:
                     fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info);
-                    break;
+                    break;*/
                 case FileDestination.Copy:
                     fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
                     {

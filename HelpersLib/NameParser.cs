@@ -35,13 +35,20 @@ namespace HelpersLib
 {
     public class ReplCodeMenuEntry : CodeMenuEntry
     {
-        public ReplCodeMenuEntry(string value, string description) : base(value, description) { }
+        public ReplCodeMenuEntry(string value, string description)
+            : base(value, description)
+        {
+        }
 
-        public override String ToPrefixString() { return '%' + _value; }
+        public override String ToPrefixString()
+        {
+            return '%' + _value;
+        }
 
         public static readonly ReplCodeMenuEntry t = new ReplCodeMenuEntry("t", "Title of active window");
         public static readonly ReplCodeMenuEntry pn = new ReplCodeMenuEntry("pn", "Process name of active window");
         public static readonly ReplCodeMenuEntry y = new ReplCodeMenuEntry("y", "Current year");
+        public static readonly ReplCodeMenuEntry yy = new ReplCodeMenuEntry("yy", "Current year (2 digits)");
         public static readonly ReplCodeMenuEntry mo = new ReplCodeMenuEntry("mo", "Current month");
         public static readonly ReplCodeMenuEntry mon = new ReplCodeMenuEntry("mon", "Current month name (Local language)");
         public static readonly ReplCodeMenuEntry mon2 = new ReplCodeMenuEntry("mon2", "Current month name (English)");
@@ -137,6 +144,7 @@ namespace HelpersLib
 
             sb.Replace(ReplCodeMenuEntry.mon2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(dt.Month))
                 .Replace(ReplCodeMenuEntry.mon.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dt.Month))
+                .Replace(ReplCodeMenuEntry.yy.ToPrefixString(), dt.ToString("yy"))
                 .Replace(ReplCodeMenuEntry.y.ToPrefixString(), dt.Year.ToString())
                 .Replace(ReplCodeMenuEntry.mo.ToPrefixString(), Helpers.AddZeroes(dt.Month))
                 .Replace(ReplCodeMenuEntry.d.ToPrefixString(), Helpers.AddZeroes(dt.Day));
