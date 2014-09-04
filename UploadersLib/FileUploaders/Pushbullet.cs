@@ -112,6 +112,14 @@ namespace UploadersLib.FileUploaders
             args.Add("title", title);
             args.Add(valueType, value);
 
+            if (valueType != "body")
+            {
+                if (pushType == "link")
+                    args.Add("body", value);
+                else
+                    args.Add("body", "Sent via ShareX");
+            }
+
             string response = SendRequest(HttpMethod.POST, apiSendPushURL, args, headers);
 
             if (response == null) return null;
@@ -189,7 +197,7 @@ namespace UploadersLib.FileUploaders
             public string body { get; set; }
         }
 
-        public class PushbulletResponseFileUpload
+        private class PushbulletResponseFileUpload
         {
             public string file_type { get; set; }
 
@@ -202,7 +210,7 @@ namespace UploadersLib.FileUploaders
             public PushbulletResponseFileUploadData data { get; set; }
         }
 
-        public class PushbulletResponseFileUploadData
+        private class PushbulletResponseFileUploadData
         {
             public string awsaccesskeyid { get; set; }
 

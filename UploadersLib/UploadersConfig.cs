@@ -97,10 +97,6 @@ namespace UploadersLib
         public string UpasteUserKey = string.Empty;
         public bool UpasteIsPublic = false;
 
-        // Pushbullet
-
-        public PushbulletSettings PushbulletSettings = new PushbulletSettings();
-
         #endregion Text uploaders
 
         #region File uploaders
@@ -225,6 +221,10 @@ namespace UploadersLib
         public string MediaFirePassword = "";
         public string MediaFirePath = "";
         public bool MediaFireUseLongLink = false;
+
+        // Pushbullet
+
+        public PushbulletSettings PushbulletSettings = new PushbulletSettings();
 
         // MediaCrush
 
@@ -421,6 +421,9 @@ namespace UploadersLib
                     return !string.IsNullOrEmpty(EmailSmtpServer) && EmailSmtpPort > 0 && !string.IsNullOrEmpty(EmailFrom) && !string.IsNullOrEmpty(EmailPassword);
                 case URLSharingServices.Twitter:
                     return TwitterOAuthInfoList != null && TwitterOAuthInfoList.IsValidIndex(TwitterSelectedAccount) && OAuthInfo.CheckOAuth(TwitterOAuthInfoList[TwitterSelectedAccount]);
+                case URLSharingServices.Pushbullet:
+                    return PushbulletSettings != null && !string.IsNullOrEmpty(PushbulletSettings.UserAPIKey) && PushbulletSettings.DeviceList != null &&
+                        PushbulletSettings.DeviceList.IsValidIndex(PushbulletSettings.SelectedDevice);
             }
 
             return true;

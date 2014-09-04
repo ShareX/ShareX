@@ -1129,6 +1129,9 @@ namespace ShareX
                     case URLSharingServices.VK:
                         URLHelpers.OpenURL("http://vk.com/share.php?url=" + encodedUrl);
                         break;
+                    case URLSharingServices.Pushbullet:
+                        new Pushbullet(Program.UploadersConfig.PushbulletSettings).PushLink(url, "ShareX: URL Share");
+                        break;
                 }
             }
         }

@@ -171,7 +171,9 @@ namespace UploadersLib
         [Description("Delicious")]
         Delicious,
         [Description("VK")]
-        VK
+        VK,
+        [Description("Pushbullet")]
+        Pushbullet
     }
 
     public enum HttpMethod
