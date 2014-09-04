@@ -889,7 +889,6 @@ namespace UploadersLib
             try
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.OneDriveClientID, APIKeys.OneDriveClientSecret);
-
                 string url = new OneDrive(oauth).GetAuthorizationURL();
 
                 if (!string.IsNullOrEmpty(url))
@@ -905,7 +904,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -916,45 +915,25 @@ namespace UploadersLib
                 if (!string.IsNullOrEmpty(code) && Config.OneDriveOAuth2Info != null)
                 {
                     OneDrive onedrive = new OneDrive(Config.OneDriveOAuth2Info);
-                    bool result = onedrive.GetAccessToken(code);
 
-                    if (result)
+                    if (onedrive.GetAccessToken(code))
                     {
                         Config.OneDriveOAuth2Info = onedrive.AuthInfo;
-                        UpdateOneDriveStatus();
-
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
-
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        return;
+                        MessageBox.Show("OneDrive login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
+                        Config.OneDriveOAuth2Info = null;
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("OneDrive login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), Application.ProductName + " - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void UpdateOneDriveStatus()
-        {
-            if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info) && Config.OneDriveOAuth2Info != null)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Client ID: " + Config.OneDriveOAuth2Info.Client_ID);
-                lblDropboxStatus.Text = sb.ToString();
-                btnDropboxShowFiles.Enabled = true;
-            }
-            else
-            {
-                lblDropboxStatus.Text = string.Empty;
+                MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -47,9 +47,7 @@ namespace UploadersLib.FileUploaders
 
         private const string
             wwwPushesURL = "https://www.pushbullet.com/pushes",
-            apiURL = "https://api.pushbullet.com/v2";
-
-        private readonly string
+            apiURL = "https://api.pushbullet.com/v2",
             apiGetDevicesURL = apiURL + "/devices",
             apiSendPushURL = apiURL + "/pushes",
             apiRequestFileUploadURL = apiURL + "/upload-request";
@@ -148,7 +146,7 @@ namespace UploadersLib.FileUploaders
             if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
             if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception("Missing device key.");
 
-            return PushFile(stream, fileName);//, fileType);
+            return PushFile(stream, fileName);
         }
 
         public List<PushbulletDevice> GetDeviceList()
