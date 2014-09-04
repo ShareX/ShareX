@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 // Credits: https://github.com/BallisticLingonberries
+// API Information: https://docs.pushbullet.com/http/
 
 using HelpersLib;
 using Newtonsoft.Json;
@@ -44,24 +45,61 @@ namespace UploadersLib.FileUploaders
             Config = config;
         }
 
+        private const string
+            wwwPushesURL = "https://www.pushbullet.com/pushes",
+            apiURL = "https://api.pushbullet.com/v2";
+
+        private readonly string
+            apiGetDevicesURL = apiURL + "/devices",
+            apiSendPushURL = apiURL + "/pushes",
+            apiRequestFileUploadURL = apiURL + "/upload-request";
+
         public UploadResult PushFile(Stream stream, string fileName)
         {
             NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("device_iden", Config.CurrentDevice.Key);
-            args.Add("type", "file");
+            Dictionary<string, string> pushArgs, upArgs = new Dictionary<string, string>();
 
-            UploadResult result = UploadData(stream, "https://api.pushbullet.com/api/pushes", fileName, "file", args, headers);
+            upArgs.Add("file_name", fileName);
 
-            PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(result.Response);
+            string uploadRequest = SendRequest(HttpMethod.POST, apiRequestFileUploadURL, upArgs, headers);
+
+            if (uploadRequest == null) return null;
+
+            PushbulletResponseFileUpload fileInfo = JsonConvert.DeserializeObject<PushbulletResponseFileUpload>(uploadRequest);
+
+            if (fileInfo == null) return null;
+
+            pushArgs = upArgs;
+
+            upArgs = new Dictionary<string, string>();
+
+            upArgs.Add("awsaccesskeyid", fileInfo.data.awsaccesskeyid);
+            upArgs.Add("acl", fileInfo.data.acl);
+            upArgs.Add("key", fileInfo.data.key);
+            upArgs.Add("signature", fileInfo.data.signature);
+            upArgs.Add("policy", fileInfo.data.policy);
+            upArgs.Add("content-type", fileInfo.data.content_type);
+
+            UploadResult uploadResult = UploadData(stream, fileInfo.upload_url, fileName, "file", upArgs);
+
+            if (uploadResult == null) return null;
+
+            pushArgs.Add("device_iden", Config.CurrentDevice.Key);
+            pushArgs.Add("type", "file");
+            pushArgs.Add("file_url", fileInfo.file_url);
+            pushArgs.Add("body", "Sent via ShareX");
+
+            string pushResult = SendRequest(HttpMethod.POST, apiSendPushURL, pushArgs, headers);
+
+            if (pushResult == null) return null;
+
+            PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(pushResult);
 
             if (push != null)
-            {
-                result.URL = "https://www.pushbullet.com/pushes?push_iden=" + push.iden;
-            }
+                uploadResult.URL = wwwPushesURL + "?push_iden=" + push.iden;
 
-            return result;
+            return uploadResult;
         }
 
         private string Push(string pushType, string valueType, string value, string title)
@@ -74,14 +112,22 @@ namespace UploadersLib.FileUploaders
             args.Add("title", title);
             args.Add(valueType, value);
 
-            string response = SendRequest(HttpMethod.POST, "https://api.pushbullet.com/api/pushes", args, headers);
+            if (valueType != "body")
+            {
+                if (pushType == "link")
+                    args.Add("body", value);
+                else
+                    args.Add("body", "Sent via ShareX");
+            }
+
+            string response = SendRequest(HttpMethod.POST, apiSendPushURL, args, headers);
+
+            if (response == null) return null;
 
             PushbulletResponsePush push = JsonConvert.DeserializeObject<PushbulletResponsePush>(response);
 
             if (push != null)
-            {
-                return "https://www.pushbullet.com/pushes?push_iden=" + push.iden;
-            }
+                return wwwPushesURL + "?push_iden=" + push.iden;
 
             return null;
         }
@@ -102,29 +148,89 @@ namespace UploadersLib.FileUploaders
             if (Config.CurrentDevice == null) throw new Exception("No device set to push to.");
             if (string.IsNullOrEmpty(Config.CurrentDevice.Key)) throw new Exception("Missing device key.");
 
-            return PushFile(stream, fileName);
+            return PushFile(stream, fileName);//, fileType);
         }
 
         public List<PushbulletDevice> GetDeviceList()
         {
             NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
 
-            string response = SendRequest(HttpMethod.GET, "https://api.pushbullet.com/api/devices", headers: headers);
+            string response = SendRequest(HttpMethod.GET, apiGetDevicesURL, headers: headers);
 
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 
             if (devicesResponse != null && devicesResponse.devices != null)
-            {
-                return devicesResponse.devices.Select(x => new PushbulletDevice { Key = x.iden, Name = x.extras.nickname }).ToList();
-            }
+                return devicesResponse.devices.Select(x => new PushbulletDevice { Key = x.iden, Name = x.nickname }).ToList();
 
             return new List<PushbulletDevice>();
+        }
+
+        private class PushbulletResponseDevices
+        {
+            public List<PushbulletResponseDevice> devices { get; set; }
+        }
+
+        private class PushbulletResponseDevice
+        {
+            public string iden { get; set; }
+
+            public string nickname { get; set; }
+        }
+
+        private class PushbulletResponsePush
+        {
+            public string iden { get; set; }
+
+            public string device_iden { get; set; }
+
+            public PushbulletResponsePushData data { get; set; }
+
+            public long created { get; set; }
+        }
+
+        private class PushbulletResponsePushData
+        {
+            public string type { get; set; }
+
+            public string title { get; set; }
+
+            public string body { get; set; }
+        }
+
+        private class PushbulletResponseFileUpload
+        {
+            public string file_type { get; set; }
+
+            public string file_name { get; set; }
+
+            public string file_url { get; set; }
+
+            public string upload_url { get; set; }
+
+            public PushbulletResponseFileUploadData data { get; set; }
+        }
+
+        private class PushbulletResponseFileUploadData
+        {
+            public string awsaccesskeyid { get; set; }
+
+            public string acl { get; set; }
+
+            public string key { get; set; }
+
+            public string signature { get; set; }
+
+            public string policy { get; set; }
+
+            [JsonProperty("content-type")]
+            public string content_type { get; set; }
         }
     }
 
     public class PushbulletDevice
     {
         public string Key { get; set; }
+
         public string Name { get; set; }
     }
 
@@ -139,48 +245,10 @@ namespace UploadersLib.FileUploaders
             get
             {
                 if (DeviceList.IsValidIndex(SelectedDevice))
-                {
                     return DeviceList[SelectedDevice];
-                }
 
                 return null;
             }
         }
-    }
-
-    public class PushbulletResponseDevices
-    {
-        public List<PushbulletResponseDevice> devices { get; set; }
-    }
-
-    public class PushbulletResponseDevice
-    {
-        public string iden { get; set; }
-        public PushbulletResponseDeviceExtras extras { get; set; }
-    }
-
-    public class PushbulletResponseDeviceExtras
-    {
-        public string manufacturer { get; set; }
-        public string model { get; set; }
-        public string android_version { get; set; }
-        public string sdk_version { get; set; }
-        public string app_version { get; set; }
-        public string nickname { get; set; }
-    }
-
-    public class PushbulletResponsePush
-    {
-        public string iden { get; set; }
-        public string device_iden { get; set; }
-        public PushbulletResponsePushData data { get; set; }
-        public long created { get; set; }
-    }
-
-    public class PushbulletResponsePushData
-    {
-        public string type { get; set; }
-        public string title { get; set; }
-        public string body { get; set; }
     }
 }
