@@ -63,7 +63,7 @@ namespace ShareX
         {
             get
             {
-                if (!string.IsNullOrEmpty(CustomPersonalPath))
+                if (!string.IsNullOrEmpty(CustomPersonalPath) && Directory.Exists(CustomPersonalPath))
                 {
                     return CustomPersonalPath;
                 }
