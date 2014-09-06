@@ -591,11 +591,15 @@ namespace ShareX
 
         public static void OpenDNSChanger()
         {
+            RunShareXAsAdmin("-dnschanger");
+        }
+
+        public static void RunShareXAsAdmin(string arguments)
+        {
             try
             {
-                string path = Path.Combine(Application.StartupPath, "DNSChanger.exe");
-                ProcessStartInfo psi = new ProcessStartInfo(path);
-                psi.UseShellExecute = true;
+                ProcessStartInfo psi = new ProcessStartInfo(Application.ExecutablePath);
+                psi.Arguments = arguments;
                 psi.Verb = "runas";
                 Process.Start(psi);
             }

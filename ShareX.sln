@@ -1,12 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F1061D2B-4C92-42B9-9A98-34118D6B45A8} = {F1061D2B-4C92-42B9-9A98-34118D6B45A8}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryLib", "HistoryLib\HistoryLib.csproj", "{E7DE6237-AEA2-498B-8F56-9B392472C490}"
 EndProject
@@ -30,8 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B1CCDF
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareXPortable", "ShareXPortable\ShareXPortable.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNSChanger", "DNSChanger\DNSChanger.csproj", "{F1061D2B-4C92-42B9-9A98-34118D6B45A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,10 +68,6 @@ Global
 		{D13441B6-96E1-4D1B-8A95-58A7D6CB1E24}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3D19A94A-7A58-4451-A686-EE70B471C206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3D19A94A-7A58-4451-A686-EE70B471C206}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1061D2B-4C92-42B9-9A98-34118D6B45A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1061D2B-4C92-42B9-9A98-34118D6B45A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1061D2B-4C92-42B9-9A98-34118D6B45A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1061D2B-4C92-42B9-9A98-34118D6B45A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

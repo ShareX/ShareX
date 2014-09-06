@@ -327,10 +327,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DNSChanger\DNSChanger.csproj">
-      <Project>{f1061d2b-4c92-42b9-9a98-34118d6b45a8}</Project>
-      <Name>DNSChanger</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HistoryLib\HistoryLib.csproj">
       <Project>{E7DE6237-AEA2-498B-8F56-9B392472C490}</Project>
       <Name>HistoryLib</Name>

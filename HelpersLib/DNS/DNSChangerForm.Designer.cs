@@ -1,4 +1,4 @@
-﻿namespace DNSChanger
+﻿namespace HelpersLib
 {
     partial class DNSChangerForm
     {

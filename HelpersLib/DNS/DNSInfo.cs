@@ -23,22 +23,24 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Windows.Forms;
-
-namespace DNSChanger
+namespace HelpersLib
 {
-    internal static class Program
+    public class DNSInfo
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        private static void Main()
+        public string Name { get; set; }
+        public string PrimaryDNS { get; set; }
+        public string SecondaryDNS { get; set; }
+
+        public DNSInfo(string name, string primaryDNS, string secondaryDNS)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DNSChangerForm());
+            Name = name;
+            PrimaryDNS = primaryDNS;
+            SecondaryDNS = secondaryDNS;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

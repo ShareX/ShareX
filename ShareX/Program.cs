@@ -260,6 +260,9 @@ namespace ShareX
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
             Arguments = args;
+
+            if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
+
             bool forceMultiInstance = CLIHelper.CheckArgs(Arguments, "multi", "m");
 
             Application.SetCompatibleTextRenderingDefault(false);
@@ -555,6 +558,19 @@ namespace ShareX
             {
                 return reader.ReadLine();
             }
+        }
+
+        private static bool CheckAdminTasks()
+        {
+            if (CLIHelper.CheckArgs(Arguments, "dnschanger"))
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new DNSChangerForm());
+                return true;
+            }
+
+            return false;
         }
     }
 }
