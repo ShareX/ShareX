@@ -284,7 +284,7 @@ namespace UploadersLib.ImageUploaders
         public string id { get; set; }
         public string title { get; set; }
         public string description { get; set; }
-        public int datetime { get; set; }
+        /*public int datetime { get; set; }
         public object cover { get; set; }
         public string account_url { get; set; }
         public string privacy { get; set; }
@@ -292,7 +292,7 @@ namespace UploadersLib.ImageUploaders
         public int views { get; set; }
         public string link { get; set; }
         public bool favorite { get; set; }
-        public int order { get; set; }
+        public int order { get; set; }*/
     }
 
     public class ImgurErrorData

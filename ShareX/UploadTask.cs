@@ -678,12 +678,19 @@ namespace ShareX
                         Program.UploadersConfig.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
                     }
 
+                    string albumID = null;
+
+                    if (Program.UploadersConfig.ImgurUploadSelectedAlbum && Program.UploadersConfig.ImgurSelectedAlbum != null)
+                    {
+                        albumID = Program.UploadersConfig.ImgurSelectedAlbum.id;
+                    }
+
                     imageUploader = new Imgur_v3(Program.UploadersConfig.ImgurOAuth2Info)
                     {
                         UploadMethod = Program.UploadersConfig.ImgurAccountType,
                         DirectLink = Program.UploadersConfig.ImgurDirectLink,
                         ThumbnailType = Program.UploadersConfig.ImgurThumbnailType,
-                        UploadAlbumID = Program.UploadersConfig.ImgurAlbumID
+                        UploadAlbumID = albumID
                     };
                     break;
                 case ImageDestination.ImageShack:

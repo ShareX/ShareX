@@ -45,7 +45,9 @@ namespace UploadersLib
         public bool ImgurDirectLink = true;
         public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Large_Thumbnail;
         public OAuth2Info ImgurOAuth2Info = null;
-        public string ImgurAlbumID = string.Empty;
+        public bool ImgurUploadSelectedAlbum = false;
+        public ImgurAlbumData ImgurSelectedAlbum = null;
+        public List<ImgurAlbumData> ImgurAlbumList = null;
 
         // ImageShack
 

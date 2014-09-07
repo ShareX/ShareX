@@ -168,7 +168,8 @@ namespace UploadersLib
             cbImgurThumbnailType.Items.Clear();
             cbImgurThumbnailType.Items.AddRange(Helpers.GetEnumDescriptions<ImgurThumbnailType>());
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
-            txtImgurAlbumID.Text = Config.ImgurAlbumID;
+            cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
+            ImgurFillAlbumList();
 
             if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
             {
@@ -543,6 +544,26 @@ namespace UploadersLib
 
         #region Imgur
 
+        private void oauth2Imgur_OpenButtonClicked()
+        {
+            ImgurAuthOpen();
+        }
+
+        private void oauth2Imgur_CompleteButtonClicked(string code)
+        {
+            ImgurAuthComplete(code);
+        }
+
+        private void oauth2Imgur_RefreshButtonClicked()
+        {
+            ImgurAuthRefresh();
+        }
+
+        private void oauth2Imgur_ClearButtonClicked()
+        {
+            Config.ImgurOAuth2Info = null;
+        }
+
         private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
         {
             Config.ImgurAccountType = accountType;
@@ -558,14 +579,9 @@ namespace UploadersLib
             Config.ImgurThumbnailType = (ImgurThumbnailType)cbImgurThumbnailType.SelectedIndex;
         }
 
-        private void txtImgurAlbumID_TextChanged(object sender, EventArgs e)
+        private void cbImgurUploadSelectedAlbum_CheckedChanged(object sender, EventArgs e)
         {
-            Config.ImgurAlbumID = txtImgurAlbumID.Text;
-        }
-
-        private void oauth2Imgur_ClearButtonClicked()
-        {
-            Config.ImgurOAuth2Info = null;
+            Config.ImgurUploadSelectedAlbum = cbImgurUploadSelectedAlbum.Checked;
         }
 
         private void btnImgurRefreshAlbumList_Click(object sender, EventArgs e)
@@ -580,25 +596,13 @@ namespace UploadersLib
                 ListViewItem lvi = lvImgurAlbumList.SelectedItems[0];
                 if (lvi.Tag is ImgurAlbumData)
                 {
-                    ImgurAlbumData album = (ImgurAlbumData)lvi.Tag;
-                    txtImgurAlbumID.Text = album.id;
+                    Config.ImgurSelectedAlbum = (ImgurAlbumData)lvi.Tag;
                 }
             }
-        }
-
-        private void oauth2Imgur_OpenButtonClicked()
-        {
-            ImgurAuthOpen();
-        }
-
-        private void oauth2Imgur_CompleteButtonClicked(string code)
-        {
-            ImgurAuthComplete(code);
-        }
-
-        private void oauth2Imgur_RefreshButtonClicked()
-        {
-            ImgurAuthRefresh();
+            else
+            {
+                Config.ImgurSelectedAlbum = null;
+            }
         }
 
         #endregion Imgur

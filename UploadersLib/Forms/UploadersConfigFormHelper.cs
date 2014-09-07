@@ -135,24 +135,31 @@ namespace UploadersLib
 
                 if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
                 {
-                    List<ImgurAlbumData> albums = new Imgur_v3(Config.ImgurOAuth2Info).GetAlbums();
-
-                    if (albums != null && albums.Count > 0)
-                    {
-                        foreach (ImgurAlbumData album in albums)
-                        {
-                            ListViewItem lvi = new ListViewItem(album.id);
-                            lvi.SubItems.Add(album.title ?? "");
-                            lvi.SubItems.Add(album.description ?? "");
-                            lvi.Tag = album;
-                            lvImgurAlbumList.Items.Add(lvi);
-                        }
-                    }
+                    Config.ImgurAlbumList = new Imgur_v3(Config.ImgurOAuth2Info).GetAlbums();
+                    ImgurFillAlbumList();
+                    lvImgurAlbumList.Focus();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ImgurFillAlbumList()
+        {
+            if (Config.ImgurAlbumList != null)
+            {
+                foreach (ImgurAlbumData album in Config.ImgurAlbumList)
+                {
+                    ListViewItem lvi = new ListViewItem(album.id ?? "");
+                    lvi.SubItems.Add(album.title ?? "");
+                    lvi.SubItems.Add(album.description ?? "");
+                    lvi.Selected = Config.ImgurSelectedAlbum != null && !string.IsNullOrEmpty(Config.ImgurSelectedAlbum.id) &&
+                        album.id.Equals(Config.ImgurSelectedAlbum.id, StringComparison.InvariantCultureIgnoreCase);
+                    lvi.Tag = album;
+                    lvImgurAlbumList.Items.Add(lvi);
+                }
             }
         }
 
