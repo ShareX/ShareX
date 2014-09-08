@@ -32,7 +32,7 @@ using System.Windows.Forms.Design;
 
 namespace HelpersLib
 {
-    public class MyColorEditor : UITypeEditor
+    public class GradientEditor : UITypeEditor
     {
         public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
         {
@@ -41,7 +41,7 @@ namespace HelpersLib
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            if (value.GetType() != typeof(Color))
+            if (value.GetType() != typeof(GradientInfo))
             {
                 return value;
             }
@@ -50,13 +50,13 @@ namespace HelpersLib
 
             if (svc != null)
             {
-                Color color = (Color)value;
+                GradientInfo gradient = (GradientInfo)value;
 
-                using (ColorPickerForm form = new ColorPickerForm(color))
+                using (GradientPickerForm form = new GradientPickerForm(gradient.Copy()))
                 {
                     if (svc.ShowDialog(form) == DialogResult.OK)
                     {
-                        return (Color)form.NewColor;
+                        return form.Gradient;
                     }
                 }
             }
@@ -72,21 +72,8 @@ namespace HelpersLib
         public override void PaintValue(PaintValueEventArgs e)
         {
             Graphics g = e.Graphics;
-            Color color = (Color)e.Value;
-
-            if (color.A < 255)
-            {
-                using (Image checker = ImageHelpers.CreateCheckers(e.Bounds.Width / 2, e.Bounds.Height / 2, Color.LightGray, Color.White))
-                {
-                    g.DrawImage(checker, e.Bounds);
-                }
-            }
-
-            using (SolidBrush brush = new SolidBrush(color))
-            {
-                g.FillRectangle(brush, e.Bounds);
-            }
-
+            GradientInfo gradient = (GradientInfo)e.Value;
+            gradient.Draw(g, e.Bounds);
             g.DrawRectangleProper(Pens.Black, e.Bounds);
         }
     }

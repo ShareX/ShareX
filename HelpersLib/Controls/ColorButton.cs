@@ -63,7 +63,12 @@ namespace HelpersLib
         {
             base.OnMouseClick(mevent);
 
-            using (DialogColor dialogColor = new DialogColor(Color))
+            ShowColorDialog();
+        }
+
+        public void ShowColorDialog()
+        {
+            using (ColorPickerForm dialogColor = new ColorPickerForm(Color))
             {
                 if (dialogColor.ShowDialog() == DialogResult.OK)
                 {

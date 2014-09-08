@@ -224,7 +224,7 @@ namespace HelpersLib
 
         private void btnColorDialog_Click(object sender, EventArgs e)
         {
-            using (DialogColor dialogColor = new DialogColor(Color.FromArgb(tbRed.Value, tbGreen.Value, tbBlue.Value)))
+            using (ColorPickerForm dialogColor = new ColorPickerForm(Color.FromArgb(tbRed.Value, tbGreen.Value, tbBlue.Value)))
             {
                 if (dialogColor.ShowDialog() == DialogResult.OK)
                 {

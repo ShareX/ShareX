@@ -192,8 +192,8 @@ namespace HelpersLib
                     Reset();
                     isImageLoading = true;
                     Image = (Image)img.Clone();
-                    AutoSetSizeMode();
                     isImageLoading = false;
+                    AutoSetSizeMode();
                 }
             }
         }
@@ -207,8 +207,8 @@ namespace HelpersLib
                     Reset();
                     isImageLoading = true;
                     Image = ImageHelpers.LoadImage(filePath);
-                    AutoSetSizeMode();
                     isImageLoading = false;
+                    AutoSetSizeMode();
                 }
             }
         }

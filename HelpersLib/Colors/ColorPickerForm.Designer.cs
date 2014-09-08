@@ -1,6 +1,6 @@
 ﻿namespace HelpersLib
 {
-    partial class DialogColor
+    partial class ColorPickerForm
     {
         /// <summary>
         /// Required designer variable.

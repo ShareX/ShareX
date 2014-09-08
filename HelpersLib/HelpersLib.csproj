@@ -80,6 +80,14 @@
     <Compile Include="ColorMatrixManager.cs" />
     <Compile Include="Colors\CMYK.cs" />
     <Compile Include="Colors\ColorEventHandler.cs" />
+    <Compile Include="Colors\GradientInfo.cs" />
+    <Compile Include="Colors\GradientPickerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colors\GradientPickerForm.Designer.cs">
+      <DependentUpon>GradientPickerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colors\GradientStop.cs" />
     <Compile Include="Colors\HSB.cs" />
     <Compile Include="Colors\MyColor.cs" />
     <Compile Include="Colors\RGBA.cs" />
@@ -154,6 +162,7 @@
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
+    <Compile Include="UITypeEditors\GradientEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
     <Compile Include="UITypeEditors\MyColorEditor.cs" />
     <Compile Include="UITypeEditors\ImageFileNameEditor.cs" />
@@ -204,11 +213,11 @@
     <Compile Include="Colors\ColorUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Colors\DialogColor.cs">
+    <Compile Include="Colors\ColorPickerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colors\DialogColor.Designer.cs">
-      <DependentUpon>DialogColor.cs</DependentUpon>
+    <Compile Include="Colors\ColorPickerForm.Designer.cs">
+      <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\GraphicsExtensions.cs" />
@@ -346,8 +355,11 @@
     <Compile Include="WindowState.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
-    <EmbeddedResource Include="Colors\DialogColor.resx">
-      <DependentUpon>DialogColor.cs</DependentUpon>
+    <EmbeddedResource Include="Colors\ColorPickerForm.resx">
+      <DependentUpon>ColorPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colors\GradientPickerForm.resx">
+      <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>

@@ -169,6 +169,7 @@ namespace HelpersLib
                         JsonSerializer serializer = new JsonSerializer();
                         serializer.Converters.Add(new StringEnumConverter());
                         serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
+                        serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
                         settings = serializer.Deserialize<T>(jsonReader);
                     }
                     break;

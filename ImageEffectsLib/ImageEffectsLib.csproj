@@ -124,7 +124,6 @@
     <Compile Include="Manipulations\Resize.cs" />
     <Compile Include="Manipulations\Rotate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GradientStop.cs" />
     <Compile Include="WatermarkConfig.cs" />
     <Compile Include="WatermarkForm.cs">
       <SubType>Form</SubType>

@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
-    public partial class DialogColor : Form
+    public partial class ColorPickerForm : Form
     {
         public MyColor NewColor { get; protected set; }
         public MyColor OldColor { get; private set; }
@@ -37,12 +37,12 @@ namespace HelpersLib
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public DialogColor()
+        public ColorPickerForm()
             : this(Color.Empty)
         {
         }
 
-        public DialogColor(Color currentColor)
+        public ColorPickerForm(Color currentColor)
         {
             NewColor = Color.Red;
             Initialize(currentColor);
@@ -50,7 +50,7 @@ namespace HelpersLib
 
         public static Color GetColor(Color currentColor)
         {
-            using (DialogColor dialog = new DialogColor(currentColor))
+            using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
             {
                 dialog.rbSaturation.Checked = true;
 

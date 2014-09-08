@@ -350,5 +350,18 @@ namespace HelpersLib
 
             return Color.FromArgb(a / count, r / count, g / count, b / count);
         }
+
+        public static int PerceivedBrightness(Color c)
+        {
+            return (int)Math.Sqrt(
+                c.R * c.R * .299 +
+                c.G * c.G * .587 +
+                c.B * c.B * .114);
+        }
+
+        public static Color VisibleTextColor(Color c)
+        {
+            return PerceivedBrightness(c) > 130 ? Color.Black : Color.White;
+        }
     }
 }

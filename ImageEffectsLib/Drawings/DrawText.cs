@@ -123,22 +123,27 @@ namespace ImageEffectsLib
         [DefaultValue(true)]
         public bool UseGradient { get; set; }
 
+        [DefaultValue(LinearGradientMode.Vertical)]
+        public LinearGradientMode GradientType { get; set; }
+
         [DefaultValue(typeof(Color), "0, 20, 40"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
         [DefaultValue(false)]
         public bool UseCustomGradient { get; set; }
 
-        // TODO: Need custom editor
-        public List<GradientStop> CustomGradientList { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
+        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+        public GradientInfo Gradient { get; set; }
 
         public DrawText()
         {
             this.ApplyDefaultPropertyValues();
-            CustomGradientList = new List<GradientStop>();
+
+            Gradient = new GradientInfo();
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(12, 76, 159), 100f));
         }
 
         public override Image Apply(Image img)
@@ -180,18 +185,18 @@ namespace ImageEffectsLib
 
                         try
                         {
-                            if (UseGradient)
+                            if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                            {
+                                backgroundBrush = new LinearGradientBrush(backgroundRect, Color.Transparent, Color.Transparent, Gradient.Type);
+                                ColorBlend colorBlend = new ColorBlend();
+                                IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
+                                colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+                                ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                            }
+                            else if (UseGradient)
                             {
                                 backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
-
-                                if (UseCustomGradient && CustomGradientList != null && CustomGradientList.Count > 1)
-                                {
-                                    ColorBlend colorBlend = new ColorBlend();
-                                    IEnumerable<GradientStop> gradient = CustomGradientList.OrderBy(x => x.Offset);
-                                    colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                    colorBlend.Positions = gradient.Select(x => x.Offset).ToArray();
-                                    ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
-                                }
                             }
                             else
                             {

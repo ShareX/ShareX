@@ -214,7 +214,7 @@ namespace ScreenCaptureLib
 
                 try
                 {
-                    Options.DrawingPenColor = DialogColor.GetColor(Options.DrawingPenColor);
+                    Options.DrawingPenColor = ColorPickerForm.GetColor(Options.DrawingPenColor);
                 }
                 finally
                 {

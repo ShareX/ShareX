@@ -33,7 +33,7 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace ShareX
 {
-    public partial class ScreenColorPicker : DialogColor
+    public partial class ScreenColorPicker : ColorPickerForm
     {
         private Timer colorTimer = new Timer { Interval = 10 };
 
