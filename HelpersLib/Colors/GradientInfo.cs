@@ -44,7 +44,7 @@ namespace HelpersLib
         {
             get
             {
-                return Colors != null && Colors.Count > 1 && Colors[0].Location == 0f && Colors[Colors.Count - 1].Location == 100f;
+                return Colors != null && Colors.Count >= 2 && Colors.Any(x => x.Location == 0f) && Colors.Any(x => x.Location == 100f);
             }
         }
 
@@ -60,7 +60,7 @@ namespace HelpersLib
             {
                 try
                 {
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height), Color.Black, Color.Black, Type))
+                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height), Color.White, Color.White, Type))
                     {
                         ColorBlend colorBlend = new ColorBlend();
                         IEnumerable<GradientStop> gradient = Colors.OrderBy(x => x.Location);
