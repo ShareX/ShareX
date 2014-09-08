@@ -191,6 +191,7 @@
             this.Controls.Add(this.cbtnCurrentColor);
             this.Controls.Add(this.lvGradientPoints);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GradientPickerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gradient";

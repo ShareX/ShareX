@@ -215,7 +215,7 @@ namespace ShareX
 
         #endregion Paths
 
-        public const bool IsBeta = true;
+        public const bool IsBeta = false;
 
         public static string Title
         {

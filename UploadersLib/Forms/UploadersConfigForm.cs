@@ -47,6 +47,10 @@ namespace UploadersLib
         {
             Config = uploadersConfig;
             InitializeComponent();
+
+            // TODO: Add OneDrive support
+            tcFileUploaders.TabPages.Remove(tpOneDrive);
+
             if (!string.IsNullOrEmpty(Config.FilePath))
             {
                 Text += " - " + Config.FilePath;
