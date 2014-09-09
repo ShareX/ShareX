@@ -1,4 +1,32 @@
-﻿ShareX 9.2.0 - 2014-07-15
+﻿Note: Every release have bug fixes and these not included in change log. Many small features are also not included in the change log.
+You can check commit logs for see full history of changes: https://github.com/ShareX/ShareX/commits/master
+
+ShareX 9.3.0 - 2014-09-10
+
+* Added custom gradient support to Image effects under "Draw text”
+* PushBullet updated to API v2 and is now listed also as a URL sharing service (by @BallisticLingonberries)
+* Hotkey to be able to open screenshots folder
+* Name parser support for %yy for 2 digits year
+* Screen recording video source can be "None" to allow audio-only recording
+* Actions configuration through external programs support customizing Output Extension to make use of programs such as 7z
+* pomf.se file uploader support
+* Added "Upload folder" to upload menu
+* Better single instance support to be able to upload multiple files from Windows Explorer (by @michalx2)
+* Added "Cancel task" button to Image editor
+* Added Application settings -> Remember main window position
+* Region capture performance improvements, added circle magnifier
+* Added Application settings -> Advanced -> Tray middle click action setting (allows you to change what will happen when you middle click tray icon)
+* Command line support for all hotkey tasks (Check wiki http://bit.ly/sharexcli for more info)
+* MediaFire file uploader support (by @michalx2)
+* Added Task settings -> Advanced -> Auto clear clipboard setting (clears clipboard before upload starts)
+* Imgur album improvements; added direct link setting
+* Added After Capture Task -> Delete file (useful for screen record uploading and deleting file after upload)
+* Added icons to main window right click menu
+* Added "Delete file locally" to main window right click menu (by @WebFreak001)
+* Added "Edit image" to main window right click menu (by @DevAtHome)
+* New ShareX logo and icon
+
+ShareX 9.2.0 - 2014-07-15
 
 * Main window menu changes to simplify UI
 * Automatic show/hide image preview in main window
@@ -270,10 +298,10 @@ Magnifier support during shapes capture, resizeable with mouse wheel (hold shift
 Added imm.io Image Uploader
 Rebranded as ShareX
 
-ZUploader 5.x
+ZUploader 1.0 (2010-03-28) to 5.5 (2012-03-07)
 
 http://zscreen.googlecode.com/svn/trunk/ZUploader/Docs/VersionHistory.txt
 
-ZScreen 1.x to 4.x
+ZScreen 1.0 (2007-08-22) to 4.9 (2012-03-08)
 
 http://zscreen.googlecode.com/svn/trunk/ZScreenLib/Documents/VersionHistory.txt
