@@ -100,7 +100,7 @@ namespace HelpersLib
 
         /// <param name="value">1 = No change</param>
         /// <param name="add">0 = No change</param>
-        public static ColorMatrix Alpha(float value, float add)
+        public static ColorMatrix Alpha(float value, float add = 0f)
         {
             return new ColorMatrix(new[]
             {
