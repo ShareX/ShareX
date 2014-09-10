@@ -270,7 +270,12 @@ namespace ShareX
             applicationBase.Startup += StartupHandler;
             applicationBase.StartupNextInstance += StartupNextInstanceHandler;
             applicationBase.Shutdown += ShutdownHandler;
-            applicationBase.Run(Arguments);
+            try {
+                applicationBase.Run(Arguments);
+            }
+            catch (CantStartSingleInstanceException) {
+                MessageBox.Show("Couldn't launch the application.");
+            }
         }
 
         private static void StartupHandler(object sender, StartupEventArgs e)
