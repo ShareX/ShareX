@@ -490,7 +490,7 @@
     <None Include="Resources\film.png" />
     <None Include="Resources\TaskCompletedSound.wav" />
     <None Include="Resources\ErrorSound.wav" />
-    <None Include="Resources\CameraSound.wav" />
+    <None Include="Resources\CaptureSound.wav" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

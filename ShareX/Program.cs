@@ -215,7 +215,7 @@ namespace ShareX
 
         #endregion Paths
 
-        public const bool IsBeta = false;
+        public static bool IsBeta = false;
 
         public static string Title
         {
@@ -270,10 +270,12 @@ namespace ShareX
             applicationBase.Startup += StartupHandler;
             applicationBase.StartupNextInstance += StartupNextInstanceHandler;
             applicationBase.Shutdown += ShutdownHandler;
-            try {
+            try
+            {
                 applicationBase.Run(Arguments);
             }
-            catch (CantStartSingleInstanceException) {
+            catch (CantStartSingleInstanceException)
+            {
                 MessageBox.Show("Couldn't launch the application.");
             }
         }

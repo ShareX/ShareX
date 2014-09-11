@@ -213,9 +213,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        public static System.IO.UnmanagedMemoryStream CameraSound {
+        public static System.IO.UnmanagedMemoryStream CaptureSound {
             get {
-                return ResourceManager.GetStream("CameraSound", resourceCulture);
+                return ResourceManager.GetStream("CaptureSound", resourceCulture);
             }
         }
         

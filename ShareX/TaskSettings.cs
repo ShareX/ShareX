@@ -136,7 +136,10 @@ namespace ShareX
 
         public static TaskSettings GetDefaultTaskSettings()
         {
-            return GetSafeTaskSettings(Program.DefaultTaskSettings);
+            TaskSettings taskSettings = new TaskSettings();
+            taskSettings.SetDefaultSettings();
+            taskSettings.TaskSettingsReference = Program.DefaultTaskSettings;
+            return taskSettings;
         }
 
         public static TaskSettings GetSafeTaskSettings(TaskSettings taskSettings)
