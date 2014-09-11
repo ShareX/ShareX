@@ -135,7 +135,7 @@ namespace ShareX
             il.Images.Add(Resources.navigation_000_button);
             lvUploads.SmallImageList = il;
 
-            pbLogo.LoadImage(ColorMatrixManager.Alpha(0.5f).Apply(ShareXResources.Logo));
+            pbLogo.LoadImage(ColorMatrixManager.Alpha(0.3f).Apply(ShareXResources.Logo));
 
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);

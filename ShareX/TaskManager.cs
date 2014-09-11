@@ -25,6 +25,7 @@
 
 using HelpersLib;
 using HistoryLib;
+using ShareX.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -263,7 +264,7 @@ namespace ShareX
 
                             if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                             {
-                                SystemSounds.Asterisk.Play();
+                                Helpers.PlaySoundAsync(Resources.ErrorSound);
                             }
                         }
                         else
@@ -300,7 +301,7 @@ namespace ShareX
                                 {
                                     if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
-                                        SystemSounds.Exclamation.Play();
+                                        Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
                                     }
 
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
@@ -308,7 +309,31 @@ namespace ShareX
                                         result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
-                                    TaskHelpers.ShowResultNotifications(result, info.TaskSettings, info.FilePath);
+                                    if (!string.IsNullOrEmpty(result))
+                                    {
+                                        switch (info.TaskSettings.GeneralSettings.PopUpNotification)
+                                        {
+                                            case PopUpNotificationType.BalloonTip:
+                                                if (Program.MainForm.niTray.Visible)
+                                                {
+                                                    Program.MainForm.niTray.Tag = result;
+                                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", result, ToolTipIcon.Info);
+                                                }
+                                                break;
+                                            case PopUpNotificationType.ToastNotification:
+                                                NotificationFormConfig toastConfig = new NotificationFormConfig()
+                                                {
+                                                    Action = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
+                                                    FilePath = info.FilePath,
+                                                    Text = "ShareX - Task completed\r\n" + result,
+                                                    URL = result
+                                                };
+                                                NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                                                    info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
+                                                    info.TaskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
+                                                break;
+                                        }
+                                    }
 
                                     if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)
                                     {

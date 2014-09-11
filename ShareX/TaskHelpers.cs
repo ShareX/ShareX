@@ -190,42 +190,6 @@ namespace ShareX
             return filename;
         }
 
-        public static void ShowResultNotifications(string notificationText, TaskSettings taskSettings, string filePath)
-        {
-            if (!taskSettings.AdvancedSettings.DisableNotifications)
-            {
-                if (!string.IsNullOrEmpty(notificationText))
-                {
-                    switch (taskSettings.GeneralSettings.PopUpNotification)
-                    {
-                        case PopUpNotificationType.BalloonTip:
-                            if (Program.MainForm.niTray.Visible)
-                            {
-                                Program.MainForm.niTray.Tag = notificationText;
-                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", notificationText, ToolTipIcon.Info);
-                            }
-                            break;
-                        case PopUpNotificationType.ToastNotification:
-                            NotificationFormConfig toastConfig = new NotificationFormConfig()
-                            {
-                                Action = taskSettings.AdvancedSettings.ToastWindowClickAction,
-                                FilePath = filePath,
-                                Text = "ShareX - Task completed\r\n" + notificationText,
-                                URL = notificationText
-                            };
-                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000), taskSettings.AdvancedSettings.ToastWindowPlacement,
-                                taskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
-                            break;
-                    }
-                }
-
-                if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
-                {
-                    SystemSounds.Exclamation.Play();
-                }
-            }
-        }
-
         public static bool ShowAfterCaptureForm(TaskSettings taskSettings, Image img = null)
         {
             if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)

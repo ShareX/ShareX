@@ -399,9 +399,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Camera.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-task.png" />
     <None Include="Resources\steam.ico" />
     <None Include="Resources\camcorder-image.png" />
@@ -491,6 +488,9 @@
     <None Include="Resources\layout-select-content.png" />
     <None Include="Resources\bin.png" />
     <None Include="Resources\film.png" />
+    <None Include="Resources\TaskCompletedSound.wav" />
+    <None Include="Resources\ErrorSound.wav" />
+    <None Include="Resources\CameraSound.wav" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
