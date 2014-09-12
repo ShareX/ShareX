@@ -215,7 +215,7 @@ namespace ShareX
 
         #endregion Paths
 
-        public static bool IsBeta = false;
+        public static bool IsBeta = true;
 
         public static string Title
         {

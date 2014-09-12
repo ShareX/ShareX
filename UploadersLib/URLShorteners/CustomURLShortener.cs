@@ -45,8 +45,8 @@ namespace UploadersLib.URLShorteners
 
             if (string.IsNullOrEmpty(customUploader.RequestURL)) throw new Exception("'Request URL' must be not empty.");
 
-            if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("%input") || x.Value.Contains("$input$")))
-                throw new Exception("Atleast one '%input' or '$input$' required for argument value when using custom URL shortener.");
+            if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input")))
+                throw new Exception("Atleast one '$input$' required for argument value when using custom URL shortener.");
 
             UploadResult result = new UploadResult { URL = url };
 

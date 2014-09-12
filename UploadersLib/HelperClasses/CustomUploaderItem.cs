@@ -70,13 +70,9 @@ namespace UploadersLib
             {
                 string value = arg.Value;
 
-                if (!string.IsNullOrEmpty(input))
-                {
-                    value = value.Replace("%input", input);
-                    value = value.Replace("$input$", input);
-                }
-
+                value = value.Replace("%input", "$input$"); // For backward compatibility
                 value = NameParser.Parse(NameParserType.Text, value);
+                value = value.Replace("$input$", input);
 
                 arguments.Add(arg.Key, value);
             }
