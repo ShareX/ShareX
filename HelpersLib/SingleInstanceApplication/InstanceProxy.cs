@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,27 +23,36 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.VisualBasic.ApplicationServices;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+using System.Security.Permissions;
 
-namespace ShareX
+namespace SingleInstanceApplication
 {
-    internal class ShareXApplicationBase : WindowsFormsApplicationBase
+    [Serializable]
+    [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
+    internal class InstanceProxy : MarshalByRefObject
     {
-        public ShareXApplicationBase(bool isSingleInstance)
+        public static bool IsFirstInstance { get; internal set; }
+
+        public static string[] CommandLineArgs { get; internal set; }
+
+        public void SetCommandLineArgs(bool isFirstInstance, string[] commandLineArgs)
         {
-            IsSingleInstance = isSingleInstance;
-            EnableVisualStyles = true;
+            IsFirstInstance = isFirstInstance;
+            CommandLineArgs = commandLineArgs;
+        }
+    }
+
+    public class InstanceCallbackEventArgs : EventArgs
+    {
+        internal InstanceCallbackEventArgs(bool isFirstInstance, string[] commandLineArgs)
+        {
+            IsFirstInstance = isFirstInstance;
+            CommandLineArgs = commandLineArgs;
         }
 
-        public new Form MainForm
-        {
-            get { return base.MainForm; }
-            set { base.MainForm = value; }
-        }
+        public bool IsFirstInstance { get; private set; }
+
+        public string[] CommandLineArgs { get; private set; }
     }
 }
