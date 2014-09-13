@@ -119,7 +119,7 @@
     <Compile Include="Screenshot_Transparent.cs" />
     <Compile Include="WindowInfo.cs" />
     <Compile Include="WindowsList.cs" />
-    <Compile Include="WindowsListAdvanced.cs" />
+    <Compile Include="WindowsRectangleList.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelpersLib\HelpersLib.csproj">

@@ -138,7 +138,15 @@ namespace UploadersLib.FileUploaders
             if (IsUploading && !StopUploadRequested)
             {
                 StopUploadRequested = true;
-                Disconnect();
+
+                try
+                {
+                    Disconnect();
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
         }
 

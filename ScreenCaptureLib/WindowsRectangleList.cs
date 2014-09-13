@@ -31,7 +31,7 @@ using System.Linq;
 
 namespace ScreenCaptureLib
 {
-    public class WindowsListAdvanced
+    public class WindowsRectangleList
     {
         public IntPtr IgnoreHandle { get; set; }
         public bool IncludeChildWindows { get; set; }

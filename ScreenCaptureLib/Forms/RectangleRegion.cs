@@ -140,7 +140,7 @@ namespace ScreenCaptureLib
 
                     TaskEx.Run(() =>
                     {
-                        WindowsListAdvanced wla = new WindowsListAdvanced();
+                        WindowsRectangleList wla = new WindowsRectangleList();
                         wla.IgnoreHandle = handle;
                         wla.IncludeChildWindows = AreaManager.IncludeControls;
                         AreaManager.Windows = wla.GetWindowsRectangleList();
