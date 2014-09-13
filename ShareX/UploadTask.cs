@@ -799,7 +799,7 @@ namespace ShareX
                     fileDestination = Info.TaskSettings.ImageFileDestination ?? FileDestination.Dropbox;
                     break;
                 case EDataType.Text:
-                    fileDestination = Info.TaskSettings.TextFileDestination;
+                    fileDestination = Info.TaskSettings.TextFileDestination ?? FileDestination.Dropbox;
                     break;
                 default:
                 case EDataType.File:
