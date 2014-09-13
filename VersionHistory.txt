@@ -1,6 +1,11 @@
 ﻿Note: Every release have bug fixes and these not included in change log. Many small features are also not included in the change log.
 You can check commit logs for see full history of changes: https://github.com/ShareX/ShareX/commits/master
 
+ShareX 9.3.1 - 2014-09-13
+
+* New task completed and error sounds
+* Rectangle (Objects) capture also will have region of window client areas
+
 ShareX 9.3.0 - 2014-09-10
 
 * Added custom gradient support to Image effects under "Draw text”
