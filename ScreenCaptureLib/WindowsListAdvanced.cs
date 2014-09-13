@@ -36,21 +36,17 @@ namespace ScreenCaptureLib
         public IntPtr IgnoreHandle { get; set; }
         public bool IncludeChildWindows { get; set; }
 
-        private List<WindowInfo> windows;
-
-        public List<WindowInfo> GetWindowsList()
-        {
-            windows = new List<WindowInfo>();
-            NativeMethods.EnumWindowsProc ewp = EvalWindow;
-            NativeMethods.EnumWindows(ewp, IntPtr.Zero);
-            return windows;
-        }
+        private List<Rectangle> rectangles;
 
         public List<Rectangle> GetWindowsRectangleList()
         {
+            rectangles = new List<Rectangle>();
+            NativeMethods.EnumWindowsProc ewp = EvalWindow;
+            NativeMethods.EnumWindows(ewp, IntPtr.Zero);
+
             List<Rectangle> result = new List<Rectangle>();
 
-            foreach (Rectangle rect in GetWindowsList().Select(x => x.Rectangle))
+            foreach (Rectangle rect in rectangles)
             {
                 bool rectVisible = true;
 
@@ -72,27 +68,56 @@ namespace ScreenCaptureLib
             return result;
         }
 
-        private bool IsValidWindow(WindowInfo window)
-        {
-            return window.Handle != IgnoreHandle && window.Rectangle.IsValid() && window.IsVisible;
-        }
-
         private bool EvalWindow(IntPtr hWnd, IntPtr lParam)
         {
-            WindowInfo window = new WindowInfo(hWnd);
+            return CheckHandle(hWnd, true);
+        }
 
-            if (!IsValidWindow(window))
+        private bool EvalControl(IntPtr hWnd, IntPtr lParam)
+        {
+            return CheckHandle(hWnd, false);
+        }
+
+        private bool CheckHandle(IntPtr handle, bool isWindow)
+        {
+            if (handle == IgnoreHandle || !NativeMethods.IsWindowVisible(handle))
+            {
+                return true;
+            }
+
+            Rectangle rect;
+
+            if (isWindow)
+            {
+                rect = CaptureHelpers.GetWindowRectangle(handle);
+            }
+            else
+            {
+                rect = NativeMethods.GetWindowRect(handle);
+            }
+
+            if (!rect.IsValid())
             {
                 return true;
             }
 
             if (IncludeChildWindows)
             {
-                NativeMethods.EnumWindowsProc ewp = EvalWindow;
-                NativeMethods.EnumChildWindows(hWnd, ewp, IntPtr.Zero);
+                NativeMethods.EnumWindowsProc ewp = EvalControl;
+                NativeMethods.EnumChildWindows(handle, ewp, IntPtr.Zero);
             }
 
-            windows.Add(window);
+            if (isWindow)
+            {
+                Rectangle clientRect = NativeMethods.GetClientRect(handle);
+
+                if (clientRect.IsValid())
+                {
+                    rectangles.Add(clientRect);
+                }
+            }
+
+            rectangles.Add(rect);
 
             return true;
         }

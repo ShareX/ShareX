@@ -74,6 +74,14 @@ namespace ScreenCaptureLib
             }
         }
 
+        public Rectangle ClientRectangle
+        {
+            get
+            {
+                return NativeMethods.GetClientRect(Handle);
+            }
+        }
+
         public WindowStyles Styles
         {
             get
