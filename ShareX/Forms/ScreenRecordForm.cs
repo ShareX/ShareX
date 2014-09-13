@@ -55,7 +55,6 @@ namespace ShareX
         }
 
         private ScreenRecorder screenRecorder;
-        private Rectangle captureRectangle;
         private ScreenRegionForm regionForm;
         private DWMManager dwmManager;
 
@@ -70,32 +69,6 @@ namespace ShareX
             if (e.Button == MouseButtons.Left)
             {
                 StopRecording();
-            }
-        }
-
-        private void SelectRegion()
-        {
-            TaskHelpers.SelectRegion(out captureRectangle);
-        }
-
-        private void ActiveWindowRegion(TaskSettings taskSettings)
-        {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-
-            if (handle.ToInt32() > 0)
-            {
-                if (taskSettings.CaptureSettings.CaptureClientArea)
-                {
-                    captureRectangle = NativeMethods.GetClientRect(handle);
-                }
-                else
-                {
-                    captureRectangle = CaptureHelpers.GetWindowRectangle(handle);
-                }
-            }
-            else
-            {
-                SelectRegion();
             }
         }
 
@@ -144,15 +117,8 @@ namespace ShareX
                 }
             }
 
-            if (taskSettings.AdvancedSettings.ScreenRecorderUseActiveWindow)
-            {
-                ActiveWindowRegion(taskSettings);
-            }
-            else
-            {
-                SelectRegion();
-            }
-
+            Rectangle captureRectangle;
+            TaskHelpers.SelectRegion(out captureRectangle);
             captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
