@@ -251,6 +251,8 @@ namespace ShareX
 
         private static ShareXApplicationBase applicationBase;
 
+        private static bool _launched;
+
         [STAThread]
         private static void Main(string[] args)
         {
@@ -274,14 +276,16 @@ namespace ShareX
             {
                 applicationBase.Run(Arguments);
             }
-            catch (CantStartSingleInstanceException)
+            catch (Exception)
             {
-                MessageBox.Show("Couldn't launch the application.");
+                if (!_launched) MessageBox.Show("Couldn't launch the application.");
+                else throw;
             }
         }
 
         private static void StartupHandler(object sender, StartupEventArgs e)
         {
+            _launched = true;
             string appGuid = ((GuidAttribute)Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(GuidAttribute), false).GetValue(0)).Value.ToString();
 
             using (Mutex mutex = new Mutex(false, appGuid)) // Required for installer
@@ -338,6 +342,7 @@ namespace ShareX
 
         private static void StartupNextInstanceHandler(object sender, StartupNextInstanceEventArgs e)
         {
+            _launched = true;
             e.BringToForeground = false;
 
             string[] args = e.CommandLine.ToArray();
