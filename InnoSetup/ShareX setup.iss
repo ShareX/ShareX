@@ -5,13 +5,13 @@
 #expr ParseVersion(MyAppPath, Version[0], Version[1], Version[2], Version[3])
 #define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
 #define MyAppPublisher "ShareX Developers"
-#define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC" 
+#define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
 AllowNoIcons=true
 AppCopyright=Copyright (C) 2007-2014 {#MyAppPublisher}
 AppId={#MyAppId}
-AppMutex=Global\{#MyAppId}
+AppMutex={#MyAppId}
 AppName={#MyAppName}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL=http://getsharex.com
