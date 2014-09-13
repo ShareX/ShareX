@@ -23,11 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -37,7 +34,8 @@ namespace HelpersLib
         public static ContextMenuStrip Create<TEntry>(TextBox tb, params TEntry[] ignoreList)
             where TEntry : CodeMenuEntry
         {
-            ContextMenuStrip cms = new ContextMenuStrip {
+            ContextMenuStrip cms = new ContextMenuStrip
+            {
                 Font = new Font("Lucida Console", 8),
                 AutoClose = false,
                 Opacity = 0.9,
@@ -45,12 +43,14 @@ namespace HelpersLib
             };
 
             var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
-                Select(x => new {
+                Select(x => new
+                {
                     Name = x.ToPrefixString(),
                     Description = x.Description,
                 });
 
-            foreach (var variable in variables) {
+            foreach (var variable in variables)
+            {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
                 tsmi.Click += (sender, e) =>
                 {
@@ -78,7 +78,8 @@ namespace HelpersLib
 
             tb.KeyDown += (sender, e) =>
             {
-                if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) && cms.Visible) {
+                if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) && cms.Visible)
+                {
                     cms.Close();
                     e.SuppressKeyPress = true;
                 }

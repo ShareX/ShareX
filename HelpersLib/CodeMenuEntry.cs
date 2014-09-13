@@ -24,9 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace HelpersLib
 {
@@ -42,7 +39,7 @@ namespace HelpersLib
 
         public String Value { get { return _value; } }
         public String Description { get { return _description; } }
-        
+
         public abstract string ToPrefixString();
     }
 }

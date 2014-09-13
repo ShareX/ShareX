@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.Threading;
