@@ -54,7 +54,6 @@ namespace ShareX
 
             if (IsDefault)
             {
-                Text = Application.ProductName + " - Task settings";
                 tcHotkeySettings.TabPages.Remove(tpTask);
                 chkUseDefaultGeneralSettings.Visible = chkUseDefaultImageSettings.Visible = chkUseDefaultCaptureSettings.Visible = chkUseDefaultActions.Visible =
                     chkUseDefaultUploadSettings.Visible = chkUseDefaultIndexerSettings.Visible = chkUseDefaultAdvancedSettings.Visible = false;
@@ -62,7 +61,6 @@ namespace ShareX
             }
             else
             {
-                Text = Application.ProductName + " - Task settings for " + TaskSettings;
                 tbDescription.Text = TaskSettings.Description;
                 cbUseDefaultAfterCaptureSettings.Checked = TaskSettings.UseDefaultAfterCaptureJob;
                 cbUseDefaultAfterUploadSettings.Checked = TaskSettings.UseDefaultAfterUploadJob;
@@ -76,7 +74,13 @@ namespace ShareX
                 chkUseDefaultAdvancedSettings.Checked = TaskSettings.UseDefaultAdvancedSettings;
             }
 
-            AddEnumItemsContextMenu<HotkeyType>(x => TaskSettings.Job = x, cmsTask);
+            UpdateWindowTitle();
+
+            AddEnumItemsContextMenu<HotkeyType>(x =>
+            {
+                TaskSettings.Job = x;
+                tbDescription.Text = TaskSettings.Job.GetDescription();
+            }, cmsTask);
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
             AddEnumItems<ImageDestination>(x => TaskSettings.ImageDestination = x, tsmiImageUploaders);
@@ -217,6 +221,18 @@ namespace ShareX
 
             UpdateDefaultSettingVisibility();
             loaded = true;
+        }
+
+        private void UpdateWindowTitle()
+        {
+            if (IsDefault)
+            {
+                Text = Application.ProductName + " - Task settings";
+            }
+            else
+            {
+                Text = Application.ProductName + " - Task settings for " + TaskSettings;
+            }
         }
 
         private void UpdateVideoEncoders()
@@ -436,11 +452,7 @@ namespace ShareX
         private void tbDescription_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.Description = tbDescription.Text;
-        }
-
-        private void btnDescriptionAutoFill_Click(object sender, EventArgs e)
-        {
-            tbDescription.Text = TaskSettings.Job.GetDescription();
+            UpdateWindowTitle();
         }
 
         private void cbUseDefaultAfterCaptureSettings_CheckedChanged(object sender, EventArgs e)

@@ -146,7 +146,7 @@ namespace ShareX
         {
             TaskSettings safeTaskSettings;
 
-            if (taskSettings.IsUsingDefaultSettings)
+            if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
             {
                 safeTaskSettings = Program.DefaultTaskSettings.Copy();
                 safeTaskSettings.Description = taskSettings.Description;

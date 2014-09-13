@@ -59,7 +59,7 @@ namespace UploadersLib
         Paste2,
         [Description("Slexy")]
         Slexy,
-        [Description("Pastee")]
+        [Description("Pastee.org")]
         Pastee,
         [Description("Paste.ee")]
         Paste_ee,

@@ -39,15 +39,18 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcHotkeySettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
-            this.btnDescriptionAutoFill = new System.Windows.Forms.Button();
             this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
             this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
+            this.btnAfterCapture = new HelpersLib.MenuButton();
+            this.btnAfterUpload = new HelpersLib.MenuButton();
+            this.btnDestinations = new HelpersLib.MenuButton();
             this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTask = new HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.panelGeneral = new System.Windows.Forms.Panel();
             this.chkShowBeforeUploadForm = new System.Windows.Forms.CheckBox();
@@ -128,7 +131,13 @@
             this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
+            this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
+            this.lvActions = new HelpersLib.MyListView();
+            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnActionsEdit = new System.Windows.Forms.Button();
             this.btnActionsRemove = new System.Windows.Forms.Button();
             this.chkUseDefaultActions = new System.Windows.Forms.CheckBox();
@@ -163,16 +172,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.btnAfterCapture = new HelpersLib.MenuButton();
-            this.btnAfterUpload = new HelpersLib.MenuButton();
-            this.btnDestinations = new HelpersLib.MenuButton();
-            this.btnTask = new HelpersLib.MenuButton();
-            this.lvActions = new HelpersLib.MyListView();
-            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -267,7 +266,7 @@
             // 
             this.tbDescription.Location = new System.Drawing.Point(78, 9);
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(362, 20);
+            this.tbDescription.Size = new System.Drawing.Size(434, 20);
             this.tbDescription.TabIndex = 1;
             this.tbDescription.TextChanged += new System.EventHandler(this.tbDescription_TextChanged);
             // 
@@ -296,7 +295,6 @@
             // 
             // tpTask
             // 
-            this.tpTask.Controls.Add(this.btnDescriptionAutoFill);
             this.tpTask.Controls.Add(this.chkOverrideFTP);
             this.tpTask.Controls.Add(this.cboFTPaccounts);
             this.tpTask.Controls.Add(this.tbDescription);
@@ -315,16 +313,6 @@
             this.tpTask.TabIndex = 0;
             this.tpTask.Text = "Task";
             this.tpTask.UseVisualStyleBackColor = true;
-            // 
-            // btnDescriptionAutoFill
-            // 
-            this.btnDescriptionAutoFill.Location = new System.Drawing.Point(448, 7);
-            this.btnDescriptionAutoFill.Name = "btnDescriptionAutoFill";
-            this.btnDescriptionAutoFill.Size = new System.Drawing.Size(64, 24);
-            this.btnDescriptionAutoFill.TabIndex = 2;
-            this.btnDescriptionAutoFill.Text = "Auto fill";
-            this.btnDescriptionAutoFill.UseVisualStyleBackColor = true;
-            this.btnDescriptionAutoFill.Click += new System.EventHandler(this.btnDescriptionAutoFill_Click);
             // 
             // chkOverrideFTP
             // 
@@ -347,6 +335,42 @@
             this.cboFTPaccounts.Size = new System.Drawing.Size(330, 21);
             this.cboFTPaccounts.TabIndex = 11;
             this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
+            // 
+            // btnAfterCapture
+            // 
+            this.btnAfterCapture.Location = new System.Drawing.Point(6, 93);
+            this.btnAfterCapture.Menu = this.cmsAfterCapture;
+            this.btnAfterCapture.Name = "btnAfterCapture";
+            this.btnAfterCapture.Size = new System.Drawing.Size(506, 23);
+            this.btnAfterCapture.TabIndex = 5;
+            this.btnAfterCapture.Text = "After capture...";
+            this.btnAfterCapture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAfterCapture.UseMnemonic = false;
+            this.btnAfterCapture.UseVisualStyleBackColor = true;
+            // 
+            // btnAfterUpload
+            // 
+            this.btnAfterUpload.Location = new System.Drawing.Point(6, 149);
+            this.btnAfterUpload.Menu = this.cmsAfterUpload;
+            this.btnAfterUpload.Name = "btnAfterUpload";
+            this.btnAfterUpload.Size = new System.Drawing.Size(506, 23);
+            this.btnAfterUpload.TabIndex = 7;
+            this.btnAfterUpload.Text = "After upload...";
+            this.btnAfterUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAfterUpload.UseMnemonic = false;
+            this.btnAfterUpload.UseVisualStyleBackColor = true;
+            // 
+            // btnDestinations
+            // 
+            this.btnDestinations.Location = new System.Drawing.Point(6, 205);
+            this.btnDestinations.Menu = this.cmsDestinations;
+            this.btnDestinations.Name = "btnDestinations";
+            this.btnDestinations.Size = new System.Drawing.Size(506, 23);
+            this.btnDestinations.TabIndex = 9;
+            this.btnDestinations.Text = "Destinations...";
+            this.btnDestinations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDestinations.UseMnemonic = false;
+            this.btnDestinations.UseVisualStyleBackColor = true;
             // 
             // cmsDestinations
             // 
@@ -393,6 +417,18 @@
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
             this.tsmiURLSharingServices.Size = new System.Drawing.Size(181, 22);
             this.tsmiURLSharingServices.Text = "URL sharing services";
+            // 
+            // btnTask
+            // 
+            this.btnTask.Location = new System.Drawing.Point(6, 37);
+            this.btnTask.Menu = this.cmsTask;
+            this.btnTask.Name = "btnTask";
+            this.btnTask.Size = new System.Drawing.Size(506, 23);
+            this.btnTask.TabIndex = 3;
+            this.btnTask.Text = "Task...";
+            this.btnTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTask.UseMnemonic = false;
+            this.btnTask.UseVisualStyleBackColor = true;
             // 
             // tpGeneral
             // 
@@ -1403,6 +1439,16 @@
             this.pActions.Size = new System.Drawing.Size(517, 327);
             this.pActions.TabIndex = 1;
             // 
+            // btnActionsDuplicate
+            // 
+            this.btnActionsDuplicate.Location = new System.Drawing.Point(168, 8);
+            this.btnActionsDuplicate.Name = "btnActionsDuplicate";
+            this.btnActionsDuplicate.Size = new System.Drawing.Size(75, 23);
+            this.btnActionsDuplicate.TabIndex = 2;
+            this.btnActionsDuplicate.Text = "Duplicate";
+            this.btnActionsDuplicate.UseVisualStyleBackColor = true;
+            this.btnActionsDuplicate.Click += new System.EventHandler(this.btnActionsDuplicate_Click);
+            // 
             // btnActionsAdd
             // 
             this.btnActionsAdd.Location = new System.Drawing.Point(8, 8);
@@ -1412,6 +1458,48 @@
             this.btnActionsAdd.Text = "Add";
             this.btnActionsAdd.UseVisualStyleBackColor = true;
             this.btnActionsAdd.Click += new System.EventHandler(this.btnActionsAdd_Click);
+            // 
+            // lvActions
+            // 
+            this.lvActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvActions.AutoFillColumn = true;
+            this.lvActions.CheckBoxes = true;
+            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chActionsName,
+            this.chActionsPath,
+            this.chActionsArgs,
+            this.chActionsExtensions});
+            this.lvActions.FullRowSelect = true;
+            this.lvActions.Location = new System.Drawing.Point(8, 40);
+            this.lvActions.MultiSelect = false;
+            this.lvActions.Name = "lvActions";
+            this.lvActions.Size = new System.Drawing.Size(504, 280);
+            this.lvActions.TabIndex = 4;
+            this.lvActions.UseCompatibleStateImageBehavior = false;
+            this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
+            // 
+            // chActionsName
+            // 
+            this.chActionsName.Text = "Name";
+            this.chActionsName.Width = 90;
+            // 
+            // chActionsPath
+            // 
+            this.chActionsPath.Text = "Path";
+            this.chActionsPath.Width = 220;
+            // 
+            // chActionsArgs
+            // 
+            this.chActionsArgs.Text = "Args";
+            this.chActionsArgs.Width = 114;
+            // 
+            // chActionsExtensions
+            // 
+            this.chActionsExtensions.Text = "Extensions";
+            this.chActionsExtensions.Width = 75;
             // 
             // btnActionsEdit
             // 
@@ -1784,106 +1872,6 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // btnAfterCapture
-            // 
-            this.btnAfterCapture.Location = new System.Drawing.Point(6, 93);
-            this.btnAfterCapture.Menu = this.cmsAfterCapture;
-            this.btnAfterCapture.Name = "btnAfterCapture";
-            this.btnAfterCapture.Size = new System.Drawing.Size(506, 23);
-            this.btnAfterCapture.TabIndex = 5;
-            this.btnAfterCapture.Text = "After capture...";
-            this.btnAfterCapture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAfterCapture.UseMnemonic = false;
-            this.btnAfterCapture.UseVisualStyleBackColor = true;
-            // 
-            // btnAfterUpload
-            // 
-            this.btnAfterUpload.Location = new System.Drawing.Point(6, 149);
-            this.btnAfterUpload.Menu = this.cmsAfterUpload;
-            this.btnAfterUpload.Name = "btnAfterUpload";
-            this.btnAfterUpload.Size = new System.Drawing.Size(506, 23);
-            this.btnAfterUpload.TabIndex = 7;
-            this.btnAfterUpload.Text = "After upload...";
-            this.btnAfterUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAfterUpload.UseMnemonic = false;
-            this.btnAfterUpload.UseVisualStyleBackColor = true;
-            // 
-            // btnDestinations
-            // 
-            this.btnDestinations.Location = new System.Drawing.Point(6, 205);
-            this.btnDestinations.Menu = this.cmsDestinations;
-            this.btnDestinations.Name = "btnDestinations";
-            this.btnDestinations.Size = new System.Drawing.Size(506, 23);
-            this.btnDestinations.TabIndex = 9;
-            this.btnDestinations.Text = "Destinations...";
-            this.btnDestinations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDestinations.UseMnemonic = false;
-            this.btnDestinations.UseVisualStyleBackColor = true;
-            // 
-            // btnTask
-            // 
-            this.btnTask.Location = new System.Drawing.Point(6, 37);
-            this.btnTask.Menu = this.cmsTask;
-            this.btnTask.Name = "btnTask";
-            this.btnTask.Size = new System.Drawing.Size(506, 23);
-            this.btnTask.TabIndex = 3;
-            this.btnTask.Text = "Task...";
-            this.btnTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTask.UseMnemonic = false;
-            this.btnTask.UseVisualStyleBackColor = true;
-            // 
-            // lvActions
-            // 
-            this.lvActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvActions.AutoFillColumn = true;
-            this.lvActions.CheckBoxes = true;
-            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chActionsName,
-            this.chActionsPath,
-            this.chActionsArgs,
-            this.chActionsExtensions});
-            this.lvActions.FullRowSelect = true;
-            this.lvActions.Location = new System.Drawing.Point(8, 40);
-            this.lvActions.MultiSelect = false;
-            this.lvActions.Name = "lvActions";
-            this.lvActions.Size = new System.Drawing.Size(504, 280);
-            this.lvActions.TabIndex = 4;
-            this.lvActions.UseCompatibleStateImageBehavior = false;
-            this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
-            // 
-            // chActionsName
-            // 
-            this.chActionsName.Text = "Name";
-            this.chActionsName.Width = 90;
-            // 
-            // chActionsPath
-            // 
-            this.chActionsPath.Text = "Path";
-            this.chActionsPath.Width = 220;
-            // 
-            // chActionsArgs
-            // 
-            this.chActionsArgs.Text = "Args";
-            this.chActionsArgs.Width = 114;
-            // 
-            // chActionsExtensions
-            // 
-            this.chActionsExtensions.Text = "Extensions";
-            this.chActionsExtensions.Width = 75;
-            // 
-            // btnActionsDuplicate
-            // 
-            this.btnActionsDuplicate.Location = new System.Drawing.Point(168, 8);
-            this.btnActionsDuplicate.Name = "btnActionsDuplicate";
-            this.btnActionsDuplicate.Size = new System.Drawing.Size(75, 23);
-            this.btnActionsDuplicate.TabIndex = 2;
-            this.btnActionsDuplicate.Text = "Duplicate";
-            this.btnActionsDuplicate.UseVisualStyleBackColor = true;
-            this.btnActionsDuplicate.Click += new System.EventHandler(this.btnActionsDuplicate_Click);
-            // 
             // TaskSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2094,7 +2082,6 @@
         private System.Windows.Forms.Label lblScreenRecordFPS;
         private System.Windows.Forms.CheckBox chkShowBeforeUploadForm;
         private System.Windows.Forms.Label lblScreenRecorderFixedDuration;
-        private System.Windows.Forms.Button btnDescriptionAutoFill;
         private System.Windows.Forms.CheckBox cbScreenRecordAutoDisableAero;
         private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
         private System.Windows.Forms.TabPage tpRectangleAnnotate;
