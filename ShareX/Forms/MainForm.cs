@@ -591,7 +591,7 @@ namespace ShareX
         }
 
         /// <summary>
-        /// Sets necessary menu item checked in Text Uploader->File Uploader.
+        /// Sets necessary menu item checked in Image Uploader->File Uploader.
         /// </summary>
         /// <param name="imageDestination">Currently checked menu item inside Image Uploader</param>
         /// <param name="imageFileDestination">Currently checked menu item inside Image Uploader->File Uploader</param>
