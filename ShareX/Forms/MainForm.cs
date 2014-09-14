@@ -571,6 +571,12 @@ namespace ShareX
             SetEnumChecked(Program.DefaultTaskSettings.URLSharingServiceDestination, tsmiURLSharingServices, tsmiTrayURLSharingServices);
         }
 
+        /// <summary>
+        /// Sets necessary menu item checked in Text Uploader->File Uploader.
+        /// </summary>
+        /// <param name="textDestination">Currently checked menu item inside Text Uploader</param>
+        /// <param name="textFileDestination">Currently checked menu item inside Text Uploader->File Uploader</param>
+        /// <param name="lists">List of menu items to be analysed for being checked.</param>
         public static void SetTextFileDestinationChecked(TextDestination textDestination,
             FileDestination textFileDestination, params ToolStripDropDownItem[] lists)
         {
@@ -584,6 +590,12 @@ namespace ShareX
             }
         }
 
+        /// <summary>
+        /// Sets necessary menu item checked in Text Uploader->File Uploader.
+        /// </summary>
+        /// <param name="imageDestination">Currently checked menu item inside Image Uploader</param>
+        /// <param name="imageFileDestination">Currently checked menu item inside Image Uploader->File Uploader</param>
+        /// <param name="lists">List of menu items to be analysed for being checked.</param>
         public static void SetImageFileDestinationChecked(ImageDestination imageDestination, 
             FileDestination imageFileDestination, params ToolStripDropDownItem[] lists)
         {
