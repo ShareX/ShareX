@@ -796,10 +796,10 @@ namespace ShareX
             switch (Info.DataType)
             {
                 case EDataType.Image:
-                    fileDestination = Info.TaskSettings.ImageFileDestination ?? FileDestination.Dropbox;
+                    fileDestination = Info.TaskSettings.ImageFileDestination;
                     break;
                 case EDataType.Text:
-                    fileDestination = Info.TaskSettings.TextFileDestination ?? FileDestination.Dropbox;
+                    fileDestination = Info.TaskSettings.TextFileDestination;
                     break;
                 default:
                 case EDataType.File:

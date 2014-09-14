@@ -96,17 +96,13 @@ namespace ShareX
                 // if click on "folder" with file destinations then set ImageFileDestination and check it
                 if (x == ImageDestination.FileUploader)
                 {
-                    Program.DefaultTaskSettings.ImageFileDestination =
-                        Program.DefaultTaskSettings.ImageFileDestination ?? FileDestination.Dropbox;
+                    Program.DefaultTaskSettings.ImageFileDestination = Program.DefaultTaskSettings.ImageFileDestination;
                     SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders,
                         tsmiTrayImageFileUploaders);
                 }
                 else // if click not on "folder" with destinations then uncheck file destinations
                 {
-                    if (Program.DefaultTaskSettings.ImageFileDestination != null)
-                    {
-                        Uncheck(tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
-                    }
+                    Uncheck(tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
                 }
             }, tsmiImageUploaders, tsmiTrayImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
@@ -124,8 +120,7 @@ namespace ShareX
                 // if click on "folder" with file destinations then set TextFileDestination and check it
                 if (x == TextDestination.FileUploader)
                 {
-                    Program.DefaultTaskSettings.TextFileDestination = Program.DefaultTaskSettings.TextFileDestination
-                                                                      ?? FileDestination.Dropbox;
+                    Program.DefaultTaskSettings.TextFileDestination = Program.DefaultTaskSettings.TextFileDestination;
                     SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders,
                         tsmiTrayTextFileUploaders);
                 }

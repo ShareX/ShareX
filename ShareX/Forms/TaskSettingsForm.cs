@@ -89,18 +89,14 @@ namespace ShareX
                 // if click on "folder" with file destinations then set ImageFileDestination and check it
                 if (x == ImageDestination.FileUploader)
                 {
-                    TaskSettings.ImageFileDestination = TaskSettings.ImageFileDestination
-                                                        ?? FileDestination.Dropbox;
+                    TaskSettings.ImageFileDestination = TaskSettings.ImageFileDestination;
                     SetEnumChecked(TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
                 }
                 else // if click not on "folder" with destinations then uncheck file destinations
                 {
-                    if (TaskSettings.ImageFileDestination != null)
-                    {
-                        MainForm.Uncheck(tsmiImageFileUploaders);
-                    }
+                    MainForm.Uncheck(tsmiImageFileUploaders);
                 }
-                TaskSettings.ImageFileDestination = null;
+                TaskSettings.ImageFileDestination = FileDestination.Dropbox;
             }, tsmiImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
             AddEnumItems<FileDestination>(x => TaskSettings.ImageFileDestination = x, tsmiImageFileUploaders);
