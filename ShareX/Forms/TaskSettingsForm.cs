@@ -83,26 +83,47 @@ namespace ShareX
             }, cmsTask);
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
+            // Destinations -> Image uploader
             AddEnumItems<ImageDestination>(x =>
             {
                 TaskSettings.ImageDestination = x;
                 // if click on "folder" with file destinations then set ImageFileDestination and check it
                 if (x == ImageDestination.FileUploader)
                 {
-                    TaskSettings.ImageFileDestination = TaskSettings.ImageFileDestination;
                     SetEnumChecked(TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
                 }
                 else // if click not on "folder" with destinations then uncheck file destinations
                 {
                     MainForm.Uncheck(tsmiImageFileUploaders);
                 }
-                TaskSettings.ImageFileDestination = FileDestination.Dropbox;
             }, tsmiImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => TaskSettings.ImageFileDestination = x, tsmiImageFileUploaders);
-            AddEnumItems<TextDestination>(x => TaskSettings.TextDestination = x, tsmiTextUploaders);
+            AddEnumItems<FileDestination>(x =>
+            {
+                TaskSettings.ImageFileDestination = x;
+                tsmiImageFileUploaders.PerformClick();
+            }, tsmiImageFileUploaders);
+            // Destinations -> Text uploader
+            AddEnumItems<TextDestination>(x =>
+            {
+                TaskSettings.TextDestination = x;
+                // if click on "folder" with file destinations then set TextFileDestination and check it
+                if (x == TextDestination.FileUploader)
+                {
+                    SetEnumChecked(TaskSettings.TextFileDestination, tsmiTextFileUploaders);
+                }
+                else // if click not on "folder" with destinations then uncheck file destinations
+                {
+                    MainForm.Uncheck(tsmiTextFileUploaders);
+                }
+            }, tsmiTextUploaders);
             tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
-            AddEnumItems<FileDestination>(x => TaskSettings.TextFileDestination = x, tsmiTextFileUploaders);
+            AddEnumItems<FileDestination>(x =>
+            {
+                TaskSettings.TextFileDestination = x;
+                tsmiTextFileUploaders.PerformClick();
+            }, tsmiTextFileUploaders);
+            // Destinations -> File uploader
             AddEnumItems<FileDestination>(x => TaskSettings.FileDestination = x, tsmiFileUploaders);
             AddEnumItems<UrlShortenerType>(x => TaskSettings.URLShortenerDestination = x, tsmiURLShorteners);
             AddEnumItems<URLSharingServices>(x => TaskSettings.URLSharingServiceDestination = x, tsmiURLSharingServices);
@@ -111,9 +132,11 @@ namespace ShareX
             SetMultiEnumCheckedContextMenu(TaskSettings.AfterCaptureJob, cmsAfterCapture);
             SetMultiEnumCheckedContextMenu(TaskSettings.AfterUploadJob, cmsAfterUpload);
             SetEnumChecked(TaskSettings.ImageDestination, tsmiImageUploaders);
-            SetEnumChecked(TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
+            MainForm.SetImageFileDestinationChecked(TaskSettings.ImageDestination,
+                TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
             SetEnumChecked(TaskSettings.TextDestination, tsmiTextUploaders);
-            SetEnumChecked(TaskSettings.TextFileDestination, tsmiTextFileUploaders);
+            MainForm.SetTextFileDestinationChecked(TaskSettings.TextDestination,
+                TaskSettings.TextFileDestination, tsmiTextFileUploaders);
             SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
             SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
             SetEnumChecked(TaskSettings.URLSharingServiceDestination, tsmiURLSharingServices);

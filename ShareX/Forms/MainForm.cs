@@ -96,7 +96,6 @@ namespace ShareX
                 // if click on "folder" with file destinations then set ImageFileDestination and check it
                 if (x == ImageDestination.FileUploader)
                 {
-                    Program.DefaultTaskSettings.ImageFileDestination = Program.DefaultTaskSettings.ImageFileDestination;
                     SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders,
                         tsmiTrayImageFileUploaders);
                 }
@@ -120,7 +119,6 @@ namespace ShareX
                 // if click on "folder" with file destinations then set TextFileDestination and check it
                 if (x == TextDestination.FileUploader)
                 {
-                    Program.DefaultTaskSettings.TextFileDestination = Program.DefaultTaskSettings.TextFileDestination;
                     SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders,
                         tsmiTrayTextFileUploaders);
                 }
@@ -281,7 +279,7 @@ namespace ShareX
         /// </summary>
         /// <param name="value">Enum item</param>
         /// <param name="parents">DropDowns where enum-th item must be checked.</param>
-        private void SetEnumChecked(Enum value, params ToolStripDropDownItem[] parents)
+        private static void SetEnumChecked(Enum value, params ToolStripDropDownItem[] parents)
         {
             if (value == null)
                 return;
@@ -563,37 +561,39 @@ namespace ShareX
             SetMultiEnumChecked(Program.DefaultTaskSettings.AfterCaptureJob, tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
             SetMultiEnumChecked(Program.DefaultTaskSettings.AfterUploadJob, tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
             SetEnumChecked(Program.DefaultTaskSettings.ImageDestination, tsmiImageUploaders, tsmiTrayImageUploaders);
-            SetImageFileDestinationChecked();
+            SetImageFileDestinationChecked(Program.DefaultTaskSettings.ImageDestination,
+                Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.TextDestination, tsmiTextUploaders, tsmiTrayTextUploaders);
-            SetTextFileDestinationChecked();
+            SetTextFileDestinationChecked(Program.DefaultTaskSettings.TextDestination, 
+                Program.DefaultTaskSettings.TextFileDestination , tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.FileDestination, tsmiFileUploaders, tsmiTrayFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.URLShortenerDestination, tsmiURLShorteners, tsmiTrayURLShorteners);
             SetEnumChecked(Program.DefaultTaskSettings.URLSharingServiceDestination, tsmiURLSharingServices, tsmiTrayURLSharingServices);
         }
 
-        private void SetTextFileDestinationChecked()
+        public static void SetTextFileDestinationChecked(TextDestination textDestination,
+            FileDestination textFileDestination, params ToolStripDropDownItem[] lists)
         {
-            if (Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader)
+            if (textDestination == TextDestination.FileUploader)
             {
-                SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders,
-                    tsmiTrayTextFileUploaders);
+                SetEnumChecked(textFileDestination, lists);
             }
             else
             {
-                Uncheck(tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+                Uncheck(lists);
             }
         }
 
-        private void SetImageFileDestinationChecked()
+        public static void SetImageFileDestinationChecked(ImageDestination imageDestination, 
+            FileDestination imageFileDestination, params ToolStripDropDownItem[] lists)
         {
-            if (Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader)
+            if (imageDestination == ImageDestination.FileUploader)
             {
-                SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders,
-                    tsmiTrayImageFileUploaders);
+                SetEnumChecked(imageFileDestination, lists);
             }
             else
             {
-                Uncheck(tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
+                Uncheck(lists);
             }
         }
 
