@@ -89,7 +89,26 @@ namespace ShareX
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
             AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(x),
                 tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
-            AddEnumItems<ImageDestination>(x => Program.DefaultTaskSettings.ImageDestination = x, tsmiImageUploaders, tsmiTrayImageUploaders);
+            // Destinations -> Image uploader
+            AddEnumItems<ImageDestination>(x =>
+            {
+                Program.DefaultTaskSettings.ImageDestination = x;
+                // if click on "folder" with file destinations then set ImageFileDestination and check it
+                if (x == ImageDestination.FileUploader)
+                {
+                    Program.DefaultTaskSettings.ImageFileDestination =
+                        Program.DefaultTaskSettings.ImageFileDestination ?? FileDestination.Dropbox;
+                    SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders,
+                        tsmiTrayImageFileUploaders);
+                }
+                else // if click not on "folder" with destinations then uncheck file destinations
+                {
+                    if (Program.DefaultTaskSettings.ImageFileDestination != null)
+                    {
+                        Uncheck(tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
+                    }
+                }
+            }, tsmiImageUploaders, tsmiTrayImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
             tsmiTrayImageFileUploaders = (ToolStripDropDownItem)tsmiTrayImageUploaders.DropDownItems[tsmiTrayImageUploaders.DropDownItems.Count - 1];
             AddEnumItems<FileDestination>(x =>
@@ -98,7 +117,26 @@ namespace ShareX
                 tsmiImageFileUploaders.PerformClick();
                 tsmiTrayImageFileUploaders.PerformClick();
             }, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
-            AddEnumItems<TextDestination>(x => Program.DefaultTaskSettings.TextDestination = x, tsmiTextUploaders, tsmiTrayTextUploaders);
+            // Destinations -> Text uploader
+            AddEnumItems<TextDestination>(x =>
+            {
+                Program.DefaultTaskSettings.TextDestination = x;
+                // if click on "folder" with file destinations then set TextFileDestination and check it
+                if (x == TextDestination.FileUploader)
+                {
+                    Program.DefaultTaskSettings.TextFileDestination = Program.DefaultTaskSettings.TextFileDestination
+                                                                      ?? FileDestination.Dropbox;
+                    SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders,
+                        tsmiTrayTextFileUploaders);
+                }
+                else // if click not on "folder" with destinations then uncheck file destinations
+                {
+                    if (Program.DefaultTaskSettings.TextFileDestination != null)
+                    {
+                        Uncheck(tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+                    }
+                }
+            }, tsmiTextUploaders, tsmiTrayTextUploaders);
             tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
             tsmiTrayTextFileUploaders = (ToolStripDropDownItem)tsmiTrayTextUploaders.DropDownItems[tsmiTrayTextUploaders.DropDownItems.Count - 1];
             AddEnumItems<FileDestination>(x =>
@@ -107,6 +145,7 @@ namespace ShareX
                 tsmiTextFileUploaders.PerformClick();
                 tsmiTrayTextFileUploaders.PerformClick();
             }, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+            // Destinations -> File uploader
             AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
             AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
             AddEnumItems<URLSharingServices>(x => Program.DefaultTaskSettings.URLSharingServiceDestination = x, tsmiURLSharingServices, tsmiTrayURLSharingServices);
@@ -139,6 +178,21 @@ namespace ShareX
             uim = new UploadInfoManager(lvUploads);
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
+        }
+
+        /// <summary>
+        /// Unchecks all items in drop downs
+        /// </summary>
+        /// <param name="lists">List of drop downs</param>
+        public static void Uncheck(params ToolStripDropDownItem[] lists)
+        {
+            foreach (ToolStripDropDownItem parent in lists)
+            {
+                foreach (var dropDownItem in parent.DropDownItems)
+                {
+                    ((ToolStripMenuItem)dropDownItem).Checked = false;
+                }
+            }
         }
 
         private void UpdateWorkflowsMenu()
@@ -230,8 +284,15 @@ namespace ShareX
             }
         }
 
+        /// <summary>
+        /// Finds dropDowonItem corresponding to the enum value and checks it.
+        /// </summary>
+        /// <param name="value">Enum item</param>
+        /// <param name="parents">DropDowns where enum-th item must be checked.</param>
         private void SetEnumChecked(Enum value, params ToolStripDropDownItem[] parents)
         {
+            if (value == null)
+                return;
             int index = value.GetIndex();
 
             foreach (ToolStripDropDownItem parent in parents)

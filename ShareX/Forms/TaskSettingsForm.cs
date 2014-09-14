@@ -83,7 +83,25 @@ namespace ShareX
             }, cmsTask);
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
-            AddEnumItems<ImageDestination>(x => TaskSettings.ImageDestination = x, tsmiImageUploaders);
+            AddEnumItems<ImageDestination>(x =>
+            {
+                TaskSettings.ImageDestination = x;
+                // if click on "folder" with file destinations then set ImageFileDestination and check it
+                if (x == ImageDestination.FileUploader)
+                {
+                    TaskSettings.ImageFileDestination = TaskSettings.ImageFileDestination
+                                                        ?? FileDestination.Dropbox;
+                    SetEnumChecked(TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
+                }
+                else // if click not on "folder" with destinations then uncheck file destinations
+                {
+                    if (TaskSettings.ImageFileDestination != null)
+                    {
+                        MainForm.Uncheck(tsmiImageFileUploaders);
+                    }
+                }
+                TaskSettings.ImageFileDestination = null;
+            }, tsmiImageUploaders);
             tsmiImageFileUploaders = (ToolStripDropDownItem)tsmiImageUploaders.DropDownItems[tsmiImageUploaders.DropDownItems.Count - 1];
             AddEnumItems<FileDestination>(x => TaskSettings.ImageFileDestination = x, tsmiImageFileUploaders);
             AddEnumItems<TextDestination>(x => TaskSettings.TextDestination = x, tsmiTextUploaders);
