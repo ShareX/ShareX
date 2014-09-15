@@ -296,8 +296,11 @@
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
             this.tpPastebin = new System.Windows.Forms.TabPage();
+            this.txtPastebinTitle = new System.Windows.Forms.TextBox();
+            this.txtPastebinPassword = new System.Windows.Forms.TextBox();
+            this.txtPastebinUsername = new System.Windows.Forms.TextBox();
+            this.lblPastebinLoginStatus = new System.Windows.Forms.Label();
             this.btnPastebinLogin = new System.Windows.Forms.Button();
-            this.pgPastebinSettings = new System.Windows.Forms.PropertyGrid();
             this.tpPaste_ee = new System.Windows.Forms.TabPage();
             this.lblPaste_eeUserAPIKey = new System.Windows.Forms.Label();
             this.txtPaste_eeUserAPIKey = new System.Windows.Forms.TextBox();
@@ -372,7 +375,16 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new HelpersLib.TabToListView();
-            this.lblPastebinLoginStatus = new System.Windows.Forms.Label();
+            this.cbPastebinPrivacy = new System.Windows.Forms.ComboBox();
+            this.cbPastebinExpiration = new System.Windows.Forms.ComboBox();
+            this.lblPastebinUsername = new System.Windows.Forms.Label();
+            this.lblPastebinPassword = new System.Windows.Forms.Label();
+            this.lblPastebinTitle = new System.Windows.Forms.Label();
+            this.lblPastebinPrivacy = new System.Windows.Forms.Label();
+            this.lblPastebinExpiration = new System.Windows.Forms.Label();
+            this.lblPastebinSyntax = new System.Windows.Forms.Label();
+            this.txtPastebinSyntax = new System.Windows.Forms.TextBox();
+            this.btnPastebinRegister = new System.Windows.Forms.Button();
             this.atcImgurAccountType = new UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new UploadersLib.AccountTypeControl();
@@ -3223,9 +3235,21 @@
             // 
             // tpPastebin
             // 
+            this.tpPastebin.Controls.Add(this.btnPastebinRegister);
+            this.tpPastebin.Controls.Add(this.txtPastebinSyntax);
+            this.tpPastebin.Controls.Add(this.lblPastebinSyntax);
+            this.tpPastebin.Controls.Add(this.lblPastebinExpiration);
+            this.tpPastebin.Controls.Add(this.lblPastebinPrivacy);
+            this.tpPastebin.Controls.Add(this.lblPastebinTitle);
+            this.tpPastebin.Controls.Add(this.lblPastebinPassword);
+            this.tpPastebin.Controls.Add(this.lblPastebinUsername);
+            this.tpPastebin.Controls.Add(this.cbPastebinExpiration);
+            this.tpPastebin.Controls.Add(this.cbPastebinPrivacy);
+            this.tpPastebin.Controls.Add(this.txtPastebinTitle);
+            this.tpPastebin.Controls.Add(this.txtPastebinPassword);
+            this.tpPastebin.Controls.Add(this.txtPastebinUsername);
             this.tpPastebin.Controls.Add(this.lblPastebinLoginStatus);
             this.tpPastebin.Controls.Add(this.btnPastebinLogin);
-            this.tpPastebin.Controls.Add(this.pgPastebinSettings);
             this.tpPastebin.Location = new System.Drawing.Point(4, 22);
             this.tpPastebin.Name = "tpPastebin";
             this.tpPastebin.Padding = new System.Windows.Forms.Padding(3);
@@ -3234,25 +3258,49 @@
             this.tpPastebin.Text = "Pastebin";
             this.tpPastebin.UseVisualStyleBackColor = true;
             // 
+            // txtPastebinTitle
+            // 
+            this.txtPastebinTitle.Location = new System.Drawing.Point(96, 164);
+            this.txtPastebinTitle.Name = "txtPastebinTitle";
+            this.txtPastebinTitle.Size = new System.Drawing.Size(152, 20);
+            this.txtPastebinTitle.TabIndex = 6;
+            this.txtPastebinTitle.TextChanged += new System.EventHandler(this.txtPastebinTitle_TextChanged);
+            // 
+            // txtPastebinPassword
+            // 
+            this.txtPastebinPassword.Location = new System.Drawing.Point(96, 36);
+            this.txtPastebinPassword.Name = "txtPastebinPassword";
+            this.txtPastebinPassword.Size = new System.Drawing.Size(152, 20);
+            this.txtPastebinPassword.TabIndex = 5;
+            this.txtPastebinPassword.UseSystemPasswordChar = true;
+            this.txtPastebinPassword.TextChanged += new System.EventHandler(this.txtPastebinPassword_TextChanged);
+            // 
+            // txtPastebinUsername
+            // 
+            this.txtPastebinUsername.Location = new System.Drawing.Point(96, 12);
+            this.txtPastebinUsername.Name = "txtPastebinUsername";
+            this.txtPastebinUsername.Size = new System.Drawing.Size(152, 20);
+            this.txtPastebinUsername.TabIndex = 4;
+            this.txtPastebinUsername.TextChanged += new System.EventHandler(this.txtPastebinUsername_TextChanged);
+            // 
+            // lblPastebinLoginStatus
+            // 
+            this.lblPastebinLoginStatus.AutoSize = true;
+            this.lblPastebinLoginStatus.Location = new System.Drawing.Point(256, 69);
+            this.lblPastebinLoginStatus.Name = "lblPastebinLoginStatus";
+            this.lblPastebinLoginStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblPastebinLoginStatus.TabIndex = 2;
+            this.lblPastebinLoginStatus.Text = "Status:";
+            // 
             // btnPastebinLogin
             // 
-            this.btnPastebinLogin.Location = new System.Drawing.Point(520, 8);
+            this.btnPastebinLogin.Location = new System.Drawing.Point(136, 64);
             this.btnPastebinLogin.Name = "btnPastebinLogin";
-            this.btnPastebinLogin.Size = new System.Drawing.Size(88, 23);
+            this.btnPastebinLogin.Size = new System.Drawing.Size(112, 23);
             this.btnPastebinLogin.TabIndex = 0;
             this.btnPastebinLogin.Text = "Login";
             this.btnPastebinLogin.UseVisualStyleBackColor = true;
             this.btnPastebinLogin.Click += new System.EventHandler(this.btnPastebinLogin_Click);
-            // 
-            // pgPastebinSettings
-            // 
-            this.pgPastebinSettings.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pgPastebinSettings.Location = new System.Drawing.Point(3, 3);
-            this.pgPastebinSettings.Name = "pgPastebinSettings";
-            this.pgPastebinSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgPastebinSettings.Size = new System.Drawing.Size(504, 487);
-            this.pgPastebinSettings.TabIndex = 1;
-            this.pgPastebinSettings.ToolbarVisible = false;
             // 
             // tpPaste_ee
             // 
@@ -4021,14 +4069,97 @@
             this.ttlvMain.Size = new System.Drawing.Size(994, 551);
             this.ttlvMain.TabIndex = 0;
             // 
-            // lblPastebinLoginStatus
+            // cbPastebinPrivacy
             // 
-            this.lblPastebinLoginStatus.AutoSize = true;
-            this.lblPastebinLoginStatus.Location = new System.Drawing.Point(520, 40);
-            this.lblPastebinLoginStatus.Name = "lblPastebinLoginStatus";
-            this.lblPastebinLoginStatus.Size = new System.Drawing.Size(40, 13);
-            this.lblPastebinLoginStatus.TabIndex = 2;
-            this.lblPastebinLoginStatus.Text = "Status:";
+            this.cbPastebinPrivacy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPastebinPrivacy.FormattingEnabled = true;
+            this.cbPastebinPrivacy.Location = new System.Drawing.Point(96, 92);
+            this.cbPastebinPrivacy.Name = "cbPastebinPrivacy";
+            this.cbPastebinPrivacy.Size = new System.Drawing.Size(152, 21);
+            this.cbPastebinPrivacy.TabIndex = 7;
+            this.cbPastebinPrivacy.SelectedIndexChanged += new System.EventHandler(this.cbPastebinPrivacy_SelectedIndexChanged);
+            // 
+            // cbPastebinExpiration
+            // 
+            this.cbPastebinExpiration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPastebinExpiration.FormattingEnabled = true;
+            this.cbPastebinExpiration.Location = new System.Drawing.Point(96, 116);
+            this.cbPastebinExpiration.Name = "cbPastebinExpiration";
+            this.cbPastebinExpiration.Size = new System.Drawing.Size(152, 21);
+            this.cbPastebinExpiration.TabIndex = 8;
+            this.cbPastebinExpiration.SelectedIndexChanged += new System.EventHandler(this.cbPastebinExpiration_SelectedIndexChanged);
+            // 
+            // lblPastebinUsername
+            // 
+            this.lblPastebinUsername.AutoSize = true;
+            this.lblPastebinUsername.Location = new System.Drawing.Point(16, 16);
+            this.lblPastebinUsername.Name = "lblPastebinUsername";
+            this.lblPastebinUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblPastebinUsername.TabIndex = 9;
+            this.lblPastebinUsername.Text = "Username:";
+            // 
+            // lblPastebinPassword
+            // 
+            this.lblPastebinPassword.AutoSize = true;
+            this.lblPastebinPassword.Location = new System.Drawing.Point(16, 40);
+            this.lblPastebinPassword.Name = "lblPastebinPassword";
+            this.lblPastebinPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPastebinPassword.TabIndex = 10;
+            this.lblPastebinPassword.Text = "Password:";
+            // 
+            // lblPastebinTitle
+            // 
+            this.lblPastebinTitle.AutoSize = true;
+            this.lblPastebinTitle.Location = new System.Drawing.Point(16, 168);
+            this.lblPastebinTitle.Name = "lblPastebinTitle";
+            this.lblPastebinTitle.Size = new System.Drawing.Size(56, 13);
+            this.lblPastebinTitle.TabIndex = 11;
+            this.lblPastebinTitle.Text = "Paste title:";
+            // 
+            // lblPastebinPrivacy
+            // 
+            this.lblPastebinPrivacy.AutoSize = true;
+            this.lblPastebinPrivacy.Location = new System.Drawing.Point(16, 96);
+            this.lblPastebinPrivacy.Name = "lblPastebinPrivacy";
+            this.lblPastebinPrivacy.Size = new System.Drawing.Size(45, 13);
+            this.lblPastebinPrivacy.TabIndex = 12;
+            this.lblPastebinPrivacy.Text = "Privacy:";
+            // 
+            // lblPastebinExpiration
+            // 
+            this.lblPastebinExpiration.AutoSize = true;
+            this.lblPastebinExpiration.Location = new System.Drawing.Point(16, 120);
+            this.lblPastebinExpiration.Name = "lblPastebinExpiration";
+            this.lblPastebinExpiration.Size = new System.Drawing.Size(56, 13);
+            this.lblPastebinExpiration.TabIndex = 13;
+            this.lblPastebinExpiration.Text = "Expiration:";
+            // 
+            // lblPastebinSyntax
+            // 
+            this.lblPastebinSyntax.AutoSize = true;
+            this.lblPastebinSyntax.Location = new System.Drawing.Point(16, 144);
+            this.lblPastebinSyntax.Name = "lblPastebinSyntax";
+            this.lblPastebinSyntax.Size = new System.Drawing.Size(70, 13);
+            this.lblPastebinSyntax.TabIndex = 14;
+            this.lblPastebinSyntax.Text = "Paste syntax:";
+            // 
+            // txtPastebinSyntax
+            // 
+            this.txtPastebinSyntax.Location = new System.Drawing.Point(96, 140);
+            this.txtPastebinSyntax.Name = "txtPastebinSyntax";
+            this.txtPastebinSyntax.Size = new System.Drawing.Size(152, 20);
+            this.txtPastebinSyntax.TabIndex = 15;
+            this.txtPastebinSyntax.TextChanged += new System.EventHandler(this.txtPastebinSyntax_TextChanged);
+            // 
+            // btnPastebinRegister
+            // 
+            this.btnPastebinRegister.Location = new System.Drawing.Point(16, 64);
+            this.btnPastebinRegister.Name = "btnPastebinRegister";
+            this.btnPastebinRegister.Size = new System.Drawing.Size(112, 23);
+            this.btnPastebinRegister.TabIndex = 16;
+            this.btnPastebinRegister.Text = "Register...";
+            this.btnPastebinRegister.UseVisualStyleBackColor = true;
+            this.btnPastebinRegister.Click += new System.EventHandler(this.btnPastebinRegister_Click);
             // 
             // atcImgurAccountType
             // 
@@ -4597,7 +4728,6 @@
         private System.Windows.Forms.TabControl tcTextUploaders;
         private System.Windows.Forms.TabPage tpPastebin;
         private System.Windows.Forms.Button btnPastebinLogin;
-        private System.Windows.Forms.PropertyGrid pgPastebinSettings;
         private System.Windows.Forms.TabPage tpPaste_ee;
         private System.Windows.Forms.Label lblPaste_eeUserAPIKey;
         private System.Windows.Forms.TextBox txtPaste_eeUserAPIKey;
@@ -4720,6 +4850,19 @@
         private System.Windows.Forms.CheckBox cbMediaCrushDirectLink;
         private System.Windows.Forms.CheckBox cbOwnCloudIgnoreInvalidCert;
         private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
-        private System.Windows.Forms.Label lblPastebinLoginStatus;        
+        private System.Windows.Forms.Label lblPastebinLoginStatus;
+        private System.Windows.Forms.TextBox txtPastebinTitle;
+        private System.Windows.Forms.TextBox txtPastebinPassword;
+        private System.Windows.Forms.TextBox txtPastebinUsername;
+        private System.Windows.Forms.Label lblPastebinExpiration;
+        private System.Windows.Forms.Label lblPastebinPrivacy;
+        private System.Windows.Forms.Label lblPastebinTitle;
+        private System.Windows.Forms.Label lblPastebinPassword;
+        private System.Windows.Forms.Label lblPastebinUsername;
+        private System.Windows.Forms.ComboBox cbPastebinExpiration;
+        private System.Windows.Forms.ComboBox cbPastebinPrivacy;
+        private System.Windows.Forms.TextBox txtPastebinSyntax;
+        private System.Windows.Forms.Label lblPastebinSyntax;
+        private System.Windows.Forms.Button btnPastebinRegister;        
     }
 }

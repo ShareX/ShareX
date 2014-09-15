@@ -34,6 +34,7 @@ using UploadersLib.FileUploaders;
 using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;
 using UploadersLib.Properties;
+using UploadersLib.TextUploaders;
 
 namespace UploadersLib
 {
@@ -235,8 +236,15 @@ namespace UploadersLib
 
             // Pastebin
 
-            pgPastebinSettings.SelectedObject = Config.PastebinSettings;
+            txtPastebinUsername.Text = Config.PastebinSettings.Username;
+            txtPastebinPassword.Text = Config.PastebinSettings.Password;
             UpdatePastebinStatus();
+            cbPastebinPrivacy.Items.AddRange(Helpers.GetEnumDescriptions<PastebinPrivacy>());
+            cbPastebinPrivacy.SelectedIndex = (int)Config.PastebinSettings.Exposure;
+            cbPastebinExpiration.Items.AddRange(Helpers.GetEnumDescriptions<PastebinExpiration>());
+            cbPastebinExpiration.SelectedIndex = (int)Config.PastebinSettings.Expiration;
+            txtPastebinSyntax.Text = Config.PastebinSettings.TextFormat;
+            txtPastebinTitle.Text = Config.PastebinSettings.Title;
 
             // Paste.ee
 
@@ -853,9 +861,44 @@ namespace UploadersLib
 
         #region Pastebin
 
+        private void txtPastebinUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.Username = txtPastebinUsername.Text;
+        }
+
+        private void txtPastebinPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.Password = txtPastebinPassword.Text;
+        }
+
+        private void btnPastebinRegister_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("http://pastebin.com/signup");
+        }
+
         private void btnPastebinLogin_Click(object sender, EventArgs e)
         {
             PastebinLogin();
+        }
+
+        private void cbPastebinPrivacy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.Exposure = (PastebinPrivacy)cbPastebinPrivacy.SelectedIndex;
+        }
+
+        private void cbPastebinExpiration_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.Expiration = (PastebinExpiration)cbPastebinExpiration.SelectedIndex;
+        }
+
+        private void txtPastebinSyntax_TextChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.TextFormat = txtPastebinSyntax.Text;
+        }
+
+        private void txtPastebinTitle_TextChanged(object sender, EventArgs e)
+        {
+            Config.PastebinSettings.Title = txtPastebinTitle.Text;
         }
 
         #endregion Pastebin
