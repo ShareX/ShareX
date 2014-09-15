@@ -31,9 +31,6 @@ namespace UploadersLib.TextUploaders
 {
     public sealed class Pastebin : TextUploader
     {
-        private const string APIURL = "http://pastebin.com/api/api_post.php";
-        private const string APILoginURL = "http://pastebin.com/api/api_login.php";
-
         private string APIKey;
 
         public PastebinSettings Settings { get; private set; }
@@ -60,17 +57,17 @@ namespace UploadersLib.TextUploaders
                 loginArgs.Add("api_user_name", Settings.Username);
                 loginArgs.Add("api_user_password", Settings.Password);
 
-                string loginResponse = SendRequest(HttpMethod.POST, APILoginURL, loginArgs);
+                string loginResponse = SendRequest(HttpMethod.POST, "http://pastebin.com/api/api_login.php", loginArgs);
 
                 if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
                 {
                     Settings.UserKey = loginResponse;
                     return true;
                 }
-
-                Errors.Add("Pastebin login failed.");
             }
 
+            Settings.UserKey = null;
+            Errors.Add("Pastebin login failed.");
             return false;
         }
 
@@ -97,7 +94,7 @@ namespace UploadersLib.TextUploaders
                     args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
                 }
 
-                ur.Response = SendRequest(HttpMethod.POST, APIURL, args);
+                ur.Response = SendRequest(HttpMethod.POST, "http://pastebin.com/api/api_post.php", args);
 
                 if (!string.IsNullOrEmpty(ur.Response) && !ur.Response.StartsWith("Bad API request") && ur.Response.IsValidUrl())
                 {
@@ -121,7 +118,7 @@ namespace UploadersLib.TextUploaders
         [PasswordPropertyText(true), Description("This is the password of the user you want to login")]
         public string Password { get; set; }
 
-        [Description("This makes a paste public or private\r\n0 = Public, 1 = Unlisted, 2 = Private (only allowed in combination with api_user_key, as you have to be logged into your account to access the paste)"),
+        [Description("This makes a paste public or private\r\n0 = Public, 1 = Unlisted, 2 = Private (You have to be logged into your account to access the paste)"),
         DefaultValue("1")]
         public string Privacy { get; set; }
 
@@ -139,8 +136,8 @@ namespace UploadersLib.TextUploaders
 
         public PastebinSettings()
         {
-            ExpireTime = "N";
             Privacy = "1";
+            ExpireTime = "N";
         }
     }
 }

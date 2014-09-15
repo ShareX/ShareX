@@ -236,6 +236,7 @@ namespace UploadersLib
             // Pastebin
 
             pgPastebinSettings.SelectedObject = Config.PastebinSettings;
+            UpdatePastebinStatus();
 
             // Paste.ee
 

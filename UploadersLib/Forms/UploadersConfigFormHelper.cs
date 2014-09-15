@@ -1222,11 +1222,12 @@ namespace UploadersLib
 
                     if (pastebin.Login())
                     {
-                        pgPastebinSettings.SelectedObject = Config.PastebinSettings;
+                        UpdatePastebinStatus();
                         MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
+                        UpdatePastebinStatus();
                         MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -1234,6 +1235,18 @@ namespace UploadersLib
                 {
                     MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        public void UpdatePastebinStatus()
+        {
+            if (Config.PastebinSettings == null || string.IsNullOrEmpty(Config.PastebinSettings.UserKey))
+            {
+                lblPastebinLoginStatus.Text = "Status: Not logged in.";
+            }
+            else
+            {
+                lblPastebinLoginStatus.Text = "Status: Logged in.";
             }
         }
 

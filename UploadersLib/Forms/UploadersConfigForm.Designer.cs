@@ -372,6 +372,7 @@
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new HelpersLib.TabToListView();
+            this.lblPastebinLoginStatus = new System.Windows.Forms.Label();
             this.atcImgurAccountType = new UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new UploadersLib.AccountTypeControl();
@@ -3222,6 +3223,7 @@
             // 
             // tpPastebin
             // 
+            this.tpPastebin.Controls.Add(this.lblPastebinLoginStatus);
             this.tpPastebin.Controls.Add(this.btnPastebinLogin);
             this.tpPastebin.Controls.Add(this.pgPastebinSettings);
             this.tpPastebin.Location = new System.Drawing.Point(4, 22);
@@ -4019,6 +4021,15 @@
             this.ttlvMain.Size = new System.Drawing.Size(994, 551);
             this.ttlvMain.TabIndex = 0;
             // 
+            // lblPastebinLoginStatus
+            // 
+            this.lblPastebinLoginStatus.AutoSize = true;
+            this.lblPastebinLoginStatus.Location = new System.Drawing.Point(520, 40);
+            this.lblPastebinLoginStatus.Name = "lblPastebinLoginStatus";
+            this.lblPastebinLoginStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblPastebinLoginStatus.TabIndex = 2;
+            this.lblPastebinLoginStatus.Text = "Status:";
+            // 
             // atcImgurAccountType
             // 
             this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
@@ -4313,6 +4324,7 @@
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
+            this.tpPastebin.PerformLayout();
             this.tpPaste_ee.ResumeLayout(false);
             this.tpPaste_ee.PerformLayout();
             this.tpGist.ResumeLayout(false);
@@ -4707,6 +4719,7 @@
         private System.Windows.Forms.TabPage tpMediaCrush;
         private System.Windows.Forms.CheckBox cbMediaCrushDirectLink;
         private System.Windows.Forms.CheckBox cbOwnCloudIgnoreInvalidCert;
-        private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;        
+        private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
+        private System.Windows.Forms.Label lblPastebinLoginStatus;        
     }
 }

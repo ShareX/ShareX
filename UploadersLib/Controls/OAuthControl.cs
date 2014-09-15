@@ -63,7 +63,7 @@ namespace UploadersLib
                         lblLoginStatus.Text = "Status: Not logged in.";
                         break;
                     case OAuthLoginStatus.LoginSuccessful:
-                        lblLoginStatus.Text = "Status: Login successful.";
+                        lblLoginStatus.Text = "Status: Logged in.";
                         break;
                     case OAuthLoginStatus.LoginFailed:
                         lblLoginStatus.Text = "Status: Login failed.";
