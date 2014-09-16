@@ -138,12 +138,16 @@ namespace ImageEffectsLib
         public DrawText()
         {
             this.ApplyDefaultPropertyValues();
+            AddDefaultGradient();
+        }
 
+        private void AddDefaultGradient()
+        {
             Gradient = new GradientInfo();
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(12, 76, 159), 100f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
         public override Image Apply(Image img)

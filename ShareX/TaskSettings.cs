@@ -56,7 +56,7 @@ namespace ShareX
         public HotkeyType Job = HotkeyType.None;
 
         public bool UseDefaultAfterCaptureJob = true;
-        public AfterCaptureTasks AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost;
+        public AfterCaptureTasks AfterCaptureJob = AfterCaptureTasks.AddImageEffects | AfterCaptureTasks.CopyImageToClipboard | AfterCaptureTasks.SaveImageToFile | AfterCaptureTasks.UploadImageToHost;
 
         public bool UseDefaultAfterUploadJob = true;
         public AfterUploadTasks AfterUploadJob = AfterUploadTasks.CopyURLToClipboard;
@@ -267,10 +267,10 @@ namespace ShareX
         #region Image / Effects
 
         [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
-        public List<ImageEffect> ImageEffects = new List<ImageEffect>();
+        public List<ImageEffect> ImageEffects = ImageEffectManager.GetDefaultImageEffects();
 
         public bool ShowImageEffectsWindowAfterCapture = false;
-        public bool ImageEffectOnlyRegionCapture = true;
+        public bool ImageEffectOnlyRegionCapture = false;
 
         public WatermarkConfig WatermarkConfig = new WatermarkConfig();
 

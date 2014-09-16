@@ -26,11 +26,29 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ImageEffectsLib
 {
     public static class ImageEffectManager
     {
+        public static List<ImageEffect> GetDefaultImageEffects()
+        {
+            List<ImageEffect> imageEffects = new List<ImageEffect>();
+
+            Canvas canvas = new Canvas();
+            canvas.Margin = new Padding(0, 0, 0, 30);
+            imageEffects.Add(canvas);
+
+            DrawText text = new DrawText();
+            text.Offset = new Point(0, 0);
+            text.TextFont = new Font("Arial", 11.25f);
+            text.UseCustomGradient = true;
+            imageEffects.Add(text);
+
+            return imageEffects;
+        }
+
         public static Image ApplyEffects(Image img, List<ImageEffect> imageEffects)
         {
             Image result = (Image)img.Clone();
