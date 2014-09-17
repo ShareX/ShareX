@@ -80,6 +80,7 @@ namespace UploadersLib
             AddIconToTab(tpBitly, Resources.Bitly);
             AddIconToTab(tpBox, Resources.Box);
             AddIconToTab(tpCopy, Resources.Copy);
+            AddIconToTab(tpChevereto, Resources.Chevereto);
             AddIconToTab(tpCustomUploaders, Resources.globe_network);
             AddIconToTab(tpDropbox, Resources.Dropbox);
             AddIconToTab(tpEmail, Resources.mail);
@@ -229,6 +230,11 @@ namespace UploadersLib
             }
 
             txtPicasaAlbumID.Text = Config.PicasaAlbumID;
+
+            // Chevereto
+
+            txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
+            txtCheveretoWebsite.Text = Config.CheveretoWebsite;
 
             #endregion Image uploaders
 
@@ -854,6 +860,20 @@ namespace UploadersLib
         }
 
         #endregion Picasa
+
+        #region Chevereto
+
+        private void txtCheveretoAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.CheveretoAPIKey = txtCheveretoAPIKey.Text;
+        }
+
+        private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
+        {
+            Config.CheveretoWebsite = txtCheveretoWebsite.Text;
+        }
+
+        #endregion Chevereto
 
         #endregion Image Uploaders
 

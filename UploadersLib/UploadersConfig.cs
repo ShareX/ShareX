@@ -76,6 +76,11 @@ namespace UploadersLib
         public OAuth2Info PicasaOAuth2Info = null;
         public string PicasaAlbumID = string.Empty;
 
+        // Chevereto
+
+        public string CheveretoAPIKey = string.Empty;
+        public string CheveretoWebsite = string.Empty;
+
         #endregion Image uploaders
 
         #region Text uploaders

@@ -44,6 +44,8 @@ namespace UploadersLib
         Picasa,
         [Description("Twitter")]
         Twitter,
+        [Description("Chevereto")]
+        Chevereto,
         [Description("Custom image uploader")]
         CustomImageUploader,
         [Description("File uploader")]
