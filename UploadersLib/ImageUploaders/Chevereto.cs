@@ -37,6 +37,7 @@ namespace UploadersLib.ImageUploaders
     {
         public string APIKey { get; set; }
         public string Website { get; set; }
+        public bool DirectURL { get; set; }
 
         public Chevereto(string apiKey, string website)
         {
@@ -61,7 +62,7 @@ namespace UploadersLib.ImageUploaders
 
                 if (response != null && response.Image != null)
                 {
-                    result.URL = response.Image.URL;
+                    result.URL = DirectURL ? response.Image.URL : response.Image.URL_Viewer;
 
                     if (response.Image.Thumb != null)
                     {

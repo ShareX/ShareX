@@ -235,6 +235,7 @@ namespace UploadersLib
 
             txtCheveretoAPIKey.Text = Config.CheveretoAPIKey;
             txtCheveretoWebsite.Text = Config.CheveretoWebsite;
+            cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
 
             #endregion Image uploaders
 
@@ -871,6 +872,11 @@ namespace UploadersLib
         private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
         {
             Config.CheveretoWebsite = txtCheveretoWebsite.Text;
+        }
+
+        private void cbCheveretoDirectURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.CheveretoDirectURL = cbCheveretoDirectURL.Checked;
         }
 
         #endregion Chevereto

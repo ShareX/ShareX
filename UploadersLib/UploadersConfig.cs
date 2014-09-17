@@ -80,6 +80,7 @@ namespace UploadersLib
 
         public string CheveretoAPIKey = string.Empty;
         public string CheveretoWebsite = string.Empty;
+        public bool CheveretoDirectURL = true;
 
         #endregion Image uploaders
 

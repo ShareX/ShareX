@@ -402,15 +402,16 @@
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
             this.oauth2Picasa = new UploadersLib.OAuthControl();
             this.tpChevereto = new System.Windows.Forms.TabPage();
+            this.lblCheveretoWebsiteTip = new System.Windows.Forms.Label();
+            this.lblCheveretoWebsite = new System.Windows.Forms.Label();
+            this.txtCheveretoWebsite = new System.Windows.Forms.TextBox();
+            this.txtCheveretoAPIKey = new System.Windows.Forms.TextBox();
+            this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new HelpersLib.TabToListView();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
-            this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
-            this.txtCheveretoAPIKey = new System.Windows.Forms.TextBox();
-            this.txtCheveretoWebsite = new System.Windows.Forms.TextBox();
-            this.lblCheveretoWebsite = new System.Windows.Forms.Label();
-            this.lblCheveretoWebsiteTip = new System.Windows.Forms.Label();
+            this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -4331,6 +4332,7 @@
             // 
             // tpChevereto
             // 
+            this.tpChevereto.Controls.Add(this.cbCheveretoDirectURL);
             this.tpChevereto.Controls.Add(this.lblCheveretoWebsiteTip);
             this.tpChevereto.Controls.Add(this.lblCheveretoWebsite);
             this.tpChevereto.Controls.Add(this.txtCheveretoWebsite);
@@ -4343,6 +4345,49 @@
             this.tpChevereto.TabIndex = 9;
             this.tpChevereto.Text = "Chevereto";
             this.tpChevereto.UseVisualStyleBackColor = true;
+            // 
+            // lblCheveretoWebsiteTip
+            // 
+            this.lblCheveretoWebsiteTip.AutoSize = true;
+            this.lblCheveretoWebsiteTip.Location = new System.Drawing.Point(314, 40);
+            this.lblCheveretoWebsiteTip.Name = "lblCheveretoWebsiteTip";
+            this.lblCheveretoWebsiteTip.Size = new System.Drawing.Size(74, 13);
+            this.lblCheveretoWebsiteTip.TabIndex = 4;
+            this.lblCheveretoWebsiteTip.Text = "/api/1/upload";
+            // 
+            // lblCheveretoWebsite
+            // 
+            this.lblCheveretoWebsite.AutoSize = true;
+            this.lblCheveretoWebsite.Location = new System.Drawing.Point(16, 40);
+            this.lblCheveretoWebsite.Name = "lblCheveretoWebsite";
+            this.lblCheveretoWebsite.Size = new System.Drawing.Size(49, 13);
+            this.lblCheveretoWebsite.TabIndex = 3;
+            this.lblCheveretoWebsite.Text = "Website:";
+            // 
+            // txtCheveretoWebsite
+            // 
+            this.txtCheveretoWebsite.Location = new System.Drawing.Point(72, 36);
+            this.txtCheveretoWebsite.Name = "txtCheveretoWebsite";
+            this.txtCheveretoWebsite.Size = new System.Drawing.Size(240, 20);
+            this.txtCheveretoWebsite.TabIndex = 2;
+            this.txtCheveretoWebsite.TextChanged += new System.EventHandler(this.txtCheveretoWebsite_TextChanged);
+            // 
+            // txtCheveretoAPIKey
+            // 
+            this.txtCheveretoAPIKey.Location = new System.Drawing.Point(72, 12);
+            this.txtCheveretoAPIKey.Name = "txtCheveretoAPIKey";
+            this.txtCheveretoAPIKey.Size = new System.Drawing.Size(240, 20);
+            this.txtCheveretoAPIKey.TabIndex = 1;
+            this.txtCheveretoAPIKey.TextChanged += new System.EventHandler(this.txtCheveretoAPIKey_TextChanged);
+            // 
+            // lblCheveretoAPIKey
+            // 
+            this.lblCheveretoAPIKey.AutoSize = true;
+            this.lblCheveretoAPIKey.Location = new System.Drawing.Point(16, 16);
+            this.lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
+            this.lblCheveretoAPIKey.Size = new System.Drawing.Size(47, 13);
+            this.lblCheveretoAPIKey.TabIndex = 0;
+            this.lblCheveretoAPIKey.Text = "API key:";
             // 
             // tcUploaders
             // 
@@ -4388,48 +4433,16 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // lblCheveretoAPIKey
+            // cbCheveretoDirectURL
             // 
-            this.lblCheveretoAPIKey.AutoSize = true;
-            this.lblCheveretoAPIKey.Location = new System.Drawing.Point(16, 16);
-            this.lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
-            this.lblCheveretoAPIKey.Size = new System.Drawing.Size(47, 13);
-            this.lblCheveretoAPIKey.TabIndex = 0;
-            this.lblCheveretoAPIKey.Text = "API key:";
-            // 
-            // txtCheveretoAPIKey
-            // 
-            this.txtCheveretoAPIKey.Location = new System.Drawing.Point(72, 12);
-            this.txtCheveretoAPIKey.Name = "txtCheveretoAPIKey";
-            this.txtCheveretoAPIKey.Size = new System.Drawing.Size(240, 20);
-            this.txtCheveretoAPIKey.TabIndex = 1;
-            this.txtCheveretoAPIKey.TextChanged += new System.EventHandler(this.txtCheveretoAPIKey_TextChanged);
-            // 
-            // txtCheveretoWebsite
-            // 
-            this.txtCheveretoWebsite.Location = new System.Drawing.Point(72, 36);
-            this.txtCheveretoWebsite.Name = "txtCheveretoWebsite";
-            this.txtCheveretoWebsite.Size = new System.Drawing.Size(240, 20);
-            this.txtCheveretoWebsite.TabIndex = 2;
-            this.txtCheveretoWebsite.TextChanged += new System.EventHandler(this.txtCheveretoWebsite_TextChanged);
-            // 
-            // lblCheveretoWebsite
-            // 
-            this.lblCheveretoWebsite.AutoSize = true;
-            this.lblCheveretoWebsite.Location = new System.Drawing.Point(16, 40);
-            this.lblCheveretoWebsite.Name = "lblCheveretoWebsite";
-            this.lblCheveretoWebsite.Size = new System.Drawing.Size(49, 13);
-            this.lblCheveretoWebsite.TabIndex = 3;
-            this.lblCheveretoWebsite.Text = "Website:";
-            // 
-            // lblCheveretoWebsiteTip
-            // 
-            this.lblCheveretoWebsiteTip.AutoSize = true;
-            this.lblCheveretoWebsiteTip.Location = new System.Drawing.Point(314, 40);
-            this.lblCheveretoWebsiteTip.Name = "lblCheveretoWebsiteTip";
-            this.lblCheveretoWebsiteTip.Size = new System.Drawing.Size(74, 13);
-            this.lblCheveretoWebsiteTip.TabIndex = 4;
-            this.lblCheveretoWebsiteTip.Text = "/api/1/upload";
+            this.cbCheveretoDirectURL.AutoSize = true;
+            this.cbCheveretoDirectURL.Location = new System.Drawing.Point(16, 64);
+            this.cbCheveretoDirectURL.Name = "cbCheveretoDirectURL";
+            this.cbCheveretoDirectURL.Size = new System.Drawing.Size(79, 17);
+            this.cbCheveretoDirectURL.TabIndex = 5;
+            this.cbCheveretoDirectURL.Text = "Direct URL";
+            this.cbCheveretoDirectURL.UseVisualStyleBackColor = true;
+            this.cbCheveretoDirectURL.CheckedChanged += new System.EventHandler(this.cbCheveretoDirectURL_CheckedChanged);
             // 
             // UploadersConfigForm
             // 
@@ -4937,6 +4950,7 @@
         private System.Windows.Forms.Label lblCheveretoWebsite;
         private System.Windows.Forms.TextBox txtCheveretoWebsite;
         private System.Windows.Forms.TextBox txtCheveretoAPIKey;
-        private System.Windows.Forms.Label lblCheveretoAPIKey;        
+        private System.Windows.Forms.Label lblCheveretoAPIKey;
+        private System.Windows.Forms.CheckBox cbCheveretoDirectURL;        
     }
 }
