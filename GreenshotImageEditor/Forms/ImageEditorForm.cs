@@ -1298,6 +1298,23 @@ namespace Greenshot
             updateUndoRedoSurfaceDependencies();
         }
 
+        /// <summary>
+        /// Open the resize settings from, and resize if ok was pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnResize_Click(object sender, EventArgs e)
+        {
+            ResizeEffect resizeEffect = new ResizeEffect(surface.Image.Width, surface.Image.Height, true);
+            // TODO: Use the Resize SettingsForm to make it possible to change the default values
+            DialogResult result = new ResizeSettingsForm(resizeEffect).ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                surface.ApplyBitmapEffect(resizeEffect);
+                updateUndoRedoSurfaceDependencies();
+            }
+        }
+
         private void InvertToolStripMenuItemClick(object sender, EventArgs e)
         {
             surface.ApplyBitmapEffect(new InvertEffect());

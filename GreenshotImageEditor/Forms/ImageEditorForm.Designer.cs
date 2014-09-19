@@ -74,6 +74,7 @@ namespace Greenshot {
             this.btnCrop = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.rotateCwToolstripButton = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.rotateCcwToolstripButton = new GreenshotPlugin.Controls.GreenshotToolStripButton();
+            this.btnResize = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new Greenshot.Controls.MenuStripEx();
             this.editToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -251,7 +252,8 @@ namespace Greenshot {
             this.toolStripSeparator13,
             this.btnCrop,
             this.rotateCwToolstripButton,
-            this.rotateCcwToolstripButton});
+            this.rotateCcwToolstripButton,
+            this.btnResize});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
@@ -490,6 +492,16 @@ namespace Greenshot {
             this.rotateCcwToolstripButton.Size = new System.Drawing.Size(22, 20);
             this.rotateCcwToolstripButton.Text = "Rotate counter clockwise (Control + ,)";
             this.rotateCcwToolstripButton.Click += new System.EventHandler(this.RotateCcwToolstripButtonClick);
+            // 
+            // btnResize
+            // 
+            this.btnResize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnResize.Image = ((System.Drawing.Image)(resources.GetObject("btnResize.Image")));
+            this.btnResize.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnResize.Name = "btnResize";
+            this.btnResize.Size = new System.Drawing.Size(22, 20);
+            this.btnResize.Text = "Resize";
+            this.btnResize.Click += new System.EventHandler(this.btnResize_Click);
             // 
             // menuStrip1
             // 
@@ -1740,5 +1752,6 @@ namespace Greenshot {
         private System.Windows.Forms.ToolStripButton btnSave;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnSpeechBubble;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnStepLabel;
+        private System.Windows.Forms.ToolStripButton btnResize;
 	}
 }

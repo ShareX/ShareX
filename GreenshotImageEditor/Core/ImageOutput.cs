@@ -467,7 +467,8 @@ namespace GreenshotPlugin.Core
                     }
                     catch (ExternalException)
                     {
-                        MessageBox.Show(Language.GetFormattedString("error_nowriteaccess", saveImageFileDialog.FileName).Replace(@"\\", @"\"), Language.GetString("error"));
+                        MessageBox.Show(string.Format("Cannot save file to {0}.\r\nPlease check write accessibility of the selected storage location.",
+                            saveImageFileDialog.FileName).Replace(@"\\", @"\"), "Error");
                     }
                 }
             }

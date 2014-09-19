@@ -252,12 +252,12 @@
     <Compile Include="Forms\ImageEditorForm.Designer.cs">
       <DependentUpon>ImageEditorForm.cs</DependentUpon>
     </Compile>
-    <None Include="Forms\ResizeSettingsForm.cs">
+    <Compile Include="Forms\ResizeSettingsForm.cs">
       <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\ResizeSettingsForm.Designer.cs">
+    </Compile>
+    <Compile Include="Forms\ResizeSettingsForm.Designer.cs">
       <DependentUpon>ResizeSettingsForm.cs</DependentUpon>
-    </None>
+    </Compile>
     <None Include="Forms\TornEdgeSettingsForm.cs">
       <SubType>Form</SubType>
     </None>
