@@ -506,14 +506,14 @@ namespace Greenshot.Drawing
             // Pull "up"
             if (pull)
             {
-                item = new ToolStripMenuItem(Language.GetString(LangKey.editor_uptotop));
+                item = new ToolStripMenuItem("Up to top");
                 item.Click += delegate
                 {
                     surface.Elements.PullElementsToTop(this);
                     surface.Elements.Invalidate();
                 };
                 menu.Items.Add(item);
-                item = new ToolStripMenuItem(Language.GetString(LangKey.editor_uponelevel));
+                item = new ToolStripMenuItem("Up one level");
                 item.Click += delegate
                 {
                     surface.Elements.PullElementsUp(this);
@@ -524,14 +524,14 @@ namespace Greenshot.Drawing
             // Push "down"
             if (push)
             {
-                item = new ToolStripMenuItem(Language.GetString(LangKey.editor_downtobottom));
+                item = new ToolStripMenuItem("Down to bottom");
                 item.Click += delegate
                 {
                     surface.Elements.PushElementsToBottom(this);
                     surface.Elements.Invalidate();
                 };
                 menu.Items.Add(item);
-                item = new ToolStripMenuItem(Language.GetString(LangKey.editor_downonelevel));
+                item = new ToolStripMenuItem("Down one level");
                 item.Click += delegate
                 {
                     surface.Elements.PushElementsDown(this);
@@ -541,7 +541,7 @@ namespace Greenshot.Drawing
             }
 
             // Duplicate
-            item = new ToolStripMenuItem(Language.GetString(LangKey.editor_duplicate));
+            item = new ToolStripMenuItem("Duplicate selected element");
             item.Click += delegate
             {
                 DrawableContainerList dcs = this.Clone();
@@ -554,7 +554,7 @@ namespace Greenshot.Drawing
             menu.Items.Add(item);
 
             // Copy
-            item = new ToolStripMenuItem(Language.GetString(LangKey.editor_copytoclipboard));
+            item = new ToolStripMenuItem("Copy");
             item.Image = ((Image)(editorFormResources.GetObject("copyToolStripMenuItem.Image")));
             item.Click += delegate
             {
@@ -563,7 +563,7 @@ namespace Greenshot.Drawing
             menu.Items.Add(item);
 
             // Cut
-            item = new ToolStripMenuItem(Language.GetString(LangKey.editor_cuttoclipboard));
+            item = new ToolStripMenuItem("Cut");
             item.Image = ((Image)(editorFormResources.GetObject("btnCut.Image")));
             item.Click += delegate
             {
@@ -582,7 +582,7 @@ namespace Greenshot.Drawing
             menu.Items.Add(item);
 
             // Delete
-            item = new ToolStripMenuItem(Language.GetString(LangKey.editor_deleteelement));
+            item = new ToolStripMenuItem("Delete");
             item.Image = ((Image)(editorFormResources.GetObject("removeObjectToolStripMenuItem.Image")));
             item.Click += delegate
             {
@@ -611,7 +611,7 @@ namespace Greenshot.Drawing
             }
             if (canReset)
             {
-                item = new ToolStripMenuItem(Language.GetString(LangKey.editor_resetsize));
+                item = new ToolStripMenuItem("Reset size");
                 //item.Image = ((System.Drawing.Image)(editorFormResources.GetObject("removeObjectToolStripMenuItem.Image")));
                 item.Click += delegate
                 {

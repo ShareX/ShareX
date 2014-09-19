@@ -321,7 +321,6 @@
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <PropertyGroup>
     <PreBuildEvent>

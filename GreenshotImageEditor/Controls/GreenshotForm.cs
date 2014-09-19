@@ -105,30 +105,6 @@ namespace GreenshotPlugin.Controls
             {
                 designTimeControls = new Dictionary<string, Control>();
                 designTimeToolStripItems = new Dictionary<string, ToolStripItem>();
-                try
-                {
-                    ITypeResolutionService typeResService = GetService(typeof(ITypeResolutionService)) as ITypeResolutionService;
-
-                    // Add a hard-path if you are using SharpDevelop
-                    // Language.AddLanguageFilePath(@"C:\Greenshot\Greenshot\Languages");
-
-                    // this "type"
-                    Assembly currentAssembly = GetType().Assembly;
-                    string assemblyPath = typeResService.GetPathOfAssembly(currentAssembly.GetName());
-                    string assemblyDirectory = Path.GetDirectoryName(assemblyPath);
-                    if (!Language.AddLanguageFilePath(Path.Combine(assemblyDirectory, @"..\..\Greenshot\Languages\")))
-                    {
-                        Language.AddLanguageFilePath(Path.Combine(assemblyDirectory, @"..\..\..\Greenshot\Languages\"));
-                    }
-                    if (!Language.AddLanguageFilePath(Path.Combine(assemblyDirectory, @"..\..\Languages\")))
-                    {
-                        Language.AddLanguageFilePath(Path.Combine(assemblyDirectory, @"..\..\..\Languages\"));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
         }
 

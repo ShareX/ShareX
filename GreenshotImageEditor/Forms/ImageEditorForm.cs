@@ -195,7 +195,8 @@ namespace Greenshot
             obfuscateModeButton.DropDownItemClicked += FilterPresetDropDownItemClicked;
             highlightModeButton.DropDownItemClicked += FilterPresetDropDownItemClicked;
 
-            toolbarButtons = new GreenshotToolStripButton[] { btnCursor, btnRect, btnEllipse, btnText, btnLine, btnArrow, btnFreehand, btnHighlight, btnObfuscate, btnCrop };
+            toolbarButtons = new GreenshotToolStripButton[] { btnCursor, btnRect, btnEllipse, btnText, btnSpeechBubble, btnStepLabel, btnLine,
+                btnArrow, btnFreehand, btnHighlight, btnObfuscate, btnCrop };
             //toolbarDropDownButtons = new ToolStripDropDownButton[]{btnBlur, btnPixeliate, btnTextHighlighter, btnAreaHighlighter, btnMagnifier};
 
             // Workaround: for the MouseWheel event which doesn't get to the panel
@@ -349,6 +350,12 @@ namespace Greenshot
                 case DrawingModes.Text:
                     SetButtonChecked(btnText);
                     break;
+                case DrawingModes.SpeechBubble:
+                    SetButtonChecked(btnSpeechBubble);
+                    break;
+                case DrawingModes.StepLabel:
+                    SetButtonChecked(btnStepLabel);
+                    break;
                 case DrawingModes.Line:
                     SetButtonChecked(btnLine);
                     break;
@@ -421,6 +428,18 @@ namespace Greenshot
         private void BtnTextClick(object sender, EventArgs e)
         {
             surface.DrawingMode = DrawingModes.Text;
+            refreshFieldControls();
+        }
+
+        private void btnSpeechBubble_Click(object sender, EventArgs e)
+        {
+            surface.DrawingMode = DrawingModes.SpeechBubble;
+            refreshFieldControls();
+        }
+
+        private void btnStepLabel_Click(object sender, EventArgs e)
+        {
+            surface.DrawingMode = DrawingModes.StepLabel;
             refreshFieldControls();
         }
 
