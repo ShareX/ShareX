@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Drawing;
 using Greenshot.Plugin.Drawing;
 using System;
@@ -55,15 +54,6 @@ namespace Greenshot.Memento
                     drawableContainer.Dispose();
                     drawableContainer = null;
                 }
-            }
-        }
-
-        public LangKey ActionLanguageKey
-        {
-            get
-            {
-                //return LangKey.editor_deleteelement;
-                return LangKey.none;
             }
         }
 

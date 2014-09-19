@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Core;
 using Greenshot.Drawing.Fields;
 using Greenshot.Helpers;
@@ -635,42 +634,6 @@ namespace Greenshot.Drawing
             get
             {
                 return redoStack.Count > 0;
-            }
-        }
-
-        /// <summary>
-        /// Get the language key for the undo action
-        /// </summary>
-        public LangKey UndoActionLanguageKey
-        {
-            get
-            {
-                if (CanUndo)
-                {
-                    return undoStack.Peek().ActionLanguageKey;
-                }
-                else
-                {
-                    return LangKey.none;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Get the language key for redo action
-        /// </summary>
-        public LangKey RedoActionLanguageKey
-        {
-            get
-            {
-                if (CanRedo)
-                {
-                    return redoStack.Peek().ActionLanguageKey;
-                }
-                else
-                {
-                    return LangKey.none;
-                }
             }
         }
 

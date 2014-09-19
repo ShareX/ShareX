@@ -22,7 +22,6 @@
 using Greenshot.Drawing.Fields;
 using Greenshot.Drawing.Filters;
 using System;
-using System.Drawing;
 using System.Runtime.Serialization;
 
 namespace Greenshot.Drawing

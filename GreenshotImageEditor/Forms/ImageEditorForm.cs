@@ -275,9 +275,6 @@ namespace Greenshot
         {
             Invoke((MethodInvoker)delegate
             {
-                // Even update language when needed
-                ApplyLanguage();
-
                 // Fix title
                 if (surface != null && surface.CaptureDetails != null && surface.CaptureDetails.Title != null)
                 {
@@ -496,34 +493,9 @@ namespace Greenshot
             }
         }
 
-        private void AddRectangleToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnRectClick(sender, e);
-        }
-
-        private void DrawFreehandToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnFreehandClick(sender, e);
-        }
-
-        private void AddEllipseToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnEllipseClick(sender, e);
-        }
-
         private void AddTextBoxToolStripMenuItemClick(object sender, EventArgs e)
         {
             BtnTextClick(sender, e);
-        }
-
-        private void DrawLineToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnLineClick(sender, e);
-        }
-
-        private void DrawArrowToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnArrowClick(sender, e);
         }
 
         private void DrawHighlightToolStripMenuItemClick(object sender, EventArgs e)
@@ -852,30 +824,14 @@ namespace Greenshot
             bool canUndo = surface.CanUndo;
             btnUndo.Enabled = canUndo;
             undoToolStripMenuItem.Enabled = canUndo;
-            string undoAction = "";
-            if (canUndo)
-            {
-                if (surface.UndoActionLanguageKey != LangKey.none)
-                {
-                    undoAction = Language.GetString(surface.UndoActionLanguageKey);
-                }
-            }
-            string undoText = string.Format("Undo {0}", undoAction);
+            string undoText = "Undo";
             btnUndo.Text = undoText;
             undoToolStripMenuItem.Text = undoText;
 
             bool canRedo = surface.CanRedo;
             btnRedo.Enabled = canRedo;
             redoToolStripMenuItem.Enabled = canRedo;
-            string redoAction = "";
-            if (canRedo)
-            {
-                if (surface.RedoActionLanguageKey != LangKey.none)
-                {
-                    redoAction = Language.GetString(surface.RedoActionLanguageKey);
-                }
-            }
-            string redoText = string.Format("Redo {0}", redoAction);
+            string redoText = "Redo";
             btnRedo.Text = redoText;
             redoToolStripMenuItem.Text = redoText;
         }
@@ -1133,35 +1089,6 @@ namespace Greenshot
         private void ToolBarFocusableElementLostFocus(object sender, EventArgs e)
         {
             surface.KeysLocked = false;
-        }
-
-        private void SaveElementsToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Greenshot templates (*.gst)|*.gst";
-            saveFileDialog.FileName = FilenameHelper.GetFilenameWithoutExtensionFromPattern(coreConfiguration.OutputFileFilenamePattern, surface.CaptureDetails);
-            DialogResult dialogResult = saveFileDialog.ShowDialog();
-            if (dialogResult.Equals(DialogResult.OK))
-            {
-                using (Stream streamWrite = File.OpenWrite(saveFileDialog.FileName))
-                {
-                    surface.SaveElementsToStream(streamWrite);
-                }
-            }
-        }
-
-        private void LoadElementsToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Greenshot templates (*.gst)|*.gst";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                using (Stream streamRead = File.OpenRead(openFileDialog.FileName))
-                {
-                    surface.LoadElementsFromStream(streamRead);
-                }
-                surface.Refresh();
-            }
         }
 
         private void DestinationToolStripMenuItemClick(object sender, EventArgs e)

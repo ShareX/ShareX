@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\EditorConfiguration.cs" />
-    <Compile Include="Configuration\LanguageKeys.cs" />
     <Compile Include="Controls\AnimatingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,7 +171,6 @@
     <Compile Include="Core\GreenshotResources.cs" />
     <Compile Include="Core\ImageHelper.cs" />
     <Compile Include="Core\ImageOutput.cs" />
-    <Compile Include="Core\Language.cs" />
     <Compile Include="Core\Objects.cs" />
     <Compile Include="Core\QuantizerHelper.cs" />
     <Compile Include="Core\WindowCapture.cs" />

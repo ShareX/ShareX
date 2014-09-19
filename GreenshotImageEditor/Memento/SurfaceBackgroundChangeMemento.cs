@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Drawing;
 using System;
 using System.Drawing;
@@ -72,15 +71,6 @@ namespace Greenshot.Memento
         public bool Merge(IMemento otherMemento)
         {
             return false;
-        }
-
-        public LangKey ActionLanguageKey
-        {
-            get
-            {
-                //return LangKey.editor_crop;
-                return LangKey.none;
-            }
         }
 
         public IMemento Restore()

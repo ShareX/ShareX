@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using GreenshotPlugin.Core;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -64,7 +63,7 @@ namespace GreenshotPlugin.Controls
             if (currentValue != null)
             {
                 selectedEnum = currentValue;
-                SelectedItem = Language.Translate(currentValue);
+                SelectedItem = currentValue;
             }
         }
 
@@ -83,7 +82,7 @@ namespace GreenshotPlugin.Controls
             string enumTypeName = enumType.Name;
             foreach (var enumValue in availableValues)
             {
-                Items.Add(Language.Translate((Enum)enumValue));
+                Items.Add(enumValue);
             }
         }
 
@@ -105,18 +104,6 @@ namespace GreenshotPlugin.Controls
             {
             }
 
-            foreach (Enum enumValue in availableValues)
-            {
-                string enumKey = enumTypeName + "." + enumValue.ToString();
-                if (Language.hasKey(enumKey))
-                {
-                    string translation = Language.GetString(enumTypeName + "." + enumValue.ToString());
-                    if (translation.Equals(selectedValue))
-                    {
-                        returnValue = enumValue;
-                    }
-                }
-            }
             selectedEnum = (Enum)returnValue;
         }
 
