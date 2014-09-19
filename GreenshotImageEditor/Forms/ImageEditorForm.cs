@@ -971,6 +971,15 @@ namespace Greenshot
         /// </summary>
         private void refreshEditorControls()
         {
+            int stepLabels = surface.CountStepLabels(null);
+            if (stepLabels <= 20)
+            {
+                //this.btnStepLabel.Image = ((System.Drawing.Image)(resources.GetObject(string.Format("btnStepLabel{0:00}.Image", stepLabels))));
+            }
+            else
+            {
+                //this.btnStepLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnStepLabel20+.Image")));
+            }
             FieldAggregator props = surface.FieldAggregator;
             // if a confirmable element is selected, we must disable most of the controls
             // since we demand confirmation or cancel for confirmable element
