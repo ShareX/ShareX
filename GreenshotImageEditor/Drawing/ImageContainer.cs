@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -34,7 +34,7 @@ namespace Greenshot.Drawing
     /// <summary>
     /// Description of BitmapContainer.
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public class ImageContainer : DrawableContainer, IImageContainer
     {
         private Image image;
@@ -44,14 +44,14 @@ namespace Greenshot.Drawing
         /// Do not serialize, as the shadow is recreated from the original bitmap if it's not available
         /// </summary>
         [NonSerialized]
-        private Image shadowBitmap = null;
+        private Image _shadowBitmap;
 
         /// <summary>
         /// This is the offset for the shadow version of the bitmap
         /// Do not serialize, as the offset is recreated
         /// </summary>
         [NonSerialized]
-        private Point shadowOffset = new Point(-1, -1);
+        private Point _shadowOffset = new Point(-1, -1);
 
         public ImageContainer(Surface parent, string filename)
             : this(parent)
@@ -62,8 +62,12 @@ namespace Greenshot.Drawing
         public ImageContainer(Surface parent)
             : base(parent)
         {
-            AddField(GetType(), FieldType.SHADOW, false);
             FieldChanged += BitmapContainer_OnFieldChanged;
+        }
+
+        protected override void InitializeFields()
+        {
+            AddField(GetType(), FieldType.SHADOW, false);
         }
 
         protected void BitmapContainer_OnFieldChanged(object sender, FieldChangedEventArgs e)
@@ -82,20 +86,20 @@ namespace Greenshot.Drawing
             bool shadow = GetFieldValueAsBool(FieldType.SHADOW);
             if (shadow)
             {
-                CheckShadow(shadow);
-                Width = shadowBitmap.Width;
-                Height = shadowBitmap.Height;
-                Left = Left - shadowOffset.X;
-                Top = Top - shadowOffset.Y;
+                CheckShadow(true);
+                Width = _shadowBitmap.Width;
+                Height = _shadowBitmap.Height;
+                Left = Left - _shadowOffset.X;
+                Top = Top - _shadowOffset.Y;
             }
             else
             {
                 Width = image.Width;
                 Height = image.Height;
-                if (shadowBitmap != null)
+                if (_shadowBitmap != null)
                 {
-                    Left = Left + shadowOffset.X;
-                    Top = Top + shadowOffset.Y;
+                    Left = Left + _shadowOffset.X;
+                    Top = Top + _shadowOffset.Y;
                 }
             }
         }
@@ -105,7 +109,8 @@ namespace Greenshot.Drawing
             set
             {
                 // Remove all current bitmaps
-                disposeImages();
+                DisposeImage();
+                DisposeShadow();
                 image = ImageHelper.Clone(value);
                 bool shadow = GetFieldValueAsBool(FieldType.SHADOW);
                 CheckShadow(shadow);
@@ -116,10 +121,10 @@ namespace Greenshot.Drawing
                 }
                 else
                 {
-                    Width = shadowBitmap.Width;
-                    Height = shadowBitmap.Height;
-                    Left = Left - shadowOffset.X;
-                    Top = Top - shadowOffset.Y;
+                    Width = _shadowBitmap.Width;
+                    Height = _shadowBitmap.Height;
+                    Left = Left - _shadowOffset.X;
+                    Top = Top - _shadowOffset.Y;
                 }
             }
             get
@@ -138,25 +143,51 @@ namespace Greenshot.Drawing
         {
             if (disposing)
             {
-                disposeImages();
+                DisposeImage();
+                DisposeShadow();
             }
-            image = null;
-            shadowBitmap = null;
             base.Dispose(disposing);
         }
 
-        private void disposeImages()
+        private void DisposeImage()
         {
             if (image != null)
             {
                 image.Dispose();
             }
-            if (shadowBitmap != null)
-            {
-                shadowBitmap.Dispose();
-            }
             image = null;
-            shadowBitmap = null;
+        }
+
+        private void DisposeShadow()
+        {
+            if (_shadowBitmap != null)
+            {
+                _shadowBitmap.Dispose();
+            }
+            _shadowBitmap = null;
+        }
+
+        /// <summary>
+        /// Make sure the content is also transformed.
+        /// </summary>
+        /// <param name="matrix"></param>
+        public override void Transform(Matrix matrix)
+        {
+            int rotateAngle = CalculateAngle(matrix);
+            // we currently assume only one transformation has been made.
+            if (rotateAngle != 0)
+            {
+                LOG.DebugFormat("Rotating element with {0} degrees.", rotateAngle);
+                DisposeShadow();
+                using (var tmpMatrix = new Matrix())
+                {
+                    using (Image tmpImage = image)
+                    {
+                        image = ImageHelper.ApplyEffect(image, new RotateEffect(rotateAngle), tmpMatrix);
+                    }
+                }
+            }
+            base.Transform(matrix);
         }
 
         /// <summary>
@@ -178,30 +209,17 @@ namespace Greenshot.Drawing
         }
 
         /// <summary>
-        /// Rotate the bitmap
-        /// </summary>
-        /// <param name="rotateFlipType"></param>
-        public override void Rotate(RotateFlipType rotateFlipType)
-        {
-            Image newImage = ImageHelper.RotateFlip((Bitmap)image, rotateFlipType);
-            if (newImage != null)
-            {
-                // Remove all current bitmaps, also the shadow (will be recreated)
-                disposeImages();
-                image = newImage;
-            }
-            base.Rotate(rotateFlipType);
-        }
-
-        /// <summary>
         /// This checks if a shadow is already generated
         /// </summary>
         /// <param name="shadow"></param>
         private void CheckShadow(bool shadow)
         {
-            if (shadow && shadowBitmap == null)
+            if (shadow && _shadowBitmap == null)
             {
-                shadowBitmap = ImageHelper.ApplyEffect(image, new DropShadowEffect(), out shadowOffset);
+                using (var matrix = new Matrix())
+                {
+                    _shadowBitmap = ImageHelper.ApplyEffect(image, new DropShadowEffect(), matrix);
+                }
             }
         }
 
@@ -222,8 +240,8 @@ namespace Greenshot.Drawing
 
                 if (shadow)
                 {
-                    CheckShadow(shadow);
-                    graphics.DrawImage(shadowBitmap, Bounds);
+                    CheckShadow(true);
+                    graphics.DrawImage(_shadowBitmap, Bounds);
                 }
                 else
                 {
@@ -232,7 +250,7 @@ namespace Greenshot.Drawing
             }
         }
 
-        public override bool hasDefaultSize
+        public override bool HasDefaultSize
         {
             get
             {

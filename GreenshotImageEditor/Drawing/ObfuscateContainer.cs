@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -29,23 +29,28 @@ namespace Greenshot.Drawing
     /// <summary>
     /// Description of ObfuscateContainer.
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public class ObfuscateContainer : FilterContainer
     {
         public ObfuscateContainer(Surface parent)
             : base(parent)
         {
-            AddField(GetType(), FieldType.PREPARED_FILTER_OBFUSCATE, PreparedFilter.PIXELIZE);
-            init();
+            Init();
         }
 
-        [OnDeserialized()]
+        protected override void InitializeFields()
+        {
+            base.InitializeFields();
+            AddField(GetType(), FieldType.PREPARED_FILTER_OBFUSCATE, PreparedFilter.PIXELIZE);
+        }
+
+        [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
-            init();
+            Init();
         }
 
-        private void init()
+        private void Init()
         {
             FieldChanged += ObfuscateContainer_OnFieldChanged;
             ConfigurePreparedFilters();

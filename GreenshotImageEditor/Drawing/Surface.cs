@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -48,6 +49,24 @@ namespace Greenshot.Drawing
     {
         public static int Count = 0;
         private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
+
+        // Property to identify the Surface ID
+        private Guid _uniqueId = Guid.NewGuid();
+
+        /// <summary>
+        /// The GUID of the surface
+        /// </summary>
+        public Guid ID
+        {
+            get
+            {
+                return _uniqueId;
+            }
+            set
+            {
+                _uniqueId = value;
+            }
+        }
 
         /// <summary>
         /// Event handlers (do not serialize!)
@@ -183,7 +202,7 @@ namespace Greenshot.Drawing
         /// the element we want to draw with (not yet drawn), do not serialize
         /// </summary>
         [NonSerialized]
-        private IDrawableContainer undrawnElement = null;
+        private IDrawableContainer _undrawnElement = null;
 
         /// <summary>
         /// the cropcontainer, when cropping this is set, do not serialize
@@ -205,6 +224,43 @@ namespace Greenshot.Drawing
         /// </summary>
         [NonSerialized]
         private Bitmap buffer = null;
+
+        /// <summary>
+        /// all stepLabels for the surface, needed with serialization
+        /// </summary>
+        private List<StepLabelContainer> _stepLabels = new List<StepLabelContainer>();
+
+        public void AddStepLabel(StepLabelContainer stepLabel)
+        {
+            _stepLabels.Add(stepLabel);
+        }
+
+        public void RemoveStepLabel(StepLabelContainer stepLabel)
+        {
+            _stepLabels.Remove(stepLabel);
+        }
+
+        /// <summary>
+        /// Count all the VISIBLE steplabels in the surface, up to the supplied one
+        /// </summary>
+        /// <param name="stopAtContainer">can be null, if not the counting stops here</param>
+        /// <returns>number of steplabels before the supplied container</returns>
+        public int CountStepLabels(IDrawableContainer stopAtContainer)
+        {
+            int number = 1;
+            foreach (var possibleThis in _stepLabels)
+            {
+                if (possibleThis == stopAtContainer)
+                {
+                    break;
+                }
+                if (IsOnSurface(possibleThis))
+                {
+                    number++;
+                }
+            }
+            return number;
+        }
 
         /// <summary>
         /// all elements on the surface, needed with serialization
@@ -518,10 +574,10 @@ namespace Greenshot.Drawing
                 {
                     container.Dispose();
                 }
-                if (undrawnElement != null)
+                if (_undrawnElement != null)
                 {
-                    undrawnElement.Dispose();
-                    undrawnElement = null;
+                    _undrawnElement.Dispose();
+                    _undrawnElement = null;
                 }
                 if (cropContainer != null)
                 {
@@ -681,14 +737,16 @@ namespace Greenshot.Drawing
             {
                 BinaryFormatter binaryRead = new BinaryFormatter();
                 DrawableContainerList loadedElements = (DrawableContainerList)binaryRead.Deserialize(streamRead);
-                if (loadedElements != null)
+                loadedElements.Parent = this;
+                // Make sure the steplabels are sorted accoring to their number
+                _stepLabels.Sort(delegate(StepLabelContainer p1, StepLabelContainer p2)
                 {
-                    loadedElements.Parent = this;
-                    DeselectAllElements();
-                    AddElements(loadedElements);
-                    SelectElements(loadedElements);
-                    FieldAggregator.BindElements(loadedElements);
-                }
+                    return p1.Number.CompareTo(p2.Number);
+                });
+                DeselectAllElements();
+                AddElements(loadedElements);
+                SelectElements(loadedElements);
+                FieldAggregator.BindElements(loadedElements);
             }
             catch (Exception e)
             {
@@ -703,50 +761,56 @@ namespace Greenshot.Drawing
         /// </summary>
         private void CreateUndrawnElement()
         {
-            if (undrawnElement != null)
+            if (_undrawnElement != null)
             {
-                FieldAggregator.UnbindElement(undrawnElement);
+                FieldAggregator.UnbindElement(_undrawnElement);
             }
             switch (DrawingMode)
             {
                 case DrawingModes.Rect:
-                    undrawnElement = new RectangleContainer(this);
+                    _undrawnElement = new RectangleContainer(this);
                     break;
                 case DrawingModes.Ellipse:
-                    undrawnElement = new EllipseContainer(this);
+                    _undrawnElement = new EllipseContainer(this);
                     break;
                 case DrawingModes.Text:
-                    undrawnElement = new TextContainer(this);
+                    _undrawnElement = new TextContainer(this);
+                    break;
+                case DrawingModes.SpeechBubble:
+                    _undrawnElement = new SpeechbubbleContainer(this);
+                    break;
+                case DrawingModes.StepLabel:
+                    _undrawnElement = new StepLabelContainer(this);
                     break;
                 case DrawingModes.Line:
-                    undrawnElement = new LineContainer(this);
+                    _undrawnElement = new LineContainer(this);
                     break;
                 case DrawingModes.Arrow:
-                    undrawnElement = new ArrowContainer(this);
+                    _undrawnElement = new ArrowContainer(this);
                     break;
                 case DrawingModes.Highlight:
-                    undrawnElement = new HighlightContainer(this);
+                    _undrawnElement = new HighlightContainer(this);
                     break;
                 case DrawingModes.Obfuscate:
-                    undrawnElement = new ObfuscateContainer(this);
+                    _undrawnElement = new ObfuscateContainer(this);
                     break;
                 case DrawingModes.Crop:
                     cropContainer = new CropContainer(this);
-                    undrawnElement = cropContainer;
+                    _undrawnElement = cropContainer;
                     break;
                 case DrawingModes.Bitmap:
-                    undrawnElement = new ImageContainer(this);
+                    _undrawnElement = new ImageContainer(this);
                     break;
                 case DrawingModes.Path:
-                    undrawnElement = new FreehandContainer(this);
+                    _undrawnElement = new FreehandContainer(this);
                     break;
                 case DrawingModes.None:
-                    undrawnElement = null;
+                    _undrawnElement = null;
                     break;
             }
-            if (undrawnElement != null)
+            if (_undrawnElement != null)
             {
-                FieldAggregator.BindElement(undrawnElement);
+                FieldAggregator.BindElement(_undrawnElement);
             }
         }
 
@@ -909,15 +973,15 @@ namespace Greenshot.Drawing
                 // Maybe a bit obscure, but the following line creates a drop container
                 // It's available as "undrawnElement"
                 DrawingMode = DrawingModes.Crop;
-                undrawnElement.Left = cropRectangle.X;
-                undrawnElement.Top = cropRectangle.Y;
-                undrawnElement.Width = cropRectangle.Width;
-                undrawnElement.Height = cropRectangle.Height;
-                undrawnElement.Status = EditStatus.UNDRAWN;
-                AddElement(undrawnElement);
-                SelectElement(undrawnElement);
+                _undrawnElement.Left = cropRectangle.X;
+                _undrawnElement.Top = cropRectangle.Y;
+                _undrawnElement.Width = cropRectangle.Width;
+                _undrawnElement.Height = cropRectangle.Height;
+                _undrawnElement.Status = EditStatus.UNDRAWN;
+                AddElement(_undrawnElement);
+                SelectElement(_undrawnElement);
                 drawingElement = null;
-                undrawnElement = null;
+                _undrawnElement = null;
                 return true;
             }
             return false;
@@ -930,11 +994,11 @@ namespace Greenshot.Drawing
         public void Clear(Color newColor)
         {
             //create a blank bitmap the same size as original
-            Bitmap newBitmap = ImageHelper.CreateEmptyLike((Bitmap)Image, Color.Empty);
+            Bitmap newBitmap = ImageHelper.CreateEmptyLike(Image, Color.Empty);
             if (newBitmap != null)
             {
                 // Make undoable
-                MakeUndoable(new SurfaceBackgroundChangeMemento(this, Point.Empty), false);
+                MakeUndoable(new SurfaceBackgroundChangeMemento(this, null), false);
                 SetImage(newBitmap, false);
                 Invalidate();
             }
@@ -952,20 +1016,25 @@ namespace Greenshot.Drawing
             try
             {
                 Rectangle imageRectangle = new Rectangle(Point.Empty, Image.Size);
-                Point offset;
-                Image newImage = ImageHelper.ApplyEffect(Image, effect, out offset);
+                Matrix matrix = new Matrix();
+                Image newImage = ImageHelper.ApplyEffect(Image, effect, matrix);
                 if (newImage != null)
                 {
                     // Make sure the elements move according to the offset the effect made the bitmap move
-                    elements.MoveBy(offset.X, offset.Y);
+                    elements.Transform(matrix);
                     // Make undoable
-                    MakeUndoable(new SurfaceBackgroundChangeMemento(this, offset), false);
+                    MakeUndoable(new SurfaceBackgroundChangeMemento(this, matrix), false);
                     SetImage(newImage, false);
                     Invalidate();
                     if (surfaceSizeChanged != null && !imageRectangle.Equals(new Rectangle(Point.Empty, newImage.Size)))
                     {
                         surfaceSizeChanged(this, null);
                     }
+                }
+                else
+                {
+                    // clean up matrix, as it hasn't been used in the undo stack.
+                    matrix.Dispose();
                 }
             }
             finally
@@ -1049,13 +1118,14 @@ namespace Greenshot.Drawing
                     throw;
                 }
 
-                Point offset = new Point(-cropRectangle.Left, -cropRectangle.Top);
+                Matrix matrix = new Matrix();
+                matrix.Translate(-cropRectangle.Left, -cropRectangle.Top, MatrixOrder.Append);
                 // Make undoable
-                MakeUndoable(new SurfaceBackgroundChangeMemento(this, offset), false);
+                MakeUndoable(new SurfaceBackgroundChangeMemento(this, matrix), false);
 
                 // Do not dispose otherwise we can't undo the image!
                 SetImage(tmpImage, false);
-                elements.MoveBy(offset.X, offset.Y);
+                elements.Transform(matrix);
                 if (surfaceSizeChanged != null && !imageRectangle.Equals(new Rectangle(Point.Empty, tmpImage.Size)))
                 {
                     surfaceSizeChanged(this, null);
@@ -1071,11 +1141,14 @@ namespace Greenshot.Drawing
         /// This is called from the SurfaceBackgroundChangeMemento.
         /// </summary>
         /// <param name="previous"></param>
-        /// <param name="offset"></param>
-        public void UndoBackgroundChange(Image previous, Point offset)
+        /// <param name="matrix"></param>
+        public void UndoBackgroundChange(Image previous, Matrix matrix)
         {
             SetImage(previous, false);
-            elements.MoveBy(offset.X, offset.Y);
+            if (matrix != null)
+            {
+                elements.Transform(matrix);
+            }
             if (surfaceSizeChanged != null)
             {
                 surfaceSizeChanged(this, null);
@@ -1120,7 +1193,7 @@ namespace Greenshot.Drawing
             mouseDown = true;
             isSurfaceMoveMadeUndoable = false;
 
-            if (cropContainer != null && ((undrawnElement == null) || (undrawnElement != null && DrawingMode != DrawingModes.Crop)))
+            if (cropContainer != null && ((_undrawnElement == null) || (_undrawnElement != null && DrawingMode != DrawingModes.Crop)))
             {
                 RemoveElement(cropContainer, false);
                 cropContainer = null;
@@ -1129,17 +1202,17 @@ namespace Greenshot.Drawing
 
             if (drawingElement == null && DrawingMode != DrawingModes.None)
             {
-                if (undrawnElement == null)
+                if (_undrawnElement == null)
                 {
                     DeselectAllElements();
-                    if (undrawnElement == null)
+                    if (_undrawnElement == null)
                     {
                         CreateUndrawnElement();
                     }
                 }
-                drawingElement = undrawnElement;
+                drawingElement = _undrawnElement;
                 drawingElement.Status = EditStatus.DRAWING;
-                undrawnElement = null;
+                _undrawnElement = null;
                 // if a new element has been drawn, set location and register it
                 if (drawingElement != null)
                 {
@@ -1363,7 +1436,7 @@ namespace Greenshot.Drawing
                 return;
             }
 
-            if (elements.hasIntersectingFilters(clipRectangle))
+            if (elements.HasIntersectingFilters(clipRectangle))
             {
                 if (buffer != null)
                 {
@@ -1883,6 +1956,11 @@ namespace Greenshot.Drawing
         public void element_FieldChanged(object sender, FieldChangedEventArgs e)
         {
             selectedElements.HandleFieldChangedEvent(sender, e);
+        }
+
+        public bool IsOnSurface(IDrawableContainer container)
+        {
+            return elements.Contains(container);
         }
     }
 }

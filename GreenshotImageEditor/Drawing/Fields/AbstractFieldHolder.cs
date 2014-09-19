@@ -32,7 +32,7 @@ namespace Greenshot.Drawing.Fields
     /// <summary>
     /// Basic IFieldHolder implementation, providing access to a set of fields
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public abstract class AbstractFieldHolder : IFieldHolder
     {
         private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
@@ -58,7 +58,7 @@ namespace Greenshot.Drawing.Fields
         {
         }
 
-        [OnDeserialized()]
+        [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
             fieldsByType = new Dictionary<FieldType, Field>();

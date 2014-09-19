@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -37,6 +37,10 @@ namespace Greenshot.Drawing
         public EllipseContainer(Surface parent)
             : base(parent)
         {
+        }
+
+        protected override void InitializeFields()
+        {
             AddField(GetType(), FieldType.LINE_THICKNESS, 2);
             AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
             AddField(GetType(), FieldType.FILL_COLOR, Color.Transparent);
@@ -54,6 +58,18 @@ namespace Greenshot.Drawing
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);
             bool shadow = GetFieldValueAsBool(FieldType.SHADOW);
+            Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
+            DrawEllipse(rect, graphics, renderMode, lineThickness, lineColor, fillColor, shadow);
+        }
+
+        /// <summary>
+        /// This allows another container to draw an ellipse
+        /// </summary>
+        /// <param name="caller"></param>
+        /// <param name="graphics"></param>
+        /// <param name="renderMode"></param>
+        public static void DrawEllipse(Rectangle rect, Graphics graphics, RenderMode renderMode, int lineThickness, Color lineColor, Color fillColor, bool shadow)
+        {
             bool lineVisible = (lineThickness > 0 && Colors.IsVisible(lineColor));
             // draw shadow before anything else
             if (shadow && (lineVisible || Colors.IsVisible(fillColor)))
@@ -67,7 +83,7 @@ namespace Greenshot.Drawing
                     using (Pen shadowPen = new Pen(Color.FromArgb(alpha, 100, 100, 100)))
                     {
                         shadowPen.Width = lineVisible ? lineThickness : 1;
-                        Rectangle shadowRect = GuiRectangle.GetGuiRectangle(Left + currentStep, Top + currentStep, Width, Height);
+                        Rectangle shadowRect = GuiRectangle.GetGuiRectangle(rect.Left + currentStep, rect.Top + currentStep, rect.Width, rect.Height);
                         graphics.DrawEllipse(shadowPen, shadowRect);
                         currentStep++;
                         alpha = alpha - basealpha / steps;
@@ -75,7 +91,6 @@ namespace Greenshot.Drawing
                 }
             }
             //draw the original shape
-            Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             if (Colors.IsVisible(fillColor))
             {
                 using (Brush brush = new SolidBrush(fillColor))
@@ -94,22 +109,38 @@ namespace Greenshot.Drawing
 
         public override bool Contains(int x, int y)
         {
-            double xDistanceFromCenter = x - (Left + Width / 2);
-            double yDistanceFromCenter = y - (Top + Height / 2);
+            return EllipseContains(this, x, y);
+        }
+
+        /// <summary>
+        /// Allow the code to be used externally
+        /// </summary>
+        /// <param name="caller"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public static bool EllipseContains(DrawableContainer caller, int x, int y)
+        {
+            double xDistanceFromCenter = x - (caller.Left + caller.Width / 2);
+            double yDistanceFromCenter = y - (caller.Top + caller.Height / 2);
             // ellipse: x^2/a^2 + y^2/b^2 = 1
-            return Math.Pow(xDistanceFromCenter, 2) / Math.Pow(Width / 2, 2) + Math.Pow(yDistanceFromCenter, 2) / Math.Pow(Height / 2, 2) < 1;
+            return Math.Pow(xDistanceFromCenter, 2) / Math.Pow(caller.Width / 2, 2) + Math.Pow(yDistanceFromCenter, 2) / Math.Pow(caller.Height / 2, 2) < 1;
         }
 
         public override bool ClickableAt(int x, int y)
         {
-            Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             int lineThickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS) + 10;
             Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);
+            Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
+            return EllipseClickableAt(rect, lineThickness, fillColor, x, y);
+        }
 
+        public static bool EllipseClickableAt(Rectangle rect, int lineThickness, Color fillColor, int x, int y)
+        {
             // If we clicked inside the rectangle and it's visible we are clickable at.
             if (!Color.Transparent.Equals(fillColor))
             {
-                if (Contains(x, y))
+                if (rect.Contains(x, y))
                 {
                     return true;
                 }
@@ -127,10 +158,7 @@ namespace Greenshot.Drawing
                     }
                 }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

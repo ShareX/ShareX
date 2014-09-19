@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -32,7 +32,7 @@ namespace Greenshot.Drawing
     /// <summary>
     /// Description of CursorContainer.
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public class CursorContainer : DrawableContainer, ICursorContainer
     {
         protected Cursor cursor;
@@ -87,26 +87,28 @@ namespace Greenshot.Drawing
 
         public void Load(string filename)
         {
-            if (File.Exists(filename))
+            if (!File.Exists(filename))
             {
-                using (Cursor fileCursor = new Cursor(filename))
-                {
-                    Cursor = fileCursor;
-                    LOG.Debug("Loaded file: " + filename + " with resolution: " + Height + "," + Width);
-                }
+                return;
+            }
+            using (Cursor fileCursor = new Cursor(filename))
+            {
+                Cursor = fileCursor;
+                LOG.Debug("Loaded file: " + filename + " with resolution: " + Height + "," + Width);
             }
         }
 
         public override void Draw(Graphics graphics, RenderMode rm)
         {
-            if (cursor != null)
+            if (cursor == null)
             {
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-                graphics.CompositingQuality = CompositingQuality.Default;
-                graphics.PixelOffsetMode = PixelOffsetMode.None;
-                cursor.DrawStretched(graphics, Bounds);
+                return;
             }
+            graphics.SmoothingMode = SmoothingMode.HighQuality;
+            graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            graphics.CompositingQuality = CompositingQuality.Default;
+            graphics.PixelOffsetMode = PixelOffsetMode.None;
+            cursor.DrawStretched(graphics, Bounds);
         }
 
         public override Size DefaultSize

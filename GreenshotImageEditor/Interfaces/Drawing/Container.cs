@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -22,6 +22,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
@@ -109,6 +110,8 @@ namespace Greenshot.Plugin.Drawing
 
         void MoveBy(int x, int y);
 
+        void Transform(Matrix matrix);
+
         bool HandleMouseDown(int x, int y);
 
         void HandleMouseUp(int x, int y);
@@ -118,6 +121,11 @@ namespace Greenshot.Plugin.Drawing
         bool InitContent();
 
         void MakeBoundsChangeUndoable(bool allowMerge);
+
+        EditStatus DefaultEditMode
+        {
+            get;
+        }
     }
 
     public interface ITextContainer : IDrawableContainer
