@@ -226,6 +226,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\LOG.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UnmanagedHelpers\DWM.cs" />
     <Compile Include="UnmanagedHelpers\Enumerations.cs" />
     <Compile Include="UnmanagedHelpers\GDI32.cs" />
@@ -237,6 +242,10 @@
     <Compile Include="UnmanagedHelpers\User32.cs" />
     <Compile Include="UnmanagedHelpers\Win32Errors.cs" />
     <Compile Include="UnmanagedHelpers\WinMM.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Forms\DropShadowSettingsForm.cs">
       <SubType>Form</SubType>
     </None>
@@ -317,6 +326,69 @@
     <Compile Include="Forms\ColorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-20-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-08.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <PropertyGroup>

@@ -27,6 +27,7 @@ using Greenshot.Drawing.Fields.Binding;
 using Greenshot.Helpers;
 using Greenshot.IniFile;
 using Greenshot.Plugin;
+using Greenshot.Properties;
 using GreenshotPlugin.Controls;
 using GreenshotPlugin.Core;
 using System;
@@ -972,14 +973,9 @@ namespace Greenshot
         private void refreshEditorControls()
         {
             int stepLabels = surface.CountStepLabels(null);
-            if (stepLabels <= 20)
-            {
-                //this.btnStepLabel.Image = ((System.Drawing.Image)(resources.GetObject(string.Format("btnStepLabel{0:00}.Image", stepLabels))));
-            }
-            else
-            {
-                //this.btnStepLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnStepLabel20+.Image")));
-            }
+            string imageName = stepLabels <= 20 ? string.Format("notification_counter_{0:00}", stepLabels) : "notification_counter_20_plus";
+            btnStepLabel.Image = (Image)Resources.ResourceManager.GetObject(imageName);
+
             FieldAggregator props = surface.FieldAggregator;
             // if a confirmable element is selected, we must disable most of the controls
             // since we demand confirmation or cancel for confirmable element

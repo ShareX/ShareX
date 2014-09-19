@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Core;
 using Greenshot.Drawing.Fields;
 using Greenshot.Helpers;

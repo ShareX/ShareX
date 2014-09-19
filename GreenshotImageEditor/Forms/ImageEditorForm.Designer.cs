@@ -176,7 +176,7 @@ namespace Greenshot {
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(756, 434);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(748, 434);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // toolStripContainer1.LeftToolStripPanel
@@ -205,7 +205,7 @@ namespace Greenshot {
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 434F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 434);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(748, 434);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // panel1
@@ -216,7 +216,7 @@ namespace Greenshot {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 428);
+            this.panel1.Size = new System.Drawing.Size(742, 428);
             this.panel1.TabIndex = 2;
             // 
             // toolStrip2
@@ -247,7 +247,7 @@ namespace Greenshot {
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(29, 434);
+            this.toolStrip2.Size = new System.Drawing.Size(37, 434);
             this.toolStrip2.Stretch = true;
             this.toolStrip2.TabIndex = 0;
             // 
@@ -259,7 +259,7 @@ namespace Greenshot {
             this.btnCursor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCursor.LanguageKey = "editor_cursortool";
             this.btnCursor.Name = "btnCursor";
-            this.btnCursor.Size = new System.Drawing.Size(22, 20);
+            this.btnCursor.Size = new System.Drawing.Size(30, 20);
             this.btnCursor.Text = "Selection Tool (ESC)";
             this.btnCursor.Click += new System.EventHandler(this.BtnCursorClick);
             // 
@@ -354,7 +354,7 @@ namespace Greenshot {
             // btnStepLabel
             // 
             this.btnStepLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnStepLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnStepLabel.Image")));
+            this.btnStepLabel.Image = global::Greenshot.Properties.Resources.notification_counter_01;
             this.btnStepLabel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStepLabel.Name = "btnStepLabel";
             this.btnStepLabel.Size = new System.Drawing.Size(30, 20);
