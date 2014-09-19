@@ -984,7 +984,7 @@ namespace Greenshot
                 // disable most controls
                 if (!controlsDisabledDueToConfirmable)
                 {
-                    ToolStripItemEndisabler.Disable(menuStrip1);
+                    ToolStripItemEndisabler.Disable(tsddbMenu);
                     //ToolStripItemEndisabler.Disable(propertiesToolStrip);
                     ToolStripItemEndisabler.Disable(toolStrip2);
                     ToolStripItemEndisabler.Enable(closeToolStripMenuItem);
@@ -994,7 +994,7 @@ namespace Greenshot
             else if (controlsDisabledDueToConfirmable)
             {
                 // re-enable disabled controls, confirmable element has either been confirmed or cancelled
-                ToolStripItemEndisabler.Enable(menuStrip1);
+                ToolStripItemEndisabler.Enable(tsddbMenu);
                 //ToolStripItemEndisabler.Enable(propertiesToolStrip);
                 ToolStripItemEndisabler.Enable(toolStrip2);
                 controlsDisabledDueToConfirmable = false;
@@ -1024,12 +1024,6 @@ namespace Greenshot
         private void ArrowHeadsToolStripMenuItemClick(object sender, EventArgs e)
         {
             surface.FieldAggregator.GetField(FieldType.ARROWHEADS).Value = (ArrowContainer.ArrowHeadCombination)((ToolStripMenuItem)sender).Tag;
-        }
-
-        private void EditToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            updateClipboardSurfaceDependencies();
-            updateUndoRedoSurfaceDependencies();
         }
 
         private void FontPropertyChanged(object sender, EventArgs e)
@@ -1378,6 +1372,12 @@ namespace Greenshot
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
             OnImageUploadRequested();
+        }
+
+        private void tsddbMenu_Click(object sender, EventArgs e)
+        {
+            updateClipboardSurfaceDependencies();
+            updateUndoRedoSurfaceDependencies();
         }
     }
 }

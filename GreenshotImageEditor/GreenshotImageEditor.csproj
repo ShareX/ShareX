@@ -390,6 +390,36 @@
   <ItemGroup>
     <None Include="Icons\notification-counter-08.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\scissors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\clipboard-paste-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\slash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\minus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\gear.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <PropertyGroup>
     <PreBuildEvent>
