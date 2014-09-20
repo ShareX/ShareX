@@ -57,16 +57,16 @@
             this.tsddbWorkflows = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbTools = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -522,38 +522,6 @@
             this.tsmiScreenColorPicker.Text = "Screen color picker...";
             this.tsmiScreenColorPicker.Click += new System.EventHandler(this.tsmiCursorHelper_Click);
             // 
-            // tsmiRuler
-            // 
-            this.tsmiRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
-            this.tsmiRuler.Name = "tsmiRuler";
-            this.tsmiRuler.Size = new System.Drawing.Size(183, 22);
-            this.tsmiRuler.Text = "Ruler...";
-            this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
-            // 
-            // tsmiFTPClient
-            // 
-            this.tsmiFTPClient.Image = global::ShareX.Properties.Resources.application_network;
-            this.tsmiFTPClient.Name = "tsmiFTPClient";
-            this.tsmiFTPClient.Size = new System.Drawing.Size(183, 22);
-            this.tsmiFTPClient.Text = "FTP client...";
-            this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
-            // 
-            // tsmiHashCheck
-            // 
-            this.tsmiHashCheck.Image = global::ShareX.Properties.Resources.application_task;
-            this.tsmiHashCheck.Name = "tsmiHashCheck";
-            this.tsmiHashCheck.Size = new System.Drawing.Size(183, 22);
-            this.tsmiHashCheck.Text = "Hash check...";
-            this.tsmiHashCheck.Click += new System.EventHandler(this.tsmiHashCheck_Click);
-            // 
-            // tsmiIndexFolder
-            // 
-            this.tsmiIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
-            this.tsmiIndexFolder.Name = "tsmiIndexFolder";
-            this.tsmiIndexFolder.Size = new System.Drawing.Size(183, 22);
-            this.tsmiIndexFolder.Text = "Index folder...";
-            this.tsmiIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
-            // 
             // tsmiImageEditor
             // 
             this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
@@ -570,13 +538,13 @@
             this.tsmiImageEffects.Text = "Image effects...";
             this.tsmiImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
-            // tsmiMonitorTest
+            // tsmiHashCheck
             // 
-            this.tsmiMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
-            this.tsmiMonitorTest.Name = "tsmiMonitorTest";
-            this.tsmiMonitorTest.Size = new System.Drawing.Size(183, 22);
-            this.tsmiMonitorTest.Text = "Monitor test...";
-            this.tsmiMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
+            this.tsmiHashCheck.Image = global::ShareX.Properties.Resources.application_task;
+            this.tsmiHashCheck.Name = "tsmiHashCheck";
+            this.tsmiHashCheck.Size = new System.Drawing.Size(183, 22);
+            this.tsmiHashCheck.Text = "Hash check...";
+            this.tsmiHashCheck.Click += new System.EventHandler(this.tsmiHashCheck_Click);
             // 
             // tsmiDNSChanger
             // 
@@ -594,6 +562,30 @@
             this.tsmiQRCode.Text = "QR code...";
             this.tsmiQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
+            // tsmiIndexFolder
+            // 
+            this.tsmiIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
+            this.tsmiIndexFolder.Name = "tsmiIndexFolder";
+            this.tsmiIndexFolder.Size = new System.Drawing.Size(183, 22);
+            this.tsmiIndexFolder.Text = "Index folder...";
+            this.tsmiIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
+            // 
+            // tsmiRuler
+            // 
+            this.tsmiRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
+            this.tsmiRuler.Name = "tsmiRuler";
+            this.tsmiRuler.Size = new System.Drawing.Size(183, 22);
+            this.tsmiRuler.Text = "Ruler...";
+            this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
+            // 
+            // tsmiFTPClient
+            // 
+            this.tsmiFTPClient.Image = global::ShareX.Properties.Resources.application_network;
+            this.tsmiFTPClient.Name = "tsmiFTPClient";
+            this.tsmiFTPClient.Size = new System.Drawing.Size(183, 22);
+            this.tsmiFTPClient.Text = "FTP client...";
+            this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
+            // 
             // tsmiTweetMessage
             // 
             this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
@@ -601,6 +593,14 @@
             this.tsmiTweetMessage.Size = new System.Drawing.Size(183, 22);
             this.tsmiTweetMessage.Text = "Tweet message...";
             this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
+            // 
+            // tsmiMonitorTest
+            // 
+            this.tsmiMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
+            this.tsmiMonitorTest.Name = "tsmiMonitorTest";
+            this.tsmiMonitorTest.Size = new System.Drawing.Size(183, 22);
+            this.tsmiMonitorTest.Text = "Monitor test...";
+            this.tsmiMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
             // 
             // tssMain1
             // 
@@ -1666,16 +1666,16 @@
             // 
             this.tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayScreenColorPicker,
-            this.tsmiTrayRuler,
-            this.tsmiTrayFTPClient,
-            this.tsmiTrayHashCheck,
-            this.tsmiTrayIndexFolder,
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
-            this.tsmiTrayMonitorTest,
+            this.tsmiTrayHashCheck,
             this.tsmiTrayDNSChanger,
             this.tsmiTrayQRCode,
-            this.tsmiTrayTweetMessage});
+            this.tsmiTrayIndexFolder,
+            this.tsmiTrayRuler,
+            this.tsmiTrayFTPClient,
+            this.tsmiTrayTweetMessage,
+            this.tsmiTrayMonitorTest});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             this.tsmiTrayTools.Size = new System.Drawing.Size(188, 22);

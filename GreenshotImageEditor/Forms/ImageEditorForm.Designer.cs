@@ -50,7 +50,7 @@ namespace Greenshot {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new GreenshotPlugin.Controls.NonJumpingPanel();
-            this.toolStrip2 = new Greenshot.Controls.ToolStripEx();
+            this.tsTools = new Greenshot.Controls.ToolStripEx();
             this.btnCursor = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRect = new GreenshotPlugin.Controls.GreenshotToolStripButton();
@@ -75,7 +75,7 @@ namespace Greenshot {
             this.rotateCwToolstripButton = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.rotateCcwToolstripButton = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.btnResize = new System.Windows.Forms.ToolStripButton();
-            this.propertiesToolStrip = new Greenshot.Controls.ToolStripEx();
+            this.tsProperties = new Greenshot.Controls.ToolStripEx();
             this.btnSaveClose = new System.Windows.Forms.ToolStripButton();
             this.btnClose = new System.Windows.Forms.ToolStripButton();
             this.btnCancelTasks = new System.Windows.Forms.ToolStripButton();
@@ -164,8 +164,8 @@ namespace Greenshot {
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
-            this.propertiesToolStrip.SuspendLayout();
+            this.tsTools.SuspendLayout();
+            this.tsProperties.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -180,7 +180,7 @@ namespace Greenshot {
             // 
             // toolStripContainer1.LeftToolStripPanel
             // 
-            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.toolStrip2);
+            this.toolStripContainer1.LeftToolStripPanel.Controls.Add(this.tsTools);
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(785, 485);
@@ -189,7 +189,7 @@ namespace Greenshot {
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.propertiesToolStrip);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsProperties);
             // 
             // tableLayoutPanel1
             // 
@@ -217,12 +217,12 @@ namespace Greenshot {
             this.panel1.Size = new System.Drawing.Size(750, 452);
             this.panel1.TabIndex = 2;
             // 
-            // toolStrip2
+            // tsTools
             // 
-            this.toolStrip2.ClickThrough = true;
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTools.ClickThrough = true;
+            this.tsTools.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCursor,
             this.toolStripSeparator1,
             this.btnRect,
@@ -242,12 +242,12 @@ namespace Greenshot {
             this.rotateCwToolstripButton,
             this.rotateCcwToolstripButton,
             this.btnResize});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(29, 455);
-            this.toolStrip2.Stretch = true;
-            this.toolStrip2.TabIndex = 0;
+            this.tsTools.Location = new System.Drawing.Point(0, 0);
+            this.tsTools.Name = "tsTools";
+            this.tsTools.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.tsTools.Size = new System.Drawing.Size(29, 455);
+            this.tsTools.Stretch = true;
+            this.tsTools.TabIndex = 0;
             // 
             // btnCursor
             // 
@@ -491,12 +491,12 @@ namespace Greenshot {
             this.btnResize.Text = "Resize";
             this.btnResize.Click += new System.EventHandler(this.btnResize_Click);
             // 
-            // propertiesToolStrip
+            // tsProperties
             // 
-            this.propertiesToolStrip.ClickThrough = true;
-            this.propertiesToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.propertiesToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.propertiesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsProperties.ClickThrough = true;
+            this.tsProperties.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsProperties.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSaveClose,
             this.btnClose,
             this.btnCancelTasks,
@@ -544,13 +544,13 @@ namespace Greenshot {
             this.shadowButton,
             this.btnConfirm,
             this.btnCancel});
-            this.propertiesToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.propertiesToolStrip.MinimumSize = new System.Drawing.Size(0, 27);
-            this.propertiesToolStrip.Name = "propertiesToolStrip";
-            this.propertiesToolStrip.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.propertiesToolStrip.Size = new System.Drawing.Size(785, 30);
-            this.propertiesToolStrip.Stretch = true;
-            this.propertiesToolStrip.TabIndex = 0;
+            this.tsProperties.Location = new System.Drawing.Point(0, 0);
+            this.tsProperties.MinimumSize = new System.Drawing.Size(0, 27);
+            this.tsProperties.Name = "tsProperties";
+            this.tsProperties.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.tsProperties.Size = new System.Drawing.Size(785, 30);
+            this.tsProperties.Stretch = true;
+            this.tsProperties.TabIndex = 0;
             // 
             // btnSaveClose
             // 
@@ -1513,10 +1513,10 @@ namespace Greenshot {
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            this.propertiesToolStrip.ResumeLayout(false);
-            this.propertiesToolStrip.PerformLayout();
+            this.tsTools.ResumeLayout(false);
+            this.tsTools.PerformLayout();
+            this.tsProperties.ResumeLayout(false);
+            this.tsProperties.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -1584,7 +1584,7 @@ namespace Greenshot {
 		private GreenshotPlugin.Controls.GreenshotToolStripMenuItem upOneLevelToolStripMenuItem;
 		private GreenshotPlugin.Controls.GreenshotToolStripMenuItem arrangeToolStripMenuItem;
 		private GreenshotPlugin.Controls.GreenshotToolStripButton btnCursor;
-		private Greenshot.Controls.ToolStripEx toolStrip2;
+		private Greenshot.Controls.ToolStripEx tsTools;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnArrow;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnText;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnLine;
@@ -1610,7 +1610,7 @@ namespace Greenshot {
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnEllipse;
 		private GreenshotPlugin.Controls.GreenshotToolStripButton btnRect;
 		private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-		private Greenshot.Controls.ToolStripEx propertiesToolStrip;
+		private Greenshot.Controls.ToolStripEx tsProperties;
 		private GreenshotPlugin.Controls.NonJumpingPanel panel1;
 		private Greenshot.Controls.ToolStripColorButton btnFillColor;
 		private Greenshot.Controls.ToolStripColorButton btnLineColor;

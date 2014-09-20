@@ -24,6 +24,7 @@ using Greenshot.Core;
 using Greenshot.Drawing;
 using Greenshot.Drawing.Fields;
 using Greenshot.Drawing.Fields.Binding;
+using Greenshot.Forms;
 using Greenshot.Helpers;
 using Greenshot.IniFile;
 using Greenshot.Plugin;
@@ -846,7 +847,7 @@ namespace Greenshot
         /// </summary>
         private void refreshFieldControls()
         {
-            propertiesToolStrip.SuspendLayout();
+            tsProperties.SuspendLayout();
 
             if (surface.HasSelectedElements || surface.DrawingMode != DrawingModes.None)
             {
@@ -878,7 +879,7 @@ namespace Greenshot
                 hideToolstripItems();
             }
 
-            propertiesToolStrip.ResumeLayout();
+            tsProperties.ResumeLayout();
         }
 
         private void hideToolstripItems()
@@ -911,7 +912,7 @@ namespace Greenshot
                 {
                     ToolStripItemEndisabler.Disable(tsddbMenu);
                     //ToolStripItemEndisabler.Disable(propertiesToolStrip);
-                    ToolStripItemEndisabler.Disable(toolStrip2);
+                    ToolStripItemEndisabler.Disable(tsTools);
                     ToolStripItemEndisabler.Enable(closeToolStripMenuItem);
                     controlsDisabledDueToConfirmable = true;
                 }
@@ -921,7 +922,7 @@ namespace Greenshot
                 // re-enable disabled controls, confirmable element has either been confirmed or cancelled
                 ToolStripItemEndisabler.Enable(tsddbMenu);
                 //ToolStripItemEndisabler.Enable(propertiesToolStrip);
-                ToolStripItemEndisabler.Enable(toolStrip2);
+                ToolStripItemEndisabler.Enable(tsTools);
                 controlsDisabledDueToConfirmable = false;
             }
 
@@ -1088,11 +1089,13 @@ namespace Greenshot
         private void AddDropshadowToolStripMenuItemClick(object sender, EventArgs e)
         {
             DropShadowEffect dropShadowEffect = new DropShadowEffect();
-            //DialogResult result = new DropShadowSettingsForm(dropShadowEffect).ShowDialog(this);
-            //if (result == DialogResult.OK) {
-            surface.ApplyBitmapEffect(dropShadowEffect);
-            updateUndoRedoSurfaceDependencies();
-            //}
+            // TODO: Use the dropshadow settings form to make it possible to change the default values
+            DialogResult result = new DropShadowSettingsForm(dropShadowEffect).ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                surface.ApplyBitmapEffect(dropShadowEffect);
+                updateUndoRedoSurfaceDependencies();
+            }
         }
 
         /// <summary>
@@ -1118,11 +1121,13 @@ namespace Greenshot
         private void TornEdgesToolStripMenuItemClick(object sender, EventArgs e)
         {
             TornEdgeEffect tornEdgeEffect = new TornEdgeEffect();
-            //DialogResult result = new TornEdgeSettingsForm(tornEdgeEffect).ShowDialog(this);
-            //if (result == DialogResult.OK) {
-            surface.ApplyBitmapEffect(tornEdgeEffect);
-            updateUndoRedoSurfaceDependencies();
-            //}
+            // TODO: Use the dropshadow settings form to make it possible to change the default values
+            DialogResult result = new TornEdgeSettingsForm(tornEdgeEffect).ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                surface.ApplyBitmapEffect(tornEdgeEffect);
+                updateUndoRedoSurfaceDependencies();
+            }
         }
 
         private void GrayscaleToolStripMenuItemClick(object sender, EventArgs e)

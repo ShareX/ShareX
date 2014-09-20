@@ -246,12 +246,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Forms\DropShadowSettingsForm.cs">
+    <Compile Include="Forms\DropShadowSettingsForm.cs">
       <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\DropShadowSettingsForm.Designer.cs">
+    </Compile>
+    <Compile Include="Forms\DropShadowSettingsForm.Designer.cs">
       <DependentUpon>DropShadowSettingsForm.cs</DependentUpon>
-    </None>
+    </Compile>
     <Compile Include="Forms\ImageEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,14 +264,11 @@
     <Compile Include="Forms\ResizeSettingsForm.Designer.cs">
       <DependentUpon>ResizeSettingsForm.cs</DependentUpon>
     </Compile>
-    <None Include="Forms\TornEdgeSettingsForm.cs">
+    <Compile Include="Forms\TornEdgeSettingsForm.cs">
       <SubType>Form</SubType>
-    </None>
-    <None Include="Forms\TornEdgeSettingsForm.Designer.cs">
+    </Compile>
+    <Compile Include="Forms\TornEdgeSettingsForm.Designer.cs">
       <DependentUpon>TornEdgeSettingsForm.cs</DependentUpon>
-    </None>
-    <Compile Include="Forms\ToolStripMenuSelectList.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\MovableShowColorForm.cs">
       <SubType>Form</SubType>
