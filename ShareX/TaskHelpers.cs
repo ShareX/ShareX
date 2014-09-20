@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+
 using HelpersLib;
 using ImageEffectsLib;
 using ScreenCaptureLib;
@@ -402,6 +404,22 @@ namespace ShareX
         public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
         {
             string filepath = Path.Combine(folder, filename);
+
+		  if (filepath.Length >= NativeMethods.MAX_PATH)
+	       {
+		      using (FilePathTooLongForm form = new FilePathTooLongForm(filepath))
+		      {
+			     form.ShowDialog();
+
+				// if the Filepath was not fixed (user closing form)
+			     if (filepath == form.Filepath)
+			     {
+				     return string.Empty;
+			     }
+
+			     filepath = form.Filepath;
+		      }
+	       }
 
             if (File.Exists(filepath))
             {

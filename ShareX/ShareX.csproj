@@ -134,6 +134,12 @@
     <Compile Include="Forms\ActionsForm.Designer.cs">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FilePathTooLongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilePathTooLongForm.Designer.cs">
+      <DependentUpon>FilePathTooLongForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FileExistForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilePathTooLongForm.resx">
+      <DependentUpon>FilePathTooLongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>

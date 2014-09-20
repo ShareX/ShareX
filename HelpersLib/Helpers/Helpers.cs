@@ -472,7 +472,17 @@ namespace HelpersLib
                 do
                 {
                     number++;
-                    filepath = Path.Combine(folder, string.Format("{0} ({1}){2}", filename, number, extension));
+
+				string fileAppendage = string.Format(" ({0}){1}", number, extension);
+
+                    filepath = Path.Combine(folder, filename + fileAppendage);
+
+	               if (filepath.Length > NativeMethods.MAX_PATH)
+	               {
+		               int charactersTooLong = filepath.Length - NativeMethods.MAX_PATH;
+					filename = filename.Remove(filename.Length - charactersTooLong);
+					filepath = Path.Combine(folder, filename + fileAppendage);
+	               }
                 }
                 while (File.Exists(filepath));
             }
