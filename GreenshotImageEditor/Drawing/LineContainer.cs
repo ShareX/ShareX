@@ -1,6 +1,6 @@
 /*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -41,6 +41,10 @@ namespace Greenshot.Drawing
             : base(parent)
         {
             Init();
+        }
+
+        protected override void InitializeFields()
+        {
             AddField(GetType(), FieldType.LINE_THICKNESS, 2);
             AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
             AddField(GetType(), FieldType.SHADOW, true);
@@ -56,11 +60,11 @@ namespace Greenshot.Drawing
 
         protected void Init()
         {
-            if (grippers != null)
+            if (_grippers != null)
             {
-                foreach (int index in new int[] { 1, 2, 3, 5, 6, 7 })
+                foreach (int index in new[] { 1, 2, 3, 5, 6, 7 })
                 {
-                    grippers[index].Enabled = false;
+                    _grippers[index].Enabled = false;
                 }
             }
         }
@@ -123,10 +127,7 @@ namespace Greenshot.Drawing
                     }
                 }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         protected override ScaleHelper.IDoubleProcessor GetAngleRoundProcessor()

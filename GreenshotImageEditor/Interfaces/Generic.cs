@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -80,11 +80,26 @@ namespace Greenshot.Plugin
         }
     }
 
-    public delegate void SurfaceSizeChangeEventHandler(object sender, EventArgs eventArgs);
-    public delegate void SurfaceMessageEventHandler(object sender, SurfaceMessageEventArgs eventArgs);
-    public delegate void SurfaceElementEventHandler(object sender, SurfaceElementEventArgs eventArgs);
-    public delegate void SurfaceDrawingModeEventHandler(object sender, SurfaceDrawingModeEventArgs eventArgs);
-    public enum DrawingModes { None, Rect, Ellipse, Text, Line, Arrow, Crop, Highlight, Obfuscate, Bitmap, Path }
+    public delegate void SurfaceSizeChangeEventHandler(object sender, EventArgs e);
+    public delegate void SurfaceMessageEventHandler(object sender, SurfaceMessageEventArgs e);
+    public delegate void SurfaceElementEventHandler(object sender, SurfaceElementEventArgs e);
+    public delegate void SurfaceDrawingModeEventHandler(object sender, SurfaceDrawingModeEventArgs e);
+    public enum DrawingModes
+    {
+        None,
+        Rect,
+        Ellipse,
+        Text,
+        Line,
+        Arrow,
+        Crop,
+        Highlight,
+        Obfuscate,
+        Bitmap,
+        Path,
+        SpeechBubble,
+        StepLabel
+    }
 
     /// <summary>
     /// The interface to the Surface object, so Plugins can use it.
@@ -95,6 +110,15 @@ namespace Greenshot.Plugin
         event SurfaceMessageEventHandler SurfaceMessage;
         event SurfaceDrawingModeEventHandler DrawingModeChanged;
         event SurfaceElementEventHandler MovingElementChanged;
+
+        /// <summary>
+        /// Unique ID of the Surface
+        /// </summary>
+        Guid ID
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Get/Set the image to the Surface
@@ -171,6 +195,13 @@ namespace Greenshot.Plugin
         void DeselectAllElements();
 
         void SelectElement(IDrawableContainer container);
+
+        /// <summary>
+        /// Is the supplied container "on" the surface?
+        /// </summary>
+        /// <param name="container"></param>
+        /// <returns>This returns false if the container is deleted but still in the undo stack</returns>
+        bool IsOnSurface(IDrawableContainer container);
 
         void Invalidate(Rectangle rectangleToInvalidate);
 

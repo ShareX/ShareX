@@ -156,11 +156,11 @@ EndSelection:<<<<<<<4
                             string clipboardOwner = GetClipboardOwner();
                             if (clipboardOwner != null)
                             {
-                                messageText = Language.GetFormattedString("clipboard_inuse", clipboardOwner);
+                                messageText = string.Format("Greenshot wasn't able to write to the clipboard as the process {0} blocked the access.", clipboardOwner);
                             }
                             else
                             {
-                                messageText = Language.GetString("clipboard_error");
+                                messageText = "An unexpected error occured while writing to the clipboard.";
                             }
                             LOG.Error(messageText, ee);
                         }
@@ -199,11 +199,11 @@ EndSelection:<<<<<<<4
                             string clipboardOwner = GetClipboardOwner();
                             if (clipboardOwner != null)
                             {
-                                messageText = Language.GetFormattedString("clipboard_inuse", clipboardOwner);
+                                messageText = string.Format("Greenshot wasn't able to write to the clipboard as the process {0} blocked the access.", clipboardOwner);
                             }
                             else
                             {
-                                messageText = Language.GetString("clipboard_error");
+                                messageText = "An unexpected error occured while writing to the clipboard.";
                             }
                             LOG.Error(messageText, ee);
                         }

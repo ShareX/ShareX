@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Core;
 using Greenshot.Drawing.Fields;
 using Greenshot.Helpers;
@@ -34,6 +33,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -49,59 +49,77 @@ namespace Greenshot.Drawing
         public static int Count = 0;
         private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
 
+        // Property to identify the Surface ID
+        private Guid _uniqueId = Guid.NewGuid();
+
+        /// <summary>
+        /// The GUID of the surface
+        /// </summary>
+        public Guid ID
+        {
+            get
+            {
+                return _uniqueId;
+            }
+            set
+            {
+                _uniqueId = value;
+            }
+        }
+
         /// <summary>
         /// Event handlers (do not serialize!)
         /// </summary>
         [NonSerialized]
-        private SurfaceElementEventHandler movingElementChanged;
+        private SurfaceElementEventHandler _movingElementChanged;
         public event SurfaceElementEventHandler MovingElementChanged
         {
             add
             {
-                movingElementChanged += value;
+                _movingElementChanged += value;
             }
             remove
             {
-                movingElementChanged -= value;
+                _movingElementChanged -= value;
             }
         }
         [NonSerialized]
-        private SurfaceDrawingModeEventHandler drawingModeChanged;
+        private SurfaceDrawingModeEventHandler _drawingModeChanged;
         public event SurfaceDrawingModeEventHandler DrawingModeChanged
         {
             add
             {
-                drawingModeChanged += value;
+                _drawingModeChanged += value;
             }
             remove
             {
-                drawingModeChanged -= value;
+                _drawingModeChanged -= value;
             }
         }
         [NonSerialized]
-        private SurfaceSizeChangeEventHandler surfaceSizeChanged;
+        private SurfaceSizeChangeEventHandler _surfaceSizeChanged;
         public event SurfaceSizeChangeEventHandler SurfaceSizeChanged
         {
             add
             {
-                surfaceSizeChanged += value;
+                _surfaceSizeChanged += value;
             }
             remove
             {
-                surfaceSizeChanged -= value;
+                _surfaceSizeChanged -= value;
             }
         }
         [NonSerialized]
-        private SurfaceMessageEventHandler surfaceMessage;
+        private SurfaceMessageEventHandler _surfaceMessage;
         public event SurfaceMessageEventHandler SurfaceMessage
         {
             add
             {
-                surfaceMessage += value;
+                _surfaceMessage += value;
             }
             remove
             {
-                surfaceMessage -= value;
+                _surfaceMessage -= value;
             }
         }
 
@@ -109,122 +127,154 @@ namespace Greenshot.Drawing
         /// inUndoRedo makes sure we don't undo/redo while in a undo/redo action
         /// </summary>
         [NonSerialized]
-        private bool inUndoRedo = false;
+        private bool _inUndoRedo;
 
         /// <summary>
         /// Make only one surfacemove cycle undoable, see SurfaceMouseMove
         /// </summary>
         [NonSerialized]
-        private bool isSurfaceMoveMadeUndoable = false;
+        private bool _isSurfaceMoveMadeUndoable;
 
         /// <summary>
         /// Undo/Redo stacks, should not be serialized as the file would be way to big
         /// </summary>
         [NonSerialized]
-        private Stack<IMemento> undoStack = new Stack<IMemento>();
+        private readonly Stack<IMemento> _undoStack = new Stack<IMemento>();
         [NonSerialized]
-        private Stack<IMemento> redoStack = new Stack<IMemento>();
+        private readonly Stack<IMemento> _redoStack = new Stack<IMemento>();
 
         /// <summary>
         /// Last save location, do not serialize!
         /// </summary>
         [NonSerialized]
-        private string lastSaveFullPath = null;
+        private string _lastSaveFullPath;
 
         /// <summary>
         /// current drawing mode, do not serialize!
         /// </summary>
         [NonSerialized]
-        private DrawingModes drawingMode = DrawingModes.None;
+        private DrawingModes _drawingMode = DrawingModes.None;
 
         /// <summary>
         /// the keyslocked flag helps with focus issues
         /// </summary>
         [NonSerialized]
-        private bool keysLocked = false;
+        private bool _keysLocked;
 
         /// <summary>
         /// Location of the mouse-down (it "starts" here), do not serialize
         /// </summary>
         [NonSerialized]
-        private Point mouseStart = Point.Empty;
+        private Point _mouseStart = Point.Empty;
 
         /// <summary>
         /// are we in a mouse down, do not serialize
         /// </summary>
         [NonSerialized]
-        private bool mouseDown = false;
-
-        /// <summary>
-        /// are we dragging, do not serialize
-        /// </summary>
-        [NonSerialized]
-        private bool draggingInProgress = false;
+        private bool _mouseDown;
 
         /// <summary>
         /// The selected element for the mouse down, do not serialize
         /// </summary>
         [NonSerialized]
-        private IDrawableContainer mouseDownElement = null;
+        private IDrawableContainer _mouseDownElement;
 
         /// <summary>
         /// all selected elements, do not serialize
         /// </summary>
         [NonSerialized]
-        private DrawableContainerList selectedElements = new DrawableContainerList();
+        private DrawableContainerList selectedElements;
 
         /// <summary>
         /// the element we are drawing with, do not serialize
         /// </summary>
         [NonSerialized]
-        private IDrawableContainer drawingElement = null;
+        private IDrawableContainer _drawingElement;
 
         /// <summary>
         /// the element we want to draw with (not yet drawn), do not serialize
         /// </summary>
         [NonSerialized]
-        private IDrawableContainer undrawnElement = null;
+        private IDrawableContainer _undrawnElement;
 
         /// <summary>
         /// the cropcontainer, when cropping this is set, do not serialize
         /// </summary>
         [NonSerialized]
-        private IDrawableContainer cropContainer = null;
+        private IDrawableContainer _cropContainer;
 
         /// <summary>
         /// the brush which is used for transparent backgrounds, set by the editor, do not serialize
         /// </summary>
         [NonSerialized]
-        private Brush transparencyBackgroundBrush;
+        private Brush _transparencyBackgroundBrush;
 
         /// <summary>
         /// The buffer is only for drawing on it when using filters (to supply access)
         /// This saves a lot of "create new bitmap" commands
         /// Should not be serialized, as it's generated.
         /// The actual bitmap is in the paintbox...
+        /// TODO: Check if this buffer is still needed!
         /// </summary>
         [NonSerialized]
-        private Bitmap buffer = null;
+        private Bitmap _buffer;
+
+        /// <summary>
+        /// all stepLabels for the surface, needed with serialization
+        /// </summary>
+        private List<StepLabelContainer> _stepLabels = new List<StepLabelContainer>();
+
+        public void AddStepLabel(StepLabelContainer stepLabel)
+        {
+            _stepLabels.Add(stepLabel);
+        }
+
+        public void RemoveStepLabel(StepLabelContainer stepLabel)
+        {
+            _stepLabels.Remove(stepLabel);
+        }
+
+        /// <summary>
+        /// Count all the VISIBLE steplabels in the surface, up to the supplied one
+        /// </summary>
+        /// <param name="stopAtContainer">can be null, if not the counting stops here</param>
+        /// <returns>number of steplabels before the supplied container</returns>
+        public int CountStepLabels(IDrawableContainer stopAtContainer)
+        {
+            int number = 1;
+            foreach (var possibleThis in _stepLabels)
+            {
+                if (possibleThis == stopAtContainer)
+                {
+                    break;
+                }
+                if (IsOnSurface(possibleThis))
+                {
+                    number++;
+                }
+            }
+            return number;
+        }
 
         /// <summary>
         /// all elements on the surface, needed with serialization
         /// </summary>
-        private DrawableContainerList elements = new DrawableContainerList();
+        private readonly DrawableContainerList _elements;
 
         /// <summary>
         /// all elements on the surface, needed with serialization
         /// </summary>
-        private FieldAggregator fieldAggregator = new FieldAggregator();
+        private FieldAggregator _fieldAggregator = new FieldAggregator();
 
         /// <summary>
         /// the cursor container, needed with serialization as we need a direct acces to it.
         /// </summary>
-        private IDrawableContainer cursorContainer = null;
+        private IDrawableContainer _cursorContainer;
 
         /// <summary>
         /// the capture details, needed with serialization
         /// </summary>
-        private ICaptureDetails captureDetails = null;
+        private ICaptureDetails _captureDetails;
 
         /// <summary>
         /// the modified flag specifies if the surface has had modifications after the last export.
@@ -232,22 +282,22 @@ namespace Greenshot.Drawing
         /// After serialization this should actually be "false" (the surface came from a stream)
         /// For now we just serialize it...
         /// </summary>
-        private bool modified = true;
+        private bool _modified = true;
 
         /// <summary>
         /// The image is the actual captured image, needed with serialization
         /// </summary>
-        private Image image = null;
+        private Image _image;
         public Image Image
         {
             get
             {
-                return image;
+                return _image;
             }
             set
             {
-                image = value;
-                Size = image.Size;
+                _image = value;
+                Size = _image.Size;
             }
         }
 
@@ -259,11 +309,11 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return fieldAggregator;
+                return _fieldAggregator;
             }
             set
             {
-                fieldAggregator = value;
+                _fieldAggregator = value;
             }
         }
 
@@ -274,7 +324,7 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return cursorContainer;
+                return _cursorContainer;
             }
         }
 
@@ -285,7 +335,7 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return cursorContainer != null;
+                return _cursorContainer != null;
             }
         }
 
@@ -294,8 +344,8 @@ namespace Greenshot.Drawing
         /// </summary>
         public void RemoveCursor()
         {
-            RemoveElement(cursorContainer, true);
-            cursorContainer = null;
+            RemoveElement(_cursorContainer, true);
+            _cursorContainer = null;
         }
 
         /// <summary>
@@ -305,11 +355,11 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return transparencyBackgroundBrush;
+                return _transparencyBackgroundBrush;
             }
             set
             {
-                transparencyBackgroundBrush = value;
+                _transparencyBackgroundBrush = value;
             }
         }
 
@@ -320,11 +370,11 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return keysLocked;
+                return _keysLocked;
             }
             set
             {
-                keysLocked = value;
+                _keysLocked = value;
             }
         }
 
@@ -335,11 +385,11 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return modified;
+                return _modified;
             }
             set
             {
-                modified = value;
+                _modified = value;
             }
         }
 
@@ -350,16 +400,16 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return drawingMode;
+                return _drawingMode;
             }
             set
             {
-                drawingMode = value;
-                if (drawingModeChanged != null)
+                _drawingMode = value;
+                if (_drawingModeChanged != null)
                 {
                     SurfaceDrawingModeEventArgs eventArgs = new SurfaceDrawingModeEventArgs();
-                    eventArgs.DrawingMode = drawingMode;
-                    drawingModeChanged.Invoke(this, eventArgs);
+                    eventArgs.DrawingMode = _drawingMode;
+                    _drawingModeChanged.Invoke(this, eventArgs);
                 }
                 DeselectAllElements();
                 CreateUndrawnElement();
@@ -373,11 +423,11 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return lastSaveFullPath;
+                return _lastSaveFullPath;
             }
             set
             {
-                lastSaveFullPath = value;
+                _lastSaveFullPath = value;
             }
         }
 
@@ -397,11 +447,11 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return captureDetails;
+                return _captureDetails;
             }
             set
             {
-                captureDetails = value;
+                _captureDetails = value;
             }
         }
 
@@ -412,6 +462,8 @@ namespace Greenshot.Drawing
             : base()
         {
             Count++;
+            _elements = new DrawableContainerList(_uniqueId);
+            selectedElements = new DrawableContainerList(_uniqueId);
             LOG.Debug("Creating surface!");
             MouseDown += SurfaceMouseDown;
             MouseUp += SurfaceMouseUp;
@@ -423,7 +475,7 @@ namespace Greenshot.Drawing
             DragEnter += OnDragEnter;
             // bind selected & elements to this, otherwise they can't inform of modifications
             selectedElements.Parent = this;
-            elements.Parent = this;
+            _elements.Parent = this;
             // Make sure we are visible
             Visible = true;
             TabStop = false;
@@ -435,21 +487,21 @@ namespace Greenshot.Drawing
         /// <summary>
         /// Private method, the current image is disposed the new one will stay.
         /// </summary>
-        /// <param name="image">The new image</param>
+        /// <param name="newImage">The new image</param>
         /// <param name="dispose">true if the old image needs to be disposed, when using undo this should not be true!!</param>
         private void SetImage(Image newImage, bool dispose)
         {
             // Dispose
-            if (image != null && dispose)
+            if (_image != null && dispose)
             {
-                image.Dispose();
+                _image.Dispose();
             }
 
             // Set new values
             Image = newImage;
             Size = newImage.Size;
 
-            modified = true;
+            _modified = true;
         }
 
         /// <summary>
@@ -478,14 +530,14 @@ namespace Greenshot.Drawing
                 // check if cursor is on the capture, otherwise we leave it out.
                 if (cursorRect.IntersectsWith(captureRect))
                 {
-                    cursorContainer = AddIconContainer(capture.Cursor, capture.CursorLocation.X, capture.CursorLocation.Y);
-                    SelectElement(cursorContainer);
+                    _cursorContainer = AddIconContainer(capture.Cursor, capture.CursorLocation.X, capture.CursorLocation.Y);
+                    SelectElement(_cursorContainer);
                 }
             }
             // Make sure the image is NOT disposed, we took the reference directly into ourselves
             ((Capture)capture).NullImage();
 
-            captureDetails = capture.CaptureDetails;
+            _captureDetails = capture.CaptureDetails;
         }
 
         protected override void Dispose(bool disposing)
@@ -494,39 +546,39 @@ namespace Greenshot.Drawing
             {
                 Count--;
                 LOG.Debug("Disposing surface!");
-                if (buffer != null)
+                if (_buffer != null)
                 {
-                    buffer.Dispose();
-                    buffer = null;
+                    _buffer.Dispose();
+                    _buffer = null;
                 }
-                if (transparencyBackgroundBrush != null)
+                if (_transparencyBackgroundBrush != null)
                 {
-                    transparencyBackgroundBrush.Dispose();
-                    transparencyBackgroundBrush = null;
+                    _transparencyBackgroundBrush.Dispose();
+                    _transparencyBackgroundBrush = null;
                 }
 
                 // Cleanup undo/redo stacks
-                while (undoStack != null && undoStack.Count > 0)
+                while (_undoStack != null && _undoStack.Count > 0)
                 {
-                    undoStack.Pop().Dispose();
+                    _undoStack.Pop().Dispose();
                 }
-                while (redoStack != null && redoStack.Count > 0)
+                while (_redoStack != null && _redoStack.Count > 0)
                 {
-                    redoStack.Pop().Dispose();
+                    _redoStack.Pop().Dispose();
                 }
-                foreach (IDrawableContainer container in elements)
+                foreach (IDrawableContainer container in _elements)
                 {
                     container.Dispose();
                 }
-                if (undrawnElement != null)
+                if (_undrawnElement != null)
                 {
-                    undrawnElement.Dispose();
-                    undrawnElement = null;
+                    _undrawnElement.Dispose();
+                    _undrawnElement = null;
                 }
-                if (cropContainer != null)
+                if (_cropContainer != null)
                 {
-                    cropContainer.Dispose();
-                    cropContainer = null;
+                    _cropContainer.Dispose();
+                    _cropContainer = null;
                 }
             }
             base.Dispose(disposing);
@@ -537,12 +589,12 @@ namespace Greenshot.Drawing
         /// </summary>
         public void Undo()
         {
-            if (undoStack.Count > 0)
+            if (_undoStack.Count > 0)
             {
-                inUndoRedo = true;
-                IMemento top = undoStack.Pop();
-                redoStack.Push(top.Restore());
-                inUndoRedo = false;
+                _inUndoRedo = true;
+                IMemento top = _undoStack.Pop();
+                _redoStack.Push(top.Restore());
+                _inUndoRedo = false;
             }
         }
 
@@ -551,12 +603,12 @@ namespace Greenshot.Drawing
         /// </summary>
         public void Redo()
         {
-            if (redoStack.Count > 0)
+            if (_redoStack.Count > 0)
             {
-                inUndoRedo = true;
-                IMemento top = redoStack.Pop();
-                undoStack.Push(top.Restore());
-                inUndoRedo = false;
+                _inUndoRedo = true;
+                IMemento top = _redoStack.Pop();
+                _undoStack.Push(top.Restore());
+                _inUndoRedo = false;
             }
         }
 
@@ -567,7 +619,7 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return undoStack.Count > 0;
+                return _undoStack.Count > 0;
             }
         }
 
@@ -578,43 +630,7 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return redoStack.Count > 0;
-            }
-        }
-
-        /// <summary>
-        /// Get the language key for the undo action
-        /// </summary>
-        public LangKey UndoActionLanguageKey
-        {
-            get
-            {
-                if (CanUndo)
-                {
-                    return undoStack.Peek().ActionLanguageKey;
-                }
-                else
-                {
-                    return LangKey.none;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Get the language key for redo action
-        /// </summary>
-        public LangKey RedoActionLanguageKey
-        {
-            get
-            {
-                if (CanRedo)
-                {
-                    return redoStack.Peek().ActionLanguageKey;
-                }
-                else
-                {
-                    return LangKey.none;
-                }
+                return _redoStack.Count > 0;
             }
         }
 
@@ -622,28 +638,29 @@ namespace Greenshot.Drawing
         /// Make an action undo-able
         /// </summary>
         /// <param name="memento">The memento implementing the undo</param>
+        /// <param name="allowMerge">Allow changes to be merged</param>
         public void MakeUndoable(IMemento memento, bool allowMerge)
         {
-            if (inUndoRedo)
+            if (_inUndoRedo)
             {
                 throw new InvalidOperationException("Invoking do within an undo/redo action.");
             }
             if (memento != null)
             {
                 bool allowPush = true;
-                if (undoStack.Count > 0 && allowMerge)
+                if (_undoStack.Count > 0 && allowMerge)
                 {
                     // Check if merge is possible
-                    allowPush = !undoStack.Peek().Merge(memento);
+                    allowPush = !_undoStack.Peek().Merge(memento);
                 }
                 if (allowPush)
                 {
                     // Clear the redo-stack and dispose
-                    while (redoStack.Count > 0)
+                    while (_redoStack.Count > 0)
                     {
-                        redoStack.Pop().Dispose();
+                        _redoStack.Pop().Dispose();
                     }
-                    undoStack.Push(memento);
+                    _undoStack.Push(memento);
                 }
             }
         }
@@ -661,7 +678,7 @@ namespace Greenshot.Drawing
             {
                 long lengtBefore = streamWrite.Length;
                 BinaryFormatter binaryWrite = new BinaryFormatter();
-                binaryWrite.Serialize(streamWrite, elements);
+                binaryWrite.Serialize(streamWrite, _elements);
                 bytesWritten = streamWrite.Length - lengtBefore;
             }
             catch (Exception e)
@@ -681,14 +698,16 @@ namespace Greenshot.Drawing
             {
                 BinaryFormatter binaryRead = new BinaryFormatter();
                 DrawableContainerList loadedElements = (DrawableContainerList)binaryRead.Deserialize(streamRead);
-                if (loadedElements != null)
+                loadedElements.Parent = this;
+                // Make sure the steplabels are sorted accoring to their number
+                _stepLabels.Sort(delegate(StepLabelContainer p1, StepLabelContainer p2)
                 {
-                    loadedElements.Parent = this;
-                    DeselectAllElements();
-                    AddElements(loadedElements);
-                    SelectElements(loadedElements);
-                    FieldAggregator.BindElements(loadedElements);
-                }
+                    return p1.Number.CompareTo(p2.Number);
+                });
+                DeselectAllElements();
+                AddElements(loadedElements);
+                SelectElements(loadedElements);
+                FieldAggregator.BindElements(loadedElements);
             }
             catch (Exception e)
             {
@@ -703,50 +722,56 @@ namespace Greenshot.Drawing
         /// </summary>
         private void CreateUndrawnElement()
         {
-            if (undrawnElement != null)
+            if (_undrawnElement != null)
             {
-                FieldAggregator.UnbindElement(undrawnElement);
+                FieldAggregator.UnbindElement(_undrawnElement);
             }
             switch (DrawingMode)
             {
                 case DrawingModes.Rect:
-                    undrawnElement = new RectangleContainer(this);
+                    _undrawnElement = new RectangleContainer(this);
                     break;
                 case DrawingModes.Ellipse:
-                    undrawnElement = new EllipseContainer(this);
+                    _undrawnElement = new EllipseContainer(this);
                     break;
                 case DrawingModes.Text:
-                    undrawnElement = new TextContainer(this);
+                    _undrawnElement = new TextContainer(this);
+                    break;
+                case DrawingModes.SpeechBubble:
+                    _undrawnElement = new SpeechbubbleContainer(this);
+                    break;
+                case DrawingModes.StepLabel:
+                    _undrawnElement = new StepLabelContainer(this);
                     break;
                 case DrawingModes.Line:
-                    undrawnElement = new LineContainer(this);
+                    _undrawnElement = new LineContainer(this);
                     break;
                 case DrawingModes.Arrow:
-                    undrawnElement = new ArrowContainer(this);
+                    _undrawnElement = new ArrowContainer(this);
                     break;
                 case DrawingModes.Highlight:
-                    undrawnElement = new HighlightContainer(this);
+                    _undrawnElement = new HighlightContainer(this);
                     break;
                 case DrawingModes.Obfuscate:
-                    undrawnElement = new ObfuscateContainer(this);
+                    _undrawnElement = new ObfuscateContainer(this);
                     break;
                 case DrawingModes.Crop:
-                    cropContainer = new CropContainer(this);
-                    undrawnElement = cropContainer;
+                    _cropContainer = new CropContainer(this);
+                    _undrawnElement = _cropContainer;
                     break;
                 case DrawingModes.Bitmap:
-                    undrawnElement = new ImageContainer(this);
+                    _undrawnElement = new ImageContainer(this);
                     break;
                 case DrawingModes.Path:
-                    undrawnElement = new FreehandContainer(this);
+                    _undrawnElement = new FreehandContainer(this);
                     break;
                 case DrawingModes.None:
-                    undrawnElement = null;
+                    _undrawnElement = null;
                     break;
             }
-            if (undrawnElement != null)
+            if (_undrawnElement != null)
             {
-                FieldAggregator.BindElement(undrawnElement);
+                FieldAggregator.BindElement(_undrawnElement);
             }
         }
 
@@ -848,7 +873,7 @@ namespace Greenshot.Drawing
                     LOG.Debug(format);
                 }
             }
-            if (draggingInProgress || (e.AllowedEffect & DragDropEffects.Copy) != DragDropEffects.Copy)
+            if ((e.AllowedEffect & DragDropEffects.Copy) != DragDropEffects.Copy)
             {
                 e.Effect = DragDropEffects.None;
             }
@@ -872,7 +897,6 @@ namespace Greenshot.Drawing
         /// <param name="e"></param>
         private void OnDragDrop(object sender, DragEventArgs e)
         {
-            List<string> filenames = ClipboardHelper.GetImageFilenames(e.Data);
             Point mouse = PointToClient(new Point(e.X, e.Y));
 
             foreach (Image image in ClipboardHelper.GetImages(e.Data))
@@ -883,17 +907,6 @@ namespace Greenshot.Drawing
             }
         }
 
-        //		private void QueryContinueDragDrop(object sender, QueryContinueDragEventArgs e) {
-        //			LOG.Debug("QueryContinueDrag: " + e.Action);
-        //			if (e.EscapePressed) {
-        //				e.Action = DragAction.Cancel;
-        //			}
-        //		}
-        //
-        //		private void GiveFeedbackDragDrop(object sender, GiveFeedbackEventArgs e) {
-        //			e.UseDefaultCursors = true;
-        //		}
-
         #endregion DragDrop
 
         /// <summary>
@@ -902,25 +915,29 @@ namespace Greenshot.Drawing
         /// <returns>true if cropped</returns>
         public bool AutoCrop()
         {
-            Rectangle cropRectangle = ImageHelper.FindAutoCropRectangle(Image, conf.AutoCropDifference);
-            if (isCropPossible(ref cropRectangle))
+            Rectangle cropRectangle;
+            using (Image tmpImage = GetImageForExport())
             {
-                DeselectAllElements();
-                // Maybe a bit obscure, but the following line creates a drop container
-                // It's available as "undrawnElement"
-                DrawingMode = DrawingModes.Crop;
-                undrawnElement.Left = cropRectangle.X;
-                undrawnElement.Top = cropRectangle.Y;
-                undrawnElement.Width = cropRectangle.Width;
-                undrawnElement.Height = cropRectangle.Height;
-                undrawnElement.Status = EditStatus.UNDRAWN;
-                AddElement(undrawnElement);
-                SelectElement(undrawnElement);
-                drawingElement = null;
-                undrawnElement = null;
-                return true;
+                cropRectangle = ImageHelper.FindAutoCropRectangle(tmpImage, conf.AutoCropDifference);
             }
-            return false;
+            if (!IsCropPossible(ref cropRectangle))
+            {
+                return false;
+            }
+            DeselectAllElements();
+            // Maybe a bit obscure, but the following line creates a drop container
+            // It's available as "undrawnElement"
+            DrawingMode = DrawingModes.Crop;
+            _undrawnElement.Left = cropRectangle.X;
+            _undrawnElement.Top = cropRectangle.Y;
+            _undrawnElement.Width = cropRectangle.Width;
+            _undrawnElement.Height = cropRectangle.Height;
+            _undrawnElement.Status = EditStatus.UNDRAWN;
+            AddElement(_undrawnElement);
+            SelectElement(_undrawnElement);
+            _drawingElement = null;
+            _undrawnElement = null;
+            return true;
         }
 
         /// <summary>
@@ -930,11 +947,11 @@ namespace Greenshot.Drawing
         public void Clear(Color newColor)
         {
             //create a blank bitmap the same size as original
-            Bitmap newBitmap = ImageHelper.CreateEmptyLike((Bitmap)Image, Color.Empty);
+            Bitmap newBitmap = ImageHelper.CreateEmptyLike(Image, Color.Empty);
             if (newBitmap != null)
             {
                 // Make undoable
-                MakeUndoable(new SurfaceBackgroundChangeMemento(this, Point.Empty), false);
+                MakeUndoable(new SurfaceBackgroundChangeMemento(this, null), false);
                 SetImage(newBitmap, false);
                 Invalidate();
             }
@@ -952,20 +969,25 @@ namespace Greenshot.Drawing
             try
             {
                 Rectangle imageRectangle = new Rectangle(Point.Empty, Image.Size);
-                Point offset;
-                Image newImage = ImageHelper.ApplyEffect(Image, effect, out offset);
+                Matrix matrix = new Matrix();
+                Image newImage = ImageHelper.ApplyEffect(Image, effect, matrix);
                 if (newImage != null)
                 {
                     // Make sure the elements move according to the offset the effect made the bitmap move
-                    elements.MoveBy(offset.X, offset.Y);
+                    _elements.Transform(matrix);
                     // Make undoable
-                    MakeUndoable(new SurfaceBackgroundChangeMemento(this, offset), false);
+                    MakeUndoable(new SurfaceBackgroundChangeMemento(this, matrix), false);
                     SetImage(newImage, false);
                     Invalidate();
-                    if (surfaceSizeChanged != null && !imageRectangle.Equals(new Rectangle(Point.Empty, newImage.Size)))
+                    if (_surfaceSizeChanged != null && !imageRectangle.Equals(new Rectangle(Point.Empty, newImage.Size)))
                     {
-                        surfaceSizeChanged(this, null);
+                        _surfaceSizeChanged(this, null);
                     }
+                }
+                else
+                {
+                    // clean up matrix, as it hasn't been used in the undo stack.
+                    matrix.Dispose();
                 }
             }
             finally
@@ -980,7 +1002,7 @@ namespace Greenshot.Drawing
         /// </summary>
         /// <param name="cropRectangle"></param>
         /// <returns>true if this is possible</returns>
-        public bool isCropPossible(ref Rectangle cropRectangle)
+        public bool IsCropPossible(ref Rectangle cropRectangle)
         {
             cropRectangle = GuiRectangle.GetGuiRectangle(cropRectangle.Left, cropRectangle.Top, cropRectangle.Width, cropRectangle.Height);
             if (cropRectangle.Left < 0)
@@ -1014,13 +1036,13 @@ namespace Greenshot.Drawing
         /// <param name="message">Message itself</param>
         public void SendMessageEvent(object source, SurfaceMessageTyp messageType, string message)
         {
-            if (surfaceMessage != null)
+            if (_surfaceMessage != null)
             {
                 SurfaceMessageEventArgs eventArgs = new SurfaceMessageEventArgs();
                 eventArgs.Message = message;
                 eventArgs.MessageType = messageType;
                 eventArgs.Surface = this;
-                surfaceMessage(source, eventArgs);
+                _surfaceMessage(source, eventArgs);
             }
         }
 
@@ -1031,7 +1053,7 @@ namespace Greenshot.Drawing
         /// <returns></returns>
         public bool ApplyCrop(Rectangle cropRectangle)
         {
-            if (isCropPossible(ref cropRectangle))
+            if (IsCropPossible(ref cropRectangle))
             {
                 Rectangle imageRectangle = new Rectangle(Point.Empty, Image.Size);
                 Bitmap tmpImage;
@@ -1049,16 +1071,17 @@ namespace Greenshot.Drawing
                     throw;
                 }
 
-                Point offset = new Point(-cropRectangle.Left, -cropRectangle.Top);
+                Matrix matrix = new Matrix();
+                matrix.Translate(-cropRectangle.Left, -cropRectangle.Top, MatrixOrder.Append);
                 // Make undoable
-                MakeUndoable(new SurfaceBackgroundChangeMemento(this, offset), false);
+                MakeUndoable(new SurfaceBackgroundChangeMemento(this, matrix), false);
 
                 // Do not dispose otherwise we can't undo the image!
                 SetImage(tmpImage, false);
-                elements.MoveBy(offset.X, offset.Y);
-                if (surfaceSizeChanged != null && !imageRectangle.Equals(new Rectangle(Point.Empty, tmpImage.Size)))
+                _elements.Transform(matrix);
+                if (_surfaceSizeChanged != null && !imageRectangle.Equals(new Rectangle(Point.Empty, tmpImage.Size)))
                 {
-                    surfaceSizeChanged(this, null);
+                    _surfaceSizeChanged(this, null);
                 }
                 Invalidate();
                 return true;
@@ -1071,14 +1094,17 @@ namespace Greenshot.Drawing
         /// This is called from the SurfaceBackgroundChangeMemento.
         /// </summary>
         /// <param name="previous"></param>
-        /// <param name="offset"></param>
-        public void UndoBackgroundChange(Image previous, Point offset)
+        /// <param name="matrix"></param>
+        public void UndoBackgroundChange(Image previous, Matrix matrix)
         {
             SetImage(previous, false);
-            elements.MoveBy(offset.X, offset.Y);
-            if (surfaceSizeChanged != null)
+            if (matrix != null)
             {
-                surfaceSizeChanged(this, null);
+                _elements.Transform(matrix);
+            }
+            if (_surfaceSizeChanged != null)
+            {
+                _surfaceSizeChanged(this, null);
             }
             Invalidate();
         }
@@ -1090,7 +1116,7 @@ namespace Greenshot.Drawing
         /// <param name="e"></param>
         private void SurfaceMouseDown(object sender, MouseEventArgs e)
         {
-            mouseStart = e.Location;
+            _mouseStart = e.Location;
 
             // check contextmenu
             if (e.Button == MouseButtons.Right)
@@ -1103,10 +1129,10 @@ namespace Greenshot.Drawing
                 else
                 {
                     // Single element
-                    IDrawableContainer rightClickedContainer = elements.ClickableElementAt(mouseStart.X, mouseStart.Y);
+                    IDrawableContainer rightClickedContainer = _elements.ClickableElementAt(_mouseStart.X, _mouseStart.Y);
                     if (rightClickedContainer != null)
                     {
-                        selectedList = new DrawableContainerList();
+                        selectedList = new DrawableContainerList(ID);
                         selectedList.Add(rightClickedContainer);
                     }
                 }
@@ -1117,52 +1143,52 @@ namespace Greenshot.Drawing
                 return;
             }
 
-            mouseDown = true;
-            isSurfaceMoveMadeUndoable = false;
+            _mouseDown = true;
+            _isSurfaceMoveMadeUndoable = false;
 
-            if (cropContainer != null && ((undrawnElement == null) || (undrawnElement != null && DrawingMode != DrawingModes.Crop)))
+            if (_cropContainer != null && ((_undrawnElement == null) || (_undrawnElement != null && DrawingMode != DrawingModes.Crop)))
             {
-                RemoveElement(cropContainer, false);
-                cropContainer = null;
-                drawingElement = null;
+                RemoveElement(_cropContainer, false);
+                _cropContainer = null;
+                _drawingElement = null;
             }
 
-            if (drawingElement == null && DrawingMode != DrawingModes.None)
+            if (_drawingElement == null && DrawingMode != DrawingModes.None)
             {
-                if (undrawnElement == null)
+                if (_undrawnElement == null)
                 {
                     DeselectAllElements();
-                    if (undrawnElement == null)
+                    if (_undrawnElement == null)
                     {
                         CreateUndrawnElement();
                     }
                 }
-                drawingElement = undrawnElement;
-                drawingElement.Status = EditStatus.DRAWING;
-                undrawnElement = null;
+                _drawingElement = _undrawnElement;
                 // if a new element has been drawn, set location and register it
-                if (drawingElement != null)
+                if (_drawingElement != null)
                 {
-                    drawingElement.PropertyChanged += ElementPropertyChanged;
-                    if (!drawingElement.HandleMouseDown(mouseStart.X, mouseStart.Y))
+                    _drawingElement.Status = _undrawnElement.DefaultEditMode;
+                    _drawingElement.PropertyChanged += ElementPropertyChanged;
+                    if (!_drawingElement.HandleMouseDown(_mouseStart.X, _mouseStart.Y))
                     {
-                        drawingElement.Left = mouseStart.X;
-                        drawingElement.Top = mouseStart.Y;
+                        _drawingElement.Left = _mouseStart.X;
+                        _drawingElement.Top = _mouseStart.Y;
                     }
-                    AddElement(drawingElement);
-                    drawingElement.Selected = true;
+                    AddElement(_drawingElement);
+                    _drawingElement.Selected = true;
                 }
+                _undrawnElement = null;
             }
             else
             {
                 // check whether an existing element was clicked
                 // we save mouse down element separately from selectedElements (checked on mouse up),
                 // since it could be moved around before it is actually selected
-                mouseDownElement = elements.ClickableElementAt(mouseStart.X, mouseStart.Y);
+                _mouseDownElement = _elements.ClickableElementAt(_mouseStart.X, _mouseStart.Y);
 
-                if (mouseDownElement != null)
+                if (_mouseDownElement != null)
                 {
-                    mouseDownElement.Status = EditStatus.MOVING;
+                    _mouseDownElement.Status = EditStatus.MOVING;
                 }
             }
         }
@@ -1176,17 +1202,17 @@ namespace Greenshot.Drawing
         {
             Point currentMouse = new Point(e.X, e.Y);
 
-            elements.Status = EditStatus.IDLE;
-            if (mouseDownElement != null)
+            _elements.Status = EditStatus.IDLE;
+            if (_mouseDownElement != null)
             {
-                mouseDownElement.Status = EditStatus.IDLE;
+                _mouseDownElement.Status = EditStatus.IDLE;
             }
-            mouseDown = false;
-            mouseDownElement = null;
+            _mouseDown = false;
+            _mouseDownElement = null;
             if (DrawingMode == DrawingModes.None)
             {
                 // check whether an existing element was clicked
-                IDrawableContainer element = elements.ClickableElementAt(currentMouse.X, currentMouse.Y);
+                IDrawableContainer element = _elements.ClickableElementAt(currentMouse.X, currentMouse.Y);
                 bool shiftModifier = (ModifierKeys & Keys.Shift) == Keys.Shift;
                 if (element != null)
                 {
@@ -1224,26 +1250,26 @@ namespace Greenshot.Drawing
                 selectedElements.Selected = true;
             }
 
-            if (drawingElement != null)
+            if (_drawingElement != null)
             {
-                if (!drawingElement.InitContent())
+                if (!_drawingElement.InitContent())
                 {
-                    elements.Remove(drawingElement);
-                    drawingElement.Invalidate();
+                    _elements.Remove(_drawingElement);
+                    _drawingElement.Invalidate();
                 }
                 else
                 {
-                    drawingElement.HandleMouseUp(currentMouse.X, currentMouse.Y);
-                    drawingElement.Invalidate();
-                    if (Math.Abs(drawingElement.Width) < 5 && Math.Abs(drawingElement.Height) < 5)
+                    _drawingElement.HandleMouseUp(currentMouse.X, currentMouse.Y);
+                    _drawingElement.Invalidate();
+                    if (Math.Abs(_drawingElement.Width) < 5 && Math.Abs(_drawingElement.Height) < 5)
                     {
-                        drawingElement.Width = 25;
-                        drawingElement.Height = 25;
+                        _drawingElement.Width = 25;
+                        _drawingElement.Height = 25;
                     }
-                    SelectElement(drawingElement);
-                    drawingElement.Selected = true;
+                    SelectElement(_drawingElement);
+                    _drawingElement.Selected = true;
                 }
-                drawingElement = null;
+                _drawingElement = null;
             }
         }
 
@@ -1265,43 +1291,43 @@ namespace Greenshot.Drawing
                 Cursor = Cursors.Default;
             }
 
-            if (mouseDown)
+            if (_mouseDown)
             {
-                if (mouseDownElement != null)
+                if (_mouseDownElement != null)
                 { // an element is currently dragged
-                    mouseDownElement.Invalidate();
+                    _mouseDownElement.Invalidate();
                     selectedElements.HideGrippers();
                     // Move the element
-                    if (mouseDownElement.Selected)
+                    if (_mouseDownElement.Selected)
                     {
-                        if (!isSurfaceMoveMadeUndoable)
+                        if (!_isSurfaceMoveMadeUndoable)
                         {
                             // Only allow one undoable per mouse-down/move/up "cycle"
-                            isSurfaceMoveMadeUndoable = true;
+                            _isSurfaceMoveMadeUndoable = true;
                             selectedElements.MakeBoundsChangeUndoable(false);
                         }
                         // dragged element has been selected before -> move all
-                        selectedElements.MoveBy(currentMouse.X - mouseStart.X, currentMouse.Y - mouseStart.Y);
+                        selectedElements.MoveBy(currentMouse.X - _mouseStart.X, currentMouse.Y - _mouseStart.Y);
                     }
                     else
                     {
-                        if (!isSurfaceMoveMadeUndoable)
+                        if (!_isSurfaceMoveMadeUndoable)
                         {
                             // Only allow one undoable per mouse-down/move/up "cycle"
-                            isSurfaceMoveMadeUndoable = true;
-                            mouseDownElement.MakeBoundsChangeUndoable(false);
+                            _isSurfaceMoveMadeUndoable = true;
+                            _mouseDownElement.MakeBoundsChangeUndoable(false);
                         }
                         // dragged element is not among selected elements -> just move dragged one
-                        mouseDownElement.MoveBy(currentMouse.X - mouseStart.X, currentMouse.Y - mouseStart.Y);
+                        _mouseDownElement.MoveBy(currentMouse.X - _mouseStart.X, currentMouse.Y - _mouseStart.Y);
                     }
-                    mouseStart = currentMouse;
-                    mouseDownElement.Invalidate();
-                    modified = true;
+                    _mouseStart = currentMouse;
+                    _mouseDownElement.Invalidate();
+                    _modified = true;
                 }
-                else if (drawingElement != null)
+                else if (_drawingElement != null)
                 {
-                    drawingElement.HandleMouseMove(currentMouse.X, currentMouse.Y);
-                    modified = true;
+                    _drawingElement.HandleMouseMove(currentMouse.X, currentMouse.Y);
+                    _modified = true;
                 }
             }
         }
@@ -1325,7 +1351,7 @@ namespace Greenshot.Drawing
         private Image GetImage(RenderMode renderMode)
         {
             // Generate a copy of the original image with a dpi equal to the default...
-            Bitmap clone = ImageHelper.Clone(image, PixelFormat.DontCare);
+            Bitmap clone = ImageHelper.Clone(_image, PixelFormat.DontCare);
             // otherwise we would have a problem drawing the image to the surface... :(
             using (Graphics graphics = Graphics.FromImage(clone))
             {
@@ -1334,7 +1360,7 @@ namespace Greenshot.Drawing
                 //graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 //graphics.CompositingQuality = CompositingQuality.HighQuality;
                 //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                elements.Draw(graphics, clone, renderMode, new Rectangle(Point.Empty, clone.Size));
+                _elements.Draw(graphics, clone, renderMode, new Rectangle(Point.Empty, clone.Size));
             }
             return clone;
         }
@@ -1363,23 +1389,23 @@ namespace Greenshot.Drawing
                 return;
             }
 
-            if (elements.hasIntersectingFilters(clipRectangle))
+            if (_elements.HasIntersectingFilters(clipRectangle))
             {
-                if (buffer != null)
+                if (_buffer != null)
                 {
-                    if (buffer.Width != Image.Width || buffer.Height != Image.Height || buffer.PixelFormat != Image.PixelFormat)
+                    if (_buffer.Width != Image.Width || _buffer.Height != Image.Height || _buffer.PixelFormat != Image.PixelFormat)
                     {
-                        buffer.Dispose();
-                        buffer = null;
+                        _buffer.Dispose();
+                        _buffer = null;
                     }
                 }
-                if (buffer == null)
+                if (_buffer == null)
                 {
-                    buffer = ImageHelper.CreateEmpty(Image.Width, Image.Height, Image.PixelFormat, Color.Empty, Image.HorizontalResolution, Image.VerticalResolution);
+                    _buffer = ImageHelper.CreateEmpty(Image.Width, Image.Height, Image.PixelFormat, Color.Empty, Image.HorizontalResolution, Image.VerticalResolution);
                     LOG.DebugFormat("Created buffer with size: {0}x{1}", Image.Width, Image.Height);
                 }
                 // Elements might need the bitmap, so we copy the part we need
-                using (Graphics graphics = Graphics.FromImage(buffer))
+                using (Graphics graphics = Graphics.FromImage(_buffer))
                 {
                     // do not set the following, the containers need to decide this themselves!
                     //graphics.SmoothingMode = SmoothingMode.HighQuality;
@@ -1388,14 +1414,14 @@ namespace Greenshot.Drawing
                     //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                     graphics.DrawImage(Image, clipRectangle, clipRectangle, GraphicsUnit.Pixel);
                     graphics.SetClip(targetGraphics);
-                    elements.Draw(graphics, buffer, RenderMode.EDIT, clipRectangle);
+                    _elements.Draw(graphics, _buffer, RenderMode.EDIT, clipRectangle);
                 }
-                targetGraphics.DrawImage(buffer, clipRectangle, clipRectangle, GraphicsUnit.Pixel);
+                targetGraphics.DrawImage(_buffer, clipRectangle, clipRectangle, GraphicsUnit.Pixel);
             }
             else
             {
                 targetGraphics.DrawImage(Image, clipRectangle, clipRectangle, GraphicsUnit.Pixel);
-                elements.Draw(targetGraphics, null, RenderMode.EDIT, clipRectangle);
+                _elements.Draw(targetGraphics, null, RenderMode.EDIT, clipRectangle);
             }
         }
 
@@ -1406,11 +1432,11 @@ namespace Greenshot.Drawing
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             // check if we need to draw the checkerboard
-            if (Image.IsAlphaPixelFormat(Image.PixelFormat) && transparencyBackgroundBrush != null)
+            if (Image.IsAlphaPixelFormat(Image.PixelFormat) && _transparencyBackgroundBrush != null)
             {
                 Graphics targetGraphics = e.Graphics;
                 Rectangle clipRectangle = e.ClipRectangle;
-                targetGraphics.FillRectangle(transparencyBackgroundBrush, clipRectangle);
+                targetGraphics.FillRectangle(_transparencyBackgroundBrush, clipRectangle);
             }
             else
             {
@@ -1436,7 +1462,7 @@ namespace Greenshot.Drawing
         /// <param name="makeUndoable">true if the adding should be undoable</param>
         public void AddElement(IDrawableContainer element, bool makeUndoable)
         {
-            elements.Add(element);
+            _elements.Add(element);
             DrawableContainer container = element as DrawableContainer;
             if (container != null)
             {
@@ -1452,7 +1478,7 @@ namespace Greenshot.Drawing
             {
                 MakeUndoable(new AddElementMemento(this, element), false);
             }
-            modified = true;
+            _modified = true;
         }
 
         /// <summary>
@@ -1463,7 +1489,7 @@ namespace Greenshot.Drawing
         public void RemoveElement(IDrawableContainer elementToRemove, bool makeUndoable)
         {
             DeselectElement(elementToRemove);
-            elements.Remove(elementToRemove);
+            _elements.Remove(elementToRemove);
             DrawableContainer element = elementToRemove as DrawableContainer;
             if (element != null)
             {
@@ -1471,12 +1497,12 @@ namespace Greenshot.Drawing
             }
             elementToRemove.PropertyChanged -= ElementPropertyChanged;
             // Do not dispose, the memento should!! element.Dispose();
-            elementToRemove.Invalidate();
+            Invalidate();
             if (makeUndoable)
             {
                 MakeUndoable(new DeleteElementMemento(this, elementToRemove), false);
             }
-            modified = true;
+            _modified = true;
         }
 
         /// <summary>
@@ -1524,11 +1550,11 @@ namespace Greenshot.Drawing
                     RemoveElement(element, true);
                 }
                 selectedElements.Clear();
-                if (movingElementChanged != null)
+                if (_movingElementChanged != null)
                 {
                     SurfaceElementEventArgs eventArgs = new SurfaceElementEventArgs();
                     eventArgs.Elements = selectedElements;
-                    movingElementChanged(this, eventArgs);
+                    _movingElementChanged(this, eventArgs);
                 }
             }
         }
@@ -1567,17 +1593,17 @@ namespace Greenshot.Drawing
             List<IDrawableContainer> selectedDCs = new List<IDrawableContainer>(selectedElements);
             foreach (IDrawableContainer dc in selectedDCs)
             {
-                if (dc.Equals(cropContainer))
+                if (dc.Equals(_cropContainer))
                 {
                     DrawingMode = DrawingModes.None;
                     // No undo memento for the cropcontainer itself, only for the effect
-                    RemoveElement(cropContainer, false);
+                    RemoveElement(_cropContainer, false);
                     if (confirm)
                     {
-                        ApplyCrop(cropContainer.Bounds);
+                        ApplyCrop(_cropContainer.Bounds);
                     }
-                    cropContainer.Dispose();
-                    cropContainer = null;
+                    _cropContainer.Dispose();
+                    _cropContainer = null;
                 }
             }
         }
@@ -1608,8 +1634,91 @@ namespace Greenshot.Drawing
                 DrawableContainerList dcs = (DrawableContainerList)ClipboardHelper.GetFromDataObject(clipboard, typeof(DrawableContainerList));
                 if (dcs != null)
                 {
+                    // Make element(s) only move 10,10 if the surface is the same
+                    Point moveOffset;
+                    bool isSameSurface = (dcs.ParentID == _uniqueId);
                     dcs.Parent = this;
-                    dcs.MoveBy(10, 10);
+                    if (isSameSurface)
+                    {
+                        moveOffset = new Point(10, 10);
+                    }
+                    else
+                    {
+                        moveOffset = Point.Empty;
+                    }
+                    // Here a fix for bug #1475, first calculate the bounds of the complete DrawableContainerList
+                    Rectangle drawableContainerListBounds = Rectangle.Empty;
+                    foreach (IDrawableContainer element in dcs)
+                    {
+                        if (drawableContainerListBounds == Rectangle.Empty)
+                        {
+                            drawableContainerListBounds = element.DrawingBounds;
+                        }
+                        else
+                        {
+                            drawableContainerListBounds = Rectangle.Union(drawableContainerListBounds, element.DrawingBounds);
+                        }
+                    }
+                    // And find a location inside the target surface to paste to
+                    bool containersCanFit = drawableContainerListBounds.Width < Bounds.Width && drawableContainerListBounds.Height < Bounds.Height;
+                    if (!containersCanFit)
+                    {
+                        Point containersLocation = drawableContainerListBounds.Location;
+                        containersLocation.Offset(moveOffset);
+                        if (!Bounds.Contains(containersLocation))
+                        {
+                            // Easy fix for same surface
+                            if (isSameSurface)
+                            {
+                                moveOffset = new Point(-10, -10);
+                            }
+                            else
+                            {
+                                // For different surface, which is most likely smaller, we move to "10,10"
+                                moveOffset = new Point(-drawableContainerListBounds.Location.X + 10, -drawableContainerListBounds.Location.Y + 10);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Rectangle moveContainerListBounds = drawableContainerListBounds;
+                        moveContainerListBounds.Offset(moveOffset);
+                        // check if the element is inside
+                        if (!Bounds.Contains(moveContainerListBounds))
+                        {
+                            // Easy fix for same surface
+                            if (isSameSurface)
+                            {
+                                moveOffset = new Point(-10, -10);
+                            }
+                            else
+                            {
+                                // For different surface, which is most likely smaller
+                                int offsetX = 0;
+                                int offsetY = 0;
+                                if (drawableContainerListBounds.Right > Bounds.Right)
+                                {
+                                    offsetX = Bounds.Right - drawableContainerListBounds.Right;
+                                    // Correction for the correction
+                                    if (drawableContainerListBounds.Left + offsetX < 0)
+                                    {
+                                        offsetX += Math.Abs(drawableContainerListBounds.Left + offsetX);
+                                    }
+                                }
+                                if (drawableContainerListBounds.Bottom > Bounds.Bottom)
+                                {
+                                    offsetY = Bounds.Bottom - drawableContainerListBounds.Bottom;
+                                    // Correction for the correction
+                                    if (drawableContainerListBounds.Top + offsetY < 0)
+                                    {
+                                        offsetY += Math.Abs(drawableContainerListBounds.Top + offsetY);
+                                    }
+                                }
+                                moveOffset = new Point(offsetX, offsetY);
+                            }
+                        }
+                    }
+                    dcs.MoveBy(moveOffset.X, moveOffset.Y);
                     AddElements(dcs);
                     FieldAggregator.BindElements(dcs);
                     DeselectAllElements();
@@ -1670,11 +1779,11 @@ namespace Greenshot.Drawing
             container.Selected = false;
             selectedElements.Remove(container);
             FieldAggregator.UnbindElement(container);
-            if (movingElementChanged != null)
+            if (_movingElementChanged != null)
             {
                 SurfaceElementEventArgs eventArgs = new SurfaceElementEventArgs();
                 eventArgs.Elements = selectedElements;
-                movingElementChanged(this, eventArgs);
+                _movingElementChanged(this, eventArgs);
             }
         }
 
@@ -1694,11 +1803,11 @@ namespace Greenshot.Drawing
                     selectedElements.Remove(element);
                     FieldAggregator.UnbindElement(element);
                 }
-                if (movingElementChanged != null)
+                if (_movingElementChanged != null)
                 {
                     SurfaceElementEventArgs eventArgs = new SurfaceElementEventArgs();
                     eventArgs.Elements = selectedElements;
-                    movingElementChanged(this, eventArgs);
+                    _movingElementChanged(this, eventArgs);
                 }
             }
         }
@@ -1715,11 +1824,11 @@ namespace Greenshot.Drawing
                 container.ShowGrippers();
                 container.Selected = true;
                 FieldAggregator.BindElement(container);
-                if (movingElementChanged != null)
+                if (_movingElementChanged != null)
                 {
                     SurfaceElementEventArgs eventArgs = new SurfaceElementEventArgs();
                     eventArgs.Elements = selectedElements;
-                    movingElementChanged(this, eventArgs);
+                    _movingElementChanged(this, eventArgs);
                 }
                 container.Invalidate();
             }
@@ -1730,7 +1839,7 @@ namespace Greenshot.Drawing
         /// </summary>
         public void SelectAllElements()
         {
-            SelectElements(elements);
+            SelectElements(_elements);
         }
 
         /// <summary>
@@ -1817,7 +1926,7 @@ namespace Greenshot.Drawing
         {
             get
             {
-                return elements;
+                return _elements;
             }
         }
 
@@ -1826,8 +1935,8 @@ namespace Greenshot.Drawing
         /// </summary>
         public void PullElementsUp()
         {
-            elements.PullElementsUp(selectedElements);
-            elements.Invalidate();
+            _elements.PullElementsUp(selectedElements);
+            _elements.Invalidate();
         }
 
         /// <summary>
@@ -1835,8 +1944,8 @@ namespace Greenshot.Drawing
         /// </summary>
         public void PullElementsToTop()
         {
-            elements.PullElementsToTop(selectedElements);
-            elements.Invalidate();
+            _elements.PullElementsToTop(selectedElements);
+            _elements.Invalidate();
         }
 
         /// <summary>
@@ -1844,8 +1953,8 @@ namespace Greenshot.Drawing
         /// </summary>
         public void PushElementsDown()
         {
-            elements.PushElementsDown(selectedElements);
-            elements.Invalidate();
+            _elements.PushElementsDown(selectedElements);
+            _elements.Invalidate();
         }
 
         /// <summary>
@@ -1853,8 +1962,8 @@ namespace Greenshot.Drawing
         /// </summary>
         public void PushElementsToBottom()
         {
-            elements.PushElementsToBottom(selectedElements);
-            elements.Invalidate();
+            _elements.PushElementsToBottom(selectedElements);
+            _elements.Invalidate();
         }
 
         /// <summary>
@@ -1863,7 +1972,7 @@ namespace Greenshot.Drawing
         /// <returns>true if selected elements could be pulled up, false otherwise</returns>
         public bool CanPullSelectionUp()
         {
-            return elements.CanPullUp(selectedElements);
+            return _elements.CanPullUp(selectedElements);
         }
 
         /// <summary>
@@ -1872,7 +1981,7 @@ namespace Greenshot.Drawing
         /// <returns>true if selected elements could be pushed down, false otherwise</returns>
         public bool CanPushSelectionDown()
         {
-            return elements.CanPushDown(selectedElements);
+            return _elements.CanPushDown(selectedElements);
         }
 
         public void ElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -1883,6 +1992,11 @@ namespace Greenshot.Drawing
         public void element_FieldChanged(object sender, FieldChangedEventArgs e)
         {
             selectedElements.HandleFieldChangedEvent(sender, e);
+        }
+
+        public bool IsOnSurface(IDrawableContainer container)
+        {
+            return _elements.Contains(container);
         }
     }
 }

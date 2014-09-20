@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using System;
 
 namespace Greenshot.Memento
@@ -43,13 +42,5 @@ namespace Greenshot.Memento
         /// <param name="other">The memento to try to merge with</param>
         /// <returns></returns>
         bool Merge(IMemento other);
-
-        /// <summary>
-        /// Returns the language key for the action which is performed
-        /// </summary>
-        LangKey ActionLanguageKey
-        {
-            get;
-        }
     }
 }

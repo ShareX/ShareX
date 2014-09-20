@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Drawing;
 using Greenshot.Plugin.Drawing;
 using System;
@@ -51,14 +50,6 @@ namespace Greenshot.Memento
             //if (disposing) { }
             drawableContainer = null;
             surface = null;
-        }
-
-        public LangKey ActionLanguageKey
-        {
-            get
-            {
-                return LangKey.none;
-            }
         }
 
         public bool Merge(IMemento otherMemento)

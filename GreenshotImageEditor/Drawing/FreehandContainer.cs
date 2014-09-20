@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -33,7 +33,7 @@ namespace Greenshot.Drawing
     /// <summary>
     /// Description of PathContainer.
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public class FreehandContainer : DrawableContainer
     {
         private static readonly float[] POINT_OFFSET = new float[] { 0.5f, 0.25f, 0.75f };
@@ -52,27 +52,41 @@ namespace Greenshot.Drawing
             : base(parent)
         {
             Init();
-            AddField(GetType(), FieldType.LINE_THICKNESS, 3);
-            AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
             Width = parent.Width;
             Height = parent.Height;
             Top = 0;
             Left = 0;
         }
 
+        protected override void InitializeFields()
+        {
+            AddField(GetType(), FieldType.LINE_THICKNESS, 3);
+            AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
+        }
+
         protected void Init()
         {
-            if (grippers != null)
+            if (_grippers != null)
             {
-                for (int i = 0; i < grippers.Length; i++)
+                for (int i = 0; i < _grippers.Length; i++)
                 {
-                    grippers[i].Enabled = false;
-                    grippers[i].Visible = false;
+                    _grippers[i].Enabled = false;
+                    _grippers[i].Visible = false;
                 }
             }
         }
 
-        [OnDeserialized()]
+        public override void Transform(Matrix matrix)
+        {
+            Point[] points = capturePoints.ToArray();
+
+            matrix.TransformPoints(points);
+            capturePoints.Clear();
+            capturePoints.AddRange(points);
+            RecalculatePath();
+        }
+
+        [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
             InitGrippers();
@@ -117,11 +131,11 @@ namespace Greenshot.Drawing
         {
             Point previousPoint = capturePoints[capturePoints.Count - 1];
 
-            if (GeometryHelper.Distance2D(previousPoint.X, previousPoint.Y, mouseX, mouseY) >= (2 * editorConfig.FreehandSensitivity))
+            if (GeometryHelper.Distance2D(previousPoint.X, previousPoint.Y, mouseX, mouseY) >= (2 * EditorConfig.FreehandSensitivity))
             {
                 capturePoints.Add(new Point(mouseX, mouseY));
             }
-            if (GeometryHelper.Distance2D(lastMouse.X, lastMouse.Y, mouseX, mouseY) >= editorConfig.FreehandSensitivity)
+            if (GeometryHelper.Distance2D(lastMouse.X, lastMouse.Y, mouseX, mouseY) >= EditorConfig.FreehandSensitivity)
             {
                 //path.AddCurve(new Point[]{lastMouse, new Point(mouseX, mouseY)});
                 freehandPath.AddLine(lastMouse, new Point(mouseX, mouseY));
@@ -139,7 +153,7 @@ namespace Greenshot.Drawing
         public override void HandleMouseUp(int mouseX, int mouseY)
         {
             // Make sure we don't loose the ending point
-            if (GeometryHelper.Distance2D(lastMouse.X, lastMouse.Y, mouseX, mouseY) >= editorConfig.FreehandSensitivity)
+            if (GeometryHelper.Distance2D(lastMouse.X, lastMouse.Y, mouseX, mouseY) >= EditorConfig.FreehandSensitivity)
             {
                 capturePoints.Add(new Point(mouseX, mouseY));
             }
@@ -177,17 +191,6 @@ namespace Greenshot.Drawing
 
             // Recalculate the bounds
             myBounds = Rectangle.Round(freehandPath.GetBounds());
-        }
-
-        /// <summary>
-        /// Currently we can't rotate the freehand
-        /// </summary>
-        public override bool CanRotate
-        {
-            get
-            {
-                return false;
-            }
         }
 
         /// <summary>
@@ -263,10 +266,7 @@ namespace Greenshot.Drawing
                     int safetymargin = 10;
                     return new Rectangle((myBounds.Left + Left) - (safetymargin + lineThickness), (myBounds.Top + Top) - (safetymargin + lineThickness), myBounds.Width + (2 * (lineThickness + safetymargin)), myBounds.Height + (2 * (lineThickness + safetymargin)));
                 }
-                else
-                {
-                    return new Rectangle(0, 0, parent.Width, parent.Height);
-                }
+                return new Rectangle(0, 0, _parent.Width, _parent.Height);
             }
         }
 
@@ -294,6 +294,10 @@ namespace Greenshot.Drawing
             return freehandPath.GetHashCode();
         }
 
+        /// <summary>
+        /// This is overriden to prevent the grippers to be modified.
+        /// Might not be the best way...
+        /// </summary>
         protected override void DoLayout()
         {
         }

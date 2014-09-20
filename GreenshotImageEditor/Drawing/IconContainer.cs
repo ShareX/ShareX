@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -31,7 +31,7 @@ namespace Greenshot.Drawing
     /// <summary>
     /// Description of IconContainer.
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public class IconContainer : DrawableContainer, IIconContainer
     {
         protected Icon icon;
@@ -107,7 +107,7 @@ namespace Greenshot.Drawing
             }
         }
 
-        public override bool hasDefaultSize
+        public override bool HasDefaultSize
         {
             get
             {

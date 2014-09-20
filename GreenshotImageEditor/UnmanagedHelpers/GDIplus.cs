@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -96,19 +96,19 @@ namespace GreenshotPlugin.UnmanagedHelpers
     /// </summary>
     public static class GDIplus
     {
-        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
+        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipBitmapApplyEffect(IntPtr bitmap, IntPtr effect, ref RECT rectOfInterest, bool useAuxData, IntPtr auxData, int auxDataSize);
 
-        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
+        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipDrawImageFX(IntPtr graphics, IntPtr bitmap, ref RECTF source, IntPtr matrix, IntPtr effect, IntPtr imageAttributes, GpUnit srcUnit);
 
-        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
+        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipSetEffectParameters(IntPtr effect, IntPtr parameters, uint size);
 
-        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
+        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipCreateEffect(Guid guid, out IntPtr effect);
 
-        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
+        [DllImport("gdiplus.dll", SetLastError = true, ExactSpelling = true)]
         private static extern int GdipDeleteEffect(IntPtr effect);
 
         private static Guid BlurEffectGuid = new Guid("{633C80A4-1843-482B-9EF2-BE2834C5FDD4}");
@@ -121,6 +121,8 @@ namespace GreenshotPlugin.UnmanagedHelpers
         private static readonly FieldInfo FIELD_INFO_NATIVE_MATRIX = typeof(Matrix).GetField("nativeMatrix", BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic);
         // Constant "FieldInfo" for getting the nativeImageAttributes from the ImageAttributes
         private static readonly FieldInfo FIELD_INFO_NATIVE_IMAGEATTRIBUTES = typeof(ImageAttributes).GetField("nativeImageAttributes", BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic);
+
+        private static bool isBlurEnabled = Environment.OSVersion.Version.Major >= 6;
 
         /// <summary>
         /// Get the nativeImage field from the bitmap
@@ -182,17 +184,18 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// Returns if a GDIPlus blur can be made for the supplied radius.
         /// This accounts for the "bug" I reported here: http://social.technet.microsoft.com/Forums/en/w8itprogeneral/thread/99ddbe9d-556d-475a-8bab-84e25aa13a2c
         /// </summary>
+        /// <param name="radius"></param>
+        /// <returns></returns>
         public static bool IsBlurPossible(int radius)
         {
-            if (Environment.OSVersion.Version.Major < 6)
+            if (!isBlurEnabled)
             {
                 return false;
             }
-            else if ((Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 2) && radius < 20)
+            else if (Environment.OSVersion.Version.Minor >= 2 && radius < 20)
             {
                 return false;
             }
-
             return true;
         }
 
@@ -245,6 +248,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             catch (Exception ex)
             {
+                isBlurEnabled = false;
                 LOG.Error("Problem using GdipBitmapApplyEffect: ", ex);
                 return false;
             }
@@ -265,6 +269,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
                 }
                 catch (Exception ex)
                 {
+                    isBlurEnabled = false;
                     LOG.Error("Problem cleaning up ApplyBlur: ", ex);
                 }
             }
@@ -320,20 +325,29 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             catch (Exception ex)
             {
+                isBlurEnabled = false;
                 LOG.Error("Problem using GdipDrawImageFX: ", ex);
                 return false;
             }
             finally
             {
-                if (hEffect != null)
+                try
                 {
-                    // Delete the effect
-                    GdipDeleteEffect(hEffect);
+                    if (hEffect != IntPtr.Zero)
+                    {
+                        // Delete the effect
+                        GdipDeleteEffect(hEffect);
+                    }
+                    if (hBlurParams != IntPtr.Zero)
+                    {
+                        // Free the memory
+                        Marshal.FreeHGlobal(hBlurParams);
+                    }
                 }
-                if (hBlurParams != IntPtr.Zero)
+                catch (Exception ex)
                 {
-                    // Free the memory
-                    Marshal.FreeHGlobal(hBlurParams);
+                    isBlurEnabled = false;
+                    LOG.Error("Problem cleaning up DrawWithBlur: ", ex);
                 }
             }
         }

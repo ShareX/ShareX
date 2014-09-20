@@ -20,7 +20,6 @@
  */
 
 using GreenshotPlugin;
-using GreenshotPlugin.Core;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -861,7 +860,8 @@ namespace Greenshot.Interop
                             {
                                 destinationName = _InterceptType.FullName;
                             }
-                            DialogResult result = MessageBox.Show(Language.GetFormattedString("com_rejected", destinationName), Language.GetString("com_rejected_title"), MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                            DialogResult result = MessageBox.Show(string.Format("The destination {0} rejected Greenshot access, probably a dialog is open. Close the dialog and try again.",
+                                destinationName), "Greenshot access rejected", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                             if (result == DialogResult.OK)
                             {
                                 continue;

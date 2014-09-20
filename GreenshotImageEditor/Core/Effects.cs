@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -23,6 +23,7 @@ using GreenshotPlugin;
 using GreenshotPlugin.Core;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
 namespace Greenshot.Core
@@ -32,7 +33,7 @@ namespace Greenshot.Core
     /// </summary>
     public interface IEffect
     {
-        Image Apply(Image sourceImage, out Point offsetChange);
+        Image Apply(Image sourceImage, Matrix matrix);
     }
 
     /// <summary>
@@ -43,8 +44,8 @@ namespace Greenshot.Core
         public DropShadowEffect()
         {
             Darkness = 0.6f;
-            ShadowSize = 9;
-            ShadowOffset = new Point(0, 0);
+            ShadowSize = 7;
+            ShadowOffset = new Point(-1, -1);
         }
 
         public float Darkness
@@ -63,9 +64,9 @@ namespace Greenshot.Core
             set;
         }
 
-        public virtual Image Apply(Image sourceImage, out Point offsetChange)
+        public virtual Image Apply(Image sourceImage, Matrix matrix)
         {
-            return ImageHelper.CreateShadow(sourceImage, Darkness, ShadowSize, ShadowOffset, out offsetChange, PixelFormat.Format32bppArgb);
+            return ImageHelper.CreateShadow(sourceImage, Darkness, ShadowSize, ShadowOffset, matrix, PixelFormat.Format32bppArgb);
         }
     }
 
@@ -81,6 +82,8 @@ namespace Greenshot.Core
             ToothHeight = 12;
             HorizontalToothRange = 20;
             VerticalToothRange = 20;
+            Edges = new bool[] { true, true, true, true };
+            GenerateShadow = true;
         }
 
         public int ToothHeight
@@ -98,13 +101,28 @@ namespace Greenshot.Core
             get;
             set;
         }
-
-        public override Image Apply(Image sourceImage, out Point offsetChange)
+        public bool[] Edges
         {
-            using (Image tmpTornImage = ImageHelper.CreateTornEdge(sourceImage, ToothHeight, HorizontalToothRange, VerticalToothRange))
+            get;
+            set;
+        }
+        public bool GenerateShadow
+        {
+            get;
+            set;
+        }
+
+        public override Image Apply(Image sourceImage, Matrix matrix)
+        {
+            Image tmpTornImage = ImageHelper.CreateTornEdge(sourceImage, ToothHeight, HorizontalToothRange, VerticalToothRange, Edges);
+            if (GenerateShadow)
             {
-                return ImageHelper.CreateShadow(tmpTornImage, Darkness, ShadowSize, ShadowOffset, out offsetChange, PixelFormat.Format32bppArgb);
+                using (tmpTornImage)
+                {
+                    return ImageHelper.CreateShadow(tmpTornImage, Darkness, ShadowSize, ShadowOffset, matrix, PixelFormat.Format32bppArgb);
+                }
             }
+            return tmpTornImage;
         }
     }
 
@@ -113,9 +131,8 @@ namespace Greenshot.Core
     /// </summary>
     public class GrayscaleEffect : IEffect
     {
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
             return ImageHelper.CreateGrayscale(sourceImage);
         }
     }
@@ -133,9 +150,8 @@ namespace Greenshot.Core
             this.threshold = threshold;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
             return ImageHelper.CreateMonochrome(sourceImage, threshold);
         }
     }
@@ -169,9 +185,8 @@ namespace Greenshot.Core
             set;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
             return ImageHelper.Adjust(sourceImage, Brightness, Contrast, Gamma);
         }
     }
@@ -193,9 +208,8 @@ namespace Greenshot.Core
             set;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
             using (WuQuantizer quantizer = new WuQuantizer((Bitmap)sourceImage))
             {
                 int colorCount = quantizer.GetColorCount();
@@ -220,9 +234,8 @@ namespace Greenshot.Core
     /// </summary>
     public class InvertEffect : IEffect
     {
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
             return ImageHelper.CreateNegative(sourceImage);
         }
     }
@@ -249,9 +262,9 @@ namespace Greenshot.Core
             set;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            return ImageHelper.CreateBorder(sourceImage, Width, Color, sourceImage.PixelFormat, out offsetChange);
+            return ImageHelper.CreateBorder(sourceImage, Width, Color, sourceImage.PixelFormat, matrix);
         }
     }
 
@@ -271,17 +284,20 @@ namespace Greenshot.Core
             set;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
             RotateFlipType flipType;
             if (Angle == 90)
             {
+                matrix.Rotate(90, MatrixOrder.Append);
+                matrix.Translate(sourceImage.Height, 0, MatrixOrder.Append);
                 flipType = RotateFlipType.Rotate90FlipNone;
             }
             else if (Angle == -90 || Angle == 270)
             {
                 flipType = RotateFlipType.Rotate270FlipNone;
+                matrix.Rotate(-90, MatrixOrder.Append);
+                matrix.Translate(0, sourceImage.Width, MatrixOrder.Append);
             }
             else
             {
@@ -319,10 +335,9 @@ namespace Greenshot.Core
             set;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            offsetChange = Point.Empty;
-            return ImageHelper.ResizeImage(sourceImage, MaintainAspectRatio, Width, Height);
+            return ImageHelper.ResizeImage(sourceImage, MaintainAspectRatio, Width, Height, matrix);
         }
     }
 
@@ -366,11 +381,9 @@ namespace Greenshot.Core
             set;
         }
 
-        public Image Apply(Image sourceImage, out Point offsetChange)
+        public Image Apply(Image sourceImage, Matrix matrix)
         {
-            // Make sure the elements move according to the offset the effect made the bitmap move
-            offsetChange = new Point(Left, Top);
-            return ImageHelper.ResizeCanvas(sourceImage, BackgroundColor, Left, Right, Top, Bottom);
+            return ImageHelper.ResizeCanvas(sourceImage, BackgroundColor, Left, Right, Top, Bottom, matrix);
         }
     }
 }

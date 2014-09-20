@@ -19,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Drawing;
 using System;
 
@@ -50,14 +49,6 @@ namespace Greenshot.Memento
             if (disposing)
             {
                 textContainer = null;
-            }
-        }
-
-        public LangKey ActionLanguageKey
-        {
-            get
-            {
-                return LangKey.none;
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -19,10 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Greenshot.Configuration;
 using Greenshot.Drawing;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Greenshot.Memento
 {
@@ -31,15 +31,17 @@ namespace Greenshot.Memento
     /// </summary>
     public class SurfaceBackgroundChangeMemento : IMemento
     {
-        private Image image;
-        private Surface surface;
-        private Point offset;
+        private Image _image;
+        private Surface _surface;
+        private Matrix _matrix;
 
-        public SurfaceBackgroundChangeMemento(Surface surface, Point offset)
+        public SurfaceBackgroundChangeMemento(Surface surface, Matrix matrix)
         {
-            this.surface = surface;
-            image = surface.Image;
-            this.offset = new Point(-offset.X, -offset.Y);
+            _surface = surface;
+            _image = surface.Image;
+            _matrix = matrix.Clone();
+            // Make sure the reverse is applied
+            _matrix.Invert();
         }
 
         public void Dispose()
@@ -52,12 +54,17 @@ namespace Greenshot.Memento
         {
             if (disposing)
             {
-                if (image != null)
+                if (_matrix != null)
                 {
-                    image.Dispose();
-                    image = null;
+                    _matrix.Dispose();
+                    _matrix = null;
                 }
-                surface = null;
+                if (_image != null)
+                {
+                    _image.Dispose();
+                    _image = null;
+                }
+                _surface = null;
             }
         }
 
@@ -66,20 +73,11 @@ namespace Greenshot.Memento
             return false;
         }
 
-        public LangKey ActionLanguageKey
-        {
-            get
-            {
-                //return LangKey.editor_crop;
-                return LangKey.none;
-            }
-        }
-
         public IMemento Restore()
         {
-            SurfaceBackgroundChangeMemento oldState = new SurfaceBackgroundChangeMemento(surface, offset);
-            surface.UndoBackgroundChange(image, offset);
-            surface.Invalidate();
+            SurfaceBackgroundChangeMemento oldState = new SurfaceBackgroundChangeMemento(_surface, _matrix);
+            _surface.UndoBackgroundChange(_image, _matrix);
+            _surface.Invalidate();
             return oldState;
         }
     }

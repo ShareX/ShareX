@@ -1,6 +1,6 @@
 ﻿/*
  * Greenshot - a free and open source screenshot tool
- * Copyright (C) 2007-2013  Thomas Braun, Jens Klingen, Robin Krom
+ * Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
  *
  * For more information see: http://getgreenshot.org/
  * The Greenshot project is hosted on Sourceforge: http://sourceforge.net/projects/greenshot/
@@ -22,7 +22,6 @@
 using Greenshot.Drawing.Fields;
 using Greenshot.Drawing.Filters;
 using System;
-using System.Drawing;
 using System.Runtime.Serialization;
 
 namespace Greenshot.Drawing
@@ -30,26 +29,31 @@ namespace Greenshot.Drawing
     /// <summary>
     /// Description of ObfuscateContainer.
     /// </summary>
-    [Serializable()]
+    [Serializable]
     public class HighlightContainer : FilterContainer
     {
         public HighlightContainer(Surface parent)
             : base(parent)
         {
-            AddField(GetType(), FieldType.LINE_THICKNESS, 0);
-            AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
-            AddField(GetType(), FieldType.SHADOW, false);
-            AddField(GetType(), FieldType.PREPARED_FILTER_HIGHLIGHT, PreparedFilter.TEXT_HIGHTLIGHT);
-            init();
+            Init();
         }
 
-        [OnDeserialized()]
+        /// <summary>
+        /// Use settings from base, extend with our own field
+        /// </summary>
+        protected override void InitializeFields()
+        {
+            base.InitializeFields();
+            AddField(GetType(), FieldType.PREPARED_FILTER_HIGHLIGHT, PreparedFilter.TEXT_HIGHTLIGHT);
+        }
+
+        [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
-            init();
+            Init();
         }
 
-        private void init()
+        private void Init()
         {
             FieldChanged += HighlightContainer_OnFieldChanged;
             ConfigurePreparedFilters();
@@ -57,12 +61,13 @@ namespace Greenshot.Drawing
 
         protected void HighlightContainer_OnFieldChanged(object sender, FieldChangedEventArgs e)
         {
-            if (sender.Equals(this))
+            if (!sender.Equals(this))
             {
-                if (e.Field.FieldType == FieldType.PREPARED_FILTER_HIGHLIGHT)
-                {
-                    ConfigurePreparedFilters();
-                }
+                return;
+            }
+            if (e.Field.FieldType == FieldType.PREPARED_FILTER_HIGHLIGHT)
+            {
+                ConfigurePreparedFilters();
             }
         }
 
