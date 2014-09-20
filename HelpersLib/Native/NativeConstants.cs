@@ -46,5 +46,6 @@ namespace HelpersLib
         public const int ULW_ALPHA = 0x02;
         public const byte AC_SRC_OVER = 0x00;
         public const byte AC_SRC_ALPHA = 0x01;
+	   public const int MAX_PATH = 259;
     }
 }
