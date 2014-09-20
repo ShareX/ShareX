@@ -497,16 +497,16 @@
             // 
             this.tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiScreenColorPicker,
-            this.tsmiRuler,
-            this.tsmiFTPClient,
-            this.tsmiHashCheck,
-            this.tsmiIndexFolder,
             this.tsmiImageEditor,
             this.tsmiImageEffects,
-            this.tsmiMonitorTest,
+            this.tsmiHashCheck,
             this.tsmiDNSChanger,
             this.tsmiQRCode,
-            this.tsmiTweetMessage});
+            this.tsmiIndexFolder,
+            this.tsmiRuler,
+            this.tsmiFTPClient,
+            this.tsmiTweetMessage,
+            this.tsmiMonitorTest});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsddbTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta;

@@ -101,10 +101,6 @@ namespace Greenshot
         {
             editorList.Add(this);
 
-            //
-            // The InitializeComponent() call is required for Windows Forms designer support.
-            //
-            ManualLanguageApply = true;
             InitializeComponent();
 
             Shown += delegate
@@ -494,21 +490,6 @@ namespace Greenshot
             }
         }
 
-        private void AddTextBoxToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnTextClick(sender, e);
-        }
-
-        private void DrawHighlightToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnHighlightClick(sender, e);
-        }
-
-        private void BlurToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            BtnObfuscateClick(sender, e);
-        }
-
         private void RemoveObjectToolStripMenuItemClick(object sender, EventArgs e)
         {
             surface.RemoveSelectedElements();
@@ -518,11 +499,6 @@ namespace Greenshot
         {
             surface.SelectAllElements();
             surface.RemoveSelectedElements();
-        }
-
-        private void BtnDeleteClick(object sender, EventArgs e)
-        {
-            RemoveObjectToolStripMenuItemClick(sender, e);
         }
 
         #endregion drawing options
@@ -535,20 +511,10 @@ namespace Greenshot
             updateClipboardSurfaceDependencies();
         }
 
-        private void BtnCutClick(object sender, EventArgs e)
-        {
-            CutToolStripMenuItemClick(sender, e);
-        }
-
         private void CopyToolStripMenuItemClick(object sender, EventArgs e)
         {
             surface.CopySelectedElements();
             updateClipboardSurfaceDependencies();
-        }
-
-        private void BtnCopyClick(object sender, EventArgs e)
-        {
-            CopyToolStripMenuItemClick(sender, e);
         }
 
         private void PasteToolStripMenuItemClick(object sender, EventArgs e)
@@ -557,31 +523,16 @@ namespace Greenshot
             updateClipboardSurfaceDependencies();
         }
 
-        private void BtnPasteClick(object sender, EventArgs e)
-        {
-            PasteToolStripMenuItemClick(sender, e);
-        }
-
         private void UndoToolStripMenuItemClick(object sender, EventArgs e)
         {
             surface.Undo();
             updateUndoRedoSurfaceDependencies();
         }
 
-        private void BtnUndoClick(object sender, EventArgs e)
-        {
-            UndoToolStripMenuItemClick(sender, e);
-        }
-
         private void RedoToolStripMenuItemClick(object sender, EventArgs e)
         {
             surface.Redo();
             updateUndoRedoSurfaceDependencies();
-        }
-
-        private void BtnRedoClick(object sender, EventArgs e)
-        {
-            RedoToolStripMenuItemClick(sender, e);
         }
 
         private void DuplicateToolStripMenuItemClick(object sender, EventArgs e)
@@ -615,32 +566,6 @@ namespace Greenshot
         }
 
         #endregion element properties
-
-        #region help
-
-        private void HelpToolStripMenuItem1Click(object sender, EventArgs e)
-        {
-        }
-
-        private void AboutToolStripMenuItemClick(object sender, EventArgs e)
-        {
-        }
-
-        private void PreferencesToolStripMenuItemClick(object sender, EventArgs e)
-        {
-        }
-
-        private void BtnSettingsClick(object sender, EventArgs e)
-        {
-            PreferencesToolStripMenuItemClick(sender, e);
-        }
-
-        private void BtnHelpClick(object sender, EventArgs e)
-        {
-            HelpToolStripMenuItem1Click(sender, e);
-        }
-
-        #endregion help
 
         #region image editor event handlers
 

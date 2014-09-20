@@ -92,6 +92,7 @@ namespace Greenshot {
             this.btnCopy = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.btnPaste = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.btnDelete = new GreenshotPlugin.Controls.GreenshotToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -512,6 +513,7 @@ namespace Greenshot {
             this.btnCopy,
             this.btnPaste,
             this.btnDelete,
+            this.toolStripSeparator6,
             this.tsddbMenu,
             this.toolStripSeparator5,
             this.obfuscateModeButton,
@@ -632,7 +634,7 @@ namespace Greenshot {
             this.btnUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(23, 24);
-            this.btnUndo.Click += new System.EventHandler(this.BtnUndoClick);
+            this.btnUndo.Click += new System.EventHandler(this.UndoToolStripMenuItemClick);
             // 
             // btnRedo
             // 
@@ -642,7 +644,7 @@ namespace Greenshot {
             this.btnRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRedo.Name = "btnRedo";
             this.btnRedo.Size = new System.Drawing.Size(23, 24);
-            this.btnRedo.Click += new System.EventHandler(this.BtnRedoClick);
+            this.btnRedo.Click += new System.EventHandler(this.RedoToolStripMenuItemClick);
             // 
             // toolStripSeparator3
             // 
@@ -659,7 +661,7 @@ namespace Greenshot {
             this.btnCut.Name = "btnCut";
             this.btnCut.Size = new System.Drawing.Size(23, 24);
             this.btnCut.Text = "Cut";
-            this.btnCut.Click += new System.EventHandler(this.BtnCutClick);
+            this.btnCut.Click += new System.EventHandler(this.CutToolStripMenuItemClick);
             // 
             // btnCopy
             // 
@@ -671,7 +673,7 @@ namespace Greenshot {
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(23, 24);
             this.btnCopy.Text = "Copy";
-            this.btnCopy.Click += new System.EventHandler(this.BtnCopyClick);
+            this.btnCopy.Click += new System.EventHandler(this.CopyToolStripMenuItemClick);
             // 
             // btnPaste
             // 
@@ -683,7 +685,7 @@ namespace Greenshot {
             this.btnPaste.Name = "btnPaste";
             this.btnPaste.Size = new System.Drawing.Size(23, 24);
             this.btnPaste.Text = "Paste";
-            this.btnPaste.Click += new System.EventHandler(this.BtnPasteClick);
+            this.btnPaste.Click += new System.EventHandler(this.PasteToolStripMenuItemClick);
             // 
             // btnDelete
             // 
@@ -695,7 +697,12 @@ namespace Greenshot {
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(23, 24);
             this.btnDelete.Text = "Delete";
-            this.btnDelete.Click += new System.EventHandler(this.BtnDeleteClick);
+            this.btnDelete.Click += new System.EventHandler(this.RemoveObjectToolStripMenuItemClick);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
             // 
             // tsddbMenu
             // 
@@ -1624,5 +1631,6 @@ namespace Greenshot {
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnStepLabel;
         private System.Windows.Forms.ToolStripButton btnResize;
         private System.Windows.Forms.ToolStripDropDownButton tsddbMenu;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 	}
 }

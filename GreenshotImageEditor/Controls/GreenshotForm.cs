@@ -38,8 +38,6 @@ namespace GreenshotPlugin.Controls
         protected static CoreConfiguration coreConfiguration;
         private static IDictionary<Type, FieldInfo[]> reflectionCache = new Dictionary<Type, FieldInfo[]>();
         private IComponentChangeService m_changeService;
-        private bool isDesignModeLanguageSet = false;
-        private bool applyLanguageManually = false;
         private bool storeFieldsManually = false;
         private IDictionary<string, Control> designTimeControls;
         private IDictionary<string, ToolStripItem> designTimeToolStripItems;
@@ -68,18 +66,6 @@ namespace GreenshotPlugin.Controls
             get
             {
                 return (Application.ExecutablePath.IndexOf("devenv.exe", StringComparison.OrdinalIgnoreCase) > -1) || (Application.ExecutablePath.IndexOf("sharpdevelop.exe", StringComparison.OrdinalIgnoreCase) > -1 || (Application.ExecutablePath.IndexOf("wdexpress.exe", StringComparison.OrdinalIgnoreCase) > -1));
-            }
-        }
-
-        protected bool ManualLanguageApply
-        {
-            get
-            {
-                return applyLanguageManually;
-            }
-            set
-            {
-                applyLanguageManually = value;
             }
         }
 
