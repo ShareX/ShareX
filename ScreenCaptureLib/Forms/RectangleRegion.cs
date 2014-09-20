@@ -295,11 +295,11 @@ namespace ScreenCaptureLib
         private void DrawMagnifier(Graphics g)
         {
             Point mousePos = InputManager.MousePosition0Based;
-            int offsetX = 10, offsetY = 10;
+            int offsetX = RulerMode ? 20 : 10, offsetY = RulerMode ? 20 : 10;
 
             if (Config.ShowInfo && AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos)
             {
-                offsetY = 50;
+                offsetY = RulerMode ? 85 : 50;
             }
 
             using (Bitmap magnifier = Magnifier(SurfaceImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))

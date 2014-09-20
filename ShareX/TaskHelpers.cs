@@ -503,6 +503,7 @@ namespace ShareX
                 surface.RulerMode = true;
                 surface.Config.QuickCrop = false;
                 surface.Config.ShowInfo = true;
+                surface.AreaManager.MinimumSize = 3;
                 surface.Prepare();
                 surface.ShowDialog();
             }
