@@ -214,7 +214,6 @@
     <Compile Include="Drawing\ObfuscateContainer.cs" />
     <Compile Include="Drawing\FreehandContainer.cs" />
     <Compile Include="Drawing\RectangleContainer.cs" />
-    <Compile Include="Drawing\RoundedRectangle.cs" />
     <Compile Include="Drawing\SpeechbubbleContainer.cs" />
     <Compile Include="Drawing\StepLabelContainer.cs" />
     <Compile Include="Drawing\Surface.cs">

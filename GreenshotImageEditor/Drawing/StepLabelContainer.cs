@@ -146,7 +146,7 @@ namespace Greenshot.Drawing
         /// </summary>
         protected override void InitializeFields()
         {
-            AddField(GetType(), FieldType.FILL_COLOR, Color.DarkRed);
+            AddField(GetType(), FieldType.FILL_COLOR, DefaultLineColor);
             AddField(GetType(), FieldType.LINE_COLOR, Color.White);
         }
 

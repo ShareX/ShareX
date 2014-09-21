@@ -1500,6 +1500,7 @@ namespace Greenshot {
             this.LanguageKey = "editor_title";
             this.MinimumSize = new System.Drawing.Size(100, 100);
             this.Name = "ImageEditorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Greenshot image editor";
             this.Activated += new System.EventHandler(this.ImageEditorFormActivated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImageEditorFormFormClosing);

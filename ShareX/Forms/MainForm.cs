@@ -564,8 +564,8 @@ namespace ShareX
             SetImageFileDestinationChecked(Program.DefaultTaskSettings.ImageDestination,
                 Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.TextDestination, tsmiTextUploaders, tsmiTrayTextUploaders);
-            SetTextFileDestinationChecked(Program.DefaultTaskSettings.TextDestination, 
-                Program.DefaultTaskSettings.TextFileDestination , tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+            SetTextFileDestinationChecked(Program.DefaultTaskSettings.TextDestination,
+                Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.FileDestination, tsmiFileUploaders, tsmiTrayFileUploaders);
             SetEnumChecked(Program.DefaultTaskSettings.URLShortenerDestination, tsmiURLShorteners, tsmiTrayURLShorteners);
             SetEnumChecked(Program.DefaultTaskSettings.URLSharingServiceDestination, tsmiURLSharingServices, tsmiTrayURLSharingServices);
@@ -596,7 +596,7 @@ namespace ShareX
         /// <param name="imageDestination">Currently checked menu item inside Image Uploader</param>
         /// <param name="imageFileDestination">Currently checked menu item inside Image Uploader->File Uploader</param>
         /// <param name="lists">List of menu items to be analysed for being checked.</param>
-        public static void SetImageFileDestinationChecked(ImageDestination imageDestination, 
+        public static void SetImageFileDestinationChecked(ImageDestination imageDestination,
             FileDestination imageFileDestination, params ToolStripDropDownItem[] lists)
         {
             if (imageDestination == ImageDestination.FileUploader)

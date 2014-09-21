@@ -46,7 +46,7 @@ namespace Greenshot.Drawing
         protected override void InitializeFields()
         {
             AddField(GetType(), FieldType.LINE_THICKNESS, 2);
-            AddField(GetType(), FieldType.LINE_COLOR, Color.Red);
+            AddField(GetType(), FieldType.LINE_COLOR, DefaultLineColor);
             AddField(GetType(), FieldType.SHADOW, true);
         }
 

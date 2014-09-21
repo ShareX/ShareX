@@ -32,7 +32,7 @@ namespace Greenshot.Plugin
     /// <summary>
     /// Alignment Enums for possitioning
     /// </summary>
-    //public enum HorizontalAlignment {LEFT, CENTER, RIGHT};
+    //public enum HorizontalAlignment { LEFT, CENTER, RIGHT };
     public enum VerticalAlignment { TOP, CENTER, BOTTOM };
 
     public enum SurfaceMessageTyp
