@@ -36,24 +36,15 @@ namespace ShareXPortable
     {
         private static void Main(string[] args)
         {
-            string parentDir = @"..\..\..\";
+            const string parentDir = @"..\..\..\";
             string releaseDir = Path.Combine(parentDir, @"ShareX\bin\Release");
             string outputDir = Path.Combine(parentDir, @"InnoSetup\Output");
             string portableDir = Path.Combine(outputDir, "ShareX-portable");
 
-            List<string> files = new List<string>();
+            var endsWith = new string[] { ".exe", ".dll", ".css", ".txt" };
+            var ignoreEndsWith = new string[] { ".vshost.exe" };
 
-            string[] endsWith = new string[] { ".exe", ".dll", ".css", ".txt" };
-            string[] ignoreEndsWith = new string[] { ".vshost.exe" };
-
-            foreach (string filepath in Directory.GetFiles(releaseDir))
-            {
-                if (endsWith.Any(x => filepath.EndsWith(x, StringComparison.InvariantCultureIgnoreCase)) &&
-                    ignoreEndsWith.All(x => !filepath.EndsWith(x, StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    files.Add(filepath);
-                }
-            }
+            var files = Directory.GetFiles (releaseDir).Where (filepath => endsWith.Any (x => filepath.EndsWith (x, StringComparison.InvariantCultureIgnoreCase)) && ignoreEndsWith.All (x => !filepath.EndsWith (x, StringComparison.InvariantCultureIgnoreCase))).ToList ( );
 
             if (Directory.Exists(portableDir))
             {
@@ -64,10 +55,10 @@ namespace ShareXPortable
             Directory.CreateDirectory(portableDir);
             Console.WriteLine("Directory.Create: \"{0}\"", portableDir);
 
-            foreach (string filepath in files)
+            foreach (var filepath in files)
             {
-                string filename = Path.GetFileName(filepath);
-                string dest = Path.Combine(portableDir, filename);
+                var filename = Path.GetFileName(filepath);
+                var dest = Path.Combine(portableDir, filename);
 
                 File.Copy(filepath, dest);
                 Console.WriteLine("File.Copy: \"{0}\" -> \"{1}\"", filepath, dest);
@@ -78,7 +69,7 @@ namespace ShareXPortable
 
             //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
             //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
-            string zipPath = Path.Combine(outputDir, "ShareX-portable.zip");
+            var zipPath = Path.Combine(outputDir, "ShareX-portable.zip");
 
             if (File.Exists(zipPath))
             {
@@ -97,17 +88,18 @@ namespace ShareXPortable
 
             Process.Start("explorer.exe", outputDir);
             Console.WriteLine("Done.");
-            //Console.Read();
         }
 
         private static void Zip(string source, string target)
         {
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = "7za.exe";
-            p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -mx=9", target, source);
-            p.WindowStyle = ProcessWindowStyle.Hidden;
-            Process process = Process.Start(p);
-            process.WaitForExit();
+            var p = new ProcessStartInfo
+                {
+                FileName = "7za.exe",
+                Arguments = string.Format ("a -tzip \"{0}\" \"{1}\" -mx=9", target, source),
+                WindowStyle = ProcessWindowStyle.Hidden
+                };
+            var process = Process.Start(p);
+            if (process != null) process.WaitForExit();
         }
     }
 }

@@ -789,6 +789,34 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ShareX.
+        /// </summary>
+        public static string Product_ShareX {
+            get {
+                return ResourceManager.GetString("Product_ShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t access to &quot;.
+        /// </summary>
+        public static string Program_WritePersonalPathConfig_Can_t_access_to__ {
+            get {
+                return ResourceManager.GetString("Program_WritePersonalPathConfig_Can_t_access_to__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot; file.
+        ///Please run ShareX as administrator to change personal folder path..
+        /// </summary>
+        public static string Program_WritePersonalPathConfig_Please_Run_ {
+            get {
+                return ResourceManager.GetString("Program_WritePersonalPathConfig_Please_Run_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Rectangle {
