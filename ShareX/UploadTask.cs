@@ -776,6 +776,9 @@ namespace ShareX
                         IsPublic = Program.UploadersConfig.UpasteIsPublic
                     };
                     break;
+                case TextDestination.Hastebin:
+                    textUploader = new Hastebin();
+                    break;
                 case TextDestination.CustomTextUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomTextUploaderSelected))
                     {

@@ -69,6 +69,8 @@ namespace UploadersLib
         Gist,
         [Description("uPaste")]
         Upaste,
+        [Description("Hastebin")]
+        Hastebin,
         [Description("Custom text uploader")]
         CustomTextUploader,
         [Description("File uploader")]
