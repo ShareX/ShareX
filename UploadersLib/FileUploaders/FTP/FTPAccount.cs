@@ -153,8 +153,6 @@ namespace UploadersLib
                 HttpHomePathAutoAddSubFolderPath = false;
             }
 
-            HttpHomePath = URLHelpers.RemovePrefixes(HttpHomePath);
-
             return NameParser.Parse(NameParserType.URL, HttpHomePath.Replace("%host", Host));
         }
 
@@ -179,51 +177,54 @@ namespace UploadersLib
 
             subFolderPath = URLHelpers.URLPathEncode(subFolderPath);
 
-            string httpHomePath = GetHttpHomePath();
-            httpHomePath = URLHelpers.URLPathEncode(httpHomePath);
-
-            string path;
-
+            UriBuilder httpHomeUri;
+            var httpHomePath = GetHttpHomePath();
+            
             if (string.IsNullOrEmpty(httpHomePath))
             {
-                string host = Host;
+                var host = Host;
 
                 if (host.StartsWith("ftp."))
                 {
                     host = host.Substring(4);
                 }
 
-                path = URLHelpers.CombineURL(host, subFolderPath, filename);
+                httpHomeUri = new UriBuilder(URLHelpers.CombineURL(host, subFolderPath, filename));
             }
             else
             {
+                //Parse HttpHomePath in to host, port and path components
+                var firstSlash = httpHomePath.IndexOf('/');
+                var httpHome = firstSlash >= 0 ? httpHomePath.Substring(0, firstSlash) : httpHomePath;
+                var portSpecifiedAt = httpHome.LastIndexOf(':');
+                
+                var httpHomeHost = portSpecifiedAt >= 0 ? httpHome.Substring(0, portSpecifiedAt) : httpHome;
+                var httpHomePort = -1;
+                var httpHomeDir = httpHomePath.Substring(firstSlash + 1);
+
+                if (portSpecifiedAt >= 0)
+                    int.TryParse(httpHome.Substring(portSpecifiedAt + 1), out httpHomePort);
+                
+                //Build URI
+                httpHomeUri = new UriBuilder {Host = httpHomeHost, Path = httpHomeDir};
+                if (portSpecifiedAt >= 0)
+                    httpHomeUri.Port = httpHomePort;
+
                 if (HttpHomePathAutoAddSubFolderPath)
+                    httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, subFolderPath);
+
+                if (httpHomeUri.Query.EndsWith("="))
                 {
-                    path = URLHelpers.CombineURL(httpHomePath, subFolderPath);
+                    httpHomeUri.Query += filename;
                 }
                 else
                 {
-                    path = httpHomePath;
-                }
-
-                if (path.EndsWith("="))
-                {
-                    path += filename;
-                }
-                else
-                {
-                    path = URLHelpers.CombineURL(path, filename);
+                    httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, filename);
                 }
             }
 
-            string browserProtocol = BrowserProtocol.GetDescription();
-
-            if (!path.StartsWith(browserProtocol))
-            {
-                path = browserProtocol + path;
-            }
-
-            return path;
+            httpHomeUri.Scheme = BrowserProtocol.GetDescription();
+            return httpHomeUri.Uri.ToString();
         }
 
         public string GetFtpPath(string filemame)
