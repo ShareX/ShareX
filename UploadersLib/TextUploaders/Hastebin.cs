@@ -23,27 +23,53 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using Newtonsoft.Json;
 
 namespace UploadersLib.TextUploaders
 {
     public sealed class Hastebin : TextUploader
     {
+        public string CustomDomain { get; set; }
+        public string SyntaxHighlighting { get; set; }
+
         public override UploadResult UploadText(string text, string fileName)
         {
             UploadResult ur = new UploadResult();
 
             if (!string.IsNullOrEmpty(text))
             {
-                ur.Response = SendRequest(HttpMethod.POST, "http://hastebin.com/documents", text);
+                string domain;
+
+                if (!string.IsNullOrEmpty(CustomDomain))
+                {
+                    domain = CustomDomain;
+                }
+                else
+                {
+                    domain = "http://hastebin.com";
+                }
+
+                ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text);
 
                 if (!string.IsNullOrEmpty(ur.Response))
                 {
                     HastebinResponse response = JsonConvert.DeserializeObject<HastebinResponse>(ur.Response);
 
-                    if (response != null)
+                    if (response != null && !string.IsNullOrEmpty(response.Key))
                     {
-                        ur.URL = string.Format("http://hastebin.com/{0}.hs", response.Key);
+                        string syntaxHighlighting;
+
+                        if (!string.IsNullOrEmpty(SyntaxHighlighting))
+                        {
+                            syntaxHighlighting = SyntaxHighlighting;
+                        }
+                        else
+                        {
+                            syntaxHighlighting = "hs";
+                        }
+
+                        ur.URL = URLHelpers.CombineURL(domain, response.Key + "." + syntaxHighlighting);
                     }
                 }
             }
