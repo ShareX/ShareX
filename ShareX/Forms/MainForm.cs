@@ -917,7 +917,7 @@ namespace ShareX
 
         private void tsmiTestFileUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader);
+            UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, Program.DefaultTaskSettings.FileDestination);
         }
 
         private void tsmiTestURLShortener_Click(object sender, EventArgs e)

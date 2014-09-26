@@ -330,7 +330,7 @@ namespace ShareX
             }
         }
 
-        public static void UploadImage(Image img, ImageDestination imageDestination)
+        public static void UploadImage(Image img, ImageDestination imageDestination, FileDestination imageFileDestination)
         {
             if (img != null)
             {
@@ -339,6 +339,7 @@ namespace ShareX
                 taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                 taskSettings.UseDefaultDestinations = false;
                 taskSettings.ImageDestination = imageDestination;
+                taskSettings.ImageFileDestination = imageFileDestination;
 
                 RunImageTask(img, taskSettings);
             }
