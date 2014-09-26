@@ -27,7 +27,7 @@ using System.Windows.Forms.Design;
 namespace Greenshot.Controls
 {
     [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.ToolStrip | ToolStripItemDesignerAvailability.StatusStrip)]
-    public class ToolStripNumericUpDown : ToolStripControlHost, INotifyPropertyChanged
+    internal class ToolStripNumericUpDown : ToolStripControlHost, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

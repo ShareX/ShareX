@@ -21,7 +21,7 @@
 
 namespace GreenshotPlugin.Controls
 {
-    public interface IGreenshotConfigBindable
+    internal interface IGreenshotConfigBindable
     {
         /// <summary>
         /// The class where the property-value is stored

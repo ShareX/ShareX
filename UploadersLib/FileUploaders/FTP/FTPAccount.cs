@@ -179,7 +179,7 @@ namespace UploadersLib
 
             UriBuilder httpHomeUri;
             var httpHomePath = GetHttpHomePath();
-            
+
             if (string.IsNullOrEmpty(httpHomePath))
             {
                 var host = Host;
@@ -197,16 +197,16 @@ namespace UploadersLib
                 var firstSlash = httpHomePath.IndexOf('/');
                 var httpHome = firstSlash >= 0 ? httpHomePath.Substring(0, firstSlash) : httpHomePath;
                 var portSpecifiedAt = httpHome.LastIndexOf(':');
-                
+
                 var httpHomeHost = portSpecifiedAt >= 0 ? httpHome.Substring(0, portSpecifiedAt) : httpHome;
                 var httpHomePort = -1;
                 var httpHomeDir = httpHomePath.Substring(firstSlash + 1);
 
                 if (portSpecifiedAt >= 0)
                     int.TryParse(httpHome.Substring(portSpecifiedAt + 1), out httpHomePort);
-                
+
                 //Build URI
-                httpHomeUri = new UriBuilder {Host = httpHomeHost, Path = httpHomeDir};
+                httpHomeUri = new UriBuilder { Host = httpHomeHost, Path = httpHomeDir };
                 if (portSpecifiedAt >= 0)
                     httpHomeUri.Port = httpHomePort;
 

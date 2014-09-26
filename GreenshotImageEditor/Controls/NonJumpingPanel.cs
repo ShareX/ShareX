@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace GreenshotPlugin.Controls
 {
-    public class NonJumpingPanel : Panel
+    internal class NonJumpingPanel : Panel
     {
         protected override Point ScrollToControl(Control activeControl)
         {

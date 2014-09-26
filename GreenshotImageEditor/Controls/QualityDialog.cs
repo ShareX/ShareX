@@ -29,7 +29,7 @@ namespace GreenshotPlugin.Controls
     /// <summary>
     /// Description of JpegQualityDialog.
     /// </summary>
-    public partial class QualityDialog : GreenshotForm
+    internal partial class QualityDialog : GreenshotForm
     {
         private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         public SurfaceOutputSettings Settings

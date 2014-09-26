@@ -28,7 +28,7 @@ namespace GreenshotPlugin.Controls
     /// <summary>
     /// Extend this Form to have the possibility for animations on your form
     /// </summary>
-    public class AnimatingForm : GreenshotForm
+    internal class AnimatingForm : GreenshotForm
     {
         private const int DEFAULT_VREFRESH = 60;
         private int vRefresh = 0;

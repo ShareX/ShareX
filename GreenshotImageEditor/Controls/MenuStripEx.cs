@@ -28,7 +28,7 @@ namespace Greenshot.Controls
     /// This is an extension of the default MenuStrip and allows us to click it even when the form doesn't have focus.
     /// See: http://blogs.msdn.com/b/rickbrew/archive/2006/01/09/511003.aspx
     /// </summary>
-    public class MenuStripEx : MenuStrip
+    internal class MenuStripEx : MenuStrip
     {
         private const int WM_MOUSEACTIVATE = 0x21;
 

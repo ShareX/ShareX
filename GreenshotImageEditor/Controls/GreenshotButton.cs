@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 namespace GreenshotPlugin.Controls
 {
-    public class GreenshotButton : Button, IGreenshotLanguageBindable
+    internal class GreenshotButton : Button, IGreenshotLanguageBindable
     {
         [Category("Greenshot"), DefaultValue(null), Description("Specifies key of the language file to use when displaying the text.")]
         public string LanguageKey

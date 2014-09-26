@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 namespace GreenshotPlugin.Controls
 {
-    public class GreenshotTextBox : TextBox, IGreenshotConfigBindable
+    internal class GreenshotTextBox : TextBox, IGreenshotConfigBindable
     {
         private string sectionName = "Core";
         [Category("Greenshot"), DefaultValue("Core"), Description("Specifies the Ini-Section to map this control with.")]

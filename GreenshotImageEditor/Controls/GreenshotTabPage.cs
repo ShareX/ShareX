@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 namespace GreenshotPlugin.Controls
 {
-    public class GreenshotTabPage : TabPage, IGreenshotLanguageBindable
+    internal class GreenshotTabPage : TabPage, IGreenshotLanguageBindable
     {
         [Category("Greenshot"), DefaultValue(null), Description("Specifies key of the language file to use when displaying the text.")]
         public string LanguageKey

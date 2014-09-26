@@ -27,7 +27,7 @@ namespace GreenshotPlugin.Controls
     /// <summary>
     /// This class is an implementation of the 'IComparer' interface.
     /// </summary>
-    public class GreenshotColumnSorter : IComparer
+    internal class GreenshotColumnSorter : IComparer
     {
         /// <summary>
         /// Specifies the column to be sorted

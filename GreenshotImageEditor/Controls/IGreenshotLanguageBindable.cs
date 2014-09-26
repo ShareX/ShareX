@@ -24,7 +24,7 @@ namespace GreenshotPlugin.Controls
     /// <summary>
     /// This interface describes the designer fields that need to be implemented for Greenshot controls
     /// </summary>
-    public interface IGreenshotLanguageBindable
+    internal interface IGreenshotLanguageBindable
     {
         /// <summary>
         /// Language key to use to fill the Text value with

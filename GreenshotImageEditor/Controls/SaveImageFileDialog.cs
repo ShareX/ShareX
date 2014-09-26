@@ -32,7 +32,7 @@ namespace GreenshotPlugin.Controls
     /// Custom dialog for saving images, wraps SaveFileDialog.
     /// For some reason SFD is sealed :(
     /// </summary>
-    public class SaveImageFileDialog : IDisposable
+    internal class SaveImageFileDialog : IDisposable
     {
         private static CoreConfiguration conf = IniConfig.GetIniSection<CoreConfiguration>();
         protected SaveFileDialog saveFileDialog;

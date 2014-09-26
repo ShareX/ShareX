@@ -32,7 +32,7 @@ namespace Greenshot.Controls
     /// This code was supplied by Hi-Coder as a patch for Greenshot
     /// Needed some modifications to be stable.
     /// </summary>
-    public class Pipette : Label, IMessageFilter, IDisposable
+    internal class Pipette : Label, IMessageFilter, IDisposable
     {
         private MovableShowColorForm movableShowColorForm;
         private bool dragging;

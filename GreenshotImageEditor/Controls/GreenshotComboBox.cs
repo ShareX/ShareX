@@ -25,7 +25,7 @@ using System.Windows.Forms;
 
 namespace GreenshotPlugin.Controls
 {
-    public class GreenshotComboBox : ComboBox, IGreenshotConfigBindable
+    internal class GreenshotComboBox : ComboBox, IGreenshotConfigBindable
     {
         private Type enumType = null;
         private Enum selectedEnum = null;

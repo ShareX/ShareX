@@ -30,7 +30,7 @@ namespace Greenshot.Controls
     /// Also, when a DropDownItem is selected, the DropDownButton adops its Tag and Image.
     /// The selected tag can be accessed via SelectedTag property.
     /// </summary>
-    public class BindableToolStripDropDownButton : ToolStripDropDownButton, INotifyPropertyChanged, IGreenshotLanguageBindable
+    internal class BindableToolStripDropDownButton : ToolStripDropDownButton, INotifyPropertyChanged, IGreenshotLanguageBindable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

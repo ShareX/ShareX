@@ -30,7 +30,7 @@ namespace Greenshot.Controls
     /// ToolStripComboBox containing installed font families,
     /// implementing INotifyPropertyChanged for data binding
     /// </summary>
-    public class FontFamilyComboBox : ToolStripComboBox, INotifyPropertyChanged
+    internal class FontFamilyComboBox : ToolStripComboBox, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

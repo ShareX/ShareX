@@ -30,7 +30,7 @@ namespace GreenshotPlugin.Controls
     /// <summary>
     /// Description of PleaseWaitForm.
     /// </summary>
-    public partial class BackgroundForm : Form
+    internal partial class BackgroundForm : Form
     {
         private volatile bool shouldClose = false;
 

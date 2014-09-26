@@ -415,6 +415,8 @@ namespace ShareX
                     catch (Exception e)
                     {
                         DebugHelper.WriteException(e);
+                        progress = -1;
+                        if (lastIconStatus == progress) return;
                         icon = ShareXResources.Icon;
                     }
                 }

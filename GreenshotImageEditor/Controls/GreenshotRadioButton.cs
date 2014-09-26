@@ -27,7 +27,7 @@ namespace GreenshotPlugin.Controls
     /// <summary>
     /// Description of GreenshotCheckbox.
     /// </summary>
-    public class GreenshotRadioButton : RadioButton, IGreenshotLanguageBindable, IGreenshotConfigBindable
+    internal class GreenshotRadioButton : RadioButton, IGreenshotLanguageBindable, IGreenshotConfigBindable
     {
         [Category("Greenshot"), DefaultValue(null), Description("Specifies key of the language file to use when displaying the text.")]
         public string LanguageKey

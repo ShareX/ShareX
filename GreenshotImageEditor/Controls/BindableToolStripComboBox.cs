@@ -29,7 +29,7 @@ namespace Greenshot.Controls
     /// <summary>
     /// A simple ToolStripComboBox implementing INotifyPropertyChanged for data binding
     /// </summary>
-    public class BindableToolStripComboBox : ToolStripComboBox, INotifyPropertyChanged, IGreenshotLanguageBindable
+    internal class BindableToolStripComboBox : ToolStripComboBox, INotifyPropertyChanged, IGreenshotLanguageBindable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

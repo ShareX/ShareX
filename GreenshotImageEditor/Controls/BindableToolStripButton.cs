@@ -29,7 +29,7 @@ namespace Greenshot.Controls
     /// <summary>
     /// Description of BindableToolStripButton.
     /// </summary>
-    public class BindableToolStripButton : ToolStripButton, INotifyPropertyChanged, IGreenshotLanguageBindable
+    internal class BindableToolStripButton : ToolStripButton, INotifyPropertyChanged, IGreenshotLanguageBindable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

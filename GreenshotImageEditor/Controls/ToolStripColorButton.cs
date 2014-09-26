@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace Greenshot.Controls
 {
-    public class ToolStripColorButton : ToolStripButton, INotifyPropertyChanged, IGreenshotLanguageBindable
+    internal class ToolStripColorButton : ToolStripButton, INotifyPropertyChanged, IGreenshotLanguageBindable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -31,7 +31,7 @@ namespace Greenshot.Controls
     /// <summary>
     /// Description of ColorButton.
     /// </summary>
-    public class ColorButton : Button, IGreenshotLanguageBindable
+    internal class ColorButton : Button, IGreenshotLanguageBindable
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private Color selectedColor = Color.White;
