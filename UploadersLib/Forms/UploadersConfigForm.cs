@@ -250,7 +250,17 @@ namespace UploadersLib
             cbPastebinPrivacy.SelectedIndex = (int)Config.PastebinSettings.Exposure;
             cbPastebinExpiration.Items.AddRange(Helpers.GetEnumDescriptions<PastebinExpiration>());
             cbPastebinExpiration.SelectedIndex = (int)Config.PastebinSettings.Expiration;
-            txtPastebinSyntax.Text = Config.PastebinSettings.TextFormat;
+            cbPastebinSyntax.Items.AddRange(Pastebin.GetSyntaxList().ToArray());
+            cbPastebinSyntax.SelectedIndex = 0;
+            for (int i = 0; i < cbPastebinSyntax.Items.Count; i++)
+            {
+                PastebinSyntaxInfo pastebinSyntaxInfo = (PastebinSyntaxInfo)cbPastebinSyntax.Items[i];
+                if (pastebinSyntaxInfo.Value.Equals(Config.PastebinSettings.TextFormat, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    cbPastebinSyntax.SelectedIndex = i;
+                    break;
+                }
+            }
             txtPastebinTitle.Text = Config.PastebinSettings.Title;
 
             // Paste.ee
@@ -917,9 +927,9 @@ namespace UploadersLib
             Config.PastebinSettings.Expiration = (PastebinExpiration)cbPastebinExpiration.SelectedIndex;
         }
 
-        private void txtPastebinSyntax_TextChanged(object sender, EventArgs e)
+        private void cbPastebinSyntax_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.PastebinSettings.TextFormat = txtPastebinSyntax.Text;
+            Config.PastebinSettings.TextFormat = ((PastebinSyntaxInfo)cbPastebinSyntax.SelectedItem).Value;
         }
 
         private void txtPastebinTitle_TextChanged(object sender, EventArgs e)
