@@ -317,60 +317,6 @@
   <metadata name="tsProperties.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFnSURBVDhPpY1NSwJRGIUV/C+zc6MwoAtBd9ImYf6B
-        jqKioLgQRAlc9UcUrMgB6WMg0hBz48qdCzeBBEIJZoLg6Z4Lyi1kkrrwzL287znPuAD8C/lxu91ngguj
-        VjOPgVl2VMFVvV4XT2D7CzzMsiOee8F1tVrFZrvFerNxhBlm2VEFVqVSwYcIvK9WjjDDLDuqoFMul/G2
-        XmO2WDjCDLPsqILbUqmEV/GH6XzuCDPMsqMK7EKhgOF4jJfl0hFmmGVHFTzkcjkkEomjYJYdVdDNZDLw
-        +/3w+XwH4W5HsVikoKsK+slkErquYzB4Rq/39A3OuDMMA4FAAPl8noK+KhjG43EEg0HY9iM0TZNY1o2E
-        M+4oCIfDyGazFAxVwcg0TYRCIbTb9/ImzWZbsptREI1GkU6nKRjtBeKcCCZer/ez1bpDJBKRNBodyW5G
-        QSwWQyqVYmmiCnhOBTOPx3N+CO5+cLkX/B24vgCZXIPOR4ZOhQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnSaveAs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFlSURBVDhPjZCxasJgFIUVn8BXSKZmEozFwSxZhC516d6l
-        NZCACkbIIFJw6puIVShILdSCWLSQPXTuoGMRiq2D9faeEEpifksOfCD/ufdGvpQo6XT6hrm76HSuj4Ee
-        c8FKNFwMu90u7YnoZ7+PgXf0mAtWouHivt1u0/duR5/bbQy8o8dcsBINFyPHceiDh1frdQy8o8dcsBIN
-        F4+2bZPrebTabGLgHT3mhMJOSqW3q1aLLhsNH1mWSVVVqlarf9TrdRyYJBaWzWYpn8/7hwqFAjWbTRyY
-        JhamaRotFq9ULBb937VaDQfmiYWp6imNx8/+crlcJtM0ccBNLCyXU2kweCJd16lSqZBhGMS+PRyYQEhY
-        0CGBsPdMJnPLS8sQfRyYWpbly4GkMDFhonAxx1cgB5JmsxcfoTBRuHBxAIOQJEkSDYcjsbAjOWM8RVG+
-        IAl/vdd7EAv7J+fMEpLC4C1EnzlIKvULraTQUmJxMIIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnClipboardCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFmSURBVDhPjZA/S4JRFIfPZGtfoCkIhIYihAiitnAV
-        +wItNjlEUNDQEBQWgRSCNhQZKojfw+WA0ZT2IhFWJorlX/x7uj9TMW5cGh44nPvc5325JCIDAus0Ztdp
-        t7ndbpfCM8SF3aQzujcZCCkYHC/SfXjf+5bJWAIwYzc6h6sFLteI04EtSWw7JJl8kFTqUbLZ3ADM2OEM
-        Dlwt4F8dLCUcvhOf70yCwSuJRGISjyfk+uZW/P4LiUZjUGTo/g6crxD31dDt9+XJsv4EZ3Dgju6NA6fL
-        xB0ltLpdI3DgaoETB3Gr15N6u20EDlwtcLRE3Oh05KvZNAIHrhY4XCCuqi+UajUjcOBqgYN54s9WS/KV
-        ihE4cLXAnp24pH4xVy4bgQNXC+zMERcaDXkuFo3AgasFvLPE7/W6WIWCEThwtYBnhvhVPVI6nzcCB64W
-        2Jwm/lAP9FKtGoEDVws4pyi0YSP+D3B/7gl9AyX59rP4A1D4AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnUploadImage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAr1JREFUOE+dkt9LU2Ecxs+qq268sD8hGJEJ4sgox4wlhngRTTJJJEJt4k0huaXp
-        wi1NrTTDH8NKTZDcUNtSK44/UpcePG6oW6lrcyud4XSjiajo5Ol916AL7cbn8IGX836e9/3COcy+AIJj
-        FT/ERyuWqgWVnvcUuqbv6F7Y+l8gOFI8JT9ZPcfXmb1rzbafu5ZF3267fWMtus7O0z3qhOUDkm2UCFWj
-        lqZBzw6/CVSNLOPD4ibousezthOlGbNQJ2zvj+Daq4arjRP+7C4ncg0LyHu3gHyDE/d6XHgxs4kbZI86
-        Yf2AJD4eytbbgrHPeFxotOJ8rRk3u/3I/bgBkXoU8RouSJ2w/S8ymUyUmpp6+/hFpV1S83nvTCWP2OfT
-        EFVbEK0agqxzB+eqbJA08nvUoS7thMopKSkn5HK5IhAIIEPTCWmFCZIGOxKbvuPyS4J2Hok1VmT2biG9
-        zYUr99sxPe1GVpZcQbtMcnLyqdra2hafz4c3fRxi8zuR1rqIzA4vbukJOi/Sm5zQWLZwVtGNJ80sJicd
-        0GgqW2iXSUpKStDpdIP0ALvdjoKX/RAVs8hoceOu4XeI69o5xKtZ5Dw1gmW50AH19a8HaZeRSqVpHMc5
-        VlZWMDMzQwQWD+o6cOmhAVHKPpxW9CKhuAt3KlrR3PwWRuMQOG4Oev0nB+0yYrE4b3l5GcFgENvbW1hf
-        D2B11QuPZwlutwtOp5OwQHATFgm/CKswmb6Cdpm4uLh8v9+P+fk52GxWWCxmcsM4RkaGMTAwEJqIZfsJ
-        g4RhgonAwWx2gHaZmJiYAo/HA4PBgPLyMqjVpVCpSlBUVAilUgmFglJIKCGUEsqQQx6TyQraZYRCYZHR
-        aHT9HdWB2dlv5DNNgecnMDY2RkQT4QthnDBBMIcm0GrbXLTLREZGSiMiIh4dBtoN/UyHD8P8AQS4BWf/
-        e825AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="pixelizeToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

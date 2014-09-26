@@ -416,6 +416,21 @@
   <ItemGroup>
     <None Include="Icons\fugue\gear.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\disk-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\disks-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\drive-globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\printer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <PropertyGroup>
     <PreBuildEvent>

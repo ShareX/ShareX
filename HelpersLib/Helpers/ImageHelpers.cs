@@ -666,7 +666,8 @@ namespace HelpersLib
             Action<Image> clipboardCopyRequested,
             Action<Image> imageUploadRequested,
             Action<Image, string> imageSaveRequested,
-            Func<Image, string, string> imageSaveAsRequested)
+            Func<Image, string, string> imageSaveAsRequested,
+            Action<Image> printImageRequested)
         {
             if (!IniConfig.isInitialized)
             {
@@ -685,6 +686,7 @@ namespace HelpersLib
                 editor.ImageUploadRequested += imageUploadRequested;
                 editor.ImageSaveRequested += imageSaveRequested;
                 editor.ImageSaveAsRequested += imageSaveAsRequested;
+                editor.PrintImageRequested += printImageRequested;
 
                 DialogResult result = editor.ShowDialog();
 

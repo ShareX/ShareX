@@ -45,10 +45,11 @@ namespace Greenshot
     /// </summary>
     public partial class ImageEditorForm : BaseForm, IImageEditor
     {
+        public event Action<Image, string> ImageSaveRequested;
+        public event Func<Image, string, string> ImageSaveAsRequested;
         public event Action<Image> ClipboardCopyRequested;
         public event Action<Image> ImageUploadRequested;
-        public event Func<Image, string, string> ImageSaveAsRequested;
-        public event Action<Image, string> ImageSaveRequested;
+        public event Action<Image> PrintImageRequested;
 
         private static EditorConfiguration editorConfiguration = IniConfig.GetIniSection<EditorConfiguration>();
         private static List<string> ignoreDestinations = new List<string> { };
@@ -94,7 +95,7 @@ namespace Greenshot
             }
             set
             {
-                isTaskWork = btnSaveClose.Visible = btnClose.Visible = btnCancelTasks.Visible = tssTaskButtons.Visible = value;
+                isTaskWork = tsbSaveClose.Visible = tsbClose.Visible = tsbCancelTasks.Visible = tssTaskButtons.Visible = value;
             }
         }
 
@@ -326,7 +327,7 @@ namespace Greenshot
             //updateStatusLabel(string.Format("Image saved to {0}.", fullpath), fileSavedStatusContextMenu);
             SetTitle(Path.GetFileName(fullpath));
 
-            btnSave.Enabled = File.Exists(surface.LastSaveFullPath);
+            tsbSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void surface_DrawingModeChanged(object source, SurfaceDrawingModeEventArgs eventArgs)
@@ -575,7 +576,7 @@ namespace Greenshot
             updateClipboardSurfaceDependencies();
             updateUndoRedoSurfaceDependencies();
 
-            btnSave.Enabled = File.Exists(surface.LastSaveFullPath);
+            tsbSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void ImageEditorFormFormClosing(object sender, FormClosingEventArgs e)
@@ -749,17 +750,17 @@ namespace Greenshot
                 return;
             }
             bool canUndo = surface.CanUndo;
-            btnUndo.Enabled = canUndo;
+            tsbUndo.Enabled = canUndo;
             undoToolStripMenuItem.Enabled = canUndo;
             string undoText = "Undo";
-            btnUndo.Text = undoText;
+            tsbUndo.Text = undoText;
             undoToolStripMenuItem.Text = undoText;
 
             bool canRedo = surface.CanRedo;
-            btnRedo.Enabled = canRedo;
+            tsbRedo.Enabled = canRedo;
             redoToolStripMenuItem.Enabled = canRedo;
             string redoText = "Redo";
-            btnRedo.Text = redoText;
+            tsbRedo.Text = redoText;
             redoToolStripMenuItem.Text = redoText;
         }
 
@@ -774,9 +775,9 @@ namespace Greenshot
             bool actionAllowedForSelection = hasItems && !controlsDisabledDueToConfirmable;
 
             // buttons
-            btnCut.Enabled = actionAllowedForSelection;
-            btnCopy.Enabled = actionAllowedForSelection;
-            btnDelete.Enabled = actionAllowedForSelection;
+            tsbCut.Enabled = actionAllowedForSelection;
+            tsbCopy.Enabled = actionAllowedForSelection;
+            tsbDelete.Enabled = actionAllowedForSelection;
 
             // menus
             removeObjectToolStripMenuItem.Enabled = actionAllowedForSelection;
@@ -786,7 +787,7 @@ namespace Greenshot
 
             // check dependencies for the Clipboard
             bool hasClipboard = ClipboardHelper.ContainsFormat(SUPPORTED_CLIPBOARD_FORMATS) || ClipboardHelper.ContainsImage();
-            btnPaste.Enabled = hasClipboard && !controlsDisabledDueToConfirmable;
+            tsbPaste.Enabled = hasClipboard && !controlsDisabledDueToConfirmable;
             pasteToolStripMenuItem.Enabled = hasClipboard && !controlsDisabledDueToConfirmable;
         }
 
@@ -1213,27 +1214,6 @@ namespace Greenshot
             }
         }
 
-        public void OnClipboardCopyRequested()
-        {
-            if (ClipboardCopyRequested != null)
-            {
-                using (Image img = surface.GetImageForExport())
-                {
-                    ClipboardCopyRequested(img);
-                }
-            }
-        }
-
-        public void OnImageUploadRequested()
-        {
-            if (ImageUploadRequested != null)
-            {
-                // Image will be disposed in upload task
-                Image img = surface.GetImageForExport();
-                ImageUploadRequested(img);
-            }
-        }
-
         public void OnImageSaveRequested()
         {
             if (ImageSaveRequested != null && File.Exists(surface.LastSaveFullPath))
@@ -1258,6 +1238,38 @@ namespace Greenshot
                     {
                         SetImagePath(newFilePath);
                     }
+                }
+            }
+        }
+
+        public void OnClipboardCopyRequested()
+        {
+            if (ClipboardCopyRequested != null)
+            {
+                using (Image img = surface.GetImageForExport())
+                {
+                    ClipboardCopyRequested(img);
+                }
+            }
+        }
+
+        public void OnImageUploadRequested()
+        {
+            if (ImageUploadRequested != null)
+            {
+                // Image will be disposed in upload task
+                Image img = surface.GetImageForExport();
+                ImageUploadRequested(img);
+            }
+        }
+
+        public void OnPrintImageRequested()
+        {
+            if (PrintImageRequested != null)
+            {
+                using (Image img = surface.GetImageForExport())
+                {
+                    PrintImageRequested(img);
                 }
             }
         }
@@ -1302,6 +1314,11 @@ namespace Greenshot
         private void btnUploadImage_Click(object sender, EventArgs e)
         {
             OnImageUploadRequested();
+        }
+
+        private void tsbPrintImage_Click(object sender, EventArgs e)
+        {
+            OnPrintImageRequested();
         }
 
         private void tsddbMenu_Click(object sender, EventArgs e)

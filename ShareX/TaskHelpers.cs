@@ -41,8 +41,6 @@ namespace ShareX
 {
     public static class TaskHelpers
     {
-        private const int PropertyTagSoftwareUsed = 0x0131;
-
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();
@@ -231,7 +229,27 @@ namespace ShareX
                     string newFilePath = null;
                     Program.MainForm.InvokeSafe(() => newFilePath = ImageHelpers.SaveImageFileDialog(x, filePath));
                     return newFilePath;
-                });
+                },
+                x => Program.MainForm.InvokeSafe(() => TaskHelpers.PrintImage(x)));
+        }
+
+        public static void PrintImage(Image img)
+        {
+            if (Program.Settings.DontShowPrintSettingsDialog)
+            {
+                using (PrintHelper printHelper = new PrintHelper(img))
+                {
+                    printHelper.Settings = Program.Settings.PrintSettings;
+                    printHelper.Print();
+                }
+            }
+            else
+            {
+                using (PrintForm printForm = new PrintForm(img, Program.Settings.PrintSettings))
+                {
+                    printForm.ShowDialog();
+                }
+            }
         }
 
         public static Image AddImageEffects(Image img, TaskSettings taskSettings)
