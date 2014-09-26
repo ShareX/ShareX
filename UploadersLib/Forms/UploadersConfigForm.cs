@@ -90,6 +90,7 @@ namespace UploadersLib
             AddIconToTab(tpGist, Resources.GitHub);
             AddIconToTab(tpGoogleDrive, Resources.GoogleDrive);
             AddIconToTab(tpGoogleURLShortener, Resources.Google);
+            AddIconToTab(tpHastebin, Resources.Hastebin);
             AddIconToTab(tpHostr, Resources.Hostr);
             AddIconToTab(tpImageShack, Resources.ImageShack);
             AddIconToTab(tpImgur, Resources.Imgur);
@@ -281,6 +282,11 @@ namespace UploadersLib
 
             txtUpasteUserKey.Text = Config.UpasteUserKey;
             cbUpasteIsPublic.Checked = Config.UpasteIsPublic;
+
+            // Hastebin
+
+            txtHastebinCustomDomain.Text = Config.HastebinCustomDomain;
+            txtHastebinSyntaxHighlighting.Text = Config.HastebinSyntaxHighlighting;
 
             #endregion Text uploaders
 
@@ -991,6 +997,20 @@ namespace UploadersLib
         }
 
         #endregion uPaste
+
+        #region Hastebin
+
+        private void txtHastebinCustomDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.HastebinCustomDomain = txtHastebinCustomDomain.Text;
+        }
+
+        private void txtHastebinSyntaxHighlighting_TextChanged(object sender, EventArgs e)
+        {
+            Config.HastebinSyntaxHighlighting = txtHastebinSyntaxHighlighting.Text;
+        }
+
+        #endregion Hastebin
 
         #endregion Text Uploaders
 

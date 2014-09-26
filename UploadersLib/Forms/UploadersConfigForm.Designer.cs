@@ -51,6 +51,7 @@
             this.lblCustomUploaderResponseType = new System.Windows.Forms.Label();
             this.cbCustomUploaderURLShortener = new System.Windows.Forms.ComboBox();
             this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
+            this.eiCustomUploaders = new HelpersLib.ExportImportControl();
             this.lbCustomUploaderList = new System.Windows.Forms.ListBox();
             this.btnCustomUploaderRemove = new System.Windows.Forms.Button();
             this.btnCustomUploaderClear = new System.Windows.Forms.Button();
@@ -118,6 +119,7 @@
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
+            this.eiFTP = new HelpersLib.ExportImportControl();
             this.btnFtpClient = new System.Windows.Forms.Button();
             this.lblFtpFiles = new System.Windows.Forms.Label();
             this.lblFtpText = new System.Windows.Forms.Label();
@@ -139,11 +141,16 @@
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
             this.lblGoogleDriveFolderID = new System.Windows.Forms.Label();
+            this.lvGoogleDriveFoldersList = new HelpersLib.MyListView();
+            this.chGoogleDriveTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.tpBox = new System.Windows.Forms.TabPage();
             this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
+            this.lvBoxFolders = new HelpersLib.MyListView();
+            this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.tpCopy = new System.Windows.Forms.TabPage();
@@ -289,6 +296,7 @@
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
             this.tpPastebin = new System.Windows.Forms.TabPage();
+            this.cbPastebinSyntax = new System.Windows.Forms.ComboBox();
             this.btnPastebinRegister = new System.Windows.Forms.Button();
             this.lblPastebinSyntax = new System.Windows.Forms.Label();
             this.lblPastebinExpiration = new System.Windows.Forms.Label();
@@ -383,21 +391,17 @@
             this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
+            this.ttlvMain = new HelpersLib.TabToListView();
+            this.tpHastebin = new System.Windows.Forms.TabPage();
             this.atcImgurAccountType = new UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new UploadersLib.AccountTypeControl();
             this.oauth2Picasa = new UploadersLib.OAuthControl();
             this.oAuth2Gist = new UploadersLib.OAuthControl();
             this.atcGistAccountType = new UploadersLib.AccountTypeControl();
-            this.eiFTP = new HelpersLib.ExportImportControl();
             this.ucFTPAccounts = new UploadersLib.AccountsControl();
             this.oauth2Dropbox = new UploadersLib.OAuthControl();
-            this.lvGoogleDriveFoldersList = new HelpersLib.MyListView();
-            this.chGoogleDriveTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oauth2GoogleDrive = new UploadersLib.OAuthControl();
-            this.lvBoxFolders = new HelpersLib.MyListView();
-            this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oauth2Box = new UploadersLib.OAuthControl();
             this.oAuthCopy = new UploadersLib.OAuthControl();
             this.oAuth2OneDrive = new UploadersLib.OAuthControl();
@@ -407,11 +411,12 @@
             this.oauth2Bitly = new UploadersLib.OAuthControl();
             this.oauth2GoogleURLShortener = new UploadersLib.OAuthControl();
             this.atcGoogleURLShortenerAccountType = new UploadersLib.AccountTypeControl();
-            this.eiCustomUploaders = new HelpersLib.ExportImportControl();
             this.ucTwitterAccounts = new UploadersLib.AccountsControl();
-            this.ttlvMain = new HelpersLib.TabToListView();
             this.actRapidShareAccountType = new UploadersLib.AccountTypeControl();
-            this.cbPastebinSyntax = new System.Windows.Forms.ComboBox();
+            this.lblHastebinCustomDomain = new System.Windows.Forms.Label();
+            this.lblHastebinSyntaxHighlighting = new System.Windows.Forms.Label();
+            this.txtHastebinCustomDomain = new System.Windows.Forms.TextBox();
+            this.txtHastebinSyntaxHighlighting = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -472,6 +477,7 @@
             this.tpPicasa.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            this.tpHastebin.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -720,6 +726,16 @@
             this.gbCustomUploaders.TabIndex = 0;
             this.gbCustomUploaders.TabStop = false;
             this.gbCustomUploaders.Text = "Uploaders";
+            // 
+            // eiCustomUploaders
+            // 
+            this.eiCustomUploaders.Location = new System.Drawing.Point(8, 328);
+            this.eiCustomUploaders.Name = "eiCustomUploaders";
+            this.eiCustomUploaders.ObjectType = null;
+            this.eiCustomUploaders.Size = new System.Drawing.Size(140, 26);
+            this.eiCustomUploaders.TabIndex = 5;
+            this.eiCustomUploaders.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
+            this.eiCustomUploaders.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
             // 
             // lbCustomUploaderList
             // 
@@ -1404,6 +1420,16 @@
             this.tpFTP.Text = "FTP";
             this.tpFTP.UseVisualStyleBackColor = true;
             // 
+            // eiFTP
+            // 
+            this.eiFTP.Location = new System.Drawing.Point(656, 48);
+            this.eiFTP.Name = "eiFTP";
+            this.eiFTP.ObjectType = null;
+            this.eiFTP.Size = new System.Drawing.Size(136, 24);
+            this.eiFTP.TabIndex = 8;
+            this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
+            this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
+            // 
             // btnFtpClient
             // 
             this.btnFtpClient.Location = new System.Drawing.Point(584, 48);
@@ -1626,6 +1652,32 @@
             this.lblGoogleDriveFolderID.TabIndex = 8;
             this.lblGoogleDriveFolderID.Text = "Folder ID:";
             // 
+            // lvGoogleDriveFoldersList
+            // 
+            this.lvGoogleDriveFoldersList.AutoFillColumn = true;
+            this.lvGoogleDriveFoldersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chGoogleDriveTitle,
+            this.chGoogleDriveDescription});
+            this.lvGoogleDriveFoldersList.FullRowSelect = true;
+            this.lvGoogleDriveFoldersList.Location = new System.Drawing.Point(352, 72);
+            this.lvGoogleDriveFoldersList.MultiSelect = false;
+            this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
+            this.lvGoogleDriveFoldersList.Size = new System.Drawing.Size(432, 392);
+            this.lvGoogleDriveFoldersList.TabIndex = 11;
+            this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
+            this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
+            this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
+            // 
+            // chGoogleDriveTitle
+            // 
+            this.chGoogleDriveTitle.Text = "Title";
+            this.chGoogleDriveTitle.Width = 200;
+            // 
+            // chGoogleDriveDescription
+            // 
+            this.chGoogleDriveDescription.Text = "Description";
+            this.chGoogleDriveDescription.Width = 228;
+            // 
             // btnGoogleDriveRefreshFolders
             // 
             this.btnGoogleDriveRefreshFolders.Enabled = false;
@@ -1683,6 +1735,26 @@
             this.cbBoxShare.Text = "Create shareable link";
             this.cbBoxShare.UseVisualStyleBackColor = true;
             this.cbBoxShare.CheckedChanged += new System.EventHandler(this.cbBoxShare_CheckedChanged);
+            // 
+            // lvBoxFolders
+            // 
+            this.lvBoxFolders.AutoFillColumn = true;
+            this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chBoxFoldersName});
+            this.lvBoxFolders.FullRowSelect = true;
+            this.lvBoxFolders.Location = new System.Drawing.Point(352, 48);
+            this.lvBoxFolders.Name = "lvBoxFolders";
+            this.lvBoxFolders.Size = new System.Drawing.Size(440, 368);
+            this.lvBoxFolders.TabIndex = 4;
+            this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
+            this.lvBoxFolders.View = System.Windows.Forms.View.Details;
+            this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
+            this.lvBoxFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBoxFolders_MouseDoubleClick);
+            // 
+            // chBoxFoldersName
+            // 
+            this.chBoxFoldersName.Text = "Folder name";
+            this.chBoxFoldersName.Width = 435;
             // 
             // lblBoxFolderID
             // 
@@ -3168,6 +3240,7 @@
             this.tcTextUploaders.Controls.Add(this.tpPaste_ee);
             this.tcTextUploaders.Controls.Add(this.tpGist);
             this.tcTextUploaders.Controls.Add(this.tpUpaste);
+            this.tcTextUploaders.Controls.Add(this.tpHastebin);
             this.tcTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcTextUploaders.Location = new System.Drawing.Point(3, 3);
             this.tcTextUploaders.Name = "tcTextUploaders";
@@ -3199,6 +3272,16 @@
             this.tpPastebin.TabIndex = 0;
             this.tpPastebin.Text = "Pastebin";
             this.tpPastebin.UseVisualStyleBackColor = true;
+            // 
+            // cbPastebinSyntax
+            // 
+            this.cbPastebinSyntax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPastebinSyntax.FormattingEnabled = true;
+            this.cbPastebinSyntax.Location = new System.Drawing.Point(96, 140);
+            this.cbPastebinSyntax.Name = "cbPastebinSyntax";
+            this.cbPastebinSyntax.Size = new System.Drawing.Size(152, 21);
+            this.cbPastebinSyntax.TabIndex = 17;
+            this.cbPastebinSyntax.SelectedIndexChanged += new System.EventHandler(this.cbPastebinSyntax_SelectedIndexChanged);
             // 
             // btnPastebinRegister
             // 
@@ -4154,6 +4237,32 @@
             this.lblWidthHint.TabIndex = 1;
             this.lblWidthHint.Visible = false;
             // 
+            // ttlvMain
+            // 
+            this.ttlvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ttlvMain.ImageList = null;
+            this.ttlvMain.ListViewSize = 180;
+            this.ttlvMain.Location = new System.Drawing.Point(3, 3);
+            this.ttlvMain.MainTabControl = null;
+            this.ttlvMain.Margin = new System.Windows.Forms.Padding(0);
+            this.ttlvMain.Name = "ttlvMain";
+            this.ttlvMain.Size = new System.Drawing.Size(994, 551);
+            this.ttlvMain.TabIndex = 0;
+            // 
+            // tpHastebin
+            // 
+            this.tpHastebin.Controls.Add(this.txtHastebinSyntaxHighlighting);
+            this.tpHastebin.Controls.Add(this.txtHastebinCustomDomain);
+            this.tpHastebin.Controls.Add(this.lblHastebinSyntaxHighlighting);
+            this.tpHastebin.Controls.Add(this.lblHastebinCustomDomain);
+            this.tpHastebin.Location = new System.Drawing.Point(4, 22);
+            this.tpHastebin.Name = "tpHastebin";
+            this.tpHastebin.Padding = new System.Windows.Forms.Padding(3);
+            this.tpHastebin.Size = new System.Drawing.Size(972, 493);
+            this.tpHastebin.TabIndex = 4;
+            this.tpHastebin.Text = "Hastebin";
+            this.tpHastebin.UseVisualStyleBackColor = true;
+            // 
             // atcImgurAccountType
             // 
             this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
@@ -4215,16 +4324,6 @@
             this.atcGistAccountType.TabIndex = 0;
             this.atcGistAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGistAccountType_AccountTypeChanged);
             // 
-            // eiFTP
-            // 
-            this.eiFTP.Location = new System.Drawing.Point(656, 48);
-            this.eiFTP.Name = "eiFTP";
-            this.eiFTP.ObjectType = null;
-            this.eiFTP.Size = new System.Drawing.Size(136, 24);
-            this.eiFTP.TabIndex = 8;
-            this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
-            this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
-            // 
             // ucFTPAccounts
             // 
             this.ucFTPAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -4246,32 +4345,6 @@
             this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
             this.oauth2Dropbox.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
             // 
-            // lvGoogleDriveFoldersList
-            // 
-            this.lvGoogleDriveFoldersList.AutoFillColumn = true;
-            this.lvGoogleDriveFoldersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chGoogleDriveTitle,
-            this.chGoogleDriveDescription});
-            this.lvGoogleDriveFoldersList.FullRowSelect = true;
-            this.lvGoogleDriveFoldersList.Location = new System.Drawing.Point(352, 72);
-            this.lvGoogleDriveFoldersList.MultiSelect = false;
-            this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
-            this.lvGoogleDriveFoldersList.Size = new System.Drawing.Size(432, 392);
-            this.lvGoogleDriveFoldersList.TabIndex = 11;
-            this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
-            this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
-            this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
-            // 
-            // chGoogleDriveTitle
-            // 
-            this.chGoogleDriveTitle.Text = "Title";
-            this.chGoogleDriveTitle.Width = 200;
-            // 
-            // chGoogleDriveDescription
-            // 
-            this.chGoogleDriveDescription.Text = "Description";
-            this.chGoogleDriveDescription.Width = 228;
-            // 
             // oauth2GoogleDrive
             // 
             this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
@@ -4282,26 +4355,6 @@
             this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
             this.oauth2GoogleDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleDrive_ClearButtonClicked);
             this.oauth2GoogleDrive.RefreshButtonClicked += new UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
-            // 
-            // lvBoxFolders
-            // 
-            this.lvBoxFolders.AutoFillColumn = true;
-            this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chBoxFoldersName});
-            this.lvBoxFolders.FullRowSelect = true;
-            this.lvBoxFolders.Location = new System.Drawing.Point(352, 48);
-            this.lvBoxFolders.Name = "lvBoxFolders";
-            this.lvBoxFolders.Size = new System.Drawing.Size(440, 368);
-            this.lvBoxFolders.TabIndex = 4;
-            this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
-            this.lvBoxFolders.View = System.Windows.Forms.View.Details;
-            this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
-            this.lvBoxFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBoxFolders_MouseDoubleClick);
-            // 
-            // chBoxFoldersName
-            // 
-            this.chBoxFoldersName.Text = "Folder name";
-            this.chBoxFoldersName.Width = 435;
             // 
             // oauth2Box
             // 
@@ -4397,16 +4450,6 @@
             this.atcGoogleURLShortenerAccountType.TabIndex = 0;
             this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
             // 
-            // eiCustomUploaders
-            // 
-            this.eiCustomUploaders.Location = new System.Drawing.Point(8, 328);
-            this.eiCustomUploaders.Name = "eiCustomUploaders";
-            this.eiCustomUploaders.ObjectType = null;
-            this.eiCustomUploaders.Size = new System.Drawing.Size(140, 26);
-            this.eiCustomUploaders.TabIndex = 5;
-            this.eiCustomUploaders.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
-            this.eiCustomUploaders.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
-            // 
             // ucTwitterAccounts
             // 
             this.ucTwitterAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -4416,18 +4459,6 @@
             this.ucTwitterAccounts.Size = new System.Drawing.Size(972, 493);
             this.ucTwitterAccounts.TabIndex = 0;
             // 
-            // ttlvMain
-            // 
-            this.ttlvMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ttlvMain.ImageList = null;
-            this.ttlvMain.ListViewSize = 180;
-            this.ttlvMain.Location = new System.Drawing.Point(3, 3);
-            this.ttlvMain.MainTabControl = null;
-            this.ttlvMain.Margin = new System.Windows.Forms.Padding(0);
-            this.ttlvMain.Name = "ttlvMain";
-            this.ttlvMain.Size = new System.Drawing.Size(994, 551);
-            this.ttlvMain.TabIndex = 0;
-            // 
             // actRapidShareAccountType
             // 
             this.actRapidShareAccountType.Location = new System.Drawing.Point(8, 16);
@@ -4436,15 +4467,39 @@
             this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
             this.actRapidShareAccountType.TabIndex = 16;
             // 
-            // cbPastebinSyntax
+            // lblHastebinCustomDomain
             // 
-            this.cbPastebinSyntax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPastebinSyntax.FormattingEnabled = true;
-            this.cbPastebinSyntax.Location = new System.Drawing.Point(96, 140);
-            this.cbPastebinSyntax.Name = "cbPastebinSyntax";
-            this.cbPastebinSyntax.Size = new System.Drawing.Size(152, 21);
-            this.cbPastebinSyntax.TabIndex = 17;
-            this.cbPastebinSyntax.SelectedIndexChanged += new System.EventHandler(this.cbPastebinSyntax_SelectedIndexChanged);
+            this.lblHastebinCustomDomain.AutoSize = true;
+            this.lblHastebinCustomDomain.Location = new System.Drawing.Point(16, 16);
+            this.lblHastebinCustomDomain.Name = "lblHastebinCustomDomain";
+            this.lblHastebinCustomDomain.Size = new System.Drawing.Size(82, 13);
+            this.lblHastebinCustomDomain.TabIndex = 0;
+            this.lblHastebinCustomDomain.Text = "Custom domain:";
+            // 
+            // lblHastebinSyntaxHighlighting
+            // 
+            this.lblHastebinSyntaxHighlighting.AutoSize = true;
+            this.lblHastebinSyntaxHighlighting.Location = new System.Drawing.Point(16, 40);
+            this.lblHastebinSyntaxHighlighting.Name = "lblHastebinSyntaxHighlighting";
+            this.lblHastebinSyntaxHighlighting.Size = new System.Drawing.Size(98, 13);
+            this.lblHastebinSyntaxHighlighting.TabIndex = 1;
+            this.lblHastebinSyntaxHighlighting.Text = "Syntax highlighting:";
+            // 
+            // txtHastebinCustomDomain
+            // 
+            this.txtHastebinCustomDomain.Location = new System.Drawing.Point(120, 12);
+            this.txtHastebinCustomDomain.Name = "txtHastebinCustomDomain";
+            this.txtHastebinCustomDomain.Size = new System.Drawing.Size(336, 20);
+            this.txtHastebinCustomDomain.TabIndex = 2;
+            this.txtHastebinCustomDomain.TextChanged += new System.EventHandler(this.txtHastebinCustomDomain_TextChanged);
+            // 
+            // txtHastebinSyntaxHighlighting
+            // 
+            this.txtHastebinSyntaxHighlighting.Location = new System.Drawing.Point(120, 36);
+            this.txtHastebinSyntaxHighlighting.Name = "txtHastebinSyntaxHighlighting";
+            this.txtHastebinSyntaxHighlighting.Size = new System.Drawing.Size(100, 20);
+            this.txtHastebinSyntaxHighlighting.TabIndex = 3;
+            this.txtHastebinSyntaxHighlighting.TextChanged += new System.EventHandler(this.txtHastebinSyntaxHighlighting_TextChanged);
             // 
             // UploadersConfigForm
             // 
@@ -4564,6 +4619,8 @@
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            this.tpHastebin.ResumeLayout(false);
+            this.tpHastebin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4953,6 +5010,11 @@
         private System.Windows.Forms.TextBox txtCheveretoAPIKey;
         private System.Windows.Forms.Label lblCheveretoAPIKey;
         private System.Windows.Forms.CheckBox cbCheveretoDirectURL;
-        private System.Windows.Forms.ComboBox cbPastebinSyntax;        
+        private System.Windows.Forms.ComboBox cbPastebinSyntax;
+        private System.Windows.Forms.TabPage tpHastebin;
+        private System.Windows.Forms.TextBox txtHastebinSyntaxHighlighting;
+        private System.Windows.Forms.TextBox txtHastebinCustomDomain;
+        private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
+        private System.Windows.Forms.Label lblHastebinCustomDomain;        
     }
 }

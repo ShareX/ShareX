@@ -105,6 +105,11 @@ namespace UploadersLib
         public string UpasteUserKey = string.Empty;
         public bool UpasteIsPublic = false;
 
+        // Hastebin
+
+        public string HastebinCustomDomain = "http://hastebin.com";
+        public string HastebinSyntaxHighlighting = "hs";
+
         #endregion Text uploaders
 
         #region File uploaders

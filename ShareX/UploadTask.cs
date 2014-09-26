@@ -777,7 +777,11 @@ namespace ShareX
                     };
                     break;
                 case TextDestination.Hastebin:
-                    textUploader = new Hastebin();
+                    textUploader = new Hastebin()
+                    {
+                        CustomDomain = Program.UploadersConfig.HastebinCustomDomain,
+                        SyntaxHighlighting = Program.UploadersConfig.HastebinSyntaxHighlighting
+                    };
                     break;
                 case TextDestination.CustomTextUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomTextUploaderSelected))
