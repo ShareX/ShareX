@@ -95,6 +95,12 @@ namespace Greenshot {
             this.tsbDelete = new GreenshotPlugin.Controls.GreenshotToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiSaveImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveImageAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUploadImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPrintImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
@@ -160,12 +166,6 @@ namespace Greenshot {
             this.btnCancel = new Greenshot.Controls.BindableToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
-            this.tsmiSaveImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSaveImageAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCopyImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiUploadImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPrintImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -753,13 +753,65 @@ namespace Greenshot {
             this.tsddbMenu.Text = "Menu";
             this.tsddbMenu.Click += new System.EventHandler(this.tsddbMenu_Click);
             // 
+            // tsmiSaveImage
+            // 
+            this.tsmiSaveImage.Image = global::Greenshot.Properties.Resources.disk_black;
+            this.tsmiSaveImage.Name = "tsmiSaveImage";
+            this.tsmiSaveImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiSaveImage.Text = "Save image";
+            this.tsmiSaveImage.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // tsmiSaveImageAs
+            // 
+            this.tsmiSaveImageAs.Image = global::Greenshot.Properties.Resources.disks_black;
+            this.tsmiSaveImageAs.Name = "tsmiSaveImageAs";
+            this.tsmiSaveImageAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveImageAs.Size = new System.Drawing.Size(279, 22);
+            this.tsmiSaveImageAs.Text = "Save image as...";
+            this.tsmiSaveImageAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
+            // tsmiCopyImage
+            // 
+            this.tsmiCopyImage.Image = global::Greenshot.Properties.Resources.clipboard;
+            this.tsmiCopyImage.Name = "tsmiCopyImage";
+            this.tsmiCopyImage.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.tsmiCopyImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiCopyImage.Text = "Copy image to clipboard";
+            this.tsmiCopyImage.Click += new System.EventHandler(this.btnClipboardCopy_Click);
+            // 
+            // tsmiUploadImage
+            // 
+            this.tsmiUploadImage.Image = global::Greenshot.Properties.Resources.drive_globe;
+            this.tsmiUploadImage.Name = "tsmiUploadImage";
+            this.tsmiUploadImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.tsmiUploadImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiUploadImage.Text = "Upload image";
+            this.tsmiUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
+            // tsmiPrintImage
+            // 
+            this.tsmiPrintImage.Image = global::Greenshot.Properties.Resources.printer;
+            this.tsmiPrintImage.Name = "tsmiPrintImage";
+            this.tsmiPrintImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.tsmiPrintImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiPrintImage.Text = "Print image";
+            this.tsmiPrintImage.Click += new System.EventHandler(this.tsbPrintImage_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(276, 6);
+            // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Enabled = false;
             this.undoToolStripMenuItem.Image = global::Greenshot.Properties.Resources.undo;
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItemClick);
             // 
@@ -769,14 +821,14 @@ namespace Greenshot {
             this.redoToolStripMenuItem.Image = global::Greenshot.Properties.Resources.redo;
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.RedoToolStripMenuItemClick);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(255, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(276, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -785,7 +837,7 @@ namespace Greenshot {
             this.cutToolStripMenuItem.LanguageKey = "editor_cuttoclipboard";
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItemClick);
             // 
@@ -796,7 +848,7 @@ namespace Greenshot {
             this.copyToolStripMenuItem.LanguageKey = "editor_copytoclipboard";
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItemClick);
             // 
@@ -807,7 +859,7 @@ namespace Greenshot {
             this.pasteToolStripMenuItem.LanguageKey = "editor_pastefromclipboard";
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItemClick);
             // 
@@ -818,14 +870,14 @@ namespace Greenshot {
             this.removeObjectToolStripMenuItem.LanguageKey = "editor_deleteelement";
             this.removeObjectToolStripMenuItem.Name = "removeObjectToolStripMenuItem";
             this.removeObjectToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.removeObjectToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.removeObjectToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.removeObjectToolStripMenuItem.Text = "Delete";
             this.removeObjectToolStripMenuItem.Click += new System.EventHandler(this.RemoveObjectToolStripMenuItemClick);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(255, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(276, 6);
             // 
             // duplicateToolStripMenuItem
             // 
@@ -833,7 +885,7 @@ namespace Greenshot {
             this.duplicateToolStripMenuItem.LanguageKey = "editor_duplicate";
             this.duplicateToolStripMenuItem.Name = "duplicateToolStripMenuItem";
             this.duplicateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.duplicateToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.duplicateToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.duplicateToolStripMenuItem.Text = "Duplicate selected element";
             this.duplicateToolStripMenuItem.Click += new System.EventHandler(this.DuplicateToolStripMenuItemClick);
             // 
@@ -842,14 +894,16 @@ namespace Greenshot {
             this.selectAllToolStripMenuItem.LanguageKey = "editor_selectall";
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.selectAllToolStripMenuItem.Text = "Select all";
             this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.SelectAllToolStripMenuItemClick);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.clearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Delete)));
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.clearToolStripMenuItem.Text = "Delete all";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -863,7 +917,7 @@ namespace Greenshot {
             this.arrangeToolStripMenuItem.Enabled = false;
             this.arrangeToolStripMenuItem.LanguageKey = "editor_arrange";
             this.arrangeToolStripMenuItem.Name = "arrangeToolStripMenuItem";
-            this.arrangeToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.arrangeToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.arrangeToolStripMenuItem.Text = "Arrange";
             // 
             // upToTopToolStripMenuItem
@@ -909,13 +963,13 @@ namespace Greenshot {
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(255, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(276, 6);
             // 
             // autoCropToolStripMenuItem
             // 
             this.autoCropToolStripMenuItem.LanguageKey = "editor_autocrop";
             this.autoCropToolStripMenuItem.Name = "autoCropToolStripMenuItem";
-            this.autoCropToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.autoCropToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.autoCropToolStripMenuItem.Text = "Auto crop";
             this.autoCropToolStripMenuItem.Click += new System.EventHandler(this.AutoCropToolStripMenuItemClick);
             // 
@@ -1513,58 +1567,6 @@ namespace Greenshot {
             this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(307, 22);
             this.closeToolStripMenuItem.Text = "Close";
-            // 
-            // tsmiSaveImage
-            // 
-            this.tsmiSaveImage.Image = global::Greenshot.Properties.Resources.disk_black;
-            this.tsmiSaveImage.Name = "tsmiSaveImage";
-            this.tsmiSaveImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.tsmiSaveImage.Size = new System.Drawing.Size(279, 22);
-            this.tsmiSaveImage.Text = "Save image";
-            this.tsmiSaveImage.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // tsmiSaveImageAs
-            // 
-            this.tsmiSaveImageAs.Image = global::Greenshot.Properties.Resources.disks_black;
-            this.tsmiSaveImageAs.Name = "tsmiSaveImageAs";
-            this.tsmiSaveImageAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.tsmiSaveImageAs.Size = new System.Drawing.Size(279, 22);
-            this.tsmiSaveImageAs.Text = "Save image as...";
-            this.tsmiSaveImageAs.Click += new System.EventHandler(this.btnSaveAs_Click);
-            // 
-            // tsmiCopyImage
-            // 
-            this.tsmiCopyImage.Image = global::Greenshot.Properties.Resources.clipboard;
-            this.tsmiCopyImage.Name = "tsmiCopyImage";
-            this.tsmiCopyImage.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.C)));
-            this.tsmiCopyImage.Size = new System.Drawing.Size(279, 22);
-            this.tsmiCopyImage.Text = "Copy image to clipboard";
-            this.tsmiCopyImage.Click += new System.EventHandler(this.btnClipboardCopy_Click);
-            // 
-            // tsmiUploadImage
-            // 
-            this.tsmiUploadImage.Image = global::Greenshot.Properties.Resources.drive_globe;
-            this.tsmiUploadImage.Name = "tsmiUploadImage";
-            this.tsmiUploadImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.tsmiUploadImage.Size = new System.Drawing.Size(279, 22);
-            this.tsmiUploadImage.Text = "Upload image";
-            this.tsmiUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
-            // 
-            // tsmiPrintImage
-            // 
-            this.tsmiPrintImage.Image = global::Greenshot.Properties.Resources.printer;
-            this.tsmiPrintImage.Name = "tsmiPrintImage";
-            this.tsmiPrintImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.tsmiPrintImage.Size = new System.Drawing.Size(279, 22);
-            this.tsmiPrintImage.Text = "Print image";
-            this.tsmiPrintImage.Click += new System.EventHandler(this.tsbPrintImage_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(276, 6);
             // 
             // ImageEditorForm
             // 

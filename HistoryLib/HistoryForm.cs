@@ -134,7 +134,11 @@ namespace HistoryLib
                 {
                     result = result.Where(x => x.Filename.StartsWith(filenameFilter, rule));
                 }
-                else if (cbFilenameFilterMethod.SelectedIndex == 2) // Exact match
+                else if (cbFilenameFilterMethod.SelectedIndex == 2) // Ends with
+                {
+                    result = result.Where(x => x.Filename.EndsWith(filenameFilter, rule));
+                }
+                else if (cbFilenameFilterMethod.SelectedIndex == 3) // Exact match
                 {
                     result = result.Where(x => x.Filename.Equals(filenameFilter, rule));
                 }

@@ -125,6 +125,7 @@
             this.cbFilenameFilterMethod.Items.AddRange(new object[] {
             "Contains",
             "Starts with",
+            "Ends with",
             "Exact match"});
             this.cbFilenameFilterMethod.Location = new System.Drawing.Point(192, 119);
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
