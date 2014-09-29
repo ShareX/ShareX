@@ -327,7 +327,7 @@ namespace Greenshot
             //updateStatusLabel(string.Format("Image saved to {0}.", fullpath), fileSavedStatusContextMenu);
             SetTitle(Path.GetFileName(fullpath));
 
-            tsbSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
+            tsbSaveImage.Enabled = tsmiSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void surface_DrawingModeChanged(object source, SurfaceDrawingModeEventArgs eventArgs)
@@ -576,7 +576,7 @@ namespace Greenshot
             updateClipboardSurfaceDependencies();
             updateUndoRedoSurfaceDependencies();
 
-            tsbSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
+            tsbSaveImage.Enabled = tsmiSaveImage.Enabled = File.Exists(surface.LastSaveFullPath);
         }
 
         private void ImageEditorFormFormClosing(object sender, FormClosingEventArgs e)

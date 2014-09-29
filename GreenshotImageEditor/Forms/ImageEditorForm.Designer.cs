@@ -160,6 +160,12 @@ namespace Greenshot {
             this.btnCancel = new Greenshot.Controls.BindableToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
+            this.tsmiSaveImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSaveImageAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUploadImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPrintImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -720,6 +726,12 @@ namespace Greenshot {
             // 
             this.tsddbMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsddbMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSaveImage,
+            this.tsmiSaveImageAs,
+            this.tsmiCopyImage,
+            this.tsmiUploadImage,
+            this.tsmiPrintImage,
+            this.toolStripSeparator7,
             this.undoToolStripMenuItem,
             this.redoToolStripMenuItem,
             this.toolStripSeparator15,
@@ -1502,6 +1514,58 @@ namespace Greenshot {
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(307, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
+            // tsmiSaveImage
+            // 
+            this.tsmiSaveImage.Image = global::Greenshot.Properties.Resources.disk_black;
+            this.tsmiSaveImage.Name = "tsmiSaveImage";
+            this.tsmiSaveImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiSaveImage.Text = "Save image";
+            this.tsmiSaveImage.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // tsmiSaveImageAs
+            // 
+            this.tsmiSaveImageAs.Image = global::Greenshot.Properties.Resources.disks_black;
+            this.tsmiSaveImageAs.Name = "tsmiSaveImageAs";
+            this.tsmiSaveImageAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveImageAs.Size = new System.Drawing.Size(279, 22);
+            this.tsmiSaveImageAs.Text = "Save image as...";
+            this.tsmiSaveImageAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
+            // tsmiCopyImage
+            // 
+            this.tsmiCopyImage.Image = global::Greenshot.Properties.Resources.clipboard;
+            this.tsmiCopyImage.Name = "tsmiCopyImage";
+            this.tsmiCopyImage.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.tsmiCopyImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiCopyImage.Text = "Copy image to clipboard";
+            this.tsmiCopyImage.Click += new System.EventHandler(this.btnClipboardCopy_Click);
+            // 
+            // tsmiUploadImage
+            // 
+            this.tsmiUploadImage.Image = global::Greenshot.Properties.Resources.drive_globe;
+            this.tsmiUploadImage.Name = "tsmiUploadImage";
+            this.tsmiUploadImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.tsmiUploadImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiUploadImage.Text = "Upload image";
+            this.tsmiUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
+            // tsmiPrintImage
+            // 
+            this.tsmiPrintImage.Image = global::Greenshot.Properties.Resources.printer;
+            this.tsmiPrintImage.Name = "tsmiPrintImage";
+            this.tsmiPrintImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.tsmiPrintImage.Size = new System.Drawing.Size(279, 22);
+            this.tsmiPrintImage.Text = "Print image";
+            this.tsmiPrintImage.Click += new System.EventHandler(this.tsbPrintImage_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(276, 6);
+            // 
             // ImageEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1646,5 +1710,11 @@ namespace Greenshot {
         private System.Windows.Forms.ToolStripDropDownButton tsddbMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton tsbPrintImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveImageAs;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUploadImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPrintImage;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
 	}
 }
