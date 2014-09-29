@@ -171,10 +171,12 @@ namespace Greenshot.Drawing
                 }
                 else if (Selected && Status == EditStatus.DRAWING)
                 {
+                    UpdateTextBoxPosition();
+                    UpdateTextBoxFormat();
                     ShowTextBox();
                 }
             }
-            if (_textBox.Visible)
+            else if (_textBox.Visible)
             {
                 UpdateTextBoxPosition();
                 UpdateTextBoxFormat();
@@ -362,7 +364,7 @@ namespace Greenshot.Drawing
         {
             UpdateFormat();
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
-            _textBox.ForeColor = lineColor;
+            _textBox.ForeColor = ControlPaint.Dark(lineColor, 0.1f);
             _textBox.Font = _font;
             StringAlignment horizontalAlignment = (StringAlignment)GetFieldValue(FieldType.TEXT_HORIZONTAL_ALIGNMENT);
             switch (horizontalAlignment)
