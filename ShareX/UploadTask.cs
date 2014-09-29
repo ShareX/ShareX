@@ -704,7 +704,7 @@ namespace ShareX
                     imageUploader = new Twitter(twitterOAuth);
                     break;
                 case ImageDestination.Chevereto:
-                    imageUploader = new Chevereto(Program.UploadersConfig.CheveretoAPIKey, Program.UploadersConfig.CheveretoWebsite)
+                    imageUploader = new Chevereto(Program.UploadersConfig.CheveretoWebsite, Program.UploadersConfig.CheveretoAPIKey)
                     {
                         DirectURL = Program.UploadersConfig.CheveretoDirectURL
                     };

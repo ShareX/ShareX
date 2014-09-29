@@ -65,7 +65,7 @@ namespace ImageEffectsLib
         private FontSafe textFontSafe = new FontSafe();
 
         // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
-        [DefaultValue(typeof(Font), "Arial, 10pt")]
+        [DefaultValue(typeof(Font), "Arial, 11.25pt")]
         public Font TextFont
         {
             get
@@ -217,8 +217,6 @@ namespace ImageEffectsLib
                             if (backgroundBrush != null) backgroundBrush.Dispose();
                         }
                     }
-
-                    gWatermark.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
 
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
