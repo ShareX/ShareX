@@ -189,16 +189,16 @@
             this.tsmiTrayWorkflows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayAfterCaptureTasks = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAfterUploadTasks = new System.Windows.Forms.ToolStripMenuItem();
@@ -407,7 +407,7 @@
             // 
             // tsmiScreenRecordingFFmpeg
             // 
-            this.tsmiScreenRecordingFFmpeg.Image = global::ShareX.Properties.Resources.film;
+            this.tsmiScreenRecordingFFmpeg.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.tsmiScreenRecordingFFmpeg.Name = "tsmiScreenRecordingFFmpeg";
             this.tsmiScreenRecordingFFmpeg.Size = new System.Drawing.Size(217, 22);
             this.tsmiScreenRecordingFFmpeg.Text = "Screen recording (FFmpeg)";
@@ -415,7 +415,7 @@
             // 
             // tsmiScreenRecordingGIF
             // 
-            this.tsmiScreenRecordingGIF.Image = global::ShareX.Properties.Resources.camcorder_image;
+            this.tsmiScreenRecordingGIF.Image = global::ShareX.Properties.Resources.film;
             this.tsmiScreenRecordingGIF.Name = "tsmiScreenRecordingGIF";
             this.tsmiScreenRecordingGIF.Size = new System.Drawing.Size(217, 22);
             this.tsmiScreenRecordingGIF.Text = "Screen recording (GIF)";
@@ -1580,7 +1580,7 @@
             // 
             // screenRecordingFFmpegToolStripMenuItem
             // 
-            this.screenRecordingFFmpegToolStripMenuItem.Image = global::ShareX.Properties.Resources.film;
+            this.screenRecordingFFmpegToolStripMenuItem.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.screenRecordingFFmpegToolStripMenuItem.Name = "screenRecordingFFmpegToolStripMenuItem";
             this.screenRecordingFFmpegToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.screenRecordingFFmpegToolStripMenuItem.Text = "Screen recording (FFmpeg)";
@@ -1588,7 +1588,7 @@
             // 
             // tsmiTrayScreenRecordingGIF
             // 
-            this.tsmiTrayScreenRecordingGIF.Image = global::ShareX.Properties.Resources.camcorder_image;
+            this.tsmiTrayScreenRecordingGIF.Image = global::ShareX.Properties.Resources.film;
             this.tsmiTrayScreenRecordingGIF.Name = "tsmiTrayScreenRecordingGIF";
             this.tsmiTrayScreenRecordingGIF.Size = new System.Drawing.Size(217, 22);
             this.tsmiTrayScreenRecordingGIF.Text = "Screen recording (GIF)";
@@ -1689,38 +1689,6 @@
             this.tsmiTrayScreenColorPicker.Text = "Screen color picker...";
             this.tsmiTrayScreenColorPicker.Click += new System.EventHandler(this.tsmiCursorHelper_Click);
             // 
-            // tsmiTrayRuler
-            // 
-            this.tsmiTrayRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
-            this.tsmiTrayRuler.Name = "tsmiTrayRuler";
-            this.tsmiTrayRuler.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayRuler.Text = "Ruler...";
-            this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
-            // 
-            // tsmiTrayFTPClient
-            // 
-            this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
-            this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
-            this.tsmiTrayFTPClient.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayFTPClient.Text = "FTP client...";
-            this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
-            // 
-            // tsmiTrayHashCheck
-            // 
-            this.tsmiTrayHashCheck.Image = global::ShareX.Properties.Resources.application_task;
-            this.tsmiTrayHashCheck.Name = "tsmiTrayHashCheck";
-            this.tsmiTrayHashCheck.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayHashCheck.Text = "Hash check...";
-            this.tsmiTrayHashCheck.Click += new System.EventHandler(this.tsmiHashCheck_Click);
-            // 
-            // tsmiTrayIndexFolder
-            // 
-            this.tsmiTrayIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
-            this.tsmiTrayIndexFolder.Name = "tsmiTrayIndexFolder";
-            this.tsmiTrayIndexFolder.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayIndexFolder.Text = "Index folder...";
-            this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
-            // 
             // tsmiTrayImageEditor
             // 
             this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
@@ -1737,13 +1705,13 @@
             this.tsmiTrayImageEffects.Text = "Image effects...";
             this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
-            // tsmiTrayMonitorTest
+            // tsmiTrayHashCheck
             // 
-            this.tsmiTrayMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
-            this.tsmiTrayMonitorTest.Name = "tsmiTrayMonitorTest";
-            this.tsmiTrayMonitorTest.Size = new System.Drawing.Size(183, 22);
-            this.tsmiTrayMonitorTest.Text = "Monitor test...";
-            this.tsmiTrayMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
+            this.tsmiTrayHashCheck.Image = global::ShareX.Properties.Resources.application_task;
+            this.tsmiTrayHashCheck.Name = "tsmiTrayHashCheck";
+            this.tsmiTrayHashCheck.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayHashCheck.Text = "Hash check...";
+            this.tsmiTrayHashCheck.Click += new System.EventHandler(this.tsmiHashCheck_Click);
             // 
             // tsmiTrayDNSChanger
             // 
@@ -1761,6 +1729,30 @@
             this.tsmiTrayQRCode.Text = "QR code...";
             this.tsmiTrayQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
+            // tsmiTrayIndexFolder
+            // 
+            this.tsmiTrayIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
+            this.tsmiTrayIndexFolder.Name = "tsmiTrayIndexFolder";
+            this.tsmiTrayIndexFolder.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayIndexFolder.Text = "Index folder...";
+            this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
+            // 
+            // tsmiTrayRuler
+            // 
+            this.tsmiTrayRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
+            this.tsmiTrayRuler.Name = "tsmiTrayRuler";
+            this.tsmiTrayRuler.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayRuler.Text = "Ruler...";
+            this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
+            // 
+            // tsmiTrayFTPClient
+            // 
+            this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
+            this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
+            this.tsmiTrayFTPClient.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayFTPClient.Text = "FTP client...";
+            this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
+            // 
             // tsmiTrayTweetMessage
             // 
             this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
@@ -1768,6 +1760,14 @@
             this.tsmiTrayTweetMessage.Size = new System.Drawing.Size(183, 22);
             this.tsmiTrayTweetMessage.Text = "Tweet message...";
             this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
+            // 
+            // tsmiTrayMonitorTest
+            // 
+            this.tsmiTrayMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
+            this.tsmiTrayMonitorTest.Name = "tsmiTrayMonitorTest";
+            this.tsmiTrayMonitorTest.Size = new System.Drawing.Size(183, 22);
+            this.tsmiTrayMonitorTest.Text = "Monitor test...";
+            this.tsmiTrayMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
             // 
             // tssTray1
             // 

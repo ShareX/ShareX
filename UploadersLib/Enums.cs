@@ -46,6 +46,8 @@ namespace UploadersLib
         Twitter,
         [Description("Chevereto")]
         Chevereto,
+        [Description("Hızlı Resim")]
+        HizliResim,
         [Description("Custom image uploader")]
         CustomImageUploader,
         [Description("File uploader")]

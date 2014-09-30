@@ -709,6 +709,12 @@ namespace ShareX
                         DirectURL = Program.UploadersConfig.CheveretoDirectURL
                     };
                     break;
+                case ImageDestination.HizliResim:
+                    imageUploader = new HizliResim()
+                    {
+                        DirectURL = true
+                    };
+                    break;
                 case ImageDestination.CustomImageUploader:
                     if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomImageUploaderSelected))
                     {
