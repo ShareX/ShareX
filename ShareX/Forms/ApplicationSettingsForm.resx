@@ -117,4 +117,1819 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryImageUploaders</value>
+  </data>
+  <data name="lblUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;chkUseSecondaryUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPattern.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tlpBackupDestinations.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;tpUploadResults.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomScreenshotsPath.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbDontShowPrintSettingDialog.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>Sub folder pattern:</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 184</value>
+  </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>Run ShareX when Windows starts</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>Remember main window size</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tpPrint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 17</value>
+  </data>
+  <data name="nudProxyPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="txtPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbShowTray.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudUploadLimit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 44</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Simultaneous upload limit:</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryTextUploaders</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 208</value>
+  </data>
+  <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tpUpload.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 184</value>
+  </data>
+  <data name="&gt;&gt;tpUpload.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;btnShowImagePrintSettings.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.Parent" xml:space="preserve">
+    <value>gbBandwidth</value>
+  </data>
+  <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.Name" xml:space="preserve">
+    <value>cbRememberMainFormPosition</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
+    <value>lblSaveImageSubFolderPatternPreview</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 13</value>
+  </data>
+  <data name="&gt;&gt;tpUploadRetry.Name" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tpUploadResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.Name" xml:space="preserve">
+    <value>lblProxyUsername</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tpPaths.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 370</value>
+  </data>
+  <data name="&gt;&gt;nudRetryUpload.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;gbBandwidth.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.Name" xml:space="preserve">
+    <value>cbTaskbarProgressEnabled</value>
+  </data>
+  <data name="&gt;&gt;btnShowImagePrintSettings.Parent" xml:space="preserve">
+    <value>tpPrint</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 69</value>
+  </data>
+  <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 52</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;tpUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="lblProxyUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nudUploadLimit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 180</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Secondary text uploaders</value>
+  </data>
+  <data name="&gt;&gt;nudUploadLimit.Parent" xml:space="preserve">
+    <value>gbBandwidth</value>
+  </data>
+  <data name="&gt;&gt;lvClipboardFormats.Name" xml:space="preserve">
+    <value>lvClipboardFormats</value>
+  </data>
+  <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Buffer size:</value>
+  </data>
+  <data name="&gt;&gt;txtPersonalFolderPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Application settings</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblProxyPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNotePersonalFolderPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="nudRetryUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProxyPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>Note: You must reopen ShareX for personal folder changes to take effect.</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tcSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 13</value>
+  </data>
+  <data name="lblProxyPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBufferSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
+  </data>
+  <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 12</value>
+  </data>
+  <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbTrayIconProgressEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryTextUploaders</value>
+  </data>
+  <data name="tpProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;gbClipboardFormats.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbDontShowPrintSettingDialog.Parent" xml:space="preserve">
+    <value>tpPrint</value>
+  </data>
+  <data name="&gt;&gt;txtPersonalFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploadRetry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 17</value>
+  </data>
+  <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="&gt;&gt;lblNotePersonalFolderPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>Show tray icon</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="btnClipboardFormatAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 370</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>Proxy configuration:</value>
+  </data>
+  <data name="&gt;&gt;btnOpenScreenshotsFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 279</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 258</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>Clipboard formats</value>
+  </data>
+  <data name="&gt;&gt;tpPerformance.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="&gt;&gt;tpPrint.Name" xml:space="preserve">
+    <value>tpPrint</value>
+  </data>
+  <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 44</value>
+  </data>
+  <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
+    <value>gbClipboardFormats</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPersonalFolderPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblPreviewPersonalFolderPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;gbClipboardFormats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTrayIconProgressEnabled.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="tpGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.Name" xml:space="preserve">
+    <value>cbBufferSize</value>
+  </data>
+  <data name="tpPerformance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpUploadResults.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>396, 8</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>Show "Upload using ShareX" button in shell context menu</value>
+  </data>
+  <data name="tlpBackupDestinations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatAdd.Name" xml:space="preserve">
+    <value>btnClipboardFormatAdd</value>
+  </data>
+  <data name="tlpBackupDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>590, 295</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpPaths.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUseCustomScreenshotsPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="lvClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 48</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.Name" xml:space="preserve">
+    <value>cbShellContextMenu</value>
+  </data>
+  <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 21</value>
+  </data>
+  <data name="lblUploadLimitHint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 24</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtProxyHost.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 12</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryFileUploaders</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 279</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.Name" xml:space="preserve">
+    <value>lblProxyPort</value>
+  </data>
+  <data name="tpProxy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;tpAdvanced.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 136</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatAdd.Parent" xml:space="preserve">
+    <value>gbClipboardFormats</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX personal folder:</value>
+  </data>
+  <data name="lblPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatRemove.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpPerformance.Text" xml:space="preserve">
+    <value>Performance</value>
+  </data>
+  <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="&gt;&gt;cbIfUploadFailRetryOnce.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="nudUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 20</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpPrint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;tcUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPersonalFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.Name" xml:space="preserve">
+    <value>cbSendToMenu</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbShowTray.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 48</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="&gt;&gt;tpAdvanced.Name" xml:space="preserve">
+    <value>tpAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblUploadLimit.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpUploadRetry.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 440</value>
+  </data>
+  <data name="lblProxyPort.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 279</value>
+  </data>
+  <data name="lvClipboardFormats.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 39</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimitHint.Name" xml:space="preserve">
+    <value>lblUploadLimitHint</value>
+  </data>
+  <data name="&gt;&gt;btnShowImagePrintSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 12</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnOpenScreenshotsFolder.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatRemove.Parent" xml:space="preserve">
+    <value>gbClipboardFormats</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;tpPrint.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcUpload.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>Show progress in taskbar button</value>
+  </data>
+  <data name="&gt;&gt;lblNotePersonalFolderPath.Name" xml:space="preserve">
+    <value>lblNotePersonalFolderPath</value>
+  </data>
+  <data name="&gt;&gt;lblPersonalFolderPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="cbShowTray.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>Number of times to retry if upload fails:</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 8</value>
+  </data>
+  <data name="&gt;&gt;txtCustomScreenshotsPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpBackupDestinations.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbTrayIconProgressEnabled.Name" xml:space="preserve">
+    <value>cbTrayIconProgressEnabled</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Use custom screenshots folder:</value>
+  </data>
+  <data name="lblProxyHost.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPattern.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;tcSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="&gt;&gt;tcSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>Show ShareX in "Send to" menu</value>
+  </data>
+  <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 370</value>
+  </data>
+  <data name="nudProxyPort.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 17</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 258</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.Name" xml:space="preserve">
+    <value>txtProxyUsername</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;chFormat.Name" xml:space="preserve">
+    <value>chFormat</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="tlpBackupDestinations.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudUploadLimit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPattern.Name" xml:space="preserve">
+    <value>txtSaveImageSubFolderPattern</value>
+  </data>
+  <data name="&gt;&gt;tlpBackupDestinations.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>On start minimize to tray</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 17</value>
+  </data>
+  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Parent" xml:space="preserve">
+    <value>tpPrint</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatEdit.Name" xml:space="preserve">
+    <value>btnClipboardFormatEdit</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="gbBandwidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>576, 88</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.Name" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblBufferSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>Show progress in tray icon</value>
+  </data>
+  <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tpUploadRetry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tpPaths.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.Name" xml:space="preserve">
+    <value>txtProxyHost</value>
+  </data>
+  <data name="&gt;&gt;tpGeneral.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>Remember main window position</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
+    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 213</value>
+  </data>
+  <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="&gt;&gt;txtPersonalFolderPath.Name" xml:space="preserve">
+    <value>txtPersonalFolderPath</value>
+  </data>
+  <data name="btnClipboardFormatRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 13</value>
+  </data>
+  <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="&gt;&gt;cbUseCustomScreenshotsPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tpPaths.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;cbIfUploadFailRetryOnce.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.Name" xml:space="preserve">
+    <value>nudProxyPort</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblBufferSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.Name" xml:space="preserve">
+    <value>cbSilentRun</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tpPerformance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtCustomScreenshotsPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 16</value>
+  </data>
+  <data name="tlpBackupDestinations.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblBufferSize.Name" xml:space="preserve">
+    <value>lblBufferSize</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="tpUploadRetry.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;gbClipboardFormats.Name" xml:space="preserve">
+    <value>gbClipboardFormats</value>
+  </data>
+  <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 17</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblPreviewPersonalFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 17</value>
+  </data>
+  <data name="&gt;&gt;lblPersonalFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
+    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPattern.Name" xml:space="preserve">
+    <value>lblSaveImageSubFolderPattern</value>
+  </data>
+  <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tpGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 370</value>
+  </data>
+  <data name="&gt;&gt;tlpBackupDestinations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnClipboardFormatEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbUseCustomScreenshotsPath.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;gbBandwidth.Name" xml:space="preserve">
+    <value>gbBandwidth</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tcUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
+    <value>tpAdvanced</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Use secondary uploaders order of preference when retrying</value>
+  </data>
+  <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblBufferSize.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnShowImagePrintSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploadResults.Name" xml:space="preserve">
+    <value>tpUploadResults</value>
+  </data>
+  <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 370</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
+    <value>tlpBackupDestinations</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimit.Parent" xml:space="preserve">
+    <value>gbBandwidth</value>
+  </data>
+  <data name="lblPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatRemove.Name" xml:space="preserve">
+    <value>btnClipboardFormatRemove</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePersonalFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;gbClipboardFormats.Parent" xml:space="preserve">
+    <value>tpUploadResults</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.Name" xml:space="preserve">
+    <value>lblProxyMethod</value>
+  </data>
+  <data name="lblUploadLimitHint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbBandwidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatAdd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbUseCustomScreenshotsPath.Name" xml:space="preserve">
+    <value>cbUseCustomScreenshotsPath</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 17</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnOpenScreenshotsFolder.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;tcUpload.Parent" xml:space="preserve">
+    <value>tpUpload</value>
+  </data>
+  <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtCustomScreenshotsPath.Name" xml:space="preserve">
+    <value>txtCustomScreenshotsPath</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ApplicationSettingsForm</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblProxyMethod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 17</value>
+  </data>
+  <data name="&gt;&gt;gbBandwidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimitHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gbClipboardFormats.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
+    <value>lblPreviewPersonalFolderPath</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 258</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="cbBufferSize.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimitHint.Parent" xml:space="preserve">
+    <value>gbBandwidth</value>
+  </data>
+  <data name="tlpBackupDestinations.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="gbSecondaryImageUploaders" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryFileUploaders" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryTextUploaders" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,34,Percent,33" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;lblBufferSize.Parent" xml:space="preserve">
+    <value>gbBandwidth</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtProxyUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tpAdvanced.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;lblPreviewPersonalFolderPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Secondary image uploaders</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="chDescription.Width" type="System.Int32, mscorlib">
+    <value>135</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 151</value>
+  </data>
+  <data name="txtProxyPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;tpGeneral.Name" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatEdit.Parent" xml:space="preserve">
+    <value>gbClipboardFormats</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblNotePersonalFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploadResults.Parent" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="txtSaveImageSubFolderPattern.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>610, 370</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePersonalFolderPath.Name" xml:space="preserve">
+    <value>btnBrowsePersonalFolderPath</value>
+  </data>
+  <data name="&gt;&gt;nudProxyPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPaths.Name" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbBandwidth.Parent" xml:space="preserve">
+    <value>tpPerformance</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
+    <value>cbStartWithWindows</value>
+  </data>
+  <data name="tlpBackupDestinations.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>Don't show Windows print dialog</value>
+  </data>
+  <data name="nudUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="&gt;&gt;tpPerformance.Name" xml:space="preserve">
+    <value>tpPerformance</value>
+  </data>
+  <data name="tlpBackupDestinations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 40</value>
+  </data>
+  <data name="&gt;&gt;cbDontShowPrintSettingDialog.Name" xml:space="preserve">
+    <value>cbDontShowPrintSettingDialog</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPersonalFolderPath.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="lblProxyHost.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tpUploadRetry.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePersonalFolderPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 112</value>
+  </data>
+  <data name="tcUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;nudRetryUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tpUploadRetry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 338</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.Name" xml:space="preserve">
+    <value>btnBrowseCustomScreenshotsPath</value>
+  </data>
+  <data name="&gt;&gt;lblPersonalFolderPath.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="&gt;&gt;cbShowTray.Name" xml:space="preserve">
+    <value>cbShowTray</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="&gt;&gt;tpAdvanced.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpUploadResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblProxyUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblProxyMethod.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblProxyMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tpUploadResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPersonalFolderPath.Name" xml:space="preserve">
+    <value>btnOpenPersonalFolderPath</value>
+  </data>
+  <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;chkUseSecondaryUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 76</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPattern.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="tpUploadResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 338</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="&gt;&gt;btnShowImagePrintSettings.Name" xml:space="preserve">
+    <value>btnShowImagePrintSettings</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
+    <value>tlpBackupDestinations</value>
+  </data>
+  <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
+    <value>tlpBackupDestinations</value>
+  </data>
+  <data name="&gt;&gt;cbProxyMethod.Name" xml:space="preserve">
+    <value>cbProxyMethod</value>
+  </data>
+  <data name="&gt;&gt;nudRetryUpload.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tcUpload.Name" xml:space="preserve">
+    <value>tcUpload</value>
+  </data>
+  <data name="gbBandwidth.Text" xml:space="preserve">
+    <value>Bandwidth</value>
+  </data>
+  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>604, 364</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Secondary file uploaders</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;cbTaskbarProgressEnabled.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lvClipboardFormats.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 disables)</value>
+  </data>
+  <data name="&gt;&gt;tpUpload.Name" xml:space="preserve">
+    <value>tpUpload</value>
+  </data>
+  <data name="tpUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimitHint.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPattern.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="&gt;&gt;chkUseSecondaryUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpPerformance.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;chkUseSecondaryUploaders.Name" xml:space="preserve">
+    <value>chkUseSecondaryUploaders</value>
+  </data>
+  <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;btnOpenScreenshotsFolder.Name" xml:space="preserve">
+    <value>btnOpenScreenshotsFolder</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="nudUploadLimit.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 108</value>
+  </data>
+  <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 152</value>
+  </data>
+  <data name="&gt;&gt;lblProxyPassword.Name" xml:space="preserve">
+    <value>lblProxyPassword</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;nudRetryUpload.Name" xml:space="preserve">
+    <value>nudRetryUpload</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
+    <value>pgSettings</value>
+  </data>
+  <data name="tpPerformance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 338</value>
+  </data>
+  <data name="&gt;&gt;txtProxyPassword.Name" xml:space="preserve">
+    <value>txtProxyPassword</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>624, 402</value>
+  </data>
+  <data name="lblProxyPort.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblUploadLimit.Name" xml:space="preserve">
+    <value>lblUploadLimit</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Paths</value>
+  </data>
+  <data name="&gt;&gt;chDescription.Name" xml:space="preserve">
+    <value>chDescription</value>
+  </data>
+  <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="&gt;&gt;lblProxyUsername.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="lvClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 264</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 23</value>
+  </data>
+  <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>604, 364</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
+    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbStartWithWindows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpPerformance.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Image print settings...</value>
+  </data>
+  <data name="&gt;&gt;cbDontShowPrintSettingDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePersonalFolderPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>576, 320</value>
+  </data>
+  <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 17</value>
+  </data>
+  <data name="&gt;&gt;nudUploadLimit.Name" xml:space="preserve">
+    <value>nudUploadLimit</value>
+  </data>
+  <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 208</value>
+  </data>
+  <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 112</value>
+  </data>
+  <data name="&gt;&gt;cbIfUploadFailRetryOnce.Name" xml:space="preserve">
+    <value>cbIfUploadFailRetryOnce</value>
+  </data>
+  <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>392, 20</value>
+  </data>
+  <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="&gt;&gt;cbPrintDontShowWindowsDialog.Name" xml:space="preserve">
+    <value>cbPrintDontShowWindowsDialog</value>
+  </data>
+  <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryFileUploaders</value>
+  </data>
+  <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.Name" xml:space="preserve">
+    <value>cbRememberMainFormSize</value>
+  </data>
+  <data name="&gt;&gt;txtProxyHost.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 20</value>
+  </data>
+  <data name="tcSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 396</value>
+  </data>
+  <data name="gbBandwidth.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 17</value>
+  </data>
+  <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tpPerformance.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPersonalFolderPath.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbBufferSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tcSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblUploadLimitHint.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnClipboardFormatEdit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbProxyMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblProxyHost.Name" xml:space="preserve">
+    <value>lblProxyHost</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbRememberMainFormSize.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;tcSettings.Name" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;txtProxyUsername.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Don't show image print settings dialog</value>
+  </data>
+  <data name="tpPrint.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 9</value>
+  </data>
+  <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbIfUploadFailRetryOnce.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 17</value>
+  </data>
+  <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tpGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="tpAdvanced.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;chFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tpUploadRetry.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;lblPersonalFolderPath.Name" xml:space="preserve">
+    <value>lblPersonalFolderPath</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
+    <value>columnHeader3</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBufferSize.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tlpBackupDestinations.Name" xml:space="preserve">
+    <value>tlpBackupDestinations</value>
+  </data>
+  <data name="txtPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 20</value>
+  </data>
+  <data name="chFormat.Width" type="System.Int32, mscorlib">
+    <value>320</value>
+  </data>
+  <data name="nudRetryUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>tr</value>
+  </metadata>
 </root>
