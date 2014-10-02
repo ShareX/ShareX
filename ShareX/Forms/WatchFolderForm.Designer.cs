@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchFolderForm));
             this.btnPathBrowse = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.txtFolderPath = new System.Windows.Forms.TextBox();
@@ -41,91 +42,61 @@
             // 
             // btnPathBrowse
             // 
-            this.btnPathBrowse.Location = new System.Drawing.Point(272, 11);
+            resources.ApplyResources(this.btnPathBrowse, "btnPathBrowse");
             this.btnPathBrowse.Name = "btnPathBrowse";
-            this.btnPathBrowse.Size = new System.Drawing.Size(40, 23);
-            this.btnPathBrowse.TabIndex = 2;
-            this.btnPathBrowse.Text = "...";
             this.btnPathBrowse.UseVisualStyleBackColor = true;
             this.btnPathBrowse.Click += new System.EventHandler(this.btnPathBrowse_Click);
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(88, 36);
+            resources.ApplyResources(this.txtFilter, "txtFilter");
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(224, 20);
-            this.txtFilter.TabIndex = 4;
             // 
             // txtFolderPath
             // 
-            this.txtFolderPath.Location = new System.Drawing.Point(88, 12);
+            resources.ApplyResources(this.txtFolderPath, "txtFolderPath");
             this.txtFolderPath.Name = "txtFolderPath";
-            this.txtFolderPath.Size = new System.Drawing.Size(176, 20);
-            this.txtFolderPath.TabIndex = 1;
             // 
             // lblFilter
             // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblFilter, "lblFilter");
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(32, 13);
-            this.lblFilter.TabIndex = 3;
-            this.lblFilter.Text = "Filter:";
             // 
             // lblFolderPath
             // 
-            this.lblFolderPath.AutoSize = true;
-            this.lblFolderPath.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblFolderPath, "lblFolderPath");
             this.lblFolderPath.Name = "lblFolderPath";
-            this.lblFolderPath.Size = new System.Drawing.Size(63, 13);
-            this.lblFolderPath.TabIndex = 0;
-            this.lblFolderPath.Text = "Folder path:";
             // 
             // lblFilterExample
             // 
-            this.lblFilterExample.AutoSize = true;
-            this.lblFilterExample.Location = new System.Drawing.Point(88, 60);
+            resources.ApplyResources(this.lblFilterExample, "lblFilterExample");
             this.lblFilterExample.Name = "lblFilterExample";
-            this.lblFilterExample.Size = new System.Drawing.Size(78, 13);
-            this.lblFilterExample.TabIndex = 5;
-            this.lblFilterExample.Text = "Example: *.png";
             // 
             // cbIncludeSubdirectories
             // 
-            this.cbIncludeSubdirectories.AutoSize = true;
-            this.cbIncludeSubdirectories.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.cbIncludeSubdirectories, "cbIncludeSubdirectories");
             this.cbIncludeSubdirectories.Name = "cbIncludeSubdirectories";
-            this.cbIncludeSubdirectories.Size = new System.Drawing.Size(129, 17);
-            this.cbIncludeSubdirectories.TabIndex = 6;
-            this.cbIncludeSubdirectories.Text = "Include subdirectories";
             this.cbIncludeSubdirectories.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(232, 120);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 23);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(144, 120);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(80, 23);
-            this.btnOK.TabIndex = 7;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // WatchFolderForm
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 153);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbIncludeSubdirectories);
@@ -138,8 +109,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "WatchFolderForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Watch folder";
             this.ResumeLayout(false);
             this.PerformLayout();
 

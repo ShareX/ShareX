@@ -28,29 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySettingsForm));
             this.hmHotkeys = new ShareX.HotkeyManagerControl();
             this.SuspendLayout();
             // 
             // hmHotkeys
             // 
+            resources.ApplyResources(this.hmHotkeys, "hmHotkeys");
             this.hmHotkeys.BackColor = System.Drawing.Color.White;
-            this.hmHotkeys.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hmHotkeys.Location = new System.Drawing.Point(0, 0);
             this.hmHotkeys.Name = "hmHotkeys";
-            this.hmHotkeys.Size = new System.Drawing.Size(534, 412);
-            this.hmHotkeys.TabIndex = 0;
             // 
             // HotkeySettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(534, 412);
             this.Controls.Add(this.hmHotkeys);
-            this.MinimumSize = new System.Drawing.Size(550, 200);
             this.Name = "HotkeySettingsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Hotkey settings";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HotkeySettingsForm_FormClosed);
             this.ResumeLayout(false);
 
