@@ -242,10 +242,9 @@ namespace ShareX
 
         private static ImageDestination DefaultImageDestination()
         {
-            return
-                CultureInfo.CurrentCulture.Name.Equals("tr-TR", StringComparison.InvariantCultureIgnoreCase) ||
+            return CultureInfo.CurrentCulture.Name.Equals("tr-TR", StringComparison.InvariantCultureIgnoreCase) ||
                 CultureInfo.CurrentUICulture.Name.Equals("tr-TR", StringComparison.InvariantCultureIgnoreCase) ?
-                    ImageDestination.HizliResim : ImageDestination.Imgur;
+                ImageDestination.HizliResim : ImageDestination.Imgur;
         }
     }
 

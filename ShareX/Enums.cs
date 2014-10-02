@@ -28,6 +28,14 @@ using System.ComponentModel;
 
 namespace ShareX
 {
+    public enum SupportedLanguage
+    {
+        Default,
+        English,
+        Turkish,
+        German
+    }
+
     public enum EImageFormat
     {
         [Description("png")]

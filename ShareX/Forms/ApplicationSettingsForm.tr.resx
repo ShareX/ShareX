@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Yollar</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Vekil Sunucu</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Yükleme</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Yazdırma</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Gelişmiş</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 12</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Dil:</value>
+  </data>
   <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 17</value>
   </data>
@@ -172,9 +199,6 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>"Gönder" menüsünde ShareX menüsünü göster</value>
   </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Genel</value>
-  </data>
   <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 13</value>
   </data>
@@ -211,9 +235,6 @@
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Alt dizin deseni:</value>
   </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Yollar</value>
-  </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 13</value>
   </data>
@@ -238,8 +259,11 @@
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Vekil Sunucu</value>
+  <data name="tpPerformance.Text" xml:space="preserve">
+    <value>Performans</value>
+  </data>
+  <data name="gbBandwidth.Text" xml:space="preserve">
+    <value>Bant genişliği</value>
   </data>
   <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 13</value>
@@ -262,11 +286,11 @@
   <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>148, 53</value>
   </data>
-  <data name="gbBandwidth.Text" xml:space="preserve">
-    <value>Bant genişliği</value>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Sonuçlar</value>
   </data>
-  <data name="tpPerformance.Text" xml:space="preserve">
-    <value>Performans</value>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>Pano biçimleri</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Düzenle...</value>
@@ -283,11 +307,8 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Biçim</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Pano biçimleri</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Sonuçlar</value>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Tekrarlar</value>
   </data>
   <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>307, 12</value>
@@ -319,12 +340,6 @@
   <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
     <value>253, 9</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tekrarlar</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Yükleme</value>
-  </data>
   <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 17</value>
   </data>
@@ -339,12 +354,6 @@
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
     <value>Resim yazdırma ayarları...</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Yazdırma</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Gelişmiş</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Uygulama ayarları</value>

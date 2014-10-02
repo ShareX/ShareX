@@ -27,6 +27,7 @@ using HelpersLib;
 using SingleInstanceApplication;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -64,7 +65,6 @@ namespace ShareX
         public static UploadersConfig UploadersConfig { get; private set; }
         public static HotkeysConfig HotkeysConfig { get; private set; }
 
-        public static ManualResetEvent SettingsResetEvent { get; private set; }
         public static ManualResetEvent UploaderSettingsResetEvent { get; private set; }
         public static ManualResetEvent HotkeySettingsResetEvent { get; private set; }
 
@@ -308,19 +308,17 @@ namespace ShareX
                 DebugHelper.WriteLine("Git: https://github.com/ShareX/ShareX/tree/" + gitHash);
             }
 
-            SettingsResetEvent = new ManualResetEvent(false);
+            LoadProgramSettings();
+
             UploaderSettingsResetEvent = new ManualResetEvent(false);
             HotkeySettingsResetEvent = new ManualResetEvent(false);
             TaskEx.Run(() => LoadSettings());
 
+            UpdateLanguage();
+
             DebugHelper.WriteLine("MainForm init started");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished");
-
-            if (Settings == null)
-            {
-                SettingsResetEvent.WaitOne();
-            }
 
             Application.Run(MainForm);
 
@@ -375,10 +373,33 @@ namespace ShareX
             return false;
         }
 
+        public static void UpdateLanguage()
+        {
+            if (Settings.Language != SupportedLanguage.Default)
+            {
+                string cultureName;
+
+                switch (Settings.Language)
+                {
+                    default:
+                    case SupportedLanguage.English:
+                        cultureName = "en-US";
+                        break;
+                    case SupportedLanguage.Turkish:
+                        cultureName = "tr-TR";
+                        break;
+                    case SupportedLanguage.German:
+                        cultureName = "de-DE";
+                        break;
+                }
+
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureName);
+                DebugHelper.WriteLine("Language set to: " + Thread.CurrentThread.CurrentUICulture.DisplayName);
+            }
+        }
+
         public static void LoadSettings()
         {
-            LoadProgramSettings();
-            SettingsResetEvent.Set();
             LoadUploadersConfig();
             UploaderSettingsResetEvent.Set();
             LoadHotkeySettings();

@@ -124,6 +124,9 @@
   <data name="&gt;&gt;chURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiDonate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
     <value>Thumbnail image</value>
   </data>
@@ -133,8 +136,8 @@
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
   </data>
-  <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
-    <value>HTML linked image</value>
+  <data name="&gt;&gt;tsmiCopyForumLinkedImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pbLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 280</value>
@@ -155,17 +158,20 @@
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>History...</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayLastRegion.Name" xml:space="preserve">
+    <value>tsmiTrayLastRegion</value>
+  </data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
   <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
+  <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
+    <value>Upload file...</value>
+  </data>
   <data name="&gt;&gt;tsmiDiamond.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
-    <value>tsmiTrayIndexFolder</value>
   </data>
   <data name="tsmiTrayHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
@@ -173,11 +179,15 @@
   <data name="tsmiAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 20</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pbLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayWorkflows.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbScreenshotsFolder.Name" xml:space="preserve">
-    <value>tsbScreenshotsFolder</value>
+  <data name="&gt;&gt;tsmiTrayRectangleAnnotate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -191,6 +201,9 @@
   <data name="&gt;&gt;tsmiCopyHTMLLink.Name" xml:space="preserve">
     <value>tsmiCopyHTMLLink</value>
   </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>Image effects...</value>
+  </data>
   <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -200,20 +213,20 @@
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>323, 407</value>
   </data>
-  <data name="&gt;&gt;tsmiCopyForumLinkedImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>History...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
+  <data name="tsmiCopyHTMLImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
   <data name="&gt;&gt;tsmiMonitorTest.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiUploadFolder.Name" xml:space="preserve">
-    <value>tsmiUploadFolder</value>
+  <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
   </data>
   <data name="&gt;&gt;tsmiTestTextUpload.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -221,8 +234,11 @@
   <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
-  <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>Image history...</value>
+  <data name="&gt;&gt;tsmiDeleteSelectedFile.Name" xml:space="preserve">
+    <value>tsmiDeleteSelectedFile</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>Text uploaders</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
@@ -239,9 +255,6 @@
   <data name="&gt;&gt;tsmiTrayAutoCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="&gt;&gt;tsmiCopyFilePath.Name" xml:space="preserve">
     <value>tsmiCopyFilePath</value>
   </data>
@@ -254,9 +267,6 @@
   <data name="&gt;&gt;tsmiFreeHand.Name" xml:space="preserve">
     <value>tsmiFreeHand</value>
   </data>
-  <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>After upload</value>
-  </data>
   <data name="&gt;&gt;tsmiScreenColorPicker.Name" xml:space="preserve">
     <value>tsmiScreenColorPicker</value>
   </data>
@@ -265,9 +275,6 @@
   </data>
   <data name="&gt;&gt;tsmiUploadFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayRectangleAnnotate.Name" xml:space="preserve">
-    <value>tsmiTrayRectangleAnnotate</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -287,7 +294,6 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Name" xml:space="preserve">
     <value>tsmiURLSharingServices</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -300,8 +306,8 @@
   <data name="&gt;&gt;tsmiPolygon.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
+  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 20</value>
   </data>
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -311,9 +317,6 @@
   </data>
   <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 20</value>
-  </data>
-  <data name="&gt;&gt;ssToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Auto capture...</value>
@@ -326,6 +329,9 @@
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
+  </data>
+  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="&gt;&gt;tsddbCapture.Name" xml:space="preserve">
     <value>tsddbCapture</value>
@@ -347,6 +353,9 @@
   </data>
   <data name="&gt;&gt;tssCopy5.Name" xml:space="preserve">
     <value>tssCopy5</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Capture</value>
   </data>
   <data name="tsmiTrayExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
@@ -375,8 +384,11 @@
   <data name="&gt;&gt;tsmiEllipse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbTaskSettings.Name" xml:space="preserve">
-    <value>tsbTaskSettings</value>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>Shortened URL</value>
+  </data>
+  <data name="&gt;&gt;tsmiOpenFile.Name" xml:space="preserve">
+    <value>tsmiOpenFile</value>
   </data>
   <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -404,9 +416,6 @@
   </data>
   <data name="tsmiCopyThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageEffects.Name" xml:space="preserve">
     <value>tsmiImageEffects</value>
@@ -477,6 +486,9 @@
   <data name="&gt;&gt;scMain.Name" xml:space="preserve">
     <value>scMain</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiTrayURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
@@ -510,9 +522,6 @@
   <data name="tsmiTrayTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
-  <data name="&gt;&gt;tsmiTestFileUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiWindowRectangle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -521,6 +530,9 @@
   </data>
   <data name="lblSplitter.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="pBackground.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Screen recording (FFmpeg)</value>
@@ -558,14 +570,20 @@
   <data name="&gt;&gt;tsmiRectangleAnnotate.Name" xml:space="preserve">
     <value>tsmiRectangleAnnotate</value>
   </data>
-  <data name="tsmiCopyText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 22</value>
+  <data name="&gt;&gt;tsmiUploadDragDrop.Name" xml:space="preserve">
+    <value>tsmiUploadDragDrop</value>
   </data>
   <data name="tssCopy1.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 6</value>
   </data>
   <data name="tsmiTrayShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
+    <value>tsmiTrayDNSChanger</value>
+  </data>
+  <data name="&gt;&gt;tsbApplicationSettings.Name" xml:space="preserve">
+    <value>tsbApplicationSettings</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Window</value>
@@ -584,9 +602,6 @@
   </data>
   <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
     <value>scMain</value>
-  </data>
-  <data name="&gt;&gt;tsmiShowQRCode.Name" xml:space="preserve">
-    <value>tsmiShowQRCode</value>
   </data>
   <data name="tsmiTrayAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
@@ -608,6 +623,9 @@
   </data>
   <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
   </data>
   <data name="&gt;&gt;tsmiOpenFolder.Name" xml:space="preserve">
     <value>tsmiOpenFolder</value>
@@ -678,9 +696,6 @@
   <data name="&gt;&gt;tsmiImagePreview.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chElapsed.Width" type="System.Int32, mscorlib">
-    <value>42</value>
-  </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Upload from clipboard...</value>
   </data>
@@ -726,17 +741,11 @@
   <data name="tsddbDebug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;tsmiRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 6</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRuler.Name" xml:space="preserve">
     <value>tsmiTrayRuler</value>
-  </data>
-  <data name="&gt;&gt;chSpeed.Name" xml:space="preserve">
-    <value>chSpeed</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHashCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -746,9 +755,6 @@
   </data>
   <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
-  </data>
-  <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
   </data>
   <data name="tsmiEllipse.Text" xml:space="preserve">
     <value>Ellipse</value>
@@ -771,8 +777,8 @@
   <data name="pBackground.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
-  <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 20</value>
+  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Monitor</value>
@@ -870,6 +876,9 @@
   <data name="tsmiShowResponse.Text" xml:space="preserve">
     <value>Show response...</value>
   </data>
+  <data name="&gt;&gt;screenRecordingFFmpegToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiUploadSelectedFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -906,8 +915,8 @@
   <data name="&gt;&gt;tsmiUploadClipboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -918,17 +927,14 @@
   <data name="tsmiTrayTriangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
+  <data name="&gt;&gt;tsmiCopyDeletionURL.Name" xml:space="preserve">
+    <value>tsmiCopyDeletionURL</value>
+  </data>
   <data name="&gt;&gt;tsmiTriangle.Name" xml:space="preserve">
     <value>tsmiTriangle</value>
   </data>
   <data name="tsMain.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Hotkey settings...</value>
   </data>
   <data name="&gt;&gt;tsmiUploadFile.Name" xml:space="preserve">
     <value>tsmiUploadFile</value>
@@ -936,8 +942,8 @@
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
-    <value>scMain.Panel2</value>
+  <data name="&gt;&gt;tsmiUploadFolder.Name" xml:space="preserve">
+    <value>tsmiUploadFolder</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDNSChanger.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -966,14 +972,14 @@
   <data name="&gt;&gt;tssTrayDestinations1.Name" xml:space="preserve">
     <value>tssTrayDestinations1</value>
   </data>
+  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayWindowRectangle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 407</value>
-  </data>
-  <data name="&gt;&gt;tsddbAfterUploadTasks.Name" xml:space="preserve">
-    <value>tsddbAfterUploadTasks</value>
   </data>
   <data name="&gt;&gt;pbLogo.Type" xml:space="preserve">
     <value>HelpersLib.MyPictureBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -1035,9 +1041,6 @@
   <data name="chProgress.Text" xml:space="preserve">
     <value>Progress</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayHotkeySettings.Name" xml:space="preserve">
-    <value>tsmiTrayHotkeySettings</value>
-  </data>
   <data name="tsmiCopyDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>
@@ -1056,17 +1059,11 @@
   <data name="tsbHotkeySettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayUploadURL.Name" xml:space="preserve">
-    <value>tsmiTrayUploadURL</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayDonate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiImagePreviewAutomatic.Name" xml:space="preserve">
-    <value>tsmiImagePreviewAutomatic</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLLinkedImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1113,8 +1110,14 @@
   <data name="&gt;&gt;chElapsed.Name" xml:space="preserve">
     <value>chElapsed</value>
   </data>
+  <data name="tsmiCopyText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 22</value>
+  </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>335</value>
   </data>
   <data name="&gt;&gt;tsmiEditSelectedFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1122,17 +1125,14 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>834, 407</value>
   </data>
-  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tsbTaskSettings.Name" xml:space="preserve">
+    <value>tsbTaskSettings</value>
   </data>
   <data name="tsmiTrayWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayURLSharingServices.Name" xml:space="preserve">
-    <value>tsmiTrayURLSharingServices</value>
-  </data>
-  <data name="&gt;&gt;tsmiUploadDragDrop.Name" xml:space="preserve">
-    <value>tsmiUploadDragDrop</value>
+  <data name="tsmiTrayUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
   </data>
   <data name="&gt;&gt;tsddbTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1164,11 +1164,11 @@
   <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
     <value>Thumbnail file</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tssCopy1.Name" xml:space="preserve">
+    <value>tssCopy1</value>
   </data>
-  <data name="&gt;&gt;screenRecordingFFmpegToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsbScreenshotsFolder.Name" xml:space="preserve">
+    <value>tsbScreenshotsFolder</value>
   </data>
   <data name="&gt;&gt;tsmiTextUploaders.Name" xml:space="preserve">
     <value>tsmiTextUploaders</value>
@@ -1176,17 +1176,20 @@
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Image preview</value>
   </data>
+  <data name="&gt;&gt;tsddbTools.Name" xml:space="preserve">
+    <value>tsddbTools</value>
+  </data>
   <data name="&gt;&gt;tssMain2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Screen recording (GIF)</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
     <value>tsmiTrayTweetMessage</value>
-  </data>
-  <data name="tsmiQRCode.Text" xml:space="preserve">
-    <value>QR code...</value>
   </data>
   <data name="screenRecordingFFmpegToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -1251,6 +1254,9 @@
   <data name="&gt;&gt;tsmiHashCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="tsbScreenshotsFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
   <data name="&gt;&gt;tsbTaskSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1287,6 +1293,9 @@
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Task settings...</value>
   </data>
+  <data name="&gt;&gt;tsmiCopyFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiScreenshotsFolder.Name" xml:space="preserve">
     <value>tsmiScreenshotsFolder</value>
   </data>
@@ -1304,6 +1313,9 @@
   </data>
   <data name="&gt;&gt;screenRecordingFFmpegToolStripMenuItem.Name" xml:space="preserve">
     <value>screenRecordingFFmpegToolStripMenuItem</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Rectangle (Annotate)</value>
@@ -1334,6 +1346,9 @@
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
     <value>Upload from URL...</value>
+  </data>
+  <data name="&gt;&gt;tsmiWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -1368,11 +1383,23 @@
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
     <value>Thumbnail URL</value>
   </data>
+  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
+    <value>HelpersLib.SplitContainerCustomSplitter, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbLogo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 0</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 396</value>
+  </data>
+  <data name="&gt;&gt;tsmiTestUploaders.Name" xml:space="preserve">
+    <value>tsmiTestUploaders</value>
   </data>
   <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -1419,9 +1446,6 @@
   <data name="&gt;&gt;tssUploadInfo1.Name" xml:space="preserve">
     <value>tssUploadInfo1</value>
   </data>
-  <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
-  </data>
   <data name="&gt;&gt;tsmiTestUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1431,8 +1455,11 @@
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
     <value>Deletion URL</value>
   </data>
-  <data name="&gt;&gt;chStatus.Name" xml:space="preserve">
-    <value>chStatus</value>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 6</value>
   </data>
   <data name="&gt;&gt;tsmiOpenDeletionURL.Name" xml:space="preserve">
     <value>tsmiOpenDeletionURL</value>
@@ -1485,17 +1512,17 @@
   <data name="&gt;&gt;tsmiTrayImageEffects.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="tssCopy2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 6</value>
+  </data>
   <data name="&gt;&gt;tsmiUploadURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiShortenSelectedURL.Name" xml:space="preserve">
-    <value>tsmiShortenSelectedURL</value>
   </data>
   <data name="&gt;&gt;tsmiCopyText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
+  <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
+    <value>tsmiTrayIndexFolder</value>
   </data>
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Polygon</value>
@@ -1557,6 +1584,9 @@
   <data name="&gt;&gt;tsmiAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
+    <value>Monitor test...</value>
+  </data>
   <data name="tsbImageHistory.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -1572,8 +1602,8 @@
   <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 22</value>
   </data>
-  <data name="tsmiFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
+  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
   </data>
   <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 20</value>
@@ -1626,11 +1656,11 @@
   <data name="&gt;&gt;tsmiClearList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 20</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayTriangle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 20</value>
@@ -1743,9 +1773,6 @@
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
-  <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
   <data name="&gt;&gt;tsmiImagePreviewShow.Name" xml:space="preserve">
     <value>tsmiImagePreviewShow</value>
   </data>
@@ -1764,9 +1791,6 @@
   <data name="&gt;&gt;tsmiTrayImageEditor.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiCopyHTMLImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;lvUploads.Name" xml:space="preserve">
     <value>lvUploads</value>
   </data>
@@ -1782,9 +1806,6 @@
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>After capture tasks</value>
   </data>
-  <data name="&gt;&gt;tsmiOpenURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;lblSplitter.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
   </data>
@@ -1797,9 +1818,6 @@
   <data name="tsmiTrayDiamond.Text" xml:space="preserve">
     <value>Diamond</value>
   </data>
-  <data name="&gt;&gt;tsmiDonate.Name" xml:space="preserve">
-    <value>tsmiDonate</value>
-  </data>
   <data name="tsmiTrayEllipse.Text" xml:space="preserve">
     <value>Ellipse</value>
   </data>
@@ -1809,8 +1827,8 @@
   <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
   </data>
-  <data name="&gt;&gt;tsmiWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chStatus.Name" xml:space="preserve">
+    <value>chStatus</value>
   </data>
   <data name="&gt;&gt;tsmiEditSelectedFile.Name" xml:space="preserve">
     <value>tsmiEditSelectedFile</value>
@@ -1838,6 +1856,9 @@
   </data>
   <data name="&gt;&gt;tsmiFullscreen.Name" xml:space="preserve">
     <value>tsmiFullscreen</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -1881,8 +1902,8 @@
   <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 22</value>
   </data>
-  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
-    <value>Screen recording (GIF)</value>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
@@ -1891,9 +1912,6 @@
     <value>tsmiShowDebugLog</value>
   </data>
   <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
-  </data>
-  <data name="tsmiTrayRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
@@ -1935,8 +1953,8 @@
   <data name="&gt;&gt;tsmiScreenColorPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayLastRegion.Name" xml:space="preserve">
-    <value>tsmiTrayLastRegion</value>
+  <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
+    <value>HTML linked image</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Show QR code...</value>
@@ -1949,9 +1967,6 @@
   </data>
   <data name="&gt;&gt;tssCopy3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
   </data>
   <data name="&gt;&gt;chURL.Name" xml:space="preserve">
     <value>chURL</value>
@@ -2001,9 +2016,6 @@
   <data name="tsmiCopyForumLinkedImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
   </data>
-  <data name="tsmiTrayWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
-  </data>
   <data name="&gt;&gt;tssMain1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2043,8 +2055,8 @@
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
   </data>
-  <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 6</value>
+  <data name="tsmiFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
   </data>
   <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 22</value>
@@ -2064,23 +2076,17 @@
   <data name="&gt;&gt;tsmiTrayTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
-  </data>
   <data name="lblSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="&gt;&gt;tssTray3.Name" xml:space="preserve">
-    <value>tssTray3</value>
+  <data name="&gt;&gt;pbLogo.Name" xml:space="preserve">
+    <value>pbLogo</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
     <value>Upload folder...</value>
   </data>
-  <data name="&gt;&gt;tsddbTools.Name" xml:space="preserve">
-    <value>tsddbTools</value>
-  </data>
-  <data name="&gt;&gt;tsmiMonitor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="chElapsed.Width" type="System.Int32, mscorlib">
+    <value>42</value>
   </data>
   <data name="lblDragAndDropTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 10, 0</value>
@@ -2106,17 +2112,14 @@
   <data name="tsmiWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayMonitor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShow.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
-    <value>Upload file...</value>
+  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
+    <value>scMain.Panel2</value>
   </data>
   <data name="tsbHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2145,8 +2148,8 @@
   <data name="&gt;&gt;tsmiFileUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTestUploaders.Name" xml:space="preserve">
-    <value>tsmiTestUploaders</value>
+  <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Ruler...</value>
@@ -2178,8 +2181,8 @@
   <data name="&gt;&gt;tsmiTrayApplicationSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
-    <value>tsmiTrayDNSChanger</value>
+  <data name="&gt;&gt;tsmiTestFileUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiFTPClient.Name" xml:space="preserve">
     <value>tsmiFTPClient</value>
@@ -2214,8 +2217,8 @@
   <data name="&gt;&gt;tssCopy4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+  <data name="&gt;&gt;tsmiTrayRectangleAnnotate.Name" xml:space="preserve">
+    <value>tsmiTrayRectangleAnnotate</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2238,23 +2241,20 @@
   <data name="&gt;&gt;lblSplitter.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>Shortened URL</value>
+  <data name="&gt;&gt;tssTray3.Name" xml:space="preserve">
+    <value>tssTray3</value>
   </data>
-  <data name="tsbScreenshotsFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Name" xml:space="preserve">
-    <value>pbLogo</value>
+  <data name="&gt;&gt;ssToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsddbWorkflows.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomLeft</value>
   </data>
-  <data name="tssCopy2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 6</value>
+  <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
+    <value>After upload</value>
   </data>
-  <data name="&gt;&gt;tssCopy1.Name" xml:space="preserve">
-    <value>tssCopy1</value>
+  <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 20</value>
   </data>
   <data name="&gt;&gt;tsmiTrayURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2283,8 +2283,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copy</value>
+  <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFileNameWithExtension.Name" xml:space="preserve">
     <value>tsmiCopyFileNameWithExtension</value>
@@ -2304,8 +2304,8 @@
   <data name="&gt;&gt;tssCopy1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiCopyHTMLImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 22</value>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>Image history...</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2319,8 +2319,8 @@
   <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
-  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
-    <value>Monitor test...</value>
+  <data name="&gt;&gt;tsmiMonitor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmiTrayTriangle.Text" xml:space="preserve">
     <value>Triangle</value>
@@ -2331,8 +2331,8 @@
   <data name="&gt;&gt;tsmiTestImageUpload.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>HelpersLib.SplitContainerCustomSplitter, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;tsmiTrayURLSharingServices.Name" xml:space="preserve">
+    <value>tsmiTrayURLSharingServices</value>
   </data>
   <data name="&gt;&gt;lblDragAndDropTip.Name" xml:space="preserve">
     <value>lblDragAndDropTip</value>
@@ -2361,8 +2361,8 @@
   <data name="chFilename.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
-  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;tsmiTrayUploadURL.Name" xml:space="preserve">
+    <value>tsmiTrayUploadURL</value>
   </data>
   <data name="&gt;&gt;tsmiScreenRecordingGIF.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2385,11 +2385,11 @@
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="pbLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
   </data>
-  <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
+    <value>Hotkey settings...</value>
   </data>
   <data name="&gt;&gt;lblSplitter.Name" xml:space="preserve">
     <value>lblSplitter</value>
@@ -2409,8 +2409,8 @@
   <data name="&gt;&gt;tsmiUploadFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiOpenThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
+  <data name="&gt;&gt;tsmiOpenURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbWorkflows.Name" xml:space="preserve">
     <value>tsddbWorkflows</value>
@@ -2418,8 +2418,8 @@
   <data name="&gt;&gt;tsmiTrayLastRegion.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pBackground.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;tsmiTrayHotkeySettings.Name" xml:space="preserve">
+    <value>tsmiTrayHotkeySettings</value>
   </data>
   <data name="&gt;&gt;tsddbAfterCaptureTasks.Name" xml:space="preserve">
     <value>tsddbAfterCaptureTasks</value>
@@ -2439,8 +2439,8 @@
   <data name="tsddbAfterUploadTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;tsmiDonate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsddbAfterUploadTasks.Name" xml:space="preserve">
+    <value>tsddbAfterUploadTasks</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 22</value>
@@ -2448,14 +2448,14 @@
   <data name="tsmiTestImageUpload.Text" xml:space="preserve">
     <value>Test image upload</value>
   </data>
-  <data name="&gt;&gt;pbLogo.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tsmiTrayWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
   </data>
   <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;tsmiCopyFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsmiShortenSelectedURL.Name" xml:space="preserve">
+    <value>tsmiShortenSelectedURL</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEditor.Name" xml:space="preserve">
     <value>tsmiTrayImageEditor</value>
@@ -2484,8 +2484,8 @@
   <data name="&gt;&gt;tsmiTrayFreeHand.Name" xml:space="preserve">
     <value>tsmiTrayFreeHand</value>
   </data>
-  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
-    <value>335</value>
+  <data name="&gt;&gt;tsmiTrayMonitor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssMain1.Name" xml:space="preserve">
     <value>tssMain1</value>
@@ -2523,14 +2523,14 @@
   <data name="&gt;&gt;tsmiTestURLShortener.Name" xml:space="preserve">
     <value>tsmiTestURLShortener</value>
   </data>
-  <data name="&gt;&gt;tsmiCopyDeletionURL.Name" xml:space="preserve">
-    <value>tsmiCopyDeletionURL</value>
+  <data name="&gt;&gt;chSpeed.Name" xml:space="preserve">
+    <value>chSpeed</value>
   </data>
   <data name="&gt;&gt;tsmiUploadSelectedFile.Name" xml:space="preserve">
     <value>tsmiUploadSelectedFile</value>
   </data>
-  <data name="tsmiImageEffects.Text" xml:space="preserve">
-    <value>Image effects...</value>
+  <data name="tsmiTrayAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
   </data>
   <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -2547,8 +2547,8 @@
   <data name="&gt;&gt;tsmiTrayDiamond.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiDeleteSelectedFile.Name" xml:space="preserve">
-    <value>tsmiDeleteSelectedFile</value>
+  <data name="&gt;&gt;tsmiShowQRCode.Name" xml:space="preserve">
+    <value>tsmiShowQRCode</value>
   </data>
   <data name="&gt;&gt;chStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2556,8 +2556,8 @@
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="tsmiTrayExit.Text" xml:space="preserve">
-    <value>Exit</value>
+  <data name="&gt;&gt;tsmiImagePreviewAutomatic.Name" xml:space="preserve">
+    <value>tsmiImagePreviewAutomatic</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
     <value>File name with extension</value>
@@ -2574,8 +2574,8 @@
   <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
     <value>Freehand</value>
   </data>
-  <data name="&gt;&gt;tsmiOpenFile.Name" xml:space="preserve">
-    <value>tsmiOpenFile</value>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Window</value>
@@ -2586,14 +2586,14 @@
   <data name="&gt;&gt;tsmiOpenFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbApplicationSettings.Name" xml:space="preserve">
-    <value>tsbApplicationSettings</value>
+  <data name="tsmiTrayRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenRecordingGIF.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
-    <value>Text uploaders</value>
+  <data name="&gt;&gt;tsmiTrayCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumLink.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2616,8 +2616,8 @@
   <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 6</value>
   </data>
-  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
+  <data name="&gt;&gt;tsmiDonate.Name" xml:space="preserve">
+    <value>tsmiDonate</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>Hotkey settings...</value>
@@ -2625,8 +2625,8 @@
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Stop upload</value>
   </data>
-  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+  <data name="&gt;&gt;tsmiRectangleAnnotate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -2634,8 +2634,8 @@
   <data name="&gt;&gt;tsmiImageUploaders.Name" xml:space="preserve">
     <value>tsmiImageUploaders</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
     <value>tsddbDebug</value>
@@ -2661,8 +2661,8 @@
   <data name="tsmiDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 22</value>
+  <data name="&gt;&gt;tsmiCopyHTMLImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
