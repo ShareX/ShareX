@@ -51,7 +51,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
 
             // General
-            cbLanguage.Items.AddRange(Enum.GetNames(typeof(SupportedLanguage)));
+            cbLanguage.Items.AddRange(Helpers.GetEnumDescriptions<SupportedLanguage>());
             cbLanguage.SelectedIndex = (int)Program.Settings.Language;
             cbShowTray.Checked = Program.Settings.ShowTray;
             cbSilentRun.Enabled = Program.Settings.ShowTray;

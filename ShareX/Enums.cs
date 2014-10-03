@@ -30,10 +30,14 @@ namespace ShareX
 {
     public enum SupportedLanguage
     {
-        Default,
+        [Description("Automatic")]
+        Automatic,
+        [Description("English")]
         English,
-        Turkish,
-        German
+        [Description("Deutsch")]
+        German,
+        [Description("Türkçe")]
+        Turkish
     }
 
     public enum EImageFormat

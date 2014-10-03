@@ -38,7 +38,7 @@ namespace ShareX
         {
             CultureInfo currentCulture;
 
-            if (language == SupportedLanguage.Default)
+            if (language == SupportedLanguage.Automatic)
             {
                 currentCulture = CultureInfo.InstalledUICulture;
             }
@@ -52,11 +52,11 @@ namespace ShareX
                     case SupportedLanguage.English:
                         cultureName = "en-US";
                         break;
-                    case SupportedLanguage.Turkish:
-                        cultureName = "tr-TR";
-                        break;
                     case SupportedLanguage.German:
                         cultureName = "de-DE";
+                        break;
+                    case SupportedLanguage.Turkish:
+                        cultureName = "tr-TR";
                         break;
                 }
 

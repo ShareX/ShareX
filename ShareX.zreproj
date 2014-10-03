@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project>
+  <configuration createBackupFiles="False" hideEmptyRows="False" hideTranslatedRows="False" useSpellChecker="True" neutralLanguageCode="en-us" languagesToDisplay="">
+    <globalSetting name="Filter-ResourceEditorGrid">&lt;XtraSerializer version="1.0" application="View"&gt;
+  &lt;property name="#LayoutVersion" /&gt;
+  &lt;property name="ActiveFilterString" /&gt;
+&lt;/XtraSerializer&gt;</globalSetting>
+    <globalSetting name="Sort-ResourceEditorGrid">&lt;XtraSerializer version="1.0" application="View"&gt;
+  &lt;property name="#LayoutVersion" /&gt;
+&lt;/XtraSerializer&gt;</globalSetting>
+    <globalSetting name="ReadOnlyFileOverwriteBehaviour">0</globalSetting>
+    <globalSetting name="OmitEmptyItems">True</globalSetting>
+    <globalSetting name="ShowCommentsColumnInGrid">False</globalSetting>
+    <globalSetting name="IgnoreWindowsFormsResourcesWithDesignerFiles">False</globalSetting>
+    <globalSetting name="HideInternalDesignerRows">True</globalSetting>
+    <globalSetting name="UseShallowGridDataCumulation">True</globalSetting>
+    <globalSetting name="HideFileGroupFilesInTree">True</globalSetting>
+    <globalSetting name="NeutralLanguageFileNamePattern">[basename][optionaldefaulttypes].[extension]</globalSetting>
+    <globalSetting name="NonNeutralLanguageFileNamePattern">[basename][optionaldefaulttypes].[languagecode].[extension]</globalSetting>
+    <globalSetting name="BaseNameDotCount">0</globalSetting>
+    <globalSetting name="DefaultFileTypesToIgnore">.aspx;.ascx;.asmx;.master;.sitemap</globalSetting>
+    <globalSetting name="Project-PersistGridSettings">True</globalSetting>
+    <globalSetting name="ColorifyNullCells">True</globalSetting>
+    <globalSetting name="EnableExcelExportSnapshots">True</globalSetting>
+    <description>
+    </description>
+  </configuration>
+  <fileGroups>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Controls\BeforeUploadControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Controls\BeforeUploadControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Controls\HotkeyManagerControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Controls\HotkeyManagerControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Controls\HotkeyManagerControl.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Controls\HotkeyManagerControl.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Controls\HotkeySelectionControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Controls\HotkeySelectionControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Controls\HotkeySelectionControl.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Controls\HotkeySelectionControl.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\AboutForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AboutForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\AboutForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AboutForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\ActionsForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ActionsForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\ActionsForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ActionsForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\AfterCaptureForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AfterCaptureForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\AfterCaptureForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AfterCaptureForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\AfterUploadForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AfterUploadForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\AfterUploadForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AfterUploadForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\ApplicationSettingsForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ApplicationSettingsForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\ApplicationSettingsForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ApplicationSettingsForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\AutoCaptureForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AutoCaptureForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\AutoCaptureForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\AutoCaptureForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\BeforeUploadForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\BeforeUploadForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\ClipboardFormatForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ClipboardFormatForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\ClipboardFormatForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ClipboardFormatForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\EncoderProgramForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\EncoderProgramForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\EncoderProgramForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\EncoderProgramForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\FileExistForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\FileExistForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\FileExistForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\FileExistForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\HotkeySettingsForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\HotkeySettingsForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\HotkeySettingsForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\HotkeySettingsForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\MainForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\MainForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\MainForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\MainForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\ScreenColorPicker.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenColorPicker.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\ScreenColorPicker.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenColorPicker.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\ScreenRegionForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenRegionForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\ScreenRegionForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenRegionForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\TaskSettingsForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\TaskSettingsForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\TaskSettingsForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\TaskSettingsForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\UploadTestForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\UploadTestForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\UploadTestForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\UploadTestForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\VideoEncodersForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\VideoEncodersForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\VideoEncodersForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\VideoEncodersForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Forms\WatchFolderForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\WatchFolderForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <file filePath="ShareX\Forms\WatchFolderForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\WatchFolderForm.tr.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ShareX\Properties\Resources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Properties\Resources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="a2b75ee0-8b2e-403e-bfb0-46134dac3fee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HistoryLib\HistoryForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HistoryLib\HistoryForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="a2b75ee0-8b2e-403e-bfb0-46134dac3fee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HistoryLib\HistoryItemInfoForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HistoryLib\HistoryItemInfoForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="a2b75ee0-8b2e-403e-bfb0-46134dac3fee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HistoryLib\ImageHistoryForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HistoryLib\ImageHistoryForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="3b08defc-4f6a-4fb5-a67f-404e45e89819" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ScreenCaptureLib\Properties\Resources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ScreenCaptureLib\Properties\Resources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="3b08defc-4f6a-4fb5-a67f-404e45e89819" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ScreenCaptureLib\Screencast\FFmpegOptionsForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ScreenCaptureLib\Screencast\FFmpegOptionsForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Colors\ColorPickerForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Colors\ColorPickerForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Colors\GradientPickerForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Colors\GradientPickerForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\DNS\DNSChangerForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\DNS\DNSChangerForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\DebugForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\DebugForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\ClipboardContentViewer.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\ClipboardContentViewer.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\ErrorForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\ErrorForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\HashCheckForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\HashCheckForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\InputBox.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\InputBox.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\MonitorTestForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\MonitorTestForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\OutputBox.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\OutputBox.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Forms\QRCodeForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Forms\QRCodeForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Controls\ExportImportControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Controls\ExportImportControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Controls\TabToListView.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Controls\TabToListView.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Controls\TabToTreeView.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Controls\TabToTreeView.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\UpdateChecker\DownloaderForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\UpdateChecker\DownloaderForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Printer\PrintForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Printer\PrintForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Printer\PrintTextForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Printer\PrintTextForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Properties\Resources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Properties\Resources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\UpdateChecker\UpdateCheckerLabel.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\UpdateChecker\UpdateCheckerLabel.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="HelpersLib\Controls\MyPictureBox.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\HelpersLib\Controls\MyPictureBox.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\FTPClient\FTPClientForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\FTPClient\FTPClientForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Controls\AccountTypeControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Controls\AccountTypeControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\EmailForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\EmailForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\GoogleTranslateGUI.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\GoogleTranslateGUI.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\JiraUpload.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\JiraUpload.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Controls\OAuthControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Controls\OAuthControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\OAuthWebForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\OAuthWebForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\ResponseForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\ResponseForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\UploadersConfigForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\UploadersConfigForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\UserPassBox.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\UserPassBox.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Controls\AccountsControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Controls\AccountsControl.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\DropboxFilesForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\DropboxFilesForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Forms\TwitterTweetForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Forms\TwitterTweetForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="UploadersLib\Properties\Resources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\UploadersLib\Properties\Resources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="70033e1b-00ab-4347-8a75-1ebd46d4cd94" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="GreenshotImageEditor\Properties\Resources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\GreenshotImageEditor\Properties\Resources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="70033e1b-00ab-4347-8a75-1ebd46d4cd94" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="GreenshotImageEditor\Core\GreenshotResources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\GreenshotImageEditor\Core\GreenshotResources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="70033e1b-00ab-4347-8a75-1ebd46d4cd94" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="GreenshotImageEditor\Forms\ColorDialog.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\GreenshotImageEditor\Forms\ColorDialog.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="70033e1b-00ab-4347-8a75-1ebd46d4cd94" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="GreenshotImageEditor\Forms\ImageEditorForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\GreenshotImageEditor\Forms\ImageEditorForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="f3185b8a-97d0-418a-b8c1-c50003addbac" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="IndexerLib\Properties\Resources.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\IndexerLib\Properties\Resources.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="1cb94087-8d2e-416d-96a3-e19a43d19c2b" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ImageEffectsLib\ImageEffectsForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ImageEffectsLib\ImageEffectsForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+    <fileGroup name="" projectFolderUniqueID="1cb94087-8d2e-416d-96a3-e19a43d19c2b" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="00000000-0000-0000-0000-000000000000">
+      <file filePath="ImageEffectsLib\WatermarkForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ImageEffectsLib\WatermarkForm.resx" uniqueID="00000000-0000-0000-0000-000000000000" />
+      <remarks>
+      </remarks>
+    </fileGroup>
+  </fileGroups>
+  <projectFolders>
+    <projectFolder uniqueID="97fef840-b4e5-4802-8551-8cd398132c52" parentUniqueID="00000000-0000-0000-0000-000000000000" name="ShareX" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="a2b75ee0-8b2e-403e-bfb0-46134dac3fee" parentUniqueID="00000000-0000-0000-0000-000000000000" name="HistoryLib" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="3b08defc-4f6a-4fb5-a67f-404e45e89819" parentUniqueID="00000000-0000-0000-0000-000000000000" name="ScreenCaptureLib" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="b3285302-ceb4-44e3-8e5d-c2cd4473b7ee" parentUniqueID="00000000-0000-0000-0000-000000000000" name="HelpersLib" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="ca2c05bc-45ed-4401-8d9e-1eb1c92707d2" parentUniqueID="00000000-0000-0000-0000-000000000000" name="UploadersLib" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="70033e1b-00ab-4347-8a75-1ebd46d4cd94" parentUniqueID="00000000-0000-0000-0000-000000000000" name="GreenshotImageEditor" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="f3185b8a-97d0-418a-b8c1-c50003addbac" parentUniqueID="00000000-0000-0000-0000-000000000000" name="IndexerLib" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="1cb94087-8d2e-416d-96a3-e19a43d19c2b" parentUniqueID="00000000-0000-0000-0000-000000000000" name="ImageEffectsLib" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+    <projectFolder uniqueID="c9798fd7-59d8-4daa-b1cc-7e3a74d870a7" parentUniqueID="00000000-0000-0000-0000-000000000000" name="ShareXPortable" orderPosition="0">
+      <remarks>
+      </remarks>
+      <dynSettings />
+    </projectFolder>
+  </projectFolders>
+</project>
