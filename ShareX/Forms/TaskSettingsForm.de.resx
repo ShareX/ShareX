@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,733 +59,733 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbUseDefaultAfterCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbUseDefaultAfterCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 17</value>
-  </data>
-  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="cbUseDefaultAfterCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="cbUseDefaultAfterCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
+		<value>281, 17</value>
+	</data>
+	<data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Standard "Nach Aufnahme" Einstellungen verwenden</value>
   </data>
-  <data name="cbUseDefaultAfterUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 17</value>
-  </data>
-  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
+	<data name="cbUseDefaultAfterUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbUseDefaultAfterUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
+		<value>267, 17</value>
+	</data>
+	<data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
     <value>Standard "Nach Upload" Einstellungen verwenden</value>
   </data>
-  <data name="cbUseDefaultDestinationSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 17</value>
-  </data>
-  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
+	<data name="cbUseDefaultDestinationSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbUseDefaultDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
+		<value>221, 17</value>
+	</data>
+	<data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>Standard "Ziel" Einstellungen verwenden</value>
   </data>
-  <data name="lblDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="lblDescription.Text" xml:space="preserve">
+	<data name="lblDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
+		<value>75, 13</value>
+	</data>
+	<data name="lblDescription.Text" xml:space="preserve">
     <value>Beschreibung:</value>
   </data>
-  <data name="tbDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 9</value>
-  </data>
-  <data name="tbDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 20</value>
-  </data>
-  <data name="chkOverrideFTP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkOverrideFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 17</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
+	<data name="tbDescription.Location" type="System.Drawing.Point, System.Drawing">
+		<value>87, 9</value>
+	</data>
+	<data name="tbDescription.Size" type="System.Drawing.Size, System.Drawing">
+		<value>425, 20</value>
+	</data>
+	<data name="chkOverrideFTP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkOverrideFTP.Size" type="System.Drawing.Size, System.Drawing">
+		<value>208, 17</value>
+	</data>
+	<data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Standard FTP Account überschreiben:</value>
   </data>
-  <data name="cboFTPaccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 238</value>
-  </data>
-  <data name="cboFTPaccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 21</value>
-  </data>
-  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
+	<data name="cboFTPaccounts.Location" type="System.Drawing.Point, System.Drawing">
+		<value>222, 238</value>
+	</data>
+	<data name="cboFTPaccounts.Size" type="System.Drawing.Size, System.Drawing">
+		<value>289, 21</value>
+	</data>
+	<data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Nach Aufnahme...</value>
   </data>
-  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
+	<data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnAfterUpload.Text" xml:space="preserve">
     <value>Nach Upload...</value>
   </data>
-  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
+	<data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnDestinations.Text" xml:space="preserve">
     <value>Ziele...</value>
   </data>
-  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 17</value>
-  </data>
-  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
+	<data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkShowBeforeUploadForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkShowBeforeUploadForm.Size" type="System.Drawing.Size, System.Drawing">
+		<value>440, 17</value>
+	</data>
+	<data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
     <value>"Before upload" Fenster anzeigen um dynamisch das Ziel vor dem Hochladen zu setzen</value>
   </data>
-  <data name="lblAfterTaskNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAfterTaskNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 13</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+	<data name="lblAfterTaskNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblAfterTaskNotification.Size" type="System.Drawing.Size, System.Drawing">
+		<value>131, 13</value>
+	</data>
+	<data name="lblAfterTaskNotification.Text" xml:space="preserve">
     <value>Wenn aktionen fertig sind:</value>
   </data>
-  <data name="cboPopUpNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 156</value>
-  </data>
-  <data name="cboPopUpNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 21</value>
-  </data>
-  <data name="chkShowAfterUploadForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 17</value>
-  </data>
-  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
+	<data name="cboPopUpNotification.Location" type="System.Drawing.Point, System.Drawing">
+		<value>145, 156</value>
+	</data>
+	<data name="cboPopUpNotification.Size" type="System.Drawing.Size, System.Drawing">
+		<value>207, 21</value>
+	</data>
+	<data name="chkShowAfterUploadForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkShowAfterUploadForm.Size" type="System.Drawing.Size, System.Drawing">
+		<value>224, 17</value>
+	</data>
+	<data name="chkShowAfterUploadForm.Text" xml:space="preserve">
     <value>"Nach dem Hochladen" Fenster anzeigen</value>
   </data>
-  <data name="cbShowAfterCaptureTasksForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 17</value>
-  </data>
-  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
+	<data name="cbShowAfterCaptureTasksForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbShowAfterCaptureTasksForm.Size" type="System.Drawing.Size, System.Drawing">
+		<value>273, 17</value>
+	</data>
+	<data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
     <value>"Aufgaben nach dem Aufnehmen" Fenster anzeigen</value>
   </data>
-  <data name="cbPlaySoundAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbPlaySoundAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 17</value>
-  </data>
-  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+	<data name="cbPlaySoundAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbPlaySoundAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
+		<value>159, 17</value>
+	</data>
+	<data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Sound nach allem abspielen</value>
   </data>
-  <data name="cbHistorySave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbHistorySave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 17</value>
-  </data>
-  <data name="cbHistorySave.Text" xml:space="preserve">
+	<data name="cbHistorySave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbHistorySave.Size" type="System.Drawing.Size, System.Drawing">
+		<value>207, 17</value>
+	</data>
+	<data name="cbHistorySave.Text" xml:space="preserve">
     <value>Informationen in den Verlauf speichern</value>
   </data>
-  <data name="cbPlaySoundAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbPlaySoundAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 17</value>
-  </data>
-  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+	<data name="cbPlaySoundAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbPlaySoundAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
+		<value>185, 17</value>
+	</data>
+	<data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Nach Aufnahme Sound abspielen</value>
   </data>
-  <data name="chkUseDefaultGeneralSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+	<data name="chkUseDefaultGeneralSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
     <value>Einstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
+	<data name="tpGeneral.Text" xml:space="preserve">
     <value>Generell</value>
   </data>
-  <data name="cbImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 172</value>
-  </data>
-  <data name="cbImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 21</value>
-  </data>
-  <data name="lblImageFileExist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 13</value>
-  </data>
-  <data name="lblImageFileExist.Text" xml:space="preserve">
+	<data name="cbImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
+		<value>119, 172</value>
+	</data>
+	<data name="cbImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
+		<value>161, 21</value>
+	</data>
+	<data name="lblImageFileExist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
+		<value>97, 13</value>
+	</data>
+	<data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Falls Datei existiert:</value>
   </data>
-  <data name="lblImageFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblImageFormat.Text" xml:space="preserve">
+	<data name="lblImageFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblImageFormat.Size" type="System.Drawing.Size, System.Drawing">
+		<value>56, 13</value>
+	</data>
+	<data name="lblImageFormat.Text" xml:space="preserve">
     <value>Bildformat:</value>
   </data>
-  <data name="lblUseImageFormat2AfterHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUseImageFormat2AfterHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 112</value>
-  </data>
-  <data name="lblImageJPEGQualityHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageJPEGQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+	<data name="lblUseImageFormat2AfterHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblUseImageFormat2AfterHint.Location" type="System.Drawing.Point, System.Drawing">
+		<value>306, 112</value>
+	</data>
+	<data name="lblImageJPEGQualityHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblImageJPEGQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
+		<value>74, 13</value>
+	</data>
+	<data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG qualität:</value>
   </data>
-  <data name="lblImageGIFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+	<data name="lblImageGIFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
+		<value>64, 13</value>
+	</data>
+	<data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>GIF qualität:</value>
   </data>
-  <data name="cbImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 140</value>
-  </data>
-  <data name="lblImageFormat2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 13</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
+	<data name="cbImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
+		<value>137, 140</value>
+	</data>
+	<data name="lblImageFormat2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
+		<value>116, 13</value>
+	</data>
+	<data name="lblImageFormat2.Text" xml:space="preserve">
     <value>Sekundäres Bildformat:</value>
   </data>
-  <data name="nudUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 108</value>
-  </data>
-  <data name="lblUseImageFormat2After.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 13</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+	<data name="nudUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
+		<value>242, 108</value>
+	</data>
+	<data name="lblUseImageFormat2After.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
+		<value>220, 13</value>
+	</data>
+	<data name="lblUseImageFormat2After.Text" xml:space="preserve">
     <value>Maximale Bildgröße für sekundäres Bildformat</value>
   </data>
-  <data name="tpQuality.Text" xml:space="preserve">
+	<data name="tpQuality.Text" xml:space="preserve">
     <value>Generell</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 17</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+	<data name="chkShowImageEffectsWindowAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkShowImageEffectsWindowAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
+		<value>219, 17</value>
+	</data>
+	<data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Bildeffektsfenster nach Aufnahme zeigen</value>
   </data>
-  <data name="cbImageEffectOnlyRegionCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbImageEffectOnlyRegionCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 17</value>
-  </data>
-  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+	<data name="cbImageEffectOnlyRegionCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbImageEffectOnlyRegionCapture.Size" type="System.Drawing.Size, System.Drawing">
+		<value>185, 17</value>
+	</data>
+	<data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Nur für Auswahlen Effekte nutzen</value>
   </data>
-  <data name="btnImageEffects.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnImageEffects.Text" xml:space="preserve">
+	<data name="btnImageEffects.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnImageEffects.Text" xml:space="preserve">
     <value>Effekteinstellungen...</value>
   </data>
-  <data name="gbImageEffects.Text" xml:space="preserve">
+	<data name="gbImageEffects.Text" xml:space="preserve">
     <value>Bildeffekte</value>
   </data>
-  <data name="btnWatermarkSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatermarkSettings.Text" xml:space="preserve">
+	<data name="btnWatermarkSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnWatermarkSettings.Text" xml:space="preserve">
     <value>Wasserzeichen Einstellungen...</value>
   </data>
-  <data name="tpEffects.Text" xml:space="preserve">
+	<data name="tpEffects.Text" xml:space="preserve">
     <value>Effekte</value>
   </data>
-  <data name="cbThumbnailIfSmaller.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 17</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+	<data name="cbThumbnailIfSmaller.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbThumbnailIfSmaller.Size" type="System.Drawing.Size, System.Drawing">
+		<value>368, 17</value>
+	</data>
+	<data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
     <value>Thumbnail nur erstellen wenn das Bild größer als das Thumbnail selbst ist</value>
   </data>
-  <data name="lblThumbnailNamePreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblThumbnailNamePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
-  </data>
-  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+	<data name="lblThumbnailNamePreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblThumbnailNamePreview.Size" type="System.Drawing.Size, System.Drawing">
+		<value>52, 13</value>
+	</data>
+	<data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Vorschau</value>
   </data>
-  <data name="lblThumbnailName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblThumbnailName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
-  </data>
-  <data name="lblThumbnailName.Text" xml:space="preserve">
+	<data name="lblThumbnailName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblThumbnailName.Size" type="System.Drawing.Size, System.Drawing">
+		<value>90, 13</value>
+	</data>
+	<data name="lblThumbnailName.Text" xml:space="preserve">
     <value>Thumbnail Name:</value>
   </data>
-  <data name="lblThumbnailHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblThumbnailHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
-  </data>
-  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+	<data name="lblThumbnailHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblThumbnailHeight.Size" type="System.Drawing.Size, System.Drawing">
+		<value>36, 13</value>
+	</data>
+	<data name="lblThumbnailHeight.Text" xml:space="preserve">
     <value>Höhe:</value>
   </data>
-  <data name="lblThumbnailWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblThumbnailWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+	<data name="lblThumbnailWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblThumbnailWidth.Size" type="System.Drawing.Size, System.Drawing">
+		<value>37, 13</value>
+	</data>
+	<data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>Breite:</value>
   </data>
-  <data name="chkUseDefaultImageSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+	<data name="chkUseDefaultImageSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
     <value>Bildeinstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="tpImage.Text" xml:space="preserve">
+	<data name="tpImage.Text" xml:space="preserve">
     <value>Bilder</value>
   </data>
-  <data name="cbCaptureAutoHideTaskbar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbCaptureAutoHideTaskbar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 17</value>
-  </data>
-  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+	<data name="cbCaptureAutoHideTaskbar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbCaptureAutoHideTaskbar.Size" type="System.Drawing.Size, System.Drawing">
+		<value>318, 17</value>
+	</data>
+	<data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
     <value>Taksbar bei Fensteraufnahme ausblenden falls sie überlappen</value>
   </data>
-  <data name="lblScreenshotDelayInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 114</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+	<data name="lblScreenshotDelayInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblScreenshotDelayInfo.Location" type="System.Drawing.Point, System.Drawing">
+		<value>226, 114</value>
+	</data>
+	<data name="lblScreenshotDelayInfo.Size" type="System.Drawing.Size, System.Drawing">
+		<value>56, 13</value>
+	</data>
+	<data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>Sekunden</value>
   </data>
-  <data name="nudScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 110</value>
-  </data>
-  <data name="cbScreenshotDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 17</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+	<data name="nudScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
+		<value>162, 110</value>
+	</data>
+	<data name="cbScreenshotDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+		<value>145, 17</value>
+	</data>
+	<data name="cbScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot verzögerung:</value>
   </data>
-  <data name="nudCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>393, 62</value>
-  </data>
-  <data name="cbCaptureClientArea.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbCaptureClientArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 17</value>
-  </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+	<data name="nudCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
+		<value>393, 62</value>
+	</data>
+	<data name="cbCaptureClientArea.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbCaptureClientArea.Size" type="System.Drawing.Size, System.Drawing">
+		<value>243, 17</value>
+	</data>
+	<data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Fensterleiste bei Fensteraufnahme aufnehmen</value>
   </data>
-  <data name="cbCaptureShadow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbCaptureShadow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 17</value>
-  </data>
-  <data name="cbCaptureShadow.Text" xml:space="preserve">
+	<data name="cbCaptureShadow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbCaptureShadow.Size" type="System.Drawing.Size, System.Drawing">
+		<value>371, 17</value>
+	</data>
+	<data name="cbCaptureShadow.Text" xml:space="preserve">
     <value>Fensterschatten aufnehmen (Transparenz muss an sein)  Schatten offset:</value>
   </data>
-  <data name="cbShowCursor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbShowCursor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 17</value>
-  </data>
-  <data name="cbShowCursor.Text" xml:space="preserve">
+	<data name="cbShowCursor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbShowCursor.Size" type="System.Drawing.Size, System.Drawing">
+		<value>184, 17</value>
+	</data>
+	<data name="cbShowCursor.Text" xml:space="preserve">
     <value>Mauszeiger im Screenshot zeigen</value>
   </data>
-  <data name="cbCaptureTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbCaptureTransparent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
-  </data>
-  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+	<data name="cbCaptureTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbCaptureTransparent.Size" type="System.Drawing.Size, System.Drawing">
+		<value>195, 17</value>
+	</data>
+	<data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Fenster mit Transparenz aufnehmen</value>
   </data>
-  <data name="tpCaptureGeneral.Text" xml:space="preserve">
+	<data name="tpCaptureGeneral.Text" xml:space="preserve">
     <value>Generell</value>
   </data>
-  <data name="tpRegionCapture.Text" xml:space="preserve">
+	<data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Regionenauswahl</value>
   </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+	<data name="tpRectangleAnnotate.Text" xml:space="preserve">
     <value>Rechteckbearbeitung</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbScreenRecordAutoDisableAero.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 17</value>
-  </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
+	<data name="cbScreenRecordAutoDisableAero.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbScreenRecordAutoDisableAero.Size" type="System.Drawing.Size, System.Drawing">
+		<value>391, 17</value>
+	</data>
+	<data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
     <value>Windows Aero während der Aufnahme deaktivieren (Verbessert Performance)</value>
   </data>
-  <data name="lblScreenRecorderFixedDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblScreenRecorderFixedDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+	<data name="lblScreenRecorderFixedDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblScreenRecorderFixedDuration.Size" type="System.Drawing.Size, System.Drawing">
+		<value>56, 13</value>
+	</data>
+	<data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Sekunden</value>
   </data>
-  <data name="lblScreenRecordFPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblScreenRecordFPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+	<data name="lblScreenRecordFPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblScreenRecordFPS.Size" type="System.Drawing.Size, System.Drawing">
+		<value>81, 13</value>
+	</data>
+	<data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Aufnahme FPS:</value>
   </data>
-  <data name="chkRunScreencastCLI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkRunScreencastCLI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+	<data name="chkRunScreencastCLI.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkRunScreencastCLI.Size" type="System.Drawing.Size, System.Drawing">
+		<value>141, 17</value>
+	</data>
+	<data name="chkRunScreencastCLI.Text" xml:space="preserve">
     <value>CLI nachträglich nutzen:</value>
   </data>
-  <data name="btnScreenRecorderOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
+	<data name="btnScreenRecorderOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnScreenRecorderOptions.Text" xml:space="preserve">
     <value>Optionen...</value>
   </data>
-  <data name="btnEncoderConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
+	<data name="btnEncoderConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Profile...</value>
   </data>
-  <data name="cboEncoder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 36</value>
-  </data>
-  <data name="cboEncoder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 21</value>
-  </data>
-  <data name="lblScreenRecorderStartDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblScreenRecorderStartDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 13</value>
-  </data>
-  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+	<data name="cboEncoder.Location" type="System.Drawing.Point, System.Drawing">
+		<value>165, 36</value>
+	</data>
+	<data name="cboEncoder.Size" type="System.Drawing.Size, System.Drawing">
+		<value>235, 21</value>
+	</data>
+	<data name="lblScreenRecorderStartDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblScreenRecorderStartDelay.Size" type="System.Drawing.Size, System.Drawing">
+		<value>91, 13</value>
+	</data>
+	<data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>Startverzögerung:</value>
   </data>
-  <data name="lblScreenRecorderOutput.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
+	<data name="lblScreenRecorderOutput.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblScreenRecorderOutput.Size" type="System.Drawing.Size, System.Drawing">
+		<value>52, 13</value>
+	</data>
+	<data name="lblScreenRecorderOutput.Text" xml:space="preserve">
     <value>Ausgang:</value>
   </data>
-  <data name="cbScreenRecorderFixedDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbScreenRecorderFixedDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
-  </data>
-  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+	<data name="cbScreenRecorderFixedDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbScreenRecorderFixedDuration.Size" type="System.Drawing.Size, System.Drawing">
+		<value>84, 17</value>
+	</data>
+	<data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Feste länge:</value>
   </data>
-  <data name="lblGIFPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
+	<data name="lblGIFPS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Bildschirm Videoaufnahme</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
+	<data name="chkUseDefaultCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
     <value>Aufnahmeeinstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="tpCapture.Text" xml:space="preserve">
+	<data name="tpCapture.Text" xml:space="preserve">
     <value>Aufnahme</value>
   </data>
-  <data name="btnActionsDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+	<data name="btnActionsDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Duplizieren</value>
   </data>
-  <data name="btnActionsAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnActionsAdd.Text" xml:space="preserve">
+	<data name="btnActionsAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnActionsAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="chActionsPath.Text" xml:space="preserve">
+	<data name="chActionsPath.Text" xml:space="preserve">
     <value>Pfad</value>
   </data>
-  <data name="chActionsExtensions.Text" xml:space="preserve">
+	<data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Erweiterungen</value>
   </data>
-  <data name="btnActionsEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnActionsEdit.Text" xml:space="preserve">
+	<data name="btnActionsEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnActionsEdit.Text" xml:space="preserve">
     <value>Editieren</value>
   </data>
-  <data name="btnActionsRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnActionsRemove.Text" xml:space="preserve">
+	<data name="btnActionsRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
-  <data name="chkUseDefaultActions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultActions.Text" xml:space="preserve">
+	<data name="chkUseDefaultActions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultActions.Text" xml:space="preserve">
     <value>Verfahrenseinstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="tpActions.Text" xml:space="preserve">
+	<data name="tpActions.Text" xml:space="preserve">
     <value>Verfahren</value>
   </data>
-  <data name="cbWatchFolderEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 17</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+	<data name="cbWatchFolderEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbWatchFolderEnabled.Size" type="System.Drawing.Size, System.Drawing">
+		<value>307, 17</value>
+	</data>
+	<data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Bei neuer Datei im beaufsichtigten Ordner direkt hochladen.</value>
   </data>
-  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+	<data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>Ordnerpfad</value>
   </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+	<data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
     <value>Unterordner einbinden</value>
   </data>
-  <data name="btnWatchFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 32</value>
-  </data>
-  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+	<data name="btnWatchFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
+		<value>100, 32</value>
+	</data>
+	<data name="btnWatchFolderRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
-  <data name="btnWatchFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 23</value>
-  </data>
-  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+	<data name="btnWatchFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
+		<value>86, 23</value>
+	</data>
+	<data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Hinzufügen...</value>
   </data>
-  <data name="tpWatchFolders.Text" xml:space="preserve">
+	<data name="tpWatchFolders.Text" xml:space="preserve">
     <value>Beaufsichtigte Ordner</value>
   </data>
-  <data name="cbFileUploadUseNamePattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 17</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+	<data name="cbFileUploadUseNamePattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
+		<value>173, 17</value>
+	</data>
+	<data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Muster für Dateiuploads nutzen</value>
   </data>
-  <data name="lblNameFormatPattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNameFormatPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 13</value>
-  </data>
-  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+	<data name="lblNameFormatPattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblNameFormatPattern.Size" type="System.Drawing.Size, System.Drawing">
+		<value>250, 13</value>
+	</data>
+	<data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Muster für Aufnahme oder Zwischenablage Upload:</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+	<data name="btnResetAutoIncrementNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Automatische Zahl reseten</value>
   </data>
-  <data name="lblNameFormatPatternActiveWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNameFormatPatternActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 13</value>
-  </data>
-  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+	<data name="lblNameFormatPatternActiveWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblNameFormatPatternActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
+		<value>139, 13</value>
+	</data>
+	<data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>Muster für Fensteraufnahme</value>
   </data>
-  <data name="lblNameFormatPatternPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+	<data name="lblNameFormatPatternPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
+		<value>55, 13</value>
+	</data>
+	<data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>Vorschau:</value>
   </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+	<data name="lblNameFormatPatternPreviewActiveWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="lblNameFormatPatternPreviewActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
+		<value>58, 13</value>
+	</data>
+	<data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Vorschau: </value>
   </data>
-  <data name="tpUploadNamePattern.Text" xml:space="preserve">
+	<data name="tpUploadNamePattern.Text" xml:space="preserve">
     <value>Namensmuster</value>
   </data>
-  <data name="cbClipboardUploadShareURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbClipboardUploadAutoIndexFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbClipboardUploadShortenURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+	<data name="cbClipboardUploadShareURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkClipboardUploadURLContents.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbClipboardUploadAutoIndexFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="cbClipboardUploadShortenURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
     <value>Uploadeinstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="chkUseDefaultIndexerSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
+	<data name="chkUseDefaultIndexerSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
     <value>Indexereinstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="chkUseDefaultAdvancedSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+	<data name="chkUseDefaultAdvancedSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
     <value>Erweiterte Einstellungen aus Hauptfenster nutzen</value>
   </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
+	<data name="tpAdvanced.Text" xml:space="preserve">
     <value>Erweitert</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+		<value>NoControl</value>
+	</data>
+	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - Taskeinstellungen</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,260 +59,260 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="&gt;&gt;chEncoderDescription.Type" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="&gt;&gt;chEncoderDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnEncodersRemove.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersRemove.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;chEncoderArgs.Name" xml:space="preserve">
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+		<value>6, 13</value>
+	</data>
+	<data name="&gt;&gt;chEncoderArgs.Name" xml:space="preserve">
     <value>chEncoderArgs</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnEncodersAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chEncoderPath.Type" xml:space="preserve">
+	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="btnEncodersAdd.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;chEncoderPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnEncodersRemove.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersRemove.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chEncoderPath.Text" xml:space="preserve">
+	<data name="chEncoderPath.Text" xml:space="preserve">
     <value>Path</value>
   </data>
-  <data name="btnEncoderDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="lvEncoders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
+	<data name="btnEncoderDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+		<value>75, 23</value>
+	</data>
+	<data name="lvEncoders.Location" type="System.Drawing.Point, System.Drawing">
+		<value>8, 40</value>
+	</data>
+	<data name="chEncoderOutputExtension.Text" xml:space="preserve">
     <value>Output extension</value>
   </data>
-  <data name="&gt;&gt;lvEncoders.Parent" xml:space="preserve">
+	<data name="&gt;&gt;lvEncoders.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnEncoderDuplicate.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnEncoderDuplicate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lvEncoders.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnEncodersEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnEncodersRemove.Name" xml:space="preserve">
+	<data name="lvEncoders.TabIndex" type="System.Int32, mscorlib">
+		<value>4</value>
+	</data>
+	<data name="btnEncodersEdit.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="&gt;&gt;btnEncodersRemove.Name" xml:space="preserve">
     <value>btnEncodersRemove</value>
   </data>
-  <data name="btnEncoderDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnEncodersEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 8</value>
-  </data>
-  <data name="&gt;&gt;btnEncodersEdit.Parent" xml:space="preserve">
+	<data name="btnEncoderDuplicate.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="btnEncodersEdit.Location" type="System.Drawing.Point, System.Drawing">
+		<value>88, 8</value>
+	</data>
+	<data name="&gt;&gt;btnEncodersEdit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnEncodersRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 8</value>
-  </data>
-  <data name="chEncoderOutputExtension.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="btnEncodersAdd.Text" xml:space="preserve">
+	<data name="btnEncodersRemove.Location" type="System.Drawing.Point, System.Drawing">
+		<value>248, 8</value>
+	</data>
+	<data name="chEncoderOutputExtension.Width" type="System.Int32, mscorlib">
+		<value>100</value>
+	</data>
+	<data name="btnEncodersAdd.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="&gt;&gt;chEncoderArgs.Type" xml:space="preserve">
+	<data name="&gt;&gt;chEncoderArgs.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnEncodersRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnEncodersAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>664, 381</value>
-  </data>
-  <data name="&gt;&gt;lvEncoders.Name" xml:space="preserve">
+	<data name="btnEncodersRemove.TabIndex" type="System.Int32, mscorlib">
+		<value>3</value>
+	</data>
+	<data name="btnEncodersAdd.Size" type="System.Drawing.Size, System.Drawing">
+		<value>75, 23</value>
+	</data>
+	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+		<value>664, 381</value>
+	</data>
+	<data name="&gt;&gt;lvEncoders.Name" xml:space="preserve">
     <value>lvEncoders</value>
   </data>
-  <data name="chEncoderPath.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="&gt;&gt;chEncoderPath.Name" xml:space="preserve">
+	<data name="chEncoderPath.Width" type="System.Int32, mscorlib">
+		<value>80</value>
+	</data>
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+		<value>CenterParent</value>
+	</data>
+	<data name="&gt;&gt;chEncoderPath.Name" xml:space="preserve">
     <value>chEncoderPath</value>
   </data>
-  <data name="&gt;&gt;chEncoderOutputExtension.Name" xml:space="preserve">
+	<data name="&gt;&gt;chEncoderOutputExtension.Name" xml:space="preserve">
     <value>chEncoderOutputExtension</value>
   </data>
-  <data name="btnEncodersEdit.Text" xml:space="preserve">
+	<data name="btnEncodersEdit.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="btnEncodersAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="&gt;&gt;chEncoderOutputExtension.Type" xml:space="preserve">
+	<data name="btnEncodersAdd.Location" type="System.Drawing.Point, System.Drawing">
+		<value>8, 8</value>
+	</data>
+	<data name="&gt;&gt;chEncoderOutputExtension.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnEncoderDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 8</value>
-  </data>
-  <data name="lvEncoders.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnEncodersEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="lvEncoders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>646, 330</value>
-  </data>
-  <data name="chEncoderDescription.Width" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+	<data name="btnEncoderDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+		<value>168, 8</value>
+	</data>
+	<data name="lvEncoders.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Top, Bottom, Left, Right</value>
+	</data>
+	<data name="btnEncodersEdit.Size" type="System.Drawing.Size, System.Drawing">
+		<value>75, 23</value>
+	</data>
+	<data name="lvEncoders.Size" type="System.Drawing.Size, System.Drawing">
+		<value>646, 330</value>
+	</data>
+	<data name="chEncoderDescription.Width" type="System.Int32, mscorlib">
+		<value>130</value>
+	</data>
+	<data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>VideoEncodersForm</value>
   </data>
-  <data name="&gt;&gt;btnEncodersEdit.Name" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersEdit.Name" xml:space="preserve">
     <value>btnEncodersEdit</value>
   </data>
-  <data name="&gt;&gt;lvEncoders.Type" xml:space="preserve">
+	<data name="&gt;&gt;lvEncoders.Type" xml:space="preserve">
     <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;btnEncoderDuplicate.Name" xml:space="preserve">
+	<data name="&gt;&gt;btnEncoderDuplicate.Name" xml:space="preserve">
     <value>btnEncoderDuplicate</value>
   </data>
-  <data name="&gt;&gt;btnEncoderDuplicate.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;btnEncoderDuplicate.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnEncodersRemove.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersRemove.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;btnEncodersAdd.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersAdd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;chEncoderDescription.Name" xml:space="preserve">
+	<data name="&gt;&gt;chEncoderDescription.Name" xml:space="preserve">
     <value>chEncoderDescription</value>
   </data>
-  <data name="chEncoderArgs.Width" type="System.Int32, mscorlib">
-    <value>230</value>
-  </data>
-  <data name="&gt;&gt;btnEncodersEdit.ZOrder" xml:space="preserve">
+	<data name="chEncoderArgs.Width" type="System.Int32, mscorlib">
+		<value>230</value>
+	</data>
+	<data name="&gt;&gt;btnEncodersEdit.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="chEncoderDescription.Text" xml:space="preserve">
+	<data name="chEncoderDescription.Text" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="&gt;&gt;btnEncodersAdd.Name" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersAdd.Name" xml:space="preserve">
     <value>btnEncodersAdd</value>
   </data>
-  <data name="&gt;&gt;btnEncoderDuplicate.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnEncoderDuplicate.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnEncodersAdd.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersAdd.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnEncodersAdd.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;btnEncodersAdd.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>680, 420</value>
-  </data>
-  <data name="&gt;&gt;btnEncodersEdit.Type" xml:space="preserve">
+	<data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+		<value>680, 420</value>
+	</data>
+	<data name="&gt;&gt;btnEncodersEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lvEncoders.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;lvEncoders.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnEncodersRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="chEncoderArgs.Text" xml:space="preserve">
+	<data name="btnEncodersRemove.Size" type="System.Drawing.Size, System.Drawing">
+		<value>75, 23</value>
+	</data>
+	<data name="chEncoderArgs.Text" xml:space="preserve">
     <value>Args</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+	<data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
+	<data name="btnEncoderDuplicate.Text" xml:space="preserve">
     <value>Duplicate</value>
   </data>
-  <data name="btnEncodersRemove.Text" xml:space="preserve">
+	<data name="btnEncodersRemove.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - Encoder Profiles</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>tr</value>
-  </metadata>
+	<metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>True</value>
+	</metadata>
+	<metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>tr</value>
+	</metadata>
 </root>

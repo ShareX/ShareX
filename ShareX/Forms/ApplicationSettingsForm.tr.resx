@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,303 +59,315 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="tpGeneral.Text" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="tpGeneral.Text" xml:space="preserve">
     <value>Genel</value>
   </data>
-  <data name="tpPaths.Text" xml:space="preserve">
+	<data name="tpPaths.Text" xml:space="preserve">
     <value>Yollar</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
+	<data name="tpProxy.Text" xml:space="preserve">
     <value>Vekil Sunucu</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
+	<data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
   </data>
-  <data name="tpPrint.Text" xml:space="preserve">
+	<data name="tpPrint.Text" xml:space="preserve">
     <value>Yazdırma</value>
   </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
+	<data name="tpAdvanced.Text" xml:space="preserve">
     <value>Gelişmiş</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 12</value>
-  </data>
-  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 13</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+		<value>40, 12</value>
+	</data>
+	<data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+		<value>22, 13</value>
+	</data>
+	<data name="lblLanguage.Text" xml:space="preserve">
     <value>Dil:</value>
   </data>
-  <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+	<data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
+		<value>171, 17</value>
+	</data>
+	<data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Ana pencere konumunu hatırla</value>
   </data>
-  <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 17</value>
-  </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
+	<data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
+		<value>193, 17</value>
+	</data>
+	<data name="cbSilentRun.Text" xml:space="preserve">
     <value>Başlangıçta simge durumuna küçült</value>
   </data>
-  <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+	<data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
+		<value>165, 17</value>
+	</data>
+	<data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ana pencere boyutunu hatırla</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 17</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+	<data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
+		<value>199, 17</value>
+	</data>
+	<data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Görev çubuğu tuşunda durum göster</value>
   </data>
-  <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+	<data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
+		<value>171, 17</value>
+	</data>
+	<data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Tepsi simgesinde durum göster</value>
   </data>
-  <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 17</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
+	<data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+		<value>271, 17</value>
+	</data>
+	<data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>"ShareX ile yükle" tuşunu sağ tık menüsünde göster</value>
   </data>
-  <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 17</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
+	<data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+		<value>206, 17</value>
+	</data>
+	<data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Windows başladığında ShareX'i çalıştır</value>
   </data>
-  <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 17</value>
-  </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
+	<data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
+		<value>163, 17</value>
+	</data>
+	<data name="cbShowTray.Text" xml:space="preserve">
     <value>Bildirim alanında simge göster</value>
   </data>
-  <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 17</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
+	<data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
+		<value>251, 17</value>
+	</data>
+	<data name="cbSendToMenu.Text" xml:space="preserve">
     <value>"Gönder" menüsünde ShareX menüsünü göster</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 13</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+	<data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+		<value>364, 13</value>
+	</data>
+	<data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>Not: Kişisel dizin değişikliğinin aktif olması için ShareX yeniden başlatılmalıdır.</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+	<data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Aç...</value>
   </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+	<data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Gözat...</value>
   </data>
-  <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+	<data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+		<value>102, 13</value>
+	</data>
+	<data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX kişisel dizini:</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+	<data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Gözat...</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+	<data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Aç...</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+	<data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
+		<value>187, 17</value>
+	</data>
+	<data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Özel ekran görüntüsü dizini kullan:</value>
   </data>
-  <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+	<data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
+		<value>80, 13</value>
+	</data>
+	<data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Alt dizin deseni:</value>
   </data>
-  <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 21</value>
-  </data>
-  <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 13</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
+	<data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
+		<value>168, 13</value>
+	</data>
+	<data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
+		<value>192, 21</value>
+	</data>
+	<data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
+		<value>146, 13</value>
+	</data>
+	<data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Vekil sunucu konfigürasyonu:</value>
   </data>
-  <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
+	<data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
+		<value>31, 13</value>
+	</data>
+	<data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
   </data>
-  <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
+	<data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
+		<value>66, 13</value>
+	</data>
+	<data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
   </data>
-  <data name="tpPerformance.Text" xml:space="preserve">
+	<data name="tpPerformance.Text" xml:space="preserve">
     <value>Performans</value>
   </data>
-  <data name="gbBandwidth.Text" xml:space="preserve">
+	<data name="gbBandwidth.Text" xml:space="preserve">
     <value>Bant genişliği</value>
   </data>
-  <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
+	<data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
+		<value>121, 13</value>
+	</data>
+	<data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Aynı anda yükleme limiti:</value>
   </data>
-  <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+	<data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
+		<value>95, 13</value>
+	</data>
+	<data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 iptal eder)</value>
   </data>
-  <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
-  </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
+	<data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
+		<value>84, 13</value>
+	</data>
+	<data name="lblBufferSize.Text" xml:space="preserve">
     <value>Tampon boyutu:</value>
   </data>
-  <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 53</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
+	<data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
+		<value>148, 53</value>
+	</data>
+	<data name="tpUploadResults.Text" xml:space="preserve">
     <value>Sonuçlar</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
+	<data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Pano biçimleri</value>
   </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+	<data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Düzenle...</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+	<data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+	<data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Ekle...</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
+	<data name="chDescription.Text" xml:space="preserve">
     <value>Açıklama</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
+	<data name="chFormat.Text" xml:space="preserve">
     <value>Biçim</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
+	<data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Tekrarlar</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 12</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 17</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+	<data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
+		<value>307, 12</value>
+	</data>
+	<data name="chkUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
+		<value>283, 17</value>
+	</data>
+	<data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
   </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+	<data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>İkincil resim yükleyiciler</value>
   </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+	<data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>İkincil dosya yükleyiciler</value>
   </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+	<data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>İkincil yazı yükleyiciler</value>
   </data>
-  <data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 11</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 13</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+	<data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
+		<value>8, 11</value>
+	</data>
+	<data name="cbIfUploadFailRetryOnce.Size" type="System.Drawing.Size, System.Drawing">
+		<value>243, 13</value>
+	</data>
+	<data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Yükleme hataya düşerse kaç kez tekrar denensin:</value>
   </data>
-  <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 9</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 17</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+	<data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
+		<value>253, 9</value>
+	</data>
+	<data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
+		<value>217, 17</value>
+	</data>
+	<data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Windows yazdırma penceresini gösterme</value>
   </data>
-  <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 17</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+	<data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
+		<value>238, 17</value>
+	</data>
+	<data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Resim yazdırma ayarları penceresini gösterme</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+	<data name="btnShowImagePrintSettings.Text" xml:space="preserve">
     <value>Resim yazdırma ayarları...</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - Uygulama ayarları</value>
   </data>
+	<data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="lblProxyHost.Text" xml:space="preserve">
+		<value>Host:</value>
+	</data>
+	<data name="lblProxyPort.Text" xml:space="preserve">
+		<value>Port:</value>
+	</data>
 </root>

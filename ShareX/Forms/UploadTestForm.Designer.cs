@@ -59,40 +59,27 @@
             // 
             // tscTesters
             // 
-            resources.ApplyResources(this.tscTesters, "tscTesters");
-            // 
-            // tscTesters.BottomToolStripPanel
-            // 
-            resources.ApplyResources(this.tscTesters.BottomToolStripPanel, "tscTesters.BottomToolStripPanel");
             // 
             // tscTesters.ContentPanel
             // 
-            resources.ApplyResources(this.tscTesters.ContentPanel, "tscTesters.ContentPanel");
             this.tscTesters.ContentPanel.Controls.Add(this.lvUploaders);
-            // 
-            // tscTesters.LeftToolStripPanel
-            // 
-            resources.ApplyResources(this.tscTesters.LeftToolStripPanel, "tscTesters.LeftToolStripPanel");
+            resources.ApplyResources(this.tscTesters.ContentPanel, "tscTesters.ContentPanel");
+            resources.ApplyResources(this.tscTesters, "tscTesters");
             this.tscTesters.Name = "tscTesters";
-            // 
-            // tscTesters.RightToolStripPanel
-            // 
-            resources.ApplyResources(this.tscTesters.RightToolStripPanel, "tscTesters.RightToolStripPanel");
             // 
             // tscTesters.TopToolStripPanel
             // 
-            resources.ApplyResources(this.tscTesters.TopToolStripPanel, "tscTesters.TopToolStripPanel");
             this.tscTesters.TopToolStripPanel.BackColor = System.Drawing.Color.White;
             this.tscTesters.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
             // lvUploaders
             // 
-            resources.ApplyResources(this.lvUploaders, "lvUploaders");
             this.lvUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.lvUploaders.ContextMenuStrip = this.cmsUploaders;
+            resources.ApplyResources(this.lvUploaders, "lvUploaders");
             this.lvUploaders.FullRowSelect = true;
             this.lvUploaders.GridLines = true;
             this.lvUploaders.Name = "lvUploaders";
@@ -113,35 +100,35 @@
             // 
             // cmsUploaders
             // 
-            resources.ApplyResources(this.cmsUploaders, "cmsUploaders");
             this.cmsUploaders.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testSelectedUploadersToolStripMenuItem,
             this.openURLToolStripMenuItem,
             this.copyToolStripMenuItem});
             this.cmsUploaders.Name = "cmsUploaders";
+            resources.ApplyResources(this.cmsUploaders, "cmsUploaders");
             // 
             // testSelectedUploadersToolStripMenuItem
             // 
-            resources.ApplyResources(this.testSelectedUploadersToolStripMenuItem, "testSelectedUploadersToolStripMenuItem");
             this.testSelectedUploadersToolStripMenuItem.Name = "testSelectedUploadersToolStripMenuItem";
+            resources.ApplyResources(this.testSelectedUploadersToolStripMenuItem, "testSelectedUploadersToolStripMenuItem");
             this.testSelectedUploadersToolStripMenuItem.Click += new System.EventHandler(this.btnTestSelected_Click);
             // 
             // openURLToolStripMenuItem
             // 
-            resources.ApplyResources(this.openURLToolStripMenuItem, "openURLToolStripMenuItem");
             this.openURLToolStripMenuItem.Name = "openURLToolStripMenuItem";
+            resources.ApplyResources(this.openURLToolStripMenuItem, "openURLToolStripMenuItem");
             this.openURLToolStripMenuItem.Click += new System.EventHandler(this.openURLToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
-            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnTestSelected,
             this.toolStripSeparator1,
@@ -152,42 +139,42 @@
             // 
             // btnTestSelected
             // 
-            resources.ApplyResources(this.btnTestSelected, "btnTestSelected");
             this.btnTestSelected.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btnTestSelected, "btnTestSelected");
             this.btnTestSelected.Name = "btnTestSelected";
             this.btnTestSelected.Click += new System.EventHandler(this.btnTestSelected_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // btnTestAll
             // 
-            resources.ApplyResources(this.btnTestAll, "btnTestAll");
             this.btnTestAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.btnTestAll, "btnTestAll");
             this.btnTestAll.Name = "btnTestAll";
             this.btnTestAll.Click += new System.EventHandler(this.btnTestAll_Click);
             // 
             // tcTesters
             // 
-            resources.ApplyResources(this.tcTesters, "tcTesters");
             this.tcTesters.Controls.Add(this.tpTestUploaders);
             this.tcTesters.Controls.Add(this.tpConsole);
+            resources.ApplyResources(this.tcTesters, "tcTesters");
             this.tcTesters.Name = "tcTesters";
             this.tcTesters.SelectedIndex = 0;
             // 
             // tpTestUploaders
             // 
-            resources.ApplyResources(this.tpTestUploaders, "tpTestUploaders");
             this.tpTestUploaders.Controls.Add(this.tscTesters);
+            resources.ApplyResources(this.tpTestUploaders, "tpTestUploaders");
             this.tpTestUploaders.Name = "tpTestUploaders";
             this.tpTestUploaders.UseVisualStyleBackColor = true;
             // 
             // tpConsole
             // 
-            resources.ApplyResources(this.tpConsole, "tpConsole");
             this.tpConsole.Controls.Add(this.txtConsole);
+            resources.ApplyResources(this.tpConsole, "tpConsole");
             this.tpConsole.Name = "tpConsole";
             this.tpConsole.UseVisualStyleBackColor = true;
             // 

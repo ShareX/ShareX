@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,365 +59,365 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 312</value>
-  </data>
-  <data name="&gt;&gt;chFormat.Type" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+		<value>600, 312</value>
+	</data>
+	<data name="&gt;&gt;chFormat.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnCopyLink.Name" xml:space="preserve">
+	<data name="&gt;&gt;btnCopyLink.Name" xml:space="preserve">
     <value>btnCopyLink</value>
   </data>
-  <data name="&gt;&gt;btnOpenFile.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnOpenFile.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lvClipboardFormats.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnOpenFolder.ZOrder" xml:space="preserve">
+	<data name="btnOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 32</value>
+	</data>
+	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="lvClipboardFormats.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;btnOpenFolder.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnOpenFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="btnCopyImage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnCopyLink.Parent" xml:space="preserve">
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="btnOpenFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>3, 0, 0, 0</value>
+	</data>
+	<data name="btnCopyImage.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;btnCopyLink.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;chFormat.Name" xml:space="preserve">
+	<data name="&gt;&gt;chFormat.Name" xml:space="preserve">
     <value>chFormat</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+	<data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AfterUploadForm</value>
   </data>
-  <data name="&gt;&gt;btnOpenFolder.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnOpenFolder.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 288</value>
-  </data>
-  <data name="btnOpenFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 304</value>
-  </data>
-  <data name="btnOpenFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 304</value>
-  </data>
-  <data name="&gt;&gt;btnOpenLink.Name" xml:space="preserve">
+	<data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
+		<value>304, 288</value>
+	</data>
+	<data name="btnOpenFile.Location" type="System.Drawing.Point, System.Drawing">
+		<value>272, 304</value>
+	</data>
+	<data name="btnOpenFolder.Location" type="System.Drawing.Point, System.Drawing">
+		<value>360, 304</value>
+	</data>
+	<data name="&gt;&gt;btnOpenLink.Name" xml:space="preserve">
     <value>btnOpenLink</value>
   </data>
-  <data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 8</value>
-  </data>
-  <data name="&gt;&gt;btnOpenFile.ZOrder" xml:space="preserve">
+	<data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
+		<value>392, 8</value>
+	</data>
+	<data name="&gt;&gt;btnOpenFile.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;btnOpenFile.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnOpenFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnCopyLink.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lvClipboardFormats.Name" xml:space="preserve">
+	<data name="btnCopyLink.TabIndex" type="System.Int32, mscorlib">
+		<value>3</value>
+	</data>
+	<data name="&gt;&gt;lvClipboardFormats.Name" xml:space="preserve">
     <value>lvClipboardFormats</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
+	<data name="chDescription.Text" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="btnOpenFolder.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="btnCopyImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <data name="&gt;&gt;btnCopyImage.ZOrder" xml:space="preserve">
+	<data name="btnOpenFolder.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>3, 0, 0, 0</value>
+	</data>
+	<data name="btnCopyImage.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 32</value>
+	</data>
+	<data name="&gt;&gt;btnCopyImage.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="btnCopyImage.Text" xml:space="preserve">
+	<data name="btnCopyImage.Text" xml:space="preserve">
     <value>Copy image</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="&gt;&gt;pbPreview.ZOrder" xml:space="preserve">
+	<data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+		<value>CenterScreen</value>
+	</data>
+	<data name="&gt;&gt;pbPreview.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="btnCopyLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btnOpenLink.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
+	<data name="btnCopyLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Bottom, Left</value>
+	</data>
+	<data name="btnOpenLink.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnCopyLink.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnOpenFile.Name" xml:space="preserve">
+	<data name="btnCopyLink.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;btnOpenFile.Name" xml:space="preserve">
     <value>btnOpenFile</value>
   </data>
-  <data name="&gt;&gt;btnCopyLink.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnCopyLink.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnOpenFolder.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lvClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lvClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="chFormat.Width" type="System.Int32, mscorlib">
-    <value>262</value>
-  </data>
-  <data name="&gt;&gt;chDescription.Name" xml:space="preserve">
+	<data name="btnOpenFolder.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="lvClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Top, Bottom, Left, Right</value>
+	</data>
+	<data name="lvClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
+		<value>8, 8</value>
+	</data>
+	<data name="chFormat.Width" type="System.Int32, mscorlib">
+		<value>262</value>
+	</data>
+	<data name="&gt;&gt;chDescription.Name" xml:space="preserve">
     <value>chDescription</value>
   </data>
-  <data name="pbPreview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
+	<data name="pbPreview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Top, Bottom, Right</value>
+	</data>
+	<data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+		<value>6, 13</value>
+	</data>
+	<data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pbPreview.Name" xml:space="preserve">
+	<data name="&gt;&gt;pbPreview.Name" xml:space="preserve">
     <value>pbPreview</value>
   </data>
-  <data name="btnOpenLink.Text" xml:space="preserve">
+	<data name="btnOpenLink.Text" xml:space="preserve">
     <value>Open link...</value>
   </data>
-  <data name="&gt;&gt;lvClipboardFormats.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;lvClipboardFormats.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnCopyImage.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnCopyImage.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnCopyImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 304</value>
-  </data>
-  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <data name="btnOpenFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
+	<data name="btnCopyImage.Location" type="System.Drawing.Point, System.Drawing">
+		<value>8, 304</value>
+	</data>
+	<data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 32</value>
+	</data>
+	<data name="btnOpenFolder.TabIndex" type="System.Int32, mscorlib">
+		<value>6</value>
+	</data>
+	<data name="&gt;&gt;btnClose.Name" xml:space="preserve">
     <value>btnClose</value>
   </data>
-  <data name="&gt;&gt;btnCopyImage.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnCopyImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chDescription.Width" type="System.Int32, mscorlib">
-    <value>110</value>
-  </data>
-  <data name="&gt;&gt;btnOpenLink.Type" xml:space="preserve">
+	<data name="chDescription.Width" type="System.Int32, mscorlib">
+		<value>110</value>
+	</data>
+	<data name="&gt;&gt;btnOpenLink.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lvClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 288</value>
-  </data>
-  <data name="btnOpenFile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnOpenFolder.Name" xml:space="preserve">
+	<data name="lvClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
+		<value>376, 288</value>
+	</data>
+	<data name="btnOpenFile.AutoSize" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="&gt;&gt;btnOpenFolder.Name" xml:space="preserve">
     <value>btnOpenFolder</value>
   </data>
-  <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnOpenFile.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tmrClose.Type" xml:space="preserve">
+	<data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Bottom, Right</value>
+	</data>
+	<data name="btnOpenFile.TabIndex" type="System.Int32, mscorlib">
+		<value>5</value>
+	</data>
+	<data name="&gt;&gt;tmrClose.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnOpenLink.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnOpenLink.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnCopyImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btnOpenLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 304</value>
-  </data>
-  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="btnCopyLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 304</value>
-  </data>
-  <data name="btnCopyImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnOpenFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="&gt;&gt;btnCopyImage.Name" xml:space="preserve">
+	<data name="btnCopyImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Bottom, Left</value>
+	</data>
+	<data name="btnOpenLink.Location" type="System.Drawing.Point, System.Drawing">
+		<value>184, 304</value>
+	</data>
+	<data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+		<value>7</value>
+	</data>
+	<data name="btnCopyLink.Location" type="System.Drawing.Point, System.Drawing">
+		<value>96, 304</value>
+	</data>
+	<data name="btnCopyImage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>0, 0, 0, 0</value>
+	</data>
+	<data name="btnOpenFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Bottom, Left</value>
+	</data>
+	<data name="&gt;&gt;btnCopyImage.Name" xml:space="preserve">
     <value>btnCopyImage</value>
   </data>
-  <data name="btnOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <data name="&gt;&gt;tmrClose.Name" xml:space="preserve">
+	<data name="btnOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 32</value>
+	</data>
+	<data name="&gt;&gt;tmrClose.Name" xml:space="preserve">
     <value>tmrClose</value>
   </data>
-  <data name="btnCopyImage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnOpenLink.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnCopyLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
+	<data name="btnCopyImage.TabIndex" type="System.Int32, mscorlib">
+		<value>2</value>
+	</data>
+	<data name="btnOpenLink.TabIndex" type="System.Int32, mscorlib">
+		<value>4</value>
+	</data>
+	<data name="btnCopyLink.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 32</value>
+	</data>
+	<data name="btnClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - After upload</value>
   </data>
-  <data name="btnCopyLink.Text" xml:space="preserve">
+	<data name="btnCopyLink.Text" xml:space="preserve">
     <value>Copy link</value>
   </data>
-  <data name="&gt;&gt;btnOpenLink.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;btnOpenLink.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnOpenLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnOpenFolder.Text" xml:space="preserve">
+	<data name="btnOpenLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>0, 0, 0, 0</value>
+	</data>
+	<data name="btnOpenFolder.Text" xml:space="preserve">
     <value>Open folder...</value>
   </data>
-  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
+	<data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnOpenFolder.Type" xml:space="preserve">
+	<data name="&gt;&gt;btnOpenFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnOpenLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btnOpenFile.Text" xml:space="preserve">
+	<data name="btnOpenLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Bottom, Left</value>
+	</data>
+	<data name="btnOpenFile.Text" xml:space="preserve">
     <value>Open file...</value>
   </data>
-  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnOpenFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="&gt;&gt;btnCopyLink.ZOrder" xml:space="preserve">
+	<data name="btnOpenFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+		<value>Bottom, Left</value>
+	</data>
+	<data name="&gt;&gt;btnCopyLink.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
+	<data name="chFormat.Text" xml:space="preserve">
     <value>Format</value>
   </data>
-  <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
+	<data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
     <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="btnOpenFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>704, 344</value>
-  </data>
-  <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+	<data name="btnOpenFile.Size" type="System.Drawing.Size, System.Drawing">
+		<value>88, 32</value>
+	</data>
+	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+		<value>704, 344</value>
+	</data>
+	<data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
+	<data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
     <value>HelpersLib.MyPictureBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 304</value>
-  </data>
-  <data name="btnCopyLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 0, 0</value>
-  </data>
-  <data name="&gt;&gt;chDescription.Type" xml:space="preserve">
+	<data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+		<value>608, 304</value>
+	</data>
+	<data name="btnCopyLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>3, 0, 0, 0</value>
+	</data>
+	<data name="&gt;&gt;chDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>tr</value>
-  </metadata>
-  <metadata name="tmrClose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+	<metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>True</value>
+	</metadata>
+	<metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>tr</value>
+	</metadata>
+	<metadata name="tmrClose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+		<value>17, 17</value>
+	</metadata>
 </root>
