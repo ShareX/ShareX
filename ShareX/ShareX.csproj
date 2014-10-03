@@ -254,11 +254,20 @@
     <EmbeddedResource Include="Controls\BeforeUploadControl.resx">
       <DependentUpon>BeforeUploadControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeyManagerControl.de.resx">
+      <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeyManagerControl.tr.resx">
       <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeySelectionControl.de.resx">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.tr.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.de.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
@@ -267,8 +276,14 @@
     <EmbeddedResource Include="Forms\AboutForm.tr.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsForm.de.resx">
+      <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.tr.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterCaptureForm.de.resx">
+      <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterCaptureForm.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
@@ -276,11 +291,20 @@
     <EmbeddedResource Include="Forms\AfterCaptureForm.tr.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterUploadForm.de.resx">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.tr.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationSettingsForm.de.resx">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.tr.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCaptureForm.de.resx">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
@@ -295,11 +319,17 @@
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.de.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.tr.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EncoderProgramForm.de.resx">
+      <DependentUpon>EncoderProgramForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EncoderProgramForm.resx">
       <DependentUpon>EncoderProgramForm.cs</DependentUpon>
@@ -310,17 +340,29 @@
     <EmbeddedResource Include="Forms\EncoderProgramForm.tr.resx">
       <DependentUpon>EncoderProgramForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.de.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.tr.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HotkeySettingsForm.de.resx">
+      <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.tr.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.de.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.tr.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenColorPicker.de.resx">
+      <DependentUpon>ScreenColorPicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
@@ -340,8 +382,14 @@
     <EmbeddedResource Include="Forms\ScreenRegionForm.tr.resx">
       <DependentUpon>ScreenRegionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
+      <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.tr.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadTestForm.de.resx">
+      <DependentUpon>UploadTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadTestForm.resx">
       <DependentUpon>UploadTestForm.cs</DependentUpon>
@@ -349,8 +397,14 @@
     <EmbeddedResource Include="Forms\UploadTestForm.tr.resx">
       <DependentUpon>UploadTestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoEncodersForm.de.resx">
+      <DependentUpon>VideoEncodersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoEncodersForm.tr.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchFolderForm.de.resx">
+      <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
@@ -418,6 +472,7 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Resources\RoundedRectangle.png" />
     <None Include="Resources\Rectangle.png" />

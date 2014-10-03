@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblDragAndDropTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblDragAndDropTip.Text" xml:space="preserve">
+    <value>Du kannst hier Dateien reinziehen</value>
+  </data>
+  <data name="lblSplitter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>Fortschritt</value>
+  </data>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>Geschwindigkeit</value>
+  </data>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>Zeit vergangen</value>
+  </data>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>Zeit verbleibend</value>
+  </data>
+  <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 407</value>
+  </data>
+  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>639, 407</value>
+  </data>
+  <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiFullscreen.Text" xml:space="preserve">
+    <value>Vollbild</value>
+  </data>
+  <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>Fenster</value>
+  </data>
+  <data name="tsmiMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>Rechteck</value>
+  </data>
+  <data name="tsmiWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiWindowRectangle.Text" xml:space="preserve">
+    <value>Rechteck (Objekte)</value>
+  </data>
+  <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
+    <value>Rechteck (Annotieren)</value>
+  </data>
+  <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>Rechteck (ohne Verdunklung)</value>
+  </data>
+  <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
+    <value>Abgerundetes Rechteck</value>
+  </data>
+  <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiTriangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiTriangle.Text" xml:space="preserve">
+    <value>Dreieck</value>
+  </data>
+  <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiDiamond.Text" xml:space="preserve">
+    <value>Raute</value>
+  </data>
+  <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiPolygon.Text" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="tsmiFreeHand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiFreeHand.Text" xml:space="preserve">
+    <value>Frei</value>
+  </data>
+  <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>Letzte Auswahl</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Bildschirm aufnehmen (FFmpeg)</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Bildschirm aufnehmen (GIF)</value>
+  </data>
+  <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 22</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>Automatisches Aufnehmen...</value>
+  </data>
+  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Aufnehmen</value>
+  </data>
+  <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="tsmiUploadFile.Text" xml:space="preserve">
+    <value>Datei hochladen...</value>
+  </data>
+  <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="tsmiUploadFolder.Text" xml:space="preserve">
+    <value>Ordner hochladen...</value>
+  </data>
+  <data name="tsmiUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="tsmiUploadClipboard.Text" xml:space="preserve">
+    <value>Aus Zwischenablage hochladen...</value>
+  </data>
+  <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="tsmiUploadURL.Text" xml:space="preserve">
+    <value>Aus URL hochladen...</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>Farbauswahl...</value>
+  </data>
+  <data name="tsmiImageEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Bildbearbeitung...</value>
+  </data>
+  <data name="tsmiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>Bildeffekte...</value>
+  </data>
+  <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>Hash checker...</value>
+  </data>
+  <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>DNS wechseln...</value>
+  </data>
+  <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR Code generieren...</value>
+  </data>
+  <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>Ordner indexieren...</value>
+  </data>
+  <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>Lineal...</value>
+  </data>
+  <data name="tsmiFTPClient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>Etwas twittern...</value>
+  </data>
+  <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 22</value>
+  </data>
+  <data name="tsmiMonitorTest.Text" xml:space="preserve">
+    <value>Monitor testen...</value>
+  </data>
+  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 6</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Nach Aufnahme</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>Nach Upload</value>
+  </data>
+  <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Bild uploaders</value>
+  </data>
+  <data name="tsmiTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Datei uploaders</value>
+  </data>
+  <data name="tsmiURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>URL kürzer</value>
+  </data>
+  <data name="tsmiURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Sozial</value>
+  </data>
+  <data name="tssDestinations1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 6</value>
+  </data>
+  <data name="tsmiDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
+    <value>Zieleinstellungen...</value>
+  </data>
+  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Ziele</value>
+  </data>
+  <data name="tsbApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Anwendungseinstellungen...</value>
+  </data>
+  <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Auftragseinstellungen...</value>
+  </data>
+  <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>Tastenkombinationen...</value>
+  </data>
+  <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 6</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>Screenshot Ordner...</value>
+  </data>
+  <data name="tsbHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>Verlauf...</value>
+  </data>
+  <data name="tsbImageHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>Bildverlauf...</value>
+  </data>
+  <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
+    <value>Debug-Log...</value>
+  </data>
+  <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
+    <value>Bild upload testen</value>
+  </data>
+  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
+    <value>Text upload testen</value>
+  </data>
+  <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
+    <value>Datei upload testen</value>
+  </data>
+  <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
+    <value>URL kürzer testen</value>
+  </data>
+  <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
+    <value>Teilen testen</value>
+  </data>
+  <data name="tsmiTestUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiTestUploaders.Text" xml:space="preserve">
+    <value>Uploader testen...</value>
+  </data>
+  <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsmiDonate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsmiDonate.Text" xml:space="preserve">
+    <value>Spenden...</value>
+  </data>
+  <data name="tsmiAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 20</value>
+  </data>
+  <data name="tsmiAbout.Text" xml:space="preserve">
+    <value>Über...</value>
+  </data>
+  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 407</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+</root>
