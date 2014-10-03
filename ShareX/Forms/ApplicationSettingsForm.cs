@@ -179,7 +179,10 @@ namespace ShareX
 
             if (loaded)
             {
-                Program.UpdateLanguage();
+                if (LanguageHelper.ChangeLanguage(Program.Settings.Language, Program.MainForm, this))
+                {
+                    MessageBox.Show("ShareX need to be reopened for language changes to fully apply.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

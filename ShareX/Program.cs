@@ -314,7 +314,7 @@ namespace ShareX
             HotkeySettingsResetEvent = new ManualResetEvent(false);
             TaskEx.Run(() => LoadSettings());
 
-            UpdateLanguage();
+            LanguageHelper.ChangeLanguage(Settings.Language);
 
             DebugHelper.WriteLine("MainForm init started");
             MainForm = new MainForm();
@@ -371,31 +371,6 @@ namespace ShareX
             }
 
             return false;
-        }
-
-        public static void UpdateLanguage()
-        {
-            if (Settings.Language != SupportedLanguage.Default)
-            {
-                string cultureName;
-
-                switch (Settings.Language)
-                {
-                    default:
-                    case SupportedLanguage.English:
-                        cultureName = "en-US";
-                        break;
-                    case SupportedLanguage.Turkish:
-                        cultureName = "tr-TR";
-                        break;
-                    case SupportedLanguage.German:
-                        cultureName = "de-DE";
-                        break;
-                }
-
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureName);
-                DebugHelper.WriteLine("Language set to: " + Thread.CurrentThread.CurrentUICulture.DisplayName);
-            }
         }
 
         public static void LoadSettings()
