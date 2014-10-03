@@ -426,7 +426,7 @@ Pushbullet support: https://github.com/BallisticLingonberries
 Translators:
 
 Turkish: https://github.com/muratmoon
-German: ?
+German: https://github.com/WebFreak001
 
 External libraries:
 
@@ -529,8 +529,5 @@ Copyright © 2007 - 2014 ShareX Developers</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>tr</value>
   </metadata>
 </root>
