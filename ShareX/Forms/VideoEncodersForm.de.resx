@@ -138,4 +138,10 @@
 	<data name="chEncoderOutputExtension.Text" xml:space="preserve">
     <value>Ausgabe Erweiterung</value>
   </data>
+	<data name="chEncoderArgs.Text" xml:space="preserve">
+		<value>Args</value>
+	</data>
+	<data name="$this.Text" xml:space="preserve">
+		<value>ShareX - Encoder Profile</value>
+	</data>
 </root>

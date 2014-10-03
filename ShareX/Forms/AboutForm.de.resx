@@ -195,4 +195,13 @@ Fehler: https://github.com/ShareX/ShareX/issues</value>
 	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - Über</value>
   </data>
+	<data name="lblMike.Text" xml:space="preserve">
+		<value>mcored (Michael Delpach)</value>
+	</data>
+	<data name="lblBerk.Text" xml:space="preserve">
+		<value>Jaex (Berk)</value>
+	</data>
+	<data name="lblProductName.Text" xml:space="preserve">
+		<value>ShareX 1.0.0.0</value>
+	</data>
 </root>
