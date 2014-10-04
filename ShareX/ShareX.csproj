@@ -251,9 +251,6 @@
     <Compile Include="WatchFolder.cs" />
     <Compile Include="WatchFolderManager.cs" />
     <Compile Include="WatchFolderSettings.cs" />
-    <EmbeddedResource Include="Controls\BeforeUploadControl.resx">
-      <DependentUpon>BeforeUploadControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeyManagerControl.de.resx">
       <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
     </EmbeddedResource>

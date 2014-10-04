@@ -89,11 +89,6 @@
       <remarks>
       </remarks>
     </fileGroup>
-    <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="d5d80168-6933-4e5f-a753-b56675a5e53c">
-      <file filePath="ShareX\Controls\BeforeUploadControl.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Controls\BeforeUploadControl.resx" uniqueID="223c9bbc-7203-4072-96c0-0d432537539c" />
-      <remarks>
-      </remarks>
-    </fileGroup>
     <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="4707944f-1f9d-447a-8766-bfcba17f10b5">
       <file filePath="ShareX\Forms\BeforeUploadForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.resx" uniqueID="e18a6012-32e3-4e70-8ef6-564688db574e" />
       <file filePath="ShareX\Forms\BeforeUploadForm.de.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.de.resx" uniqueID="d3f5e185-fd48-4391-ab49-2052f56d8d78" />
@@ -450,11 +445,6 @@
       <dynSettings />
     </projectFolder>
     <projectFolder uniqueID="97fef840-b4e5-4802-8551-8cd398132c52" parentUniqueID="00000000-0000-0000-0000-000000000000" name="ShareX" orderPosition="0">
-      <remarks>
-      </remarks>
-      <dynSettings />
-    </projectFolder>
-    <projectFolder uniqueID="c9798fd7-59d8-4daa-b1cc-7e3a74d870a7" parentUniqueID="00000000-0000-0000-0000-000000000000" name="ShareXPortable" orderPosition="0">
       <remarks>
       </remarks>
       <dynSettings />
