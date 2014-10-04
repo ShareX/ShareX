@@ -139,4 +139,13 @@
 	<data name="$this.Text" xml:space="preserve">
     <value>Ordner beaufsichtigen</value>
   </data>
+	<data name="lblFilter.Text" xml:space="preserve">
+		<value>Filter:</value>
+	</data>
+	<data name="btnPathBrowse.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="btnOK.Text" xml:space="preserve">
+		<value>OK</value>
+	</data>
 </root>

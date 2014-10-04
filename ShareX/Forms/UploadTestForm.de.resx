@@ -142,4 +142,22 @@
 	<data name="tpConsole.Text" xml:space="preserve">
     <value>Konsole</value>
   </data>
+	<data name="columnHeader1.Text" xml:space="preserve">
+		<value>Name</value>
+	</data>
+	<data name="columnHeader2.Text" xml:space="preserve">
+		<value>Status</value>
+	</data>
+	<data name="testSelectedUploadersToolStripMenuItem.Text" xml:space="preserve">
+		<value>Ausgewählte uploader testen</value>
+	</data>
+	<data name="openURLToolStripMenuItem.Text" xml:space="preserve">
+		<value>URL öffnen</value>
+	</data>
+	<data name="copyToolStripMenuItem.Text" xml:space="preserve">
+		<value>URL(s) in die Zwischenablage kopieren</value>
+	</data>
+	<data name="$this.Text" xml:space="preserve">
+		<value>ShareX - Uploader testen</value>
+	</data>
 </root>

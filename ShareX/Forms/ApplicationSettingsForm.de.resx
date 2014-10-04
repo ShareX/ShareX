@@ -350,4 +350,28 @@
 	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - Anwendungseinstellungen</value>
   </data>
+	<data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+		<value>...</value>
+	</data>
+	<data name="tpProxy.Text" xml:space="preserve">
+		<value>Proxy</value>
+	</data>
+	<data name="lblProxyHost.Text" xml:space="preserve">
+		<value>Host:</value>
+	</data>
+	<data name="lblProxyPort.Text" xml:space="preserve">
+		<value>Port:</value>
+	</data>
+	<data name="tpUpload.Text" xml:space="preserve">
+		<value>Hochladen</value>
+	</data>
+	<data name="tpPerformance.Text" xml:space="preserve">
+		<value>Performance</value>
+	</data>
+	<data name="chFormat.Text" xml:space="preserve">
+		<value>Format</value>
+	</data>
 </root>

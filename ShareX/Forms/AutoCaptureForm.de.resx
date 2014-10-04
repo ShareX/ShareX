@@ -164,4 +164,16 @@
 	<data name="$this.Text" xml:space="preserve">
     <value>ShareX - Auto-Screenshots</value>
   </data>
+	<data name="btnExecute.Text" xml:space="preserve">
+		<value>Start</value>
+	</data>
+	<data name="lblRegion.Text" xml:space="preserve">
+		<value>Region</value>
+	</data>
+	<data name="ssBar.Text" xml:space="preserve">
+		<value>Status</value>
+	</data>
+	<data name="niTray.Text" xml:space="preserve">
+		<value>ShareX - Auto-Screenshots</value>
+	</data>
 </root>

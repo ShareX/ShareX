@@ -124,4 +124,22 @@ fokusiert ist um die Farbauswahl zu stoppen.</value>
 	<data name="btnColorPicker.Text" xml:space="preserve">
     <value>Bildschirm-Farbausfahl</value>
   </data>
+	<data name="btnCopyAll.Text" xml:space="preserve">
+		<value>Alles kopieren</value>
+	</data>
+	<data name="txtY.Text" xml:space="preserve">
+		<value>1050</value>
+	</data>
+	<data name="txtX.Text" xml:space="preserve">
+		<value>1680</value>
+	</data>
+	<data name="lblY.Text" xml:space="preserve">
+		<value>Y: </value>
+	</data>
+	<data name="lblX.Text" xml:space="preserve">
+		<value>X: </value>
+	</data>
+	<data name="$this.Text" xml:space="preserve">
+		<value>ShareX - Farbauswahl</value>
+	</data>
 </root>
