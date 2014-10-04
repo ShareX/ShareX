@@ -312,6 +312,9 @@
     <EmbeddedResource Include="Forms\AutoCaptureForm.tr.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeforeUploadForm.de.resx">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenColorPicker.tr.resx">
       <DependentUpon>ScreenColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScreenRegionForm.de.resx">
+      <DependentUpon>ScreenRegionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRegionForm.resx">
       <DependentUpon>ScreenRegionForm.cs</DependentUpon>

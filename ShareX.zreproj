@@ -21,8 +21,14 @@
     <globalSetting name="DefaultFileTypesToIgnore">.aspx;.ascx;.asmx;.master;.sitemap</globalSetting>
     <globalSetting name="Project-PersistGridSettings">True</globalSetting>
     <globalSetting name="ColorifyNullCells">True</globalSetting>
-    <globalSetting name="EnableExcelExportSnapshots">True</globalSetting>
+    <globalSetting name="EnableExcelExportSnapshots">False</globalSetting>
     <globalSetting name="projectMruItems">&lt;?xml version='1.0' encoding='utf-8'?&gt;&lt;items /&gt;</globalSetting>
+    <globalSetting name="CreateNewFileForm.prefixTextBox.Text">####</globalSetting>
+    <globalSetting name="CreateNewFileForm.prefixCheckBox.Checked">False</globalSetting>
+    <globalSetting name="CreateNewFileForm.referenceLanguageComboBox.SelectedIndex">0</globalSetting>
+    <globalSetting name="CreateNewFileForm.newLanguageComboBox.SelectedIndex">115</globalSetting>
+    <globalSetting name="CreateNewFileForm.copyTextsCheckBox.Checked">False</globalSetting>
+    <globalSetting name="CreateNewFileForm.automaticallyTranslateCheckBox.Checked">False</globalSetting>
     <userSetting name="Jaex@PC.FindText">
     </userSetting>
     <userSetting name="Jaex@PC.RecentFiles">
@@ -90,6 +96,7 @@
     </fileGroup>
     <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="4707944f-1f9d-447a-8766-bfcba17f10b5">
       <file filePath="ShareX\Forms\BeforeUploadForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.resx" uniqueID="e18a6012-32e3-4e70-8ef6-564688db574e" />
+      <file filePath="ShareX\Forms\BeforeUploadForm.de.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.de.resx" uniqueID="d3f5e185-fd48-4391-ab49-2052f56d8d78" />
       <file filePath="ShareX\Forms\BeforeUploadForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\BeforeUploadForm.tr.resx" uniqueID="189b69b5-239a-4672-bcea-7c7f15092db6" />
       <remarks>
       </remarks>
@@ -332,6 +339,7 @@
     </fileGroup>
     <fileGroup name="" projectFolderUniqueID="97fef840-b4e5-4802-8551-8cd398132c52" orderPosition="0" ignoreDuringExportAndImport="False" uniqueID="742c2a35-ed4c-4baf-a88b-e373218ffebb">
       <file filePath="ShareX\Forms\ScreenRegionForm.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenRegionForm.resx" uniqueID="16afd4ca-ba34-4d75-9711-0e71fa02809b" />
+      <file filePath="ShareX\Forms\ScreenRegionForm.de.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenRegionForm.de.resx" uniqueID="b3ccb370-be1d-4b05-8c7a-2be9c9d5598b" />
       <file filePath="ShareX\Forms\ScreenRegionForm.tr.resx" absoluteFilePath="D:\Dev\GitHub\Jaex\ShareX\ShareX\Forms\ScreenRegionForm.tr.resx" uniqueID="8ab5bd7b-5422-4cf5-8d8c-f3c92c038b5f" />
       <remarks>
       </remarks>

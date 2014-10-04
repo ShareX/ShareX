@@ -142,4 +142,7 @@ fokusiert ist um die Farbauswahl zu stoppen.</value>
 	<data name="$this.Text" xml:space="preserve">
 		<value>ShareX - Farbauswahl</value>
 	</data>
+	<data name="btnCancel.Text" xml:space="preserve">
+		<value>Abbrechen</value>
+	</data>
 </root>
