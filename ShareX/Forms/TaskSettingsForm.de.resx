@@ -204,7 +204,7 @@
 		<value>440, 17</value>
 	</data>
 	<data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>"Before upload" Fenster anzeigen um dynamisch das Ziel vor dem Hochladen zu setzen</value>
+    <value>"Vor dem Upload" Fenster anzeigen um dynamisch das Ziel vor dem Hochladen zu setzen</value>
   </data>
 	<data name="lblAfterTaskNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
 		<value>NoControl</value>

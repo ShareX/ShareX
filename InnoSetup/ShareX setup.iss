@@ -57,10 +57,17 @@ Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescrip
 Name: "CreateStartupIcon"; Description: "Launch {#MyAppName} automatically at Windows startup"; GroupDescription: "Other tasks:"
 
 [Files]
-Source: "..\ShareX\bin\Release\*.exe"; Excludes: *.vshost.exe; DestDir: {app}; Flags: ignoreversion
+Source: "..\ShareX\bin\Release\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "..\ShareX\bin\Release\ShareX.exe.config"; DestDir: {app}; Flags: ignoreversion
 Source: "..\ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "..\ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
 Source: "..\ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
+
+; Language resources
+Source: "..\ShareX\bin\Release\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
+Source: "..\ShareX\bin\Release\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
+
+; Required for screen/audio recording
 Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
 Source: "..\Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
 Source: "..\Lib\audio_sniffer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
