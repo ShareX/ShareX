@@ -76,9 +76,6 @@ namespace ShareXPortable
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
             Console.WriteLine("Created PersonalPath.cfg file.");
 
-            Directory.CreateDirectory(Path.Combine(portableDir, "ShareX"));
-            Console.WriteLine("Created ShareX folder.");
-
             //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
             //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
             string zipPath = Path.Combine(outputDir, "ShareX-portable.zip");

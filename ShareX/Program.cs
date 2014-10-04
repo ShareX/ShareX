@@ -95,7 +95,7 @@ namespace ShareX
         {
             get
             {
-                if (!string.IsNullOrEmpty(CustomPersonalPath) && Directory.Exists(CustomPersonalPath))
+                if (!string.IsNullOrEmpty(CustomPersonalPath))
                 {
                     return CustomPersonalPath;
                 }
@@ -272,6 +272,9 @@ namespace ShareX
 
         private static void Run()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             IsSilentRun = CLIHelper.CheckArgs(Arguments, "silent", "s");
             IsSandbox = CLIHelper.CheckArgs(Arguments, "sandbox");
 
@@ -288,14 +291,19 @@ namespace ShareX
                     CheckPersonalPathConfig();
                 }
 
-                if (!string.IsNullOrEmpty(PersonalPath) && !Directory.Exists(PersonalPath))
+                if (!Directory.Exists(PersonalPath))
                 {
-                    Directory.CreateDirectory(PersonalPath);
+                    try
+                    {
+                        Directory.CreateDirectory(PersonalPath);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Unable to create folder: \"" + PersonalPath + "\"\r\n\r\n" + e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        CustomPersonalPath = "";
+                    }
                 }
             }
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
 
             DebugHelper.WriteLine("{0} started", Title);
             DebugHelper.WriteLine("Operating system: " + Environment.OSVersion.VersionString);
