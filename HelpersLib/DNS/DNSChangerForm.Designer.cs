@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DNSChangerForm));
             this.cbAdapters = new System.Windows.Forms.ComboBox();
             this.lblAdapters = new System.Windows.Forms.Label();
             this.txtPreferredDNS = new System.Windows.Forms.TextBox();
@@ -47,72 +48,48 @@
             // 
             this.cbAdapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAdapters.FormattingEnabled = true;
-            this.cbAdapters.Location = new System.Drawing.Point(136, 12);
+            resources.ApplyResources(this.cbAdapters, "cbAdapters");
             this.cbAdapters.Name = "cbAdapters";
-            this.cbAdapters.Size = new System.Drawing.Size(256, 21);
-            this.cbAdapters.TabIndex = 1;
             this.cbAdapters.SelectedIndexChanged += new System.EventHandler(this.cbAdapters_SelectedIndexChanged);
             // 
             // lblAdapters
             // 
-            this.lblAdapters.AutoSize = true;
-            this.lblAdapters.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblAdapters, "lblAdapters");
             this.lblAdapters.Name = "lblAdapters";
-            this.lblAdapters.Size = new System.Drawing.Size(94, 13);
-            this.lblAdapters.TabIndex = 0;
-            this.lblAdapters.Text = "Network adapters:";
             // 
             // txtPreferredDNS
             // 
-            this.txtPreferredDNS.Location = new System.Drawing.Point(136, 84);
+            resources.ApplyResources(this.txtPreferredDNS, "txtPreferredDNS");
             this.txtPreferredDNS.Name = "txtPreferredDNS";
-            this.txtPreferredDNS.Size = new System.Drawing.Size(214, 20);
-            this.txtPreferredDNS.TabIndex = 6;
             this.txtPreferredDNS.TextChanged += new System.EventHandler(this.txtPreferredDNS_TextChanged);
             // 
             // lblPreferredDNS
             // 
-            this.lblPreferredDNS.AutoSize = true;
-            this.lblPreferredDNS.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.lblPreferredDNS, "lblPreferredDNS");
             this.lblPreferredDNS.Name = "lblPreferredDNS";
-            this.lblPreferredDNS.Size = new System.Drawing.Size(111, 13);
-            this.lblPreferredDNS.TabIndex = 5;
-            this.lblPreferredDNS.Text = "Preferred DNS server:";
             // 
             // lblAlternateDNS
             // 
-            this.lblAlternateDNS.AutoSize = true;
-            this.lblAlternateDNS.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.lblAlternateDNS, "lblAlternateDNS");
             this.lblAlternateDNS.Name = "lblAlternateDNS";
-            this.lblAlternateDNS.Size = new System.Drawing.Size(110, 13);
-            this.lblAlternateDNS.TabIndex = 8;
-            this.lblAlternateDNS.Text = "Alternate DNS server:";
             // 
             // txtAlternateDNS
             // 
-            this.txtAlternateDNS.Location = new System.Drawing.Point(136, 108);
+            resources.ApplyResources(this.txtAlternateDNS, "txtAlternateDNS");
             this.txtAlternateDNS.Name = "txtAlternateDNS";
-            this.txtAlternateDNS.Size = new System.Drawing.Size(214, 20);
-            this.txtAlternateDNS.TabIndex = 9;
             this.txtAlternateDNS.TextChanged += new System.EventHandler(this.txtAlternateDNS_TextChanged);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(224, 136);
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 24);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "&Apply";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(312, 136);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 23);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "&Close";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -120,57 +97,40 @@
             // 
             this.cbDNSType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDNSType.FormattingEnabled = true;
-            this.cbDNSType.Location = new System.Drawing.Point(136, 60);
+            resources.ApplyResources(this.cbDNSType, "cbDNSType");
             this.cbDNSType.Name = "cbDNSType";
-            this.cbDNSType.Size = new System.Drawing.Size(256, 21);
-            this.cbDNSType.TabIndex = 4;
             this.cbDNSType.SelectedIndexChanged += new System.EventHandler(this.cbDNSType_SelectedIndexChanged);
             // 
             // lblDNS
             // 
-            this.lblDNS.AutoSize = true;
-            this.lblDNS.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.lblDNS, "lblDNS");
             this.lblDNS.Name = "lblDNS";
-            this.lblDNS.Size = new System.Drawing.Size(70, 13);
-            this.lblDNS.TabIndex = 3;
-            this.lblDNS.Text = "DNS servers:";
             // 
             // cbAutomatic
             // 
-            this.cbAutomatic.AutoSize = true;
-            this.cbAutomatic.Location = new System.Drawing.Point(19, 40);
+            resources.ApplyResources(this.cbAutomatic, "cbAutomatic");
             this.cbAutomatic.Name = "cbAutomatic";
-            this.cbAutomatic.Size = new System.Drawing.Size(219, 17);
-            this.cbAutomatic.TabIndex = 2;
-            this.cbAutomatic.Text = "Obtain DNS server address automatically";
             this.cbAutomatic.UseVisualStyleBackColor = true;
             this.cbAutomatic.CheckedChanged += new System.EventHandler(this.cbAutomatic_CheckedChanged);
             // 
             // btnPingPrimary
             // 
-            this.btnPingPrimary.Location = new System.Drawing.Point(352, 83);
+            resources.ApplyResources(this.btnPingPrimary, "btnPingPrimary");
             this.btnPingPrimary.Name = "btnPingPrimary";
-            this.btnPingPrimary.Size = new System.Drawing.Size(40, 23);
-            this.btnPingPrimary.TabIndex = 7;
-            this.btnPingPrimary.Text = "Ping";
             this.btnPingPrimary.UseVisualStyleBackColor = true;
             this.btnPingPrimary.Click += new System.EventHandler(this.btnPingPrimary_Click);
             // 
             // btnPingSecondary
             // 
-            this.btnPingSecondary.Location = new System.Drawing.Point(352, 107);
+            resources.ApplyResources(this.btnPingSecondary, "btnPingSecondary");
             this.btnPingSecondary.Name = "btnPingSecondary";
-            this.btnPingSecondary.Size = new System.Drawing.Size(40, 23);
-            this.btnPingSecondary.TabIndex = 10;
-            this.btnPingSecondary.Text = "Ping";
             this.btnPingSecondary.UseVisualStyleBackColor = true;
             this.btnPingSecondary.Click += new System.EventHandler(this.btnPingSecondary_Click);
             // 
             // DNSChangerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 170);
             this.Controls.Add(this.btnPingSecondary);
             this.Controls.Add(this.btnPingPrimary);
             this.Controls.Add(this.cbAutomatic);
@@ -187,8 +147,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DNSChangerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX DNS Changer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

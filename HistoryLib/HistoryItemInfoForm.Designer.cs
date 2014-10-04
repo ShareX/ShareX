@@ -28,35 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryItemInfoForm));
             this.olvMain = new HistoryLib.CustomControls.ObjectListView();
             this.SuspendLayout();
             // 
             // olvMain
             // 
-            this.olvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.olvMain, "olvMain");
             this.olvMain.FullRowSelect = true;
             this.olvMain.GridLines = true;
             this.olvMain.HideSelection = false;
-            this.olvMain.Location = new System.Drawing.Point(0, 0);
             this.olvMain.MultiSelect = false;
             this.olvMain.Name = "olvMain";
             this.olvMain.SetObjectType = HistoryLib.CustomControls.ObjectListView.ObjectType.Properties;
-            this.olvMain.Size = new System.Drawing.Size(454, 411);
-            this.olvMain.TabIndex = 0;
             this.olvMain.UseCompatibleStateImageBehavior = false;
             this.olvMain.View = System.Windows.Forms.View.Details;
             // 
             // HistoryItemInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 411);
             this.Controls.Add(this.olvMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.Name = "HistoryItemInfoForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - History item info";
             this.ResumeLayout(false);
 
         }

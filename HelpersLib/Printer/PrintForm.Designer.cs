@@ -15,6 +15,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintForm));
             this.cbAutoRotate = new System.Windows.Forms.CheckBox();
             this.nudMargin = new System.Windows.Forms.NumericUpDown();
             this.cbAutoScale = new System.Windows.Forms.CheckBox();
@@ -29,27 +30,20 @@
             // 
             // cbAutoRotate
             // 
-            this.cbAutoRotate.AutoSize = true;
-            this.cbAutoRotate.Location = new System.Drawing.Point(16, 48);
+            resources.ApplyResources(this.cbAutoRotate, "cbAutoRotate");
             this.cbAutoRotate.Name = "cbAutoRotate";
-            this.cbAutoRotate.Size = new System.Drawing.Size(109, 17);
-            this.cbAutoRotate.TabIndex = 0;
-            this.cbAutoRotate.Text = "Auto rotate image";
             this.cbAutoRotate.UseVisualStyleBackColor = true;
             this.cbAutoRotate.CheckedChanged += new System.EventHandler(this.cbAutoRotate_CheckedChanged);
             // 
             // nudMargin
             // 
-            this.nudMargin.Location = new System.Drawing.Point(56, 12);
+            resources.ApplyResources(this.nudMargin, "nudMargin");
             this.nudMargin.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.nudMargin.Name = "nudMargin";
-            this.nudMargin.Size = new System.Drawing.Size(56, 20);
-            this.nudMargin.TabIndex = 1;
-            this.nudMargin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudMargin.Value = new decimal(new int[] {
             10,
             0,
@@ -59,81 +53,55 @@
             // 
             // cbAutoScale
             // 
-            this.cbAutoScale.AutoSize = true;
-            this.cbAutoScale.Location = new System.Drawing.Point(16, 72);
+            resources.ApplyResources(this.cbAutoScale, "cbAutoScale");
             this.cbAutoScale.Name = "cbAutoScale";
-            this.cbAutoScale.Size = new System.Drawing.Size(107, 17);
-            this.cbAutoScale.TabIndex = 2;
-            this.cbAutoScale.Text = "Auto scale image";
             this.cbAutoScale.UseVisualStyleBackColor = true;
             this.cbAutoScale.CheckedChanged += new System.EventHandler(this.cbAutoScale_CheckedChanged);
             // 
             // lblMargin
             // 
-            this.lblMargin.AutoSize = true;
-            this.lblMargin.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.lblMargin, "lblMargin");
             this.lblMargin.Name = "lblMargin";
-            this.lblMargin.Size = new System.Drawing.Size(42, 13);
-            this.lblMargin.TabIndex = 3;
-            this.lblMargin.Text = "Margin:";
             // 
             // cbAllowEnlarge
             // 
-            this.cbAllowEnlarge.AutoSize = true;
-            this.cbAllowEnlarge.Location = new System.Drawing.Point(40, 96);
+            resources.ApplyResources(this.cbAllowEnlarge, "cbAllowEnlarge");
             this.cbAllowEnlarge.Name = "cbAllowEnlarge";
-            this.cbAllowEnlarge.Size = new System.Drawing.Size(132, 17);
-            this.cbAllowEnlarge.TabIndex = 4;
-            this.cbAllowEnlarge.Text = "Allow image to enlarge";
             this.cbAllowEnlarge.UseVisualStyleBackColor = true;
             this.cbAllowEnlarge.CheckedChanged += new System.EventHandler(this.cbAllowEnlarge_CheckedChanged);
             // 
             // cbCenterImage
             // 
-            this.cbCenterImage.AutoSize = true;
-            this.cbCenterImage.Location = new System.Drawing.Point(40, 120);
+            resources.ApplyResources(this.cbCenterImage, "cbCenterImage");
             this.cbCenterImage.Name = "cbCenterImage";
-            this.cbCenterImage.Size = new System.Drawing.Size(127, 17);
-            this.cbCenterImage.TabIndex = 5;
-            this.cbCenterImage.Text = "Center image position";
             this.cbCenterImage.UseVisualStyleBackColor = true;
             this.cbCenterImage.CheckedChanged += new System.EventHandler(this.cbCenterImage_CheckedChanged);
             // 
             // btnShowPreview
             // 
-            this.btnShowPreview.Location = new System.Drawing.Point(88, 152);
+            resources.ApplyResources(this.btnShowPreview, "btnShowPreview");
             this.btnShowPreview.Name = "btnShowPreview";
-            this.btnShowPreview.Size = new System.Drawing.Size(75, 23);
-            this.btnShowPreview.TabIndex = 6;
-            this.btnShowPreview.Text = "Preview...";
             this.btnShowPreview.UseVisualStyleBackColor = true;
             this.btnShowPreview.Click += new System.EventHandler(this.btnShowPreview_Click);
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(8, 152);
+            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 7;
-            this.btnPrint.Text = "Print...";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(168, 152);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // PrintForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 185);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnShowPreview);
@@ -146,8 +114,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "PrintForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " Print options";
             ((System.ComponentModel.ISupportInitialize)(this.nudMargin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

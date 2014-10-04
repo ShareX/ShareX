@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailForm));
             this.lblToEmail = new System.Windows.Forms.Label();
             this.txtToEmail = new System.Windows.Forms.TextBox();
             this.lblSubject = new System.Windows.Forms.Label();
@@ -40,89 +41,54 @@
             // 
             // lblToEmail
             // 
-            this.lblToEmail.AutoSize = true;
-            this.lblToEmail.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblToEmail, "lblToEmail");
             this.lblToEmail.Name = "lblToEmail";
-            this.lblToEmail.Size = new System.Drawing.Size(51, 13);
-            this.lblToEmail.TabIndex = 0;
-            this.lblToEmail.Text = "To Email:";
             // 
             // txtToEmail
             // 
-            this.txtToEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtToEmail.Location = new System.Drawing.Point(72, 12);
+            resources.ApplyResources(this.txtToEmail, "txtToEmail");
             this.txtToEmail.Name = "txtToEmail";
-            this.txtToEmail.Size = new System.Drawing.Size(216, 20);
-            this.txtToEmail.TabIndex = 0;
             // 
             // lblSubject
             // 
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblSubject, "lblSubject");
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(46, 13);
-            this.lblSubject.TabIndex = 2;
-            this.lblSubject.Text = "Subject:";
             // 
             // txtSubject
             // 
-            this.txtSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSubject.Location = new System.Drawing.Point(72, 36);
+            resources.ApplyResources(this.txtSubject, "txtSubject");
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(216, 20);
-            this.txtSubject.TabIndex = 1;
             // 
             // lblMessage
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.lblMessage, "lblMessage");
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(53, 13);
-            this.lblMessage.TabIndex = 4;
-            this.lblMessage.Text = "Message:";
             // 
             // txtMessage
             // 
-            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessage.Location = new System.Drawing.Point(72, 60);
-            this.txtMessage.Multiline = true;
+            resources.ApplyResources(this.txtMessage, "txtMessage");
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(216, 164);
-            this.txtMessage.TabIndex = 2;
             // 
             // btnSend
             // 
-            this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSend.Location = new System.Drawing.Point(216, 232);
+            resources.ApplyResources(this.btnSend, "btnSend");
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(72, 24);
-            this.btnSend.TabIndex = 4;
-            this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(136, 232);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(72, 24);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // EmailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(298, 265);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
@@ -132,7 +98,6 @@
             this.Controls.Add(this.txtToEmail);
             this.Controls.Add(this.lblToEmail);
             this.Name = "EmailForm";
-            this.Text = "ShareX - Send Email";
             this.ResumeLayout(false);
             this.PerformLayout();
 

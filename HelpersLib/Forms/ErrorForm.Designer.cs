@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorForm));
             this.txtException = new System.Windows.Forms.TextBox();
             this.btnCopyAll = new System.Windows.Forms.Button();
             this.btnSendBugReport = new System.Windows.Forms.Button();
@@ -41,112 +42,75 @@
             // 
             // txtException
             // 
-            this.txtException.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.txtException, "txtException");
             this.txtException.BackColor = System.Drawing.Color.White;
-            this.txtException.Location = new System.Drawing.Point(8, 48);
-            this.txtException.Multiline = true;
             this.txtException.Name = "txtException";
             this.txtException.ReadOnly = true;
-            this.txtException.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtException.Size = new System.Drawing.Size(480, 222);
-            this.txtException.TabIndex = 1;
             // 
             // btnCopyAll
             // 
             this.btnCopyAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnCopyAll.Location = new System.Drawing.Point(0, 3);
-            this.btnCopyAll.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            resources.ApplyResources(this.btnCopyAll, "btnCopyAll");
             this.btnCopyAll.Name = "btnCopyAll";
-            this.btnCopyAll.Size = new System.Drawing.Size(72, 24);
-            this.btnCopyAll.TabIndex = 0;
-            this.btnCopyAll.Text = "Copy all";
             this.btnCopyAll.UseVisualStyleBackColor = false;
             this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
             // 
             // btnSendBugReport
             // 
             this.btnSendBugReport.BackColor = System.Drawing.Color.Transparent;
-            this.btnSendBugReport.Location = new System.Drawing.Point(173, 3);
+            resources.ApplyResources(this.btnSendBugReport, "btnSendBugReport");
             this.btnSendBugReport.Name = "btnSendBugReport";
-            this.btnSendBugReport.Size = new System.Drawing.Size(104, 24);
-            this.btnSendBugReport.TabIndex = 2;
-            this.btnSendBugReport.Text = "Send bug report";
             this.btnSendBugReport.UseVisualStyleBackColor = false;
             this.btnSendBugReport.Click += new System.EventHandler(this.btnSendBugReport_Click);
             // 
             // btnClose
             // 
-            this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(283, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(106, 24);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Exit application";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpenLogFile
             // 
             this.btnOpenLogFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnOpenLogFile.Location = new System.Drawing.Point(78, 3);
+            resources.ApplyResources(this.btnOpenLogFile, "btnOpenLogFile");
             this.btnOpenLogFile.Name = "btnOpenLogFile";
-            this.btnOpenLogFile.Size = new System.Drawing.Size(89, 24);
-            this.btnOpenLogFile.TabIndex = 1;
-            this.btnOpenLogFile.Text = "Open log file";
             this.btnOpenLogFile.UseVisualStyleBackColor = false;
             this.btnOpenLogFile.Click += new System.EventHandler(this.btnOpenLogFile_Click);
             // 
             // flpMenu
             // 
-            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.flpMenu, "flpMenu");
             this.flpMenu.Controls.Add(this.btnCopyAll);
             this.flpMenu.Controls.Add(this.btnOpenLogFile);
             this.flpMenu.Controls.Add(this.btnSendBugReport);
             this.flpMenu.Controls.Add(this.btnClose);
             this.flpMenu.Controls.Add(this.btnContinue);
-            this.flpMenu.Location = new System.Drawing.Point(8, 278);
             this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Size = new System.Drawing.Size(480, 32);
-            this.flpMenu.TabIndex = 2;
             // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.Transparent;
-            this.btnContinue.Location = new System.Drawing.Point(395, 3);
+            resources.ApplyResources(this.btnContinue, "btnContinue");
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(74, 24);
-            this.btnContinue.TabIndex = 4;
-            this.btnContinue.Text = "&OK";
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // lblErrorMessage
             // 
-            this.lblErrorMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblErrorMessage.Location = new System.Drawing.Point(7, 8);
+            resources.ApplyResources(this.lblErrorMessage, "lblErrorMessage");
             this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(480, 34);
-            this.lblErrorMessage.TabIndex = 0;
-            this.lblErrorMessage.Text = "Error\r\nError 2";
             // 
             // ErrorForm
             // 
             this.AcceptButton = this.btnContinue;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 313);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.txtException);
             this.Name = "ErrorForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Error";
             this.Shown += new System.EventHandler(this.ErrorForm_Shown);
             this.flpMenu.ResumeLayout(false);
             this.ResumeLayout(false);

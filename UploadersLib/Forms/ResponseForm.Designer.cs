@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResponseForm));
             this.txtSource = new System.Windows.Forms.TextBox();
             this.tcResponse = new System.Windows.Forms.TabControl();
             this.tpString = new System.Windows.Forms.TabPage();
@@ -40,68 +41,44 @@
             // 
             // txtSource
             // 
-            this.txtSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSource.Location = new System.Drawing.Point(3, 3);
-            this.txtSource.Multiline = true;
+            resources.ApplyResources(this.txtSource, "txtSource");
             this.txtSource.Name = "txtSource";
-            this.txtSource.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtSource.Size = new System.Drawing.Size(746, 481);
-            this.txtSource.TabIndex = 0;
             // 
             // tcResponse
             // 
             this.tcResponse.Controls.Add(this.tpString);
             this.tcResponse.Controls.Add(this.tpWebBrowser);
-            this.tcResponse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcResponse.Location = new System.Drawing.Point(5, 5);
+            resources.ApplyResources(this.tcResponse, "tcResponse");
             this.tcResponse.Name = "tcResponse";
             this.tcResponse.SelectedIndex = 0;
-            this.tcResponse.Size = new System.Drawing.Size(760, 513);
-            this.tcResponse.TabIndex = 0;
             this.tcResponse.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tcResponse_Selecting);
             // 
             // tpString
             // 
             this.tpString.Controls.Add(this.txtSource);
-            this.tpString.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpString, "tpString");
             this.tpString.Name = "tpString";
-            this.tpString.Padding = new System.Windows.Forms.Padding(3);
-            this.tpString.Size = new System.Drawing.Size(752, 487);
-            this.tpString.TabIndex = 0;
-            this.tpString.Text = "Text";
             this.tpString.UseVisualStyleBackColor = true;
             // 
             // tpWebBrowser
             // 
             this.tpWebBrowser.Controls.Add(this.wbResponse);
-            this.tpWebBrowser.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpWebBrowser, "tpWebBrowser");
             this.tpWebBrowser.Name = "tpWebBrowser";
-            this.tpWebBrowser.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWebBrowser.Size = new System.Drawing.Size(752, 487);
-            this.tpWebBrowser.TabIndex = 1;
-            this.tpWebBrowser.Text = "Web browser";
             this.tpWebBrowser.UseVisualStyleBackColor = true;
             // 
             // wbResponse
             // 
-            this.wbResponse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbResponse.Location = new System.Drawing.Point(3, 3);
-            this.wbResponse.MinimumSize = new System.Drawing.Size(20, 20);
+            resources.ApplyResources(this.wbResponse, "wbResponse");
             this.wbResponse.Name = "wbResponse";
             this.wbResponse.ScriptErrorsSuppressed = true;
-            this.wbResponse.Size = new System.Drawing.Size(746, 481);
-            this.wbResponse.TabIndex = 0;
             // 
             // ResponseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 523);
             this.Controls.Add(this.tcResponse);
             this.Name = "ResponseForm";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Response";
             this.Resize += new System.EventHandler(this.ResponseForm_Resize);
             this.tcResponse.ResumeLayout(false);
             this.tpString.ResumeLayout(false);

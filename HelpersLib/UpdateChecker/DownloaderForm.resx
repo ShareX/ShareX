@@ -112,9 +112,243 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 8</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 128</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtChangelog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 208</value>
+  </data>
+  <data name="txtChangelog.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtChangelog.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="txtChangelog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 201</value>
+  </data>
+  <data name="txtChangelog.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtChangelog.Name" xml:space="preserve">
+    <value>txtChangelog</value>
+  </data>
+  <data name="&gt;&gt;txtChangelog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtChangelog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtChangelog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProgress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="lblProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 72</value>
+  </data>
+  <data name="lblProgress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 78</value>
+  </data>
+  <data name="lblProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblProgress.Text" xml:space="preserve">
+    <value>Progress:</value>
+  </data>
+  <data name="&gt;&gt;lblProgress.Name" xml:space="preserve">
+    <value>lblProgress</value>
+  </data>
+  <data name="&gt;&gt;lblProgress.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleLabel, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblProgress.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblProgress.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbShowChangelog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8pt</value>
+  </data>
+  <data name="cbShowChangelog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 142</value>
+  </data>
+  <data name="cbShowChangelog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 16</value>
+  </data>
+  <data name="cbShowChangelog.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cbShowChangelog.Text" xml:space="preserve">
+    <value>Show update notes</value>
+  </data>
+  <data name="cbShowChangelog.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cbShowChangelog.Name" xml:space="preserve">
+    <value>cbShowChangelog</value>
+  </data>
+  <data name="&gt;&gt;cbShowChangelog.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleCheckBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbShowChangelog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbShowChangelog.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 24</value>
+  </data>
+  <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
+    <value>lblStatus</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleLabel, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblFilename.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="lblFilename.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="lblFilename.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 24</value>
+  </data>
+  <data name="lblFilename.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblFilename.Text" xml:space="preserve">
+    <value>Filename:</value>
+  </data>
+  <data name="&gt;&gt;lblFilename.Name" xml:space="preserve">
+    <value>lblFilename</value>
+  </data>
+  <data name="&gt;&gt;lblFilename.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleLabel, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblFilename.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFilename.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnAction.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="btnAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 163</value>
+  </data>
+  <data name="btnAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 32</value>
+  </data>
+  <data name="btnAction.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnAction.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="&gt;&gt;btnAction.Name" xml:space="preserve">
+    <value>btnAction</value>
+  </data>
+  <data name="&gt;&gt;btnAction.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAction.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAction.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 163</value>
+  </data>
+  <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 32</value>
+  </data>
+  <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pbProgress.Name" xml:space="preserve">
+    <value>pbProgress</value>
+  </data>
+  <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleProgressBar, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbProgress.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>488, 417</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX downloader</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DownloaderForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -15,6 +15,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintTextForm));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnShowPreview = new System.Windows.Forms.Button();
@@ -24,58 +25,41 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(168, 64);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(8, 64);
+            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 10;
-            this.btnPrint.Text = "Print...";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnShowPreview
             // 
-            this.btnShowPreview.Location = new System.Drawing.Point(88, 64);
+            resources.ApplyResources(this.btnShowPreview, "btnShowPreview");
             this.btnShowPreview.Name = "btnShowPreview";
-            this.btnShowPreview.Size = new System.Drawing.Size(75, 23);
-            this.btnShowPreview.TabIndex = 9;
-            this.btnShowPreview.Text = "Preview...";
             this.btnShowPreview.UseVisualStyleBackColor = true;
             this.btnShowPreview.Click += new System.EventHandler(this.btnShowPreview_Click);
             // 
             // btnChangeFont
             // 
-            this.btnChangeFont.Location = new System.Drawing.Point(8, 32);
+            resources.ApplyResources(this.btnChangeFont, "btnChangeFont");
             this.btnChangeFont.Name = "btnChangeFont";
-            this.btnChangeFont.Size = new System.Drawing.Size(152, 23);
-            this.btnChangeFont.TabIndex = 12;
-            this.btnChangeFont.Text = "Change font...";
             this.btnChangeFont.UseVisualStyleBackColor = true;
             this.btnChangeFont.Click += new System.EventHandler(this.btnChangeFont_Click);
             // 
             // lblFont
             // 
-            this.lblFont.AutoSize = true;
-            this.lblFont.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.lblFont, "lblFont");
             this.lblFont.Name = "lblFont";
-            this.lblFont.Size = new System.Drawing.Size(31, 13);
-            this.lblFont.TabIndex = 13;
-            this.lblFont.Text = "Font:";
             // 
             // PrintTextForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 96);
             this.Controls.Add(this.lblFont);
             this.Controls.Add(this.btnChangeFont);
             this.Controls.Add(this.btnCancel);
@@ -84,7 +68,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "PrintTextForm";
-            this.Text = "Print options";
             this.ResumeLayout(false);
             this.PerformLayout();
 

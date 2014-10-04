@@ -482,10 +482,8 @@
             // 
             // txtRapidSharePremiumUserName
             // 
-            this.txtRapidSharePremiumUserName.Location = new System.Drawing.Point(88, 84);
+            resources.ApplyResources(this.txtRapidSharePremiumUserName, "txtRapidSharePremiumUserName");
             this.txtRapidSharePremiumUserName.Name = "txtRapidSharePremiumUserName";
-            this.txtRapidSharePremiumUserName.Size = new System.Drawing.Size(120, 20);
-            this.txtRapidSharePremiumUserName.TabIndex = 11;
             // 
             // ttHelpTip
             // 
@@ -500,24 +498,16 @@
             // 
             // cbAmazonS3UseRRS
             // 
-            this.cbAmazonS3UseRRS.AutoSize = true;
-            this.cbAmazonS3UseRRS.Location = new System.Drawing.Point(27, 168);
+            resources.ApplyResources(this.cbAmazonS3UseRRS, "cbAmazonS3UseRRS");
             this.cbAmazonS3UseRRS.Name = "cbAmazonS3UseRRS";
-            this.cbAmazonS3UseRRS.Size = new System.Drawing.Size(184, 17);
-            this.cbAmazonS3UseRRS.TabIndex = 14;
-            this.cbAmazonS3UseRRS.Text = "Use reduced redundancy storage";
             this.ttHelpTip.SetToolTip(this.cbAmazonS3UseRRS, resources.GetString("cbAmazonS3UseRRS.ToolTip"));
             this.cbAmazonS3UseRRS.UseVisualStyleBackColor = true;
             this.cbAmazonS3UseRRS.CheckedChanged += new System.EventHandler(this.cbAmazonS3UseRRS_CheckedChanged);
             // 
             // cbAmazonS3CustomCNAME
             // 
-            this.cbAmazonS3CustomCNAME.AutoSize = true;
-            this.cbAmazonS3CustomCNAME.Location = new System.Drawing.Point(27, 144);
+            resources.ApplyResources(this.cbAmazonS3CustomCNAME, "cbAmazonS3CustomCNAME");
             this.cbAmazonS3CustomCNAME.Name = "cbAmazonS3CustomCNAME";
-            this.cbAmazonS3CustomCNAME.Size = new System.Drawing.Size(122, 17);
-            this.cbAmazonS3CustomCNAME.TabIndex = 12;
-            this.cbAmazonS3CustomCNAME.Text = "Use custom domain:";
             this.ttHelpTip.SetToolTip(this.cbAmazonS3CustomCNAME, resources.GetString("cbAmazonS3CustomCNAME.ToolTip"));
             this.cbAmazonS3CustomCNAME.UseVisualStyleBackColor = true;
             this.cbAmazonS3CustomCNAME.CheckedChanged += new System.EventHandler(this.cbAmazonS3CustomCNAME_CheckedChanged);
@@ -525,24 +515,17 @@
             // tpOtherUploaders
             // 
             this.tpOtherUploaders.Controls.Add(this.tcOtherUploaders);
-            this.tpOtherUploaders.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpOtherUploaders, "tpOtherUploaders");
             this.tpOtherUploaders.Name = "tpOtherUploaders";
-            this.tpOtherUploaders.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOtherUploaders.Size = new System.Drawing.Size(986, 525);
-            this.tpOtherUploaders.TabIndex = 6;
-            this.tpOtherUploaders.Text = "Other uploaders";
             this.tpOtherUploaders.UseVisualStyleBackColor = true;
             // 
             // tcOtherUploaders
             // 
             this.tcOtherUploaders.Controls.Add(this.tpCustomUploaders);
             this.tcOtherUploaders.Controls.Add(this.tpTwitter);
-            this.tcOtherUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcOtherUploaders.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tcOtherUploaders, "tcOtherUploaders");
             this.tcOtherUploaders.Name = "tcOtherUploaders";
             this.tcOtherUploaders.SelectedIndex = 0;
-            this.tcOtherUploaders.Size = new System.Drawing.Size(980, 519);
-            this.tcOtherUploaders.TabIndex = 0;
             // 
             // tpCustomUploaders
             // 
@@ -580,135 +563,89 @@
             this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderFileForm);
             this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderURL);
             this.tpCustomUploaders.Controls.Add(this.gbCustomUploaderArguments);
-            this.tpCustomUploaders.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpCustomUploaders, "tpCustomUploaders");
             this.tpCustomUploaders.Name = "tpCustomUploaders";
-            this.tpCustomUploaders.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCustomUploaders.Size = new System.Drawing.Size(972, 493);
-            this.tpCustomUploaders.TabIndex = 5;
-            this.tpCustomUploaders.Text = "Custom uploaders";
             this.tpCustomUploaders.UseVisualStyleBackColor = true;
             // 
             // btnCustomUploaderExamples
             // 
-            this.btnCustomUploaderExamples.Location = new System.Drawing.Point(560, 376);
+            resources.ApplyResources(this.btnCustomUploaderExamples, "btnCustomUploaderExamples");
             this.btnCustomUploaderExamples.Name = "btnCustomUploaderExamples";
-            this.btnCustomUploaderExamples.Size = new System.Drawing.Size(80, 24);
-            this.btnCustomUploaderExamples.TabIndex = 32;
-            this.btnCustomUploaderExamples.Text = "Examples...";
             this.btnCustomUploaderExamples.UseVisualStyleBackColor = true;
             this.btnCustomUploaderExamples.Click += new System.EventHandler(this.btnCustomUploaderExamples_Click);
             // 
             // btnCustomUploaderHelp
             // 
-            this.btnCustomUploaderHelp.Location = new System.Drawing.Point(488, 376);
+            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
             this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
-            this.btnCustomUploaderHelp.Size = new System.Drawing.Size(64, 24);
-            this.btnCustomUploaderHelp.TabIndex = 31;
-            this.btnCustomUploaderHelp.Text = "Help...";
             this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
             this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
             // 
             // lblCustomUploaderImageUploader
             // 
-            this.lblCustomUploaderImageUploader.AutoSize = true;
-            this.lblCustomUploaderImageUploader.Location = new System.Drawing.Point(16, 392);
+            resources.ApplyResources(this.lblCustomUploaderImageUploader, "lblCustomUploaderImageUploader");
             this.lblCustomUploaderImageUploader.Name = "lblCustomUploaderImageUploader";
-            this.lblCustomUploaderImageUploader.Size = new System.Drawing.Size(83, 13);
-            this.lblCustomUploaderImageUploader.TabIndex = 17;
-            this.lblCustomUploaderImageUploader.Text = "Image uploader:";
             // 
             // btnCustomUploaderFileUploaderTest
             // 
-            this.btnCustomUploaderFileUploaderTest.Location = new System.Drawing.Point(264, 436);
+            resources.ApplyResources(this.btnCustomUploaderFileUploaderTest, "btnCustomUploaderFileUploaderTest");
             this.btnCustomUploaderFileUploaderTest.Name = "btnCustomUploaderFileUploaderTest";
-            this.btnCustomUploaderFileUploaderTest.Size = new System.Drawing.Size(48, 24);
-            this.btnCustomUploaderFileUploaderTest.TabIndex = 25;
-            this.btnCustomUploaderFileUploaderTest.Text = "Test";
             this.btnCustomUploaderFileUploaderTest.UseVisualStyleBackColor = true;
             this.btnCustomUploaderFileUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderFileUploaderTest_Click);
             // 
             // lblCustomUploaderFileUploader
             // 
-            this.lblCustomUploaderFileUploader.AutoSize = true;
-            this.lblCustomUploaderFileUploader.Location = new System.Drawing.Point(16, 440);
+            resources.ApplyResources(this.lblCustomUploaderFileUploader, "lblCustomUploaderFileUploader");
             this.lblCustomUploaderFileUploader.Name = "lblCustomUploaderFileUploader";
-            this.lblCustomUploaderFileUploader.Size = new System.Drawing.Size(70, 13);
-            this.lblCustomUploaderFileUploader.TabIndex = 23;
-            this.lblCustomUploaderFileUploader.Text = "File uploader:";
             // 
             // btnCustomUploaderImageUploaderTest
             // 
-            this.btnCustomUploaderImageUploaderTest.Location = new System.Drawing.Point(264, 388);
+            resources.ApplyResources(this.btnCustomUploaderImageUploaderTest, "btnCustomUploaderImageUploaderTest");
             this.btnCustomUploaderImageUploaderTest.Name = "btnCustomUploaderImageUploaderTest";
-            this.btnCustomUploaderImageUploaderTest.Size = new System.Drawing.Size(48, 24);
-            this.btnCustomUploaderImageUploaderTest.TabIndex = 19;
-            this.btnCustomUploaderImageUploaderTest.Text = "Test";
             this.btnCustomUploaderImageUploaderTest.UseVisualStyleBackColor = true;
             this.btnCustomUploaderImageUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderImageUploaderTest_Click);
             // 
             // lblCustomUploaderTestResult
             // 
-            this.lblCustomUploaderTestResult.AutoSize = true;
-            this.lblCustomUploaderTestResult.Location = new System.Drawing.Point(328, 384);
+            resources.ApplyResources(this.lblCustomUploaderTestResult, "lblCustomUploaderTestResult");
             this.lblCustomUploaderTestResult.Name = "lblCustomUploaderTestResult";
-            this.lblCustomUploaderTestResult.Size = new System.Drawing.Size(59, 13);
-            this.lblCustomUploaderTestResult.TabIndex = 29;
-            this.lblCustomUploaderTestResult.Text = "Test result:";
             // 
             // txtCustomUploaderDeletionURL
             // 
-            this.txtCustomUploaderDeletionURL.Location = new System.Drawing.Point(536, 344);
+            resources.ApplyResources(this.txtCustomUploaderDeletionURL, "txtCustomUploaderDeletionURL");
             this.txtCustomUploaderDeletionURL.Name = "txtCustomUploaderDeletionURL";
-            this.txtCustomUploaderDeletionURL.Size = new System.Drawing.Size(248, 20);
-            this.txtCustomUploaderDeletionURL.TabIndex = 16;
             // 
             // cbCustomUploaderFileUploader
             // 
             this.cbCustomUploaderFileUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomUploaderFileUploader.FormattingEnabled = true;
-            this.cbCustomUploaderFileUploader.Location = new System.Drawing.Point(104, 436);
+            resources.ApplyResources(this.cbCustomUploaderFileUploader, "cbCustomUploaderFileUploader");
             this.cbCustomUploaderFileUploader.Name = "cbCustomUploaderFileUploader";
-            this.cbCustomUploaderFileUploader.Size = new System.Drawing.Size(152, 21);
-            this.cbCustomUploaderFileUploader.TabIndex = 24;
             this.cbCustomUploaderFileUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderFileUploader_SelectedIndexChanged);
             // 
             // lblCustomUploaderDeletionURL
             // 
-            this.lblCustomUploaderDeletionURL.AutoSize = true;
-            this.lblCustomUploaderDeletionURL.Location = new System.Drawing.Point(536, 328);
+            resources.ApplyResources(this.lblCustomUploaderDeletionURL, "lblCustomUploaderDeletionURL");
             this.lblCustomUploaderDeletionURL.Name = "lblCustomUploaderDeletionURL";
-            this.lblCustomUploaderDeletionURL.Size = new System.Drawing.Size(74, 13);
-            this.lblCustomUploaderDeletionURL.TabIndex = 15;
-            this.lblCustomUploaderDeletionURL.Text = "Deletion URL:";
             // 
             // btnCustomUploaderShowLastResponse
             // 
-            this.btnCustomUploaderShowLastResponse.Enabled = false;
-            this.btnCustomUploaderShowLastResponse.Location = new System.Drawing.Point(648, 376);
+            resources.ApplyResources(this.btnCustomUploaderShowLastResponse, "btnCustomUploaderShowLastResponse");
             this.btnCustomUploaderShowLastResponse.Name = "btnCustomUploaderShowLastResponse";
-            this.btnCustomUploaderShowLastResponse.Size = new System.Drawing.Size(136, 23);
-            this.btnCustomUploaderShowLastResponse.TabIndex = 33;
-            this.btnCustomUploaderShowLastResponse.Text = "Show last response...";
             this.btnCustomUploaderShowLastResponse.UseVisualStyleBackColor = true;
             this.btnCustomUploaderShowLastResponse.Click += new System.EventHandler(this.btnCustomUploaderShowLastResponse_Click);
             // 
             // lblCustomUploaderResponseType
             // 
-            this.lblCustomUploaderResponseType.AutoSize = true;
-            this.lblCustomUploaderResponseType.Location = new System.Drawing.Point(536, 8);
+            resources.ApplyResources(this.lblCustomUploaderResponseType, "lblCustomUploaderResponseType");
             this.lblCustomUploaderResponseType.Name = "lblCustomUploaderResponseType";
-            this.lblCustomUploaderResponseType.Size = new System.Drawing.Size(81, 13);
-            this.lblCustomUploaderResponseType.TabIndex = 8;
-            this.lblCustomUploaderResponseType.Text = "Response type:";
             // 
             // cbCustomUploaderURLShortener
             // 
             this.cbCustomUploaderURLShortener.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomUploaderURLShortener.FormattingEnabled = true;
-            this.cbCustomUploaderURLShortener.Location = new System.Drawing.Point(104, 460);
+            resources.ApplyResources(this.cbCustomUploaderURLShortener, "cbCustomUploaderURLShortener");
             this.cbCustomUploaderURLShortener.Name = "cbCustomUploaderURLShortener";
-            this.cbCustomUploaderURLShortener.Size = new System.Drawing.Size(152, 21);
-            this.cbCustomUploaderURLShortener.TabIndex = 27;
             this.cbCustomUploaderURLShortener.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLShortener_SelectedIndexChanged);
             // 
             // gbCustomUploaders
@@ -720,105 +657,72 @@
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderUpdate);
             this.gbCustomUploaders.Controls.Add(this.txtCustomUploaderName);
             this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderAdd);
-            this.gbCustomUploaders.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.gbCustomUploaders, "gbCustomUploaders");
             this.gbCustomUploaders.Name = "gbCustomUploaders";
-            this.gbCustomUploaders.Size = new System.Drawing.Size(248, 360);
-            this.gbCustomUploaders.TabIndex = 0;
             this.gbCustomUploaders.TabStop = false;
-            this.gbCustomUploaders.Text = "Uploaders";
             // 
             // eiCustomUploaders
             // 
-            this.eiCustomUploaders.Location = new System.Drawing.Point(8, 328);
+            resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.Name = "eiCustomUploaders";
             this.eiCustomUploaders.ObjectType = null;
-            this.eiCustomUploaders.Size = new System.Drawing.Size(140, 26);
-            this.eiCustomUploaders.TabIndex = 5;
             this.eiCustomUploaders.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
             this.eiCustomUploaders.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
             // 
             // lbCustomUploaderList
             // 
             this.lbCustomUploaderList.FormattingEnabled = true;
-            this.lbCustomUploaderList.IntegralHeight = false;
-            this.lbCustomUploaderList.Location = new System.Drawing.Point(8, 72);
+            resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
             this.lbCustomUploaderList.Name = "lbCustomUploaderList";
-            this.lbCustomUploaderList.Size = new System.Drawing.Size(232, 248);
-            this.lbCustomUploaderList.TabIndex = 4;
             this.lbCustomUploaderList.SelectedIndexChanged += new System.EventHandler(this.lbCustomUploaderList_SelectedIndexChanged);
             // 
             // btnCustomUploaderRemove
             // 
-            this.btnCustomUploaderRemove.Location = new System.Drawing.Point(88, 40);
+            resources.ApplyResources(this.btnCustomUploaderRemove, "btnCustomUploaderRemove");
             this.btnCustomUploaderRemove.Name = "btnCustomUploaderRemove";
-            this.btnCustomUploaderRemove.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderRemove.TabIndex = 2;
-            this.btnCustomUploaderRemove.Text = "Remove";
             this.btnCustomUploaderRemove.UseVisualStyleBackColor = true;
             this.btnCustomUploaderRemove.Click += new System.EventHandler(this.btnCustomUploaderRemove_Click);
             // 
             // btnCustomUploaderClear
             // 
-            this.btnCustomUploaderClear.Location = new System.Drawing.Point(152, 328);
+            resources.ApplyResources(this.btnCustomUploaderClear, "btnCustomUploaderClear");
             this.btnCustomUploaderClear.Name = "btnCustomUploaderClear";
-            this.btnCustomUploaderClear.Size = new System.Drawing.Size(88, 24);
-            this.btnCustomUploaderClear.TabIndex = 6;
-            this.btnCustomUploaderClear.Text = "Clear fields -->";
             this.btnCustomUploaderClear.UseVisualStyleBackColor = true;
             this.btnCustomUploaderClear.Click += new System.EventHandler(this.btnCustomUploaderClear_Click);
             // 
             // btnCustomUploaderUpdate
             // 
-            this.btnCustomUploaderUpdate.Location = new System.Drawing.Point(168, 40);
+            resources.ApplyResources(this.btnCustomUploaderUpdate, "btnCustomUploaderUpdate");
             this.btnCustomUploaderUpdate.Name = "btnCustomUploaderUpdate";
-            this.btnCustomUploaderUpdate.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderUpdate.TabIndex = 3;
-            this.btnCustomUploaderUpdate.Text = "Update";
             this.btnCustomUploaderUpdate.UseVisualStyleBackColor = true;
             this.btnCustomUploaderUpdate.Click += new System.EventHandler(this.btnCustomUploaderUpdate_Click);
             // 
             // txtCustomUploaderName
             // 
-            this.txtCustomUploaderName.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.txtCustomUploaderName, "txtCustomUploaderName");
             this.txtCustomUploaderName.Name = "txtCustomUploaderName";
-            this.txtCustomUploaderName.Size = new System.Drawing.Size(232, 20);
-            this.txtCustomUploaderName.TabIndex = 0;
             // 
             // btnCustomUploaderAdd
             // 
-            this.btnCustomUploaderAdd.Location = new System.Drawing.Point(8, 40);
+            resources.ApplyResources(this.btnCustomUploaderAdd, "btnCustomUploaderAdd");
             this.btnCustomUploaderAdd.Name = "btnCustomUploaderAdd";
-            this.btnCustomUploaderAdd.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderAdd.TabIndex = 1;
-            this.btnCustomUploaderAdd.Text = "Add";
             this.btnCustomUploaderAdd.UseVisualStyleBackColor = true;
             this.btnCustomUploaderAdd.Click += new System.EventHandler(this.btnCustomUploaderAdd_Click);
             // 
             // lblCustomUploaderTextUploader
             // 
-            this.lblCustomUploaderTextUploader.AutoSize = true;
-            this.lblCustomUploaderTextUploader.Location = new System.Drawing.Point(16, 416);
+            resources.ApplyResources(this.lblCustomUploaderTextUploader, "lblCustomUploaderTextUploader");
             this.lblCustomUploaderTextUploader.Name = "lblCustomUploaderTextUploader";
-            this.lblCustomUploaderTextUploader.Size = new System.Drawing.Size(75, 13);
-            this.lblCustomUploaderTextUploader.TabIndex = 20;
-            this.lblCustomUploaderTextUploader.Text = "Text uploader:";
             // 
             // lblCustomUploaderRequestURL
             // 
-            this.lblCustomUploaderRequestURL.AutoSize = true;
-            this.lblCustomUploaderRequestURL.Location = new System.Drawing.Point(272, 56);
+            resources.ApplyResources(this.lblCustomUploaderRequestURL, "lblCustomUploaderRequestURL");
             this.lblCustomUploaderRequestURL.Name = "lblCustomUploaderRequestURL";
-            this.lblCustomUploaderRequestURL.Size = new System.Drawing.Size(75, 13);
-            this.lblCustomUploaderRequestURL.TabIndex = 3;
-            this.lblCustomUploaderRequestURL.Text = "Request URL:";
             // 
             // btnCustomUploaderURLShortenerTest
             // 
-            this.btnCustomUploaderURLShortenerTest.Location = new System.Drawing.Point(264, 460);
+            resources.ApplyResources(this.btnCustomUploaderURLShortenerTest, "btnCustomUploaderURLShortenerTest");
             this.btnCustomUploaderURLShortenerTest.Name = "btnCustomUploaderURLShortenerTest";
-            this.btnCustomUploaderURLShortenerTest.Size = new System.Drawing.Size(48, 24);
-            this.btnCustomUploaderURLShortenerTest.TabIndex = 28;
-            this.btnCustomUploaderURLShortenerTest.Text = "Test";
             this.btnCustomUploaderURLShortenerTest.UseVisualStyleBackColor = true;
             this.btnCustomUploaderURLShortenerTest.Click += new System.EventHandler(this.btnCustomUploaderURLShortenerTest_Click);
             // 
@@ -829,29 +733,21 @@
             this.gbCustomUploaderRegexp.Controls.Add(this.lvCustomUploaderRegexps);
             this.gbCustomUploaderRegexp.Controls.Add(this.btnCustomUploaderRegexpRemove);
             this.gbCustomUploaderRegexp.Controls.Add(this.btnCustomUploaderRegexpAdd);
-            this.gbCustomUploaderRegexp.Location = new System.Drawing.Point(536, 56);
+            resources.ApplyResources(this.gbCustomUploaderRegexp, "gbCustomUploaderRegexp");
             this.gbCustomUploaderRegexp.Name = "gbCustomUploaderRegexp";
-            this.gbCustomUploaderRegexp.Size = new System.Drawing.Size(248, 184);
-            this.gbCustomUploaderRegexp.TabIndex = 10;
             this.gbCustomUploaderRegexp.TabStop = false;
-            this.gbCustomUploaderRegexp.Text = "Regex from response";
             // 
             // btnCustomUploaderRegexpEdit
             // 
-            this.btnCustomUploaderRegexpEdit.Location = new System.Drawing.Point(168, 40);
+            resources.ApplyResources(this.btnCustomUploaderRegexpEdit, "btnCustomUploaderRegexpEdit");
             this.btnCustomUploaderRegexpEdit.Name = "btnCustomUploaderRegexpEdit";
-            this.btnCustomUploaderRegexpEdit.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderRegexpEdit.TabIndex = 3;
-            this.btnCustomUploaderRegexpEdit.Text = "Update";
             this.btnCustomUploaderRegexpEdit.UseVisualStyleBackColor = true;
             this.btnCustomUploaderRegexpEdit.Click += new System.EventHandler(this.btnCustomUploaderRegexpEdit_Click);
             // 
             // txtCustomUploaderRegexp
             // 
-            this.txtCustomUploaderRegexp.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.txtCustomUploaderRegexp, "txtCustomUploaderRegexp");
             this.txtCustomUploaderRegexp.Name = "txtCustomUploaderRegexp";
-            this.txtCustomUploaderRegexp.Size = new System.Drawing.Size(232, 20);
-            this.txtCustomUploaderRegexp.TabIndex = 0;
             // 
             // lvCustomUploaderRegexps
             // 
@@ -861,37 +757,29 @@
             this.lvCustomUploaderRegexps.GridLines = true;
             this.lvCustomUploaderRegexps.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCustomUploaderRegexps.HideSelection = false;
-            this.lvCustomUploaderRegexps.Location = new System.Drawing.Point(8, 72);
+            resources.ApplyResources(this.lvCustomUploaderRegexps, "lvCustomUploaderRegexps");
             this.lvCustomUploaderRegexps.MultiSelect = false;
             this.lvCustomUploaderRegexps.Name = "lvCustomUploaderRegexps";
             this.lvCustomUploaderRegexps.Scrollable = false;
-            this.lvCustomUploaderRegexps.Size = new System.Drawing.Size(232, 104);
-            this.lvCustomUploaderRegexps.TabIndex = 4;
             this.lvCustomUploaderRegexps.UseCompatibleStateImageBehavior = false;
             this.lvCustomUploaderRegexps.View = System.Windows.Forms.View.Details;
             this.lvCustomUploaderRegexps.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderRegexps_SelectedIndexChanged);
             // 
             // lvRegexpsColumn
             // 
-            this.lvRegexpsColumn.Width = 227;
+            resources.ApplyResources(this.lvRegexpsColumn, "lvRegexpsColumn");
             // 
             // btnCustomUploaderRegexpRemove
             // 
-            this.btnCustomUploaderRegexpRemove.Location = new System.Drawing.Point(88, 40);
+            resources.ApplyResources(this.btnCustomUploaderRegexpRemove, "btnCustomUploaderRegexpRemove");
             this.btnCustomUploaderRegexpRemove.Name = "btnCustomUploaderRegexpRemove";
-            this.btnCustomUploaderRegexpRemove.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderRegexpRemove.TabIndex = 2;
-            this.btnCustomUploaderRegexpRemove.Text = "Remove";
             this.btnCustomUploaderRegexpRemove.UseVisualStyleBackColor = true;
             this.btnCustomUploaderRegexpRemove.Click += new System.EventHandler(this.btnCustomUploaderRegexpRemove_Click);
             // 
             // btnCustomUploaderRegexpAdd
             // 
-            this.btnCustomUploaderRegexpAdd.Location = new System.Drawing.Point(8, 40);
+            resources.ApplyResources(this.btnCustomUploaderRegexpAdd, "btnCustomUploaderRegexpAdd");
             this.btnCustomUploaderRegexpAdd.Name = "btnCustomUploaderRegexpAdd";
-            this.btnCustomUploaderRegexpAdd.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderRegexpAdd.TabIndex = 1;
-            this.btnCustomUploaderRegexpAdd.Text = "Add";
             this.btnCustomUploaderRegexpAdd.UseVisualStyleBackColor = true;
             this.btnCustomUploaderRegexpAdd.Click += new System.EventHandler(this.btnCustomUploaderRegexpAdd_Click);
             // 
@@ -899,132 +787,90 @@
             // 
             this.cbCustomUploaderTextUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomUploaderTextUploader.FormattingEnabled = true;
-            this.cbCustomUploaderTextUploader.Location = new System.Drawing.Point(104, 412);
+            resources.ApplyResources(this.cbCustomUploaderTextUploader, "cbCustomUploaderTextUploader");
             this.cbCustomUploaderTextUploader.Name = "cbCustomUploaderTextUploader";
-            this.cbCustomUploaderTextUploader.Size = new System.Drawing.Size(152, 21);
-            this.cbCustomUploaderTextUploader.TabIndex = 21;
             this.cbCustomUploaderTextUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderTextUploader_SelectedIndexChanged);
             // 
             // txtCustomUploaderThumbnailURL
             // 
-            this.txtCustomUploaderThumbnailURL.Location = new System.Drawing.Point(536, 304);
+            resources.ApplyResources(this.txtCustomUploaderThumbnailURL, "txtCustomUploaderThumbnailURL");
             this.txtCustomUploaderThumbnailURL.Name = "txtCustomUploaderThumbnailURL";
-            this.txtCustomUploaderThumbnailURL.Size = new System.Drawing.Size(248, 20);
-            this.txtCustomUploaderThumbnailURL.TabIndex = 14;
             // 
             // lblCustomUploaderURLShortener
             // 
-            this.lblCustomUploaderURLShortener.AutoSize = true;
-            this.lblCustomUploaderURLShortener.Location = new System.Drawing.Point(16, 464);
+            resources.ApplyResources(this.lblCustomUploaderURLShortener, "lblCustomUploaderURLShortener");
             this.lblCustomUploaderURLShortener.Name = "lblCustomUploaderURLShortener";
-            this.lblCustomUploaderURLShortener.Size = new System.Drawing.Size(79, 13);
-            this.lblCustomUploaderURLShortener.TabIndex = 26;
-            this.lblCustomUploaderURLShortener.Text = "URL shortener:";
             // 
             // cbCustomUploaderResponseType
             // 
             this.cbCustomUploaderResponseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomUploaderResponseType.FormattingEnabled = true;
-            this.cbCustomUploaderResponseType.Location = new System.Drawing.Point(536, 24);
+            resources.ApplyResources(this.cbCustomUploaderResponseType, "cbCustomUploaderResponseType");
             this.cbCustomUploaderResponseType.Name = "cbCustomUploaderResponseType";
-            this.cbCustomUploaderResponseType.Size = new System.Drawing.Size(144, 21);
-            this.cbCustomUploaderResponseType.TabIndex = 9;
             // 
             // btnCustomUploaderTextUploaderTest
             // 
-            this.btnCustomUploaderTextUploaderTest.Location = new System.Drawing.Point(264, 412);
+            resources.ApplyResources(this.btnCustomUploaderTextUploaderTest, "btnCustomUploaderTextUploaderTest");
             this.btnCustomUploaderTextUploaderTest.Name = "btnCustomUploaderTextUploaderTest";
-            this.btnCustomUploaderTextUploaderTest.Size = new System.Drawing.Size(48, 24);
-            this.btnCustomUploaderTextUploaderTest.TabIndex = 22;
-            this.btnCustomUploaderTextUploaderTest.Text = "Test";
             this.btnCustomUploaderTextUploaderTest.UseVisualStyleBackColor = true;
             this.btnCustomUploaderTextUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderTextUploaderTest_Click);
             // 
             // txtCustomUploaderURL
             // 
-            this.txtCustomUploaderURL.Location = new System.Drawing.Point(536, 264);
+            resources.ApplyResources(this.txtCustomUploaderURL, "txtCustomUploaderURL");
             this.txtCustomUploaderURL.Name = "txtCustomUploaderURL";
-            this.txtCustomUploaderURL.Size = new System.Drawing.Size(248, 20);
-            this.txtCustomUploaderURL.TabIndex = 12;
             // 
             // cbCustomUploaderImageUploader
             // 
             this.cbCustomUploaderImageUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomUploaderImageUploader.FormattingEnabled = true;
-            this.cbCustomUploaderImageUploader.Location = new System.Drawing.Point(104, 388);
+            resources.ApplyResources(this.cbCustomUploaderImageUploader, "cbCustomUploaderImageUploader");
             this.cbCustomUploaderImageUploader.Name = "cbCustomUploaderImageUploader";
-            this.cbCustomUploaderImageUploader.Size = new System.Drawing.Size(152, 21);
-            this.cbCustomUploaderImageUploader.TabIndex = 18;
             this.cbCustomUploaderImageUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderImageUploader_SelectedIndexChanged);
             // 
             // txtCustomUploaderRequestURL
             // 
-            this.txtCustomUploaderRequestURL.Location = new System.Drawing.Point(272, 72);
+            resources.ApplyResources(this.txtCustomUploaderRequestURL, "txtCustomUploaderRequestURL");
             this.txtCustomUploaderRequestURL.Name = "txtCustomUploaderRequestURL";
-            this.txtCustomUploaderRequestURL.Size = new System.Drawing.Size(248, 20);
-            this.txtCustomUploaderRequestURL.TabIndex = 4;
             // 
             // txtCustomUploaderLog
             // 
-            this.txtCustomUploaderLog.Location = new System.Drawing.Point(328, 408);
+            resources.ApplyResources(this.txtCustomUploaderLog, "txtCustomUploaderLog");
             this.txtCustomUploaderLog.Name = "txtCustomUploaderLog";
-            this.txtCustomUploaderLog.Size = new System.Drawing.Size(456, 72);
-            this.txtCustomUploaderLog.TabIndex = 30;
-            this.txtCustomUploaderLog.Text = "";
             this.txtCustomUploaderLog.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
             // 
             // lblCustomUploaderThumbnailURL
             // 
-            this.lblCustomUploaderThumbnailURL.AutoSize = true;
-            this.lblCustomUploaderThumbnailURL.Location = new System.Drawing.Point(536, 288);
+            resources.ApplyResources(this.lblCustomUploaderThumbnailURL, "lblCustomUploaderThumbnailURL");
             this.lblCustomUploaderThumbnailURL.Name = "lblCustomUploaderThumbnailURL";
-            this.lblCustomUploaderThumbnailURL.Size = new System.Drawing.Size(84, 13);
-            this.lblCustomUploaderThumbnailURL.TabIndex = 13;
-            this.lblCustomUploaderThumbnailURL.Text = "Thumbnail URL:";
             // 
             // lblCustomUploaderFileForm
             // 
-            this.lblCustomUploaderFileForm.AutoSize = true;
-            this.lblCustomUploaderFileForm.Location = new System.Drawing.Point(272, 96);
+            resources.ApplyResources(this.lblCustomUploaderFileForm, "lblCustomUploaderFileForm");
             this.lblCustomUploaderFileForm.Name = "lblCustomUploaderFileForm";
-            this.lblCustomUploaderFileForm.Size = new System.Drawing.Size(78, 13);
-            this.lblCustomUploaderFileForm.TabIndex = 5;
-            this.lblCustomUploaderFileForm.Text = "File form name:";
             // 
             // lblCustomUploaderRequestType
             // 
-            this.lblCustomUploaderRequestType.AutoSize = true;
-            this.lblCustomUploaderRequestType.Location = new System.Drawing.Point(272, 8);
+            resources.ApplyResources(this.lblCustomUploaderRequestType, "lblCustomUploaderRequestType");
             this.lblCustomUploaderRequestType.Name = "lblCustomUploaderRequestType";
-            this.lblCustomUploaderRequestType.Size = new System.Drawing.Size(73, 13);
-            this.lblCustomUploaderRequestType.TabIndex = 1;
-            this.lblCustomUploaderRequestType.Text = "Request type:";
             // 
             // cbCustomUploaderRequestType
             // 
             this.cbCustomUploaderRequestType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomUploaderRequestType.FormattingEnabled = true;
-            this.cbCustomUploaderRequestType.Location = new System.Drawing.Point(272, 24);
+            resources.ApplyResources(this.cbCustomUploaderRequestType, "cbCustomUploaderRequestType");
             this.cbCustomUploaderRequestType.Name = "cbCustomUploaderRequestType";
-            this.cbCustomUploaderRequestType.Size = new System.Drawing.Size(144, 21);
-            this.cbCustomUploaderRequestType.TabIndex = 2;
             this.cbCustomUploaderRequestType.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderRequestType_SelectedIndexChanged);
             // 
             // txtCustomUploaderFileForm
             // 
-            this.txtCustomUploaderFileForm.Location = new System.Drawing.Point(272, 112);
+            resources.ApplyResources(this.txtCustomUploaderFileForm, "txtCustomUploaderFileForm");
             this.txtCustomUploaderFileForm.Name = "txtCustomUploaderFileForm";
-            this.txtCustomUploaderFileForm.Size = new System.Drawing.Size(248, 20);
-            this.txtCustomUploaderFileForm.TabIndex = 6;
             // 
             // lblCustomUploaderURL
             // 
-            this.lblCustomUploaderURL.AutoSize = true;
-            this.lblCustomUploaderURL.Location = new System.Drawing.Point(536, 248);
+            resources.ApplyResources(this.lblCustomUploaderURL, "lblCustomUploaderURL");
             this.lblCustomUploaderURL.Name = "lblCustomUploaderURL";
-            this.lblCustomUploaderURL.Size = new System.Drawing.Size(32, 13);
-            this.lblCustomUploaderURL.TabIndex = 11;
-            this.lblCustomUploaderURL.Text = "URL:";
             // 
             // gbCustomUploaderArguments
             // 
@@ -1034,37 +880,26 @@
             this.gbCustomUploaderArguments.Controls.Add(this.lvCustomUploaderArguments);
             this.gbCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgAdd);
             this.gbCustomUploaderArguments.Controls.Add(this.txtCustomUploaderArgName);
-            this.gbCustomUploaderArguments.Location = new System.Drawing.Point(272, 136);
+            resources.ApplyResources(this.gbCustomUploaderArguments, "gbCustomUploaderArguments");
             this.gbCustomUploaderArguments.Name = "gbCustomUploaderArguments";
-            this.gbCustomUploaderArguments.Size = new System.Drawing.Size(248, 232);
-            this.gbCustomUploaderArguments.TabIndex = 7;
             this.gbCustomUploaderArguments.TabStop = false;
-            this.gbCustomUploaderArguments.Text = "Arguments";
             // 
             // btnCustomUploaderArgEdit
             // 
-            this.btnCustomUploaderArgEdit.Location = new System.Drawing.Point(168, 40);
+            resources.ApplyResources(this.btnCustomUploaderArgEdit, "btnCustomUploaderArgEdit");
             this.btnCustomUploaderArgEdit.Name = "btnCustomUploaderArgEdit";
-            this.btnCustomUploaderArgEdit.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderArgEdit.TabIndex = 4;
-            this.btnCustomUploaderArgEdit.Text = "Update";
             this.btnCustomUploaderArgEdit.UseVisualStyleBackColor = true;
             this.btnCustomUploaderArgEdit.Click += new System.EventHandler(this.btnCustomUploaderArgEdit_Click);
             // 
             // txtCustomUploaderArgValue
             // 
-            this.txtCustomUploaderArgValue.Location = new System.Drawing.Point(128, 16);
+            resources.ApplyResources(this.txtCustomUploaderArgValue, "txtCustomUploaderArgValue");
             this.txtCustomUploaderArgValue.Name = "txtCustomUploaderArgValue";
-            this.txtCustomUploaderArgValue.Size = new System.Drawing.Size(112, 20);
-            this.txtCustomUploaderArgValue.TabIndex = 1;
             // 
             // btnCustomUploaderArgRemove
             // 
-            this.btnCustomUploaderArgRemove.Location = new System.Drawing.Point(88, 40);
+            resources.ApplyResources(this.btnCustomUploaderArgRemove, "btnCustomUploaderArgRemove");
             this.btnCustomUploaderArgRemove.Name = "btnCustomUploaderArgRemove";
-            this.btnCustomUploaderArgRemove.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderArgRemove.TabIndex = 3;
-            this.btnCustomUploaderArgRemove.Text = "Remove";
             this.btnCustomUploaderArgRemove.UseVisualStyleBackColor = true;
             this.btnCustomUploaderArgRemove.Click += new System.EventHandler(this.btnCustomUploaderArgRemove_Click);
             // 
@@ -1077,82 +912,58 @@
             this.lvCustomUploaderArguments.GridLines = true;
             this.lvCustomUploaderArguments.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvCustomUploaderArguments.HideSelection = false;
-            this.lvCustomUploaderArguments.Location = new System.Drawing.Point(8, 72);
+            resources.ApplyResources(this.lvCustomUploaderArguments, "lvCustomUploaderArguments");
             this.lvCustomUploaderArguments.MultiSelect = false;
             this.lvCustomUploaderArguments.Name = "lvCustomUploaderArguments";
-            this.lvCustomUploaderArguments.Size = new System.Drawing.Size(232, 152);
-            this.lvCustomUploaderArguments.TabIndex = 5;
             this.lvCustomUploaderArguments.UseCompatibleStateImageBehavior = false;
             this.lvCustomUploaderArguments.View = System.Windows.Forms.View.Details;
             this.lvCustomUploaderArguments.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderArguments_SelectedIndexChanged);
             // 
             // chArgumentsName
             // 
-            this.chArgumentsName.Text = "Name";
-            this.chArgumentsName.Width = 114;
+            resources.ApplyResources(this.chArgumentsName, "chArgumentsName");
             // 
             // chArgumentsValue
             // 
-            this.chArgumentsValue.Text = "Value";
-            this.chArgumentsValue.Width = 114;
+            resources.ApplyResources(this.chArgumentsValue, "chArgumentsValue");
             // 
             // btnCustomUploaderArgAdd
             // 
-            this.btnCustomUploaderArgAdd.Location = new System.Drawing.Point(8, 40);
+            resources.ApplyResources(this.btnCustomUploaderArgAdd, "btnCustomUploaderArgAdd");
             this.btnCustomUploaderArgAdd.Name = "btnCustomUploaderArgAdd";
-            this.btnCustomUploaderArgAdd.Size = new System.Drawing.Size(72, 24);
-            this.btnCustomUploaderArgAdd.TabIndex = 2;
-            this.btnCustomUploaderArgAdd.Text = "Add";
             this.btnCustomUploaderArgAdd.UseVisualStyleBackColor = true;
             this.btnCustomUploaderArgAdd.Click += new System.EventHandler(this.btnCustomUploaderArgAdd_Click);
             // 
             // txtCustomUploaderArgName
             // 
-            this.txtCustomUploaderArgName.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.txtCustomUploaderArgName, "txtCustomUploaderArgName");
             this.txtCustomUploaderArgName.Name = "txtCustomUploaderArgName";
-            this.txtCustomUploaderArgName.Size = new System.Drawing.Size(112, 20);
-            this.txtCustomUploaderArgName.TabIndex = 0;
             // 
             // tpTwitter
             // 
             this.tpTwitter.Controls.Add(this.btnTwitterLogin);
             this.tpTwitter.Controls.Add(this.ucTwitterAccounts);
-            this.tpTwitter.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpTwitter, "tpTwitter");
             this.tpTwitter.Name = "tpTwitter";
-            this.tpTwitter.Size = new System.Drawing.Size(972, 493);
-            this.tpTwitter.TabIndex = 0;
-            this.tpTwitter.Text = "Twitter";
             this.tpTwitter.UseVisualStyleBackColor = true;
             // 
             // btnTwitterLogin
             // 
-            this.btnTwitterLogin.Enabled = false;
-            this.btnTwitterLogin.Location = new System.Drawing.Point(296, 8);
+            resources.ApplyResources(this.btnTwitterLogin, "btnTwitterLogin");
             this.btnTwitterLogin.Name = "btnTwitterLogin";
-            this.btnTwitterLogin.Size = new System.Drawing.Size(64, 24);
-            this.btnTwitterLogin.TabIndex = 1;
-            this.btnTwitterLogin.Text = "Login";
             this.btnTwitterLogin.UseVisualStyleBackColor = true;
             this.btnTwitterLogin.Click += new System.EventHandler(this.btnTwitterLogin_Click);
             // 
             // ucTwitterAccounts
             // 
-            this.ucTwitterAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTwitterAccounts.Location = new System.Drawing.Point(0, 0);
-            this.ucTwitterAccounts.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.ucTwitterAccounts, "ucTwitterAccounts");
             this.ucTwitterAccounts.Name = "ucTwitterAccounts";
-            this.ucTwitterAccounts.Size = new System.Drawing.Size(972, 493);
-            this.ucTwitterAccounts.TabIndex = 0;
             // 
             // tpURLShorteners
             // 
             this.tpURLShorteners.Controls.Add(this.tcURLShorteners);
-            this.tpURLShorteners.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpURLShorteners, "tpURLShorteners");
             this.tpURLShorteners.Name = "tpURLShorteners";
-            this.tpURLShorteners.Padding = new System.Windows.Forms.Padding(3);
-            this.tpURLShorteners.Size = new System.Drawing.Size(986, 525);
-            this.tpURLShorteners.TabIndex = 3;
-            this.tpURLShorteners.Text = "URL shorteners";
             this.tpURLShorteners.UseVisualStyleBackColor = true;
             // 
             // tcURLShorteners
@@ -1161,50 +972,35 @@
             this.tcURLShorteners.Controls.Add(this.tpGoogleURLShortener);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
             this.tcURLShorteners.Controls.Add(this.tpAdFly);
-            this.tcURLShorteners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcURLShorteners.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
             this.tcURLShorteners.Name = "tcURLShorteners";
             this.tcURLShorteners.SelectedIndex = 0;
-            this.tcURLShorteners.Size = new System.Drawing.Size(980, 519);
-            this.tcURLShorteners.TabIndex = 0;
             // 
             // tpBitly
             // 
             this.tpBitly.Controls.Add(this.txtBitlyDomain);
             this.tpBitly.Controls.Add(this.lblBitlyDomain);
             this.tpBitly.Controls.Add(this.oauth2Bitly);
-            this.tpBitly.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpBitly, "tpBitly");
             this.tpBitly.Name = "tpBitly";
-            this.tpBitly.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBitly.Size = new System.Drawing.Size(972, 493);
-            this.tpBitly.TabIndex = 1;
-            this.tpBitly.Text = "bit.ly";
             this.tpBitly.UseVisualStyleBackColor = true;
             // 
             // txtBitlyDomain
             // 
-            this.txtBitlyDomain.Location = new System.Drawing.Point(64, 228);
+            resources.ApplyResources(this.txtBitlyDomain, "txtBitlyDomain");
             this.txtBitlyDomain.Name = "txtBitlyDomain";
-            this.txtBitlyDomain.Size = new System.Drawing.Size(272, 20);
-            this.txtBitlyDomain.TabIndex = 2;
             this.txtBitlyDomain.TextChanged += new System.EventHandler(this.txtBitlyDomain_TextChanged);
             // 
             // lblBitlyDomain
             // 
-            this.lblBitlyDomain.AutoSize = true;
-            this.lblBitlyDomain.Location = new System.Drawing.Point(16, 232);
+            resources.ApplyResources(this.lblBitlyDomain, "lblBitlyDomain");
             this.lblBitlyDomain.Name = "lblBitlyDomain";
-            this.lblBitlyDomain.Size = new System.Drawing.Size(46, 13);
-            this.lblBitlyDomain.TabIndex = 1;
-            this.lblBitlyDomain.Text = "Domain:";
             // 
             // oauth2Bitly
             // 
             this.oauth2Bitly.IsRefreshable = false;
-            this.oauth2Bitly.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.oauth2Bitly, "oauth2Bitly");
             this.oauth2Bitly.Name = "oauth2Bitly";
-            this.oauth2Bitly.Size = new System.Drawing.Size(328, 208);
-            this.oauth2Bitly.TabIndex = 0;
             this.oauth2Bitly.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
             this.oauth2Bitly.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
             this.oauth2Bitly.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Bitly_ClearButtonClicked);
@@ -1213,20 +1009,14 @@
             // 
             this.tpGoogleURLShortener.Controls.Add(this.oauth2GoogleURLShortener);
             this.tpGoogleURLShortener.Controls.Add(this.atcGoogleURLShortenerAccountType);
-            this.tpGoogleURLShortener.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpGoogleURLShortener, "tpGoogleURLShortener");
             this.tpGoogleURLShortener.Name = "tpGoogleURLShortener";
-            this.tpGoogleURLShortener.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGoogleURLShortener.Size = new System.Drawing.Size(972, 493);
-            this.tpGoogleURLShortener.TabIndex = 0;
-            this.tpGoogleURLShortener.Text = "Google";
             this.tpGoogleURLShortener.UseVisualStyleBackColor = true;
             // 
             // oauth2GoogleURLShortener
             // 
-            this.oauth2GoogleURLShortener.Location = new System.Drawing.Point(16, 56);
+            resources.ApplyResources(this.oauth2GoogleURLShortener, "oauth2GoogleURLShortener");
             this.oauth2GoogleURLShortener.Name = "oauth2GoogleURLShortener";
-            this.oauth2GoogleURLShortener.Size = new System.Drawing.Size(328, 240);
-            this.oauth2GoogleURLShortener.TabIndex = 1;
             this.oauth2GoogleURLShortener.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleURLShortener_OpenButtonClicked);
             this.oauth2GoogleURLShortener.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleURLShortener_CompleteButtonClicked);
             this.oauth2GoogleURLShortener.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleURLShortener_ClearButtonClicked);
@@ -1234,11 +1024,9 @@
             // 
             // atcGoogleURLShortenerAccountType
             // 
-            this.atcGoogleURLShortenerAccountType.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.atcGoogleURLShortenerAccountType, "atcGoogleURLShortenerAccountType");
             this.atcGoogleURLShortenerAccountType.Name = "atcGoogleURLShortenerAccountType";
             this.atcGoogleURLShortenerAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcGoogleURLShortenerAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcGoogleURLShortenerAccountType.TabIndex = 0;
             this.atcGoogleURLShortenerAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGoogleURLShortenerAccountType_AccountTypeChanged);
             // 
             // tpYourls
@@ -1252,92 +1040,60 @@
             this.tpYourls.Controls.Add(this.lblYourlsSignature);
             this.tpYourls.Controls.Add(this.txtYourlsAPIURL);
             this.tpYourls.Controls.Add(this.lblYourlsAPIURL);
-            this.tpYourls.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpYourls, "tpYourls");
             this.tpYourls.Name = "tpYourls";
-            this.tpYourls.Padding = new System.Windows.Forms.Padding(3);
-            this.tpYourls.Size = new System.Drawing.Size(972, 493);
-            this.tpYourls.TabIndex = 2;
-            this.tpYourls.Text = "YOURLS";
             this.tpYourls.UseVisualStyleBackColor = true;
             // 
             // txtYourlsPassword
             // 
-            this.txtYourlsPassword.Location = new System.Drawing.Point(88, 148);
+            resources.ApplyResources(this.txtYourlsPassword, "txtYourlsPassword");
             this.txtYourlsPassword.Name = "txtYourlsPassword";
-            this.txtYourlsPassword.Size = new System.Drawing.Size(224, 20);
-            this.txtYourlsPassword.TabIndex = 8;
             this.txtYourlsPassword.UseSystemPasswordChar = true;
             this.txtYourlsPassword.TextChanged += new System.EventHandler(this.txtYourlsPassword_TextChanged);
             // 
             // txtYourlsUsername
             // 
-            this.txtYourlsUsername.Location = new System.Drawing.Point(88, 116);
+            resources.ApplyResources(this.txtYourlsUsername, "txtYourlsUsername");
             this.txtYourlsUsername.Name = "txtYourlsUsername";
-            this.txtYourlsUsername.Size = new System.Drawing.Size(224, 20);
-            this.txtYourlsUsername.TabIndex = 6;
             this.txtYourlsUsername.TextChanged += new System.EventHandler(this.txtYourlsUsername_TextChanged);
             // 
             // txtYourlsSignature
             // 
-            this.txtYourlsSignature.Location = new System.Drawing.Point(88, 52);
+            resources.ApplyResources(this.txtYourlsSignature, "txtYourlsSignature");
             this.txtYourlsSignature.Name = "txtYourlsSignature";
-            this.txtYourlsSignature.Size = new System.Drawing.Size(224, 20);
-            this.txtYourlsSignature.TabIndex = 3;
             this.txtYourlsSignature.UseSystemPasswordChar = true;
             this.txtYourlsSignature.TextChanged += new System.EventHandler(this.txtYourlsSignature_TextChanged);
             // 
             // lblYourlsNote
             // 
-            this.lblYourlsNote.AutoSize = true;
-            this.lblYourlsNote.Location = new System.Drawing.Point(24, 88);
+            resources.ApplyResources(this.lblYourlsNote, "lblYourlsNote");
             this.lblYourlsNote.Name = "lblYourlsNote";
-            this.lblYourlsNote.Size = new System.Drawing.Size(357, 13);
-            this.lblYourlsNote.TabIndex = 4;
-            this.lblYourlsNote.Text = "Note: If you have a Signature then you don\'t need a Username/Password.";
             // 
             // lblYourlsPassword
             // 
-            this.lblYourlsPassword.AutoSize = true;
-            this.lblYourlsPassword.Location = new System.Drawing.Point(24, 152);
+            resources.ApplyResources(this.lblYourlsPassword, "lblYourlsPassword");
             this.lblYourlsPassword.Name = "lblYourlsPassword";
-            this.lblYourlsPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblYourlsPassword.TabIndex = 7;
-            this.lblYourlsPassword.Text = "Password:";
             // 
             // lblYourlsUsername
             // 
-            this.lblYourlsUsername.AutoSize = true;
-            this.lblYourlsUsername.Location = new System.Drawing.Point(24, 120);
+            resources.ApplyResources(this.lblYourlsUsername, "lblYourlsUsername");
             this.lblYourlsUsername.Name = "lblYourlsUsername";
-            this.lblYourlsUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblYourlsUsername.TabIndex = 5;
-            this.lblYourlsUsername.Text = "Username:";
             // 
             // lblYourlsSignature
             // 
-            this.lblYourlsSignature.AutoSize = true;
-            this.lblYourlsSignature.Location = new System.Drawing.Point(24, 56);
+            resources.ApplyResources(this.lblYourlsSignature, "lblYourlsSignature");
             this.lblYourlsSignature.Name = "lblYourlsSignature";
-            this.lblYourlsSignature.Size = new System.Drawing.Size(55, 13);
-            this.lblYourlsSignature.TabIndex = 2;
-            this.lblYourlsSignature.Text = "Signature:";
             // 
             // txtYourlsAPIURL
             // 
-            this.txtYourlsAPIURL.Location = new System.Drawing.Point(88, 20);
+            resources.ApplyResources(this.txtYourlsAPIURL, "txtYourlsAPIURL");
             this.txtYourlsAPIURL.Name = "txtYourlsAPIURL";
-            this.txtYourlsAPIURL.Size = new System.Drawing.Size(472, 20);
-            this.txtYourlsAPIURL.TabIndex = 1;
             this.txtYourlsAPIURL.TextChanged += new System.EventHandler(this.txtYourlsAPIURL_TextChanged);
             // 
             // lblYourlsAPIURL
             // 
-            this.lblYourlsAPIURL.AutoSize = true;
-            this.lblYourlsAPIURL.Location = new System.Drawing.Point(24, 24);
+            resources.ApplyResources(this.lblYourlsAPIURL, "lblYourlsAPIURL");
             this.lblYourlsAPIURL.Name = "lblYourlsAPIURL";
-            this.lblYourlsAPIURL.Size = new System.Drawing.Size(52, 13);
-            this.lblYourlsAPIURL.TabIndex = 0;
-            this.lblYourlsAPIURL.Text = "API URL:";
             // 
             // tpAdFly
             // 
@@ -1346,69 +1102,45 @@
             this.tpAdFly.Controls.Add(this.lblAdflyAPIUID);
             this.tpAdFly.Controls.Add(this.txtAdflyAPIKEY);
             this.tpAdFly.Controls.Add(this.lblAdflyAPIKEY);
-            this.tpAdFly.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpAdFly, "tpAdFly");
             this.tpAdFly.Name = "tpAdFly";
-            this.tpAdFly.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdFly.Size = new System.Drawing.Size(972, 493);
-            this.tpAdFly.TabIndex = 3;
-            this.tpAdFly.Text = "adf.ly";
             this.tpAdFly.UseVisualStyleBackColor = true;
             // 
             // llAdflyLink
             // 
-            this.llAdflyLink.AutoSize = true;
-            this.llAdflyLink.Location = new System.Drawing.Point(16, 15);
+            resources.ApplyResources(this.llAdflyLink, "llAdflyLink");
             this.llAdflyLink.Name = "llAdflyLink";
-            this.llAdflyLink.Size = new System.Drawing.Size(208, 13);
-            this.llAdflyLink.TabIndex = 8;
             this.llAdflyLink.TabStop = true;
-            this.llAdflyLink.Text = "You can find your API key and UID in here";
             this.llAdflyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAdflyLink_LinkClicked);
             // 
             // txtAdflyAPIUID
             // 
-            this.txtAdflyAPIUID.Location = new System.Drawing.Point(70, 60);
+            resources.ApplyResources(this.txtAdflyAPIUID, "txtAdflyAPIUID");
             this.txtAdflyAPIUID.Name = "txtAdflyAPIUID";
-            this.txtAdflyAPIUID.Size = new System.Drawing.Size(224, 20);
-            this.txtAdflyAPIUID.TabIndex = 7;
             this.txtAdflyAPIUID.UseSystemPasswordChar = true;
             this.txtAdflyAPIUID.TextChanged += new System.EventHandler(this.txtAdflyAPIUID_TextChanged);
             // 
             // lblAdflyAPIUID
             // 
-            this.lblAdflyAPIUID.AutoSize = true;
-            this.lblAdflyAPIUID.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.lblAdflyAPIUID, "lblAdflyAPIUID");
             this.lblAdflyAPIUID.Name = "lblAdflyAPIUID";
-            this.lblAdflyAPIUID.Size = new System.Drawing.Size(49, 13);
-            this.lblAdflyAPIUID.TabIndex = 6;
-            this.lblAdflyAPIUID.Text = "API UID:";
             // 
             // txtAdflyAPIKEY
             // 
-            this.txtAdflyAPIKEY.Location = new System.Drawing.Point(70, 36);
+            resources.ApplyResources(this.txtAdflyAPIKEY, "txtAdflyAPIKEY");
             this.txtAdflyAPIKEY.Name = "txtAdflyAPIKEY";
-            this.txtAdflyAPIKEY.Size = new System.Drawing.Size(224, 20);
-            this.txtAdflyAPIKEY.TabIndex = 5;
             this.txtAdflyAPIKEY.TextChanged += new System.EventHandler(this.txtAdflyAPIKEY_TextChanged);
             // 
             // lblAdflyAPIKEY
             // 
-            this.lblAdflyAPIKEY.AutoSize = true;
-            this.lblAdflyAPIKEY.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblAdflyAPIKEY, "lblAdflyAPIKEY");
             this.lblAdflyAPIKEY.Name = "lblAdflyAPIKEY";
-            this.lblAdflyAPIKEY.Size = new System.Drawing.Size(47, 13);
-            this.lblAdflyAPIKEY.TabIndex = 4;
-            this.lblAdflyAPIKEY.Text = "API key:";
             // 
             // tpFileUploaders
             // 
             this.tpFileUploaders.Controls.Add(this.tcFileUploaders);
-            this.tpFileUploaders.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpFileUploaders, "tpFileUploaders");
             this.tpFileUploaders.Name = "tpFileUploaders";
-            this.tpFileUploaders.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFileUploaders.Size = new System.Drawing.Size(986, 525);
-            this.tpFileUploaders.TabIndex = 2;
-            this.tpFileUploaders.Text = "File uploaders";
             this.tpFileUploaders.UseVisualStyleBackColor = true;
             // 
             // tcFileUploaders
@@ -1433,13 +1165,10 @@
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
-            this.tcFileUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcFileUploaders.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
             this.tcFileUploaders.Multiline = true;
             this.tcFileUploaders.Name = "tcFileUploaders";
             this.tcFileUploaders.SelectedIndex = 0;
-            this.tcFileUploaders.Size = new System.Drawing.Size(980, 519);
-            this.tcFileUploaders.TabIndex = 0;
             // 
             // tpFTP
             // 
@@ -1452,100 +1181,68 @@
             this.tpFTP.Controls.Add(this.cboFtpFiles);
             this.tpFTP.Controls.Add(this.cboFtpText);
             this.tpFTP.Controls.Add(this.ucFTPAccounts);
-            this.tpFTP.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpFTP, "tpFTP");
             this.tpFTP.Name = "tpFTP";
-            this.tpFTP.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFTP.Size = new System.Drawing.Size(972, 475);
-            this.tpFTP.TabIndex = 4;
-            this.tpFTP.Text = "FTP";
             this.tpFTP.UseVisualStyleBackColor = true;
             // 
             // eiFTP
             // 
-            this.eiFTP.Location = new System.Drawing.Point(656, 48);
+            resources.ApplyResources(this.eiFTP, "eiFTP");
             this.eiFTP.Name = "eiFTP";
             this.eiFTP.ObjectType = null;
-            this.eiFTP.Size = new System.Drawing.Size(136, 24);
-            this.eiFTP.TabIndex = 8;
             this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
             this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
             // 
             // btnFtpClient
             // 
-            this.btnFtpClient.Location = new System.Drawing.Point(584, 48);
+            resources.ApplyResources(this.btnFtpClient, "btnFtpClient");
             this.btnFtpClient.Name = "btnFtpClient";
-            this.btnFtpClient.Size = new System.Drawing.Size(64, 24);
-            this.btnFtpClient.TabIndex = 7;
-            this.btnFtpClient.Text = "Client...";
             this.btnFtpClient.UseVisualStyleBackColor = true;
             this.btnFtpClient.Click += new System.EventHandler(this.btnFtpClient_Click);
             // 
             // lblFtpFiles
             // 
-            this.lblFtpFiles.AutoSize = true;
-            this.lblFtpFiles.Location = new System.Drawing.Point(544, 16);
+            resources.ApplyResources(this.lblFtpFiles, "lblFtpFiles");
             this.lblFtpFiles.Name = "lblFtpFiles";
-            this.lblFtpFiles.Size = new System.Drawing.Size(26, 13);
-            this.lblFtpFiles.TabIndex = 4;
-            this.lblFtpFiles.Text = "File:";
             // 
             // lblFtpText
             // 
-            this.lblFtpText.AutoSize = true;
-            this.lblFtpText.Location = new System.Drawing.Point(285, 16);
+            resources.ApplyResources(this.lblFtpText, "lblFtpText");
             this.lblFtpText.Name = "lblFtpText";
-            this.lblFtpText.Size = new System.Drawing.Size(31, 13);
-            this.lblFtpText.TabIndex = 2;
-            this.lblFtpText.Text = "Text:";
             // 
             // lblFtpImages
             // 
-            this.lblFtpImages.AutoSize = true;
-            this.lblFtpImages.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblFtpImages, "lblFtpImages");
             this.lblFtpImages.Name = "lblFtpImages";
-            this.lblFtpImages.Size = new System.Drawing.Size(39, 13);
-            this.lblFtpImages.TabIndex = 0;
-            this.lblFtpImages.Text = "Image:";
             // 
             // cboFtpImages
             // 
             this.cboFtpImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFtpImages.FormattingEnabled = true;
-            this.cboFtpImages.Location = new System.Drawing.Point(56, 12);
+            resources.ApplyResources(this.cboFtpImages, "cboFtpImages");
             this.cboFtpImages.Name = "cboFtpImages";
-            this.cboFtpImages.Size = new System.Drawing.Size(216, 21);
-            this.cboFtpImages.TabIndex = 1;
             this.cboFtpImages.SelectedIndexChanged += new System.EventHandler(this.cboFtpImages_SelectedIndexChanged);
             // 
             // cboFtpFiles
             // 
             this.cboFtpFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFtpFiles.FormattingEnabled = true;
-            this.cboFtpFiles.Location = new System.Drawing.Point(576, 12);
+            resources.ApplyResources(this.cboFtpFiles, "cboFtpFiles");
             this.cboFtpFiles.Name = "cboFtpFiles";
-            this.cboFtpFiles.Size = new System.Drawing.Size(216, 21);
-            this.cboFtpFiles.TabIndex = 5;
             this.cboFtpFiles.SelectedIndexChanged += new System.EventHandler(this.cboFtpFiles_SelectedIndexChanged);
             // 
             // cboFtpText
             // 
             this.cboFtpText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFtpText.FormattingEnabled = true;
-            this.cboFtpText.Location = new System.Drawing.Point(317, 12);
+            resources.ApplyResources(this.cboFtpText, "cboFtpText");
             this.cboFtpText.Name = "cboFtpText";
-            this.cboFtpText.Size = new System.Drawing.Size(216, 21);
-            this.cboFtpText.TabIndex = 3;
             this.cboFtpText.SelectedIndexChanged += new System.EventHandler(this.cboFtpText_SelectedIndexChanged);
             // 
             // ucFTPAccounts
             // 
-            this.ucFTPAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ucFTPAccounts.Location = new System.Drawing.Point(8, 40);
-            this.ucFTPAccounts.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.ucFTPAccounts, "ucFTPAccounts");
             this.ucFTPAccounts.Name = "ucFTPAccounts";
-            this.ucFTPAccounts.Size = new System.Drawing.Size(792, 448);
-            this.ucFTPAccounts.TabIndex = 6;
             // 
             // tpDropbox
             // 
@@ -1559,21 +1256,15 @@
             this.tpDropbox.Controls.Add(this.lblDropboxPathTip);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
             this.tpDropbox.Controls.Add(this.txtDropboxPath);
-            this.tpDropbox.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpDropbox, "tpDropbox");
             this.tpDropbox.Name = "tpDropbox";
-            this.tpDropbox.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDropbox.Size = new System.Drawing.Size(972, 475);
-            this.tpDropbox.TabIndex = 0;
-            this.tpDropbox.Text = "Dropbox";
             this.tpDropbox.UseVisualStyleBackColor = true;
             // 
             // oauth2Dropbox
             // 
             this.oauth2Dropbox.IsRefreshable = false;
-            this.oauth2Dropbox.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.oauth2Dropbox, "oauth2Dropbox");
             this.oauth2Dropbox.Name = "oauth2Dropbox";
-            this.oauth2Dropbox.Size = new System.Drawing.Size(328, 200);
-            this.oauth2Dropbox.TabIndex = 1;
             this.oauth2Dropbox.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
             this.oauth2Dropbox.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
             this.oauth2Dropbox.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
@@ -1582,90 +1273,58 @@
             // 
             this.cbDropboxURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDropboxURLType.FormattingEnabled = true;
-            this.cbDropboxURLType.Location = new System.Drawing.Point(160, 352);
+            resources.ApplyResources(this.cbDropboxURLType, "cbDropboxURLType");
             this.cbDropboxURLType.Name = "cbDropboxURLType";
-            this.cbDropboxURLType.Size = new System.Drawing.Size(121, 21);
-            this.cbDropboxURLType.TabIndex = 7;
             this.cbDropboxURLType.SelectedIndexChanged += new System.EventHandler(this.cbDropboxURLType_SelectedIndexChanged);
             // 
             // cbDropboxAutoCreateShareableLink
             // 
-            this.cbDropboxAutoCreateShareableLink.AutoSize = true;
-            this.cbDropboxAutoCreateShareableLink.Location = new System.Drawing.Point(19, 355);
+            resources.ApplyResources(this.cbDropboxAutoCreateShareableLink, "cbDropboxAutoCreateShareableLink");
             this.cbDropboxAutoCreateShareableLink.Name = "cbDropboxAutoCreateShareableLink";
-            this.cbDropboxAutoCreateShareableLink.Size = new System.Drawing.Size(134, 17);
-            this.cbDropboxAutoCreateShareableLink.TabIndex = 6;
-            this.cbDropboxAutoCreateShareableLink.Text = "Create shareable URL:";
             this.cbDropboxAutoCreateShareableLink.UseVisualStyleBackColor = true;
             this.cbDropboxAutoCreateShareableLink.CheckedChanged += new System.EventHandler(this.cbDropboxAutoCreateShareableLink_CheckedChanged);
             // 
             // btnDropboxShowFiles
             // 
-            this.btnDropboxShowFiles.Enabled = false;
-            this.btnDropboxShowFiles.Location = new System.Drawing.Point(344, 298);
+            resources.ApplyResources(this.btnDropboxShowFiles, "btnDropboxShowFiles");
             this.btnDropboxShowFiles.Name = "btnDropboxShowFiles";
-            this.btnDropboxShowFiles.Size = new System.Drawing.Size(64, 24);
-            this.btnDropboxShowFiles.TabIndex = 4;
-            this.btnDropboxShowFiles.Text = "Select...";
             this.btnDropboxShowFiles.UseVisualStyleBackColor = true;
             this.btnDropboxShowFiles.Click += new System.EventHandler(this.btnDropboxShowFiles_Click);
             // 
             // pbDropboxLogo
             // 
             this.pbDropboxLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbDropboxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbDropboxLogo.Image")));
-            this.pbDropboxLogo.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.pbDropboxLogo, "pbDropboxLogo");
             this.pbDropboxLogo.Name = "pbDropboxLogo";
-            this.pbDropboxLogo.Size = new System.Drawing.Size(248, 64);
-            this.pbDropboxLogo.TabIndex = 19;
             this.pbDropboxLogo.TabStop = false;
             this.pbDropboxLogo.Click += new System.EventHandler(this.pbDropboxLogo_Click);
             // 
             // btnDropboxRegister
             // 
-            this.btnDropboxRegister.Location = new System.Drawing.Point(272, 16);
+            resources.ApplyResources(this.btnDropboxRegister, "btnDropboxRegister");
             this.btnDropboxRegister.Name = "btnDropboxRegister";
-            this.btnDropboxRegister.Size = new System.Drawing.Size(96, 24);
-            this.btnDropboxRegister.TabIndex = 0;
-            this.btnDropboxRegister.Text = "Register...";
             this.btnDropboxRegister.UseVisualStyleBackColor = true;
             this.btnDropboxRegister.Click += new System.EventHandler(this.btnDropboxRegister_Click);
             // 
             // lblDropboxStatus
             // 
-            this.lblDropboxStatus.AutoSize = true;
-            this.lblDropboxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDropboxStatus.Location = new System.Drawing.Point(16, 384);
+            resources.ApplyResources(this.lblDropboxStatus, "lblDropboxStatus");
             this.lblDropboxStatus.Name = "lblDropboxStatus";
-            this.lblDropboxStatus.Size = new System.Drawing.Size(45, 16);
-            this.lblDropboxStatus.TabIndex = 8;
-            this.lblDropboxStatus.Text = "Status";
             // 
             // lblDropboxPathTip
             // 
-            this.lblDropboxPathTip.AutoSize = true;
-            this.lblDropboxPathTip.Location = new System.Drawing.Point(16, 330);
+            resources.ApplyResources(this.lblDropboxPathTip, "lblDropboxPathTip");
             this.lblDropboxPathTip.Name = "lblDropboxPathTip";
-            this.lblDropboxPathTip.Size = new System.Drawing.Size(585, 13);
-            this.lblDropboxPathTip.TabIndex = 5;
-            this.lblDropboxPathTip.Text = "If you are using the \"Public\" folder, a shareable url is already generated. You d" +
-    "on\'t need to check \"Create shareable URL\".";
             // 
             // lblDropboxPath
             // 
-            this.lblDropboxPath.AutoSize = true;
-            this.lblDropboxPath.Location = new System.Drawing.Point(16, 304);
+            resources.ApplyResources(this.lblDropboxPath, "lblDropboxPath");
             this.lblDropboxPath.Name = "lblDropboxPath";
-            this.lblDropboxPath.Size = new System.Drawing.Size(68, 13);
-            this.lblDropboxPath.TabIndex = 2;
-            this.lblDropboxPath.Text = "Upload path:";
             // 
             // txtDropboxPath
             // 
-            this.txtDropboxPath.Location = new System.Drawing.Point(88, 300);
+            resources.ApplyResources(this.txtDropboxPath, "txtDropboxPath");
             this.txtDropboxPath.Name = "txtDropboxPath";
-            this.txtDropboxPath.Size = new System.Drawing.Size(248, 20);
-            this.txtDropboxPath.TabIndex = 3;
             this.txtDropboxPath.TextChanged += new System.EventHandler(this.txtDropboxPath_TextChanged);
             // 
             // tpGoogleDrive
@@ -1677,41 +1336,27 @@
             this.tpGoogleDrive.Controls.Add(this.btnGoogleDriveRefreshFolders);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
-            this.tpGoogleDrive.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
-            this.tpGoogleDrive.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGoogleDrive.Size = new System.Drawing.Size(972, 475);
-            this.tpGoogleDrive.TabIndex = 1;
-            this.tpGoogleDrive.Text = "Google Drive";
             this.tpGoogleDrive.UseVisualStyleBackColor = true;
             // 
             // cbGoogleDriveUseFolder
             // 
-            this.cbGoogleDriveUseFolder.AutoSize = true;
-            this.cbGoogleDriveUseFolder.Location = new System.Drawing.Point(352, 16);
+            resources.ApplyResources(this.cbGoogleDriveUseFolder, "cbGoogleDriveUseFolder");
             this.cbGoogleDriveUseFolder.Name = "cbGoogleDriveUseFolder";
-            this.cbGoogleDriveUseFolder.Size = new System.Drawing.Size(165, 17);
-            this.cbGoogleDriveUseFolder.TabIndex = 12;
-            this.cbGoogleDriveUseFolder.Text = "Upload files to selected folder";
             this.cbGoogleDriveUseFolder.UseVisualStyleBackColor = true;
             this.cbGoogleDriveUseFolder.CheckedChanged += new System.EventHandler(this.cbGoogleDriveUseFolder_CheckedChanged);
             // 
             // txtGoogleDriveFolderID
             // 
-            this.txtGoogleDriveFolderID.Location = new System.Drawing.Point(528, 41);
+            resources.ApplyResources(this.txtGoogleDriveFolderID, "txtGoogleDriveFolderID");
             this.txtGoogleDriveFolderID.Name = "txtGoogleDriveFolderID";
-            this.txtGoogleDriveFolderID.Size = new System.Drawing.Size(256, 20);
-            this.txtGoogleDriveFolderID.TabIndex = 9;
             this.txtGoogleDriveFolderID.TextChanged += new System.EventHandler(this.txtGoogleDriveFolderID_TextChanged);
             // 
             // lblGoogleDriveFolderID
             // 
-            this.lblGoogleDriveFolderID.AutoSize = true;
-            this.lblGoogleDriveFolderID.Location = new System.Drawing.Point(472, 45);
+            resources.ApplyResources(this.lblGoogleDriveFolderID, "lblGoogleDriveFolderID");
             this.lblGoogleDriveFolderID.Name = "lblGoogleDriveFolderID";
-            this.lblGoogleDriveFolderID.Size = new System.Drawing.Size(53, 13);
-            this.lblGoogleDriveFolderID.TabIndex = 8;
-            this.lblGoogleDriveFolderID.Text = "Folder ID:";
             // 
             // lvGoogleDriveFoldersList
             // 
@@ -1720,53 +1365,39 @@
             this.chGoogleDriveTitle,
             this.chGoogleDriveDescription});
             this.lvGoogleDriveFoldersList.FullRowSelect = true;
-            this.lvGoogleDriveFoldersList.Location = new System.Drawing.Point(352, 72);
+            resources.ApplyResources(this.lvGoogleDriveFoldersList, "lvGoogleDriveFoldersList");
             this.lvGoogleDriveFoldersList.MultiSelect = false;
             this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
-            this.lvGoogleDriveFoldersList.Size = new System.Drawing.Size(432, 392);
-            this.lvGoogleDriveFoldersList.TabIndex = 11;
             this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
             this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
             this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
             // 
             // chGoogleDriveTitle
             // 
-            this.chGoogleDriveTitle.Text = "Title";
-            this.chGoogleDriveTitle.Width = 200;
+            resources.ApplyResources(this.chGoogleDriveTitle, "chGoogleDriveTitle");
             // 
             // chGoogleDriveDescription
             // 
-            this.chGoogleDriveDescription.Text = "Description";
-            this.chGoogleDriveDescription.Width = 228;
+            resources.ApplyResources(this.chGoogleDriveDescription, "chGoogleDriveDescription");
             // 
             // btnGoogleDriveRefreshFolders
             // 
-            this.btnGoogleDriveRefreshFolders.Enabled = false;
-            this.btnGoogleDriveRefreshFolders.Location = new System.Drawing.Point(352, 40);
+            resources.ApplyResources(this.btnGoogleDriveRefreshFolders, "btnGoogleDriveRefreshFolders");
             this.btnGoogleDriveRefreshFolders.Name = "btnGoogleDriveRefreshFolders";
-            this.btnGoogleDriveRefreshFolders.Size = new System.Drawing.Size(112, 23);
-            this.btnGoogleDriveRefreshFolders.TabIndex = 10;
-            this.btnGoogleDriveRefreshFolders.Text = "Refresh folders list";
             this.btnGoogleDriveRefreshFolders.UseVisualStyleBackColor = true;
             this.btnGoogleDriveRefreshFolders.Click += new System.EventHandler(this.btnGoogleDriveRefreshFolders_Click);
             // 
             // cbGoogleDriveIsPublic
             // 
-            this.cbGoogleDriveIsPublic.AutoSize = true;
-            this.cbGoogleDriveIsPublic.Location = new System.Drawing.Point(16, 264);
+            resources.ApplyResources(this.cbGoogleDriveIsPublic, "cbGoogleDriveIsPublic");
             this.cbGoogleDriveIsPublic.Name = "cbGoogleDriveIsPublic";
-            this.cbGoogleDriveIsPublic.Size = new System.Drawing.Size(106, 17);
-            this.cbGoogleDriveIsPublic.TabIndex = 1;
-            this.cbGoogleDriveIsPublic.Text = "Is public upload?";
             this.cbGoogleDriveIsPublic.UseVisualStyleBackColor = true;
             this.cbGoogleDriveIsPublic.CheckedChanged += new System.EventHandler(this.cbGoogleDriveIsPublic_CheckedChanged);
             // 
             // oauth2GoogleDrive
             // 
-            this.oauth2GoogleDrive.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
             this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
-            this.oauth2GoogleDrive.Size = new System.Drawing.Size(328, 240);
-            this.oauth2GoogleDrive.TabIndex = 0;
             this.oauth2GoogleDrive.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
             this.oauth2GoogleDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
             this.oauth2GoogleDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleDrive_ClearButtonClicked);
@@ -1780,31 +1411,19 @@
             this.tpBox.Controls.Add(this.lblBoxFolderID);
             this.tpBox.Controls.Add(this.btnBoxRefreshFolders);
             this.tpBox.Controls.Add(this.oauth2Box);
-            this.tpBox.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpBox, "tpBox");
             this.tpBox.Name = "tpBox";
-            this.tpBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBox.Size = new System.Drawing.Size(972, 475);
-            this.tpBox.TabIndex = 2;
-            this.tpBox.Text = "Box";
             this.tpBox.UseVisualStyleBackColor = true;
             // 
             // lblBoxFolderTip
             // 
-            this.lblBoxFolderTip.AutoSize = true;
-            this.lblBoxFolderTip.Location = new System.Drawing.Point(352, 424);
+            resources.ApplyResources(this.lblBoxFolderTip, "lblBoxFolderTip");
             this.lblBoxFolderTip.Name = "lblBoxFolderTip";
-            this.lblBoxFolderTip.Size = new System.Drawing.Size(304, 13);
-            this.lblBoxFolderTip.TabIndex = 5;
-            this.lblBoxFolderTip.Text = "Note: You can double click folder name to go inside that folder.";
             // 
             // cbBoxShare
             // 
-            this.cbBoxShare.AutoSize = true;
-            this.cbBoxShare.Location = new System.Drawing.Point(16, 264);
+            resources.ApplyResources(this.cbBoxShare, "cbBoxShare");
             this.cbBoxShare.Name = "cbBoxShare";
-            this.cbBoxShare.Size = new System.Drawing.Size(125, 17);
-            this.cbBoxShare.TabIndex = 1;
-            this.cbBoxShare.Text = "Create shareable link";
             this.cbBoxShare.UseVisualStyleBackColor = true;
             this.cbBoxShare.CheckedChanged += new System.EventHandler(this.cbBoxShare_CheckedChanged);
             // 
@@ -1814,10 +1433,8 @@
             this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chBoxFoldersName});
             this.lvBoxFolders.FullRowSelect = true;
-            this.lvBoxFolders.Location = new System.Drawing.Point(352, 48);
+            resources.ApplyResources(this.lvBoxFolders, "lvBoxFolders");
             this.lvBoxFolders.Name = "lvBoxFolders";
-            this.lvBoxFolders.Size = new System.Drawing.Size(440, 368);
-            this.lvBoxFolders.TabIndex = 4;
             this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
             this.lvBoxFolders.View = System.Windows.Forms.View.Details;
             this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
@@ -1825,35 +1442,24 @@
             // 
             // chBoxFoldersName
             // 
-            this.chBoxFoldersName.Text = "Folder name";
-            this.chBoxFoldersName.Width = 435;
+            resources.ApplyResources(this.chBoxFoldersName, "chBoxFoldersName");
             // 
             // lblBoxFolderID
             // 
-            this.lblBoxFolderID.AutoSize = true;
-            this.lblBoxFolderID.Location = new System.Drawing.Point(488, 21);
+            resources.ApplyResources(this.lblBoxFolderID, "lblBoxFolderID");
             this.lblBoxFolderID.Name = "lblBoxFolderID";
-            this.lblBoxFolderID.Size = new System.Drawing.Size(81, 13);
-            this.lblBoxFolderID.TabIndex = 3;
-            this.lblBoxFolderID.Text = "Selected folder:";
             // 
             // btnBoxRefreshFolders
             // 
-            this.btnBoxRefreshFolders.Enabled = false;
-            this.btnBoxRefreshFolders.Location = new System.Drawing.Point(352, 16);
+            resources.ApplyResources(this.btnBoxRefreshFolders, "btnBoxRefreshFolders");
             this.btnBoxRefreshFolders.Name = "btnBoxRefreshFolders";
-            this.btnBoxRefreshFolders.Size = new System.Drawing.Size(128, 23);
-            this.btnBoxRefreshFolders.TabIndex = 2;
-            this.btnBoxRefreshFolders.Text = "Refresh folders list";
             this.btnBoxRefreshFolders.UseVisualStyleBackColor = true;
             this.btnBoxRefreshFolders.Click += new System.EventHandler(this.btnBoxRefreshFolders_Click);
             // 
             // oauth2Box
             // 
-            this.oauth2Box.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.oauth2Box, "oauth2Box");
             this.oauth2Box.Name = "oauth2Box";
-            this.oauth2Box.Size = new System.Drawing.Size(328, 240);
-            this.oauth2Box.TabIndex = 0;
             this.oauth2Box.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Box_OpenButtonClicked);
             this.oauth2Box.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
             this.oauth2Box.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Box_ClearButtonClicked);
@@ -1869,88 +1475,59 @@
             this.tpCopy.Controls.Add(this.lblCopyPath);
             this.tpCopy.Controls.Add(this.txtCopyPath);
             this.tpCopy.Controls.Add(this.oAuthCopy);
-            this.tpCopy.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpCopy, "tpCopy");
             this.tpCopy.Name = "tpCopy";
-            this.tpCopy.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCopy.Size = new System.Drawing.Size(972, 475);
-            this.tpCopy.TabIndex = 0;
-            this.tpCopy.Text = "Copy";
             this.tpCopy.UseVisualStyleBackColor = true;
             // 
             // pbCopyLogo
             // 
             this.pbCopyLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCopyLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbCopyLogo.Image")));
-            this.pbCopyLogo.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.pbCopyLogo, "pbCopyLogo");
             this.pbCopyLogo.Name = "pbCopyLogo";
-            this.pbCopyLogo.Size = new System.Drawing.Size(216, 64);
-            this.pbCopyLogo.TabIndex = 19;
             this.pbCopyLogo.TabStop = false;
             this.pbCopyLogo.Click += new System.EventHandler(this.pbCopyLogo_Click);
             // 
             // lblCopyURLType
             // 
-            this.lblCopyURLType.AutoSize = true;
-            this.lblCopyURLType.Location = new System.Drawing.Point(16, 331);
+            resources.ApplyResources(this.lblCopyURLType, "lblCopyURLType");
             this.lblCopyURLType.Name = "lblCopyURLType";
-            this.lblCopyURLType.Size = new System.Drawing.Size(55, 13);
-            this.lblCopyURLType.TabIndex = 4;
-            this.lblCopyURLType.Text = "URL type:";
             // 
             // cbCopyURLType
             // 
             this.cbCopyURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCopyURLType.FormattingEnabled = true;
-            this.cbCopyURLType.Location = new System.Drawing.Point(88, 327);
+            resources.ApplyResources(this.cbCopyURLType, "cbCopyURLType");
             this.cbCopyURLType.Name = "cbCopyURLType";
-            this.cbCopyURLType.Size = new System.Drawing.Size(121, 21);
-            this.cbCopyURLType.TabIndex = 5;
             this.cbCopyURLType.SelectedIndexChanged += new System.EventHandler(this.cbCopyURLType_SelectedIndexChanged);
             // 
             // btnCopyRegister
             // 
-            this.btnCopyRegister.Location = new System.Drawing.Point(240, 16);
+            resources.ApplyResources(this.btnCopyRegister, "btnCopyRegister");
             this.btnCopyRegister.Name = "btnCopyRegister";
-            this.btnCopyRegister.Size = new System.Drawing.Size(96, 24);
-            this.btnCopyRegister.TabIndex = 0;
-            this.btnCopyRegister.Text = "Register...";
             this.btnCopyRegister.UseVisualStyleBackColor = true;
             this.btnCopyRegister.Click += new System.EventHandler(this.btnCopyRegister_Click);
             // 
             // lblCopyStatus
             // 
-            this.lblCopyStatus.AutoSize = true;
-            this.lblCopyStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCopyStatus.Location = new System.Drawing.Point(16, 356);
+            resources.ApplyResources(this.lblCopyStatus, "lblCopyStatus");
             this.lblCopyStatus.Name = "lblCopyStatus";
-            this.lblCopyStatus.Size = new System.Drawing.Size(45, 16);
-            this.lblCopyStatus.TabIndex = 6;
-            this.lblCopyStatus.Text = "Status";
             // 
             // lblCopyPath
             // 
-            this.lblCopyPath.AutoSize = true;
-            this.lblCopyPath.Location = new System.Drawing.Point(16, 304);
+            resources.ApplyResources(this.lblCopyPath, "lblCopyPath");
             this.lblCopyPath.Name = "lblCopyPath";
-            this.lblCopyPath.Size = new System.Drawing.Size(68, 13);
-            this.lblCopyPath.TabIndex = 2;
-            this.lblCopyPath.Text = "Upload path:";
             // 
             // txtCopyPath
             // 
-            this.txtCopyPath.Location = new System.Drawing.Point(88, 300);
+            resources.ApplyResources(this.txtCopyPath, "txtCopyPath");
             this.txtCopyPath.Name = "txtCopyPath";
-            this.txtCopyPath.Size = new System.Drawing.Size(248, 20);
-            this.txtCopyPath.TabIndex = 3;
             this.txtCopyPath.TextChanged += new System.EventHandler(this.txtCopyPath_TextChanged);
             // 
             // oAuthCopy
             // 
             this.oAuthCopy.IsRefreshable = false;
-            this.oAuthCopy.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.oAuthCopy, "oAuthCopy");
             this.oAuthCopy.Name = "oAuthCopy";
-            this.oAuthCopy.Size = new System.Drawing.Size(328, 208);
-            this.oAuthCopy.TabIndex = 1;
             this.oAuthCopy.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
             this.oAuthCopy.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
             this.oAuthCopy.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
@@ -1958,21 +1535,15 @@
             // tpOneDrive
             // 
             this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
-            this.tpOneDrive.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpOneDrive, "tpOneDrive");
             this.tpOneDrive.Name = "tpOneDrive";
-            this.tpOneDrive.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOneDrive.Size = new System.Drawing.Size(972, 475);
-            this.tpOneDrive.TabIndex = 17;
-            this.tpOneDrive.Text = "OneDrive";
             this.tpOneDrive.UseVisualStyleBackColor = true;
             // 
             // oAuth2OneDrive
             // 
             this.oAuth2OneDrive.IsRefreshable = false;
-            this.oAuth2OneDrive.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.oAuth2OneDrive, "oAuth2OneDrive");
             this.oAuth2OneDrive.Name = "oAuth2OneDrive";
-            this.oAuth2OneDrive.Size = new System.Drawing.Size(328, 200);
-            this.oAuth2OneDrive.TabIndex = 2;
             this.oAuth2OneDrive.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
             this.oAuth2OneDrive.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
             this.oAuth2OneDrive.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
@@ -1996,57 +1567,37 @@
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3SecretKey);
             this.tpAmazonS3.Controls.Add(this.lblAmazonS3AccessKey);
             this.tpAmazonS3.Controls.Add(this.txtAmazonS3AccessKey);
-            this.tpAmazonS3.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpAmazonS3, "tpAmazonS3");
             this.tpAmazonS3.Name = "tpAmazonS3";
-            this.tpAmazonS3.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAmazonS3.Size = new System.Drawing.Size(972, 475);
-            this.tpAmazonS3.TabIndex = 13;
-            this.tpAmazonS3.Text = "Amazon S3";
             this.tpAmazonS3.UseVisualStyleBackColor = true;
             // 
             // txtAmazonS3CustomDomain
             // 
-            this.txtAmazonS3CustomDomain.Location = new System.Drawing.Point(152, 144);
+            resources.ApplyResources(this.txtAmazonS3CustomDomain, "txtAmazonS3CustomDomain");
             this.txtAmazonS3CustomDomain.Name = "txtAmazonS3CustomDomain";
-            this.txtAmazonS3CustomDomain.Size = new System.Drawing.Size(304, 20);
-            this.txtAmazonS3CustomDomain.TabIndex = 13;
             this.txtAmazonS3CustomDomain.TextChanged += new System.EventHandler(this.txtAmazonS3CustomDomain_TextChanged);
             // 
             // lblAmazonS3PathPreviewLabel
             // 
-            this.lblAmazonS3PathPreviewLabel.AutoSize = true;
-            this.lblAmazonS3PathPreviewLabel.Location = new System.Drawing.Point(24, 192);
+            resources.ApplyResources(this.lblAmazonS3PathPreviewLabel, "lblAmazonS3PathPreviewLabel");
             this.lblAmazonS3PathPreviewLabel.Name = "lblAmazonS3PathPreviewLabel";
-            this.lblAmazonS3PathPreviewLabel.Size = new System.Drawing.Size(72, 13);
-            this.lblAmazonS3PathPreviewLabel.TabIndex = 15;
-            this.lblAmazonS3PathPreviewLabel.Text = "URL preview:";
             // 
             // lblAmazonS3PathPreview
             // 
-            this.lblAmazonS3PathPreview.AutoSize = true;
-            this.lblAmazonS3PathPreview.Location = new System.Drawing.Point(102, 192);
+            resources.ApplyResources(this.lblAmazonS3PathPreview, "lblAmazonS3PathPreview");
             this.lblAmazonS3PathPreview.Name = "lblAmazonS3PathPreview";
-            this.lblAmazonS3PathPreview.Size = new System.Drawing.Size(45, 13);
-            this.lblAmazonS3PathPreview.TabIndex = 16;
-            this.lblAmazonS3PathPreview.Text = "Preview";
             // 
             // btnAmazonS3BucketNameOpen
             // 
-            this.btnAmazonS3BucketNameOpen.Location = new System.Drawing.Point(464, 90);
+            resources.ApplyResources(this.btnAmazonS3BucketNameOpen, "btnAmazonS3BucketNameOpen");
             this.btnAmazonS3BucketNameOpen.Name = "btnAmazonS3BucketNameOpen";
-            this.btnAmazonS3BucketNameOpen.Size = new System.Drawing.Size(24, 24);
-            this.btnAmazonS3BucketNameOpen.TabIndex = 9;
-            this.btnAmazonS3BucketNameOpen.Text = "...";
             this.btnAmazonS3BucketNameOpen.UseVisualStyleBackColor = true;
             this.btnAmazonS3BucketNameOpen.Click += new System.EventHandler(this.btnAmazonS3BucketNameOpen_Click);
             // 
             // btnAmazonS3AccessKeyOpen
             // 
-            this.btnAmazonS3AccessKeyOpen.Location = new System.Drawing.Point(464, 18);
+            resources.ApplyResources(this.btnAmazonS3AccessKeyOpen, "btnAmazonS3AccessKeyOpen");
             this.btnAmazonS3AccessKeyOpen.Name = "btnAmazonS3AccessKeyOpen";
-            this.btnAmazonS3AccessKeyOpen.Size = new System.Drawing.Size(24, 24);
-            this.btnAmazonS3AccessKeyOpen.TabIndex = 2;
-            this.btnAmazonS3AccessKeyOpen.Text = "...";
             this.btnAmazonS3AccessKeyOpen.UseVisualStyleBackColor = true;
             this.btnAmazonS3AccessKeyOpen.Click += new System.EventHandler(this.btnAmazonS3AccessKeyOpen_Click);
             // 
@@ -2054,98 +1605,68 @@
             // 
             this.cbAmazonS3Endpoint.FormattingEnabled = true;
             this.cbAmazonS3Endpoint.Items.AddRange(new object[] {
-            "https://s3-ap-northeast-1.amazonaws.com/",
-            "https://s3-ap-southeast-1.amazonaws.com/",
-            "https://s3-ap-southeast-2.amazonaws.com/",
-            "https://s3-eu-west-1.amazonaws.com/",
-            "https://s3-sa-east-1.amazonaws.com/",
-            "https://s3-us-west-1.amazonaws.com/",
-            "https://s3-us-west-2.amazonaws.com/",
-            "https://s3.amazonaws.com/",
-            "https://objects.dreamhost.com/"});
-            this.cbAmazonS3Endpoint.Location = new System.Drawing.Point(104, 68);
+            resources.GetString("cbAmazonS3Endpoint.Items"),
+            resources.GetString("cbAmazonS3Endpoint.Items1"),
+            resources.GetString("cbAmazonS3Endpoint.Items2"),
+            resources.GetString("cbAmazonS3Endpoint.Items3"),
+            resources.GetString("cbAmazonS3Endpoint.Items4"),
+            resources.GetString("cbAmazonS3Endpoint.Items5"),
+            resources.GetString("cbAmazonS3Endpoint.Items6"),
+            resources.GetString("cbAmazonS3Endpoint.Items7"),
+            resources.GetString("cbAmazonS3Endpoint.Items8")});
+            resources.ApplyResources(this.cbAmazonS3Endpoint, "cbAmazonS3Endpoint");
             this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
-            this.cbAmazonS3Endpoint.Size = new System.Drawing.Size(352, 21);
-            this.cbAmazonS3Endpoint.TabIndex = 6;
             this.cbAmazonS3Endpoint.SelectionChangeCommitted += new System.EventHandler(this.cbAmazonS3Endpoint_SelectionChangeCommitted);
             this.cbAmazonS3Endpoint.TextChanged += new System.EventHandler(this.cbAmazonS3Endpoint_TextChanged);
             // 
             // lblAmazonS3BucketName
             // 
-            this.lblAmazonS3BucketName.AutoSize = true;
-            this.lblAmazonS3BucketName.Location = new System.Drawing.Point(24, 96);
+            resources.ApplyResources(this.lblAmazonS3BucketName, "lblAmazonS3BucketName");
             this.lblAmazonS3BucketName.Name = "lblAmazonS3BucketName";
-            this.lblAmazonS3BucketName.Size = new System.Drawing.Size(73, 13);
-            this.lblAmazonS3BucketName.TabIndex = 7;
-            this.lblAmazonS3BucketName.Text = "Bucket name:";
             // 
             // txtAmazonS3BucketName
             // 
-            this.txtAmazonS3BucketName.Location = new System.Drawing.Point(104, 92);
+            resources.ApplyResources(this.txtAmazonS3BucketName, "txtAmazonS3BucketName");
             this.txtAmazonS3BucketName.Name = "txtAmazonS3BucketName";
-            this.txtAmazonS3BucketName.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3BucketName.TabIndex = 8;
             this.txtAmazonS3BucketName.TextChanged += new System.EventHandler(this.txtAmazonS3BucketName_TextChanged);
             // 
             // lblAmazonS3Endpoint
             // 
-            this.lblAmazonS3Endpoint.AutoSize = true;
-            this.lblAmazonS3Endpoint.Location = new System.Drawing.Point(24, 72);
+            resources.ApplyResources(this.lblAmazonS3Endpoint, "lblAmazonS3Endpoint");
             this.lblAmazonS3Endpoint.Name = "lblAmazonS3Endpoint";
-            this.lblAmazonS3Endpoint.Size = new System.Drawing.Size(52, 13);
-            this.lblAmazonS3Endpoint.TabIndex = 5;
-            this.lblAmazonS3Endpoint.Text = "Endpoint:";
             // 
             // txtAmazonS3ObjectPrefix
             // 
-            this.txtAmazonS3ObjectPrefix.Location = new System.Drawing.Point(104, 116);
+            resources.ApplyResources(this.txtAmazonS3ObjectPrefix, "txtAmazonS3ObjectPrefix");
             this.txtAmazonS3ObjectPrefix.Name = "txtAmazonS3ObjectPrefix";
-            this.txtAmazonS3ObjectPrefix.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3ObjectPrefix.TabIndex = 11;
             this.txtAmazonS3ObjectPrefix.TextChanged += new System.EventHandler(this.txtAmazonS3ObjectPrefix_TextChanged);
             // 
             // lblAmazonS3ObjectPrefix
             // 
-            this.lblAmazonS3ObjectPrefix.AutoSize = true;
-            this.lblAmazonS3ObjectPrefix.Location = new System.Drawing.Point(24, 120);
+            resources.ApplyResources(this.lblAmazonS3ObjectPrefix, "lblAmazonS3ObjectPrefix");
             this.lblAmazonS3ObjectPrefix.Name = "lblAmazonS3ObjectPrefix";
-            this.lblAmazonS3ObjectPrefix.Size = new System.Drawing.Size(68, 13);
-            this.lblAmazonS3ObjectPrefix.TabIndex = 10;
-            this.lblAmazonS3ObjectPrefix.Text = "Upload path:";
             // 
             // txtAmazonS3SecretKey
             // 
-            this.txtAmazonS3SecretKey.Location = new System.Drawing.Point(104, 44);
+            resources.ApplyResources(this.txtAmazonS3SecretKey, "txtAmazonS3SecretKey");
             this.txtAmazonS3SecretKey.Name = "txtAmazonS3SecretKey";
-            this.txtAmazonS3SecretKey.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3SecretKey.TabIndex = 4;
             this.txtAmazonS3SecretKey.UseSystemPasswordChar = true;
             this.txtAmazonS3SecretKey.TextChanged += new System.EventHandler(this.txtAmazonS3SecretKey_TextChanged);
             // 
             // lblAmazonS3SecretKey
             // 
-            this.lblAmazonS3SecretKey.AutoSize = true;
-            this.lblAmazonS3SecretKey.Location = new System.Drawing.Point(24, 48);
+            resources.ApplyResources(this.lblAmazonS3SecretKey, "lblAmazonS3SecretKey");
             this.lblAmazonS3SecretKey.Name = "lblAmazonS3SecretKey";
-            this.lblAmazonS3SecretKey.Size = new System.Drawing.Size(61, 13);
-            this.lblAmazonS3SecretKey.TabIndex = 3;
-            this.lblAmazonS3SecretKey.Text = "Secret key:";
             // 
             // lblAmazonS3AccessKey
             // 
-            this.lblAmazonS3AccessKey.AutoSize = true;
-            this.lblAmazonS3AccessKey.Location = new System.Drawing.Point(24, 24);
+            resources.ApplyResources(this.lblAmazonS3AccessKey, "lblAmazonS3AccessKey");
             this.lblAmazonS3AccessKey.Name = "lblAmazonS3AccessKey";
-            this.lblAmazonS3AccessKey.Size = new System.Drawing.Size(65, 13);
-            this.lblAmazonS3AccessKey.TabIndex = 0;
-            this.lblAmazonS3AccessKey.Text = "Access key:";
             // 
             // txtAmazonS3AccessKey
             // 
-            this.txtAmazonS3AccessKey.Location = new System.Drawing.Point(104, 20);
+            resources.ApplyResources(this.txtAmazonS3AccessKey, "txtAmazonS3AccessKey");
             this.txtAmazonS3AccessKey.Name = "txtAmazonS3AccessKey";
-            this.txtAmazonS3AccessKey.Size = new System.Drawing.Size(352, 20);
-            this.txtAmazonS3AccessKey.TabIndex = 1;
             this.txtAmazonS3AccessKey.TextChanged += new System.EventHandler(this.txtAmazonS3AccessKey_TextChanged);
             // 
             // tpMega
@@ -2161,114 +1682,76 @@
             this.tpMega.Controls.Add(this.txtMegaEmail);
             this.tpMega.Controls.Add(this.txtMegaPassword);
             this.tpMega.Controls.Add(this.lblMegaPassword);
-            this.tpMega.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpMega, "tpMega");
             this.tpMega.Name = "tpMega";
-            this.tpMega.Size = new System.Drawing.Size(972, 475);
-            this.tpMega.TabIndex = 12;
-            this.tpMega.Text = "Mega";
             this.tpMega.UseVisualStyleBackColor = true;
             // 
             // btnMegaRefreshFolders
             // 
-            this.btnMegaRefreshFolders.Location = new System.Drawing.Point(264, 114);
+            resources.ApplyResources(this.btnMegaRefreshFolders, "btnMegaRefreshFolders");
             this.btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
-            this.btnMegaRefreshFolders.Size = new System.Drawing.Size(88, 24);
-            this.btnMegaRefreshFolders.TabIndex = 10;
-            this.btnMegaRefreshFolders.Text = "Refresh";
             this.btnMegaRefreshFolders.UseVisualStyleBackColor = true;
             this.btnMegaRefreshFolders.Click += new System.EventHandler(this.btnMegaRefreshFolders_Click);
             // 
             // lblMegaStatus
             // 
-            this.lblMegaStatus.AutoSize = true;
-            this.lblMegaStatus.Location = new System.Drawing.Point(88, 24);
+            resources.ApplyResources(this.lblMegaStatus, "lblMegaStatus");
             this.lblMegaStatus.Name = "lblMegaStatus";
-            this.lblMegaStatus.Size = new System.Drawing.Size(186, 13);
-            this.lblMegaStatus.TabIndex = 1;
-            this.lblMegaStatus.Text = "CONFIGURED / NOT CONFIGURED";
             // 
             // btnMegaRegister
             // 
-            this.btnMegaRegister.Location = new System.Drawing.Point(264, 50);
+            resources.ApplyResources(this.btnMegaRegister, "btnMegaRegister");
             this.btnMegaRegister.Name = "btnMegaRegister";
-            this.btnMegaRegister.Size = new System.Drawing.Size(88, 24);
-            this.btnMegaRegister.TabIndex = 4;
-            this.btnMegaRegister.Text = "Register...";
             this.btnMegaRegister.UseVisualStyleBackColor = true;
             this.btnMegaRegister.Click += new System.EventHandler(this.btnMegaRegister_Click);
             // 
             // lblMegaFolder
             // 
-            this.lblMegaFolder.AutoSize = true;
-            this.lblMegaFolder.Location = new System.Drawing.Point(24, 120);
+            resources.ApplyResources(this.lblMegaFolder, "lblMegaFolder");
             this.lblMegaFolder.Name = "lblMegaFolder";
-            this.lblMegaFolder.Size = new System.Drawing.Size(39, 13);
-            this.lblMegaFolder.TabIndex = 8;
-            this.lblMegaFolder.Text = "Folder:";
             // 
             // lblMegaStatusTitle
             // 
-            this.lblMegaStatusTitle.AutoSize = true;
-            this.lblMegaStatusTitle.Location = new System.Drawing.Point(24, 24);
+            resources.ApplyResources(this.lblMegaStatusTitle, "lblMegaStatusTitle");
             this.lblMegaStatusTitle.Name = "lblMegaStatusTitle";
-            this.lblMegaStatusTitle.Size = new System.Drawing.Size(43, 13);
-            this.lblMegaStatusTitle.TabIndex = 0;
-            this.lblMegaStatusTitle.Text = "Status: ";
             // 
             // cbMegaFolder
             // 
             this.cbMegaFolder.DisplayMember = "DisplayName";
             this.cbMegaFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMegaFolder.FormattingEnabled = true;
-            this.cbMegaFolder.Location = new System.Drawing.Point(88, 116);
+            resources.ApplyResources(this.cbMegaFolder, "cbMegaFolder");
             this.cbMegaFolder.Name = "cbMegaFolder";
-            this.cbMegaFolder.Size = new System.Drawing.Size(168, 21);
-            this.cbMegaFolder.TabIndex = 9;
             this.cbMegaFolder.ValueMember = "Node";
             this.cbMegaFolder.SelectedIndexChanged += new System.EventHandler(this.cbMegaFolder_SelectedIndexChanged);
             // 
             // lblMegaEmail
             // 
-            this.lblMegaEmail.AutoSize = true;
-            this.lblMegaEmail.Location = new System.Drawing.Point(24, 56);
+            resources.ApplyResources(this.lblMegaEmail, "lblMegaEmail");
             this.lblMegaEmail.Name = "lblMegaEmail";
-            this.lblMegaEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblMegaEmail.TabIndex = 2;
-            this.lblMegaEmail.Text = "Email:";
             // 
             // btnMegaLogin
             // 
-            this.btnMegaLogin.Location = new System.Drawing.Point(264, 82);
+            resources.ApplyResources(this.btnMegaLogin, "btnMegaLogin");
             this.btnMegaLogin.Name = "btnMegaLogin";
-            this.btnMegaLogin.Size = new System.Drawing.Size(88, 24);
-            this.btnMegaLogin.TabIndex = 7;
-            this.btnMegaLogin.Text = "Login";
             this.btnMegaLogin.UseVisualStyleBackColor = true;
             this.btnMegaLogin.Click += new System.EventHandler(this.btnMegaLogin_Click);
             // 
             // txtMegaEmail
             // 
-            this.txtMegaEmail.Location = new System.Drawing.Point(88, 52);
+            resources.ApplyResources(this.txtMegaEmail, "txtMegaEmail");
             this.txtMegaEmail.Name = "txtMegaEmail";
-            this.txtMegaEmail.Size = new System.Drawing.Size(168, 20);
-            this.txtMegaEmail.TabIndex = 3;
             // 
             // txtMegaPassword
             // 
-            this.txtMegaPassword.Location = new System.Drawing.Point(88, 84);
+            resources.ApplyResources(this.txtMegaPassword, "txtMegaPassword");
             this.txtMegaPassword.Name = "txtMegaPassword";
-            this.txtMegaPassword.Size = new System.Drawing.Size(168, 20);
-            this.txtMegaPassword.TabIndex = 6;
             this.txtMegaPassword.UseSystemPasswordChar = true;
             // 
             // lblMegaPassword
             // 
-            this.lblMegaPassword.AutoSize = true;
-            this.lblMegaPassword.Location = new System.Drawing.Point(24, 88);
+            resources.ApplyResources(this.lblMegaPassword, "lblMegaPassword");
             this.lblMegaPassword.Name = "lblMegaPassword";
-            this.lblMegaPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblMegaPassword.TabIndex = 5;
-            this.lblMegaPassword.Text = "Password:";
             // 
             // tpOwnCloud
             // 
@@ -2283,115 +1766,75 @@
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudPassword);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudUsername);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
-            this.tpOwnCloud.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
-            this.tpOwnCloud.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOwnCloud.Size = new System.Drawing.Size(972, 475);
-            this.tpOwnCloud.TabIndex = 15;
-            this.tpOwnCloud.Text = "ownCloud";
             this.tpOwnCloud.UseVisualStyleBackColor = true;
             // 
             // cbOwnCloudIgnoreInvalidCert
             // 
-            this.cbOwnCloudIgnoreInvalidCert.AutoSize = true;
-            this.cbOwnCloudIgnoreInvalidCert.Location = new System.Drawing.Point(19, 159);
+            resources.ApplyResources(this.cbOwnCloudIgnoreInvalidCert, "cbOwnCloudIgnoreInvalidCert");
             this.cbOwnCloudIgnoreInvalidCert.Name = "cbOwnCloudIgnoreInvalidCert";
-            this.cbOwnCloudIgnoreInvalidCert.Size = new System.Drawing.Size(161, 17);
-            this.cbOwnCloudIgnoreInvalidCert.TabIndex = 10;
-            this.cbOwnCloudIgnoreInvalidCert.Text = "Ignore invalid SSL certificate";
             this.cbOwnCloudIgnoreInvalidCert.UseVisualStyleBackColor = true;
             this.cbOwnCloudIgnoreInvalidCert.CheckedChanged += new System.EventHandler(this.cbOwnCloudIgnoreInvalidCert_CheckedChanged);
             // 
             // cbOwnCloudDirectLink
             // 
-            this.cbOwnCloudDirectLink.AutoSize = true;
-            this.cbOwnCloudDirectLink.Location = new System.Drawing.Point(19, 136);
+            resources.ApplyResources(this.cbOwnCloudDirectLink, "cbOwnCloudDirectLink");
             this.cbOwnCloudDirectLink.Name = "cbOwnCloudDirectLink";
-            this.cbOwnCloudDirectLink.Size = new System.Drawing.Size(208, 17);
-            this.cbOwnCloudDirectLink.TabIndex = 9;
-            this.cbOwnCloudDirectLink.Text = "Direct link (Adds \"&&download\" to URL)";
             this.cbOwnCloudDirectLink.UseVisualStyleBackColor = true;
             this.cbOwnCloudDirectLink.CheckedChanged += new System.EventHandler(this.cbOwnCloudDirectLink_CheckedChanged);
             // 
             // cbOwnCloudCreateShare
             // 
-            this.cbOwnCloudCreateShare.AutoSize = true;
-            this.cbOwnCloudCreateShare.Location = new System.Drawing.Point(19, 112);
+            resources.ApplyResources(this.cbOwnCloudCreateShare, "cbOwnCloudCreateShare");
             this.cbOwnCloudCreateShare.Name = "cbOwnCloudCreateShare";
-            this.cbOwnCloudCreateShare.Size = new System.Drawing.Size(131, 17);
-            this.cbOwnCloudCreateShare.TabIndex = 8;
-            this.cbOwnCloudCreateShare.Text = "Create shareable URL";
             this.cbOwnCloudCreateShare.UseVisualStyleBackColor = true;
             this.cbOwnCloudCreateShare.CheckedChanged += new System.EventHandler(this.cbOwnCloudCreateShare_CheckedChanged);
             // 
             // txtOwnCloudPath
             // 
-            this.txtOwnCloudPath.Location = new System.Drawing.Point(80, 84);
+            resources.ApplyResources(this.txtOwnCloudPath, "txtOwnCloudPath");
             this.txtOwnCloudPath.Name = "txtOwnCloudPath";
-            this.txtOwnCloudPath.Size = new System.Drawing.Size(248, 20);
-            this.txtOwnCloudPath.TabIndex = 7;
             this.txtOwnCloudPath.TextChanged += new System.EventHandler(this.txtOwnCloudPath_TextChanged);
             // 
             // txtOwnCloudPassword
             // 
-            this.txtOwnCloudPassword.Location = new System.Drawing.Point(80, 60);
+            resources.ApplyResources(this.txtOwnCloudPassword, "txtOwnCloudPassword");
             this.txtOwnCloudPassword.Name = "txtOwnCloudPassword";
-            this.txtOwnCloudPassword.Size = new System.Drawing.Size(248, 20);
-            this.txtOwnCloudPassword.TabIndex = 6;
             this.txtOwnCloudPassword.UseSystemPasswordChar = true;
             this.txtOwnCloudPassword.TextChanged += new System.EventHandler(this.txtOwnCloudPassword_TextChanged);
             // 
             // txtOwnCloudUsername
             // 
-            this.txtOwnCloudUsername.Location = new System.Drawing.Point(80, 36);
+            resources.ApplyResources(this.txtOwnCloudUsername, "txtOwnCloudUsername");
             this.txtOwnCloudUsername.Name = "txtOwnCloudUsername";
-            this.txtOwnCloudUsername.Size = new System.Drawing.Size(248, 20);
-            this.txtOwnCloudUsername.TabIndex = 5;
             this.txtOwnCloudUsername.TextChanged += new System.EventHandler(this.txtOwnCloudUsername_TextChanged);
             // 
             // txtOwnCloudHost
             // 
-            this.txtOwnCloudHost.Location = new System.Drawing.Point(80, 12);
+            resources.ApplyResources(this.txtOwnCloudHost, "txtOwnCloudHost");
             this.txtOwnCloudHost.Name = "txtOwnCloudHost";
-            this.txtOwnCloudHost.Size = new System.Drawing.Size(248, 20);
-            this.txtOwnCloudHost.TabIndex = 4;
             this.txtOwnCloudHost.TextChanged += new System.EventHandler(this.txtOwnCloudHost_TextChanged);
             // 
             // lblOwnCloudPath
             // 
-            this.lblOwnCloudPath.AutoSize = true;
-            this.lblOwnCloudPath.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.lblOwnCloudPath, "lblOwnCloudPath");
             this.lblOwnCloudPath.Name = "lblOwnCloudPath";
-            this.lblOwnCloudPath.Size = new System.Drawing.Size(32, 13);
-            this.lblOwnCloudPath.TabIndex = 3;
-            this.lblOwnCloudPath.Text = "Path:";
             // 
             // lblOwnCloudPassword
             // 
-            this.lblOwnCloudPassword.AutoSize = true;
-            this.lblOwnCloudPassword.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.lblOwnCloudPassword, "lblOwnCloudPassword");
             this.lblOwnCloudPassword.Name = "lblOwnCloudPassword";
-            this.lblOwnCloudPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblOwnCloudPassword.TabIndex = 2;
-            this.lblOwnCloudPassword.Text = "Password:";
             // 
             // lblOwnCloudUsername
             // 
-            this.lblOwnCloudUsername.AutoSize = true;
-            this.lblOwnCloudUsername.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblOwnCloudUsername, "lblOwnCloudUsername");
             this.lblOwnCloudUsername.Name = "lblOwnCloudUsername";
-            this.lblOwnCloudUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblOwnCloudUsername.TabIndex = 1;
-            this.lblOwnCloudUsername.Text = "Username:";
             // 
             // lblOwnCloudHost
             // 
-            this.lblOwnCloudHost.AutoSize = true;
-            this.lblOwnCloudHost.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblOwnCloudHost, "lblOwnCloudHost");
             this.lblOwnCloudHost.Name = "lblOwnCloudHost";
-            this.lblOwnCloudHost.Size = new System.Drawing.Size(32, 13);
-            this.lblOwnCloudHost.TabIndex = 0;
-            this.lblOwnCloudHost.Text = "Host:";
             // 
             // tpMediaFire
             // 
@@ -2402,76 +1845,49 @@
             this.tpMediaFire.Controls.Add(this.txtMediaFireEmail);
             this.tpMediaFire.Controls.Add(this.lblMediaFirePassword);
             this.tpMediaFire.Controls.Add(this.lblMediaFireEmail);
-            this.tpMediaFire.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpMediaFire, "tpMediaFire");
             this.tpMediaFire.Name = "tpMediaFire";
-            this.tpMediaFire.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMediaFire.Size = new System.Drawing.Size(972, 475);
-            this.tpMediaFire.TabIndex = 16;
-            this.tpMediaFire.Text = "MediaFire";
             this.tpMediaFire.UseVisualStyleBackColor = true;
             // 
             // cbMediaFireUseLongLink
             // 
-            this.cbMediaFireUseLongLink.AutoSize = true;
-            this.cbMediaFireUseLongLink.Location = new System.Drawing.Point(16, 120);
+            resources.ApplyResources(this.cbMediaFireUseLongLink, "cbMediaFireUseLongLink");
             this.cbMediaFireUseLongLink.Name = "cbMediaFireUseLongLink";
-            this.cbMediaFireUseLongLink.Size = new System.Drawing.Size(205, 17);
-            this.cbMediaFireUseLongLink.TabIndex = 6;
-            this.cbMediaFireUseLongLink.Text = "Use long link which includes file name";
             this.cbMediaFireUseLongLink.UseVisualStyleBackColor = true;
             this.cbMediaFireUseLongLink.CheckedChanged += new System.EventHandler(this.cbMediaFireUseLongLink_CheckedChanged);
             // 
             // txtMediaFirePath
             // 
-            this.txtMediaFirePath.Location = new System.Drawing.Point(88, 85);
+            resources.ApplyResources(this.txtMediaFirePath, "txtMediaFirePath");
             this.txtMediaFirePath.Name = "txtMediaFirePath";
-            this.txtMediaFirePath.Size = new System.Drawing.Size(248, 20);
-            this.txtMediaFirePath.TabIndex = 5;
             this.txtMediaFirePath.TextChanged += new System.EventHandler(this.txtMediaFirePath_TextChanged);
             // 
             // lblMediaFirePath
             // 
-            this.lblMediaFirePath.AutoSize = true;
-            this.lblMediaFirePath.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.lblMediaFirePath, "lblMediaFirePath");
             this.lblMediaFirePath.Name = "lblMediaFirePath";
-            this.lblMediaFirePath.Size = new System.Drawing.Size(68, 13);
-            this.lblMediaFirePath.TabIndex = 4;
-            this.lblMediaFirePath.Text = "Upload path:";
             // 
             // txtMediaFirePassword
             // 
-            this.txtMediaFirePassword.Location = new System.Drawing.Point(88, 52);
+            resources.ApplyResources(this.txtMediaFirePassword, "txtMediaFirePassword");
             this.txtMediaFirePassword.Name = "txtMediaFirePassword";
-            this.txtMediaFirePassword.PasswordChar = '*';
-            this.txtMediaFirePassword.Size = new System.Drawing.Size(248, 20);
-            this.txtMediaFirePassword.TabIndex = 3;
             this.txtMediaFirePassword.TextChanged += new System.EventHandler(this.txtMediaFirePassword_TextChanged);
             // 
             // txtMediaFireEmail
             // 
-            this.txtMediaFireEmail.Location = new System.Drawing.Point(88, 20);
+            resources.ApplyResources(this.txtMediaFireEmail, "txtMediaFireEmail");
             this.txtMediaFireEmail.Name = "txtMediaFireEmail";
-            this.txtMediaFireEmail.Size = new System.Drawing.Size(248, 20);
-            this.txtMediaFireEmail.TabIndex = 2;
             this.txtMediaFireEmail.TextChanged += new System.EventHandler(this.txtMediaFireUsername_TextChanged);
             // 
             // lblMediaFirePassword
             // 
-            this.lblMediaFirePassword.AutoSize = true;
-            this.lblMediaFirePassword.Location = new System.Drawing.Point(16, 56);
+            resources.ApplyResources(this.lblMediaFirePassword, "lblMediaFirePassword");
             this.lblMediaFirePassword.Name = "lblMediaFirePassword";
-            this.lblMediaFirePassword.Size = new System.Drawing.Size(56, 13);
-            this.lblMediaFirePassword.TabIndex = 1;
-            this.lblMediaFirePassword.Text = "Password:";
             // 
             // lblMediaFireEmail
             // 
-            this.lblMediaFireEmail.AutoSize = true;
-            this.lblMediaFireEmail.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.lblMediaFireEmail, "lblMediaFireEmail");
             this.lblMediaFireEmail.Name = "lblMediaFireEmail";
-            this.lblMediaFireEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblMediaFireEmail.TabIndex = 0;
-            this.lblMediaFireEmail.Text = "Email:";
             // 
             // tpPushbullet
             // 
@@ -2480,60 +1896,39 @@
             this.tpPushbullet.Controls.Add(this.btnPushbulletGetDeviceList);
             this.tpPushbullet.Controls.Add(this.lblPushbulletUserKey);
             this.tpPushbullet.Controls.Add(this.txtPushbulletUserKey);
-            this.tpPushbullet.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpPushbullet, "tpPushbullet");
             this.tpPushbullet.Name = "tpPushbullet";
-            this.tpPushbullet.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPushbullet.Size = new System.Drawing.Size(972, 475);
-            this.tpPushbullet.TabIndex = 14;
-            this.tpPushbullet.Text = "Pushbullet";
             this.tpPushbullet.UseVisualStyleBackColor = true;
             // 
             // lblPushbulletDevices
             // 
-            this.lblPushbulletDevices.AutoSize = true;
-            this.lblPushbulletDevices.Location = new System.Drawing.Point(24, 51);
+            resources.ApplyResources(this.lblPushbulletDevices, "lblPushbulletDevices");
             this.lblPushbulletDevices.Name = "lblPushbulletDevices";
-            this.lblPushbulletDevices.Size = new System.Drawing.Size(44, 13);
-            this.lblPushbulletDevices.TabIndex = 2;
-            this.lblPushbulletDevices.Text = "&Device:";
             // 
             // cboPushbulletDevices
             // 
             this.cboPushbulletDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPushbulletDevices.Enabled = false;
+            resources.ApplyResources(this.cboPushbulletDevices, "cboPushbulletDevices");
             this.cboPushbulletDevices.FormattingEnabled = true;
-            this.cboPushbulletDevices.Location = new System.Drawing.Point(102, 48);
             this.cboPushbulletDevices.Name = "cboPushbulletDevices";
-            this.cboPushbulletDevices.Size = new System.Drawing.Size(346, 21);
-            this.cboPushbulletDevices.TabIndex = 3;
             this.cboPushbulletDevices.SelectedIndexChanged += new System.EventHandler(this.cboPushbulletDevices_SelectedIndexChanged);
             // 
             // btnPushbulletGetDeviceList
             // 
-            this.btnPushbulletGetDeviceList.Enabled = false;
-            this.btnPushbulletGetDeviceList.Location = new System.Drawing.Point(456, 47);
+            resources.ApplyResources(this.btnPushbulletGetDeviceList, "btnPushbulletGetDeviceList");
             this.btnPushbulletGetDeviceList.Name = "btnPushbulletGetDeviceList";
-            this.btnPushbulletGetDeviceList.Size = new System.Drawing.Size(107, 23);
-            this.btnPushbulletGetDeviceList.TabIndex = 4;
-            this.btnPushbulletGetDeviceList.Text = "Get device list";
             this.btnPushbulletGetDeviceList.UseVisualStyleBackColor = true;
             this.btnPushbulletGetDeviceList.Click += new System.EventHandler(this.btnPushbulletGetDeviceList_Click);
             // 
             // lblPushbulletUserKey
             // 
-            this.lblPushbulletUserKey.AutoSize = true;
-            this.lblPushbulletUserKey.Location = new System.Drawing.Point(24, 24);
+            resources.ApplyResources(this.lblPushbulletUserKey, "lblPushbulletUserKey");
             this.lblPushbulletUserKey.Name = "lblPushbulletUserKey";
-            this.lblPushbulletUserKey.Size = new System.Drawing.Size(72, 13);
-            this.lblPushbulletUserKey.TabIndex = 0;
-            this.lblPushbulletUserKey.Text = "User &API key:";
             // 
             // txtPushbulletUserKey
             // 
-            this.txtPushbulletUserKey.Location = new System.Drawing.Point(102, 21);
+            resources.ApplyResources(this.txtPushbulletUserKey, "txtPushbulletUserKey");
             this.txtPushbulletUserKey.Name = "txtPushbulletUserKey";
-            this.txtPushbulletUserKey.Size = new System.Drawing.Size(346, 20);
-            this.txtPushbulletUserKey.TabIndex = 1;
             this.txtPushbulletUserKey.UseSystemPasswordChar = true;
             this.txtPushbulletUserKey.TextChanged += new System.EventHandler(this.txtPushbulletUserKey_TextChanged);
             // 
@@ -2547,82 +1942,55 @@
             this.tpRapidShare.Controls.Add(this.lblRapidSharePremiumUsername);
             this.tpRapidShare.Controls.Add(this.txtRapidSharePassword);
             this.tpRapidShare.Controls.Add(this.txtRapidShareUsername);
-            this.tpRapidShare.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpRapidShare, "tpRapidShare");
             this.tpRapidShare.Name = "tpRapidShare";
-            this.tpRapidShare.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRapidShare.Size = new System.Drawing.Size(972, 475);
-            this.tpRapidShare.TabIndex = 5;
-            this.tpRapidShare.Text = "RapidShare";
             this.tpRapidShare.UseVisualStyleBackColor = true;
             // 
             // txtRapidShareFolderID
             // 
-            this.txtRapidShareFolderID.Location = new System.Drawing.Point(128, 84);
+            resources.ApplyResources(this.txtRapidShareFolderID, "txtRapidShareFolderID");
             this.txtRapidShareFolderID.Name = "txtRapidShareFolderID";
-            this.txtRapidShareFolderID.Size = new System.Drawing.Size(88, 20);
-            this.txtRapidShareFolderID.TabIndex = 5;
             this.txtRapidShareFolderID.TextChanged += new System.EventHandler(this.txtRapidShareFolderID_TextChanged);
             // 
             // lblRapidShareFolderID
             // 
-            this.lblRapidShareFolderID.AutoSize = true;
-            this.lblRapidShareFolderID.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.lblRapidShareFolderID, "lblRapidShareFolderID");
             this.lblRapidShareFolderID.Name = "lblRapidShareFolderID";
-            this.lblRapidShareFolderID.Size = new System.Drawing.Size(103, 13);
-            this.lblRapidShareFolderID.TabIndex = 4;
-            this.lblRapidShareFolderID.Text = "Folder ID for upload:";
             // 
             // btnRapidShareRefreshFolders
             // 
-            this.btnRapidShareRefreshFolders.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.btnRapidShareRefreshFolders, "btnRapidShareRefreshFolders");
             this.btnRapidShareRefreshFolders.Name = "btnRapidShareRefreshFolders";
-            this.btnRapidShareRefreshFolders.Size = new System.Drawing.Size(128, 23);
-            this.btnRapidShareRefreshFolders.TabIndex = 6;
-            this.btnRapidShareRefreshFolders.Text = "Refresh folders list";
             this.btnRapidShareRefreshFolders.UseVisualStyleBackColor = true;
             this.btnRapidShareRefreshFolders.Click += new System.EventHandler(this.btnRapidShareRefreshFolders_Click);
             // 
             // tvRapidShareFolders
             // 
-            this.tvRapidShareFolders.Location = new System.Drawing.Point(16, 144);
+            resources.ApplyResources(this.tvRapidShareFolders, "tvRapidShareFolders");
             this.tvRapidShareFolders.Name = "tvRapidShareFolders";
-            this.tvRapidShareFolders.Size = new System.Drawing.Size(440, 304);
-            this.tvRapidShareFolders.TabIndex = 7;
             this.tvRapidShareFolders.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRapidShareFolders_AfterSelect);
             // 
             // lblRapidSharePassword
             // 
-            this.lblRapidSharePassword.AutoSize = true;
-            this.lblRapidSharePassword.Location = new System.Drawing.Point(16, 56);
+            resources.ApplyResources(this.lblRapidSharePassword, "lblRapidSharePassword");
             this.lblRapidSharePassword.Name = "lblRapidSharePassword";
-            this.lblRapidSharePassword.Size = new System.Drawing.Size(56, 13);
-            this.lblRapidSharePassword.TabIndex = 2;
-            this.lblRapidSharePassword.Text = "Password:";
             // 
             // lblRapidSharePremiumUsername
             // 
-            this.lblRapidSharePremiumUsername.AutoSize = true;
-            this.lblRapidSharePremiumUsername.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.lblRapidSharePremiumUsername, "lblRapidSharePremiumUsername");
             this.lblRapidSharePremiumUsername.Name = "lblRapidSharePremiumUsername";
-            this.lblRapidSharePremiumUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblRapidSharePremiumUsername.TabIndex = 0;
-            this.lblRapidSharePremiumUsername.Text = "Username:";
             // 
             // txtRapidSharePassword
             // 
-            this.txtRapidSharePassword.Location = new System.Drawing.Point(80, 52);
+            resources.ApplyResources(this.txtRapidSharePassword, "txtRapidSharePassword");
             this.txtRapidSharePassword.Name = "txtRapidSharePassword";
-            this.txtRapidSharePassword.Size = new System.Drawing.Size(136, 20);
-            this.txtRapidSharePassword.TabIndex = 3;
             this.txtRapidSharePassword.UseSystemPasswordChar = true;
             this.txtRapidSharePassword.TextChanged += new System.EventHandler(this.txtRapidSharePassword_TextChanged);
             // 
             // txtRapidShareUsername
             // 
-            this.txtRapidShareUsername.Location = new System.Drawing.Point(80, 20);
+            resources.ApplyResources(this.txtRapidShareUsername, "txtRapidShareUsername");
             this.txtRapidShareUsername.Name = "txtRapidShareUsername";
-            this.txtRapidShareUsername.Size = new System.Drawing.Size(136, 20);
-            this.txtRapidShareUsername.TabIndex = 1;
             this.txtRapidShareUsername.TextChanged += new System.EventHandler(this.txtRapidShareUsername_TextChanged);
             // 
             // tpSendSpace
@@ -2633,87 +2001,58 @@
             this.tpSendSpace.Controls.Add(this.txtSendSpacePassword);
             this.tpSendSpace.Controls.Add(this.txtSendSpaceUserName);
             this.tpSendSpace.Controls.Add(this.atcSendSpaceAccountType);
-            this.tpSendSpace.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpSendSpace, "tpSendSpace");
             this.tpSendSpace.Name = "tpSendSpace";
-            this.tpSendSpace.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSendSpace.Size = new System.Drawing.Size(972, 475);
-            this.tpSendSpace.TabIndex = 6;
-            this.tpSendSpace.Text = "SendSpace";
             this.tpSendSpace.UseVisualStyleBackColor = true;
             // 
             // btnSendSpaceRegister
             // 
-            this.btnSendSpaceRegister.Location = new System.Drawing.Point(240, 51);
+            resources.ApplyResources(this.btnSendSpaceRegister, "btnSendSpaceRegister");
             this.btnSendSpaceRegister.Name = "btnSendSpaceRegister";
-            this.btnSendSpaceRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnSendSpaceRegister.TabIndex = 3;
-            this.btnSendSpaceRegister.Text = "&Register...";
             this.btnSendSpaceRegister.UseVisualStyleBackColor = true;
             this.btnSendSpaceRegister.Click += new System.EventHandler(this.btnSendSpaceRegister_Click);
             // 
             // lblSendSpacePassword
             // 
-            this.lblSendSpacePassword.AutoSize = true;
-            this.lblSendSpacePassword.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.lblSendSpacePassword, "lblSendSpacePassword");
             this.lblSendSpacePassword.Name = "lblSendSpacePassword";
-            this.lblSendSpacePassword.Size = new System.Drawing.Size(56, 13);
-            this.lblSendSpacePassword.TabIndex = 4;
-            this.lblSendSpacePassword.Text = "Password:";
             // 
             // lblSendSpaceUsername
             // 
-            this.lblSendSpaceUsername.AutoSize = true;
-            this.lblSendSpaceUsername.Location = new System.Drawing.Point(16, 56);
+            resources.ApplyResources(this.lblSendSpaceUsername, "lblSendSpaceUsername");
             this.lblSendSpaceUsername.Name = "lblSendSpaceUsername";
-            this.lblSendSpaceUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblSendSpaceUsername.TabIndex = 1;
-            this.lblSendSpaceUsername.Text = "Username:";
             // 
             // txtSendSpacePassword
             // 
-            this.txtSendSpacePassword.Location = new System.Drawing.Point(96, 84);
+            resources.ApplyResources(this.txtSendSpacePassword, "txtSendSpacePassword");
             this.txtSendSpacePassword.Name = "txtSendSpacePassword";
-            this.txtSendSpacePassword.Size = new System.Drawing.Size(136, 20);
-            this.txtSendSpacePassword.TabIndex = 5;
             this.txtSendSpacePassword.UseSystemPasswordChar = true;
             this.txtSendSpacePassword.TextChanged += new System.EventHandler(this.txtSendSpacePassword_TextChanged);
             // 
             // txtSendSpaceUserName
             // 
-            this.txtSendSpaceUserName.Location = new System.Drawing.Point(96, 52);
+            resources.ApplyResources(this.txtSendSpaceUserName, "txtSendSpaceUserName");
             this.txtSendSpaceUserName.Name = "txtSendSpaceUserName";
-            this.txtSendSpaceUserName.Size = new System.Drawing.Size(136, 20);
-            this.txtSendSpaceUserName.TabIndex = 2;
             this.txtSendSpaceUserName.TextChanged += new System.EventHandler(this.txtSendSpaceUserName_TextChanged);
             // 
             // atcSendSpaceAccountType
             // 
-            this.atcSendSpaceAccountType.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.atcSendSpaceAccountType, "atcSendSpaceAccountType");
             this.atcSendSpaceAccountType.Name = "atcSendSpaceAccountType";
             this.atcSendSpaceAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcSendSpaceAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcSendSpaceAccountType.TabIndex = 0;
             this.atcSendSpaceAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcSendSpaceAccountType_AccountTypeChanged);
             // 
             // tpMediaCrush
             // 
             this.tpMediaCrush.Controls.Add(this.cbMediaCrushDirectLink);
-            this.tpMediaCrush.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpMediaCrush, "tpMediaCrush");
             this.tpMediaCrush.Name = "tpMediaCrush";
-            this.tpMediaCrush.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMediaCrush.Size = new System.Drawing.Size(972, 475);
-            this.tpMediaCrush.TabIndex = 18;
-            this.tpMediaCrush.Text = "MediaCrush";
             this.tpMediaCrush.UseVisualStyleBackColor = true;
             // 
             // cbMediaCrushDirectLink
             // 
-            this.cbMediaCrushDirectLink.AutoSize = true;
-            this.cbMediaCrushDirectLink.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.cbMediaCrushDirectLink, "cbMediaCrushDirectLink");
             this.cbMediaCrushDirectLink.Name = "cbMediaCrushDirectLink";
-            this.cbMediaCrushDirectLink.Size = new System.Drawing.Size(187, 17);
-            this.cbMediaCrushDirectLink.TabIndex = 10;
-            this.cbMediaCrushDirectLink.Text = "Direct link (Adds \"/direct\" to URL)";
             this.cbMediaCrushDirectLink.UseVisualStyleBackColor = true;
             this.cbMediaCrushDirectLink.CheckedChanged += new System.EventHandler(this.cbMediaCrushDirectLink_CheckedChanged);
             // 
@@ -2725,65 +2064,42 @@
             this.tpGe_tt.Controls.Add(this.btnGe_ttLogin);
             this.tpGe_tt.Controls.Add(this.txtGe_ttPassword);
             this.tpGe_tt.Controls.Add(this.txtGe_ttEmail);
-            this.tpGe_tt.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpGe_tt, "tpGe_tt");
             this.tpGe_tt.Name = "tpGe_tt";
-            this.tpGe_tt.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGe_tt.Size = new System.Drawing.Size(972, 475);
-            this.tpGe_tt.TabIndex = 7;
-            this.tpGe_tt.Text = "Ge.tt";
             this.tpGe_tt.UseVisualStyleBackColor = true;
             // 
             // lblGe_ttStatus
             // 
-            this.lblGe_ttStatus.AutoSize = true;
-            this.lblGe_ttStatus.Location = new System.Drawing.Point(24, 80);
+            resources.ApplyResources(this.lblGe_ttStatus, "lblGe_ttStatus");
             this.lblGe_ttStatus.Name = "lblGe_ttStatus";
-            this.lblGe_ttStatus.Size = new System.Drawing.Size(77, 13);
-            this.lblGe_ttStatus.TabIndex = 4;
-            this.lblGe_ttStatus.Text = "Login required.";
             // 
             // lblGe_ttPassword
             // 
-            this.lblGe_ttPassword.AutoSize = true;
-            this.lblGe_ttPassword.Location = new System.Drawing.Point(24, 48);
+            resources.ApplyResources(this.lblGe_ttPassword, "lblGe_ttPassword");
             this.lblGe_ttPassword.Name = "lblGe_ttPassword";
-            this.lblGe_ttPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblGe_ttPassword.TabIndex = 2;
-            this.lblGe_ttPassword.Text = "Password:";
             // 
             // lblGe_ttEmail
             // 
-            this.lblGe_ttEmail.AutoSize = true;
-            this.lblGe_ttEmail.Location = new System.Drawing.Point(24, 24);
+            resources.ApplyResources(this.lblGe_ttEmail, "lblGe_ttEmail");
             this.lblGe_ttEmail.Name = "lblGe_ttEmail";
-            this.lblGe_ttEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblGe_ttEmail.TabIndex = 0;
-            this.lblGe_ttEmail.Text = "Email:";
             // 
             // btnGe_ttLogin
             // 
-            this.btnGe_ttLogin.Location = new System.Drawing.Point(184, 75);
+            resources.ApplyResources(this.btnGe_ttLogin, "btnGe_ttLogin");
             this.btnGe_ttLogin.Name = "btnGe_ttLogin";
-            this.btnGe_ttLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnGe_ttLogin.TabIndex = 5;
-            this.btnGe_ttLogin.Text = "Login";
             this.btnGe_ttLogin.UseVisualStyleBackColor = true;
             this.btnGe_ttLogin.Click += new System.EventHandler(this.btnGe_ttLogin_Click);
             // 
             // txtGe_ttPassword
             // 
-            this.txtGe_ttPassword.Location = new System.Drawing.Point(88, 44);
+            resources.ApplyResources(this.txtGe_ttPassword, "txtGe_ttPassword");
             this.txtGe_ttPassword.Name = "txtGe_ttPassword";
-            this.txtGe_ttPassword.Size = new System.Drawing.Size(168, 20);
-            this.txtGe_ttPassword.TabIndex = 3;
             this.txtGe_ttPassword.UseSystemPasswordChar = true;
             // 
             // txtGe_ttEmail
             // 
-            this.txtGe_ttEmail.Location = new System.Drawing.Point(88, 20);
+            resources.ApplyResources(this.txtGe_ttEmail, "txtGe_ttEmail");
             this.txtGe_ttEmail.Name = "txtGe_ttEmail";
-            this.txtGe_ttEmail.Size = new System.Drawing.Size(168, 20);
-            this.txtGe_ttEmail.TabIndex = 1;
             // 
             // tpHostr
             // 
@@ -2792,58 +2108,38 @@
             this.tpHostr.Controls.Add(this.lblLocalhostrEmail);
             this.tpHostr.Controls.Add(this.txtLocalhostrPassword);
             this.tpHostr.Controls.Add(this.txtLocalhostrEmail);
-            this.tpHostr.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpHostr, "tpHostr");
             this.tpHostr.Name = "tpHostr";
-            this.tpHostr.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHostr.Size = new System.Drawing.Size(972, 475);
-            this.tpHostr.TabIndex = 8;
-            this.tpHostr.Text = "Hostr";
             this.tpHostr.UseVisualStyleBackColor = true;
             // 
             // cbLocalhostrDirectURL
             // 
-            this.cbLocalhostrDirectURL.AutoSize = true;
-            this.cbLocalhostrDirectURL.Location = new System.Drawing.Point(26, 72);
+            resources.ApplyResources(this.cbLocalhostrDirectURL, "cbLocalhostrDirectURL");
             this.cbLocalhostrDirectURL.Name = "cbLocalhostrDirectURL";
-            this.cbLocalhostrDirectURL.Size = new System.Drawing.Size(131, 17);
-            this.cbLocalhostrDirectURL.TabIndex = 4;
-            this.cbLocalhostrDirectURL.Text = "Use direct URL if exist";
             this.cbLocalhostrDirectURL.UseVisualStyleBackColor = true;
             this.cbLocalhostrDirectURL.CheckedChanged += new System.EventHandler(this.cbLocalhostrDirectURL_CheckedChanged);
             // 
             // lblLocalhostrPassword
             // 
-            this.lblLocalhostrPassword.AutoSize = true;
-            this.lblLocalhostrPassword.Location = new System.Drawing.Point(24, 48);
+            resources.ApplyResources(this.lblLocalhostrPassword, "lblLocalhostrPassword");
             this.lblLocalhostrPassword.Name = "lblLocalhostrPassword";
-            this.lblLocalhostrPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblLocalhostrPassword.TabIndex = 2;
-            this.lblLocalhostrPassword.Text = "Password:";
             // 
             // lblLocalhostrEmail
             // 
-            this.lblLocalhostrEmail.AutoSize = true;
-            this.lblLocalhostrEmail.Location = new System.Drawing.Point(24, 24);
+            resources.ApplyResources(this.lblLocalhostrEmail, "lblLocalhostrEmail");
             this.lblLocalhostrEmail.Name = "lblLocalhostrEmail";
-            this.lblLocalhostrEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblLocalhostrEmail.TabIndex = 0;
-            this.lblLocalhostrEmail.Text = "Email:";
             // 
             // txtLocalhostrPassword
             // 
-            this.txtLocalhostrPassword.Location = new System.Drawing.Point(88, 44);
+            resources.ApplyResources(this.txtLocalhostrPassword, "txtLocalhostrPassword");
             this.txtLocalhostrPassword.Name = "txtLocalhostrPassword";
-            this.txtLocalhostrPassword.Size = new System.Drawing.Size(168, 20);
-            this.txtLocalhostrPassword.TabIndex = 3;
             this.txtLocalhostrPassword.UseSystemPasswordChar = true;
             this.txtLocalhostrPassword.TextChanged += new System.EventHandler(this.txtLocalhostrPassword_TextChanged);
             // 
             // txtLocalhostrEmail
             // 
-            this.txtLocalhostrEmail.Location = new System.Drawing.Point(88, 20);
+            resources.ApplyResources(this.txtLocalhostrEmail, "txtLocalhostrEmail");
             this.txtLocalhostrEmail.Name = "txtLocalhostrEmail";
-            this.txtLocalhostrEmail.Size = new System.Drawing.Size(168, 20);
-            this.txtLocalhostrEmail.TabIndex = 1;
             this.txtLocalhostrEmail.TextChanged += new System.EventHandler(this.txtLocalhostrEmail_TextChanged);
             // 
             // tpMinus
@@ -2852,31 +2148,21 @@
             this.tpMinus.Controls.Add(this.cbMinusURLType);
             this.tpMinus.Controls.Add(this.gbMinusUserPass);
             this.tpMinus.Controls.Add(this.gbMinusUpload);
-            this.tpMinus.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpMinus, "tpMinus");
             this.tpMinus.Name = "tpMinus";
-            this.tpMinus.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMinus.Size = new System.Drawing.Size(972, 475);
-            this.tpMinus.TabIndex = 3;
-            this.tpMinus.Text = "Minus";
             this.tpMinus.UseVisualStyleBackColor = true;
             // 
             // lblMinusURLType
             // 
-            this.lblMinusURLType.AutoSize = true;
-            this.lblMinusURLType.Location = new System.Drawing.Point(16, 240);
+            resources.ApplyResources(this.lblMinusURLType, "lblMinusURLType");
             this.lblMinusURLType.Name = "lblMinusURLType";
-            this.lblMinusURLType.Size = new System.Drawing.Size(55, 13);
-            this.lblMinusURLType.TabIndex = 2;
-            this.lblMinusURLType.Text = "URL type:";
             // 
             // cbMinusURLType
             // 
             this.cbMinusURLType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMinusURLType.FormattingEnabled = true;
-            this.cbMinusURLType.Location = new System.Drawing.Point(80, 236);
+            resources.ApplyResources(this.cbMinusURLType, "cbMinusURLType");
             this.cbMinusURLType.Name = "cbMinusURLType";
-            this.cbMinusURLType.Size = new System.Drawing.Size(88, 21);
-            this.cbMinusURLType.TabIndex = 3;
             this.cbMinusURLType.SelectedIndexChanged += new System.EventHandler(this.cbMinusURLType_SelectedIndexChanged);
             // 
             // gbMinusUserPass
@@ -2888,72 +2174,47 @@
             this.gbMinusUserPass.Controls.Add(this.txtMinusPassword);
             this.gbMinusUserPass.Controls.Add(this.txtMinusUsername);
             this.gbMinusUserPass.Controls.Add(this.btnMinusAuth);
-            this.gbMinusUserPass.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.gbMinusUserPass, "gbMinusUserPass");
             this.gbMinusUserPass.Name = "gbMinusUserPass";
-            this.gbMinusUserPass.Size = new System.Drawing.Size(712, 112);
-            this.gbMinusUserPass.TabIndex = 0;
             this.gbMinusUserPass.TabStop = false;
-            this.gbMinusUserPass.Text = "Authentication";
             // 
             // lblMinusAuthStatus
             // 
-            this.lblMinusAuthStatus.AutoSize = true;
-            this.lblMinusAuthStatus.Location = new System.Drawing.Point(312, 86);
+            resources.ApplyResources(this.lblMinusAuthStatus, "lblMinusAuthStatus");
             this.lblMinusAuthStatus.Name = "lblMinusAuthStatus";
-            this.lblMinusAuthStatus.Size = new System.Drawing.Size(67, 13);
-            this.lblMinusAuthStatus.TabIndex = 6;
-            this.lblMinusAuthStatus.Text = "Login status:";
             // 
             // btnMinusRefreshAuth
             // 
-            this.btnMinusRefreshAuth.Location = new System.Drawing.Point(160, 80);
+            resources.ApplyResources(this.btnMinusRefreshAuth, "btnMinusRefreshAuth");
             this.btnMinusRefreshAuth.Name = "btnMinusRefreshAuth";
-            this.btnMinusRefreshAuth.Size = new System.Drawing.Size(144, 24);
-            this.btnMinusRefreshAuth.TabIndex = 5;
-            this.btnMinusRefreshAuth.Text = "Refresh authorization";
             this.btnMinusRefreshAuth.UseVisualStyleBackColor = true;
             this.btnMinusRefreshAuth.Click += new System.EventHandler(this.btnAuthRefresh_Click);
             // 
             // lblMinusPassword
             // 
-            this.lblMinusPassword.AutoSize = true;
-            this.lblMinusPassword.Location = new System.Drawing.Point(8, 56);
+            resources.ApplyResources(this.lblMinusPassword, "lblMinusPassword");
             this.lblMinusPassword.Name = "lblMinusPassword";
-            this.lblMinusPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblMinusPassword.TabIndex = 2;
-            this.lblMinusPassword.Text = "Password:";
             // 
             // lblMinusUsername
             // 
-            this.lblMinusUsername.AutoSize = true;
-            this.lblMinusUsername.Location = new System.Drawing.Point(8, 24);
+            resources.ApplyResources(this.lblMinusUsername, "lblMinusUsername");
             this.lblMinusUsername.Name = "lblMinusUsername";
-            this.lblMinusUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblMinusUsername.TabIndex = 0;
-            this.lblMinusUsername.Text = "Username:";
             // 
             // txtMinusPassword
             // 
-            this.txtMinusPassword.Location = new System.Drawing.Point(72, 52);
+            resources.ApplyResources(this.txtMinusPassword, "txtMinusPassword");
             this.txtMinusPassword.Name = "txtMinusPassword";
-            this.txtMinusPassword.Size = new System.Drawing.Size(232, 20);
-            this.txtMinusPassword.TabIndex = 3;
             this.txtMinusPassword.UseSystemPasswordChar = true;
             // 
             // txtMinusUsername
             // 
-            this.txtMinusUsername.Location = new System.Drawing.Point(72, 20);
+            resources.ApplyResources(this.txtMinusUsername, "txtMinusUsername");
             this.txtMinusUsername.Name = "txtMinusUsername";
-            this.txtMinusUsername.Size = new System.Drawing.Size(232, 20);
-            this.txtMinusUsername.TabIndex = 1;
             // 
             // btnMinusAuth
             // 
-            this.btnMinusAuth.Location = new System.Drawing.Point(8, 80);
+            resources.ApplyResources(this.btnMinusAuth, "btnMinusAuth");
             this.btnMinusAuth.Name = "btnMinusAuth";
-            this.btnMinusAuth.Size = new System.Drawing.Size(144, 24);
-            this.btnMinusAuth.TabIndex = 4;
-            this.btnMinusAuth.Text = "Authorize";
             this.btnMinusAuth.UseVisualStyleBackColor = true;
             this.btnMinusAuth.Click += new System.EventHandler(this.btnMinusAuth_Click);
             // 
@@ -2964,62 +2225,42 @@
             this.gbMinusUpload.Controls.Add(this.btnMinusFolderAdd);
             this.gbMinusUpload.Controls.Add(this.btnMinusFolderRemove);
             this.gbMinusUpload.Controls.Add(this.cboMinusFolders);
-            this.gbMinusUpload.Location = new System.Drawing.Point(16, 136);
+            resources.ApplyResources(this.gbMinusUpload, "gbMinusUpload");
             this.gbMinusUpload.Name = "gbMinusUpload";
-            this.gbMinusUpload.Size = new System.Drawing.Size(712, 88);
-            this.gbMinusUpload.TabIndex = 1;
             this.gbMinusUpload.TabStop = false;
-            this.gbMinusUpload.Text = "Upload images to";
             // 
             // btnMinusReadFolderList
             // 
-            this.btnMinusReadFolderList.AutoSize = true;
-            this.btnMinusReadFolderList.Location = new System.Drawing.Point(8, 24);
+            resources.ApplyResources(this.btnMinusReadFolderList, "btnMinusReadFolderList");
             this.btnMinusReadFolderList.Name = "btnMinusReadFolderList";
-            this.btnMinusReadFolderList.Size = new System.Drawing.Size(144, 23);
-            this.btnMinusReadFolderList.TabIndex = 0;
-            this.btnMinusReadFolderList.Text = "Reload folder list";
             this.btnMinusReadFolderList.UseVisualStyleBackColor = true;
             this.btnMinusReadFolderList.Click += new System.EventHandler(this.btnMinusReadFolderList_Click);
             // 
             // chkMinusPublic
             // 
-            this.chkMinusPublic.AutoSize = true;
-            this.chkMinusPublic.Location = new System.Drawing.Point(464, 58);
+            resources.ApplyResources(this.chkMinusPublic, "chkMinusPublic");
             this.chkMinusPublic.Name = "chkMinusPublic";
-            this.chkMinusPublic.Size = new System.Drawing.Size(55, 17);
-            this.chkMinusPublic.TabIndex = 4;
-            this.chkMinusPublic.Text = "Public";
             this.chkMinusPublic.UseVisualStyleBackColor = true;
             // 
             // btnMinusFolderAdd
             // 
-            this.btnMinusFolderAdd.Location = new System.Drawing.Point(160, 24);
+            resources.ApplyResources(this.btnMinusFolderAdd, "btnMinusFolderAdd");
             this.btnMinusFolderAdd.Name = "btnMinusFolderAdd";
-            this.btnMinusFolderAdd.Size = new System.Drawing.Size(144, 23);
-            this.btnMinusFolderAdd.TabIndex = 1;
-            this.btnMinusFolderAdd.Text = "Add folder";
             this.btnMinusFolderAdd.UseVisualStyleBackColor = true;
             this.btnMinusFolderAdd.Click += new System.EventHandler(this.btnMinusFolderAdd_Click);
             // 
             // btnMinusFolderRemove
             // 
-            this.btnMinusFolderRemove.AutoSize = true;
-            this.btnMinusFolderRemove.Location = new System.Drawing.Point(312, 24);
+            resources.ApplyResources(this.btnMinusFolderRemove, "btnMinusFolderRemove");
             this.btnMinusFolderRemove.Name = "btnMinusFolderRemove";
-            this.btnMinusFolderRemove.Size = new System.Drawing.Size(144, 23);
-            this.btnMinusFolderRemove.TabIndex = 2;
-            this.btnMinusFolderRemove.Text = "Remove folder";
             this.btnMinusFolderRemove.UseVisualStyleBackColor = true;
             this.btnMinusFolderRemove.Click += new System.EventHandler(this.btnMinusFolderRemove_Click);
             // 
             // cboMinusFolders
             // 
             this.cboMinusFolders.FormattingEnabled = true;
-            this.cboMinusFolders.Location = new System.Drawing.Point(8, 56);
+            resources.ApplyResources(this.cboMinusFolders, "cboMinusFolders");
             this.cboMinusFolders.Name = "cboMinusFolders";
-            this.cboMinusFolders.Size = new System.Drawing.Size(448, 21);
-            this.cboMinusFolders.TabIndex = 3;
             this.cboMinusFolders.SelectedIndexChanged += new System.EventHandler(this.cboMinusFolders_SelectedIndexChanged);
             // 
             // tpJira
@@ -3028,79 +2269,52 @@
             this.tpJira.Controls.Add(this.lblJiraIssuePrefix);
             this.tpJira.Controls.Add(this.gpJiraServer);
             this.tpJira.Controls.Add(this.oAuthJira);
-            this.tpJira.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpJira, "tpJira");
             this.tpJira.Name = "tpJira";
-            this.tpJira.Size = new System.Drawing.Size(972, 475);
-            this.tpJira.TabIndex = 11;
-            this.tpJira.Text = "Atlassian Jira";
             this.tpJira.UseVisualStyleBackColor = true;
             // 
             // txtJiraIssuePrefix
             // 
-            this.txtJiraIssuePrefix.Location = new System.Drawing.Point(560, 256);
+            resources.ApplyResources(this.txtJiraIssuePrefix, "txtJiraIssuePrefix");
             this.txtJiraIssuePrefix.Name = "txtJiraIssuePrefix";
-            this.txtJiraIssuePrefix.Size = new System.Drawing.Size(117, 20);
-            this.txtJiraIssuePrefix.TabIndex = 3;
-            this.txtJiraIssuePrefix.Text = "PROJECT-";
             this.txtJiraIssuePrefix.TextChanged += new System.EventHandler(this.txtJiraIssuePrefix_TextChanged);
             // 
             // lblJiraIssuePrefix
             // 
-            this.lblJiraIssuePrefix.AutoSize = true;
-            this.lblJiraIssuePrefix.Location = new System.Drawing.Point(473, 259);
+            resources.ApplyResources(this.lblJiraIssuePrefix, "lblJiraIssuePrefix");
             this.lblJiraIssuePrefix.Name = "lblJiraIssuePrefix";
-            this.lblJiraIssuePrefix.Size = new System.Drawing.Size(81, 13);
-            this.lblJiraIssuePrefix.TabIndex = 2;
-            this.lblJiraIssuePrefix.Text = "Jira issue prefix:";
             // 
             // gpJiraServer
             // 
             this.gpJiraServer.Controls.Add(this.txtJiraConfigHelp);
             this.gpJiraServer.Controls.Add(this.txtJiraHost);
             this.gpJiraServer.Controls.Add(this.lblJiraHost);
-            this.gpJiraServer.Location = new System.Drawing.Point(13, 13);
+            resources.ApplyResources(this.gpJiraServer, "gpJiraServer");
             this.gpJiraServer.Name = "gpJiraServer";
-            this.gpJiraServer.Size = new System.Drawing.Size(454, 358);
-            this.gpJiraServer.TabIndex = 0;
             this.gpJiraServer.TabStop = false;
-            this.gpJiraServer.Text = "Jira server";
             // 
             // txtJiraConfigHelp
             // 
             this.txtJiraConfigHelp.BackColor = System.Drawing.SystemColors.Window;
-            this.txtJiraConfigHelp.Location = new System.Drawing.Point(8, 45);
-            this.txtJiraConfigHelp.Multiline = true;
+            resources.ApplyResources(this.txtJiraConfigHelp, "txtJiraConfigHelp");
             this.txtJiraConfigHelp.Name = "txtJiraConfigHelp";
             this.txtJiraConfigHelp.ReadOnly = true;
-            this.txtJiraConfigHelp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtJiraConfigHelp.Size = new System.Drawing.Size(440, 307);
-            this.txtJiraConfigHelp.TabIndex = 2;
-            this.txtJiraConfigHelp.Text = "Template";
             // 
             // txtJiraHost
             // 
-            this.txtJiraHost.Location = new System.Drawing.Point(63, 19);
+            resources.ApplyResources(this.txtJiraHost, "txtJiraHost");
             this.txtJiraHost.Name = "txtJiraHost";
-            this.txtJiraHost.Size = new System.Drawing.Size(385, 20);
-            this.txtJiraHost.TabIndex = 1;
-            this.txtJiraHost.Text = "http://";
             this.txtJiraHost.TextChanged += new System.EventHandler(this.txtJiraHost_TextChanged);
             // 
             // lblJiraHost
             // 
-            this.lblJiraHost.AutoSize = true;
-            this.lblJiraHost.Location = new System.Drawing.Point(5, 22);
+            resources.ApplyResources(this.lblJiraHost, "lblJiraHost");
             this.lblJiraHost.Name = "lblJiraHost";
-            this.lblJiraHost.Size = new System.Drawing.Size(52, 13);
-            this.lblJiraHost.TabIndex = 0;
-            this.lblJiraHost.Text = "Jira host: ";
             // 
             // oAuthJira
             // 
-            this.oAuthJira.Location = new System.Drawing.Point(473, 13);
+            resources.ApplyResources(this.oAuthJira, "oAuthJira");
             this.oAuthJira.Name = "oAuthJira";
-            this.oAuthJira.Size = new System.Drawing.Size(328, 243);
-            this.oAuthJira.TabIndex = 1;
             this.oAuthJira.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
             this.oAuthJira.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
             this.oAuthJira.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthJira_ClearButtonClicked);
@@ -3122,127 +2336,83 @@
             this.tpEmail.Controls.Add(this.nudEmailSmtpPort);
             this.tpEmail.Controls.Add(this.lblEmailSmtpPort);
             this.tpEmail.Controls.Add(this.txtEmailDefaultSubject);
-            this.tpEmail.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpEmail, "tpEmail");
             this.tpEmail.Name = "tpEmail";
-            this.tpEmail.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEmail.Size = new System.Drawing.Size(972, 475);
-            this.tpEmail.TabIndex = 10;
-            this.tpEmail.Text = "Email";
             this.tpEmail.UseVisualStyleBackColor = true;
             // 
             // chkEmailConfirm
             // 
-            this.chkEmailConfirm.AutoSize = true;
-            this.chkEmailConfirm.Location = new System.Drawing.Point(216, 96);
+            resources.ApplyResources(this.chkEmailConfirm, "chkEmailConfirm");
             this.chkEmailConfirm.Name = "chkEmailConfirm";
-            this.chkEmailConfirm.Size = new System.Drawing.Size(134, 17);
-            this.chkEmailConfirm.TabIndex = 9;
-            this.chkEmailConfirm.Text = "Confirm before sending";
             this.chkEmailConfirm.UseVisualStyleBackColor = true;
             this.chkEmailConfirm.CheckedChanged += new System.EventHandler(this.chkEmailConfirm_CheckedChanged);
             // 
             // lblEmailSmtpServer
             // 
-            this.lblEmailSmtpServer.AutoSize = true;
-            this.lblEmailSmtpServer.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblEmailSmtpServer, "lblEmailSmtpServer");
             this.lblEmailSmtpServer.Name = "lblEmailSmtpServer";
-            this.lblEmailSmtpServer.Size = new System.Drawing.Size(72, 13);
-            this.lblEmailSmtpServer.TabIndex = 0;
-            this.lblEmailSmtpServer.Text = "SMTP server:";
             // 
             // lblEmailPassword
             // 
-            this.lblEmailPassword.AutoSize = true;
-            this.lblEmailPassword.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.lblEmailPassword, "lblEmailPassword");
             this.lblEmailPassword.Name = "lblEmailPassword";
-            this.lblEmailPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblEmailPassword.TabIndex = 6;
-            this.lblEmailPassword.Text = "Password:";
             // 
             // cbEmailRememberLastTo
             // 
-            this.cbEmailRememberLastTo.AutoSize = true;
-            this.cbEmailRememberLastTo.Location = new System.Drawing.Point(16, 96);
+            resources.ApplyResources(this.cbEmailRememberLastTo, "cbEmailRememberLastTo");
             this.cbEmailRememberLastTo.Name = "cbEmailRememberLastTo";
-            this.cbEmailRememberLastTo.Size = new System.Drawing.Size(179, 17);
-            this.cbEmailRememberLastTo.TabIndex = 8;
-            this.cbEmailRememberLastTo.Text = "Remember last recipient address";
             this.cbEmailRememberLastTo.UseVisualStyleBackColor = true;
             this.cbEmailRememberLastTo.CheckedChanged += new System.EventHandler(this.cbRememberLastToEmail_CheckedChanged);
             // 
             // txtEmailFrom
             // 
-            this.txtEmailFrom.Location = new System.Drawing.Point(96, 36);
+            resources.ApplyResources(this.txtEmailFrom, "txtEmailFrom");
             this.txtEmailFrom.Name = "txtEmailFrom";
-            this.txtEmailFrom.Size = new System.Drawing.Size(200, 20);
-            this.txtEmailFrom.TabIndex = 5;
             this.txtEmailFrom.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtEmailPassword
             // 
-            this.txtEmailPassword.Location = new System.Drawing.Point(96, 60);
+            resources.ApplyResources(this.txtEmailPassword, "txtEmailPassword");
             this.txtEmailPassword.Name = "txtEmailPassword";
-            this.txtEmailPassword.Size = new System.Drawing.Size(200, 20);
-            this.txtEmailPassword.TabIndex = 7;
             this.txtEmailPassword.UseSystemPasswordChar = true;
             this.txtEmailPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmailDefaultBody
             // 
-            this.txtEmailDefaultBody.Location = new System.Drawing.Point(16, 192);
-            this.txtEmailDefaultBody.Multiline = true;
+            resources.ApplyResources(this.txtEmailDefaultBody, "txtEmailDefaultBody");
             this.txtEmailDefaultBody.Name = "txtEmailDefaultBody";
-            this.txtEmailDefaultBody.Size = new System.Drawing.Size(400, 128);
-            this.txtEmailDefaultBody.TabIndex = 13;
             this.txtEmailDefaultBody.TextChanged += new System.EventHandler(this.txtDefaultBody_TextChanged);
             // 
             // lblEmailFrom
             // 
-            this.lblEmailFrom.AutoSize = true;
-            this.lblEmailFrom.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblEmailFrom, "lblEmailFrom");
             this.lblEmailFrom.Name = "lblEmailFrom";
-            this.lblEmailFrom.Size = new System.Drawing.Size(35, 13);
-            this.lblEmailFrom.TabIndex = 4;
-            this.lblEmailFrom.Text = "Email:";
             // 
             // txtEmailSmtpServer
             // 
-            this.txtEmailSmtpServer.Location = new System.Drawing.Point(96, 12);
+            resources.ApplyResources(this.txtEmailSmtpServer, "txtEmailSmtpServer");
             this.txtEmailSmtpServer.Name = "txtEmailSmtpServer";
-            this.txtEmailSmtpServer.Size = new System.Drawing.Size(200, 20);
-            this.txtEmailSmtpServer.TabIndex = 1;
             this.txtEmailSmtpServer.TextChanged += new System.EventHandler(this.txtSmtpServer_TextChanged);
             // 
             // lblEmailDefaultSubject
             // 
-            this.lblEmailDefaultSubject.AutoSize = true;
-            this.lblEmailDefaultSubject.Location = new System.Drawing.Point(16, 126);
+            resources.ApplyResources(this.lblEmailDefaultSubject, "lblEmailDefaultSubject");
             this.lblEmailDefaultSubject.Name = "lblEmailDefaultSubject";
-            this.lblEmailDefaultSubject.Size = new System.Drawing.Size(81, 13);
-            this.lblEmailDefaultSubject.TabIndex = 10;
-            this.lblEmailDefaultSubject.Text = "Default subject:";
             // 
             // lblEmailDefaultBody
             // 
-            this.lblEmailDefaultBody.AutoSize = true;
-            this.lblEmailDefaultBody.Location = new System.Drawing.Point(16, 174);
+            resources.ApplyResources(this.lblEmailDefaultBody, "lblEmailDefaultBody");
             this.lblEmailDefaultBody.Name = "lblEmailDefaultBody";
-            this.lblEmailDefaultBody.Size = new System.Drawing.Size(89, 13);
-            this.lblEmailDefaultBody.TabIndex = 12;
-            this.lblEmailDefaultBody.Text = "Default message:";
             // 
             // nudEmailSmtpPort
             // 
-            this.nudEmailSmtpPort.Location = new System.Drawing.Point(344, 12);
+            resources.ApplyResources(this.nudEmailSmtpPort, "nudEmailSmtpPort");
             this.nudEmailSmtpPort.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.nudEmailSmtpPort.Name = "nudEmailSmtpPort";
-            this.nudEmailSmtpPort.Size = new System.Drawing.Size(64, 20);
-            this.nudEmailSmtpPort.TabIndex = 3;
-            this.nudEmailSmtpPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudEmailSmtpPort.Value = new decimal(new int[] {
             65535,
             0,
@@ -3252,19 +2422,13 @@
             // 
             // lblEmailSmtpPort
             // 
-            this.lblEmailSmtpPort.AutoSize = true;
-            this.lblEmailSmtpPort.Location = new System.Drawing.Point(304, 16);
+            resources.ApplyResources(this.lblEmailSmtpPort, "lblEmailSmtpPort");
             this.lblEmailSmtpPort.Name = "lblEmailSmtpPort";
-            this.lblEmailSmtpPort.Size = new System.Drawing.Size(29, 13);
-            this.lblEmailSmtpPort.TabIndex = 2;
-            this.lblEmailSmtpPort.Text = "Port:";
             // 
             // txtEmailDefaultSubject
             // 
-            this.txtEmailDefaultSubject.Location = new System.Drawing.Point(16, 144);
+            resources.ApplyResources(this.txtEmailDefaultSubject, "txtEmailDefaultSubject");
             this.txtEmailDefaultSubject.Name = "txtEmailDefaultSubject";
-            this.txtEmailDefaultSubject.Size = new System.Drawing.Size(400, 20);
-            this.txtEmailDefaultSubject.TabIndex = 11;
             this.txtEmailDefaultSubject.TextChanged += new System.EventHandler(this.txtDefaultSubject_TextChanged);
             // 
             // tpSharedFolder
@@ -3276,97 +2440,64 @@
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderText);
             this.tpSharedFolder.Controls.Add(this.cboSharedFolderImages);
             this.tpSharedFolder.Controls.Add(this.ucLocalhostAccounts);
-            this.tpSharedFolder.Location = new System.Drawing.Point(4, 40);
+            resources.ApplyResources(this.tpSharedFolder, "tpSharedFolder");
             this.tpSharedFolder.Name = "tpSharedFolder";
-            this.tpSharedFolder.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSharedFolder.Size = new System.Drawing.Size(972, 475);
-            this.tpSharedFolder.TabIndex = 9;
-            this.tpSharedFolder.Text = "Shared folder";
             this.tpSharedFolder.UseVisualStyleBackColor = true;
             // 
             // lblSharedFolderFiles
             // 
-            this.lblSharedFolderFiles.AutoSize = true;
-            this.lblSharedFolderFiles.Location = new System.Drawing.Point(544, 16);
+            resources.ApplyResources(this.lblSharedFolderFiles, "lblSharedFolderFiles");
             this.lblSharedFolderFiles.Name = "lblSharedFolderFiles";
-            this.lblSharedFolderFiles.Size = new System.Drawing.Size(26, 13);
-            this.lblSharedFolderFiles.TabIndex = 4;
-            this.lblSharedFolderFiles.Text = "File:";
             // 
             // lblSharedFolderText
             // 
-            this.lblSharedFolderText.AutoSize = true;
-            this.lblSharedFolderText.Location = new System.Drawing.Point(285, 16);
+            resources.ApplyResources(this.lblSharedFolderText, "lblSharedFolderText");
             this.lblSharedFolderText.Name = "lblSharedFolderText";
-            this.lblSharedFolderText.Size = new System.Drawing.Size(31, 13);
-            this.lblSharedFolderText.TabIndex = 2;
-            this.lblSharedFolderText.Text = "Text:";
             // 
             // cboSharedFolderFiles
             // 
             this.cboSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSharedFolderFiles.FormattingEnabled = true;
-            this.cboSharedFolderFiles.Location = new System.Drawing.Point(576, 12);
+            resources.ApplyResources(this.cboSharedFolderFiles, "cboSharedFolderFiles");
             this.cboSharedFolderFiles.Name = "cboSharedFolderFiles";
-            this.cboSharedFolderFiles.Size = new System.Drawing.Size(216, 21);
-            this.cboSharedFolderFiles.TabIndex = 5;
             this.cboSharedFolderFiles.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderFiles_SelectedIndexChanged);
             // 
             // lblSharedFolderImages
             // 
-            this.lblSharedFolderImages.AutoSize = true;
-            this.lblSharedFolderImages.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblSharedFolderImages, "lblSharedFolderImages");
             this.lblSharedFolderImages.Name = "lblSharedFolderImages";
-            this.lblSharedFolderImages.Size = new System.Drawing.Size(39, 13);
-            this.lblSharedFolderImages.TabIndex = 0;
-            this.lblSharedFolderImages.Text = "Image:";
             // 
             // cboSharedFolderText
             // 
             this.cboSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSharedFolderText.FormattingEnabled = true;
-            this.cboSharedFolderText.Location = new System.Drawing.Point(317, 12);
+            resources.ApplyResources(this.cboSharedFolderText, "cboSharedFolderText");
             this.cboSharedFolderText.Name = "cboSharedFolderText";
-            this.cboSharedFolderText.Size = new System.Drawing.Size(216, 21);
-            this.cboSharedFolderText.TabIndex = 3;
             this.cboSharedFolderText.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderText_SelectedIndexChanged);
             // 
             // cboSharedFolderImages
             // 
             this.cboSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSharedFolderImages.FormattingEnabled = true;
-            this.cboSharedFolderImages.Location = new System.Drawing.Point(56, 12);
+            resources.ApplyResources(this.cboSharedFolderImages, "cboSharedFolderImages");
             this.cboSharedFolderImages.Name = "cboSharedFolderImages";
-            this.cboSharedFolderImages.Size = new System.Drawing.Size(216, 21);
-            this.cboSharedFolderImages.TabIndex = 1;
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
             // 
             // ucLocalhostAccounts
             // 
-            this.ucLocalhostAccounts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ucLocalhostAccounts.Location = new System.Drawing.Point(8, 40);
-            this.ucLocalhostAccounts.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.ucLocalhostAccounts, "ucLocalhostAccounts");
             this.ucLocalhostAccounts.Name = "ucLocalhostAccounts";
-            this.ucLocalhostAccounts.Size = new System.Drawing.Size(792, 430);
-            this.ucLocalhostAccounts.TabIndex = 6;
             // 
             // btnCopyShowFiles
             // 
-            this.btnCopyShowFiles.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.btnCopyShowFiles, "btnCopyShowFiles");
             this.btnCopyShowFiles.Name = "btnCopyShowFiles";
-            this.btnCopyShowFiles.Size = new System.Drawing.Size(75, 23);
-            this.btnCopyShowFiles.TabIndex = 0;
             // 
             // tpTextUploaders
             // 
             this.tpTextUploaders.Controls.Add(this.tcTextUploaders);
-            this.tpTextUploaders.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpTextUploaders, "tpTextUploaders");
             this.tpTextUploaders.Name = "tpTextUploaders";
-            this.tpTextUploaders.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTextUploaders.Size = new System.Drawing.Size(986, 525);
-            this.tpTextUploaders.TabIndex = 1;
-            this.tpTextUploaders.Text = "Text uploaders";
             this.tpTextUploaders.UseVisualStyleBackColor = true;
             // 
             // tcTextUploaders
@@ -3376,12 +2507,9 @@
             this.tcTextUploaders.Controls.Add(this.tpGist);
             this.tcTextUploaders.Controls.Add(this.tpUpaste);
             this.tcTextUploaders.Controls.Add(this.tpHastebin);
-            this.tcTextUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcTextUploaders.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tcTextUploaders, "tcTextUploaders");
             this.tcTextUploaders.Name = "tcTextUploaders";
             this.tcTextUploaders.SelectedIndex = 0;
-            this.tcTextUploaders.Size = new System.Drawing.Size(980, 519);
-            this.tcTextUploaders.TabIndex = 0;
             // 
             // tpPastebin
             // 
@@ -3400,149 +2528,99 @@
             this.tpPastebin.Controls.Add(this.txtPastebinUsername);
             this.tpPastebin.Controls.Add(this.lblPastebinLoginStatus);
             this.tpPastebin.Controls.Add(this.btnPastebinLogin);
-            this.tpPastebin.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpPastebin, "tpPastebin");
             this.tpPastebin.Name = "tpPastebin";
-            this.tpPastebin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPastebin.Size = new System.Drawing.Size(972, 493);
-            this.tpPastebin.TabIndex = 0;
-            this.tpPastebin.Text = "Pastebin";
             this.tpPastebin.UseVisualStyleBackColor = true;
             // 
             // cbPastebinSyntax
             // 
             this.cbPastebinSyntax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPastebinSyntax.FormattingEnabled = true;
-            this.cbPastebinSyntax.Location = new System.Drawing.Point(96, 140);
+            resources.ApplyResources(this.cbPastebinSyntax, "cbPastebinSyntax");
             this.cbPastebinSyntax.Name = "cbPastebinSyntax";
-            this.cbPastebinSyntax.Size = new System.Drawing.Size(152, 21);
-            this.cbPastebinSyntax.TabIndex = 17;
             this.cbPastebinSyntax.SelectedIndexChanged += new System.EventHandler(this.cbPastebinSyntax_SelectedIndexChanged);
             // 
             // btnPastebinRegister
             // 
-            this.btnPastebinRegister.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.btnPastebinRegister, "btnPastebinRegister");
             this.btnPastebinRegister.Name = "btnPastebinRegister";
-            this.btnPastebinRegister.Size = new System.Drawing.Size(112, 23);
-            this.btnPastebinRegister.TabIndex = 16;
-            this.btnPastebinRegister.Text = "Register...";
             this.btnPastebinRegister.UseVisualStyleBackColor = true;
             this.btnPastebinRegister.Click += new System.EventHandler(this.btnPastebinRegister_Click);
             // 
             // lblPastebinSyntax
             // 
-            this.lblPastebinSyntax.AutoSize = true;
-            this.lblPastebinSyntax.Location = new System.Drawing.Point(16, 144);
+            resources.ApplyResources(this.lblPastebinSyntax, "lblPastebinSyntax");
             this.lblPastebinSyntax.Name = "lblPastebinSyntax";
-            this.lblPastebinSyntax.Size = new System.Drawing.Size(70, 13);
-            this.lblPastebinSyntax.TabIndex = 14;
-            this.lblPastebinSyntax.Text = "Paste syntax:";
             // 
             // lblPastebinExpiration
             // 
-            this.lblPastebinExpiration.AutoSize = true;
-            this.lblPastebinExpiration.Location = new System.Drawing.Point(16, 120);
+            resources.ApplyResources(this.lblPastebinExpiration, "lblPastebinExpiration");
             this.lblPastebinExpiration.Name = "lblPastebinExpiration";
-            this.lblPastebinExpiration.Size = new System.Drawing.Size(56, 13);
-            this.lblPastebinExpiration.TabIndex = 13;
-            this.lblPastebinExpiration.Text = "Expiration:";
             // 
             // lblPastebinPrivacy
             // 
-            this.lblPastebinPrivacy.AutoSize = true;
-            this.lblPastebinPrivacy.Location = new System.Drawing.Point(16, 96);
+            resources.ApplyResources(this.lblPastebinPrivacy, "lblPastebinPrivacy");
             this.lblPastebinPrivacy.Name = "lblPastebinPrivacy";
-            this.lblPastebinPrivacy.Size = new System.Drawing.Size(45, 13);
-            this.lblPastebinPrivacy.TabIndex = 12;
-            this.lblPastebinPrivacy.Text = "Privacy:";
             // 
             // lblPastebinTitle
             // 
-            this.lblPastebinTitle.AutoSize = true;
-            this.lblPastebinTitle.Location = new System.Drawing.Point(16, 168);
+            resources.ApplyResources(this.lblPastebinTitle, "lblPastebinTitle");
             this.lblPastebinTitle.Name = "lblPastebinTitle";
-            this.lblPastebinTitle.Size = new System.Drawing.Size(56, 13);
-            this.lblPastebinTitle.TabIndex = 11;
-            this.lblPastebinTitle.Text = "Paste title:";
             // 
             // lblPastebinPassword
             // 
-            this.lblPastebinPassword.AutoSize = true;
-            this.lblPastebinPassword.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblPastebinPassword, "lblPastebinPassword");
             this.lblPastebinPassword.Name = "lblPastebinPassword";
-            this.lblPastebinPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblPastebinPassword.TabIndex = 10;
-            this.lblPastebinPassword.Text = "Password:";
             // 
             // lblPastebinUsername
             // 
-            this.lblPastebinUsername.AutoSize = true;
-            this.lblPastebinUsername.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblPastebinUsername, "lblPastebinUsername");
             this.lblPastebinUsername.Name = "lblPastebinUsername";
-            this.lblPastebinUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblPastebinUsername.TabIndex = 9;
-            this.lblPastebinUsername.Text = "Username:";
             // 
             // cbPastebinExpiration
             // 
             this.cbPastebinExpiration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPastebinExpiration.FormattingEnabled = true;
-            this.cbPastebinExpiration.Location = new System.Drawing.Point(96, 116);
+            resources.ApplyResources(this.cbPastebinExpiration, "cbPastebinExpiration");
             this.cbPastebinExpiration.Name = "cbPastebinExpiration";
-            this.cbPastebinExpiration.Size = new System.Drawing.Size(152, 21);
-            this.cbPastebinExpiration.TabIndex = 8;
             this.cbPastebinExpiration.SelectedIndexChanged += new System.EventHandler(this.cbPastebinExpiration_SelectedIndexChanged);
             // 
             // cbPastebinPrivacy
             // 
             this.cbPastebinPrivacy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPastebinPrivacy.FormattingEnabled = true;
-            this.cbPastebinPrivacy.Location = new System.Drawing.Point(96, 92);
+            resources.ApplyResources(this.cbPastebinPrivacy, "cbPastebinPrivacy");
             this.cbPastebinPrivacy.Name = "cbPastebinPrivacy";
-            this.cbPastebinPrivacy.Size = new System.Drawing.Size(152, 21);
-            this.cbPastebinPrivacy.TabIndex = 7;
             this.cbPastebinPrivacy.SelectedIndexChanged += new System.EventHandler(this.cbPastebinPrivacy_SelectedIndexChanged);
             // 
             // txtPastebinTitle
             // 
-            this.txtPastebinTitle.Location = new System.Drawing.Point(96, 164);
+            resources.ApplyResources(this.txtPastebinTitle, "txtPastebinTitle");
             this.txtPastebinTitle.Name = "txtPastebinTitle";
-            this.txtPastebinTitle.Size = new System.Drawing.Size(152, 20);
-            this.txtPastebinTitle.TabIndex = 6;
             this.txtPastebinTitle.TextChanged += new System.EventHandler(this.txtPastebinTitle_TextChanged);
             // 
             // txtPastebinPassword
             // 
-            this.txtPastebinPassword.Location = new System.Drawing.Point(96, 36);
+            resources.ApplyResources(this.txtPastebinPassword, "txtPastebinPassword");
             this.txtPastebinPassword.Name = "txtPastebinPassword";
-            this.txtPastebinPassword.Size = new System.Drawing.Size(152, 20);
-            this.txtPastebinPassword.TabIndex = 5;
             this.txtPastebinPassword.UseSystemPasswordChar = true;
             this.txtPastebinPassword.TextChanged += new System.EventHandler(this.txtPastebinPassword_TextChanged);
             // 
             // txtPastebinUsername
             // 
-            this.txtPastebinUsername.Location = new System.Drawing.Point(96, 12);
+            resources.ApplyResources(this.txtPastebinUsername, "txtPastebinUsername");
             this.txtPastebinUsername.Name = "txtPastebinUsername";
-            this.txtPastebinUsername.Size = new System.Drawing.Size(152, 20);
-            this.txtPastebinUsername.TabIndex = 4;
             this.txtPastebinUsername.TextChanged += new System.EventHandler(this.txtPastebinUsername_TextChanged);
             // 
             // lblPastebinLoginStatus
             // 
-            this.lblPastebinLoginStatus.AutoSize = true;
-            this.lblPastebinLoginStatus.Location = new System.Drawing.Point(256, 69);
+            resources.ApplyResources(this.lblPastebinLoginStatus, "lblPastebinLoginStatus");
             this.lblPastebinLoginStatus.Name = "lblPastebinLoginStatus";
-            this.lblPastebinLoginStatus.Size = new System.Drawing.Size(40, 13);
-            this.lblPastebinLoginStatus.TabIndex = 2;
-            this.lblPastebinLoginStatus.Text = "Status:";
             // 
             // btnPastebinLogin
             // 
-            this.btnPastebinLogin.Location = new System.Drawing.Point(136, 64);
+            resources.ApplyResources(this.btnPastebinLogin, "btnPastebinLogin");
             this.btnPastebinLogin.Name = "btnPastebinLogin";
-            this.btnPastebinLogin.Size = new System.Drawing.Size(112, 23);
-            this.btnPastebinLogin.TabIndex = 0;
-            this.btnPastebinLogin.Text = "Login";
             this.btnPastebinLogin.UseVisualStyleBackColor = true;
             this.btnPastebinLogin.Click += new System.EventHandler(this.btnPastebinLogin_Click);
             // 
@@ -3550,29 +2628,19 @@
             // 
             this.tpPaste_ee.Controls.Add(this.lblPaste_eeUserAPIKey);
             this.tpPaste_ee.Controls.Add(this.txtPaste_eeUserAPIKey);
-            this.tpPaste_ee.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpPaste_ee, "tpPaste_ee");
             this.tpPaste_ee.Name = "tpPaste_ee";
-            this.tpPaste_ee.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPaste_ee.Size = new System.Drawing.Size(972, 493);
-            this.tpPaste_ee.TabIndex = 1;
-            this.tpPaste_ee.Text = "Paste.ee";
             this.tpPaste_ee.UseVisualStyleBackColor = true;
             // 
             // lblPaste_eeUserAPIKey
             // 
-            this.lblPaste_eeUserAPIKey.AutoSize = true;
-            this.lblPaste_eeUserAPIKey.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.lblPaste_eeUserAPIKey, "lblPaste_eeUserAPIKey");
             this.lblPaste_eeUserAPIKey.Name = "lblPaste_eeUserAPIKey";
-            this.lblPaste_eeUserAPIKey.Size = new System.Drawing.Size(72, 13);
-            this.lblPaste_eeUserAPIKey.TabIndex = 0;
-            this.lblPaste_eeUserAPIKey.Text = "User API key:";
             // 
             // txtPaste_eeUserAPIKey
             // 
-            this.txtPaste_eeUserAPIKey.Location = new System.Drawing.Point(96, 20);
+            resources.ApplyResources(this.txtPaste_eeUserAPIKey, "txtPaste_eeUserAPIKey");
             this.txtPaste_eeUserAPIKey.Name = "txtPaste_eeUserAPIKey";
-            this.txtPaste_eeUserAPIKey.Size = new System.Drawing.Size(296, 20);
-            this.txtPaste_eeUserAPIKey.TabIndex = 1;
             this.txtPaste_eeUserAPIKey.UseSystemPasswordChar = true;
             this.txtPaste_eeUserAPIKey.TextChanged += new System.EventHandler(this.txtPaste_eeUserAPIKey_TextChanged);
             // 
@@ -3581,43 +2649,31 @@
             this.tpGist.Controls.Add(this.chkGistPublishPublic);
             this.tpGist.Controls.Add(this.oAuth2Gist);
             this.tpGist.Controls.Add(this.atcGistAccountType);
-            this.tpGist.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpGist, "tpGist");
             this.tpGist.Name = "tpGist";
-            this.tpGist.Size = new System.Drawing.Size(972, 493);
-            this.tpGist.TabIndex = 2;
-            this.tpGist.Text = "Gist";
             this.tpGist.UseVisualStyleBackColor = true;
             // 
             // chkGistPublishPublic
             // 
-            this.chkGistPublishPublic.AutoSize = true;
-            this.chkGistPublishPublic.Location = new System.Drawing.Point(235, 23);
+            resources.ApplyResources(this.chkGistPublishPublic, "chkGistPublishPublic");
             this.chkGistPublishPublic.Name = "chkGistPublishPublic";
-            this.chkGistPublishPublic.Size = new System.Drawing.Size(109, 17);
-            this.chkGistPublishPublic.TabIndex = 1;
-            this.chkGistPublishPublic.Text = "Create public Gist";
             this.chkGistPublishPublic.UseVisualStyleBackColor = true;
             this.chkGistPublishPublic.CheckedChanged += new System.EventHandler(this.chkGistPublishPublic_CheckedChanged);
             // 
             // oAuth2Gist
             // 
-            this.oAuth2Gist.Enabled = false;
+            resources.ApplyResources(this.oAuth2Gist, "oAuth2Gist");
             this.oAuth2Gist.IsRefreshable = false;
-            this.oAuth2Gist.Location = new System.Drawing.Point(16, 51);
             this.oAuth2Gist.Name = "oAuth2Gist";
-            this.oAuth2Gist.Size = new System.Drawing.Size(328, 205);
-            this.oAuth2Gist.TabIndex = 2;
             this.oAuth2Gist.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
             this.oAuth2Gist.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
             this.oAuth2Gist.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2Gist_ClearButtonClicked);
             // 
             // atcGistAccountType
             // 
-            this.atcGistAccountType.Location = new System.Drawing.Point(15, 16);
+            resources.ApplyResources(this.atcGistAccountType, "atcGistAccountType");
             this.atcGistAccountType.Name = "atcGistAccountType";
             this.atcGistAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcGistAccountType.Size = new System.Drawing.Size(214, 29);
-            this.atcGistAccountType.TabIndex = 0;
             this.atcGistAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGistAccountType_AccountTypeChanged);
             // 
             // tpUpaste
@@ -3625,40 +2681,26 @@
             this.tpUpaste.Controls.Add(this.cbUpasteIsPublic);
             this.tpUpaste.Controls.Add(this.lblUpasteUserKey);
             this.tpUpaste.Controls.Add(this.txtUpasteUserKey);
-            this.tpUpaste.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpUpaste, "tpUpaste");
             this.tpUpaste.Name = "tpUpaste";
-            this.tpUpaste.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUpaste.Size = new System.Drawing.Size(972, 493);
-            this.tpUpaste.TabIndex = 3;
-            this.tpUpaste.Text = "uPaste";
             this.tpUpaste.UseVisualStyleBackColor = true;
             // 
             // cbUpasteIsPublic
             // 
-            this.cbUpasteIsPublic.AutoSize = true;
-            this.cbUpasteIsPublic.Location = new System.Drawing.Point(18, 56);
+            resources.ApplyResources(this.cbUpasteIsPublic, "cbUpasteIsPublic");
             this.cbUpasteIsPublic.Name = "cbUpasteIsPublic";
-            this.cbUpasteIsPublic.Size = new System.Drawing.Size(106, 17);
-            this.cbUpasteIsPublic.TabIndex = 2;
-            this.cbUpasteIsPublic.Text = "Is public upload?";
             this.cbUpasteIsPublic.UseVisualStyleBackColor = true;
             this.cbUpasteIsPublic.CheckedChanged += new System.EventHandler(this.cbUpasteIsPublic_CheckedChanged);
             // 
             // lblUpasteUserKey
             // 
-            this.lblUpasteUserKey.AutoSize = true;
-            this.lblUpasteUserKey.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.lblUpasteUserKey, "lblUpasteUserKey");
             this.lblUpasteUserKey.Name = "lblUpasteUserKey";
-            this.lblUpasteUserKey.Size = new System.Drawing.Size(52, 13);
-            this.lblUpasteUserKey.TabIndex = 0;
-            this.lblUpasteUserKey.Text = "User key:";
             // 
             // txtUpasteUserKey
             // 
-            this.txtUpasteUserKey.Location = new System.Drawing.Point(72, 20);
+            resources.ApplyResources(this.txtUpasteUserKey, "txtUpasteUserKey");
             this.txtUpasteUserKey.Name = "txtUpasteUserKey";
-            this.txtUpasteUserKey.Size = new System.Drawing.Size(264, 20);
-            this.txtUpasteUserKey.TabIndex = 1;
             this.txtUpasteUserKey.UseSystemPasswordChar = true;
             this.txtUpasteUserKey.TextChanged += new System.EventHandler(this.txtUpasteUserKey_TextChanged);
             // 
@@ -3668,57 +2710,37 @@
             this.tpHastebin.Controls.Add(this.txtHastebinCustomDomain);
             this.tpHastebin.Controls.Add(this.lblHastebinSyntaxHighlighting);
             this.tpHastebin.Controls.Add(this.lblHastebinCustomDomain);
-            this.tpHastebin.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpHastebin, "tpHastebin");
             this.tpHastebin.Name = "tpHastebin";
-            this.tpHastebin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpHastebin.Size = new System.Drawing.Size(972, 493);
-            this.tpHastebin.TabIndex = 4;
-            this.tpHastebin.Text = "Hastebin";
             this.tpHastebin.UseVisualStyleBackColor = true;
             // 
             // txtHastebinSyntaxHighlighting
             // 
-            this.txtHastebinSyntaxHighlighting.Location = new System.Drawing.Point(120, 36);
+            resources.ApplyResources(this.txtHastebinSyntaxHighlighting, "txtHastebinSyntaxHighlighting");
             this.txtHastebinSyntaxHighlighting.Name = "txtHastebinSyntaxHighlighting";
-            this.txtHastebinSyntaxHighlighting.Size = new System.Drawing.Size(100, 20);
-            this.txtHastebinSyntaxHighlighting.TabIndex = 3;
             this.txtHastebinSyntaxHighlighting.TextChanged += new System.EventHandler(this.txtHastebinSyntaxHighlighting_TextChanged);
             // 
             // txtHastebinCustomDomain
             // 
-            this.txtHastebinCustomDomain.Location = new System.Drawing.Point(120, 12);
+            resources.ApplyResources(this.txtHastebinCustomDomain, "txtHastebinCustomDomain");
             this.txtHastebinCustomDomain.Name = "txtHastebinCustomDomain";
-            this.txtHastebinCustomDomain.Size = new System.Drawing.Size(336, 20);
-            this.txtHastebinCustomDomain.TabIndex = 2;
             this.txtHastebinCustomDomain.TextChanged += new System.EventHandler(this.txtHastebinCustomDomain_TextChanged);
             // 
             // lblHastebinSyntaxHighlighting
             // 
-            this.lblHastebinSyntaxHighlighting.AutoSize = true;
-            this.lblHastebinSyntaxHighlighting.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblHastebinSyntaxHighlighting, "lblHastebinSyntaxHighlighting");
             this.lblHastebinSyntaxHighlighting.Name = "lblHastebinSyntaxHighlighting";
-            this.lblHastebinSyntaxHighlighting.Size = new System.Drawing.Size(98, 13);
-            this.lblHastebinSyntaxHighlighting.TabIndex = 1;
-            this.lblHastebinSyntaxHighlighting.Text = "Syntax highlighting:";
             // 
             // lblHastebinCustomDomain
             // 
-            this.lblHastebinCustomDomain.AutoSize = true;
-            this.lblHastebinCustomDomain.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblHastebinCustomDomain, "lblHastebinCustomDomain");
             this.lblHastebinCustomDomain.Name = "lblHastebinCustomDomain";
-            this.lblHastebinCustomDomain.Size = new System.Drawing.Size(82, 13);
-            this.lblHastebinCustomDomain.TabIndex = 0;
-            this.lblHastebinCustomDomain.Text = "Custom domain:";
             // 
             // tpImageUploaders
             // 
             this.tpImageUploaders.Controls.Add(this.tcImageUploaders);
-            this.tpImageUploaders.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpImageUploaders, "tpImageUploaders");
             this.tpImageUploaders.Name = "tpImageUploaders";
-            this.tpImageUploaders.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImageUploaders.Size = new System.Drawing.Size(986, 525);
-            this.tpImageUploaders.TabIndex = 0;
-            this.tpImageUploaders.Text = "Image uploaders";
             this.tpImageUploaders.UseVisualStyleBackColor = true;
             // 
             // tcImageUploaders
@@ -3730,13 +2752,9 @@
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
             this.tcImageUploaders.Controls.Add(this.tpPicasa);
             this.tcImageUploaders.Controls.Add(this.tpChevereto);
-            this.tcImageUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcImageUploaders.Location = new System.Drawing.Point(3, 3);
-            this.tcImageUploaders.MinimumSize = new System.Drawing.Size(780, 480);
+            resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
             this.tcImageUploaders.Name = "tcImageUploaders";
             this.tcImageUploaders.SelectedIndex = 0;
-            this.tcImageUploaders.Size = new System.Drawing.Size(980, 519);
-            this.tcImageUploaders.TabIndex = 0;
             // 
             // tpImgur
             // 
@@ -3748,51 +2766,35 @@
             this.tpImgur.Controls.Add(this.btnImgurRefreshAlbumList);
             this.tpImgur.Controls.Add(this.cbImgurThumbnailType);
             this.tpImgur.Controls.Add(this.lblImgurThumbnailType);
-            this.tpImgur.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpImgur, "tpImgur");
             this.tpImgur.Name = "tpImgur";
-            this.tpImgur.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImgur.Size = new System.Drawing.Size(972, 493);
-            this.tpImgur.TabIndex = 2;
-            this.tpImgur.Text = "Imgur";
             this.tpImgur.UseVisualStyleBackColor = true;
             // 
             // cbImgurUploadSelectedAlbum
             // 
-            this.cbImgurUploadSelectedAlbum.AutoSize = true;
-            this.cbImgurUploadSelectedAlbum.Location = new System.Drawing.Point(352, 19);
+            resources.ApplyResources(this.cbImgurUploadSelectedAlbum, "cbImgurUploadSelectedAlbum");
             this.cbImgurUploadSelectedAlbum.Name = "cbImgurUploadSelectedAlbum";
-            this.cbImgurUploadSelectedAlbum.Size = new System.Drawing.Size(182, 17);
-            this.cbImgurUploadSelectedAlbum.TabIndex = 9;
-            this.cbImgurUploadSelectedAlbum.Text = "Upload images to selected album";
             this.cbImgurUploadSelectedAlbum.UseVisualStyleBackColor = true;
             this.cbImgurUploadSelectedAlbum.CheckedChanged += new System.EventHandler(this.cbImgurUploadSelectedAlbum_CheckedChanged);
             // 
             // cbImgurDirectLink
             // 
-            this.cbImgurDirectLink.AutoSize = true;
-            this.cbImgurDirectLink.Location = new System.Drawing.Point(19, 296);
+            resources.ApplyResources(this.cbImgurDirectLink, "cbImgurDirectLink");
             this.cbImgurDirectLink.Name = "cbImgurDirectLink";
-            this.cbImgurDirectLink.Size = new System.Drawing.Size(93, 17);
-            this.cbImgurDirectLink.TabIndex = 8;
-            this.cbImgurDirectLink.Text = "Use direct link";
             this.cbImgurDirectLink.UseVisualStyleBackColor = true;
             this.cbImgurDirectLink.CheckedChanged += new System.EventHandler(this.cbImgurDirectLink_CheckedChanged);
             // 
             // atcImgurAccountType
             // 
-            this.atcImgurAccountType.Location = new System.Drawing.Point(8, 260);
+            resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
             this.atcImgurAccountType.Name = "atcImgurAccountType";
             this.atcImgurAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcImgurAccountType.Size = new System.Drawing.Size(208, 32);
-            this.atcImgurAccountType.TabIndex = 1;
             this.atcImgurAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcImgurAccountType_AccountTypeChanged);
             // 
             // oauth2Imgur
             // 
-            this.oauth2Imgur.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.oauth2Imgur, "oauth2Imgur");
             this.oauth2Imgur.Name = "oauth2Imgur";
-            this.oauth2Imgur.Size = new System.Drawing.Size(328, 240);
-            this.oauth2Imgur.TabIndex = 0;
             this.oauth2Imgur.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
             this.oauth2Imgur.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
             this.oauth2Imgur.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
@@ -3807,37 +2809,29 @@
             this.lvImgurAlbumList.FullRowSelect = true;
             this.lvImgurAlbumList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvImgurAlbumList.HideSelection = false;
-            this.lvImgurAlbumList.Location = new System.Drawing.Point(352, 48);
+            resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
             this.lvImgurAlbumList.MultiSelect = false;
             this.lvImgurAlbumList.Name = "lvImgurAlbumList";
-            this.lvImgurAlbumList.Size = new System.Drawing.Size(440, 432);
-            this.lvImgurAlbumList.TabIndex = 7;
             this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
             this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
             this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
             // 
             // chImgurID
             // 
-            this.chImgurID.Text = "ID";
+            resources.ApplyResources(this.chImgurID, "chImgurID");
             // 
             // chImgurTitle
             // 
-            this.chImgurTitle.Text = "Title";
-            this.chImgurTitle.Width = 150;
+            resources.ApplyResources(this.chImgurTitle, "chImgurTitle");
             // 
             // chImgurDescription
             // 
-            this.chImgurDescription.Text = "Description";
-            this.chImgurDescription.Width = 226;
+            resources.ApplyResources(this.chImgurDescription, "chImgurDescription");
             // 
             // btnImgurRefreshAlbumList
             // 
-            this.btnImgurRefreshAlbumList.Enabled = false;
-            this.btnImgurRefreshAlbumList.Location = new System.Drawing.Point(592, 16);
+            resources.ApplyResources(this.btnImgurRefreshAlbumList, "btnImgurRefreshAlbumList");
             this.btnImgurRefreshAlbumList.Name = "btnImgurRefreshAlbumList";
-            this.btnImgurRefreshAlbumList.Size = new System.Drawing.Size(200, 23);
-            this.btnImgurRefreshAlbumList.TabIndex = 6;
-            this.btnImgurRefreshAlbumList.Text = "Refresh album list";
             this.btnImgurRefreshAlbumList.UseVisualStyleBackColor = true;
             this.btnImgurRefreshAlbumList.Click += new System.EventHandler(this.btnImgurRefreshAlbumList_Click);
             // 
@@ -3845,20 +2839,14 @@
             // 
             this.cbImgurThumbnailType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbImgurThumbnailType.FormattingEnabled = true;
-            this.cbImgurThumbnailType.Location = new System.Drawing.Point(104, 324);
+            resources.ApplyResources(this.cbImgurThumbnailType, "cbImgurThumbnailType");
             this.cbImgurThumbnailType.Name = "cbImgurThumbnailType";
-            this.cbImgurThumbnailType.Size = new System.Drawing.Size(136, 21);
-            this.cbImgurThumbnailType.TabIndex = 3;
             this.cbImgurThumbnailType.SelectedIndexChanged += new System.EventHandler(this.cbImgurThumbnailType_SelectedIndexChanged);
             // 
             // lblImgurThumbnailType
             // 
-            this.lblImgurThumbnailType.AutoSize = true;
-            this.lblImgurThumbnailType.Location = new System.Drawing.Point(16, 328);
+            resources.ApplyResources(this.lblImgurThumbnailType, "lblImgurThumbnailType");
             this.lblImgurThumbnailType.Name = "lblImgurThumbnailType";
-            this.lblImgurThumbnailType.Size = new System.Drawing.Size(82, 13);
-            this.lblImgurThumbnailType.TabIndex = 2;
-            this.lblImgurThumbnailType.Text = "Thumbnail type:";
             // 
             // tpImageShack
             // 
@@ -3870,89 +2858,60 @@
             this.tpImageShack.Controls.Add(this.txtImageShackUsername);
             this.tpImageShack.Controls.Add(this.txtImageShackPassword);
             this.tpImageShack.Controls.Add(this.lblImageShackPassword);
-            this.tpImageShack.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpImageShack, "tpImageShack");
             this.tpImageShack.Name = "tpImageShack";
-            this.tpImageShack.Padding = new System.Windows.Forms.Padding(3);
-            this.tpImageShack.Size = new System.Drawing.Size(972, 493);
-            this.tpImageShack.TabIndex = 0;
-            this.tpImageShack.Text = "ImageShack";
             this.tpImageShack.UseVisualStyleBackColor = true;
             // 
             // btnImageShackLogin
             // 
-            this.btnImageShackLogin.Location = new System.Drawing.Point(296, 42);
+            resources.ApplyResources(this.btnImageShackLogin, "btnImageShackLogin");
             this.btnImageShackLogin.Name = "btnImageShackLogin";
-            this.btnImageShackLogin.Size = new System.Drawing.Size(72, 24);
-            this.btnImageShackLogin.TabIndex = 4;
-            this.btnImageShackLogin.Text = "Login";
             this.btnImageShackLogin.UseVisualStyleBackColor = true;
             this.btnImageShackLogin.Click += new System.EventHandler(this.btnImageShackLogin_Click);
             // 
             // btnImageShackOpenPublicProfile
             // 
-            this.btnImageShackOpenPublicProfile.Location = new System.Drawing.Point(184, 112);
+            resources.ApplyResources(this.btnImageShackOpenPublicProfile, "btnImageShackOpenPublicProfile");
             this.btnImageShackOpenPublicProfile.Name = "btnImageShackOpenPublicProfile";
-            this.btnImageShackOpenPublicProfile.Size = new System.Drawing.Size(160, 24);
-            this.btnImageShackOpenPublicProfile.TabIndex = 7;
-            this.btnImageShackOpenPublicProfile.Text = "Open public profile page...";
             this.btnImageShackOpenPublicProfile.UseVisualStyleBackColor = true;
             this.btnImageShackOpenPublicProfile.Click += new System.EventHandler(this.btnImageShackOpenPublicProfile_Click);
             // 
             // cbImageShackIsPublic
             // 
-            this.cbImageShackIsPublic.AutoSize = true;
-            this.cbImageShackIsPublic.Location = new System.Drawing.Point(18, 80);
+            resources.ApplyResources(this.cbImageShackIsPublic, "cbImageShackIsPublic");
             this.cbImageShackIsPublic.Name = "cbImageShackIsPublic";
-            this.cbImageShackIsPublic.Size = new System.Drawing.Size(106, 17);
-            this.cbImageShackIsPublic.TabIndex = 5;
-            this.cbImageShackIsPublic.Text = "Is public upload?";
             this.cbImageShackIsPublic.UseVisualStyleBackColor = true;
             this.cbImageShackIsPublic.CheckedChanged += new System.EventHandler(this.cbImageShackIsPublic_CheckedChanged);
             // 
             // btnImageShackOpenMyImages
             // 
-            this.btnImageShackOpenMyImages.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.btnImageShackOpenMyImages, "btnImageShackOpenMyImages");
             this.btnImageShackOpenMyImages.Name = "btnImageShackOpenMyImages";
-            this.btnImageShackOpenMyImages.Size = new System.Drawing.Size(160, 24);
-            this.btnImageShackOpenMyImages.TabIndex = 6;
-            this.btnImageShackOpenMyImages.Text = "Open my images page...";
             this.btnImageShackOpenMyImages.UseVisualStyleBackColor = true;
             this.btnImageShackOpenMyImages.Click += new System.EventHandler(this.btnImageShackOpenMyImages_Click);
             // 
             // lblImageShackUsername
             // 
-            this.lblImageShackUsername.AutoSize = true;
-            this.lblImageShackUsername.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblImageShackUsername, "lblImageShackUsername");
             this.lblImageShackUsername.Name = "lblImageShackUsername";
-            this.lblImageShackUsername.Size = new System.Drawing.Size(58, 13);
-            this.lblImageShackUsername.TabIndex = 0;
-            this.lblImageShackUsername.Text = "Username:";
             // 
             // txtImageShackUsername
             // 
-            this.txtImageShackUsername.Location = new System.Drawing.Point(80, 12);
+            resources.ApplyResources(this.txtImageShackUsername, "txtImageShackUsername");
             this.txtImageShackUsername.Name = "txtImageShackUsername";
-            this.txtImageShackUsername.Size = new System.Drawing.Size(208, 20);
-            this.txtImageShackUsername.TabIndex = 1;
             this.txtImageShackUsername.TextChanged += new System.EventHandler(this.txtImageShackUsername_TextChanged);
             // 
             // txtImageShackPassword
             // 
-            this.txtImageShackPassword.Location = new System.Drawing.Point(80, 44);
+            resources.ApplyResources(this.txtImageShackPassword, "txtImageShackPassword");
             this.txtImageShackPassword.Name = "txtImageShackPassword";
-            this.txtImageShackPassword.Size = new System.Drawing.Size(208, 20);
-            this.txtImageShackPassword.TabIndex = 3;
             this.txtImageShackPassword.UseSystemPasswordChar = true;
             this.txtImageShackPassword.TextChanged += new System.EventHandler(this.txtImageShackPassword_TextChanged);
             // 
             // lblImageShackPassword
             // 
-            this.lblImageShackPassword.AutoSize = true;
-            this.lblImageShackPassword.Location = new System.Drawing.Point(16, 48);
+            resources.ApplyResources(this.lblImageShackPassword, "lblImageShackPassword");
             this.lblImageShackPassword.Name = "lblImageShackPassword";
-            this.lblImageShackPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblImageShackPassword.TabIndex = 2;
-            this.lblImageShackPassword.Text = "Password:";
             // 
             // tpTinyPic
             // 
@@ -3963,75 +2922,51 @@
             this.tpTinyPic.Controls.Add(this.txtTinyPicUsername);
             this.tpTinyPic.Controls.Add(this.lblTinyPicUsername);
             this.tpTinyPic.Controls.Add(this.btnTinyPicOpenMyImages);
-            this.tpTinyPic.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpTinyPic, "tpTinyPic");
             this.tpTinyPic.Name = "tpTinyPic";
-            this.tpTinyPic.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTinyPic.Size = new System.Drawing.Size(972, 493);
-            this.tpTinyPic.TabIndex = 1;
-            this.tpTinyPic.Text = "TinyPic";
             this.tpTinyPic.UseVisualStyleBackColor = true;
             // 
             // atcTinyPicAccountType
             // 
-            this.atcTinyPicAccountType.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.atcTinyPicAccountType, "atcTinyPicAccountType");
             this.atcTinyPicAccountType.Name = "atcTinyPicAccountType";
             this.atcTinyPicAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.atcTinyPicAccountType.Size = new System.Drawing.Size(272, 29);
-            this.atcTinyPicAccountType.TabIndex = 0;
             this.atcTinyPicAccountType.AccountTypeChanged += new UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcTinyPicAccountType_AccountTypeChanged);
             // 
             // btnTinyPicLogin
             // 
-            this.btnTinyPicLogin.Location = new System.Drawing.Point(296, 74);
+            resources.ApplyResources(this.btnTinyPicLogin, "btnTinyPicLogin");
             this.btnTinyPicLogin.Name = "btnTinyPicLogin";
-            this.btnTinyPicLogin.Size = new System.Drawing.Size(72, 24);
-            this.btnTinyPicLogin.TabIndex = 5;
-            this.btnTinyPicLogin.Text = "Login";
             this.btnTinyPicLogin.UseVisualStyleBackColor = true;
             this.btnTinyPicLogin.Click += new System.EventHandler(this.btnTinyPicLogin_Click);
             // 
             // txtTinyPicPassword
             // 
-            this.txtTinyPicPassword.Location = new System.Drawing.Point(80, 76);
+            resources.ApplyResources(this.txtTinyPicPassword, "txtTinyPicPassword");
             this.txtTinyPicPassword.Name = "txtTinyPicPassword";
-            this.txtTinyPicPassword.Size = new System.Drawing.Size(208, 20);
-            this.txtTinyPicPassword.TabIndex = 4;
             this.txtTinyPicPassword.UseSystemPasswordChar = true;
             this.txtTinyPicPassword.TextChanged += new System.EventHandler(this.txtTinyPicPassword_TextChanged);
             // 
             // lblTinyPicPassword
             // 
-            this.lblTinyPicPassword.AutoSize = true;
-            this.lblTinyPicPassword.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(this.lblTinyPicPassword, "lblTinyPicPassword");
             this.lblTinyPicPassword.Name = "lblTinyPicPassword";
-            this.lblTinyPicPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblTinyPicPassword.TabIndex = 3;
-            this.lblTinyPicPassword.Text = "Password:";
             // 
             // txtTinyPicUsername
             // 
-            this.txtTinyPicUsername.Location = new System.Drawing.Point(80, 44);
+            resources.ApplyResources(this.txtTinyPicUsername, "txtTinyPicUsername");
             this.txtTinyPicUsername.Name = "txtTinyPicUsername";
-            this.txtTinyPicUsername.Size = new System.Drawing.Size(208, 20);
-            this.txtTinyPicUsername.TabIndex = 2;
             this.txtTinyPicUsername.TextChanged += new System.EventHandler(this.txtTinyPicUsername_TextChanged);
             // 
             // lblTinyPicUsername
             // 
-            this.lblTinyPicUsername.AutoSize = true;
-            this.lblTinyPicUsername.Location = new System.Drawing.Point(16, 48);
+            resources.ApplyResources(this.lblTinyPicUsername, "lblTinyPicUsername");
             this.lblTinyPicUsername.Name = "lblTinyPicUsername";
-            this.lblTinyPicUsername.Size = new System.Drawing.Size(35, 13);
-            this.lblTinyPicUsername.TabIndex = 1;
-            this.lblTinyPicUsername.Text = "Email:";
             // 
             // btnTinyPicOpenMyImages
             // 
-            this.btnTinyPicOpenMyImages.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.btnTinyPicOpenMyImages, "btnTinyPicOpenMyImages");
             this.btnTinyPicOpenMyImages.Name = "btnTinyPicOpenMyImages";
-            this.btnTinyPicOpenMyImages.Size = new System.Drawing.Size(160, 24);
-            this.btnTinyPicOpenMyImages.TabIndex = 6;
-            this.btnTinyPicOpenMyImages.Text = "Open my images page...";
             this.btnTinyPicOpenMyImages.UseVisualStyleBackColor = true;
             this.btnTinyPicOpenMyImages.Click += new System.EventHandler(this.btnTinyPicOpenMyImages_Click);
             // 
@@ -4043,72 +2978,51 @@
             this.tpFlickr.Controls.Add(this.btnFlickrCheckToken);
             this.tpFlickr.Controls.Add(this.btnFlickrCompleteAuth);
             this.tpFlickr.Controls.Add(this.btnFlickrOpenAuthorize);
-            this.tpFlickr.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpFlickr, "tpFlickr");
             this.tpFlickr.Name = "tpFlickr";
-            this.tpFlickr.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFlickr.Size = new System.Drawing.Size(972, 493);
-            this.tpFlickr.TabIndex = 3;
-            this.tpFlickr.Text = "Flickr";
             this.tpFlickr.UseVisualStyleBackColor = true;
             // 
             // btnFlickrOpenImages
             // 
-            this.btnFlickrOpenImages.Location = new System.Drawing.Point(616, 102);
+            resources.ApplyResources(this.btnFlickrOpenImages, "btnFlickrOpenImages");
             this.btnFlickrOpenImages.Name = "btnFlickrOpenImages";
-            this.btnFlickrOpenImages.Size = new System.Drawing.Size(179, 23);
-            this.btnFlickrOpenImages.TabIndex = 3;
-            this.btnFlickrOpenImages.Text = "Your photostream...";
             this.btnFlickrOpenImages.UseVisualStyleBackColor = true;
             this.btnFlickrOpenImages.Click += new System.EventHandler(this.btnFlickrOpenImages_Click);
             // 
             // pgFlickrAuthInfo
             // 
             this.pgFlickrAuthInfo.CommandsVisibleIfAvailable = false;
-            this.pgFlickrAuthInfo.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.pgFlickrAuthInfo, "pgFlickrAuthInfo");
             this.pgFlickrAuthInfo.Name = "pgFlickrAuthInfo";
             this.pgFlickrAuthInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgFlickrAuthInfo.Size = new System.Drawing.Size(592, 160);
-            this.pgFlickrAuthInfo.TabIndex = 4;
             this.pgFlickrAuthInfo.ToolbarVisible = false;
             // 
             // pgFlickrSettings
             // 
             this.pgFlickrSettings.CommandsVisibleIfAvailable = false;
-            this.pgFlickrSettings.Location = new System.Drawing.Point(16, 184);
+            resources.ApplyResources(this.pgFlickrSettings, "pgFlickrSettings");
             this.pgFlickrSettings.Name = "pgFlickrSettings";
             this.pgFlickrSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgFlickrSettings.Size = new System.Drawing.Size(592, 275);
-            this.pgFlickrSettings.TabIndex = 5;
             this.pgFlickrSettings.ToolbarVisible = false;
             // 
             // btnFlickrCheckToken
             // 
-            this.btnFlickrCheckToken.Location = new System.Drawing.Point(616, 73);
+            resources.ApplyResources(this.btnFlickrCheckToken, "btnFlickrCheckToken");
             this.btnFlickrCheckToken.Name = "btnFlickrCheckToken";
-            this.btnFlickrCheckToken.Size = new System.Drawing.Size(179, 23);
-            this.btnFlickrCheckToken.TabIndex = 2;
-            this.btnFlickrCheckToken.Text = "Refresh authorization";
             this.btnFlickrCheckToken.UseVisualStyleBackColor = true;
             this.btnFlickrCheckToken.Click += new System.EventHandler(this.btnFlickrCheckToken_Click);
             // 
             // btnFlickrCompleteAuth
             // 
-            this.btnFlickrCompleteAuth.Enabled = false;
-            this.btnFlickrCompleteAuth.Location = new System.Drawing.Point(616, 45);
+            resources.ApplyResources(this.btnFlickrCompleteAuth, "btnFlickrCompleteAuth");
             this.btnFlickrCompleteAuth.Name = "btnFlickrCompleteAuth";
-            this.btnFlickrCompleteAuth.Size = new System.Drawing.Size(179, 24);
-            this.btnFlickrCompleteAuth.TabIndex = 1;
-            this.btnFlickrCompleteAuth.Text = "Step 2. Complete authorization";
             this.btnFlickrCompleteAuth.UseVisualStyleBackColor = true;
             this.btnFlickrCompleteAuth.Click += new System.EventHandler(this.btnFlickrCompleteAuth_Click);
             // 
             // btnFlickrOpenAuthorize
             // 
-            this.btnFlickrOpenAuthorize.Location = new System.Drawing.Point(616, 16);
+            resources.ApplyResources(this.btnFlickrOpenAuthorize, "btnFlickrOpenAuthorize");
             this.btnFlickrOpenAuthorize.Name = "btnFlickrOpenAuthorize";
-            this.btnFlickrOpenAuthorize.Size = new System.Drawing.Size(179, 23);
-            this.btnFlickrOpenAuthorize.TabIndex = 0;
-            this.btnFlickrOpenAuthorize.Text = "Step 1. Open authorize page...";
             this.btnFlickrOpenAuthorize.UseVisualStyleBackColor = true;
             this.btnFlickrOpenAuthorize.Click += new System.EventHandler(this.btnFlickrOpenAuthorize_Click);
             // 
@@ -4117,12 +3031,8 @@
             this.tpPhotobucket.Controls.Add(this.gbPhotobucketAlbumPath);
             this.tpPhotobucket.Controls.Add(this.gbPhotobucketAlbums);
             this.tpPhotobucket.Controls.Add(this.gbPhotobucketUserAccount);
-            this.tpPhotobucket.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpPhotobucket, "tpPhotobucket");
             this.tpPhotobucket.Name = "tpPhotobucket";
-            this.tpPhotobucket.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPhotobucket.Size = new System.Drawing.Size(972, 493);
-            this.tpPhotobucket.TabIndex = 4;
-            this.tpPhotobucket.Text = "Photobucket";
             this.tpPhotobucket.UseVisualStyleBackColor = true;
             // 
             // gbPhotobucketAlbumPath
@@ -4130,41 +3040,29 @@
             this.gbPhotobucketAlbumPath.Controls.Add(this.btnPhotobucketAddAlbum);
             this.gbPhotobucketAlbumPath.Controls.Add(this.btnPhotobucketRemoveAlbum);
             this.gbPhotobucketAlbumPath.Controls.Add(this.cboPhotobucketAlbumPaths);
-            this.gbPhotobucketAlbumPath.Location = new System.Drawing.Point(16, 208);
+            resources.ApplyResources(this.gbPhotobucketAlbumPath, "gbPhotobucketAlbumPath");
             this.gbPhotobucketAlbumPath.Name = "gbPhotobucketAlbumPath";
-            this.gbPhotobucketAlbumPath.Size = new System.Drawing.Size(712, 64);
-            this.gbPhotobucketAlbumPath.TabIndex = 1;
             this.gbPhotobucketAlbumPath.TabStop = false;
-            this.gbPhotobucketAlbumPath.Text = "Upload images to";
             // 
             // btnPhotobucketAddAlbum
             // 
-            this.btnPhotobucketAddAlbum.Location = new System.Drawing.Point(488, 24);
+            resources.ApplyResources(this.btnPhotobucketAddAlbum, "btnPhotobucketAddAlbum");
             this.btnPhotobucketAddAlbum.Name = "btnPhotobucketAddAlbum";
-            this.btnPhotobucketAddAlbum.Size = new System.Drawing.Size(75, 23);
-            this.btnPhotobucketAddAlbum.TabIndex = 1;
-            this.btnPhotobucketAddAlbum.Text = "Add album";
             this.btnPhotobucketAddAlbum.UseVisualStyleBackColor = true;
             this.btnPhotobucketAddAlbum.Click += new System.EventHandler(this.btnPhotobucketAddAlbum_Click);
             // 
             // btnPhotobucketRemoveAlbum
             // 
-            this.btnPhotobucketRemoveAlbum.AutoSize = true;
-            this.btnPhotobucketRemoveAlbum.Location = new System.Drawing.Point(568, 24);
+            resources.ApplyResources(this.btnPhotobucketRemoveAlbum, "btnPhotobucketRemoveAlbum");
             this.btnPhotobucketRemoveAlbum.Name = "btnPhotobucketRemoveAlbum";
-            this.btnPhotobucketRemoveAlbum.Size = new System.Drawing.Size(104, 23);
-            this.btnPhotobucketRemoveAlbum.TabIndex = 2;
-            this.btnPhotobucketRemoveAlbum.Text = "Remove album";
             this.btnPhotobucketRemoveAlbum.UseVisualStyleBackColor = true;
             this.btnPhotobucketRemoveAlbum.Click += new System.EventHandler(this.btnPhotobucketRemoveAlbum_Click);
             // 
             // cboPhotobucketAlbumPaths
             // 
             this.cboPhotobucketAlbumPaths.FormattingEnabled = true;
-            this.cboPhotobucketAlbumPaths.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.cboPhotobucketAlbumPaths, "cboPhotobucketAlbumPaths");
             this.cboPhotobucketAlbumPaths.Name = "cboPhotobucketAlbumPaths";
-            this.cboPhotobucketAlbumPaths.Size = new System.Drawing.Size(456, 21);
-            this.cboPhotobucketAlbumPaths.TabIndex = 0;
             this.cboPhotobucketAlbumPaths.SelectedIndexChanged += new System.EventHandler(this.cboPhotobucketAlbumPaths_SelectedIndexChanged);
             // 
             // gbPhotobucketAlbums
@@ -4174,53 +3072,34 @@
             this.gbPhotobucketAlbums.Controls.Add(this.txtPhotobucketNewAlbumName);
             this.gbPhotobucketAlbums.Controls.Add(this.txtPhotobucketParentAlbumPath);
             this.gbPhotobucketAlbums.Controls.Add(this.btnPhotobucketCreateAlbum);
-            this.gbPhotobucketAlbums.Location = new System.Drawing.Point(16, 280);
+            resources.ApplyResources(this.gbPhotobucketAlbums, "gbPhotobucketAlbums");
             this.gbPhotobucketAlbums.Name = "gbPhotobucketAlbums";
-            this.gbPhotobucketAlbums.Size = new System.Drawing.Size(712, 128);
-            this.gbPhotobucketAlbums.TabIndex = 2;
             this.gbPhotobucketAlbums.TabStop = false;
-            this.gbPhotobucketAlbums.Text = "Create new album";
             // 
             // lblPhotobucketNewAlbumName
             // 
-            this.lblPhotobucketNewAlbumName.AutoSize = true;
-            this.lblPhotobucketNewAlbumName.Location = new System.Drawing.Point(16, 72);
+            resources.ApplyResources(this.lblPhotobucketNewAlbumName, "lblPhotobucketNewAlbumName");
             this.lblPhotobucketNewAlbumName.Name = "lblPhotobucketNewAlbumName";
-            this.lblPhotobucketNewAlbumName.Size = new System.Drawing.Size(649, 13);
-            this.lblPhotobucketNewAlbumName.TabIndex = 2;
-            this.lblPhotobucketNewAlbumName.Text = "New album name ( must be between 2 and 50 characters. Valid characters are letter" +
-    "s, numbers, underscore ( _ ), hyphen (-), and space )";
             // 
             // lblPhotobucketParentAlbumPath
             // 
-            this.lblPhotobucketParentAlbumPath.AutoSize = true;
-            this.lblPhotobucketParentAlbumPath.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.lblPhotobucketParentAlbumPath, "lblPhotobucketParentAlbumPath");
             this.lblPhotobucketParentAlbumPath.Name = "lblPhotobucketParentAlbumPath";
-            this.lblPhotobucketParentAlbumPath.Size = new System.Drawing.Size(93, 13);
-            this.lblPhotobucketParentAlbumPath.TabIndex = 0;
-            this.lblPhotobucketParentAlbumPath.Text = "Parent album path";
             // 
             // txtPhotobucketNewAlbumName
             // 
-            this.txtPhotobucketNewAlbumName.Location = new System.Drawing.Point(16, 88);
+            resources.ApplyResources(this.txtPhotobucketNewAlbumName, "txtPhotobucketNewAlbumName");
             this.txtPhotobucketNewAlbumName.Name = "txtPhotobucketNewAlbumName";
-            this.txtPhotobucketNewAlbumName.Size = new System.Drawing.Size(216, 20);
-            this.txtPhotobucketNewAlbumName.TabIndex = 3;
             // 
             // txtPhotobucketParentAlbumPath
             // 
-            this.txtPhotobucketParentAlbumPath.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.txtPhotobucketParentAlbumPath, "txtPhotobucketParentAlbumPath");
             this.txtPhotobucketParentAlbumPath.Name = "txtPhotobucketParentAlbumPath";
-            this.txtPhotobucketParentAlbumPath.Size = new System.Drawing.Size(448, 20);
-            this.txtPhotobucketParentAlbumPath.TabIndex = 1;
             // 
             // btnPhotobucketCreateAlbum
             // 
-            this.btnPhotobucketCreateAlbum.Location = new System.Drawing.Point(240, 88);
+            resources.ApplyResources(this.btnPhotobucketCreateAlbum, "btnPhotobucketCreateAlbum");
             this.btnPhotobucketCreateAlbum.Name = "btnPhotobucketCreateAlbum";
-            this.btnPhotobucketCreateAlbum.Size = new System.Drawing.Size(128, 23);
-            this.btnPhotobucketCreateAlbum.TabIndex = 4;
-            this.btnPhotobucketCreateAlbum.Text = "Create album";
             this.btnPhotobucketCreateAlbum.UseVisualStyleBackColor = true;
             this.btnPhotobucketCreateAlbum.Click += new System.EventHandler(this.btnPhotobucketCreateAlbum_Click);
             // 
@@ -4233,74 +3112,49 @@
             this.gbPhotobucketUserAccount.Controls.Add(this.btnPhotobucketAuthComplete);
             this.gbPhotobucketUserAccount.Controls.Add(this.txtPhotobucketVerificationCode);
             this.gbPhotobucketUserAccount.Controls.Add(this.lblPhotobucketAccountStatus);
-            this.gbPhotobucketUserAccount.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.gbPhotobucketUserAccount, "gbPhotobucketUserAccount");
             this.gbPhotobucketUserAccount.Name = "gbPhotobucketUserAccount";
-            this.gbPhotobucketUserAccount.Size = new System.Drawing.Size(712, 184);
-            this.gbPhotobucketUserAccount.TabIndex = 0;
             this.gbPhotobucketUserAccount.TabStop = false;
-            this.gbPhotobucketUserAccount.Text = "User account";
             // 
             // lblPhotobucketDefaultAlbumName
             // 
-            this.lblPhotobucketDefaultAlbumName.AutoSize = true;
-            this.lblPhotobucketDefaultAlbumName.Location = new System.Drawing.Point(496, 128);
+            resources.ApplyResources(this.lblPhotobucketDefaultAlbumName, "lblPhotobucketDefaultAlbumName");
             this.lblPhotobucketDefaultAlbumName.Name = "lblPhotobucketDefaultAlbumName";
-            this.lblPhotobucketDefaultAlbumName.Size = new System.Drawing.Size(104, 13);
-            this.lblPhotobucketDefaultAlbumName.TabIndex = 5;
-            this.lblPhotobucketDefaultAlbumName.Text = "Default Album Name";
             // 
             // btnPhotobucketAuthOpen
             // 
-            this.btnPhotobucketAuthOpen.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.btnPhotobucketAuthOpen, "btnPhotobucketAuthOpen");
             this.btnPhotobucketAuthOpen.Name = "btnPhotobucketAuthOpen";
-            this.btnPhotobucketAuthOpen.Size = new System.Drawing.Size(200, 23);
-            this.btnPhotobucketAuthOpen.TabIndex = 0;
-            this.btnPhotobucketAuthOpen.Text = "Step 1: Open authorize page...";
             this.btnPhotobucketAuthOpen.UseVisualStyleBackColor = true;
             this.btnPhotobucketAuthOpen.Click += new System.EventHandler(this.btnPhotobucketAuthOpen_Click);
             // 
             // txtPhotobucketDefaultAlbumName
             // 
-            this.txtPhotobucketDefaultAlbumName.Location = new System.Drawing.Point(496, 144);
+            resources.ApplyResources(this.txtPhotobucketDefaultAlbumName, "txtPhotobucketDefaultAlbumName");
             this.txtPhotobucketDefaultAlbumName.Name = "txtPhotobucketDefaultAlbumName";
             this.txtPhotobucketDefaultAlbumName.ReadOnly = true;
-            this.txtPhotobucketDefaultAlbumName.Size = new System.Drawing.Size(200, 20);
-            this.txtPhotobucketDefaultAlbumName.TabIndex = 6;
             // 
             // lblPhotobucketVerificationCode
             // 
-            this.lblPhotobucketVerificationCode.AutoSize = true;
-            this.lblPhotobucketVerificationCode.Location = new System.Drawing.Point(16, 62);
+            resources.ApplyResources(this.lblPhotobucketVerificationCode, "lblPhotobucketVerificationCode");
             this.lblPhotobucketVerificationCode.Name = "lblPhotobucketVerificationCode";
-            this.lblPhotobucketVerificationCode.Size = new System.Drawing.Size(292, 13);
-            this.lblPhotobucketVerificationCode.TabIndex = 1;
-            this.lblPhotobucketVerificationCode.Text = "Verification code (Get verification code from authorize page):";
             // 
             // btnPhotobucketAuthComplete
             // 
-            this.btnPhotobucketAuthComplete.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.btnPhotobucketAuthComplete, "btnPhotobucketAuthComplete");
             this.btnPhotobucketAuthComplete.Name = "btnPhotobucketAuthComplete";
-            this.btnPhotobucketAuthComplete.Size = new System.Drawing.Size(200, 23);
-            this.btnPhotobucketAuthComplete.TabIndex = 3;
-            this.btnPhotobucketAuthComplete.Text = "Step 2: Complete authorization";
             this.btnPhotobucketAuthComplete.UseVisualStyleBackColor = true;
             this.btnPhotobucketAuthComplete.Click += new System.EventHandler(this.btnPhotobucketAuthComplete_Click);
             // 
             // txtPhotobucketVerificationCode
             // 
-            this.txtPhotobucketVerificationCode.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(this.txtPhotobucketVerificationCode, "txtPhotobucketVerificationCode");
             this.txtPhotobucketVerificationCode.Name = "txtPhotobucketVerificationCode";
-            this.txtPhotobucketVerificationCode.Size = new System.Drawing.Size(360, 20);
-            this.txtPhotobucketVerificationCode.TabIndex = 2;
             // 
             // lblPhotobucketAccountStatus
             // 
-            this.lblPhotobucketAccountStatus.AutoSize = true;
-            this.lblPhotobucketAccountStatus.Location = new System.Drawing.Point(16, 152);
+            resources.ApplyResources(this.lblPhotobucketAccountStatus, "lblPhotobucketAccountStatus");
             this.lblPhotobucketAccountStatus.Name = "lblPhotobucketAccountStatus";
-            this.lblPhotobucketAccountStatus.Size = new System.Drawing.Size(77, 13);
-            this.lblPhotobucketAccountStatus.TabIndex = 4;
-            this.lblPhotobucketAccountStatus.Text = "Login required.";
             // 
             // tpPicasa
             // 
@@ -4309,30 +3163,20 @@
             this.tpPicasa.Controls.Add(this.lvPicasaAlbumList);
             this.tpPicasa.Controls.Add(this.btnPicasaRefreshAlbumList);
             this.tpPicasa.Controls.Add(this.oauth2Picasa);
-            this.tpPicasa.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpPicasa, "tpPicasa");
             this.tpPicasa.Name = "tpPicasa";
-            this.tpPicasa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPicasa.Size = new System.Drawing.Size(972, 493);
-            this.tpPicasa.TabIndex = 8;
-            this.tpPicasa.Text = "Picasa";
             this.tpPicasa.UseVisualStyleBackColor = true;
             // 
             // txtPicasaAlbumID
             // 
-            this.txtPicasaAlbumID.Location = new System.Drawing.Point(592, 12);
+            resources.ApplyResources(this.txtPicasaAlbumID, "txtPicasaAlbumID");
             this.txtPicasaAlbumID.Name = "txtPicasaAlbumID";
-            this.txtPicasaAlbumID.Size = new System.Drawing.Size(192, 20);
-            this.txtPicasaAlbumID.TabIndex = 2;
             this.txtPicasaAlbumID.TextChanged += new System.EventHandler(this.txtPicasaAlbumID_TextChanged);
             // 
             // lblPicasaAlbumID
             // 
-            this.lblPicasaAlbumID.AutoSize = true;
-            this.lblPicasaAlbumID.Location = new System.Drawing.Point(352, 16);
+            resources.ApplyResources(this.lblPicasaAlbumID, "lblPicasaAlbumID");
             this.lblPicasaAlbumID.Name = "lblPicasaAlbumID";
-            this.lblPicasaAlbumID.Size = new System.Drawing.Size(233, 13);
-            this.lblPicasaAlbumID.TabIndex = 1;
-            this.lblPicasaAlbumID.Text = "Album ID for upload (Empty = No album upload):";
             // 
             // lvPicasaAlbumList
             // 
@@ -4341,47 +3185,36 @@
             this.chPicasaName,
             this.chPicasaDescription});
             this.lvPicasaAlbumList.FullRowSelect = true;
-            this.lvPicasaAlbumList.Location = new System.Drawing.Point(352, 72);
+            resources.ApplyResources(this.lvPicasaAlbumList, "lvPicasaAlbumList");
             this.lvPicasaAlbumList.MultiSelect = false;
             this.lvPicasaAlbumList.Name = "lvPicasaAlbumList";
-            this.lvPicasaAlbumList.Size = new System.Drawing.Size(432, 368);
-            this.lvPicasaAlbumList.TabIndex = 4;
             this.lvPicasaAlbumList.UseCompatibleStateImageBehavior = false;
             this.lvPicasaAlbumList.View = System.Windows.Forms.View.Details;
             this.lvPicasaAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvPicasaAlbumList_SelectedIndexChanged);
             // 
             // chPicasaID
             // 
-            this.chPicasaID.Text = "ID";
-            this.chPicasaID.Width = 135;
+            resources.ApplyResources(this.chPicasaID, "chPicasaID");
             // 
             // chPicasaName
             // 
-            this.chPicasaName.Text = "Name";
-            this.chPicasaName.Width = 150;
+            resources.ApplyResources(this.chPicasaName, "chPicasaName");
             // 
             // chPicasaDescription
             // 
-            this.chPicasaDescription.Text = "Description";
-            this.chPicasaDescription.Width = 143;
+            resources.ApplyResources(this.chPicasaDescription, "chPicasaDescription");
             // 
             // btnPicasaRefreshAlbumList
             // 
-            this.btnPicasaRefreshAlbumList.Enabled = false;
-            this.btnPicasaRefreshAlbumList.Location = new System.Drawing.Point(352, 40);
+            resources.ApplyResources(this.btnPicasaRefreshAlbumList, "btnPicasaRefreshAlbumList");
             this.btnPicasaRefreshAlbumList.Name = "btnPicasaRefreshAlbumList";
-            this.btnPicasaRefreshAlbumList.Size = new System.Drawing.Size(200, 23);
-            this.btnPicasaRefreshAlbumList.TabIndex = 3;
-            this.btnPicasaRefreshAlbumList.Text = "Refresh album list";
             this.btnPicasaRefreshAlbumList.UseVisualStyleBackColor = true;
             this.btnPicasaRefreshAlbumList.Click += new System.EventHandler(this.btnPicasaRefreshAlbumList_Click);
             // 
             // oauth2Picasa
             // 
-            this.oauth2Picasa.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.oauth2Picasa, "oauth2Picasa");
             this.oauth2Picasa.Name = "oauth2Picasa";
-            this.oauth2Picasa.Size = new System.Drawing.Size(328, 240);
-            this.oauth2Picasa.TabIndex = 0;
             this.oauth2Picasa.OpenButtonClicked += new UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Picasa_OpenButtonClicked);
             this.oauth2Picasa.CompleteButtonClicked += new UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Picasa_CompleteButtonClicked);
             this.oauth2Picasa.ClearButtonClicked += new UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Picasa_ClearButtonClicked);
@@ -4395,67 +3228,43 @@
             this.tpChevereto.Controls.Add(this.txtCheveretoWebsite);
             this.tpChevereto.Controls.Add(this.txtCheveretoAPIKey);
             this.tpChevereto.Controls.Add(this.lblCheveretoAPIKey);
-            this.tpChevereto.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpChevereto, "tpChevereto");
             this.tpChevereto.Name = "tpChevereto";
-            this.tpChevereto.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChevereto.Size = new System.Drawing.Size(972, 493);
-            this.tpChevereto.TabIndex = 9;
-            this.tpChevereto.Text = "Chevereto";
             this.tpChevereto.UseVisualStyleBackColor = true;
             // 
             // cbCheveretoDirectURL
             // 
-            this.cbCheveretoDirectURL.AutoSize = true;
-            this.cbCheveretoDirectURL.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.cbCheveretoDirectURL, "cbCheveretoDirectURL");
             this.cbCheveretoDirectURL.Name = "cbCheveretoDirectURL";
-            this.cbCheveretoDirectURL.Size = new System.Drawing.Size(79, 17);
-            this.cbCheveretoDirectURL.TabIndex = 5;
-            this.cbCheveretoDirectURL.Text = "Direct URL";
             this.cbCheveretoDirectURL.UseVisualStyleBackColor = true;
             this.cbCheveretoDirectURL.CheckedChanged += new System.EventHandler(this.cbCheveretoDirectURL_CheckedChanged);
             // 
             // lblCheveretoWebsiteTip
             // 
-            this.lblCheveretoWebsiteTip.AutoSize = true;
-            this.lblCheveretoWebsiteTip.Location = new System.Drawing.Point(314, 16);
+            resources.ApplyResources(this.lblCheveretoWebsiteTip, "lblCheveretoWebsiteTip");
             this.lblCheveretoWebsiteTip.Name = "lblCheveretoWebsiteTip";
-            this.lblCheveretoWebsiteTip.Size = new System.Drawing.Size(74, 13);
-            this.lblCheveretoWebsiteTip.TabIndex = 4;
-            this.lblCheveretoWebsiteTip.Text = "/api/1/upload";
             // 
             // lblCheveretoWebsite
             // 
-            this.lblCheveretoWebsite.AutoSize = true;
-            this.lblCheveretoWebsite.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblCheveretoWebsite, "lblCheveretoWebsite");
             this.lblCheveretoWebsite.Name = "lblCheveretoWebsite";
-            this.lblCheveretoWebsite.Size = new System.Drawing.Size(49, 13);
-            this.lblCheveretoWebsite.TabIndex = 3;
-            this.lblCheveretoWebsite.Text = "Website:";
             // 
             // txtCheveretoWebsite
             // 
-            this.txtCheveretoWebsite.Location = new System.Drawing.Point(72, 12);
+            resources.ApplyResources(this.txtCheveretoWebsite, "txtCheveretoWebsite");
             this.txtCheveretoWebsite.Name = "txtCheveretoWebsite";
-            this.txtCheveretoWebsite.Size = new System.Drawing.Size(240, 20);
-            this.txtCheveretoWebsite.TabIndex = 2;
             this.txtCheveretoWebsite.TextChanged += new System.EventHandler(this.txtCheveretoWebsite_TextChanged);
             // 
             // txtCheveretoAPIKey
             // 
-            this.txtCheveretoAPIKey.Location = new System.Drawing.Point(72, 36);
+            resources.ApplyResources(this.txtCheveretoAPIKey, "txtCheveretoAPIKey");
             this.txtCheveretoAPIKey.Name = "txtCheveretoAPIKey";
-            this.txtCheveretoAPIKey.Size = new System.Drawing.Size(240, 20);
-            this.txtCheveretoAPIKey.TabIndex = 1;
             this.txtCheveretoAPIKey.TextChanged += new System.EventHandler(this.txtCheveretoAPIKey_TextChanged);
             // 
             // lblCheveretoAPIKey
             // 
-            this.lblCheveretoAPIKey.AutoSize = true;
-            this.lblCheveretoAPIKey.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblCheveretoAPIKey, "lblCheveretoAPIKey");
             this.lblCheveretoAPIKey.Name = "lblCheveretoAPIKey";
-            this.lblCheveretoAPIKey.Size = new System.Drawing.Size(47, 13);
-            this.lblCheveretoAPIKey.TabIndex = 0;
-            this.lblCheveretoAPIKey.Text = "API key:";
             // 
             // tcUploaders
             // 
@@ -4464,58 +3273,40 @@
             this.tcUploaders.Controls.Add(this.tpFileUploaders);
             this.tcUploaders.Controls.Add(this.tpURLShorteners);
             this.tcUploaders.Controls.Add(this.tpOtherUploaders);
-            this.tcUploaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcUploaders.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tcUploaders, "tcUploaders");
             this.tcUploaders.Name = "tcUploaders";
             this.tcUploaders.SelectedIndex = 0;
-            this.tcUploaders.Size = new System.Drawing.Size(994, 551);
-            this.tcUploaders.TabIndex = 0;
-            this.tcUploaders.Visible = false;
             // 
             // lblWidthHint
             // 
             this.lblWidthHint.BackColor = System.Drawing.Color.Black;
-            this.lblWidthHint.Location = new System.Drawing.Point(820, 0);
+            resources.ApplyResources(this.lblWidthHint, "lblWidthHint");
             this.lblWidthHint.Name = "lblWidthHint";
-            this.lblWidthHint.Size = new System.Drawing.Size(1, 600);
-            this.lblWidthHint.TabIndex = 1;
-            this.lblWidthHint.Visible = false;
             // 
             // ttlvMain
             // 
-            this.ttlvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.ttlvMain, "ttlvMain");
             this.ttlvMain.ImageList = null;
             this.ttlvMain.ListViewSize = 180;
-            this.ttlvMain.Location = new System.Drawing.Point(3, 3);
             this.ttlvMain.MainTabControl = null;
-            this.ttlvMain.Margin = new System.Windows.Forms.Padding(0);
             this.ttlvMain.Name = "ttlvMain";
-            this.ttlvMain.Size = new System.Drawing.Size(994, 551);
-            this.ttlvMain.TabIndex = 0;
             // 
             // actRapidShareAccountType
             // 
-            this.actRapidShareAccountType.Location = new System.Drawing.Point(8, 16);
+            resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = UploadersLib.AccountType.Anonymous;
-            this.actRapidShareAccountType.Size = new System.Drawing.Size(214, 29);
-            this.actRapidShareAccountType.TabIndex = 16;
             // 
             // UploadersConfigForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1000, 557);
             this.Controls.Add(this.lblWidthHint);
             this.Controls.Add(this.tcUploaders);
             this.Controls.Add(this.ttlvMain);
-            this.MinimumSize = new System.Drawing.Size(840, 572);
             this.Name = "UploadersConfigForm";
-            this.Padding = new System.Windows.Forms.Padding(3);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Destination settings";
             this.Shown += new System.EventHandler(this.UploadersConfigForm_Shown);
             this.Resize += new System.EventHandler(this.UploadersConfigForm_Resize);
             this.tpOtherUploaders.ResumeLayout(false);

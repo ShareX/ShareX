@@ -117,4 +117,217 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 0</value>
+  </data>
+  <data name="pgSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>544, 352</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
+    <value>pgSettings</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
+    <value>AccountsLayout</value>
+  </data>
+  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbAccounts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lbAccounts.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lbAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lbAccounts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lbAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 352</value>
+  </data>
+  <data name="lbAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbAccounts.Name" xml:space="preserve">
+    <value>lbAccounts</value>
+  </data>
+  <data name="&gt;&gt;lbAccounts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAccounts.Parent" xml:space="preserve">
+    <value>AccountsLayout</value>
+  </data>
+  <data name="&gt;&gt;lbAccounts.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 8</value>
+  </data>
+  <data name="btnTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnTest.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnTest.Name" xml:space="preserve">
+    <value>btnTest</value>
+  </data>
+  <data name="&gt;&gt;btnTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTest.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 8</value>
+  </data>
+  <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Name" xml:space="preserve">
+    <value>btnRemove</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AccountsLayout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="AccountsLayout.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="AccountsLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="AccountsLayout.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="AccountsLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 352</value>
+  </data>
+  <data name="AccountsLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;AccountsLayout.Name" xml:space="preserve">
+    <value>AccountsLayout</value>
+  </data>
+  <data name="&gt;&gt;AccountsLayout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AccountsLayout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AccountsLayout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AccountsLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pgSettings" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lbAccounts" Row="0" RowSpan="1" Column="-1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,26,54987,Percent,73,45013" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 8</value>
+  </data>
+  <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.Name" xml:space="preserve">
+    <value>btnDuplicate</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 400</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AccountsControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             this.ilvImages = new Manina.Windows.Forms.ImageListView();
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.tsMain = new System.Windows.Forms.ToolStrip();
@@ -54,14 +55,11 @@
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ilvImages.CacheLimit = "100MB";
             this.ilvImages.ColumnHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.ilvImages.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.ilvImages, "ilvImages");
             this.ilvImages.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.ilvImages.Location = new System.Drawing.Point(0, 0);
             this.ilvImages.Name = "ilvImages";
             this.ilvImages.PersistentCacheDirectory = "";
             this.ilvImages.PersistentCacheSize = ((long)(100));
-            this.ilvImages.Size = new System.Drawing.Size(804, 587);
-            this.ilvImages.TabIndex = 0;
             this.ilvImages.ThumbnailSize = new System.Drawing.Size(100, 100);
             this.ilvImages.ItemDoubleClick += new Manina.Windows.Forms.ItemDoubleClickEventHandler(this.ilvImages_ItemDoubleClick);
             this.ilvImages.SelectionChanged += new System.EventHandler(this.ilvImages_SelectionChanged);
@@ -74,13 +72,9 @@
             // tscMain.ContentPanel
             // 
             this.tscMain.ContentPanel.Controls.Add(this.ilvImages);
-            this.tscMain.ContentPanel.Size = new System.Drawing.Size(804, 587);
-            this.tscMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tscMain.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.tscMain.ContentPanel, "tscMain.ContentPanel");
+            resources.ApplyResources(this.tscMain, "tscMain");
             this.tscMain.Name = "tscMain";
-            this.tscMain.Size = new System.Drawing.Size(804, 612);
-            this.tscMain.TabIndex = 0;
-            this.tscMain.Text = "toolStripContainer1";
             // 
             // tscMain.TopToolStripPanel
             // 
@@ -88,17 +82,13 @@
             // 
             // tsMain
             // 
-            this.tsMain.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsddbViewMode,
             this.tsddbThumbnailSize,
             this.tsbQuickList});
-            this.tsMain.Location = new System.Drawing.Point(3, 0);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.tsMain.Size = new System.Drawing.Size(361, 25);
-            this.tsMain.TabIndex = 0;
             // 
             // tsddbViewMode
             // 
@@ -108,28 +98,24 @@
             this.tsmiViewModeGallery,
             this.tsmiViewModePane});
             this.tsddbViewMode.Name = "tsddbViewMode";
-            this.tsddbViewMode.Size = new System.Drawing.Size(79, 20);
-            this.tsddbViewMode.Text = "View mode";
+            resources.ApplyResources(this.tsddbViewMode, "tsddbViewMode");
             // 
             // tsmiViewModeThumbnails
             // 
             this.tsmiViewModeThumbnails.Name = "tsmiViewModeThumbnails";
-            this.tsmiViewModeThumbnails.Size = new System.Drawing.Size(137, 22);
-            this.tsmiViewModeThumbnails.Text = "Thumbnails";
+            resources.ApplyResources(this.tsmiViewModeThumbnails, "tsmiViewModeThumbnails");
             this.tsmiViewModeThumbnails.Click += new System.EventHandler(this.tsmiViewModeThumbnails_Click);
             // 
             // tsmiViewModeGallery
             // 
             this.tsmiViewModeGallery.Name = "tsmiViewModeGallery";
-            this.tsmiViewModeGallery.Size = new System.Drawing.Size(137, 22);
-            this.tsmiViewModeGallery.Text = "Gallery";
+            resources.ApplyResources(this.tsmiViewModeGallery, "tsmiViewModeGallery");
             this.tsmiViewModeGallery.Click += new System.EventHandler(this.tsmiViewModeGallery_Click);
             // 
             // tsmiViewModePane
             // 
             this.tsmiViewModePane.Name = "tsmiViewModePane";
-            this.tsmiViewModePane.Size = new System.Drawing.Size(137, 22);
-            this.tsmiViewModePane.Text = "Pane";
+            resources.ApplyResources(this.tsmiViewModePane, "tsmiViewModePane");
             this.tsmiViewModePane.Click += new System.EventHandler(this.tsmiViewModePane_Click);
             // 
             // tsddbThumbnailSize
@@ -142,42 +128,36 @@
             this.tsmiThumbnailSize200,
             this.tsmiThumbnailSize250});
             this.tsddbThumbnailSize.Name = "tsddbThumbnailSize";
-            this.tsddbThumbnailSize.Size = new System.Drawing.Size(100, 20);
-            this.tsddbThumbnailSize.Text = "Thumbnail size";
+            resources.ApplyResources(this.tsddbThumbnailSize, "tsddbThumbnailSize");
             // 
             // tsmiThumbnailSize75
             // 
             this.tsmiThumbnailSize75.Name = "tsmiThumbnailSize75";
-            this.tsmiThumbnailSize75.Size = new System.Drawing.Size(121, 22);
-            this.tsmiThumbnailSize75.Text = "75 x 75";
+            resources.ApplyResources(this.tsmiThumbnailSize75, "tsmiThumbnailSize75");
             this.tsmiThumbnailSize75.Click += new System.EventHandler(this.tsmiThumbnailSize75_Click);
             // 
             // tsmiThumbnailSize100
             // 
             this.tsmiThumbnailSize100.Name = "tsmiThumbnailSize100";
-            this.tsmiThumbnailSize100.Size = new System.Drawing.Size(121, 22);
-            this.tsmiThumbnailSize100.Text = "100 x 100";
+            resources.ApplyResources(this.tsmiThumbnailSize100, "tsmiThumbnailSize100");
             this.tsmiThumbnailSize100.Click += new System.EventHandler(this.tsmiThumbnailSize100_Click);
             // 
             // tsmiThumbnailSize150
             // 
             this.tsmiThumbnailSize150.Name = "tsmiThumbnailSize150";
-            this.tsmiThumbnailSize150.Size = new System.Drawing.Size(121, 22);
-            this.tsmiThumbnailSize150.Text = "150 x 150";
+            resources.ApplyResources(this.tsmiThumbnailSize150, "tsmiThumbnailSize150");
             this.tsmiThumbnailSize150.Click += new System.EventHandler(this.tsmiThumbnailSize150_Click);
             // 
             // tsmiThumbnailSize200
             // 
             this.tsmiThumbnailSize200.Name = "tsmiThumbnailSize200";
-            this.tsmiThumbnailSize200.Size = new System.Drawing.Size(121, 22);
-            this.tsmiThumbnailSize200.Text = "200 x 200";
+            resources.ApplyResources(this.tsmiThumbnailSize200, "tsmiThumbnailSize200");
             this.tsmiThumbnailSize200.Click += new System.EventHandler(this.tsmiThumbnailSize200_Click);
             // 
             // tsmiThumbnailSize250
             // 
             this.tsmiThumbnailSize250.Name = "tsmiThumbnailSize250";
-            this.tsmiThumbnailSize250.Size = new System.Drawing.Size(121, 22);
-            this.tsmiThumbnailSize250.Text = "250 x 250";
+            resources.ApplyResources(this.tsmiThumbnailSize250, "tsmiThumbnailSize250");
             this.tsmiThumbnailSize250.Click += new System.EventHandler(this.tsmiThumbnailSize250_Click);
             // 
             // tsbQuickList
@@ -185,20 +165,16 @@
             this.tsbQuickList.CheckOnClick = true;
             this.tsbQuickList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbQuickList.Name = "tsbQuickList";
-            this.tsbQuickList.Size = new System.Drawing.Size(174, 20);
-            this.tsbQuickList.Text = "Only show last 100 screenshots";
+            resources.ApplyResources(this.tsbQuickList, "tsbQuickList");
             this.tsbQuickList.Click += new System.EventHandler(this.tsbQuickList_Click);
             // 
             // ImageHistoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 612);
             this.Controls.Add(this.tscMain);
             this.KeyPreview = true;
             this.Name = "ImageHistoryForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Image history";
             this.Shown += new System.EventHandler(this.ImageHistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageHistoryForm_KeyDown);
             this.tscMain.ContentPanel.ResumeLayout(false);

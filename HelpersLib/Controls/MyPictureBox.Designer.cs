@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyPictureBox));
             this.lblStatus = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -40,24 +41,15 @@
             // lblStatus
             // 
             this.lblStatus.BackColor = System.Drawing.Color.DimGray;
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(0, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(150, 24);
-            this.lblStatus.TabIndex = 0;
-            this.lblStatus.Text = "Image preview";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbMain
             // 
             this.pbMain.BackColor = System.Drawing.Color.White;
-            this.pbMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMain.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.pbMain, "pbMain");
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(150, 150);
-            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMain.TabIndex = 0;
             this.pbMain.TabStop = false;
             // 
             // cmsMenu
@@ -66,18 +58,17 @@
             this.tsmiCopyImage});
             this.cmsMenu.Name = "cmsMenu";
             this.cmsMenu.ShowImageMargin = false;
-            this.cmsMenu.Size = new System.Drawing.Size(128, 48);
+            resources.ApplyResources(this.cmsMenu, "cmsMenu");
             // 
             // tsmiCopyImage
             // 
             this.tsmiCopyImage.Name = "tsmiCopyImage";
-            this.tsmiCopyImage.Size = new System.Drawing.Size(127, 22);
-            this.tsmiCopyImage.Text = "Copy image";
+            resources.ApplyResources(this.tsmiCopyImage, "tsmiCopyImage");
             this.tsmiCopyImage.Click += new System.EventHandler(this.tsmiCopyImage_Click);
             // 
             // MyPictureBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblStatus);

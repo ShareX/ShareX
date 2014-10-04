@@ -117,7 +117,304 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ilvImages.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ilvImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ilvImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>804, 587</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ilvImages.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ilvImages.Name" xml:space="preserve">
+    <value>ilvImages</value>
+  </data>
+  <data name="&gt;&gt;ilvImages.Type" xml:space="preserve">
+    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ilvImages.Parent" xml:space="preserve">
+    <value>tscMain.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;ilvImages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>804, 587</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.Name" xml:space="preserve">
+    <value>tscMain.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tscMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>804, 612</value>
+  </data>
+  <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tscMain.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tsmiViewModeThumbnails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
+    <value>Thumbnails</value>
+  </data>
+  <data name="tsmiViewModeGallery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="tsmiViewModePane.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
+  </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Pane</value>
+  </data>
+  <data name="tsddbViewMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="tsddbViewMode.Text" xml:space="preserve">
+    <value>View mode</value>
+  </data>
+  <data name="tsmiThumbnailSize75.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
+    <value>75 x 75</value>
+  </data>
+  <data name="tsmiThumbnailSize100.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
+    <value>100 x 100</value>
+  </data>
+  <data name="tsmiThumbnailSize150.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
+    <value>150 x 150</value>
+  </data>
+  <data name="tsmiThumbnailSize200.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
+    <value>200 x 200</value>
+  </data>
+  <data name="tsmiThumbnailSize250.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
+    <value>250 x 250</value>
+  </data>
+  <data name="tsddbThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="tsddbThumbnailSize.Text" xml:space="preserve">
+    <value>Thumbnail size</value>
+  </data>
+  <data name="tsbQuickList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="tsbQuickList.Text" xml:space="preserve">
+    <value>Only show last 100 screenshots</value>
+  </data>
+  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 1, 3, 1</value>
+  </data>
+  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>361, 25</value>
+  </data>
+  <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
+    <value>tsMain</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
+    <value>tscMain.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tscMain.Name" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>804, 612</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Image history</value>
+  </data>
+  <data name="&gt;&gt;tsddbViewMode.Name" xml:space="preserve">
+    <value>tsddbViewMode</value>
+  </data>
+  <data name="&gt;&gt;tsddbViewMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiViewModeThumbnails.Name" xml:space="preserve">
+    <value>tsmiViewModeThumbnails</value>
+  </data>
+  <data name="&gt;&gt;tsmiViewModeThumbnails.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiViewModeGallery.Name" xml:space="preserve">
+    <value>tsmiViewModeGallery</value>
+  </data>
+  <data name="&gt;&gt;tsmiViewModeGallery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiViewModePane.Name" xml:space="preserve">
+    <value>tsmiViewModePane</value>
+  </data>
+  <data name="&gt;&gt;tsmiViewModePane.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsddbThumbnailSize.Name" xml:space="preserve">
+    <value>tsddbThumbnailSize</value>
+  </data>
+  <data name="&gt;&gt;tsddbThumbnailSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize75.Name" xml:space="preserve">
+    <value>tsmiThumbnailSize75</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize75.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize100.Name" xml:space="preserve">
+    <value>tsmiThumbnailSize100</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize100.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize150.Name" xml:space="preserve">
+    <value>tsmiThumbnailSize150</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize150.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize200.Name" xml:space="preserve">
+    <value>tsmiThumbnailSize200</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize200.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize250.Name" xml:space="preserve">
+    <value>tsmiThumbnailSize250</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize250.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbQuickList.Name" xml:space="preserve">
+    <value>tsbQuickList</value>
+  </data>
+  <data name="&gt;&gt;tsbQuickList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ImageHistoryForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

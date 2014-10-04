@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FTPClientForm));
             this.cmsRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,120 +99,98 @@
             this.createDirectoryToolStripMenuItem,
             this.copyURLsToClipboardToolStripMenuItem});
             this.cmsRightClickMenu.Name = "cmsRightClickMenu";
-            this.cmsRightClickMenu.Size = new System.Drawing.Size(207, 214);
+            resources.ApplyResources(this.cmsRightClickMenu, "cmsRightClickMenu");
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.connectToolStripMenuItem.Text = "Connect";
+            resources.ApplyResources(this.connectToolStripMenuItem, "connectToolStripMenuItem");
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
             // 
             // disconnectToolStripMenuItem
             // 
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.disconnectToolStripMenuItem.Text = "Disconnect";
+            resources.ApplyResources(this.disconnectToolStripMenuItem, "disconnectToolStripMenuItem");
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // downloadToolStripMenuItem
             // 
             this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.downloadToolStripMenuItem.Text = "Download";
+            resources.ApplyResources(this.downloadToolStripMenuItem, "downloadToolStripMenuItem");
             this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
             // 
             // openURLToolStripMenuItem
             // 
             this.openURLToolStripMenuItem.Name = "openURLToolStripMenuItem";
-            this.openURLToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.openURLToolStripMenuItem.Text = "Open URL";
+            resources.ApplyResources(this.openURLToolStripMenuItem, "openURLToolStripMenuItem");
             this.openURLToolStripMenuItem.Click += new System.EventHandler(this.openURLToolStripMenuItem_Click);
             // 
             // renameToolStripMenuItem
             // 
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.renameToolStripMenuItem.Text = "Rename";
+            resources.ApplyResources(this.renameToolStripMenuItem, "renameToolStripMenuItem");
             this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(203, 6);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
+            resources.ApplyResources(this.refreshToolStripMenuItem, "refreshToolStripMenuItem");
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // createDirectoryToolStripMenuItem
             // 
             this.createDirectoryToolStripMenuItem.Name = "createDirectoryToolStripMenuItem";
-            this.createDirectoryToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.createDirectoryToolStripMenuItem.Text = "Create directory";
+            resources.ApplyResources(this.createDirectoryToolStripMenuItem, "createDirectoryToolStripMenuItem");
             this.createDirectoryToolStripMenuItem.Click += new System.EventHandler(this.createDirectoryToolStripMenuItem_Click);
             // 
             // copyURLsToClipboardToolStripMenuItem
             // 
             this.copyURLsToClipboardToolStripMenuItem.Name = "copyURLsToClipboardToolStripMenuItem";
-            this.copyURLsToClipboardToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.copyURLsToClipboardToolStripMenuItem.Text = "Copy URL(s) to clipboard";
+            resources.ApplyResources(this.copyURLsToClipboardToolStripMenuItem, "copyURLsToClipboardToolStripMenuItem");
             this.copyURLsToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyURLsToClipboardToolStripMenuItem_Click);
             // 
             // txtRename
             // 
-            this.txtRename.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.txtRename, "txtRename");
             this.txtRename.Name = "txtRename";
-            this.txtRename.Size = new System.Drawing.Size(100, 20);
-            this.txtRename.TabIndex = 1;
-            this.txtRename.Visible = false;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.cbDirectoryList);
-            this.splitContainer1.Panel1MinSize = 20;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pConnecting);
             this.splitContainer1.Panel2.Controls.Add(this.toolStripContainer1);
-            this.splitContainer1.Size = new System.Drawing.Size(952, 557);
-            this.splitContainer1.SplitterDistance = 25;
-            this.splitContainer1.TabIndex = 0;
             // 
             // cbDirectoryList
             // 
-            this.cbDirectoryList.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.cbDirectoryList, "cbDirectoryList");
             this.cbDirectoryList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDirectoryList.FormattingEnabled = true;
-            this.cbDirectoryList.Location = new System.Drawing.Point(0, 0);
             this.cbDirectoryList.Name = "cbDirectoryList";
-            this.cbDirectoryList.Size = new System.Drawing.Size(952, 21);
-            this.cbDirectoryList.TabIndex = 0;
             this.cbDirectoryList.SelectedIndexChanged += new System.EventHandler(this.cbDirectoryList_SelectedIndexChanged);
             // 
             // pConnecting
@@ -219,31 +198,19 @@
             this.pConnecting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pConnecting.Controls.Add(this.lblConnecting);
             this.pConnecting.Controls.Add(this.progressBar1);
-            this.pConnecting.Location = new System.Drawing.Point(350, 208);
+            resources.ApplyResources(this.pConnecting, "pConnecting");
             this.pConnecting.Name = "pConnecting";
-            this.pConnecting.Padding = new System.Windows.Forms.Padding(5);
-            this.pConnecting.Size = new System.Drawing.Size(252, 64);
-            this.pConnecting.TabIndex = 1;
             // 
             // lblConnecting
             // 
-            this.lblConnecting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblConnecting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConnecting.Location = new System.Drawing.Point(5, 5);
+            resources.ApplyResources(this.lblConnecting, "lblConnecting");
             this.lblConnecting.Name = "lblConnecting";
-            this.lblConnecting.Size = new System.Drawing.Size(238, 26);
-            this.lblConnecting.TabIndex = 0;
-            this.lblConnecting.Text = "Connecting to FTP server...";
-            this.lblConnecting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressBar1
             // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(5, 31);
+            resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(238, 24);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 1;
             // 
             // toolStripContainer1
             // 
@@ -255,32 +222,24 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.lvFTPList);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(952, 481);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(952, 528);
-            this.toolStripContainer1.TabIndex = 0;
-            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.White;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(952, 22);
             this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 0;
             // 
             // lblStatus
             // 
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(38, 17);
-            this.lblStatus.Text = "status";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
             // 
             // lvFTPList
             // 
@@ -292,17 +251,13 @@
             this.chFiletype,
             this.chLastModified});
             this.lvFTPList.ContextMenuStrip = this.cmsRightClickMenu;
-            this.lvFTPList.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.lvFTPList, "lvFTPList");
             this.lvFTPList.DoubleClickActivation = false;
-            this.lvFTPList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvFTPList.FullRowSelect = true;
             this.lvFTPList.GridLines = true;
             this.lvFTPList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvFTPList.HideSelection = false;
-            this.lvFTPList.Location = new System.Drawing.Point(0, 0);
             this.lvFTPList.Name = "lvFTPList";
-            this.lvFTPList.Size = new System.Drawing.Size(952, 481);
-            this.lvFTPList.TabIndex = 0;
             this.lvFTPList.UseCompatibleStateImageBehavior = false;
             this.lvFTPList.View = System.Windows.Forms.View.Details;
             this.lvFTPList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvFTPList_ItemDrag);
@@ -313,87 +268,62 @@
             // 
             // chFilename
             // 
-            this.chFilename.Text = "Filename";
-            this.chFilename.Width = 493;
+            resources.ApplyResources(this.chFilename, "chFilename");
             // 
             // chFilesize
             // 
-            this.chFilesize.Text = "Filesize";
-            this.chFilesize.Width = 100;
+            resources.ApplyResources(this.chFilesize, "chFilesize");
             // 
             // chFiletype
             // 
-            this.chFiletype.Text = "Filetype";
-            this.chFiletype.Width = 200;
+            resources.ApplyResources(this.chFiletype, "chFiletype");
             // 
             // chLastModified
             // 
-            this.chLastModified.Text = "Last modified";
-            this.chLastModified.Width = 150;
+            resources.ApplyResources(this.chLastModified, "chLastModified");
             // 
             // tcFTP
             // 
             this.tcFTP.Controls.Add(this.tpMain);
             this.tcFTP.Controls.Add(this.tpAccount);
             this.tcFTP.Controls.Add(this.tpConsole);
-            this.tcFTP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcFTP.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.tcFTP, "tcFTP");
             this.tcFTP.Name = "tcFTP";
             this.tcFTP.SelectedIndex = 0;
-            this.tcFTP.Size = new System.Drawing.Size(966, 589);
-            this.tcFTP.TabIndex = 0;
             // 
             // tpMain
             // 
             this.tpMain.Controls.Add(this.splitContainer1);
-            this.tpMain.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpMain, "tpMain");
             this.tpMain.Name = "tpMain";
-            this.tpMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMain.Size = new System.Drawing.Size(958, 563);
-            this.tpMain.TabIndex = 0;
-            this.tpMain.Text = "Files";
             this.tpMain.UseVisualStyleBackColor = true;
             // 
             // tpAccount
             // 
             this.tpAccount.Controls.Add(this.pgAccount);
-            this.tpAccount.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpAccount, "tpAccount");
             this.tpAccount.Name = "tpAccount";
-            this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAccount.Size = new System.Drawing.Size(958, 563);
-            this.tpAccount.TabIndex = 1;
-            this.tpAccount.Text = "Account";
             this.tpAccount.UseVisualStyleBackColor = true;
             // 
             // pgAccount
             // 
-            this.pgAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgAccount.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.pgAccount, "pgAccount");
             this.pgAccount.Name = "pgAccount";
             this.pgAccount.PropertySort = System.Windows.Forms.PropertySort.Categorized;
-            this.pgAccount.Size = new System.Drawing.Size(952, 557);
-            this.pgAccount.TabIndex = 0;
             this.pgAccount.ToolbarVisible = false;
             // 
             // tpConsole
             // 
             this.tpConsole.Controls.Add(this.scConsole);
-            this.tpConsole.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tpConsole, "tpConsole");
             this.tpConsole.Name = "tpConsole";
-            this.tpConsole.Padding = new System.Windows.Forms.Padding(3);
-            this.tpConsole.Size = new System.Drawing.Size(958, 563);
-            this.tpConsole.TabIndex = 2;
-            this.tpConsole.Text = "Console";
             this.tpConsole.UseVisualStyleBackColor = true;
             // 
             // scConsole
             // 
-            this.scConsole.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.scConsole, "scConsole");
             this.scConsole.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scConsole.IsSplitterFixed = true;
-            this.scConsole.Location = new System.Drawing.Point(3, 3);
             this.scConsole.Name = "scConsole";
-            this.scConsole.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // scConsole.Panel1
             // 
@@ -402,43 +332,26 @@
             // scConsole.Panel2
             // 
             this.scConsole.Panel2.Controls.Add(this.txtConsoleWrite);
-            this.scConsole.Panel2MinSize = 20;
-            this.scConsole.Size = new System.Drawing.Size(952, 557);
-            this.scConsole.SplitterDistance = 531;
-            this.scConsole.SplitterWidth = 1;
-            this.scConsole.TabIndex = 0;
             // 
             // txtDebug
             // 
-            this.txtDebug.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDebug.Location = new System.Drawing.Point(0, 0);
-            this.txtDebug.Multiline = true;
+            resources.ApplyResources(this.txtDebug, "txtDebug");
             this.txtDebug.Name = "txtDebug";
-            this.txtDebug.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtDebug.Size = new System.Drawing.Size(952, 531);
-            this.txtDebug.TabIndex = 0;
             // 
             // txtConsoleWrite
             // 
             this.txtConsoleWrite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtConsoleWrite.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtConsoleWrite.Location = new System.Drawing.Point(0, 5);
+            resources.ApplyResources(this.txtConsoleWrite, "txtConsoleWrite");
             this.txtConsoleWrite.Name = "txtConsoleWrite";
-            this.txtConsoleWrite.Size = new System.Drawing.Size(952, 20);
-            this.txtConsoleWrite.TabIndex = 0;
             this.txtConsoleWrite.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConsoleWrite_KeyDown);
             // 
             // FTPClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 595);
             this.Controls.Add(this.tcFTP);
             this.Controls.Add(this.txtRename);
             this.Name = "FTPClientForm";
-            this.Padding = new System.Windows.Forms.Padding(3);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX FTP client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FTPClient2_FormClosing);
             this.Resize += new System.EventHandler(this.FTPClient_Resize);
             this.cmsRightClickMenu.ResumeLayout(false);

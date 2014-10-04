@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectsForm));
             this.tvEffects = new System.Windows.Forms.TreeView();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -49,37 +50,26 @@
             // 
             // tvEffects
             // 
-            this.tvEffects.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.tvEffects, "tvEffects");
             this.tvEffects.HideSelection = false;
-            this.tvEffects.Location = new System.Drawing.Point(8, 40);
             this.tvEffects.Name = "tvEffects";
             this.tvEffects.ShowPlusMinus = false;
             this.tvEffects.ShowRootLines = false;
-            this.tvEffects.Size = new System.Drawing.Size(232, 688);
-            this.tvEffects.TabIndex = 7;
             this.tvEffects.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvEffects_BeforeCollapse);
             this.tvEffects.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tvEffects_MouseDoubleClick);
             // 
             // pgSettings
             // 
-            this.pgSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pgSettings.Location = new System.Drawing.Point(488, 8);
+            resources.ApplyResources(this.pgSettings, "pgSettings");
             this.pgSettings.Name = "pgSettings";
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgSettings.Size = new System.Drawing.Size(408, 304);
-            this.pgSettings.TabIndex = 9;
             this.pgSettings.ToolbarVisible = false;
             this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(72, 24);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -90,11 +80,9 @@
             this.lvEffects.FullRowSelect = true;
             this.lvEffects.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvEffects.HideSelection = false;
-            this.lvEffects.Location = new System.Drawing.Point(248, 40);
+            resources.ApplyResources(this.lvEffects, "lvEffects");
             this.lvEffects.MultiSelect = false;
             this.lvEffects.Name = "lvEffects";
-            this.lvEffects.Size = new System.Drawing.Size(232, 272);
-            this.lvEffects.TabIndex = 8;
             this.lvEffects.UseCompatibleStateImageBehavior = false;
             this.lvEffects.View = System.Windows.Forms.View.Details;
             this.lvEffects.SelectedIndexChanged += new System.EventHandler(this.lvEffects_SelectedIndexChanged);
@@ -102,151 +90,102 @@
             // 
             // chEffect
             // 
-            this.chEffect.Width = 228;
+            resources.ApplyResources(this.chEffect, "chEffect");
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(88, 8);
+            resources.ApplyResources(this.btnRemove, "btnRemove");
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(72, 24);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(744, 734);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(72, 24);
-            this.btnOK.TabIndex = 14;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(824, 734);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(72, 24);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(168, 8);
+            resources.ApplyResources(this.btnClear, "btnClear");
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(72, 24);
-            this.btnClear.TabIndex = 2;
-            this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnMoveUp
             // 
-            this.btnMoveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMoveUp.Location = new System.Drawing.Point(328, 8);
+            resources.ApplyResources(this.btnMoveUp, "btnMoveUp");
             this.btnMoveUp.Name = "btnMoveUp";
-            this.btnMoveUp.Size = new System.Drawing.Size(32, 24);
-            this.btnMoveUp.TabIndex = 4;
-            this.btnMoveUp.Text = "↑";
             this.btnMoveUp.UseVisualStyleBackColor = true;
             this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
             // btnMoveDown
             // 
-            this.btnMoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMoveDown.Location = new System.Drawing.Point(368, 8);
+            resources.ApplyResources(this.btnMoveDown, "btnMoveDown");
             this.btnMoveDown.Name = "btnMoveDown";
-            this.btnMoveDown.Size = new System.Drawing.Size(32, 24);
-            this.btnMoveDown.TabIndex = 5;
-            this.btnMoveDown.Text = "↓";
             this.btnMoveDown.UseVisualStyleBackColor = true;
             this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
             // btnDuplicate
             // 
-            this.btnDuplicate.Location = new System.Drawing.Point(248, 8);
+            resources.ApplyResources(this.btnDuplicate, "btnDuplicate");
             this.btnDuplicate.Name = "btnDuplicate";
-            this.btnDuplicate.Size = new System.Drawing.Size(72, 24);
-            this.btnDuplicate.TabIndex = 3;
-            this.btnDuplicate.Text = "Duplicate";
             this.btnDuplicate.UseVisualStyleBackColor = true;
             this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(408, 8);
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(72, 24);
-            this.btnRefresh.TabIndex = 6;
-            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnLoadImage
             // 
-            this.btnLoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLoadImage.AutoSize = true;
-            this.btnLoadImage.Location = new System.Drawing.Point(152, 734);
+            resources.ApplyResources(this.btnLoadImage, "btnLoadImage");
             this.btnLoadImage.Name = "btnLoadImage";
-            this.btnLoadImage.Size = new System.Drawing.Size(81, 24);
-            this.btnLoadImage.TabIndex = 12;
-            this.btnLoadImage.Text = "Load image...";
             this.btnLoadImage.UseVisualStyleBackColor = true;
-            this.btnLoadImage.Visible = false;
             this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
             // 
             // btnSaveImage
             // 
-            this.btnSaveImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSaveImage.AutoSize = true;
-            this.btnSaveImage.Location = new System.Drawing.Point(240, 734);
+            resources.ApplyResources(this.btnSaveImage, "btnSaveImage");
             this.btnSaveImage.Name = "btnSaveImage";
-            this.btnSaveImage.Size = new System.Drawing.Size(82, 24);
-            this.btnSaveImage.TabIndex = 13;
-            this.btnSaveImage.Text = "Save image...";
             this.btnSaveImage.UseVisualStyleBackColor = true;
-            this.btnSaveImage.Visible = false;
             this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
             // 
             // eiImageEffects
             // 
-            this.eiImageEffects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.eiImageEffects.Location = new System.Drawing.Point(8, 734);
+            resources.ApplyResources(this.eiImageEffects, "eiImageEffects");
             this.eiImageEffects.Name = "eiImageEffects";
             this.eiImageEffects.ObjectType = null;
-            this.eiImageEffects.Size = new System.Drawing.Size(136, 24);
-            this.eiImageEffects.TabIndex = 11;
             this.eiImageEffects.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
             this.eiImageEffects.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
             // 
             // pbResult
             // 
-            this.pbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pbResult, "pbResult");
             this.pbResult.BackColor = System.Drawing.Color.White;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
-            this.pbResult.Location = new System.Drawing.Point(248, 320);
             this.pbResult.Name = "pbResult";
-            this.pbResult.Size = new System.Drawing.Size(648, 408);
-            this.pbResult.TabIndex = 10;
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 
             // ImageEffectsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 766);
             this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnLoadImage);
@@ -265,8 +204,6 @@
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Image effects";
             this.ResumeLayout(false);
             this.PerformLayout();
 

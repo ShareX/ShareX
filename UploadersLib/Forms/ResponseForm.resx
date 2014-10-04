@@ -117,4 +117,166 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtSource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtSource.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtSource.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="txtSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 481</value>
+  </data>
+  <data name="txtSource.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtSource.Name" xml:space="preserve">
+    <value>txtSource</value>
+  </data>
+  <data name="&gt;&gt;txtSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSource.Parent" xml:space="preserve">
+    <value>tpString</value>
+  </data>
+  <data name="&gt;&gt;txtSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpString.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpString.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpString.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 487</value>
+  </data>
+  <data name="tpString.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpString.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="&gt;&gt;tpString.Name" xml:space="preserve">
+    <value>tpString</value>
+  </data>
+  <data name="&gt;&gt;tpString.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpString.Parent" xml:space="preserve">
+    <value>tcResponse</value>
+  </data>
+  <data name="&gt;&gt;tpString.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="wbResponse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="wbResponse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="wbResponse.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="wbResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 481</value>
+  </data>
+  <data name="wbResponse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.Name" xml:space="preserve">
+    <value>wbResponse</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.Parent" xml:space="preserve">
+    <value>tpWebBrowser</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpWebBrowser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpWebBrowser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpWebBrowser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 487</value>
+  </data>
+  <data name="tpWebBrowser.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpWebBrowser.Text" xml:space="preserve">
+    <value>Web browser</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Name" xml:space="preserve">
+    <value>tpWebBrowser</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Parent" xml:space="preserve">
+    <value>tcResponse</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tcResponse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcResponse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="tcResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 513</value>
+  </data>
+  <data name="tcResponse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tcResponse.Name" xml:space="preserve">
+    <value>tcResponse</value>
+  </data>
+  <data name="&gt;&gt;tcResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcResponse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcResponse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>770, 523</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Response</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ResponseForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

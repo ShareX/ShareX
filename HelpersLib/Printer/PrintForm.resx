@@ -112,9 +112,264 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbAutoRotate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbAutoRotate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 48</value>
+  </data>
+  <data name="cbAutoRotate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="cbAutoRotate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbAutoRotate.Text" xml:space="preserve">
+    <value>Auto rotate image</value>
+  </data>
+  <data name="&gt;&gt;cbAutoRotate.Name" xml:space="preserve">
+    <value>cbAutoRotate</value>
+  </data>
+  <data name="&gt;&gt;cbAutoRotate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoRotate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoRotate.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="nudMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 12</value>
+  </data>
+  <data name="nudMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="nudMargin.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudMargin.Name" xml:space="preserve">
+    <value>nudMargin</value>
+  </data>
+  <data name="&gt;&gt;nudMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudMargin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudMargin.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbAutoScale.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="cbAutoScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 17</value>
+  </data>
+  <data name="cbAutoScale.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbAutoScale.Text" xml:space="preserve">
+    <value>Auto scale image</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScale.Name" xml:space="preserve">
+    <value>cbAutoScale</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScale.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScale.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblMargin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="lblMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Margin:</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.Name" xml:space="preserve">
+    <value>lblMargin</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbAllowEnlarge.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAllowEnlarge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 96</value>
+  </data>
+  <data name="cbAllowEnlarge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="cbAllowEnlarge.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbAllowEnlarge.Text" xml:space="preserve">
+    <value>Allow image to enlarge</value>
+  </data>
+  <data name="&gt;&gt;cbAllowEnlarge.Name" xml:space="preserve">
+    <value>cbAllowEnlarge</value>
+  </data>
+  <data name="&gt;&gt;cbAllowEnlarge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAllowEnlarge.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAllowEnlarge.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbCenterImage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbCenterImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 120</value>
+  </data>
+  <data name="cbCenterImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 17</value>
+  </data>
+  <data name="cbCenterImage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbCenterImage.Text" xml:space="preserve">
+    <value>Center image position</value>
+  </data>
+  <data name="&gt;&gt;cbCenterImage.Name" xml:space="preserve">
+    <value>cbCenterImage</value>
+  </data>
+  <data name="&gt;&gt;cbCenterImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCenterImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbCenterImage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnShowPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 152</value>
+  </data>
+  <data name="btnShowPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnShowPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnShowPreview.Text" xml:space="preserve">
+    <value>Preview...</value>
+  </data>
+  <data name="&gt;&gt;btnShowPreview.Name" xml:space="preserve">
+    <value>btnShowPreview</value>
+  </data>
+  <data name="&gt;&gt;btnShowPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnShowPreview.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnShowPreview.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnPrint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 152</value>
+  </data>
+  <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>Print...</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Name" xml:space="preserve">
+    <value>btnPrint</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 152</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>251, 185</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> Print options</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PrintForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

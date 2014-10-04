@@ -117,7 +117,196 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="wbMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="wbMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="wbMain.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="wbMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 545</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="wbMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;wbMain.Name" xml:space="preserve">
+    <value>wbMain</value>
+  </data>
+  <data name="&gt;&gt;wbMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wbMain.Parent" xml:space="preserve">
+    <value>tscMain.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;wbMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 545</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.Name" xml:space="preserve">
+    <value>tscMain.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tscMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 574</value>
+  </data>
+  <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tscMain.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tslURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 20</value>
+  </data>
+  <data name="tslURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="tstbURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 23</value>
+  </data>
+  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 29</value>
+  </data>
+  <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
+    <value>tsMain</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
+    <value>tscMain.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscMain.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tscMain.Name" xml:space="preserve">
+    <value>tscMain</value>
+  </data>
+  <data name="&gt;&gt;tscMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tscMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 574</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Authorization</value>
+  </data>
+  <data name="&gt;&gt;tslURL.Name" xml:space="preserve">
+    <value>tslURL</value>
+  </data>
+  <data name="&gt;&gt;tslURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tstbURL.Name" xml:space="preserve">
+    <value>tstbURL</value>
+  </data>
+  <data name="&gt;&gt;tstbURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>OAuthWebForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

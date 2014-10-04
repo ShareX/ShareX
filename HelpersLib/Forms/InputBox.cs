@@ -91,63 +91,48 @@ namespace HelpersLib
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputBox));
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtInputText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            //
+            // 
             // btnOK
-            //
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(208, 32);
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(72, 24);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            //
+            // 
             // btnCancel
-            //
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(288, 32);
+            // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(72, 24);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            //
+            // 
             // txtInputText
-            //
-            this.txtInputText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInputText.Location = new System.Drawing.Point(8, 8);
+            // 
+            resources.ApplyResources(this.txtInputText, "txtInputText");
             this.txtInputText.Name = "txtInputText";
-            this.txtInputText.Size = new System.Drawing.Size(352, 20);
-            this.txtInputText.TabIndex = 0;
-            //
+            // 
             // InputBox
-            //
+            // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 64);
             this.Controls.Add(this.txtInputText);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1000, 102);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(384, 102);
             this.Name = "InputBox";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Input box";
             this.TopMost = true;
             this.Shown += new System.EventHandler(this.InputBox_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button btnOK;

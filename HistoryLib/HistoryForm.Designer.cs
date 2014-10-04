@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,125 +62,88 @@
             // 
             // dtpFilterFrom
             // 
-            this.dtpFilterFrom.Location = new System.Drawing.Point(56, 46);
+            resources.ApplyResources(this.dtpFilterFrom, "dtpFilterFrom");
             this.dtpFilterFrom.Name = "dtpFilterFrom";
-            this.dtpFilterFrom.Size = new System.Drawing.Size(230, 20);
-            this.dtpFilterFrom.TabIndex = 2;
             // 
             // cbDateFilter
             // 
-            this.cbDateFilter.AutoSize = true;
-            this.cbDateFilter.Location = new System.Drawing.Point(16, 24);
+            resources.ApplyResources(this.cbDateFilter, "cbDateFilter");
             this.cbDateFilter.Name = "cbDateFilter";
-            this.cbDateFilter.Size = new System.Drawing.Size(74, 17);
-            this.cbDateFilter.TabIndex = 0;
-            this.cbDateFilter.Text = "Date filter:";
             this.cbDateFilter.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 50);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "From:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 74);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "To:";
             // 
             // dtpFilterTo
             // 
-            this.dtpFilterTo.Location = new System.Drawing.Point(56, 70);
+            resources.ApplyResources(this.dtpFilterTo, "dtpFilterTo");
             this.dtpFilterTo.Name = "dtpFilterTo";
-            this.dtpFilterTo.Size = new System.Drawing.Size(230, 20);
-            this.dtpFilterTo.TabIndex = 4;
             // 
             // btnApplyFilters
             // 
-            this.btnApplyFilters.Location = new System.Drawing.Point(16, 232);
+            resources.ApplyResources(this.btnApplyFilters, "btnApplyFilters");
             this.btnApplyFilters.Name = "btnApplyFilters";
-            this.btnApplyFilters.Size = new System.Drawing.Size(136, 24);
-            this.btnApplyFilters.TabIndex = 14;
-            this.btnApplyFilters.Text = "Apply filters";
             this.btnApplyFilters.UseVisualStyleBackColor = true;
             this.btnApplyFilters.Click += new System.EventHandler(this.btnApplyFilters_Click);
             // 
             // txtFilenameFilter
             // 
-            this.txtFilenameFilter.Location = new System.Drawing.Point(16, 119);
+            resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
-            this.txtFilenameFilter.Size = new System.Drawing.Size(170, 20);
-            this.txtFilenameFilter.TabIndex = 6;
             // 
             // cbFilenameFilterMethod
             // 
             this.cbFilenameFilterMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilenameFilterMethod.FormattingEnabled = true;
             this.cbFilenameFilterMethod.Items.AddRange(new object[] {
-            "Contains",
-            "Starts with",
-            "Ends with",
-            "Exact match"});
-            this.cbFilenameFilterMethod.Location = new System.Drawing.Point(192, 119);
+            resources.GetString("cbFilenameFilterMethod.Items"),
+            resources.GetString("cbFilenameFilterMethod.Items1"),
+            resources.GetString("cbFilenameFilterMethod.Items2"),
+            resources.GetString("cbFilenameFilterMethod.Items3")});
+            resources.ApplyResources(this.cbFilenameFilterMethod, "cbFilenameFilterMethod");
             this.cbFilenameFilterMethod.Name = "cbFilenameFilterMethod";
-            this.cbFilenameFilterMethod.Size = new System.Drawing.Size(96, 21);
-            this.cbFilenameFilterMethod.TabIndex = 7;
             // 
             // cbFilenameFilterCulture
             // 
             this.cbFilenameFilterCulture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilenameFilterCulture.FormattingEnabled = true;
             this.cbFilenameFilterCulture.Items.AddRange(new object[] {
-            "Current culture",
-            "Invariant culture (English)",
-            "Ordinal (English)"});
-            this.cbFilenameFilterCulture.Location = new System.Drawing.Point(16, 145);
+            resources.GetString("cbFilenameFilterCulture.Items"),
+            resources.GetString("cbFilenameFilterCulture.Items1"),
+            resources.GetString("cbFilenameFilterCulture.Items2")});
+            resources.ApplyResources(this.cbFilenameFilterCulture, "cbFilenameFilterCulture");
             this.cbFilenameFilterCulture.Name = "cbFilenameFilterCulture";
-            this.cbFilenameFilterCulture.Size = new System.Drawing.Size(170, 21);
-            this.cbFilenameFilterCulture.TabIndex = 8;
             // 
             // cbFilenameFilter
             // 
-            this.cbFilenameFilter.AutoSize = true;
-            this.cbFilenameFilter.Location = new System.Drawing.Point(16, 96);
+            resources.ApplyResources(this.cbFilenameFilter, "cbFilenameFilter");
             this.cbFilenameFilter.Name = "cbFilenameFilter";
-            this.cbFilenameFilter.Size = new System.Drawing.Size(93, 17);
-            this.cbFilenameFilter.TabIndex = 5;
-            this.cbFilenameFilter.Text = "Filename filter:";
             this.cbFilenameFilter.UseVisualStyleBackColor = true;
             // 
             // cbFilenameFilterCase
             // 
-            this.cbFilenameFilterCase.AutoSize = true;
-            this.cbFilenameFilterCase.Location = new System.Drawing.Point(192, 146);
+            resources.ApplyResources(this.cbFilenameFilterCase, "cbFilenameFilterCase");
             this.cbFilenameFilterCase.Name = "cbFilenameFilterCase";
-            this.cbFilenameFilterCase.Size = new System.Drawing.Size(94, 17);
-            this.cbFilenameFilterCase.TabIndex = 9;
-            this.cbFilenameFilterCase.Text = "Case sensitive";
             this.cbFilenameFilterCase.UseVisualStyleBackColor = true;
             // 
             // ssMain
             // 
             this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslStatus});
-            this.ssMain.Location = new System.Drawing.Point(0, 665);
+            resources.ApplyResources(this.ssMain, "ssMain");
             this.ssMain.Name = "ssMain";
-            this.ssMain.Size = new System.Drawing.Size(920, 22);
-            this.ssMain.TabIndex = 3;
-            this.ssMain.Text = "statusStrip1";
             // 
             // tsslStatus
             // 
             this.tsslStatus.Name = "tsslStatus";
-            this.tsslStatus.Size = new System.Drawing.Size(39, 17);
-            this.tsslStatus.Text = "Status";
+            resources.ApplyResources(this.tsslStatus, "tsslStatus");
             // 
             // gbFilters
             // 
@@ -199,69 +163,49 @@
             this.gbFilters.Controls.Add(this.cbFilenameFilterCulture);
             this.gbFilters.Controls.Add(this.txtFilenameFilter);
             this.gbFilters.Controls.Add(this.cbFilenameFilterMethod);
-            this.gbFilters.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.gbFilters, "gbFilters");
             this.gbFilters.Name = "gbFilters";
-            this.gbFilters.Size = new System.Drawing.Size(312, 272);
-            this.gbFilters.TabIndex = 2;
             this.gbFilters.TabStop = false;
-            this.gbFilters.Text = "Filters";
             // 
             // btnRemoveFilters
             // 
-            this.btnRemoveFilters.Location = new System.Drawing.Point(160, 232);
+            resources.ApplyResources(this.btnRemoveFilters, "btnRemoveFilters");
             this.btnRemoveFilters.Name = "btnRemoveFilters";
-            this.btnRemoveFilters.Size = new System.Drawing.Size(136, 24);
-            this.btnRemoveFilters.TabIndex = 15;
-            this.btnRemoveFilters.Text = "Remove filters";
             this.btnRemoveFilters.UseVisualStyleBackColor = true;
             this.btnRemoveFilters.Click += new System.EventHandler(this.btnRemoveFilters_Click);
             // 
             // txtHostFilter
             // 
-            this.txtHostFilter.Location = new System.Drawing.Point(112, 199);
+            resources.ApplyResources(this.txtHostFilter, "txtHostFilter");
             this.txtHostFilter.Name = "txtHostFilter";
-            this.txtHostFilter.Size = new System.Drawing.Size(128, 20);
-            this.txtHostFilter.TabIndex = 13;
             // 
             // cbTypeFilterSelection
             // 
             this.cbTypeFilterSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeFilterSelection.FormattingEnabled = true;
             this.cbTypeFilterSelection.Items.AddRange(new object[] {
-            "Image",
-            "File",
-            "Text"});
-            this.cbTypeFilterSelection.Location = new System.Drawing.Point(112, 172);
+            resources.GetString("cbTypeFilterSelection.Items"),
+            resources.GetString("cbTypeFilterSelection.Items1"),
+            resources.GetString("cbTypeFilterSelection.Items2")});
+            resources.ApplyResources(this.cbTypeFilterSelection, "cbTypeFilterSelection");
             this.cbTypeFilterSelection.Name = "cbTypeFilterSelection";
-            this.cbTypeFilterSelection.Size = new System.Drawing.Size(128, 21);
-            this.cbTypeFilterSelection.TabIndex = 11;
             // 
             // cbHostFilter
             // 
-            this.cbHostFilter.AutoSize = true;
-            this.cbHostFilter.Location = new System.Drawing.Point(16, 201);
+            resources.ApplyResources(this.cbHostFilter, "cbHostFilter");
             this.cbHostFilter.Name = "cbHostFilter";
-            this.cbHostFilter.Size = new System.Drawing.Size(73, 17);
-            this.cbHostFilter.TabIndex = 12;
-            this.cbHostFilter.Text = "Host filter:";
             this.cbHostFilter.UseVisualStyleBackColor = true;
             // 
             // cbTypeFilter
             // 
-            this.cbTypeFilter.AutoSize = true;
-            this.cbTypeFilter.Location = new System.Drawing.Point(16, 174);
+            resources.ApplyResources(this.cbTypeFilter, "cbTypeFilter");
             this.cbTypeFilter.Name = "cbTypeFilter";
-            this.cbTypeFilter.Size = new System.Drawing.Size(90, 17);
-            this.cbTypeFilter.TabIndex = 10;
-            this.cbTypeFilter.Text = "File type filter:";
             this.cbTypeFilter.UseVisualStyleBackColor = true;
             // 
             // lvHistory
             // 
             this.lvHistory.AllowColumnSort = true;
-            this.lvHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.lvHistory, "lvHistory");
             this.lvHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chDateTime,
             this.chFilename,
@@ -270,10 +214,7 @@
             this.chURL});
             this.lvHistory.FullRowSelect = true;
             this.lvHistory.HideSelection = false;
-            this.lvHistory.Location = new System.Drawing.Point(8, 288);
             this.lvHistory.Name = "lvHistory";
-            this.lvHistory.Size = new System.Drawing.Size(904, 368);
-            this.lvHistory.TabIndex = 0;
             this.lvHistory.UseCompatibleStateImageBehavior = false;
             this.lvHistory.View = System.Windows.Forms.View.Details;
             this.lvHistory.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvHistory_ItemSelectionChanged);
@@ -283,56 +224,43 @@
             // 
             // chDateTime
             // 
-            this.chDateTime.Text = "Date & time";
-            this.chDateTime.Width = 122;
+            resources.ApplyResources(this.chDateTime, "chDateTime");
             // 
             // chFilename
             // 
-            this.chFilename.Text = "Filename";
-            this.chFilename.Width = 172;
+            resources.ApplyResources(this.chFilename, "chFilename");
             // 
             // chType
             // 
-            this.chType.Text = "Type";
-            this.chType.Width = 56;
+            resources.ApplyResources(this.chType, "chType");
             // 
             // chHost
             // 
-            this.chHost.Text = "Host";
-            this.chHost.Width = 95;
+            resources.ApplyResources(this.chHost, "chHost");
             // 
             // chURL
             // 
-            this.chURL.Text = "URL";
-            this.chURL.Width = 330;
+            resources.ApplyResources(this.chURL, "chURL");
             // 
             // pbThumbnail
             // 
-            this.pbThumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
             this.pbThumbnail.BackColor = System.Drawing.Color.White;
             this.pbThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.FullscreenOnClick = true;
-            this.pbThumbnail.Location = new System.Drawing.Point(328, 8);
             this.pbThumbnail.Name = "pbThumbnail";
-            this.pbThumbnail.Size = new System.Drawing.Size(584, 272);
-            this.pbThumbnail.TabIndex = 1;
             // 
             // HistoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 687);
             this.Controls.Add(this.lvHistory);
             this.Controls.Add(this.pbThumbnail);
             this.Controls.Add(this.gbFilters);
             this.Controls.Add(this.ssMain);
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(925, 725);
             this.Name = "HistoryForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "History";
             this.Shown += new System.EventHandler(this.HistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HistoryForm_KeyDown);
             this.ssMain.ResumeLayout(false);

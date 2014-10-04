@@ -120,7 +120,232 @@
   <metadata name="tsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tsbSelectFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSelectFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 19</value>
+  </data>
+  <data name="tsbSelectFolder.Text" xml:space="preserve">
+    <value>Select current folder path</value>
+  </data>
+  <data name="tsMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tsMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tsMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>555, 22</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tsMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tsMenu.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;tsMenu.Name" xml:space="preserve">
+    <value>tsMenu</value>
+  </data>
+  <data name="&gt;&gt;tsMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsMenu.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tsMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpMain.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>275</value>
+  </data>
+  <data name="chSize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="chSize.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chModified.Text" xml:space="preserve">
+    <value>Modified</value>
+  </data>
+  <data name="chModified.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
   <metadata name="cmsDropbox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>109, 17</value>
   </metadata>
+  <data name="tsmiCopyPublicLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
+    <value>Copy public link</value>
+  </data>
+  <data name="tsmiDownloadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="tsmiDownloadFile.Text" xml:space="preserve">
+    <value>Download...</value>
+  </data>
+  <data name="tsmiDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="tsmiDelete.Text" xml:space="preserve">
+    <value>Delete...</value>
+  </data>
+  <data name="tsmiRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="tsmiRefresh.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="tsmiCreateDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
+    <value>Create directory...</value>
+  </data>
+  <data name="cmsDropbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 114</value>
+  </data>
+  <data name="&gt;&gt;cmsDropbox.Name" xml:space="preserve">
+    <value>cmsDropbox</value>
+  </data>
+  <data name="&gt;&gt;cmsDropbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvDropboxFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvDropboxFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="lvDropboxFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>553, 459</value>
+  </data>
+  <data name="lvDropboxFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lvDropboxFiles.Name" xml:space="preserve">
+    <value>lvDropboxFiles</value>
+  </data>
+  <data name="&gt;&gt;lvDropboxFiles.Type" xml:space="preserve">
+    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvDropboxFiles.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;lvDropboxFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpMain.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 491</value>
+  </data>
+  <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Name" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tsMenu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lvDropboxFiles" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,26,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>559, 491</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="&gt;&gt;tsbSelectFolder.Name" xml:space="preserve">
+    <value>tsbSelectFolder</value>
+  </data>
+  <data name="&gt;&gt;tsbSelectFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chFilename.Name" xml:space="preserve">
+    <value>chFilename</value>
+  </data>
+  <data name="&gt;&gt;chFilename.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chSize.Name" xml:space="preserve">
+    <value>chSize</value>
+  </data>
+  <data name="&gt;&gt;chSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chModified.Name" xml:space="preserve">
+    <value>chModified</value>
+  </data>
+  <data name="&gt;&gt;chModified.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyPublicLink.Name" xml:space="preserve">
+    <value>tsmiCopyPublicLink</value>
+  </data>
+  <data name="&gt;&gt;tsmiCopyPublicLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDownloadFile.Name" xml:space="preserve">
+    <value>tsmiDownloadFile</value>
+  </data>
+  <data name="&gt;&gt;tsmiDownloadFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDelete.Name" xml:space="preserve">
+    <value>tsmiDelete</value>
+  </data>
+  <data name="&gt;&gt;tsmiDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiRefresh.Name" xml:space="preserve">
+    <value>tsmiRefresh</value>
+  </data>
+  <data name="&gt;&gt;tsmiRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCreateDirectory.Name" xml:space="preserve">
+    <value>tsmiCreateDirectory</value>
+  </data>
+  <data name="&gt;&gt;tsmiCreateDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DropboxFilesForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

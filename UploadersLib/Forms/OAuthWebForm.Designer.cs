@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OAuthWebForm));
             this.wbMain = new System.Windows.Forms.WebBrowser();
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.tsMain = new System.Windows.Forms.ToolStrip();
@@ -41,13 +42,9 @@
             // 
             // wbMain
             // 
-            this.wbMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbMain.Location = new System.Drawing.Point(0, 0);
-            this.wbMain.MinimumSize = new System.Drawing.Size(20, 20);
+            resources.ApplyResources(this.wbMain, "wbMain");
             this.wbMain.Name = "wbMain";
             this.wbMain.ScriptErrorsSuppressed = true;
-            this.wbMain.Size = new System.Drawing.Size(1056, 545);
-            this.wbMain.TabIndex = 0;
             this.wbMain.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.wbMain_Navigated);
             // 
             // tscMain
@@ -56,13 +53,9 @@
             // tscMain.ContentPanel
             // 
             this.tscMain.ContentPanel.Controls.Add(this.wbMain);
-            this.tscMain.ContentPanel.Size = new System.Drawing.Size(1056, 545);
-            this.tscMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tscMain.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.tscMain.ContentPanel, "tscMain.ContentPanel");
+            resources.ApplyResources(this.tscMain, "tscMain");
             this.tscMain.Name = "tscMain";
-            this.tscMain.Size = new System.Drawing.Size(1056, 574);
-            this.tscMain.TabIndex = 2;
-            this.tscMain.Text = "toolStripContainer1";
             // 
             // tscMain.TopToolStripPanel
             // 
@@ -70,42 +63,34 @@
             // 
             // tsMain
             // 
-            this.tsMain.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslURL,
             this.tstbURL});
             this.tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tsMain.Size = new System.Drawing.Size(1056, 29);
             this.tsMain.Stretch = true;
-            this.tsMain.TabIndex = 0;
             // 
             // tslURL
             // 
             this.tslURL.Name = "tslURL";
-            this.tslURL.Size = new System.Drawing.Size(31, 20);
-            this.tslURL.Text = "URL:";
+            resources.ApplyResources(this.tslURL, "tslURL");
             // 
             // tstbURL
             // 
             this.tstbURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tstbURL.Name = "tstbURL";
-            this.tstbURL.Size = new System.Drawing.Size(800, 23);
+            resources.ApplyResources(this.tstbURL, "tstbURL");
             // 
             // OAuthWebForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1056, 574);
             this.Controls.Add(this.tscMain);
             this.Name = "OAuthWebForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Authorization";
             this.tscMain.ContentPanel.ResumeLayout(false);
             this.tscMain.TopToolStripPanel.ResumeLayout(false);
             this.tscMain.TopToolStripPanel.PerformLayout();

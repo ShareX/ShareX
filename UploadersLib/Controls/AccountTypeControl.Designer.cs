@@ -28,39 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountTypeControl));
             this.lblAccountType = new System.Windows.Forms.Label();
             this.cbAccountType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAccountType
             // 
-            this.lblAccountType.AutoSize = true;
-            this.lblAccountType.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.lblAccountType, "lblAccountType");
             this.lblAccountType.Name = "lblAccountType";
-            this.lblAccountType.Size = new System.Drawing.Size(73, 13);
-            this.lblAccountType.TabIndex = 0;
-            this.lblAccountType.Text = "Account type:";
             // 
             // cbAccountType
             // 
             this.cbAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAccountType.FormattingEnabled = true;
             this.cbAccountType.Items.AddRange(new object[] {
-            "Anonymous",
-            "User"});
-            this.cbAccountType.Location = new System.Drawing.Point(88, 4);
+            resources.GetString("cbAccountType.Items"),
+            resources.GetString("cbAccountType.Items1")});
+            resources.ApplyResources(this.cbAccountType, "cbAccountType");
             this.cbAccountType.Name = "cbAccountType";
-            this.cbAccountType.Size = new System.Drawing.Size(88, 21);
-            this.cbAccountType.TabIndex = 1;
             // 
             // AccountTypeControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cbAccountType);
             this.Controls.Add(this.lblAccountType);
             this.Name = "AccountTypeControl";
-            this.Size = new System.Drawing.Size(180, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 
