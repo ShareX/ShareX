@@ -355,7 +355,7 @@ namespace UploadersLib
             request.CookieContainer = new CookieContainer();
             if (cookies != null) request.CookieContainer.Add(cookies);
             if (headers != null) request.Headers.Add(headers);
-            request.KeepAlive = false;
+            request.KeepAlive = true;
             request.Method = method.ToString();
             request.Pipelined = false;
             request.ProtocolVersion = HttpVersion.Version11;
