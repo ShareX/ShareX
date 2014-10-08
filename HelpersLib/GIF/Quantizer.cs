@@ -133,7 +133,7 @@ namespace HelpersLib
                 for (int col = 0; col < width; col++)
                 {
                     InitialQuantizePixel(new Color32(pSourcePixel));
-                    pSourcePixel = (IntPtr)((Int32)pSourcePixel + _pixelSize);
+                    pSourcePixel = (IntPtr)((long)pSourcePixel + _pixelSize);
                 } // Now I have the pixel, call the FirstPassQuantize function...
 
                 // Add the stride to the source row

@@ -465,7 +465,7 @@
     <value>Yükleyicileri test et...</value>
   </data>
 	<data name="tsddbDebug.Text" xml:space="preserve">
-    <value>Hata Ayıklama</value>
+    <value>Hata ayıklama</value>
   </data>
 	<data name="tsmiDonate.Text" xml:space="preserve">
     <value>Bağış...</value>
