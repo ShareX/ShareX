@@ -240,7 +240,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GIF\GifClass.cs" />
-    <Compile Include="GIF\GifCreator.cs" />
+    <Compile Include="GIF\AnimatedGifCreator.cs" />
     <Compile Include="GIF\GrayscaleQuantizer.cs" />
     <Compile Include="GIF\OctreeQuantizer.cs" />
     <Compile Include="GIF\PaletteQuantizer.cs" />

@@ -131,5 +131,10 @@ namespace HelpersLib
 
             return retval;
         }
+
+        public static void Write(this FileStream stream, byte[] array)
+        {
+            stream.Write(array, 0, array.Length);
+        }
     }
 }

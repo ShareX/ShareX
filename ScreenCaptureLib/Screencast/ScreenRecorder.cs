@@ -206,7 +206,7 @@ namespace ScreenCaptureLib
             {
                 HardDiskCache hdCache = imgCache as HardDiskCache;
 
-                using (GifCreator gifEncoder = new GifCreator(delay))
+                using (AnimatedGifCreator gifEncoder = new AnimatedGifCreator(path, delay))
                 {
                     int i = 0;
                     int count = hdCache.Count;
@@ -221,9 +221,6 @@ namespace ScreenCaptureLib
                             gifEncoder.AddFrame(img, quality);
                         }
                     }
-
-                    gifEncoder.Finish();
-                    gifEncoder.Save(path);
                 }
             }
         }
