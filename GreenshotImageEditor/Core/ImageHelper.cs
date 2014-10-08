@@ -20,7 +20,6 @@
  */
 
 using Greenshot.Core;
-using Greenshot.IniFile;
 using GreenshotPlugin.UnmanagedHelpers;
 using System;
 using System.Collections.Generic;

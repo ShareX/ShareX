@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;

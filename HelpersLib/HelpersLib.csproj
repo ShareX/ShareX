@@ -192,7 +192,6 @@
     <Compile Include="Forms\TrayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GIF\AnimatedGif.cs" />
     <Compile Include="Helpers\CaptureHelpers.cs" />
     <Compile Include="CLI\CLICommand.cs" />
     <Compile Include="CLI\CLICommandAction.cs" />
