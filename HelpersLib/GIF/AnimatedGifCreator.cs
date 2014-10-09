@@ -54,14 +54,14 @@ namespace HelpersLib
             {
                 stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 stream.Write(CreateHeaderBlock());
-                stream.Write(gif.m_ScreenDescriptor.ToArray());
+                stream.Write(gif.ScreenDescriptor.ToArray());
                 stream.Write(CreateApplicationExtensionBlock(Repeat));
             }
 
             stream.Write(CreateGraphicsControlExtensionBlock(Delay));
-            stream.Write(gif.m_ImageDescriptor.ToArray());
-            stream.Write(gif.m_ColorTable.ToArray());
-            stream.Write(gif.m_ImageData.ToArray());
+            stream.Write(gif.ImageDescriptor.ToArray());
+            stream.Write(gif.ColorTable.ToArray());
+            stream.Write(gif.ImageData.ToArray());
 
             FrameCount++;
         }

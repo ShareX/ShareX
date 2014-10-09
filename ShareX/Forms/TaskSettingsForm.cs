@@ -167,6 +167,7 @@ namespace ShareX
             // Image - General
             cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
             nudImageJPEGQuality.Value = TaskSettings.ImageSettings.ImageJPEGQuality;
+            cbImageGIFQuality.Items.AddRange(Helpers.GetEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
             nudUseImageFormat2After.Value = TaskSettings.ImageSettings.ImageSizeLimit;
             cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;

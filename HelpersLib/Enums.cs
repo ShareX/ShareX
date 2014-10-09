@@ -130,9 +130,13 @@ namespace HelpersLib
 
     public enum GIFQuality
     {
+        [Description("Default .NET encoding (Fast encoding but average quality)")]
         Default,
+        [Description("Octree quantizer 256 colors (Slow encoding but better quality)")]
         Bit8,
+        [Description("Octree quantizer 16 colors")]
         Bit4,
+        [Description("Palette quantizer grayscale 256 colors")]
         Grayscale
     }
 
