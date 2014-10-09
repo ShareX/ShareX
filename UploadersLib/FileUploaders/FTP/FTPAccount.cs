@@ -193,32 +193,40 @@ namespace UploadersLib
             }
             else
             {
-                //Parse HttpHomePath in to host, port and path components
+                //Parse HttpHomePath in to host, port, path and query components
                 var firstSlash = httpHomePath.IndexOf('/');
                 var httpHome = firstSlash >= 0 ? httpHomePath.Substring(0, firstSlash) : httpHomePath;
                 var portSpecifiedAt = httpHome.LastIndexOf(':');
 
                 var httpHomeHost = portSpecifiedAt >= 0 ? httpHome.Substring(0, portSpecifiedAt) : httpHome;
                 var httpHomePort = -1;
-                var httpHomeDir = httpHomePath.Substring(firstSlash + 1);
+                var httpHomePathAndQuery = firstSlash >= 0 ? httpHomePath.Substring(firstSlash + 1) : "";
+                var querySpecifiedAt = httpHomePathAndQuery.LastIndexOf('?');
+                var httpHomeDir = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(0, querySpecifiedAt) : httpHomePathAndQuery;
+                var httpHomeQuery = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(querySpecifiedAt + 1) : "";
+
 
                 if (portSpecifiedAt >= 0)
                     int.TryParse(httpHome.Substring(portSpecifiedAt + 1), out httpHomePort);
 
                 //Build URI
-                httpHomeUri = new UriBuilder { Host = httpHomeHost, Path = httpHomeDir };
+                httpHomeUri = new UriBuilder { Host = httpHomeHost, Path = httpHomeDir, Query = httpHomeQuery };
                 if (portSpecifiedAt >= 0)
                     httpHomeUri.Port = httpHomePort;
 
-                if (HttpHomePathAutoAddSubFolderPath)
-                    httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, subFolderPath);
-
                 if (httpHomeUri.Query.EndsWith("="))
                 {
-                    httpHomeUri.Query += filename;
+                    //Setting URIBuilder.Query automatically prepends a ? so we must trim it first.
+                    if (HttpHomePathAutoAddSubFolderPath)
+                        httpHomeUri.Query = URLHelpers.CombineURL(httpHomeUri.Query.Substring(1), subFolderPath, filename);
+                    else
+                        httpHomeUri.Query = httpHomeUri.Query.Substring(1) + filename;
                 }
                 else
                 {
+                    if (HttpHomePathAutoAddSubFolderPath)
+                        httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, subFolderPath);
+
                     httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, filename);
                 }
             }
