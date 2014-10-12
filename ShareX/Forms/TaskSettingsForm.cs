@@ -43,7 +43,7 @@ namespace ShareX
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTextFileUploaders;
         private bool loaded;
 
-        private readonly string ConfigureEncoder = "Configure video encoders --->";
+        private readonly string ConfigureEncoder = "Configure CLI video encoders --->";
 
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
@@ -276,6 +276,7 @@ namespace ShareX
         private void UpdateVideoEncoders()
         {
             cboEncoder.Items.Clear();
+
             if (Program.Settings.VideoEncoders.Count > 0)
             {
                 Program.Settings.VideoEncoders.ForEach(x => cboEncoder.Items.Add(x));
@@ -284,6 +285,7 @@ namespace ShareX
             else if (!cboEncoder.Items.Contains(ConfigureEncoder))
             {
                 cboEncoder.Items.Add(ConfigureEncoder);
+                cboEncoder.SelectedIndex = 0;
             }
         }
 

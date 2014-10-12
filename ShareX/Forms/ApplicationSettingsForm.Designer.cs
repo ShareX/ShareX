@@ -129,18 +129,19 @@ namespace ShareX
             // 
             // tcSettings
             // 
+            resources.ApplyResources(this.tcSettings, "tcSettings");
             this.tcSettings.Controls.Add(this.tpGeneral);
             this.tcSettings.Controls.Add(this.tpPaths);
             this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpUpload);
             this.tcSettings.Controls.Add(this.tpPrint);
             this.tcSettings.Controls.Add(this.tpAdvanced);
-            resources.ApplyResources(this.tcSettings, "tcSettings");
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
             // 
             // tpGeneral
             // 
+            resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Controls.Add(this.cbLanguage);
             this.tpGeneral.Controls.Add(this.lblLanguage);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormPosition);
@@ -152,15 +153,14 @@ namespace ShareX
             this.tpGeneral.Controls.Add(this.cbStartWithWindows);
             this.tpGeneral.Controls.Add(this.cbShowTray);
             this.tpGeneral.Controls.Add(this.cbSendToMenu);
-            resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
             // 
             // cbLanguage
             // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.FormattingEnabled = true;
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 
@@ -234,6 +234,7 @@ namespace ShareX
             // 
             // tpPaths
             // 
+            resources.ApplyResources(this.tpPaths, "tpPaths");
             this.tpPaths.Controls.Add(this.lblNotePersonalFolderPath);
             this.tpPaths.Controls.Add(this.btnOpenScreenshotsFolder);
             this.tpPaths.Controls.Add(this.lblPreviewPersonalFolderPath);
@@ -247,7 +248,6 @@ namespace ShareX
             this.tpPaths.Controls.Add(this.lblSaveImageSubFolderPattern);
             this.tpPaths.Controls.Add(this.lblSaveImageSubFolderPatternPreview);
             this.tpPaths.Controls.Add(this.txtSaveImageSubFolderPattern);
-            resources.ApplyResources(this.tpPaths, "tpPaths");
             this.tpPaths.Name = "tpPaths";
             this.tpPaths.UseVisualStyleBackColor = true;
             // 
@@ -331,6 +331,7 @@ namespace ShareX
             // 
             // tpProxy
             // 
+            resources.ApplyResources(this.tpProxy, "tpProxy");
             this.tpProxy.Controls.Add(this.cbProxyMethod);
             this.tpProxy.Controls.Add(this.lblProxyMethod);
             this.tpProxy.Controls.Add(this.lblProxyHost);
@@ -341,15 +342,14 @@ namespace ShareX
             this.tpProxy.Controls.Add(this.txtProxyPassword);
             this.tpProxy.Controls.Add(this.lblProxyUsername);
             this.tpProxy.Controls.Add(this.txtProxyUsername);
-            resources.ApplyResources(this.tpProxy, "tpProxy");
             this.tpProxy.Name = "tpProxy";
             this.tpProxy.UseVisualStyleBackColor = true;
             // 
             // cbProxyMethod
             // 
+            resources.ApplyResources(this.cbProxyMethod, "cbProxyMethod");
             this.cbProxyMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProxyMethod.FormattingEnabled = true;
-            resources.ApplyResources(this.cbProxyMethod, "cbProxyMethod");
             this.cbProxyMethod.Name = "cbProxyMethod";
             this.cbProxyMethod.SelectedIndexChanged += new System.EventHandler(this.cbProxyMethod_SelectedIndexChanged);
             // 
@@ -410,35 +410,35 @@ namespace ShareX
             // 
             // tpUpload
             // 
-            this.tpUpload.Controls.Add(this.tcUpload);
             resources.ApplyResources(this.tpUpload, "tpUpload");
+            this.tpUpload.Controls.Add(this.tcUpload);
             this.tpUpload.Name = "tpUpload";
             this.tpUpload.UseVisualStyleBackColor = true;
             // 
             // tcUpload
             // 
+            resources.ApplyResources(this.tcUpload, "tcUpload");
             this.tcUpload.Controls.Add(this.tpPerformance);
             this.tcUpload.Controls.Add(this.tpUploadResults);
             this.tcUpload.Controls.Add(this.tpUploadRetry);
-            resources.ApplyResources(this.tcUpload, "tcUpload");
             this.tcUpload.Name = "tcUpload";
             this.tcUpload.SelectedIndex = 0;
             // 
             // tpPerformance
             // 
-            this.tpPerformance.Controls.Add(this.gbBandwidth);
             resources.ApplyResources(this.tpPerformance, "tpPerformance");
+            this.tpPerformance.Controls.Add(this.gbBandwidth);
             this.tpPerformance.Name = "tpPerformance";
             this.tpPerformance.UseVisualStyleBackColor = true;
             // 
             // gbBandwidth
             // 
+            resources.ApplyResources(this.gbBandwidth, "gbBandwidth");
             this.gbBandwidth.Controls.Add(this.lblUploadLimit);
             this.gbBandwidth.Controls.Add(this.nudUploadLimit);
             this.gbBandwidth.Controls.Add(this.lblUploadLimitHint);
             this.gbBandwidth.Controls.Add(this.lblBufferSize);
             this.gbBandwidth.Controls.Add(this.cbBufferSize);
-            resources.ApplyResources(this.gbBandwidth, "gbBandwidth");
             this.gbBandwidth.Name = "gbBandwidth";
             this.gbBandwidth.TabStop = false;
             // 
@@ -475,26 +475,26 @@ namespace ShareX
             // 
             // cbBufferSize
             // 
+            resources.ApplyResources(this.cbBufferSize, "cbBufferSize");
             this.cbBufferSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBufferSize.FormattingEnabled = true;
-            resources.ApplyResources(this.cbBufferSize, "cbBufferSize");
             this.cbBufferSize.Name = "cbBufferSize";
             this.cbBufferSize.SelectedIndexChanged += new System.EventHandler(this.cbBufferSize_SelectedIndexChanged);
             // 
             // tpUploadResults
             // 
-            this.tpUploadResults.Controls.Add(this.gbClipboardFormats);
             resources.ApplyResources(this.tpUploadResults, "tpUploadResults");
+            this.tpUploadResults.Controls.Add(this.gbClipboardFormats);
             this.tpUploadResults.Name = "tpUploadResults";
             this.tpUploadResults.UseVisualStyleBackColor = true;
             // 
             // gbClipboardFormats
             // 
+            resources.ApplyResources(this.gbClipboardFormats, "gbClipboardFormats");
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatEdit);
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatRemove);
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatAdd);
             this.gbClipboardFormats.Controls.Add(this.lvClipboardFormats);
-            resources.ApplyResources(this.gbClipboardFormats, "gbClipboardFormats");
             this.gbClipboardFormats.Name = "gbClipboardFormats";
             this.gbClipboardFormats.TabStop = false;
             // 
@@ -521,12 +521,12 @@ namespace ShareX
             // 
             // lvClipboardFormats
             // 
+            resources.ApplyResources(this.lvClipboardFormats, "lvClipboardFormats");
             this.lvClipboardFormats.AutoFillColumn = true;
             this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chDescription,
             this.chFormat});
             this.lvClipboardFormats.FullRowSelect = true;
-            resources.ApplyResources(this.lvClipboardFormats, "lvClipboardFormats");
             this.lvClipboardFormats.Name = "lvClipboardFormats";
             this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
             this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
@@ -542,11 +542,11 @@ namespace ShareX
             // 
             // tpUploadRetry
             // 
+            resources.ApplyResources(this.tpUploadRetry, "tpUploadRetry");
             this.tpUploadRetry.Controls.Add(this.chkUseSecondaryUploaders);
             this.tpUploadRetry.Controls.Add(this.tlpBackupDestinations);
             this.tpUploadRetry.Controls.Add(this.cbIfUploadFailRetryOnce);
             this.tpUploadRetry.Controls.Add(this.nudRetryUpload);
-            resources.ApplyResources(this.tpUploadRetry, "tpUploadRetry");
             this.tpUploadRetry.Name = "tpUploadRetry";
             this.tpUploadRetry.UseVisualStyleBackColor = true;
             // 
@@ -567,19 +567,19 @@ namespace ShareX
             // 
             // gbSecondaryImageUploaders
             // 
-            this.gbSecondaryImageUploaders.Controls.Add(this.lvSecondaryImageUploaders);
             resources.ApplyResources(this.gbSecondaryImageUploaders, "gbSecondaryImageUploaders");
+            this.gbSecondaryImageUploaders.Controls.Add(this.lvSecondaryImageUploaders);
             this.gbSecondaryImageUploaders.Name = "gbSecondaryImageUploaders";
             this.gbSecondaryImageUploaders.TabStop = false;
             // 
             // lvSecondaryImageUploaders
             // 
+            resources.ApplyResources(this.lvSecondaryImageUploaders, "lvSecondaryImageUploaders");
             this.lvSecondaryImageUploaders.AllowDrop = true;
             this.lvSecondaryImageUploaders.AutoFillColumn = true;
             this.lvSecondaryImageUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryImageUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            resources.ApplyResources(this.lvSecondaryImageUploaders, "lvSecondaryImageUploaders");
             this.lvSecondaryImageUploaders.FullRowSelect = true;
             this.lvSecondaryImageUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvSecondaryImageUploaders.HideSelection = false;
@@ -589,21 +589,25 @@ namespace ShareX
             this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryImageUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
             // gbSecondaryFileUploaders
             // 
-            this.gbSecondaryFileUploaders.Controls.Add(this.lvSecondaryFileUploaders);
             resources.ApplyResources(this.gbSecondaryFileUploaders, "gbSecondaryFileUploaders");
+            this.gbSecondaryFileUploaders.Controls.Add(this.lvSecondaryFileUploaders);
             this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
             this.gbSecondaryFileUploaders.TabStop = false;
             // 
             // lvSecondaryFileUploaders
             // 
+            resources.ApplyResources(this.lvSecondaryFileUploaders, "lvSecondaryFileUploaders");
             this.lvSecondaryFileUploaders.AllowDrop = true;
             this.lvSecondaryFileUploaders.AutoFillColumn = true;
             this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3});
-            resources.ApplyResources(this.lvSecondaryFileUploaders, "lvSecondaryFileUploaders");
             this.lvSecondaryFileUploaders.FullRowSelect = true;
             this.lvSecondaryFileUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvSecondaryFileUploaders.MultiSelect = false;
@@ -612,21 +616,25 @@ namespace ShareX
             this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
+            // columnHeader3
+            // 
+            resources.ApplyResources(this.columnHeader3, "columnHeader3");
+            // 
             // gbSecondaryTextUploaders
             // 
-            this.gbSecondaryTextUploaders.Controls.Add(this.lvSecondaryTextUploaders);
             resources.ApplyResources(this.gbSecondaryTextUploaders, "gbSecondaryTextUploaders");
+            this.gbSecondaryTextUploaders.Controls.Add(this.lvSecondaryTextUploaders);
             this.gbSecondaryTextUploaders.Name = "gbSecondaryTextUploaders";
             this.gbSecondaryTextUploaders.TabStop = false;
             // 
             // lvSecondaryTextUploaders
             // 
+            resources.ApplyResources(this.lvSecondaryTextUploaders, "lvSecondaryTextUploaders");
             this.lvSecondaryTextUploaders.AllowDrop = true;
             this.lvSecondaryTextUploaders.AutoFillColumn = true;
             this.lvSecondaryTextUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryTextUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2});
-            resources.ApplyResources(this.lvSecondaryTextUploaders, "lvSecondaryTextUploaders");
             this.lvSecondaryTextUploaders.FullRowSelect = true;
             this.lvSecondaryTextUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvSecondaryTextUploaders.MultiSelect = false;
@@ -634,6 +642,10 @@ namespace ShareX
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryTextUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
+            // 
+            // columnHeader2
+            // 
+            resources.ApplyResources(this.columnHeader2, "columnHeader2");
             // 
             // cbIfUploadFailRetryOnce
             // 
@@ -653,10 +665,10 @@ namespace ShareX
             // 
             // tpPrint
             // 
+            resources.ApplyResources(this.tpPrint, "tpPrint");
             this.tpPrint.Controls.Add(this.cbPrintDontShowWindowsDialog);
             this.tpPrint.Controls.Add(this.cbDontShowPrintSettingDialog);
             this.tpPrint.Controls.Add(this.btnShowImagePrintSettings);
-            resources.ApplyResources(this.tpPrint, "tpPrint");
             this.tpPrint.Name = "tpPrint";
             this.tpPrint.UseVisualStyleBackColor = true;
             // 
@@ -683,8 +695,8 @@ namespace ShareX
             // 
             // tpAdvanced
             // 
-            this.tpAdvanced.Controls.Add(this.pgSettings);
             resources.ApplyResources(this.tpAdvanced, "tpAdvanced");
+            this.tpAdvanced.Controls.Add(this.pgSettings);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
             // 

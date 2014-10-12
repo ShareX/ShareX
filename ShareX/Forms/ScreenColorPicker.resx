@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,348 +59,345 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="&gt;&gt;txtHex.Parent" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;txtHex.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	<data name="lblScreenColorPickerTip.Visible" type="System.Boolean, mscorlib">
-		<value>False</value>
-	</data>
-	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-	<data name="btnColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-		<value>144, 24</value>
-	</data>
-	<data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnColorPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 24</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
   </data>
-	<data name="txtY.Size" type="System.Drawing.Size, System.Drawing">
-		<value>48, 20</value>
-	</data>
-	<data name="lblScreenColorPickerTip.Location" type="System.Drawing.Point, System.Drawing">
-		<value>336, 270</value>
-	</data>
-	<data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPipette.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+  <data name="lblScreenColorPickerTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 270</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
   </data>
-	<data name="&gt;&gt;lblY.Parent" xml:space="preserve">
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>609, 305</value>
+  </data>
+  <data name="txtY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="&gt;&gt;lblY.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;$this.Name" xml:space="preserve">
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ScreenColorPicker</value>
   </data>
-	<data name="&gt;&gt;btnColorPicker.Name" xml:space="preserve">
+  <data name="&gt;&gt;btnColorPicker.Name" xml:space="preserve">
     <value>btnColorPicker</value>
   </data>
-	<data name="&gt;&gt;txtY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtY.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;btnPipette.Name" xml:space="preserve">
+  <data name="&gt;&gt;btnPipette.Name" xml:space="preserve">
     <value>btnPipette</value>
   </data>
-	<data name="txtY.Location" type="System.Drawing.Point, System.Drawing">
-		<value>97, 276</value>
-	</data>
-	<data name="&gt;&gt;txtX.Name" xml:space="preserve">
+  <data name="txtY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 276</value>
+  </data>
+  <data name="&gt;&gt;txtX.Name" xml:space="preserve">
     <value>txtX</value>
   </data>
-	<data name="&gt;&gt;lblY.ZOrder" xml:space="preserve">
+  <data name="lblX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 13</value>
+  </data>
+  <data name="&gt;&gt;lblY.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-	<data name="&gt;&gt;txtHex.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtHex.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="btnCopyAll.Text" xml:space="preserve">
+  <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Copy all</value>
   </data>
-	<data name="lblX.Location" type="System.Drawing.Point, System.Drawing">
-		<value>8, 280</value>
-	</data>
-	<data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-		<value>6, 13</value>
-	</data>
-	<data name="&gt;&gt;txtX.Parent" xml:space="preserve">
+  <data name="lblX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 280</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;txtX.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="lblY.AutoSize" type="System.Boolean, mscorlib">
-		<value>True</value>
-	</data>
-	<data name="txtY.Text" xml:space="preserve">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblY.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtY.Text" xml:space="preserve">
     <value>1050</value>
   </data>
-	<data name="&gt;&gt;lblY.Name" xml:space="preserve">
+  <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
   </data>
-	<data name="&gt;&gt;lblY.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblY.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="btnColorPicker.TabIndex" type="System.Int32, mscorlib">
-		<value>52</value>
-	</data>
-	<data name="lblScreenColorPickerTip.Text" xml:space="preserve">
+  <data name="btnColorPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Press "Ctrl" button when this window active
 to stop screen color picker.</value>
   </data>
-	<data name="&gt;&gt;lblX.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblX.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-	<data name="&gt;&gt;btnCopyAll.Name" xml:space="preserve">
+  <data name="&gt;&gt;btnCopyAll.Name" xml:space="preserve">
     <value>btnCopyAll</value>
   </data>
-	<data name="btnCopyAll.Location" type="System.Drawing.Point, System.Drawing">
-		<value>464, 232</value>
-	</data>
-	<data name="lblScreenColorPickerTip.TabIndex" type="System.Int32, mscorlib">
-		<value>55</value>
-	</data>
-	<data name="&gt;&gt;txtY.ZOrder" xml:space="preserve">
+  <data name="btnCopyAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>464, 232</value>
+  </data>
+  <data name="lblScreenColorPickerTip.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;txtY.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-	<data name="lblScreenColorPickerTip.Size" type="System.Drawing.Size, System.Drawing">
-		<value>265, 34</value>
-	</data>
-	<data name="&gt;&gt;btnPipette.Type" xml:space="preserve">
+  <data name="lblScreenColorPickerTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 34</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="txtY.TabIndex" type="System.Int32, mscorlib">
-		<value>59</value>
-	</data>
-	<data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
+  <data name="txtY.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;colorPicker.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-	<data name="&gt;&gt;btnColorPicker.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnColorPicker.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="btnPipette.Location" type="System.Drawing.Point, System.Drawing">
-		<value>296, 274</value>
-	</data>
-	<data name="&gt;&gt;btnCopyAll.Parent" xml:space="preserve">
+  <data name="btnPipette.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 274</value>
+  </data>
+  <data name="&gt;&gt;btnCopyAll.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;txtX.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtX.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-	<data name="&gt;&gt;btnPipette.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPipette.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-	<data name="&gt;&gt;lblX.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblX.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;colorPicker.Name" xml:space="preserve">
+  <data name="&gt;&gt;colorPicker.Name" xml:space="preserve">
     <value>colorPicker</value>
   </data>
-	<data name="btnColorPicker.Location" type="System.Drawing.Point, System.Drawing">
-		<value>152, 274</value>
-	</data>
-	<data name="&gt;&gt;lblScreenColorPickerTip.ZOrder" xml:space="preserve">
+  <data name="btnColorPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 274</value>
+  </data>
+  <data name="&gt;&gt;lblScreenColorPickerTip.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-	<data name="&gt;&gt;lblScreenColorPickerTip.Name" xml:space="preserve">
+  <data name="&gt;&gt;lblScreenColorPickerTip.Name" xml:space="preserve">
     <value>lblScreenColorPickerTip</value>
   </data>
-	<data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	<data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-		<value>Center</value>
-	</data>
-	<data name="&gt;&gt;btnColorPicker.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnColorPicker.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-	<data name="lblY.TabIndex" type="System.Int32, mscorlib">
-		<value>51</value>
-	</data>
-	<data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-		<value>Center</value>
-	</data>
-	<data name="&gt;&gt;colorPicker.Parent" xml:space="preserve">
+  <data name="lblY.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;colorPicker.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;txtY.Name" xml:space="preserve">
+  <data name="&gt;&gt;txtY.Name" xml:space="preserve">
     <value>txtY</value>
   </data>
-	<data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
-		<value>57</value>
-	</data>
-	<data name="&gt;&gt;btnCopyAll.Type" xml:space="preserve">
+  <data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;btnCopyAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;btnColorPicker.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnColorPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;lblScreenColorPickerTip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblScreenColorPickerTip.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="lblY.Location" type="System.Drawing.Point, System.Drawing">
-		<value>80, 280</value>
-	</data>
-	<data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+  <data name="lblY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 280</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-	<data name="&gt;&gt;txtHex.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtHex.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-	<data name="txtX.TabIndex" type="System.Int32, mscorlib">
-		<value>58</value>
-	</data>
-	<data name="btnPipette.Size" type="System.Drawing.Size, System.Drawing">
-		<value>32, 24</value>
-	</data>
-	<data name="btnColorPicker.Text" xml:space="preserve">
+  <data name="txtX.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="btnPipette.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 24</value>
+  </data>
+  <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Start screen color picker</value>
   </data>
-	<data name="txtX.Text" xml:space="preserve">
+  <data name="txtX.Text" xml:space="preserve">
     <value>1680</value>
   </data>
-	<data name="lblY.Text" xml:space="preserve">
+  <data name="lblY.Text" xml:space="preserve">
     <value>Y:</value>
   </data>
-	<data name="&gt;&gt;txtY.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtY.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="lblX.Text" xml:space="preserve">
+  <data name="lblX.Text" xml:space="preserve">
     <value>X:</value>
   </data>
-	<data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-	<data name="$this.Text" xml:space="preserve">
+  <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Screen color picker</value>
   </data>
-	<data name="txtX.Location" type="System.Drawing.Point, System.Drawing">
-		<value>25, 276</value>
-	</data>
-	<data name="btnCopyAll.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-		<value>MiddleLeft</value>
-	</data>
-	<data name="&gt;&gt;btnPipette.Parent" xml:space="preserve">
+  <data name="txtX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 276</value>
+  </data>
+  <data name="&gt;&gt;btnPipette.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;colorPicker.Type" xml:space="preserve">
+  <data name="&gt;&gt;colorPicker.Type" xml:space="preserve">
     <value>HelpersLib.ColorPicker, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-	<data name="txtX.Size" type="System.Drawing.Size, System.Drawing">
-		<value>48, 20</value>
-	</data>
-	<data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+  <data name="txtX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="lblY.Size" type="System.Drawing.Size, System.Drawing">
-		<value>17, 13</value>
-	</data>
-	<data name="&gt;&gt;lblScreenColorPickerTip.Type" xml:space="preserve">
+  <data name="lblY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 13</value>
+  </data>
+  <data name="&gt;&gt;lblScreenColorPickerTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="lblX.TabIndex" type="System.Int32, mscorlib">
-		<value>50</value>
-	</data>
-	<data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lblX.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-	<data name="lblScreenColorPickerTip.Font" type="System.Drawing.Font, System.Drawing">
-		<value>Microsoft Sans Serif, 9pt</value>
-	</data>
-	<data name="lblX.AutoSize" type="System.Boolean, mscorlib">
-		<value>True</value>
-	</data>
-	<data name="lblX.Size" type="System.Drawing.Size, System.Drawing">
-		<value>17, 13</value>
-	</data>
-	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-		<value>609, 305</value>
-	</data>
-	<data name="&gt;&gt;lblX.Parent" xml:space="preserve">
+  <data name="lblScreenColorPickerTip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScreenColorPickerTip.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCopyAll.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblX.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;$this.Type" xml:space="preserve">
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>HelpersLib.ColorPickerForm, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-	<data name="&gt;&gt;lblX.Name" xml:space="preserve">
+  <data name="&gt;&gt;lblX.Name" xml:space="preserve">
     <value>lblX</value>
   </data>
-	<data name="&gt;&gt;txtX.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtX.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="btnPipette.TabIndex" type="System.Int32, mscorlib">
-		<value>56</value>
-	</data>
-	<data name="btnCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-		<value>64, 32</value>
-	</data>
-	<data name="&gt;&gt;txtHex.Name" xml:space="preserve">
+  <data name="btnPipette.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="btnCopyAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 32</value>
+  </data>
+  <data name="&gt;&gt;txtHex.Name" xml:space="preserve">
     <value>txtHex</value>
   </data>
-	<metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-		<value>True</value>
-	</metadata>
-	<metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-		<value>tr</value>
-	</metadata>
-	<data name="btnCancel.Text" xml:space="preserve">
-		<value>Cancel</value>
-	</data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

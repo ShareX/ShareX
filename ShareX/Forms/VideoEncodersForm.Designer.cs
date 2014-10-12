@@ -110,7 +110,6 @@
             this.Controls.Add(this.btnEncodersRemove);
             this.Controls.Add(this.btnEncodersEdit);
             this.Name = "VideoEncodersForm";
-            this.Load += new System.EventHandler(this.VideoEncodersForm_Load);
             this.ResumeLayout(false);
 
         }
