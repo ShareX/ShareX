@@ -45,5 +45,13 @@ namespace HelpersLib
                 return Resources.ShareX_Logo;
             }
         }
+
+        public static Image LogoBlack
+        {
+            get
+            {
+                return Resources.ShareX_Logo_Black;
+            }
+        }
     }
 }
