@@ -609,14 +609,6 @@ namespace ShareX
             TaskSettings.ImageSettings.FileExistAction = (FileExistAction)cbImageFileExist.SelectedIndex;
         }
 
-        private void btnWatermarkSettings_Click(object sender, EventArgs e)
-        {
-            using (WatermarkForm watermarkForm = new WatermarkForm(TaskSettings.ImageSettings.WatermarkConfig) { Icon = Icon })
-            {
-                watermarkForm.ShowDialog();
-            }
-        }
-
         private void cbImageEffectOnlyRegionCapture_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture = cbImageEffectOnlyRegionCapture.Checked;

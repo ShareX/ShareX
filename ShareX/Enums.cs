@@ -70,30 +70,28 @@ namespace ShareX
         None = 0,
         [Description("Add image effects")]
         AddImageEffects = 1,
-        [Description("Add watermark")]
-        AddWatermark = 1 << 1,
         [Description("Annotate image")]
-        AnnotateImage = 1 << 2,
+        AnnotateImage = 1 << 1,
         [Description("Copy image to clipboard")]
-        CopyImageToClipboard = 1 << 3,
+        CopyImageToClipboard = 1 << 2,
         [Description("Print image")]
-        SendImageToPrinter = 1 << 4,
+        SendImageToPrinter = 1 << 3,
         [Description("Save image to file")]
-        SaveImageToFile = 1 << 5,
+        SaveImageToFile = 1 << 4,
         [Description("Save image to file as...")]
-        SaveImageToFileWithDialog = 1 << 6,
+        SaveImageToFileWithDialog = 1 << 5,
         [Description("Save thumbnail image to file")]
-        SaveThumbnailImageToFile = 1 << 7,
+        SaveThumbnailImageToFile = 1 << 6,
         [Description("Copy file to clipboard")]
-        CopyFileToClipboard = 1 << 8,
+        CopyFileToClipboard = 1 << 7,
         [Description("Copy file path to clipboard")]
-        CopyFilePathToClipboard = 1 << 9,
+        CopyFilePathToClipboard = 1 << 8,
         [Description("Perform actions")]
-        PerformActions = 1 << 10,
+        PerformActions = 1 << 9,
         [Description("Upload image to host")]
-        UploadImageToHost = 1 << 11,
+        UploadImageToHost = 1 << 10,
         [Description("Delete file locally")]
-        DeleteFile = 1 << 12
+        DeleteFile = 1 << 11
     }
 
     [Flags]

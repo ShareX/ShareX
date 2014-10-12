@@ -34,7 +34,7 @@ using System.Linq;
 
 namespace ImageEffectsLib
 {
-    [Description("Text")]
+    [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
         [DefaultValue(ContentAlignment.BottomRight)]

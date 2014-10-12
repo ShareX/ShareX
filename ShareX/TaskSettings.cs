@@ -280,8 +280,6 @@ namespace ShareX
         public bool ShowImageEffectsWindowAfterCapture = false;
         public bool ImageEffectOnlyRegionCapture = false;
 
-        public WatermarkConfig WatermarkConfig = new WatermarkConfig();
-
         #endregion Image / Effects
 
         #region Image / Thumbnail

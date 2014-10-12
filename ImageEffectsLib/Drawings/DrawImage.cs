@@ -31,7 +31,7 @@ using System.IO;
 
 namespace ImageEffectsLib
 {
-    [Description("Image")]
+    [Description("Image watermark")]
     public class DrawImage : ImageEffect
     {
         [DefaultValue(ContentAlignment.BottomRight)]
