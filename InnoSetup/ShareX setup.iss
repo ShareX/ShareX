@@ -45,6 +45,10 @@ UsePreviousGroup=yes
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
+WizardImageFile=WizardImageFile.bmp
+WizardSmallImageFile=WizardSmallImageFile.bmp
+WizardImageBackColor=clWhite
+WizardImageStretch=False
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
