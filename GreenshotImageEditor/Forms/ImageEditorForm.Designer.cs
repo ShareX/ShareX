@@ -117,7 +117,6 @@ namespace Greenshot {
             this.upOneLevelToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
             this.downOneLevelToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
             this.downToBottomToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.autoCropToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.obfuscateModeButton = new Greenshot.Controls.BindableToolStripDropDownButton();
@@ -166,6 +165,8 @@ namespace Greenshot {
             this.btnCancel = new Greenshot.Controls.BindableToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -744,8 +745,9 @@ namespace Greenshot {
             this.selectAllToolStripMenuItem,
             this.clearToolStripMenuItem,
             this.arrangeToolStripMenuItem,
-            this.toolStripSeparator12,
-            this.autoCropToolStripMenuItem});
+            this.autoCropToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.tsmiAbout});
             this.tsddbMenu.Image = global::Greenshot.Properties.Resources.gear;
             this.tsddbMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbMenu.Name = "tsddbMenu";
@@ -959,11 +961,6 @@ namespace Greenshot {
             this.downToBottomToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.downToBottomToolStripMenuItem.Text = "Down to bottom";
             this.downToBottomToolStripMenuItem.Click += new System.EventHandler(this.DownToBottomToolStripMenuItemClick);
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(276, 6);
             // 
             // autoCropToolStripMenuItem
             // 
@@ -1568,6 +1565,18 @@ namespace Greenshot {
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(307, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(276, 6);
+            // 
+            // tsmiAbout
+            // 
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(279, 22);
+            this.tsmiAbout.Text = "About...";
+            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
+            // 
             // ImageEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1667,7 +1676,6 @@ namespace Greenshot {
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnArrow;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnText;
         private GreenshotPlugin.Controls.GreenshotToolStripButton btnLine;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
 		private GreenshotPlugin.Controls.GreenshotToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
 		private GreenshotPlugin.Controls.GreenshotToolStripMenuItem duplicateToolStripMenuItem;
@@ -1718,5 +1726,7 @@ namespace Greenshot {
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiPrintImage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
 	}
 }
