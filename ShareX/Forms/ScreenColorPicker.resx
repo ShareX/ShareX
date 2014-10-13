@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -196,7 +196,7 @@
   </data>
   <data name="txtY.Text" xml:space="preserve">
     <value>1050</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
   </data>
@@ -318,16 +318,16 @@ to stop screen color picker.</value>
   </data>
   <data name="txtX.Text" xml:space="preserve">
     <value>1680</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="lblY.Text" xml:space="preserve">
     <value>Y:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;txtY.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblX.Text" xml:space="preserve">
     <value>X:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
