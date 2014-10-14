@@ -265,7 +265,7 @@ namespace ShareX
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
         public int ImageJPEGQuality = 90;
-        public GIFQuality ImageGIFQuality = GIFQuality.Bit8;
+        public GIFQuality ImageGIFQuality = GIFQuality.Default;
         public int ImageSizeLimit = 1024;
         public EImageFormat ImageFormat2 = EImageFormat.JPEG;
         public FileExistAction FileExistAction = FileExistAction.Ask;
@@ -297,7 +297,7 @@ namespace ShareX
         #region Capture / General
 
         public bool ShowCursor = true;
-        public bool CaptureTransparent = true;
+        public bool CaptureTransparent = Helpers.IsWindows8OrGreater() ? false : true;
         public bool CaptureShadow = true;
         public int CaptureShadowOffset = 20;
         public bool CaptureClientArea = false;

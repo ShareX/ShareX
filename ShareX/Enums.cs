@@ -70,7 +70,7 @@ namespace ShareX
         None = 0,
         [Description("Add image effects")]
         AddImageEffects = 1,
-        [Description("Annotate image")]
+        [Description("Open in image editor")]
         AnnotateImage = 1 << 1,
         [Description("Copy image to clipboard")]
         CopyImageToClipboard = 1 << 2,
