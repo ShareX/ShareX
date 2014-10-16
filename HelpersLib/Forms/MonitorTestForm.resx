@@ -451,7 +451,7 @@
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBlue.Name" xml:space="preserve">
     <value>lblBlue</value>
   </data>
@@ -532,7 +532,7 @@
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
     <value>G:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblGreen.Name" xml:space="preserve">
     <value>lblGreen</value>
   </data>
@@ -613,7 +613,7 @@
   </data>
   <data name="lblRed.Text" xml:space="preserve">
     <value>R:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblRed.Name" xml:space="preserve">
     <value>lblRed</value>
   </data>
@@ -823,7 +823,7 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>MonitorTest</value>
+    <value>Monitor test</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MonitorTestForm</value>

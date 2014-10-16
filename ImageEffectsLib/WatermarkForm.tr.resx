@@ -154,7 +154,7 @@
     <value>Filigran ön izleme:</value>
   </data>
   <data name="lblWatermarkPosition.Text" xml:space="preserve">
-    <value>Konumlandırma:</value>
+    <value>Konum:</value>
   </data>
   <data name="lblWatermarkText.Text" xml:space="preserve">
     <value>Yazı:</value>
@@ -175,9 +175,12 @@
     <value>Dikdörtgen köşe yuvarlama:</value>
   </data>
   <data name="cbWatermarkAutoHide.Text" xml:space="preserve">
-    <value>Resim filigrandan küçükse filigranı gizle:</value>
+    <value>Resim filigrandan küçükse filigranı gizle</value>
   </data>
   <data name="lblWatermarkCornerRadiusTip.Text" xml:space="preserve">
     <value>0 = Normal dikdörtgen</value>
+  </data>
+  <data name="lblWatermarkOffset.Text" xml:space="preserve">
+    <value>Çıkıntı:</value>
   </data>
 </root>

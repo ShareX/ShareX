@@ -121,10 +121,10 @@
     <value>Yetki temizle</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>2. Yetkiyi tamamla</value>
+    <value>Adım 2: Yetkiyi tamamla</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>1. Yetki sayfasını aç...</value>
+    <value>Adım 1: Yetki sayfasını aç...</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Yetkiyi yenile</value>
@@ -136,6 +136,6 @@
     <value>Durum</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>Onay kodu (Yetki sayfasında onay kodu al)</value>
+    <value>Onay kodu (Yetki sayfasından onay kodu al):</value>
   </data>
 </root>

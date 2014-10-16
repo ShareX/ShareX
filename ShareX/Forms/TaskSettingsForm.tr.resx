@@ -218,7 +218,7 @@
     <value>364, 17</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>Yakalama yapıldıktan sonra "Yakalama sonrası görevler" ekranını göster</value>
+    <value>Yakalama yapıldıktan sonra "Yakalama sonrası görevleri" ekranını göster</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
@@ -419,7 +419,7 @@
     <value>112, 17</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Peşine CLI çalıştır:</value>
+    <value>Ardından CLI çalıştır:</value>
   </data>
   <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
     <value>Ayarlar...</value>
@@ -437,7 +437,7 @@
     <value>32, 13</value>
   </data>
   <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
-    <value>Çıkış:</value>
+    <value>Çıktı:</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 17</value>
@@ -506,7 +506,7 @@
     <value>Ekle...</value>
   </data>
   <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>Takipteki dizinler</value>
+    <value>Dizinleri takip et</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 17</value>
@@ -527,7 +527,7 @@
     <value>188, 13</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Aktif pencere yakalam için isim deseni:</value>
+    <value>Aktif pencere yakalama için isim deseni:</value>
   </data>
   <data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -578,7 +578,7 @@
     <value>Yükleme</value>
   </data>
   <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Varsayılan indeksleyici görev ayarlarını kullan</value>
+    <value>Varsayılan indeksleyici ayarlarını kullan</value>
   </data>
   <data name="tpIndexer.Text" xml:space="preserve">
     <value>İndeksleyici</value>
@@ -594,5 +594,8 @@
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>"Yakalama sonrası -&gt; Resim efekti ekle" menüsünden resim efektlerini açıp kapatabilirsiniz.</value>
   </data>
 </root>

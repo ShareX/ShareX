@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -343,7 +343,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX downloader</value>
+    <value>ShareX file downloader</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DownloaderForm</value>

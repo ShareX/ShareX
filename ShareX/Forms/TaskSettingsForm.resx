@@ -1270,7 +1270,7 @@
     <value>3</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>You can enable/disable Image effects from "After capture tasks -&gt; Add image effects"</value>
+    <value>You can enable/disable Image effects from "After capture tasks -&gt; Add image effects".</value>
   </data>
   <data name="&gt;&gt;lblImageEffectsNote.Name" xml:space="preserve">
     <value>lblImageEffectsNote</value>

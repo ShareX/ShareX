@@ -165,4 +165,7 @@
   <data name="lblKey.Text" xml:space="preserve">
     <value>Anahtar:</value>
   </data>
+  <data name="lblMagenta.Text" xml:space="preserve">
+    <value>Eflatun:</value>
+  </data>
 </root>

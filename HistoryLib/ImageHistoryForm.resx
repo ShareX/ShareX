@@ -207,9 +207,6 @@
   <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tscMain.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -280,7 +277,7 @@
     <value>174, 20</value>
   </data>
   <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Only show last 100 screenshots</value>
+    <value>Only show last 100 images</value>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>

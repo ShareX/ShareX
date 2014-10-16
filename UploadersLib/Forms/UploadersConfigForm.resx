@@ -1113,9 +1113,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
-  <data name="txtCustomUploaderLog.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -2004,7 +2001,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -3230,7 +3227,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -3536,7 +3533,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCopy.Text" xml:space="preserve">
     <value>Copy</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpCopy.Name" xml:space="preserve">
     <value>tpCopy</value>
   </data>
@@ -4051,7 +4048,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="lblMegaStatus.Text" xml:space="preserve">
-    <value>CONFIGURED / NOT CONFIGURED</value>
+    <value>Configured / Not configured</value>
   </data>
   <data name="&gt;&gt;lblMegaStatus.Name" xml:space="preserve">
     <value>lblMegaStatus</value>
@@ -4595,7 +4592,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -6131,7 +6128,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -6155,7 +6152,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -6332,7 +6329,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -8572,7 +8569,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Step 2. Complete authorization</value>
+    <value>Step 2: Complete authorization</value>
   </data>
   <data name="&gt;&gt;btnFlickrCompleteAuth.Name" xml:space="preserve">
     <value>btnFlickrCompleteAuth</value>
@@ -8596,7 +8593,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Step 1. Open authorize page...</value>
+    <value>Step 1: Open authorize page...</value>
   </data>
   <data name="&gt;&gt;btnFlickrOpenAuthorize.Name" xml:space="preserve">
     <value>btnFlickrOpenAuthorize</value>
@@ -8746,7 +8743,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>New album name ( must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space )</value>
+    <value>New album name (must be between 2 and 50 characters. Valid characters are letters, numbers, underscore ( _ ), hyphen (-), and space)</value>
   </data>
   <data name="&gt;&gt;lblPhotobucketNewAlbumName.Name" xml:space="preserve">
     <value>lblPhotobucketNewAlbumName</value>
@@ -8890,7 +8887,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
-    <value>Default Album Name</value>
+    <value>Default album name</value>
   </data>
   <data name="&gt;&gt;lblPhotobucketDefaultAlbumName.Name" xml:space="preserve">
     <value>lblPhotobucketDefaultAlbumName</value>

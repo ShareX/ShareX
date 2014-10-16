@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -122,7 +122,7 @@
     <value>271, 32</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>Burada aynı isimli zaten bir dosya bulunuyor.
+    <value>Burada aynı isimli bir dosya zaten bulunuyor.
 Yeni dosya ismi veya aksiyon seçiniz:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">

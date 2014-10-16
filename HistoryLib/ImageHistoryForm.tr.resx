@@ -121,7 +121,7 @@
     <value>Resim geçmişi</value>
   </data>
   <data name="tsbQuickList.Text" xml:space="preserve">
-    <value>Sadece son 100 ekran görüntüsünü göster</value>
+    <value>Sadece son 100 resimi göster</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
     <value>Küçük resim boyutu</value>
@@ -134,5 +134,8 @@
   </data>
   <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
     <value>Küçük resimler</value>
+  </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Yarı pencere</value>
   </data>
 </root>

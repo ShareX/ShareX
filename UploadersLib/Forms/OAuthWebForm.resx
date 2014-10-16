@@ -210,9 +210,6 @@
   <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="tscMain.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

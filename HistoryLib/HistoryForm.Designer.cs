@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFilterFrom = new System.Windows.Forms.Label();
+            this.lblFilterTo = new System.Windows.Forms.Label();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.btnApplyFilters = new System.Windows.Forms.Button();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
@@ -71,15 +71,15 @@
             this.cbDateFilter.Name = "cbDateFilter";
             this.cbDateFilter.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblFilterFrom
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblFilterFrom, "lblFilterFrom");
+            this.lblFilterFrom.Name = "lblFilterFrom";
             // 
-            // label2
+            // lblFilterTo
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lblFilterTo, "lblFilterTo");
+            this.lblFilterTo.Name = "lblFilterTo";
             // 
             // dtpFilterTo
             // 
@@ -154,9 +154,9 @@
             this.gbFilters.Controls.Add(this.cbHostFilter);
             this.gbFilters.Controls.Add(this.cbTypeFilter);
             this.gbFilters.Controls.Add(this.dtpFilterFrom);
-            this.gbFilters.Controls.Add(this.label1);
+            this.gbFilters.Controls.Add(this.lblFilterFrom);
             this.gbFilters.Controls.Add(this.cbFilenameFilter);
-            this.gbFilters.Controls.Add(this.label2);
+            this.gbFilters.Controls.Add(this.lblFilterTo);
             this.gbFilters.Controls.Add(this.cbFilenameFilterCase);
             this.gbFilters.Controls.Add(this.cbDateFilter);
             this.gbFilters.Controls.Add(this.dtpFilterTo);
@@ -282,8 +282,8 @@
         private System.Windows.Forms.ColumnHeader chURL;
         private System.Windows.Forms.DateTimePicker dtpFilterFrom;
         private System.Windows.Forms.CheckBox cbDateFilter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFilterFrom;
+        private System.Windows.Forms.Label lblFilterTo;
         private System.Windows.Forms.DateTimePicker dtpFilterTo;
         private System.Windows.Forms.Button btnApplyFilters;
         private System.Windows.Forms.TextBox txtFilenameFilter;

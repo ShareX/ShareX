@@ -121,16 +121,16 @@
     <value>Geçmiş</value>
   </data>
   <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Filitreleri uygula</value>
+    <value>Filtreleri uygula</value>
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Filitreleri kaldır</value>
+    <value>Filtreleri kaldır</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>Tarih filitresi:</value>
+    <value>Tarih filtresi:</value>
   </data>
   <data name="cbFilenameFilter.Text" xml:space="preserve">
-    <value>Dosya adı filitresi:</value>
+    <value>Dosya adı filtresi:</value>
   </data>
   <data name="cbFilenameFilterCase.Text" xml:space="preserve">
     <value>Büyük küçük duyarlı</value>
@@ -160,7 +160,7 @@
     <value>Yazı</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>Tarih &amp; Saat</value>
+    <value>Tarih &amp; saat</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>
@@ -169,16 +169,10 @@
     <value>Tür</value>
   </data>
   <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filitreler</value>
+    <value>Filtreler</value>
   </data>
   <data name="tsslStatus.Text" xml:space="preserve">
     <value>Durum</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Gönderici:</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Alıcı:</value>
   </data>
   <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
     <value>Değişmez kültür (İngilizce)</value>
@@ -187,6 +181,18 @@
     <value>Sıra (İngilizce)</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>Dosya türü filitresi:</value>
+    <value>Dosya türü filtresi:</value>
+  </data>
+  <data name="cbHostFilter.Text" xml:space="preserve">
+    <value>Sunucu filtresi:</value>
+  </data>
+  <data name="chHost.Text" xml:space="preserve">
+    <value>Sunucu</value>
+  </data>
+  <data name="lblFilterFrom.Text" xml:space="preserve">
+    <value>Tarihten:</value>
+  </data>
+  <data name="lblFilterTo.Text" xml:space="preserve">
+    <value>Tarihe:</value>
   </data>
 </root>

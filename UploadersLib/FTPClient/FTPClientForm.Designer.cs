@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FTPClientForm));
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lvFTPList = new UploadersLib.ListViewEx();
+            this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFilesize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chFiletype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chLastModified = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,14 +56,6 @@
             this.pConnecting = new System.Windows.Forms.Panel();
             this.lblConnecting = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lvFTPList = new UploadersLib.ListViewEx();
-            this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFilesize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chFiletype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chLastModified = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcFTP = new System.Windows.Forms.TabControl();
             this.tpMain = new System.Windows.Forms.TabPage();
             this.tpAccount = new System.Windows.Forms.TabPage();
@@ -64,16 +64,16 @@
             this.scConsole = new System.Windows.Forms.SplitContainer();
             this.txtDebug = new System.Windows.Forms.TextBox();
             this.txtConsoleWrite = new System.Windows.Forms.TextBox();
+            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.cmsRightClickMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.pConnecting.SuspendLayout();
-            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.tcFTP.SuspendLayout();
             this.tpMain.SuspendLayout();
             this.tpAccount.SuspendLayout();
@@ -83,6 +83,76 @@
             this.scConsole.Panel2.SuspendLayout();
             this.scConsole.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip1);
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.lvFTPList);
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.SizingGrip = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            // 
+            // lvFTPList
+            // 
+            this.lvFTPList.AllowColumnReorder = true;
+            this.lvFTPList.AllowDrop = true;
+            this.lvFTPList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chFilename,
+            this.chFilesize,
+            this.chFiletype,
+            this.chLastModified});
+            this.lvFTPList.ContextMenuStrip = this.cmsRightClickMenu;
+            resources.ApplyResources(this.lvFTPList, "lvFTPList");
+            this.lvFTPList.DoubleClickActivation = false;
+            this.lvFTPList.FullRowSelect = true;
+            this.lvFTPList.GridLines = true;
+            this.lvFTPList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvFTPList.HideSelection = false;
+            this.lvFTPList.Name = "lvFTPList";
+            this.lvFTPList.UseCompatibleStateImageBehavior = false;
+            this.lvFTPList.View = System.Windows.Forms.View.Details;
+            this.lvFTPList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvFTPList_ItemDrag);
+            this.lvFTPList.SelectedIndexChanged += new System.EventHandler(this.lvFTPList_SelectedIndexChanged);
+            this.lvFTPList.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragDrop);
+            this.lvFTPList.DragOver += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragOver);
+            this.lvFTPList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFTPList_MouseDoubleClick);
+            // 
+            // chFilename
+            // 
+            resources.ApplyResources(this.chFilename, "chFilename");
+            // 
+            // chFilesize
+            // 
+            resources.ApplyResources(this.chFilesize, "chFilesize");
+            // 
+            // chFiletype
+            // 
+            resources.ApplyResources(this.chFiletype, "chFiletype");
+            // 
+            // chLastModified
+            // 
+            resources.ApplyResources(this.chLastModified, "chLastModified");
             // 
             // cmsRightClickMenu
             // 
@@ -212,76 +282,6 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.BottomToolStripPanel
-            // 
-            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip1);
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.lvFTPList);
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus});
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.SizingGrip = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Name = "lblStatus";
-            resources.ApplyResources(this.lblStatus, "lblStatus");
-            // 
-            // lvFTPList
-            // 
-            this.lvFTPList.AllowColumnReorder = true;
-            this.lvFTPList.AllowDrop = true;
-            this.lvFTPList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chFilename,
-            this.chFilesize,
-            this.chFiletype,
-            this.chLastModified});
-            this.lvFTPList.ContextMenuStrip = this.cmsRightClickMenu;
-            resources.ApplyResources(this.lvFTPList, "lvFTPList");
-            this.lvFTPList.DoubleClickActivation = false;
-            this.lvFTPList.FullRowSelect = true;
-            this.lvFTPList.GridLines = true;
-            this.lvFTPList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvFTPList.HideSelection = false;
-            this.lvFTPList.Name = "lvFTPList";
-            this.lvFTPList.UseCompatibleStateImageBehavior = false;
-            this.lvFTPList.View = System.Windows.Forms.View.Details;
-            this.lvFTPList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvFTPList_ItemDrag);
-            this.lvFTPList.SelectedIndexChanged += new System.EventHandler(this.lvFTPList_SelectedIndexChanged);
-            this.lvFTPList.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragDrop);
-            this.lvFTPList.DragOver += new System.Windows.Forms.DragEventHandler(this.lvFTPList_DragOver);
-            this.lvFTPList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFTPList_MouseDoubleClick);
-            // 
-            // chFilename
-            // 
-            resources.ApplyResources(this.chFilename, "chFilename");
-            // 
-            // chFilesize
-            // 
-            resources.ApplyResources(this.chFilesize, "chFilesize");
-            // 
-            // chFiletype
-            // 
-            resources.ApplyResources(this.chFiletype, "chFiletype");
-            // 
-            // chLastModified
-            // 
-            resources.ApplyResources(this.chLastModified, "chLastModified");
-            // 
             // tcFTP
             // 
             this.tcFTP.Controls.Add(this.tpMain);
@@ -354,12 +354,6 @@
             this.Name = "FTPClientForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FTPClient2_FormClosing);
             this.Resize += new System.EventHandler(this.FTPClient_Resize);
-            this.cmsRightClickMenu.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.pConnecting.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
@@ -367,6 +361,12 @@
             this.toolStripContainer1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.cmsRightClickMenu.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.pConnecting.ResumeLayout(false);
             this.tcFTP.ResumeLayout(false);
             this.tpMain.ResumeLayout(false);
             this.tpAccount.ResumeLayout(false);

@@ -144,9 +144,6 @@
   <data name="tsMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tsMenu.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
   <data name="&gt;&gt;tsMenu.Name" xml:space="preserve">
     <value>tsMenu</value>
   </data>

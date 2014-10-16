@@ -123,4 +123,7 @@
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>İnternet tarayıcı</value>
   </data>
+  <data name="tpString.Text" xml:space="preserve">
+    <value>Yazı</value>
+  </data>
 </root>

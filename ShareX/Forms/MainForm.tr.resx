@@ -162,7 +162,7 @@
     <value>212, 22</value>
   </data>
   <data name="tsmiMonitor.Text" xml:space="preserve">
-    <value>Ekran</value>
+    <value>Monitör</value>
   </data>
   <data name="tsmiRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>

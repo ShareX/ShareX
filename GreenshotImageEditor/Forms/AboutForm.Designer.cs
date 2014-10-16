@@ -45,7 +45,6 @@ namespace Greenshot {
 		/// not be able to load this method if it was changed manually.
 		/// </summary>
 		private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.linkLblLicense = new System.Windows.Forms.LinkLabel();
             this.linkLblHost = new System.Windows.Forms.LinkLabel();
@@ -140,7 +139,7 @@ namespace Greenshot {
             // 
             // lblIcons
             // 
-            this.lblIcons.LanguageKey = "about_icons";
+            this.lblIcons.LanguageKey = "";
             this.lblIcons.Location = new System.Drawing.Point(12, 224);
             this.lblIcons.Name = "lblIcons";
             this.lblIcons.Size = new System.Drawing.Size(467, 23);
@@ -150,7 +149,7 @@ namespace Greenshot {
             // 
             // lblDonations
             // 
-            this.lblDonations.LanguageKey = "about_donations";
+            this.lblDonations.LanguageKey = "";
             this.lblDonations.Location = new System.Drawing.Point(12, 186);
             this.lblDonations.Name = "lblDonations";
             this.lblDonations.Size = new System.Drawing.Size(466, 23);
@@ -159,7 +158,7 @@ namespace Greenshot {
             // 
             // lblBugs
             // 
-            this.lblBugs.LanguageKey = "about_bugs";
+            this.lblBugs.LanguageKey = "";
             this.lblBugs.Location = new System.Drawing.Point(12, 147);
             this.lblBugs.Name = "lblBugs";
             this.lblBugs.Size = new System.Drawing.Size(466, 23);
@@ -168,7 +167,7 @@ namespace Greenshot {
             // 
             // lblHost
             // 
-            this.lblHost.LanguageKey = "about_host";
+            this.lblHost.LanguageKey = "";
             this.lblHost.Location = new System.Drawing.Point(12, 109);
             this.lblHost.Name = "lblHost";
             this.lblHost.Size = new System.Drawing.Size(466, 23);
@@ -177,12 +176,11 @@ namespace Greenshot {
             // 
             // lblLicense
             // 
-            this.lblLicense.LanguageKey = "about_license";
+            this.lblLicense.LanguageKey = "";
             this.lblLicense.Location = new System.Drawing.Point(12, 34);
             this.lblLicense.Name = "lblLicense";
             this.lblLicense.Size = new System.Drawing.Size(369, 68);
             this.lblLicense.TabIndex = 3;
-            this.lblLicense.Text = resources.GetString("lblLicense.Text");
             // 
             // AboutForm
             // 

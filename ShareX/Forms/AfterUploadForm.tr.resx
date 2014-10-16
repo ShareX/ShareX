@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -130,7 +130,7 @@
     <value>Dosya aç...</value>
   </data>
   <data name="btnOpenFolder.Text" xml:space="preserve">
-    <value>Dizin aç...</value>
+    <value>Klasör aç...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Kapat</value>

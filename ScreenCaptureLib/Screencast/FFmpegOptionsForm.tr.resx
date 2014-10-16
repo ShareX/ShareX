@@ -166,10 +166,10 @@
     <value>Video çözücü:</value>
   </data>
   <data name="lblPreset.Text" xml:space="preserve">
-    <value>Şablon:</value>
+    <value>Genel:</value>
   </data>
   <data name="cbShowError.Text" xml:space="preserve">
-    <value>Eğer kaydetme ve kodlama başarısız olursa hata penceresi göster</value>
+    <value>Eğer kaydetme veya kodlama başarısız olursa hata penceresi göster</value>
   </data>
   <data name="lblExtension.Text" xml:space="preserve">
     <value>Uzantı (Dosya biçimi):</value>
@@ -187,9 +187,24 @@
     <value>0-10 arasında, 10 en yüksek kalite. 3-6 arası denenebilir. Varsayılan 3'dür.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>0-9 arası, küçük değer yüksek kalite anlamına gelir. 0-3 genelde şeffaf sonuç verir, 4 (varsayılan) algılan şeffaflığa yakın olacaktır ve 6 "kabul edilebilir" kalitede sonuç verir.</value>
+    <value>0-9 arası, küçük değer yüksek kalite anlamına gelir.</value>
   </data>
   <data name="nudVPxCRF.ToolTip" xml:space="preserve">
     <value>CRF değeri 4-63 arasında olabilir, 10 güzel bir başlangıç noktasıdır. Düşük değerler daha kalitelidir.</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Ses çözücü:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Ses kaynağı:</value>
+  </data>
+  <data name="cbPreset.ToolTip" xml:space="preserve">
+    <value>Kodlama hızı ile sıkıştırma oranı arasında seçim.
+Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
+  </data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Video kalitesini belirler.
+0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
+Kaliteyi arttırmak dosya boyutunu arttırır.</value>
   </data>
 </root>

@@ -151,10 +151,10 @@
     <value>İndir</value>
   </data>
   <data name="lblConnecting.Text" xml:space="preserve">
-    <value>FTP sunucuya bağlanılıyor...</value>
+    <value>FTP sunucusuna bağlanılıyor...</value>
   </data>
   <data name="openURLToolStripMenuItem.Text" xml:space="preserve">
-    <value>URL Aç</value>
+    <value>URL aç</value>
   </data>
   <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
     <value>Yenile</value>
@@ -170,5 +170,8 @@
   </data>
   <data name="tpMain.Text" xml:space="preserve">
     <value>Dosyalar</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>durum</value>
   </data>
 </root>

@@ -142,6 +142,6 @@
     <value>Resimi ortala</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
-    <value>Kenarlık:</value>
+    <value>Kenar boşluğu:</value>
   </data>
 </root>

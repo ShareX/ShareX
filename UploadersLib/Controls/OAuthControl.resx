@@ -183,7 +183,7 @@
     <value>0</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>1. Open authorize page...</value>
+    <value>Step 1: Open authorize page...</value>
   </data>
   <data name="&gt;&gt;btnOpenAuthorizePage.Name" xml:space="preserve">
     <value>btnOpenAuthorizePage</value>
@@ -237,7 +237,7 @@
     <value>3</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>2. Complete authorization</value>
+    <value>Step 2: Complete authorization</value>
   </data>
   <data name="&gt;&gt;btnCompleteAuthorization.Name" xml:space="preserve">
     <value>btnCompleteAuthorization</value>

@@ -179,7 +179,7 @@
     <value>251, 17</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>"Gönder" menüsünde ShareX menüsünü göster</value>
+    <value>"Gönder" menüsünde ShareX göster</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Genel</value>
@@ -218,7 +218,7 @@
     <value>80, 13</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Alt dizin deseni:</value>
+    <value>Alt dizin şablonu:</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Yollar</value>
@@ -326,13 +326,13 @@
     <value>243, 13</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Yükleme hataya düşerse kaç kez tekrar denensin:</value>
+    <value>Yükleme sırasında hata olursa kaç kez tekrar denensin:</value>
   </data>
   <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
     <value>253, 9</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tekrarlar</value>
+    <value>Tekrarla</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
@@ -365,6 +365,6 @@
     <value>Port:</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
+    <value>Sunucu:</value>
   </data>
 </root>

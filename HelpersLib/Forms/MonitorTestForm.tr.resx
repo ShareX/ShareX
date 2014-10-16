@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ekran Test</value>
+    <value>Monitör testi</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Kapat</value>
@@ -145,7 +145,7 @@
     <value>Boyut:</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Paneli gösterip / gizmemek için dışarıya tıklayabilirsiniz.</value>
+    <value>Paneli gösterip/gizmemek için dışarıya tıklayabilirsiniz.</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>Siyah, Beyaz:</value>
@@ -158,5 +158,14 @@
   </data>
   <data name="rbGradient.Text" xml:space="preserve">
     <value>Renk geçişi:</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>M:</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>K:</value>
   </data>
 </root>

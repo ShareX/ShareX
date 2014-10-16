@@ -247,9 +247,6 @@
     <Compile Include="UnmanagedHelpers\User32.cs" />
     <Compile Include="UnmanagedHelpers\Win32Errors.cs" />
     <Compile Include="UnmanagedHelpers\WinMM.cs" />
-    <EmbeddedResource Include="Forms\AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

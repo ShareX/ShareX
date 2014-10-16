@@ -443,7 +443,7 @@
   </data>
   <data name="lblMagenta.Text" xml:space="preserve">
     <value>Magenta:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblMagenta.Name" xml:space="preserve">
     <value>lblMagenta</value>
   </data>

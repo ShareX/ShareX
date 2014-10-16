@@ -33,6 +33,9 @@ namespace Greenshot
         {
             InitializeComponent();
             Icon = GreenshotResources.getGreenshotIcon();
+            lblLicense.Text = @"Copyright (C) 2007-2014 Thomas Braun, Jens Klingen, Robin Krom
+Greenshot comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.
+Details about the GNU General Public License:";
         }
 
         private void LinkLabelClicked(object sender, LinkLabelLinkClickedEventArgs e)
