@@ -160,7 +160,13 @@
     <EmbeddedResource Include="ImageEffectsForm.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageEffectsForm.tr.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WatermarkForm.resx">
+      <DependentUpon>WatermarkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WatermarkForm.tr.resx">
       <DependentUpon>WatermarkForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
