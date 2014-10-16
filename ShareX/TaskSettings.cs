@@ -297,7 +297,7 @@ namespace ShareX
         #region Capture / General
 
         public bool ShowCursor = true;
-        public bool CaptureTransparent = Helpers.IsWindows8OrGreater() ? false : true;
+        public bool CaptureTransparent = !Helpers.IsWindows8OrGreater();
         public bool CaptureShadow = true;
         public int CaptureShadowOffset = 20;
         public bool CaptureClientArea = false;
