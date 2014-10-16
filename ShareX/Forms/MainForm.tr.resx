@@ -765,7 +765,7 @@
     <value>212, 22</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
-    <value>Ekran</value>
+    <value>Monitör</value>
   </data>
   <data name="tsmiTrayRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -864,7 +864,7 @@
     <value>197, 22</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Dizin yükle...</value>
+    <value>Klasör yükle...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 22</value>
@@ -918,7 +918,7 @@
     <value>190, 22</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Dosya kontrol...</value>
+    <value>Dosya denetleyici...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
@@ -960,7 +960,7 @@
     <value>190, 22</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
-    <value>Monitör test...</value>
+    <value>Monitör testi...</value>
   </data>
   <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>

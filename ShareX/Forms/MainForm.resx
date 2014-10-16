@@ -259,19 +259,19 @@
     <value>Elapsed</value>
   </data>
   <data name="chElapsed.Width" type="System.Int32, mscorlib">
-    <value>42</value>
+    <value>45</value>
   </data>
   <data name="chRemaining.Text" xml:space="preserve">
     <value>Remaining</value>
   </data>
   <data name="chRemaining.Width" type="System.Int32, mscorlib">
-    <value>42</value>
+    <value>45</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>150</value>
+    <value>145</value>
   </data>
   <data name="lvUploads.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

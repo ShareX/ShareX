@@ -177,11 +177,12 @@ namespace ShareX
         {
             Program.Settings.Language = (SupportedLanguage)cbLanguage.SelectedIndex;
 
-            if (loaded)
+            if (loaded && LanguageHelper.ChangeLanguage(Program.Settings.Language))
             {
-                if (LanguageHelper.ChangeLanguage(Program.Settings.Language, Program.MainForm, this))
+                if (MessageBox.Show("ShareX need to be reopened for language changes to apply.\r\nWould you like to restart ShareX?",
+                    "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    MessageBox.Show("ShareX need to be reopened for language changes to fully apply.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Program.Restart();
                 }
             }
         }

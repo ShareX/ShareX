@@ -246,6 +246,8 @@ namespace ShareX
 
         #endregion Paths
 
+        private static bool restarting;
+
         [STAThread]
         private static void Main(string[] args)
         {
@@ -265,6 +267,11 @@ namespace ShareX
                 using (Mutex mutex = new Mutex(false, "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC")) // Required for installer
                 {
                     Run();
+                }
+
+                if (restarting)
+                {
+                    Process.Start(Application.ExecutablePath);
                 }
             }
         }
@@ -335,6 +342,12 @@ namespace ShareX
 
             DebugHelper.WriteLine("ShareX closing");
             DebugHelper.Logger.SaveLog(LogsFilePath);
+        }
+
+        public static void Restart()
+        {
+            restarting = true;
+            Application.Exit();
         }
 
         private static void SingleInstanceCallback(object sender, InstanceCallbackEventArgs args)
