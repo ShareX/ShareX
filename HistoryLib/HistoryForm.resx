@@ -620,7 +620,7 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>330</value>
   </data>

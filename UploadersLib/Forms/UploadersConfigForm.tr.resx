@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Hedef ayarları</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>Dizin listesini yenile</value>
+  </data>
+  <data name="btnCopyRegister.Text" xml:space="preserve">
+    <value>Kayıt ol...</value>
+  </data>
+  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
+    <value>Alanları temizle --&gt;</value>
+  </data>
+  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
+    <value>Örnekler...</value>
+  </data>
+  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
+    <value>Yardım...</value>
+  </data>
+  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
+    <value>Son cevabı göster...</value>
+  </data>
+  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="btnGe_ttLogin.Text" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="btnTinyPicLogin.Text" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="btnTwitterLogin.Text" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>Giriş gereklidir.</value>
+  </data>
+  <data name="lblGe_ttStatus.Text" xml:space="preserve">
+    <value>Giriş gereklidir.</value>
+  </data>
+  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
+    <value>Giriş durumu:</value>
+  </data>
+  <data name="lblGe_ttPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblMinusPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblTinyPicPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblRapidSharePassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblMinusUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblRapidSharePremiumUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblCopyStatus.Text" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
+  <data name="lblDropboxStatus.Text" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>&amp;Cihaz:</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>&amp;Kayıt...</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>Albüm ekle</value>
+  </data>
+  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
+    <value>Dizin ekle</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblGe_ttEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblTinyPicUsername.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>Alan adı:</value>
+  </data>
+  <data name="chArgumentsName.Text" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="chArgumentsValue.Text" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>Dizin adı</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="lblCheveretoWebsite.Text" xml:space="preserve">
+    <value>Web sitesi:</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Albüm listesini yenile</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>Albüm listesini yenile</value>
+  </data>
+  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
+    <value>Yetki yenile</value>
+  </data>
+  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
+    <value>Yetki yenile</value>
+  </data>
+  <data name="btnRapidShareRefreshFolders.Text" xml:space="preserve">
+    <value>Dizin listesi yenile</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Dizin listesi yenile</value>
+  </data>
+  <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
+    <value>Cevaptan Regex</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>Kayıt...</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>Kayıt...</value>
+  </data>
+  <data name="btnDropboxRegister.Text" xml:space="preserve">
+    <value>Kayıt...</value>
+  </data>
+  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
+    <value>Dizin listesini yeniden yükle</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>Albüm kaldır</value>
+  </data>
+  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
+    <value>Dizin kaldır</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
+    <value>İstek türü:</value>
+  </data>
+  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value>İstek URL:</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
+    <value>Cevap türü:</value>
+  </data>
+  <data name="btnDropboxShowFiles.Text" xml:space="preserve">
+    <value>Seç...</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>Seçilmiş dizin:</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>Dizin paylaş</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>İmza:</value>
+  </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>SMTP sunucusu:</value>
+  </data>
+  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
+    <value>Adım 1. Yetki sayfasını aç</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>Adım 1: Yetki sayfasını aç...</value>
+  </data>
+  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
+    <value>Adım 2. Yetkilendirmeyi tamamla</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>Adım 2: Yetkilendirmeyi tamamla</value>
+  </data>
+  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>Dosya:</value>
+  </data>
+  <data name="lblFtpFiles.Text" xml:space="preserve">
+    <value>Dosya:</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>Dizin:</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>Albüm oluştur</value>
+  </data>
+  <data name="btnMinusAuth.Text" xml:space="preserve">
+    <value>Yetkilendir</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>Cihaz listesini al</value>
+  </data>
+  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
+    <value>Resimlerim sayfasını aç</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
+    <value>Özel alan adı kullan:</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>Direkt URL</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>Direkt link kullan</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>Yükleme genel mi?</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>Yükleme genel mi?</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>Yükleme genel mi?</value>
+  </data>
+  <data name="chkMinusPublic.Text" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Yükleyiciler</value>
+  </data>
+  <data name="gbMinusUserPass.Text" xml:space="preserve">
+    <value>Yetkilendirme</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>Yeni albüm oluştur</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>Kullanıcı hesabı</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>Yükleme yolu:</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>Yükleme yolu:</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>Yükleme yolu:</value>
+  </data>
+  <data name="lblCopyPath.Text" xml:space="preserve">
+    <value>Yükleme yolu:</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>URL önizleme:</value>
+  </data>
+  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
+    <value>URL kısaltıcı:</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>URL kısaltıcılar</value>
+  </data>
+  <data name="lblCopyURLType.Text" xml:space="preserve">
+    <value>URL türü</value>
+  </data>
+  <data name="lblMinusURLType.Text" xml:space="preserve">
+    <value>URL türü:</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>Varsa direkt URL kullan</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>Kullanıcı &amp;API anahtarı:</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>Kullanıcı API anahtarı:</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>Kullanıcı anahtarı:</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>Bucket adı:</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>Resim:</value>
+  </data>
+  <data name="lblFtpImages.Text" xml:space="preserve">
+    <value>Resim:</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>Ön izleme:</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>Gizlilik:</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>Tasarım</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>Küçük resim türü:</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
+    <value>Küçük resim URL:</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>AYARLANDI / AYARLANMADI</value>
+  </data>
+  <data name="chkEmailConfirm.Text" xml:space="preserve">
+    <value>Göndermeden önce onayla</value>
+  </data>
+  <data name="tpCopy.Text" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="chkGistPublishPublic.Text" xml:space="preserve">
+    <value>Genel Gist oluştur</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>Paylaşılabilir link oluştur</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>Paylaşılabilir URL oluştur</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Paylaşılabilir URL oluştur:</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>Diğer yükleyiciler</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
+  </data>
+  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
+    <value>Fotoğraf akışınız</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>API anahtarı ve UID bilgisini burada bulabilirsiniz</value>
+  </data>
+  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
+    <value>Yazı yükleyiciler:</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>Yazı yükleyiciler</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>Yol:</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
+    <value>Test sonucu:</value>
+  </data>
+  <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
+    <value>Gizli anahtar:</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
+    <value>Dosya yükleyici:</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>Dosya yükleyiciler:</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
+    <value>Resim yükleyici:</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>Resim yükleyiciler</value>
+  </data>
+  <data name="gbMinusUpload.Text" xml:space="preserve">
+    <value>Resimleri buraya yükle</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>Resimleri buraya yükle</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>Resimleri seçili albüme yükle</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Dosyaları seçili dizine yükle</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>Dosya adı içeren uzun link kullan</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
+    <value>Düşük yedekli depolama kullan</value>
+  </data>
+  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
+    <value>Yüklenen öğeler için düşük yedekli depolama sınıfı kullan. Bu ayar ile öğeler daha düşük ücretle depolanır fakat 99.99999999% yerine 99.99% dayanıklılığa sahip olur. Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>Bu ayarı özel alan adı kullanan bucket sahibiyseniz kullanın.</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>Onay kodu (Yetkilendirme sayfasından onay kodu alın)</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>Varsayılan mesaj:</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>Varsayılan konu:</value>
+  </data>
+  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
+    <value>Silme adresi:</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>Özel alan adı:</value>
+  </data>
+  <data name="tpCustomUploaders.Text" xml:space="preserve">
+    <value>Özel yükleyiciler</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>Varsayılan Albüm Adı</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>Dizin ID:</value>
+  </data>
+  <data name="lblRapidShareFolderID.Text" xml:space="preserve">
+    <value>Yükleme için Dizin ID:</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>Üst albüm yolu</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>Yapıştırma başlığı:</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>Yapıştırma sözdizimi:</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>Son alıcı adreslerini hatırla</value>
+  </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>Hatalı SSL sertifikasını görmezden gel</value>
+  </data>
+  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
+    <value>Dosya biçim adı:</value>
+  </data>
+  <data name="cbMediaCrushDirectLink.Text" xml:space="preserve">
+    <value>Direkt link (Adres sonuna "/direct" ekler)</value>
+  </data>
+  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
+    <value>Parametreler</value>
+  </data>
+  <data name="tpBox.Text" xml:space="preserve">
+    <value>Kutu</value>
+  </data>
+  <data name="btnFtpClient.Text" xml:space="preserve">
+    <value>İstemci...</value>
+  </data>
+  <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
+    <value>Erişim anahtarı:</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>Yükleme için Albüm ID (Boş = Albüm yok):</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>Direkt link (Adrese "&amp;&amp;download" ekler)</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>Son kullanma:</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>Resimler sayfamı aç...</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>Genel profil sayfasını aç...</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>Yeni albüm adı (2 ve 50 karakter arasında olmalıdır. Harfler, sayılar, alttan çizgi (_), çizgi (-) ve boşluk izin verilen karakterlerdir.</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>Not: Dizin içine gitmek için dizin adına çift tıklayabilirsiniz.</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>Not: Eğer imzanız varsa kullanıcı adı ve şifreye gerek yoktur.</value>
+  </data>
+  <data name="lblDropboxPathTip.Text" xml:space="preserve">
+    <value>"Genel" klasör kullanıyorsanız, paylaşılabilir adres zaten yaratımıştır. "Paylaşılabilir URL oluştur" seçeneğini seçmeniz gerek yoktur.</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>Sözdizimi renklendirme:</value>
+  </data>
+</root>

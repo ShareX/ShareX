@@ -286,7 +286,7 @@
   </data>
   <data name="lblProgressPercentage.Text" xml:space="preserve">
     <value>0%</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblProgressPercentage.Name" xml:space="preserve">
     <value>lblProgressPercentage</value>
   </data>

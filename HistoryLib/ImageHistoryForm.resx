@@ -245,31 +245,31 @@
   </data>
   <data name="tsmiThumbnailSize75.Text" xml:space="preserve">
     <value>75 x 75</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize100.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize100.Text" xml:space="preserve">
     <value>100 x 100</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize150.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize150.Text" xml:space="preserve">
     <value>150 x 150</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize200.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize200.Text" xml:space="preserve">
     <value>200 x 200</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiThumbnailSize250.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
   <data name="tsmiThumbnailSize250.Text" xml:space="preserve">
     <value>250 x 250</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsddbThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
