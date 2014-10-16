@@ -133,7 +133,7 @@
   </data>
   <data name="lblWatermarkOffsetPixel.Text" xml:space="preserve">
     <value>px</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblWatermarkOffsetPixel.Name" xml:space="preserve">
     <value>lblWatermarkOffsetPixel</value>
   </data>

@@ -148,7 +148,7 @@
   </data>
   <data name="cmsQR.Text" xml:space="preserve">
     <value>QR</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
     <value>cmsQR</value>
   </data>
