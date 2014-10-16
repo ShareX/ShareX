@@ -613,17 +613,17 @@ namespace ShareX
         {
             string imageUploader = Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 Program.DefaultTaskSettings.ImageFileDestination.GetDescription() : Program.DefaultTaskSettings.ImageDestination.GetDescription();
-            tsmiImageUploaders.Text = tsmiTrayImageUploaders.Text = "Image uploader: " + imageUploader;
+            tsmiImageUploaders.Text = tsmiTrayImageUploaders.Text = tsmiTrayImageUploaders.Text + ": " + imageUploader;
 
             string textUploader = Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader ?
                 Program.DefaultTaskSettings.TextFileDestination.GetDescription() : Program.DefaultTaskSettings.TextDestination.GetDescription();
-            tsmiTextUploaders.Text = tsmiTrayTextUploaders.Text = "Text uploader: " + textUploader;
+            tsmiTextUploaders.Text = tsmiTrayTextUploaders.Text = tsmiTrayTextUploaders.Text + ": " + textUploader;
 
-            tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = "File uploader: " + Program.DefaultTaskSettings.FileDestination.GetDescription();
+            tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = tsmiTrayFileUploaders.Text + ": " + Program.DefaultTaskSettings.FileDestination.GetDescription();
 
-            tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = "URL shortener: " + Program.DefaultTaskSettings.URLShortenerDestination.GetDescription();
+            tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = tsmiTrayURLShorteners.Text + ": " + Program.DefaultTaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = "URL sharing service: " + Program.DefaultTaskSettings.URLSharingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = tsmiTrayURLSharingServices.Text + ": " + Program.DefaultTaskSettings.URLSharingServiceDestination.GetDescription();
         }
 
         private void AutoCheckUpdate()

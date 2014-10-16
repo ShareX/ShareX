@@ -468,27 +468,27 @@ namespace ShareX
 
         private void UpdateUploaderMenuNames()
         {
-            btnTask.Text = "Task: " + TaskSettings.Job.GetDescription();
+            btnTask.Text = btnTask.Text + ": " + TaskSettings.Job.GetDescription();
 
-            btnAfterCapture.Text = "After capture: " + string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags<AfterCaptureTasks>().
+            btnAfterCapture.Text = btnAfterCapture.Text + ": " + string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags<AfterCaptureTasks>().
                 Select(x => x.GetDescription()).ToArray());
 
-            btnAfterUpload.Text = "After upload: " + string.Join(", ", TaskSettings.AfterUploadJob.GetFlags<AfterUploadTasks>().
+            btnAfterUpload.Text = btnAfterUpload.Text + ": " + string.Join(", ", TaskSettings.AfterUploadJob.GetFlags<AfterUploadTasks>().
                 Select(x => x.GetDescription()).ToArray());
 
             string imageUploader = TaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 TaskSettings.ImageFileDestination.GetDescription() : TaskSettings.ImageDestination.GetDescription();
-            tsmiImageUploaders.Text = "Image uploader: " + imageUploader;
+            tsmiImageUploaders.Text = tsmiImageUploaders.Text + ": " + imageUploader;
 
             string textUploader = TaskSettings.TextDestination == TextDestination.FileUploader ?
                 TaskSettings.TextFileDestination.GetDescription() : TaskSettings.TextDestination.GetDescription();
-            tsmiTextUploaders.Text = "Text uploader: " + textUploader;
+            tsmiTextUploaders.Text = tsmiTextUploaders.Text + ": " + textUploader;
 
-            tsmiFileUploaders.Text = "File uploader: " + TaskSettings.FileDestination.GetDescription();
+            tsmiFileUploaders.Text = tsmiFileUploaders.Text + ": " + TaskSettings.FileDestination.GetDescription();
 
-            tsmiURLShorteners.Text = "URL shortener: " + TaskSettings.URLShortenerDestination.GetDescription();
+            tsmiURLShorteners.Text = tsmiURLShorteners.Text + ": " + TaskSettings.URLShortenerDestination.GetDescription();
 
-            tsmiURLSharingServices.Text = "URL sharing service: " + TaskSettings.URLSharingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = tsmiURLSharingServices.Text + ": " + TaskSettings.URLSharingServiceDestination.GetDescription();
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)
