@@ -88,6 +88,159 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add image effects.
+        /// </summary>
+        public static string AfterCaptureTasks_AddImageEffects {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_AddImageEffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open in image editor.
+        /// </summary>
+        public static string AfterCaptureTasks_AnnotateImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_AnnotateImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file path to clipboard.
+        /// </summary>
+        public static string AfterCaptureTasks_CopyFilePathToClipboard {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_CopyFilePathToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file to clipboard.
+        /// </summary>
+        public static string AfterCaptureTasks_CopyFileToClipboard {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_CopyFileToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy image to clipboard.
+        /// </summary>
+        public static string AfterCaptureTasks_CopyImageToClipboard {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_CopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete file locally.
+        /// </summary>
+        public static string AfterCaptureTasks_DeleteFile {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_DeleteFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Perform actions.
+        /// </summary>
+        public static string AfterCaptureTasks_PerformActions {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_PerformActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save image to file.
+        /// </summary>
+        public static string AfterCaptureTasks_SaveImageToFile {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_SaveImageToFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save image to file as....
+        /// </summary>
+        public static string AfterCaptureTasks_SaveImageToFileWithDialog {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_SaveImageToFileWithDialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save thumbnail image to file.
+        /// </summary>
+        public static string AfterCaptureTasks_SaveThumbnailImageToFile {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_SaveThumbnailImageToFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print image.
+        /// </summary>
+        public static string AfterCaptureTasks_SendImageToPrinter {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_SendImageToPrinter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload image to host.
+        /// </summary>
+        public static string AfterCaptureTasks_UploadImageToHost {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_UploadImageToHost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy URL to clipboard.
+        /// </summary>
+        public static string AfterUploadTasks_CopyURLToClipboard {
+            get {
+                return ResourceManager.GetString("AfterUploadTasks_CopyURLToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open URL.
+        /// </summary>
+        public static string AfterUploadTasks_OpenURL {
+            get {
+                return ResourceManager.GetString("AfterUploadTasks_OpenURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share URL.
+        /// </summary>
+        public static string AfterUploadTasks_ShareURL {
+            get {
+                return ResourceManager.GetString("AfterUploadTasks_ShareURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show QR code window.
+        /// </summary>
+        public static string AfterUploadTasks_ShowQRCode {
+            get {
+                return ResourceManager.GetString("AfterUploadTasks_ShowQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shorten URL.
+        /// </summary>
+        public static string AfterUploadTasks_UseURLShortener {
+            get {
+                return ResourceManager.GetString("AfterUploadTasks_UseURLShortener", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap application_block {

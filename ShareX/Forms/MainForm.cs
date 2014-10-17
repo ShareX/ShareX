@@ -293,11 +293,12 @@ namespace ShareX
 
         private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = Enum.GetValues(typeof(T)).Cast<Enum>().Skip(1).Select(x => x.GetDescription()).ToArray();
+            List<string> enums = Helpers.GetLocalizedEnumDescriptions<T>();
+            enums.RemoveAt(0);
 
             foreach (ToolStripDropDownItem parent in parents)
             {
-                for (int i = 0; i < enums.Length; i++)
+                for (int i = 0; i < enums.Count; i++)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
 

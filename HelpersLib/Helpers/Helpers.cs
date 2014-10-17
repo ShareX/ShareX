@@ -35,6 +35,7 @@ using System.Media;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Resources;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -262,6 +263,30 @@ namespace HelpersLib
         public static string[] GetEnumDescriptions<T>()
         {
             return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetDescription()).ToArray();
+        }
+
+        public static List<string> GetLocalizedEnumDescriptions<T>()
+        {
+            Assembly assembly = Assembly.GetCallingAssembly();
+            string resourcePath = assembly.GetName().Name + ".Properties.Resources";
+            ResourceManager resourceManager = new ResourceManager(resourcePath, assembly);
+            return GetLocalizedEnumDescriptions<T>(resourceManager);
+        }
+
+        public static List<string> GetLocalizedEnumDescriptions<T>(ResourceManager resourceManager)
+        {
+            List<string> result = new List<string>();
+            Type type = typeof(T);
+            string typeName = type.Name;
+
+            foreach (string enumName in Enum.GetNames(type))
+            {
+                string resourceName = typeName + "_" + enumName;
+                string description = resourceManager.GetString(resourceName);
+                result.Add(description);
+            }
+
+            return result;
         }
 
         public static int GetEnumLength<T>()
