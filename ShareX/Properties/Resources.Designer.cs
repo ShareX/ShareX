@@ -61,6 +61,33 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File path can&apos;t be empty..
+        /// </summary>
+        public static string ActionsForm_btnOK_Click_File_path_can_t_be_empty_ {
+            get {
+                return ResourceManager.GetString("ActionsForm_btnOK_Click_File_path_can_t_be_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name can&apos;t be empty..
+        /// </summary>
+        public static string ActionsForm_btnOK_Click_Name_can_t_be_empty_ {
+            get {
+                return ResourceManager.GetString("ActionsForm_btnOK_Click_Name_can_t_be_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose file path.
+        /// </summary>
+        public static string ActionsForm_btnPathBrowse_Click_Choose_file_path {
+            get {
+                return ResourceManager.GetString("ActionsForm_btnPathBrowse_Click_Choose_file_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap application_block {
@@ -141,6 +168,36 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose screenshots folder path.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_f" +
+                        "older_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose ShareX personal folder path.
+        /// </summary>
+        public static string ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_" +
+                        "folder_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX need to be restarted for language changes to apply.
+        ///Would you like to restart ShareX?.
+        /// </summary>
+        public static string ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap arrow_090 {
@@ -161,12 +218,67 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        public static string AutoCaptureForm_Execute_Start {
+            get {
+                return ResourceManager.GetString("AutoCaptureForm_Execute_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        public static string AutoCaptureForm_Execute_Stop {
+            get {
+                return ResourceManager.GetString("AutoCaptureForm_Execute_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0}, Y: {1}, Width: {2}, Height: {3}.
+        /// </summary>
+        public static string AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_ {
+            get {
+                return ResourceManager.GetString("AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timeleft: {0}s ({1}%) Total: {2}.
+        /// </summary>
+        public static string AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_ {
+            get {
+                return ResourceManager.GetString("AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap barcode_2d {
             get {
                 object obj = ResourceManager.GetObject("barcode_2d", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is about to be uploaded to {1}. You may choose a different destination..
+        /// </summary>
+        public static string BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_ {
+            get {
+                return ResourceManager.GetString("BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_cho" +
+                        "ose_a_different_destination_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose a destination..
+        /// </summary>
+        public static string BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ {
+            get {
+                return ResourceManager.GetString("BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_", resourceCulture);
             }
         }
         
@@ -256,6 +368,16 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("clipboard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supported variables: {0} and other variables such as {1} etc..
+        /// </summary>
+        public static string ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_ {
+            get {
+                return ResourceManager.GetString("ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variab" +
+                        "les_such_as__1__etc_", resourceCulture);
             }
         }
         
@@ -360,6 +482,16 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drop
+        ///here.
+        /// </summary>
+        public static string DropForm_DrawDropImage_Drop_here {
+            get {
+                return ResourceManager.GetString("DropForm_DrawDropImage_Drop_here", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap edit_scale {
@@ -376,6 +508,33 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("Ellipse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extension can&apos;t be empty..
+        /// </summary>
+        public static string EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_ {
+            get {
+                return ResourceManager.GetString("EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Path can&apos;t be empty..
+        /// </summary>
+        public static string EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_ {
+            get {
+                return ResourceManager.GetString("EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose encoder path.
+        /// </summary>
+        public static string EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path {
+            get {
+                return ResourceManager.GetString("EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path", resourceCulture);
             }
         }
         
@@ -405,6 +564,15 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("exclamation_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use new name: .
+        /// </summary>
+        public static string FileExistForm_txtNewName_TextChanged_Use_new_name__ {
+            get {
+                return ResourceManager.GetString("FileExistForm_txtNewName_TextChanged_Use_new_name__", resourceCulture);
             }
         }
         
@@ -535,6 +703,55 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hotkey.
+        /// </summary>
+        public static string HotkeyManager_ShowFailedHotkeys_hotkey {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_hotkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotkey registration failed.
+        /// </summary>
+        public static string HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hotkeys.
+        /// </summary>
+        public static string HotkeyManager_ShowFailedHotkeys_hotkeys {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_hotkeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to register {0}:
+        ///
+        ///{1}
+        ///
+        ///Please select a different hotkey or quit the conflicting application and reopen ShareX..
+        /// </summary>
+        public static string HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey {
+            get {
+                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a hotkey....
+        /// </summary>
+        public static string HotkeySelectionControl_StartEditing_Select_a_hotkey___ {
+            get {
+                return ResourceManager.GetString("HotkeySelectionControl_StartEditing_Select_a_hotkey___", resourceCulture);
             }
         }
         
@@ -709,6 +926,79 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to is available.
+        /// </summary>
+        public static string MainForm_CheckUpdate_is_available {
+            get {
+                return ResourceManager.GetString("MainForm_CheckUpdate_is_available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A newer version of ShareX is available.
+        ///Would you like to download and install it?.
+        /// </summary>
+        public static string MainForm_CheckUpdate_Newer_version_available {
+            get {
+                return ResourceManager.GetString("MainForm_CheckUpdate_Newer_version_available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete this file?.
+        /// </summary>
+        public static string MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_ {
+            get {
+                return ResourceManager.GetString("MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File delete confirmation.
+        /// </summary>
+        public static string MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation {
+            get {
+                return ResourceManager.GetString("MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text upload test.
+        /// </summary>
+        public static string MainForm_tsmiTestTextUpload_Click_Text_upload_test {
+            get {
+                return ResourceManager.GetString("MainForm_tsmiTestTextUpload_Click_Text_upload_test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide menu.
+        /// </summary>
+        public static string MainForm_UpdateMenu_Hide_menu {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateMenu_Hide_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show menu.
+        /// </summary>
+        public static string MainForm_UpdateMenu_Show_menu {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateMenu_Show_menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can add workflows from hotkey settings....
+        /// </summary>
+        public static string MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___ {
+            get {
+                return ResourceManager.GetString("MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap monitor {
@@ -789,6 +1079,34 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Program_Run_Error {
+            get {
+                return ResourceManager.GetString("Program_Run_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to create folder:.
+        /// </summary>
+        public static string Program_Run_Unable_to_create_folder_ {
+            get {
+                return ResourceManager.GetString("Program_Run_Unable_to_create_folder_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t access to &quot;{0}&quot; file.
+        ///Please run ShareX as administrator to change personal folder path..
+        /// </summary>
+        public static string Program_WritePersonalPathConfig_Cant_access_to_file {
+            get {
+                return ResourceManager.GetString("Program_WritePersonalPathConfig_Cant_access_to_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Rectangle {
@@ -819,6 +1137,144 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cursor position (X, Y) = {0}, {1}.
+        /// </summary>
+        public static string ScreenColorPicker_btnCopyAll_Click_Cursor_position {
+            get {
+                return ResourceManager.GetString("ScreenColorPicker_btnCopyAll_Click_Cursor_position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string ScreenColorPicker_ScreenColorPicker_Close {
+            get {
+                return ResourceManager.GetString("ScreenColorPicker_ScreenColorPicker_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start screen color picker.
+        /// </summary>
+        public static string ScreenColorPicker_UpdateControls_Start_screen_color_picker {
+            get {
+                return ResourceManager.GetString("ScreenColorPicker_UpdateControls_Start_screen_color_picker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop screen color picker.
+        /// </summary>
+        public static string ScreenColorPicker_UpdateControls_Stop_screen_color_picker {
+            get {
+                return ResourceManager.GetString("ScreenColorPicker_UpdateControls_Stop_screen_color_picker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download of FFmpeg failed..
+        /// </summary>
+        public static string ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg successfully downloaded..
+        /// </summary>
+        public static string ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CLI video encoder file does not exist: .
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click tray icon to stop recording..
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} does not exist.
+        ///
+        ///Would you like to automatically download it?.
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_does_not_exist {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_does_not_exist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encoding....
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_Encoding___ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Encoding___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg error.
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_FFmpeg_error {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_FFmpeg_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg video and audio source both can&apos;t be &quot;None&quot;..
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None" +
+                        "__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing.
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_Missing {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no valid CLI video encoder selected..
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting....
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_Waiting___ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Waiting___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap steam {
@@ -834,6 +1290,150 @@ namespace ShareX.Properties {
         public static System.IO.UnmanagedMemoryStream TaskCompletedSound {
             get {
                 return ResourceManager.GetStream("TaskCompletedSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tweet successfully sent..
+        /// </summary>
+        public static string TaskHelpers_TweetMessage_Tweet_successfully_sent_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_TweetMessage_Tweet_successfully_sent_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In queue.
+        /// </summary>
+        public static string TaskManager_CreateListViewItem_In_queue {
+            get {
+                return ResourceManager.GetString("TaskManager_CreateListViewItem_In_queue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string TaskManager_task_UploadCompleted_Error {
+            get {
+                return ResourceManager.GetString("TaskManager_task_UploadCompleted_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task completed.
+        /// </summary>
+        public static string TaskManager_task_UploadCompleted_ShareX___Task_completed {
+            get {
+                return ResourceManager.GetString("TaskManager_task_UploadCompleted_ShareX___Task_completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure CLI video encoders ---&gt;.
+        /// </summary>
+        public static string TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview:.
+        /// </summary>
+        public static string TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After capture: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After upload: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File uploader: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image uploader: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_Task___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Task___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text uploader: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL sharing service: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL shortener: {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task settings.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateWindowTitle_Task_settings {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateWindowTitle_Task_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task settings for {0}.
+        /// </summary>
+        public static string TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_ {
+            get {
+                return ResourceManager.GetString("TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_", resourceCulture);
             }
         }
         
@@ -904,6 +1504,197 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("upload_cloud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload errors.
+        /// </summary>
+        public static string UploadInfoManager_ShowErrors_Upload_errors {
+            get {
+                return ResourceManager.GetString("UploadInfoManager_ShowErrors_Upload_errors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download failed:
+        ///{0}.
+        /// </summary>
+        public static string UploadManager_DownloadAndUploadFile_Download_failed {
+            get {
+                return ResourceManager.GetString("UploadManager_DownloadAndUploadFile_Download_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to upload {0} files?.
+        /// </summary>
+        public static string UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_ {
+            get {
+                return ResourceManager.GetString("UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t show this message again..
+        /// </summary>
+        public static string UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_ {
+            get {
+                return ResourceManager.GetString("UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload files.
+        /// </summary>
+        public static string UploadManager_IsUploadConfirmed_Upload_files {
+            get {
+                return ResourceManager.GetString("UploadManager_IsUploadConfirmed_Upload_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File upload.
+        /// </summary>
+        public static string UploadManager_UploadFile_File_upload {
+            get {
+                return ResourceManager.GetString("UploadManager_UploadFile_File_upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder upload.
+        /// </summary>
+        public static string UploadManager_UploadFolder_Folder_upload {
+            get {
+                return ResourceManager.GetString("UploadManager_UploadFolder_Folder_upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL to download from and upload.
+        /// </summary>
+        public static string UploadManager_UploadURL_URL_to_download_from_and_upload {
+            get {
+                return ResourceManager.GetString("UploadManager_UploadURL_URL_to_download_from_and_upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share URL ({0}).
+        /// </summary>
+        public static string UploadTask_CreateShareURLTask_Share_URL___0__ {
+            get {
+                return ResourceManager.GetString("UploadTask_CreateShareURLTask_Share_URL___0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shorten URL ({0}).
+        /// </summary>
+        public static string UploadTask_CreateURLShortenerTask_Shorten_URL___0__ {
+            get {
+                return ResourceManager.GetString("UploadTask_CreateURLShortenerTask_Shorten_URL___0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a folder to save.
+        /// </summary>
+        public static string UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save {
+            get {
+                return ResourceManager.GetString("UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First time upload warning.
+        /// </summary>
+        public static string UploadTask_DoUploadJob_First_time_upload_warning {
+            get {
+                return ResourceManager.GetString("UploadTask_DoUploadJob_First_time_upload_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to upload screenshot?
+        ///You can press &apos;No&apos; for cancel current upload and disable auto uploading screenshots..
+        /// </summary>
+        public static string UploadTask_DoUploadJob_First_time_upload_warning_text {
+            get {
+                return ResourceManager.GetString("UploadTask_DoUploadJob_First_time_upload_warning_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading.
+        /// </summary>
+        public static string UploadTask_DoUploadJob_Uploading {
+            get {
+                return ResourceManager.GetString("UploadTask_DoUploadJob_Uploading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string UploadTask_OnUploadCompleted_Done {
+            get {
+                return ResourceManager.GetString("UploadTask_OnUploadCompleted_Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopped.
+        /// </summary>
+        public static string UploadTask_OnUploadCompleted_Stopped {
+            get {
+                return ResourceManager.GetString("UploadTask_OnUploadCompleted_Stopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preparing.
+        /// </summary>
+        public static string UploadTask_Prepare_Preparing {
+            get {
+                return ResourceManager.GetString("UploadTask_Prepare_Preparing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting.
+        /// </summary>
+        public static string UploadTask_Prepare_Starting {
+            get {
+                return ResourceManager.GetString("UploadTask_Prepare_Starting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopping.
+        /// </summary>
+        public static string UploadTask_Stop_Stopping {
+            get {
+                return ResourceManager.GetString("UploadTask_Stop_Stopping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL is empty..
+        /// </summary>
+        public static string UploadTask_ThreadDoWork_URL_is_empty_ {
+            get {
+                return ResourceManager.GetString("UploadTask_ThreadDoWork_URL_is_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose folder path.
+        /// </summary>
+        public static string WatchFolderForm_btnPathBrowse_Click_Choose_folder_path {
+            get {
+                return ResourceManager.GetString("WatchFolderForm_btnPathBrowse_Click_Choose_folder_path", resourceCulture);
             }
         }
         

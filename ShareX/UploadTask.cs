@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -146,7 +147,7 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.ShortenURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = "Shorten URL (" + taskSettings.URLShortenerDestination.GetDescription() + ")";
+            task.Info.FileName = string.Format(Resources.UploadTask_CreateURLShortenerTask_Shorten_URL___0__, taskSettings.URLShortenerDestination.GetDescription());
             task.Info.Result.URL = url;
             return task;
         }
@@ -156,7 +157,7 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.ShareURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = "Share URL (" + taskSettings.URLSharingServiceDestination.GetDescription() + ")";
+            task.Info.FileName = string.Format(Resources.UploadTask_CreateShareURLTask_Share_URL___0__, taskSettings.URLSharingServiceDestination.GetDescription());
             task.Info.Result.URL = url;
             return task;
         }
@@ -217,10 +218,10 @@ namespace ShareX
             {
                 case TaskJob.Job:
                 case TaskJob.TextUpload:
-                    Info.Status = "Preparing";
+                    Info.Status = Resources.UploadTask_Prepare_Preparing;
                     break;
                 default:
-                    Info.Status = "Starting";
+                    Info.Status = Resources.UploadTask_Prepare_Starting;
                     break;
             }
 
@@ -242,7 +243,7 @@ namespace ShareX
                 case TaskStatus.Working:
                     if (uploader != null) uploader.StopUpload();
                     Status = TaskStatus.Stopping;
-                    Info.Status = "Stopping";
+                    Info.Status = Resources.UploadTask_Stop_Stopping;
                     OnStatusChanged();
                     break;
             }
@@ -275,7 +276,7 @@ namespace ShareX
             {
                 if (string.IsNullOrEmpty(Info.Result.URL))
                 {
-                    Info.Result.Errors.Add("URL is empty.");
+                    Info.Result.Errors.Add(Resources.UploadTask_ThreadDoWork_URL_is_empty_);
                 }
                 else
                 {
@@ -291,8 +292,8 @@ namespace ShareX
             if (Info.IsUploadJob)
             {
                 if (Program.Settings.ShowUploadWarning && MessageBox.Show(
-                    "Are you sure you want to upload screenshot?\r\nYou can press 'No' for cancel current upload and disable auto uploading screenshots.",
-                    "ShareX - First time upload warning",
+                    Resources.UploadTask_DoUploadJob_First_time_upload_warning_text,
+                    "ShareX - " + Resources.UploadTask_DoUploadJob_First_time_upload_warning,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     Program.Settings.ShowUploadWarning = false;
@@ -310,7 +311,7 @@ namespace ShareX
                     }
 
                     Status = TaskStatus.Working;
-                    Info.Status = "Uploading";
+                    Info.Status = Resources.UploadTask_DoUploadJob_Uploading;
 
                     TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.Normal);
 
@@ -503,7 +504,7 @@ namespace ShareX
                             sfd.FileName = Info.FileName;
                             sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
                             sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
-                            sfd.Title = "Choose a folder to save " + Path.GetFileName(Info.FileName);
+                            sfd.Title = Resources.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
 
                             if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                             {
@@ -1209,11 +1210,11 @@ namespace ShareX
 
             if (StopRequested)
             {
-                Info.Status = "Stopped";
+                Info.Status = Resources.UploadTask_OnUploadCompleted_Stopped;
             }
             else
             {
-                Info.Status = "Done";
+                Info.Status = Resources.UploadTask_OnUploadCompleted_Done;
             }
 
             if (UploadCompleted != null)

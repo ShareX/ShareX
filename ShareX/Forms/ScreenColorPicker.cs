@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -40,7 +41,7 @@ namespace ShareX
         {
             InitializeComponent();
             btnOK.Visible = false;
-            btnCancel.Text = "Close";
+            btnCancel.Text = Resources.ScreenColorPicker_ScreenColorPicker_Close;
             colorPicker.DrawCrosshair = true;
             colorTimer.Tick += colorTimer_Tick;
 
@@ -92,11 +93,11 @@ namespace ShareX
 
             if (colorTimerEnable)
             {
-                btnColorPicker.Text = "Stop screen color picker";
+                btnColorPicker.Text = Resources.ScreenColorPicker_UpdateControls_Stop_screen_color_picker;
             }
             else
             {
-                btnColorPicker.Text = "Start screen color picker";
+                btnColorPicker.Text = Resources.ScreenColorPicker_UpdateControls_Start_screen_color_picker;
             }
 
             lblScreenColorPickerTip.Visible = colorTimerEnable;
@@ -135,7 +136,7 @@ namespace ShareX
         private void btnCopyAll_Click(object sender, EventArgs e)
         {
             string colors = colorPicker.SelectedColor.ToString();
-            colors += string.Format("\r\nCursor position (X, Y) = {0}, {1}", txtX.Text, txtY.Text);
+            colors += "\r\n" + string.Format(Resources.ScreenColorPicker_btnCopyAll_Click_Cursor_position, txtX.Text, txtY.Text);
             ClipboardHelpers.CopyText(colors);
         }
 

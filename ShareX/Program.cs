@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using SingleInstanceApplication;
 using System;
 using System.Diagnostics;
@@ -305,7 +306,8 @@ namespace ShareX
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show("Unable to create folder: \"" + PersonalPath + "\"\r\n\r\n" + e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalPath, e.ToString()),
+                            "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
                 }
@@ -484,8 +486,8 @@ namespace ShareX
                     }
                     catch (UnauthorizedAccessException)
                     {
-                        MessageBox.Show("Can't access to \"" + PersonalPathConfig + "\" file.\r\nPlease run ShareX as administrator to change personal folder path.", "ShareX",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(string.Format(Resources.Program_WritePersonalPathConfig_Cant_access_to_file, PersonalPathConfig),
+                            "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }

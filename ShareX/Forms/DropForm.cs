@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -87,7 +88,7 @@ namespace ShareX
                     g.DrawRectangleProper(pen, rect.Offset(-1));
                 }
 
-                string text = "Drop\nhere";
+                string text = Resources.DropForm_DrawDropImage_Drop_here;
 
                 using (Font font = new Font("Arial", 20, FontStyle.Bold))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })

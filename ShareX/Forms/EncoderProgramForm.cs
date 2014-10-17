@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -51,20 +52,20 @@ namespace ShareX
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("ShareX - Choose encoder path", txtPath);
+            Helpers.BrowseFile("ShareX - " + Resources.EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path, txtPath);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtPath.Text))
             {
-                MessageBox.Show("Path can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (string.IsNullOrEmpty(txtExtension.Text))
             {
-                MessageBox.Show("Extension can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

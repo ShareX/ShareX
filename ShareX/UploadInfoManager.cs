@@ -25,6 +25,7 @@
 
 using HelpersLib;
 using Microsoft.VisualBasic.FileIO;
+using ShareX.Properties;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -270,7 +271,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(errors))
                 {
-                    using (ErrorForm form = new ErrorForm("Upload errors", errors, Program.LogsFilePath, Links.URL_ISSUES))
+                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES))
                     {
                         form.ShowDialog();
                     }

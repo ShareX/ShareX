@@ -25,6 +25,7 @@
 
 using HelpersLib;
 using ScreenCaptureLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -179,7 +180,7 @@ namespace ShareX
 
             if (loaded && LanguageHelper.ChangeLanguage(Program.Settings.Language))
             {
-                if (MessageBox.Show("ShareX need to be reopened for language changes to apply.\r\nWould you like to restart ShareX?",
+                if (MessageBox.Show(Resources.ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart,
                     "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Program.Restart();
@@ -265,7 +266,7 @@ namespace ShareX
 
         private void btnBrowsePersonalFolderPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder("Choose ShareX personal folder path", txtPersonalFolderPath, Program.PersonalPath);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path, txtPersonalFolderPath, Program.PersonalPath);
         }
 
         private void btnOpenPersonalFolder_Click(object sender, EventArgs e)
@@ -287,7 +288,7 @@ namespace ShareX
 
         private void btnBrowseCustomScreenshotsPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder("Choose screenshots folder path", txtCustomScreenshotsPath, Program.PersonalPath);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path, txtCustomScreenshotsPath, Program.PersonalPath);
         }
 
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)

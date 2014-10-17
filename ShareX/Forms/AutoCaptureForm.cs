@@ -134,7 +134,7 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                lblRegion.Text = string.Format("X: {0}, Y: {1}, Width: {2}, Height: {3}", rect.X, rect.Y, rect.Width, rect.Height);
+                lblRegion.Text = string.Format(Resources.AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_, rect.X, rect.Y, rect.Width, rect.Height);
                 btnExecute.Enabled = true;
             }
         }
@@ -147,7 +147,7 @@ namespace ShareX
                 percentage = (int)(100 - (double)timeleft / delay * 100);
                 tspbBar.Value = percentage;
                 string secondsLeft = (timeleft / 1000f).ToString("0.0");
-                tsslStatus.Text = " Timeleft: " + secondsLeft + "s (" + percentage + "%) Total: " + count;
+                tsslStatus.Text = " " + string.Format(Resources.AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_, secondsLeft, percentage, count);
             }
         }
 
@@ -158,12 +158,12 @@ namespace ShareX
                 IsRunning = false;
                 tspbBar.Value = 0;
                 stopwatch.Reset();
-                btnExecute.Text = "Start";
+                btnExecute.Text = Resources.AutoCaptureForm_Execute_Start;
             }
             else
             {
                 IsRunning = true;
-                btnExecute.Text = "Stop";
+                btnExecute.Text = Resources.AutoCaptureForm_Execute_Stop;
                 screenshotTimer.Interval = 1000;
                 delay = (int)(Program.Settings.AutoCaptureRepeatTime * 1000);
                 waitUploads = Program.Settings.AutoCaptureWaitUpload;

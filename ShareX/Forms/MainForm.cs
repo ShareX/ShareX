@@ -205,7 +205,7 @@ namespace ShareX
                 tsddbWorkflows.DropDownItems.Add(tss);
             }
 
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("You can add workflows from hotkey settings...");
+            ToolStripMenuItem tsmi = new ToolStripMenuItem(Resources.MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___);
             tsmi.Click += tsbHotkeySettings_Click;
             tsddbWorkflows.DropDownItems.Add(tsmi);
 
@@ -613,17 +613,20 @@ namespace ShareX
         {
             string imageUploader = Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 Program.DefaultTaskSettings.ImageFileDestination.GetDescription() : Program.DefaultTaskSettings.ImageDestination.GetDescription();
-            tsmiImageUploaders.Text = tsmiTrayImageUploaders.Text = "Image uploader: " + imageUploader;
+            tsmiImageUploaders.Text = tsmiTrayImageUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_, imageUploader);
 
             string textUploader = Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader ?
                 Program.DefaultTaskSettings.TextFileDestination.GetDescription() : Program.DefaultTaskSettings.TextDestination.GetDescription();
-            tsmiTextUploaders.Text = tsmiTrayTextUploaders.Text = "Text uploader: " + textUploader;
+            tsmiTextUploaders.Text = tsmiTrayTextUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_, textUploader);
 
-            tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = "File uploader: " + Program.DefaultTaskSettings.FileDestination.GetDescription();
+            tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
+                Program.DefaultTaskSettings.FileDestination.GetDescription());
 
-            tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = "URL shortener: " + Program.DefaultTaskSettings.URLShortenerDestination.GetDescription();
+            tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
+                Program.DefaultTaskSettings.URLShortenerDestination.GetDescription());
 
-            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = "URL sharing service: " + Program.DefaultTaskSettings.URLSharingServiceDestination.GetDescription();
+            tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
+                Program.DefaultTaskSettings.URLSharingServiceDestination.GetDescription());
         }
 
         private void AutoCheckUpdate()
@@ -641,8 +644,8 @@ namespace ShareX
             UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
 
             if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable &&
-                MessageBox.Show("A newer version of ShareX is available.\r\nWould you like to download and install it?",
-                string.Format("ShareX {0} is available", updateChecker.LatestVersion.ToString()),
+                MessageBox.Show(Resources.MainForm_CheckUpdate_Newer_version_available,
+                string.Format("ShareX {0} ", updateChecker.LatestVersion) + Resources.MainForm_CheckUpdate_is_available,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
@@ -731,11 +734,11 @@ namespace ShareX
         {
             if (Program.Settings.ShowMenu)
             {
-                tsmiHideMenu.Text = "Hide menu";
+                tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Hide_menu;
             }
             else
             {
-                tsmiHideMenu.Text = "Show menu";
+                tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Show_menu;
             }
 
             tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
@@ -912,7 +915,7 @@ namespace ShareX
 
         private void tsmiTestTextUpload_Click(object sender, EventArgs e)
         {
-            UploadManager.UploadText("Text upload test");
+            UploadManager.UploadText(Resources.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
         }
 
         private void tsmiTestFileUpload_Click(object sender, EventArgs e)
@@ -1017,7 +1020,6 @@ namespace ShareX
         {
             HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath);
             Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
-            historyForm.Text = "ShareX - History: " + Program.HistoryFilePath;
             historyForm.Show();
         }
 
@@ -1026,7 +1028,6 @@ namespace ShareX
             ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
                 Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
             Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
-            imageHistoryForm.Text = "ShareX - Image history: " + Program.HistoryFilePath;
             imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
             imageHistoryForm.Show();
         }
@@ -1315,7 +1316,8 @@ namespace ShareX
 
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete this file?", "ShareX - File delete confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                "ShareX - " + Resources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 uim.DeleteFile();
                 RemoveSelectedItems();

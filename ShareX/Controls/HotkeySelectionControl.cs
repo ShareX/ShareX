@@ -183,7 +183,7 @@ namespace ShareX
             Program.HotkeyManager.IgnoreHotkeys = true;
 
             btnHotkey.BackColor = Color.FromArgb(225, 255, 225);
-            btnHotkey.Text = "Select a hotkey...";
+            btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
 
             Setting.HotkeyInfo.Hotkey = Keys.None;
             Setting.HotkeyInfo.Win = false;

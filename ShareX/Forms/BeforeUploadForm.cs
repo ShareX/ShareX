@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -39,7 +40,8 @@ namespace ShareX
 
             ucBeforeUpload.InitCompleted += (currentDestination) =>
             {
-                string title = string.IsNullOrEmpty(currentDestination) ? "Please choose a destination." : "{0} is about to be uploaded to {1}. You may choose a different destination.";
+                string title = string.IsNullOrEmpty(currentDestination) ? Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ :
+                    Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_;
                 lblTitle.Text = string.Format(title, info.FileName, currentDestination);
             };
             ucBeforeUpload.Init(info);

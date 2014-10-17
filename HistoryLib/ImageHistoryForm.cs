@@ -75,6 +75,7 @@ namespace HistoryLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            Text = "ShareX - Image history: " + historyPath;
 
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -49,7 +50,7 @@ namespace ShareX
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder("ShareX - Choose folder path", txtFolderPath);
+            Helpers.BrowseFolder("ShareX - " + Resources.WatchFolderForm_btnPathBrowse_Click_Choose_folder_path, txtFolderPath);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

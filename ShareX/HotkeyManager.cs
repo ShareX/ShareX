@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -151,10 +152,10 @@ namespace ShareX
             if (failedHotkeysList.Count() > 0)
             {
                 string failedHotkeys = string.Join("\r\n", failedHotkeysList.Select(x => x.TaskSettings.ToString() + ": " + x.HotkeyInfo.ToString()).ToArray());
-                string text = string.Format("Unable to register hotkey{0}:\r\n\r\n{1}\r\n\r\nPlease select a different hotkey or quit the conflicting application and reopen ShareX.",
-                    failedHotkeysList.Count() > 1 ? "s" : "", failedHotkeys);
+                string hotkeyText = failedHotkeysList.Count() > 1 ? Resources.HotkeyManager_ShowFailedHotkeys_hotkeys : Resources.HotkeyManager_ShowFailedHotkeys_hotkey;
+                string text = string.Format(Resources.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
 
-                MessageBox.Show(text, "ShareX - Hotkey registration failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(text, "ShareX - " + Resources.HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

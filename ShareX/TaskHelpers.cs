@@ -26,6 +26,7 @@
 using HelpersLib;
 using ImageEffectsLib;
 using ScreenCaptureLib;
+using ShareX.Properties;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -608,7 +609,7 @@ namespace ShareX
                             if (Program.MainForm.niTray.Visible)
                             {
                                 Program.MainForm.niTray.Tag = null;
-                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", "Tweet successfully sent.", ToolTipIcon.Info);
+                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
                             }
                         }
                     }

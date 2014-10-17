@@ -161,7 +161,7 @@ namespace ShareX
                 ListViewItem lvi = new ListViewItem();
                 lvi.Tag = task;
                 lvi.Text = info.FileName;
-                lvi.SubItems.Add("In queue");
+                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
@@ -257,7 +257,7 @@ namespace ShareX
 
                             if (lvi != null)
                             {
-                                lvi.SubItems[1].Text = "Error";
+                                lvi.SubItems[1].Text = Resources.TaskManager_task_UploadCompleted_Error;
                                 lvi.SubItems[6].Text = string.Empty;
                                 lvi.ImageIndex = 1;
                             }
@@ -317,7 +317,8 @@ namespace ShareX
                                                 if (Program.MainForm.niTray.Visible)
                                                 {
                                                     Program.MainForm.niTray.Tag = result;
-                                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", result, ToolTipIcon.Info);
+                                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
+                                                        result, ToolTipIcon.Info);
                                                 }
                                                 break;
                                             case PopUpNotificationType.ToastNotification:
@@ -325,7 +326,7 @@ namespace ShareX
                                                 {
                                                     Action = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
                                                     FilePath = info.FilePath,
-                                                    Text = "ShareX - Task completed\r\n" + result,
+                                                    Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };
                                                 NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),

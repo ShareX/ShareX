@@ -25,6 +25,7 @@
 
 using HelpersLib;
 using IndexerLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -76,8 +77,9 @@ namespace ShareX
         {
             if (Program.Settings.ShowMultiUploadWarning)
             {
-                using (MyMessageBox msgbox = new MyMessageBox("Are you sure you want to upload " + length + " files?", "ShareX - Upload files",
-                    MessageBoxButtons.YesNo, "Don't show this message again."))
+                using (MyMessageBox msgbox = new MyMessageBox(string.Format(Resources.UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_, length),
+                    "ShareX - " + Resources.UploadManager_IsUploadConfirmed_Upload_files,
+                    MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
                 {
                     msgbox.ShowDialog();
                     Program.Settings.ShowMultiUploadWarning = !msgbox.IsChecked;
@@ -92,7 +94,7 @@ namespace ShareX
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Title = "ShareX - File upload";
+                ofd.Title = "ShareX - " + Resources.UploadManager_UploadFile_File_upload;
 
                 if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
                 {
@@ -121,7 +123,7 @@ namespace ShareX
         {
             using (FolderSelectDialog folderDialog = new FolderSelectDialog())
             {
-                folderDialog.Title = "ShareX - Folder upload";
+                folderDialog.Title = "ShareX - " + Resources.UploadManager_UploadFolder_Folder_upload;
 
                 if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
                 {
@@ -294,7 +296,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            string url = InputBox.GetInputText("ShareX - URL to download from and upload");
+            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_UploadURL_URL_to_download_from_and_upload);
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -441,7 +443,7 @@ namespace ShareX
                         catch (Exception e)
                         {
                             DebugHelper.WriteException(e);
-                            MessageBox.Show("Download failed:\r\n" + e.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 },

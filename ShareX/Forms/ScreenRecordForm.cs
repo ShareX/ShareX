@@ -78,12 +78,14 @@ namespace ShareX
             {
                 if (!Program.Settings.VideoEncoders.IsValidIndex(taskSettings.CaptureSettings.VideoEncoderSelected))
                 {
-                    MessageBox.Show("There is no valid CLI video encoder selected.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_,
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (!Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
                 {
-                    MessageBox.Show("CLI video encoder file does not exist: " + Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].Path,
+                    MessageBox.Show(Resources.ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__ +
+                        Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].Path,
                         Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -95,8 +97,8 @@ namespace ShareX
                 {
                     string ffmpegText = string.IsNullOrEmpty(taskSettings.CaptureSettings.FFmpegOptions.CLIPath) ? "ffmpeg.exe" : taskSettings.CaptureSettings.FFmpegOptions.CLIPath;
 
-                    if (MessageBox.Show(ffmpegText + " does not exist." + Environment.NewLine + Environment.NewLine + "Would you like to automatically download it?",
-                        Application.ProductName + " - Missing ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
+                        "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         if (FFmpegHelper.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
                         {
@@ -112,7 +114,8 @@ namespace ShareX
 
                 if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
                 {
-                    MessageBox.Show("FFmpeg video and audio source both can't be \"None\".", Application.ProductName + " - FFmpeg error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__,
+                        "ShareX - " + Resources.ScreenRecordForm_StartRecording_FFmpeg_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -129,7 +132,7 @@ namespace ShareX
             IsRecording = true;
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
 
-            TrayIcon.Text = "ShareX - Waiting...";
+            TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
             TrayIcon.Icon = Resources.control_record_yellow.ToIcon();
             TrayIcon.Visible = true;
 
@@ -182,7 +185,7 @@ namespace ShareX
                         Thread.Sleep(delay);
                     }
 
-                    TrayIcon.Text = "ShareX - Click tray icon to stop recording.";
+                    TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
                     TrayIcon.Icon = Resources.control_record.ToIcon();
 
                     if (regionForm != null)
@@ -210,7 +213,7 @@ namespace ShareX
                 {
                     if (screenRecorder != null)
                     {
-                        TrayIcon.Text = "ShareX - Encoding...";
+                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
 
                         string sourceFilePath = path;
@@ -275,11 +278,11 @@ namespace ShareX
 
             if (result)
             {
-                MessageBox.Show("FFmpeg successfully downloaded.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Download of FFmpeg failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

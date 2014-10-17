@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -77,7 +78,7 @@ namespace ShareX
         {
             string newFilename = txtNewName.Text;
             btnNewName.Enabled = !string.IsNullOrEmpty(newFilename) && !newFilename.Equals(filename, StringComparison.InvariantCultureIgnoreCase);
-            btnNewName.Text = "Use new name: " + GetNewFilename();
+            btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFilename();
         }
 
         private void btnOverwrite_Click(object sender, EventArgs e)
