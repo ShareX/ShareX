@@ -101,6 +101,15 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse for a certificate file....
+        /// </summary>
+        internal static string CertFileNameEditor_EditValue_Browse_for_a_certificate_file___ {
+            get {
+                return ResourceManager.GetString("CertFileNameEditor_EditValue_Browse_for_a_certificate_file___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Chevereto {
@@ -248,6 +257,33 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connecting to {0}.
+        /// </summary>
+        internal static string FTPClientForm_FTPClientForm_Connecting_to__0_ {
+            get {
+                return ResourceManager.GetString("FTPClientForm_FTPClientForm_Connecting_to__0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX FTP client.
+        /// </summary>
+        internal static string FTPClientForm_FTPClientForm_ShareX_FTP_client {
+            get {
+                return ResourceManager.GetString("FTPClientForm_FTPClientForm_ShareX_FTP_client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directory name to create.
+        /// </summary>
+        internal static string FTPClientForm_FTPCreateDirectory_Directory_name_to_create {
+            get {
+                return ResourceManager.GetString("FTPClientForm_FTPCreateDirectory_Directory_name_to_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Gett {
@@ -357,6 +393,15 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse for a key file....
+        /// </summary>
+        internal static string KeyFileNameEditor_EditValue_Browse_for_a_key_file___ {
+            get {
+                return ResourceManager.GetString("KeyFileNameEditor_EditValue_Browse_for_a_key_file___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap mail {
@@ -430,6 +475,15 @@ namespace UploadersLib.Properties {
         internal static string OAuthControl_Status_Status__Not_logged_in_ {
             get {
                 return ResourceManager.GetString("OAuthControl_Status_Status__Not_logged_in_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New account.
+        /// </summary>
+        internal static string OAuthInfo_OAuthInfo_New_account {
+            get {
+                return ResourceManager.GetString("OAuthInfo_OAuthInfo_New_account", resourceCulture);
             }
         }
         

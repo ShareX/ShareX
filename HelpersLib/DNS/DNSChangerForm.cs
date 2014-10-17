@@ -133,7 +133,7 @@ namespace HelpersLib
                 TaskEx.Run(() =>
                 {
                     PingResult pingResult = PingHelper.PingHost(ip);
-                    MessageBox.Show(pingResult.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(pingResult.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 },
                 () =>
                 {

@@ -24,14 +24,12 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
 namespace HelpersLib
 {
-    [Localizable(false)]
     public static partial class NativeMethods
     {
         #region Delegates

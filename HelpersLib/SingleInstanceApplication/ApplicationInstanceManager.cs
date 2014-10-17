@@ -73,7 +73,7 @@ namespace SingleInstanceApplication
         {
             try
             {
-                return CreateSingleInstance(Application.ProductName, callback, args);
+                return CreateSingleInstance("ShareX", callback, args);
             }
             catch
             {

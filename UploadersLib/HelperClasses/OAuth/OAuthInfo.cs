@@ -25,6 +25,7 @@
 
 using System;
 using System.ComponentModel;
+using UploadersLib.Properties;
 
 namespace UploadersLib.HelperClasses
 {
@@ -72,7 +73,7 @@ namespace UploadersLib.HelperClasses
 
         public OAuthInfo()
         {
-            Description = "New account";
+            Description = Resources.OAuthInfo_OAuthInfo_New_account;
             OAuthVersion = "1.0";
         }
 

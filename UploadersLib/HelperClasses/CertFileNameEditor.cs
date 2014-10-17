@@ -27,6 +27,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using UploadersLib.Properties;
 
 namespace UploadersLib.HelperClasses
 {
@@ -40,7 +41,7 @@ namespace UploadersLib.HelperClasses
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = "Browse for a certificate file...";
+                dlg.Title = Resources.CertFileNameEditor_EditValue_Browse_for_a_certificate_file___;
                 dlg.Filter = "Certification (*.cer)|*.cer";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

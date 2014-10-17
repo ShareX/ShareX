@@ -460,7 +460,7 @@ namespace UploadersLib
         - Consumer Name: {1}
         - Public Key (without quotes): '{3}'
 
-- You can now authenticate to Jira", Links.URL_WEBSITE, Application.ProductName, APIKeys.JiraConsumerKey, Jira.PublicKey);
+- You can now authenticate to Jira", Links.URL_WEBSITE, "ShareX", APIKeys.JiraConsumerKey, Jira.PublicKey);
 
             if (OAuthInfo.CheckOAuth(Config.JiraOAuthInfo))
             {
@@ -664,11 +664,11 @@ namespace UploadersLib
             {
                 if (imageShackUploader.GetAccessToken())
                 {
-                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -740,11 +740,11 @@ namespace UploadersLib
                     if (!string.IsNullOrEmpty(registrationCode))
                     {
                         Config.TinyPicRegistrationCode = registrationCode;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -1607,7 +1607,7 @@ namespace UploadersLib
 
         private void oAuthJira_RefreshButtonClicked()
         {
-            MessageBox.Show(Resources.UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Resources.UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion Jira

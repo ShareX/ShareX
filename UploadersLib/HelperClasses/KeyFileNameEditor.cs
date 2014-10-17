@@ -27,6 +27,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using UploadersLib.Properties;
 
 namespace UploadersLib.HelperClasses
 {
@@ -40,7 +41,7 @@ namespace UploadersLib.HelperClasses
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = "Browse for a key File...";
+                dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
                 dlg.Filter = "Keyfile (*.*)|*.*";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

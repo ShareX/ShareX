@@ -751,7 +751,7 @@ namespace ShareX
                     catch (Exception ex)
                     {
                         TaskSettings.CaptureSettings.AVIOptions.CompressOptions = new AVICOMPRESSOPTIONS();
-                        MessageBox.Show(ex.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
                 case ScreenRecordOutput.FFmpeg:

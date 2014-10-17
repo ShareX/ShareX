@@ -95,7 +95,7 @@ namespace HelpersLib
         private static string GetShortcutPath(Environment.SpecialFolder specialFolder)
         {
             string folderPath = Environment.GetFolderPath(specialFolder);
-            string shortcutPath = Path.Combine(folderPath, Application.ProductName);
+            string shortcutPath = Path.Combine(folderPath, "ShareX");
 
             if (!Path.GetExtension(shortcutPath).Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
             {

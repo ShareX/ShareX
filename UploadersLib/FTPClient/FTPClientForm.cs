@@ -32,6 +32,7 @@ using System.Linq;
 using System.Net.FtpClient;
 using System.Windows.Forms;
 using UploadersLib.FileUploaders;
+using UploadersLib.Properties;
 
 namespace UploadersLib
 {
@@ -60,8 +61,8 @@ namespace UploadersLib
             Client = new FTP(account);
 
             pgAccount.SelectedObject = Client.Account;
-            Text = "ShareX FTP client - " + account.Name;
-            lblConnecting.Text = "Connecting to " + account.FTPAddress;
+            Text = Resources.FTPClientForm_FTPClientForm_ShareX_FTP_client + " - " + account.Name;
+            lblConnecting.Text = string.Format(Resources.FTPClientForm_FTPClientForm_Connecting_to__0_, account.FTPAddress);
 
             TaskEx.Run(() =>
             {
@@ -291,7 +292,7 @@ namespace UploadersLib
 
         private void FTPCreateDirectory()
         {
-            using (InputBox ib = new InputBox("Directory name to create"))
+            using (InputBox ib = new InputBox(Resources.FTPClientForm_FTPCreateDirectory_Directory_name_to_create))
             {
                 ib.ShowDialog();
                 this.ShowActivate();

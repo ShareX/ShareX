@@ -196,7 +196,7 @@ namespace UploadersLib
         public bool EmailRememberLastTo = true;
         public bool EmailConfirmSend = true;
         public string EmailLastTo = string.Empty;
-        public string EmailDefaultSubject = "Sending email from " + Application.ProductName;
+        public string EmailDefaultSubject = "Sending email from ShareX";
         public string EmailDefaultBody = "Screenshot is attached.";
 
         // Jira

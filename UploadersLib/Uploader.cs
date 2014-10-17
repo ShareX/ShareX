@@ -40,7 +40,7 @@ namespace UploadersLib
 {
     public class Uploader
     {
-        private static readonly string UserAgent = string.Format("{0} {1}", Application.ProductName, Application.ProductVersion);
+        private static readonly string UserAgent = "ShareX " + Application.ProductVersion;
 
         public delegate void ProgressEventHandler(ProgressManager progress);
         public event ProgressEventHandler ProgressChanged;

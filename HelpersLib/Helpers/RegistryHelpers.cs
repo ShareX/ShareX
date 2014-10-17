@@ -55,7 +55,7 @@ namespace HelpersLib
         {
             try
             {
-                return CheckRegistry(WindowsStartupRun, Application.ProductName, StartupPath);
+                return CheckRegistry(WindowsStartupRun, ApplicationName, StartupPath);
             }
             catch (Exception e)
             {
@@ -75,11 +75,11 @@ namespace HelpersLib
                     {
                         if (startWithWindows)
                         {
-                            regkey.SetValue(Application.ProductName, StartupPath, RegistryValueKind.String);
+                            regkey.SetValue(ApplicationName, StartupPath, RegistryValueKind.String);
                         }
                         else
                         {
-                            regkey.DeleteValue(Application.ProductName, false);
+                            regkey.DeleteValue(ApplicationName, false);
                         }
                     }
                 }

@@ -156,7 +156,7 @@ namespace UploadersLib.FileUploaders
             }
             else
             {
-                MinusFolder mf = CreateFolder(Application.ProductName, true);
+                MinusFolder mf = CreateFolder("ShareX", true);
                 if (mf != null)
                 {
                     Config.FolderList.Add(mf);

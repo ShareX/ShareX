@@ -440,4 +440,22 @@ Created folders:</value>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
     <value>Download path:</value>
   </data>
+  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
+    <value>ShareX FTP client</value>
+  </data>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Connecting to {0}</value>
+  </data>
+  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
+    <value>Directory name to create</value>
+  </data>
+  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
+    <value>Browse for a key file...</value>
+  </data>
+  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
+    <value>Browse for a certificate file...</value>
+  </data>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>New account</value>
+  </data>
 </root>
