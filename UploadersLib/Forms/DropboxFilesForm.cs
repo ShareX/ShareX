@@ -102,7 +102,8 @@ namespace UploadersLib.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Path not exist: " + path, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.DropboxFilesForm_OpenDirectory_Path_not_exist_ + " " + path, Resources.UploadersConfigForm_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             });
         }
@@ -193,8 +194,8 @@ namespace UploadersLib.Forms
 
                 if (content != null)
                 {
-                    if (MessageBox.Show("Are you sure you want to delete '" + Path.GetFileName(content.Path) + "' from your Dropbox?", "Dropbox - Delete file?",
-                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(string.Format(Resources.DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_, Path.GetFileName(content.Path)),
+                        "Dropbox - " + Resources.DropboxFilesForm_tsmiDelete_Click_Delete_file_, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         dropbox.Delete(content.Path);
                         RefreshDirectory();
@@ -210,7 +211,7 @@ namespace UploadersLib.Forms
 
         private void tsmiCreateDirectory_Click(object sender, EventArgs e)
         {
-            using (InputBox ib = new InputBox("Directory name to create"))
+            using (InputBox ib = new InputBox(Resources.DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create))
             {
                 if (ib.ShowDialog() == DialogResult.OK)
                 {

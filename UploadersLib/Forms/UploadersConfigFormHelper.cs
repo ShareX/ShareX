@@ -35,6 +35,7 @@ using UploadersLib.Forms;
 using UploadersLib.GUI;
 using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;
+using UploadersLib.Properties;
 using UploadersLib.TextUploaders;
 using UploadersLib.URLShorteners;
 
@@ -65,7 +66,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -80,12 +81,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Imgur.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         atcImgurAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
 
@@ -94,7 +95,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -109,12 +110,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Imgur.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         atcImgurAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
 
@@ -123,7 +124,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -142,7 +143,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -182,7 +183,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -197,12 +198,12 @@ namespace UploadersLib
                     Config.FlickrAuthInfo = flickr.GetToken(token);
                     pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
                     // btnFlickrOpenImages.Text = string.Format("{0}'s photostream", Config.FlickrAuthInfo.Username);
-                    MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -218,13 +219,13 @@ namespace UploadersLib
                         FlickrUploader flickr = new FlickrUploader(APIKeys.FlickrKey, APIKeys.FlickrSecret);
                         Config.FlickrAuthInfo = flickr.CheckToken(token);
                         pgFlickrAuthInfo.SelectedObject = Config.FlickrAuthInfo;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -265,7 +266,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -284,23 +285,23 @@ namespace UploadersLib
                     if (result)
                     {
                         Config.PhotobucketAccountInfo = pb.GetAccountInfo();
-                        lblPhotobucketAccountStatus.Text = "Login successful.";
+                        lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
                         txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
                         Config.PhotobucketAccountInfo.AlbumList.Add(Config.PhotobucketAccountInfo.AlbumID);
                         cboPhotobucketAlbumPaths.Items.Add(Config.PhotobucketAccountInfo.AlbumID);
                         cboPhotobucketAlbumPaths.SelectedIndex = 0;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        lblPhotobucketAccountStatus.Text = "Login failed.";
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_failed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -312,7 +313,8 @@ namespace UploadersLib
                 string albumPath = txtPhotobucketParentAlbumPath.Text + "/" + txtPhotobucketNewAlbumName.Text;
                 Config.PhotobucketAccountInfo.AlbumList.Add(albumPath);
                 cboPhotobucketAlbumPaths.Items.Add(albumPath);
-                MessageBox.Show(albumPath + " successfully created.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(string.Format(Resources.UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_, albumPath), Application.ProductName,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -341,7 +343,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -356,12 +358,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Picasa.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     btnPicasaRefreshAlbumList.Enabled = result;
@@ -369,7 +371,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -384,12 +386,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Picasa.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     btnPicasaRefreshAlbumList.Enabled = result;
@@ -397,7 +399,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -426,7 +428,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -469,7 +471,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -491,11 +493,12 @@ namespace UploadersLib
 
                         if (Config.DropboxAccountInfo != null)
                         {
-                            MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Login successful but GetAccountInfo failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(Resources.UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_, Application.ProductName,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                         return;
@@ -503,7 +506,7 @@ namespace UploadersLib
                     else
                     {
                         oauth2Dropbox.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
@@ -513,7 +516,7 @@ namespace UploadersLib
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), Application.ProductName + " - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -522,12 +525,12 @@ namespace UploadersLib
             if (OAuth2Info.CheckOAuth(Config.DropboxOAuth2Info) && Config.DropboxAccountInfo != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Email: " + Config.DropboxAccountInfo.Email);
-                sb.AppendLine("Name: " + Config.DropboxAccountInfo.Display_name);
-                sb.AppendLine("User ID: " + Config.DropboxAccountInfo.Uid.ToString());
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.DropboxAccountInfo.Email);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.DropboxAccountInfo.Display_name);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.DropboxAccountInfo.Uid.ToString());
                 string uploadPath = GetDropboxUploadPath();
-                sb.AppendLine("Upload path: " + uploadPath);
-                sb.AppendLine("Download path: " + Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid, uploadPath + "Example.png"));
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Upload_path_ + " " + uploadPath);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Download_path_ + " " + Dropbox.GetPublicURL(Config.DropboxAccountInfo.Uid, uploadPath + "Example.png"));
                 lblDropboxStatus.Text = sb.ToString();
                 btnDropboxShowFiles.Enabled = true;
             }
@@ -567,7 +570,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -589,11 +592,12 @@ namespace UploadersLib
 
                         if (Config.CopyAccountInfo != null)
                         {
-                            MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Login successful but GetAccountInfo failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(Resources.UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_, Application.ProductName,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                         return;
@@ -601,7 +605,7 @@ namespace UploadersLib
                     else
                     {
                         oAuthCopy.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
@@ -611,7 +615,7 @@ namespace UploadersLib
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), Application.ProductName + " - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -620,10 +624,10 @@ namespace UploadersLib
             if (OAuthInfo.CheckOAuth(Config.CopyOAuthInfo) && Config.CopyAccountInfo != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Email: " + Config.CopyAccountInfo.email);
-                sb.AppendLine("Name: " + Config.CopyAccountInfo.first_name + " " + Config.CopyAccountInfo.last_name);
-                sb.AppendLine("User ID: " + Config.CopyAccountInfo.id.ToString());
-                sb.AppendLine("Upload path: " + GetCopyUploadPath());
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Email_ + " " + Config.CopyAccountInfo.email);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Name_ + " " + Config.CopyAccountInfo.first_name + " " + Config.CopyAccountInfo.last_name);
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_User_ID_ + " " + Config.CopyAccountInfo.id.ToString());
+                sb.AppendLine(Resources.UploadersConfigForm_UpdateDropboxStatus_Upload_path_ + " " + GetCopyUploadPath());
                 lblCopyStatus.Text = sb.ToString();
             }
             else
@@ -671,7 +675,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -686,12 +690,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     btnGoogleDriveRefreshFolders.Enabled = result;
@@ -699,7 +703,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -714,12 +718,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2GoogleDrive.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     btnGoogleDriveRefreshFolders.Enabled = result;
@@ -727,7 +731,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -755,7 +759,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -793,7 +797,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -808,12 +812,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Box.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Box.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     btnBoxRefreshFolders.Enabled = result;
@@ -821,7 +825,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -836,12 +840,12 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Box.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Box.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     btnBoxRefreshFolders.Enabled = result;
@@ -849,7 +853,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -864,7 +868,8 @@ namespace UploadersLib
         {
             if (!OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
             {
-                MessageBox.Show("Authentication required.", "Box refresh folders list failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.UploadersConfigForm_BoxListFolders_Authentication_required_, Resources.UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -911,7 +916,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -927,20 +932,20 @@ namespace UploadersLib
                     {
                         Config.OneDriveOAuth2Info = onedrive.AuthInfo;
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("OneDrive login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         Config.OneDriveOAuth2Info = null;
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("OneDrive login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -966,16 +971,16 @@ namespace UploadersLib
                     {
                         minus.ReadFolderList();
                         MinusUpdateControls();
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.UploadersConfigForm_Error + ": " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -998,17 +1003,17 @@ namespace UploadersLib
 
                     if (result)
                     {
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -1021,7 +1026,7 @@ namespace UploadersLib
         {
             if (Config.MinusConfig != null && Config.MinusConfig.MinusUser != null && OAuth2Info.CheckOAuth(Config.MinusOAuth2Info))
             {
-                lblMinusAuthStatus.Text = "Logged in as " + Config.MinusConfig.MinusUser.display_name + ".";
+                lblMinusAuthStatus.Text = string.Format(Resources.UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__, Config.MinusConfig.MinusUser.display_name);
                 txtMinusUsername.Text = Config.MinusConfig.Username;
                 txtMinusPassword.Text = Config.MinusConfig.Password;
                 cboMinusFolders.Items.Clear();
@@ -1034,7 +1039,7 @@ namespace UploadersLib
             }
             else
             {
-                lblMinusAuthStatus.Text = "Not logged in.";
+                lblMinusAuthStatus.Text = Resources.UploadersConfigForm_MinusUpdateControls_Not_logged_in_;
                 btnMinusRefreshAuth.Enabled = false;
             }
         }
@@ -1123,11 +1128,11 @@ namespace UploadersLib
                             {
                                 if (directories.Count > 0)
                                 {
-                                    msg = "Connected!\r\nCreated folders:\r\n" + string.Join("\r\n", directories);
+                                    msg = Resources.UploadersConfigForm_TestFTPAccount_Connected_Created_folders + "\r\n" + string.Join("\r\n", directories);
                                 }
                                 else
                                 {
-                                    msg = "Connected!";
+                                    msg = Resources.UploadersConfigForm_TestFTPAccount_Connected_;
                                 }
                             }
                         }
@@ -1148,11 +1153,11 @@ namespace UploadersLib
                             {
                                 if (directories.Count > 0)
                                 {
-                                    msg = "Connected!\r\nCreated folders:\r\n" + string.Join("\r\n", directories);
+                                    msg = Resources.UploadersConfigForm_TestFTPAccount_Connected_Created_folders + "\r\n" + string.Join("\r\n", directories);
                                 }
                                 else
                                 {
-                                    msg = "Connected!";
+                                    msg = Resources.UploadersConfigForm_TestFTPAccount_Connected_;
                                 }
                             }
                         }
@@ -1173,7 +1178,7 @@ namespace UploadersLib
 
         public UserPassBox SendSpaceRegister()
         {
-            UserPassBox upb = new UserPassBox("SendSpace Registration...", "John Doe", "john.doe@gmail.com", "JohnDoe", "");
+            UserPassBox upb = new UserPassBox(Resources.UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___, "John Doe", "john.doe@gmail.com", "JohnDoe", "");
             upb.ShowDialog();
             if (upb.DialogResult == DialogResult.OK)
             {
@@ -1181,7 +1186,7 @@ namespace UploadersLib
                 upb.Success = sendSpace.AuthRegister(upb.UserName, upb.FullName, upb.Email, upb.Password);
                 if (!upb.Success && sendSpace.Errors.Count > 0)
                 {
-                    MessageBox.Show(sendSpace.ToErrorString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(sendSpace.ToErrorString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return upb;
@@ -1198,13 +1203,13 @@ namespace UploadersLib
                 Ge_tt gett = new Ge_tt(APIKeys.Ge_ttKey);
                 Ge_ttLogin login = gett.Login(txtGe_ttEmail.Text, txtGe_ttPassword.Text);
                 Config.Ge_ttLogin = login;
-                lblGe_ttStatus.Text = "Login successful.";
+                lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_successful;
             }
             catch (Exception ex)
             {
                 Config.Ge_ttLogin = null;
-                lblGe_ttStatus.Text = "Login failed.";
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_failed;
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1223,17 +1228,17 @@ namespace UploadersLib
                     if (pastebin.Login())
                     {
                         UpdatePastebinStatus();
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         UpdatePastebinStatus();
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -1242,11 +1247,11 @@ namespace UploadersLib
         {
             if (Config.PastebinSettings == null || string.IsNullOrEmpty(Config.PastebinSettings.UserKey))
             {
-                lblPastebinLoginStatus.Text = "Status: Not logged in.";
+                lblPastebinLoginStatus.Text = Resources.OAuthControl_Status_Status__Not_logged_in_;
             }
             else
             {
-                lblPastebinLoginStatus.Text = "Status: Logged in.";
+                lblPastebinLoginStatus.Text = Resources.OAuthControl_Status_Status__Logged_in_;
             }
         }
 
@@ -1270,7 +1275,7 @@ namespace UploadersLib
 
                 Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
                 {
-                    cboPushbulletDevices.Items.Add(pbDevice.Name ?? "Invalid device name");
+                    cboPushbulletDevices.Items.Add(pbDevice.Name ?? Resources.UploadersConfigForm_LoadSettings_Invalid_device_name);
                 });
 
                 cboPushbulletDevices.SelectedIndex = 0;
@@ -1321,11 +1326,11 @@ namespace UploadersLib
                         acc.AuthVerifier = string.Empty;
                         Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
                         ucTwitterAccounts.pgSettings.SelectedObject = acc;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -1356,7 +1361,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1371,18 +1376,18 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1397,18 +1402,18 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2GoogleURLShortener.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1437,7 +1442,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1452,18 +1457,18 @@ namespace UploadersLib
                     if (result)
                     {
                         oauth2Bitly.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oauth2Bitly.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1632,7 +1637,7 @@ namespace UploadersLib
                             break;
                         case CustomUploaderType.Text:
                             CustomTextUploader textUploader = new CustomTextUploader(item);
-                            result = textUploader.UploadText(Application.ProductName + " text upload test", "Test.txt");
+                            result = textUploader.UploadText("ShareX text upload test", "Test.txt");
                             result.Errors = textUploader.Errors;
                             break;
                         case CustomUploaderType.File:
@@ -1666,11 +1671,11 @@ namespace UploadersLib
                     }
                     else if (result.IsError)
                     {
-                        txtCustomUploaderLog.AppendText("Error: " + result.ErrorsToString() + Environment.NewLine);
+                        txtCustomUploaderLog.AppendText(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString() + Environment.NewLine);
                     }
                     else
                     {
-                        txtCustomUploaderLog.AppendText("Error: Result is empty." + Environment.NewLine);
+                        txtCustomUploaderLog.AppendText(Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_ + Environment.NewLine);
                     }
 
                     txtCustomUploaderLog.ScrollToCaret();
@@ -1706,7 +1711,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1722,18 +1727,18 @@ namespace UploadersLib
                     if (result)
                     {
                         oAuthJira.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oAuthJira.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1756,7 +1761,7 @@ namespace UploadersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1771,19 +1776,19 @@ namespace UploadersLib
                     if (result)
                     {
                         oAuth2Gist.Status = OAuthLoginStatus.LoginSuccessful;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         oAuth2Gist.Status = OAuthLoginStatus.LoginFailed;
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         atcGistAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

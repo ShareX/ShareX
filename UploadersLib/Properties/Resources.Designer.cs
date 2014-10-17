@@ -131,6 +131,43 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Path not exist:.
+        /// </summary>
+        internal static string DropboxFilesForm_OpenDirectory_Path_not_exist_ {
+            get {
+                return ResourceManager.GetString("DropboxFilesForm_OpenDirectory_Path_not_exist_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directory name to create.
+        /// </summary>
+        internal static string DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create {
+            get {
+                return ResourceManager.GetString("DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete &quot;{0}&quot; from your Dropbox?.
+        /// </summary>
+        internal static string DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_ {
+            get {
+                return ResourceManager.GetString("DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your" +
+                        "_Dropbox_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete file?.
+        /// </summary>
+        internal static string DropboxFilesForm_tsmiDelete_Click_Delete_file_ {
+            get {
+                return ResourceManager.GetString("DropboxFilesForm_tsmiDelete_Click_Delete_file_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Flickr {
@@ -311,6 +348,15 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Issue not found.
+        /// </summary>
+        internal static string JiraUpload_ValidateIssueId_Issue_not_found {
+            get {
+                return ResourceManager.GetString("JiraUpload_ValidateIssueId_Issue_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap mail {
@@ -357,6 +403,33 @@ namespace UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Minus", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Logged in..
+        /// </summary>
+        internal static string OAuthControl_Status_Status__Logged_in_ {
+            get {
+                return ResourceManager.GetString("OAuthControl_Status_Status__Logged_in_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Login failed..
+        /// </summary>
+        internal static string OAuthControl_Status_Status__Login_failed_ {
+            get {
+                return ResourceManager.GetString("OAuthControl_Status_Status__Login_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Not logged in..
+        /// </summary>
+        internal static string OAuthControl_Status_Status__Not_logged_in_ {
+            get {
+                return ResourceManager.GetString("OAuthControl_Status_Status__Not_logged_in_", resourceCulture);
             }
         }
         
@@ -731,12 +804,287 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tweet error.
+        /// </summary>
+        internal static string TwitterTweetForm_SendTweet_Tweet_error {
+            get {
+                return ResourceManager.GetString("TwitterTweetForm_SendTweet_Tweet_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Upaste {
             get {
                 object obj = ResourceManager.GetObject("Upaste", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authentication required..
+        /// </summary>
+        internal static string UploadersConfigForm_BoxListFolders_Authentication_required_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_BoxListFolders_Authentication_required_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Box refresh folders list failed.
+        /// </summary>
+        internal static string UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RapidShare account username or password is empty..
+        /// </summary>
+        internal static string UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username" +
+                        "_or_password_is_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RapidShare refresh folders list failed.
+        /// </summary>
+        internal static string UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_" +
+                        "list_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login successful but getting account info failed..
+        /// </summary>
+        internal static string UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info" +
+                        "_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string UploadersConfigForm_Error {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authorize.
+        /// </summary>
+        internal static string UploadersConfigForm_FormSettings_Authorize {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_FormSettings_Authorize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid device name.
+        /// </summary>
+        internal static string UploadersConfigForm_LoadSettings_Invalid_device_name {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_LoadSettings_Invalid_device_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent album path e.g..
+        /// </summary>
+        internal static string UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_LoadSettings_Parent_album_path_e_g_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected folder:.
+        /// </summary>
+        internal static string UploadersConfigForm_LoadSettings_Selected_folder_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_LoadSettings_Selected_folder_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login failed..
+        /// </summary>
+        internal static string UploadersConfigForm_Login_failed {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_Login_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login successful..
+        /// </summary>
+        internal static string UploadersConfigForm_Login_successful {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_Login_successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click refresh button.
+        /// </summary>
+        internal static string UploadersConfigForm_MegaConfigureTab_Click_refresh_button {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Click_refresh_button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configured.
+        /// </summary>
+        internal static string UploadersConfigForm_MegaConfigureTab_Configured {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Configured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid authentication.
+        /// </summary>
+        internal static string UploadersConfigForm_MegaConfigureTab_Invalid_authentication {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Invalid_authentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not configured.
+        /// </summary>
+        internal static string UploadersConfigForm_MegaConfigureTab_Not_configured {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_MegaConfigureTab_Not_configured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logged in as {0}..
+        /// </summary>
+        internal static string UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not logged in..
+        /// </summary>
+        internal static string UploadersConfigForm_MinusUpdateControls_Not_logged_in_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_MinusUpdateControls_Not_logged_in_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh authorization is not supported..
+        /// </summary>
+        internal static string UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_s" +
+                        "upported_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} successfully created..
+        /// </summary>
+        internal static string UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SendSpace Registration....
+        /// </summary>
+        internal static string UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Result is empty..
+        /// </summary>
+        internal static string UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connected!.
+        /// </summary>
+        internal static string UploadersConfigForm_TestFTPAccount_Connected_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_TestFTPAccount_Connected_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connected!
+        ///Created folders:.
+        /// </summary>
+        internal static string UploadersConfigForm_TestFTPAccount_Connected_Created_folders {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_TestFTPAccount_Connected_Created_folders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download path:.
+        /// </summary>
+        internal static string UploadersConfigForm_UpdateDropboxStatus_Download_path_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Download_path_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email:.
+        /// </summary>
+        internal static string UploadersConfigForm_UpdateDropboxStatus_Email_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Email_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        internal static string UploadersConfigForm_UpdateDropboxStatus_Name_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Name_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload path:.
+        /// </summary>
+        internal static string UploadersConfigForm_UpdateDropboxStatus_Upload_path_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_Upload_path_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User ID:.
+        /// </summary>
+        internal static string UploadersConfigForm_UpdateDropboxStatus_User_ID_ {
+            get {
+                return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_User_ID_", resourceCulture);
             }
         }
         

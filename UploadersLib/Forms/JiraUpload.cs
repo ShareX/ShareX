@@ -27,6 +27,7 @@
 
 using System;
 using System.Windows.Forms;
+using UploadersLib.Properties;
 
 namespace UploadersLib.GUI
 {
@@ -85,7 +86,7 @@ namespace UploadersLib.GUI
             var res = _getSummary(issueId);
             btnUpload.Enabled = (res != null);
 
-            lblSummary.Text = res ?? "Issue not found";
+            lblSummary.Text = res ?? Resources.JiraUpload_ValidateIssueId_Issue_not_found;
             lblSummary.Enabled = res != null;
         }
 

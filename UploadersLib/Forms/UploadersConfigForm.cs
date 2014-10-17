@@ -144,7 +144,7 @@ namespace UploadersLib
             ucTwitterAccounts.btnAdd.Click += TwitterAccountAddButton_Click;
             ucTwitterAccounts.btnRemove.Click += TwitterAccountRemoveButton_Click;
             ucTwitterAccounts.btnDuplicate.Click += TwitterAccountDuplicateButton_Click;
-            ucTwitterAccounts.btnTest.Text = "Authorize";
+            ucTwitterAccounts.btnTest.Text = Resources.UploadersConfigForm_FormSettings_Authorize;
             ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
             ucTwitterAccounts.lbAccounts.SelectedIndexChanged += TwitterAccountSelectedIndexChanged;
 
@@ -205,9 +205,10 @@ namespace UploadersLib
 
             if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
             {
-                lblPhotobucketAccountStatus.Text = "Login successful.";
+                lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
                 txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
-                lblPhotobucketParentAlbumPath.Text = "Parent album path e.g. " + Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
+                lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
+                    Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
             }
 
             if (Config.PhotobucketAccountInfo != null)
@@ -346,13 +347,13 @@ namespace UploadersLib
             }
 
             cbBoxShare.Checked = Config.BoxShare;
-            lblBoxFolderID.Text = "Selected folder: " + Config.BoxSelectedFolder.name;
+            lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.BoxSelectedFolder.name;
 
             // Ge.tt
 
             if (Config.Ge_ttLogin != null && !string.IsNullOrEmpty(Config.Ge_ttLogin.AccessToken))
             {
-                lblGe_ttStatus.Text = "Login successful.";
+                lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_successful;
             }
 
             // Localhostr
@@ -476,7 +477,7 @@ namespace UploadersLib
 
             if (Config.PushbulletSettings.DeviceList.Count > 0)
             {
-                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name ?? "Invalid device name"));
+                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name ?? Resources.UploadersConfigForm_LoadSettings_Invalid_device_name));
 
                 if (Config.PushbulletSettings.DeviceList.IsValidIndex(Config.PushbulletSettings.SelectedDevice))
                 {
@@ -663,17 +664,17 @@ namespace UploadersLib
             {
                 if (imageShackUploader.GetAccessToken())
                 {
-                    MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -739,17 +740,17 @@ namespace UploadersLib
                     if (!string.IsNullOrEmpty(registrationCode))
                     {
                         Config.TinyPicRegistrationCode = registrationCode;
-                        MessageBox.Show("Login successful.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Login failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
-                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -1205,7 +1206,7 @@ namespace UploadersLib
                 BoxFileEntry file = lvi.Tag as BoxFileEntry;
                 if (file != null)
                 {
-                    lblBoxFolderID.Text = "Selected folder: " + file.name;
+                    lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
                 }
             }
         }
@@ -1483,7 +1484,8 @@ namespace UploadersLib
         {
             if (string.IsNullOrEmpty(Config.RapidShareUsername) || string.IsNullOrEmpty(Config.RapidSharePassword))
             {
-                MessageBox.Show("RapidShare account username or password is empty.", "RapidShare refresh folders list failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_,
+                    Resources.UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -1605,7 +1607,7 @@ namespace UploadersLib
 
         private void oAuthJira_RefreshButtonClicked()
         {
-            MessageBox.Show("Refresh authorization is not supported.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Resources.UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion Jira
@@ -1626,7 +1628,7 @@ namespace UploadersLib
 
             if (Config.MegaAuthInfos == null)
             {
-                lblMegaStatus.Text = "Not configured";
+                lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Not_configured;
                 lblMegaStatus.ForeColor = NokColor;
             }
             else
@@ -1636,7 +1638,7 @@ namespace UploadersLib
                 Mega mega = new Mega(Config.MegaAuthInfos);
                 if (!tryLogin || mega.TryLogin())
                 {
-                    lblMegaStatus.Text = "Configured";
+                    lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Configured;
                     lblMegaStatus.ForeColor = OkColor;
 
                     if (tryLogin)
@@ -1647,13 +1649,13 @@ namespace UploadersLib
                     }
                     else
                     {
-                        cbMegaFolder.Items.Add("[Click refresh button]");
+                        cbMegaFolder.Items.Add("[" + Resources.UploadersConfigForm_MegaConfigureTab_Click_refresh_button + "]");
                         cbMegaFolder.SelectedIndex = 0;
                     }
                 }
                 else
                 {
-                    lblMegaStatus.Text = "Invalid authentication";
+                    lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Invalid_authentication;
                     lblMegaStatus.ForeColor = NokColor;
                 }
             }

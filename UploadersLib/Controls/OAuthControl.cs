@@ -27,6 +27,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using UploadersLib.Properties;
 
 namespace UploadersLib
 {
@@ -60,13 +61,13 @@ namespace UploadersLib
                 switch (status)
                 {
                     case OAuthLoginStatus.LoginRequired:
-                        lblLoginStatus.Text = "Status: Not logged in.";
+                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Not_logged_in_;
                         break;
                     case OAuthLoginStatus.LoginSuccessful:
-                        lblLoginStatus.Text = "Status: Logged in.";
+                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Logged_in_;
                         break;
                     case OAuthLoginStatus.LoginFailed:
-                        lblLoginStatus.Text = "Status: Login failed.";
+                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Login_failed_;
                         break;
                 }
 
