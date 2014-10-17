@@ -126,16 +126,16 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>Tamam</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Kullanıcı Adı:</value>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="lblFullName.Text" xml:space="preserve">
+    <value>Tam ad:</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Tam Ad:</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Eposta</value>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
   </data>
 </root>

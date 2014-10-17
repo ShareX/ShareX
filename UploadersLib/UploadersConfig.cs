@@ -27,7 +27,6 @@ using CG.Web.MegaApiClient;
 using HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using UploadersLib.FileUploaders;
 using UploadersLib.HelperClasses;
 using UploadersLib.ImageUploaders;

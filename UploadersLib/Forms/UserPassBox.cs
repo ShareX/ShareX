@@ -31,13 +31,9 @@ namespace UploadersLib
     public partial class UserPassBox : Form
     {
         public string FullName { get; private set; }
-
         public string UserName { get; private set; }
-
         public string Password { get; private set; }
-
         public string Email { get; private set; }
-
         public bool Success { get; set; }
 
         public UserPassBox(string title, string userName, string password)

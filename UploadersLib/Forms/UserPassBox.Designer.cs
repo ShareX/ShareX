@@ -33,11 +33,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblFullName = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -68,30 +68,30 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // label1
+            // lblUserName
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblUserName, "lblUserName");
+            this.lblUserName.Name = "lblUserName";
             // 
-            // label2
+            // lblPassword
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lblPassword, "lblPassword");
+            this.lblPassword.Name = "lblPassword";
             // 
-            // label3
+            // lblFullName
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.lblFullName, "lblFullName");
+            this.lblFullName.Name = "lblFullName";
             // 
             // txtFullName
             // 
             resources.ApplyResources(this.txtFullName, "txtFullName");
             this.txtFullName.Name = "txtFullName";
             // 
-            // label4
+            // lblEmail
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.lblEmail, "lblEmail");
+            this.lblEmail.Name = "lblEmail";
             // 
             // txtEmail
             // 
@@ -103,12 +103,12 @@
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnCancel);
@@ -130,11 +130,11 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblFullName;
         public System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEmail;
         public System.Windows.Forms.TextBox txtEmail;
     }
 }

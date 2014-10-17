@@ -205,7 +205,6 @@ namespace UploadersLib
                 var httpHomeDir = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(0, querySpecifiedAt) : httpHomePathAndQuery;
                 var httpHomeQuery = querySpecifiedAt >= 0 ? httpHomePathAndQuery.Substring(querySpecifiedAt + 1) : "";
 
-
                 if (portSpecifiedAt >= 0)
                     int.TryParse(httpHome.Substring(portSpecifiedAt + 1), out httpHomePort);
 
