@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -249,13 +250,13 @@ namespace ScreenCaptureLib
         private string GetRulerText(Rectangle area)
         {
             Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
-            return string.Format("X: {0} / Y: {1} / X2: {2} / Y2: {3}\nWidth: {4} px / Height: {5} px\nDistance: {6:0.00} px / Angle: {7:0.00}°", area.X, area.Y, endPos.X, endPos.Y,
+            return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,
                 area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
         }
 
         private string GetAreaText(Rectangle area)
         {
-            return string.Format("X: {0} / Y: {1}\nW: {2} / H: {3}", area.X, area.Y, area.Width, area.Height);
+            return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
         private void DrawCrosshair(Graphics g)

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 
 namespace HelpersLib
@@ -39,7 +40,7 @@ namespace HelpersLib
             return '%' + _value;
         }
 
-        public static readonly ActionsCodeMenuEntry FilePath = new ActionsCodeMenuEntry("input", "File path");
-        public static readonly ActionsCodeMenuEntry OutputFilePath = new ActionsCodeMenuEntry("output", "File path without extension + \"Output file name extension\"");
+        public static readonly ActionsCodeMenuEntry FilePath = new ActionsCodeMenuEntry("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
+        public static readonly ActionsCodeMenuEntry OutputFilePath = new ActionsCodeMenuEntry("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
     }
 }

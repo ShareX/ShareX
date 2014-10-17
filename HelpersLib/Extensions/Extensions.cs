@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -202,13 +203,13 @@ namespace HelpersLib
             if (rtb.ContextMenuStrip == null)
             {
                 ContextMenuStrip cms = new ContextMenuStrip { ShowImageMargin = false };
-                ToolStripMenuItem tsmiCut = new ToolStripMenuItem("Cut");
+                ToolStripMenuItem tsmiCut = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Cut);
                 tsmiCut.Click += (sender, e) => rtb.Cut();
                 cms.Items.Add(tsmiCut);
-                ToolStripMenuItem tsmiCopy = new ToolStripMenuItem("Copy");
+                ToolStripMenuItem tsmiCopy = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Copy);
                 tsmiCopy.Click += (sender, e) => rtb.Copy();
                 cms.Items.Add(tsmiCopy);
-                ToolStripMenuItem tsmiPaste = new ToolStripMenuItem("Paste");
+                ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Paste);
                 tsmiPaste.Click += (sender, e) => rtb.Paste();
                 cms.Items.Add(tsmiPaste);
                 rtb.ContextMenuStrip = cms;

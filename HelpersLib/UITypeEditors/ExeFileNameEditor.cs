@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -40,7 +41,7 @@ namespace HelpersLib
             }
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = "Browse for executable...";
+                dlg.Title = Resources.ExeFileNameEditor_EditValue_Browse_for_executable___;
                 dlg.Filter = "Applications (*.exe)|*.exe";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

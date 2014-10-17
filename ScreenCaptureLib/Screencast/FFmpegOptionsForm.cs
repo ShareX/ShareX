@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -140,9 +141,9 @@ namespace ScreenCaptureLib
         {
             if (settingsLoaded)
             {
-                lblAACQuality.Text = string.Format("Bitrate: {0}k", Options.FFmpeg.AAC_bitrate);
-                lblVorbisQuality.Text = "Quality: " + Options.FFmpeg.Vorbis_qscale;
-                lblMP3Quality.Text = "Quality: " + Options.FFmpeg.MP3_qscale;
+                lblAACQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.AAC_bitrate);
+                lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_qscale;
+                lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_qscale;
 
                 if (!Options.FFmpeg.UseCustomCommands)
                 {
@@ -269,7 +270,7 @@ namespace ScreenCaptureLib
 
         private void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            if (Helpers.BrowseFile("Browse for ffmpeg.exe", txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
+            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)))
             {
                 RefreshSourcesAsync();
             }
@@ -305,11 +306,11 @@ namespace ScreenCaptureLib
                     UpdateUI();
                 });
 
-                MessageBox.Show("Successfully downloaded FFmpeg.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Download of FFmpeg failed.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

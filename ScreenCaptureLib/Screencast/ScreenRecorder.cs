@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -105,7 +106,7 @@ namespace ScreenCaptureLib
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
-                throw new Exception("Screen recorder cache path is empty.");
+                throw new Exception(Resources.ScreenRecorder_ScreenRecorder_Screen_recorder_cache_path_is_empty_);
             }
 
             FPS = outputType == ScreenRecordOutput.GIF ? options.GIFFPS : options.ScreenRecordFPS;

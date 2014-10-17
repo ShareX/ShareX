@@ -64,6 +64,11 @@
     <Compile Include="ImageHistoryForm.Designer.cs">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -114,6 +119,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageHistoryForm.tr.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

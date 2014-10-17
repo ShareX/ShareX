@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using HistoryLib.Properties;
 using System;
 using System.Reflection;
 using System.Windows.Forms;
@@ -52,11 +53,11 @@ namespace HistoryLib.CustomControls
         {
             SetObjectType = ObjectType.Properties;
             MultiSelect = false;
-            Columns.Add("Name", 125);
-            Columns.Add("Value", 300);
+            Columns.Add(Resources.ObjectListView_ObjectListView_Name, 125);
+            Columns.Add(Resources.ObjectListView_ObjectListView_Value, 300);
             ContextMenu contextMenu = new ContextMenu();
-            contextMenu.MenuItems.Add("Copy name").Click += PropertyListView_Click_Name;
-            contextMenu.MenuItems.Add("Copy value").Click += PropertyListView_Click_Value;
+            contextMenu.MenuItems.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
+            contextMenu.MenuItems.Add(Resources.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
             ContextMenu = contextMenu;
         }
 

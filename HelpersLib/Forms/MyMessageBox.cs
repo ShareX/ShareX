@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -93,20 +94,20 @@ namespace HelpersLib
             {
                 default:
                 case MessageBoxButtons.OK:
-                    button1.Text = "OK";
+                    button1.Text = Resources.MyMessageBox_MyMessageBox_OK;
                     button1Result = DialogResult.OK;
                     button2.Visible = false;
                     break;
                 case MessageBoxButtons.OKCancel:
-                    button1.Text = "OK";
+                    button1.Text = Resources.MyMessageBox_MyMessageBox_OK;
                     button1Result = DialogResult.OK;
-                    button2.Text = "Cancel";
+                    button2.Text = Resources.MyMessageBox_MyMessageBox_Cancel;
                     button2Result = DialogResult.Cancel;
                     break;
                 case MessageBoxButtons.YesNo:
-                    button1.Text = "Yes";
+                    button1.Text = Resources.MyMessageBox_MyMessageBox_Yes;
                     button1Result = DialogResult.Yes;
-                    button2.Text = "No";
+                    button2.Text = Resources.MyMessageBox_MyMessageBox_No;
                     button2Result = DialogResult.No;
                     break;
             }

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -89,7 +90,8 @@ namespace ScreenCaptureLib
                     {
                         if (index.Location > int.MaxValue || index.Length > int.MaxValue)
                         {
-                            MessageBox.Show(string.Format("Cache file size cannot exceed {0} Bytes.\r\nPlease use FFmpeg screen recording instead of GIF.", int.MaxValue), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(string.Format(Resources.HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed, int.MaxValue),
+                                "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             yield break;
                         }
 

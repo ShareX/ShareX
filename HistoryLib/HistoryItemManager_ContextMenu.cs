@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HistoryLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -133,34 +134,34 @@ namespace HistoryLib
             });
             tsmiOpen.Name = "tsmiOpen";
             tsmiOpen.Size = new Size(127, 22);
-            tsmiOpen.Text = "Open";
+            tsmiOpen.Text = Resources.HistoryItemManager_InitializeComponent_Open;
             //
             // tsmiOpenURL
             //
             tsmiOpenURL.Name = "tsmiOpenURL";
             tsmiOpenURL.Size = new Size(156, 22);
-            tsmiOpenURL.Text = "URL";
+            tsmiOpenURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
             tsmiOpenURL.Click += tsmiOpenURL_Click;
             //
             // tsmiOpenShortenedURL
             //
             tsmiOpenShortenedURL.Name = "tsmiOpenShortenedURL";
             tsmiOpenShortenedURL.Size = new Size(156, 22);
-            tsmiOpenShortenedURL.Text = "Shortened URL";
+            tsmiOpenShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL;
             tsmiOpenShortenedURL.Click += tsmiOpenShortenedURL_Click;
             //
             // tsmiOpenThumbnailURL
             //
             tsmiOpenThumbnailURL.Name = "tsmiOpenThumbnailURL";
             tsmiOpenThumbnailURL.Size = new Size(156, 22);
-            tsmiOpenThumbnailURL.Text = "Thumbnail URL";
+            tsmiOpenThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL;
             tsmiOpenThumbnailURL.Click += tsmiOpenThumbnailURL_Click;
             //
             // tsmiOpenDeletionURL
             //
             tsmiOpenDeletionURL.Name = "tsmiOpenDeletionURL";
             tsmiOpenDeletionURL.Size = new Size(156, 22);
-            tsmiOpenDeletionURL.Text = "Deletion URL";
+            tsmiOpenDeletionURL.Text = Resources.HistoryItemManager_InitializeComponent_Deletion_URL;
             tsmiOpenDeletionURL.Click += tsmiOpenDeletionURL_Click;
             //
             // tssOpen1
@@ -172,14 +173,14 @@ namespace HistoryLib
             //
             tsmiOpenFile.Name = "tsmiOpenFile";
             tsmiOpenFile.Size = new Size(156, 22);
-            tsmiOpenFile.Text = "File";
+            tsmiOpenFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
             tsmiOpenFile.Click += tsmiOpenFile_Click;
             //
             // tsmiOpenFolder
             //
             tsmiOpenFolder.Name = "tsmiOpenFolder";
             tsmiOpenFolder.Size = new Size(156, 22);
-            tsmiOpenFolder.Text = "Folder";
+            tsmiOpenFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiOpenFolder.Click += tsmiOpenFolder_Click;
             //
             // tsmiCopy
@@ -210,34 +211,34 @@ namespace HistoryLib
             });
             tsmiCopy.Name = "tsmiCopy";
             tsmiCopy.Size = new Size(127, 22);
-            tsmiCopy.Text = "Copy";
+            tsmiCopy.Text = Resources.HistoryItemManager_InitializeComponent_Copy;
             //
             // tsmiCopyURL
             //
             tsmiCopyURL.Name = "tsmiCopyURL";
             tsmiCopyURL.Size = new Size(233, 22);
-            tsmiCopyURL.Text = "URL";
+            tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
             tsmiCopyURL.Click += tsmiCopyURL_Click;
             //
             // tsmiCopyShortenedURL
             //
             tsmiCopyShortenedURL.Name = "tsmiCopyShortenedURL";
             tsmiCopyShortenedURL.Size = new Size(233, 22);
-            tsmiCopyShortenedURL.Text = "Shortened URL";
+            tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL;
             tsmiCopyShortenedURL.Click += tsmiCopyShortenedURL_Click;
             //
             // tsmiCopyThumbnailURL
             //
             tsmiCopyThumbnailURL.Name = "tsmiCopyThumbnailURL";
             tsmiCopyThumbnailURL.Size = new Size(233, 22);
-            tsmiCopyThumbnailURL.Text = "Thumbnail URL";
+            tsmiCopyThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL;
             tsmiCopyThumbnailURL.Click += tsmiCopyThumbnailURL_Click;
             //
             // tsmiCopyDeletionURL
             //
             tsmiCopyDeletionURL.Name = "tsmiCopyDeletionURL";
             tsmiCopyDeletionURL.Size = new Size(233, 22);
-            tsmiCopyDeletionURL.Text = "Deletion URL";
+            tsmiCopyDeletionURL.Text = Resources.HistoryItemManager_InitializeComponent_Deletion_URL;
             tsmiCopyDeletionURL.Click += tsmiCopyDeletionURL_Click;
             //
             // tssCopy1
@@ -249,21 +250,21 @@ namespace HistoryLib
             //
             tsmiCopyFile.Name = "tsmiCopyFile";
             tsmiCopyFile.Size = new Size(233, 22);
-            tsmiCopyFile.Text = "File";
+            tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
             tsmiCopyFile.Click += tsmiCopyFile_Click;
             //
             // tsmiCopyImage
             //
             tsmiCopyImage.Name = "tsmiCopyImage";
             tsmiCopyImage.Size = new Size(233, 22);
-            tsmiCopyImage.Text = "Image";
+            tsmiCopyImage.Text = Resources.HistoryItemManager_InitializeComponent_Image;
             tsmiCopyImage.Click += tsmiCopyImage_Click;
             //
             // tsmiCopyText
             //
             tsmiCopyText.Name = "tsmiCopyText";
             tsmiCopyText.Size = new Size(233, 22);
-            tsmiCopyText.Text = "Text";
+            tsmiCopyText.Text = Resources.HistoryItemManager_InitializeComponent_Text;
             tsmiCopyText.Click += tsmiCopyText_Click;
             //
             // tssCopy2
@@ -275,21 +276,21 @@ namespace HistoryLib
             //
             tsmiCopyHTMLLink.Name = "tsmiCopyHTMLLink";
             tsmiCopyHTMLLink.Size = new Size(233, 22);
-            tsmiCopyHTMLLink.Text = "HTML link";
+            tsmiCopyHTMLLink.Text = Resources.HistoryItemManager_InitializeComponent_HTML_link;
             tsmiCopyHTMLLink.Click += tsmiCopyHTMLLink_Click;
             //
             // tsmiCopyHTMLImage
             //
             tsmiCopyHTMLImage.Name = "tsmiCopyHTMLImage";
             tsmiCopyHTMLImage.Size = new Size(233, 22);
-            tsmiCopyHTMLImage.Text = "HTML image";
+            tsmiCopyHTMLImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_image;
             tsmiCopyHTMLImage.Click += tsmiCopyHTMLImage_Click;
             //
             // tsmiCopyHTMLLinkedImage
             //
             tsmiCopyHTMLLinkedImage.Name = "tsmiCopyHTMLLinkedImage";
             tsmiCopyHTMLLinkedImage.Size = new Size(233, 22);
-            tsmiCopyHTMLLinkedImage.Text = "HTML linked image";
+            tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image;
             tsmiCopyHTMLLinkedImage.Click += tsmiCopyHTMLLinkedImage_Click;
             //
             // tssCopy3
@@ -301,21 +302,21 @@ namespace HistoryLib
             //
             tsmiCopyForumLink.Name = "tsmiCopyForumLink";
             tsmiCopyForumLink.Size = new Size(233, 22);
-            tsmiCopyForumLink.Text = "Forum (BBCode) link";
+            tsmiCopyForumLink.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__link;
             tsmiCopyForumLink.Click += tsmiCopyForumLink_Click;
             //
             // tsmiCopyForumImage
             //
             tsmiCopyForumImage.Name = "tsmiCopyForumImage";
             tsmiCopyForumImage.Size = new Size(233, 22);
-            tsmiCopyForumImage.Text = "Forum (BBCode) image";
+            tsmiCopyForumImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__image;
             tsmiCopyForumImage.Click += tsmiCopyForumImage_Click;
             //
             // tsmiCopyForumLinkedImage
             //
             tsmiCopyForumLinkedImage.Name = "tsmiCopyForumLinkedImage";
             tsmiCopyForumLinkedImage.Size = new Size(233, 22);
-            tsmiCopyForumLinkedImage.Text = "Forum (BBCode) linked image";
+            tsmiCopyForumLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image;
             tsmiCopyForumLinkedImage.Click += tsmiCopyForumLinkedImage_Click;
             //
             // tssCopy4
@@ -327,28 +328,28 @@ namespace HistoryLib
             //
             tsmiCopyFilePath.Name = "tsmiCopyFilePath";
             tsmiCopyFilePath.Size = new Size(233, 22);
-            tsmiCopyFilePath.Text = "File path";
+            tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path;
             tsmiCopyFilePath.Click += tsmiCopyFilePath_Click;
             //
             // tsmiCopyFileName
             //
             tsmiCopyFileName.Name = "tsmiCopyFileName";
             tsmiCopyFileName.Size = new Size(233, 22);
-            tsmiCopyFileName.Text = "File name";
+            tsmiCopyFileName.Text = Resources.HistoryItemManager_InitializeComponent_File_name;
             tsmiCopyFileName.Click += tsmiCopyFileName_Click;
             //
             // tsmiCopyFileNameWithExtension
             //
             tsmiCopyFileNameWithExtension.Name = "tsmiCopyFileNameWithExtension";
             tsmiCopyFileNameWithExtension.Size = new Size(233, 22);
-            tsmiCopyFileNameWithExtension.Text = "File name with extension";
+            tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension;
             tsmiCopyFileNameWithExtension.Click += tsmiCopyFileNameWithExtension_Click;
             //
             // tsmiCopyFolder
             //
             tsmiCopyFolder.Name = "tsmiCopyFolder";
             tsmiCopyFolder.Size = new Size(233, 22);
-            tsmiCopyFolder.Text = "Folder";
+            tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiCopyFolder.Click += tsmiCopyFolder_Click;
             //
             // tsmiShow
@@ -360,20 +361,20 @@ namespace HistoryLib
             });
             tsmiShow.Name = "tsmiShow";
             tsmiShow.Size = new Size(127, 22);
-            tsmiShow.Text = "Show";
+            tsmiShow.Text = Resources.HistoryItemManager_InitializeComponent_Show;
             //
             // tsmiShowImagePreview
             //
             tsmiShowImagePreview.Name = "tsmiShowImagePreview";
             tsmiShowImagePreview.Size = new Size(127, 22);
-            tsmiShowImagePreview.Text = "Image preview";
+            tsmiShowImagePreview.Text = Resources.HistoryItemManager_InitializeComponent_Image_preview;
             tsmiShowImagePreview.Click += tsmiShowImagePreview_Click;
             //
             // tsmiShowMoreInfo
             //
             tsmiShowMoreInfo.Name = "tsmiShowMoreInfo";
             tsmiShowMoreInfo.Size = new Size(127, 22);
-            tsmiShowMoreInfo.Text = "More info";
+            tsmiShowMoreInfo.Text = Resources.HistoryItemManager_InitializeComponent_More_info;
             tsmiShowMoreInfo.Click += tsmiShowMoreInfo_Click;
 
             cmsHistory.ResumeLayout(false);
@@ -383,13 +384,13 @@ namespace HistoryLib
         {
             if (itemsCount > 1)
             {
-                tsmiCopyURL.Text = string.Format("URLs ({0})", itemsCount);
-                tsmiCopyHTMLLink.Text = string.Format("HTML link ({0})", itemsCount);
+                tsmiCopyURL.Text = string.Format(Resources.HistoryItemManager_UpdateTexts_URLs___0__, itemsCount);
+                tsmiCopyHTMLLink.Text = string.Format(Resources.HistoryItemManager_UpdateTexts_HTML_link___0__, itemsCount);
             }
             else
             {
-                tsmiCopyURL.Text = "URL";
-                tsmiCopyHTMLLink.Text = "HTML link";
+                tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
+                tsmiCopyHTMLLink.Text = Resources.HistoryItemManager_InitializeComponent_HTML_link;
             }
         }
 

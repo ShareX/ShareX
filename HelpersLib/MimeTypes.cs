@@ -25,9 +25,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace HelpersLib
 {
+    [Localizable(false)]
     public static class MimeTypes
     {
         public static readonly string DefaultMimeType = "application/octet-stream";

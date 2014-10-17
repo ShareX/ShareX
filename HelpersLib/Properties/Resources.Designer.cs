@@ -61,6 +61,83 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File path.
+        /// </summary>
+        internal static string ActionsCodeMenuEntry_FilePath_File_path {
+            get {
+                return ResourceManager.GetString("ActionsCodeMenuEntry_FilePath_File_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File path without extension + &quot;Output file name extension&quot;.
+        /// </summary>
+        internal static string ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_ {
+            get {
+                return ResourceManager.GetString("ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_na" +
+                        "me_extension_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clipboard content: File (Count: {0}).
+        /// </summary>
+        internal static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__ {
+            get {
+                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count" +
+                        "___0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clipboard content: Image (Size: {0}x{1}).
+        /// </summary>
+        internal static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__ {
+            get {
+                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size" +
+                        "___0_x_1__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clipboard content: Text (Length: {0}).
+        /// </summary>
+        internal static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__ {
+            get {
+                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Lengt" +
+                        "h___0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clipboard is empty or contains unknown data..
+        /// </summary>
+        internal static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_ {
+            get {
+                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains" +
+                        "_unknown_data_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%.
+        /// </summary>
+        internal static string CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__ {
+            get {
+                return ResourceManager.GetString("CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string CodeMenu_Create_Close {
+            get {
+                return ResourceManager.GetString("CodeMenu_Create_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cross {
@@ -81,12 +158,608 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse for a Cascading Style Sheet....
+        /// </summary>
+        internal static string CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___ {
+            get {
+                return ResourceManager.GetString("CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse for a folder....
+        /// </summary>
+        internal static string DirectoryNameEditor_EditValue_Browse_for_a_folder___ {
+            get {
+                return ResourceManager.GetString("DirectoryNameEditor_EditValue_Browse_for_a_folder___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS successfully set..
+        /// </summary>
+        internal static string DNSChangerForm_btnSave_Click_DNS_successfully_set_ {
+            get {
+                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_DNS_successfully_set_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS successfully set. Reboot is required..
+        /// </summary>
+        internal static string DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_ {
+            get {
+                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting DNS failed..
+        /// </summary>
+        internal static string DNSChangerForm_btnSave_Click_Setting_DNS_failed_ {
+            get {
+                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_Setting_DNS_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting DNS failed with error code:.
+        /// </summary>
+        internal static string DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_ {
+            get {
+                return ResourceManager.GetString("DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual.
+        /// </summary>
+        internal static string DNSChangerForm_DNSChangerForm_Manual {
+            get {
+                return ResourceManager.GetString("DNSChangerForm_DNSChangerForm_Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Progress: {0:0.0}%
+        ///Download speed: {1:0.0} KB/s
+        ///File size: {2:n0} / {3:n0} KB.
+        /// </summary>
+        internal static string DownloaderForm_ChangeProgress_Progress {
+            get {
+                return ResourceManager.GetString("DownloaderForm_ChangeProgress_Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: {0}.
+        /// </summary>
+        internal static string DownloaderForm_ChangeStatus_Status___0_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_ChangeStatus_Status___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filename: {0}.
+        /// </summary>
+        internal static string DownloaderForm_DownloaderForm_Filename___0_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_DownloaderForm_Filename___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting..
+        /// </summary>
+        internal static string DownloaderForm_DownloaderForm_Waiting_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_DownloaderForm_Waiting_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download completed..
+        /// </summary>
+        internal static string DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install.
+        /// </summary>
+        internal static string DownloaderForm_fileDownloader_DownloadCompleted_Install {
+            get {
+                return ResourceManager.GetString("DownloaderForm_fileDownloader_DownloadCompleted_Install", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string DownloaderForm_StartDownload_Cancel {
+            get {
+                return ResourceManager.GetString("DownloaderForm_StartDownload_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading..
+        /// </summary>
+        internal static string DownloaderForm_StartDownload_Downloading_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_StartDownload_Downloading_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting file size..
+        /// </summary>
+        internal static string DownloaderForm_StartDownload_Getting_file_size_ {
+            get {
+                return ResourceManager.GetString("DownloaderForm_StartDownload_Getting_file_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse for executable....
+        /// </summary>
+        internal static string ExeFileNameEditor_EditValue_Browse_for_executable___ {
+            get {
+                return ResourceManager.GetString("ExeFileNameEditor_EditValue_Browse_for_executable___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import failed..
+        /// </summary>
+        internal static string ExportImportControl_Deserialize_Import_failed_ {
+            get {
+                return ResourceManager.GetString("ExportImportControl_Deserialize_Import_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string ExportImportControl_Serialize_Error {
+            get {
+                return ResourceManager.GetString("ExportImportControl_Serialize_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export failed..
+        /// </summary>
+        internal static string ExportImportControl_Serialize_Export_failed_ {
+            get {
+                return ResourceManager.GetString("ExportImportControl_Serialize_Export_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings copied to your clipboard..
+        /// </summary>
+        internal static string ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_ {
+            get {
+                return ResourceManager.GetString("ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL to download settings from.
+        /// </summary>
+        internal static string ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from {
+            get {
+                return ResourceManager.GetString("ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_Copy {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cut.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_Cut {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_Cut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paste.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_Paste {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_Paste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a folder.
+        /// </summary>
+        internal static string FolderSelectDialog_Title_Select_a_folder {
+            get {
+                return ResourceManager.GetString("FolderSelectDialog_Title_Select_a_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose file path.
+        /// </summary>
+        internal static string HashCheckForm_btnFilePathBrowse_Click_Choose_file_path {
+            get {
+                return ResourceManager.GetString("HashCheckForm_btnFilePathBrowse_Click_Choose_file_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string HashCheckForm_btnStartHashCheck_Click_Stop {
+            get {
+                return ResourceManager.GetString("HashCheckForm_btnStartHashCheck_Click_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string HashCheckForm_fileCheck_FileCheckCompleted_Start {
+            get {
+                return ResourceManager.GetString("HashCheckForm_fileCheck_FileCheckCompleted_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download failed:.
+        /// </summary>
+        internal static string Helpers_DownloadString_Download_failed_ {
+            get {
+                return ResourceManager.GetString("Helpers_DownloadString_Download_failed_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder not exist:.
+        /// </summary>
+        internal static string Helpers_OpenFolder_Folder_not_exist_ {
+            get {
+                return ResourceManager.GetString("Helpers_OpenFolder_Folder_not_exist_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hue: {0:0.0}°, Saturation: {1:0.0}%, Brightness: {2:0.0}%.
+        /// </summary>
+        internal static string HSB_ToString_ {
+            get {
+                return ResourceManager.GetString("HSB_ToString_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Loading {
             get {
                 object obj = ResourceManager.GetObject("Loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string MyMessageBox_MyMessageBox_Cancel {
+            get {
+                return ResourceManager.GetString("MyMessageBox_MyMessageBox_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string MyMessageBox_MyMessageBox_No {
+            get {
+                return ResourceManager.GetString("MyMessageBox_MyMessageBox_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string MyMessageBox_MyMessageBox_OK {
+            get {
+                return ResourceManager.GetString("MyMessageBox_MyMessageBox_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string MyMessageBox_MyMessageBox_Yes {
+            get {
+                return ResourceManager.GetString("MyMessageBox_MyMessageBox_Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading image....
+        /// </summary>
+        internal static string MyPictureBox_LoadImageAsync_Loading_image___ {
+            get {
+                return ResourceManager.GetString("MyPictureBox_LoadImageAsync_Loading_image___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading image: {0}%.
+        /// </summary>
+        internal static string MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__ {
+            get {
+                return ResourceManager.GetString("MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print.
+        /// </summary>
+        internal static string PrintForm_LoadSettings_Print {
+            get {
+                return ResourceManager.GetString("PrintForm_LoadSettings_Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: {0}, Size: {1}.
+        /// </summary>
+        internal static string PrintTextForm_LoadSettings_Name___0___Size___1_ {
+            get {
+                return ResourceManager.GetString("PrintTextForm_LoadSettings_Name___0___Size___1_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload with {0}.
+        /// </summary>
+        internal static string RegistryHelpers_ShellExtDesc_Upload_with__0_ {
+            get {
+                return ResourceManager.GetString("RegistryHelpers_ShellExtDesc_Upload_with__0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Computer name.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_cn_Computer_name {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_cn_Computer_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current day.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_d_Current_day {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_d_Current_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current hour.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_h_Current_hour {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_h_Current_hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gets image height.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_height_Gets_image_height {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_height_Gets_image_height", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto increment number.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_i_Auto_increment_number {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_i_Auto_increment_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current minute.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_mi_Current_minute {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_mi_Current_minute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current month.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_mo_Current_month {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_mo_Current_month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current month name (Local language).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_mon_Current_month_name__Local_language_ {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_mon_Current_month_name__Local_language_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current month name (English).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_mon2_Current_month_name__English_ {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_mon2_Current_month_name__English_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current millisecond.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_ms_Current_millisecond {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ms_Current_millisecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New line.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_n_New_line {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_n_New_line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gets AM/PM.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_pm_Gets_AM_PM {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_pm_Gets_AM_PM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process name of active window.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_pn_Process_name_of_active_window {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_pn_Process_name_of_active_window", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random alphanumeric char.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_ra_Random_alphanumeric_char {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ra_Random_alphanumeric_char", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random number 0 to 9.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_rn_Random_number_0_to_9 {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_rn_Random_number_0_to_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current second.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_s_Current_second {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_s_Current_second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title of active window.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_t_Title_of_active_window {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_t_Title_of_active_window", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User login name.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_uln_User_login_name {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_uln_User_login_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_un_User_name {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_un_User_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unix timestamp.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_unix_Unix_timestamp {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_unix_Unix_timestamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current week name (Local language).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_w_Current_week_name__Local_language_ {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_w_Current_week_name__Local_language_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current week name (English).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_w2_Current_week_name__English_ {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_w2_Current_week_name__English_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gets image width.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_width_Gets_image_width {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_width_Gets_image_width", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current year.
+        /// </summary>
+        internal static string ReplCodeMenuEntry_y_Current_year {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_y_Current_year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current year (2 digits).
+        /// </summary>
+        internal static string ReplCodeMenuEntry_yy_Current_year__2_digits_ {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_yy_Current_year__2_digits_", resourceCulture);
             }
         }
         
@@ -127,6 +800,33 @@ namespace HelpersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("tick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A newer version of ShareX is available.
+        /// </summary>
+        internal static string UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available {
+            get {
+                return ResourceManager.GetString("UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX is up to date.
+        /// </summary>
+        internal static string UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date {
+            get {
+                return ResourceManager.GetString("UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update check failed.
+        /// </summary>
+        internal static string UpdateCheckerLabel_UpdateControls_Update_check_failed {
+            get {
+                return ResourceManager.GetString("UpdateCheckerLabel_UpdateControls_Update_check_failed", resourceCulture);
             }
         }
     }

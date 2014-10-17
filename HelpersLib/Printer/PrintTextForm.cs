@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -67,7 +68,7 @@ namespace HelpersLib
         private void LoadSettings()
         {
             Font font = printSettings.TextFont;
-            lblFont.Text = "Name: " + font.Name + ", Size: " + font.Size;
+            lblFont.Text = string.Format(Resources.PrintTextForm_LoadSettings_Name___0___Size___1_, font.Name, font.Size);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

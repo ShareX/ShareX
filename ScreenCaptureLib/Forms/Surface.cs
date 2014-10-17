@@ -96,7 +96,7 @@ namespace ScreenCaptureLib
             Bounds = ScreenRectangle;
             FormBorderStyle = FormBorderStyle.None;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - Region Capture";
+            Text = "ShareX - " + Resources.Surface_InitializeComponent_Region_capture;
             ShowInTaskbar = false;
             TopMost = true;
             Shown += Surface_Shown;

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -48,7 +49,7 @@ namespace HelpersLib
 
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("ShareX - Choose file path", txtFilePath);
+            Helpers.BrowseFile("ShareX - " + Resources.HashCheckForm_btnFilePathBrowse_Click_Choose_file_path, txtFilePath);
         }
 
         private void btnStartHashCheck_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace HelpersLib
 
                 if (hashCheck.Start(txtFilePath.Text, hashType))
                 {
-                    btnStartHashCheck.Text = "Stop";
+                    btnStartHashCheck.Text = Resources.HashCheckForm_btnStartHashCheck_Click_Stop;
                     txtResult.Text = string.Empty;
                 }
             }
@@ -77,7 +78,7 @@ namespace HelpersLib
 
         private void fileCheck_FileCheckCompleted(string result, bool cancelled)
         {
-            btnStartHashCheck.Text = "Start";
+            btnStartHashCheck.Text = Resources.HashCheckForm_fileCheck_FileCheckCompleted_Start;
             txtResult.Text = result.ToUpperInvariant();
             if (!string.IsNullOrEmpty(txtTarget.Text))
             {

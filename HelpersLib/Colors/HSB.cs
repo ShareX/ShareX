@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Drawing;
 
@@ -174,7 +175,7 @@ namespace HelpersLib
 
         public override string ToString()
         {
-            return String.Format("Hue: {0:0.0}°, Saturation: {1:0.0}%, Brightness: {2:0.0}%", Hue360, Saturation100, Brightness100);
+            return String.Format(Resources.HSB_ToString_, Hue360, Saturation100, Brightness100);
         }
 
         public Color ToColor()

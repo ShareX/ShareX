@@ -153,7 +153,7 @@ namespace ScreenCaptureLib
             Bounds = ScreenRectangle;
             FormBorderStyle = FormBorderStyle.None;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - Rectangle Capture Annotate";
+            Text = "ShareX - " + Resources.RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate;
             ShowInTaskbar = false;
             TopMost = true;
 
@@ -380,11 +380,11 @@ namespace ScreenCaptureLib
 
             if (isDrawingMode)
             {
-                tipText = "Ctrl: Region mode ░ Shift: Pen color ░ Mouse wheel: Pen size ░ Space: Fullscreen capture";
+                tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_on;
             }
             else
             {
-                tipText = "Ctrl: Drawing mode ░ Space: Fullscreen capture";
+                tipText = Resources.RectangleAnnotate_DrawTips_Drawing_mode_off;
             }
 
             Size textSize = g.MeasureString(tipText, tipFont).ToSize();

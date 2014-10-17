@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using HistoryLib.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace HistoryLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            Text = "ShareX - History: " + historyPath;
+            Text = "ShareX - " + string.Format(Resources.HistoryForm_HistoryForm_History_, historyPath);
 
             HistoryPath = historyPath;
             MaxItemCount = maxItemCount;
@@ -59,7 +60,7 @@ namespace HistoryLib
             cbFilenameFilterMethod.SelectedIndex = 0; // Contains
             cbFilenameFilterCulture.SelectedIndex = 1; // Invariant culture
             cbTypeFilterSelection.SelectedIndex = 0; // Image
-            cbFilenameFilterCulture.Items[0] = string.Format("Current culture ({0})", CultureInfo.CurrentCulture.Parent.EnglishName);
+            cbFilenameFilterCulture.Items[0] = string.Format(Resources.HistoryForm_HistoryForm_Current_culture___0__, CultureInfo.CurrentCulture.Parent.EnglishName);
             lvHistory.FillLastColumn();
         }
 
@@ -204,11 +205,11 @@ namespace HistoryLib
         {
             StringBuilder status = new StringBuilder();
 
-            status.Append("Total: " + allHistoryItems.Length);
+            status.AppendFormat(Resources.HistoryForm_UpdateItemCount_Total___0_, allHistoryItems.Length);
 
             if (allHistoryItems.Length > historyItems.Length)
             {
-                status.Append(", Filtered: " + historyItems.Length);
+                status.AppendFormat(Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length);
             }
 
             var types = from hi in historyItems

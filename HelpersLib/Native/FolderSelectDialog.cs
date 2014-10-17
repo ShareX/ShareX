@@ -25,6 +25,7 @@
 
 // http://www.lyquidity.com/devblog/?p=136
 
+using HelpersLib.Properties;
 using System;
 using System.Reflection;
 using System.Windows.Forms;
@@ -80,7 +81,7 @@ namespace HelpersLib
             }
             set
             {
-                ofd.Title = string.IsNullOrEmpty(value) ? "Select a folder" : value;
+                ofd.Title = string.IsNullOrEmpty(value) ? Resources.FolderSelectDialog_Title_Select_a_folder : value;
             }
         }
 

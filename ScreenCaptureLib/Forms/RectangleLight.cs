@@ -128,7 +128,7 @@ namespace ScreenCaptureLib
             Bounds = ScreenRectangle;
             FormBorderStyle = FormBorderStyle.None;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - Rectangle Capture Light";
+            Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
             ShowInTaskbar = false;
             TopMost = true;
 

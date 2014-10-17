@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -42,31 +43,31 @@ namespace HelpersLib
             return '%' + _value;
         }
 
-        public static readonly ReplCodeMenuEntry t = new ReplCodeMenuEntry("t", "Title of active window");
-        public static readonly ReplCodeMenuEntry pn = new ReplCodeMenuEntry("pn", "Process name of active window");
-        public static readonly ReplCodeMenuEntry y = new ReplCodeMenuEntry("y", "Current year");
-        public static readonly ReplCodeMenuEntry yy = new ReplCodeMenuEntry("yy", "Current year (2 digits)");
-        public static readonly ReplCodeMenuEntry mo = new ReplCodeMenuEntry("mo", "Current month");
-        public static readonly ReplCodeMenuEntry mon = new ReplCodeMenuEntry("mon", "Current month name (Local language)");
-        public static readonly ReplCodeMenuEntry mon2 = new ReplCodeMenuEntry("mon2", "Current month name (English)");
-        public static readonly ReplCodeMenuEntry d = new ReplCodeMenuEntry("d", "Current day");
-        public static readonly ReplCodeMenuEntry h = new ReplCodeMenuEntry("h", "Current hour");
-        public static readonly ReplCodeMenuEntry mi = new ReplCodeMenuEntry("mi", "Current minute");
-        public static readonly ReplCodeMenuEntry s = new ReplCodeMenuEntry("s", "Current second");
-        public static readonly ReplCodeMenuEntry ms = new ReplCodeMenuEntry("ms", "Current millisecond");
-        public static readonly ReplCodeMenuEntry pm = new ReplCodeMenuEntry("pm", "Gets AM/PM");
-        public static readonly ReplCodeMenuEntry w = new ReplCodeMenuEntry("w", "Current week name (Local language)");
-        public static readonly ReplCodeMenuEntry w2 = new ReplCodeMenuEntry("w2", "Current week name (English)");
-        public static readonly ReplCodeMenuEntry unix = new ReplCodeMenuEntry("unix", "Unix timestamp");
-        public static readonly ReplCodeMenuEntry i = new ReplCodeMenuEntry("i", "Auto increment number");
-        public static readonly ReplCodeMenuEntry rn = new ReplCodeMenuEntry("rn", "Random number 0 to 9");
-        public static readonly ReplCodeMenuEntry ra = new ReplCodeMenuEntry("ra", "Random alphanumeric char");
-        public static readonly ReplCodeMenuEntry width = new ReplCodeMenuEntry("width", "Gets image width");
-        public static readonly ReplCodeMenuEntry height = new ReplCodeMenuEntry("height", "Gets image height");
-        public static readonly ReplCodeMenuEntry un = new ReplCodeMenuEntry("un", "User name");
-        public static readonly ReplCodeMenuEntry uln = new ReplCodeMenuEntry("uln", "User login name");
-        public static readonly ReplCodeMenuEntry cn = new ReplCodeMenuEntry("cn", "Computer name");
-        public static readonly ReplCodeMenuEntry n = new ReplCodeMenuEntry("n", "New line");
+        public static readonly ReplCodeMenuEntry t = new ReplCodeMenuEntry("t", Resources.ReplCodeMenuEntry_t_Title_of_active_window);
+        public static readonly ReplCodeMenuEntry pn = new ReplCodeMenuEntry("pn", Resources.ReplCodeMenuEntry_pn_Process_name_of_active_window);
+        public static readonly ReplCodeMenuEntry y = new ReplCodeMenuEntry("y", Resources.ReplCodeMenuEntry_y_Current_year);
+        public static readonly ReplCodeMenuEntry yy = new ReplCodeMenuEntry("yy", Resources.ReplCodeMenuEntry_yy_Current_year__2_digits_);
+        public static readonly ReplCodeMenuEntry mo = new ReplCodeMenuEntry("mo", Resources.ReplCodeMenuEntry_mo_Current_month);
+        public static readonly ReplCodeMenuEntry mon = new ReplCodeMenuEntry("mon", Resources.ReplCodeMenuEntry_mon_Current_month_name__Local_language_);
+        public static readonly ReplCodeMenuEntry mon2 = new ReplCodeMenuEntry("mon2", Resources.ReplCodeMenuEntry_mon2_Current_month_name__English_);
+        public static readonly ReplCodeMenuEntry d = new ReplCodeMenuEntry("d", Resources.ReplCodeMenuEntry_d_Current_day);
+        public static readonly ReplCodeMenuEntry h = new ReplCodeMenuEntry("h", Resources.ReplCodeMenuEntry_h_Current_hour);
+        public static readonly ReplCodeMenuEntry mi = new ReplCodeMenuEntry("mi", Resources.ReplCodeMenuEntry_mi_Current_minute);
+        public static readonly ReplCodeMenuEntry s = new ReplCodeMenuEntry("s", Resources.ReplCodeMenuEntry_s_Current_second);
+        public static readonly ReplCodeMenuEntry ms = new ReplCodeMenuEntry("ms", Resources.ReplCodeMenuEntry_ms_Current_millisecond);
+        public static readonly ReplCodeMenuEntry pm = new ReplCodeMenuEntry("pm", Resources.ReplCodeMenuEntry_pm_Gets_AM_PM);
+        public static readonly ReplCodeMenuEntry w = new ReplCodeMenuEntry("w", Resources.ReplCodeMenuEntry_w_Current_week_name__Local_language_);
+        public static readonly ReplCodeMenuEntry w2 = new ReplCodeMenuEntry("w2", Resources.ReplCodeMenuEntry_w2_Current_week_name__English_);
+        public static readonly ReplCodeMenuEntry unix = new ReplCodeMenuEntry("unix", Resources.ReplCodeMenuEntry_unix_Unix_timestamp);
+        public static readonly ReplCodeMenuEntry i = new ReplCodeMenuEntry("i", Resources.ReplCodeMenuEntry_i_Auto_increment_number);
+        public static readonly ReplCodeMenuEntry rn = new ReplCodeMenuEntry("rn", Resources.ReplCodeMenuEntry_rn_Random_number_0_to_9);
+        public static readonly ReplCodeMenuEntry ra = new ReplCodeMenuEntry("ra", Resources.ReplCodeMenuEntry_ra_Random_alphanumeric_char);
+        public static readonly ReplCodeMenuEntry width = new ReplCodeMenuEntry("width", Resources.ReplCodeMenuEntry_width_Gets_image_width);
+        public static readonly ReplCodeMenuEntry height = new ReplCodeMenuEntry("height", Resources.ReplCodeMenuEntry_height_Gets_image_height);
+        public static readonly ReplCodeMenuEntry un = new ReplCodeMenuEntry("un", Resources.ReplCodeMenuEntry_un_User_name);
+        public static readonly ReplCodeMenuEntry uln = new ReplCodeMenuEntry("uln", Resources.ReplCodeMenuEntry_uln_User_login_name);
+        public static readonly ReplCodeMenuEntry cn = new ReplCodeMenuEntry("cn", Resources.ReplCodeMenuEntry_cn_Computer_name);
+        public static readonly ReplCodeMenuEntry n = new ReplCodeMenuEntry("n", Resources.ReplCodeMenuEntry_n_New_line);
     }
 
     public enum NameParserType

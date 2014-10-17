@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -41,7 +42,7 @@ namespace HelpersLib
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 dlg.FileName = "Default.css";
-                dlg.Title = "Browse for a Cascading Style Sheet...";
+                dlg.Title = Resources.CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___;
                 dlg.Filter = "Cascading Style Sheets (*.css)|*.css";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

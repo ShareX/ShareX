@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -52,7 +53,7 @@ namespace HelpersLib
                 using (Image img = Clipboard.GetImage())
                 {
                     pbClipboard.LoadImage(img);
-                    lblQuestion.Text = string.Format("Clipboard content: Image (Size: {0}x{1})", img.Width, img.Height);
+                    lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__, img.Width, img.Height);
                 }
 
                 pbClipboard.Visible = true;
@@ -60,20 +61,20 @@ namespace HelpersLib
             else if (Clipboard.ContainsText())
             {
                 string text = Clipboard.GetText();
-                lblQuestion.Text = string.Format("Clipboard content: Text (Length: {0})", text.Length);
+                lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__, text.Length);
                 txtClipboard.Text = text;
                 txtClipboard.Visible = true;
             }
             else if (Clipboard.ContainsFileDropList())
             {
                 string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
-                lblQuestion.Text = string.Format("Clipboard content: File (Count: {0})", files.Length);
+                lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__, files.Length);
                 lbClipboard.Items.AddRange(files);
                 lbClipboard.Visible = true;
             }
             else
             {
-                lblQuestion.Text = "Clipboard is empty or contains unknown data.";
+                lblQuestion.Text = Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_;
                 IsClipboardEmpty = true;
             }
         }

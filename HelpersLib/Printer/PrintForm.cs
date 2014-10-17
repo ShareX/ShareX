@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -75,7 +76,9 @@ namespace HelpersLib
             cbAllowEnlarge.Enabled = printSettings.AutoScaleImage;
             cbCenterImage.Enabled = printSettings.AutoScaleImage;
 
-            btnPrint.Text = printSettings.ShowPrintDialog ? "Print..." : "Print";
+            string printText = Resources.PrintForm_LoadSettings_Print;
+            if (printSettings.ShowPrintDialog) printText += "...";
+            btnPrint.Text = printText;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

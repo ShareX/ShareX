@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -73,15 +74,15 @@ namespace HelpersLib
                 switch (updateChecker.Status)
                 {
                     case UpdateStatus.UpdateCheckFailed:
-                        lblStatus.Text = "Update check failed";
+                        lblStatus.Text = Resources.UpdateCheckerLabel_UpdateControls_Update_check_failed;
                         lblStatus.Visible = true;
                         break;
                     case UpdateStatus.UpdateAvailable:
-                        llblUpdateAvailable.Text = "A newer version of ShareX is available";
+                        llblUpdateAvailable.Text = Resources.UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available;
                         llblUpdateAvailable.Visible = true;
                         break;
                     case UpdateStatus.UpToDate:
-                        lblStatus.Text = "ShareX is up to date";
+                        lblStatus.Text = Resources.UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date;
                         lblStatus.Visible = true;
                         break;
                 }

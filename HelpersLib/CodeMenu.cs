@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -62,7 +63,7 @@ namespace HelpersLib
 
             cms.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem tsmiClose = new ToolStripMenuItem("Close");
+            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.CodeMenu_Create_Close);
             tsmiClose.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiClose);
 

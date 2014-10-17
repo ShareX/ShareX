@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ImageEffectsLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -64,14 +65,14 @@ namespace ImageEffectsLib
 
         private void AddAllEffectsToTreeView()
         {
-            AddEffectToTreeView("Drawings",
+            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Drawings,
                 typeof(DrawBackground),
                 typeof(DrawBorder),
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),
                 typeof(DrawText));
 
-            AddEffectToTreeView("Manipulations",
+            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
                 typeof(Canvas),
                 typeof(Crop),
                 typeof(Flip),
@@ -80,7 +81,7 @@ namespace ImageEffectsLib
                 typeof(Scale),
                 typeof(Skew));
 
-            AddEffectToTreeView("Adjustments",
+            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Adjustments,
                 typeof(Alpha),
                 typeof(BlackWhite),
                 typeof(Brightness),
@@ -95,7 +96,7 @@ namespace ImageEffectsLib
                 typeof(Saturation),
                 typeof(Sepia));
 
-            AddEffectToTreeView("Filters",
+            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,
                 typeof(Blur),
                 typeof(EdgeDetect),
                 typeof(Emboss),
@@ -132,7 +133,8 @@ namespace ImageEffectsLib
                 using (Image preview = ApplyEffects())
                 {
                     pbResult.LoadImage(preview);
-                    Text = string.Format("ShareX - Image effects - Width: {0}, Height: {1}, Render time: {2} ms", preview.Width, preview.Height, timer.ElapsedMilliseconds);
+                    Text = string.Format("ShareX - " + Resources.ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms,
+                        preview.Width, preview.Height, timer.ElapsedMilliseconds);
                 }
             }
         }

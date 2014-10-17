@@ -237,7 +237,7 @@ namespace HelpersLib
                 {
                     Reset();
                     isImageLoading = true;
-                    Text = "Loading image...";
+                    Text = Resources.MyPictureBox_LoadImageAsync_Loading_image___;
                     lblStatus.Visible = true;
                     pbMain.LoadAsync(path);
                 }
@@ -282,7 +282,7 @@ namespace HelpersLib
         {
             if (e.ProgressPercentage < 100)
             {
-                Text = string.Format("Loading image: {0}%", e.ProgressPercentage);
+                Text = string.Format(Resources.MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__, e.ProgressPercentage);
             }
         }
 

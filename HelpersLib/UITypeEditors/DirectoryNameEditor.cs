@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms.Design;
@@ -39,7 +40,7 @@ namespace HelpersLib
             }
             using (FolderSelectDialog dlg = new FolderSelectDialog())
             {
-                dlg.Title = "Browse for a folder...";
+                dlg.Title = Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___;
                 if (dlg.ShowDialog())
                 {
                     value = dlg.FileName;

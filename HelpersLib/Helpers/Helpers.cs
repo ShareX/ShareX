@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -331,7 +332,7 @@ namespace HelpersLib
                 }
                 else
                 {
-                    MessageBox.Show("Folder not exist:\r\n" + folderPath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.Helpers_OpenFolder_Folder_not_exist_ + "\r\n" + folderPath, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -775,7 +776,7 @@ namespace HelpersLib
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show("Download failed:\r\n" + e.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

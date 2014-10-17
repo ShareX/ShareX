@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
@@ -77,7 +78,8 @@ namespace HelpersLib
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show("Export failed.\n\n" + e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.ExportImportControl_Serialize_Export_failed_ + "\n\n" + e, "ShareX - " + Resources.ExportImportControl_Serialize_Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -94,7 +96,7 @@ namespace HelpersLib
 
                 if (!string.IsNullOrEmpty(json) && ClipboardHelpers.CopyText(json))
                 {
-                    MessageBox.Show("Settings copied to your clipboard.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -152,7 +154,8 @@ namespace HelpersLib
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Import failed.\n\n" + e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.ExportImportControl_Deserialize_Import_failed_ + "\n\n" + e, "ShareX - " + Resources.ExportImportControl_Serialize_Error,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return null;
@@ -202,7 +205,7 @@ namespace HelpersLib
         {
             if (ImportRequested != null)
             {
-                string url = InputBox.GetInputText("URL to download settings from");
+                string url = InputBox.GetInputText(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
 
                 if (!string.IsNullOrEmpty(url))
                 {

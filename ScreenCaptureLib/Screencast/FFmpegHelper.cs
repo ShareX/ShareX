@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ScreenCaptureLib.Properties;
 using SevenZip;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,7 @@ namespace ScreenCaptureLib
             bool result = errorCode == 0;
             if (Options.FFmpeg.ShowError && !result)
             {
-                new OutputBox(Output.ToString(), "FFmpeg error").ShowDialog();
+                new OutputBox(Output.ToString(), Resources.FFmpegHelper_Record_FFmpeg_error).ShowDialog();
             }
             return result;
         }

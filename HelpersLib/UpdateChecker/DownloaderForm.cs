@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -64,7 +65,7 @@ namespace HelpersLib
             fillRect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
             UpdateFormSize();
-            ChangeStatus("Waiting.");
+            ChangeStatus(Resources.DownloaderForm_DownloaderForm_Waiting_);
 
             Status = DownloaderFormStatus.Waiting;
 
@@ -90,7 +91,7 @@ namespace HelpersLib
         {
             URL = url;
             Filename = filename;
-            lblFilename.Text = "Filename: " + Filename;
+            lblFilename.Text = string.Format(Resources.DownloaderForm_DownloaderForm_Filename___0_, Filename);
         }
 
         private void UpdaterForm_Paint(object sender, PaintEventArgs e)
@@ -206,7 +207,7 @@ namespace HelpersLib
 
         private void ChangeStatus(string status)
         {
-            lblStatus.Text = "Status: " + status;
+            lblStatus.Text = string.Format(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
         }
 
         private void ChangeProgress()
@@ -214,7 +215,7 @@ namespace HelpersLib
             if (fileDownloader != null)
             {
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-                lblProgress.Text = String.Format(CultureInfo.CurrentCulture, "Progress: {0:0.0}%\nDownload speed: {1:0.0} KB/s\nFile size: {2:n0} / {3:n0} KB",
+                lblProgress.Text = String.Format(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
                     fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
             }
         }
@@ -224,19 +225,19 @@ namespace HelpersLib
             if (!string.IsNullOrEmpty(URL) && Status == DownloaderFormStatus.Waiting)
             {
                 Status = DownloaderFormStatus.DownloadStarted;
-                btnAction.Text = "Cancel";
+                btnAction.Text = Resources.DownloaderForm_StartDownload_Cancel;
 
                 SavePath = Path.Combine(Path.GetTempPath(), Filename);
                 fileStream = new FileStream(SavePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 fileDownloader = new FileDownloader(URL, fileStream, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
-                fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus("Downloading.");
+                fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
                 fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadCompleted += fileDownloader_DownloadCompleted;
                 fileDownloader.ExceptionThrowed += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);
                 fileDownloader.StartDownload();
 
-                ChangeStatus("Getting file size.");
+                ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
             }
         }
 
@@ -254,9 +255,9 @@ namespace HelpersLib
 
         private void fileDownloader_DownloadCompleted(object sender, EventArgs e)
         {
-            ChangeStatus("Download completed.");
+            ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
             Status = DownloaderFormStatus.DownloadCompleted;
-            btnAction.Text = "Install";
+            btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
 
             if (AutoStartInstall)
             {

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -35,7 +36,7 @@ namespace HelpersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
-            AddDNS("Manual");
+            AddDNS(Resources.DNSChangerForm_DNSChangerForm_Manual);
             AddDNS("Google Public DNS", "8.8.8.8", "8.8.4.4"); // https://developers.google.com/speed/public-dns/
             AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // http://www.opendns.com/
             AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com/
@@ -173,20 +174,20 @@ namespace HelpersLib
                     if (result == 0)
                     {
                         NativeMethods.DnsFlushResolverCache();
-                        MessageBox.Show("DNS successfully set.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.DNSChangerForm_btnSave_Click_DNS_successfully_set_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (result == 1)
                     {
-                        MessageBox.Show("DNS successfully set. Reboot is required.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (result > 1)
                     {
-                        MessageBox.Show("Setting DNS failed with error code: " + result, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_ + " " + result, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Setting DNS failed.\r\n" + ex.ToString(), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.DNSChangerForm_btnSave_Click_Setting_DNS_failed_ + "\r\n" + ex, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
