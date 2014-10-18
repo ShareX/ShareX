@@ -566,6 +566,33 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatic.
+        /// </summary>
+        internal static string ProxyMethod_Automatic {
+            get {
+                return ResourceManager.GetString("ProxyMethod_Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual.
+        /// </summary>
+        internal static string ProxyMethod_Manual {
+            get {
+                return ResourceManager.GetString("ProxyMethod_Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        internal static string ProxyMethod_None {
+            get {
+                return ResourceManager.GetString("ProxyMethod_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload with {0}.
         /// </summary>
         internal static string RegistryHelpers_ShellExtDesc_Upload_with__0_ {

@@ -30,22 +30,23 @@ namespace HelpersLib
 {
     public class DebugTimer : IDisposable
     {
+        public string Text { get; private set; }
+
         private Stopwatch timer;
-        private string text;
 
-        public DebugTimer()
+        public DebugTimer(string text = null)
         {
-            timer = Stopwatch.StartNew();
-        }
-
-        public DebugTimer(string text)
-        {
-            this.text = text;
+            Text = text;
             timer = Stopwatch.StartNew();
         }
 
         private void Write(string text, string timeText)
         {
+            if (string.IsNullOrEmpty(text))
+            {
+                text = Text;
+            }
+
             if (!string.IsNullOrEmpty(text))
             {
                 timeText = text + ": " + timeText;
@@ -54,19 +55,19 @@ namespace HelpersLib
             DebugHelper.WriteLine(timeText);
         }
 
-        public void WriteElapsedSeconds(string text = "")
+        public void WriteElapsedSeconds(string text = null)
         {
             Write(text, timer.Elapsed.TotalSeconds.ToString("0.000") + " seconds.");
         }
 
-        public void WriteElapsedMilliseconds(string text = "")
+        public void WriteElapsedMilliseconds(string text = null)
         {
             Write(text, timer.ElapsedMilliseconds + " millisecond.");
         }
 
         public void Dispose()
         {
-            WriteElapsedMilliseconds(text);
+            WriteElapsedMilliseconds();
         }
     }
 }

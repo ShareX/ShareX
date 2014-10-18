@@ -166,18 +166,6 @@ namespace HelpersLib
         ReportProgress
     }
 
-    public enum WindowButtonAction
-    {
-        [Description("Minimize to Tray")]
-        MinimizeToTray,
-        [Description("Minimize to Taskbar")]
-        MinimizeToTaskbar,
-        [Description("Exit Application")]
-        ExitApplication,
-        [Description("Do Nothing")]
-        Nothing
-    }
-
     public enum TriangleAngle
     {
         Top,
@@ -281,7 +269,7 @@ namespace HelpersLib
         RGB, RGBA, ARGB
     }
 
-    public enum ProxyMethod
+    public enum ProxyMethod // Localized
     {
         None,
         Manual,

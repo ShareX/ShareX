@@ -384,4 +384,13 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Palette quantizer grayscale 256 colors</value>
   </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>None</value>
+  </data>
 </root>
