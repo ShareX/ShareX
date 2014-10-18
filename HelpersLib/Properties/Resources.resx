@@ -372,4 +372,16 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>Download failed:</value>
   </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>Octree quantizer 16 colors</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>Octree quantizer 256 colors (Slow encoding but better quality)</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>Default .NET encoding (Fast encoding but average quality)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Palette quantizer grayscale 256 colors</value>
+  </data>
 </root>

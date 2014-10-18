@@ -437,7 +437,7 @@ namespace UploadersLib
             }
 
             cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestType)));
-            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetEnumDescriptions<ResponseType>());
+            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>().ToArray());
 
             CustomUploaderClear();
 

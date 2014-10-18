@@ -267,7 +267,7 @@ namespace HelpersLib
 
         public static List<string> GetLocalizedEnumDescriptions<T>()
         {
-            Assembly assembly = Assembly.GetCallingAssembly();
+            Assembly assembly = Assembly.GetAssembly(typeof(T));
             string resourcePath = assembly.GetName().Name + ".Properties.Resources";
             ResourceManager resourceManager = new ResourceManager(resourcePath, assembly);
             return GetLocalizedEnumDescriptions<T>(resourceManager);
@@ -279,10 +279,17 @@ namespace HelpersLib
             Type type = typeof(T);
             string typeName = type.Name;
 
-            foreach (string enumName in Enum.GetNames(type))
+            foreach (Enum enumValue in Enum.GetValues(typeof(T)).OfType<Enum>())
             {
-                string resourceName = typeName + "_" + enumName;
+                string resourceName = typeName + "_" + enumValue;
                 string description = resourceManager.GetString(resourceName);
+
+                if (string.IsNullOrEmpty(description))
+                {
+                    description = enumValue.GetDescription();
+                    Debug.WriteLine("Enum localization missing: " + enumValue);
+                }
+
                 result.Add(description);
             }
 

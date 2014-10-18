@@ -161,7 +161,7 @@ namespace ShareX
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
             cboPopUpNotification.Items.Clear();
-            cboPopUpNotification.Items.AddRange(Helpers.GetEnumDescriptions<PopUpNotificationType>());
+            cboPopUpNotification.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PopUpNotificationType>().ToArray());
             cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
             cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
@@ -169,13 +169,13 @@ namespace ShareX
             cbImageFormat.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
             cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
             nudImageJPEGQuality.Value = TaskSettings.ImageSettings.ImageJPEGQuality;
-            cbImageGIFQuality.Items.AddRange(Helpers.GetEnumDescriptions<GIFQuality>());
+            cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>().ToArray());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
             nudUseImageFormat2After.Value = TaskSettings.ImageSettings.ImageSizeLimit;
             cbImageFormat2.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
             cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;
             cbImageFileExist.Items.Clear();
-            cbImageFileExist.Items.AddRange(Helpers.GetEnumDescriptions<FileExistAction>());
+            cbImageFileExist.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<FileExistAction>().ToArray());
             cbImageFileExist.SelectedIndex = (int)TaskSettings.ImageSettings.FileExistAction;
 
             // Image - Effects
@@ -330,7 +330,7 @@ namespace ShareX
 
         private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
         {
-            string[] enums = Helpers.GetEnumDescriptions<T>().Select(x => x.Replace("&", "&&")).ToArray();
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Select(x => x.Replace("&", "&&")).ToArray();
 
             foreach (ToolStripDropDown parent in parents)
             {
@@ -415,7 +415,7 @@ namespace ShareX
 
         private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = Helpers.GetEnumDescriptions<T>();
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {

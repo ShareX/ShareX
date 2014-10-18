@@ -394,6 +394,42 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Octree quantizer 16 colors.
+        /// </summary>
+        internal static string GIFQuality_Bit4 {
+            get {
+                return ResourceManager.GetString("GIFQuality_Bit4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Octree quantizer 256 colors (Slow encoding but better quality).
+        /// </summary>
+        internal static string GIFQuality_Bit8 {
+            get {
+                return ResourceManager.GetString("GIFQuality_Bit8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default .NET encoding (Fast encoding but average quality).
+        /// </summary>
+        internal static string GIFQuality_Default {
+            get {
+                return ResourceManager.GetString("GIFQuality_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Palette quantizer grayscale 256 colors.
+        /// </summary>
+        internal static string GIFQuality_Grayscale {
+            get {
+                return ResourceManager.GetString("GIFQuality_Grayscale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose file path.
         /// </summary>
         internal static string HashCheckForm_btnFilePathBrowse_Click_Choose_file_path {

@@ -30,8 +30,7 @@ namespace ShareX
 {
     public enum SupportedLanguage
     {
-        [Description("Automatic")]
-        Automatic,
+        Automatic, // Localized
         [Description("English")]
         English,
         [Description("Deutsch")]
@@ -65,7 +64,7 @@ namespace ShareX
     }
 
     [Flags]
-    public enum AfterCaptureTasks
+    public enum AfterCaptureTasks // Localized
     {
         None = 0,
         AddImageEffects = 1,
@@ -83,7 +82,7 @@ namespace ShareX
     }
 
     [Flags]
-    public enum AfterUploadTasks
+    public enum AfterUploadTasks // Localized
     {
         None = 0,
         UseURLShortener = 1,
@@ -118,73 +117,40 @@ namespace ShareX
         LastRegion
     }
 
-    public enum HotkeyType
+    public enum HotkeyType // Localized
     {
-        [Description("None")]
         None,
-        [Description("Upload file")]
         FileUpload,
-        [Description("Upload folder")]
         FolderUpload,
-        [Description("Upload from clipboard")]
         ClipboardUpload,
-        [Description("Upload from clipboard with content viewer")]
         ClipboardUploadWithContentViewer,
-        [Description("Upload from URL")]
         UploadURL,
-        [Description("Drag and drop upload")]
         DragDropUpload,
-        [Description("Stop all active uploads")]
         StopUploads,
-        [Description("Capture entire screen")]
         PrintScreen,
-        [Description("Capture active window")]
         ActiveWindow,
-        [Description("Capture active monitor")]
         ActiveMonitor,
-        [Description("Capture rectangle region")]
         RectangleRegion,
-        [Description("Capture rectangle region (Window)")]
         WindowRectangle,
-        [Description("Capture rectangle region (Annotate)")]
         RectangleAnnotate,
-        [Description("Capture rectangle region (Light)")]
         RectangleLight,
-        [Description("Capture rounded rectangle region")]
         RoundedRectangleRegion,
-        [Description("Capture ellipse region")]
         EllipseRegion,
-        [Description("Capture triangle region")]
         TriangleRegion,
-        [Description("Capture diamond region")]
         DiamondRegion,
-        [Description("Capture polygon region")]
         PolygonRegion,
-        [Description("Capture freehand region")]
         FreeHandRegion,
-        [Description("Capture last region")]
         LastRegion,
-        [Description("Screen recording")]
         ScreenRecorder,
-        [Description("Auto capture")]
         AutoCapture,
-        [Description("Open screenshots folder")]
         OpenScreenshotsFolder,
-        [Description("Screen color picker")]
         ScreenColorPicker,
-        [Description("Ruler")]
         Ruler,
-        [Description("FTP client")]
         FTPClient,
-        [Description("Hash check")]
         HashCheck,
-        [Description("Index folder")]
         IndexFolder,
-        [Description("Image effects")]
         ImageEffects,
-        [Description("QR code")]
         QRCode,
-        [Description("Tweet message")]
         TweetMessage
     }
 
@@ -195,17 +161,14 @@ namespace ShareX
         NotConfigured
     }
 
-    public enum PopUpNotificationType
+    public enum PopUpNotificationType // Localized
     {
-        [Description("Show nothing")]
         None,
-        [Description("Show tray balloon tip")]
         BalloonTip,
-        [Description("Show toast notification with preview")]
         ToastNotification
     }
 
-    [DefaultValue(ToastClickAction.OpenUrl)]
+    [DefaultValue(OpenUrl)]
     public enum ToastClickAction
     {
         [Description("Annotate image")]
@@ -222,15 +185,11 @@ namespace ShareX
         Upload,
     }
 
-    public enum FileExistAction
+    public enum FileExistAction // Localized
     {
-        [Description("Ask what to do")]
         Ask,
-        [Description("Overwrite file")]
         Overwrite,
-        [Description("Append number to the filename")]
         UniqueName,
-        [Description("Do not save")]
         Cancel
     }
 

@@ -243,7 +243,7 @@ namespace ShareX
 
         private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = Helpers.GetEnumDescriptions<T>();
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {

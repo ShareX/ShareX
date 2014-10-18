@@ -27,7 +27,7 @@ using System.ComponentModel;
 
 namespace UploadersLib
 {
-    [Description("Image uploaders"), DefaultValue(ImageDestination.Imgur)]
+    [Description("Image uploaders"), DefaultValue(Imgur)]
     public enum ImageDestination
     {
         [Description("Imgur")]
@@ -48,13 +48,11 @@ namespace UploadersLib
         Chevereto,
         [Description("Hızlı Resim")]
         HizliResim,
-        [Description("Custom image uploader")]
-        CustomImageUploader,
-        [Description("File uploader")]
-        FileUploader
+        CustomImageUploader, // Localized
+        FileUploader // Localized
     }
 
-    [Description("Text uploaders"), DefaultValue(TextDestination.Pastebin)]
+    [Description("Text uploaders"), DefaultValue(Pastebin)]
     public enum TextDestination
     {
         [Description("Pastebin")]
@@ -73,13 +71,11 @@ namespace UploadersLib
         Upaste,
         [Description("Hastebin")]
         Hastebin,
-        [Description("Custom text uploader")]
-        CustomTextUploader,
-        [Description("File uploader")]
-        FileUploader
+        CustomTextUploader, // Localized
+        FileUploader // Localized
     }
 
-    [Description("File uploaders"), DefaultValue(FileDestination.Dropbox)]
+    [Description("File uploaders"), DefaultValue(Dropbox)]
     public enum FileDestination
     {
         [Description("Dropbox")]
@@ -122,15 +118,12 @@ namespace UploadersLib
         Localhostr,
         [Description("JIRA")]
         Jira,
-        [Description("Shared folder")]
-        SharedFolder,
-        [Description("Email")]
-        Email,
-        [Description("Custom file uploader")]
-        CustomFileUploader
+        SharedFolder, // Localized
+        Email, // Localized
+        CustomFileUploader // Localized
     }
 
-    [Description("URL shorteners"), DefaultValue(UrlShortenerType.BITLY)]
+    [Description("URL shorteners"), DefaultValue(BITLY)]
     public enum UrlShortenerType
     {
         [Description("bit.ly")]
@@ -149,15 +142,13 @@ namespace UploadersLib
         NLCM,
         [Description("adf.ly")]
         AdFly,
-        [Description("Custom URL shortener")]
-        CustomURLShortener
+        CustomURLShortener // Localized
     }
 
-    [Description("URL sharing services"), DefaultValue(URLSharingServices.Twitter)]
+    [Description("URL sharing services"), DefaultValue(Twitter)]
     public enum URLSharingServices
     {
-        [Description("Email")]
-        Email,
+        Email, // Localized
         [Description("Twitter")]
         Twitter,
         [Description("Facebook")]
@@ -190,13 +181,10 @@ namespace UploadersLib
         DELETE
     }
 
-    public enum ResponseType
+    public enum ResponseType // Localized
     {
-        [Description("Response text")]
         Text,
-        [Description("Redirection URL")]
         RedirectionURL,
-        [Description("Response headers")]
         Headers
     }
 

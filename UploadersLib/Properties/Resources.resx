@@ -458,4 +458,40 @@ Created folders:</value>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>New account</value>
   </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Custom file uploader</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Shared folder</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Custom image uploader</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>File uploader</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>Custom text uploader</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>File uploader</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Custom URL shortener</value>
+  </data>
+  <data name="ResponseType_Headers" xml:space="preserve">
+    <value>Response headers</value>
+  </data>
+  <data name="ResponseType_RedirectionURL" xml:space="preserve">
+    <value>Redirection URL</value>
+  </data>
+  <data name="ResponseType_Text" xml:space="preserve">
+    <value>Response text</value>
+  </data>
 </root>
