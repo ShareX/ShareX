@@ -373,8 +373,6 @@ namespace ShareX
             using (Bitmap bmp = new Bitmap(16, 16))
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-
                 g.Clear(Color.Black);
 
                 int width = (int)(16 * (percentage / 100f));
@@ -387,7 +385,7 @@ namespace ShareX
                     }
                 }
 
-                using (Font font = new Font("Arial", 7, FontStyle.Bold))
+                using (Font font = new Font("Arial", 11, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
                     g.DrawString(percentage.ToString(), font, Brushes.White, 8, 8, sf);
