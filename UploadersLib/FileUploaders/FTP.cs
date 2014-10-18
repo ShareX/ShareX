@@ -92,7 +92,7 @@ namespace UploadersLib.FileUploaders
                 }
                 else
                 {
-                    client.ValidateCertificate += (FtpClient control, FtpSslValidationEventArgs e) =>
+                    client.ValidateCertificate += (control, e) =>
                     {
                         if (e.PolicyErrors != SslPolicyErrors.None)
                         {

@@ -29,8 +29,8 @@ namespace HelpersLib
 {
     public class DWMManager : IDisposable
     {
-        private bool isDWMEnabled = false;
-        private bool autoEnable = false;
+        private bool isDWMEnabled;
+        private bool autoEnable;
 
         public DWMManager()
         {

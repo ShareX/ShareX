@@ -95,7 +95,7 @@ namespace ShareX
         private int direction = speed;
         private Color lineColor = new HSB(0d, 1d, 0.9d);
         private bool isPaused;
-        private int clickCount = 0;
+        private int clickCount;
 
         private void cLogo_Draw(Graphics g)
         {

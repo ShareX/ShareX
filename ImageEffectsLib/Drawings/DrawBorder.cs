@@ -75,10 +75,8 @@ namespace ImageEffectsLib
             {
                 return ImageHelpers.DrawBorder(img, Color, Color2, GradientType, Size, Type);
             }
-            else
-            {
-                return ImageHelpers.DrawBorder(img, Color, Size, Type);
-            }
+
+            return ImageHelpers.DrawBorder(img, Color, Size, Type);
         }
     }
 }

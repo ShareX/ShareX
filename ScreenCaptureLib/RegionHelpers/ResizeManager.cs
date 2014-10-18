@@ -56,14 +56,12 @@ namespace ScreenCaptureLib
         public int MinMoveSpeed { get; set; }
         public bool IsBottomRightResizing { get; set; }
 
-        private Surface surface;
         private AreaManager areaManager;
         private NodeObject[] nodes;
         private Rectangle tempRect;
 
         public ResizeManager(Surface surface, AreaManager areaManager)
         {
-            this.surface = surface;
             this.areaManager = areaManager;
 
             MinMoveSpeed = surface.Config.MinMoveSpeed;

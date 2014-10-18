@@ -94,7 +94,7 @@ namespace UploadersLib.FileUploaders
             {
                 string query = OAuthManager.GenerateQuery(URLAccountInfo, null, HttpMethod.GET, AuthInfo);
 
-                string response = SendRequest(HttpMethod.GET, query, null, APIHeaders, responseType: ResponseType.Text);
+                string response = SendRequest(HttpMethod.GET, query, null, APIHeaders);
 
                 if (!string.IsNullOrEmpty(response))
                 {

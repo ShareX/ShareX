@@ -41,7 +41,7 @@ using UploadersLib.URLShorteners;
 
 namespace UploadersLib
 {
-    public partial class UploadersConfigForm : Form
+    public partial class UploadersConfigForm
     {
         #region Imgur
 

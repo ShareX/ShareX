@@ -64,8 +64,8 @@ namespace ShareX
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = (x.Tag is TextDestination && (TextDestination)x.Tag == (TextDestination)info.TaskSettings.TextDestination) ||
-                            (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)info.TaskSettings.TextFileDestination);
+                        x.Checked = (x.Tag is TextDestination && (TextDestination)x.Tag == info.TaskSettings.TextDestination) ||
+                            (x.Tag is FileDestination && (FileDestination)x.Tag == info.TaskSettings.TextFileDestination);
                     });
                     break;
                 case EDataType.File:
@@ -76,7 +76,7 @@ namespace ShareX
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)info.TaskSettings.FileDestination;
+                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == info.TaskSettings.FileDestination;
                     });
                     break;
                 case EDataType.URL:
@@ -87,7 +87,7 @@ namespace ShareX
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is UrlShortenerType && (UrlShortenerType)x.Tag == (UrlShortenerType)info.TaskSettings.URLShortenerDestination;
+                        x.Checked = x.Tag is UrlShortenerType && (UrlShortenerType)x.Tag == info.TaskSettings.URLShortenerDestination;
                     });
 
                     break;
@@ -113,8 +113,8 @@ namespace ShareX
 
             flp.Controls.OfType<RadioButton>().ForEach(x =>
             {
-                x.Checked = (x.Tag is ImageDestination && (ImageDestination)x.Tag == (ImageDestination)taskSettings.ImageDestination) ||
-                    (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)taskSettings.ImageFileDestination);
+                x.Checked = (x.Tag is ImageDestination && (ImageDestination)x.Tag == taskSettings.ImageDestination) ||
+                    (x.Tag is FileDestination && (FileDestination)x.Tag == taskSettings.ImageFileDestination);
             });
         }
 

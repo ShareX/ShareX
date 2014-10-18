@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace HelpersLib
 {
-    public partial class LayeredForm : Form
+    public class LayeredForm : Form
     {
         public LayeredForm()
         {

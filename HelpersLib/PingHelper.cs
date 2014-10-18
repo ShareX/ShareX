@@ -69,7 +69,7 @@ namespace HelpersLib
 
         private static IPAddress GetIpFromHost(string host)
         {
-            IPAddress address = null;
+            IPAddress address;
 
             if (!IPAddress.TryParse(host, out address))
             {

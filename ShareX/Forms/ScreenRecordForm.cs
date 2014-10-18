@@ -81,7 +81,8 @@ namespace ShareX
                         "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else if (!Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
+
+                if (!Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].IsValid())
                 {
                     MessageBox.Show(Resources.ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__ +
                         Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected].Path,

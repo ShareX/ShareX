@@ -48,7 +48,7 @@ namespace HelpersLib
         private ListViewColumnSorter lvwColumnSorter;
         private int lineIndex = -1;
         private int lastLineIndex = -1;
-        private ListViewItem dragOverItem = null;
+        private ListViewItem dragOverItem;
 
         public MyListView()
         {
@@ -223,10 +223,10 @@ namespace HelpersLib
             {
                 g.DrawLine(Pens.LightBlue, x1, y, x2 - 1, y);
 
-                Point[] leftTriangle = new Point[3] { new Point(x1, y - 4), new Point(x1 + 7, y), new Point(x1, y + 4) };
+                Point[] leftTriangle = new Point[] { new Point(x1, y - 4), new Point(x1 + 7, y), new Point(x1, y + 4) };
                 g.FillPolygon(Brushes.LightBlue, leftTriangle);
 
-                Point[] rightTriangle = new Point[3] { new Point(x2, y - 4), new Point(x2 - 8, y), new Point(x2, y + 4) };
+                Point[] rightTriangle = new Point[] { new Point(x2, y - 4), new Point(x2 - 8, y), new Point(x2, y + 4) };
                 g.FillPolygon(Brushes.LightBlue, rightTriangle);
             }
         }

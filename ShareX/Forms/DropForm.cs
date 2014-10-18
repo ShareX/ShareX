@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class DropForm : LayeredForm
+    public class DropForm : LayeredForm
     {
         private static DropForm instance;
 
@@ -52,8 +52,8 @@ namespace ShareX
         public int DropOpacity { get; set; }
         public int DropHoverOpacity { get; set; }
 
-        private Bitmap backgroundImage = null;
-        private bool isHovered = false;
+        private Bitmap backgroundImage;
+        private bool isHovered;
 
         private DropForm(int size, int offset, ContentAlignment alignment, int opacity, int hoverOpacity)
         {

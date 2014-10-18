@@ -1156,7 +1156,7 @@ namespace UploadersLib
             if (lvGoogleDriveFoldersList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvGoogleDriveFoldersList.SelectedItems[0];
-                var folder = lvi.Tag as UploadersLib.FileUploaders.GoogleDrive.GoogleDriveFile;
+                var folder = lvi.Tag as GoogleDrive.GoogleDriveFile;
                 if (folder != null)
                 {
                     txtGoogleDriveFolderID.Text = folder.id;
@@ -1403,7 +1403,7 @@ namespace UploadersLib
         private void FTPAccountDuplicateButton_Click(object sender, EventArgs e)
         {
             FTPAccount src = (FTPAccount)ucFTPAccounts.lbAccounts.Items[ucFTPAccounts.lbAccounts.SelectedIndex];
-            FTPAccount clone = (FTPAccount)src.Clone();
+            FTPAccount clone = src.Clone();
             AddFTPAccount(clone);
         }
 
@@ -1897,7 +1897,7 @@ namespace UploadersLib
         private void LocalhostAccountDuplicateButton_Click(object sender, EventArgs e)
         {
             LocalhostAccount src = (LocalhostAccount)ucLocalhostAccounts.lbAccounts.Items[ucLocalhostAccounts.lbAccounts.SelectedIndex];
-            LocalhostAccount clone = (LocalhostAccount)src.Clone();
+            LocalhostAccount clone = src.Clone();
             Config.LocalhostAccountList.Add(clone);
             ucLocalhostAccounts.AddItem(clone);
         }
@@ -2066,7 +2066,7 @@ namespace UploadersLib
         private void TwitterAccountDuplicateButton_Click(object sender, EventArgs e)
         {
             OAuthInfo src = (OAuthInfo)ucTwitterAccounts.lbAccounts.Items[ucTwitterAccounts.lbAccounts.SelectedIndex];
-            OAuthInfo clone = (OAuthInfo)src.Clone();
+            OAuthInfo clone = src.Clone();
             Config.TwitterOAuthInfoList.Add(clone);
             ucTwitterAccounts.AddItem(clone);
         }

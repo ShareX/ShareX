@@ -92,7 +92,7 @@ namespace HelpersLib
 
         public override bool Equals(object obj)
         {
-            return obj != null && obj is UnsafeBitmap && Compare((UnsafeBitmap)obj, this);
+            return obj is UnsafeBitmap && Compare((UnsafeBitmap)obj, this);
         }
 
         public override int GetHashCode()

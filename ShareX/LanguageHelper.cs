@@ -62,7 +62,7 @@ namespace ShareX
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);
             }
 
-            if (currentCulture.CompareInfo != Thread.CurrentThread.CurrentUICulture.CompareInfo)
+            if (!currentCulture.Equals(Thread.CurrentThread.CurrentUICulture))
             {
                 Thread.CurrentThread.CurrentUICulture = currentCulture;
                 DebugHelper.WriteLine("Language changed to: " + currentCulture.DisplayName);

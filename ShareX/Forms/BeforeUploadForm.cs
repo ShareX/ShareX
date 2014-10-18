@@ -38,7 +38,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
             DialogResult = DialogResult.OK;
 
-            ucBeforeUpload.InitCompleted += (currentDestination) =>
+            ucBeforeUpload.InitCompleted += currentDestination =>
             {
                 string title = string.IsNullOrEmpty(currentDestination) ? Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ :
                     Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_;

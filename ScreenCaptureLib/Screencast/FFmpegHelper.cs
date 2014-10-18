@@ -158,7 +158,8 @@ namespace ScreenCaptureLib
                         isVideo = true;
                         continue;
                     }
-                    else if (line.EndsWith("] DirectShow audio devices", StringComparison.InvariantCulture))
+
+                    if (line.EndsWith("] DirectShow audio devices", StringComparison.InvariantCulture))
                     {
                         isVideo = false;
                         continue;

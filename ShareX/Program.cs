@@ -306,7 +306,7 @@ namespace ShareX
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalPath, e.ToString()),
+                        MessageBox.Show(Resources.Program_Run_Unable_to_create_folder_ + string.Format(" \"{0}\"\r\n\r\n{1}", PersonalPath, e),
                             "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
@@ -328,7 +328,7 @@ namespace ShareX
 
             UploaderSettingsResetEvent = new ManualResetEvent(false);
             HotkeySettingsResetEvent = new ManualResetEvent(false);
-            TaskEx.Run(() => LoadSettings());
+            TaskEx.Run(LoadSettings);
 
             LanguageHelper.ChangeLanguage(Settings.Language);
 
@@ -513,11 +513,11 @@ namespace ShareX
 
         public static void ConfigureUploadersConfigWatcher()
         {
-            if (Program.Settings.DetectUploaderConfigFileChanges && uploaderConfigWatcher == null)
+            if (Settings.DetectUploaderConfigFileChanges && uploaderConfigWatcher == null)
             {
-                uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(Program.UploadersConfigFilePath), Path.GetFileName(Program.UploadersConfigFilePath));
+                uploaderConfigWatcher = new FileSystemWatcher(Path.GetDirectoryName(UploadersConfigFilePath), Path.GetFileName(UploadersConfigFilePath));
                 uploaderConfigWatcher.Changed += uploaderConfigWatcher_Changed;
-                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(Program.UploadersConfigFilePath);
+                uploaderConfigWatcherTimer = new WatchFolderDuplicateEventTimer(UploadersConfigFilePath);
                 uploaderConfigWatcher.EnableRaisingEvents = true;
             }
             else if (uploaderConfigWatcher != null)
@@ -548,7 +548,7 @@ namespace ShareX
 
             TaskEx.Run(() =>
             {
-                UploadersConfig.Save(Program.UploadersConfigFilePath);
+                UploadersConfig.Save(UploadersConfigFilePath);
             },
             () =>
             {

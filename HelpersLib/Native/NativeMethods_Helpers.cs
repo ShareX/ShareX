@@ -452,10 +452,8 @@ namespace HelpersLib
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
         private static bool Is32BitProcessOn64BitProcessor()

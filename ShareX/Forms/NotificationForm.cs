@@ -31,13 +31,13 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class NotificationForm : Form
+    public class NotificationForm : Form
     {
         public NotificationFormConfig ToastConfig { get; private set; }
 
         private int windowOffset = 3;
-        private bool mouseInside = false;
-        private bool durationEnd = false;
+        private bool mouseInside;
+        private bool durationEnd;
         private bool closingAnimation = true;
         private int closingAnimationDuration = 2000;
         private int closingAnimationInterval = 50;

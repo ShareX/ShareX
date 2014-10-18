@@ -92,7 +92,7 @@ namespace HelpersLib
 
         public static bool operator !=(Vector2 u, Vector2 v)
         {
-            return u != v;
+            return !(u == v);
         }
 
         public static Vector2 operator +(Vector2 u, Vector2 v)

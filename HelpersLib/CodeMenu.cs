@@ -47,7 +47,7 @@ namespace HelpersLib
                 Select(x => new
                 {
                     Name = x.ToPrefixString(),
-                    Description = x.Description,
+                    Description = x.Description
                 });
 
             foreach (var variable in variables)

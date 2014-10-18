@@ -937,7 +937,7 @@ namespace ShareX
                     {
                         lvi.Text = watchFolder.FolderPath ?? "";
                         lvi.SubItems[1].Text = watchFolder.Filter ?? "";
-                        lvi.SubItems[2].Text = watchFolder.IncludeSubdirectories.ToString() ?? "";
+                        lvi.SubItems[2].Text = watchFolder.IncludeSubdirectories.ToString();
                     }
                 }
             }

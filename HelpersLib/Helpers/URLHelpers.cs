@@ -288,7 +288,7 @@ namespace HelpersLib
 
         public static string FixPrefix(string url)
         {
-            if (!URLHelpers.HasPrefix(url))
+            if (!HasPrefix(url))
             {
                 return "http://" + url;
             }

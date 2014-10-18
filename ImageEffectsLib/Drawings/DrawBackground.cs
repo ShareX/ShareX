@@ -57,10 +57,8 @@ namespace ImageEffectsLib
             {
                 return ImageHelpers.FillBackground(img, Color, Color2, GradientType);
             }
-            else
-            {
-                return ImageHelpers.FillBackground(img, Color);
-            }
+
+            return ImageHelpers.FillBackground(img, Color);
         }
     }
 }

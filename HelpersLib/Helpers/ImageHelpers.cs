@@ -675,7 +675,7 @@ namespace HelpersLib
                 IniConfig.Init(configPath);
             }
 
-            using (Image cloneImage = img != null ? (Image)img.Clone() : ImageHelpers.LoadImage(imgPath))
+            using (Image cloneImage = img != null ? (Image)img.Clone() : LoadImage(imgPath))
             using (ICapture capture = new Capture { Image = cloneImage })
             using (Surface surface = new Surface(capture))
             using (ImageEditorForm editor = new ImageEditorForm(surface, true))
@@ -697,7 +697,8 @@ namespace HelpersLib
                         return editor.GetImageForExport();
                     }
                 }
-                else if (result == DialogResult.Abort)
+
+                if (result == DialogResult.Abort)
                 {
                     return null;
                 }

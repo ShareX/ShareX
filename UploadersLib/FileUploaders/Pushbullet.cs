@@ -171,55 +171,40 @@ namespace UploadersLib.FileUploaders
         private class PushbulletResponseDevice
         {
             public string iden { get; set; }
-
             public string nickname { get; set; }
         }
 
         private class PushbulletResponsePush
         {
             public string iden { get; set; }
-
             public string device_iden { get; set; }
-
             public PushbulletResponsePushData data { get; set; }
-
             public long created { get; set; }
         }
 
         private class PushbulletResponsePushData
         {
             public string type { get; set; }
-
             public string title { get; set; }
-
             public string body { get; set; }
         }
 
         private class PushbulletResponseFileUpload
         {
             public string file_type { get; set; }
-
             public string file_name { get; set; }
-
             public string file_url { get; set; }
-
             public string upload_url { get; set; }
-
             public PushbulletResponseFileUploadData data { get; set; }
         }
 
         private class PushbulletResponseFileUploadData
         {
             public string awsaccesskeyid { get; set; }
-
             public string acl { get; set; }
-
             public string key { get; set; }
-
             public string signature { get; set; }
-
             public string policy { get; set; }
-
             [JsonProperty("content-type")]
             public string content_type { get; set; }
         }
@@ -228,7 +213,6 @@ namespace UploadersLib.FileUploaders
     public class PushbulletDevice
     {
         public string Key { get; set; }
-
         public string Name { get; set; }
     }
 

@@ -217,7 +217,7 @@ namespace ShareX
             ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.Description);
             if (hotkeySetting.HotkeyInfo.IsValidHotkey)
             {
-                tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo.ToString();
+                tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo;
             }
             if (!hotkeySetting.TaskSettings.IsUsingDefaultSettings)
             {
@@ -1504,7 +1504,7 @@ namespace ShareX
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
                 case HotkeyType.ScreenColorPicker:
-                    TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
+                    TaskHelpers.OpenScreenColorPicker();
                     break;
                 case HotkeyType.Ruler:
                     TaskHelpers.OpenRuler();

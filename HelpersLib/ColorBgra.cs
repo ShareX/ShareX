@@ -77,7 +77,7 @@ namespace HelpersLib
 
         public override bool Equals(object obj)
         {
-            return obj != null && obj is ColorBgra && ((ColorBgra)obj).Bgra == Bgra;
+            return obj is ColorBgra && ((ColorBgra)obj).Bgra == Bgra;
         }
 
         public override int GetHashCode()

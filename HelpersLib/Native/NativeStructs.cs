@@ -115,7 +115,8 @@ namespace HelpersLib
             {
                 return Equals((RECT)obj);
             }
-            else if (obj is Rectangle)
+
+            if (obj is Rectangle)
             {
                 return Equals(new RECT((Rectangle)obj));
             }
