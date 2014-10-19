@@ -53,7 +53,7 @@ namespace HelpersLib
 
         public static string GetLocalizedDescription(this Enum value, ResourceManager resourceManager)
         {
-            string resourceName = value.GetType() + "_" + value;
+            string resourceName = value.GetType().Name + "_" + value;
             string description = resourceManager.GetString(resourceName);
 
             if (string.IsNullOrEmpty(description))

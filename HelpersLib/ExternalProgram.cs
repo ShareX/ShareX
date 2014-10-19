@@ -68,13 +68,15 @@ namespace HelpersLib
 
                 try
                 {
+                    string newFilePath = "";
+
                     using (Process process = new Process())
                     {
                         ProcessStartInfo psi = new ProcessStartInfo(Path);
 
                         if (string.IsNullOrEmpty(Args))
                         {
-                            psi.Arguments = filePath;
+                            psi.Arguments = '"' + filePath + '"';
                         }
                         else
                         {
@@ -82,8 +84,15 @@ namespace HelpersLib
 
                             if (!string.IsNullOrEmpty(OutputExtension))
                             {
-                                filePath = Helpers.ChangeFilenameExtension(filePath, OutputExtension);
-                                args = args.Replace("%output", '"' + filePath + '"');
+                                newFilePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
+
+                                if (!OutputExtension.Contains("."))
+                                {
+                                    OutputExtension = "." + OutputExtension;
+                                }
+
+                                newFilePath += OutputExtension;
+                                args = args.Replace("%output", '"' + newFilePath + '"');
                             }
 
                             psi.Arguments = args;
@@ -95,6 +104,11 @@ namespace HelpersLib
 
                         process.Start();
                         process.WaitForExit();
+                    }
+
+                    if (!string.IsNullOrEmpty(newFilePath) && File.Exists(newFilePath))
+                    {
+                        return newFilePath;
                     }
 
                     return filePath;
