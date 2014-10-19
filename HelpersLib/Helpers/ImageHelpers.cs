@@ -291,7 +291,7 @@ namespace HelpersLib
             return bmp;
         }
 
-        public static Image RoundCorners(Image img, int cornerRadius)
+        public static Image RoundedCorners(Image img, int cornerRadius)
         {
             Bitmap bmp = img.CreateEmptyBitmap();
 

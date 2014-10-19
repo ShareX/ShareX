@@ -29,8 +29,8 @@ using System.Drawing;
 
 namespace ImageEffectsLib
 {
-    [Description("Round corners")]
-    internal class RoundCorners : ImageEffect
+    [Description("Rounded corners")]
+    internal class RoundedCorners : ImageEffect
     {
         private int cornerRadius;
 
@@ -47,14 +47,14 @@ namespace ImageEffectsLib
             }
         }
 
-        public RoundCorners()
+        public RoundedCorners()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Image Apply(Image img)
         {
-            return ImageHelpers.RoundCorners(img, CornerRadius);
+            return ImageHelpers.RoundedCorners(img, CornerRadius);
         }
     }
 }

@@ -78,7 +78,7 @@ namespace ImageEffectsLib
                 typeof(Flip),
                 typeof(Resize),
                 typeof(Rotate),
-                typeof(RoundCorners),
+                typeof(RoundedCorners),
                 typeof(Scale),
                 typeof(Skew));
 
