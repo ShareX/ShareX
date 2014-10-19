@@ -78,6 +78,7 @@ namespace ImageEffectsLib
                 typeof(Flip),
                 typeof(Resize),
                 typeof(Rotate),
+                typeof(RoundCorners),
                 typeof(Scale),
                 typeof(Skew));
 
@@ -189,6 +190,7 @@ namespace ImageEffectsLib
         private void AddEffect(ImageEffect imageEffect)
         {
             ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
+            lvi.Checked = imageEffect.Enabled;
             lvi.Tag = imageEffect;
 
             if (lvEffects.SelectedIndices.Count > 0)
@@ -294,6 +296,16 @@ namespace ImageEffectsLib
                 {
                     pgSettings.SelectedObject = lvi.Tag;
                 }
+            }
+        }
+
+        private void lvEffects_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item != null && e.Item.Tag is ImageEffect)
+            {
+                ImageEffect imageEffect = (ImageEffect)e.Item.Tag;
+                imageEffect.Enabled = e.Item.Checked;
+                UpdatePreview();
             }
         }
 

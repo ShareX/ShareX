@@ -23,21 +23,38 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 
 namespace ImageEffectsLib
 {
-    public abstract class ImageEffect
+    [Description("Round corners")]
+    internal class RoundCorners : ImageEffect
     {
-        [DefaultValue(true), Browsable(false)]
-        public bool Enabled { get; set; }
+        private int cornerRadius;
 
-        protected ImageEffect()
+        [DefaultValue(20)]
+        public int CornerRadius
         {
-            Enabled = true;
+            get
+            {
+                return cornerRadius;
+            }
+            set
+            {
+                cornerRadius = value.Min(0);
+            }
         }
 
-        public abstract Image Apply(Image img);
+        public RoundCorners()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
+        public override Image Apply(Image img)
+        {
+            return ImageHelpers.RoundCorners(img, CornerRadius);
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace ImageEffectsLib
 
             if (imageEffects != null && imageEffects.Count > 0)
             {
-                result = imageEffects.Aggregate(result, (current, imageEffect) => imageEffect.Apply(current));
+                result = imageEffects.Where(x => x.Enabled).Aggregate(result, (current, imageEffect) => imageEffect.Apply(current));
             }
 
             return result;

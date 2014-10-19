@@ -332,7 +332,7 @@
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
     <value>↑</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
     <value>btnMoveUp</value>
   </data>
@@ -359,7 +359,7 @@
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
     <value>↓</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
     <value>btnMoveDown</value>
   </data>

@@ -291,6 +291,30 @@ namespace HelpersLib
             return bmp;
         }
 
+        public static Image RoundCorners(Image img, int cornerRadius)
+        {
+            Bitmap bmp = img.CreateEmptyBitmap();
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (img)
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (GraphicsPath gp = new GraphicsPath())
+                {
+                    gp.AddRoundedRectangle(new RectangleF(0, 0, img.Width, img.Height), cornerRadius);
+
+                    using (TextureBrush brush = new TextureBrush(img))
+                    {
+                        g.FillPath(brush, gp);
+                    }
+                }
+            }
+
+            return bmp;
+        }
+
         public static Image DrawReflection(Image img, int percentage, int maxAlpha, int minAlpha, int offset, bool skew, int skewSize)
         {
             Bitmap reflection = AddReflection(img, percentage, maxAlpha, minAlpha);

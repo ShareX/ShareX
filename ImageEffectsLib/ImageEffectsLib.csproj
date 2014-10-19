@@ -93,6 +93,7 @@
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
     <Compile Include="Manipulations\Crop.cs" />
+    <Compile Include="Manipulations\RoundCorners.cs" />
     <Compile Include="Manipulations\Skew.cs" />
     <Compile Include="Filters\Blur.cs" />
     <Compile Include="Filters\Shadow.cs" />

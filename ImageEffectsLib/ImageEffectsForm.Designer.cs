@@ -75,6 +75,7 @@
             // 
             // lvEffects
             // 
+            this.lvEffects.CheckBoxes = true;
             this.lvEffects.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chEffect});
             this.lvEffects.FullRowSelect = true;
@@ -85,6 +86,7 @@
             this.lvEffects.Name = "lvEffects";
             this.lvEffects.UseCompatibleStateImageBehavior = false;
             this.lvEffects.View = System.Windows.Forms.View.Details;
+            this.lvEffects.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvEffects_ItemChecked);
             this.lvEffects.SelectedIndexChanged += new System.EventHandler(this.lvEffects_SelectedIndexChanged);
             this.lvEffects.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvEffects_KeyDown);
             // 
