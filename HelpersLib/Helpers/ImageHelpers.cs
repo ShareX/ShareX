@@ -315,6 +315,37 @@ namespace HelpersLib
             return bmp;
         }
 
+        public static Image Outline(Image img, int borderSize, Color borderColor)
+        {
+            Bitmap result = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
+
+            ColorMatrix maskMatrix = new ColorMatrix();
+            maskMatrix.Matrix00 = 0;
+            maskMatrix.Matrix11 = 0;
+            maskMatrix.Matrix22 = 0;
+            maskMatrix.Matrix33 = 1;
+            maskMatrix.Matrix40 = ((float)borderColor.R).Remap(0, 255, 0, 1);
+            maskMatrix.Matrix41 = ((float)borderColor.G).Remap(0, 255, 0, 1);
+            maskMatrix.Matrix42 = ((float)borderColor.B).Remap(0, 255, 0, 1);
+
+            using (img)
+            using (Image shadow = maskMatrix.Apply(img))
+            using (Graphics g = Graphics.FromImage(result))
+            {
+                for (int i = 0; i <= borderSize * 2; i++)
+                {
+                    g.DrawImage(shadow, new Rectangle(i, 0, shadow.Width, shadow.Height));
+                    g.DrawImage(shadow, new Rectangle(i, borderSize * 2, shadow.Width, shadow.Height));
+                    g.DrawImage(shadow, new Rectangle(0, i, shadow.Width, shadow.Height));
+                    g.DrawImage(shadow, new Rectangle(borderSize * 2, i, shadow.Width, shadow.Height));
+                }
+
+                g.DrawImage(img, new Rectangle(borderSize, borderSize, img.Width, img.Height));
+            }
+
+            return result;
+        }
+
         public static Image DrawReflection(Image img, int percentage, int maxAlpha, int minAlpha, int offset, bool skew, int skewSize)
         {
             Bitmap reflection = AddReflection(img, percentage, maxAlpha, minAlpha);

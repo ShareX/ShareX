@@ -80,6 +80,7 @@
     <Compile Include="Filters\GaussianBlur.cs" />
     <Compile Include="Filters\MatrixConvolution.cs" />
     <Compile Include="Filters\MeanRemoval.cs" />
+    <Compile Include="Filters\Outline.cs" />
     <Compile Include="Filters\Pixelate.cs" />
     <Compile Include="Filters\Sharpen.cs" />
     <Compile Include="Filters\Smooth.cs" />

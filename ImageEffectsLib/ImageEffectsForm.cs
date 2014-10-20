@@ -104,6 +104,7 @@ namespace ImageEffectsLib
                 typeof(GaussianBlur),
                 typeof(MatrixConvolution),
                 typeof(MeanRemoval),
+                typeof(Outline),
                 typeof(Pixelate),
                 typeof(Reflection),
                 typeof(Shadow),
