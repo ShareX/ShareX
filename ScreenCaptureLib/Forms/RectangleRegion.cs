@@ -296,6 +296,7 @@ namespace ScreenCaptureLib
         private void DrawMagnifier(Graphics g)
         {
             Point mousePos = InputManager.MousePosition0Based;
+            Rectangle currentScreenRect0Based = CaptureHelpers.ScreenToClient(Screen.FromPoint(InputManager.MousePosition).Bounds);
             int offsetX = RulerMode ? 20 : 10, offsetY = RulerMode ? 20 : 10;
 
             if (Config.ShowInfo && AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos)
@@ -307,14 +308,14 @@ namespace ScreenCaptureLib
             {
                 int x = mousePos.X + offsetX;
 
-                if (x + magnifier.Width > ScreenRectangle0Based.Width)
+                if (x + magnifier.Width > currentScreenRect0Based.Right)
                 {
                     x = mousePos.X - offsetX - magnifier.Width;
                 }
 
                 int y = mousePos.Y + offsetY;
 
-                if (y + magnifier.Height > ScreenRectangle0Based.Height)
+                if (y + magnifier.Height > currentScreenRect0Based.Bottom)
                 {
                     y = mousePos.Y - offsetY - magnifier.Height;
                 }
