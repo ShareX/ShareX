@@ -2030,6 +2030,14 @@ namespace ShareX
 
         #region Tray events
 
+        private void cmsTray_Opened(object sender, EventArgs e)
+        {
+            if (Program.Settings.TrayAutoExpandCaptureMenu)
+            {
+                tsmiTrayCapture.ShowDropDown();
+            }
+        }
+
         private void tsmiTrayFullscreen_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Screen, null, false);

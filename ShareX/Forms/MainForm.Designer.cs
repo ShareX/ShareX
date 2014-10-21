@@ -1258,6 +1258,7 @@
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
             resources.ApplyResources(this.cmsTray, "cmsTray");
+            this.cmsTray.Opened += new System.EventHandler(this.cmsTray_Opened);
             // 
             // tsmiTrayCapture
             // 
