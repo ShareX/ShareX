@@ -2034,6 +2034,7 @@ namespace ShareX
         {
             if (Program.Settings.TrayAutoExpandCaptureMenu)
             {
+                tsmiTrayCapture.Select();
                 tsmiTrayCapture.ShowDropDown();
             }
         }
