@@ -393,7 +393,7 @@ Created folders:</value>
     <value>Connected!</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>SendSpace Registration...</value>
+    <value>SendSpace registration...</value>
   </data>
   <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_" xml:space="preserve">
     <value>RapidShare account username or password is empty.</value>

@@ -145,7 +145,7 @@
     <value>Eposta</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Özel Adres kısaltıcı</value>
+    <value>Özel adres kısaltıcı</value>
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Hata</value>
@@ -187,7 +187,7 @@
     <value>{0} başarıyla oluşturuldu.</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>SensSpace Kayıt...</value>
+    <value>SendSpace kayıt...</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Hata: Sonuç boş.</value>
@@ -272,7 +272,7 @@ Oluşturulmuş dizinler:</value>
     <value>Giriş başarılı fakat hesap bilgilerini alma başarısız.</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Sertifika dosyası için gözat</value>
+    <value>Sertifika dosyası için gözat...</value>
   </data>
   <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
     <value>Yol mevcut değil:</value>
@@ -282,5 +282,8 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
     <value>Dropbox'dan "{0}" silmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Ana album yolu, örneğin:</value>
   </data>
 </root>

@@ -208,7 +208,7 @@ namespace HistoryLib
 
             if (allHistoryItems.Length > historyItems.Length)
             {
-                status.AppendFormat(Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length);
+                status.AppendFormat(", " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length);
             }
 
             var types = from hi in historyItems

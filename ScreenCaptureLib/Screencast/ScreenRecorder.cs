@@ -106,7 +106,7 @@ namespace ScreenCaptureLib
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
-                throw new Exception(Resources.ScreenRecorder_ScreenRecorder_Screen_recorder_cache_path_is_empty_);
+                throw new Exception("Screen recorder cache path is empty.");
             }
 
             FPS = outputType == ScreenRecordOutput.GIF ? options.GIFFPS : options.ScreenRecordFPS;

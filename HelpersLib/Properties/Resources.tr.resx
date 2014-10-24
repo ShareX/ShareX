@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HashCheckForm_btnStartHashCheck_Click_Stop" xml:space="preserve">
-    <value>Dur</value>
+    <value>Durdur</value>
   </data>
   <data name="HashCheckForm_fileCheck_FileCheckCompleted_Start" xml:space="preserve">
-    <value>Başla</value>
+    <value>Başlat</value>
   </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Dosya yolu</value>
@@ -139,7 +139,7 @@
     <value>Pano içeriği: Yazı (Uzunluk: {0})</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Pano boiş veya bilinmeyen içeriğe sahip.</value>
+    <value>Pano boş veya bilinmeyen içeriğe sahip.</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Kapat</value>
@@ -247,7 +247,7 @@
     <value>Bekliyor.</value>
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
-    <value>İndirime tamamlandı.</value>
+    <value>İndirme tamamlandı.</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
     <value>Çalıştırılabilir dosya için gözat...</value>
@@ -271,10 +271,10 @@
     <value>{0} ile yükle</value>
   </data>
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Resim yüksekliğini al</value>
+    <value>Resim yüksekliği</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>Resim genişliğini al</value>
+    <value>Resim genişliği</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Güncel saniye</value>
@@ -310,7 +310,7 @@
     <value>DNS başarıyla ayarlandı.</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS başarıyla ayarlandı. Yeniden başlatma gerekli.</value>
+    <value>DNS başarıyla ayarlandı. Yeniden başlatmak gerekli.</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Dizin için gözat...</value>
@@ -349,11 +349,26 @@
     <value>Ayarların indirileceği adres</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Cascading Style Sheet için gözat...</value>
+    <value>CSS için gözat...</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Süreç: {0:0.0}%
 İndirme hızı: {1:0.0} KB/s
 Dosya boyutu: {2:n0} / {3:n0} KB</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Camgöbeği: {0:0.0}%, Eflatun: {1:0.0}%, Sarı: {2:0.0}%, Siyah: {3:0.0}%</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>256 renk (Yavaş işleme fakat daha iyi kalite)</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>16 renk (Daha düşük boyut fakat kötü kalite)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>256 gri tonlarda renk</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>Renk tonu: {0:0.0}°, Doygunluk: {1:0.0}%, Parlaklık: {2:0.0}%</value>
   </data>
 </root>

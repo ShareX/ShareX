@@ -206,10 +206,10 @@
     <value>Random alphanumeric char</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>Gets image width</value>
+    <value>Image width</value>
   </data>
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Gets image height</value>
+    <value>Image height</value>
   </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>User name</value>

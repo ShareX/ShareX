@@ -193,15 +193,6 @@ namespace ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Screen recorder cache path is empty..
-        /// </summary>
-        internal static string ScreenRecorder_ScreenRecorder_Screen_recorder_cache_path_is_empty_ {
-            get {
-                return ResourceManager.GetString("ScreenRecorder_ScreenRecorder_Screen_recorder_cache_path_is_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Region capture.
         /// </summary>
         internal static string Surface_InitializeComponent_Region_capture {

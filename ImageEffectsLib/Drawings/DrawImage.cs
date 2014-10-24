@@ -52,7 +52,7 @@ namespace ImageEffectsLib
             }
         }
 
-        [DefaultValue(false), Description("If image size bigger than source image then don't draw it.")]
+        [DefaultValue(true), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]

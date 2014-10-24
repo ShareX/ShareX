@@ -127,7 +127,7 @@
     <value>Geçmiş: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>, Filitrelenmiş: {0}</value>
+    <value>Filtrelenmiş: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>Toplam: {0}</value>
@@ -136,7 +136,7 @@
     <value>Kopyala</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>Silme Adresi</value>
+    <value>Silme adresi</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Dosya</value>
@@ -184,13 +184,13 @@
     <value>Aç</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Kısaltılmış URL</value>
+    <value>Kısaltılmış adres</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Yazı</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>Küçük Resim Adresi</value>
+    <value>Küçük resim adresi</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>Adres</value>

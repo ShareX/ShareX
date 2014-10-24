@@ -135,23 +135,32 @@
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Yakalama bölgesi</value>
   </data>
-  <data name="ScreenRecorder_ScreenRecorder_Screen_recorder_cache_path_is_empty_" xml:space="preserve">
-    <value>Ekran yakalama önbellek yolu boş.</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Dikdörtgen yakalama ışığı</value>
+    <value>Dikdörtgen yakalama basit</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Dikdörtgen yakalama yorumu</value>
+    <value>Dikdörtgen yakalama dipnot</value>
   </data>
   <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>Önbellek dosya boyutu {o} bytedan fazla olamaz.
-Lütfen GIF yetine FFMpeg ekran kaydetmeyi kullanın.</value>
+    <value>Önbellek dosya boyutu {0} bytes dan fazla olamaz.
+Lütfen GIF yerine FFmpeg ekran kaydetmeyi kullanın.</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Kontrol: Çizme modu ░ Boşluk: Tam ekran yakalama</value>
+    <value>Ctrl: Çizme modu ░ Boşluk: Tam ekran yakalama</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Kontrol: Bölge modu ░ Shift: Kalem rengi ░ Fare tekerleği: Kalem boyutu ░ Boşluk: Tam ekran yakalama</value>
+    <value>Ctrl: Bölge modu ░ Shift: Kalem rengi ░ Fare tekerleği: Kalem boyutu ░ Boşluk: Tam ekran yakalama</value>
+  </data>
+  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
+    <value>Bit hızı: {0}k</value>
+  </data>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} / Y: {1}
+G: {2} / Y: {3}</value>
+  </data>
+  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
+    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
+Genişlik: {4} px / Yükseklik: {5} px
+Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   </data>
 </root>

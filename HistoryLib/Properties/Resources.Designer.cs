@@ -79,7 +79,7 @@ namespace HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to , Filtered: {0}.
+        ///   Looks up a localized string similar to Filtered: {0}.
         /// </summary>
         internal static string HistoryForm_UpdateItemCount___Filtered___0_ {
             get {

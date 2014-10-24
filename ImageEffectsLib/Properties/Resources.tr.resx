@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
-    <value>Filitreler</value>
+    <value>Filtreler</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
     <value>Çizimler</value>

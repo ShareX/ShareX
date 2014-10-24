@@ -629,7 +629,7 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gets image height.
+        ///   Looks up a localized string similar to Image height.
         /// </summary>
         internal static string ReplCodeMenuEntry_height_Gets_image_height {
             get {
@@ -800,7 +800,7 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gets image width.
+        ///   Looks up a localized string similar to Image width.
         /// </summary>
         internal static string ReplCodeMenuEntry_width_Gets_image_width {
             get {

@@ -128,9 +128,6 @@
     <value>Cache file size cannot exceed {0} Bytes.
 Please use FFmpeg screen recording instead of GIF.</value>
   </data>
-  <data name="ScreenRecorder_ScreenRecorder_Screen_recorder_cache_path_is_empty_" xml:space="preserve">
-    <value>Screen recorder cache path is empty.</value>
-  </data>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Region capture</value>
   </data>

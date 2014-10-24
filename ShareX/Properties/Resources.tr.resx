@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
-    <value>Dur</value>
+    <value>Durdur</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Tüm aktif yüklemeleri durdur</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
-    <value>Durdurulmuş</value>
+    <value>Durduruldu</value>
   </data>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
-    <value>Başla</value>
+    <value>Başlat</value>
   </data>
   <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
     <value>Menüyü göster</value>
   </data>
   <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Hiçbişey gösterme</value>
+    <value>Hiç bişey gösterme</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Başlatılıyor</value>
@@ -169,10 +169,11 @@
     <value>Yükleme hataları</value>
   </data>
   <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>İndirme başarısız: {0}</value>
+    <value>İndirme başarısız:
+{0}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>{0} dosya yüklemek istediğinize emin misiniz?</value>
+    <value>{0} tane dosyayı yüklemek istediğinize emin misiniz?</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Bu mesajı tekrar gösterme.</value>
@@ -274,19 +275,19 @@
     <value>Aksiyonları gerçekleştir</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Resimi dosyaya kaydet</value>
+    <value>Resimi dosya olarak kaydet</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Resimi dosyaya farklı kaydet...</value>
+    <value>Resimi dosya olarak farklı kaydet...</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Küçük resimi dosyaya kaydet</value>
+    <value>Küçük resimi dosya olarak kaydet</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>Resim yazdır</value>
+    <value>Resimi yazdır</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Resimi sunucuya yükle</value>
+    <value>Resimi yükle</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Adresi panoya kopyala</value>
@@ -310,7 +311,8 @@
     <value>ShareX kişisel dizin yolu seç</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Buraya sürükle</value>
+    <value>Buraya
+sürükle</value>
   </data>
   <data name="FileExistAction_Ask" xml:space="preserve">
     <value>Ne yapılacağını sor</value>
@@ -328,13 +330,13 @@
     <value>Yeni ad kullan:</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>kısayol</value>
+    <value>Kısayol</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Kısayol kaydı başarısız</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>kısayollar</value>
+    <value>Kısayollar</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
     <value>Kısayol seçiniz...</value>
@@ -362,13 +364,13 @@
 İndirmek ve yüklemek ister misiniz?</value>
   </data>
   <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Simge pozisyonu (X, Y) = {0}, {1}</value>
+    <value>İmleç pozisyonu (X, Y) = {0}, {1}</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Renk seçici penceresini başlat</value>
+    <value>Ekrandan renk seçiciyi başlat</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Renk seçici penceresini durdur</value>
+    <value>Ekrandan renk seçiciyi durdur</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>FFmpeg indirme başarısız.</value>
@@ -383,7 +385,7 @@
     <value>Resim efektleri</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>Son yakalama bölgesi</value>
+    <value>Son bölgeyi yakala</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Ekran görüntüleri dizinini aç</value>
@@ -395,7 +397,7 @@
     <value>Tüm ekranı yakala</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Yorum)</value>
+    <value>Dikdörtgen bölge yakala (Dipnot)</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Dikdörtgen bölge yakala (Basit)</value>
@@ -434,34 +436,34 @@
     <value>Sürükle ve bırak yükleme</value>
   </data>
   <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Elips bölge yakalama</value>
+    <value>Elips bölge yakala</value>
   </data>
   <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Serbest bölge yakalama</value>
+    <value>Serbest bölge yakala</value>
   </data>
   <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Karo bölge yakalama</value>
+    <value>Karo bölge yakala</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Dikdörtgen bölge yakalama</value>
+    <value>Dikdörtgen bölge yakala</value>
   </data>
   <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Yuvarlatılmış dikdörtgen bölge yakalama</value>
+    <value>Yuvarlatılmış dikdörtgen bölge yakala</value>
   </data>
   <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Üçgen bölge yakalama</value>
+    <value>Üçgen bölge yakala</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Adresten yükle</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Dikdörtgen bölge (Pencere) yakala</value>
+    <value>Dikdörtgen bölge yakala (Pencere)</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
     <value>Uzantı boş olamaz.</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>İndeks dizini</value>
+    <value>Dizini indeksle</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Hash kontrol</value>
@@ -473,7 +475,7 @@
     <value>Dizin yaratılamadı:</value>
   </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Simge balon ipucu göster</value>
+    <value>Simge balon ucu göster</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Kaydı durdurmak için simge ikonuna tıklayın.</value>
@@ -494,7 +496,7 @@
     <value>Dizin yolu seçin</value>
   </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Önizlemede uyarı pencereleri göster</value>
+    <value>Önizlemeli uyarı pencereleri göster</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} mevcut değil.
@@ -505,7 +507,7 @@ Otomatik olarak indirmek ister misiniz?</value>
     <value>CLI video işleyici dosyası mevcut değil: </value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX dil değişikliklerini uygulamak için yeniden başlatılmalı.
+    <value>ShareX dil değişikliklerinin uygulanması için yeniden başlatılmalı.
 ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
@@ -521,10 +523,10 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>İçerik gösterici ile panodan yükle</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>Kazan zaman: {0}s ({1}%) Toplam: {2}</value>
+    <value>Kalan zaman: {0}s ({1}%) Toplam: {2}</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} {1}'a yüklemen üzere. Başka bir hedef seçebilirsiniz.</value>
+    <value>{0} {1}'a yüklenmek üzere. Başka bir hedef seçebilirsiniz.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>"{0}" dosyasına erişilemiyor.
@@ -537,14 +539,26 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
     <value>CLI video işleyicileri ayarla ---&gt;</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>Ekran görüntüsü yüklemek istediğinize emin misiniz?
-'Hayır' tuşuna basarak güncel yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
+    <value>Ekran görüntüsünü yüklemek istediğinize emin misiniz?
+'Hayır' tuşuna basarak şuanki yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>{0} kayıt edilemiyor:
 
 {1}
 
-Lütfen başka bir kısayol seçin veya çakışan uygulamadan çıkın ve ShareX'i tekrar açın.</value>
+Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve ShareX'i tekrar açın.</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
+    <value>X: {0}, Y: {1}, Genişlik: {2}, Yükseklik: {3}</value>
+  </data>
+  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
+    <value>Kısayol ayarlarından yeni iş akışı ekliyebilirsiniz...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
+    <value>Geçerli CLI video işleyici seçili değil.</value>
+  </data>
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>Adresden dosya indir ve yükle</value>
   </data>
 </root>
