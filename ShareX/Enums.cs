@@ -33,8 +33,6 @@ namespace ShareX
         Automatic, // Localized
         [Description("English")]
         English,
-        [Description("Deutsch")]
-        German,
         [Description("Türkçe")]
         Turkish
     }
