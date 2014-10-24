@@ -172,6 +172,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
+            this.lblCaptureShadowOffset = new System.Windows.Forms.Label();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -732,6 +733,7 @@
             // 
             // tpCaptureGeneral
             // 
+            this.tpCaptureGeneral.Controls.Add(this.lblCaptureShadowOffset);
             this.tpCaptureGeneral.Controls.Add(this.cbCaptureAutoHideTaskbar);
             this.tpCaptureGeneral.Controls.Add(this.lblScreenshotDelayInfo);
             this.tpCaptureGeneral.Controls.Add(this.nudScreenshotDelay);
@@ -1366,6 +1368,11 @@
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
+            // lblCaptureShadowOffset
+            // 
+            resources.ApplyResources(this.lblCaptureShadowOffset, "lblCaptureShadowOffset");
+            this.lblCaptureShadowOffset.Name = "lblCaptureShadowOffset";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1576,6 +1583,7 @@
         private System.Windows.Forms.ColumnHeader chActionsExtensions;
         private System.Windows.Forms.Button btnActionsDuplicate;
         private System.Windows.Forms.Label lblImageEffectsNote;
+        private System.Windows.Forms.Label lblCaptureShadowOffset;
 
 
 

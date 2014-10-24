@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 70</value>
+    <value>8, 94</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 17</value>
@@ -181,7 +181,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 126</value>
+    <value>8, 150</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 182</value>
+    <value>8, 206</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -265,10 +265,10 @@
     <value>10</value>
   </data>
   <data name="tbDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 9</value>
+    <value>8, 32</value>
   </data>
   <data name="tbDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 20</value>
+    <value>504, 20</value>
   </data>
   <data name="tbDescription.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -304,7 +304,7 @@
     <value>NoControl</value>
   </data>
   <data name="chkOverrideFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 240</value>
+    <value>8, 264</value>
   </data>
   <data name="chkOverrideFTP.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
@@ -331,10 +331,10 @@
     <value>False</value>
   </data>
   <data name="cboFTPaccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 238</value>
+    <value>8, 288</value>
   </data>
   <data name="cboFTPaccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>330, 21</value>
+    <value>504, 21</value>
   </data>
   <data name="cboFTPaccounts.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -355,7 +355,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 93</value>
+    <value>6, 117</value>
   </data>
   <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 23</value>
@@ -385,7 +385,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 149</value>
+    <value>6, 173</value>
   </data>
   <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 23</value>
@@ -415,7 +415,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 205</value>
+    <value>6, 229</value>
   </data>
   <metadata name="cmsDestinations.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>396, 17</value>
@@ -487,7 +487,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
+    <value>6, 61</value>
   </data>
   <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
     <value>506, 23</value>
@@ -601,7 +601,7 @@
     <value>1</value>
   </data>
   <data name="cboPopUpNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 156</value>
+    <value>8, 176</value>
   </data>
   <data name="cboPopUpNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 21</value>
@@ -859,7 +859,7 @@
     <value>1</value>
   </data>
   <data name="cbImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 172</value>
+    <value>16, 224</value>
   </data>
   <data name="cbImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 21</value>
@@ -886,7 +886,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 176</value>
+    <value>16, 208</value>
   </data>
   <data name="lblImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -946,7 +946,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblUseImageFormat2AfterHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 112</value>
+    <value>80, 132</value>
   </data>
   <data name="lblUseImageFormat2AfterHint.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 13</value>
@@ -970,10 +970,10 @@
     <value>3</value>
   </data>
   <data name="cbImageFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="cbImageFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 21</value>
+    <value>72, 21</value>
   </data>
   <data name="cbImageFormat.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -997,7 +997,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageJPEGQualityHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 48</value>
+    <value>80, 84</value>
   </data>
   <data name="lblImageJPEGQualityHint.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -1027,7 +1027,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageJPEGQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 64</value>
   </data>
   <data name="lblImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -1051,7 +1051,7 @@
     <value>6</value>
   </data>
   <data name="cbImageGIFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 76</value>
+    <value>136, 80</value>
   </data>
   <data name="cbImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 21</value>
@@ -1078,7 +1078,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageGIFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>136, 64</value>
   </data>
   <data name="lblImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -1102,10 +1102,10 @@
     <value>8</value>
   </data>
   <data name="cbImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 140</value>
+    <value>16, 176</value>
   </data>
   <data name="cbImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 21</value>
+    <value>72, 21</value>
   </data>
   <data name="cbImageFormat2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1123,7 +1123,7 @@
     <value>9</value>
   </data>
   <data name="nudImageJPEGQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 44</value>
+    <value>16, 80</value>
   </data>
   <data name="nudImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -1153,7 +1153,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
+    <value>16, 160</value>
   </data>
   <data name="lblImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -1177,7 +1177,7 @@
     <value>11</value>
   </data>
   <data name="nudUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 108</value>
+    <value>16, 128</value>
   </data>
   <data name="nudUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -1264,7 +1264,7 @@
     <value>16, 16</value>
   </data>
   <data name="lblImageEffectsNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 13</value>
+    <value>415, 13</value>
   </data>
   <data name="lblImageEffectsNote.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1405,7 +1405,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbThumbnailIfSmaller.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 104</value>
+    <value>16, 160</value>
   </data>
   <data name="cbThumbnailIfSmaller.Size" type="System.Drawing.Size, System.Drawing">
     <value>322, 17</value>
@@ -1435,7 +1435,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblThumbnailNamePreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 76</value>
+    <value>152, 132</value>
   </data>
   <data name="lblThumbnailNamePreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -1465,7 +1465,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblThumbnailName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 76</value>
+    <value>16, 112</value>
   </data>
   <data name="lblThumbnailName.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1489,7 +1489,7 @@
     <value>2</value>
   </data>
   <data name="txtThumbnailName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 72</value>
+    <value>16, 128</value>
   </data>
   <data name="txtThumbnailName.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 20</value>
@@ -1516,7 +1516,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblThumbnailHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 44</value>
+    <value>16, 64</value>
   </data>
   <data name="lblThumbnailHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -1570,7 +1570,7 @@
     <value>5</value>
   </data>
   <data name="nudThumbnailHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 40</value>
+    <value>16, 80</value>
   </data>
   <data name="nudThumbnailHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -1594,7 +1594,7 @@
     <value>6</value>
   </data>
   <data name="nudThumbnailWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="nudThumbnailWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -1731,6 +1731,33 @@
   <data name="&gt;&gt;tpImage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblCaptureShadowOffset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Shadow offset:</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureShadowOffset.Name" xml:space="preserve">
+    <value>lblCaptureShadowOffset</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureShadowOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureShadowOffset.Parent" xml:space="preserve">
+    <value>tpCaptureGeneral</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureShadowOffset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbCaptureAutoHideTaskbar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1738,7 +1765,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 216</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Size" type="System.Drawing.Size, System.Drawing">
     <value>402, 17</value>
@@ -1759,7 +1786,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;cbCaptureAutoHideTaskbar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblScreenshotDelayInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1768,7 +1795,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblScreenshotDelayInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 114</value>
+    <value>80, 188</value>
   </data>
   <data name="lblScreenshotDelayInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -1789,10 +1816,10 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;lblScreenshotDelayInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="nudScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 110</value>
+    <value>16, 184</value>
   </data>
   <data name="nudScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -1813,7 +1840,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;nudScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbScreenshotDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1822,7 +1849,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 160</value>
   </data>
   <data name="cbScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 17</value>
@@ -1843,10 +1870,10 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;cbScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="nudCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 62</value>
+    <value>16, 104</value>
   </data>
   <data name="nudCaptureShadowOffset.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -1867,7 +1894,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;nudCaptureShadowOffset.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbCaptureClientArea.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1876,7 +1903,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbCaptureClientArea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 136</value>
   </data>
   <data name="cbCaptureClientArea.Size" type="System.Drawing.Size, System.Drawing">
     <value>334, 17</value>
@@ -1897,7 +1924,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;cbCaptureClientArea.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbCaptureShadow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1909,13 +1936,13 @@
     <value>16, 64</value>
   </data>
   <data name="cbCaptureShadow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 17</value>
+    <value>274, 17</value>
   </data>
   <data name="cbCaptureShadow.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>Capture window with shadow (requires transparency)  Shadow offset:</value>
+    <value>Capture window with shadow (requires transparency)</value>
   </data>
   <data name="&gt;&gt;cbCaptureShadow.Name" xml:space="preserve">
     <value>cbCaptureShadow</value>
@@ -1927,7 +1954,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;cbCaptureShadow.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbShowCursor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1957,7 +1984,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowCursor.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbCaptureTransparent.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1987,7 +2014,7 @@
     <value>tpCaptureGeneral</value>
   </data>
   <data name="&gt;&gt;cbCaptureTransparent.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tpCaptureGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2152,7 +2179,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 111</value>
+    <value>243, 111</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -2176,7 +2203,7 @@
     <value>1</value>
   </data>
   <data name="nudScreenRecordFPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 60</value>
+    <value>176, 60</value>
   </data>
   <data name="nudScreenRecordFPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -2266,7 +2293,7 @@
     <value>402, 11</value>
   </data>
   <data name="btnScreenRecorderOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>94, 23</value>
   </data>
   <data name="btnScreenRecorderOptions.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2293,7 +2320,7 @@
     <value>402, 35</value>
   </data>
   <data name="btnEncoderConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>94, 23</value>
   </data>
   <data name="btnEncoderConfig.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2314,10 +2341,10 @@
     <value>6</value>
   </data>
   <data name="cboEncoder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 36</value>
+    <value>176, 36</value>
   </data>
   <data name="cboEncoder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>224, 21</value>
   </data>
   <data name="cboEncoder.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2335,7 +2362,7 @@
     <value>7</value>
   </data>
   <data name="nudScreenRecorderDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 108</value>
+    <value>176, 108</value>
   </data>
   <data name="nudScreenRecorderDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -2389,7 +2416,7 @@
     <value>9</value>
   </data>
   <data name="nudScreenRecorderStartDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 132</value>
+    <value>176, 132</value>
   </data>
   <data name="nudScreenRecorderStartDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -2413,10 +2440,10 @@
     <value>10</value>
   </data>
   <data name="cbScreenRecorderOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 12</value>
+    <value>176, 12</value>
   </data>
   <data name="cbScreenRecorderOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
+    <value>224, 21</value>
   </data>
   <data name="cbScreenRecorderOutput.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2494,7 +2521,7 @@
     <value>13</value>
   </data>
   <data name="nudGIFFPS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 84</value>
+    <value>176, 84</value>
   </data>
   <data name="nudGIFFPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -2665,10 +2692,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnActionsDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 8</value>
+    <value>200, 8</value>
   </data>
   <data name="btnActionsDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>88, 23</value>
   </data>
   <data name="btnActionsDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2695,7 +2722,7 @@
     <value>8, 8</value>
   </data>
   <data name="btnActionsAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>88, 23</value>
   </data>
   <data name="btnActionsAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2767,10 +2794,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnActionsEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 8</value>
+    <value>104, 8</value>
   </data>
   <data name="btnActionsEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>88, 23</value>
   </data>
   <data name="btnActionsEdit.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2794,10 +2821,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnActionsRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 8</value>
+    <value>296, 8</value>
   </data>
   <data name="btnActionsRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>88, 23</value>
   </data>
   <data name="btnActionsRemove.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2980,10 +3007,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnWatchFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 32</value>
+    <value>104, 32</value>
   </data>
   <data name="btnWatchFolderRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>88, 23</value>
   </data>
   <data name="btnWatchFolderRemove.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3010,7 +3037,7 @@
     <value>8, 32</value>
   </data>
   <data name="btnWatchFolderAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>88, 23</value>
   </data>
   <data name="btnWatchFolderAdd.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

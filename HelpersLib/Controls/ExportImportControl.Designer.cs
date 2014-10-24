@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportImportControl));
             this.cmsExport = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,9 +37,9 @@
             this.cmsImport = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImportURL = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImport = new HelpersLib.MenuButton();
             this.btnExport = new HelpersLib.MenuButton();
-            this.tsmiImportURL = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsExport.SuspendLayout();
             this.cmsImport.SuspendLayout();
             this.SuspendLayout();
@@ -51,27 +52,24 @@
             this.tsmiExportUpload});
             this.cmsExport.Name = "cmsExport";
             this.cmsExport.ShowImageMargin = false;
-            this.cmsExport.Size = new System.Drawing.Size(145, 70);
+            resources.ApplyResources(this.cmsExport, "cmsExport");
             // 
             // tsmiExportClipboard
             // 
             this.tsmiExportClipboard.Name = "tsmiExportClipboard";
-            this.tsmiExportClipboard.Size = new System.Drawing.Size(144, 22);
-            this.tsmiExportClipboard.Text = "Copy to clipboard";
+            resources.ApplyResources(this.tsmiExportClipboard, "tsmiExportClipboard");
             this.tsmiExportClipboard.Click += new System.EventHandler(this.tsmiExportClipboard_Click);
             // 
             // tsmiExportFile
             // 
             this.tsmiExportFile.Name = "tsmiExportFile";
-            this.tsmiExportFile.Size = new System.Drawing.Size(144, 22);
-            this.tsmiExportFile.Text = "Save to file...";
+            resources.ApplyResources(this.tsmiExportFile, "tsmiExportFile");
             this.tsmiExportFile.Click += new System.EventHandler(this.tsmiExportFile_Click);
             // 
             // tsmiExportUpload
             // 
             this.tsmiExportUpload.Name = "tsmiExportUpload";
-            this.tsmiExportUpload.Size = new System.Drawing.Size(144, 22);
-            this.tsmiExportUpload.Text = "Upload as text";
+            resources.ApplyResources(this.tsmiExportUpload, "tsmiExportUpload");
             this.tsmiExportUpload.Click += new System.EventHandler(this.tsmiExportUpload_Click);
             // 
             // cmsImport
@@ -82,61 +80,49 @@
             this.tsmiImportURL});
             this.cmsImport.Name = "cmsImport";
             this.cmsImport.ShowImageMargin = false;
-            this.cmsImport.Size = new System.Drawing.Size(131, 92);
+            resources.ApplyResources(this.cmsImport, "cmsImport");
             // 
             // tsmiImportClipboard
             // 
             this.tsmiImportClipboard.Name = "tsmiImportClipboard";
-            this.tsmiImportClipboard.Size = new System.Drawing.Size(130, 22);
-            this.tsmiImportClipboard.Text = "From clipboard";
+            resources.ApplyResources(this.tsmiImportClipboard, "tsmiImportClipboard");
             this.tsmiImportClipboard.Click += new System.EventHandler(this.tsmiImportClipboard_Click);
             // 
             // tsmiImportFile
             // 
             this.tsmiImportFile.Name = "tsmiImportFile";
-            this.tsmiImportFile.Size = new System.Drawing.Size(130, 22);
-            this.tsmiImportFile.Text = "From file...";
+            resources.ApplyResources(this.tsmiImportFile, "tsmiImportFile");
             this.tsmiImportFile.Click += new System.EventHandler(this.tsmiImportFile_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Location = new System.Drawing.Point(72, 0);
-            this.btnImport.Menu = this.cmsImport;
-            this.btnImport.MenuX0 = true;
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(64, 24);
-            this.btnImport.TabIndex = 3;
-            this.btnImport.Text = " Import";
-            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.UseVisualStyleBackColor = true;
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(0, 0);
-            this.btnExport.Menu = this.cmsExport;
-            this.btnExport.MenuX0 = true;
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(64, 24);
-            this.btnExport.TabIndex = 2;
-            this.btnExport.Text = " Export";
-            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.UseVisualStyleBackColor = true;
             // 
             // tsmiImportURL
             // 
             this.tsmiImportURL.Name = "tsmiImportURL";
-            this.tsmiImportURL.Size = new System.Drawing.Size(130, 22);
-            this.tsmiImportURL.Text = "From URL...";
+            resources.ApplyResources(this.tsmiImportURL, "tsmiImportURL");
             this.tsmiImportURL.Click += new System.EventHandler(this.tsmiImportURL_Click);
+            // 
+            // btnImport
+            // 
+            resources.ApplyResources(this.btnImport, "btnImport");
+            this.btnImport.Menu = this.cmsImport;
+            this.btnImport.MenuX0 = true;
+            this.btnImport.Name = "btnImport";
+            this.btnImport.UseVisualStyleBackColor = true;
+            // 
+            // btnExport
+            // 
+            resources.ApplyResources(this.btnExport, "btnExport");
+            this.btnExport.Menu = this.cmsExport;
+            this.btnExport.MenuX0 = true;
+            this.btnExport.Name = "btnExport";
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
             // ExportImportControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnExport);
             this.Name = "ExportImportControl";
-            this.Size = new System.Drawing.Size(136, 24);
             this.cmsExport.ResumeLayout(false);
             this.cmsImport.ResumeLayout(false);
             this.ResumeLayout(false);
