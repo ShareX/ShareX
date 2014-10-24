@@ -60,22 +60,22 @@
             // 
             // ssBar
             // 
-            resources.ApplyResources(this.ssBar, "ssBar");
             this.ssBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tspbBar,
             this.tsslStatus});
+            resources.ApplyResources(this.ssBar, "ssBar");
             this.ssBar.Name = "ssBar";
             this.ssBar.SizingGrip = false;
             // 
             // tspbBar
             // 
-            resources.ApplyResources(this.tspbBar, "tspbBar");
             this.tspbBar.Name = "tspbBar";
+            resources.ApplyResources(this.tspbBar, "tspbBar");
             // 
             // tsslStatus
             // 
-            resources.ApplyResources(this.tsslStatus, "tsslStatus");
             this.tsslStatus.Name = "tsslStatus";
+            resources.ApplyResources(this.tsslStatus, "tsslStatus");
             // 
             // btnExecute
             // 
@@ -112,13 +112,13 @@
             // 
             // nudRepeatTime
             // 
-            resources.ApplyResources(this.nudRepeatTime, "nudRepeatTime");
             this.nudRepeatTime.DecimalPlaces = 1;
             this.nudRepeatTime.Increment = new decimal(new int[] {
             5,
             0,
             0,
             65536});
+            resources.ApplyResources(this.nudRepeatTime, "nudRepeatTime");
             this.nudRepeatTime.Maximum = new decimal(new int[] {
             3600,
             0,

@@ -46,9 +46,9 @@
             // 
             // lvAfterCaptureTasks
             // 
-            resources.ApplyResources(this.lvAfterCaptureTasks, "lvAfterCaptureTasks");
             this.lvAfterCaptureTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chAfterCapture});
+            resources.ApplyResources(this.lvAfterCaptureTasks, "lvAfterCaptureTasks");
             this.lvAfterCaptureTasks.FullRowSelect = true;
             this.lvAfterCaptureTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvAfterCaptureTasks.MultiSelect = false;
@@ -105,15 +105,15 @@
             // 
             // tpAfterCapture
             // 
-            resources.ApplyResources(this.tpAfterCapture, "tpAfterCapture");
             this.tpAfterCapture.Controls.Add(this.lvAfterCaptureTasks);
+            resources.ApplyResources(this.tpAfterCapture, "tpAfterCapture");
             this.tpAfterCapture.Name = "tpAfterCapture";
             this.tpAfterCapture.UseVisualStyleBackColor = true;
             // 
             // tpBeforeUpload
             // 
-            resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
             this.tpBeforeUpload.Controls.Add(this.ucBeforeUpload);
+            resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
             this.tpBeforeUpload.Name = "tpBeforeUpload";
             this.tpBeforeUpload.UseVisualStyleBackColor = true;
             // 

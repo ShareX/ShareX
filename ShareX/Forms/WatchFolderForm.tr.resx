@@ -117,27 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
-  </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>Süzgeç:</value>
-  </data>
-  <data name="lblFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>Dizin yolu:</value>
   </data>
-  <data name="lblFilterExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
   <data name="lblFilterExample.Text" xml:space="preserve">
     <value>Örnek: *.png</value>
-  </data>
-  <data name="cbIncludeSubdirectories.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
   </data>
   <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
     <value>Alt dizinleri de içer</value>

@@ -126,10 +126,6 @@
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Ekran rengi seçmeye başla</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnCopyAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Kopyala</value>
   </data>

@@ -117,21 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
-  </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Ad:</value>
   </data>
-  <data name="lblPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
-  </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Dosya yolu:</value>
-  </data>
-  <data name="lblArgs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
     <value>Parametreler:</value>
@@ -142,14 +132,8 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>İptal</value>
   </data>
-  <data name="lblExtensions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 13</value>
-  </data>
   <data name="lblExtensions.Text" xml:space="preserve">
     <value>Uzantı süzgeçi: (Örnek: jpg png mp4)</value>
-  </data>
-  <data name="lblOutputExtension.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 13</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
     <value>Çıkış dosya adı uzantısı: (Boş = Aynı dosya uzantısını kullan)</value>

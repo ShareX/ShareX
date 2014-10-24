@@ -117,15 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblDragAndDropTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblDragAndDropTip.Text" xml:space="preserve">
     <value>Dosyaları bu pencereye sürükleyip bırakabilirsiniz</value>
-  </data>
-  <data name="lblSplitter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dosya adı</value>
@@ -145,105 +138,53 @@
   <data name="chRemaining.Text" xml:space="preserve">
     <value>Kalan</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Tam ekran</value>
-  </data>
-  <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Pencere</value>
   </data>
-  <data name="tsmiMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>Monitör</value>
-  </data>
-  <data name="tsmiRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Dikdörtgen</value>
   </data>
-  <data name="tsmiWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
     <value>Dikdörtgen (Objeler)</value>
-  </data>
-  <data name="tsmiRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
     <value>Dikdörtgen (Açıklama)</value>
   </data>
-  <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>Dikdörtgen (Basit)</value>
-  </data>
-  <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
     <value>Yuvarlatılmış dikdörtgen</value>
   </data>
-  <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiEllipse.Text" xml:space="preserve">
     <value>Elips</value>
-  </data>
-  <data name="tsmiTriangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTriangle.Text" xml:space="preserve">
     <value>Üçgen</value>
   </data>
-  <data name="tsmiDiamond.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiDiamond.Text" xml:space="preserve">
     <value>Karo</value>
-  </data>
-  <data name="tsmiPolygon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiPolygon.Text" xml:space="preserve">
     <value>Çokgen</value>
   </data>
-  <data name="tsmiFreeHand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiFreeHand.Text" xml:space="preserve">
     <value>Serbest seçim</value>
-  </data>
-  <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Son bölge</value>
   </data>
-  <data name="tsmiScreenRecordingFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Ekran kaydetme (FFmpeg)</value>
   </data>
-  <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
     <value>Ekran kaydetme (GIF)</value>
-  </data>
-  <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Otomatik yakalama...</value>
@@ -251,32 +192,17 @@
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>Yakala</value>
   </data>
-  <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
     <value>Dosya yükle...</value>
-  </data>
-  <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
     <value>Klasör yükle...</value>
   </data>
-  <data name="tsmiUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Panodan yükle...</value>
   </data>
-  <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
     <value>URL'den yükle...</value>
-  </data>
-  <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Sürükle bırak ile yükle...</value>
@@ -287,68 +213,35 @@
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>İş akışları</value>
   </data>
-  <data name="tsmiScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
-  </data>
-  <data name="tsmiImageEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>Resim düzenleyici...</value>
   </data>
-  <data name="tsmiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Resim efektleri...</value>
-  </data>
-  <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Dosya denetleyici...</value>
   </data>
-  <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>DNS değiştirici...</value>
-  </data>
-  <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR kod...</value>
   </data>
-  <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Dizini indeksle...</value>
-  </data>
-  <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
   </data>
-  <data name="tsmiFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
     <value>FTP istemcisi...</value>
   </data>
-  <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet gönder...</value>
-  </data>
-  <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
@@ -362,41 +255,20 @@
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>Yükleme sonrası</value>
   </data>
-  <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Resim yükleyiciler</value>
-  </data>
-  <data name="tsmiTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>Yazı yükleyiciler</value>
   </data>
-  <data name="tsmiFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Dosya yükleyiciler</value>
-  </data>
-  <data name="tsmiURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>URL kısaltıcılar</value>
   </data>
-  <data name="tsmiURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL paylaşım servisleri</value>
-  </data>
-  <data name="tssDestinations1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
-  </data>
-  <data name="tsmiDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Hedef ayarları...</value>
@@ -422,44 +294,23 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Resim geçmişi...</value>
   </data>
-  <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Hata ayıklama kütüğü...</value>
-  </data>
-  <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
   </data>
   <data name="tsmiTestImageUpload.Text" xml:space="preserve">
     <value>Resim yükleme testi</value>
   </data>
-  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
   <data name="tsmiTestTextUpload.Text" xml:space="preserve">
     <value>Yazı yükleme testi</value>
-  </data>
-  <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
     <value>Dosya yükleme testi</value>
   </data>
-  <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>URL kısaltma testi</value>
   </data>
-  <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>URL paylaşım testi</value>
-  </data>
-  <data name="tsmiTestUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
   </data>
   <data name="tsmiTestUploaders.Text" xml:space="preserve">
     <value>Yükleyicileri test et...</value>
@@ -473,362 +324,167 @@
   <data name="tsmiAbout.Text" xml:space="preserve">
     <value>Hakkında...</value>
   </data>
-  <data name="tsmiShowErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Hataları göster</value>
-  </data>
-  <data name="tsmiStopUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Yüklemeyi durdur</value>
   </data>
-  <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiOpenShortenedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
     <value>Kısaltılmış URL</value>
-  </data>
-  <data name="tsmiOpenThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
     <value>Küçük resim URL</value>
   </data>
-  <data name="tsmiOpenDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
     <value>Silme URL</value>
-  </data>
-  <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 6</value>
-  </data>
-  <data name="tsmiOpenFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>Dosya</value>
   </data>
-  <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
   <data name="tsmiOpenFolder.Text" xml:space="preserve">
     <value>Dizin</value>
-  </data>
-  <data name="tsmiOpenThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Küçük resim dosya</value>
   </data>
-  <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Aç</value>
-  </data>
-  <data name="tsmiCopyURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
-  <data name="tsmiCopyShortenedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
     <value>Kısaltılmış URL</value>
   </data>
-  <data name="tsmiCopyThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
     <value>Küçük resim URL</value>
-  </data>
-  <data name="tsmiCopyDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
     <value>Silme URL</value>
   </data>
-  <data name="tssCopy1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 6</value>
-  </data>
-  <data name="tsmiCopyFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Dosya</value>
-  </data>
-  <data name="tsmiCopyImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Resim</value>
   </data>
-  <data name="tsmiCopyText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyText.Text" xml:space="preserve">
     <value>Yazı</value>
-  </data>
-  <data name="tsmiCopyThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
     <value>Küçük resim dosya</value>
   </data>
-  <data name="tsmiCopyThumbnailImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
     <value>Küçük resim</value>
-  </data>
-  <data name="tssCopy2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 6</value>
-  </data>
-  <data name="tsmiCopyHTMLLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
     <value>HTML bağlantı</value>
   </data>
-  <data name="tsmiCopyHTMLImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
     <value>HTML resim</value>
-  </data>
-  <data name="tsmiCopyHTMLLinkedImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
     <value>HTML bağlantılı resim</value>
   </data>
-  <data name="tssCopy3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 6</value>
-  </data>
-  <data name="tsmiCopyForumLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyForumLink.Text" xml:space="preserve">
     <value>Forum (BBCode) bağlantı</value>
-  </data>
-  <data name="tsmiCopyForumImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyForumImage.Text" xml:space="preserve">
     <value>Forum (BBCode) resim</value>
   </data>
-  <data name="tsmiCopyForumLinkedImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
     <value>Forum (BBCode) bağlantılı resim</value>
-  </data>
-  <data name="tssCopy4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 6</value>
-  </data>
-  <data name="tsmiCopyFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
     <value>Dosya yolu</value>
   </data>
-  <data name="tsmiCopyFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyFileName.Text" xml:space="preserve">
     <value>Dosya adı</value>
-  </data>
-  <data name="tsmiCopyFileNameWithExtension.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
     <value>Dosya adı uzantısıyla birlikte</value>
   </data>
-  <data name="tsmiCopyFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
-  </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Klasör</value>
-  </data>
-  <data name="tssCopy5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 6</value>
-  </data>
-  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Kopyala</value>
   </data>
-  <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Yükle</value>
-  </data>
-  <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Resim düzenle...</value>
   </data>
-  <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>Yerel dosya sil</value>
-  </data>
-  <data name="tsmiShortenSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
     <value>URL kısalt</value>
   </data>
-  <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>URL paylaş</value>
-  </data>
-  <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>QR kod göster...</value>
   </data>
-  <data name="tsmiShowResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
     <value>Cevabı göster...</value>
-  </data>
-  <data name="tsmiClearList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Listeyi temizle</value>
   </data>
-  <data name="tssUploadInfo1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 6</value>
-  </data>
-  <data name="tsmiHideMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Menüyü gizle</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Göster</value>
   </data>
-  <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
-  </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Gizle</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Otomatik</value>
   </data>
-  <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
-  </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Resim ön izleme</value>
-  </data>
-  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 318</value>
-  </data>
-  <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Tam ekran</value>
   </data>
-  <data name="tsmiTrayWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Pencere</value>
-  </data>
-  <data name="tsmiTrayMonitor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Monitör</value>
   </data>
-  <data name="tsmiTrayRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Dikdörtgen</value>
-  </data>
-  <data name="tsmiTrayWindowRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
     <value>Dikdörtgen (Objeler)</value>
   </data>
-  <data name="tsmiTrayRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
     <value>Dikdörtgen (Açıklama)</value>
-  </data>
-  <data name="tsmiTrayRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>Dikdörtgen (Basit)</value>
   </data>
-  <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
     <value>Yuvarlatılmış dikdörtgen</value>
-  </data>
-  <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayEllipse.Text" xml:space="preserve">
     <value>Elips</value>
   </data>
-  <data name="tsmiTrayTriangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayTriangle.Text" xml:space="preserve">
     <value>Üçgen</value>
-  </data>
-  <data name="tsmiTrayDiamond.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayDiamond.Text" xml:space="preserve">
     <value>Karo</value>
   </data>
-  <data name="tsmiTrayPolygon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayPolygon.Text" xml:space="preserve">
     <value>Çokgen</value>
   </data>
-  <data name="tsmiTrayFreeHand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayFreeHand.Text" xml:space="preserve">
     <value>Serbest seçim</value>
-  </data>
-  <data name="tsmiTrayLastRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>Son bölge</value>
@@ -836,274 +492,136 @@
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Ekran kaydetme (FFmpeg)</value>
   </data>
-  <data name="tsmiTrayScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>Ekran kaydetme (GIF)</value>
-  </data>
-  <data name="tsmiTrayAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Otomatik yakalama...</value>
   </data>
-  <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Yakala</value>
-  </data>
-  <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
     <value>Dosya yükle...</value>
   </data>
-  <data name="tsmiTrayUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
     <value>Klasör yükle...</value>
-  </data>
-  <data name="tsmiTrayUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
     <value>Panodan yükle...</value>
   </data>
-  <data name="tsmiTrayUploadURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
-  </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
     <value>URL'den yükle...</value>
-  </data>
-  <data name="tsmiTrayUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Sürükle bırak ile yükle...</value>
   </data>
-  <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>Yükle</value>
-  </data>
-  <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>İş akışları</value>
   </data>
-  <data name="tsmiTrayScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
-  </data>
-  <data name="tsmiTrayImageEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>Resim düzenleyici...</value>
   </data>
-  <data name="tsmiTrayImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Resim efektleri...</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Dosya denetleyici...</value>
   </data>
-  <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS değiştirici...</value>
-  </data>
-  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR kod...</value>
   </data>
-  <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Dizini indeksle...</value>
-  </data>
-  <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
     <value>FTP istemcisi...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet gönder...</value>
   </data>
-  <data name="tsmiTrayMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
-  </data>
-  <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Araçlar</value>
   </data>
-  <data name="tssTray1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 6</value>
-  </data>
-  <data name="tsmiTrayAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>Yaklama sonrası</value>
-  </data>
-  <data name="tsmiTrayAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Yükleme sonrası</value>
   </data>
-  <data name="tsmiTrayImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>Resim yükleyiciler</value>
-  </data>
-  <data name="tsmiTrayTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>Yazı yükleyiciler</value>
   </data>
-  <data name="tsmiTrayFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>Dosya yükleyiciler</value>
-  </data>
-  <data name="tsmiTrayURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>URL kısaltıcılar</value>
   </data>
-  <data name="tsmiTrayURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
     <value>URL paylaşım servisleri</value>
-  </data>
-  <data name="tssTrayDestinations1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
-  </data>
-  <data name="tsmiTrayDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Hedef ayarları...</value>
   </data>
-  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Hedefler</value>
-  </data>
-  <data name="tsmiTrayApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>Uygulama ayarları...</value>
   </data>
-  <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Görev ayarları...</value>
-  </data>
-  <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Kısayol ayarları...</value>
   </data>
-  <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 6</value>
-  </data>
-  <data name="tsmiScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Ekran görüntüsü dizini...</value>
-  </data>
-  <data name="tsmiTrayHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Geçmiş...</value>
   </data>
-  <data name="tsmiTrayImageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Resim geçmişi...</value>
-  </data>
-  <data name="tsmiTrayDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Bağış...</value>
   </data>
-  <data name="tsmiTrayAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayAbout.Text" xml:space="preserve">
     <value>Hakkında...</value>
-  </data>
-  <data name="tssTray3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 6</value>
-  </data>
-  <data name="tsmiTrayShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>ShareX penceresini göster</value>
   </data>
-  <data name="tsmiTrayExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Çıkış</value>
   </data>
-  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 396</value>
-  </data>
   <data name="chURL.Text" xml:space="preserve">
-		<value>URL</value>
-	</data>
+    <value>URL</value>
+  </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
-		<value>URL</value>
-	</data>
+    <value>URL</value>
+  </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
-		<value>URL</value>
-	</data>
+    <value>URL</value>
+  </data>
 </root>

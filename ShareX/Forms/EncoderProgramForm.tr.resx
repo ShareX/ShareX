@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,27 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
-  </data>
   <data name="lblExt.Text" xml:space="preserve">
     <value>Uzantılar:</value>
-  </data>
-  <data name="lblArgs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
     <value>Parametreler:</value>
   </data>
-  <data name="lblPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 13</value>
-  </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Yol:</value>
-  </data>
-  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Ad:</value>
@@ -149,6 +136,6 @@
     <value>Tamam</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Kodlama Programı</value>
+    <value>Kodlama programı</value>
   </data>
 </root>

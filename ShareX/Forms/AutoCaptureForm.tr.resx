@@ -123,30 +123,17 @@
   <data name="btnExecute.Text" xml:space="preserve">
     <value>Başla</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbWaitUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 17</value>
-  </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
     <value>Görevlerin bitmesini bekle</value>
   </data>
-  <data name="cbAutoMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
-  </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>Otomatik simgeye küçült</value>
-  </data>
-  <data name="lblRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
   </data>
   <data name="lblRegion.Text" xml:space="preserve">
     <value>Bölge</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
     <value>Bölge seç</value>
-  </data>
-  <data name="lblDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
     <value>Tekrar süresi:</value>
@@ -156,9 +143,6 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX - Otomatik yakalama</value>
-  </data>
-  <data name="lblDurationSeconds.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>saniye</value>

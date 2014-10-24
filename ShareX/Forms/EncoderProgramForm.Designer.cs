@@ -119,7 +119,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtExtension);
             this.Controls.Add(this.lblExt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EncoderProgramForm";
             this.ResumeLayout(false);
             this.PerformLayout();
