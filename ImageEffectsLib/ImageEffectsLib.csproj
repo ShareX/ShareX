@@ -162,6 +162,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="WatermarkForm.resx">
       <DependentUpon>WatermarkForm.cs</DependentUpon>
     </EmbeddedResource>
