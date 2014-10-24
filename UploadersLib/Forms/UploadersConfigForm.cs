@@ -1077,7 +1077,7 @@ namespace UploadersLib
 
         private void btnCopyRegister_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://copy.com?r=hC3DMW");
+            URLHelpers.OpenURL("https://copy.com?r=BUN9jI");
         }
 
         private void txtCopyPath_TextChanged(object sender, EventArgs e)

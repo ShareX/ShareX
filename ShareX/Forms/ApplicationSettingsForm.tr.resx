@@ -117,75 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 12</value>
-  </data>
-  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 13</value>
-  </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Dil:</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Ana pencere konumunu hatırla</value>
   </data>
-  <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 17</value>
-  </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Başlangıçta simge durumuna küçült</value>
-  </data>
-  <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ana pencere boyutunu hatırla</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 17</value>
-  </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Görev çubuğu tuşunda durum göster</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Tepsi simgesinde durum göster</value>
   </data>
-  <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 17</value>
-  </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>"ShareX ile yükle" tuşunu sağ tık menüsünde göster</value>
-  </data>
-  <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 17</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Windows başladığında ShareX'i çalıştır</value>
   </data>
-  <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 17</value>
-  </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Bildirim alanında simge göster</value>
-  </data>
-  <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 17</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>"Gönder" menüsünde ShareX göster</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Genel</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 13</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
     <value>Not: Kişisel dizin değişikliğinin aktif olması için ShareX yeniden başlatılmalıdır.</value>
@@ -196,9 +159,6 @@
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Gözat...</value>
   </data>
-  <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX kişisel dizini:</value>
   </data>
@@ -208,14 +168,8 @@
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Aç...</value>
   </data>
-  <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
-  </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Özel ekran görüntüsü dizini kullan:</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Alt dizin şablonu:</value>
@@ -223,29 +177,11 @@
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Yollar</value>
   </data>
-  <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 21</value>
-  </data>
-  <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 13</value>
-  </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Vekil sunucu konfigürasyonu:</value>
   </data>
-  <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
-  </data>
-  <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
@@ -253,26 +189,14 @@
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Vekil Sunucu</value>
   </data>
-  <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
-  </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Aynı anda yükleme limiti:</value>
-  </data>
-  <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 iptal eder)</value>
   </data>
-  <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
-  </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Tampon boyutu:</value>
-  </data>
-  <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 53</value>
   </data>
   <data name="gbBandwidth.Text" xml:space="preserve">
     <value>Bant genişliği</value>
@@ -301,12 +225,6 @@
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Sonuçlar</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 12</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 17</value>
-  </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
   </data>
@@ -319,17 +237,8 @@
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>İkincil yazı yükleyiciler</value>
   </data>
-  <data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 11</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 13</value>
-  </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Yükleme sırasında hata olursa kaç kez tekrar denensin:</value>
-  </data>
-  <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 9</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
     <value>Tekrarla</value>
@@ -337,14 +246,8 @@
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
   </data>
-  <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 17</value>
-  </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Windows yazdırma penceresini gösterme</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 17</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Resim yazdırma ayarları penceresini gösterme</value>

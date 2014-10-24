@@ -140,8 +140,12 @@
   <data name="cbAmazonS3UseRRS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbAmazonS3UseRRS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbAmazonS3UseRRS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 168</value>
+    <value>16, 304</value>
   </data>
   <data name="cbAmazonS3UseRRS.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 17</value>
@@ -172,8 +176,11 @@ This means that they may be lost from Amazon S3 at some point.</value>
   <data name="cbAmazonS3CustomCNAME.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbAmazonS3CustomCNAME.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbAmazonS3CustomCNAME.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 144</value>
+    <value>16, 256</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
@@ -201,11 +208,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnCustomUploaderExamples.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderExamples.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 376</value>
+    <value>528, 376</value>
   </data>
   <data name="btnCustomUploaderExamples.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnCustomUploaderExamples.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -225,11 +235,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnCustomUploaderExamples.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnCustomUploaderHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 376</value>
+    <value>432, 376</value>
   </data>
   <data name="btnCustomUploaderHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnCustomUploaderHelp.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -251,6 +264,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderImageUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCustomUploaderImageUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 392</value>
@@ -276,11 +292,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderImageUploader.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnCustomUploaderFileUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderFileUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 436</value>
   </data>
   <data name="btnCustomUploaderFileUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 24</value>
+    <value>56, 24</value>
   </data>
   <data name="btnCustomUploaderFileUploaderTest.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -302,6 +321,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderFileUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCustomUploaderFileUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderFileUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 440</value>
@@ -327,11 +349,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderFileUploader.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="btnCustomUploaderImageUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderImageUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 388</value>
   </data>
   <data name="btnCustomUploaderImageUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 24</value>
+    <value>56, 24</value>
   </data>
   <data name="btnCustomUploaderImageUploaderTest.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -353,6 +378,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderTestResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCustomUploaderTestResult.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderTestResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 384</value>
@@ -423,6 +451,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderDeletionURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderDeletionURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 328</value>
   </data>
@@ -450,11 +481,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnCustomUploaderShowLastResponse.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnCustomUploaderShowLastResponse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderShowLastResponse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 376</value>
+    <value>624, 376</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 23</value>
+    <value>160, 23</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -476,6 +510,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderResponseType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCustomUploaderResponseType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 8</value>
@@ -567,6 +604,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lbCustomUploaderList.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnCustomUploaderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 40</value>
   </data>
@@ -591,6 +631,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnCustomUploaderRemove.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnCustomUploaderClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderClear.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 328</value>
   </data>
@@ -614,6 +657,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnCustomUploaderClear.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnCustomUploaderUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 40</value>
@@ -659,6 +705,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtCustomUploaderName.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="btnCustomUploaderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
@@ -711,6 +760,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderTextUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderTextUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderTextUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 416</value>
   </data>
@@ -738,6 +790,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderRequestURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderRequestURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 56</value>
   </data>
@@ -762,11 +817,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblCustomUploaderRequestURL.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="btnCustomUploaderURLShortenerTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderURLShortenerTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 460</value>
   </data>
   <data name="btnCustomUploaderURLShortenerTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 24</value>
+    <value>56, 24</value>
   </data>
   <data name="btnCustomUploaderURLShortenerTest.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -785,6 +843,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnCustomUploaderURLShortenerTest.ZOrder" xml:space="preserve">
     <value>16</value>
+  </data>
+  <data name="btnCustomUploaderRegexpEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderRegexpEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 40</value>
@@ -855,6 +916,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lvCustomUploaderRegexps.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnCustomUploaderRegexpRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderRegexpRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 40</value>
   </data>
@@ -878,6 +942,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;btnCustomUploaderRegexpRemove.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnCustomUploaderRegexpAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderRegexpAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
@@ -972,6 +1039,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderURLShortener.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderURLShortener.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderURLShortener.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 464</value>
   </data>
@@ -1017,11 +1087,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbCustomUploaderResponseType.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <data name="btnCustomUploaderTextUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCustomUploaderTextUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 412</value>
   </data>
   <data name="btnCustomUploaderTextUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 24</value>
+    <value>56, 24</value>
   </data>
   <data name="btnCustomUploaderTextUploaderTest.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1113,6 +1186,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="txtCustomUploaderLog.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
+  <data name="txtCustomUploaderLog.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -1127,6 +1203,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCustomUploaderThumbnailURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 288</value>
@@ -1155,6 +1234,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderFileForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderFileForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderFileForm.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 96</value>
   </data>
@@ -1181,6 +1263,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderRequestType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCustomUploaderRequestType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCustomUploaderRequestType.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 8</value>
@@ -1251,6 +1336,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCustomUploaderURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCustomUploaderURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCustomUploaderURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 248</value>
   </data>
@@ -1262,7 +1350,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
     <value>lblCustomUploaderURL</value>
   </data>
@@ -1274,6 +1362,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblCustomUploaderURL.ZOrder" xml:space="preserve">
     <value>32</value>
+  </data>
+  <data name="btnCustomUploaderArgEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderArgEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 40</value>
@@ -1319,6 +1410,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;txtCustomUploaderArgValue.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnCustomUploaderArgRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderArgRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 40</value>
@@ -1376,6 +1470,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lvCustomUploaderArguments.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnCustomUploaderArgAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCustomUploaderArgAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
@@ -1449,7 +1546,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="tpCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tpCustomUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -1476,6 +1572,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnTwitterLogin.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="btnTwitterLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnTwitterLogin.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 8</value>
@@ -1539,7 +1638,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -1604,7 +1703,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 228</value>
+    <value>16, 248</value>
   </data>
   <data name="txtBitlyDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 20</value>
@@ -1626,6 +1725,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblBitlyDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblBitlyDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblBitlyDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 232</value>
@@ -1686,7 +1788,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -1700,7 +1802,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="oauth2GoogleURLShortener.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="oauth2GoogleURLShortener.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 240</value>
@@ -1721,10 +1823,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="atcGoogleURLShortenerAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
+    <value>16, 16</value>
   </data>
   <data name="atcGoogleURLShortenerAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 29</value>
+    <value>214, 40</value>
   </data>
   <data name="atcGoogleURLShortenerAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1755,7 +1857,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -1769,7 +1871,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="txtYourlsPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 148</value>
+    <value>16, 200</value>
   </data>
   <data name="txtYourlsPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -1790,7 +1892,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtYourlsUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 116</value>
+    <value>16, 152</value>
   </data>
   <data name="txtYourlsUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -1811,7 +1913,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="txtYourlsSignature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 52</value>
+    <value>16, 80</value>
   </data>
   <data name="txtYourlsSignature.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -1834,8 +1936,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblYourlsNote.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblYourlsNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYourlsNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 88</value>
+    <value>16, 112</value>
   </data>
   <data name="lblYourlsNote.Size" type="System.Drawing.Size, System.Drawing">
     <value>357, 13</value>
@@ -1861,8 +1966,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblYourlsPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblYourlsPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYourlsPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 152</value>
+    <value>16, 184</value>
   </data>
   <data name="lblYourlsPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -1888,8 +1996,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblYourlsUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblYourlsUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYourlsUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 120</value>
+    <value>16, 136</value>
   </data>
   <data name="lblYourlsUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -1915,8 +2026,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblYourlsSignature.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblYourlsSignature.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYourlsSignature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="lblYourlsSignature.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -1940,7 +2054,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="txtYourlsAPIURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtYourlsAPIURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>472, 20</value>
@@ -1963,8 +2077,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblYourlsAPIURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblYourlsAPIURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYourlsAPIURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblYourlsAPIURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -1974,7 +2091,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblYourlsAPIURL.Name" xml:space="preserve">
     <value>lblYourlsAPIURL</value>
   </data>
@@ -2001,7 +2118,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -2016,6 +2133,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="llAdflyLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="llAdflyLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="llAdflyLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 15</value>
@@ -2042,7 +2162,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtAdflyAPIUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 60</value>
+    <value>16, 104</value>
   </data>
   <data name="txtAdflyAPIUID.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -2065,8 +2185,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAdflyAPIUID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAdflyAPIUID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAdflyAPIUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 88</value>
   </data>
   <data name="lblAdflyAPIUID.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -2076,7 +2199,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
     <value>lblAdflyAPIUID</value>
   </data>
@@ -2090,7 +2213,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="txtAdflyAPIKEY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 36</value>
+    <value>16, 56</value>
   </data>
   <data name="txtAdflyAPIKEY.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 20</value>
@@ -2112,6 +2235,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblAdflyAPIKEY.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblAdflyAPIKEY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblAdflyAPIKEY.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
@@ -2151,7 +2277,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -2236,6 +2362,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;eiFTP.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnFtpClient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnFtpClient.Location" type="System.Drawing.Point, System.Drawing">
     <value>584, 48</value>
   </data>
@@ -2262,6 +2391,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblFtpFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFtpFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFtpFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>544, 16</value>
@@ -2290,8 +2422,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblFtpText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblFtpText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblFtpText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 16</value>
+    <value>280, 16</value>
   </data>
   <data name="lblFtpText.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -2316,6 +2451,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblFtpImages.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblFtpImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFtpImages.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -2342,10 +2480,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="cboFtpImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 12</value>
+    <value>80, 12</value>
   </data>
   <data name="cboFtpImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cboFtpImages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2363,10 +2501,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="cboFtpFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>576, 12</value>
+    <value>608, 12</value>
   </data>
   <data name="cboFtpFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cboFtpFiles.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2384,10 +2522,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="cboFtpText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 12</value>
+    <value>344, 12</value>
   </data>
   <data name="cboFtpText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cboFtpText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2414,7 +2552,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 448</value>
+    <value>792, 424</value>
   </data>
   <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2432,20 +2570,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>8</value>
   </data>
   <data name="tpFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpFTP.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpFTP.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -2480,10 +2618,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="cbDropboxURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 352</value>
+    <value>16, 368</value>
   </data>
   <data name="cbDropboxURLType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>128, 21</value>
   </data>
   <data name="cbDropboxURLType.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2503,8 +2641,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbDropboxAutoCreateShareableLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbDropboxAutoCreateShareableLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbDropboxAutoCreateShareableLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 355</value>
+    <value>16, 344</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
@@ -2530,11 +2671,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnDropboxShowFiles.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnDropboxShowFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnDropboxShowFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 298</value>
+    <value>272, 310</value>
   </data>
   <data name="btnDropboxShowFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnDropboxShowFiles.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2670,6 +2814,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
         cEDOIz9clMt26LAWUUxcLUy92z9hAUk7h0+HDimqY/4fT5V6IeBXOg8AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="pbDropboxLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbDropboxLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
@@ -2690,6 +2837,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;pbDropboxLogo.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="btnDropboxRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnDropboxRegister.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 16</value>
@@ -2721,8 +2871,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblDropboxStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblDropboxStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDropboxStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 384</value>
+    <value>16, 400</value>
   </data>
   <data name="lblDropboxStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 16</value>
@@ -2748,8 +2901,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblDropboxPathTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblDropboxPathTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDropboxPathTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 330</value>
+    <value>152, 372</value>
   </data>
   <data name="lblDropboxPathTip.Size" type="System.Drawing.Size, System.Drawing">
     <value>585, 13</value>
@@ -2775,8 +2931,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblDropboxPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblDropboxPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDropboxPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
+    <value>16, 296</value>
   </data>
   <data name="lblDropboxPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -2800,7 +2959,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>8</value>
   </data>
   <data name="txtDropboxPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 300</value>
+    <value>16, 312</value>
   </data>
   <data name="txtDropboxPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -2821,20 +2980,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>9</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -2849,6 +3008,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 16</value>
@@ -2875,7 +3037,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 41</value>
+    <value>352, 88</value>
   </data>
   <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 20</value>
@@ -2898,8 +3060,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblGoogleDriveFolderID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 45</value>
+    <value>352, 72</value>
   </data>
   <data name="lblGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -2935,10 +3100,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>228</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 72</value>
+    <value>352, 112</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 392</value>
+    <value>432, 352</value>
   </data>
   <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2958,11 +3123,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnGoogleDriveRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 40</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 23</value>
+    <value>168, 23</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2984,6 +3152,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 264</value>
@@ -3031,20 +3202,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -3059,6 +3230,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblBoxFolderTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblBoxFolderTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblBoxFolderTip.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 424</value>
@@ -3086,6 +3260,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="cbBoxShare.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbBoxShare.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbBoxShare.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 264</value>
@@ -3118,10 +3295,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>435</value>
   </data>
   <data name="lvBoxFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 48</value>
+    <value>352, 72</value>
   </data>
   <data name="lvBoxFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 368</value>
+    <value>440, 344</value>
   </data>
   <data name="lvBoxFolders.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3141,8 +3318,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblBoxFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblBoxFolderID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblBoxFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 21</value>
+    <value>352, 48</value>
   </data>
   <data name="lblBoxFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -3168,11 +3348,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnBoxRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnBoxRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnBoxRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 16</value>
   </data>
   <data name="btnBoxRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 23</value>
+    <value>152, 23</value>
   </data>
   <data name="btnBoxRefreshFolders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3214,20 +3397,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -3327,6 +3510,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
         0Vklokl0S/ru9TzMqymhl9J0qF25NylKTvKUnu5Pq/wSSSSSCiiiuU9MKKKKAP/Z
 </value>
   </data>
+  <data name="pbCopyLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbCopyLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
@@ -3351,8 +3537,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCopyURLType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCopyURLType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCopyURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 331</value>
+    <value>16, 344</value>
   </data>
   <data name="lblCopyURLType.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -3376,7 +3565,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="cbCopyURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 327</value>
+    <value>16, 360</value>
   </data>
   <data name="cbCopyURLType.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -3395,6 +3584,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;cbCopyURLType.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnCopyRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCopyRegister.Location" type="System.Drawing.Point, System.Drawing">
     <value>240, 16</value>
@@ -3426,8 +3618,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCopyStatus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblCopyStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCopyStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 356</value>
+    <value>16, 392</value>
   </data>
   <data name="lblCopyStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 16</value>
@@ -3453,8 +3648,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCopyPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCopyPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCopyPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
+    <value>16, 296</value>
   </data>
   <data name="lblCopyPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -3478,10 +3676,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="txtCopyPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 300</value>
+    <value>16, 312</value>
   </data>
   <data name="txtCopyPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
+    <value>320, 20</value>
   </data>
   <data name="txtCopyPath.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3520,20 +3718,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="tpCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpCopy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpCopy.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tpCopy.Text" xml:space="preserve">
     <value>Copy</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCopy.Name" xml:space="preserve">
     <value>tpCopy</value>
   </data>
@@ -3581,7 +3779,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -3595,10 +3793,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 144</value>
+    <value>16, 272</value>
   </data>
   <data name="txtAmazonS3CustomDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 20</value>
+    <value>352, 20</value>
   </data>
   <data name="txtAmazonS3CustomDomain.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -3618,8 +3816,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3PathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3PathPreviewLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3PathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 192</value>
+    <value>16, 328</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -3645,8 +3846,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3PathPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3PathPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3PathPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 192</value>
+    <value>16, 344</value>
   </data>
   <data name="lblAmazonS3PathPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -3669,8 +3873,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblAmazonS3PathPreview.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnAmazonS3BucketNameOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnAmazonS3BucketNameOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 90</value>
+    <value>376, 174</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -3680,7 +3887,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
   </data>
@@ -3693,8 +3900,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnAmazonS3AccessKeyOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnAmazonS3AccessKeyOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 18</value>
+    <value>376, 30</value>
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 24</value>
@@ -3704,7 +3914,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
   </data>
@@ -3719,33 +3929,33 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="cbAmazonS3Endpoint.Items" xml:space="preserve">
     <value>https://s3-ap-northeast-1.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items1" xml:space="preserve">
     <value>https://s3-ap-southeast-1.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items2" xml:space="preserve">
     <value>https://s3-ap-southeast-2.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items3" xml:space="preserve">
     <value>https://s3-eu-west-1.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items4" xml:space="preserve">
     <value>https://s3-sa-east-1.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items5" xml:space="preserve">
     <value>https://s3-us-west-1.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items6" xml:space="preserve">
     <value>https://s3-us-west-2.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items7" xml:space="preserve">
     <value>https://s3.amazonaws.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Items8" xml:space="preserve">
     <value>https://objects.dreamhost.com/</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="cbAmazonS3Endpoint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 68</value>
+    <value>16, 128</value>
   </data>
   <data name="cbAmazonS3Endpoint.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 21</value>
@@ -3768,8 +3978,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3BucketName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3BucketName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3BucketName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 96</value>
+    <value>16, 160</value>
   </data>
   <data name="lblAmazonS3BucketName.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -3793,7 +4006,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="txtAmazonS3BucketName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 92</value>
+    <value>16, 176</value>
   </data>
   <data name="txtAmazonS3BucketName.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -3816,8 +4029,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3Endpoint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3Endpoint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3Endpoint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 72</value>
+    <value>16, 112</value>
   </data>
   <data name="lblAmazonS3Endpoint.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -3841,7 +4057,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>9</value>
   </data>
   <data name="txtAmazonS3ObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 116</value>
+    <value>16, 224</value>
   </data>
   <data name="txtAmazonS3ObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -3864,8 +4080,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3ObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3ObjectPrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3ObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 120</value>
+    <value>16, 208</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -3889,7 +4108,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>11</value>
   </data>
   <data name="txtAmazonS3SecretKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 44</value>
+    <value>16, 80</value>
   </data>
   <data name="txtAmazonS3SecretKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -3912,8 +4131,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3SecretKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3SecretKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3SecretKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 48</value>
+    <value>16, 64</value>
   </data>
   <data name="lblAmazonS3SecretKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -3939,8 +4161,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblAmazonS3AccessKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAmazonS3AccessKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAmazonS3AccessKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblAmazonS3AccessKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
@@ -3964,7 +4189,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>15</value>
   </data>
   <data name="txtAmazonS3AccessKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtAmazonS3AccessKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -3998,7 +4223,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -4011,11 +4236,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnMegaRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnMegaRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 114</value>
+    <value>288, 166</value>
   </data>
   <data name="btnMegaRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>120, 24</value>
   </data>
   <data name="btnMegaRefreshFolders.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -4038,11 +4266,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMegaStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMegaStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMegaStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 24</value>
+    <value>16, 32</value>
   </data>
   <data name="lblMegaStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 13</value>
+    <value>139, 13</value>
   </data>
   <data name="lblMegaStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4062,11 +4293,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblMegaStatus.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnMegaRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnMegaRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 50</value>
+    <value>288, 70</value>
   </data>
   <data name="btnMegaRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>120, 24</value>
   </data>
   <data name="btnMegaRegister.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4089,8 +4323,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMegaFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMegaFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMegaFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 120</value>
+    <value>16, 152</value>
   </data>
   <data name="lblMegaFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -4116,8 +4353,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMegaStatusTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMegaStatusTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMegaStatusTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblMegaStatusTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -4141,10 +4381,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="cbMegaFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 116</value>
+    <value>16, 168</value>
   </data>
   <data name="cbMegaFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 21</value>
+    <value>264, 21</value>
   </data>
   <data name="cbMegaFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -4164,8 +4404,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMegaEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMegaEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMegaEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 56</value>
+    <value>16, 56</value>
   </data>
   <data name="lblMegaEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -4188,11 +4431,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblMegaEmail.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnMegaLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnMegaLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 82</value>
+    <value>288, 118</value>
   </data>
   <data name="btnMegaLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 24</value>
+    <value>120, 24</value>
   </data>
   <data name="btnMegaLogin.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -4213,10 +4459,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="txtMegaEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 52</value>
+    <value>16, 72</value>
   </data>
   <data name="txtMegaEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>264, 20</value>
   </data>
   <data name="txtMegaEmail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4234,10 +4480,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>8</value>
   </data>
   <data name="txtMegaPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 84</value>
+    <value>16, 120</value>
   </data>
   <data name="txtMegaPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>264, 20</value>
   </data>
   <data name="txtMegaPassword.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -4257,8 +4503,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMegaPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMegaPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMegaPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 88</value>
+    <value>16, 104</value>
   </data>
   <data name="lblMegaPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -4282,17 +4531,17 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -4308,8 +4557,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbOwnCloudIgnoreInvalidCert.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbOwnCloudIgnoreInvalidCert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 159</value>
+    <value>16, 256</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -4335,8 +4587,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbOwnCloudDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbOwnCloudDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbOwnCloudDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 136</value>
+    <value>16, 232</value>
   </data>
   <data name="cbOwnCloudDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 17</value>
@@ -4362,8 +4617,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbOwnCloudCreateShare.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbOwnCloudCreateShare.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbOwnCloudCreateShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 112</value>
+    <value>16, 208</value>
   </data>
   <data name="cbOwnCloudCreateShare.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
@@ -4387,7 +4645,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="txtOwnCloudPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 84</value>
+    <value>16, 176</value>
   </data>
   <data name="txtOwnCloudPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -4408,7 +4666,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtOwnCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 60</value>
+    <value>16, 128</value>
   </data>
   <data name="txtOwnCloudPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -4429,7 +4687,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtOwnCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 36</value>
+    <value>16, 80</value>
   </data>
   <data name="txtOwnCloudUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -4450,7 +4708,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="txtOwnCloudHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="txtOwnCloudHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -4473,8 +4731,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblOwnCloudPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblOwnCloudPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblOwnCloudPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 160</value>
   </data>
   <data name="lblOwnCloudPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -4500,8 +4761,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblOwnCloudPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblOwnCloudPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblOwnCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 112</value>
   </data>
   <data name="lblOwnCloudPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -4527,8 +4791,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblOwnCloudUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblOwnCloudUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblOwnCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 64</value>
   </data>
   <data name="lblOwnCloudUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -4553,6 +4820,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblOwnCloudHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblOwnCloudHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblOwnCloudHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -4579,20 +4849,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -4608,8 +4878,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbMediaFireUseLongLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbMediaFireUseLongLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbMediaFireUseLongLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
+    <value>16, 160</value>
   </data>
   <data name="cbMediaFireUseLongLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 17</value>
@@ -4633,7 +4906,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtMediaFirePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 85</value>
+    <value>16, 128</value>
   </data>
   <data name="txtMediaFirePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -4656,8 +4929,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMediaFirePath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMediaFirePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMediaFirePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 112</value>
   </data>
   <data name="lblMediaFirePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -4681,7 +4957,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="txtMediaFirePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 52</value>
+    <value>16, 80</value>
   </data>
   <data name="txtMediaFirePassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
@@ -4705,7 +4981,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtMediaFireEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtMediaFireEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
@@ -4728,8 +5004,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMediaFirePassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMediaFirePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMediaFirePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="lblMediaFirePassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -4755,8 +5034,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMediaFireEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMediaFireEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMediaFireEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblMediaFireEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -4780,20 +5062,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -4809,8 +5091,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPushbulletDevices.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPushbulletDevices.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPushbulletDevices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 51</value>
+    <value>16, 64</value>
   </data>
   <data name="lblPushbulletDevices.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -4837,7 +5122,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>False</value>
   </data>
   <data name="cboPushbulletDevices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 48</value>
+    <value>16, 80</value>
   </data>
   <data name="cboPushbulletDevices.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 21</value>
@@ -4860,11 +5145,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnPushbulletGetDeviceList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnPushbulletGetDeviceList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPushbulletGetDeviceList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 47</value>
+    <value>368, 79</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 23</value>
+    <value>152, 23</value>
   </data>
   <data name="btnPushbulletGetDeviceList.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -4887,8 +5175,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPushbulletUserKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPushbulletUserKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPushbulletUserKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblPushbulletUserKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -4912,7 +5203,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtPushbulletUserKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 21</value>
+    <value>16, 32</value>
   </data>
   <data name="txtPushbulletUserKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 20</value>
@@ -4933,20 +5224,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -4960,10 +5251,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="txtRapidShareFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 84</value>
+    <value>16, 128</value>
   </data>
   <data name="txtRapidShareFolderID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 20</value>
+    <value>136, 20</value>
   </data>
   <data name="txtRapidShareFolderID.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4983,8 +5274,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblRapidShareFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblRapidShareFolderID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblRapidShareFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 112</value>
   </data>
   <data name="lblRapidShareFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -5007,11 +5301,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblRapidShareFolderID.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnRapidShareRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnRapidShareRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 160</value>
   </data>
   <data name="btnRapidShareRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 23</value>
+    <value>232, 23</value>
   </data>
   <data name="btnRapidShareRefreshFolders.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -5032,10 +5329,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="tvRapidShareFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
+    <value>16, 192</value>
   </data>
   <data name="tvRapidShareFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 304</value>
+    <value>440, 264</value>
   </data>
   <data name="tvRapidShareFolders.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -5055,8 +5352,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblRapidSharePassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblRapidSharePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblRapidSharePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="lblRapidSharePassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -5082,8 +5382,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblRapidSharePremiumUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblRapidSharePremiumUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblRapidSharePremiumUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblRapidSharePremiumUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -5107,7 +5410,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="txtRapidSharePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 52</value>
+    <value>16, 80</value>
   </data>
   <data name="txtRapidSharePassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 20</value>
@@ -5128,7 +5431,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="txtRapidShareUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtRapidShareUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 20</value>
@@ -5149,20 +5452,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="tpRapidShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpRapidShare.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpRapidShare.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpRapidShare.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="tpRapidShare.Text" xml:space="preserve">
     <value>RapidShare</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpRapidShare.Name" xml:space="preserve">
     <value>tpRapidShare</value>
   </data>
@@ -5175,11 +5478,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpRapidShare.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="btnSendSpaceRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnSendSpaceRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 51</value>
+    <value>160, 127</value>
   </data>
   <data name="btnSendSpaceRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="btnSendSpaceRegister.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -5202,8 +5508,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblSendSpacePassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblSendSpacePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblSendSpacePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 112</value>
   </data>
   <data name="lblSendSpacePassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -5229,8 +5538,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblSendSpaceUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblSendSpaceUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblSendSpaceUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="lblSendSpaceUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -5254,7 +5566,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="txtSendSpacePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 84</value>
+    <value>16, 128</value>
   </data>
   <data name="txtSendSpacePassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 20</value>
@@ -5275,7 +5587,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtSendSpaceUserName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 52</value>
+    <value>16, 80</value>
   </data>
   <data name="txtSendSpaceUserName.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 20</value>
@@ -5296,10 +5608,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="atcSendSpaceAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
+    <value>16, 16</value>
   </data>
   <data name="atcSendSpaceAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 29</value>
+    <value>214, 40</value>
   </data>
   <data name="atcSendSpaceAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5317,20 +5629,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -5345,6 +5657,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="cbMediaCrushDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbMediaCrushDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbMediaCrushDirectLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -5371,20 +5686,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="tpMediaCrush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMediaCrush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaCrush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMediaCrush.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="tpMediaCrush.Text" xml:space="preserve">
     <value>MediaCrush</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaCrush.Name" xml:space="preserve">
     <value>tpMediaCrush</value>
   </data>
@@ -5400,8 +5715,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblGe_ttStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblGe_ttStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGe_ttStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 80</value>
+    <value>120, 117</value>
   </data>
   <data name="lblGe_ttStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -5427,8 +5745,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblGe_ttPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblGe_ttPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGe_ttPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 48</value>
+    <value>16, 64</value>
   </data>
   <data name="lblGe_ttPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -5454,8 +5775,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblGe_ttEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblGe_ttEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGe_ttEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblGe_ttEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -5478,11 +5802,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblGe_ttEmail.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnGe_ttLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnGe_ttLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 75</value>
+    <value>16, 112</value>
   </data>
   <data name="btnGe_ttLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>96, 23</value>
   </data>
   <data name="btnGe_ttLogin.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5503,7 +5830,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtGe_ttPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 44</value>
+    <value>16, 80</value>
   </data>
   <data name="txtGe_ttPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 20</value>
@@ -5524,7 +5851,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtGe_ttEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtGe_ttEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 20</value>
@@ -5545,20 +5872,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -5574,8 +5901,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbLocalhostrDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbLocalhostrDirectURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbLocalhostrDirectURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 72</value>
+    <value>16, 112</value>
   </data>
   <data name="cbLocalhostrDirectURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
@@ -5601,8 +5931,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblLocalhostrPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblLocalhostrPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblLocalhostrPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 48</value>
+    <value>16, 64</value>
   </data>
   <data name="lblLocalhostrPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -5628,8 +5961,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblLocalhostrEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblLocalhostrEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblLocalhostrEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblLocalhostrEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -5653,7 +5989,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="txtLocalhostrPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 44</value>
+    <value>16, 80</value>
   </data>
   <data name="txtLocalhostrPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 20</value>
@@ -5674,7 +6010,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtLocalhostrEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtLocalhostrEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 20</value>
@@ -5695,20 +6031,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -5724,8 +6060,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMinusURLType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMinusURLType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMinusURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 240</value>
+    <value>16, 328</value>
   </data>
   <data name="lblMinusURLType.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -5749,7 +6088,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="cbMinusURLType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 236</value>
+    <value>16, 344</value>
   </data>
   <data name="cbMinusURLType.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 21</value>
@@ -5772,8 +6111,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMinusAuthStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMinusAuthStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMinusAuthStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 86</value>
+    <value>256, 126</value>
   </data>
   <data name="lblMinusAuthStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -5796,11 +6138,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblMinusAuthStatus.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnMinusRefreshAuth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnMinusRefreshAuth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 80</value>
+    <value>16, 152</value>
   </data>
   <data name="btnMinusRefreshAuth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 24</value>
+    <value>232, 24</value>
   </data>
   <data name="btnMinusRefreshAuth.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5823,8 +6168,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMinusPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMinusPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMinusPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 56</value>
+    <value>16, 72</value>
   </data>
   <data name="lblMinusPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -5850,8 +6198,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblMinusUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMinusUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMinusUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>16, 24</value>
   </data>
   <data name="lblMinusUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -5875,7 +6226,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtMinusPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 52</value>
+    <value>16, 88</value>
   </data>
   <data name="txtMinusPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -5896,7 +6247,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtMinusUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 20</value>
+    <value>16, 40</value>
   </data>
   <data name="txtMinusUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -5916,11 +6267,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtMinusUsername.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnMinusAuth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnMinusAuth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 80</value>
+    <value>16, 120</value>
   </data>
   <data name="btnMinusAuth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 24</value>
+    <value>232, 24</value>
   </data>
   <data name="btnMinusAuth.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -5944,7 +6298,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16, 16</value>
   </data>
   <data name="gbMinusUserPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 112</value>
+    <value>712, 200</value>
   </data>
   <data name="gbMinusUserPass.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5966,6 +6320,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnMinusReadFolderList.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="btnMinusReadFolderList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnMinusReadFolderList.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 24</value>
@@ -5994,6 +6351,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="chkMinusPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkMinusPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="chkMinusPublic.Location" type="System.Drawing.Point, System.Drawing">
     <value>464, 58</value>
   </data>
@@ -6017,6 +6377,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;chkMinusPublic.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnMinusFolderAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnMinusFolderAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 24</value>
@@ -6044,6 +6407,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnMinusFolderRemove.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="btnMinusFolderRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnMinusFolderRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 24</value>
@@ -6091,7 +6457,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="gbMinusUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 224</value>
   </data>
   <data name="gbMinusUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>712, 88</value>
@@ -6115,20 +6481,20 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 475</value>
+    <value>972, 493</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -6142,17 +6508,17 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16</value>
   </data>
   <data name="txtJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 256</value>
+    <value>472, 277</value>
   </data>
   <data name="txtJiraIssuePrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 20</value>
+    <value>320, 20</value>
   </data>
   <data name="txtJiraIssuePrefix.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -6168,8 +6534,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblJiraIssuePrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblJiraIssuePrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>473, 259</value>
+    <value>473, 256</value>
   </data>
   <data name="lblJiraIssuePrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -6193,7 +6562,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="txtJiraConfigHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 45</value>
+    <value>8, 64</value>
   </data>
   <data name="txtJiraConfigHelp.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6202,7 +6571,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>Vertical</value>
   </data>
   <data name="txtJiraConfigHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 307</value>
+    <value>432, 288</value>
   </data>
   <data name="txtJiraConfigHelp.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6223,7 +6592,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtJiraHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 19</value>
+    <value>8, 40</value>
   </data>
   <data name="txtJiraHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 20</value>
@@ -6233,7 +6602,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
   </data>
@@ -6248,6 +6617,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblJiraHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblJiraHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblJiraHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 22</value>
@@ -6277,7 +6649,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>13, 13</value>
   </data>
   <data name="gpJiraServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 358</value>
+    <value>451, 358</value>
   </data>
   <data name="gpJiraServer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6301,7 +6673,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>473, 13</value>
   </data>
   <data name="oAuthJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 243</value>
+    <value>321, 243</value>
   </data>
   <data name="oAuthJira.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6329,7 +6701,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -6345,8 +6717,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="chkEmailConfirm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkEmailConfirm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="chkEmailConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 96</value>
+    <value>16, 184</value>
   </data>
   <data name="chkEmailConfirm.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
@@ -6371,6 +6746,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblEmailSmtpServer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblEmailSmtpServer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblEmailSmtpServer.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -6399,8 +6777,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblEmailPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblEmailPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEmailPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 112</value>
   </data>
   <data name="lblEmailPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -6426,8 +6807,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbEmailRememberLastTo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbEmailRememberLastTo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbEmailRememberLastTo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 160</value>
   </data>
   <data name="cbEmailRememberLastTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>
@@ -6451,7 +6835,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtEmailFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 36</value>
+    <value>16, 80</value>
   </data>
   <data name="txtEmailFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 20</value>
@@ -6472,7 +6856,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtEmailPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 60</value>
+    <value>16, 128</value>
   </data>
   <data name="txtEmailPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 20</value>
@@ -6493,7 +6877,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="txtEmailDefaultBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
+    <value>16, 280</value>
   </data>
   <data name="txtEmailDefaultBody.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6519,8 +6903,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblEmailFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblEmailFrom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEmailFrom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 64</value>
   </data>
   <data name="lblEmailFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -6544,7 +6931,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="txtEmailSmtpServer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="txtEmailSmtpServer.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 20</value>
@@ -6567,8 +6954,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblEmailDefaultSubject.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblEmailDefaultSubject.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEmailDefaultSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 126</value>
+    <value>16, 214</value>
   </data>
   <data name="lblEmailDefaultSubject.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -6594,8 +6984,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblEmailDefaultBody.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblEmailDefaultBody.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEmailDefaultBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 174</value>
+    <value>16, 262</value>
   </data>
   <data name="lblEmailDefaultBody.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>
@@ -6619,7 +7012,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="nudEmailSmtpPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 12</value>
+    <value>224, 32</value>
   </data>
   <data name="nudEmailSmtpPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -6645,8 +7038,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblEmailSmtpPort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblEmailSmtpPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEmailSmtpPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 16</value>
+    <value>224, 16</value>
   </data>
   <data name="lblEmailSmtpPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -6670,7 +7066,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>12</value>
   </data>
   <data name="txtEmailDefaultSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
+    <value>16, 232</value>
   </data>
   <data name="txtEmailDefaultSubject.Size" type="System.Drawing.Size, System.Drawing">
     <value>400, 20</value>
@@ -6720,6 +7116,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblSharedFolderFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblSharedFolderFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>544, 16</value>
   </data>
@@ -6747,8 +7146,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblSharedFolderText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblSharedFolderText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 16</value>
+    <value>280, 16</value>
   </data>
   <data name="lblSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -6772,10 +7174,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="cboSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>576, 12</value>
+    <value>608, 12</value>
   </data>
   <data name="cboSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cboSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -6794,6 +7196,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblSharedFolderImages.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblSharedFolderImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -6820,10 +7225,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="cboSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 12</value>
+    <value>344, 12</value>
   </data>
   <data name="cboSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cboSharedFolderText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6841,10 +7246,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="cboSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 12</value>
+    <value>80, 12</value>
   </data>
   <data name="cboSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cboSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6871,7 +7276,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucLocalhostAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 430</value>
+    <value>792, 424</value>
   </data>
   <data name="ucLocalhostAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6966,6 +7371,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpFileUploaders.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnCopyShowFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCopyShowFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -6982,7 +7390,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbPastebinSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 140</value>
+    <value>16, 240</value>
   </data>
   <data name="cbPastebinSyntax.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 21</value>
@@ -7002,8 +7410,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbPastebinSyntax.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnPastebinRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPastebinRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 96</value>
   </data>
   <data name="btnPastebinRegister.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -7029,8 +7440,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPastebinSyntax.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPastebinSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPastebinSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
+    <value>16, 224</value>
   </data>
   <data name="lblPastebinSyntax.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -7056,8 +7470,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPastebinExpiration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPastebinExpiration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPastebinExpiration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 120</value>
+    <value>16, 176</value>
   </data>
   <data name="lblPastebinExpiration.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -7083,8 +7500,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPastebinPrivacy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPastebinPrivacy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPastebinPrivacy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 128</value>
   </data>
   <data name="lblPastebinPrivacy.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -7110,8 +7530,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPastebinTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPastebinTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPastebinTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
+    <value>16, 272</value>
   </data>
   <data name="lblPastebinTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -7137,8 +7560,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPastebinPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPastebinPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPastebinPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 56</value>
   </data>
   <data name="lblPastebinPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -7163,6 +7589,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblPastebinUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblPastebinUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblPastebinUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -7189,7 +7618,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="cbPastebinExpiration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 116</value>
+    <value>16, 192</value>
   </data>
   <data name="cbPastebinExpiration.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 21</value>
@@ -7210,7 +7639,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>8</value>
   </data>
   <data name="cbPastebinPrivacy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 92</value>
+    <value>16, 144</value>
   </data>
   <data name="cbPastebinPrivacy.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 21</value>
@@ -7231,7 +7660,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>9</value>
   </data>
   <data name="txtPastebinTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 164</value>
+    <value>16, 288</value>
   </data>
   <data name="txtPastebinTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 20</value>
@@ -7252,7 +7681,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="txtPastebinPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 36</value>
+    <value>16, 72</value>
   </data>
   <data name="txtPastebinPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 20</value>
@@ -7273,7 +7702,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>11</value>
   </data>
   <data name="txtPastebinUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="txtPastebinUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 20</value>
@@ -7296,8 +7725,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPastebinLoginStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPastebinLoginStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPastebinLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 69</value>
+    <value>256, 101</value>
   </data>
   <data name="lblPastebinLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -7320,8 +7752,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblPastebinLoginStatus.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="btnPastebinLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPastebinLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 64</value>
+    <value>136, 96</value>
   </data>
   <data name="btnPastebinLogin.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -7358,7 +7793,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -7374,8 +7809,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPaste_eeUserAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPaste_eeUserAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPaste_eeUserAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -7399,7 +7837,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtPaste_eeUserAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtPaste_eeUserAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 20</value>
@@ -7433,7 +7871,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -7449,8 +7887,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="chkGistPublishPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkGistPublishPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="chkGistPublishPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 23</value>
+    <value>16, 64</value>
   </data>
   <data name="chkGistPublishPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -7477,7 +7918,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>False</value>
   </data>
   <data name="oAuth2Gist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 51</value>
+    <value>16, 88</value>
   </data>
   <data name="oAuth2Gist.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 205</value>
@@ -7498,10 +7939,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="atcGistAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 16</value>
+    <value>16, 16</value>
   </data>
   <data name="atcGistAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 29</value>
+    <value>214, 40</value>
   </data>
   <data name="atcGistAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7529,7 +7970,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>Gist</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -7545,8 +7986,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbUpasteIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbUpasteIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbUpasteIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="cbUpasteIsPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 17</value>
@@ -7572,8 +8016,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblUpasteUserKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblUpasteUserKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblUpasteUserKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>16, 16</value>
   </data>
   <data name="lblUpasteUserKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -7597,7 +8044,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="txtUpasteUserKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 20</value>
+    <value>16, 32</value>
   </data>
   <data name="txtUpasteUserKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 20</value>
@@ -7631,7 +8078,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -7645,7 +8092,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtHastebinSyntaxHighlighting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 36</value>
+    <value>16, 80</value>
   </data>
   <data name="txtHastebinSyntaxHighlighting.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -7666,7 +8113,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="txtHastebinCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="txtHastebinCustomDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 20</value>
@@ -7689,8 +8136,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblHastebinSyntaxHighlighting.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblHastebinSyntaxHighlighting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblHastebinSyntaxHighlighting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 64</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -7715,6 +8165,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblHastebinCustomDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblHastebinCustomDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblHastebinCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -7754,7 +8207,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -7821,6 +8274,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbImgurUploadSelectedAlbum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbImgurUploadSelectedAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbImgurUploadSelectedAlbum.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 19</value>
   </data>
@@ -7848,8 +8304,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbImgurDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbImgurDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbImgurDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 296</value>
+    <value>16, 304</value>
   </data>
   <data name="cbImgurDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -7873,10 +8332,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 260</value>
+    <value>16, 256</value>
   </data>
   <data name="atcImgurAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 32</value>
+    <value>208, 40</value>
   </data>
   <data name="atcImgurAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -7916,7 +8375,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -7953,6 +8412,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnImgurRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnImgurRefreshAlbumList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnImgurRefreshAlbumList.Location" type="System.Drawing.Point, System.Drawing">
     <value>592, 16</value>
   </data>
@@ -7978,10 +8440,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="cbImgurThumbnailType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 324</value>
+    <value>16, 344</value>
   </data>
   <data name="cbImgurThumbnailType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 21</value>
+    <value>128, 21</value>
   </data>
   <data name="cbImgurThumbnailType.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -8000,6 +8462,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblImgurThumbnailType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblImgurThumbnailType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblImgurThumbnailType.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 328</value>
@@ -8039,7 +8504,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -8052,11 +8517,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpImgur.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnImageShackLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnImageShackLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 42</value>
+    <value>232, 80</value>
   </data>
   <data name="btnImageShackLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnImageShackLogin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -8076,11 +8544,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnImageShackLogin.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnImageShackOpenPublicProfile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnImageShackOpenPublicProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 112</value>
+    <value>232, 152</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 24</value>
+    <value>208, 24</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -8103,8 +8574,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbImageShackIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbImageShackIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbImageShackIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 80</value>
+    <value>16, 120</value>
   </data>
   <data name="cbImageShackIsPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 17</value>
@@ -8127,11 +8601,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbImageShackIsPublic.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnImageShackOpenMyImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnImageShackOpenMyImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 152</value>
   </data>
   <data name="btnImageShackOpenMyImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 24</value>
+    <value>208, 24</value>
   </data>
   <data name="btnImageShackOpenMyImages.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -8153,6 +8630,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblImageShackUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblImageShackUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblImageShackUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -8179,7 +8659,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtImageShackUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="txtImageShackUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 20</value>
@@ -8200,7 +8680,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="txtImageShackPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 44</value>
+    <value>16, 82</value>
   </data>
   <data name="txtImageShackPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 20</value>
@@ -8223,8 +8703,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblImageShackPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblImageShackPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblImageShackPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 66</value>
   </data>
   <data name="lblImageShackPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -8261,7 +8744,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -8275,10 +8758,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="atcTinyPicAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>16, 16</value>
   </data>
   <data name="atcTinyPicAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 29</value>
+    <value>136, 40</value>
   </data>
   <data name="atcTinyPicAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8295,11 +8778,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;atcTinyPicAccountType.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnTinyPicLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnTinyPicLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 74</value>
+    <value>232, 128</value>
   </data>
   <data name="btnTinyPicLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnTinyPicLogin.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -8320,7 +8806,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="txtTinyPicPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 76</value>
+    <value>16, 130</value>
   </data>
   <data name="txtTinyPicPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 20</value>
@@ -8343,8 +8829,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblTinyPicPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblTinyPicPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTinyPicPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>16, 114</value>
   </data>
   <data name="lblTinyPicPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -8368,7 +8857,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtTinyPicUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 44</value>
+    <value>16, 80</value>
   </data>
   <data name="txtTinyPicUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 20</value>
@@ -8391,8 +8880,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblTinyPicUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblTinyPicUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTinyPicUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 64</value>
   </data>
   <data name="lblTinyPicUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -8415,11 +8907,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblTinyPicUsername.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnTinyPicOpenMyImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnTinyPicOpenMyImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 160</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 24</value>
+    <value>208, 24</value>
   </data>
   <data name="btnTinyPicOpenMyImages.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -8453,7 +8948,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -8466,11 +8961,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpTinyPic.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnFlickrOpenImages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnFlickrOpenImages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 102</value>
+    <value>584, 102</value>
   </data>
   <data name="btnFlickrOpenImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 23</value>
+    <value>211, 23</value>
   </data>
   <data name="btnFlickrOpenImages.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -8494,7 +8992,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16, 16</value>
   </data>
   <data name="pgFlickrAuthInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 160</value>
+    <value>560, 160</value>
   </data>
   <data name="pgFlickrAuthInfo.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -8515,7 +9013,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16, 184</value>
   </data>
   <data name="pgFlickrSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 275</value>
+    <value>560, 275</value>
   </data>
   <data name="pgFlickrSettings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -8532,11 +9030,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;pgFlickrSettings.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnFlickrCheckToken.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnFlickrCheckToken.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 73</value>
+    <value>584, 73</value>
   </data>
   <data name="btnFlickrCheckToken.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 23</value>
+    <value>211, 23</value>
   </data>
   <data name="btnFlickrCheckToken.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8559,11 +9060,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnFlickrCompleteAuth.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnFlickrCompleteAuth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnFlickrCompleteAuth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 45</value>
+    <value>584, 45</value>
   </data>
   <data name="btnFlickrCompleteAuth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 24</value>
+    <value>211, 24</value>
   </data>
   <data name="btnFlickrCompleteAuth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -8583,11 +9087,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnFlickrCompleteAuth.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="btnFlickrOpenAuthorize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnFlickrOpenAuthorize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 16</value>
+    <value>584, 16</value>
   </data>
   <data name="btnFlickrOpenAuthorize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 23</value>
+    <value>211, 23</value>
   </data>
   <data name="btnFlickrOpenAuthorize.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8621,7 +9128,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -8634,11 +9141,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpFlickr.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnPhotobucketAddAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPhotobucketAddAlbum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 24</value>
+    <value>464, 23</value>
   </data>
   <data name="btnPhotobucketAddAlbum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="btnPhotobucketAddAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -8661,11 +9171,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnPhotobucketRemoveAlbum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="btnPhotobucketRemoveAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPhotobucketRemoveAlbum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 24</value>
+    <value>584, 23</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8689,7 +9202,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16, 24</value>
   </data>
   <data name="cboPhotobucketAlbumPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 21</value>
+    <value>440, 21</value>
   </data>
   <data name="cboPhotobucketAlbumPaths.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8733,11 +9246,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPhotobucketNewAlbumName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPhotobucketNewAlbumName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPhotobucketNewAlbumName.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 72</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>649, 13</value>
+    <value>643, 13</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8759,6 +9275,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblPhotobucketParentAlbumPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblPhotobucketParentAlbumPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -8826,11 +9345,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;txtPhotobucketParentAlbumPath.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnPhotobucketCreateAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPhotobucketCreateAlbum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 88</value>
+    <value>240, 87</value>
   </data>
   <data name="btnPhotobucketCreateAlbum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 23</value>
+    <value>144, 23</value>
   </data>
   <data name="btnPhotobucketCreateAlbum.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -8877,11 +9399,14 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPhotobucketDefaultAlbumName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPhotobucketDefaultAlbumName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPhotobucketDefaultAlbumName.Location" type="System.Drawing.Point, System.Drawing">
     <value>496, 128</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+    <value>101, 13</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -8900,6 +9425,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblPhotobucketDefaultAlbumName.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnPhotobucketAuthOpen.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -8949,6 +9477,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPhotobucketVerificationCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPhotobucketVerificationCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPhotobucketVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 62</value>
   </data>
@@ -8972,6 +9503,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="&gt;&gt;lblPhotobucketVerificationCode.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 112</value>
@@ -9020,6 +9554,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblPhotobucketAccountStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 152</value>
@@ -9083,7 +9620,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -9097,10 +9634,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="txtPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 12</value>
+    <value>352, 64</value>
   </data>
   <data name="txtPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 20</value>
+    <value>200, 20</value>
   </data>
   <data name="txtPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -9120,8 +9657,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblPicasaAlbumID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPicasaAlbumID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 16</value>
+    <value>352, 48</value>
   </data>
   <data name="lblPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 13</value>
@@ -9146,7 +9686,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chPicasaID.Width" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
@@ -9163,7 +9703,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>143</value>
   </data>
   <data name="lvPicasaAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 72</value>
+    <value>352, 88</value>
   </data>
   <data name="lvPicasaAlbumList.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 368</value>
@@ -9186,8 +9726,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="btnPicasaRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="btnPicasaRefreshAlbumList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPicasaRefreshAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 40</value>
+    <value>352, 16</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 23</value>
@@ -9245,7 +9788,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Picasa</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -9261,8 +9804,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbCheveretoDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbCheveretoDirectURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbCheveretoDirectURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 112</value>
   </data>
   <data name="cbCheveretoDirectURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 17</value>
@@ -9288,8 +9834,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCheveretoWebsiteTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCheveretoWebsiteTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCheveretoWebsiteTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 16</value>
+    <value>264, 36</value>
   </data>
   <data name="lblCheveretoWebsiteTip.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -9299,7 +9848,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
     <value>/api/1/upload</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
     <value>lblCheveretoWebsiteTip</value>
   </data>
@@ -9314,6 +9863,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCheveretoWebsite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCheveretoWebsite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCheveretoWebsite.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -9340,7 +9892,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="txtCheveretoWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="txtCheveretoWebsite.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 20</value>
@@ -9361,7 +9913,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="txtCheveretoAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 36</value>
+    <value>16, 80</value>
   </data>
   <data name="txtCheveretoAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 20</value>
@@ -9384,8 +9936,11 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="lblCheveretoAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCheveretoAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCheveretoAPIKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 64</value>
   </data>
   <data name="lblCheveretoAPIKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -9422,7 +9977,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
@@ -9516,6 +10071,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tcUploaders.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblWidthHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblWidthHint.Location" type="System.Drawing.Point, System.Drawing">
     <value>820, 0</value>
   </data>
@@ -9593,6 +10151,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

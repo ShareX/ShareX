@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>0, 0</value>
   </data>
   <data name="lblAccountType.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -153,10 +153,10 @@
     <value>User</value>
   </data>
   <data name="cbAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 4</value>
+    <value>0, 16</value>
   </data>
   <data name="cbAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
+    <value>128, 21</value>
   </data>
   <data name="cbAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -180,7 +180,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 30</value>
+    <value>132, 41</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AccountTypeControl</value>

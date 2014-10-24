@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbAutoRotate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 64</value>
   </data>
   <data name="cbAutoRotate.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
@@ -147,7 +147,7 @@
     <value>8</value>
   </data>
   <data name="nudMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 12</value>
+    <value>16, 32</value>
   </data>
   <data name="nudMargin.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -175,7 +175,7 @@
     <value>True</value>
   </data>
   <data name="cbAutoScale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 88</value>
   </data>
   <data name="cbAutoScale.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -202,7 +202,7 @@
     <value>True</value>
   </data>
   <data name="lblMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
+    <value>16, 16</value>
   </data>
   <data name="lblMargin.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -229,7 +229,7 @@
     <value>True</value>
   </data>
   <data name="cbAllowEnlarge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 96</value>
+    <value>40, 112</value>
   </data>
   <data name="cbAllowEnlarge.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 17</value>
@@ -256,7 +256,7 @@
     <value>True</value>
   </data>
   <data name="cbCenterImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 120</value>
+    <value>40, 136</value>
   </data>
   <data name="cbCenterImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
@@ -280,7 +280,7 @@
     <value>3</value>
   </data>
   <data name="btnShowPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 152</value>
+    <value>88, 168</value>
   </data>
   <data name="btnShowPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -304,7 +304,7 @@
     <value>2</value>
   </data>
   <data name="btnPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 152</value>
+    <value>8, 168</value>
   </data>
   <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -328,7 +328,7 @@
     <value>1</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 152</value>
+    <value>168, 168</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -358,7 +358,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>251, 185</value>
+    <value>250, 200</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
