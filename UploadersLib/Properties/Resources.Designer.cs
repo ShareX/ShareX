@@ -1151,7 +1151,7 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SendSpace registration....
+        ///   Looks up a localized string similar to SendSpace registration.
         /// </summary>
         internal static string UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___ {
             get {

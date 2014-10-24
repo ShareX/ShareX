@@ -187,7 +187,7 @@
     <value>{0} başarıyla oluşturuldu.</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>SendSpace kayıt...</value>
+    <value>SendSpace kayıt</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Hata: Sonuç boş.</value>

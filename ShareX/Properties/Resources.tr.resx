@@ -269,7 +269,7 @@
     <value>Resimi panoya kopyala</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
-    <value>Dosyayı yerel olarak sil</value>
+    <value>Dosyayı sil</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Aksiyonları gerçekleştir</value>
@@ -433,7 +433,7 @@ sürükle</value>
     <value>Yol boş olamaz.</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Sürükle ve bırak yükleme</value>
+    <value>Sürükle bırak ile yükle</value>
   </data>
   <data name="HotkeyType_EllipseRegion" xml:space="preserve">
     <value>Elips bölge yakala</value>
@@ -475,7 +475,7 @@ sürükle</value>
     <value>Dizin yaratılamadı:</value>
   </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Simge balon ucu göster</value>
+    <value>Balon uyarısı göster</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Kaydı durdurmak için simge ikonuna tıklayın.</value>
@@ -496,7 +496,7 @@ sürükle</value>
     <value>Dizin yolu seçin</value>
   </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Önizlemeli uyarı pencereleri göster</value>
+    <value>Önizlemeli uyarı penceresi göster</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} mevcut değil.
