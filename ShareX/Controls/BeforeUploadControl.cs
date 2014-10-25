@@ -139,7 +139,7 @@ namespace ShareX
             if (Program.UploadersConfig.IsValid<T>(index))
             {
                 RadioButton rb = new RadioButton() { AutoSize = true };
-                rb.Text = destination.GetDescription();
+                rb.Text = destination.GetLocalizedDescription();
                 rb.Tag = destination;
                 rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
 

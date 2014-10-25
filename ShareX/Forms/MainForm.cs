@@ -96,8 +96,7 @@ namespace ShareX
                 // if click on "folder" with file destinations then set ImageFileDestination and check it
                 if (x == ImageDestination.FileUploader)
                 {
-                    SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders,
-                        tsmiTrayImageFileUploaders);
+                    SetEnumChecked(Program.DefaultTaskSettings.ImageFileDestination, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
                 }
                 else // if click not on "folder" with destinations then uncheck file destinations
                 {
@@ -119,8 +118,7 @@ namespace ShareX
                 // if click on "folder" with file destinations then set TextFileDestination and check it
                 if (x == TextDestination.FileUploader)
                 {
-                    SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders,
-                        tsmiTrayTextFileUploaders);
+                    SetEnumChecked(Program.DefaultTaskSettings.TextFileDestination, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
                 }
                 else // if click not on "folder" with destinations then uncheck file destinations
                 {
@@ -142,14 +140,14 @@ namespace ShareX
 
             foreach (UrlShortenerType urlShortener in Helpers.GetEnums<UrlShortenerType>())
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(urlShortener.GetDescription());
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(urlShortener.GetLocalizedDescription());
                 tsmi.Click += (sender, e) => uim.ShortenURL(urlShortener);
                 tsmiShortenSelectedURL.DropDownItems.Add(tsmi);
             }
 
             foreach (URLSharingServices urlSharingService in Helpers.GetEnums<URLSharingServices>())
             {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(urlSharingService.GetDescription());
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(urlSharingService.GetLocalizedDescription());
                 tsmi.Click += (sender, e) => uim.ShareURL(urlSharingService);
                 tsmiShareSelectedURL.DropDownItems.Add(tsmi);
             }
@@ -168,21 +166,6 @@ namespace ShareX
             uim = new UploadInfoManager(lvUploads);
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
-        }
-
-        /// <summary>
-        /// Unchecks all items in drop downs
-        /// </summary>
-        /// <param name="lists">List of drop downs</param>
-        public static void Uncheck(params ToolStripDropDownItem[] lists)
-        {
-            foreach (ToolStripDropDownItem parent in lists)
-            {
-                foreach (var dropDownItem in parent.DropDownItems)
-                {
-                    ((ToolStripMenuItem)dropDownItem).Checked = false;
-                }
-            }
         }
 
         private void UpdateWorkflowsMenu()
@@ -243,7 +226,7 @@ namespace ShareX
 
         private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>();
+            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
@@ -274,6 +257,17 @@ namespace ShareX
             }
         }
 
+        public static void Uncheck(params ToolStripDropDownItem[] lists)
+        {
+            foreach (ToolStripDropDownItem parent in lists)
+            {
+                foreach (var dropDownItem in parent.DropDownItems)
+                {
+                    ((ToolStripMenuItem)dropDownItem).Checked = false;
+                }
+            }
+        }
+
         /// <summary>
         /// Finds dropDowonItem corresponding to the enum value and checks it.
         /// </summary>
@@ -282,7 +276,10 @@ namespace ShareX
         private static void SetEnumChecked(Enum value, params ToolStripDropDownItem[] parents)
         {
             if (value == null)
+            {
                 return;
+            }
+
             int index = value.GetIndex();
 
             foreach (ToolStripDropDownItem parent in parents)
@@ -293,7 +290,7 @@ namespace ShareX
 
         private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).ToArray();
+            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>().Skip(1).ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
@@ -612,21 +609,21 @@ namespace ShareX
         private void UpdateUploaderMenuNames()
         {
             string imageUploader = Program.DefaultTaskSettings.ImageDestination == ImageDestination.FileUploader ?
-                Program.DefaultTaskSettings.ImageFileDestination.GetDescription() : Program.DefaultTaskSettings.ImageDestination.GetDescription();
+                Program.DefaultTaskSettings.ImageFileDestination.GetLocalizedDescription() : Program.DefaultTaskSettings.ImageDestination.GetLocalizedDescription();
             tsmiImageUploaders.Text = tsmiTrayImageUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_, imageUploader);
 
             string textUploader = Program.DefaultTaskSettings.TextDestination == TextDestination.FileUploader ?
-                Program.DefaultTaskSettings.TextFileDestination.GetDescription() : Program.DefaultTaskSettings.TextDestination.GetDescription();
+                Program.DefaultTaskSettings.TextFileDestination.GetLocalizedDescription() : Program.DefaultTaskSettings.TextDestination.GetLocalizedDescription();
             tsmiTextUploaders.Text = tsmiTrayTextUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_, textUploader);
 
             tsmiFileUploaders.Text = tsmiTrayFileUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
-                Program.DefaultTaskSettings.FileDestination.GetDescription());
+                Program.DefaultTaskSettings.FileDestination.GetLocalizedDescription());
 
             tsmiURLShorteners.Text = tsmiTrayURLShorteners.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
-                Program.DefaultTaskSettings.URLShortenerDestination.GetDescription());
+                Program.DefaultTaskSettings.URLShortenerDestination.GetLocalizedDescription());
 
             tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
-                Program.DefaultTaskSettings.URLSharingServiceDestination.GetDescription());
+                Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription());
         }
 
         private void AutoCheckUpdate()

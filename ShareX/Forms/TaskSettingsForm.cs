@@ -80,7 +80,7 @@ namespace ShareX
             AddEnumItemsContextMenu<HotkeyType>(x =>
             {
                 TaskSettings.Job = x;
-                tbDescription.Text = TaskSettings.Job.GetDescription();
+                tbDescription.Text = TaskSettings.Job.GetLocalizedDescription();
             }, cmsTask);
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);
@@ -133,11 +133,9 @@ namespace ShareX
             SetMultiEnumCheckedContextMenu(TaskSettings.AfterCaptureJob, cmsAfterCapture);
             SetMultiEnumCheckedContextMenu(TaskSettings.AfterUploadJob, cmsAfterUpload);
             SetEnumChecked(TaskSettings.ImageDestination, tsmiImageUploaders);
-            MainForm.SetImageFileDestinationChecked(TaskSettings.ImageDestination,
-                TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
+            MainForm.SetImageFileDestinationChecked(TaskSettings.ImageDestination, TaskSettings.ImageFileDestination, tsmiImageFileUploaders);
             SetEnumChecked(TaskSettings.TextDestination, tsmiTextUploaders);
-            MainForm.SetTextFileDestinationChecked(TaskSettings.TextDestination,
-                TaskSettings.TextFileDestination, tsmiTextFileUploaders);
+            MainForm.SetTextFileDestinationChecked(TaskSettings.TextDestination, TaskSettings.TextFileDestination, tsmiTextFileUploaders);
             SetEnumChecked(TaskSettings.FileDestination, tsmiFileUploaders);
             SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
             SetEnumChecked(TaskSettings.URLSharingServiceDestination, tsmiURLSharingServices);
@@ -161,7 +159,7 @@ namespace ShareX
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             chkShowAfterUploadForm.Checked = TaskSettings.GeneralSettings.ShowAfterUploadForm;
             cboPopUpNotification.Items.Clear();
-            cboPopUpNotification.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PopUpNotificationType>());
+            cboPopUpNotification.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<PopUpNotificationType>());
             cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
             cbHistorySave.Checked = TaskSettings.GeneralSettings.SaveHistory;
 
@@ -169,13 +167,13 @@ namespace ShareX
             cbImageFormat.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
             cbImageFormat.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat;
             nudImageJPEGQuality.Value = TaskSettings.ImageSettings.ImageJPEGQuality;
-            cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
+            cbImageGIFQuality.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<GIFQuality>());
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
             nudUseImageFormat2After.Value = TaskSettings.ImageSettings.ImageSizeLimit;
             cbImageFormat2.Items.AddRange(Enum.GetNames(typeof(EImageFormat)));
             cbImageFormat2.SelectedIndex = (int)TaskSettings.ImageSettings.ImageFormat2;
             cbImageFileExist.Items.Clear();
-            cbImageFileExist.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<FileExistAction>());
+            cbImageFileExist.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<FileExistAction>());
             cbImageFileExist.SelectedIndex = (int)TaskSettings.ImageSettings.FileExistAction;
 
             // Image - Effects
@@ -330,7 +328,7 @@ namespace ShareX
 
         private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Select(x => x.Replace("&", "&&")).ToArray();
+            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>().Select(x => x.Replace("&", "&&")).ToArray();
 
             foreach (ToolStripDropDown parent in parents)
             {
@@ -373,7 +371,7 @@ namespace ShareX
 
         private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
+            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
 
             foreach (ToolStripDropDown parent in parents)
             {
@@ -415,7 +413,7 @@ namespace ShareX
 
         private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>();
+            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
@@ -469,27 +467,27 @@ namespace ShareX
 
         private void UpdateUploaderMenuNames()
         {
-            btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetDescription());
+            btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetLocalizedDescription());
 
             btnAfterCapture.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_, string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags<AfterCaptureTasks>().
-                Select(x => x.GetDescription()).ToArray()));
+                Select(x => x.GetLocalizedDescription()).ToArray()));
 
             btnAfterUpload.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_, string.Join(", ", TaskSettings.AfterUploadJob.GetFlags<AfterUploadTasks>().
-                Select(x => x.GetDescription()).ToArray()));
+                Select(x => x.GetLocalizedDescription()).ToArray()));
 
             string imageUploader = TaskSettings.ImageDestination == ImageDestination.FileUploader ?
-                TaskSettings.ImageFileDestination.GetDescription() : TaskSettings.ImageDestination.GetDescription();
+                TaskSettings.ImageFileDestination.GetLocalizedDescription() : TaskSettings.ImageDestination.GetLocalizedDescription();
             tsmiImageUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_, imageUploader);
 
             string textUploader = TaskSettings.TextDestination == TextDestination.FileUploader ?
-                TaskSettings.TextFileDestination.GetDescription() : TaskSettings.TextDestination.GetDescription();
+                TaskSettings.TextFileDestination.GetLocalizedDescription() : TaskSettings.TextDestination.GetLocalizedDescription();
             tsmiTextUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_, textUploader);
 
-            tsmiFileUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_, TaskSettings.FileDestination.GetDescription());
+            tsmiFileUploaders.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_, TaskSettings.FileDestination.GetLocalizedDescription());
 
-            tsmiURLShorteners.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_, TaskSettings.URLShortenerDestination.GetDescription());
+            tsmiURLShorteners.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_, TaskSettings.URLShortenerDestination.GetLocalizedDescription());
 
-            tsmiURLSharingServices.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_, TaskSettings.URLSharingServiceDestination.GetDescription());
+            tsmiURLSharingServices.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_, TaskSettings.URLSharingServiceDestination.GetLocalizedDescription());
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)

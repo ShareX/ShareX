@@ -27,6 +27,7 @@ using HelpersLib;
 using ImageEffectsLib;
 using ScreenCaptureLib;
 using ShareX.Properties;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -41,6 +42,16 @@ namespace ShareX
 {
     public static class TaskHelpers
     {
+        internal static string GetLocalizedDescription(this Enum value)
+        {
+            return value.GetLocalizedDescription(Resources.ResourceManager);
+        }
+
+        internal static string[] GetLocalizedEnumDescriptions<T>()
+        {
+            return Helpers.GetLocalizedEnumDescriptions<T>(Resources.ResourceManager);
+        }
+
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();

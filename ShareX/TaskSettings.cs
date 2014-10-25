@@ -46,7 +46,7 @@ namespace ShareX
         {
             get
             {
-                return !string.IsNullOrEmpty(description) ? description : Job.GetDescription();
+                return !string.IsNullOrEmpty(description) ? description : Job.GetLocalizedDescription();
             }
             set
             {
@@ -117,12 +117,7 @@ namespace ShareX
 
         public override string ToString()
         {
-            if (!string.IsNullOrEmpty(Description))
-            {
-                return Description;
-            }
-
-            return Job.GetDescription();
+            return Description;
         }
 
         public bool IsUsingDefaultSettings

@@ -99,27 +99,27 @@ namespace ShareX
                     switch (UploadDestination)
                     {
                         case EDataType.Image:
-                            return TaskSettings.ImageDestination.GetDescription();
+                            return TaskSettings.ImageDestination.GetLocalizedDescription();
                         case EDataType.Text:
-                            return TaskSettings.TextDestination.GetDescription();
+                            return TaskSettings.TextDestination.GetLocalizedDescription();
                         case EDataType.File:
                             switch (DataType)
                             {
                                 case EDataType.Image:
-                                    return TaskSettings.ImageFileDestination.GetDescription();
+                                    return TaskSettings.ImageFileDestination.GetLocalizedDescription();
                                 case EDataType.Text:
-                                    return TaskSettings.TextFileDestination.GetDescription();
+                                    return TaskSettings.TextFileDestination.GetLocalizedDescription();
                                 default:
                                 case EDataType.File:
-                                    return TaskSettings.FileDestination.GetDescription();
+                                    return TaskSettings.FileDestination.GetLocalizedDescription();
                             }
                         case EDataType.URL:
                             if (Job == TaskJob.ShareURL)
                             {
-                                return TaskSettings.URLSharingServiceDestination.GetDescription();
+                                return TaskSettings.URLSharingServiceDestination.GetLocalizedDescription();
                             }
 
-                            return TaskSettings.URLShortenerDestination.GetDescription();
+                            return TaskSettings.URLShortenerDestination.GetLocalizedDescription();
                     }
                 }
 

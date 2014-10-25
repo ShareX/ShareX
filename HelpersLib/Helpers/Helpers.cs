@@ -265,13 +265,13 @@ namespace HelpersLib
             return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetDescription()).ToArray();
         }
 
-        public static string[] GetLocalizedEnumDescriptions<T>()
+        /*public static string[] GetLocalizedEnumDescriptions<T>()
         {
             Assembly assembly = typeof(T).Assembly;
             string resourcePath = assembly.GetName().Name + ".Properties.Resources";
             ResourceManager resourceManager = new ResourceManager(resourcePath, assembly);
             return GetLocalizedEnumDescriptions<T>(resourceManager);
-        }
+        }*/
 
         public static string[] GetLocalizedEnumDescriptions<T>(ResourceManager resourceManager)
         {

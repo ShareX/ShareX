@@ -80,7 +80,7 @@ namespace ShareX
                     type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
                     continue;
 
-                AddFormat(type.GetDescription(), GetUrlByType(type));
+                AddFormat(type.GetLocalizedDescription(), GetUrlByType(type));
             }
 
             if (Helpers.IsImageFile(Info.Result.URL))

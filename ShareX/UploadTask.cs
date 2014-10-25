@@ -147,7 +147,7 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.ShortenURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = string.Format(Resources.UploadTask_CreateURLShortenerTask_Shorten_URL___0__, taskSettings.URLShortenerDestination.GetDescription());
+            task.Info.FileName = string.Format(Resources.UploadTask_CreateURLShortenerTask_Shorten_URL___0__, taskSettings.URLShortenerDestination.GetLocalizedDescription());
             task.Info.Result.URL = url;
             return task;
         }
@@ -157,7 +157,7 @@ namespace ShareX
             UploadTask task = new UploadTask(taskSettings);
             task.Info.Job = TaskJob.ShareURL;
             task.Info.DataType = EDataType.URL;
-            task.Info.FileName = string.Format(Resources.UploadTask_CreateShareURLTask_Share_URL___0__, taskSettings.URLSharingServiceDestination.GetDescription());
+            task.Info.FileName = string.Format(Resources.UploadTask_CreateShareURLTask_Share_URL___0__, taskSettings.URLSharingServiceDestination.GetLocalizedDescription());
             task.Info.Result.URL = url;
             return task;
         }

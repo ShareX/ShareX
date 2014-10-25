@@ -52,7 +52,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
 
             // General
-            cbLanguage.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<SupportedLanguage>());
+            cbLanguage.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<SupportedLanguage>());
             cbLanguage.SelectedIndex = (int)Program.Settings.Language;
             cbShowTray.Checked = Program.Settings.ShowTray;
             cbSilentRun.Enabled = Program.Settings.ShowTray;
@@ -76,7 +76,7 @@ namespace ShareX
                 ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
 
             // Proxy
-            cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
+            cbProxyMethod.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<ProxyMethod>());
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
@@ -112,9 +112,9 @@ namespace ShareX
             Program.Settings.SecondaryTextUploaders.Where(n => Helpers.GetEnums<TextDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryTextUploaders.Remove(x));
             Program.Settings.SecondaryFileUploaders.Where(n => Helpers.GetEnums<FileDestination>().All(e => e != n)).ForEach(x => Program.Settings.SecondaryFileUploaders.Remove(x));
 
-            Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lvSecondaryImageUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
-            Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lvSecondaryTextUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
-            Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetDescription()) { Tag = x }));
+            Program.Settings.SecondaryImageUploaders.ForEach<ImageDestination>(x => lvSecondaryImageUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
+            Program.Settings.SecondaryTextUploaders.ForEach<TextDestination>(x => lvSecondaryTextUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
+            Program.Settings.SecondaryFileUploaders.ForEach<FileDestination>(x => lvSecondaryFileUploaders.Items.Add(new ListViewItem(x.GetLocalizedDescription()) { Tag = x }));
 
             // Print
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
