@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -800,6 +801,29 @@ namespace HelpersLib
             }
 
             return null;
+        }
+
+        public static void SetDefaultUICulture(CultureInfo culture)
+        {
+            Type type = typeof(CultureInfo);
+
+            try
+            {
+                // .NET 4.0
+                type.InvokeMember("s_userDefaultUICulture", BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static, null, culture, new object[] { culture });
+            }
+            catch
+            {
+                try
+                {
+                    // .NET 2.0
+                    type.InvokeMember("m_userDefaultUICulture", BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static, null, culture, new object[] { culture });
+                }
+                catch
+                {
+                    DebugHelper.WriteLine("SetDefaultUICulture failed: " + culture.DisplayName);
+                }
+            }
         }
     }
 }

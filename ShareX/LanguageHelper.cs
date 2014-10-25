@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
@@ -61,7 +62,7 @@ namespace ShareX
 
             if (!currentCulture.Equals(Thread.CurrentThread.CurrentUICulture))
             {
-                Thread.CurrentThread.CurrentUICulture = currentCulture;
+                Helpers.SetDefaultUICulture(currentCulture);
                 DebugHelper.WriteLine("Language changed to: " + currentCulture.DisplayName);
 
                 foreach (Form form in forms)
