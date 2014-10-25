@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,11 @@ namespace HelpersLib
             }
 
             return value.ToString();
+        }
+
+        public static string GetLocalizedDescription(this Enum value)
+        {
+            return value.GetLocalizedDescription(Resources.ResourceManager);
         }
 
         public static string GetLocalizedDescription(this Enum value, ResourceManager resourceManager)

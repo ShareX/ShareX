@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
     <value>Durdur</value>
   </data>
-  <data name="HotkeyType_StopUploads" xml:space="preserve">
-    <value>Tüm aktif yüklemeleri durdur</value>
-  </data>
   <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
     <value>Durduruldu</value>
   </data>
@@ -132,17 +129,11 @@
   <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
     <value>Menüyü göster</value>
   </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Hiç bişey gösterme</value>
-  </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Başlatılıyor</value>
   </data>
   <data name="UploadTask_Stop_Stopping" xml:space="preserve">
     <value>Durduruluyor</value>
-  </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tweet mesajı</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet başarıyla gönderildi.</value>
@@ -178,9 +169,6 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Bu mesajı tekrar gösterme.</value>
   </data>
-  <data name="SupportedLanguage_Automatic" xml:space="preserve">
-    <value>Otomatik</value>
-  </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>Sırada</value>
   </data>
@@ -202,15 +190,6 @@
   <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
     <value>Kapat</value>
   </data>
-  <data name="HotkeyType_None" xml:space="preserve">
-    <value>Hiçbiri</value>
-  </data>
-  <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR kod</value>
-  </data>
-  <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Cetvel</value>
-  </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Ön izleme:</value>
   </data>
@@ -229,21 +208,6 @@
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Menüyü gizle</value>
   </data>
-  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Ekran kaydetme</value>
-  </data>
-  <data name="HotkeyType_FileUpload" xml:space="preserve">
-    <value>Dosya yükle</value>
-  </data>
-  <data name="HotkeyType_FolderUpload" xml:space="preserve">
-    <value>Dizin yükle</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP istemci</value>
-  </data>
-  <data name="FileExistAction_Cancel" xml:space="preserve">
-    <value>Kaydetme</value>
-  </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Dosya yolu boş olamaz.</value>
   </data>
@@ -252,57 +216,6 @@
   </data>
   <data name="ActionsForm_btnPathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Dosya yolu seçiniz</value>
-  </data>
-  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Resim efekti ekle</value>
-  </data>
-  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
-    <value>Resim düzenleyicide aç</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
-    <value>Dosya yolunu panoya kopyala</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Dosyayı panoya kopyala</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
-    <value>Resimi panoya kopyala</value>
-  </data>
-  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
-    <value>Dosyayı sil</value>
-  </data>
-  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
-    <value>Aksiyonları gerçekleştir</value>
-  </data>
-  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Resimi dosya olarak kaydet</value>
-  </data>
-  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Resimi dosya olarak farklı kaydet...</value>
-  </data>
-  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Küçük resimi dosya olarak kaydet</value>
-  </data>
-  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>Resimi yazdır</value>
-  </data>
-  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Resimi yükle</value>
-  </data>
-  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
-    <value>Adresi panoya kopyala</value>
-  </data>
-  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
-    <value>Adresi aç</value>
-  </data>
-  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
-    <value>Adresi paylaş</value>
-  </data>
-  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
-    <value>QR kod penceresini göster</value>
-  </data>
-  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
-    <value>Adresi kısalt</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Ekren görüntüsü dizini seç</value>
@@ -314,17 +227,8 @@
     <value>Buraya
 sürükle</value>
   </data>
-  <data name="FileExistAction_Ask" xml:space="preserve">
-    <value>Ne yapılacağını sor</value>
-  </data>
-  <data name="FileExistAction_Overwrite" xml:space="preserve">
-    <value>Dosya üzerine yaz</value>
-  </data>
   <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
     <value>İşleyici yolu seç</value>
-  </data>
-  <data name="FileExistAction_UniqueName" xml:space="preserve">
-    <value>Dosya adına numara ekle</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Yeni ad kullan:</value>
@@ -340,15 +244,6 @@ sürükle</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
     <value>Kısayol seçiniz...</value>
-  </data>
-  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
-    <value>Aktif ekranı yakala</value>
-  </data>
-  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
-    <value>Aktif pencereyi yakala</value>
-  </data>
-  <data name="HotkeyType_AutoCapture" xml:space="preserve">
-    <value>Otomatik yakala</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>Dosya silme onayı</value>
@@ -377,30 +272,6 @@ sürükle</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
     <value>FFmpeg başarıyla indirildi.</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>Renk seçici ekranı</value>
-  </data>
-  <data name="HotkeyType_ImageEffects" xml:space="preserve">
-    <value>Resim efektleri</value>
-  </data>
-  <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>Son bölgeyi yakala</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
-    <value>Ekran görüntüleri dizinini aç</value>
-  </data>
-  <data name="HotkeyType_PolygonRegion" xml:space="preserve">
-    <value>Çokgen bölge yakala</value>
-  </data>
-  <data name="HotkeyType_PrintScreen" xml:space="preserve">
-    <value>Tüm ekranı yakala</value>
-  </data>
-  <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Dipnot)</value>
-  </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Basit)</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Yakalama sonrası: {0}</value>
@@ -432,50 +303,14 @@ sürükle</value>
   <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
     <value>Yol boş olamaz.</value>
   </data>
-  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Sürükle bırak ile yükle</value>
-  </data>
-  <data name="HotkeyType_EllipseRegion" xml:space="preserve">
-    <value>Elips bölge yakala</value>
-  </data>
-  <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>Serbest bölge yakala</value>
-  </data>
-  <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>Karo bölge yakala</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala</value>
-  </data>
-  <data name="HotkeyType_RoundedRectangleRegion" xml:space="preserve">
-    <value>Yuvarlatılmış dikdörtgen bölge yakala</value>
-  </data>
-  <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>Üçgen bölge yakala</value>
-  </data>
-  <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Adresten yükle</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>Dikdörtgen bölge yakala (Pencere)</value>
-  </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
     <value>Uzantı boş olamaz.</value>
-  </data>
-  <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Dizini indeksle</value>
-  </data>
-  <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Hash kontrol</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>Bu dosyayı gerçekten silmek istiyor musunuz?</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Dizin yaratılamadı:</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Balon uyarısı göster</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Kaydı durdurmak için simge ikonuna tıklayın.</value>
@@ -495,9 +330,6 @@ sürükle</value>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
     <value>Dizin yolu seçin</value>
   </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Önizlemeli uyarı penceresi göster</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} mevcut değil.
 
@@ -515,12 +347,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
     <value>Desteklenen değişkenler: {0} ve {1} gibi diğer değişkenler vs.</value>
-  </data>
-  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
-    <value>Panodan yükle</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>İçerik gösterici ile panodan yükle</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Kalan zaman: {0}s ({1}%) Toplam: {2}</value>

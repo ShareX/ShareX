@@ -226,7 +226,7 @@ namespace ShareX
 
         private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>();
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
@@ -290,7 +290,7 @@ namespace ShareX
 
         private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
         {
-            string[] enums = TaskHelpers.GetLocalizedEnumDescriptions<T>().Skip(1).ToArray();
+            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {

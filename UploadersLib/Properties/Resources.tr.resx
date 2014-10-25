@@ -141,12 +141,6 @@
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>Kullanıcı ID:</value>
   </data>
-  <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Eposta</value>
-  </data>
-  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Özel adres kısaltıcı</value>
-  </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Hata</value>
   </data>
@@ -208,26 +202,8 @@ Oluşturulmuş dizinler:</value>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Yeni hesap</value>
   </data>
-  <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Cevap başlıkları</value>
-  </data>
-  <data name="ResponseType_RedirectionURL" xml:space="preserve">
-    <value>Yönlendirme adresi</value>
-  </data>
-  <data name="ResponseType_Text" xml:space="preserve">
-    <value>Cevap içeriği</value>
-  </data>
-  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Özel yazı yükleyici</value>
-  </data>
-  <data name="TextDestination_FileUploader" xml:space="preserve">
-    <value>Dosya yükleyici</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Authentication_required_" xml:space="preserve">
     <value>Yetkilendirme gerekiyor.</value>
-  </data>
-  <data name="FileDestination_Email" xml:space="preserve">
-    <value>Eposta</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
     <value>Dosya silinsin mi?</value>
@@ -235,14 +211,8 @@ Oluşturulmuş dizinler:</value>
   <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
     <value>Oluşturulacak dizin adı</value>
   </data>
-  <data name="FileDestination_SharedFolder" xml:space="preserve">
-    <value>Paylaşılmış dizin</value>
-  </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP istemci</value>
-  </data>
-  <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Dosya yükleyici</value>
   </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
     <value>Sorun bulunamadı</value>
@@ -255,9 +225,6 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
     <value>Oluşturulacak dizin adı</value>
-  </data>
-  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Özel resim yükleyici</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box dizin listesi yenileme başarısız</value>
@@ -276,9 +243,6 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
     <value>Yol mevcut değil:</value>
-  </data>
-  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Özel dosya yükleyici</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
     <value>Dropbox'dan "{0}" silmek istediğinize emin misiniz?</value>

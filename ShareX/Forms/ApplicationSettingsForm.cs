@@ -52,7 +52,7 @@ namespace ShareX
             Icon = ShareXResources.Icon;
 
             // General
-            cbLanguage.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<SupportedLanguage>());
+            cbLanguage.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<SupportedLanguage>());
             cbLanguage.SelectedIndex = (int)Program.Settings.Language;
             cbShowTray.Checked = Program.Settings.ShowTray;
             cbSilentRun.Enabled = Program.Settings.ShowTray;
@@ -76,7 +76,7 @@ namespace ShareX
                 ReplCodeMenuEntry.width, ReplCodeMenuEntry.height, ReplCodeMenuEntry.n);
 
             // Proxy
-            cbProxyMethod.Items.AddRange(TaskHelpers.GetLocalizedEnumDescriptions<ProxyMethod>());
+            cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
             txtProxyPassword.Text = Program.Settings.ProxySettings.Password;

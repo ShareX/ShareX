@@ -177,33 +177,6 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom file uploader.
-        /// </summary>
-        internal static string FileDestination_CustomFileUploader {
-            get {
-                return ResourceManager.GetString("FileDestination_CustomFileUploader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email.
-        /// </summary>
-        internal static string FileDestination_Email {
-            get {
-                return ResourceManager.GetString("FileDestination_Email", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shared folder.
-        /// </summary>
-        internal static string FileDestination_SharedFolder {
-            get {
-                return ResourceManager.GetString("FileDestination_SharedFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Flickr {
@@ -377,24 +350,6 @@ namespace UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Hostr", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Custom image uploader.
-        /// </summary>
-        internal static string ImageDestination_CustomImageUploader {
-            get {
-                return ResourceManager.GetString("ImageDestination_CustomImageUploader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File uploader.
-        /// </summary>
-        internal static string ImageDestination_FileUploader {
-            get {
-                return ResourceManager.GetString("ImageDestination_FileUploader", resourceCulture);
             }
         }
         
@@ -863,33 +818,6 @@ namespace UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Response headers.
-        /// </summary>
-        internal static string ResponseType_Headers {
-            get {
-                return ResourceManager.GetString("ResponseType_Headers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Redirection URL.
-        /// </summary>
-        internal static string ResponseType_RedirectionURL {
-            get {
-                return ResourceManager.GetString("ResponseType_RedirectionURL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Response text.
-        /// </summary>
-        internal static string ResponseType_Text {
-            get {
-                return ResourceManager.GetString("ResponseType_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon SendSpace {
@@ -906,24 +834,6 @@ namespace UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("server_network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Custom text uploader.
-        /// </summary>
-        internal static string TextDestination_CustomTextUploader {
-            get {
-                return ResourceManager.GetString("TextDestination_CustomTextUploader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File uploader.
-        /// </summary>
-        internal static string TextDestination_FileUploader {
-            get {
-                return ResourceManager.GetString("TextDestination_FileUploader", resourceCulture);
             }
         }
         
@@ -1229,24 +1139,6 @@ namespace UploadersLib.Properties {
         internal static string UploadersConfigForm_UpdateDropboxStatus_User_ID_ {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_UpdateDropboxStatus_User_ID_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email.
-        /// </summary>
-        internal static string URLSharingServices_Email {
-            get {
-                return ResourceManager.GetString("URLSharingServices_Email", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Custom URL shortener.
-        /// </summary>
-        internal static string UrlShortenerType_CustomURLShortener {
-            get {
-                return ResourceManager.GetString("UrlShortenerType_CustomURLShortener", resourceCulture);
             }
         }
         

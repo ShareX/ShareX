@@ -273,6 +273,11 @@ namespace HelpersLib
             return GetLocalizedEnumDescriptions<T>(resourceManager);
         }*/
 
+        public static string[] GetLocalizedEnumDescriptions<T>()
+        {
+            return GetLocalizedEnumDescriptions<T>(Resources.ResourceManager);
+        }
+
         public static string[] GetLocalizedEnumDescriptions<T>(ResourceManager resourceManager)
         {
             return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetLocalizedDescription(resourceManager)).ToArray();
