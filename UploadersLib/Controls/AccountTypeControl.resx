@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>-3, 0</value>
   </data>
   <data name="lblAccountType.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>

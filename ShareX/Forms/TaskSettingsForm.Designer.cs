@@ -98,6 +98,7 @@
             this.tpCapture = new System.Windows.Forms.TabPage();
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
+            this.lblCaptureShadowOffset = new System.Windows.Forms.Label();
             this.cbCaptureAutoHideTaskbar = new System.Windows.Forms.CheckBox();
             this.lblScreenshotDelayInfo = new System.Windows.Forms.Label();
             this.nudScreenshotDelay = new System.Windows.Forms.NumericUpDown();
@@ -172,7 +173,6 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.lblCaptureShadowOffset = new System.Windows.Forms.Label();
             this.tcHotkeySettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -746,6 +746,11 @@
             resources.ApplyResources(this.tpCaptureGeneral, "tpCaptureGeneral");
             this.tpCaptureGeneral.Name = "tpCaptureGeneral";
             this.tpCaptureGeneral.UseVisualStyleBackColor = true;
+            // 
+            // lblCaptureShadowOffset
+            // 
+            resources.ApplyResources(this.lblCaptureShadowOffset, "lblCaptureShadowOffset");
+            this.lblCaptureShadowOffset.Name = "lblCaptureShadowOffset";
             // 
             // cbCaptureAutoHideTaskbar
             // 
@@ -1367,11 +1372,6 @@
             this.chkUseDefaultAdvancedSettings.Name = "chkUseDefaultAdvancedSettings";
             this.chkUseDefaultAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkUseDefaultAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // lblCaptureShadowOffset
-            // 
-            resources.ApplyResources(this.lblCaptureShadowOffset, "lblCaptureShadowOffset");
-            this.lblCaptureShadowOffset.Name = "lblCaptureShadowOffset";
             // 
             // TaskSettingsForm
             // 

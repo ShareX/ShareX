@@ -577,7 +577,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAfterTaskNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
+    <value>5, 160</value>
   </data>
   <data name="lblAfterTaskNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 13</value>
@@ -886,7 +886,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 208</value>
+    <value>13, 208</value>
   </data>
   <data name="lblImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -916,7 +916,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>13, 16</value>
   </data>
   <data name="lblImageFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
@@ -1007,7 +1007,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -1027,7 +1027,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageJPEGQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>13, 64</value>
   </data>
   <data name="lblImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -1078,7 +1078,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageGIFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 64</value>
+    <value>132, 64</value>
   </data>
   <data name="lblImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -1153,7 +1153,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>13, 160</value>
   </data>
   <data name="lblImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -1207,7 +1207,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>13, 112</value>
   </data>
   <data name="lblUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 13</value>
@@ -1261,7 +1261,7 @@
     <value>True</value>
   </data>
   <data name="lblImageEffectsNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>13, 17</value>
   </data>
   <data name="lblImageEffectsNote.Size" type="System.Drawing.Size, System.Drawing">
     <value>415, 13</value>
@@ -1465,7 +1465,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblThumbnailName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>13, 112</value>
   </data>
   <data name="lblThumbnailName.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1516,7 +1516,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblThumbnailHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>13, 64</value>
   </data>
   <data name="lblThumbnailHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -1546,7 +1546,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblThumbnailWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>13, 16</value>
   </data>
   <data name="lblThumbnailWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -1735,7 +1735,7 @@
     <value>True</value>
   </data>
   <data name="lblCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>13, 88</value>
   </data>
   <data name="lblCaptureShadowOffset.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
@@ -3091,7 +3091,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
+    <value>16, 155</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>313, 17</value>
@@ -3121,7 +3121,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 20</value>
+    <value>13, 28</value>
   </data>
   <data name="lblNameFormatPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 13</value>
@@ -3145,7 +3145,7 @@
     <value>1</value>
   </data>
   <data name="txtNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 129</value>
+    <value>16, 106</value>
   </data>
   <data name="txtNameFormatPatternActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 20</value>
@@ -3199,7 +3199,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 105</value>
+    <value>13, 90</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 13</value>
@@ -3250,7 +3250,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 76</value>
+    <value>13, 67</value>
   </data>
   <data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -3280,7 +3280,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 161</value>
+    <value>13, 129</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
