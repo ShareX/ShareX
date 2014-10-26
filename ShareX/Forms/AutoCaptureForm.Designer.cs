@@ -51,11 +51,14 @@
             this.btnRegion = new System.Windows.Forms.Button();
             this.nudRepeatTime = new System.Windows.Forms.NumericUpDown();
             this.lblDuration = new System.Windows.Forms.Label();
-            this.btnFullscreen = new System.Windows.Forms.Button();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblDurationSeconds = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fullScreenRadioBtn = new System.Windows.Forms.RadioButton();
+            this.regionRadioBtn = new System.Windows.Forms.RadioButton();
             this.ssBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ssBar
@@ -142,13 +145,6 @@
             resources.ApplyResources(this.lblDuration, "lblDuration");
             this.lblDuration.Name = "lblDuration";
             // 
-            // btnFullscreen
-            // 
-            resources.ApplyResources(this.btnFullscreen, "btnFullscreen");
-            this.btnFullscreen.Name = "btnFullscreen";
-            this.btnFullscreen.UseVisualStyleBackColor = true;
-            this.btnFullscreen.Click += new System.EventHandler(this.btnFullscreen_Click);
-            // 
             // niTray
             // 
             resources.ApplyResources(this.niTray, "niTray");
@@ -159,20 +155,44 @@
             resources.ApplyResources(this.lblDurationSeconds, "lblDurationSeconds");
             this.lblDurationSeconds.Name = "lblDurationSeconds";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.regionRadioBtn);
+            this.groupBox1.Controls.Add(this.fullScreenRadioBtn);
+            this.groupBox1.Controls.Add(this.btnRegion);
+            this.groupBox1.Controls.Add(this.lblRegion);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // fullScreenRadioBtn
+            // 
+            resources.ApplyResources(this.fullScreenRadioBtn, "fullScreenRadioBtn");
+            this.fullScreenRadioBtn.Checked = true;
+            this.fullScreenRadioBtn.Name = "fullScreenRadioBtn";
+            this.fullScreenRadioBtn.TabStop = true;
+            this.fullScreenRadioBtn.UseVisualStyleBackColor = true;
+            this.fullScreenRadioBtn.CheckedChanged += new System.EventHandler(this.fullScreenRadioBtn_CheckedChanged);
+            // 
+            // regionRadioBtn
+            // 
+            resources.ApplyResources(this.regionRadioBtn, "regionRadioBtn");
+            this.regionRadioBtn.Name = "regionRadioBtn";
+            this.regionRadioBtn.UseVisualStyleBackColor = true;
+            this.regionRadioBtn.CheckedChanged += new System.EventHandler(this.regionRadioBtn_CheckedChanged);
+            // 
             // AutoCaptureForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblDurationSeconds);
-            this.Controls.Add(this.btnFullscreen);
             this.Controls.Add(this.nudRepeatTime);
             this.Controls.Add(this.lblDuration);
-            this.Controls.Add(this.lblRegion);
-            this.Controls.Add(this.btnRegion);
             this.Controls.Add(this.cbAutoMinimize);
             this.Controls.Add(this.cbWaitUploads);
             this.Controls.Add(this.btnExecute);
             this.Controls.Add(this.ssBar);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AutoCaptureForm";
@@ -181,6 +201,8 @@
             this.ssBar.ResumeLayout(false);
             this.ssBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,8 +220,10 @@
         private System.Windows.Forms.Button btnRegion;
         private System.Windows.Forms.NumericUpDown nudRepeatTime;
         private System.Windows.Forms.Label lblDuration;
-        private System.Windows.Forms.Button btnFullscreen;
         private System.Windows.Forms.NotifyIcon niTray;
         private System.Windows.Forms.Label lblDurationSeconds;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton regionRadioBtn;
+        private System.Windows.Forms.RadioButton fullScreenRadioBtn;
     }
 }
