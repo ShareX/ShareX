@@ -178,7 +178,7 @@ namespace ShareX
         #endregion History Form
 
         #region AutoCapture Form
-
+        public Rectangle CustomCaptureRegion = Rectangle.Empty;
         public Rectangle AutoCaptureRegion = Rectangle.Empty;
         public decimal AutoCaptureRepeatTime = 60;
         public bool AutoCaptureMinimizeToTray = true;

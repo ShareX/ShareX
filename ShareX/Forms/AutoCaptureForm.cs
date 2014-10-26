@@ -124,6 +124,7 @@ namespace ShareX
             if (TaskHelpers.SelectRegion(out rect))
             {
                 Program.Settings.AutoCaptureRegion = rect;
+                Program.Settings.CustomCaptureRegion = rect;
                 UpdateRegion();
             }
         }
@@ -230,6 +231,20 @@ namespace ShareX
         {
             niTray.Visible = false;
             this.ShowActivate();
+        }
+
+        private void fullScreenRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            btnRegion.Enabled = false;
+            Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
+            UpdateRegion();
+        }
+
+        private void regionRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            btnRegion.Enabled = true;
+            Program.Settings.AutoCaptureRegion = Program.Settings.CustomCaptureRegion;
+            UpdateRegion();
         }
     }
 }

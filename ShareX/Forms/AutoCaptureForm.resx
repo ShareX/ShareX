@@ -124,6 +124,10 @@
   <data name="tspbBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 16</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tspbBar.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
@@ -133,7 +137,6 @@
   <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>319, 22</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ssBar.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
@@ -150,16 +153,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="btnExecute.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnExecute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 128</value>
+    <value>211, 146</value>
   </data>
   <data name="btnExecute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 40</value>
+    <value>93, 22</value>
   </data>
   <data name="btnExecute.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -177,7 +180,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnExecute.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="cbWaitUploads.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -204,7 +207,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbWaitUploads.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="cbAutoMinimize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -231,13 +234,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoMinimize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="lblRegion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblRegion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 52</value>
+    <value>6, 68</value>
   </data>
   <data name="lblRegion.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -255,16 +258,16 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblRegion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;lblRegion.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnRegion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>105, 39</value>
   </data>
   <data name="btnRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnRegion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -279,13 +282,13 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnRegion.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;btnRegion.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="nudRepeatTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>86, 101</value>
   </data>
   <data name="nudRepeatTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -307,13 +310,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudRepeatTime.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 77</value>
+    <value>13, 103</value>
   </data>
   <data name="lblDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -334,31 +337,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDuration.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnFullscreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 16</value>
-  </data>
-  <data name="btnFullscreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 24</value>
-  </data>
-  <data name="btnFullscreen.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnFullscreen.Text" xml:space="preserve">
-    <value>Fullscreen</value>
-  </data>
-  <data name="&gt;&gt;btnFullscreen.Name" xml:space="preserve">
-    <value>btnFullscreen</value>
-  </data>
-  <data name="&gt;&gt;btnFullscreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFullscreen.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnFullscreen.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="niTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>97, 17</value>
@@ -370,7 +349,7 @@
     <value>True</value>
   </data>
   <data name="lblDurationSeconds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 100</value>
+    <value>158, 105</value>
   </data>
   <data name="lblDurationSeconds.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -392,6 +371,84 @@
   </data>
   <data name="&gt;&gt;lblDurationSeconds.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="regionRadioBtn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="regionRadioBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 43</value>
+  </data>
+  <data name="regionRadioBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="regionRadioBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="regionRadioBtn.Text" xml:space="preserve">
+    <value>Custom region</value>
+  </data>
+  <data name="&gt;&gt;regionRadioBtn.Name" xml:space="preserve">
+    <value>regionRadioBtn</value>
+  </data>
+  <data name="&gt;&gt;regionRadioBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;regionRadioBtn.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;regionRadioBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fullScreenRadioBtn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fullScreenRadioBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 20</value>
+  </data>
+  <data name="fullScreenRadioBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
+  </data>
+  <data name="fullScreenRadioBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="fullScreenRadioBtn.Text" xml:space="preserve">
+    <value>Full screen</value>
+  </data>
+  <data name="&gt;&gt;fullScreenRadioBtn.Name" xml:space="preserve">
+    <value>fullScreenRadioBtn</value>
+  </data>
+  <data name="&gt;&gt;fullScreenRadioBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fullScreenRadioBtn.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;fullScreenRadioBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 84</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
