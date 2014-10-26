@@ -930,14 +930,6 @@ namespace ShareX
             UploadManager.ShareURL(Links.URL_WEBSITE);
         }
 
-        private void tsmiTestUploaders_Click(object sender, EventArgs e)
-        {
-            using (UploadTestForm form = new UploadTestForm())
-            {
-                form.ShowDialog();
-            }
-        }
-
         private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
         {
             TaskHelpers.DoScreenRecordingFFmpeg();
