@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 40</value>
+    <value>104, 36</value>
   </data>
   <data name="txtFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 20</value>
@@ -216,7 +216,7 @@
     <value>6</value>
   </data>
   <data name="lblExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 64</value>
+    <value>104, 63</value>
   </data>
   <data name="lblExample.Size" type="System.Drawing.Size, System.Drawing">
     <value>302, 68</value>

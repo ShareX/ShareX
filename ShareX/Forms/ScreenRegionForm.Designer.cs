@@ -39,10 +39,10 @@
             // 
             // pInfo
             // 
-            resources.ApplyResources(this.pInfo, "pInfo");
             this.pInfo.BackColor = System.Drawing.Color.White;
             this.pInfo.Controls.Add(this.btnStop);
             this.pInfo.Controls.Add(this.lblTimer);
+            resources.ApplyResources(this.pInfo, "pInfo");
             this.pInfo.Name = "pInfo";
             // 
             // btnStop
@@ -54,8 +54,8 @@
             // 
             // lblTimer
             // 
-            resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.BackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.DrawBorder = true;
             this.lblTimer.ForeColor = System.Drawing.Color.White;
             this.lblTimer.Name = "lblTimer";

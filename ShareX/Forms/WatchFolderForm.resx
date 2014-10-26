@@ -189,7 +189,7 @@
     <value>True</value>
   </data>
   <data name="lblFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 60</value>
+    <value>13, 64</value>
   </data>
   <data name="lblFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -216,7 +216,7 @@
     <value>True</value>
   </data>
   <data name="lblFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>12, 16</value>
   </data>
   <data name="lblFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -243,7 +243,7 @@
     <value>True</value>
   </data>
   <data name="lblFilterExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>12, 103</value>
   </data>
   <data name="lblFilterExample.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>

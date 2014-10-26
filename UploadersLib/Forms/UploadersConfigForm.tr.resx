@@ -274,7 +274,7 @@
     <value>Durum:</value>
   </data>
   <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>&amp;Cihaz:</value>
+    <value>Cihaz:</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>&amp;Kayıt...</value>
@@ -505,7 +505,7 @@
     <value>Varsa direkt URL kullan</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Kullanıcı &amp;API anahtarı:</value>
+    <value>Kullanıcı API anahtarı:</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
     <value>Kullanıcı API anahtarı:</value>

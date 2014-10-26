@@ -237,7 +237,7 @@
     <value>True</value>
   </data>
   <data name="lblRegion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>12, 52</value>
   </data>
   <data name="lblRegion.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -313,7 +313,7 @@
     <value>True</value>
   </data>
   <data name="lblDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 76</value>
+    <value>12, 77</value>
   </data>
   <data name="lblDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
