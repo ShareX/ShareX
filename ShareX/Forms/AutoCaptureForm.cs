@@ -202,7 +202,6 @@ namespace ShareX
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            //tspbBar.Visible = true;
             Execute();
         }
 
