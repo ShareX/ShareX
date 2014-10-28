@@ -303,7 +303,7 @@
     <value>192, 119</value>
   </data>
   <data name="cbFilenameFilterMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>96, 21</value>
   </data>
   <data name="cbFilenameFilterMethod.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -459,7 +459,7 @@
     <value>0</value>
   </data>
   <data name="txtHostFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 199</value>
+    <value>112, 199</value>
   </data>
   <data name="txtHostFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 20</value>
@@ -489,7 +489,7 @@
     <value>Text</value>
   </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 172</value>
+    <value>112, 172</value>
   </data>
   <data name="cbTypeFilterSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 21</value>

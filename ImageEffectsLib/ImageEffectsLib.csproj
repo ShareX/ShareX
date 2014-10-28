@@ -163,6 +163,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="WatermarkForm.resx">
+      <DependentUpon>WatermarkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WatermarkForm.tr.resx">
+      <DependentUpon>WatermarkForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

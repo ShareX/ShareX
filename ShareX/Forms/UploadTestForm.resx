@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="&gt;&gt;tscTesters.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscTesters.BottomToolStripPanel</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscTesters</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+	<data name="columnHeader1.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="columnHeader1.Width" type="System.Int32, mscorlib">
+		<value>180</value>
+	</data>
+	<data name="columnHeader2.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+	<data name="columnHeader2.Width" type="System.Int32, mscorlib">
+		<value>333</value>
+	</data>
+	<data name="columnHeader3.Text" xml:space="preserve">
+    <value>Time</value>
+  </data>
+	<data name="columnHeader3.Width" type="System.Int32, mscorlib">
+		<value>86</value>
+	</data>
+	<metadata name="cmsUploaders.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+		<value>122, 17</value>
+	</metadata>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<data name="testSelectedUploadersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+		<value>206, 22</value>
+	</data>
+	<data name="testSelectedUploadersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Test selected uploaders</value>
+  </data>
+	<data name="openURLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+		<value>206, 22</value>
+	</data>
+	<data name="openURLToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open URL</value>
+  </data>
+	<data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+		<value>206, 22</value>
+	</data>
+	<data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy URL(s) to clipboard</value>
+  </data>
+	<data name="cmsUploaders.Size" type="System.Drawing.Size, System.Drawing">
+		<value>207, 70</value>
+	</data>
+	<data name="&gt;&gt;cmsUploaders.Name" xml:space="preserve">
+    <value>cmsUploaders</value>
+  </data>
+	<data name="&gt;&gt;cmsUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<data name="lvUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>Fill</value>
+	</data>
+	<data name="lvUploaders.Location" type="System.Drawing.Point, System.Drawing">
+		<value>0, 0</value>
+	</data>
+	<data name="lvUploaders.Size" type="System.Drawing.Size, System.Drawing">
+		<value>621, 608</value>
+	</data>
+	<data name="lvUploaders.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;lvUploaders.Name" xml:space="preserve">
+    <value>lvUploaders</value>
+  </data>
+	<data name="&gt;&gt;lvUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;lvUploaders.Parent" xml:space="preserve">
+    <value>tscTesters.ContentPanel</value>
+  </data>
+	<data name="&gt;&gt;lvUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="tscTesters.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+		<value>621, 608</value>
+	</data>
+	<data name="&gt;&gt;tscTesters.ContentPanel.Name" xml:space="preserve">
+    <value>tscTesters.ContentPanel</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.ContentPanel.Parent" xml:space="preserve">
+    <value>tscTesters</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="tscTesters.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>Fill</value>
+	</data>
+	<data name="&gt;&gt;tscTesters.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscTesters.LeftToolStripPanel</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscTesters</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+	<data name="tscTesters.Location" type="System.Drawing.Point, System.Drawing">
+		<value>3, 3</value>
+	</data>
+	<data name="&gt;&gt;tscTesters.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscTesters.RightToolStripPanel</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscTesters</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+	<data name="tscTesters.Size" type="System.Drawing.Size, System.Drawing">
+		<value>621, 631</value>
+	</data>
+	<data name="tscTesters.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+		<value>17, 17</value>
+	</metadata>
+	<data name="toolStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>None</value>
+	</data>
+	<data name="btnTestSelected.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+		<value>Magenta</value>
+	</data>
+	<data name="btnTestSelected.Size" type="System.Drawing.Size, System.Drawing">
+		<value>79, 19</value>
+	</data>
+	<data name="btnTestSelected.Text" xml:space="preserve">
+    <value>Test selected</value>
+  </data>
+	<data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>6, 23</value>
+	</data>
+	<data name="btnTestAll.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+		<value>Magenta</value>
+	</data>
+	<data name="btnTestAll.Size" type="System.Drawing.Size, System.Drawing">
+		<value>48, 19</value>
+	</data>
+	<data name="btnTestAll.Text" xml:space="preserve">
+    <value>Test all</value>
+  </data>
+	<data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+		<value>3, 0</value>
+	</data>
+	<data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+		<value>134, 23</value>
+	</data>
+	<data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+	<data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>tscTesters.TopToolStripPanel</value>
+  </data>
+	<data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscTesters.TopToolStripPanel</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscTesters</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.Name" xml:space="preserve">
+    <value>tscTesters</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.Parent" xml:space="preserve">
+    <value>tpTestUploaders</value>
+  </data>
+	<data name="&gt;&gt;tscTesters.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="tpTestUploaders.Location" type="System.Drawing.Point, System.Drawing">
+		<value>4, 22</value>
+	</data>
+	<data name="tpTestUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>3, 3, 3, 3</value>
+	</data>
+	<data name="tpTestUploaders.Size" type="System.Drawing.Size, System.Drawing">
+		<value>627, 637</value>
+	</data>
+	<data name="tpTestUploaders.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="tpTestUploaders.Text" xml:space="preserve">
+    <value>Test uploaders</value>
+  </data>
+	<data name="&gt;&gt;tpTestUploaders.Name" xml:space="preserve">
+    <value>tpTestUploaders</value>
+  </data>
+	<data name="&gt;&gt;tpTestUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tpTestUploaders.Parent" xml:space="preserve">
+    <value>tcTesters</value>
+  </data>
+	<data name="&gt;&gt;tpTestUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="txtConsole.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>Fill</value>
+	</data>
+	<data name="txtConsole.Location" type="System.Drawing.Point, System.Drawing">
+		<value>3, 3</value>
+	</data>
+	<data name="txtConsole.Multiline" type="System.Boolean, mscorlib">
+		<value>True</value>
+	</data>
+	<data name="txtConsole.Size" type="System.Drawing.Size, System.Drawing">
+		<value>621, 631</value>
+	</data>
+	<data name="txtConsole.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;txtConsole.Name" xml:space="preserve">
+    <value>txtConsole</value>
+  </data>
+	<data name="&gt;&gt;txtConsole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;txtConsole.Parent" xml:space="preserve">
+    <value>tpConsole</value>
+  </data>
+	<data name="&gt;&gt;txtConsole.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+	<data name="tpConsole.Location" type="System.Drawing.Point, System.Drawing">
+		<value>4, 22</value>
+	</data>
+	<data name="tpConsole.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>3, 3, 3, 3</value>
+	</data>
+	<data name="tpConsole.Size" type="System.Drawing.Size, System.Drawing">
+		<value>627, 637</value>
+	</data>
+	<data name="tpConsole.TabIndex" type="System.Int32, mscorlib">
+		<value>1</value>
+	</data>
+	<data name="tpConsole.Text" xml:space="preserve">
+    <value>Console</value>
+  </data>
+	<data name="&gt;&gt;tpConsole.Name" xml:space="preserve">
+    <value>tpConsole</value>
+  </data>
+	<data name="&gt;&gt;tpConsole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tpConsole.Parent" xml:space="preserve">
+    <value>tcTesters</value>
+  </data>
+	<data name="&gt;&gt;tpConsole.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+	<data name="tcTesters.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+		<value>Fill</value>
+	</data>
+	<data name="tcTesters.Location" type="System.Drawing.Point, System.Drawing">
+		<value>3, 3</value>
+	</data>
+	<data name="tcTesters.Size" type="System.Drawing.Size, System.Drawing">
+		<value>635, 663</value>
+	</data>
+	<data name="tcTesters.TabIndex" type="System.Int32, mscorlib">
+		<value>0</value>
+	</data>
+	<data name="&gt;&gt;tcTesters.Name" xml:space="preserve">
+    <value>tcTesters</value>
+  </data>
+	<data name="&gt;&gt;tcTesters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;tcTesters.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+	<data name="&gt;&gt;tcTesters.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+	<metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+		<value>True</value>
+	</metadata>
+	<data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+		<value>6, 13</value>
+	</data>
+	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+		<value>641, 669</value>
+	</data>
+	<data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+		<value>3, 3, 3, 3</value>
+	</data>
+	<data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Test uploaders</value>
+  </data>
+	<data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+	<data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
+  </data>
+	<data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
+    <value>columnHeader3</value>
+  </data>
+	<data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;testSelectedUploadersToolStripMenuItem.Name" xml:space="preserve">
+    <value>testSelectedUploadersToolStripMenuItem</value>
+  </data>
+	<data name="&gt;&gt;testSelectedUploadersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;openURLToolStripMenuItem.Name" xml:space="preserve">
+    <value>openURLToolStripMenuItem</value>
+  </data>
+	<data name="&gt;&gt;openURLToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;copyToolStripMenuItem.Name" xml:space="preserve">
+    <value>copyToolStripMenuItem</value>
+  </data>
+	<data name="&gt;&gt;copyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;btnTestSelected.Name" xml:space="preserve">
+    <value>btnTestSelected</value>
+  </data>
+	<data name="&gt;&gt;btnTestSelected.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+	<data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;btnTestAll.Name" xml:space="preserve">
+    <value>btnTestAll</value>
+  </data>
+	<data name="&gt;&gt;btnTestAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+	<data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UploadTestForm</value>
+  </data>
+	<data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

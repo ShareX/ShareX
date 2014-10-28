@@ -166,6 +166,12 @@
     <Compile Include="Forms\NotificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\UploadTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UploadTestForm.Designer.cs">
+      <DependentUpon>UploadTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WatchFolderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.tr.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadTestForm.resx">
+      <DependentUpon>UploadTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadTestForm.tr.resx">
+      <DependentUpon>UploadTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoEncodersForm.tr.resx">
       <DependentUpon>VideoEncodersForm.cs</DependentUpon>

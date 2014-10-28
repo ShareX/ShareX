@@ -312,6 +312,9 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>URL paylaşım testi</value>
   </data>
+  <data name="tsmiTestUploaders.Text" xml:space="preserve">
+    <value>Yükleyicileri test et...</value>
+  </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Hata ayıklama</value>
   </data>

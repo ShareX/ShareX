@@ -107,6 +107,7 @@
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTestUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
             this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -792,7 +793,8 @@
             this.tsmiTestTextUpload,
             this.tsmiTestFileUpload,
             this.tsmiTestURLShortener,
-            this.tsmiTestURLSharing});
+            this.tsmiTestURLSharing,
+            this.tsmiTestUploaders});
             this.tsddbDebug.Image = global::ShareX.Properties.Resources.traffic_cone;
             resources.ApplyResources(this.tsddbDebug, "tsddbDebug");
             this.tsddbDebug.Name = "tsddbDebug";
@@ -838,6 +840,13 @@
             this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
             resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
+            // 
+            // tsmiTestUploaders
+            // 
+            this.tsmiTestUploaders.Image = global::ShareX.Properties.Resources.application_browser;
+            this.tsmiTestUploaders.Name = "tsmiTestUploaders";
+            resources.ApplyResources(this.tsmiTestUploaders, "tsmiTestUploaders");
+            this.tsmiTestUploaders.Click += new System.EventHandler(this.tsmiTestUploaders_Click);
             // 
             // tsmiDonate
             // 
@@ -1849,6 +1858,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTestTextUpload;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestFileUpload;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestURLShortener;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTestUploaders;
         private System.Windows.Forms.ToolStripSeparator tssCopy5;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowDebugLog;
         private System.Windows.Forms.ToolStripButton tsbApplicationSettings;
