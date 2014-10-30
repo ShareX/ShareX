@@ -1,6 +1,20 @@
 ﻿Note: Every release have bug fixes and these not included in change log. Many small features are also not included in the change log.
 You can check commit logs for see full history of changes: https://github.com/ShareX/ShareX/commits/master
 
+ShareX 9.4.0 - 2014-10-31
+
+* ShareX project translated to support Turkish
+* Windows 8.1 and Windows 10 DPI support per monitor
+* Added Hızlı Resim image uploader
+* Added history extension filtering
+* Added print image button to image editor
+* Added Hastebin text uploader
+* Greenshot image editor update with Speech Bubble and Step Label
+* Added Chevereto image uploader
+* Text watermark image effect is enabled by default for new installations (Task settings -> Image -> Effects)
+* Improved Pastebin UI
+* Added client rectangle to window/control enumeration in region capture
+
 ShareX 9.3.1 - 2014-09-13
 
 * New task completed and error sounds
