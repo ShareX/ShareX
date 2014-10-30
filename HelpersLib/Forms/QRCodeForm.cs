@@ -79,11 +79,12 @@ namespace HelpersLib
 
         private void tsmiCopy_Click(object sender, EventArgs e)
         {
-            GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
+            GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(20, QuietZoneModules.Two));
             BitMatrix matrix = qrMain.GetQrMatrix();
             using (MemoryStream stream = new MemoryStream())
             {
-                gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
+                gRender.WriteToStream(matrix, ImageFormat.Png, stream);
+
                 using (Image img = Image.FromStream(stream))
                 {
                     ClipboardHelpers.CopyImage(img);
@@ -127,11 +128,11 @@ namespace HelpersLib
                     }
                     else
                     {
-                        GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
+                        GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(20, QuietZoneModules.Two));
                         BitMatrix matrix = qrMain.GetQrMatrix();
                         using (FileStream fs = new FileStream(filePath, FileMode.Create))
                         {
-                            gRender.WriteToStream(matrix, ImageHelpers.GetImageFormat(filePath), fs, new Point(600, 600));
+                            gRender.WriteToStream(matrix, ImageHelpers.GetImageFormat(filePath), fs);
                         }
                     }
                 }

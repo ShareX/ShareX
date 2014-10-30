@@ -474,10 +474,10 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>1</value>
   </data>
   <data name="btnDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 22</value>
+    <value>552, 22</value>
   </data>
   <data name="btnDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnDownload.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -498,7 +498,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>0</value>
   </data>
   <data name="btnFFmpegBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 22</value>
+    <value>504, 22</value>
   </data>
   <data name="btnFFmpegBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 24</value>
@@ -525,7 +525,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>8, 24</value>
   </data>
   <data name="txtFFmpegPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 20</value>
+    <value>488, 20</value>
   </data>
   <data name="txtFFmpegPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1347,10 +1347,10 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>3</value>
   </data>
   <data name="btnHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 448</value>
+    <value>576, 448</value>
   </data>
   <data name="btnHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnHelp.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1371,10 +1371,10 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>1</value>
   </data>
   <data name="eiFFmpeg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 448</value>
+    <value>384, 448</value>
   </data>
   <data name="eiFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>192, 24</value>
   </data>
   <data name="eiFFmpeg.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>

@@ -179,10 +179,10 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 0</value>
+    <value>96, 0</value>
   </data>
   <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>88, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
@@ -210,7 +210,7 @@
     <value>0, 0</value>
   </data>
   <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnExport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -240,7 +240,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>185, 24</value>
   </data>
   <data name="&gt;&gt;tsmiExportClipboard.Name" xml:space="preserve">
     <value>tsmiExportClipboard</value>

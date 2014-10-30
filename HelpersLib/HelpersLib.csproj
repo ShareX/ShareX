@@ -366,6 +366,9 @@
     <EmbeddedResource Include="Colors\GradientPickerForm.tr.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExportImportControl.tr.resx">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.tr.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>

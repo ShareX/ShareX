@@ -244,10 +244,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>744, 734</value>
+    <value>712, 734</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -271,10 +271,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>824, 734</value>
+    <value>808, 734</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -427,10 +427,10 @@
     <value>True</value>
   </data>
   <data name="btnLoadImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 734</value>
+    <value>200, 734</value>
   </data>
   <data name="btnLoadImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnLoadImage.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -460,10 +460,10 @@
     <value>True</value>
   </data>
   <data name="btnSaveImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 734</value>
+    <value>312, 734</value>
   </data>
   <data name="btnSaveImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -493,7 +493,7 @@
     <value>8, 734</value>
   </data>
   <data name="eiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 24</value>
+    <value>192, 24</value>
   </data>
   <data name="eiImageEffects.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
