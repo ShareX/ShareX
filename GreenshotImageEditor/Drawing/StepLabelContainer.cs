@@ -209,7 +209,8 @@ namespace Greenshot.Drawing
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.None;
-            graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+            graphics.TextRenderingHint = TextRenderingHint.SystemDefault;
+
             string text = ((Surface)Parent).CountStepLabels(this).ToString();
             Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);

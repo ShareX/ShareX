@@ -63,7 +63,7 @@ namespace Greenshot.Drawing
         [OnDeserialized]
         private void SetValuesOnDeserialized(StreamingContext context)
         {
-            InitTargetGripper(Color.Green, _storedTargetGripperLocation);
+            InitTargetGripper(Color.Yellow, _storedTargetGripperLocation);
         }
 
         #endregion TargetGripper serializing code
@@ -128,7 +128,7 @@ namespace Greenshot.Drawing
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.None;
-            graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+            graphics.TextRenderingHint = TextRenderingHint.SystemDefault;
 
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);
@@ -147,21 +147,22 @@ namespace Greenshot.Drawing
             int tailWidth = (Math.Abs(rect.Width) + Math.Abs(rect.Height)) / 20;
 
             GraphicsPath bubble = new GraphicsPath();
+
+            Rectangle bubbleRect = GuiRectangle.GetGuiRectangle(0, 0, rect.Width, rect.Height);
             // adapt corner radius to small rectangle dimensions
-            int smallerSideLength = Math.Min(rect.Width, rect.Height);
-            int cornerRadius = smallerSideLength > 60 ? 30 : smallerSideLength / 2;
-            if (cornerRadius > 5)
+            int smallerSideLength = Math.Min(bubbleRect.Width, bubbleRect.Height);
+            int cornerRadius = Math.Min(30, smallerSideLength / 2 - lineThickness);
+            if (cornerRadius > 0)
             {
-                Rectangle bubbleRect = GuiRectangle.GetGuiRectangle(0, 0, rect.Width, rect.Height);
-                bubbleRect = Rectangle.Inflate(bubbleRect, -lineThickness, -lineThickness);
                 bubble.AddArc(bubbleRect.X, bubbleRect.Y, cornerRadius, cornerRadius, 180, 90);
                 bubble.AddArc(bubbleRect.X + bubbleRect.Width - cornerRadius, bubbleRect.Y, cornerRadius, cornerRadius, 270, 90);
                 bubble.AddArc(bubbleRect.X + bubbleRect.Width - cornerRadius, bubbleRect.Y + bubbleRect.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
                 bubble.AddArc(bubbleRect.X, bubbleRect.Y + bubbleRect.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
             }
-
-            //bubble.AddRectangle(GuiRectangle.GetGuiRectangle(0, 0, rect.Width, rect.Height));
-            //bubble.AddEllipse(0, 0, Math.Abs(rect.Width), Math.Abs(rect.Height));
+            else
+            {
+                bubble.AddRectangle(bubbleRect);
+            }
             bubble.CloseAllFigures();
 
             GraphicsPath tail = new GraphicsPath();
@@ -239,10 +240,10 @@ namespace Greenshot.Drawing
 
             // Draw the text
             UpdateFormat();
-            DrawText(graphics, rect, lineThickness, ControlPaint.Dark(lineColor, 0.1f), false, StringFormat, Text, Font);
+            DrawText(graphics, rect, lineThickness, lineColor, false, StringFormat, Text, Font);
         }
 
-        public override bool Contains(int x, int y)
+        /*public override bool Contains(int x, int y)
         {
             double xDistanceFromCenter = x - (Left + Width / 2);
             double yDistanceFromCenter = y - (Top + Height / 2);
@@ -282,6 +283,6 @@ namespace Greenshot.Drawing
             {
                 return false;
             }
-        }
+        }*/
     }
 }

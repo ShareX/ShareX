@@ -152,6 +152,15 @@ namespace Greenshot.Drawing
             FieldChanged += TextContainer_FieldChanged;
         }
 
+        public override void Invalidate()
+        {
+            base.Invalidate();
+            if (_textBox != null && _textBox.Visible)
+            {
+                _textBox.Invalidate();
+            }
+        }
+
         public void FitToText()
         {
             UpdateFormat();
@@ -171,12 +180,10 @@ namespace Greenshot.Drawing
                 }
                 else if (Selected && Status == EditStatus.DRAWING)
                 {
-                    UpdateTextBoxPosition();
-                    UpdateTextBoxFormat();
                     ShowTextBox();
                 }
             }
-            else if (_textBox.Visible)
+            if (_textBox.Visible)
             {
                 UpdateTextBoxPosition();
                 UpdateTextBoxFormat();
@@ -364,35 +371,8 @@ namespace Greenshot.Drawing
         {
             UpdateFormat();
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
-            _textBox.ForeColor = ControlPaint.Dark(lineColor, 0.1f);
+            _textBox.ForeColor = lineColor;
             _textBox.Font = _font;
-            StringAlignment horizontalAlignment = (StringAlignment)GetFieldValue(FieldType.TEXT_HORIZONTAL_ALIGNMENT);
-            switch (horizontalAlignment)
-            {
-                case StringAlignment.Center:
-                    _textBox.TextAlign = HorizontalAlignment.Center;
-                    break;
-                case StringAlignment.Far:
-                    if (_textBox.RightToLeft != RightToLeft.Yes)
-                    {
-                        _textBox.TextAlign = HorizontalAlignment.Right;
-                    }
-                    else
-                    {
-                        _textBox.TextAlign = HorizontalAlignment.Left;
-                    }
-                    break;
-                case StringAlignment.Near:
-                    if (_textBox.RightToLeft != RightToLeft.Yes)
-                    {
-                        _textBox.TextAlign = HorizontalAlignment.Left;
-                    }
-                    else
-                    {
-                        _textBox.TextAlign = HorizontalAlignment.Right;
-                    }
-                    break;
-            }
         }
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
@@ -420,7 +400,7 @@ namespace Greenshot.Drawing
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.None;
-            graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+            graphics.TextRenderingHint = TextRenderingHint.SystemDefault;
 
             Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             if (Selected && rm == RenderMode.EDIT)
@@ -440,7 +420,7 @@ namespace Greenshot.Drawing
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             bool drawShadow = shadow && (fillColor == Color.Transparent || fillColor == Color.Empty);
 
-            DrawText(graphics, rect, lineThickness, ControlPaint.Dark(lineColor, 0.1f), drawShadow, _stringFormat, text, _font);
+            DrawText(graphics, rect, lineThickness, lineColor, drawShadow, _stringFormat, text, _font);
         }
 
         /// <summary>
@@ -497,11 +477,11 @@ namespace Greenshot.Drawing
             }
         }
 
-        public override bool ClickableAt(int x, int y)
+        /*public override bool ClickableAt(int x, int y)
         {
             Rectangle r = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             r.Inflate(5, 5);
             return r.Contains(x, y);
-        }
+        }*/
     }
 }
