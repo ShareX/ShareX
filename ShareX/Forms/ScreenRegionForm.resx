@@ -136,7 +136,7 @@
     <value>2</value>
   </data>
   <data name="btnStop.Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>Start</value>
   </data>
   <data name="&gt;&gt;btnStop.Name" xml:space="preserve">
     <value>btnStop</value>

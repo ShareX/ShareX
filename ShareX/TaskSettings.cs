@@ -328,6 +328,7 @@ namespace ShareX
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
         public float ScreenRecordStartDelay = 0.5f;
+        public bool ScreenRecordAutoStart = true;
         public bool ScreenRecordAutoDisableAero = false;
 
         #endregion Capture / Screen recorder

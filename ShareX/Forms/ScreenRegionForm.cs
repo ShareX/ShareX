@@ -24,9 +24,11 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -35,9 +37,11 @@ namespace ShareX
     {
         public event Action StopRequested;
 
+        public bool IsRecording { get; set; }
         public bool IsCountdown { get; set; }
         public TimeSpan Countdown { get; set; }
         public Stopwatch Timer { get; private set; }
+        public ManualResetEvent RecordResetEvent { get; set; }
 
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
@@ -76,11 +80,13 @@ namespace ShareX
             {
                 ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
                 regionForm.StopRequested += stopRequested;
+
                 if (duration > 0)
                 {
                     regionForm.IsCountdown = true;
                     regionForm.Countdown = TimeSpan.FromSeconds(duration);
                 }
+
                 regionForm.UpdateTimer();
                 regionForm.Show();
                 return regionForm;
@@ -92,10 +98,12 @@ namespace ShareX
         public void StartTimer()
         {
             borderColor = Color.FromArgb(0, 255, 0);
+            btnStop.Text = Resources.AutoCaptureForm_Execute_Stop;
             Refresh();
 
             Timer.Start();
             timerRefresh.Start();
+            IsRecording = true;
         }
 
         private void UpdateTimer()
@@ -137,7 +145,14 @@ namespace ShareX
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            OnStopRequested();
+            if (IsRecording)
+            {
+                OnStopRequested();
+            }
+            else if (RecordResetEvent != null)
+            {
+                RecordResetEvent.Set();
+            }
         }
     }
 }
