@@ -538,8 +538,8 @@ Would you like to restart ShareX?</value>
     <value>URL is empty.</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>Are you sure you want to upload screenshot?
-You can press 'No' for cancel current upload and disable auto uploading screenshots.</value>
+    <value>Are you sure you want to upload this screenshot?
+Press 'No' to cancel the current upload and disable screenshot auto uploading.</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>First time upload warning</value>
