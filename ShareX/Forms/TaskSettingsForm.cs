@@ -219,6 +219,8 @@ namespace ShareX
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
             nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
             cbScreenRecordAutoDisableAero.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoDisableAero;
+            chkScreenRecordAutoStart.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
 
             // Actions
             TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
@@ -701,6 +703,12 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.CaptureTransparent = cbCaptureTransparent.Checked;
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
+        }
+
+        private void chkScreenRecordAutoStart_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordAutoStart = chkScreenRecordAutoStart.Checked;
+            nudScreenRecorderStartDelay.Enabled = chkScreenRecordAutoStart.Checked;
         }
 
         #endregion Capture

@@ -3,7 +3,7 @@ You can check commit logs for see full history of changes: https://github.com/Sh
 
 ShareX 9.4.0 - 2014-10-31
 
-* ShareX project translated to support Turkish
+* Added Turkish translation. Need translators for other languages.
 * Windows 8.1 and Windows 10 DPI support per monitor
 * Added Hızlı Resim image uploader
 * Added history extension filtering
