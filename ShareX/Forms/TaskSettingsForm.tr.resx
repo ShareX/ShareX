@@ -298,7 +298,7 @@
     <value>Profiller...</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
-    <value>Başlangıç gecikmesi:</value>
+    <value>saniye sonra</value>
   </data>
   <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
     <value>Çıktı:</value>
@@ -431,5 +431,8 @@
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Gölge çıkıntısı:</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Kaydetmeye başla:</value>
   </data>
 </root>

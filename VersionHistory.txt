@@ -1,19 +1,21 @@
 ﻿Note: Every release have bug fixes and these not included in change log. Many small features are also not included in the change log.
 You can check commit logs for see full history of changes: https://github.com/ShareX/ShareX/commits/master
 
-ShareX 9.4.0 - 2014-10-31
+ShareX 9.4.0 - 2014-11-01
 
-* Added Turkish translation. Need translators for other languages.
-* Windows 8.1 and Windows 10 DPI support per monitor
-* Added Hızlı Resim image uploader
-* Added history extension filtering
-* Added print image button to image editor
-* Added Hastebin text uploader
-* Greenshot image editor update with Speech Bubble and Step Label
-* Added Chevereto image uploader
-* Text watermark image effect is enabled by default for new installations (Task settings -> Image -> Effects)
+* Added Turkish translation. We need translators for other languages
+* Added option to start recording by pressing Start button
 * Improved Pastebin UI
+* Greenshot image editor update with Speech Bubble and Step Label
+* Added history extension filtering
+* Added Hastebin text uploader
+* Added Chevereto image uploader
+* Text watermark image effect is enabled by default for new installations (You can edit it from: Task settings -> Image -> Effects)
 * Added client rectangle to window/control enumeration in region capture
+* Automatically expand capture menu when you open the tray menu (You can disable it from: Application settings -> Advanced)
+* Image effects can be enabled/disable using checkboxes near effects
+* Added rounded corners & outline image effects
+* Added Hızlı Resim image uploader
 
 ShareX 9.3.1 - 2014-09-13
 

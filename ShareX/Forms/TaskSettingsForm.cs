@@ -217,10 +217,10 @@ namespace ShareX
             cbScreenRecorderFixedDuration.Checked = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
+            chkScreenRecordAutoStart.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            nudScreenRecorderStartDelay.Enabled = chkScreenRecordAutoStart.Checked;
             nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
             cbScreenRecordAutoDisableAero.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoDisableAero;
-            chkScreenRecordAutoStart.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
-            nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
 
             // Actions
             TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
@@ -705,12 +705,6 @@ namespace ShareX
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
         }
 
-        private void chkScreenRecordAutoStart_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.ScreenRecordAutoStart = chkScreenRecordAutoStart.Checked;
-            nudScreenRecorderStartDelay.Enabled = chkScreenRecordAutoStart.Checked;
-        }
-
         #endregion Capture
 
         #region Screen recorder
@@ -808,6 +802,12 @@ namespace ShareX
         private void nudScreenRecorderDuration_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordDuration = (float)nudScreenRecorderDuration.Value;
+        }
+
+        private void chkScreenRecordAutoStart_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordAutoStart = chkScreenRecordAutoStart.Checked;
+            nudScreenRecorderStartDelay.Enabled = chkScreenRecordAutoStart.Checked;
         }
 
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
