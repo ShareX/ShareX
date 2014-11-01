@@ -68,7 +68,6 @@ Source: "..\ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
 Source: "..\ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
 
 ; Language resources
-Source: "..\ShareX\bin\Release\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "..\ShareX\bin\Release\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
 
 ; Required for screen/audio recording
