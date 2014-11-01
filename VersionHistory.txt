@@ -3,7 +3,7 @@ You can check commit logs for see full history of changes: https://github.com/Sh
 
 ShareX 9.4.0 - 2014-11-01
 
-* Added Turkish translation. We need translators for other languages
+* Added Turkish translation. Help us translate ShareX to your language
 * Added option to start recording by pressing Start button
 * Improved Pastebin UI
 * Greenshot image editor update with Speech Bubble and Step Label

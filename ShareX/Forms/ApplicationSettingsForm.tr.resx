@@ -270,4 +270,7 @@
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Sunucu:</value>
   </data>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>ShareX i kendi dilinize çevirmek için bize yardım edin</value>
+  </data>
 </root>

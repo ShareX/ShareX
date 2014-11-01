@@ -32,6 +32,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.llTranslators = new System.Windows.Forms.LinkLabel();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
@@ -141,6 +142,7 @@ namespace ShareX
             // 
             // tpGeneral
             // 
+            this.tpGeneral.Controls.Add(this.llTranslators);
             this.tpGeneral.Controls.Add(this.cbLanguage);
             this.tpGeneral.Controls.Add(this.lblLanguage);
             this.tpGeneral.Controls.Add(this.cbRememberMainFormPosition);
@@ -155,6 +157,13 @@ namespace ShareX
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             this.tpGeneral.UseVisualStyleBackColor = true;
+            // 
+            // llTranslators
+            // 
+            resources.ApplyResources(this.llTranslators, "llTranslators");
+            this.llTranslators.Name = "llTranslators";
+            this.llTranslators.TabStop = true;
+            this.llTranslators.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llTranslators_LinkClicked);
             // 
             // cbLanguage
             // 
@@ -815,5 +824,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbRememberMainFormPosition;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.LinkLabel llTranslators;
     }
 }
