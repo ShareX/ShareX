@@ -51,11 +51,14 @@
             this.btnRegion = new System.Windows.Forms.Button();
             this.nudRepeatTime = new System.Windows.Forms.NumericUpDown();
             this.lblDuration = new System.Windows.Forms.Label();
-            this.btnFullscreen = new System.Windows.Forms.Button();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblDurationSeconds = new System.Windows.Forms.Label();
+            this.gbRegion = new System.Windows.Forms.GroupBox();
+            this.rbCustomRegion = new System.Windows.Forms.RadioButton();
+            this.rbFullscreen = new System.Windows.Forms.RadioButton();
             this.ssBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).BeginInit();
+            this.gbRegion.SuspendLayout();
             this.SuspendLayout();
             // 
             // ssBar
@@ -142,13 +145,6 @@
             resources.ApplyResources(this.lblDuration, "lblDuration");
             this.lblDuration.Name = "lblDuration";
             // 
-            // btnFullscreen
-            // 
-            resources.ApplyResources(this.btnFullscreen, "btnFullscreen");
-            this.btnFullscreen.Name = "btnFullscreen";
-            this.btnFullscreen.UseVisualStyleBackColor = true;
-            this.btnFullscreen.Click += new System.EventHandler(this.btnFullscreen_Click);
-            // 
             // niTray
             // 
             resources.ApplyResources(this.niTray, "niTray");
@@ -159,16 +155,40 @@
             resources.ApplyResources(this.lblDurationSeconds, "lblDurationSeconds");
             this.lblDurationSeconds.Name = "lblDurationSeconds";
             // 
+            // gbRegion
+            // 
+            this.gbRegion.Controls.Add(this.rbFullscreen);
+            this.gbRegion.Controls.Add(this.rbCustomRegion);
+            this.gbRegion.Controls.Add(this.btnRegion);
+            this.gbRegion.Controls.Add(this.lblRegion);
+            resources.ApplyResources(this.gbRegion, "gbRegion");
+            this.gbRegion.Name = "gbRegion";
+            this.gbRegion.TabStop = false;
+            // 
+            // rbCustomRegion
+            // 
+            resources.ApplyResources(this.rbCustomRegion, "rbCustomRegion");
+            this.rbCustomRegion.Checked = true;
+            this.rbCustomRegion.Name = "rbCustomRegion";
+            this.rbCustomRegion.TabStop = true;
+            this.rbCustomRegion.UseVisualStyleBackColor = true;
+            this.rbCustomRegion.CheckedChanged += new System.EventHandler(this.rbCustomRegion_CheckedChanged);
+            // 
+            // rbFullscreen
+            // 
+            resources.ApplyResources(this.rbFullscreen, "rbFullscreen");
+            this.rbFullscreen.Name = "rbFullscreen";
+            this.rbFullscreen.UseVisualStyleBackColor = true;
+            this.rbFullscreen.CheckedChanged += new System.EventHandler(this.rbFullscreen_CheckedChanged);
+            // 
             // AutoCaptureForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbRegion);
             this.Controls.Add(this.lblDurationSeconds);
-            this.Controls.Add(this.btnFullscreen);
             this.Controls.Add(this.nudRepeatTime);
             this.Controls.Add(this.lblDuration);
-            this.Controls.Add(this.lblRegion);
-            this.Controls.Add(this.btnRegion);
             this.Controls.Add(this.cbAutoMinimize);
             this.Controls.Add(this.cbWaitUploads);
             this.Controls.Add(this.btnExecute);
@@ -181,6 +201,8 @@
             this.ssBar.ResumeLayout(false);
             this.ssBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).EndInit();
+            this.gbRegion.ResumeLayout(false);
+            this.gbRegion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,8 +220,10 @@
         private System.Windows.Forms.Button btnRegion;
         private System.Windows.Forms.NumericUpDown nudRepeatTime;
         private System.Windows.Forms.Label lblDuration;
-        private System.Windows.Forms.Button btnFullscreen;
         private System.Windows.Forms.NotifyIcon niTray;
         private System.Windows.Forms.Label lblDurationSeconds;
+        private System.Windows.Forms.GroupBox gbRegion;
+        private System.Windows.Forms.RadioButton rbFullscreen;
+        private System.Windows.Forms.RadioButton rbCustomRegion;
     }
 }

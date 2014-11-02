@@ -52,11 +52,13 @@ namespace ShareX
             }
         }
 
+        private bool isLoaded;
         private Timer statusTimer;
         private System.Timers.Timer screenshotTimer;
         private int delay, count, timeleft, percentage;
         private bool waitUploads;
         private Stopwatch stopwatch = new Stopwatch();
+        private Rectangle customRegion;
 
         private AutoCaptureForm()
         {
@@ -71,10 +73,13 @@ namespace ShareX
             statusTimer = new Timer { Interval = 250 };
             statusTimer.Tick += (sender, e) => UpdateStatus();
 
+            customRegion = Program.Settings.AutoCaptureRegion;
             UpdateRegion();
             nudRepeatTime.Value = Program.Settings.AutoCaptureRepeatTime;
             cbAutoMinimize.Checked = Program.Settings.AutoCaptureMinimizeToTray;
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
+
+            isLoaded = true;
         }
 
         private void screenshotTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -179,6 +184,27 @@ namespace ShareX
             statusTimer.Enabled = IsRunning;
         }
 
+        private void rbFullscreen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isLoaded && rbFullscreen.Checked)
+            {
+                customRegion = Program.Settings.AutoCaptureRegion;
+                Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
+                UpdateRegion();
+                btnRegion.Enabled = false;
+            }
+        }
+
+        private void rbCustomRegion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isLoaded && rbCustomRegion.Checked)
+            {
+                Program.Settings.AutoCaptureRegion = customRegion;
+                UpdateRegion();
+                btnRegion.Enabled = true;
+            }
+        }
+
         private void btnRegion_Click(object sender, EventArgs e)
         {
             SelectRegion();
@@ -209,12 +235,6 @@ namespace ShareX
             IsRunning = false;
             screenshotTimer.Enabled = false;
             statusTimer.Enabled = false;
-        }
-
-        private void btnFullscreen_Click(object sender, EventArgs e)
-        {
-            Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
-            UpdateRegion();
         }
 
         private void AutoCapture_Resize(object sender, EventArgs e)
