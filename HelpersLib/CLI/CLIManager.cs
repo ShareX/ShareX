@@ -25,60 +25,103 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace HelpersLib.CLI
+namespace HelpersLib
 {
     public class CLIManager
     {
-        public List<CLICommand> Commands { get; set; }
+        public string[] Arguments { get; private set; }
+        public List<CLICommand> Commands { get; private set; }
+        public List<CLICommandAction> Actions { get; private set; }
 
-        public List<CLICommandAction> Actions { get; set; }
-
-        private string input;
-        private CLIParser parser;
-
-        public CLIManager(string text)
+        public CLIManager()
         {
-            input = text;
-            parser = new CLIParser();
+            Commands = new List<CLICommand>();
+            Actions = new List<CLICommandAction>();
+        }
+
+        public CLIManager(string[] arguments)
+            : this()
+        {
+            Arguments = arguments;
+        }
+
+        public CLIManager(string arguments)
+            : this()
+        {
+            CLIParser parser = new CLIParser();
+            Arguments = parser.Parse(arguments).ToArray();
         }
 
         public bool Parse()
         {
-            bool result = false;
-
             try
             {
-                List<string> commands = parser.Parse(input);
-
                 CLICommand lastCommand = null;
 
-                foreach (string cmd in commands)
+                foreach (string argument in Arguments)
                 {
-                    if (cmd[0] == '-')
+                    if (lastCommand == null || argument[0] == '-')
                     {
-                        string command = cmd.Substring(1);
-                        lastCommand = new CLICommand(command);
+                        lastCommand = new CLICommand();
+
+                        if (argument[0] == '-')
+                        {
+                            lastCommand.IsCommand = true;
+                            lastCommand.Command = argument.Substring(1);
+                        }
+                        else
+                        {
+                            lastCommand.Command = argument;
+                        }
+
                         Commands.Add(lastCommand);
                     }
-                    else if (lastCommand != null && string.IsNullOrEmpty(lastCommand.Parameter))
+                    else if (string.IsNullOrEmpty(lastCommand.Parameter))
                     {
-                        lastCommand.Parameter = cmd;
+                        lastCommand.Parameter = argument;
                     }
                     else
                     {
-                        throw new Exception("Command not starting with '-' or more than one parameter exist.");
+                        throw new Exception("Argument not starting with '-' or more than one parameter exist.");
                     }
                 }
 
-                result = true;
+                return true;
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
             }
 
-            return result;
+            return false;
+        }
+
+        public bool IsCommandExist(params string[] commands)
+        {
+            if (Commands != null && commands != null)
+            {
+                foreach (string command in commands.Where(x => !string.IsNullOrEmpty(x)))
+                {
+                    string command1 = command;
+
+                    if (command1[0] == '-')
+                    {
+                        command1 = command1.Substring(1);
+                    }
+
+                    foreach (CLICommand command2 in Commands.Where(x => x != null && x.IsCommand && !string.IsNullOrEmpty(x.Command)))
+                    {
+                        if (command1.Equals(command2.Command, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
 
         public void ExecuteActions()

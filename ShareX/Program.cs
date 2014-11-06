@@ -54,7 +54,7 @@ namespace ShareX
             }
         }
 
-        public static string[] Arguments { get; private set; }
+        public static CLIManager CLI { get; private set; }
         public static bool IsMultiInstance { get; private set; }
         public static bool IsPortable { get; private set; }
         public static bool IsSilentRun { get; private set; }
@@ -257,13 +257,14 @@ namespace ShareX
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
-            Arguments = args;
+            CLI = new CLIManager(args);
+            CLI.Parse();
 
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
 
-            IsMultiInstance = CLIHelper.CheckArgs(Arguments, "multi", "m");
+            IsMultiInstance = CLI.IsCommandExist("multi", "m");
 
-            if (IsMultiInstance || ApplicationInstanceManager.CreateSingleInstance(SingleInstanceCallback, Arguments))
+            if (IsMultiInstance || ApplicationInstanceManager.CreateSingleInstance(SingleInstanceCallback, args))
             {
                 using (Mutex mutex = new Mutex(false, "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC")) // Required for installer
                 {
@@ -282,12 +283,12 @@ namespace ShareX
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IsSilentRun = CLIHelper.CheckArgs(Arguments, "silent", "s");
-            IsSandbox = CLIHelper.CheckArgs(Arguments, "sandbox");
+            IsSilentRun = CLI.IsCommandExist("silent", "s");
+            IsSandbox = CLI.IsCommandExist("sandbox");
 
             if (!IsSandbox)
             {
-                IsPortable = CLIHelper.CheckArgs(Arguments, "portable", "p");
+                IsPortable = CLI.IsCommandExist("portable", "p");
 
                 if (IsPortable)
                 {
@@ -374,7 +375,9 @@ namespace ShareX
                         MainForm.ShowActivate();
                     }
 
-                    MainForm.UseCommandLineArgs(args.CommandLineArgs);
+                    CLIManager cli = new CLIManager(args.CommandLineArgs);
+                    cli.Parse();
+                    MainForm.UseCommandLineArgs(cli.Commands);
                 };
 
                 MainForm.InvokeSafe(d);
@@ -567,7 +570,7 @@ namespace ShareX
 
         private static bool CheckAdminTasks()
         {
-            if (CLIHelper.CheckArgs(Arguments, "dnschanger"))
+            if (CLI.IsCommandExist("dnschanger"))
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

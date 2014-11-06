@@ -23,17 +23,18 @@
 
 #endregion License Information (GPL v3)
 
-namespace HelpersLib.CLI
+namespace HelpersLib
 {
     public class CLICommand
     {
         public string Command { get; set; }
-
         public string Parameter { get; set; }
+        public bool IsCommand { get; set; } // Starts with hyphen?
 
-        public CLICommand(string command)
+        public CLICommand(string command = null, string parameter = null)
         {
             Command = command;
+            Parameter = parameter;
         }
     }
 }

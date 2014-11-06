@@ -65,7 +65,7 @@ namespace ShareX
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
-            UseCommandLineArgs(Program.Arguments);
+            UseCommandLineArgs(Program.CLI.Commands);
         }
 
         private void AfterShownJobs()
@@ -663,33 +663,25 @@ namespace ShareX
             Close();
         }
 
-        public void UseCommandLineArgs(string[] args)
+        public void UseCommandLineArgs(List<CLICommand> commands)
         {
-            if (args != null)
+            foreach (CLICommand command in commands)
             {
-                foreach (string arg in args)
+                DebugHelper.WriteLine("CommandLine: " + command.Command);
+
+                if (command.IsCommand)
                 {
-                    if (!string.IsNullOrEmpty(arg))
+                    foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
                     {
-                        DebugHelper.WriteLine("CommandLine: " + arg);
-
-                        if (arg.Length > 1 && arg[0] == '-')
+                        if (command.Command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
                         {
-                            string command = arg.Substring(1);
-
-                            foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
-                            {
-                                if (command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
-                                {
-                                    ExecuteJob(job);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            UploadManager.UploadFile(arg);
+                            ExecuteJob(job);
                         }
                     }
+                }
+                else
+                {
+                    UploadManager.UploadFile(command.Command);
                 }
             }
         }

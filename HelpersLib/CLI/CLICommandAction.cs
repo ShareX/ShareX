@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace HelpersLib.CLI
+namespace HelpersLib
 {
     public class CLICommandAction
     {
@@ -48,7 +48,7 @@ namespace HelpersLib.CLI
                 {
                     if (command.Command.Equals(text, StringComparison.InvariantCultureIgnoreCase))
                     {
-                        ExecuteActions(command.Parameter);
+                        ExecuteAction(command.Parameter);
                         return true;
                     }
                 }
@@ -57,7 +57,7 @@ namespace HelpersLib.CLI
             return false;
         }
 
-        public void ExecuteActions(string parameter)
+        private void ExecuteAction(string parameter)
         {
             if (DefaultAction != null)
             {

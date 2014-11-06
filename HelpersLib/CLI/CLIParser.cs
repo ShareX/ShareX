@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace HelpersLib.CLI
+namespace HelpersLib
 {
     public class CLIParser
     {
@@ -61,7 +61,7 @@ namespace HelpersLib.CLI
             {
                 if (char.IsWhiteSpace(input[index]))
                 {
-                    return input.Substring(start, index - start);
+                    break;
                 }
 
                 if (input[index] == '"' && (index + 1) < input.Length)
@@ -81,7 +81,7 @@ namespace HelpersLib.CLI
             {
                 if (input[index] == '"')
                 {
-                    return input.Substring(start, index - start);
+                    break;
                 }
             }
 
