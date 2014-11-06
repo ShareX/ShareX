@@ -194,7 +194,6 @@
     <Compile Include="CLI\CLICommand.cs" />
     <Compile Include="CLI\CLICommandAction.cs" />
     <Compile Include="CLI\CLIManager.cs" />
-    <Compile Include="CLI\CLIParser.cs" />
     <Compile Include="Colors\ColorBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

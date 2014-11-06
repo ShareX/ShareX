@@ -258,7 +258,7 @@ namespace ShareX
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
             CLI = new CLIManager(args);
-            CLI.Parse();
+            CLI.ParseCommands();
 
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
 
@@ -376,7 +376,7 @@ namespace ShareX
                     }
 
                     CLIManager cli = new CLIManager(args.CommandLineArgs);
-                    cli.Parse();
+                    cli.ParseCommands();
                     MainForm.UseCommandLineArgs(cli.Commands);
                 };
 

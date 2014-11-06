@@ -36,5 +36,17 @@ namespace HelpersLib
             Command = command;
             Parameter = parameter;
         }
+
+        public override string ToString()
+        {
+            string text = string.Format("Command: \"{0}\"", Command);
+
+            if (!string.IsNullOrEmpty(Parameter))
+            {
+                text += string.Format(" Parameter: \"{0}\"", Parameter);
+            }
+
+            return text;
+        }
     }
 }

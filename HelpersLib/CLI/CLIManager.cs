@@ -26,6 +26,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace HelpersLib
 {
@@ -50,11 +51,10 @@ namespace HelpersLib
         public CLIManager(string arguments)
             : this()
         {
-            CLIParser parser = new CLIParser();
-            Arguments = parser.Parse(arguments).ToArray();
+            Arguments = ParseCLI(arguments);
         }
 
-        public bool Parse()
+        public bool ParseCommands()
         {
             try
             {
@@ -64,27 +64,25 @@ namespace HelpersLib
                 {
                     if (lastCommand == null || argument[0] == '-')
                     {
-                        lastCommand = new CLICommand();
+                        CLICommand command = new CLICommand();
 
                         if (argument[0] == '-')
                         {
-                            lastCommand.IsCommand = true;
-                            lastCommand.Command = argument.Substring(1);
+                            command.IsCommand = true;
+                            command.Command = argument.Substring(1);
+                            lastCommand = command;
                         }
                         else
                         {
-                            lastCommand.Command = argument;
+                            command.Command = argument;
                         }
 
-                        Commands.Add(lastCommand);
-                    }
-                    else if (string.IsNullOrEmpty(lastCommand.Parameter))
-                    {
-                        lastCommand.Parameter = argument;
+                        Commands.Add(command);
                     }
                     else
                     {
-                        throw new Exception("Argument not starting with '-' or more than one parameter exist.");
+                        lastCommand.Parameter = argument;
+                        lastCommand = null;
                     }
                 }
 
@@ -96,6 +94,36 @@ namespace HelpersLib
             }
 
             return false;
+        }
+
+        private string[] ParseCLI(string arguments)
+        {
+            List<string> commands = new List<string>();
+
+            bool inDoubleQuotes = false;
+
+            for (int i = 0, start = 0; i < arguments.Length; i++)
+            {
+                if ((!inDoubleQuotes && char.IsWhiteSpace(arguments[i])) || (inDoubleQuotes && arguments[i] == '"'))
+                {
+                    string command = arguments.Substring(start, i - start);
+
+                    if (!string.IsNullOrEmpty(command))
+                    {
+                        commands.Add(command);
+                    }
+
+                    if (inDoubleQuotes) inDoubleQuotes = false;
+                    start = i + 1;
+                }
+                else if (arguments[i] == '"')
+                {
+                    inDoubleQuotes = true;
+                    start = i + 1;
+                }
+            }
+
+            return commands.ToArray();
         }
 
         public bool IsCommandExist(params string[] commands)
@@ -130,6 +158,23 @@ namespace HelpersLib
             {
                 action.CheckCommands(Commands);
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (CLICommand command in Commands)
+            {
+                if (sb.Length > 0)
+                {
+                    sb.AppendLine();
+                }
+
+                sb.Append(command);
+            }
+
+            return sb.ToString();
         }
     }
 }
