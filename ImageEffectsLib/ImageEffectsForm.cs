@@ -46,7 +46,7 @@ namespace ImageEffectsLib
             Icon = ShareXResources.Icon;
             DefaultImage = img;
             eiImageEffects.ObjectType = typeof(List<ImageEffect>);
-            AddAllEffectsToTreeView();
+            AddAllEffectsToContextMenu();
 
             if (effects != null)
             {
@@ -63,16 +63,16 @@ namespace ImageEffectsLib
             btnSaveImage.Visible = true;
         }
 
-        private void AddAllEffectsToTreeView()
+        private void AddAllEffectsToContextMenu()
         {
-            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Drawings,
+            AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Drawings,
                 typeof(DrawBackground),
                 typeof(DrawBorder),
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),
                 typeof(DrawText));
 
-            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
+            AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
                 typeof(Canvas),
                 typeof(Crop),
                 typeof(Flip),
@@ -82,7 +82,7 @@ namespace ImageEffectsLib
                 typeof(Scale),
                 typeof(Skew));
 
-            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Adjustments,
+            AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Adjustments,
                 typeof(Alpha),
                 typeof(BlackWhite),
                 typeof(Brightness),
@@ -97,7 +97,7 @@ namespace ImageEffectsLib
                 typeof(Saturation),
                 typeof(Sepia));
 
-            AddEffectToTreeView(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,
+            AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,
                 typeof(Blur),
                 typeof(EdgeDetect),
                 typeof(Emboss),
@@ -111,18 +111,19 @@ namespace ImageEffectsLib
                 typeof(Sharpen),
                 typeof(Smooth),
                 typeof(TornEdge));
-
-            tvEffects.ExpandAll();
         }
 
-        private void AddEffectToTreeView(string groupName, params Type[] imageEffects)
+        private void AddEffectToContextMenu(string groupName, params Type[] imageEffects)
         {
-            TreeNode parentNode = tvEffects.Nodes.Add(groupName, groupName);
+            ToolStripMenuItem tsmiParent = new ToolStripMenuItem(groupName);
+            ((ToolStripDropDownMenu)tsmiParent.DropDown).ShowImageMargin = false;
+            cmsEffects.Items.Add(tsmiParent);
 
             foreach (Type imageEffect in imageEffects)
             {
-                TreeNode childNode = parentNode.Nodes.Add(imageEffect.GetDescription());
-                childNode.Tag = imageEffect;
+                ToolStripItem tsmiChild = tsmiParent.DropDownItems.Add(imageEffect.GetDescription());
+                tsmiChild.Tag = imageEffect;
+                tsmiChild.Click += tsmiEffectClick;
             }
         }
 
@@ -152,13 +153,13 @@ namespace ImageEffectsLib
             return ImageEffectManager.ApplyEffects(DefaultImage, imageEffects);
         }
 
-        private void AddSelectedEffect()
+        private void tsmiEffectClick(object sender, EventArgs e)
         {
-            TreeNode node = tvEffects.SelectedNode;
+            ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
 
-            if (node != null && node.Tag is Type)
+            if (tsmi != null && tsmi.Tag is Type)
             {
-                Type type = (Type)node.Tag;
+                Type type = (Type)tsmi.Tag;
                 ImageEffect imageEffect = (ImageEffect)Activator.CreateInstance(type);
                 AddEffect(imageEffect);
                 UpdatePreview();
@@ -218,22 +219,9 @@ namespace ImageEffectsLib
 
         #region Form events
 
-        private void tvEffects_BeforeCollapse(object sender, TreeViewCancelEventArgs e)
-        {
-            e.Cancel = true;
-        }
-
-        private void tvEffects_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                AddSelectedEffect();
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddSelectedEffect();
+            cmsEffects.Show(btnAdd, 0, btnAdd.Height + 1);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

@@ -118,41 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="pgSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tvEffects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="tvEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 688</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tvEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tvEffects.Name" xml:space="preserve">
-    <value>tvEffects</value>
-  </data>
-  <data name="&gt;&gt;tvEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tvEffects.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tvEffects.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="pgSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 8</value>
+    <value>248, 40</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 304</value>
+    <value>440, 432</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
@@ -166,13 +142,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -190,16 +166,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
+  </data>
+  <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="chEffect.Width" type="System.Int32, mscorlib">
     <value>228</value>
   </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 40</value>
+    <value>8, 40</value>
   </data>
   <data name="lvEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 272</value>
+    <value>232, 432</value>
   </data>
   <data name="lvEffects.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -217,10 +196,10 @@
     <value>15</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 8</value>
+    <value>96, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -238,13 +217,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>712, 734</value>
+    <value>912, 479</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
@@ -265,13 +244,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>808, 734</value>
+    <value>1008, 479</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
@@ -292,13 +271,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 8</value>
+    <value>184, 8</value>
   </data>
   <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -316,23 +295,23 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnMoveUp.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="btnMoveUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 8</value>
+    <value>360, 8</value>
   </data>
   <data name="btnMoveUp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnMoveUp.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>↑</value>
-  <comment>@Invariant</comment></data>
+    <value>Move up</value>
+  </data>
   <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
     <value>btnMoveUp</value>
   </data>
@@ -343,23 +322,23 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveUp.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnMoveDown.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="btnMoveDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 8</value>
+    <value>464, 8</value>
   </data>
   <data name="btnMoveDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 24</value>
+    <value>96, 24</value>
   </data>
   <data name="btnMoveDown.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>↓</value>
-  <comment>@Invariant</comment></data>
+    <value>Move down</value>
+  </data>
   <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
     <value>btnMoveDown</value>
   </data>
@@ -370,13 +349,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveDown.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 8</value>
+    <value>272, 8</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -394,13 +373,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 8</value>
+    <value>568, 8</value>
   </data>
   <data name="btnRefresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnRefresh.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -418,7 +397,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnLoadImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -427,10 +406,10 @@
     <value>True</value>
   </data>
   <data name="btnLoadImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 734</value>
+    <value>200, 479</value>
   </data>
   <data name="btnLoadImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
+    <value>120, 24</value>
   </data>
   <data name="btnLoadImage.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -451,7 +430,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLoadImage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnSaveImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -460,10 +439,10 @@
     <value>True</value>
   </data>
   <data name="btnSaveImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 734</value>
+    <value>328, 479</value>
   </data>
   <data name="btnSaveImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
+    <value>120, 24</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -484,13 +463,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveImage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="eiImageEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="eiImageEffects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 734</value>
+    <value>8, 479</value>
   </data>
   <data name="eiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 24</value>
@@ -508,16 +487,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pbResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 320</value>
+    <value>696, 40</value>
   </data>
   <data name="pbResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 408</value>
+    <value>400, 432</value>
   </data>
   <data name="pbResult.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -532,7 +511,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbResult.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <metadata name="cmsEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="cmsEffects.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 26</value>
+  </data>
+  <data name="&gt;&gt;cmsEffects.Name" xml:space="preserve">
+    <value>cmsEffects</value>
+  </data>
+  <data name="&gt;&gt;cmsEffects.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -541,7 +532,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>906, 766</value>
+    <value>1105, 511</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

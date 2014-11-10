@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectsForm));
-            this.tvEffects = new System.Windows.Forms.TreeView();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lvEffects = new System.Windows.Forms.ListView();
@@ -46,17 +46,8 @@
             this.btnSaveImage = new System.Windows.Forms.Button();
             this.eiImageEffects = new HelpersLib.ExportImportControl();
             this.pbResult = new HelpersLib.MyPictureBox();
+            this.cmsEffects = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
-            // 
-            // tvEffects
-            // 
-            resources.ApplyResources(this.tvEffects, "tvEffects");
-            this.tvEffects.HideSelection = false;
-            this.tvEffects.Name = "tvEffects";
-            this.tvEffects.ShowPlusMinus = false;
-            this.tvEffects.ShowRootLines = false;
-            this.tvEffects.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvEffects_BeforeCollapse);
-            this.tvEffects.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tvEffects_MouseDoubleClick);
             // 
             // pgSettings
             // 
@@ -75,13 +66,13 @@
             // 
             // lvEffects
             // 
+            resources.ApplyResources(this.lvEffects, "lvEffects");
             this.lvEffects.CheckBoxes = true;
             this.lvEffects.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chEffect});
             this.lvEffects.FullRowSelect = true;
             this.lvEffects.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvEffects.HideSelection = false;
-            resources.ApplyResources(this.lvEffects, "lvEffects");
             this.lvEffects.MultiSelect = false;
             this.lvEffects.Name = "lvEffects";
             this.lvEffects.UseCompatibleStateImageBehavior = false;
@@ -184,6 +175,12 @@
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 
+            // cmsEffects
+            // 
+            this.cmsEffects.Name = "cmsEffects";
+            this.cmsEffects.ShowImageMargin = false;
+            resources.ApplyResources(this.cmsEffects, "cmsEffects");
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -202,7 +199,6 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pgSettings);
-            this.Controls.Add(this.tvEffects);
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -213,7 +209,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView tvEffects;
         private System.Windows.Forms.PropertyGrid pgSettings;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListView lvEffects;
@@ -230,6 +225,7 @@
         private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;
         private HelpersLib.ExportImportControl eiImageEffects;
+        private System.Windows.Forms.ContextMenuStrip cmsEffects;
     }
 }
 
