@@ -185,12 +185,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HotkeyInfo.cs" />
-    <Compile Include="Controls\HotkeyManagerControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\HotkeyManagerControl.Designer.cs">
-      <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\HotkeySelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -240,9 +234,6 @@
     <Compile Include="WatchFolder.cs" />
     <Compile Include="WatchFolderManager.cs" />
     <Compile Include="WatchFolderSettings.cs" />
-    <EmbeddedResource Include="Controls\HotkeyManagerControl.tr.resx">
-      <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.tr.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,9 +325,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HotkeyManagerControl.resx">
-      <DependentUpon>HotkeyManagerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>

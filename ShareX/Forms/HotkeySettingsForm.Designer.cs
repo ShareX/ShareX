@@ -29,21 +29,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySettingsForm));
-            this.hmHotkeys = new ShareX.HotkeyManagerControl();
+            this.btnDuplicate = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.flpHotkeys = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // hmHotkeys
+            // btnDuplicate
             // 
-            resources.ApplyResources(this.hmHotkeys, "hmHotkeys");
-            this.hmHotkeys.BackColor = System.Drawing.Color.White;
-            this.hmHotkeys.Name = "hmHotkeys";
+            resources.ApplyResources(this.btnDuplicate, "btnDuplicate");
+            this.btnDuplicate.Name = "btnDuplicate";
+            this.btnDuplicate.UseVisualStyleBackColor = true;
+            this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
+            // 
+            // btnReset
+            // 
+            resources.ApplyResources(this.btnReset, "btnReset");
+            this.btnReset.Name = "btnReset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // flpHotkeys
+            // 
+            resources.ApplyResources(this.flpHotkeys, "flpHotkeys");
+            this.flpHotkeys.Name = "flpHotkeys";
+            this.flpHotkeys.Layout += new System.Windows.Forms.LayoutEventHandler(this.flpHotkeys_Layout);
+            // 
+            // btnEdit
+            // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnRemove
+            // 
+            resources.ApplyResources(this.btnRemove, "btnRemove");
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAdd
+            // 
+            resources.ApplyResources(this.btnAdd, "btnAdd");
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // HotkeySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.hmHotkeys);
+            this.Controls.Add(this.btnDuplicate);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.flpHotkeys);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnAdd);
             this.Name = "HotkeySettingsForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HotkeySettingsForm_FormClosed);
             this.ResumeLayout(false);
@@ -52,6 +97,12 @@
 
         #endregion
 
-        private HotkeyManagerControl hmHotkeys;
+        private System.Windows.Forms.Button btnDuplicate;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.FlowLayoutPanel flpHotkeys;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAdd;
+
     }
 }

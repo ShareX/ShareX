@@ -91,21 +91,25 @@ namespace UploadersLib
 
                 if (isRefreshable)
                 {
-                    gbUserAccount.Size = new Size(320, 230);
+                    gbUserAccount.Size = defaultGroupBoxSize;
                 }
                 else
                 {
-                    gbUserAccount.Size = new Size(320, 198);
+                    gbUserAccount.Size = smallGroupBoxSize;
                 }
 
                 btnRefreshAuthorization.Visible = isRefreshable;
             }
         }
 
+        private Size defaultGroupBoxSize, smallGroupBoxSize;
+
         public OAuthControl()
         {
             InitializeComponent();
             Status = OAuthLoginStatus.LoginRequired;
+            defaultGroupBoxSize = gbUserAccount.Size;
+            smallGroupBoxSize = new Size(defaultGroupBoxSize.Width, (int)(defaultGroupBoxSize.Height / 1.16f));
             IsRefreshable = true;
         }
 
