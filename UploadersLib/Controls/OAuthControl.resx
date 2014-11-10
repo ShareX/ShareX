@@ -123,10 +123,14 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnClearAuthorization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>21, 197</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClearAuthorization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnClearAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>384, 28</value>
   </data>
   <data name="btnClearAuthorization.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -150,10 +154,13 @@
     <value>False</value>
   </data>
   <data name="btnRefreshAuthorization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
+    <value>21, 236</value>
+  </data>
+  <data name="btnRefreshAuthorization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnRefreshAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>384, 28</value>
   </data>
   <data name="btnRefreshAuthorization.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -174,10 +181,13 @@
     <value>1</value>
   </data>
   <data name="btnOpenAuthorizePage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+    <value>21, 30</value>
+  </data>
+  <data name="btnOpenAuthorizePage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnOpenAuthorizePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>384, 28</value>
   </data>
   <data name="btnOpenAuthorizePage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -201,10 +211,13 @@
     <value>True</value>
   </data>
   <data name="lblVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>17, 69</value>
+  </data>
+  <data name="lblVerificationCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblVerificationCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 13</value>
+    <value>392, 17</value>
   </data>
   <data name="lblVerificationCode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -228,10 +241,13 @@
     <value>False</value>
   </data>
   <data name="btnCompleteAuthorization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>21, 128</value>
+  </data>
+  <data name="btnCompleteAuthorization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnCompleteAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>384, 28</value>
   </data>
   <data name="btnCompleteAuthorization.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -252,10 +268,13 @@
     <value>4</value>
   </data>
   <data name="txtVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>21, 98</value>
+  </data>
+  <data name="txtVerificationCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtVerificationCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
+    <value>383, 22</value>
   </data>
   <data name="txtVerificationCode.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -276,10 +295,13 @@
     <value>True</value>
   </data>
   <data name="lblLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 136</value>
+    <value>17, 167</value>
+  </data>
+  <data name="lblLoginStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lblLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
+    <value>48, 17</value>
   </data>
   <data name="lblLoginStatus.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -302,8 +324,17 @@
   <data name="gbUserAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="gbUserAccount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="gbUserAccount.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>427, 283</value>
+  </data>
+  <data name="gbUserAccount.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="gbUserAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 230</value>
+    <value>427, 283</value>
   </data>
   <data name="gbUserAccount.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -327,10 +358,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 238</value>
+    <value>435, 293</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>OAuthControl</value>

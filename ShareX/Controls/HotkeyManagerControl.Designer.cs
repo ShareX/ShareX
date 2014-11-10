@@ -89,6 +89,7 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
+            this.MinimumSize = new System.Drawing.Size(661, 431);
             this.Name = "HotkeyManagerControl";
             this.ResumeLayout(false);
 
