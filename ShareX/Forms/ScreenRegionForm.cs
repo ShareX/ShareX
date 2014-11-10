@@ -66,6 +66,11 @@ namespace ShareX
             Timer = new Stopwatch();
         }
 
+        private void ScreenRegionForm_Shown(object sender, EventArgs e)
+        {
+            this.ShowActivate();
+        }
+
         protected void OnStopRequested()
         {
             if (StopRequested != null)

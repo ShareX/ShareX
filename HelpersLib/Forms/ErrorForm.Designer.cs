@@ -111,6 +111,7 @@
             this.Controls.Add(this.flpMenu);
             this.Controls.Add(this.txtException);
             this.Name = "ErrorForm";
+            this.TopMost = true;
             this.Shown += new System.EventHandler(this.ErrorForm_Shown);
             this.flpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
