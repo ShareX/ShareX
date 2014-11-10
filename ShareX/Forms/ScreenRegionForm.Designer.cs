@@ -50,7 +50,7 @@
             resources.ApplyResources(this.btnStop, "btnStop");
             this.btnStop.ForeColor = System.Drawing.Color.White;
             this.btnStop.Name = "btnStop";
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.btnStop.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStop_MouseClick);
             // 
             // lblTimer
             // 

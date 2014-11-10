@@ -182,7 +182,7 @@ namespace ShareX
 
                     if (regionForm != null && regionForm.RecordResetEvent != null)
                     {
-                        if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
+                        if (taskSettings.CaptureSettings.ScreenRecordAutoStart || captureRectangle.Height == CaptureHelpers.GetScreenBounds().Height)
                         {
                             int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 

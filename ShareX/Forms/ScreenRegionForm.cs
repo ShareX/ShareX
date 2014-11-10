@@ -76,23 +76,18 @@ namespace ShareX
 
         public static ScreenRegionForm Show(Rectangle captureRectangle, Action stopRequested, float duration = 0)
         {
-            if (captureRectangle != CaptureHelpers.GetScreenBounds())
+            ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
+            regionForm.StopRequested += stopRequested;
+
+            if (duration > 0)
             {
-                ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
-                regionForm.StopRequested += stopRequested;
-
-                if (duration > 0)
-                {
-                    regionForm.IsCountdown = true;
-                    regionForm.Countdown = TimeSpan.FromSeconds(duration);
-                }
-
-                regionForm.UpdateTimer();
-                regionForm.Show();
-                return regionForm;
+                regionForm.IsCountdown = true;
+                regionForm.Countdown = TimeSpan.FromSeconds(duration);
             }
 
-            return null;
+            regionForm.UpdateTimer();
+            regionForm.Show();
+            return regionForm;
         }
 
         public void StartTimer()
@@ -143,15 +138,18 @@ namespace ShareX
             UpdateTimer();
         }
 
-        private void btnStop_Click(object sender, EventArgs e)
+        private void btnStop_MouseClick(object sender, MouseEventArgs e)
         {
-            if (IsRecording)
+            if (e.Button == MouseButtons.Left)
             {
-                OnStopRequested();
-            }
-            else if (RecordResetEvent != null)
-            {
-                RecordResetEvent.Set();
+                if (IsRecording)
+                {
+                    OnStopRequested();
+                }
+                else if (RecordResetEvent != null)
+                {
+                    RecordResetEvent.Set();
+                }
             }
         }
     }

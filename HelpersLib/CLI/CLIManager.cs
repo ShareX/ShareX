@@ -152,6 +152,18 @@ namespace HelpersLib
             return false;
         }
 
+        public string GetParameter(string command)
+        {
+            CLICommand cliCommand = Commands.Find(x => command.Equals(x.Command, StringComparison.InvariantCultureIgnoreCase));
+
+            if (cliCommand != null)
+            {
+                return cliCommand.Parameter;
+            }
+
+            return null;
+        }
+
         public void ExecuteActions()
         {
             foreach (CLICommandAction action in Actions)

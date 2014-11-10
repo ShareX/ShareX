@@ -176,11 +176,12 @@ namespace ShareX
 
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.Language = (SupportedLanguage)cbLanguage.SelectedIndex;
-
-            if (loaded && LanguageHelper.ChangeLanguage(Program.Settings.Language))
+            if (loaded)
             {
-                if (MessageBox.Show(Resources.ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart,
+                Program.Settings.Language = (SupportedLanguage)cbLanguage.SelectedIndex;
+
+                if (LanguageHelper.ChangeLanguage(Program.Settings.Language) &&
+                    MessageBox.Show(Resources.ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart,
                     "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Program.Restart();
