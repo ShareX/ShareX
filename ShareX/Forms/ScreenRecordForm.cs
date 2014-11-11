@@ -56,6 +56,7 @@ namespace ShareX
         private ScreenRecorder screenRecorder;
         private ScreenRegionForm regionForm;
         private DWMManager dwmManager;
+        private bool abortRequested;
 
         private ScreenRecordForm()
         {
@@ -195,17 +196,30 @@ namespace ShareX
                         {
                             regionForm.RecordResetEvent.WaitOne();
                         }
+
+                        if (regionForm.AbortRequested)
+                        {
+                            abortRequested = true;
+                        }
                     }
 
-                    TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
-                    TrayIcon.Icon = Resources.control_record.ToIcon();
-
-                    if (regionForm != null)
+                    if (!abortRequested)
                     {
-                        this.InvokeSafe(() => regionForm.StartTimer());
-                    }
+                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                        TrayIcon.Icon = Resources.control_record.ToIcon();
 
-                    screenRecorder.StartRecording();
+                        if (regionForm != null)
+                        {
+                            this.InvokeSafe(() => regionForm.StartTimer());
+                        }
+
+                        screenRecorder.StartRecording();
+
+                        if (regionForm != null && regionForm.AbortRequested)
+                        {
+                            abortRequested = true;
+                        }
+                    }
                 }
                 finally
                 {
@@ -228,7 +242,7 @@ namespace ShareX
 
                 try
                 {
-                    if (screenRecorder != null)
+                    if (!abortRequested && screenRecorder != null)
                     {
                         TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
@@ -268,6 +282,11 @@ namespace ShareX
 
                         screenRecorder.Dispose();
                         screenRecorder = null;
+
+                        if (abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path))
+                        {
+                            File.Delete(path);
+                        }
                     }
                 }
             },
@@ -278,13 +297,14 @@ namespace ShareX
                     TrayIcon.Visible = false;
                 }
 
-                IsRecording = false;
-
-                if (!string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings))
+                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings))
                 {
                     UploadTask task = UploadTask.CreateFileJobTask(path, taskSettings);
                     TaskManager.Start(task);
                 }
+
+                abortRequested = false;
+                IsRecording = false;
             });
         }
 

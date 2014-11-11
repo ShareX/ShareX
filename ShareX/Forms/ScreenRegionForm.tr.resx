@@ -123,4 +123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Ekran alanı penceresi</value>
   </data>
+  <data name="btnAbort.Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
 </root>

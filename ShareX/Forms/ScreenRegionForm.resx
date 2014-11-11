@@ -117,23 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnStop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnStop.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
   <data name="btnStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 0</value>
+    <value>79, 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnStop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 32</value>
+    <value>96, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnStop.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnStop.Text" xml:space="preserve">
     <value>Start</value>
@@ -148,10 +148,7 @@
     <value>pInfo</value>
   </data>
   <data name="&gt;&gt;btnStop.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblTimer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+    <value>1</value>
   </data>
   <data name="lblTimer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -159,8 +156,11 @@
   <data name="lblTimer.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="lblTimer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="lblTimer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 32</value>
+    <value>80, 32</value>
   </data>
   <data name="lblTimer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -178,13 +178,52 @@
     <value>pInfo</value>
   </data>
   <data name="&gt;&gt;lblTimer.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <metadata name="timerRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btnAbort.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 0</value>
+  </data>
+  <data name="btnAbort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 32</value>
+  </data>
+  <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnAbort.Text" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
+    <value>btnAbort</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
+    <value>HelpersLib.BlackStyleButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
+    <value>pInfo</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pInfo.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
   <data name="pInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="pInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 32</value>
+    <value>270, 32</value>
   </data>
   <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -201,9 +240,6 @@
   <data name="&gt;&gt;pInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="timerRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -211,7 +247,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 262</value>
+    <value>451, 235</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

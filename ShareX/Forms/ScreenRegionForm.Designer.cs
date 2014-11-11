@@ -30,20 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRegionForm));
-            this.pInfo = new System.Windows.Forms.Panel();
             this.btnStop = new HelpersLib.BlackStyleButton();
             this.lblTimer = new HelpersLib.BlackStyleLabel();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.btnAbort = new HelpersLib.BlackStyleButton();
+            this.pInfo = new System.Windows.Forms.Panel();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pInfo
-            // 
-            this.pInfo.BackColor = System.Drawing.Color.White;
-            this.pInfo.Controls.Add(this.btnStop);
-            this.pInfo.Controls.Add(this.lblTimer);
-            resources.ApplyResources(this.pInfo, "pInfo");
-            this.pInfo.Name = "pInfo";
             // 
             // btnStop
             // 
@@ -55,8 +48,8 @@
             // lblTimer
             // 
             this.lblTimer.BackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.DrawBorder = true;
+            resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.ForeColor = System.Drawing.Color.White;
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -65,6 +58,22 @@
             // 
             this.timerRefresh.Interval = 200;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            // 
+            // btnAbort
+            // 
+            resources.ApplyResources(this.btnAbort, "btnAbort");
+            this.btnAbort.ForeColor = System.Drawing.Color.White;
+            this.btnAbort.Name = "btnAbort";
+            this.btnAbort.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
+            // 
+            // pInfo
+            // 
+            resources.ApplyResources(this.pInfo, "pInfo");
+            this.pInfo.BackColor = System.Drawing.Color.White;
+            this.pInfo.Controls.Add(this.btnAbort);
+            this.pInfo.Controls.Add(this.btnStop);
+            this.pInfo.Controls.Add(this.lblTimer);
+            this.pInfo.Name = "pInfo";
             // 
             // ScreenRegionForm
             // 
@@ -78,15 +87,17 @@
             this.Shown += new System.EventHandler(this.ScreenRegionForm_Shown);
             this.pInfo.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pInfo;
         private HelpersLib.BlackStyleButton btnStop;
         private System.Windows.Forms.Timer timerRefresh;
         private HelpersLib.BlackStyleLabel lblTimer;
+        private HelpersLib.BlackStyleButton btnAbort;
+        private System.Windows.Forms.Panel pInfo;
 
     }
 }

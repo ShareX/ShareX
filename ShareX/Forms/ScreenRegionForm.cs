@@ -37,11 +37,12 @@ namespace ShareX
     {
         public event Action StopRequested;
 
-        public bool IsRecording { get; set; }
+        public bool IsRecording { get; private set; }
         public bool IsCountdown { get; set; }
         public TimeSpan Countdown { get; set; }
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
+        public bool AbortRequested { get; private set; }
 
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
@@ -143,18 +144,32 @@ namespace ShareX
             UpdateTimer();
         }
 
+        private void Stop()
+        {
+            if (IsRecording)
+            {
+                OnStopRequested();
+            }
+            else if (RecordResetEvent != null)
+            {
+                RecordResetEvent.Set();
+            }
+        }
+
         private void btnStop_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (IsRecording)
-                {
-                    OnStopRequested();
-                }
-                else if (RecordResetEvent != null)
-                {
-                    RecordResetEvent.Set();
-                }
+                Stop();
+            }
+        }
+
+        private void btnAbort_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                AbortRequested = true;
+                Stop();
             }
         }
     }
