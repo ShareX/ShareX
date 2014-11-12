@@ -31,6 +31,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Windows.Forms;
 using UploadersLib;
 
@@ -353,9 +354,19 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(text))
             {
-                if (allowCustomText && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.TextCustom))
+                if (allowCustomText)
                 {
-                    text = taskSettings.AdvancedSettings.TextCustom.Replace("%input", text);
+                    string input = taskSettings.AdvancedSettings.TextCustom;
+
+                    if (!string.IsNullOrEmpty(input))
+                    {
+                        if (taskSettings.AdvancedSettings.TextCustomEncodeInput)
+                        {
+                            text = HttpUtility.HtmlEncode(text);
+                        }
+
+                        text = input.Replace("%input", text);
+                    }
                 }
 
                 UploadTask task = UploadTask.CreateTextUploaderTask(text, taskSettings);

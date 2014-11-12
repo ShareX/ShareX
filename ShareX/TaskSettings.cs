@@ -441,6 +441,9 @@ namespace ShareX
         Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
         public string TextCustom { get; set; }
 
+        [Category("Upload text"), DefaultValue(true), Description("HTML encode custom text input.")]
+        public bool TextCustomEncodeInput { get; set; }
+
         [Category("Name pattern"), DefaultValue(100), Description("Maximum name pattern length for file name.")]
         public int NamePatternMaxLength { get; set; }
 
