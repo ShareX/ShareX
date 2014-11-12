@@ -31,6 +31,7 @@ using ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Globalization;
@@ -435,6 +436,10 @@ namespace ShareX
 
         [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
         public string TextFormat { get; set; }
+
+        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it."),
+        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string TextCustom { get; set; }
 
         [Category("Name pattern"), DefaultValue(100), Description("Maximum name pattern length for file name.")]
         public int NamePatternMaxLength { get; set; }

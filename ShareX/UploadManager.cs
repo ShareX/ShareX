@@ -230,7 +230,7 @@ namespace ShareX
                     }
                     else
                     {
-                        UploadText(text, taskSettings);
+                        UploadText(text, taskSettings, true);
                     }
                 }
             }
@@ -288,7 +288,7 @@ namespace ShareX
             else if (data.GetDataPresent(DataFormats.Text, false))
             {
                 string text = data.GetData(DataFormats.Text, false) as string;
-                UploadText(text, taskSettings);
+                UploadText(text, taskSettings, true);
             }
         }
 
@@ -347,12 +347,17 @@ namespace ShareX
             }
         }
 
-        public static void UploadText(string text, TaskSettings taskSettings = null)
+        public static void UploadText(string text, TaskSettings taskSettings = null, bool allowCustomText = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             if (!string.IsNullOrEmpty(text))
             {
+                if (allowCustomText && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.TextCustom))
+                {
+                    text = taskSettings.AdvancedSettings.TextCustom.Replace("%input", text);
+                }
+
                 UploadTask task = UploadTask.CreateTextUploaderTask(text, taskSettings);
                 TaskManager.Start(task);
             }
