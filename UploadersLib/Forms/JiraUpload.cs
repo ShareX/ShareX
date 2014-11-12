@@ -31,9 +31,9 @@ using UploadersLib.Properties;
 
 namespace UploadersLib.GUI
 {
-  using System.Threading.Tasks;
+    using System.Threading.Tasks;
 
-  public partial class JiraUpload : Form
+    public partial class JiraUpload : Form
     {
         public delegate string GetSummaryHandler(string issueId);
 
