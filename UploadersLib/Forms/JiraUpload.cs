@@ -31,6 +31,8 @@ using UploadersLib.Properties;
 
 namespace UploadersLib.GUI
 {
+    using System.Threading.Tasks;
+
     public partial class JiraUpload : Form
     {
         public delegate string GetSummaryHandler(string issueId);
@@ -64,10 +66,10 @@ namespace UploadersLib.GUI
 
         private void JiraUpload_Load(object sender, EventArgs e)
         {
+            UpdateSummary(null);
+
             txtIssueId.Text = _issuePrefix;
             txtIssueId.SelectionStart = txtIssueId.Text.Length;
-
-            ValidateIssueId(txtIssueId.Text);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -83,11 +85,22 @@ namespace UploadersLib.GUI
 
         private void ValidateIssueId(string issueId)
         {
-            var res = _getSummary(issueId);
-            btnUpload.Enabled = (res != null);
+            Task.Factory
+                .StartNew(() => _getSummary(issueId))
+                .ContinueWith(UpdateSummaryAsync);
+        }
 
-            lblSummary.Text = res ?? Resources.JiraUpload_ValidateIssueId_Issue_not_found;
-            lblSummary.Enabled = res != null;
+        private void UpdateSummaryAsync(Task<string> task)
+        {
+            this.Invoke((Action)(() => UpdateSummary(task.Result)));
+        }
+
+        private void UpdateSummary(string summary)
+        {
+            btnUpload.Enabled = (summary != null);
+
+            lblSummary.Text = summary ?? Resources.JiraUpload_ValidateIssueId_Issue_not_found;
+            lblSummary.Enabled = summary != null;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
