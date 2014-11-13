@@ -470,7 +470,7 @@ namespace ShareX
 
             if (form.IsRecording)
             {
-                form.StopRecording();
+                form.StartStopRecording();
             }
             else
             {

@@ -387,4 +387,7 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Adresden dosya indir ve yükle</value>
   </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Kaydı başlatmak için simge ikonuna tıklayın.</value>
+  </data>
 </root>

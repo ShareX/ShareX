@@ -1200,6 +1200,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click tray icon to start recording..
+        /// </summary>
+        public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click tray icon to stop recording..
         /// </summary>
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
@@ -1617,8 +1626,8 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to upload screenshot?
-        ///You can press &apos;No&apos; for cancel current upload and disable auto uploading screenshots..
+        ///   Looks up a localized string similar to Are you sure you want to upload this screenshot?
+        ///Press &apos;No&apos; to cancel the current upload and disable screenshot auto uploading..
         /// </summary>
         public static string UploadTask_DoUploadJob_First_time_upload_warning_text {
             get {

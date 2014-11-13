@@ -64,11 +64,27 @@ namespace ShareX
             TrayIcon.MouseClick += TrayIcon_MouseClick;
         }
 
+        public void StartStopRecording()
+        {
+            if (regionForm != null && !regionForm.IsDisposed)
+            {
+                regionForm.StartStop();
+            }
+        }
+
+        private void StopRecording()
+        {
+            if (IsRecording && screenRecorder != null)
+            {
+                screenRecorder.StopRecording();
+            }
+        }
+
         private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                StopRecording();
+                StartStopRecording();
             }
         }
 
@@ -183,7 +199,9 @@ namespace ShareX
 
                     if (regionForm != null && regionForm.RecordResetEvent != null)
                     {
-                        if (taskSettings.CaptureSettings.ScreenRecordAutoStart || captureRectangle.Height == CaptureHelpers.GetScreenBounds().Height)
+                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
+
+                        if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
                         {
                             int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 
@@ -237,6 +255,7 @@ namespace ShareX
                         }
 
                         this.InvokeSafe(() => regionForm.Close());
+                        regionForm = null;
                     }
                 }
 
@@ -320,14 +339,6 @@ namespace ShareX
             else
             {
                 MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public void StopRecording()
-        {
-            if (IsRecording && screenRecorder != null)
-            {
-                screenRecorder.StopRecording();
             }
         }
     }

@@ -646,4 +646,7 @@ here</value>
     <value>Can't access to "{0}" file.
 Please run ShareX as administrator to change personal folder path.</value>
   </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Click tray icon to start recording.</value>
+  </data>
 </root>
