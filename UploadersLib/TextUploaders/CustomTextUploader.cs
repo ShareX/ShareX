@@ -44,9 +44,9 @@ namespace UploadersLib.TextUploaders
         {
             if (string.IsNullOrEmpty(customUploader.RequestURL)) throw new Exception("'Request URL' must be not empty.");
 
-            if ((customUploader.RequestType == CustomUploaderRequestType.GET || string.IsNullOrEmpty(customUploader.FileFormName)) &&
+            if ((customUploader.RequestType != CustomUploaderRequestType.POST || string.IsNullOrEmpty(customUploader.FileFormName)) &&
                 (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input"))))
-                throw new Exception("Atleast one '$input$' required for argument value when using GET or non-file POST.");
+                throw new Exception("Atleast one '$input$' required for argument value.");
 
             UploadResult result = new UploadResult();
 
@@ -67,9 +67,9 @@ namespace UploadersLib.TextUploaders
                     }
                 }
             }
-            else if (customUploader.RequestType == CustomUploaderRequestType.GET)
+            else
             {
-                result.Response = SendRequest(HttpMethod.GET, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
+                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.RequestURL, args, responseType: customUploader.ResponseType);
             }
 
             customUploader.ParseResponse(result);

@@ -46,20 +46,13 @@ namespace UploadersLib.URLShorteners
             if (string.IsNullOrEmpty(customUploader.RequestURL)) throw new Exception("'Request URL' must be not empty.");
 
             if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input")))
-                throw new Exception("Atleast one '$input$' required for argument value when using custom URL shortener.");
+                throw new Exception("Atleast one '$input$' required for argument value.");
 
             UploadResult result = new UploadResult { URL = url };
 
             Dictionary<string, string> args = customUploader.ParseArguments(url);
 
-            if (customUploader.RequestType == CustomUploaderRequestType.POST)
-            {
-                result.Response = SendRequest(HttpMethod.POST, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
-            }
-            else if (customUploader.RequestType == CustomUploaderRequestType.GET)
-            {
-                result.Response = SendRequest(HttpMethod.GET, customUploader.RequestURL, args, responseType: customUploader.ResponseType);
-            }
+            result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.RequestURL, args, responseType: customUploader.ResponseType);
 
             customUploader.ParseResponse(result, true);
 

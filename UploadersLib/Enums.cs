@@ -178,6 +178,7 @@ namespace UploadersLib
         GET,
         POST,
         PUT,
+        PATCH,
         DELETE
     }
 
@@ -271,7 +272,10 @@ namespace UploadersLib
     public enum CustomUploaderRequestType
     {
         POST,
-        GET
+        GET,
+        PUT,
+        PATCH,
+        DELETE
     }
 
     public enum FTPSEncryption

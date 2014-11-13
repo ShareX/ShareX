@@ -529,7 +529,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Custom URL shortener</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Add image effects</value>
+    <value>Add image effects / watermark</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Open in image editor</value>

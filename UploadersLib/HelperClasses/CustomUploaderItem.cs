@@ -62,6 +62,24 @@ namespace UploadersLib
             return Name;
         }
 
+        public HttpMethod GetHttpMethod()
+        {
+            switch (RequestType)
+            {
+                default:
+                case CustomUploaderRequestType.POST:
+                    return HttpMethod.POST;
+                case CustomUploaderRequestType.GET:
+                    return HttpMethod.GET;
+                case CustomUploaderRequestType.PUT:
+                    return HttpMethod.PUT;
+                case CustomUploaderRequestType.PATCH:
+                    return HttpMethod.PATCH;
+                case CustomUploaderRequestType.DELETE:
+                    return HttpMethod.DELETE;
+            }
+        }
+
         public Dictionary<string, string> ParseArguments(string input = null)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();

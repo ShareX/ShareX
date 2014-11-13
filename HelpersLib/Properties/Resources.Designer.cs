@@ -80,7 +80,7 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add image effects.
+        ///   Looks up a localized string similar to Add image effects / watermark.
         /// </summary>
         internal static string AfterCaptureTasks_AddImageEffects {
             get {

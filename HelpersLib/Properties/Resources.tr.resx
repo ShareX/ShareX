@@ -507,7 +507,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Özel adres kısaltıcı</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Resim efekti ekle</value>
+    <value>Resim efekti / filigran ekle</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Resim düzenleyicide aç</value>
