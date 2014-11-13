@@ -1,6 +1,12 @@
 #define MyAppName "ShareX"
 #define MyAppFile "ShareX.exe"
-#define MyAppPath "..\ShareX\bin\Release\ShareX.exe"
+#ifdef Debug
+  #define MyAppBuildType "Debug"
+#else
+  #define MyAppBuildType "Release"
+#endif
+#define MyAppParentDir "..\ShareX\bin\" + MyAppBuildType
+#define MyAppPath MyAppParentDir + "\ShareX.exe"
 #dim Version[4]
 #expr ParseVersion(MyAppPath, Version[0], Version[1], Version[2], Version[3])
 #define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
@@ -60,14 +66,17 @@ Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescrip
 Name: "CreateStartupIcon"; Description: "Launch {#MyAppName} automatically at Windows startup"; GroupDescription: "Other tasks:"
 
 [Files]
-Source: "..\ShareX\bin\Release\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "..\ShareX\bin\Release\ShareX.exe.config"; DestDir: {app}; Flags: ignoreversion
-Source: "..\ShareX\bin\Release\*.dll"; DestDir: {app}; Flags: ignoreversion
-Source: "..\ShareX\bin\Release\*.css"; DestDir: {app}; Flags: ignoreversion
-Source: "..\ShareX\bin\Release\*.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppParentDir}\ShareX.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppParentDir}\ShareX.exe.config"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppParentDir}\*.dll"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppParentDir}\*.css"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppParentDir}\*.txt"; DestDir: {app}; Flags: ignoreversion
+#ifdef Debug
+  Source: "{#MyAppParentDir}\*.pdb"; DestDir: {app}; Flags: ignoreversion
+#endif
 
 ; Language resources
-Source: "..\ShareX\bin\Release\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
+Source: "{#MyAppParentDir}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
 
 ; Required for screen/audio recording
 Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
@@ -109,13 +118,13 @@ end;
 
 function InitializeSetup(): Boolean;
 begin
-	initwinversion();
+  initwinversion();
 
   msi31('3.1');
   dotnetfx40full();
   vcredist2010();
 
-	Result := true;
+  Result := true;
 end;
 
 function DesktopIconExists(): Boolean;
