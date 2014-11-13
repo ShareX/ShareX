@@ -34,12 +34,69 @@ namespace ShareXPortable
 {
     internal class Program
     {
+        private enum SetupType
+        {
+            Stable, // Release build setup, creates portable zip file
+            Beta // Debug build setup, uploads it using Debug/ShareX.exe
+        }
+
+        private const SetupType Setup = SetupType.Beta;
+
+        private static string parentDir = @"..\..\..\";
+        private static string binDir = Path.Combine(parentDir, @"ShareX\bin");
+        private static string releaseDir = Path.Combine(binDir, "Release");
+        private static string debugDir = Path.Combine(binDir, "Debug");
+        private static string releasePath = Path.Combine(releaseDir, "ShareX.exe");
+        private static string debugPath = Path.Combine(debugDir, "ShareX.exe");
+        private static string outputDir = Path.Combine(parentDir, @"InnoSetup\Output");
+        private static string portableDir = Path.Combine(outputDir, "ShareX-portable");
+        private static string innoSetupPath = @"C:\Program Files (x86)\Inno Setup 5\ISCC.exe";
+        private static string innoSetupScriptPath = Path.Combine(parentDir, @"InnoSetup\ShareX setup.iss");
+
         private static void Main(string[] args)
         {
-            string parentDir = @"..\..\..\";
-            string releaseDir = Path.Combine(parentDir, @"ShareX\bin\Release");
-            string outputDir = Path.Combine(parentDir, @"InnoSetup\Output");
-            string portableDir = Path.Combine(outputDir, "ShareX-portable");
+            switch (Setup)
+            {
+                case SetupType.Stable:
+                    CompileSetup("Release");
+                    CreatePortable();
+                    OpenOutputDirectory();
+                    break;
+                case SetupType.Beta:
+                    CompileSetup("Debug");
+                    UploadLatestFile();
+                    break;
+            }
+
+            Console.WriteLine("Done.");
+            //Console.Read();
+        }
+
+        private static void OpenOutputDirectory()
+        {
+            Process.Start("explorer.exe", outputDir);
+        }
+
+        private static void UploadLatestFile()
+        {
+            FileInfo fileInfo = new DirectoryInfo(outputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
+            if (fileInfo != null)
+            {
+                Console.WriteLine("Uploading setup file...");
+                Process.Start(debugPath, fileInfo.FullName);
+            }
+        }
+
+        private static void CompileSetup(string buildType)
+        {
+            Console.WriteLine("Compiling " + buildType + " setup...");
+            Process.Start(innoSetupPath, string.Format("\"{0}\" /d{1}", innoSetupScriptPath, buildType)).WaitForExit();
+            Console.WriteLine("Setup file created.");
+        }
+
+        private static void CreatePortable()
+        {
+            Console.WriteLine("Creating portable...");
 
             List<string> files = new List<string>();
 
@@ -58,11 +115,11 @@ namespace ShareXPortable
             if (Directory.Exists(portableDir))
             {
                 Directory.Delete(portableDir, true);
-                Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
+                //Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
             }
 
             Directory.CreateDirectory(portableDir);
-            Console.WriteLine("Directory.Create: \"{0}\"", portableDir);
+            //Console.WriteLine("Directory.Create: \"{0}\"", portableDir);
 
             foreach (string filepath in files)
             {
@@ -70,11 +127,11 @@ namespace ShareXPortable
                 string dest = Path.Combine(portableDir, filename);
 
                 File.Copy(filepath, dest);
-                Console.WriteLine("File.Copy: \"{0}\" -> \"{1}\"", filepath, dest);
+                //Console.WriteLine("File.Copy: \"{0}\" -> \"{1}\"", filepath, dest);
             }
 
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
-            Console.WriteLine("Created PersonalPath.cfg file.");
+            //Console.WriteLine("Created PersonalPath.cfg file.");
 
             //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
             //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
@@ -83,21 +140,19 @@ namespace ShareXPortable
             if (File.Exists(zipPath))
             {
                 File.Delete(zipPath);
-                Console.WriteLine("File.Delete: \"{0}\"", zipPath);
+                //Console.WriteLine("File.Delete: \"{0}\"", zipPath);
             }
 
             Zip(portableDir + "\\*.*", zipPath);
-            Console.WriteLine("Zip: \"{0}\"", zipPath);
+            //Console.WriteLine("Zip: \"{0}\"", zipPath);
 
             if (Directory.Exists(portableDir))
             {
                 Directory.Delete(portableDir, true);
-                Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
+                //Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
             }
 
-            Process.Start("explorer.exe", outputDir);
-            Console.WriteLine("Done.");
-            //Console.Read();
+            Console.WriteLine("Portable created.");
         }
 
         private static void Zip(string source, string target)

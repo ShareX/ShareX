@@ -530,10 +530,6 @@
     <None Include="Resources\pencil.png" />
     <None Include="Resources\folder-tree.png" />
     <None Include="Resources\color.png" />
-    <None Include="..\VersionHistory.txt">
-      <Link>VersionHistory.txt</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\image-saturation.png" />
     <None Include="Resources\pipette.png" />
   </ItemGroup>

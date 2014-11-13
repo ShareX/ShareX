@@ -26,7 +26,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B1CCDF
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareXPortable", "ShareXPortable\ShareXPortable.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX_Setup", "ShareX_Setup\ShareX_Setup.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
