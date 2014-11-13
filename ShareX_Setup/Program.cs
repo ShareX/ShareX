@@ -24,13 +24,14 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ShareXPortable
+namespace ShareX
 {
     internal class Program
     {
@@ -40,7 +41,7 @@ namespace ShareXPortable
             Beta // Debug build setup, uploads it using Debug/ShareX.exe
         }
 
-        private const SetupType Setup = SetupType.Beta;
+        private const SetupType Setup = SetupType.Stable;
 
         private static string parentDir = @"..\..\..\";
         private static string binDir = Path.Combine(parentDir, @"ShareX\bin");
@@ -98,10 +99,17 @@ namespace ShareXPortable
         {
             Console.WriteLine("Creating portable...");
 
+            if (Directory.Exists(portableDir))
+            {
+                Directory.Delete(portableDir, true);
+            }
+
+            Directory.CreateDirectory(portableDir);
+
             List<string> files = new List<string>();
 
-            string[] endsWith = new string[] { ".exe", ".dll", ".css", ".txt" };
-            string[] ignoreEndsWith = new string[] { ".vshost.exe" };
+            string[] endsWith = new string[] { "ShareX.exe", "ShareX.exe.config", ".dll", ".css", ".txt" };
+            string[] ignoreEndsWith = new string[] { };
 
             foreach (string filepath in Directory.GetFiles(releaseDir))
             {
@@ -112,26 +120,11 @@ namespace ShareXPortable
                 }
             }
 
-            if (Directory.Exists(portableDir))
-            {
-                Directory.Delete(portableDir, true);
-                //Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
-            }
+            CopyFiles(files, portableDir);
 
-            Directory.CreateDirectory(portableDir);
-            //Console.WriteLine("Directory.Create: \"{0}\"", portableDir);
-
-            foreach (string filepath in files)
-            {
-                string filename = Path.GetFileName(filepath);
-                string dest = Path.Combine(portableDir, filename);
-
-                File.Copy(filepath, dest);
-                //Console.WriteLine("File.Copy: \"{0}\" -> \"{1}\"", filepath, dest);
-            }
+            CopyFiles(Path.Combine(releaseDir, @"tr\*.resources.dll"), Path.Combine(portableDir, @"Languages\tr"));
 
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
-            //Console.WriteLine("Created PersonalPath.cfg file.");
 
             //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
             //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
@@ -140,26 +133,42 @@ namespace ShareXPortable
             if (File.Exists(zipPath))
             {
                 File.Delete(zipPath);
-                //Console.WriteLine("File.Delete: \"{0}\"", zipPath);
             }
 
             Zip(portableDir + "\\*.*", zipPath);
-            //Console.WriteLine("Zip: \"{0}\"", zipPath);
 
             if (Directory.Exists(portableDir))
             {
                 Directory.Delete(portableDir, true);
-                //Console.WriteLine("Directory.Delete: \"{0}\"", portableDir);
             }
 
             Console.WriteLine("Portable created.");
+        }
+
+        private static void CopyFiles(IEnumerable files, string toFolder)
+        {
+            foreach (string filepath in files)
+            {
+                string filename = Path.GetFileName(filepath);
+                string dest = Path.Combine(toFolder, filename);
+
+                File.Copy(filepath, dest);
+            }
+        }
+
+        private static void CopyFiles(string path, string toFolder)
+        {
+            string directory = Path.GetDirectoryName(path);
+            string filename = Path.GetFileName(path);
+            if (!Directory.Exists(toFolder)) Directory.CreateDirectory(toFolder);
+            CopyFiles(Directory.GetFiles(directory, filename), toFolder);
         }
 
         private static void Zip(string source, string target)
         {
             ProcessStartInfo p = new ProcessStartInfo();
             p.FileName = "7za.exe";
-            p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -mx=9", target, source);
+            p.Arguments = string.Format("a -tzip \"{0}\" \"{1}\" -r -mx=9", target, source);
             p.WindowStyle = ProcessWindowStyle.Hidden;
             Process process = Process.Start(p);
             process.WaitForExit();
