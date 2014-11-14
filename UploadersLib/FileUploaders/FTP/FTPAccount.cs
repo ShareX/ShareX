@@ -231,7 +231,7 @@ namespace UploadersLib
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            return httpHomeUri.Uri.ToString();
+            return Uri.EscapeUriString(httpHomeUri.Uri.ToString());
         }
 
         public string GetFtpPath(string filemame)
