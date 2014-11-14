@@ -477,11 +477,11 @@ namespace Greenshot.Drawing
             }
         }
 
-        /*public override bool ClickableAt(int x, int y)
+        public override bool ClickableAt(int x, int y)
         {
             Rectangle r = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
             r.Inflate(5, 5);
             return r.Contains(x, y);
-        }*/
+        }
     }
 }

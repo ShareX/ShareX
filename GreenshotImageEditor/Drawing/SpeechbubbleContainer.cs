@@ -243,7 +243,7 @@ namespace Greenshot.Drawing
             DrawText(graphics, rect, lineThickness, lineColor, false, StringFormat, Text, Font);
         }
 
-        /*public override bool Contains(int x, int y)
+        public override bool Contains(int x, int y)
         {
             double xDistanceFromCenter = x - (Left + Width / 2);
             double yDistanceFromCenter = y - (Top + Height / 2);
@@ -283,6 +283,6 @@ namespace Greenshot.Drawing
             {
                 return false;
             }
-        }*/
+        }
     }
 }

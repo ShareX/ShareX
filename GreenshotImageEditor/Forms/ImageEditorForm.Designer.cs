@@ -118,6 +118,8 @@ namespace Greenshot {
             this.downOneLevelToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
             this.downToBottomToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
             this.autoCropToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.obfuscateModeButton = new Greenshot.Controls.BindableToolStripDropDownButton();
             this.pixelizeToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
@@ -165,8 +167,6 @@ namespace Greenshot {
             this.btnCancel = new Greenshot.Controls.BindableToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new GreenshotPlugin.Controls.GreenshotToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.LeftToolStripPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -354,7 +354,7 @@ namespace Greenshot {
             this.btnSpeechBubble.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSpeechBubble.Name = "btnSpeechBubble";
             this.btnSpeechBubble.Size = new System.Drawing.Size(22, 20);
-            this.btnSpeechBubble.Text = "Add speech bubble";
+            this.btnSpeechBubble.Text = "Add speech bubble (S)";
             this.btnSpeechBubble.Click += new System.EventHandler(this.btnSpeechBubble_Click);
             // 
             // btnStepLabel
@@ -364,7 +364,7 @@ namespace Greenshot {
             this.btnStepLabel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStepLabel.Name = "btnStepLabel";
             this.btnStepLabel.Size = new System.Drawing.Size(22, 20);
-            this.btnStepLabel.Text = "Add step label";
+            this.btnStepLabel.Text = "Add step label (I)";
             this.btnStepLabel.Click += new System.EventHandler(this.btnStepLabel_Click);
             // 
             // toolStripSeparator14
@@ -970,6 +970,18 @@ namespace Greenshot {
             this.autoCropToolStripMenuItem.Text = "Auto crop";
             this.autoCropToolStripMenuItem.Click += new System.EventHandler(this.AutoCropToolStripMenuItemClick);
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(276, 6);
+            // 
+            // tsmiAbout
+            // 
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(279, 22);
+            this.tsmiAbout.Text = "About...";
+            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
+            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
@@ -1564,18 +1576,6 @@ namespace Greenshot {
             this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(307, 22);
             this.closeToolStripMenuItem.Text = "Close";
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(276, 6);
-            // 
-            // tsmiAbout
-            // 
-            this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(279, 22);
-            this.tsmiAbout.Text = "About...";
-            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
             // ImageEditorForm
             // 

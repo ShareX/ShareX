@@ -117,11 +117,12 @@ namespace ImageEffectsLib
         {
             ToolStripMenuItem tsmiParent = new ToolStripMenuItem(groupName);
             ((ToolStripDropDownMenu)tsmiParent.DropDown).ShowImageMargin = false;
+
             cmsEffects.Items.Add(tsmiParent);
 
             foreach (Type imageEffect in imageEffects)
             {
-                ToolStripItem tsmiChild = tsmiParent.DropDownItems.Add(imageEffect.GetDescription());
+                ToolStripItem tsmiChild = tsmiParent.DropDownItems.Add(imageEffect.GetDescription().Replace("&", "&&"));
                 tsmiChild.Tag = imageEffect;
                 tsmiChild.Click += tsmiEffectClick;
             }
