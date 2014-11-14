@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 40</value>
+    <value>184, 40</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 432</value>
+    <value>336, 432</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
@@ -172,13 +172,13 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>228</value>
+    <value>164</value>
   </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
   <data name="lvEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 432</value>
+    <value>168, 432</value>
   </data>
   <data name="lvEffects.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -187,7 +187,7 @@
     <value>lvEffects</value>
   </data>
   <data name="&gt;&gt;lvEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvEffects.Parent" xml:space="preserve">
     <value>$this</value>
@@ -223,7 +223,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>912, 479</value>
+    <value>776, 479</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
@@ -250,7 +250,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1008, 479</value>
+    <value>872, 480</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
@@ -493,10 +493,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 40</value>
+    <value>528, 40</value>
   </data>
   <data name="pbResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 432</value>
+    <value>432, 432</value>
   </data>
   <data name="pbResult.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -517,7 +517,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="cmsEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 26</value>
+    <value>36, 4</value>
   </data>
   <data name="&gt;&gt;cmsEffects.Name" xml:space="preserve">
     <value>cmsEffects</value>
@@ -532,7 +532,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1105, 511</value>
+    <value>969, 511</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectsForm));
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lvEffects = new System.Windows.Forms.ListView();
+            this.lvEffects = new HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -67,6 +67,7 @@
             // lvEffects
             // 
             resources.ApplyResources(this.lvEffects, "lvEffects");
+            this.lvEffects.AutoFillColumn = true;
             this.lvEffects.CheckBoxes = true;
             this.lvEffects.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chEffect});
@@ -211,7 +212,7 @@
 
         private System.Windows.Forms.PropertyGrid pgSettings;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ListView lvEffects;
+        private HelpersLib.MyListView lvEffects;
         private System.Windows.Forms.ColumnHeader chEffect;
         private System.Windows.Forms.Button btnRemove;
         private HelpersLib.MyPictureBox pbResult;
