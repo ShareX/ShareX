@@ -654,10 +654,10 @@ namespace Greenshot
                         BtnTextClick(sender, e);
                         break;
                     case Keys.S:
-                        BtnSpeechBubbleClick(sender, e);
+                        btnSpeechBubble_Click(sender, e);
                         break;
                     case Keys.I:
-                        BtnStepLabelClick(sender, e);
+                        btnStepLabel_Click(sender, e);
                         break;
                     case Keys.H:
                         BtnHighlightClick(sender, e);

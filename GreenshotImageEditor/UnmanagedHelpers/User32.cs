@@ -142,10 +142,10 @@ namespace GreenshotPlugin.UnmanagedHelpers
         public extern static uint GetWindowLongPtr(IntPtr hwnd, int nIndex);
 
         [DllImport("user32", SetLastError = true)]
-        public static extern int SetWindowLong(IntPtr hWnd, int index, uint styleFlags);
+        public static extern int SetWindowLong(IntPtr hWnd, int index, int styleFlags);
 
-        [DllImport("user32", SetLastError = true)]
-        public static extern int SetWindowLongPtr(IntPtr hWnd, int index, uint styleFlags);
+        [DllImport("user32", SetLastError = true, EntryPoint = "SetWindowLongPtr")]
+        public static extern IntPtr SetWindowLongPtr(IntPtr hWnd, int index, IntPtr styleFlags);
 
         [DllImport("user32", SetLastError = true)]
         public static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint dwFlags);
@@ -310,7 +310,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
         /// <param name="hwnd"></param>
         /// <param name="nIndex"></param>
         /// <param name="styleFlags"></param>
-        public static void SetWindowLongWrapper(IntPtr hwnd, int nIndex, uint styleFlags)
+        public static void SetWindowLongWrapper(IntPtr hwnd, int nIndex, IntPtr styleFlags)
         {
             if (IntPtr.Size == 8)
             {
@@ -318,7 +318,7 @@ namespace GreenshotPlugin.UnmanagedHelpers
             }
             else
             {
-                SetWindowLong(hwnd, nIndex, styleFlags);
+                SetWindowLong(hwnd, nIndex, styleFlags.ToInt32());
             }
         }
 
