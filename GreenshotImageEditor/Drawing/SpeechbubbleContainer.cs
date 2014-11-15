@@ -28,7 +28,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Runtime.Serialization;
-using System.Windows.Forms;
 
 namespace Greenshot.Drawing
 {

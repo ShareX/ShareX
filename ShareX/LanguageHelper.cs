@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using HelpersLib;
-using ShareX.Properties;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
