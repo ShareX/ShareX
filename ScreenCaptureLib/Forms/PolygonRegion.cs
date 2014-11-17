@@ -124,11 +124,14 @@ namespace ScreenCaptureLib
             {
                 regionFillPath.CloseFigure();
 
-                using (Region region = new Region(regionFillPath))
+                if (Config.UseDimming)
                 {
-                    g.Clip = region;
-                    g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
-                    g.ResetClip();
+                    using (Region region = new Region(regionFillPath))
+                    {
+                        g.Clip = region;
+                        g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
+                        g.ResetClip();
+                    }
                 }
 
                 g.DrawRectangleProper(borderPen, currentArea);

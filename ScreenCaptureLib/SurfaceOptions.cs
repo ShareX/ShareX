@@ -49,6 +49,9 @@ namespace ScreenCaptureLib
         [DefaultValue(true), Description("Show screen wide crosshair.")]
         public bool ShowCrosshair { get; set; }
 
+        [DefaultValue(true), Description("Cropping move will dim the screen during selection. Can be intensive at high resolutions.")]
+        public bool UseDimming { get; set; }
+
         [DefaultValue(false), Description("Show frames per second.")]
         public bool ShowFPS { get; set; }
 
