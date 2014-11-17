@@ -166,11 +166,14 @@ namespace ScreenCaptureLib
 
                 if (areas.Count > 0)
                 {
-                    using (Region region = new Region(regionDrawPath))
+                    if (Config.UseDimming)
                     {
-                        g.Clip = region;
-                        g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
-                        g.ResetClip();
+                        using (Region region = new Region(regionDrawPath))
+                        {
+                            g.Clip = region;
+                            g.FillRectangle(lightBackgroundBrush, ScreenRectangle0Based);
+                            g.ResetClip();
+                        }
                     }
 
                     g.DrawPath(borderPen, regionDrawPath);

@@ -113,14 +113,21 @@ namespace ScreenCaptureLib
                 SurfaceImage = Screenshot.CaptureFullscreen();
             }
 
-            using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))
+            if (Config.UseDimming)
             {
-                darkBackgroundBrush = new TextureBrush(darkSurfaceImage) { WrapMode = WrapMode.Clamp };
-            }
+                using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))
+                {
+                    darkBackgroundBrush = new TextureBrush(darkSurfaceImage) { WrapMode = WrapMode.Clamp };
+                }
 
-            using (Image lightSurfaceImage = ColorMatrixManager.Contrast(1.1f).Apply(SurfaceImage))
+                using (Image lightSurfaceImage = ColorMatrixManager.Contrast(1.1f).Apply(SurfaceImage))
+                {
+                    lightBackgroundBrush = new TextureBrush(lightSurfaceImage) { WrapMode = WrapMode.Clamp };
+                }
+            }
+            else
             {
-                lightBackgroundBrush = new TextureBrush(lightSurfaceImage) { WrapMode = WrapMode.Clamp };
+                darkBackgroundBrush = new TextureBrush(SurfaceImage);
             }
         }
 
