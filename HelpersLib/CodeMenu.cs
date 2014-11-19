@@ -90,5 +90,38 @@ namespace HelpersLib
 
             return cms;
         }
+
+        public static ContextMenuStrip Create<TEntry>(params TEntry[] ignoreList)
+            where TEntry : CodeMenuEntry
+        {
+            ContextMenuStrip cms = new ContextMenuStrip
+            {
+                Font = new Font("Lucida Console", 8),
+                AutoClose = true,
+                Opacity = 0.9,
+                ShowImageMargin = false
+            };
+
+            var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
+                Select(x => new
+                {
+                    Name = x.ToPrefixString(),
+                    Description = x.Description
+                });
+
+            foreach (var variable in variables)
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
+                cms.Items.Add(tsmi);
+            }
+
+            cms.Items.Add(new ToolStripSeparator());
+
+            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.CodeMenu_Create_Close);
+            tsmiClose.Click += (sender, e) => cms.Close();
+            cms.Items.Add(tsmiClose);
+
+            return cms;
+        }
     }
 }

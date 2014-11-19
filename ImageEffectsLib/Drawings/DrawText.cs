@@ -57,7 +57,7 @@ namespace ImageEffectsLib
         [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
-        [DefaultValue("getsharex.com")]
+        [DefaultValue("getsharex.com"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
