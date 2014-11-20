@@ -138,12 +138,6 @@
     <Compile Include="Forms\EmailForm.Designer.cs">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GoogleTranslateGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GoogleTranslateGUI.Designer.cs">
-      <DependentUpon>GoogleTranslateGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\JiraUpload.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +197,6 @@
     </Compile>
     <Compile Include="Forms\DropboxFilesForm.Designer.cs">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\GoogleTranslateGUIHelper.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="HelperClasses\CertFileNameEditor.cs" />
     <Compile Include="HelperClasses\CustomUploaderParse.cs" />
@@ -335,9 +326,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GoogleTranslateGUI.resx">
-      <DependentUpon>GoogleTranslateGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>

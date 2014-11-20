@@ -117,9 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnGradientColor2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnGradientColor2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 256</value>
+    <value>224, 257</value>
   </data>
   <data name="btnGradientColor2.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 24</value>
@@ -146,8 +150,11 @@
   <data name="&gt;&gt;btnGradientColor2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnGradientColor1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnGradientColor1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 256</value>
+    <value>120, 257</value>
   </data>
   <data name="btnGradientColor1.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 24</value>
@@ -179,6 +186,9 @@
   <data name="lblTip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTip.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 368</value>
   </data>
@@ -204,7 +214,7 @@
     <value>2</value>
   </data>
   <data name="cbGradient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 222</value>
+    <value>120, 223</value>
   </data>
   <data name="cbGradient.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 21</value>
@@ -226,6 +236,9 @@
   </data>
   <data name="rbGradient.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="rbGradient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbGradient.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
@@ -251,11 +264,14 @@
   <data name="&gt;&gt;rbGradient.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 8</value>
+    <value>211, 8</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>125, 23</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -277,6 +293,9 @@
   </data>
   <data name="lblShapeSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblShapeSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblShapeSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 334</value>
@@ -308,8 +327,11 @@
   <data name="lblShapeSizeValue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblShapeSizeValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblShapeSizeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 332</value>
+    <value>315, 332</value>
   </data>
   <data name="lblShapeSizeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 16</value>
@@ -335,11 +357,14 @@
   <data name="tbShapeSize.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tbShapeSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="tbShapeSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 328</value>
+    <value>120, 328</value>
   </data>
   <data name="tbShapeSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
+    <value>187, 24</value>
   </data>
   <data name="tbShapeSize.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -356,11 +381,14 @@
   <data name="&gt;&gt;tbShapeSize.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="btnColorDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnColorDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 88</value>
+    <value>211, 88</value>
   </data>
   <data name="btnColorDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>125, 23</value>
   </data>
   <data name="btnColorDialog.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -390,7 +418,7 @@
     <value>Vertical lines</value>
   </data>
   <data name="cbShapes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 294</value>
+    <value>120, 295</value>
   </data>
   <data name="cbShapes.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 21</value>
@@ -412,6 +440,9 @@
   </data>
   <data name="rbShapes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="rbShapes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbShapes.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 296</value>
@@ -439,6 +470,9 @@
   </data>
   <data name="lblBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblBlue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblBlue.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 190</value>
@@ -470,8 +504,11 @@
   <data name="lblBlueValue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblBlueValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblBlueValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 188</value>
+    <value>315, 188</value>
   </data>
   <data name="lblBlueValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 16</value>
@@ -497,11 +534,14 @@
   <data name="tbBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tbBlue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="tbBlue.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 184</value>
   </data>
   <data name="tbBlue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 24</value>
+    <value>275, 24</value>
   </data>
   <data name="tbBlue.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -520,6 +560,9 @@
   </data>
   <data name="lblGreen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblGreen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblGreen.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 158</value>
@@ -551,8 +594,11 @@
   <data name="lblGreenValue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblGreenValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGreenValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 156</value>
+    <value>315, 156</value>
   </data>
   <data name="lblGreenValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 16</value>
@@ -578,11 +624,14 @@
   <data name="tbGreen.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tbGreen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="tbGreen.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 152</value>
   </data>
   <data name="tbGreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 24</value>
+    <value>275, 24</value>
   </data>
   <data name="tbGreen.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -601,6 +650,9 @@
   </data>
   <data name="lblRed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblRed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblRed.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 126</value>
@@ -632,8 +684,11 @@
   <data name="lblRedValue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblRedValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblRedValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 124</value>
+    <value>315, 124</value>
   </data>
   <data name="lblRedValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 16</value>
@@ -659,11 +714,14 @@
   <data name="tbRed.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tbRed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="tbRed.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 120</value>
   </data>
   <data name="tbRed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 24</value>
+    <value>275, 24</value>
   </data>
   <data name="tbRed.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -682,6 +740,9 @@
   </data>
   <data name="rbRedGreenBlue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="rbRedGreenBlue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbRedGreenBlue.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 88</value>
@@ -713,8 +774,11 @@
   <data name="lblBlackWhiteValue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="lblBlackWhiteValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblBlackWhiteValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 52</value>
+    <value>315, 52</value>
   </data>
   <data name="lblBlackWhiteValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 16</value>
@@ -740,11 +804,14 @@
   <data name="tbBlackWhite.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tbBlackWhite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="tbBlackWhite.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 48</value>
   </data>
   <data name="tbBlackWhite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 24</value>
+    <value>299, 24</value>
   </data>
   <data name="tbBlackWhite.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -763,6 +830,9 @@
   </data>
   <data name="rbBlackWhite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="rbBlackWhite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbBlackWhite.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -792,7 +862,7 @@
     <value>100, 100</value>
   </data>
   <data name="pSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 396</value>
+    <value>353, 396</value>
   </data>
   <data name="pSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -818,7 +888,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 700</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
   </data>

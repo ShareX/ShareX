@@ -813,15 +813,6 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
   </data>
-  <data name="tsmiTestUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="tsmiTestUploaders.Text" xml:space="preserve">
-    <value>Test uploaders...</value>
-  </data>
-  <data name="tsmiTestUploaders.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -1975,12 +1966,6 @@
     <value>tsmiTestURLSharing</value>
   </data>
   <data name="&gt;&gt;tsmiTestURLSharing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTestUploaders.Name" xml:space="preserve">
-    <value>tsmiTestUploaders</value>
-  </data>
-  <data name="&gt;&gt;tsmiTestUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDonate.Name" xml:space="preserve">

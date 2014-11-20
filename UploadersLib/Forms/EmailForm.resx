@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblToEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>11, 16</value>
   </data>
   <data name="lblToEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -175,7 +175,7 @@
     <value>True</value>
   </data>
   <data name="lblSubject.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>11, 40</value>
   </data>
   <data name="lblSubject.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -226,7 +226,7 @@
     <value>True</value>
   </data>
   <data name="lblMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>11, 64</value>
   </data>
   <data name="lblMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>

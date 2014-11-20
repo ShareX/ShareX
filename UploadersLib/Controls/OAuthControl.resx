@@ -201,7 +201,7 @@
     <value>True</value>
   </data>
   <data name="lblVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>13, 56</value>
   </data>
   <data name="lblVerificationCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>292, 13</value>
@@ -276,7 +276,7 @@
     <value>True</value>
   </data>
   <data name="lblLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>13, 136</value>
   </data>
   <data name="lblLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
