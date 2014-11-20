@@ -38,6 +38,7 @@ namespace ScreenCaptureLib
         public static bool CaptureShadow = true;
         public static int ShadowOffset = 20;
         public static bool AutoHideTaskbar = false;
+        
 
         public static Image CaptureRectangle(Rectangle rect)
         {

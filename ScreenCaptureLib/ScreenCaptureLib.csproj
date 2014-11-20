@@ -50,10 +50,24 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptureActiveMonitor.cs" />
+    <Compile Include="CaptureActiveWindow.cs" />
+    <Compile Include="CaptureFullScreen.cs" />
+    <Compile Include="CaptureManagedRectangle.cs" />
+    <Compile Include="CaptureRectangle.cs" />
+    <Compile Include="CaptureWindow.cs" />
+    <Compile Include="TypeManagedRectangle.cs" />
+    <Compile Include="TypeActiveMonitor.cs" />
+    <Compile Include="TypeActiveWindow.cs" />
+    <Compile Include="TypeWindow.cs" />
+    <Compile Include="TypeFullScreen.cs" />
+    <Compile Include="TypeRectangle.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Forms\RectangleAnnotate.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="iCaptureType.cs" />
+    <Compile Include="iScreenShot.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="Screencast\AVIOptions.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
