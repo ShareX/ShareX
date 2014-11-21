@@ -1,11 +1,6 @@
 #define MyAppName "ShareX"
 #define MyAppFile "ShareX.exe"
-#ifdef Debug
-  #define MyAppBuildType "Debug"
-#else
-  #define MyAppBuildType "Release"
-#endif
-#define MyAppParentDir "..\ShareX\bin\" + MyAppBuildType
+#define MyAppParentDir "..\ShareX\bin\Release"
 #define MyAppPath MyAppParentDir + "\ShareX.exe"
 #dim Version[4]
 #expr ParseVersion(MyAppPath, Version[0], Version[1], Version[2], Version[3])
@@ -71,9 +66,6 @@ Source: "{#MyAppParentDir}\ShareX.exe.config"; DestDir: {app}; Flags: ignorevers
 Source: "{#MyAppParentDir}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppParentDir}\*.css"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppParentDir}\*.txt"; DestDir: {app}; Flags: ignoreversion
-#ifdef Debug
-  Source: "{#MyAppParentDir}\*.pdb"; DestDir: {app}; Flags: ignoreversion
-#endif
 
 ; Language resources
 Source: "{#MyAppParentDir}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion

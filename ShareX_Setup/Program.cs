@@ -37,8 +37,8 @@ namespace ShareX
     {
         private enum SetupType
         {
-            Stable, // Release build setup, creates portable zip file
-            Beta // Debug build setup, uploads it using Debug/ShareX.exe
+            Stable, // Build setup + create portable zip file
+            Beta // Build setup + upload it using "Debug/ShareX.exe"
         }
 
         private const SetupType Setup = SetupType.Beta;
@@ -59,12 +59,12 @@ namespace ShareX
             switch (Setup)
             {
                 case SetupType.Stable:
-                    CompileSetup("Release");
+                    CompileSetup();
                     CreatePortable();
                     OpenOutputDirectory();
                     break;
                 case SetupType.Beta:
-                    CompileSetup("Debug");
+                    CompileSetup();
                     UploadLatestFile();
                     break;
             }
@@ -88,10 +88,10 @@ namespace ShareX
             }
         }
 
-        private static void CompileSetup(string buildType)
+        private static void CompileSetup()
         {
-            Console.WriteLine("Compiling " + buildType + " setup...");
-            Process.Start(innoSetupPath, string.Format("\"{0}\" /d{1}", innoSetupScriptPath, buildType)).WaitForExit();
+            Console.WriteLine("Compiling setup...");
+            Process.Start(innoSetupPath, string.Format("\"{0}\"", innoSetupScriptPath)).WaitForExit();
             Console.WriteLine("Setup file created.");
         }
 

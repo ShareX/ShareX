@@ -182,6 +182,11 @@ namespace Greenshot.Drawing
                 {
                     ShowTextBox();
                 }
+                else if (Selected && Status == EditStatus.IDLE && _textBox.Visible)
+                {
+                    // Fix (workaround) for BUG-1698
+                    _parent.KeysLocked = true;
+                }
             }
             if (_textBox.Visible)
             {
