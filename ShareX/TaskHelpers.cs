@@ -312,12 +312,13 @@ namespace ShareX
             }
         }
 
-        public static bool SelectRegion(out Rectangle rect)
+        public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
         {
             using (RectangleRegion surface = new RectangleRegion())
             {
-                surface.AreaManager.WindowCaptureMode = true;
-                surface.AreaManager.IncludeControls = true;
+                surface.Config = taskSettings.CaptureSettings.SurfaceOptions;
+                surface.Config.QuickCrop = true;
+                surface.Config.ForceWindowCapture = true;
                 surface.Prepare();
                 surface.ShowDialog();
 

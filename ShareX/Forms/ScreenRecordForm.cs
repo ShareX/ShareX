@@ -138,7 +138,7 @@ namespace ShareX
             }
 
             Rectangle captureRectangle;
-            TaskHelpers.SelectRegion(out captureRectangle);
+            TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
             captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)

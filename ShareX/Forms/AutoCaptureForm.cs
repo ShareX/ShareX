@@ -122,11 +122,11 @@ namespace ShareX
             }
         }
 
-        private void SelectRegion()
+        private void SelectRegion(TaskSettings taskSettings)
         {
             Rectangle rect;
 
-            if (TaskHelpers.SelectRegion(out rect))
+            if (TaskHelpers.SelectRegion(out rect, taskSettings))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();
@@ -207,7 +207,8 @@ namespace ShareX
 
         private void btnRegion_Click(object sender, EventArgs e)
         {
-            SelectRegion();
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            SelectRegion(taskSettings);
         }
 
         private void nudDuration_ValueChanged(object sender, EventArgs e)
