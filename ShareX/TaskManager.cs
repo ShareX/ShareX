@@ -354,8 +354,15 @@ namespace ShareX
             }
             finally
             {
-                StartTasks();
-                UpdateProgressUI();
+                if (!IsBusy && Program.CLI.IsCommandExist("AutoClose"))
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    StartTasks();
+                    UpdateProgressUI();
+                }
             }
         }
 
