@@ -58,7 +58,7 @@ namespace ScreenCaptureLib
         [DefaultValue(false), Description("Result image will have border around the shape(s).")]
         public bool DrawBorder { get; set; }
 
-        [DefaultValue(false), Description("You can use window capture mode in all rectangle type shapes. Also includes window client area too.")]
+        [DefaultValue(false), Description("You can use window capture mode in all rectangle type shapes. Also includes window client area.")]
         public bool ForceWindowCapture { get; set; }
 
         [DefaultValue(false), Description("If window capture mode enabled this setting will also allow to capture window controls.")]
