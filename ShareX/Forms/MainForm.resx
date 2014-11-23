@@ -138,7 +138,7 @@
     <value>10, 0, 10, 0</value>
   </data>
   <data name="lblMainFormTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 360</value>
+    <value>320, 344</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblMainFormTip.TabIndex" type="System.Int32, mscorlib">

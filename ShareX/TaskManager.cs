@@ -114,9 +114,9 @@ namespace ShareX
             }
         }
 
-        private static void UpdateMainFormTip()
+        public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblMainFormTip.Visible = Tasks.Count == 0;
+            Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
         }
 
         private static ListViewItem FindListViewItem(UploadTask task)

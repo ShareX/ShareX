@@ -198,6 +198,8 @@ namespace ShareX
 
         private void UpdateMainFormTip()
         {
+            TaskManager.UpdateMainFormTip();
+
             StringBuilder sb = new StringBuilder("You can drag and drop files to this window.");
 
             if (Program.HotkeysConfig.Hotkeys.Count > 0)
@@ -208,7 +210,7 @@ namespace ShareX
 
                 foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys)
                 {
-                    sb.AppendFormat("{0} | {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings.Description);
+                    sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings.Description);
                 }
             }
 

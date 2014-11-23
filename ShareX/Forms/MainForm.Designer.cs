@@ -250,7 +250,7 @@
             // 
             resources.ApplyResources(this.lblMainFormTip, "lblMainFormTip");
             this.lblMainFormTip.BackColor = System.Drawing.Color.White;
-            this.lblMainFormTip.ForeColor = System.Drawing.Color.Silver;
+            this.lblMainFormTip.ForeColor = System.Drawing.Color.LightGray;
             this.lblMainFormTip.Name = "lblMainFormTip";
             this.lblMainFormTip.UseMnemonic = false;
             this.lblMainFormTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);

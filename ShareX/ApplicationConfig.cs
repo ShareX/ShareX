@@ -134,6 +134,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(HotkeyType.RectangleRegion), Description("You can set which action to happen when you middle click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
         public HotkeyType TrayMiddleClickAction { get; set; }
 
+        [Category("Application"), DefaultValue(true), Description("Shows tips in main window list field when task list is empty.")]
+        public bool ShowMainWindowTip { get; set; }
+
         [Category("Application / Config"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 
