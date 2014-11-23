@@ -208,7 +208,7 @@ namespace ShareX
                 sb.AppendLine();
                 sb.AppendLine("Currently configured hotkeys:");
 
-                foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys)
+                foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey))
                 {
                     sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings.Description);
                 }

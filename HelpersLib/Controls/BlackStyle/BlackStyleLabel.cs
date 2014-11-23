@@ -70,6 +70,22 @@ namespace HelpersLib
             }
         }
 
+        private Color textShadowColor;
+
+        [DefaultValue(typeof(Color), "Black")]
+        public Color TextShadowColor
+        {
+            get
+            {
+                return textShadowColor;
+            }
+            set
+            {
+                textShadowColor = value;
+                Refresh();
+            }
+        }
+
         private bool drawBorder;
 
         [DefaultValue(false)]
@@ -93,14 +109,10 @@ namespace HelpersLib
             DoubleBuffered = true;
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
-            Prepare();
-        }
-
-        private void Prepare()
-        {
             TextAlign = ContentAlignment.TopLeft;
             BackColor = Color.Transparent;
             ForeColor = Color.White;
+            TextShadowColor = Color.Black;
             Font = new Font("Arial", 12);
         }
 
@@ -155,7 +167,7 @@ namespace HelpersLib
                     break;
             }
 
-            TextRenderer.DrawText(g, Text, Font, new Rectangle(ClientRectangle.X, ClientRectangle.Y + 1, ClientRectangle.Width, ClientRectangle.Height + 1), Color.Black, tff);
+            TextRenderer.DrawText(g, Text, Font, new Rectangle(ClientRectangle.X, ClientRectangle.Y + 1, ClientRectangle.Width, ClientRectangle.Height + 1), TextShadowColor, tff);
             TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor, tff);
         }
 
