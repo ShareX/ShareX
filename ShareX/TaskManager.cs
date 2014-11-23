@@ -53,7 +53,7 @@ namespace ShareX
         public static void Start(UploadTask task)
         {
             Tasks.Add(task);
-            UpdateDragAndDropTip();
+            UpdateMainFormTip();
             task.StatusChanged += task_StatusChanged;
             task.UploadStarted += task_UploadStarted;
             task.UploadProgressChanged += task_UploadProgressChanged;
@@ -68,7 +68,7 @@ namespace ShareX
             {
                 task.Stop();
                 Tasks.Remove(task);
-                UpdateDragAndDropTip();
+                UpdateMainFormTip();
 
                 ListViewItem lvi = FindListViewItem(task);
 
@@ -114,9 +114,9 @@ namespace ShareX
             }
         }
 
-        private static void UpdateDragAndDropTip()
+        private static void UpdateMainFormTip()
         {
-            Program.MainForm.pBackground.Visible = Tasks.Count == 0;
+            Program.MainForm.lblMainFormTip.Visible = Tasks.Count == 0;
         }
 
         private static ListViewItem FindListViewItem(UploadTask task)

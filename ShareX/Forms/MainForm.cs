@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using UploadersLib;
@@ -160,8 +161,6 @@ namespace ShareX
             il.Images.Add(Resources.navigation_000_button);
             lvUploads.SmallImageList = il;
 
-            pbLogo.LoadImage(ColorMatrixManager.Alpha(0.5f).Apply(ShareXResources.Logo));
-
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
 
@@ -193,6 +192,27 @@ namespace ShareX
             tsddbWorkflows.DropDownItems.Add(tsmi);
 
             tsmiTrayWorkflows.Visible = tsmiTrayWorkflows.DropDownItems.Count > 0;
+
+            UpdateMainFormTip();
+        }
+
+        private void UpdateMainFormTip()
+        {
+            StringBuilder sb = new StringBuilder("You can drag and drop files to this window.");
+
+            if (Program.HotkeysConfig.Hotkeys.Count > 0)
+            {
+                sb.AppendLine();
+                sb.AppendLine();
+                sb.AppendLine("Currently configured hotkeys:");
+
+                foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys)
+                {
+                    sb.AppendFormat("{0} | {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings.Description);
+                }
+            }
+
+            lblMainFormTip.Text = sb.ToString().Trim();
         }
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)

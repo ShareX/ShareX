@@ -125,89 +125,35 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 0</value>
   </data>
-  <data name="pBackground.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lblMainFormTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="pbLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="lblMainFormTip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
-  <data name="pbLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pbLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 280</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Name" xml:space="preserve">
-    <value>pbLogo</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Type" xml:space="preserve">
-    <value>HelpersLib.MyPictureBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Parent" xml:space="preserve">
-    <value>pBackground</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblDragAndDropTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="lblDragAndDropTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 18pt</value>
-  </data>
-  <data name="lblDragAndDropTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 280</value>
-  </data>
-  <data name="lblDragAndDropTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 10, 0</value>
-  </data>
-  <data name="lblDragAndDropTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 64</value>
-  </data>
-  <data name="lblDragAndDropTip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblDragAndDropTip.Text" xml:space="preserve">
-    <value>You can drag and drop files to this window</value>
-  </data>
-  <data name="lblDragAndDropTip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;lblDragAndDropTip.Name" xml:space="preserve">
-    <value>lblDragAndDropTip</value>
-  </data>
-  <data name="&gt;&gt;lblDragAndDropTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDragAndDropTip.Parent" xml:space="preserve">
-    <value>pBackground</value>
-  </data>
-  <data name="&gt;&gt;lblDragAndDropTip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pBackground.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblMainFormTip.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
-  <data name="pBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 344</value>
+  <data name="lblMainFormTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 10, 0</value>
   </data>
-  <data name="pBackground.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="lblMainFormTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 360</value>
   </data>
-  <data name="&gt;&gt;pBackground.Name" xml:space="preserve">
-    <value>pBackground</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblMainFormTip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;pBackground.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblMainFormTip.Name" xml:space="preserve">
+    <value>lblMainFormTip</value>
   </data>
-  <data name="&gt;&gt;pBackground.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblMainFormTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMainFormTip.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
   </data>
-  <data name="&gt;&gt;pBackground.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblMainFormTip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1532,7 +1478,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1553,7 +1499,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;chFilename.Name" xml:space="preserve">
     <value>chFilename</value>
   </data>
@@ -2650,6 +2596,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HotkeyForm, ShareX, Version=9.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HotkeyForm, ShareX, Version=9.4.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

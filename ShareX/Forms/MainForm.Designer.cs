@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new HelpersLib.SplitContainerCustomSplitter();
-            this.pBackground = new System.Windows.Forms.Panel();
-            this.pbLogo = new HelpersLib.MyPictureBox();
-            this.lblDragAndDropTip = new System.Windows.Forms.Label();
+            this.lblMainFormTip = new System.Windows.Forms.Label();
             this.lblSplitter = new System.Windows.Forms.Label();
             this.lvUploads = new HelpersLib.MyListView();
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -226,7 +224,6 @@
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.pBackground.SuspendLayout();
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
@@ -240,7 +237,7 @@
             // 
             // scMain.Panel1
             // 
-            this.scMain.Panel1.Controls.Add(this.pBackground);
+            this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
             this.scMain.Panel1.Controls.Add(this.lblSplitter);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
             // 
@@ -249,29 +246,14 @@
             this.scMain.Panel2.Controls.Add(this.pbPreview);
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
-            // pBackground
+            // lblMainFormTip
             // 
-            resources.ApplyResources(this.pBackground, "pBackground");
-            this.pBackground.BackColor = System.Drawing.Color.White;
-            this.pBackground.Controls.Add(this.pbLogo);
-            this.pBackground.Controls.Add(this.lblDragAndDropTip);
-            this.pBackground.Name = "pBackground";
-            // 
-            // pbLogo
-            // 
-            resources.ApplyResources(this.pbLogo, "pbLogo");
-            this.pbLogo.BackColor = System.Drawing.Color.White;
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.TabStop = false;
-            this.pbLogo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
-            // 
-            // lblDragAndDropTip
-            // 
-            this.lblDragAndDropTip.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.lblDragAndDropTip, "lblDragAndDropTip");
-            this.lblDragAndDropTip.ForeColor = System.Drawing.Color.Silver;
-            this.lblDragAndDropTip.Name = "lblDragAndDropTip";
-            this.lblDragAndDropTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
+            resources.ApplyResources(this.lblMainFormTip, "lblMainFormTip");
+            this.lblMainFormTip.BackColor = System.Drawing.Color.White;
+            this.lblMainFormTip.ForeColor = System.Drawing.Color.Silver;
+            this.lblMainFormTip.Name = "lblMainFormTip";
+            this.lblMainFormTip.UseMnemonic = false;
+            this.lblMainFormTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
             // 
             // lblSplitter
             // 
@@ -1716,7 +1698,6 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.pBackground.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
@@ -1916,8 +1897,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenRecordingFFmpeg;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadFolder;
-        private HelpersLib.MyPictureBox pbLogo;
-        private System.Windows.Forms.Label lblDragAndDropTip;
-        internal System.Windows.Forms.Panel pBackground;
+        public System.Windows.Forms.Label lblMainFormTip;
     }
 }
