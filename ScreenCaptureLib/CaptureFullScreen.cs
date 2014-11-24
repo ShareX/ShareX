@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ScreenCaptureLib
 {
-    class CaptureFullScreen : iScreenShot  
+    public class CaptureFullScreen : iScreenShot  
     {
         iCaptureType captureType = new TypeFullScreen();
 
@@ -18,6 +18,10 @@ namespace ScreenCaptureLib
         public iCaptureType getCaptureType()
         {
             return captureType;
+        }
+
+        public CaptureFullScreen()
+        {
         }
 
         public override Image Screenshot()

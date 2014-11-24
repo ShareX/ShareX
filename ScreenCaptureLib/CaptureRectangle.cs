@@ -13,6 +13,10 @@ namespace ScreenCaptureLib
         Rectangle rect;
         IntPtr p = new IntPtr(0);
 
+        public CaptureRectangle()
+        {
+        }
+
         public void setRectangle(Rectangle rect)
         {
             this.rect = rect;

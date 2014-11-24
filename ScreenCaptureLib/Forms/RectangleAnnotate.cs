@@ -121,7 +121,7 @@ namespace ScreenCaptureLib
         {
             Options = options;
 
-            backgroundImage = Screenshot.CaptureFullscreen();
+            backgroundImage = new CaptureFullScreen().Screenshot();
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };

@@ -446,7 +446,8 @@ namespace ShareX
 
         private void btnShowImagePrintSettings_Click(object sender, EventArgs e)
         {
-            using (Image testImage = Screenshot.CaptureActiveMonitor())
+            CaptureActiveMonitor cam = new CaptureActiveMonitor();
+            using (Image testImage = cam.Screenshot())
             using (PrintForm printForm = new PrintForm(testImage, Program.Settings.PrintSettings, true))
             {
                 printForm.ShowDialog();

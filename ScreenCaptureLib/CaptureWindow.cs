@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ScreenCaptureLib
 {
-    class CaptureWindow : iScreenShot
+    public class CaptureWindow : iScreenShot
     {
         TypeWindow captureType = new TypeWindow();
         public void setCaptureType(TypeWindow c)
@@ -37,6 +37,12 @@ namespace ScreenCaptureLib
             return captureType.getAutoHideTaskbar();
         }
 
+        IntPtr ptr;
+        public void setPtr(IntPtr p)
+        {
+            ptr = p;
+        }
+
         public void setClientCaptureArea(bool x)
         {
             captureType.setCaptureClientArea(x);
@@ -49,7 +55,11 @@ namespace ScreenCaptureLib
 
         public override Image Screenshot()
         {
-            return captureType.Capture(rect, new IntPtr(0), false);
+            return captureType.Capture(rect, ptr, false);
+        }
+
+        public CaptureWindow()
+        {
         }
     }
 }

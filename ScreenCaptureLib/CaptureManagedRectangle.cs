@@ -10,6 +10,10 @@ namespace ScreenCaptureLib
     {
         iCaptureType captureType = new TypeManagedRectangle();
 
+        public CaptureManagedRectangle()
+        {
+        }
+
         Rectangle rect;
         public void setRectangle(Rectangle rect)
         {

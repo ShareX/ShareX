@@ -348,7 +348,7 @@ namespace ShareX
                 surfaceOptions = new SurfaceOptions();
             }
 
-            using (Image fullscreen = Screenshot.CaptureFullscreen())
+            using (Image fullscreen = new CaptureFullScreen().Screenshot())
             using (RectangleRegion surface = new RectangleRegion(fullscreen))
             {
                 surface.Config = surfaceOptions;
@@ -512,7 +512,7 @@ namespace ShareX
 
         public static void OpenRuler()
         {
-            using (Image fullscreen = Screenshot.CaptureFullscreen())
+            using (Image fullscreen = new CaptureFullScreen().Screenshot())
             using (RectangleRegion surface = new RectangleRegion(fullscreen))
             {
                 surface.RulerMode = true;

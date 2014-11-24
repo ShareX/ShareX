@@ -9,7 +9,7 @@ namespace ScreenCaptureLib
 {
     public class TypeActiveWindow : iCaptureType
     {
-        TypeWindow t;
+        TypeWindow t = new TypeWindow();
 
         public Image Capture(Rectangle r, IntPtr handle, bool captureCursor)
         {

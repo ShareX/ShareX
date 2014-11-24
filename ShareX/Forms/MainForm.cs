@@ -1521,18 +1521,20 @@ namespace ShareX
 
         public void CaptureScreenshot(CaptureType captureType, TaskSettings taskSettings = null, bool autoHideForm = true)
         {
+            CaptureFullScreen cfs = new CaptureFullScreen();
+            CaptureActiveMonitor cam = new CaptureActiveMonitor();
+
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             switch (captureType)
             {
                 case CaptureType.Screen:
-                    DoCapture(Screenshot.CaptureFullscreen, CaptureType.Screen, taskSettings, autoHideForm);
                     break;
                 case CaptureType.ActiveWindow:
                     CaptureActiveWindow(taskSettings, autoHideForm);
                     break;
                 case CaptureType.ActiveMonitor:
-                    DoCapture(Screenshot.CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
+                    DoCapture(cam, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
                     break;
                 case CaptureType.Rectangle:
                 case CaptureType.RectangleWindow:
@@ -1569,6 +1571,63 @@ namespace ShareX
             else
             {
                 DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
+            }
+        }
+
+        private void DoCapture(iScreenShot capture, CaptureType captureType, TaskSettings taskSettings = null, bool autoHideForm = true)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
+            {
+                TaskEx.Run(() =>
+                {
+                    int sleep = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+                    Thread.Sleep(sleep);
+                },
+                () =>
+                {
+                    DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
+                });
+            }
+            else
+            {
+                DoCaptureWork(capture, captureType, taskSettings, autoHideForm);
+            }
+        }
+
+        private void DoCaptureWork(iScreenShot capture, CaptureType captureType, TaskSettings taskSettings, bool autoHideForm = true)
+        {
+            if (autoHideForm)
+            {
+                Hide();
+                Thread.Sleep(250);
+            }
+
+            Image img = null;
+
+            try
+            {
+                Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
+                Screenshot.CaptureShadow = taskSettings.CaptureSettings.CaptureShadow;
+                Screenshot.ShadowOffset = taskSettings.CaptureSettings.CaptureShadowOffset;
+                Screenshot.CaptureClientArea = taskSettings.CaptureSettings.CaptureClientArea;
+                Screenshot.AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar;
+
+                img = capture.Screenshot();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+            finally
+            {
+                if (autoHideForm)
+                {
+                    this.ShowActivate();
+                }
+
+                AfterCapture(img, captureType, taskSettings);
             }
         }
 
@@ -1656,7 +1715,7 @@ namespace ShareX
                 }
                 else
                 {
-                    img = Screenshot.CaptureActiveWindow();
+                    img = new CaptureActiveWindow().Screenshot();
                 }
 
                 img.Tag = new ImageTag
@@ -1689,8 +1748,9 @@ namespace ShareX
                 {
                     return Screenshot.CaptureWindowTransparent(handle);
                 }
-
-                return Screenshot.CaptureWindow(handle);
+                CaptureWindow cw = new CaptureWindow();
+                cw.setPtr(handle);
+                return cw.Screenshot();
             }, CaptureType.Window, taskSettings, autoHideForm);
         }
 
@@ -1733,7 +1793,7 @@ namespace ShareX
             DoCapture(() =>
             {
                 Image img = null;
-                Image screenshot = Screenshot.CaptureFullscreen();
+                Image screenshot = new CaptureFullScreen().Screenshot();
 
                 try
                 {
@@ -1825,7 +1885,7 @@ namespace ShareX
                     {
                         DoCapture(() =>
                         {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            using (Image screenshot = new CaptureFullScreen().Screenshot())
                             {
                                 return ShapeCaptureHelpers.GetRegionImage(screenshot, Surface.LastRegionFillPath, Surface.LastRegionDrawPath, taskSettings.CaptureSettings.SurfaceOptions);
                             }
@@ -1841,7 +1901,7 @@ namespace ShareX
                     {
                         DoCapture(() =>
                         {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            using (Image screenshot = new CaptureFullScreen().Screenshot())
                             {
                                 return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
                             }
@@ -1857,7 +1917,7 @@ namespace ShareX
                     {
                         DoCapture(() =>
                         {
-                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            using (Image screenshot = new CaptureFullScreen().Screenshot())
                             {
                                 return ImageHelpers.CropImage(screenshot, RectangleAnnotate.LastSelectionRectangle0Based);
                             }
@@ -1956,7 +2016,9 @@ namespace ShareX
             Rectangle rectangle = (Rectangle)tsi.Tag;
             if (!rectangle.IsEmpty)
             {
-                DoCapture(() => Screenshot.CaptureRectangle(rectangle), CaptureType.Monitor);
+                CaptureRectangle cr = new CaptureRectangle();
+                cr.setRectangle(rectangle);
+                DoCapture(() => cr.Screenshot(), CaptureType.Monitor);
             }
         }
 
@@ -2054,7 +2116,9 @@ namespace ShareX
             Rectangle rectangle = (Rectangle)tsi.Tag;
             if (!rectangle.IsEmpty)
             {
-                DoCapture(() => Screenshot.CaptureRectangle(rectangle), CaptureType.Monitor, null, false);
+                CaptureRectangle cr = new CaptureRectangle();
+                cr.setRectangle(rectangle);
+                DoCapture(() => cr.Screenshot(), CaptureType.Monitor, null, false);
             }
         }
 

@@ -9,11 +9,11 @@ namespace ScreenCaptureLib
 {
     public class TypeWindow : iCaptureType
     {
-        public bool AutoHideTaskbar = false;
+        public bool AutoHideTaskbar = Screenshot.AutoHideTaskbar;
         public bool getAutoHideTaskbar() { return AutoHideTaskbar; }
         public void setAutoHideTaskbar(bool x) { AutoHideTaskbar = x; }
 
-        public bool CaptureClientArea = false;
+        public bool CaptureClientArea = Screenshot.CaptureClientArea;
         public bool getCaptureClientArea() { return CaptureClientArea; }
         public void setCaptureClientArea(bool x) { CaptureClientArea = x; }
 

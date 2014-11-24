@@ -110,7 +110,7 @@ namespace ScreenCaptureLib
         {
             if (SurfaceImage == null)
             {
-                SurfaceImage = Screenshot.CaptureFullscreen();
+                SurfaceImage = new CaptureFullScreen().Screenshot();
             }
 
             using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))

@@ -102,7 +102,10 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                Image img = Screenshot.CaptureRectangle(rect);
+                CaptureRectangle cr = new CaptureRectangle();
+                cr.setRectangle(rect);
+
+                Image img = cr.Screenshot();
 
                 if (img != null)
                 {

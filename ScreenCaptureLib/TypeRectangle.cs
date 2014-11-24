@@ -9,7 +9,7 @@ namespace ScreenCaptureLib
 {
     public class TypeRectangle : iCaptureType
     {
-        bool RemoveOutsideScreenArea = false;
+        bool RemoveOutsideScreenArea = Screenshot.RemoveOutsideScreenArea;
 
         public bool getRemoveOutsideScreenArea() { return RemoveOutsideScreenArea; }
         public void setRemoveOutsideScreenArea(bool x) { RemoveOutsideScreenArea = x; }
@@ -71,7 +71,8 @@ namespace ScreenCaptureLib
 
         internal static Image Capture(Rectangle bounds)
         {
-            throw new NotImplementedException();
+            TypeRectangle tr = new TypeRectangle();
+            return tr.Capture(bounds, new IntPtr(0), false);
         }
 
         public TypeRectangle()

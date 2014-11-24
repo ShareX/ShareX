@@ -81,7 +81,7 @@ namespace ScreenCaptureLib
 
         public RectangleLight()
         {
-            backgroundImage = Screenshot.CaptureFullscreen();
+            backgroundImage = new CaptureFullScreen().Screenshot();
             backgroundBrush = new TextureBrush(backgroundImage);
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);

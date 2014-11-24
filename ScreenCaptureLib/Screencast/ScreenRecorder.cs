@@ -165,7 +165,9 @@ namespace ScreenCaptureLib
                 {
                     Stopwatch timer = Stopwatch.StartNew();
 
-                    Image img = Screenshot.CaptureRectangle(CaptureRectangle);
+                    CaptureRectangle cr = new CaptureRectangle();
+                    cr.setRectangle(captureRectangle);
+                    Image img = cr.Screenshot();
                     //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
 
                     imgCache.AddImageAsync(img);

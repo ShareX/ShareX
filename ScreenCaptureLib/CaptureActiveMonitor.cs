@@ -6,9 +6,13 @@ using System.Text;
 
 namespace ScreenCaptureLib
 {
-    class CaptureActiveMonitor : iScreenShot
+    public class CaptureActiveMonitor : iScreenShot
     {
         iCaptureType captureType = new TypeActiveMonitor();
+
+        public CaptureActiveMonitor()
+        {
+        }
 
         public override Image Screenshot()
         {
