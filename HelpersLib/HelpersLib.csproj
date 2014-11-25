@@ -89,8 +89,11 @@
     <Compile Include="Colors\HSB.cs" />
     <Compile Include="Colors\MyColor.cs" />
     <Compile Include="Colors\RGBA.cs" />
+    <Compile Include="ColorToDecimal.cs" />
+    <Compile Include="ColorToHex.cs" />
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
+    <Compile Include="DecimalToColor.cs" />
     <Compile Include="DNS\AdapterInfo.cs" />
     <Compile Include="DNS\DNSChangerForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +122,9 @@
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="CodeMenuEntry.cs" />
+    <Compile Include="HexToColor.cs" />
+    <Compile Include="iColorFormatType.cs" />
+    <Compile Include="iColorHelpers.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
     <Compile Include="Native\LayeredForm.cs">
@@ -158,6 +164,10 @@
     </Compile>
     <Compile Include="TaskEx.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
+    <Compile Include="TypeColorToDecimal.cs" />
+    <Compile Include="TypeColorToHex.cs" />
+    <Compile Include="TypeDecimalToColor.cs" />
+    <Compile Include="TypeHexToColor.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
