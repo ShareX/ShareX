@@ -73,12 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionsCodeMenuEntry.cs" />
-    <Compile Include="ColorToDecimal.cs" />
-    <Compile Include="ColorToHex.cs" />
-    <Compile Include="DecimalToColor.cs" />
-    <Compile Include="HexToColor.cs" />
-    <Compile Include="TypeColorToDecimal.cs" />
-    <Compile Include="TypeColorToHex.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />
@@ -122,8 +116,6 @@
     <Compile Include="Forms\QRCodeForm.Designer.cs">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="iColorFormatType.cs" />
-    <Compile Include="iColorHelpers.cs" />
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="CodeMenuEntry.cs" />
@@ -166,8 +158,6 @@
     </Compile>
     <Compile Include="TaskEx.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
-    <Compile Include="TypeDecimalToColor.cs" />
-    <Compile Include="TypeHexToColor.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
