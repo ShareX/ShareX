@@ -38,11 +38,9 @@ namespace ScreenCaptureLib
         private bool isAreaCreated;
         private Rectangle currentArea;
 
-        public PolygonRegion(Image backgroundImage = null)
-            : base(backgroundImage)
+        public PolygonRegion()
         {
             nodes = new List<NodeObject>();
-
             MouseDown += PolygonRegionSurface_MouseDown;
         }
 

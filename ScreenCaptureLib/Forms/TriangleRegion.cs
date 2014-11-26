@@ -34,11 +34,9 @@ namespace ScreenCaptureLib
     {
         public TriangleAngle Angle { get; set; }
 
-        public TriangleRegion(Image backgroundImage = null)
-            : base(backgroundImage)
+        public TriangleRegion()
         {
             Angle = TriangleAngle.Top;
-
             KeyDown += TriangleRegion_KeyDown;
         }
 

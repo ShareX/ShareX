@@ -348,8 +348,7 @@ namespace ShareX
                 surfaceOptions = new SurfaceOptions();
             }
 
-            using (Image fullscreen = Screenshot.CaptureFullscreen())
-            using (RectangleRegion surface = new RectangleRegion(fullscreen))
+            using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.Config = surfaceOptions;
                 surface.OneClickMode = true;
@@ -360,7 +359,7 @@ namespace ShareX
                 {
                     PointInfo pointInfo = new PointInfo();
                     pointInfo.Position = CaptureHelpers.ClientToScreen(surface.OneClickPosition);
-                    pointInfo.Color = ((Bitmap)fullscreen).GetPixel(surface.OneClickPosition.X, surface.OneClickPosition.Y);
+                    pointInfo.Color = ((Bitmap)surface.SurfaceImage).GetPixel(surface.OneClickPosition.X, surface.OneClickPosition.Y);
                     return pointInfo;
                 }
             }
@@ -512,8 +511,7 @@ namespace ShareX
 
         public static void OpenRuler()
         {
-            using (Image fullscreen = Screenshot.CaptureFullscreen())
-            using (RectangleRegion surface = new RectangleRegion(fullscreen))
+            using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.RulerMode = true;
                 surface.Config.QuickCrop = false;

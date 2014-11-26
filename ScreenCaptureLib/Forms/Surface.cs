@@ -58,7 +58,7 @@ namespace ScreenCaptureLib
 
         public static GraphicsPath LastRegionFillPath, LastRegionDrawPath;
 
-        public Surface(Image backgroundImage = null)
+        public Surface()
         {
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
             ScreenRectangle0Based = CaptureHelpers.ScreenToClient(ScreenRectangle);
@@ -68,12 +68,6 @@ namespace ScreenCaptureLib
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {
                 Cursor = new Cursor(cursorStream);
-            }
-
-            if (backgroundImage != null)
-            {
-                SurfaceImage = backgroundImage;
-                Prepare();
             }
 
             DrawableObjects = new List<DrawableObject>();

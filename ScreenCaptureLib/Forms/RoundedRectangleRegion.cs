@@ -36,12 +36,10 @@ namespace ScreenCaptureLib
         public float Radius { get; set; }
         public int RadiusIncrement { get; set; }
 
-        public RoundedRectangleRegion(Image backgroundImage = null)
-            : base(backgroundImage)
+        public RoundedRectangleRegion()
         {
             Radius = 25;
             RadiusIncrement = 3;
-
             KeyDown += RoundedRectangleRegion_KeyDown;
         }
 

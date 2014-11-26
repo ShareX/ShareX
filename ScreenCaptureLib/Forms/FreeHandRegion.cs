@@ -38,12 +38,10 @@ namespace ScreenCaptureLib
         private bool isAreaCreated;
         private Rectangle currentArea;
 
-        public FreeHandRegion(Image backgroundImage = null)
-            : base(backgroundImage)
+        public FreeHandRegion()
         {
             points = new List<Point>(128);
             regionFillPath = new GraphicsPath();
-
             lastNode = new NodeObject() { Shape = NodeShape.Circle };
             DrawableObjects.Add(lastNode);
         }

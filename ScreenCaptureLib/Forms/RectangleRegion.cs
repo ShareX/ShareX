@@ -44,8 +44,7 @@ namespace ScreenCaptureLib
         // For screen ruler
         public bool RulerMode { get; set; }
 
-        public RectangleRegion(Image backgroundImage = null)
-            : base(backgroundImage)
+        public RectangleRegion()
         {
             AreaManager = new AreaManager(this);
             KeyDown += RectangleRegion_KeyDown;

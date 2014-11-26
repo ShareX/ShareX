@@ -31,11 +31,6 @@ namespace ScreenCaptureLib
 {
     public class DiamondRegion : RectangleRegion
     {
-        public DiamondRegion(Image backgroundImage = null)
-            : base(backgroundImage)
-        {
-        }
-
         protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect)
         {
             graphicsPath.AddDiamond(rect);
