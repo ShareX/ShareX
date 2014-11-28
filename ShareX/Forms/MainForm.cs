@@ -200,13 +200,13 @@ namespace ShareX
         {
             TaskManager.UpdateMainFormTip();
 
-            StringBuilder sb = new StringBuilder("You can drag and drop files to this window.");
+            StringBuilder sb = new StringBuilder(Resources.MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_);
 
             if (Program.HotkeysConfig.Hotkeys.Count > 0)
             {
                 sb.AppendLine();
                 sb.AppendLine();
-                sb.AppendLine("Currently configured hotkeys:");
+                sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
 
                 foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey))
                 {

@@ -390,4 +390,10 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Kaydı başlatmak için simge ikonuna tıklayın.</value>
   </data>
+  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
+    <value>Dosyaları bu pencereye sürükleyip bırakabilirsiniz.</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>Şu anda ayarlı olan kısayollar:</value>
+  </data>
 </root>

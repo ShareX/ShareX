@@ -649,4 +649,10 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Click tray icon to start recording.</value>
   </data>
+  <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
+    <value>You can drag and drop files to this window.</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>Currently configured hotkeys:</value>
+  </data>
 </root>
