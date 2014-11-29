@@ -46,6 +46,9 @@ namespace ImageEffectsLib
         {
             if (Width <= 0 && Height <= 0) return img;
 
+            //if the image's width is less than the Width configuration, don't resize
+            if (img.Width < Width) return img;
+
             int width = Width <= 0 ? (int)((float)Height / img.Height * img.Width) : Width;
             int height = Height <= 0 ? (int)((float)Width / img.Width * img.Height) : Height;
 
