@@ -187,18 +187,21 @@ namespace ImageEffectsLib
 
                         try
                         {
-                            if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                            if (UseGradient)
                             {
-                                backgroundBrush = new LinearGradientBrush(backgroundRect, Color.Transparent, Color.Transparent, Gradient.Type);
-                                ColorBlend colorBlend = new ColorBlend();
-                                IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
-                                colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-                                ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
-                            }
-                            else if (UseGradient)
-                            {
-                                backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
+                                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                                {
+                                    backgroundBrush = new LinearGradientBrush(backgroundRect, Color.Transparent, Color.Transparent, Gradient.Type);
+                                    ColorBlend colorBlend = new ColorBlend();
+                                    IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
+                                    colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                    colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+                                    ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                }
+                                else
+                                {
+                                    backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
+                                }
                             }
                             else
                             {
