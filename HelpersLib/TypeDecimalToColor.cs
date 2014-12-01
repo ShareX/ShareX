@@ -6,11 +6,10 @@ using System.Drawing;
 
 namespace HelpersLib
 {
-    class TypeDecimalToColor : iColorFormatType
+    class TypeDecimalToColor : iColorFormatType<Color>
     {
-        public Color ColorFormat(Color color, String hex, int dec)
+        public Color ColorFormat(Color color, String hex, int dec, ColorFormat format)
         {
-            ColorFormat format = HelpersLib.ColorFormat.RGB;
 
             switch (format)
             {

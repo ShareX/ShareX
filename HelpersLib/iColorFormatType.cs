@@ -6,8 +6,8 @@ using System.Text;
 
 namespace HelpersLib
 {
-    public interface iColorFormatType
+    public interface iColorFormatType<Generic>
     {
-        void ColorFormat(Color color, String hex, int dec);
+        Generic ColorFormat(Color color, String hex, int dec, ColorFormat colorFormat);
     }
 }

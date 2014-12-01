@@ -6,10 +6,11 @@ using System.Drawing;
 
 namespace HelpersLib
 {
-    class ColorToHex : iColorHelpers
+    public class ColorToHex : iColorHelpers<String>
     {
-        iColorFormatType ColorFormatType = new TypeColorToHex();
+        iColorFormatType<String> ColorFormatType = new TypeColorToHex();
         Color color;
+        ColorFormat colorFormat = HelpersLib.ColorFormat.RGB;
 
         public void setColor(Color color)
         {
@@ -21,9 +22,19 @@ namespace HelpersLib
             return color;
         }
 
-        public override void ColorHelpers()
+        public void setColorFormat(ColorFormat colorFormat)
         {
-            ColorFormatType.ColorFormat(color, "", 0);
+            this.colorFormat = colorFormat;
+        }
+
+        public ColorFormat getColorFormat()
+        {
+            return colorFormat;
+        }
+
+        public override String ColorHelpers()
+        {
+           return ColorFormatType.ColorFormat(color, "", 0, colorFormat);
         }
     }
 }

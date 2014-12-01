@@ -302,7 +302,10 @@ namespace HelpersLib
         {
             if (color.StartsWith("#"))
             {
-                return HexToColor(color);
+                HexToColor hc = new HexToColor();
+                hc.setHex(color);
+
+                return hc.ColorHelpers();
             }
 
             if (color.Contains(','))

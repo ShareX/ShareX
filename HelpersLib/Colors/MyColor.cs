@@ -89,6 +89,21 @@ namespace HelpersLib
 
         public override string ToString()
         {
+            ColorToHex chRGB = new ColorToHex(), chRGBA = new ColorToHex(), chARGB = new ColorToHex();
+            chRGB.setColor(this);
+            chRGBA.setColor(this);
+            chRGBA.setColorFormat(ColorFormat.RGBA);
+            chARGB.setColor(this);
+            chARGB.setColorFormat(ColorFormat.ARGB);
+
+            ColorToDecimal cdRGB = new ColorToDecimal(), cdRGBA = new ColorToDecimal(), cdARGB = new ColorToDecimal();
+            cdRGB.setColor(this);
+            cdRGBA.setColor(this);
+            cdRGBA.setColorFormat(ColorFormat.RGBA);
+            cdARGB.setColor(this);
+            cdARGB.setColorFormat(ColorFormat.ARGB);
+
+
             return String.Format(
 @"RGBA (Red, Green, Blue, Alpha) = {0}, {1}, {2}, {3}
 HSB (Hue, Saturation, Brightness) = {4:0.0}°, {5:0.0}%, {6:0.0}%
@@ -98,8 +113,8 @@ Decimal (RGB, RGBA, ARGB) = {14}, {15}, {16}",
                 RGBA.Red, RGBA.Green, RGBA.Blue, RGBA.Alpha,
                 HSB.Hue360, HSB.Saturation100, HSB.Brightness100,
                 CMYK.Cyan100, CMYK.Magenta100, CMYK.Yellow100, CMYK.Key100,
-                ColorHelpers.ColorToHex(this), ColorHelpers.ColorToHex(this, ColorFormat.RGBA), ColorHelpers.ColorToHex(this, ColorFormat.ARGB),
-                ColorHelpers.ColorToDecimal(this), ColorHelpers.ColorToDecimal(this, ColorFormat.RGBA), ColorHelpers.ColorToDecimal(this, ColorFormat.ARGB));
+                chRGB.ColorHelpers(), chRGBA.ColorHelpers(), chARGB.ColorHelpers(),
+                cdRGB.ColorHelpers(), cdRGBA.ColorHelpers(), cdARGB.ColorHelpers());
         }
 
         public override int GetHashCode()

@@ -6,10 +6,11 @@ using System.Drawing;
 
 namespace HelpersLib
 {
-    class DecimalToColor : iColorHelpers
+    class DecimalToColor : iColorHelpers<Color>
     {
-        iColorFormatType ColorFormatType = new TypeDecimalToColor();
+        iColorFormatType<Color> ColorFormatType = new TypeDecimalToColor();
         int dec;
+        ColorFormat colorFormat = HelpersLib.ColorFormat.RGB;
 
         public void setDecimal(int dec)
         {
@@ -21,9 +22,19 @@ namespace HelpersLib
             return dec;
         }
 
-        public override void ColorHelpers()
+        public void setColorFormat(ColorFormat colorFormat)
         {
-            ColorFormatType.ColorFormat(Color.Empty, "", dec);
+            this.colorFormat = colorFormat;
+        }
+
+        public ColorFormat getColorFormat()
+        {
+            return colorFormat;
+        }
+
+        public override Color ColorHelpers()
+        {
+            return ColorFormatType.ColorFormat(Color.Empty, "", dec, colorFormat);
         }
     }
 }

@@ -119,12 +119,18 @@ namespace HelpersLib
 
             if (type != ColorType.Hex)
             {
-                txtHex.Text = ColorHelpers.ColorToHex(color);
+                //txtHex.Text = ColorHelpers.ColorToHex(color);
+
+                ColorToHex ch = new ColorToHex();
+                ch.setColor(color);
+                txtHex.Text = ch.ColorHelpers();
             }
 
             if (type != ColorType.Decimal)
             {
-                txtDecimal.Text = ColorHelpers.ColorToDecimal(color).ToString();
+                ColorToDecimal cd = new ColorToDecimal();
+                cd.setColor(color);
+                txtDecimal.Text = cd.ColorHelpers().ToString();
             }
 
             controlChangingColor = false;
@@ -241,7 +247,10 @@ namespace HelpersLib
             {
                 if (!controlChangingColor)
                 {
-                    colorPicker.ChangeColor(ColorHelpers.HexToColor(txtHex.Text), ColorType.Hex);
+                    HexToColor hc = new HexToColor();
+                    hc.setHex(txtHex.Text);
+
+                    colorPicker.ChangeColor(hc.ColorHelpers(), ColorType.Hex);
                 }
             }
             catch
@@ -255,7 +264,10 @@ namespace HelpersLib
             {
                 if (!controlChangingColor)
                 {
-                    colorPicker.ChangeColor(ColorHelpers.DecimalToColor(Convert.ToInt32(txtDecimal.Text)), ColorType.Decimal);
+                    DecimalToColor dc = new DecimalToColor();
+                    dc.setDecimal(Convert.ToInt32(txtDecimal.Text));
+
+                    colorPicker.ChangeColor(dc.ColorHelpers(), ColorType.Decimal);
                 }
             }
             catch

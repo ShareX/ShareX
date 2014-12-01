@@ -136,12 +136,20 @@ namespace HelpersLib
 
         public string ToHex(ColorFormat format = ColorFormat.RGB)
         {
-            return ColorHelpers.ColorToHex(this, format);
+            ColorToHex ch = new ColorToHex();
+            ch.setColor(this);
+            ch.setColorFormat(format);
+            
+            return ch.ColorHelpers();
         }
 
         public int ToDecimal(ColorFormat format = ColorFormat.RGB)
         {
-            return ColorHelpers.ColorToDecimal(this, format);
+            ColorToDecimal cd = new ColorToDecimal();
+            cd.setColor(this);
+            cd.setColorFormat(format);
+            
+            return cd.ColorHelpers();
         }
 
         public HSB ToHSB()

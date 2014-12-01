@@ -5,10 +5,10 @@ using System.Text;
 
 namespace HelpersLib
 {
-    public abstract class iColorHelpers
+    public abstract class iColorHelpers<Generic>
     {
-        iColorFormatType colorformattype { get; set; }
+        //iColorFormatType<Generic> ColorFormatType { get; set; }
 
-        public abstract void ColorHelpers();
+        public abstract Generic ColorHelpers();
     }
 }

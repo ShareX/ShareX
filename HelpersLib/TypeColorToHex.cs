@@ -6,12 +6,10 @@ using System.Drawing;
 
 namespace HelpersLib
 {
-    public class TypeColorToHex : iColorFormatType
+    public class TypeColorToHex : iColorFormatType<string>
     {
-        public string ColorFormat(Color color, String hex, int dec)
+        public string ColorFormat(Color color, String hex, int dec, ColorFormat format)
         {
-            ColorFormat format = HelpersLib.ColorFormat.RGB;
-
             switch (format)
             {
                 default:
