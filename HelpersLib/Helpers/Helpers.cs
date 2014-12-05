@@ -825,5 +825,15 @@ namespace HelpersLib
                 }
             }
         }
+
+        public static string GetAbsolutePath(string path)
+        {
+            if (!Path.IsPathRooted(path)) // Is relative path?
+            {
+                path = Path.Combine(Application.StartupPath, path);
+            }
+
+            return Path.GetFullPath(path);
+        }
     }
 }

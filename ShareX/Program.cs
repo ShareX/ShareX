@@ -445,7 +445,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customPersonalPath))
             {
-                CustomPersonalPath = Path.GetFullPath(customPersonalPath);
+                CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
 
                 if (CustomPersonalPath.Equals(PortablePersonalPath, StringComparison.InvariantCultureIgnoreCase))
                 {
