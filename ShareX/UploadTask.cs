@@ -115,7 +115,16 @@ namespace ShareX
             else
             {
                 task.Info.Job = TaskJob.FileUpload;
-                task.Data = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+
+                try
+                {
+                    task.Data = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
             }
 
             return task;
