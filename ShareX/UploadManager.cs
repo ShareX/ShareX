@@ -48,7 +48,11 @@ namespace ShareX
                 if (File.Exists(filePath))
                 {
                     UploadTask task = UploadTask.CreateFileUploaderTask(filePath, taskSettings);
-                    if (task != null) TaskManager.Start(task);
+
+                    if (task != null)
+                    {
+                        TaskManager.Start(task);
+                    }
                 }
                 else if (Directory.Exists(filePath))
                 {
