@@ -86,7 +86,7 @@ namespace HelpersLib
             {
                 foreach (TabPage tabPage in tab.TabPages)
                 {
-                    if (parent != null && tabPage.Text == "{Parent}")
+                    if (parent != null && string.IsNullOrEmpty(tabPage.Text))
                     {
                         parent.Tag = tabPage;
                         continue;
