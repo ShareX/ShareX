@@ -55,10 +55,9 @@ namespace ShareX
 
             if (IsDefault)
             {
-                tcHotkeySettings.TabPages.Remove(tpTask);
+                tcTaskSettings.TabPages.Remove(tpTask);
                 chkUseDefaultGeneralSettings.Visible = chkUseDefaultImageSettings.Visible = chkUseDefaultCaptureSettings.Visible = chkUseDefaultActions.Visible =
                     chkUseDefaultUploadSettings.Visible = chkUseDefaultIndexerSettings.Visible = chkUseDefaultAdvancedSettings.Visible = false;
-                panelGeneral.BorderStyle = BorderStyle.None;
             }
             else
             {
@@ -260,7 +259,10 @@ namespace ShareX
             // Advanced
             pgTaskSettings.SelectedObject = TaskSettings.AdvancedSettings;
 
+            tttvMain.MainTabControl = tcTaskSettings;
+
             UpdateDefaultSettingVisibility();
+
             loaded = true;
         }
 
@@ -297,10 +299,10 @@ namespace ShareX
             if (!IsDefault)
             {
                 panelGeneral.Enabled = !TaskSettings.UseDefaultGeneralSettings;
-                tcImage.Enabled = !TaskSettings.UseDefaultImageSettings;
-                tcCapture.Enabled = !TaskSettings.UseDefaultCaptureSettings;
+                tcImage.Enabled = pImage.Enabled = !TaskSettings.UseDefaultImageSettings;
+                tcCapture.Enabled = pCapture.Enabled = !TaskSettings.UseDefaultCaptureSettings;
                 pActions.Enabled = !TaskSettings.UseDefaultActions;
-                tcUpload.Enabled = !TaskSettings.UseDefaultUploadSettings;
+                tcUpload.Enabled = pUpload.Enabled = !TaskSettings.UseDefaultUploadSettings;
                 pgIndexerConfig.Enabled = !TaskSettings.UseDefaultIndexerSettings;
                 pgTaskSettings.Enabled = !TaskSettings.UseDefaultAdvancedSettings;
             }

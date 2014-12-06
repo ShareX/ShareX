@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -59,6 +60,18 @@ namespace HelpersLib
             {
                 treeViewSize = value;
                 scMain.SplitterDistance = treeViewSize;
+            }
+        }
+
+        public Font TreeViewFont
+        {
+            get
+            {
+                return tvMain.Font;
+            }
+            set
+            {
+                tvMain.Font = value;
             }
         }
 
