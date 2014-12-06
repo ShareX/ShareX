@@ -210,9 +210,6 @@
   <data name="lblUseImageFormat2After.Text" xml:space="preserve">
     <value>"Resim biçim 2" için resim boyutu limiti:</value>
   </data>
-  <data name="tpQuality.Text" xml:space="preserve">
-    <value>Genel</value>
-  </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Yakalama sonrası resim efektleri ekranını göster</value>
   </data>
@@ -269,9 +266,6 @@
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Pencereyi şeffaflık ile yakala</value>
-  </data>
-  <data name="tpCaptureGeneral.Text" xml:space="preserve">
-    <value>Genel</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Bölge yakala</value>
@@ -383,9 +377,6 @@
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Ön izleme:</value>
-  </data>
-  <data name="tpUploadNamePattern.Text" xml:space="preserve">
-    <value>İsim deseni</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Pano URL içeriyorsa URL paylaşım servisi ile paylaş</value>

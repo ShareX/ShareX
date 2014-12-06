@@ -198,12 +198,6 @@
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Tampon boyutu:</value>
   </data>
-  <data name="gbBandwidth.Text" xml:space="preserve">
-    <value>Bant genişliği</value>
-  </data>
-  <data name="tpPerformance.Text" xml:space="preserve">
-    <value>Performans</value>
-  </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Düzenle...</value>
   </data>
