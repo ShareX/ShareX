@@ -161,6 +161,7 @@
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
+    <Compile Include="UITypeEditors\JsonFileNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />
     <Compile Include="UITypeEditors\MyColorEditor.cs" />
     <Compile Include="UITypeEditors\ImageFileNameEditor.cs" />
