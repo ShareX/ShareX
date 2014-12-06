@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -31,6 +32,7 @@ namespace HelpersLib
     {
         private TabControl mainTabControl;
 
+        [Browsable(false)]
         public TabControl MainTabControl
         {
             get
@@ -78,12 +80,18 @@ namespace HelpersLib
             TreeViewSize = 150;
         }
 
-        private void FillTreeView(TreeNodeCollection nodeCollection, TabControl tab)
+        private void FillTreeView(TreeNodeCollection nodeCollection, TabControl tab, TreeNode parent = null)
         {
             if (nodeCollection != null && tab != null)
             {
                 foreach (TabPage tabPage in tab.TabPages)
                 {
+                    if (parent != null && tabPage.Text == "{Parent}")
+                    {
+                        parent.Tag = tabPage;
+                        continue;
+                    }
+
                     TreeNode treeNode = new TreeNode(tabPage.Text);
                     if (!string.IsNullOrEmpty(tabPage.ImageKey))
                     {
@@ -96,7 +104,7 @@ namespace HelpersLib
                     {
                         if (control is TabControl)
                         {
-                            FillTreeView(treeNode.Nodes, control as TabControl);
+                            FillTreeView(treeNode.Nodes, control as TabControl, treeNode);
                             break;
                         }
                     }
@@ -115,9 +123,12 @@ namespace HelpersLib
 
             if (tabPage != null)
             {
+                tvMain.BeginUpdate();
                 tcMain.Visible = true;
                 tcMain.TabPages.Clear();
                 tcMain.TabPages.Add(tabPage);
+                tvMain.Focus();
+                tvMain.EndUpdate();
             }
         }
     }

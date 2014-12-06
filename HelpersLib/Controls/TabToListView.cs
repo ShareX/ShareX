@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace HelpersLib
@@ -32,6 +33,7 @@ namespace HelpersLib
     {
         private TabControl mainTabControl;
 
+        [Browsable(false)]
         public TabControl MainTabControl
         {
             get
