@@ -48,9 +48,7 @@ namespace UploadersLib
         Chevereto,
         [Description("Hızlı Resim")]
         HizliResim,
-        [Description("Custom image uploader")]
         CustomImageUploader, // Localized
-        [Description("File uploader")]
         FileUploader // Localized
     }
 
