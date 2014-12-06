@@ -122,6 +122,8 @@ namespace ShareX
 
             // Advanced
             pgSettings.SelectedObject = Program.Settings;
+
+            tttvMain.MainTabControl = tcSettings;
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)

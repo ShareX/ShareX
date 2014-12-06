@@ -72,7 +72,6 @@ namespace ShareX
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpPerformance = new System.Windows.Forms.TabPage();
-            this.gbBandwidth = new System.Windows.Forms.GroupBox();
             this.lblUploadLimit = new System.Windows.Forms.Label();
             this.nudUploadLimit = new System.Windows.Forms.NumericUpDown();
             this.lblUploadLimitHint = new System.Windows.Forms.Label();
@@ -106,6 +105,7 @@ namespace ShareX
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.tttvMain = new HelpersLib.TabToTreeView();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -114,7 +114,6 @@ namespace ShareX
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpPerformance.SuspendLayout();
-            this.gbBandwidth.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUploadLimit)).BeginInit();
             this.tpUploadResults.SuspendLayout();
             this.gbClipboardFormats.SuspendLayout();
@@ -130,13 +129,13 @@ namespace ShareX
             // 
             // tcSettings
             // 
+            resources.ApplyResources(this.tcSettings, "tcSettings");
             this.tcSettings.Controls.Add(this.tpGeneral);
             this.tcSettings.Controls.Add(this.tpPaths);
             this.tcSettings.Controls.Add(this.tpProxy);
             this.tcSettings.Controls.Add(this.tpUpload);
             this.tcSettings.Controls.Add(this.tpPrint);
             this.tcSettings.Controls.Add(this.tpAdvanced);
-            resources.ApplyResources(this.tcSettings, "tcSettings");
             this.tcSettings.Name = "tcSettings";
             this.tcSettings.SelectedIndex = 0;
             // 
@@ -435,21 +434,14 @@ namespace ShareX
             // 
             // tpPerformance
             // 
-            this.tpPerformance.Controls.Add(this.gbBandwidth);
+            this.tpPerformance.Controls.Add(this.lblUploadLimit);
+            this.tpPerformance.Controls.Add(this.nudUploadLimit);
+            this.tpPerformance.Controls.Add(this.lblUploadLimitHint);
+            this.tpPerformance.Controls.Add(this.cbBufferSize);
+            this.tpPerformance.Controls.Add(this.lblBufferSize);
             resources.ApplyResources(this.tpPerformance, "tpPerformance");
             this.tpPerformance.Name = "tpPerformance";
             this.tpPerformance.UseVisualStyleBackColor = true;
-            // 
-            // gbBandwidth
-            // 
-            this.gbBandwidth.Controls.Add(this.lblUploadLimit);
-            this.gbBandwidth.Controls.Add(this.nudUploadLimit);
-            this.gbBandwidth.Controls.Add(this.lblUploadLimitHint);
-            this.gbBandwidth.Controls.Add(this.lblBufferSize);
-            this.gbBandwidth.Controls.Add(this.cbBufferSize);
-            resources.ApplyResources(this.gbBandwidth, "gbBandwidth");
-            this.gbBandwidth.Name = "gbBandwidth";
-            this.gbBandwidth.TabStop = false;
             // 
             // lblUploadLimit
             // 
@@ -499,11 +491,11 @@ namespace ShareX
             // 
             // gbClipboardFormats
             // 
+            resources.ApplyResources(this.gbClipboardFormats, "gbClipboardFormats");
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatEdit);
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatRemove);
             this.gbClipboardFormats.Controls.Add(this.btnClipboardFormatAdd);
             this.gbClipboardFormats.Controls.Add(this.lvClipboardFormats);
-            resources.ApplyResources(this.gbClipboardFormats, "gbClipboardFormats");
             this.gbClipboardFormats.Name = "gbClipboardFormats";
             this.gbClipboardFormats.TabStop = false;
             // 
@@ -530,12 +522,12 @@ namespace ShareX
             // 
             // lvClipboardFormats
             // 
+            resources.ApplyResources(this.lvClipboardFormats, "lvClipboardFormats");
             this.lvClipboardFormats.AutoFillColumn = true;
             this.lvClipboardFormats.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chDescription,
             this.chFormat});
             this.lvClipboardFormats.FullRowSelect = true;
-            resources.ApplyResources(this.lvClipboardFormats, "lvClipboardFormats");
             this.lvClipboardFormats.Name = "lvClipboardFormats";
             this.lvClipboardFormats.UseCompatibleStateImageBehavior = false;
             this.lvClipboardFormats.View = System.Windows.Forms.View.Details;
@@ -704,12 +696,22 @@ namespace ShareX
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.ToolbarVisible = false;
             // 
+            // tttvMain
+            // 
+            resources.ApplyResources(this.tttvMain, "tttvMain");
+            this.tttvMain.ImageList = null;
+            this.tttvMain.MainTabControl = null;
+            this.tttvMain.Name = "tttvMain";
+            this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tttvMain.TreeViewSize = 150;
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tcSettings);
+            this.Controls.Add(this.tttvMain);
             this.Name = "ApplicationSettingsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
@@ -726,8 +728,7 @@ namespace ShareX
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpPerformance.ResumeLayout(false);
-            this.gbBandwidth.ResumeLayout(false);
-            this.gbBandwidth.PerformLayout();
+            this.tpPerformance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUploadLimit)).EndInit();
             this.tpUploadResults.ResumeLayout(false);
             this.gbClipboardFormats.ResumeLayout(false);
@@ -781,7 +782,6 @@ namespace ShareX
         private System.Windows.Forms.Label lblUploadLimitHint;
         private System.Windows.Forms.Label lblBufferSize;
         private System.Windows.Forms.NumericUpDown nudUploadLimit;
-        private System.Windows.Forms.GroupBox gbBandwidth;
         private System.Windows.Forms.GroupBox gbClipboardFormats;
         private System.Windows.Forms.Button btnClipboardFormatRemove;
         private System.Windows.Forms.Button btnClipboardFormatAdd;
@@ -825,5 +825,6 @@ namespace ShareX
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.LinkLabel llTranslators;
+        private TabToTreeView tttvMain;
     }
 }

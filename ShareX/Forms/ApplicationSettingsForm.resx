@@ -117,13 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tcSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 36</value>
+    <value>184, 28</value>
   </data>
   <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 13</value>
@@ -147,7 +151,7 @@
     <value>0</value>
   </data>
   <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+    <value>8, 24</value>
   </data>
   <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 21</value>
@@ -171,7 +175,7 @@
     <value>True</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>5, 8</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -198,7 +202,7 @@
     <value>True</value>
   </data>
   <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 232</value>
+    <value>8, 224</value>
   </data>
   <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
@@ -225,7 +229,7 @@
     <value>True</value>
   </data>
   <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>8, 80</value>
   </data>
   <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -252,7 +256,7 @@
     <value>True</value>
   </data>
   <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 256</value>
+    <value>8, 248</value>
   </data>
   <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 17</value>
@@ -279,7 +283,7 @@
     <value>True</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 208</value>
+    <value>8, 200</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 17</value>
@@ -306,7 +310,7 @@
     <value>True</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 184</value>
+    <value>8, 176</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
@@ -333,7 +337,7 @@
     <value>True</value>
   </data>
   <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>8, 152</value>
   </data>
   <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 17</value>
@@ -360,7 +364,7 @@
     <value>True</value>
   </data>
   <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>8, 104</value>
   </data>
   <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 17</value>
@@ -387,7 +391,7 @@
     <value>True</value>
   </data>
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>8, 56</value>
   </data>
   <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 17</value>
@@ -414,7 +418,7 @@
     <value>True</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>8, 128</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 17</value>
@@ -440,12 +444,11 @@
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tpGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 370</value>
+    <value>541, 370</value>
   </data>
   <data name="tpGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -469,7 +472,7 @@
     <value>True</value>
   </data>
   <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 96</value>
+    <value>5, 80</value>
   </data>
   <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 13</value>
@@ -493,7 +496,7 @@
     <value>0</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 220</value>
+    <value>8, 204</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -520,7 +523,7 @@
     <value>True</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 69</value>
+    <value>112, 53</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -530,7 +533,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -544,7 +547,7 @@
     <value>2</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 39</value>
+    <value>424, 23</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -571,7 +574,7 @@
     <value>True</value>
   </data>
   <data name="lblPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 24</value>
+    <value>5, 8</value>
   </data>
   <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 13</value>
@@ -595,7 +598,7 @@
     <value>4</value>
   </data>
   <data name="txtPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>8, 24</value>
   </data>
   <data name="txtPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -616,7 +619,7 @@
     <value>5</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 147</value>
+    <value>424, 131</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -640,7 +643,7 @@
     <value>6</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>8, 48</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -664,7 +667,7 @@
     <value>7</value>
   </data>
   <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 148</value>
+    <value>8, 132</value>
   </data>
   <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -688,7 +691,7 @@
     <value>True</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 124</value>
+    <value>8, 108</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 17</value>
@@ -715,7 +718,7 @@
     <value>True</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 180</value>
+    <value>5, 164</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -742,7 +745,7 @@
     <value>True</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 225</value>
+    <value>112, 209</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -752,7 +755,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -766,7 +769,7 @@
     <value>11</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 196</value>
+    <value>8, 180</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -793,7 +796,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 370</value>
+    <value>541, 370</value>
   </data>
   <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -814,7 +817,7 @@
     <value>1</value>
   </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+    <value>8, 24</value>
   </data>
   <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 21</value>
@@ -838,7 +841,7 @@
     <value>True</value>
   </data>
   <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>5, 8</value>
   </data>
   <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -865,7 +868,7 @@
     <value>True</value>
   </data>
   <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
+    <value>5, 56</value>
   </data>
   <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -889,7 +892,7 @@
     <value>2</value>
   </data>
   <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>8, 72</value>
   </data>
   <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -910,7 +913,7 @@
     <value>3</value>
   </data>
   <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 80</value>
+    <value>248, 72</value>
   </data>
   <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -937,7 +940,7 @@
     <value>True</value>
   </data>
   <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 64</value>
+    <value>245, 56</value>
   </data>
   <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -964,7 +967,7 @@
     <value>True</value>
   </data>
   <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 160</value>
+    <value>5, 152</value>
   </data>
   <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
@@ -988,7 +991,7 @@
     <value>6</value>
   </data>
   <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 176</value>
+    <value>8, 168</value>
   </data>
   <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -1012,7 +1015,7 @@
     <value>True</value>
   </data>
   <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 112</value>
+    <value>5, 104</value>
   </data>
   <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -1036,7 +1039,7 @@
     <value>8</value>
   </data>
   <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
+    <value>8, 120</value>
   </data>
   <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 20</value>
@@ -1063,7 +1066,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 370</value>
+    <value>541, 370</value>
   </data>
   <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1087,7 +1090,7 @@
     <value>True</value>
   </data>
   <data name="lblUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 24</value>
+    <value>5, 8</value>
   </data>
   <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 13</value>
@@ -1105,13 +1108,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUploadLimit.Parent" xml:space="preserve">
-    <value>gbBandwidth</value>
+    <value>tpPerformance</value>
   </data>
   <data name="&gt;&gt;lblUploadLimit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="nudUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>8, 24</value>
   </data>
   <data name="nudUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -1129,7 +1132,7 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudUploadLimit.Parent" xml:space="preserve">
-    <value>gbBandwidth</value>
+    <value>tpPerformance</value>
   </data>
   <data name="&gt;&gt;nudUploadLimit.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1138,7 +1141,7 @@
     <value>True</value>
   </data>
   <data name="lblUploadLimitHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 44</value>
+    <value>72, 28</value>
   </data>
   <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 13</value>
@@ -1156,16 +1159,37 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUploadLimitHint.Parent" xml:space="preserve">
-    <value>gbBandwidth</value>
+    <value>tpPerformance</value>
   </data>
   <data name="&gt;&gt;lblUploadLimitHint.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 72</value>
+  </data>
+  <data name="cbBufferSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="cbBufferSize.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.Name" xml:space="preserve">
+    <value>cbBufferSize</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.Parent" xml:space="preserve">
+    <value>tpPerformance</value>
+  </data>
+  <data name="&gt;&gt;cbBufferSize.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblBufferSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
+    <value>5, 56</value>
   </data>
   <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -1183,55 +1207,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblBufferSize.Parent" xml:space="preserve">
-    <value>gbBandwidth</value>
-  </data>
-  <data name="&gt;&gt;lblBufferSize.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="cbBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 21</value>
-  </data>
-  <data name="cbBufferSize.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.Name" xml:space="preserve">
-    <value>cbBufferSize</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.Parent" xml:space="preserve">
-    <value>gbBandwidth</value>
-  </data>
-  <data name="&gt;&gt;cbBufferSize.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbBandwidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbBandwidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 120</value>
-  </data>
-  <data name="gbBandwidth.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbBandwidth.Text" xml:space="preserve">
-    <value>Bandwidth</value>
-  </data>
-  <data name="&gt;&gt;gbBandwidth.Name" xml:space="preserve">
-    <value>gbBandwidth</value>
-  </data>
-  <data name="&gt;&gt;gbBandwidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbBandwidth.Parent" xml:space="preserve">
     <value>tpPerformance</value>
   </data>
-  <data name="&gt;&gt;gbBandwidth.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lblBufferSize.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tpPerformance.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1240,13 +1219,10 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPerformance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 338</value>
+    <value>527, 338</value>
   </data>
   <data name="tpPerformance.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="tpPerformance.Text" xml:space="preserve">
-    <value>Performance</value>
   </data>
   <data name="&gt;&gt;tpPerformance.Name" xml:space="preserve">
     <value>tpPerformance</value>
@@ -1259,6 +1235,9 @@
   </data>
   <data name="&gt;&gt;tpPerformance.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="gbClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="btnClipboardFormatEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 16</value>
@@ -1332,6 +1311,9 @@
   <data name="&gt;&gt;btnClipboardFormatAdd.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lvClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Description</value>
   </data>
@@ -1348,7 +1330,7 @@
     <value>8, 48</value>
   </data>
   <data name="lvClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 264</value>
+    <value>496, 264</value>
   </data>
   <data name="lvClipboardFormats.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1369,7 +1351,7 @@
     <value>8, 8</value>
   </data>
   <data name="gbClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 320</value>
+    <value>512, 320</value>
   </data>
   <data name="gbClipboardFormats.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1396,7 +1378,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 338</value>
+    <value>527, 338</value>
   </data>
   <data name="tpUploadResults.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1456,7 +1438,7 @@
     <value>3, 18</value>
   </data>
   <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 234</value>
+    <value>156, 242</value>
   </data>
   <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1483,7 +1465,7 @@
     <value>3, 5, 3, 3</value>
   </data>
   <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 255</value>
+    <value>162, 263</value>
   </data>
   <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1510,7 +1492,7 @@
     <value>3, 18</value>
   </data>
   <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 234</value>
+    <value>158, 242</value>
   </data>
   <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1531,13 +1513,13 @@
     <value>Fill</value>
   </data>
   <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 8</value>
+    <value>349, 8</value>
   </data>
   <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 3</value>
   </data>
   <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 255</value>
+    <value>164, 263</value>
   </data>
   <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1564,7 +1546,7 @@
     <value>3, 18</value>
   </data>
   <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 234</value>
+    <value>161, 242</value>
   </data>
   <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1585,13 +1567,13 @@
     <value>Fill</value>
   </data>
   <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 8</value>
+    <value>176, 8</value>
   </data>
   <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 3</value>
   </data>
   <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 255</value>
+    <value>167, 263</value>
   </data>
   <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1612,7 +1594,7 @@
     <value>2</value>
   </data>
   <data name="tlpBackupDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 64</value>
+    <value>3, 56</value>
   </data>
   <data name="tlpBackupDestinations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -1621,7 +1603,7 @@
     <value>1</value>
   </data>
   <data name="tlpBackupDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>590, 271</value>
+    <value>521, 279</value>
   </data>
   <data name="tlpBackupDestinations.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1699,7 +1681,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadRetry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>596, 338</value>
+    <value>527, 338</value>
   </data>
   <data name="tpUploadRetry.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1726,7 +1708,7 @@
     <value>3, 3</value>
   </data>
   <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 364</value>
+    <value>535, 364</value>
   </data>
   <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1750,7 +1732,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 370</value>
+    <value>541, 370</value>
   </data>
   <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1774,7 +1756,7 @@
     <value>True</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>8, 64</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
@@ -1801,7 +1783,7 @@
     <value>True</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>8, 40</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
@@ -1825,7 +1807,7 @@
     <value>1</value>
   </data>
   <data name="btnShowImagePrintSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>8, 8</value>
   </data>
   <data name="btnShowImagePrintSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 23</value>
@@ -1855,7 +1837,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 370</value>
+    <value>541, 370</value>
   </data>
   <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1882,7 +1864,7 @@
     <value>3, 3</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>604, 364</value>
+    <value>535, 364</value>
   </data>
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1906,7 +1888,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 370</value>
+    <value>541, 370</value>
   </data>
   <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1926,17 +1908,17 @@
   <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="tcSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>152, 3</value>
   </data>
   <data name="tcSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>618, 396</value>
+    <value>549, 396</value>
   </data>
   <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="tcSettings.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;tcSettings.Name" xml:space="preserve">
     <value>tcSettings</value>
@@ -1950,6 +1932,33 @@
   <data name="&gt;&gt;tcSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="tttvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tttvMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tttvMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tttvMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>698, 396</value>
+  </data>
+  <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tttvMain.Name" xml:space="preserve">
+    <value>tttvMain</value>
+  </data>
+  <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
+    <value>HelpersLib.TabToTreeView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tttvMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1957,7 +1966,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 402</value>
+    <value>704, 402</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>
