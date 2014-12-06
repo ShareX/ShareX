@@ -71,9 +71,7 @@ namespace UploadersLib
         Upaste,
         [Description("Hastebin")]
         Hastebin,
-        [Description("Custom text uploader")]
         CustomTextUploader, // Localized
-        [Description("File uploader")]
         FileUploader // Localized
     }
 
@@ -120,11 +118,8 @@ namespace UploadersLib
         Localhostr,
         [Description("JIRA")]
         Jira,
-        [Description("Shared folder")]
         SharedFolder, // Localized
-        [Description("Email")]
         Email, // Localized
-        [Description("Custom file uploader")]
         CustomFileUploader // Localized
     }
 
@@ -147,14 +142,12 @@ namespace UploadersLib
         NLCM,
         [Description("adf.ly")]
         AdFly,
-        [Description("Custom URL shortener")]
         CustomURLShortener // Localized
     }
 
     [Description("URL sharing services"), DefaultValue(Twitter)]
     public enum URLSharingServices
     {
-        [Description("Email")]
         Email, // Localized
         [Description("Twitter")]
         Twitter,
