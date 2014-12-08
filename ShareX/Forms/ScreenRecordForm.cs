@@ -117,7 +117,7 @@ namespace ShareX
                     if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegText),
                         "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        if (FFmpegHelper.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
+                        if (FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested) == DialogResult.OK)
                         {
                             Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                                taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
@@ -330,7 +330,7 @@ namespace ShareX
         private void DownloaderForm_InstallRequested(string filePath)
         {
             string extractPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-            bool result = FFmpegHelper.ExtractFFmpeg(filePath, extractPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
 
             if (result)
             {

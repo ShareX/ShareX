@@ -289,13 +289,13 @@ namespace ScreenCaptureLib
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            FFmpegHelper.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
+            FFmpegDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
         }
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
             string extractPath = DefaultToolsPath ?? "ffmpeg.exe";
-            bool result = FFmpegHelper.ExtractFFmpeg(filePath, extractPath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, extractPath);
 
             if (result)
             {

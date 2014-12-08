@@ -59,6 +59,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -103,6 +106,7 @@
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
+    <Compile Include="FFmpegDownloader.cs" />
     <Compile Include="FontSafe.cs" />
     <Compile Include="Forms\OutputBox.cs">
       <SubType>Form</SubType>
