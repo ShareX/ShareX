@@ -649,15 +649,18 @@ namespace HelpersLib
             return false;
         }
 
-        public static void CreateDirectoryIfNotExist(string filePath)
+        public static void CreateDirectoryIfNotExist(string path, bool isFilePath = true)
         {
-            if (!string.IsNullOrEmpty(filePath))
+            if (!string.IsNullOrEmpty(path))
             {
-                string directoryName = Path.GetDirectoryName(filePath);
-
-                if (!string.IsNullOrEmpty(directoryName) && !Directory.Exists(directoryName))
+                if (isFilePath)
                 {
-                    Directory.CreateDirectory(directoryName);
+                    path = Path.GetDirectoryName(path);
+                }
+
+                if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
                 }
             }
         }
