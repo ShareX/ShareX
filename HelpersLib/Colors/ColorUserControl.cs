@@ -48,6 +48,14 @@ namespace HelpersLib
         protected Point lastPos;
         protected Timer mouseMoveTimer;
 
+        iDrawStyles iDS;
+        iDrawStyles iHue = new Hue();
+        iDrawStyles iSaturation = new Saturation();
+        iDrawStyles iBrightness = new Brightness();
+        iDrawStyles iRed = new Red();
+        iDrawStyles iBlue = new Blue();
+        iDrawStyles iGreen = new Green();
+
         public MyColor SelectedColor
         {
             get
@@ -80,6 +88,33 @@ namespace HelpersLib
             set
             {
                 drawStyle = value;
+                switch (drawStyle)
+                {
+                    case DrawStyle.Hue:
+                        iDS = iHue;
+                        break;
+
+                    case DrawStyle.Saturation:
+                        iDS = iSaturation;
+                        break;
+
+                    case DrawStyle.Brightness:
+                        iDS = iBrightness;
+                        break;
+
+                    case DrawStyle.Red:
+                        iDS = iRed;
+                        break;
+
+                    case DrawStyle.Blue:
+                        iDS = iBlue;
+                        break;
+
+                    case DrawStyle.Green:
+                        iDS = iGreen;
+                        break;
+                }
+
 
                 if (this is ColorBox)
                 {
@@ -106,6 +141,7 @@ namespace HelpersLib
             ClientWidth = this.ClientRectangle.Width;
             ClientHeight = this.ClientRectangle.Height;
             bmp = new Bitmap(ClientWidth, ClientHeight, PixelFormat.Format32bppArgb);
+            iDS = iHue;
             SelectedColor = Color.Red;
             DrawStyle = DrawStyle.Hue;
 
@@ -206,6 +242,8 @@ namespace HelpersLib
 
         #endregion Events
 
+
+
         #region Protected Methods
 
         protected void OnColorChanged()
@@ -243,129 +281,25 @@ namespace HelpersLib
 
         protected void SetBoxMarker()
         {
-            switch (DrawStyle)
-            {
-                case DrawStyle.Hue:
-                    lastPos.X = Round((ClientWidth - 1) * SelectedColor.HSB.Saturation);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - SelectedColor.HSB.Brightness));
-                    break;
-                case DrawStyle.Saturation:
-                    lastPos.X = Round((ClientWidth - 1) * SelectedColor.HSB.Hue);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - SelectedColor.HSB.Brightness));
-                    break;
-                case DrawStyle.Brightness:
-                    lastPos.X = Round((ClientWidth - 1) * SelectedColor.HSB.Hue);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - SelectedColor.HSB.Saturation));
-                    break;
-                case DrawStyle.Red:
-                    lastPos.X = Round((ClientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
-                    break;
-                case DrawStyle.Green:
-                    lastPos.X = Round((ClientWidth - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Red / 255));
-                    break;
-                case DrawStyle.Blue:
-                    lastPos.X = Round((ClientWidth - 1) * (double)SelectedColor.RGBA.Red / 255);
-                    lastPos.Y = Round((ClientHeight - 1) * (1.0 - (double)SelectedColor.RGBA.Green / 255));
-                    break;
-            }
-
+            iDS.SetBoxMarker(lastPos, SelectedColor, ClientWidth, ClientHeight);
             lastPos = GetPoint(lastPos);
         }
 
         protected void GetBoxColor()
         {
-            switch (DrawStyle)
-            {
-                case DrawStyle.Hue:
-                    selectedColor.HSB.Saturation = (double)lastPos.X / (ClientWidth - 1);
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
-                    selectedColor.HSBUpdate();
-                    break;
-                case DrawStyle.Saturation:
-                    selectedColor.HSB.Hue = (double)lastPos.X / (ClientWidth - 1);
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
-                    selectedColor.HSBUpdate();
-                    break;
-                case DrawStyle.Brightness:
-                    selectedColor.HSB.Hue = (double)lastPos.X / (ClientWidth - 1);
-                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
-                    selectedColor.HSBUpdate();
-                    break;
-                case DrawStyle.Red:
-                    selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (ClientWidth - 1));
-                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (ClientHeight - 1)));
-                    selectedColor.RGBAUpdate();
-                    break;
-                case DrawStyle.Green:
-                    selectedColor.RGBA.Blue = Round(255 * (double)lastPos.X / (ClientWidth - 1));
-                    selectedColor.RGBA.Red = Round(255 * (1.0 - (double)lastPos.Y / (ClientHeight - 1)));
-                    selectedColor.RGBAUpdate();
-                    break;
-                case DrawStyle.Blue:
-                    selectedColor.RGBA.Red = Round(255 * (double)lastPos.X / (ClientWidth - 1));
-                    selectedColor.RGBA.Green = Round(255 * (1.0 - (double)lastPos.Y / (ClientHeight - 1)));
-                    selectedColor.RGBAUpdate();
-                    break;
-            }
+            iDS.GetBoxColor(lastPos, selectedColor, ClientWidth, ClientHeight);
         }
 
         protected void SetSliderMarker()
         {
-            switch (DrawStyle)
-            {
-                case DrawStyle.Hue:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * SelectedColor.HSB.Hue);
-                    break;
-                case DrawStyle.Saturation:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * SelectedColor.HSB.Saturation);
-                    break;
-                case DrawStyle.Brightness:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * SelectedColor.HSB.Brightness);
-                    break;
-                case DrawStyle.Red:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * (double)SelectedColor.RGBA.Red / 255);
-                    break;
-                case DrawStyle.Green:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * (double)SelectedColor.RGBA.Green / 255);
-                    break;
-                case DrawStyle.Blue:
-                    lastPos.Y = (ClientHeight - 1) - Round((ClientHeight - 1) * (double)SelectedColor.RGBA.Blue / 255);
-                    break;
-            }
+            iDS.SetSliderMarker(lastPos, SelectedColor, ClientHeight);
             lastPos = GetPoint(lastPos);
         }
 
         protected void GetSliderColor()
         {
-            switch (DrawStyle)
-            {
-                case DrawStyle.Hue:
-                    selectedColor.HSB.Hue = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
-                    selectedColor.HSBUpdate();
-                    break;
-                case DrawStyle.Saturation:
-                    selectedColor.HSB.Saturation = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
-                    selectedColor.HSBUpdate();
-                    break;
-                case DrawStyle.Brightness:
-                    selectedColor.HSB.Brightness = 1.0 - (double)lastPos.Y / (ClientHeight - 1);
-                    selectedColor.HSBUpdate();
-                    break;
-                case DrawStyle.Red:
-                    selectedColor.RGBA.Red = 255 - Round(255 * (double)lastPos.Y / (ClientHeight - 1));
-                    selectedColor.RGBAUpdate();
-                    break;
-                case DrawStyle.Green:
-                    selectedColor.RGBA.Green = 255 - Round(255 * (double)lastPos.Y / (ClientHeight - 1));
-                    selectedColor.RGBAUpdate();
-                    break;
-                case DrawStyle.Blue:
-                    selectedColor.RGBA.Blue = 255 - Round(255 * (double)lastPos.Y / (ClientHeight - 1));
-                    selectedColor.RGBAUpdate();
-                    break;
-            }
+            iDS.GetBoxColor(lastPos, selectedColor, ClientWidth, ClientHeight);
+
         }
 
         protected abstract void DrawCrosshair(Graphics g);
