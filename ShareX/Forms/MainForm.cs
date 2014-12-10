@@ -1498,7 +1498,10 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    TaskHelpers.DoScreenRecording(safeTaskSettings);
+                    TaskHelpers.StartScreenRecording(safeTaskSettings, false);
+                    break;
+                case HotkeyType.StartScreenRecorder:
+                    TaskHelpers.StartScreenRecording(safeTaskSettings, true);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();

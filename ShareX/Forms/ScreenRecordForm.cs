@@ -88,7 +88,7 @@ namespace ShareX
             }
         }
 
-        public void StartRecording(TaskSettings taskSettings)
+        public void StartRecording(TaskSettings taskSettings, bool skipRegionSelection = false)
         {
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
@@ -138,13 +138,23 @@ namespace ShareX
             }
 
             Rectangle captureRectangle;
-            TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
-            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+
+            if (skipRegionSelection)
+            {
+                captureRectangle = Program.Settings.ScreenRecordRegion;
+            }
+            else
+            {
+                TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
+                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+            }
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
                 return;
             }
+
+            Program.Settings.ScreenRecordRegion = captureRectangle;
 
             IsRecording = true;
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;

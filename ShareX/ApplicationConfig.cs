@@ -188,5 +188,11 @@ namespace ShareX
         public bool AutoCaptureWaitUpload = true;
 
         #endregion AutoCapture Form
+
+        #region ScreenRecord Form
+
+        public Rectangle ScreenRecordRegion = Rectangle.Empty;
+
+        #endregion ScreenRecord Form
     }
 }

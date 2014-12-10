@@ -451,17 +451,17 @@ namespace ShareX
         {
             TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
             taskSettings.CaptureSettings.ScreenRecordOutput = ScreenRecordOutput.FFmpeg;
-            DoScreenRecording(taskSettings);
+            StartScreenRecording(taskSettings);
         }
 
         public static void DoScreenRecordingGIF()
         {
             TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
             taskSettings.CaptureSettings.ScreenRecordOutput = ScreenRecordOutput.GIF;
-            DoScreenRecording(taskSettings);
+            StartScreenRecording(taskSettings);
         }
 
-        public static void DoScreenRecording(TaskSettings taskSettings = null)
+        public static void StartScreenRecording(TaskSettings taskSettings = null, bool skipRegionSelection = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -473,7 +473,7 @@ namespace ShareX
             }
             else
             {
-                form.StartRecording(taskSettings);
+                form.StartRecording(taskSettings, skipRegionSelection);
             }
         }
 
