@@ -28,7 +28,7 @@ using System.Collections;
 using System.IO;
 using System.Windows.Forms;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     /// <summary>
     /// Maintains a list of currently added file extensions

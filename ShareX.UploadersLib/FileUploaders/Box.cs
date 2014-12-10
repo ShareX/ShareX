@@ -27,9 +27,9 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class Box : FileUploader, IOAuth2
     {

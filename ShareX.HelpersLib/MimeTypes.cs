@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class MimeTypes
     {

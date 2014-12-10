@@ -23,16 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Text.RegularExpressions;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {

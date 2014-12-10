@@ -27,7 +27,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public partial class ErrorForm : Form
     {

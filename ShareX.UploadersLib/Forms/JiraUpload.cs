@@ -27,9 +27,9 @@
 
 using System;
 using System.Windows.Forms;
-using UploadersLib.Properties;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib.GUI
+namespace ShareX.UploadersLib.GUI
 {
     using System.Threading.Tasks;
 

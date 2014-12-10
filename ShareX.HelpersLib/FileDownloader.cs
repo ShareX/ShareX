@@ -30,7 +30,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class FileDownloader
     {

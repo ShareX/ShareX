@@ -26,7 +26,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class NoFocusBorderButton : Button
     {

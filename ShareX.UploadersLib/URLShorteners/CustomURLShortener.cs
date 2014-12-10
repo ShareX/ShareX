@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners
 {
     public sealed class CustomURLShortener : URLShortener
     {

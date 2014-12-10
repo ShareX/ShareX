@@ -27,7 +27,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class TextBoxTraceListener : TraceListener
     {

@@ -27,7 +27,7 @@ using System;
 using System.Net;
 using System.Reflection;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class ProxyInfo
     {

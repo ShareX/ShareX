@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static partial class NativeMethods
     {

@@ -24,15 +24,15 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using UploadersLib.FileUploaders;
-using UploadersLib.HelperClasses;
-using UploadersLib.ImageUploaders;
-using UploadersLib.TextUploaders;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.TextUploaders;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class UploadersConfig : SettingsBase<UploadersConfig>
     {

@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class CaptureHelpers
     {

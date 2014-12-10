@@ -1,4 +1,4 @@
-﻿namespace ImageEffectsLib
+﻿namespace ShareX.ImageEffectsLib
 {
     partial class ImageEffectsForm
     {
@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectsForm));
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lvEffects = new HelpersLib.MyListView();
+            this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -44,8 +44,8 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
-            this.eiImageEffects = new HelpersLib.ExportImportControl();
-            this.pbResult = new HelpersLib.MyPictureBox();
+            this.eiImageEffects = new ShareX.HelpersLib.ExportImportControl();
+            this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.cmsEffects = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
@@ -161,8 +161,8 @@
             resources.ApplyResources(this.eiImageEffects, "eiImageEffects");
             this.eiImageEffects.Name = "eiImageEffects";
             this.eiImageEffects.ObjectType = null;
-            this.eiImageEffects.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
-            this.eiImageEffects.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
+            this.eiImageEffects.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
+            this.eiImageEffects.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
             // 
             // pbResult
             // 
@@ -212,10 +212,10 @@
 
         private System.Windows.Forms.PropertyGrid pgSettings;
         private System.Windows.Forms.Button btnAdd;
-        private HelpersLib.MyListView lvEffects;
+        private ShareX.HelpersLib.MyListView lvEffects;
         private System.Windows.Forms.ColumnHeader chEffect;
         private System.Windows.Forms.Button btnRemove;
-        private HelpersLib.MyPictureBox pbResult;
+        private ShareX.HelpersLib.MyPictureBox pbResult;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClear;
@@ -225,7 +225,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;
-        private HelpersLib.ExportImportControl eiImageEffects;
+        private ShareX.HelpersLib.ExportImportControl eiImageEffects;
         private System.Windows.Forms.ContextMenuStrip cmsEffects;
     }
 }

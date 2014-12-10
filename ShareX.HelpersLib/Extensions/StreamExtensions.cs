@@ -27,7 +27,7 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class StreamExtensions
     {

@@ -29,7 +29,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class CustomTextUploader : TextUploader
     {

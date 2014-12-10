@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;

@@ -33,7 +33,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Threading;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public class MediaCrushUploader : FileUploader
     {

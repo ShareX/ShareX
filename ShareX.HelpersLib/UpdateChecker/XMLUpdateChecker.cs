@@ -30,7 +30,7 @@ using System.Net.Cache;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class XMLUpdateChecker : UpdateChecker
     {

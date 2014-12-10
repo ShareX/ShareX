@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class CssFileNameEditor : FileNameEditor
     {

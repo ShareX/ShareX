@@ -23,17 +23,17 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using UploadersLib.FileUploaders;
-using UploadersLib.HelperClasses;
-using UploadersLib.Properties;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib.Forms
+namespace ShareX.UploadersLib.Forms
 {
     public partial class DropboxFilesForm : Form
     {

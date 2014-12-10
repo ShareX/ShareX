@@ -29,7 +29,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     [DefaultEvent("CheckedChanged")]
     public class BlackStyleCheckBox : Control

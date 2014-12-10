@@ -26,7 +26,7 @@
 using Newtonsoft.Json;
 using System.IO;
 
-namespace UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class ImmioUploader : ImageUploader
     {

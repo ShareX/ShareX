@@ -26,7 +26,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class TrayForm : Form
     {

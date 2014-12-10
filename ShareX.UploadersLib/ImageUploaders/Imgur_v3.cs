@@ -29,9 +29,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
     public enum ImgurThumbnailType
     {

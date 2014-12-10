@@ -8,7 +8,7 @@
     <ProjectGuid>{E1C94415-3424-4517-A2A1-B2FDD1F59C67}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UploadersLib</RootNamespace>
+    <RootNamespace>ShareX.UploadersLib</RootNamespace>
     <AssemblyName>ShareX.UploadersLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -26,7 +26,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public partial class UserPassBox : Form
     {

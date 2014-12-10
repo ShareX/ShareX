@@ -25,7 +25,7 @@
 
 // Credits: https://github.com/michalx2
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Globalization;
@@ -35,7 +35,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class MediaFire : FileUploader
     {

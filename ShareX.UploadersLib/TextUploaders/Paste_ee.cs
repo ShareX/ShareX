@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class Paste_ee : TextUploader
     {

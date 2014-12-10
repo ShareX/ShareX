@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class BetweenTagsResult
     {

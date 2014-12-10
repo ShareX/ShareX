@@ -23,15 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public partial class FFmpegOptionsForm : Form
     {

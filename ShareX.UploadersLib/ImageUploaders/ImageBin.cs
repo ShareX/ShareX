@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class ImageBin : ImageUploader
     {

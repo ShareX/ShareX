@@ -8,7 +8,7 @@
     <ProjectGuid>{E7DE6237-AEA2-498B-8F56-9B392472C490}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HistoryLib</RootNamespace>
+    <RootNamespace>ShareX.HistoryLib</RootNamespace>
     <AssemblyName>ShareX.HistoryLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

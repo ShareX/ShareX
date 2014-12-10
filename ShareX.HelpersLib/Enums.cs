@@ -25,7 +25,7 @@
 
 using System.ComponentModel;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     // http://en.wikipedia.org/wiki/List_of_file_formats
 

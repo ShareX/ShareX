@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -34,7 +34,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class FTP : FileUploader, IDisposable
     {

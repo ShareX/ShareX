@@ -25,7 +25,7 @@
 
 // Credits: https://github.com/alanedwardes
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class AmazonS3 : FileUploader
     {

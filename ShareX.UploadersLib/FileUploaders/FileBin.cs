@@ -26,7 +26,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class FileBin : FileUploader
     {

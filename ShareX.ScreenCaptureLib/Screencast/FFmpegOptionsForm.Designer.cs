@@ -1,4 +1,4 @@
-﻿namespace ScreenCaptureLib
+﻿namespace ShareX.ScreenCaptureLib
 {
     partial class FFmpegOptionsForm
     {
@@ -80,7 +80,7 @@
             this.txtExtension = new System.Windows.Forms.TextBox();
             this.cbShowError = new System.Windows.Forms.CheckBox();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.eiFFmpeg = new HelpersLib.ExportImportControl();
+            this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
@@ -522,8 +522,8 @@
             resources.ApplyResources(this.eiFFmpeg, "eiFFmpeg");
             this.eiFFmpeg.Name = "eiFFmpeg";
             this.eiFFmpeg.ObjectType = null;
-            this.eiFFmpeg.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
-            this.eiFFmpeg.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
+            this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
+            this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
             // FFmpegOptionsForm
             // 
@@ -633,7 +633,7 @@
         private System.Windows.Forms.CheckBox cbShowError;
         private System.Windows.Forms.CheckBox cbCustomCommands;
         private System.Windows.Forms.Button btnHelp;
-        private HelpersLib.ExportImportControl eiFFmpeg;
+        private ShareX.HelpersLib.ExportImportControl eiFFmpeg;
         private System.Windows.Forms.TextBox txtExtension;
     }
 }

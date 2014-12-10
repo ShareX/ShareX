@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class LocalhostAccount : ICloneable
     {

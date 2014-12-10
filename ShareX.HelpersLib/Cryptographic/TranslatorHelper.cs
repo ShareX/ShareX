@@ -29,7 +29,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class TranslatorHelper
     {

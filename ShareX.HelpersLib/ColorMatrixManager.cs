@@ -27,7 +27,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class ColorMatrixManager
     {

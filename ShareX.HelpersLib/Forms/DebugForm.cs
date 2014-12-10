@@ -29,7 +29,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public partial class DebugForm : Form
     {

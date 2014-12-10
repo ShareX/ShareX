@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ImageEffectsLib;
-using IndexerLib;
+using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
+using ShareX.IndexerLib;
 using Newtonsoft.Json;
-using ScreenCaptureLib;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +35,7 @@ using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Globalization;
-using UploadersLib;
+using ShareX.UploadersLib;
 
 namespace ShareX
 {

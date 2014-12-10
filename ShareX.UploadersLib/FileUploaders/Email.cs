@@ -27,7 +27,7 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public class Email : FileUploader
     {

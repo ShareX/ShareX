@@ -26,7 +26,7 @@
 using System.IO;
 using System.Text;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public abstract class TextUploader : Uploader
     {

@@ -1,4 +1,4 @@
-﻿namespace HistoryLib
+﻿namespace ShareX.HistoryLib
 {
     partial class HistoryForm
     {
@@ -49,13 +49,13 @@
             this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
             this.cbHostFilter = new System.Windows.Forms.CheckBox();
             this.cbTypeFilter = new System.Windows.Forms.CheckBox();
-            this.lvHistory = new HelpersLib.MyListView();
+            this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chHost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pbThumbnail = new HelpersLib.MyPictureBox();
+            this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.ssMain.SuspendLayout();
             this.gbFilters.SuspendLayout();
             this.SuspendLayout();
@@ -274,7 +274,7 @@
 
         #endregion Windows Form Designer generated code
 
-        private HelpersLib.MyListView lvHistory;
+        private ShareX.HelpersLib.MyListView lvHistory;
         private System.Windows.Forms.ColumnHeader chFilename;
         private System.Windows.Forms.ColumnHeader chDateTime;
         private System.Windows.Forms.ColumnHeader chType;
@@ -291,7 +291,7 @@
         private System.Windows.Forms.ComboBox cbFilenameFilterCulture;
         private System.Windows.Forms.CheckBox cbFilenameFilter;
         private System.Windows.Forms.CheckBox cbFilenameFilterCase;
-        private HelpersLib.MyPictureBox pbThumbnail;
+        private ShareX.HelpersLib.MyPictureBox pbThumbnail;
         private System.Windows.Forms.StatusStrip ssMain;
         private System.Windows.Forms.ToolStripStatusLabel tsslStatus;
         private System.Windows.Forms.GroupBox gbFilters;

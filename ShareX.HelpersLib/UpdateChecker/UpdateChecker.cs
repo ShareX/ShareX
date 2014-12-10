@@ -28,7 +28,7 @@ using System.Net;
 using System.Web;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public abstract class UpdateChecker
     {

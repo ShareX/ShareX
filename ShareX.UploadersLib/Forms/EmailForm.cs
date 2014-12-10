@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
 
-namespace UploadersLib.GUI
+namespace ShareX.UploadersLib.GUI
 {
     public partial class EmailForm : Form
     {

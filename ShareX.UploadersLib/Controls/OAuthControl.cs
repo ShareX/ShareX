@@ -27,9 +27,9 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using UploadersLib.Properties;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public partial class OAuthControl : UserControl
     {

@@ -1,4 +1,4 @@
-﻿namespace UploadersLib
+﻿namespace ShareX.UploadersLib
 {
     partial class UserPassBox
     {

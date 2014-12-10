@@ -25,7 +25,7 @@
 
 using System.Drawing;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class DrawableObject
     {

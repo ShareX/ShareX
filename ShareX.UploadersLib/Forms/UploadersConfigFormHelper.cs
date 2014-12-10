@@ -23,23 +23,23 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using UploadersLib.FileUploaders;
-using UploadersLib.Forms;
-using UploadersLib.GUI;
-using UploadersLib.HelperClasses;
-using UploadersLib.ImageUploaders;
-using UploadersLib.Properties;
-using UploadersLib.TextUploaders;
-using UploadersLib.URLShorteners;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.Forms;
+using ShareX.UploadersLib.GUI;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.URLShorteners;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm
     {

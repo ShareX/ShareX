@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class CustomUploaderItem
     {

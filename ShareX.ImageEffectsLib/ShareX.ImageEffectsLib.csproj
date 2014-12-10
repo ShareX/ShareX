@@ -8,7 +8,7 @@
     <ProjectGuid>{D13441B6-96E1-4D1B-8A95-58A7D6CB1E24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImageEffectsLib</RootNamespace>
+    <RootNamespace>ShareX.ImageEffectsLib</RootNamespace>
     <AssemblyName>ShareX.ImageEffectsLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

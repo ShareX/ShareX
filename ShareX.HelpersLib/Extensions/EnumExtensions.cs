@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +31,7 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class EnumExtensions
     {

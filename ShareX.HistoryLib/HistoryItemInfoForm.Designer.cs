@@ -1,4 +1,4 @@
-﻿namespace HistoryLib
+﻿namespace ShareX.HistoryLib
 {
     partial class HistoryItemInfoForm
     {

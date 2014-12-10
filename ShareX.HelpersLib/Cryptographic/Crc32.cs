@@ -25,7 +25,7 @@
 
 using System.Security.Cryptography;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     // http://damieng.com/blog/2006/08/08/calculating_crc32_in_c_and_net
     public class Crc32 : HashAlgorithm

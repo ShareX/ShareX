@@ -25,7 +25,7 @@
 
 using System.Windows.Forms;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public partial class HistoryItemInfoForm : Form
     {

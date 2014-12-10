@@ -30,14 +30,14 @@
 // Copyright © AForge.NET, 2007-2011
 // contacts@aforgenet.com
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     /// <summary>
     /// AVI files writing using Video for Windows interface.

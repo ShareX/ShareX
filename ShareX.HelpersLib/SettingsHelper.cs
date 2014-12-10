@@ -33,7 +33,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public enum SerializationType
     {

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace UploadersLib.HelperClasses
+namespace ShareX.UploadersLib.HelperClasses
 {
     public class OAuth2Info
     {

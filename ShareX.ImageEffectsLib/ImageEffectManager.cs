@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     public static class ImageEffectManager
     {

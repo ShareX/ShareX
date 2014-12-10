@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     [Description("Torn edge")]
     internal class TornEdge : ImageEffect

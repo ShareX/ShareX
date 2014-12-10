@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class Pastebin : TextUploader
     {

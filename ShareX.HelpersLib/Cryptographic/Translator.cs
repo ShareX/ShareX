@@ -25,7 +25,7 @@
 
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class Translator
     {

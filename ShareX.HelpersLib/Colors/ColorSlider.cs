@@ -25,7 +25,7 @@
 
 using System.Drawing;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class ColorSlider : ColorUserControl
     {

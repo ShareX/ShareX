@@ -25,7 +25,7 @@
 
 using System.Drawing;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     public class WatermarkConfig
     {

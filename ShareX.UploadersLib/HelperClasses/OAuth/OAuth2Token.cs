@@ -26,7 +26,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace UploadersLib.HelperClasses
+namespace ShareX.UploadersLib.HelperClasses
 {
     public class OAuth2Token
     {

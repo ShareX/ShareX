@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,9 +31,9 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class FTPOptions
     {

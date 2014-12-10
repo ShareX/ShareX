@@ -26,7 +26,7 @@
 using System.ComponentModel;
 using System.Drawing;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class MyColorConverter : ColorConverter
     {

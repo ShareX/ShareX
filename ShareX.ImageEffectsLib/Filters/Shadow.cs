@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     internal class Shadow : ImageEffect
     {

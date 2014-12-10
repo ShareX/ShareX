@@ -28,7 +28,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
 
-namespace UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class ImageShackUploader : ImageUploader
     {

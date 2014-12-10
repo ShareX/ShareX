@@ -23,10 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.Drawing;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class AVICache : ImageCache
     {

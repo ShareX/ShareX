@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -33,7 +33,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class RectangleLight : Form
     {

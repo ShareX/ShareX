@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class UploadResult
     {

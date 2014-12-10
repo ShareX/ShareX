@@ -27,7 +27,7 @@ using Newtonsoft.Json;
 using System.Collections.Specialized;
 using System.IO;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class Hostr : FileUploader
     {

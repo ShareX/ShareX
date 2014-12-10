@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
-using UploadersLib.HelperClasses;
-using UploadersLib.ImageUploaders;
-using UploadersLib.Properties;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public partial class TwitterTweetForm : Form
     {

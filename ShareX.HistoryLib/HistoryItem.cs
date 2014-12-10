@@ -25,7 +25,7 @@
 
 using System;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public class HistoryItem
     {

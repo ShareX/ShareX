@@ -28,7 +28,7 @@ using System.Collections.Concurrent;
 using System.Drawing;
 using System.Threading;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public abstract class ImageCache : IDisposable
     {

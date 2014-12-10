@@ -34,7 +34,7 @@ using System.IO;
 using System.Windows.Forms;
 using File = System.IO.File;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class ShortcutHelpers
     {

@@ -26,9 +26,9 @@
 using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
-using UploadersLib.Properties;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib.HelperClasses
+namespace ShareX.UploadersLib.HelperClasses
 {
     public class ImageListManager
     {

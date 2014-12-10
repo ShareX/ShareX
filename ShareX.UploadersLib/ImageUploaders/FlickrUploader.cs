@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +31,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
     public class FlickrUploader : ImageUploader
     {

@@ -26,7 +26,7 @@
 using System;
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class StringExtensions
     {

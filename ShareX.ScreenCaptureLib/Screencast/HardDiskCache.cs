@@ -23,15 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class HardDiskCache : ImageCache
     {

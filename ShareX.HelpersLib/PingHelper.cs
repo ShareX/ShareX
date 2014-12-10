@@ -28,7 +28,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class PingHelper
     {

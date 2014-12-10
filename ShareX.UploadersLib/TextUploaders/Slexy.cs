@@ -26,7 +26,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class Slexy : TextUploader
     {

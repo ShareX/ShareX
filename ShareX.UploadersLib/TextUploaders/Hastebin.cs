@@ -23,10 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 
-namespace UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class Hastebin : TextUploader
     {

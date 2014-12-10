@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Drawing;
 using System.Globalization;
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class ReplCodeMenuEntry : CodeMenuEntry
     {

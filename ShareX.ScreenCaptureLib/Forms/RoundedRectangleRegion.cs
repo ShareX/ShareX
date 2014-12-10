@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class RoundedRectangleRegion : RectangleRegion
     {

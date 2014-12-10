@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib;
+using ShareX.ScreenCaptureLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using UploadersLib;
+using ShareX.UploadersLib;
 
 namespace ShareX
 {

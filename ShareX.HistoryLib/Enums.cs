@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public enum HistoryRefreshInfoResult
     {

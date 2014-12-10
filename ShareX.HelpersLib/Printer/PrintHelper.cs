@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class PrintHelper : IDisposable
     {

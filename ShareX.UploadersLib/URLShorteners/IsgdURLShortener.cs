@@ -25,7 +25,7 @@
 
 using System.Collections.Generic;
 
-namespace UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners
 {
     public sealed class IsgdURLShortener : URLShortener
     {

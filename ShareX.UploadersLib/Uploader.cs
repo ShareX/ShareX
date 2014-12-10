@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -34,9 +34,9 @@ using System.Net.Cache;
 using System.Text;
 using System.Web;
 using System.Windows.Forms;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class Uploader
     {

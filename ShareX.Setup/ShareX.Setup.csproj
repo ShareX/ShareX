@@ -7,7 +7,7 @@
     <ProjectGuid>{3D19A94A-7A58-4451-A686-EE70B471C206}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShareX</RootNamespace>
+    <RootNamespace>ShareX.Setup</RootNamespace>
     <AssemblyName>ShareX.Setup</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

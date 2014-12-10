@@ -28,9 +28,9 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class OneDrive : FileUploader, IOAuth2
     {

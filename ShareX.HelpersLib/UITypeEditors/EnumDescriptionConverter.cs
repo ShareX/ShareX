@@ -28,7 +28,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class EnumDescriptionConverter : EnumConverter
     {

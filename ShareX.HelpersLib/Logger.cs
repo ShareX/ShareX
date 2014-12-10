@@ -28,7 +28,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class Logger
     {

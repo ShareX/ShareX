@@ -26,7 +26,7 @@
 using System;
 using System.Drawing;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public struct MyColor
     {

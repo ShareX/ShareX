@@ -7,7 +7,7 @@
     <ProjectGuid>{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IndexerLib</RootNamespace>
+    <RootNamespace>ShareX.IndexerLib</RootNamespace>
     <AssemblyName>ShareX.IndexerLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public partial class MyPictureBox : UserControl
     {

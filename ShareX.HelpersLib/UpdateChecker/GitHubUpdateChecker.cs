@@ -29,7 +29,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Cache;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class GitHubUpdateChecker : UpdateChecker
     {

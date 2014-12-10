@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
-using UploadersLib.OtherServices;
+using ShareX.UploadersLib.OtherServices;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class GoogleTranslatorConfig : SettingsBase<GoogleTranslatorConfig>
     {

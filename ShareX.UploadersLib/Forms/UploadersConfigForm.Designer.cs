@@ -1,4 +1,4 @@
-﻿namespace UploadersLib
+﻿namespace ShareX.UploadersLib
 {
     partial class UploadersConfigForm
     {
@@ -51,7 +51,7 @@
             this.lblCustomUploaderResponseType = new System.Windows.Forms.Label();
             this.cbCustomUploaderURLShortener = new System.Windows.Forms.ComboBox();
             this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
-            this.eiCustomUploaders = new HelpersLib.ExportImportControl();
+            this.eiCustomUploaders = new ShareX.HelpersLib.ExportImportControl();
             this.lbCustomUploaderList = new System.Windows.Forms.ListBox();
             this.btnCustomUploaderRemove = new System.Windows.Forms.Button();
             this.btnCustomUploaderClear = new System.Windows.Forms.Button();
@@ -119,7 +119,7 @@
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
-            this.eiFTP = new HelpersLib.ExportImportControl();
+            this.eiFTP = new ShareX.HelpersLib.ExportImportControl();
             this.btnFtpClient = new System.Windows.Forms.Button();
             this.lblFtpFiles = new System.Windows.Forms.Label();
             this.lblFtpText = new System.Windows.Forms.Label();
@@ -141,7 +141,7 @@
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
             this.lblGoogleDriveFolderID = new System.Windows.Forms.Label();
-            this.lvGoogleDriveFoldersList = new HelpersLib.MyListView();
+            this.lvGoogleDriveFoldersList = new ShareX.HelpersLib.MyListView();
             this.chGoogleDriveTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
@@ -149,7 +149,7 @@
             this.tpBox = new System.Windows.Forms.TabPage();
             this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
-            this.lvBoxFolders = new HelpersLib.MyListView();
+            this.lvBoxFolders = new ShareX.HelpersLib.MyListView();
             this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
@@ -396,7 +396,7 @@
             this.lblCheveretoAPIKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.lblWidthHint = new System.Windows.Forms.Label();
-            this.ttlvMain = new HelpersLib.TabToListView();
+            this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.atcImgurAccountType = new UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new UploadersLib.AccountTypeControl();
@@ -666,8 +666,8 @@
             resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.Name = "eiCustomUploaders";
             this.eiCustomUploaders.ObjectType = null;
-            this.eiCustomUploaders.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
-            this.eiCustomUploaders.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
+            this.eiCustomUploaders.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
+            this.eiCustomUploaders.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
             // 
             // lbCustomUploaderList
             // 
@@ -1160,8 +1160,8 @@
             resources.ApplyResources(this.eiFTP, "eiFTP");
             this.eiFTP.Name = "eiFTP";
             this.eiFTP.ObjectType = null;
-            this.eiFTP.ExportRequested += new HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
-            this.eiFTP.ImportRequested += new HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
+            this.eiFTP.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
+            this.eiFTP.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
             // 
             // btnFtpClient
             // 
@@ -3421,7 +3421,7 @@
         private System.Windows.Forms.TextBox txtRapidSharePremiumUserName;
         private AccountTypeControl actRapidShareAccountType;
         private System.Windows.Forms.ToolTip ttHelpTip;
-        private HelpersLib.TabToListView ttlvMain;
+        private ShareX.HelpersLib.TabToListView ttlvMain;
         private System.Windows.Forms.TabPage tpOtherUploaders;
         private System.Windows.Forms.TabControl tcOtherUploaders;
         private System.Windows.Forms.TabPage tpTwitter;
@@ -3573,7 +3573,7 @@
         private System.Windows.Forms.TabPage tpBox;
         private System.Windows.Forms.Label lblBoxFolderTip;
         private System.Windows.Forms.CheckBox cbBoxShare;
-        private HelpersLib.MyListView lvBoxFolders;
+        private ShareX.HelpersLib.MyListView lvBoxFolders;
         private System.Windows.Forms.ColumnHeader chBoxFoldersName;
         private System.Windows.Forms.Label lblBoxFolderID;
         private System.Windows.Forms.Button btnBoxRefreshFolders;
@@ -3735,14 +3735,14 @@
         private System.Windows.Forms.Button btnPicasaRefreshAlbumList;
         private OAuthControl oauth2Picasa;
         public System.Windows.Forms.TabControl tcUploaders;
-        private HelpersLib.ExportImportControl eiCustomUploaders;
-        private HelpersLib.ExportImportControl eiFTP;
+        private ShareX.HelpersLib.ExportImportControl eiCustomUploaders;
+        private ShareX.HelpersLib.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
         private System.Windows.Forms.TextBox txtBitlyDomain;
         private System.Windows.Forms.Label lblBitlyDomain;
         private System.Windows.Forms.TextBox txtGoogleDriveFolderID;
         private System.Windows.Forms.Label lblGoogleDriveFolderID;
-        private HelpersLib.MyListView lvGoogleDriveFoldersList;
+        private ShareX.HelpersLib.MyListView lvGoogleDriveFoldersList;
         private System.Windows.Forms.ColumnHeader chGoogleDriveTitle;
         private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
         private System.Windows.Forms.ColumnHeader chGoogleDriveDescription;

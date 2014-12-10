@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -31,7 +31,7 @@ using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Linq;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     [Description("Text watermark")]
     public class DrawText : ImageEffect

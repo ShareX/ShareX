@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace UploadersLib.HelperClasses
+namespace ShareX.UploadersLib.HelperClasses
 {
     public class CustomUploaderParse
     {

@@ -26,7 +26,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class ShareCX : FileUploader
     {

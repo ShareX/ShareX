@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +36,7 @@ using System.Text;
 using System.Windows.Forms;
 using Encoder = System.Drawing.Imaging.Encoder;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class Extensions
     {

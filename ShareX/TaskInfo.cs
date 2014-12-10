@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using System;
 using System.IO;
-using UploadersLib;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib;
+using ShareX.UploadersLib.HelperClasses;
 
 namespace ShareX
 {

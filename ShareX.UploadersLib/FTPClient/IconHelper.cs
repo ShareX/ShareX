@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     /// <summary>
     /// Provides static methods to read system icons for both folders and files.

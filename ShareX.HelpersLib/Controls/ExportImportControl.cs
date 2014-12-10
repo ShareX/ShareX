@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
@@ -32,7 +32,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public partial class ExportImportControl : UserControl
     {

@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     [Description("Background")]
     public class DrawBackground : ImageEffect

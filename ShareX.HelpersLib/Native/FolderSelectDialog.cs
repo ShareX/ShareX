@@ -25,12 +25,12 @@
 
 // http://www.lyquidity.com/devblog/?p=136
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     /// <summary>
     /// Wraps System.Windows.Forms.OpenFileDialog to make it present

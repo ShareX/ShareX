@@ -25,7 +25,7 @@
 
 using System;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class DWMManager : IDisposable
     {

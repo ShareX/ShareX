@@ -29,7 +29,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class GradientInfo
     {

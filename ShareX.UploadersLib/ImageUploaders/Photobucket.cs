@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Xml.Linq;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class Photobucket : ImageUploader, IOAuth
     {

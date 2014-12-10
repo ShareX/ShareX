@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
@@ -32,13 +32,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using UploadersLib;
-using UploadersLib.FileUploaders;
-using UploadersLib.GUI;
-using UploadersLib.HelperClasses;
-using UploadersLib.ImageUploaders;
-using UploadersLib.TextUploaders;
-using UploadersLib.URLShorteners;
+using ShareX.UploadersLib;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.GUI;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.URLShorteners;
 
 namespace ShareX
 {

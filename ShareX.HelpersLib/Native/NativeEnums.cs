@@ -25,7 +25,7 @@
 
 using System;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     [Flags]
     public enum AnimateWindowFlags

@@ -8,7 +8,7 @@
     <ProjectGuid>{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScreenCaptureLib</RootNamespace>
+    <RootNamespace>ShareX.ScreenCaptureLib</RootNamespace>
     <AssemblyName>ShareX.ScreenCaptureLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

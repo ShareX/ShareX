@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using IndexerLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.IndexerLib.Properties;
 using System;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IndexerLib
+namespace ShareX.IndexerLib
 {
     public class IndexerHtml : Indexer
     {

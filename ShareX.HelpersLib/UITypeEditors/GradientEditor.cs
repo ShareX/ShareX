@@ -30,7 +30,7 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class GradientEditor : UITypeEditor
     {

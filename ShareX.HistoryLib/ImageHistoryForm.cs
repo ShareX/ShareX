@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Manina.Windows.Forms;
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ using System.Linq;
 using System.Windows.Forms;
 using View = Manina.Windows.Forms.View;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public partial class ImageHistoryForm : Form
     {

@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib.Properties;
 using System;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace HistoryLib.CustomControls
+namespace ShareX.HistoryLib.CustomControls
 {
     public class ObjectListView : MyListView
     {

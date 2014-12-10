@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HistoryLib.Properties;
+using ShareX.HistoryLib.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public partial class HistoryItemManager
     {

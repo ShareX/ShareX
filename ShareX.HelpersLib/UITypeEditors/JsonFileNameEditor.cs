@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +32,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace HelpersLib.UITypeEditors
+namespace ShareX.HelpersLib.UITypeEditors
 {
     public class JsonFileNameEditor : FileNameEditor
     {

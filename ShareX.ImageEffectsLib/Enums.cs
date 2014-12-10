@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     public enum WatermarkType
     {

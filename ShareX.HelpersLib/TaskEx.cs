@@ -26,7 +26,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class TaskEx
     {

@@ -25,7 +25,7 @@
 
 using System;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class FFmpegOptions
     {

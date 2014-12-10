@@ -26,7 +26,7 @@
 using System.Drawing;
 using System.IO;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public abstract class ImageUploader : FileUploader
     {

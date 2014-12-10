@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.IO;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     [Description("Image watermark")]
     public class DrawImage : ImageEffect

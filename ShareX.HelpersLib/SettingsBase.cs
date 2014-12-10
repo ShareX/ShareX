@@ -28,7 +28,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     [Serializable]
     public abstract class SettingsBase<T> where T : SettingsBase<T>, new()

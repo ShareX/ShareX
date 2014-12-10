@@ -26,7 +26,7 @@
 using System;
 using System.IO;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class CustomFileUploader : FileUploader
     {

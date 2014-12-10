@@ -27,7 +27,7 @@ using System;
 using System.Drawing;
 using System.IO;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class AnimatedGifCreator : IDisposable
     {

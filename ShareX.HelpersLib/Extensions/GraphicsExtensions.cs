@@ -26,7 +26,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class GraphicsExtensions
     {

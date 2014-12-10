@@ -26,7 +26,7 @@
 using System;
 using System.Xml;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public class HistoryItemOld
     {

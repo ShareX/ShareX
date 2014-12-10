@@ -25,14 +25,14 @@
 
 // Credits: https://github.com/Dinnerbone
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
     public class GfycatUploader : FileUploader
     {

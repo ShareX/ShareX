@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +31,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     internal class XMLManager
     {

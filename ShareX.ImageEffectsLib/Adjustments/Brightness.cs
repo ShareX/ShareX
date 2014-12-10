@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     internal class Brightness : ImageEffect
     {

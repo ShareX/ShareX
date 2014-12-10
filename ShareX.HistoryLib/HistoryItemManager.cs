@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.IO;
 using System.Linq;
 
-namespace HistoryLib
+namespace ShareX.HistoryLib
 {
     public partial class HistoryItemManager
     {

@@ -26,7 +26,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public partial class OutputBox : Form
     {

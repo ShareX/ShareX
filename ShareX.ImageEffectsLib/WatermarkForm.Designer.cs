@@ -1,4 +1,4 @@
-﻿namespace ImageEffectsLib
+﻿namespace ShareX.ImageEffectsLib
 {
     partial class WatermarkForm
     {
@@ -37,9 +37,9 @@
             this.nudWatermarkOffset = new System.Windows.Forms.NumericUpDown();
             this.lblWatermarkOffset = new System.Windows.Forms.Label();
             this.gbWatermarkBackground = new System.Windows.Forms.GroupBox();
-            this.btnBackgroundColor2 = new HelpersLib.ColorButton();
-            this.btnBackgroundColor = new HelpersLib.ColorButton();
-            this.btnBorderColor = new HelpersLib.ColorButton();
+            this.btnBackgroundColor2 = new ShareX.HelpersLib.ColorButton();
+            this.btnBackgroundColor = new ShareX.HelpersLib.ColorButton();
+            this.btnBorderColor = new ShareX.HelpersLib.ColorButton();
             this.cbWatermarkUseGradient = new System.Windows.Forms.CheckBox();
             this.cbWatermarkDrawBackground = new System.Windows.Forms.CheckBox();
             this.lblRectangleCornerRadius = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.lblWatermarkCornerRadiusTip = new System.Windows.Forms.Label();
             this.cbWatermarkGradientType = new System.Windows.Forms.ComboBox();
             this.gbWatermarkText = new System.Windows.Forms.GroupBox();
-            this.btnTextColor = new HelpersLib.ColorButton();
+            this.btnTextColor = new ShareX.HelpersLib.ColorButton();
             this.lblWatermarkText = new System.Windows.Forms.Label();
             this.lblWatermarkFont = new System.Windows.Forms.Label();
             this.btnWatermarkFont = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             this.txtWatermarkImageLocation = new System.Windows.Forms.TextBox();
             this.gbImageWatermark = new System.Windows.Forms.GroupBox();
             this.lblImageLocation = new System.Windows.Forms.Label();
-            this.pbPreview = new HelpersLib.MyPictureBox();
+            this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.lblPreview = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudWatermarkOffset)).BeginInit();
             this.gbWatermarkBackground.SuspendLayout();
@@ -174,7 +174,7 @@
             this.btnBackgroundColor2.Text = "Background color 2...";
             this.btnBackgroundColor2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBackgroundColor2.UseVisualStyleBackColor = true;
-            this.btnBackgroundColor2.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBackgroundColor2_ColorChanged);
+            this.btnBackgroundColor2.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBackgroundColor2_ColorChanged);
             // 
             // btnBackgroundColor
             // 
@@ -186,7 +186,7 @@
             this.btnBackgroundColor.Text = "Background color...";
             this.btnBackgroundColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBackgroundColor.UseVisualStyleBackColor = true;
-            this.btnBackgroundColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBackgroundColor_ColorChanged);
+            this.btnBackgroundColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBackgroundColor_ColorChanged);
             // 
             // btnBorderColor
             // 
@@ -198,7 +198,7 @@
             this.btnBorderColor.Text = "Border color...";
             this.btnBorderColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBorderColor.UseVisualStyleBackColor = true;
-            this.btnBorderColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBorderColor_ColorChanged);
+            this.btnBorderColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnBorderColor_ColorChanged);
             // 
             // cbWatermarkUseGradient
             // 
@@ -290,7 +290,7 @@
             this.btnTextColor.Text = "Text color...";
             this.btnTextColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTextColor.UseVisualStyleBackColor = true;
-            this.btnTextColor.ColorChanged += new HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
+            this.btnTextColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
             // 
             // lblWatermarkText
             // 
@@ -449,14 +449,14 @@
         internal System.Windows.Forms.TextBox txtWatermarkText;
         internal System.Windows.Forms.Button btwWatermarkBrowseImage;
         internal System.Windows.Forms.TextBox txtWatermarkImageLocation;
-        private HelpersLib.MyPictureBox pbPreview;
+        private ShareX.HelpersLib.MyPictureBox pbPreview;
         private System.Windows.Forms.GroupBox gbImageWatermark;
         private System.Windows.Forms.CheckBox cbWatermarkDrawBackground;
         private System.Windows.Forms.CheckBox cbWatermarkUseGradient;
-        private HelpersLib.ColorButton btnTextColor;
-        private HelpersLib.ColorButton btnBackgroundColor2;
-        private HelpersLib.ColorButton btnBackgroundColor;
-        private HelpersLib.ColorButton btnBorderColor;
+        private ShareX.HelpersLib.ColorButton btnTextColor;
+        private ShareX.HelpersLib.ColorButton btnBackgroundColor2;
+        private ShareX.HelpersLib.ColorButton btnBackgroundColor;
+        private ShareX.HelpersLib.ColorButton btnBorderColor;
         internal System.Windows.Forms.Label lblImageLocation;
         private System.Windows.Forms.Label lblPreview;
     }

@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using IndexerLib;
+using ShareX.HelpersLib;
+using ShareX.IndexerLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
@@ -33,7 +33,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Windows.Forms;
-using UploadersLib;
+using ShareX.UploadersLib;
 
 namespace ShareX
 {

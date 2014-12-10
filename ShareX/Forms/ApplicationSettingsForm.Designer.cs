@@ -1,4 +1,4 @@
-﻿using HelpersLib;
+﻿using ShareX.HelpersLib;
 namespace ShareX
 {
     partial class ApplicationSettingsForm

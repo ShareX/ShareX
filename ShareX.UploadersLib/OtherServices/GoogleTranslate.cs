@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UploadersLib.OtherServices
+namespace ShareX.UploadersLib.OtherServices
 {
     public class GoogleTranslate : Uploader
     {

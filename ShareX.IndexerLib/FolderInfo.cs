@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace IndexerLib
+namespace ShareX.IndexerLib
 {
     public class FolderInfo
     {

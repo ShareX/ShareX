@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -33,7 +33,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace UploadersLib.HelperClasses
+namespace ShareX.UploadersLib.HelperClasses
 {
     public static class OAuthManager
     {

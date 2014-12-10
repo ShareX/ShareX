@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     internal class PrintTextHelper
     {

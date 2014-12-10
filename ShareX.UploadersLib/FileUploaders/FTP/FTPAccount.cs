@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public class FTPAccount : ICloneable
     {

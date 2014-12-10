@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class ColorHelpers
     {

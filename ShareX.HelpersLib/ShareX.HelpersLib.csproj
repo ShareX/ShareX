@@ -8,7 +8,7 @@
     <ProjectGuid>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelpersLib</RootNamespace>
+    <RootNamespace>ShareX.HelpersLib</RootNamespace>
     <AssemblyName>ShareX.HelpersLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

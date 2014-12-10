@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using IndexerLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.IndexerLib.Properties;
 using System.IO;
 using System.Text;
 
-namespace IndexerLib
+namespace ShareX.IndexerLib
 {
     public static class HtmlHelper
     {

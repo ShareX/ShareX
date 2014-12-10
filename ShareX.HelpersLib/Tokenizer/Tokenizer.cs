@@ -28,7 +28,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class Tokenizer
     {

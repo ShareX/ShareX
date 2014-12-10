@@ -28,7 +28,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class HashCheck
     {

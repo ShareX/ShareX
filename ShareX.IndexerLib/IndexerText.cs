@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using System.IO;
 using System.Text;
 
-namespace IndexerLib
+namespace ShareX.IndexerLib
 {
     public class IndexerText : Indexer
     {

@@ -24,19 +24,19 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
-using HelpersLib;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using UploadersLib.FileUploaders;
-using UploadersLib.HelperClasses;
-using UploadersLib.ImageUploaders;
-using UploadersLib.Properties;
-using UploadersLib.TextUploaders;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.Properties;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public partial class UploadersConfigForm : Form
     {

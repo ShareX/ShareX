@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ImageEffectsLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,7 +32,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ImageEffectsLib
+namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectsForm : Form
     {

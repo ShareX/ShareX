@@ -1,4 +1,4 @@
-﻿namespace HelpersLib
+﻿namespace ShareX.HelpersLib
 {
     partial class OutputBox
     {

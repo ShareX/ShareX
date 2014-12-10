@@ -30,7 +30,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class ClipboardHelpers
     {

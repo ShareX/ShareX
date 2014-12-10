@@ -35,12 +35,12 @@ using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Forms;
-using UploadersLib.GUI;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.GUI;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders
 {
-    using HelpersLib;
+    using ShareX.HelpersLib;
 
     public class Jira : FileUploader, IOAuth
     {

@@ -1,4 +1,4 @@
-﻿namespace UploadersLib.Forms
+﻿namespace ShareX.UploadersLib.Forms
 {
     partial class DropboxFilesForm
     {
@@ -33,7 +33,7 @@
             this.tsMenu = new System.Windows.Forms.ToolStrip();
             this.tsbSelectFolder = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.lvDropboxFiles = new HelpersLib.MyListView();
+            this.lvDropboxFiles = new ShareX.HelpersLib.MyListView();
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chModified = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,7 +57,7 @@
             // 
             // tsbSelectFolder
             // 
-            this.tsbSelectFolder.Image = global::UploadersLib.Properties.Resources.folder;
+            this.tsbSelectFolder.Image = global::ShareX.UploadersLib.Properties.Resources.folder;
             resources.ApplyResources(this.tsbSelectFolder, "tsbSelectFolder");
             this.tsbSelectFolder.Name = "tsbSelectFolder";
             this.tsbSelectFolder.Click += new System.EventHandler(this.tsbSelectFolder_Click);
@@ -158,7 +158,7 @@
 
         #endregion
 
-        private HelpersLib.MyListView lvDropboxFiles;
+        private ShareX.HelpersLib.MyListView lvDropboxFiles;
         private System.Windows.Forms.ColumnHeader chFilename;
         private System.Windows.Forms.ColumnHeader chSize;
         private System.Windows.Forms.ColumnHeader chModified;

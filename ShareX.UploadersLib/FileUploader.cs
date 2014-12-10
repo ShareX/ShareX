@@ -25,7 +25,7 @@
 
 using System.IO;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     public abstract class FileUploader : Uploader
     {

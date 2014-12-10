@@ -26,7 +26,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib
 {
     public class EllipseRegion : RectangleRegion
     {

@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Web;
-using UploadersLib.HelperClasses;
+using ShareX.UploadersLib.HelperClasses;
 
-namespace UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners
 {
     public sealed class BitlyURLShortener : URLShortener, IOAuth2Basic
     {

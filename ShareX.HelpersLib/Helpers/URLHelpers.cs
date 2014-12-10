@@ -33,7 +33,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class URLHelpers
     {

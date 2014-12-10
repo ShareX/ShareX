@@ -28,7 +28,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public class ImageViewer : Form
     {

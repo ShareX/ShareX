@@ -29,7 +29,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace UploadersLib
+namespace ShareX.UploadersLib
 {
     ///	<summary>
     ///	Inherited ListView to allow in-place editing of subitems

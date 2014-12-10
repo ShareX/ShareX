@@ -27,7 +27,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class Upaste : TextUploader
     {

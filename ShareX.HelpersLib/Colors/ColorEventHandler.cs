@@ -25,7 +25,7 @@
 
 using System;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public delegate void ColorEventHandler(object sender, ColorEventArgs e);
 

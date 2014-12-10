@@ -29,7 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class ObjectExtensions
     {

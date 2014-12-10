@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib.Properties;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -34,7 +34,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public partial class DownloaderForm : Form
     {

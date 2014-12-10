@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Drawing.Design;
 
-namespace IndexerLib
+namespace ShareX.IndexerLib
 {
     public class IndexerSettings
     {

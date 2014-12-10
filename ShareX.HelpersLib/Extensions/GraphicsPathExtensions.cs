@@ -29,7 +29,7 @@ using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace HelpersLib
+namespace ShareX.HelpersLib
 {
     public static class GraphicsPathExtensions
     {
