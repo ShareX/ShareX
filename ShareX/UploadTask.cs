@@ -25,13 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
-using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.GUI;
@@ -39,6 +32,13 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -721,9 +721,10 @@ namespace ShareX
                     };
                     break;
                 case ImageDestination.CustomImageUploader:
-                    if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomImageUploaderSelected))
+                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
+                    if (customUploader != null)
                     {
-                        imageUploader = new CustomImageUploader(Program.UploadersConfig.CustomUploadersList[Program.UploadersConfig.CustomImageUploaderSelected]);
+                        imageUploader = new CustomImageUploader(customUploader);
                     }
                     break;
             }
@@ -781,9 +782,10 @@ namespace ShareX
                     };
                     break;
                 case TextDestination.CustomTextUploader:
-                    if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomTextUploaderSelected))
+                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomTextUploaderSelected);
+                    if (customUploader != null)
                     {
-                        textUploader = new CustomTextUploader(Program.UploadersConfig.CustomUploadersList[Program.UploadersConfig.CustomTextUploaderSelected]);
+                        textUploader = new CustomTextUploader(customUploader);
                     }
                     break;
             }
@@ -885,34 +887,23 @@ namespace ShareX
                     };
                     break;
                 case FileDestination.CustomFileUploader:
-                    if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomFileUploaderSelected))
+                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomFileUploaderSelected);
+                    if (customUploader != null)
                     {
-                        fileUploader = new CustomFileUploader(Program.UploadersConfig.CustomUploadersList[Program.UploadersConfig.CustomFileUploaderSelected]);
+                        fileUploader = new CustomFileUploader(customUploader);
                     }
                     break;
                 case FileDestination.FTP:
-                    int index;
-
-                    if (Info.TaskSettings.OverrideFTP)
+                    FTPAccount ftpAccount = GetFTPAccount(Program.UploadersConfig.GetFTPIndex(Info.DataType));
+                    if (ftpAccount != null)
                     {
-                        index = Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
-                    }
-                    else
-                    {
-                        index = Program.UploadersConfig.GetFTPIndex(Info.DataType);
-                    }
-
-                    FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
-
-                    if (account != null)
-                    {
-                        if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                        if (ftpAccount.Protocol == FTPProtocol.FTP || ftpAccount.Protocol == FTPProtocol.FTPS)
                         {
-                            fileUploader = new FTP(account);
+                            fileUploader = new FTP(ftpAccount);
                         }
-                        else if (account.Protocol == FTPProtocol.SFTP)
+                        else if (ftpAccount.Protocol == FTPProtocol.SFTP)
                         {
-                            fileUploader = new SFTP(account);
+                            fileUploader = new SFTP(ftpAccount);
                         }
                     }
                     break;
@@ -1051,9 +1042,10 @@ namespace ShareX
                     };
                     break;
                 case UrlShortenerType.CustomURLShortener:
-                    if (Program.UploadersConfig.CustomUploadersList.IsValidIndex(Program.UploadersConfig.CustomURLShortenerSelected))
+                    CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomURLShortenerSelected);
+                    if (customUploader != null)
                     {
-                        urlShortener = new CustomURLShortener(Program.UploadersConfig.CustomUploadersList[Program.UploadersConfig.CustomURLShortenerSelected]);
+                        urlShortener = new CustomURLShortener(customUploader);
                     }
                     break;
             }
@@ -1151,6 +1143,26 @@ namespace ShareX
                         break;
                 }
             }
+        }
+
+        private FTPAccount GetFTPAccount(int index)
+        {
+            if (Info.TaskSettings.OverrideFTP)
+            {
+                index = Info.TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
+            }
+
+            return Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(index);
+        }
+
+        private CustomUploaderItem GetCustomUploader(int index)
+        {
+            if (Info.TaskSettings.OverrideCustomUploader)
+            {
+                index = Info.TaskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
+            }
+
+            return Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
         }
 
         private void ThreadCompleted()

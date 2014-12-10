@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 89</value>
+    <value>8, 80</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 17</value>
@@ -172,7 +172,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbUseDefaultAfterCaptureSettings.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +181,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 145</value>
+    <value>8, 136</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
@@ -202,7 +202,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbUseDefaultAfterUploadSettings.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 201</value>
+    <value>8, 192</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -232,7 +232,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbUseDefaultDestinationSettings.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,7 +241,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 8</value>
+    <value>6, 37</value>
   </data>
   <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -262,10 +262,10 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;lblDescription.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="tbDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 27</value>
+    <value>8, 53</value>
   </data>
   <data name="tbDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 20</value>
@@ -283,7 +283,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;tbDescription.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="cmsTask.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>299, 17</value>
@@ -297,6 +297,30 @@
   <data name="&gt;&gt;cmsTask.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Name" xml:space="preserve">
+    <value>cbOverrideCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Name" xml:space="preserve">
+    <value>chkOverrideCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;chkOverrideFTP.Name" xml:space="preserve">
     <value>chkOverrideFTP</value>
   </data>
@@ -307,7 +331,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;chkOverrideFTP.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cboFTPaccounts.Name" xml:space="preserve">
     <value>cboFTPaccounts</value>
@@ -319,55 +343,55 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cboFTPaccounts.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
     <value>btnAfterCapture</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
     <value>btnAfterUpload</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
     <value>btnDestinations</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
     <value>btnTask</value>
   </data>
   <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="tpTask.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -482,6 +506,372 @@
   </data>
   <data name="&gt;&gt;tpImage.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;pCapture.Name" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;pCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCapture.Parent" xml:space="preserve">
+    <value>tpCaptureGeneral</value>
+  </data>
+  <data name="&gt;&gt;pCapture.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultCaptureSettings</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Parent" xml:space="preserve">
+    <value>tpCaptureGeneral</value>
+  </data>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpCaptureGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpCaptureGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 328</value>
+  </data>
+  <data name="tpCaptureGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpCaptureGeneral.Name" xml:space="preserve">
+    <value>tpCaptureGeneral</value>
+  </data>
+  <data name="&gt;&gt;tpCaptureGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpCaptureGeneral.Parent" xml:space="preserve">
+    <value>tcCapture</value>
+  </data>
+  <data name="&gt;&gt;tpCaptureGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pgRegionCapture.Name" xml:space="preserve">
+    <value>pgRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;pgRegionCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgRegionCapture.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;pgRegionCapture.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpRegionCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpRegionCapture.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpRegionCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 328</value>
+  </data>
+  <data name="tpRegionCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Region capture</value>
+  </data>
+  <data name="&gt;&gt;tpRegionCapture.Name" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;tpRegionCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpRegionCapture.Parent" xml:space="preserve">
+    <value>tcCapture</value>
+  </data>
+  <data name="&gt;&gt;tpRegionCapture.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderStartDelay.Name" xml:space="preserve">
+    <value>lblScreenRecorderStartDelay</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderStartDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderStartDelay.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderStartDelay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkScreenRecordAutoStart.Name" xml:space="preserve">
+    <value>chkScreenRecordAutoStart</value>
+  </data>
+  <data name="&gt;&gt;chkScreenRecordAutoStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkScreenRecordAutoStart.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;chkScreenRecordAutoStart.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.Name" xml:space="preserve">
+    <value>cbScreenRecordAutoDisableAero</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderFixedDuration.Name" xml:space="preserve">
+    <value>lblScreenRecorderFixedDuration</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderFixedDuration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderFixedDuration.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecordFPS.Name" xml:space="preserve">
+    <value>nudScreenRecordFPS</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecordFPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecordFPS.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecordFPS.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecordFPS.Name" xml:space="preserve">
+    <value>lblScreenRecordFPS</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecordFPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecordFPS.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecordFPS.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;chkRunScreencastCLI.Name" xml:space="preserve">
+    <value>chkRunScreencastCLI</value>
+  </data>
+  <data name="&gt;&gt;chkRunScreencastCLI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkRunScreencastCLI.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;chkRunScreencastCLI.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnScreenRecorderOptions.Name" xml:space="preserve">
+    <value>btnScreenRecorderOptions</value>
+  </data>
+  <data name="&gt;&gt;btnScreenRecorderOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnScreenRecorderOptions.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;btnScreenRecorderOptions.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnEncoderConfig.Name" xml:space="preserve">
+    <value>btnEncoderConfig</value>
+  </data>
+  <data name="&gt;&gt;btnEncoderConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEncoderConfig.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;btnEncoderConfig.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cboEncoder.Name" xml:space="preserve">
+    <value>cboEncoder</value>
+  </data>
+  <data name="&gt;&gt;cboEncoder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboEncoder.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;cboEncoder.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderDuration.Name" xml:space="preserve">
+    <value>nudScreenRecorderDuration</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderDuration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderDuration.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderDuration.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderStartDelay.Name" xml:space="preserve">
+    <value>nudScreenRecorderStartDelay</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderStartDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderStartDelay.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;nudScreenRecorderStartDelay.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderOutput.Name" xml:space="preserve">
+    <value>cbScreenRecorderOutput</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderOutput.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderOutput.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderOutput.Name" xml:space="preserve">
+    <value>lblScreenRecorderOutput</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderOutput.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;lblScreenRecorderOutput.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderFixedDuration.Name" xml:space="preserve">
+    <value>cbScreenRecorderFixedDuration</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderFixedDuration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderFixedDuration.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;cbScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;nudGIFFPS.Name" xml:space="preserve">
+    <value>nudGIFFPS</value>
+  </data>
+  <data name="&gt;&gt;nudGIFFPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudGIFFPS.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;nudGIFFPS.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lblGIFFPS.Name" xml:space="preserve">
+    <value>lblGIFFPS</value>
+  </data>
+  <data name="&gt;&gt;lblGIFFPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGIFFPS.Parent" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="tpScreenRecorder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpScreenRecorder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpScreenRecorder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 328</value>
+  </data>
+  <data name="tpScreenRecorder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Screen recorder</value>
+  </data>
+  <data name="&gt;&gt;tpScreenRecorder.Name" xml:space="preserve">
+    <value>tpScreenRecorder</value>
+  </data>
+  <data name="&gt;&gt;tpScreenRecorder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpScreenRecorder.Parent" xml:space="preserve">
+    <value>tcCapture</value>
+  </data>
+  <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pgRectangleAnnotate.Name" xml:space="preserve">
+    <value>pgRectangleAnnotate</value>
+  </data>
+  <data name="&gt;&gt;pgRectangleAnnotate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgRectangleAnnotate.Parent" xml:space="preserve">
+    <value>tpRectangleAnnotate</value>
+  </data>
+  <data name="&gt;&gt;pgRectangleAnnotate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpRectangleAnnotate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpRectangleAnnotate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 328</value>
+  </data>
+  <data name="tpRectangleAnnotate.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>Rectangle annotate</value>
+  </data>
+  <data name="&gt;&gt;tpRectangleAnnotate.Name" xml:space="preserve">
+    <value>tpRectangleAnnotate</value>
+  </data>
+  <data name="&gt;&gt;tpRectangleAnnotate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpRectangleAnnotate.Parent" xml:space="preserve">
+    <value>tcCapture</value>
+  </data>
+  <data name="&gt;&gt;tpRectangleAnnotate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tcCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 354</value>
+  </data>
+  <data name="tcCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tcCapture.Name" xml:space="preserve">
     <value>tcCapture</value>
@@ -684,18 +1074,6 @@
   <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="pgIndexerConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgIndexerConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
-  </data>
-  <data name="pgIndexerConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 324</value>
-  </data>
-  <data name="pgIndexerConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;pgIndexerConfig.Name" xml:space="preserve">
     <value>pgIndexerConfig</value>
   </data>
@@ -707,30 +1085,6 @@
   </data>
   <data name="&gt;&gt;pgIndexerConfig.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 8</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 30</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>Use indexer settings in main window task settings</value>
   </data>
   <data name="&gt;&gt;chkUseDefaultIndexerSettings.Name" xml:space="preserve">
     <value>chkUseDefaultIndexerSettings</value>
@@ -771,18 +1125,6 @@
   <data name="&gt;&gt;tpIndexer.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="pgTaskSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pgTaskSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
-  </data>
-  <data name="pgTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 324</value>
-  </data>
-  <data name="pgTaskSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;pgTaskSettings.Name" xml:space="preserve">
     <value>pgTaskSettings</value>
   </data>
@@ -794,30 +1136,6 @@
   </data>
   <data name="&gt;&gt;pgTaskSettings.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 8</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 30</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Use advanced settings in main window task settings</value>
   </data>
   <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Name" xml:space="preserve">
     <value>chkUseDefaultAdvancedSettings</value>
@@ -885,6 +1203,60 @@
   <data name="&gt;&gt;tcTaskSettings.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="cbOverrideCustomUploader.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 328</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 21</value>
+  </data>
+  <data name="cbOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Name" xml:space="preserve">
+    <value>cbOverrideCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;cbOverrideCustomUploader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkOverrideCustomUploader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkOverrideCustomUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 304</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 17</value>
+  </data>
+  <data name="chkOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Override default custom uploader:</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Name" xml:space="preserve">
+    <value>chkOverrideCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;chkOverrideCustomUploader.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="chkOverrideFTP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -892,7 +1264,7 @@
     <value>NoControl</value>
   </data>
   <data name="chkOverrideFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 259</value>
+    <value>8, 248</value>
   </data>
   <data name="chkOverrideFTP.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 17</value>
@@ -913,13 +1285,13 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;chkOverrideFTP.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="cboFTPaccounts.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cboFTPaccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 283</value>
+    <value>8, 272</value>
   </data>
   <data name="cboFTPaccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 21</value>
@@ -937,7 +1309,73 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cboFTPaccounts.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
+  </data>
+  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 104</value>
+  </data>
+  <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>After capture...</value>
+  </data>
+  <data name="btnAfterCapture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
+    <value>btnAfterCapture</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 160</value>
+  </data>
+  <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>After upload...</value>
+  </data>
+  <data name="btnAfterUpload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
+    <value>btnAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 216</value>
   </data>
   <metadata name="cmsDestinations.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>396, 17</value>
@@ -950,6 +1388,30 @@
   </data>
   <data name="&gt;&gt;cmsDestinations.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Destinations...</value>
+  </data>
+  <data name="btnDestinations.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
+    <value>btnDestinations</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
@@ -980,6 +1442,36 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL sharing services</value>
+  </data>
+  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 23</value>
+  </data>
+  <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Task...</value>
+  </data>
+  <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
+    <value>btnTask</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;chkShowBeforeUploadForm.Name" xml:space="preserve">
     <value>chkShowBeforeUploadForm</value>
@@ -1473,14 +1965,17 @@
   <data name="&gt;&gt;tpQuality.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 216</value>
+  <data name="&gt;&gt;lblImageFormat.Name" xml:space="preserve">
+    <value>lblImageFormat</value>
   </data>
-  <data name="cbImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 21</value>
+  <data name="&gt;&gt;lblImageFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbImageFileExist.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;lblImageFormat.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbImageFileExist.Name" xml:space="preserve">
     <value>cbImageFileExist</value>
@@ -1494,23 +1989,17 @@
   <data name="&gt;&gt;cbImageFileExist.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblImageFileExist.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblUseImageFormat2After.Name" xml:space="preserve">
+    <value>lblUseImageFormat2After</value>
   </data>
-  <data name="lblImageFileExist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;lblUseImageFormat2After.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 200</value>
+  <data name="&gt;&gt;lblUseImageFormat2After.Parent" xml:space="preserve">
+    <value>pImage</value>
   </data>
-  <data name="lblImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblImageFileExist.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>If file exist:</value>
+  <data name="&gt;&gt;lblUseImageFormat2After.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblImageFileExist.Name" xml:space="preserve">
     <value>lblImageFileExist</value>
@@ -1523,6 +2012,150 @@
   </data>
   <data name="&gt;&gt;lblImageFileExist.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.Name" xml:space="preserve">
+    <value>nudUseImageFormat2After</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.Name" xml:space="preserve">
+    <value>lblImageFormat2</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2AfterHint.Name" xml:space="preserve">
+    <value>lblUseImageFormat2AfterHint</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2AfterHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2AfterHint.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2AfterHint.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.Name" xml:space="preserve">
+    <value>nudImageJPEGQuality</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat.Name" xml:space="preserve">
+    <value>cbImageFormat</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.Name" xml:space="preserve">
+    <value>cbImageFormat2</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
+    <value>lblImageJPEGQualityHint</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQualityHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQualityHint.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQualityHint.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.Name" xml:space="preserve">
+    <value>lblImageGIFQuality</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQuality.Name" xml:space="preserve">
+    <value>lblImageJPEGQuality</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQuality.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageJPEGQuality.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;cbImageGIFQuality.Name" xml:space="preserve">
+    <value>cbImageGIFQuality</value>
+  </data>
+  <data name="&gt;&gt;cbImageGIFQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageGIFQuality.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;cbImageGIFQuality.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="pImage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="pImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 303</value>
+  </data>
+  <data name="pImage.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;pImage.Name" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;pImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pImage.Parent" xml:space="preserve">
+    <value>tpQuality</value>
+  </data>
+  <data name="&gt;&gt;pImage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblImageFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1554,6 +2187,141 @@
   <data name="&gt;&gt;lblImageFormat.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 216</value>
+  </data>
+  <data name="cbImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbImageFileExist.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbImageFileExist.Name" xml:space="preserve">
+    <value>cbImageFileExist</value>
+  </data>
+  <data name="&gt;&gt;cbImageFileExist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageFileExist.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;cbImageFileExist.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblUseImageFormat2After.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUseImageFormat2After.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 104</value>
+  </data>
+  <data name="lblUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 13</value>
+  </data>
+  <data name="lblUseImageFormat2After.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>Image size limit for use "Image format 2":</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2After.Name" xml:space="preserve">
+    <value>lblUseImageFormat2After</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2After.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2After.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblUseImageFormat2After.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblImageFileExist.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImageFileExist.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblImageFileExist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 200</value>
+  </data>
+  <data name="lblImageFileExist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblImageFileExist.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>If file exist:</value>
+  </data>
+  <data name="&gt;&gt;lblImageFileExist.Name" xml:space="preserve">
+    <value>lblImageFileExist</value>
+  </data>
+  <data name="&gt;&gt;lblImageFileExist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageFileExist.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageFileExist.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nudUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 120</value>
+  </data>
+  <data name="nudUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudUseImageFormat2After.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="nudUseImageFormat2After.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.Name" xml:space="preserve">
+    <value>nudUseImageFormat2After</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;nudUseImageFormat2After.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblImageFormat2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImageFormat2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 152</value>
+  </data>
+  <data name="lblImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="lblImageFormat2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>Image format 2:</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.Name" xml:space="preserve">
+    <value>lblImageFormat2</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageFormat2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="lblUseImageFormat2AfterHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1584,6 +2352,30 @@
   <data name="&gt;&gt;lblUseImageFormat2AfterHint.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="nudImageJPEGQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 72</value>
+  </data>
+  <data name="nudImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudImageJPEGQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudImageJPEGQuality.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.Name" xml:space="preserve">
+    <value>nudImageJPEGQuality</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;nudImageJPEGQuality.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="cbImageFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 24</value>
   </data>
@@ -1605,6 +2397,27 @@
   <data name="&gt;&gt;cbImageFormat.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="cbImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 168</value>
+  </data>
+  <data name="cbImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="cbImageFormat2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.Name" xml:space="preserve">
+    <value>cbImageFormat2</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;cbImageFormat2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="lblImageJPEGQualityHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1622,7 +2435,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
@@ -1634,6 +2447,36 @@
   </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="lblImageGIFQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImageGIFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblImageGIFQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 56</value>
+  </data>
+  <data name="lblImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblImageGIFQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF quality:</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.Name" xml:space="preserve">
+    <value>lblImageGIFQuality</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.Parent" xml:space="preserve">
+    <value>pImage</value>
+  </data>
+  <data name="&gt;&gt;lblImageGIFQuality.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="lblImageJPEGQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1686,164 +2529,41 @@
   <data name="&gt;&gt;cbImageGIFQuality.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="lblImageGIFQuality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkUseDefaultImageSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblImageGIFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkUseDefaultImageSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblImageGIFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 56</value>
+  <data name="chkUseDefaultImageSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="lblImageGIFQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+  <data name="chkUseDefaultImageSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 0</value>
   </data>
-  <data name="lblImageGIFQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="chkUseDefaultImageSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 25</value>
   </data>
-  <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>GIF quality:</value>
+  <data name="chkUseDefaultImageSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;lblImageGIFQuality.Name" xml:space="preserve">
-    <value>lblImageGIFQuality</value>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>Use image settings in main window task settings</value>
   </data>
-  <data name="&gt;&gt;lblImageGIFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkUseDefaultImageSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultImageSettings</value>
   </data>
-  <data name="&gt;&gt;lblImageGIFQuality.Parent" xml:space="preserve">
-    <value>pImage</value>
+  <data name="&gt;&gt;chkUseDefaultImageSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblImageGIFQuality.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;chkUseDefaultImageSettings.Parent" xml:space="preserve">
+    <value>tpQuality</value>
   </data>
-  <data name="cbImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 168</value>
-  </data>
-  <data name="cbImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 21</value>
-  </data>
-  <data name="cbImageFormat2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.Name" xml:space="preserve">
-    <value>cbImageFormat2</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="nudImageJPEGQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 72</value>
-  </data>
-  <data name="nudImageJPEGQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudImageJPEGQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudImageJPEGQuality.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.Name" xml:space="preserve">
-    <value>nudImageJPEGQuality</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblImageFormat2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblImageFormat2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblImageFormat2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 152</value>
-  </data>
-  <data name="lblImageFormat2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
-  </data>
-  <data name="lblImageFormat2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="lblImageFormat2.Text" xml:space="preserve">
-    <value>Image format 2:</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.Name" xml:space="preserve">
-    <value>lblImageFormat2</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="nudUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 120</value>
-  </data>
-  <data name="nudUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudUseImageFormat2After.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="nudUseImageFormat2After.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.Name" xml:space="preserve">
-    <value>nudUseImageFormat2After</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblUseImageFormat2After.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUseImageFormat2After.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUseImageFormat2After.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 104</value>
-  </data>
-  <data name="lblUseImageFormat2After.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 13</value>
-  </data>
-  <data name="lblUseImageFormat2After.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Image size limit for use "Image format 2":</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.Name" xml:space="preserve">
-    <value>lblUseImageFormat2After</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;chkUseDefaultImageSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblImageEffectsNote.Name" xml:space="preserve">
     <value>lblImageEffectsNote</value>
@@ -2379,113 +3099,137 @@
   <data name="&gt;&gt;nudThumbnailWidth.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="chkUseDefaultImageSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;cbShowCursor.Name" xml:space="preserve">
+    <value>cbShowCursor</value>
   </data>
-  <data name="chkUseDefaultImageSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 0</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 25</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>Use image settings in main window task settings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultImageSettings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbShowCursor.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.Parent" xml:space="preserve">
-    <value>tpQuality</value>
+  <data name="&gt;&gt;cbShowCursor.Parent" xml:space="preserve">
+    <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultImageSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpCaptureGeneral.Name" xml:space="preserve">
-    <value>tpCaptureGeneral</value>
-  </data>
-  <data name="&gt;&gt;tpCaptureGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpCaptureGeneral.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpCaptureGeneral.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbShowCursor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tpRegionCapture.Name" xml:space="preserve">
-    <value>tpRegionCapture</value>
+  <data name="&gt;&gt;lblCaptureShadowOffset.Name" xml:space="preserve">
+    <value>lblCaptureShadowOffset</value>
   </data>
-  <data name="&gt;&gt;tpRegionCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblCaptureShadowOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpRegionCapture.Parent" xml:space="preserve">
-    <value>tcCapture</value>
+  <data name="&gt;&gt;lblCaptureShadowOffset.Parent" xml:space="preserve">
+    <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;tpRegionCapture.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureShadowOffset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Name" xml:space="preserve">
-    <value>tpRectangleAnnotate</value>
+  <data name="&gt;&gt;cbCaptureTransparent.Name" xml:space="preserve">
+    <value>cbCaptureTransparent</value>
   </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbCaptureTransparent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Parent" xml:space="preserve">
-    <value>tcCapture</value>
+  <data name="&gt;&gt;cbCaptureTransparent.Parent" xml:space="preserve">
+    <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbCaptureTransparent.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;tpScreenRecorder.Name" xml:space="preserve">
-    <value>tpScreenRecorder</value>
+  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.Name" xml:space="preserve">
+    <value>cbCaptureAutoHideTaskbar</value>
   </data>
-  <data name="&gt;&gt;tpScreenRecorder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpScreenRecorder.Parent" xml:space="preserve">
-    <value>tcCapture</value>
+  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.Parent" xml:space="preserve">
+    <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tcCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;cbCaptureShadow.Name" xml:space="preserve">
+    <value>cbCaptureShadow</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureShadow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureShadow.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureShadow.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.Name" xml:space="preserve">
+    <value>lblScreenshotDelayInfo</value>
+  </data>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureClientArea.Name" xml:space="preserve">
+    <value>cbCaptureClientArea</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureClientArea.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureClientArea.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureClientArea.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.Name" xml:space="preserve">
+    <value>nudScreenshotDelay</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.Name" xml:space="preserve">
+    <value>nudCaptureShadowOffset</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.Name" xml:space="preserve">
+    <value>cbScreenshotDelay</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="pCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tcCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="pCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
   </data>
-  <data name="tcCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>511, 354</value>
+  <data name="pCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 303</value>
   </data>
-  <data name="tcCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tcCapture.Name" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tcCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcCapture.Parent" xml:space="preserve">
-    <value>tpCapture</value>
-  </data>
-  <data name="&gt;&gt;tcCapture.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="pCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;pCapture.Name" xml:space="preserve">
     <value>pCapture</value>
@@ -2499,37 +3243,34 @@
   <data name="&gt;&gt;pCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultCaptureSettings</value>
+  <data name="cbShowCursor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbShowCursor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Parent" xml:space="preserve">
-    <value>tpCaptureGeneral</value>
+  <data name="cbShowCursor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
   </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="cbShowCursor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
   </data>
-  <data name="tpCaptureGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpCaptureGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 328</value>
-  </data>
-  <data name="tpCaptureGeneral.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbShowCursor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tpCaptureGeneral.Name" xml:space="preserve">
-    <value>tpCaptureGeneral</value>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Show cursor in screenshots</value>
   </data>
-  <data name="&gt;&gt;tpCaptureGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbShowCursor.Name" xml:space="preserve">
+    <value>cbShowCursor</value>
   </data>
-  <data name="&gt;&gt;tpCaptureGeneral.Parent" xml:space="preserve">
-    <value>tcCapture</value>
+  <data name="&gt;&gt;cbShowCursor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpCaptureGeneral.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbShowCursor.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;cbShowCursor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblCaptureShadowOffset.AutoSize" type="System.Boolean, mscorlib">
@@ -2562,6 +3303,36 @@
   <data name="&gt;&gt;lblCaptureShadowOffset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbCaptureTransparent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbCaptureTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbCaptureTransparent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 32</value>
+  </data>
+  <data name="cbCaptureTransparent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 17</value>
+  </data>
+  <data name="cbCaptureTransparent.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Capture window with transparency</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureTransparent.Name" xml:space="preserve">
+    <value>cbCaptureTransparent</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureTransparent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureTransparent.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;cbCaptureTransparent.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="cbCaptureAutoHideTaskbar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2591,144 +3362,6 @@
   </data>
   <data name="&gt;&gt;cbCaptureAutoHideTaskbar.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 180</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
-    <value>seconds</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.Name" xml:space="preserve">
-    <value>lblScreenshotDelayInfo</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="nudScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 176</value>
-  </data>
-  <data name="nudScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="nudScreenshotDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.Name" xml:space="preserve">
-    <value>nudScreenshotDelay</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbScreenshotDelay.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbScreenshotDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 152</value>
-  </data>
-  <data name="cbScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
-  </data>
-  <data name="cbScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Screenshot delay:</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.Name" xml:space="preserve">
-    <value>cbScreenshotDelay</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="nudCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 96</value>
-  </data>
-  <data name="nudCaptureShadowOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
-  </data>
-  <data name="nudCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="nudCaptureShadowOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.Name" xml:space="preserve">
-    <value>nudCaptureShadowOffset</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbCaptureClientArea.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbCaptureClientArea.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbCaptureClientArea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 128</value>
-  </data>
-  <data name="cbCaptureClientArea.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 17</value>
-  </data>
-  <data name="cbCaptureClientArea.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Capture client area when doing window or active window capture</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.Name" xml:space="preserve">
-    <value>cbCaptureClientArea</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="cbCaptureShadow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2760,103 +3393,178 @@
   <data name="&gt;&gt;cbCaptureShadow.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbShowCursor.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblScreenshotDelayInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbShowCursor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblScreenshotDelayInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbShowCursor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+  <data name="lblScreenshotDelayInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 180</value>
   </data>
-  <data name="cbShowCursor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
+  <data name="lblScreenshotDelayInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
   </data>
-  <data name="cbShowCursor.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblScreenshotDelayInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>Show cursor in screenshots</value>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>seconds</value>
   </data>
-  <data name="&gt;&gt;cbShowCursor.Name" xml:space="preserve">
-    <value>cbShowCursor</value>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.Name" xml:space="preserve">
+    <value>lblScreenshotDelayInfo</value>
   </data>
-  <data name="&gt;&gt;cbShowCursor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbShowCursor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblScreenshotDelayInfo.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;cbShowCursor.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lblScreenshotDelayInfo.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="cbCaptureTransparent.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbCaptureClientArea.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbCaptureTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbCaptureClientArea.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbCaptureTransparent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
+  <data name="cbCaptureClientArea.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 128</value>
   </data>
-  <data name="cbCaptureTransparent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
+  <data name="cbCaptureClientArea.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 17</value>
   </data>
-  <data name="cbCaptureTransparent.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="cbCaptureClientArea.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>Capture window with transparency</value>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Capture client area when doing window or active window capture</value>
   </data>
-  <data name="&gt;&gt;cbCaptureTransparent.Name" xml:space="preserve">
-    <value>cbCaptureTransparent</value>
+  <data name="&gt;&gt;cbCaptureClientArea.Name" xml:space="preserve">
+    <value>cbCaptureClientArea</value>
   </data>
-  <data name="&gt;&gt;cbCaptureTransparent.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbCaptureClientArea.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbCaptureTransparent.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbCaptureClientArea.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;cbCaptureTransparent.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;cbCaptureClientArea.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;pgRegionCapture.Name" xml:space="preserve">
-    <value>pgRegionCapture</value>
+  <data name="nudScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 176</value>
   </data>
-  <data name="&gt;&gt;pgRegionCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="nudScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
-  <data name="&gt;&gt;pgRegionCapture.Parent" xml:space="preserve">
-    <value>tpRegionCapture</value>
+  <data name="nudScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;pgRegionCapture.ZOrder" xml:space="preserve">
+  <data name="nudScreenshotDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.Name" xml:space="preserve">
+    <value>nudScreenshotDelay</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;nudScreenshotDelay.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="nudCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 96</value>
+  </data>
+  <data name="nudCaptureShadowOffset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="nudCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="nudCaptureShadowOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.Name" xml:space="preserve">
+    <value>nudCaptureShadowOffset</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureShadowOffset.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cbScreenshotDelay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbScreenshotDelay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 152</value>
+  </data>
+  <data name="cbScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 17</value>
+  </data>
+  <data name="cbScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Screenshot delay:</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.Name" xml:space="preserve">
+    <value>cbScreenshotDelay</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;cbScreenshotDelay.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 0</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 25</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tpRegionCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
+    <value>Use capture settings in main window task settings</value>
   </data>
-  <data name="tpRegionCapture.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultCaptureSettings</value>
   </data>
-  <data name="tpRegionCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 328</value>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tpRegionCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Parent" xml:space="preserve">
+    <value>tpCaptureGeneral</value>
   </data>
-  <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>Region capture</value>
-  </data>
-  <data name="&gt;&gt;tpRegionCapture.Name" xml:space="preserve">
-    <value>tpRegionCapture</value>
-  </data>
-  <data name="&gt;&gt;tpRegionCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpRegionCapture.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpRegionCapture.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="pgRegionCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2883,45 +3591,6 @@
   <data name="&gt;&gt;pgRegionCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.Name" xml:space="preserve">
-    <value>pgRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.Parent" xml:space="preserve">
-    <value>tpRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;pgRectangleAnnotate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tpRectangleAnnotate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpRectangleAnnotate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpRectangleAnnotate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 328</value>
-  </data>
-  <data name="tpRectangleAnnotate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>Rectangle annotate</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Name" xml:space="preserve">
-    <value>tpRectangleAnnotate</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpRectangleAnnotate.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="pgRectangleAnnotate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2945,237 +3614,6 @@
   </data>
   <data name="&gt;&gt;pgRectangleAnnotate.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderStartDelay.Name" xml:space="preserve">
-    <value>lblScreenRecorderStartDelay</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderStartDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderStartDelay.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderStartDelay.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chkScreenRecordAutoStart.Name" xml:space="preserve">
-    <value>chkScreenRecordAutoStart</value>
-  </data>
-  <data name="&gt;&gt;chkScreenRecordAutoStart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkScreenRecordAutoStart.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;chkScreenRecordAutoStart.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.Name" xml:space="preserve">
-    <value>cbScreenRecordAutoDisableAero</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecordAutoDisableAero.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderFixedDuration.Name" xml:space="preserve">
-    <value>lblScreenRecorderFixedDuration</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderFixedDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderFixedDuration.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecordFPS.Name" xml:space="preserve">
-    <value>nudScreenRecordFPS</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecordFPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecordFPS.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecordFPS.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecordFPS.Name" xml:space="preserve">
-    <value>lblScreenRecordFPS</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecordFPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecordFPS.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecordFPS.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;chkRunScreencastCLI.Name" xml:space="preserve">
-    <value>chkRunScreencastCLI</value>
-  </data>
-  <data name="&gt;&gt;chkRunScreencastCLI.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkRunScreencastCLI.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;chkRunScreencastCLI.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecorderOptions.Name" xml:space="preserve">
-    <value>btnScreenRecorderOptions</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecorderOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecorderOptions.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;btnScreenRecorderOptions.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnEncoderConfig.Name" xml:space="preserve">
-    <value>btnEncoderConfig</value>
-  </data>
-  <data name="&gt;&gt;btnEncoderConfig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnEncoderConfig.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;btnEncoderConfig.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cboEncoder.Name" xml:space="preserve">
-    <value>cboEncoder</value>
-  </data>
-  <data name="&gt;&gt;cboEncoder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboEncoder.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;cboEncoder.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderDuration.Name" xml:space="preserve">
-    <value>nudScreenRecorderDuration</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderDuration.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderDuration.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderStartDelay.Name" xml:space="preserve">
-    <value>nudScreenRecorderStartDelay</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderStartDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderStartDelay.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;nudScreenRecorderStartDelay.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderOutput.Name" xml:space="preserve">
-    <value>cbScreenRecorderOutput</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderOutput.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderOutput.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderOutput.Name" xml:space="preserve">
-    <value>lblScreenRecorderOutput</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderOutput.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;lblScreenRecorderOutput.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderFixedDuration.Name" xml:space="preserve">
-    <value>cbScreenRecorderFixedDuration</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderFixedDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderFixedDuration.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;cbScreenRecorderFixedDuration.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;nudGIFFPS.Name" xml:space="preserve">
-    <value>nudGIFFPS</value>
-  </data>
-  <data name="&gt;&gt;nudGIFFPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudGIFFPS.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;nudGIFFPS.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;lblGIFFPS.Name" xml:space="preserve">
-    <value>lblGIFFPS</value>
-  </data>
-  <data name="&gt;&gt;lblGIFFPS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGIFFPS.Parent" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="tpScreenRecorder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpScreenRecorder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpScreenRecorder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 328</value>
-  </data>
-  <data name="tpScreenRecorder.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>Screen recorder</value>
-  </data>
-  <data name="&gt;&gt;tpScreenRecorder.Name" xml:space="preserve">
-    <value>tpScreenRecorder</value>
-  </data>
-  <data name="&gt;&gt;tpScreenRecorder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpScreenRecorder.Parent" xml:space="preserve">
-    <value>tcCapture</value>
-  </data>
-  <data name="&gt;&gt;tpScreenRecorder.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lblScreenRecorderStartDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3639,42 +4077,6 @@
   <data name="&gt;&gt;lblGIFFPS.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="chkUseDefaultCaptureSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 0</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 25</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Use capture settings in main window task settings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultCaptureSettings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.Parent" xml:space="preserve">
-    <value>tpCaptureGeneral</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultCaptureSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;btnActionsDuplicate.Name" xml:space="preserve">
     <value>btnActionsDuplicate</value>
   </data>
@@ -3703,7 +4105,7 @@
     <value>lvActions</value>
   </data>
   <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
     <value>pActions</value>
@@ -3815,6 +4217,54 @@
   </data>
   <data name="&gt;&gt;btnActionsAdd.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lvActions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvActions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="lvActions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>504, 288</value>
+  </data>
+  <data name="lvActions.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lvActions.Name" xml:space="preserve">
+    <value>lvActions</value>
+  </data>
+  <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
+    <value>pActions</value>
+  </data>
+  <data name="&gt;&gt;lvActions.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chActionsName.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="chActionsPath.Width" type="System.Int32, mscorlib">
+    <value>220</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Args</value>
+  </data>
+  <data name="chActionsArgs.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Extensions</value>
+  </data>
+  <data name="chActionsExtensions.Width" type="System.Int32, mscorlib">
+    <value>75</value>
   </data>
   <data name="btnActionsEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4122,23 +4572,17 @@
   <data name="&gt;&gt;tpUploadNamePattern.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbFileUploadUseNamePattern.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblNameFormatPattern.Name" xml:space="preserve">
+    <value>lblNameFormatPattern</value>
   </data>
-  <data name="cbFileUploadUseNamePattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;lblNameFormatPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbFileUploadUseNamePattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 143</value>
+  <data name="&gt;&gt;lblNameFormatPattern.Parent" xml:space="preserve">
+    <value>pUpload</value>
   </data>
-  <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 17</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Use name pattern for file uploads too instead actual file name</value>
+  <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbFileUploadUseNamePattern.Name" xml:space="preserve">
     <value>cbFileUploadUseNamePattern</value>
@@ -4151,6 +4595,102 @@
   </data>
   <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Name" xml:space="preserve">
+    <value>lblNameFormatPatternPreviewActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Name" xml:space="preserve">
+    <value>lblNameFormatPatternPreview</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Name" xml:space="preserve">
+    <value>txtNameFormatPatternActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
+    <value>txtNameFormatPattern</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.Name" xml:space="preserve">
+    <value>btnResetAutoIncrementNumber</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;btnResetAutoIncrementNumber.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Name" xml:space="preserve">
+    <value>lblNameFormatPatternActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="pUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 303</value>
+  </data>
+  <data name="pUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pUpload.Name" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;pUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pUpload.Parent" xml:space="preserve">
+    <value>tpUploadNamePattern</value>
+  </data>
+  <data name="&gt;&gt;pUpload.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblNameFormatPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4182,6 +4722,96 @@
   <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbFileUploadUseNamePattern.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 143</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 17</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Use name pattern for file uploads too instead actual file name</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.Name" xml:space="preserve">
+    <value>cbFileUploadUseNamePattern</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 117</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Name" xml:space="preserve">
+    <value>lblNameFormatPatternPreviewActiveWindow</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 55</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Name" xml:space="preserve">
+    <value>lblNameFormatPatternPreview</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="txtNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 94</value>
   </data>
@@ -4202,6 +4832,27 @@
   </data>
   <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="txtNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 32</value>
+  </data>
+  <data name="txtNameFormatPattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 20</value>
+  </data>
+  <data name="txtNameFormatPattern.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
+    <value>txtNameFormatPattern</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.Parent" xml:space="preserve">
+    <value>pUpload</value>
+  </data>
+  <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="btnResetAutoIncrementNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4260,86 +4911,41 @@
   <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="txtNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 32</value>
-  </data>
-  <data name="txtNameFormatPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 20</value>
-  </data>
-  <data name="txtNameFormatPattern.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
-    <value>txtNameFormatPattern</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblNameFormatPatternPreview.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkUseDefaultUploadSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblNameFormatPatternPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="chkUseDefaultUploadSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkUseDefaultUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblNameFormatPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 55</value>
+  <data name="chkUseDefaultUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="lblNameFormatPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+  <data name="chkUseDefaultUploadSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 0</value>
   </data>
-  <data name="lblNameFormatPatternPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="chkUseDefaultUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 25</value>
   </data>
-  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>Preview:</value>
+  <data name="chkUseDefaultUploadSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Name" xml:space="preserve">
-    <value>lblNameFormatPatternPreview</value>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>Use upload settings in main window task settings</value>
   </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultUploadSettings</value>
   </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Parent" xml:space="preserve">
-    <value>pUpload</value>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.Parent" xml:space="preserve">
+    <value>tpUploadNamePattern</value>
   </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 117</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>Preview:</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Name" xml:space="preserve">
-    <value>lblNameFormatPatternPreviewActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbClipboardUploadShareURL.Name" xml:space="preserve">
     <value>cbClipboardUploadShareURL</value>
@@ -4536,209 +5142,125 @@
   <data name="&gt;&gt;cbClipboardUploadShortenURL.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="pgIndexerConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="pgIndexerConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="pgIndexerConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 324</value>
   </data>
-  <data name="chkUseDefaultUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 0</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 25</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>Use upload settings in main window task settings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Name" xml:space="preserve">
-    <value>chkUseDefaultUploadSettings</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.Parent" xml:space="preserve">
-    <value>tpUploadNamePattern</value>
-  </data>
-  <data name="&gt;&gt;chkUseDefaultUploadSettings.ZOrder" xml:space="preserve">
+  <data name="pgIndexerConfig.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="&gt;&gt;pgIndexerConfig.Name" xml:space="preserve">
+    <value>pgIndexerConfig</value>
+  </data>
+  <data name="&gt;&gt;pgIndexerConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgIndexerConfig.Parent" xml:space="preserve">
+    <value>tpIndexer</value>
+  </data>
+  <data name="&gt;&gt;pgIndexerConfig.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 112</value>
+  <data name="chkUseDefaultIndexerSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 23</value>
+  <data name="chkUseDefaultIndexerSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 8</value>
   </data>
-  <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="chkUseDefaultIndexerSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 30</value>
   </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>After capture...</value>
+  <data name="chkUseDefaultIndexerSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="btnAfterCapture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
+    <value>Use indexer settings in main window task settings</value>
   </data>
-  <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
-    <value>btnAfterCapture</value>
+  <data name="&gt;&gt;chkUseDefaultIndexerSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultIndexerSettings</value>
   </data>
-  <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;chkUseDefaultIndexerSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
-    <value>tpTask</value>
+  <data name="&gt;&gt;chkUseDefaultIndexerSettings.Parent" xml:space="preserve">
+    <value>tpIndexer</value>
   </data>
-  <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;chkUseDefaultIndexerSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="pgTaskSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pgTaskSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
+  </data>
+  <data name="pgTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 324</value>
+  </data>
+  <data name="pgTaskSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pgTaskSettings.Name" xml:space="preserve">
+    <value>pgTaskSettings</value>
+  </data>
+  <data name="&gt;&gt;pgTaskSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgTaskSettings.Parent" xml:space="preserve">
+    <value>tpAdvanced</value>
+  </data>
+  <data name="&gt;&gt;pgTaskSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 168</value>
+  <data name="chkUseDefaultAdvancedSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 23</value>
+  <data name="chkUseDefaultAdvancedSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 8</value>
   </data>
-  <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="chkUseDefaultAdvancedSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 30</value>
   </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>After upload...</value>
+  <data name="chkUseDefaultAdvancedSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="btnAfterUpload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+    <value>Use advanced settings in main window task settings</value>
   </data>
-  <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
-    <value>btnAfterUpload</value>
+  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Name" xml:space="preserve">
+    <value>chkUseDefaultAdvancedSettings</value>
   </data>
-  <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
-    <value>tpTask</value>
+  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.Parent" xml:space="preserve">
+    <value>tpAdvanced</value>
   </data>
-  <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 224</value>
-  </data>
-  <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 23</value>
-  </data>
-  <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Destinations...</value>
-  </data>
-  <data name="btnDestinations.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
-    <value>btnDestinations</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
-    <value>tpTask</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 56</value>
-  </data>
-  <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 23</value>
-  </data>
-  <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Task...</value>
-  </data>
-  <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
-    <value>btnTask</value>
-  </data>
-  <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>HelpersLib.MenuButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
-    <value>tpTask</value>
-  </data>
-  <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lvActions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lvActions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
-  </data>
-  <data name="lvActions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 288</value>
-  </data>
-  <data name="lvActions.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lvActions.Name" xml:space="preserve">
-    <value>lvActions</value>
-  </data>
-  <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
-    <value>pActions</value>
-  </data>
-  <data name="&gt;&gt;lvActions.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="chActionsName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chActionsName.Width" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="chActionsPath.Text" xml:space="preserve">
-    <value>Path</value>
-  </data>
-  <data name="chActionsPath.Width" type="System.Int32, mscorlib">
-    <value>220</value>
-  </data>
-  <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>Args</value>
-  </data>
-  <data name="chActionsArgs.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>Extensions</value>
-  </data>
-  <data name="chActionsExtensions.Width" type="System.Int32, mscorlib">
-    <value>75</value>
+  <data name="&gt;&gt;chkUseDefaultAdvancedSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tttvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4759,469 +5281,13 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>HelpersLib.TabToTreeView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tttvMain.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat.Name" xml:space="preserve">
-    <value>lblImageFormat</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbImageFileExist.Name" xml:space="preserve">
-    <value>cbImageFileExist</value>
-  </data>
-  <data name="&gt;&gt;cbImageFileExist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImageFileExist.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;cbImageFileExist.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.Name" xml:space="preserve">
-    <value>lblUseImageFormat2After</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2After.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblImageFileExist.Name" xml:space="preserve">
-    <value>lblImageFileExist</value>
-  </data>
-  <data name="&gt;&gt;lblImageFileExist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageFileExist.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageFileExist.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.Name" xml:space="preserve">
-    <value>nudUseImageFormat2After</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;nudUseImageFormat2After.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.Name" xml:space="preserve">
-    <value>lblImageFormat2</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageFormat2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2AfterHint.Name" xml:space="preserve">
-    <value>lblUseImageFormat2AfterHint</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2AfterHint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2AfterHint.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblUseImageFormat2AfterHint.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.Name" xml:space="preserve">
-    <value>nudImageJPEGQuality</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;nudImageJPEGQuality.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat.Name" xml:space="preserve">
-    <value>cbImageFormat</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.Name" xml:space="preserve">
-    <value>cbImageFormat2</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;cbImageFormat2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
-    <value>lblImageJPEGQualityHint</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQualityHint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQualityHint.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQualityHint.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;lblImageGIFQuality.Name" xml:space="preserve">
-    <value>lblImageGIFQuality</value>
-  </data>
-  <data name="&gt;&gt;lblImageGIFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageGIFQuality.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageGIFQuality.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQuality.Name" xml:space="preserve">
-    <value>lblImageJPEGQuality</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQuality.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;lblImageJPEGQuality.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;cbImageGIFQuality.Name" xml:space="preserve">
-    <value>cbImageGIFQuality</value>
-  </data>
-  <data name="&gt;&gt;cbImageGIFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbImageGIFQuality.Parent" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;cbImageGIFQuality.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="pImage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
-  </data>
-  <data name="pImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 303</value>
-  </data>
-  <data name="pImage.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;pImage.Name" xml:space="preserve">
-    <value>pImage</value>
-  </data>
-  <data name="&gt;&gt;pImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pImage.Parent" xml:space="preserve">
-    <value>tpQuality</value>
-  </data>
-  <data name="&gt;&gt;pImage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbShowCursor.Name" xml:space="preserve">
-    <value>cbShowCursor</value>
-  </data>
-  <data name="&gt;&gt;cbShowCursor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbShowCursor.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbShowCursor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblCaptureShadowOffset.Name" xml:space="preserve">
-    <value>lblCaptureShadowOffset</value>
-  </data>
-  <data name="&gt;&gt;lblCaptureShadowOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCaptureShadowOffset.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;lblCaptureShadowOffset.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureTransparent.Name" xml:space="preserve">
-    <value>cbCaptureTransparent</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureTransparent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureTransparent.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureTransparent.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.Name" xml:space="preserve">
-    <value>cbCaptureAutoHideTaskbar</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureAutoHideTaskbar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureShadow.Name" xml:space="preserve">
-    <value>cbCaptureShadow</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureShadow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureShadow.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureShadow.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.Name" xml:space="preserve">
-    <value>lblScreenshotDelayInfo</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;lblScreenshotDelayInfo.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.Name" xml:space="preserve">
-    <value>cbCaptureClientArea</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbCaptureClientArea.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.Name" xml:space="preserve">
-    <value>nudScreenshotDelay</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;nudScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.Name" xml:space="preserve">
-    <value>nudCaptureShadowOffset</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;nudCaptureShadowOffset.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.Name" xml:space="preserve">
-    <value>cbScreenshotDelay</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.Parent" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;cbScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="pCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
-  </data>
-  <data name="pCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 303</value>
-  </data>
-  <data name="pCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;pCapture.Name" xml:space="preserve">
-    <value>pCapture</value>
-  </data>
-  <data name="&gt;&gt;pCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCapture.Parent" xml:space="preserve">
-    <value>tpCaptureGeneral</value>
-  </data>
-  <data name="&gt;&gt;pCapture.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.Name" xml:space="preserve">
-    <value>lblNameFormatPattern</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.Name" xml:space="preserve">
-    <value>cbFileUploadUseNamePattern</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Name" xml:space="preserve">
-    <value>lblNameFormatPatternPreviewActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Name" xml:space="preserve">
-    <value>lblNameFormatPatternPreview</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Name" xml:space="preserve">
-    <value>txtNameFormatPatternActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Name" xml:space="preserve">
-    <value>txtNameFormatPattern</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.Name" xml:space="preserve">
-    <value>btnResetAutoIncrementNumber</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;btnResetAutoIncrementNumber.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Name" xml:space="preserve">
-    <value>lblNameFormatPatternActiveWindow</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.Parent" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
-  </data>
-  <data name="pUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 303</value>
-  </data>
-  <data name="pUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;pUpload.Name" xml:space="preserve">
-    <value>pUpload</value>
-  </data>
-  <data name="&gt;&gt;pUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pUpload.Parent" xml:space="preserve">
-    <value>tpUploadNamePattern</value>
-  </data>
-  <data name="&gt;&gt;pUpload.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -5231,9 +5297,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>680, 392</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -5274,24 +5337,6 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
-    <value>chWatchFolderFolderPath</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
-    <value>chWatchFolderFilter</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
-    <value>chWatchFolderIncludeSubdirectories</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;chActionsName.Name" xml:space="preserve">
     <value>chActionsName</value>
   </data>
@@ -5314,6 +5359,24 @@
     <value>chActionsExtensions</value>
   </data>
   <data name="&gt;&gt;chActionsExtensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
+    <value>chWatchFolderFolderPath</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
+    <value>chWatchFolderFilter</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
+    <value>chWatchFolderIncludeSubdirectories</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -25,14 +25,14 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
-using ShareX.ScreenCaptureLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
+using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using ShareX.UploadersLib;
 
 namespace ShareX
 {
@@ -139,13 +139,25 @@ namespace ShareX
             SetEnumChecked(TaskSettings.URLShortenerDestination, tsmiURLShorteners);
             SetEnumChecked(TaskSettings.URLSharingServiceDestination, tsmiURLSharingServices);
 
-            // FTP
-            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.Count > 1)
+            if (Program.UploadersConfig != null)
             {
-                chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
-                cboFTPaccounts.Items.Clear();
-                cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
-                cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
+                // FTP
+                if (Program.UploadersConfig.FTPAccountList.Count > 0)
+                {
+                    chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
+                    cboFTPaccounts.Items.Clear();
+                    cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
+                    cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
+                }
+
+                // Custom uploader
+                if (Program.UploadersConfig.CustomUploadersList.Count > 0)
+                {
+                    chkOverrideCustomUploader.Checked = TaskSettings.OverrideCustomUploader;
+                    cbOverrideCustomUploader.Items.Clear();
+                    cbOverrideCustomUploader.Items.AddRange(Program.UploadersConfig.CustomUploadersList.ToArray());
+                    cbOverrideCustomUploader.SelectedIndex = TaskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
+                }
             }
 
             UpdateDestinationStates();
@@ -527,6 +539,17 @@ namespace ShareX
         private void cboFTPaccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.FTPIndex = cboFTPaccounts.SelectedIndex;
+        }
+
+        private void chkOverrideCustomUploader_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.OverrideCustomUploader = chkOverrideCustomUploader.Checked;
+            cbOverrideCustomUploader.Enabled = TaskSettings.OverrideCustomUploader;
+        }
+
+        private void cbOverrideCustomUploader_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CustomUploaderIndex = cbOverrideCustomUploader.SelectedIndex;
         }
 
         #endregion Task
