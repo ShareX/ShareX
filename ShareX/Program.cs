@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.UploadersLib;
 using SingleInstanceApplication;
 using System;
 using System.Diagnostics;
@@ -33,7 +34,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using ShareX.UploadersLib;
 
 namespace ShareX
 {

@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,8 +33,6 @@ using System.IO;
 using System.Linq;
 using System.Net.FtpClient;
 using System.Windows.Forms;
-using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.Properties;
 
 namespace ShareX.UploadersLib
 {

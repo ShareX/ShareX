@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
 using Microsoft.Win32;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;

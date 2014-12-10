@@ -25,9 +25,9 @@
 
 // gpailler
 
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Windows.Forms;
-using ShareX.UploadersLib.Properties;
 
 namespace ShareX.UploadersLib.GUI
 {

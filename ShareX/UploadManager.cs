@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.IndexerLib;
 using ShareX.Properties;
+using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
@@ -33,7 +34,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Windows.Forms;
-using ShareX.UploadersLib;
 
 namespace ShareX
 {

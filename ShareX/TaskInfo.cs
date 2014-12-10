@@ -25,10 +25,10 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using System;
-using System.IO;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.HelperClasses;
+using System;
+using System.IO;
 
 namespace ShareX
 {

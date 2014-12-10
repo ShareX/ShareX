@@ -24,11 +24,11 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
-using ShareX.UploadersLib.HelperClasses;
 
 namespace ShareX.UploadersLib
 {

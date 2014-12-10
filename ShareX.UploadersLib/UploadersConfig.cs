@@ -25,12 +25,12 @@
 
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
-using System;
-using System.Collections.Generic;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;
+using System;
+using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
 {

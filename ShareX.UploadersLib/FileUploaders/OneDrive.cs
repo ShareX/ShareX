@@ -26,9 +26,9 @@
 // Credits: https://github.com/l0nley
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.IO;
-using ShareX.UploadersLib.HelperClasses;
 
 namespace ShareX.UploadersLib.FileUploaders
 {

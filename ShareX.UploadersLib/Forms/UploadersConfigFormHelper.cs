@@ -24,20 +24,20 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.Forms;
+using ShareX.UploadersLib.GUI;
+using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.Properties;
+using ShareX.UploadersLib.TextUploaders;
+using ShareX.UploadersLib.URLShorteners;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using ShareX.UploadersLib.FileUploaders;
-using ShareX.UploadersLib.Forms;
-using ShareX.UploadersLib.GUI;
-using ShareX.UploadersLib.HelperClasses;
-using ShareX.UploadersLib.ImageUploaders;
-using ShareX.UploadersLib.TextUploaders;
-using ShareX.UploadersLib.URLShorteners;
-using ShareX.UploadersLib.Properties;
 
 namespace ShareX.UploadersLib
 {

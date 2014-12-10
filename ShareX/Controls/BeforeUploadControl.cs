@@ -24,10 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.UploadersLib;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using ShareX.UploadersLib;
 
 namespace ShareX
 {

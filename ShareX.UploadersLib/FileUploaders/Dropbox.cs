@@ -23,14 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
+using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Text.RegularExpressions;
-using ShareX.UploadersLib.HelperClasses;
 
 namespace ShareX.UploadersLib.FileUploaders
 {

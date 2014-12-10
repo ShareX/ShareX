@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Globalization;
 using System.IO;

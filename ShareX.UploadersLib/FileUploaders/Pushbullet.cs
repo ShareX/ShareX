@@ -26,8 +26,8 @@
 // Credits: https://github.com/BallisticLingonberries
 // API Information: https://docs.pushbullet.com/http/
 
-using ShareX.HelpersLib;
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;

@@ -25,8 +25,8 @@
 
 // Credits: https://github.com/alanedwardes
 
-using ShareX.HelpersLib;
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;

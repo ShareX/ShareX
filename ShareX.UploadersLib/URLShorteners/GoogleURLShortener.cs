@@ -23,10 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using Newtonsoft.Json;
-using System.Collections.Generic;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
+using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {

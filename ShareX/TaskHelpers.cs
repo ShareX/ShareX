@@ -25,8 +25,10 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
-using ShareX.ScreenCaptureLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
+using ShareX.UploadersLib;
+using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -34,8 +36,6 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using ShareX.UploadersLib;
-using ShareX.UploadersLib.HelperClasses;
 
 namespace ShareX
 {

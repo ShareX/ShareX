@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
 

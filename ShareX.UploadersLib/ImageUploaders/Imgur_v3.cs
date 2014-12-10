@@ -25,11 +25,11 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
-using ShareX.UploadersLib.HelperClasses;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
