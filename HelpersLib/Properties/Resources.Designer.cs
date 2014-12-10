@@ -943,6 +943,24 @@ namespace HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start auto capture using last region.
+        /// </summary>
+        internal static string HotkeyType_StartAutoCapture {
+            get {
+                return ResourceManager.GetString("HotkeyType_StartAutoCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start screen recording using last region.
+        /// </summary>
+        internal static string HotkeyType_StartScreenRecorder {
+            get {
+                return ResourceManager.GetString("HotkeyType_StartScreenRecorder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stop all active uploads.
         /// </summary>
         internal static string HotkeyType_StopUploads {

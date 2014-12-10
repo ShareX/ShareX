@@ -482,6 +482,16 @@ namespace ShareX
             AutoCaptureForm.Instance.ShowActivate();
         }
 
+        public static void StartAutoCapture()
+        {
+            if (!AutoCaptureForm.IsRunning)
+            {
+                AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.Show();
+                form.Execute();
+            }
+        }
+
         public static void OpenScreenshotsFolder()
         {
             if (Directory.Exists(Program.ScreenshotsFolder))
@@ -491,16 +501,6 @@ namespace ShareX
             else
             {
                 Helpers.OpenFolder(Program.ScreenshotsParentFolder);
-            }
-        }
-
-        public static void StartAutoCapture()
-        {
-            if (!AutoCaptureForm.IsRunning)
-            {
-                AutoCaptureForm form = AutoCaptureForm.Instance;
-                form.Show();
-                form.Execute();
             }
         }
 

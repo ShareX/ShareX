@@ -581,4 +581,10 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatik</value>
   </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Son bölgeyi kullanarak otomatik yakala</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>Son bölgeyi kullanarak ekran kaydet</value>
+  </data>
 </root>

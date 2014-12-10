@@ -603,4 +603,10 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatic</value>
   </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Start auto capture using last region</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>Start screen recording using last region</value>
+  </data>
 </root>

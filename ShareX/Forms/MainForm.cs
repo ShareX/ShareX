@@ -1503,6 +1503,9 @@ namespace ShareX
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
                     break;
+                case HotkeyType.StartAutoCapture:
+                    TaskHelpers.StartAutoCapture();
+                    break;
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
