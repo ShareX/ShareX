@@ -147,7 +147,6 @@ ClientBin/
 *~
 *.dbmdl
 *.dbproj.schemaview
-*.pfx
 *.publishsettings
 node_modules/
 
@@ -175,5 +174,5 @@ FakesAssemblies/
 
 # Additional
 InnoSetup/Output/
-UploadersLib/APIKeys/APIKeysLocal.cs
 ShareX/GitHash.txt
+ShareX.UploadersLib/APIKeys/APIKeysLocal.cs

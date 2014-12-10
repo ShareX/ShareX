@@ -76,9 +76,6 @@ Source: "..\Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserv
 Source: "..\Lib\audio_sniffer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
 Source: "..\Lib\audio_sniffer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
 
-[InstallDelete]
-Type: files; Name: "{app}\*.pdb"
-
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFile}"; WorkingDir: "{app}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; WorkingDir: "{app}"
