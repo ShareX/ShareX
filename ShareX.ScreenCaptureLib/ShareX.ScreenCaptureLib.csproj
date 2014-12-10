@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScreenCaptureLib</RootNamespace>
+    <AssemblyName>ShareX.ScreenCaptureLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Forms\RectangleAnnotate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RectangleAnnotateOptions.cs" />
+    <Compile Include="Screencast\AVIOptions.cs" />
+    <Compile Include="Screencast\FFmpegOptions.cs" />
+    <Compile Include="Screencast\FFmpegHelper.cs" />
+    <Compile Include="Screencast\FFmpegOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screencast\FFmpegOptionsForm.Designer.cs">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screencast\ScreencastOptions.cs" />
+    <Compile Include="Screencast\AviWriter.cs" />
+    <Compile Include="Forms\RectangleLight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Surface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screencast\ImageCache.cs" />
+    <Compile Include="LocationInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegionHelpers\AreaManager.cs" />
+    <Compile Include="RegionHelpers\DrawObject.cs" />
+    <Compile Include="Forms\DiamondRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EllipseRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FreeHandRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PolygonRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RectangleRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoundedRectangleRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TriangleRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegionHelpers\InputManager.cs" />
+    <Compile Include="RegionHelpers\MouseState.cs" />
+    <Compile Include="RegionHelpers\NodeObject.cs" />
+    <Compile Include="RegionHelpers\ResizeManager.cs" />
+    <Compile Include="RegionHelpers\ShapeCaptureHelpers.cs" />
+    <Compile Include="SurfaceOptions.cs" />
+    <Compile Include="Screencast\ScreenRecorder.cs" />
+    <Compile Include="Screencast\HardDiskCache.cs" />
+    <Compile Include="Screencast\AVICache.cs" />
+    <Compile Include="Screenshot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screenshot_Transparent.cs" />
+    <Compile Include="WindowInfo.cs" />
+    <Compile Include="WindowsList.cs" />
+    <Compile Include="WindowsRectangleList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
+      <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
+      <Name>ShareX.HelpersLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Crosshair.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.tr.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

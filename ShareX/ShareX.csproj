@@ -358,29 +358,29 @@
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HistoryLib\HistoryLib.csproj">
+    <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj">
       <Project>{E7DE6237-AEA2-498B-8F56-9B392472C490}</Project>
-      <Name>HistoryLib</Name>
+      <Name>ShareX.HistoryLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ImageEffectsLib\ImageEffectsLib.csproj">
+    <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj">
       <Project>{d13441b6-96e1-4d1b-8a95-58a7d6cb1e24}</Project>
-      <Name>ImageEffectsLib</Name>
+      <Name>ShareX.ImageEffectsLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IndexerLib\IndexerLib.csproj">
+    <ProjectReference Include="..\ShareX.IndexerLib\ShareX.IndexerLib.csproj">
       <Project>{750c6f46-2c5a-4488-81d3-3b35ca50f3ee}</Project>
-      <Name>IndexerLib</Name>
+      <Name>ShareX.IndexerLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ScreenCaptureLib\ScreenCaptureLib.csproj">
+    <ProjectReference Include="..\ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj">
       <Project>{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}</Project>
-      <Name>ScreenCaptureLib</Name>
+      <Name>ShareX.ScreenCaptureLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HelpersLib\HelpersLib.csproj">
+    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
       <Project>{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}</Project>
-      <Name>HelpersLib</Name>
+      <Name>ShareX.HelpersLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UploadersLib\UploadersLib.csproj">
+    <ProjectReference Include="..\ShareX.UploadersLib\ShareX.UploadersLib.csproj">
       <Project>{E1C94415-3424-4517-A2A1-B2FDD1F59C67}</Project>
-      <Name>UploadersLib</Name>
+      <Name>ShareX.UploadersLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

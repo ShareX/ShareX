@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{CD642BF4-D815-4D67-A0B5-C69F0B8231AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Greenshot</RootNamespace>
+    <AssemblyName>Greenshot.ImageEditor</AssemblyName>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\EditorConfiguration.cs" />
+    <Compile Include="Controls\AnimatingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\BackgroundForm.designer.cs">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BindableToolStripComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BindableToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BindableToolStripDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ColorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FormWithoutActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotColumnSorter.cs" />
+    <Compile Include="Controls\GreenshotComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolStripLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IGreenshotConfigBindable.cs" />
+    <Compile Include="Controls\IGreenshotLanguageBindable.cs" />
+    <Compile Include="Controls\NonJumpingPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PleaseWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PleaseWaitForm.designer.cs">
+      <DependentUpon>PleaseWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QualityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\QualityDialog.designer.cs">
+      <DependentUpon>QualityDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SaveImageFileDialog.cs" />
+    <Compile Include="Controls\ToolStripColorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FontFamilyComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolStripNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MenuStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Pipette.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\BinaryStructHelper.cs" />
+    <Compile Include="Core\Cache.cs" />
+    <Compile Include="Core\ClipboardHelper.cs" />
+    <Compile Include="Configuration\CoreConfiguration.cs" />
+    <Compile Include="Core\Effects.cs" />
+    <Compile Include="Core\EncryptionHelper.cs" />
+    <Compile Include="Core\EnumExtensions.cs" />
+    <Compile Include="Core\FastBitmap.cs" />
+    <Compile Include="Core\FilenameHelper.cs" />
+    <Compile Include="Core\GreenshotResources.cs" />
+    <Compile Include="Core\ImageHelper.cs" />
+    <Compile Include="Core\ImageOutput.cs" />
+    <Compile Include="Core\Objects.cs" />
+    <Compile Include="Core\QuantizerHelper.cs" />
+    <Compile Include="Core\WindowCapture.cs" />
+    <Compile Include="Core\WindowsHelper.cs" />
+    <Compile Include="Drawing\ArrowContainer.cs" />
+    <Compile Include="Drawing\Fields\Binding\AlignmentConverter.cs" />
+    <Compile Include="Drawing\ImageContainer.cs" />
+    <Compile Include="Drawing\CropContainer.cs" />
+    <Compile Include="Drawing\CursorContainer.cs" />
+    <Compile Include="Drawing\DrawableContainer.cs" />
+    <Compile Include="Drawing\DrawableContainerList.cs" />
+    <Compile Include="Drawing\EllipseContainer.cs" />
+    <Compile Include="Drawing\Fields\AbstractFieldHolderWithChildren.cs" />
+    <Compile Include="Drawing\Fields\Binding\AbstractBindingConverter.cs" />
+    <Compile Include="Drawing\Fields\Binding\BidirectionalBinding.cs" />
+    <Compile Include="Drawing\Fields\Binding\DecimalDoublePercentageConverter.cs" />
+    <Compile Include="Drawing\Fields\Binding\DecimalFloatConverter.cs" />
+    <Compile Include="Drawing\Fields\Binding\DecimalIntConverter.cs" />
+    <Compile Include="Drawing\Fields\Binding\IBindingConverter.cs" />
+    <Compile Include="Drawing\Fields\Binding\IBindingValidator.cs" />
+    <Compile Include="Drawing\Fields\Binding\NotNullValidator.cs" />
+    <Compile Include="Drawing\FilterContainer.cs" />
+    <Compile Include="Drawing\Filters\AbstractFilter.cs" />
+    <Compile Include="Drawing\Filters\BrightnessFilter.cs" />
+    <Compile Include="Drawing\Filters\GrayscaleFilter.cs" />
+    <Compile Include="Drawing\Filters\HighlightFilter.cs" />
+    <Compile Include="Drawing\Filters\IFilter.cs" />
+    <Compile Include="Drawing\Filters\MagnifierFilter.cs" />
+    <Compile Include="Drawing\Filters\PixelizationFilter.cs" />
+    <Compile Include="Drawing\Filters\BlurFilter.cs" />
+    <Compile Include="Drawing\Gripper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Drawing\HighlightContainer.cs" />
+    <Compile Include="Drawing\IconContainer.cs" />
+    <Compile Include="Drawing\LineContainer.cs" />
+    <Compile Include="Drawing\Fields\AbstractFieldHolder.cs" />
+    <Compile Include="Drawing\Fields\Field.cs" />
+    <Compile Include="Drawing\Fields\FieldType.cs" />
+    <Compile Include="Drawing\Fields\IFieldHolder.cs" />
+    <Compile Include="Drawing\Fields\FieldAggregator.cs" />
+    <Compile Include="Drawing\ObfuscateContainer.cs" />
+    <Compile Include="Drawing\FreehandContainer.cs" />
+    <Compile Include="Drawing\RectangleContainer.cs" />
+    <Compile Include="Drawing\SpeechbubbleContainer.cs" />
+    <Compile Include="Drawing\StepLabelContainer.cs" />
+    <Compile Include="Drawing\Surface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Drawing\TextContainer.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\LOG.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UnmanagedHelpers\DWM.cs" />
+    <Compile Include="UnmanagedHelpers\Enumerations.cs" />
+    <Compile Include="UnmanagedHelpers\GDI32.cs" />
+    <Compile Include="UnmanagedHelpers\GDIplus.cs" />
+    <Compile Include="UnmanagedHelpers\Kernel32.cs" />
+    <Compile Include="UnmanagedHelpers\PsAPI.cs" />
+    <Compile Include="UnmanagedHelpers\Shell32.cs" />
+    <Compile Include="UnmanagedHelpers\Structs.cs" />
+    <Compile Include="UnmanagedHelpers\User32.cs" />
+    <Compile Include="UnmanagedHelpers\Win32Errors.cs" />
+    <Compile Include="UnmanagedHelpers\WinMM.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Forms\DropShadowSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DropShadowSettingsForm.Designer.cs">
+      <DependentUpon>DropShadowSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageEditorForm.Designer.cs">
+      <DependentUpon>ImageEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResizeSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResizeSettingsForm.Designer.cs">
+      <DependentUpon>ResizeSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TornEdgeSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TornEdgeSettingsForm.Designer.cs">
+      <DependentUpon>TornEdgeSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MovableShowColorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovableShowColorForm.Designer.cs">
+      <DependentUpon>MovableShowColorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Colors.cs" />
+    <Compile Include="Helpers\GeometryHelper.cs" />
+    <Compile Include="IniFile\IniAttributes.cs" />
+    <Compile Include="IniFile\IniConfig.cs" />
+    <Compile Include="IniFile\IniReader.cs" />
+    <Compile Include="IniFile\IniSection.cs" />
+    <Compile Include="IniFile\IniValue.cs" />
+    <Compile Include="Interfaces\Capture.cs" />
+    <Compile Include="Interfaces\Drawing\Container.cs" />
+    <Compile Include="Interfaces\Forms\ImageEditor.cs" />
+    <Compile Include="Interfaces\Generic.cs" />
+    <Compile Include="Interfaces\IDestination.cs" />
+    <Compile Include="Interfaces\IProcessor.cs" />
+    <Compile Include="Interfaces\Plugin\PluginInterfaces.cs" />
+    <Compile Include="Interop\Base.cs" />
+    <Compile Include="Interop\ComProgIdAttribute.cs" />
+    <Compile Include="Interop\COMWrapper.cs" />
+    <Compile Include="Interop\IAppVisibility.cs" />
+    <Compile Include="Interop\IOleCommandTarget.cs" />
+    <Compile Include="Interop\IOleWindow.cs" />
+    <Compile Include="Interop\IServiceProvider.cs" />
+    <Compile Include="Memento\AddElementMemento.cs" />
+    <Compile Include="Memento\ChangeFieldHolderMemento.cs" />
+    <Compile Include="Memento\DeleteElementMemento.cs" />
+    <Compile Include="Memento\TextChangeMemento.cs" />
+    <Compile Include="Memento\IMemento.cs" />
+    <Compile Include="Memento\DrawableContainerBoundsChangeMemento.cs" />
+    <Compile Include="Memento\SurfaceBackgroundChangeMemento.cs" />
+    <Compile Include="Helpers\GuiRectangle.cs" />
+    <Compile Include="Helpers\ScaleHelper.cs" />
+    <Compile Include="Helpers\ToolStripItemEndisabler.cs" />
+    <EmbeddedResource Include="Core\GreenshotResources.resx">
+      <DependentUpon>GreenshotResources.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ColorDialog.resx">
+      <DependentUpon>ColorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEditorForm.resx">
+      <DependentUpon>ImageEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Forms\ColorDialog.Designer.cs">
+      <DependentUpon>ColorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ColorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-20-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\notification-counter-08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\scissors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\clipboard-paste-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\slash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\minus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\disk-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\disks-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\drive-globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fugue\printer.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DebugType>Full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+</Project>
