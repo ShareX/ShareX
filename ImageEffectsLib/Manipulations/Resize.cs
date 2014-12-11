@@ -37,6 +37,9 @@ namespace ImageEffectsLib
         [DefaultValue(0), Description("Use height as 0 to automatically adjust height to maintain aspect ratio.")]
         public int Height { get; set; }
 
+        [DefaultValue(true), Description("Only resize the captured image if it is bigger than the specified dimensions.")]
+        public bool OnlyResizeIfBigger { get; set; }
+
         public Resize()
         {
             this.ApplyDefaultPropertyValues();
@@ -45,9 +48,11 @@ namespace ImageEffectsLib
         public override Image Apply(Image img)
         {
             if (Width <= 0 && Height <= 0) return img;
-
+             
             //if the image's width is less than the Width configuration, don't resize
-            if (img.Width < Width) return img;
+            if (OnlyResizeIfBigger &&
+                ((img.Width < Width && Height == 0) || (img.Height < Height && Width == 0))
+                ) return img;
 
             int width = Width <= 0 ? (int)((float)Height / img.Height * img.Width) : Width;
             int height = Height <= 0 ? (int)((float)Width / img.Width * img.Height) : Height;
