@@ -191,7 +191,6 @@
     <Compile Include="Controls\AccountsControl.Designer.cs">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherServices\GoogleTranslatorConfig.cs" />
     <Compile Include="Forms\DropboxFilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,8 +257,6 @@
     <Compile Include="ImageUploaders\YfrogUploader.cs" />
     <Compile Include="FileUploaders\Localhost\LocalhostAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OtherServices\GoogleTranslate.cs" />
-    <Compile Include="OtherServices\Lyricsfly.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
