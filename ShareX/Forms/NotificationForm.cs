@@ -49,6 +49,8 @@ namespace ShareX
         public NotificationForm(int duration, ContentAlignment placement, Size size, NotificationFormConfig config)
         {
             InitializeComponent();
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+
             ToastConfig = config;
             textFont = new Font("Arial", 10);
 
@@ -64,10 +66,10 @@ namespace ShareX
                 size = new Size(textRenderSize.Width + textPadding * 2, textRenderSize.Height + textPadding * 2 + 2);
             }
 
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Size = size;
-            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, Size);
-            Location = new Point(Screen.PrimaryScreen.WorkingArea.X + position.X, Screen.PrimaryScreen.WorkingArea.Y + position.Y);
+            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, size);
+
+            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
+                position.Y + Screen.PrimaryScreen.WorkingArea.Y, size.Width, size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
 
             tDuration.Interval = duration;
             tDuration.Start();
@@ -159,8 +161,6 @@ namespace ShareX
                 {
                     NotificationForm form = new NotificationForm(duration, placement, size, config);
                     NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
-                    NativeMethods.SetWindowPos(form.Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, 0, 0, 0, 0,
-                        SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
                 }
             }
         }
