@@ -426,4 +426,7 @@
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>Kaydetmeye başla:</value>
   </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Özel yükleyiciyi değiştir:</value>
+  </data>
 </root>

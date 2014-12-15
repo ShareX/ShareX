@@ -260,10 +260,10 @@
     <value>Update check failed</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>A newer version of ShareX is available</value>
+    <value>A newer version of {0} is available</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>ShareX is up to date</value>
+    <value>{0} is up to date</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
     <value>Waiting.</value>

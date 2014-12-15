@@ -205,13 +205,13 @@
     <value>Kullanıcı giriş adı</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>ShareX güncel</value>
+    <value>{0} güncel</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Güncelleme kontrolü yapılamadı</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Yeni bir ShareX sürümü mevcut</value>
+    <value>Yeni bir {0} sürümü mevcut</value>
   </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>Bilgisayar adı</value>

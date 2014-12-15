@@ -78,11 +78,11 @@ namespace ShareX.HelpersLib
                         lblStatus.Visible = true;
                         break;
                     case UpdateStatus.UpdateAvailable:
-                        llblUpdateAvailable.Text = Resources.UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available;
+                        llblUpdateAvailable.Text = string.Format(Resources.UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available, Application.ProductName);
                         llblUpdateAvailable.Visible = true;
                         break;
                     case UpdateStatus.UpToDate:
-                        lblStatus.Text = Resources.UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date;
+                        lblStatus.Text = string.Format(Resources.UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date, Application.ProductName);
                         lblStatus.Visible = true;
                         break;
                 }

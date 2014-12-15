@@ -1497,7 +1497,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A newer version of ShareX is available.
+        ///   Looks up a localized string similar to A newer version of {0} is available.
         /// </summary>
         internal static string UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available {
             get {
@@ -1506,7 +1506,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShareX is up to date.
+        ///   Looks up a localized string similar to {0} is up to date.
         /// </summary>
         internal static string UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date {
             get {
