@@ -289,6 +289,7 @@ namespace ShareX
                                 sourceFilePath = path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
                             }
 
+                            Helpers.CreateDirectoryIfNotExist(sourceFilePath);
                             screenRecorder.SaveAsGIF(sourceFilePath, taskSettings.ImageSettings.ImageGIFQuality);
                         }
 
