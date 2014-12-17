@@ -115,8 +115,6 @@
             this.chkUseDefaultCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
             this.pgRegionCapture = new System.Windows.Forms.PropertyGrid();
-            this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
-            this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
             this.chkScreenRecordAutoStart = new System.Windows.Forms.CheckBox();
@@ -135,6 +133,8 @@
             this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
+            this.tpRectangleAnnotate = new System.Windows.Forms.TabPage();
+            this.pgRectangleAnnotate = new System.Windows.Forms.PropertyGrid();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
@@ -202,12 +202,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
-            this.tpRectangleAnnotate.SuspendLayout();
             this.tpScreenRecorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
+            this.tpRectangleAnnotate.SuspendLayout();
             this.tpActions.SuspendLayout();
             this.pActions.SuspendLayout();
             this.tpWatchFolders.SuspendLayout();
@@ -893,20 +893,6 @@
             this.pgRegionCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgRegionCapture.ToolbarVisible = false;
             // 
-            // tpRectangleAnnotate
-            // 
-            this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
-            resources.ApplyResources(this.tpRectangleAnnotate, "tpRectangleAnnotate");
-            this.tpRectangleAnnotate.Name = "tpRectangleAnnotate";
-            this.tpRectangleAnnotate.UseVisualStyleBackColor = true;
-            // 
-            // pgRectangleAnnotate
-            // 
-            resources.ApplyResources(this.pgRectangleAnnotate, "pgRectangleAnnotate");
-            this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
-            this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgRectangleAnnotate.ToolbarVisible = false;
-            // 
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
@@ -1104,6 +1090,20 @@
             resources.ApplyResources(this.lblGIFFPS, "lblGIFFPS");
             this.lblGIFFPS.Name = "lblGIFFPS";
             // 
+            // tpRectangleAnnotate
+            // 
+            this.tpRectangleAnnotate.Controls.Add(this.pgRectangleAnnotate);
+            resources.ApplyResources(this.tpRectangleAnnotate, "tpRectangleAnnotate");
+            this.tpRectangleAnnotate.Name = "tpRectangleAnnotate";
+            this.tpRectangleAnnotate.UseVisualStyleBackColor = true;
+            // 
+            // pgRectangleAnnotate
+            // 
+            resources.ApplyResources(this.pgRectangleAnnotate, "pgRectangleAnnotate");
+            this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
+            this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgRectangleAnnotate.ToolbarVisible = false;
+            // 
             // tpActions
             // 
             this.tpActions.Controls.Add(this.pActions);
@@ -1211,12 +1211,12 @@
             // 
             // lvWatchFolderList
             // 
+            resources.ApplyResources(this.lvWatchFolderList, "lvWatchFolderList");
             this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chWatchFolderFolderPath,
             this.chWatchFolderFilter,
             this.chWatchFolderIncludeSubdirectories});
             this.lvWatchFolderList.FullRowSelect = true;
-            resources.ApplyResources(this.lvWatchFolderList, "lvWatchFolderList");
             this.lvWatchFolderList.Name = "lvWatchFolderList";
             this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
             this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
@@ -1476,13 +1476,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
-            this.tpRectangleAnnotate.ResumeLayout(false);
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
+            this.tpRectangleAnnotate.ResumeLayout(false);
             this.tpActions.ResumeLayout(false);
             this.tpActions.PerformLayout();
             this.pActions.ResumeLayout(false);

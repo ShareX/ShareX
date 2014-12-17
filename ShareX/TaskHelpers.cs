@@ -29,6 +29,7 @@ using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -92,6 +93,10 @@ namespace ShareX
                         thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
                         thumbImage.SaveJPG(thumbnailFilePath, 90);
                         return thumbnailFilePath;
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
                     }
                     finally
                     {
