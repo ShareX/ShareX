@@ -219,7 +219,7 @@ namespace ShareX
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.Description);
+            ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.Description.Replace("&", "&&"));
             if (hotkeySetting.HotkeyInfo.IsValidHotkey)
             {
                 tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo;
@@ -691,21 +691,47 @@ namespace ShareX
             {
                 DebugHelper.WriteLine("CommandLine: " + command.Command);
 
-                if (command.IsCommand)
+                if (command.IsCommand && (CheckCLIHotkey(command) || CheckCLIWorkflow(command)))
                 {
-                    foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
+                    continue;
+                }
+
+                UploadManager.UploadFile(command.Command);
+            }
+        }
+
+        private bool CheckCLIHotkey(CLICommand command)
+        {
+            foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
+            {
+                if (command.Command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                {
+                    ExecuteJob(job);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool CheckCLIWorkflow(CLICommand command)
+        {
+            if (command.Command.Equals("workflow", StringComparison.InvariantCultureIgnoreCase) && Program.HotkeysConfig != null)
+            {
+                foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
+                {
+                    if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
                     {
-                        if (command.Command.Equals(job.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                        if (command.Parameter == hotkeySetting.TaskSettings.Description)
                         {
-                            ExecuteJob(job);
+                            ExecuteJob(hotkeySetting.TaskSettings);
+                            return true;
                         }
                     }
                 }
-                else
-                {
-                    UploadManager.UploadFile(command.Command);
-                }
             }
+
+            return false;
         }
 
         private UploadTask[] GetCurrentTasks()
