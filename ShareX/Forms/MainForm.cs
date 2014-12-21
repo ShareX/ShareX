@@ -716,7 +716,7 @@ namespace ShareX
 
         private bool CheckCLIWorkflow(CLICommand command)
         {
-            if (command.Command.Equals("workflow", StringComparison.InvariantCultureIgnoreCase) && Program.HotkeysConfig != null)
+            if (command.Command.Equals("workflow", StringComparison.InvariantCultureIgnoreCase) && !string.IsNullOrEmpty(command.Parameter) && Program.HotkeysConfig != null)
             {
                 foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
                 {
