@@ -55,6 +55,52 @@ namespace Greenshot.Controls
             ComboBox.DataSource = FontFamily.Families;
             ComboBox.DisplayMember = "Name";
             SelectedIndexChanged += BindableToolStripComboBox_SelectedIndexChanged;
+            ComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            ComboBox.DrawItem += ComboBox_DrawItem;
+        }
+
+        private void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            // DrawBackground handles drawing the background (i.e,. hot-tracked v. not)
+            // It uses the system colors (Bluish, and and white, by default)
+            // same as calling e.Graphics.FillRectangle ( SystemBrushes.Highlight, e.Bounds );
+            e.DrawBackground();
+
+            if (e.Index > -1)
+            {
+                FontFamily fontFamily = Items[e.Index] as FontFamily;
+                FontStyle fs = FontStyle.Regular;
+                if (!fontFamily.IsStyleAvailable(FontStyle.Regular))
+                {
+                    if (fontFamily.IsStyleAvailable(FontStyle.Bold))
+                    {
+                        fs = FontStyle.Bold;
+                    }
+                    else if (fontFamily.IsStyleAvailable(FontStyle.Italic))
+                    {
+                        fs = FontStyle.Italic;
+                    }
+                    else if (fontFamily.IsStyleAvailable(FontStyle.Strikeout))
+                    {
+                        fs = FontStyle.Strikeout;
+                    }
+                    else if (fontFamily.IsStyleAvailable(FontStyle.Underline))
+                    {
+                        fs = FontStyle.Underline;
+                    }
+                }
+                using (Font font = new Font(fontFamily, this.Font.Size + 5, fs, GraphicsUnit.Pixel))
+                {
+                    // Make sure the text is visible by centering it in the line
+                    using (StringFormat stringFormat = new StringFormat())
+                    {
+                        stringFormat.LineAlignment = StringAlignment.Center;
+                        e.Graphics.DrawString(fontFamily.Name, font, Brushes.Black, e.Bounds, stringFormat);
+                    }
+                }
+            }
+            // Uncomment this if you actually like the way the focus rectangle looks
+            //e.DrawFocusRectangle ();
         }
 
         private void BindableToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)

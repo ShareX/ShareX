@@ -22,7 +22,6 @@
 using Greenshot.Drawing.Fields;
 using Greenshot.Helpers;
 using Greenshot.Memento;
-using Greenshot.Plugin;
 using Greenshot.Plugin.Drawing;
 using System;
 using System.ComponentModel;
@@ -40,8 +39,6 @@ namespace Greenshot.Drawing
     [Serializable]
     public class TextContainer : RectangleContainer, ITextContainer
     {
-        [NonSerialized]
-        private bool fontInvalidated = true;
         // If makeUndoable is true the next text-change will make the change undoable.
         // This is set to true AFTER the first change is made, as there is already a "add element" on the undo stack
         private bool makeUndoable;
@@ -109,14 +106,13 @@ namespace Greenshot.Drawing
             AddField(GetType(), FieldType.FONT_FAMILY, FontFamily.GenericSansSerif.Name);
             AddField(GetType(), FieldType.FONT_SIZE, 20f);
             AddField(GetType(), FieldType.TEXT_HORIZONTAL_ALIGNMENT, StringAlignment.Center);
-            AddField(GetType(), FieldType.TEXT_VERTICAL_ALIGNMENT, StringAlignment.CENTER);
+            AddField(GetType(), FieldType.TEXT_VERTICAL_ALIGNMENT, StringAlignment.Center);
         }
 
         [OnDeserialized]
         private void OnDeserialized(StreamingContext context)
         {
             Init();
-            UpdateFormat();
         }
 
         protected override void Dispose(bool disposing)
@@ -146,8 +142,12 @@ namespace Greenshot.Drawing
         {
             _stringFormat = new StringFormat();
             _stringFormat.Trimming = StringTrimming.EllipsisWord;
-            fontInvalidated = true;
+
             CreateTextBox();
+
+            UpdateFormat();
+            UpdateTextBoxFormat();
+
             PropertyChanged += TextContainer_PropertyChanged;
             FieldChanged += TextContainer_FieldChanged;
         }
@@ -163,7 +163,6 @@ namespace Greenshot.Drawing
 
         public void FitToText()
         {
-            UpdateFormat();
             Size textSize = TextRenderer.MeasureText(text, _font);
             int lineThickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS);
             Width = textSize.Width + lineThickness;
@@ -172,6 +171,13 @@ namespace Greenshot.Drawing
 
         private void TextContainer_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            if (_textBox.Visible)
+            {
+                _textBox.Invalidate();
+            }
+
+            UpdateTextBoxPosition();
+            UpdateTextBoxFormat();
             if (e.PropertyName.Equals("Selected"))
             {
                 if (!Selected && _textBox.Visible)
@@ -190,8 +196,6 @@ namespace Greenshot.Drawing
             }
             if (_textBox.Visible)
             {
-                UpdateTextBoxPosition();
-                UpdateTextBoxFormat();
                 _textBox.Invalidate();
             }
         }
@@ -200,17 +204,21 @@ namespace Greenshot.Drawing
         {
             if (_textBox.Visible)
             {
-                UpdateTextBoxFormat();
                 _textBox.Invalidate();
             }
-            else
+            // Only dispose the font, and re-create it, when a font field has changed.
+            if (e.Field.FieldType.Name.StartsWith("FONT"))
             {
+                _font.Dispose();
+                _font = null;
                 UpdateFormat();
-                //Invalidate();
             }
-            _font.Dispose();
-            _font = null;
-            fontInvalidated = true;
+            UpdateTextBoxFormat();
+
+            if (_textBox.Visible)
+            {
+                _textBox.Invalidate();
+            }
         }
 
         public override void OnDoubleClick()
@@ -229,7 +237,7 @@ namespace Greenshot.Drawing
             _textBox.DataBindings.Add("Text", this, "Text", false, DataSourceUpdateMode.OnPropertyChanged);
             _textBox.LostFocus += textBox_LostFocus;
             _textBox.KeyDown += textBox_KeyDown;
-            _textBox.BorderStyle = BorderStyle.FixedSingle;
+            _textBox.BorderStyle = BorderStyle.None;
             _textBox.Visible = false;
         }
 
@@ -273,24 +281,24 @@ namespace Greenshot.Drawing
         public override void Transform(Matrix matrix)
         {
             Rectangle rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
-            int widthBefore = rect.Width;
-            int heightBefore = rect.Height;
+            int pixelsBefore = rect.Width * rect.Height;
 
             // Transform this container
             base.Transform(matrix);
             rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
 
-            int widthAfter = rect.Width;
-            int heightAfter = rect.Height;
-            float factor = (((float)widthAfter / widthBefore) + ((float)heightAfter / heightBefore)) / 2;
+            int pixelsAfter = rect.Width * rect.Height;
+            float factor = pixelsAfter / pixelsBefore;
 
             float fontSize = GetFieldValueAsFloat(FieldType.FONT_SIZE);
             fontSize *= factor;
             SetFieldValue(FieldType.FONT_SIZE, fontSize);
-
-            fontInvalidated = true;
+            UpdateFormat();
         }
 
+        /// <summary>
+        /// Generate the Font-Formal so we can draw correctly
+        /// </summary>
         protected void UpdateFormat()
         {
             string fontFamily = GetFieldValueAsString(FieldType.FONT_FAMILY);
@@ -299,49 +307,46 @@ namespace Greenshot.Drawing
             float fontSize = GetFieldValueAsFloat(FieldType.FONT_SIZE);
             try
             {
-                if (fontInvalidated && fontFamily != null && fontSize != 0)
+                FontStyle fs = FontStyle.Regular;
+
+                bool hasStyle = false;
+                using (FontFamily fam = new FontFamily(fontFamily))
                 {
-                    FontStyle fs = FontStyle.Regular;
-
-                    bool hasStyle = false;
-                    using (FontFamily fam = new FontFamily(fontFamily))
+                    bool boldAvailable = fam.IsStyleAvailable(FontStyle.Bold);
+                    if (fontBold && boldAvailable)
                     {
-                        bool boldAvailable = fam.IsStyleAvailable(FontStyle.Bold);
-                        if (fontBold && boldAvailable)
-                        {
-                            fs |= FontStyle.Bold;
-                            hasStyle = true;
-                        }
-
-                        bool italicAvailable = fam.IsStyleAvailable(FontStyle.Italic);
-                        if (fontItalic && italicAvailable)
-                        {
-                            fs |= FontStyle.Italic;
-                            hasStyle = true;
-                        }
-
-                        if (!hasStyle)
-                        {
-                            bool regularAvailable = fam.IsStyleAvailable(FontStyle.Regular);
-                            if (regularAvailable)
-                            {
-                                fs = FontStyle.Regular;
-                            }
-                            else
-                            {
-                                if (boldAvailable)
-                                {
-                                    fs = FontStyle.Bold;
-                                }
-                                else if (italicAvailable)
-                                {
-                                    fs = FontStyle.Italic;
-                                }
-                            }
-                        }
-                        _font = new Font(fam, fontSize, fs, GraphicsUnit.Pixel);
+                        fs |= FontStyle.Bold;
+                        hasStyle = true;
                     }
-                    fontInvalidated = false;
+
+                    bool italicAvailable = fam.IsStyleAvailable(FontStyle.Italic);
+                    if (fontItalic && italicAvailable)
+                    {
+                        fs |= FontStyle.Italic;
+                        hasStyle = true;
+                    }
+
+                    if (!hasStyle)
+                    {
+                        bool regularAvailable = fam.IsStyleAvailable(FontStyle.Regular);
+                        if (regularAvailable)
+                        {
+                            fs = FontStyle.Regular;
+                        }
+                        else
+                        {
+                            if (boldAvailable)
+                            {
+                                fs = FontStyle.Bold;
+                            }
+                            else if (italicAvailable)
+                            {
+                                fs = FontStyle.Italic;
+                            }
+                        }
+                    }
+                    _font = new Font(fam, fontSize, fs, GraphicsUnit.Pixel);
+                    _textBox.Font = _font;
                 }
             }
             catch (Exception ex)
@@ -357,13 +362,30 @@ namespace Greenshot.Drawing
             _stringFormat.LineAlignment = (StringAlignment)GetFieldValue(FieldType.TEXT_VERTICAL_ALIGNMENT);
         }
 
+        /// <summary>
+        /// This will create the textbox exactly to the inner size of the element
+        /// is a bit of a hack, but for now it seems to work...
+        /// </summary>
         private void UpdateTextBoxPosition()
         {
+            int lineThickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS);
+
+            int lineWidth = (int)Math.Floor(lineThickness / 2d);
+            int correction = (lineThickness + 1) % 2;
+            if (lineThickness <= 1)
+            {
+                lineWidth = 1;
+                correction = -1;
+            }
             Rectangle absRectangle = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
-            _textBox.Left = absRectangle.Left;
-            _textBox.Top = absRectangle.Top;
-            _textBox.Width = absRectangle.Width;
-            _textBox.Height = absRectangle.Height;
+            _textBox.Left = absRectangle.Left + lineWidth;
+            _textBox.Top = absRectangle.Top + lineWidth;
+            if (lineThickness <= 1)
+            {
+                lineWidth = 0;
+            }
+            _textBox.Width = absRectangle.Width - (2 * lineWidth) + correction;
+            _textBox.Height = absRectangle.Height - (2 * lineWidth) + correction;
         }
 
         public override void ApplyBounds(RectangleF newBounds)
@@ -374,10 +396,26 @@ namespace Greenshot.Drawing
 
         private void UpdateTextBoxFormat()
         {
-            UpdateFormat();
+            if (_textBox == null)
+            {
+                return;
+            }
+            StringAlignment alignment = (StringAlignment)GetFieldValue(FieldType.TEXT_HORIZONTAL_ALIGNMENT);
+            switch (alignment)
+            {
+                case StringAlignment.Near:
+                    _textBox.TextAlign = HorizontalAlignment.Left;
+                    break;
+                case StringAlignment.Far:
+                    _textBox.TextAlign = HorizontalAlignment.Right;
+                    break;
+                case StringAlignment.Center:
+                    _textBox.TextAlign = HorizontalAlignment.Center;
+                    break;
+            }
+
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             _textBox.ForeColor = lineColor;
-            _textBox.Font = _font;
         }
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
@@ -400,7 +438,6 @@ namespace Greenshot.Drawing
         public override void Draw(Graphics graphics, RenderMode rm)
         {
             base.Draw(graphics, rm);
-            UpdateFormat();
             graphics.SmoothingMode = SmoothingMode.HighQuality;
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphics.CompositingQuality = CompositingQuality.HighQuality;

@@ -64,6 +64,7 @@ namespace Greenshot.Forms {
             this.bottom = new GreenshotPlugin.Controls.GreenshotCheckBox();
             this.left = new GreenshotPlugin.Controls.GreenshotCheckBox();
             this.shadowCheckbox = new GreenshotPlugin.Controls.GreenshotCheckBox();
+            this.all = new GreenshotPlugin.Controls.GreenshotCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.thickness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY)).BeginInit();
@@ -122,9 +123,9 @@ namespace Greenshot.Forms {
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(153, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
+            this.label3.Size = new System.Drawing.Size(12, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "X";
+            this.label3.Text = "x";
             // 
             // offsetY
             // 
@@ -161,7 +162,7 @@ namespace Greenshot.Forms {
             // buttonOK
             // 
             this.buttonOK.LanguageKey = "OK";
-            this.buttonOK.Location = new System.Drawing.Point(62, 320);
+            this.buttonOK.Location = new System.Drawing.Point(288, 192);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 20;
@@ -173,7 +174,7 @@ namespace Greenshot.Forms {
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.LanguageKey = "CANCEL";
-            this.buttonCancel.Location = new System.Drawing.Point(143, 320);
+            this.buttonCancel.Location = new System.Drawing.Point(368, 192);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 21;
@@ -310,46 +311,53 @@ namespace Greenshot.Forms {
             // top
             // 
             this.top.AutoSize = true;
+            this.top.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.top.LanguageKey = "editor_tornedge_top";
-            this.top.Location = new System.Drawing.Point(15, 222);
+            this.top.Location = new System.Drawing.Point(312, 48);
             this.top.Name = "top";
-            this.top.Size = new System.Drawing.Size(88, 17);
+            this.top.Size = new System.Drawing.Size(52, 31);
             this.top.TabIndex = 9;
-            this.top.Text = "Tear top side";
+            this.top.Text = "Top side";
             this.top.UseVisualStyleBackColor = true;
+            this.top.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
             // 
             // right
             // 
             this.right.AutoSize = true;
             this.right.LanguageKey = "editor_tornedge_right";
-            this.right.Location = new System.Drawing.Point(15, 245);
+            this.right.Location = new System.Drawing.Point(360, 96);
             this.right.Name = "right";
-            this.right.Size = new System.Drawing.Size(93, 17);
+            this.right.Size = new System.Drawing.Size(73, 17);
             this.right.TabIndex = 10;
-            this.right.Text = "Tear right side";
+            this.right.Text = "Right side";
             this.right.UseVisualStyleBackColor = true;
+            this.right.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
             // 
             // bottom
             // 
             this.bottom.AutoSize = true;
+            this.bottom.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.bottom.LanguageKey = "editor_tornedge_bottom";
-            this.bottom.Location = new System.Drawing.Point(15, 268);
+            this.bottom.Location = new System.Drawing.Point(304, 128);
             this.bottom.Name = "bottom";
-            this.bottom.Size = new System.Drawing.Size(105, 17);
+            this.bottom.Size = new System.Drawing.Size(66, 31);
             this.bottom.TabIndex = 11;
-            this.bottom.Text = "Tear bottom side";
+            this.bottom.Text = "Bottom side";
             this.bottom.UseVisualStyleBackColor = true;
+            this.bottom.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
             // 
             // left
             // 
             this.left.AutoSize = true;
+            this.left.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.left.LanguageKey = "editor_tornedge_left";
-            this.left.Location = new System.Drawing.Point(15, 291);
+            this.left.Location = new System.Drawing.Point(248, 96);
             this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(87, 17);
+            this.left.Size = new System.Drawing.Size(66, 17);
             this.left.TabIndex = 12;
-            this.left.Text = "Tear left side";
+            this.left.Text = "Left side";
             this.left.UseVisualStyleBackColor = true;
+            this.left.CheckedChanged += new System.EventHandler(this.AnySideCheckedChanged);
             // 
             // shadowCheckbox
             // 
@@ -363,14 +371,27 @@ namespace Greenshot.Forms {
             this.shadowCheckbox.UseVisualStyleBackColor = true;
             this.shadowCheckbox.CheckedChanged += new System.EventHandler(this.shadowCheckbox_CheckedChanged);
             // 
+            // all
+            // 
+            this.all.AutoSize = true;
+            this.all.LanguageKey = "editor_tornedge_left";
+            this.all.Location = new System.Drawing.Point(248, 12);
+            this.all.Name = "all";
+            this.all.Size = new System.Drawing.Size(88, 17);
+            this.all.TabIndex = 22;
+            this.all.Text = "Tear all sides";
+            this.all.UseVisualStyleBackColor = true;
+            this.all.CheckedChanged += new System.EventHandler(this.all_CheckedChanged);
+            // 
             // TornEdgeSettingsForm
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(230, 353);
+            this.ClientSize = new System.Drawing.Size(454, 224);
             this.ControlBox = false;
+            this.Controls.Add(this.all);
             this.Controls.Add(this.shadowCheckbox);
             this.Controls.Add(this.left);
             this.Controls.Add(this.bottom);
@@ -400,6 +421,7 @@ namespace Greenshot.Forms {
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Torn edges settings";
+            this.Load += new System.EventHandler(this.TornEdgeSettingsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.thickness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offsetY)).EndInit();
@@ -435,5 +457,6 @@ namespace Greenshot.Forms {
 		private GreenshotPlugin.Controls.GreenshotCheckBox bottom;
 		private GreenshotPlugin.Controls.GreenshotCheckBox left;
 		private GreenshotPlugin.Controls.GreenshotCheckBox shadowCheckbox;
+        private GreenshotPlugin.Controls.GreenshotCheckBox all;
 	}
 }
