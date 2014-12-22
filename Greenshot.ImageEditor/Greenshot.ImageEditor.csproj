@@ -173,7 +173,6 @@
     <Compile Include="Core\WindowCapture.cs" />
     <Compile Include="Core\WindowsHelper.cs" />
     <Compile Include="Drawing\ArrowContainer.cs" />
-    <Compile Include="Drawing\Fields\Binding\AlignmentConverter.cs" />
     <Compile Include="Drawing\ImageContainer.cs" />
     <Compile Include="Drawing\CropContainer.cs" />
     <Compile Include="Drawing\CursorContainer.cs" />

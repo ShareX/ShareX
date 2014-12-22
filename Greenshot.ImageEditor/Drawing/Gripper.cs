@@ -25,7 +25,7 @@ using System.Windows.Forms;
 namespace Greenshot.Drawing
 {
     /// <summary>
-    /// Description of Gripper.
+    /// Grippers are the dragable edges of our containers
     /// </summary>
     public class Gripper : Label
     {
@@ -45,7 +45,7 @@ namespace Greenshot.Drawing
         public const int POSITION_MIDDLE_LEFT = 7;
         public const int GripperSize = 7;
 
-        public int Position;
+        public int Position { get; set; }
 
         public Gripper()
         {
@@ -53,31 +53,6 @@ namespace Greenshot.Drawing
             Height = GripperSize;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        public bool IsTop()
-        {
-            return Position == 0 || Position == 1 || Position == 2;
-        }
-
-        public bool IsRight()
-        {
-            return Position == 2 || Position == 3 || Position == 4;
-        }
-
-        public bool IsBottom()
-        {
-            return Position == 4 || Position == 5 || Position == 6;
-        }
-
-        public bool IsLeft()
-        {
-            return Position == 6 || Position == 7 || Position == 0;
-        }
-
-        public bool IsCorner()
-        {
-            return Position == 0 || Position == 2 || Position == 4 || Position == 6;
         }
     }
 }

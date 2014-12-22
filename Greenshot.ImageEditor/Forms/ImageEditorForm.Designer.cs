@@ -1215,9 +1215,9 @@ namespace Greenshot {
             this.textHorizontalAlignmentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.textHorizontalAlignmentButton.LanguageKey = "editor_align_horizontal";
             this.textHorizontalAlignmentButton.Name = "textHorizontalAlignmentButton";
-            this.textHorizontalAlignmentButton.SelectedTag = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textHorizontalAlignmentButton.SelectedTag = System.Drawing.StringAlignment.Center;
             this.textHorizontalAlignmentButton.Size = new System.Drawing.Size(29, 20);
-            this.textHorizontalAlignmentButton.Tag = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textHorizontalAlignmentButton.Tag = System.Drawing.StringAlignment.Center;
             this.textHorizontalAlignmentButton.Text = "Horizontal alignment";
             // 
             // alignLeftToolStripMenuItem
@@ -1226,7 +1226,7 @@ namespace Greenshot {
             this.alignLeftToolStripMenuItem.LanguageKey = "editor_align_left";
             this.alignLeftToolStripMenuItem.Name = "alignLeftToolStripMenuItem";
             this.alignLeftToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.alignLeftToolStripMenuItem.Tag = System.Windows.Forms.HorizontalAlignment.Left;
+            this.alignLeftToolStripMenuItem.Tag = System.Drawing.StringAlignment.Near;
             this.alignLeftToolStripMenuItem.Text = "Left";
             // 
             // alignCenterToolStripMenuItem
@@ -1235,7 +1235,7 @@ namespace Greenshot {
             this.alignCenterToolStripMenuItem.LanguageKey = "editor_align_center";
             this.alignCenterToolStripMenuItem.Name = "alignCenterToolStripMenuItem";
             this.alignCenterToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.alignCenterToolStripMenuItem.Tag = System.Windows.Forms.HorizontalAlignment.Center;
+            this.alignCenterToolStripMenuItem.Tag = System.Drawing.StringAlignment.Center;
             this.alignCenterToolStripMenuItem.Text = "Center";
             // 
             // alignRightToolStripMenuItem
@@ -1244,7 +1244,7 @@ namespace Greenshot {
             this.alignRightToolStripMenuItem.LanguageKey = "editor_align_right";
             this.alignRightToolStripMenuItem.Name = "alignRightToolStripMenuItem";
             this.alignRightToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.alignRightToolStripMenuItem.Tag = System.Windows.Forms.HorizontalAlignment.Right;
+            this.alignRightToolStripMenuItem.Tag = System.Drawing.StringAlignment.Far;
             this.alignRightToolStripMenuItem.Text = "Right";
             // 
             // textVerticalAlignmentButton
@@ -1258,9 +1258,9 @@ namespace Greenshot {
             this.textVerticalAlignmentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.textVerticalAlignmentButton.LanguageKey = "editor_align_vertical";
             this.textVerticalAlignmentButton.Name = "textVerticalAlignmentButton";
-            this.textVerticalAlignmentButton.SelectedTag = Greenshot.Plugin.VerticalAlignment.CENTER;
+            this.textVerticalAlignmentButton.SelectedTag = System.Drawing.StringAlignment.Center;
             this.textVerticalAlignmentButton.Size = new System.Drawing.Size(29, 20);
-            this.textVerticalAlignmentButton.Tag = Greenshot.Plugin.VerticalAlignment.CENTER;
+            this.textVerticalAlignmentButton.Tag = System.Drawing.StringAlignment.Center;
             this.textVerticalAlignmentButton.Text = "Vertical alignment";
             // 
             // alignTopToolStripMenuItem
@@ -1269,7 +1269,7 @@ namespace Greenshot {
             this.alignTopToolStripMenuItem.LanguageKey = "editor_align_top";
             this.alignTopToolStripMenuItem.Name = "alignTopToolStripMenuItem";
             this.alignTopToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.alignTopToolStripMenuItem.Tag = Greenshot.Plugin.VerticalAlignment.TOP;
+            this.alignTopToolStripMenuItem.Tag = System.Drawing.StringAlignment.Near;
             this.alignTopToolStripMenuItem.Text = "Top";
             // 
             // alignMiddleToolStripMenuItem
@@ -1278,7 +1278,7 @@ namespace Greenshot {
             this.alignMiddleToolStripMenuItem.LanguageKey = "editor_align_middle";
             this.alignMiddleToolStripMenuItem.Name = "alignMiddleToolStripMenuItem";
             this.alignMiddleToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.alignMiddleToolStripMenuItem.Tag = Greenshot.Plugin.VerticalAlignment.CENTER;
+            this.alignMiddleToolStripMenuItem.Tag = System.Drawing.StringAlignment.Center;
             this.alignMiddleToolStripMenuItem.Text = "Middle";
             // 
             // alignBottomToolStripMenuItem
@@ -1287,7 +1287,7 @@ namespace Greenshot {
             this.alignBottomToolStripMenuItem.LanguageKey = "editor_align_bottom";
             this.alignBottomToolStripMenuItem.Name = "alignBottomToolStripMenuItem";
             this.alignBottomToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.alignBottomToolStripMenuItem.Tag = Greenshot.Plugin.VerticalAlignment.BOTTOM;
+            this.alignBottomToolStripMenuItem.Tag = System.Drawing.StringAlignment.Far;
             this.alignBottomToolStripMenuItem.Text = "Bottom";
             // 
             // blurRadiusLabel

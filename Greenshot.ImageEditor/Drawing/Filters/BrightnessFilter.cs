@@ -62,8 +62,10 @@ namespace Greenshot.Drawing.Filters
                 graphics.ExcludeClip(rect);
             }
             float brightness = GetFieldValueAsFloat(FieldType.BRIGHTNESS);
-            ImageAttributes ia = ImageHelper.CreateAdjustAttributes(brightness, 1f, 1f);
-            graphics.DrawImage(applyBitmap, applyRect, applyRect.X, applyRect.Y, applyRect.Width, applyRect.Height, GraphicsUnit.Pixel, ia);
+            using (ImageAttributes ia = ImageHelper.CreateAdjustAttributes(brightness, 1f, 1f))
+            {
+                graphics.DrawImage(applyBitmap, applyRect, applyRect.X, applyRect.Y, applyRect.Width, applyRect.Height, GraphicsUnit.Pixel, ia);
+            }
             graphics.Restore(state);
         }
     }

@@ -49,7 +49,6 @@ namespace Greenshot.Drawing.Filters
         public unsafe override void Apply(Graphics graphics, Bitmap applyBitmap, Rectangle rect, RenderMode renderMode)
         {
             int blurRadius = GetFieldValueAsInt(FieldType.BLUR_RADIUS);
-            double previewQuality = GetFieldValueAsDouble(FieldType.PREVIEW_QUALITY);
             Rectangle applyRect = ImageHelper.CreateIntersectRectangle(applyBitmap.Size, rect, Invert);
             if (applyRect.Width == 0 || applyRect.Height == 0)
             {

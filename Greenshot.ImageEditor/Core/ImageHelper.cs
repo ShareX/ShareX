@@ -1061,10 +1061,12 @@ namespace GreenshotPlugin.Core
         /// <param name="colorMatrix">ColorMatrix to apply</param>
         public static void ApplyColorMatrix(Bitmap source, Rectangle sourceRect, Bitmap dest, Rectangle destRect, ColorMatrix colorMatrix)
         {
-            ImageAttributes imageAttributes = new ImageAttributes();
-            imageAttributes.ClearColorMatrix();
-            imageAttributes.SetColorMatrix(colorMatrix);
-            ApplyImageAttributes(source, sourceRect, dest, destRect, imageAttributes);
+            using (ImageAttributes imageAttributes = new ImageAttributes())
+            {
+                imageAttributes.ClearColorMatrix();
+                imageAttributes.SetColorMatrix(colorMatrix);
+                ApplyImageAttributes(source, sourceRect, dest, destRect, imageAttributes);
+            }
         }
 
         /// <summary>
@@ -1223,7 +1225,10 @@ namespace GreenshotPlugin.Core
             //create a blank bitmap the same size as original
             // If using 8bpp than the following exception comes: A Graphics object cannot be created from an image that has an indexed pixel format.
             Bitmap newBitmap = CreateEmpty(sourceImage.Width, sourceImage.Height, PixelFormat.Format24bppRgb, Color.Empty, sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
-            ApplyImageAttributes((Bitmap)sourceImage, Rectangle.Empty, newBitmap, Rectangle.Empty, CreateAdjustAttributes(brightness, contrast, gamma));
+            using (ImageAttributes adjustAttributes = CreateAdjustAttributes(brightness, contrast, gamma))
+            {
+                ApplyImageAttributes((Bitmap)sourceImage, Rectangle.Empty, newBitmap, Rectangle.Empty, adjustAttributes);
+            }
             return newBitmap;
         }
 
@@ -1649,7 +1654,11 @@ namespace GreenshotPlugin.Core
             using (Graphics graphics = Graphics.FromImage(newImage))
             {
                 graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.DrawImage(sourceImage, new Rectangle(destX, destY, destWidth, destHeight), new Rectangle(0, 0, sourceImage.Width, sourceImage.Height), GraphicsUnit.Pixel);
+                using (ImageAttributes wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(sourceImage, new Rectangle(destX, destY, destWidth, destHeight), 0, 0, sourceImage.Width, sourceImage.Height, GraphicsUnit.Pixel, wrapMode);
+                }
             }
             return newImage;
         }

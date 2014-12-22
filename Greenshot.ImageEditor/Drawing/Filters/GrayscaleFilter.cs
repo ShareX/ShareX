@@ -61,9 +61,11 @@ namespace Greenshot.Drawing.Filters
 				new float[] {0, 0, 0, 1, 0},
 				new float[] {0, 0, 0, 0, 1}
 			});
-            ImageAttributes ia = new ImageAttributes();
-            ia.SetColorMatrix(grayscaleMatrix);
-            graphics.DrawImage(applyBitmap, applyRect, applyRect.X, applyRect.Y, applyRect.Width, applyRect.Height, GraphicsUnit.Pixel, ia);
+            using (ImageAttributes ia = new ImageAttributes())
+            {
+                ia.SetColorMatrix(grayscaleMatrix);
+                graphics.DrawImage(applyBitmap, applyRect, applyRect.X, applyRect.Y, applyRect.Width, applyRect.Height, GraphicsUnit.Pixel, ia);
+            }
             graphics.Restore(state);
         }
     }

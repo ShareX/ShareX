@@ -31,7 +31,6 @@ using System.Runtime.Serialization;
 namespace Greenshot.Drawing
 {
     /// <summary>
-    /// Description of StepLabelContainer.
     /// This is an enumerated label, every single StepLabelContainer shows the number of the order it was created.
     /// To make sure that deleting recalculates, we check the location before every draw.
     /// </summary>
