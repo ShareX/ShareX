@@ -262,9 +262,23 @@ namespace ShareX
                                 lvi.ImageIndex = 1;
                             }
 
-                            if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                            if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
                             {
-                                Helpers.PlaySoundAsync(Resources.ErrorSound);
+                                if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                {
+                                    Helpers.PlaySoundAsync(Resources.ErrorSound);
+                                }
+
+                                switch (info.TaskSettings.GeneralSettings.PopUpNotification)
+                                {
+                                    case PopUpNotificationType.BalloonTip:
+                                        if (Program.MainForm.niTray.Visible)
+                                        {
+                                            Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error,
+                                                errors, ToolTipIcon.Error);
+                                        }
+                                        break;
+                                }
                             }
                         }
                         else

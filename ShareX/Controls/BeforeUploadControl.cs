@@ -153,45 +153,44 @@ namespace ShareX
 
         private void SetDestinations(bool isActive, EDataType dataType, object destination, TaskSettings taskSettings)
         {
-            if (isActive)
+            if (!isActive) return;
+
+            switch (dataType)
             {
-                switch (dataType)
-                {
-                    case EDataType.Image:
-                        if (destination is ImageDestination)
-                        {
-                            taskSettings.ImageDestination = (ImageDestination)destination;
-                        }
-                        else if (destination is FileDestination)
-                        {
-                            taskSettings.ImageDestination = ImageDestination.FileUploader;
-                            taskSettings.ImageFileDestination = (FileDestination)destination;
-                        }
-                        break;
-                    case EDataType.Text:
-                        if (destination is TextDestination)
-                        {
-                            taskSettings.TextDestination = (TextDestination)destination;
-                        }
-                        else if (destination is FileDestination)
-                        {
-                            taskSettings.TextDestination = TextDestination.FileUploader;
-                            taskSettings.TextFileDestination = (FileDestination)destination;
-                        }
-                        break;
-                    case EDataType.File:
-                        if (destination is FileDestination)
-                        {
-                            taskSettings.ImageFileDestination = taskSettings.FileDestination = (FileDestination)destination;
-                        }
-                        break;
-                    case EDataType.URL:
-                        if (destination is UrlShortenerType)
-                        {
-                            taskSettings.URLShortenerDestination = (UrlShortenerType)destination;
-                        }
-                        break;
-                }
+                case EDataType.Image:
+                    if (destination is ImageDestination)
+                    {
+                        taskSettings.ImageDestination = (ImageDestination)destination;
+                    }
+                    else if (destination is FileDestination)
+                    {
+                        taskSettings.ImageDestination = ImageDestination.FileUploader;
+                        taskSettings.ImageFileDestination = (FileDestination)destination;
+                    }
+                    break;
+                case EDataType.Text:
+                    if (destination is TextDestination)
+                    {
+                        taskSettings.TextDestination = (TextDestination)destination;
+                    }
+                    else if (destination is FileDestination)
+                    {
+                        taskSettings.TextDestination = TextDestination.FileUploader;
+                        taskSettings.TextFileDestination = (FileDestination)destination;
+                    }
+                    break;
+                case EDataType.File:
+                    if (destination is FileDestination)
+                    {
+                        taskSettings.ImageFileDestination = taskSettings.FileDestination = (FileDestination)destination;
+                    }
+                    break;
+                case EDataType.URL:
+                    if (destination is UrlShortenerType)
+                    {
+                        taskSettings.URLShortenerDestination = (UrlShortenerType)destination;
+                    }
+                    break;
             }
         }
     }
