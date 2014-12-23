@@ -33,6 +33,9 @@ namespace ShareX.HelpersLib
 {
     public class MyListView : ListView
     {
+        public delegate void ListViewItemMovedEventHandler(object sender, int oldIndex, int newIndex);
+        public event ListViewItemMovedEventHandler ItemMoved;
+
         private const int WM_PAINT = 0xF;
         private const int WM_ERASEBKGND = 0x14;
 
@@ -44,6 +47,10 @@ namespace ShareX.HelpersLib
 
         [DefaultValue(false)]
         public bool AllowColumnSort { get; set; }
+
+        // Note: AllowDrag also need to be true.
+        [DefaultValue(false)]
+        public bool AllowItemDrag { get; set; }
 
         private ListViewColumnSorter lvwColumnSorter;
         private int lineIndex = -1;
@@ -136,7 +143,7 @@ namespace ShareX.HelpersLib
         {
             base.OnItemDrag(e);
 
-            if (AllowDrop && e.Button == MouseButtons.Left)
+            if (AllowDrop && AllowItemDrag && e.Button == MouseButtons.Left)
             {
                 DoDragDrop(e.Item, DragDropEffects.Move);
             }
@@ -154,7 +161,15 @@ namespace ShareX.HelpersLib
 
                 Point cp = PointToClient(new Point(drgevent.X, drgevent.Y));
                 dragOverItem = GetItemAt(cp.X, cp.Y);
-                lineIndex = dragOverItem != null ? dragOverItem.Index : Items.Count;
+
+                if (dragOverItem != null)
+                {
+                    lineIndex = dragOverItem.Index;
+                }
+                else
+                {
+                    lineIndex = Items.Count;
+                }
 
                 if (lineIndex != lastLineIndex)
                 {
@@ -173,13 +188,39 @@ namespace ShareX.HelpersLib
 
             if (lvi != null && lvi.ListView == this)
             {
-                ListViewItem insertItem = (ListViewItem)lvi.Clone();
-                Items.Insert(dragOverItem != null ? dragOverItem.Index : Items.Count, insertItem);
-                Items.Remove(lvi);
+                int oldIndex = lvi.Index;
+                int newIndex;
+
+                if (dragOverItem != null)
+                {
+                    newIndex = dragOverItem.Index;
+
+                    if (newIndex > oldIndex)
+                    {
+                        newIndex--;
+                    }
+                }
+                else
+                {
+                    newIndex = Items.Count - 1;
+                }
+
+                Items.RemoveAt(oldIndex);
+                Items.Insert(newIndex, lvi);
+
+                OnItemMoved(oldIndex, newIndex);
             }
 
             lineIndex = lastLineIndex = -1;
             Invalidate();
+        }
+
+        protected void OnItemMoved(int oldIndex, int newIndex)
+        {
+            if (ItemMoved != null)
+            {
+                ItemMoved(this, oldIndex, newIndex);
+            }
         }
 
         protected override void OnDragLeave(EventArgs e)
@@ -217,17 +258,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void DrawInsertionLine(int x1, int x2, int y)
+        private void DrawInsertionLine(int left, int right, int y)
         {
             using (Graphics g = CreateGraphics())
             {
-                g.DrawLine(Pens.LightBlue, x1, y, x2 - 1, y);
+                g.DrawLine(SystemPens.HotTrack, left, y, right - 1, y);
 
-                Point[] leftTriangle = new Point[] { new Point(x1, y - 4), new Point(x1 + 7, y), new Point(x1, y + 4) };
-                g.FillPolygon(Brushes.LightBlue, leftTriangle);
+                Point[] leftTriangle = new Point[] { new Point(left, y - 4), new Point(left + 7, y), new Point(left, y + 4) };
+                g.FillPolygon(SystemBrushes.HotTrack, leftTriangle);
 
-                Point[] rightTriangle = new Point[] { new Point(x2, y - 4), new Point(x2 - 8, y), new Point(x2, y + 4) };
-                g.FillPolygon(Brushes.LightBlue, rightTriangle);
+                Point[] rightTriangle = new Point[] { new Point(right, y - 4), new Point(right - 8, y), new Point(right, y + 4) };
+                g.FillPolygon(SystemBrushes.HotTrack, rightTriangle);
             }
         }
     }

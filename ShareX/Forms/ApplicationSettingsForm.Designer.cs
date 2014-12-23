@@ -576,6 +576,7 @@ namespace ShareX
             // lvSecondaryImageUploaders
             // 
             this.lvSecondaryImageUploaders.AllowDrop = true;
+            this.lvSecondaryImageUploaders.AllowItemDrag = true;
             this.lvSecondaryImageUploaders.AutoFillColumn = true;
             this.lvSecondaryImageUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryImageUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -600,6 +601,7 @@ namespace ShareX
             // lvSecondaryFileUploaders
             // 
             this.lvSecondaryFileUploaders.AllowDrop = true;
+            this.lvSecondaryFileUploaders.AllowItemDrag = true;
             this.lvSecondaryFileUploaders.AutoFillColumn = true;
             this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -623,6 +625,7 @@ namespace ShareX
             // lvSecondaryTextUploaders
             // 
             this.lvSecondaryTextUploaders.AllowDrop = true;
+            this.lvSecondaryTextUploaders.AllowItemDrag = true;
             this.lvSecondaryTextUploaders.AutoFillColumn = true;
             this.lvSecondaryTextUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvSecondaryTextUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {

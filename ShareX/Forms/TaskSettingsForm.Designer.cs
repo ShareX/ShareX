@@ -1138,6 +1138,8 @@
             // 
             // lvActions
             // 
+            this.lvActions.AllowDrop = true;
+            this.lvActions.AllowItemDrag = true;
             resources.ApplyResources(this.lvActions, "lvActions");
             this.lvActions.AutoFillColumn = true;
             this.lvActions.CheckBoxes = true;
@@ -1151,6 +1153,7 @@
             this.lvActions.Name = "lvActions";
             this.lvActions.UseCompatibleStateImageBehavior = false;
             this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
             this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
             // 
             // chActionsName

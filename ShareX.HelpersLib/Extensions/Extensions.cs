@@ -439,5 +439,12 @@ namespace ShareX.HelpersLib
         {
             return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
         }
+
+        public static void Move<T>(this List<T> list, int oldIndex, int newIndex)
+        {
+            T obj = list[oldIndex];
+            list.RemoveAt(oldIndex);
+            list.Insert(newIndex, obj);
+        }
     }
 }

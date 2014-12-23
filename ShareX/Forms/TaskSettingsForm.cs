@@ -927,6 +927,11 @@ namespace ShareX
             fileAction.IsActive = e.Item.Checked;
         }
 
+        private void lvActions_ItemMoved(object sender, int oldIndex, int newIndex)
+        {
+            TaskSettings.ExternalPrograms.Move(oldIndex, newIndex);
+        }
+
         #endregion Actions
 
         #region Watch folders
