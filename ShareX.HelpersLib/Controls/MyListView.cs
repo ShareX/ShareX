@@ -186,7 +186,7 @@ namespace ShareX.HelpersLib
 
             ListViewItem lvi = drgevent.Data.GetData(typeof(ListViewItem)) as ListViewItem;
 
-            if (lvi != null && lvi.ListView == this)
+            if (lvi != null && lvi.ListView == this && lvi != dragOverItem)
             {
                 int oldIndex = lvi.Index;
                 int newIndex;
