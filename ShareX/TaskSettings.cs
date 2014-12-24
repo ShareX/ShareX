@@ -394,7 +394,7 @@ namespace ShareX
 
         private float toastWindowDuration;
 
-        [Category("After upload / Notifications"), DefaultValue(4f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
+        [Category("After upload / Notifications"), DefaultValue(3f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
         public float ToastWindowDuration
         {
             get
@@ -403,7 +403,7 @@ namespace ShareX
             }
             set
             {
-                toastWindowDuration = Math.Max(value, 1f);
+                toastWindowDuration = Math.Max(value, 0f);
             }
         }
 

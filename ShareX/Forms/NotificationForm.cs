@@ -36,8 +36,8 @@ namespace ShareX
         public NotificationFormConfig ToastConfig { get; private set; }
 
         private int windowOffset = 3;
-        private bool mouseInside;
-        private bool durationEnd;
+        private bool isMouseInside;
+        private bool isDurationEnd;
         private bool closingAnimation = true;
         private int closingAnimationDuration = 2000;
         private int closingAnimationInterval = 50;
@@ -71,16 +71,28 @@ namespace ShareX
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
                 position.Y + Screen.PrimaryScreen.WorkingArea.Y, size.Width, size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
 
-            tDuration.Interval = duration;
-            tDuration.Start();
+            if (duration <= 0)
+            {
+                DurationEnd();
+            }
+            else
+            {
+                tDuration.Interval = duration;
+                tDuration.Start();
+            }
         }
 
         private void tDuration_Tick(object sender, EventArgs e)
         {
-            durationEnd = true;
+            DurationEnd();
+        }
+
+        private void DurationEnd()
+        {
+            isDurationEnd = true;
             tDuration.Stop();
 
-            if (!mouseInside)
+            if (!isMouseInside)
             {
                 StartClosing();
             }
@@ -124,7 +136,7 @@ namespace ShareX
             {
                 g.DrawImage(ToastConfig.Image, 1, 1, ToastConfig.Image.Width, ToastConfig.Image.Height);
 
-                if (mouseInside && !string.IsNullOrEmpty(ToastConfig.URL))
+                if (isMouseInside && !string.IsNullOrEmpty(ToastConfig.URL))
                 {
                     Rectangle textRect = new Rectangle(0, 0, rect.Width, 40);
 
@@ -153,7 +165,7 @@ namespace ShareX
 
         public static void Show(int duration, ContentAlignment placement, Size size, NotificationFormConfig config)
         {
-            if (duration > 0 && size.Width > 0 && size.Height > 0)
+            if (size.Width > 0 && size.Height > 0)
             {
                 config.Image = ImageHelpers.LoadImage(config.FilePath);
 
@@ -205,7 +217,7 @@ namespace ShareX
 
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
         {
-            mouseInside = true;
+            isMouseInside = true;
             Refresh();
 
             tOpacity.Stop();
@@ -214,10 +226,10 @@ namespace ShareX
 
         private void NotificationForm_MouseLeave(object sender, EventArgs e)
         {
-            mouseInside = false;
+            isMouseInside = false;
             Refresh();
 
-            if (durationEnd)
+            if (isDurationEnd)
             {
                 StartClosing();
             }
