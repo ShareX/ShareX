@@ -269,15 +269,10 @@ namespace ShareX
                                     Helpers.PlaySoundAsync(Resources.ErrorSound);
                                 }
 
-                                switch (info.TaskSettings.GeneralSettings.PopUpNotification)
+                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible)
                                 {
-                                    case PopUpNotificationType.BalloonTip:
-                                        if (Program.MainForm.niTray.Visible)
-                                        {
-                                            Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error,
-                                                errors, ToolTipIcon.Error);
-                                        }
-                                        break;
+                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error,
+                                        errors, ToolTipIcon.Error);
                                 }
                             }
                         }
