@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -166,7 +166,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -187,13 +187,13 @@
     <value>lvEffects</value>
   </data>
   <data name="&gt;&gt;lvEffects.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvEffects.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 8</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -244,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 8</value>
@@ -295,60 +295,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnMoveUp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="btnMoveUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 8</value>
-  </data>
-  <data name="btnMoveUp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
-  </data>
-  <data name="btnMoveUp.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>Move up</value>
-  </data>
-  <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
-    <value>btnMoveUp</value>
-  </data>
-  <data name="&gt;&gt;btnMoveUp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMoveUp.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnMoveUp.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnMoveDown.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="btnMoveDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 8</value>
-  </data>
-  <data name="btnMoveDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
-  </data>
-  <data name="btnMoveDown.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>Move down</value>
-  </data>
-  <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
-    <value>btnMoveDown</value>
-  </data>
-  <data name="&gt;&gt;btnMoveDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMoveDown.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnMoveDown.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
@@ -376,7 +322,7 @@
     <value>5</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 8</value>
+    <value>360, 8</value>
   </data>
   <data name="btnRefresh.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 24</value>
@@ -481,7 +427,7 @@
     <value>eiImageEffects</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.Type" xml:space="preserve">
-    <value>HelpersLib.ExportImportControl, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.Parent" xml:space="preserve">
     <value>$this</value>
@@ -505,13 +451,13 @@
     <value>pbResult</value>
   </data>
   <data name="&gt;&gt;pbResult.Type" xml:space="preserve">
-    <value>HelpersLib.MyPictureBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbResult.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbResult.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <metadata name="cmsEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

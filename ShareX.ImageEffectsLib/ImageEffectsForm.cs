@@ -251,22 +251,9 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void btnMoveUp_Click(object sender, EventArgs e)
+        private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
-            if (lvEffects.SelectedItems.Count > 0)
-            {
-                lvEffects.SelectedItems[0].MoveUp();
-                UpdatePreview();
-            }
-        }
-
-        private void btnMoveDown_Click(object sender, EventArgs e)
-        {
-            if (lvEffects.SelectedItems.Count > 0)
-            {
-                lvEffects.SelectedItems[0].MoveDown();
-                UpdatePreview();
-            }
+            UpdatePreview();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

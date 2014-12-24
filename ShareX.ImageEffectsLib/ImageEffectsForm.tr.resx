@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -146,11 +145,5 @@
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Resim kaydet...</value>
-  </data>
-  <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>Aşağı taşı</value>
-  </data>
-  <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>Yukarı taşı</value>
   </data>
 </root>

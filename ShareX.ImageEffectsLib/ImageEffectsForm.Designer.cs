@@ -38,8 +38,6 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnMoveUp = new System.Windows.Forms.Button();
-            this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLoadImage = new System.Windows.Forms.Button();
@@ -66,6 +64,8 @@
             // 
             // lvEffects
             // 
+            this.lvEffects.AllowDrop = true;
+            this.lvEffects.AllowItemDrag = true;
             resources.ApplyResources(this.lvEffects, "lvEffects");
             this.lvEffects.AutoFillColumn = true;
             this.lvEffects.CheckBoxes = true;
@@ -78,6 +78,7 @@
             this.lvEffects.Name = "lvEffects";
             this.lvEffects.UseCompatibleStateImageBehavior = false;
             this.lvEffects.View = System.Windows.Forms.View.Details;
+            this.lvEffects.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvEffects_ItemMoved);
             this.lvEffects.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvEffects_ItemChecked);
             this.lvEffects.SelectedIndexChanged += new System.EventHandler(this.lvEffects_SelectedIndexChanged);
             this.lvEffects.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvEffects_KeyDown);
@@ -113,20 +114,6 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnMoveUp
-            // 
-            resources.ApplyResources(this.btnMoveUp, "btnMoveUp");
-            this.btnMoveUp.Name = "btnMoveUp";
-            this.btnMoveUp.UseVisualStyleBackColor = true;
-            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
-            // 
-            // btnMoveDown
-            // 
-            resources.ApplyResources(this.btnMoveDown, "btnMoveDown");
-            this.btnMoveDown.Name = "btnMoveDown";
-            this.btnMoveDown.UseVisualStyleBackColor = true;
-            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
             // btnDuplicate
             // 
@@ -191,8 +178,6 @@
             this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDuplicate);
-            this.Controls.Add(this.btnMoveDown);
-            this.Controls.Add(this.btnMoveUp);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pbResult);
             this.Controls.Add(this.btnCancel);
@@ -219,8 +204,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnMoveUp;
-        private System.Windows.Forms.Button btnMoveDown;
         private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLoadImage;
