@@ -898,7 +898,7 @@ namespace ShareX.UploadersLib
 
         public void OneDriveAuthOpen()
         {
-            try
+            /*try
             {
                 OAuth2Info oauth = new OAuth2Info(APIKeys.OneDriveClientID, APIKeys.OneDriveClientSecret);
                 string url = new OneDrive(oauth).GetAuthorizationURL();
@@ -917,12 +917,12 @@ namespace ShareX.UploadersLib
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         public void OneDriveAuthComplete(string code)
         {
-            try
+            /*try
             {
                 if (!string.IsNullOrEmpty(code) && Config.OneDriveOAuth2Info != null)
                 {
@@ -946,7 +946,7 @@ namespace ShareX.UploadersLib
             {
                 DebugHelper.WriteException(ex);
                 MessageBox.Show(ex.ToString(), "ShareX - " + Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         #endregion OneDrive

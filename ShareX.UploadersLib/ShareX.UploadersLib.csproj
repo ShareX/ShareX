@@ -109,7 +109,6 @@
     <Compile Include="FileUploaders\Hostr.cs" />
     <Compile Include="FileUploaders\MediaFire.cs" />
     <Compile Include="FileUploaders\Mega.cs" />
-    <Compile Include="FileUploaders\OneDrive.cs" />
     <Compile Include="FileUploaders\OwnCloud.cs" />
     <Compile Include="FileUploaders\Pomf.cs" />
     <Compile Include="FileUploaders\SFTP.cs" />
