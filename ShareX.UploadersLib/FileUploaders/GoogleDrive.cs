@@ -45,8 +45,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string GetAuthorizationURL()
         {
-            return string.Format("https://accounts.google.com/o/oauth2/auth?response_type={0}&client_id={1}&redirect_uri={2}&scope={3}",
-                "code", AuthInfo.Client_ID, "urn:ietf:wg:oauth:2.0:oob", URLHelpers.URLEncode("https://www.googleapis.com/auth/drive"));
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("response_type", "code");
+            args.Add("client_id", AuthInfo.Client_ID);
+            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
+            args.Add("scope", "https://www.googleapis.com/auth/drive");
+
+            return CreateQuery("https://accounts.google.com/o/oauth2/auth", args);
         }
 
         public bool GetAccessToken(string code)
@@ -105,13 +110,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        private NameValueCollection GetAuthHeaders()
-        {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
-        }
-
         public bool CheckAuthorization()
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
@@ -129,6 +127,13 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return true;
+        }
+
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
         }
 
         private void SetMetadata(string fileID, string title, string parentID = null)

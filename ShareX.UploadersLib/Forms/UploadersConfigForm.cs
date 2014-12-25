@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib
             InitializeComponent();
 
             // TODO: Add OneDrive support
-            tcFileUploaders.TabPages.Remove(tpOneDrive);
+            //tcFileUploaders.TabPages.Remove(tpOneDrive);
 
             if (!string.IsNullOrEmpty(Config.FilePath))
             {
@@ -331,6 +331,13 @@ namespace ShareX.UploadersLib
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
+
+            // One Drive
+
+            if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+            {
+                oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
+            }
 
             // Minus
 
@@ -1772,6 +1779,11 @@ namespace ShareX.UploadersLib
         private void oAuth2OneDrive_CompleteButtonClicked(string code)
         {
             OneDriveAuthComplete(code);
+        }
+
+        private void oAuth2OneDrive_RefreshButtonClicked()
+        {
+            OneDriveAuthRefresh();
         }
 
         private void oAuth2OneDrive_ClearButtonClicked()

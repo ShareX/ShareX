@@ -1547,12 +1547,12 @@
             // 
             // oAuth2OneDrive
             // 
-            this.oAuth2OneDrive.IsRefreshable = false;
             resources.ApplyResources(this.oAuth2OneDrive, "oAuth2OneDrive");
             this.oAuth2OneDrive.Name = "oAuth2OneDrive";
             this.oAuth2OneDrive.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
             this.oAuth2OneDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
             this.oAuth2OneDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
+            this.oAuth2OneDrive.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oAuth2OneDrive_RefreshButtonClicked);
             // 
             // tpAmazonS3
             // 
