@@ -231,6 +231,20 @@ namespace ShareX.UploadersLib
             }
         }
 
+        protected string SendRequestURLEncoded(string url, Dictionary<string, string> arguments, NameValueCollection headers = null, CookieCollection cookies = null,
+            HttpMethod method = HttpMethod.POST)
+        {
+            string query = CreateQuery(arguments);
+            byte[] data = Encoding.UTF8.GetBytes(query);
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                stream.Write(data, 0, data.Length);
+
+                return SendRequestStream(url, stream, "application/x-www-form-urlencoded", headers, cookies, method);
+            }
+        }
+
         protected string SendRequestStream(string url, Stream stream, string contentType, NameValueCollection headers = null,
             CookieCollection cookies = null, HttpMethod method = HttpMethod.POST)
         {
