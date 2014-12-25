@@ -82,12 +82,12 @@ namespace ShareX.UploadersLib
         Dropbox,
         [Description("FTP")]
         FTP,
-        //[Description("OneDrive")]
-        //OneDrive,
-        [Description("Copy")]
-        Copy,
+        [Description("OneDrive")]
+        OneDrive,
         [Description("Google Drive")]
         GoogleDrive,
+        [Description("Copy")]
+        Copy,
         [Description("Box")]
         Box,
         [Description("MEGA")]

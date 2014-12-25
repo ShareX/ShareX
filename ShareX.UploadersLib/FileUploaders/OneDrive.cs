@@ -26,11 +26,9 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
-using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -48,7 +46,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("scope", "wl.offline_access wl.basic wl.skydrive_update");
+            args.Add("scope", "wl.offline_access wl.basic wl.skydrive");
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
@@ -131,9 +129,40 @@ namespace ShareX.UploadersLib.FileUploaders
             return true;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            throw new NotImplementedException();
+            if (!CheckAuthorization()) return null;
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("access_token", AuthInfo.Token.access_token);
+            args.Add("overwrite", "true");
+            args.Add("downsize_photo_uploads", "false");
+
+            string url = CreateQuery("https://apis.live.net/v5.0/me/skydrive/files", args);
+
+            UploadResult result = UploadData(stream, url, fileName);
+
+            if (result.IsSuccess)
+            {
+                OneDriveUploadInfo uploadInfo = JsonConvert.DeserializeObject<OneDriveUploadInfo>(result.Response);
+                result.URL = uploadInfo.source;
+            }
+
+            return result;
+        }
+
+        private class OneDriveUploadInfo
+        {
+            public string id { get; set; }
+            public string name { get; set; }
+            public string source { get; set; }
         }
     }
 }

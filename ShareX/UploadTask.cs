@@ -829,21 +829,21 @@ namespace ShareX
                         ShareURLType = Program.UploadersConfig.DropboxURLType
                     };
                     break;
-                /*case FileDestination.OneDrive:
+                case FileDestination.OneDrive:
                     fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info);
-                    break;*/
-                case FileDestination.Copy:
-                    fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
-                    {
-                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath)),
-                        URLType = Program.UploadersConfig.CopyURLType
-                    };
                     break;
                 case FileDestination.GoogleDrive:
                     fileUploader = new GoogleDrive(Program.UploadersConfig.GoogleDriveOAuth2Info)
                     {
                         IsPublic = Program.UploadersConfig.GoogleDriveIsPublic,
                         FolderID = Program.UploadersConfig.GoogleDriveUseFolder ? Program.UploadersConfig.GoogleDriveFolderID : null
+                    };
+                    break;
+                case FileDestination.Copy:
+                    fileUploader = new Copy(Program.UploadersConfig.CopyOAuthInfo, Program.UploadersConfig.CopyAccountInfo)
+                    {
+                        UploadPath = NameParser.Parse(NameParserType.URL, Copy.TidyUploadPath(Program.UploadersConfig.CopyUploadPath)),
+                        URLType = Program.UploadersConfig.CopyURLType
                     };
                     break;
                 case FileDestination.RapidShare:
