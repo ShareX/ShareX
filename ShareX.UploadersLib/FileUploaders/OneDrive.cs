@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -36,6 +37,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
+        public bool AutoCreateShareableLink { get; set; }
 
         public OneDrive(OAuth2Info authInfo)
         {
@@ -129,13 +131,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return true;
         }
 
-        private NameValueCollection GetAuthHeaders()
-        {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
-        }
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
@@ -152,10 +147,53 @@ namespace ShareX.UploadersLib.FileUploaders
             if (result.IsSuccess)
             {
                 OneDriveUploadInfo uploadInfo = JsonConvert.DeserializeObject<OneDriveUploadInfo>(result.Response);
-                result.URL = uploadInfo.source;
+
+                if (AutoCreateShareableLink)
+                {
+                    result.URL = CreateShareableLink(uploadInfo.id);
+                }
+                else
+                {
+                    result.URL = uploadInfo.source;
+                }
             }
 
             return result;
+        }
+
+        public string CreateShareableLink(string id, OneDriveLinkType linkType = OneDriveLinkType.Read)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("access_token", AuthInfo.Token.access_token);
+
+            string linkTypeValue;
+
+            switch (linkType)
+            {
+                case OneDriveLinkType.Embed:
+                    linkTypeValue = "embed";
+                    break;
+                default:
+                case OneDriveLinkType.Read:
+                    linkTypeValue = "shared_read_link";
+                    break;
+                case OneDriveLinkType.Edit:
+                    linkTypeValue = "shared_edit_link";
+                    break;
+            }
+
+            string url = CreateQuery(string.Format("https://apis.live.net/v5.0/{0}/{1}", id, linkTypeValue), args);
+
+            string response = SendRequest(HttpMethod.GET, url);
+
+            OneDriveShareableLinkInfo shareableLinkInfo = JsonConvert.DeserializeObject<OneDriveShareableLinkInfo>(response);
+
+            if (shareableLinkInfo != null)
+            {
+                return shareableLinkInfo.link;
+            }
+
+            return null;
         }
 
         private class OneDriveUploadInfo
@@ -164,5 +202,20 @@ namespace ShareX.UploadersLib.FileUploaders
             public string name { get; set; }
             public string source { get; set; }
         }
+
+        private class OneDriveShareableLinkInfo
+        {
+            public string link { get; set; }
+        }
+    }
+
+    public enum OneDriveLinkType
+    {
+        [Description("An embedded link, which is an HTML code snippet that you can insert into a webpage to provide an interactive view of the corresponding file.")]
+        Embed,
+        [Description("A read-only link, which is a link to a read-only version of the folder or file.")]
+        Read,
+        [Description("A read-write link, which is a link to a read-write version of the folder or file.")]
+        Edit
     }
 }

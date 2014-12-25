@@ -830,7 +830,10 @@ namespace ShareX
                     };
                     break;
                 case FileDestination.OneDrive:
-                    fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info);
+                    fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info)
+                    {
+                        AutoCreateShareableLink = Program.UploadersConfig.OneDriveAutoCreateShareableLink
+                    };
                     break;
                 case FileDestination.GoogleDrive:
                     fileUploader = new GoogleDrive(Program.UploadersConfig.GoogleDriveOAuth2Info)
