@@ -992,14 +992,10 @@ namespace ShareX.UploadersLib
             else
             {
                 OneDrive onedrive = new OneDrive(Config.OneDriveOAuth2Info);
-                //OneDriveFileInfo files = onedrive.GetFiles(fileEntry);
-                //if (files != null && files.entries != null && files.entries.Length > 0)
-                //{
-                //    foreach (OneDriveFileInfo folder in files.entries.Where(x => x.type == "folder"))
-                //    {
-                //        OneDriveAddFolder(folder);
-                //    }
-                //}
+                foreach (OneDriveFileInfo folder in onedrive.GetPathInfo(fileEntry.id).data.Where(x => x.id.StartsWith("folder.")))
+                {
+                    OneDriveAddFolder(folder);
+                }
             }
         }
 
@@ -1008,19 +1004,6 @@ namespace ShareX.UploadersLib
             ListViewItem lvi = new ListViewItem(folder.name);
             lvi.Tag = folder;
             lvOneDriveFolders.Items.Add(lvi);
-        }
-
-        private void lvOneDriveFolders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvOneDriveFolders.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvOneDriveFolders.SelectedItems[0];
-                OneDriveFileInfo file = lvi.Tag as OneDriveFileInfo;
-                if (file != null)
-                {
-                    lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
-                }
-            }
         }
 
         #endregion OneDrive

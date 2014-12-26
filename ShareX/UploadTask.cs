@@ -832,6 +832,7 @@ namespace ShareX
                 case FileDestination.OneDrive:
                     fileUploader = new OneDrive(Program.UploadersConfig.OneDriveOAuth2Info)
                     {
+                        FolderID = Program.UploadersConfig.OneDriveSelectedFolder.id,
                         AutoCreateShareableLink = Program.UploadersConfig.OneDriveAutoCreateShareableLink
                     };
                     break;

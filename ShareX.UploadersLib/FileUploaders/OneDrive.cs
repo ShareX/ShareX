@@ -220,6 +220,8 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("access_token", AuthInfo.Token.access_token);
 
+            if (!path.EndsWith("files")) path += "/files";
+
             string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
 
             string response = SendRequest(HttpMethod.GET, url);

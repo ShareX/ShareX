@@ -339,6 +339,7 @@ namespace ShareX.UploadersLib
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
+            lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveSelectedFolder.name;
 
             // Minus
 
@@ -1148,6 +1149,19 @@ namespace ShareX.UploadersLib
             OneDriveListFolders();
         }
 
+        private void lvOneDriveFolders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvOneDriveFolders.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvOneDriveFolders.SelectedItems[0];
+                OneDriveFileInfo file = lvi.Tag as OneDriveFileInfo;
+                if (file != null)
+                {
+                    lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
+                }
+            }
+        }
+
         private void lvOneDriveFolders_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && lvOneDriveFolders.SelectedItems.Count > 0)
@@ -1158,6 +1172,7 @@ namespace ShareX.UploadersLib
                 {
                     lvOneDriveFolders.Items.Clear();
                     OneDriveListFolders(file);
+                    Config.OneDriveSelectedFolder = file;
                 }
             }
         }
@@ -1277,6 +1292,7 @@ namespace ShareX.UploadersLib
                 {
                     lvBoxFolders.Items.Clear();
                     BoxListFolders(file);
+                    Config.BoxSelectedFolder = file;
                 }
             }
         }

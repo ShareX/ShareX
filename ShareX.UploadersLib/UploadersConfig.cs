@@ -124,6 +124,7 @@ namespace ShareX.UploadersLib
         // OneDrive
 
         public OAuth2Info OneDriveOAuth2Info = null;
+        public OneDriveFileInfo OneDriveSelectedFolder = OneDrive.RootFolder;
         public bool OneDriveAutoCreateShareableLink = true;
 
         // Copy
