@@ -202,7 +202,7 @@ Oluşturulmuş dizinler:</value>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Yeni hesap</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Authentication_required_" xml:space="preserve">
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Yetkilendirme gerekiyor.</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">

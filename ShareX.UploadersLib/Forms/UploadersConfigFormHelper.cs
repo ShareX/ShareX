@@ -868,7 +868,7 @@ namespace ShareX.UploadersLib
         {
             if (!OAuth2Info.CheckOAuth(Config.BoxOAuth2Info))
             {
-                MessageBox.Show(Resources.UploadersConfigForm_BoxListFolders_Authentication_required_, Resources.UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed,
+                MessageBox.Show(Resources.UploadersConfigForm_ListFolders_Authentication_required_, Resources.UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed,
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
@@ -972,6 +972,54 @@ namespace ShareX.UploadersLib
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void OneDriveListFolders()
+        {
+            lvOneDriveFolders.Items.Clear();
+            OneDriveAddFolder(OneDrive.RootFolder);
+            OneDriveListFolders(OneDrive.RootFolder);
+        }
+
+        public void OneDriveListFolders(OneDriveFileInfo fileEntry)
+        {
+            if (!OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_ListFolders_Authentication_required_, Resources.UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                OneDrive onedrive = new OneDrive(Config.OneDriveOAuth2Info);
+                //OneDriveFileInfo files = onedrive.GetFiles(fileEntry);
+                //if (files != null && files.entries != null && files.entries.Length > 0)
+                //{
+                //    foreach (OneDriveFileInfo folder in files.entries.Where(x => x.type == "folder"))
+                //    {
+                //        OneDriveAddFolder(folder);
+                //    }
+                //}
+            }
+        }
+
+        private void OneDriveAddFolder(OneDriveFileInfo folder)
+        {
+            ListViewItem lvi = new ListViewItem(folder.name);
+            lvi.Tag = folder;
+            lvOneDriveFolders.Items.Add(lvi);
+        }
+
+        private void lvOneDriveFolders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvOneDriveFolders.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvOneDriveFolders.SelectedItems[0];
+                OneDriveFileInfo file = lvi.Tag as OneDriveFileInfo;
+                if (file != null)
+                {
+                    lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
+                }
             }
         }
 

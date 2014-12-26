@@ -143,6 +143,14 @@
             this.lblDropboxPathTip = new System.Windows.Forms.Label();
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
+            this.tpOneDrive = new System.Windows.Forms.TabPage();
+            this.lblOneDriveFolderTip = new System.Windows.Forms.Label();
+            this.lvOneDriveFolders = new ShareX.HelpersLib.MyListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblOneDriveFolderID = new System.Windows.Forms.Label();
+            this.btnOneDriveRefreshFolders = new System.Windows.Forms.Button();
+            this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
+            this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
@@ -170,8 +178,6 @@
             this.lblCopyPath = new System.Windows.Forms.Label();
             this.txtCopyPath = new System.Windows.Forms.TextBox();
             this.oAuthCopy = new ShareX.UploadersLib.OAuthControl();
-            this.tpOneDrive = new System.Windows.Forms.TabPage();
-            this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
             this.txtAmazonS3CustomDomain = new System.Windows.Forms.TextBox();
             this.lblAmazonS3PathPreviewLabel = new System.Windows.Forms.Label();
@@ -417,7 +423,6 @@
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpCustomUploaders.SuspendLayout();
@@ -436,11 +441,11 @@
             this.tpFTP.SuspendLayout();
             this.tpDropbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).BeginInit();
+            this.tpOneDrive.SuspendLayout();
             this.tpGoogleDrive.SuspendLayout();
             this.tpBox.SuspendLayout();
             this.tpCopy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).BeginInit();
-            this.tpOneDrive.SuspendLayout();
             this.tpAmazonS3.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
@@ -1334,6 +1339,68 @@
             this.txtDropboxPath.Name = "txtDropboxPath";
             this.txtDropboxPath.TextChanged += new System.EventHandler(this.txtDropboxPath_TextChanged);
             // 
+            // tpOneDrive
+            // 
+            this.tpOneDrive.Controls.Add(this.lblOneDriveFolderTip);
+            this.tpOneDrive.Controls.Add(this.lvOneDriveFolders);
+            this.tpOneDrive.Controls.Add(this.lblOneDriveFolderID);
+            this.tpOneDrive.Controls.Add(this.btnOneDriveRefreshFolders);
+            this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
+            this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
+            resources.ApplyResources(this.tpOneDrive, "tpOneDrive");
+            this.tpOneDrive.Name = "tpOneDrive";
+            this.tpOneDrive.UseVisualStyleBackColor = true;
+            // 
+            // lblOneDriveFolderTip
+            // 
+            resources.ApplyResources(this.lblOneDriveFolderTip, "lblOneDriveFolderTip");
+            this.lblOneDriveFolderTip.Name = "lblOneDriveFolderTip";
+            // 
+            // lvOneDriveFolders
+            // 
+            this.lvOneDriveFolders.AutoFillColumn = true;
+            this.lvOneDriveFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lvOneDriveFolders.FullRowSelect = true;
+            resources.ApplyResources(this.lvOneDriveFolders, "lvOneDriveFolders");
+            this.lvOneDriveFolders.Name = "lvOneDriveFolders";
+            this.lvOneDriveFolders.UseCompatibleStateImageBehavior = false;
+            this.lvOneDriveFolders.View = System.Windows.Forms.View.Details;
+            this.lvOneDriveFolders.SelectedIndexChanged += new System.EventHandler(this.lvOneDriveFolders_SelectedIndexChanged);
+            this.lvOneDriveFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvOneDriveFolders_MouseDoubleClick);
+            // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
+            // lblOneDriveFolderID
+            // 
+            resources.ApplyResources(this.lblOneDriveFolderID, "lblOneDriveFolderID");
+            this.lblOneDriveFolderID.Name = "lblOneDriveFolderID";
+            // 
+            // btnOneDriveRefreshFolders
+            // 
+            resources.ApplyResources(this.btnOneDriveRefreshFolders, "btnOneDriveRefreshFolders");
+            this.btnOneDriveRefreshFolders.Name = "btnOneDriveRefreshFolders";
+            this.btnOneDriveRefreshFolders.UseVisualStyleBackColor = true;
+            this.btnOneDriveRefreshFolders.Click += new System.EventHandler(this.btnOneDriveRefreshFolders_Click);
+            // 
+            // cbOneDriveCreateShareableLink
+            // 
+            resources.ApplyResources(this.cbOneDriveCreateShareableLink, "cbOneDriveCreateShareableLink");
+            this.cbOneDriveCreateShareableLink.Name = "cbOneDriveCreateShareableLink";
+            this.cbOneDriveCreateShareableLink.UseVisualStyleBackColor = true;
+            this.cbOneDriveCreateShareableLink.CheckedChanged += new System.EventHandler(this.cbOneDriveCreateShareableLink_CheckedChanged);
+            // 
+            // oAuth2OneDrive
+            // 
+            resources.ApplyResources(this.oAuth2OneDrive, "oAuth2OneDrive");
+            this.oAuth2OneDrive.Name = "oAuth2OneDrive";
+            this.oAuth2OneDrive.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
+            this.oAuth2OneDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
+            this.oAuth2OneDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
+            this.oAuth2OneDrive.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oAuth2OneDrive_RefreshButtonClicked);
+            // 
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
@@ -1538,23 +1605,6 @@
             this.oAuthCopy.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthCopy_OpenButtonClicked);
             this.oAuthCopy.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthCopy_CompleteButtonClicked);
             this.oAuthCopy.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthCopy_ClearButtonClicked);
-            // 
-            // tpOneDrive
-            // 
-            this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
-            this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
-            resources.ApplyResources(this.tpOneDrive, "tpOneDrive");
-            this.tpOneDrive.Name = "tpOneDrive";
-            this.tpOneDrive.UseVisualStyleBackColor = true;
-            // 
-            // oAuth2OneDrive
-            // 
-            resources.ApplyResources(this.oAuth2OneDrive, "oAuth2OneDrive");
-            this.oAuth2OneDrive.Name = "oAuth2OneDrive";
-            this.oAuth2OneDrive.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
-            this.oAuth2OneDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
-            this.oAuth2OneDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
-            this.oAuth2OneDrive.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oAuth2OneDrive_RefreshButtonClicked);
             // 
             // tpAmazonS3
             // 
@@ -3305,13 +3355,6 @@
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbOneDriveCreateShareableLink
-            // 
-            resources.ApplyResources(this.cbOneDriveCreateShareableLink, "cbOneDriveCreateShareableLink");
-            this.cbOneDriveCreateShareableLink.Name = "cbOneDriveCreateShareableLink";
-            this.cbOneDriveCreateShareableLink.UseVisualStyleBackColor = true;
-            this.cbOneDriveCreateShareableLink.CheckedChanged += new System.EventHandler(this.cbOneDriveCreateShareableLink_CheckedChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -3351,6 +3394,8 @@
             this.tpDropbox.ResumeLayout(false);
             this.tpDropbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDropboxLogo)).EndInit();
+            this.tpOneDrive.ResumeLayout(false);
+            this.tpOneDrive.PerformLayout();
             this.tpGoogleDrive.ResumeLayout(false);
             this.tpGoogleDrive.PerformLayout();
             this.tpBox.ResumeLayout(false);
@@ -3358,8 +3403,6 @@
             this.tpCopy.ResumeLayout(false);
             this.tpCopy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCopyLogo)).EndInit();
-            this.tpOneDrive.ResumeLayout(false);
-            this.tpOneDrive.PerformLayout();
             this.tpAmazonS3.ResumeLayout(false);
             this.tpAmazonS3.PerformLayout();
             this.tpMega.ResumeLayout(false);
@@ -3821,6 +3864,11 @@
         private System.Windows.Forms.TextBox txtHastebinCustomDomain;
         private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
         private System.Windows.Forms.Label lblHastebinCustomDomain;
-        private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;        
+        private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
+        private System.Windows.Forms.Label lblOneDriveFolderTip;
+        private HelpersLib.MyListView lvOneDriveFolders;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label lblOneDriveFolderID;
+        private System.Windows.Forms.Button btnOneDriveRefreshFolders;        
     }
 }

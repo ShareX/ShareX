@@ -335,6 +335,7 @@ namespace ShareX.UploadersLib
             if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
             {
                 oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
+                btnOneDriveRefreshFolders.Enabled = true;
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
@@ -1140,6 +1141,25 @@ namespace ShareX.UploadersLib
         private void cbOneDriveCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.OneDriveAutoCreateShareableLink = cbOneDriveCreateShareableLink.Checked;
+        }
+
+        private void btnOneDriveRefreshFolders_Click(object sender, EventArgs e)
+        {
+            OneDriveListFolders();
+        }
+
+        private void lvOneDriveFolders_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && lvOneDriveFolders.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvOneDriveFolders.SelectedItems[0];
+                OneDriveFileInfo file = lvi.Tag as OneDriveFileInfo;
+                if (file != null)
+                {
+                    lvOneDriveFolders.Items.Clear();
+                    OneDriveListFolders(file);
+                }
+            }
         }
 
         #endregion OneDrive

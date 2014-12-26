@@ -2552,7 +2552,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 406</value>
+    <value>792, 388</value>
   </data>
   <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2980,13 +2980,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>9</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3006,8 +3006,128 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;tpDropbox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblOneDriveFolderTip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOneDriveFolderTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOneDriveFolderTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 425</value>
+  </data>
+  <data name="lblOneDriveFolderTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 13</value>
+  </data>
+  <data name="lblOneDriveFolderTip.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblOneDriveFolderTip.Text" xml:space="preserve">
+    <value>Note: You can double click folder name to go inside that folder and choose it.</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderTip.Name" xml:space="preserve">
+    <value>lblOneDriveFolderTip</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderTip.Parent" xml:space="preserve">
+    <value>tpOneDrive</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderTip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Folder name</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>435</value>
+  </data>
+  <data name="lvOneDriveFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 72</value>
+  </data>
+  <data name="lvOneDriveFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 344</value>
+  </data>
+  <data name="lvOneDriveFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lvOneDriveFolders.Name" xml:space="preserve">
+    <value>lvOneDriveFolders</value>
+  </data>
+  <data name="&gt;&gt;lvOneDriveFolders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvOneDriveFolders.Parent" xml:space="preserve">
+    <value>tpOneDrive</value>
+  </data>
+  <data name="&gt;&gt;lvOneDriveFolders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblOneDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOneDriveFolderID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOneDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 50</value>
+  </data>
+  <data name="lblOneDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="lblOneDriveFolderID.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Selected folder:</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderID.Name" xml:space="preserve">
+    <value>lblOneDriveFolderID</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderID.Parent" xml:space="preserve">
+    <value>tpOneDrive</value>
+  </data>
+  <data name="&gt;&gt;lblOneDriveFolderID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnOneDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOneDriveRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOneDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 16</value>
+  </data>
+  <data name="btnOneDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="btnOneDriveRefreshFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnOneDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Refresh folders list</value>
+  </data>
+  <data name="&gt;&gt;btnOneDriveRefreshFolders.Name" xml:space="preserve">
+    <value>btnOneDriveRefreshFolders</value>
+  </data>
+  <data name="&gt;&gt;btnOneDriveRefreshFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOneDriveRefreshFolders.Parent" xml:space="preserve">
+    <value>tpOneDrive</value>
+  </data>
+  <data name="&gt;&gt;btnOneDriveRefreshFolders.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="cbOneDriveCreateShareableLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbOneDriveCreateShareableLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 264</value>
@@ -3031,7 +3151,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpOneDrive</value>
   </data>
   <data name="&gt;&gt;cbOneDriveCreateShareableLink.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="oAuth2OneDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -3052,7 +3172,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpOneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -3313,13 +3433,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>349, 425</value>
   </data>
   <data name="lblBoxFolderTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 13</value>
+    <value>371, 13</value>
   </data>
   <data name="lblBoxFolderTip.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Note: You can double click folder name to go inside that folder.</value>
+    <value>Note: You can double click folder name to go inside that folder and choose it.</value>
   </data>
   <data name="&gt;&gt;lblBoxFolderTip.Name" xml:space="preserve">
     <value>lblBoxFolderTip</value>
@@ -3793,13 +3913,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="tpCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpCopy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpCopy.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4237,13 +4357,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -4558,10 +4678,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -4876,13 +4996,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5089,13 +5209,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -5251,13 +5371,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -5479,13 +5599,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="tpRapidShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpRapidShare.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpRapidShare.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpRapidShare.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5656,13 +5776,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -5713,13 +5833,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="tpMediaCrush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMediaCrush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaCrush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMediaCrush.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -5899,13 +6019,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -6058,13 +6178,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -6508,13 +6628,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -10213,6 +10333,12 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>chArgumentsValue</value>
   </data>
   <data name="&gt;&gt;chArgumentsValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chGoogleDriveTitle.Name" xml:space="preserve">

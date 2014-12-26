@@ -39,6 +39,12 @@ namespace ShareX.UploadersLib.FileUploaders
         public string FolderID { get; set; }
         public bool AutoCreateShareableLink { get; set; }
 
+        public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
+        {
+            id = "me/skydrive",
+            name = "Root folder"
+        };
+
         public OneDrive(OAuth2Info authInfo)
         {
             AuthInfo = authInfo;
@@ -135,8 +141,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            GetPathInfo("me/skydrive/files");
-
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("access_token", AuthInfo.Token.access_token);
             args.Add("overwrite", "true");
@@ -211,6 +215,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public OneDrivePathInfo GetPathInfo(string path)
         {
+            if (!CheckAuthorization()) return null;
+
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("access_token", AuthInfo.Token.access_token);
 

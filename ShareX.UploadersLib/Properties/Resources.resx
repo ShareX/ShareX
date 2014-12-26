@@ -373,7 +373,7 @@
   <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
     <value>Login successful but getting account info failed.</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Authentication_required_" xml:space="preserve">
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentication required.</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
@@ -457,5 +457,8 @@ Created folders:</value>
   </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>New account</value>
+  </data>
+  <data name="UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed" xml:space="preserve">
+    <value>OneDrive refresh folders list failed</value>
   </data>
 </root>
