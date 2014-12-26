@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("scope", "wl.offline_access wl.basic wl.skydrive");
+            args.Add("scope", "wl.offline_access wl.basic wl.skydrive_update");
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
