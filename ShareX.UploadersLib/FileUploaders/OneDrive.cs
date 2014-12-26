@@ -135,18 +135,31 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
+            GetPathInfo("me/skydrive/files");
+
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("access_token", AuthInfo.Token.access_token);
             args.Add("overwrite", "true");
             args.Add("downsize_photo_uploads", "false");
 
-            string url = CreateQuery("https://apis.live.net/v5.0/me/skydrive/files", args);
+            string folderPath;
+
+            if (!string.IsNullOrEmpty(FolderID))
+            {
+                folderPath = URLHelpers.CombineURL(FolderID, "files");
+            }
+            else
+            {
+                folderPath = "me/skydrive/files";
+            }
+
+            string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", folderPath), args);
 
             UploadResult result = UploadData(stream, url, fileName);
 
             if (result.IsSuccess)
             {
-                OneDriveUploadInfo uploadInfo = JsonConvert.DeserializeObject<OneDriveUploadInfo>(result.Response);
+                OneDriveFileInfo uploadInfo = JsonConvert.DeserializeObject<OneDriveFileInfo>(result.Response);
 
                 if (AutoCreateShareableLink)
                 {
@@ -196,17 +209,40 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        private class OneDriveUploadInfo
+        public OneDrivePathInfo GetPathInfo(string path)
         {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string source { get; set; }
-        }
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("access_token", AuthInfo.Token.access_token);
 
-        private class OneDriveShareableLinkInfo
-        {
-            public string link { get; set; }
+            string url = CreateQuery(URLHelpers.CombineURL("https://apis.live.net/v5.0", path), args);
+
+            string response = SendRequest(HttpMethod.GET, url);
+
+            if (response != null)
+            {
+                OneDrivePathInfo pathInfo = JsonConvert.DeserializeObject<OneDrivePathInfo>(response);
+                return pathInfo;
+            }
+
+            return null;
         }
+    }
+
+    public class OneDriveFileInfo
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public string source { get; set; }
+    }
+
+    public class OneDriveShareableLinkInfo
+    {
+        public string link { get; set; }
+    }
+
+    public class OneDrivePathInfo
+    {
+        public OneDriveFileInfo[] data { get; set; }
     }
 
     public enum OneDriveLinkType
