@@ -3016,13 +3016,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>349, 425</value>
   </data>
   <data name="lblOneDriveFolderTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 13</value>
+    <value>304, 13</value>
   </data>
   <data name="lblOneDriveFolderTip.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="lblOneDriveFolderTip.Text" xml:space="preserve">
-    <value>Note: You can double click folder name to go inside that folder and choose it.</value>
+    <value>Note: You can double click folder name to go inside that folder.</value>
   </data>
   <data name="&gt;&gt;lblOneDriveFolderTip.Name" xml:space="preserve">
     <value>lblOneDriveFolderTip</value>
@@ -3433,13 +3433,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>349, 425</value>
   </data>
   <data name="lblBoxFolderTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 13</value>
+    <value>304, 13</value>
   </data>
   <data name="lblBoxFolderTip.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Note: You can double click folder name to go inside that folder and choose it.</value>
+    <value>Note: You can double click folder name to go inside that folder.</value>
   </data>
   <data name="&gt;&gt;lblBoxFolderTip.Name" xml:space="preserve">
     <value>lblBoxFolderTip</value>

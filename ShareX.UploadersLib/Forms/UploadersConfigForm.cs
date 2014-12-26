@@ -1158,6 +1158,7 @@ namespace ShareX.UploadersLib
                 if (file != null)
                 {
                     lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
+                    Config.OneDriveSelectedFolder = file;
                 }
             }
         }
@@ -1172,7 +1173,6 @@ namespace ShareX.UploadersLib
                 {
                     lvOneDriveFolders.Items.Clear();
                     OneDriveListFolders(file);
-                    Config.OneDriveSelectedFolder = file;
                 }
             }
         }
@@ -1278,6 +1278,7 @@ namespace ShareX.UploadersLib
                 if (file != null)
                 {
                     lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
+                    Config.BoxSelectedFolder = file;
                 }
             }
         }
@@ -1292,7 +1293,6 @@ namespace ShareX.UploadersLib
                 {
                     lvBoxFolders.Items.Clear();
                     BoxListFolders(file);
-                    Config.BoxSelectedFolder = file;
                 }
             }
         }
