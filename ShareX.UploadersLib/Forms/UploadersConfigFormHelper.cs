@@ -977,12 +977,13 @@ namespace ShareX.UploadersLib
 
         private void OneDriveListFolders()
         {
-            lvOneDriveFolders.Items.Clear();
-            OneDriveAddFolder(OneDrive.RootFolder);
-            OneDriveListFolders(OneDrive.RootFolder);
+            tvOneDrive.Nodes.Clear();
+            TreeNode tnRootFolder = new TreeNode(OneDrive.RootFolder.name) { Tag = OneDrive.RootFolder };
+            tnRootFolder.Nodes.Add(new TreeNode());
+            tvOneDrive.Nodes.Add(tnRootFolder);
         }
 
-        public void OneDriveListFolders(OneDriveFileInfo fileEntry)
+        public void OneDriveListFolders(OneDriveFileInfo fileEntry, TreeNode tnParent)
         {
             if (!OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
             {
@@ -992,18 +993,20 @@ namespace ShareX.UploadersLib
             else
             {
                 OneDrive onedrive = new OneDrive(Config.OneDriveOAuth2Info);
+                tnParent.Nodes.Clear();
                 foreach (OneDriveFileInfo folder in onedrive.GetPathInfo(fileEntry.id).data.Where(x => x.id.StartsWith("folder.")))
                 {
-                    OneDriveAddFolder(folder);
+                    OneDriveAddFolder(folder, tnParent);
                 }
             }
         }
 
-        private void OneDriveAddFolder(OneDriveFileInfo folder)
+        private void OneDriveAddFolder(OneDriveFileInfo folder, TreeNode tnParent)
         {
-            ListViewItem lvi = new ListViewItem(folder.name);
-            lvi.Tag = folder;
-            lvOneDriveFolders.Items.Add(lvi);
+            TreeNode tn = new TreeNode(folder.name);
+            tn.Tag = folder;
+            tn.Nodes.Add(new TreeNode());
+            tnParent.Nodes.Add(tn);
         }
 
         #endregion OneDrive

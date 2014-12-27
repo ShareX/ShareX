@@ -144,9 +144,8 @@
             this.lblDropboxPath = new System.Windows.Forms.Label();
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.tpOneDrive = new System.Windows.Forms.TabPage();
+            this.tvOneDrive = new System.Windows.Forms.TreeView();
             this.lblOneDriveFolderTip = new System.Windows.Forms.Label();
-            this.lvOneDriveFolders = new ShareX.HelpersLib.MyListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblOneDriveFolderID = new System.Windows.Forms.Label();
             this.btnOneDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
@@ -1341,8 +1340,8 @@
             // 
             // tpOneDrive
             // 
+            this.tpOneDrive.Controls.Add(this.tvOneDrive);
             this.tpOneDrive.Controls.Add(this.lblOneDriveFolderTip);
-            this.tpOneDrive.Controls.Add(this.lvOneDriveFolders);
             this.tpOneDrive.Controls.Add(this.lblOneDriveFolderID);
             this.tpOneDrive.Controls.Add(this.btnOneDriveRefreshFolders);
             this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
@@ -1351,27 +1350,18 @@
             this.tpOneDrive.Name = "tpOneDrive";
             this.tpOneDrive.UseVisualStyleBackColor = true;
             // 
+            // tvOneDrive
+            // 
+            resources.ApplyResources(this.tvOneDrive, "tvOneDrive");
+            this.tvOneDrive.Name = "tvOneDrive";
+            this.tvOneDrive.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvOneDrive_BeforeExpand);
+            this.tvOneDrive.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvOneDrive_AfterSelect);
+
+            // 
             // lblOneDriveFolderTip
             // 
             resources.ApplyResources(this.lblOneDriveFolderTip, "lblOneDriveFolderTip");
             this.lblOneDriveFolderTip.Name = "lblOneDriveFolderTip";
-            // 
-            // lvOneDriveFolders
-            // 
-            this.lvOneDriveFolders.AutoFillColumn = true;
-            this.lvOneDriveFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.lvOneDriveFolders.FullRowSelect = true;
-            resources.ApplyResources(this.lvOneDriveFolders, "lvOneDriveFolders");
-            this.lvOneDriveFolders.Name = "lvOneDriveFolders";
-            this.lvOneDriveFolders.UseCompatibleStateImageBehavior = false;
-            this.lvOneDriveFolders.View = System.Windows.Forms.View.Details;
-            this.lvOneDriveFolders.SelectedIndexChanged += new System.EventHandler(this.lvOneDriveFolders_SelectedIndexChanged);
-            this.lvOneDriveFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvOneDriveFolders_MouseDoubleClick);
-            // 
-            // columnHeader1
-            // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
             // 
             // lblOneDriveFolderID
             // 
@@ -3866,9 +3856,8 @@
         private System.Windows.Forms.Label lblHastebinCustomDomain;
         private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
         private System.Windows.Forms.Label lblOneDriveFolderTip;
-        private HelpersLib.MyListView lvOneDriveFolders;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label lblOneDriveFolderID;
-        private System.Windows.Forms.Button btnOneDriveRefreshFolders;        
+        private System.Windows.Forms.Button btnOneDriveRefreshFolders;
+        private System.Windows.Forms.TreeView tvOneDrive;        
     }
 }

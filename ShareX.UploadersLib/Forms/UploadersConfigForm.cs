@@ -340,6 +340,7 @@ namespace ShareX.UploadersLib
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
             lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveSelectedFolder.name;
+            tvOneDrive.CollapseAll();
 
             // Minus
 
@@ -1149,31 +1150,22 @@ namespace ShareX.UploadersLib
             OneDriveListFolders();
         }
 
-        private void lvOneDriveFolders_SelectedIndexChanged(object sender, EventArgs e)
+        private void tvOneDrive_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (lvOneDriveFolders.SelectedItems.Count > 0)
+            OneDriveFileInfo file = e.Node.Tag as OneDriveFileInfo;
+            if (file != null)
             {
-                ListViewItem lvi = lvOneDriveFolders.SelectedItems[0];
-                OneDriveFileInfo file = lvi.Tag as OneDriveFileInfo;
-                if (file != null)
-                {
-                    lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
-                    Config.OneDriveSelectedFolder = file;
-                }
+                lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
+                Config.OneDriveSelectedFolder = file;
             }
         }
 
-        private void lvOneDriveFolders_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void tvOneDrive_BeforeExpand(object sender, TreeViewCancelEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && lvOneDriveFolders.SelectedItems.Count > 0)
+            OneDriveFileInfo file = e.Node.Tag as OneDriveFileInfo;
+            if (file != null)
             {
-                ListViewItem lvi = lvOneDriveFolders.SelectedItems[0];
-                OneDriveFileInfo file = lvi.Tag as OneDriveFileInfo;
-                if (file != null)
-                {
-                    lvOneDriveFolders.Items.Clear();
-                    OneDriveListFolders(file);
-                }
+                OneDriveListFolders(file, e.Node);
             }
         }
 
