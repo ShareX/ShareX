@@ -1160,7 +1160,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void tvOneDrive_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+        private void tvOneDrive_AfterExpand(object sender, TreeViewEventArgs e)
         {
             OneDriveFileInfo file = e.Node.Tag as OneDriveFileInfo;
             if (file != null)

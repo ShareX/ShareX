@@ -145,7 +145,6 @@
             this.txtDropboxPath = new System.Windows.Forms.TextBox();
             this.tpOneDrive = new System.Windows.Forms.TabPage();
             this.tvOneDrive = new System.Windows.Forms.TreeView();
-            this.lblOneDriveFolderTip = new System.Windows.Forms.Label();
             this.lblOneDriveFolderID = new System.Windows.Forms.Label();
             this.btnOneDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
@@ -1341,7 +1340,6 @@
             // tpOneDrive
             // 
             this.tpOneDrive.Controls.Add(this.tvOneDrive);
-            this.tpOneDrive.Controls.Add(this.lblOneDriveFolderTip);
             this.tpOneDrive.Controls.Add(this.lblOneDriveFolderID);
             this.tpOneDrive.Controls.Add(this.btnOneDriveRefreshFolders);
             this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
@@ -1354,14 +1352,8 @@
             // 
             resources.ApplyResources(this.tvOneDrive, "tvOneDrive");
             this.tvOneDrive.Name = "tvOneDrive";
-            this.tvOneDrive.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvOneDrive_BeforeExpand);
+            this.tvOneDrive.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvOneDrive_AfterExpand);
             this.tvOneDrive.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvOneDrive_AfterSelect);
-
-            // 
-            // lblOneDriveFolderTip
-            // 
-            resources.ApplyResources(this.lblOneDriveFolderTip, "lblOneDriveFolderTip");
-            this.lblOneDriveFolderTip.Name = "lblOneDriveFolderTip";
             // 
             // lblOneDriveFolderID
             // 
@@ -3855,7 +3847,6 @@
         private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
         private System.Windows.Forms.Label lblHastebinCustomDomain;
         private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
-        private System.Windows.Forms.Label lblOneDriveFolderTip;
         private System.Windows.Forms.Label lblOneDriveFolderID;
         private System.Windows.Forms.Button btnOneDriveRefreshFolders;
         private System.Windows.Forms.TreeView tvOneDrive;        

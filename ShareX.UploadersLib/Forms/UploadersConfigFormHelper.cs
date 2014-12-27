@@ -978,23 +978,24 @@ namespace ShareX.UploadersLib
         private void OneDriveListFolders()
         {
             tvOneDrive.Nodes.Clear();
-            TreeNode tnRootFolder = new TreeNode(OneDrive.RootFolder.name) { Tag = OneDrive.RootFolder };
-            tnRootFolder.Nodes.Add(new TreeNode());
-            tvOneDrive.Nodes.Add(tnRootFolder);
+            OneDriveAddFolder(OneDrive.RootFolder, null);
         }
 
         public void OneDriveListFolders(OneDriveFileInfo fileEntry, TreeNode tnParent)
         {
             if (!OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
             {
+                tnParent.Nodes.Clear();
                 MessageBox.Show(Resources.UploadersConfigForm_ListFolders_Authentication_required_, Resources.UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed,
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                OneDrive onedrive = new OneDrive(Config.OneDriveOAuth2Info);
+                Application.DoEvents();
+                OneDrive oneDrive = new OneDrive(Config.OneDriveOAuth2Info);
+                OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
                 tnParent.Nodes.Clear();
-                foreach (OneDriveFileInfo folder in onedrive.GetPathInfo(fileEntry.id).data.Where(x => x.id.StartsWith("folder.")))
+                foreach (OneDriveFileInfo folder in oneDrivePathInfo.data.Where(x => x.id.StartsWith("folder.")))
                 {
                     OneDriveAddFolder(folder, tnParent);
                 }
@@ -1005,8 +1006,16 @@ namespace ShareX.UploadersLib
         {
             TreeNode tn = new TreeNode(folder.name);
             tn.Tag = folder;
-            tn.Nodes.Add(new TreeNode());
-            tnParent.Nodes.Add(tn);
+            tn.Nodes.Add(new TreeNode("Getting folders..."));
+
+            if (tnParent != null)
+            {
+                tnParent.Nodes.Add(tn);
+            }
+            else
+            {
+                tvOneDrive.Nodes.Add(tn);
+            }
         }
 
         #endregion OneDrive
