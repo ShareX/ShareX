@@ -458,4 +458,7 @@ Created folders:</value>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>New account</value>
   </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Querying folders...</value>
+  </data>
 </root>

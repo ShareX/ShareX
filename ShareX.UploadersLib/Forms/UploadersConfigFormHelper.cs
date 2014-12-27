@@ -993,7 +993,7 @@ namespace ShareX.UploadersLib
         {
             TreeNode tn = new TreeNode(folder.name);
             tn.Tag = folder;
-            tn.Nodes.Add(new TreeNode("Getting folders..."));
+            tn.Nodes.Add(new TreeNode(Resources.UploadersConfigForm_OneDriveAddFolder_Querying_folders___));
 
             if (tnParent != null)
             {
