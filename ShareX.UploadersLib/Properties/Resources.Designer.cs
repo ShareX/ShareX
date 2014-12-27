@@ -1050,16 +1050,7 @@ namespace ShareX.UploadersLib.Properties {
                         "upported_", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OneDrive refresh folders list failed.
-        /// </summary>
-        internal static string UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to {0} successfully created..
         /// </summary>

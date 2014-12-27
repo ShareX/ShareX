@@ -146,7 +146,6 @@
             this.tpOneDrive = new System.Windows.Forms.TabPage();
             this.tvOneDrive = new System.Windows.Forms.TreeView();
             this.lblOneDriveFolderID = new System.Windows.Forms.Label();
-            this.btnOneDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
@@ -1341,7 +1340,6 @@
             // 
             this.tpOneDrive.Controls.Add(this.tvOneDrive);
             this.tpOneDrive.Controls.Add(this.lblOneDriveFolderID);
-            this.tpOneDrive.Controls.Add(this.btnOneDriveRefreshFolders);
             this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
             this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
             resources.ApplyResources(this.tpOneDrive, "tpOneDrive");
@@ -1359,13 +1357,6 @@
             // 
             resources.ApplyResources(this.lblOneDriveFolderID, "lblOneDriveFolderID");
             this.lblOneDriveFolderID.Name = "lblOneDriveFolderID";
-            // 
-            // btnOneDriveRefreshFolders
-            // 
-            resources.ApplyResources(this.btnOneDriveRefreshFolders, "btnOneDriveRefreshFolders");
-            this.btnOneDriveRefreshFolders.Name = "btnOneDriveRefreshFolders";
-            this.btnOneDriveRefreshFolders.UseVisualStyleBackColor = true;
-            this.btnOneDriveRefreshFolders.Click += new System.EventHandler(this.btnOneDriveRefreshFolders_Click);
             // 
             // cbOneDriveCreateShareableLink
             // 
@@ -3848,7 +3839,6 @@
         private System.Windows.Forms.Label lblHastebinCustomDomain;
         private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
         private System.Windows.Forms.Label lblOneDriveFolderID;
-        private System.Windows.Forms.Button btnOneDriveRefreshFolders;
         private System.Windows.Forms.TreeView tvOneDrive;        
     }
 }

@@ -458,7 +458,4 @@ Created folders:</value>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>New account</value>
   </data>
-  <data name="UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed" xml:space="preserve">
-    <value>OneDrive refresh folders list failed</value>
-  </data>
 </root>

@@ -323,6 +323,8 @@ namespace ShareX.UploadersLib
             {
                 oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
                 btnGoogleDriveRefreshFolders.Enabled = true;
+
+                tvOneDrive.Enabled = true;
             }
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
@@ -332,10 +334,12 @@ namespace ShareX.UploadersLib
 
             // OneDrive
 
+            tvOneDrive.Nodes.Clear();
+            OneDriveAddFolder(OneDrive.RootFolder, null);
+
             if (OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
             {
                 oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                btnOneDriveRefreshFolders.Enabled = true;
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
@@ -1143,11 +1147,6 @@ namespace ShareX.UploadersLib
         private void cbOneDriveCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.OneDriveAutoCreateShareableLink = cbOneDriveCreateShareableLink.Checked;
-        }
-
-        private void btnOneDriveRefreshFolders_Click(object sender, EventArgs e)
-        {
-            OneDriveListFolders();
         }
 
         private void tvOneDrive_AfterSelect(object sender, TreeViewEventArgs e)

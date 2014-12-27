@@ -926,20 +926,20 @@ namespace ShareX.UploadersLib
             {
                 if (!string.IsNullOrEmpty(code) && Config.OneDriveOAuth2Info != null)
                 {
-                    OneDrive onedrive = new OneDrive(Config.OneDriveOAuth2Info);
+                    bool result = new OneDrive(Config.OneDriveOAuth2Info).GetAccessToken(code);
 
-                    if (onedrive.GetAccessToken(code))
+                    if (result)
                     {
-                        Config.OneDriveOAuth2Info = onedrive.AuthInfo;
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        Config.OneDriveOAuth2Info = null;
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    tvOneDrive.Enabled = result;
                 }
             }
             catch (Exception ex)
@@ -967,6 +967,8 @@ namespace ShareX.UploadersLib
                         oAuth2OneDrive.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    tvOneDrive.Enabled = result;
                 }
             }
             catch (Exception ex)
@@ -975,30 +977,15 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void OneDriveListFolders()
-        {
-            tvOneDrive.Nodes.Clear();
-            OneDriveAddFolder(OneDrive.RootFolder, null);
-        }
-
         public void OneDriveListFolders(OneDriveFileInfo fileEntry, TreeNode tnParent)
         {
-            if (!OAuth2Info.CheckOAuth(Config.OneDriveOAuth2Info))
+            Application.DoEvents();
+            OneDrive oneDrive = new OneDrive(Config.OneDriveOAuth2Info);
+            OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
+            tnParent.Nodes.Clear();
+            foreach (OneDriveFileInfo folder in oneDrivePathInfo.data.Where(x => x.id.StartsWith("folder.")))
             {
-                tnParent.Nodes.Clear();
-                MessageBox.Show(Resources.UploadersConfigForm_ListFolders_Authentication_required_, Resources.UploadersConfigForm_OneDriveListFolders_OneDrive_refresh_folders_list_failed,
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                Application.DoEvents();
-                OneDrive oneDrive = new OneDrive(Config.OneDriveOAuth2Info);
-                OneDrivePathInfo oneDrivePathInfo = oneDrive.GetPathInfo(fileEntry.id);
-                tnParent.Nodes.Clear();
-                foreach (OneDriveFileInfo folder in oneDrivePathInfo.data.Where(x => x.id.StartsWith("folder.")))
-                {
-                    OneDriveAddFolder(folder, tnParent);
-                }
+                OneDriveAddFolder(folder, tnParent);
             }
         }
 
