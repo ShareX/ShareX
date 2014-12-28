@@ -461,4 +461,7 @@ Created folders:</value>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Querying folders...</value>
   </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Root folder</value>
+  </data>
 </root>

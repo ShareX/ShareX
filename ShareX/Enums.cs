@@ -34,9 +34,9 @@ namespace ShareX
         [Description("English")]
         English,
         [Description("Türkçe")]
-        Turkish,
-        [Description("Deutsch")]
-        German
+        Turkish
+        /*[Description("Deutsch")]
+        German*/
     }
 
     public enum EImageFormat

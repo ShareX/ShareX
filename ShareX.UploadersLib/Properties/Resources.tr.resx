@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -249,5 +248,11 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
     <value>Ana album yolu, örneğin:</value>
+  </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Klasörler isteniyor...</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Ana klasör</value>
   </data>
 </root>

@@ -54,9 +54,9 @@ namespace ShareX
                     case SupportedLanguage.Turkish:
                         cultureName = "tr-TR";
                         break;
-                    case SupportedLanguage.German:
+                    /*case SupportedLanguage.German:
                         cultureName = "de-DE";
-                        break;
+                        break;*/
                 }
 
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);

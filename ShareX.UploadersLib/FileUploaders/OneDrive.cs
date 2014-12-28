@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
             id = "me/skydrive",
-            name = "Root folder"
+            name = Resources.OneDrive_RootFolder_Root_folder
         };
 
         public OneDrive(OAuth2Info authInfo)
@@ -54,7 +55,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("scope", "wl.offline_access wl.basic wl.skydrive_update");
+            args.Add("scope", "wl.offline_access wl.skydrive_update");
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 

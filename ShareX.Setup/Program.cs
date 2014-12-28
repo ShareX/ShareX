@@ -41,7 +41,7 @@ namespace ShareX.Setup
             Beta // Build setup + upload it using "Debug/ShareX.exe"
         }
 
-        private const SetupType Setup = SetupType.Beta;
+        private const SetupType Setup = SetupType.Stable;
 
         private static string parentDir = @"..\..\..\";
         private static string binDir = Path.Combine(parentDir, @"ShareX\bin");

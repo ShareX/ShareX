@@ -35,7 +35,6 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Globalization;
 
 namespace ShareX
 {
@@ -64,7 +63,7 @@ namespace ShareX
         public AfterUploadTasks AfterUploadJob = AfterUploadTasks.CopyURLToClipboard;
 
         public bool UseDefaultDestinations = true;
-        public ImageDestination ImageDestination = DefaultImageDestination();
+        public ImageDestination ImageDestination = ImageDestination.Imgur;
         public FileDestination ImageFileDestination = FileDestination.Dropbox;
         public TextDestination TextDestination = TextDestination.Pastebin;
         public FileDestination TextFileDestination = FileDestination.Dropbox;
@@ -237,13 +236,6 @@ namespace ShareX
 
                 return Program.ScreenshotsFolder;
             }
-        }
-
-        private static ImageDestination DefaultImageDestination()
-        {
-            return CultureInfo.CurrentCulture.Name.Equals("tr-TR", StringComparison.InvariantCultureIgnoreCase) ||
-                CultureInfo.CurrentUICulture.Name.Equals("tr-TR", StringComparison.InvariantCultureIgnoreCase) ?
-                ImageDestination.HizliResim : ImageDestination.Imgur;
         }
     }
 

@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -733,5 +732,11 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   </data>
   <data name="lblSharedFolderText.Text" xml:space="preserve">
     <value>Yazı:</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Paylaşılabilir link oluştur</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>Seçili dizin:</value>
   </data>
 </root>
