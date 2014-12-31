@@ -190,6 +190,7 @@ namespace ShareX.UploadersLib
                 }
 
                 httpHomeUri = new UriBuilder(URLHelpers.CombineURL(host, subFolderPath, filename));
+                httpHomeUri.Port = -1; //Since httpHomePath is not set, it's safe to erase UriBuilder's assumed port number
             }
             else
             {
