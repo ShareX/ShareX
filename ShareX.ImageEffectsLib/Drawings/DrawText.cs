@@ -178,55 +178,58 @@ namespace ShareX.ImageEffectsLib
                     return img;
                 }
 
-                using (Graphics gResult = Graphics.FromImage(img))
+                using (Graphics g = Graphics.FromImage(img))
                 {
-                    gResult.SetHighQuality();
+                    g.SetHighQuality();
 
-                    using (GraphicsPath gp = new GraphicsPath())
+                    if (DrawBackground)
                     {
-                        gp.AddRoundedRectangle(watermarkRectangle, CornerRadius);
+                        Brush backgroundBrush = null;
 
-                        if (DrawBackground)
+                        try
                         {
-                            Brush backgroundBrush = null;
-
-                            try
+                            if (UseGradient)
                             {
-                                if (UseGradient)
+                                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
                                 {
-                                    if (UseCustomGradient && Gradient != null && Gradient.IsValid)
-                                    {
-                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, Color.Transparent, Color.Transparent, Gradient.Type);
-                                        ColorBlend colorBlend = new ColorBlend();
-                                        IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
-                                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                        colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-                                        ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
-                                    }
-                                    else
-                                    {
-                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
-                                    }
+                                    backgroundBrush = new LinearGradientBrush(watermarkRectangle, Color.Transparent, Color.Transparent, Gradient.Type);
+                                    ColorBlend colorBlend = new ColorBlend();
+                                    IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
+                                    colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                    colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+                                    ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
                                 }
                                 else
                                 {
-                                    backgroundBrush = new SolidBrush(BackgroundColor);
+                                    backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
                                 }
-
-                                gResult.FillPath(backgroundBrush, gp);
                             }
-                            finally
+                            else
                             {
-                                if (backgroundBrush != null) backgroundBrush.Dispose();
+                                backgroundBrush = new SolidBrush(BackgroundColor);
+                            }
+
+                            using (GraphicsPath gp = new GraphicsPath())
+                            {
+                                gp.AddRoundedRectangle(watermarkRectangle, CornerRadius, 0);
+                                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                                g.FillPath(backgroundBrush, gp);
+                                g.PixelOffsetMode = PixelOffsetMode.Default;
                             }
                         }
-
-                        if (DrawBorder)
+                        finally
                         {
-                            using (Pen borderPen = new Pen(BorderColor))
-                            {
-                                gResult.DrawPath(borderPen, gp);
-                            }
+                            if (backgroundBrush != null) backgroundBrush.Dispose();
+                        }
+                    }
+
+                    if (DrawBorder)
+                    {
+                        using (Pen borderPen = new Pen(BorderColor))
+                        using (GraphicsPath gp = new GraphicsPath())
+                        {
+                            gp.AddRoundedRectangle(watermarkRectangle, CornerRadius);
+                            g.DrawPath(borderPen, gp);
                         }
                     }
 
@@ -239,13 +242,13 @@ namespace ShareX.ImageEffectsLib
                         {
                             using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
                             {
-                                gResult.DrawString(parsedText, textFont, textShadowBrush, watermarkRectangle.X + centerX + TextShadowOffset.X, watermarkRectangle.Y + centerY + TextShadowOffset.Y, sf);
+                                g.DrawString(parsedText, textFont, textShadowBrush, watermarkRectangle.X + centerX + TextShadowOffset.X, watermarkRectangle.Y + centerY + TextShadowOffset.Y, sf);
                             }
                         }
 
                         using (Brush textBrush = new SolidBrush(TextColor))
                         {
-                            gResult.DrawString(parsedText, textFont, textBrush, watermarkRectangle.X + centerX, watermarkRectangle.Y + centerY, sf);
+                            g.DrawString(parsedText, textFont, textBrush, watermarkRectangle.X + centerX, watermarkRectangle.Y + centerY, sf);
                         }
                     }
                 }

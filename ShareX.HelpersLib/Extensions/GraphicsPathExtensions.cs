@@ -50,7 +50,7 @@ namespace ShareX.HelpersLib
         {
             if (radius <= 0f)
             {
-                graphicsPath.AddRectangleProper(rect);
+                graphicsPath.AddRectangleProper(rect, penWidth);
             }
             else
             {
