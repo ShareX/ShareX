@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShareX Developers")]
 [assembly: AssemblyProduct("ShareX")]
-[assembly: AssemblyCopyright("Copyright (C) 2007-2015 ShareX Developers")]
+[assembly: AssemblyCopyright("Copyright © 2007-2015 ShareX Developers")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
