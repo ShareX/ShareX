@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -44,6 +45,44 @@ namespace ShareX
             rtbCredits.AddContextMenu();
 
             uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
+
+            rtbShareXInfo.Text = string.Format(@"{0}: http://getsharex.com
+{1}: https://github.com/ShareX/ShareX
+{2}: https://github.com/ShareX/ShareX/issues", Resources.AboutForm_AboutForm_Website, Resources.AboutForm_AboutForm_Project_page, Resources.AboutForm_AboutForm_Issues);
+
+            rtbCredits.Text = string.Format(@"{0}:
+
+Mega, Gist and Jira support: https://github.com/gpailler
+Web site: https://github.com/dmxt
+MediaCrush support: https://github.com/SirCmpwn
+Amazon S3 and DreamObjects support: https://github.com/alanedwardes
+Gfycat support: https://github.com/Dinnerbone
+Copy support: https://github.com/KamilKZ
+AdFly support: https://github.com/LRNAB
+MediaFire support: https://github.com/michalx2
+Pushbullet support: https://github.com/BallisticLingonberries
+
+{1}:
+
+Turkish: https://github.com/muratmoon
+
+{2}:
+
+Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
+Json.NET: https://json.codeplex.com
+SSH.NET: https://sshnet.codeplex.com
+Icons: http://p.yusukekamiyamane.com
+ImageListView: https://code.google.com/p/imagelistview
+AviWriter: https://code.google.com/p/aforge
+FFmpeg: http://www.ffmpeg.org
+FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
+7-Zip: http://www.7-zip.org
+SevenZipSharp: https://sevenzipsharp.codeplex.com
+DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+QrCode.Net: https://qrcodenet.codeplex.com
+System.Net.FtpClient: https://netftp.codeplex.com
+
+Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contributors, Resources.AboutForm_AboutForm_Translators, Resources.AboutForm_AboutForm_External_libraries);
         }
 
         private void AboutForm_Shown(object sender, EventArgs e)

@@ -655,4 +655,22 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Currently configured hotkeys:</value>
   </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>Translators</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>External libraries</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Project page</value>
+  </data>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>Issues</value>
+  </data>
 </root>

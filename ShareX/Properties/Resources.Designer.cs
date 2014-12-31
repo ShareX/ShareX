@@ -61,6 +61,60 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contributors.
+        /// </summary>
+        public static string AboutForm_AboutForm_Contributors {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Contributors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External libraries.
+        /// </summary>
+        public static string AboutForm_AboutForm_External_libraries {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_External_libraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issues.
+        /// </summary>
+        public static string AboutForm_AboutForm_Issues {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Issues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project page.
+        /// </summary>
+        public static string AboutForm_AboutForm_Project_page {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Project_page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Translators.
+        /// </summary>
+        public static string AboutForm_AboutForm_Translators {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Translators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        public static string AboutForm_AboutForm_Website {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File path can&apos;t be empty..
         /// </summary>
         public static string ActionsForm_btnOK_Click_File_path_can_t_be_empty_ {

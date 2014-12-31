@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,50 +116,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbCredits.Text" xml:space="preserve">
-    <value>Katılımcılar:
-
-Mega, Gist and Jira support: https://github.com/gpailler
-Web site: https://github.com/dmxt
-MediaCrush support: https://github.com/SirCmpwn
-Amazon S3 and DreamObjects support: https://github.com/alanedwardes
-Gfycat support: https://github.com/Dinnerbone
-Copy support: https://github.com/KamilKZ
-AdFly support: https://github.com/LRNAB
-MediaFire support: https://github.com/michalx2
-Pushbullet support: https://github.com/BallisticLingonberries
-
-Çevirmenler:
-
-Türkçe: https://github.com/muratmoon
-
-Harici kütüphaneler:
-
-Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
-Json.NET: https://json.codeplex.com
-SSH.NET: https://sshnet.codeplex.com
-Icons: http://p.yusukekamiyamane.com
-ImageListView: https://code.google.com/p/imagelistview
-AviWriter: https://code.google.com/p/aforge
-FFmpeg: http://www.ffmpeg.org
-FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
-7-Zip: http://www.7-zip.org
-SevenZipSharp: https://sevenzipsharp.codeplex.com
-DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-QrCode.Net: https://qrcodenet.codeplex.com
-System.Net.FtpClient: https://netftp.codeplex.com
-
-Copyright © 2007-2015 ShareX Developers</value>
-  </data>
-  <data name="rtbShareXInfo.Text" xml:space="preserve">
-    <value>Website: http://getsharex.com
-Proje sayfası: https://github.com/ShareX/ShareX
-Sorunlar: https://github.com/ShareX/ShareX/issues</value>
-  </data>
   <data name="lblOwners.Text" xml:space="preserve">
     <value>Sahipler:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Hakkında</value>
   </data>
 </root>
