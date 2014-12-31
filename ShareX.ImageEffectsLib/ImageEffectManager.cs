@@ -35,6 +35,7 @@ namespace ShareX.ImageEffectsLib
         public static Image ApplyEffects(Image img, List<ImageEffect> imageEffects)
         {
             Image result = (Image)img.Clone();
+            ((Bitmap)result).SetResolution(96f, 96f);
 
             if (imageEffects != null && imageEffects.Count > 0)
             {

@@ -91,12 +91,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "-1, -1")]
         public Point TextShadowOffset { get; set; }
 
-        [DefaultValue(true)]
-        public bool DrawBackground { get; set; }
-
-        [DefaultValue(5)]
-        public int BackgroundPadding { get; set; }
-
         private int cornerRadius;
 
         [DefaultValue(4)]
@@ -112,8 +106,17 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        [DefaultValue(5)]
+        public int BackgroundPadding { get; set; }
+
+        [DefaultValue(true)]
+        public bool DrawBorder { get; set; }
+
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor { get; set; }
+
+        [DefaultValue(true)]
+        public bool DrawBackground { get; set; }
 
         [DefaultValue(typeof(Color), "10, 110, 230"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
@@ -175,73 +178,75 @@ namespace ShareX.ImageEffectsLib
                     return img;
                 }
 
-                using (Bitmap bmpWatermark = new Bitmap(watermarkSize.Width, watermarkSize.Height))
-                using (Graphics gWatermark = Graphics.FromImage(bmpWatermark))
+                using (Graphics gResult = Graphics.FromImage(img))
                 {
-                    gWatermark.SetHighQuality();
+                    gResult.SetHighQuality();
 
-                    if (DrawBackground)
+                    using (GraphicsPath gp = new GraphicsPath())
                     {
-                        Rectangle backgroundRect = new Rectangle(0, 0, watermarkSize.Width, watermarkSize.Height);
-                        Brush backgroundBrush = null;
+                        gp.AddRoundedRectangle(watermarkRectangle, CornerRadius);
 
-                        try
+                        if (DrawBackground)
                         {
-                            if (UseGradient)
+                            Brush backgroundBrush = null;
+
+                            try
                             {
-                                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                                if (UseGradient)
                                 {
-                                    backgroundBrush = new LinearGradientBrush(backgroundRect, Color.Transparent, Color.Transparent, Gradient.Type);
-                                    ColorBlend colorBlend = new ColorBlend();
-                                    IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
-                                    colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                    colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-                                    ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                    if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                                    {
+                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, Color.Transparent, Color.Transparent, Gradient.Type);
+                                        ColorBlend colorBlend = new ColorBlend();
+                                        IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
+                                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                        colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+                                        ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                    }
+                                    else
+                                    {
+                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
+                                    }
                                 }
                                 else
                                 {
-                                    backgroundBrush = new LinearGradientBrush(backgroundRect, BackgroundColor, BackgroundColor2, GradientType);
+                                    backgroundBrush = new SolidBrush(BackgroundColor);
                                 }
-                            }
-                            else
-                            {
-                                backgroundBrush = new SolidBrush(BackgroundColor);
-                            }
 
-                            using (Pen borderPen = new Pen(BorderColor))
+                                gResult.FillPath(backgroundBrush, gp);
+                            }
+                            finally
                             {
-                                gWatermark.DrawRoundedRectangle(backgroundBrush, borderPen, backgroundRect, CornerRadius);
+                                if (backgroundBrush != null) backgroundBrush.Dispose();
                             }
                         }
-                        finally
+
+                        if (DrawBorder)
                         {
-                            if (backgroundBrush != null) backgroundBrush.Dispose();
+                            using (Pen borderPen = new Pen(BorderColor))
+                            {
+                                gResult.DrawPath(borderPen, gp);
+                            }
                         }
                     }
 
                     using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                     {
-                        float centerX = bmpWatermark.Width / 2f;
-                        float centerY = bmpWatermark.Height / 2f;
+                        float centerX = watermarkRectangle.Width / 2f;
+                        float centerY = watermarkRectangle.Height / 2f;
 
                         if (DrawTextShadow)
                         {
                             using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
                             {
-                                gWatermark.DrawString(parsedText, textFont, textShadowBrush, centerX + TextShadowOffset.X, centerY + TextShadowOffset.Y, sf);
+                                gResult.DrawString(parsedText, textFont, textShadowBrush, watermarkRectangle.X + centerX + TextShadowOffset.X, watermarkRectangle.Y + centerY + TextShadowOffset.Y, sf);
                             }
                         }
 
                         using (Brush textBrush = new SolidBrush(TextColor))
                         {
-                            gWatermark.DrawString(parsedText, textFont, textBrush, centerX, centerY, sf);
+                            gResult.DrawString(parsedText, textFont, textBrush, watermarkRectangle.X + centerX, watermarkRectangle.Y + centerY, sf);
                         }
-                    }
-
-                    using (Graphics gResult = Graphics.FromImage(img))
-                    {
-                        gResult.SetHighQuality();
-                        gResult.DrawImage(bmpWatermark, watermarkRectangle);
                     }
                 }
             }
