@@ -10,7 +10,7 @@
 
 [Setup]
 AllowNoIcons=true
-AppCopyright=Copyright (C) 2007-2014 {#MyAppPublisher}
+AppCopyright=Copyright (C) 2007-2015 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex={#MyAppId}
 AppName={#MyAppName}
