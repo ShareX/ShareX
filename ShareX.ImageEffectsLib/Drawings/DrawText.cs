@@ -182,54 +182,51 @@ namespace ShareX.ImageEffectsLib
                 {
                     g.SetHighQuality();
 
-                    if (DrawBackground)
+                    using (GraphicsPath gp = new GraphicsPath())
                     {
-                        Brush backgroundBrush = null;
+                        gp.AddRoundedRectangle(watermarkRectangle, CornerRadius);
 
-                        try
+                        if (DrawBackground)
                         {
-                            if (UseGradient)
+                            Brush backgroundBrush = null;
+
+                            try
                             {
-                                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                                if (UseGradient)
                                 {
-                                    backgroundBrush = new LinearGradientBrush(watermarkRectangle, Color.Transparent, Color.Transparent, Gradient.Type);
-                                    ColorBlend colorBlend = new ColorBlend();
-                                    IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
-                                    colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                    colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-                                    ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                    if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                                    {
+                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, Color.Transparent, Color.Transparent, Gradient.Type);
+                                        ColorBlend colorBlend = new ColorBlend();
+                                        IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
+                                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+                                        colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+                                        ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                    }
+                                    else
+                                    {
+                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
+                                    }
                                 }
                                 else
                                 {
-                                    backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
+                                    backgroundBrush = new SolidBrush(BackgroundColor);
                                 }
-                            }
-                            else
-                            {
-                                backgroundBrush = new SolidBrush(BackgroundColor);
-                            }
 
-                            using (GraphicsPath gp = new GraphicsPath())
-                            {
-                                gp.AddRoundedRectangle(watermarkRectangle, CornerRadius, 0);
-                                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
                                 g.FillPath(backgroundBrush, gp);
-                                g.PixelOffsetMode = PixelOffsetMode.Default;
+                            }
+                            finally
+                            {
+                                if (backgroundBrush != null) backgroundBrush.Dispose();
                             }
                         }
-                        finally
-                        {
-                            if (backgroundBrush != null) backgroundBrush.Dispose();
-                        }
-                    }
 
-                    if (DrawBorder)
-                    {
-                        using (Pen borderPen = new Pen(BorderColor))
-                        using (GraphicsPath gp = new GraphicsPath())
+                        if (DrawBorder)
                         {
-                            gp.AddRoundedRectangle(watermarkRectangle, CornerRadius);
-                            g.DrawPath(borderPen, gp);
+                            using (Pen borderPen = new Pen(BorderColor))
+                            {
+                                g.DrawPath(borderPen, gp);
+                            }
                         }
                     }
 
