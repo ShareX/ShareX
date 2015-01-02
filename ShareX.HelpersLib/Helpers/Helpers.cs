@@ -43,6 +43,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using System.Web;
 
 namespace ShareX.HelpersLib
 {
@@ -215,7 +216,7 @@ namespace ShareX.HelpersLib
         public static string GetValidURL(string url, bool replaceSpace = false)
         {
             if (replaceSpace) url = url.Replace(' ', '_');
-            return new string(url.Where(c => ValidURLCharacters.Contains(c)).ToArray());
+            return HttpUtility.UrlPathEncode(url);
         }
 
         public static string GetXMLValue(string input, string tag)

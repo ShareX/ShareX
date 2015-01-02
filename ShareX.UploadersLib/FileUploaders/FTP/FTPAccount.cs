@@ -138,9 +138,9 @@ namespace ShareX.UploadersLib
             FTPSCertificateLocation = string.Empty;
         }
 
-        public string GetSubFolderPath(string filename = null)
+        public string GetSubFolderPath(string filename = null, NameParserType nameParserType = NameParserType.URL)
         {
-            string path = NameParser.Parse(NameParserType.URL, SubFolderPath.Replace("%host", Host));
+            string path = NameParser.Parse(nameParserType, SubFolderPath.Replace("%host", Host));
             return URLHelpers.CombineURL(path, filename);
         }
 
@@ -174,8 +174,6 @@ namespace ShareX.UploadersLib
             {
                 subFolderPath = GetSubFolderPath();
             }
-
-            subFolderPath = URLHelpers.URLPathEncode(subFolderPath);
 
             UriBuilder httpHomeUri;
             var httpHomePath = GetHttpHomePath();
@@ -242,7 +240,7 @@ namespace ShareX.UploadersLib
                 return string.Empty;
             }
 
-            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame));
+            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame, NameParserType.FolderPath));
         }
 
         public override string ToString()
