@@ -46,9 +46,9 @@ namespace ShareX
 
             uclUpdate.CheckUpdate(TaskHelpers.CheckUpdate);
 
-            rtbShareXInfo.Text = string.Format(@"{0}: http://getsharex.com
-{1}: https://github.com/ShareX/ShareX
-{2}: https://github.com/ShareX/ShareX/issues", Resources.AboutForm_AboutForm_Website, Resources.AboutForm_AboutForm_Project_page, Resources.AboutForm_AboutForm_Issues);
+            rtbShareXInfo.Text = string.Format(@"{0}: {1}
+{2}: {3}
+{4}: {5}", Resources.AboutForm_AboutForm_Website, Links.URL_WEBSITE, Resources.AboutForm_AboutForm_Project_page, Links.URL_PROJECT, Resources.AboutForm_AboutForm_Issues, Links.URL_ISSUES);
 
             rtbCredits.Text = string.Format(@"{0}:
 

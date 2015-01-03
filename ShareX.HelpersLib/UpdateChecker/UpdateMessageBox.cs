@@ -32,6 +32,8 @@ namespace ShareX.HelpersLib
 {
     public partial class UpdateMessageBox : Form
     {
+        public static bool IsOpen { get; private set; }
+
         private Rectangle fillRect;
 
         public UpdateMessageBox()
@@ -49,24 +51,33 @@ namespace ShareX.HelpersLib
         {
             if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
-                DialogResult result;
+                IsOpen = true;
 
-                using (UpdateMessageBox messageBox = new UpdateMessageBox())
+                try
                 {
-                    result = messageBox.ShowDialog();
-                }
+                    DialogResult result;
 
-                if (result == DialogResult.Yes)
-                {
-                    using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox())
                     {
-                        updaterForm.ShowDialog();
+                        result = messageBox.ShowDialog();
+                    }
 
-                        if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                    if (result == DialogResult.Yes)
+                    {
+                        using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
                         {
-                            Application.Exit();
+                            updaterForm.ShowDialog();
+
+                            if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
+                            {
+                                Application.Exit();
+                            }
                         }
                     }
+                }
+                finally
+                {
+                    IsOpen = false;
                 }
             }
         }

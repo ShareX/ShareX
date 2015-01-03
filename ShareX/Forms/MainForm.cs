@@ -46,6 +46,7 @@ namespace ShareX
         private bool forceClose;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
+        private System.Threading.Timer updateTimer;
 
         public MainForm()
         {
@@ -650,18 +651,19 @@ namespace ShareX
 
         private void AutoCheckUpdate()
         {
-            if (Program.Settings.AutoCheckUpdate)
+            if (Program.Settings.AutoCheckUpdate && updateTimer == null)
             {
-                Thread updateThread = new Thread(CheckUpdate);
-                updateThread.IsBackground = true;
-                updateThread.Start();
+                updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, 0, 1000 * 60 * 60);
             }
         }
 
         private void CheckUpdate()
         {
-            UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
-            UpdateMessageBox.Start(updateChecker);
+            if (!UpdateMessageBox.IsOpen)
+            {
+                UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
+                UpdateMessageBox.Start(updateChecker);
+            }
         }
 
         private void ForceClose()

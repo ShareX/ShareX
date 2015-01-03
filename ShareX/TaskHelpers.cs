@@ -411,7 +411,7 @@ namespace ShareX
             // Fallback if GitHub API fails
             if (updateChecker.Status == UpdateStatus.None || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
             {
-                updateChecker = new XMLUpdateChecker("http://getsharex.com/Update.xml", "ShareX");
+                updateChecker = new XMLUpdateChecker(Links.URL_UPDATE, "ShareX");
                 updateChecker.IsBeta = Program.IsBeta;
                 updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
                 updateChecker.CheckUpdate();
