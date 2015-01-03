@@ -1524,6 +1524,25 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A newer version of {0} is available.
+        ///Would you like to download and install it?.
+        /// </summary>
+        internal static string UpdateMessageBox_UpdateMessageBox_ {
+            get {
+                return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update is available.
+        /// </summary>
+        internal static string UpdateMessageBox_UpdateMessageBox_update_is_available {
+            get {
+                return ResourceManager.GetString("UpdateMessageBox_UpdateMessageBox_update_is_available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         internal static string URLSharingServices_Email {

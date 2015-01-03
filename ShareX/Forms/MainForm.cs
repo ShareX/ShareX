@@ -661,22 +661,7 @@ namespace ShareX
         private void CheckUpdate()
         {
             UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
-
-            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable &&
-                MessageBox.Show(Resources.MainForm_CheckUpdate_Newer_version_available,
-                string.Format("ShareX {0} ", updateChecker.LatestVersion) + Resources.MainForm_CheckUpdate_is_available,
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-            {
-                using (DownloaderForm updaterForm = new DownloaderForm(updateChecker))
-                {
-                    updaterForm.ShowDialog();
-
-                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
-                    {
-                        Application.Exit();
-                    }
-                }
-            }
+            UpdateMessageBox.Start(updateChecker);
         }
 
         private void ForceClose()

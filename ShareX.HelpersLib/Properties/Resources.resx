@@ -609,4 +609,11 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
     <value>Start screen recording using last region</value>
   </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>A newer version of {0} is available.
+Would you like to download and install it?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Update is available</value>
+  </data>
 </root>

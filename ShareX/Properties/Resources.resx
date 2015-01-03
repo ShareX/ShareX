@@ -595,13 +595,6 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet successfully sent.</value>
   </data>
-  <data name="MainForm_CheckUpdate_Newer_version_available" xml:space="preserve">
-    <value>A newer version of ShareX is available.
-Would you like to download and install it?</value>
-  </data>
-  <data name="MainForm_CheckUpdate_is_available" xml:space="preserve">
-    <value>is available</value>
-  </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Hide menu</value>
   </data>

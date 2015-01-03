@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -249,13 +249,6 @@ sürükle</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Yazı yükleme testi</value>
-  </data>
-  <data name="MainForm_CheckUpdate_is_available" xml:space="preserve">
-    <value>mevcut</value>
-  </data>
-  <data name="MainForm_CheckUpdate_Newer_version_available" xml:space="preserve">
-    <value>ShareX yeni sürümü mevcut.
-İndirmek ve yüklemek ister misiniz?</value>
   </data>
   <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
     <value>İmleç pozisyonu (X, Y) = {0}, {1}</value>

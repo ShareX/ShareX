@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -586,5 +585,12 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
     <value>Son bölgeyi kullanarak ekran kaydet</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>{0} yeni sürümü mevcut.
+İndirmek ve yüklemek ister misiniz?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Güncelleştirme mevcut</value>
   </data>
 </root>

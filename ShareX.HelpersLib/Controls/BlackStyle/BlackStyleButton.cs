@@ -63,8 +63,6 @@ namespace ShareX.HelpersLib
 
         public BlackStyleButton()
         {
-            InitializeComponent();
-
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
             Prepare();
@@ -136,17 +134,8 @@ namespace ShareX.HelpersLib
             TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor);
         }
 
-        #region Component Designer generated code
-
-        private System.ComponentModel.IContainer components = null;
-
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
             if (backgroundBrush != null) backgroundBrush.Dispose();
             if (backgroundHoverBrush != null) backgroundHoverBrush.Dispose();
             if (innerBorderBrush != null) innerBorderBrush.Dispose();
@@ -155,12 +144,5 @@ namespace ShareX.HelpersLib
 
             base.Dispose(disposing);
         }
-
-        private void InitializeComponent()
-        {
-            components = new System.ComponentModel.Container();
-        }
-
-        #endregion Component Designer generated code
     }
 }

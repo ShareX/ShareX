@@ -978,26 +978,7 @@ namespace ShareX.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to is available.
-        /// </summary>
-        public static string MainForm_CheckUpdate_is_available {
-            get {
-                return ResourceManager.GetString("MainForm_CheckUpdate_is_available", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A newer version of ShareX is available.
-        ///Would you like to download and install it?.
-        /// </summary>
-        public static string MainForm_CheckUpdate_Newer_version_available {
-            get {
-                return ResourceManager.GetString("MainForm_CheckUpdate_Newer_version_available", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete this file?.
         /// </summary>

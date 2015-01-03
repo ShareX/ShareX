@@ -63,6 +63,7 @@
       <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
@@ -351,6 +352,12 @@
     <Compile Include="Controls\MyPictureBox.Designer.cs">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateChecker\UpdateMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateChecker\UpdateMessageBox.Designer.cs">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateChecker\XMLUpdateChecker.cs" />
     <Compile Include="Links.cs" />
     <Compile Include="Vector2.cs" />
@@ -473,6 +480,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.tr.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.resx">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.tr.resx">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

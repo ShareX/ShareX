@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -123,11 +123,6 @@ Möchtest du es automatisch herunterladen?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} wird gleich hochgeladen {1} Du solltest ein anderes Ziel wählen.</value>
-  </data>
-  <data name="MainForm_CheckUpdate_Newer_version_available" xml:space="preserve">
-    <value>Eine neuere Version von ShareX ist verfügbar.
-4
-Möchtest du sie Herunterladen und Installieren?</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Nach der Aufnahme: {0}</value>
@@ -261,9 +256,6 @@ Bitte starte ShareX als Administrator um den persönlichen Ordnerpfad zu ändern
   </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>In Warteschlange</value>
-  </data>
-  <data name="MainForm_CheckUpdate_is_available" xml:space="preserve">
-    <value>ist verfügbar</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Fehlt</value>
