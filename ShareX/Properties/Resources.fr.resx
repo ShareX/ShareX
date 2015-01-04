@@ -307,7 +307,8 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Démarrer</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Démarrer l'écran sélecteur de couleur</value>
+    <value>Démarrer l'écran sélecteur
+de couleur</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
@@ -358,7 +359,7 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Temps restant: {0}s ({1}%) Total: {2}</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Impossible de créer le dossier:</value>
+    <value>Impossible de créer le répertoire:</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Impossible d'enregistrer {0}:

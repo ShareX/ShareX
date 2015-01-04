@@ -123,7 +123,7 @@
     <value>ID du problème:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Mise ne ligne Jira</value>
+    <value>Mise en ligne Jira</value>
   </data>
   <data name="gpSummary.Text" xml:space="preserve">
     <value>Résumé</value>

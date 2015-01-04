@@ -174,7 +174,7 @@
     <value>Nombre de tentatives si la mise en ligne échoue:</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Démarre iconisé dans  la barre</value>
+    <value>Démarrer iconisé dans  la barre</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Ouvrir...</value>
@@ -213,7 +213,7 @@
     <value>Résultats</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Recommence</value>
+    <value>Essayer de nouveau</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Exécuter ShareX au démarrage de Windows</value>
@@ -252,18 +252,18 @@
     <value>Limite de mise en ligne simultanée</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modèle de sous-repertoires</value>
+    <value>Modèle de sous-répertoires</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilisez dossier screenshots personnalisé:</value>
+    <value>Utilisez répertoire screenshots personnalisé:</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur:</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utiliser le logiciel de mise ne ligne secondaire de préférence lors de la nouvelle tentative</value>
+    <value>Utiliser le logiciel de mise en ligne secondaire de préférence lors de la nouvelle tentative</value>
   </data>
 </root>

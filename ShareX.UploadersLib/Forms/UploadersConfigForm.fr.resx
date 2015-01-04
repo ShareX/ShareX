@@ -138,7 +138,7 @@
     <value>Ajouter un répertoire</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>ID album pour la mise ne ligne (Vide = Aucun album mis en ligne):</value>
+    <value>ID album pour la mise en ligne (Vide = Aucun album mis en ligne):</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>Clé API:</value>
@@ -303,7 +303,7 @@
     <value>Hôte:</value>
   </data>
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si vous utilisez le dossier «Public», une url partageable est déjà générée. Vous ne avez pas besoin de cliquer "Créer URL partageable".</value>
+    <value>Si vous utilisez le répertoire «Public», une url partageable est déjà générée. Vous ne avez pas besoin de cliquer "Créer URL partageable".</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorer certificat SSL invalide</value>
@@ -417,7 +417,7 @@
     <value>Remarque: Si vous avez une signature, alors vous ne avez pas besoin d'un nom d'utilisateur / mot de passe.</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Note: Vous pouvez double-cliquer sur le nom du dossier pour aller dans ce dossier.</value>
+    <value>Note: Vous pouvez double-cliquer sur le nom du répertoire pour aller dedans.</value>
   </data>
   <data name="lblCheveretoWebsite.Text" xml:space="preserve">
     <value>Site Web:</value>
@@ -558,7 +558,7 @@
     <value>S'inscrire ...</value>
   </data>
   <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recharger la liste des dossiers</value>
+    <value>Recharger la liste des répertoires</value>
   </data>
   <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
     <value>Se souvenir de l'adresse du dernier destinataire</value>
@@ -713,7 +713,7 @@ Si le champ de texte est vide, le nom de tampon sera utilisé pour l'URL.
 Par exemple, si votre tampon est appelé tampon .example.com puis URL sera http: //tampon .example.com / ...</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Mettre en ligne des fichiers vers le dossier sélectionné</value>
+    <value>Mettre en ligne des fichiers vers le répertoire sélectionné</value>
   </data>
   <data name="gbMinusUpload.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers</value>

@@ -148,7 +148,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Automatique</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Parcourir pour un dossier ...</value>
+    <value>Parcourir pour un répertoire...</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Recherchez une feuille de  Cascading Style...</value>
@@ -439,7 +439,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Ouvrir dans l'éditeur d'image</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
-    <value>Ouvrir le dossier des captures d'écran</value>
+    <value>Ouvrir le répertoire des captures d'écran</value>
   </data>
   <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
     <value>Ouvrir l'URL</value>
