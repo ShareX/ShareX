@@ -454,6 +454,22 @@ namespace ShareX
                         {
                             using (WebClient wc = new WebClient())
                             {
+                                string oldURL, oldPath;
+
+                                do
+                                {
+                                    oldURL = url;
+                                    url = HttpUtility.UrlDecode(url);
+                                }
+                                while(url != oldURL);
+
+                                do
+                                {
+                                    oldPath = downloadPath;
+                                    downloadPath = HttpUtility.UrlDecode(downloadPath);
+                                }
+                                while (downloadPath != oldPath);
+
                                 wc.Proxy = ProxyInfo.Current.GetWebProxy();
                                 wc.DownloadFile(url, downloadPath);
                             }
