@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.scMain = new HelpersLib.SplitContainerCustomSplitter();
+            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.lblMainFormTip = new System.Windows.Forms.Label();
-            this.lblSplitter = new System.Windows.Forms.Label();
-            this.lvUploads = new HelpersLib.MyListView();
+            this.lvUploads = new ShareX.HelpersLib.MyListView();
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,7 +40,7 @@
             this.chElapsed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chRemaining = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pbPreview = new HelpersLib.MyPictureBox();
+            this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tsddbCapture = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiFullscreen = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,6 +219,7 @@
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.scMenu = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -227,6 +227,10 @@
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scMenu)).BeginInit();
+            this.scMenu.Panel1.SuspendLayout();
+            this.scMenu.Panel2.SuspendLayout();
+            this.scMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -238,7 +242,6 @@
             // scMain.Panel1
             // 
             this.scMain.Panel1.Controls.Add(this.lblMainFormTip);
-            this.scMain.Panel1.Controls.Add(this.lblSplitter);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
             // 
             // scMain.Panel2
@@ -254,12 +257,6 @@
             this.lblMainFormTip.Name = "lblMainFormTip";
             this.lblMainFormTip.UseMnemonic = false;
             this.lblMainFormTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
-            // 
-            // lblSplitter
-            // 
-            this.lblSplitter.BackColor = System.Drawing.Color.Black;
-            resources.ApplyResources(this.lblSplitter, "lblSplitter");
-            this.lblSplitter.Name = "lblSplitter";
             // 
             // lvUploads
             // 
@@ -1677,13 +1674,27 @@
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             // 
+            // scMenu
+            // 
+            resources.ApplyResources(this.scMenu, "scMenu");
+            this.scMenu.DrawLineLeftSide = false;
+            this.scMenu.Name = "scMenu";
+            // 
+            // scMenu.Panel1
+            // 
+            this.scMenu.Panel1.Controls.Add(this.tsMain);
+            // 
+            // scMenu.Panel2
+            // 
+            this.scMenu.Panel2.Controls.Add(this.scMain);
+            this.scMenu.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMenu_SplitterMoved);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.scMain);
-            this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.scMenu);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -1702,6 +1713,10 @@
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
+            this.scMenu.Panel1.ResumeLayout(false);
+            this.scMenu.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scMenu)).EndInit();
+            this.scMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1803,7 +1818,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayURLSharingServices;
         private System.Windows.Forms.ToolStripDropDownButton tsddbAfterUploadTasks;
         private System.Windows.Forms.ToolStripButton tsbScreenshotsFolder;
-        private System.Windows.Forms.Label lblSplitter;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAfterUploadTasks;
         private System.Windows.Forms.ToolStripSeparator tssUploadInfo1;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreview;
@@ -1898,5 +1912,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadFolder;
         public System.Windows.Forms.Label lblMainFormTip;
+        private ShareX.HelpersLib.SplitContainerCustomSplitter scMenu;
     }
 }

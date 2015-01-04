@@ -547,6 +547,11 @@ namespace ShareX
 
             AfterSettingsJobs();
 
+            if (Program.Settings.MenuSplitterDistance > 0)
+            {
+                scMenu.SplitterDistance = Program.Settings.MenuSplitterDistance;
+            }
+
             if (Program.Settings.PreviewSplitterDistance > 0)
             {
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
@@ -765,7 +770,7 @@ namespace ShareX
                 tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Show_menu;
             }
 
-            tsMain.Visible = lblSplitter.Visible = Program.Settings.ShowMenu;
+            scMenu.Panel1Collapsed = !Program.Settings.ShowMenu;
             Refresh();
         }
 
@@ -1098,6 +1103,11 @@ namespace ShareX
             {
                 uim.TryOpen();
             }
+        }
+
+        private void scMenu_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            Program.Settings.MenuSplitterDistance = scMenu.SplitterDistance;
         }
 
         private void scMain_SplitterMoved(object sender, SplitterEventArgs e)
