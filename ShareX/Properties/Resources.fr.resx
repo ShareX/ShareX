@@ -295,7 +295,7 @@ Ici</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX besoin d'être redémarré pour que les changements de langue s' appliquent.
- Voulez-vous redémarrer ShareX?</value>
+Voulez-vous redémarrer ShareX?</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
     <value>Raccourcisseur d'URL({0})</value>

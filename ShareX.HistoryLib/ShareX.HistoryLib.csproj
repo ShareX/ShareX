@@ -102,11 +102,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="HistoryForm.fr.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryForm.tr.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryItemInfoForm.fr.resx">
+      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
@@ -114,12 +120,16 @@
     <EmbeddedResource Include="HistoryItemInfoForm.tr.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageHistoryForm.fr.resx">
+      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageHistoryForm.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageHistoryForm.tr.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
