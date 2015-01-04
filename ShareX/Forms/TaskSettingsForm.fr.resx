@@ -145,7 +145,7 @@
   </data>
   <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
     <value>Désactivation automatique de Windows Aéro pendant l'enregistrement.
-(Windows Aéro abaisse les performances d'enregistrement.</value>
+(Windows Aéro abaisse les performances d'enregistrement.)</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Zone de capture client pendant les captures "fenêtre" ou "fenêtre active"</value>
@@ -256,8 +256,7 @@
     <value>Modèle de nom pour la capture de la fenêtre active:</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Modèle de nom pour la mise en ligne
-de la capture ou du presse-papier:</value>
+    <value>Modèle de nom pour la mise en ligne de la capture ou du presse-papier:</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>n'appliquer les effets que sur la région capturée</value>
@@ -347,8 +346,7 @@ de la capture ou du presse-papier:</value>
     <value>Afficher la fenêtre "Après téléchargement" après que la tâche soit terminée</value>
   </data>
   <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Afficher la fenêtre "Avant de téléchargement" pour changer
-dynamiquement la destination avant la mise en ligne</value>
+    <value>Afficher la fenêtre "Avant de téléchargement" pour changer dynamiquement la destination avant la mise en ligne</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
     <value>Afficher la fenêtre "tâches de post de capture" après que la capture soit faite</value>
@@ -423,14 +421,12 @@ dynamiquement la destination avant la mise en ligne</value>
     <value>Surveille le répertoire et si un nouveau fichier est créé alors le mettre en ligne</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Lors de la capture d'écran, si la fenêtre de sélection croise la barre des tâches
-alors cacher la barre des tâches.</value>
+    <value>Lors de la capture d'écran, si la fenêtre de sélection croise la barre des tâches alors cacher la barre des tâches.</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>Largeur:</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>Vous pouvez activer / désactiver les effets d'image
-de "Après tâches de capture -&gt; Ajouter des effets d'image".</value>
+    <value>Vous pouvez activer / désactiver les effets d'image de "Après tâches de capture -&gt; Ajouter des effets d'image".</value>
   </data>
 </root>

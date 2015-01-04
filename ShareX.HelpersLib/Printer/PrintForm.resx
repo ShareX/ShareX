@@ -280,10 +280,10 @@
     <value>3</value>
   </data>
   <data name="btnShowPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 168</value>
+    <value>8, 162</value>
   </data>
   <data name="btnShowPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="btnShowPreview.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -304,10 +304,10 @@
     <value>2</value>
   </data>
   <data name="btnPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 168</value>
+    <value>8, 192</value>
   </data>
   <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -328,10 +328,10 @@
     <value>1</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 168</value>
+    <value>128, 192</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -358,7 +358,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 200</value>
+    <value>248, 222</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

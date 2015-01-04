@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,12 +116,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 232</value>
+    <value>560, 232</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 32</value>
+    <value>72, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
@@ -143,11 +146,14 @@
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 232</value>
+    <value>480, 232</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 32</value>
+    <value>72, 32</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -169,6 +175,9 @@
   </data>
   <data name="lblOld.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblOld.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblOld.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 240</value>
@@ -197,6 +206,9 @@
   <data name="lblNew.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblNew.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 216</value>
   </data>
@@ -222,7 +234,7 @@
     <value>13</value>
   </data>
   <data name="txtHex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 173</value>
+    <value>560, 173</value>
   </data>
   <data name="txtHex.MaxLength" type="System.Int32, mscorlib">
     <value>9</value>
@@ -236,7 +248,6 @@
   <data name="txtHex.Text" xml:space="preserve">
     <value>FF00FF00</value>
   <comment>@Invariant</comment></data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtHex.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -255,17 +266,20 @@
   <data name="lblHex.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblHex.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblHex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 177</value>
+    <value>488, 177</value>
   </data>
   <data name="lblHex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+    <value>29, 13</value>
   </data>
   <data name="lblHex.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="lblHex.Text" xml:space="preserve">
-    <value>Hex:      #</value>
+    <value>Hex:</value>
   <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblHex.Name" xml:space="preserve">
     <value>lblHex</value>
@@ -280,7 +294,7 @@
     <value>15</value>
   </data>
   <data name="nudKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 141</value>
+    <value>560, 141</value>
   </data>
   <data name="nudKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -304,7 +318,7 @@
     <value>16</value>
   </data>
   <data name="nudYellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 109</value>
+    <value>560, 109</value>
   </data>
   <data name="nudYellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -328,7 +342,7 @@
     <value>17</value>
   </data>
   <data name="nudMagenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 77</value>
+    <value>560, 77</value>
   </data>
   <data name="nudMagenta.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -352,7 +366,7 @@
     <value>18</value>
   </data>
   <data name="nudCyan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 45</value>
+    <value>560, 45</value>
   </data>
   <data name="nudCyan.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -378,8 +392,11 @@
   <data name="lblKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 145</value>
+    <value>488, 145</value>
   </data>
   <data name="lblKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -405,8 +422,11 @@
   <data name="lblYellow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblYellow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 113</value>
+    <value>488, 113</value>
   </data>
   <data name="lblYellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -432,8 +452,11 @@
   <data name="lblMagenta.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMagenta.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMagenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 81</value>
+    <value>488, 81</value>
   </data>
   <data name="lblMagenta.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -459,8 +482,11 @@
   <data name="lblCyan.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCyan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCyan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 49</value>
+    <value>488, 49</value>
   </data>
   <data name="lblCyan.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -489,8 +515,11 @@
   <data name="lblHue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblHue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblHue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 17</value>
+    <value>460, 17</value>
   </data>
   <data name="lblHue.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -519,8 +548,11 @@
   <data name="lblBrightnessPerc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblBrightnessPerc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblBrightnessPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 81</value>
+    <value>460, 81</value>
   </data>
   <data name="lblBrightnessPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -549,8 +581,11 @@
   <data name="lblSaturationPerc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblSaturationPerc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblSaturationPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 49</value>
+    <value>460, 49</value>
   </data>
   <data name="lblSaturationPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -574,7 +609,7 @@
     <value>26</value>
   </data>
   <data name="nudBlue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 173</value>
+    <value>408, 173</value>
   </data>
   <data name="nudBlue.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -598,7 +633,7 @@
     <value>27</value>
   </data>
   <data name="nudGreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 141</value>
+    <value>408, 141</value>
   </data>
   <data name="nudGreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -622,7 +657,7 @@
     <value>28</value>
   </data>
   <data name="nudRed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 109</value>
+    <value>408, 109</value>
   </data>
   <data name="nudRed.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -646,7 +681,7 @@
     <value>29</value>
   </data>
   <data name="nudBrightness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 77</value>
+    <value>408, 77</value>
   </data>
   <data name="nudBrightness.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -670,7 +705,7 @@
     <value>30</value>
   </data>
   <data name="nudSaturation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 45</value>
+    <value>408, 45</value>
   </data>
   <data name="nudSaturation.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -694,7 +729,7 @@
     <value>31</value>
   </data>
   <data name="nudHue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 13</value>
+    <value>408, 13</value>
   </data>
   <data name="nudHue.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -716,6 +751,9 @@
   </data>
   <data name="&gt;&gt;nudHue.ZOrder" xml:space="preserve">
     <value>32</value>
+  </data>
+  <data name="rbBlue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbBlue.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 173</value>
@@ -741,6 +779,9 @@
   <data name="&gt;&gt;rbBlue.ZOrder" xml:space="preserve">
     <value>33</value>
   </data>
+  <data name="rbGreen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="rbGreen.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 141</value>
   </data>
@@ -764,6 +805,9 @@
   </data>
   <data name="&gt;&gt;rbGreen.ZOrder" xml:space="preserve">
     <value>34</value>
+  </data>
+  <data name="rbRed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbRed.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 109</value>
@@ -789,6 +833,9 @@
   <data name="&gt;&gt;rbRed.ZOrder" xml:space="preserve">
     <value>35</value>
   </data>
+  <data name="rbBrightness.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="rbBrightness.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 77</value>
   </data>
@@ -813,6 +860,9 @@
   <data name="&gt;&gt;rbBrightness.ZOrder" xml:space="preserve">
     <value>36</value>
   </data>
+  <data name="rbSaturation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="rbSaturation.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 45</value>
   </data>
@@ -836,6 +886,9 @@
   </data>
   <data name="&gt;&gt;rbSaturation.ZOrder" xml:space="preserve">
     <value>37</value>
+  </data>
+  <data name="rbHue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbHue.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 13</value>
@@ -864,8 +917,11 @@
   <data name="lblDecimal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblDecimal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDecimal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 208</value>
+    <value>488, 208</value>
   </data>
   <data name="lblDecimal.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -889,7 +945,7 @@
     <value>8</value>
   </data>
   <data name="txtDecimal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 204</value>
+    <value>560, 204</value>
   </data>
   <data name="txtDecimal.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -921,8 +977,11 @@
   <data name="lblCyanPerc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblCyanPerc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCyanPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 49</value>
+    <value>618, 49</value>
   </data>
   <data name="lblCyanPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -951,8 +1010,11 @@
   <data name="lblMagentaPerc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblMagentaPerc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMagentaPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 81</value>
+    <value>618, 81</value>
   </data>
   <data name="lblMagentaPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -981,8 +1043,11 @@
   <data name="lblYellowPerc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblYellowPerc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblYellowPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 113</value>
+    <value>618, 113</value>
   </data>
   <data name="lblYellowPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1011,8 +1076,11 @@
   <data name="lblKeyPerc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 8.25pt</value>
   </data>
+  <data name="lblKeyPerc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblKeyPerc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 145</value>
+    <value>618, 145</value>
   </data>
   <data name="lblKeyPerc.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 13</value>
@@ -1036,7 +1104,7 @@
     <value>3</value>
   </data>
   <data name="nudAlpha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>528, 13</value>
+    <value>560, 13</value>
   </data>
   <data name="nudAlpha.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -1062,8 +1130,11 @@
   <data name="lblAlpha.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblAlpha.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblAlpha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 17</value>
+    <value>488, 17</value>
   </data>
   <data name="lblAlpha.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -1087,7 +1158,7 @@
     <value>1</value>
   </data>
   <data name="pbColorPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 208</value>
+    <value>376, 208</value>
   </data>
   <data name="pbColorPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 56</value>
@@ -1099,7 +1170,7 @@
     <value>pbColorPreview</value>
   </data>
   <data name="&gt;&gt;pbColorPreview.Type" xml:space="preserve">
-    <value>HelpersLib.MyPictureBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbColorPreview.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1123,7 +1194,7 @@
     <value>colorPicker</value>
   </data>
   <data name="&gt;&gt;colorPicker.Type" xml:space="preserve">
-    <value>HelpersLib.ColorPicker, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorPicker, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;colorPicker.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1135,7 +1206,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>609, 273</value>
+    <value>642, 273</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

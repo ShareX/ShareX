@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,7 +118,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 12</value>
+    <value>8, 24</value>
   </data>
   <data name="txtFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 20</value>
@@ -141,7 +140,7 @@
     <value>12</value>
   </data>
   <data name="btnFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 10</value>
+    <value>296, 22</value>
   </data>
   <data name="btnFilePathBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -168,7 +167,7 @@
     <value>True</value>
   </data>
   <data name="lblHashType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 48</value>
+    <value>5, 48</value>
   </data>
   <data name="lblHashType.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
@@ -195,7 +194,7 @@
     <value>True</value>
   </data>
   <data name="lblProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 80</value>
+    <value>5, 88</value>
   </data>
   <data name="lblProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -222,7 +221,7 @@
     <value>True</value>
   </data>
   <data name="lblResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 112</value>
+    <value>5, 136</value>
   </data>
   <data name="lblResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -249,7 +248,7 @@
     <value>True</value>
   </data>
   <data name="lblTarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 144</value>
+    <value>5, 176</value>
   </data>
   <data name="lblTarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -276,7 +275,7 @@
     <value>True</value>
   </data>
   <data name="lblProgressPercentage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 80</value>
+    <value>328, 110</value>
   </data>
   <data name="lblProgressPercentage.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 13</value>
@@ -300,7 +299,7 @@
     <value>6</value>
   </data>
   <data name="btnStartHashCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 42</value>
+    <value>104, 62</value>
   </data>
   <data name="btnStartHashCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 24</value>
@@ -324,7 +323,7 @@
     <value>5</value>
   </data>
   <data name="cbHashType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 44</value>
+    <value>8, 64</value>
   </data>
   <data name="cbHashType.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 21</value>
@@ -345,7 +344,7 @@
     <value>4</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 74</value>
+    <value>8, 104</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>312, 24</value>
@@ -366,7 +365,7 @@
     <value>3</value>
   </data>
   <data name="txtResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 108</value>
+    <value>8, 152</value>
   </data>
   <data name="txtResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 20</value>
@@ -387,7 +386,7 @@
     <value>2</value>
   </data>
   <data name="txtTarget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 140</value>
+    <value>8, 192</value>
   </data>
   <data name="txtTarget.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 20</value>
@@ -411,7 +410,7 @@
     <value>True</value>
   </data>
   <data name="lblFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
+    <value>5, 8</value>
   </data>
   <data name="lblFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -441,7 +440,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>442, 171</value>
+    <value>377, 220</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

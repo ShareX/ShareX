@@ -38,28 +38,13 @@
             this.btnCopyAll = new System.Windows.Forms.Button();
             this.txtX = new System.Windows.Forms.TextBox();
             this.txtY = new System.Windows.Forms.TextBox();
+            this.lblCursorPosition = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // colorPicker
-            // 
-            resources.ApplyResources(this.colorPicker, "colorPicker");
-            // 
-            // txtHex
-            // 
-            resources.ApplyResources(this.txtHex, "txtHex");
-            // 
-            // btnCancel
-            // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            // 
-            // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
             // 
             // btnPipette
             // 
-            resources.ApplyResources(this.btnPipette, "btnPipette");
             this.btnPipette.Image = global::ShareX.Properties.Resources.pipette;
+            resources.ApplyResources(this.btnPipette, "btnPipette");
             this.btnPipette.Name = "btnPipette";
             this.btnPipette.UseVisualStyleBackColor = true;
             this.btnPipette.Click += new System.EventHandler(this.btnPipette_Click);
@@ -105,13 +90,19 @@
             this.txtY.Name = "txtY";
             this.txtY.ReadOnly = true;
             // 
+            // lblCursorPosition
+            // 
+            resources.ApplyResources(this.lblCursorPosition, "lblCursorPosition");
+            this.lblCursorPosition.Name = "lblCursorPosition";
+            // 
             // ScreenColorPicker
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCopyAll);
+            this.Controls.Add(this.lblCursorPosition);
             this.Controls.Add(this.txtY);
             this.Controls.Add(this.txtX);
-            this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.btnPipette);
             this.Controls.Add(this.lblScreenColorPickerTip);
             this.Controls.Add(this.btnColorPicker);
@@ -121,18 +112,19 @@
             this.Name = "ScreenColorPicker";
             this.TopMost = false;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScreenColorPicker_KeyDown);
-            this.Controls.SetChildIndex(this.btnOK, 0);
-            this.Controls.SetChildIndex(this.btnCancel, 0);
-            this.Controls.SetChildIndex(this.txtHex, 0);
-            this.Controls.SetChildIndex(this.colorPicker, 0);
             this.Controls.SetChildIndex(this.lblX, 0);
             this.Controls.SetChildIndex(this.lblY, 0);
             this.Controls.SetChildIndex(this.btnColorPicker, 0);
             this.Controls.SetChildIndex(this.lblScreenColorPickerTip, 0);
             this.Controls.SetChildIndex(this.btnPipette, 0);
-            this.Controls.SetChildIndex(this.btnCopyAll, 0);
             this.Controls.SetChildIndex(this.txtX, 0);
             this.Controls.SetChildIndex(this.txtY, 0);
+            this.Controls.SetChildIndex(this.lblCursorPosition, 0);
+            this.Controls.SetChildIndex(this.btnOK, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
+            this.Controls.SetChildIndex(this.txtHex, 0);
+            this.Controls.SetChildIndex(this.colorPicker, 0);
+            this.Controls.SetChildIndex(this.btnCopyAll, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +140,6 @@
         private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.TextBox txtY;
+        private System.Windows.Forms.Label lblCursorPosition;
     }
 }

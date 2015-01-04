@@ -66,8 +66,8 @@
             this.lblKeyPerc = new System.Windows.Forms.Label();
             this.nudAlpha = new System.Windows.Forms.NumericUpDown();
             this.lblAlpha = new System.Windows.Forms.Label();
-            this.pbColorPreview = new HelpersLib.MyPictureBox();
-            this.colorPicker = new HelpersLib.ColorPicker();
+            this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
+            this.colorPicker = new ShareX.HelpersLib.ColorPicker();
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).BeginInit();
@@ -394,9 +394,9 @@
             // colorPicker
             // 
             resources.ApplyResources(this.colorPicker, "colorPicker");
-            this.colorPicker.DrawStyle = HelpersLib.DrawStyle.Hue;
+            this.colorPicker.DrawStyle = ShareX.HelpersLib.DrawStyle.Hue;
             this.colorPicker.Name = "colorPicker";
-            this.colorPicker.ColorChanged += new HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
+            this.colorPicker.ColorChanged += new ShareX.HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
             // 
             // ColorPickerForm
             // 

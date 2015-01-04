@@ -119,9 +119,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Bildschirmfarben Auswähler</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
     <value>Starte Bildschirmfarben Auswähler</value>
   </data>

@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -142,7 +141,7 @@
     <value>btnGradientColor2</value>
   </data>
   <data name="&gt;&gt;btnGradientColor2.Type" xml:space="preserve">
-    <value>HelpersLib.ColorButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGradientColor2.Parent" xml:space="preserve">
     <value>pSettings</value>
@@ -172,16 +171,13 @@
     <value>btnGradientColor1</value>
   </data>
   <data name="&gt;&gt;btnGradientColor1.Type" xml:space="preserve">
-    <value>HelpersLib.ColorButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGradientColor1.Parent" xml:space="preserve">
     <value>pSettings</value>
   </data>
   <data name="&gt;&gt;btnGradientColor1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lblTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="lblTip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -193,13 +189,16 @@
     <value>16, 368</value>
   </data>
   <data name="lblTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 16</value>
+    <value>320, 40</value>
   </data>
   <data name="lblTip.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
     <value>You can click outside for hide/show this panel.</value>
+  </data>
+  <data name="lblTip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;lblTip.Name" xml:space="preserve">
     <value>lblTip</value>
@@ -862,7 +861,7 @@
     <value>100, 100</value>
   </data>
   <data name="pSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 396</value>
+    <value>353, 420</value>
   </data>
   <data name="pSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -887,9 +886,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 700</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
