@@ -130,6 +130,7 @@
     <value>ShareX - écran sélecteur de couleur</value>
   </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
-    <value>Démarrer l'écran sélecteur de couleur</value>
+    <value>Démarrer l'écran sélecteur
+de couleur</value>
   </data>
 </root>

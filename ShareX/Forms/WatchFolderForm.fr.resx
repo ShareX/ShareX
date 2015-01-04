@@ -129,7 +129,7 @@
     <value>Chemin du répertoire:</value>
   </data>
   <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Inclure les sous-repertoires</value>
+    <value>Inclure les sous-répertoires</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>

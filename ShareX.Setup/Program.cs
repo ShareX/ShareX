@@ -41,7 +41,7 @@ namespace ShareX.Setup
             Beta // Build setup + upload it using "Debug/ShareX.exe"
         }
 
-        private const SetupType Setup = SetupType.Stable;
+        private const SetupType Setup = SetupType.Beta;
 
         private static string parentDir = @"..\..\..\";
         private static string binDir = Path.Combine(parentDir, @"ShareX\bin");
@@ -122,7 +122,12 @@ namespace ShareX.Setup
 
             CopyFiles(files, portableDir);
 
-            CopyFiles(Path.Combine(releaseDir, @"tr\*.resources.dll"), Path.Combine(portableDir, @"Languages\tr"));
+            string[] languages = new string[] { "tr", "de", "fr" };
+
+            foreach (string language in languages)
+            {
+                CopyFiles(Path.Combine(releaseDir, language + "\\*.resources.dll"), Path.Combine(portableDir, "Languages\\" + language));
+            }
 
             File.WriteAllText(Path.Combine(portableDir, "PersonalPath.cfg"), "ShareX", Encoding.UTF8);
 

@@ -129,7 +129,7 @@
     <value>Autoriser</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Rafraichissement de la boite de la liste des dossiers échoué</value>
+    <value>Rafraichissement de la boite de la liste des répertoires échoué</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Parcourir pour un fichier certificat...</value>
@@ -214,7 +214,7 @@ Creation des répertoires:</value>
     <value>Le chemin n'existe pas:</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Interrogation des dossiers...</value>
+    <value>Interrogation des répertoires...</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Rafraîchir l'autorisation n'est pas supporté</value>
@@ -223,7 +223,7 @@ Creation des répertoires:</value>
     <value>RapidShare : compte nom d'utilisateur ou mot de passe est vide.</value>
   </data>
   <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed" xml:space="preserve">
-    <value>RapidShare : le rafraichissement de liste des dossiers à échoué</value>
+    <value>RapidShare : le rafraichissement de liste des répertoires à échoué</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Répertoire selectionné:</value>
@@ -232,7 +232,7 @@ Creation des répertoires:</value>
     <value>ID de l'utilisateur</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Dossier racine</value>
+    <value>Répertoire racine</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>Enregistrement SendSpace</value>

@@ -33,10 +33,12 @@ namespace ShareX
         Automatic, // Localized
         [Description("English")]
         English,
-        [Description("Türkçe")]
-        Turkish
-        /*[Description("Deutsch")]
-        German*/
+        [Description("Türkçe (Turkish)")]
+        Turkish,
+        [Description("Deutsch (German)")]
+        German,
+        [Description("Français (French)")]
+        French
     }
 
     public enum EImageFormat

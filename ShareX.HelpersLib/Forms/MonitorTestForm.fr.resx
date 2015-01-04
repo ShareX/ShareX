@@ -156,7 +156,8 @@
     <value>Rouge, Vert, Bleu:</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Vous pouvez cliquer sur l'extérieur pour masquer / afficher ce panneau.</value>
+    <value>Vous pouvez cliquer sur l'extérieur
+pour masquer / afficher ce panneau.</value>
   </data>
   <data name="rbShapes.Text" xml:space="preserve">
     <value>Forme:</value>

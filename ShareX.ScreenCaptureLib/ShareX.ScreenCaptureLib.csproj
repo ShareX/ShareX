@@ -124,11 +124,15 @@
     <Content Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.fr.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
