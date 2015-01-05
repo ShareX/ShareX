@@ -75,27 +75,27 @@ namespace ShareX
             this.lblUploadLimit = new System.Windows.Forms.Label();
             this.nudUploadLimit = new System.Windows.Forms.NumericUpDown();
             this.lblUploadLimitHint = new System.Windows.Forms.Label();
-            this.lblBufferSize = new System.Windows.Forms.Label();
             this.cbBufferSize = new System.Windows.Forms.ComboBox();
+            this.lblBufferSize = new System.Windows.Forms.Label();
             this.tpUploadResults = new System.Windows.Forms.TabPage();
             this.gbClipboardFormats = new System.Windows.Forms.GroupBox();
             this.btnClipboardFormatEdit = new System.Windows.Forms.Button();
             this.btnClipboardFormatRemove = new System.Windows.Forms.Button();
             this.btnClipboardFormatAdd = new System.Windows.Forms.Button();
-            this.lvClipboardFormats = new HelpersLib.MyListView();
+            this.lvClipboardFormats = new ShareX.HelpersLib.MyListView();
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpUploadRetry = new System.Windows.Forms.TabPage();
             this.chkUseSecondaryUploaders = new System.Windows.Forms.CheckBox();
             this.tlpBackupDestinations = new System.Windows.Forms.TableLayoutPanel();
             this.gbSecondaryImageUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryImageUploaders = new HelpersLib.MyListView();
+            this.lvSecondaryImageUploaders = new ShareX.HelpersLib.MyListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryFileUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryFileUploaders = new HelpersLib.MyListView();
+            this.lvSecondaryFileUploaders = new ShareX.HelpersLib.MyListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryTextUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryTextUploaders = new HelpersLib.MyListView();
+            this.lvSecondaryTextUploaders = new ShareX.HelpersLib.MyListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
@@ -105,7 +105,7 @@ namespace ShareX
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.tttvMain = new HelpersLib.TabToTreeView();
+            this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpPaths.SuspendLayout();
@@ -469,11 +469,6 @@ namespace ShareX
             resources.ApplyResources(this.lblUploadLimitHint, "lblUploadLimitHint");
             this.lblUploadLimitHint.Name = "lblUploadLimitHint";
             // 
-            // lblBufferSize
-            // 
-            resources.ApplyResources(this.lblBufferSize, "lblBufferSize");
-            this.lblBufferSize.Name = "lblBufferSize";
-            // 
             // cbBufferSize
             // 
             this.cbBufferSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -481,6 +476,11 @@ namespace ShareX
             resources.ApplyResources(this.cbBufferSize, "cbBufferSize");
             this.cbBufferSize.Name = "cbBufferSize";
             this.cbBufferSize.SelectedIndexChanged += new System.EventHandler(this.cbBufferSize_SelectedIndexChanged);
+            // 
+            // lblBufferSize
+            // 
+            resources.ApplyResources(this.lblBufferSize, "lblBufferSize");
+            this.lblBufferSize.Name = "lblBufferSize";
             // 
             // tpUploadResults
             // 
@@ -706,7 +706,7 @@ namespace ShareX
             this.tttvMain.MainTabControl = null;
             this.tttvMain.Name = "tttvMain";
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tttvMain.TreeViewSize = 150;
+            this.tttvMain.TreeViewSize = 175;
             // 
             // ApplicationSettingsForm
             // 

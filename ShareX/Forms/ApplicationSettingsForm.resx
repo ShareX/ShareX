@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -448,7 +447,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>550, 370</value>
   </data>
   <data name="tpGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1339,7 +1338,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1447,7 +1446,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -1501,7 +1500,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -1555,7 +1554,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -1909,10 +1908,10 @@
     <value>5</value>
   </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 3</value>
+    <value>176, 3</value>
   </data>
   <data name="tcSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>549, 396</value>
+    <value>558, 396</value>
   </data>
   <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1942,7 +1941,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tttvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>698, 396</value>
+    <value>731, 396</value>
   </data>
   <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1951,7 +1950,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>HelpersLib.TabToTreeView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1966,7 +1965,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>704, 402</value>
+    <value>737, 402</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

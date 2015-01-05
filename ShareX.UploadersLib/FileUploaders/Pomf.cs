@@ -33,7 +33,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "http://pomf.se/upload.php", fileName, "files[]");
+            UploadResult result = UploadData(stream, "https://pomf.se/upload.php", fileName, "files[]");
 
             if (result.IsSuccess)
             {
@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (response.success && response.files != null && response.files.Count > 0)
                 {
-                    result.URL = "http://a.pomf.se/" + response.files[0].url;
+                    result.URL = "https://a.pomf.se/" + response.files[0].url;
                 }
             }
 
