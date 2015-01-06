@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -31,32 +30,12 @@ namespace ShareX.HelpersLib
 {
     public class SplitContainerCustomSplitter : SplitContainer
     {
-        [DefaultValue(true)]
-        public bool DrawLineLeftSide { get; set; }
-
-        [DefaultValue(true)]
-        public bool DrawLineRightSide { get; set; }
-
-        public SplitContainerCustomSplitter()
-        {
-            DrawLineLeftSide = true;
-            DrawLineRightSide = true;
-        }
-
         protected override void OnPaint(PaintEventArgs pevent)
         {
             Graphics g = pevent.Graphics;
             Rectangle rect = SplitterRectangle;
-
-            if (DrawLineLeftSide)
-            {
-                g.DrawLine(Pens.Black, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
-            }
-
-            if (DrawLineRightSide)
-            {
-                g.DrawLine(Pens.Black, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
-            }
+            g.DrawLine(Pens.Black, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
+            g.DrawLine(Pens.Black, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
         }
     }
 }

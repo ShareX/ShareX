@@ -50,7 +50,6 @@ namespace ShareX
 
         public bool ShowMenu = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
-        public int MenuSplitterDistance = 170;
         public int PreviewSplitterDistance = 335;
 
         #endregion Main Form
