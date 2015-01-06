@@ -661,7 +661,15 @@ namespace ShareX.HelpersLib
 
                 if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
                 {
-                    Directory.CreateDirectory(path);
+                    try
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
