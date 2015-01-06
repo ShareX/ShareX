@@ -160,7 +160,7 @@ namespace ShareX.UploadersLib.URLShorteners
                         break;
                 }
 
-                string json = string.Format("{{\"longUrl\":\"{0}\"}}", url);
+                string json = JsonConvert.SerializeObject(new { longUrl = url });
 
                 result.Response = SendRequestJSON(query, json);
 

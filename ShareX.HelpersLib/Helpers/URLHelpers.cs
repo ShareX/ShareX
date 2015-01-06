@@ -242,8 +242,19 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string GetFileName(string path, bool checkExtension = false)
+        public static string GetFileName(string path, bool checkExtension = false, bool urlDecode = false)
         {
+            if (urlDecode)
+            {
+                string tempPath = null;
+
+                for (int i = 0; i < 10 && path != tempPath; i++)
+                {
+                    tempPath = path;
+                    path = HttpUtility.UrlDecode(path);
+                }
+            }
+
             if (path.Contains("/"))
             {
                 path = path.Remove(0, path.LastIndexOf('/') + 1);

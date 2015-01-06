@@ -88,6 +88,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "FileExistForm";
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.FileExistForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

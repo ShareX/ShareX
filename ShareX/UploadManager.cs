@@ -207,13 +207,8 @@ namespace ShareX
                     {
                         if (taskSettings.UploadSettings.ClipboardUploadURLContents)
                         {
-                            string filename = URLHelpers.GetFileName(url, true);
-
-                            if (!string.IsNullOrEmpty(filename))
-                            {
-                                DownloadAndUploadFile(url, filename, taskSettings);
-                                return;
-                            }
+                            DownloadAndUploadFile(url, taskSettings);
+                            return;
                         }
 
                         if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
@@ -305,12 +300,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
-                string filename = URLHelpers.GetFileName(url, true);
-
-                if (!string.IsNullOrEmpty(filename))
-                {
-                    DownloadAndUploadFile(url, filename, taskSettings);
-                }
+                DownloadAndUploadFile(url, taskSettings);
             }
         }
 
@@ -435,7 +425,7 @@ namespace ShareX
             }
         }
 
-        public static void DownloadAndUploadFile(string url, string filename, TaskSettings taskSettings = null)
+        public static void DownloadAndUploadFile(string url, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(url))
             {
@@ -446,24 +436,30 @@ namespace ShareX
 
                 TaskEx.Run(() =>
                 {
-                    downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
+                    url = url.Trim();
+                    string filename = URLHelpers.GetFileName(url, true, true);
 
-                    if (!string.IsNullOrEmpty(downloadPath))
+                    if (!string.IsNullOrEmpty(filename))
                     {
-                        try
-                        {
-                            using (WebClient wc = new WebClient())
-                            {
-                                wc.Proxy = ProxyInfo.Current.GetWebProxy();
-                                wc.DownloadFile(url, downloadPath);
-                            }
+                        downloadPath = TaskHelpers.CheckFilePath(taskSettings.CaptureFolder, filename, taskSettings);
 
-                            isDownloaded = true;
-                        }
-                        catch (Exception e)
+                        if (!string.IsNullOrEmpty(downloadPath))
                         {
-                            DebugHelper.WriteException(e);
-                            MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            try
+                            {
+                                using (WebClient wc = new WebClient())
+                                {
+                                    wc.Proxy = ProxyInfo.Current.GetWebProxy();
+                                    wc.DownloadFile(url, downloadPath);
+                                }
+
+                                isDownloaded = true;
+                            }
+                            catch (Exception e)
+                            {
+                                DebugHelper.WriteException(e);
+                                MessageBox.Show(string.Format(Resources.UploadManager_DownloadAndUploadFile_Download_failed, e), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 },

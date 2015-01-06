@@ -51,6 +51,11 @@ namespace ShareX
             btnUniqueName.Text += Path.GetFileName(uniqueFilepath);
         }
 
+        private void FileExistForm_Shown(object sender, EventArgs e)
+        {
+            this.ShowActivate();
+        }
+
         private string GetNewFilename()
         {
             string newFilename = txtNewName.Text;
