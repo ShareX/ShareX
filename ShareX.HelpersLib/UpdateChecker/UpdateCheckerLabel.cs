@@ -53,7 +53,9 @@ namespace ShareX.HelpersLib
                 pbLoading.Visible = true;
                 lblCheckingUpdates.Visible = true;
 
-                new Thread(() => CheckingUpdate(checkUpdate)).Start();
+                Thread thread = new Thread(() => CheckingUpdate(checkUpdate));
+                thread.IsBackground = true;
+                thread.Start();
             }
         }
 
