@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -617,6 +616,6 @@ Would you like to download and install it?</value>
     <value>Update is available</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>Could not create directory, check your path settings:</value>
+    <value>Could not create directory, check your path settings.</value>
   </data>
 </root>

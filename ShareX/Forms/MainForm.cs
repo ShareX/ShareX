@@ -43,7 +43,7 @@ namespace ShareX
     {
         public bool IsReady { get; private set; }
 
-        private bool forceClose;
+        private bool forceClose, firstUpdateCheck = true;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
         private System.Threading.Timer updateTimer;
@@ -662,7 +662,8 @@ namespace ShareX
             if (!UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
-                UpdateMessageBox.Start(updateChecker);
+                UpdateMessageBox.Start(updateChecker, firstUpdateCheck);
+                firstUpdateCheck = false;
             }
         }
 

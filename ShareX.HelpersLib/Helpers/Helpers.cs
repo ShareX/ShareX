@@ -42,8 +42,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Windows.Forms;
 using System.Web;
+using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -668,7 +668,7 @@ namespace ShareX.HelpersLib
                     catch (Exception e)
                     {
                         DebugHelper.WriteException(e);
-                        MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Resources.Helpers_CreateDirectoryIfNotExist_Create_failed_ + "\r\n\r\n" + e, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

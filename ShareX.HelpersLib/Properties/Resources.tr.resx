@@ -593,4 +593,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Güncelleştirme mevcut</value>
   </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>Klasör yaratılamıyor, yol ayarlarını kontrol ediniz.</value>
+  </data>
 </root>

@@ -34,6 +34,8 @@ namespace ShareX.HelpersLib
     {
         public static bool IsOpen { get; private set; }
 
+        public bool ActivateWindow { get; set; }
+
         private Rectangle fillRect;
 
         public UpdateMessageBox()
@@ -47,7 +49,7 @@ namespace ShareX.HelpersLib
             fillRect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
         }
 
-        public static void Start(UpdateChecker updateChecker)
+        public static void Start(UpdateChecker updateChecker, bool activateWindow = true)
         {
             if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
             {
@@ -59,6 +61,7 @@ namespace ShareX.HelpersLib
 
                     using (UpdateMessageBox messageBox = new UpdateMessageBox())
                     {
+                        messageBox.ActivateWindow = activateWindow;
                         result = messageBox.ShowDialog();
                     }
 
@@ -84,7 +87,18 @@ namespace ShareX.HelpersLib
 
         protected override bool ShowWithoutActivation
         {
-            get { return true; }
+            get
+            {
+                return !ActivateWindow;
+            }
+        }
+
+        private void UpdateMessageBox_Shown(object sender, System.EventArgs e)
+        {
+            if (ActivateWindow)
+            {
+                this.ShowActivate();
+            }
         }
 
         private void UpdateMessageBox_Paint(object sender, PaintEventArgs e)
