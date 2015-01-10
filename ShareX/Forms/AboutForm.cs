@@ -65,6 +65,8 @@ Pushbullet support: https://github.com/BallisticLingonberries
 {1}:
 
 Turkish: https://github.com/muratmoon
+German: https://github.com/Starbug2
+French: https://github.com/nwies
 
 {2}:
 

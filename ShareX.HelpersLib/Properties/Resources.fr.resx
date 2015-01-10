@@ -593,4 +593,7 @@ Voulez-vous la télécharger et l'installer?</value>
   <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
     <value>Mettre en ligne avec {0}</value>
   </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>Impossible de créer le répertoire; vérifier votre chemin d'accès.</value>
+  </data>
 </root>

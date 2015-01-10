@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -162,7 +163,7 @@
   </data>
   <data name="lblBerk.Text" xml:space="preserve">
     <value>Jaex (Berk)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBerk.Name" xml:space="preserve">
     <value>lblBerk</value>
   </data>
@@ -189,7 +190,7 @@
   </data>
   <data name="lblMike.Text" xml:space="preserve">
     <value>mcored (Michael Delpach)</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblMike.Name" xml:space="preserve">
     <value>lblMike</value>
   </data>
@@ -210,14 +211,14 @@
     <value>Vertical</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 234</value>
+    <value>449, 234</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="rtbCredits.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -237,14 +238,14 @@
     <value>15, 66</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 48</value>
+    <value>281, 48</value>
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="rtbShareXInfo.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -284,8 +285,11 @@
   <data name="&gt;&gt;lblOwners.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="cLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, -8</value>
+    <value>280, -8</value>
   </data>
   <data name="cLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -477,7 +481,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>433, 446</value>
+    <value>473, 446</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
