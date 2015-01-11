@@ -116,25 +116,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>清除授权</value>
-  </data>
-  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>第2步:完成授权</value>
-  </data>
-  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>第1步:打开网页授权...</value>
-  </data>
-  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>刷新授权</value>
-  </data>
-  <data name="gbUserAccount.Text" xml:space="preserve">
-    <value>用户帐户</value>
-  </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>状态</value>
-  </data>
-  <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>验证码（从获得授权页面验证码）:</value>
-  </data>
 </root>

@@ -593,4 +593,7 @@
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>自定义URL缩短</value>
   </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>无法创建目录, 检查你的路径设置.</value>
+  </data>
 </root>

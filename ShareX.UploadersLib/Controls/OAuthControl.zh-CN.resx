@@ -116,25 +116,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>编码器方案</value>
+  <data name="btnClearAuthorization.Text" xml:space="preserve">
+    <value>清除授权</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>取消</value>
+  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
+    <value>第2步:完成授权</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>确定</value>
+  <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
+    <value>第1步:打开网页授权...</value>
   </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>参数:</value>
+  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
+    <value>刷新授权</value>
   </data>
-  <data name="lblExt.Text" xml:space="preserve">
-    <value>延伸:</value>
+  <data name="gbUserAccount.Text" xml:space="preserve">
+    <value>用户帐户</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>姓名:</value>
+  <data name="lblLoginStatus.Text" xml:space="preserve">
+    <value>状态</value>
   </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>路径:</value>
+  <data name="lblVerificationCode.Text" xml:space="preserve">
+    <value>验证码（从获得授权页面验证码）:</value>
   </data>
 </root>
