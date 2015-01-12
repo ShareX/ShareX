@@ -28,10 +28,12 @@ namespace ShareX.HelpersLib
     public static class Links
     {
         public const string URL_WEBSITE = "http://getsharex.com";
+        public const string URL_WEBSITE_SSL = "https://getsharex.com";
         public const string URL_PROJECT = "https://github.com/ShareX/ShareX";
         public const string URL_ISSUES = URL_PROJECT + "/issues";
         public const string URL_UPDATE = URL_WEBSITE + "/Update.xml";
         public const string URL_CALLBACK = URL_WEBSITE + "/callback/";
+        public const string URL_CALLBACK_SSL = URL_WEBSITE_SSL + "/callback/";
         public const string URL_VERSION_HISTORY = URL_PROJECT + "/wiki/Changelog";
         public const string URL_DONATE = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PCNWK2G6ZYJ2E";
         public const string URL_BERK = "https://github.com/Jaex";

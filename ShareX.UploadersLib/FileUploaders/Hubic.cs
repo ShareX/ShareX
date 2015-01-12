@@ -23,14 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using System;
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Net;
 using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -58,7 +57,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             //Hubic only accepts https callback URL
-            args.Add("redirect_uri", @"https://getsharex.com/callback/"); 
+            args.Add("redirect_uri", Links.URL_CALLBACK_SSL);
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("scope", Scope);
             args.Add("response_type", "code");
@@ -71,7 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("code", code);
             //Hubic only accepts https callback URL
-            args.Add("redirect_uri", @"https://getsharex.com/callback/");
+            args.Add("redirect_uri", Links.URL_CALLBACK_SSL);
             args.Add("grant_type", "authorization_code");
 
             string response = SendRequest(HttpMethod.POST, "https://api.hubic.com/oauth/token/", args, GetAuthHeaders("Basic"));
@@ -177,6 +176,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 return null;
             }
+
             string response = SendRequest(HttpMethod.GET, HubicOpenstackAuthInfo.endpoint + "/default" + "/?path=" + fileInfo.name + "&format=json", headers: GetAuthHeaders("X-Auth-Token"));
 
             if (!string.IsNullOrEmpty(response))
@@ -194,12 +194,14 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            WebClient wc = new WebClient();
-            wc.Headers.Add("X-Auth-Token", HubicOpenstackAuthInfo.token);
-            wc.Headers.Add("X-Detect-Content-Type", "true");
-            wc.UploadData(new Uri(HubicOpenstackAuthInfo.endpoint + "/default/" + SelectedFolder.path + "/" + fileName), "PUT", stream.GetBytes());
+            string url = URLHelpers.CombineURL(HubicOpenstackAuthInfo.endpoint, "default", SelectedFolder.path, fileName);
 
-            UploadResult result = new UploadResult();
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("X-Auth-Token", HubicOpenstackAuthInfo.token);
+            headers.Add("X-Detect-Content-Type", "true");
+
+            UploadResult result = UploadData(stream, url, fileName, headers: headers, method: HttpMethod.PUT);
+
             if (Publish)
             {
                 AllowReportProgress = false;
@@ -216,20 +218,23 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (!string.IsNullOrEmpty(response))
                 {
                     HubicPublishURLResponse resp = JsonConvert.DeserializeObject<HubicPublishURLResponse>(response);
-                    string url = resp.indirectUrl;
+                    string respURL = resp.indirectUrl;
                     result.IsURLExpected = true;
-                    result.URL = url;
+                    result.URL = respURL;
                 }
             }
+
             return result;
         }
     }
+
     public class HubicOpenstackAuthInfo
     {
         public string token { get; set; }
         public string endpoint { get; set; }
         public string expires { get; set; }
     }
+
     public class HubicFolderInfo
     {
         private string _name;
@@ -248,7 +253,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 path = value;
                 string[] temp = value.Split('/');
                 _name = temp[temp.Length - 1];
-            } 
+            }
         }
         public string content_type { get; set; }
         public string path { get; set; }
@@ -263,6 +268,5 @@ namespace ShareX.UploadersLib.FileUploaders
         public string creationDate { get; set; }
         public string comment { get; set; }
         public string type { get; set; }
-
     }
 }

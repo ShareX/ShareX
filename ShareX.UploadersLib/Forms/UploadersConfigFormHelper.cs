@@ -909,15 +909,8 @@ namespace ShareX.UploadersLib
                 {
                     Config.HubicOAuth2Info = oauth;
                     Config.HubicOpenstackAuthInfo = osauth;
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("HubicAuthOpen - Authorization URL is opened: " + url);
-
-                    using (OAuthWebForm oauthForm = new OAuthWebForm(url, "https://getsharex.com/callback/"))
-                    {
-                        if (oauthForm.ShowDialog() == DialogResult.OK)
-                        {
-                            HubicAuthComplete(oauthForm.Code);
-                        }
-                    }
                 }
                 else
                 {
