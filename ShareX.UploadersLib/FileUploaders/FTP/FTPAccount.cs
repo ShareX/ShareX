@@ -29,7 +29,6 @@ using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
-using System.Web;
 
 namespace ShareX.UploadersLib
 {
@@ -169,7 +168,7 @@ namespace ShareX.UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            filename = HttpUtility.UrlEncode(filename);
+            filename = URLHelpers.URLEncode(filename);
 
             if (subFolderPath == null)
             {
