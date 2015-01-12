@@ -368,7 +368,7 @@ namespace ShareX.UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.HubicOAuth2Info))
             {
-                oAuth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
+                oauth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
                 btnHubicRefreshFolders.Enabled = true;
             }
 
@@ -1169,6 +1169,7 @@ namespace ShareX.UploadersLib
                 HubicFolderInfo folder = lvi.Tag as HubicFolderInfo;
                 if (folder != null)
                 {
+                    lblHubicSelectedFolder.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + folder.name;
                     Config.HubicSelectedFolder = folder;
                 }
             }

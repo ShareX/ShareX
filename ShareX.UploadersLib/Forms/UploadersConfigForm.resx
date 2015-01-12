@@ -2552,7 +2552,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4, 4, 4, 4</value>
   </data>
   <data name="ucFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>792, 316</value>
+    <value>792, 432</value>
   </data>
   <data name="ucFTPAccounts.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2980,13 +2980,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>9</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3112,13 +3112,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3334,13 +3334,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3397,7 +3397,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="cbBoxShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 264</value>
+    <value>16, 256</value>
   </data>
   <data name="cbBoxShare.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 17</value>
@@ -3529,13 +3529,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3850,13 +3850,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="tpCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpCopy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpCopy.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3883,7 +3883,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="cbHubicPublishLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 250</value>
+    <value>16, 256</value>
   </data>
   <data name="cbHubicPublishLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 17</value>
@@ -3906,34 +3906,34 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbHubicPublishLink.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblHubicSelectedFolderNote.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblHubicSelectedFolderNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 415</value>
+  <data name="lblHubicSelectedFolderNote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 425</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 13</value>
+  <data name="lblHubicSelectedFolderNote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblHubicSelectedFolderNote.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Note: Double click a folder to go inside.</value>
+  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
+    <value>Note: You can double click folder name to go inside that folder.</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;lblHubicSelectedFolderNote.Name" xml:space="preserve">
+    <value>lblHubicSelectedFolderNote</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblHubicSelectedFolderNote.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblHubicSelectedFolderNote.Parent" xml:space="preserve">
     <value>tpHubic</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblHubicSelectedFolderNote.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
@@ -3943,7 +3943,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>435</value>
   </data>
   <data name="lvHubicFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 62</value>
+    <value>352, 72</value>
   </data>
   <data name="lvHubicFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>440, 344</value>
@@ -3963,34 +3963,34 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lvHubicFolders.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblHubicSelectedFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblHubicSelectedFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 40</value>
+  <data name="lblHubicSelectedFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 50</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 13</value>
+  <data name="lblHubicSelectedFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblHubicSelectedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Select a folder to upload to:</value>
+  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
+    <value>Selected folder:</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;lblHubicSelectedFolder.Name" xml:space="preserve">
+    <value>lblHubicSelectedFolder</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblHubicSelectedFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblHubicSelectedFolder.Parent" xml:space="preserve">
     <value>tpHubic</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblHubicSelectedFolder.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="btnHubicRefreshFolders.Enabled" type="System.Boolean, mscorlib">
@@ -4000,7 +4000,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>NoControl</value>
   </data>
   <data name="btnHubicRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 6</value>
+    <value>352, 16</value>
   </data>
   <data name="btnHubicRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 23</value>
@@ -4023,41 +4023,41 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnHubicRefreshFolders.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="oAuth2Hubic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+  <data name="oauth2Hubic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
   </data>
-  <data name="oAuth2Hubic.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="oauth2Hubic.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 238</value>
   </data>
-  <data name="oAuth2Hubic.TabIndex" type="System.Int32, mscorlib">
+  <data name="oauth2Hubic.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;oAuth2Hubic.Name" xml:space="preserve">
-    <value>oAuth2Hubic</value>
+  <data name="&gt;&gt;oauth2Hubic.Name" xml:space="preserve">
+    <value>oauth2Hubic</value>
   </data>
-  <data name="&gt;&gt;oAuth2Hubic.Type" xml:space="preserve">
+  <data name="&gt;&gt;oauth2Hubic.Type" xml:space="preserve">
     <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;oAuth2Hubic.Parent" xml:space="preserve">
+  <data name="&gt;&gt;oauth2Hubic.Parent" xml:space="preserve">
     <value>tpHubic</value>
   </data>
-  <data name="&gt;&gt;oAuth2Hubic.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;oauth2Hubic.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="tpHubic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpHubic.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHubic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpHubic.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="tpHubic.Text" xml:space="preserve">
-    <value>Hubic</value>
+    <value>hubiC</value>
   </data>
   <data name="&gt;&gt;tpHubic.Name" xml:space="preserve">
     <value>tpHubic</value>
@@ -4489,13 +4489,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -4810,10 +4810,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -5128,13 +5128,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>10</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -5341,13 +5341,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -5503,13 +5503,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -5731,13 +5731,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>7</value>
   </data>
   <data name="tpRapidShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpRapidShare.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpRapidShare.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpRapidShare.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5908,13 +5908,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -5965,13 +5965,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>0</value>
   </data>
   <data name="tpMediaCrush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMediaCrush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaCrush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMediaCrush.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -6151,13 +6151,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>5</value>
   </data>
   <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -6310,13 +6310,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -6760,13 +6760,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>3</value>
   </data>
   <data name="tpMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 40</value>
   </data>
   <data name="tpMinus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMinus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 493</value>
+    <value>972, 475</value>
   </data>
   <data name="tpMinus.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -10430,9 +10430,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 557</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

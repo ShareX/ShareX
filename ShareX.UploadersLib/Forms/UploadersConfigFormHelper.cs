@@ -933,12 +933,12 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        oAuth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
+                        oauth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oAuth2Hubic.Status = OAuthLoginStatus.LoginFailed;
+                        oauth2Hubic.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
@@ -962,12 +962,12 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        oAuth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
+                        oauth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        oAuth2Hubic.Status = OAuthLoginStatus.LoginFailed;
+                        oauth2Hubic.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
