@@ -29,6 +29,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
+using System.Web;
 
 namespace ShareX.UploadersLib
 {
@@ -168,7 +169,7 @@ namespace ShareX.UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            filename = URLHelpers.URLEncode(filename);
+            filename = HttpUtility.UrlEncode(filename);
 
             if (subFolderPath == null)
             {
@@ -176,6 +177,7 @@ namespace ShareX.UploadersLib
             }
 
             UriBuilder httpHomeUri;
+
             var httpHomePath = GetHttpHomePath();
 
             if (string.IsNullOrEmpty(httpHomePath))
@@ -230,7 +232,7 @@ namespace ShareX.UploadersLib
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            return Uri.EscapeUriString(httpHomeUri.Uri.ToString());
+            return httpHomeUri.Uri.ToString();
         }
 
         public string GetFtpPath(string filemame)
