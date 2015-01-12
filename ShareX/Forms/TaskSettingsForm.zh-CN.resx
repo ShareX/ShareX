@@ -1,0 +1,431 @@
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 任务设置</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>捕获后...</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>后上传...</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>目的地...</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>简介...</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>图像效果的配置...</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>重置自动递增数</value>
+  </data>
+  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
+    <value>选项...</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>任务...</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>添加...</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>在做窗口捕捉,   如果窗口相交的任务栏,   然后隐藏任务栏</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>做窗口或活动窗口捕捉时,   捕捉客户区</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>拍摄窗口阴影（需要透明度）</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>捕捉透明窗口</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>如果剪贴板中包含的文件夹路径,   然后索引文件夹和上传索引</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>如果剪贴板中包含一个URL,   然后使用URL共享服务共享</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>如果剪贴板中包含一个URL,   然后使用URL缩短</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>使用名称模式的文件上传过,   而不是实际的文件名</value>
+  </data>
+  <data name="cbHistorySave.Text" xml:space="preserve">
+    <value>保存任务信息历史</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>只适用效果区域捕捉</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>播放声音捕捉发生后</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>播放声音任务完成后</value>
+  </data>
+  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
+    <value>自动禁用Windows Aero的同时记录（航空降低录音性能）</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>固定时间:</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>截图延迟:</value>
+  </data>
+  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
+    <value>显示"后捕捉的任务"捕获后窗口由</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>显示光标在屏幕截图</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>创建缩略图只有当图像尺寸大于缩略图大小</value>
+  </data>
+  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
+    <value>使用默认的"后拍摄"设置</value>
+  </data>
+  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
+    <value>使用默认的"后上传"设置</value>
+  </data>
+  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
+    <value>使用默认的"目的地"设置</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>看文件夹,   如果新的文件创建然后上传</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>参数</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>扩展</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>名字</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>路径</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>如果剪贴板中包含一个文件URL,   然后下载和上传</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>覆盖默认的自定义上传:</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>覆盖默认的FTP帐户:</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>运行CLI算账:</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>开始录制后:</value>
+  </data>
+  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
+    <value>秀"后上传"窗口任务完成后,   </value>
+  </data>
+  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
+    <value>显示"以前上传"窗口上传之前动态改变目的地</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>显示图像效果窗口捕获后</value>
+  </data>
+  <data name="chkUseDefaultActions.Text" xml:space="preserve">
+    <value>使用主窗口中的任务设置行动</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置高级设置</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置拍摄设置</value>
+  </data>
+  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置常规设置</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置图像设置</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置索引设置</value>
+  </data>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>使用主窗口任务设置上传设置</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>过滤器</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>文件夹路径</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>包括子目录</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>任务完成后:</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>阴影偏移:</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>说明:</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>您可以启用/禁用从图像效果"后捕获任务 - &gt;添加图像效果".</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>如果文件存在:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>图像格式:</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>图像格式2:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF质量:</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG质量:</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>名字模式捕捉或剪贴板上传:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>名字模式为活动窗口捕捉:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>预览:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>预览:</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
+    <value>输出:</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>屏幕记录FPS:</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>身高:</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>缩略图的名字:</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>宽度:</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>图像大小限制使用"图像格式2":</value>
+  </data>
+  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
+    <value>kB 0 - 5000（0禁用）</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>行动</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>先进</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>捕获</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>影响</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="tpIndexer.Text" xml:space="preserve">
+    <value>索引</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>矩形注释</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>区域捕捉</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>屏幕记录</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>任务</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>缩略图</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>上传</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>剪贴板上传</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>监视文件夹</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>文件上传者</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>图片上传者</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>文字上传者</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>URL共享服务</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>URL shorteners</value>
+  </data>
+</root>
