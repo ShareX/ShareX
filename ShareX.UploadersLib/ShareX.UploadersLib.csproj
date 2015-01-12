@@ -105,6 +105,7 @@
     <Compile Include="FileUploaders\Ge_tt.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\GoogleDrive.cs" />
+	<Compile Include="FileUploaders\Hubic.cs" />
     <Compile Include="FileUploaders\Jira.cs" />
     <Compile Include="FileUploaders\Hostr.cs" />
     <Compile Include="FileUploaders\MediaFire.cs" />
@@ -501,6 +502,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Hastebin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\hubic.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
