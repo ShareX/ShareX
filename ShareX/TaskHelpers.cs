@@ -405,7 +405,7 @@ namespace ShareX
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
             updateChecker.IsBeta = Program.IsBeta;
-            updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+            updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             updateChecker.CheckUpdate();
 
             // Fallback if GitHub API fails
@@ -413,7 +413,7 @@ namespace ShareX
             {
                 updateChecker = new XMLUpdateChecker(Links.URL_UPDATE, "ShareX");
                 updateChecker.IsBeta = Program.IsBeta;
-                updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+                updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 updateChecker.CheckUpdate();
             }
 

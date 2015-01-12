@@ -48,7 +48,7 @@ namespace ShareX.HelpersLib
 
             using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.7z"))
             {
-                form.Proxy = ProxyInfo.Current.GetWebProxy();
+                form.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 form.InstallType = InstallType.Event;
                 form.RunInstallerInBackground = async;
                 form.InstallRequested += installRequested;

@@ -361,7 +361,7 @@ namespace ShareX.UploadersLib
                 headers.Remove("Accept");
             }
 
-            request.AllowWriteStreamBuffering = ProxyInfo.Current.IsValidProxy();
+            request.AllowWriteStreamBuffering = HelpersOptions.CurrentProxy.IsValidProxy();
             request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
             request.ContentLength = length;
             if (!string.IsNullOrEmpty(boundary)) contentType += "; boundary=" + boundary;
@@ -373,7 +373,7 @@ namespace ShareX.UploadersLib
             request.Method = method.ToString();
             request.Pipelined = false;
             request.ProtocolVersion = HttpVersion.Version11;
-            request.Proxy = ProxyInfo.Current.GetWebProxy();
+            request.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             request.Timeout = -1;
             request.UserAgent = UserAgent;
 
@@ -390,7 +390,7 @@ namespace ShareX.UploadersLib
             request.CookieContainer = new CookieContainer();
             if (cookies != null) request.CookieContainer.Add(cookies);
             request.KeepAlive = false;
-            IWebProxy proxy = ProxyInfo.Current.GetWebProxy();
+            IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             if (proxy != null) request.Proxy = proxy;
             request.UserAgent = UserAgent;
 

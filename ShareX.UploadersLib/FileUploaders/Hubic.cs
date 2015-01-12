@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("scope", Scope);
             args.Add("response_type", "code");
 
-            return CreateQuery(@"https://api.hubic.com/oauth/auth/", args);
+            return CreateQuery("https://api.hubic.com/oauth/auth/", args);
         }
 
         public bool GetAccessToken(string code)
@@ -93,11 +93,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private NameValueCollection GetAuthHeaders(string headerType)
         {
-            string secretInBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(AuthInfo.Client_ID + ":" + AuthInfo.Client_Secret));
             NameValueCollection headers = new NameValueCollection();
             switch (headerType)
             {
                 case "Basic":
+                    string secretInBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(AuthInfo.Client_ID + ":" + AuthInfo.Client_Secret));
                     headers["Authorization"] = headerType + " " + secretInBase64;
                     break;
                 case "Bearer":

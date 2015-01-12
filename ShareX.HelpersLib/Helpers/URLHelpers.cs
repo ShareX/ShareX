@@ -45,7 +45,14 @@ namespace ShareX.HelpersLib
                 {
                     try
                     {
-                        Process.Start(url);
+                        if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                        {
+                            Process.Start(HelpersOptions.BrowserPath, url);
+                        }
+                        else
+                        {
+                            Process.Start(url);
+                        }
                     }
                     catch (Exception e)
                     {

@@ -572,8 +572,9 @@ namespace ShareX
 
         private void AfterSettingsJobs()
         {
-            ProxyInfo.Current = Program.Settings.ProxySettings;
-            ClipboardHelpers.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
+            HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
+            HelpersOptions.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
+            HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
         }
 
         public void UpdateMainFormSettings()

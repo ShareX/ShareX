@@ -449,7 +449,7 @@ namespace ShareX
                             {
                                 using (WebClient wc = new WebClient())
                                 {
-                                    wc.Proxy = ProxyInfo.Current.GetWebProxy();
+                                    wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                                     wc.DownloadFile(url, downloadPath);
                                 }
 

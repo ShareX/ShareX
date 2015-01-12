@@ -137,6 +137,10 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
         public bool ShowMainWindowTip { get; set; }
 
+        [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
+        [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
+        public string BrowserPath { get; set; }
+
         [Category("Application / Config"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 

@@ -31,25 +31,6 @@ namespace ShareX.HelpersLib
 {
     public class ProxyInfo
     {
-        private static ProxyInfo current;
-
-        public static ProxyInfo Current
-        {
-            get
-            {
-                if (current == null)
-                {
-                    current = new ProxyInfo();
-                }
-
-                return current;
-            }
-            set
-            {
-                current = value;
-            }
-        }
-
         public ProxyMethod ProxyMethod { get; set; }
         public string Host { get; set; }
         public int Port { get; set; }

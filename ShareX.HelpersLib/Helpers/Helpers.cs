@@ -801,7 +801,7 @@ namespace ShareX.HelpersLib
                     using (WebClient wc = new WebClient())
                     {
                         wc.Encoding = Encoding.UTF8;
-                        wc.Proxy = ProxyInfo.Current.GetWebProxy();
+                        wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                         return wc.DownloadString(url);
                     }
                 }

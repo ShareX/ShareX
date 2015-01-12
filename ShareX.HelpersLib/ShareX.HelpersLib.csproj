@@ -121,6 +121,7 @@
     <Compile Include="Forms\QRCodeForm.Designer.cs">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpersOptions.cs" />
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="CodeMenuEntry.cs" />

@@ -38,8 +38,6 @@ namespace ShareX.HelpersLib
 
         private static readonly object ClipboardLock = new object();
 
-        public static bool UseAlternativeCopyImage = false;
-
         private static bool CopyData(IDataObject data, bool copy = true)
         {
             if (data != null)
@@ -102,7 +100,7 @@ namespace ShareX.HelpersLib
 
         public static bool CopyImage(Image img)
         {
-            if (UseAlternativeCopyImage)
+            if (HelpersOptions.UseAlternativeCopyImage)
             {
                 return CopyImageAlternative(img);
             }
