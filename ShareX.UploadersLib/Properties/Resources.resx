@@ -379,6 +379,9 @@
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box refresh folders list failed</value>
   </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Hubic refresh folders list failed</value>
+  </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
     <value>Logged in as {0}.</value>
   </data>
@@ -463,5 +466,8 @@ Created folders:</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Root folder</value>
+  </data>
+  <data name="Hubic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\hubic.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

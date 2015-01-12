@@ -894,6 +894,129 @@ namespace ShareX.UploadersLib
 
         #endregion Box
 
+        #region Hubic
+
+        public void HubicAuthOpen()
+        {
+            try
+            {
+                OAuth2Info oauth = new OAuth2Info(APIKeys.HubicClientID, APIKeys.HubicClientSecret);
+                HubicOpenstackAuthInfo osauth = new HubicOpenstackAuthInfo();
+
+                string url = new Hubic(oauth, osauth).GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    Config.HubicOAuth2Info = oauth;
+                    Config.HubicOpenstackAuthInfo = osauth;
+                    DebugHelper.WriteLine("HubicAuthOpen - Authorization URL is opened: " + url);
+
+                    using (OAuthWebForm oauthForm = new OAuthWebForm(url, "https://getsharex.com/callback/"))
+                    {
+                        if (oauthForm.ShowDialog() == DialogResult.OK)
+                        {
+                            HubicAuthComplete(oauthForm.Code);
+                        }
+                    }
+                }
+                else
+                {
+                    DebugHelper.WriteLine("HubicAuthOpen - Authorization URL is empty.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void HubicAuthComplete(string code)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(code) && Config.HubicOAuth2Info != null)
+                {
+                    bool result = new Hubic(Config.HubicOAuth2Info, Config.HubicOpenstackAuthInfo).GetAccessToken(code);
+
+                    if (result)
+                    {
+                        oAuth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oAuth2Hubic.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    btnHubicRefreshFolders.Enabled = result;
+                    btnHubicRefreshFolders.PerformClick();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void HubicAuthRefresh()
+        {
+            try
+            {
+                if (OAuth2Info.CheckOAuth(Config.HubicOAuth2Info))
+                {
+                    bool result = new Hubic(Config.HubicOAuth2Info, Config.HubicOpenstackAuthInfo).RefreshAccessToken();
+
+                    if (result)
+                    {
+                        oAuth2Hubic.Status = OAuthLoginStatus.LoginSuccessful;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        oAuth2Hubic.Status = OAuthLoginStatus.LoginFailed;
+                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void HubicListFolders(HubicFolderInfo fileInfo)
+        {
+            lvHubicFolders.Items.Clear();
+
+            if (!OAuth2Info.CheckOAuth(Config.HubicOAuth2Info))
+            {
+                MessageBox.Show(Resources.UploadersConfigForm_ListFolders_Authentication_required_, Resources.UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Hubic hubic = new Hubic(Config.HubicOAuth2Info, Config.HubicOpenstackAuthInfo);
+                List<HubicFolderInfo> folders = hubic.GetFiles(fileInfo);
+                if (folders != null && folders.Count != 0)
+                {
+                    foreach (HubicFolderInfo folder in folders.Where(x => x.content_type == "application/directory" && x.name[0] != '.'))
+                    {
+                        HubicAddFolder(folder);
+                    }
+                }
+            }
+        }
+
+        private void HubicAddFolder(HubicFolderInfo folder)
+        {
+            ListViewItem lvi = new ListViewItem(folder.name);
+            lvi.Tag = folder;
+            lvHubicFolders.Items.Add(lvi);
+        }
+
+        #endregion Hubic
+
         #region OneDrive
 
         public void OneDriveAuthOpen()

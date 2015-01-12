@@ -850,6 +850,13 @@ namespace ShareX
                         URLType = Program.UploadersConfig.CopyURLType
                     };
                     break;
+                case FileDestination.Hubic:
+                    fileUploader = new Hubic(Program.UploadersConfig.HubicOAuth2Info, Program.UploadersConfig.HubicOpenstackAuthInfo)
+                    {
+                        SelectedFolder = Program.UploadersConfig.HubicSelectedFolder,
+                        Publish = Program.UploadersConfig.HubicPublish
+                    };
+                    break;
                 case FileDestination.RapidShare:
                     fileUploader = new RapidShare(Program.UploadersConfig.RapidShareUsername, Program.UploadersConfig.RapidSharePassword, Program.UploadersConfig.RapidShareFolderID);
                     break;

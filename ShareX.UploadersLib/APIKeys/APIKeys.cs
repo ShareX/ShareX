@@ -45,6 +45,8 @@ namespace ShareX.UploadersLib
         public static string DropboxConsumerSecret = "";
         public static string CopyConsumerKey = "";
         public static string CopyConsumerSecret = "";
+        public static string HubicClientID = "";
+        public static string HubicClientSecret = "";
         public static string MinusConsumerKey = "";
         public static string MinusConsumerSecret = "";
         public static string BoxClientID = "";
