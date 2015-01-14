@@ -3936,10 +3936,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;lblHubicSelectedFolderNote.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
+  <data name="chHubicFolderName.Text" xml:space="preserve">
     <value>Folder name</value>
   </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+  <data name="chHubicFolderName.Width" type="System.Int32, mscorlib">
     <value>435</value>
   </data>
   <data name="lvHubicFolders.Location" type="System.Drawing.Point, System.Drawing">
@@ -10485,10 +10485,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;chBoxFoldersName.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
-    <value>columnHeader1</value>
+  <data name="&gt;&gt;chHubicFolderName.Name" xml:space="preserve">
+    <value>chHubicFolderName</value>
   </data>
-  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+  <data name="&gt;&gt;chHubicFolderName.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chImgurID.Name" xml:space="preserve">

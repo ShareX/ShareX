@@ -179,7 +179,7 @@
             this.cbHubicPublishLink = new System.Windows.Forms.CheckBox();
             this.lblHubicSelectedFolderNote = new System.Windows.Forms.Label();
             this.lvHubicFolders = new ShareX.HelpersLib.MyListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chHubicFolderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblHubicSelectedFolder = new System.Windows.Forms.Label();
             this.btnHubicRefreshFolders = new System.Windows.Forms.Button();
             this.oauth2Hubic = new ShareX.UploadersLib.OAuthControl();
@@ -1617,7 +1617,7 @@
             // 
             this.lvHubicFolders.AutoFillColumn = true;
             this.lvHubicFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.chHubicFolderName});
             this.lvHubicFolders.FullRowSelect = true;
             resources.ApplyResources(this.lvHubicFolders, "lvHubicFolders");
             this.lvHubicFolders.Name = "lvHubicFolders";
@@ -1626,9 +1626,9 @@
             this.lvHubicFolders.SelectedIndexChanged += new System.EventHandler(this.lvHubicFolders_SelectedIndexChanged);
             this.lvHubicFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvHubicFolders_MouseDoubleClick);
             // 
-            // columnHeader1
+            // chHubicFolderName
             // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            resources.ApplyResources(this.chHubicFolderName, "chHubicFolderName");
             // 
             // lblHubicSelectedFolder
             // 
@@ -3918,7 +3918,7 @@
         private OAuthControl oauth2Hubic;
         private System.Windows.Forms.Label lblHubicSelectedFolderNote;
         private HelpersLib.MyListView lvHubicFolders;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader chHubicFolderName;
         private System.Windows.Forms.Label lblHubicSelectedFolder;
         private System.Windows.Forms.Button btnHubicRefreshFolders;
         private System.Windows.Forms.CheckBox cbHubicPublishLink;        
