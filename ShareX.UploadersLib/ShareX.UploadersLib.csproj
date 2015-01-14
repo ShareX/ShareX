@@ -74,7 +74,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2014.4.6.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -105,7 +105,7 @@
     <Compile Include="FileUploaders\Ge_tt.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\GoogleDrive.cs" />
-	<Compile Include="FileUploaders\Hubic.cs" />
+    <Compile Include="FileUploaders\Hubic.cs" />
     <Compile Include="FileUploaders\Jira.cs" />
     <Compile Include="FileUploaders\Hostr.cs" />
     <Compile Include="FileUploaders\MediaFire.cs" />
