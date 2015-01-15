@@ -68,6 +68,7 @@ hubiC support: https://github.com/Kouga-
 Turkish: https://github.com/muratmoon
 German: https://github.com/Starbug2
 French: https://github.com/nwies
+Simplified Chinese: https://github.com/jiajiechan
 
 {2}:
 
