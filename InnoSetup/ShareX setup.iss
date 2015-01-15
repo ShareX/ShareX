@@ -71,6 +71,7 @@ Source: "{#MyAppParentDir}\*.txt"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppParentDir}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
 Source: "{#MyAppParentDir}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#MyAppParentDir}\fr\*.resources.dll"; DestDir: {app}\Languages\fr; Flags: ignoreversion
+Source: "{#MyAppParentDir}\zh-CN\*.resources.dll"; DestDir: {app}\Languages\zh-CN; Flags: ignoreversion
 
 ; Required for screen/audio recording
 Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
