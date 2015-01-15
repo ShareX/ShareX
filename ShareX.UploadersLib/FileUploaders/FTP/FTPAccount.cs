@@ -176,6 +176,7 @@ namespace ShareX.UploadersLib
             }
 
             UriBuilder httpHomeUri;
+
             var httpHomePath = GetHttpHomePath();
 
             if (string.IsNullOrEmpty(httpHomePath))
@@ -230,7 +231,7 @@ namespace ShareX.UploadersLib
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            return Uri.EscapeUriString(httpHomeUri.Uri.ToString());
+            return httpHomeUri.Uri.AbsoluteUri;
         }
 
         public string GetFtpPath(string filemame)
