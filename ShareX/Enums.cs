@@ -38,7 +38,9 @@ namespace ShareX
         [Description("Deutsch (German)")]
         German,
         [Description("Français (French)")]
-        French
+        French,
+        [Description("简体中文（ZH-CN）")]
+        ZH-CN,
     }
 
     public enum EImageFormat
