@@ -739,4 +739,19 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
     <value>Seçili dizin:</value>
   </data>
+  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
+    <value>Dizin listesini yenile</value>
+  </data>
+  <data name="cbHubicPublishLink.Text" xml:space="preserve">
+    <value>Paylaşılabilir link oluştur (30 gün geçerli)</value>
+  </data>
+  <data name="chHubicFolderName.Text" xml:space="preserve">
+    <value>Dizin adı</value>
+  </data>
+  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
+    <value>Seçilmiş dizin:</value>
+  </data>
+  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
+    <value>Not: Dizin içine gitmek için dizin adına çift tıklayabilirsiniz.</value>
+  </data>
 </root>

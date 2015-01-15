@@ -116,11 +116,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 ist die höchste Qualität/größte Dateigröße und 31 die schlechteste Qualität/kleinste Dateigröße</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - FFmpeg Optionen</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Herunterladen</value>
+  </data>
+  <data name="btnHelp.Text" xml:space="preserve">
+    <value>Hilfe...</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Erneuern</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Mit CMD austesten</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Eigene Befehle verwenden</value>
+  </data>
+  <data name="cbPreset.ToolTip" xml:space="preserve">
+    <value>Der voreingestellte Standard ist "Medium".
+Eine Voreinstellung ist eine Kollektion von Optionen, welche eine Bestimmte Kodierung zu Kompressionrate haben. Eine langsamere Voreinstellung wird eine bessere Kompressionsrate haben (Kompression ist Qualität pro Dateigröße).
+Das heißt dass, z.B.: wenn du eine bestimmte Dateigröße haben möchtest oder eine konstante Bitrate, wirst du ein bessere Qualität mit einer langsamen Voreinstellung
+Ebenso, für eine konstante Qualitätskodierung, wirst du Bitraten sparen, wenn du eine langsame Voreinstellung wählst.</value>
+  </data>
+  <data name="cbShowError.Text" xml:space="preserve">
+    <value>Wenn Aufnahme oder Kodierung fehlschlägt zeige das Fehlerfenster an</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Codecs</value>
   </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Ergänzende Befehlszeilen Paramter</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Befehlszeilenvorschau</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Quellen</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Bitrate:</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Audiocodec:</value>
@@ -128,14 +167,32 @@
   <data name="lblAudioSource.Text" xml:space="preserve">
     <value>Audioquelle:</value>
   </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Videocodec:</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
+  <data name="lblExtension.Text" xml:space="preserve">
+    <value>Erweiterung (Containerformat):</value>
   </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Befehlszeilenvorschau</value>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Qualität:</value>
+  </data>
+  <data name="lblPreset.Text" xml:space="preserve">
+    <value>Voreingestellt:</value>
+  </data>
+  <data name="lblQscale.Text" xml:space="preserve">
+    <value>Variable Bitrate:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Videoquelle</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Qualität:</value>
+  </data>
+  <data name="nudQscale.ToolTip" xml:space="preserve">
+    <value>1 ist die höchste Qualität/größte Dateigröße und 31 die schlechteste Qualität/kleinste Dateigröße</value>
+  </data>
+  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
+    <value>Der CRF Wert can von 4-63 sein, 10 ist ein guter Startwert. Kleinere Werte heißt bessere Qualität</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): Die Weite des Multiplikators ist 0-51: wo 0 verlustfrei ist; 23 standard; und 51 das schlechteste
@@ -145,70 +202,13 @@ Die Weite ist Expotentzial, also wenn man den Wert um +6 erhöht ist es grob die
 Normalerweise wählt man den höchsten CRF Wert, der noch akzeptable Ergebnisse erzielt.
 Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann schlecht aussieht benutze wieder den niedrigeren Wert.</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Kopieren</value>
-  </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>Der CRF Wert can von 4-63 sein, 10 ist ein guter Startwert. Kleinere Werte heißt bessere Qualität</value>
-  </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Standard sind 128k.</value>
-  </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Herunterladen</value>
-  </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Erweiterung (Containerformat):</value>
-  </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Hilfe...</value>
-  </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Wenn Aufnahme oder Kodierung fehlschlägt zeige das Fehlerfenster an</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>Voreingestellt:</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Qualität:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Qualität:</value>
-  </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Die Spanne ist 0-10, wobei 10 die höchste Qualität ist. 3-6 ist eine gute Spanne zum Versuchen. Standard ist 3</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>Die Spanne ist 0-9, wobei ein kleinerer Wert höherer Qualität entspricht. 0-3 produzieren normalerweise transparente Ergebnisse. 4 (Standard) sollte nah zu wahrnehmender Transparenz sein, 6 produziert "annehmbare Ergebnisse"</value>
   </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Erneuern</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg Optionen</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Quellen</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>Mit CMD austesten</value>
-  </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Der voreingestellte Standard ist "Medium".
-Eine Voreinstellung ist eine Kollektion von Optionen, welche eine Bestimmte Kodierung zu Kompressionrate haben. Eine langsamere Voreinstellung wird eine bessere Kompressionsrate haben (Kompression ist Qualität pro Dateigröße).
-Das heißt dass, z.B.: wenn du eine bestimmte Dateigröße haben möchtest oder eine konstante Bitrate, wirst du ein bessere Qualität mit einer langsamen Voreinstellung
-Ebenso, für eine konstante Qualitätskodierung, wirst du Bitraten sparen, wenn du eine langsame Voreinstellung wählst.</value>
-  </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Eigene Befehle verwenden</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>Variable Bitrate:</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>Videocodec:</value>
-  </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Videoquelle</value>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>Die Spanne ist 0-10, wobei 10 die höchste Qualität ist. 3-6 ist eine gute Spanne zum Versuchen. Standard ist 3</value>
   </data>
 </root>

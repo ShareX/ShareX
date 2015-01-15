@@ -125,6 +125,12 @@
   <data name="tsmiExportClipboard.Text" xml:space="preserve">
     <value>In Zwischenablage kopieren</value>
   </data>
+  <data name="tsmiExportFile.Text" xml:space="preserve">
+    <value>Zu Datei speichern...</value>
+  </data>
+  <data name="tsmiExportUpload.Text" xml:space="preserve">
+    <value>Als Text hochladen</value>
+  </data>
   <data name="tsmiImportClipboard.Text" xml:space="preserve">
     <value>Aus Zwischenablage</value>
   </data>
@@ -133,11 +139,5 @@
   </data>
   <data name="tsmiImportURL.Text" xml:space="preserve">
     <value>Aus URL...</value>
-  </data>
-  <data name="tsmiExportFile.Text" xml:space="preserve">
-    <value>Zu Datei speichern...</value>
-  </data>
-  <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Als Text hochladen</value>
   </data>
 </root>

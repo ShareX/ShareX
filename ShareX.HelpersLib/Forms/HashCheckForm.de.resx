@@ -116,14 +116,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Dateiüberprüfung...</value>
+  </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Durchsuchen</value>
   </data>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
   <data name="lblFile.Text" xml:space="preserve">
     <value>Dateipfad:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Dateiüberprüfung...</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hashtyp:</value>
@@ -133,9 +136,6 @@
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultate:</value>
-  </data>
-  <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>Start</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Ziel:</value>

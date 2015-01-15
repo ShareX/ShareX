@@ -116,17 +116,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblBlue.Text" xml:space="preserve">
-    <value>B:</value>
-  </data>
-  <data name="rbBlackWhite.Text" xml:space="preserve">
-    <value>Schwarz, Weiß:</value>
-  </data>
-  <data name="cbShapes.Items" xml:space="preserve">
-    <value>Checker</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Monitor Test</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Schließen</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>Farben Dialog...</value>
   </data>
   <data name="btnGradientColor1.Text" xml:space="preserve">
     <value>Farbe 1</value>
@@ -134,37 +131,40 @@
   <data name="btnGradientColor2.Text" xml:space="preserve">
     <value>Farbe 2</value>
   </data>
-  <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>Farben Dialog...</value>
-  </data>
-  <data name="lblGreen.Text" xml:space="preserve">
-    <value>G:</value>
-  </data>
-  <data name="rbGradient.Text" xml:space="preserve">
-    <value>Neigung:</value>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>Checker</value>
   </data>
   <data name="cbShapes.Items1" xml:space="preserve">
     <value>Horizontalelinien</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Monitor Test</value>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Vertikalelinien</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>B:</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>G:</value>
   </data>
   <data name="lblRed.Text" xml:space="preserve">
     <value>Rot:</value>
+  </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>Größe:</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Du kannst außerhalb klicken um dieses Feld zu zeigen/verstecken</value>
+  </data>
+  <data name="rbBlackWhite.Text" xml:space="preserve">
+    <value>Schwarz, Weiß:</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>Neigung:</value>
   </data>
   <data name="rbRedGreenBlue.Text" xml:space="preserve">
     <value>Rot, Grün, Blau:</value>
   </data>
   <data name="rbShapes.Text" xml:space="preserve">
     <value>Form:</value>
-  </data>
-  <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>Größe:</value>
-  </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
-    <value>Vertikalelinien</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Du kannst außerhalb klicken um dieses Feld zu zeigen/verstecken</value>
   </data>
 </root>

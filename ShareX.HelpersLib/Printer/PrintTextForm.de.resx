@@ -116,22 +116,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Druckoptionen</value>
+  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
     <value>Schriftart ändern...</value>
   </data>
-  <data name="lblFont.Text" xml:space="preserve">
-    <value>Schriftart:</value>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>Drucken...</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
     <value>Vorschau...</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Druckoptionen</value>
-  </data>
-  <data name="btnPrint.Text" xml:space="preserve">
-    <value>Drucken...</value>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>Schriftart:</value>
   </data>
 </root>

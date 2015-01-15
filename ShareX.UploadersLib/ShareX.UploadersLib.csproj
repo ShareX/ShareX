@@ -283,6 +283,9 @@
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\AccountsControl.de.resx">
+      <DependentUpon>AccountsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountsControl.fr.resx">
       <DependentUpon>AccountsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountsControl.zh-CN.resx">
       <DependentUpon>AccountsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AccountTypeControl.de.resx">
+      <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.fr.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
@@ -301,6 +307,9 @@
     <EmbeddedResource Include="Controls\AccountTypeControl.zh-CN.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthControl.de.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.fr.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.zh-CN.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DropboxFilesForm.de.resx">
+      <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DropboxFilesForm.fr.resx">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
@@ -319,6 +331,9 @@
     <EmbeddedResource Include="Forms\DropboxFilesForm.zh-CN.resx">
       <DependentUpon>DropboxFilesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailForm.de.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.fr.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.zh-CN.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JiraUpload.de.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.fr.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
@@ -337,6 +355,9 @@
     <EmbeddedResource Include="Forms\JiraUpload.zh-CN.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OAuthWebForm.de.resx">
+      <DependentUpon>OAuthWebForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.fr.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.zh-CN.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResponseForm.de.resx">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.fr.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
@@ -355,6 +379,9 @@
     <EmbeddedResource Include="Forms\ResponseForm.zh-CN.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TwitterTweetForm.de.resx">
+      <DependentUpon>TwitterTweetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.fr.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.zh-CN.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadersConfigForm.de.resx">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.fr.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
@@ -373,6 +403,9 @@
     <EmbeddedResource Include="Forms\UploadersConfigForm.zh-CN.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserPassBox.de.resx">
+      <DependentUpon>UserPassBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserPassBox.fr.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -381,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserPassBox.zh-CN.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTPClient\FTPClientForm.de.resx">
+      <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.fr.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
@@ -429,6 +465,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.zh-CN.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">

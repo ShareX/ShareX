@@ -116,19 +116,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Fehler</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Anwendung beenden</value>
+  </data>
   <data name="btnContinue.Text" xml:space="preserve">
     <value>&amp;OK</value>
   </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Alles kopieren</value>
-  </data>
-  <data name="lblErrorMessage.Text" xml:space="preserve">
-    <value>Fehler
-Fehler 2
-</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Anwendung beenden</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Logdateien öffnen</value>
@@ -136,7 +134,9 @@ Fehler 2
   <data name="btnSendBugReport.Text" xml:space="preserve">
     <value>Bugreport senden</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Fehler</value>
+  <data name="lblErrorMessage.Text" xml:space="preserve">
+    <value>Fehler
+Fehler 2
+</value>
   </data>
 </root>

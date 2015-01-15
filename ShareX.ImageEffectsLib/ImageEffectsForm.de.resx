@@ -134,12 +134,6 @@
   <data name="btnLoadImage.Text" xml:space="preserve">
     <value>Bild laden...</value>
   </data>
-  <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>Herunter bewegen</value>
-  </data>
-  <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>Hoch bewegen</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>

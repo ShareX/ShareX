@@ -119,20 +119,20 @@
   <data name="btnClearAuthorization.Text" xml:space="preserve">
     <value>Autorisierung entfernen</value>
   </data>
-  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>Aktualisiere Autorisierung</value>
-  </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Status</value>
+  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
+    <value>2. Schritt: Schließe die Autorisierung ab</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
     <value>1. Schritt: Öffne Autorisierungsseite...</value>
   </data>
-  <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>2. Schritt: Schließe die Autorisierung ab</value>
+  <data name="btnRefreshAuthorization.Text" xml:space="preserve">
+    <value>Aktualisiere Autorisierung</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Benutzeraccount</value>
+  </data>
+  <data name="lblLoginStatus.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Verifikationscode (Hole den Code von der Authorisierungsseite):</value>

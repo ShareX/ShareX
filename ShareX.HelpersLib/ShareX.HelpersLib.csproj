@@ -365,6 +365,9 @@
     <Compile Include="WindowState.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
+    <EmbeddedResource Include="Colors\ColorPickerForm.de.resx">
+      <DependentUpon>ColorPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.fr.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.zh-CN.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colors\GradientPickerForm.de.resx">
+      <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colors\GradientPickerForm.fr.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
@@ -389,6 +395,9 @@
     <EmbeddedResource Include="Colors\GradientPickerForm.zh-CN.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExportImportControl.de.resx">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.fr.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +407,9 @@
     <EmbeddedResource Include="Controls\ExportImportControl.zh-CN.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MyPictureBox.de.resx">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.fr.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.zh-CN.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DNS\DNSChangerForm.de.resx">
+      <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.fr.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
@@ -419,6 +434,9 @@
     <EmbeddedResource Include="DNS\DNSChangerForm.zh-CN.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardContentViewer.de.resx">
+      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.fr.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.zh-CN.resx">
       <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DebugForm.de.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.fr.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
@@ -443,6 +464,9 @@
     <EmbeddedResource Include="Forms\DebugForm.zh-CN.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorForm.de.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.fr.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -454,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ErrorForm.zh-CN.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HashCheckForm.de.resx">
+      <DependentUpon>HashCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HashCheckForm.fr.resx">
       <DependentUpon>HashCheckForm.cs</DependentUpon>
@@ -467,6 +494,9 @@
     <EmbeddedResource Include="Forms\HashCheckForm.zh-CN.resx">
       <DependentUpon>HashCheckForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputBox.de.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.fr.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.zh-CN.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MonitorTestForm.de.resx">
+      <DependentUpon>MonitorTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MonitorTestForm.fr.resx">
       <DependentUpon>MonitorTestForm.cs</DependentUpon>
@@ -493,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OutputBox.resx">
       <DependentUpon>OutputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.fr.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
@@ -515,6 +551,9 @@
     <EmbeddedResource Include="Forms\QRCodeForm.zh-CN.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintForm.de.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.fr.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.zh-CN.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintTextForm.de.resx">
+      <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintTextForm.fr.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
@@ -533,9 +575,13 @@
     <EmbeddedResource Include="Printer\PrintTextForm.zh-CN.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="UpdateChecker\DownloaderForm.de.resx">
+      <DependentUpon>DownloaderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.fr.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -563,6 +609,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.zh-CN.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.de.resx">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.fr.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>

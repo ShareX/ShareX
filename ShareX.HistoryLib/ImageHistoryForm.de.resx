@@ -116,25 +116,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
-    <value>Gallerie</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bilderchronik</value>
   </data>
   <data name="tsbQuickList.Text" xml:space="preserve">
     <value>Nur 100 Bilder anzeigen</value>
   </data>
-  <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>Scheibe</value>
-  </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
     <value>Thumbnailgröße</value>
   </data>
-  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
-    <value>Thumbnails</value>
-  </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Anzeigemodus</value>
+  </data>
+  <data name="tsmiViewModeGallery.Text" xml:space="preserve">
+    <value>Gallerie</value>
+  </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>Scheibe</value>
+  </data>
+  <data name="tsmiViewModeThumbnails.Text" xml:space="preserve">
+    <value>Thumbnails</value>
   </data>
 </root>

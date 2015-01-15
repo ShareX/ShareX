@@ -116,29 +116,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblAlpha.Text" xml:space="preserve">
-    <value>Alpha:</value>
-  </data>
-  <data name="rbBlue.Text" xml:space="preserve">
-    <value>Blau:</value>
-  </data>
-  <data name="rbBrightness.Text" xml:space="preserve">
-    <value>Helligkeit:</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Farbwähler</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lblAlpha.Text" xml:space="preserve">
+    <value>Alpha:</value>
   </data>
   <data name="lblCyan.Text" xml:space="preserve">
     <value>Cyan:</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
     <value>Dezimal:</value>
-  </data>
-  <data name="rbGreen.Text" xml:space="preserve">
-    <value>Grün:</value>
-  </data>
-  <data name="rbHue.Text" xml:space="preserve">
-    <value>Färbung:</value>
   </data>
   <data name="lblKey.Text" xml:space="preserve">
     <value>Schlüssel:</value>
@@ -149,22 +143,28 @@
   <data name="lblNew.Text" xml:space="preserve">
     <value>Neu:</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="lblOld.Text" xml:space="preserve">
     <value>Alt:</value>
+  </data>
+  <data name="lblYellow.Text" xml:space="preserve">
+    <value>Gelb</value>
+  </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>Blau:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>Helligkeit:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>Grün:</value>
+  </data>
+  <data name="rbHue.Text" xml:space="preserve">
+    <value>Färbung:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
     <value>Rot:</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Sättigung:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Farbwähler</value>
-  </data>
-  <data name="lblYellow.Text" xml:space="preserve">
-    <value>Gelb</value>
   </data>
 </root>

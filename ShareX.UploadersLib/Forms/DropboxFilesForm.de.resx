@@ -116,6 +116,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="chModified.Text" xml:space="preserve">
+    <value>Geändert</value>
+  </data>
+  <data name="chSize.Text" xml:space="preserve">
+    <value>Größe</value>
+  </data>
+  <data name="tsbSelectFolder.Text" xml:space="preserve">
+    <value>Wähle derzeitigen Ordnerpfad</value>
+  </data>
   <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
     <value>Kopiere öffentlichen Link</value>
   </data>
@@ -128,19 +140,7 @@
   <data name="tsmiDownloadFile.Text" xml:space="preserve">
     <value>Herunterladen...</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Dateiname</value>
-  </data>
-  <data name="chModified.Text" xml:space="preserve">
-    <value>Geändert</value>
-  </data>
   <data name="tsmiRefresh.Text" xml:space="preserve">
     <value>Aktualisieren</value>
-  </data>
-  <data name="tsbSelectFolder.Text" xml:space="preserve">
-    <value>Wähle derzeitigen Ordnerpfad</value>
-  </data>
-  <data name="chSize.Text" xml:space="preserve">
-    <value>Größe</value>
   </data>
 </root>
