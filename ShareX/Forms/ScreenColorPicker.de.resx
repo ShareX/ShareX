@@ -128,4 +128,7 @@
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
     <value>Drücke die "Strg" Taste wenn dieses Fenster aktiv ist um den Bildschirmfarben Auswähler zu stoppen.</value>
   </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Zeigerposition:</value>
+  </data>
 </root>
