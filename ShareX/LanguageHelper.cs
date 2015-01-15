@@ -60,6 +60,9 @@ namespace ShareX
                     case SupportedLanguage.French:
                         cultureName = "fr-FR";
                         break;
+                     case SupportedLanguage.French:
+                        cultureName = "zh-CN";
+                        break;
                 }
 
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);
