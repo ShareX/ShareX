@@ -741,4 +741,19 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
     <value>ausgewählter Ordner</value>
   </data>
+  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
+    <value>Ordnerliste erneuern</value>
+  </data>
+  <data name="cbHubicPublishLink.Text" xml:space="preserve">
+    <value>Teilbaren Link erstellen (gilt 30 Tage)</value>
+  </data>
+  <data name="chHubicFolderName.Text" xml:space="preserve">
+    <value>Ordnername</value>
+  </data>
+  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
+    <value>Ausgewählter Ordner:</value>
+  </data>
+  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
+    <value>Notiz: Du kannst den Namen 2x anklicken um in den Ordner zu gehen</value>
+  </data>
 </root>

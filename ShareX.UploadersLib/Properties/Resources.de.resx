@@ -255,4 +255,7 @@ Hergestellte Ordner:</value>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Ordner abfragen...</value>
   </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Hubic Erneuerung der Ordnerliste fehlgeschlagen</value>
+  </data>
 </root>
