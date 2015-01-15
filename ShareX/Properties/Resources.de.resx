@@ -389,4 +389,22 @@ Drücke 'Nein' um das derzeitige Hochladen abzubrechen und das autoscreenshot ho
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
     <value>Wähle einen Dateipfad</value>
   </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Mitwirkende</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>Externe Bibliotheken</value>
+  </data>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Projektseite</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>Übersetzer</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Webseite</value>
+  </data>
 </root>

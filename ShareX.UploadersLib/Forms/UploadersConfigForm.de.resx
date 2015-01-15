@@ -735,4 +735,10 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Vorlage</value>
   </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Teilbaren Link erstellen</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>ausgewählter Ordner</value>
+  </data>
 </root>
