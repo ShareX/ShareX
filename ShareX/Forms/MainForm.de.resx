@@ -358,7 +358,7 @@
     <value>217, 20</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>Nach der Aufnahme Aufgaben:</value>
+    <value>Nach der Aufnahme Aufgaben</value>
   </data>
   <data name="tsddbAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
