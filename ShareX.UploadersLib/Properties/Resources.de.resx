@@ -1,0 +1,252 @@
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>{0} erfolgreich erstellt</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
+    <value>Bist du dir sicher, dass du {0} aus deiner Dropbox löschen willst?</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Authentication_required_" xml:space="preserve">
+    <value>Authentifizierung erforderlich</value>
+  </data>
+  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
+    <value>Autorisieren</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Box Aktualisierung der Ordnerliste fehlgeschlagen</value>
+  </data>
+  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
+    <value>Durchsuche für eine Zertifikatdatei...</value>
+  </data>
+  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
+    <value>Durchsuche für eine Keydatei</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
+    <value>Klicke Aktualisierungsknopf</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
+    <value>Konfiguriert</value>
+  </data>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
+    <value>Verbunden!</value>
+  </data>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
+    <value>Verbunden!
+Hergestellte Ordner:</value>
+  </data>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Verbinde zu {0}</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>Datei löschen?</value>
+  </data>
+  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
+    <value>zu erstellender Verzeichnisname</value>
+  </data>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>zu erstellender Verzeichnisname</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
+    <value>Herunterladpfad:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
+    <value>Fehler: Ergebnis ist leer.</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Ungültige Authentifizierung</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Ungültiger Gerätename</value>
+  </data>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>Ausgabe nicht gefunden</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Eingeloggt als {0}.</value>
+  </data>
+  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
+    <value>Einloggen fehlgeschlagen</value>
+  </data>
+  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
+    <value>Einloggen erfolgreich aber Zugriff auf Accountinfo fehlgeschlagen</value>
+  </data>
+  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
+    <value>Einloggen erfolgreich</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Neuer Account</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
+    <value>Nicht konfiguriert</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
+    <value>Nicht eingeloggt.</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Ursprünglicher Albumpfad z.B.</value>
+  </data>
+  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
+    <value>Pfad existiert nicht:</value>
+  </data>
+  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_" xml:space="preserve">
+    <value>RapidShare Account Benutzername oder Password ist leer.</value>
+  </data>
+  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed" xml:space="preserve">
+    <value>RapidShare Aktulisierung der Ordnerliste ist fehlgeschlagen</value>
+  </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Aktualisiere Autorisierung ist nicht unterstüzt</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>Ausgewählter Ordner:</value>
+  </data>
+  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
+    <value>SendSpace Registrierung</value>
+  </data>
+  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
+    <value>ShareX FTP Gerät</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
+    <value>Status: Eingeloggt</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Status: Login fehlgeschlagen</value>
+  </data>
+  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
+    <value>Status: Nicht eingeloggt</value>
+  </data>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Twitter Fehler:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Hochladepfad:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>Benutzer ID:</value>
+  </data>
+</root>
