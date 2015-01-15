@@ -586,4 +586,11 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>Eine neuere Version von {0} ist verfügbar.
+Möchtest du es herunterladen und installieren?</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Update ist verfügabr</value>
+  </data>
 </root>

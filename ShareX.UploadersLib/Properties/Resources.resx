@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -463,5 +462,8 @@ Created folders:</value>
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Root folder</value>
+  </data>
+  <data name="UploadersConfigForm_BoxListFolders_Authentication_required_" xml:space="preserve">
+    <value></value>
   </data>
 </root>

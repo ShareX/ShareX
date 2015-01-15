@@ -123,7 +123,7 @@
     <value>Bist du dir sicher, dass du {0} aus deiner Dropbox löschen willst?</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Authentication_required_" xml:space="preserve">
-    <value>Authentifizierung erforderlich</value>
+    <value>Authentifizierung erforderlich.</value>
   </data>
   <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
     <value>Autorisieren</value>
@@ -248,5 +248,14 @@ Hergestellte Ordner:</value>
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>Benutzer ID:</value>
+  </data>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Rootordner</value>
+  </data>
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
+    <value>Authentifizierung erfoderlich.</value>
+  </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Ordner abfragen...</value>
   </data>
 </root>

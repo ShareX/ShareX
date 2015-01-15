@@ -1,4 +1,4 @@
-﻿<root>
+<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -388,5 +388,23 @@ Bitte wähle einen anderen Hotkey oder beende das widersprüchliche Programm ode
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
     <value>Du kannst Dateien via Drag &amp; Drop in dieses Fenster verschieben</value>
+  </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Mitwirkende</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>Externe Bibliotheken</value>
+  </data>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Projektseite</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>Übersetzer</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Webseite</value>
   </data>
 </root>

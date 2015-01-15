@@ -735,4 +735,10 @@ Z.b.: wenn deine bucket bucket.example.com heißt dann wird die URL http://bucke
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>Dein Fotostream...</value>
   </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>Teilbaren Link erstellen</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>ausgewählter Ordner</value>
+  </data>
 </root>
