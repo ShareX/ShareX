@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>贡献者</value>
+    <value>开源贡献</value>
   </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>外部库</value>
@@ -129,7 +129,7 @@
     <value>项目页面</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
-    <value>翻译者</value>
+    <value>语言翻译</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>网站</value>
@@ -160,19 +160,19 @@
     <value>停止</value>
   </data>
   <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
-    <value>X:{0},   Y:{1},   宽度:{2},   身高:{3}</value>
+    <value>X: {0},   Y: {1},   宽度: {2},   身高: {3}</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>剩余时间:{0}秒（{1}%）总计:{2}</value>
+    <value>剩余时间: {0}秒 ({1}%) 总计: {2}</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0}是将要上载至{1}.您可以选择不同的目的地.</value>
+    <value>{0} 是将要上载至 {1}. 您可以选择不同的目的地.</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
     <value>请选择一个目的地.</value>
   </data>
   <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
-    <value>支持的变量:{0}和其他变量,   如{1}等.</value>
+    <value>支持的变量: {0} 和其他变量,   如 {1} 等.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>降
@@ -240,14 +240,14 @@
     <value>无法创建文件夹:</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
-    <value>"无法访问",   "{0}""文件.
+    <value>无法访问 "{0}" 文件.
 请以管理员权限运行ShareX以更改个人文件夹的路径.</value>
   </data>
   <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>光标位置（X,   Y）= {0},   {1}</value>
+    <value>光标位置 (X, Y) = {0}, {1}</value>
   </data>
   <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>近</value>
+    <value>关闭</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
     <value>启动屏幕的颜色选择器</value>
@@ -256,10 +256,10 @@
     <value>停止屏幕颜色选择器</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>下载FFmpeg的失败.</value>
+    <value>下载FFmpeg失败.</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg的成功下载.</value>
+    <value>下载FFmpeg成功.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
     <value>CLI视频编码器的文件不存在:</value>
@@ -271,14 +271,15 @@
     <value>单击托盘图标停止录制.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0}不存在.
+    <value>{0} 不存在.
+
 你想自动下载吗?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>编码...</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg的错误</value>
+    <value>FFmpeg错误</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>FFmpeg的视频和音频信号源都不能是"无".</value>
@@ -311,34 +312,34 @@
     <value>预览:</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>捕获后:{0}</value>
+    <value>捕获后: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>上传后:{0}</value>
+    <value>上传后: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>文件上传:{0}</value>
+    <value>文件上传: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>图片上传:{0}</value>
+    <value>图片上传: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>任务:{0}</value>
+    <value>任务: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>文字上传:{0}</value>
+    <value>文字上传: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL共享服务:{0}</value>
+    <value>URL分享: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>URL缩短:{0}</value>
+    <value>URL缩短: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>任务设置</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>对于任务设置{0}</value>
+    <value>对于任务设置 {0}</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
     <value>上传错误</value>
@@ -348,7 +349,7 @@
 {0}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>你确定你要上传{0}文件?</value>
+    <value>你确定你要上传 {0} 文件?</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>不要再显示此消息.</value>
@@ -366,10 +367,10 @@
     <value>URL从下载和上传</value>
   </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
-    <value>分享URL（{0}）</value>
+    <value>分享URL ({0})</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>缩短URL（{0}）</value>
+    <value>缩短URL ({0})</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>选择一个文件夹来保存</value>

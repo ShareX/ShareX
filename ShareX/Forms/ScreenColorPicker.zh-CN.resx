@@ -129,6 +129,6 @@
     <value>光标位置:</value>
   </data>
   <data name="lblScreenColorPickerTip.Text" xml:space="preserve">
-    <value>按下"Ctrl"键,   当这个窗口活动停止屏幕拾色器.</value>
+    <value>按下"Ctrl"键,   停止当前窗口的屏幕拾色器.</value>
   </data>
 </root>

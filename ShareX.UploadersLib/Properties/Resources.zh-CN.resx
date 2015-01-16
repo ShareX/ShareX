@@ -132,7 +132,7 @@
     <value>删除文件?</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>连接{0}</value>
+    <value>连接 {0}</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
     <value>ShareX FTP客户端</value>
@@ -162,7 +162,7 @@
     <value>根文件夹</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>鸣叫错误</value>
+    <value>Tweet error</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>箱刷新文件夹列表失败</value>
@@ -213,7 +213,7 @@
     <value>未配置</value>
   </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>登录为{0}.</value>
+    <value>登录为 {0}.</value>
   </data>
   <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
     <value>尚未登录.</value>
@@ -225,7 +225,7 @@
     <value>查询文件夹...</value>
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0}创建成功.</value>
+    <value>{0} 创建成功.</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>SendSpace注册</value>

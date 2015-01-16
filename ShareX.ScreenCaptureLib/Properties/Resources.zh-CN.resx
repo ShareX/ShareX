@@ -117,19 +117,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg的错误</value>
+    <value>FFmpeg错误</value>
   </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>浏览ffmpeg.exe</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>下载FFmpeg的失败.</value>
+    <value>下载FFmpeg失败.</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>成功下载FFmpeg的.</value>
+    <value>下载FFmpeg成功.</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>比特率:{0} K和</value>
+    <value>比特率: {0} K和</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>质量:</value>
@@ -139,10 +139,10 @@
 请使用FFmpeg的屏幕录制,而不是GIF.</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>按Ctrl:绘图模式░空间:全屏拍摄</value>
+    <value>按Ctrl:开启画笔░区域:全屏</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>按Ctrl:区域模式░移位:笔色░鼠标滚轮:钢笔大小░空间:全屏拍摄</value>
+    <value>按Ctrl:关闭画笔░点击左键:显示笔色░鼠标滚轮:调整钢笔大小░区域:全屏</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>矩形捕捉注释</value>
@@ -155,9 +155,9 @@
 W: {2} / H: {3}</value>
   </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X:{0}/ Y:{1}/ X2:{2}/ Y2:{3}
-宽度:{4} PX/高度:{5} PX
-距离:{6:0.00} PX/角度:{7:0.00}°</value>
+    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
+宽度: {4} PX/高度: {5} PX
+距离: {6:0.00} px / 角度: {7:0.00}°</value>
   </data>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>区域捕捉</value>

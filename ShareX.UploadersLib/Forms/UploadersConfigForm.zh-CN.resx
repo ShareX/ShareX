@@ -246,7 +246,7 @@
     <value>注册...</value>
   </data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
-    <value>添加专辑</value>
+    <value>添加相册</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
     <value>第2步:完成授权</value>
@@ -258,7 +258,7 @@
     <value>创建相册</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>删除专辑</value>
+    <value>删除相册</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>刷新专辑列表</value>
@@ -361,13 +361,13 @@
     <value>描述</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>称号</value>
+    <value>标题</value>
   </data>
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>描述</value>
   </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>称号</value>
+    <value>标题:</value>
   </data>
   <data name="chkEmailConfirm.Text" xml:space="preserve">
     <value>在发送前确认</value>
@@ -415,13 +415,13 @@
     <value>API密钥:</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
-    <value>快捷键:</value>
+    <value>Access key:</value>
   </data>
   <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
-    <value>斗名称:</value>
+    <value>Bucket name:</value>
   </data>
   <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>端点:</value>
+    <value>节点:</value>
   </data>
   <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
     <value>上传路径:</value>
@@ -442,7 +442,7 @@
     <value>选定的文件夹:</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>注意:您可以双击文件夹的名称进入该文件夹内.</value>
+    <value>注意: 您可以双击文件夹的名称进入该文件夹内.</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>API密钥:</value>
@@ -649,10 +649,10 @@
     <value>默认相册名称</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>新专辑的名称（必须为2至50个字符之间的有效字符为字母,数字,下划线（_）,连字符（ - ）,和空间）</value>
+    <value>新相册的名称（必须为2至50个字符之间的有效字符为字母,数字,下划线（_）,连字符（ - ）,和空间）</value>
   </data>
   <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
-    <value>家长专辑路径</value>
+    <value>根相册路径</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
     <value>验证码（从获得授权页面验证码）:</value>
@@ -700,7 +700,7 @@
     <value>用户密钥:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>注意:如果你有一个签名,那么你并不需要一个用户名/密码.</value>
+    <value>注意: 如果你有一个签名,那么你并不需要一个用户名/密码.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>密码:</value>
@@ -736,7 +736,7 @@
     <value>文字上传者</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
+    <value>URL分享</value>
   </data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>模板</value>

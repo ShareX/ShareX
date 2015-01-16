@@ -129,6 +129,6 @@
     <value>操作</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>图像效果 - 宽:{0},身高:{1},渲染时间:{2}ms</value>
+    <value>图像效果 - 宽: {0}, 高: {1}, 渲染时间: {2}ms</value>
   </data>
 </root>

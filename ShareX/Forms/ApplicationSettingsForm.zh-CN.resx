@@ -147,7 +147,7 @@
     <value>不显示图像的打印设置对话框</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>的次数,   如果上传失败,   重试:</value>
+    <value>如果上传失败重试次数:</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>不显示Windows打印对话框</value>
@@ -210,7 +210,7 @@
     <value>语言:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>注意:必须重新ShareX的个人文件夹更改生效.</value>
+    <value>注意: 必须重新ShareX的个人文件夹更改生效.</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX个人文件夹:</value>
@@ -243,10 +243,10 @@
     <value>0 - 25（0禁用）</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>帮助我们翻译ShareX到你的语言</value>
+    <value>使用你的语言帮助我们翻译ShareX</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>先进</value>
+    <value>高级设置</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>一般</value>
