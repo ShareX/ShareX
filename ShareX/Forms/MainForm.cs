@@ -211,7 +211,7 @@ namespace ShareX
 
                 foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey))
                 {
-                    sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings.Description);
+                    sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings);
                 }
             }
 
@@ -220,7 +220,7 @@ namespace ShareX
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.Description.Replace("&", "&&"));
+            ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.ToString().Replace("&", "&&"));
             if (hotkeySetting.HotkeyInfo.IsValidHotkey)
             {
                 tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo;
@@ -711,7 +711,7 @@ namespace ShareX
                 {
                     if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
                     {
-                        if (command.Parameter == hotkeySetting.TaskSettings.Description)
+                        if (command.Parameter == hotkeySetting.TaskSettings.ToString())
                         {
                             ExecuteJob(hotkeySetting.TaskSettings);
                             return true;

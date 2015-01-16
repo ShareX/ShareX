@@ -50,7 +50,7 @@ namespace ShareX
         {
             if (HotkeyInfo != null && TaskSettings != null)
             {
-                return string.Format("Hotkey: {0}{1}, Job: {2}", HotkeyInfo, ", Description: " + TaskSettings.Description, TaskSettings.Job);
+                return string.Format("Hotkey: {0}, Description: {1}, Job: {2}", HotkeyInfo, TaskSettings, TaskSettings.Job);
             }
 
             return string.Empty;

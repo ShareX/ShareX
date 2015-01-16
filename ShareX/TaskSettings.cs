@@ -40,27 +40,7 @@ namespace ShareX
 {
     public class TaskSettings
     {
-        private string description = string.Empty;
-
-        public string Description
-        {
-            get
-            {
-                return !string.IsNullOrEmpty(description) ? description : Job.GetLocalizedDescription();
-            }
-            set
-            {
-                description = value;
-            }
-        }
-
-        public bool IsDefaultDescription
-        {
-            get
-            {
-                return string.IsNullOrEmpty(description);
-            }
-        }
+        public string Description = string.Empty;
 
         public HotkeyType Job = HotkeyType.None;
 
@@ -128,7 +108,7 @@ namespace ShareX
 
         public override string ToString()
         {
-            return Description;
+            return !string.IsNullOrEmpty(Description) ? Description : Job.GetLocalizedDescription();
         }
 
         public bool IsUsingDefaultSettings
