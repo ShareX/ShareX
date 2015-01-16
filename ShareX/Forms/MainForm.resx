@@ -436,7 +436,7 @@
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Fullscreen</value>
   </data>
@@ -2311,7 +2311,7 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
@@ -2473,7 +2473,7 @@
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;chURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

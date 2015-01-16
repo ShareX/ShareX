@@ -313,7 +313,7 @@
     <value>226, 22</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS wechsler</value>
+    <value>DNS wechsler...</value>
   </data>
   <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
@@ -328,19 +328,19 @@
     <value>226, 22</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>Lineal</value>
+    <value>Lineal...</value>
   </data>
   <data name="tsmiFTPClient.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
   <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP Gerät:</value>
+    <value>FTP Gerät...</value>
   </data>
   <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Twittere Nachricht</value>
+    <value>Twittere Nachricht...</value>
   </data>
   <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
@@ -415,7 +415,7 @@
     <value>217, 20</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Einstellungen:</value>
+    <value>Einstellungen...</value>
   </data>
   <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
@@ -427,7 +427,7 @@
     <value>217, 20</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Hotkeyeinstellungen</value>
+    <value>Hotkeyeinstellungen...</value>
   </data>
   <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 6</value>
@@ -442,7 +442,7 @@
     <value>217, 20</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
-    <value>Chronik</value>
+    <value>Chronik...</value>
   </data>
   <data name="tsbImageHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
@@ -940,7 +940,7 @@
     <value>226, 22</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS wechsler</value>
+    <value>DNS wechsler...</value>
   </data>
   <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
@@ -955,19 +955,19 @@
     <value>226, 22</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>Lineal</value>
+    <value>Lineal...</value>
   </data>
   <data name="tsmiTrayFTPClient.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
   <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP Gerät:</value>
+    <value>FTP Gerät...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Twittere Nachricht</value>
+    <value>Twittere Nachricht...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
@@ -1042,7 +1042,7 @@
     <value>206, 22</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>Einstellungen:</value>
+    <value>Einstellungen...</value>
   </data>
   <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 22</value>
@@ -1054,7 +1054,7 @@
     <value>206, 22</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Hotkeyeinstellungen</value>
+    <value>Hotkeyeinstellungen...</value>
   </data>
   <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 6</value>
