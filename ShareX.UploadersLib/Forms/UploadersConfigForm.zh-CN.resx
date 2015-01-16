@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -740,5 +741,20 @@
   </data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>模板</value>
+  </data>
+  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
+    <value>刷新文件夹列表</value>
+  </data>
+  <data name="cbHubicPublishLink.Text" xml:space="preserve">
+    <value>创建共享链接（有效期30天）</value>
+  </data>
+  <data name="chHubicFolderName.Text" xml:space="preserve">
+    <value>文件夹名称</value>
+  </data>
+  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
+    <value>选定的文件夹:</value>
+  </data>
+  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
+    <value>注意: 您可以双击文件夹名称进入该文件夹内.</value>
   </data>
 </root>

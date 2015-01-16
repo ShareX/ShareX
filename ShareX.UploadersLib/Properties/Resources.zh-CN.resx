@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -254,5 +255,8 @@
   </data>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>用户身份:</value>
+  </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Hubic刷新文件夹列表失败</value>
   </data>
 </root>
