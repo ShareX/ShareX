@@ -744,4 +744,19 @@ Cela signifie qu'ils peuvent être perdus d'Amazon S3 à un certain point.</valu
   <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
     <value>Utiliser le stockage de redondance réduite</value>
   </data>
+  <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
+    <value>Mise à jour des dossiers</value>
+  </data>
+  <data name="cbHubicPublishLink.Text" xml:space="preserve">
+    <value>Création d'un lien (valide pour 30 jours)</value>
+  </data>
+  <data name="chHubicFolderName.Text" xml:space="preserve">
+    <value>Nom du dossiers</value>
+  </data>
+  <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
+    <value>Dossier sélectionné:</value>
+  </data>
+  <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
+    <value>Note: Vous pouvez double-cliquer sur le nom du répertoire pour aller dedans.</value>
+  </data>
 </root>

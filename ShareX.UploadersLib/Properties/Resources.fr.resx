@@ -255,4 +255,7 @@ Creation des répertoires:</value>
   <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
     <value>Chemin de mise en ligne:</value>
   </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Erreur de mise à jour des dossiers Hubic</value>
+  </data>
 </root>
