@@ -135,7 +135,7 @@
     <value>区分大小写</value>
   </data>
   <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
-    <value>当前文化</value>
+    <value>当前区域</value>
   </data>
   <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
     <value>不变的文化（英文）</value>

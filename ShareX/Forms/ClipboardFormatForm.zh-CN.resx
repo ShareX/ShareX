@@ -123,7 +123,7 @@
     <value>取消</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>行</value>
+    <value>确定</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>格式:</value>

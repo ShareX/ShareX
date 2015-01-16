@@ -120,13 +120,13 @@
     <value>当前区域性（{0}）</value>
   </data>
   <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
-    <value>历史:{0}</value>
+    <value>历史: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>过滤:{0}</value>
+    <value>过滤: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>总计:{0}</value>
+    <value>总计: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>复制</value>
