@@ -61,7 +61,11 @@ namespace ShareX
             }
             else
             {
-                tbDescription.Text = TaskSettings.Description;
+                if (!TaskSettings.IsDefaultDescription)
+                {
+                    tbDescription.Text = TaskSettings.Description;
+                }
+
                 cbUseDefaultAfterCaptureSettings.Checked = TaskSettings.UseDefaultAfterCaptureJob;
                 cbUseDefaultAfterUploadSettings.Checked = TaskSettings.UseDefaultAfterUploadJob;
                 cbUseDefaultDestinationSettings.Checked = TaskSettings.UseDefaultDestinations;
@@ -79,7 +83,8 @@ namespace ShareX
             AddEnumItemsContextMenu<HotkeyType>(x =>
             {
                 TaskSettings.Job = x;
-                tbDescription.Text = TaskSettings.Job.GetLocalizedDescription();
+                //tbDescription.Text = TaskSettings.Job.GetLocalizedDescription();
+                UpdateWindowTitle();
             }, cmsTask);
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskSettings.AfterUploadJob = TaskSettings.AfterUploadJob.Swap(x), cmsAfterUpload);

@@ -54,6 +54,14 @@ namespace ShareX
             }
         }
 
+        public bool IsDefaultDescription
+        {
+            get
+            {
+                return string.IsNullOrEmpty(description);
+            }
+        }
+
         public HotkeyType Job = HotkeyType.None;
 
         public bool UseDefaultAfterCaptureJob = true;
