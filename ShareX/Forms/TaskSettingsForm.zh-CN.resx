@@ -132,10 +132,10 @@
     <value>删除</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>捕获后...</value>
+    <value>截图后...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>后上传...</value>
+    <value>上传后...</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>目的地...</value>
@@ -174,31 +174,31 @@
     <value>捕捉透明窗口</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>如果剪贴板中包含的文件夹路径,   然后索引文件夹和上传索引</value>
+    <value>如果剪贴板中包含的文件夹路径, 则自动索引文件夹并上传索引.</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个URL,   然后使用URL共享服务共享</value>
+    <value>如果剪贴板中包含一个URL链接, 则使用URL共享服务分享.</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个URL,   然后使用URL缩短</value>
+    <value>如果剪贴板中包含一个URL链接, 则使用URL短址来缩短.</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>使用名称模式的文件上传过,   而不是实际的文件名</value>
+    <value>使用以上的文件名格式设置上传, 而不使用实际文件名上传.</value>
   </data>
   <data name="cbHistorySave.Text" xml:space="preserve">
     <value>保存任务信息历史</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>只适用效果区域捕捉</value>
+    <value>只适用效果区域截图</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>播放声音捕捉发生后</value>
+    <value>截图后声音提示</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>播放声音任务完成后</value>
+    <value>上传后声音提示</value>
   </data>
   <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>自动禁用Windows Aero的同时记录（航空降低录音性能）</value>
+    <value>截图时自动禁用Windows Aero功能（降低Aero对截图的影响）</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>固定时间:</value>
@@ -207,25 +207,25 @@
     <value>截图延迟:</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>显示"后捕捉的任务"捕获后窗口由</value>
+    <value>显示截图后的任务选择窗口</value>
   </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>显示光标在屏幕截图</value>
+    <value>在屏幕截图上显示光标（鼠标指针）</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
     <value>创建缩略图只有当图像尺寸大于缩略图大小</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>使用默认的"后拍摄"设置</value>
+    <value>使用默认的"截图后"设置</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>使用默认的"后上传"设置</value>
+    <value>使用默认的"上传后"设置</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>使用默认的"目的地"设置</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>看文件夹,   如果新的文件创建然后上传</value>
+    <value>监控文件夹, 如果发现新的文件自动上传.</value>
   </data>
   <data name="chActionsArgs.Text" xml:space="preserve">
     <value>参数</value>
@@ -240,7 +240,7 @@
     <value>路径</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个文件URL,   然后下载和上传</value>
+    <value>如果剪贴板中包含一个文件URL链接, 则自动下载并上传.</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>覆盖默认的自定义上传:</value>
@@ -255,13 +255,13 @@
     <value>开始录制后:</value>
   </data>
   <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
-    <value>秀"后上传"窗口任务完成后,   </value>
+    <value>上传后显示图片链接及代码</value>
   </data>
   <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>显示"以前上传"窗口上传之前动态改变目的地</value>
+    <value>上传前显示上传目的地</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>显示图像效果窗口捕获后</value>
+    <value>截图后显示图像效果窗口</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
     <value>使用主窗口中的任务设置行动</value>
@@ -324,10 +324,10 @@
     <value>JPEG质量:</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>名字模式捕捉或剪贴板上传:</value>
+    <value>截图或剪贴板的文件名设置:</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>名字模式为活动窗口捕捉:</value>
+    <value>文件夹监控自动上传的文件名设置:</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>预览:</value>
@@ -363,19 +363,19 @@
     <value>宽度:</value>
   </data>
   <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>图像大小限制使用"图像格式2":</value>
+    <value>超出图像大小后使用"图像格式2"设置图片:</value>
   </data>
   <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
     <value>kB 0 - 5000（0禁用）</value>
   </data>
   <data name="tpActions.Text" xml:space="preserve">
-    <value>行动</value>
+    <value>动作</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>先进</value>
+    <value>高级设置</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
-    <value>捕获</value>
+    <value>截图</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>影响</value>
@@ -390,10 +390,10 @@
     <value>索引</value>
   </data>
   <data name="tpRectangleAnnotate.Text" xml:space="preserve">
-    <value>矩形注释</value>
+    <value>屏幕画笔</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>区域捕捉</value>
+    <value>区域截图</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>屏幕记录</value>
@@ -414,18 +414,18 @@
     <value>监视文件夹</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>文件上传者</value>
+    <value>文件类上传</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>图片上传者</value>
+    <value>图片类上传</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>文字上传者</value>
+    <value>文字类上传</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL共享服务</value>
+    <value>URL分享</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
+    <value>URL分享服务</value>
   </data>
 </root>

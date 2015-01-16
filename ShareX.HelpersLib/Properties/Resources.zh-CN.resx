@@ -156,7 +156,7 @@
     <value>打印图像</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>上传图片主办</value>
+    <value>上传图片</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>URL复制到剪贴板</value>
@@ -174,22 +174,22 @@
     <value>缩短URL</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>剪贴板中的内容:文件（计数:{0}）</value>
+    <value>剪贴板中的内容:文件（计数: {0}）</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>剪贴板中的内容:图片（大小:{0} X {1}）</value>
+    <value>剪贴板中的内容:图片（尺寸大小: {0} X {1}）</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>剪贴板中的内容:文本（长度:{0}）</value>
+    <value>剪贴板中的内容:文本（长度: {0}）</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>剪贴板为空或包含未知数据.</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>青色:{0:0.0}%, 品红:{1:0.0}%, 黄色:{2:0.0}%, 键:{3:0.0}%</value>
+    <value>青色: {0:0.0}%, 品红: {1:0.0}%, 黄色: {2:0.0}%, 键: {3:0.0}%</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>近</value>
+    <value>关闭</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>浏览层叠样式表...</value>
@@ -204,24 +204,24 @@
     <value>DNS设置成功.重新启动是必需的.</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>设置DNS失败.</value>
+    <value>DNS设置失败.</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>设置DNS失败, 错误代码:</value>
+    <value>DNS设置失败, 错误代码:</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>手册</value>
+    <value>手动</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>进度:{0:0.0}%
-下载速度:{1:0.0} KB/s
-文件大小:{2:N0}/{3} N0 KB</value>
+    <value>进度: {0:0.0}%
+下载速度: {1:0.0} KB/s
+文件大小: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
-    <value>状态:{0}</value>
+    <value>状态: {0}</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
-    <value>文件名:{0}</value>
+    <value>文件名: {0}</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
     <value>等待.</value>
@@ -293,16 +293,16 @@
     <value>选择一个文件夹</value>
   </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
-    <value>八叉树量化16色</value>
+    <value>16色</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>八叉树量化256色（编码慢, 但质量更好）</value>
+    <value>256色（编码慢, 但质量更好）</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
     <value>默认情况下.NET编码（快速编码, 但质量一般）</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
-    <value>调色板量化灰度256色</value>
+    <value>灰度256色</value>
   </data>
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>选择文件路径</value>
@@ -335,7 +335,7 @@
     <value>从剪贴板内容查看器上传</value>
   </data>
   <data name="HotkeyType_DiamondRegion" xml:space="preserve">
-    <value>捕捉钻石区</value>
+    <value>正方形截图</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>拖放上传</value>
@@ -350,13 +350,13 @@
     <value>上传文件夹</value>
   </data>
   <data name="HotkeyType_FreeHandRegion" xml:space="preserve">
-    <value>捕捉写意区</value>
+    <value>写意截图</value>
   </data>
   <data name="HotkeyType_FTPClient" xml:space="preserve">
     <value>FTP客户端</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>哈希检查</value>
+    <value>哈希值(Hash)检查</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>图像效果</value>
@@ -371,7 +371,7 @@
     <value>无</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
-    <value>打开文件夹截图</value>
+    <value>打开截图文件夹</value>
   </data>
   <data name="HotkeyType_PolygonRegion" xml:space="preserve">
     <value>捕捉多边形区域</value>
@@ -380,10 +380,10 @@
     <value>捕捉整个屏幕</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR码</value>
+    <value>二维码</value>
   </data>
   <data name="HotkeyType_RectangleAnnotate" xml:space="preserve">
-    <value>捕捉矩形区域（注释）</value>
+    <value>捕捉矩形区域（画笔）</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>捕捉矩形区域（光）</value>
@@ -413,7 +413,7 @@
     <value>停止所有活动上传</value>
   </data>
   <data name="HotkeyType_TriangleRegion" xml:space="preserve">
-    <value>捕捉三角区</value>
+    <value>截图三角形</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>鸣叫消息</value>
@@ -422,10 +422,10 @@
     <value>从URL上传</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
-    <value>捕捉矩形区域（窗口）</value>
+    <value>截图矩形区域（窗口）</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>色调:{0:0.0}度, 饱和度:{1:0.0}%, 亮度:{2:0.0}%</value>
+    <value>色调: {0:0.0}度, 饱和度: {1:0.0}%, 亮度: {2:0.0}%</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>自定义图像上传</value>
@@ -464,19 +464,19 @@
     <value>打印</value>
   </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
-    <value>名称:{0}, 大小:{1}</value>
+    <value>名称: {0}, 大小: {1}</value>
   </data>
   <data name="ProxyMethod_Automatic" xml:space="preserve">
     <value>自动</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
-    <value>手册</value>
+    <value>手动</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>无</value>
   </data>
   <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
-    <value>上传{0}</value>
+    <value>上传 {0}</value>
   </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>计算机名称</value>
@@ -572,17 +572,17 @@
     <value>文件上传</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>较新版本{0}可用</value>
+    <value>较新版本 {0} 可用</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0}是最新</value>
+    <value>{0} 是最新</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>检查更新失败</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>有一个新版本{0}可用.
-你想下载并安装吗?</value>
+    <value>有一个新版本 {0} 可用.
+你要下载安装吗?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>更新可用</value>

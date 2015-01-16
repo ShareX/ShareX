@@ -120,7 +120,7 @@
     <value>显示器测试</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>近</value>
+    <value>关闭</value>
   </data>
   <data name="btnColorDialog.Text" xml:space="preserve">
     <value>颜色对话框...</value>

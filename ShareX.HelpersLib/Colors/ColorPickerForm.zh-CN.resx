@@ -135,7 +135,7 @@
     <value>十进制:</value>
   </data>
   <data name="lblKey.Text" xml:space="preserve">
-    <value>关键:</value>
+    <value>键:</value>
   </data>
   <data name="lblMagenta.Text" xml:space="preserve">
     <value>品红:</value>

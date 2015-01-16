@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chElapsed.Text" xml:space="preserve">
-    <value>过去</value>
+    <value>已用</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>文件名</value>
@@ -141,13 +141,13 @@
     <value>应用程序设置...</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
-    <value>历史...</value>
+    <value>历史记录...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>热键设置...</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>形象的历史...</value>
+    <value>历史图片...</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
     <value>截图文件夹...</value>
@@ -156,13 +156,13 @@
     <value>任务设置...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>经过捕获任务</value>
+    <value>截图后的动作</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>后上传任务</value>
+    <value>上传后的动作</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>捕获</value>
+    <value>屏幕截图</value>
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>调试</value>
@@ -177,7 +177,7 @@
     <value>上传</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
-    <value>工作流程</value>
+    <value>快捷动作</value>
   </data>
   <data name="tsmiAbout.Text" xml:space="preserve">
     <value>关于...</value>
@@ -207,7 +207,7 @@
     <value>文件路径</value>
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
-    <value>夹</value>
+    <value>文件夹</value>
   </data>
   <data name="tsmiCopyForumImage.Text" xml:space="preserve">
     <value>论坛（BB代码）的图像</value>
@@ -255,7 +255,7 @@
     <value>目标设置...</value>
   </data>
   <data name="tsmiDiamond.Text" xml:space="preserve">
-    <value>钻石</value>
+    <value>四边形</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>更换DNS...</value>
@@ -354,7 +354,7 @@
     <value>矩形</value>
   </data>
   <data name="tsmiRectangleAnnotate.Text" xml:space="preserve">
-    <value>矩形（注释）</value>
+    <value>矩形（画笔）</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
     <value>矩形（光）</value>
@@ -363,13 +363,13 @@
     <value>圆角矩形</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>所有者...</value>
+    <value>尺子...</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>屏幕颜色选择器...</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>屏幕录制（FFmpeg的）</value>
+    <value>屏幕录制（FFmpeg）</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
     <value>屏幕录制（GIF）</value>
@@ -390,7 +390,7 @@
     <value>显示错误</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
-    <value>显示QR代码...</value>
+    <value>显示二维码...</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
     <value>显示响应...</value>
@@ -420,7 +420,7 @@
     <value>关于...</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>捕获后</value>
+    <value>截图后</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>上传后</value>
@@ -429,10 +429,10 @@
     <value>应用程序设置...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
-    <value>自动捕捉...</value>
+    <value>自动截图...</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>捕获</value>
+    <value>截图</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>目的地</value>
@@ -441,19 +441,19 @@
     <value>目标设置...</value>
   </data>
   <data name="tsmiTrayDiamond.Text" xml:space="preserve">
-    <value>钻石</value>
+    <value>四边形</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS换...</value>
+    <value>DNS更换...</value>
   </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>捐...</value>
+    <value>捐赠...</value>
   </data>
   <data name="tsmiTrayEllipse.Text" xml:space="preserve">
     <value>椭圆形</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
-    <value>出口</value>
+    <value>退出</value>
   </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>文件上传者</value>
@@ -468,10 +468,10 @@
     <value>全屏</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>哈希检查...</value>
+    <value>哈希值(Hash)检查...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
-    <value>历史...</value>
+    <value>历史记录...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>热键设置...</value>
@@ -483,7 +483,7 @@
     <value>图像效果...</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
-    <value>形象的历史...</value>
+    <value>历史图片...</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>图片上传者</value>
@@ -510,7 +510,7 @@
     <value>矩形</value>
   </data>
   <data name="tsmiTrayRectangleAnnotate.Text" xml:space="preserve">
-    <value>矩形（注释）</value>
+    <value>矩形（画笔）</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
     <value>矩形（光）</value>
@@ -519,13 +519,13 @@
     <value>圆角矩形</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>所有者...</value>
+    <value>尺子...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>屏幕颜色选择器...</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>屏幕录制（FFmpeg的）</value>
+    <value>屏幕录制（FFmpeg）</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>屏幕录制（GIF）</value>
@@ -567,19 +567,19 @@
     <value>从URL上传...</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
-    <value>URL共享服务</value>
+    <value>URL共享</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
+    <value>URL共享</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>窗口</value>
   </data>
   <data name="tsmiTrayWindowRectangle.Text" xml:space="preserve">
-    <value>矩形（对象）</value>
+    <value>矩形（自动识别窗口）</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
-    <value>工作流程</value>
+    <value>快捷动作</value>
   </data>
   <data name="tsmiTriangle.Text" xml:space="preserve">
     <value>三角形</value>
@@ -606,15 +606,15 @@
     <value>从URL上传...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL共享服务</value>
+    <value>URL共享</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL shorteners</value>
+    <value>URL共享</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>窗口</value>
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
-    <value>矩形（对象）</value>
+    <value>矩形（自动识别窗口）</value>
   </data>
 </root>
