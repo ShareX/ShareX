@@ -198,4 +198,16 @@
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Az értékek 0-10 közt változhatnak, ahol 10 a legmagasabb minőség. A 3–6 közti értékekkel érdemes kísérletezni. Az alapértelmezés 3.</value>
   </data>
+  <data name="cbPreset.ToolTip" xml:space="preserve">
+    <value>Egy sablon olyan opciók gyűjteménye amik egy bizonyos enkódolási sebességet &amp; tömörítési arányt fognak eredményezni.
+Egy lassabb sablon jobb tömörítést eredmény (a tömörítés a fájlméretenkénti minőséget jelenti).
+Ez például annyit tesz, hogy ha van egy bizoynso fájlméret vagy bitrátád, jobb minőséget érhetsz el
+egy alacsonyabb sablonnal. Hasonlóképp, konstans minőségű dekódoláshoz elegendő egyszerűen
+csak egy alacsonyabb sablont választanod.</value>
+  </data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Megszabja a videó minőségét.
+0 a legjobb, 23 az alapértelmezett, 51 pedig a legrosszabb minőség.
+Növeld a fájlméretet a minőség növeléséhez.</value>
+  </data>
 </root>

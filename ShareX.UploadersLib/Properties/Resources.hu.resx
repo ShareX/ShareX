@@ -256,4 +256,7 @@ Létrehozott mappák:</value>
   <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
     <value>Felhasználó ID:</value>
   </data>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Hubic könyvtár frissítés sikertelen</value>
+  </data>
 </root>

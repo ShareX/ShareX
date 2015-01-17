@@ -390,4 +390,22 @@ Kattints a 'Nem'-re a jelenlegi feltöltés megszakításhoz és a képernyőmen
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
     <value>Válassz mappát</value>
   </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Hozzájárulások</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>Külső függvénykönyvtárak</value>
+  </data>
+  <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
+    <value>Problémák</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Projekt weboldal</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>Fordítók</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Weboldal</value>
+  </data>
 </root>
