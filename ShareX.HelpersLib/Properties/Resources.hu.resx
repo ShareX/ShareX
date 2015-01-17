@@ -587,4 +587,13 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Egyedi URL rövidítő</value>
   </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>Nem sikerült a könyvtár létrehozása, kérlek ellenőrizd az elérési út beállításaid.</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>Egy újabb verzió {0} elérhető.</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Frissítés elérhető</value>
+  </data>
 </root>
