@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -122,6 +123,12 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>Alkalmazás bezárása</value>
   </data>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>Összes másolása</value>
+  </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Naplófájl megnyitása</value>
   </data>
@@ -131,11 +138,5 @@
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Hiba
 Hiba 2</value>
-  </data>
-  <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Összes másolása</value>
   </data>
 </root>

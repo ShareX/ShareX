@@ -63,6 +63,9 @@ namespace ShareX
                     case SupportedLanguage.SimplifiedChinese:
                         cultureName = "zh-CN";
                         break;
+                    case SupportedLanguage.Hungarian:
+                        cultureName = "hu-HU";
+                        break;
                 }
 
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);

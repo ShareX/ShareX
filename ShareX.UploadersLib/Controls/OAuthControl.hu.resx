@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -125,14 +126,14 @@
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
     <value>Lépés 1: Felhatalmazó oldal megnyitása...</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Állapot</value>
-  </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Felhatalmazás frissítése</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Felhasználói fiók</value>
+  </data>
+  <data name="lblLoginStatus.Text" xml:space="preserve">
+    <value>Állapot</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Ellenőrző kód (a felhatalmazó oldalról szerezheted meg):</value>

@@ -978,7 +978,7 @@ namespace ShareX.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete this file?.
         /// </summary>

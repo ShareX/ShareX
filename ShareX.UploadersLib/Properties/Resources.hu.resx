@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -116,93 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Új fiók</value>
+  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
+    <value>Hitelesítési fájl tallózása...</value>
   </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Gyökér könyvtár</value>
+  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
+    <value>Nem létező útvonal:</value>
   </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Tweet hiba</value>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Létrehozandó mappa</value>
   </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Hiba</value>
-  </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>Felhatalmazás</value>
-  </data>
-  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Bejelentkezési hiba.</value>
-  </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Sikeres bejelentkezés.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
-    <value>Beállítva</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Helytelen felhatalmazás</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>Nincs beállítva</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Bejelentkezve a következőként: {0}.</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Nincs bejelentkezve.</value>
-  </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Mappák lekérdezése...</value>
-  </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>SendSpace regisztráció</value>
-  </data>
-  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Hiba: a válasz üres.</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>Csatlakozva!</value>
-  </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>Csatlakozva!
-Létrehozott mappák:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
-    <value>Letöltési útvonal:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
-    <value>Név:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
-    <value>Feltöltési útvonal:</value>
-  </data>
-  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
-    <value>Felhasználó ID:</value>
-  </data>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} sikeresen létrehozva.</value>
-  </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>A felhatalmazás frissítése nem támogatott.</value>
-  </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Kattints a frissítés gombra</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>Kiválasztott mappa:</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Helytelen eszköznév</value>
-  </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Szülő album útvonala pl.</value>
-  </data>
-  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
-    <value>Hitelesítés szükséges.</value>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
+    <value>Biztosan törölni szeretnéd "{0}"-t a Dropboxodból?</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
     <value>Fájl törlése?</value>
@@ -231,17 +156,17 @@ Létrehozott mappák:</value>
   <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
     <value>Állapot: Nincs bejelentkezve.</value>
   </data>
-  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
-    <value>Nem létező útvonal:</value>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Új fiók</value>
   </data>
-  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
-    <value>Létrehozandó mappa</value>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Gyökér könyvtár</value>
   </data>
-  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>Biztosan törölni szeretnéd "{0}"-t a Dropboxodból?</value>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Tweet hiba</value>
   </data>
-  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Hitelesítési fájl tallózása...</value>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Bo mappalista frissítés sikertelen</value>
   </data>
   <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_" xml:space="preserve">
     <value>RapidShare fiók felhasználónév vagy jelszó üres.</value>
@@ -252,7 +177,83 @@ Létrehozott mappák:</value>
   <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
     <value>Sikeres bejelentkezés, de a fiók információk lekérdezése sikertelen.</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Bo mappalista frissítés sikertelen</value>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Hiba</value>
+  </data>
+  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
+    <value>Felhatalmazás</value>
+  </data>
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
+    <value>Hitelesítés szükséges.</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Helytelen eszköznév</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Szülő album útvonala pl.</value>
+  </data>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>Kiválasztott mappa:</value>
+  </data>
+  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
+    <value>Bejelentkezési hiba.</value>
+  </data>
+  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
+    <value>Sikeres bejelentkezés.</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
+    <value>Kattints a frissítés gombra</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
+    <value>Beállítva</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Helytelen felhatalmazás</value>
+  </data>
+  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
+    <value>Nincs beállítva</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Bejelentkezve a következőként: {0}.</value>
+  </data>
+  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
+    <value>Nincs bejelentkezve.</value>
+  </data>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>A felhatalmazás frissítése nem támogatott.</value>
+  </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Mappák lekérdezése...</value>
+  </data>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>{0} sikeresen létrehozva.</value>
+  </data>
+  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
+    <value>SendSpace regisztráció</value>
+  </data>
+  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
+    <value>Hiba: a válasz üres.</value>
+  </data>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
+    <value>Csatlakozva!</value>
+  </data>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
+    <value>Csatlakozva!
+Létrehozott mappák:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
+    <value>Letöltési útvonal:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
+    <value>Név:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Feltöltési útvonal:</value>
+  </data>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>Felhasználó ID:</value>
   </data>
 </root>

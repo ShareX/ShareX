@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,14 +120,14 @@
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
     <value>Finomhangolások</value>
   </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
+    <value>Rajzok</value>
+  </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
     <value>Szűrők</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>Manipulációk</value>
-  </data>
-  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
-    <value>Rajzok</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
     <value>Kép effektek - Szélesség: {0}, Magasság: {1}, Renderelési idő: {2} ms</value>

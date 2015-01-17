@@ -69,6 +69,7 @@ Turkish: https://github.com/muratmoon
 German: https://github.com/Starbug2
 French: https://github.com/nwies
 Simplified Chinese: https://github.com/jiajiechan
+Hungarian: https://github.com/devBluestar
 
 {2}:
 

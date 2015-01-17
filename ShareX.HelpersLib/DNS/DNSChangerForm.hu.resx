@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -134,10 +135,10 @@
   <data name="lblAlternateDNS.Text" xml:space="preserve">
     <value>DNS szerver lecserélése:</value>
   </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Preferált DNS szerver:</value>
-  </data>
   <data name="lblDNS.Text" xml:space="preserve">
     <value>DNS szerverek:</value>
+  </data>
+  <data name="lblPreferredDNS.Text" xml:space="preserve">
+    <value>Preferált DNS szerver:</value>
   </data>
 </root>
