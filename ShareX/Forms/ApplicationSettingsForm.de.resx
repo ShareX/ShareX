@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -240,7 +241,7 @@
     <value>0 - 25 (0 deaktiviert)</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>Hilf uns ShareX in deine Sprache zu übersetzen:</value>
+    <value>Hilf uns ShareX in deine Sprache zu übersetzen!</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Erweitert</value>

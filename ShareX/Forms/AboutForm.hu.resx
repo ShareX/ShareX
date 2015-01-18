@@ -120,44 +120,4 @@
   <data name="lblOwners.Text" xml:space="preserve">
     <value>Fejlesztők:</value>
   </data>
-  <data name="rtbCredits.Text" xml:space="preserve">
-    <value>Támogatók:
-
-Mega, Gist and Jira támogatás: https://github.com/gpailler
-Weboldal: https://github.com/dmxt
-MediaCrush támogatás: https://github.com/SirCmpwn
-Amazon S3 és DreamObjects támogatás: https://github.com/alanedwardes
-Gfycat támogatás: https://github.com/Dinnerbone
-Copy támogatás: https://github.com/KamilKZ
-AdFly támogatás: https://github.com/LRNAB
-MediaFire támogatás: https://github.com/michalx2
-Pushbullet támogatás: https://github.com/BallisticLingonberries
-
-Fordítók:
-
-Török: https://github.com/muratmoon
-
-Külső függvénykönyvtárak:
-
-Greenshot Image Editor: https://bitbucket.org/greenshot/greenshot
-Json.NET: https://json.codeplex.com
-SSH.NET: https://sshnet.codeplex.com
-Icons: http://p.yusukekamiyamane.com
-ImageListView: https://code.google.com/p/imagelistview
-AviWriter: https://code.google.com/p/aforge
-FFmpeg: http://www.ffmpeg.org
-FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
-7-Zip: http://www.7-zip.org
-SevenZipSharp: https://sevenzipsharp.codeplex.com
-DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-QrCode.Net: https://qrcodenet.codeplex.com
-System.Net.FtpClient: https://netftp.codeplex.com
-
-Copyright © 2007 - 2014 ShareX Developers</value>
-  </data>
-  <data name="rtbShareXInfo.Text" xml:space="preserve">
-    <value>Weboldal: http://getsharex.com
-Projekt oldala: https://github.com/ShareX/ShareX
-Hibajelentések: https://github.com/ShareX/ShareX/issues</value>
-  </data>
 </root>

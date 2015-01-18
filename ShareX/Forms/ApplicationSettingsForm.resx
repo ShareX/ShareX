@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -120,13 +121,61 @@
   <data name="tcSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnLanguages.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLanguages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="cmsLanguages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
+  <data name="&gt;&gt;cmsLanguages.Name" xml:space="preserve">
+    <value>cmsLanguages</value>
+  </data>
+  <data name="&gt;&gt;cmsLanguages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnLanguages.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnLanguages.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnLanguages.Name" xml:space="preserve">
+    <value>btnLanguages</value>
+  </data>
+  <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="llTranslators.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="llTranslators.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 28</value>
+    <value>216, 28</value>
   </data>
   <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 13</value>
@@ -135,7 +184,7 @@
     <value>12</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>Help us translate ShareX to your language</value>
+    <value>Help us translate ShareX to your language!</value>
   </data>
   <data name="&gt;&gt;llTranslators.Name" xml:space="preserve">
     <value>llTranslators</value>
@@ -147,31 +196,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;llTranslators.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 21</value>
-  </data>
-  <data name="cbLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
-    <value>cbLanguage</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 8</value>
@@ -200,6 +231,9 @@
   <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbRememberMainFormPosition.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 224</value>
   </data>
@@ -226,6 +260,9 @@
   </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbSilentRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 80</value>
@@ -254,6 +291,9 @@
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbRememberMainFormSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 248</value>
   </data>
@@ -280,6 +320,9 @@
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 200</value>
@@ -308,6 +351,9 @@
   <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbTrayIconProgressEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 176</value>
   </data>
@@ -334,6 +380,9 @@
   </data>
   <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbShellContextMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 152</value>
@@ -362,6 +411,9 @@
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 104</value>
   </data>
@@ -389,6 +441,9 @@
   <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbShowTray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 56</value>
   </data>
@@ -415,6 +470,9 @@
   </data>
   <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbSendToMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 128</value>
@@ -470,6 +528,9 @@
   <data name="lblNotePersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblNotePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 80</value>
   </data>
@@ -493,6 +554,9 @@
   </data>
   <data name="&gt;&gt;lblNotePersonalFolderPath.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 204</value>
@@ -521,6 +585,9 @@
   <data name="lblPreviewPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPreviewPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 53</value>
   </data>
@@ -544,6 +611,9 @@
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>424, 23</value>
@@ -571,6 +641,9 @@
   </data>
   <data name="lblPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 8</value>
@@ -617,6 +690,9 @@
   <data name="&gt;&gt;txtPersonalFolderPath.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnBrowseCustomScreenshotsPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>424, 131</value>
   </data>
@@ -640,6 +716,9 @@
   </data>
   <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 48</value>
@@ -689,6 +768,9 @@
   <data name="cbUseCustomScreenshotsPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbUseCustomScreenshotsPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 108</value>
   </data>
@@ -716,6 +798,9 @@
   <data name="lblSaveImageSubFolderPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblSaveImageSubFolderPattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 164</value>
   </data>
@@ -742,6 +827,9 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 209</value>
@@ -795,7 +883,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>550, 370</value>
   </data>
   <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -839,6 +927,9 @@
   <data name="lblProxyMethod.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblProxyMethod.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 8</value>
   </data>
@@ -865,6 +956,9 @@
   </data>
   <data name="lblProxyHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblProxyHost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 56</value>
@@ -938,6 +1032,9 @@
   <data name="lblProxyPort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblProxyPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>245, 56</value>
   </data>
@@ -964,6 +1061,9 @@
   </data>
   <data name="lblProxyPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblProxyPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 152</value>
@@ -1012,6 +1112,9 @@
   </data>
   <data name="lblProxyUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblProxyUsername.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 104</value>
@@ -1065,7 +1168,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>550, 370</value>
   </data>
   <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1087,6 +1190,9 @@
   </data>
   <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblUploadLimit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 8</value>
@@ -1139,6 +1245,9 @@
   <data name="lblUploadLimitHint.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblUploadLimitHint.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblUploadLimitHint.Location" type="System.Drawing.Point, System.Drawing">
     <value>72, 28</value>
   </data>
@@ -1187,6 +1296,9 @@
   <data name="lblBufferSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblBufferSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblBufferSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 56</value>
   </data>
@@ -1218,7 +1330,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPerformance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 338</value>
+    <value>536, 338</value>
   </data>
   <data name="tpPerformance.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1237,6 +1349,9 @@
   </data>
   <data name="gbClipboardFormats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnClipboardFormatEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnClipboardFormatEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 16</value>
@@ -1262,6 +1377,9 @@
   <data name="&gt;&gt;btnClipboardFormatEdit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnClipboardFormatRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnClipboardFormatRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 16</value>
   </data>
@@ -1285,6 +1403,9 @@
   </data>
   <data name="&gt;&gt;btnClipboardFormatRemove.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnClipboardFormatAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnClipboardFormatAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
@@ -1377,7 +1498,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 338</value>
+    <value>536, 338</value>
   </data>
   <data name="tpUploadResults.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1399,6 +1520,9 @@
   </data>
   <data name="chkUseSecondaryUploaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 34</value>
@@ -1625,6 +1749,9 @@
   <data name="cbIfUploadFailRetryOnce.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbIfUploadFailRetryOnce.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 11</value>
   </data>
@@ -1680,7 +1807,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadRetry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 338</value>
+    <value>536, 338</value>
   </data>
   <data name="tpUploadRetry.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1707,7 +1834,7 @@
     <value>3, 3</value>
   </data>
   <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 364</value>
+    <value>544, 364</value>
   </data>
   <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1731,7 +1858,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>550, 370</value>
   </data>
   <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1753,6 +1880,9 @@
   </data>
   <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 64</value>
@@ -1781,6 +1911,9 @@
   <data name="cbDontShowPrintSettingDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbDontShowPrintSettingDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbDontShowPrintSettingDialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
@@ -1804,6 +1937,9 @@
   </data>
   <data name="&gt;&gt;cbDontShowPrintSettingDialog.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnShowImagePrintSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnShowImagePrintSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -1836,7 +1972,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>550, 370</value>
   </data>
   <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1863,7 +1999,7 @@
     <value>3, 3</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 364</value>
+    <value>544, 364</value>
   </data>
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1887,7 +2023,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>550, 370</value>
   </data>
   <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1929,7 +2065,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tttvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1956,7 +2092,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tttvMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

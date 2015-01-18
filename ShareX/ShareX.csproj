@@ -621,8 +621,6 @@
     <None Include="Resources\cross-button.png" />
     <None Include="Resources\tick-button.png" />
     <None Include="Resources\navigation-000-button.png" />
-    <None Include="Resources\tr.png" />
-    <None Include="Resources\au.png" />
     <None Include="Resources\application-block.png" />
     <None Include="Resources\edit-scale.png" />
     <None Include="Resources\drive-globe.png" />
@@ -742,6 +740,14 @@
     <None Include="Resources\TaskCompletedSound.wav" />
     <None Include="Resources\ErrorSound.wav" />
     <None Include="Resources\CaptureSound.wav" />
+    <None Include="Resources\tr.png" />
+    <None Include="Resources\au.png" />
+    <None Include="Resources\cn.png" />
+    <None Include="Resources\fr.png" />
+    <None Include="Resources\de.png" />
+    <None Include="Resources\hu.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\us.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

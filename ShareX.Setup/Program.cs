@@ -122,7 +122,7 @@ namespace ShareX.Setup
 
             CopyFiles(files, portableDir);
 
-            string[] languages = new string[] { "tr", "de", "fr", "zh-CN" };
+            string[] languages = new string[] { "tr", "de", "fr", "zh-CN", "hu" };
 
             foreach (string language in languages)
             {

@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
 
             if (Menu != null && mevent.Button == MouseButtons.Left)
             {
-                Menu.Show(this, MenuX0 ? 0 : mevent.X, this.Height);
+                Menu.Show(this, MenuX0 ? 0 : mevent.X, Height);
             }
         }
 

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -156,7 +157,7 @@
     <value>Généralités</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>Aidez nous à traduire ShareX dans votre langue</value>
+    <value>Aidez nous à traduire ShareX dans votre langue!</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Hôte:</value>
