@@ -778,17 +778,8 @@ namespace ShareX.UploadersLib
                 if (!string.IsNullOrEmpty(url))
                 {
                     Config.BoxOAuth2Info = oauth;
-                    //Helpers.LoadBrowserAsync(url);
+                    URLHelpers.OpenURL(url);
                     DebugHelper.WriteLine("BoxAuthOpen - Authorization URL is opened: " + url);
-
-                    // Workaround for authorization because we don't have callback url which starts with https://
-                    using (OAuthWebForm oauthForm = new OAuthWebForm(url, "https://www.box.com/home/"))
-                    {
-                        if (oauthForm.ShowDialog() == DialogResult.OK)
-                        {
-                            BoxAuthComplete(oauthForm.Code);
-                        }
-                    }
                 }
                 else
                 {

@@ -113,6 +113,8 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpUpaste, Resources.Upaste);
             AddIconToTab(tpYourls, Resources.Yourls);
 
+            tcFileUploaders.TabPages.Remove(tpHubic);
+
             ttlvMain.ImageList = uploadersImageList;
             ttlvMain.MainTabControl = tcUploaders;
             ttlvMain.FocusListView();
