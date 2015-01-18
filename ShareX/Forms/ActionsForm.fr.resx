@@ -135,7 +135,7 @@
     <value>Nom:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Extension du fichier de sortie: (Vide = utilise le même nom de fichier</value>
+    <value>Extension du fichier de sortie: (Vide = utilise le même nom de fichier)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Chemin du fichier:</value>
