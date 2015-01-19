@@ -1303,7 +1303,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click tray icon to start recording..
+        ///   Looks up a localized string similar to Click to start recording..
         /// </summary>
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
             get {
@@ -1312,7 +1312,7 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click tray icon to stop recording..
+        ///   Looks up a localized string similar to Click to stop recording..
         /// </summary>
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
             get {

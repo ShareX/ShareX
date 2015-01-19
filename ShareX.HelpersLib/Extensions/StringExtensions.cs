@@ -179,14 +179,26 @@ namespace ShareX.HelpersLib
             return new String(chars);
         }
 
-        public static string Truncate(this string str, int length, string endings = "...")
+        public static string Truncate(this string str, int maxLength)
         {
-            if (length < 1) return string.Empty;
-
-            if (length < str.Length)
+            if (!string.IsNullOrEmpty(str) && str.Length > maxLength)
             {
-                str = str.Left(length - endings.Length);
-                str += endings;
+                return str.Substring(0, maxLength);
+            }
+
+            return str;
+        }
+
+        public static string Truncate(this string str, int maxLength, string endings)
+        {
+            if (!string.IsNullOrEmpty(str) && str.Length > maxLength)
+            {
+                int length = maxLength - endings.Length;
+
+                if (length > 0)
+                {
+                    str = str.Substring(0, length) + endings;
+                }
             }
 
             return str;

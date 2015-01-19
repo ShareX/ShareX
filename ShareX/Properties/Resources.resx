@@ -476,13 +476,13 @@ Would you like to automatically download it?</value>
     <value>FFmpeg error</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Waiting...</value>
+    <value>Waiting...</value><comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Click tray icon to stop recording.</value>
-  </data>
+    <value>Click to stop recording.</value>
+  <comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment></data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Encoding...</value>
+    <value>Encoding...</value><comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
     <value>FFmpeg successfully downloaded.</value>
@@ -640,7 +640,7 @@ here</value>
 Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Click tray icon to start recording.</value>
+    <value>Click to start recording.</value><comment>Text must be equal or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
     <value>You can drag and drop files to this window.</value>

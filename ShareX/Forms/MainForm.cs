@@ -1925,7 +1925,7 @@ namespace ShareX
                     {
                         try
                         {
-                            string title = window.Text.Truncate(50);
+                            string title = window.Text.Truncate(50, "...");
                             ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
                             tsi.Tag = window;
                             tsi.Click += handlerWindow;
