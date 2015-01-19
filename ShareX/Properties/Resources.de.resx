@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -248,10 +249,10 @@ Bitte starte ShareX als Administrator um den persönlichen Ordnerpfad zu ändern
     <value>CLI video Verschlüsslerpfad  existiert nicht:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Klicke Taskleisteninfobereichssymbol um die Aufnahme zu starten</value>
+    <value>Klicke um die Aufnahme zu starten.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Klicke Taskleisteninfobereichssymbol um die Aufnahme zu stoppen</value>
+    <value>Klicke um die Aufnahme zu stoppen.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} existiert nicht.

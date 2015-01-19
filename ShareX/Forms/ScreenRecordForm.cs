@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -159,7 +160,8 @@ namespace ShareX
             IsRecording = true;
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
 
-            TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
+            string trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
+            TrayIcon.Text = trayText.Truncate(63);
             TrayIcon.Icon = Resources.control_record_yellow.ToIcon();
             TrayIcon.Visible = true;
 
@@ -209,7 +211,8 @@ namespace ShareX
 
                     if (regionForm != null && regionForm.RecordResetEvent != null)
                     {
-                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
+                        trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
+                        TrayIcon.Text = trayText.Truncate(63);
 
                         if (taskSettings.CaptureSettings.ScreenRecordAutoStart)
                         {
@@ -233,7 +236,8 @@ namespace ShareX
 
                     if (!abortRequested)
                     {
-                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                        trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                        TrayIcon.Text = trayText.Truncate(63);
                         TrayIcon.Icon = Resources.control_record.ToIcon();
 
                         if (regionForm != null)
@@ -248,6 +252,10 @@ namespace ShareX
                             abortRequested = true;
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
                 finally
                 {
@@ -273,7 +281,8 @@ namespace ShareX
                 {
                     if (!abortRequested && screenRecorder != null)
                     {
-                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
+                        trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
+                        TrayIcon.Text = trayText.Truncate(63);
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
 
                         string sourceFilePath = path;
