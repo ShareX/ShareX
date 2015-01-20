@@ -1,3 +1,3 @@
-### Website: [getsharex.com](http://getsharex.com)
+### Website: [getsharex.com](https://getsharex.com)
 
-[![](http://getsharex.com/img/ShareX_Screenshot.png)](http://getsharex.com)
+[![](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
