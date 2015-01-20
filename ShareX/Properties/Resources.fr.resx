@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -163,10 +164,10 @@ Merci démarrer ShareX en tant qu'Administrateur pour changer le chemin du répe
     <value>Encodeur video CLI n'existe pas:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Cliquer sur l'icone de la barre des tâches pour commencer l'enregistrement</value>
+    <value>Cliquer sur l'icône pour démarrer l'enregistrement.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Cliquer sur l'icone de la barre des tâches pour arrêter l'enregistrement</value>
+    <value>Cliquer sur l'icône pour arreter l'enregistrement.</value>
   </data>
   <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
     <value>Fermer</value>
