@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -289,9 +290,6 @@
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
     <value>Répertoire:</value>
-  </data>
-  <data name="tpFTP.Text" xml:space="preserve">
-    <value>FTP</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Obtenir la liste des périphériques</value>
