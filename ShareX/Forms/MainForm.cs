@@ -47,6 +47,7 @@ namespace ShareX
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
         private System.Threading.Timer updateTimer;
+        private static readonly object updateTimerLock = new object();
 
         public MainForm()
         {
@@ -58,10 +59,7 @@ namespace ShareX
         {
             LoadSettings();
             InitHotkeys();
-
-#if !DEBUG
-            AutoCheckUpdate();
-#endif
+            ConfigureAutoUpdate();
 
             IsReady = true;
 
@@ -493,13 +491,6 @@ namespace ShareX
             }
         }
 
-        private void tsmiClipboardFormat_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem tsmiClipboardFormat = sender as ToolStripMenuItem;
-            ClipboardFormat cf = tsmiClipboardFormat.Tag as ClipboardFormat;
-            uim.CopyCustomFormat(cf.Format);
-        }
-
         private void LoadSettings()
         {
             niTray.Icon = ShareXResources.Icon;
@@ -650,12 +641,25 @@ namespace ShareX
                 Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription());
         }
 
-        private void AutoCheckUpdate()
+        private void ConfigureAutoUpdate()
         {
-            if (Program.Settings.AutoCheckUpdate && updateTimer == null)
+#if !DEBUG
+            lock (updateTimerLock)
             {
-                updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, 0, 1000 * 60 * 60);
+                if (Program.Settings.AutoCheckUpdate)
+                {
+                    if (updateTimer == null)
+                    {
+                        updateTimer = new System.Threading.Timer(state => CheckUpdate(), null, 0, 1000 * 60 * 60);
+                    }
+                }
+                else if (updateTimer != null)
+                {
+                    updateTimer.Dispose();
+                    updateTimer = null;
+                }
             }
+#endif
         }
 
         private void CheckUpdate()
@@ -984,8 +988,8 @@ namespace ShareX
             AfterSettingsJobs();
             UpdateWorkflowsMenu();
             Program.Settings.SaveAsync(Program.ApplicationConfigFilePath);
-
             Program.ConfigureUploadersConfigWatcher();
+            ConfigureAutoUpdate();
         }
 
         private void tsbTaskSettings_Click(object sender, EventArgs e)
@@ -1325,6 +1329,13 @@ namespace ShareX
         private void tsmiCopyFolder_Click(object sender, EventArgs e)
         {
             uim.CopyFolder();
+        }
+
+        private void tsmiClipboardFormat_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem tsmiClipboardFormat = sender as ToolStripMenuItem;
+            ClipboardFormat cf = tsmiClipboardFormat.Tag as ClipboardFormat;
+            uim.CopyCustomFormat(cf.Format);
         }
 
         private void tsmiUploadSelectedFile_Click(object sender, EventArgs e)
