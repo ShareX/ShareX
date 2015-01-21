@@ -57,7 +57,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             //Hubic only accepts https callback URL
-            args.Add("redirect_uri", Links.URL_CALLBACK_SSL);
+            args.Add("redirect_uri", Links.URL_CALLBACK);
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("scope", Scope);
             args.Add("response_type", "code");
@@ -70,7 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("code", code);
             //Hubic only accepts https callback URL
-            args.Add("redirect_uri", Links.URL_CALLBACK_SSL);
+            args.Add("redirect_uri", Links.URL_CALLBACK);
             args.Add("grant_type", "authorization_code");
 
             string response = SendRequest(HttpMethod.POST, "https://api.hubic.com/oauth/token/", args, GetAuthHeaders("Basic"));
