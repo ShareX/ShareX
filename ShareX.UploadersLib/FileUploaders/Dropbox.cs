@@ -192,6 +192,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     if (createShareableURL)
                     {
+                        AllowReportProgress = false;
                         result.URL = CreateShareableLink(content.Path, urlType);
                     }
                     else
