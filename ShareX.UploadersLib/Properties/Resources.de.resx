@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -144,7 +145,7 @@
     <value>Ausgabe nicht gefunden</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Durchsuche für eine Keydatei</value>
+    <value>Durchsuche für eine Keydatei...</value>
   </data>
   <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
     <value>Status: Eingeloggt</value>

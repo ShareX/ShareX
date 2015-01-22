@@ -190,7 +190,7 @@ Soll ShareX neugestartet werden?</value>
 Bitte wähle einen anderen Hotkey oder beende das widersprüchliche Programm oder öffne ShareX noch einmal.</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Einen Hotkey auswählen</value>
+    <value>Einen Hotkey auswählen...</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>Willst du diese Datei sicher löschen?</value>
@@ -214,7 +214,7 @@ Bitte wähle einen anderen Hotkey oder beende das widersprüchliche Programm ode
     <value>Zeige Menü</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Du kannst Arbeitsschritte aus den Hotkeyeinstellungen hinzufügen</value>
+    <value>Du kannst Arbeitsschritte aus den Hotkeyeinstellungen hinzufügen...</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Fehler</value>
@@ -260,7 +260,7 @@ Bitte starte ShareX als Administrator um den persönlichen Ordnerpfad zu ändern
 Möchtest du es automatisch herunterladen?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Verschlüssele </value>
+    <value>Verschlüssele...</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg Fehler</value>

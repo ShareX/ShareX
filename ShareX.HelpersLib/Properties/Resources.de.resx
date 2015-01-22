@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,7 +124,7 @@
     <value>Dateipfad ohne Erweiterung + "Output Dateiname Erweiterung"</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Ein Bildeffekt / Wasserzeichen hinzufügen</value>
+    <value>Einen Bildeffekt / Wasserzeichen hinzufügen</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Bild im Editor öffnen</value>
@@ -192,10 +193,10 @@
     <value>Schließen</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Nach CSS durchsuchen</value>
+    <value>Nach CSS durchsuchen...</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Nach Ordner durchsuchen</value>
+    <value>Nach Ordner durchsuchen...</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
     <value>DNS erfolgreich gesetzt.</value>
