@@ -142,7 +142,7 @@
     <value>Öffnen...</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Bilddruckeinstellungen</value>
+    <value>Bilddruckeinstellungen...</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Zeige nicht das Bilddruckeinstellungen Fenster</value>

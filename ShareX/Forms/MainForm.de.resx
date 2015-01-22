@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -235,7 +236,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
-    <value>Autoaufnahme:</value>
+    <value>Autoaufnahme...</value>
   </data>
   <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
@@ -247,31 +248,31 @@
     <value>241, 22</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
-    <value>Lade Datei hoch</value>
+    <value>Lade Datei hoch...</value>
   </data>
   <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Lade Ordner hoch</value>
+    <value>Lade Ordner hoch...</value>
   </data>
   <data name="tsmiUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>Aus Zwischenablage hochladen</value>
+    <value>Aus Zwischenablage hochladen...</value>
   </data>
   <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Hochladen von URL</value>
+    <value>Hochladen von URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Drag &amp; Drop hochladen</value>
+    <value>Drag &amp;&amp; Drop hochladen...</value>
   </data>
   <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
@@ -403,7 +404,7 @@
     <value>165, 22</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Zieleinstellungen</value>
+    <value>Zieleinstellungen...</value>
   </data>
   <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
@@ -454,7 +455,7 @@
     <value>181, 22</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
-    <value>Debug Protokoll</value>
+    <value>Debug Protokoll...</value>
   </data>
   <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
@@ -694,7 +695,7 @@
     <value>178, 22</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>Bild berarbeiten</value>
+    <value>Bild berarbeiten...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -862,7 +863,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
-    <value>Autoaufnahme:</value>
+    <value>Autoaufnahme...</value>
   </data>
   <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 22</value>
@@ -874,31 +875,31 @@
     <value>241, 22</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
-    <value>Lade Datei hoch</value>
+    <value>Lade Datei hoch...</value>
   </data>
   <data name="tsmiTrayUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Lade Ordner hoch</value>
+    <value>Lade Ordner hoch...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
-    <value>Aus Zwischenablage hochladen</value>
+    <value>Aus Zwischenablage hochladen...</value>
   </data>
   <data name="tsmiTrayUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Hochladen von URL</value>
+    <value>Hochladen von URL...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Drag &amp; Drop hochladen</value>
+    <value>Drag &amp;&amp; Drop hochladen...</value>
   </data>
   <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 22</value>
@@ -1030,7 +1031,7 @@
     <value>165, 22</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>Zieleinstellungen</value>
+    <value>Zieleinstellungen...</value>
   </data>
   <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 22</value>
