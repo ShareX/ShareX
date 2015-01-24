@@ -182,6 +182,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to X: {0}, Y: {1}
+        ///R: {2}, G: {3}, B: {4}.
+        /// </summary>
+        internal static string RectangleRegion_GetColorPickerText {
+            get {
+                return ResourceManager.GetString("RectangleRegion_GetColorPickerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to X: {0} / Y: {1} / X2: {2} / Y2: {3}
         ///Width: {4} px / Height: {5} px
         ///Distance: {6:0.00} px / Angle: {7:0.00}°.
