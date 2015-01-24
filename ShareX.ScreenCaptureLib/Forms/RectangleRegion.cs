@@ -238,6 +238,12 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            if (OneClickMode && Config.ShowInfo)
+            {
+                ImageHelpers.DrawTextWithOutline(g, GetColorPickerText(), new PointF(InputManager.MousePosition0Based.X + 5, InputManager.MousePosition0Based.Y + 5),
+                    textFont, Color.White, Color.Black);
+            }
+
             if (Config.ShowMagnifier)
             {
                 DrawMagnifier(g);
@@ -259,6 +265,13 @@ namespace ShareX.ScreenCaptureLib
         private string GetAreaText(Rectangle area)
         {
             return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
+        }
+
+        private string GetColorPickerText()
+        {
+            Point mousePos = InputManager.MousePosition0Based;
+            Color color = ((Bitmap)SurfaceImage).GetPixel(mousePos.X, mousePos.Y);
+            return string.Format(Resources.RectangleRegion_GetColorPickerText, mousePos.X, mousePos.Y, color.R, color.G, color.B);
         }
 
         private void DrawCrosshair(Graphics g)
@@ -301,7 +314,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle currentScreenRect0Based = CaptureHelpers.ScreenToClient(Screen.FromPoint(InputManager.MousePosition).Bounds);
             int offsetX = RulerMode ? 20 : 10, offsetY = RulerMode ? 20 : 10;
 
-            if (Config.ShowInfo && AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos)
+            if (Config.ShowInfo && ((AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos) || OneClickMode))
             {
                 offsetY = RulerMode ? 85 : 50;
             }
