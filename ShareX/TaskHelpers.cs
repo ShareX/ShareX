@@ -503,14 +503,19 @@ namespace ShareX
             }
         }
 
-        public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
+        public static void OpenScreenColorPicker()
+        {
+            new ScreenColorPicker().Show();
+        }
+
+        public static void OpenQuickScreenColorPicker(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.AdvancedSettings.QuickScreenColorPicker)
-            {
-                PointInfo pointInfo = SelectPointColor();
+            PointInfo pointInfo = SelectPointColor();
 
+            if (pointInfo != null)
+            {
                 string text;
 
                 switch (taskSettings.AdvancedSettings.ScreenColorPickerFormat)
@@ -525,10 +530,12 @@ namespace ShareX
                 }
 
                 ClipboardHelpers.CopyText(text);
-            }
-            else
-            {
-                new ScreenColorPicker().Show();
+
+                if (Program.MainForm.niTray.Visible)
+                {
+                    Program.MainForm.niTray.Tag = null;
+                    Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
+                }
             }
         }
 

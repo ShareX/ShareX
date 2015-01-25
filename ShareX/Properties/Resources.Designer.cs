@@ -1406,6 +1406,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied to clipboard: {0}.
+        /// </summary>
+        public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tweet successfully sent..
         /// </summary>
         public static string TaskHelpers_TweetMessage_Tweet_successfully_sent_ {

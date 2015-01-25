@@ -267,13 +267,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (OneClickMode)
             {
-                CurrentPosition = InputManager.MousePosition0Based;
-
-                if (Config.ShowInfo)
-                {
-                    ImageHelpers.DrawTextWithOutline(g, GetColorPickerText(), new PointF(InputManager.MousePosition0Based.X + 5, InputManager.MousePosition0Based.Y + 5),
-                        textFont, Color.White, Color.Black);
-                }
+                DrawScreenColorPickerInfo(g);
             }
 
             if (Config.ShowMagnifier)
@@ -299,10 +293,25 @@ namespace ShareX.ScreenCaptureLib
             return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
-        private string GetColorPickerText()
+        private void DrawScreenColorPickerInfo(Graphics g)
         {
-            Color color = CurrentColor;
-            return string.Format(Resources.RectangleRegion_GetColorPickerText, CurrentPosition.X, CurrentPosition.Y, color.R, color.G, color.B);
+            CurrentPosition = InputManager.MousePosition0Based;
+
+            if (Config.ShowInfo)
+            {
+                Color color = CurrentColor;
+
+                using (Brush brush = new SolidBrush(color))
+                {
+                    Rectangle colorBox = new Rectangle(CurrentPosition.X + 5, CurrentPosition.Y + 5, 20, 20);
+                    g.FillRectangle(brush, colorBox);
+                    g.DrawRectangleProper(Pens.Black, colorBox);
+                }
+
+                string infoText = string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, CurrentPosition.X, CurrentPosition.Y);
+
+                ImageHelpers.DrawTextWithOutline(g, infoText, new PointF(CurrentPosition.X + 25, CurrentPosition.Y + 5), textFont, Color.White, Color.Black);
+            }
         }
 
         private void DrawCrosshair(Graphics g)
