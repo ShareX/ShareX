@@ -37,12 +37,34 @@ namespace ShareX.ScreenCaptureLib
     {
         public AreaManager AreaManager { get; private set; }
 
-        // For screen color picker
-        public bool OneClickMode { get; set; }
-        public Point OneClickPosition { get; set; }
+        #region Screen color picker
 
-        // For screen ruler
+        public bool OneClickMode { get; set; }
+
+        private Bitmap bmpSurfaceImage;
+
+        public Point CurrentPosition { get; set; }
+
+        public Color CurrentColor
+        {
+            get
+            {
+                if (bmpSurfaceImage != null && !CurrentPosition.IsEmpty)
+                {
+                    return bmpSurfaceImage.GetPixel(CurrentPosition.X, CurrentPosition.Y);
+                }
+
+                return Color.Empty;
+            }
+        }
+
+        #endregion Screen color picker
+
+        #region Screen ruler
+
         public bool RulerMode { get; set; }
+
+        #endregion Screen ruler
 
         public RectangleRegion()
         {
@@ -56,7 +78,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (OneClickMode && e.Button == MouseButtons.Left)
             {
-                OneClickPosition = e.Location;
+                CurrentPosition = e.Location;
                 Close(SurfaceResult.Region);
             }
         }
@@ -146,6 +168,11 @@ namespace ShareX.ScreenCaptureLib
                         AreaManager.Windows = wla.GetWindowsRectangleList();
                     });
                 }
+            }
+
+            if (OneClickMode)
+            {
+                bmpSurfaceImage = new Bitmap(SurfaceImage);
             }
         }
 
@@ -238,10 +265,15 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (OneClickMode && Config.ShowInfo)
+            if (OneClickMode)
             {
-                ImageHelpers.DrawTextWithOutline(g, GetColorPickerText(), new PointF(InputManager.MousePosition0Based.X + 5, InputManager.MousePosition0Based.Y + 5),
-                    textFont, Color.White, Color.Black);
+                CurrentPosition = InputManager.MousePosition0Based;
+
+                if (Config.ShowInfo)
+                {
+                    ImageHelpers.DrawTextWithOutline(g, GetColorPickerText(), new PointF(InputManager.MousePosition0Based.X + 5, InputManager.MousePosition0Based.Y + 5),
+                        textFont, Color.White, Color.Black);
+                }
             }
 
             if (Config.ShowMagnifier)
@@ -269,9 +301,8 @@ namespace ShareX.ScreenCaptureLib
 
         private string GetColorPickerText()
         {
-            Point mousePos = InputManager.MousePosition0Based;
-            Color color = ((Bitmap)SurfaceImage).GetPixel(mousePos.X, mousePos.Y);
-            return string.Format(Resources.RectangleRegion_GetColorPickerText, mousePos.X, mousePos.Y, color.R, color.G, color.B);
+            Color color = CurrentColor;
+            return string.Format(Resources.RectangleRegion_GetColorPickerText, CurrentPosition.X, CurrentPosition.Y, color.R, color.G, color.B);
         }
 
         private void DrawCrosshair(Graphics g)
@@ -433,6 +464,16 @@ namespace ShareX.ScreenCaptureLib
         protected virtual void AddShapePath(GraphicsPath graphicsPath, Rectangle rect)
         {
             graphicsPath.AddRectangle(rect);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (bmpSurfaceImage != null)
+            {
+                bmpSurfaceImage.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }

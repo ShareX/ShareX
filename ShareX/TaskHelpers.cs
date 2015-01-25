@@ -363,8 +363,8 @@ namespace ShareX
                 if (surface.Result == SurfaceResult.Region)
                 {
                     PointInfo pointInfo = new PointInfo();
-                    pointInfo.Position = CaptureHelpers.ClientToScreen(surface.OneClickPosition);
-                    pointInfo.Color = ((Bitmap)surface.SurfaceImage).GetPixel(surface.OneClickPosition.X, surface.OneClickPosition.Y);
+                    pointInfo.Position = CaptureHelpers.ClientToScreen(surface.CurrentPosition);
+                    pointInfo.Color = surface.CurrentColor;
                     return pointInfo;
                 }
             }
