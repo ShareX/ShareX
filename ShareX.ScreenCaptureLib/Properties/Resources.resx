@@ -170,5 +170,5 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
     <value>X: {0}, Y: {1}
 R: {2}, G: {3}, B: {4}</value>
-  </data>
+  <comment>@Invariant</comment></data>
 </root>
