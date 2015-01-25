@@ -346,16 +346,10 @@ namespace ShareX
             return false;
         }
 
-        public static PointInfo SelectPointColor(SurfaceOptions surfaceOptions = null)
+        public static PointInfo SelectPointColor()
         {
-            if (surfaceOptions == null)
-            {
-                surfaceOptions = new SurfaceOptions();
-            }
-
             using (RectangleRegion surface = new RectangleRegion())
             {
-                surface.Config = surfaceOptions;
                 surface.OneClickMode = true;
                 surface.Prepare();
                 surface.ShowDialog();
@@ -509,9 +503,33 @@ namespace ShareX
             }
         }
 
-        public static void OpenScreenColorPicker()
+        public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
         {
-            new ScreenColorPicker().Show();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.AdvancedSettings.QuickScreenColorPicker)
+            {
+                PointInfo pointInfo = SelectPointColor();
+
+                string text;
+
+                switch (taskSettings.AdvancedSettings.ScreenColorPickerFormat)
+                {
+                    default:
+                    case ColorPickerFormat.RGB:
+                        text = string.Format("{0}, {1}, {2}", pointInfo.Color.R, pointInfo.Color.G, pointInfo.Color.B);
+                        break;
+                    case ColorPickerFormat.Hexadecimal:
+                        text = ColorHelpers.ColorToHex(pointInfo.Color, ColorFormat.RGB);
+                        break;
+                }
+
+                ClipboardHelpers.CopyText(text);
+            }
+            else
+            {
+                new ScreenColorPicker().Show();
+            }
         }
 
         public static void OpenRuler()

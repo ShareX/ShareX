@@ -1539,7 +1539,7 @@ namespace ShareX
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
                 case HotkeyType.ScreenColorPicker:
-                    TaskHelpers.OpenScreenColorPicker();
+                    TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
                     break;
                 case HotkeyType.Ruler:
                     TaskHelpers.OpenRuler();
