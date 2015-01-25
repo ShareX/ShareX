@@ -205,4 +205,9 @@ namespace ShareX
     {
         Show, Hide, Automatic
     }
+
+    public enum ColorPickerFormat
+    {
+        RGB, Hexadecimal
+    }
 }
