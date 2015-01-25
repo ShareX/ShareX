@@ -878,6 +878,11 @@ namespace ShareX
             TaskHelpers.OpenScreenColorPicker();
         }
 
+        private void tsmiQuickScreenColorPicker_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQuickScreenColorPicker();
+        }
+
         private void tsmiRuler_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenRuler();
@@ -1539,7 +1544,7 @@ namespace ShareX
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
                 case HotkeyType.ScreenColorPicker:
-                    TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
+                    TaskHelpers.OpenScreenColorPicker();
                     break;
                 case HotkeyType.Ruler:
                     TaskHelpers.OpenRuler();
