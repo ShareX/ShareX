@@ -516,18 +516,12 @@ namespace ShareX
 
             if (pointInfo != null)
             {
-                string text;
+                string text = taskSettings.AdvancedSettings.ScreenColorPickerFormat;
 
-                switch (taskSettings.AdvancedSettings.ScreenColorPickerFormat)
-                {
-                    default:
-                    case ColorPickerFormat.RGB:
-                        text = string.Format("{0}, {1}, {2}", pointInfo.Color.R, pointInfo.Color.G, pointInfo.Color.B);
-                        break;
-                    case ColorPickerFormat.Hexadecimal:
-                        text = ColorHelpers.ColorToHex(pointInfo.Color);
-                        break;
-                }
+                text = text.Replace("$r", pointInfo.Color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$g", pointInfo.Color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$b", pointInfo.Color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$hex", ColorHelpers.ColorToHex(pointInfo.Color), StringComparison.InvariantCultureIgnoreCase);
 
                 ClipboardHelpers.CopyText(text);
 
