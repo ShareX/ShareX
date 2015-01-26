@@ -873,19 +873,14 @@ namespace ShareX
             TaskHelpers.OpenDropWindow();
         }
 
-        private void tsmiCursorHelper_Click(object sender, EventArgs e)
+        private void tsmiColorPicker_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenColorPicker();
+        }
+
+        private void tsmiScreenColorPicker_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenScreenColorPicker();
-        }
-
-        private void tsmiQuickScreenColorPicker_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQuickScreenColorPicker();
-        }
-
-        private void tsmiRuler_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenRuler();
         }
 
         private void tsmiFTPClient_Click(object sender, EventArgs e)
@@ -896,6 +891,11 @@ namespace ShareX
         private void tsmiHashCheck_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiRuler_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenRuler();
         }
 
         private void tsmiIndexFolder_Click(object sender, EventArgs e)
@@ -1542,6 +1542,9 @@ namespace ShareX
                     break;
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
+                    break;
+                case HotkeyType.ColorPicker:
+                    TaskHelpers.OpenColorPicker();
                     break;
                 case HotkeyType.ScreenColorPicker:
                     TaskHelpers.OpenScreenColorPicker();

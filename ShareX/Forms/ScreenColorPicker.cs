@@ -45,7 +45,7 @@ namespace ShareX
             colorPicker.DrawCrosshair = true;
             colorTimer.Tick += colorTimer_Tick;
 
-            UpdateControls(true);
+            UpdateControls(false);
 
             foreach (Control control in Controls)
             {

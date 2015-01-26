@@ -152,6 +152,7 @@ namespace ShareX
         AutoCapture,
         StartAutoCapture,
         OpenScreenshotsFolder,
+        ColorPicker,
         ScreenColorPicker,
         Ruler,
         FTPClient,

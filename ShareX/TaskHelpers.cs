@@ -503,12 +503,12 @@ namespace ShareX
             }
         }
 
-        public static void OpenScreenColorPicker()
+        public static void OpenColorPicker()
         {
             new ScreenColorPicker().Show();
         }
 
-        public static void OpenQuickScreenColorPicker(TaskSettings taskSettings = null)
+        public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -525,7 +525,7 @@ namespace ShareX
                         text = string.Format("{0}, {1}, {2}", pointInfo.Color.R, pointInfo.Color.G, pointInfo.Color.B);
                         break;
                     case ColorPickerFormat.Hexadecimal:
-                        text = ColorHelpers.ColorToHex(pointInfo.Color, ColorFormat.RGB);
+                        text = ColorHelpers.ColorToHex(pointInfo.Color);
                         break;
                 }
 
