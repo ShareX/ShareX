@@ -69,15 +69,15 @@
             this.tsmiUploadDragDrop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsddbWorkflows = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbTools = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiQuickScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,14 +187,15 @@
             this.tsmiTrayUploadDragDrop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayWorkflows = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTools = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
@@ -552,15 +553,15 @@
             // tsddbTools
             // 
             this.tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiColorPicker,
             this.tsmiScreenColorPicker,
-            this.tsmiQuickScreenColorPicker,
             this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiHashCheck,
             this.tsmiDNSChanger,
             this.tsmiQRCode,
-            this.tsmiIndexFolder,
             this.tsmiRuler,
+            this.tsmiIndexFolder,
             this.tsmiFTPClient,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
@@ -568,19 +569,19 @@
             resources.ApplyResources(this.tsddbTools, "tsddbTools");
             this.tsddbTools.Name = "tsddbTools";
             // 
+            // tsmiColorPicker
+            // 
+            this.tsmiColorPicker.Image = global::ShareX.Properties.Resources.color;
+            this.tsmiColorPicker.Name = "tsmiColorPicker";
+            resources.ApplyResources(this.tsmiColorPicker, "tsmiColorPicker");
+            this.tsmiColorPicker.Click += new System.EventHandler(this.tsmiColorPicker_Click);
+            // 
             // tsmiScreenColorPicker
             // 
-            this.tsmiScreenColorPicker.Image = global::ShareX.Properties.Resources.color;
+            this.tsmiScreenColorPicker.Image = global::ShareX.Properties.Resources.pipette;
             this.tsmiScreenColorPicker.Name = "tsmiScreenColorPicker";
             resources.ApplyResources(this.tsmiScreenColorPicker, "tsmiScreenColorPicker");
-            this.tsmiScreenColorPicker.Click += new System.EventHandler(this.tsmiCursorHelper_Click);
-            // 
-            // tsmiQuickScreenColorPicker
-            // 
-            this.tsmiQuickScreenColorPicker.Image = global::ShareX.Properties.Resources.pipette;
-            this.tsmiQuickScreenColorPicker.Name = "tsmiQuickScreenColorPicker";
-            resources.ApplyResources(this.tsmiQuickScreenColorPicker, "tsmiQuickScreenColorPicker");
-            this.tsmiQuickScreenColorPicker.Click += new System.EventHandler(this.tsmiQuickScreenColorPicker_Click);
+            this.tsmiScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
             // tsmiImageEditor
             // 
@@ -617,19 +618,19 @@
             resources.ApplyResources(this.tsmiQRCode, "tsmiQRCode");
             this.tsmiQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
-            // tsmiIndexFolder
-            // 
-            this.tsmiIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
-            this.tsmiIndexFolder.Name = "tsmiIndexFolder";
-            resources.ApplyResources(this.tsmiIndexFolder, "tsmiIndexFolder");
-            this.tsmiIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
-            // 
             // tsmiRuler
             // 
             this.tsmiRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
             this.tsmiRuler.Name = "tsmiRuler";
             resources.ApplyResources(this.tsmiRuler, "tsmiRuler");
             this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
+            // 
+            // tsmiIndexFolder
+            // 
+            this.tsmiIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
+            this.tsmiIndexFolder.Name = "tsmiIndexFolder";
+            resources.ApplyResources(this.tsmiIndexFolder, "tsmiIndexFolder");
+            this.tsmiIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
             // tsmiFTPClient
             // 
@@ -1440,14 +1441,15 @@
             // tsmiTrayTools
             // 
             this.tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTrayColorPicker,
             this.tsmiTrayScreenColorPicker,
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayHashCheck,
             this.tsmiTrayDNSChanger,
             this.tsmiTrayQRCode,
-            this.tsmiTrayIndexFolder,
             this.tsmiTrayRuler,
+            this.tsmiTrayIndexFolder,
             this.tsmiTrayFTPClient,
             this.tsmiTrayTweetMessage,
             this.tsmiTrayMonitorTest});
@@ -1455,12 +1457,19 @@
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             resources.ApplyResources(this.tsmiTrayTools, "tsmiTrayTools");
             // 
+            // tsmiTrayColorPicker
+            // 
+            this.tsmiTrayColorPicker.Image = global::ShareX.Properties.Resources.color;
+            this.tsmiTrayColorPicker.Name = "tsmiTrayColorPicker";
+            resources.ApplyResources(this.tsmiTrayColorPicker, "tsmiTrayColorPicker");
+            this.tsmiTrayColorPicker.Click += new System.EventHandler(this.tsmiColorPicker_Click);
+            // 
             // tsmiTrayScreenColorPicker
             // 
-            this.tsmiTrayScreenColorPicker.Image = global::ShareX.Properties.Resources.color;
+            this.tsmiTrayScreenColorPicker.Image = global::ShareX.Properties.Resources.pipette;
             this.tsmiTrayScreenColorPicker.Name = "tsmiTrayScreenColorPicker";
             resources.ApplyResources(this.tsmiTrayScreenColorPicker, "tsmiTrayScreenColorPicker");
-            this.tsmiTrayScreenColorPicker.Click += new System.EventHandler(this.tsmiCursorHelper_Click);
+            this.tsmiTrayScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
             // tsmiTrayImageEditor
             // 
@@ -1497,19 +1506,19 @@
             resources.ApplyResources(this.tsmiTrayQRCode, "tsmiTrayQRCode");
             this.tsmiTrayQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
-            // tsmiTrayIndexFolder
-            // 
-            this.tsmiTrayIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
-            this.tsmiTrayIndexFolder.Name = "tsmiTrayIndexFolder";
-            resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
-            this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
-            // 
             // tsmiTrayRuler
             // 
             this.tsmiTrayRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
             this.tsmiTrayRuler.Name = "tsmiTrayRuler";
             resources.ApplyResources(this.tsmiTrayRuler, "tsmiTrayRuler");
             this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
+            // 
+            // tsmiTrayIndexFolder
+            // 
+            this.tsmiTrayIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
+            this.tsmiTrayIndexFolder.Name = "tsmiTrayIndexFolder";
+            resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
+            this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
             // tsmiTrayFTPClient
             // 
@@ -1820,9 +1829,9 @@
         private System.Windows.Forms.ToolStripButton tsbImageHistory;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageHistory;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTools;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenColorPicker;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayColorPicker;
         private System.Windows.Forms.ToolStripDropDownButton tsddbTools;
-        private System.Windows.Forms.ToolStripMenuItem tsmiScreenColorPicker;
+        private System.Windows.Forms.ToolStripMenuItem tsmiColorPicker;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearList;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenRecordingGIF;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenRecordingGIF;
@@ -1907,6 +1916,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadFolder;
         public System.Windows.Forms.Label lblMainFormTip;
-        private System.Windows.Forms.ToolStripMenuItem tsmiQuickScreenColorPicker;
+        private System.Windows.Forms.ToolStripMenuItem tsmiScreenColorPicker;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenColorPicker;
     }
 }

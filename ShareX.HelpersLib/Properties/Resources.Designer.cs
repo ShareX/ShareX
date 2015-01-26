@@ -745,6 +745,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color picker.
+        /// </summary>
+        internal static string HotkeyType_ColorPicker {
+            get {
+                return ResourceManager.GetString("HotkeyType_ColorPicker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture diamond region.
         /// </summary>
         internal static string HotkeyType_DiamondRegion {
