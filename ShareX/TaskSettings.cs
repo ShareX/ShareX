@@ -276,7 +276,7 @@ namespace ShareX
         #region Capture / General
 
         public bool ShowCursor = true;
-        public bool CaptureTransparent = !Helpers.IsWindows8OrGreater();
+        public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
         public int CaptureShadowOffset = 20;
         public bool CaptureClientArea = false;
@@ -433,7 +433,7 @@ namespace ShareX
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
 
-        [Category("Tools"), DefaultValue("$r, $g, $b"), Description("When using screen color picker what to copy to clipboard automatically. Formats: $r, $g, $b, $hex")]
+        [Category("Tools"), DefaultValue("$r, $g, $b"), Description("When using screen color picker what to copy to clipboard automatically. Formats: $r, $g, $b, $hex, $x, $y")]
         public string ScreenColorPickerFormat { get; set; }
 
         public TaskSettingsAdvanced()

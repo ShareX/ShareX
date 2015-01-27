@@ -521,7 +521,9 @@ namespace ShareX
                 text = text.Replace("$r", pointInfo.Color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
                     Replace("$g", pointInfo.Color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
                     Replace("$b", pointInfo.Color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                    Replace("$hex", ColorHelpers.ColorToHex(pointInfo.Color), StringComparison.InvariantCultureIgnoreCase);
+                    Replace("$hex", ColorHelpers.ColorToHex(pointInfo.Color), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$x", pointInfo.Position.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$y", pointInfo.Position.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
 
                 ClipboardHelpers.CopyText(text);
 
