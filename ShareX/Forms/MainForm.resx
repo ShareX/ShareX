@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1319,7 +1319,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
@@ -1511,7 +1511,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;chFilename.Name" xml:space="preserve">
     <value>chFilename</value>
   </data>

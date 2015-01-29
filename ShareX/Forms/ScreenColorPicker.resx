@@ -260,7 +260,7 @@
   </data>
   <data name="lblY.Text" xml:space="preserve">
     <value>Y:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
   </data>
@@ -287,7 +287,7 @@
   </data>
   <data name="lblX.Text" xml:space="preserve">
     <value>X:</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblX.Name" xml:space="preserve">
     <value>lblX</value>
   </data>
@@ -338,7 +338,7 @@
   </data>
   <data name="txtX.Text" xml:space="preserve">
     <value>1680</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -365,7 +365,7 @@
   </data>
   <data name="txtY.Text" xml:space="preserve">
     <value>1050</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -425,5 +425,9 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>ShareX.HelpersLib.ColorPickerForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value></value>
+    <comment>@Invariant</comment>
   </data>
 </root>
