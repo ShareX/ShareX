@@ -1159,4 +1159,10 @@
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Renk seçici...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Renk seçici...</value>
+  </data>
 </root>
