@@ -32,9 +32,7 @@ namespace ShareX.ScreenCaptureLib
         [Description("FFmpeg")]
         FFmpeg,
         [Description("Animated GIF")]
-        GIF,
-        [Description("Video Compression Manager (VCM)")]
-        AVI
+        GIF
     }
 
     public enum SurfaceResult

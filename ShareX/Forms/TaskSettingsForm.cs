@@ -218,24 +218,19 @@ namespace ShareX
             pgRectangleAnnotate.SelectedObject = TaskSettings.CaptureSettings.RectangleAnnotateOptions;
 
             // Capture / Screen recorder
-            cbScreenRecorderOutput.Items.AddRange(Helpers.GetEnumDescriptions<ScreenRecordOutput>());
-            cbScreenRecorderOutput.SelectedIndex = (int)TaskSettings.CaptureSettings.ScreenRecordOutput;
-            chkRunScreencastCLI.Checked = TaskSettings.CaptureSettings.RunScreencastCLI;
+            chkRunScreencastCLI.Checked = cboEncoder.Enabled = btnEncoderConfig.Enabled = TaskSettings.CaptureSettings.RunScreencastCLI;
             UpdateVideoEncoders();
-
             nudScreenRecordFPS.Value = TaskSettings.CaptureSettings.ScreenRecordFPS.Between((int)nudScreenRecordFPS.Minimum, (int)nudScreenRecordFPS.Maximum);
             nudGIFFPS.Value = TaskSettings.CaptureSettings.GIFFPS.Between((int)nudGIFFPS.Minimum, (int)nudGIFFPS.Maximum);
-            cbScreenRecorderFixedDuration.Checked = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
-            nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
+            cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordDuration;
-            chkScreenRecordAutoStart.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
-            nudScreenRecorderStartDelay.Enabled = chkScreenRecordAutoStart.Checked;
+            chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
             nudScreenRecorderStartDelay.Value = (decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay;
             cbScreenRecordAutoDisableAero.Checked = TaskSettings.CaptureSettings.ScreenRecordAutoDisableAero;
 
             // Actions
             TaskHelpers.AddDefaultExternalPrograms(TaskSettings);
-            TaskSettings.ExternalPrograms.ForEach(x => AddFileAction(x));
+            TaskSettings.ExternalPrograms.ForEach(AddFileAction);
 
             // Watch folders
             cbWatchFolderEnabled.Checked = TaskSettings.WatchFolderEnabled;
@@ -735,59 +730,29 @@ namespace ShareX
 
         #region Screen recorder
 
-        private void cbScreenRecorderOutput_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.ScreenRecordOutput = (ScreenRecordOutput)cbScreenRecorderOutput.SelectedIndex;
-            nudScreenRecordFPS.Enabled = btnScreenRecorderOptions.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI ||
-                TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg;
-            btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Enabled && chkRunScreencastCLI.Checked;
-            nudGIFFPS.Enabled = TaskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.GIF;
-        }
-
-        private void btnScreenRecorderOptions_Click(object sender, EventArgs e)
+        private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
             ScreencastOptions options = new ScreencastOptions
             {
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
-                AVI = TaskSettings.CaptureSettings.AVIOptions,
-                ShowAVIOptionsDialog = true,
                 ScreenRecordFPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
                 GIFFPS = TaskSettings.CaptureSettings.GIFFPS,
                 Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
-                DrawCursor = TaskSettings.CaptureSettings.ShowCursor,
-                ParentWindow = this.Handle
+                DrawCursor = TaskSettings.CaptureSettings.ShowCursor
             };
 
-            switch (TaskSettings.CaptureSettings.ScreenRecordOutput)
+            using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
             {
-                case ScreenRecordOutput.AVI:
-
-                    try
-                    {
-                        options.OutputPath = Program.ScreenRecorderCacheFilePath;
-
-                        // Ugly workaround for show AVI compression dialog
-                        using (AVICache aviCache = new AVICache(options))
-                        {
-                            TaskSettings.CaptureSettings.AVIOptions.CompressOptions = options.AVI.CompressOptions;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        TaskSettings.CaptureSettings.AVIOptions.CompressOptions = new AVICOMPRESSOPTIONS();
-                        MessageBox.Show(ex.ToString(), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    break;
-                case ScreenRecordOutput.FFmpeg:
-                    using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
-                    {
-                        form.DefaultToolsPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
-                        form.ShowDialog();
-                    }
-                    break;
+                form.DefaultToolsPath = Path.Combine(Program.ToolsFolder, "ffmpeg.exe");
+                form.ShowDialog();
             }
+        }
+
+        private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.RunScreencastCLI = cboEncoder.Enabled = btnEncoderConfig.Enabled = chkRunScreencastCLI.Checked;
         }
 
         private void cboEncoder_SelectedIndexChanged(object sender, EventArgs e)
@@ -818,11 +783,6 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.ScreenRecordFixedDuration = cbScreenRecorderFixedDuration.Checked;
             nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
-        }
-
-        private void chkRunScreencastCLI_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.RunScreencastCLI = btnEncoderConfig.Enabled = cboEncoder.Enabled = chkRunScreencastCLI.Checked;
         }
 
         private void nudScreenRecorderDuration_ValueChanged(object sender, EventArgs e)

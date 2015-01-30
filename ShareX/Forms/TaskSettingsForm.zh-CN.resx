@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -148,9 +149,6 @@
   </data>
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>重置自动递增数</value>
-  </data>
-  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
-    <value>选项...</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>任务...</value>
@@ -337,9 +335,6 @@
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>秒</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
-    <value>输出:</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>秒</value>

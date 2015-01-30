@@ -150,9 +150,6 @@
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Automatikusan növekvő szám nullázása</value>
   </data>
-  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
-    <value>Opciók...</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Feladat...</value>
   </data>
@@ -338,9 +335,6 @@
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>másodperc</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
-    <value>Kimenet:</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>másodperc</value>

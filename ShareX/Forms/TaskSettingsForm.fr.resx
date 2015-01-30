@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -260,12 +261,6 @@
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>n'appliquer les effets que sur la région capturée</value>
-  </data>
-  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
-    <value>Options...</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
-    <value>Sortie:</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Remplacer le programme de mise en ligne personnalisé par défaut:</value>

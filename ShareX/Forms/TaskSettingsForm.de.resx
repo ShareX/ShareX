@@ -150,9 +150,6 @@
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Setzte Autozuwachsnummer zurück</value>
   </data>
-  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
-    <value>Optionen...</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Aufgabe...</value>
   </data>
@@ -338,9 +335,6 @@
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Sekunden</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
-    <value>Ausgang:</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>Sekunden</value>

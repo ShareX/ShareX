@@ -952,11 +952,20 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Screen recording.
+        ///   Looks up a localized string similar to Screen recording (FFmpeg).
         /// </summary>
         internal static string HotkeyType_ScreenRecorder {
             get {
                 return ResourceManager.GetString("HotkeyType_ScreenRecorder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen recording (GIF).
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderGIF {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderGIF", resourceCulture);
             }
         }
         
@@ -970,11 +979,20 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording using last region.
+        ///   Looks up a localized string similar to Start screen recording (FFmpeg) using last region.
         /// </summary>
         internal static string HotkeyType_StartScreenRecorder {
             get {
                 return ResourceManager.GetString("HotkeyType_StartScreenRecorder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start screen recording (GIF) using last region.
+        /// </summary>
+        internal static string HotkeyType_StartScreenRecorderGIF {
+            get {
+                return ResourceManager.GetString("HotkeyType_StartScreenRecorderGIF", resourceCulture);
             }
         }
         

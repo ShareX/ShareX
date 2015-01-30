@@ -98,10 +98,10 @@ namespace ShareX.ScreenCaptureLib
         private float durationSeconds;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
-        private FFmpegHelper ffMpegCli;
+        private FFmpegHelper ffmpegCli;
         private bool stopRequest;
 
-        public ScreenRecorder(ScreencastOptions options, Rectangle captureRectangle, ScreenRecordOutput outputType)
+        public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Rectangle captureRectangle)
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
@@ -118,11 +118,9 @@ namespace ShareX.ScreenCaptureLib
 
             switch (OutputType)
             {
-                case ScreenRecordOutput.AVI:
-                    imgCache = new AVICache(Options);
-                    break;
+                default:
                 case ScreenRecordOutput.FFmpeg:
-                    ffMpegCli = new FFmpegHelper(Options);
+                    ffmpegCli = new FFmpegHelper(Options);
                     break;
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);
@@ -145,7 +143,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (OutputType == ScreenRecordOutput.FFmpeg)
                 {
-                    ffMpegCli.Record();
+                    ffmpegCli.Record();
                 }
                 else
                 {
@@ -194,9 +192,9 @@ namespace ShareX.ScreenCaptureLib
         {
             stopRequest = true;
 
-            if (ffMpegCli != null)
+            if (ffmpegCli != null)
             {
-                ffMpegCli.Close();
+                ffmpegCli.Close();
             }
         }
 
