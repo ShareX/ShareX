@@ -77,7 +77,6 @@ Json.NET: https://json.codeplex.com
 SSH.NET: https://sshnet.codeplex.com
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://code.google.com/p/imagelistview
-AviWriter: https://code.google.com/p/aforge
 FFmpeg: http://www.ffmpeg.org
 FFmpeg Windows builds: http://ffmpeg.zeranoe.com/builds
 7-Zip: http://www.7-zip.org

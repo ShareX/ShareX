@@ -150,9 +150,6 @@
   <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
     <value>Obnovit autom. přiřazené číslo</value>
   </data>
-  <data name="btnScreenRecorderOptions.Text" xml:space="preserve">
-    <value>Možnosti...</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Úkol...</value>
   </data>
@@ -362,9 +359,6 @@
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Vzor názvu pro snímání nebo upload ze schránky:</value>
-  </data>
-  <data name="lblScreenRecorderOutput.Text" xml:space="preserve">
-    <value>Výstup:</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Náhled</value>

@@ -37,13 +37,16 @@ namespace ShareX.HelpersLib
             isDWMEnabled = NativeMethods.IsDWMEnabled();
         }
 
-        public void AutoDisable()
+        public bool AutoDisable()
         {
             if (isDWMEnabled)
             {
                 ChangeComposition(false);
                 autoEnable = true;
+                return true;
             }
+
+            return false;
         }
 
         public void ChangeComposition(bool enable)

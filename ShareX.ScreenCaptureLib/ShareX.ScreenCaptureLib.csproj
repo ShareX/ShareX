@@ -51,7 +51,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RectangleAnnotateOptions.cs" />
-    <Compile Include="Screencast\AVIOptions.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
     <Compile Include="Screencast\FFmpegOptionsForm.cs">
@@ -61,7 +60,6 @@
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screencast\ScreencastOptions.cs" />
-    <Compile Include="Screencast\AviWriter.cs" />
     <Compile Include="Forms\RectangleLight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,7 +104,6 @@
     <Compile Include="SurfaceOptions.cs" />
     <Compile Include="Screencast\ScreenRecorder.cs" />
     <Compile Include="Screencast\HardDiskCache.cs" />
-    <Compile Include="Screencast\AVICache.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screenshot_Transparent.cs" />

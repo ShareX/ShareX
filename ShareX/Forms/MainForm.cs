@@ -1529,10 +1529,16 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    TaskHelpers.StartScreenRecording(safeTaskSettings, false);
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, safeTaskSettings, false);
                     break;
                 case HotkeyType.StartScreenRecorder:
-                    TaskHelpers.StartScreenRecording(safeTaskSettings, true);
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, safeTaskSettings, true);
+                    break;
+                case HotkeyType.ScreenRecorderGIF:
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, safeTaskSettings, false);
+                    break;
+                case HotkeyType.StartScreenRecorderGIF:
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, safeTaskSettings, true);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();

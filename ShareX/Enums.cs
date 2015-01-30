@@ -149,6 +149,8 @@ namespace ShareX
         LastRegion,
         ScreenRecorder,
         StartScreenRecorder,
+        ScreenRecorderGIF,
+        StartScreenRecorderGIF,
         AutoCapture,
         StartAutoCapture,
         OpenScreenshotsFolder,

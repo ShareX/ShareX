@@ -89,7 +89,7 @@ namespace ShareX
             }
         }
 
-        public void StartRecording(TaskSettings taskSettings, bool skipRegionSelection = false)
+        public void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, bool skipRegionSelection = false)
         {
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
@@ -109,7 +109,7 @@ namespace ShareX
                 }
             }
 
-            if (taskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg)
+            if (outputType == ScreenRecordOutput.FFmpeg)
             {
                 if (!File.Exists(taskSettings.CaptureSettings.FFmpegOptions.CLIPath))
                 {
@@ -182,11 +182,7 @@ namespace ShareX
                         dwmManager.AutoDisable();
                     }
 
-                    if (taskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.AVI)
-                    {
-                        path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "avi"));
-                    }
-                    else if (taskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.FFmpeg)
+                    if (outputType == ScreenRecordOutput.FFmpeg)
                     {
                         path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
                     }
@@ -198,7 +194,6 @@ namespace ShareX
                     ScreencastOptions options = new ScreencastOptions()
                     {
                         FFmpeg = taskSettings.CaptureSettings.FFmpegOptions,
-                        AVI = taskSettings.CaptureSettings.AVIOptions,
                         ScreenRecordFPS = taskSettings.CaptureSettings.ScreenRecordFPS,
                         GIFFPS = taskSettings.CaptureSettings.GIFFPS,
                         Duration = duration,
@@ -207,7 +202,7 @@ namespace ShareX
                         DrawCursor = taskSettings.CaptureSettings.ShowCursor
                     };
 
-                    screenRecorder = new ScreenRecorder(options, captureRectangle, taskSettings.CaptureSettings.ScreenRecordOutput);
+                    screenRecorder = new ScreenRecorder(outputType, options, captureRectangle);
 
                     if (regionForm != null && regionForm.RecordResetEvent != null)
                     {
@@ -287,7 +282,7 @@ namespace ShareX
 
                         string sourceFilePath = path;
 
-                        if (taskSettings.CaptureSettings.ScreenRecordOutput == ScreenRecordOutput.GIF)
+                        if (outputType == ScreenRecordOutput.GIF)
                         {
                             if (taskSettings.CaptureSettings.RunScreencastCLI)
                             {

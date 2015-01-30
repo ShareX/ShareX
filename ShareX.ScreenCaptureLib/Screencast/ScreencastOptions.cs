@@ -34,18 +34,19 @@ namespace ShareX.ScreenCaptureLib
 {
     public class ScreencastOptions
     {
-        public string OutputPath;
-        public int GIFFPS;
-        public int ScreenRecordFPS;
-        public Rectangle CaptureArea;
-        public float Duration;
-        public bool DrawCursor;
+        public ScreenRecordOutput OutputType { get; set; }
+        public string OutputPath { get; set; }
+        public int GIFFPS { get; set; }
+        public int ScreenRecordFPS { get; set; }
+        public Rectangle CaptureArea { get; set; }
+        public float Duration { get; set; }
+        public bool DrawCursor { get; set; }
+        public FFmpegOptions FFmpeg { get; set; }
 
-        public IntPtr ParentWindow;
-        public bool ShowAVIOptionsDialog;
-        public AVIOptions AVI = new AVIOptions();
-
-        public FFmpegOptions FFmpeg = new FFmpegOptions();
+        public ScreencastOptions()
+        {
+            FFmpeg = new FFmpegOptions();
+        }
 
         public string GetFFmpegCommands()
         {
@@ -59,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
                 RegistryHelpers.CreateRegistry(registryPath, "start_y", CaptureArea.Y);
                 RegistryHelpers.CreateRegistry(registryPath, "capture_width", CaptureArea.Width);
                 RegistryHelpers.CreateRegistry(registryPath, "capture_height", CaptureArea.Height);
-                RegistryHelpers.CreateRegistry(registryPath, "default_max_fps", ScreenRecordFPS);
+                RegistryHelpers.CreateRegistry(registryPath, "default_max_fps", 60);
                 RegistryHelpers.CreateRegistry(registryPath, "capture_mouse_default_1", DrawCursor ? 1 : 0);
             }
 
