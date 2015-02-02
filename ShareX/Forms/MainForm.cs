@@ -567,6 +567,7 @@ namespace ShareX
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.UseAlternativeCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
+            TaskManager.RecentManager.MaxCount = Program.Settings.RecentLinksMaxCount;
         }
 
         public void UpdateMainFormSettings()

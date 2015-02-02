@@ -47,7 +47,8 @@ namespace ShareX
         }
 
         private static readonly List<UploadTask> Tasks = new List<UploadTask>();
-        private static readonly RecentManager RecentManager = new RecentManager();
+
+        public static readonly RecentManager RecentManager = new RecentManager();
 
         private static int lastIconStatus = -1;
 
