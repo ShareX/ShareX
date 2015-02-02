@@ -214,6 +214,7 @@
             this.tsmiTrayTaskSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHotkeySettings = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenshotsFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageHistory = new System.Windows.Forms.ToolStripMenuItem();
@@ -1231,6 +1232,7 @@
             this.tsmiTrayTaskSettings,
             this.tsmiTrayHotkeySettings,
             this.tssTray2,
+            this.tsmiTrayRecentItems,
             this.tsmiScreenshotsFolder,
             this.tsmiTrayHistory,
             this.tsmiTrayImageHistory,
@@ -1641,6 +1643,12 @@
             this.tssTray2.Name = "tssTray2";
             resources.ApplyResources(this.tssTray2, "tssTray2");
             // 
+            // tsmiTrayRecentItems
+            // 
+            this.tsmiTrayRecentItems.Image = global::ShareX.Properties.Resources.clipboard_list;
+            this.tsmiTrayRecentItems.Name = "tsmiTrayRecentItems";
+            resources.ApplyResources(this.tsmiTrayRecentItems, "tsmiTrayRecentItems");
+            // 
             // tsmiScreenshotsFolder
             // 
             this.tsmiScreenshotsFolder.Image = global::ShareX.Properties.Resources.folder_open_image;
@@ -1742,7 +1750,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiFileUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiURLShorteners;
         private System.Windows.Forms.ToolStripDropDownButton tsddbDestinations;
-        private System.Windows.Forms.ContextMenuStrip cmsTray;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayExit;
         private System.Windows.Forms.ToolStripSeparator tssTray1;
         public System.Windows.Forms.NotifyIcon niTray;
@@ -1918,5 +1925,7 @@
         public System.Windows.Forms.Label lblMainFormTip;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenColorPicker;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenColorPicker;
+        public System.Windows.Forms.ToolStripMenuItem tsmiTrayRecentItems;
+        private System.Windows.Forms.ContextMenuStrip cmsTray;
     }
 }

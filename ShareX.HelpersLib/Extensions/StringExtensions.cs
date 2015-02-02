@@ -189,7 +189,7 @@ namespace ShareX.HelpersLib
             return str;
         }
 
-        public static string Truncate(this string str, int maxLength, string endings)
+        public static string Truncate(this string str, int maxLength, string endings, bool truncateFromRight = true)
         {
             if (!string.IsNullOrEmpty(str) && str.Length > maxLength)
             {
@@ -197,7 +197,14 @@ namespace ShareX.HelpersLib
 
                 if (length > 0)
                 {
-                    str = str.Substring(0, length) + endings;
+                    if (truncateFromRight)
+                    {
+                        str = str.Left(length) + endings;
+                    }
+                    else
+                    {
+                        str = endings + str.Right(length);
+                    }
                 }
             }
 
