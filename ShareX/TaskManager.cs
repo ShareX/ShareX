@@ -47,6 +47,7 @@ namespace ShareX
         }
 
         private static readonly List<UploadTask> Tasks = new List<UploadTask>();
+        private static readonly RecentManager RecentManager = new RecentManager();
 
         private static int lastIconStatus = -1;
 
@@ -305,6 +306,8 @@ namespace ShareX
                                 {
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
+
+                                RecentManager.Add(result);
 
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {

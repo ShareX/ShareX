@@ -213,6 +213,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="LanguageHelper.cs" />
+    <Compile Include="RecentManager.cs" />
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -748,6 +749,7 @@
     <None Include="Resources\hu.png" />
     <None Include="Resources\globe.png" />
     <None Include="Resources\us.png" />
+    <None Include="Resources\clipboard-list.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
