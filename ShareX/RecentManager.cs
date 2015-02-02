@@ -34,18 +34,40 @@ namespace ShareX
 {
     public class RecentManager
     {
-        public int MaxCount { get; set; }
+        private int maxCount = 20;
+
+        public int MaxCount
+        {
+            get
+            {
+                return maxCount;
+            }
+            set
+            {
+                maxCount = value;
+
+                lock (itemsLock)
+                {
+                    while (Items.Count > maxCount)
+                    {
+                        Items.Dequeue();
+                    }
+
+                    UpdateRecentMenu();
+                }
+            }
+        }
+
         public Queue<RecentItem> Items { get; private set; }
 
         private static readonly object itemsLock = new object();
 
         public RecentManager()
         {
-            MaxCount = 20;
             Items = new Queue<RecentItem>();
         }
 
-        public bool Add(string item)
+        public void Add(string item)
         {
             if (!string.IsNullOrEmpty(item))
             {
@@ -60,16 +82,12 @@ namespace ShareX
 
                     UpdateRecentMenu();
                 }
-
-                return true;
             }
-
-            return false;
         }
 
         private void UpdateRecentMenu()
         {
-            if (Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null)
+            if (Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null || Items.Count == 0)
             {
                 return;
             }
@@ -82,7 +100,9 @@ namespace ShareX
             }
 
             tsmi.DropDownItems.Clear();
-            tsmi.DropDownItems.Add("Left click to copy URL to clipboard, right click to open URL.");
+            ToolStripMenuItem tsmiTip = new ToolStripMenuItem("Left click to copy URL to clipboard. Right click to open URL.");
+            tsmiTip.Enabled = false;
+            tsmi.DropDownItems.Add(tsmiTip);
             tsmi.DropDownItems.Add(new ToolStripSeparator());
 
             foreach (RecentItem recentItem in Items.Reverse())
