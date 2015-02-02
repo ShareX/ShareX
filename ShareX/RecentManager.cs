@@ -35,13 +35,13 @@ namespace ShareX
     public class RecentManager
     {
         public int MaxCount { get; set; }
-        public Queue<RecentItem> Items { get; set; }
+        public Queue<RecentItem> Items { get; private set; }
 
         private static readonly object itemsLock = new object();
 
         public RecentManager()
         {
-            MaxCount = 10;
+            MaxCount = 20;
             Items = new Queue<RecentItem>();
         }
 
@@ -69,6 +69,11 @@ namespace ShareX
 
         private void UpdateRecentMenu()
         {
+            if (Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null)
+            {
+                return;
+            }
+
             ToolStripMenuItem tsmi = Program.MainForm.tsmiTrayRecentItems;
 
             if (!tsmi.Visible)
@@ -77,7 +82,7 @@ namespace ShareX
             }
 
             tsmi.DropDownItems.Clear();
-            tsmi.DropDownItems.Add("Click on URL to automatically copy it to clipboard.");
+            tsmi.DropDownItems.Add("Left click to copy URL to clipboard, right click to open URL.");
             tsmi.DropDownItems.Add(new ToolStripSeparator());
 
             foreach (RecentItem recentItem in Items.Reverse())
@@ -86,7 +91,17 @@ namespace ShareX
                 ToolStripMenuItem tsmiLink = new ToolStripMenuItem(text);
                 tsmiLink.ToolTipText = recentItem.Text;
                 string link = recentItem.Text;
-                tsmiLink.Click += (sender, e) => ClipboardHelpers.CopyText(link);
+                tsmiLink.MouseUp += (sender, e) =>
+                {
+                    if (e.Button == MouseButtons.Left)
+                    {
+                        ClipboardHelpers.CopyText(link);
+                    }
+                    else if (e.Button == MouseButtons.Right)
+                    {
+                        URLHelpers.OpenURL(link);
+                    }
+                };
                 tsmi.DropDownItems.Add(tsmiLink);
             }
         }
