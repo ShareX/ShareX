@@ -34,7 +34,7 @@ namespace ShareX
 {
     public class RecentManager
     {
-        private int maxCount = 20;
+        private int maxCount = 10;
 
         public int MaxCount
         {
@@ -44,7 +44,7 @@ namespace ShareX
             }
             set
             {
-                maxCount = value;
+                maxCount = value.Between(1, 100);
 
                 lock (itemsLock)
                 {
