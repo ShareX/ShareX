@@ -251,6 +251,10 @@ namespace ShareX.UploadersLib
 
         public bool MediaCrushDirectLink = false;
 
+        // Lambda
+
+        public LambdaSettings LambdaSettings = new LambdaSettings();
+
         #endregion File uploaders
 
         #region URL shorteners

@@ -120,6 +120,8 @@ namespace ShareX.UploadersLib
         Localhostr,
         [Description("JIRA")]
         Jira,
+        [Description("λ")]
+        Lambda,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
