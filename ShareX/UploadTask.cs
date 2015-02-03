@@ -992,6 +992,9 @@ namespace ShareX
                 case FileDestination.Pomf:
                     fileUploader = new Pomf();
                     break;
+                case FileDestination.Lambda:
+                    fileUploader = new Lambda(Program.UploadersConfig.LambdaSettings);
+                    break;
             }
 
             if (fileUploader != null)
