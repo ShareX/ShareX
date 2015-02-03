@@ -293,6 +293,10 @@
             this.txtJiraHost = new System.Windows.Forms.TextBox();
             this.lblJiraHost = new System.Windows.Forms.Label();
             this.oAuthJira = new ShareX.UploadersLib.OAuthControl();
+            this.tpLambda = new System.Windows.Forms.TabPage();
+            this.lambdaInfoLabel = new System.Windows.Forms.Label();
+            this.lambdaApiKeyLabel = new System.Windows.Forms.Label();
+            this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.chkEmailConfirm = new System.Windows.Forms.CheckBox();
             this.lblEmailSmtpServer = new System.Windows.Forms.Label();
@@ -467,6 +471,7 @@
             this.gbMinusUpload.SuspendLayout();
             this.tpJira.SuspendLayout();
             this.gpJiraServer.SuspendLayout();
+            this.tpLambda.SuspendLayout();
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
@@ -1182,6 +1187,7 @@
             this.tcFileUploaders.Controls.Add(this.tpHostr);
             this.tcFileUploaders.Controls.Add(this.tpMinus);
             this.tcFileUploaders.Controls.Add(this.tpJira);
+            this.tcFileUploaders.Controls.Add(this.tpLambda);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
@@ -2423,6 +2429,33 @@
             this.oAuthJira.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthJira_ClearButtonClicked);
             this.oAuthJira.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oAuthJira_RefreshButtonClicked);
             // 
+            // tpLambda
+            // 
+            this.tpLambda.Controls.Add(this.lambdaInfoLabel);
+            this.tpLambda.Controls.Add(this.lambdaApiKeyLabel);
+            this.tpLambda.Controls.Add(this.txtLambdaApiKey);
+            resources.ApplyResources(this.tpLambda, "tpLambda");
+            this.tpLambda.Name = "tpLambda";
+            this.tpLambda.UseVisualStyleBackColor = true;
+            // 
+            // lambdaInfoLabel
+            // 
+            resources.ApplyResources(this.lambdaInfoLabel, "lambdaInfoLabel");
+            this.lambdaInfoLabel.Name = "lambdaInfoLabel";
+            this.lambdaInfoLabel.Click += new System.EventHandler(this.lambdaInfoLabel_Click);
+            // 
+            // lambdaApiKeyLabel
+            // 
+            resources.ApplyResources(this.lambdaApiKeyLabel, "lambdaApiKeyLabel");
+            this.lambdaApiKeyLabel.Name = "lambdaApiKeyLabel";
+            // 
+            // txtLambdaApiKey
+            // 
+            resources.ApplyResources(this.txtLambdaApiKey, "txtLambdaApiKey");
+            this.txtLambdaApiKey.Name = "txtLambdaApiKey";
+            this.txtLambdaApiKey.UseSystemPasswordChar = true;
+            this.txtLambdaApiKey.TextChanged += new System.EventHandler(this.txtLambdaApiKey_TextChanged);
+            // 
             // tpEmail
             // 
             this.tpEmail.Controls.Add(this.chkEmailConfirm);
@@ -3480,6 +3513,8 @@
             this.tpJira.PerformLayout();
             this.gpJiraServer.ResumeLayout(false);
             this.gpJiraServer.PerformLayout();
+            this.tpLambda.ResumeLayout(false);
+            this.tpLambda.PerformLayout();
             this.tpEmail.ResumeLayout(false);
             this.tpEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
@@ -3921,6 +3956,10 @@
         private System.Windows.Forms.ColumnHeader chHubicFolderName;
         private System.Windows.Forms.Label lblHubicSelectedFolder;
         private System.Windows.Forms.Button btnHubicRefreshFolders;
-        private System.Windows.Forms.CheckBox cbHubicPublishLink;        
+        private System.Windows.Forms.CheckBox cbHubicPublishLink;
+        private System.Windows.Forms.TabPage tpLambda;
+        private System.Windows.Forms.Label lambdaApiKeyLabel;
+        private System.Windows.Forms.TextBox txtLambdaApiKey;
+        private System.Windows.Forms.Label lambdaInfoLabel;        
     }
 }

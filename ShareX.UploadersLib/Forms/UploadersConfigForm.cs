@@ -112,6 +112,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpTwitter, Resources.Twitter);
             AddIconToTab(tpUpaste, Resources.Upaste);
             AddIconToTab(tpYourls, Resources.Yourls);
+            AddIconToTab(tpLambda, Resources.Lambda);
 
             tcFileUploaders.TabPages.Remove(tpHubic);
 
@@ -549,6 +550,10 @@ namespace ShareX.UploadersLib
             // MediaCrush
 
             cbMediaCrushDirectLink.Checked = Config.MediaCrushDirectLink;
+
+            // Lambda
+
+            txtLambdaApiKey.Text = Config.LambdaSettings.UserAPIKey;
 
             #endregion File uploaders
 
@@ -2061,6 +2066,20 @@ namespace ShareX.UploadersLib
         }
 
         #endregion MediaCrush
+
+        #region Lambda
+
+        private void txtLambdaApiKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.LambdaSettings.UserAPIKey = txtLambdaApiKey.Text;
+        }
+
+        private void lambdaInfoLabel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://lambda.sx/usercp");
+        }
+
+        #endregion Lambda
 
         #endregion File Uploaders
 
