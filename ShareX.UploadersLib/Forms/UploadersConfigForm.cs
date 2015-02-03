@@ -2069,14 +2069,14 @@ namespace ShareX.UploadersLib
 
         #region Lambda
 
+        private void lambdaInfoLabel_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://lambda.sx/usercp");
+        }
+
         private void txtLambdaApiKey_TextChanged(object sender, EventArgs e)
         {
             Config.LambdaSettings.UserAPIKey = txtLambdaApiKey.Text;
-        }
-
-        private void lambdaInfoLabel_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://lambda.sx/usercp");
         }
 
         #endregion Lambda

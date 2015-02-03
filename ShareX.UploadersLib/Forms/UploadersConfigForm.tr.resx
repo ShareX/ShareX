@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -753,5 +754,11 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   </data>
   <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
     <value>Not: Dizin içine gitmek için dizin adına çift tıklayabilirsiniz.</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>API anahtarını almak için Lambda sitesine giriş yapın https://lambda.sx/ adresinden ve sağ üstteki dişli tuşuna basın.</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API anahtarı:</value>
   </data>
 </root>

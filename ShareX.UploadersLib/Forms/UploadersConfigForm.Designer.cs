@@ -294,8 +294,8 @@
             this.lblJiraHost = new System.Windows.Forms.Label();
             this.oAuthJira = new ShareX.UploadersLib.OAuthControl();
             this.tpLambda = new System.Windows.Forms.TabPage();
-            this.lambdaInfoLabel = new System.Windows.Forms.Label();
-            this.lambdaApiKeyLabel = new System.Windows.Forms.Label();
+            this.lblLambdaInfo = new System.Windows.Forms.Label();
+            this.lblLambdaApiKey = new System.Windows.Forms.Label();
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.chkEmailConfirm = new System.Windows.Forms.CheckBox();
@@ -2431,23 +2431,23 @@
             // 
             // tpLambda
             // 
-            this.tpLambda.Controls.Add(this.lambdaInfoLabel);
-            this.tpLambda.Controls.Add(this.lambdaApiKeyLabel);
+            this.tpLambda.Controls.Add(this.lblLambdaInfo);
+            this.tpLambda.Controls.Add(this.lblLambdaApiKey);
             this.tpLambda.Controls.Add(this.txtLambdaApiKey);
             resources.ApplyResources(this.tpLambda, "tpLambda");
             this.tpLambda.Name = "tpLambda";
             this.tpLambda.UseVisualStyleBackColor = true;
             // 
-            // lambdaInfoLabel
+            // lblLambdaInfo
             // 
-            resources.ApplyResources(this.lambdaInfoLabel, "lambdaInfoLabel");
-            this.lambdaInfoLabel.Name = "lambdaInfoLabel";
-            this.lambdaInfoLabel.Click += new System.EventHandler(this.lambdaInfoLabel_Click);
+            resources.ApplyResources(this.lblLambdaInfo, "lblLambdaInfo");
+            this.lblLambdaInfo.Name = "lblLambdaInfo";
+            this.lblLambdaInfo.Click += new System.EventHandler(this.lambdaInfoLabel_Click);
             // 
-            // lambdaApiKeyLabel
+            // lblLambdaApiKey
             // 
-            resources.ApplyResources(this.lambdaApiKeyLabel, "lambdaApiKeyLabel");
-            this.lambdaApiKeyLabel.Name = "lambdaApiKeyLabel";
+            resources.ApplyResources(this.lblLambdaApiKey, "lblLambdaApiKey");
+            this.lblLambdaApiKey.Name = "lblLambdaApiKey";
             // 
             // txtLambdaApiKey
             // 
@@ -3958,8 +3958,8 @@
         private System.Windows.Forms.Button btnHubicRefreshFolders;
         private System.Windows.Forms.CheckBox cbHubicPublishLink;
         private System.Windows.Forms.TabPage tpLambda;
-        private System.Windows.Forms.Label lambdaApiKeyLabel;
+        private System.Windows.Forms.Label lblLambdaApiKey;
         private System.Windows.Forms.TextBox txtLambdaApiKey;
-        private System.Windows.Forms.Label lambdaInfoLabel;        
+        private System.Windows.Forms.Label lblLambdaInfo;        
     }
 }
