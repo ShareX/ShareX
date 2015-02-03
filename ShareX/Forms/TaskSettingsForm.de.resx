@@ -196,7 +196,7 @@
     <value>Spiele Ton nachdem eine Aufgabe beendet wurde</value>
   </data>
   <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>Deaktiviere automatisch Windows Aero während des Aufnehmens </value>
+    <value>Deaktiviere Windows Aero während der Aufnahme</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Gesetzte Dauer:</value>
@@ -250,7 +250,7 @@
     <value>Starte CLI danach</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Starte Aufnhemen nachdem:</value>
+    <value>Starte Aufnahme nach:</value>
   </data>
   <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
     <value>Zeige "Nach dem Hochladen" Fenster nachdem die Aufgabe beendet wurde</value>

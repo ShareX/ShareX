@@ -242,7 +242,7 @@
     <value>217, 20</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Aufnhemen</value>
+    <value>Aufnehmen</value>
   </data>
   <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
@@ -869,7 +869,7 @@
     <value>206, 22</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Aufnhemen</value>
+    <value>Aufnehmen</value>
   </data>
   <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 22</value>
