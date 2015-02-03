@@ -421,7 +421,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.de.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.fr.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>

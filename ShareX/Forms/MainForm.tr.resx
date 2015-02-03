@@ -1165,4 +1165,7 @@
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Renk seçici...</value>
   </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Son adresler</value>
+  </data>
 </root>

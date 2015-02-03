@@ -57,7 +57,8 @@ namespace ShareX.UploadersLib.FileUploaders
             arguments.Add("apikey", Config.UserAPIKey);
             UploadResult result = UploadData(stream, uploadUrl, fileName, "file", arguments);
 
-            if (result.IsSuccess) {
+            if (result.IsSuccess)
+            {
                 LambdaResponse response = JsonConvert.DeserializeObject<LambdaResponse>(result.Response);
 
                 if (response.success)
@@ -66,7 +67,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
                 else
                 {
-                    foreach (String e in response.errors) {
+                    foreach (string e in response.errors)
+                    {
                         Errors.Add(e);
                     }
                 }
@@ -79,7 +81,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             public bool success { get; set; }
             public List<LambdaFile> files { get; set; }
-            public List<String> errors { get; set; }
+            public List<string> errors { get; set; }
         }
 
         internal class LambdaFile
