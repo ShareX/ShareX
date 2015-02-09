@@ -37,14 +37,21 @@ namespace ShareX.HelpersLib
 
         public void SetFormState(Form form)
         {
-            if (!Location.IsEmpty)
+            if (!Location.IsEmpty && CaptureHelpers.GetScreenBounds().IntersectsWith(new Rectangle(Location, Size)))
             {
                 form.StartPosition = FormStartPosition.Manual;
                 form.Location = Location;
             }
 
-            if (!Size.IsEmpty) form.Size = Size;
-            if (IsMaximized) form.WindowState = FormWindowState.Maximized;
+            if (!Size.IsEmpty)
+            {
+                form.Size = Size;
+            }
+
+            if (IsMaximized)
+            {
+                form.WindowState = FormWindowState.Maximized;
+            }
         }
 
         public void GetFormState(Form form)
