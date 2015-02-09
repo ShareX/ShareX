@@ -94,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
 
         public event ProgressEventHandler EncodingProgressChanged;
 
-        private int fps, delay, frameCount;
+        private int fps, delay, frameCount, previousProgress;
         private float durationSeconds;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
@@ -227,17 +227,16 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(sourceFilePath) && File.Exists(sourceFilePath))
             {
-                OnEncodingProgressChanged(-1);
                 encoder.Encode(sourceFilePath, targetFilePath);
-                OnEncodingProgressChanged(100);
             }
         }
 
         protected void OnEncodingProgressChanged(int progress)
         {
-            if (EncodingProgressChanged != null)
+            if (EncodingProgressChanged != null && progress != previousProgress)
             {
                 EncodingProgressChanged(progress);
+                previousProgress = progress;
             }
         }
 

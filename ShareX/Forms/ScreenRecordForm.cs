@@ -276,8 +276,7 @@ namespace ShareX
                 {
                     if (!abortRequested && screenRecorder != null)
                     {
-                        trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
-                        TrayIcon.Text = trayText.Truncate(63);
+                        TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
 
                         string sourceFilePath = path;
@@ -294,6 +293,10 @@ namespace ShareX
                             }
 
                             Helpers.CreateDirectoryIfNotExist(sourceFilePath);
+                            screenRecorder.EncodingProgressChanged += progress =>
+                            {
+                                TrayIcon.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
+                            };
                             screenRecorder.SaveAsGIF(sourceFilePath, taskSettings.ImageSettings.ImageGIFQuality);
                         }
 
