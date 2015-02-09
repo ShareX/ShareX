@@ -195,9 +195,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Hang lejátszása a feladat befejeztekor</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>A Windows Aero automatikus kikapcsolása felvétel közben (az Aero csökkent teljesítményt eredményez)</value>
-  </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Fix hossz:</value>
   </data>

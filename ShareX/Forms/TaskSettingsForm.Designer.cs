@@ -119,7 +119,6 @@
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
             this.chkScreenRecordAutoStart = new System.Windows.Forms.CheckBox();
-            this.cbScreenRecordAutoDisableAero = new System.Windows.Forms.CheckBox();
             this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
             this.nudScreenRecordFPS = new System.Windows.Forms.NumericUpDown();
             this.lblScreenRecordFPS = new System.Windows.Forms.Label();
@@ -896,7 +895,6 @@
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
             this.tpScreenRecorder.Controls.Add(this.chkScreenRecordAutoStart);
-            this.tpScreenRecorder.Controls.Add(this.cbScreenRecordAutoDisableAero);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderFixedDuration);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecordFPS);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecordFPS);
@@ -930,13 +928,6 @@
             this.chkScreenRecordAutoStart.Name = "chkScreenRecordAutoStart";
             this.chkScreenRecordAutoStart.UseVisualStyleBackColor = true;
             this.chkScreenRecordAutoStart.CheckedChanged += new System.EventHandler(this.chkScreenRecordAutoStart_CheckedChanged);
-            // 
-            // cbScreenRecordAutoDisableAero
-            // 
-            resources.ApplyResources(this.cbScreenRecordAutoDisableAero, "cbScreenRecordAutoDisableAero");
-            this.cbScreenRecordAutoDisableAero.Name = "cbScreenRecordAutoDisableAero";
-            this.cbScreenRecordAutoDisableAero.UseVisualStyleBackColor = true;
-            this.cbScreenRecordAutoDisableAero.CheckedChanged += new System.EventHandler(this.cbScreenRecordAutoDisableAero_CheckedChanged);
             // 
             // lblScreenRecorderFixedDuration
             // 
@@ -1623,7 +1614,6 @@
         private System.Windows.Forms.Label lblScreenRecordFPS;
         private System.Windows.Forms.CheckBox chkShowBeforeUploadForm;
         private System.Windows.Forms.Label lblScreenRecorderFixedDuration;
-        private System.Windows.Forms.CheckBox cbScreenRecordAutoDisableAero;
         private System.Windows.Forms.CheckBox cbClipboardUploadShareURL;
         private System.Windows.Forms.TabPage tpRectangleAnnotate;
         private System.Windows.Forms.PropertyGrid pgRectangleAnnotate;
