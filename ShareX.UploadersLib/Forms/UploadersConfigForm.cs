@@ -1056,11 +1056,6 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL("https://www.dropbox.com");
         }
 
-        private void btnDropboxRegister_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("http://db.tt/CtPYXvu");
-        }
-
         private void oauth2Dropbox_OpenButtonClicked()
         {
             DropboxAuthOpen();
@@ -1105,11 +1100,6 @@ namespace ShareX.UploadersLib
         private void pbCopyLogo_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://copy.com");
-        }
-
-        private void btnCopyRegister_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://copy.com?r=BUN9jI");
         }
 
         private void txtCopyPath_TextChanged(object sender, EventArgs e)

@@ -76,6 +76,33 @@ namespace ShareX.HelpersLib
             return totalBytesRead;
         }
 
+        public static int CopyStreamTo64(this FileStream fromStream, Stream toStream, long offset, int length, int bufferSize = DefaultBufferSize)
+        {
+            fromStream.Position = offset;
+
+            byte[] buffer = new byte[bufferSize];
+            int bytesRead;
+
+            int totalBytesRead = 0;
+            int positionLimit = length - bufferSize;
+            int readLength = bufferSize;
+
+            do
+            {
+                if (totalBytesRead > positionLimit)
+                {
+                    readLength = length - totalBytesRead;
+                }
+
+                bytesRead = fromStream.Read(buffer, 0, readLength);
+                toStream.Write(buffer, 0, bytesRead);
+                totalBytesRead += bytesRead;
+            }
+            while (bytesRead > 0 && totalBytesRead < length);
+
+            return totalBytesRead;
+        }
+
         public static bool WriteToFile(this Stream stream, string filePath)
         {
             if (stream.Length > 0 && !string.IsNullOrEmpty(filePath))

@@ -292,12 +292,6 @@ namespace ShareX
 
         #endregion Capture / Region capture
 
-        #region Capture / Rectangle annotate
-
-        public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
-
-        #endregion Capture / Rectangle annotate
-
         #region Capture / Screen recorder
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
@@ -312,6 +306,12 @@ namespace ShareX
         public bool ScreenRecordAutoDisableAero = false;
 
         #endregion Capture / Screen recorder
+
+        #region Capture / Rectangle annotate
+
+        public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
+
+        #endregion Capture / Rectangle annotate
     }
 
     public class TaskSettingsUpload

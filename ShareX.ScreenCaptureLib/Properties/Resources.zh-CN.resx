@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -133,10 +133,6 @@
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>质量:</value>
-  </data>
-  <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>缓存文件大小不能超过{0}字节.
-请使用FFmpeg的屏幕录制,而不是GIF.</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
     <value>按Ctrl:开启画笔░区域:全屏</value>

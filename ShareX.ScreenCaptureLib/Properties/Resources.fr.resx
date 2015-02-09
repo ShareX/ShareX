@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -121,10 +121,6 @@
   </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Parcourir pour ffmpeg.exe</value>
-  </data>
-  <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>La taille du fichier cache ne peut pas dépasser {0} octets.
-S'il vous plaît utiliser FFmpeg pour l'enregistrement d'écran au lieu de GIF.</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
     <value>Ctrl: le mode Dessin ░ Espace: la capture plein écran</value>

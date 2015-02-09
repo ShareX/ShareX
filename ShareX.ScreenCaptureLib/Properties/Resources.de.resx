@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -133,10 +133,6 @@
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualität:</value>
-  </data>
-  <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>Cache Dateigröße kann nicht {0} Bytes überschreiten
-Bitte benutze FFmpeg Aufnahmen anstatt von GIF</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
     <value>Strg: Zeichenmodus ░ Leertaste: Vollbildschirmaufnahme</value>

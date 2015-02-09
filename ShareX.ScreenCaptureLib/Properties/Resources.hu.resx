@@ -135,10 +135,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Minőség:</value>
   </data>
-  <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>A cache fájl mérete nem haladhatja meg a(z) {0} bájtot.
-Kérlek használd az FFmpeg felvételi opciót a GIF helyett.</value>
-  </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
     <value>Ctrl: Rajzolási mód ░ Space: Teljesméretű felvétel</value>
   </data>

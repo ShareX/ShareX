@@ -141,10 +141,6 @@
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
     <value>Dikdörtgen yakalama dipnot</value>
   </data>
-  <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>Önbellek dosya boyutu {0} bytes dan fazla olamaz.
-Lütfen GIF yerine FFmpeg ekran kaydetmeyi kullanın.</value>
-  </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
     <value>Ctrl: Çizme modu ░ Boşluk: Tam ekran yakalama</value>
   </data>
