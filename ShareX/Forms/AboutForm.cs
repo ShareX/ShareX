@@ -61,6 +61,7 @@ Copy support: https://github.com/KamilKZ
 AdFly support: https://github.com/LRNAB
 MediaFire support: https://github.com/michalx2
 Pushbullet support: https://github.com/BallisticLingonberries
+Lambda support: https://github.com/marcusant
 
 {1}:
 
