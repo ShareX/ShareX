@@ -144,10 +144,6 @@
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>Après la mise en ligne...</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>Désactivation automatique de Windows Aéro pendant l'enregistrement.
-(Windows Aéro abaisse les performances d'enregistrement.)</value>
-  </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Zone de capture client pendant les captures "fenêtre" ou "fenêtre active"</value>
   </data>

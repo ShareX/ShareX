@@ -56,7 +56,6 @@ namespace ShareX
 
         private ScreenRecorder screenRecorder;
         private ScreenRegionForm regionForm;
-        private DWMManager dwmManager;
         private bool abortRequested;
 
         private ScreenRecordForm()
@@ -176,12 +175,6 @@ namespace ShareX
             {
                 try
                 {
-                    if (taskSettings.CaptureSettings.ScreenRecordAutoDisableAero)
-                    {
-                        dwmManager = new DWMManager();
-                        dwmManager.AutoDisable();
-                    }
-
                     if (outputType == ScreenRecordOutput.FFmpeg)
                     {
                         path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
@@ -254,12 +247,6 @@ namespace ShareX
                 }
                 finally
                 {
-                    if (dwmManager != null)
-                    {
-                        dwmManager.Dispose();
-                        dwmManager = null;
-                    }
-
                     if (regionForm != null)
                     {
                         if (regionForm.RecordResetEvent != null)

@@ -273,9 +273,6 @@
   <data name="tpRectangleAnnotate.Text" xml:space="preserve">
     <value>Dikdörtgen dipnot</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>Kaydetme sırasında Windows Aero otomatik kapatılsın (Aero kaydetme performansını düşürür)</value>
-  </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>saniye</value>
   </data>

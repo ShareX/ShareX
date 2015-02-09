@@ -195,9 +195,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Přehrát zvuk po dokončení úkolu</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>Automaticky zakázat Windows Aero při nahrávání (Aero snižuje výkon při nahrávání)</value>
-  </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Fixní délka:</value>
   </data>

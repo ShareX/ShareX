@@ -195,9 +195,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>上传后声音提示</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>截图时自动禁用Windows Aero功能（降低Aero对截图的影响）</value>
-  </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>固定时间:</value>
   </data>

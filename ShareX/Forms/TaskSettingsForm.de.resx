@@ -195,9 +195,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Spiele Ton nachdem eine Aufgabe beendet wurde</value>
   </data>
-  <data name="cbScreenRecordAutoDisableAero.Text" xml:space="preserve">
-    <value>Deaktiviere Windows Aero während der Aufnahme</value>
-  </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Gesetzte Dauer:</value>
   </data>
