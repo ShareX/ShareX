@@ -500,7 +500,7 @@ namespace ShareX
             bool isPositionChanged = false;
 
             if (Program.Settings.RememberMainFormPosition && !Program.Settings.MainFormPosition.IsEmpty &&
-                CaptureHelpers.GetScreenBounds().Contains(Program.Settings.MainFormPosition))
+                CaptureHelpers.GetScreenBounds().IntersectsWith(new Rectangle(Program.Settings.MainFormPosition, Program.Settings.MainFormSize)))
             {
                 StartPosition = FormStartPosition.Manual;
                 Location = Program.Settings.MainFormPosition;
