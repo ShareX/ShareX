@@ -829,13 +829,13 @@
     <value>286, 17</value>
   </metadata>
   <data name="tsmiShowErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>Show errors</value>
   </data>
   <data name="tsmiStopUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Stop upload</value>
@@ -886,7 +886,7 @@
     <value>Thumbnail file</value>
   </data>
   <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Open</value>
@@ -1024,94 +1024,94 @@
     <value>False</value>
   </data>
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
   <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Upload</value>
   </data>
   <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Edit image...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Delete file locally</value>
+    <value>Delete file locally...</value>
   </data>
   <data name="tsmiShortenSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
     <value>Shorten URL</value>
   </data>
   <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Share URL</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Show QR code...</value>
   </data>
   <data name="tsmiShowResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
     <value>Show response...</value>
   </data>
   <data name="tsmiClearList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Clear list</value>
   </data>
   <data name="tssUploadInfo1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 6</value>
+    <value>169, 6</value>
   </data>
   <data name="tsmiHideMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>Hide menu</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
   </data>
   <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Image preview</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 318</value>
+    <value>173, 340</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -1499,7 +1499,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1520,7 +1520,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;chFilename.Name" xml:space="preserve">
     <value>chFilename</value>
   </data>

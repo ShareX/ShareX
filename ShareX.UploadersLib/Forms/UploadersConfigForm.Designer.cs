@@ -138,7 +138,6 @@
             this.cbDropboxAutoCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.btnDropboxShowFiles = new System.Windows.Forms.Button();
             this.pbDropboxLogo = new System.Windows.Forms.PictureBox();
-            this.btnDropboxRegister = new System.Windows.Forms.Button();
             this.lblDropboxStatus = new System.Windows.Forms.Label();
             this.lblDropboxPathTip = new System.Windows.Forms.Label();
             this.lblDropboxPath = new System.Windows.Forms.Label();
@@ -170,7 +169,6 @@
             this.pbCopyLogo = new System.Windows.Forms.PictureBox();
             this.lblCopyURLType = new System.Windows.Forms.Label();
             this.cbCopyURLType = new System.Windows.Forms.ComboBox();
-            this.btnCopyRegister = new System.Windows.Forms.Button();
             this.lblCopyStatus = new System.Windows.Forms.Label();
             this.lblCopyPath = new System.Windows.Forms.Label();
             this.txtCopyPath = new System.Windows.Forms.TextBox();
@@ -1276,7 +1274,6 @@
             this.tpDropbox.Controls.Add(this.cbDropboxAutoCreateShareableLink);
             this.tpDropbox.Controls.Add(this.btnDropboxShowFiles);
             this.tpDropbox.Controls.Add(this.pbDropboxLogo);
-            this.tpDropbox.Controls.Add(this.btnDropboxRegister);
             this.tpDropbox.Controls.Add(this.lblDropboxStatus);
             this.tpDropbox.Controls.Add(this.lblDropboxPathTip);
             this.tpDropbox.Controls.Add(this.lblDropboxPath);
@@ -1323,13 +1320,6 @@
             this.pbDropboxLogo.Name = "pbDropboxLogo";
             this.pbDropboxLogo.TabStop = false;
             this.pbDropboxLogo.Click += new System.EventHandler(this.pbDropboxLogo_Click);
-            // 
-            // btnDropboxRegister
-            // 
-            resources.ApplyResources(this.btnDropboxRegister, "btnDropboxRegister");
-            this.btnDropboxRegister.Name = "btnDropboxRegister";
-            this.btnDropboxRegister.UseVisualStyleBackColor = true;
-            this.btnDropboxRegister.Click += new System.EventHandler(this.btnDropboxRegister_Click);
             // 
             // lblDropboxStatus
             // 
@@ -1533,7 +1523,6 @@
             this.tpCopy.Controls.Add(this.pbCopyLogo);
             this.tpCopy.Controls.Add(this.lblCopyURLType);
             this.tpCopy.Controls.Add(this.cbCopyURLType);
-            this.tpCopy.Controls.Add(this.btnCopyRegister);
             this.tpCopy.Controls.Add(this.lblCopyStatus);
             this.tpCopy.Controls.Add(this.lblCopyPath);
             this.tpCopy.Controls.Add(this.txtCopyPath);
@@ -1562,13 +1551,6 @@
             resources.ApplyResources(this.cbCopyURLType, "cbCopyURLType");
             this.cbCopyURLType.Name = "cbCopyURLType";
             this.cbCopyURLType.SelectedIndexChanged += new System.EventHandler(this.cbCopyURLType_SelectedIndexChanged);
-            // 
-            // btnCopyRegister
-            // 
-            resources.ApplyResources(this.btnCopyRegister, "btnCopyRegister");
-            this.btnCopyRegister.Name = "btnCopyRegister";
-            this.btnCopyRegister.UseVisualStyleBackColor = true;
-            this.btnCopyRegister.Click += new System.EventHandler(this.btnCopyRegister_Click);
             // 
             // lblCopyStatus
             // 
@@ -3646,7 +3628,6 @@
         private System.Windows.Forms.CheckBox cbDropboxAutoCreateShareableLink;
         private System.Windows.Forms.Button btnDropboxShowFiles;
         private System.Windows.Forms.PictureBox pbDropboxLogo;
-        private System.Windows.Forms.Button btnDropboxRegister;
         private System.Windows.Forms.Label lblDropboxStatus;
         private System.Windows.Forms.Label lblDropboxPathTip;
         private System.Windows.Forms.Label lblDropboxPath;
@@ -3657,7 +3638,6 @@
         private OAuthControl oAuthCopy;
         private System.Windows.Forms.Button btnCopyShowFiles;
         private System.Windows.Forms.PictureBox pbCopyLogo;
-        private System.Windows.Forms.Button btnCopyRegister;
         private System.Windows.Forms.Label lblCopyStatus;
         private System.Windows.Forms.Label lblCopyPath;
         private System.Windows.Forms.TextBox txtCopyPath;

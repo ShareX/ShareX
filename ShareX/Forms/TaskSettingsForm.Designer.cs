@@ -116,6 +116,7 @@
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
             this.pgRegionCapture = new System.Windows.Forms.PropertyGrid();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
             this.chkScreenRecordAutoStart = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordAutoDisableAero = new System.Windows.Forms.CheckBox();
@@ -177,7 +178,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -912,6 +912,13 @@
             this.tpScreenRecorder.Name = "tpScreenRecorder";
             this.tpScreenRecorder.UseVisualStyleBackColor = true;
             // 
+            // btnScreenRecorderFFmpegOptions
+            // 
+            resources.ApplyResources(this.btnScreenRecorderFFmpegOptions, "btnScreenRecorderFFmpegOptions");
+            this.btnScreenRecorderFFmpegOptions.Name = "btnScreenRecorderFFmpegOptions";
+            this.btnScreenRecorderFFmpegOptions.UseVisualStyleBackColor = true;
+            this.btnScreenRecorderFFmpegOptions.Click += new System.EventHandler(this.btnScreenRecorderFFmpegOptions_Click);
+            // 
             // lblScreenRecorderStartDelay
             // 
             resources.ApplyResources(this.lblScreenRecorderStartDelay, "lblScreenRecorderStartDelay");
@@ -1044,7 +1051,7 @@
             // 
             resources.ApplyResources(this.nudGIFFPS, "nudGIFFPS");
             this.nudGIFFPS.Maximum = new decimal(new int[] {
-            15,
+            30,
             0,
             0,
             0});
@@ -1412,13 +1419,6 @@
             this.tttvMain.Name = "tttvMain";
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
-            // 
-            // btnScreenRecorderFFmpegOptions
-            // 
-            resources.ApplyResources(this.btnScreenRecorderFFmpegOptions, "btnScreenRecorderFFmpegOptions");
-            this.btnScreenRecorderFFmpegOptions.Name = "btnScreenRecorderFFmpegOptions";
-            this.btnScreenRecorderFFmpegOptions.UseVisualStyleBackColor = true;
-            this.btnScreenRecorderFFmpegOptions.Click += new System.EventHandler(this.btnScreenRecorderFFmpegOptions_Click);
             // 
             // TaskSettingsForm
             // 

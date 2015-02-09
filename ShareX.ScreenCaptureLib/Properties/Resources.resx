@@ -124,10 +124,6 @@
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg error</value>
   </data>
-  <data name="HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed" xml:space="preserve">
-    <value>Cache file size cannot exceed {0} Bytes.
-Please use FFmpeg screen recording instead of GIF.</value>
-  </data>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Region capture</value>
   </data>

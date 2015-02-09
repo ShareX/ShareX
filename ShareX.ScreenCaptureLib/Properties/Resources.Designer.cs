@@ -124,17 +124,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Quality_", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cache file size cannot exceed {0} Bytes.
-        ///Please use FFmpeg screen recording instead of GIF..
-        /// </summary>
-        internal static string HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed {
-            get {
-                return ResourceManager.GetString("HardDiskCache_GetImageEnumerator_Cache_file_size_cannot_exceed", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ctrl: Drawing mode ░ Space: Fullscreen capture.
         /// </summary>
