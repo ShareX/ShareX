@@ -408,4 +408,7 @@ Drücke 'Nein' um das derzeitige Hochladen abzubrechen und das autoscreenshot ho
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Webseite</value>
   </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>In Zwischenablage kopiert: {0}</value>
+  </data>
 </root>

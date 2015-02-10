@@ -123,9 +123,6 @@
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Mappák listájának frissítése</value>
   </data>
-  <data name="btnCopyRegister.Text" xml:space="preserve">
-    <value>Regisztrálás...</value>
-  </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Hozzáadás</value>
   </data>
@@ -176,9 +173,6 @@
   </data>
   <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
     <value>Teszt</value>
-  </data>
-  <data name="btnDropboxRegister.Text" xml:space="preserve">
-    <value>Regisztrálás...</value>
   </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
     <value>Kiválasztás...</value>

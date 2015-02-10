@@ -597,4 +597,13 @@ Möchtest du es herunterladen und installieren?</value>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Konnte kein Verzeichnis erstellen, bitte checke deine Pfadeinstellungen.</value>
   </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>Farbauswähler</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>Bildschirmaufnahme (GIF)</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>Bildschirmaufnahme (GIF) starten mit der letzten Region</value>
+  </data>
 </root>

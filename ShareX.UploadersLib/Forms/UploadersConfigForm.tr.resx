@@ -123,9 +123,6 @@
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Dizin listesini yenile</value>
   </data>
-  <data name="btnCopyRegister.Text" xml:space="preserve">
-    <value>Kayıt ol...</value>
-  </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Ekle</value>
   </data>
@@ -358,9 +355,6 @@
     <value>Kayıt...</value>
   </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Kayıt...</value>
-  </data>
-  <data name="btnDropboxRegister.Text" xml:space="preserve">
     <value>Kayıt...</value>
   </data>
   <data name="btnMinusReadFolderList.Text" xml:space="preserve">

@@ -420,4 +420,7 @@
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>URL Kürzer</value>
   </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>FFmpeg Optionen...</value>
+  </data>
 </root>

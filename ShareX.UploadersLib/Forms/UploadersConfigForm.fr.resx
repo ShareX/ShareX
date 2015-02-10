@@ -549,12 +549,6 @@
   <data name="btnMegaRegister.Text" xml:space="preserve">
     <value>S'inscrire ...</value>
   </data>
-  <data name="btnDropboxRegister.Text" xml:space="preserve">
-    <value>S'inscrire ...</value>
-  </data>
-  <data name="btnCopyRegister.Text" xml:space="preserve">
-    <value>S'inscrire ...</value>
-  </data>
   <data name="btnMinusReadFolderList.Text" xml:space="preserve">
     <value>Recharger la liste des répertoires</value>
   </data>
