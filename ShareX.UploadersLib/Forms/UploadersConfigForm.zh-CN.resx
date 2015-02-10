@@ -123,9 +123,6 @@
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>刷新文件夹列表</value>
   </data>
-  <data name="btnCopyRegister.Text" xml:space="preserve">
-    <value>注册...</value>
-  </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
@@ -176,9 +173,6 @@
   </data>
   <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
     <value>测试</value>
-  </data>
-  <data name="btnDropboxRegister.Text" xml:space="preserve">
-    <value>注册...</value>
   </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
     <value>选择...</value>

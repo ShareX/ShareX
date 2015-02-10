@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -122,9 +123,6 @@
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Aktualisiere Ordnerliste</value>
   </data>
-  <data name="btnCopyRegister.Text" xml:space="preserve">
-    <value>Registrieren...</value>
-  </data>
   <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
@@ -175,9 +173,6 @@
   </data>
   <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
     <value>Test</value>
-  </data>
-  <data name="btnDropboxRegister.Text" xml:space="preserve">
-    <value>Registrieren...</value>
   </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
     <value>Aushwählen...</value>
@@ -755,5 +750,11 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
     <value>Notiz: Du kannst den Namen 2x anklicken um in den Ordner zu gehen</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Um einen API Schlüssel zu bekommen, melde dich bitte bei https://lambda.sx/ an und clicke dann auf das Einstellungsrad oben rechts.</value>
   </data>
 </root>

@@ -1159,4 +1159,13 @@
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Farbauswähler...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Farbauswähler...</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>letzte Links</value>
+  </data>
 </root>
