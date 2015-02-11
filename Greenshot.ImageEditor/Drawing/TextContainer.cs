@@ -288,7 +288,7 @@ namespace Greenshot.Drawing
             rect = GuiRectangle.GetGuiRectangle(Left, Top, Width, Height);
 
             int pixelsAfter = rect.Width * rect.Height;
-            float factor = pixelsAfter / pixelsBefore;
+            float factor = pixelsAfter / (float)pixelsBefore;
 
             float fontSize = GetFieldValueAsFloat(FieldType.FONT_SIZE);
             fontSize *= factor;
