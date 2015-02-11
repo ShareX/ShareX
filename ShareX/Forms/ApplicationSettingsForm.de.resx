@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Share X - Einstellungen</value>
+    <value>ShareX - Einstellungen</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Durchsuchen...</value>
@@ -145,31 +145,31 @@
     <value>Bilddruckeinstellungen...</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Bilddruckeinstellungen Fenster</value>
+    <value>Zeige nicht das Bilddruckeinstellungsfenster</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Anzahl der Male die bei Fehler beim Hochladen noch einmal versucht werden soll:</value>
+    <value>Anzahl der erneuten Versuche bei Uploadfehlern:</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Zeige nicht das Windows Druck Fenster</value>
+    <value>Zeige nicht das Window-Druck-Fenster</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Behalte Hauptfenster Position</value>
+    <value>Behalte Hauptfensterposition</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Behalte Hauptfenster Größe</value>
+    <value>Behalte Hauptfenstergröße</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Zeige ShareX im "Senden an" Menü</value>
+    <value>Zeige ShareX im Menü "Senden an"</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Zeige "Hochladen über ShareX" Feld im Kontextmenü</value>
+    <value>Zeige "Hochladen über ShareX"-Eintrag im Kontextmenü</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Zeige Taskleistensymbol im Infobereich</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Beim Starten minimieren in die Taskleisteninfobereich</value>
+    <value>Beim Start in den Infobereich minimieren</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Starte ShareX beim Starten von Windows</value>
@@ -178,10 +178,10 @@
     <value>Zeige Fortschrittsanzeige in der Taskleiste</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Zeige Fortschirttanzeige im Taskleisteninfobereichsymbol </value>
+    <value>Zeige Fortschrittsanzeige im Taskleisteninfobereichsymbol </value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Benutze eigenen screenshot Ordner:</value>
+    <value>Benutze eigenen Screenshotordner:</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Beschreibung</value>
@@ -211,16 +211,16 @@
     <value>Sprache:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Anmerkung: ShareX muss neugestartet werden damit die Änderung am persönlichen Ordner in Kraft treten </value>
+    <value>Anmerkung: ShareX muss neu gestartet werden, damit die Änderung am persönlichen Ordner in Kraft treten </value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX persönlicher Ordner:</value>
+    <value>ShareX' Eigene Dateien:</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Proxy Konfiguration:</value>
+    <value>Proxykonfiguration:</value>
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -241,7 +241,7 @@
     <value>0 - 25 (0 deaktiviert)</value>
   </data>
   <data name="llTranslators.Text" xml:space="preserve">
-    <value>Hilf uns ShareX in deine Sprache zu übersetzen!</value>
+    <value>Hilf uns, ShareX in deine Sprache zu übersetzen!</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Erweitert</value>
