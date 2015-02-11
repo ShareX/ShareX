@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Share X - Wie speichern?</value>
+    <value>ShareX - Wie speichern?</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Nicht speichern</value>
@@ -132,7 +132,7 @@
     <value>Benutze einzigartigen Namen:</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>Es existiert bereits eine Datei mit demselben Namen in der Zielort  
-Wähle neuen Namen oder AKtion aus:</value>
+    <value>Es existiert bereits eine Datei mit demselben Namen im Zielverzeichnis.
+Wähle neuen Namen oder Aktion aus:</value>
   </data>
 </root>
