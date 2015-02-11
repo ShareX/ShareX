@@ -129,7 +129,7 @@
     <value>Automatisch in Taskleisteninfobereich minimieren:</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Warten bis Aufgabe fertig ist</value>
+    <value>Warten, bis Aufgabe fertig ist</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
     <value>Region:</value>
