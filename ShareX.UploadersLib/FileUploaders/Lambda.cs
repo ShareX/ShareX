@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.IO;
 
@@ -45,7 +46,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(Config.UserAPIKey))
             {
-                Errors.Add("Missing API key. Set one in destination settings.");
+                Errors.Add(Resources.Lambda_Upload_Missing_API_key__Set_one_in_destination_settings_);
                 return null;
             }
 

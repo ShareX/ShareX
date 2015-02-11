@@ -414,6 +414,8 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(OwnCloudHost) && !string.IsNullOrEmpty(OwnCloudUsername) && !string.IsNullOrEmpty(OwnCloudPassword);
                 case FileDestination.MediaFire:
                     return !string.IsNullOrEmpty(MediaFireUsername) && !string.IsNullOrEmpty(MediaFirePassword);
+                case FileDestination.Lambda:
+                    return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
             }
 
             return true;
