@@ -56,12 +56,20 @@ namespace ShareX
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
 
             Location = borderRectangle.Location;
-            Size = new Size(borderRectangle.Width, borderRectangle.Height + pInfo.Height);
-            pInfo.Location = new Point(Width - pInfo.Width, Height - pInfo.Height);
+            int windowWidth = Math.Max(borderRectangle.Width, pInfo.Width);
+            Size = new Size(windowWidth, borderRectangle.Height + pInfo.Height);
+            pInfo.Location = new Point(0, borderRectangle.Height);
 
             Region region = new Region(ClientRectangle);
             region.Exclude(borderRectangle0Based.Offset(-1));
-            region.Exclude(new Rectangle(0, pInfo.Location.Y, pInfo.Location.X, pInfo.Height));
+            if (borderRectangle.Width < pInfo.Width)
+            {
+                region.Exclude(new Rectangle(borderRectangle.Width, 0, pInfo.Width - borderRectangle.Width, borderRectangle.Height));
+            }
+            else
+            {
+                region.Exclude(new Rectangle(pInfo.Width, borderRectangle.Height, borderRectangle.Width - pInfo.Width, pInfo.Height));
+            }
             Region = region;
 
             Timer = new Stopwatch();
