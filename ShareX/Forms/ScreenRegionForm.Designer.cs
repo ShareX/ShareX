@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRegionForm));
-            this.btnStop = new HelpersLib.BlackStyleButton();
-            this.lblTimer = new HelpersLib.BlackStyleLabel();
+            this.btnStop = new ShareX.HelpersLib.BlackStyleButton();
+            this.lblTimer = new ShareX.HelpersLib.BlackStyleLabel();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.btnAbort = new HelpersLib.BlackStyleButton();
+            this.btnAbort = new ShareX.HelpersLib.BlackStyleButton();
             this.pInfo = new System.Windows.Forms.Panel();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
