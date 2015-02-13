@@ -57,18 +57,19 @@ namespace ShareX
 
             Location = borderRectangle.Location;
             int windowWidth = Math.Max(borderRectangle.Width, pInfo.Width);
-            Size = new Size(windowWidth, borderRectangle.Height + pInfo.Height);
-            pInfo.Location = new Point(0, borderRectangle.Height);
+            Size = new Size(windowWidth, borderRectangle.Height + pInfo.Height + 1);
+            pInfo.Location = new Point(0, borderRectangle.Height + 1);
 
             Region region = new Region(ClientRectangle);
             region.Exclude(borderRectangle0Based.Offset(-1));
+            region.Exclude(new Rectangle(0, borderRectangle.Height, windowWidth, 1));
             if (borderRectangle.Width < pInfo.Width)
             {
                 region.Exclude(new Rectangle(borderRectangle.Width, 0, pInfo.Width - borderRectangle.Width, borderRectangle.Height));
             }
-            else
+            else if (borderRectangle.Width > pInfo.Width)
             {
-                region.Exclude(new Rectangle(pInfo.Width, borderRectangle.Height, borderRectangle.Width - pInfo.Width, pInfo.Height));
+                region.Exclude(new Rectangle(pInfo.Width, borderRectangle.Height + 1, borderRectangle.Width - pInfo.Width, pInfo.Height));
             }
             Region = region;
 

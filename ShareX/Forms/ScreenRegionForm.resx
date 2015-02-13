@@ -122,7 +122,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 0</value>
+    <value>0, 0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnStop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -142,7 +142,7 @@
     <value>btnStop</value>
   </data>
   <data name="&gt;&gt;btnStop.Type" xml:space="preserve">
-    <value>HelpersLib.BlackStyleButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnStop.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -154,7 +154,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="lblTimer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>190, 0</value>
   </data>
   <data name="lblTimer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -167,12 +167,12 @@
   </data>
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblTimer.Name" xml:space="preserve">
     <value>lblTimer</value>
   </data>
   <data name="&gt;&gt;lblTimer.Type" xml:space="preserve">
-    <value>HelpersLib.BlackStyleLabel, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblTimer.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -187,7 +187,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 0</value>
+    <value>95, 0</value>
   </data>
   <data name="btnAbort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -205,7 +205,7 @@
     <value>btnAbort</value>
   </data>
   <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
-    <value>HelpersLib.BlackStyleButton, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
     <value>pInfo</value>
