@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(Config.UserAPIKey))
             {
-                Errors.Add(Resources.Lambda_Upload_Missing_API_key__Set_one_in_destination_settings_);
+                Errors.Add("Missing API key. Set one in destination settings.");
                 return null;
             }
 

@@ -125,7 +125,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Automatically check updates at startup.")]
+        [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
         public bool AutoCheckUpdate { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]

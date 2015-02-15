@@ -426,8 +426,4 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>ShareX.HelpersLib.ColorPickerForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value></value>
-    <comment>@Invariant</comment>
-  </data>
 </root>
