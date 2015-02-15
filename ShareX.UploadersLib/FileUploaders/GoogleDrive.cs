@@ -221,7 +221,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, headers: GetAuthHeaders());
+            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files?uploadType=media", fileName, headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(result.Response))
             {
