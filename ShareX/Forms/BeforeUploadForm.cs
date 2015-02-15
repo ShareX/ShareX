@@ -43,6 +43,7 @@ namespace ShareX
                 string title = string.IsNullOrEmpty(currentDestination) ? Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ :
                     Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_;
                 lblTitle.Text = string.Format(title, info.FileName, currentDestination);
+                pbPreview.LoadImageFromFileAsync(info.FilePath);
             };
             ucBeforeUpload.Init(info);
         }
