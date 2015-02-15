@@ -182,7 +182,9 @@ namespace ShareX
                 case EDataType.File:
                     if (destination is FileDestination)
                     {
-                        taskSettings.ImageFileDestination = taskSettings.FileDestination = (FileDestination)destination;
+                        taskSettings.ImageDestination = ImageDestination.FileUploader;
+                        taskSettings.TextDestination = TextDestination.FileUploader;
+                        taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = (FileDestination)destination;
                     }
                     break;
                 case EDataType.URL:

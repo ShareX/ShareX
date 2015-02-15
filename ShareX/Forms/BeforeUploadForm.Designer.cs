@@ -32,6 +32,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -53,6 +55,15 @@
             // 
             resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.Name = "lblTitle";
+            // 
+            // pbPreview
+            // 
+            resources.ApplyResources(this.pbPreview, "pbPreview");
+            this.pbPreview.BackColor = System.Drawing.Color.White;
+            this.pbPreview.DrawCheckeredBackground = true;
+            this.pbPreview.EnableRightClickMenu = true;
+            this.pbPreview.FullscreenOnClick = true;
+            this.pbPreview.Name = "pbPreview";
             // 
             // ucBeforeUpload
             // 
@@ -64,10 +75,13 @@
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.pbPreview);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.ucBeforeUpload);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BeforeUploadForm";
@@ -82,5 +96,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblTitle;
+        private HelpersLib.MyPictureBox pbPreview;
     }
 }
