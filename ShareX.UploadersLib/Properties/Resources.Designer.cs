@@ -422,15 +422,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing API key. Set one in destination settings..
-        /// </summary>
-        internal static string Lambda_Upload_Missing_API_key__Set_one_in_destination_settings_ {
-            get {
-                return ResourceManager.GetString("Lambda_Upload_Missing_API_key__Set_one_in_destination_settings_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap mail {

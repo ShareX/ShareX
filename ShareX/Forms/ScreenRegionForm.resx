@@ -167,7 +167,7 @@
   </data>
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblTimer.Name" xml:space="preserve">
     <value>lblTimer</value>
   </data>
