@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,18 @@ namespace ShareX.HelpersLib
 {
     public partial class AutomateForm : Form
     {
+        public string Script
+        {
+            get
+            {
+                return rtbInput.Text;
+            }
+            set
+            {
+                rtbInput.Text = value;
+            }
+        }
+
         private FunctionManager functionManager = new FunctionManager();
         private Tokenizer tokenizer = new Tokenizer();
         private bool isWorking;
@@ -43,8 +56,9 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
-            Tokenize();
             cbFunctions.Items.AddRange(tokenizer.Keywords);
+            cbFunctions.SelectedIndex = 0;
+            Tokenize();
         }
 
         private void rtbInput_TextChanged(object sender, EventArgs e)
@@ -110,8 +124,8 @@ namespace ShareX.HelpersLib
                 btnRun.Enabled = false;
                 string[] lines = rtbInput.Lines;
                 BackgroundWorker bw = new BackgroundWorker();
-                bw.DoWork += new DoWorkEventHandler(bw_DoWork);
-                bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+                bw.DoWork += bw_DoWork;
+                bw.RunWorkerCompleted += bw_RunWorkerCompleted;
                 bw.RunWorkerAsync(lines);
             }
         }
@@ -127,7 +141,7 @@ namespace ShareX.HelpersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.ExportImportControl_Serialize_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

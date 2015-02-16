@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -44,7 +45,7 @@ namespace ShareX.HelpersLib
 
         public void Run()
         {
-            Console.WriteLine(string.Format("{0}({1})", Name, string.Join(", ", Parameters)));
+            Debug.WriteLine("{0}({1})", Name, string.Join(", ", Parameters));
 
             for (int i = 0; i < Loop; i++)
             {
@@ -61,7 +62,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_Goto : Function
+    public class Function_Call : Function
     {
         public override void Prepare()
         {

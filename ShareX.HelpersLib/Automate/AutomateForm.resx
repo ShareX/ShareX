@@ -119,9 +119,9 @@
   </resheader>
   <data name="rtbInput.Text" xml:space="preserve">
     <value>Wait 2000
-Goto TestFunction
+Call TestFunction
 5 KeyPress key_z
-3 Goto MyFunction
+3 Call MyFunction
 KeyPress return
 
 Func TestFunction
