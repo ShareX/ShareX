@@ -546,6 +546,11 @@ namespace ShareX
             }
         }
 
+        public static void OpenAutomate()
+        {
+            new AutomateForm().Show();
+        }
+
         public static void OpenHashCheck()
         {
             new HashCheckForm().Show();
