@@ -92,16 +92,23 @@ namespace ShareX
         public static ScreenRegionForm Show(Rectangle captureRectangle, Action stopRequested, float duration = 0)
         {
             ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
-            regionForm.StopRequested += stopRequested;
 
-            if (duration > 0)
+            Thread thread = new Thread(() =>
             {
-                regionForm.IsCountdown = true;
-                regionForm.Countdown = TimeSpan.FromSeconds(duration);
-            }
+                regionForm.StopRequested += stopRequested;
 
-            regionForm.UpdateTimer();
-            regionForm.Show();
+                if (duration > 0)
+                {
+                    regionForm.IsCountdown = true;
+                    regionForm.Countdown = TimeSpan.FromSeconds(duration);
+                }
+
+                regionForm.UpdateTimer();
+                regionForm.ShowDialog();
+            });
+
+            thread.Start();
+
             return regionForm;
         }
 

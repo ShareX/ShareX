@@ -230,7 +230,7 @@ namespace ShareX
 
                         if (regionForm != null)
                         {
-                            this.InvokeSafe(() => regionForm.StartTimer());
+                            regionForm.InvokeSafe(() => regionForm.StartTimer());
                         }
 
                         screenRecorder.StartRecording();
@@ -254,7 +254,7 @@ namespace ShareX
                             regionForm.RecordResetEvent.Dispose();
                         }
 
-                        this.InvokeSafe(() => regionForm.Close());
+                        regionForm.InvokeSafe(() => regionForm.Close());
                         regionForm = null;
                     }
                 }
