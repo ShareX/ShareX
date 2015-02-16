@@ -77,6 +77,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionsCodeMenuEntry.cs" />
+    <Compile Include="Automate\AutomateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Automate\AutomateForm.Designer.cs">
+      <DependentUpon>AutomateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Automate\Function.cs" />
+    <Compile Include="Automate\FunctionManager.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />
@@ -125,6 +133,8 @@
     <Compile Include="Helpers\URLHelpers.cs" />
     <Compile Include="Helpers\MathHelpers.cs" />
     <Compile Include="CodeMenuEntry.cs" />
+    <Compile Include="Input\InputHelpers.cs" />
+    <Compile Include="Input\InputManager.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="MimeTypes.cs" />
     <Compile Include="Native\LayeredForm.cs">
@@ -365,6 +375,9 @@
     <Compile Include="WindowState.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
+    <EmbeddedResource Include="Automate\AutomateForm.resx">
+      <DependentUpon>AutomateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.de.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>

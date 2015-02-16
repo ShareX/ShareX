@@ -900,6 +900,11 @@ namespace ShareX
             TaskHelpers.OpenRuler();
         }
 
+        private void tsmiAutomate_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenAutomate();
+        }
+
         private void tsmiIndexFolder_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenIndexFolder();

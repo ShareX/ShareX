@@ -750,6 +750,7 @@
     <None Include="Resources\globe.png" />
     <None Include="Resources\us.png" />
     <None Include="Resources\clipboard-list.png" />
+    <None Include="Resources\robot.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

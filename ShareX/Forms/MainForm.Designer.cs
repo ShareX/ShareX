@@ -81,6 +81,7 @@
             this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -562,6 +563,7 @@
             this.tsmiDNSChanger,
             this.tsmiQRCode,
             this.tsmiRuler,
+            this.tsmiAutomate,
             this.tsmiIndexFolder,
             this.tsmiFTPClient,
             this.tsmiTweetMessage,
@@ -653,6 +655,13 @@
             this.tsmiMonitorTest.Name = "tsmiMonitorTest";
             resources.ApplyResources(this.tsmiMonitorTest, "tsmiMonitorTest");
             this.tsmiMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
+            // 
+            // tsmiAutomate
+            // 
+            this.tsmiAutomate.Image = global::ShareX.Properties.Resources.robot;
+            this.tsmiAutomate.Name = "tsmiAutomate";
+            resources.ApplyResources(this.tsmiAutomate, "tsmiAutomate");
+            this.tsmiAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
             // 
             // tssMain1
             // 
@@ -1927,5 +1936,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenColorPicker;
         public System.Windows.Forms.ToolStripMenuItem tsmiTrayRecentItems;
         private System.Windows.Forms.ContextMenuStrip cmsTray;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAutomate;
     }
 }
