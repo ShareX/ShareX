@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutomateForm));
             this.btnRun = new System.Windows.Forms.Button();
             this.rtbInput = new System.Windows.Forms.RichTextBox();
             this.pInput = new System.Windows.Forms.Panel();
             this.cbFunctions = new System.Windows.Forms.ComboBox();
             this.lblFunctions = new System.Windows.Forms.Label();
+            this.btnLoadExample = new System.Windows.Forms.Button();
             this.pInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,8 +56,8 @@
             this.rtbInput.Location = new System.Drawing.Point(3, 3);
             this.rtbInput.Name = "rtbInput";
             this.rtbInput.Size = new System.Drawing.Size(495, 460);
-            this.rtbInput.TabIndex = 2;
-            this.rtbInput.Text = resources.GetString("rtbInput.Text");
+            this.rtbInput.TabIndex = 0;
+            this.rtbInput.Text = "";
             this.rtbInput.TextChanged += new System.EventHandler(this.rtbInput_TextChanged);
             // 
             // pInput
@@ -72,7 +72,7 @@
             this.pInput.Name = "pInput";
             this.pInput.Padding = new System.Windows.Forms.Padding(3);
             this.pInput.Size = new System.Drawing.Size(503, 468);
-            this.pInput.TabIndex = 3;
+            this.pInput.TabIndex = 0;
             // 
             // cbFunctions
             // 
@@ -91,14 +91,26 @@
             this.lblFunctions.Location = new System.Drawing.Point(279, 488);
             this.lblFunctions.Name = "lblFunctions";
             this.lblFunctions.Size = new System.Drawing.Size(56, 13);
-            this.lblFunctions.TabIndex = 5;
+            this.lblFunctions.TabIndex = 3;
             this.lblFunctions.Text = "Functions:";
+            // 
+            // btnLoadExample
+            // 
+            this.btnLoadExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLoadExample.Location = new System.Drawing.Point(136, 484);
+            this.btnLoadExample.Name = "btnLoadExample";
+            this.btnLoadExample.Size = new System.Drawing.Size(120, 24);
+            this.btnLoadExample.TabIndex = 2;
+            this.btnLoadExample.Text = "Load example";
+            this.btnLoadExample.UseVisualStyleBackColor = true;
+            this.btnLoadExample.Click += new System.EventHandler(this.btnLoadExample_Click);
             // 
             // AutomateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 516);
+            this.Controls.Add(this.btnLoadExample);
             this.Controls.Add(this.lblFunctions);
             this.Controls.Add(this.cbFunctions);
             this.Controls.Add(this.pInput);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.Panel pInput;
         private System.Windows.Forms.ComboBox cbFunctions;
         private System.Windows.Forms.Label lblFunctions;
+        private System.Windows.Forms.Button btnLoadExample;
 
 
 
