@@ -35,10 +35,10 @@ namespace ShareX.HelpersLib
         public static readonly Dictionary<string, Type> Functions = new Dictionary<string, Type>()
         {
             { "Func", typeof(Function) },
-            { "Goto", typeof(Function_Goto) },
+            { "Call", typeof(Function_Call) },
             { "Wait", typeof(Function_Wait) },
             { "KeyDown", typeof(Function_KeyDown) },
-            { "KeyUp", typeof(Function_KeyDown) },
+            { "KeyUp", typeof(Function_KeyUp) },
             { "KeyPress", typeof(Function_KeyPress) },
             { "KeyPressText", typeof(Function_KeyPressText) },
             { "MouseDown", typeof(Function_MouseDown) },
@@ -124,7 +124,10 @@ namespace ShareX.HelpersLib
 
             foreach (Function function in FunctionList)
             {
-                function.Prepare();
+                if (function != null)
+                {
+                    function.Prepare();
+                }
             }
 
             return true;
