@@ -117,28 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbInput.Text" xml:space="preserve">
-    <value>Wait 2000
-Call TestFunction
-5 KeyPress key_z
-3 Call MyFunction
-KeyPress return
-
-Func TestFunction
-KeyDown space
-KeyUp space
-KeyPress key_a
-KeyPressText "Test :)"
-MouseMove 300 250
-MouseDown left
-MouseUp left
-MouseClick right
-Wait 500
-MouseClick 100 450 left
-MouseWheel 120
-
-Func MyFunction
-Wait 1000
-KeyPressText "123"</value>
-  </data>
 </root>

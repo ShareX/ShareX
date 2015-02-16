@@ -150,5 +150,32 @@ namespace ShareX.HelpersLib
             isWorking = false;
             btnRun.Enabled = true;
         }
+
+        private void btnLoadExample_Click(object sender, EventArgs e)
+        {
+            Script = @"Wait 3000
+Call KeyboardFunctions
+Call MouseFunctions
+3 Call LoopTest
+5 KeyPress return
+
+Func KeyboardFunctions
+KeyDown space
+KeyUp space
+KeyPress key_a
+KeyPressText ""Test 123""
+
+Func MouseFunctions
+MouseMove 300 250
+MouseDown left
+MouseUp left
+MouseClick right
+MouseClick 100 450 left
+MouseWheel 120
+
+Func LoopTest
+Wait 1000
+KeyPressText ""Loop""";
+        }
     }
 }
