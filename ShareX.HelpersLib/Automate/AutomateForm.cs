@@ -51,7 +51,7 @@ namespace ShareX.HelpersLib
             Icon = ShareXResources.Icon;
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
             cbFunctions.Items.AddRange(tokenizer.Keywords);
-            cbFunctions.SelectedIndex = 0;
+            cbKeys.Items.AddRange(Enum.GetNames(typeof(Keys)));
             Tokenize();
 
             Scripts = scripts;
@@ -205,23 +205,23 @@ Call KeyboardFunctions
 Call MouseFunctions
 ""You can use 0 to loop forever""
 3 Call LoopTest
-5 KeyPress enter
+5 KeyPress Enter
 
-Function KeyboardFunctions
-KeyDown space
-KeyUp space
-KeyPress a
+Func KeyboardFunctions
+KeyDown Space
+KeyUp Space
+KeyPress A
 KeyPressText ""Test 123""
 
-Function MouseFunctions
+Func MouseFunctions
 MouseMove 300 250
-MouseDown left
-MouseUp left
-MouseClick right
-MouseClick 100 450 left
+MouseDown Left
+MouseUp Left
+MouseClick Right
+MouseClick 100 450 Left
 MouseWheel 120
 
-Function LoopTest
+Func LoopTest
 Wait 1000
 KeyPressText ""Loop""";
         }
@@ -282,6 +282,16 @@ KeyPressText ""Loop""";
                     Tokenize();
                 }
             }
+        }
+
+        private void cbFunctions_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            rtbInput.SelectedText = cbFunctions.Text;
+        }
+
+        private void cbKeys_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            rtbInput.SelectedText = cbKeys.Text;
         }
 
         private void btnAddMouseMove_Click(object sender, EventArgs e)

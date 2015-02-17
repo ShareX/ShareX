@@ -42,6 +42,8 @@
             this.lblLineDelay = new System.Windows.Forms.Label();
             this.nudLineDelay = new System.Windows.Forms.NumericUpDown();
             this.lblLineDelayMiliseconds = new System.Windows.Forms.Label();
+            this.lblKeys = new System.Windows.Forms.Label();
+            this.cbKeys = new System.Windows.Forms.ComboBox();
             this.lvScripts = new ShareX.HelpersLib.MyListView();
             this.chScriptName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pInput.SuspendLayout();
@@ -50,10 +52,9 @@
             // 
             // btnRun
             // 
-            this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRun.Location = new System.Drawing.Point(9, 9);
+            this.btnRun.Location = new System.Drawing.Point(8, 8);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(120, 63);
+            this.btnRun.Size = new System.Drawing.Size(152, 24);
             this.btnRun.TabIndex = 1;
             this.btnRun.Text = "Start";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -90,16 +91,17 @@
             this.cbFunctions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFunctions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFunctions.FormattingEnabled = true;
-            this.cbFunctions.Location = new System.Drawing.Point(344, 24);
+            this.cbFunctions.Location = new System.Drawing.Point(168, 24);
             this.cbFunctions.Name = "cbFunctions";
             this.cbFunctions.Size = new System.Drawing.Size(168, 21);
             this.cbFunctions.TabIndex = 4;
+            this.cbFunctions.SelectionChangeCommitted += new System.EventHandler(this.cbFunctions_SelectionChangeCommitted);
             // 
             // lblFunctions
             // 
             this.lblFunctions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFunctions.AutoSize = true;
-            this.lblFunctions.Location = new System.Drawing.Point(341, 8);
+            this.lblFunctions.Location = new System.Drawing.Point(165, 8);
             this.lblFunctions.Name = "lblFunctions";
             this.lblFunctions.Size = new System.Drawing.Size(56, 13);
             this.lblFunctions.TabIndex = 3;
@@ -161,7 +163,7 @@
             this.btnAddMouseMove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddMouseMove.Location = new System.Drawing.Point(344, 48);
             this.btnAddMouseMove.Name = "btnAddMouseMove";
-            this.btnAddMouseMove.Size = new System.Drawing.Size(168, 23);
+            this.btnAddMouseMove.Size = new System.Drawing.Size(168, 24);
             this.btnAddMouseMove.TabIndex = 10;
             this.btnAddMouseMove.Text = "Add mouse move";
             this.btnAddMouseMove.UseVisualStyleBackColor = true;
@@ -170,7 +172,7 @@
             // lblLineDelay
             // 
             this.lblLineDelay.AutoSize = true;
-            this.lblLineDelay.Location = new System.Drawing.Point(133, 8);
+            this.lblLineDelay.Location = new System.Drawing.Point(5, 39);
             this.lblLineDelay.Name = "lblLineDelay";
             this.lblLineDelay.Size = new System.Drawing.Size(58, 13);
             this.lblLineDelay.TabIndex = 11;
@@ -183,7 +185,7 @@
             0,
             0,
             0});
-            this.nudLineDelay.Location = new System.Drawing.Point(137, 25);
+            this.nudLineDelay.Location = new System.Drawing.Point(8, 56);
             this.nudLineDelay.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -202,11 +204,32 @@
             // lblLineDelayMiliseconds
             // 
             this.lblLineDelayMiliseconds.AutoSize = true;
-            this.lblLineDelayMiliseconds.Location = new System.Drawing.Point(230, 29);
+            this.lblLineDelayMiliseconds.Location = new System.Drawing.Point(101, 60);
             this.lblLineDelayMiliseconds.Name = "lblLineDelayMiliseconds";
             this.lblLineDelayMiliseconds.Size = new System.Drawing.Size(20, 13);
             this.lblLineDelayMiliseconds.TabIndex = 13;
             this.lblLineDelayMiliseconds.Text = "ms";
+            // 
+            // lblKeys
+            // 
+            this.lblKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblKeys.AutoSize = true;
+            this.lblKeys.Location = new System.Drawing.Point(342, 9);
+            this.lblKeys.Name = "lblKeys";
+            this.lblKeys.Size = new System.Drawing.Size(33, 13);
+            this.lblKeys.TabIndex = 14;
+            this.lblKeys.Text = "Keys:";
+            // 
+            // cbKeys
+            // 
+            this.cbKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbKeys.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKeys.FormattingEnabled = true;
+            this.cbKeys.Location = new System.Drawing.Point(345, 25);
+            this.cbKeys.Name = "cbKeys";
+            this.cbKeys.Size = new System.Drawing.Size(168, 21);
+            this.cbKeys.TabIndex = 15;
+            this.cbKeys.SelectionChangeCommitted += new System.EventHandler(this.cbKeys_SelectionChangeCommitted);
             // 
             // lvScripts
             // 
@@ -237,6 +260,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 489);
+            this.Controls.Add(this.lblKeys);
+            this.Controls.Add(this.cbKeys);
             this.Controls.Add(this.lblLineDelayMiliseconds);
             this.Controls.Add(this.nudLineDelay);
             this.Controls.Add(this.lblLineDelay);
@@ -279,6 +304,8 @@
         private System.Windows.Forms.Label lblLineDelay;
         private System.Windows.Forms.NumericUpDown nudLineDelay;
         private System.Windows.Forms.Label lblLineDelayMiliseconds;
+        private System.Windows.Forms.Label lblKeys;
+        private System.Windows.Forms.ComboBox cbKeys;
 
 
 
