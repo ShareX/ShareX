@@ -73,6 +73,9 @@
             // 
             // pInput
             // 
+            this.pInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pInput.BackColor = System.Drawing.Color.White;
             this.pInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pInput.Controls.Add(this.rtbInput);
@@ -84,6 +87,7 @@
             // 
             // cbFunctions
             // 
+            this.cbFunctions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFunctions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFunctions.FormattingEnabled = true;
             this.cbFunctions.Location = new System.Drawing.Point(344, 24);
@@ -93,6 +97,7 @@
             // 
             // lblFunctions
             // 
+            this.lblFunctions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFunctions.AutoSize = true;
             this.lblFunctions.Location = new System.Drawing.Point(341, 8);
             this.lblFunctions.Name = "lblFunctions";
@@ -102,6 +107,7 @@
             // 
             // btnLoadExample
             // 
+            this.btnLoadExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadExample.Location = new System.Drawing.Point(520, 96);
             this.btnLoadExample.Name = "btnLoadExample";
             this.btnLoadExample.Size = new System.Drawing.Size(152, 24);
@@ -112,6 +118,7 @@
             // 
             // txtScriptName
             // 
+            this.txtScriptName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtScriptName.Location = new System.Drawing.Point(520, 24);
             this.txtScriptName.Name = "txtScriptName";
             this.txtScriptName.Size = new System.Drawing.Size(152, 20);
@@ -119,6 +126,7 @@
             // 
             // btnSaveScript
             // 
+            this.btnSaveScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveScript.Location = new System.Drawing.Point(520, 48);
             this.btnSaveScript.Name = "btnSaveScript";
             this.btnSaveScript.Size = new System.Drawing.Size(152, 24);
@@ -129,6 +137,7 @@
             // 
             // lblScriptName
             // 
+            this.lblScriptName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblScriptName.AutoSize = true;
             this.lblScriptName.Location = new System.Drawing.Point(517, 8);
             this.lblScriptName.Name = "lblScriptName";
@@ -138,6 +147,7 @@
             // 
             // btnRemoveScript
             // 
+            this.btnRemoveScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoveScript.Location = new System.Drawing.Point(520, 72);
             this.btnRemoveScript.Name = "btnRemoveScript";
             this.btnRemoveScript.Size = new System.Drawing.Size(152, 24);
@@ -148,6 +158,7 @@
             // 
             // btnAddMouseMove
             // 
+            this.btnAddMouseMove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddMouseMove.Location = new System.Drawing.Point(344, 48);
             this.btnAddMouseMove.Name = "btnAddMouseMove";
             this.btnAddMouseMove.Size = new System.Drawing.Size(168, 23);
@@ -159,7 +170,7 @@
             // lblLineDelay
             // 
             this.lblLineDelay.AutoSize = true;
-            this.lblLineDelay.Location = new System.Drawing.Point(136, 8);
+            this.lblLineDelay.Location = new System.Drawing.Point(133, 8);
             this.lblLineDelay.Name = "lblLineDelay";
             this.lblLineDelay.Size = new System.Drawing.Size(58, 13);
             this.lblLineDelay.TabIndex = 11;
@@ -199,6 +210,8 @@
             // 
             // lvScripts
             // 
+            this.lvScripts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvScripts.AutoFillColumn = true;
             this.lvScripts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chScriptName});
