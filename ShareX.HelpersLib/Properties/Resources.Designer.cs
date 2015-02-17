@@ -709,6 +709,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open/Stop Automate tool.
+        /// </summary>
+        internal static string HotkeyType_Automate {
+            get {
+                return ResourceManager.GetString("HotkeyType_Automate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload from clipboard.
         /// </summary>
         internal static string HotkeyType_ClipboardUpload {

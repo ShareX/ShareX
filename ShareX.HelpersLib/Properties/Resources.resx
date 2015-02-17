@@ -628,4 +628,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Start screen recording (GIF) using last region</value>
   </data>
+  <data name="HotkeyType_Automate" xml:space="preserve">
+    <value>Open/Stop Automate tool</value>
+  </data>
 </root>

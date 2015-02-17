@@ -162,7 +162,8 @@ namespace ShareX
         IndexFolder,
         ImageEffects,
         QRCode,
-        TweetMessage
+        TweetMessage,
+        Automate
     }
 
     public enum HotkeyStatus

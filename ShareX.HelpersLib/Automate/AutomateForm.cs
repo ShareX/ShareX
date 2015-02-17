@@ -36,13 +36,16 @@ namespace ShareX.HelpersLib
 {
     public partial class AutomateForm : Form
     {
+        private static AutomateForm instance;
+
+        public static bool IsRunning { get; private set; }
+
         public List<ScriptInfo> Scripts { get; private set; }
-        public bool IsWorking { get; private set; }
 
         private FunctionManager functionManager = new FunctionManager();
         private Tokenizer tokenizer = new Tokenizer();
 
-        public AutomateForm(List<ScriptInfo> scripts)
+        private AutomateForm(List<ScriptInfo> scripts)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -62,6 +65,16 @@ namespace ShareX.HelpersLib
             {
                 lvScripts.Items[0].Selected = true;
             }
+        }
+
+        public static AutomateForm GetInstance(List<ScriptInfo> scripts)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new AutomateForm(scripts);
+            }
+
+            return instance;
         }
 
         private void AddScript(ScriptInfo scriptInfo)
@@ -126,9 +139,9 @@ namespace ShareX.HelpersLib
 
         private void Start()
         {
-            if (!IsWorking)
+            if (!IsRunning)
             {
-                IsWorking = true;
+                IsRunning = true;
                 btnRun.Text = Resources.Stop;
                 string[] lines = rtbInput.Lines;
                 functionManager.LineDelay = (int)nudLineDelay.Value;
@@ -139,13 +152,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void Stop()
+        public void Stop()
         {
-            if (IsWorking)
+            if (IsRunning)
             {
                 functionManager.Stop();
                 btnRun.Text = Resources.Start;
-                IsWorking = false;
+                IsRunning = false;
             }
         }
 
@@ -153,7 +166,7 @@ namespace ShareX.HelpersLib
         {
             lock (this)
             {
-                if (IsWorking)
+                if (IsRunning)
                 {
                     Stop();
                 }
@@ -171,7 +184,7 @@ namespace ShareX.HelpersLib
             try
             {
                 functionManager.Compile(lines);
-                functionManager.Run();
+                functionManager.Start();
             }
             catch (Exception ex)
             {
@@ -273,7 +286,7 @@ KeyPressText ""Loop""";
         {
             Thread thread = new Thread(() =>
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 Point position = Cursor.Position;
                 this.InvokeSafe(() =>
                 {
