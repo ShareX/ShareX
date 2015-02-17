@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
     {
         public static readonly Dictionary<string, Type> Functions = new Dictionary<string, Type>()
         {
-            { "Function", typeof(Function) },
+            { "Func", typeof(Function) },
             { "Call", typeof(Function_Call) },
             { "Wait", typeof(Function_Wait) },
             { "KeyDown", typeof(Function_KeyDown) },
