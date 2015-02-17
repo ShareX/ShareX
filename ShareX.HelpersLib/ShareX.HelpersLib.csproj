@@ -379,6 +379,9 @@
     <EmbeddedResource Include="Automate\AutomateForm.resx">
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Automate\AutomateForm.tr.resx">
+      <DependentUpon>AutomateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colors\ColorPickerForm.de.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
