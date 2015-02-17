@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
                 {
                     Tokenizer tokenizer = new Tokenizer();
                     tokenizer.AutoParseLiteral = true;
-                    tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
+                    tokenizer.Keywords = Functions.Select(x => x.Key).ToArray();
                     List<Token> tokens = tokenizer.Tokenize(line);
 
                     int loop = 1;
@@ -159,11 +159,14 @@ namespace ShareX.HelpersLib
                         break;
                     }
 
-                    function.Run();
-
-                    if (LineDelay > 0)
+                    for (int count = 0; count < function.Loop && !stopRequest; count++)
                     {
-                        Thread.Sleep(LineDelay);
+                        function.Method();
+
+                        if (LineDelay > 0)
+                        {
+                            Thread.Sleep(LineDelay);
+                        }
                     }
                 }
             }
