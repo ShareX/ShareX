@@ -64,7 +64,7 @@ namespace ShareX.HelpersLib
 
                 if (hashCheck.Start(txtFilePath.Text, hashType))
                 {
-                    btnStartHashCheck.Text = Resources.HashCheckForm_btnStartHashCheck_Click_Stop;
+                    btnStartHashCheck.Text = Resources.Stop;
                     txtResult.Text = string.Empty;
                 }
             }
@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib
 
         private void fileCheck_FileCheckCompleted(string result, bool cancelled)
         {
-            btnStartHashCheck.Text = Resources.HashCheckForm_fileCheck_FileCheckCompleted_Start;
+            btnStartHashCheck.Text = Resources.Start;
             txtResult.Text = result.ToUpperInvariant();
             if (!string.IsNullOrEmpty(txtTarget.Text))
             {

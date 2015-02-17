@@ -457,6 +457,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse for executable....
         /// </summary>
         internal static string ExeFileNameEditor_EditValue_Browse_for_executable___ {
@@ -471,15 +480,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ExportImportControl_Deserialize_Import_failed_ {
             get {
                 return ResourceManager.GetString("ExportImportControl_Deserialize_Import_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error.
-        /// </summary>
-        internal static string ExportImportControl_Serialize_Error {
-            get {
-                return ResourceManager.GetString("ExportImportControl_Serialize_Error", resourceCulture);
             }
         }
         
@@ -651,24 +651,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HashCheckForm_btnFilePathBrowse_Click_Choose_file_path {
             get {
                 return ResourceManager.GetString("HashCheckForm_btnFilePathBrowse_Click_Choose_file_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stop.
-        /// </summary>
-        internal static string HashCheckForm_btnStartHashCheck_Click_Stop {
-            get {
-                return ResourceManager.GetString("HashCheckForm_btnStartHashCheck_Click_Stop", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start.
-        /// </summary>
-        internal static string HashCheckForm_fileCheck_FileCheckCompleted_Start {
-            get {
-                return ResourceManager.GetString("HashCheckForm_fileCheck_FileCheckCompleted_Start", resourceCulture);
             }
         }
         
@@ -1492,6 +1474,24 @@ namespace ShareX.HelpersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("ShareX_Logo_Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string Stop {
+            get {
+                return ResourceManager.GetString("Stop", resourceCulture);
             }
         }
         

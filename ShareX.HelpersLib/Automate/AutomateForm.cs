@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -36,10 +37,10 @@ namespace ShareX.HelpersLib
     public partial class AutomateForm : Form
     {
         public List<ScriptInfo> Scripts { get; private set; }
+        public bool IsWorking { get; private set; }
 
         private FunctionManager functionManager = new FunctionManager();
         private Tokenizer tokenizer = new Tokenizer();
-        private bool isWorking;
 
         public AutomateForm(List<ScriptInfo> scripts)
         {
@@ -123,17 +124,43 @@ namespace ShareX.HelpersLib
             rtbInput.EndUpdate();
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
+        private void Start()
         {
-            if (!isWorking)
+            if (!IsWorking)
             {
-                isWorking = true;
-                btnRun.Enabled = false;
+                IsWorking = true;
+                btnRun.Text = Resources.Stop;
                 string[] lines = rtbInput.Lines;
+                functionManager.LineDelay = (int)nudLineDelay.Value;
                 BackgroundWorker bw = new BackgroundWorker();
                 bw.DoWork += bw_DoWork;
                 bw.RunWorkerCompleted += bw_RunWorkerCompleted;
                 bw.RunWorkerAsync(lines);
+            }
+        }
+
+        private void Stop()
+        {
+            if (IsWorking)
+            {
+                functionManager.Stop();
+                btnRun.Text = Resources.Start;
+                IsWorking = false;
+            }
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            lock (this)
+            {
+                if (IsWorking)
+                {
+                    Stop();
+                }
+                else
+                {
+                    Start();
+                }
             }
         }
 
@@ -148,14 +175,13 @@ namespace ShareX.HelpersLib
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), Resources.ExportImportControl_Serialize_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            isWorking = false;
-            btnRun.Enabled = true;
+            Stop();
         }
 
         private void btnLoadExample_Click(object sender, EventArgs e)
@@ -166,13 +192,13 @@ Call MouseFunctions
 3 Call LoopTest
 5 KeyPress return
 
-Func KeyboardFunctions
+Function KeyboardFunctions
 KeyDown space
 KeyUp space
 KeyPress key_a
 KeyPressText ""Test 123""
 
-Func MouseFunctions
+Function MouseFunctions
 MouseMove 300 250
 MouseDown left
 MouseUp left
@@ -180,7 +206,7 @@ MouseClick right
 MouseClick 100 450 left
 MouseWheel 120
 
-Func LoopTest
+Function LoopTest
 Wait 1000
 KeyPressText ""Loop""";
         }
@@ -191,7 +217,7 @@ KeyPressText ""Loop""";
 
             if (string.IsNullOrEmpty(scriptName))
             {
-                MessageBox.Show("Script name can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Script name can't be empty.", Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -200,10 +226,16 @@ KeyPressText ""Loop""";
             if (scriptInfo != null)
             {
                 scriptInfo.Script = rtbInput.Text;
+                scriptInfo.LineDelay = (int)nudLineDelay.Value;
             }
             else
             {
-                scriptInfo = new ScriptInfo(scriptName, rtbInput.Text);
+                scriptInfo = new ScriptInfo()
+                {
+                    Name = scriptName,
+                    Script = rtbInput.Text,
+                    LineDelay = (int)nudLineDelay.Value
+                };
                 Scripts.Add(scriptInfo);
                 AddScript(scriptInfo);
             }
@@ -231,9 +263,25 @@ KeyPressText ""Loop""";
                 {
                     txtScriptName.Text = scriptInfo.Name;
                     rtbInput.Text = scriptInfo.Script;
+                    nudLineDelay.Value = scriptInfo.LineDelay;
                     Tokenize();
                 }
             }
+        }
+
+        private void btnAddMouseMove_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(() =>
+            {
+                Thread.Sleep(1000);
+                Point position = Cursor.Position;
+                this.InvokeSafe(() =>
+                {
+                    rtbInput.SelectedText = string.Format("MouseMove {0} {1}", position.X, position.Y);
+                });
+            });
+
+            thread.Start();
         }
     }
 }
