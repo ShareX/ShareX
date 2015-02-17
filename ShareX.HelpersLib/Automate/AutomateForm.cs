@@ -199,16 +199,18 @@ namespace ShareX.HelpersLib
 
         private void btnLoadExample_Click(object sender, EventArgs e)
         {
-            rtbInput.Text = @"Wait 3000
+            rtbInput.Text = @"""This is comment""
+Wait 3000
 Call KeyboardFunctions
 Call MouseFunctions
+""You can use 0 to loop forever""
 3 Call LoopTest
-5 KeyPress return
+5 KeyPress enter
 
 Function KeyboardFunctions
 KeyDown space
 KeyUp space
-KeyPress key_a
+KeyPress a
 KeyPressText ""Test 123""
 
 Function MouseFunctions
