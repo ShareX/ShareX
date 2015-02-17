@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Automate\Function.cs" />
     <Compile Include="Automate\FunctionManager.cs" />
+    <Compile Include="Automate\ScriptInfo.cs" />
     <Compile Include="ClipboardFormat.cs" />
     <Compile Include="CodeMenu.cs" />
     <Compile Include="ColorMatrixManager.cs" />

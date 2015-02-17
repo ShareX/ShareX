@@ -3,6 +3,7 @@
     <configSections>
         <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
             <section name="SteveCadwallader.CodeMaid.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+            <section name="tomenglertde.ResXManager.View.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
         </sectionGroup>
     </configSections>
     <userSettings>
@@ -416,7 +417,7 @@
                 <value>0</value>
             </setting>
             <setting name="General_Multithread" serializeAs="String">
-                <value>False</value>
+                <value>True</value>
             </setting>
             <setting name="Cleaning_CommentSkipWrapOnLastWord" serializeAs="String">
                 <value>True</value>
@@ -428,6 +429,135 @@
             <setting name="General_CacheFiles" serializeAs="String">
                 <value>True</value>
             </setting>
+            <setting name="Formatting_CommentXmlKeepTagsTogether" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_PrimaryOrderByAccessLevel" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeClasses" serializeAs="String">
+                <value>Classes||12||Classes</value>
+            </setting>
+            <setting name="Formatting_CommentRunDuringCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_IncludeSCSS" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_RegionsInsertKeepEvenIfEmpty" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_RemoveRegions" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeDestructors" serializeAs="String">
+                <value>Destructors||3||Destructors</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeIndexers" serializeAs="String">
+                <value>Indexers||9||Indexers</value>
+            </setting>
+            <setting name="ThirdParty_UseTelerikJustCodeCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_RegionsIncludeAccessLevel" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Formatting_CommentWrapColumn" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="Formatting_CommentXmlTagsToLowerCase" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="ThirdParty_OtherCleaningCommandsExpression" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ThirdParty_UseXAMLStylerCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="General_LoadModelsAsynchronously" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeConstructors" serializeAs="String">
+                <value>Constructors||2||Constructors</value>
+            </setting>
+            <setting name="Formatting_CommentXmlValueIndent" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="Reorganizing_RegionsInsertNewRegions" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Cleaning_InsertEndOfFileTrailingNewLine" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Formatting_CommentXmlSpaceTags" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Finding_TemporarilyOpenSolutionFolders" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Digging_PrimarySortOrder" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeEnums" serializeAs="String">
+                <value>Enums||6||Enums</value>
+            </setting>
+            <setting name="Formatting_CommentXmlSpaceSingleTags" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeProperties" serializeAs="String">
+                <value>Properties||8||Properties</value>
+            </setting>
+            <setting name="Reorganizing_RegionsRemoveExistingRegions" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeStructs" serializeAs="String">
+                <value>Structs||11||Structs</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeMethods" serializeAs="String">
+                <value>Methods||10||Methods</value>
+            </setting>
+            <setting name="Formatting_CommentXmlSplitSummaryTagToMultipleLines"
+                serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="ThirdParty_UseJetBrainsReSharperCleanup" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Formatting_CommentSkipWrapOnLastWord" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="Formatting_CommentXmlSplitAllTags" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeFields" serializeAs="String">
+                <value>Fields||1||Fields</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeInterfaces" serializeAs="String">
+                <value>Interfaces||7||Interfaces</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeEvents" serializeAs="String">
+                <value>Events||5||Events</value>
+            </setting>
+            <setting name="Reorganizing_MemberTypeDelegates" serializeAs="String">
+                <value>Delegates||4||Delegates</value>
+            </setting>
+            <setting name="Formatting_CommentXmlAlignParamTags" serializeAs="String">
+                <value>False</value>
+            </setting>
         </SteveCadwallader.CodeMaid.Properties.Settings>
+        <tomenglertde.ResXManager.View.Properties.Settings>
+            <setting name="ResourceFilter" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="VisibleCommentColumns" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="HiddenLanguageColumns" serializeAs="String">
+                <value>,.zh-CN,.hu,.cs,.fr</value>
+            </setting>
+            <setting name="NeutralCultureCountyOverrides" serializeAs="String">
+                <value>en=en-US,bn=bn-IN</value>
+            </setting>
+        </tomenglertde.ResXManager.View.Properties.Settings>
     </userSettings>
 </configuration>
