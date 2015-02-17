@@ -133,12 +133,21 @@ namespace ShareX.HelpersLib
             return true;
         }
 
-        public void Run(int startIndex = 0)
+        public void Start()
+        {
+            stopRequest = false;
+            Run(0);
+        }
+
+        public void Stop()
+        {
+            stopRequest = true;
+        }
+
+        public void Run(int startIndex)
         {
             if (FunctionList != null)
             {
-                stopRequest = false;
-
                 Function function;
 
                 for (int i = startIndex; i < FunctionList.Count && !stopRequest; i++)
@@ -158,11 +167,6 @@ namespace ShareX.HelpersLib
                     }
                 }
             }
-        }
-
-        public void Stop()
-        {
-            stopRequest = true;
         }
     }
 }

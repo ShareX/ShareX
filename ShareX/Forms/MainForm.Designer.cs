@@ -77,11 +77,11 @@
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -224,6 +224,7 @@
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -628,6 +629,13 @@
             resources.ApplyResources(this.tsmiRuler, "tsmiRuler");
             this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
+            // tsmiAutomate
+            // 
+            this.tsmiAutomate.Image = global::ShareX.Properties.Resources.robot;
+            this.tsmiAutomate.Name = "tsmiAutomate";
+            resources.ApplyResources(this.tsmiAutomate, "tsmiAutomate");
+            this.tsmiAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
+            // 
             // tsmiIndexFolder
             // 
             this.tsmiIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
@@ -655,13 +663,6 @@
             this.tsmiMonitorTest.Name = "tsmiMonitorTest";
             resources.ApplyResources(this.tsmiMonitorTest, "tsmiMonitorTest");
             this.tsmiMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
-            // 
-            // tsmiAutomate
-            // 
-            this.tsmiAutomate.Image = global::ShareX.Properties.Resources.robot;
-            this.tsmiAutomate.Name = "tsmiAutomate";
-            resources.ApplyResources(this.tsmiAutomate, "tsmiAutomate");
-            this.tsmiAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
             // 
             // tssMain1
             // 
@@ -1460,6 +1461,7 @@
             this.tsmiTrayDNSChanger,
             this.tsmiTrayQRCode,
             this.tsmiTrayRuler,
+            this.tsmiTrayAutomate,
             this.tsmiTrayIndexFolder,
             this.tsmiTrayFTPClient,
             this.tsmiTrayTweetMessage,
@@ -1712,6 +1714,13 @@
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             // 
+            // tsmiTrayAutomate
+            // 
+            this.tsmiTrayAutomate.Image = global::ShareX.Properties.Resources.robot;
+            this.tsmiTrayAutomate.Name = "tsmiTrayAutomate";
+            resources.ApplyResources(this.tsmiTrayAutomate, "tsmiTrayAutomate");
+            this.tsmiTrayAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1937,5 +1946,6 @@
         public System.Windows.Forms.ToolStripMenuItem tsmiTrayRecentItems;
         private System.Windows.Forms.ContextMenuStrip cmsTray;
         private System.Windows.Forms.ToolStripMenuItem tsmiAutomate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayAutomate;
     }
 }

@@ -35,8 +35,6 @@ namespace ShareX
 {
     public partial class AutoCaptureForm : Form
     {
-        public static bool IsRunning { get; private set; }
-
         private static AutoCaptureForm instance;
 
         public static AutoCaptureForm Instance
@@ -51,6 +49,8 @@ namespace ShareX
                 return instance;
             }
         }
+
+        public static bool IsRunning { get; private set; }
 
         private bool isLoaded;
         private Timer statusTimer;
