@@ -114,7 +114,7 @@ namespace ShareX.HelpersLib
     {
         public override void Method()
         {
-            VirtualKeyCode keyCode = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Parameters[0], true);
+            VirtualKeyCode keyCode = (VirtualKeyCode)(Keys)Enum.Parse(typeof(Keys), Parameters[0], true);
             InputHelpers.SendKeyDown(keyCode);
         }
     }
@@ -123,7 +123,7 @@ namespace ShareX.HelpersLib
     {
         public override void Method()
         {
-            VirtualKeyCode keyCode = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Parameters[0], true);
+            VirtualKeyCode keyCode = (VirtualKeyCode)(Keys)Enum.Parse(typeof(Keys), Parameters[0], true);
             InputHelpers.SendKeyUp(keyCode);
         }
     }
@@ -132,7 +132,7 @@ namespace ShareX.HelpersLib
     {
         public override void Method()
         {
-            VirtualKeyCode keyCode = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Parameters[0], true);
+            VirtualKeyCode keyCode = (VirtualKeyCode)(Keys)Enum.Parse(typeof(Keys), Parameters[0], true);
             InputHelpers.SendKeyPress(keyCode);
         }
     }
