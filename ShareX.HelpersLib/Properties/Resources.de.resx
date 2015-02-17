@@ -248,7 +248,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Import fehlgeschlagen.</value>
   </data>
-  <data name="ExportImportControl_Serialize_Error" xml:space="preserve">
+  <data name="Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
@@ -308,10 +308,10 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Dateipfad auswählen</value>
   </data>
-  <data name="HashCheckForm_btnStartHashCheck_Click_Stop" xml:space="preserve">
+  <data name="Stop" xml:space="preserve">
     <value>Anhalten</value>
   </data>
-  <data name="HashCheckForm_fileCheck_FileCheckCompleted_Start" xml:space="preserve">
+  <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">

@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
     {
         public static readonly Dictionary<string, Type> Functions = new Dictionary<string, Type>()
         {
-            { "Func", typeof(Function) },
+            { "Function", typeof(Function) },
             { "Call", typeof(Function_Call) },
             { "Wait", typeof(Function_Wait) },
             { "KeyDown", typeof(Function_KeyDown) },
@@ -137,6 +137,8 @@ namespace ShareX.HelpersLib
         {
             if (FunctionList != null)
             {
+                stopRequest = false;
+
                 Function function;
 
                 for (int i = startIndex; i < FunctionList.Count && !stopRequest; i++)

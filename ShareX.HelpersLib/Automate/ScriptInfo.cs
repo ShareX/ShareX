@@ -34,11 +34,6 @@ namespace ShareX.HelpersLib
     {
         public string Name { get; set; }
         public string Script { get; set; }
-
-        public ScriptInfo(string name, string script)
-        {
-            Name = name;
-            Script = script;
-        }
+        public int LineDelay { get; set; }
     }
 }

@@ -235,7 +235,7 @@
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>Choose file path</value>
   </data>
-  <data name="HashCheckForm_btnStartHashCheck_Click_Stop" xml:space="preserve">
+  <data name="Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
@@ -274,7 +274,7 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Select a folder</value>
   </data>
-  <data name="HashCheckForm_fileCheck_FileCheckCompleted_Start" xml:space="preserve">
+  <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
@@ -283,7 +283,7 @@
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
     <value>Export failed.</value>
   </data>
-  <data name="ExportImportControl_Serialize_Error" xml:space="preserve">
+  <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">

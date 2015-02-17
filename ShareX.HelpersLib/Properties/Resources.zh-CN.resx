@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -247,7 +247,7 @@
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>导入失败.</value>
   </data>
-  <data name="ExportImportControl_Serialize_Error" xml:space="preserve">
+  <data name="Error" xml:space="preserve">
     <value>错误</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
@@ -307,10 +307,10 @@
   <data name="HashCheckForm_btnFilePathBrowse_Click_Choose_file_path" xml:space="preserve">
     <value>选择文件路径</value>
   </data>
-  <data name="HashCheckForm_btnStartHashCheck_Click_Stop" xml:space="preserve">
+  <data name="Stop" xml:space="preserve">
     <value>停止</value>
   </data>
-  <data name="HashCheckForm_fileCheck_FileCheckCompleted_Start" xml:space="preserve">
+  <data name="Start" xml:space="preserve">
     <value>开始</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">

@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -327,7 +327,7 @@ Voulez-vous la télécharger et l'installer?</value>
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="ExportImportControl_Serialize_Error" xml:space="preserve">
+  <data name="Error" xml:space="preserve">
     <value>Erreur</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
@@ -426,13 +426,13 @@ Voulez-vous la télécharger et l'installer?</value>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>Nom d'utilisateur</value>
   </data>
-  <data name="HashCheckForm_fileCheck_FileCheckCompleted_Start" xml:space="preserve">
+  <data name="Start" xml:space="preserve">
     <value>Démarrer</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Statut: {0}</value>
   </data>
-  <data name="HashCheckForm_btnStartHashCheck_Click_Stop" xml:space="preserve">
+  <data name="Stop" xml:space="preserve">
     <value>Arrêter</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">

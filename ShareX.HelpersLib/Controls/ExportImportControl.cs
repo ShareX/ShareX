@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
-                    MessageBox.Show(Resources.ExportImportControl_Serialize_Export_failed_ + "\n\n" + e, "ShareX - " + Resources.ExportImportControl_Serialize_Error,
+                    MessageBox.Show(Resources.ExportImportControl_Serialize_Export_failed_ + "\n\n" + e, "ShareX - " + Resources.Error,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -154,7 +154,7 @@ namespace ShareX.HelpersLib
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show(Resources.ExportImportControl_Deserialize_Import_failed_ + "\n\n" + e, "ShareX - " + Resources.ExportImportControl_Serialize_Error,
+                MessageBox.Show(Resources.ExportImportControl_Deserialize_Import_failed_ + "\n\n" + e, "ShareX - " + Resources.Error,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
