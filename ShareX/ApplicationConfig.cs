@@ -201,5 +201,11 @@ namespace ShareX
         public Rectangle ScreenRecordRegion = Rectangle.Empty;
 
         #endregion ScreenRecord Form
+
+        #region Automate Form
+
+        public List<ScriptInfo> AutomateScripts = new List<ScriptInfo>();
+
+        #endregion Automate Form
     }
 }

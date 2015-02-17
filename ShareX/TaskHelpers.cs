@@ -548,7 +548,12 @@ namespace ShareX
 
         public static void OpenAutomate()
         {
-            new AutomateForm().Show();
+            if (Program.Settings.AutomateScripts == null)
+            {
+                Program.Settings.AutomateScripts = new List<ScriptInfo>();
+            }
+
+            new AutomateForm(Program.Settings.AutomateScripts).Show();
         }
 
         public static void OpenHashCheck()

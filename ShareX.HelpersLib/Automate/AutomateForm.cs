@@ -35,23 +35,13 @@ namespace ShareX.HelpersLib
 {
     public partial class AutomateForm : Form
     {
-        public string Script
-        {
-            get
-            {
-                return rtbInput.Text;
-            }
-            set
-            {
-                rtbInput.Text = value;
-            }
-        }
+        public List<ScriptInfo> Scripts { get; private set; }
 
         private FunctionManager functionManager = new FunctionManager();
         private Tokenizer tokenizer = new Tokenizer();
         private bool isWorking;
 
-        public AutomateForm()
+        public AutomateForm(List<ScriptInfo> scripts)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -59,6 +49,23 @@ namespace ShareX.HelpersLib
             cbFunctions.Items.AddRange(tokenizer.Keywords);
             cbFunctions.SelectedIndex = 0;
             Tokenize();
+
+            Scripts = scripts;
+
+            foreach (ScriptInfo scriptInfo in Scripts)
+            {
+                AddScript(scriptInfo);
+            }
+
+            if (lvScripts.Items.Count > 0)
+            {
+                lvScripts.Items[0].Selected = true;
+            }
+        }
+
+        private void AddScript(ScriptInfo scriptInfo)
+        {
+            lvScripts.Items.Add(scriptInfo.Name).Tag = scriptInfo;
         }
 
         private void rtbInput_TextChanged(object sender, EventArgs e)
@@ -153,7 +160,7 @@ namespace ShareX.HelpersLib
 
         private void btnLoadExample_Click(object sender, EventArgs e)
         {
-            Script = @"Wait 3000
+            rtbInput.Text = @"Wait 3000
 Call KeyboardFunctions
 Call MouseFunctions
 3 Call LoopTest
@@ -176,6 +183,57 @@ MouseWheel 120
 Func LoopTest
 Wait 1000
 KeyPressText ""Loop""";
+        }
+
+        private void btnSaveScript_Click(object sender, EventArgs e)
+        {
+            string scriptName = txtScriptName.Text;
+
+            if (string.IsNullOrEmpty(scriptName))
+            {
+                MessageBox.Show("Script name can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ScriptInfo scriptInfo = Scripts.FirstOrDefault(x => x.Name.Equals(scriptName, StringComparison.InvariantCultureIgnoreCase));
+
+            if (scriptInfo != null)
+            {
+                scriptInfo.Script = rtbInput.Text;
+            }
+            else
+            {
+                scriptInfo = new ScriptInfo(scriptName, rtbInput.Text);
+                Scripts.Add(scriptInfo);
+                AddScript(scriptInfo);
+            }
+        }
+
+        private void btnRemoveScript_Click(object sender, EventArgs e)
+        {
+            if (lvScripts.SelectedIndices.Count > 0)
+            {
+                int index = lvScripts.SelectedIndices[0];
+                Scripts.RemoveAt(index);
+                lvScripts.Items.RemoveAt(index);
+                rtbInput.Clear();
+                txtScriptName.Clear();
+            }
+        }
+
+        private void lvScripts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvScripts.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvScripts.SelectedItems[0];
+                ScriptInfo scriptInfo = lvi.Tag as ScriptInfo;
+                if (scriptInfo != null)
+                {
+                    txtScriptName.Text = scriptInfo.Name;
+                    rtbInput.Text = scriptInfo.Script;
+                    Tokenize();
+                }
+            }
         }
     }
 }
