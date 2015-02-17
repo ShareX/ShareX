@@ -182,6 +182,11 @@
             this.nudLineDelay.Size = new System.Drawing.Size(87, 20);
             this.nudLineDelay.TabIndex = 12;
             this.nudLineDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudLineDelay.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblLineDelayMiliseconds
             // 

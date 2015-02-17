@@ -43,21 +43,11 @@ namespace ShareX.HelpersLib
             Loop = 1;
         }
 
-        public void Run()
-        {
-            Debug.WriteLine("{0}({1})", Name, string.Join(", ", Parameters));
-
-            for (int i = 0; i < Loop; i++)
-            {
-                Method();
-            }
-        }
-
         public virtual void Prepare()
         {
         }
 
-        protected virtual void Method()
+        public virtual void Method()
         {
         }
     }
@@ -79,7 +69,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        protected override void Method()
+        public override void Method()
         {
             int lineIndex;
 
@@ -92,7 +82,7 @@ namespace ShareX.HelpersLib
 
     public class Function_Wait : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             int delay;
 
@@ -105,7 +95,7 @@ namespace ShareX.HelpersLib
 
     public class Function_KeyDown : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             VirtualKeyCode keyCode = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Parameters[0], true);
             InputHelpers.SendKeyDown(keyCode);
@@ -114,7 +104,7 @@ namespace ShareX.HelpersLib
 
     public class Function_KeyUp : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             VirtualKeyCode keyCode = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Parameters[0], true);
             InputHelpers.SendKeyUp(keyCode);
@@ -123,7 +113,7 @@ namespace ShareX.HelpersLib
 
     public class Function_KeyPress : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             VirtualKeyCode keyCode = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Parameters[0], true);
             InputHelpers.SendKeyPress(keyCode);
@@ -132,7 +122,7 @@ namespace ShareX.HelpersLib
 
     public class Function_KeyPressText : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             InputHelpers.SendKeyPressText(Parameters[0]);
         }
@@ -140,7 +130,7 @@ namespace ShareX.HelpersLib
 
     public class Function_MouseDown : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             MouseButtons button = (MouseButtons)Enum.Parse(typeof(MouseButtons), Parameters[0], true);
             InputHelpers.SendMouseDown(button);
@@ -149,7 +139,7 @@ namespace ShareX.HelpersLib
 
     public class Function_MouseUp : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             MouseButtons button = (MouseButtons)Enum.Parse(typeof(MouseButtons), Parameters[0], true);
             InputHelpers.SendMouseUp(button);
@@ -158,7 +148,7 @@ namespace ShareX.HelpersLib
 
     public class Function_MouseClick : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             MouseButtons button;
 
@@ -182,7 +172,7 @@ namespace ShareX.HelpersLib
 
     public class Function_MouseMove : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             int x, y;
 
@@ -195,7 +185,7 @@ namespace ShareX.HelpersLib
 
     public class Function_MouseWheel : Function
     {
-        protected override void Method()
+        public override void Method()
         {
             int delta;
 
