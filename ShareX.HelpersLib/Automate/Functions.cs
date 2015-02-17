@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -43,12 +42,30 @@ namespace ShareX.HelpersLib
             Loop = 1;
         }
 
+        public virtual void Run()
+        {
+            Method();
+        }
+
         public virtual void Prepare()
         {
         }
 
         public virtual void Method()
         {
+        }
+    }
+
+    public class Function_Method : Function
+    {
+        public override void Run()
+        {
+            base.Run();
+
+            if (FunctionManager.LineDelay > 0)
+            {
+                Thread.Sleep(FunctionManager.LineDelay);
+            }
         }
     }
 
@@ -93,7 +110,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_KeyDown : Function
+    public class Function_KeyDown : Function_Method
     {
         public override void Method()
         {
@@ -102,7 +119,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_KeyUp : Function
+    public class Function_KeyUp : Function_Method
     {
         public override void Method()
         {
@@ -111,7 +128,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_KeyPress : Function
+    public class Function_KeyPress : Function_Method
     {
         public override void Method()
         {
@@ -120,7 +137,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_KeyPressText : Function
+    public class Function_KeyPressText : Function_Method
     {
         public override void Method()
         {
@@ -128,7 +145,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_MouseDown : Function
+    public class Function_MouseDown : Function_Method
     {
         public override void Method()
         {
@@ -137,7 +154,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_MouseUp : Function
+    public class Function_MouseUp : Function_Method
     {
         public override void Method()
         {
@@ -146,7 +163,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_MouseClick : Function
+    public class Function_MouseClick : Function_Method
     {
         public override void Method()
         {
@@ -170,7 +187,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_MouseMove : Function
+    public class Function_MouseMove : Function_Method
     {
         public override void Method()
         {
@@ -183,7 +200,7 @@ namespace ShareX.HelpersLib
         }
     }
 
-    public class Function_MouseWheel : Function
+    public class Function_MouseWheel : Function_Method
     {
         public override void Method()
         {

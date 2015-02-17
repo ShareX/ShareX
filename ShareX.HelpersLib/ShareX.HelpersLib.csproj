@@ -83,7 +83,7 @@
     <Compile Include="Automate\AutomateForm.Designer.cs">
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Automate\Function.cs" />
+    <Compile Include="Automate\Functions.cs" />
     <Compile Include="Automate\FunctionManager.cs" />
     <Compile Include="Automate\ScriptInfo.cs" />
     <Compile Include="ClipboardFormat.cs" />

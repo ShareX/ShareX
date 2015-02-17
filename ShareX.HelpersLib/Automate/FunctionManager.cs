@@ -135,8 +135,11 @@ namespace ShareX.HelpersLib
 
         public void Start()
         {
-            stopRequest = false;
-            Run(0);
+            if (FunctionList != null)
+            {
+                stopRequest = false;
+                Run(0);
+            }
         }
 
         public void Stop()
@@ -146,27 +149,27 @@ namespace ShareX.HelpersLib
 
         public void Run(int startIndex)
         {
-            if (FunctionList != null)
+            for (int i = startIndex; !stopRequest && i < FunctionList.Count; i++)
             {
-                Function function;
+                Function function = FunctionList[i];
 
-                for (int i = startIndex; i < FunctionList.Count && !stopRequest; i++)
+                if (function == null)
                 {
-                    function = FunctionList[i];
+                    break;
+                }
 
-                    if (function == null)
+                if (function.Loop <= 0)
+                {
+                    while (!stopRequest)
                     {
-                        break;
+                        function.Run();
                     }
-
-                    for (int count = 0; count < function.Loop && !stopRequest; count++)
+                }
+                else
+                {
+                    for (int count = 0; !stopRequest && count < function.Loop; count++)
                     {
-                        function.Method();
-
-                        if (LineDelay > 0)
-                        {
-                            Thread.Sleep(LineDelay);
-                        }
+                        function.Run();
                     }
                 }
             }
