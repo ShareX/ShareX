@@ -95,15 +95,20 @@ namespace ShareX.HelpersLib
                     tokenizer.Keywords = Functions.Select(x => x.Key).ToArray();
                     List<Token> tokens = tokenizer.Tokenize(line);
 
+                    if (tokens[0].Type == TokenType.Literal) // Comment?
+                    {
+                        continue;
+                    }
+
                     int loop = 1;
 
-                    if (tokens[0].Type == TokenType.Numeric)
+                    if (tokens[0].Type == TokenType.Numeric) // Loop?
                     {
                         loop = int.Parse(tokens[0].Text);
                         tokens.RemoveAt(0);
                     }
 
-                    if (tokens[0].Type == TokenType.Keyword)
+                    if (tokens[0].Type == TokenType.Keyword) // Function?
                     {
                         string name = tokens[0].Text;
                         string[] parameters = tokens.Skip(1).Select(x => x.Text).ToArray();
