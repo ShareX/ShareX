@@ -914,7 +914,7 @@ namespace ShareX
 
         private void tsmiAutomate_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenStopAutomate();
+            TaskHelpers.OpenAutomate();
         }
 
         private void tsmiIndexFolder_Click(object sender, EventArgs e)
@@ -1596,7 +1596,7 @@ namespace ShareX
                     TaskHelpers.TweetMessage();
                     break;
                 case HotkeyType.Automate:
-                    TaskHelpers.OpenStopAutomate();
+                    TaskHelpers.StartAutomate();
                     break;
             }
         }
