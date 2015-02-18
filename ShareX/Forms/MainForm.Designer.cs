@@ -107,7 +107,7 @@
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDonate = new System.Windows.Forms.ToolStripButton();
+            this.tsmiDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
             this.tsmiAbout = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowErrors = new System.Windows.Forms.ToolStripMenuItem();
@@ -196,6 +196,7 @@
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,7 +225,6 @@
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayAutomate = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -844,6 +844,7 @@
             // 
             // tsmiDonate
             // 
+            this.tsmiDonate.AnimationSpeed = 0.5F;
             this.tsmiDonate.Image = global::ShareX.Properties.Resources.heart;
             resources.ApplyResources(this.tsmiDonate, "tsmiDonate");
             this.tsmiDonate.Name = "tsmiDonate";
@@ -1526,6 +1527,13 @@
             resources.ApplyResources(this.tsmiTrayRuler, "tsmiTrayRuler");
             this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
+            // tsmiTrayAutomate
+            // 
+            this.tsmiTrayAutomate.Image = global::ShareX.Properties.Resources.robot;
+            this.tsmiTrayAutomate.Name = "tsmiTrayAutomate";
+            resources.ApplyResources(this.tsmiTrayAutomate, "tsmiTrayAutomate");
+            this.tsmiTrayAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
+            // 
             // tsmiTrayIndexFolder
             // 
             this.tsmiTrayIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
@@ -1714,13 +1722,6 @@
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             // 
-            // tsmiTrayAutomate
-            // 
-            this.tsmiTrayAutomate.Image = global::ShareX.Properties.Resources.robot;
-            this.tsmiTrayAutomate.Name = "tsmiTrayAutomate";
-            resources.ApplyResources(this.tsmiTrayAutomate, "tsmiTrayAutomate");
-            this.tsmiTrayAutomate.Click += new System.EventHandler(this.tsmiAutomate_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1735,6 +1736,7 @@
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
+            this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
@@ -1888,7 +1890,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEffects;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEffects;
         private System.Windows.Forms.ToolStripButton tsmiAbout;
-        private System.Windows.Forms.ToolStripButton tsmiDonate;
+        private ShareX.HelpersLib.ToolStripButtonColorAnimation tsmiDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMonitorTest;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShow;
