@@ -137,7 +137,7 @@ namespace ShareX.HelpersLib
             rtbInput.EndUpdate();
         }
 
-        private void Start()
+        public void Start()
         {
             if (!IsRunning)
             {
@@ -195,6 +195,7 @@ namespace ShareX.HelpersLib
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Stop();
+            this.ShowActivate();
         }
 
         private void btnLoadExample_Click(object sender, EventArgs e)
