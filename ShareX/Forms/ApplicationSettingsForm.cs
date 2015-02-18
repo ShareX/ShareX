@@ -230,7 +230,8 @@ namespace ShareX
             }
             else
             {
-                personalPath = Path.GetFullPath(personalPath);
+                personalPath = Environment.ExpandEnvironmentVariables(personalPath);
+                personalPath = Helpers.GetAbsolutePath(personalPath);
             }
 
             lblPreviewPersonalFolderPath.Text = personalPath;
