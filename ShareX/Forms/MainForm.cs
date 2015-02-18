@@ -795,6 +795,18 @@ namespace ShareX
             AfterShownJobs();
         }
 
+        private void MainForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible)
+            {
+                tsmiDonate.StartAnimation();
+            }
+            else
+            {
+                tsmiDonate.StopAnimation();
+            }
+        }
+
         private void MainForm_Resize(object sender, EventArgs e)
         {
             Refresh();

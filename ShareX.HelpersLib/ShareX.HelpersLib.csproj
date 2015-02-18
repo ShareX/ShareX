@@ -102,6 +102,9 @@
     <Compile Include="Colors\HSB.cs" />
     <Compile Include="Colors\MyColor.cs" />
     <Compile Include="Colors\RGBA.cs" />
+    <Compile Include="Controls\ToolStripButtonColorAnimation.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="DNS\AdapterInfo.cs" />

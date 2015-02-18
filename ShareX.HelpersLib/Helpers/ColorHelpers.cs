@@ -363,5 +363,12 @@ namespace ShareX.HelpersLib
         {
             return PerceivedBrightness(c) > 130 ? Color.Black : Color.White;
         }
+
+        public static Color Lerp(Color from, Color to, float amount)
+        {
+            return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount),
+                (int)MathHelpers.Lerp(from.G, to.G, amount),
+                (int)MathHelpers.Lerp(from.B, to.B, amount));
+        }
     }
 }
