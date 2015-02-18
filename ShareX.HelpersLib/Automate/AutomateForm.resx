@@ -161,7 +161,7 @@
   </data>
   <data name="rtbInput.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;rtbInput.Name" xml:space="preserve">
     <value>rtbInput</value>
   </data>

@@ -44,6 +44,7 @@ namespace ShareX.HelpersLib
 
         private FunctionManager functionManager = new FunctionManager();
         private Tokenizer tokenizer = new Tokenizer();
+        private bool closing;
 
         private AutomateForm(List<ScriptInfo> scripts)
         {
@@ -154,12 +155,7 @@ namespace ShareX.HelpersLib
 
         public void Stop()
         {
-            if (IsRunning)
-            {
-                functionManager.Stop();
-                btnRun.Text = Resources.Start;
-                IsRunning = false;
-            }
+            functionManager.Stop();
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -194,8 +190,13 @@ namespace ShareX.HelpersLib
 
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Stop();
-            this.ShowActivate();
+            IsRunning = false;
+
+            if (!closing)
+            {
+                btnRun.Text = Resources.Start;
+                this.ShowActivate();
+            }
         }
 
         private void btnLoadExample_Click(object sender, EventArgs e)
@@ -308,6 +309,12 @@ KeyPressText ""Loop""";
             });
 
             thread.Start();
+        }
+
+        private void AutomateForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            closing = true;
+            Stop();
         }
     }
 }
