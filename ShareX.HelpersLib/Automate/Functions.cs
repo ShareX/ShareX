@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -132,8 +134,45 @@ namespace ShareX.HelpersLib
     {
         public override void Method()
         {
-            VirtualKeyCode keyCode = (VirtualKeyCode)(Keys)Enum.Parse(typeof(Keys), Parameters[0], true);
-            InputHelpers.SendKeyPress(keyCode);
+            if (Parameters.Length > 1)
+            {
+                VirtualKeyCode keyCode = (VirtualKeyCode)(Keys)Enum.Parse(typeof(Keys), Parameters[Parameters.Length - 1], true);
+
+                List<VirtualKeyCode> modifiers = new List<VirtualKeyCode>();
+
+                for (int i = 0; i < Parameters.Length - 1; i++)
+                {
+                    VirtualKeyCode vk;
+
+                    string parameter = Parameters[i];
+
+                    if (parameter.Equals("shift", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        vk = VirtualKeyCode.SHIFT;
+                    }
+                    else if (parameter.Equals("ctrl", StringComparison.InvariantCultureIgnoreCase) || parameter.Equals("control", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        vk = VirtualKeyCode.CONTROL;
+                    }
+                    else if (parameter.Equals("alt", StringComparison.InvariantCultureIgnoreCase) || parameter.Equals("menu", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        vk = VirtualKeyCode.MENU;
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                    modifiers.Add(vk);
+                }
+
+                InputHelpers.SendKeyPressModifiers(keyCode, modifiers.ToArray());
+            }
+            else
+            {
+                VirtualKeyCode keyCode = (VirtualKeyCode)(Keys)Enum.Parse(typeof(Keys), Parameters[0], true);
+                InputHelpers.SendKeyPress(keyCode);
+            }
         }
     }
 
