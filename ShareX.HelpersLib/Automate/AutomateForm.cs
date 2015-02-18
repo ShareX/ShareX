@@ -181,6 +181,7 @@ namespace ShareX.HelpersLib
             {
                 functionManager.Compile(lines);
                 functionManager.Start();
+                Thread.Sleep(100);
             }
             catch (Exception ex)
             {
@@ -213,6 +214,7 @@ Func KeyboardFunctions
 KeyDown Space
 KeyUp Space
 KeyPress A
+KeyPress Ctrl Alt A
 KeyPressText ""Test 123""
 
 Func MouseFunctions
