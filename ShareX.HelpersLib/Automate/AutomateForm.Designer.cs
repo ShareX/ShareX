@@ -207,6 +207,7 @@
             this.Controls.Add(this.pInput);
             this.Controls.Add(this.btnRun);
             this.Name = "AutomateForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutomateForm_FormClosing);
             this.pInput.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudLineDelay)).EndInit();
             this.ResumeLayout(false);
