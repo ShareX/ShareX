@@ -50,6 +50,7 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
+            rtbInput.AddContextMenu();
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
             cbFunctions.Items.AddRange(tokenizer.Keywords);
             cbKeys.Items.AddRange(Enum.GetNames(typeof(Keys)));
@@ -65,6 +66,10 @@ namespace ShareX.HelpersLib
             if (lvScripts.Items.Count > 0)
             {
                 lvScripts.Items[0].Selected = true;
+            }
+            else
+            {
+                SetExample();
             }
         }
 
@@ -101,7 +106,6 @@ namespace ShareX.HelpersLib
         {
             int start = rtbInput.SelectionStart;
             int length = rtbInput.SelectionLength;
-
             rtbInput.BeginUpdate();
 
             foreach (Token token in tokens)
@@ -134,7 +138,8 @@ namespace ShareX.HelpersLib
                 rtbInput.SelectionColor = color;
             }
 
-            rtbInput.Select(start, length);
+            rtbInput.SelectionStart = start;
+            rtbInput.SelectionLength = length;
             rtbInput.EndUpdate();
         }
 
@@ -158,18 +163,45 @@ namespace ShareX.HelpersLib
             functionManager.Stop();
         }
 
+        private void SetExample()
+        {
+            rtbInput.Text = @"""This is comment""
+Wait 3000
+Call KeyboardFunctions
+Call MouseFunctions
+""You can use 0 to loop forever""
+3 Call LoopTest
+5 KeyPress Enter
+
+Func KeyboardFunctions
+KeyDown Space
+KeyUp Space
+KeyPress A
+KeyPress Ctrl Shift Alt A
+KeyPressText ""Test 123""
+
+Func MouseFunctions
+MouseMove 300 250
+MouseDown Left
+MouseUp Left
+MouseClick Right
+MouseClick 100 450 Left
+MouseWheel 120
+
+Func LoopTest
+Wait 1000
+KeyPressText ""Loop""";
+        }
+
         private void btnRun_Click(object sender, EventArgs e)
         {
-            lock (this)
+            if (IsRunning)
             {
-                if (IsRunning)
-                {
-                    Stop();
-                }
-                else
-                {
-                    Start();
-                }
+                Stop();
+            }
+            else
+            {
+                Start();
             }
         }
 
@@ -202,32 +234,7 @@ namespace ShareX.HelpersLib
 
         private void btnLoadExample_Click(object sender, EventArgs e)
         {
-            rtbInput.Text = @"""This is comment""
-Wait 3000
-Call KeyboardFunctions
-Call MouseFunctions
-""You can use 0 to loop forever""
-3 Call LoopTest
-5 KeyPress Enter
-
-Func KeyboardFunctions
-KeyDown Space
-KeyUp Space
-KeyPress A
-KeyPress Ctrl Alt A
-KeyPressText ""Test 123""
-
-Func MouseFunctions
-MouseMove 300 250
-MouseDown Left
-MouseUp Left
-MouseClick Right
-MouseClick 100 450 Left
-MouseWheel 120
-
-Func LoopTest
-Wait 1000
-KeyPressText ""Loop""";
+            SetExample();
         }
 
         private void btnSaveScript_Click(object sender, EventArgs e)
