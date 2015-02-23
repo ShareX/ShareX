@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>576, 352</value>
+    <value>584, 352</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 23</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>672, 352</value>
+    <value>680, 352</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 23</value>
@@ -256,7 +256,7 @@
     <value>ucBeforeUpload</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=9.7.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.BeforeUploadControl, ShareX, Version=9.7.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
     <value>$this</value>
@@ -272,9 +272,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>774, 382</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>420, 420</value>

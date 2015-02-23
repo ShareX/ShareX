@@ -119,7 +119,7 @@ namespace ShareX
                         Program.Settings.FileUploadDefaultDirectory = Path.GetDirectoryName(ofd.FileName);
                     }
 
-                    UploadFile(ofd.FileNames);
+                    UploadFile(ofd.FileNames, taskSettings);
                 }
             }
         }
