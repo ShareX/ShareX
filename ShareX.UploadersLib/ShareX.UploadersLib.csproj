@@ -281,6 +281,7 @@
     <Compile Include="URLShorteners\TinyURLShortener.cs" />
     <Compile Include="URLShorteners\TurlURLShortener.cs" />
     <Compile Include="FileUploaders\MediaCrushUploader.cs" />
+    <Compile Include="URLShorteners\VgdURLShortener.cs" />
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
   </ItemGroup>
   <ItemGroup>

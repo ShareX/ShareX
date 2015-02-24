@@ -1030,6 +1030,9 @@ namespace ShareX
                 case UrlShortenerType.ISGD:
                     urlShortener = new IsgdURLShortener();
                     break;
+                case UrlShortenerType.VGD:
+                    urlShortener = new VgdURLShortener();
+                    break;
                 case UrlShortenerType.TINYURL:
                     urlShortener = new TinyURLShortener();
                     break;
