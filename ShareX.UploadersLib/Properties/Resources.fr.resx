@@ -1,4 +1,4 @@
-<root>
+﻿<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -218,12 +218,6 @@ Creation des répertoires:</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Rafraîchir l'autorisation n'est pas supporté</value>
-  </data>
-  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_" xml:space="preserve">
-    <value>RapidShare : compte nom d'utilisateur ou mot de passe est vide.</value>
-  </data>
-  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed" xml:space="preserve">
-    <value>RapidShare : le rafraichissement de liste des répertoires à échoué</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Répertoire selectionné:</value>

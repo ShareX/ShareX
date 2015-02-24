@@ -261,9 +261,6 @@
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Bekomme Geräteliste</value>
   </data>
-  <data name="btnRapidShareRefreshFolders.Text" xml:space="preserve">
-    <value>Aktualisiere Ordnerliste</value>
-  </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>&amp;Registrieren...</value>
   </data>
@@ -321,9 +318,6 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Benutze direkte URL, wenn sie existiert </value>
-  </data>
-  <data name="cbMediaCrushDirectLink.Text" xml:space="preserve">
-    <value>Direkter Link (Fügt "/direcht" zur URL hinzu)</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Benutze langen Link, der den Dateinamen besitzt</value>
@@ -654,15 +648,6 @@ D.h., dass sie möglicherweise von Amazon S3 verloren gehen können.</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
     <value>Benutzer API key:</value>
-  </data>
-  <data name="lblRapidShareFolderID.Text" xml:space="preserve">
-    <value>Ordner ID zum hochladen:</value>
-  </data>
-  <data name="lblRapidSharePassword.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
-  <data name="lblRapidSharePremiumUsername.Text" xml:space="preserve">
-    <value>Benutzername:</value>
   </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>Passwort:</value>

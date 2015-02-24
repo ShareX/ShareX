@@ -168,12 +168,6 @@
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Bo mappalista frissítés sikertelen</value>
   </data>
-  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_" xml:space="preserve">
-    <value>RapidShare fiók felhasználónév vagy jelszó üres.</value>
-  </data>
-  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed" xml:space="preserve">
-    <value>RapidShare mappafrissítés sikertelen</value>
-  </data>
   <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
     <value>Sikeres bejelentkezés, de a fiók információk lekérdezése sikertelen.</value>
   </data>

@@ -430,17 +430,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon MediaCrush {
-            get {
-                object obj = ResourceManager.GetObject("MediaCrush", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -835,17 +825,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon RapidShare {
-            get {
-                object obj = ResourceManager.GetObject("RapidShare", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
@@ -913,27 +893,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to RapidShare account username or password is empty..
-        /// </summary>
-        internal static string UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username" +
-                        "_or_password_is_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to RapidShare refresh folders list failed.
-        /// </summary>
-        internal static string UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_" +
-                        "list_failed", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Login successful but getting account info failed..
         /// </summary>

@@ -165,12 +165,6 @@
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box Aktualisierung der Ordnerliste fehlgeschlagen</value>
   </data>
-  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_" xml:space="preserve">
-    <value>RapidShare Account Benutzername oder Password ist leer.</value>
-  </data>
-  <data name="UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed" xml:space="preserve">
-    <value>RapidShare Aktulisierung der Ordnerliste ist fehlgeschlagen</value>
-  </data>
   <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
     <value>Einloggen erfolgreich aber Zugriff auf Accountinfo fehlgeschlagen</value>
   </data>

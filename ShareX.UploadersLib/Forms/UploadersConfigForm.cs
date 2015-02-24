@@ -94,7 +94,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpImageShack, Resources.ImageShack);
             AddIconToTab(tpImgur, Resources.Imgur);
             AddIconToTab(tpJira, Resources.jira);
-            AddIconToTab(tpMediaCrush, Resources.MediaCrush);
             AddIconToTab(tpMediaFire, Resources.MediaFire);
             AddIconToTab(tpMega, Resources.Mega);
             AddIconToTab(tpMinus, Resources.Minus);
@@ -105,7 +104,6 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpPhotobucket, Resources.Photobucket);
             AddIconToTab(tpPicasa, Resources.Picasa);
             AddIconToTab(tpPushbullet, Resources.Pushbullet);
-            AddIconToTab(tpRapidShare, Resources.RapidShare);
             AddIconToTab(tpSendSpace, Resources.SendSpace);
             AddIconToTab(tpSharedFolder, Resources.server_network);
             AddIconToTab(tpTinyPic, Resources.TinyPic);
@@ -416,12 +414,6 @@ namespace ShareX.UploadersLib
             txtEmailDefaultSubject.Text = Config.EmailDefaultSubject;
             txtEmailDefaultBody.Text = Config.EmailDefaultBody;
 
-            // RapidShare
-
-            txtRapidShareUsername.Text = Config.RapidShareUsername;
-            txtRapidSharePassword.Text = Config.RapidSharePassword;
-            txtRapidShareFolderID.Text = Config.RapidShareFolderID;
-
             // SendSpace
 
             atcSendSpaceAccountType.SelectedAccountType = Config.SendSpaceAccountType;
@@ -546,10 +538,6 @@ namespace ShareX.UploadersLib
             txtMediaFirePassword.Text = Config.MediaFirePassword;
             txtMediaFirePath.Text = Config.MediaFirePath;
             cbMediaFireUseLongLink.Checked = Config.MediaFireUseLongLink;
-
-            // MediaCrush
-
-            cbMediaCrushDirectLink.Checked = Config.MediaCrushDirectLink;
 
             // Lambda
 
@@ -1597,61 +1585,6 @@ namespace ShareX.UploadersLib
 
         #endregion Email
 
-        #region RapidShare
-
-        private void txtRapidShareUsername_TextChanged(object sender, EventArgs e)
-        {
-            Config.RapidShareUsername = txtRapidShareUsername.Text;
-        }
-
-        private void txtRapidSharePassword_TextChanged(object sender, EventArgs e)
-        {
-            Config.RapidSharePassword = txtRapidSharePassword.Text;
-        }
-
-        private void txtRapidShareFolderID_TextChanged(object sender, EventArgs e)
-        {
-            Config.RapidShareFolderID = txtRapidShareFolderID.Text;
-        }
-
-        private void btnRapidShareRefreshFolders_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Config.RapidShareUsername) || string.IsNullOrEmpty(Config.RapidSharePassword))
-            {
-                MessageBox.Show(Resources.UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_account_username_or_password_is_empty_,
-                    Resources.UploadersConfigForm_btnRapidShareRefreshFolders_Click_RapidShare_refresh_folders_list_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                tvRapidShareFolders.Nodes.Clear();
-                RapidShareFolderInfo root = new RapidShare(Config.RapidShareUsername, Config.RapidSharePassword).GetRootFolderWithChilds();
-                RapidShareRecursiveAddChilds(tvRapidShareFolders.Nodes, root);
-                tvRapidShareFolders.ExpandAll();
-            }
-        }
-
-        private void RapidShareRecursiveAddChilds(TreeNodeCollection treeNodes, RapidShareFolderInfo folderInfo)
-        {
-            TreeNode treeNode = treeNodes.Add(folderInfo.FolderName);
-            treeNode.Tag = folderInfo;
-
-            foreach (RapidShareFolderInfo folderInfo2 in folderInfo.ChildFolders)
-            {
-                RapidShareRecursiveAddChilds(treeNode.Nodes, folderInfo2);
-            }
-        }
-
-        private void tvRapidShareFolders_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if (e.Node != null && e.Node.Tag is RapidShareFolderInfo)
-            {
-                RapidShareFolderInfo folderInfo = (RapidShareFolderInfo)e.Node.Tag;
-                txtRapidShareFolderID.Text = folderInfo.RealFolderID;
-            }
-        }
-
-        #endregion RapidShare
-
         #region SendSpace
 
         private void atcSendSpaceAccountType_AccountTypeChanged(AccountType accountType)
@@ -2047,15 +1980,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion MediaFire
-
-        #region MediaCrush
-
-        private void cbMediaCrushDirectLink_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.MediaCrushDirectLink = cbMediaCrushDirectLink.Checked;
-        }
-
-        #endregion MediaCrush
 
         #region Lambda
 

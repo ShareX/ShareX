@@ -261,9 +261,6 @@
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Eszközlista megszerzése</value>
   </data>
-  <data name="btnRapidShareRefreshFolders.Text" xml:space="preserve">
-    <value>Mappák listájának frissítése</value>
-  </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>&amp;Regisztrálás...</value>
   </data>
@@ -320,9 +317,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Közvetlen URL használata ha létezik</value>
-  </data>
-  <data name="cbMediaCrushDirectLink.Text" xml:space="preserve">
-    <value>Közvetlen link (hozzáadja a /direct-et az URL-hez)</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Hosszú link használata, amely a fájlnevet is tartalmazza</value>
@@ -659,15 +653,6 @@ Ezzel az opcióval olcsóbb a tárolás, de csak 99.99% a rendelkezésreállás,
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
     <value>Felhasználói API kulcs:</value>
-  </data>
-  <data name="lblRapidShareFolderID.Text" xml:space="preserve">
-    <value>Feltöltendő mappa ID:</value>
-  </data>
-  <data name="lblRapidSharePassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="lblRapidSharePremiumUsername.Text" xml:space="preserve">
-    <value>Felhasználónév:</value>
   </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
