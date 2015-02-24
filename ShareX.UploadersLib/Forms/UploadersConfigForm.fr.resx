@@ -268,7 +268,7 @@
     <value>Nom du fichier de formulaire:</value>
   </data>
   <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des fichiers</value>
+    <value>Logiciel de mise en ligne des fichiers:</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
     <value>Logiciel de mise en ligne des fichiers</value>
@@ -601,7 +601,7 @@
     <value>Type de réponse:</value>
   </data>
   <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Afficher la dernière réponse ...</value>
+    <value>Afficher la dernière réponse...</value>
   </data>
   <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
     <value>Étape 1: Ouvrir la page d'autorisation...</value>
@@ -664,10 +664,10 @@
     <value>Modèle</value>
   </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des Textes</value>
+    <value>Logiciel de mise en ligne des Textes:</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des Textes:</value>
+    <value>Logiciel de mise en ligne des Textes</value>
   </data>
   <data name="lblMediaFirePath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne</value>
