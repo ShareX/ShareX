@@ -106,8 +106,6 @@ namespace ShareX.UploadersLib
         Gfycat,
         [Description("Pushbullet")]
         Pushbullet,
-        [Description("MediaCrush")]
-        MediaCrush,
         [Description("RapidShare")]
         RapidShare,
         [Description("SendSpace")]

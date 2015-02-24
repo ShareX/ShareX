@@ -53,7 +53,7 @@ namespace ShareX.HelpersLib
             rtbInput.AddContextMenu();
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
             cbFunctions.Items.AddRange(tokenizer.Keywords);
-            cbKeys.Items.AddRange(Enum.GetNames(typeof(Keys)));
+            cbKeys.Items.AddRange(Enum.GetNames(typeof(Keys)).Skip(1).ToArray());
             Tokenize();
 
             Scripts = scripts;
