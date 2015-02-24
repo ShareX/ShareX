@@ -136,6 +136,8 @@ namespace ShareX.UploadersLib
         Google,
         [Description("is.gd")]
         ISGD,
+        [Description("v.gd")]
+        VGD,
         [Description("tinyurl.com")]
         TINYURL,
         [Description("turl.ca")]

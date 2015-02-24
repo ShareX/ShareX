@@ -25,32 +25,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
-    public class IsgdURLShortener : URLShortener
+    public class VgdURLShortener : IsgdURLShortener
     {
-        protected virtual string APIURL { get { return "http://is.gd/create.php"; } }
-
-        public override UploadResult ShortenURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url };
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("format", "simple");
-                arguments.Add("url", url);
-
-                result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
-
-                if (!result.Response.StartsWith("Error:", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    result.ShortenedURL = result.Response;
-                }
-            }
-
-            return result;
-        }
+        protected override string APIURL { get { return "http://v.gd/create.php"; } }
     }
 }
