@@ -235,15 +235,6 @@
             this.btnPushbulletGetDeviceList = new System.Windows.Forms.Button();
             this.lblPushbulletUserKey = new System.Windows.Forms.Label();
             this.txtPushbulletUserKey = new System.Windows.Forms.TextBox();
-            this.tpRapidShare = new System.Windows.Forms.TabPage();
-            this.txtRapidShareFolderID = new System.Windows.Forms.TextBox();
-            this.lblRapidShareFolderID = new System.Windows.Forms.Label();
-            this.btnRapidShareRefreshFolders = new System.Windows.Forms.Button();
-            this.tvRapidShareFolders = new System.Windows.Forms.TreeView();
-            this.lblRapidSharePassword = new System.Windows.Forms.Label();
-            this.lblRapidSharePremiumUsername = new System.Windows.Forms.Label();
-            this.txtRapidSharePassword = new System.Windows.Forms.TextBox();
-            this.txtRapidShareUsername = new System.Windows.Forms.TextBox();
             this.tpSendSpace = new System.Windows.Forms.TabPage();
             this.btnSendSpaceRegister = new System.Windows.Forms.Button();
             this.lblSendSpacePassword = new System.Windows.Forms.Label();
@@ -251,8 +242,6 @@
             this.txtSendSpacePassword = new System.Windows.Forms.TextBox();
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
             this.atcSendSpaceAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.tpMediaCrush = new System.Windows.Forms.TabPage();
-            this.cbMediaCrushDirectLink = new System.Windows.Forms.CheckBox();
             this.tpGe_tt = new System.Windows.Forms.TabPage();
             this.lblGe_ttStatus = new System.Windows.Forms.Label();
             this.lblGe_ttPassword = new System.Windows.Forms.Label();
@@ -459,9 +448,7 @@
             this.tpOwnCloud.SuspendLayout();
             this.tpMediaFire.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
-            this.tpRapidShare.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
-            this.tpMediaCrush.SuspendLayout();
             this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
             this.tpMinus.SuspendLayout();
@@ -1178,9 +1165,7 @@
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Controls.Add(this.tpPushbullet);
-            this.tcFileUploaders.Controls.Add(this.tpRapidShare);
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
-            this.tcFileUploaders.Controls.Add(this.tpMediaCrush);
             this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
             this.tcFileUploaders.Controls.Add(this.tpMinus);
@@ -2023,67 +2008,6 @@
             this.txtPushbulletUserKey.UseSystemPasswordChar = true;
             this.txtPushbulletUserKey.TextChanged += new System.EventHandler(this.txtPushbulletUserKey_TextChanged);
             // 
-            // tpRapidShare
-            // 
-            this.tpRapidShare.Controls.Add(this.txtRapidShareFolderID);
-            this.tpRapidShare.Controls.Add(this.lblRapidShareFolderID);
-            this.tpRapidShare.Controls.Add(this.btnRapidShareRefreshFolders);
-            this.tpRapidShare.Controls.Add(this.tvRapidShareFolders);
-            this.tpRapidShare.Controls.Add(this.lblRapidSharePassword);
-            this.tpRapidShare.Controls.Add(this.lblRapidSharePremiumUsername);
-            this.tpRapidShare.Controls.Add(this.txtRapidSharePassword);
-            this.tpRapidShare.Controls.Add(this.txtRapidShareUsername);
-            resources.ApplyResources(this.tpRapidShare, "tpRapidShare");
-            this.tpRapidShare.Name = "tpRapidShare";
-            this.tpRapidShare.UseVisualStyleBackColor = true;
-            // 
-            // txtRapidShareFolderID
-            // 
-            resources.ApplyResources(this.txtRapidShareFolderID, "txtRapidShareFolderID");
-            this.txtRapidShareFolderID.Name = "txtRapidShareFolderID";
-            this.txtRapidShareFolderID.TextChanged += new System.EventHandler(this.txtRapidShareFolderID_TextChanged);
-            // 
-            // lblRapidShareFolderID
-            // 
-            resources.ApplyResources(this.lblRapidShareFolderID, "lblRapidShareFolderID");
-            this.lblRapidShareFolderID.Name = "lblRapidShareFolderID";
-            // 
-            // btnRapidShareRefreshFolders
-            // 
-            resources.ApplyResources(this.btnRapidShareRefreshFolders, "btnRapidShareRefreshFolders");
-            this.btnRapidShareRefreshFolders.Name = "btnRapidShareRefreshFolders";
-            this.btnRapidShareRefreshFolders.UseVisualStyleBackColor = true;
-            this.btnRapidShareRefreshFolders.Click += new System.EventHandler(this.btnRapidShareRefreshFolders_Click);
-            // 
-            // tvRapidShareFolders
-            // 
-            resources.ApplyResources(this.tvRapidShareFolders, "tvRapidShareFolders");
-            this.tvRapidShareFolders.Name = "tvRapidShareFolders";
-            this.tvRapidShareFolders.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRapidShareFolders_AfterSelect);
-            // 
-            // lblRapidSharePassword
-            // 
-            resources.ApplyResources(this.lblRapidSharePassword, "lblRapidSharePassword");
-            this.lblRapidSharePassword.Name = "lblRapidSharePassword";
-            // 
-            // lblRapidSharePremiumUsername
-            // 
-            resources.ApplyResources(this.lblRapidSharePremiumUsername, "lblRapidSharePremiumUsername");
-            this.lblRapidSharePremiumUsername.Name = "lblRapidSharePremiumUsername";
-            // 
-            // txtRapidSharePassword
-            // 
-            resources.ApplyResources(this.txtRapidSharePassword, "txtRapidSharePassword");
-            this.txtRapidSharePassword.Name = "txtRapidSharePassword";
-            this.txtRapidSharePassword.UseSystemPasswordChar = true;
-            this.txtRapidSharePassword.TextChanged += new System.EventHandler(this.txtRapidSharePassword_TextChanged);
-            // 
-            // txtRapidShareUsername
-            // 
-            resources.ApplyResources(this.txtRapidShareUsername, "txtRapidShareUsername");
-            this.txtRapidShareUsername.Name = "txtRapidShareUsername";
-            this.txtRapidShareUsername.TextChanged += new System.EventHandler(this.txtRapidShareUsername_TextChanged);
-            // 
             // tpSendSpace
             // 
             this.tpSendSpace.Controls.Add(this.btnSendSpaceRegister);
@@ -2132,20 +2056,6 @@
             this.atcSendSpaceAccountType.Name = "atcSendSpaceAccountType";
             this.atcSendSpaceAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             this.atcSendSpaceAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcSendSpaceAccountType_AccountTypeChanged);
-            // 
-            // tpMediaCrush
-            // 
-            this.tpMediaCrush.Controls.Add(this.cbMediaCrushDirectLink);
-            resources.ApplyResources(this.tpMediaCrush, "tpMediaCrush");
-            this.tpMediaCrush.Name = "tpMediaCrush";
-            this.tpMediaCrush.UseVisualStyleBackColor = true;
-            // 
-            // cbMediaCrushDirectLink
-            // 
-            resources.ApplyResources(this.cbMediaCrushDirectLink, "cbMediaCrushDirectLink");
-            this.cbMediaCrushDirectLink.Name = "cbMediaCrushDirectLink";
-            this.cbMediaCrushDirectLink.UseVisualStyleBackColor = true;
-            this.cbMediaCrushDirectLink.CheckedChanged += new System.EventHandler(this.cbMediaCrushDirectLink_CheckedChanged);
             // 
             // tpGe_tt
             // 
@@ -3475,12 +3385,8 @@
             this.tpMediaFire.PerformLayout();
             this.tpPushbullet.ResumeLayout(false);
             this.tpPushbullet.PerformLayout();
-            this.tpRapidShare.ResumeLayout(false);
-            this.tpRapidShare.PerformLayout();
             this.tpSendSpace.ResumeLayout(false);
             this.tpSendSpace.PerformLayout();
-            this.tpMediaCrush.ResumeLayout(false);
-            this.tpMediaCrush.PerformLayout();
             this.tpGe_tt.ResumeLayout(false);
             this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
@@ -3697,15 +3603,6 @@
         private System.Windows.Forms.Label lblBoxFolderID;
         private System.Windows.Forms.Button btnBoxRefreshFolders;
         private OAuthControl oauth2Box;
-        private System.Windows.Forms.TabPage tpRapidShare;
-        private System.Windows.Forms.TextBox txtRapidShareFolderID;
-        private System.Windows.Forms.Label lblRapidShareFolderID;
-        private System.Windows.Forms.Button btnRapidShareRefreshFolders;
-        private System.Windows.Forms.TreeView tvRapidShareFolders;
-        private System.Windows.Forms.Label lblRapidSharePassword;
-        private System.Windows.Forms.Label lblRapidSharePremiumUsername;
-        private System.Windows.Forms.TextBox txtRapidSharePassword;
-        private System.Windows.Forms.TextBox txtRapidShareUsername;
         private System.Windows.Forms.TabPage tpSendSpace;
         private System.Windows.Forms.Button btnSendSpaceRegister;
         private System.Windows.Forms.Label lblSendSpacePassword;
@@ -3896,8 +3793,6 @@
         private System.Windows.Forms.CheckBox cbMediaFireUseLongLink;
         private System.Windows.Forms.TabPage tpOneDrive;
         private OAuthControl oAuth2OneDrive;
-        private System.Windows.Forms.TabPage tpMediaCrush;
-        private System.Windows.Forms.CheckBox cbMediaCrushDirectLink;
         private System.Windows.Forms.CheckBox cbOwnCloudIgnoreInvalidCert;
         private System.Windows.Forms.CheckBox cbImgurUploadSelectedAlbum;
         private System.Windows.Forms.Label lblPastebinLoginStatus;

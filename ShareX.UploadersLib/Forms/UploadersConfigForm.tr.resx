@@ -225,9 +225,6 @@
   <data name="lblPastebinPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
   </data>
-  <data name="lblRapidSharePassword.Text" xml:space="preserve">
-    <value>Şifre:</value>
-  </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
   </data>
@@ -250,9 +247,6 @@
     <value>Kullanıcı adı:</value>
   </data>
   <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Kullanıcı adı:</value>
-  </data>
-  <data name="lblRapidSharePremiumUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
@@ -341,9 +335,6 @@
   </data>
   <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
     <value>Yetki yenile</value>
-  </data>
-  <data name="btnRapidShareRefreshFolders.Text" xml:space="preserve">
-    <value>Dizin listesini yenile</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Dizin listesini yenile</value>
@@ -644,9 +635,6 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
     <value>Dizin ID:</value>
   </data>
-  <data name="lblRapidShareFolderID.Text" xml:space="preserve">
-    <value>Yükleme için Dizin ID:</value>
-  </data>
   <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
     <value>Üst albüm yolu</value>
   </data>
@@ -664,9 +652,6 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
     <value>Dosya form adı:</value>
-  </data>
-  <data name="cbMediaCrushDirectLink.Text" xml:space="preserve">
-    <value>Direkt link (Adres sonuna "/direct" ekler)</value>
   </data>
   <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
     <value>Parametreler</value>

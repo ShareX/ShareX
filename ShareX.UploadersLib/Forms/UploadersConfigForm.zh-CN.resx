@@ -261,9 +261,6 @@
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>获取设备列表</value>
   </data>
-  <data name="btnRapidShareRefreshFolders.Text" xml:space="preserve">
-    <value>刷新文件夹列表</value>
-  </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>&amp;注册...</value>
   </data>
@@ -321,9 +318,6 @@
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>如果存在直接使用URL</value>
-  </data>
-  <data name="cbMediaCrushDirectLink.Text" xml:space="preserve">
-    <value>直接链接（添加"/direct"到URL）</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>使用其中包括文件名较长的链接</value>
@@ -660,15 +654,6 @@
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
     <value>用户API密钥:</value>
-  </data>
-  <data name="lblRapidShareFolderID.Text" xml:space="preserve">
-    <value>上传文件夹ID:</value>
-  </data>
-  <data name="lblRapidSharePassword.Text" xml:space="preserve">
-    <value>密码:</value>
-  </data>
-  <data name="lblRapidSharePremiumUsername.Text" xml:space="preserve">
-    <value>用户名:</value>
   </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>密码:</value>

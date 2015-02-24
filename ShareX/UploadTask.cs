@@ -857,9 +857,6 @@ namespace ShareX
                         Publish = Program.UploadersConfig.HubicPublish
                     };
                     break;*/
-                case FileDestination.RapidShare:
-                    fileUploader = new RapidShare(Program.UploadersConfig.RapidShareUsername, Program.UploadersConfig.RapidSharePassword, Program.UploadersConfig.RapidShareFolderID);
-                    break;
                 case FileDestination.SendSpace:
                     fileUploader = new SendSpace(APIKeys.SendSpaceKey);
                     switch (Program.UploadersConfig.SendSpaceAccountType)
@@ -975,12 +972,6 @@ namespace ShareX
                     break;
                 case FileDestination.Pushbullet:
                     fileUploader = new Pushbullet(Program.UploadersConfig.PushbulletSettings);
-                    break;
-                case FileDestination.MediaCrush:
-                    fileUploader = new MediaCrushUploader()
-                    {
-                        DirectLink = Program.UploadersConfig.MediaCrushDirectLink
-                    };
                     break;
                 case FileDestination.MediaFire:
                     fileUploader = new MediaFire(APIKeys.MediaFireAppId, APIKeys.MediaFireApiKey, Program.UploadersConfig.MediaFireUsername, Program.UploadersConfig.MediaFirePassword)

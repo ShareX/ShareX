@@ -148,12 +148,6 @@ namespace ShareX.UploadersLib
         public bool GoogleDriveUseFolder = false;
         public string GoogleDriveFolderID = string.Empty;
 
-        // RapidShare
-
-        public string RapidShareUsername = string.Empty;
-        public string RapidSharePassword = string.Empty;
-        public string RapidShareFolderID = string.Empty;
-
         // SendSpace
 
         public AccountType SendSpaceAccountType = AccountType.Anonymous;
@@ -246,10 +240,6 @@ namespace ShareX.UploadersLib
         // Pushbullet
 
         public PushbulletSettings PushbulletSettings = new PushbulletSettings();
-
-        // MediaCrush
-
-        public bool MediaCrushDirectLink = false;
 
         // Lambda
 
@@ -383,8 +373,6 @@ namespace ShareX.UploadersLib
                     return OAuthInfo.CheckOAuth(CopyOAuthInfo);
                 case FileDestination.GoogleDrive:
                     return OAuth2Info.CheckOAuth(GoogleDriveOAuth2Info);
-                case FileDestination.RapidShare:
-                    return !string.IsNullOrEmpty(RapidShareUsername) && !string.IsNullOrEmpty(RapidSharePassword);
                 case FileDestination.SendSpace:
                     return SendSpaceAccountType == AccountType.Anonymous || (!string.IsNullOrEmpty(SendSpaceUsername) && !string.IsNullOrEmpty(SendSpacePassword));
                 case FileDestination.Minus:
