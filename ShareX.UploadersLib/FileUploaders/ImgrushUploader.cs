@@ -35,9 +35,15 @@ using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class MediaCrushUploader : FileUploader
+    public class ImgrushUploader : FileUploader
     {
+        #region Public Properties
+
         public bool DirectLink { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Methods
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
@@ -54,7 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                result = UploadData(stream, "https://mediacru.sh/api/upload/file", fileName);
+                result = UploadData(stream, "https://imgrush.com/api/upload/file", fileName);
             }
             catch (WebException e)
             {
@@ -77,7 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             while (!StopUploadRequested)
             {
-                result.Response = SendRequest(HttpMethod.GET, "https://mediacru.sh/api/" + hash + "/status");
+                result.Response = SendRequest(HttpMethod.GET, "https://imgrush.com/api/" + hash + "/status");
                 JToken jsonResponse = JToken.Parse(result.Response);
                 string status = jsonResponse["status"].Value<string>();
 
@@ -87,15 +93,17 @@ namespace ShareX.UploadersLib.FileUploaders
                     case "pending":
                         Thread.Sleep(500);
                         break;
+
                     case "done":
                     case "ready":
-                        MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
+                        ImgrushBlob blob = jsonResponse[hash].ToObject<ImgrushBlob>();
                         result.URL = DirectLink ? blob.DirectURL : blob.URL;
                         result.DeletionURL = blob.DeletionURL;
                         return result;
+
                     case "unrecognized":
-                        // Note: MediaCrush accepts just about _every_ kind of media file,
-                        // so the file itself is probably corrupted or just not actually a media file
+                        // Note: Imgrush accepts just about _every_ kind of media file, so the
+                        // file itself is probably corrupted or just not actually a media file
                         throw new Exception("This file is not an acceptable file type.");
                     case "timeout":
                         throw new Exception("This file took too long to process.");
@@ -105,6 +113,34 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return result;
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private UploadResult CheckExists(string hash)
+        {
+            try
+            {
+                string response = SendRequest(HttpMethod.GET, "https://imgrush.com/api/" + hash);
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    ImgrushBlob blob = JsonConvert.DeserializeObject<ImgrushBlob>(response);
+
+                    return new UploadResult(response)
+                    {
+                        URL = DirectLink ? blob.DirectURL : blob.URL,
+                        DeletionURL = blob.DeletionURL
+                    };
+                }
+            }
+            catch
+            {
+            }
+
+            return null;
         }
 
         private string CreateHash(Stream stream)
@@ -127,7 +163,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 response = JToken.Parse(streamReader.ReadToEnd());
             }
             string hash = response["hash"].Value<string>();
-            MediaCrushBlob blob = response[hash].ToObject<MediaCrushBlob>();
+            ImgrushBlob blob = response[hash].ToObject<ImgrushBlob>();
 
             return new UploadResult
             {
@@ -136,64 +172,25 @@ namespace ShareX.UploadersLib.FileUploaders
             };
         }
 
-        private UploadResult CheckExists(string hash)
-        {
-            try
-            {
-                string response = SendRequest(HttpMethod.GET, "https://mediacru.sh/api/" + hash);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    MediaCrushBlob blob = JsonConvert.DeserializeObject<MediaCrushBlob>(response);
-
-                    return new UploadResult(response)
-                    {
-                        URL = DirectLink ? blob.DirectURL : blob.URL,
-                        DeletionURL = blob.DeletionURL
-                    };
-                }
-            }
-            catch
-            {
-            }
-
-            return null;
-        }
+        #endregion Private Methods
     }
 
-    internal class MediaCrushBlob
+    internal class ImgrushBlob
     {
-        public class MediaCrushFile
-        {
-            [JsonProperty("file")]
-            public string Path { get; set; }
-            [JsonProperty("type")]
-            public string Mimetype { get; set; }
-            [JsonProperty("url")]
-            public string URL { get; set; }
-        }
+        #region Public Properties
 
         [JsonProperty("blob_type")]
         public string BlobType { get; set; }
+
         [JsonProperty("compression")]
         public double Compression { get; set; }
-        [JsonProperty("files")]
-        public MediaCrushFile[] Files { get; set; }
-        [JsonProperty("extras")]
-        public MediaCrushFile[] Extras { get; set; }
-        [JsonProperty("original")]
-        public string Original { get; set; }
-        [JsonProperty("type")]
-        public string UserMimetype { get; set; }
-        [JsonProperty("hash")]
-        public string Hash { get; set; }
 
         [JsonIgnore]
-        public string URL
+        public string DeletionURL
         {
             get
             {
-                return "https://mediacru.sh/" + Hash;
+                return "https://imgrush.com/" + Hash + "/delete";
             }
         }
 
@@ -210,7 +207,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     else if (BlobType == "video" || BlobType == "audio")
                     {
-                        return "https://mediacru.sh/" + Hash + "/direct";
+                        return "https://imgrush.com/" + Hash + "/direct";
                     }
                 }
 
@@ -218,13 +215,50 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
+        [JsonProperty("extras")]
+        public MediaCrushFile[] Extras { get; set; }
+
+        [JsonProperty("files")]
+        public MediaCrushFile[] Files { get; set; }
+
+        [JsonProperty("hash")]
+        public string Hash { get; set; }
+
+        [JsonProperty("original")]
+        public string Original { get; set; }
+
         [JsonIgnore]
-        public string DeletionURL
+        public string URL
         {
             get
             {
-                return "https://mediacru.sh/" + Hash + "/delete";
+                return "https://imgrush.com/" + Hash;
             }
         }
+
+        [JsonProperty("type")]
+        public string UserMimetype { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Classes
+
+        public class MediaCrushFile
+        {
+            #region Public Properties
+
+            [JsonProperty("type")]
+            public string Mimetype { get; set; }
+
+            [JsonProperty("file")]
+            public string Path { get; set; }
+
+            [JsonProperty("url")]
+            public string URL { get; set; }
+
+            #endregion Public Properties
+        }
+
+        #endregion Public Classes
     }
 }
