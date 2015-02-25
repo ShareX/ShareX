@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -256,13 +257,13 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>Mise en ligne du depuis le presse-papier...</value>
+    <value>Mise en ligne depuis le presse-papier...</value>
   </data>
   <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Mise en ligne du depuis l'URL...</value>
+    <value>Mise en ligne depuis l'URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
@@ -889,13 +890,13 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
-    <value>Mise en ligne du depuis le presse-papier...</value>
+    <value>Mise en ligne depuis le presse-papier...</value>
   </data>
   <data name="tsmiTrayUploadURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Mise en ligne du depuis l'URL...</value>
+    <value>Mise en ligne depuis l'URL...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
