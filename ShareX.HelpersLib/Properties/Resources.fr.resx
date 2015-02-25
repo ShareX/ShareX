@@ -1,4 +1,5 @@
-﻿<root>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
   <!-- 
     Microsoft ResX Schema 
     
@@ -585,7 +586,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Mettre en ligne depuis le presse-papier avec le visualiseur de contenu</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Mise en ligne du depuis l'URL...</value>
+    <value>Mise en ligne depuis l'URL...</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
     <value>Mettre en ligne l'image vers l'hôte</value>

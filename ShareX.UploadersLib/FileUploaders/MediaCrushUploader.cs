@@ -27,6 +27,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShareX.HelpersLib;
 using System;
 using System.IO;
 using System.Net;
@@ -37,7 +38,18 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class MediaCrushUploader : FileUploader
     {
+        public string APIURL { get; private set; }
         public bool DirectLink { get; set; }
+
+        public MediaCrushUploader()
+        {
+            APIURL = "https://mediacru.sh";
+        }
+
+        public MediaCrushUploader(string apiURL)
+        {
+            APIURL = URLHelpers.FixPrefix(apiURL);
+        }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
@@ -54,7 +66,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                result = UploadData(stream, "https://mediacru.sh/api/upload/file", fileName);
+                result = UploadData(stream, URLHelpers.CombineURL(APIURL, "api/upload/file"), fileName);
             }
             catch (WebException e)
             {
@@ -77,7 +89,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             while (!StopUploadRequested)
             {
-                result.Response = SendRequest(HttpMethod.GET, "https://mediacru.sh/api/" + hash + "/status");
+                result.Response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(APIURL, "api/" + hash + "/status"));
                 JToken jsonResponse = JToken.Parse(result.Response);
                 string status = jsonResponse["status"].Value<string>();
 
@@ -90,9 +102,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     case "done":
                     case "ready":
                         MediaCrushBlob blob = jsonResponse[hash].ToObject<MediaCrushBlob>();
-                        result.URL = DirectLink ? blob.DirectURL : blob.URL;
-                        result.DeletionURL = blob.DeletionURL;
-                        return result;
+                        return UpdateResult(result, blob);
                     case "unrecognized":
                         // Note: MediaCrush accepts just about _every_ kind of media file,
                         // so the file itself is probably corrupted or just not actually a media file
@@ -129,28 +139,20 @@ namespace ShareX.UploadersLib.FileUploaders
             string hash = response["hash"].Value<string>();
             MediaCrushBlob blob = response[hash].ToObject<MediaCrushBlob>();
 
-            return new UploadResult
-            {
-                URL = DirectLink ? blob.DirectURL : blob.URL,
-                DeletionURL = blob.DeletionURL
-            };
+            return UpdateResult(new UploadResult(), blob);
         }
 
         private UploadResult CheckExists(string hash)
         {
             try
             {
-                string response = SendRequest(HttpMethod.GET, "https://mediacru.sh/api/" + hash);
+                string response = SendRequest(HttpMethod.GET, URLHelpers.CombineURL(APIURL, "api/" + hash));
 
                 if (!string.IsNullOrEmpty(response))
                 {
                     MediaCrushBlob blob = JsonConvert.DeserializeObject<MediaCrushBlob>(response);
 
-                    return new UploadResult(response)
-                    {
-                        URL = DirectLink ? blob.DirectURL : blob.URL,
-                        DeletionURL = blob.DeletionURL
-                    };
+                    return UpdateResult(new UploadResult(response), blob);
                 }
             }
             catch
@@ -158,6 +160,31 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return null;
+        }
+
+        private UploadResult UpdateResult(UploadResult result, MediaCrushBlob blob)
+        {
+            string url = URLHelpers.CombineURL(APIURL, blob.Hash);
+
+            if (DirectLink)
+            {
+                if (blob.Files != null && blob.Files.Length > 0)
+                {
+                    if (blob.BlobType == "image")
+                    {
+                        url = blob.Files[0].URL;
+                    }
+                    else if (blob.BlobType == "video" || blob.BlobType == "audio")
+                    {
+                        url = URLHelpers.CombineURL(APIURL, blob.Hash + "/direct");
+                    }
+                }
+            }
+
+            result.URL = url;
+            result.DeletionURL = URLHelpers.CombineURL(APIURL, blob.Hash + "/delete");
+
+            return result;
         }
     }
 
@@ -187,44 +214,5 @@ namespace ShareX.UploadersLib.FileUploaders
         public string UserMimetype { get; set; }
         [JsonProperty("hash")]
         public string Hash { get; set; }
-
-        [JsonIgnore]
-        public string URL
-        {
-            get
-            {
-                return "https://mediacru.sh/" + Hash;
-            }
-        }
-
-        [JsonIgnore]
-        public string DirectURL
-        {
-            get
-            {
-                if (Files != null && Files.Length > 0)
-                {
-                    if (BlobType == "image")
-                    {
-                        return Files[0].URL;
-                    }
-                    else if (BlobType == "video" || BlobType == "audio")
-                    {
-                        return "https://mediacru.sh/" + Hash + "/direct";
-                    }
-                }
-
-                return URL;
-            }
-        }
-
-        [JsonIgnore]
-        public string DeletionURL
-        {
-            get
-            {
-                return "https://mediacru.sh/" + Hash + "/delete";
-            }
-        }
     }
 }
