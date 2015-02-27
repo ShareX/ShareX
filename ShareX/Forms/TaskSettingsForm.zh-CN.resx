@@ -420,4 +420,7 @@
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>URL分享服务</value>
   </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>FFmpeg的选项...</value>
+  </data>
 </root>

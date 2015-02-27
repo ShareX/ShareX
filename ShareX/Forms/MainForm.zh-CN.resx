@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -616,5 +617,20 @@
   </data>
   <data name="tsmiWindowRectangle.Text" xml:space="preserve">
     <value>矩形（自动识别窗口）</value>
+  </data>
+  <data name="tsmiAutomate.Text" xml:space="preserve">
+    <value>自动化...</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>拾色器...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>拾色器...</value>
+  </data>
+  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
+    <value>自动化...</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>新增网站链接</value>
   </data>
 </root>

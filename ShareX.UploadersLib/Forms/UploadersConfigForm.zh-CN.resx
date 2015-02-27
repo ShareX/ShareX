@@ -736,4 +736,10 @@
   <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
     <value>注意: 您可以双击文件夹名称进入该文件夹内.</value>
   </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>API key:</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>要获取API密钥, 需要登录 Lambda 在 https://lambda.sx/ 然后点击在右上角的设置齿轮.</value>
+  </data>
 </root>
