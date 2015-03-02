@@ -308,7 +308,8 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawRectangleProper(Pens.Black, colorBox);
                 }
 
-                string infoText = string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, CurrentPosition.X, CurrentPosition.Y);
+                string infoText = string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color),
+                    CurrentPosition.X, CurrentPosition.Y);
 
                 ImageHelpers.DrawTextWithOutline(g, infoText, new PointF(CurrentPosition.X + 25, CurrentPosition.Y + 5), textFont, Color.White, Color.Black);
             }

@@ -164,7 +164,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Ctrl: Drawing mode ░ Space: Fullscreen capture</value>
   </data>
   <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
-    <value>R: {0}, G: {1}, B: {2}
-X: {3}, Y: {4}</value>
+    <value>R: {0}, G: {1}, B: {2}, Hex: {3}
+X: {4}, Y: {5}</value>
   <comment>@Invariant</comment></data>
 </root>
