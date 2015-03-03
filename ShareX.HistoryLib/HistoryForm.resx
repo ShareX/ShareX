@@ -407,12 +407,6 @@
   <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="tsslStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
   <data name="ssMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 665</value>
   </data>
@@ -433,6 +427,96 @@
   </data>
   <data name="&gt;&gt;ssMain.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 17</value>
+  </data>
+  <data name="tsslStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveFilters.Name" xml:space="preserve">
+    <value>btnRemoveFilters</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveFilters.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveFilters.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtHostFilter.Name" xml:space="preserve">
+    <value>txtHostFilter</value>
+  </data>
+  <data name="&gt;&gt;txtHostFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtHostFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;txtHostFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Name" xml:space="preserve">
+    <value>cbTypeFilterSelection</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Name" xml:space="preserve">
+    <value>cbHostFilter</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Name" xml:space="preserve">
+    <value>cbTypeFilter</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Parent" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="gbFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 272</value>
+  </data>
+  <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbFilters.Text" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="&gt;&gt;gbFilters.Name" xml:space="preserve">
+    <value>gbFilters</value>
+  </data>
+  <data name="&gt;&gt;gbFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbFilters.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbFilters.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnRemoveFilters.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 232</value>
@@ -563,33 +647,30 @@
   <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="gbFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 272</value>
-  </data>
-  <data name="gbFilters.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filters</value>
-  </data>
-  <data name="&gt;&gt;gbFilters.Name" xml:space="preserve">
-    <value>gbFilters</value>
-  </data>
-  <data name="&gt;&gt;gbFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbFilters.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbFilters.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lvHistory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 288</value>
+  </data>
+  <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>904, 368</value>
+  </data>
+  <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Name" xml:space="preserve">
+    <value>lvHistory</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Date &amp; time</value>
@@ -617,30 +698,9 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>330</value>
-  </data>
-  <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 288</value>
-  </data>
-  <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 368</value>
-  </data>
-  <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Name" xml:space="preserve">
-    <value>lvHistory</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>HelpersLib.MyListView, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="pbThumbnail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -658,7 +718,7 @@
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>HelpersLib.MyPictureBox, HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
     <value>$this</value>

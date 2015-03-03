@@ -330,6 +330,11 @@ namespace ShareX.HistoryLib
             e.Handled = true;
         }
 
+		private void txtFilenameFilter_TextChanged(object sender, EventArgs e)
+		{
+			cbFilenameFilter.Checked = txtFilenameFilter.TextLength > 0;
+		}
+
         #endregion Form events
     }
 }
