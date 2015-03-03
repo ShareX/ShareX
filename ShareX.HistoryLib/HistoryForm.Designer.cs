@@ -97,6 +97,7 @@
             // 
             resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
+            this.txtFilenameFilter.TextChanged += new System.EventHandler(this.txtFilenameFilter_TextChanged);
             // 
             // cbFilenameFilterMethod
             // 
@@ -253,6 +254,7 @@
             // 
             // HistoryForm
             // 
+            this.AcceptButton = this.btnApplyFilters;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lvHistory);
