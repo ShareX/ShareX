@@ -102,7 +102,7 @@ namespace ShareX.HelpersLib
             if (IconHandle != IntPtr.Zero)
             {
                 Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
-                NativeMethods.DrawIcon(hdcDest, drawPosition.X, drawPosition.Y, IconHandle);
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, IconHandle, 0, 0, 0, IntPtr.Zero, NativeMethods.DI_NORMAL);
             }
         }
 

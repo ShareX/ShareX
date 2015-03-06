@@ -77,6 +77,9 @@ namespace ShareX.HelpersLib
         public static extern bool DrawIcon(IntPtr hDC, int X, int Y, IntPtr hIcon);
 
         [DllImport("user32.dll")]
+        public static extern bool DrawIconEx(IntPtr hdc, int xLeft, int yTop, IntPtr hIcon, int cxWidth, int cyHeight, int istepIfAniCur, IntPtr hbrFlickerFreeDraw, int diFlags);
+
+        [DllImport("user32.dll")]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll")]
