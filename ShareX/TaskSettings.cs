@@ -338,7 +338,7 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by treating them as images when files are handled during file upload, clipboard file upload, drag & drop, watch folder and other tasks.")]
         public bool ProcessImagesDuringFileUpload { get; set; }
 
-        [Category("General"), DefaultValue(true), Description("Use after capture tasks for clipboard image upload.")]
+        [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image upload.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
 
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
