@@ -35,6 +35,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
 using System.Drawing.Design;
+using System.Linq;
 
 namespace ShareX
 {
@@ -315,13 +316,13 @@ namespace ShareX
 
     public class TaskSettingsUpload
     {
-        #region Upload / Name pattern
+        #region Upload
 
         public string NameFormatPattern = "%y-%mo-%d_%h-%mi-%s"; // Test: %y %mo %mon %mon2 %d %h %mi %s %ms %w %w2 %pm %rn %ra %width %height %app %ver
         public string NameFormatPatternActiveWindow = "%t_%y-%mo-%d_%h-%mi-%s";
         public bool FileUploadUseNamePattern = false;
 
-        #endregion Upload / Name pattern
+        #endregion Upload
 
         #region Upload / Clipboard upload
 
@@ -344,7 +345,7 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
 
-        [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height")]
+        [Category("Image"), DefaultValue(256), Description("Preferred thumbnail width. 0 means aspect ratio will be used to adjust width according to height.")]
         public int ThumbnailPreferredWidth { get; set; }
 
         [Category("Image"), DefaultValue(0), Description("Preferred thumbnail height. 0 means aspect ratio will be used to adjust height according to width.")]
@@ -353,6 +354,14 @@ namespace ShareX
         [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CapturePath { get; set; }
+
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader.")]
+        [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        public List<string> ImageExtensions { get; set; }
+
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader.")]
+        [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        public List<string> TextExtensions { get; set; }
 
         [Category("After upload"), DefaultValue("$result"),
         Description("Clipboard content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
@@ -434,6 +443,8 @@ namespace ShareX
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();
+            ImageExtensions = Enum.GetNames(typeof(ImageFileExtensions)).ToList();
+            TextExtensions = Enum.GetNames(typeof(TextFileExtensions)).ToList();
         }
     }
 }

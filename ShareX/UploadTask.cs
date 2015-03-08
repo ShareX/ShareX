@@ -95,7 +95,7 @@ namespace ShareX
 
         public static UploadTask CreateFileUploaderTask(string filePath, TaskSettings taskSettings)
         {
-            EDataType dataType = Helpers.FindDataType(filePath);
+            EDataType dataType = TaskHelpers.FindDataType(filePath, taskSettings);
             UploadTask task = new UploadTask(taskSettings);
 
             task.Info.DataType = dataType;
@@ -173,7 +173,7 @@ namespace ShareX
 
         public static UploadTask CreateFileJobTask(string filePath, TaskSettings taskSettings)
         {
-            EDataType dataType = Helpers.FindDataType(filePath);
+            EDataType dataType = TaskHelpers.FindDataType(filePath, taskSettings);
             UploadTask task = new UploadTask(taskSettings);
 
             task.Info.DataType = dataType;

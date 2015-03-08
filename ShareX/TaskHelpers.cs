@@ -36,6 +36,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -669,6 +670,26 @@ namespace ShareX
                 FTPAccount account = Program.UploadersConfig.FTPAccountList[Program.UploadersConfig.FTPSelectedImage];
                 new FTPClientForm(account).Show();
             }
+        }
+
+        public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
+        {
+            string ext = Helpers.GetFilenameExtension(filePath);
+
+            if (!string.IsNullOrEmpty(ext))
+            {
+                if (taskSettings.AdvancedSettings.ImageExtensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return EDataType.Image;
+                }
+
+                if (taskSettings.AdvancedSettings.TextExtensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return EDataType.Text;
+                }
+            }
+
+            return EDataType.File;
         }
     }
 }

@@ -31,77 +31,12 @@ namespace ShareX.HelpersLib
 
     public enum ImageFileExtensions
     {
-        [Description("Joint Photographic Experts Group")]
-        jpg,
-        jpeg,
-        [Description("Portable Network Graphic")]
-        png,
-        [Description("CompuServe's Graphics Interchange Format")]
-        gif,
-        [Description("Microsoft Windows Bitmap formatted image")]
-        bmp,
-        [Description("File format used for icons in Microsoft Windows")]
-        ico,
-        [Description("Tagged Image File Format")]
-        tif,
-        tiff
+        jpg, jpeg, png, gif, bmp, ico, tif, tiff
     }
 
     public enum TextFileExtensions
     {
-        [Description("ASCII or Unicode plaintext")]
-        txt,
-        log,
-        [Description("ASCII or extended ASCII text file")]
-        nfo,
-        [Description("C source")]
-        c,
-        [Description("C++ source")]
-        cpp,
-        cc,
-        cxx,
-        [Description("C/C++ header file")]
-        h,
-        [Description("C++ header file")]
-        hpp,
-        hxx,
-        [Description("C# source")]
-        cs,
-        [Description("Visual Basic.NET source")]
-        vb,
-        [Description("HyperText Markup Language")]
-        html,
-        htm,
-        [Description("eXtensible HyperText Markup Language")]
-        xhtml,
-        xht,
-        [Description("eXtensible Markup Language")]
-        xml,
-        [Description("Cascading Style Sheets")]
-        css,
-        [Description("JavaScript and JScript")]
-        js,
-        [Description("Hypertext Preprocessor")]
-        php,
-        [Description("Batch file")]
-        bat,
-        [Description("Java source")]
-        java,
-        [Description("Lua")]
-        lua,
-        [Description("Python source")]
-        py,
-        [Description("Perl")]
-        pl,
-        [Description("Visual Studio solution")]
-        sln
-    }
-
-    public enum VideoFileExtensions
-    {
-        [Description("MPEG-4 Video File")]
-        mp4,
-        m4v
+        txt, log, nfo, c, cpp, cc, cxx, h, hpp, hxx, cs, vb, html, htm, xhtml, xht, xml, css, js, php, bat, java, lua, py, pl, cfg, ini
     }
 
     public enum EncryptionStrength
