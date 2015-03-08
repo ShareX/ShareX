@@ -80,9 +80,9 @@ namespace ShareX
         SaveImageToFile = 1 << 4,
         SaveImageToFileWithDialog = 1 << 5,
         SaveThumbnailImageToFile = 1 << 6,
-        CopyFileToClipboard = 1 << 7,
-        CopyFilePathToClipboard = 1 << 8,
-        PerformActions = 1 << 9,
+        PerformActions = 1 << 7,
+        CopyFileToClipboard = 1 << 8,
+        CopyFilePathToClipboard = 1 << 9,
         UploadImageToHost = 1 << 10,
         DeleteFile = 1 << 11
     }

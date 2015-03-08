@@ -557,15 +557,6 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
             {
-                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard))
-                {
-                    ClipboardHelpers.CopyFile(Info.FilePath);
-                }
-                else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
-                {
-                    ClipboardHelpers.CopyText(Info.FilePath);
-                }
-
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PerformActions) && Info.TaskSettings.ExternalPrograms != null)
                 {
                     var actions = Info.TaskSettings.ExternalPrograms.Where(x => x.IsActive);
@@ -584,6 +575,15 @@ namespace ShareX
 
                         Data = new FileStream(Info.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
                     }
+                }
+
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFileToClipboard))
+                {
+                    ClipboardHelpers.CopyFile(Info.FilePath);
+                }
+                else if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard))
+                {
+                    ClipboardHelpers.CopyText(Info.FilePath);
                 }
             }
         }
