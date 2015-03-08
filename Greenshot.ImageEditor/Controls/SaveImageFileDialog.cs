@@ -25,6 +25,7 @@ using GreenshotPlugin.Core;
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Text;
 
 namespace GreenshotPlugin.Controls
 {
@@ -40,20 +41,27 @@ namespace GreenshotPlugin.Controls
         private DirectoryInfo eagerlyCreatedDirectory;
         private ICaptureDetails captureDetails = null;
 
+        private bool disposed = false;
+
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposed)
             {
-                if (saveFileDialog != null)
+                if (disposing)
                 {
-                    saveFileDialog.Dispose();
-                    saveFileDialog = null;
+                    if (saveFileDialog != null)
+                    {
+                        saveFileDialog.Dispose();
+                    }
+
+
                 }
             }
         }
@@ -71,9 +79,15 @@ namespace GreenshotPlugin.Controls
 
         private void init()
         {
+            if (saveFileDialog != null)
+            {
+                saveFileDialog.Dispose();
+            }
+
             saveFileDialog = new SaveFileDialog();
             applyFilterOptions();
             string initialDirectory = null;
+
             try
             {
                 initialDirectory = Path.GetDirectoryName(conf.OutputFileAsFullpath);
@@ -102,16 +116,23 @@ namespace GreenshotPlugin.Controls
         private void applyFilterOptions()
         {
             prepareFilterOptions();
-            string fdf = "";
+
             int preselect = 0;
+            StringBuilder fdf = new StringBuilder();
+
             for (int i = 0; i < filterOptions.Length; i++)
             {
                 FilterOption fo = filterOptions[i];
-                fdf += fo.Label + "|*." + fo.Extension + "|";
-                if (conf.OutputFileAsFullpath.EndsWith(fo.Extension, StringComparison.CurrentCultureIgnoreCase)) preselect = i;
+                fdf.Append(fo.Label + "|*." + fo.Extension + "|");
+
+                if (conf.OutputFileAsFullpath.EndsWith(fo.Extension, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    preselect = i;
+                }
             }
-            fdf = fdf.Substring(0, fdf.Length - 1);
-            saveFileDialog.Filter = fdf;
+
+            string fdfString = fdf.ToString().Substring(0, fdf.Length - 1);
+            saveFileDialog.Filter = fdfString;
             saveFileDialog.FilterIndex = preselect + 1;
         }
 
@@ -119,6 +140,7 @@ namespace GreenshotPlugin.Controls
         {
             OutputFormat[] supportedImageFormats = (OutputFormat[])Enum.GetValues(typeof(OutputFormat));
             filterOptions = new FilterOption[supportedImageFormats.Length];
+
             for (int i = 0; i < filterOptions.Length; i++)
             {
                 string ifo = supportedImageFormats[i].ToString();
@@ -159,9 +181,15 @@ namespace GreenshotPlugin.Controls
             {
                 string fn = saveFileDialog.FileName;
                 // if the filename contains a valid extension, which is the same like the selected filter item's extension, the filename is okay
-                if (fn.EndsWith(Extension, StringComparison.CurrentCultureIgnoreCase)) return fn;
+                if (fn.EndsWith(Extension, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    return fn;
+                }
                 // otherwise we just add the selected filter item's extension
-                else return fn + "." + Extension;
+                else
+                {
+                    return fn + "." + Extension;
+                }
             }
             set
             {
@@ -242,10 +270,12 @@ namespace GreenshotPlugin.Controls
         private string CreateDirectoryIfNotExists(string fullPath)
         {
             string dirName = null;
+
             try
             {
                 dirName = Path.GetDirectoryName(fullPath);
                 DirectoryInfo di = new DirectoryInfo(dirName);
+
                 if (!di.Exists)
                 {
                     di = Directory.CreateDirectory(dirName);
@@ -256,6 +286,7 @@ namespace GreenshotPlugin.Controls
             {
                 LOG.Error("Error in CreateDirectoryIfNotExists", e);
             }
+
             return dirName;
         }
     }

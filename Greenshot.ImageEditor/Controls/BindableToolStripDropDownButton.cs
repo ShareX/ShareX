@@ -53,13 +53,23 @@ namespace Greenshot.Controls
 
         protected override void OnDropDownItemClicked(ToolStripItemClickedEventArgs e)
         {
-            ToolStripItem clickedItem = e.ClickedItem;
-            if (Tag == null || !Tag.Equals(clickedItem.Tag))
+            using (ToolStripItem clickedItem = e.ClickedItem)
             {
-                Tag = clickedItem.Tag;
-                Image = clickedItem.Image;
-                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("SelectedTag"));
+                if (Tag == null || !Tag.Equals(clickedItem.Tag))
+                {
+                    Tag = clickedItem.Tag;
+
+                    // If there was an existing image set, dispose of it before setting it to something else.
+                    if (Image != null)
+                    {
+                        Image.Dispose();
+                    }
+
+                    Image = clickedItem.Image;
+                    if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("SelectedTag"));
+                }
             }
+
             base.OnDropDownItemClicked(e);
         }
 
@@ -72,6 +82,12 @@ namespace Greenshot.Controls
                 {
                     if (item.Tag != null && item.Tag.Equals(tag))
                     {
+                        // If there was an existing image set, dispose of it before setting it to something else.
+                        if (Image != null)
+                        {
+                            Image.Dispose();
+                        }
+
                         Image = item.Image;
                         break;
                     }

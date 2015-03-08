@@ -176,28 +176,30 @@ namespace GreenshotPlugin.Controls
         {
             if (ce.Component != null && ((IComponent)ce.Component).Site != null)
             {
-                Control control = ce.Component as Control;
-                if (control != null)
+                using (Control control = ce.Component as Control)
                 {
-                    if (!designTimeControls.ContainsKey(control.Name))
+                    if (control != null)
                     {
-                        designTimeControls.Add(control.Name, control);
+                        if (!designTimeControls.ContainsKey(control.Name))
+                        {
+                            designTimeControls.Add(control.Name, control);
+                        }
+                        else
+                        {
+                            designTimeControls[control.Name] = control;
+                        }
                     }
-                    else
+                    else if (ce.Component is ToolStripItem)
                     {
-                        designTimeControls[control.Name] = control;
-                    }
-                }
-                else if (ce.Component is ToolStripItem)
-                {
-                    ToolStripItem item = ce.Component as ToolStripItem;
-                    if (!designTimeControls.ContainsKey(item.Name))
-                    {
-                        designTimeToolStripItems.Add(item.Name, item);
-                    }
-                    else
-                    {
-                        designTimeToolStripItems[item.Name] = item;
+                        ToolStripItem item = ce.Component as ToolStripItem;
+                        if (!designTimeControls.ContainsKey(item.Name))
+                        {
+                            designTimeToolStripItems.Add(item.Name, item);
+                        }
+                        else
+                        {
+                            designTimeToolStripItems[item.Name] = item;
+                        }
                     }
                 }
             }
@@ -258,36 +260,45 @@ namespace GreenshotPlugin.Controls
                             continue;
                         }
 
-                        CheckBox checkBox = controlObject as CheckBox;
-                        if (checkBox != null)
+                        using (CheckBox checkBox = controlObject as CheckBox)
                         {
-                            checkBox.Checked = (bool)iniValue.Value;
-                            checkBox.Enabled = !iniValue.IsFixed;
-                            continue;
-                        }
-                        RadioButton radíoButton = controlObject as RadioButton;
-                        if (radíoButton != null)
-                        {
-                            radíoButton.Checked = (bool)iniValue.Value;
-                            radíoButton.Enabled = !iniValue.IsFixed;
-                            continue;
+                            if (checkBox != null)
+                            {
+                                checkBox.Checked = (bool)iniValue.Value;
+                                checkBox.Enabled = !iniValue.IsFixed;
+                                continue;
+                            }
                         }
 
-                        TextBox textBox = controlObject as TextBox;
-                        if (textBox != null)
+                        using (RadioButton radíoButton = controlObject as RadioButton)
                         {
-                            textBox.Text = iniValue.ToString();
-                            textBox.Enabled = !iniValue.IsFixed;
-                            continue;
+                            if (radíoButton != null)
+                            {
+                                radíoButton.Checked = (bool)iniValue.Value;
+                                radíoButton.Enabled = !iniValue.IsFixed;
+                                continue;
+                            }
                         }
 
-                        GreenshotComboBox comboxBox = controlObject as GreenshotComboBox;
-                        if (comboxBox != null)
+                        using (TextBox textBox = controlObject as TextBox)
                         {
-                            comboxBox.Populate(iniValue.ValueType);
-                            comboxBox.SetValue((Enum)iniValue.Value);
-                            comboxBox.Enabled = !iniValue.IsFixed;
-                            continue;
+                            if (textBox != null)
+                            {
+                                textBox.Text = iniValue.ToString();
+                                textBox.Enabled = !iniValue.IsFixed;
+                                continue;
+                            }
+                        }
+
+                        using (GreenshotComboBox comboxBox = controlObject as GreenshotComboBox)
+                        {
+                            if (comboxBox != null)
+                            {
+                                comboxBox.Populate(iniValue.ValueType);
+                                comboxBox.SetValue((Enum)iniValue.Value);
+                                comboxBox.Enabled = !iniValue.IsFixed;
+                                continue;
+                            }
                         }
                     }
                 }
@@ -328,33 +339,41 @@ namespace GreenshotPlugin.Controls
                         {
                             continue;
                         }
-                        CheckBox checkBox = controlObject as CheckBox;
-                        if (checkBox != null)
+                        using (CheckBox checkBox = controlObject as CheckBox)
                         {
-                            iniValue.Value = checkBox.Checked;
-                            iniDirty = true;
-                            continue;
+                            if (checkBox != null)
+                            {
+                                iniValue.Value = checkBox.Checked;
+                                iniDirty = true;
+                                continue;
+                            }
                         }
-                        RadioButton radioButton = controlObject as RadioButton;
-                        if (radioButton != null)
+                        using (RadioButton radioButton = controlObject as RadioButton)
                         {
-                            iniValue.Value = radioButton.Checked;
-                            iniDirty = true;
-                            continue;
+                            if (radioButton != null)
+                            {
+                                iniValue.Value = radioButton.Checked;
+                                iniDirty = true;
+                                continue;
+                            }
                         }
-                        TextBox textBox = controlObject as TextBox;
-                        if (textBox != null)
+                        using (TextBox textBox = controlObject as TextBox)
                         {
-                            iniValue.UseValueOrDefault(textBox.Text);
-                            iniDirty = true;
-                            continue;
+                            if (textBox != null)
+                            {
+                                iniValue.UseValueOrDefault(textBox.Text);
+                                iniDirty = true;
+                                continue;
+                            }
                         }
-                        GreenshotComboBox comboxBox = controlObject as GreenshotComboBox;
-                        if (comboxBox != null)
+                        using (GreenshotComboBox comboxBox = controlObject as GreenshotComboBox)
                         {
-                            iniValue.Value = comboxBox.GetSelectedEnum();
-                            iniDirty = true;
-                            continue;
+                            if (comboxBox != null)
+                            {
+                                iniValue.Value = comboxBox.GetSelectedEnum();
+                                iniDirty = true;
+                                continue;
+                            }
                         }
                     }
                 }

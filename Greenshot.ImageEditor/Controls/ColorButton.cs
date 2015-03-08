@@ -33,6 +33,8 @@ namespace Greenshot.Controls
     /// </summary>
     internal class ColorButton : Button, IGreenshotLanguageBindable
     {
+        private bool disposed = false;
+
         public event PropertyChangedEventHandler PropertyChanged;
         private Color selectedColor = Color.White;
 
@@ -48,6 +50,22 @@ namespace Greenshot.Controls
             Click += ColorButtonClick;
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    // Unsubscribe from the event when disposing.
+                    Click -= ColorButtonClick;
+
+                    disposed = true;
+
+                    base.Dispose(disposing);
+                }
+            }
+        }
+
         public Color SelectedColor
         {
             get
@@ -58,44 +76,40 @@ namespace Greenshot.Controls
             {
                 selectedColor = value;
 
-                Brush brush;
-                if (value != Color.Transparent)
+                using (Brush brush = (value != Color.Transparent) ? (Brush)new SolidBrush(value) :
+                                                                           new HatchBrush(HatchStyle.Percent50, Color.White, Color.Gray))
                 {
-                    brush = new SolidBrush(value);
-                }
-                else
-                {
-                    brush = new HatchBrush(HatchStyle.Percent50, Color.White, Color.Gray);
-                }
-
-                if (Image != null)
-                {
-                    using (Graphics graphics = Graphics.FromImage(Image))
+                    if (Image != null)
                     {
-                        graphics.FillRectangle(brush, new Rectangle(4, 17, 16, 3));
+                        using (Graphics graphics = Graphics.FromImage(Image))
+                        {
+                            graphics.FillRectangle(brush, new Rectangle(4, 17, 16, 3));
+                        }
                     }
                 }
 
-                // cleanup GDI Object
-                brush.Dispose();
                 Invalidate();
             }
         }
 
         private void ColorButtonClick(object sender, EventArgs e)
         {
-            ColorDialog colorDialog = ColorDialog.GetInstance();
-            colorDialog.Color = SelectedColor;
-            // Using the parent to make sure the dialog doesn't show on another window
-            colorDialog.ShowDialog(Parent.Parent);
-            if (colorDialog.DialogResult != DialogResult.Cancel)
+            using (ColorDialog colorDialog = ColorDialog.GetInstance())
             {
-                if (!colorDialog.Color.Equals(SelectedColor))
+                colorDialog.Color = SelectedColor;
+                // Using the parent to make sure the dialog doesn't show on another window
+                colorDialog.ShowDialog(Parent.Parent);
+
+                if (colorDialog.DialogResult != DialogResult.Cancel)
                 {
-                    SelectedColor = colorDialog.Color;
-                    if (PropertyChanged != null)
+                    if (!colorDialog.Color.Equals(SelectedColor))
                     {
-                        PropertyChanged(this, new PropertyChangedEventArgs("SelectedColor"));
+                        SelectedColor = colorDialog.Color;
+
+                        if (PropertyChanged != null)
+                        {
+                            PropertyChanged(this, new PropertyChangedEventArgs("SelectedColor"));
+                        }
                     }
                 }
             }

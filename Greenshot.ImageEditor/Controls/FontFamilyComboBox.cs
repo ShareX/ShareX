@@ -32,6 +32,8 @@ namespace Greenshot.Controls
     /// </summary>
     internal class FontFamilyComboBox : ToolStripComboBox, INotifyPropertyChanged
     {
+        private bool disposed = false;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public FontFamily FontFamily
@@ -59,6 +61,23 @@ namespace Greenshot.Controls
             ComboBox.DrawItem += ComboBox_DrawItem;
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    // Unsubscribe from the events when disposing.
+                    SelectedIndexChanged -= BindableToolStripComboBox_SelectedIndexChanged;
+                    ComboBox.DrawItem -= ComboBox_DrawItem;
+
+                    disposed = true;
+
+                    base.Dispose(disposing);
+                }
+            }
+        }
+
         private void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             // DrawBackground handles drawing the background (i.e,. hot-tracked v. not)
@@ -68,34 +87,38 @@ namespace Greenshot.Controls
 
             if (e.Index > -1)
             {
-                FontFamily fontFamily = Items[e.Index] as FontFamily;
-                FontStyle fs = FontStyle.Regular;
-                if (!fontFamily.IsStyleAvailable(FontStyle.Regular))
+                using (FontFamily fontFamily = Items[e.Index] as FontFamily)
                 {
-                    if (fontFamily.IsStyleAvailable(FontStyle.Bold))
+                    FontStyle fs = FontStyle.Regular;
+
+                    if (!fontFamily.IsStyleAvailable(FontStyle.Regular))
                     {
-                        fs = FontStyle.Bold;
+                        if (fontFamily.IsStyleAvailable(FontStyle.Bold))
+                        {
+                            fs = FontStyle.Bold;
+                        }
+                        else if (fontFamily.IsStyleAvailable(FontStyle.Italic))
+                        {
+                            fs = FontStyle.Italic;
+                        }
+                        else if (fontFamily.IsStyleAvailable(FontStyle.Strikeout))
+                        {
+                            fs = FontStyle.Strikeout;
+                        }
+                        else if (fontFamily.IsStyleAvailable(FontStyle.Underline))
+                        {
+                            fs = FontStyle.Underline;
+                        }
                     }
-                    else if (fontFamily.IsStyleAvailable(FontStyle.Italic))
+
+                    using (Font font = new Font(fontFamily, this.Font.Size + 5, fs, GraphicsUnit.Pixel))
                     {
-                        fs = FontStyle.Italic;
-                    }
-                    else if (fontFamily.IsStyleAvailable(FontStyle.Strikeout))
-                    {
-                        fs = FontStyle.Strikeout;
-                    }
-                    else if (fontFamily.IsStyleAvailable(FontStyle.Underline))
-                    {
-                        fs = FontStyle.Underline;
-                    }
-                }
-                using (Font font = new Font(fontFamily, this.Font.Size + 5, fs, GraphicsUnit.Pixel))
-                {
-                    // Make sure the text is visible by centering it in the line
-                    using (StringFormat stringFormat = new StringFormat())
-                    {
-                        stringFormat.LineAlignment = StringAlignment.Center;
-                        e.Graphics.DrawString(fontFamily.Name, font, Brushes.Black, e.Bounds, stringFormat);
+                        // Make sure the text is visible by centering it in the line
+                        using (StringFormat stringFormat = new StringFormat())
+                        {
+                            stringFormat.LineAlignment = StringAlignment.Center;
+                            e.Graphics.DrawString(fontFamily.Name, font, Brushes.Black, e.Bounds, stringFormat);
+                        }
                     }
                 }
             }

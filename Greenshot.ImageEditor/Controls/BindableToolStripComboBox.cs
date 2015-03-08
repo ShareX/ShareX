@@ -31,6 +31,8 @@ namespace Greenshot.Controls
     /// </summary>
     internal class BindableToolStripComboBox : ToolStripComboBox, INotifyPropertyChanged, IGreenshotLanguageBindable
     {
+        private bool disposed = false;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [Category("Greenshot"), DefaultValue(null), Description("Specifies key of the language file to use when displaying the text.")]
@@ -38,6 +40,22 @@ namespace Greenshot.Controls
         {
             get;
             set;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    // Unsubscribe from the event when disposing.
+                    SelectedIndexChanged -= BindableToolStripComboBox_SelectedIndexChanged;
+
+                    disposed = true;
+
+                    base.Dispose(disposing);
+                }
+            }
         }
 
         public BindableToolStripComboBox()
