@@ -54,7 +54,7 @@ namespace ShareX
 
 Mega, Gist and Jira support: https://github.com/gpailler
 Web site: https://github.com/dmxt
-MediaCrush support: https://github.com/SirCmpwn
+MediaCrush (Imgrush) support: https://github.com/SirCmpwn
 Amazon S3 and DreamObjects support: https://github.com/alanedwardes
 Gfycat support: https://github.com/Dinnerbone
 Copy support: https://github.com/KamilKZ

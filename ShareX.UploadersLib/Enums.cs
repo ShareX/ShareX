@@ -118,6 +118,8 @@ namespace ShareX.UploadersLib
         Jira,
         [Description("Lambda")]
         Lambda,
+        [Description("Imgrush")]
+        Imgrush,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

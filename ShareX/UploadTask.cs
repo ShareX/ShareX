@@ -986,6 +986,9 @@ namespace ShareX
                 case FileDestination.Lambda:
                     fileUploader = new Lambda(Program.UploadersConfig.LambdaSettings);
                     break;
+                case FileDestination.Imgrush:
+                    fileUploader = new MediaCrushUploader("https://imgrush.com");
+                    break;
             }
 
             if (fileUploader != null)
