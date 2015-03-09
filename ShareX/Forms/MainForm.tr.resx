@@ -1168,4 +1168,10 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Son adresler</value>
   </data>
+  <data name="tsmiAutomate.Text" xml:space="preserve">
+    <value>Otomatikleştirmek...</value>
+  </data>
+  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
+    <value>Otomatikleştirmek...</value>
+  </data>
 </root>

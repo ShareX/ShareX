@@ -606,4 +606,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Son bölgeyi kullanarak ekran kaydet (GIF)</value>
   </data>
+  <data name="HotkeyType_Automate" xml:space="preserve">
+    <value>Aç/Durdur otomatikleştirme aracını</value>
+  </data>
 </root>
