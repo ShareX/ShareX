@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -30,7 +31,7 @@ using System.Security.Cryptography;
 
 namespace ShareX.HelpersLib
 {
-    public class HashCheck
+    public class HashCheck : IDisposable
     {
         public string FilePath { get; private set; }
         public HashType HashType { get; private set; }
@@ -46,6 +47,8 @@ namespace ShareX.HelpersLib
 
         private BackgroundWorker bw;
 
+        private bool disposed = false;
+
         public HashCheck()
         {
             bw = new BackgroundWorker();
@@ -54,6 +57,32 @@ namespace ShareX.HelpersLib
             bw.RunWorkerCompleted += bw_RunWorkerCompleted;
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+
+            GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    if (bw != null)
+                    {
+                        bw.DoWork -= CheckThread;
+                        bw.ProgressChanged -= bw_ProgressChanged;
+                        bw.RunWorkerCompleted -= bw_RunWorkerCompleted;
+                        bw.Dispose();
+                    }
+
+                    disposed = true;
+                }
+            }
         }
 
         private void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -104,36 +133,40 @@ namespace ShareX.HelpersLib
         private void CheckThread(object sender, DoWorkEventArgs e)
         {
             using (FileStream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (HashAlgorithm hash = GetHashAlgorithm(HashType))
-            using (CryptoStream cs = new CryptoStream(stream, hash, CryptoStreamMode.Read))
             {
-                long bytesRead, totalRead = 0;
-                byte[] buffer = new byte[8192];
-                Stopwatch timer = Stopwatch.StartNew();
-
-                while ((bytesRead = cs.Read(buffer, 0, buffer.Length)) > 0 && !bw.CancellationPending)
+                using (HashAlgorithm hash = GetHashAlgorithm(HashType))
                 {
-                    totalRead += bytesRead;
-
-                    if (timer.ElapsedMilliseconds > 200)
+                    using (CryptoStream cs = new CryptoStream(stream, hash, CryptoStreamMode.Read))
                     {
-                        float progress = (float)totalRead / stream.Length * 100;
-                        bw.ReportProgress(0, progress);
-                        timer.Reset();
-                        timer.Start();
-                    }
-                }
+                        long bytesRead, totalRead = 0;
+                        byte[] buffer = new byte[8192];
+                        Stopwatch timer = Stopwatch.StartNew();
 
-                if (bw.CancellationPending)
-                {
-                    bw.ReportProgress(0, 0f);
-                    e.Cancel = true;
-                }
-                else
-                {
-                    bw.ReportProgress(0, 100f);
-                    string[] hex = TranslatorHelper.BytesToHexadecimal(hash.Hash);
-                    e.Result = string.Concat(hex);
+                        while ((bytesRead = cs.Read(buffer, 0, buffer.Length)) > 0 && !bw.CancellationPending)
+                        {
+                            totalRead += bytesRead;
+
+                            if (timer.ElapsedMilliseconds > 200)
+                            {
+                                float progress = (float)totalRead / stream.Length * 100;
+                                bw.ReportProgress(0, progress);
+                                timer.Reset();
+                                timer.Start();
+                            }
+                        }
+
+                        if (bw.CancellationPending)
+                        {
+                            bw.ReportProgress(0, 0f);
+                            e.Cancel = true;
+                        }
+                        else
+                        {
+                            bw.ReportProgress(0, 100f);
+                            string[] hex = TranslatorHelper.BytesToHexadecimal(hash.Hash);
+                            e.Result = string.Concat(hex);
+                        }
+                    }
                 }
             }
         }

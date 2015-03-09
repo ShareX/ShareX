@@ -58,6 +58,7 @@ namespace GreenshotPlugin.Controls
         {
             Settings.JPGQuality = trackBarJpegQuality.Value;
             Settings.ReduceColors = checkBox_reduceColors.Checked;
+
             if (checkbox_dontaskagain.Checked)
             {
                 conf.OutputFileJpegQuality = Settings.JPGQuality;

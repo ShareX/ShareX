@@ -32,6 +32,8 @@ namespace Greenshot.Memento
         private TextContainer textContainer;
         private string oldText;
 
+        private bool disposed = false;
+
         public TextChangeMemento(TextContainer textContainer)
         {
             this.textContainer = textContainer;
@@ -41,14 +43,20 @@ namespace Greenshot.Memento
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposed)
             {
-                textContainer = null;
+                if (disposing)
+                {
+                    textContainer.Dispose();
+                }
+
+                disposed = true;
             }
         }
 

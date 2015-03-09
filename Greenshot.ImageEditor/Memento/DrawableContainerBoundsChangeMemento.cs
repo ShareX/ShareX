@@ -36,6 +36,8 @@ namespace Greenshot.Memento
         private List<Size> sizes = new List<Size>();
         private List<IDrawableContainer> listOfdrawableContainer;
 
+        private bool disposed = false;
+
         private void StoreBounds()
         {
             foreach (IDrawableContainer drawableContainer in listOfdrawableContainer)
@@ -61,13 +63,30 @@ namespace Greenshot.Memento
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            // if (disposing) { }
-            listOfdrawableContainer = null;
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    if (listOfdrawableContainer != null)
+                    {
+                        foreach (IDrawableContainer containerToDispose in listOfdrawableContainer)
+                        {
+                            if (containerToDispose != null)
+                            {
+                                containerToDispose.Dispose();
+                            }
+                        }
+                    }
+                }
+
+                disposed = true;
+            }
         }
 
         public bool Merge(IMemento otherMemento)

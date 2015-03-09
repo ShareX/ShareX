@@ -33,6 +33,8 @@ namespace Greenshot.Memento
         private IDrawableContainer drawableContainer;
         private Surface surface;
 
+        private bool disposed = false;
+
         public DeleteElementMemento(Surface surface, IDrawableContainer drawableContainer)
         {
             this.surface = surface;
@@ -42,17 +44,22 @@ namespace Greenshot.Memento
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposed)
             {
-                if (drawableContainer != null)
+                if (disposing)
                 {
-                    drawableContainer.Dispose();
-                    drawableContainer = null;
+                    if (drawableContainer != null)
+                    {
+                        drawableContainer.Dispose();
+                    }
+
+                    disposed = true;
                 }
             }
         }

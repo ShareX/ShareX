@@ -40,6 +40,8 @@ namespace Greenshot.Controls
         private Bitmap _image;
         private const int VK_ESC = 27;
 
+        private bool disposed = false;
+
         public event EventHandler<PipetteUsedArgs> PipetteUsed;
 
         public Pipette()
@@ -81,6 +83,8 @@ namespace Greenshot.Controls
         public new void Dispose()
         {
             Dispose(true);
+
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -89,20 +93,34 @@ namespace Greenshot.Controls
         /// <param name="disposing">When disposing==true all non-managed resources should be freed too!</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposed)
             {
-                if (_cursor != null)
+                if (disposing)
                 {
-                    _cursor.Dispose();
-                }
-                if (movableShowColorForm != null)
-                {
+                    if (_cursor != null)
+                    {
+                        _cursor.Dispose();
+                    }
+                    if (movableShowColorForm != null)
+                    {
+                        movableShowColorForm.Dispose();
+                    }
+                    if (_image != null)
+                    {
+                        _image.Dispose();
+                    }
+                    if (Image != null)
+                    {
+                        Image.Dispose();
+                    }
+
                     movableShowColorForm.Dispose();
                 }
+
+                disposed = true;
+
+                base.Dispose(disposing);
             }
-            movableShowColorForm = null;
-            _cursor = null;
-            base.Dispose(disposing);
         }
 
         /// <summary>
@@ -158,14 +176,33 @@ namespace Greenshot.Controls
             if (Capture)
             {
                 dragging = true;
-                Image = null;
-                Cursor c = _cursor;
-                Cursor = c;
+
+                if (Image != null)
+                {
+                    Image.Dispose();
+                }
+
+                using (Cursor c = _cursor)
+                {
+                    if (Cursor != null)
+                    {
+                        Cursor.Dispose();
+                    }
+
+                    Cursor = c;
+                }
+
                 movableShowColorForm.Visible = true;
             }
             else
             {
                 dragging = false;
+
+                if (Image != null)
+                {
+                    Image.Dispose();
+                }
+
                 Image = _image;
                 Cursor = Cursors.Arrow;
                 movableShowColorForm.Visible = false;

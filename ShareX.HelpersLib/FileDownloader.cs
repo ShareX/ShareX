@@ -32,7 +32,7 @@ using System.Threading;
 
 namespace ShareX.HelpersLib
 {
-    public class FileDownloader
+    public class FileDownloader : IDisposable
     {
         public string URL { get; private set; }
         public bool IsDownloading { get; private set; }
@@ -69,6 +69,8 @@ namespace ShareX.HelpersLib
         private Stream stream;
         private const int bufferSize = 4096;
 
+        private bool disposed = false;
+
         public FileDownloader(string url, Stream stream, IWebProxy proxy = null, string acceptHeader = null)
         {
             URL = url;
@@ -82,6 +84,36 @@ namespace ShareX.HelpersLib
             worker.DoWork += worker_DoWork;
             worker.ProgressChanged += worker_ProgressChanged;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+
+            GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    if (worker != null)
+                    {
+                        worker.DoWork -= worker_DoWork;
+                        worker.ProgressChanged -= worker_ProgressChanged;
+                        worker.RunWorkerCompleted -= worker_RunWorkerCompleted;
+                        worker.Dispose();
+                    }
+                    if (stream != null)
+                    {
+                        stream.Dispose();
+                    }
+
+                    disposed = true;
+                }
+            }
         }
 
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -209,8 +241,14 @@ namespace ShareX.HelpersLib
             }
             finally
             {
-                if (response != null) response.Close();
-                if (stream != null) stream.Close();
+                if (response != null)
+                {
+                    response.Close();
+                }
+                if (stream != null)
+                {
+                    stream.Close();
+                }
             }
         }
 

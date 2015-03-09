@@ -34,6 +34,8 @@ namespace Greenshot.Memento
         private Field fieldToBeChanged;
         private object oldValue;
 
+        private bool disposed = false;
+
         public ChangeFieldHolderMemento(IDrawableContainer drawableContainer, Field fieldToBeChanged)
         {
             this.drawableContainer = drawableContainer;
@@ -44,13 +46,24 @@ namespace Greenshot.Memento
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            //if (disposing) { }
-            drawableContainer = null;
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    if (drawableContainer != null)
+                    {
+                        drawableContainer.Dispose();
+                    }
+
+                    disposed = true;
+                }
+            }
         }
 
         public bool Merge(IMemento otherMemento)

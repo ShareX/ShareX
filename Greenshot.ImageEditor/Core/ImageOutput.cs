@@ -88,13 +88,18 @@ namespace GreenshotPlugin.Core
         /// <param name="outputSettings">SurfaceOutputSettings</param>
         public static void SaveToStream(ISurface surface, Stream stream, SurfaceOutputSettings outputSettings)
         {
-            Image imageToSave;
-            bool disposeImage = CreateImageFromSurface(surface, outputSettings, out imageToSave);
-            SaveToStream(imageToSave, surface, stream, outputSettings);
-            // cleanup if needed
-            if (disposeImage && imageToSave != null)
+            Image imageToSave = null;
+            try
             {
-                imageToSave.Dispose();
+                CreateImageFromSurface(surface, outputSettings, out imageToSave);
+                SaveToStream(imageToSave, surface, stream, outputSettings);
+            }
+            finally
+            {
+                if (imageToSave != null)
+                {
+                    imageToSave.Dispose();
+                }
             }
         }
 
@@ -167,22 +172,25 @@ namespace GreenshotPlugin.Core
                     {
                         if (imageCodec.FormatID == imageFormat.Guid)
                         {
-                            EncoderParameters parameters = new EncoderParameters(1);
-                            parameters.Param[0] = new EncoderParameter(Encoder.Quality, outputSettings.JPGQuality);
-                            // Removing transparency if it's not supported in the output
-                            if (Image.IsAlphaPixelFormat(imageToSave.PixelFormat))
+                            using (EncoderParameters parameters = new EncoderParameters(1))
                             {
-                                Image nonAlphaImage = ImageHelper.Clone(imageToSave, PixelFormat.Format24bppRgb);
-                                AddTag(nonAlphaImage);
-                                nonAlphaImage.Save(targetStream, imageCodec, parameters);
-                                nonAlphaImage.Dispose();
-                                nonAlphaImage = null;
+                                parameters.Param[0] = new EncoderParameter(Encoder.Quality, outputSettings.JPGQuality);
+                                // Removing transparency if it's not supported in the output
+                                if (Image.IsAlphaPixelFormat(imageToSave.PixelFormat))
+                                {
+                                    using (Image nonAlphaImage = ImageHelper.Clone(imageToSave, PixelFormat.Format24bppRgb))
+                                    {
+                                        AddTag(nonAlphaImage);
+                                        nonAlphaImage.Save(targetStream, imageCodec, parameters);
+                                    }
+                                }
+                                else
+                                {
+                                    AddTag(imageToSave);
+                                    imageToSave.Save(targetStream, imageCodec, parameters);
+                                }
                             }
-                            else
-                            {
-                                AddTag(imageToSave);
-                                imageToSave.Save(targetStream, imageCodec, parameters);
-                            }
+
                             foundEncoder = true;
                             break;
                         }
@@ -204,14 +212,20 @@ namespace GreenshotPlugin.Core
                     AddTag(imageToSave);
                     // Added for OptiPNG
                     bool processed = false;
-                    if (!processed)
+                    try
                     {
-                        imageToSave.Save(targetStream, imageFormat);
+                        if (!processed)
+                        {
+                            imageToSave.Save(targetStream, imageFormat);
+                        }
                     }
-                    if (needsDispose)
+                    finally
                     {
-                        imageToSave.Dispose();
-                        imageToSave = null;
+                        if (needsDispose)
+                        {
+                            imageToSave.Dispose();
+                            imageToSave = null;
+                        }
                     }
                 }
 
@@ -275,22 +289,28 @@ namespace GreenshotPlugin.Core
             {
                 return disposeImage;
             }
-            Image tmpImage;
+            Image tmpImage = null;
             if (outputSettings.Effects != null && outputSettings.Effects.Count > 0)
             {
                 // apply effects, if there are any
-                using (Matrix matrix = new Matrix())
+                try
                 {
-                    tmpImage = ImageHelper.ApplyEffects(imageToSave, outputSettings.Effects, matrix);
-                }
-                if (tmpImage != null)
-                {
-                    if (disposeImage)
+                    using (Matrix matrix = new Matrix())
                     {
-                        imageToSave.Dispose();
+                        tmpImage = ImageHelper.ApplyEffects(imageToSave, outputSettings.Effects, matrix);
                     }
-                    imageToSave = tmpImage;
-                    disposeImage = true;
+                }
+                finally
+                {
+                    if (tmpImage != null)
+                    {
+                        if (disposeImage)
+                        {
+                            imageToSave.Dispose();
+                        }
+                        imageToSave = tmpImage;
+                        disposeImage = true;
+                    }
                 }
             }
 
@@ -330,47 +350,53 @@ namespace GreenshotPlugin.Core
             {
                 return null;
             }
-            Image fileImage;
-            LOG.InfoFormat("Loading image from file {0}", fullPath);
-            // Fixed lock problem Bug #3431881
-            using (Stream surfaceFileStream = File.OpenRead(fullPath))
+            Image fileImage = null;
+            try
             {
-                // And fixed problem that the bitmap stream is disposed... by Cloning the image
-                // This also ensures the bitmap is correctly created
+                LOG.InfoFormat("Loading image from file {0}", fullPath);
+                // Fixed lock problem Bug #3431881
+                using (Stream surfaceFileStream = File.OpenRead(fullPath))
+                {
+                    // And fixed problem that the bitmap stream is disposed... by Cloning the image
+                    // This also ensures the bitmap is correctly created
 
-                // We create a copy of the bitmap, so everything else can be disposed
-                surfaceFileStream.Position = 0;
-                using (Image tmpImage = Image.FromStream(surfaceFileStream, true, true))
-                {
-                    LOG.DebugFormat("Loaded {0} with Size {1}x{2} and PixelFormat {3}", fullPath, tmpImage.Width, tmpImage.Height, tmpImage.PixelFormat);
-                    fileImage = ImageHelper.Clone(tmpImage);
-                }
-                // Start at -14 read "GreenshotXX.YY" (XX=Major, YY=Minor)
-                const int markerSize = 14;
-                surfaceFileStream.Seek(-markerSize, SeekOrigin.End);
-                string greenshotMarker;
-                using (StreamReader streamReader = new StreamReader(surfaceFileStream))
-                {
-                    greenshotMarker = streamReader.ReadToEnd();
-                    if (!greenshotMarker.StartsWith("Greenshot"))
+                    // We create a copy of the bitmap, so everything else can be disposed
+                    surfaceFileStream.Position = 0;
+                    using (Image tmpImage = Image.FromStream(surfaceFileStream, true, true))
                     {
-                        throw new ArgumentException(string.Format("{0} is not a Greenshot file!", fullPath));
+                        LOG.DebugFormat("Loaded {0} with Size {1}x{2} and PixelFormat {3}", fullPath, tmpImage.Width, tmpImage.Height, tmpImage.PixelFormat);
+                        fileImage = ImageHelper.Clone(tmpImage);
                     }
-                    LOG.InfoFormat("Greenshot file format: {0}", greenshotMarker);
-                    const int filesizeLocation = 8 + markerSize;
-                    surfaceFileStream.Seek(-filesizeLocation, SeekOrigin.End);
-                    using (BinaryReader reader = new BinaryReader(surfaceFileStream))
+                    // Start at -14 read "GreenshotXX.YY" (XX=Major, YY=Minor)
+                    const int markerSize = 14;
+                    surfaceFileStream.Seek(-markerSize, SeekOrigin.End);
+                    string greenshotMarker;
+                    using (StreamReader streamReader = new StreamReader(surfaceFileStream))
                     {
-                        long bytesWritten = reader.ReadInt64();
-                        surfaceFileStream.Seek(-(bytesWritten + filesizeLocation), SeekOrigin.End);
-                        returnSurface.LoadElementsFromStream(surfaceFileStream);
+                        greenshotMarker = streamReader.ReadToEnd();
+                        if (!greenshotMarker.StartsWith("Greenshot"))
+                        {
+                            throw new ArgumentException(string.Format("{0} is not a Greenshot file!", fullPath));
+                        }
+                        LOG.InfoFormat("Greenshot file format: {0}", greenshotMarker);
+                        const int filesizeLocation = 8 + markerSize;
+                        surfaceFileStream.Seek(-filesizeLocation, SeekOrigin.End);
+                        using (BinaryReader reader = new BinaryReader(surfaceFileStream))
+                        {
+                            long bytesWritten = reader.ReadInt64();
+                            surfaceFileStream.Seek(-(bytesWritten + filesizeLocation), SeekOrigin.End);
+                            returnSurface.LoadElementsFromStream(surfaceFileStream);
+                        }
                     }
                 }
             }
-            if (fileImage != null)
+            finally
             {
-                returnSurface.Image = fileImage;
-                LOG.InfoFormat("Information about file {0}: {1}x{2}-{3} Resolution {4}x{5}", fullPath, fileImage.Width, fileImage.Height, fileImage.PixelFormat, fileImage.HorizontalResolution, fileImage.VerticalResolution);
+                if (fileImage != null)
+                {
+                    returnSurface.Image = fileImage;
+                    LOG.InfoFormat("Information about file {0}: {1}x{2}-{3} Resolution {4}x{5}", fullPath, fileImage.Width, fileImage.Height, fileImage.PixelFormat, fileImage.HorizontalResolution, fileImage.VerticalResolution);
+                }
             }
             return returnSurface;
         }
@@ -457,8 +483,10 @@ namespace GreenshotPlugin.Core
                         SurfaceOutputSettings outputSettings = new SurfaceOutputSettings(FormatForFilename(fileNameWithExtension));
                         if (conf.OutputFilePromptQuality)
                         {
-                            QualityDialog qualityDialog = new QualityDialog(outputSettings);
-                            qualityDialog.ShowDialog();
+                            using (QualityDialog qualityDialog = new QualityDialog(outputSettings))
+                            {
+                                qualityDialog.ShowDialog();
+                            }
                         }
                         // TODO: For now we always overwrite, should be changed
                         Save(surface, fileNameWithExtension, true, outputSettings, conf.OutputFileCopyPathToClipboard);
