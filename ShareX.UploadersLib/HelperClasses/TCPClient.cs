@@ -35,7 +35,7 @@ using System.Text;
 
 namespace ShareX.UploadersLib.HelperClasses
 {
-    public class TCPClient
+    public class TCPClient : IDisposable
     {
         private readonly TcpClient client;
         private Uri url;
@@ -43,10 +43,35 @@ namespace ShareX.UploadersLib.HelperClasses
         private byte[] postMethod, headerBytes, request, requestEnd;
         private readonly ImageUploader uploader;
 
+        private bool disposed = false;
+
         public TCPClient(ImageUploader imageUploader)
         {
             uploader = imageUploader;
             client = new TcpClient();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+
+            GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    if (client != null)
+                    {
+                        client.Close();
+                    }
+
+                    disposed = true;
+                }
+            }
         }
 
         private void PreparePackets(long length)

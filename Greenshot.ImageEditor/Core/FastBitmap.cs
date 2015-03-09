@@ -315,6 +315,9 @@ namespace GreenshotPlugin.Core
         public const int COLOR_INDEX_A = 3;
 
         protected Rectangle area = Rectangle.Empty;
+
+        private bool disposed = false;
+
         /// <summary>
         /// If this is set to true, the bitmap will be disposed when disposing the IFastBitmap
         /// </summary>
@@ -422,12 +425,14 @@ namespace GreenshotPlugin.Core
         /// <returns>IFastBitmap</returns>
         public static IFastBitmap CreateCloneOf(Image source, PixelFormat pixelFormat, Rectangle area)
         {
-            Bitmap destination = ImageHelper.CloneArea(source, area, pixelFormat);
-            FastBitmap fastBitmap = Create(destination) as FastBitmap;
-            fastBitmap.NeedsDispose = true;
-            fastBitmap.Left = area.Left;
-            fastBitmap.Top = area.Top;
-            return fastBitmap;
+            using (Bitmap destination = ImageHelper.CloneArea(source, area, pixelFormat))
+            {
+                FastBitmap fastBitmap = Create(destination) as FastBitmap;
+                fastBitmap.NeedsDispose = true;
+                fastBitmap.Left = area.Left;
+                fastBitmap.Top = area.Top;
+                return fastBitmap;
+            }
         }
 
         /// <summary>
@@ -439,10 +444,12 @@ namespace GreenshotPlugin.Core
         /// <returns>IFastBitmap</returns>
         public static IFastBitmap CreateEmpty(Size newSize, PixelFormat pixelFormat, Color backgroundColor)
         {
-            Bitmap destination = ImageHelper.CreateEmpty(newSize.Width, newSize.Height, pixelFormat, backgroundColor, 96f, 96f);
-            IFastBitmap fastBitmap = Create(destination);
-            fastBitmap.NeedsDispose = true;
-            return fastBitmap;
+            using (Bitmap destination = ImageHelper.CreateEmpty(newSize.Width, newSize.Height, pixelFormat, backgroundColor, 96f, 96f))
+            {
+                IFastBitmap fastBitmap = Create(destination);
+                fastBitmap.NeedsDispose = true;
+                return fastBitmap;
+            }
         }
 
         /// <summary>
@@ -637,6 +644,7 @@ namespace GreenshotPlugin.Core
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
@@ -649,17 +657,23 @@ namespace GreenshotPlugin.Core
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
-            Unlock();
-            if (disposing)
+            if (!disposed)
             {
-                if (bitmap != null && NeedsDispose)
+                Unlock();
+
+                if (disposing)
                 {
-                    bitmap.Dispose();
+                    if (bitmap != null && NeedsDispose)
+                    {
+                        bitmap.Dispose();
+                    }
+
+                    bmData = null;
+                    pointer = null;
                 }
+
+                disposed = true;
             }
-            bitmap = null;
-            bmData = null;
-            pointer = null;
         }
 
         /// <summary>

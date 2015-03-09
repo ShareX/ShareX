@@ -35,6 +35,8 @@ namespace Greenshot.Memento
         private Surface _surface;
         private Matrix _matrix;
 
+        private bool disposed = false;
+
         public SurfaceBackgroundChangeMemento(Surface surface, Matrix matrix)
         {
             _surface = surface;
@@ -47,24 +49,32 @@ namespace Greenshot.Memento
         public void Dispose()
         {
             Dispose(true);
+
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposed)
             {
-                if (_matrix != null)
+                if (disposing)
                 {
-                    _matrix.Dispose();
-                    _matrix = null;
+                    if (_image != null)
+                    {
+                        _image.Dispose();
+                    }
+                    if (_surface != null)
+                    {
+                        _surface.Dispose();
+                    }
+                    if (_matrix != null)
+                    {
+                        _matrix.Dispose();
+                        _matrix = null;
+                    }
                 }
-                if (_image != null)
-                {
-                    _image.Dispose();
-                    _image = null;
-                }
-                _surface = null;
+
+                disposed = true;
             }
         }
 

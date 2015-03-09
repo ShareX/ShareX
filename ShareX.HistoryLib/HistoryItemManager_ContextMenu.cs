@@ -32,6 +32,9 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryItemManager
     {
+        // This class doesn't dispose of its resources.
+        // To-Do: Implement IDisposable!!!
+        
         public ContextMenuStrip cmsHistory;
 
         private ToolStripMenuItem tsmiOpen;

@@ -246,6 +246,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 imgCache.Dispose();
             }
+            if (ffmpegCli != null)
+            {
+                ffmpegCli.Dispose();
+            }
         }
     }
 }
