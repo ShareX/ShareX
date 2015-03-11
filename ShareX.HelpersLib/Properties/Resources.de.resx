@@ -215,7 +215,7 @@
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Fortschritt: {0:0.0}%
-Runterladgeschwindigkeit: {1:0.0} KB/s
+Übertragungsgeschwindigkeit: {1:0.0} KB/s
 Dateigröße: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
