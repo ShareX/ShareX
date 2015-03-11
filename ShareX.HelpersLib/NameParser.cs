@@ -88,6 +88,7 @@ namespace ShareX.HelpersLib
         public Image Picture { get; set; } // %width, %height
         public string WindowText { get; set; } // %t
         public string ProcessName { get; set; } // %pn
+        public TimeZoneInfo CustomTimeZone { get; set; }
 
         protected NameParser()
         {
@@ -139,6 +140,11 @@ namespace ShareX.HelpersLib
             sb.Replace(ReplCodeMenuEntry.height.ToPrefixString(), height);
 
             DateTime dt = DateTime.Now;
+
+            if (CustomTimeZone != null)
+            {
+                dt = TimeZoneInfo.ConvertTime(dt, CustomTimeZone);
+            }
 
             sb.Replace(ReplCodeMenuEntry.mon2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(dt.Month))
                 .Replace(ReplCodeMenuEntry.mon.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dt.Month))

@@ -177,6 +177,8 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
+            this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1250,6 +1252,8 @@
             // 
             // pUpload
             // 
+            this.pUpload.Controls.Add(this.cbNameFormatCustomTimeZone);
+            this.pUpload.Controls.Add(this.cbNameFormatTimeZone);
             this.pUpload.Controls.Add(this.lblNameFormatPattern);
             this.pUpload.Controls.Add(this.cbFileUploadUseNamePattern);
             this.pUpload.Controls.Add(this.lblNameFormatPatternPreviewActiveWindow);
@@ -1410,6 +1414,21 @@
             this.tttvMain.Name = "tttvMain";
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
+            // 
+            // cbNameFormatTimeZone
+            // 
+            this.cbNameFormatTimeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNameFormatTimeZone.FormattingEnabled = true;
+            resources.ApplyResources(this.cbNameFormatTimeZone, "cbNameFormatTimeZone");
+            this.cbNameFormatTimeZone.Name = "cbNameFormatTimeZone";
+            this.cbNameFormatTimeZone.SelectedIndexChanged += new System.EventHandler(this.cbNameFormatTimeZone_SelectedIndexChanged);
+            // 
+            // cbNameFormatCustomTimeZone
+            // 
+            resources.ApplyResources(this.cbNameFormatCustomTimeZone, "cbNameFormatCustomTimeZone");
+            this.cbNameFormatCustomTimeZone.Name = "cbNameFormatCustomTimeZone";
+            this.cbNameFormatCustomTimeZone.UseVisualStyleBackColor = true;
+            this.cbNameFormatCustomTimeZone.CheckedChanged += new System.EventHandler(this.cbNameFormatCustomTimeZone_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -1630,6 +1649,8 @@
         private System.Windows.Forms.ComboBox cbOverrideCustomUploader;
         private System.Windows.Forms.CheckBox chkOverrideCustomUploader;
         private System.Windows.Forms.Button btnScreenRecorderFFmpegOptions;
+        private System.Windows.Forms.ComboBox cbNameFormatTimeZone;
+        private System.Windows.Forms.CheckBox cbNameFormatCustomTimeZone;
 
 
 

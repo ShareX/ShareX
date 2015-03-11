@@ -144,7 +144,8 @@ namespace ShareX
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
+                CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
             string filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
@@ -168,7 +169,8 @@ namespace ShareX
                 Picture = image,
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
+                CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
             ImageTag imageTag = image.Tag as ImageTag;

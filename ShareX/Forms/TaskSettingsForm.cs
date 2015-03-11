@@ -247,7 +247,17 @@ namespace ShareX
                 }
             }
 
-            // Upload / Name pattern
+            // Upload
+            cbNameFormatCustomTimeZone.Checked = cbNameFormatTimeZone.Enabled = TaskSettings.UploadSettings.UseCustomTimeZone;
+            cbNameFormatTimeZone.Items.AddRange(TimeZoneInfo.GetSystemTimeZones().ToArray());
+            for (int i = 0; i < cbNameFormatTimeZone.Items.Count; i++)
+            {
+                if (cbNameFormatTimeZone.Items[i].Equals(TaskSettings.UploadSettings.CustomTimeZone))
+                {
+                    cbNameFormatTimeZone.SelectedIndex = i;
+                    break;
+                }
+            }
             txtNameFormatPattern.Text = TaskSettings.UploadSettings.NameFormatPattern;
             txtNameFormatPatternActiveWindow.Text = TaskSettings.UploadSettings.NameFormatPatternActiveWindow;
             CodeMenu.Create<ReplCodeMenuEntry>(txtNameFormatPattern, ReplCodeMenuEntry.n, ReplCodeMenuEntry.t, ReplCodeMenuEntry.pn);
@@ -313,6 +323,25 @@ namespace ShareX
                 pgIndexerConfig.Enabled = !TaskSettings.UseDefaultIndexerSettings;
                 pgTaskSettings.Enabled = !TaskSettings.UseDefaultAdvancedSettings;
             }
+        }
+
+        private void UpdateNameFormatPreviews()
+        {
+            NameParser nameParser = new NameParser(NameParserType.FileName)
+            {
+                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                WindowText = Text,
+                ProcessName = "ShareX",
+                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
+                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength,
+                CustomTimeZone = TaskSettings.UploadSettings.UseCustomTimeZone ? TaskSettings.UploadSettings.CustomTimeZone : null
+            };
+
+            lblNameFormatPatternPreview.Text = Resources.TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ + " " +
+                nameParser.Parse(TaskSettings.UploadSettings.NameFormatPattern);
+
+            lblNameFormatPatternPreviewActiveWindow.Text = Resources.TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ + " " +
+                nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
         }
 
         private void TaskSettingsForm_Resize(object sender, EventArgs e)
@@ -988,46 +1017,46 @@ namespace ShareX
             UpdateDefaultSettingVisibility();
         }
 
-        private void cbFileUploadUseNamePattern_CheckedChanged(object sender, EventArgs e)
+        private void cbNameFormatCustomTimeZone_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UploadSettings.FileUploadUseNamePattern = cbFileUploadUseNamePattern.Checked;
+            TaskSettings.UploadSettings.UseCustomTimeZone = cbNameFormatCustomTimeZone.Checked;
+            cbNameFormatTimeZone.Enabled = TaskSettings.UploadSettings.UseCustomTimeZone;
+            UpdateNameFormatPreviews();
         }
 
-        private void txtNameFormatPatternActiveWindow_TextChanged(object sender, EventArgs e)
+        private void cbNameFormatTimeZone_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.UploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
+            TimeZoneInfo timeZoneInfo = cbNameFormatTimeZone.SelectedItem as TimeZoneInfo;
 
-            NameParser nameParser = new NameParser(NameParserType.FileName)
+            if (timeZoneInfo != null)
             {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                WindowText = Text,
-                ProcessName = "ShareX",
-                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
-            };
+                TaskSettings.UploadSettings.CustomTimeZone = timeZoneInfo;
+            }
 
-            lblNameFormatPatternPreviewActiveWindow.Text = Resources.TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ + " " +
-                nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
-        }
-
-        private void btnResetAutoIncrementNumber_Click(object sender, EventArgs e)
-        {
-            Program.Settings.NameParserAutoIncrementNumber = 0;
+            UpdateNameFormatPreviews();
         }
 
         private void txtNameFormatPattern_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.UploadSettings.NameFormatPattern = txtNameFormatPattern.Text;
+            UpdateNameFormatPreviews();
+        }
 
-            NameParser nameParser = new NameParser(NameParserType.FileName)
-            {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
-                MaxNameLength = TaskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = TaskSettings.AdvancedSettings.NamePatternMaxTitleLength
-            };
+        private void txtNameFormatPatternActiveWindow_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
+            UpdateNameFormatPreviews();
+        }
 
-            lblNameFormatPatternPreview.Text = Resources.TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ + " " +
-                nameParser.Parse(TaskSettings.UploadSettings.NameFormatPattern);
+        private void btnResetAutoIncrementNumber_Click(object sender, EventArgs e)
+        {
+            Program.Settings.NameParserAutoIncrementNumber = 0;
+            UpdateNameFormatPreviews();
+        }
+
+        private void cbFileUploadUseNamePattern_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.FileUploadUseNamePattern = cbFileUploadUseNamePattern.Checked;
         }
 
         private void chkClipboardUploadContents_CheckedChanged(object sender, EventArgs e)
