@@ -369,7 +369,7 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
     <value>Letzte Region aufnehmen</value>
   </data>
   <data name="HotkeyType_None" xml:space="preserve">
-    <value>Keiner</value>
+    <value>Keine</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Screenshotordner öffnen</value>
