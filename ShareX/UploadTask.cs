@@ -720,6 +720,9 @@ namespace ShareX
                         DirectURL = true
                     };
                     break;
+                case ImageDestination.Vgyme:
+                    imageUploader = new VgymeUploader();
+                    break;
                 case ImageDestination.CustomImageUploader:
                     CustomUploaderItem customUploader = GetCustomUploader(Program.UploadersConfig.CustomImageUploaderSelected);
                     if (customUploader != null)

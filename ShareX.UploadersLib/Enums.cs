@@ -48,6 +48,8 @@ namespace ShareX.UploadersLib
         Chevereto,
         [Description("Hızlı Resim")]
         HizliResim,
+        [Description("vgy.me")]
+        Vgyme,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
