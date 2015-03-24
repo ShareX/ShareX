@@ -132,4 +132,10 @@
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Przed wysłaniem</value>
   </data>
+  <data name="tpAfterCapture.Text" xml:space="preserve">
+    <value>Po przechwyceniu</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Zadania po przechwyceniu</value>
+  </data>
 </root>

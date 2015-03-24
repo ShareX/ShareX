@@ -117,28 +117,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Anuluj</value>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>Upłynęło</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Nazwa pliku</value>
   </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>Argumenty:</value>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>Postęp</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Nazwa:</value>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>Pozostało</value>
   </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>Ścieżka pliku:</value>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>Prędkosć</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Działania</value>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtr roszerzenia: (Przykładowo: jpg png mp4)</value>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Roszerzenie wyjściowe nazwy pliku: (Puste = Użyj takiej samej nazwy pliku)</value>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Ustawienia aplikacji</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>Historia...</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>Ustawienia skrótów</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>Historia obrazów...</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>Folder zrzutów ekranu...</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Ustawienia zadań...</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Zadania po przechwyceniu</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>Zadania po wysłaniu</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Przechwyć</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Debugowanie</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Miejsca docelowe</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Narzędzia</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Czynności</value>
+  </data>
+  <data name="tsmiAbout.Text" xml:space="preserve">
+    <value>Informacje</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>Autom. przechwytywanie</value>
+  </data>
+  <data name="tsmiAutomate.Text" xml:space="preserve">
+    <value>Zautomatyzuj..</value>
+  </data>
+  <data name="tsmiClearList.Text" xml:space="preserve">
+    <value>Wyczyść listę</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Wybieranie koloru...</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Kopiuj</value>
+  </data>
+  <data name="tsmiCopyFile.Text" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="tsmiCopyFileName.Text" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
+  <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
+    <value>Nazwa pliku wraz z rozszerzeniem</value>
+  </data>
+  <data name="tsmiCopyFilePath.Text" xml:space="preserve">
+    <value>Ścieżka pliku</value>
+  </data>
+  <data name="tsmiCopyFolder.Text" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
+    <value>URL do usunięcia</value>
   </data>
 </root>

@@ -117,28 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
+  <data name="$this.Text" xml:space="preserve">
+    <value>Region okna ekranu</value>
+  </data>
+  <data name="btnAbort.Text" xml:space="preserve">
     <value>Anuluj</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>Argumenty:</value>
-  </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Nazwa:</value>
-  </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>Ścieżka pliku:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Działania</value>
-  </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtr roszerzenia: (Przykładowo: jpg png mp4)</value>
-  </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Roszerzenie wyjściowe nazwy pliku: (Puste = Użyj takiej samej nazwy pliku)</value>
+  <data name="btnStop.Text" xml:space="preserve">
+    <value>Start</value>
   </data>
 </root>
