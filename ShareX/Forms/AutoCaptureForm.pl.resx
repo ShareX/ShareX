@@ -117,28 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Anuluj</value>
+  <data name="btnExecute.Text" xml:space="preserve">
+    <value>Sart</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>Wybierz obszar</value>
   </data>
-  <data name="lblArgs.Text" xml:space="preserve">
-    <value>Argumenty:</value>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>Automatycznie zminimalizuj do paska</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Nazwa:</value>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>Zaczekaj, aż zakończą sie zadania</value>
   </data>
-  <data name="lblPath.Text" xml:space="preserve">
-    <value>Ścieżka pliku:</value>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>Obszar</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Czas powtórzenia</value>
+  </data>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>sekund</value>
+  </data>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>Obszar</value>
+  </data>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>Pełny ekran</value>
+  </data>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>Obszar niestandardowy</value>
+  </data>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX - Autom. przechwytywanie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Działania</value>
-  </data>
-  <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtr roszerzenia: (Przykładowo: jpg png mp4)</value>
-  </data>
-  <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Roszerzenie wyjściowe nazwy pliku: (Puste = Użyj takiej samej nazwy pliku)</value>
+    <value>ShareX - Autom. przechwytywanie</value>
   </data>
 </root>
