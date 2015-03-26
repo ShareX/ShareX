@@ -2504,7 +2504,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
   </data>
