@@ -150,4 +150,47 @@
   <data name="llTranslators.Text" xml:space="preserve">
     <value>Pomóż przetłumaczyć ShareX na twój język!</value>
   </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Zaawansowane</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Ogólne</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Ścieżki</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Język:</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Rozmiar bufora:</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>Uwaga: Musisz ponownie otworzyć ShareX aby zmiany folderu osobistego zostały zachowane.
+</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>Folder osobisty ShareX</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>Drukuj</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Limit jendoczesnego wysyłania</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 wyłącza)</value>
+  </data>
 </root>
