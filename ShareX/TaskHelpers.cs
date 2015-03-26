@@ -602,14 +602,14 @@ namespace ShareX
         public static void OpenImageEffects()
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
-
+            Image img = null;
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = ImageHelpers.LoadImage(filePath);
-                ImageEffectsForm form = new ImageEffectsForm(img);
-                form.EditorMode();
-                form.Show();
+                img = ImageHelpers.LoadImage(filePath);
             }
+            ImageEffectsForm form = new ImageEffectsForm(img);
+            form.EditorMode();
+            form.Show();
         }
 
         public static void OpenMonitorTest()
