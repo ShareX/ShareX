@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class ImageShackUploader : ImageUploader
     {
-        private const string URLAPI = "https://api.imageshack.us/v1/";
+        private const string URLAPI = "https://api.imageshack.com/v2/";
         private const string URLAccessToken = URLAPI + "user/login";
         private const string URLUpload = URLAPI + "images";
 
@@ -94,9 +94,10 @@ namespace ShareX.UploadersLib.ImageUploaders
 
                         if (uploadResult != null && uploadResult.images.Count > 0)
                         {
-                            result.URL = "http://" + uploadResult.images[0].direct_link;
+                            ImageShackImage image = uploadResult.images[0];
+                            result.URL = string.Format("http://imageshack.com/a/img{0}/{1}/{2}", image.server, image.bucket, image.filename);
                             result.ThumbnailURL = string.Format("http://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
-                                Config.ThumbnailWidth, Config.ThumbnailHeight, uploadResult.images[0].server, uploadResult.images[0].filename);
+                                Config.ThumbnailWidth, Config.ThumbnailHeight, image.server, image.filename);
                         }
                     }
                     else
@@ -181,7 +182,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public class ImageShackImage
         {
-            public int id { get; set; }
+            public string id { get; set; }
             public int server { get; set; }
             public int bucket { get; set; }
             public string lp_hash { get; set; }
