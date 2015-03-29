@@ -60,6 +60,7 @@
             // 
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.BackColor = System.Drawing.Color.White;
+            this.pbPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;

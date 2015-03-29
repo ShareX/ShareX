@@ -45,6 +45,7 @@ namespace ShareX
                 lblTitle.Text = string.Format(title, info.FileName, currentDestination);
                 pbPreview.LoadImageFromFileAsync(info.FilePath);
             };
+
             ucBeforeUpload.Init(info);
         }
 
