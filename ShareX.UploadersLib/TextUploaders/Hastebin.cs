@@ -58,18 +58,14 @@ namespace ShareX.UploadersLib.TextUploaders
 
                     if (response != null && !string.IsNullOrEmpty(response.Key))
                     {
-                        string syntaxHighlighting;
+                        string url = URLHelpers.CombineURL(domain, response.Key);
 
                         if (!string.IsNullOrEmpty(SyntaxHighlighting))
                         {
-                            syntaxHighlighting = SyntaxHighlighting;
-                        }
-                        else
-                        {
-                            syntaxHighlighting = "hs";
+                            url += "." + SyntaxHighlighting;
                         }
 
-                        ur.URL = URLHelpers.CombineURL(domain, response.Key + "." + syntaxHighlighting);
+                        ur.URL = url;
                     }
                 }
             }
