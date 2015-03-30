@@ -1534,7 +1534,7 @@
     <value>2</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Use secondary uploaders order of preference when retrying</value>
+    <value>Use secondary uploaders in order of preference when retrying</value>
   </data>
   <data name="&gt;&gt;chkUseSecondaryUploaders.Name" xml:space="preserve">
     <value>chkUseSecondaryUploaders</value>
