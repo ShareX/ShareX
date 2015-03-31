@@ -135,10 +135,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        private void SetMetadata(string fileID, string title, string parentID = null)
+        private string GetMetadata(string title, string parentID = null)
         {
-            string url = string.Format("https://www.googleapis.com/drive/v2/files/{0}", fileID);
-
             object metadata;
 
             if (!string.IsNullOrEmpty(parentID))
@@ -165,7 +163,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(metadata);
 
-            string response = SendRequestJSON(url, json, GetAuthHeaders(), method: HttpMethod.PUT);
+            return json;
         }
 
         private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
@@ -221,7 +219,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files", fileName, headers: GetAuthHeaders());
+            string metadata = GetMetadata(fileName);
+
+            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", fileName, headers: GetAuthHeaders(), requestContentType: "multipart/related", metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
@@ -230,8 +230,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (upload != null)
                 {
                     AllowReportProgress = false;
-
-                    SetMetadata(upload.id, fileName, FolderID);
 
                     if (IsPublic)
                     {
