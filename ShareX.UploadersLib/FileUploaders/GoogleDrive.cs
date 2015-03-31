@@ -135,7 +135,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        private string GetMetadata(string title, string parentID = null)
+        private string GetMetadata(string title, string parentID)
         {
             object metadata;
 
@@ -219,7 +219,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string metadata = GetMetadata(fileName);
+            string metadata = GetMetadata(fileName, FolderID);
 
             UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", fileName, headers: GetAuthHeaders(), requestContentType: "multipart/related", metadata: metadata);
 
