@@ -50,6 +50,9 @@
     <Compile Include="Forms\RectangleAnnotate.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\RectangleTransparent.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />

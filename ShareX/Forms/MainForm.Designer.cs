@@ -51,6 +51,7 @@
             this.tsmiWindowRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleAnnotate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRectangleLight = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRoundedRectangle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEllipse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTriangle = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,6 +226,7 @@
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayRectangleTransparent = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -368,6 +370,7 @@
             this.tsmiWindowRectangle,
             this.tsmiRectangleAnnotate,
             this.tsmiRectangleLight,
+            this.tsmiRectangleTransparent,
             this.tsmiRoundedRectangle,
             this.tsmiEllipse,
             this.tsmiTriangle,
@@ -429,6 +432,13 @@
             this.tsmiRectangleLight.Name = "tsmiRectangleLight";
             resources.ApplyResources(this.tsmiRectangleLight, "tsmiRectangleLight");
             this.tsmiRectangleLight.Click += new System.EventHandler(this.tsmiRectangleLight_Click);
+            // 
+            // tsmiRectangleTransparent
+            // 
+            this.tsmiRectangleTransparent.Image = global::ShareX.Properties.Resources.layer_transparent;
+            this.tsmiRectangleTransparent.Name = "tsmiRectangleTransparent";
+            resources.ApplyResources(this.tsmiRectangleTransparent, "tsmiRectangleTransparent");
+            this.tsmiRectangleTransparent.Click += new System.EventHandler(this.tsmiRectangleTransparent_Click);
             // 
             // tsmiRoundedRectangle
             // 
@@ -1266,6 +1276,7 @@
             this.tsmiTrayWindowRectangle,
             this.tsmiTrayRectangleAnnotate,
             this.tsmiTrayRectangleLight,
+            this.tsmiTrayRectangleTransparent,
             this.tsmiTrayRoundedRectangle,
             this.tsmiTrayEllipse,
             this.tsmiTrayTriangle,
@@ -1722,6 +1733,13 @@
             resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             // 
+            // tsmiTrayRectangleTransparent
+            // 
+            this.tsmiTrayRectangleTransparent.Image = global::ShareX.Properties.Resources.layer_transparent;
+            this.tsmiTrayRectangleTransparent.Name = "tsmiTrayRectangleTransparent";
+            resources.ApplyResources(this.tsmiTrayRectangleTransparent, "tsmiTrayRectangleTransparent");
+            this.tsmiTrayRectangleTransparent.Click += new System.EventHandler(this.tsmiTrayRectangleTransparent_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -1949,5 +1967,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsTray;
         private System.Windows.Forms.ToolStripMenuItem tsmiAutomate;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAutomate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRectangleTransparent;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleTransparent;
     }
 }

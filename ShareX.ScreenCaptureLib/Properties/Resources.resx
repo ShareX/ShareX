@@ -167,4 +167,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>R: {0}, G: {1}, B: {2}, Hex: {3}
 X: {4}, Y: {5}</value>
   <comment>@Invariant</comment></data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Rectangle capture transparent</value>
+  </data>
 </root>

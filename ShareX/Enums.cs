@@ -140,6 +140,7 @@ namespace ShareX
         WindowRectangle,
         RectangleAnnotate,
         RectangleLight,
+        RectangleTransparent,
         RoundedRectangleRegion,
         EllipseRegion,
         TriangleRegion,
