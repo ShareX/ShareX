@@ -70,6 +70,8 @@ namespace ShareX.ScreenCaptureLib
 
         public bool ShowRectangleInfo { get; set; }
 
+        public Image SelectionImage { get; private set; }
+
         private Timer timer;
         private Bitmap surface;
         private Graphics gSurface;
@@ -152,6 +154,8 @@ namespace ShareX.ScreenCaptureLib
                     if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
                     {
                         LastSelectionRectangle0Based = SelectionRectangle0Based;
+                        if (SelectionImage != null) SelectionImage.Dispose();
+                        SelectionImage = GetAreaImage();
                         DialogResult = DialogResult.OK;
                     }
 

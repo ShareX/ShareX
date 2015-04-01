@@ -1913,7 +1913,7 @@ namespace ShareX
                 {
                     if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                     {
-                        img = rectangleTransparent.GetAreaImage();
+                        img = rectangleTransparent.SelectionImage;
 
                         if (img != null)
                         {
