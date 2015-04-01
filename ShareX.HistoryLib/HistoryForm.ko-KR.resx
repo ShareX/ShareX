@@ -186,4 +186,13 @@
   <data name="chType.Text" xml:space="preserve">
     <value>종류</value>
   </data>
+  <data name="cbFilenameFilterCulture.Items" xml:space="preserve">
+    <value>현재 문화권</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items1" xml:space="preserve">
+    <value>고정 문화권 (영어)</value>
+  </data>
+  <data name="cbFilenameFilterCulture.Items2" xml:space="preserve">
+    <value>서수 (영어)</value>
+  </data>
 </root>

@@ -129,4 +129,10 @@
   <data name="btnHelp.Text" xml:space="preserve">
     <value>도움말...</value>
   </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>기본값은 128k입니다.</value>
+  </data>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>범위는 0부터 10까지이며, 10이 최고 품질입니다. 3~6 사이에서 조절하면 괜찮습니다. 기본값은 3입니다.</value>
+  </data>
 </root>

@@ -480,4 +480,22 @@
   <data name="GIFQuality_Default" xml:space="preserve">
     <value>기본 .NET 인코딩 (빠르지만 그럭저럭인 품질)</value>
   </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>수동</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
+    <value>{0} 어플리케이션으로 업로드하기</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>ㄴㄴ</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>ㅇㅇ</value>
+  </data>
 </root>

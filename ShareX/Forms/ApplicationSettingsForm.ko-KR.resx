@@ -196,10 +196,10 @@
     <value>Windows 인쇄 설정 창 표시하지 않기</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>주 윈도우 위치 기억하기</value>
+    <value>메인 창 위치 기억하기</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>주 윈도우 크기 기억하기</value>
+    <value>메인 창 윈도우 크기 기억하기</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>트레이 아이콘 표시하기</value>

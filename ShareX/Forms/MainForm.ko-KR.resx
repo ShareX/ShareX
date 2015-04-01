@@ -142,7 +142,7 @@
     <value>파일명</value>
   </data>
   <data name="chElapsed.Text" xml:space="preserve">
-    <value>흐른 시간</value>
+    <value>지난 시간</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>어플리케이션 설정...</value>
@@ -632,5 +632,11 @@
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>폴더 색인 생성...</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>직사각형 (투명)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>직사각형 (투명)</value>
   </data>
 </root>
