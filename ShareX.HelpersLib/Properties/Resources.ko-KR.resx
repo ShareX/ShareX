@@ -498,4 +498,16 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>ㅇㅇ</value>
   </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>다음 폴더가 존재하지 않음:</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>다운로드 중.</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>다운로드 완료.</value>
+  </data>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>다운로드 실패:</value>
+  </data>
 </root>

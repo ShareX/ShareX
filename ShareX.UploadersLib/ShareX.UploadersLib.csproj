@@ -478,6 +478,9 @@
     <EmbeddedResource Include="FTPClient\FTPClientForm.hu.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FTPClient\FTPClientForm.ko-KR.resx">
+      <DependentUpon>FTPClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FTPClient\FTPClientForm.resx">
       <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>

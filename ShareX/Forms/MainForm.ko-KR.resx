@@ -391,7 +391,7 @@
     <value>색상 선택기...</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>업로드 목적지 설정...</value>
+    <value>목적지 설정...</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>목적지</value>

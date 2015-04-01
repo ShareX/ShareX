@@ -117,49 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} / Y: {1}
-W: {2} / H: {3}</value>
+  <data name="btnYes.Text" xml:space="preserve">
+    <value>네</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-너비: {4} px / 높이: {5} px
-거리: {6:0.00} px / 각도: {7:0.00}°</value>
-  </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>품질:</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
-    <value>Ctrl: 그리기 모드 ░ Space: 전체 화면 촬영</value>
-  </data>
-  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: 영역 모드 ░ Shift: 펜 색상 ░ 마우스 휠: 펜 크기 ░ Space: 전체 화면 촬영</value>
-  </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg 에러</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg 다운로드에 실패하였습니다.</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg를 성공적으로 다운로드 했습니다.</value>
-  </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>비트레이트: {0}k</value>
-  </data>
-  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
-    <value>ffmpeg.exe 탐색하기</value>
-  </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>직사각형 주석달고 촬영</value>
-  </data>
-  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>직사각형 어둡지 않게 촬영</value>
-  </data>
-  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>영역 촬영</value>
-  </data>
-  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
-    <value>투명 직사각형 영역 촬영</value>
+  <data name="btnNo.Text" xml:space="preserve">
+    <value>아니요</value>
   </data>
 </root>

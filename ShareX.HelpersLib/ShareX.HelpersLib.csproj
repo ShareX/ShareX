@@ -450,21 +450,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.de.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.fr.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.hu.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.ko-KR.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.tr.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.zh-CN.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DNS\DNSChangerForm.de.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
@@ -655,6 +661,9 @@
     <EmbeddedResource Include="Printer\PrintForm.hu.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintForm.ko-KR.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.tr.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -668,6 +677,9 @@
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintTextForm.hu.resx">
+      <DependentUpon>PrintTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\PrintTextForm.ko-KR.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintTextForm.tr.resx">
@@ -684,18 +696,23 @@
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.de.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.fr.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.hu.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.ko-KR.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\DownloaderForm.resx">
       <DependentUpon>DownloaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Printer\PrintForm.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
@@ -737,6 +754,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.tr.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
@@ -751,6 +769,9 @@
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.hu.resx">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.ko-KR.resx">
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.resx">
