@@ -151,7 +151,7 @@
     <value>자동 증가 카운터 초기화</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>FFmpeg 설정...</value>
+    <value>FFmpeg 설정하기...</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>작업...</value>
@@ -298,7 +298,7 @@
     <value>직사각형 영역 주석</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>화면 녹화기</value>
+    <value>화면 녹화</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>효과</value>
@@ -325,7 +325,7 @@
     <value>폴더 감시</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>이후에 CLI 실행:</value>
+    <value>녹화 후 CLI 실행:</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>기본 사용자 정의 업로더 덮어쓰기:</value>
