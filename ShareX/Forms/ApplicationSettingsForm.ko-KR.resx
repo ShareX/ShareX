@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>열기...</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>열기...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>편집...</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>추가...</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>탐색...</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>탐색...</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>호스트:</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>프록시 설정:</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>포트:</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>유저명:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>하위 폴더명 패턴:</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>동시 업로드 수:</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 ~ 25 (0으로 해제)</value>
+  </data>
+  <data name="llTranslators.Text" xml:space="preserve">
+    <value>ShareX를 여러분의 언어로 번역하는 작업을 도와주세요!</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>고급설정</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>경로</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>인쇄</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>프록시</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>업로드</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>이미지 인쇄 설정...</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>이미지 인쇄 설정 창 표시하지 않기</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>업로드 실패 시 다시 시도할 횟수:</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>Windows 인쇄 설정 창 표시하지 않기</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>주 윈도우 위치 기억하기</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>주 윈도우 크기 기억하기</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>트레이 아이콘 표시하기</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>시작 시 트레이로 최소화하기</value>
+  </data>
+  <data name="cbStartWithWindows.Text" xml:space="preserve">
+    <value>윈도우 시작 시 ShareX 실행하기</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>작업 표시줄 단추에 진행 상황 표시하기</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>트레이 아이콘에 진행 상황 표시하기</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>사용자 지정 스크린샷 폴더 사용:</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>언어:</value>
+  </data>
+  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
+    <value>주의: 개인 폴더를 변경한 뒤에는 ShareX를 재시작해야 변경 사항이 적용됩니다.</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>버퍼 크기:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 어플리케이션 설정</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>셸 컨텍스트 메뉴에 "ShareX로 업로드하기" 보이기</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>형식</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>재시도할 때 이차 업로더를 선호하는 순서대로 사용하기</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>클립보드 형식</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>이차 파일 업로더</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>이차 이미지 업로더</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>이차 텍스트 업로더</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>"보내기..." 메뉴에 ShareX 보이기</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX 개인 폴더:</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>재시도</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>결과</value>
+  </data>
+</root>
