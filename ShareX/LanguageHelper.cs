@@ -51,20 +51,23 @@ namespace ShareX
                     case SupportedLanguage.English:
                         cultureName = "en-US";
                         break;
-                    case SupportedLanguage.Turkish:
-                        cultureName = "tr-TR";
-                        break;
                     case SupportedLanguage.German:
                         cultureName = "de-DE";
                         break;
                     case SupportedLanguage.French:
                         cultureName = "fr-FR";
                         break;
+                    case SupportedLanguage.Hungarian:
+                        cultureName = "hu-HU";
+                        break;
+                    case SupportedLanguage.Korean:
+                        cultureName = "ko-KR";
+                        break;
                     case SupportedLanguage.SimplifiedChinese:
                         cultureName = "zh-CN";
                         break;
-                    case SupportedLanguage.Hungarian:
-                        cultureName = "hu-HU";
+                    case SupportedLanguage.Turkish:
+                        cultureName = "tr-TR";
                         break;
                 }
 

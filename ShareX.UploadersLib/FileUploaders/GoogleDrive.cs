@@ -161,9 +161,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 };
             }
 
-            string json = JsonConvert.SerializeObject(metadata);
-
-            return json;
+            return JsonConvert.SerializeObject(metadata);
         }
 
         private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
@@ -221,7 +219,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadata = GetMetadata(fileName, FolderID);
 
-            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", fileName, headers: GetAuthHeaders(), requestContentType: "multipart/related", metadata: metadata);
+            UploadResult result = UploadData(stream, "https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", fileName, headers: GetAuthHeaders(),
+                requestContentType: "multipart/related", metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

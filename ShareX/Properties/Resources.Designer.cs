@@ -430,7 +430,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap clipboard_list {
             get {
-                object obj = ResourceManager.GetObject("clipboard-list", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard_list", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -932,6 +932,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap kr {
+            get {
+                object obj = ResourceManager.GetObject("kr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap layer {
             get {
                 object obj = ResourceManager.GetObject("layer", resourceCulture);
@@ -995,6 +1005,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap layer_shape_round {
             get {
                 object obj = ResourceManager.GetObject("layer_shape_round", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap layer_transparent {
+            get {
+                object obj = ResourceManager.GetObject("layer_transparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -309,12 +309,13 @@ namespace ShareX.UploadersLib
 
             IsUploading = true;
             StopUploadRequested = false;
+
             try
             {
                 string boundary = CreateBoundary();
 
                 byte[] bytesArguments = MakeInputContent(boundary, arguments, false);
-                byte[] bytesDataOpen = { };
+                byte[] bytesDataOpen;
                 byte[] bytesDataDatafile = { };
 
                 if (metadata != null)
@@ -481,6 +482,7 @@ namespace ShareX.UploadersLib
         {
             string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\nContent-Type: {3}\r\n\r\n",
                 boundary, fileFormName, fileName, Helpers.GetMimeType(fileName));
+
             return Encoding.UTF8.GetBytes(format);
         }
 
