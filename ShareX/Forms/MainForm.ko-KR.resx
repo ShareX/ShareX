@@ -172,7 +172,7 @@
     <value>촬영</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>업로드 대상</value>
+    <value>목적지</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>도구</value>
@@ -241,7 +241,7 @@
     <value>이미지</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>압축 된 URL</value>
+    <value>단축된 URL</value>
   </data>
   <data name="tsmiCopyText.Text" xml:space="preserve">
     <value>텍스트</value>
@@ -271,7 +271,7 @@
     <value>DNS 변경기...</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>업로드 대상 설정...</value>
+    <value>목적지 설정...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
     <value>로컬 파일 삭제...</value>
@@ -331,7 +331,7 @@
     <value>URL 공유</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>URL 압축</value>
+    <value>URL 단축</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>디버그 로그...</value>
@@ -361,7 +361,7 @@
     <value>URL 공유 테스트</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>URL 압축 테스트</value>
+    <value>URL 단축 테스트</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>텍스트 업로더</value>
@@ -391,10 +391,10 @@
     <value>색상 선택기...</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>업로드 대상 설정...</value>
+    <value>업로드 목적지 설정...</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>업로드 대상</value>
+    <value>목적지</value>
   </data>
   <data name="tsmiTrayDiamond.Text" xml:space="preserve">
     <value>다이아몬드</value>
@@ -523,10 +523,10 @@
     <value>스크린샷 폴더...</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>압축 된 URL</value>
+    <value>단축된 URL</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
-    <value>ShareX 창 표시</value>
+    <value>ShareX 창 보이기</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>작업 설정...</value>
@@ -571,10 +571,10 @@
     <value>URL 공유 서비스</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL 압축기</value>
+    <value>URL 단축기</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>URL 압축기</value>
+    <value>URL 단축기</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>창</value>
@@ -628,9 +628,9 @@
     <value>직사각형 (주석 달기)</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>인덱스 폴더...</value>
+    <value>폴더 색인 생성...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>인덱스 폴더...</value>
+    <value>폴더 색인 생성...</value>
   </data>
 </root>

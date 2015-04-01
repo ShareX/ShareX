@@ -124,6 +124,6 @@
     <value>모두 복사</value>
   </data>
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
-    <value>로드된 어셈블리</value>
+    <value>로드된 라이브러리</value>
   </data>
 </root>

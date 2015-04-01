@@ -118,15 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg 옵션</value>
+    <value>ShareX - QR코드</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>복사</value>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>클립보드에 복사</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>다운로드</value>
-  </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>도움말...</value>
+  <data name="tsmiSaveAs.Text" xml:space="preserve">
+    <value>이미지로 저장...</value>
   </data>
 </root>

@@ -147,4 +147,16 @@ W: {2} / H: {3}</value>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>비트레이트: {0}k</value>
   </data>
+  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
+    <value>ffmpeg.exe 탐색하기</value>
+  </data>
+  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
+    <value>직사각형 주석달고 촬영</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>직사각형 어둡지 않게 촬영</value>
+  </data>
+  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>영역 촬영</value>
+  </data>
 </root>

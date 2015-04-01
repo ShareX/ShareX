@@ -127,9 +127,18 @@
     <value>선호하는 DNS 서버:</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>&amp;적용</value>
+    <value>적용</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;닫기</value>
+    <value>닫기</value>
+  </data>
+  <data name="cbAutomatic.Text" xml:space="preserve">
+    <value>DNS 서버 주소를 자동으로 획득하기</value>
+  </data>
+  <data name="lblAdapters.Text" xml:space="preserve">
+    <value>네트워크 어댑터:</value>
+  </data>
+  <data name="lblAlternateDNS.Text" xml:space="preserve">
+    <value>대체 URL 서버:</value>
   </data>
 </root>

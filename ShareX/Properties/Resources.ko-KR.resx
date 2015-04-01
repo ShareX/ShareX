@@ -167,10 +167,10 @@ ShareX를 재시작하시겠습니까?</value>
     <value>남은 시간: {0}s ({1}%) 총: {2}</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0}이/가 {1}로/으로 업로드되려 합니다. 다른 업로드 대상을 고를 수 있습니다.</value>
+    <value>{0}이/가 {1}로/으로 업로드 될 것입니다. 다른 목적지를 선택할 수 있습니다.</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>업로드 대상을 선택하세요.</value>
+    <value>목적지를 선택 해 주세요.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>이곳에
@@ -291,7 +291,7 @@ ShareX를 재시작하시겠습니까?</value>
     <value>URL 공유 서비스: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>URL 압축기: {0}</value>
+    <value>URL 단축기: {0}</value>
   </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>대기열에서 대기 중</value>
@@ -309,7 +309,7 @@ ShareX를 재시작하시겠습니까?</value>
     <value>대기 중...</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>선택 된 올바른 CLI 비디오 인코더가 없습니다.</value>
+    <value>선택된 올바른 CLI 비디오 인코더가 없습니다.</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>성공적으로 트윗 날림.</value>
@@ -328,5 +328,46 @@ ShareX를 재시작하시겠습니까?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>녹화를 중단하려면 클릭.</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>단축키 등록 실패</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
+    <value>다음 CLI 비디오 인코더 파일이 존재하지 않습니다:</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
+    <value>FFmpeg 다운로드 성공.</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>클립보드에 복사됨: {0}</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>다운로드 실패:
+{0}</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
+    <value>이 메세지를 다시 보여주지 말기.</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>URL 공유 ({0})</value>
+  </data>
+  <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
+    <value>폴더 경로 고르기</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
+    <value>정말로 이 스크린샷을 업로드할까요?
+"아니요"를 누르면 현재 업로드가 취소되고 스크린샷 자동 업로드 기능이 해제됩니다.</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>저장할 폴더 고르기</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>작업 설정</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>{0} 작업 설정</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>업로드 오류</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>ShareX - 오류</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;확인</value>
+    <value>확인</value>
   </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>전부 복사</value>

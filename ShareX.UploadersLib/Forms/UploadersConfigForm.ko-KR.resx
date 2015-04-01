@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL 압축</value>
+    <value>URL 단축</value>
+  </data>
+  <data name="gbCustomUploaderArguments.Text" xml:space="preserve">
+    <value>인자</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 업로드 대상 설정</value>
   </data>
 </root>

@@ -124,10 +124,10 @@
     <value>위치:</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
-    <value>그라데이션 종류:</value>
+    <value>그라디언트 종류:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>그라데이션</value>
+    <value>그라디언트</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>추가</value>

@@ -121,9 +121,9 @@
     <value>ShareX - Twitter 메세지</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;취소</value>
+    <value>취소</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;트윗 날리기</value>
+    <value>트윗 날리기</value>
   </data>
 </root>
