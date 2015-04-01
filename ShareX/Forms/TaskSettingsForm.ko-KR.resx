@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 작업 설정</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>복제</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>편집</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>촬영 후...</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>업로드 후...</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>목적지...</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>프로필...</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>이미지 효과 설정...</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>자동 증가 카운터 초기화</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>FFmpeg 설정...</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>작업...</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>추가...</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>클립보드가 폴더 경로를 포함하고 있으면 폴더 색인을 생성하고 그 색인을 업로드하기</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>클립보드가 URL을 포함하고 있으면 URL 공유 서비스를 이용해 공유하기</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>클립보드가 URL을 포함하고 있으면 URL 단축기를 사용하기</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>파일을 업로드할 때에도 실제 파일명 대신 이름 패턴을 사용하기</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>지정된 길이만큼 녹화:</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>촬영 딜레이:</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>스크린샷에 커서 보이기</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>창을 촬영하는 중 창이 작업 표시줄에 닿으면 작업 표시줄을 숨기기</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>이미지 효과는 "촬영 뒤 할 일 -&gt; 이미지 효과 추가"로 켜고 끌 수 있습니다.</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF 품질:</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG 품질:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>파일이 이미 존재할 때:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>이미지 포맷:</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>이미지 포맷 2:</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>그림자 오프셋:</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>설명:</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>확장자</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>인자</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>경로</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>하위 폴더 포함</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>폴더 경로</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>필터</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>초</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>FFmpeg FPS:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>미리보기:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>미리보기:</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 ~ 100</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>작업이 완료되었을 시:</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>너비:</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>미리보기</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>높이:</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>섬네일 이름:</value>
+  </data>
+  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
+    <value>kB  0 ~ 5000 (0으로 해제)</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>"이미지 포맷 2"에 사용할 크기 제한:</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>클립보드가 파일 URL을 포함하고 있으면 그 파일을 다운로드한 뒤 업로드하기</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>작업</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="tpIndexer.Text" xml:space="preserve">
+    <value>색인기</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>영역 촬영</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>직사각형 영역 주석</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>화면 녹화기</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>효과</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>촬영</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>고급</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>동작</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>섬네일</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>업로드</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>클립보드 업로드</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>폴더 감시</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>이후에 CLI 실행:</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>기본 사용자 정의 업로더 덮어쓰기:</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>기본 FTP 계정 덮어쓰기:</value>
+  </data>
+  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
+    <value>기본 "촬영 후" 설정 사용</value>
+  </data>
+  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
+    <value>기본 "업로드 후" 설정 사용</value>
+  </data>
+  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
+    <value>기본 "목적지" 설정 사용</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>폴더를 감시하고 새 파일이 생성되었다면 업로드하기</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>이미지 크기가 섬네일 크기보다 클 때에만 섬네일 생성하기</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>촬영 후 소리 재생하기</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>작업 완료 후 소리 재생하기</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>다른 시간대 사용:</value>
+  </data>
+  <data name="cbHistorySave.Text" xml:space="preserve">
+    <value>작업 정보를 히스토리에 저장</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>영역 촬영시에만 효과 적용하기</value>
+  </data>
+  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
+    <value>촬영 후 "촬영 후 작업" 창 띄우기</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>다음 시간동안 기다린 뒤 녹화 시작:</value>
+  </data>
+  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
+    <value>작업이 완료된 뒤 "업로드 후" 창 띄우기</value>
+  </data>
+  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
+    <value>"업로드 전" 창을 띄워 동적으로 목적지 바꾸기</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>투명도를 유지한 채로 창을 촬영</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>창을 촬영할 때 제목 표시줄이나 경계는 제외하기</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>창을 그림자와 함께 촬영 (투명도 필요)</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>창을 촬영한 뒤 이미지 효과 창 띄우기</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>이미지 업로더</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>텍스트 업로더</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>URL 공유 서비스</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>URL 단축기</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>활성화 된 창 촬영 시 사용할 이름 형식:</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>촬영이나 클립보드 업로드 시 사용할 이름 형식:</value>
+  </data>
+  <data name="chkUseDefaultActions.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 작업 사용하기</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 고급 설정 사용하기</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 촬영 설정 사용하기</value>
+  </data>
+  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 일반 설정 사용하기</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 이미지 설정 사용하기</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 색인기 설정 사용하기</value>
+  </data>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>메인 창 작업 설정의 업로드 설정 사용하기</value>
+  </data>
+</root>
