@@ -70,8 +70,6 @@ namespace ShareX.ScreenCaptureLib
 
         public bool ShowRectangleInfo { get; set; }
 
-        public Image SelectionImage { get; private set; }
-
         private Timer timer;
         private Bitmap surface;
         private Graphics gSurface;
@@ -82,15 +80,6 @@ namespace ShareX.ScreenCaptureLib
 
         public RectangleTransparent()
         {
-            StartPosition = FormStartPosition.Manual;
-            Bounds = ScreenRectangle;
-            Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
-
-            Shown += RectangleLight_Shown;
-            KeyUp += RectangleLight_KeyUp;
-            MouseDown += RectangleLight_MouseDown;
-            MouseUp += RectangleLight_MouseUp;
-
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
@@ -101,6 +90,15 @@ namespace ShareX.ScreenCaptureLib
             gSurface.InterpolationMode = InterpolationMode.NearestNeighbor;
             gSurface.SmoothingMode = SmoothingMode.HighSpeed;
             gSurface.CompositingMode = CompositingMode.SourceCopy;
+
+            StartPosition = FormStartPosition.Manual;
+            Bounds = ScreenRectangle;
+            Text = "ShareX - " + Resources.RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent;
+
+            Shown += RectangleLight_Shown;
+            KeyUp += RectangleLight_KeyUp;
+            MouseDown += RectangleLight_MouseDown;
+            MouseUp += RectangleLight_MouseUp;
 
             using (MemoryStream cursorStream = new MemoryStream(Resources.Crosshair))
             {
@@ -154,8 +152,6 @@ namespace ShareX.ScreenCaptureLib
                     if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
                     {
                         LastSelectionRectangle0Based = SelectionRectangle0Based;
-                        if (SelectionImage != null) SelectionImage.Dispose();
-                        SelectionImage = GetAreaImage();
                         DialogResult = DialogResult.OK;
                     }
 
@@ -167,7 +163,6 @@ namespace ShareX.ScreenCaptureLib
                 if (isMouseDown)
                 {
                     isMouseDown = false;
-                    Refresh();
                 }
                 else
                 {
