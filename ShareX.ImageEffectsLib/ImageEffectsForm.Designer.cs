@@ -40,11 +40,15 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnLoadImage = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
             this.eiImageEffects = new ShareX.HelpersLib.ExportImportControl();
             this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.cmsEffects = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mbLoadImage = new ShareX.HelpersLib.MenuButton();
+            this.cmsLoadImage = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiLoadImageFromFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoadImageFromClipboard = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
             // pgSettings
@@ -129,13 +133,6 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnLoadImage
-            // 
-            resources.ApplyResources(this.btnLoadImage, "btnLoadImage");
-            this.btnLoadImage.Name = "btnLoadImage";
-            this.btnLoadImage.UseVisualStyleBackColor = true;
-            this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
-            // 
             // btnSaveImage
             // 
             resources.ApplyResources(this.btnSaveImage, "btnSaveImage");
@@ -169,13 +166,42 @@
             this.cmsEffects.ShowImageMargin = false;
             resources.ApplyResources(this.cmsEffects, "cmsEffects");
             // 
+            // mbLoadImage
+            // 
+            resources.ApplyResources(this.mbLoadImage, "mbLoadImage");
+            this.mbLoadImage.Menu = this.cmsLoadImage;
+            this.mbLoadImage.MenuX0 = true;
+            this.mbLoadImage.Name = "mbLoadImage";
+            this.mbLoadImage.UseVisualStyleBackColor = true;
+            // 
+            // cmsLoadImage
+            // 
+            this.cmsLoadImage.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiLoadImageFromFile,
+            this.tsmiLoadImageFromClipboard});
+            this.cmsLoadImage.Name = "cmsLoadImage";
+            this.cmsLoadImage.ShowImageMargin = false;
+            resources.ApplyResources(this.cmsLoadImage, "cmsLoadImage");
+            // 
+            // tsmiLoadImageFromFile
+            // 
+            this.tsmiLoadImageFromFile.Name = "tsmiLoadImageFromFile";
+            resources.ApplyResources(this.tsmiLoadImageFromFile, "tsmiLoadImageFromFile");
+            this.tsmiLoadImageFromFile.Click += new System.EventHandler(this.tsmiLoadImageFromFile_Click);
+            // 
+            // tsmiLoadImageFromClipboard
+            // 
+            this.tsmiLoadImageFromClipboard.Name = "tsmiLoadImageFromClipboard";
+            resources.ApplyResources(this.tsmiLoadImageFromClipboard, "tsmiLoadImageFromClipboard");
+            this.tsmiLoadImageFromClipboard.Click += new System.EventHandler(this.tsmiLoadImageFromClipboard_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mbLoadImage);
             this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
-            this.Controls.Add(this.btnLoadImage);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.btnClear);
@@ -188,6 +214,7 @@
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.cmsLoadImage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,10 +233,13 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnLoadImage;
         private System.Windows.Forms.Button btnSaveImage;
         private ShareX.HelpersLib.ExportImportControl eiImageEffects;
         private System.Windows.Forms.ContextMenuStrip cmsEffects;
+        private HelpersLib.MenuButton mbLoadImage;
+        private System.Windows.Forms.ContextMenuStrip cmsLoadImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromClipboard;
     }
 }
 
