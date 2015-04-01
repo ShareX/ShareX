@@ -117,43 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 이미지 효과</value>
+  <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
+    <value>이미지 효과 - 너비: {0}, 높이: {1}, 렌더링 시간: {2} ms</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>확인</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
+    <value>필터</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>새로고침</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
+    <value>변형</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>삭제</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
+    <value>그림</value>
   </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>이미지 저장하기...</value>
-  </data>
-  <data name="mbLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>클립보드에서</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>파일에서...</value>
-  </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기...</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>복제</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>초기화</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>추가</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
+    <value>조절</value>
   </data>
 </root>

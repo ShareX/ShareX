@@ -728,6 +728,9 @@
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.hu.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.ko-KR.resx">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
       <SubType>Designer</SubType>

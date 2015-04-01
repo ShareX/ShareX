@@ -193,7 +193,7 @@
     <value>자동화...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
-    <value>목록 클리어</value>
+    <value>목록 전부 제거</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>색상 선택기...</value>
@@ -337,7 +337,7 @@
     <value>디버그 로그...</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
-    <value>에러 표시</value>
+    <value>오류 표시</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>QR코드 표시하기...</value>
@@ -541,10 +541,10 @@
     <value>섬네일 URL</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>트윗 메세지...</value>
+    <value>트윗 날리기...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>트윗 메세지...</value>
+    <value>트윗 날리기...</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>업로드</value>

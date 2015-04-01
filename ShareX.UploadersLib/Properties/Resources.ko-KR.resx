@@ -117,43 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 이미지 효과</value>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>인증 새로고침은 지원되지 않습니다.</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>확인</value>
+  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
+    <value>상태: 로그인 완료.</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>새로고침</value>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>상태: 로그인 실패.</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>삭제</value>
+  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
+    <value>상태: 로그인되어 있지 않음.</value>
   </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>이미지 저장하기...</value>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>선택된 폴더:</value>
   </data>
-  <data name="mbLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기</value>
+  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
+    <value>인증</value>
   </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>클립보드에서</value>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
+    <value>DropBox에서 "{0}"을/를 삭제할까요?</value>
   </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>파일에서...</value>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>파일 삭제?</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기...</value>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>{0}에 접속 중</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>복제</value>
+  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
+    <value>ShareX FTP 클라이언트</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>초기화</value>
+  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
+    <value>생성할 폴더 이름</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
+  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
+    <value>키 파일 탐색...</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>추가</value>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>최상위 폴더</value>
+  </data>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>트윗 오류</value>
+  </data>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>이슈를 찾을 수 없음</value>
+  </data>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>새 계정</value>
+  </data>
+  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
+    <value>로그인에 성공했지만 계정 정보를 가져오지 못했습니다.</value>
   </data>
 </root>

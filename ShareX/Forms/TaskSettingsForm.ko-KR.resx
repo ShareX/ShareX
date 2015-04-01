@@ -151,7 +151,7 @@
     <value>자동 증가 카운터 초기화</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>FFmpeg 옵션...</value>
+    <value>FFmpeg 설정...</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>작업...</value>
@@ -199,7 +199,7 @@
     <value>JPEG 품질:</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>파일 존재 시:</value>
+    <value>파일이 이미 존재할 때:</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>이미지 포맷:</value>

@@ -135,4 +135,7 @@
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>보기 방식</value>
   </data>
+  <data name="tsmiViewModePane.Text" xml:space="preserve">
+    <value>판형</value>
+  </data>
 </root>

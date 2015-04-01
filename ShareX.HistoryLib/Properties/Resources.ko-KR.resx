@@ -117,43 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 이미지 효과</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>텍스트</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>확인</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>파일 이름</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>새로고침</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>파일 이름</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>삭제</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>파일 이름 + 확장자</value>
   </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>이미지 저장하기...</value>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>파일 경로</value>
   </data>
-  <data name="mbLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기</value>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>폴더</value>
   </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>클립보드에서</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>포럼용 (BBCode) 이미지</value>
   </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>파일에서...</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>포럼용 (BBCode) 링크</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기...</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>포럼용 (BBCode) 링크 걸린 이미지</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>복제</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>HTML 이미지</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>초기화</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>HTML 링크</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>HTML 링크 걸린 이미지</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>추가</value>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>이미지 미리보기</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>자세한 정보</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>열기</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>단축 URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>섬네일 URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
+    <value>보기</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>삭제 URL</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>총: {0}</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>필터됨: {0}</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>이름 복사</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>값 복사</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>값</value>
   </data>
 </root>

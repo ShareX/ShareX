@@ -124,7 +124,7 @@
     <value>예제 불러오기</value>
   </data>
   <data name="btnRemoveScript.Text" xml:space="preserve">
-    <value>제거</value>
+    <value>삭제</value>
   </data>
   <data name="btnRun.Text" xml:space="preserve">
     <value>시작</value>

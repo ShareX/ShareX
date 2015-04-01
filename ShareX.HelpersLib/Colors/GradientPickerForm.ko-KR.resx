@@ -139,7 +139,7 @@
     <value>확인</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>제거</value>
+    <value>삭제</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
     <value>위치</value>

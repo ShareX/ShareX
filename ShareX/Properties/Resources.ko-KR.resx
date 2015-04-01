@@ -174,7 +174,8 @@ ShareX를 재시작하시겠습니까?</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>이곳에
-드롭</value>
+끌어다
+놓기</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
     <value>확장자는 비어 있을 수 없습니다.</value>
@@ -234,7 +235,7 @@ ShareX를 재시작하시겠습니까?</value>
     <value>메뉴 보이기</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>단축키 설정에서 워크플로우를 추가할 수 있습니다...</value>
+    <value>단축키 설정에서 워크플로우 추가하기...</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>오류</value>
@@ -346,13 +347,13 @@ ShareX를 재시작하시겠습니까?</value>
 {0}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>이 메세지를 다시 보여주지 말기.</value>
+    <value>이 메시지를 다시 보이지 않기.</value>
   </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
-    <value>URL 공유 ({0})</value>
+    <value>URL 공유하기 ({0})</value>
   </data>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>폴더 경로 고르기</value>
+    <value>폴더 경로 선택</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>정말로 이 스크린샷을 업로드할까요?
@@ -369,5 +370,45 @@ ShareX를 재시작하시겠습니까?</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
     <value>업로드 오류</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
+    <value>파일 {0}개를 업로드할까요?</value>
+  </data>
+  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
+    <value>인코더 경로 선턱</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
+    <value>처음 업로드 경고</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>단축키</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>단축키</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+    <value>찾을 수 없음:</value>
+  </data>
+  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>URL 단축하기 ({0})</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>파일 업로드하기</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>새 이름 사용:</value>
+  </data>
+  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+    <value>지원되는 변수: {0}과 {1} 등과 같은 다른 변수들.</value>
+  </data>
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>업로드 하기 위해 다운로드 받을 URL</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
+    <value>{0}을/를 등록할 수 없습니다:
+
+{1}
+
+다른 단축키를 사용하거나 충돌하는 어플리케이션을 종료한 뒤 ShareX를 다시 실행 해 주세요.</value>
   </data>
 </root>
