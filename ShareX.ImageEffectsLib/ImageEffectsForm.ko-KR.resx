@@ -141,9 +141,6 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>파일에서...</value>
   </data>
-  <data name="btnLoadImage.Text" xml:space="preserve">
-    <value>이미지 불러오기...</value>
-  </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>복제</value>
   </data>
