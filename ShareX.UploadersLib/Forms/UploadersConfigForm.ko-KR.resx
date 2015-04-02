@@ -124,7 +124,7 @@
     <value>인자</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 업로드 대상 설정</value>
+    <value>ShareX - 목적지 설정</value>
   </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
     <value>섬네일 타입:</value>
@@ -592,7 +592,7 @@
     <value>앨범 목록 갱신하기</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
-    <value>장비 목록 가져오기</value>
+    <value>장치 목록 가져오기</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
     <value>등록...</value>

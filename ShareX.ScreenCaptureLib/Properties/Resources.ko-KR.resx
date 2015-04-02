@@ -159,4 +159,7 @@ W: {2} / H: {3}</value>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>영역 촬영</value>
   </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>투명 직사각형 영역 촬영</value>
+  </data>
 </root>

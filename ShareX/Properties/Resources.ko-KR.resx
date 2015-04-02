@@ -226,7 +226,7 @@ ShareX를 재시작하시겠습니까?</value>
     <value>현재 설정된 단축키:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>이 창으로 파일을 끌어다 놓을 수 있습니다.</value>
+    <value>파일을 끌어서 이 창에 놓을 수 있습니다.</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>메뉴 숨기기</value>

@@ -118,131 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg 설정</value>
+    <value>인쇄 설정</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>복사</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>취소</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>다운로드</value>
+  <data name="btnPrint.Text" xml:space="preserve">
+    <value>인쇄...</value>
   </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>도움말...</value>
+  <data name="btnShowPreview.Text" xml:space="preserve">
+    <value>미리보기...</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>기본값은 128k입니다.</value>
+  <data name="cbAllowEnlarge.Text" xml:space="preserve">
+    <value>이미지 확대 가능하게 하기</value>
   </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>범위는 0부터 10까지이며, 10이 최고 품질입니다. 3~6 사이에서 조절하면 괜찮습니다. 기본값은 3입니다.</value>
+  <data name="cbAutoRotate.Text" xml:space="preserve">
+    <value>이미지 자동 회전하기</value>
   </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>새로고침</value>
+  <data name="cbAutoScale.Text" xml:space="preserve">
+    <value>이미지 자동 크기 조정하기</value>
   </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>CMD로 테스트</value>
+  <data name="cbCenterImage.Text" xml:space="preserve">
+    <value>이미지를 가운데에 두기</value>
   </data>
-  <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>명령 직접 입력</value>
-  </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>기본 프리셋은 "중간"입니다.
-프리셋은 특정 압축률로 특정 속도로 인코딩할 수 있게 해주는 설정들을 모아놓은 것입니다. 느린 프리셋을 고르면 압축(파일 사이즈 대비 품질)이 더 잘 됩니다.
-이 말은, 예를 들어서, 파일 크기나 비트레이트를 지정했다면, 느린 프리셋으로 더 나은 품질을 얻을 수 있다는 뜻입니다.
-비슷한 원리로, 일정한 품질로 인코딩할 경우, 더 느린 프리셋을 고르면 비트레이트를 아낄 수 있습니다.</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>명령줄 미리보기</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>소스</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>비트레이트:</value>
-  </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>오디오 코덱:</value>
-  </data>
-  <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>오디오 소스:</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>비디오 코덱:</value>
-  </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>확장자 (컨테이너 포맷):</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>품질:</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>프리셋:</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>가변 비트레이트:</value>
-  </data>
-  <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>비디오 소스:</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>품질:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>추가 명령줄 인자</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>코덱</value>
-  </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>녹화나 인코딩이 실패할 시 오류 창 띄우기</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1이 최고 품질/제일 큰 파일 크기이며, 31이 최소 품질/제일 작은 파일 크기입니다.</value>
-  </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>CRF값의 범위는 4부터 63까지이며, 10부터 시작하면 좋습니다. 더 낮은 값은 더 나은 품질을 의미합니다.</value>
-  </data>
-  <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>항율 인자 (CRF): 양자화 스케일의 범위는 0부터 51까지이며, 0은 무손실, 23이 기본값, 그리고 51이 가능한 최저 품질입니다.
-낮은 값은 더 나은 품질을 의미하며, 주관적으로 괜찮다고 생각하는 범위는 18과 28 사이입니다.
-18 정도면 겉보기에 거의 손실이 없습니다. 정확히 말하자면 무손실은 아니지만 입력 영상이 그대로 보존되는 것처럼 보이죠.
-이 숫자는 로그 스케일이라 CRF값을 6 늘리면 비트레이트가 대략 절반으로 줄어들며 6 줄이면 대략 두 배로 늘어납니다.
-일반적으로는 그럭저럭 괜찮은 품질을 출력할 수 있는 제일 높은 CRF값을 사용합니다.
-출력물이 괜찮으면 더 높은 CRF값을, 괜찮지 않으면 더 낮은 CRF값을 사용하세요.</value>
-  </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>범위는 0부터 9까지이며, 낮을수록 더 나은 품질을 제공합니다. 0부터 3까지는 보통 깨끗한 결과를, 기본값인 4는 겉보기에 깨끗한 결과를 내놓으며, 6은 "그럭저럭 볼 만한" 품질의 결과를 내놓습니다.</value>
-  </data>
-  <data name="lblVpxCRF.Text" xml:space="preserve">
-    <value>CRF:</value>
-  </data>
-  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnFFmpegHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>ffmpeg.exe</value>
-  </data>
-  <data name="lblX264CRF.Text" xml:space="preserve">
-    <value>CRF:</value>
-  </data>
-  <data name="tpAAC.Text" xml:space="preserve">
-    <value>AAC</value>
-  </data>
-  <data name="tpMP3.Text" xml:space="preserve">
-    <value>MP3</value>
-  </data>
-  <data name="tpVorbis.Text" xml:space="preserve">
-    <value>Vorbis</value>
-  </data>
-  <data name="tpVpx.Text" xml:space="preserve">
-    <value>VP8</value>
-  </data>
-  <data name="tpX264.Text" xml:space="preserve">
-    <value>x264</value>
-  </data>
-  <data name="tpXvid.Text" xml:space="preserve">
-    <value>Xvid</value>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>여백:</value>
   </data>
 </root>
