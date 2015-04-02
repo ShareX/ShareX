@@ -127,7 +127,7 @@
     <value>이름:</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>확인</value>
@@ -136,6 +136,6 @@
     <value>취소</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>유저명/비밀번호 상자</value>
+    <value>사용자 ID/비밀번호 상자</value>
   </data>
 </root>

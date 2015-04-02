@@ -139,13 +139,13 @@
     <value>URL</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
-    <value>파일명</value>
+    <value>파일 이름</value>
   </data>
   <data name="chElapsed.Text" xml:space="preserve">
     <value>지난 시간</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>어플리케이션 설정...</value>
+    <value>프로그램 설정...</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>히스토리...</value>
@@ -376,7 +376,7 @@
     <value>업로드 뒤</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>어플리케이션 설정...</value>
+    <value>프로그램 설정...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>자동 촬영...</value>

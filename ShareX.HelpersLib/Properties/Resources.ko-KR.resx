@@ -157,7 +157,7 @@
     <value>이미지를 파일로 저장하기</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>이미지를 ...에 파일로 저장하기</value>
+    <value>이미지를 다른 이름으로 파일로 저장하기</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>동작 실행하기</value>
@@ -490,7 +490,7 @@
     <value>인쇄</value>
   </data>
   <data name="RegistryHelpers_ShellExtDesc_Upload_with__0_" xml:space="preserve">
-    <value>{0} 어플리케이션으로 업로드하기</value>
+    <value>{0} 프로그램으로 업로드하기</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
     <value>ㄴㄴ</value>
