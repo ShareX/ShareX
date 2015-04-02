@@ -445,7 +445,7 @@
     <value>사용자 키:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>참고: 시그내쳐가 있으면 유저명/비밀번호를 입력할 필요가 없습니다.</value>
+    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
@@ -504,9 +504,6 @@
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>설명</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>이름</value>
-  </data>
   <data name="chArgumentsValue.Text" xml:space="preserve">
     <value>값</value>
   </data>
@@ -523,13 +520,13 @@
     <value>폴더 이름</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드인가요?</value>
+    <value>공개 업로드</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드인가요?</value>
+    <value>공개 업로드</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드인가요?</value>
+    <value>공개 업로드</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>존재한다면 다이렉트 URL 사용하기</value>
@@ -742,5 +739,8 @@
   </data>
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>포토스트림 보기...</value>
+  </data>
+  <data name="chArgumentsName.Text" xml:space="preserve">
+    <value>이름</value>
   </data>
 </root>

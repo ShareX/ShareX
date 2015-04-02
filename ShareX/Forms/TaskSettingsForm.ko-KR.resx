@@ -409,24 +409,24 @@
     <value>촬영이나 클립보드 업로드 시 사용할 이름 형식:</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 작업 사용하기</value>
+    <value>기본 작업 설정의 동작 실행하기</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 고급 설정 사용하기</value>
+    <value>기본 작업 설정의 고급 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 촬영 설정 사용하기</value>
+    <value>기본 작업 설정의 촬영 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 일반 설정 사용하기</value>
+    <value>기본 작업 설정의 일반 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 이미지 설정 사용하기</value>
+    <value>기본 작업 설정의 이미지 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 색인기 설정 사용하기</value>
+    <value>기본 작업 설정의 색인기 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 업로드 설정 사용하기</value>
+    <value>기본 작업 설정의 업로드 설정 사용하기</value>
   </data>
 </root>

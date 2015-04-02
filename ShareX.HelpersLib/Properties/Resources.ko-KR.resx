@@ -145,7 +145,7 @@
     <value>이미지 편집기에서 열기</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>이미지를 호스트에 업로드하기</value>
+    <value>이미지를 업로드하기</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>이미지 출력하기</value>
@@ -226,7 +226,7 @@
     <value>화면 색상 선택기</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>자</value>
+    <value>측정</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>QR코드</value>
@@ -382,14 +382,14 @@
     <value>복사</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0}는 최신 버전입니다</value>
+    <value>최신 버전의 {0}입니다</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
     <value>새 버전의 {0}를 사용할 수 있습니다</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>새 버전의 {0}를 사용할 수 있습니다.
-다운로드한 뒤 설치할까요?</value>
+업데이트 파일을 내려받은 뒤 설치할까요?</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>파일 이름에 숫자 덧붙이기</value>
@@ -467,7 +467,7 @@
     <value>회색조 256색 팔레트 양자화</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>진행도: {0:0.0}%
+    <value>진행 상황: {0:0.0}% 완료
 다운로드 속도: {1:0.0} KB/s
 파일 크기: {2:n0} / {3:n0} KB</value>
   </data>
@@ -493,10 +493,10 @@
     <value>{0} 프로그램으로 업로드하기</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
-    <value>ㄴㄴ</value>
+    <value>아니요</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
-    <value>ㅇㅇ</value>
+    <value>네</value>
   </data>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
     <value>다음 폴더가 존재하지 않음:</value>
@@ -574,7 +574,7 @@
     <value>중단</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>커스텀 텍스트 업로더</value>
+    <value>사용자 정의 텍스트 업로더</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>파일 업로더</value>
@@ -586,7 +586,7 @@
     <value>이메일</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>커스텀 URL 단축기</value>
+    <value>사용자 정의 URL 단축기</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
     <value>DNS 설정이 실패되었으며, 다음 에러코드를 반환했습니다:</value>

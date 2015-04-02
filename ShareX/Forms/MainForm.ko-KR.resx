@@ -316,7 +316,7 @@
     <value>QR코드...</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>자...</value>
+    <value>측정...</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>화면 색상 선택기...</value>
@@ -508,7 +508,7 @@
     <value>모서리 둥근 직사각형</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>자...</value>
+    <value>측정...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>화면 색상 선택기...</value>

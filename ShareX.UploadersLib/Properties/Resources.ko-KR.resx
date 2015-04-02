@@ -199,10 +199,10 @@
     <value>올바르지 않은 장치명</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>로그인 실패.</value>
+    <value>로그인에 실패하였습니다.</value>
   </data>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>로그인 성공.</value>
+    <value>성공적으로 로그인했습니다.</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>새로고침 버튼 클릭</value>

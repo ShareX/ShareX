@@ -136,6 +136,6 @@
     <value>보기 방식</value>
   </data>
   <data name="tsmiViewModePane.Text" xml:space="preserve">
-    <value>판형</value>
+    <value>구획</value>
   </data>
 </root>
