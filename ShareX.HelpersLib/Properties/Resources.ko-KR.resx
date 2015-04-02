@@ -484,7 +484,7 @@
     <value>없음</value>
   </data>
   <data name="ProxyMethod_Manual" xml:space="preserve">
-    <value>수동</value>
+    <value>직접 입력</value>
   </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>인쇄</value>
@@ -509,5 +509,104 @@
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>다운로드 실패:</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>업데이트 확인 실패</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>DNS 설정이 완료되었습니다.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
+    <value>DNS 설정이 완료되었으며, 재부팅해야 합니다.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>파일 크기 가져오는 중.</value>
+  </data>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>가져오기 실패.</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>내보내기 실패.</value>
+  </data>
+  <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
+    <value>설정이 클립보드에 복사되었습니다.</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>설정을 내려받을 URL</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>잘라내기</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>붙여넣기</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>사용자 정의 파일 업로더</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>공유된 폴더</value>
+  </data>
+  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
+    <value>폴더 선택</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>사용자 정의 이미지 업로더</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="ResponseType_RedirectionURL" xml:space="preserve">
+    <value>리디렉션 URL</value>
+  </data>
+  <data name="ResponseType_Text" xml:space="preserve">
+    <value>응답 텍스트</value>
+  </data>
+  <data name="ResponseType_Headers" xml:space="preserve">
+    <value>응답 헤더</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>중단</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>커스텀 텍스트 업로더</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>파일 업로더</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>업데이트 가능</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>이메일</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>커스텀 URL 단축기</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
+    <value>DNS 설정이 실패되었으며, 다음 에러코드를 반환했습니다:</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
+    <value>DNS 설정이 실패되었습니다.</value>
+  </data>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>직접 입력</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>대기중.</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>확장자 없는 파일 경로 + "출력 파일 이름 확장자"</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>청록: {0:0.0}%, 마젠타: {1:0.0}%, 노랑: {2:0.0}%, 검정: {3:0.0}%</value>
   </data>
 </root>
