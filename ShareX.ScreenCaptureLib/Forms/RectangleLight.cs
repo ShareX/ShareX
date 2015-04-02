@@ -101,15 +101,8 @@ namespace ShareX.ScreenCaptureLib
             timer.Start();
         }
 
-        private IContainer components = null;
-
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
             if (timer != null) timer.Dispose();
             if (backgroundImage != null) backgroundImage.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();
@@ -122,6 +115,7 @@ namespace ShareX.ScreenCaptureLib
         private void InitializeComponent()
         {
             SuspendLayout();
+
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             StartPosition = FormStartPosition.Manual;
@@ -160,28 +154,34 @@ namespace ShareX.ScreenCaptureLib
                 positionOnClick = CaptureHelpers.GetCursorPosition();
                 isMouseDown = true;
             }
-            else if (isMouseDown)
-            {
-                isMouseDown = false;
-                Refresh();
-            }
-            else
-            {
-                Close();
-            }
         }
 
         private void RectangleLight_MouseUp(object sender, MouseEventArgs e)
         {
-            if (isMouseDown && e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
-                if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+                if (isMouseDown)
                 {
-                    LastSelectionRectangle0Based = SelectionRectangle0Based;
-                    DialogResult = DialogResult.OK;
-                }
+                    if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+                    {
+                        LastSelectionRectangle0Based = SelectionRectangle0Based;
+                        DialogResult = DialogResult.OK;
+                    }
 
-                Close();
+                    Close();
+                }
+            }
+            else
+            {
+                if (isMouseDown)
+                {
+                    isMouseDown = false;
+                    Refresh();
+                }
+                else
+                {
+                    Close();
+                }
             }
         }
 
