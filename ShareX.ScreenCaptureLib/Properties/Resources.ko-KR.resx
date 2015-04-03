@@ -124,7 +124,7 @@ W: {2} / H: {3}</value>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
 너비: {4} px / 높이: {5} px
-거리: {6:0.00} px / 각도: {7:0.00}°</value>
+대각선 길이: {6:0.00} px / 각도: {7:0.00}°</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>품질:</value>

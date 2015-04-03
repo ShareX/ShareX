@@ -127,7 +127,7 @@
     <value>사용자 계정</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>인증 새로고침하기</value>
+    <value>인증 새로고침</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
     <value>1단계: 인증 페이지 열기...</value>
@@ -136,6 +136,6 @@
     <value>2단계: 인증 완료하기</value>
   </data>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>인증 초기화하기</value>
+    <value>인증 초기화</value>
   </data>
 </root>

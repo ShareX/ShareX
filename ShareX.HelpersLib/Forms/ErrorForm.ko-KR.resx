@@ -137,6 +137,6 @@
 오류 2</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>어플리케이션 종료</value>
+    <value>프로그램 종료</value>
   </data>
 </root>

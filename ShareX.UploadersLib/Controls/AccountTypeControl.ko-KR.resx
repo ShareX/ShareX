@@ -121,7 +121,7 @@
     <value>계정 종류:</value>
   </data>
   <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>일반</value>
+    <value>일반 사용자</value>
   </data>
   <data name="cbAccountType.Items" xml:space="preserve">
     <value>익명</value>

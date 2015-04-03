@@ -133,7 +133,7 @@
     <value>해시 종류:</value>
   </data>
   <data name="lblProgress.Text" xml:space="preserve">
-    <value>진행도:</value>
+    <value>진행 상황:</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>결과:</value>

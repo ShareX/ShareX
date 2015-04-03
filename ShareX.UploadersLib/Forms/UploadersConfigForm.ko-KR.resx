@@ -313,7 +313,7 @@
     <value>비밀번호:</value>
   </data>
   <data name="lblImageShackUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>커스텀 도메인:</value>
@@ -364,7 +364,7 @@
     <value>URL 종류:</value>
   </data>
   <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>호스트:</value>
@@ -376,10 +376,10 @@
     <value>경로:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>유저 API 키:</value>
+    <value>사용자 API 키:</value>
   </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
     <value>만료 시점:</value>
@@ -397,7 +397,7 @@
     <value>이름:</value>
   </data>
   <data name="lblPastebinUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>로그인이 필요합니다.</value>
@@ -418,13 +418,13 @@
     <value>장치:</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>유저 API 키:</value>
+    <value>사용자 API 키:</value>
   </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>파일:</value>
@@ -442,10 +442,10 @@
     <value>이메일:</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
-    <value>유저 키:</value>
+    <value>사용자 키:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>참고: 시그내쳐가 있으면 유저명/비밀번호를 입력할 필요가 없습니다.</value>
+    <value>참고: 시그내쳐가 있으면 사용자 ID와 비밀번호를 입력하지 않아도 됩니다.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
@@ -454,7 +454,7 @@
     <value>시그내쳐:</value>
   </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>API 키와 UID는 여기서 찾을 수 있습니다</value>
@@ -504,9 +504,6 @@
   <data name="chImgurDescription.Text" xml:space="preserve">
     <value>설명</value>
   </data>
-  <data name="chArgumentsName.Text" xml:space="preserve">
-    <value>이름</value>
-  </data>
   <data name="chArgumentsValue.Text" xml:space="preserve">
     <value>값</value>
   </data>
@@ -523,13 +520,13 @@
     <value>폴더 이름</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드인가요?</value>
+    <value>공개 업로드</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드인가요?</value>
+    <value>공개 업로드</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드인가요?</value>
+    <value>공개 업로드</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>존재한다면 다이렉트 URL 사용하기</value>
@@ -742,5 +739,8 @@
   </data>
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>포토스트림 보기...</value>
+  </data>
+  <data name="chArgumentsName.Text" xml:space="preserve">
+    <value>이름</value>
   </data>
 </root>

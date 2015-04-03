@@ -187,7 +187,7 @@
     <value>창을 촬영하는 중 창이 작업 표시줄에 닿으면 작업 표시줄을 숨기기</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
+    <value>GIF 초당 프레임 수:</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>이미지 효과는 "촬영 뒤 할 일 -&gt; 이미지 효과 추가"로 켜고 끌 수 있습니다.</value>
@@ -244,7 +244,7 @@
     <value>초</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>FFmpeg FPS:</value>
+    <value>FFmpeg 초당 프레임 수:</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>미리보기:</value>
@@ -334,10 +334,10 @@
     <value>기본 FTP 계정 덮어쓰기:</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>기본 "촬영 후" 설정 사용</value>
+    <value>기본 "촬영 뒤 할 일" 설정 사용</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>기본 "업로드 후" 설정 사용</value>
+    <value>기본 "업로드 뒤 할 일" 설정 사용</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>기본 "목적지" 설정 사용</value>
@@ -349,7 +349,7 @@
     <value>이미지 크기가 섬네일 크기보다 클 때에만 섬네일 생성하기</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>촬영 후 소리 재생하기</value>
+    <value>촬영 뒤 소리 재생하기</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>작업 완료 후 소리 재생하기</value>
@@ -364,7 +364,7 @@
     <value>영역 촬영시에만 효과 적용하기</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>촬영 후 "촬영 후 작업" 창 띄우기</value>
+    <value>촬영 뒤 "촬영 뒤 할 일" 창 띄우기</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>다음 시간동안 기다린 뒤 녹화 시작:</value>
@@ -409,24 +409,24 @@
     <value>촬영이나 클립보드 업로드 시 사용할 이름 형식:</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 작업 사용하기</value>
+    <value>기본 작업 설정의 동작 실행하기</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 고급 설정 사용하기</value>
+    <value>기본 작업 설정의 고급 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 촬영 설정 사용하기</value>
+    <value>기본 작업 설정의 촬영 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 일반 설정 사용하기</value>
+    <value>기본 작업 설정의 일반 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 이미지 설정 사용하기</value>
+    <value>기본 작업 설정의 이미지 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 색인기 설정 사용하기</value>
+    <value>기본 작업 설정의 색인기 설정 사용하기</value>
   </data>
   <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
-    <value>메인 창 작업 설정의 업로드 설정 사용하기</value>
+    <value>기본 작업 설정의 업로드 설정 사용하기</value>
   </data>
 </root>

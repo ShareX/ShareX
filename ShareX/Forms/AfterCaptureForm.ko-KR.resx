@@ -133,7 +133,7 @@
     <value>작업</value>
   </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
-    <value>촬영 후</value>
+    <value>촬영 뒤</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>업로드 전</value>

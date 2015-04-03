@@ -151,7 +151,7 @@
     <value>포트:</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>유저명:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>하위 폴더명 패턴:</value>
@@ -229,10 +229,10 @@
     <value>버퍼 크기:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 어플리케이션 설정</value>
+    <value>ShareX - 프로그램 설정</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>셸 컨텍스트 메뉴에 "ShareX로 업로드하기" 보이기</value>
+    <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 업로드하기" 표시하기</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>설명</value>
@@ -256,7 +256,7 @@
     <value>이차 텍스트 업로더</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>"보내기..." 메뉴에 ShareX 보이기</value>
+    <value>Windows 탐색기의 "보내기..." 컨텍스트 메뉴에 ShareX 표시하기</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX 개인 폴더:</value>
