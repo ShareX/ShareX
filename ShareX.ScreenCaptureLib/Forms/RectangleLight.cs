@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -59,23 +58,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Point CurrentMousePosition { get; private set; }
-
-        public Point CurrentMousePosition0Based
-        {
-            get
-            {
-                return new Point(CurrentMousePosition.X - ScreenRectangle.X, CurrentMousePosition.Y - ScreenRectangle.Y);
-            }
-        }
-
-        public bool ShowRectangleInfo { get; set; }
-
         private Timer timer;
         private Image backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
-        private Point positionOnClick;
+        private Point currentPosition, positionOnClick;
         private bool isMouseDown;
         private Stopwatch penTimer;
 
@@ -204,8 +191,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            CurrentMousePosition = CaptureHelpers.GetCursorPosition();
-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, CurrentMousePosition.X, CurrentMousePosition.Y);
+            currentPosition = CaptureHelpers.GetCursorPosition();
+            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
+
             Refresh();
         }
 

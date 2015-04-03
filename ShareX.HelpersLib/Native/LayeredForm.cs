@@ -34,37 +34,17 @@ namespace ShareX.HelpersLib
     {
         public LayeredForm()
         {
-            InitializeComponent();
+            SuspendLayout();
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(300, 300);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "LayeredForm";
+            ShowInTaskbar = false;
+            Text = "LayeredForm";
+            TopMost = true;
+            ResumeLayout(false);
         }
-
-        #region Windows Form Designer generated code
-
-        private System.ComponentModel.IContainer components = null;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            this.AutoScaleDimensions = new SizeF(6F, 13F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(292, 273);
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Name = "LayeredForm";
-            this.ShowInTaskbar = false;
-            this.Text = "LayeredForm";
-            this.TopMost = true;
-            this.ResumeLayout(false);
-        }
-
-        #endregion Windows Form Designer generated code
 
         protected override CreateParams CreateParams
         {
@@ -76,12 +56,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void SelectBitmap(Bitmap bitmap)
-        {
-            SelectBitmap(bitmap, 255);
-        }
-
-        public void SelectBitmap(Bitmap bitmap, int opacity)
+        public void SelectBitmap(Bitmap bitmap, int opacity = 255)
         {
             if (bitmap.PixelFormat != PixelFormat.Format32bppArgb)
             {
@@ -100,14 +75,14 @@ namespace ShareX.HelpersLib
 
                 SIZE newSize = new SIZE(bitmap.Width, bitmap.Height);
                 POINT sourceLocation = new POINT(0, 0);
-                POINT newLocation = new POINT(this.Left, this.Top);
+                POINT newLocation = new POINT(Left, Top);
                 BLENDFUNCTION blend = new BLENDFUNCTION();
                 blend.BlendOp = NativeMethods.AC_SRC_OVER;
                 blend.BlendFlags = 0;
                 blend.SourceConstantAlpha = (byte)opacity;
                 blend.AlphaFormat = NativeMethods.AC_SRC_ALPHA;
 
-                NativeMethods.UpdateLayeredWindow(this.Handle, screenDc, ref newLocation, ref newSize, memDc, ref sourceLocation, 0, ref blend, NativeMethods.ULW_ALPHA);
+                NativeMethods.UpdateLayeredWindow(Handle, screenDc, ref newLocation, ref newSize, memDc, ref sourceLocation, 0, ref blend, NativeMethods.ULW_ALPHA);
             }
             finally
             {
