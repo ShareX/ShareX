@@ -117,31 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Después de subir</value>
+    <value>Carpeta supervisada</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Cerrar</value>
+  <data name="lblFilterExample.Text" xml:space="preserve">
+    <value>Ejemplo: *.png</value>
   </data>
-  <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>Copiar imagen</value>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Filtro:</value>
   </data>
-  <data name="btnCopyLink.Text" xml:space="preserve">
-    <value>Copiar enlace</value>
+  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Incluir subdirectorios</value>
   </data>
-  <data name="btnOpenFile.Text" xml:space="preserve">
-    <value>Abrir archivo...</value>
-  </data>
-  <data name="btnOpenFolder.Text" xml:space="preserve">
-    <value>Abrir carpeta...</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
-  </data>
-  <data name="btnOpenLink.Text" xml:space="preserve">
-    <value>Abrir enlace...</value>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Ruta de la carpeta:</value>
   </data>
 </root>
