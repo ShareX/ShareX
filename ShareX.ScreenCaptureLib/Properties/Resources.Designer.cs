@@ -124,7 +124,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
                 return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Quality_", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Ctrl: Drawing mode ░ Space: Fullscreen capture.
         /// </summary>
@@ -172,8 +172,8 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X: {0}, Y: {1}
-        ///R: {2}, G: {3}, B: {4}.
+        ///   Looks up a localized string similar to R: {0}, G: {1}, B: {2}, Hex: {3}
+        ///X: {4}, Y: {5}.
         /// </summary>
         internal static string RectangleRegion_GetColorPickerText {
             get {
@@ -189,6 +189,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string RectangleRegion_GetRulerText_Ruler_info {
             get {
                 return ResourceManager.GetString("RectangleRegion_GetRulerText_Ruler_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rectangle capture transparent.
+        /// </summary>
+        internal static string RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent {
+            get {
+                return ResourceManager.GetString("RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent", resourceCulture);
             }
         }
         

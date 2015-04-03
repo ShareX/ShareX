@@ -1432,7 +1432,7 @@ namespace ShareX
 
         private delegate Image ScreenCaptureDelegate();
 
-        private enum LastRegionCaptureType { Surface, Light, Annotate }
+        private enum LastRegionCaptureType { Surface, Light, Transparent, Annotate }
 
         private LastRegionCaptureType lastRegionCaptureType = LastRegionCaptureType.Surface;
 
@@ -1525,6 +1525,9 @@ namespace ShareX
                     break;
                 case HotkeyType.RectangleLight:
                     CaptureRectangleLight(safeTaskSettings, false);
+                    break;
+                case HotkeyType.RectangleTransparent:
+                    CaptureRectangleTransparent(safeTaskSettings, false);
                     break;
                 case HotkeyType.RoundedRectangleRegion:
                     CaptureScreenshot(CaptureType.RoundedRectangle, safeTaskSettings, false);
@@ -1898,6 +1901,31 @@ namespace ShareX
             }, CaptureType.Rectangle, taskSettings, autoHideForm);
         }
 
+        private void CaptureRectangleTransparent(TaskSettings taskSettings = null, bool autoHideForm = true)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            DoCapture(() =>
+            {
+                Image img = null;
+
+                using (RectangleTransparent rectangleTransparent = new RectangleTransparent())
+                {
+                    if (rectangleTransparent.ShowDialog() == DialogResult.OK)
+                    {
+                        img = rectangleTransparent.GetAreaImage();
+
+                        if (img != null)
+                        {
+                            lastRegionCaptureType = LastRegionCaptureType.Transparent;
+                        }
+                    }
+                }
+
+                return img;
+            }, CaptureType.Rectangle, taskSettings, autoHideForm);
+        }
+
         private void CaptureLastRegion(TaskSettings taskSettings, bool autoHideForm = true)
         {
             switch (lastRegionCaptureType)
@@ -1932,6 +1960,22 @@ namespace ShareX
                     else
                     {
                         CaptureRectangleLight(taskSettings, autoHideForm);
+                    }
+                    break;
+                case LastRegionCaptureType.Transparent:
+                    if (!RectangleTransparent.LastSelectionRectangle0Based.IsEmpty)
+                    {
+                        DoCapture(() =>
+                        {
+                            using (Image screenshot = Screenshot.CaptureFullscreen())
+                            {
+                                return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
+                            }
+                        }, CaptureType.LastRegion, taskSettings, autoHideForm);
+                    }
+                    else
+                    {
+                        CaptureRectangleTransparent(taskSettings, autoHideForm);
                     }
                     break;
                 case LastRegionCaptureType.Annotate:
@@ -2067,6 +2111,11 @@ namespace ShareX
             CaptureRectangleLight();
         }
 
+        private void tsmiRectangleTransparent_Click(object sender, EventArgs e)
+        {
+            CaptureRectangleTransparent();
+        }
+
         private void tsmiEllipse_Click(object sender, EventArgs e)
         {
             CaptureScreenshot(CaptureType.Ellipse);
@@ -2158,6 +2207,11 @@ namespace ShareX
         private void tsmiTrayRectangleLight_Click(object sender, EventArgs e)
         {
             CaptureRectangleLight(null, false);
+        }
+
+        private void tsmiTrayRectangleTransparent_Click(object sender, EventArgs e)
+        {
+            CaptureRectangleTransparent(null, false);
         }
 
         private void tsmiTrayRoundedRectangle_Click(object sender, EventArgs e)

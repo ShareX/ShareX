@@ -59,7 +59,7 @@ namespace ShareX.ImageEffectsLib
         public void EditorMode()
         {
             pbResult.AllowDrop = true;
-            btnLoadImage.Visible = true;
+            mbLoadImage.Visible = true;
             btnSaveImage.Visible = true;
         }
 
@@ -323,7 +323,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void btnLoadImage_Click(object sender, EventArgs e)
+        private void tsmiLoadImageFromFile_Click(object sender, EventArgs e)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
 
@@ -335,11 +335,26 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private void tsmiLoadImageFromClipboard_Click(object sender, EventArgs e)
+        {
+            Image img = Clipboard.GetImage();
+
+            if (img != null)
+            {
+                if (DefaultImage != null) DefaultImage.Dispose();
+                DefaultImage = img;
+                UpdatePreview();
+            }
+        }
+
         private void btnSaveImage_Click(object sender, EventArgs e)
         {
-            using (Image img = ApplyEffects())
+            if (DefaultImage != null)
             {
-                ImageHelpers.SaveImageFileDialog(img);
+                using (Image img = ApplyEffects())
+                {
+                    ImageHelpers.SaveImageFileDialog(img);
+                }
             }
         }
 

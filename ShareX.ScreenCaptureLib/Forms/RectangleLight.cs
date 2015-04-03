@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -59,23 +58,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Point CurrentMousePosition { get; private set; }
-
-        public Point CurrentMousePosition0Based
-        {
-            get
-            {
-                return new Point(CurrentMousePosition.X - ScreenRectangle.X, CurrentMousePosition.Y - ScreenRectangle.Y);
-            }
-        }
-
-        public bool ShowRectangleInfo { get; set; }
-
         private Timer timer;
         private Image backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
-        private Point positionOnClick;
+        private Point currentPosition, positionOnClick;
         private bool isMouseDown;
         private Stopwatch penTimer;
 
@@ -101,15 +88,8 @@ namespace ShareX.ScreenCaptureLib
             timer.Start();
         }
 
-        private IContainer components = null;
-
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
             if (timer != null) timer.Dispose();
             if (backgroundImage != null) backgroundImage.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();
@@ -122,6 +102,7 @@ namespace ShareX.ScreenCaptureLib
         private void InitializeComponent()
         {
             SuspendLayout();
+
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             StartPosition = FormStartPosition.Manual;
@@ -160,28 +141,34 @@ namespace ShareX.ScreenCaptureLib
                 positionOnClick = CaptureHelpers.GetCursorPosition();
                 isMouseDown = true;
             }
-            else if (isMouseDown)
-            {
-                isMouseDown = false;
-                Refresh();
-            }
-            else
-            {
-                Close();
-            }
         }
 
         private void RectangleLight_MouseUp(object sender, MouseEventArgs e)
         {
-            if (isMouseDown && e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
-                if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+                if (isMouseDown)
                 {
-                    LastSelectionRectangle0Based = SelectionRectangle0Based;
-                    DialogResult = DialogResult.OK;
-                }
+                    if (SelectionRectangle0Based.Width > 0 && SelectionRectangle0Based.Height > 0)
+                    {
+                        LastSelectionRectangle0Based = SelectionRectangle0Based;
+                        DialogResult = DialogResult.OK;
+                    }
 
-                Close();
+                    Close();
+                }
+            }
+            else
+            {
+                if (isMouseDown)
+                {
+                    isMouseDown = false;
+                    Refresh();
+                }
+                else
+                {
+                    Close();
+                }
             }
         }
 
@@ -204,8 +191,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            CurrentMousePosition = CaptureHelpers.GetCursorPosition();
-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, CurrentMousePosition.X, CurrentMousePosition.Y);
+            currentPosition = CaptureHelpers.GetCursorPosition();
+            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
+
             Refresh();
         }
 

@@ -29,7 +29,6 @@ using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -150,20 +149,23 @@ namespace ShareX
                 case SupportedLanguage.English:
                     icon = Resources.us;
                     break;
-                case SupportedLanguage.Turkish:
-                    icon = Resources.tr;
-                    break;
                 case SupportedLanguage.German:
                     icon = Resources.de;
                     break;
                 case SupportedLanguage.French:
                     icon = Resources.fr;
                     break;
+                case SupportedLanguage.Hungarian:
+                    icon = Resources.hu;
+                    break;
+                case SupportedLanguage.Korean:
+                    icon = Resources.kr;
+                    break;
                 case SupportedLanguage.SimplifiedChinese:
                     icon = Resources.cn;
                     break;
-                case SupportedLanguage.Hungarian:
-                    icon = Resources.hu;
+                case SupportedLanguage.Turkish:
+                    icon = Resources.tr;
                     break;
             }
 

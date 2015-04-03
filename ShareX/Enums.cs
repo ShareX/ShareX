@@ -39,6 +39,8 @@ namespace ShareX
         French,
         [Description("Magyar (Hungarian)")]
         Hungarian,
+        [Description("한국어 (Korean)")]
+        Korean,
         [Description("简体中文 (Simplified Chinese)")]
         SimplifiedChinese,
         [Description("Türkçe (Turkish)")]
@@ -140,6 +142,7 @@ namespace ShareX
         WindowRectangle,
         RectangleAnnotate,
         RectangleLight,
+        RectangleTransparent,
         RoundedRectangleRegion,
         EllipseRegion,
         TriangleRegion,
