@@ -58,38 +58,40 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Point CurrentMousePosition { get; private set; }
+        private Rectangle PreviousSelectionRectangle { get; set; }
 
-        public Point CurrentMousePosition0Based
+        private Rectangle PreviousSelectionRectangle0Based
         {
             get
             {
-                return new Point(CurrentMousePosition.X - ScreenRectangle.X, CurrentMousePosition.Y - ScreenRectangle.Y);
+                return new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X, PreviousSelectionRectangle.Y - ScreenRectangle.Y,
+                    PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
             }
         }
-
-        public bool ShowRectangleInfo { get; set; }
 
         private Timer timer;
         private Bitmap surface;
         private Graphics gSurface;
-        private Pen borderDotPen, borderDotPen2;
-        private Point positionOnClick;
+        private Pen clearPen, borderDotPen, borderDotPen2;
+        private Point currentPosition, positionOnClick;
         private bool isMouseDown;
         private Stopwatch penTimer;
 
         public RectangleTransparent()
         {
+            clearPen = new Pen(Color.FromArgb(1, 0, 0, 0));
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             penTimer = Stopwatch.StartNew();
             ScreenRectangle = CaptureHelpers.GetScreenBounds();
+
             surface = new Bitmap(ScreenRectangle.Width, ScreenRectangle.Height);
             gSurface = Graphics.FromImage(surface);
             gSurface.InterpolationMode = InterpolationMode.NearestNeighbor;
             gSurface.SmoothingMode = SmoothingMode.HighSpeed;
             gSurface.CompositingMode = CompositingMode.SourceCopy;
+            gSurface.Clear(Color.FromArgb(1, 0, 0, 0));
 
             StartPosition = FormStartPosition.Manual;
             Bounds = ScreenRectangle;
@@ -113,6 +115,7 @@ namespace ShareX.ScreenCaptureLib
         protected override void Dispose(bool disposing)
         {
             if (timer != null) timer.Dispose();
+            if (clearPen != null) clearPen.Dispose();
             if (borderDotPen != null) borderDotPen.Dispose();
             if (borderDotPen2 != null) borderDotPen2.Dispose();
             if (gSurface != null) gSurface.Dispose();
@@ -185,19 +188,22 @@ namespace ShareX.ScreenCaptureLib
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            CurrentMousePosition = CaptureHelpers.GetCursorPosition();
-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, CurrentMousePosition.X, CurrentMousePosition.Y);
+            currentPosition = CaptureHelpers.GetCursorPosition();
+            PreviousSelectionRectangle = SelectionRectangle;
+            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
+
             RefreshSurface();
         }
 
         private void RefreshSurface()
         {
-            gSurface.Clear(Color.FromArgb(1, 0, 0, 0));
+            // Clear previous rectangle selection
+            gSurface.DrawRectangleProper(clearPen, PreviousSelectionRectangle0Based);
 
             if (isMouseDown)
             {
-                gSurface.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
+                gSurface.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 gSurface.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
 
