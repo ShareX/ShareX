@@ -334,10 +334,10 @@
     <value>기본 FTP 계정 덮어쓰기:</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
-    <value>기본 "촬영 후" 설정 사용</value>
+    <value>기본 "촬영 뒤 할 일" 설정 사용</value>
   </data>
   <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
-    <value>기본 "업로드 후" 설정 사용</value>
+    <value>기본 "업로드 뒤 할 일" 설정 사용</value>
   </data>
   <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
     <value>기본 "목적지" 설정 사용</value>
@@ -349,7 +349,7 @@
     <value>이미지 크기가 섬네일 크기보다 클 때에만 섬네일 생성하기</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>촬영 후 소리 재생하기</value>
+    <value>촬영 뒤 소리 재생하기</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>작업 완료 후 소리 재생하기</value>
@@ -364,7 +364,7 @@
     <value>영역 촬영시에만 효과 적용하기</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
-    <value>촬영 후 "촬영 후 작업" 창 띄우기</value>
+    <value>촬영 뒤 "촬영 뒤 할 일" 창 띄우기</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>다음 시간동안 기다린 뒤 녹화 시작:</value>
