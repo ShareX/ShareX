@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Después de subir</value>
+  <data name="btnEncodersEdit.Text" xml:space="preserve">
+    <value>Editar</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Cerrar</value>
+  <data name="chEncoderPath.Text" xml:space="preserve">
+    <value>Ruta</value>
   </data>
-  <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>Copiar imagen</value>
+  <data name="btnEncodersRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
   </data>
-  <data name="btnCopyLink.Text" xml:space="preserve">
-    <value>Copiar enlace</value>
-  </data>
-  <data name="btnOpenFile.Text" xml:space="preserve">
-    <value>Abrir archivo...</value>
-  </data>
-  <data name="btnOpenFolder.Text" xml:space="preserve">
-    <value>Abrir carpeta...</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
+  <data name="chEncoderDescription.Text" xml:space="preserve">
     <value>Descripción</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
+  <data name="btnEncoderDuplicate.Text" xml:space="preserve">
+    <value>Duplicar</value>
   </data>
-  <data name="btnOpenLink.Text" xml:space="preserve">
-    <value>Abrir enlace...</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Perfiles encoder</value>
+  </data>
+  <data name="chEncoderArgs.Text" xml:space="preserve">
+    <value>Argumentos</value>
+  </data>
+  <data name="btnEncodersAdd.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="chEncoderOutputExtension.Text" xml:space="preserve">
+    <value>Extensión de salida</value>
   </data>
 </root>
