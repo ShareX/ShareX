@@ -192,7 +192,16 @@ namespace ShareX.ScreenCaptureLib
             PreviousSelectionRectangle = SelectionRectangle;
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
 
-            RefreshSurface();
+            try
+            {
+                RefreshSurface();
+            }
+            catch (Exception ex)
+            {
+#if DEBUG
+                MessageBox.Show(ex.ToString());
+#endif
+            }
         }
 
         private void RefreshSurface()
