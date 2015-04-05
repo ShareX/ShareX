@@ -992,6 +992,9 @@ namespace ShareX
                 case FileDestination.Imgrush:
                     fileUploader = new MediaCrushUploader("https://imgrush.com");
                     break;
+                case FileDestination.phpuush:
+                    fileUploader = new phpuush(Program.UploadersConfig.phpuushSettings);
+                    break;
             }
 
             if (fileUploader != null)

@@ -124,7 +124,9 @@ namespace ShareX.UploadersLib
         Imgrush,
         SharedFolder, // Localized
         Email, // Localized
-        CustomFileUploader // Localized
+        CustomFileUploader, // Localized
+        [Description("phpuush")]
+        phpuush
     }
 
     [Description("URL shorteners"), DefaultValue(BITLY)]

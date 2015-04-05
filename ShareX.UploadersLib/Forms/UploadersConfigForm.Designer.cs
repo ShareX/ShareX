@@ -307,6 +307,16 @@
             this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
             this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
             this.ucLocalhostAccounts = new ShareX.UploadersLib.AccountsControl();
+            this.tpphpuush = new System.Windows.Forms.TabPage();
+            this.txtphpuushAPIKey = new System.Windows.Forms.TextBox();
+            this.lblphpuushAPIKey = new System.Windows.Forms.Label();
+            this.btnphpuushGetAPIKey = new System.Windows.Forms.Button();
+            this.txtphpuushPassword = new System.Windows.Forms.TextBox();
+            this.lblphpuushPassword = new System.Windows.Forms.Label();
+            this.txtphpuushEmailAddress = new System.Windows.Forms.TextBox();
+            this.lblphpuushEmailAddress = new System.Windows.Forms.Label();
+            this.txtphpuushURL = new System.Windows.Forms.TextBox();
+            this.lblphpuushURL = new System.Windows.Forms.Label();
             this.btnCopyShowFiles = new System.Windows.Forms.Button();
             this.tpTextUploaders = new System.Windows.Forms.TabPage();
             this.tcTextUploaders = new System.Windows.Forms.TabControl();
@@ -460,6 +470,7 @@
             this.tpEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).BeginInit();
             this.tpSharedFolder.SuspendLayout();
+            this.tpphpuush.SuspendLayout();
             this.tpTextUploaders.SuspendLayout();
             this.tcTextUploaders.SuspendLayout();
             this.tpPastebin.SuspendLayout();
@@ -1173,6 +1184,7 @@
             this.tcFileUploaders.Controls.Add(this.tpLambda);
             this.tcFileUploaders.Controls.Add(this.tpEmail);
             this.tcFileUploaders.Controls.Add(this.tpSharedFolder);
+            this.tcFileUploaders.Controls.Add(this.tpphpuush);
             resources.ApplyResources(this.tcFileUploaders, "tcFileUploaders");
             this.tcFileUploaders.Multiline = true;
             this.tcFileUploaders.Name = "tcFileUploaders";
@@ -2511,6 +2523,73 @@
             this.cboSharedFolderImages.Name = "cboSharedFolderImages";
             this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
             // 
+            // tpphpuush
+            // 
+            this.tpphpuush.Controls.Add(this.txtphpuushAPIKey);
+            this.tpphpuush.Controls.Add(this.lblphpuushAPIKey);
+            this.tpphpuush.Controls.Add(this.btnphpuushGetAPIKey);
+            this.tpphpuush.Controls.Add(this.txtphpuushPassword);
+            this.tpphpuush.Controls.Add(this.lblphpuushPassword);
+            this.tpphpuush.Controls.Add(this.txtphpuushEmailAddress);
+            this.tpphpuush.Controls.Add(this.lblphpuushEmailAddress);
+            this.tpphpuush.Controls.Add(this.txtphpuushURL);
+            this.tpphpuush.Controls.Add(this.lblphpuushURL);
+            resources.ApplyResources(this.tpphpuush, "tpphpuush");
+            this.tpphpuush.Name = "tpphpuush";
+            this.tpphpuush.UseVisualStyleBackColor = true;
+            // 
+            // txtphpuushAPIKey
+            // 
+            resources.ApplyResources(this.txtphpuushAPIKey, "txtphpuushAPIKey");
+            this.txtphpuushAPIKey.Name = "txtphpuushAPIKey";
+            this.txtphpuushAPIKey.TextChanged += new System.EventHandler(this.txtphpuushAPIKey_TextChanged);
+            // 
+            // lblphpuushAPIKey
+            // 
+            resources.ApplyResources(this.lblphpuushAPIKey, "lblphpuushAPIKey");
+            this.lblphpuushAPIKey.Name = "lblphpuushAPIKey";
+            // 
+            // btnphpuushGetAPIKey
+            // 
+            resources.ApplyResources(this.btnphpuushGetAPIKey, "btnphpuushGetAPIKey");
+            this.btnphpuushGetAPIKey.Name = "btnphpuushGetAPIKey";
+            this.btnphpuushGetAPIKey.UseVisualStyleBackColor = true;
+            this.btnphpuushGetAPIKey.Click += new System.EventHandler(this.btnphpuushGetAPIKey_Click);
+            // 
+            // txtphpuushPassword
+            // 
+            resources.ApplyResources(this.txtphpuushPassword, "txtphpuushPassword");
+            this.txtphpuushPassword.Name = "txtphpuushPassword";
+            this.txtphpuushPassword.UseSystemPasswordChar = true;
+            this.txtphpuushPassword.TextChanged += new System.EventHandler(this.txtphpuushPassword_TextChanged);
+            // 
+            // lblphpuushPassword
+            // 
+            resources.ApplyResources(this.lblphpuushPassword, "lblphpuushPassword");
+            this.lblphpuushPassword.Name = "lblphpuushPassword";
+            // 
+            // txtphpuushEmailAddress
+            // 
+            resources.ApplyResources(this.txtphpuushEmailAddress, "txtphpuushEmailAddress");
+            this.txtphpuushEmailAddress.Name = "txtphpuushEmailAddress";
+            this.txtphpuushEmailAddress.TextChanged += new System.EventHandler(this.txtphpuushEmailAddress_TextChanged);
+            // 
+            // lblphpuushEmailAddress
+            // 
+            resources.ApplyResources(this.lblphpuushEmailAddress, "lblphpuushEmailAddress");
+            this.lblphpuushEmailAddress.Name = "lblphpuushEmailAddress";
+            // 
+            // txtphpuushURL
+            // 
+            resources.ApplyResources(this.txtphpuushURL, "txtphpuushURL");
+            this.txtphpuushURL.Name = "txtphpuushURL";
+            this.txtphpuushURL.TextChanged += new System.EventHandler(this.txtphpuushURL_TextChanged);
+            // 
+            // lblphpuushURL
+            // 
+            resources.ApplyResources(this.lblphpuushURL, "lblphpuushURL");
+            this.lblphpuushURL.Name = "lblphpuushURL";
+            // 
             // ucLocalhostAccounts
             // 
             resources.ApplyResources(this.ucLocalhostAccounts, "ucLocalhostAccounts");
@@ -3408,6 +3487,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEmailSmtpPort)).EndInit();
             this.tpSharedFolder.ResumeLayout(false);
             this.tpSharedFolder.PerformLayout();
+            this.tpphpuush.ResumeLayout(false);
+            this.tpphpuush.PerformLayout();
             this.tpTextUploaders.ResumeLayout(false);
             this.tcTextUploaders.ResumeLayout(false);
             this.tpPastebin.ResumeLayout(false);
@@ -3836,5 +3917,15 @@
         private System.Windows.Forms.Label lblLambdaApiKey;
         private System.Windows.Forms.TextBox txtLambdaApiKey;
         private System.Windows.Forms.Label lblLambdaInfo;        
+        private System.Windows.Forms.TabPage tpphpuush;
+        private System.Windows.Forms.TextBox txtphpuushAPIKey;
+        private System.Windows.Forms.Label lblphpuushAPIKey;
+        private System.Windows.Forms.Button btnphpuushGetAPIKey;
+        private System.Windows.Forms.TextBox txtphpuushPassword;
+        private System.Windows.Forms.Label lblphpuushPassword;
+        private System.Windows.Forms.TextBox txtphpuushEmailAddress;
+        private System.Windows.Forms.Label lblphpuushEmailAddress;
+        private System.Windows.Forms.TextBox txtphpuushURL;
+        private System.Windows.Forms.Label lblphpuushURL;
     }
 }

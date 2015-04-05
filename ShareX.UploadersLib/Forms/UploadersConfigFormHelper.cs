@@ -1955,5 +1955,26 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Gist
+
+        # region phpuush
+
+        public bool phpuushAuth(string email, string password)
+        {
+            phpuush phpuush = new phpuush(Config.phpuushSettings);
+            string key = phpuush.GetAPIKey();
+
+            if(!string.IsNullOrEmpty(key))
+            {
+                txtphpuushAPIKey.Text = key;
+                MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return true;
+            }
+            
+            MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        #endregion phpuush
     }
 }
