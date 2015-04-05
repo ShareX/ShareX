@@ -111,6 +111,7 @@ namespace ShareX.UploadersLib
             AddIconToTab(tpUpaste, Resources.Upaste);
             AddIconToTab(tpYourls, Resources.Yourls);
             AddIconToTab(tpLambda, Resources.Lambda);
+            AddIconToTab(tpphpuush, Resources.phpuush);
 
             tcFileUploaders.TabPages.Remove(tpHubic);
 
@@ -542,6 +543,12 @@ namespace ShareX.UploadersLib
             // Lambda
 
             txtLambdaApiKey.Text = Config.LambdaSettings.UserAPIKey;
+
+            // phpuush
+            txtphpuushURL.Text = Config.phpuushSettings.url;
+            txtphpuushAPIKey.Text = Config.phpuushSettings.APIKey;
+            txtphpuushEmailAddress.Text = Config.phpuushSettings.email;
+            txtphpuushPassword.Text = Config.phpuushSettings.password;
 
             #endregion File uploaders
 
@@ -1994,6 +2001,35 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Lambda
+
+        # region phpuush
+
+        private void txtphpuushURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.phpuushSettings.url = (sender as TextBox).Text;
+        }
+
+        private void txtphpuushAPIKey_TextChanged(object sender, EventArgs e)
+        {
+            Config.phpuushSettings.APIKey = (sender as TextBox).Text;
+        }
+
+        private void txtphpuushEmailAddress_TextChanged(object sender, EventArgs e)
+        {
+            Config.phpuushSettings.email = (sender as TextBox).Text;
+        }
+
+        private void txtphpuushPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.phpuushSettings.password = (sender as TextBox).Text;
+        }
+
+        private void btnphpuushGetAPIKey_Click(object sender, EventArgs e)
+        {
+            phpuushAuth(txtphpuushEmailAddress.Text, txtphpuushPassword.Text);
+        }
+
+        #endregion phpuush
 
         #endregion File Uploaders
 

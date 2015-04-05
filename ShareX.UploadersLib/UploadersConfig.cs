@@ -245,6 +245,10 @@ namespace ShareX.UploadersLib
 
         public LambdaSettings LambdaSettings = new LambdaSettings();
 
+        // phpuush
+
+        public phpuushSettings phpuushSettings = new phpuushSettings();
+
         #endregion File uploaders
 
         #region URL shorteners
@@ -404,6 +408,11 @@ namespace ShareX.UploadersLib
                     return !string.IsNullOrEmpty(MediaFireUsername) && !string.IsNullOrEmpty(MediaFirePassword);
                 case FileDestination.Lambda:
                     return LambdaSettings != null && !string.IsNullOrEmpty(LambdaSettings.UserAPIKey);
+                case FileDestination.phpuush:
+                    return  !string.IsNullOrEmpty(phpuushSettings.APIKey) && 
+                            !string.IsNullOrEmpty(phpuushSettings.url) &&  
+                            !string.IsNullOrEmpty(phpuushSettings.email) &&
+                            !string.IsNullOrEmpty(phpuushSettings.password);
             }
 
             return true;
