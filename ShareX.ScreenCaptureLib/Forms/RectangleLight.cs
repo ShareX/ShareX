@@ -208,14 +208,13 @@ namespace ShareX.ScreenCaptureLib
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.SmoothingMode = SmoothingMode.HighSpeed;
             g.CompositingMode = CompositingMode.SourceCopy;
+            g.CompositingQuality = CompositingQuality.HighSpeed;
             g.FillRectangle(backgroundBrush, ScreenRectangle0Based);
 
             if (isMouseDown)
             {
-                g.CompositingMode = CompositingMode.SourceOver;
-                g.CompositingQuality = CompositingQuality.HighSpeed;
-                g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 borderDotPen2.DashOffset = (int)(penTimer.Elapsed.TotalMilliseconds / 100) % 10;
+                g.DrawRectangleProper(borderDotPen, SelectionRectangle0Based);
                 g.DrawRectangleProper(borderDotPen2, SelectionRectangle0Based);
             }
         }

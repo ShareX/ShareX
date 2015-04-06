@@ -91,6 +91,7 @@ namespace ShareX.ScreenCaptureLib
             gSurface.InterpolationMode = InterpolationMode.NearestNeighbor;
             gSurface.SmoothingMode = SmoothingMode.HighSpeed;
             gSurface.CompositingMode = CompositingMode.SourceCopy;
+            gSurface.CompositingQuality = CompositingQuality.HighSpeed;
             gSurface.Clear(Color.FromArgb(1, 0, 0, 0));
 
             StartPosition = FormStartPosition.Manual;
@@ -196,11 +197,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 RefreshSurface();
             }
-            catch (Exception ex)
+            catch
             {
-#if DEBUG
-                MessageBox.Show(ex.ToString());
-#endif
             }
         }
 
