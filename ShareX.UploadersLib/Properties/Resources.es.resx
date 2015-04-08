@@ -117,154 +117,140 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de la aplicación</value>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
+    <value>¿Eliminar archivo?</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
+    <value>Conexión a {0}</value>
   </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
+    <value>ShareX cliente FTP</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Añadir...</value>
+  <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
+    <value>Ruta no existe:</value>
   </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar...</value>
+  <data name="DropboxFilesForm_tsmiCreateDirectory_Click_Directory_name_to_create" xml:space="preserve">
+    <value>Nombre del directorio para crear</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
+  <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
+    <value>¿Está seguro de que desea borrar "{0}" de su Dropbox?</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
+    <value>Buscar un archivo de certificado...</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>Problema no encontrado</value>
   </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Número de reintentos si subir falla</value>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>Nueva cuenta</value>
   </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>No mostrar diálogo imprimir de Windows</value>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>Error Tweet</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Imagen configuracion de impresion...</value>
+  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
+    <value>Carpeta raíz</value>
   </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>No mostrar el diálogo de configuración de impresión de la imagen</value>
+  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
+    <value>Estado: No ha iniciado sesión.</value>
   </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Recordar la posición de la ventana principal</value>
+  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
+    <value>Estado: Iniciado sesión.</value>
   </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Recordar tamaño de la ventana principal</value>
+  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
+    <value>Buscar un archivo de clave...</value>
   </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Mostrar icono de la bandeja</value>
+  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
+    <value>Estado: Inicio de sesión fallido.</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
+    <value>Nombre del directorio para crear</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
+  <data name="UploadersConfigForm_Error" xml:space="preserve">
+    <value>Error</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Idioma:</value>
+  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
+    <value>Nombre del equipo no es válido</value>
   </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Tamaño de búfer:</value>
+  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
+    <value>Se requiere autenticación</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles</value>
+  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
+    <value>Autorizar</value>
   </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Minimizar a la bandeja al iniciar Windows</value>
+  <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
+    <value>Error en lista de carpetas Hubic</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Ejecutar ShareX al iniciar Windows</value>
+  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
+    <value>Inicio de sesión fallido</value>
   </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
+    <value>Conectado!</value>
   </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
+  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
+    <value>Conectado!
+Creado carpetas:</value>
   </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuración de proxy:</value>
+  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
+    <value>Configurado</value>
   </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Puerto:</value>
+  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
+    <value>Haga clic en botón de refrescar</value>
   </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
+  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
+    <value>Inicia sesión con éxito.</value>
   </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Imprimir</value>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>Carpeta seleccionada:</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Email_" xml:space="preserve">
+    <value>Email:</value>
   </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Name_" xml:space="preserve">
+    <value>Nombre:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_User_ID_" xml:space="preserve">
+    <value>ID de usuario:</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Subir</value>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Download_path_" xml:space="preserve">
+    <value>Descargar ruta:</value>
   </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avanzado</value>
+  <data name="UploadersConfigForm_UpdateDropboxStatus_Upload_path_" xml:space="preserve">
+    <value>Ruta de subir:</value>
   </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>General</value>
+  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
+    <value>Error: El resultado está vacía.</value>
   </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Rutas</value>
+  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
+    <value>No configurado</value>
   </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>¡Ayúdanos a traducir ShareX a su idioma!</value>
+  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
+    <value>Autenticación no es válido</value>
   </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Carpeta personal ShareX:</value>
+  <data name="UploadersConfigForm_DropboxAuthComplete_Login_successful_but_getting_account_info_failed_" xml:space="preserve">
+    <value>Inicio de sesión exitoso pero obtener información de la cuenta falló.</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: Es necesario reabrir ShareX para cambios de carpetas personales surtan efecto.</value>
+  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
+    <value>Ruta de álbum e.g.</value>
   </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en el botón barra de tareas</value>
+  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
+    <value>Sin iniciar sesión.</value>
   </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en icono de la bandeja</value>
+  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
+    <value>Conectado como {0}.</value>
   </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX en "Enviar a" menú</value>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Consulta carpetas...</value>
   </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
+  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
+    <value>{0} creado con éxito.</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utilice uploaders secundarias en orden de preferencia al reintentar</value>
+  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
+    <value>Registro de SendSpace</value>
   </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders textos secundarios</value>
+  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
+    <value>Autorización de refrescar no es compatible.</value>
   </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders imágenes secundarias</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders archivos secundarios</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilizar carpeta screenshots personalizadas</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modelo subcarpeta:</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Límite de subida simultánea:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 deshabilita)</value>
+  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
+    <value>Cuadro de lista de carpetas de refrescar falló</value>
   </data>
 </root>

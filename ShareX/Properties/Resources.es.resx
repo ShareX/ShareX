@@ -121,7 +121,7 @@
     <value>Colaboradores</value>
   </data>
   <data name="AboutForm_AboutForm_Issues" xml:space="preserve">
-    <value>Cuestiones</value>
+    <value>Problemas</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traductores</value>
@@ -214,7 +214,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>¿Está seguro de que desea eliminar este archivo?</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Prueba de upload de texto</value>
+    <value>Prueba de cargador de texto</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Teclas de acceso rápido configurados actualmente:</value>
@@ -331,10 +331,10 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
     <value>Subir archivos</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Subida de archivo</value>
+    <value>Carga de archivo</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>Subida de carpeta</value>
+    <value>Carga de carpeta</value>
   </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
     <value>Compartir URL ({0})</value>
@@ -358,7 +358,7 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
     <value>Uploader de imágenes: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Uploader de archivos: {0}</value>
+    <value>Cargador de archivos: {0}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>No mostrar este mensaje de nuevo.</value>
@@ -370,7 +370,7 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
     <value>Descarga fallida: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Uploader de textos: {0}</value>
+    <value>Cargador de texto: {0}</value>
   </data>
   <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
     <value>Configurar los codificadores de vídeo CLI ---&gt;</value>

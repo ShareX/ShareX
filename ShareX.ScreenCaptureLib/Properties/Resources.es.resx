@@ -117,154 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de la aplicación</value>
+  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
+    <value>Error FFmpeg</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
+    <value>Buscar ffmpeg.exe</value>
   </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
+    <value>Tasa de bits: {0}k</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Añadir...</value>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
+    <value>FFmpeg descargado con éxito.</value>
   </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar...</value>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>FFmpeg descarga fallida.</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
+  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
+    <value>Calidad:</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
+    <value>X: {0} / Y: {1}
+W: {2} / H: {3}</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>Capturar región</value>
   </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Número de reintentos si subir falla</value>
+  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
+    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
+Anchura: {4} px / Altura: {5} px
+Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
   </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>No mostrar diálogo imprimir de Windows</value>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Captura de rectángulo ligero</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Imagen configuracion de impresion...</value>
+  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
+    <value>Captura de rectángulo anotar</value>
   </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>No mostrar el diálogo de configuración de impresión de la imagen</value>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Captura de rectángulo transparente</value>
   </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Recordar la posición de la ventana principal</value>
+  <data name="RectangleAnnotate_DrawTips_Drawing_mode_off" xml:space="preserve">
+    <value>Ctrl: Modo de dibujo ░ Espacio: Captura de pantalla completa</value>
   </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Recordar tamaño de la ventana principal</value>
-  </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Mostrar icono de la bandeja</value>
-  </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Idioma:</value>
-  </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Tamaño de búfer:</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles</value>
-  </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Minimizar a la bandeja al iniciar Windows</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Ejecutar ShareX al iniciar Windows</value>
-  </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuración de proxy:</value>
-  </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Puerto:</value>
-  </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Imprimir</value>
-  </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Subir</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avanzado</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Rutas</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>¡Ayúdanos a traducir ShareX a su idioma!</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Carpeta personal ShareX:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: Es necesario reabrir ShareX para cambios de carpetas personales surtan efecto.</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en el botón barra de tareas</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en icono de la bandeja</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX en "Enviar a" menú</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utilice uploaders secundarias en orden de preferencia al reintentar</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders textos secundarios</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders imágenes secundarias</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders archivos secundarios</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilizar carpeta screenshots personalizadas</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modelo subcarpeta:</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Límite de subida simultánea:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 deshabilita)</value>
+  <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
+    <value>Ctrl: Modo de región ░ Mayúsculas: Color de la pluma ░ Rueda del mouse: Tamaño de la pluma ░ Espacio: Captura de pantalla completa</value>
   </data>
 </root>
