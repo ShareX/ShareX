@@ -7299,6 +7299,9 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbAmazonS3Endpoint.Items8" xml:space="preserve">
     <value>https://objects.dreamhost.com/</value>
   <comment>@Invariant</comment></data>
+    <data name="cbAmazonS3Endpoint.Items9" xml:space="preserve">
+    <value>https://s3-eu-central-1.amazonaws.com/</value>
+  <comment>@Invariant</comment></data>
   <data name="cbAmazonS3Endpoint.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
   </data>
