@@ -1174,4 +1174,10 @@
   <data name="tsmiTrayAutomate.Text" xml:space="preserve">
     <value>Otomatikleştirmek...</value>
   </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Dikdörtgen (Saydam)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Dikdörtgen (Saydam)</value>
+  </data>
 </root>

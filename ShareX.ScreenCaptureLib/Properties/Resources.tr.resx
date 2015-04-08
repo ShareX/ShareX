@@ -159,4 +159,7 @@ G: {2} / Y: {3}</value>
 Genişlik: {4} px / Yükseklik: {5} px
 Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Dikdörtgen yakalama saydam</value>
+  </data>
 </root>

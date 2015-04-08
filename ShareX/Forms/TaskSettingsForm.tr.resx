@@ -423,4 +423,7 @@
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>FFmpeg ayarları...</value>
   </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Kişisel zaman dilimi kullan:</value>
+  </data>
 </root>
