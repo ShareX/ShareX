@@ -139,7 +139,7 @@
     <value>Después de la captura...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>Después de la subida...</value>
+    <value>Después de subir...</value>
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
     <value>Perfiles...</value>
@@ -259,7 +259,7 @@
     <value>Cuando se hace captura de la ventana si la ventana se cruza con la barra de tareas; ocultar la barra de tareas</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>Captura de área de cliente al hacer ventana o captura de la ventana activa</value>
+    <value>Capturar área de cliente al hacer ventana o captura de la ventana activa</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
     <value>Ventana de captura con la sombra (requiere transparencia)</value>
@@ -313,16 +313,16 @@
     <value>Acortadores de URL</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders de textos</value>
+    <value>Cargadores de texto</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Uploaders de imágenes</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders de archivos</value>
+    <value>Cargadores de archivos</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
-    <value>Upload</value>
+    <value>Subir</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Miniatura</value>
@@ -382,7 +382,7 @@
     <value>Mostrar ventana "Tareas después de la captura" después de la captura se hace</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Si portapapeles contiene una dirección de fichero; descargarlo y cargarlo</value>
+    <value>Si el portapapeles contiene una dirección de fichero; descargarlo y cargarlo</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Sobrescribir la configuración predeterminada del uploader personalizado</value>
@@ -409,10 +409,10 @@
     <value>Utilice acciones en configuración de la tarea de la ventana principal</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Utilice la configuración avanzada en configuración de la tarea de la ventana principal</value>
+    <value>Utilizar la configuración avanzada en configuración de la tarea de la ventana principal</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Utilice la configuración de captura en configuración de la tarea de la ventana principal</value>
+    <value>Utilizar la configuración de captura en configuración de la tarea de la ventana principal</value>
   </data>
   <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
     <value>Utilice la configuración general en configuración de la tarea de la ventana principal</value>

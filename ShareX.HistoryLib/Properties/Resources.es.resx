@@ -117,154 +117,100 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de la aplicación</value>
+  <data name="HistoryForm_HistoryForm_History_" xml:space="preserve">
+    <value>Historial: {0}</value>
   </data>
-  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>Total</value>
   </data>
-  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>Copiar</value>
   </data>
-  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
-    <value>Añadir...</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>Archivo</value>
   </data>
-  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar...</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>Nombre del archivo</value>
   </data>
-  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>Carpeta</value>
   </data>
-  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>Ruta de archivo</value>
   </data>
-  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
-    <value>Abrir...</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>Filtrado: {0}</value>
   </data>
-  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
-    <value>Número de reintentos si subir falla</value>
+  <data name="HistoryForm_HistoryForm_Current_culture___0__" xml:space="preserve">
+    <value>Cultura actual ({0})</value>
   </data>
-  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>No mostrar diálogo imprimir de Windows</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>Nombre del archivo con extensión</value>
   </data>
-  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Imagen configuracion de impresion...</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>Imagen HTML</value>
   </data>
-  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>No mostrar el diálogo de configuración de impresión de la imagen</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>Enlace HTML</value>
   </data>
-  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Recordar la posición de la ventana principal</value>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>Imagen</value>
   </data>
-  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Recordar tamaño de la ventana principal</value>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>Más información</value>
   </data>
-  <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Mostrar icono de la bandeja</value>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>Abrir</value>
   </data>
-  <data name="chDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
+    <value>Mostrar</value>
   </data>
-  <data name="chFormat.Text" xml:space="preserve">
-    <value>Formato</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>Texto</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Idioma:</value>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>URL acortada</value>
   </data>
-  <data name="lblBufferSize.Text" xml:space="preserve">
-    <value>Tamaño de búfer:</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>Enlace del foro (BBCode)</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles</value>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>Previsualización de imagen</value>
   </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Minimizar a la bandeja al iniciar Windows</value>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Ejecutar ShareX al iniciar Windows</value>
+  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
+    <value>URLs ({0})</value>
   </data>
-  <data name="lblProxyPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Copiar el nombre</value>
   </data>
-  <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Copiar el valor</value>
   </data>
-  <data name="lblProxyMethod.Text" xml:space="preserve">
-    <value>Configuración de proxy:</value>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Nombre</value>
   </data>
-  <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>Puerto:</value>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Valor</value>
   </data>
-  <data name="lblProxyHost.Text" xml:space="preserve">
-    <value>Host:</value>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>URL miniatura</value>
   </data>
-  <data name="tpPrint.Text" xml:space="preserve">
-    <value>Imprimir</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Imagen foro (BBCode)</value>
   </data>
-  <data name="tpProxy.Text" xml:space="preserve">
-    <value>Proxy</value>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>Foro vinculado (BBCode)</value>
   </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>Supresión URL</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
+  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
+    <value>Enlace HTML ({0})</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Subir</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Avanzado</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="tpPaths.Text" xml:space="preserve">
-    <value>Rutas</value>
-  </data>
-  <data name="llTranslators.Text" xml:space="preserve">
-    <value>¡Ayúdanos a traducir ShareX a su idioma!</value>
-  </data>
-  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Carpeta personal ShareX:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: Es necesario reabrir ShareX para cambios de carpetas personales surtan efecto.</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en el botón barra de tareas</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Mostrar el progreso en icono de la bandeja</value>
-  </data>
-  <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX en "Enviar a" menú</value>
-  </data>
-  <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utilice uploaders secundarias en orden de preferencia al reintentar</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders textos secundarios</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders imágenes secundarias</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders archivos secundarios</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilizar carpeta screenshots personalizadas</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modelo subcarpeta:</value>
-  </data>
-  <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Límite de subida simultánea:</value>
-  </data>
-  <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 deshabilita)</value>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>Imagen enlazada HTML</value>
   </data>
 </root>

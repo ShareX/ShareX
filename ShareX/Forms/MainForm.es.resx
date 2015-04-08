@@ -130,10 +130,10 @@
     <value>Estado</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
-    <value>Nombre de archivo</value>
+    <value>Nombre del archivo</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Configuración de la aplicación</value>
+    <value>Configuración de la aplicación...</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>Historial...</value>
@@ -169,7 +169,7 @@
     <value>Carpeta</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
-    <value>Nombre de archivo con extensión</value>
+    <value>Nombre del archivo con extensión</value>
   </data>
   <data name="tsmiAutomate.Text" xml:space="preserve">
     <value>Automatizar...</value>
@@ -208,7 +208,7 @@
     <value>URL</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>URL de miniatura</value>
+    <value>URL miniatura</value>
   </data>
   <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
     <value>Imagen de miniatura</value>
@@ -286,10 +286,10 @@
     <value>Archivo de miniatura</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
-    <value>URL de miniatura</value>
+    <value>URL miniatura</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Configuración del destino...</value>
+    <value>Configuración de destinacion...</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>Cambiador de DNS...</value>
@@ -340,10 +340,10 @@
     <value>Cliente FTP...</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Verificación Hash...</value>
+    <value>Verificación hash...</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders de archivos</value>
+    <value>Cargadores de archivos</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automático</value>
@@ -394,7 +394,7 @@
     <value>Mostrar errores</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
-    <value>Mostrar código QR...</value>
+    <value>Mostrar QR código...</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
     <value>Prueba de subida de archivo</value>
@@ -409,7 +409,7 @@
     <value>Registro de depuración...</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders de textos</value>
+    <value>Cargadores de texto</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Después de subir</value>
@@ -490,7 +490,7 @@
     <value>Salir</value>
   </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders de archivos</value>
+    <value>Cargadores de archivos</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Destinaciones</value>
@@ -562,7 +562,7 @@
     <value>Grabación de pantalla (GIF)</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders de textos</value>
+    <value>Cargadores de texto</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Mostrar la ventana ShareX</value>
@@ -598,7 +598,7 @@
     <value>Subir desde el portapapeles...</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Carpeta upload...</value>
+    <value>Carpeta de subir...</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
     <value>Subir desde URL...</value>
@@ -613,7 +613,7 @@
     <value>Subir archivo...</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Carpeta upload...</value>
+    <value>Carpeta de subir...</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>Acortadores de url</value>

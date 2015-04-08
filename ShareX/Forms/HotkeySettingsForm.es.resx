@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>Agregar...</value>
+    <value>Añadir...</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicar</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>Quitar...</value>
+    <value>Quitar</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Editar...</value>

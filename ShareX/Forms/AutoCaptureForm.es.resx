@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnExecute.Text" xml:space="preserve">
-    <value>Inicio</value>
+    <value>Iniciar</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
     <value>Seleccionar región</value>
@@ -136,7 +136,7 @@
     <value>Región personalizada</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
-    <value>Segundos</value>
+    <value>segundos</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
     <value>Tiempo de repetición</value>
