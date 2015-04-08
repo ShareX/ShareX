@@ -916,6 +916,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capture rectangle region (Transparent).
+        /// </summary>
+        internal static string HotkeyType_RectangleTransparent {
+            get {
+                return ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture rounded rectangle region.
         /// </summary>
         internal static string HotkeyType_RoundedRectangleRegion {
