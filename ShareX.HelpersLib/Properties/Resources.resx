@@ -631,4 +631,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_Automate" xml:space="preserve">
     <value>Open/Stop Automate tool</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capture rectangle region (Transparent)</value>
+  </data>
 </root>

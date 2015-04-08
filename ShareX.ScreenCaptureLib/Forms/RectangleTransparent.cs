@@ -91,6 +91,7 @@ namespace ShareX.ScreenCaptureLib
             gSurface.InterpolationMode = InterpolationMode.NearestNeighbor;
             gSurface.SmoothingMode = SmoothingMode.HighSpeed;
             gSurface.CompositingMode = CompositingMode.SourceCopy;
+            gSurface.CompositingQuality = CompositingQuality.HighSpeed;
             gSurface.Clear(Color.FromArgb(1, 0, 0, 0));
 
             StartPosition = FormStartPosition.Manual;
@@ -192,7 +193,13 @@ namespace ShareX.ScreenCaptureLib
             PreviousSelectionRectangle = SelectionRectangle;
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
 
-            RefreshSurface();
+            try
+            {
+                RefreshSurface();
+            }
+            catch
+            {
+            }
         }
 
         private void RefreshSurface()

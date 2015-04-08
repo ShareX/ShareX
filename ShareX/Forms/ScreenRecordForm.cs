@@ -299,7 +299,8 @@ namespace ShareX
                 {
                     if (screenRecorder != null)
                     {
-                        if (taskSettings.CaptureSettings.RunScreencastCLI && !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
+                        if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI) &&
+                            !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
                         {
                             File.Delete(screenRecorder.CachePath);
                         }

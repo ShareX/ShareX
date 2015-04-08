@@ -1685,6 +1685,7 @@
             resources.GetString("cbAmazonS3Endpoint.Items1"),
             resources.GetString("cbAmazonS3Endpoint.Items2"),
             resources.GetString("cbAmazonS3Endpoint.Items3"),
+            resources.GetString("cbAmazonS3Endpoint.Items9"),
             resources.GetString("cbAmazonS3Endpoint.Items4"),
             resources.GetString("cbAmazonS3Endpoint.Items5"),
             resources.GetString("cbAmazonS3Endpoint.Items6"),
