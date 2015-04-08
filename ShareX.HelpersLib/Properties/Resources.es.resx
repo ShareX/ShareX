@@ -609,4 +609,7 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Acortador de URL personalizado</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capturar región rectángulo transparente</value>
+  </data>
 </root>
