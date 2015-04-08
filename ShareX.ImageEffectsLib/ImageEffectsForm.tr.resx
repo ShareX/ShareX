@@ -144,4 +144,13 @@
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Resim kaydet...</value>
   </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Resim yükle</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Panodan</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>Dosyadan...</value>
+  </data>
 </root>

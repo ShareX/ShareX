@@ -609,4 +609,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_Automate" xml:space="preserve">
     <value>Aç/Durdur otomatikleştirme aracını</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Dikdörtgen bölge yakala (Saydam)</value>
+  </data>
 </root>

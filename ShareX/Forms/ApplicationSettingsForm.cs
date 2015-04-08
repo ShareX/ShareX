@@ -164,6 +164,9 @@ namespace ShareX
                 case SupportedLanguage.SimplifiedChinese:
                     icon = Resources.cn;
                     break;
+                case SupportedLanguage.Spanish:
+                    icon = Resources.es;
+                    break;
                 case SupportedLanguage.Turkish:
                     icon = Resources.tr;
                     break;

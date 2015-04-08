@@ -43,6 +43,8 @@ namespace ShareX
         Korean,
         [Description("简体中文 (Simplified Chinese)")]
         SimplifiedChinese,
+        [Description("Español (Spanish)")]
+        Spanish,
         [Description("Türkçe (Turkish)")]
         Turkish
     }
