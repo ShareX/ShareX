@@ -66,6 +66,9 @@ namespace ShareX
                     case SupportedLanguage.SimplifiedChinese:
                         cultureName = "zh-CN";
                         break;
+                    case SupportedLanguage.Spanish:
+                        cultureName = "es-ES";
+                        break;
                     case SupportedLanguage.Turkish:
                         cultureName = "tr-TR";
                         break;

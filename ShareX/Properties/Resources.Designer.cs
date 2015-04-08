@@ -644,6 +644,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap es {
+            get {
+                object obj = ResourceManager.GetObject("es", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap exclamation_button {
             get {
                 object obj = ResourceManager.GetObject("exclamation_button", resourceCulture);
