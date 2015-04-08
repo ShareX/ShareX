@@ -105,6 +105,9 @@
     <EmbeddedResource Include="HistoryForm.de.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.es.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistoryForm.fr.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +127,9 @@
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.de.resx">
+      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryItemInfoForm.es.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.fr.resx">
@@ -147,6 +153,9 @@
     <EmbeddedResource Include="ImageHistoryForm.de.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageHistoryForm.es.resx">
+      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageHistoryForm.fr.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,7 @@
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
