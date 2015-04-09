@@ -857,7 +857,7 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Task settings...</value>
   </data>
@@ -1907,7 +1907,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
+  <comment>@Invariant</comment></data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
   </data>

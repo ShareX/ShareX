@@ -609,4 +609,7 @@
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
     <value>청록: {0:0.0}%, 마젠타: {1:0.0}%, 노랑: {2:0.0}%, 검정: {3:0.0}%</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>직사각형 영역 촬영 (투명하게)</value>
+  </data>
 </root>
