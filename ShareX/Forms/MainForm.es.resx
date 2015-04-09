@@ -254,7 +254,7 @@
     <value>259, 20</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Captura</value>
+    <value>Capturar</value>
   </data>
   <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -401,7 +401,7 @@
     <value>239, 22</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders de imágenes</value>
+    <value>Cargadores de imágenes</value>
   </data>
   <data name="tsmiTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 22</value>
@@ -446,19 +446,19 @@
     <value>259, 20</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Configuración de la aplicación...</value>
+    <value>Ajustes: Aplicaciones...</value>
   </data>
   <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 20</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>Configuración de la tarea...</value>
+    <value>Ajustes: Tareas...</value>
   </data>
   <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 20</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Configuración de teclas de acceso rápido...</value>
+    <value>Ajustes: Teclas rápidas...</value>
   </data>
   <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 6</value>
@@ -923,7 +923,7 @@
     <value>300, 22</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Captura</value>
+    <value>Capturar</value>
   </data>
   <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 22</value>
@@ -1070,7 +1070,7 @@
     <value>239, 22</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders de imágenes</value>
+    <value>Cargadores de imágenes</value>
   </data>
   <data name="tsmiTrayTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 22</value>
@@ -1115,19 +1115,19 @@
     <value>300, 22</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>Configuración de la aplicación...</value>
+    <value>Ajustes: Aplicaciones...</value>
   </data>
   <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>Configuración de la tarea...</value>
+    <value>Ajustes: Tareas...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Configuración de teclas de acceso rápido...</value>
+    <value>Ajustes: Teclas rápidas...</value>
   </data>
   <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 6</value>
