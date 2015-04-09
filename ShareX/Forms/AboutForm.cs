@@ -70,6 +70,8 @@ German: https://github.com/Starbug2
 French: https://github.com/nwies
 Simplified Chinese: https://github.com/jiajiechan
 Hungarian: https://github.com/devBluestar
+Korean: https://github.com/123jimin
+Spanish: https://github.com/ovnisoftware
 
 {2}:
 
