@@ -268,7 +268,8 @@
     <value>Sólo aplicar efectos a región de captura</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>Puede activar / desactivar los efectos de la imagen desde "Después de las tareas de captura -&gt; Agregar efectos de imagen".</value>
+    <value>Puede activar / desactivar los efectos de la imagen desde "Después de las tareas de captura -&gt; 
+Agregar efectos de imagen".</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Formato de imagen:</value>
@@ -316,7 +317,7 @@
     <value>Cargadores de texto</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders de imágenes</value>
+    <value>Cargadores de imágenes</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Cargadores de archivos</value>
@@ -328,7 +329,7 @@
     <value>Miniatura</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>Upload portapapeles</value>
+    <value>Subir portapapeles</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Servicios para compartir URL</value>

@@ -247,13 +247,13 @@
     <value>Utilice uploaders secundarias en orden de preferencia al reintentar</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Uploaders textos secundarios</value>
+    <value>Cargadores textos secundarios</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Uploaders imágenes secundarias</value>
+    <value>Cargadores de imágenes secundarias</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Uploaders archivos secundarios</value>
+    <value>Cargadores de archivos secundarios</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Utilizar carpeta screenshots personalizadas</value>

@@ -355,7 +355,7 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
     <value>Tarea: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Uploader de imágenes: {0}</value>
+    <value>Cargador de imágenes: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Cargador de archivos: {0}</value>
@@ -379,7 +379,7 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
     <value>Acortador de URL: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>Servicio para compartir urls: {0}</value>
+    <value>Servicio para compartir URL: {0}</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL para descargar desde y subir</value>
