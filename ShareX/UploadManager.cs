@@ -445,6 +445,8 @@ namespace ShareX
 
                         if (!string.IsNullOrEmpty(downloadPath))
                         {
+                            Helpers.CreateDirectoryIfNotExist(downloadPath);
+
                             try
                             {
                                 using (WebClient wc = new WebClient())

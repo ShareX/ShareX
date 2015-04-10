@@ -73,8 +73,7 @@ namespace ShareX.HelpersLib
                         latestRelease = releases.FirstOrDefault(x => !x.prerelease);
                     }
 
-                    if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name.Length > 1 &&
-                        latestRelease.tag_name[0] == 'v')
+                    if (latestRelease != null && !string.IsNullOrEmpty(latestRelease.tag_name) && latestRelease.tag_name.Length > 1 && latestRelease.tag_name[0] == 'v')
                     {
                         LatestVersion = new Version(latestRelease.tag_name.Substring(1));
 
