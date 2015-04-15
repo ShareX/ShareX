@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Cache;
+using System.Text;
 
 namespace ShareX.HelpersLib
 {
@@ -111,6 +112,26 @@ namespace ShareX.HelpersLib
             }
 
             return null;
+        }
+
+        public string GetDownloadCounts()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            List<GitHubRelease> releases = GetReleases();
+
+            if (releases != null)
+            {
+                foreach (GitHubRelease release in releases)
+                {
+                    if (release.assets.Count > 0)
+                    {
+                        sb.AppendFormat("{0} ({1}): {2}\r\n", release.name, DateTime.Parse(release.published_at), release.assets.Sum(x => x.download_count));
+                    }
+                }
+            }
+
+            return sb.ToString().Trim();
         }
 
         private string GetDownloadURL(GitHubRelease release)

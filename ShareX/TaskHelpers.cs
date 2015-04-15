@@ -417,6 +417,14 @@ namespace ShareX
             return updateChecker;
         }
 
+        public static void CheckDownloadCounts()
+        {
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
+            updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+            string output = updateChecker.GetDownloadCounts();
+            Debug.WriteLine(output);
+        }
+
         public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
         {
             string filepath = Path.Combine(folder, filename);
