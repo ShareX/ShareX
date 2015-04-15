@@ -102,6 +102,17 @@
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
             this.pCapture = new System.Windows.Forms.Panel();
+            this.btnTransmitBoundsFromMonitorToCustomBounds = new System.Windows.Forms.Button();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
+            this.lblX = new System.Windows.Forms.Label();
+            this.nudScreenRegionHeight = new System.Windows.Forms.NumericUpDown();
+            this.nudScreenRegionWidth = new System.Windows.Forms.NumericUpDown();
+            this.nudScreenRegionY = new System.Windows.Forms.NumericUpDown();
+            this.nudScreenRegionX = new System.Windows.Forms.NumericUpDown();
+            this.lblSelectedMonitorForCustomRegion = new System.Windows.Forms.Label();
+            this.cboMonitors = new System.Windows.Forms.ComboBox();
             this.cbShowCursor = new System.Windows.Forms.CheckBox();
             this.lblCaptureShadowOffset = new System.Windows.Forms.Label();
             this.cbCaptureTransparent = new System.Windows.Forms.CheckBox();
@@ -156,6 +167,8 @@
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadNamePattern = new System.Windows.Forms.TabPage();
             this.pUpload = new System.Windows.Forms.Panel();
+            this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
+            this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
             this.lblNameFormatPattern = new System.Windows.Forms.Label();
             this.cbFileUploadUseNamePattern = new System.Windows.Forms.CheckBox();
             this.lblNameFormatPatternPreviewActiveWindow = new System.Windows.Forms.Label();
@@ -177,8 +190,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkUseDefaultAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbNameFormatTimeZone = new System.Windows.Forms.ComboBox();
-            this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -198,6 +209,10 @@
             this.tcCapture.SuspendLayout();
             this.tpCaptureGeneral.SuspendLayout();
             this.pCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
@@ -771,6 +786,17 @@
             // 
             // pCapture
             // 
+            this.pCapture.Controls.Add(this.btnTransmitBoundsFromMonitorToCustomBounds);
+            this.pCapture.Controls.Add(this.lblWidth);
+            this.pCapture.Controls.Add(this.lblHeight);
+            this.pCapture.Controls.Add(this.lblY);
+            this.pCapture.Controls.Add(this.lblX);
+            this.pCapture.Controls.Add(this.nudScreenRegionHeight);
+            this.pCapture.Controls.Add(this.nudScreenRegionWidth);
+            this.pCapture.Controls.Add(this.nudScreenRegionY);
+            this.pCapture.Controls.Add(this.nudScreenRegionX);
+            this.pCapture.Controls.Add(this.lblSelectedMonitorForCustomRegion);
+            this.pCapture.Controls.Add(this.cboMonitors);
             this.pCapture.Controls.Add(this.cbShowCursor);
             this.pCapture.Controls.Add(this.lblCaptureShadowOffset);
             this.pCapture.Controls.Add(this.cbCaptureTransparent);
@@ -783,6 +809,109 @@
             this.pCapture.Controls.Add(this.cbScreenshotDelay);
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
+            // 
+            // btnTransmitBoundsFromMonitorToCustomBounds
+            // 
+            resources.ApplyResources(this.btnTransmitBoundsFromMonitorToCustomBounds, "btnTransmitBoundsFromMonitorToCustomBounds");
+            this.btnTransmitBoundsFromMonitorToCustomBounds.Name = "btnTransmitBoundsFromMonitorToCustomBounds";
+            this.btnTransmitBoundsFromMonitorToCustomBounds.UseVisualStyleBackColor = true;
+            this.btnTransmitBoundsFromMonitorToCustomBounds.Click += new System.EventHandler(this.btnTransmitBoundsFromMonitorToCustomBounds_Click);
+            // 
+            // lblWidth
+            // 
+            resources.ApplyResources(this.lblWidth, "lblWidth");
+            this.lblWidth.Name = "lblWidth";
+            // 
+            // lblHeight
+            // 
+            resources.ApplyResources(this.lblHeight, "lblHeight");
+            this.lblHeight.Name = "lblHeight";
+            // 
+            // lblY
+            // 
+            resources.ApplyResources(this.lblY, "lblY");
+            this.lblY.Name = "lblY";
+            // 
+            // lblX
+            // 
+            resources.ApplyResources(this.lblX, "lblX");
+            this.lblX.Name = "lblX";
+            // 
+            // nudScreenRegionHeight
+            // 
+            resources.ApplyResources(this.nudScreenRegionHeight, "nudScreenRegionHeight");
+            this.nudScreenRegionHeight.Maximum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            0});
+            this.nudScreenRegionHeight.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
+            this.nudScreenRegionHeight.Name = "nudScreenRegionHeight";
+            this.nudScreenRegionHeight.ValueChanged += new System.EventHandler(this.nudScreenRegionHeight_ValueChanged);
+            // 
+            // nudScreenRegionWidth
+            // 
+            resources.ApplyResources(this.nudScreenRegionWidth, "nudScreenRegionWidth");
+            this.nudScreenRegionWidth.Maximum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            0});
+            this.nudScreenRegionWidth.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
+            this.nudScreenRegionWidth.Name = "nudScreenRegionWidth";
+            this.nudScreenRegionWidth.ValueChanged += new System.EventHandler(this.nudScreenRegionWidth_ValueChanged);
+            // 
+            // nudScreenRegionY
+            // 
+            resources.ApplyResources(this.nudScreenRegionY, "nudScreenRegionY");
+            this.nudScreenRegionY.Maximum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            0});
+            this.nudScreenRegionY.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
+            this.nudScreenRegionY.Name = "nudScreenRegionY";
+            this.nudScreenRegionY.ValueChanged += new System.EventHandler(this.nudScreenRegionY_ValueChanged);
+            // 
+            // nudScreenRegionX
+            // 
+            resources.ApplyResources(this.nudScreenRegionX, "nudScreenRegionX");
+            this.nudScreenRegionX.Maximum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            0});
+            this.nudScreenRegionX.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
+            this.nudScreenRegionX.Name = "nudScreenRegionX";
+            this.nudScreenRegionX.ValueChanged += new System.EventHandler(this.nudScreenRegionX_ValueChanged);
+            // 
+            // lblSelectedMonitorForCustomRegion
+            // 
+            resources.ApplyResources(this.lblSelectedMonitorForCustomRegion, "lblSelectedMonitorForCustomRegion");
+            this.lblSelectedMonitorForCustomRegion.Name = "lblSelectedMonitorForCustomRegion";
+            // 
+            // cboMonitors
+            // 
+            this.cboMonitors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMonitors.FormattingEnabled = true;
+            resources.ApplyResources(this.cboMonitors, "cboMonitors");
+            this.cboMonitors.Name = "cboMonitors";
             // 
             // cbShowCursor
             // 
@@ -1265,6 +1394,21 @@
             resources.ApplyResources(this.pUpload, "pUpload");
             this.pUpload.Name = "pUpload";
             // 
+            // cbNameFormatCustomTimeZone
+            // 
+            resources.ApplyResources(this.cbNameFormatCustomTimeZone, "cbNameFormatCustomTimeZone");
+            this.cbNameFormatCustomTimeZone.Name = "cbNameFormatCustomTimeZone";
+            this.cbNameFormatCustomTimeZone.UseVisualStyleBackColor = true;
+            this.cbNameFormatCustomTimeZone.CheckedChanged += new System.EventHandler(this.cbNameFormatCustomTimeZone_CheckedChanged);
+            // 
+            // cbNameFormatTimeZone
+            // 
+            this.cbNameFormatTimeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNameFormatTimeZone.FormattingEnabled = true;
+            resources.ApplyResources(this.cbNameFormatTimeZone, "cbNameFormatTimeZone");
+            this.cbNameFormatTimeZone.Name = "cbNameFormatTimeZone";
+            this.cbNameFormatTimeZone.SelectedIndexChanged += new System.EventHandler(this.cbNameFormatTimeZone_SelectedIndexChanged);
+            // 
             // lblNameFormatPattern
             // 
             resources.ApplyResources(this.lblNameFormatPattern, "lblNameFormatPattern");
@@ -1415,21 +1559,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             // 
-            // cbNameFormatTimeZone
-            // 
-            this.cbNameFormatTimeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbNameFormatTimeZone.FormattingEnabled = true;
-            resources.ApplyResources(this.cbNameFormatTimeZone, "cbNameFormatTimeZone");
-            this.cbNameFormatTimeZone.Name = "cbNameFormatTimeZone";
-            this.cbNameFormatTimeZone.SelectedIndexChanged += new System.EventHandler(this.cbNameFormatTimeZone_SelectedIndexChanged);
-            // 
-            // cbNameFormatCustomTimeZone
-            // 
-            resources.ApplyResources(this.cbNameFormatCustomTimeZone, "cbNameFormatCustomTimeZone");
-            this.cbNameFormatCustomTimeZone.Name = "cbNameFormatCustomTimeZone";
-            this.cbNameFormatCustomTimeZone.UseVisualStyleBackColor = true;
-            this.cbNameFormatCustomTimeZone.CheckedChanged += new System.EventHandler(this.cbNameFormatCustomTimeZone_CheckedChanged);
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1469,6 +1598,10 @@
             this.tpCaptureGeneral.PerformLayout();
             this.pCapture.ResumeLayout(false);
             this.pCapture.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
@@ -1651,6 +1784,17 @@
         private System.Windows.Forms.Button btnScreenRecorderFFmpegOptions;
         private System.Windows.Forms.ComboBox cbNameFormatTimeZone;
         private System.Windows.Forms.CheckBox cbNameFormatCustomTimeZone;
+        private System.Windows.Forms.Label lblSelectedMonitorForCustomRegion;
+        private System.Windows.Forms.ComboBox cboMonitors;
+        private System.Windows.Forms.Label lblWidth;
+        private System.Windows.Forms.Label lblHeight;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.Label lblX;
+        private System.Windows.Forms.NumericUpDown nudScreenRegionHeight;
+        private System.Windows.Forms.NumericUpDown nudScreenRegionWidth;
+        private System.Windows.Forms.NumericUpDown nudScreenRegionY;
+        private System.Windows.Forms.NumericUpDown nudScreenRegionX;
+        private System.Windows.Forms.Button btnTransmitBoundsFromMonitorToCustomBounds;
 
 
 

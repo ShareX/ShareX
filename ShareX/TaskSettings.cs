@@ -312,6 +312,13 @@ namespace ShareX
         public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
 
         #endregion Capture / Rectangle annotate
+
+        #region Custom Capture Region
+
+        public Rectangle DefaultBounds = new Rectangle(0, 0, 0, 0);
+        public int DefaultScreenRegionCboIndex = 0;
+
+        #endregion
     }
 
     public class TaskSettingsUpload
