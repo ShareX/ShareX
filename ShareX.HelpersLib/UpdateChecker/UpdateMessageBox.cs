@@ -33,6 +33,7 @@ namespace ShareX.HelpersLib
     public partial class UpdateMessageBox : Form
     {
         public static bool IsOpen { get; private set; }
+        public static bool DontShow { get; private set; }
 
         public bool ActivateWindow { get; set; }
 
@@ -109,6 +110,11 @@ namespace ShareX.HelpersLib
             {
                 g.FillRectangle(brush, fillRect);
             }
+        }
+
+        private void cbDontShow_CheckedChanged(object sender, System.EventArgs e)
+        {
+            DontShow = cbDontShow.Checked;
         }
 
         private void btnYes_MouseClick(object sender, MouseEventArgs e)

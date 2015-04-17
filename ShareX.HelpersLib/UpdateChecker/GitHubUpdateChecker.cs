@@ -118,17 +118,9 @@ namespace ShareX.HelpersLib
         {
             StringBuilder sb = new StringBuilder();
 
-            List<GitHubRelease> releases = GetReleases();
-
-            if (releases != null)
+            foreach (GitHubRelease release in GetReleases().Where(x => x.assets != null && x.assets.Count > 0))
             {
-                foreach (GitHubRelease release in releases)
-                {
-                    if (release.assets.Count > 0)
-                    {
-                        sb.AppendFormat("{0} ({1}): {2}\r\n", release.name, DateTime.Parse(release.published_at), release.assets.Sum(x => x.download_count));
-                    }
-                }
+                sb.AppendFormat("{0} ({1}): {2}\r\n", release.name, DateTime.Parse(release.published_at), release.assets.Sum(x => x.download_count));
             }
 
             return sb.ToString().Trim();

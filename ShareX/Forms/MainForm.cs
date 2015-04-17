@@ -666,7 +666,7 @@ namespace ShareX
 
         private void CheckUpdate()
         {
-            if (!UpdateMessageBox.IsOpen)
+            if (!UpdateMessageBox.DontShow && !UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = TaskHelpers.CheckUpdate();
                 UpdateMessageBox.Start(updateChecker, firstUpdateCheck);

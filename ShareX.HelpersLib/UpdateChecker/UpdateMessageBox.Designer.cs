@@ -32,6 +32,7 @@
             this.lblText = new ShareX.HelpersLib.BlackStyleLabel();
             this.btnNo = new ShareX.HelpersLib.BlackStyleButton();
             this.btnYes = new ShareX.HelpersLib.BlackStyleButton();
+            this.cbDontShow = new ShareX.HelpersLib.BlackStyleCheckBox();
             this.SuspendLayout();
             // 
             // lblText
@@ -55,11 +56,20 @@
             this.btnYes.Name = "btnYes";
             this.btnYes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnYes_MouseClick);
             // 
+            // cbDontShow
+            // 
+            resources.ApplyResources(this.cbDontShow, "cbDontShow");
+            this.cbDontShow.ForeColor = System.Drawing.Color.White;
+            this.cbDontShow.Name = "cbDontShow";
+            this.cbDontShow.SpaceAfterCheckBox = 3;
+            this.cbDontShow.CheckedChanged += new System.EventHandler(this.cbDontShow_CheckedChanged);
+            // 
             // UpdateMessageBox
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.Controls.Add(this.cbDontShow);
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
@@ -77,5 +87,6 @@
         private BlackStyleButton btnYes;
         private BlackStyleButton btnNo;
         private BlackStyleLabel lblText;
+        private BlackStyleCheckBox cbDontShow;
     }
 }
