@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,6 +28,27 @@ using System.ComponentModel;
 
 namespace ShareX
 {
+    public enum SupportedLanguage
+    {
+        Automatic, // Localized
+        [Description("English")]
+        English,
+        [Description("Deutsch (German)")]
+        German,
+        [Description("Français (French)")]
+        French,
+        [Description("Magyar (Hungarian)")]
+        Hungarian,
+        [Description("한국어 (Korean)")]
+        Korean,
+        [Description("简体中文 (Simplified Chinese)")]
+        SimplifiedChinese,
+        [Description("Español (Spanish)")]
+        Spanish,
+        [Description("Türkçe (Turkish)")]
+        Turkish
+    }
+
     public enum EImageFormat
     {
         [Description("png")]
@@ -44,55 +65,41 @@ namespace ShareX
 
     public enum TaskJob
     {
+        Job,
         DataUpload,
         FileUpload,
-        ImageJob,
         TextUpload,
-        ShortenURL
+        ShortenURL,
+        ShareURL
     }
 
     [Flags]
-    public enum AfterCaptureTasks
+    public enum AfterCaptureTasks // Localized
     {
         None = 0,
-        [Description("Add image effects")]
         AddImageEffects = 1,
-        [Description("Add watermark")]
-        AddWatermark = 1 << 1,
-        [Description("Annotate image")]
-        AnnotateImage = 1 << 2,
-        [Description("Copy image to clipboard")]
-        CopyImageToClipboard = 1 << 3,
-        [Description("Print image")]
-        SendImageToPrinter = 1 << 4,
-        [Description("Save image to file")]
-        SaveImageToFile = 1 << 5,
-        [Description("Save image to file as...")]
-        SaveImageToFileWithDialog = 1 << 6,
-        [Description("Save thumbnail image to file")]
-        SaveThumbnailImageToFile = 1 << 7,
-        [Description("Copy file to clipboard")]
+        AnnotateImage = 1 << 1,
+        CopyImageToClipboard = 1 << 2,
+        SendImageToPrinter = 1 << 3,
+        SaveImageToFile = 1 << 4,
+        SaveImageToFileWithDialog = 1 << 5,
+        SaveThumbnailImageToFile = 1 << 6,
+        PerformActions = 1 << 7,
         CopyFileToClipboard = 1 << 8,
-        [Description("Copy file path to clipboard")]
         CopyFilePathToClipboard = 1 << 9,
-        [Description("Perform actions")]
-        PerformActions = 1 << 10,
-        [Description("Upload image to host")]
-        UploadImageToHost = 1 << 11
+        UploadImageToHost = 1 << 10,
+        DeleteFile = 1 << 11
     }
 
     [Flags]
-    public enum AfterUploadTasks
+    public enum AfterUploadTasks // Localized
     {
         None = 0,
-        [Description("Use URL Shortener")]
         UseURLShortener = 1,
-        [Description("Post URL to social networking service")]
-        ShareURLToSocialNetworkingService = 1 << 1,
-        [Description("Send URL with Email")]
-        SendURLWithEmail = 1 << 2,
-        [Description("Copy URL to clipboard")]
-        CopyURLToClipboard = 1 << 3
+        ShareURL = 1 << 1,
+        CopyURLToClipboard = 1 << 2,
+        OpenURL = 1 << 3,
+        ShowQRCode = 1 << 4
     }
 
     public enum AfterCaptureFormResult
@@ -120,60 +127,48 @@ namespace ShareX
         LastRegion
     }
 
-    public enum HotkeyType
+    public enum HotkeyType // Localized
     {
-        [Description("None")]
         None,
-        [Description("Stop all active uploads")]
-        StopUploads,
-        [Description("Clipboard upload")]
-        ClipboardUpload,
-        [Description("Clipboard upload with content viewer")]
-        ClipboardUploadWithContentViewer,
-        [Description("File upload")]
         FileUpload,
-        [Description("Drag and drop upload")]
+        FolderUpload,
+        ClipboardUpload,
+        ClipboardUploadWithContentViewer,
+        UploadURL,
         DragDropUpload,
-        [Description("Capture entire screen")]
+        StopUploads,
         PrintScreen,
-        [Description("Capture active window")]
         ActiveWindow,
-        [Description("Capture active monitor")]
         ActiveMonitor,
-        [Description("Capture rectangle region")]
         RectangleRegion,
-        [Description("Capture rectangle region or window")]
         WindowRectangle,
-        [Description("Capture rounded rectangle region")]
+        RectangleAnnotate,
+        RectangleLight,
+        RectangleTransparent,
         RoundedRectangleRegion,
-        [Description("Capture ellipse region")]
         EllipseRegion,
-        [Description("Capture triangle region")]
         TriangleRegion,
-        [Description("Capture diamond region")]
         DiamondRegion,
-        [Description("Capture polygon region")]
         PolygonRegion,
-        [Description("Capture freehand region")]
         FreeHandRegion,
-        [Description("Capture last region")]
         LastRegion,
-        [Description("Screen recording")]
         ScreenRecorder,
-        [Description("Auto capture")]
+        StartScreenRecorder,
+        ScreenRecorderGIF,
+        StartScreenRecorderGIF,
         AutoCapture,
-        [Description("Screen color picker")]
+        StartAutoCapture,
+        OpenScreenshotsFolder,
+        ColorPicker,
         ScreenColorPicker,
-        [Description("Ruler")]
         Ruler,
-        [Description("FTP client")]
         FTPClient,
-        [Description("Hash check")]
         HashCheck,
-        [Description("Index folder")]
         IndexFolder,
-        [Description("Image effects")]
-        ImageEffects
+        ImageEffects,
+        QRCode,
+        TweetMessage,
+        Automate
     }
 
     public enum HotkeyStatus
@@ -183,17 +178,14 @@ namespace ShareX
         NotConfigured
     }
 
-    public enum PopUpNotificationType
+    public enum PopUpNotificationType // Localized
     {
-        [Description("Show nothing")]
         None,
-        [Description("Show tray balloon tip")]
         BalloonTip,
-        [Description("Show toast notification with preview")]
         ToastNotification
     }
 
-    [DefaultValue(ToastClickAction.OpenUrl)]
+    [DefaultValue(OpenUrl)]
     public enum ToastClickAction
     {
         [Description("Annotate image")]
@@ -210,15 +202,21 @@ namespace ShareX
         Upload,
     }
 
-    public enum FileExistAction
+    public enum FileExistAction // Localized
     {
-        [Description("Ask what to do")]
         Ask,
-        [Description("Overwrite file")]
         Overwrite,
-        [Description("Append number to the filename")]
         UniqueName,
-        [Description("Do not save")]
         Cancel
+    }
+
+    public enum ImagePreviewVisibility
+    {
+        Show, Hide, Automatic
+    }
+
+    public enum ColorPickerFormat
+    {
+        RGB, Hexadecimal
     }
 }

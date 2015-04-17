@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,14 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -57,20 +52,20 @@ namespace ShareX
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile("ShareX - Choose encoder path", txtPath);
+            Helpers.BrowseFile("ShareX - " + Resources.EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path, txtPath);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtPath.Text))
             {
-                MessageBox.Show("Path can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (string.IsNullOrEmpty(txtExtension.Text))
             {
-                MessageBox.Show("Extension can't be empty.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

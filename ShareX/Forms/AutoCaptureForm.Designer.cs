@@ -40,6 +40,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoCaptureForm));
             this.ssBar = new System.Windows.Forms.StatusStrip();
             this.tspbBar = new System.Windows.Forms.ToolStripProgressBar();
             this.tsslStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -50,11 +51,14 @@
             this.btnRegion = new System.Windows.Forms.Button();
             this.nudRepeatTime = new System.Windows.Forms.NumericUpDown();
             this.lblDuration = new System.Windows.Forms.Label();
-            this.btnFullscreen = new System.Windows.Forms.Button();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblDurationSeconds = new System.Windows.Forms.Label();
+            this.gbRegion = new System.Windows.Forms.GroupBox();
+            this.rbCustomRegion = new System.Windows.Forms.RadioButton();
+            this.rbFullscreen = new System.Windows.Forms.RadioButton();
             this.ssBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).BeginInit();
+            this.gbRegion.SuspendLayout();
             this.SuspendLayout();
             // 
             // ssBar
@@ -62,72 +66,50 @@
             this.ssBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tspbBar,
             this.tsslStatus});
-            this.ssBar.Location = new System.Drawing.Point(0, 158);
+            resources.ApplyResources(this.ssBar, "ssBar");
             this.ssBar.Name = "ssBar";
-            this.ssBar.Size = new System.Drawing.Size(319, 22);
             this.ssBar.SizingGrip = false;
-            this.ssBar.TabIndex = 9;
-            this.ssBar.Text = "statusStrip1";
             // 
             // tspbBar
             // 
             this.tspbBar.Name = "tspbBar";
-            this.tspbBar.Size = new System.Drawing.Size(75, 16);
+            resources.ApplyResources(this.tspbBar, "tspbBar");
             // 
             // tsslStatus
             // 
             this.tsslStatus.Name = "tsslStatus";
-            this.tsslStatus.Size = new System.Drawing.Size(0, 17);
+            resources.ApplyResources(this.tsslStatus, "tsslStatus");
             // 
             // btnExecute
             // 
-            this.btnExecute.Enabled = false;
-            this.btnExecute.Location = new System.Drawing.Point(192, 104);
+            resources.ApplyResources(this.btnExecute, "btnExecute");
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(112, 40);
-            this.btnExecute.TabIndex = 7;
-            this.btnExecute.Text = "Start";
             this.btnExecute.UseVisualStyleBackColor = true;
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
             // cbWaitUploads
             // 
-            this.cbWaitUploads.AutoSize = true;
-            this.cbWaitUploads.Location = new System.Drawing.Point(16, 128);
+            resources.ApplyResources(this.cbWaitUploads, "cbWaitUploads");
             this.cbWaitUploads.Name = "cbWaitUploads";
-            this.cbWaitUploads.Size = new System.Drawing.Size(144, 17);
-            this.cbWaitUploads.TabIndex = 8;
-            this.cbWaitUploads.Text = "Wait until tasks complete";
             this.cbWaitUploads.UseVisualStyleBackColor = true;
             this.cbWaitUploads.CheckedChanged += new System.EventHandler(this.cbWaitUploads_CheckedChanged);
             // 
             // cbAutoMinimize
             // 
-            this.cbAutoMinimize.AutoSize = true;
-            this.cbAutoMinimize.Location = new System.Drawing.Point(16, 104);
+            resources.ApplyResources(this.cbAutoMinimize, "cbAutoMinimize");
             this.cbAutoMinimize.Name = "cbAutoMinimize";
-            this.cbAutoMinimize.Size = new System.Drawing.Size(122, 17);
-            this.cbAutoMinimize.TabIndex = 6;
-            this.cbAutoMinimize.Text = "Auto minimize to tray";
             this.cbAutoMinimize.UseVisualStyleBackColor = true;
             this.cbAutoMinimize.CheckedChanged += new System.EventHandler(this.cbAutoMinimize_CheckedChanged);
             // 
             // lblRegion
             // 
-            this.lblRegion.AutoSize = true;
-            this.lblRegion.Location = new System.Drawing.Point(16, 48);
+            resources.ApplyResources(this.lblRegion, "lblRegion");
             this.lblRegion.Name = "lblRegion";
-            this.lblRegion.Size = new System.Drawing.Size(41, 13);
-            this.lblRegion.TabIndex = 2;
-            this.lblRegion.Text = "Region";
             // 
             // btnRegion
             // 
-            this.btnRegion.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.btnRegion, "btnRegion");
             this.btnRegion.Name = "btnRegion";
-            this.btnRegion.Size = new System.Drawing.Size(104, 24);
-            this.btnRegion.TabIndex = 0;
-            this.btnRegion.Text = "Select region";
             this.btnRegion.UseVisualStyleBackColor = true;
             this.btnRegion.Click += new System.EventHandler(this.btnRegion_Click);
             // 
@@ -139,7 +121,7 @@
             0,
             0,
             65536});
-            this.nudRepeatTime.Location = new System.Drawing.Point(88, 72);
+            resources.ApplyResources(this.nudRepeatTime, "nudRepeatTime");
             this.nudRepeatTime.Maximum = new decimal(new int[] {
             3600,
             0,
@@ -151,9 +133,6 @@
             0,
             0});
             this.nudRepeatTime.Name = "nudRepeatTime";
-            this.nudRepeatTime.Size = new System.Drawing.Size(64, 20);
-            this.nudRepeatTime.TabIndex = 4;
-            this.nudRepeatTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudRepeatTime.Value = new decimal(new int[] {
             3,
             0,
@@ -163,48 +142,53 @@
             // 
             // lblDuration
             // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Location = new System.Drawing.Point(16, 76);
+            resources.ApplyResources(this.lblDuration, "lblDuration");
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(67, 13);
-            this.lblDuration.TabIndex = 3;
-            this.lblDuration.Text = "Repeat time:";
-            // 
-            // btnFullscreen
-            // 
-            this.btnFullscreen.Location = new System.Drawing.Point(128, 16);
-            this.btnFullscreen.Name = "btnFullscreen";
-            this.btnFullscreen.Size = new System.Drawing.Size(104, 23);
-            this.btnFullscreen.TabIndex = 1;
-            this.btnFullscreen.Text = "Fullscreen";
-            this.btnFullscreen.UseVisualStyleBackColor = true;
-            this.btnFullscreen.Click += new System.EventHandler(this.btnFullscreen_Click);
             // 
             // niTray
             // 
-            this.niTray.Text = "ShareX - Auto capture";
+            resources.ApplyResources(this.niTray, "niTray");
             this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseClick);
             // 
             // lblDurationSeconds
             // 
-            this.lblDurationSeconds.AutoSize = true;
-            this.lblDurationSeconds.Location = new System.Drawing.Point(160, 76);
+            resources.ApplyResources(this.lblDurationSeconds, "lblDurationSeconds");
             this.lblDurationSeconds.Name = "lblDurationSeconds";
-            this.lblDurationSeconds.Size = new System.Drawing.Size(47, 13);
-            this.lblDurationSeconds.TabIndex = 5;
-            this.lblDurationSeconds.Text = "seconds";
+            // 
+            // gbRegion
+            // 
+            this.gbRegion.Controls.Add(this.rbFullscreen);
+            this.gbRegion.Controls.Add(this.rbCustomRegion);
+            this.gbRegion.Controls.Add(this.btnRegion);
+            this.gbRegion.Controls.Add(this.lblRegion);
+            resources.ApplyResources(this.gbRegion, "gbRegion");
+            this.gbRegion.Name = "gbRegion";
+            this.gbRegion.TabStop = false;
+            // 
+            // rbCustomRegion
+            // 
+            resources.ApplyResources(this.rbCustomRegion, "rbCustomRegion");
+            this.rbCustomRegion.Checked = true;
+            this.rbCustomRegion.Name = "rbCustomRegion";
+            this.rbCustomRegion.TabStop = true;
+            this.rbCustomRegion.UseVisualStyleBackColor = true;
+            this.rbCustomRegion.CheckedChanged += new System.EventHandler(this.rbCustomRegion_CheckedChanged);
+            // 
+            // rbFullscreen
+            // 
+            resources.ApplyResources(this.rbFullscreen, "rbFullscreen");
+            this.rbFullscreen.Name = "rbFullscreen";
+            this.rbFullscreen.UseVisualStyleBackColor = true;
+            this.rbFullscreen.CheckedChanged += new System.EventHandler(this.rbFullscreen_CheckedChanged);
             // 
             // AutoCaptureForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 180);
+            this.Controls.Add(this.gbRegion);
             this.Controls.Add(this.lblDurationSeconds);
-            this.Controls.Add(this.btnFullscreen);
             this.Controls.Add(this.nudRepeatTime);
             this.Controls.Add(this.lblDuration);
-            this.Controls.Add(this.lblRegion);
-            this.Controls.Add(this.btnRegion);
             this.Controls.Add(this.cbAutoMinimize);
             this.Controls.Add(this.cbWaitUploads);
             this.Controls.Add(this.btnExecute);
@@ -212,13 +196,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AutoCaptureForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Auto capture";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutoCapture_FormClosing);
             this.Resize += new System.EventHandler(this.AutoCapture_Resize);
             this.ssBar.ResumeLayout(false);
             this.ssBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRepeatTime)).EndInit();
+            this.gbRegion.ResumeLayout(false);
+            this.gbRegion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,8 +220,10 @@
         private System.Windows.Forms.Button btnRegion;
         private System.Windows.Forms.NumericUpDown nudRepeatTime;
         private System.Windows.Forms.Label lblDuration;
-        private System.Windows.Forms.Button btnFullscreen;
         private System.Windows.Forms.NotifyIcon niTray;
         private System.Windows.Forms.Label lblDurationSeconds;
+        private System.Windows.Forms.GroupBox gbRegion;
+        private System.Windows.Forms.RadioButton rbFullscreen;
+        private System.Windows.Forms.RadioButton rbCustomRegion;
     }
 }

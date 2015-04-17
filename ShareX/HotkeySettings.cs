@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -50,7 +50,7 @@ namespace ShareX
         {
             if (HotkeyInfo != null && TaskSettings != null)
             {
-                return string.Format("Hotkey: {0}{1}, Job: {2}", HotkeyInfo, ", Description: " + TaskSettings.Description, TaskSettings.Job);
+                return string.Format("Hotkey: {0}, Description: {1}, Job: {2}", HotkeyInfo, TaskSettings, TaskSettings.Job);
             }
 
             return string.Empty;

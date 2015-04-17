@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -33,33 +33,19 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace ShareX
 {
-    public class PointInfo
-    {
-        public Point Position { get; set; }
-        public Color Color { get; set; }
-    }
-
-    public partial class ScreenColorPicker : DialogColor
+    public partial class ScreenColorPicker : ColorPickerForm
     {
         private Timer colorTimer = new Timer { Interval = 10 };
-        private SurfaceOptions surfaceOptions;
 
-        public ScreenColorPicker(TaskSettings taskSettings)
+        public ScreenColorPicker()
         {
-            if (taskSettings != null)
-            {
-                surfaceOptions = taskSettings.CaptureSettings.SurfaceOptions;
-            }
-            else
-            {
-                surfaceOptions = new SurfaceOptions();
-            }
-
             InitializeComponent();
+            btnOK.Visible = false;
+            btnCancel.Text = Resources.ScreenColorPicker_ScreenColorPicker_Close;
             colorPicker.DrawCrosshair = true;
             colorTimer.Tick += colorTimer_Tick;
 
-            UpdateControls(true);
+            UpdateControls(false);
 
             foreach (Control control in Controls)
             {
@@ -107,15 +93,14 @@ namespace ShareX
 
             if (colorTimerEnable)
             {
-                btnColorPicker.Text = "Stop screen color picker";
+                btnColorPicker.Text = Resources.ScreenColorPicker_UpdateControls_Stop_screen_color_picker;
             }
             else
             {
-                btnColorPicker.Text = "Start screen color picker";
+                btnColorPicker.Text = Resources.ScreenColorPicker_UpdateControls_Start_screen_color_picker;
             }
 
             lblScreenColorPickerTip.Visible = colorTimerEnable;
-
             TopMost = colorTimerEnable;
         }
 
@@ -135,7 +120,7 @@ namespace ShareX
                 Hide();
                 Thread.Sleep(250);
 
-                PointInfo pointInfo = TaskHelpers.SelectPointColor(surfaceOptions);
+                PointInfo pointInfo = TaskHelpers.SelectPointColor();
 
                 if (pointInfo != null)
                 {
@@ -151,7 +136,7 @@ namespace ShareX
         private void btnCopyAll_Click(object sender, EventArgs e)
         {
             string colors = colorPicker.SelectedColor.ToString();
-            colors += string.Format("\r\nCursor position (X, Y) = {0}, {1}", txtX.Text, txtY.Text);
+            colors += "\r\n" + string.Format(Resources.ScreenColorPicker_btnCopyAll_Click_Cursor_position, txtX.Text, txtY.Text);
             ClipboardHelpers.CopyText(colors);
         }
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,26 +23,26 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ImageEffectsLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
+using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
+using ShareX.UploadersLib;
+using ShareX.UploadersLib.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Drawing.Text;
 using System.IO;
-using System.Media;
+using System.Linq;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
     public static class TaskHelpers
     {
-        private const int PropertyTagSoftwareUsed = 0x0131;
-
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();
@@ -77,7 +77,7 @@ namespace ShareX
                 (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
                 string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
-                string thumbnailFilePath = TaskHelpers.CheckFilePath(folder, thumbnailFileName, taskSettings);
+                string thumbnailFilePath = CheckFilePath(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
@@ -94,6 +94,10 @@ namespace ShareX
                         thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
                         thumbImage.SaveJPG(thumbnailFilePath, 90);
                         return thumbnailFilePath;
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
                     }
                     finally
                     {
@@ -140,7 +144,8 @@ namespace ShareX
             {
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
+                CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
             string filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
@@ -164,7 +169,8 @@ namespace ShareX
                 Picture = image,
                 AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
                 MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
-                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength
+                MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
+                CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
             ImageTag imageTag = image.Tag as ImageTag;
@@ -189,40 +195,30 @@ namespace ShareX
             return filename;
         }
 
-        public static void ShowResultNotifications(string notificationText, TaskSettings taskSettings, string filePath)
+        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, Image img = null)
         {
-            if (!taskSettings.AdvancedSettings.DisableNotifications)
+            if (taskSettings.GeneralSettings.ShowAfterCaptureTasksForm)
             {
-                if (!string.IsNullOrEmpty(notificationText))
+                using (AfterCaptureForm afterCaptureForm = new AfterCaptureForm(img, taskSettings))
                 {
-                    switch (taskSettings.GeneralSettings.PopUpNotification)
+                    afterCaptureForm.ShowDialog();
+
+                    switch (afterCaptureForm.Result)
                     {
-                        case PopUpNotificationType.BalloonTip:
-                            if (Program.MainForm.niTray.Visible)
-                            {
-                                Program.MainForm.niTray.Tag = notificationText;
-                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Task completed", notificationText, ToolTipIcon.Info);
-                            }
+                        case AfterCaptureFormResult.Continue:
+                            taskSettings.AfterCaptureJob = afterCaptureForm.AfterCaptureTasks;
                             break;
-                        case PopUpNotificationType.ToastNotification:
-                            NotificationFormConfig toastConfig = new NotificationFormConfig()
-                            {
-                                Action = taskSettings.AdvancedSettings.ToastWindowClickAction,
-                                FilePath = filePath,
-                                Text = "ShareX - Task completed\r\n" + notificationText,
-                                URL = notificationText
-                            };
-                            NotificationForm.Show((int)(taskSettings.AdvancedSettings.ToastWindowDuration * 1000), taskSettings.AdvancedSettings.ToastWindowPlacement,
-                                taskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
+                        case AfterCaptureFormResult.Copy:
+                            taskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
                             break;
+                        case AfterCaptureFormResult.Cancel:
+                            if (img != null) img.Dispose();
+                            return false;
                     }
                 }
-
-                if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
-                {
-                    SystemSounds.Exclamation.Play();
-                }
             }
+
+            return true;
         }
 
         public static void AnnotateImage(string filePath)
@@ -234,14 +230,34 @@ namespace ShareX
         {
             return ImageHelpers.AnnotateImage(img, imgPath, !Program.IsSandbox, Program.PersonalPath,
                 x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.RunImageTask(x)),
+                x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
                 (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
                 (x, filePath) =>
                 {
                     string newFilePath = null;
                     Program.MainForm.InvokeSafe(() => newFilePath = ImageHelpers.SaveImageFileDialog(x, filePath));
                     return newFilePath;
-                });
+                },
+                x => Program.MainForm.InvokeSafe(() => PrintImage(x)));
+        }
+
+        public static void PrintImage(Image img)
+        {
+            if (Program.Settings.DontShowPrintSettingsDialog)
+            {
+                using (PrintHelper printHelper = new PrintHelper(img))
+                {
+                    printHelper.Settings = Program.Settings.PrintSettings;
+                    printHelper.Print();
+                }
+            }
+            else
+            {
+                using (PrintForm printForm = new PrintForm(img, Program.Settings.PrintSettings))
+                {
+                    printForm.ShowDialog();
+                }
+            }
         }
 
         public static Image AddImageEffects(Image img, TaskSettings taskSettings)
@@ -304,11 +320,13 @@ namespace ShareX
             }
         }
 
-        public static bool SelectRegion(out Rectangle rect)
+        public static bool SelectRegion(out Rectangle rect, TaskSettings taskSettings)
         {
             using (RectangleRegion surface = new RectangleRegion())
             {
-                surface.AreaManager.WindowCaptureMode = true;
+                surface.Config = taskSettings.CaptureSettings.SurfaceOptions;
+                surface.Config.QuickCrop = true;
+                surface.Config.ForceWindowCapture = true;
                 surface.Prepare();
                 surface.ShowDialog();
 
@@ -331,20 +349,10 @@ namespace ShareX
             return false;
         }
 
-        public static PointInfo SelectPointColor(SurfaceOptions surfaceOptions = null)
+        public static PointInfo SelectPointColor()
         {
-            using (Image fullscreen = Screenshot.CaptureFullscreen())
-            using (RectangleRegion surface = new RectangleRegion(fullscreen))
+            using (RectangleRegion surface = new RectangleRegion())
             {
-                if (surfaceOptions != null)
-                {
-                    surface.Config = new SurfaceOptions
-                    {
-                        MagnifierPixelCount = surfaceOptions.MagnifierPixelCount,
-                        MagnifierPixelSize = surfaceOptions.MagnifierPixelSize
-                    };
-                }
-
                 surface.OneClickMode = true;
                 surface.Prepare();
                 surface.ShowDialog();
@@ -352,8 +360,8 @@ namespace ShareX
                 if (surface.Result == SurfaceResult.Region)
                 {
                     PointInfo pointInfo = new PointInfo();
-                    pointInfo.Position = CaptureHelpers.ClientToScreen(surface.OneClickPosition);
-                    pointInfo.Color = ((Bitmap)fullscreen).GetPixel(surface.OneClickPosition.X, surface.OneClickPosition.Y);
+                    pointInfo.Position = CaptureHelpers.ClientToScreen(surface.CurrentPosition);
+                    pointInfo.Color = surface.CurrentColor;
                     return pointInfo;
                 }
             }
@@ -366,8 +374,6 @@ namespace ShareX
             using (Bitmap bmp = new Bitmap(16, 16))
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-
                 g.Clear(Color.Black);
 
                 int width = (int)(16 * (percentage / 100f));
@@ -380,9 +386,10 @@ namespace ShareX
                     }
                 }
 
+                using (Font font = new Font("Arial", 11, GraphicsUnit.Pixel))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), new XmlFont("Arial", 7, FontStyle.Bold), Brushes.White, 8, 8, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 8, sf);
                 }
 
                 g.DrawRectangleProper(Pens.WhiteSmoke, 0, 0, 16, 16);
@@ -394,20 +401,28 @@ namespace ShareX
         public static UpdateChecker CheckUpdate()
         {
             UpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
-            updateChecker.CurrentVersion = Program.AssemblyVersion;
-            updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+            updateChecker.IsBeta = Program.IsBeta;
+            updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             updateChecker.CheckUpdate();
 
             // Fallback if GitHub API fails
-            if (updateChecker.UpdateInfo == null || updateChecker.UpdateInfo.Status == UpdateStatus.UpdateCheckFailed)
+            if (updateChecker.Status == UpdateStatus.None || updateChecker.Status == UpdateStatus.UpdateCheckFailed)
             {
-                updateChecker = new XMLUpdateChecker("http://getsharex.com/Update.xml", "ShareX");
-                updateChecker.CurrentVersion = Program.AssemblyVersion;
-                updateChecker.Proxy = ProxyInfo.Current.GetWebProxy();
+                updateChecker = new XMLUpdateChecker(Links.URL_UPDATE, "ShareX");
+                updateChecker.IsBeta = Program.IsBeta;
+                updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 updateChecker.CheckUpdate();
             }
 
             return updateChecker;
+        }
+
+        public static void CheckDownloadCounts()
+        {
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "ShareX");
+            updateChecker.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+            string output = updateChecker.GetDownloadCounts();
+            Debug.WriteLine(output);
         }
 
         public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
@@ -439,11 +454,22 @@ namespace ShareX
 
         public static void OpenDropWindow()
         {
-            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity,
-                Program.Settings.DropHoverOpacity).ShowActivate();
+            DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity, Program.Settings.DropHoverOpacity).ShowActivate();
         }
 
-        public static void DoScreenRecorder(TaskSettings taskSettings = null)
+        public static void DoScreenRecordingFFmpeg()
+        {
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            StartScreenRecording(ScreenRecordOutput.FFmpeg, taskSettings);
+        }
+
+        public static void DoScreenRecordingGIF()
+        {
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            StartScreenRecording(ScreenRecordOutput.GIF, taskSettings);
+        }
+
+        public static void StartScreenRecording(ScreenRecordOutput outputType, TaskSettings taskSettings = null, bool skipRegionSelection = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -451,11 +477,11 @@ namespace ShareX
 
             if (form.IsRecording)
             {
-                form.StopRecording();
+                form.StartStopRecording();
             }
             else
             {
-                form.StartRecording(taskSettings);
+                form.StartRecording(outputType, taskSettings, skipRegionSelection);
             }
         }
 
@@ -474,22 +500,87 @@ namespace ShareX
             }
         }
 
+        public static void OpenScreenshotsFolder()
+        {
+            if (Directory.Exists(Program.ScreenshotsFolder))
+            {
+                Helpers.OpenFolder(Program.ScreenshotsFolder);
+            }
+            else
+            {
+                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
+            }
+        }
+
+        public static void OpenColorPicker()
+        {
+            new ScreenColorPicker().Show();
+        }
+
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            new ScreenColorPicker(taskSettings).Show();
+            PointInfo pointInfo = SelectPointColor();
+
+            if (pointInfo != null)
+            {
+                string text = taskSettings.AdvancedSettings.ScreenColorPickerFormat;
+
+                text = text.Replace("$r", pointInfo.Color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$g", pointInfo.Color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$b", pointInfo.Color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$hex", ColorHelpers.ColorToHex(pointInfo.Color), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$x", pointInfo.Position.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$y", pointInfo.Position.Y.ToString(), StringComparison.InvariantCultureIgnoreCase);
+
+                ClipboardHelpers.CopyText(text);
+
+                if (Program.MainForm.niTray.Visible)
+                {
+                    Program.MainForm.niTray.Tag = null;
+                    Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
+                }
+            }
         }
 
         public static void OpenRuler()
         {
-            using (Image fullscreen = Screenshot.CaptureFullscreen())
-            using (RectangleRegion surface = new RectangleRegion(fullscreen))
+            using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.RulerMode = true;
                 surface.Config.QuickCrop = false;
+                surface.Config.ShowInfo = true;
+                surface.AreaManager.MinimumSize = 3;
                 surface.Prepare();
                 surface.ShowDialog();
+            }
+        }
+
+        public static void OpenAutomate()
+        {
+            AutomateForm form = AutomateForm.GetInstance(Program.Settings.AutomateScripts);
+            form.ShowActivate();
+        }
+
+        public static void StartAutomate()
+        {
+            AutomateForm form = AutomateForm.GetInstance(Program.Settings.AutomateScripts);
+
+            if (form.Visible)
+            {
+                if (AutomateForm.IsRunning)
+                {
+                    form.Stop();
+                }
+                else
+                {
+                    form.Start();
+                }
+            }
+            else
+            {
+                form.ShowActivate();
             }
         }
 
@@ -503,27 +594,30 @@ namespace ShareX
             UploadManager.IndexFolder();
         }
 
-        public static void OpenImageEditor()
+        public static void OpenImageEditor(string filePath = null)
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
+            if (string.IsNullOrEmpty(filePath))
+            {
+                filePath = ImageHelpers.OpenImageFileDialog();
+            }
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                TaskHelpers.AnnotateImage(filePath);
+                AnnotateImage(filePath);
             }
         }
 
         public static void OpenImageEffects()
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
-
+            Image img = null;
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = ImageHelpers.LoadImage(filePath);
-                ImageEffectsForm form = new ImageEffectsForm(img);
-                form.EditorMode();
-                form.Show();
+                img = ImageHelpers.LoadImage(filePath);
             }
+            ImageEffectsForm form = new ImageEffectsForm(img);
+            form.EditorMode();
+            form.Show();
         }
 
         public static void OpenMonitorTest()
@@ -536,15 +630,47 @@ namespace ShareX
 
         public static void OpenDNSChanger()
         {
+            RunShareXAsAdmin("-dnschanger");
+        }
+
+        public static void RunShareXAsAdmin(string arguments)
+        {
             try
             {
-                string path = Path.Combine(Application.StartupPath, "DNSChanger.exe");
-                ProcessStartInfo psi = new ProcessStartInfo(path);
-                psi.UseShellExecute = true;
+                ProcessStartInfo psi = new ProcessStartInfo(Application.ExecutablePath);
+                psi.Arguments = arguments;
                 psi.Verb = "runas";
                 Process.Start(psi);
             }
             catch { }
+        }
+
+        public static void OpenQRCode()
+        {
+            new QRCodeForm().Show();
+        }
+
+        public static void TweetMessage()
+        {
+            TaskEx.Run(() =>
+            {
+                OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
+
+                if (twitterOAuth != null)
+                {
+                    using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
+                    {
+                        if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
+                        {
+                            if (Program.MainForm.niTray.Visible)
+                            {
+                                Program.MainForm.niTray.Tag = null;
+                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
+                            }
+                        }
+                    }
+                }
+            });
         }
 
         public static void OpenFTPClient()
@@ -554,6 +680,26 @@ namespace ShareX
                 FTPAccount account = Program.UploadersConfig.FTPAccountList[Program.UploadersConfig.FTPSelectedImage];
                 new FTPClientForm(account).Show();
             }
+        }
+
+        public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
+        {
+            string ext = Helpers.GetFilenameExtension(filePath);
+
+            if (!string.IsNullOrEmpty(ext))
+            {
+                if (taskSettings.AdvancedSettings.ImageExtensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return EDataType.Image;
+                }
+
+                if (taskSettings.AdvancedSettings.TextExtensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    return EDataType.Text;
+                }
+            }
+
+            return EDataType.File;
         }
     }
 }

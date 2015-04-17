@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,12 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using Microsoft.VisualBasic.FileIO;
+using ShareX.HelpersLib;
+using ShareX.Properties;
+using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -96,32 +98,32 @@ namespace ShareX
 
         public void OpenURL()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) Helpers.OpenURL(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.URL);
         }
 
         public void OpenShortenedURL()
         {
-            if (IsItemSelected && SelectedItem.IsShortenedURLExist) Helpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
+            if (IsItemSelected && SelectedItem.IsShortenedURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
         }
 
         public void OpenThumbnailURL()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailURLExist) Helpers.OpenURL(SelectedItem.Info.Result.ThumbnailURL);
+            if (IsItemSelected && SelectedItem.IsThumbnailURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.ThumbnailURL);
         }
 
         public void OpenDeletionURL()
         {
-            if (IsItemSelected && SelectedItem.IsDeletionURLExist) Helpers.OpenURL(SelectedItem.Info.Result.DeletionURL);
+            if (IsItemSelected && SelectedItem.IsDeletionURLExist) URLHelpers.OpenURL(SelectedItem.Info.Result.DeletionURL);
         }
 
         public void OpenFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenURL(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) URLHelpers.OpenURL(SelectedItem.Info.FilePath);
         }
 
         public void OpenThumbnailFile()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) Helpers.OpenURL(SelectedItem.Info.ThumbnailFilePath);
+            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) URLHelpers.OpenURL(SelectedItem.Info.ThumbnailFilePath);
         }
 
         public void OpenFolder()
@@ -135,15 +137,15 @@ namespace ShareX
             {
                 if (SelectedItem.IsShortenedURLExist)
                 {
-                    Helpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
+                    URLHelpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
                 }
                 else if (SelectedItem.IsURLExist)
                 {
-                    Helpers.OpenURL(SelectedItem.Info.Result.URL);
+                    URLHelpers.OpenURL(SelectedItem.Info.Result.URL);
                 }
                 else if (SelectedItem.IsFileExist)
                 {
-                    Helpers.OpenURL(SelectedItem.Info.FilePath);
+                    URLHelpers.OpenURL(SelectedItem.Info.FilePath);
                 }
             }
         }
@@ -209,9 +211,7 @@ namespace ShareX
 
         public void CopyHTMLLinkedImage()
         {
-            if (IsItemSelected)
-                CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).
-                    Select(x => parser.Parse(x.Info, UploadInfoParser.HTMLLinkedImage)));
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.HTMLLinkedImage)));
         }
 
         public void CopyForumLink()
@@ -226,9 +226,7 @@ namespace ShareX
 
         public void CopyForumLinkedImage()
         {
-            if (IsItemSelected)
-                CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).
-                    Select(x => parser.Parse(x.Info, UploadInfoParser.ForumLinkedImage)));
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.ForumLinkedImage)));
         }
 
         public void CopyFilePath()
@@ -253,10 +251,7 @@ namespace ShareX
 
         public void CopyCustomFormat(string format)
         {
-            if (!string.IsNullOrEmpty(format) && IsItemSelected)
-            {
-                CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => parser.Parse(x.Info, format)));
-            }
+            if (!string.IsNullOrEmpty(format) && IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => parser.Parse(x.Info, format)));
         }
 
         #endregion Copy
@@ -276,13 +271,42 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(errors))
                 {
-                    using (ErrorForm form = new ErrorForm(Application.ProductName, "Upload errors", errors, DebugHelper.Logger,
-                        Program.LogsFilePath, Links.URL_ISSUES))
+                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES))
                     {
                         form.ShowDialog();
                     }
                 }
             }
+        }
+
+        public void Upload()
+        {
+            if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
+        }
+
+        public void EditImage()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEditor(SelectedItem.Info.FilePath);
+        }
+
+        public void DeleteFile()
+        {
+            if (IsItemSelected && SelectedItem.IsFileExist) FileSystem.DeleteFile(SelectedItem.Info.FilePath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+        }
+
+        public void ShortenURL(UrlShortenerType urlShortener)
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShortenURL(SelectedItem.Info.Result.ToString(), urlShortener);
+        }
+
+        public void ShareURL(URLSharingServices urlSharingService)
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), urlSharingService);
+        }
+
+        public void ShowQRCode()
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
         }
 
         public void ShowResponse()
@@ -295,11 +319,6 @@ namespace ShareX
                     form.ShowDialog();
                 }
             }
-        }
-
-        public void Upload()
-        {
-            if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
         }
 
         #endregion Other

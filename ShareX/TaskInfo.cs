@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib;
+using ShareX.UploadersLib;
+using ShareX.UploadersLib.HelperClasses;
 using System;
 using System.IO;
-using UploadersLib;
-using UploadersLib.HelperClasses;
 
 namespace ShareX
 {
@@ -43,7 +43,7 @@ namespace ShareX
         {
             get
             {
-                return Job != TaskJob.ImageJob || TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                return Job != TaskJob.Job || TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
             }
         }
 
@@ -60,7 +60,15 @@ namespace ShareX
             set
             {
                 filePath = value;
-                FileName = Path.GetFileName(filePath);
+
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    FileName = string.Empty;
+                }
+                else
+                {
+                    FileName = Path.GetFileName(filePath);
+                }
             }
         }
 
@@ -86,25 +94,33 @@ namespace ShareX
         {
             get
             {
-                switch (UploadDestination)
+                if (IsUploadJob)
                 {
-                    case EDataType.Image:
-                        return TaskSettings.ImageDestination.GetDescription();
-                    case EDataType.Text:
-                        return TaskSettings.TextDestination.GetDescription();
-                    case EDataType.File:
-                        switch (DataType)
-                        {
-                            case EDataType.Image:
-                                return TaskSettings.ImageFileDestination.GetDescription();
-                            case EDataType.Text:
-                                return TaskSettings.TextFileDestination.GetDescription();
-                            default:
-                            case EDataType.File:
-                                return TaskSettings.FileDestination.GetDescription();
-                        }
-                    case EDataType.URL:
-                        return TaskSettings.URLShortenerDestination.GetDescription();
+                    switch (UploadDestination)
+                    {
+                        case EDataType.Image:
+                            return TaskSettings.ImageDestination.GetLocalizedDescription();
+                        case EDataType.Text:
+                            return TaskSettings.TextDestination.GetLocalizedDescription();
+                        case EDataType.File:
+                            switch (DataType)
+                            {
+                                case EDataType.Image:
+                                    return TaskSettings.ImageFileDestination.GetLocalizedDescription();
+                                case EDataType.Text:
+                                    return TaskSettings.TextFileDestination.GetLocalizedDescription();
+                                default:
+                                case EDataType.File:
+                                    return TaskSettings.FileDestination.GetLocalizedDescription();
+                            }
+                        case EDataType.URL:
+                            if (Job == TaskJob.ShareURL)
+                            {
+                                return TaskSettings.URLSharingServiceDestination.GetLocalizedDescription();
+                            }
+
+                            return TaskSettings.URLShortenerDestination.GetLocalizedDescription();
+                    }
                 }
 
                 return string.Empty;

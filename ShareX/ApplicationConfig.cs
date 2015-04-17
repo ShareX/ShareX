@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -49,8 +49,8 @@ namespace ShareX
         #region Main Form
 
         public bool ShowMenu = true;
-        public bool ShowPreview = true;
-        public int PreviewSplitterDistance = 400;
+        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public int PreviewSplitterDistance = 335;
 
         #endregion Main Form
 
@@ -58,11 +58,13 @@ namespace ShareX
 
         #region General
 
+        public SupportedLanguage Language = SupportedLanguage.Automatic;
         public bool ShowTray = true;
         public bool SilentRun = false;
-        public bool AutoCheckUpdate = true;
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
+        public bool RememberMainFormPosition = false;
+        public Point MainFormPosition = Point.Empty;
         public bool RememberMainFormSize = false;
         public Size MainFormSize = Size.Empty;
 
@@ -120,10 +122,29 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("By default copying \"Bitmap\" to clipboard. Alternative method copying \"PNG and DIB\" to clipboard.")]
         public bool UseAlternativeClipboardCopyImage { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show only customized tasks in main window workflows.")]
+        [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
-        [Category("Application / Config"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
+        [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
+        public bool AutoCheckUpdate { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
+        public bool TrayAutoExpandCaptureMenu { get; set; }
+
+        [Category("Application"), DefaultValue(HotkeyType.RectangleRegion), Description("You can set which action to happen when you middle click tray icon."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public HotkeyType TrayMiddleClickAction { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
+        public bool ShowMainWindowTip { get; set; }
+
+        [Category("Application"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
+        public int RecentLinksMaxCount { get; set; }
+
+        [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
+        [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
+        public string BrowserPath { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("Automatically detect external changes to UploaderConfig file and load settigns to memory.")]
         public bool DetectUploaderConfigFileChanges { get; set; }
 
         [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
@@ -174,5 +195,17 @@ namespace ShareX
         public bool AutoCaptureWaitUpload = true;
 
         #endregion AutoCapture Form
+
+        #region ScreenRecord Form
+
+        public Rectangle ScreenRecordRegion = Rectangle.Empty;
+
+        #endregion ScreenRecord Form
+
+        #region Automate Form
+
+        public List<ScriptInfo> AutomateScripts = new List<ScriptInfo>();
+
+        #endregion Automate Form
     }
 }

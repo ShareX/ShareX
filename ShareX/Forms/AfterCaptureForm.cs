@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
@@ -50,16 +50,22 @@ namespace ShareX
 
             AfterCaptureTasks = taskSettings.AfterCaptureJob;
             AddAfterCaptureItems(AfterCaptureTasks);
-            pbImage.LoadImage(img);
+
+            btnCopy.Visible = img != null;
+
+            if (img != null)
+            {
+                pbImage.LoadImage(img);
+            }
         }
 
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
-            AfterCaptureTasks[] enums = (AfterCaptureTasks[])Enum.GetValues(typeof(AfterCaptureTasks));
+            AfterCaptureTasks[] enums = Helpers.GetEnums<AfterCaptureTasks>();
 
             for (int i = 1; i < enums.Length; i++)
             {
-                ListViewItem lvi = new ListViewItem(enums[i].GetDescription());
+                ListViewItem lvi = new ListViewItem(enums[i].GetLocalizedDescription());
                 CheckItem(lvi, afterCaptureTasks.HasFlag(1 << (i - 1)));
                 lvi.Tag = enums[i];
                 lvAfterCaptureTasks.Items.Add(lvi);

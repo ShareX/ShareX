@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,16 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.UploadersLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -54,7 +49,7 @@ namespace ShareX
                     InitCapture(info.TaskSettings);
                     break;
                 case EDataType.Text:
-                    Enum.GetValues(typeof(TextDestination)).Cast<TextDestination>().ForEach(x =>
+                    Helpers.GetEnums<TextDestination>().ForEach(x =>
                     {
                         if (x != TextDestination.FileUploader)
                         {
@@ -62,37 +57,43 @@ namespace ShareX
                         }
                     });
 
-                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    Helpers.GetEnums<FileDestination>().ForEach(x =>
                     {
                         AddDestination<FileDestination>((int)x, EDataType.Text, info.TaskSettings);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = (x.Tag is TextDestination && (TextDestination)x.Tag == (TextDestination)info.TaskSettings.ImageDestination) ||
-                            (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)info.TaskSettings.TextFileDestination);
+                        if (info.TaskSettings.TextDestination != TextDestination.FileUploader)
+                        {
+                            x.Checked = x.Tag is TextDestination && (TextDestination)x.Tag == info.TaskSettings.TextDestination;
+                        }
+                        else
+                        {
+                            x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == info.TaskSettings.TextFileDestination;
+                        }
                     });
                     break;
                 case EDataType.File:
-                    Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+                    Helpers.GetEnums<FileDestination>().ForEach(x =>
                     {
                         AddDestination<FileDestination>((int)x, EDataType.File, info.TaskSettings);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)info.TaskSettings.FileDestination;
+                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == info.TaskSettings.FileDestination;
                     });
                     break;
                 case EDataType.URL:
-                    Enum.GetValues(typeof(UrlShortenerType)).Cast<UrlShortenerType>().ForEach(x =>
+                    Helpers.GetEnums<UrlShortenerType>().ForEach(x =>
                     {
                         AddDestination<UrlShortenerType>((int)x, EDataType.URL, info.TaskSettings);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is UrlShortenerType && (UrlShortenerType)x.Tag == (UrlShortenerType)info.TaskSettings.URLShortenerDestination;
+                        x.Checked = x.Tag is UrlShortenerType && (UrlShortenerType)x.Tag == info.TaskSettings.URLShortenerDestination;
                     });
 
                     break;
@@ -103,7 +104,7 @@ namespace ShareX
 
         public void InitCapture(TaskSettings taskSettings)
         {
-            Enum.GetValues(typeof(ImageDestination)).Cast<ImageDestination>().ForEach(x =>
+            Helpers.GetEnums<ImageDestination>().ForEach(x =>
             {
                 if (x != ImageDestination.FileUploader)
                 {
@@ -111,15 +112,21 @@ namespace ShareX
                 }
             });
 
-            Enum.GetValues(typeof(FileDestination)).Cast<FileDestination>().ForEach(x =>
+            Helpers.GetEnums<FileDestination>().ForEach(x =>
             {
                 AddDestination<FileDestination>((int)x, EDataType.File, taskSettings);
             });
 
             flp.Controls.OfType<RadioButton>().ForEach(x =>
             {
-                x.Checked = (x.Tag is ImageDestination && (ImageDestination)x.Tag == (ImageDestination)taskSettings.ImageDestination) ||
-                  (x.Tag is FileDestination && (FileDestination)x.Tag == (FileDestination)taskSettings.ImageFileDestination);
+                if (taskSettings.ImageDestination != ImageDestination.FileUploader)
+                {
+                    x.Checked = x.Tag is ImageDestination && (ImageDestination)x.Tag == taskSettings.ImageDestination;
+                }
+                else
+                {
+                    x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == taskSettings.ImageFileDestination;
+                }
             });
         }
 
@@ -127,11 +134,13 @@ namespace ShareX
         {
             if (InitCompleted != null)
             {
-                string currentDestination = flp.Controls.OfType<RadioButton>().First<RadioButton>(x => x.Checked).Text;
-                if (!string.IsNullOrEmpty(currentDestination))
+                RadioButton rbDestination = flp.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
+                string currentDestination = string.Empty;
+                if (rbDestination != null)
                 {
-                    InitCompleted(currentDestination);
+                    currentDestination = rbDestination.Text;
                 }
+                InitCompleted(currentDestination);
             }
         }
 
@@ -139,10 +148,10 @@ namespace ShareX
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
 
-            if (Program.UploadersConfig.IsActive<T>(index))
+            if (Program.UploadersConfig.IsValid<T>(index))
             {
                 RadioButton rb = new RadioButton() { AutoSize = true };
-                rb.Text = destination.GetDescription();
+                rb.Text = destination.GetLocalizedDescription();
                 rb.Tag = destination;
                 rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
 
@@ -152,45 +161,46 @@ namespace ShareX
 
         private void SetDestinations(bool isActive, EDataType dataType, object destination, TaskSettings taskSettings)
         {
-            if (isActive)
+            if (!isActive) return;
+
+            switch (dataType)
             {
-                switch (dataType)
-                {
-                    case EDataType.Image:
-                        if (destination is ImageDestination)
-                        {
-                            taskSettings.ImageDestination = (ImageDestination)destination;
-                        }
-                        else if (destination is FileDestination)
-                        {
-                            taskSettings.ImageDestination = ImageDestination.FileUploader;
-                            taskSettings.ImageFileDestination = (FileDestination)destination;
-                        }
-                        break;
-                    case EDataType.Text:
-                        if (destination is TextDestination)
-                        {
-                            taskSettings.TextDestination = (TextDestination)destination;
-                        }
-                        else if (destination is FileDestination)
-                        {
-                            taskSettings.TextDestination = TextDestination.FileUploader;
-                            taskSettings.TextFileDestination = (FileDestination)destination;
-                        }
-                        break;
-                    case EDataType.File:
-                        if (destination is FileDestination)
-                        {
-                            taskSettings.ImageFileDestination = taskSettings.FileDestination = (FileDestination)destination;
-                        }
-                        break;
-                    case EDataType.URL:
-                        if (destination is UrlShortenerType)
-                        {
-                            taskSettings.URLShortenerDestination = (UrlShortenerType)destination;
-                        }
-                        break;
-                }
+                case EDataType.Image:
+                    if (destination is ImageDestination)
+                    {
+                        taskSettings.ImageDestination = (ImageDestination)destination;
+                    }
+                    else if (destination is FileDestination)
+                    {
+                        taskSettings.ImageDestination = ImageDestination.FileUploader;
+                        taskSettings.ImageFileDestination = (FileDestination)destination;
+                    }
+                    break;
+                case EDataType.Text:
+                    if (destination is TextDestination)
+                    {
+                        taskSettings.TextDestination = (TextDestination)destination;
+                    }
+                    else if (destination is FileDestination)
+                    {
+                        taskSettings.TextDestination = TextDestination.FileUploader;
+                        taskSettings.TextFileDestination = (FileDestination)destination;
+                    }
+                    break;
+                case EDataType.File:
+                    if (destination is FileDestination)
+                    {
+                        taskSettings.ImageDestination = ImageDestination.FileUploader;
+                        taskSettings.TextDestination = TextDestination.FileUploader;
+                        taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = (FileDestination)destination;
+                    }
+                    break;
+                case EDataType.URL:
+                    if (destination is UrlShortenerType)
+                    {
+                        taskSettings.URLShortenerDestination = (UrlShortenerType)destination;
+                    }
+                    break;
             }
         }
     }

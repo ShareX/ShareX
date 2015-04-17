@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -48,6 +49,11 @@ namespace ShareX
             btnOverwrite.Text += Path.GetFileName(Filepath);
             uniqueFilepath = Helpers.GetUniqueFilePath(Filepath);
             btnUniqueName.Text += Path.GetFileName(uniqueFilepath);
+        }
+
+        private void FileExistForm_Shown(object sender, EventArgs e)
+        {
+            this.ShowActivate();
         }
 
         private string GetNewFilename()
@@ -77,7 +83,7 @@ namespace ShareX
         {
             string newFilename = txtNewName.Text;
             btnNewName.Enabled = !string.IsNullOrEmpty(newFilename) && !newFilename.Equals(filename, StringComparison.InvariantCultureIgnoreCase);
-            btnNewName.Text = "Use new name: " + GetNewFilename();
+            btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFilename();
         }
 
         private void btnOverwrite_Click(object sender, EventArgs e)

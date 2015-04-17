@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.UploadersLib;
 using System;
 using System.IO;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -72,15 +72,15 @@ namespace ShareX
             lvClipboardFormats.Groups.Add(lvgLocal);
             lvClipboardFormats.Groups.Add(lvgCustom);
 
-            foreach (LinkFormatEnum type in Enum.GetValues(typeof(LinkFormatEnum)))
+            foreach (LinkFormatEnum type in Helpers.GetEnums<LinkFormatEnum>())
             {
                 if (!Helpers.IsImageFile(Info.Result.URL) &&
                     (type == LinkFormatEnum.HTMLImage || type == LinkFormatEnum.HTMLLinkedImage ||
-                     type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
-                     type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
+                    type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
+                    type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
                     continue;
 
-                AddFormat(type.GetDescription(), GetUrlByType(type));
+                AddFormat(type.GetLocalizedDescription(), GetUrlByType(type));
             }
 
             if (Helpers.IsImageFile(Info.Result.URL))
@@ -169,7 +169,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(url))
             {
-                Helpers.OpenURL(url);
+                URLHelpers.OpenURL(url);
             }
         }
 
@@ -177,7 +177,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
             {
-                Helpers.OpenURL(Info.FilePath);
+                URLHelpers.OpenURL(Info.FilePath);
             }
         }
 

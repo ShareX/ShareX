@@ -1,8 +1,8 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using ScreenCaptureLib;
+using ShareX.HelpersLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -35,8 +35,6 @@ namespace ShareX
 {
     public partial class AutoCaptureForm : Form
     {
-        public static bool IsRunning { get; private set; }
-
         private static AutoCaptureForm instance;
 
         public static AutoCaptureForm Instance
@@ -52,17 +50,21 @@ namespace ShareX
             }
         }
 
+        public static bool IsRunning { get; private set; }
+
+        private bool isLoaded;
         private Timer statusTimer;
         private System.Timers.Timer screenshotTimer;
         private int delay, count, timeleft, percentage;
         private bool waitUploads;
         private Stopwatch stopwatch = new Stopwatch();
+        private Rectangle customRegion;
 
         private AutoCaptureForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            niTray.Icon = Resources.clock_plus.ToIcon();
+            niTray.Icon = Resources.clock.ToIcon();
 
             screenshotTimer = new System.Timers.Timer();
             screenshotTimer.SynchronizingObject = this;
@@ -71,10 +73,13 @@ namespace ShareX
             statusTimer = new Timer { Interval = 250 };
             statusTimer.Tick += (sender, e) => UpdateStatus();
 
+            customRegion = Program.Settings.AutoCaptureRegion;
             UpdateRegion();
             nudRepeatTime.Value = Program.Settings.AutoCaptureRepeatTime;
             cbAutoMinimize.Checked = Program.Settings.AutoCaptureMinimizeToTray;
             cbWaitUploads.Checked = Program.Settings.AutoCaptureWaitUpload;
+
+            isLoaded = true;
         }
 
         private void screenshotTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -117,11 +122,11 @@ namespace ShareX
             }
         }
 
-        private void SelectRegion()
+        private void SelectRegion(TaskSettings taskSettings)
         {
             Rectangle rect;
 
-            if (TaskHelpers.SelectRegion(out rect))
+            if (TaskHelpers.SelectRegion(out rect, taskSettings))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();
@@ -134,7 +139,7 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                lblRegion.Text = string.Format("X: {0}, Y: {1}, Width: {2}, Height: {3}", rect.X, rect.Y, rect.Width, rect.Height);
+                lblRegion.Text = string.Format(Resources.AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_, rect.X, rect.Y, rect.Width, rect.Height);
                 btnExecute.Enabled = true;
             }
         }
@@ -147,7 +152,7 @@ namespace ShareX
                 percentage = (int)(100 - (double)timeleft / delay * 100);
                 tspbBar.Value = percentage;
                 string secondsLeft = (timeleft / 1000f).ToString("0.0");
-                tsslStatus.Text = " Timeleft: " + secondsLeft + "s (" + percentage + "%) Total: " + count;
+                tsslStatus.Text = " " + string.Format(Resources.AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_, secondsLeft, percentage, count);
             }
         }
 
@@ -158,12 +163,12 @@ namespace ShareX
                 IsRunning = false;
                 tspbBar.Value = 0;
                 stopwatch.Reset();
-                btnExecute.Text = "Start";
+                btnExecute.Text = Resources.AutoCaptureForm_Execute_Start;
             }
             else
             {
                 IsRunning = true;
-                btnExecute.Text = "Stop";
+                btnExecute.Text = Resources.AutoCaptureForm_Execute_Stop;
                 screenshotTimer.Interval = 1000;
                 delay = (int)(Program.Settings.AutoCaptureRepeatTime * 1000);
                 waitUploads = Program.Settings.AutoCaptureWaitUpload;
@@ -179,9 +184,31 @@ namespace ShareX
             statusTimer.Enabled = IsRunning;
         }
 
+        private void rbFullscreen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isLoaded && rbFullscreen.Checked)
+            {
+                customRegion = Program.Settings.AutoCaptureRegion;
+                Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
+                UpdateRegion();
+                btnRegion.Enabled = false;
+            }
+        }
+
+        private void rbCustomRegion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isLoaded && rbCustomRegion.Checked)
+            {
+                Program.Settings.AutoCaptureRegion = customRegion;
+                UpdateRegion();
+                btnRegion.Enabled = true;
+            }
+        }
+
         private void btnRegion_Click(object sender, EventArgs e)
         {
-            SelectRegion();
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            SelectRegion(taskSettings);
         }
 
         private void nudDuration_ValueChanged(object sender, EventArgs e)
@@ -209,12 +236,6 @@ namespace ShareX
             IsRunning = false;
             screenshotTimer.Enabled = false;
             statusTimer.Enabled = false;
-        }
-
-        private void btnFullscreen_Click(object sender, EventArgs e)
-        {
-            Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
-            UpdateRegion();
         }
 
         private void AutoCapture_Resize(object sender, EventArgs e)

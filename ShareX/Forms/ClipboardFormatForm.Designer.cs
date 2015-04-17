@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClipboardFormatForm));
             this.txtFormat = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblFilter = new System.Windows.Forms.Label();
@@ -39,68 +40,47 @@
             // 
             // txtFormat
             // 
-            this.txtFormat.Location = new System.Drawing.Point(88, 40);
+            resources.ApplyResources(this.txtFormat, "txtFormat");
             this.txtFormat.Name = "txtFormat";
-            this.txtFormat.Size = new System.Drawing.Size(304, 20);
-            this.txtFormat.TabIndex = 3;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(88, 12);
+            resources.ApplyResources(this.txtDescription, "txtDescription");
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(304, 20);
-            this.txtDescription.TabIndex = 1;
             // 
             // lblFilter
             // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.lblFilter, "lblFilter");
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(42, 13);
-            this.lblFilter.TabIndex = 2;
-            this.lblFilter.Text = "Format:";
             // 
             // lblFolderPath
             // 
-            this.lblFolderPath.AutoSize = true;
-            this.lblFolderPath.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.lblFolderPath, "lblFolderPath");
             this.lblFolderPath.Name = "lblFolderPath";
-            this.lblFolderPath.Size = new System.Drawing.Size(63, 13);
-            this.lblFolderPath.TabIndex = 0;
-            this.lblFolderPath.Text = "Description:";
             // 
             // lblExample
             // 
-            this.lblExample.Location = new System.Drawing.Point(88, 60);
+            resources.ApplyResources(this.lblExample, "lblExample");
             this.lblExample.Name = "lblExample";
-            this.lblExample.Size = new System.Drawing.Size(302, 68);
-            this.lblExample.TabIndex = 4;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(312, 136);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 23);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(224, 136);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(80, 23);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // ClipboardFormatForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 168);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblExample);
@@ -112,8 +92,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ClipboardFormatForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clipboard content format";
             this.ResumeLayout(false);
             this.PerformLayout();
 

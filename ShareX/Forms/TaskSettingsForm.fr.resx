@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Ajouter...</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>Ajouter...</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Avancé</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>Après la capture...</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>Après que la tâche soit effectuée:</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>Après la mise en ligne...</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Zone de capture client pendant les captures "fenêtre" ou "fenêtre active"</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Fenêtre de capture avec ombrage (transparence nécessaire)</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Fenêtre de capture</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Presse-papier mis en ligne</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Créer une miniature seulement si la taille de l'image est plus grande que la taille des miniatures</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Destinations...</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Edition</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Effets</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Extensions</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Logiciel de mise en ligne des fichiers</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Filtre</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>Durée fixée:</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Chemin du répertoire</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Généralités</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>Qualité Gif:</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>Hauteur</value>
+  </data>
+  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Si le presse-papier contient une URL de fichier alors télécharger et mettre en ligne</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Si le presse-papier contient chemin de répertoire alors indexer ce répertoire et mettre en ligne l'index</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Si le presse-papier contient une URL alors la partager en utilisant le service de partage de URL</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Si le presse-papier contient une URL alors utiliser le raccourcisseur d'URL</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Si le fichier existe:</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Configuration des effets d'image...</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>Format d'image 2:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Format d'image:</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>Taille limite d'image pour l'utilisation de "Format d'image 2:"</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Logiciels de mis en ligne d'image</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Inclure les sous-répertoires</value>
+  </data>
+  <data name="tpIndexer.Text" xml:space="preserve">
+    <value>Indexeur</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>Qualité JPEG</value>
+  </data>
+  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
+    <value>Ko 0 -5000 ( 0 désactive)</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Modèle de nom pour la capture de la fenêtre active:</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>Modèle de nom pour la mise en ligne de la capture ou du presse-papier:</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>n'appliquer les effets que sur la région capturée</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Remplacer le programme de mise en ligne personnalisé par défaut:</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Remplacer le compte ftp par défaut</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Chemin</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>Jouer un son quand la capture est faite</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>Jouer un son quand la capture est finie</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Prévisualisation</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Prévisualisation:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Prévisualisation:</value>
+  </data>
+  <data name="btnEncoderConfig.Text" xml:space="preserve">
+    <value>Profiles...</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>Rectangle annoté</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Capture d'une région </value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Remettre à zéro le compteur incrémental automatique</value>
+  </data>
+  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
+    <value>Exécuter CLI après:</value>
+  </data>
+  <data name="cbHistorySave.Text" xml:space="preserve">
+    <value>Enregistrer les infos de tâches dans l'historique</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>Vitesse d'enregistrement d'écran FPS:</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Enregistreur d'écran</value>
+  </data>
+  <data name="cbScreenshotDelay.Text" xml:space="preserve">
+    <value>Délai de capture d'écran:</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>secondes</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>secondes</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>secondes</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Décalage de l'ombre</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Configurations de la tache</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Afficher les effets sur la fenêtre de l'image après la capture</value>
+  </data>
+  <data name="chkShowAfterUploadForm.Text" xml:space="preserve">
+    <value>Afficher la fenêtre "Après téléchargement" après que la tâche soit terminée</value>
+  </data>
+  <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
+    <value>Afficher la fenêtre "Avant de téléchargement" pour changer dynamiquement la destination avant la mise en ligne</value>
+  </data>
+  <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
+    <value>Afficher la fenêtre "tâches de post de capture" après que la capture soit faite</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Afficher le curseur dans les captures d'écran</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Démarrer l'enregistrement après:</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Tâche</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Tâche...</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Logiciels de mise en ligne de texte</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>Miniature</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>Nom de la miniature</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Mise en ligne</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Services de partage d'URL</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Raccourcisseurs URL</value>
+  </data>
+  <data name="chkUseDefaultActions.Text" xml:space="preserve">
+    <value>Utilisez les actions dans les paramètres des tâches de la fenêtre principale</value>
+  </data>
+  <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
+    <value>Utilisez les paramètres avancés dans les principaux paramètres de la tâche de la fenêtre</value>
+  </data>
+  <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
+    <value>Utilisez les paramètres de capture dans les paramètres des tâches de la fenêtre principale</value>
+  </data>
+  <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Utiliser par défaut les paramètres "après la capture"</value>
+  </data>
+  <data name="cbUseDefaultAfterUploadSettings.Text" xml:space="preserve">
+    <value>Utiliser par défaut les paramètres "après la mise en ligne"</value>
+  </data>
+  <data name="cbUseDefaultDestinationSettings.Text" xml:space="preserve">
+    <value>Utiliser par défaut les paramètres "Destination"</value>
+  </data>
+  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+    <value>Utiliser les paramètres généraux dans les principaux paramètres de la tâche de la fenêtre</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>Utiliser les paramètres d'image dans les principaux paramètres de la tâche de la fenêtre</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
+    <value>Utiliser les paramètres de l'indexeur dans les paramètres des tâches de la fenêtre principale</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Utiliser un modèle de nom aussi pour les fichiers mis en ligne plutôt que les noms actuels</value>
+  </data>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>Utiliser les paramètres de transfert dans les paramètres des tâches de la fenêtre principale</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Surveille les répertoires</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Surveille le répertoire et si un nouveau fichier est créé alors le mettre en ligne</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>Lors de la capture d'écran, si la fenêtre de sélection croise la barre des tâches alors cacher la barre des tâches.</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>Largeur:</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>Vous pouvez activer / désactiver les effets d'image de "Après tâches de capture -&gt; Ajouter des effets d'image".</value>
+  </data>
+</root>

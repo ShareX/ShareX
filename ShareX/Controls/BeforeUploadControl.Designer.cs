@@ -33,6 +33,7 @@
             // 
             // flp
             // 
+            this.flp.AutoScroll = true;
             this.flp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp.Location = new System.Drawing.Point(0, 0);

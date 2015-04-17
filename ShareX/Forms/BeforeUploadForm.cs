@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,16 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using UploadersLib;
 
 namespace ShareX
 {
@@ -44,10 +38,14 @@ namespace ShareX
             Icon = ShareXResources.Icon;
             DialogResult = DialogResult.OK;
 
-            ucBeforeUpload.InitCompleted += (currentDestination) =>
+            ucBeforeUpload.InitCompleted += currentDestination =>
             {
-                lblTitle.Text = string.Format("{0} is about to be uploaded to {1}. You may choose a different destination.", info.FileName, currentDestination);
+                string title = string.IsNullOrEmpty(currentDestination) ? Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ :
+                    Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_;
+                lblTitle.Text = string.Format(title, info.FileName, currentDestination);
+                pbPreview.LoadImageFromFileAsync(info.FilePath);
             };
+
             ucBeforeUpload.Init(info);
         }
 

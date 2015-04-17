@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,12 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
-using HistoryLib;
+using ShareX.HelpersLib;
+using ShareX.HistoryLib;
+using ShareX.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -47,12 +48,14 @@ namespace ShareX
 
         private static readonly List<UploadTask> Tasks = new List<UploadTask>();
 
+        public static readonly RecentManager RecentManager = new RecentManager();
+
         private static int lastIconStatus = -1;
 
         public static void Start(UploadTask task)
         {
             Tasks.Add(task);
-            UpdateDragAndDropTip();
+            UpdateMainFormTip();
             task.StatusChanged += task_StatusChanged;
             task.UploadStarted += task_UploadStarted;
             task.UploadProgressChanged += task_UploadProgressChanged;
@@ -67,7 +70,7 @@ namespace ShareX
             {
                 task.Stop();
                 Tasks.Remove(task);
-                UpdateDragAndDropTip();
+                UpdateMainFormTip();
 
                 ListViewItem lvi = FindListViewItem(task);
 
@@ -113,9 +116,9 @@ namespace ShareX
             }
         }
 
-        private static void UpdateDragAndDropTip()
+        public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblDragAndDropTip.Visible = Tasks.Count == 0;
+            Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
         }
 
         private static ListViewItem FindListViewItem(UploadTask task)
@@ -160,13 +163,11 @@ namespace ShareX
                 ListViewItem lvi = new ListViewItem();
                 lvi.Tag = task;
                 lvi.Text = info.FileName;
-                lvi.SubItems.Add("In queue");
+                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.SubItems.Add(string.Empty);
-                lvi.SubItems.Add(info.DataType.ToString());
-                lvi.SubItems.Add(info.IsUploadJob ? info.UploaderHost : string.Empty);
                 lvi.SubItems.Add(string.Empty);
                 lvi.ImageIndex = 3;
                 if (Program.Settings.ShowMostRecentTaskFirst)
@@ -258,20 +259,28 @@ namespace ShareX
 
                             if (lvi != null)
                             {
-                                lvi.SubItems[1].Text = "Error";
-                                lvi.SubItems[8].Text = string.Empty;
+                                lvi.SubItems[1].Text = Resources.TaskManager_task_UploadCompleted_Error;
+                                lvi.SubItems[6].Text = string.Empty;
                                 lvi.ImageIndex = 1;
                             }
 
-                            if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                            if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
                             {
-                                SystemSounds.Asterisk.Play();
+                                if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                {
+                                    Helpers.PlaySoundAsync(Resources.ErrorSound);
+                                }
+
+                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible)
+                                {
+                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error,
+                                        errors, ToolTipIcon.Error);
+                                }
                             }
                         }
                         else
                         {
-                            DebugHelper.WriteLine("Task completed. Filename: {0}, URL: {1}, Duration: {2} ms",
-                                info.FileName, info.Result.ToString(), (int)info.UploadDuration.TotalMilliseconds);
+                            DebugHelper.WriteLine("Task completed. Filename: {0}, URL: {1}, Duration: {2} ms", info.FileName, info.Result.ToString(), (int)info.UploadDuration.TotalMilliseconds);
 
                             string result = info.Result.ToString();
 
@@ -288,23 +297,24 @@ namespace ShareX
 
                                 if (!string.IsNullOrEmpty(result))
                                 {
-                                    lvi.SubItems[7].Text = task.Info.UploaderHost;
-                                    lvi.SubItems[8].Text = result;
+                                    lvi.SubItems[6].Text = result;
                                 }
                             }
 
-                            if (!task.IsStopped && !string.IsNullOrEmpty(result))
+                            if (!task.StopRequested && !string.IsNullOrEmpty(result))
                             {
                                 if (task.Info.TaskSettings.GeneralSettings.SaveHistory)
                                 {
                                     HistoryManager.AddHistoryItemAsync(Program.HistoryFilePath, info.GetHistoryItem());
                                 }
 
-                                if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
+                                RecentManager.Add(result);
+
+                                if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
                                     if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
-                                        SystemSounds.Exclamation.Play();
+                                        Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
                                     }
 
                                     if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
@@ -312,7 +322,32 @@ namespace ShareX
                                         result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
-                                    TaskHelpers.ShowResultNotifications(result, info.TaskSettings, info.FilePath);
+                                    if (!string.IsNullOrEmpty(result))
+                                    {
+                                        switch (info.TaskSettings.GeneralSettings.PopUpNotification)
+                                        {
+                                            case PopUpNotificationType.BalloonTip:
+                                                if (Program.MainForm.niTray.Visible)
+                                                {
+                                                    Program.MainForm.niTray.Tag = result;
+                                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
+                                                        result, ToolTipIcon.Info);
+                                                }
+                                                break;
+                                            case PopUpNotificationType.ToastNotification:
+                                                NotificationFormConfig toastConfig = new NotificationFormConfig()
+                                                {
+                                                    Action = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
+                                                    FilePath = info.FilePath,
+                                                    Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
+                                                    URL = result
+                                                };
+                                                NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                                                    info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
+                                                    info.TaskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
+                                                break;
+                                        }
+                                    }
 
                                     if (info.TaskSettings.GeneralSettings.ShowAfterUploadForm)
                                     {
@@ -332,8 +367,15 @@ namespace ShareX
             }
             finally
             {
-                StartTasks();
-                UpdateProgressUI();
+                if (!IsBusy && Program.CLI.IsCommandExist("AutoClose"))
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    StartTasks();
+                    UpdateProgressUI();
+                }
             }
         }
 
@@ -387,7 +429,17 @@ namespace ShareX
 
                 if (progress >= 0)
                 {
-                    icon = TaskHelpers.GetProgressIcon(progress);
+                    try
+                    {
+                        icon = TaskHelpers.GetProgressIcon(progress);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        progress = -1;
+                        if (lastIconStatus == progress) return;
+                        icon = ShareXResources.Icon;
+                    }
                 }
                 else
                 {

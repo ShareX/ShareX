@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (C) 2007-2014 ShareX Developers
+    Copyright © 2007-2015 ShareX Developers
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,46 +23,170 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
+using ShareX.HelpersLib;
+using ShareX.Properties;
+using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX
 {
     public partial class ScreenRegionForm : Form
     {
-        private Color color = Color.Red;
+        public event Action StopRequested;
+
+        public bool IsRecording { get; private set; }
+        public bool IsCountdown { get; set; }
+        public TimeSpan Countdown { get; set; }
+        public Stopwatch Timer { get; private set; }
+        public ManualResetEvent RecordResetEvent { get; set; }
+        public bool AbortRequested { get; private set; }
+
+        private Color borderColor = Color.Red;
+        private Rectangle borderRectangle;
+        private Rectangle borderRectangle0Based;
 
         public ScreenRegionForm(Rectangle regionRectangle)
         {
             InitializeComponent();
 
-            Location = new Point(regionRectangle.X - 1, regionRectangle.Y - 1);
-            Size = new Size(regionRectangle.Width + 2, regionRectangle.Height + 2);
+            borderRectangle = regionRectangle.Offset(1);
+            borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
 
-            Rectangle rect = ClientRectangle;
-            Region region = new Region(rect);
-            rect.Inflate(-1, -1);
-            region.Exclude(rect);
+            Location = borderRectangle.Location;
+            int windowWidth = Math.Max(borderRectangle.Width, pInfo.Width);
+            Size = new Size(windowWidth, borderRectangle.Height + pInfo.Height + 1);
+            pInfo.Location = new Point(0, borderRectangle.Height + 1);
+
+            Region region = new Region(ClientRectangle);
+            region.Exclude(borderRectangle0Based.Offset(-1));
+            region.Exclude(new Rectangle(0, borderRectangle.Height, windowWidth, 1));
+            if (borderRectangle.Width < pInfo.Width)
+            {
+                region.Exclude(new Rectangle(borderRectangle.Width, 0, pInfo.Width - borderRectangle.Width, borderRectangle.Height));
+            }
+            else if (borderRectangle.Width > pInfo.Width)
+            {
+                region.Exclude(new Rectangle(pInfo.Width, borderRectangle.Height + 1, borderRectangle.Width - pInfo.Width, pInfo.Height));
+            }
             Region = region;
+
+            Timer = new Stopwatch();
         }
 
-        public void ChangeColor(Color color)
+        private void ScreenRegionForm_Shown(object sender, EventArgs e)
         {
-            this.color = color;
+            this.ShowActivate();
+        }
+
+        protected void OnStopRequested()
+        {
+            if (StopRequested != null)
+            {
+                StopRequested();
+            }
+        }
+
+        public static ScreenRegionForm Show(Rectangle captureRectangle, Action stopRequested, float duration = 0)
+        {
+            ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
+
+            Thread thread = new Thread(() =>
+            {
+                regionForm.StopRequested += stopRequested;
+
+                if (duration > 0)
+                {
+                    regionForm.IsCountdown = true;
+                    regionForm.Countdown = TimeSpan.FromSeconds(duration);
+                }
+
+                regionForm.UpdateTimer();
+                regionForm.ShowDialog();
+            });
+
+            thread.Start();
+
+            return regionForm;
+        }
+
+        public void StartTimer()
+        {
+            borderColor = Color.FromArgb(0, 255, 0);
+            btnStop.Text = Resources.AutoCaptureForm_Execute_Stop;
             Refresh();
+
+            Timer.Start();
+            timerRefresh.Start();
+            IsRecording = true;
+        }
+
+        private void UpdateTimer()
+        {
+            if (!IsDisposed)
+            {
+                TimeSpan timer;
+
+                if (IsCountdown)
+                {
+                    timer = Countdown - Timer.Elapsed;
+                    if (timer.Ticks < 0) timer = TimeSpan.Zero;
+                }
+                else
+                {
+                    timer = Timer.Elapsed;
+                }
+
+                lblTimer.Text = timer.ToString("mm\\:ss\\:ff");
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             using (Pen pen1 = new Pen(Color.Black) { DashPattern = new float[] { 5, 5 } })
-            using (Pen pen2 = new Pen(color) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
+            using (Pen pen2 = new Pen(borderColor) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
             {
-                e.Graphics.DrawRectangleProper(pen1, ClientRectangle);
-                e.Graphics.DrawRectangleProper(pen2, ClientRectangle);
+                e.Graphics.DrawRectangleProper(pen1, borderRectangle0Based);
+                e.Graphics.DrawRectangleProper(pen2, borderRectangle0Based);
             }
 
             base.OnPaint(e);
+        }
+
+        private void timerRefresh_Tick(object sender, EventArgs e)
+        {
+            UpdateTimer();
+        }
+
+        public void StartStop()
+        {
+            if (IsRecording)
+            {
+                OnStopRequested();
+            }
+            else if (RecordResetEvent != null)
+            {
+                RecordResetEvent.Set();
+            }
+        }
+
+        private void btnStop_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                StartStop();
+            }
+        }
+
+        private void btnAbort_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                AbortRequested = true;
+                StartStop();
+            }
         }
     }
 }
