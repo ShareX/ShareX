@@ -157,7 +157,7 @@
     <value>Taak instellingen...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>Taken na opname</value>
+    <value>Taken na vastleggen</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>Taken na uploaden</value>

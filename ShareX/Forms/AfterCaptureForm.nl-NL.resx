@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Taken na opname</value>
+    <value>ShareX - Taken na vastleggen</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annuleren</value>
@@ -133,7 +133,7 @@
     <value>Taken</value>
   </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
-    <value>Na opname</value>
+    <value>Na vastleggen</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Voor uploaden</value>

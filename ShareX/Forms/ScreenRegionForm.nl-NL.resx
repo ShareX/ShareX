@@ -117,43 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Automatisch vastleggen</value>
-  </data>
-  <data name="btnExecute.Text" xml:space="preserve">
+  <data name="btnStop.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="btnRegion.Text" xml:space="preserve">
-    <value>Selecteer regio</value>
+  <data name="btnAbort.Text" xml:space="preserve">
+    <value>Annuleer</value>
   </data>
-  <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Minimaliseer automatisch naar tray</value>
-  </data>
-  <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Wacht tot de taken compleet zijn</value>
-  </data>
-  <data name="gbRegion.Text" xml:space="preserve">
-    <value>Regio</value>
-  </data>
-  <data name="lblDuration.Text" xml:space="preserve">
-    <value>Herhaal tijd:</value>
-  </data>
-  <data name="lblDurationSeconds.Text" xml:space="preserve">
-    <value>seconden</value>
-  </data>
-  <data name="lblRegion.Text" xml:space="preserve">
-    <value>Regio</value>
-  </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX - Automatisch vastleggen</value>
-  </data>
-  <data name="rbCustomRegion.Text" xml:space="preserve">
-    <value>Aangepaste regio</value>
-  </data>
-  <data name="rbFullscreen.Text" xml:space="preserve">
-    <value>Volledig scherm</value>
-  </data>
-  <data name="ssBar.Text" xml:space="preserve">
-    <value>Status</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Venster voor regio scherm</value>
   </data>
 </root>
