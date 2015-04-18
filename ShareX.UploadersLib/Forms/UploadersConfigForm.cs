@@ -513,13 +513,16 @@ namespace ShareX.UploadersLib
 
             txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
             txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
-            cbAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
             txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
             txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Enabled = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
+
+            cbAmazonS3Endpoint.Items.AddRange(Amazon.RegionEndpoint.EnumerableAllRegions.ToArray());
+            cbAmazonS3Endpoint.SelectedItem = Amazon.RegionEndpoint.EnumerableAllRegions.SingleOrDefault(r => r.SystemName == Config.AmazonS3Settings.Region) ?? Amazon.RegionEndpoint.USWest1;
+            cbAmazonS3Endpoint.DisplayMember = "DisplayName";
             UpdateAmazonS3Status();
 
             // ownCloud
@@ -1782,13 +1785,12 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
-        }
-
-        private void cbAmazonS3Endpoint_TextChanged(object sender, EventArgs e)
-        {
-            Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
-            UpdateAmazonS3Status();
+            var region = cbAmazonS3Endpoint.SelectedItem as Amazon.RegionEndpoint;
+            if (region != null)
+            {
+                Config.AmazonS3Settings.Region = region.SystemName;
+                UpdateAmazonS3Status();
+            }
         }
 
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)
