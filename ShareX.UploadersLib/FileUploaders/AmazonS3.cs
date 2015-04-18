@@ -60,8 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetPolicyDocument(string fileName, string objectKey)
         {
-            var policyDocument = new
-            {
+            var policyDocument = new {
                 expiration = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-ddTHH:mm:ssZ"), // The policy is valid for 2 days
                 conditions = new List<S3PolicyCondition> {
                     new S3PolicyCondition("acl", "public-read"),
@@ -83,14 +82,14 @@ namespace ShareX.UploadersLib.FileUploaders
         // http://codeonaboat.wordpress.com/2011/04/22/uploading-a-file-to-amazon-s3-using-an-asp-net-mvc-application-directly-from-the-users-browser/
         private string CreateSignature(string secretKey, byte[] policyBytes)
         {
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            string base64Policy = Convert.ToBase64String(policyBytes);
-            byte[] secretKeyBytes = encoding.GetBytes(secretKey);
+            var encoding = new ASCIIEncoding();
+            var base64Policy = Convert.ToBase64String(policyBytes);
+            var secretKeyBytes = encoding.GetBytes(secretKey);
 
             byte[] signatureBytes;
-            using (HMACSHA1 hmacsha1 = new HMACSHA1(secretKeyBytes))
+            using (var hmacsha1 = new HMACSHA256(secretKeyBytes))
             {
-                byte[] base64PolicyBytes = encoding.GetBytes(base64Policy);
+                var base64PolicyBytes = encoding.GetBytes(base64Policy);
                 signatureBytes = hmacsha1.ComputeHash(base64PolicyBytes);
             }
 
@@ -99,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetObjectKey(string fileName)
         {
-            string objectPrefix = NameParser.Parse(NameParserType.FolderPath, S3Settings.ObjectPrefix.Trim('/'));
+            var objectPrefix = NameParser.Parse(NameParserType.FolderPath, S3Settings.ObjectPrefix.Trim('/'));
             return URLHelpers.CombineURL(objectPrefix, fileName);
         }
 
@@ -108,7 +107,7 @@ namespace ShareX.UploadersLib.FileUploaders
             objectName = objectName.Trim('/');
             objectName = URLHelpers.URLPathEncode(objectName);
 
-            string url = string.Empty;
+            var url = string.Empty;
 
             if (S3Settings.UseCustomCNAME)
             {
@@ -138,31 +137,32 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private Dictionary<string, string> GetParameters(string fileName, string objectKey)
         {
-            string policyDocument = GetPolicyDocument(fileName, objectKey);
-            byte[] policyBytes = Encoding.ASCII.GetBytes(policyDocument);
-            string signature = CreateSignature(S3Settings.SecretAccessKey, policyBytes);
+            var policyDocument = GetPolicyDocument(fileName, objectKey);
+            var policyBytes = Encoding.ASCII.GetBytes(policyDocument);
+            var signature = CreateSignature(S3Settings.SecretAccessKey, policyBytes);
 
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("key", objectKey);
-            parameters.Add("acl", "public-read");
-            parameters.Add("content-type", Helpers.GetMimeType(fileName));
-            parameters.Add("AWSAccessKeyId", S3Settings.AccessKeyID);
-            parameters.Add("policy", Convert.ToBase64String(policyBytes));
-            parameters.Add("signature", signature);
-            parameters.Add("x-amz-storage-class", GetObjectStorageClass());
-            return parameters;
+            return new Dictionary<string, string> {
+                { "key", objectKey },
+                { "acl", "public-read" },
+                { "content-type", Helpers.GetMimeType(fileName) },
+                { "AWSAccessKeyId", S3Settings.AccessKeyID },
+                { "policy", Convert.ToBase64String(policyBytes) },
+                { "x-amz-algorithm", "AWS4-HMAC-SHA256" },
+                { "signature", signature },
+                { "x-amz-storage-class", GetObjectStorageClass() }
+            };
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (string.IsNullOrEmpty(S3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
             if (string.IsNullOrEmpty(S3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(S3Settings.Endpoint)) throw new Exception("'Endpoint' must not be emoty.");
+            if (string.IsNullOrEmpty(S3Settings.Endpoint)) throw new Exception("'Endpoint' must not be empty.");
             if (string.IsNullOrEmpty(S3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
 
-            string objectKey = GetObjectKey(fileName);
+            var objectKey = GetObjectKey(fileName);
 
-            UploadResult uploadResult = UploadData(stream, GetEndpoint(), fileName, arguments: GetParameters(fileName, objectKey), responseType: ResponseType.Headers);
+            var uploadResult = UploadData(stream, GetEndpoint(), fileName, arguments: GetParameters(fileName, objectKey), responseType: ResponseType.Headers);
 
             if (uploadResult.IsSuccess)
             {
