@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib
 
         public int SpaceAfterCheckBox { get; set; }
 
-        private bool isChecked;
+        private bool isChecked, isHover;
         private string text;
 
         private LinearGradientBrush backgroundBrush, backgroundCheckedBrush, innerBorderBrush, innerBorderCheckedBrush;
@@ -135,28 +135,18 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void DrawBackground(Graphics g)
+        protected override void OnMouseEnter(EventArgs e)
         {
-            if (Checked)
-            {
-                g.FillRectangle(backgroundCheckedBrush, new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 4));
-                g.DrawRectangle(innerBorderCheckedPen, new Rectangle(1, 1, checkBoxSize - 3, checkBoxSize - 3));
-            }
-            else
-            {
-                g.FillRectangle(backgroundBrush, new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 4));
-                g.DrawRectangle(innerBorderPen, new Rectangle(1, 1, checkBoxSize - 3, checkBoxSize - 3));
-            }
-
-            g.DrawRectangle(borderPen, new Rectangle(0, 0, checkBoxSize - 1, checkBoxSize - 1));
+            base.OnMouseEnter(e);
+            isHover = true;
+            Refresh();
         }
 
-        private void DrawText(Graphics g)
+        protected override void OnMouseLeave(EventArgs e)
         {
-            Rectangle rect = new Rectangle(checkBoxSize + SpaceAfterCheckBox, 0, ClientRectangle.Width - checkBoxSize + SpaceAfterCheckBox, ClientRectangle.Height);
-            TextFormatFlags tff = TextFormatFlags.Left | TextFormatFlags.Top;
-            TextRenderer.DrawText(g, Text, Font, new Rectangle(rect.X, rect.Y + 1, rect.Width, rect.Height + 1), Color.Black, tff);
-            TextRenderer.DrawText(g, Text, Font, rect, ForeColor, tff);
+            base.OnMouseLeave(e);
+            isHover = false;
+            Refresh();
         }
 
         protected override void OnClick(EventArgs e)
@@ -172,6 +162,38 @@ namespace ShareX.HelpersLib
             {
                 CheckedChanged(this, e);
             }
+        }
+
+        private void DrawBackground(Graphics g)
+        {
+            if (Checked)
+            {
+                g.FillRectangle(backgroundCheckedBrush, new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 4));
+                g.DrawRectangle(innerBorderCheckedPen, new Rectangle(1, 1, checkBoxSize - 3, checkBoxSize - 3));
+            }
+            else
+            {
+                g.FillRectangle(backgroundBrush, new Rectangle(2, 2, checkBoxSize - 4, checkBoxSize - 4));
+
+                if (isHover)
+                {
+                    g.DrawRectangle(innerBorderCheckedPen, new Rectangle(1, 1, checkBoxSize - 3, checkBoxSize - 3));
+                }
+                else
+                {
+                    g.DrawRectangle(innerBorderPen, new Rectangle(1, 1, checkBoxSize - 3, checkBoxSize - 3));
+                }
+            }
+
+            g.DrawRectangle(borderPen, new Rectangle(0, 0, checkBoxSize - 1, checkBoxSize - 1));
+        }
+
+        private void DrawText(Graphics g)
+        {
+            Rectangle rect = new Rectangle(checkBoxSize + SpaceAfterCheckBox, 0, ClientRectangle.Width - checkBoxSize + SpaceAfterCheckBox, ClientRectangle.Height);
+            TextFormatFlags tff = TextFormatFlags.Left | TextFormatFlags.Top | TextFormatFlags.WordBreak;
+            TextRenderer.DrawText(g, Text, Font, new Rectangle(rect.X, rect.Y + 1, rect.Width, rect.Height + 1), Color.Black, tff);
+            TextRenderer.DrawText(g, Text, Font, rect, ForeColor, tff);
         }
 
         protected override void Dispose(bool disposing)
