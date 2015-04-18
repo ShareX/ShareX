@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Amazon;
 
 namespace ShareX.UploadersLib
 {
@@ -520,8 +521,8 @@ namespace ShareX.UploadersLib
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
 
-            cbAmazonS3Endpoint.Items.AddRange(Amazon.RegionEndpoint.EnumerableAllRegions.ToArray());
-            cbAmazonS3Endpoint.SelectedItem = Amazon.RegionEndpoint.EnumerableAllRegions.SingleOrDefault(r => r.SystemName == Config.AmazonS3Settings.Region) ?? Amazon.RegionEndpoint.USWest1;
+            cbAmazonS3Endpoint.Items.AddRange(RegionEndpoint.EnumerableAllRegions.ToArray());
+            cbAmazonS3Endpoint.SelectedItem = AmazonS3.GetCurrentRegion(Config.AmazonS3Settings);
             cbAmazonS3Endpoint.DisplayMember = "DisplayName";
             UpdateAmazonS3Status();
 
@@ -1785,7 +1786,7 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var region = cbAmazonS3Endpoint.SelectedItem as Amazon.RegionEndpoint;
+            var region = cbAmazonS3Endpoint.SelectedItem as RegionEndpoint;
             if (region != null)
             {
                 Config.AmazonS3Settings.Region = region.SystemName;

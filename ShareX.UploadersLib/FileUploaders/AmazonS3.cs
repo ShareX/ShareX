@@ -41,43 +41,36 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class AmazonS3 : FileUploader
     {
-        private AmazonS3Settings S3Settings { get; set; }
+        private AmazonS3Settings s3Settings { get; set; }
 
         public AmazonS3(AmazonS3Settings s3Settings)
         {
-            S3Settings = s3Settings;
+            this.s3Settings = s3Settings;
         }
 
         private string GetObjectStorageClass()
         {
-            return S3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
+            return s3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
         }
 
-        private RegionEndpoint GetCurrentRegion()
+        public static RegionEndpoint GetCurrentRegion(AmazonS3Settings s3Settings)
         {
-            try
-            {
-                return RegionEndpoint.GetBySystemName(S3Settings.Region);
-            }
-            catch (ArgumentException)
-            {
-                return RegionEndpoint.USWest1;
-            }
+            return RegionEndpoint.GetBySystemName(s3Settings.Region);
         }
 
         private string GetEndpoint()
         {
-            return URLHelpers.CombineURL("https://" + GetCurrentRegion().GetEndpointForService("s3").Hostname, S3Settings.Bucket);
+            return URLHelpers.CombineURL("https://" + GetCurrentRegion(s3Settings).GetEndpointForService("s3").Hostname, s3Settings.Bucket);
         }
 
         private AWSCredentials GetCurrentCredentials()
         {
-            return new BasicAWSCredentials(S3Settings.AccessKeyID, S3Settings.SecretAccessKey);
+            return new BasicAWSCredentials(s3Settings.AccessKeyID, s3Settings.SecretAccessKey);
         }
 
         private string GetObjectKey(string fileName)
         {
-            var objectPrefix = NameParser.Parse(NameParserType.FolderPath, S3Settings.ObjectPrefix.Trim('/'));
+            var objectPrefix = NameParser.Parse(NameParserType.FolderPath, s3Settings.ObjectPrefix.Trim('/'));
             return URLHelpers.CombineURL(objectPrefix, fileName);
         }
 
@@ -86,17 +79,17 @@ namespace ShareX.UploadersLib.FileUploaders
             objectName = objectName.Trim('/');
             objectName = URLHelpers.URLPathEncode(objectName);
 
-            if (S3Settings.UseCustomCNAME)
+            if (s3Settings.UseCustomCNAME)
             {
                 string url;
 
-                if (!string.IsNullOrEmpty(S3Settings.CustomDomain))
+                if (!string.IsNullOrEmpty(s3Settings.CustomDomain))
                 {
-                    url = URLHelpers.CombineURL(S3Settings.CustomDomain, objectName);
+                    url = URLHelpers.CombineURL(s3Settings.CustomDomain, objectName);
                 }
                 else
                 {
-                    url = URLHelpers.CombineURL(S3Settings.Bucket, objectName);
+                    url = URLHelpers.CombineURL(s3Settings.Bucket, objectName);
                 }
 
                 return URLHelpers.FixPrefix(url);
@@ -121,15 +114,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(S3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(S3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(S3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
 
-            using (var client = new AmazonS3Client(GetCurrentCredentials(), GetCurrentRegion()))
+            using (var client = new AmazonS3Client(GetCurrentCredentials(), GetCurrentRegion(s3Settings)))
             {
                 var putRequest = new GetPreSignedUrlRequest
                 {
-                    BucketName = S3Settings.Bucket,
+                    BucketName = s3Settings.Bucket,
                     Key = GetObjectKey(fileName),
                     Verb = HttpVerb.PUT,
                     Expires = DateTime.UtcNow.AddMinutes(5),
