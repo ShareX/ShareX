@@ -58,6 +58,7 @@
             // 
             // cbDontShow
             // 
+            this.cbDontShow.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.cbDontShow, "cbDontShow");
             this.cbDontShow.ForeColor = System.Drawing.Color.White;
             this.cbDontShow.Name = "cbDontShow";
@@ -69,10 +70,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.Controls.Add(this.cbDontShow);
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
+            this.Controls.Add(this.cbDontShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "UpdateMessageBox";
