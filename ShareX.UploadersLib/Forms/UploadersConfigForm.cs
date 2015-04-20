@@ -23,6 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -30,11 +35,6 @@ using ShareX.UploadersLib.HelperClasses;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.Properties;
 using ShareX.UploadersLib.TextUploaders;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -513,13 +513,16 @@ namespace ShareX.UploadersLib
 
             txtAmazonS3AccessKey.Text = Config.AmazonS3Settings.AccessKeyID;
             txtAmazonS3SecretKey.Text = Config.AmazonS3Settings.SecretAccessKey;
-            cbAmazonS3Endpoint.Text = Config.AmazonS3Settings.Endpoint;
             txtAmazonS3BucketName.Text = Config.AmazonS3Settings.Bucket;
             txtAmazonS3ObjectPrefix.Text = Config.AmazonS3Settings.ObjectPrefix;
             cbAmazonS3CustomCNAME.Checked = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Enabled = Config.AmazonS3Settings.UseCustomCNAME;
             txtAmazonS3CustomDomain.Text = Config.AmazonS3Settings.CustomDomain;
             cbAmazonS3UseRRS.Checked = Config.AmazonS3Settings.UseReducedRedundancyStorage;
+
+            cbAmazonS3Endpoint.Items.AddRange(AmazonS3.RegionEndpoints.ToArray());
+            cbAmazonS3Endpoint.SelectedItem = AmazonS3.GetCurrentRegion(Config.AmazonS3Settings);
+            cbAmazonS3Endpoint.DisplayMember = "Name";
             UpdateAmazonS3Status();
 
             // ownCloud
@@ -1782,13 +1785,12 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
-        }
-
-        private void cbAmazonS3Endpoint_TextChanged(object sender, EventArgs e)
-        {
-            Config.AmazonS3Settings.Endpoint = cbAmazonS3Endpoint.Text;
-            UpdateAmazonS3Status();
+            var region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
+            if (region != null)
+            {
+                Config.AmazonS3Settings.Endpoint = region.Identifier;
+                UpdateAmazonS3Status();
+            }
         }
 
         private void txtAmazonS3BucketName_TextChanged(object sender, EventArgs e)

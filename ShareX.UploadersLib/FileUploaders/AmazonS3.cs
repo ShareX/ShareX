@@ -25,81 +25,72 @@
 
 // Credits: https://github.com/alanedwardes
 
-using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text;
+using System.Linq;
+using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.Runtime;
+using System.Collections.Specialized;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
     public sealed class AmazonS3 : FileUploader
     {
-        private AmazonS3Settings S3Settings { get; set; }
+        private AmazonS3Settings s3Settings { get; set; }
 
-        public AmazonS3(AmazonS3Settings accessKeys)
+        private static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");
+        private static readonly AmazonS3Region DreamObjectsEndpoint = new AmazonS3Region("DreamObjects", "dreamobjects", "objects.dreamhost.com");
+
+        private static IList<AmazonS3Region> regionEndpoints = new List<AmazonS3Region>();
+
+        public static IEnumerable<AmazonS3Region> RegionEndpoints
         {
-            S3Settings = accessKeys;
+            get
+            {
+                if (!regionEndpoints.Any())
+                {
+                    regionEndpoints.Add(UnknownEndpoint);
+                    RegionEndpoint.EnumerableAllRegions.Select(r => new AmazonS3Region(r)).ForEach(regionEndpoints.Add);
+                    regionEndpoints.Add(DreamObjectsEndpoint);
+                }
+
+                return regionEndpoints;
+            }
+        }
+
+        public AmazonS3(AmazonS3Settings s3Settings)
+        {
+            this.s3Settings = s3Settings;
         }
 
         private string GetObjectStorageClass()
         {
-            return S3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
+            return s3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
         }
 
-        // Helper class to construct the S3 policy document (below)
-        private class S3PolicyCondition : Dictionary<string, string>
+        public static AmazonS3Region GetCurrentRegion(AmazonS3Settings s3Settings)
         {
-            public S3PolicyCondition(string key, string value)
-            {
-                Add(key, value);
-            }
-        }
-
-        private string GetPolicyDocument(string fileName, string objectKey)
-        {
-            var policyDocument = new
-            {
-                expiration = DateTime.UtcNow.AddDays(2).ToString("yyyy-MM-ddTHH:mm:ssZ"), // The policy is valid for 2 days
-                conditions = new List<S3PolicyCondition> {
-                    new S3PolicyCondition("acl", "public-read"),
-                    new S3PolicyCondition("bucket", S3Settings.Bucket),
-                    new S3PolicyCondition("Content-Type", Helpers.GetMimeType(fileName)),
-                    new S3PolicyCondition("key", objectKey),
-                    new S3PolicyCondition("x-amz-storage-class", GetObjectStorageClass())
-                }
-            };
-
-            return JsonConvert.SerializeObject(policyDocument);
+            return RegionEndpoints.SingleOrDefault(r => r.Identifier == s3Settings.Endpoint) ?? UnknownEndpoint;
         }
 
         private string GetEndpoint()
         {
-            return string.Format("{0}{1}", S3Settings.Endpoint, S3Settings.Bucket);
+            return URLHelpers.CombineURL("https://" + GetCurrentRegion(s3Settings).Hostname, s3Settings.Bucket);
         }
 
-        // http://codeonaboat.wordpress.com/2011/04/22/uploading-a-file-to-amazon-s3-using-an-asp-net-mvc-application-directly-from-the-users-browser/
-        private string CreateSignature(string secretKey, byte[] policyBytes)
+        private AWSCredentials GetCurrentCredentials()
         {
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            string base64Policy = Convert.ToBase64String(policyBytes);
-            byte[] secretKeyBytes = encoding.GetBytes(secretKey);
-
-            byte[] signatureBytes;
-            using (HMACSHA1 hmacsha1 = new HMACSHA1(secretKeyBytes))
-            {
-                byte[] base64PolicyBytes = encoding.GetBytes(base64Policy);
-                signatureBytes = hmacsha1.ComputeHash(base64PolicyBytes);
-            }
-
-            return Convert.ToBase64String(signatureBytes);
+            return new BasicAWSCredentials(s3Settings.AccessKeyID, s3Settings.SecretAccessKey);
         }
 
         private string GetObjectKey(string fileName)
         {
-            string objectPrefix = NameParser.Parse(NameParserType.FolderPath, S3Settings.ObjectPrefix.Trim('/'));
+            var objectPrefix = NameParser.Parse(NameParserType.FolderPath, s3Settings.ObjectPrefix.Trim('/'));
             return URLHelpers.CombineURL(objectPrefix, fileName);
         }
 
@@ -108,27 +99,23 @@ namespace ShareX.UploadersLib.FileUploaders
             objectName = objectName.Trim('/');
             objectName = URLHelpers.URLPathEncode(objectName);
 
-            string url = string.Empty;
-
-            if (S3Settings.UseCustomCNAME)
+            if (s3Settings.UseCustomCNAME)
             {
-                if (!string.IsNullOrEmpty(S3Settings.CustomDomain))
+                string url;
+
+                if (!string.IsNullOrEmpty(s3Settings.CustomDomain))
                 {
-                    url = URLHelpers.CombineURL(S3Settings.CustomDomain, objectName);
+                    url = URLHelpers.CombineURL(s3Settings.CustomDomain, objectName);
                 }
                 else
                 {
-                    url = URLHelpers.CombineURL(S3Settings.Bucket, objectName);
+                    url = URLHelpers.CombineURL(s3Settings.Bucket, objectName);
                 }
-            }
-            else
-            {
-                url = URLHelpers.CombineURL(GetEndpoint(), objectName);
+
+                return URLHelpers.FixPrefix(url);
             }
 
-            url = URLHelpers.FixPrefix(url);
-
-            return url;
+            return URLHelpers.CombineURL(GetEndpoint(), objectName);
         }
 
         public string GetURL(string fileName)
@@ -136,41 +123,99 @@ namespace ShareX.UploadersLib.FileUploaders
             return GetObjectURL(GetObjectKey(fileName));
         }
 
-        private Dictionary<string, string> GetParameters(string fileName, string objectKey)
+        public string GetMd5Hash(Stream stream)
         {
-            string policyDocument = GetPolicyDocument(fileName, objectKey);
-            byte[] policyBytes = Encoding.ASCII.GetBytes(policyDocument);
-            string signature = CreateSignature(S3Settings.SecretAccessKey, policyBytes);
-
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("key", objectKey);
-            parameters.Add("acl", "public-read");
-            parameters.Add("content-type", Helpers.GetMimeType(fileName));
-            parameters.Add("AWSAccessKeyId", S3Settings.AccessKeyID);
-            parameters.Add("policy", Convert.ToBase64String(policyBytes));
-            parameters.Add("signature", signature);
-            parameters.Add("x-amz-storage-class", GetObjectStorageClass());
-            return parameters;
+            stream.Seek(0, SeekOrigin.Begin);
+            using (var md5 = MD5.Create())
+            {
+                return string.Concat(md5.ComputeHash(stream).Select(b => b.ToString("x2")));
+            }
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(S3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(S3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(S3Settings.Endpoint)) throw new Exception("'Endpoint' must not be emoty.");
-            if (string.IsNullOrEmpty(S3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
+            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) throw new Exception("Please select an endpoint.");
 
-            string objectKey = GetObjectKey(fileName);
+            var region = GetCurrentRegion(s3Settings);
 
-            UploadResult uploadResult = UploadData(stream, GetEndpoint(), fileName, arguments: GetParameters(fileName, objectKey), responseType: ResponseType.Headers);
+            var s3ClientConfig = new AmazonS3Config();
 
-            if (uploadResult.IsSuccess)
+            if (region.AmazonRegion == null)
             {
-                uploadResult.URL = GetObjectURL(objectKey);
+                s3ClientConfig.ServiceURL = "https://" + region.Hostname;
+            }
+            else
+            {
+                s3ClientConfig.RegionEndpoint = region.AmazonRegion;
             }
 
-            return uploadResult;
+            using (var client = new AmazonS3Client(GetCurrentCredentials(), s3ClientConfig))
+            {
+                var putRequest = new GetPreSignedUrlRequest
+                {
+                    BucketName = s3Settings.Bucket,
+                    Key = GetObjectKey(fileName),
+                    Verb = HttpVerb.PUT,
+                    Expires = DateTime.UtcNow.AddMinutes(5),
+                    ContentType = Helpers.GetMimeType(fileName)
+                };
+
+                var requestHeaders = new NameValueCollection();
+                requestHeaders["x-amz-acl"] = "public-read";
+                requestHeaders["x-amz-storage-class"] = GetObjectStorageClass();
+
+                putRequest.Headers["x-amz-acl"] = "public-read";
+                putRequest.Headers["x-amz-storage-class"] = GetObjectStorageClass();
+
+                var responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
+                var eTag = responseHeaders["ETag"].Replace("\"", "");
+
+                var uploadResult = new UploadResult();
+
+                if (GetMd5Hash(stream) == eTag)
+                {
+                    uploadResult.IsSuccess = true;
+                    uploadResult.URL = GetObjectURL(putRequest.Key);
+                }
+                else
+                {
+                    uploadResult.Errors = new List<string> { "Uploaded file is different." };
+                }
+
+                return uploadResult;
+            }
         }
+    }
+
+    public class AmazonS3Region
+    {
+        public AmazonS3Region(string name)
+        {
+            Name = name;
+        }
+
+        public AmazonS3Region(string name, string identifier, string hostname)
+        {
+            Name = name;
+            Identifier = identifier;
+            Hostname = hostname;
+        }
+
+        public AmazonS3Region(RegionEndpoint region)
+        {
+            Name = region.DisplayName;
+            Identifier = region.SystemName;
+            AmazonRegion = region;
+            Hostname = region.GetEndpointForService("s3").Hostname;
+        }
+
+        public string Name { get; private set; }
+        public string Identifier { get; private set; }
+        public RegionEndpoint AmazonRegion { get; private set; }
+        public string Hostname { get; private set; }
     }
 
     public class AmazonS3Settings

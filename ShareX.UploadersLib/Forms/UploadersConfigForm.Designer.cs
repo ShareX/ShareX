@@ -1679,22 +1679,11 @@
             // 
             // cbAmazonS3Endpoint
             // 
+            this.cbAmazonS3Endpoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAmazonS3Endpoint.FormattingEnabled = true;
-            this.cbAmazonS3Endpoint.Items.AddRange(new object[] {
-            resources.GetString("cbAmazonS3Endpoint.Items"),
-            resources.GetString("cbAmazonS3Endpoint.Items1"),
-            resources.GetString("cbAmazonS3Endpoint.Items2"),
-            resources.GetString("cbAmazonS3Endpoint.Items3"),
-            resources.GetString("cbAmazonS3Endpoint.Items9"),
-            resources.GetString("cbAmazonS3Endpoint.Items4"),
-            resources.GetString("cbAmazonS3Endpoint.Items5"),
-            resources.GetString("cbAmazonS3Endpoint.Items6"),
-            resources.GetString("cbAmazonS3Endpoint.Items7"),
-            resources.GetString("cbAmazonS3Endpoint.Items8")});
             resources.ApplyResources(this.cbAmazonS3Endpoint, "cbAmazonS3Endpoint");
             this.cbAmazonS3Endpoint.Name = "cbAmazonS3Endpoint";
             this.cbAmazonS3Endpoint.SelectionChangeCommitted += new System.EventHandler(this.cbAmazonS3Endpoint_SelectionChangeCommitted);
-            this.cbAmazonS3Endpoint.TextChanged += new System.EventHandler(this.cbAmazonS3Endpoint_TextChanged);
             // 
             // lblAmazonS3BucketName
             // 
