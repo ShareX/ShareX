@@ -139,7 +139,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (region.AmazonRegion == null)
             {
-                s3ClientConfig.ServiceURL = region.Hostname;
+                s3ClientConfig.ServiceURL = "https://" + region.Hostname;
             }
             else
             {
