@@ -55,7 +55,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public static RegionEndpoint GetCurrentRegion(AmazonS3Settings s3Settings)
         {
-            return RegionEndpoint.GetBySystemName(s3Settings.Region);
+            return s3Settings.Region == null ? RegionEndpoint.USWest1 : RegionEndpoint.GetBySystemName(s3Settings.Region);
         }
 
         private string GetEndpoint()
