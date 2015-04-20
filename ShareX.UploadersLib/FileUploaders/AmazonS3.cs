@@ -46,18 +46,20 @@ namespace ShareX.UploadersLib.FileUploaders
         private static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");
         private static readonly AmazonS3Region DreamObjectsEndpoint = new AmazonS3Region("DreamObjects", "dreamobjects", "objects.dreamhost.com");
 
+        private static IList<AmazonS3Region> regionEndpoints = new List<AmazonS3Region>();
+
         public static IEnumerable<AmazonS3Region> RegionEndpoints
         {
             get
             {
-                yield return UnknownEndpoint;
-
-                foreach (var endpoint in RegionEndpoint.EnumerableAllRegions)
+                if (!regionEndpoints.Any())
                 {
-                    yield return new AmazonS3Region(endpoint);
+                    regionEndpoints.Add(UnknownEndpoint);
+                    RegionEndpoint.EnumerableAllRegions.Select(r => new AmazonS3Region(r)).ForEach(regionEndpoints.Add);
+                    regionEndpoints.Add(DreamObjectsEndpoint);
                 }
 
-                yield return DreamObjectsEndpoint;
+                return regionEndpoints;
             }
         }
 
