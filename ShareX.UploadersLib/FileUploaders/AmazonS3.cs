@@ -43,6 +43,21 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private AmazonS3Settings s3Settings { get; set; }
 
+        private static readonly S3RegionEndpoint DreamObjectsEndpoint = new S3RegionEndpoint("DreamObjects", "dreamobjects", "objects.dreamhost.com");
+
+        public static IEnumerable<S3RegionEndpoint> RegionEndpoints
+        {
+            get
+            {
+                foreach (var endpoint in RegionEndpoint.EnumerableAllRegions)
+                {
+                    yield return new S3RegionEndpoint(endpoint);
+                }
+
+                yield return DreamObjectsEndpoint;
+            }
+        }
+
         public AmazonS3(AmazonS3Settings s3Settings)
         {
             this.s3Settings = s3Settings;
@@ -53,14 +68,14 @@ namespace ShareX.UploadersLib.FileUploaders
             return s3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
         }
 
-        public static RegionEndpoint GetCurrentRegion(AmazonS3Settings s3Settings)
+        public static S3RegionEndpoint GetCurrentRegion(AmazonS3Settings s3Settings)
         {
-            return s3Settings.Region == null ? RegionEndpoint.USWest1 : RegionEndpoint.GetBySystemName(s3Settings.Region);
+            return RegionEndpoints.SingleOrDefault(r => r.Identifier == s3Settings.Region);
         }
 
         private string GetEndpoint()
         {
-            return URLHelpers.CombineURL("https://" + GetCurrentRegion(s3Settings).GetEndpointForService("s3").Hostname, s3Settings.Bucket);
+            return URLHelpers.CombineURL("https://" + GetCurrentRegion(s3Settings).Hostname, s3Settings.Bucket);
         }
 
         private AWSCredentials GetCurrentCredentials()
@@ -118,7 +133,20 @@ namespace ShareX.UploadersLib.FileUploaders
             if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
             if (string.IsNullOrEmpty(s3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
 
-            using (var client = new AmazonS3Client(GetCurrentCredentials(), GetCurrentRegion(s3Settings)))
+            var region = GetCurrentRegion(s3Settings);
+
+            var s3ClientConfig = new AmazonS3Config();
+
+            if (region.AmazonRegion == null)
+            {
+                s3ClientConfig.ServiceURL = region.Hostname;
+            }
+            else
+            {
+                s3ClientConfig.RegionEndpoint = region.AmazonRegion;
+            }
+
+            using (var client = new AmazonS3Client(GetCurrentCredentials(), s3ClientConfig))
             {
                 var putRequest = new GetPreSignedUrlRequest
                 {
@@ -126,8 +154,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     Key = GetObjectKey(fileName),
                     Verb = HttpVerb.PUT,
                     Expires = DateTime.UtcNow.AddMinutes(5),
-                    ContentType = Helpers.GetMimeType(fileName),
-                    Protocol = Protocol.HTTPS,
+                    ContentType = Helpers.GetMimeType(fileName)
                 };
 
                 var requestHeaders = new NameValueCollection();
@@ -155,6 +182,29 @@ namespace ShareX.UploadersLib.FileUploaders
                 return uploadResult;
             }
         }
+    }
+
+    public class S3RegionEndpoint
+    {
+        public S3RegionEndpoint(string name, string identifier, string hostname)
+        {
+            Name = name;
+            Identifier = identifier;
+            Hostname = hostname;
+        }
+
+        public S3RegionEndpoint(RegionEndpoint region)
+        {
+            Name = region.DisplayName;
+            Identifier = region.SystemName;
+            AmazonRegion = region;
+            Hostname = region.GetEndpointForService("s3").Hostname;
+        }
+
+        public string Name { get; set; }
+        public string Identifier { get; set; }
+        public RegionEndpoint AmazonRegion { get; private set; }
+        public string Hostname { get; set; }
     }
 
     public class AmazonS3Settings
