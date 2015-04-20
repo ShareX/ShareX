@@ -210,10 +210,10 @@ namespace ShareX.UploadersLib.FileUploaders
             Hostname = region.GetEndpointForService("s3").Hostname;
         }
 
-        public string Name { get; set; }
-        public string Identifier { get; set; }
+        public string Name { get; private set; }
+        public string Identifier { get; private set; }
         public RegionEndpoint AmazonRegion { get; private set; }
-        public string Hostname { get; set; }
+        public string Hostname { get; private set; }
     }
 
     public class AmazonS3Settings
