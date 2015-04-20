@@ -1786,10 +1786,10 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoint_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var region = cbAmazonS3Endpoint.SelectedItem as S3RegionEndpoint;
+            var region = cbAmazonS3Endpoint.SelectedItem as AmazonS3Region;
             if (region != null)
             {
-                Config.AmazonS3Settings.Region = region.Identifier;
+                Config.AmazonS3Settings.Endpoint = region.Identifier;
                 UpdateAmazonS3Status();
             }
         }

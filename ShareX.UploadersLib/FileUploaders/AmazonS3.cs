@@ -43,15 +43,18 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private AmazonS3Settings s3Settings { get; set; }
 
-        private static readonly S3RegionEndpoint DreamObjectsEndpoint = new S3RegionEndpoint("DreamObjects", "dreamobjects", "objects.dreamhost.com");
+        private static readonly AmazonS3Region UnknownEndpoint = new AmazonS3Region("Unknown Endpoint");
+        private static readonly AmazonS3Region DreamObjectsEndpoint = new AmazonS3Region("DreamObjects", "dreamobjects", "objects.dreamhost.com");
 
-        public static IEnumerable<S3RegionEndpoint> RegionEndpoints
+        public static IEnumerable<AmazonS3Region> RegionEndpoints
         {
             get
             {
+                yield return UnknownEndpoint;
+
                 foreach (var endpoint in RegionEndpoint.EnumerableAllRegions)
                 {
-                    yield return new S3RegionEndpoint(endpoint);
+                    yield return new AmazonS3Region(endpoint);
                 }
 
                 yield return DreamObjectsEndpoint;
@@ -68,9 +71,9 @@ namespace ShareX.UploadersLib.FileUploaders
             return s3Settings.UseReducedRedundancyStorage ? "REDUCED_REDUNDANCY" : "STANDARD";
         }
 
-        public static S3RegionEndpoint GetCurrentRegion(AmazonS3Settings s3Settings)
+        public static AmazonS3Region GetCurrentRegion(AmazonS3Settings s3Settings)
         {
-            return RegionEndpoints.SingleOrDefault(r => r.Identifier == s3Settings.Region);
+            return RegionEndpoints.SingleOrDefault(r => r.Identifier == s3Settings.Endpoint) ?? UnknownEndpoint;
         }
 
         private string GetEndpoint()
@@ -132,6 +135,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
             if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
             if (string.IsNullOrEmpty(s3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
+            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) throw new Exception("Please select an endpoint.");
 
             var region = GetCurrentRegion(s3Settings);
 
@@ -184,16 +188,21 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public class S3RegionEndpoint
+    public class AmazonS3Region
     {
-        public S3RegionEndpoint(string name, string identifier, string hostname)
+        public AmazonS3Region(string name)
+        {
+            Name = name;
+        }
+
+        public AmazonS3Region(string name, string identifier, string hostname)
         {
             Name = name;
             Identifier = identifier;
             Hostname = hostname;
         }
 
-        public S3RegionEndpoint(RegionEndpoint region)
+        public AmazonS3Region(RegionEndpoint region)
         {
             Name = region.DisplayName;
             Identifier = region.SystemName;
@@ -211,7 +220,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public string AccessKeyID { get; set; }
         public string SecretAccessKey { get; set; }
-        public string Region { get; set; }
+        public string Endpoint { get; set; }
         public string Bucket { get; set; }
         public string ObjectPrefix { get; set; }
         public bool UseCustomCNAME { get; set; }
