@@ -50,15 +50,7 @@ namespace ShareX
 
             Hotkeys = hotkeys;
 
-            if (Hotkeys.Count == 0)
-            {
-                ResetHotkeys();
-            }
-            else
-            {
-                RegisterAllHotkeys();
-            }
-
+            RegisterAllHotkeys();
             ShowFailedHotkeys();
         }
 
@@ -166,9 +158,9 @@ namespace ShareX
             RegisterAllHotkeys();
         }
 
-        private HotkeySettings[] GetDefaultHotkeyList()
+        public static List<HotkeySettings> GetDefaultHotkeyList()
         {
-            return new HotkeySettings[]
+            return new List<HotkeySettings>
             {
                 new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
                 new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),

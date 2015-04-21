@@ -25,11 +25,12 @@
 
 using ShareX.HelpersLib;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShareX
 {
     public class HotkeysConfig : SettingsBase<HotkeysConfig>
     {
-        public List<HotkeySettings> Hotkeys = new List<HotkeySettings>();
+        public List<HotkeySettings> Hotkeys = HotkeyManager.GetDefaultHotkeyList();
     }
 }
