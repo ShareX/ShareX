@@ -183,11 +183,19 @@ namespace ShareX.HelpersLib
 
             double ratioX = (double)width / img.Width;
             double ratioY = (double)height / img.Height;
-            double ratio = ratioX < ratioY ? ratioX : ratioY;
-            int newWidth = (int)(img.Width * ratio);
-            int newHeight = (int)(img.Height * ratio);
+            int newWidth = width;
+            int newHeight = height;
+            if (ratioX < ratioY)
+                newHeight = (int)(img.Height * ratioX);
+            else
+                newWidth = (int)(img.Width * ratioY);
 
             return ResizeImage(img, newWidth, newHeight);
+        }
+
+        public static Image ResizeImageLimit(Image img, int maxPixels)
+        {
+            return ResizeImageLimit(img, maxPixels, maxPixels);
         }
 
         public static Image CropImage(Image img, Rectangle rect)
