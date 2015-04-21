@@ -1,8 +1,5 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using ShareX.ScreenCaptureLib;
-
 
 namespace ShareX.ScreenCaptureLib
 {

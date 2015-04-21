@@ -102,17 +102,17 @@
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
             this.pCapture = new System.Windows.Forms.Panel();
-            this.btnTransmitBoundsFromMonitorToCustomBounds = new System.Windows.Forms.Button();
-            this.lblWidth = new System.Windows.Forms.Label();
-            this.lblHeight = new System.Windows.Forms.Label();
-            this.lblY = new System.Windows.Forms.Label();
-            this.lblX = new System.Windows.Forms.Label();
-            this.nudScreenRegionHeight = new System.Windows.Forms.NumericUpDown();
-            this.nudScreenRegionWidth = new System.Windows.Forms.NumericUpDown();
-            this.nudScreenRegionY = new System.Windows.Forms.NumericUpDown();
-            this.nudScreenRegionX = new System.Windows.Forms.NumericUpDown();
-            this.lblSelectedMonitorForCustomRegion = new System.Windows.Forms.Label();
-            this.cboMonitors = new System.Windows.Forms.ComboBox();
+            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds = new System.Windows.Forms.Button();
+            this.lblCaptureCustomRegionWidth = new System.Windows.Forms.Label();
+            this.lblCaptureCustomRegionHeight = new System.Windows.Forms.Label();
+            this.lblCaptureCustomRegionY = new System.Windows.Forms.Label();
+            this.lblCaptureCustomRegionX = new System.Windows.Forms.Label();
+            this.nudCaptureCustomRegionHeight = new System.Windows.Forms.NumericUpDown();
+            this.nudCaptureCustomRegionWidth = new System.Windows.Forms.NumericUpDown();
+            this.nudCaptureCustomRegionY = new System.Windows.Forms.NumericUpDown();
+            this.nudCaptureCustomRegionX = new System.Windows.Forms.NumericUpDown();
+            this.lblCaptureCustomRegionSelectedMonitor = new System.Windows.Forms.Label();
+            this.cboCaptureCustomRegionMonitors = new System.Windows.Forms.ComboBox();
             this.cbShowCursor = new System.Windows.Forms.CheckBox();
             this.lblCaptureShadowOffset = new System.Windows.Forms.Label();
             this.cbCaptureTransparent = new System.Windows.Forms.CheckBox();
@@ -209,10 +209,10 @@
             this.tcCapture.SuspendLayout();
             this.tpCaptureGeneral.SuspendLayout();
             this.pCapture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
@@ -786,17 +786,17 @@
             // 
             // pCapture
             // 
-            this.pCapture.Controls.Add(this.btnTransmitBoundsFromMonitorToCustomBounds);
-            this.pCapture.Controls.Add(this.lblWidth);
-            this.pCapture.Controls.Add(this.lblHeight);
-            this.pCapture.Controls.Add(this.lblY);
-            this.pCapture.Controls.Add(this.lblX);
-            this.pCapture.Controls.Add(this.nudScreenRegionHeight);
-            this.pCapture.Controls.Add(this.nudScreenRegionWidth);
-            this.pCapture.Controls.Add(this.nudScreenRegionY);
-            this.pCapture.Controls.Add(this.nudScreenRegionX);
-            this.pCapture.Controls.Add(this.lblSelectedMonitorForCustomRegion);
-            this.pCapture.Controls.Add(this.cboMonitors);
+            this.pCapture.Controls.Add(this.btnCaptureTransmitBoundsFromMonitorToCustomBounds);
+            this.pCapture.Controls.Add(this.lblCaptureCustomRegionWidth);
+            this.pCapture.Controls.Add(this.lblCaptureCustomRegionHeight);
+            this.pCapture.Controls.Add(this.lblCaptureCustomRegionY);
+            this.pCapture.Controls.Add(this.lblCaptureCustomRegionX);
+            this.pCapture.Controls.Add(this.nudCaptureCustomRegionHeight);
+            this.pCapture.Controls.Add(this.nudCaptureCustomRegionWidth);
+            this.pCapture.Controls.Add(this.nudCaptureCustomRegionY);
+            this.pCapture.Controls.Add(this.nudCaptureCustomRegionX);
+            this.pCapture.Controls.Add(this.lblCaptureCustomRegionSelectedMonitor);
+            this.pCapture.Controls.Add(this.cboCaptureCustomRegionMonitors);
             this.pCapture.Controls.Add(this.cbShowCursor);
             this.pCapture.Controls.Add(this.lblCaptureShadowOffset);
             this.pCapture.Controls.Add(this.cbCaptureTransparent);
@@ -810,108 +810,108 @@
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
             // 
-            // btnTransmitBoundsFromMonitorToCustomBounds
+            // btnCaptureTransmitBoundsFromMonitorToCustomBounds
             // 
-            resources.ApplyResources(this.btnTransmitBoundsFromMonitorToCustomBounds, "btnTransmitBoundsFromMonitorToCustomBounds");
-            this.btnTransmitBoundsFromMonitorToCustomBounds.Name = "btnTransmitBoundsFromMonitorToCustomBounds";
-            this.btnTransmitBoundsFromMonitorToCustomBounds.UseVisualStyleBackColor = true;
-            this.btnTransmitBoundsFromMonitorToCustomBounds.Click += new System.EventHandler(this.btnTransmitBoundsFromMonitorToCustomBounds_Click);
+            resources.ApplyResources(this.btnCaptureTransmitBoundsFromMonitorToCustomBounds, "btnCaptureTransmitBoundsFromMonitorToCustomBounds");
+            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds.Name = "btnCaptureTransmitBoundsFromMonitorToCustomBounds";
+            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds.UseVisualStyleBackColor = true;
+            this.btnCaptureTransmitBoundsFromMonitorToCustomBounds.Click += new System.EventHandler(this.btnTransmitBoundsFromMonitorToCustomBounds_Click);
             // 
-            // lblWidth
+            // lblCaptureCustomRegionWidth
             // 
-            resources.ApplyResources(this.lblWidth, "lblWidth");
-            this.lblWidth.Name = "lblWidth";
+            resources.ApplyResources(this.lblCaptureCustomRegionWidth, "lblCaptureCustomRegionWidth");
+            this.lblCaptureCustomRegionWidth.Name = "lblCaptureCustomRegionWidth";
             // 
-            // lblHeight
+            // lblCaptureCustomRegionHeight
             // 
-            resources.ApplyResources(this.lblHeight, "lblHeight");
-            this.lblHeight.Name = "lblHeight";
+            resources.ApplyResources(this.lblCaptureCustomRegionHeight, "lblCaptureCustomRegionHeight");
+            this.lblCaptureCustomRegionHeight.Name = "lblCaptureCustomRegionHeight";
             // 
-            // lblY
+            // lblCaptureCustomRegionY
             // 
-            resources.ApplyResources(this.lblY, "lblY");
-            this.lblY.Name = "lblY";
+            resources.ApplyResources(this.lblCaptureCustomRegionY, "lblCaptureCustomRegionY");
+            this.lblCaptureCustomRegionY.Name = "lblCaptureCustomRegionY";
             // 
-            // lblX
+            // lblCaptureCustomRegionX
             // 
-            resources.ApplyResources(this.lblX, "lblX");
-            this.lblX.Name = "lblX";
+            resources.ApplyResources(this.lblCaptureCustomRegionX, "lblCaptureCustomRegionX");
+            this.lblCaptureCustomRegionX.Name = "lblCaptureCustomRegionX";
             // 
-            // nudScreenRegionHeight
+            // nudCaptureCustomRegionHeight
             // 
-            resources.ApplyResources(this.nudScreenRegionHeight, "nudScreenRegionHeight");
-            this.nudScreenRegionHeight.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.nudCaptureCustomRegionHeight, "nudCaptureCustomRegionHeight");
+            this.nudCaptureCustomRegionHeight.Maximum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             0});
-            this.nudScreenRegionHeight.Minimum = new decimal(new int[] {
+            this.nudCaptureCustomRegionHeight.Minimum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             -2147483648});
-            this.nudScreenRegionHeight.Name = "nudScreenRegionHeight";
-            this.nudScreenRegionHeight.ValueChanged += new System.EventHandler(this.nudScreenRegionHeight_ValueChanged);
+            this.nudCaptureCustomRegionHeight.Name = "nudCaptureCustomRegionHeight";
+            this.nudCaptureCustomRegionHeight.ValueChanged += new System.EventHandler(this.nudScreenRegionHeight_ValueChanged);
             // 
-            // nudScreenRegionWidth
+            // nudCaptureCustomRegionWidth
             // 
-            resources.ApplyResources(this.nudScreenRegionWidth, "nudScreenRegionWidth");
-            this.nudScreenRegionWidth.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.nudCaptureCustomRegionWidth, "nudCaptureCustomRegionWidth");
+            this.nudCaptureCustomRegionWidth.Maximum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             0});
-            this.nudScreenRegionWidth.Minimum = new decimal(new int[] {
+            this.nudCaptureCustomRegionWidth.Minimum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             -2147483648});
-            this.nudScreenRegionWidth.Name = "nudScreenRegionWidth";
-            this.nudScreenRegionWidth.ValueChanged += new System.EventHandler(this.nudScreenRegionWidth_ValueChanged);
+            this.nudCaptureCustomRegionWidth.Name = "nudCaptureCustomRegionWidth";
+            this.nudCaptureCustomRegionWidth.ValueChanged += new System.EventHandler(this.nudScreenRegionWidth_ValueChanged);
             // 
-            // nudScreenRegionY
+            // nudCaptureCustomRegionY
             // 
-            resources.ApplyResources(this.nudScreenRegionY, "nudScreenRegionY");
-            this.nudScreenRegionY.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.nudCaptureCustomRegionY, "nudCaptureCustomRegionY");
+            this.nudCaptureCustomRegionY.Maximum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             0});
-            this.nudScreenRegionY.Minimum = new decimal(new int[] {
+            this.nudCaptureCustomRegionY.Minimum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             -2147483648});
-            this.nudScreenRegionY.Name = "nudScreenRegionY";
-            this.nudScreenRegionY.ValueChanged += new System.EventHandler(this.nudScreenRegionY_ValueChanged);
+            this.nudCaptureCustomRegionY.Name = "nudCaptureCustomRegionY";
+            this.nudCaptureCustomRegionY.ValueChanged += new System.EventHandler(this.nudScreenRegionY_ValueChanged);
             // 
-            // nudScreenRegionX
+            // nudCaptureCustomRegionX
             // 
-            resources.ApplyResources(this.nudScreenRegionX, "nudScreenRegionX");
-            this.nudScreenRegionX.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.nudCaptureCustomRegionX, "nudCaptureCustomRegionX");
+            this.nudCaptureCustomRegionX.Maximum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             0});
-            this.nudScreenRegionX.Minimum = new decimal(new int[] {
+            this.nudCaptureCustomRegionX.Minimum = new decimal(new int[] {
             -2147483648,
             0,
             0,
             -2147483648});
-            this.nudScreenRegionX.Name = "nudScreenRegionX";
-            this.nudScreenRegionX.ValueChanged += new System.EventHandler(this.nudScreenRegionX_ValueChanged);
+            this.nudCaptureCustomRegionX.Name = "nudCaptureCustomRegionX";
+            this.nudCaptureCustomRegionX.ValueChanged += new System.EventHandler(this.nudScreenRegionX_ValueChanged);
             // 
-            // lblSelectedMonitorForCustomRegion
+            // lblCaptureCustomRegionSelectedMonitor
             // 
-            resources.ApplyResources(this.lblSelectedMonitorForCustomRegion, "lblSelectedMonitorForCustomRegion");
-            this.lblSelectedMonitorForCustomRegion.Name = "lblSelectedMonitorForCustomRegion";
+            resources.ApplyResources(this.lblCaptureCustomRegionSelectedMonitor, "lblCaptureCustomRegionSelectedMonitor");
+            this.lblCaptureCustomRegionSelectedMonitor.Name = "lblCaptureCustomRegionSelectedMonitor";
             // 
-            // cboMonitors
+            // cboCaptureCustomRegionMonitors
             // 
-            this.cboMonitors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMonitors.FormattingEnabled = true;
-            resources.ApplyResources(this.cboMonitors, "cboMonitors");
-            this.cboMonitors.Name = "cboMonitors";
+            this.cboCaptureCustomRegionMonitors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCaptureCustomRegionMonitors.FormattingEnabled = true;
+            resources.ApplyResources(this.cboCaptureCustomRegionMonitors, "cboCaptureCustomRegionMonitors");
+            this.cboCaptureCustomRegionMonitors.Name = "cboCaptureCustomRegionMonitors";
             // 
             // cbShowCursor
             // 
@@ -1598,10 +1598,10 @@
             this.tpCaptureGeneral.PerformLayout();
             this.pCapture.ResumeLayout(false);
             this.pCapture.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudScreenRegionX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureCustomRegionX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
@@ -1784,17 +1784,17 @@
         private System.Windows.Forms.Button btnScreenRecorderFFmpegOptions;
         private System.Windows.Forms.ComboBox cbNameFormatTimeZone;
         private System.Windows.Forms.CheckBox cbNameFormatCustomTimeZone;
-        private System.Windows.Forms.Label lblSelectedMonitorForCustomRegion;
-        private System.Windows.Forms.ComboBox cboMonitors;
-        private System.Windows.Forms.Label lblWidth;
-        private System.Windows.Forms.Label lblHeight;
-        private System.Windows.Forms.Label lblY;
-        private System.Windows.Forms.Label lblX;
-        private System.Windows.Forms.NumericUpDown nudScreenRegionHeight;
-        private System.Windows.Forms.NumericUpDown nudScreenRegionWidth;
-        private System.Windows.Forms.NumericUpDown nudScreenRegionY;
-        private System.Windows.Forms.NumericUpDown nudScreenRegionX;
-        private System.Windows.Forms.Button btnTransmitBoundsFromMonitorToCustomBounds;
+        private System.Windows.Forms.Label lblCaptureCustomRegionSelectedMonitor;
+        private System.Windows.Forms.ComboBox cboCaptureCustomRegionMonitors;
+        private System.Windows.Forms.Label lblCaptureCustomRegionWidth;
+        private System.Windows.Forms.Label lblCaptureCustomRegionHeight;
+        private System.Windows.Forms.Label lblCaptureCustomRegionY;
+        private System.Windows.Forms.Label lblCaptureCustomRegionX;
+        private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionHeight;
+        private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionWidth;
+        private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionY;
+        private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionX;
+        private System.Windows.Forms.Button btnCaptureTransmitBoundsFromMonitorToCustomBounds;
 
 
 

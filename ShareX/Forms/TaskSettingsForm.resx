@@ -1803,253 +1803,253 @@
   <data name="&gt;&gt;tpImage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnTransmitBoundsFromMonitorToCustomBounds.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Location" type="System.Drawing.Point, System.Drawing">
     <value>260, 250</value>
   </data>
-  <data name="btnTransmitBoundsFromMonitorToCustomBounds.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 21</value>
   </data>
-  <data name="btnTransmitBoundsFromMonitorToCustomBounds.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
     <value>&gt;&gt;</value>
   </data>
-  <data name="&gt;&gt;btnTransmitBoundsFromMonitorToCustomBounds.Name" xml:space="preserve">
-    <value>btnTransmitBoundsFromMonitorToCustomBounds</value>
+  <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.Name" xml:space="preserve">
+    <value>btnCaptureTransmitBoundsFromMonitorToCustomBounds</value>
   </data>
-  <data name="&gt;&gt;btnTransmitBoundsFromMonitorToCustomBounds.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnTransmitBoundsFromMonitorToCustomBounds.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;btnTransmitBoundsFromMonitorToCustomBounds.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnCaptureTransmitBoundsFromMonitorToCustomBounds.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblWidth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblCaptureCustomRegionWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>431, 233</value>
   </data>
-  <data name="lblWidth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblCaptureCustomRegionWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
   </data>
-  <data name="lblWidth.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblCaptureCustomRegionWidth.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblWidth.Text" xml:space="preserve">
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>Width</value>
   </data>
-  <data name="&gt;&gt;lblWidth.Name" xml:space="preserve">
-    <value>lblWidth</value>
+  <data name="&gt;&gt;lblCaptureCustomRegionWidth.Name" xml:space="preserve">
+    <value>lblCaptureCustomRegionWidth</value>
   </data>
-  <data name="&gt;&gt;lblWidth.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblWidth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionWidth.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;lblWidth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionWidth.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblHeight.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblCaptureCustomRegionHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>487, 233</value>
   </data>
-  <data name="lblHeight.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblCaptureCustomRegionHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
-  <data name="lblHeight.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblCaptureCustomRegionHeight.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lblHeight.Text" xml:space="preserve">
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Height</value>
   </data>
-  <data name="&gt;&gt;lblHeight.Name" xml:space="preserve">
-    <value>lblHeight</value>
+  <data name="&gt;&gt;lblCaptureCustomRegionHeight.Name" xml:space="preserve">
+    <value>lblCaptureCustomRegionHeight</value>
   </data>
-  <data name="&gt;&gt;lblHeight.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblHeight.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionHeight.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;lblHeight.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionHeight.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblY.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblCaptureCustomRegionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 233</value>
   </data>
-  <data name="lblY.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblCaptureCustomRegionY.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 13</value>
   </data>
-  <data name="lblY.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblY.Text" xml:space="preserve">
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
   </data>
-  <data name="&gt;&gt;lblY.Name" xml:space="preserve">
-    <value>lblY</value>
+  <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
+    <value>lblCaptureCustomRegionY</value>
   </data>
-  <data name="&gt;&gt;lblY.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionY.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionY.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;lblY.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionY.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblX.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblCaptureCustomRegionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>310, 233</value>
   </data>
-  <data name="lblX.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblCaptureCustomRegionX.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 13</value>
   </data>
-  <data name="lblX.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblCaptureCustomRegionX.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblX.Text" xml:space="preserve">
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
   </data>
-  <data name="&gt;&gt;lblX.Name" xml:space="preserve">
-    <value>lblX</value>
+  <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
+    <value>lblCaptureCustomRegionX</value>
   </data>
-  <data name="&gt;&gt;lblX.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionX.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblX.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionX.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;lblX.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionX.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="nudScreenRegionHeight.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudCaptureCustomRegionHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>490, 250</value>
   </data>
-  <data name="nudScreenRegionHeight.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudCaptureCustomRegionHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="nudScreenRegionHeight.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudCaptureCustomRegionHeight.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionHeight.Name" xml:space="preserve">
-    <value>nudScreenRegionHeight</value>
+  <data name="&gt;&gt;nudCaptureCustomRegionHeight.Name" xml:space="preserve">
+    <value>nudCaptureCustomRegionHeight</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionHeight.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionHeight.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionHeight.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionHeight.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionHeight.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="nudScreenRegionWidth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudCaptureCustomRegionWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>434, 250</value>
   </data>
-  <data name="nudScreenRegionWidth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudCaptureCustomRegionWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="nudScreenRegionWidth.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudCaptureCustomRegionWidth.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionWidth.Name" xml:space="preserve">
-    <value>nudScreenRegionWidth</value>
+  <data name="&gt;&gt;nudCaptureCustomRegionWidth.Name" xml:space="preserve">
+    <value>nudCaptureCustomRegionWidth</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionWidth.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionWidth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionWidth.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionWidth.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionWidth.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="nudScreenRegionY.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudCaptureCustomRegionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>369, 250</value>
   </data>
-  <data name="nudScreenRegionY.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudCaptureCustomRegionY.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="nudScreenRegionY.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionY.Name" xml:space="preserve">
-    <value>nudScreenRegionY</value>
+  <data name="&gt;&gt;nudCaptureCustomRegionY.Name" xml:space="preserve">
+    <value>nudCaptureCustomRegionY</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionY.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionY.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionY.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionY.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionY.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="nudScreenRegionX.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudCaptureCustomRegionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>313, 250</value>
   </data>
-  <data name="nudScreenRegionX.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudCaptureCustomRegionX.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
   </data>
-  <data name="nudScreenRegionX.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudCaptureCustomRegionX.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionX.Name" xml:space="preserve">
-    <value>nudScreenRegionX</value>
+  <data name="&gt;&gt;nudCaptureCustomRegionX.Name" xml:space="preserve">
+    <value>nudCaptureCustomRegionX</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionX.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionX.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionX.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionX.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;nudScreenRegionX.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;nudCaptureCustomRegionX.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="lblSelectedMonitorForCustomRegion.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblCaptureCustomRegionSelectedMonitor.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 234</value>
   </data>
-  <data name="lblSelectedMonitorForCustomRegion.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblCaptureCustomRegionSelectedMonitor.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 13</value>
   </data>
-  <data name="lblSelectedMonitorForCustomRegion.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblCaptureCustomRegionSelectedMonitor.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="lblSelectedMonitorForCustomRegion.Text" xml:space="preserve">
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
     <value>Select a monitor for a custom region:</value>
   </data>
-  <data name="&gt;&gt;lblSelectedMonitorForCustomRegion.Name" xml:space="preserve">
-    <value>lblSelectedMonitorForCustomRegion</value>
+  <data name="&gt;&gt;lblCaptureCustomRegionSelectedMonitor.Name" xml:space="preserve">
+    <value>lblCaptureCustomRegionSelectedMonitor</value>
   </data>
-  <data name="&gt;&gt;lblSelectedMonitorForCustomRegion.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionSelectedMonitor.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSelectedMonitorForCustomRegion.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionSelectedMonitor.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;lblSelectedMonitorForCustomRegion.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblCaptureCustomRegionSelectedMonitor.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="cboMonitors.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cboCaptureCustomRegionMonitors.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 250</value>
   </data>
-  <data name="cboMonitors.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cboCaptureCustomRegionMonitors.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 21</value>
   </data>
-  <data name="cboMonitors.TabIndex" type="System.Int32, mscorlib">
+  <data name="cboCaptureCustomRegionMonitors.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;cboMonitors.Name" xml:space="preserve">
-    <value>cboMonitors</value>
+  <data name="&gt;&gt;cboCaptureCustomRegionMonitors.Name" xml:space="preserve">
+    <value>cboCaptureCustomRegionMonitors</value>
   </data>
-  <data name="&gt;&gt;cboMonitors.Type" xml:space="preserve">
+  <data name="&gt;&gt;cboCaptureCustomRegionMonitors.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboMonitors.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cboCaptureCustomRegionMonitors.Parent" xml:space="preserve">
     <value>pCapture</value>
   </data>
-  <data name="&gt;&gt;cboMonitors.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cboCaptureCustomRegionMonitors.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="cbShowCursor.AutoSize" type="System.Boolean, mscorlib">

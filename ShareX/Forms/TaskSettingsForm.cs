@@ -209,13 +209,13 @@ namespace ShareX
             cbScreenshotDelay.Checked = TaskSettings.CaptureSettings.IsDelayScreenshot;
             nudScreenshotDelay.Value = TaskSettings.CaptureSettings.DelayScreenshot;
             cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
-            cboMonitors.Items.Clear();
-            cboMonitors.Items.AddRange(MonitorRegionDefaultCreator.AllMonitorsRegions);
-            cboMonitors.SelectedIndex = TaskSettings.CaptureSettings.DefaultScreenRegionCboIndex;
-            nudScreenRegionX.Value = TaskSettings.CaptureSettings.DefaultBounds.X;
-            nudScreenRegionY.Value = TaskSettings.CaptureSettings.DefaultBounds.Y;
-            nudScreenRegionWidth.Value = TaskSettings.CaptureSettings.DefaultBounds.Width;
-            nudScreenRegionHeight.Value = TaskSettings.CaptureSettings.DefaultBounds.Height;
+            cboCaptureCustomRegionMonitors.Items.Clear();
+            cboCaptureCustomRegionMonitors.Items.AddRange(MonitorRegionDefaultCreator.AllMonitorsRegions);
+            cboCaptureCustomRegionMonitors.SelectedIndex = 0;
+            nudCaptureCustomRegionX.Value = TaskSettings.CaptureSettings.DefaultBounds.X;
+            nudCaptureCustomRegionY.Value = TaskSettings.CaptureSettings.DefaultBounds.Y;
+            nudCaptureCustomRegionWidth.Value = TaskSettings.CaptureSettings.DefaultBounds.Width;
+            nudCaptureCustomRegionHeight.Value = TaskSettings.CaptureSettings.DefaultBounds.Height;
 
             // Capture / Region capture
             if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new SurfaceOptions();
@@ -715,6 +715,15 @@ namespace ShareX
 
         #region Capture
 
+        private void btnTransmitBoundsFromMonitorToCustomBounds_Click(object sender, EventArgs e)
+        {
+            MonitorRegion monitorRegionSelected = (MonitorRegion)cboCaptureCustomRegionMonitors.SelectedItem;
+            nudCaptureCustomRegionX.Value = monitorRegionSelected.Bounds.X;
+            nudCaptureCustomRegionY.Value = monitorRegionSelected.Bounds.Y;
+            nudCaptureCustomRegionWidth.Value = monitorRegionSelected.Bounds.Width;
+            nudCaptureCustomRegionHeight.Value = monitorRegionSelected.Bounds.Height;
+        }
+
         private void chkUseDefaultCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultCaptureSettings = chkUseDefaultCaptureSettings.Checked;
@@ -1132,13 +1141,5 @@ namespace ShareX
 
         #endregion Advanced
 
-        private void btnTransmitBoundsFromMonitorToCustomBounds_Click(object sender, EventArgs e)
-        {
-            MonitorRegion monitorRegionSelected = (MonitorRegion)cboMonitors.SelectedItem;
-            nudScreenRegionX.Value = monitorRegionSelected.X;
-            nudScreenRegionY.Value = monitorRegionSelected.Y;
-            nudScreenRegionWidth.Value = monitorRegionSelected.Width;
-            nudScreenRegionHeight.Value = monitorRegionSelected.Height;
-        }
     }
 }
