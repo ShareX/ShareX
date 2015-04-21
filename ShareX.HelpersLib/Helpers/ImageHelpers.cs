@@ -181,14 +181,20 @@ namespace ShareX.HelpersLib
                 return img;
             }
 
+            int newWidth, newHeight;
             double ratioX = (double)width / img.Width;
             double ratioY = (double)height / img.Height;
-            int newWidth = width;
-            int newHeight = height;
+
             if (ratioX < ratioY)
+            {
+                newWidth = width;
                 newHeight = (int)(img.Height * ratioX);
+            }
             else
+            {
                 newWidth = (int)(img.Width * ratioY);
+                newHeight = height;
+            }
 
             return ResizeImage(img, newWidth, newHeight);
         }
