@@ -273,4 +273,157 @@
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
     <value>Gebruik opname instellingen in het algemene taakvenster</value>
   </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS:</value>
+  </data>
+  <data name="chkUseDefaultGeneralSettings.Text" xml:space="preserve">
+    <value>Gebruik de algemene instellingen in het hoofdvenster van de taakinstellingen</value>
+  </data>
+  <data name="chkUseDefaultImageSettings.Text" xml:space="preserve">
+    <value>Gebruik de instellingen voor afbeeldingen in het algemene venster voor taakinstellingen</value>
+  </data>
+  <data name="chkUseDefaultIndexerSettings.Text" xml:space="preserve">
+    <value>Gebruik de indexatie instellingen in het algemene venster voor taakinstellingen</value>
+  </data>
+  <data name="chkUseDefaultUploadSettings.Text" xml:space="preserve">
+    <value>Gebruik de upload instellingen in het algemene venster voor taakinstellingen</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>Pad van map</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>Inclusief deelmappen</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>Na vervolledigen van taak:</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>Schaduw compensatie:</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Beschrijving:</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>De afbeeldingseffecten kunnen in-/uitgeschakeld worden via "Taken na vastleggen -&gt; Voeg afbeeldingseffecten toe"</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>Als het bestand bestaat:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>Afbeeldingsformaat:</value>
+  </data>
+  <data name="lblImageFormat2.Text" xml:space="preserve">
+    <value>Afbeeldingsformaat 2:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF kwaliteit:</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG kwaliteit:</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>Patroon voor naam voor vastleggen of klembord upload:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Patroon voor naam voor het vastleggen van het actieve venster:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Voorbeeld:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Voorbeeld:</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>seconden</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>seconden</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>FFmpeg FPS:</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>secondes</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>Hoogte:</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>Naam van thumbnail:</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>Breedte:</value>
+  </data>
+  <data name="lblUseImageFormat2After.Text" xml:space="preserve">
+    <value>Maximale afbeeldingsgrootte voor "Afbeeldingsformaat 2":</value>
+  </data>
+  <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
+    <value>0 - 5000 kB (0 = geen limiet)</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Acties</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Geavanceerd</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Vastleggen</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Effecten</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="tpIndexer.Text" xml:space="preserve">
+    <value>Indexatie</value>
+  </data>
+  <data name="tpRectangleAnnotate.Text" xml:space="preserve">
+    <value>Rechthoek met annotatie</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>Regio vastleggen</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Scherm opname</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Taak</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>Thumbnail</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Uploaden</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>Klembord uploaden</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Monitor folders</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Bestandsuploaders</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Afbeeldingsuploaders</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Tekstuploaders</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Diensten om een link te delen</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Linkverkorters</value>
+  </data>
 </root>
