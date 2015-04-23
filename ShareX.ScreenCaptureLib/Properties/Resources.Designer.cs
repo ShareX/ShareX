@@ -202,7 +202,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monitor{0} (X:{1} Y:{2} Height:{3} Width:{4}.
+        ///   Looks up a localized string similar to Monitor{0} (X:{1} Y:{2} Height:{3} Width:{4}).
         /// </summary>
         internal static string ScreenRegion_Name_Monitor_0___X__1__Y__2__Height__3__Width__4_ {
             get {

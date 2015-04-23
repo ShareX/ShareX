@@ -13,7 +13,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue("Monitor1 X:0 Y:0 Height:0 Width:0"), Description("The default monitor name.")]
         public string MonitorIdentifier { get; private set; }
 
-        [DefaultValue(0)]
+        [DefaultValue(typeof(Rectangle), "{X=0,Y=0,Width=0,Height=0}")]
         public Rectangle Bounds { get; private set; }
 
         #endregion
