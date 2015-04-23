@@ -53,6 +53,8 @@
     <Compile Include="Forms\RectangleTransparent.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MonitorRegion.cs" />
+    <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
     <Compile Include="Screencast\FFmpegHelper.cs" />
@@ -124,14 +126,25 @@
     <Content Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.de.resx" />
-    <EmbeddedResource Include="Properties\Resources.es.resx" />
-    <EmbeddedResource Include="Properties\Resources.fr.resx" />
-    <EmbeddedResource Include="Properties\Resources.hu.resx" />
-    <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.hu.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ko-KR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
