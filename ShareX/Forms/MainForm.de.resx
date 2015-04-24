@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -713,7 +713,7 @@
     <value>178, 22</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>URL teieln</value>
+    <value>URL teilen</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
