@@ -143,7 +143,7 @@ namespace ShareX
                 {
                     URLHelpers.OpenURL(SelectedItem.Info.Result.URL);
                 }
-                else if (SelectedItem.IsFileExist)
+                else if (SelectedItem.IsFilePathValid)
                 {
                     URLHelpers.OpenURL(SelectedItem.Info.FilePath);
                 }
@@ -252,6 +252,25 @@ namespace ShareX
         public void CopyCustomFormat(string format)
         {
             if (!string.IsNullOrEmpty(format) && IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => parser.Parse(x.Info, format)));
+        }
+
+        public void TryCopy()
+        {
+            if (IsItemSelected)
+            {
+                if (SelectedItem.IsShortenedURLExist)
+                {
+                    CopyTexts(SelectedItems.Where(x => x.IsShortenedURLExist).Select(x => x.Info.Result.ShortenedURL));
+                }
+                else if (SelectedItem.IsURLExist)
+                {
+                    CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => x.Info.Result.URL));
+                }
+                else if (SelectedItem.IsFilePathValid)
+                {
+                    CopyTexts(SelectedItems.Where(x => x.IsFilePathValid).Select(x => x.Info.FilePath));
+                }
+            }
         }
 
         #endregion Copy
