@@ -650,36 +650,58 @@ namespace ShareX
             new QRCodeForm().Show();
         }
 
+        public static void OpenFTPClient()
+        {
+            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList != null)
+            {
+                FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(Program.UploadersConfig.FTPSelectedImage);
+
+                if (account != null)
+                {
+                    if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
+                    {
+                        new FTPClientForm(account).Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("FTP client only supports FTP or FTPS.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    return;
+                }
+            }
+
+            MessageBox.Show("Unable to find valid FTP account.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static void TweetMessage()
         {
-            TaskEx.Run(() =>
+            if (Program.UploadersConfig != null && Program.UploadersConfig.TwitterOAuthInfoList != null)
             {
                 OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
 
-                if (twitterOAuth != null)
+                if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
                 {
-                    using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
+                    TaskEx.Run(() =>
                     {
-                        if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
+                        using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
                         {
-                            if (Program.MainForm.niTray.Visible)
+                            if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
                             {
-                                Program.MainForm.niTray.Tag = null;
-                                Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
+                                if (Program.MainForm.niTray.Visible)
+                                {
+                                    Program.MainForm.niTray.Tag = null;
+                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
+                                }
                             }
                         }
-                    }
-                }
-            });
-        }
+                    });
 
-        public static void OpenFTPClient()
-        {
-            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList.IsValidIndex(Program.UploadersConfig.FTPSelectedImage))
-            {
-                FTPAccount account = Program.UploadersConfig.FTPAccountList[Program.UploadersConfig.FTPSelectedImage];
-                new FTPClientForm(account).Show();
+                    return;
+                }
             }
+
+            MessageBox.Show("Unable to find valid Twitter account.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
