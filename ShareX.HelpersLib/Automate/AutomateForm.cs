@@ -54,7 +54,6 @@ namespace ShareX.HelpersLib
             tokenizer.Keywords = FunctionManager.Functions.Select(x => x.Key).ToArray();
             cbFunctions.Items.AddRange(tokenizer.Keywords);
             cbKeys.Items.AddRange(Enum.GetNames(typeof(Keys)).Skip(1).ToArray());
-            Tokenize();
 
             Scripts = scripts;
 
@@ -71,6 +70,8 @@ namespace ShareX.HelpersLib
             {
                 SetExample();
             }
+
+            Tokenize();
         }
 
         public static AutomateForm GetInstance(List<ScriptInfo> scripts)
@@ -313,7 +314,8 @@ KeyPressText ""Loop""";
                 Point position = Cursor.Position;
                 this.InvokeSafe(() =>
                 {
-                    rtbInput.SelectedText = string.Format("MouseMove {0} {1}", position.X, position.Y);
+                    rtbInput.SelectedText = string.Format("MouseMove {0} {1}\r\n", position.X, position.Y);
+                    rtbInput.Focus();
                 });
             });
 
