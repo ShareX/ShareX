@@ -284,6 +284,7 @@ namespace ShareX
         public bool IsDelayScreenshot = false;
         public decimal DelayScreenshot = 2.0m;
         public bool CaptureAutoHideTaskbar = false;
+        public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
 
         #endregion Capture / General
 
@@ -312,12 +313,6 @@ namespace ShareX
         public RectangleAnnotateOptions RectangleAnnotateOptions = new RectangleAnnotateOptions();
 
         #endregion Capture / Rectangle annotate
-
-        #region Custom Capture Region
-
-        public Rectangle DefaultBounds = new Rectangle(0, 0, 0, 0);
-
-        #endregion
     }
 
     public class TaskSettingsUpload

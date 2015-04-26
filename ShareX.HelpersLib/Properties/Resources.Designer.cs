@@ -745,6 +745,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capture custom region.
+        /// </summary>
+        internal static string HotkeyType_CustomRegion {
+            get {
+                return ResourceManager.GetString("HotkeyType_CustomRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture diamond region.
         /// </summary>
         internal static string HotkeyType_DiamondRegion {

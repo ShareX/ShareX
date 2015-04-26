@@ -116,7 +116,6 @@ namespace ShareX
         ActiveMonitor,
         Window,
         ActiveWindow,
-        CustomRegion,
         RectangleWindow,
         Rectangle,
         RoundedRectangle,
@@ -125,6 +124,7 @@ namespace ShareX
         Diamond,
         Polygon,
         Freehand,
+        CustomRegion,
         LastRegion
     }
 
@@ -141,7 +141,6 @@ namespace ShareX
         PrintScreen,
         ActiveWindow,
         ActiveMonitor,
-        CustomRegion,
         RectangleRegion,
         WindowRectangle,
         RectangleAnnotate,
@@ -153,6 +152,7 @@ namespace ShareX
         DiamondRegion,
         PolygonRegion,
         FreeHandRegion,
+        CustomRegion,
         LastRegion,
         ScreenRecorder,
         StartScreenRecorder,

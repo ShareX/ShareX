@@ -25,17 +25,17 @@
 
 // Credits: https://github.com/alanedwardes
 
+using Amazon;
+using Amazon.Runtime;
+using Amazon.S3;
+using Amazon.S3.Model;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography;
-using System.Linq;
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
-using Amazon.Runtime;
 using System.Collections.Specialized;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
 
 namespace ShareX.UploadersLib.FileUploaders
 {

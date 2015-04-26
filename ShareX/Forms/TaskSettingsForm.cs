@@ -212,10 +212,10 @@ namespace ShareX
             cboCaptureCustomRegionMonitors.Items.Clear();
             cboCaptureCustomRegionMonitors.Items.AddRange(MonitorRegionDefaultCreator.AllMonitorsRegions);
             cboCaptureCustomRegionMonitors.SelectedIndex = 0;
-            nudCaptureCustomRegionX.Value = TaskSettings.CaptureSettings.DefaultBounds.X;
-            nudCaptureCustomRegionY.Value = TaskSettings.CaptureSettings.DefaultBounds.Y;
-            nudCaptureCustomRegionWidth.Value = TaskSettings.CaptureSettings.DefaultBounds.Width;
-            nudCaptureCustomRegionHeight.Value = TaskSettings.CaptureSettings.DefaultBounds.Height;
+            nudCaptureCustomRegionX.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.X;
+            nudCaptureCustomRegionY.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.Y;
+            nudCaptureCustomRegionWidth.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.Width;
+            nudCaptureCustomRegionHeight.Value = TaskSettings.CaptureSettings.CaptureCustomRegion.Height;
 
             // Capture / Region capture
             if (TaskSettings.CaptureSettings.SurfaceOptions == null) TaskSettings.CaptureSettings.SurfaceOptions = new SurfaceOptions();
@@ -715,15 +715,6 @@ namespace ShareX
 
         #region Capture
 
-        private void btnTransmitBoundsFromMonitorToCustomBounds_Click(object sender, EventArgs e)
-        {
-            MonitorRegion monitorRegionSelected = (MonitorRegion)cboCaptureCustomRegionMonitors.SelectedItem;
-            nudCaptureCustomRegionX.Value = monitorRegionSelected.Bounds.X;
-            nudCaptureCustomRegionY.Value = monitorRegionSelected.Bounds.Y;
-            nudCaptureCustomRegionWidth.Value = monitorRegionSelected.Bounds.Width;
-            nudCaptureCustomRegionHeight.Value = monitorRegionSelected.Bounds.Height;
-        }
-
         private void chkUseDefaultCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.UseDefaultCaptureSettings = chkUseDefaultCaptureSettings.Checked;
@@ -771,28 +762,33 @@ namespace ShareX
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
         }
 
+        private void btnTransmitBoundsFromMonitorToCustomBounds_Click(object sender, EventArgs e)
+        {
+            MonitorRegion monitorRegionSelected = (MonitorRegion)cboCaptureCustomRegionMonitors.SelectedItem;
+            nudCaptureCustomRegionX.Value = monitorRegionSelected.Bounds.X;
+            nudCaptureCustomRegionY.Value = monitorRegionSelected.Bounds.Y;
+            nudCaptureCustomRegionWidth.Value = monitorRegionSelected.Bounds.Width;
+            nudCaptureCustomRegionHeight.Value = monitorRegionSelected.Bounds.Height;
+        }
+
         private void nudScreenRegionX_ValueChanged(object sender, EventArgs e)
         {
-            NumericUpDown nudX = (NumericUpDown)sender;
-            TaskSettings.CaptureSettings.DefaultBounds.X = (int)nudX.Value;
+            TaskSettings.CaptureSettings.CaptureCustomRegion.X = (int)nudCaptureCustomRegionX.Value;
         }
 
         private void nudScreenRegionY_ValueChanged(object sender, EventArgs e)
         {
-            NumericUpDown nudY = (NumericUpDown)sender;
-            TaskSettings.CaptureSettings.DefaultBounds.Y = (int)nudY.Value;
+            TaskSettings.CaptureSettings.CaptureCustomRegion.Y = (int)nudCaptureCustomRegionY.Value;
         }
 
         private void nudScreenRegionWidth_ValueChanged(object sender, EventArgs e)
         {
-            NumericUpDown nudWidth = (NumericUpDown)sender;
-            TaskSettings.CaptureSettings.DefaultBounds.Width = (int)nudWidth.Value;
+            TaskSettings.CaptureSettings.CaptureCustomRegion.Width = (int)nudCaptureCustomRegionWidth.Value;
         }
 
         private void nudScreenRegionHeight_ValueChanged(object sender, EventArgs e)
         {
-            NumericUpDown nudHeight = (NumericUpDown)sender;
-            TaskSettings.CaptureSettings.DefaultBounds.Height = (int)nudHeight.Value;
+            TaskSettings.CaptureSettings.CaptureCustomRegion.Height = (int)nudCaptureCustomRegionHeight.Value;
         }
 
         #endregion Capture
@@ -1140,6 +1136,5 @@ namespace ShareX
         }
 
         #endregion Advanced
-
     }
 }

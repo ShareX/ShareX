@@ -1519,9 +1519,6 @@ namespace ShareX
                 case HotkeyType.ActiveMonitor:
                     CaptureScreenshot(CaptureType.ActiveMonitor, safeTaskSettings, false);
                     break;
-                case HotkeyType.CustomRegion:
-                    CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
-                    break;
                 case HotkeyType.RectangleRegion:
                     CaptureScreenshot(CaptureType.Rectangle, safeTaskSettings, false);
                     break;
@@ -1554,6 +1551,9 @@ namespace ShareX
                     break;
                 case HotkeyType.FreeHandRegion:
                     CaptureScreenshot(CaptureType.Freehand, safeTaskSettings, false);
+                    break;
+                case HotkeyType.CustomRegion:
+                    CaptureScreenshot(CaptureType.CustomRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.LastRegion:
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
@@ -1627,9 +1627,6 @@ namespace ShareX
                 case CaptureType.ActiveMonitor:
                     DoCapture(Screenshot.CaptureActiveMonitor, CaptureType.ActiveMonitor, taskSettings, autoHideForm);
                     break;
-                case CaptureType.CustomRegion:
-                    CaptureCustomRegion(CaptureType.CustomRegion, taskSettings, autoHideForm);
-                    break;
                 case CaptureType.Rectangle:
                 case CaptureType.RectangleWindow:
                 case CaptureType.RoundedRectangle:
@@ -1639,6 +1636,9 @@ namespace ShareX
                 case CaptureType.Polygon:
                 case CaptureType.Freehand:
                     CaptureRegion(captureType, taskSettings, autoHideForm);
+                    break;
+                case CaptureType.CustomRegion:
+                    CaptureCustomRegion(taskSettings, autoHideForm);
                     break;
                 case CaptureType.LastRegion:
                     CaptureLastRegion(taskSettings, autoHideForm);
@@ -1765,15 +1765,15 @@ namespace ShareX
             }, CaptureType.ActiveWindow, taskSettings, autoHideForm);
         }
 
-        private void CaptureCustomRegion(CaptureType capture, TaskSettings taskSettings, bool autoHideForm)
+        private void CaptureCustomRegion(TaskSettings taskSettings, bool autoHideForm)
         {
             DoCapture(() =>
             {
-                Rectangle regionBounds = taskSettings.CaptureSettings.DefaultBounds;
+                Rectangle regionBounds = taskSettings.CaptureSettings.CaptureCustomRegion;
                 Image img = Screenshot.CaptureRectangle(regionBounds);
 
                 return img;
-            }, capture, taskSettings, autoHideForm);
+            }, CaptureType.CustomRegion, taskSettings, autoHideForm);
         }
 
         private void CaptureWindow(IntPtr handle, TaskSettings taskSettings = null, bool autoHideForm = true)
