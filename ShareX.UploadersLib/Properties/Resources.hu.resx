@@ -174,9 +174,6 @@
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Hiba</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>Felhatalmazás</value>
-  </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Hitelesítés szükséges.</value>
   </data>

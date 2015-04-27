@@ -132,9 +132,6 @@
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>선택된 폴더:</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>인증</value>
-  </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
     <value>DropBox에서 "{0}"을/를 삭제할까요?</value>
   </data>

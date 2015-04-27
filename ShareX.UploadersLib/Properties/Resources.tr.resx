@@ -143,9 +143,6 @@
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Hata</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>Yetkilendir</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Seçili dizin:</value>
   </data>

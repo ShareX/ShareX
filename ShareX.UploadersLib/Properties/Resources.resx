@@ -349,9 +349,6 @@
   <data name="DropboxFilesForm_OpenDirectory_Path_not_exist_" xml:space="preserve">
     <value>Path not exist:</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>Authorize</value>
-  </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Delete_file_" xml:space="preserve">
     <value>Delete file?</value>
   </data>

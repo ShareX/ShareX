@@ -125,9 +125,6 @@
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentification requise.</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>Autoriser</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Rafraichissement de la boite de la liste des répertoires échoué</value>
   </data>

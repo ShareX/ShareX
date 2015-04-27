@@ -174,9 +174,6 @@
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>错误</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>授权</value>
-  </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>认证要求.</value>
   </data>

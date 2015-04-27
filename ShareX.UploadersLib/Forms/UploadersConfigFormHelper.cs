@@ -1465,9 +1465,9 @@ namespace ShareX.UploadersLib
                 {
                     acc.Description = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount].Description;
                     Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
-                    ucTwitterAccounts.pgSettings.SelectedObject = acc;
+                    //ucTwitterAccounts.pgSettings.SelectedObject = acc;
                     URLHelpers.OpenURL(url);
-                    btnTwitterLogin.Enabled = true;
+                    //btnTwitterLogin.Enabled = true;
                 }
             }
         }
@@ -1487,7 +1487,7 @@ namespace ShareX.UploadersLib
                     {
                         acc.AuthVerifier = string.Empty;
                         Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
-                        ucTwitterAccounts.pgSettings.SelectedObject = acc;
+                        //ucTwitterAccounts.pgSettings.SelectedObject = acc;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

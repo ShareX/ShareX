@@ -140,14 +140,6 @@ namespace ShareX.UploadersLib
             ucLocalhostAccounts.btnTest.Visible = false;
             ucLocalhostAccounts.pgSettings.PropertyValueChanged += SettingsGrid_LocalhostPropertyValueChanged;
 
-            // Twitter
-            ucTwitterAccounts.btnAdd.Click += TwitterAccountAddButton_Click;
-            ucTwitterAccounts.btnRemove.Click += TwitterAccountRemoveButton_Click;
-            ucTwitterAccounts.btnDuplicate.Click += TwitterAccountDuplicateButton_Click;
-            ucTwitterAccounts.btnTest.Text = Resources.UploadersConfigForm_FormSettings_Authorize;
-            ucTwitterAccounts.btnTest.Click += TwitterAccountAuthButton_Click;
-            ucTwitterAccounts.lbAccounts.SelectedIndexChanged += TwitterAccountSelectedIndexChanged;
-
             eiFTP.ObjectType = typeof(FTPAccount);
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
         }
@@ -585,17 +577,17 @@ namespace ShareX.UploadersLib
 
             #region Other Services
 
-            ucTwitterAccounts.lbAccounts.Items.Clear();
+            // Twitter
 
-            foreach (OAuthInfo acc in Config.TwitterOAuthInfoList)
+            lbTwitterAccounts.Items.Clear();
+            lbTwitterAccounts.Items.AddRange(Config.TwitterOAuthInfoList.ToArray());
+
+            if (Config.TwitterSelectedAccount.IsBetween(0, lbTwitterAccounts.Items.Count - 1))
             {
-                ucTwitterAccounts.lbAccounts.Items.Add(acc);
+                lbTwitterAccounts.SelectedIndex = Config.TwitterSelectedAccount;
             }
 
-            if (ucTwitterAccounts.lbAccounts.Items.Count > 0)
-            {
-                ucTwitterAccounts.lbAccounts.SelectedIndex = Config.TwitterSelectedAccount;
-            }
+            TwitterUpdateSelected();
 
             #endregion Other Services
         }
@@ -1957,6 +1949,21 @@ namespace ShareX.UploadersLib
             LocalhostAccountsSetup(Config.LocalhostAccountList);
         }
 
+        private void cboSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.LocalhostSelectedImages = cboSharedFolderImages.SelectedIndex;
+        }
+
+        private void cboSharedFolderText_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.LocalhostSelectedText = cboSharedFolderText.SelectedIndex;
+        }
+
+        private void cboSharedFolderFiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.LocalhostSelectedFiles = cboSharedFolderFiles.SelectedIndex;
+        }
+
         #endregion Shared folder
 
         #region MediaFire
@@ -2100,66 +2107,74 @@ namespace ShareX.UploadersLib
 
         #endregion URL Shorteners
 
-        #region Other Services
+        #region Other Uploaders
 
-        private void TwitterAccountAddButton_Click(object sender, EventArgs e)
-        {
-            OAuthInfo acc = new OAuthInfo();
-            Config.TwitterOAuthInfoList.Add(acc);
-            ucTwitterAccounts.AddItem(acc);
-        }
+        #region Twitter
 
-        private void TwitterAccountRemoveButton_Click(object sender, EventArgs e)
+        private bool TwitterUpdateSelected()
         {
-            int sel = ucTwitterAccounts.lbAccounts.SelectedIndex;
-            if (ucTwitterAccounts.RemoveItem(sel))
+            Config.TwitterSelectedAccount = lbTwitterAccounts.SelectedIndex;
+
+            if (Config.TwitterSelectedAccount > -1)
             {
-                Config.TwitterOAuthInfoList.RemoveAt(sel);
+                OAuthInfo oauth = lbTwitterAccounts.SelectedItem as OAuthInfo;
+
+                if (oauth != null)
+                {
+                    txtTwitterDescription.Text = oauth.Description;
+                    oauthTwitter.Enabled = true;
+                    return true;
+                }
             }
+
+            oauthTwitter.Enabled = false;
+            return false;
         }
 
-        private void TwitterAccountDuplicateButton_Click(object sender, EventArgs e)
+        private void btnTwitterAdd_Click(object sender, EventArgs e)
         {
-            OAuthInfo src = (OAuthInfo)ucTwitterAccounts.lbAccounts.Items[ucTwitterAccounts.lbAccounts.SelectedIndex];
-            OAuthInfo clone = src.Clone();
-            Config.TwitterOAuthInfoList.Add(clone);
-            ucTwitterAccounts.AddItem(clone);
+            OAuthInfo oauth = new OAuthInfo();
+            Config.TwitterOAuthInfoList.Add(oauth);
+            lbTwitterAccounts.Items.Add(oauth);
+            lbTwitterAccounts.SelectedIndex = lbTwitterAccounts.Items.Count - 1;
+
+            TwitterUpdateSelected();
         }
 
-        private void TwitterAccountAuthButton_Click(object sender, EventArgs e)
+        private void btnTwitterRemove_Click(object sender, EventArgs e)
+        {
+            int selected = lbTwitterAccounts.SelectedIndex;
+
+            if (selected.IsBetween(0, lbTwitterAccounts.Items.Count - 1))
+            {
+                lbTwitterAccounts.Items.RemoveAt(selected);
+                Config.TwitterOAuthInfoList.RemoveAt(selected);
+
+                if (lbTwitterAccounts.Items.Count > 0)
+                {
+                    lbTwitterAccounts.SelectedIndex = selected >= lbTwitterAccounts.Items.Count ? lbTwitterAccounts.Items.Count - 1 : selected;
+                }
+            }
+
+            TwitterUpdateSelected();
+        }
+
+        private void lbTwitterAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TwitterUpdateSelected();
+        }
+
+        private void oauthTwitter_OpenButtonClicked()
         {
             TwitterAuthOpen();
         }
 
-        private void btnTwitterLogin_Click(object sender, EventArgs e)
+        private void oauthTwitter_CompleteButtonClicked(string code)
         {
             TwitterAuthComplete();
         }
 
-        private void TwitterAccountSelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ucTwitterAccounts.lbAccounts.SelectedIndex > -1)
-            {
-                Config.TwitterSelectedAccount = ucTwitterAccounts.lbAccounts.SelectedIndex;
-            }
-        }
-
-        private void cboSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.LocalhostSelectedImages = cboSharedFolderImages.SelectedIndex;
-        }
-
-        private void cboSharedFolderText_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.LocalhostSelectedText = cboSharedFolderText.SelectedIndex;
-        }
-
-        private void cboSharedFolderFiles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.LocalhostSelectedFiles = cboSharedFolderFiles.SelectedIndex;
-        }
-
-        #endregion Other Services
+        #endregion Twitter
 
         #region Custom Uploaders
 
@@ -2430,5 +2445,7 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Custom Uploaders
+
+        #endregion Other Uploaders
     }
 }

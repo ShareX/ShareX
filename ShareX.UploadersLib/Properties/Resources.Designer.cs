@@ -912,16 +912,7 @@ namespace ShareX.UploadersLib.Properties {
                 return ResourceManager.GetString("UploadersConfigForm_Error", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Authorize.
-        /// </summary>
-        internal static string UploadersConfigForm_FormSettings_Authorize {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_FormSettings_Authorize", resourceCulture);
-            }
-        }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Hubic refresh folders list failed.
         /// </summary>
