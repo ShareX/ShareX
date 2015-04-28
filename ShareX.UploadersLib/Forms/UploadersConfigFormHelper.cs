@@ -1564,6 +1564,7 @@ namespace ShareX.UploadersLib
                 }
 
                 Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = oauth;
+                lbTwitterAccounts.Items[Config.TwitterSelectedAccount] = oauth;
             }
         }
 

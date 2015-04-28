@@ -135,7 +135,7 @@ Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contrib
         private const int mX = w / 2;
         private const int mY = h / 2;
         private const int minStep = 3;
-        private const int maxStep = 30;
+        private const int maxStep = 35;
         private const int speed = 1;
         private int step = 10;
         private int direction = speed;
@@ -157,16 +157,27 @@ Copyright © 2007-2015 ShareX Developers", Resources.AboutForm_AboutForm_Contrib
             {
                 for (int i = 0; i <= mX; i += step)
                 {
-                    g.DrawLine(pen, i, mY, mX, mY + i); // Left top
-                    g.DrawLine(pen, i, mY, mX, mY - i); // Left bottom
+                    g.DrawLine(pen, i, mY, mX, mY - i); // Left top
+                    g.DrawLine(pen, mX, i, mX + i, mY); // Right top
+                    g.DrawLine(pen, w - i, mY, mX, mY + i); // Right bottom
+                    g.DrawLine(pen, mX, h - i, mX - i, mY); // Left bottom
+
+                    /*
+                    g.DrawLine(pen, i, mY, mX, mY - i); // Left top
                     g.DrawLine(pen, w - i, mY, mX, mY - i); // Right top
                     g.DrawLine(pen, w - i, mY, mX, mY + i); // Right bottom
+                    g.DrawLine(pen, i, mY, mX, mY + i); // Left bottom
+                    */
+
+                    /*
+                    g.DrawLine(pen, mX, i, i, mY); // Left top
+                    g.DrawLine(pen, mX, i, w - i, mY); // Right top
+                    g.DrawLine(pen, mX, h - i, w - i, mY); // Right bottom
+                    g.DrawLine(pen, mX, h - i, i, mY); // Left bottom
+                    */
                 }
 
-                g.DrawLine(pen, mX, mY, mX, mY + mX); // Left top
-                g.DrawLine(pen, mX, mY, mX, mY - mX); // Left bottom
-                g.DrawLine(pen, w - mX, mY, mX, mY - mX); // Right top
-                g.DrawLine(pen, w - mX, mY, mX, mY + mX); // Right bottom
+                //g.DrawLine(pen, mX, 0, mX, h);
             }
 
             if (!isPaused)
