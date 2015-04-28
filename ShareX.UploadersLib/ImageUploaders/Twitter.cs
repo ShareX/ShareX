@@ -40,6 +40,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         public const int MessageMediaLimit = MessageLimit - characters_reserved_per_media;
 
         public OAuthInfo AuthInfo { get; set; }
+        public bool SkipMessageBox { get; set; }
+        public string DefaultMessage { get; set; }
 
         public Twitter(OAuthInfo oauth)
         {
@@ -59,17 +61,25 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            using (TwitterTweetForm twitterMsg = new TwitterTweetForm())
-            {
-                twitterMsg.Length = MessageMediaLimit;
+            string message = DefaultMessage;
 
-                if (twitterMsg.ShowDialog() == DialogResult.OK)
+            if (!SkipMessageBox)
+            {
+                using (TwitterTweetForm twitterMsg = new TwitterTweetForm())
                 {
-                    return TweetMessageWithMedia(twitterMsg.Message, stream, fileName);
+                    twitterMsg.Length = MessageMediaLimit;
+                    twitterMsg.Message = DefaultMessage;
+
+                    if (twitterMsg.ShowDialog() != DialogResult.OK)
+                    {
+                        return new UploadResult() { IsURLExpected = false };
+                    }
+
+                    message = twitterMsg.Message;
                 }
             }
 
-            return new UploadResult() { IsURLExpected = false };
+            return TweetMessageWithMedia(message, stream, fileName);
         }
 
         public TwitterStatusResponse TweetMessage(string message)

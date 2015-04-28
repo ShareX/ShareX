@@ -706,7 +706,11 @@ namespace ShareX
                     break;
                 case ImageDestination.Twitter:
                     OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-                    imageUploader = new Twitter(twitterOAuth);
+                    imageUploader = new Twitter(twitterOAuth)
+                    {
+                        SkipMessageBox = Program.UploadersConfig.TwitterSkipMessageBox,
+                        DefaultMessage = Program.UploadersConfig.TwitterDefaultMessage ?? string.Empty
+                    };
                     break;
                 case ImageDestination.Chevereto:
                     imageUploader = new Chevereto(Program.UploadersConfig.CheveretoWebsite, Program.UploadersConfig.CheveretoAPIKey)

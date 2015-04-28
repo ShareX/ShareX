@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib
             {
                 return txtTweet.Text;
             }
-            private set
+            set
             {
                 txtTweet.Text = value;
             }
@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib
 
         private void TwitterMsg_Shown(object sender, EventArgs e)
         {
-            txtTweet.SelectionLength = 0;
+            txtTweet.Select(txtTweet.TextLength, 0);
             this.ShowActivate();
         }
 
