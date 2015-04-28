@@ -1119,9 +1119,23 @@ namespace ShareX
                         {
                             OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList[Program.UploadersConfig.TwitterSelectedAccount];
 
-                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, url))
+                            if (Program.UploadersConfig.TwitterSkipMessageBox)
                             {
-                                twitter.ShowDialog();
+                                try
+                                {
+                                    new Twitter(twitterOAuth).TweetMessage(url);
+                                }
+                                catch (Exception ex)
+                                {
+                                    DebugHelper.WriteException(ex);
+                                }
+                            }
+                            else
+                            {
+                                using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, url))
+                                {
+                                    twitter.ShowDialog();
+                                }
                             }
                         }
                         else
