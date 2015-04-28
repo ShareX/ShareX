@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -606,14 +607,14 @@ namespace ShareX.UploadersLib
             ImgurAuthComplete(code);
         }
 
-        private void oauth2Imgur_RefreshButtonClicked()
-        {
-            ImgurAuthRefresh();
-        }
-
         private void oauth2Imgur_ClearButtonClicked()
         {
             Config.ImgurOAuth2Info = null;
+        }
+
+        private void oauth2Imgur_RefreshButtonClicked()
+        {
+            ImgurAuthRefresh();
         }
 
         private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
@@ -2111,25 +2112,7 @@ namespace ShareX.UploadersLib
 
         #region Twitter
 
-        private bool TwitterUpdateSelected()
-        {
-            Config.TwitterSelectedAccount = lbTwitterAccounts.SelectedIndex;
-
-            if (Config.TwitterSelectedAccount > -1)
-            {
-                OAuthInfo oauth = lbTwitterAccounts.SelectedItem as OAuthInfo;
-
-                if (oauth != null)
-                {
-                    txtTwitterDescription.Text = oauth.Description;
-                    oauthTwitter.Enabled = true;
-                    return true;
-                }
-            }
-
-            oauthTwitter.Enabled = false;
-            return false;
-        }
+        private bool twitterUpdatingDescription;
 
         private void btnTwitterAdd_Click(object sender, EventArgs e)
         {
@@ -2161,7 +2144,30 @@ namespace ShareX.UploadersLib
 
         private void lbTwitterAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TwitterUpdateSelected();
+            if (!twitterUpdatingDescription)
+            {
+                TwitterUpdateSelected();
+            }
+        }
+
+        private void txtTwitterDescription_TextChanged(object sender, EventArgs e)
+        {
+            OAuthInfo oauth = GetSelectedTwitterAccount();
+
+            if (oauth != null)
+            {
+                oauth.Description = txtTwitterDescription.Text;
+
+                try
+                {
+                    twitterUpdatingDescription = true;
+                    lbTwitterAccounts.Items[lbTwitterAccounts.SelectedIndex] = lbTwitterAccounts.SelectedItem;
+                }
+                finally
+                {
+                    twitterUpdatingDescription = false;
+                }
+            }
         }
 
         private void oauthTwitter_OpenButtonClicked()
@@ -2171,7 +2177,12 @@ namespace ShareX.UploadersLib
 
         private void oauthTwitter_CompleteButtonClicked(string code)
         {
-            TwitterAuthComplete();
+            TwitterAuthComplete(code);
+        }
+
+        private void oauthTwitter_ClearButtonClicked()
+        {
+            TwitterAuthClear();
         }
 
         #endregion Twitter

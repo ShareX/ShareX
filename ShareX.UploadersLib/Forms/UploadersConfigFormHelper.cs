@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib
     {
         #region Imgur
 
-        public void ImgurAuthOpen()
+        private void ImgurAuthOpen()
         {
             try
             {
@@ -69,7 +69,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void ImgurAuthComplete(string code)
+        private void ImgurAuthComplete(string code)
         {
             try
             {
@@ -86,7 +86,6 @@ namespace ShareX.UploadersLib
                     {
                         oauth2Imgur.Status = OAuthLoginStatus.LoginFailed;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        atcImgurAccountType.SelectedAccountType = AccountType.Anonymous;
                     }
 
                     btnImgurRefreshAlbumList.Enabled = result;
@@ -98,7 +97,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void ImgurAuthRefresh()
+        private void ImgurAuthRefresh()
         {
             try
             {
@@ -127,7 +126,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public void ImgurRefreshAlbumList()
+        private void ImgurRefreshAlbumList()
         {
             try
             {
@@ -1448,53 +1447,123 @@ namespace ShareX.UploadersLib
 
         #region Twitter
 
-        public bool CheckTwitterAccounts()
+        private OAuthInfo GetSelectedTwitterAccount()
+        {
+            return Config.TwitterOAuthInfoList.ReturnIfValidIndex(Config.TwitterSelectedAccount);
+        }
+
+        private bool CheckTwitterAccounts()
         {
             return Config.TwitterOAuthInfoList.IsValidIndex(Config.TwitterSelectedAccount);
         }
 
-        public void TwitterAuthOpen()
+        private bool TwitterUpdateSelected()
+        {
+            Config.TwitterSelectedAccount = lbTwitterAccounts.SelectedIndex;
+
+            if (Config.TwitterSelectedAccount > -1)
+            {
+                OAuthInfo oauth = lbTwitterAccounts.SelectedItem as OAuthInfo;
+
+                if (oauth != null)
+                {
+                    txtTwitterDescription.Text = oauth.Description;
+                    oauthTwitter.Enabled = true;
+
+                    if (OAuthInfo.CheckOAuth(oauth))
+                    {
+                        oauthTwitter.Status = OAuthLoginStatus.LoginSuccessful;
+                    }
+                    else
+                    {
+                        oauthTwitter.Status = OAuthLoginStatus.LoginRequired;
+                    }
+
+                    return true;
+                }
+            }
+
+            txtTwitterDescription.Text = string.Empty;
+            oauthTwitter.Enabled = false;
+            return false;
+        }
+
+        private void TwitterAuthOpen()
         {
             if (CheckTwitterAccounts())
             {
-                OAuthInfo acc = new OAuthInfo(APIKeys.TwitterConsumerKey, APIKeys.TwitterConsumerSecret);
-                Twitter twitter = new Twitter(acc);
-                string url = twitter.GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
+                try
                 {
-                    acc.Description = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount].Description;
-                    Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
-                    //ucTwitterAccounts.pgSettings.SelectedObject = acc;
-                    URLHelpers.OpenURL(url);
-                    //btnTwitterLogin.Enabled = true;
+                    OAuthInfo oauth = new OAuthInfo(APIKeys.TwitterConsumerKey, APIKeys.TwitterConsumerSecret);
+
+                    string url = new Twitter(oauth).GetAuthorizationURL();
+
+                    if (!string.IsNullOrEmpty(url))
+                    {
+                        oauth.Description = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount].Description;
+                        Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = oauth;
+                        lbTwitterAccounts.Items[Config.TwitterSelectedAccount] = oauth;
+                        URLHelpers.OpenURL(url);
+                        DebugHelper.WriteLine("TwitterAuthOpen - Authorization URL is opened: " + url);
+                    }
+                    else
+                    {
+                        DebugHelper.WriteLine("TwitterAuthOpen - Authorization URL is empty.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        public void TwitterAuthComplete()
+        private void TwitterAuthComplete(string code)
         {
             if (CheckTwitterAccounts())
             {
-                OAuthInfo acc = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount];
-
-                if (acc != null && !string.IsNullOrEmpty(acc.AuthToken) && !string.IsNullOrEmpty(acc.AuthSecret) && !string.IsNullOrEmpty(acc.AuthVerifier))
+                try
                 {
-                    Twitter twitter = new Twitter(acc);
-                    bool result = twitter.GetAccessToken(acc.AuthVerifier);
+                    OAuthInfo oauth = GetSelectedTwitterAccount();
 
-                    if (result)
+                    if (oauth != null && !string.IsNullOrEmpty(oauth.AuthToken) && !string.IsNullOrEmpty(oauth.AuthSecret))
                     {
-                        acc.AuthVerifier = string.Empty;
-                        Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = acc;
-                        //ucTwitterAccounts.pgSettings.SelectedObject = acc;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        bool result = new Twitter(oauth).GetAccessToken(code);
+
+                        if (result)
+                        {
+                            oauth.AuthVerifier = string.Empty;
+                            oauthTwitter.Status = OAuthLoginStatus.LoginSuccessful;
+                            MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            oauthTwitter.Status = OAuthLoginStatus.LoginFailed;
+                            MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void TwitterAuthClear()
+        {
+            if (CheckTwitterAccounts())
+            {
+                OAuthInfo oauth = new OAuthInfo();
+
+                OAuthInfo oauth2 = GetSelectedTwitterAccount();
+
+                if (oauth2 != null)
+                {
+                    oauth.Description = oauth2.Description;
+                }
+
+                Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = oauth;
             }
         }
 

@@ -3182,6 +3182,7 @@
             // 
             resources.ApplyResources(this.txtTwitterDescription, "txtTwitterDescription");
             this.txtTwitterDescription.Name = "txtTwitterDescription";
+            this.txtTwitterDescription.TextChanged += new System.EventHandler(this.txtTwitterDescription_TextChanged);
             // 
             // atcImgurAccountType
             // 
@@ -3339,9 +3340,11 @@
             // oauthTwitter
             // 
             resources.ApplyResources(this.oauthTwitter, "oauthTwitter");
+            this.oauthTwitter.IsRefreshable = false;
             this.oauthTwitter.Name = "oauthTwitter";
             this.oauthTwitter.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthTwitter_OpenButtonClicked);
             this.oauthTwitter.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthTwitter_CompleteButtonClicked);
+            this.oauthTwitter.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthTwitter_ClearButtonClicked);
             // 
             // actRapidShareAccountType
             // 
