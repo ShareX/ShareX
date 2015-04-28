@@ -589,6 +589,9 @@ namespace ShareX.UploadersLib
 
             TwitterUpdateSelected();
 
+            cbTwitterSkipMessageBox.Checked = Config.TwitterSkipMessageBox;
+            txtTwitterDefaultMessage.Text = Config.TwitterDefaultMessage;
+
             #endregion Other Services
         }
 
@@ -2182,6 +2185,16 @@ namespace ShareX.UploadersLib
         private void oauthTwitter_ClearButtonClicked()
         {
             TwitterAuthClear();
+        }
+
+        private void cbTwitterSkipMessageBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.TwitterSkipMessageBox = cbTwitterSkipMessageBox.Checked;
+        }
+
+        private void txtTwitterDefaultMessage_TextChanged(object sender, EventArgs e)
+        {
+            Config.TwitterDefaultMessage = txtTwitterDefaultMessage.Text;
         }
 
         #endregion Twitter

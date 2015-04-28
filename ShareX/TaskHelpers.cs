@@ -664,14 +664,14 @@ namespace ShareX
                     }
                     else
                     {
-                        MessageBox.Show("FTP client only supports FTP or FTPS.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     return;
                 }
             }
 
-            MessageBox.Show("Unable to find valid FTP account.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void TweetMessage()
@@ -701,7 +701,7 @@ namespace ShareX
                 }
             }
 
-            MessageBox.Show("Unable to find valid Twitter account.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)

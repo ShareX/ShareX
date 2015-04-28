@@ -278,6 +278,8 @@ namespace ShareX.UploadersLib
 
         public List<OAuthInfo> TwitterOAuthInfoList = new List<OAuthInfo>();
         public int TwitterSelectedAccount = 0;
+        public bool TwitterSkipMessageBox = false;
+        public string TwitterDefaultMessage = string.Empty;
 
         #endregion URL sharing services
 

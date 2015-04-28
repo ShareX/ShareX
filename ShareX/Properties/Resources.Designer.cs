@@ -1456,6 +1456,24 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FTP client only supports FTP or FTPS..
+        /// </summary>
+        public static string TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to find valid FTP account..
+        /// </summary>
+        public static string TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copied to clipboard: {0}.
         /// </summary>
         public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {
@@ -1470,6 +1488,15 @@ namespace ShareX.Properties {
         public static string TaskHelpers_TweetMessage_Tweet_successfully_sent_ {
             get {
                 return ResourceManager.GetString("TaskHelpers_TweetMessage_Tweet_successfully_sent_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to find valid Twitter account..
+        /// </summary>
+        public static string TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_ {
+            get {
+                return ResourceManager.GetString("TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_", resourceCulture);
             }
         }
         
