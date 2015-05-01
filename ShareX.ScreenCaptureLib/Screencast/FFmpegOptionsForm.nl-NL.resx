@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - FFmpeg opties</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>Kopieer</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="btnHelp.Text" xml:space="preserve">
+    <value>Help...</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Ververs</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>Test met CLI</value>
+  </data>
+  <data name="cbCustomCommands.Text" xml:space="preserve">
+    <value>Gebruik speciale commando's</value>
+  </data>
+  <data name="cbPreset.ToolTip" xml:space="preserve">
+    <value>De standaard voorinstelling is "Medium".
+Een voorinstelling is een verzameling van opties die een bepaalde conversiesnelheid ten opzichte van compressieratio verzorgen. Een tragere voorinstelling zorgt voor betere compressie (compressie is een ratio van qualiteit/bestandsgrootte).
+Als je bijvoorbeeld een bepaalde bestandsgrootte of constante bit-rate wilt hebben, je betere kwaliteit kunt halen met een tragere voorinstelling.
+Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate kunnen verlagen door een tragere voorsintelling.
+</value>
+  </data>
+  <data name="cbShowError.Text" xml:space="preserve">
+    <value>Als het opnemen of de conversie mislukt een foutmeldingsscherm tonen</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>Codecs</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Extra command line argumenten</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Command line voorvertoning</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Bronnen</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>Audio codec:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>Audio bron:</value>
+  </data>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>Video codec:</value>
+  </data>
+  <data name="lblExtension.Text" xml:space="preserve">
+    <value>Extensie (container formaat):</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Kwaliteit:</value>
+  </data>
+  <data name="lblPreset.Text" xml:space="preserve">
+    <value>Voorinstelling:</value>
+  </data>
+  <data name="lblQscale.Text" xml:space="preserve">
+    <value>Variabele bitrate:</value>
+  </data>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>Video bron:</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Kwaliteit:</value>
+  </data>
+  <data name="nudQscale.ToolTip" xml:space="preserve">
+    <value>1 is de hoogste kwaliteit/bestandsgrootte en 31 is de laagste kwaliteit/bestandsgrootte.</value>
+  </data>
+  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
+    <value>CRF waarde kan tussen 4-63 zijn, met 10 als een goed startpunt. Lagere waardes betekenen betere kwaliteit.</value>
+  </data>
+  <data name="nudx264CRF.ToolTip" xml:space="preserve">
+    <value>Constant Rate Factor (CRF): Het bereik van de schaal is 0-51: waar 0 verliesloos is, 23 standaard en 51 het ergste is.
+Een lagere waarde betekent hogere kwaliteit en een subjectieve schaal is 18-28.
+18 is visiueel ongeveer verliesloos: Het ziet er quasi hetzelfde uit als het origineel maar is het technisch niet.
+Het bereik is exponentieel, dus de CRF met 6 verhogen halveert ongeveer de bitrate (en omgekeerd verdubbelt bij verlagen met 6).
+Een veelgebruikte methode is om de hoogste CRF waarde te kiezen die nog een acceptabele kwaliteit genereert.
+Als het resultaat er goed uitziet, probeer een hogere waarde, is het slechter, probeer een lagere waarde.</value>
+  </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>Standaard is 128k.</value>
+  </data>
+  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
+    <value>Het bereik is 0-9 waar een lagere waarde hogere kwaliteit betekend. 0-3 zal transparante resultaten produceren, 4 (standaardkeuze) is quasi transparant en 6 is acceptabele kwaliteit.</value>
+  </data>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>Het bereik is 0-10, met 10 de hoogste kwaliteit. 3-6 is een aanbevolen bereik. 3 is standaard.</value>
+  </data>
+</root>
