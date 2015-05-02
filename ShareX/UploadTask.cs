@@ -1140,7 +1140,8 @@ namespace ShareX
                         }
                         else
                         {
-                            URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
+                            //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
+                            MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     case URLSharingServices.Facebook:
