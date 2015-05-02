@@ -52,9 +52,6 @@ namespace ShareX.UploadersLib
         [Category("FTP"), PasswordPropertyText(true)]
         public string Password { get; set; }
 
-        [Category("FTP"), Description("Choose an appropriate protocol to be accessed by the server. This affects the server address."), DefaultValue(ServerProtocol.ftp)]
-        public ServerProtocol ServerProtocol { get; set; }
-
         [Category("FTP"), Description("FTP sub folder path, example: Screenshots.\r\nYou can use name parsing: %y = year, %mo = month.")]
         public string SubFolderPath { get; set; }
 
@@ -73,7 +70,7 @@ namespace ShareX.UploadersLib
         [Category("FTP"), Description("Set true for active or false for passive"), DefaultValue(false)]
         public bool IsActive { get; set; }
 
-        [Category("FTP"), Description("ftp://Host:Port"), Browsable(false)]
+        [Category("FTP"), Description("Protocol://Host:Port"), Browsable(false)]
         public string FTPAddress
         {
             get
@@ -83,7 +80,23 @@ namespace ShareX.UploadersLib
                     return string.Empty;
                 }
 
-                return string.Format("{0}{1}:{2}", ServerProtocol.GetDescription(), Host, Port);
+                string serverProtocol;
+
+                switch (Protocol)
+                {
+                    default:
+                    case FTPProtocol.FTP:
+                        serverProtocol = "ftp://";
+                        break;
+                    case FTPProtocol.FTPS:
+                        serverProtocol = "ftps://";
+                        break;
+                    case FTPProtocol.SFTP:
+                        serverProtocol = "sftp://";
+                        break;
+                }
+
+                return string.Format("{0}{1}:{2}", serverProtocol, Host, Port);
             }
         }
 
@@ -127,7 +140,6 @@ namespace ShareX.UploadersLib
             Name = "New account";
             Host = "host";
             Port = 21;
-            ServerProtocol = ServerProtocol.ftp;
             SubFolderPath = string.Empty;
             BrowserProtocol = BrowserProtocol.http;
             HttpHomePath = string.Empty;

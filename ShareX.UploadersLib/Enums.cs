@@ -219,14 +219,6 @@ namespace ShareX.UploadersLib
         file
     }
 
-    public enum ServerProtocol
-    {
-        [Description("ftp://")]
-        ftp,
-        [Description("ftps://")]
-        ftps
-    }
-
     public enum Privacy
     {
         Public,
