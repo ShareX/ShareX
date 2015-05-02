@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorForm));
             this.txtException = new System.Windows.Forms.TextBox();
-            this.btnCopyAll = new System.Windows.Forms.Button();
             this.btnSendBugReport = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpenLogFile = new System.Windows.Forms.Button();
@@ -46,14 +45,6 @@
             this.txtException.BackColor = System.Drawing.Color.White;
             this.txtException.Name = "txtException";
             this.txtException.ReadOnly = true;
-            // 
-            // btnCopyAll
-            // 
-            this.btnCopyAll.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnCopyAll, "btnCopyAll");
-            this.btnCopyAll.Name = "btnCopyAll";
-            this.btnCopyAll.UseVisualStyleBackColor = false;
-            this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
             // 
             // btnSendBugReport
             // 
@@ -82,9 +73,8 @@
             // flpMenu
             // 
             resources.ApplyResources(this.flpMenu, "flpMenu");
-            this.flpMenu.Controls.Add(this.btnCopyAll);
-            this.flpMenu.Controls.Add(this.btnOpenLogFile);
             this.flpMenu.Controls.Add(this.btnSendBugReport);
+            this.flpMenu.Controls.Add(this.btnOpenLogFile);
             this.flpMenu.Controls.Add(this.btnClose);
             this.flpMenu.Controls.Add(this.btnContinue);
             this.flpMenu.Name = "flpMenu";
@@ -122,7 +112,6 @@
         #endregion Windows Form Designer generated code
 
         private System.Windows.Forms.TextBox txtException;
-        private System.Windows.Forms.Button btnCopyAll;
         private System.Windows.Forms.Button btnSendBugReport;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOpenLogFile;

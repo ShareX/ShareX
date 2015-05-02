@@ -61,11 +61,6 @@ namespace ShareX.HelpersLib
             this.ShowActivate();
         }
 
-        private void btnCopyAll_Click(object sender, EventArgs e)
-        {
-            ClipboardHelpers.CopyText(txtException.Text);
-        }
-
         private void btnOpenLogFile_Click(object sender, EventArgs e)
         {
             Helpers.OpenFile(LogPath);

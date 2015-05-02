@@ -52,6 +52,32 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool AllowItemDrag { get; set; }
 
+        [Browsable(false)]
+        public int SelectedIndex
+        {
+            get
+            {
+                if (SelectedIndices.Count > 0)
+                {
+                    return SelectedIndices[0];
+                }
+
+                return -1;
+            }
+            set
+            {
+                foreach (ListViewItem lvi in SelectedItems)
+                {
+                    lvi.Selected = false;
+                }
+
+                if (value > -1)
+                {
+                    Items[value].Selected = true;
+                }
+            }
+        }
+
         private ListViewColumnSorter lvwColumnSorter;
         private int lineIndex = -1;
         private int lastLineIndex = -1;
@@ -99,6 +125,22 @@ namespace ShareX.HelpersLib
         public void FillLastColumn()
         {
             FillColumn(-1);
+        }
+
+        public void Select(int index)
+        {
+            if (Items.Count > 0 && index > -1 && index < Items.Count)
+            {
+                SelectedIndex = index;
+            }
+        }
+
+        public void SelectLast()
+        {
+            if (Items.Count > 0)
+            {
+                SelectedIndex = Items.Count - 1;
+            }
         }
 
         [DebuggerStepThrough]

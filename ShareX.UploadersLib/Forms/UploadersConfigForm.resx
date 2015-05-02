@@ -208,6 +208,30 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="chTwitterAccount.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lvTwitterAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="lvTwitterAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 200</value>
+  </data>
+  <data name="lvTwitterAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lvTwitterAccounts.Name" xml:space="preserve">
+    <value>lvTwitterAccounts</value>
+  </data>
+  <data name="&gt;&gt;lvTwitterAccounts.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvTwitterAccounts.Parent" xml:space="preserve">
+    <value>tpTwitter</value>
+  </data>
+  <data name="&gt;&gt;lvTwitterAccounts.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblTwitterDefaultMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -236,7 +260,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;lblTwitterDefaultMessage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtTwitterDefaultMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 328</value>
@@ -263,7 +287,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;txtTwitterDefaultMessage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbTwitterSkipMessageBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -293,7 +317,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;cbTwitterSkipMessageBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="oauthTwitter.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -317,7 +341,10 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="txtTwitterDescription.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="txtTwitterDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 40</value>
@@ -338,7 +365,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;txtTwitterDescription.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblTwitterDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -368,7 +395,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;lblTwitterDescription.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnTwitterRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -395,7 +422,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;btnTwitterRemove.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnTwitterAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -422,27 +449,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>tpTwitter</value>
   </data>
   <data name="&gt;&gt;btnTwitterAdd.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lbTwitterAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
-  </data>
-  <data name="lbTwitterAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 199</value>
-  </data>
-  <data name="lbTwitterAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lbTwitterAccounts.Name" xml:space="preserve">
-    <value>lbTwitterAccounts</value>
-  </data>
-  <data name="&gt;&gt;lbTwitterAccounts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbTwitterAccounts.Parent" xml:space="preserve">
-    <value>tpTwitter</value>
-  </data>
-  <data name="&gt;&gt;lbTwitterAccounts.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="tpTwitter.Location" type="System.Drawing.Point, System.Drawing">
@@ -10447,6 +10453,12 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>chPicasaDescription</value>
   </data>
   <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chTwitterAccount.Name" xml:space="preserve">
+    <value>chTwitterAccount</value>
+  </data>
+  <data name="&gt;&gt;chTwitterAccount.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

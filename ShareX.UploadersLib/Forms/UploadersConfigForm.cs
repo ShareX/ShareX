@@ -579,13 +579,14 @@ namespace ShareX.UploadersLib
 
             // Twitter
 
-            lbTwitterAccounts.Items.Clear();
-            lbTwitterAccounts.Items.AddRange(Config.TwitterOAuthInfoList.ToArray());
+            lvTwitterAccounts.Items.Clear();
 
-            if (Config.TwitterSelectedAccount.IsBetween(0, lbTwitterAccounts.Items.Count - 1))
+            foreach (OAuthInfo twitterOAuth in Config.TwitterOAuthInfoList)
             {
-                lbTwitterAccounts.SelectedIndex = Config.TwitterSelectedAccount;
+                lvTwitterAccounts.Items.Add(twitterOAuth.Description);
             }
+
+            lvTwitterAccounts.Select(Config.TwitterSelectedAccount);
 
             TwitterUpdateSelected();
 
@@ -2114,42 +2115,37 @@ namespace ShareX.UploadersLib
 
         #region Twitter
 
-        private bool twitterUpdatingDescription;
-
         private void btnTwitterAdd_Click(object sender, EventArgs e)
         {
             OAuthInfo oauth = new OAuthInfo();
             Config.TwitterOAuthInfoList.Add(oauth);
-            lbTwitterAccounts.Items.Add(oauth);
-            lbTwitterAccounts.SelectedIndex = lbTwitterAccounts.Items.Count - 1;
+            lvTwitterAccounts.Items.Add(oauth.Description);
+            lvTwitterAccounts.SelectLast();
 
             TwitterUpdateSelected();
         }
 
         private void btnTwitterRemove_Click(object sender, EventArgs e)
         {
-            int selected = lbTwitterAccounts.SelectedIndex;
+            int selected = lvTwitterAccounts.SelectedIndex;
 
-            if (selected.IsBetween(0, lbTwitterAccounts.Items.Count - 1))
+            if (selected > -1)
             {
-                lbTwitterAccounts.Items.RemoveAt(selected);
+                lvTwitterAccounts.Items.RemoveAt(selected);
                 Config.TwitterOAuthInfoList.RemoveAt(selected);
 
-                if (lbTwitterAccounts.Items.Count > 0)
+                if (lvTwitterAccounts.Items.Count > 0)
                 {
-                    lbTwitterAccounts.SelectedIndex = selected >= lbTwitterAccounts.Items.Count ? lbTwitterAccounts.Items.Count - 1 : selected;
+                    lvTwitterAccounts.SelectedIndex = selected >= lvTwitterAccounts.Items.Count ? lvTwitterAccounts.Items.Count - 1 : selected;
                 }
             }
 
             TwitterUpdateSelected();
         }
 
-        private void lbTwitterAccounts_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvTwitterAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!twitterUpdatingDescription)
-            {
-                TwitterUpdateSelected();
-            }
+            TwitterUpdateSelected();
         }
 
         private void txtTwitterDescription_TextChanged(object sender, EventArgs e)
@@ -2159,16 +2155,7 @@ namespace ShareX.UploadersLib
             if (oauth != null)
             {
                 oauth.Description = txtTwitterDescription.Text;
-
-                try
-                {
-                    twitterUpdatingDescription = true;
-                    lbTwitterAccounts.Items[lbTwitterAccounts.SelectedIndex] = lbTwitterAccounts.SelectedItem;
-                }
-                finally
-                {
-                    twitterUpdatingDescription = false;
-                }
+                lvTwitterAccounts.SelectedItems[0].Text = oauth.Description;
             }
         }
 

@@ -1459,14 +1459,15 @@ namespace ShareX.UploadersLib
 
         private bool TwitterUpdateSelected()
         {
-            Config.TwitterSelectedAccount = lbTwitterAccounts.SelectedIndex;
+            Config.TwitterSelectedAccount = lvTwitterAccounts.SelectedIndex;
 
             if (Config.TwitterSelectedAccount > -1)
             {
-                OAuthInfo oauth = lbTwitterAccounts.SelectedItem as OAuthInfo;
+                OAuthInfo oauth = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount];
 
                 if (oauth != null)
                 {
+                    txtTwitterDescription.Enabled = true;
                     txtTwitterDescription.Text = oauth.Description;
                     oauthTwitter.Enabled = true;
 
@@ -1483,6 +1484,7 @@ namespace ShareX.UploadersLib
                 }
             }
 
+            txtTwitterDescription.Enabled = false;
             txtTwitterDescription.Text = string.Empty;
             oauthTwitter.Enabled = false;
             return false;
@@ -1502,7 +1504,6 @@ namespace ShareX.UploadersLib
                     {
                         oauth.Description = Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount].Description;
                         Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = oauth;
-                        lbTwitterAccounts.Items[Config.TwitterSelectedAccount] = oauth;
                         URLHelpers.OpenURL(url);
                         DebugHelper.WriteLine("TwitterAuthOpen - Authorization URL is opened: " + url);
                     }
@@ -1564,7 +1565,6 @@ namespace ShareX.UploadersLib
                 }
 
                 Config.TwitterOAuthInfoList[Config.TwitterSelectedAccount] = oauth;
-                lbTwitterAccounts.Items[Config.TwitterSelectedAccount] = oauth;
             }
         }
 

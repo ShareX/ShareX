@@ -150,38 +150,14 @@
   <data name="&gt;&gt;txtException.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnCopyAll.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnSendBugReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 3</value>
   </data>
-  <data name="btnCopyAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnSendBugReport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
   </data>
-  <data name="btnCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Copy all</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.Name" xml:space="preserve">
-    <value>btnCopyAll</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.Parent" xml:space="preserve">
-    <value>flpMenu</value>
-  </data>
-  <data name="&gt;&gt;btnCopyAll.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSendBugReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 3</value>
-  </data>
   <data name="btnSendBugReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
+    <value>130, 24</value>
   </data>
   <data name="btnSendBugReport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -199,16 +175,16 @@
     <value>flpMenu</value>
   </data>
   <data name="&gt;&gt;btnSendBugReport.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="btnClose.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 3</value>
+    <value>254, 3</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 24</value>
+    <value>122, 24</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -226,13 +202,13 @@
     <value>flpMenu</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnOpenLogFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 3</value>
+    <value>136, 3</value>
   </data>
   <data name="btnOpenLogFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 24</value>
+    <value>112, 24</value>
   </data>
   <data name="btnOpenLogFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -256,10 +232,10 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 3</value>
+    <value>382, 3</value>
   </data>
   <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 24</value>
+    <value>90, 24</value>
   </data>
   <data name="btnContinue.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -277,7 +253,7 @@
     <value>flpMenu</value>
   </data>
   <data name="&gt;&gt;btnContinue.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="flpMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 278</value>
