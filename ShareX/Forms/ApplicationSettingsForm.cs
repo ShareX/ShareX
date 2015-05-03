@@ -146,14 +146,17 @@ namespace ShareX
                 case SupportedLanguage.Automatic:
                     icon = Resources.globe;
                     break;
+                case SupportedLanguage.Dutch:
+                    icon = Resources.nl;
+                    break;
                 case SupportedLanguage.English:
                     icon = Resources.us;
                     break;
-                case SupportedLanguage.German:
-                    icon = Resources.de;
-                    break;
                 case SupportedLanguage.French:
                     icon = Resources.fr;
+                    break;
+                case SupportedLanguage.German:
+                    icon = Resources.de;
                     break;
                 case SupportedLanguage.Hungarian:
                     icon = Resources.hu;

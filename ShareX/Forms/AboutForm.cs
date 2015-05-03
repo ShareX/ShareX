@@ -72,6 +72,7 @@ Simplified Chinese: https://github.com/jiajiechan
 Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
+Dutch: https://github.com/wforums
 
 {2}:
 
