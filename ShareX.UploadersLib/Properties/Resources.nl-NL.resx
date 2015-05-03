@@ -174,9 +174,6 @@
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Fout</value>
   </data>
-  <data name="UploadersConfigForm_FormSettings_Authorize" xml:space="preserve">
-    <value>Geef toegang</value>
-  </data>
   <data name="UploadersConfigForm_HubicListFolders_Hubic_refresh_folders_list_failed" xml:space="preserve">
     <value>vernieuwen mappenlijst Hubic mislukt</value>
   </data>

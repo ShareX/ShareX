@@ -270,9 +270,6 @@
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>打开我的图片网页...</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>使用自定义域:</value>
   </data>

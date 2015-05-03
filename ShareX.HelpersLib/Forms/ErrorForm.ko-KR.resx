@@ -123,9 +123,6 @@
   <data name="btnContinue.Text" xml:space="preserve">
     <value>확인</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>전부 복사</value>
-  </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>로그 파일 열기</value>
   </data>

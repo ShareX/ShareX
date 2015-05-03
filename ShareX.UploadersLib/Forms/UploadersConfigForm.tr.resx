@@ -186,9 +186,6 @@
   <data name="btnTinyPicLogin.Text" xml:space="preserve">
     <value>Giriş</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>Giriş</value>
-  </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Giriş gereklidir.</value>
   </data>

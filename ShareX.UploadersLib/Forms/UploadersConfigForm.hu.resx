@@ -270,9 +270,6 @@
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>A képeim oldalának megnyitása...</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Tetszőleges domain használata:</value>
   </data>

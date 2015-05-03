@@ -123,9 +123,6 @@
   <data name="btnContinue.Text" xml:space="preserve">
     <value>&amp;OK</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Copiar todo</value>
-  </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
     <value>Enviar informe de error</value>
   </data>

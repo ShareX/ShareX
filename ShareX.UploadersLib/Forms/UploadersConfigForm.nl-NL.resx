@@ -273,9 +273,6 @@
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Open pagina met mijn afbeeldingen...</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Gebruik eigen domein:</value>
   </data>

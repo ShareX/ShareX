@@ -126,9 +126,6 @@
   <data name="btnContinue.Text" xml:space="preserve">
     <value>&amp;Tamam</value>
   </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Hepsini kopyala</value>
-  </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Hata kütüğünü aç</value>
   </data>

@@ -608,9 +608,6 @@
 만약 텍스트 항목이 비어있다면 버킷 이름이 URL에 쓰일 것입니다.
 예를 들어 버킷 이름이 bucket.example.com이라면 URL은 http://bucket.example.com/...이 되는 식이죠.</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>내 이미지 페이지 열기...</value>
   </data>

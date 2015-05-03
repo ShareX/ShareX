@@ -336,9 +336,6 @@
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Identifiant</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>Identifiant</value>
-  </data>
   <data name="btnMegaLogin.Text" xml:space="preserve">
     <value>Identifiant</value>
   </data>

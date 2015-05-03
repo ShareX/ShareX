@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,9 +119,6 @@
   </resheader>
   <data name="btnContinue.Text" xml:space="preserve">
     <value>&amp;OK</value>
-  </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>Copier tout</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Erreur

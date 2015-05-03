@@ -270,9 +270,6 @@
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Refrescar lista de álbum</value>
   </data>
-  <data name="btnTwitterLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Utilizar un dominio personalizado:</value>
   </data>
