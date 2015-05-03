@@ -133,6 +133,6 @@
     <value>Verwijder</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Stel standaard sneltoetsen terug in</value>
+    <value>Herstel standaard sneltoetsen</value>
   </data>
 </root>

@@ -172,7 +172,7 @@
     <value>Afbeelding</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Voorvertoning afbeelding</value>
+    <value>Voorbeeld van afbeelding</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Meer informatie</value>
@@ -181,7 +181,7 @@
     <value>Openen</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Verkorte URL</value>
+    <value>Verkorte link</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>Toon</value>

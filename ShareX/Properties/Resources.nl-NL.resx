@@ -176,7 +176,7 @@ Wil je ShareX opnieuw opstarten?</value>
     <value>Ondersteunde variabelen: {0} en andere variabelen zoals {1} etc.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Sleep
+    <value>Sleep bestand
 naar hier</value>
   </data>
   <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
@@ -223,7 +223,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Huidige geconfigureerde sneltoetsen:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Je kunt bestanden in naar dit venster slepen.</value>
+    <value>Je kunt bestanden naar dit venster slepen om deze te uploaden.</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Verberg menu</value>
@@ -334,10 +334,10 @@ Wil je het automatisch downloaden?</value>
     <value>Tekstuploader: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL deler dienst: {0}</value>
+    <value>dienst voor delen links: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>URL verkorter: {0}</value>
+    <value>Linkverkorter: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>Taak eigenschappen</value>
@@ -380,11 +380,11 @@ Wil je het automatisch downloaden?</value>
     <value>Kies een map om op te slaan</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Eerste upload waarschuwing</value>
+    <value>Waarschuwing eerste upload</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Ben je zeker dat je deze schermopname wilt uploaden?
-Klik op "Nee" om de huidige upload te annuleren en het automatisch uploading uit te schakelen.</value>
+Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit te schakelen.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Uploaden</value>
@@ -409,5 +409,14 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploading uit
   </data>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
     <value>Kies een map</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>FTP programma ondersteund alleen FTP of FTPS.</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Kan geen geldig FTP account vinden.</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Kan geen geldig Twitter account vinden.</value>
   </data>
 </root>

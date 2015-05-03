@@ -163,7 +163,7 @@
     <value>Automatisch ophogen herinstellen</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>Als tijdens het opnemen van een venster de taakbalk overlapt met het venster, verberg dan de taakbalk</value>
+    <value>Verberg de taakbalk als deze overlapt met een venster tijdens het vastleggen van een venster</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Leg gebied vast bij het opnemen van een (actief) venster</value>
@@ -175,16 +175,16 @@
     <value>Vastleggen van scherm met transparantie</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Als het klembord een pad naar een map bevat, indexeer de map en upload de indexatie</value>
+    <value>Als het klembord een pad naar een map bevat, indexeer de map en upload het indexbestand</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Als het klembord een link bevat, deel de link via een service</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Als het klembord een URL bevat, gebruik dan een linkverkorter</value>
+    <value>Als het klembord een link bevat, gebruik dan een linkverkorter</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Gebruik een patroon voor bestand uploads in plaats van de eigenlijke bestandsnaam</value>
+    <value>Gebruik een patroon voor geüploade bestanden in plaats van de originele bestandsnaam</value>
   </data>
   <data name="cbHistorySave.Text" xml:space="preserve">
     <value>Sla taak info op in geschiedenis</value>
@@ -193,7 +193,7 @@
     <value>Effecten alleen toepassen op vastgelegde regio</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>Gebruik eigen tijdzone:</value>
+    <value>Gebruik aangepaste tijdzone:</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Speel geluid af na vastleggen</value>
@@ -214,7 +214,7 @@
     <value>Toon cursor in schermafdrukken</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Maak enkel een thumbnail als de afmetingen van de afbeelding groter zijn dan de afmetingen van een thumbnail</value>
+    <value>Maak enkel een miniatuurversie als de afmetingen van de afbeelding groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Gebruik de standaard "Na vastleggen" instellingen</value>
@@ -241,16 +241,16 @@
     <value>Pad</value>
   </data>
   <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Als het klembord een URL bevat, download het bestand en upload het opnieuw</value>
+    <value>Als het klembord een link naar een bestand bevat, download dit bestand en upload het opnieuw</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Vervang standaard speciale uploader:</value>
+    <value>Vervang de standaard aangepaste uploader:</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
     <value>Vervang standaard FTP account:</value>
   </data>
   <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Draai CLI erna:</value>
+    <value>voer erna CLI uit:</value>
   </data>
   <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
     <value>Start opname na:</value>
@@ -325,10 +325,10 @@
     <value>JPEG kwaliteit:</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Patroon voor naam voor vastleggen of klembord upload:</value>
+    <value>Gebruik het volgende patroon voor de bestandsnamen of klembord uploads:</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Patroon voor naam voor het vastleggen van het actieve venster:</value>
+    <value>Gebruik het volgende patroon voor het vastleggen van het actieve venster:</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>Voorbeeld:</value>
@@ -346,13 +346,13 @@
     <value>FFmpeg FPS:</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
-    <value>secondes</value>
+    <value>seconden</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
     <value>Hoogte:</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>Naam van thumbnail:</value>
+    <value>Naam van miniatuur:</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Voorbeeld</value>
@@ -400,7 +400,7 @@
     <value>Taak</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
-    <value>Thumbnail</value>
+    <value>Miniatuur</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Uploaden</value>
@@ -409,7 +409,7 @@
     <value>Klembord uploaden</value>
   </data>
   <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>Monitor folders</value>
+    <value>Monitor mappen</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Bestandsuploaders</value>
@@ -425,5 +425,23 @@
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>Linkverkorters</value>
+  </data>
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Hoogte</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>Selecteer een monitor voor een aangepaste regio:</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Breedte</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
   </data>
 </root>
