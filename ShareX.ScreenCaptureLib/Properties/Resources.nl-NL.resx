@@ -162,4 +162,7 @@ Afstand: {6:0.00} px / Hoek: {7:0.00}°</value>
   <data name="Surface_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Regio vastleggen</value>
   </data>
+  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Height__3__Width__4_" xml:space="preserve">
+    <value>Monitor {0} (X:{1} Y:{2} Hoogte:{3} Breedte:{4})</value>
+  </data>
 </root>

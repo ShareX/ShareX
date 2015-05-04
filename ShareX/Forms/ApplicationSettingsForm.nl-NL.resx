@@ -142,7 +142,7 @@
     <value>Openen...</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Printinstellingen afbeeldingen...</value>
+    <value>Afdrukinstellingen afbeeldingen...</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>Toon geen afdrukdialoog voor afbeeldingen</value>
@@ -151,13 +151,13 @@
     <value>Aantal keer opnieuw proberen bij mislukte upload:</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>Toon geen Windows printer dialoog</value>
+    <value>Toon geen Windows dialoog voor afdrukken</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Onthou de positie van het algemene venster</value>
+    <value>Onthoud de positie van het algemene venster</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Onthou de grootte van het algemene venster</value>
+    <value>Onthoud de grootte van het algemene venster</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Toon ShareX in het "Verzenden naar" menu</value>
@@ -181,7 +181,7 @@
     <value>Toon vooruitgang in het tray icoon</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Gebruik een eigen screenshots map:</value>
+    <value>Gebruik een aangepaste map voor screenshots:</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Beschrijving</value>
@@ -190,7 +190,7 @@
     <value>Formaat</value>
   </data>
   <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Gebruik secundaire uploaders in volgorde van voorkeur tijdens herproberen</value>
+    <value>Gebruik secundaire uploaders in de volgende volgorde tijdens herproberen</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Secundaire bestandsuploaders</value>
@@ -205,10 +205,10 @@
     <value>Taal:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Noot: Je moet ShareX heropstarten alvorens de wijzigingen in de map effect zullen hebben.</value>
+    <value>Opgelet: Je moet ShareX heropstarten alvorens de aangebrachte wijzigingen effect zullen hebben.</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX persoonlijke folder:</value>
+    <value>ShareX persoonlijke map:</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Klembord formaten</value>
@@ -232,7 +232,7 @@
     <value>Gebruikersnaam:</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Deelfolder patroon:</value>
+    <value>Patroon voor deelmappen:</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Maximum simultane uploads:</value>
@@ -253,7 +253,7 @@
     <value>Paden</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
-    <value>Printen</value>
+    <value>Afdrukken</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Proxy</value>

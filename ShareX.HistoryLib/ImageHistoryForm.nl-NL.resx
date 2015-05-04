@@ -124,7 +124,7 @@
     <value>Toon enkel de laatste  100 afbeeldingen</value>
   </data>
   <data name="tsddbThumbnailSize.Text" xml:space="preserve">
-    <value>Thumbnail afmetingen</value>
+    <value>Afmetingen miniatuur</value>
   </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Modus</value>

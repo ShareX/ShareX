@@ -136,13 +136,13 @@
     <value>Test met CLI</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Gebruik speciale commando's</value>
+    <value>Gebruik aangepaste commando's</value>
   </data>
   <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>De standaard voorinstelling is "Medium".
-Een voorinstelling is een verzameling van opties die een bepaalde conversiesnelheid ten opzichte van compressieratio verzorgen. Een tragere voorinstelling zorgt voor betere compressie (compressie is een ratio van qualiteit/bestandsgrootte).
-Als je bijvoorbeeld een bepaalde bestandsgrootte of constante bit-rate wilt hebben, je betere kwaliteit kunt halen met een tragere voorinstelling.
-Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate kunnen verlagen door een tragere voorsintelling.
+    <value>De standaard instelling is "Medium".
+Een instelling is een verzameling van opties die een bepaalde conversiesnelheid ten opzichte van compressieratio verzorgen. Een tragere instelling zorgt voor betere compressie (compressie is een ratio van kwaliteit/bestandsgrootte).
+Als je bijvoorbeeld een bepaalde bestandsgrootte of constante bit-rate wilt hebben, je betere kwaliteit kunt halen met een tragere instelling.
+Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate verlagen door een tragere intelling te kiezen.
 </value>
   </data>
   <data name="cbShowError.Text" xml:space="preserve">
@@ -155,7 +155,7 @@ Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate kunnen ve
     <value>Extra command line argumenten</value>
   </data>
   <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Command line voorvertoning</value>
+    <value>Voorbeeld van command line</value>
   </data>
   <data name="gbSource.Text" xml:space="preserve">
     <value>Bronnen</value>
@@ -179,7 +179,7 @@ Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate kunnen ve
     <value>Kwaliteit:</value>
   </data>
   <data name="lblPreset.Text" xml:space="preserve">
-    <value>Voorinstelling:</value>
+    <value>Instelling:</value>
   </data>
   <data name="lblQscale.Text" xml:space="preserve">
     <value>Variabele bitrate:</value>

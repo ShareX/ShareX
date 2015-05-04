@@ -290,7 +290,7 @@
     <value>197, 22</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
-    <value>Klik en sleep upload...</value>
+    <value>Uploaden via slepen...</value>
   </data>
   <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 20</value>
@@ -419,13 +419,13 @@
     <value>210, 22</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL verkorters</value>
+    <value>Linkverkorters</value>
   </data>
   <data name="tsmiURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>Diensten om URL te delen</value>
+    <value>Diensten om link te delen</value>
   </data>
   <data name="tssDestinations1.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
@@ -506,13 +506,13 @@
     <value>195, 22</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>Test URL-verkorter</value>
+    <value>Test linkverkorter</value>
   </data>
   <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>Test delen URL</value>
+    <value>Test delen van link</value>
   </data>
   <data name="tsmiDonate.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 20</value>
@@ -551,19 +551,19 @@
     <value>193, 22</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>Verkorte URL</value>
+    <value>Verkorte link</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
-    <value>Miniatuur URL</value>
+    <value>Link naar miniatuur</value>
   </data>
   <data name="tsmiOpenDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>URL om te verwijderen</value>
+    <value>Link om te verwijderen</value>
   </data>
   <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 6</value>
@@ -599,19 +599,19 @@
     <value>266, 22</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>Korte URL</value>
+    <value>Verkorte link</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 22</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>Miniatuur van URL</value>
+    <value>Link naar miniatuur</value>
   </data>
   <data name="tsmiCopyDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 22</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>URL om te verwijderen</value>
+    <value>Link om te verwijderen</value>
   </data>
   <data name="tssCopy1.Size" type="System.Drawing.Size, System.Drawing">
     <value>263, 6</value>
@@ -731,13 +731,13 @@
     <value>211, 22</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>Verkort URL</value>
+    <value>Verkort link</value>
   </data>
   <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>Deel URL</value>
+    <value>Deel link</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -929,13 +929,13 @@
     <value>197, 22</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Upload van URL...</value>
+    <value>Upload vanaf URL...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 22</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
-    <value>Klik en sleep upload...</value>
+    <value>Uploaden via slepen...</value>
   </data>
   <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -1064,13 +1064,13 @@
     <value>216, 22</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>URL verkorters</value>
+    <value>Linkverkorters</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
-    <value>Diensten om URL te delen</value>
+    <value>Diensten om link te delen</value>
   </data>
   <data name="tssTrayDestinations1.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 6</value>
@@ -1152,5 +1152,53 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Afsluiten</value>
+  </data>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsmiCopyForumLink.Text" xml:space="preserve">
+    <value>Forum (BBCode) link</value>
+  </data>
+  <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
+    <value>HTML link</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiPolygon.Text" xml:space="preserve">
+    <value>Polygon</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
+  </data>
+  <data name="tsmiStopUpload.Text" xml:space="preserve">
+    <value>Stop upload</value>
+  </data>
+  <data name="tsmiTrayPolygon.Text" xml:space="preserve">
+    <value>Polygon</value>
+  </data>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
+  </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>Upload</value>
   </data>
 </root>

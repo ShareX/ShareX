@@ -145,13 +145,13 @@
     <value>Voer acties uit</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Sla afbeelding op in bestand</value>
+    <value>Sla afbeelding op</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Sla afbeelding op als bestand...</value>
+    <value>Sla afbeelding op als...</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Sla thumbnail van afbeelding op in bestand</value>
+    <value>Sla miniatuur van afbeelding op in bestand</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>Druk afbeelding af</value>
@@ -160,19 +160,19 @@
     <value>Upload afbeelding naar server</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
-    <value>Kopieer URL naar klembord</value>
+    <value>Kopieer link naar klembord</value>
   </data>
   <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
-    <value>Open URL</value>
+    <value>Open link</value>
   </data>
   <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
-    <value>Deel URL</value>
+    <value>Deel link</value>
   </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>Toon QR code venster</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
-    <value>Verkort URL</value>
+    <value>Verkort link</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
     <value>Inhoud klembord: Bestand (aantal: {0})</value>
@@ -270,7 +270,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Plak</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Speciale bestandsuploader</value>
+    <value>Aangepaste bestandsuploader</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>E-mail</value>
@@ -288,7 +288,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Bestand overschrijven</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
-    <value>Voeg een nummer toe aan de bestandsnaam</value>
+    <value>Voeg nummer toe aan bestandsnaam</value>
   </data>
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Selecteer een map</value>
@@ -432,7 +432,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Tweet bericht</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Upload van URL</value>
+    <value>Upload vanaf URL</value>
   </data>
   <data name="HotkeyType_WindowRectangle" xml:space="preserve">
     <value>Leg rechthoekige regio vast (Venster)</value>
@@ -441,7 +441,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Tint: {0:0.0}°, Verzadiging: {1:0.0}%, Helderheid: {2:0.0}%</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Speciale afbeeldingsuploader</value>
+    <value>Aangepaste afbeeldingsuploader</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Bestandsuploader</value>
@@ -570,7 +570,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Antwoordheaders</value>
   </data>
   <data name="ResponseType_RedirectionURL" xml:space="preserve">
-    <value>Omleidings URL</value>
+    <value>Omleidingslink</value>
   </data>
   <data name="ResponseType_Text" xml:space="preserve">
     <value>Antwoordtekst</value>
@@ -585,7 +585,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>Automatisch</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Speciale tekstuploader</value>
+    <value>Aangepaste tekstuploader</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Bestandsuploader</value>
@@ -597,7 +597,7 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
     <value>{0} is up-to-date.</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Update controle mislukt</value>
+    <value>Kon niet controleren op updates</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>Een nieuwere versie van {0} is beschikbaar.
@@ -610,6 +610,9 @@ Wil je deze downloaden en installeren?</value>
     <value>E-mail</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Speciale URL verkorter</value>
+    <value>Aangepaste linkverkorter</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>Leg aangepaste regio vast</value>
   </data>
 </root>

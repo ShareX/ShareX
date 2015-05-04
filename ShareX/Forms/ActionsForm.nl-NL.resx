@@ -139,6 +139,6 @@
     <value>Bestandslocatie:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Extensie bestandsnaam van het resultaat: (Leeg = gebruik dezelfde bestandsnaam)</value>
+    <value>Extensie van resultaat: (Leeg = gebruik zelfde als origineel)</value>
   </data>
 </root>
