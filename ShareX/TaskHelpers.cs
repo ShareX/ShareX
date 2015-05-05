@@ -343,6 +343,17 @@ namespace ShareX
                     rect = CaptureHelpers.GetScreenBounds();
                     return true;
                 }
+                else if (surface.Result == SurfaceResult.Monitor)
+                {
+                    Screen[] screens = Screen.AllScreens;
+
+                    if (surface.MonitorIndex < screens.Length)
+                    {
+                        Screen screen = screens[surface.MonitorIndex];
+                        rect = screen.Bounds;
+                        return true;
+                    }
+                }
             }
 
             rect = Rectangle.Empty;

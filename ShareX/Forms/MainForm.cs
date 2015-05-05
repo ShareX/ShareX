@@ -1862,13 +1862,11 @@ namespace ShareX
                     }
                     else if (surface.Result == SurfaceResult.Monitor)
                     {
-                        int index = surface.MonitorIndex;
-
                         Screen[] screens = Screen.AllScreens;
 
-                        if (index < screens.Length)
+                        if (surface.MonitorIndex < screens.Length)
                         {
-                            Screen screen = screens[index];
+                            Screen screen = screens[surface.MonitorIndex];
                             Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
 
                             using (screenshot)
