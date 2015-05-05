@@ -45,6 +45,7 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle ScreenRectangle { get; private set; }
         public Rectangle ScreenRectangle0Based { get; private set; }
         public SurfaceResult Result { get; private set; }
+        public int MonitorIndex { get; private set; }
 
         protected List<DrawableObject> DrawableObjects { get; set; }
 
@@ -132,6 +133,23 @@ namespace ShareX.ScreenCaptureLib
 
         private void Surface_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            {
+                int index = e.KeyCode - Keys.D0;
+
+                if (index == 0)
+                {
+                    index = 10;
+                }
+
+                index--;
+
+                MonitorIndex = index;
+
+                Close(SurfaceResult.Monitor);
+                return;
+            }
+
             switch (e.KeyCode)
             {
                 case Keys.Escape:

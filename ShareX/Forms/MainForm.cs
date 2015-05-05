@@ -1851,12 +1851,31 @@ namespace ShareX
 
                     if (surface.Result == SurfaceResult.Region)
                     {
-                        img = surface.GetRegionImage();
-                        screenshot.Dispose();
+                        using (screenshot)
+                        {
+                            img = surface.GetRegionImage();
+                        }
                     }
                     else if (surface.Result == SurfaceResult.Fullscreen)
                     {
                         img = screenshot;
+                    }
+                    else if (surface.Result == SurfaceResult.Monitor)
+                    {
+                        int index = surface.MonitorIndex;
+
+                        Screen[] screens = Screen.AllScreens;
+
+                        if (index < screens.Length)
+                        {
+                            Screen screen = screens[index];
+                            Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
+
+                            using (screenshot)
+                            {
+                                img = ImageHelpers.CropImage(screenshot, screenRect);
+                            }
+                        }
                     }
 
                     if (img != null)

@@ -206,8 +206,7 @@ namespace ShareX.HelpersLib
 
         public static Image CropImage(Image img, Rectangle rect)
         {
-            if (img != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 &&
-                new Rectangle(0, 0, img.Width, img.Height).Contains(rect))
+            if (img != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new Rectangle(0, 0, img.Width, img.Height).Contains(rect))
             {
                 using (Bitmap bmp = new Bitmap(img))
                 {
@@ -220,8 +219,7 @@ namespace ShareX.HelpersLib
 
         public static Bitmap CropBitmap(Bitmap bmp, Rectangle rect)
         {
-            if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 &&
-                new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rect))
+            if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rect))
             {
                 return bmp.Clone(rect, bmp.PixelFormat);
             }
