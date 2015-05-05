@@ -1991,7 +1991,7 @@ namespace ShareX
                         {
                             using (Image screenshot = Screenshot.CaptureFullscreen())
                             {
-                                return ImageHelpers.CropImage(screenshot, RectangleLight.LastSelectionRectangle0Based);
+                                return ImageHelpers.CropImage(screenshot, RectangleTransparent.LastSelectionRectangle0Based);
                             }
                         }, CaptureType.LastRegion, taskSettings, autoHideForm);
                     }
