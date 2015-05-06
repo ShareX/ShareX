@@ -184,7 +184,7 @@
     <value>8, 8</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -208,10 +208,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 8</value>
+    <value>272, 8</value>
   </data>
   <data name="btnTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnTest.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -235,10 +235,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 8</value>
+    <value>96, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -292,10 +292,10 @@
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pgSettings" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lbAccounts" Row="0" RowSpan="1" Column="-1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,26,54987,Percent,73,45013" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 8</value>
+    <value>184, 8</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>80, 24</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -247,7 +248,7 @@
   </data>
   <data name="txtHex.Text" xml:space="preserve">
     <value>FF00FF00</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtHex.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -280,7 +281,7 @@
   </data>
   <data name="lblHex.Text" xml:space="preserve">
     <value>Hex:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblHex.Name" xml:space="preserve">
     <value>lblHex</value>
   </data>
@@ -529,7 +530,7 @@
   </data>
   <data name="lblHue.Text" xml:space="preserve">
     <value>°</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblHue.Name" xml:space="preserve">
     <value>lblHue</value>
   </data>
@@ -562,7 +563,7 @@
   </data>
   <data name="lblBrightnessPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBrightnessPerc.Name" xml:space="preserve">
     <value>lblBrightnessPerc</value>
   </data>
@@ -595,7 +596,7 @@
   </data>
   <data name="lblSaturationPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaturationPerc.Name" xml:space="preserve">
     <value>lblSaturationPerc</value>
   </data>
@@ -752,14 +753,17 @@
   <data name="&gt;&gt;nudHue.ZOrder" xml:space="preserve">
     <value>32</value>
   </data>
+  <data name="rbBlue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rbBlue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbBlue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 173</value>
+    <value>312, 175</value>
   </data>
   <data name="rbBlue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>49, 17</value>
   </data>
   <data name="rbBlue.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -779,14 +783,17 @@
   <data name="&gt;&gt;rbBlue.ZOrder" xml:space="preserve">
     <value>33</value>
   </data>
+  <data name="rbGreen.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rbGreen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbGreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 141</value>
+    <value>312, 143</value>
   </data>
   <data name="rbGreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>57, 17</value>
   </data>
   <data name="rbGreen.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -806,14 +813,17 @@
   <data name="&gt;&gt;rbGreen.ZOrder" xml:space="preserve">
     <value>34</value>
   </data>
+  <data name="rbRed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rbRed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbRed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 109</value>
+    <value>312, 111</value>
   </data>
   <data name="rbRed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>48, 17</value>
   </data>
   <data name="rbRed.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -833,14 +843,17 @@
   <data name="&gt;&gt;rbRed.ZOrder" xml:space="preserve">
     <value>35</value>
   </data>
+  <data name="rbBrightness.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rbBrightness.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbBrightness.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 77</value>
+    <value>312, 79</value>
   </data>
   <data name="rbBrightness.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>77, 17</value>
   </data>
   <data name="rbBrightness.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -860,14 +873,17 @@
   <data name="&gt;&gt;rbBrightness.ZOrder" xml:space="preserve">
     <value>36</value>
   </data>
+  <data name="rbSaturation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rbSaturation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbSaturation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 45</value>
+    <value>312, 47</value>
   </data>
   <data name="rbSaturation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>76, 17</value>
   </data>
   <data name="rbSaturation.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -887,14 +903,17 @@
   <data name="&gt;&gt;rbSaturation.ZOrder" xml:space="preserve">
     <value>37</value>
   </data>
+  <data name="rbHue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rbHue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbHue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 13</value>
+    <value>312, 15</value>
   </data>
   <data name="rbHue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>48, 17</value>
   </data>
   <data name="rbHue.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -955,7 +974,7 @@
   </data>
   <data name="txtDecimal.Text" xml:space="preserve">
     <value>12345678</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="txtDecimal.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -991,7 +1010,7 @@
   </data>
   <data name="lblCyanPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCyanPerc.Name" xml:space="preserve">
     <value>lblCyanPerc</value>
   </data>
@@ -1024,7 +1043,7 @@
   </data>
   <data name="lblMagentaPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblMagentaPerc.Name" xml:space="preserve">
     <value>lblMagentaPerc</value>
   </data>
@@ -1057,7 +1076,7 @@
   </data>
   <data name="lblYellowPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblYellowPerc.Name" xml:space="preserve">
     <value>lblYellowPerc</value>
   </data>
@@ -1090,7 +1109,7 @@
   </data>
   <data name="lblKeyPerc.Text" xml:space="preserve">
     <value>%</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblKeyPerc.Name" xml:space="preserve">
     <value>lblKeyPerc</value>
   </data>
@@ -1207,9 +1226,6 @@
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>642, 273</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
