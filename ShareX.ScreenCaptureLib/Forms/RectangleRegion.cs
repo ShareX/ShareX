@@ -307,14 +307,19 @@ namespace ShareX.ScreenCaptureLib
                 textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
             }
 
-            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.Black)))
-            using (Pen pen = new Pen(Color.FromArgb(175, Color.White)))
+            SmoothingMode previousSmoothingMode = g.SmoothingMode;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+
+            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
+            using (Pen pen = new Pen(Color.FromArgb(200, Color.White)))
             {
                 g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
             }
 
+            g.SmoothingMode = previousSmoothingMode;
+
             textRectangle.Inflate(-padding, -padding);
-            g.DrawString(tipText, tipFont, Brushes.White, textRectangle);
+            ImageHelpers.DrawTextWithShadow(g, tipText, textRectangle.Location, tipFont, Color.White, Color.Black);
         }
 
         protected virtual void WriteTips(StringBuilder sb)
