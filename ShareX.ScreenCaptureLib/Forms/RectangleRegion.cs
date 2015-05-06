@@ -303,16 +303,39 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                sb.AppendLine("[Esc] [Right click] Cancel capture");
+                sb.AppendLine("[Right click] [Esc] Cancel capture");
                 sb.AppendLine("[Hold Left click] Start region selection");
             }
 
-            sb.AppendLine("[Arrow keys] Move cursor position");
-            sb.AppendLine("[Ctrl + Arrow keys] Move cursor position faster");
+            if (!Config.QuickCrop && AreaManager.Areas.Count > 0)
+            {
+                sb.AppendLine("[Double Left click] [Enter] Capture regions");
+            }
+
+            sb.AppendLine();
+
+            if (!Config.QuickCrop && !AreaManager.IsCreating && AreaManager.IsCurrentAreaValid)
+            {
+                sb.AppendLine(string.Format("[Arrow keys] Resize selected region from {0}", AreaManager.ResizeManager.IsBottomRightResizing ? "bottom right" : "top left"));
+                sb.AppendLine(string.Format("[Tab] Swap resize anchor to {0}", AreaManager.ResizeManager.IsBottomRightResizing ? "top left" : "bottom right"));
+                sb.AppendLine("[Hold Shift] Move selected region instead resizing");
+                sb.AppendLine("[Hold Ctrl] Resize / Move faster");
+                sb.AppendLine("[Hold Left click on selection] Move region");
+                sb.AppendLine("[Right click on selection] [Delete] Remove region");
+            }
+            else
+            {
+                sb.AppendLine("[Arrow keys] Move cursor position");
+                sb.AppendLine("[Ctrl + Arrow keys] Move cursor position faster");
+            }
 
             if (AreaManager.IsCreating)
             {
                 sb.AppendLine("[Hold Shift] Proportional resizing");
+            }
+
+            if (AreaManager.IsCurrentAreaValid)
+            {
                 sb.AppendLine("[Ctrl + C] Copy position and size");
             }
 

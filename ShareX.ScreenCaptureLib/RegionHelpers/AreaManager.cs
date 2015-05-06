@@ -132,9 +132,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void surface_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.ShiftKey)
+            switch (e.KeyCode)
             {
-                proportionalResizing = false;
+                case Keys.ShiftKey:
+                    proportionalResizing = false;
+                    break;
+                case Keys.Delete:
+                    RemoveCurrentArea();
+                    break;
             }
         }
 
