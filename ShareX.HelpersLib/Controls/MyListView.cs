@@ -53,6 +53,7 @@ namespace ShareX.HelpersLib
         public bool AllowItemDrag { get; set; }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
         {
             get

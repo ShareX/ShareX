@@ -563,7 +563,6 @@
             resources.ApplyResources(this.lvTwitterAccounts, "lvTwitterAccounts");
             this.lvTwitterAccounts.MultiSelect = false;
             this.lvTwitterAccounts.Name = "lvTwitterAccounts";
-            this.lvTwitterAccounts.SelectedIndex = -1;
             this.lvTwitterAccounts.UseCompatibleStateImageBehavior = false;
             this.lvTwitterAccounts.View = System.Windows.Forms.View.Details;
             this.lvTwitterAccounts.SelectedIndexChanged += new System.EventHandler(this.lvTwitterAccounts_SelectedIndexChanged);
@@ -848,7 +847,6 @@
             this.lvCustomUploaderRegexps.MultiSelect = false;
             this.lvCustomUploaderRegexps.Name = "lvCustomUploaderRegexps";
             this.lvCustomUploaderRegexps.Scrollable = false;
-            this.lvCustomUploaderRegexps.SelectedIndex = -1;
             this.lvCustomUploaderRegexps.UseCompatibleStateImageBehavior = false;
             this.lvCustomUploaderRegexps.View = System.Windows.Forms.View.Details;
             this.lvCustomUploaderRegexps.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderRegexps_SelectedIndexChanged);
@@ -1006,7 +1004,6 @@
             resources.ApplyResources(this.lvCustomUploaderArguments, "lvCustomUploaderArguments");
             this.lvCustomUploaderArguments.MultiSelect = false;
             this.lvCustomUploaderArguments.Name = "lvCustomUploaderArguments";
-            this.lvCustomUploaderArguments.SelectedIndex = -1;
             this.lvCustomUploaderArguments.UseCompatibleStateImageBehavior = false;
             this.lvCustomUploaderArguments.View = System.Windows.Forms.View.Details;
             this.lvCustomUploaderArguments.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderArguments_SelectedIndexChanged);
@@ -1422,7 +1419,6 @@
             resources.ApplyResources(this.lvGoogleDriveFoldersList, "lvGoogleDriveFoldersList");
             this.lvGoogleDriveFoldersList.MultiSelect = false;
             this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
-            this.lvGoogleDriveFoldersList.SelectedIndex = -1;
             this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
             this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
             this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
@@ -1481,7 +1477,6 @@
             this.lvBoxFolders.FullRowSelect = true;
             resources.ApplyResources(this.lvBoxFolders, "lvBoxFolders");
             this.lvBoxFolders.Name = "lvBoxFolders";
-            this.lvBoxFolders.SelectedIndex = -1;
             this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
             this.lvBoxFolders.View = System.Windows.Forms.View.Details;
             this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
@@ -1585,7 +1580,6 @@
             this.lvHubicFolders.FullRowSelect = true;
             resources.ApplyResources(this.lvHubicFolders, "lvHubicFolders");
             this.lvHubicFolders.Name = "lvHubicFolders";
-            this.lvHubicFolders.SelectedIndex = -1;
             this.lvHubicFolders.UseCompatibleStateImageBehavior = false;
             this.lvHubicFolders.View = System.Windows.Forms.View.Details;
             this.lvHubicFolders.SelectedIndexChanged += new System.EventHandler(this.lvHubicFolders_SelectedIndexChanged);
