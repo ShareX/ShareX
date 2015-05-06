@@ -1844,7 +1844,7 @@ namespace ShareX
 
                 try
                 {
-                    surface.Config = taskSettings.CaptureSettings.SurfaceOptions;
+                    surface.Config = taskSettings.TaskSettingsCaptureReference.SurfaceOptions;
                     surface.SurfaceImage = screenshot;
                     surface.Prepare();
                     surface.ShowDialog();
