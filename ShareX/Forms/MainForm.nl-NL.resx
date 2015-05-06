@@ -311,7 +311,7 @@
     <value>203, 22</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>Kleurenkiezer op scherm</value>
+    <value>Kleurenkiezer op scherm...</value>
   </data>
   <data name="tsmiImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -949,9 +949,6 @@
   <data name="tsmiTrayColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>Kleurenkiezer...</value>
-  </data>
   <data name="tsmiTrayScreenColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
@@ -1200,5 +1197,8 @@
   </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Upload</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Kleurenkiezer...</value>
   </data>
 </root>

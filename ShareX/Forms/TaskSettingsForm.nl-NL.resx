@@ -214,7 +214,8 @@
     <value>Toon cursor in schermafdrukken</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Maak enkel een miniatuurversie als de afmetingen van de afbeelding groter zijn dan de afmetingen van een miniatuurversie</value>
+    <value>Maak enkel een miniatuurversie als de afmetingen van de afbeelding 
+groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Gebruik de standaard "Na vastleggen" instellingen</value>
