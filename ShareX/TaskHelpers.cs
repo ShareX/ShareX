@@ -325,6 +325,7 @@ namespace ShareX
             using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.Config = taskSettings.CaptureSettings.SurfaceOptions;
+                surface.Config.ShowTips = false;
                 surface.Config.QuickCrop = true;
                 surface.Config.ForceWindowCapture = true;
                 surface.Prepare();
@@ -369,6 +370,7 @@ namespace ShareX
         {
             using (RectangleRegion surface = new RectangleRegion())
             {
+                surface.Config.ShowTips = false;
                 surface.OneClickMode = true;
                 surface.Prepare();
                 surface.ShowDialog();
@@ -565,6 +567,7 @@ namespace ShareX
             using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.RulerMode = true;
+                surface.Config.ShowTips = false;
                 surface.Config.QuickCrop = false;
                 surface.Config.ShowInfo = true;
                 surface.AreaManager.MinimumSize = 3;
