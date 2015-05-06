@@ -343,6 +343,7 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine("[Space] Fullscreen capture");
             sb.AppendLine("[1, 2, 3 ... 0] Monitor capture");
+            sb.AppendLine("[~] Active monitor capture");
 
             sb.AppendLine();
 

@@ -157,6 +157,9 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Enter:
                     Close(SurfaceResult.Region);
                     break;
+                case Keys.Oemtilde:
+                    Close(SurfaceResult.ActiveMonitor);
+                    break;
                 case Keys.Q:
                     Config.QuickCrop = !Config.QuickCrop;
                     break;

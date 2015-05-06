@@ -354,6 +354,11 @@ namespace ShareX
                         return true;
                     }
                 }
+                else if (surface.Result == SurfaceResult.ActiveMonitor)
+                {
+                    rect = CaptureHelpers.GetActiveScreenBounds();
+                    return true;
+                }
             }
 
             rect = Rectangle.Empty;

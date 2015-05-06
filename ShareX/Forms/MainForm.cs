@@ -1875,6 +1875,15 @@ namespace ShareX
                             }
                         }
                     }
+                    else if (surface.Result == SurfaceResult.ActiveMonitor)
+                    {
+                        Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
+
+                        using (screenshot)
+                        {
+                            img = ImageHelpers.CropImage(screenshot, activeScreenRect);
+                        }
+                    }
 
                     if (img != null)
                     {
