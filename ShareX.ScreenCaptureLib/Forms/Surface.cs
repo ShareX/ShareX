@@ -135,18 +135,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
             {
-                int index = e.KeyCode - Keys.D0;
+                MonitorKey(e.KeyCode - Keys.D0);
+                return;
+            }
 
-                if (index == 0)
-                {
-                    index = 10;
-                }
-
-                index--;
-
-                MonitorIndex = index;
-
-                Close(SurfaceResult.Monitor);
+            if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                MonitorKey(e.KeyCode - Keys.NumPad0);
                 return;
             }
 
@@ -165,6 +160,20 @@ namespace ShareX.ScreenCaptureLib
                     Config.QuickCrop = !Config.QuickCrop;
                     break;
             }
+        }
+
+        private void MonitorKey(int index)
+        {
+            if (index == 0)
+            {
+                index = 10;
+            }
+
+            index--;
+
+            MonitorIndex = index;
+
+            Close(SurfaceResult.Monitor);
         }
 
         private void Surface_MouseDoubleClick(object sender, MouseEventArgs e)
