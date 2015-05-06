@@ -39,6 +39,7 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -846,6 +847,11 @@ namespace ShareX.HelpersLib
             }
 
             return Path.GetFullPath(path);
+        }
+
+        public static bool IsAdministrator()
+        {
+            return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
         }
     }
 }

@@ -646,7 +646,14 @@ namespace ShareX
 
         public static void OpenDNSChanger()
         {
-            RunShareXAsAdmin("-dnschanger");
+            if (Helpers.IsAdministrator())
+            {
+                new DNSChangerForm().Show();
+            }
+            else
+            {
+                RunShareXAsAdmin("-dnschanger");
+            }
         }
 
         public static void RunShareXAsAdmin(string arguments)
