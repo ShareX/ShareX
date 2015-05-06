@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         protected GraphicsPath regionFillPath, regionDrawPath;
         protected Pen borderPen, borderDotPen;
         protected Brush nodeBackgroundBrush;
-        protected Font textFont;
+        protected Font textFont, tipFont;
         protected Stopwatch timer;
         protected int frameCount;
 
@@ -80,6 +80,7 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen.DashPattern = new float[] { 5, 5 };
             nodeBackgroundBrush = new SolidBrush(Color.White);
             textFont = new Font("Arial", 17, FontStyle.Bold);
+            tipFont = new Font("Verdana", 9);
         }
 
         private void InitializeComponent()
@@ -373,6 +374,7 @@ namespace ShareX.ScreenCaptureLib
             if (borderDotPen != null) borderDotPen.Dispose();
             if (nodeBackgroundBrush != null) nodeBackgroundBrush.Dispose();
             if (textFont != null) textFont.Dispose();
+            if (tipFont != null) tipFont.Dispose();
 
             if (regionFillPath != null)
             {

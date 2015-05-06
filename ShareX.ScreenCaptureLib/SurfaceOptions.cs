@@ -37,6 +37,9 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(true), Description("Show coordinate and size information.")]
         public bool ShowInfo { get; set; }
 
+        [DefaultValue(true), Description("Show hotkeys/tips.")]
+        public bool ShowTips { get; set; }
+
         [DefaultValue(true), Description("Show magnifier.")]
         public bool ShowMagnifier { get; set; }
 

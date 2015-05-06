@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -87,6 +88,9 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (e.KeyData)
             {
+                case Keys.F1:
+                    Config.ShowTips = !Config.ShowTips;
+                    break;
                 case Keys.I:
                     Config.ShowInfo = !Config.ShowInfo;
                     break;
@@ -265,6 +269,11 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
+            if (Config.ShowTips)
+            {
+                DrawTips(g, 10, 10);
+            }
+
             if (OneClickMode)
             {
                 DrawScreenColorPickerInfo(g);
@@ -279,6 +288,77 @@ namespace ShareX.ScreenCaptureLib
             {
                 DrawCrosshair(g);
             }
+        }
+
+        private void DrawTips(Graphics g, int offset, int padding)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("[F1] Hide this tips");
+            sb.AppendLine();
+
+            if (AreaManager.IsCreating)
+            {
+                sb.AppendLine("[Esc] Cancel capture");
+                sb.AppendLine("[Right click] Cancel region selection");
+            }
+            else
+            {
+                sb.AppendLine("[Esc] [Right click] Cancel capture");
+                sb.AppendLine("[Hold Left click] Start region selection");
+            }
+
+            sb.AppendLine("[Arrow keys] Move cursor position");
+            sb.AppendLine("[Ctrl + Arrow keys] Move cursor position faster");
+
+            if (AreaManager.IsCreating)
+            {
+                sb.AppendLine("[Hold Shift] Proportional resizing");
+                sb.AppendLine("[Ctrl + C] Copy position and size");
+            }
+
+            sb.AppendLine();
+
+            sb.AppendLine("[Space] Fullscreen capture");
+            sb.AppendLine("[1, 2, 3 ... 0] Monitor capture");
+
+            sb.AppendLine();
+
+            if (Config.QuickCrop)
+            {
+                sb.AppendLine("[Q] Multi region mode");
+            }
+            else
+            {
+                sb.AppendLine("[Q] Quick capture mode");
+            }
+
+            sb.AppendLine("[Mouse wheel] Change magnifier pixel count");
+            sb.AppendLine("[Ctrl + Mouse wheel] Change magnifier pixel size");
+            sb.AppendLine(string.Format("[I] {0} coordinate and size info", Config.ShowInfo ? "Hide" : "Show"));
+            sb.AppendLine(string.Format("[M] {0} magnifier", Config.ShowMagnifier ? "Hide" : "Show"));
+            sb.AppendLine(string.Format("[C] {0} screen wide crosshair", Config.ShowCrosshair ? "Hide" : "Show"));
+
+            string tipText = sb.ToString().Trim();
+
+            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
+            int rectWidth = textSize.Width + padding * 2 + 2;
+            int rectHeight = textSize.Height + padding * 2;
+            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + primaryScreenBounds.Width - rectWidth - offset, primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+
+            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
+            {
+                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
+            }
+
+            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.Black)))
+            using (Pen pen = new Pen(Color.FromArgb(175, Color.White)))
+            {
+                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
+            }
+
+            textRectangle.Inflate(-padding, -padding);
+            g.DrawString(tipText, tipFont, Brushes.White, textRectangle);
         }
 
         private string GetRulerText(Rectangle area)
