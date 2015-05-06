@@ -434,13 +434,13 @@
     <value>210, 22</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>Bestemmingsinstellingen</value>
+    <value>Bestemmingsinstellingen...</value>
   </data>
   <data name="tsbApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 20</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Programma instellingen...</value>
+    <value>Instellingen programma...</value>
   </data>
   <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 20</value>
@@ -452,7 +452,7 @@
     <value>179, 20</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Sneltoets instellingen...</value>
+    <value>Instellingen sneltoetsen...</value>
   </data>
   <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 6</value>
@@ -1088,13 +1088,13 @@
     <value>214, 22</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>Taakinstellingen...</value>
+    <value>Taak instellingen...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Instellingen sneltoetsen</value>
+    <value>Instellingen sneltoetsen...</value>
   </data>
   <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 6</value>
