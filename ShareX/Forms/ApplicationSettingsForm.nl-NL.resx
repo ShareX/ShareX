@@ -193,13 +193,13 @@
     <value>Gebruik secundaire uploaders in de volgende volgorde tijdens herproberen</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Secundaire bestandsuploaders</value>
+    <value>Tweede bestandsuploaders</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Secundaire afbeeldingsuploaders</value>
+    <value>Tweede afbeeldingsuploaders</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Secundaire tekstuploaders</value>
+    <value>Tweede tekstuploaders</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Taal:</value>
