@@ -293,18 +293,44 @@ namespace ShareX.ScreenCaptureLib
         private void DrawTips(Graphics g, int offset, int padding)
         {
             StringBuilder sb = new StringBuilder();
+            WriteTips(sb);
+            string tipText = sb.ToString().Trim();
+
+            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
+            int rectWidth = textSize.Width + padding * 2 + 2;
+            int rectHeight = textSize.Height + padding * 2;
+            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
+            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + primaryScreenBounds.Width - rectWidth - offset, primaryScreenBounds.Y + offset, rectWidth, rectHeight);
+
+            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
+            {
+                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
+            }
+
+            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.Black)))
+            using (Pen pen = new Pen(Color.FromArgb(175, Color.White)))
+            {
+                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
+            }
+
+            textRectangle.Inflate(-padding, -padding);
+            g.DrawString(tipText, tipFont, Brushes.White, textRectangle);
+        }
+
+        protected virtual void WriteTips(StringBuilder sb)
+        {
             sb.AppendLine("[F1] Hide this tips");
             sb.AppendLine();
 
             if (AreaManager.IsCreating)
             {
-                sb.AppendLine("[Esc] Cancel capture");
                 sb.AppendLine("[Right click] Cancel region selection");
+                sb.AppendLine("[Esc] Cancel capture");
             }
             else
             {
-                sb.AppendLine("[Right click] [Esc] Cancel capture");
                 sb.AppendLine("[Hold Left click] Start region selection");
+                sb.AppendLine("[Right click] [Esc] Cancel capture");
             }
 
             if (!Config.QuickCrop && AreaManager.Areas.Count > 0)
@@ -361,28 +387,6 @@ namespace ShareX.ScreenCaptureLib
             sb.AppendLine(string.Format("[I] {0} coordinate and size info", Config.ShowInfo ? "Hide" : "Show"));
             sb.AppendLine(string.Format("[M] {0} magnifier", Config.ShowMagnifier ? "Hide" : "Show"));
             sb.AppendLine(string.Format("[C] {0} screen wide crosshair", Config.ShowCrosshair ? "Hide" : "Show"));
-
-            string tipText = sb.ToString().Trim();
-
-            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
-            int rectWidth = textSize.Width + padding * 2 + 2;
-            int rectHeight = textSize.Height + padding * 2;
-            Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
-            Rectangle textRectangle = new Rectangle(primaryScreenBounds.X + primaryScreenBounds.Width - rectWidth - offset, primaryScreenBounds.Y + offset, rectWidth, rectHeight);
-
-            if (textRectangle.Offset(10).Contains(InputManager.MousePosition0Based))
-            {
-                textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
-            }
-
-            using (Brush brush = new SolidBrush(Color.FromArgb(175, Color.Black)))
-            using (Pen pen = new Pen(Color.FromArgb(175, Color.White)))
-            {
-                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
-            }
-
-            textRectangle.Inflate(-padding, -padding);
-            g.DrawString(tipText, tipFont, Brushes.White, textRectangle);
         }
 
         private string GetRulerText(Rectangle area)

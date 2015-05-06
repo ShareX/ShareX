@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -58,6 +59,13 @@ namespace ShareX.ScreenCaptureLib
         protected override void AddShapePath(GraphicsPath graphicsPath, Rectangle rect)
         {
             graphicsPath.AddRoundedRectangle(rect, Radius);
+        }
+
+        protected override void WriteTips(StringBuilder sb)
+        {
+            base.WriteTips(sb);
+
+            sb.AppendLine("[Numpad +] [Numpad -] Change corner radius");
         }
     }
 }
