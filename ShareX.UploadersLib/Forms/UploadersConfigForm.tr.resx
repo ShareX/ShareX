@@ -737,4 +737,22 @@ Bir başka deyişle Amazon S3'den bazı durumlarda kaybolabilirler.</value>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API anahtarı:</value>
   </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="chTwitterAccount.Text" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>İsim:</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>Tweet mesaj kutusunu gösterme</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>Varsayılan tweet mesajı:</value>
+  </data>
 </root>

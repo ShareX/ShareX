@@ -162,4 +162,7 @@ Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Dikdörtgen yakalama saydam</value>
   </data>
+  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
+    <value>Monitor {0} (X:{1} Y:{2} Genişlik:{3} Yükseklik:{4})</value>
+  </data>
 </root>

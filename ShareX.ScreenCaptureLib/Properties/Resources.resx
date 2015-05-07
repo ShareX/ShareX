@@ -170,7 +170,7 @@ X: {4}, Y: {5}</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Rectangle capture transparent</value>
   </data>
-  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Height__3__Width__4_" xml:space="preserve">
-    <value>Monitor {0} (X:{1} Y:{2} Height:{3} Width:{4})</value>
+  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
+    <value>Monitor {0} (X:{1} Y:{2} Width:{3} Height:{4})</value>
   </data>
 </root>

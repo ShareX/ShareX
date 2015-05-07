@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void CreateTheNameFromBoundsAndMonitorNumber(int monitorNumber)
         {
-            MonitorIdentifier = String.Format(Resources.ScreenRegion_Name_Monitor_0___X__1__Y__2__Height__3__Width__4_, monitorNumber, Bounds.X, Bounds.Y, Bounds.Height, Bounds.Width);
+            MonitorIdentifier = String.Format(Resources.ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_, monitorNumber, Bounds.X, Bounds.Y, Bounds.Width, Bounds.Height);
         }
 
         public override string ToString()

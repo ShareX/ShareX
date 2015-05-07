@@ -612,4 +612,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Dikdörtgen bölge yakala (Saydam)</value>
   </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>Özel bölge yakala</value>
+  </data>
 </root>

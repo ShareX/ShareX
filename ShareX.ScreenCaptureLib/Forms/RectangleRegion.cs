@@ -324,7 +324,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected virtual void WriteTips(StringBuilder sb)
         {
-            sb.AppendLine("[F1] Hide this tips");
+            sb.AppendLine("[F1] Hide tips");
             sb.AppendLine();
 
             if (AreaManager.IsCreating)
@@ -495,6 +495,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     brush.TranslateTransform(x, y);
                     g.FillEllipse(brush, x, y, magnifier.Width, magnifier.Height);
+                    g.DrawEllipse(Pens.White, x - 1, y - 1, magnifier.Width + 2, magnifier.Height + 2);
                     g.DrawEllipse(Pens.Black, x, y, magnifier.Width, magnifier.Height);
                 }
             }

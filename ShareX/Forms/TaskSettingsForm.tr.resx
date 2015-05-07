@@ -426,4 +426,13 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Kişisel zaman dilimi kullan:</value>
   </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>Yükseklik</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>Genişlik</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
+    <value>Monitor seç özel bölge için:</value>
+  </data>
 </root>
