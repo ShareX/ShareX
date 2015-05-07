@@ -162,8 +162,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X: {0} / Y: {1}
-        ///W: {2} / H: {3}.
+        ///   Looks up a localized string similar to X: {0} Y: {1} W: {2} H: {3}.
         /// </summary>
         internal static string RectangleRegion_GetAreaText_Area {
             get {

@@ -79,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen = new Pen(Color.White);
             borderDotPen.DashPattern = new float[] { 5, 5 };
             nodeBackgroundBrush = new SolidBrush(Color.White);
-            textFont = new Font("Arial", 17, FontStyle.Bold);
+            textFont = new Font("Verdana", 16, FontStyle.Bold);
             tipFont = new Font("Verdana", 9);
         }
 

@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(10), Description("Size of pixels in magnifier.")]
         public int MagnifierPixelSize { get; set; }
 
-        [DefaultValue(true), Description("Show screen wide crosshair.")]
+        [DefaultValue(false), Description("Show screen wide crosshair.")]
         public bool ShowCrosshair { get; set; }
 
         [DefaultValue(true), Description("Cropping move will dim the screen during selection. Can be intensive at high resolutions.")]

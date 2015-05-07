@@ -208,6 +208,7 @@ namespace ShareX.ScreenCaptureLib
 
                     g.DrawPath(borderPen, regionDrawPath);
 
+                    /*
                     if (areas.Count > 1)
                     {
                         Rectangle totalArea = AreaManager.CombineAreas();
@@ -219,6 +220,7 @@ namespace ShareX.ScreenCaptureLib
                                 totalArea.Width, totalArea.Height), new PointF(totalArea.X + 5, totalArea.Y - 25), textFont, Color.White, Color.Black);
                         }
                     }
+                    */
                 }
 
                 if (AreaManager.IsCurrentHoverAreaValid)
@@ -262,7 +264,19 @@ namespace ShareX.ScreenCaptureLib
                             }
                             else
                             {
-                                ImageHelpers.DrawTextWithOutline(g, GetAreaText(area), new PointF(area.X + 5, area.Y + 5), textFont, Color.White, Color.Black);
+                                int textOffset = 27;
+                                Point textPos;
+
+                                if (area.Y - textOffset < ScreenRectangle0Based.Y)
+                                {
+                                    textPos = new Point(area.X + 5, area.Y + 5);
+                                }
+                                else
+                                {
+                                    textPos = new Point(area.X, area.Y - textOffset);
+                                }
+
+                                ImageHelpers.DrawTextWithOutline(g, GetAreaText(area), textPos, textFont, Color.White, Color.Black);
                             }
                         }
                     }
@@ -468,9 +482,9 @@ namespace ShareX.ScreenCaptureLib
             Rectangle currentScreenRect0Based = CaptureHelpers.ScreenToClient(Screen.FromPoint(InputManager.MousePosition).Bounds);
             int offsetX = RulerMode ? 20 : 10, offsetY = RulerMode ? 20 : 10;
 
-            if (Config.ShowInfo && ((AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos) || OneClickMode))
+            if (Config.ShowInfo && ((AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos) || OneClickMode) && RulerMode)
             {
-                offsetY = RulerMode ? 85 : 50;
+                offsetY = 85;
             }
 
             using (Bitmap magnifier = Magnifier(SurfaceImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))
