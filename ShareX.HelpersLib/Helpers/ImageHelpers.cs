@@ -592,15 +592,17 @@ namespace ShareX.HelpersLib
 
         public static void DrawTextWithShadow(Graphics g, string text, PointF position, Font font, Color textColor, Color shadowColor, int shadowOffset = 1)
         {
+            using (Brush textBrush = new SolidBrush(textColor))
             using (Brush shadowBrush = new SolidBrush(shadowColor))
             {
-                g.DrawString(text, font, shadowBrush, position.X + shadowOffset, position.Y + shadowOffset);
+                DrawTextWithShadow(g, text, position, font, textBrush, shadowBrush, shadowOffset);
             }
+        }
 
-            using (Brush textBrush = new SolidBrush(textColor))
-            {
-                g.DrawString(text, font, textBrush, position.X, position.Y);
-            }
+        public static void DrawTextWithShadow(Graphics g, string text, PointF position, Font font, Brush textBrush, Brush shadowBrush, int shadowOffset = 1)
+        {
+            g.DrawString(text, font, shadowBrush, position.X + shadowOffset, position.Y + shadowOffset);
+            g.DrawString(text, font, textBrush, position.X, position.Y);
         }
 
         public static bool IsImagesEqual(Bitmap bmp1, Bitmap bmp2)

@@ -315,7 +315,7 @@ namespace ShareX.ScreenCaptureLib
             g.DrawRectangleProper(textBackgroundPenBlack, backgroundRect.Offset(-1));
             g.DrawRectangleProper(textBackgroundPenWhite, backgroundRect);
 
-            ImageHelpers.DrawTextWithShadow(g, areaText, textPos, infoFont, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithShadow(g, areaText, textPos, infoFont, Brushes.White, Brushes.Black);
         }
 
         private void DrawTips(Graphics g, int offset, int padding)
@@ -339,7 +339,7 @@ namespace ShareX.ScreenCaptureLib
             g.DrawRectangleProper(textBackgroundPenBlack, textRectangle.Offset(-1));
             g.DrawRectangleProper(textBackgroundPenWhite, textRectangle);
 
-            ImageHelpers.DrawTextWithShadow(g, tipText, textRectangle.Offset(-padding).Location, infoFont, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithShadow(g, tipText, textRectangle.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
         }
 
         protected virtual void WriteTips(StringBuilder sb)
