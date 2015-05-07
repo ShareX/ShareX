@@ -264,19 +264,7 @@ namespace ShareX.ScreenCaptureLib
                             }
                             else
                             {
-                                int textOffset = 27;
-                                Point textPos;
-
-                                if (area.Y - textOffset < ScreenRectangle0Based.Y)
-                                {
-                                    textPos = new Point(area.X + 5, area.Y + 5);
-                                }
-                                else
-                                {
-                                    textPos = new Point(area.X, area.Y - textOffset);
-                                }
-
-                                ImageHelpers.DrawTextWithOutline(g, GetAreaText(area), textPos, textFont, Color.White, Color.Black);
+                                DrawAreaText(g, area);
                             }
                         }
                     }
@@ -304,13 +292,39 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void DrawAreaText(Graphics g, Rectangle area)
+        {
+            int offset = 5;
+            int backgroundOffset = 3;
+            string areaText = GetAreaText(area);
+            Size textSize = g.MeasureString(areaText, infoFont).ToSize();
+            Point textPos;
+
+            if (area.Y - offset - textSize.Height - backgroundOffset * 2 < ScreenRectangle0Based.Y)
+            {
+                textPos = new Point(area.X + offset + backgroundOffset, area.Y + offset + backgroundOffset);
+            }
+            else
+            {
+                textPos = new Point(area.X + backgroundOffset, area.Y - offset - backgroundOffset - textSize.Height);
+            }
+
+            Rectangle backgroundRect = new Rectangle(textPos.X - backgroundOffset, textPos.Y - backgroundOffset, textSize.Width + backgroundOffset * 2, textSize.Height + backgroundOffset * 2);
+
+            g.FillRectangle(textBackgroundBrush, backgroundRect.Offset(-2));
+            g.DrawRectangleProper(textBackgroundPenBlack, backgroundRect.Offset(-1));
+            g.DrawRectangleProper(textBackgroundPenWhite, backgroundRect);
+
+            ImageHelpers.DrawTextWithShadow(g, areaText, textPos, infoFont, Color.White, Color.Black);
+        }
+
         private void DrawTips(Graphics g, int offset, int padding)
         {
             StringBuilder sb = new StringBuilder();
             WriteTips(sb);
             string tipText = sb.ToString().Trim();
 
-            Size textSize = g.MeasureString(tipText, tipFont).ToSize();
+            Size textSize = g.MeasureString(tipText, infoFont).ToSize();
             int rectWidth = textSize.Width + padding * 2 + 2;
             int rectHeight = textSize.Height + padding * 2;
             Rectangle primaryScreenBounds = CaptureHelpers.GetPrimaryScreenBounds0Based();
@@ -321,19 +335,11 @@ namespace ShareX.ScreenCaptureLib
                 textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
             }
 
-            SmoothingMode previousSmoothingMode = g.SmoothingMode;
-            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.FillRectangle(textBackgroundBrush, textRectangle.Offset(-2));
+            g.DrawRectangleProper(textBackgroundPenBlack, textRectangle.Offset(-1));
+            g.DrawRectangleProper(textBackgroundPenWhite, textRectangle);
 
-            using (Brush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
-            using (Pen pen = new Pen(Color.FromArgb(200, Color.White)))
-            {
-                g.DrawRoundedRectangle(brush, pen, textRectangle, 5);
-            }
-
-            g.SmoothingMode = previousSmoothingMode;
-
-            textRectangle.Inflate(-padding, -padding);
-            ImageHelpers.DrawTextWithShadow(g, tipText, textRectangle.Location, tipFont, Color.White, Color.Black);
+            ImageHelpers.DrawTextWithShadow(g, tipText, textRectangle.Offset(-padding).Location, infoFont, Color.White, Color.Black);
         }
 
         protected virtual void WriteTips(StringBuilder sb)
