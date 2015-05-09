@@ -110,17 +110,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (AreaManager.IsCurrentAreaValid)
             {
-                string clipboardText;
-
-                if (RulerMode)
-                {
-                    clipboardText = GetRulerText(AreaManager.CurrentArea);
-                }
-                else
-                {
-                    clipboardText = GetAreaText(AreaManager.CurrentArea);
-                }
-
+                string clipboardText = GetAreaText(AreaManager.CurrentArea);
                 ClipboardHelpers.CopyText(clipboardText);
             }
         }
@@ -258,14 +248,8 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (area.IsValid())
                         {
-                            if (RulerMode)
-                            {
-                                ImageHelpers.DrawTextWithOutline(g, GetRulerText(area), new PointF(area.X + 15, area.Y + 15), textFont, Color.White, Color.Black);
-                            }
-                            else
-                            {
-                                DrawAreaText(g, area);
-                            }
+                            string areaText = GetAreaText(area);
+                            DrawAreaText(g, areaText, area);
                         }
                     }
                 }
@@ -292,12 +276,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawAreaText(Graphics g, Rectangle area)
+        private void DrawAreaText(Graphics g, string text, Rectangle area)
         {
             int offset = 5;
             int backgroundOffset = 3;
-            string areaText = GetAreaText(area);
-            Size textSize = g.MeasureString(areaText, infoFont).ToSize();
+            Size textSize = g.MeasureString(text, infoFont).ToSize();
             Point textPos;
 
             if (area.Y - offset - textSize.Height - backgroundOffset * 2 < ScreenRectangle0Based.Y)
@@ -315,7 +298,7 @@ namespace ShareX.ScreenCaptureLib
             g.DrawRectangleProper(textBackgroundPenBlack, backgroundRect.Offset(-1));
             g.DrawRectangleProper(textBackgroundPenWhite, backgroundRect);
 
-            ImageHelpers.DrawTextWithShadow(g, areaText, textPos, infoFont, Brushes.White, Brushes.Black);
+            ImageHelpers.DrawTextWithShadow(g, text, textPos, infoFont, Brushes.White, Brushes.Black);
         }
 
         private void DrawTips(Graphics g, int offset, int padding)
@@ -409,20 +392,20 @@ namespace ShareX.ScreenCaptureLib
 
             sb.AppendLine("[Mouse wheel] Change magnifier pixel count");
             sb.AppendLine("[Ctrl + Mouse wheel] Change magnifier pixel size");
-            sb.AppendLine(string.Format("[I] {0} coordinate and size info", Config.ShowInfo ? "Hide" : "Show"));
+            sb.AppendLine(string.Format("[I] {0} position and size info", Config.ShowInfo ? "Hide" : "Show"));
             sb.AppendLine(string.Format("[M] {0} magnifier", Config.ShowMagnifier ? "Hide" : "Show"));
             sb.AppendLine(string.Format("[C] {0} screen wide crosshair", Config.ShowCrosshair ? "Hide" : "Show"));
         }
 
-        private string GetRulerText(Rectangle area)
-        {
-            Point endPos = new Point(area.X + area.Width - 1, area.Y + area.Height - 1);
-            return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,
-                area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
-        }
-
         private string GetAreaText(Rectangle area)
         {
+            if (RulerMode)
+            {
+                Point endPos = new Point(area.Right - 1, area.Bottom - 1);
+                return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,
+                    area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
+            }
+
             return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
