@@ -114,6 +114,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (Config.UseDimming)
             {
+                /*
                 using (Image darkSurfaceImage = ColorMatrixManager.Contrast(0.9f).Apply(SurfaceImage))
                 {
                     darkBackgroundBrush = new TextureBrush(darkSurfaceImage) { WrapMode = WrapMode.Clamp };
@@ -122,6 +123,19 @@ namespace ShareX.ScreenCaptureLib
                 using (Image lightSurfaceImage = ColorMatrixManager.Contrast(1.1f).Apply(SurfaceImage))
                 {
                     lightBackgroundBrush = new TextureBrush(lightSurfaceImage) { WrapMode = WrapMode.Clamp };
+                }
+                */
+
+                using (Bitmap darkBackground = (Bitmap)SurfaceImage.Clone())
+                using (Graphics g = Graphics.FromImage(darkBackground))
+                {
+                    using (Brush brush = new SolidBrush(Color.FromArgb(50, Color.Black)))
+                    {
+                        g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
+                    }
+
+                    darkBackgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
+                    lightBackgroundBrush = new TextureBrush(SurfaceImage) { WrapMode = WrapMode.Clamp };
                 }
             }
             else

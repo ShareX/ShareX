@@ -469,12 +469,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Point mousePos = InputManager.MousePosition0Based;
             Rectangle currentScreenRect0Based = CaptureHelpers.ScreenToClient(Screen.FromPoint(InputManager.MousePosition).Bounds);
-            int offsetX = RulerMode ? 20 : 10, offsetY = RulerMode ? 20 : 10;
-
-            if (Config.ShowInfo && ((AreaManager.IsCurrentAreaValid && AreaManager.CurrentArea.Location == mousePos) || OneClickMode) && RulerMode)
-            {
-                offsetY = 85;
-            }
+            int offsetX = 10, offsetY = 10;
 
             using (Bitmap magnifier = Magnifier(SurfaceImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))
             {
