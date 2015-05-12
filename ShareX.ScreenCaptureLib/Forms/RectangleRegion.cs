@@ -108,11 +108,20 @@ namespace ShareX.ScreenCaptureLib
 
         private void CopyAreaInfo()
         {
+            string clipboardText;
+
             if (AreaManager.IsCurrentAreaValid)
             {
-                string clipboardText = GetAreaText(AreaManager.CurrentArea);
+                clipboardText = GetAreaText(AreaManager.CurrentArea);
                 ClipboardHelpers.CopyText(clipboardText);
             }
+            else
+            {
+                CurrentPosition = InputManager.MousePosition;
+                clipboardText = string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
+            }
+
+            ClipboardHelpers.CopyText(clipboardText);
         }
 
         private void RectangleRegion_MouseWheel(object sender, MouseEventArgs e)
