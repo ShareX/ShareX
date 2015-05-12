@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
 
         #region Screen color picker
 
-        public bool OneClickMode { get; set; }
+        public bool ScreenColorPickerMode { get; set; }
 
         private Bitmap bmpSurfaceImage;
 
@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RectangleRegion_MouseDown(object sender, MouseEventArgs e)
         {
-            if (OneClickMode && e.Button == MouseButtons.Left)
+            if (ScreenColorPickerMode && e.Button == MouseButtons.Left)
             {
                 CurrentPosition = e.Location;
                 Close(SurfaceResult.Region);
@@ -164,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (OneClickMode)
+            if (ScreenColorPickerMode)
             {
                 bmpSurfaceImage = new Bitmap(SurfaceImage);
             }
@@ -258,11 +258,6 @@ namespace ShareX.ScreenCaptureLib
             if (Config.ShowTips)
             {
                 DrawTips(g, 10, 10);
-            }
-
-            if (OneClickMode)
-            {
-                DrawScreenColorPickerInfo(g);
             }
 
             if (Config.ShowMagnifier)
@@ -410,28 +405,6 @@ namespace ShareX.ScreenCaptureLib
             return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
-        private void DrawScreenColorPickerInfo(Graphics g)
-        {
-            CurrentPosition = InputManager.MousePosition0Based;
-
-            if (Config.ShowInfo)
-            {
-                Color color = CurrentColor;
-
-                using (Brush brush = new SolidBrush(color))
-                {
-                    Rectangle colorBox = new Rectangle(CurrentPosition.X + 5, CurrentPosition.Y + 5, 20, 20);
-                    g.FillRectangle(brush, colorBox);
-                    g.DrawRectangleProper(Pens.Black, colorBox);
-                }
-
-                string infoText = string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color),
-                    CurrentPosition.X, CurrentPosition.Y);
-
-                ImageHelpers.DrawTextWithOutline(g, infoText, new PointF(CurrentPosition.X + 25, CurrentPosition.Y + 5), textFont, Color.White, Color.Black);
-            }
-        }
-
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
@@ -477,7 +450,19 @@ namespace ShareX.ScreenCaptureLib
             if (Config.ShowInfo)
             {
                 infoTextOffset = 10;
-                infoText = string.Format("X: {0} Y: {1}", InputManager.MousePosition.X, InputManager.MousePosition.Y);
+
+                CurrentPosition = InputManager.MousePosition;
+
+                if (ScreenColorPickerMode)
+                {
+                    Color color = CurrentColor;
+                    infoText = string.Format(Resources.RectangleRegion_GetColorPickerText, color.R, color.G, color.B, ColorHelpers.ColorToHex(color), CurrentPosition.X, CurrentPosition.Y);
+                }
+                else
+                {
+                    infoText = string.Format("X: {0} Y: {1}", CurrentPosition.X, CurrentPosition.Y);
+                }
+
                 Size textSize = g.MeasureString(infoText, infoFont).ToSize();
                 infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
             }
