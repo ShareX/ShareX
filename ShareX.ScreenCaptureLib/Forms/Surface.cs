@@ -140,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                darkBackgroundBrush = new TextureBrush(SurfaceImage);
+                darkBackgroundBrush = new TextureBrush(SurfaceImage) { WrapMode = WrapMode.Clamp };
             }
         }
 

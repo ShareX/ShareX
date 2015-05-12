@@ -371,6 +371,7 @@ namespace ShareX
             using (RectangleRegion surface = new RectangleRegion())
             {
                 surface.ScreenColorPickerMode = true;
+                surface.Config.UseDimming = false;
                 surface.Config.ShowInfo = true;
                 surface.Config.ShowMagnifier = true;
                 surface.Config.ShowTips = false;
