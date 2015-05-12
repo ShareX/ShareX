@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
         [DefaultValue(false), Description("Show screen wide crosshair.")]
         public bool ShowCrosshair { get; set; }
 
-        [DefaultValue(true), Description("Cropping will dim the screen outside selected area. Can be CPU intensive at high resolutions.")]
+        [DefaultValue(true), Description("Capturing screen will dim the screen outside selected area. This may impact on the startup time of the capture process at high resolutions.")]
         public bool UseDimming { get; set; }
 
         [DefaultValue(false), Description("Show frames per second.")]

@@ -276,29 +276,34 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void DrawInfoText(Graphics g, string text, Rectangle rect, int padding)
+        {
+            g.FillRectangle(textBackgroundBrush, rect.Offset(-2));
+            g.DrawRectangleProper(textBackgroundPenBlack, rect.Offset(-1));
+            g.DrawRectangleProper(textBackgroundPenWhite, rect);
+
+            ImageHelpers.DrawTextWithShadow(g, text, rect.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
+        }
+
         private void DrawAreaText(Graphics g, string text, Rectangle area)
         {
             int offset = 5;
-            int backgroundOffset = 3;
+            int backgroundPadding = 3;
             Size textSize = g.MeasureString(text, infoFont).ToSize();
             Point textPos;
 
-            if (area.Y - offset - textSize.Height - backgroundOffset * 2 < ScreenRectangle0Based.Y)
+            if (area.Y - offset - textSize.Height - backgroundPadding * 2 < ScreenRectangle0Based.Y)
             {
-                textPos = new Point(area.X + offset + backgroundOffset, area.Y + offset + backgroundOffset);
+                textPos = new Point(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
             }
             else
             {
-                textPos = new Point(area.X + backgroundOffset, area.Y - offset - backgroundOffset - textSize.Height);
+                textPos = new Point(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
             }
 
-            Rectangle backgroundRect = new Rectangle(textPos.X - backgroundOffset, textPos.Y - backgroundOffset, textSize.Width + backgroundOffset * 2, textSize.Height + backgroundOffset * 2);
+            Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + backgroundPadding * 2, textSize.Height + backgroundPadding * 2);
 
-            g.FillRectangle(textBackgroundBrush, backgroundRect.Offset(-2));
-            g.DrawRectangleProper(textBackgroundPenBlack, backgroundRect.Offset(-1));
-            g.DrawRectangleProper(textBackgroundPenWhite, backgroundRect);
-
-            ImageHelpers.DrawTextWithShadow(g, text, textPos, infoFont, Brushes.White, Brushes.Black);
+            DrawInfoText(g, text, backgroundRect, backgroundPadding);
         }
 
         private void DrawTips(Graphics g, int offset, int padding)
@@ -318,11 +323,7 @@ namespace ShareX.ScreenCaptureLib
                 textRectangle.Y = primaryScreenBounds.Height - rectHeight - offset;
             }
 
-            g.FillRectangle(textBackgroundBrush, textRectangle.Offset(-2));
-            g.DrawRectangleProper(textBackgroundPenBlack, textRectangle.Offset(-1));
-            g.DrawRectangleProper(textBackgroundPenWhite, textRectangle);
-
-            ImageHelpers.DrawTextWithShadow(g, tipText, textRectangle.Offset(-padding).Location, infoFont, Brushes.White, Brushes.Black);
+            DrawInfoText(g, tipText, textRectangle, padding);
         }
 
         protected virtual void WriteTips(StringBuilder sb)
@@ -469,7 +470,17 @@ namespace ShareX.ScreenCaptureLib
         {
             Point mousePos = InputManager.MousePosition0Based;
             Rectangle currentScreenRect0Based = CaptureHelpers.ScreenToClient(Screen.FromPoint(InputManager.MousePosition).Bounds);
-            int offsetX = 10, offsetY = 10;
+            int offsetX = 10, offsetY = 10, infoTextOffset = 0, infoTextPadding = 3;
+            Rectangle infoTextRect = Rectangle.Empty;
+            string infoText = string.Empty;
+
+            if (Config.ShowInfo)
+            {
+                infoTextOffset = 10;
+                infoText = string.Format("X: {0} Y: {1}", InputManager.MousePosition.X, InputManager.MousePosition.Y);
+                Size textSize = g.MeasureString(infoText, infoFont).ToSize();
+                infoTextRect.Size = new Size(textSize.Width + infoTextPadding * 2, textSize.Height + infoTextPadding * 2);
+            }
 
             using (Bitmap magnifier = Magnifier(SurfaceImage, mousePos, Config.MagnifierPixelCount, Config.MagnifierPixelCount, Config.MagnifierPixelSize))
             {
@@ -482,9 +493,15 @@ namespace ShareX.ScreenCaptureLib
 
                 int y = mousePos.Y + offsetY;
 
-                if (y + magnifier.Height > currentScreenRect0Based.Bottom)
+                if (y + magnifier.Height + infoTextOffset + infoTextRect.Height > currentScreenRect0Based.Bottom)
                 {
-                    y = mousePos.Y - offsetY - magnifier.Height;
+                    y = mousePos.Y - offsetY - magnifier.Height - infoTextOffset - infoTextRect.Height;
+                }
+
+                if (Config.ShowInfo)
+                {
+                    infoTextRect.Location = new Point(x + (magnifier.Width / 2) - (infoTextRect.Width / 2), y + magnifier.Height + infoTextOffset);
+                    DrawInfoText(g, infoText, infoTextRect, 3);
                 }
 
                 g.SetHighQuality();
