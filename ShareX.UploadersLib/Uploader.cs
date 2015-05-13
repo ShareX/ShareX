@@ -258,7 +258,12 @@ namespace ShareX.UploadersLib
         {
             using (HttpWebResponse response = GetResponse(url, stream, null, contentType, headers, cookies, method))
             {
-                return response.Headers;
+                if (response != null)
+                {
+                    return response.Headers;
+                }
+
+                return new NameValueCollection();
             }
         }
 
