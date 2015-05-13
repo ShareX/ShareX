@@ -1377,7 +1377,7 @@ namespace ShareX
             if (MessageBox.Show(Resources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
                 "ShareX - " + Resources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                uim.DeleteFile();
+                uim.DeleteFiles();
                 RemoveSelectedItems();
             }
         }
