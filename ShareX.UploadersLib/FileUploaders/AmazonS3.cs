@@ -134,10 +134,17 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) throw new Exception("'Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) throw new Exception("'Secret Access Key' must not be empty.");
-            if (string.IsNullOrEmpty(s3Settings.Bucket)) throw new Exception("'Bucket' must not be empty.");
-            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) throw new Exception("Please select an endpoint.");
+            var validationErrors = new List<string>();
+
+            if (string.IsNullOrEmpty(s3Settings.AccessKeyID)) validationErrors.Add("'Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.SecretAccessKey)) validationErrors.Add("'Secret Access Key' must not be empty.");
+            if (string.IsNullOrEmpty(s3Settings.Bucket)) validationErrors.Add("'Bucket' must not be empty.");
+            if (GetCurrentRegion(s3Settings) == UnknownEndpoint) validationErrors.Add("Please select an endpoint.");
+
+            if (validationErrors.Any())
+            {
+                return new UploadResult { Errors = validationErrors };
+            }
 
             var region = GetCurrentRegion(s3Settings);
 
@@ -171,62 +178,24 @@ namespace ShareX.UploadersLib.FileUploaders
                 putRequest.Headers["x-amz-storage-class"] = GetObjectStorageClass();
 
                 var responseHeaders = SendRequestStreamGetHeaders(client.GetPreSignedURL(putRequest), stream, Helpers.GetMimeType(fileName), requestHeaders, method: HttpMethod.PUT);
-                var eTag = responseHeaders["ETag"].Replace("\"", "");
-
-                var uploadResult = new UploadResult();
-
-                if (GetMd5Hash(stream) == eTag)
+                if (responseHeaders.Count == 0)
                 {
-                    uploadResult.IsSuccess = true;
-                    uploadResult.URL = GetObjectURL(putRequest.Key);
-                }
-                else
-                {
-                    uploadResult.Errors = new List<string> { "Uploaded file is different." };
+                    return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed. Check your access credentials." } };
                 }
 
-                return uploadResult;
+                var eTag = responseHeaders.Get("ETag");
+                if (eTag == null)
+                {
+                    return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed." } };
+                }
+
+                if (GetMd5Hash(stream) == eTag.Replace("\"", ""))
+                {
+                    return new UploadResult { IsSuccess = true, URL = GetObjectURL(putRequest.Key) };
+                }
+
+                return new UploadResult { Errors = new List<string> { "Upload to Amazon S3 failed, uploaded data did not match." } };
             }
         }
-    }
-
-    public class AmazonS3Region
-    {
-        public AmazonS3Region(string name)
-        {
-            Name = name;
-        }
-
-        public AmazonS3Region(string name, string identifier, string hostname)
-        {
-            Name = name;
-            Identifier = identifier;
-            Hostname = hostname;
-        }
-
-        public AmazonS3Region(RegionEndpoint region)
-        {
-            Name = region.DisplayName;
-            Identifier = region.SystemName;
-            AmazonRegion = region;
-            Hostname = region.GetEndpointForService("s3").Hostname;
-        }
-
-        public string Name { get; private set; }
-        public string Identifier { get; private set; }
-        public RegionEndpoint AmazonRegion { get; private set; }
-        public string Hostname { get; private set; }
-    }
-
-    public class AmazonS3Settings
-    {
-        public string AccessKeyID { get; set; }
-        public string SecretAccessKey { get; set; }
-        public string Endpoint { get; set; }
-        public string Bucket { get; set; }
-        public string ObjectPrefix { get; set; }
-        public bool UseCustomCNAME { get; set; }
-        public string CustomDomain { get; set; }
-        public bool UseReducedRedundancyStorage { get; set; }
     }
 }
