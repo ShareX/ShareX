@@ -79,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
             cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
 
             // VPx
-            nudVPxCRF.Value = Options.FFmpeg.VPx_CRF.Between((int)nudVPxCRF.Minimum, (int)nudVPxCRF.Maximum);
+            nudVP8Bitrate.Value = Options.FFmpeg.VPx_bitrate.Between((int)nudVP8Bitrate.Minimum, (int)nudVP8Bitrate.Maximum);
 
             // Xvid
             nudQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
@@ -227,9 +227,9 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void nudVPxCRF_ValueChanged(object sender, EventArgs e)
+        private void nudVP8Bitrate_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.VPx_CRF = (int)nudVPxCRF.Value;
+            Options.FFmpeg.VPx_bitrate = (int)nudVP8Bitrate.Value;
             UpdateUI();
         }
 

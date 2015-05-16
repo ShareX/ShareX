@@ -35,7 +35,6 @@
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.nudQscale = new System.Windows.Forms.NumericUpDown();
-            this.nudVPxCRF = new System.Windows.Forms.NumericUpDown();
             this.cbPreset = new System.Windows.Forms.ComboBox();
             this.tbVorbis_qscale = new System.Windows.Forms.TrackBar();
             this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
@@ -57,7 +56,9 @@
             this.tcFFmpegVideoCodecs = new System.Windows.Forms.TabControl();
             this.tpX264 = new System.Windows.Forms.TabPage();
             this.tpVpx = new System.Windows.Forms.TabPage();
-            this.lblVpxCRF = new System.Windows.Forms.Label();
+            this.lblVP8BitrateK = new System.Windows.Forms.Label();
+            this.nudVP8Bitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblVP8Bitrate = new System.Windows.Forms.Label();
             this.tpXvid = new System.Windows.Forms.TabPage();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCopyPreview = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
@@ -93,6 +93,7 @@
             this.tcFFmpegVideoCodecs.SuspendLayout();
             this.tpX264.SuspendLayout();
             this.tpVpx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVP8Bitrate)).BeginInit();
             this.tpXvid.SuspendLayout();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpAAC.SuspendLayout();
@@ -161,28 +162,6 @@
             0,
             0});
             this.nudQscale.ValueChanged += new System.EventHandler(this.nudQscale_ValueChanged);
-            // 
-            // nudVPxCRF
-            // 
-            resources.ApplyResources(this.nudVPxCRF, "nudVPxCRF");
-            this.nudVPxCRF.Maximum = new decimal(new int[] {
-            63,
-            0,
-            0,
-            0});
-            this.nudVPxCRF.Minimum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.nudVPxCRF.Name = "nudVPxCRF";
-            this.ttHelpTip.SetToolTip(this.nudVPxCRF, resources.GetString("nudVPxCRF.ToolTip"));
-            this.nudVPxCRF.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.nudVPxCRF.ValueChanged += new System.EventHandler(this.nudVPxCRF_ValueChanged);
             // 
             // cbPreset
             // 
@@ -347,16 +326,48 @@
             // 
             // tpVpx
             // 
-            this.tpVpx.Controls.Add(this.nudVPxCRF);
-            this.tpVpx.Controls.Add(this.lblVpxCRF);
+            this.tpVpx.Controls.Add(this.lblVP8BitrateK);
+            this.tpVpx.Controls.Add(this.nudVP8Bitrate);
+            this.tpVpx.Controls.Add(this.lblVP8Bitrate);
             resources.ApplyResources(this.tpVpx, "tpVpx");
             this.tpVpx.Name = "tpVpx";
             this.tpVpx.UseVisualStyleBackColor = true;
             // 
-            // lblVpxCRF
+            // lblVP8BitrateK
             // 
-            resources.ApplyResources(this.lblVpxCRF, "lblVpxCRF");
-            this.lblVpxCRF.Name = "lblVpxCRF";
+            resources.ApplyResources(this.lblVP8BitrateK, "lblVP8BitrateK");
+            this.lblVP8BitrateK.Name = "lblVP8BitrateK";
+            // 
+            // nudVP8Bitrate
+            // 
+            this.nudVP8Bitrate.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudVP8Bitrate, "nudVP8Bitrate");
+            this.nudVP8Bitrate.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudVP8Bitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudVP8Bitrate.Name = "nudVP8Bitrate";
+            this.nudVP8Bitrate.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudVP8Bitrate.ValueChanged += new System.EventHandler(this.nudVP8Bitrate_ValueChanged);
+            // 
+            // lblVP8Bitrate
+            // 
+            resources.ApplyResources(this.lblVP8Bitrate, "lblVP8Bitrate");
+            this.lblVP8Bitrate.Name = "lblVP8Bitrate";
             // 
             // tpXvid
             // 
@@ -549,7 +560,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQscale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudVPxCRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
@@ -564,6 +574,7 @@
             this.tpX264.PerformLayout();
             this.tpVpx.ResumeLayout(false);
             this.tpVpx.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVP8Bitrate)).EndInit();
             this.tpXvid.ResumeLayout(false);
             this.tpXvid.PerformLayout();
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
@@ -607,8 +618,6 @@
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;
         private System.Windows.Forms.TabPage tpXvid;
-        private System.Windows.Forms.NumericUpDown nudVPxCRF;
-        private System.Windows.Forms.Label lblVpxCRF;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnCopyPreview;
         private System.Windows.Forms.TabControl tcFFmpegAudioCodecs;
@@ -635,5 +644,8 @@
         private System.Windows.Forms.Button btnHelp;
         private ShareX.HelpersLib.ExportImportControl eiFFmpeg;
         private System.Windows.Forms.TextBox txtExtension;
+        private System.Windows.Forms.Label lblVP8BitrateK;
+        private System.Windows.Forms.NumericUpDown nudVP8Bitrate;
+        private System.Windows.Forms.Label lblVP8Bitrate;
     }
 }

@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
         public int x264_CRF { get; set; }
 
         // H.264 - VPx
-        public int VPx_CRF { get; set; }
+        public int VPx_bitrate { get; set; }  // kbit/s
 
         // H.263
         public int XviD_qscale { get; set; }
@@ -97,7 +97,7 @@ namespace ShareX.ScreenCaptureLib
             Preset = FFmpegPreset.fast;
 
             // VPx
-            VPx_CRF = 12;
+            VPx_bitrate = 1000;
 
             // XviD
             XviD_qscale = 3;

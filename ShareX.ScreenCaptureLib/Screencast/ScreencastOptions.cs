@@ -138,21 +138,22 @@ namespace ShareX.ScreenCaptureLib
 
             if (FFmpeg.IsVideoSourceSelected)
             {
-                args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec.ToString());
+                args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec);
                 args.AppendFormat("-r {0} ", fps); // output FPS
 
                 switch (FFmpeg.VideoCodec)
                 {
-                    case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/x264EncodingGuide
+                    case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
                         args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
-                        args.AppendFormat("-preset {0} ", FFmpeg.Preset.ToString());
+                        args.AppendFormat("-preset {0} ", FFmpeg.Preset);
                         args.AppendFormat("-tune {0} ", "zerolatency");
                         args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                         break;
-                    case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/vpxEncodingGuide
-                        args.AppendFormat("-crf {0} ", FFmpeg.VPx_CRF);
+                    case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
+                        args.AppendFormat("-deadline {0} ", "realtime");
+                        args.AppendFormat("-b:v {0}K ", FFmpeg.VPx_bitrate);
                         break;
-                    case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/How%20to%20encode%20Xvid%20/%20DivX%20video%20with%20ffmpeg
+                    case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                         args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
                         break;
                 }
@@ -162,14 +163,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 switch (FFmpeg.AudioCodec)
                 {
-                    case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/AACEncodingGuide
+                    case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/Encode/AAC
                         args.AppendFormat("-c:a libvo_aacenc -ac 2 -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
                         break;
                     case FFmpegAudioCodec.libvorbis: // http://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
-                        args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libvorbis.ToString(), FFmpeg.Vorbis_qscale);
+                        args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libvorbis, FFmpeg.Vorbis_qscale);
                         break;
-                    case FFmpegAudioCodec.libmp3lame: // http://trac.ffmpeg.org/wiki/Encoding%20VBR%20(Variable%20Bit%20Rate)%20mp3%20audio
-                        args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libmp3lame.ToString(), FFmpeg.MP3_qscale);
+                    case FFmpegAudioCodec.libmp3lame: // http://trac.ffmpeg.org/wiki/Encode/MP3
+                        args.AppendFormat("-c:a {0} -qscale:a {1} ", FFmpegAudioCodec.libmp3lame, FFmpeg.MP3_qscale);
                         break;
                 }
             }
