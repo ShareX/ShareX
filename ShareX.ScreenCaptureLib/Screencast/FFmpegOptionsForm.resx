@@ -173,6 +173,9 @@
   <data name="&gt;&gt;lblX264CRF.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="nudx264CRF.Location" type="System.Drawing.Point, System.Drawing">
     <value>48, 12</value>
   </data>
@@ -186,9 +189,6 @@
   <data name="nudx264CRF.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): The range of the quantizer scale is 0-51: where 0 is lossless, 23 is default, and 51 is worst possible.
 A lower value is a higher quality and a subjectively sane range is 18-28.
@@ -209,6 +209,9 @@ If the output looks good, then try a higher value and if it looks bad then choos
   <data name="&gt;&gt;nudx264CRF.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="nudQscale.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 12</value>
   </data>
@@ -446,6 +449,66 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;lblQscale.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;btnDownload.Name" xml:space="preserve">
+    <value>btnDownload</value>
+  </data>
+  <data name="&gt;&gt;btnDownload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDownload.Parent" xml:space="preserve">
+    <value>gbFFmpegExe</value>
+  </data>
+  <data name="&gt;&gt;btnDownload.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnFFmpegBrowse.Name" xml:space="preserve">
+    <value>btnFFmpegBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnFFmpegBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFFmpegBrowse.Parent" xml:space="preserve">
+    <value>gbFFmpegExe</value>
+  </data>
+  <data name="&gt;&gt;btnFFmpegBrowse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtFFmpegPath.Name" xml:space="preserve">
+    <value>txtFFmpegPath</value>
+  </data>
+  <data name="&gt;&gt;txtFFmpegPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFFmpegPath.Parent" xml:space="preserve">
+    <value>gbFFmpegExe</value>
+  </data>
+  <data name="&gt;&gt;txtFFmpegPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbFFmpegExe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbFFmpegExe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 56</value>
+  </data>
+  <data name="gbFFmpegExe.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>ffmpeg.exe</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.Name" xml:space="preserve">
+    <value>gbFFmpegExe</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="btnDownload.Location" type="System.Drawing.Point, System.Drawing">
     <value>552, 22</value>
   </data>
@@ -515,29 +578,56 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;txtFFmpegPath.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="gbFFmpegExe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+  <data name="&gt;&gt;cbCustomCommands.Name" xml:space="preserve">
+    <value>cbCustomCommands</value>
   </data>
-  <data name="gbFFmpegExe.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 56</value>
+  <data name="&gt;&gt;cbCustomCommands.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gbFFmpegExe.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;cbCustomCommands.Parent" xml:space="preserve">
+    <value>gbCommandLinePreview</value>
+  </data>
+  <data name="&gt;&gt;cbCustomCommands.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>ffmpeg.exe</value>
+  <data name="&gt;&gt;txtCommandLinePreview.Name" xml:space="preserve">
+    <value>txtCommandLinePreview</value>
   </data>
-  <data name="&gt;&gt;gbFFmpegExe.Name" xml:space="preserve">
-    <value>gbFFmpegExe</value>
+  <data name="&gt;&gt;txtCommandLinePreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbFFmpegExe.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtCommandLinePreview.Parent" xml:space="preserve">
+    <value>gbCommandLinePreview</value>
+  </data>
+  <data name="&gt;&gt;txtCommandLinePreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbCommandLinePreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 345</value>
+  </data>
+  <data name="gbCommandLinePreview.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>8, 8, 8, 8</value>
+  </data>
+  <data name="gbCommandLinePreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 96</value>
+  </data>
+  <data name="gbCommandLinePreview.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="gbCommandLinePreview.Text" xml:space="preserve">
+    <value>Command line preview</value>
+  </data>
+  <data name="&gt;&gt;gbCommandLinePreview.Name" xml:space="preserve">
+    <value>gbCommandLinePreview</value>
+  </data>
+  <data name="&gt;&gt;gbCommandLinePreview.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbFFmpegExe.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbCommandLinePreview.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;gbFFmpegExe.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;gbCommandLinePreview.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="cbCustomCommands.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -599,32 +689,53 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;txtCommandLinePreview.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="gbCommandLinePreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 345</value>
+  <data name="&gt;&gt;btnFFmpegHelp.Name" xml:space="preserve">
+    <value>btnFFmpegHelp</value>
   </data>
-  <data name="gbCommandLinePreview.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>8, 8, 8, 8</value>
+  <data name="&gt;&gt;btnFFmpegHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gbCommandLinePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 96</value>
+  <data name="&gt;&gt;btnFFmpegHelp.Parent" xml:space="preserve">
+    <value>gbCommandLineArgs</value>
   </data>
-  <data name="gbCommandLinePreview.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;btnFFmpegHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Command line preview</value>
+  <data name="&gt;&gt;tbUserArgs.Name" xml:space="preserve">
+    <value>tbUserArgs</value>
   </data>
-  <data name="&gt;&gt;gbCommandLinePreview.Name" xml:space="preserve">
-    <value>gbCommandLinePreview</value>
+  <data name="&gt;&gt;tbUserArgs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbCommandLinePreview.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbUserArgs.Parent" xml:space="preserve">
+    <value>gbCommandLineArgs</value>
+  </data>
+  <data name="&gt;&gt;tbUserArgs.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbCommandLineArgs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 276</value>
+  </data>
+  <data name="gbCommandLineArgs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 56</value>
+  </data>
+  <data name="gbCommandLineArgs.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="gbCommandLineArgs.Text" xml:space="preserve">
+    <value>Additional command line arguments</value>
+  </data>
+  <data name="&gt;&gt;gbCommandLineArgs.Name" xml:space="preserve">
+    <value>gbCommandLineArgs</value>
+  </data>
+  <data name="&gt;&gt;gbCommandLineArgs.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbCommandLinePreview.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbCommandLineArgs.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;gbCommandLinePreview.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;gbCommandLineArgs.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="btnFFmpegHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -677,30 +788,6 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;tbUserArgs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="gbCommandLineArgs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 276</value>
-  </data>
-  <data name="gbCommandLineArgs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 56</value>
-  </data>
-  <data name="gbCommandLineArgs.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Additional command line arguments</value>
-  </data>
-  <data name="&gt;&gt;gbCommandLineArgs.Name" xml:space="preserve">
-    <value>gbCommandLineArgs</value>
-  </data>
-  <data name="&gt;&gt;gbCommandLineArgs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbCommandLineArgs.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbCommandLineArgs.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="tpX264.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -738,13 +825,13 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>172, 16</value>
   </data>
   <data name="lblVP8BitrateK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 13</value>
+    <value>34, 13</value>
   </data>
   <data name="lblVP8BitrateK.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>K</value>
+    <value>kbit/s</value>
   </data>
   <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
     <value>lblVP8BitrateK</value>
@@ -926,20 +1013,62 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;btnCopyPreview.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="lblAACQuality.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;tpAAC.Name" xml:space="preserve">
+    <value>tpAAC</value>
   </data>
-  <data name="lblAACQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 16</value>
+  <data name="&gt;&gt;tpAAC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblAACQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+  <data name="&gt;&gt;tpAAC.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
   </data>
-  <data name="lblAACQuality.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tpAAC.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
+  <data name="&gt;&gt;tpVorbis.Name" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Name" xml:space="preserve">
+    <value>tpMP3</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcFFmpegAudioCodecs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 200</value>
+  </data>
+  <data name="tcFFmpegAudioCodecs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 68</value>
+  </data>
+  <data name="tcFFmpegAudioCodecs.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.Name" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lblAACQuality.Name" xml:space="preserve">
     <value>lblAACQuality</value>
@@ -980,20 +1109,32 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;tpAAC.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblAACQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblAACQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
   </data>
-  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+  <data name="lblAACQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
   </data>
-  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblAACQuality.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Quality:</value>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.Name" xml:space="preserve">
+    <value>lblAACQuality</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.Parent" xml:space="preserve">
+    <value>tpAAC</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
     <value>lblVorbisQuality</value>
@@ -1034,20 +1175,32 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;tpVorbis.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblMP3Quality.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
   </data>
-  <data name="lblMP3Quality.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
   </data>
-  <data name="lblMP3Quality.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Quality:</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
+    <value>lblVorbisQuality</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Parent" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblMP3Quality.Name" xml:space="preserve">
     <value>lblMP3Quality</value>
@@ -1088,26 +1241,32 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;tpMP3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tcFFmpegAudioCodecs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 200</value>
+  <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="tcFFmpegAudioCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 68</value>
+  <data name="lblMP3Quality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 16</value>
   </data>
-  <data name="tcFFmpegAudioCodecs.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="lblMP3Quality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
   </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.Name" xml:space="preserve">
-    <value>tcFFmpegAudioCodecs</value>
+  <data name="lblMP3Quality.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Quality:</value>
   </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;lblMP3Quality.Name" xml:space="preserve">
+    <value>lblMP3Quality</value>
   </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;lblMP3Quality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMP3Quality.Parent" xml:space="preserve">
+    <value>tpMP3</value>
+  </data>
+  <data name="&gt;&gt;lblMP3Quality.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cboVideoSource.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 25</value>
@@ -1253,18 +1412,6 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;lblAudioCodec.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnRefreshSources.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="btnRefreshSources.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="btnRefreshSources.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
   <data name="&gt;&gt;btnRefreshSources.Name" xml:space="preserve">
     <value>btnRefreshSources</value>
   </data>
@@ -1301,14 +1448,29 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="txtExtension.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 22</value>
+  <data name="btnRefreshSources.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
   </data>
-  <data name="txtExtension.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+  <data name="btnRefreshSources.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
   </data>
-  <data name="txtExtension.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="btnRefreshSources.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.Name" xml:space="preserve">
+    <value>btnRefreshSources</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtExtension.Name" xml:space="preserve">
     <value>txtExtension</value>
@@ -1345,6 +1507,27 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="&gt;&gt;gbCodecs.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="txtExtension.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 22</value>
+  </data>
+  <data name="txtExtension.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="txtExtension.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtExtension.Name" xml:space="preserve">
+    <value>txtExtension</value>
+  </data>
+  <data name="&gt;&gt;txtExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtExtension.Parent" xml:space="preserve">
+    <value>gbCodecs</value>
+  </data>
+  <data name="&gt;&gt;txtExtension.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cbShowError.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

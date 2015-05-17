@@ -71,6 +71,13 @@ namespace ShareX
         private void AfterShownJobs()
         {
             this.ShowActivate();
+
+            if (Program.Settings != null && Program.Settings.ShowTrayMiddleClickTip && niTray.Visible && Program.Settings.TrayMiddleClickAction == HotkeyType.RectangleRegion)
+            {
+                niTray.ShowBalloonTip(5000, "ShareX - " + Resources.MainForm_AfterShownJobs_Tip,
+                    Resources.MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_, ToolTipIcon.Info);
+                Program.Settings.ShowTrayMiddleClickTip = false;
+            }
         }
 
         private void InitControls()
