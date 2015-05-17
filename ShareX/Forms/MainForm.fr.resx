@@ -182,13 +182,13 @@
     <value>250, 22</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Rectangle (simple)</value>
+    <value>Rectangle (Simple)</value>
   </data>
   <data name="tsmiRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>Rectangle arrondi</value>
+    <value>Rectangle (Arrondi)</value>
   </data>
   <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -302,7 +302,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Check Hash...</value>
+    <value>Vérifier un Hash...</value>
   </data>
   <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -365,31 +365,31 @@
     <value>212, 20</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Après les tâche de mise en ligne</value>
+    <value>Après les tâches de mise en ligne</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mis en ligne d'image</value>
+    <value>Logiciels de mise en ligne d'images</value>
   </data>
   <data name="tsmiTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de texte</value>
+    <value>Logiciels de mise en ligne de textes</value>
   </data>
   <data name="tsmiFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne des fichiers</value>
+    <value>Logiciels de mise en ligne de fichiers</value>
   </data>
   <data name="tsmiURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>Raccourcisseurs URL</value>
+    <value>Raccourcisseurs d'URL</value>
   </data>
   <data name="tsmiURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
@@ -488,7 +488,7 @@
     <value>212, 20</value>
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
-    <value>Déboger</value>
+    <value>Déboguer</value>
   </data>
   <data name="tsmiDonate.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 20</value>
@@ -524,7 +524,7 @@
     <value>179, 22</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>URL raccourcie</value>
+    <value>URL raccourci</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
@@ -536,7 +536,7 @@
     <value>179, 22</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>Suppression URL</value>
+    <value>Suppression d'URL</value>
   </data>
   <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 6</value>
@@ -572,7 +572,7 @@
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>URL raccourcie</value>
+    <value>URL raccourci</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 22</value>
@@ -815,13 +815,13 @@
     <value>250, 22</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Rectangle (simple)</value>
+    <value>Rectangle (Simple)</value>
   </data>
   <data name="tsmiTrayRoundedRectangle.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>Rectangle arrondi</value>
+    <value>Rectangle (Arrondi)</value>
   </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -935,7 +935,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Check Hash...</value>
+    <value>Vérifier un  Hash...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1004,19 +1004,19 @@
     <value>271, 22</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mis en ligne d'image</value>
+    <value>Logiciels de mise en ligne d'images</value>
   </data>
   <data name="tsmiTrayTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de texte</value>
+    <value>Logiciels de mise en ligne de textes</value>
   </data>
   <data name="tsmiTrayFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne des fichiers</value>
+    <value>Logiciels de mise en ligne de fichiers</value>
   </data>
   <data name="tsmiTrayURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
@@ -1079,7 +1079,7 @@
     <value>252, 22</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
-    <value>Historique d'image...</value>
+    <value>Historique des images...</value>
   </data>
   <data name="tsmiTrayDonate.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>

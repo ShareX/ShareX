@@ -126,7 +126,7 @@
     <value>Serveur DNS auxiliaire:</value>
   </data>
   <data name="lblDNS.Text" xml:space="preserve">
-    <value>Servers DNS</value>
+    <value>Serveurs DNS</value>
   </data>
   <data name="lblAdapters.Text" xml:space="preserve">
     <value>Les cartes réseau:</value>

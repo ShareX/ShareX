@@ -126,7 +126,7 @@
     <value>Luminosité:</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Abandon</value>
+    <value>Annuler</value>
   </data>
   <data name="lblCyan.Text" xml:space="preserve">
     <value>Cyan:</value>
@@ -162,7 +162,7 @@
     <value>Jaune:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Slectionneur de couleur</value>
+    <value>ShareX - Sélectionneur de couleur</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Saturation:</value>

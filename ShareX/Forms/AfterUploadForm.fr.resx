@@ -135,7 +135,7 @@
     <value>Ouvrir le fichier...</value>
   </data>
   <data name="btnOpenFolder.Text" xml:space="preserve">
-    <value>Ouvrir le répetoire...</value>
+    <value>Ouvrir le répertoire...</value>
   </data>
   <data name="btnOpenLink.Text" xml:space="preserve">
     <value>Ouvrir le lien...</value>

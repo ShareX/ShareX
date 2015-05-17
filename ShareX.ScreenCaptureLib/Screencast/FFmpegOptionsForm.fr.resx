@@ -139,17 +139,17 @@
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constante Factor (CRF): La gamme de l'échelle de quantification est 0-51: où 0 est sans perte, 23 est par défaut, et 51 est le pire possible.
-Une valeur plus faible est d'une qualité supérieure et une gamme subjectivement saine est 18-28.
-Considérez 18 pour être visuellement sans perte ou presque: il devrait ressembler à la même ou presque à la même que l'entrée mais il n' est pas techniquement sans perte.
-La gamme est exponentielle, augmentant ainsi la valeur CRF 6 est environ la moitié le débit tout en -6 est environ deux fois le débit binaire.
-L'utilisation générale est de choisir la valeur la plus haute CRF qui fournit toujours une qualité acceptable.
+Une valeur plus faible est une qualité supérieure et une gamme subjectivement saine est 18-28.
+Considérez 18 comme étant visuellement sans perte ou presque: il devrait ressembler à la même chose ou presque que l'entrée mais il n'est techniquement pas sans perte.
+La gamme est exponentielle, augmentant ainsi la valeur CRF 6 est environ la moitié du débit tandis que -6 est environ deux fois le débit binaire.
+L'utilisation générale est de choisir la valeur CRF la plus haute qui fournit toujours une qualité acceptable.
 Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauvaise, choisissez une valeur inférieure.</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copie</value>
   </data>
   <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>CRF valeur peut être de 4 à 63 et 10 est un bon point de départ. Des valeurs plus faibles signifient une meilleure qualité.</value>
+    <value>La valeur CRF peut aller de 4 à 63, 10 est un bon point de départ. Des valeurs plus faibles signifient une meilleure qualité.</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>128k par défaut</value>
@@ -179,7 +179,7 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
     <value>Rafraîchir</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Range est 0-10, 10 étant la plus haute qualité. 3-6 est un bon choix pour essayer. Par défaut est 3.</value>
+    <value>Range est 0-10, 10 étant la plus haute qualité. 3-6 est un bon choix pour essayer. Par défaut : 3.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>Range est 0-9 où une valeur inférieure est une qualité supérieure. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle, et 6 produit une qualité «acceptable».</value>
@@ -200,13 +200,13 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
     <value>Sources</value>
   </data>
   <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Le défaut est "Medium".
-Un préréglage est une collection d'options qui fourniront une certaine vitesse d'encodage à taux de compression. Un préréglage lent fournira une meilleure compression (compression est par la qualité de taille du fichier).
-Cela signifie que, par exemple, si vous ciblez une taille de fichier certaine ou débit binaire constant, vous obtiendrez une meilleure qualité avec une présélection plus lent.
-De même, pour l'encodage de qualité constante, vous aurez simplement à sauver débit en choisissant un préréglage plus lent.</value>
+    <value>Le réglage par défaut est "Medium".
+Un préréglage est une collection d'options qui fourniront une certaine vitesse d'encodage au taux de compression. Un préréglage lent fournira une meilleure compression (la compression est la qualité par la taille du fichier).
+Cela signifie que, par exemple, si vous ciblez une certaine taille de fichier ou un débit binaire constant, vous obtiendrez une meilleure qualité avec une présélection plus lente.
+De même, pour l'encodage de qualité constante, vous aurez simplement à sauvegarder le débit en choisissant un préréglage plus lent.</value>
   </data>
   <data name="lblQscale.Text" xml:space="preserve">
-    <value>Bit rate variable:</value>
+    <value>Bitrate variable:</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utiliser des commandes personnalisées</value>

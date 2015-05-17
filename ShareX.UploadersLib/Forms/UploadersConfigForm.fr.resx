@@ -139,7 +139,7 @@
     <value>Ajouter un répertoire</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>ID album pour la mise en ligne (Vide = Aucun album mis en ligne):</value>
+    <value>ID de l'album pour la mise en ligne (Vide = Aucun album mis en ligne):</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
     <value>Clé API:</value>
@@ -187,7 +187,7 @@
     <value>Créer une  URL partageable</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Créer une  URL partageable</value>
+    <value>Créer une URL partageable</value>
   </data>
   <data name="chkGistPublishPublic.Text" xml:space="preserve">
     <value>Créer Gist publique</value>
@@ -196,7 +196,7 @@
     <value>Domaine personnalisé:</value>
   </data>
   <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne personnalisé</value>
+    <value>Logiciels de mise en ligne personnalisés</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
     <value>Nom de l'album par défaut</value>
@@ -265,10 +265,10 @@
     <value>Nom du fichier de formulaire:</value>
   </data>
   <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des fichiers:</value>
+    <value>Logiciel de mise en ligne de fichiers:</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des fichiers</value>
+    <value>Logiciel de mise en ligne de fichiers</value>
   </data>
   <data name="lblFtpFiles.Text" xml:space="preserve">
     <value>Fichier:</value>
@@ -295,16 +295,16 @@
     <value>Hôte:</value>
   </data>
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si vous utilisez le répertoire «Public», une url partageable est déjà générée. Vous ne avez pas besoin de cliquer "Créer URL partageable".</value>
+    <value>Si vous utilisez le répertoire «Public», une url partageable est déjà générée. Vous n'avez pas besoin de cliquer sur "Créer URL partageable".</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorer certificat SSL invalide</value>
   </data>
   <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Logiciel de mis en ligne d'image:</value>
+    <value>Logiciel de mis en ligne d'images:</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mis en ligne d'image</value>
+    <value>Logiciels de mis en ligne d'images</value>
   </data>
   <data name="lblFtpImages.Text" xml:space="preserve">
     <value>Image:</value>
@@ -313,13 +313,13 @@
     <value>Image:</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Est ce une mise en ligne publique?</value>
+    <value>Est-ce une mise en ligne publique?</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
-    <value>Est ce une mise en ligne publique?</value>
+    <value>Est-ce une mise en ligne publique?</value>
   </data>
   <data name="cbUpasteIsPublic.Text" xml:space="preserve">
-    <value>Est ce une mise en ligne publique?</value>
+    <value>Est-ce une mise en ligne publique?</value>
   </data>
   <data name="lblJiraHost.Text" xml:space="preserve">
     <value>Hôte Jira:</value>
@@ -361,7 +361,7 @@
     <value>Nom</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Nouveau nom de l'album (doit être comprise entre 2 et 50 caractères Les caractères valides sont les lettres, de chiffres, de soulignement (_), tiret (-)., Et de l'espace)</value>
+    <value>Nouveau nom de l'album (Doit être compris entre 2 et 50 caractères. Les caractères valides sont les lettres, les chiffres, les soulignements (_), les tirets (-) et les espaces)</value>
   </data>
   <data name="lblPastebinPassword.Text" xml:space="preserve">
     <value>Mot de passe:</value>
@@ -400,7 +400,7 @@
     <value>Mot de passe:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Remarque: Si vous avez une signature, alors vous ne avez pas besoin d'un nom d'utilisateur / mot de passe.</value>
+    <value>Remarque: Si vous avez une signature, alors vous n'avez pas besoin d'un nom d'utilisateur / mot de passe.</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
     <value>Note: Vous pouvez double-cliquer sur le nom du répertoire pour aller dedans.</value>
@@ -430,10 +430,10 @@
     <value>Valeur</value>
   </data>
   <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>Utiliser lien direct</value>
+    <value>Utiliser le lien direct</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Utiliser URL directe si elle existe</value>
+    <value>Utiliser l'URL directe si elle existe</value>
   </data>
   <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
     <value>Compte d'utilisateur</value>
@@ -544,7 +544,7 @@
     <value>Répertoire selectionné:</value>
   </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
-    <value>Selectionner...</value>
+    <value>Sélectionner...</value>
   </data>
   <data name="btnFlickrOpenImages.Text" xml:space="preserve">
     <value>Votre photostream...</value>
@@ -553,7 +553,7 @@
     <value>Vous pouvez trouver votre clé API et UID ici</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>clé API: de l'utilisateur</value>
+    <value>clé API de l'utilisateur</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
     <value>clé API de l'utilisateur:</value>
@@ -646,10 +646,10 @@
     <value>Modèle</value>
   </data>
   <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des Textes:</value>
+    <value>Logiciel de mise en ligne de textes:</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des Textes</value>
+    <value>Logiciel de mise en ligne de textes</value>
   </data>
   <data name="lblMediaFirePath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne</value>
@@ -676,15 +676,15 @@
     <value>Type d'URL:</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Code de vérification (Obtenir le code de vérification de la page d' autorisation):</value>
+    <value>Code de vérification (Obtenir le code de vérification de la page d'autorisation):</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
     <value>Clé de l'utilisateur:</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>Utilisez cette option si vous avez un  tampon mis en place avec un nom de domaine personnalisé.
+    <value>Utilisez cette option si vous avez un tampon mis en place avec un nom de domaine personnalisé.
 Si le champ de texte est vide, le nom de tampon sera utilisé pour l'URL.
-Par exemple, si votre tampon est appelé tampon .example.com puis URL sera http: //tampon .example.com / ...</value>
+Par exemple, si votre tampon est appelé tampon .example.com alors l'URL sera http: //tampon .example.com / ...</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Mettre en ligne des fichiers vers le répertoire sélectionné</value>

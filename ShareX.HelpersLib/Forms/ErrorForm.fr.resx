@@ -131,7 +131,7 @@ Erreur 2</value>
     <value>Ouvrir le fichier journal</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Envoyer le rapport de bug</value>
+    <value>Envoyer le rapport d'erreur</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Erreur</value>

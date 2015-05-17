@@ -127,7 +127,7 @@
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Il existe déjà un fichier avec le même nom à cet endroit.
- Sélectionnez nouveau nom ou une action:</value>
+ Sélectionnez un nouveau nom ou une action:</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
     <value>Utiliser un nom unique:</value>

@@ -120,7 +120,7 @@
     <value>Paramètres:</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Abandon</value>
+    <value>Annuler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Programme d'encodage</value>

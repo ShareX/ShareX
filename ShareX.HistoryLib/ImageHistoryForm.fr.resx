@@ -120,7 +120,7 @@
     <value>Gallerie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Historique d'image</value>
+    <value>Historique d'images</value>
   </data>
   <data name="tsddbViewMode.Text" xml:space="preserve">
     <value>Mode de vue</value>
