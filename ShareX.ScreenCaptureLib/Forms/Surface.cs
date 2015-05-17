@@ -54,8 +54,9 @@ namespace ShareX.ScreenCaptureLib
         protected Pen borderPen, borderDotPen, textBackgroundPenWhite, textBackgroundPenBlack;
         protected Brush nodeBackgroundBrush, textBackgroundBrush;
         protected Font textFont, infoFont;
-        protected Stopwatch timer;
+        protected Stopwatch timerStart, timerFPS;
         protected int frameCount;
+        protected bool isKeyAllowed;
 
         public static GraphicsPath LastRegionFillPath, LastRegionDrawPath;
 
@@ -73,7 +74,8 @@ namespace ShareX.ScreenCaptureLib
 
             DrawableObjects = new List<DrawableObject>();
             Config = new SurfaceOptions();
-            timer = new Stopwatch();
+            timerStart = new Stopwatch();
+            timerFPS = new Stopwatch();
 
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White);
@@ -151,19 +153,26 @@ namespace ShareX.ScreenCaptureLib
 
         private void Surface_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            if (!isKeyAllowed && timerStart.ElapsedMilliseconds < 1000)
             {
-                MonitorKey(e.KeyCode - Keys.D0);
                 return;
             }
 
-            if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            isKeyAllowed = true;
+
+            if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
             {
-                MonitorKey(e.KeyCode - Keys.NumPad0);
+                MonitorKey(e.KeyData - Keys.D0);
                 return;
             }
 
-            switch (e.KeyCode)
+            if (e.KeyData >= Keys.NumPad0 && e.KeyData <= Keys.NumPad9)
+            {
+                MonitorKey(e.KeyData - Keys.NumPad0);
+                return;
+            }
+
+            switch (e.KeyData)
             {
                 case Keys.Escape:
                     Close(SurfaceResult.Close);
@@ -243,7 +252,11 @@ namespace ShareX.ScreenCaptureLib
 
         protected new virtual void Update()
         {
-            if (!timer.IsRunning) timer.Start();
+            if (!timerStart.IsRunning)
+            {
+                timerStart.Start();
+                timerFPS.Start();
+            }
 
             InputManager.Update();
 
@@ -288,7 +301,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            borderDotPen.DashOffset = (float)timer.Elapsed.TotalSeconds * 10;
+            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * 10;
         }
 
         protected virtual void Draw(Graphics g)
@@ -311,12 +324,12 @@ namespace ShareX.ScreenCaptureLib
         {
             frameCount++;
 
-            if (timer.ElapsedMilliseconds >= 1000)
+            if (timerFPS.ElapsedMilliseconds >= 1000)
             {
-                FPS = (int)(frameCount / timer.Elapsed.TotalSeconds);
+                FPS = (int)(frameCount / timerFPS.Elapsed.TotalSeconds);
                 frameCount = 0;
-                timer.Reset();
-                timer.Start();
+                timerFPS.Reset();
+                timerFPS.Start();
             }
         }
 
