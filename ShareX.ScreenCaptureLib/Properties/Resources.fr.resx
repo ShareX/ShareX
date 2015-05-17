@@ -127,7 +127,7 @@
     <value>Ctrl: le mode Dessin ░ Espace: la capture plein écran</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: mode Région ░ Maj: couleur Pen ░ molette de la souris: la taille Pen ░ Espace: la capture plein écran</value>
+    <value>Ctrl: mode Région ░ Maj: couleur Pen ░ Molette de la souris: la taille Pen ░ Espace: la capture plein écran</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Echec du télechargement de FFmpeg</value>

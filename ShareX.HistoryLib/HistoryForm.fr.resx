@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Appliqure les filtres</value>
+    <value>Appliquer les filtres</value>
   </data>
   <data name="cbFilenameFilterCase.Text" xml:space="preserve">
     <value>Sensible aux majuscules et minuscules</value>
@@ -183,7 +183,7 @@
     <value>Supprimer les filtres</value>
   </data>
   <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Démarré avec</value>
+    <value>Démarrer avec</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>A:</value>

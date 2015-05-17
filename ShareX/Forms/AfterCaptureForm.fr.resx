@@ -120,7 +120,7 @@
     <value>Après la capture</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Abandon</value>
+    <value>Annuler</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Avant la mise en ligne</value>

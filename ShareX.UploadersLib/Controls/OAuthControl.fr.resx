@@ -135,6 +135,6 @@
     <value>Étape 2: autorisation complète</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>Code de vérification (Obtenir le code de vérification de la page d' autorisation):</value>
+    <value>Code de vérification (Obtenir le code de vérification de la page d'autorisation):</value>
   </data>
 </root>

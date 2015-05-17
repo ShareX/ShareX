@@ -129,7 +129,7 @@
     <value>Console</value>
   </data>
   <data name="copyURLsToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copier l'URL(s) dans le presse-papiers</value>
+    <value>Copier l'URL dans le presse-papier</value>
   </data>
   <data name="createDirectoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer le répertoire</value>

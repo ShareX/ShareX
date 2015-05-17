@@ -117,19 +117,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Export</value>
+    <value>Exporter</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Import</value>
+    <value>Importer</value>
   </data>
   <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Copier dans le presse-papiers</value>
+    <value>Copier dans le presse-papier</value>
   </data>
   <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Depuis URL...</value>
+    <value>Depuis une URL...</value>
   </data>
   <data name="tsmiImportFile.Text" xml:space="preserve">
-    <value>Depuis fichier...</value>
+    <value>Depuis un fichier...</value>
   </data>
   <data name="tsmiImportClipboard.Text" xml:space="preserve">
     <value>Depuis le presse-papier</value>

@@ -178,7 +178,7 @@
     <value>Extensions</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des fichiers</value>
+    <value>Logiciels de mise en ligne de fichiers</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>Filtre</value>
@@ -205,7 +205,7 @@
     <value>Si le presse-papier contient une URL de fichier alors télécharger et mettre en ligne</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>Si le presse-papier contient chemin de répertoire alors indexer ce répertoire et mettre en ligne l'index</value>
+    <value>Si le presse-papier contient un chemin de répertoire alors indexer ce répertoire et mettre en ligne l'index</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Si le presse-papier contient une URL alors la partager en utilisant le service de partage de URL</value>
@@ -232,7 +232,7 @@
     <value>Taille limite d'image pour l'utilisation de "Format d'image 2:"</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mis en ligne d'image</value>
+    <value>Logiciels de mise en ligne d'images</value>
   </data>
   <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
     <value>Inclure les sous-répertoires</value>
@@ -328,7 +328,7 @@
     <value>Décalage de l'ombre</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configurations de la tache</value>
+    <value>ShareX - Configurations de la tâche</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>Afficher les effets sur la fenêtre de l'image après la capture</value>
@@ -337,7 +337,7 @@
     <value>Afficher la fenêtre "Après téléchargement" après que la tâche soit terminée</value>
   </data>
   <data name="chkShowBeforeUploadForm.Text" xml:space="preserve">
-    <value>Afficher la fenêtre "Avant de téléchargement" pour changer dynamiquement la destination avant la mise en ligne</value>
+    <value>Afficher la fenêtre "Avant téléchargement" pour changer dynamiquement la destination avant la mise en ligne</value>
   </data>
   <data name="cbShowAfterCaptureTasksForm.Text" xml:space="preserve">
     <value>Afficher la fenêtre "tâches de post de capture" après que la capture soit faite</value>
@@ -355,7 +355,7 @@
     <value>Tâche...</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>Logiciels de mise en ligne de texte</value>
+    <value>Logiciels de mise en ligne de textes</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Miniature</value>
@@ -370,16 +370,16 @@
     <value>Services de partage d'URL</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>Raccourcisseurs URL</value>
+    <value>Raccourcisseurs d'URL</value>
   </data>
   <data name="chkUseDefaultActions.Text" xml:space="preserve">
-    <value>Utilisez les actions dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les actions dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="chkUseDefaultAdvancedSettings.Text" xml:space="preserve">
-    <value>Utilisez les paramètres avancés dans les principaux paramètres de la tâche de la fenêtre</value>
+    <value>Utiliser les paramètres avancés dans les principaux paramètres de la tâche de la fenêtre</value>
   </data>
   <data name="chkUseDefaultCaptureSettings.Text" xml:space="preserve">
-    <value>Utilisez les paramètres de capture dans les paramètres des tâches de la fenêtre principale</value>
+    <value>Utiliser les paramètres de capture dans les paramètres des tâches de la fenêtre principale</value>
   </data>
   <data name="cbUseDefaultAfterCaptureSettings.Text" xml:space="preserve">
     <value>Utiliser par défaut les paramètres "après la capture"</value>

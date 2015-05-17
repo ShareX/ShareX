@@ -175,7 +175,7 @@
     <value>Nombre de tentatives si la mise en ligne échoue:</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Démarrer iconisé dans  la barre</value>
+    <value>Démarrer iconisé dans la barre</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Ouvrir...</value>
@@ -259,7 +259,7 @@
     <value>Mise en ligne</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utilisez répertoire screenshots personnalisé:</value>
+    <value>Utiliser répertoire screenshots personnalisé:</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur:</value>

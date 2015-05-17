@@ -121,7 +121,7 @@
     <value>Ajouter</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Abandon</value>
+    <value>Annuler</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Vider</value>

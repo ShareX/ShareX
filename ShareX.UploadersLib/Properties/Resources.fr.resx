@@ -145,7 +145,7 @@
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>Connecté!
-Creation des répertoires:</value>
+Création des répertoires:</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Connexion à {0}</value>

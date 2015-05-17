@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
-    <value>Copie</value>
+    <value>Copier</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
     <value>Copier le nom</value>
@@ -171,13 +171,13 @@
     <value>Lien HTML ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>Lien d'image HTML</value>
+    <value>Lien de l'image HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>Image</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Prévisualisation d'image</value>
+    <value>Prévisualisation de l'image</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Plus d'infos</value>
