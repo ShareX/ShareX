@@ -21,16 +21,16 @@ ShareX incorporates the following methods to allow screen capture.
 * Polygon: Allows you to click points on screen to make polygon shape to capture areas inside it.
 * Freehand: Allows you to draw areas similar to drawing with pencil and the inside area will be captured.
 * Last Region: Will repeat the screen capture which was done last.
-* Screen recording (FFmpeg): You can record a selected area on your screen or the entire screen. [FFmpeg](https://en.wikipedia.org/wiki/FFmpeg) allows you to record screen including sound and compress in real time using [x264](https://en.wikipedia.org/wiki/x264), [VP8](https://en.wikipedia.org/wiki/VP8), [Xvid](https://en.wikipedia.org/wiki/Xvid) etc.
+* Screen recording (FFmpeg): You can record a selected area on your screen or the entire screen. [FFmpeg](https://www.ffmpeg.org) allows you to record screen including sound and compress in real time using [x264](https://en.wikipedia.org/wiki/x264), [VP8 (WebM)](https://en.wikipedia.org/wiki/VP8), [Xvid](https://en.wikipedia.org/wiki/Xvid) etc.
 * Screen recording (GIF): You can record a selected area on your screen or the entire screen in animated GIF.
 * Auto capture: Allows you to automatically capture a screen area with specific time interval.
 
-### After capture tasks
+#### After capture tasks
 
 You can select any or all of these tasks to be automatically run after each screen capture.
 
 * Add image effects / watermark: You can choose from over 37 image effects including watermark and apply them to an image.
-* Open in image editor: Using [Greenshot](https://en.wikipedia.org/wiki/Greenshot) image editor to annotate image.
+* Open in image editor: Using [Greenshot](http://getgreenshot.org) image editor to annotate image.
 * Copy image to clipboard: Copies image to clipboard.
 * Print image: Be able to print images with printer device.
 * Save image to file: Saves image as file with your preferred image format.
@@ -38,8 +38,8 @@ You can select any or all of these tasks to be automatically run after each scre
 * Save thumbnail image to file: Saves resized image as file.
 * Copy file to clipboard: Copies image file to clipboard.
 * Copy file path to clipboard: Copies image file path to clipboard.
-* Perform actions: You can automatically run other applications with image file path as the parameter so this way you can use Command-line interface applications to accomplish tasks which would have not been possible before. For example, you could open a screenshot in [Paint.NET](https://en.wikipedia.org/wiki/Paint.NET) before uploading it to a remote host.
-* Upload image to host: Allows you to automatically upload image file to a host that you selected. For example, you could upload images to [Imgur](https://en.wikipedia.org/wiki/Imgur), [ImageShack](https://en.wikipedia.org/wiki/ImageShack), [Flickr](https://en.wikipedia.org/wiki/Flickr) or upload as a file to [Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service)), [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) etc.
+* Perform actions: You can automatically run other applications with image file path as the parameter so this way you can use Command-line interface applications to accomplish tasks which would have not been possible before. For example, you could open a screenshot in [Paint.NET](http://www.getpaint.net) before uploading it to a remote host.
+* Upload image to host: Allows you to automatically upload image file to a host that you selected. For example, you could upload images to [Imgur](http://imgur.com), [ImageShack](https://imageshack.us), [Flickr](https://www.flickr.com) or upload as a file to [Dropbox](https://www.dropbox.com), [Google Drive](https://drive.google.com) etc.
 * Delete file locally: Deletes local file.
 
 ## Uploading
@@ -55,7 +55,7 @@ ShareX has multiple ways to upload files.
 * Send to (via rom Windows Explorer): Also when you right click file ShareX will be in “Send to” submenu.
 * Watch folder: You can configure to watch specific folders so if new file appear in these folders that file will be automatically uploaded.
 
-### After upload tasks
+#### After upload tasks
 
 These tasks will automatically run after successful upload to any host.
 
@@ -69,95 +69,95 @@ These tasks will automatically run after successful upload to any host.
 
 ShareX supports the following destinations.
 
-### Image uploaders
+#### Image uploaders
 
-* [Imgur](https://en.wikipedia.org/wiki/Imgur)
-* [ImageShack](https://en.wikipedia.org/wiki/ImageShack)
-* [TinyPic](https://en.wikipedia.org/wiki/TinyPic)
-* [Flickr](https://en.wikipedia.org/wiki/Flickr)
-* [Photobucket](https://en.wikipedia.org/wiki/Photobucket)
-* [Picasa](https://en.wikipedia.org/wiki/Picasa)
-* [Twitter](https://en.wikipedia.org/wiki/Twitter)
-* [Chevereto](https://en.wikipedia.org/wiki/Chevereto)
-* Hızlı Resim
+* [Imgur](http://imgur.com)
+* [ImageShack](https://imageshack.us)
+* [TinyPic](http://tinypic.com)
+* [Flickr](https://www.flickr.com)
+* [Photobucket](http://photobucket.com)
+* [Picasa](https://picasaweb.google.com)
+* [Twitter](https://twitter.com)
+* [Chevereto](https://chevereto.com)
+* [Hızlı Resim](http://hizliresim.com)
 * Custom image uploader
 * File uploader
 
-### Text uploaders
+#### Text uploaders
 
-* [Pastebin](https://en.wikipedia.org/wiki/Pastebin)
-* Paste2
-* Slexy
-* Pastee.org
-* Paste.ee
-* [GitHub Gist](https://en.wikipedia.org/wiki/GitHub#Gist)
-* uPaste
-* Hastebin
+* [Pastebin](http://pastebin.com)
+* [Paste2](http://paste2.org)
+* [Slexy](http://slexy.org)
+* [Pastee.org](https://pastee.org)
+* [Paste.ee](https://paste.ee)
+* [GitHub Gist](https://gist.github.com)
+* [uPaste](http://upaste.me)
+* [Hastebin](http://hastebin.com)
 * Custom text uploader
 * File uploader
 
-### File uploaders
+#### File uploaders
 
-* [Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service))
-* FTP
-* [OneDrive](https://en.wikipedia.org/wiki/OneDrive)
-* [Google Drive](https://en.wikipedia.org/wiki/Google Drive)
-* Copy
-* [Box](https://en.wikipedia.org/wiki/Box_(company))
-* [MEGA](https://en.wikipedia.org/wiki/Mega_(service))
-* [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3)
-* [ownCloud](https://en.wikipedia.org/wiki/ownCloud)
-* [MediaFire](https://en.wikipedia.org/wiki/MediaFire)
-* Pomf
-* Gfycat
-* Pushbullet
-* MediaCrush
-* [RapidShare](https://en.wikipedia.org/wiki/RapidShare)
-* SendSpace
-* Minus
-* Ge.tt
-* Hostr
-* [JIRA](https://en.wikipedia.org/wiki/JIRA)
+* [Dropbox](https://www.dropbox.com)
+* [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol)
+* [OneDrive](https://onedrive.live.com)
+* [Google Drive](https://drive.google.com)
+* [Copy](https://www.copy.com)
+* [Box](https://www.box.com)
+* [MEGA](https://mega.co.nz)
+* [Amazon S3](http://aws.amazon.com/s3/)
+* [ownCloud](https://owncloud.org)
+* [MediaFire](https://www.mediafire.com)
+* [Pomf](https://pomf.se)
+* [Gfycat](http://gfycat.com)
+* [Pushbullet](https://www.pushbullet.com)
+* [MediaCrush](https://mediacru.sh)
+* [RapidShare](http://rapidshare.com)
+* [SendSpace](https://www.sendspace.com)
+* [Minus](http://minus.com)
+* [Ge.tt](http://ge.tt)
+* [Hostr](https://hostr.co)
+* [JIRA](https://www.atlassian.com/software/jira)
 * Shared folder
-* Email
+* [Email](https://en.wikipedia.org/wiki/Email)
 * Custom file uploader
 
-### URL shorteners
+#### URL shorteners
 
-* [bitly](https://en.wikipedia.org/wiki/bitly)
-* goo.gl
-* is.gd
-* [TinyURL](https://en.wikipedia.org/wiki/TinyURL)
-* turl.ca
-* yourls.org
-* nl.cm
-* adf.ly
+* [bitly](https://bitly.com)
+* [goo.gl](https://goo.gl)
+* [is.gd](https://is.gd)
+* [TinyURL](http://tinyurl.com)
+* [turl.ca](http://turl.ca)
+* [yourls.org](http://yourls.org)
+* [nl.cm](http://nl.cm)
+* [adf.ly](https://adf.ly)
 * Custom URL shortener
 
-### URL sharing services
+#### URL sharing services
 
-* Email
-* [Twitter](https://en.wikipedia.org/wiki/Twitter)
-* [Facebook](https://en.wikipedia.org/wiki/Facebook)
-* [Google+](https://en.wikipedia.org/wiki/Google+)
-* [Reddit](https://en.wikipedia.org/wiki/Reddit)
-* [Pinterest](https://en.wikipedia.org/wiki/Pinterest)
-* [Tumblr](https://en.wikipedia.org/wiki/Tumblr)
-* [LinkedIn](https://en.wikipedia.org/wiki/LinkedIn)
-* [StumbleUpon](https://en.wikipedia.org/wiki/StumbleUpon)
-* [Delicious](https://en.wikipedia.org/wiki/Delicious_(website))
-* [VK](https://en.wikipedia.org/wiki/VK_(social network))
-* Pushbullet
+* [Email](https://en.wikipedia.org/wiki/Email)
+* [Twitter](https://twitter.com)
+* [Facebook](https://www.facebook.com)
+* [Google+](https://plus.google.com)
+* [Reddit](http://www.reddit.com)
+* [Pinterest](https://www.pinterest.com)
+* [Tumblr](https://www.tumblr.com)
+* [LinkedIn](https://www.linkedin.com)
+* [StumbleUpon](https://www.stumbleupon.com)
+* [Delicious](https://delicious.com)
+* [VK](https://vk.com)
+* [Pushbullet](https://www.pushbullet.com)
 
 ## Tools
 
 Additional tools to make certain tasks more efficient.
 
 * Screen color picker: As the name suggests, allows you to retrieve the color from anywhere on the screen and provide values of Hue, Saturation, Brightness, and RGB.
-* Image editor: Based on [Greenshot](https://en.wikipedia.org/wiki/Greenshot) image editor. It offers functions such as ability to add annotations, highlighting or obfuscations to the screenshot. It allows to draw basic shapes (rectangles, ellipses, lines, arrows and freehand) and add text to a screenshot.
+* Image editor: Based on [Greenshot](http://getgreenshot.org) image editor. It offers functions such as ability to add annotations, highlighting or obfuscations to the screenshot. It allows to draw basic shapes (rectangles, ellipses, lines, arrows and freehand) and add text to a screenshot.
 * Image effects: Allows to apply over 37 different image effects with their own settings to image. Edited images can be saved in PNG or other formats.
 * Hash check: Allows you to check/compare file hash values.
-* DNS changer: Allows you to quickly change computer DNS settings with popular DNS servers such as [Google DNS](https://en.wikipedia.org/wiki/Google_DNS).
+* DNS changer: Allows you to quickly change computer DNS settings with popular DNS servers such as [Google DNS](https://developers.google.com/speed/public-dns/).
 * QR code: Open QR code window which you can enter text to get QR code of it. You can copy QR code image to your clipboard or save as file.
 * Index folder: Allows you to share the index of a folder contents by uploading the index of the selected folder as text, html or xml.
 * Ruler: Allows you to get X, Y, width, height, distance and angle information on screen.
