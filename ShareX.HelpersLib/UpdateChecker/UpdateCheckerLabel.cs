@@ -62,7 +62,15 @@ namespace ShareX.HelpersLib
         private void CheckingUpdate(CheckUpdate checkUpdate)
         {
             updateChecker = checkUpdate();
-            UpdateControls();
+
+            try
+            {
+                UpdateControls();
+            }
+            catch
+            {
+            }
+
             isBusy = false;
         }
 
