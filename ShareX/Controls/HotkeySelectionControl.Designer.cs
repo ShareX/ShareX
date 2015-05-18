@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
             this.lblHotkeyStatus = new System.Windows.Forms.Label();
-            this.lblHotkeyDescription = new System.Windows.Forms.Label();
+            this.lblHotkeyDescription = new ShareX.HelpersLib.LabelNoCopy();
             this.btnHotkey = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblHotkeyStatus;
-        private System.Windows.Forms.Label lblHotkeyDescription;
+        private ShareX.HelpersLib.LabelNoCopy lblHotkeyDescription;
         private System.Windows.Forms.Button btnHotkey;
     }
 }
