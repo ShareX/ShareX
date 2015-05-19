@@ -381,7 +381,7 @@ namespace ShareX
                 if (surface.Result == SurfaceResult.Region)
                 {
                     PointInfo pointInfo = new PointInfo();
-                    pointInfo.Position = CaptureHelpers.ClientToScreen(surface.CurrentPosition);
+                    pointInfo.Position = surface.CurrentPosition;
                     pointInfo.Color = surface.CurrentColor;
                     return pointInfo;
                 }

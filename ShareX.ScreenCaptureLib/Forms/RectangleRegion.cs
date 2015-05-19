@@ -42,8 +42,6 @@ namespace ShareX.ScreenCaptureLib
 
         public bool ScreenColorPickerMode { get; set; }
 
-        private Bitmap bmpSurfaceImage;
-
         public Point CurrentPosition { get; set; }
 
         public Color CurrentColor
@@ -52,12 +50,16 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (bmpSurfaceImage != null && !CurrentPosition.IsEmpty)
                 {
-                    return bmpSurfaceImage.GetPixel(CurrentPosition.X, CurrentPosition.Y);
+                    Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
+
+                    return bmpSurfaceImage.GetPixel(position.X, position.Y);
                 }
 
                 return Color.Empty;
             }
         }
+
+        private Bitmap bmpSurfaceImage;
 
         #endregion Screen color picker
 
