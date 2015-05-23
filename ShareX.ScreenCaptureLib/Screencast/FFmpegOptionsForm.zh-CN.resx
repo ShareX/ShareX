@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -188,9 +189,6 @@
   </data>
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1为最高质量/最大文件大小和31是最低质量/最小文件大小.</value>
-  </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>CRF值可以从4-63,而10是一个很好的起点.值越低意味着更好的质量.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>"恒速率因子（CRF）:量化比例的范围为0-51:其中,0是无损的,23是默认值,51是最糟糕的.

@@ -174,9 +174,6 @@
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Calidad:</value>
   </data>
-  <data name="lblVpxCRF.Text" xml:space="preserve">
-    <value>CRF:</value>
-  </data>
   <data name="lblX264CRF.Text" xml:space="preserve">
     <value>CRF:</value>
   </data>
@@ -226,9 +223,6 @@ Esto significa que, por ejemplo, si usted se centra en un tamaño de archivo det
   </data>
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1 es más alto calidad / tamaño de archivo más grande y 31 es la calidad más baja / tamaño de archivos más pequeño.</value>
-  </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>Valor CRF puede ser 4-63, y 10 es un buen punto de partida. Los valores más bajos significan mejor calidad.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>El rango es de 0 a 9, donde un valor inferior es de mayor calidad.  0-3 normalmente producir resultados transparentes, 

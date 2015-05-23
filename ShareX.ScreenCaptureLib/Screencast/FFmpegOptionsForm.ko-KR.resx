@@ -198,9 +198,6 @@
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1이 최고 품질/제일 큰 파일 크기이며, 31이 최소 품질/제일 작은 파일 크기입니다.</value>
   </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>CRF값의 범위는 4부터 63까지이며, 10부터 시작하면 좋습니다. 더 낮은 값은 더 나은 품질을 의미합니다.</value>
-  </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>항율 인자 (CRF): 양자화 스케일의 범위는 0부터 51까지이며, 0은 무손실, 23이 기본값, 그리고 51이 가능한 최저 품질입니다.
 낮은 값은 더 나은 품질을 의미하며, 주관적으로 괜찮다고 생각하는 범위는 18과 28 사이입니다.

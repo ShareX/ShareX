@@ -1070,15 +1070,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tip.
-        /// </summary>
-        public static string MainForm_AfterShownJobs_Tip {
-            get {
-                return ResourceManager.GetString("MainForm_AfterShownJobs_Tip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to You can middle click the ShareX tray icon to start rectangle capture..
         /// </summary>
         public static string MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_ {

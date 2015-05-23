@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -188,9 +189,6 @@
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>0-9 arası, küçük değer yüksek kalite anlamına gelir.</value>
   </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>CRF değeri 4-63 arasında olabilir, 10 güzel bir başlangıç noktasıdır. Düşük değerler daha kalitelidir.</value>
-  </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Ses çözücü:</value>
   </data>
@@ -205,5 +203,8 @@ Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
     <value>Video kalitesini belirler.
 0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
 Kaliteyi arttırmak dosya boyutunu arttırır.</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Değişken bit hızı:</value>
   </data>
 </root>

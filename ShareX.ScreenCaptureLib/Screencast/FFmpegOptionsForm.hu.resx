@@ -186,9 +186,6 @@
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1 a legjobb minőség/legnagyobb fájlméret, 31 pedig a leggyengébb minőség/legkisebb fájlméret.</value>
   </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>A CRF érték 4–től 63-ig váltakozhat, a 10 egy jó kiinduló érték. Az alacsonyabb értékek jobb minőséget jelentenek.</value>
-  </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Az alapértelmezett 128k.</value>
   </data>

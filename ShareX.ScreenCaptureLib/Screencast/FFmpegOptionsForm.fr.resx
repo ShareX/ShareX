@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -147,9 +148,6 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copie</value>
-  </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>La valeur CRF peut aller de 4 à 63, 10 est un bon point de départ. Des valeurs plus faibles signifient une meilleure qualité.</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>128k par défaut</value>

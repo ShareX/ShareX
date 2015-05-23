@@ -193,9 +193,6 @@ Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate verlagen 
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1 is de hoogste kwaliteit/bestandsgrootte en 31 is de laagste kwaliteit/bestandsgrootte.</value>
   </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>CRF waarde kan tussen 4-63 zijn, met 10 als een goed startpunt. Lagere waardes betekenen betere kwaliteit.</value>
-  </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): Het bereik van de schaal is 0-51: waar 0 verliesloos is, 23 standaard en 51 het ergste is.
 Een lagere waarde betekent hogere kwaliteit en een subjectieve schaal is 18-28.

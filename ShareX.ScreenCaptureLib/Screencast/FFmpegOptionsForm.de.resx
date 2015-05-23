@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -190,9 +191,6 @@ Ebenso, für eine konstante Qualitätskodierung, wirst du Bitraten sparen, wenn 
   </data>
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1 ist die höchste Qualität/größte Dateigröße und 31 die schlechteste Qualität/kleinste Dateigröße</value>
-  </data>
-  <data name="nudVPxCRF.ToolTip" xml:space="preserve">
-    <value>Der CRF Wert can von 4-63 sein, 10 ist ein guter Startwert. Kleinere Werte heißt bessere Qualität</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): Die Weite des Multiplikators ist 0-51: wo 0 verlustfrei ist; 23 standard; und 51 das schlechteste

@@ -718,9 +718,6 @@ Would you like to restart ShareX?</value>
   <data name="nl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainForm_AfterShownJobs_Tip" xml:space="preserve">
-    <value>Tip</value>
-  </data>
   <data name="MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_" xml:space="preserve">
     <value>You can middle click the ShareX tray icon to start rectangle capture.</value>
   </data>
