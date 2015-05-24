@@ -213,4 +213,10 @@
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>Değer</value>
   </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>XML dosyası okunurken hata oluştu: {0}</value>
+  </data>
 </root>

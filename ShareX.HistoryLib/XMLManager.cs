@@ -35,20 +35,20 @@ namespace ShareX.HistoryLib
 {
     internal class XMLManager
     {
-        private static object thisLock = new object();
+        private static readonly object thisLock = new object();
 
-        private string xmlPath;
+        public string FilePath { get; private set; }
 
-        public XMLManager(string xmlFilePath)
+        public XMLManager(string filePath)
         {
-            xmlPath = xmlFilePath;
+            FilePath = filePath;
         }
 
         public List<HistoryItem> Load()
         {
             List<HistoryItem> historyItemList = new List<HistoryItem>();
 
-            if (!string.IsNullOrEmpty(xmlPath) && File.Exists(xmlPath))
+            if (!string.IsNullOrEmpty(FilePath) && File.Exists(FilePath))
             {
                 lock (thisLock)
                 {
@@ -58,7 +58,7 @@ namespace ShareX.HistoryLib
                         IgnoreWhitespace = true
                     };
 
-                    using (StreamReader streamReader = new StreamReader(xmlPath, Encoding.UTF8))
+                    using (StreamReader streamReader = new StreamReader(FilePath, Encoding.UTF8))
                     using (XmlReader reader = XmlReader.Create(streamReader, settings))
                     {
                         reader.MoveToContent();
@@ -89,13 +89,13 @@ namespace ShareX.HistoryLib
 
         public bool Append(params HistoryItem[] historyItems)
         {
-            if (!string.IsNullOrEmpty(xmlPath))
+            if (!string.IsNullOrEmpty(FilePath))
             {
                 lock (thisLock)
                 {
-                    Helpers.CreateDirectoryIfNotExist(xmlPath);
+                    Helpers.CreateDirectoryIfNotExist(FilePath);
 
-                    using (FileStream fs = File.Open(xmlPath, FileMode.Append, FileAccess.Write, FileShare.Read))
+                    using (FileStream fs = File.Open(FilePath, FileMode.Append, FileAccess.Write, FileShare.Read))
                     using (XmlTextWriter writer = new XmlTextWriter(fs, Encoding.UTF8))
                     {
                         writer.Formatting = Formatting.Indented;

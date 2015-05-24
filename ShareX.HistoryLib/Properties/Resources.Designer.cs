@@ -313,6 +313,24 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string HistoryManager_GetHistoryItems_Error {
+            get {
+                return ResourceManager.GetString("HistoryManager_GetHistoryItems_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occured while reading XML file: {0}.
+        /// </summary>
+        internal static string HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_ {
+            get {
+                return ResourceManager.GetString("HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy name.
         /// </summary>
         internal static string ObjectListView_ObjectListView_Copy_name {

@@ -104,8 +104,7 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] GetHistoryItems()
         {
-            IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems().Where(x => !string.IsNullOrEmpty(x.Filepath) &&
-                                                                                             Helpers.IsImageFile(x.Filepath) && File.Exists(x.Filepath));
+            IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems().Where(x => !string.IsNullOrEmpty(x.Filepath) && Helpers.IsImageFile(x.Filepath) && File.Exists(x.Filepath));
 
             if (MaxItemCount > -1)
             {

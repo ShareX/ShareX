@@ -24,28 +24,52 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
 {
     public class HistoryManager
     {
-        internal XMLManager Manager { get; private set; }
+        private XMLManager manager;
 
         public HistoryManager(string historyPath)
         {
-            Manager = new XMLManager(historyPath);
+            manager = new XMLManager(historyPath);
+        }
+
+        private bool IsValidHistoryItem(HistoryItem historyItem)
+        {
+            return historyItem != null && !string.IsNullOrEmpty(historyItem.Filename) && historyItem.DateTimeUtc != DateTime.MinValue &&
+                (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.Filepath));
+        }
+
+        public List<HistoryItem> GetHistoryItems()
+        {
+            try
+            {
+                return manager.Load();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+
+                MessageBox.Show(string.Format(Resources.HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_, manager.FilePath) + "\r\n\r\n" + e,
+                    "ShareX - " + Resources.HistoryManager_GetHistoryItems_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return new List<HistoryItem>();
         }
 
         public bool AppendHistoryItem(HistoryItem historyItem)
         {
             try
             {
-                if (historyItem != null && !string.IsNullOrEmpty(historyItem.Filename) && historyItem.DateTimeUtc != DateTime.MinValue &&
-                    (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.Filepath)))
+                if (IsValidHistoryItem(historyItem))
                 {
-                    return Manager.Append(historyItem);
+                    return manager.Append(historyItem);
                 }
             }
             catch (Exception e)
@@ -54,20 +78,6 @@ namespace ShareX.HistoryLib
             }
 
             return false;
-        }
-
-        public List<HistoryItem> GetHistoryItems()
-        {
-            try
-            {
-                return Manager.Load();
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return new List<HistoryItem>();
         }
 
         public static void AddHistoryItemAsync(string historyPath, HistoryItem historyItem)

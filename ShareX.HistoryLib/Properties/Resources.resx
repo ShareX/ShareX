@@ -193,4 +193,10 @@
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtered: {0}</value>
   </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>Error occured while reading XML file: {0}</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
 </root>
