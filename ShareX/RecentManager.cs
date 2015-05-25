@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -112,15 +112,14 @@ namespace ShareX
             }
 
             tsmi.DropDownItems.Clear();
-            ToolStripMenuItem tsmiTip = new ToolStripMenuItem("Left click to copy URL to clipboard. Right click to open URL.");
+            ToolStripMenuItem tsmiTip = new ToolStripMenuItem(Resources.RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_);
             tsmiTip.Enabled = false;
             tsmi.DropDownItems.Add(tsmiTip);
             tsmi.DropDownItems.Add(new ToolStripSeparator());
 
-            foreach (RecentItem recentItem in Items.Reverse())
+            foreach (RecentItem recentItem in Items)
             {
-                string text = string.Format("[{0:HH:mm:ss}] {1}", recentItem.Time, recentItem.Text.Truncate(50, "...", false));
-                ToolStripMenuItem tsmiLink = new ToolStripMenuItem(text);
+                ToolStripMenuItem tsmiLink = new ToolStripMenuItem(recentItem.ToString());
                 tsmiLink.ToolTipText = recentItem.Text;
                 string link = recentItem.Text;
                 tsmiLink.MouseUp += (sender, e) =>
@@ -148,6 +147,11 @@ namespace ShareX
         {
             Text = text;
             Time = DateTime.Now;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[{0:HH:mm:ss}] {1}", Time, Text.Truncate(50, "...", false));
         }
     }
 }

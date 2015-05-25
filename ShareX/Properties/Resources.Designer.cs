@@ -1270,6 +1270,16 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left click to copy URL to clipboard. Right click to open URL..
+        /// </summary>
+        public static string RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_ {
+            get {
+                return ResourceManager.GetString("RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_t" +
+                        "o_open_URL_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Rectangle {
