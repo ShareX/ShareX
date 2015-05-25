@@ -310,6 +310,15 @@ namespace ShareX
 
                                 RecentManager.Add(result);
 
+                                if (Program.Settings.RecentLinksRemember)
+                                {
+                                    Program.Settings.RecentLinks = RecentManager.Items.ToArray();
+                                }
+                                else
+                                {
+                                    Program.Settings.RecentLinks = null;
+                                }
+
                                 if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
                                     if (task.Info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)

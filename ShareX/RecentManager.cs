@@ -84,6 +84,19 @@ namespace ShareX
             }
         }
 
+        public void UpdateItems(RecentItem[] items)
+        {
+            if (items != null)
+            {
+                lock (itemsLock)
+                {
+                    Items = new Queue<RecentItem>(items);
+
+                    UpdateRecentMenu();
+                }
+            }
+        }
+
         private void UpdateRecentMenu()
         {
             if (Program.MainForm == null || Program.MainForm.tsmiTrayRecentItems == null || Items.Count == 0)

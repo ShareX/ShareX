@@ -41,6 +41,7 @@ namespace ShareX
         public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public bool ShowTrayMiddleClickTip = true; // Tray icon middle click tip
         public int NameParserAutoIncrementNumber = 0;
+        public RecentItem[] RecentLinks = null;
 
         public ApplicationConfig()
         {
@@ -137,6 +138,9 @@ namespace ShareX
 
         [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
         public bool ShowMainWindowTip { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Saves recent links so when ShareX reopened it will remember them.")]
+        public bool RecentLinksRemember { get; set; }
 
         [Category("Application"), DefaultValue(10), Description("In recent links tray menu max how many links to show.")]
         public int RecentLinksMaxCount { get; set; }

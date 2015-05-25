@@ -505,6 +505,11 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             niTray.Visible = Program.Settings.ShowTray;
 
+            if (Program.Settings.RecentLinksRemember)
+            {
+                TaskManager.RecentManager.UpdateItems(Program.Settings.RecentLinks);
+            }
+
             bool isPositionChanged = false;
 
             if (Program.Settings.RememberMainFormPosition && !Program.Settings.MainFormPosition.IsEmpty &&
