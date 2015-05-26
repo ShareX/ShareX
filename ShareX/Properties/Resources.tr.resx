@@ -422,4 +422,7 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_" xml:space="preserve">
     <value>Bildirim alanındaki ShareX simgesine orta tuş ile tıklıyarak dikdörtgen yakalama başlatabilirsiniz.</value>
   </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>Adresi kopyalamak için sol tıklayın. Adresi açmak için sağ tıklayın.</value>
+  </data>
 </root>

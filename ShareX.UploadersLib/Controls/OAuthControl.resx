@@ -125,6 +125,10 @@
   <data name="btnClearAuthorization.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 160</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClearAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
   <data name="btnClearAuthorization.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
   </data>
@@ -133,6 +137,9 @@
   </data>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
     <value>Clear authorization</value>
+  </data>
+  <data name="btnClearAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnClearAuthorization.Name" xml:space="preserve">
     <value>btnClearAuthorization</value>
@@ -152,6 +159,9 @@
   <data name="btnRefreshAuthorization.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 192</value>
   </data>
+  <data name="btnRefreshAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
   <data name="btnRefreshAuthorization.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
   </data>
@@ -160,6 +170,9 @@
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Refresh authorization</value>
+  </data>
+  <data name="btnRefreshAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnRefreshAuthorization.Name" xml:space="preserve">
     <value>btnRefreshAuthorization</value>
@@ -176,6 +189,9 @@
   <data name="btnOpenAuthorizePage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
   </data>
+  <data name="btnOpenAuthorizePage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
   <data name="btnOpenAuthorizePage.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
   </data>
@@ -184,6 +200,9 @@
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
     <value>Step 1: Open authorize page...</value>
+  </data>
+  <data name="btnOpenAuthorizePage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnOpenAuthorizePage.Name" xml:space="preserve">
     <value>btnOpenAuthorizePage</value>
@@ -201,16 +220,16 @@
     <value>True</value>
   </data>
   <data name="lblVerificationCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+    <value>14, 56</value>
   </data>
   <data name="lblVerificationCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 13</value>
+    <value>89, 13</value>
   </data>
   <data name="lblVerificationCode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>Verification code (Get verification code from authorize page):</value>
+    <value>Verification code:</value>
   </data>
   <data name="&gt;&gt;lblVerificationCode.Name" xml:space="preserve">
     <value>lblVerificationCode</value>
@@ -230,6 +249,9 @@
   <data name="btnCompleteAuthorization.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 104</value>
   </data>
+  <data name="btnCompleteAuthorization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
   <data name="btnCompleteAuthorization.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
   </data>
@@ -238,6 +260,9 @@
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
     <value>Step 2: Complete authorization</value>
+  </data>
+  <data name="btnCompleteAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnCompleteAuthorization.Name" xml:space="preserve">
     <value>btnCompleteAuthorization</value>
@@ -276,7 +301,7 @@
     <value>True</value>
   </data>
   <data name="lblLoginStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 136</value>
+    <value>14, 136</value>
   </data>
   <data name="lblLoginStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>

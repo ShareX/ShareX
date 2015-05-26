@@ -79,5 +79,8 @@ namespace ShareX.HelpersLib
         /// Windows XP: Draws the icon as an unmirrored icon. By default, the icon is drawn as a mirrored icon if hdc is mirrored.
         /// </summary>
         public const int DI_NOMIRROR = 0x0010;
+
+        public const uint ECM_FIRST = 0x1500;
+        public const uint EM_SETCUEBANNER = ECM_FIRST + 1;
     }
 }

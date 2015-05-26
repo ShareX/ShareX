@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.ComponentModel;
@@ -111,6 +112,7 @@ namespace ShareX.UploadersLib
             defaultGroupBoxSize = gbUserAccount.Size;
             smallGroupBoxSize = new Size(defaultGroupBoxSize.Width, (int)(defaultGroupBoxSize.Height / 1.16f));
             IsRefreshable = true;
+            txtVerificationCode.HandleCreated += (sender, e) => txtVerificationCode.SetWatermark("Paste verification code here");
         }
 
         private void btnOpenAuthorizePage_Click(object sender, EventArgs e)
@@ -118,7 +120,6 @@ namespace ShareX.UploadersLib
             if (OpenButtonClicked != null)
             {
                 OpenButtonClicked();
-                txtVerificationCode.Focus();
             }
         }
 

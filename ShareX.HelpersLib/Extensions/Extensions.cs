@@ -446,5 +446,13 @@ namespace ShareX.HelpersLib
             list.RemoveAt(oldIndex);
             list.Insert(newIndex, obj);
         }
+
+        public static void SetWatermark(this TextBox textBox, string watermarkText, bool showCueWhenFocus = false)
+        {
+            if (textBox != null && textBox.IsHandleCreated && watermarkText != null)
+            {
+                NativeMethods.SendMessage(textBox.Handle, (int)NativeMethods.EM_SETCUEBANNER, showCueWhenFocus ? 1 : 0, watermarkText);
+            }
+        }
     }
 }
