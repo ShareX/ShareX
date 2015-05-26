@@ -118,6 +118,7 @@ namespace ShareX.UploadersLib
             if (OpenButtonClicked != null)
             {
                 OpenButtonClicked();
+                txtVerificationCode.Focus();
             }
         }
 
