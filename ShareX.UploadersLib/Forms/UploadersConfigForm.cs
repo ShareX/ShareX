@@ -162,6 +162,14 @@ namespace ShareX.UploadersLib
 
             // Imgur
 
+            oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
+
+            if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
+            {
+                oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
+                btnImgurRefreshAlbumList.Enabled = true;
+            }
+
             atcImgurAccountType.SelectedAccountType = Config.ImgurAccountType;
             cbImgurDirectLink.Checked = Config.ImgurDirectLink;
             cbImgurThumbnailType.Items.Clear();
@@ -169,12 +177,6 @@ namespace ShareX.UploadersLib
             cbImgurThumbnailType.SelectedIndex = (int)Config.ImgurThumbnailType;
             cbImgurUploadSelectedAlbum.Checked = Config.ImgurUploadSelectedAlbum;
             ImgurFillAlbumList();
-
-            if (OAuth2Info.CheckOAuth(Config.ImgurOAuth2Info))
-            {
-                oauth2Imgur.Status = OAuthLoginStatus.LoginSuccessful;
-                btnImgurRefreshAlbumList.Enabled = true;
-            }
 
             // ImageShack
 
@@ -600,6 +602,12 @@ namespace ShareX.UploadersLib
 
         #region Imgur
 
+        private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
+        {
+            Config.ImgurAccountType = accountType;
+            oauth2Imgur.Enabled = Config.ImgurAccountType == AccountType.User;
+        }
+
         private void oauth2Imgur_OpenButtonClicked()
         {
             ImgurAuthOpen();
@@ -618,11 +626,6 @@ namespace ShareX.UploadersLib
         private void oauth2Imgur_RefreshButtonClicked()
         {
             ImgurAuthRefresh();
-        }
-
-        private void atcImgurAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.ImgurAccountType = accountType;
         }
 
         private void cbImgurDirectLink_CheckedChanged(object sender, EventArgs e)

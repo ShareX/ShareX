@@ -8539,7 +8539,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>1</value>
   </data>
   <data name="atcImgurAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 256</value>
+    <value>16, 16</value>
   </data>
   <data name="atcImgurAccountType.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 40</value>
@@ -8560,7 +8560,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>2</value>
   </data>
   <data name="oauth2Imgur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>16, 64</value>
   </data>
   <data name="oauth2Imgur.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 240</value>
@@ -10377,6 +10377,12 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;chTwitterAccount.Name" xml:space="preserve">
+    <value>chTwitterAccount</value>
+  </data>
+  <data name="&gt;&gt;chTwitterAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lvRegexpsColumn.Name" xml:space="preserve">
     <value>lvRegexpsColumn</value>
   </data>
@@ -10453,12 +10459,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>chPicasaDescription</value>
   </data>
   <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chTwitterAccount.Name" xml:space="preserve">
-    <value>chTwitterAccount</value>
-  </data>
-  <data name="&gt;&gt;chTwitterAccount.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
