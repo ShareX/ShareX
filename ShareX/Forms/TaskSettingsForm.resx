@@ -2497,7 +2497,7 @@
     <value>18</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>FFmpeg options...</value>
+    <value>Screen record options...</value>
   </data>
   <data name="&gt;&gt;btnScreenRecorderFFmpegOptions.Name" xml:space="preserve">
     <value>btnScreenRecorderFFmpegOptions</value>
@@ -2641,7 +2641,7 @@
     <value>6</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>FFmpeg FPS:</value>
+    <value>Screen record FPS:</value>
   </data>
   <data name="&gt;&gt;lblScreenRecordFPS.Name" xml:space="preserve">
     <value>lblScreenRecordFPS</value>

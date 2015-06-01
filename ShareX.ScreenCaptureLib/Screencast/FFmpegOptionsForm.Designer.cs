@@ -347,7 +347,7 @@
             0});
             resources.ApplyResources(this.nudVP8Bitrate, "nudVP8Bitrate");
             this.nudVP8Bitrate.Maximum = new decimal(new int[] {
-            10000,
+            20000,
             0,
             0,
             0});
