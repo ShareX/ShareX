@@ -246,8 +246,7 @@ If the output looks good, then try a higher value and if it looks bad then choos
     <value>3</value>
   </data>
   <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>The default preset is "Medium".
-A preset is a collection of options that will provide a certain encoding speed to compression ratio. A slower preset will provide better compression (compression is quality per filesize).
+    <value>A preset is a collection of options that will provide a certain encoding speed to compression ratio. A slower preset will provide better compression (compression is quality per filesize).
 This means that, for example, if you target a certain file size or constant bit rate, you will achieve better quality with a slower preset.
 Similarly, for constant quality encoding, you will simply save bitrate by choosing a slower preset.</value>
   </data>
@@ -714,7 +713,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>1</value>
   </data>
   <data name="tpX264.Text" xml:space="preserve">
-    <value>x264</value>
+    <value>x264 / x265</value>
   <comment>@Invariant</comment></data>
   <data name="&gt;&gt;tpX264.Name" xml:space="preserve">
     <value>tpX264</value>

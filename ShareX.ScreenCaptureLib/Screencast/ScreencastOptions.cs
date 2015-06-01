@@ -144,6 +144,7 @@ namespace ShareX.ScreenCaptureLib
                 switch (FFmpeg.VideoCodec)
                 {
                     case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
+                    case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
                         args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                         args.AppendFormat("-preset {0} ", FFmpeg.x264_Preset);
                         args.AppendFormat("-tune {0} ", "zerolatency");

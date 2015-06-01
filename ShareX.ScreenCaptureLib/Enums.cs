@@ -69,7 +69,9 @@ namespace ShareX.ScreenCaptureLib
         [Description("VP8 (WebM)")]
         libvpx,
         [Description("Xvid")]
-        libxvid
+        libxvid,
+        [Description("x265")]
+        libx265
     }
 
     public enum FFmpegPreset

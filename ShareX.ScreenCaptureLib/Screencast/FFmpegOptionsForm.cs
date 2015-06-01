@@ -178,6 +178,7 @@ namespace ShareX.ScreenCaptureLib
                 switch (Options.FFmpeg.VideoCodec)
                 {
                     case FFmpegVideoCodec.libx264:
+                    case FFmpegVideoCodec.libx265:
                         txtExtension.Text = "mp4";
                         break;
                     case FFmpegVideoCodec.libvpx:
