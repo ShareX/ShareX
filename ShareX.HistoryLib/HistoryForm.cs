@@ -112,36 +112,46 @@ namespace ShareX.HistoryLib
             {
                 string type = cbTypeFilterSelection.Text;
 
-                result = result.Where(x => x.Type == type);
+                if (!string.IsNullOrEmpty(type))
+                {
+                    result = result.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type == type);
+                }
             }
 
             if (cbHostFilter.Checked)
             {
                 string host = txtHostFilter.Text;
 
-                result = result.Where(x => x.Host.IndexOf(host, StringComparison.InvariantCultureIgnoreCase) >= 0);
+                if (!string.IsNullOrEmpty(host))
+                {
+                    result = result.Where(x => !string.IsNullOrEmpty(x.Host) && x.Host.IndexOf(host, StringComparison.InvariantCultureIgnoreCase) >= 0);
+                }
             }
 
-            string filenameFilter = txtFilenameFilter.Text;
-            if (cbFilenameFilter.Checked && !string.IsNullOrEmpty(filenameFilter))
+            if (cbFilenameFilter.Checked)
             {
-                StringComparison rule = GetStringRule();
+                string filenameFilter = txtFilenameFilter.Text;
 
-                if (cbFilenameFilterMethod.SelectedIndex == 0) // Contains
+                if (!string.IsNullOrEmpty(filenameFilter))
                 {
-                    result = result.Where(x => x.Filename.IndexOf(filenameFilter, rule) >= 0);
-                }
-                else if (cbFilenameFilterMethod.SelectedIndex == 1) // Starts with
-                {
-                    result = result.Where(x => x.Filename.StartsWith(filenameFilter, rule));
-                }
-                else if (cbFilenameFilterMethod.SelectedIndex == 2) // Ends with
-                {
-                    result = result.Where(x => x.Filename.EndsWith(filenameFilter, rule));
-                }
-                else if (cbFilenameFilterMethod.SelectedIndex == 3) // Exact match
-                {
-                    result = result.Where(x => x.Filename.Equals(filenameFilter, rule));
+                    StringComparison rule = GetStringRule();
+
+                    if (cbFilenameFilterMethod.SelectedIndex == 0) // Contains
+                    {
+                        result = result.Where(x => x.Filename.IndexOf(filenameFilter, rule) >= 0);
+                    }
+                    else if (cbFilenameFilterMethod.SelectedIndex == 1) // Starts with
+                    {
+                        result = result.Where(x => x.Filename.StartsWith(filenameFilter, rule));
+                    }
+                    else if (cbFilenameFilterMethod.SelectedIndex == 2) // Ends with
+                    {
+                        result = result.Where(x => x.Filename.EndsWith(filenameFilter, rule));
+                    }
+                    else if (cbFilenameFilterMethod.SelectedIndex == 3) // Exact match
+                    {
+                        result = result.Where(x => x.Filename.Equals(filenameFilter, rule));
+                    }
                 }
             }
 
