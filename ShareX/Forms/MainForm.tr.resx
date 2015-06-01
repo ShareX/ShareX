@@ -242,7 +242,7 @@
     <value>212, 22</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>Ekran kaydetme (FFmpeg)</value>
+    <value>Ekran kaydetme</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -896,7 +896,7 @@
     <value>212, 22</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>Ekran kaydetme (FFmpeg)</value>
+    <value>Ekran kaydetme</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>

@@ -475,7 +475,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Screen color picker</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Screen recording (FFmpeg)</value>
+    <value>Screen recording</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop all active uploads</value>
@@ -607,7 +607,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Start auto capture using last region</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Start screen recording (FFmpeg) using last region</value>
+    <value>Start screen recording using last region</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>A newer version of {0} is available.

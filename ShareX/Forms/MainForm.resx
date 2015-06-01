@@ -418,7 +418,7 @@
     <value>217, 22</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>Screen recording (FFmpeg)</value>
+    <value>Screen recording</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
@@ -1231,7 +1231,7 @@
     <value>217, 22</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>Screen recording (FFmpeg)</value>
+    <value>Screen recording</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>

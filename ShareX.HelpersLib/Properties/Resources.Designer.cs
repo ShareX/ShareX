@@ -961,7 +961,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Screen recording (FFmpeg).
+        ///   Looks up a localized string similar to Screen recording.
         /// </summary>
         internal static string HotkeyType_ScreenRecorder {
             get {
@@ -988,7 +988,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen recording (FFmpeg) using last region.
+        ///   Looks up a localized string similar to Start screen recording using last region.
         /// </summary>
         internal static string HotkeyType_StartScreenRecorder {
             get {

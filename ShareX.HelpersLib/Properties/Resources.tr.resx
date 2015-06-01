@@ -453,7 +453,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Renk seçici ekranı</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Ekran kaydetme (FFmpeg)</value>
+    <value>Ekran kaydetme</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Tüm aktif yüklemeleri durdur</value>
@@ -585,7 +585,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Son bölgeyi kullanarak otomatik yakala</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Son bölgeyi kullanarak ekran kaydet (FFmpeg)</value>
+    <value>Son bölgeyi kullanarak ekran kaydet</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>{0} yeni sürümü mevcut.
