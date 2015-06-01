@@ -66,7 +66,7 @@ namespace ShareX.ScreenCaptureLib
     {
         [Description("x264")]
         libx264,
-        [Description("VP8")]
+        [Description("VP8 (WebM)")]
         libvpx,
         [Description("Xvid")]
         libxvid

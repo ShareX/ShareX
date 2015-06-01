@@ -76,7 +76,7 @@ namespace ShareX.ScreenCaptureLib
 
             // x264
             nudx264CRF.Value = Options.FFmpeg.x264_CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
-            cbPreset.SelectedIndex = (int)Options.FFmpeg.Preset;
+            cbPreset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
 
             // VPx
             nudVP8Bitrate.Value = Options.FFmpeg.VPx_bitrate.Between((int)nudVP8Bitrate.Minimum, (int)nudVP8Bitrate.Maximum);
@@ -223,7 +223,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Preset = (FFmpegPreset)cbPreset.SelectedIndex;
+            Options.FFmpeg.x264_Preset = (FFmpegPreset)cbPreset.SelectedIndex;
             UpdateUI();
         }
 

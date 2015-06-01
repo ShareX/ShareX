@@ -37,18 +37,14 @@ namespace ShareX.ScreenCaptureLib
         public string Extension { get; set; }
         public string CLIPath { get; set; }
         public string UserArgs { get; set; }
-        public bool ShowError { get; set; }
         public bool UseCustomCommands { get; set; }
         public string CustomCommands { get; set; }
+        public bool ShowError { get; set; }
 
-        // H.264 - x264
-        public FFmpegPreset Preset { get; set; }
+        // Video
+        public FFmpegPreset x264_Preset { get; set; }
         public int x264_CRF { get; set; }
-
-        // H.264 - VPx
         public int VPx_bitrate { get; set; }  // kbit/s
-
-        // H.263
         public int XviD_qscale { get; set; }
 
         // Audio
@@ -92,15 +88,11 @@ namespace ShareX.ScreenCaptureLib
             UserArgs = "";
             ShowError = true;
 
-            // x264
+            // Video
             x264_CRF = 30;
-            Preset = FFmpegPreset.fast;
-
-            // VPx
-            VPx_bitrate = 1000;
-
-            // XviD
-            XviD_qscale = 3;
+            x264_Preset = FFmpegPreset.veryfast;
+            VPx_bitrate = 3000;
+            XviD_qscale = 10;
 
             // Audio
             AAC_bitrate = 128;

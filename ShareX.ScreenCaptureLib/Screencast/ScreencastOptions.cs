@@ -145,7 +145,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
                         args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
-                        args.AppendFormat("-preset {0} ", FFmpeg.Preset);
+                        args.AppendFormat("-preset {0} ", FFmpeg.x264_Preset);
                         args.AppendFormat("-tune {0} ", "zerolatency");
                         args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                         break;
