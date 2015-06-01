@@ -145,9 +145,6 @@ Als je bijvoorbeeld een bepaalde bestandsgrootte of constante bit-rate wilt hebb
 Gelijkaardig kun je voor een constante kwaliteitsconversie de bit-rate verlagen door een tragere intelling te kiezen.
 </value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Als het opnemen of de conversie mislukt een foutmeldingsscherm tonen</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Codecs</value>
   </data>

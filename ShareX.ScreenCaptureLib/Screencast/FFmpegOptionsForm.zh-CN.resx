@@ -142,9 +142,6 @@
     <value>预设默认为"中等".
 预置的选项,将提供一定的编码速度,压缩比的集合.较慢的预设将提供更好的压缩（压缩文件大小每质量）.</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>如果记录或编码失败,则显示错误窗口</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>编解码器</value>
   </data>

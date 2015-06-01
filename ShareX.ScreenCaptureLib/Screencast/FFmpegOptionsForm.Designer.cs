@@ -79,7 +79,6 @@
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.txtExtension = new System.Windows.Forms.TextBox();
-            this.cbShowError = new System.Windows.Forms.CheckBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
@@ -514,13 +513,6 @@
             this.txtExtension.Name = "txtExtension";
             this.txtExtension.TextChanged += new System.EventHandler(this.txtExtension_TextChanged);
             // 
-            // cbShowError
-            // 
-            resources.ApplyResources(this.cbShowError, "cbShowError");
-            this.cbShowError.Name = "cbShowError";
-            this.cbShowError.UseVisualStyleBackColor = true;
-            this.cbShowError.CheckedChanged += new System.EventHandler(this.cbShowError_CheckedChanged);
-            // 
             // btnHelp
             // 
             resources.ApplyResources(this.btnHelp, "btnHelp");
@@ -544,7 +536,6 @@
             this.Controls.Add(this.eiFFmpeg);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.gbCodecs);
-            this.Controls.Add(this.cbShowError);
             this.Controls.Add(this.gbSource);
             this.Controls.Add(this.tcFFmpegAudioCodecs);
             this.Controls.Add(this.btnCopyPreview);
@@ -589,7 +580,6 @@
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -639,7 +629,6 @@
         private System.Windows.Forms.TabPage tpAAC;
         private System.Windows.Forms.TrackBar tbAACBitrate;
         private System.Windows.Forms.Label lblAACQuality;
-        private System.Windows.Forms.CheckBox cbShowError;
         private System.Windows.Forms.CheckBox cbCustomCommands;
         private System.Windows.Forms.Button btnHelp;
         private ShareX.HelpersLib.ExportImportControl eiFFmpeg;

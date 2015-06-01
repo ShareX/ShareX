@@ -138,9 +138,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Egyedi parancsok használata</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Ha a felvétel vagy az enkódolás hibába fut, hibaablak mutatása</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Kodekek</value>
   </data>

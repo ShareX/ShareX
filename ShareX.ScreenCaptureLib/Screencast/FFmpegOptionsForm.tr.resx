@@ -168,9 +168,6 @@
   <data name="lblPreset.Text" xml:space="preserve">
     <value>Genel:</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Eğer kaydetme veya kodlama başarısız olursa hata penceresi göster</value>
-  </data>
   <data name="lblExtension.Text" xml:space="preserve">
     <value>Uzantı (Dosya biçimi):</value>
   </data>

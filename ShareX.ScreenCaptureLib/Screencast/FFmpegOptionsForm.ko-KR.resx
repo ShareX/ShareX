@@ -192,9 +192,6 @@
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>코덱</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>녹화나 인코딩이 실패할 시 오류 창 띄우기</value>
-  </data>
   <data name="nudQscale.ToolTip" xml:space="preserve">
     <value>1이 최고 품질/제일 큰 파일 크기이며, 31이 최소 품질/제일 작은 파일 크기입니다.</value>
   </data>

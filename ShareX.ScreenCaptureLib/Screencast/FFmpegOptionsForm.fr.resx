@@ -161,9 +161,6 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
   <data name="btnHelp.Text" xml:space="preserve">
     <value>Aide...</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Si l'enregistrement ou le codage échoue, montrer la fenêtre d'erreur</value>
-  </data>
   <data name="lblPreset.Text" xml:space="preserve">
     <value>Préselection</value>
   </data>

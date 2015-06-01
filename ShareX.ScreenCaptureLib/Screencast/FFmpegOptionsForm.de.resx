@@ -144,9 +144,6 @@ Eine Voreinstellung ist eine Kollektion von Optionen, welche eine Bestimmte Kodi
 Das heißt dass, z.B.: wenn du eine bestimmte Dateigröße haben möchtest oder eine konstante Bitrate, wirst du ein bessere Qualität mit einer langsamen Voreinstellung
 Ebenso, für eine konstante Qualitätskodierung, wirst du Bitraten sparen, wenn du eine langsame Voreinstellung wählst.</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Wenn Aufnahme oder Kodierung fehlschlägt zeige das Fehlerfenster an</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Codecs</value>
   </data>

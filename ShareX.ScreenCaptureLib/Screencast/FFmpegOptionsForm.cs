@@ -62,7 +62,6 @@ namespace ShareX.ScreenCaptureLib
 
             cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
-            cbShowError.Checked = Options.FFmpeg.ShowError;
 
             string cli = "ffmpeg.exe";
             if (string.IsNullOrEmpty(Options.FFmpeg.CLIPath) && File.Exists(cli))
@@ -192,7 +191,20 @@ namespace ShareX.ScreenCaptureLib
 
             if (cboVideoCodec.SelectedIndex >= 0)
             {
-                tcFFmpegVideoCodecs.SelectedIndex = cboVideoCodec.SelectedIndex;
+                switch (Options.FFmpeg.VideoCodec)
+                {
+                    default:
+                    case FFmpegVideoCodec.libx264:
+                    case FFmpegVideoCodec.libx265:
+                        tcFFmpegVideoCodecs.SelectedIndex = 0;
+                        break;
+                    case FFmpegVideoCodec.libvpx:
+                        tcFFmpegVideoCodecs.SelectedIndex = 1;
+                        break;
+                    case FFmpegVideoCodec.libxvid:
+                        tcFFmpegVideoCodecs.SelectedIndex = 2;
+                        break;
+                }
             }
 
             UpdateUI();
@@ -204,7 +216,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (cboAudioCodec.SelectedIndex >= 0)
             {
-                tcFFmpegAudioCodecs.SelectedIndex = cboAudioCodec.SelectedIndex;
+                switch (Options.FFmpeg.AudioCodec)
+                {
+                    default:
+                    case FFmpegAudioCodec.libvoaacenc:
+                        tcFFmpegAudioCodecs.SelectedIndex = 0;
+                        break;
+                    case FFmpegAudioCodec.libvorbis:
+                        tcFFmpegAudioCodecs.SelectedIndex = 1;
+                        break;
+                    case FFmpegAudioCodec.libmp3lame:
+                        tcFFmpegAudioCodecs.SelectedIndex = 2;
+                        break;
+                }
             }
 
             UpdateUI();
@@ -256,11 +280,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Options.FFmpeg.MP3_qscale = FFmpegHelper.libmp3lame_qscale_end - tbMP3_qscale.Value;
             UpdateUI();
-        }
-
-        private void cbShowError_CheckedChanged(object sender, EventArgs e)
-        {
-            Options.FFmpeg.ShowError = cbShowError.Checked;
         }
 
         private void tbFFmpegPath_TextChanged(object sender, EventArgs e)

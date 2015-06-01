@@ -536,7 +536,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbFFmpegExe.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="cbCustomCommands.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -623,7 +623,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbCommandLinePreview.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="btnFFmpegHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -698,7 +698,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbCommandLineArgs.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="tpX264.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -875,7 +875,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="btnTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 340</value>
@@ -899,7 +899,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnTest.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="btnCopyPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>267, 340</value>
@@ -923,7 +923,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopyPreview.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lblAACQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1106,7 +1106,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="cboVideoSource.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 25</value>
@@ -1298,7 +1298,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="txtExtension.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 22</value>
@@ -1344,33 +1344,6 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
   </data>
   <data name="&gt;&gt;gbCodecs.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="cbShowError.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbShowError.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 452</value>
-  </data>
-  <data name="cbShowError.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 17</value>
-  </data>
-  <data name="cbShowError.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>If recording or encoding fails then show error window</value>
-  </data>
-  <data name="&gt;&gt;cbShowError.Name" xml:space="preserve">
-    <value>cbShowError</value>
-  </data>
-  <data name="&gt;&gt;cbShowError.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbShowError.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbShowError.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="btnHelp.Location" type="System.Drawing.Point, System.Drawing">
     <value>576, 448</value>
