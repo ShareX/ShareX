@@ -25,6 +25,7 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -140,7 +141,15 @@ namespace ShareX.HelpersLib
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
                 currentValue = currentValue.Between(0, maximumValue);
-                TaskbarList.SetProgressValue(hwnd, Convert.ToUInt32(currentValue), Convert.ToUInt32(maximumValue));
+
+                try
+                {
+                    TaskbarList.SetProgressValue(hwnd, Convert.ToUInt32(currentValue), Convert.ToUInt32(maximumValue));
+                }
+                catch (FileNotFoundException)
+                {
+                    Enabled = false;
+                }
             }
         }
 
@@ -158,7 +167,14 @@ namespace ShareX.HelpersLib
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
-                TaskbarList.SetProgressState(hwnd, state);
+                try
+                {
+                    TaskbarList.SetProgressState(hwnd, state);
+                }
+                catch (FileNotFoundException)
+                {
+                    Enabled = false;
+                }
             }
         }
 
