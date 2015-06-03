@@ -136,7 +136,7 @@
     <value>Taille du buffer:</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formats de presse-papier</value>
+    <value>Formats du presse-papier</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -148,7 +148,7 @@
     <value>Ne pas montrer la boite de dialogue d'impression de Windows</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Edition...</value>
+    <value>Editer...</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Format</value>
@@ -169,7 +169,7 @@
     <value>Langue:</value>
   </data>
   <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Note : Vous devez redémarrer ShareX pour que les changements du répertoire personnel soient pris en compte</value>
+    <value>Note: Vous devez redémarrer ShareX pour que les changements du dossier personnel soient pris en compte</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Nombre de tentatives si la mise en ligne échoue:</value>
@@ -187,7 +187,7 @@
     <value>Mot de passe:</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
-    <value>Chemins:</value>
+    <value>Chemins</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
     <value>Port:</value>
@@ -214,28 +214,28 @@
     <value>Résultats</value>
   </data>
   <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Essayer de nouveau</value>
+    <value>Réessayer</value>
   </data>
   <data name="cbStartWithWindows.Text" xml:space="preserve">
     <value>Exécuter ShareX au démarrage de Windows</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des fichiers secondaires</value>
+    <value>Logiciels de mise en ligne de fichiers secondaires</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des images secondaires</value>
+    <value>Logiciels de mise en ligne d'images secondaires</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne des textes secondaires</value>
+    <value>Logiciels de mise en ligne de textes secondaires</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuration de l'application</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Répertoire personnel ShareX</value>
+    <value>Dossier personnel ShareX:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Afficher le bouton "télécharger en utilisant ShareX" dans le menu contextuel</value>
+    <value>Afficher le bouton "Télécharger en utilisant ShareX" dans le menu contextuel</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Afficher la progression dans le bouton de la barre des tâches</value>
@@ -247,19 +247,19 @@
     <value>Afficher ShareX dans le menu "Envoyer vers"</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Afficher l'icone dans la barre des tâches</value>
+    <value>Afficher l'icône dans la barre des tâches</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
-    <value>Limite de mise en ligne simultanée</value>
+    <value>Limite de mises en ligne simultanées:</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Modèle de sous-répertoires</value>
+    <value>Modèle de sous-dossier:</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Utiliser répertoire screenshots personnalisé:</value>
+    <value>Utilisez un dossier de captures d'écran personnalisé:</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur:</value>

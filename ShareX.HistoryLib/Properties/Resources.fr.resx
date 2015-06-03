@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -147,7 +148,7 @@
     <value>Filtré: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
-    <value>Répertoire</value>
+    <value>Dossier</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
     <value>Image pour forum (BBcode)</value>
@@ -171,7 +172,7 @@
     <value>Lien HTML ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>Lien de l'image HTML</value>
+    <value>Image liée HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>Image</value>
@@ -211,5 +212,11 @@
   </data>
   <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
     <value>URLs ({0})</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
+    <value>Une erreur est survenue pendant la lecture du fichier XML: {0}</value>
   </data>
 </root>

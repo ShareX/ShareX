@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>Après la capture {0}</value>
+    <value>Après la capture: {0}</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} n'existe pas.
@@ -136,14 +136,14 @@ Voulez-vous automatiquement le télécharger ?</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Êtes-vous sûr de vouloir mettre en ligne cette capture d'écran?
-Appuyez sur "Non" pour annuler la mise en ligne courante et désactiver la mise en ligne automatique</value>
+Appuyer sur "Non" pour annuler la mise en ligne et désactiver la mise en ligne automatique.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
-    <value>Ne peux accéder au fichier {0}
-Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du répertoire personnel</value>
+    <value>Ne peux accéder au fichier "{0}"
+Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du dossier personnel</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
-    <value>Choisir un répertoire pour la sauvegarde</value>
+    <value>Choisir un dossier pour sauvegarde</value>
   </data>
   <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
     <value>Choisir le chemin de l'encodeur</value>
@@ -152,34 +152,34 @@ Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du r�
     <value>Choisir le chemin du fichier</value>
   </data>
   <data name="WatchFolderForm_btnPathBrowse_Click_Choose_folder_path" xml:space="preserve">
-    <value>Choisir le chemin du répertoire</value>
+    <value>Choisir le chemin du dossier</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Choisir le chemin du répertoire pour les captures</value>
+    <value>Choisir le chemin du dossier pour les captures</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Choisir le chemin du répertoire personnel pour ShareX</value>
+    <value>Choisir le chemin du dossier personnel pour ShareX</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Encodeur video CLI n'existe pas:</value>
+    <value>Le fichier de l'encodeur video CLI n'existe pas:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Cliquer sur l'icône pour démarrer l'enregistrement.</value>
+    <value>Cliquer pour démarrer l'enregistrement.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Cliquer sur l'icône pour arrêter l'enregistrement.</value>
+    <value>Cliquer pour arrêter l'enregistrement.</value>
   </data>
   <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
   <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configurer les encodeurs vdeo CLI ---&gt;</value>
+    <value>Configurer les encodeurs video CLI ---&gt;</value>
   </data>
   <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
     <value>Contributeurs</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Raccourcis claviers actuellement définis </value>
+    <value>Raccourcis claviers actuellement définis :</value>
   </data>
   <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
     <value>Position du curseur (X, Y) = {0}, {1}</value>
@@ -198,11 +198,11 @@ Merci de démarrer ShareX en tant qu'Administrateur pour changer le chemin du r�
 {0}</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Echec du télechargement de FFmpeg</value>
+    <value>Echec du téléchargement du FFmpeg.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>Déposer
-Ici</value>
+ici</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Encodage...</value>
@@ -223,34 +223,34 @@ Ici</value>
     <value>Erreur FFmpeg</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>Téléchargementde FFmpeg réussi </value>
+    <value>Téléchargement du FFmpeg réussi.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>La vidéo et la piste audio sources ne peuvent être toutes les deux "Aucune"</value>
+    <value>La vidéo et la piste audio source ne peuvent être toutes les deux "Aucune"</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>Confirmation de l'effacement d'un fichier</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
-    <value>Le chemin du fichier ne peux pas être vide</value>
+    <value>Le chemin du fichier ne peut pas être vide</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>mise en ligne du fichier</value>
+    <value>Mise en ligne du fichier</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>mise en ligne du fichier: {0}</value>
+    <value>Mise en ligne du fichier: {0}</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>Avertissement pour la première mise en ligne</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>répertoire mis en ligne</value>
+    <value>Dossier mis en ligne</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Cacher le menu</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>Raccourcis clavier</value>
+    <value>raccourci clavier</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>La définition du raccourci a échoué</value>
@@ -259,7 +259,7 @@ Ici</value>
     <value>raccourcis clavier</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Logiciels de mise en ligne d'images: {0}</value>
+    <value>Logiciel de mise en ligne d'images: {0}</value>
   </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>En attente</value>
@@ -289,7 +289,7 @@ Ici</value>
     <value>Page du projet</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Sélectionner un raccourci clavier</value>
+    <value>Sélectionner un raccourci clavier...</value>
   </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
     <value>Partage d'URL ({0})</value>
@@ -308,8 +308,7 @@ Voulez-vous redémarrer ShareX?</value>
     <value>Démarrer</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Démarrer l'écran sélecteur
-de couleur</value>
+    <value>Démarrer le sélecteur de couleur de l'écran</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
@@ -318,7 +317,7 @@ de couleur</value>
     <value>Arrêter</value>
   </data>
   <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Arrêter l'écran sélecteur de couleur</value>
+    <value>Arrêter le sélecteur de couleur de l'écran</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
     <value>Arrêté</value>
@@ -333,25 +332,25 @@ de couleur</value>
     <value>Tâche finie</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>Configuration de la tâche</value>
+    <value>Paramètres de la tâche</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>Configuration de la tâche pour {0}</value>
+    <value>Paramètres de la tâche pour {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tâche {0}</value>
+    <value>Tâche: {0}</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Test de mise en ligne d'un texte</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Logiciels de mise en ligne de textes: {0}</value>
+    <value>Logiciel de mise en ligne de textes: {0}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traducteurs</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>L'envoi du Tweet a réussi</value>
+    <value>L'envoi du Tweet a réussi.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
     <value>Il n'y a pas d'encodeur vidéo CLI valide sélectionné.</value>
@@ -360,20 +359,20 @@ de couleur</value>
     <value>Temps restant: {0}s ({1}%) Total: {2}</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Impossible de créer le répertoire:</value>
+    <value>Impossible de créer le dossier:</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Impossible d'enregistrer {0}:
 
  {1}
 
- Merci de sélectionner un raccourci différent ou quitter l'application contradictoire et rouvrez ShareX.</value>
+Merci de sélectionner un raccourci différent ou quitter l'application en conflit et rouvrez ShareX.</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
     <value>Erreurs de mise en ligne</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>Mise en ligne du fichier...</value>
+    <value>Mise en ligne de fichiers</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Mise en ligne en cours</value>
@@ -382,16 +381,16 @@ de couleur</value>
     <value>URL est vide</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL du service de partage : {0}</value>
+    <value>Service de partage d'URL: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>Raccourcisseur URL: {0}</value>
+    <value>Raccourcisseur d'URL: {0}</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL à télécharger et à mettre en ligne</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Uiliser un nouveau nom:</value>
+    <value>Utiliser un nouveau nom:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Attente...</value>
@@ -403,9 +402,27 @@ de couleur</value>
     <value>X: {0}, Y: {1}, Largeur: {2}, Hauteur: {3}</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Vous pouvez ajouter des workflows à partir des paramètres de raccourcis clavier ...</value>
+    <value>Vous pouvez ajouter des flux de travail à partir des paramètres de raccourcis clavier...</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_You_can_drag_and_drop_files_to_this_window_" xml:space="preserve">
-    <value>Vous pouvez glisser et déposer des fichiers sur cette fenêtre.</value>
+    <value>Vous pouvez glisser et déposer des fichiers dans cette fenêtre.</value>
+  </data>
+  <data name="MainForm_AfterShownJobs_You_can_middle_click_the_ShareX_tray_icon_to_start_rectangle_capture_" xml:space="preserve">
+    <value>Vous pouvez cliquer avec la molette l'icône de ShareX pour commencer une capture rectangulaire.</value>
+  </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>Clic gauche pour copier l'URL dans le presse papier. Clic droit pour ouvrir l'URL.</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
+    <value>le client FTP prend uniquement en charge FTP ou FTPS.</value>
+  </data>
+  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>Impossible de trouver un compte FTP valide.</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>Copié dans le presse-papier: {0}</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>Impossible de trouver compte Twitter valide.</value>
   </data>
 </root>

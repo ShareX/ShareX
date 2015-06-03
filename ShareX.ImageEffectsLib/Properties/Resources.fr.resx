@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,10 +124,10 @@
     <value>Dessins</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
-    <value>Filtres:</value>
+    <value>Filtres</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>Effets d'image - Largeur: {0}, Hauteur: {1}, temps de rendu: {2} ms</value>
+    <value>Effets d'image - Largeur: {0}, Hauteur: {1}, Temps de rendu: {2} ms</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>Manipulations</value>

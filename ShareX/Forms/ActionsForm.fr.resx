@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -126,10 +127,10 @@
     <value>OK</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Paramètres:</value>
   </data>
   <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtre d'extensions</value>
+    <value>Filtre d'extensions: (Exemple: jpg png mp4)</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Nom:</value>

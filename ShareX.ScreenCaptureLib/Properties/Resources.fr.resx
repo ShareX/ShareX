@@ -127,7 +127,7 @@
     <value>Ctrl: le mode Dessin ░ Espace: la capture plein écran</value>
   </data>
   <data name="RectangleAnnotate_DrawTips_Drawing_mode_on" xml:space="preserve">
-    <value>Ctrl: mode Région ░ Maj: couleur Pen ░ Molette de la souris: la taille Pen ░ Espace: la capture plein écran</value>
+    <value>Ctrl: mode région░ Maj: couleur de la plume░ Molette de la souris: la taille de la plume░ Espace: capture plein écran</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Echec du télechargement de FFmpeg</value>
@@ -147,7 +147,7 @@ Distance: {6:0,00} px / Angle: {7:0,00}°</value>
     <value>Qualité:</value>
   </data>
   <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Capture rectanglaire annotée</value>
+    <value>Capture rectangle annotée</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Capture rectangle simple</value>
@@ -156,6 +156,12 @@ Distance: {6:0,00} px / Angle: {7:0,00}°</value>
     <value>Capture d'une région </value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg tléchargé avec succès.</value>
+    <value>FFmpeg téléchargé avec succès.</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Capture rectangle transparent</value>
+  </data>
+  <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
+    <value>Ecran {0} (X:{1} Y:{2} Largeur:{3} Hauteur:{4})</value>
   </data>
 </root>

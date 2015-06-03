@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -141,6 +142,6 @@
     <value>Options d'impression</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
-    <value>Impression...</value>
+    <value>Imprimer...</value>
   </data>
 </root>

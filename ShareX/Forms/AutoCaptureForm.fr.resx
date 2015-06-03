@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -132,7 +133,7 @@
     <value>Région</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
-    <value>Temps de répétition</value>
+    <value>Temps de répétition:</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>secondes</value>
@@ -153,6 +154,6 @@
     <value>Statut</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Attendre que la tâche soit finie</value>
+    <value>Attendre que les tâches soient finies</value>
   </data>
 </root>
