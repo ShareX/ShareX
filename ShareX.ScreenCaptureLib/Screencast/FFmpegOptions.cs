@@ -72,7 +72,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
+                return !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) && VideoCodec != FFmpegVideoCodec.gif;
             }
         }
 

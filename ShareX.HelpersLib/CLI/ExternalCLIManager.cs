@@ -35,7 +35,7 @@ namespace ShareX.HelpersLib
         public event DataReceivedEventHandler OutputDataReceived;
         public event DataReceivedEventHandler ErrorDataReceived;
 
-        private Process process = new Process();
+        private Process process;
 
         public virtual int Open(string path, string args = null)
         {
@@ -43,26 +43,29 @@ namespace ShareX.HelpersLib
 
             if (File.Exists(path))
             {
-                ProcessStartInfo psi = new ProcessStartInfo(path);
-                psi.UseShellExecute = false;
-                psi.CreateNoWindow = true;
-                psi.RedirectStandardInput = true;
-                psi.RedirectStandardOutput = true;
-                psi.RedirectStandardError = true;
-                psi.Arguments = args;
-                psi.WorkingDirectory = Path.GetDirectoryName(path);
-                psi.StandardOutputEncoding = Encoding.UTF8;
-                psi.StandardErrorEncoding = Encoding.UTF8;
+                using (process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo(path);
+                    psi.UseShellExecute = false;
+                    psi.CreateNoWindow = true;
+                    psi.RedirectStandardInput = true;
+                    psi.RedirectStandardOutput = true;
+                    psi.RedirectStandardError = true;
+                    psi.Arguments = args;
+                    psi.WorkingDirectory = Path.GetDirectoryName(path);
+                    psi.StandardOutputEncoding = Encoding.UTF8;
+                    psi.StandardErrorEncoding = Encoding.UTF8;
 
-                process.EnableRaisingEvents = true;
-                if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
-                if (psi.RedirectStandardError) process.ErrorDataReceived += cli_ErrorDataReceived;
-                process.StartInfo = psi;
-                process.Start();
-                if (psi.RedirectStandardOutput) process.BeginOutputReadLine();
-                if (psi.RedirectStandardError) process.BeginErrorReadLine();
-                process.WaitForExit();
-                return process.ExitCode;
+                    process.EnableRaisingEvents = true;
+                    if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
+                    if (psi.RedirectStandardError) process.ErrorDataReceived += cli_ErrorDataReceived;
+                    process.StartInfo = psi;
+                    process.Start();
+                    if (psi.RedirectStandardOutput) process.BeginOutputReadLine();
+                    if (psi.RedirectStandardError) process.BeginErrorReadLine();
+                    process.WaitForExit();
+                    return process.ExitCode;
+                }
             }
 
             return -1;

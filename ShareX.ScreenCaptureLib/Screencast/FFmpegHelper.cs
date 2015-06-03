@@ -65,7 +65,38 @@ namespace ShareX.ScreenCaptureLib
 
         public bool Record()
         {
-            int errorCode = Open(Options.FFmpeg.CLIPath, Options.GetFFmpegCommands());
+            return Run(Options.FFmpeg.CLIPath, Options.GetFFmpegCommands());
+        }
+
+        public bool EncodeGIF(string input, string output)
+        {
+            bool result;
+
+            string palettePath = Path.Combine(Path.GetDirectoryName(Options.FFmpeg.CLIPath), "palette.png");
+
+            try
+            {
+                result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -vf palettegen -y \"{1}\"", input, palettePath));
+
+                if (result)
+                {
+                    result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -i \"{1}\" -lavfi paletteuse -y \"{2}\"", input, palettePath, output));
+                }
+            }
+            finally
+            {
+                if (File.Exists(palettePath))
+                {
+                    File.Delete(palettePath);
+                }
+            }
+
+            return result;
+        }
+
+        private bool Run(string path, string args = null)
+        {
+            int errorCode = Open(path, args);
             bool result = errorCode == 0;
             if (Options.FFmpeg.ShowError && !result)
             {

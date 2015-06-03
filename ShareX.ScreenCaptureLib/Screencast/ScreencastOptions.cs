@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
             if (FFmpeg.UseCustomCommands && !string.IsNullOrEmpty(FFmpeg.CustomCommands))
             {
                 commands = FFmpeg.CustomCommands.
-                    Replace("$fps$", ScreenRecordFPS.ToString(), StringComparison.InvariantCultureIgnoreCase).
+                    Replace("$fps$", FFmpeg.VideoCodec == FFmpegVideoCodec.gif ? GIFFPS.ToString() : ScreenRecordFPS.ToString(), StringComparison.InvariantCultureIgnoreCase).
                     Replace("$area_x$", CaptureArea.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
                     Replace("$area_y$", CaptureArea.Y.ToString(), StringComparison.InvariantCultureIgnoreCase).
                     Replace("$area_width$", CaptureArea.Width.ToString(), StringComparison.InvariantCultureIgnoreCase).
@@ -95,7 +95,16 @@ namespace ShareX.ScreenCaptureLib
             args.Append("-y "); // -y for overwrite file
             args.Append("-rtbufsize 100M "); // default real time buffer size was 3041280 (3M)
 
-            string fps = isCustom ? "$fps$" : ScreenRecordFPS.ToString();
+            string fps;
+
+            if (isCustom)
+            {
+                fps = "$fps$";
+            }
+            else
+            {
+                fps = FFmpeg.VideoCodec == FFmpegVideoCodec.gif ? GIFFPS.ToString() : ScreenRecordFPS.ToString();
+            }
 
             if (FFmpeg.IsVideoSourceSelected)
             {
@@ -138,17 +147,34 @@ namespace ShareX.ScreenCaptureLib
 
             if (FFmpeg.IsVideoSourceSelected)
             {
-                args.AppendFormat("-c:v {0} ", FFmpeg.VideoCodec);
+                string videoCodec;
+
+                switch (FFmpeg.VideoCodec)
+                {
+                    default:
+                        videoCodec = FFmpeg.VideoCodec.ToString();
+                        break;
+                    case FFmpegVideoCodec.gif:
+                        videoCodec = FFmpegVideoCodec.libx264.ToString();
+                        break;
+                }
+
+                args.AppendFormat("-c:v {0} ", videoCodec);
                 args.AppendFormat("-r {0} ", fps); // output FPS
 
                 switch (FFmpeg.VideoCodec)
                 {
                     case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
                     case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
+                    case FFmpegVideoCodec.gif:
                         args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                         args.AppendFormat("-preset {0} ", FFmpeg.x264_Preset);
                         args.AppendFormat("-tune {0} ", "zerolatency");
-                        args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+
+                        if (FFmpeg.VideoCodec != FFmpegVideoCodec.gif)
+                        {
+                            args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                        }
                         break;
                     case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         args.AppendFormat("-deadline {0} ", "realtime");

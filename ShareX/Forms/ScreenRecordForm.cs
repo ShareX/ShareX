@@ -177,6 +177,13 @@ namespace ShareX
                 {
                     if (outputType == ScreenRecordOutput.FFmpeg)
                     {
+                        if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+                        {
+                            taskSettings.CaptureSettings.FFmpegOptions.Extension = "mp4";
+                            taskSettings.CaptureSettings.FFmpegOptions.x264_CRF = 0;
+                            taskSettings.CaptureSettings.FFmpegOptions.x264_Preset = FFmpegPreset.ultrafast;
+                        }
+
                         path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
                     }
                     else
@@ -266,30 +273,22 @@ namespace ShareX
                         TrayIcon.Text = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         TrayIcon.Icon = Resources.camcorder_pencil.ToIcon();
 
-                        string sourceFilePath = path;
-
                         if (outputType == ScreenRecordOutput.GIF)
                         {
-                            if (taskSettings.CaptureSettings.RunScreencastCLI)
-                            {
-                                sourceFilePath = Path.ChangeExtension(Program.ScreenRecorderCacheFilePath, "gif");
-                            }
-                            else
-                            {
-                                sourceFilePath = path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
-                            }
-
-                            Helpers.CreateDirectoryIfNotExist(sourceFilePath);
-                            screenRecorder.EncodingProgressChanged += progress =>
-                            {
-                                TrayIcon.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
-                            };
-                            screenRecorder.SaveAsGIF(sourceFilePath, taskSettings.ImageSettings.ImageGIFQuality);
+                            path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
+                            screenRecorder.EncodingProgressChanged += progress => TrayIcon.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
+                            screenRecorder.SaveAsGIF(path, taskSettings.ImageSettings.ImageGIFQuality);
+                        }
+                        else if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
+                        {
+                            path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
+                            screenRecorder.FFmpegEncodeAsGIF(path);
                         }
 
                         if (taskSettings.CaptureSettings.RunScreencastCLI)
                         {
                             VideoEncoder encoder = Program.Settings.VideoEncoders[taskSettings.CaptureSettings.VideoEncoderSelected];
+                            string sourceFilePath = path;
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, encoder.OutputExtension));
                             screenRecorder.EncodeUsingCommandLine(encoder, sourceFilePath, path);
                         }
@@ -299,7 +298,8 @@ namespace ShareX
                 {
                     if (screenRecorder != null)
                     {
-                        if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI) &&
+                        if ((outputType == ScreenRecordOutput.GIF || taskSettings.CaptureSettings.RunScreencastCLI ||
+                            (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)) &&
                             !string.IsNullOrEmpty(screenRecorder.CachePath) && File.Exists(screenRecorder.CachePath))
                         {
                             File.Delete(screenRecorder.CachePath);

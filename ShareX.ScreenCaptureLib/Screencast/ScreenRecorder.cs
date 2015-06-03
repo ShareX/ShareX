@@ -202,6 +202,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (imgCache != null && imgCache is HardDiskCache && !IsRecording)
             {
+                Helpers.CreateDirectoryIfNotExist(path);
+
                 HardDiskCache hdCache = imgCache as HardDiskCache;
 
                 using (AnimatedGifCreator gifEncoder = new AnimatedGifCreator(path, delay))
@@ -221,6 +223,12 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
+        }
+
+        public bool FFmpegEncodeAsGIF(string path)
+        {
+            Helpers.CreateDirectoryIfNotExist(path);
+            return ffmpegCli.EncodeGIF(Options.OutputPath, path);
         }
 
         public void EncodeUsingCommandLine(VideoEncoder encoder, string sourceFilePath, string targetFilePath)
