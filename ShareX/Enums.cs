@@ -43,6 +43,8 @@ namespace ShareX
         Hungarian,
         [Description("한국어 (Korean)")]
         Korean,
+        [Description("Português-Brasil (Portuguese-Brazil)")]
+        PortugueseBrazil,
         [Description("简体中文 (Simplified Chinese)")]
         SimplifiedChinese,
         [Description("Español (Spanish)")]

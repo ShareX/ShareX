@@ -73,6 +73,7 @@ Hungarian: https://github.com/devBluestar
 Korean: https://github.com/123jimin
 Spanish: https://github.com/ovnisoftware
 Dutch: https://github.com/wforums
+Portuguese-Brazil: https://github.com/TiagoDanin
 
 {2}:
 

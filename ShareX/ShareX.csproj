@@ -975,6 +975,7 @@
     <None Include="Resources\kr.png" />
     <None Include="Resources\es.png" />
     <None Include="Resources\nl.png" />
+    <None Include="Resources\br.png" />
     <Content Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />

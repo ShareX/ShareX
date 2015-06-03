@@ -144,7 +144,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
+    <value>224, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
@@ -175,10 +175,10 @@
     <value>NoControl</value>
   </data>
   <data name="llTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 28</value>
+    <value>240, 28</value>
   </data>
   <data name="llTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 13</value>
+    <value>209, 13</value>
   </data>
   <data name="llTranslators.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>

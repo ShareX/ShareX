@@ -1096,7 +1096,7 @@ namespace Greenshot
         private void AddDropshadowToolStripMenuItemClick(object sender, EventArgs e)
         {
             DropShadowEffect dropShadowEffect = new DropShadowEffect();
-            // TODO: Use the dropshadow settings form to make it possible to change the default values
+            // Use the dropshadow settings form to make it possible to change the default values
             DialogResult result = new DropShadowSettingsForm(dropShadowEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
@@ -1128,7 +1128,7 @@ namespace Greenshot
         private void TornEdgesToolStripMenuItemClick(object sender, EventArgs e)
         {
             TornEdgeEffect tornEdgeEffect = new TornEdgeEffect();
-            // TODO: Use the dropshadow settings form to make it possible to change the default values
+            // Use the dropshadow settings form to make it possible to change the default values
             DialogResult result = new TornEdgeSettingsForm(tornEdgeEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
@@ -1169,7 +1169,7 @@ namespace Greenshot
         private void btnResize_Click(object sender, EventArgs e)
         {
             ResizeEffect resizeEffect = new ResizeEffect(surface.Image.Width, surface.Image.Height, true);
-            // TODO: Use the Resize SettingsForm to make it possible to change the default values
+            // Use the Resize SettingsForm to make it possible to change the default values
             DialogResult result = new ResizeSettingsForm(resizeEffect).ShowDialog(this);
             if (result == DialogResult.OK)
             {
