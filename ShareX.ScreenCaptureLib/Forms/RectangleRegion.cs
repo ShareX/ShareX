@@ -307,6 +307,11 @@ namespace ShareX.ScreenCaptureLib
                 textPos = new Point(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
             }
 
+            if (textPos.X + textSize.Width + backgroundPadding >= ScreenRectangle0Based.Width)
+            {
+                textPos.X = ScreenRectangle0Based.Width - textSize.Width - backgroundPadding;
+            }
+
             Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + backgroundPadding * 2, textSize.Height + backgroundPadding * 2);
 
             DrawInfoText(g, text, backgroundRect, backgroundPadding);
