@@ -144,9 +144,6 @@ Uma predefinição é uma coleção de opções que irá proporcionar uma certa 
 Isto significa que, por exemplo, se você direcionar um determinado tamanho ou taxa de bits constante, você vai conseguir melhor qualidade com uma predefinição mais lento.
 Da mesma forma, para codificação de qualidade constante, você simplesmente vai economizar bitrate escolhendo uma predefinição mais lento.</value>
   </data>
-  <data name="cbShowError.Text" xml:space="preserve">
-    <value>Se a gravação ou codificação falhar então mostrar a janela de erro</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Codecs</value>
   </data>
