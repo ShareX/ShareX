@@ -90,6 +90,22 @@ namespace ShareX
 
         public void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, bool skipRegionSelection = false)
         {
+            string debugText;
+
+            if (outputType == ScreenRecordOutput.FFmpeg)
+            {
+                debugText = string.Format("Starting FFmpeg recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
+                    taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(),
+                    taskSettings.CaptureSettings.ScreenRecordFPS);
+            }
+            else
+            {
+                debugText = string.Format("Starting Animated GIF recording. GIF encoding: \"{0}\", FPS: {1}",
+                    taskSettings.CaptureSettings.GIFEncoding.GetDescription(), taskSettings.CaptureSettings.GIFFPS);
+            }
+
+            DebugHelper.WriteLine(debugText);
+
             if (taskSettings.CaptureSettings.RunScreencastCLI)
             {
                 if (!Program.Settings.VideoEncoders.IsValidIndex(taskSettings.CaptureSettings.VideoEncoderSelected))
@@ -106,6 +122,12 @@ namespace ShareX
                         "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+            }
+
+            if (outputType == ScreenRecordOutput.GIF && taskSettings.CaptureSettings.GIFEncoding == ScreenRecordGIFEncoding.FFmpeg)
+            {
+                outputType = ScreenRecordOutput.FFmpeg;
+                taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
             }
 
             if (outputType == ScreenRecordOutput.FFmpeg)
@@ -277,7 +299,8 @@ namespace ShareX
                         {
                             path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, "gif"));
                             screenRecorder.EncodingProgressChanged += progress => TrayIcon.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
-                            screenRecorder.SaveAsGIF(path, taskSettings.ImageSettings.ImageGIFQuality);
+                            GIFQuality gifQuality = taskSettings.CaptureSettings.GIFEncoding == ScreenRecordGIFEncoding.OctreeQuantizer ? GIFQuality.Bit8 : GIFQuality.Default;
+                            screenRecorder.SaveAsGIF(path, gifQuality);
                         }
                         else if (outputType == ScreenRecordOutput.FFmpeg && taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
                         {

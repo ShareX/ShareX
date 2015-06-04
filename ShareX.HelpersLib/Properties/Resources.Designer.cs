@@ -1475,6 +1475,33 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FFmpeg (Good quality).
+        /// </summary>
+        internal static string ScreenRecordGIFEncoding_FFmpeg {
+            get {
+                return ResourceManager.GetString("ScreenRecordGIFEncoding_FFmpeg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .NET (Bad quality).
+        /// </summary>
+        internal static string ScreenRecordGIFEncoding_NET {
+            get {
+                return ResourceManager.GetString("ScreenRecordGIFEncoding_NET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Octree quantizer (Medium quality).
+        /// </summary>
+        internal static string ScreenRecordGIFEncoding_OctreeQuantizer {
+            get {
+                return ResourceManager.GetString("ScreenRecordGIFEncoding_OctreeQuantizer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon ShareX_Icon {

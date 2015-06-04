@@ -35,6 +35,16 @@ namespace ShareX.ScreenCaptureLib
         GIF
     }
 
+    public enum ScreenRecordGIFEncoding
+    {
+        [Description("FFmpeg")]
+        FFmpeg,
+        [Description(".NET")]
+        NET,
+        [Description("Octree quantizer")]
+        OctreeQuantizer
+    }
+
     public enum SurfaceResult
     {
         None,

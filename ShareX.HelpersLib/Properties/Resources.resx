@@ -637,4 +637,13 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capture custom region</value>
   </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (Good quality)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (Bad quality)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (Medium quality)</value>
+  </data>
 </root>
