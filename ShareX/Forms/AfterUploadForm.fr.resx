@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -135,7 +136,7 @@
     <value>Ouvrir le fichier...</value>
   </data>
   <data name="btnOpenFolder.Text" xml:space="preserve">
-    <value>Ouvrir le répertoire...</value>
+    <value>Ouvrir le dossier...</value>
   </data>
   <data name="btnOpenLink.Text" xml:space="preserve">
     <value>Ouvrir le lien...</value>

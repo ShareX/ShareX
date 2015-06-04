@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Enregistrer..</value>
+    <value>&amp;S'inscrire...</value>
   </data>
   <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
@@ -136,7 +136,7 @@
     <value>Ajouter un album</value>
   </data>
   <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Ajouter un répertoire</value>
+    <value>Ajouter un dossier</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>ID de l'album pour la mise en ligne (Vide = Aucun album mis en ligne):</value>
@@ -172,7 +172,7 @@
     <value>Confirmer avant l'envoi</value>
   </data>
   <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
-    <value>Créer l'album</value>
+    <value>Créer un album</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Créer un nouvel album</value>
@@ -184,13 +184,13 @@
     <value>Créer un lien partageable</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Créer une  URL partageable</value>
-  </data>
-  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
     <value>Créer une URL partageable</value>
   </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>Créer une URL partageable:</value>
+  </data>
   <data name="chkGistPublishPublic.Text" xml:space="preserve">
-    <value>Créer Gist publique</value>
+    <value>Créer un Gist public</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>Domaine personnalisé:</value>
@@ -202,13 +202,13 @@
     <value>Nom de l'album par défaut</value>
   </data>
   <data name="lblEmailDefaultBody.Text" xml:space="preserve">
-    <value>message par défaut:</value>
+    <value>Message par défaut:</value>
   </data>
   <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
-    <value>sujet par défaut:</value>
+    <value>Sujet par défaut:</value>
   </data>
   <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Suppression URL</value>
+    <value>Suppression URL:</value>
   </data>
   <data name="chPicasaDescription.Text" xml:space="preserve">
     <value>Description</value>
@@ -220,7 +220,7 @@
     <value>Description</value>
   </data>
   <data name="lblPushbulletDevices.Text" xml:space="preserve">
-    <value>appareil:</value>
+    <value>Appareil:</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Lien direct (ajoute "&amp;&amp;download" à l'URL)</value>
@@ -259,7 +259,7 @@
     <value>Exemples...</value>
   </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>expiration:</value>
+    <value>Expiration:</value>
   </data>
   <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
     <value>Nom du fichier de formulaire:</value>
@@ -268,7 +268,7 @@
     <value>Logiciel de mise en ligne de fichiers:</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne de fichiers</value>
+    <value>Logiciels de mise en ligne de fichiers</value>
   </data>
   <data name="lblFtpFiles.Text" xml:space="preserve">
     <value>Fichier:</value>
@@ -277,13 +277,13 @@
     <value>Fichier:</value>
   </data>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>ID du répertoire:</value>
+    <value>ID du dossier:</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
-    <value>Nom du répertoire</value>
+    <value>Nom du dossier</value>
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
-    <value>Répertoire:</value>
+    <value>Dossier:</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Obtenir la liste des périphériques</value>
@@ -295,7 +295,7 @@
     <value>Hôte:</value>
   </data>
   <data name="lblDropboxPathTip.Text" xml:space="preserve">
-    <value>Si vous utilisez le répertoire «Public», une url partageable est déjà générée. Vous n'avez pas besoin de cliquer sur "Créer URL partageable".</value>
+    <value>Si vous utilisez le dossier «Public», une url partageable est déjà générée. Vous n'avez pas besoin de cliquer sur "Créer URL partageable".</value>
   </data>
   <data name="cbOwnCloudIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorer certificat SSL invalide</value>
@@ -361,7 +361,7 @@
     <value>Nom</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>Nouveau nom de l'album (Doit être compris entre 2 et 50 caractères. Les caractères valides sont les lettres, les chiffres, les soulignements (_), les tirets (-) et les espaces)</value>
+    <value>Nouveau nom de l'album (doit être compris entre 2 et 50 caractères. Les caractères valides sont les lettres, les chiffres, les soulignements (_), les tirets (-) et les espaces)</value>
   </data>
   <data name="lblPastebinPassword.Text" xml:space="preserve">
     <value>Mot de passe:</value>
@@ -400,10 +400,10 @@
     <value>Mot de passe:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Remarque: Si vous avez une signature, alors vous n'avez pas besoin d'un nom d'utilisateur / mot de passe.</value>
+    <value>Remarque: Si vous avez une Signature alors vous n'avez pas besoin d'un nom d'utilisateur / mot de passe.</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Note: Vous pouvez double-cliquer sur le nom du répertoire pour aller dedans.</value>
+    <value>Note: Vous pouvez double-cliquer sur le nom du dossier pour aller dedans.</value>
   </data>
   <data name="lblCheveretoWebsite.Text" xml:space="preserve">
     <value>Site Web:</value>
@@ -466,16 +466,16 @@
     <value>Supprimer</value>
   </data>
   <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Ouvrir ma page images...</value>
+    <value>Ouvrir ma page des images...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Ouvrir ma page images...</value>
+    <value>Ouvrir ma page des images...</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
     <value>Ouvrir la page de mon profil public...</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>Autres Logiciels de mise en ligne</value>
+    <value>Autres logiciels de mise en ligne</value>
   </data>
   <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
     <value>Chemin de l'album parent</value>
@@ -484,7 +484,7 @@
     <value>Coller la syntaxe:</value>
   </data>
   <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Coller le Titre:</value>
+    <value>Coller le titre:</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>Chemin:</value>
@@ -517,31 +517,31 @@
     <value>Rafraîchir l'autorisation</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>Rafraîchir la liste des répertoires</value>
+    <value>Rafraîchir la liste des dossiers</value>
   </data>
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
-    <value>Rafraîchir la liste des répertoires</value>
+    <value>Rafraîchir la liste des dossiers</value>
   </data>
   <data name="gbCustomUploaderRegexp.Text" xml:space="preserve">
-    <value>Région</value>
+    <value>Regex de réponse</value>
   </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>S'inscrire ...</value>
+    <value>S'inscrire...</value>
   </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
     <value>S'inscrire ...</value>
   </data>
   <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recharger la liste des répertoires</value>
+    <value>Recharger la liste des dossiers</value>
   </data>
   <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
     <value>Se souvenir de l'adresse du dernier destinataire</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
-    <value>Répertoire selectionné:</value>
+    <value>Dossier sélectionné:</value>
   </data>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>Répertoire selectionné:</value>
+    <value>Dossier sélectionné:</value>
   </data>
   <data name="btnDropboxShowFiles.Text" xml:space="preserve">
     <value>Sélectionner...</value>
@@ -553,28 +553,28 @@
     <value>Vous pouvez trouver votre clé API et UID ici</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>clé API de l'utilisateur</value>
+    <value>Clé API de l'utilisateur</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>clé API de l'utilisateur:</value>
+    <value>Clé API de l'utilisateur:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Définitions des destinations</value>
+    <value>ShareX - Paramètres de destination</value>
   </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
-    <value>Répertoire partagé</value>
+    <value>Dossier partagé</value>
   </data>
   <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
     <value>Clé secrète:</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
-    <value>Supprimer l'album</value>
+    <value>Supprimer un album</value>
   </data>
   <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Supprimer le répertoire</value>
+    <value>Supprimer un dossier</value>
   </data>
   <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Type de requête</value>
+    <value>Type de requête:</value>
   </data>
   <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
     <value>URL requise:</value>
@@ -592,55 +592,55 @@
     <value>Étape 1: Ouvrir la page d'autorisation...</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
-    <value>Étape 2: autorisation complète</value>
+    <value>Étape 2: Autorisation complète</value>
   </data>
   <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Étape 2: autorisation complète</value>
+    <value>Étape 2: Autorisation complète</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>La coloration syntaxique:</value>
+    <value>Coloration syntaxique:</value>
   </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
-    <value>Titre:</value>
+    <value>Titre</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
-    <value>Titre:</value>
+    <value>Titre</value>
   </data>
   <data name="btnCustomUploaderArgEdit.Text" xml:space="preserve">
-    <value>Mise à jour</value>
+    <value>Actualiser</value>
   </data>
   <data name="btnCustomUploaderRegexpEdit.Text" xml:space="preserve">
-    <value>Mise à jour</value>
+    <value>Actualiser</value>
   </data>
   <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Mise à jour</value>
+    <value>Actualiser</value>
   </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
-    <value>Type miniature:</value>
+    <value>Type de la miniature:</value>
   </data>
   <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
     <value>URL miniature:</value>
   </data>
   <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
+    <value>Tester</value>
   </data>
   <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
+    <value>Tester</value>
   </data>
   <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Test</value>
+    <value>Tester</value>
   </data>
   <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
+    <value>Tester</value>
   </data>
   <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
     <value>Résultat du test:</value>
   </data>
   <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Signature</value>
+    <value>Signature:</value>
   </data>
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
-    <value>Serveur SMTP</value>
+    <value>Serveur SMTP:</value>
   </data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
     <value>Modèle</value>
@@ -649,10 +649,10 @@
     <value>Logiciel de mise en ligne de textes:</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>Logiciel de mise en ligne de textes</value>
+    <value>Logiciels de mise en ligne de textes</value>
   </data>
   <data name="lblMediaFirePath.Text" xml:space="preserve">
-    <value>Chemin de mise en ligne</value>
+    <value>Chemin de mise en ligne:</value>
   </data>
   <data name="lblCopyPath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne:</value>
@@ -676,7 +676,7 @@
     <value>Type d'URL:</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Code de vérification (Obtenir le code de vérification de la page d'autorisation):</value>
+    <value>Code de vérification (Obtenir le code de vérification sur la page d'autorisation):</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
     <value>Clé de l'utilisateur:</value>
@@ -684,10 +684,10 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Utilisez cette option si vous avez un tampon mis en place avec un nom de domaine personnalisé.
 Si le champ de texte est vide, le nom de tampon sera utilisé pour l'URL.
-Par exemple, si votre tampon est appelé tampon .example.com alors l'URL sera http: //tampon .example.com / ...</value>
+Par exemple, si votre tampon est appelé tampon.example.com alors l'URL sera http://tampon.example.com/...</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Mettre en ligne des fichiers vers le répertoire sélectionné</value>
+    <value>Mettre en ligne des fichiers vers le dossier sélectionné</value>
   </data>
   <data name="gbMinusUpload.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers</value>
@@ -696,18 +696,18 @@ Par exemple, si votre tampon est appelé tampon .example.com alors l'URL sera ht
     <value>Mettre en ligne les images vers</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
-    <value>Mettre en ligne les images vers l'album</value>
+    <value>Mettre en ligne les images vers l'album sélectionné</value>
   </data>
   <data name="gbCustomUploaders.Text" xml:space="preserve">
     <value>Logiciels de mise en ligne</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>Raccourcisseurs URL</value>
+    <value>Raccourcisseurs d'URL</value>
   </data>
   <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
     <value>Utilisez une classe de stockage de redondance inférieure pour les objets stockés.
 Avec cette option, les objets coûtent moins chers en espace disque, mais ont 99,99% de durabilité, au lieu de 99,999999999%.
-Cela signifie qu'ils peuvent être perdus d'Amazon S3 à un certain point.</value>
+Cela signifie qu'ils peuvent être perdu d'Amazon S3 à un certain moment.</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Utiliser un domaine personnalisé:</value>
@@ -719,18 +719,42 @@ Cela signifie qu'ils peuvent être perdus d'Amazon S3 à un certain point.</valu
     <value>Utiliser le stockage de redondance réduite</value>
   </data>
   <data name="btnHubicRefreshFolders.Text" xml:space="preserve">
-    <value>Mise à jour des dossiers</value>
+    <value>Rafraîchir la liste des dossiers</value>
   </data>
   <data name="cbHubicPublishLink.Text" xml:space="preserve">
-    <value>Création d'un lien (valide pour 30 jours)</value>
+    <value>Création d'un lien de partage (valide pour 30 jours)</value>
   </data>
   <data name="chHubicFolderName.Text" xml:space="preserve">
-    <value>Nom du dossiers</value>
+    <value>Nom du dossier</value>
   </data>
   <data name="lblHubicSelectedFolder.Text" xml:space="preserve">
     <value>Dossier sélectionné:</value>
   </data>
   <data name="lblHubicSelectedFolderNote.Text" xml:space="preserve">
-    <value>Note: Vous pouvez double-cliquer sur le nom du répertoire pour aller dedans.</value>
+    <value>Note: Vous pouvez double-cliquer sur le nom du dossier pour aller dedans.</value>
+  </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>Ignorer la boîte de message du tweet</value>
+  </data>
+  <data name="chTwitterAccount.Text" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>Clé API:</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>Pour obtenir une clé API, connectez-vous à Lambda : https://lambda.sx/ puis cliquez sur le rouage paramètres en haut à droite.</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>Message par défaut du tweet:</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>Nom:</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 étant le plus élevé en qualité / la taille du fichier est plus grande et le 31 étant la plus faible qualité / la taille du fichier est plus petite.</value>
+    <value>1 étant le plus élevé en qualité / la taille du fichier la plus grande et 31 étant la plus faible qualité / la taille du fichier la plus petite.</value>
   </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Arguments supplémentaires en ligne de commande</value>
@@ -141,16 +141,16 @@
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constante Factor (CRF): La gamme de l'échelle de quantification est 0-51: où 0 est sans perte, 23 est par défaut, et 51 est le pire possible.
 Une valeur plus faible est une qualité supérieure et une gamme subjectivement saine est 18-28.
-Considérez 18 comme étant visuellement sans perte ou presque: il devrait ressembler à la même chose ou presque que l'entrée mais il n'est techniquement pas sans perte.
-La gamme est exponentielle, augmentant ainsi la valeur CRF 6 est environ la moitié du débit tandis que -6 est environ deux fois le débit binaire.
-L'utilisation générale est de choisir la valeur CRF la plus haute qui fournit toujours une qualité acceptable.
-Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauvaise, choisissez une valeur inférieure.</value>
+Considérez 18 pour être visuellement sans perte ou presque: il devrait ressembler la même ou presque la même que l'entrée mais il n'est techniquement pas sans perte.
+La gamme est exponentielle, augmentant ainsi la valeur CRF de 6 est à peu près la moitié de la vitesse de transmission tandis que -6 est environ deux fois le débit binaire.
+Une utilisation générale est de choisir la valeur CRF la plus haute qui fournit toujours une qualité acceptable.
+Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est mauvaise, choisissez une valeur inférieure.</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>Copie</value>
+    <value>Copier</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>128k par défaut</value>
+    <value>128k par défaut.</value>
   </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Télécharger</value>
@@ -162,7 +162,7 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
     <value>Aide...</value>
   </data>
   <data name="lblPreset.Text" xml:space="preserve">
-    <value>Préselection</value>
+    <value>Présélection:</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Qualité:</value>
@@ -174,10 +174,10 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
     <value>Rafraîchir</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Range est 0-10, 10 étant la plus haute qualité. 3-6 est un bon choix pour essayer. Par défaut : 3.</value>
+    <value>La gamme va de 0 à 10, 10 étant la plus haute qualité. 3-6 est un bon choix pour essayer. Par défaut : 3.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Range est 0-9 où une valeur inférieure est une qualité supérieure. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle, et 6 produit une qualité «acceptable».</value>
+    <value>La gamme va de 0 à 9 où une valeur inférieure est une qualité supérieure. 0-3 produira normalement des résultats transparents, 4 (par défaut) devrait être proche de la transparence perceptuelle, et 6 produit une qualité «acceptable».</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Source vidéo:</value>
@@ -186,24 +186,26 @@ Si la sortie semble bonne, essayez une valeur plus élevée et si elle est mauva
     <value>Codec vidéo:</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>Test avec CMD</value>
+    <value>Tester avec CMD</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Options FFmpeg</value>
+    <value>ShareX - Options d'enregistrement de l'écran</value>
   </data>
   <data name="gbSource.Text" xml:space="preserve">
     <value>Sources</value>
   </data>
   <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Le réglage par défaut est "Medium".
-Un préréglage est une collection d'options qui fourniront une certaine vitesse d'encodage au taux de compression. Un préréglage lent fournira une meilleure compression (la compression est la qualité par la taille du fichier).
-Cela signifie que, par exemple, si vous ciblez une certaine taille de fichier ou un débit binaire constant, vous obtiendrez une meilleure qualité avec une présélection plus lente.
-De même, pour l'encodage de qualité constante, vous aurez simplement à sauvegarder le débit en choisissant un préréglage plus lent.</value>
+    <value>Un préréglage est une collection d'options qui apporteront une certaine vitesse d'encodage à taux de compression. Un préréglage lent fournira une meilleure compression (compression est la qualité par la taille du fichier).
+Cela signifie que, par exemple, si vous ciblez une taille de fichier ou un certain débit binaire constant, vous obtiendrez une meilleure qualité avec un préréglage plus lent.
+De même, pour l'encodage de qualité constante, vous aurez simplement à sauver bitrate en choisissant un préréglage plus lent.</value>
   </data>
   <data name="lblQscale.Text" xml:space="preserve">
     <value>Bitrate variable:</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utiliser des commandes personnalisées</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Bitrate variable:</value>
   </data>
 </root>

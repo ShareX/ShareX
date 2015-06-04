@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -121,5 +122,8 @@
   </data>
   <data name="btnYes.Text" xml:space="preserve">
     <value>Oui</value>
+  </data>
+  <data name="cbDontShow.Text" xml:space="preserve">
+    <value>Ne pas demander à nouveau jusqu'au prochain démarrage de ShareX</value>
   </data>
 </root>
