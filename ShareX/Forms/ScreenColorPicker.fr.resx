@@ -124,8 +124,7 @@
     <value>Appuyez sur la touche "Ctrl" lorsque cette fenêtre est active pour arrêter le sélecteur de couleur.</value>
   </data>
   <data name="btnColorPicker.Text" xml:space="preserve">
-    <value>Démarrer l'écran sélecteur
-de couleur</value>
+    <value>Démarrer le sélecteur de couleur de l'écran</value>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
     <value>Position du curseur:</value>

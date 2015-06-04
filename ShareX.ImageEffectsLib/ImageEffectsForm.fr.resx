@@ -144,4 +144,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Effets d'images</value>
   </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Charger l'image</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Depuis le presse-papier</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>Depuis un fichier...</value>
+  </data>
 </root>

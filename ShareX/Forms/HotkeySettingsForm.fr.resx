@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,7 +124,7 @@
     <value>Dupliquer</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edition...</value>
+    <value>Editer...</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
@@ -132,6 +133,6 @@
     <value>Restaurer les raccourcis clavier par défaut</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuration des raccourcis claviers</value>
+    <value>ShareX - Configuration des raccourcis clavier</value>
   </data>
 </root>

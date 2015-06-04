@@ -188,7 +188,7 @@
     <value>250, 22</value>
   </data>
   <data name="tsmiRoundedRectangle.Text" xml:space="preserve">
-    <value>Rectangle (Arrondi)</value>
+    <value>Rectangle arrondi</value>
   </data>
   <data name="tsmiEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -224,13 +224,13 @@
     <value>250, 22</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>Enregistrement d'écran (FFmpeg)</value>
+    <value>Enregistrement d'écran</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
-    <value>Enregistrement d'écran (Gif)</value>
+    <value>Enregistrement d'écran (GIF)</value>
   </data>
   <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -245,13 +245,13 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
-    <value>Mise en ligne du fichier...</value>
+    <value>Mise en ligne d'un fichier...</value>
   </data>
   <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Mise en ligne du répertoire...</value>
+    <value>Mise en ligne d'un dossier...</value>
   </data>
   <data name="tsmiUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
@@ -263,7 +263,7 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>Mise en ligne depuis l'URL...</value>
+    <value>Mise en ligne depuis une URL...</value>
   </data>
   <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
@@ -314,13 +314,13 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
-    <value>QR Code...</value>
+    <value>QR code...</value>
   </data>
   <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>Indexer le répertoire...</value>
+    <value>Indexer le dossier...</value>
   </data>
   <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -338,7 +338,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Message Tweet...</value>
+    <value>Tweeter un message...</value>
   </data>
   <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -365,7 +365,7 @@
     <value>212, 20</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Après les tâches de mise en ligne</value>
+    <value>Tâches après dlamise en ligne</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
@@ -419,13 +419,13 @@
     <value>212, 20</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>Configuration de la tâche...</value>
+    <value>Paramètres de la tâche...</value>
   </data>
   <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 20</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Paramètres de raccourcis clavier...</value>
+    <value>Paramètres des raccourcis clavier...</value>
   </data>
   <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 6</value>
@@ -434,7 +434,7 @@
     <value>212, 20</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
-    <value>Répertoire des captures d'écran...</value>
+    <value>Dossier des captures d'écran...</value>
   </data>
   <data name="tsbHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 20</value>
@@ -446,43 +446,43 @@
     <value>212, 20</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>Historique d'image...</value>
+    <value>Historique d'e l'image...</value>
   </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
-    <value>Journal de débogage</value>
+    <value>Journal de débogage...</value>
   </data>
   <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="tsmiTestImageUpload.Text" xml:space="preserve">
-    <value>Test de mise en ligne d'une image</value>
+    <value>Tester la mise en ligne d'image</value>
   </data>
   <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="tsmiTestTextUpload.Text" xml:space="preserve">
-    <value>Test de mise en ligne d'un texte</value>
+    <value>Tester la mise en ligne de texte</value>
   </data>
   <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
-    <value>Test de mise en ligne d'un fichier</value>
+    <value>Tester la mise en ligne de fichier</value>
   </data>
   <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>Test de raccourcisseur d'URL</value>
+    <value>Test le raccourcisseur d'URL</value>
   </data>
   <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>Test de partage d'URL</value>
+    <value>Tester le partage d'URL</value>
   </data>
   <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 20</value>
@@ -536,7 +536,7 @@
     <value>179, 22</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>Suppression d'URL</value>
+    <value>Suppression URL</value>
   </data>
   <data name="tssOpen1.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 6</value>
@@ -551,7 +551,7 @@
     <value>179, 22</value>
   </data>
   <data name="tsmiOpenFolder.Text" xml:space="preserve">
-    <value>Répertoire</value>
+    <value>Dossier</value>
   </data>
   <data name="tsmiOpenThumbnailFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
@@ -578,7 +578,7 @@
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>URL de la miniature</value>
+    <value>URL de miniature</value>
   </data>
   <data name="tsmiCopyDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 22</value>
@@ -635,7 +635,7 @@
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
-    <value>Lien d'image HTML</value>
+    <value>Image liée HTML</value>
   </data>
   <data name="tssCopy3.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 6</value>
@@ -683,7 +683,7 @@
     <value>245, 22</value>
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
-    <value>Répertoire</value>
+    <value>Dossier</value>
   </data>
   <data name="tssCopy5.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 6</value>
@@ -692,7 +692,7 @@
     <value>202, 22</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copie</value>
+    <value>Copier</value>
   </data>
   <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -704,25 +704,25 @@
     <value>202, 22</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>Editer l'image...</value>
+    <value>Éditer l'image...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Effacer le fichier local</value>
+    <value>Effacer le fichier local...</value>
   </data>
   <data name="tsmiShortenSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>Raccourcisseur d'URL</value>
+    <value>Raccourcir URL</value>
   </data>
   <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>Partage d'URL</value>
+    <value>Partager URL</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -821,7 +821,7 @@
     <value>250, 22</value>
   </data>
   <data name="tsmiTrayRoundedRectangle.Text" xml:space="preserve">
-    <value>Rectangle (Arrondi)</value>
+    <value>Rectangle arrondi</value>
   </data>
   <data name="tsmiTrayEllipse.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -857,13 +857,13 @@
     <value>250, 22</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>Enregistrement d'écran (FFmpeg)</value>
+    <value>Enregistrement d'écran</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
-    <value>Enregistrement d'écran (Gif)</value>
+    <value>Enregistrement d'écran (GIF)</value>
   </data>
   <data name="tsmiTrayAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -878,13 +878,13 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
-    <value>Mise en ligne du fichier...</value>
+    <value>Mise en ligne d'un fichier...</value>
   </data>
   <data name="tsmiTrayUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Mise en ligne du répertoire...</value>
+    <value>Mise en ligne d'un dossier...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
@@ -896,7 +896,7 @@
     <value>294, 22</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>Mise en ligne depuis l'URL...</value>
+    <value>Mise en ligne depuis une URL...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 22</value>
@@ -935,7 +935,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Vérifier un  Hash...</value>
+    <value>Vérifier un Hash...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -947,13 +947,13 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
-    <value>QR Code...</value>
+    <value>QR code...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Indexer le répertoire...</value>
+    <value>Indexer le dossier...</value>
   </data>
   <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -971,7 +971,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Message Tweet...</value>
+    <value>Tweeter un message...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1022,7 +1022,7 @@
     <value>271, 22</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>Raccourcisseurs URL</value>
+    <value>Raccourcisseurs d'URL</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
@@ -1052,7 +1052,7 @@
     <value>252, 22</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>Configuration de la tâche...</value>
+    <value>Paramètres de la tâche...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
@@ -1067,7 +1067,7 @@
     <value>252, 22</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
-    <value>Répertoire des captures d'écran...</value>
+    <value>Dossier des captures d'écran...</value>
   </data>
   <data name="tsmiTrayHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
@@ -1124,7 +1124,7 @@
     <value>Image</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
-    <value>Workflows</value>
+    <value>Flux de travaux</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -1136,7 +1136,7 @@
     <value>Ellipse</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Capture</value>
+    <value>Capturer</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>Rectangle</value>
@@ -1154,9 +1154,30 @@
     <value>Rectangle</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
-    <value>Workflows</value>
+    <value>Flux de travail</value>
   </data>
   <data name="tsmiTriangle.Text" xml:space="preserve">
     <value>Triangle</value>
+  </data>
+  <data name="tsmiAutomate.Text" xml:space="preserve">
+    <value>Automatiser...</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Sélecteur de couleur...</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Rectangle (Transparent)</value>
+  </data>
+  <data name="tsmiTrayAutomate.Text" xml:space="preserve">
+    <value>Automatiser...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Sélecteur de couleur...</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Liens récents</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Rectangle (Transparent)</value>
   </data>
 </root>

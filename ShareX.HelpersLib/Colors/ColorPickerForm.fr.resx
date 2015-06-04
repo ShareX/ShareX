@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -132,7 +133,7 @@
     <value>Cyan:</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
-    <value>Décimales:</value>
+    <value>Décimal:</value>
   </data>
   <data name="rbGreen.Text" xml:space="preserve">
     <value>Vert:</value>
@@ -153,7 +154,7 @@
     <value>OK</value>
   </data>
   <data name="lblOld.Text" xml:space="preserve">
-    <value>Précedent:</value>
+    <value>Ancien:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
     <value>Rouge:</value>
@@ -162,7 +163,7 @@
     <value>Jaune:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Sélectionneur de couleur</value>
+    <value>ShareX - Sélecteur de couleur</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Saturation:</value>
