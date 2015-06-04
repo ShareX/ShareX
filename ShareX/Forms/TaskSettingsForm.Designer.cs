@@ -1018,6 +1018,7 @@
             // 
             // pgRegionCapture
             // 
+            this.pgRegionCapture.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgRegionCapture, "pgRegionCapture");
             this.pgRegionCapture.Name = "pgRegionCapture";
             this.pgRegionCapture.PropertySort = System.Windows.Forms.PropertySort.NoSort;
@@ -1221,6 +1222,7 @@
             // 
             // pgRectangleAnnotate
             // 
+            this.pgRectangleAnnotate.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgRectangleAnnotate, "pgRectangleAnnotate");
             this.pgRectangleAnnotate.Name = "pgRectangleAnnotate";
             this.pgRectangleAnnotate.PropertySort = System.Windows.Forms.PropertySort.NoSort;
@@ -1529,6 +1531,7 @@
             // 
             // pgIndexerConfig
             // 
+            this.pgIndexerConfig.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgIndexerConfig, "pgIndexerConfig");
             this.pgIndexerConfig.Name = "pgIndexerConfig";
             this.pgIndexerConfig.PropertySort = System.Windows.Forms.PropertySort.Categorized;
@@ -1553,6 +1556,7 @@
             // 
             // pgTaskSettings
             // 
+            this.pgTaskSettings.CategoryForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             resources.ApplyResources(this.pgTaskSettings, "pgTaskSettings");
             this.pgTaskSettings.Name = "pgTaskSettings";
             this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
