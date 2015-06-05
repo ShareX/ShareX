@@ -1803,6 +1803,9 @@
   <data name="&gt;&gt;tpImage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 246</value>
   </data>
@@ -1829,6 +1832,9 @@
   </data>
   <data name="lblCaptureCustomRegionWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 232</value>
@@ -1857,6 +1863,9 @@
   <data name="lblCaptureCustomRegionHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCaptureCustomRegionHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCaptureCustomRegionHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>496, 232</value>
   </data>
@@ -1884,6 +1893,9 @@
   <data name="lblCaptureCustomRegionY.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCaptureCustomRegionY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCaptureCustomRegionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>384, 232</value>
   </data>
@@ -1910,6 +1922,9 @@
   </data>
   <data name="lblCaptureCustomRegionX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCaptureCustomRegionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 232</value>
@@ -2021,6 +2036,9 @@
   </data>
   <data name="lblCaptureCustomRegionSelectedMonitor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblCaptureCustomRegionSelectedMonitor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCaptureCustomRegionSelectedMonitor.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 232</value>
@@ -2511,17 +2529,20 @@
   <data name="lblGIFEncoding.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblGIFEncoding.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGIFEncoding.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 88</value>
   </data>
   <data name="lblGIFEncoding.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
+    <value>69, 13</value>
   </data>
   <data name="lblGIFEncoding.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="lblGIFEncoding.Text" xml:space="preserve">
-    <value>GIF encoding:</value>
+    <value>GIF encoder:</value>
   </data>
   <data name="&gt;&gt;lblGIFEncoding.Name" xml:space="preserve">
     <value>lblGIFEncoding</value>
@@ -2534,6 +2555,9 @@
   </data>
   <data name="&gt;&gt;lblGIFEncoding.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -2683,13 +2707,13 @@
     <value>8, 40</value>
   </data>
   <data name="lblScreenRecordFPS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+    <value>114, 13</value>
   </data>
   <data name="lblScreenRecordFPS.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>Screen record FPS:</value>
+    <value>Screen recording FPS:</value>
   </data>
   <data name="&gt;&gt;lblScreenRecordFPS.Name" xml:space="preserve">
     <value>lblScreenRecordFPS</value>
@@ -3440,6 +3464,9 @@
   </data>
   <data name="cbNameFormatCustomTimeZone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -4221,6 +4248,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>774, 392</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -4260,6 +4290,24 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
+    <value>chWatchFolderFolderPath</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
+    <value>chWatchFolderFilter</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
+    <value>chWatchFolderIncludeSubdirectories</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;chActionsName.Name" xml:space="preserve">
     <value>chActionsName</value>
   </data>
@@ -4282,24 +4330,6 @@
     <value>chActionsExtensions</value>
   </data>
   <data name="&gt;&gt;chActionsExtensions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
-    <value>chWatchFolderFolderPath</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
-    <value>chWatchFolderFilter</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
-    <value>chWatchFolderIncludeSubdirectories</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
