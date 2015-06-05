@@ -118,9 +118,6 @@
     <EmbeddedResource Include="HistoryForm.nl-NL.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HistoryForm.pt-BR.resx">
-      <DependentUpon>HistoryForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,9 +143,6 @@
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.nl-NL.resx">
-      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HistoryItemInfoForm.pt-BR.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistoryItemInfoForm.resx">
@@ -178,9 +172,6 @@
     <EmbeddedResource Include="ImageHistoryForm.nl-NL.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageHistoryForm.pt-BR.resx">
-      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ImageHistoryForm.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,7 +187,6 @@
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
-    <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
