@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
         GIF
     }
 
-    public enum ScreenRecordGIFEncoding
+    public enum ScreenRecordGIFEncoding // Localized
     {
         [Description("FFmpeg")]
         FFmpeg,

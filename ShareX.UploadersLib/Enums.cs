@@ -122,11 +122,11 @@ namespace ShareX.UploadersLib
         Lambda,
         [Description("Imgrush")]
         Imgrush,
+        [Description("VideoBin")]
+        VideoBin,
         SharedFolder, // Localized
         Email, // Localized
-        CustomFileUploader, // Localized
-        [Description("VideoBin")]
-        VideoBin
+        CustomFileUploader // Localized
     }
 
     [Description("URL shorteners"), DefaultValue(BITLY)]

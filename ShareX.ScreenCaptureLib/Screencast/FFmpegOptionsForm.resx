@@ -1403,7 +1403,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Screen record options</value>
+    <value>ShareX - Screen recording options</value>
   </data>
   <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
     <value>ttHelpTip</value>

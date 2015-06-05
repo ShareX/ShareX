@@ -186,6 +186,9 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.libxvid:
                         txtExtension.Text = "avi";
                         break;
+                    case FFmpegVideoCodec.gif:
+                        txtExtension.Text = "gif";
+                        break;
                 }
             }
 
