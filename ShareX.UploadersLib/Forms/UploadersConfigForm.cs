@@ -2383,9 +2383,6 @@ namespace ShareX.UploadersLib
 
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
             {
-                btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                    btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
-
                 TestCustomUploader(CustomUploaderType.Image, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
             }
         }
@@ -2396,9 +2393,6 @@ namespace ShareX.UploadersLib
 
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
             {
-                btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                    btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
-
                 TestCustomUploader(CustomUploaderType.Text, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
             }
         }
@@ -2409,9 +2403,6 @@ namespace ShareX.UploadersLib
 
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
             {
-                btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                    btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
-
                 TestCustomUploader(CustomUploaderType.File, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
             }
         }
@@ -2422,9 +2413,6 @@ namespace ShareX.UploadersLib
 
             if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
             {
-                btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
-                    btnCustomUploaderFileUploaderTest.Enabled = btnCustomUploaderURLShortenerTest.Enabled = false;
-
                 TestCustomUploader(CustomUploaderType.URL, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
             }
         }

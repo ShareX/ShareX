@@ -385,6 +385,9 @@
     <EmbeddedResource Include="Automate\AutomateForm.es.resx">
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Automate\AutomateForm.fr.resx">
+      <DependentUpon>AutomateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Automate\AutomateForm.ko-KR.resx">
       <DependentUpon>AutomateForm.cs</DependentUpon>
     </EmbeddedResource>
