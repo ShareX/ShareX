@@ -996,6 +996,9 @@ namespace ShareX
                 case FileDestination.Imgrush:
                     fileUploader = new MediaCrushUploader("https://imgrush.com");
                     break;
+                case FileDestination.VideoBin:
+                    fileUploader = new VideoBin();
+                    break;
             }
 
             if (fileUploader != null)
