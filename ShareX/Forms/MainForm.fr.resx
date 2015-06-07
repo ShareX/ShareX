@@ -365,7 +365,7 @@
     <value>212, 20</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>Tâches après dlamise en ligne</value>
+    <value>Tâches après la mise en ligne</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
@@ -446,7 +446,7 @@
     <value>212, 20</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>Historique d'e l'image...</value>
+    <value>Historique des images...</value>
   </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
@@ -500,7 +500,7 @@
     <value>212, 20</value>
   </data>
   <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>A propos...</value>
+    <value>À propos...</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 407</value>
@@ -716,7 +716,7 @@
     <value>202, 22</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>Raccourcir URL</value>
+    <value>Raccourcir l'URL</value>
   </data>
   <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -773,7 +773,7 @@
     <value>202, 22</value>
   </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Prévisualisation d'image</value>
+    <value>Prévisualisation de l'image</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 318</value>
@@ -917,7 +917,7 @@
     <value>238, 22</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>Ecran du sélecteur de couleur...</value>
+    <value>Écran du sélecteur de couleur...</value>
   </data>
   <data name="tsmiTrayImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1058,7 +1058,7 @@
     <value>252, 22</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Paramètres de raccourcis clavier...</value>
+    <value>Paramètres des raccourcis clavier...</value>
   </data>
   <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 6</value>
@@ -1091,7 +1091,7 @@
     <value>252, 22</value>
   </data>
   <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>A propos...</value>
+    <value>À propos...</value>
   </data>
   <data name="tssTray3.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 6</value>
@@ -1106,7 +1106,7 @@
     <value>252, 22</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
-    <value>Fin</value>
+    <value>Quitter</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 396</value>
@@ -1124,7 +1124,7 @@
     <value>Image</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
-    <value>Flux de travaux</value>
+    <value>Flux de travail</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>

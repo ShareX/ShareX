@@ -124,7 +124,7 @@
     <value>Rotation automatique de l'image</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Echelle automatique de l'image</value>
+    <value>Échelle automatique de l'image</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annuler</value>

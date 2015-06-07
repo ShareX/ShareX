@@ -296,7 +296,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Cyan: {0:0,0}%, Magenta: {1:0,0}%, Jaune: {2: 0.0}%, Clé: {3: 0,0}%</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
-    <value>Encodage par défaut .NET (encodage rapide mais de qualité moyenne)</value>
+    <value>Encodage par défaut .NET (Encodage rapide mais de qualité moyenne)</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Effacer le fichier localement</value>
@@ -314,7 +314,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Téléchargement terminé.</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
-    <value>Echec du téléchargement:</value>
+    <value>Échec du téléchargement:</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
     <value>Téléchargement en cours.</value>
@@ -419,7 +419,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>16 couleurs de Octree</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>Octree quantification 256 couleurs (encodage lent mais de meilleure qualité)</value>
+    <value>Quantification Octree 256 couleurs (Encodage lent mais de meilleure qualité)</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
     <value>Attente.</value>
@@ -446,7 +446,7 @@ Voulez-vous la télécharger et l'installer?</value>
     <value>Ouvrir l'URL</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
-    <value>Ecraser le fichier</value>
+    <value>Écraser le fichier</value>
   </data>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Palette de quantification en niveaux de gris 256 couleurs</value>
@@ -472,7 +472,7 @@ Vitesse de téléchargement: {1:0.0} Ko/s
 Taille du fichier: {2:n0} / {3:n0} Ko</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR Code</value>
+    <value>QR code</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Caractère alphanumérique aléatoire</value>
@@ -614,5 +614,14 @@ Taille du fichier: {2:n0} / {3:n0} Ko</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>Débuter l'enregistrement de l'écran (GIF) en utilisant la dernière région</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (Bonne qualité)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (Mauvaise qualité)</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Quantification Octree (Qualité moyenne)</value>
   </data>
 </root>

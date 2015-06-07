@@ -184,10 +184,10 @@
     <value>Supprimer les filtres</value>
   </data>
   <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Démarre avec</value>
+    <value>Commence par</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>A:</value>
+    <value>À:</value>
   </data>
   <data name="chType.Text" xml:space="preserve">
     <value>Type</value>

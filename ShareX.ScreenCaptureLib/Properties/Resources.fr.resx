@@ -130,7 +130,7 @@
     <value>Ctrl: mode région░ Maj: couleur de la plume░ Molette de la souris: la taille de la plume░ Espace: capture plein écran</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Echec du télechargement de FFmpeg</value>
+    <value>Échec du téléchargement de FFmpeg.</value>
   </data>
   <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
     <value>Erreur FFmpeg</value>
@@ -162,6 +162,6 @@ Distance: {6:0,00} px / Angle: {7:0,00}°</value>
     <value>Capture rectangle transparent</value>
   </data>
   <data name="ScreenRegion_Name_Monitor_0___X__1__Y__2__Width__3__Height__4_" xml:space="preserve">
-    <value>Ecran {0} (X:{1} Y:{2} Largeur:{3} Hauteur:{4})</value>
+    <value>Écran {0} (X:{1} Y:{2} Largeur:{3} Hauteur:{4})</value>
   </data>
 </root>

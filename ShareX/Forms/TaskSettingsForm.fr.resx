@@ -169,7 +169,7 @@
     <value>Dupliquer</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Editer</value>
+    <value>Éditer</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effets</value>
@@ -190,7 +190,7 @@
     <value>Chemin du dossier</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Généralités</value>
+    <value>Général</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>GIF FPS:</value>
@@ -229,7 +229,7 @@
     <value>Format d'image:</value>
   </data>
   <data name="lblUseImageFormat2After.Text" xml:space="preserve">
-    <value>Taille limite de l'image pour l'utilisation de "Format d'image 2:"</value>
+    <value>Taille limite de l'image pour l'utilisation de "Format d'image 2":</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Logiciels de mise en ligne d'images</value>
@@ -241,7 +241,7 @@
     <value>Indexeur</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>Qualité JPEG</value>
+    <value>Qualité JPEG:</value>
   </data>
   <data name="lblUseImageFormat2AfterHint.Text" xml:space="preserve">
     <value>Ko 0 - 5000 ( 0 désactive)</value>
@@ -283,7 +283,7 @@
     <value>Prévisualisation:</value>
   </data>
   <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profiles...</value>
+    <value>Profils...</value>
   </data>
   <data name="tpRectangleAnnotate.Text" xml:space="preserve">
     <value>Rectangle annoté</value>
@@ -434,5 +434,20 @@
   </data>
   <data name="lblCaptureCustomRegionSelectedMonitor.Text" xml:space="preserve">
     <value>Sélectionnez un écran pour une région personnalisée:</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="btnCaptureTransmitBoundsFromMonitorToCustomBounds.Text" xml:space="preserve">
+    <value>&gt;&gt;</value>
+  </data>
+  <data name="lblGIFEncoding.Text" xml:space="preserve">
+    <value>GIF encodeur:</value>
   </data>
 </root>

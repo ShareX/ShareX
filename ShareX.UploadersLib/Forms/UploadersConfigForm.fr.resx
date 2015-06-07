@@ -223,7 +223,7 @@
     <value>Appareil:</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Lien direct (ajoute "&amp;&amp;download" à l'URL)</value>
+    <value>Lien direct (Ajoute "&amp;&amp;download" à l'URL)</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>URL directe</value>
@@ -529,7 +529,7 @@
     <value>S'inscrire...</value>
   </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>S'inscrire ...</value>
+    <value>S'inscrire...</value>
   </data>
   <data name="btnMinusReadFolderList.Text" xml:space="preserve">
     <value>Recharger la liste des dossiers</value>
@@ -667,7 +667,7 @@
     <value>Prévisualisation d'URL:</value>
   </data>
   <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Raccourcisseur URL:</value>
+    <value>Raccourcisseur d'URL:</value>
   </data>
   <data name="lblMinusURLType.Text" xml:space="preserve">
     <value>Type d'URL:</value>
