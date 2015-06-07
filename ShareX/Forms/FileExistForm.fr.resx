@@ -121,7 +121,7 @@
     <value>Ne pas sauvegarder</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Ecraser:</value>
+    <value>Écraser:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Comment sauvegarder?</value>

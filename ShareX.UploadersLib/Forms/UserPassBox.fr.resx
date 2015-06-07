@@ -136,6 +136,6 @@
     <value>Nom d'utilisateur:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Saisie nom d'utilisateur / mot de passe</value>
+    <value>Saisie nom d'utilisateur/mot de passe</value>
   </data>
 </root>

@@ -130,7 +130,7 @@
     <value>Dégradé</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
-    <value>Type de dégradé</value>
+    <value>Type de dégradé:</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
     <value>Emplacement</value>

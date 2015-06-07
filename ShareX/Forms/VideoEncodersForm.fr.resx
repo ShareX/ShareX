@@ -130,7 +130,7 @@
     <value>Dupliquer</value>
   </data>
   <data name="btnEncodersEdit.Text" xml:space="preserve">
-    <value>Editer</value>
+    <value>Éditer</value>
   </data>
   <data name="chEncoderOutputExtension.Text" xml:space="preserve">
     <value>Extension de sortie</value>

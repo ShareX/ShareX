@@ -121,7 +121,7 @@
     <value>{0} créé avec succès.</value>
   </data>
   <data name="DropboxFilesForm_tsmiDelete_Click_Are_you_sure_you_want_to_delete___0___from_your_Dropbox_" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer "{0}" de votre Dropbox?</value>
+    <value>Êtes-vous sûr de vouloir supprimer "{0}" de votre Dropbox?</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Authentification requise.</value>
@@ -146,7 +146,7 @@
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>Connecté!
-Création des dossiers:</value>
+Dossiers créés:</value>
   </data>
   <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
     <value>Connexion à {0}</value>
