@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
-            this.lblExtension = new System.Windows.Forms.Label();
             this.lblx264CRF = new System.Windows.Forms.Label();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
@@ -39,6 +38,8 @@
             this.tbVorbis_qscale = new System.Windows.Forms.TrackBar();
             this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
             this.tbAACBitrate = new System.Windows.Forms.TrackBar();
+            this.cbGIFStatsMode = new System.Windows.Forms.ComboBox();
+            this.cbGIFDither = new System.Windows.Forms.ComboBox();
             this.lblCodec = new System.Windows.Forms.Label();
             this.cboVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
@@ -60,6 +61,9 @@
             this.nudVP8Bitrate = new System.Windows.Forms.NumericUpDown();
             this.lblVP8Bitrate = new System.Windows.Forms.Label();
             this.tpXvid = new System.Windows.Forms.TabPage();
+            this.tpGIF = new System.Windows.Forms.TabPage();
+            this.lblGIFDither = new System.Windows.Forms.Label();
+            this.lblGIFStatsMode = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCopyPreview = new System.Windows.Forms.Button();
             this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
@@ -78,14 +82,8 @@
             this.gbSource = new System.Windows.Forms.GroupBox();
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
-            this.txtExtension = new System.Windows.Forms.TextBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
-            this.tpGIF = new System.Windows.Forms.TabPage();
-            this.lblGIFStatsMode = new System.Windows.Forms.Label();
-            this.cbGIFStatsMode = new System.Windows.Forms.ComboBox();
-            this.cbGIFDither = new System.Windows.Forms.ComboBox();
-            this.lblGIFDither = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -99,19 +97,14 @@
             this.tpVpx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVP8Bitrate)).BeginInit();
             this.tpXvid.SuspendLayout();
+            this.tpGIF.SuspendLayout();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpAAC.SuspendLayout();
             this.tpVorbis.SuspendLayout();
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
-            this.tpGIF.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblExtension
-            // 
-            resources.ApplyResources(this.lblExtension, "lblExtension");
-            this.lblExtension.Name = "lblExtension";
             // 
             // lblx264CRF
             // 
@@ -212,6 +205,24 @@
             this.ttHelpTip.SetToolTip(this.tbAACBitrate, resources.GetString("tbAACBitrate.ToolTip"));
             this.tbAACBitrate.Value = 4;
             this.tbAACBitrate.ValueChanged += new System.EventHandler(this.tbAACBitrate_ValueChanged);
+            // 
+            // cbGIFStatsMode
+            // 
+            this.cbGIFStatsMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGIFStatsMode.FormattingEnabled = true;
+            resources.ApplyResources(this.cbGIFStatsMode, "cbGIFStatsMode");
+            this.cbGIFStatsMode.Name = "cbGIFStatsMode";
+            this.ttHelpTip.SetToolTip(this.cbGIFStatsMode, resources.GetString("cbGIFStatsMode.ToolTip"));
+            this.cbGIFStatsMode.SelectedIndexChanged += new System.EventHandler(this.cbGIFStatsMode_SelectedIndexChanged);
+            // 
+            // cbGIFDither
+            // 
+            this.cbGIFDither.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGIFDither.FormattingEnabled = true;
+            resources.ApplyResources(this.cbGIFDither, "cbGIFDither");
+            this.cbGIFDither.Name = "cbGIFDither";
+            this.ttHelpTip.SetToolTip(this.cbGIFDither, resources.GetString("cbGIFDither.ToolTip"));
+            this.cbGIFDither.SelectedIndexChanged += new System.EventHandler(this.cbGIFDither_SelectedIndexChanged);
             // 
             // lblCodec
             // 
@@ -383,6 +394,26 @@
             this.tpXvid.Name = "tpXvid";
             this.tpXvid.UseVisualStyleBackColor = true;
             // 
+            // tpGIF
+            // 
+            this.tpGIF.Controls.Add(this.cbGIFDither);
+            this.tpGIF.Controls.Add(this.lblGIFDither);
+            this.tpGIF.Controls.Add(this.cbGIFStatsMode);
+            this.tpGIF.Controls.Add(this.lblGIFStatsMode);
+            resources.ApplyResources(this.tpGIF, "tpGIF");
+            this.tpGIF.Name = "tpGIF";
+            this.tpGIF.UseVisualStyleBackColor = true;
+            // 
+            // lblGIFDither
+            // 
+            resources.ApplyResources(this.lblGIFDither, "lblGIFDither");
+            this.lblGIFDither.Name = "lblGIFDither";
+            // 
+            // lblGIFStatsMode
+            // 
+            resources.ApplyResources(this.lblGIFStatsMode, "lblGIFStatsMode");
+            this.lblGIFStatsMode.Name = "lblGIFStatsMode";
+            // 
             // btnTest
             // 
             resources.ApplyResources(this.btnTest, "btnTest");
@@ -504,21 +535,13 @@
             // 
             // gbCodecs
             // 
-            this.gbCodecs.Controls.Add(this.txtExtension);
             this.gbCodecs.Controls.Add(this.cboAudioCodec);
-            this.gbCodecs.Controls.Add(this.lblExtension);
             this.gbCodecs.Controls.Add(this.lblAudioCodec);
             this.gbCodecs.Controls.Add(this.cboVideoCodec);
             this.gbCodecs.Controls.Add(this.lblCodec);
             resources.ApplyResources(this.gbCodecs, "gbCodecs");
             this.gbCodecs.Name = "gbCodecs";
             this.gbCodecs.TabStop = false;
-            // 
-            // txtExtension
-            // 
-            resources.ApplyResources(this.txtExtension, "txtExtension");
-            this.txtExtension.Name = "txtExtension";
-            this.txtExtension.TextChanged += new System.EventHandler(this.txtExtension_TextChanged);
             // 
             // btnHelp
             // 
@@ -534,44 +557,6 @@
             this.eiFFmpeg.ObjectType = null;
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
-            // 
-            // tpGIF
-            // 
-            this.tpGIF.Controls.Add(this.cbGIFDither);
-            this.tpGIF.Controls.Add(this.lblGIFDither);
-            this.tpGIF.Controls.Add(this.cbGIFStatsMode);
-            this.tpGIF.Controls.Add(this.lblGIFStatsMode);
-            resources.ApplyResources(this.tpGIF, "tpGIF");
-            this.tpGIF.Name = "tpGIF";
-            this.tpGIF.UseVisualStyleBackColor = true;
-            // 
-            // lblGIFStatsMode
-            // 
-            resources.ApplyResources(this.lblGIFStatsMode, "lblGIFStatsMode");
-            this.lblGIFStatsMode.Name = "lblGIFStatsMode";
-            // 
-            // cbGIFStatsMode
-            // 
-            this.cbGIFStatsMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGIFStatsMode.FormattingEnabled = true;
-            resources.ApplyResources(this.cbGIFStatsMode, "cbGIFStatsMode");
-            this.cbGIFStatsMode.Name = "cbGIFStatsMode";
-            this.ttHelpTip.SetToolTip(this.cbGIFStatsMode, resources.GetString("cbGIFStatsMode.ToolTip"));
-            this.cbGIFStatsMode.SelectedIndexChanged += new System.EventHandler(this.cbGIFStatsMode_SelectedIndexChanged);
-            // 
-            // cbGIFDither
-            // 
-            this.cbGIFDither.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGIFDither.FormattingEnabled = true;
-            resources.ApplyResources(this.cbGIFDither, "cbGIFDither");
-            this.cbGIFDither.Name = "cbGIFDither";
-            this.ttHelpTip.SetToolTip(this.cbGIFDither, resources.GetString("cbGIFDither.ToolTip"));
-            this.cbGIFDither.SelectedIndexChanged += new System.EventHandler(this.cbGIFDither_SelectedIndexChanged);
-            // 
-            // lblGIFDither
-            // 
-            resources.ApplyResources(this.lblGIFDither, "lblGIFDither");
-            this.lblGIFDither.Name = "lblGIFDither";
             // 
             // FFmpegOptionsForm
             // 
@@ -613,6 +598,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudVP8Bitrate)).EndInit();
             this.tpXvid.ResumeLayout(false);
             this.tpXvid.PerformLayout();
+            this.tpGIF.ResumeLayout(false);
+            this.tpGIF.PerformLayout();
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
             this.tpAAC.ResumeLayout(false);
             this.tpAAC.PerformLayout();
@@ -624,15 +611,12 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
-            this.tpGIF.ResumeLayout(false);
-            this.tpGIF.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblExtension;
         private System.Windows.Forms.Label lblx264CRF;
         private System.Windows.Forms.NumericUpDown nudx264CRF;
         private System.Windows.Forms.ToolTip ttHelpTip;
@@ -679,7 +663,6 @@
         private System.Windows.Forms.CheckBox cbCustomCommands;
         private System.Windows.Forms.Button btnHelp;
         private ShareX.HelpersLib.ExportImportControl eiFFmpeg;
-        private System.Windows.Forms.TextBox txtExtension;
         private System.Windows.Forms.Label lblVP8BitrateK;
         private System.Windows.Forms.NumericUpDown nudVP8Bitrate;
         private System.Windows.Forms.Label lblVP8Bitrate;

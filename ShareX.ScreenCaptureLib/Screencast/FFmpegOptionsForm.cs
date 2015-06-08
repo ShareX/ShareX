@@ -98,8 +98,6 @@ namespace ShareX.ScreenCaptureLib
             // MP3
             tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale;
 
-            txtExtension.Text = Options.FFmpeg.Extension;
-
             cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
 
             if (Options.FFmpeg.UseCustomCommands)
@@ -178,26 +176,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
 
-            if (settingsLoaded)
-            {
-                switch (Options.FFmpeg.VideoCodec)
-                {
-                    case FFmpegVideoCodec.libx264:
-                    case FFmpegVideoCodec.libx265:
-                        txtExtension.Text = "mp4";
-                        break;
-                    case FFmpegVideoCodec.libvpx:
-                        txtExtension.Text = "webm";
-                        break;
-                    case FFmpegVideoCodec.libxvid:
-                        txtExtension.Text = "avi";
-                        break;
-                    case FFmpegVideoCodec.gif:
-                        txtExtension.Text = "gif";
-                        break;
-                }
-            }
-
             if (cboVideoCodec.SelectedIndex >= 0)
             {
                 switch (Options.FFmpeg.VideoCodec)
@@ -212,6 +190,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case FFmpegVideoCodec.libxvid:
                         tcFFmpegVideoCodecs.SelectedIndex = 2;
+                        break;
+                    case FFmpegVideoCodec.gif:
+                        tcFFmpegVideoCodecs.SelectedIndex = 3;
                         break;
                 }
             }
@@ -240,12 +221,6 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            UpdateUI();
-        }
-
-        private void txtExtension_TextChanged(object sender, EventArgs e)
-        {
-            Options.FFmpeg.Extension = txtExtension.Text;
             UpdateUI();
         }
 

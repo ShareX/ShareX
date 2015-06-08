@@ -78,10 +78,10 @@ namespace ShareX.ScreenCaptureLib
         libx264,
         [Description("VP8 (WebM)")]
         libvpx,
-        [Description("Animated GIF")]
-        gif,
         [Description("Xvid")]
         libxvid,
+        [Description("Animated GIF")]
+        gif,
         [Description("x265")]
         libx265
     }
@@ -108,6 +108,11 @@ namespace ShareX.ScreenCaptureLib
         veryslow
     }
 
+    public enum FFmpegTune
+    {
+        film, animation, grain, stillimage, psnr, ssim, fastdecode, zerolatency
+    }
+
     public enum FFmpegAudioCodec
     {
         [Description("AAC")]
@@ -120,8 +125,7 @@ namespace ShareX.ScreenCaptureLib
 
     public enum FFmpegPaletteGenStatsMode
     {
-        full,
-        diff
+        full, diff
     }
 
     public enum FFmpegPaletteUseDither

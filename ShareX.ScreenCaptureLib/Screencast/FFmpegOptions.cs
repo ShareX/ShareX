@@ -34,7 +34,6 @@ namespace ShareX.ScreenCaptureLib
         public string AudioSource { get; set; }
         public FFmpegVideoCodec VideoCodec { get; set; }
         public FFmpegAudioCodec AudioCodec { get; set; }
-        public string Extension { get; set; }
         public string CLIPath { get; set; }
         public string UserArgs { get; set; }
         public bool UseCustomCommands { get; set; }
@@ -53,6 +52,26 @@ namespace ShareX.ScreenCaptureLib
         public int AAC_bitrate { get; set; }  // kbit/s
         public int Vorbis_qscale { get; set; }
         public int MP3_qscale { get; set; }
+
+        public string Extension
+        {
+            get
+            {
+                switch (VideoCodec)
+                {
+                    default:
+                    case FFmpegVideoCodec.libx264:
+                    case FFmpegVideoCodec.libx265:
+                    case FFmpegVideoCodec.gif:
+                        return "mp4";
+                        break;
+                    case FFmpegVideoCodec.libvpx:
+                        return "webm";
+                    case FFmpegVideoCodec.libxvid:
+                        return "avi";
+                }
+            }
+        }
 
         public bool IsSourceSelected
         {
@@ -85,7 +104,6 @@ namespace ShareX.ScreenCaptureLib
             AudioSource = FFmpegHelper.SourceNone;
             VideoCodec = FFmpegVideoCodec.libx264;
             AudioCodec = FFmpegAudioCodec.libvoaacenc;
-            Extension = "mp4";
             CLIPath = "ffmpeg.exe";
             UserArgs = "";
             ShowError = true;

@@ -77,12 +77,12 @@ namespace ShareX.ScreenCaptureLib
             try
             {
                 // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
-                result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -vf \"palettegen=stats_mode={2}\" -y \"{1}\"", input, palettePath, Options.FFmpeg.GIFStatsMode));
+                result = Run(Options.FFmpeg.CLIPath, string.Format("-y -i \"{0}\" -vf \"palettegen=stats_mode={2}\" \"{1}\"", input, palettePath, Options.FFmpeg.GIFStatsMode));
 
                 if (result)
                 {
                     // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-                    result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" -y \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
+                    result = Run(Options.FFmpeg.CLIPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
                 }
             }
             finally

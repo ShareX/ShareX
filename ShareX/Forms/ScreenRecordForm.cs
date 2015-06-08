@@ -199,13 +199,6 @@ namespace ShareX
                 {
                     if (outputType == ScreenRecordOutput.FFmpeg)
                     {
-                        if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
-                        {
-                            taskSettings.CaptureSettings.FFmpegOptions.Extension = "mp4";
-                            taskSettings.CaptureSettings.FFmpegOptions.x264_CRF = 0;
-                            taskSettings.CaptureSettings.FFmpegOptions.x264_Preset = FFmpegPreset.ultrafast;
-                        }
-
                         path = Path.Combine(taskSettings.CaptureFolder, TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension));
                     }
                     else

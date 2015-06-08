@@ -166,15 +166,10 @@ namespace ShareX.ScreenCaptureLib
                 {
                     case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
                     case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
-                    case FFmpegVideoCodec.gif:
-                        args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                         args.AppendFormat("-preset {0} ", FFmpeg.x264_Preset);
-                        args.AppendFormat("-tune {0} ", "zerolatency");
-
-                        if (FFmpeg.VideoCodec != FFmpegVideoCodec.gif)
-                        {
-                            args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
-                        }
+                        args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
+                        args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
+                        args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                         break;
                     case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         args.AppendFormat("-deadline {0} ", "realtime");
@@ -182,6 +177,11 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                         args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
+                        break;
+                    case FFmpegVideoCodec.gif:
+                        args.AppendFormat("-preset {0} ", FFmpegPreset.ultrafast);
+                        args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
+                        args.AppendFormat("-qp {0} ", 0);
                         break;
                 }
             }
