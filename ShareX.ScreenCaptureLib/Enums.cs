@@ -117,4 +117,20 @@ namespace ShareX.ScreenCaptureLib
         [Description("MP3")]
         libmp3lame
     }
+
+    public enum FFmpegPaletteGenStatsMode
+    {
+        full,
+        diff
+    }
+
+    public enum FFmpegPaletteUseDither
+    {
+        none,
+        bayer,
+        heckbert,
+        floyd_steinberg,
+        sierra2,
+        sierra2_4a
+    }
 }

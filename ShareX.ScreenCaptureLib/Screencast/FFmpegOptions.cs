@@ -46,6 +46,8 @@ namespace ShareX.ScreenCaptureLib
         public int x264_CRF { get; set; }
         public int VPx_bitrate { get; set; }  // kbit/s
         public int XviD_qscale { get; set; }
+        public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; }
+        public FFmpegPaletteUseDither GIFDither { get; set; }
 
         // Audio
         public int AAC_bitrate { get; set; }  // kbit/s
@@ -93,6 +95,8 @@ namespace ShareX.ScreenCaptureLib
             x264_Preset = FFmpegPreset.veryfast;
             VPx_bitrate = 3000;
             XviD_qscale = 10;
+            GIFStatsMode = FFmpegPaletteGenStatsMode.full;
+            GIFDither = FFmpegPaletteUseDither.sierra2_4a;
 
             // Audio
             AAC_bitrate = 128;

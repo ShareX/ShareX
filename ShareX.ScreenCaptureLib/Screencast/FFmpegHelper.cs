@@ -76,11 +76,13 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -vf palettegen -y \"{1}\"", input, palettePath));
+                // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
+                result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -vf \"palettegen=stats_mode={2}\" -y \"{1}\"", input, palettePath, Options.FFmpeg.GIFStatsMode));
 
                 if (result)
                 {
-                    result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -i \"{1}\" -lavfi paletteuse -y \"{2}\"", input, palettePath, output));
+                    // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
+                    result = Run(Options.FFmpeg.CLIPath, string.Format("-i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" -y \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
                 }
             }
             finally

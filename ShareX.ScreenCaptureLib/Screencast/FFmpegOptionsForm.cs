@@ -48,7 +48,9 @@ namespace ShareX.ScreenCaptureLib
             eiFFmpeg.ObjectType = typeof(FFmpegOptions);
             cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
-            cbPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
+            cbx264Preset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
+            cbGIFStatsMode.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>());
+            cbGIFDither.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>());
 
             SettingsLoad();
         }
@@ -75,13 +77,17 @@ namespace ShareX.ScreenCaptureLib
 
             // x264
             nudx264CRF.Value = Options.FFmpeg.x264_CRF.Between((int)nudx264CRF.Minimum, (int)nudx264CRF.Maximum);
-            cbPreset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
+            cbx264Preset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
 
             // VPx
             nudVP8Bitrate.Value = Options.FFmpeg.VPx_bitrate.Between((int)nudVP8Bitrate.Minimum, (int)nudVP8Bitrate.Maximum);
 
             // Xvid
-            nudQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudQscale.Minimum, (int)nudQscale.Maximum);
+            nudXvidQscale.Value = Options.FFmpeg.XviD_qscale.Between((int)nudXvidQscale.Minimum, (int)nudXvidQscale.Maximum);
+
+            // GIF
+            cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
+            cbGIFDither.SelectedIndex = (int)Options.FFmpeg.GIFDither;
 
             // AAC
             tbAACBitrate.Value = Options.FFmpeg.AAC_bitrate / 32;
@@ -251,7 +257,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.x264_Preset = (FFmpegPreset)cbPreset.SelectedIndex;
+            Options.FFmpeg.x264_Preset = (FFmpegPreset)cbx264Preset.SelectedIndex;
             UpdateUI();
         }
 
@@ -263,7 +269,19 @@ namespace ShareX.ScreenCaptureLib
 
         private void nudQscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.XviD_qscale = (int)nudQscale.Value;
+            Options.FFmpeg.XviD_qscale = (int)nudXvidQscale.Value;
+            UpdateUI();
+        }
+
+        private void cbGIFStatsMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.GIFStatsMode = (FFmpegPaletteGenStatsMode)cbGIFStatsMode.SelectedIndex;
+            UpdateUI();
+        }
+
+        private void cbGIFDither_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.GIFDither = (FFmpegPaletteUseDither)cbGIFDither.SelectedIndex;
             UpdateUI();
         }
 
