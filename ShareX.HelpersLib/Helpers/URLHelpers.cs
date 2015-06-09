@@ -314,6 +314,16 @@ namespace ShareX.HelpersLib
             return url;
         }
 
+        public static string ForceHTTPS(string url)
+        {
+            if (!string.IsNullOrEmpty(url) && url.StartsWith("http://", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return "https://" + url.Substring(7);
+            }
+
+            return url;
+        }
+
         public static bool HasPrefix(string url)
         {
             return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));

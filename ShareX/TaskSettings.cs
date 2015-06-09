@@ -367,6 +367,9 @@ namespace ShareX
         [Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> TextExtensions { get; set; }
 
+        [Category("After upload"), DefaultValue(false), Description("If result URL starts with \"http://\" then replace it with \"https://\".")]
+        public bool ResultForceHTTPS { get; set; }
+
         [Category("After upload"), DefaultValue("$result"),
         Description("Clipboard content format after uploading. Supported variables: $result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $folderpath, $foldername, $uploadtime and other variables such as %y-%mo-%d etc.")]
         public string ClipboardContentFormat { get; set; }
