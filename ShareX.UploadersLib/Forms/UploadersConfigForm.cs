@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -2301,6 +2302,36 @@ namespace ShareX.UploadersLib
             }
 
             txtCustomUploaderRegexp.Text = regex;
+        }
+
+        private void lvCustomUploaderRegexps_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && lvCustomUploaderRegexps.SelectedIndices.Count > 0)
+            {
+                int selectedIndex = lvCustomUploaderRegexps.SelectedIndices[0];
+                string regex = lvCustomUploaderRegexps.Items[selectedIndex].Text;
+
+                if (!string.IsNullOrEmpty(regex))
+                {
+                    Match match = Regex.Match(regex, @"\((?:\?<(.+?)>)?.+?\)");
+
+                    if (match.Success)
+                    {
+                        string syntax;
+
+                        if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
+                        {
+                            syntax = string.Format("${0},{1}$", selectedIndex + 1, match.Groups[1].Value);
+                        }
+                        else
+                        {
+                            syntax = string.Format("${0},1$", selectedIndex + 1);
+                        }
+
+                        txtCustomUploaderURL.AppendText(syntax);
+                    }
+                }
+            }
         }
 
         private void btnCustomUploaderArgAdd_Click(object sender, EventArgs e)

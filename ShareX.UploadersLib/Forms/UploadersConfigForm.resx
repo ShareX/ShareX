@@ -462,7 +462,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
   </data>
@@ -1111,6 +1111,36 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="&gt;&gt;btnCustomUploaderURLShortenerTest.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <data name="lblCustomUploaderRegexTip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 165</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 13</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblCustomUploaderRegexTip.Text" xml:space="preserve">
+    <value>Double click regex to use in URL</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRegexTip.Name" xml:space="preserve">
+    <value>lblCustomUploaderRegexTip</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRegexTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRegexTip.Parent" xml:space="preserve">
+    <value>gbCustomUploaderRegexp</value>
+  </data>
+  <data name="&gt;&gt;lblCustomUploaderRegexTip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnCustomUploaderRegexpEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1136,7 +1166,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>gbCustomUploaderRegexp</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderRegexpEdit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtCustomUploaderRegexp.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
@@ -1157,7 +1187,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>gbCustomUploaderRegexp</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderRegexp.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lvRegexpsColumn.Width" type="System.Int32, mscorlib">
     <value>227</value>
@@ -1166,7 +1196,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>8, 72</value>
   </data>
   <data name="lvCustomUploaderRegexps.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 104</value>
+    <value>232, 88</value>
   </data>
   <data name="lvCustomUploaderRegexps.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1181,7 +1211,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>gbCustomUploaderRegexp</value>
   </data>
   <data name="&gt;&gt;lvCustomUploaderRegexps.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCustomUploaderRegexpRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1208,7 +1238,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>gbCustomUploaderRegexp</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderRegexpRemove.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnCustomUploaderRegexpAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1235,7 +1265,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>gbCustomUploaderRegexp</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderRegexpAdd.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="gbCustomUploaderRegexp.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 56</value>
@@ -1455,7 +1485,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtCustomUploaderLog.Text" xml:space="preserve">
     <value />
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtCustomUploaderLog.Name" xml:space="preserve">
     <value>txtCustomUploaderLog</value>
   </data>
@@ -1617,7 +1647,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCustomUploaderURL.Name" xml:space="preserve">
     <value>lblCustomUploaderURL</value>
   </data>
@@ -1974,7 +2004,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
   </data>
@@ -2043,7 +2073,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleURLShortener.Text" xml:space="preserve">
     <value>Google</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleURLShortener.Name" xml:space="preserve">
     <value>tpGoogleURLShortener</value>
   </data>
@@ -2277,7 +2307,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API URL:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblYourlsAPIURL.Name" xml:space="preserve">
     <value>lblYourlsAPIURL</value>
   </data>
@@ -2304,7 +2334,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
   </data>
@@ -2385,7 +2415,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>API UID:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
     <value>lblAdflyAPIUID</value>
   </data>
@@ -2463,7 +2493,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
   </data>
@@ -2769,7 +2799,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
   </data>
@@ -3152,7 +3182,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
   </data>
@@ -3284,7 +3314,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
   </data>
@@ -3506,7 +3536,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
@@ -3701,7 +3731,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
   </data>
@@ -3995,7 +4025,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpCopy.Text" xml:space="preserve">
     <value>Copy</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpCopy.Name" xml:space="preserve">
     <value>tpCopy</value>
   </data>
@@ -4190,7 +4220,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHubic.Text" xml:space="preserve">
     <value>hubiC</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHubic.Name" xml:space="preserve">
     <value>tpHubic</value>
   </data>
@@ -4298,7 +4328,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
   </data>
@@ -4325,7 +4355,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
   </data>
@@ -4607,7 +4637,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
   </data>
@@ -4925,7 +4955,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
   </data>
@@ -5246,7 +5276,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
@@ -5459,7 +5489,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
   </data>
@@ -5621,7 +5651,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
@@ -5798,7 +5828,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
   </data>
@@ -5984,7 +6014,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGe_tt.Text" xml:space="preserve">
     <value>Ge.tt</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
     <value>tpGe_tt</value>
   </data>
@@ -6143,7 +6173,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
   </data>
@@ -6593,7 +6623,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpMinus.Text" xml:space="preserve">
     <value>Minus</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpMinus.Name" xml:space="preserve">
     <value>tpMinus</value>
   </data>
@@ -6617,7 +6647,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
   </data>
@@ -6701,7 +6731,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
   </data>
@@ -6800,7 +6830,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
   </data>
@@ -6908,7 +6938,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
   </data>
@@ -8000,7 +8030,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
   </data>
@@ -8078,7 +8108,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
   </data>
@@ -8177,7 +8207,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>Gist</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
   </data>
@@ -8285,7 +8315,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
   </data>
@@ -8414,7 +8444,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
   </data>
@@ -8582,7 +8612,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="chImgurID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -8711,7 +8741,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
   </data>
@@ -8951,7 +8981,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
   </data>
@@ -9155,7 +9185,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpTinyPic.Text" xml:space="preserve">
     <value>TinyPic</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpTinyPic.Name" xml:space="preserve">
     <value>tpTinyPic</value>
   </data>
@@ -9335,7 +9365,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
   </data>
@@ -9827,7 +9857,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
   </data>
@@ -9893,7 +9923,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="chPicasaID.Width" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
@@ -9995,7 +10025,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpPicasa.Text" xml:space="preserve">
     <value>Picasa</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpPicasa.Name" xml:space="preserve">
     <value>tpPicasa</value>
   </data>
@@ -10055,7 +10085,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="lblCheveretoWebsiteTip.Text" xml:space="preserve">
     <value>/api/1/upload</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblCheveretoWebsiteTip.Name" xml:space="preserve">
     <value>lblCheveretoWebsiteTip</value>
   </data>
@@ -10184,7 +10214,7 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
   </data>
