@@ -65,7 +65,30 @@ namespace ShareX.UploadersLib
         {
             get
             {
-                return !string.IsNullOrEmpty(Message) && Message.Length <= Length;
+                return Message != null && (MediaMode || Message.Length > 0) && Message.Length <= Length;
+            }
+        }
+
+        private bool mediaMode;
+
+        public bool MediaMode
+        {
+            get
+            {
+                return mediaMode;
+            }
+            set
+            {
+                mediaMode = value;
+
+                if (mediaMode)
+                {
+                    Length = Twitter.MessageMediaLimit;
+                }
+                else
+                {
+                    Length = Twitter.MessageLimit;
+                }
             }
         }
 
@@ -77,7 +100,7 @@ namespace ShareX.UploadersLib
         {
             InitializeComponent();
             Icon = Resources.Twitter;
-            Length = Twitter.MessageLimit;
+            MediaMode = false;
         }
 
         public TwitterTweetForm(OAuthInfo oauth)

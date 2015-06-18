@@ -67,7 +67,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 using (TwitterTweetForm twitterMsg = new TwitterTweetForm())
                 {
-                    twitterMsg.Length = MessageMediaLimit;
+                    twitterMsg.MediaMode = true;
                     twitterMsg.Message = DefaultMessage;
 
                     if (twitterMsg.ShowDialog() != DialogResult.OK)
