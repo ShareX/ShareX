@@ -138,10 +138,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>使用自定义命令</value>
   </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>预设默认为"中等".
-预置的选项,将提供一定的编码速度,压缩比的集合.较慢的预设将提供更好的压缩（压缩文件大小每质量）.</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>编解码器</value>
   </data>
@@ -166,26 +162,14 @@
   <data name="lblCodec.Text" xml:space="preserve">
     <value>视频编解码器:</value>
   </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>扩展名（容器格式）:</value>
-  </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>质量:</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>预设:</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>可变比特率:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>视频源:</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>质量:</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1为最高质量/最大文件大小和31是最低质量/最小文件大小.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>"恒速率因子（CRF）:量化比例的范围为0-51:其中,0是无损的,23是默认值,51是最糟糕的.

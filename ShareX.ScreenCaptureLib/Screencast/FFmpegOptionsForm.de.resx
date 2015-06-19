@@ -138,12 +138,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Eigene Befehle verwenden</value>
   </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Der voreingestellte Standard ist "Medium".
-Eine Voreinstellung ist eine Kollektion von Optionen, welche eine Bestimmte Kodierung zu Kompressionrate haben. Eine langsamere Voreinstellung wird eine bessere Kompressionsrate haben (Kompression ist Qualität pro Dateigröße).
-Das heißt dass, z.B.: wenn du eine bestimmte Dateigröße haben möchtest oder eine konstante Bitrate, wirst du ein bessere Qualität mit einer langsamen Voreinstellung
-Ebenso, für eine konstante Qualitätskodierung, wirst du Bitraten sparen, wenn du eine langsame Voreinstellung wählst.</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Codecs</value>
   </data>
@@ -168,26 +162,14 @@ Ebenso, für eine konstante Qualitätskodierung, wirst du Bitraten sparen, wenn 
   <data name="lblCodec.Text" xml:space="preserve">
     <value>Videocodec:</value>
   </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Erweiterung (Containerformat):</value>
-  </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Qualität:</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>Voreingestellt:</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>Variable Bitrate:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Videoquelle</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Qualität:</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 ist die höchste Qualität/größte Dateigröße und 31 die schlechteste Qualität/kleinste Dateigröße</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): Die Weite des Multiplikators ist 0-51: wo 0 verlustfrei ist; 23 standard; und 51 das schlechteste

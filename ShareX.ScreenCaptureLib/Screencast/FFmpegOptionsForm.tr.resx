@@ -153,9 +153,6 @@
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Varsayılan 128k.</value>
   </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>Değişken bit hızı:</value>
-  </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>Çözücüler</value>
   </data>
@@ -165,17 +162,8 @@
   <data name="lblCodec.Text" xml:space="preserve">
     <value>Video çözücü:</value>
   </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>Genel:</value>
-  </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Uzantı (Dosya biçimi):</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bit hızı:</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 en yüksek kalite / en büyük dosya boyutu ve 31 en küçük kalite / en küçük dosya boyutu.</value>
   </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Ek komut satırı parametreleri</value>
@@ -192,10 +180,6 @@
   <data name="lblAudioSource.Text" xml:space="preserve">
     <value>Ses kaynağı:</value>
   </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Kodlama hızı ile sıkıştırma oranı arasında seçim.
-Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
-  </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Video kalitesini belirler.
 0 en iyi kalite, 23 varsayılan, 51 en kötü kalite.
@@ -203,5 +187,18 @@ Kaliteyi arttırmak dosya boyutunu arttırır.</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Değişken bit hızı:</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 en yüksek kalite / en büyük dosya boyutu ve 31 en küçük kalite / en küçük dosya boyutu.</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Genel:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Değişken bit hızı:</value>
+  </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Kodlama hızı ile sıkıştırma oranı arasında seçim.
+Ekrandan kayıt yaparken hızlı seçmeniz tavsiye edilir.</value>
   </data>
 </root>

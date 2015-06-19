@@ -168,23 +168,11 @@
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Calidad:</value>
   </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>Preajuste:</value>
-  </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Calidad:</value>
   </data>
-  <data name="lblX264CRF.Text" xml:space="preserve">
-    <value>CRF:</value>
-  </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Fuente de vídeo:</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>Tasa de bits variable:</value>
-  </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Extensión (Formato contenedor):</value>
   </data>
   <data name="gbCommandLinePreview.Text" xml:space="preserve">
     <value>Línea de comandos vista previa</value>
@@ -212,14 +200,6 @@
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>El valor predeterminado es de 128k.</value>
-  </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>La configuración predeterminada es "Medium".
-Un configuración es un conjunto de opciones que proporcionan una cierta velocidad de codificación de la compresión ratio.  Un configuración lento proporcionará una mejor compresión (compresión es de calidad por tamaño de archivo).
-Esto significa que, por ejemplo, si usted se centra en un tamaño de archivo determinado o tasa de bits constante, va a lograr una mejor calidad con un configuración más lento.  Del mismo modo, para la codificación de calidad constante, simplemente guardar bitrate por elegir un preset más lento.</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 es más alto calidad / tamaño de archivo más grande y 31 es la calidad más baja / tamaño de archivos más pequeño.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
     <value>El rango es de 0 a 9, donde un valor inferior es de mayor calidad.  0-3 normalmente producir resultados transparentes, 

@@ -162,26 +162,14 @@
   <data name="lblCodec.Text" xml:space="preserve">
     <value>Videó kodek:</value>
   </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Kiterjesztés (konténer formátum):</value>
-  </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Minőség:</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>Sablon:</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>Változó bitráta:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Videó forrás:</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Minőség:</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 a legjobb minőség/legnagyobb fájlméret, 31 pedig a leggyengébb minőség/legkisebb fájlméret.</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Az alapértelmezett 128k.</value>
@@ -191,13 +179,6 @@
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Az értékek 0-10 közt változhatnak, ahol 10 a legmagasabb minőség. A 3–6 közti értékekkel érdemes kísérletezni. Az alapértelmezés 3.</value>
-  </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Egy sablon olyan opciók gyűjteménye amik egy bizonyos enkódolási sebességet &amp; tömörítési arányt fognak eredményezni.
-Egy lassabb sablon jobb tömörítést eredmény (a tömörítés a fájlméretenkénti minőséget jelenti).
-Ez például annyit tesz, hogy ha van egy bizoynso fájlméret vagy bitrátád, jobb minőséget érhetsz el
-egy alacsonyabb sablonnal. Hasonlóképp, konstans minőségű dekódoláshoz elegendő egyszerűen
-csak egy alacsonyabb sablont választanod.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Megszabja a videó minőségét.

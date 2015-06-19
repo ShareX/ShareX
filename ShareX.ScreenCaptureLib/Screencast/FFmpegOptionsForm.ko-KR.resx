@@ -144,12 +144,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>명령 직접 입력</value>
   </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>기본 프리셋은 "중간"입니다.
-프리셋은 특정 압축률로 특정 속도로 인코딩할 수 있게 해주는 설정들을 모아놓은 것입니다. 느린 프리셋을 고르면 압축(파일 사이즈 대비 품질)이 더 잘 됩니다.
-이 말은, 예를 들어서, 파일 크기나 비트레이트를 지정했다면, 느린 프리셋으로 더 나은 품질을 얻을 수 있다는 뜻입니다.
-비슷한 원리로, 일정한 품질로 인코딩할 경우, 더 느린 프리셋을 고르면 비트레이트를 아낄 수 있습니다.</value>
-  </data>
   <data name="gbCommandLinePreview.Text" xml:space="preserve">
     <value>명령줄 미리보기</value>
   </data>
@@ -168,17 +162,8 @@
   <data name="lblCodec.Text" xml:space="preserve">
     <value>비디오 코덱:</value>
   </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>확장자 (컨테이너 포맷):</value>
-  </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>품질:</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>프리셋:</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>가변 비트레이트:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>비디오 소스:</value>
@@ -191,9 +176,6 @@
   </data>
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>코덱</value>
-  </data>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1이 최고 품질/제일 큰 파일 크기이며, 31이 최소 품질/제일 작은 파일 크기입니다.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>항율 인자 (CRF): 양자화 스케일의 범위는 0부터 51까지이며, 0은 무손실, 23이 기본값, 그리고 51이 가능한 최저 품질입니다.

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="nudQscale.ToolTip" xml:space="preserve">
-    <value>1 étant le plus élevé en qualité / la taille du fichier la plus grande et 31 étant la plus faible qualité / la taille du fichier la plus petite.</value>
-  </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
     <value>Arguments supplémentaires en ligne de commande</value>
   </data>
@@ -155,14 +152,8 @@ Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Télécharger</value>
   </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Extension (format du conteneur):</value>
-  </data>
   <data name="btnHelp.Text" xml:space="preserve">
     <value>Aide...</value>
-  </data>
-  <data name="lblPreset.Text" xml:space="preserve">
-    <value>Présélection:</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Qualité:</value>
@@ -193,14 +184,6 @@ Si la sortie semble bonne, alors essayez une valeur plus élevée et si elle est
   </data>
   <data name="gbSource.Text" xml:space="preserve">
     <value>Sources</value>
-  </data>
-  <data name="cbPreset.ToolTip" xml:space="preserve">
-    <value>Un préréglage est une collection d'options qui apporteront une certaine vitesse d'encodage à taux de compression. Un préréglage lent fournira une meilleure compression (compression est la qualité par la taille du fichier).
-Cela signifie que, par exemple, si vous ciblez une taille de fichier ou un certain débit binaire constant, vous obtiendrez une meilleure qualité avec un préréglage plus lent.
-De même, pour l'encodage de qualité constante, vous aurez simplement à sauver bitrate en choisissant un préréglage plus lent.</value>
-  </data>
-  <data name="lblQscale.Text" xml:space="preserve">
-    <value>Bitrate variable:</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utiliser des commandes personnalisées</value>
