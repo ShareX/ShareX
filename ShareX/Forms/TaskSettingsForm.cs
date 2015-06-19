@@ -378,44 +378,71 @@ namespace ShareX
 
         private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Select(x => x.Replace("&", "&&")).ToArray();
+            EnumInfo[] enums = Helpers.GetEnums<T>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
 
             foreach (ToolStripDropDown parent in parents)
             {
-                for (int i = 0; i < enums.Length; i++)
+                foreach (EnumInfo enumInfo in enums)
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
-
-                    int index = i;
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enumInfo.Description.Replace("&", "&&"));
+                    tsmi.Tag = enumInfo;
 
                     tsmi.Click += (sender, e) =>
                     {
-                        foreach (ToolStripDropDown parent2 in parents)
-                        {
-                            for (int i2 = 0; i2 < enums.Length; i2++)
-                            {
-                                ToolStripMenuItem tsmi2 = (ToolStripMenuItem)parent2.Items[i2];
-                                tsmi2.Checked = index == i2;
-                            }
-                        }
+                        SetEnumCheckedContextMenu(enumInfo, parents);
 
-                        selectedEnum((T)Enum.ToObject(typeof(T), index));
+                        selectedEnum((T)Enum.ToObject(typeof(T), enumInfo.Value));
 
                         UpdateUploaderMenuNames();
                     };
 
-                    parent.Items.Add(tsmi);
+                    if (!string.IsNullOrEmpty(enumInfo.Category))
+                    {
+                        ToolStripMenuItem tsmiParent = parent.Items.OfType<ToolStripMenuItem>().FirstOrDefault(x => x.Text == enumInfo.Category);
+
+                        if (tsmiParent == null)
+                        {
+                            tsmiParent = new ToolStripMenuItem(enumInfo.Category);
+                            parent.Items.Add(tsmiParent);
+                        }
+
+                        tsmiParent.DropDownItems.Add(tsmi);
+                    }
+                    else
+                    {
+                        parent.Items.Add(tsmi);
+                    }
                 }
             }
         }
 
         private void SetEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
         {
-            int index = value.GetIndex();
+            SetEnumCheckedContextMenu(new EnumInfo(value), parents);
+        }
 
+        private void SetEnumCheckedContextMenu(EnumInfo enumInfo, params ToolStripDropDown[] parents)
+        {
             foreach (ToolStripDropDown parent in parents)
             {
-                ((ToolStripMenuItem)parent.Items[index]).Checked = true;
+                foreach (ToolStripMenuItem tsmiParent in parent.Items)
+                {
+                    EnumInfo currentEnumInfo;
+
+                    if (tsmiParent.DropDownItems.Count > 0)
+                    {
+                        foreach (ToolStripMenuItem tsmiCategoryParent in tsmiParent.DropDownItems)
+                        {
+                            currentEnumInfo = (EnumInfo)tsmiCategoryParent.Tag;
+                            tsmiCategoryParent.Checked = currentEnumInfo.Value == enumInfo.Value;
+                        }
+                    }
+                    else
+                    {
+                        currentEnumInfo = (EnumInfo)tsmiParent.Tag;
+                        tsmiParent.Checked = currentEnumInfo.Value == enumInfo.Value;
+                    }
+                }
             }
         }
 

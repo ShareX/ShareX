@@ -130,7 +130,7 @@ namespace ShareX
         LastRegion
     }
 
-    public enum HotkeyType // Localized
+    public enum HotkeyType // Localized + Category
     {
         None,
         FileUpload,
@@ -162,7 +162,6 @@ namespace ShareX
         StartScreenRecorderGIF,
         AutoCapture,
         StartAutoCapture,
-        OpenScreenshotsFolder,
         ColorPicker,
         ScreenColorPicker,
         Ruler,
@@ -172,7 +171,8 @@ namespace ShareX
         ImageEffects,
         QRCode,
         TweetMessage,
-        Automate
+        Automate,
+        OpenScreenshotsFolder
     }
 
     public enum HotkeyStatus

@@ -121,6 +121,7 @@
     <Compile Include="DWMManager.cs" />
     <Compile Include="EncoderProgram.cs" />
     <Compile Include="CLI\ExternalCLIManager.cs" />
+    <Compile Include="EnumInfo.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
     <Compile Include="FFmpegDownloader.cs" />
     <Compile Include="FontSafe.cs" />

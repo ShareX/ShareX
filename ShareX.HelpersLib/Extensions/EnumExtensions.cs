@@ -70,6 +70,19 @@ namespace ShareX.HelpersLib
             return description;
         }
 
+        public static string GetLocalizedCategory(this Enum value)
+        {
+            return value.GetLocalizedCategory(Resources.ResourceManager);
+        }
+
+        public static string GetLocalizedCategory(this Enum value, ResourceManager resourceManager)
+        {
+            string resourceName = value.GetType().Name + "_" + value + "_Category";
+            string description = resourceManager.GetString(resourceName);
+
+            return description;
+        }
+
         public static int GetIndex(this Enum value)
         {
             Array values = Enum.GetValues(value.GetType());

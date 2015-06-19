@@ -64,7 +64,6 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegVideoCodec.libx265:
                     case FFmpegVideoCodec.gif:
                         return "mp4";
-                        break;
                     case FFmpegVideoCodec.libvpx:
                         return "webm";
                     case FFmpegVideoCodec.libxvid:
