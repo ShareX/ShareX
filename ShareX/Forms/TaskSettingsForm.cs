@@ -434,13 +434,13 @@ namespace ShareX
                         foreach (ToolStripMenuItem tsmiCategoryParent in tsmiParent.DropDownItems)
                         {
                             currentEnumInfo = (EnumInfo)tsmiCategoryParent.Tag;
-                            tsmiCategoryParent.Checked = currentEnumInfo.Value == enumInfo.Value;
+                            tsmiCategoryParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
                         }
                     }
                     else
                     {
                         currentEnumInfo = (EnumInfo)tsmiParent.Tag;
-                        tsmiParent.Checked = currentEnumInfo.Value == enumInfo.Value;
+                        tsmiParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
                     }
                 }
             }

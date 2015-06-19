@@ -1042,7 +1042,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Miscellaneous.
+        ///   Looks up a localized string similar to Other.
         /// </summary>
         internal static string HotkeyType_OpenScreenshotsFolder_Category {
             get {
