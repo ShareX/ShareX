@@ -122,6 +122,8 @@ namespace ShareX.UploadersLib
         Imgrush,
         [Description("VideoBin")]
         VideoBin,
+        [Description("MaxFile")]
+        MaxFile,
         [Description("Dropfile")]
         Dropfile,
         SharedFolder, // Localized

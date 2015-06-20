@@ -24,16 +24,20 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.IO;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public sealed class Pomf : FileUploader
+    public class Pomf : FileUploader
     {
+        protected string UploadURL = "https://pomf.se/upload.php";
+        protected string ResultURL = "https://a.pomf.se";
+
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = UploadData(stream, "https://pomf.se/upload.php", fileName, "files[]");
+            UploadResult result = UploadData(stream, UploadURL, fileName, "files[]");
 
             if (result.IsSuccess)
             {
@@ -41,21 +45,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (response.success && response.files != null && response.files.Count > 0)
                 {
-                    result.URL = "https://a.pomf.se/" + response.files[0].url;
+                    result.URL = URLHelpers.CombineURL(ResultURL, response.files[0].url);
                 }
             }
 
             return result;
         }
 
-        internal class PomfResponse
+        private class PomfResponse
         {
             public bool success { get; set; }
             public object error { get; set; }
             public List<PomfFile> files { get; set; }
         }
 
-        internal class PomfFile
+        private class PomfFile
         {
             public string hash { get; set; }
             public string name { get; set; }
