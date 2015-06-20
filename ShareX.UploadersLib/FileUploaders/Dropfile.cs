@@ -45,6 +45,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (response != null && response.Status == 0)
                 {
                     result.URL = response.URL;
+                    result.DeletionURL = response.URL + "+" + response.Access_key;
                 }
             }
 
@@ -55,6 +56,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             public int Status { get; set; }
             public string URL { get; set; }
+            public string Access_key { get; set; }
         }
     }
 }
