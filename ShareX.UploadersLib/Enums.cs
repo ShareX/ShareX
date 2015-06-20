@@ -122,6 +122,8 @@ namespace ShareX.UploadersLib
         Imgrush,
         [Description("VideoBin")]
         VideoBin,
+        [Description("Dropfile")]
+        Dropfile,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

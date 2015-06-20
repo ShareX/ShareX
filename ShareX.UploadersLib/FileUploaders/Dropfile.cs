@@ -23,25 +23,38 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public sealed class VideoBin : FileUploader
+    public sealed class Dropfile : FileUploader
     {
-        private const string URLUpload = "https://videobin.org/add";
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("api", "1");
+            UploadResult result = UploadData(stream, "https://dropfile.to/upload", fileName);
 
-            UploadResult result = UploadData(stream, URLUpload, fileName, "videoFile", arguments);
+            if (result.IsSuccess)
+            {
+                DropfileResponse response = JsonConvert.DeserializeObject<DropfileResponse>(result.Response);
 
-            result.URL = result.Response;
+                if (response != null && response.Status == 0)
+                {
+                    result.URL = response.URL;
+                }
+            }
 
             return result;
+        }
+
+        private class DropfileResponse
+        {
+            public int Status { get; set; }
+            public string URL { get; set; }
         }
     }
 }

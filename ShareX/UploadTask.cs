@@ -1003,6 +1003,9 @@ namespace ShareX
                 case FileDestination.VideoBin:
                     fileUploader = new VideoBin();
                     break;
+                case FileDestination.Dropfile:
+                    fileUploader = new Dropfile();
+                    break;
             }
 
             if (fileUploader != null)
