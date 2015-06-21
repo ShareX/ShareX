@@ -9,7 +9,7 @@
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
-AllowNoIcons=true
+AllowNoIcons=yes
 AppCopyright=Copyright © 2007-2015 {#MyAppPublisher}
 AppId={#MyAppId}
 AppMutex={#MyAppId}
@@ -22,33 +22,26 @@ AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
 ArchitecturesAllowed=x86 x64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
-Compression=lzma/ultra64
-CreateAppDir=true
+Compression=lzma2/ultra64
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DirExistsWarning=no
-InternalCompressLevel=ultra64
-LanguageDetectionMethod=uilanguage
 LicenseFile=..\LICENSE.txt
 MinVersion=0,5.01.2600
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir=Output\
 PrivilegesRequired=none
 ShowLanguageDialog=auto
-ShowUndisplayableLanguages=false
-SignedUninstaller=false
-SolidCompression=true
-Uninstallable=true
+SolidCompression=yes
 UninstallDisplayIcon={app}\{#MyAppFile}
-UsePreviousAppDir=yes
-UsePreviousGroup=yes
+UninstallDisplayName={#MyAppName} uninstall
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
 WizardImageFile=WizardImageFile.bmp
 WizardSmallImageFile=WizardSmallImageFile.bmp
 WizardImageBackColor=clWhite
-WizardImageStretch=False
+WizardImageStretch=no
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
