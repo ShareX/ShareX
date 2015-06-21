@@ -34,7 +34,6 @@ PrivilegesRequired=none
 ShowLanguageDialog=auto
 SolidCompression=yes
 UninstallDisplayIcon={app}\{#MyAppFile}
-UninstallDisplayName={#MyAppName} uninstall
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}

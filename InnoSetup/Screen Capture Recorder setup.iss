@@ -12,7 +12,10 @@ DirExistsWarning=no
 OutputBaseFilename={#AppName} setup
 OutputDir=Output\
 SolidCompression=true
-UninstallDisplayName={#AppName} uninstall
+
+[Languages]
+Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [Files]
 Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
