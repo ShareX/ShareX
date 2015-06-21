@@ -70,12 +70,6 @@ Source: "{#MyAppParentDir}\ko-KR\*.resources.dll"; DestDir: {app}\Languages\ko-K
 Source: "{#MyAppParentDir}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
 Source: "{#MyAppParentDir}\nl-NL\*.resources.dll"; DestDir: {app}\Languages\nl-NL; Flags: ignoreversion
 
-; Required for screen/audio recording
-Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
-Source: "..\Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
-Source: "..\Lib\audio_sniffer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
-Source: "..\Lib\audio_sniffer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
-
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFile}"; WorkingDir: "{app}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; WorkingDir: "{app}"
@@ -100,7 +94,6 @@ Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontc
 #include "Scripts\products\dotnetfxversion.iss"
 #include "Scripts\products\msi31.iss"
 #include "Scripts\products\dotnetfx40full.iss"
-#include "Scripts\products\vcredist2010.iss"
 
 [Code]
 procedure InitializeWizard;
@@ -111,11 +104,8 @@ end;
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-
   msi31('3.1');
   dotnetfx40full();
-  vcredist2010();
-
   Result := true;
 end;
 
