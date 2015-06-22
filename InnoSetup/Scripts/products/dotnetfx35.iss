@@ -16,7 +16,7 @@ const
 procedure dotnetfx35();
 begin
 	if (netfxinstalled(NetFx35, '') = false) then
-		AddProduct('dotnetfx35.exe',
+		AddProduct('dotnetfx35' + GetArchitectureString() + '.exe',
 			'/lang:enu /passive /norestart',
 			CustomMessage('dotnetfx35_title'),
 			CustomMessage('dotnetfx35_size'),
