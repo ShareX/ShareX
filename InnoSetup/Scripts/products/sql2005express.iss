@@ -26,12 +26,12 @@ begin
 	//RTM: 9.00.1399.06
 	//Service Pack 1: 9.1.2047.00
 	//Service Pack 2: 9.2.3042.00
-	// Newer detection method required for SP3 and x64
+	// TODO: Newer detection method required for SP3 and x64
 	//Service Pack 3: 9.00.4035.00
 	//RegQueryDWordValue(HKLM, 'Software\Microsoft\Microsoft SQL Server\90\DTS\Setup', 'Install', version);
 	RegQueryStringValue(HKLM, 'SOFTWARE\Microsoft\Microsoft SQL Server\SQLEXPRESS\MSSQLServer\CurrentVersion', 'CurrentVersion', version);
 	if (version < '9.00.4035') then begin
-		if (not isIA64()) then
+		if (not IsIA64()) then
 			AddProduct('sql2005express' + GetArchitectureString() + '.exe',
 				'/qb ADDLOCAL=ALL INSTANCENAME=SQLEXPRESS',
 				CustomMessage('sql2005express_title'),

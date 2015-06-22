@@ -14,7 +14,7 @@ procedure dotnetfx35lp();
 begin
 	if (ActiveLanguage() <> 'en') then begin
 		if (not netfxinstalled(NetFx35, CustomMessage('dotnetfx35lp_lcid'))) then
-			AddProduct('dotnetfx35' + GetArchitectureString() + '_' + ActiveLanguage() + '.exe',
+			AddProduct('dotnetfx35_' + ActiveLanguage() + '.exe',
 				'/lang:enu /passive /norestart',
 				CustomMessage('dotnetfx35lp_title'),
 				CustomMessage('dotnetfx35lp_size'),

@@ -40,7 +40,7 @@ end;
 
 procedure wic();
 begin
-	if (not isIA64()) then begin
+	if (not IsIA64()) then begin
 		//only needed on Windows XP SP2 or Windows Server 2003
 		if ((exactwinversion(5, 1) and exactwinspversion(5, 1, 2)) or (exactwinversion(5, 2))) then begin
 			if (not FileExists(GetEnv('windir') + '\system32\windowscodecs.dll')) then
