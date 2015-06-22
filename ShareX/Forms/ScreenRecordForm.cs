@@ -88,7 +88,7 @@ namespace ShareX
             }
         }
 
-        public void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, bool skipRegionSelection = false)
+        public void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
             string debugText;
 
@@ -159,17 +159,29 @@ namespace ShareX
                 }
             }
 
-            Rectangle captureRectangle;
+            Rectangle captureRectangle = Rectangle.Empty;
 
-            if (skipRegionSelection)
+            switch (startMethod)
             {
-                captureRectangle = Program.Settings.ScreenRecordRegion;
+                case ScreenRecordStartMethod.Region:
+                    TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
+                    break;
+                case ScreenRecordStartMethod.ActiveWindow:
+                    if (taskSettings.CaptureSettings.CaptureClientArea)
+                    {
+                        captureRectangle = CaptureHelpers.GetActiveWindowClientRectangle();
+                    }
+                    else
+                    {
+                        captureRectangle = CaptureHelpers.GetActiveWindowRectangle();
+                    }
+                    break;
+                case ScreenRecordStartMethod.LastRegion:
+                    captureRectangle = Program.Settings.ScreenRecordRegion;
+                    break;
             }
-            else
-            {
-                TaskHelpers.SelectRegion(out captureRectangle, taskSettings);
-                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
-            }
+
+            captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
 
             if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
             {
@@ -179,6 +191,7 @@ namespace ShareX
             Program.Settings.ScreenRecordRegion = captureRectangle;
 
             IsRecording = true;
+
             Screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
 
             string trayText = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;

@@ -1249,6 +1249,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start screen recording using active window region.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderActiveWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderActiveWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen record.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderActiveWindow_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderActiveWindow_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Screen recording (GIF).
         /// </summary>
         internal static string HotkeyType_ScreenRecorderGIF {
@@ -1263,6 +1281,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_ScreenRecorderGIF_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_ScreenRecorderGIF_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start screen recording (GIF) using active window region.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderGIFActiveWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFActiveWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen record.
+        /// </summary>
+        internal static string HotkeyType_ScreenRecorderGIFActiveWindow_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ScreenRecorderGIFActiveWindow_Category", resourceCulture);
             }
         }
         

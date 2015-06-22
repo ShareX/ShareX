@@ -478,19 +478,7 @@ namespace ShareX
             DropForm.GetInstance(Program.Settings.DropSize, Program.Settings.DropOffset, Program.Settings.DropAlignment, Program.Settings.DropOpacity, Program.Settings.DropHoverOpacity).ShowActivate();
         }
 
-        public static void DoScreenRecordingFFmpeg()
-        {
-            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-            StartScreenRecording(ScreenRecordOutput.FFmpeg, taskSettings);
-        }
-
-        public static void DoScreenRecordingGIF()
-        {
-            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-            StartScreenRecording(ScreenRecordOutput.GIF, taskSettings);
-        }
-
-        public static void StartScreenRecording(ScreenRecordOutput outputType, TaskSettings taskSettings = null, bool skipRegionSelection = false)
+        public static void StartScreenRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -502,7 +490,7 @@ namespace ShareX
             }
             else
             {
-                form.StartRecording(outputType, taskSettings, skipRegionSelection);
+                form.StartRecording(outputType, taskSettings, startMethod);
             }
         }
 

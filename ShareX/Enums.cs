@@ -130,9 +130,17 @@ namespace ShareX
         LastRegion
     }
 
+    public enum ScreenRecordStartMethod
+    {
+        Region,
+        ActiveWindow,
+        LastRegion
+    }
+
     public enum HotkeyType // Localized + Category
     {
         None,
+        // Upload
         FileUpload,
         FolderUpload,
         ClipboardUpload,
@@ -140,6 +148,7 @@ namespace ShareX
         UploadURL,
         DragDropUpload,
         StopUploads,
+        // Screen capture
         PrintScreen,
         ActiveWindow,
         ActiveMonitor,
@@ -156,22 +165,30 @@ namespace ShareX
         FreeHandRegion,
         CustomRegion,
         LastRegion,
+        // Screen record
         ScreenRecorder,
+        ScreenRecorderActiveWindow,
         StartScreenRecorder,
         ScreenRecorderGIF,
+        ScreenRecorderGIFActiveWindow,
         StartScreenRecorderGIF,
+        // Tools
         AutoCapture,
         StartAutoCapture,
         ColorPicker,
         ScreenColorPicker,
-        Ruler,
-        FTPClient,
-        HashCheck,
-        IndexFolder,
+        ImageEditor,
         ImageEffects,
+        HashCheck,
+        DNSChanger,
         QRCode,
-        TweetMessage,
+        Ruler,
         Automate,
+        IndexFolder,
+        FTPClient,
+        TweetMessage,
+        MonitorTest,
+        // Other
         OpenScreenshotsFolder
     }
 

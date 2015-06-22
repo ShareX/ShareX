@@ -1002,12 +1002,12 @@ namespace ShareX
 
         private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
         {
-            TaskHelpers.DoScreenRecordingFFmpeg();
+            TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region);
         }
 
         private void tsmiScreenRecordingGIF_Click(object sender, EventArgs e)
         {
-            TaskHelpers.DoScreenRecordingGIF();
+            TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region);
         }
 
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
@@ -1570,25 +1570,28 @@ namespace ShareX
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
                 case HotkeyType.ScreenRecorder:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, safeTaskSettings, false);
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderActiveWindow:
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
                     break;
                 case HotkeyType.StartScreenRecorder:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, safeTaskSettings, true);
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
                     break;
                 case HotkeyType.ScreenRecorderGIF:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, safeTaskSettings, false);
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region, safeTaskSettings);
+                    break;
+                case HotkeyType.ScreenRecorderGIFActiveWindow:
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
                     break;
                 case HotkeyType.StartScreenRecorderGIF:
-                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, safeTaskSettings, true);
+                    TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
                     break;
                 case HotkeyType.StartAutoCapture:
                     TaskHelpers.StartAutoCapture();
-                    break;
-                case HotkeyType.OpenScreenshotsFolder:
-                    TaskHelpers.OpenScreenshotsFolder();
                     break;
                 case HotkeyType.ColorPicker:
                     TaskHelpers.OpenColorPicker();
@@ -1619,6 +1622,9 @@ namespace ShareX
                     break;
                 case HotkeyType.Automate:
                     TaskHelpers.StartAutomate();
+                    break;
+                case HotkeyType.OpenScreenshotsFolder:
+                    TaskHelpers.OpenScreenshotsFolder();
                     break;
             }
         }

@@ -87,6 +87,7 @@ Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreate
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 
+[Code]
 #include "Scripts\products.iss"
 #include "Scripts\products\stringversion.iss"
 #include "Scripts\products\winversion.iss"
@@ -95,7 +96,6 @@ Root: "HKCU"; Subkey: "Software\Classes\Folder\shell\{#MyAppName}"; Flags: dontc
 #include "Scripts\products\msi31.iss"
 #include "Scripts\products\dotnetfx40full.iss"
 
-[Code]
 procedure InitializeWizard;
 begin
   WizardForm.LicenseAcceptedRadio.Checked := true;

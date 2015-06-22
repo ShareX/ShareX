@@ -309,6 +309,18 @@ namespace ShareX.HelpersLib
             return rect;
         }
 
+        public static Rectangle GetActiveWindowRectangle()
+        {
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+            return GetWindowRectangle(handle);
+        }
+
+        public static Rectangle GetActiveWindowClientRectangle()
+        {
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+            return NativeMethods.GetClientRect(handle);
+        }
+
         public static Rectangle EvenRectangleSize(Rectangle rect)
         {
             rect.Width -= rect.Width & 1;

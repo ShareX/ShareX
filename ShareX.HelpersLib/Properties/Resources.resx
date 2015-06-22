@@ -766,4 +766,16 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>Start screen recording using active window region</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>Start screen recording (GIF) using active window region</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
 </root>
