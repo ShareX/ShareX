@@ -303,7 +303,7 @@ namespace ShareX
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordAutoStart = true;
-        public float ScreenRecordStartDelay = 0.5f;
+        public float ScreenRecordStartDelay = 1f;
         public bool RunScreencastCLI = false;
         public int VideoEncoderSelected = 0;
 

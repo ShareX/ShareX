@@ -243,6 +243,8 @@ namespace ShareX
 
                             if (delay > 0)
                             {
+                                regionForm.InvokeSafe(() => regionForm.StartCountdown(delay));
+
                                 regionForm.RecordResetEvent.WaitOne(delay);
                             }
                         }
@@ -265,7 +267,7 @@ namespace ShareX
 
                         if (regionForm != null)
                         {
-                            regionForm.InvokeSafe(() => regionForm.StartTimer());
+                            regionForm.InvokeSafe(() => regionForm.StartRecordingTimer(duration > 0, duration));
                         }
 
                         screenRecorder.StartRecording();

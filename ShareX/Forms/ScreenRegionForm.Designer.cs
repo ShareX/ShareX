@@ -56,7 +56,6 @@
             // 
             // timerRefresh
             // 
-            this.timerRefresh.Interval = 200;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
             // btnAbort

@@ -120,13 +120,6 @@ namespace ShareX
             Thread thread = new Thread(() =>
             {
                 regionForm.StopRequested += stopRequested;
-
-                if (duration > 0)
-                {
-                    regionForm.IsCountdown = true;
-                    regionForm.Countdown = TimeSpan.FromSeconds(duration);
-                }
-
                 regionForm.UpdateTimer();
                 regionForm.ShowDialog();
             });
@@ -136,14 +129,32 @@ namespace ShareX
             return regionForm;
         }
 
-        public void StartTimer()
+        public void StartCountdown(int milliseconds)
         {
+            IsCountdown = true;
+            Countdown = TimeSpan.FromMilliseconds(milliseconds);
+
+            lblTimer.ForeColor = Color.Yellow;
+
+            Timer.Start();
+            timerRefresh.Start();
+            UpdateTimer();
+        }
+
+        public void StartRecordingTimer(bool isCountdown, float duration = 0)
+        {
+            IsCountdown = isCountdown;
+            Countdown = TimeSpan.FromSeconds(duration);
+
+            lblTimer.ForeColor = Color.White;
             borderColor = Color.FromArgb(0, 255, 0);
             btnStop.Text = Resources.AutoCaptureForm_Execute_Stop;
             Refresh();
 
+            Timer.Reset();
             Timer.Start();
             timerRefresh.Start();
+            UpdateTimer();
             IsRecording = true;
         }
 
