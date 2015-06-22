@@ -172,6 +172,17 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
+        private void btnInstallHelperDevices_Click(object sender, EventArgs e)
+        {
+            string path = Helpers.GetAbsolutePath("Screen Capture Recorder setup.exe");
+            Helpers.OpenFile(path);
+        }
+
+        private void btnHelperDevicesHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL("https://github.com/rdp/screen-capture-recorder-to-video-windows-free");
+        }
+
         private void cboVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;

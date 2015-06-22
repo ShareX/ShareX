@@ -58,6 +58,7 @@ Source: "{#MyAppParentDir}\ShareX.exe.config"; DestDir: {app}; Flags: ignorevers
 Source: "{#MyAppParentDir}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppParentDir}\*.css"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppParentDir}\*.txt"; DestDir: {app}; Flags: ignoreversion
+Source: "Output\Screen Capture Recorder setup.exe"; DestDir: {app}; Flags: ignoreversion
 
 ; Language resources
 Source: "{#MyAppParentDir}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
