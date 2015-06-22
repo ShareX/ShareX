@@ -203,7 +203,7 @@ namespace ShareX
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-            regionForm = ScreenRegionForm.Show(captureRectangle, StopRecording, duration);
+            regionForm = ScreenRegionForm.Show(captureRectangle, StopRecording, startMethod == ScreenRecordStartMethod.Region, duration);
             regionForm.RecordResetEvent = new ManualResetEvent(false);
 
             TaskEx.Run(() =>

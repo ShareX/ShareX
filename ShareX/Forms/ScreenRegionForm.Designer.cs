@@ -83,7 +83,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScreenRegionForm";
             this.ShowInTaskbar = false;
-            this.TopMost = true;
             this.Shown += new System.EventHandler(this.ScreenRegionForm_Shown);
             this.pInfo.ResumeLayout(false);
             this.ResumeLayout(false);

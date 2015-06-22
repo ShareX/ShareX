@@ -47,6 +47,7 @@ namespace ShareX.HelpersLib
                 value = false;
                 CreateHandle();
             }
+
             base.SetVisibleCore(value);
         }
 
@@ -56,6 +57,7 @@ namespace ShareX.HelpersLib
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
     }

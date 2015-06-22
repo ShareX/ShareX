@@ -47,10 +47,13 @@ namespace ShareX
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
+        private bool activateWindow;
 
-        public ScreenRegionForm(Rectangle regionRectangle)
+        public ScreenRegionForm(Rectangle regionRectangle, bool activateWindow = true)
         {
             InitializeComponent();
+
+            this.activateWindow = activateWindow;
 
             borderRectangle = regionRectangle.Offset(1);
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
@@ -76,9 +79,30 @@ namespace ShareX
             Timer = new Stopwatch();
         }
 
+        protected override bool ShowWithoutActivation
+        {
+            get
+            {
+                return !activateWindow;
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOPMOST;
+                return createParams;
+            }
+        }
+
         private void ScreenRegionForm_Shown(object sender, EventArgs e)
         {
-            this.ShowActivate();
+            if (activateWindow)
+            {
+                this.ShowActivate();
+            }
         }
 
         protected void OnStopRequested()
@@ -89,9 +113,9 @@ namespace ShareX
             }
         }
 
-        public static ScreenRegionForm Show(Rectangle captureRectangle, Action stopRequested, float duration = 0)
+        public static ScreenRegionForm Show(Rectangle captureRectangle, Action stopRequested, bool activateWindow, float duration = 0)
         {
-            ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle);
+            ScreenRegionForm regionForm = new ScreenRegionForm(captureRectangle, activateWindow);
 
             Thread thread = new Thread(() =>
             {
