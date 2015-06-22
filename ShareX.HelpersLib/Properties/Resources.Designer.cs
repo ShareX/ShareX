@@ -844,6 +844,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNS changer.
+        /// </summary>
+        internal static string HotkeyType_DNSChanger {
+            get {
+                return ResourceManager.GetString("HotkeyType_DNSChanger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_DNSChanger_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_DNSChanger_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drag and drop upload.
         /// </summary>
         internal static string HotkeyType_DragDropUpload {
@@ -970,6 +988,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image editor.
+        /// </summary>
+        internal static string HotkeyType_ImageEditor {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ImageEditor_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageEditor_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image effects.
         /// </summary>
         internal static string HotkeyType_ImageEffects {
@@ -1020,6 +1056,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_LastRegion_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_LastRegion_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monitor test.
+        /// </summary>
+        internal static string HotkeyType_MonitorTest {
+            get {
+                return ResourceManager.GetString("HotkeyType_MonitorTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_MonitorTest_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_MonitorTest_Category", resourceCulture);
             }
         }
         

@@ -1500,6 +1500,7 @@ namespace ShareX
 
             switch (job)
             {
+                // Upload
                 case HotkeyType.FileUpload:
                     UploadManager.UploadFile(safeTaskSettings);
                     break;
@@ -1521,6 +1522,7 @@ namespace ShareX
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
                     break;
+                // Screen capture
                 case HotkeyType.PrintScreen:
                     CaptureScreenshot(CaptureType.Screen, safeTaskSettings, false);
                     break;
@@ -1569,6 +1571,7 @@ namespace ShareX
                 case HotkeyType.LastRegion:
                     CaptureScreenshot(CaptureType.LastRegion, safeTaskSettings, false);
                     break;
+                // Screen record
                 case HotkeyType.ScreenRecorder:
                     TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region, safeTaskSettings);
                     break;
@@ -1587,6 +1590,7 @@ namespace ShareX
                 case HotkeyType.StartScreenRecorderGIF:
                     TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
                     break;
+                // Tools
                 case HotkeyType.AutoCapture:
                     TaskHelpers.OpenAutoCapture();
                     break;
@@ -1599,30 +1603,40 @@ namespace ShareX
                 case HotkeyType.ScreenColorPicker:
                     TaskHelpers.OpenScreenColorPicker(safeTaskSettings);
                     break;
-                case HotkeyType.Ruler:
-                    TaskHelpers.OpenRuler();
-                    break;
-                case HotkeyType.FTPClient:
-                    TaskHelpers.OpenFTPClient();
-                    break;
-                case HotkeyType.HashCheck:
-                    TaskHelpers.OpenHashCheck();
-                    break;
-                case HotkeyType.IndexFolder:
-                    TaskHelpers.OpenIndexFolder();
+                case HotkeyType.ImageEditor:
+                    TaskHelpers.OpenImageEditor();
                     break;
                 case HotkeyType.ImageEffects:
                     TaskHelpers.OpenImageEffects();
                     break;
+                case HotkeyType.HashCheck:
+                    TaskHelpers.OpenHashCheck();
+                    break;
+                case HotkeyType.DNSChanger:
+                    TaskHelpers.OpenDNSChanger();
+                    break;
                 case HotkeyType.QRCode:
                     TaskHelpers.OpenQRCode();
                     break;
-                case HotkeyType.TweetMessage:
-                    TaskHelpers.TweetMessage();
+                case HotkeyType.Ruler:
+                    TaskHelpers.OpenRuler();
                     break;
                 case HotkeyType.Automate:
                     TaskHelpers.StartAutomate();
                     break;
+                case HotkeyType.IndexFolder:
+                    TaskHelpers.OpenIndexFolder();
+                    break;
+                case HotkeyType.FTPClient:
+                    TaskHelpers.OpenFTPClient();
+                    break;
+                case HotkeyType.TweetMessage:
+                    TaskHelpers.TweetMessage();
+                    break;
+                case HotkeyType.MonitorTest:
+                    TaskHelpers.OpenMonitorTest();
+                    break;
+                // Other
                 case HotkeyType.OpenScreenshotsFolder:
                     TaskHelpers.OpenScreenshotsFolder();
                     break;
