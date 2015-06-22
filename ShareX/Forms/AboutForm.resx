@@ -486,6 +486,9 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - About</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutForm</value>
   </data>

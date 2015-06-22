@@ -18,10 +18,10 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [Files]
-Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
-Source: "..\Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
-Source: "..\Lib\virtual-audio-capturer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: IsAdminLoggedOn and not IsWin64
-Source: "..\Lib\virtual-audio-capturer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsAdminLoggedOn and IsWin64
+Source: "..\Lib\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: not IsWin64
+Source: "..\Lib\screen-capture-recorder-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
+Source: "..\Lib\virtual-audio-capturer.dll"; DestDir: {app}; Flags: regserver 32bit; Check: not IsWin64
+Source: "..\Lib\virtual-audio-capturer-x64.dll"; DestDir: {app}; Flags: regserver 64bit; Check: IsWin64
 
 [Code]
 #include "Scripts\products.iss"

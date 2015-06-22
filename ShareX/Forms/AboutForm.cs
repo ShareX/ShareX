@@ -38,7 +38,6 @@ namespace ShareX
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            Text = Program.Title;
             lblProductName.Text = Program.Title;
 
             rtbShareXInfo.AddContextMenu();
