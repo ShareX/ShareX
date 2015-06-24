@@ -75,6 +75,9 @@ namespace ShareX
                     case SupportedLanguage.Turkish:
                         cultureName = "tr-TR";
                         break;
+                    case SupportedLanguage.Japanese:
+                        cultureName = "ja-JP";
+                        break;
                 }
 
                 currentCulture = CultureInfo.GetCultureInfo(cultureName);

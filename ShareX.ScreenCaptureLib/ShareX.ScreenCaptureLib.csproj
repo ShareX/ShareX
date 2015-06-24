@@ -161,6 +161,9 @@
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.hu.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screencast\FFmpegOptionsForm.ja-JP.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screencast\FFmpegOptionsForm.ko-KR.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
