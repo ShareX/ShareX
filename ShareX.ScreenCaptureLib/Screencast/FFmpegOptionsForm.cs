@@ -39,6 +39,7 @@ namespace ShareX.ScreenCaptureLib
         public string DefaultToolsPath;
 
         private bool settingsLoaded;
+        private bool devicesInstalled;
 
         public FFmpegOptionsForm(ScreencastOptions options)
         {
@@ -134,8 +135,22 @@ namespace ShareX.ScreenCaptureLib
                     cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
                     cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
                 }
+
+                if (devicesInstalled && cboVideoSource.Items.Contains(FFmpegHelper.SourceVideoDevice))
+                {
+                    Options.FFmpeg.VideoSource = FFmpegHelper.SourceVideoDevice;
+                }
+
                 cboVideoSource.Text = Options.FFmpeg.VideoSource;
+
+                if (devicesInstalled && cboAudioSource.Items.Contains(FFmpegHelper.SourceAudioDevice))
+                {
+                    Options.FFmpeg.AudioSource = FFmpegHelper.SourceAudioDevice;
+                }
+
                 cboAudioSource.Text = Options.FFmpeg.AudioSource;
+
+                devicesInstalled = false;
                 btnRefreshSources.Enabled = true;
             });
         }
@@ -174,8 +189,28 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string path = Helpers.GetAbsolutePath("Screen Capture Recorder setup.exe");
-            Helpers.OpenFile(path);
+            string filepath = Helpers.GetAbsolutePath("Screen Capture Recorder setup.exe");
+
+            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            {
+                TaskEx.Run(() =>
+                {
+                    try
+                    {
+                        Process process = Process.Start(filepath);
+
+                        if (process.WaitForExit(1000 * 60 * 5))
+                        {
+                            this.InvokeSafe(() =>
+                            {
+                                devicesInstalled = true;
+                                RefreshSourcesAsync();
+                            });
+                        }
+                    }
+                    catch { }
+                });
+            }
         }
 
         private void btnHelperDevicesHelp_Click(object sender, EventArgs e)
