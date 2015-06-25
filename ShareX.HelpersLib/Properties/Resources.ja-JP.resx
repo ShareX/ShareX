@@ -329,4 +329,25 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>カラーピッカ</value>
   </data>
+  <data name="HotkeyType_Automate_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
+    <value>スクリーンキャプチャ</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
+    <value>スクリーンキャプチャ</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
+    <value>スクリーンキャプチャ</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
 </root>
