@@ -80,13 +80,13 @@
             this.cboAudioCodec = new System.Windows.Forms.ComboBox();
             this.lblAudioCodec = new System.Windows.Forms.Label();
             this.gbSource = new System.Windows.Forms.GroupBox();
+            this.btnHelperDevicesHelp = new System.Windows.Forms.Button();
+            this.lblHelperDevices = new System.Windows.Forms.Label();
+            this.btnInstallHelperDevices = new System.Windows.Forms.Button();
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.btnHelp = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
-            this.btnInstallHelperDevices = new System.Windows.Forms.Button();
-            this.lblHelperDevices = new System.Windows.Forms.Label();
-            this.btnHelperDevicesHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -532,6 +532,25 @@
             this.gbSource.Name = "gbSource";
             this.gbSource.TabStop = false;
             // 
+            // btnHelperDevicesHelp
+            // 
+            resources.ApplyResources(this.btnHelperDevicesHelp, "btnHelperDevicesHelp");
+            this.btnHelperDevicesHelp.Name = "btnHelperDevicesHelp";
+            this.btnHelperDevicesHelp.UseVisualStyleBackColor = true;
+            this.btnHelperDevicesHelp.Click += new System.EventHandler(this.btnHelperDevicesHelp_Click);
+            // 
+            // lblHelperDevices
+            // 
+            resources.ApplyResources(this.lblHelperDevices, "lblHelperDevices");
+            this.lblHelperDevices.Name = "lblHelperDevices";
+            // 
+            // btnInstallHelperDevices
+            // 
+            resources.ApplyResources(this.btnInstallHelperDevices, "btnInstallHelperDevices");
+            this.btnInstallHelperDevices.Name = "btnInstallHelperDevices";
+            this.btnInstallHelperDevices.UseVisualStyleBackColor = true;
+            this.btnInstallHelperDevices.Click += new System.EventHandler(this.btnInstallHelperDevices_Click);
+            // 
             // btnRefreshSources
             // 
             resources.ApplyResources(this.btnRefreshSources, "btnRefreshSources");
@@ -545,6 +564,8 @@
             this.gbCodecs.Controls.Add(this.lblAudioCodec);
             this.gbCodecs.Controls.Add(this.cboVideoCodec);
             this.gbCodecs.Controls.Add(this.lblCodec);
+            this.gbCodecs.Controls.Add(this.tcFFmpegAudioCodecs);
+            this.gbCodecs.Controls.Add(this.tcFFmpegVideoCodecs);
             resources.ApplyResources(this.gbCodecs, "gbCodecs");
             this.gbCodecs.Name = "gbCodecs";
             this.gbCodecs.TabStop = false;
@@ -564,25 +585,6 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
-            // btnInstallHelperDevices
-            // 
-            resources.ApplyResources(this.btnInstallHelperDevices, "btnInstallHelperDevices");
-            this.btnInstallHelperDevices.Name = "btnInstallHelperDevices";
-            this.btnInstallHelperDevices.UseVisualStyleBackColor = true;
-            this.btnInstallHelperDevices.Click += new System.EventHandler(this.btnInstallHelperDevices_Click);
-            // 
-            // lblHelperDevices
-            // 
-            resources.ApplyResources(this.lblHelperDevices, "lblHelperDevices");
-            this.lblHelperDevices.Name = "lblHelperDevices";
-            // 
-            // btnHelperDevicesHelp
-            // 
-            resources.ApplyResources(this.btnHelperDevicesHelp, "btnHelperDevicesHelp");
-            this.btnHelperDevicesHelp.Name = "btnHelperDevicesHelp";
-            this.btnHelperDevicesHelp.UseVisualStyleBackColor = true;
-            this.btnHelperDevicesHelp.Click += new System.EventHandler(this.btnHelperDevicesHelp_Click);
-            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -592,10 +594,8 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.gbCodecs);
             this.Controls.Add(this.gbSource);
-            this.Controls.Add(this.tcFFmpegAudioCodecs);
             this.Controls.Add(this.btnCopyPreview);
             this.Controls.Add(this.btnTest);
-            this.Controls.Add(this.tcFFmpegVideoCodecs);
             this.Controls.Add(this.gbCommandLinePreview);
             this.Controls.Add(this.gbFFmpegExe);
             this.Controls.Add(this.gbCommandLineArgs);

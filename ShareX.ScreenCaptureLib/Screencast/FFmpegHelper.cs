@@ -36,11 +36,13 @@ namespace ShareX.ScreenCaptureLib
 {
     public class FFmpegHelper : ExternalCLIManager
     {
-        public const int libmp3lame_qscale_end = 9;
         public const string SourceNone = "None";
         public const string SourceGDIGrab = "GDI grab";
         public const string SourceVideoDevice = "screen-capture-recorder";
         public const string SourceAudioDevice = "virtual-audio-capturer";
+        public const string DeviceSetupPath = "Screen Capture Recorder setup.exe";
+
+        public const int libmp3lame_qscale_end = 9;
 
         public StringBuilder Output { get; private set; }
         public ScreencastOptions Options { get; private set; }

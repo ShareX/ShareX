@@ -35,17 +35,17 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class FFmpegOptionsForm : Form
     {
-        public ScreencastOptions Options = new ScreencastOptions();
-        public string DefaultToolsPath;
+        public ScreencastOptions Options { get; private set; }
+        public string DefaultToolsPath { get; set; }
 
         private bool settingsLoaded;
-        private bool devicesInstalled;
 
         public FFmpegOptionsForm(ScreencastOptions options)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             Options = options;
+
             eiFFmpeg.ObjectType = typeof(FFmpegOptions);
             cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
@@ -73,6 +73,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
+            txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
 
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
@@ -111,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void RefreshSourcesAsync()
+        private void RefreshSourcesAsync(bool selectDevices = false)
         {
             btnRefreshSources.Enabled = false;
             DirectShowDevices devices = null;
@@ -130,27 +131,27 @@ namespace ShareX.ScreenCaptureLib
                 cboVideoSource.Items.Add(FFmpegHelper.SourceGDIGrab);
                 cboAudioSource.Items.Clear();
                 cboAudioSource.Items.Add(FFmpegHelper.SourceNone);
+
                 if (devices != null)
                 {
                     cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
                     cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
                 }
 
-                if (devicesInstalled && cboVideoSource.Items.Contains(FFmpegHelper.SourceVideoDevice))
+                if (selectDevices && cboVideoSource.Items.Contains(FFmpegHelper.SourceVideoDevice))
                 {
                     Options.FFmpeg.VideoSource = FFmpegHelper.SourceVideoDevice;
                 }
 
                 cboVideoSource.Text = Options.FFmpeg.VideoSource;
 
-                if (devicesInstalled && cboAudioSource.Items.Contains(FFmpegHelper.SourceAudioDevice))
+                if (selectDevices && cboAudioSource.Items.Contains(FFmpegHelper.SourceAudioDevice))
                 {
                     Options.FFmpeg.AudioSource = FFmpegHelper.SourceAudioDevice;
                 }
 
                 cboAudioSource.Text = Options.FFmpeg.AudioSource;
 
-                devicesInstalled = false;
                 btnRefreshSources.Enabled = true;
             });
         }
@@ -189,7 +190,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string filepath = Helpers.GetAbsolutePath("Screen Capture Recorder setup.exe");
+            string filepath = Helpers.GetAbsolutePath(FFmpegHelper.DeviceSetupPath);
 
             if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
             {
@@ -199,12 +200,11 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Process process = Process.Start(filepath);
 
-                        if (process.WaitForExit(1000 * 60 * 5))
+                        if (process.WaitForExit(1000 * 60 * 5) && process.ExitCode == 0)
                         {
                             this.InvokeSafe(() =>
                             {
-                                devicesInstalled = true;
-                                RefreshSourcesAsync();
+                                RefreshSourcesAsync(true);
                             });
                         }
                     }

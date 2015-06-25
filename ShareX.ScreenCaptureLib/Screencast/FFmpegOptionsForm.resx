@@ -242,7 +242,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>Right</value>
   </data>
   <data name="tbVorbis_qscale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 3</value>
+    <value>104, 3</value>
   </data>
   <data name="tbVorbis_qscale.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 64</value>
@@ -269,7 +269,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>Right</value>
   </data>
   <data name="tbMP3_qscale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 3</value>
+    <value>104, 3</value>
   </data>
   <data name="tbMP3_qscale.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 64</value>
@@ -296,7 +296,7 @@ Similarly, for constant quality encoding, you will simply save bitrate by choosi
     <value>Right</value>
   </data>
   <data name="tbAACBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 3</value>
+    <value>104, 3</value>
   </data>
   <data name="tbAACBitrate.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 64</value>
@@ -380,7 +380,7 @@ Default is sierra2_4a.</value>
     <value>True</value>
   </data>
   <data name="lblCodec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 26</value>
+    <value>8, 24</value>
   </data>
   <data name="lblCodec.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -404,10 +404,10 @@ Default is sierra2_4a.</value>
     <value>3</value>
   </data>
   <data name="cboVideoCodec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cboVideoCodec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
+    <value>104, 21</value>
   </data>
   <data name="cboVideoCodec.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -478,66 +478,6 @@ Default is sierra2_4a.</value>
   <data name="&gt;&gt;lblXvidQscale.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;btnDownload.Name" xml:space="preserve">
-    <value>btnDownload</value>
-  </data>
-  <data name="&gt;&gt;btnDownload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDownload.Parent" xml:space="preserve">
-    <value>gbFFmpegExe</value>
-  </data>
-  <data name="&gt;&gt;btnDownload.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnFFmpegBrowse.Name" xml:space="preserve">
-    <value>btnFFmpegBrowse</value>
-  </data>
-  <data name="&gt;&gt;btnFFmpegBrowse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFFmpegBrowse.Parent" xml:space="preserve">
-    <value>gbFFmpegExe</value>
-  </data>
-  <data name="&gt;&gt;btnFFmpegBrowse.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtFFmpegPath.Name" xml:space="preserve">
-    <value>txtFFmpegPath</value>
-  </data>
-  <data name="&gt;&gt;txtFFmpegPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFFmpegPath.Parent" xml:space="preserve">
-    <value>gbFFmpegExe</value>
-  </data>
-  <data name="&gt;&gt;txtFFmpegPath.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="gbFFmpegExe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbFFmpegExe.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 56</value>
-  </data>
-  <data name="gbFFmpegExe.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>ffmpeg.exe</value>
-  </data>
-  <data name="&gt;&gt;gbFFmpegExe.Name" xml:space="preserve">
-    <value>gbFFmpegExe</value>
-  </data>
-  <data name="&gt;&gt;gbFFmpegExe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbFFmpegExe.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbFFmpegExe.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="btnDownload.Location" type="System.Drawing.Point, System.Drawing">
     <value>552, 22</value>
   </data>
@@ -563,10 +503,10 @@ Default is sierra2_4a.</value>
     <value>0</value>
   </data>
   <data name="btnFFmpegBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>504, 22</value>
+    <value>512, 22</value>
   </data>
   <data name="btnFFmpegBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 24</value>
+    <value>32, 24</value>
   </data>
   <data name="btnFFmpegBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -590,7 +530,7 @@ Default is sierra2_4a.</value>
     <value>8, 24</value>
   </data>
   <data name="txtFFmpegPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>488, 20</value>
+    <value>496, 20</value>
   </data>
   <data name="txtFFmpegPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -606,6 +546,30 @@ Default is sierra2_4a.</value>
   </data>
   <data name="&gt;&gt;txtFFmpegPath.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="gbFFmpegExe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbFFmpegExe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 56</value>
+  </data>
+  <data name="gbFFmpegExe.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbFFmpegExe.Text" xml:space="preserve">
+    <value>FFmpeg path</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.Name" xml:space="preserve">
+    <value>gbFFmpegExe</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbFFmpegExe.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;cbCustomCommands.Name" xml:space="preserve">
     <value>cbCustomCommands</value>
@@ -656,13 +620,13 @@ Default is sierra2_4a.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbCommandLinePreview.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="cbCustomCommands.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbCustomCommands.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 0</value>
+    <value>376, 0</value>
   </data>
   <data name="cbCustomCommands.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
@@ -764,16 +728,16 @@ Default is sierra2_4a.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbCommandLineArgs.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="btnFFmpegHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="btnFFmpegHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>600, 22</value>
+    <value>616, 23</value>
   </data>
   <data name="btnFFmpegHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 24</value>
+    <value>24, 23</value>
   </data>
   <data name="btnFFmpegHelp.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -800,7 +764,7 @@ Default is sierra2_4a.</value>
     <value>8, 24</value>
   </data>
   <data name="tbUserArgs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 20</value>
+    <value>600, 20</value>
   </data>
   <data name="tbUserArgs.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -866,10 +830,10 @@ Default is sierra2_4a.</value>
     <value>3</value>
   </data>
   <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 232</value>
+    <value>8, 56</value>
   </data>
   <data name="tcFFmpegVideoCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 96</value>
+    <value>312, 96</value>
   </data>
   <data name="tcFFmpegVideoCodecs.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -881,10 +845,10 @@ Default is sierra2_4a.</value>
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tcFFmpegVideoCodecs.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="tpX264.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -893,7 +857,7 @@ Default is sierra2_4a.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpX264.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpX264.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -953,13 +917,13 @@ Default is sierra2_4a.</value>
     <value>4, 22</value>
   </data>
   <data name="tpVpx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpVpx.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tpVpx.Text" xml:space="preserve">
-    <value>VP8 (WebM)</value>
+    <value>VP8</value>
   </data>
   <data name="&gt;&gt;tpVpx.Name" xml:space="preserve">
     <value>tpVpx</value>
@@ -1058,7 +1022,7 @@ Default is sierra2_4a.</value>
     <value>4, 22</value>
   </data>
   <data name="tpXvid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpXvid.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1109,7 +1073,7 @@ Default is sierra2_4a.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGIF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpGIF.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1190,7 +1154,7 @@ Default is sierra2_4a.</value>
     <value>176, 404</value>
   </data>
   <data name="btnTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
+    <value>120, 23</value>
   </data>
   <data name="btnTest.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1208,13 +1172,13 @@ Default is sierra2_4a.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnTest.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="btnCopyPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 404</value>
+    <value>304, 404</value>
   </data>
   <data name="btnCopyPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 23</value>
+    <value>72, 23</value>
   </data>
   <data name="btnCopyPreview.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1232,7 +1196,7 @@ Default is sierra2_4a.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCopyPreview.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;tpAAC.Name" xml:space="preserve">
     <value>tpAAC</value>
@@ -1271,10 +1235,10 @@ Default is sierra2_4a.</value>
     <value>2</value>
   </data>
   <data name="tcFFmpegAudioCodecs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 232</value>
+    <value>328, 56</value>
   </data>
   <data name="tcFFmpegAudioCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 96</value>
+    <value>312, 96</value>
   </data>
   <data name="tcFFmpegAudioCodecs.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1286,7 +1250,7 @@ Default is sierra2_4a.</value>
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tcFFmpegAudioCodecs.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>gbCodecs</value>
   </data>
   <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1310,7 +1274,7 @@ Default is sierra2_4a.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAAC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpAAC.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1376,7 +1340,7 @@ Default is sierra2_4a.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpVorbis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpVorbis.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1442,7 +1406,7 @@ Default is sierra2_4a.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 70</value>
+    <value>304, 70</value>
   </data>
   <data name="tpMP3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1586,10 +1550,10 @@ Default is sierra2_4a.</value>
     <value>6</value>
   </data>
   <data name="cboAudioCodec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 22</value>
+    <value>440, 20</value>
   </data>
   <data name="cboAudioCodec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
+    <value>104, 21</value>
   </data>
   <data name="cboAudioCodec.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1610,7 +1574,7 @@ Default is sierra2_4a.</value>
     <value>True</value>
   </data>
   <data name="lblAudioCodec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 26</value>
+    <value>328, 24</value>
   </data>
   <data name="lblAudioCodec.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -1632,6 +1596,78 @@ Default is sierra2_4a.</value>
   </data>
   <data name="&gt;&gt;lblAudioCodec.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnHelperDevicesHelp.Name" xml:space="preserve">
+    <value>btnHelperDevicesHelp</value>
+  </data>
+  <data name="&gt;&gt;btnHelperDevicesHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHelperDevicesHelp.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;btnHelperDevicesHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblHelperDevices.Name" xml:space="preserve">
+    <value>lblHelperDevices</value>
+  </data>
+  <data name="&gt;&gt;lblHelperDevices.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHelperDevices.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;lblHelperDevices.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnInstallHelperDevices.Name" xml:space="preserve">
+    <value>btnInstallHelperDevices</value>
+  </data>
+  <data name="&gt;&gt;btnInstallHelperDevices.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnInstallHelperDevices.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;btnInstallHelperDevices.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.Name" xml:space="preserve">
+    <value>btnRefreshSources</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSources.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="gbSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 68</value>
+  </data>
+  <data name="gbSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>648, 92</value>
+  </data>
+  <data name="gbSource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Name" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnHelperDevicesHelp.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 56</value>
@@ -1694,7 +1730,7 @@ Default is sierra2_4a.</value>
     <value>5</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Install helper devices</value>
+    <value>Install record devices</value>
   </data>
   <data name="&gt;&gt;btnInstallHelperDevices.Name" xml:space="preserve">
     <value>btnInstallHelperDevices</value>
@@ -1732,35 +1768,11 @@ Default is sierra2_4a.</value>
   <data name="&gt;&gt;btnRefreshSources.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="gbSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 68</value>
-  </data>
-  <data name="gbSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 92</value>
-  </data>
-  <data name="gbSource.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Sources</value>
-  </data>
-  <data name="&gt;&gt;gbSource.Name" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;gbSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSource.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="gbCodecs.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 168</value>
   </data>
   <data name="gbCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>648, 56</value>
+    <value>648, 160</value>
   </data>
   <data name="gbCodecs.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
