@@ -46,6 +46,8 @@
             this.lblWebpageX = new System.Windows.Forms.Label();
             this.lblCaptureDelay = new System.Windows.Forms.Label();
             this.nudCaptureDelay = new System.Windows.Forms.NumericUpDown();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbResult)).BeginInit();
             this.pResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWebpageWidth)).BeginInit();
@@ -160,11 +162,27 @@
             this.nudCaptureDelay.Name = "nudCaptureDelay";
             this.nudCaptureDelay.ValueChanged += new System.EventHandler(this.nudCaptureDelay_ValueChanged);
             // 
+            // btnCopy
+            // 
+            resources.ApplyResources(this.btnCopy, "btnCopy");
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // btnUpload
+            // 
+            resources.ApplyResources(this.btnUpload, "btnUpload");
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // WebpageCaptureForm
             // 
             this.AcceptButton = this.btnCapture;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.nudCaptureDelay);
             this.Controls.Add(this.lblCaptureDelay);
             this.Controls.Add(this.nudWebpageHeight);
@@ -200,5 +218,7 @@
         private System.Windows.Forms.Label lblWebpageX;
         private System.Windows.Forms.Label lblCaptureDelay;
         private System.Windows.Forms.NumericUpDown nudCaptureDelay;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

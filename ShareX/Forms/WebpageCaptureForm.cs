@@ -38,6 +38,9 @@ namespace ShareX
 {
     public partial class WebpageCaptureForm : Form
     {
+        public event Action<Image> OnImageUploadRequested;
+        public event Action<Image> OnImageCopyRequested;
+
         public bool IsBusy { get; private set; }
 
         private WebpageCapture webpageCapture;
@@ -70,15 +73,13 @@ namespace ShareX
             nudWebpageHeight.Value = browserSize.Height.Between((int)nudWebpageHeight.Minimum, (int)nudWebpageHeight.Maximum);
 
             nudCaptureDelay.Value = (decimal)Program.Settings.WebpageCaptureDelay.Between((float)nudCaptureDelay.Minimum, (float)nudCaptureDelay.Maximum);
-
-            btnCapture.Enabled = txtURL.TextLength > 0;
         }
 
         private void webpageCapture_CaptureCompleted(Bitmap bmp)
         {
             pbResult.Image = bmp;
             IsBusy = false;
-            btnCapture.Enabled = txtURL.Enabled = !IsBusy;
+            btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = !IsBusy;
         }
 
         private void txtURL_TextChanged(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace ShareX
         private void btnCapture_Click(object sender, EventArgs e)
         {
             IsBusy = true;
-            btnCapture.Enabled = txtURL.Enabled = !IsBusy;
+            btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = !IsBusy;
             if (pbResult.Image != null)
             {
                 pbResult.Image.Dispose();
@@ -113,6 +114,24 @@ namespace ShareX
 
             webpageCapture.CaptureDelay = (int)nudCaptureDelay.Value * 1000;
             webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            if (pbResult.Image != null)
+            {
+                Image img = (Image)pbResult.Image.Clone();
+                OnImageUploadRequested(img);
+            }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (pbResult.Image != null)
+            {
+                Image img = (Image)pbResult.Image.Clone();
+                OnImageCopyRequested(img);
+            }
         }
     }
 }

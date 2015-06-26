@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtURL.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,7 +169,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblURL.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
+  </data>
+  <data name="btnCapture.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>336, 35</value>
@@ -193,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="pbResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -244,7 +247,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pResult.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblWebpageSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWebpageSize.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="nudWebpageWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 36</value>
@@ -295,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudWebpageWidth.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="nudWebpageHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 36</value>
@@ -319,7 +322,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudWebpageHeight.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblWebpageX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -349,7 +352,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWebpageX.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lblCaptureDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCaptureDelay.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="nudCaptureDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 36</value>
@@ -400,6 +403,60 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudCaptureDelay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnCopy.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 35</value>
+  </data>
+  <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 23</value>
+  </data>
+  <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Name" xml:space="preserve">
+    <value>btnCopy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnUpload.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 35</value>
+  </data>
+  <data name="btnUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
+  </data>
+  <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.Name" xml:space="preserve">
+    <value>btnUpload</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
