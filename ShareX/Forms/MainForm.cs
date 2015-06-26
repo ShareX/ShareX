@@ -1015,6 +1015,11 @@ namespace ShareX
             TaskHelpers.OpenAutoCapture();
         }
 
+        private void tsmiWebpageCapture_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenWebpageCapture();
+        }
+
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
         {
             using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())

@@ -499,6 +499,11 @@ namespace ShareX
             AutoCaptureForm.Instance.ShowActivate();
         }
 
+        public static void OpenWebpageCapture()
+        {
+            new WebpageCaptureForm().Show();
+        }
+
         public static void StartAutoCapture()
         {
             if (!AutoCaptureForm.IsRunning)
