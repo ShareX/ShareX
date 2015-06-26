@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -36,6 +37,8 @@ namespace ShareX.ScreenCaptureLib
     public class WebpageCapture : IDisposable
     {
         public event Action<Bitmap> CaptureCompleted;
+
+        public int CaptureDelay { get; set; }
 
         private WebBrowser webBrowser;
 
@@ -62,6 +65,14 @@ namespace ShareX.ScreenCaptureLib
         }
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            if (webBrowser.ReadyState == WebBrowserReadyState.Complete)
+            {
+                TaskEx.RunDelayed(GetWebpageBitmap, CaptureDelay);
+            }
+        }
+
+        private void GetWebpageBitmap()
         {
             Rectangle rect = webBrowser.Document.Body.ScrollRectangle;
             webBrowser.Size = new Size(rect.Width, rect.Height);

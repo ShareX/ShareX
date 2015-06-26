@@ -55,12 +55,6 @@
     <Compile Include="Forms\RectangleTransparent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WebpageCaptureForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WebpageCaptureForm.Designer.cs">
-      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MonitorRegion.cs" />
     <Compile Include="MonitorRegionDefaultCreator.cs" />
     <Compile Include="RectangleAnnotateOptions.cs" />
@@ -135,9 +129,6 @@
     <Content Include="Resources\Crosshair.cur" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\WebpageCaptureForm.resx">
-      <DependentUpon>WebpageCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

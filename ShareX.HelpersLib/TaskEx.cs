@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
@@ -49,6 +50,18 @@ namespace ShareX.HelpersLib
             }
 
             return Run(thread).ContinueWith(task => completed(), taskScheduler);
+        }
+
+        public static void RunDelayed(Action thread, int delay)
+        {
+            if (delay > 0)
+            {
+                Run(() => Thread.Sleep(delay), thread);
+            }
+            else
+            {
+                thread();
+            }
         }
     }
 }

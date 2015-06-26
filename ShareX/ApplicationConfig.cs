@@ -212,5 +212,12 @@ namespace ShareX
         public List<ScriptInfo> AutomateScripts = new List<ScriptInfo>();
 
         #endregion Automate Form
+
+        #region Webpage Capture Form
+
+        public Size WebpageCaptureBrowserSize = Size.Empty;
+        public float WebpageCaptureDelay = 0f;
+
+        #endregion Webpage Capture Form
     }
 }

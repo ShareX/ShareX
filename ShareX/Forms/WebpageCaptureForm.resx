@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtURL.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,10 +169,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblURL.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btnCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 35</value>
+    <value>336, 35</value>
   </data>
   <data name="btnCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
@@ -193,7 +193,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCapture.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="pbResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -244,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pResult.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="lblWebpageSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,10 +271,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWebpageSize.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="nudWebpageWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 36</value>
+    <value>80, 36</value>
   </data>
   <data name="nudWebpageWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -295,10 +295,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudWebpageWidth.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="nudWebpageHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 36</value>
+    <value>168, 36</value>
   </data>
   <data name="nudWebpageHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -319,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudWebpageHeight.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblWebpageX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -328,7 +328,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblWebpageX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 40</value>
+    <value>151, 40</value>
   </data>
   <data name="lblWebpageX.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 13</value>
@@ -349,7 +349,58 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWebpageX.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblCaptureDelay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCaptureDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 40</value>
+  </data>
+  <data name="lblCaptureDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="lblCaptureDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblCaptureDelay.Text" xml:space="preserve">
+    <value>Delay:</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureDelay.Name" xml:space="preserve">
+    <value>lblCaptureDelay</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureDelay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureDelay.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="nudCaptureDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 36</value>
+  </data>
+  <data name="nudCaptureDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="nudCaptureDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="nudCaptureDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureDelay.Name" xml:space="preserve">
+    <value>nudCaptureDelay</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureDelay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudCaptureDelay.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

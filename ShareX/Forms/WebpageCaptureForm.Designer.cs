@@ -1,4 +1,4 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿namespace ShareX
 {
     partial class WebpageCaptureForm
     {
@@ -44,10 +44,13 @@
             this.nudWebpageWidth = new System.Windows.Forms.NumericUpDown();
             this.nudWebpageHeight = new System.Windows.Forms.NumericUpDown();
             this.lblWebpageX = new System.Windows.Forms.Label();
+            this.lblCaptureDelay = new System.Windows.Forms.Label();
+            this.nudCaptureDelay = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pbResult)).BeginInit();
             this.pResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWebpageWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWebpageHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // txtURL
@@ -107,6 +110,7 @@
             0,
             0,
             0});
+            this.nudWebpageWidth.ValueChanged += new System.EventHandler(this.nudWebpageWidth_ValueChanged);
             // 
             // nudWebpageHeight
             // 
@@ -127,17 +131,42 @@
             0,
             0,
             0});
+            this.nudWebpageHeight.ValueChanged += new System.EventHandler(this.nudWebpageHeight_ValueChanged);
             // 
             // lblWebpageX
             // 
             resources.ApplyResources(this.lblWebpageX, "lblWebpageX");
             this.lblWebpageX.Name = "lblWebpageX";
             // 
+            // lblCaptureDelay
+            // 
+            resources.ApplyResources(this.lblCaptureDelay, "lblCaptureDelay");
+            this.lblCaptureDelay.Name = "lblCaptureDelay";
+            // 
+            // nudCaptureDelay
+            // 
+            this.nudCaptureDelay.DecimalPlaces = 1;
+            this.nudCaptureDelay.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            resources.ApplyResources(this.nudCaptureDelay, "nudCaptureDelay");
+            this.nudCaptureDelay.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudCaptureDelay.Name = "nudCaptureDelay";
+            this.nudCaptureDelay.ValueChanged += new System.EventHandler(this.nudCaptureDelay_ValueChanged);
+            // 
             // WebpageCaptureForm
             // 
             this.AcceptButton = this.btnCapture;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.nudCaptureDelay);
+            this.Controls.Add(this.lblCaptureDelay);
             this.Controls.Add(this.nudWebpageHeight);
             this.Controls.Add(this.lblWebpageX);
             this.Controls.Add(this.nudWebpageWidth);
@@ -152,6 +181,7 @@
             this.pResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWebpageWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWebpageHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCaptureDelay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +198,7 @@
         private System.Windows.Forms.NumericUpDown nudWebpageWidth;
         private System.Windows.Forms.NumericUpDown nudWebpageHeight;
         private System.Windows.Forms.Label lblWebpageX;
+        private System.Windows.Forms.Label lblCaptureDelay;
+        private System.Windows.Forms.NumericUpDown nudCaptureDelay;
     }
 }

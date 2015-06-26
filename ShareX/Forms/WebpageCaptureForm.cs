@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX
 {
     public partial class WebpageCaptureForm : Form
     {
@@ -45,14 +46,12 @@ namespace ShareX.ScreenCaptureLib
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            CheckClipboard();
-            nudWebpageWidth.Value = Screen.PrimaryScreen.Bounds.Width.Between((int)nudWebpageWidth.Minimum, (int)nudWebpageWidth.Maximum);
-            nudWebpageHeight.Value = Screen.PrimaryScreen.Bounds.Height.Between((int)nudWebpageHeight.Minimum, (int)nudWebpageHeight.Maximum);
+            LoadSettings();
             webpageCapture = new WebpageCapture();
             webpageCapture.CaptureCompleted += webpageCapture_CaptureCompleted;
         }
 
-        private void CheckClipboard()
+        private void LoadSettings()
         {
             if (Clipboard.ContainsText())
             {
@@ -63,6 +62,43 @@ namespace ShareX.ScreenCaptureLib
                     txtURL.Text = text;
                 }
             }
+
+            Size browserSize = Program.Settings.WebpageCaptureBrowserSize;
+            if (browserSize.Width == 0) browserSize.Width = Screen.PrimaryScreen.Bounds.Width;
+            nudWebpageWidth.Value = browserSize.Width.Between((int)nudWebpageWidth.Minimum, (int)nudWebpageWidth.Maximum);
+            if (browserSize.Height == 0) browserSize.Height = Screen.PrimaryScreen.Bounds.Height;
+            nudWebpageHeight.Value = browserSize.Height.Between((int)nudWebpageHeight.Minimum, (int)nudWebpageHeight.Maximum);
+
+            nudCaptureDelay.Value = (decimal)Program.Settings.WebpageCaptureDelay.Between((float)nudCaptureDelay.Minimum, (float)nudCaptureDelay.Maximum);
+
+            btnCapture.Enabled = txtURL.TextLength > 0;
+        }
+
+        private void webpageCapture_CaptureCompleted(Bitmap bmp)
+        {
+            pbResult.Image = bmp;
+            IsBusy = false;
+            btnCapture.Enabled = txtURL.Enabled = !IsBusy;
+        }
+
+        private void txtURL_TextChanged(object sender, EventArgs e)
+        {
+            btnCapture.Enabled = txtURL.TextLength > 0;
+        }
+
+        private void nudWebpageWidth_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.WebpageCaptureBrowserSize.Width = (int)nudWebpageWidth.Value;
+        }
+
+        private void nudWebpageHeight_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.WebpageCaptureBrowserSize.Height = (int)nudWebpageHeight.Value;
+        }
+
+        private void nudCaptureDelay_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.WebpageCaptureDelay = (float)nudCaptureDelay.Value;
         }
 
         private void btnCapture_Click(object sender, EventArgs e)
@@ -75,20 +111,8 @@ namespace ShareX.ScreenCaptureLib
                 pbResult.Image = null;
             }
 
+            webpageCapture.CaptureDelay = (int)nudCaptureDelay.Value * 1000;
             webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));
-        }
-
-        private void webpageCapture_CaptureCompleted(Bitmap bmp)
-        {
-            pbResult.Image = bmp;
-
-            IsBusy = false;
-            btnCapture.Enabled = txtURL.Enabled = !IsBusy;
-        }
-
-        private void txtURL_TextChanged(object sender, EventArgs e)
-        {
-            btnCapture.Enabled = txtURL.TextLength > 0;
         }
     }
 }
