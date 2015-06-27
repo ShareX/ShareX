@@ -89,17 +89,6 @@ namespace ShareX
             }
         }
 
-        private void webpageCapture_CaptureCompleted(Bitmap bmp)
-        {
-            if (!IsDisposed)
-            {
-                CleanPictureBox();
-                pbResult.Image = bmp;
-                btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = true;
-                IsBusy = false;
-            }
-        }
-
         private void txtURL_TextChanged(object sender, EventArgs e)
         {
             btnCapture.Enabled = txtURL.TextLength > 0;
@@ -124,17 +113,42 @@ namespace ShareX
         {
             IsBusy = true;
             btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = false;
-            CleanPictureBox();
+
+            lock (this)
+            {
+                CleanPictureBox();
+            }
 
             webpageCapture.CaptureDelay = (int)nudCaptureDelay.Value * 1000;
             webpageCapture.CapturePage(txtURL.Text, new Size((int)nudWebpageWidth.Value, (int)nudWebpageWidth.Value));
+        }
+
+        private void webpageCapture_CaptureCompleted(Bitmap bmp)
+        {
+            if (!IsDisposed)
+            {
+                lock (this)
+                {
+                    CleanPictureBox();
+                    pbResult.Image = bmp;
+                }
+
+                btnCapture.Enabled = txtURL.Enabled = btnUpload.Enabled = btnCopy.Enabled = true;
+                IsBusy = false;
+            }
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
             if (pbResult.Image != null)
             {
-                Image img = (Image)pbResult.Image.Clone();
+                Image img;
+
+                lock (this)
+                {
+                    img = (Image)pbResult.Image.Clone();
+                }
+
                 OnImageUploadRequested(img);
             }
         }
@@ -143,7 +157,13 @@ namespace ShareX
         {
             if (pbResult.Image != null)
             {
-                Image img = (Image)pbResult.Image.Clone();
+                Image img;
+
+                lock (this)
+                {
+                    img = (Image)pbResult.Image.Clone();
+                }
+
                 OnImageCopyRequested(img);
             }
         }

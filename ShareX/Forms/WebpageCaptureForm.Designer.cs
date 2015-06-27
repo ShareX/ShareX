@@ -16,11 +16,11 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+            }
 
-                if (webpageCapture != null)
-                {
-                    webpageCapture.Dispose();
-                }
+            if (webpageCapture != null)
+            {
+                webpageCapture.Dispose();
             }
 
             base.Dispose(disposing);

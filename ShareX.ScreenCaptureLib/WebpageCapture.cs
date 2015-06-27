@@ -82,6 +82,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     GetImage(webBrowser.ActiveXInstance, bmp, Color.White);
                     OnCaptureCompleted(bmp);
+                    return;
                 }
                 catch (Exception ex)
                 {
@@ -91,10 +92,10 @@ namespace ShareX.ScreenCaptureLib
                     {
                         bmp.Dispose();
                     }
-
-                    OnCaptureCompleted(null);
                 }
             }
+
+            OnCaptureCompleted(null);
         }
 
         private static void GetImage(object obj, Image destination, Color backgroundColor)

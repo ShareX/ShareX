@@ -103,11 +103,11 @@ namespace ShareX.HelpersLib
             if (disposing && (components != null))
             {
                 components.Dispose();
+            }
 
-                if (screenshot != null)
-                {
-                    screenshot.Dispose();
-                }
+            if (screenshot != null)
+            {
+                screenshot.Dispose();
             }
 
             base.Dispose(disposing);
